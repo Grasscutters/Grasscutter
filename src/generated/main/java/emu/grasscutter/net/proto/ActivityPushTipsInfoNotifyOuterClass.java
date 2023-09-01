@@ -19,45 +19,45 @@ public final class ActivityPushTipsInfoNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 activity_id = 5;</code>
+     * <code>uint32 schedule_id = 5;</code>
+     * @return The scheduleId.
+     */
+    int getScheduleId();
+
+    /**
+     * <code>uint32 activity_id = 7;</code>
      * @return The activityId.
      */
     int getActivityId();
 
     /**
-     * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 9;</code>
+     * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 12;</code>
      */
     java.util.List<emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData> 
         getActivityPushTipsDataListList();
     /**
-     * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 9;</code>
+     * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 12;</code>
      */
     emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData getActivityPushTipsDataList(int index);
     /**
-     * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 9;</code>
+     * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 12;</code>
      */
     int getActivityPushTipsDataListCount();
     /**
-     * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 9;</code>
+     * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 12;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsDataOrBuilder> 
         getActivityPushTipsDataListOrBuilderList();
     /**
-     * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 9;</code>
+     * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 12;</code>
      */
     emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsDataOrBuilder getActivityPushTipsDataListOrBuilder(
         int index);
-
-    /**
-     * <code>uint32 schedule_id = 4;</code>
-     * @return The scheduleId.
-     */
-    int getScheduleId();
   }
   /**
    * <pre>
-   * CmdId: 8720
-   * Obf: JDFBCDFOPFK
+   * CmdId: 22464
+   * Obf: HJAPAKFKNOA
    * </pre>
    *
    * Protobuf type {@code ActivityPushTipsInfoNotify}
@@ -106,17 +106,17 @@ public final class ActivityPushTipsInfoNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
+            case 40: {
 
               scheduleId_ = input.readUInt32();
               break;
             }
-            case 40: {
+            case 56: {
 
               activityId_ = input.readUInt32();
               break;
             }
-            case 74: {
+            case 98: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 activityPushTipsDataList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData>();
                 mutable_bitField0_ |= 0x00000001;
@@ -160,10 +160,21 @@ public final class ActivityPushTipsInfoNotifyOuterClass {
               emu.grasscutter.net.proto.ActivityPushTipsInfoNotifyOuterClass.ActivityPushTipsInfoNotify.class, emu.grasscutter.net.proto.ActivityPushTipsInfoNotifyOuterClass.ActivityPushTipsInfoNotify.Builder.class);
     }
 
-    public static final int ACTIVITY_ID_FIELD_NUMBER = 5;
+    public static final int SCHEDULE_ID_FIELD_NUMBER = 5;
+    private int scheduleId_;
+    /**
+     * <code>uint32 schedule_id = 5;</code>
+     * @return The scheduleId.
+     */
+    @java.lang.Override
+    public int getScheduleId() {
+      return scheduleId_;
+    }
+
+    public static final int ACTIVITY_ID_FIELD_NUMBER = 7;
     private int activityId_;
     /**
-     * <code>uint32 activity_id = 5;</code>
+     * <code>uint32 activity_id = 7;</code>
      * @return The activityId.
      */
     @java.lang.Override
@@ -171,17 +182,17 @@ public final class ActivityPushTipsInfoNotifyOuterClass {
       return activityId_;
     }
 
-    public static final int ACTIVITY_PUSH_TIPS_DATA_LIST_FIELD_NUMBER = 9;
+    public static final int ACTIVITY_PUSH_TIPS_DATA_LIST_FIELD_NUMBER = 12;
     private java.util.List<emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData> activityPushTipsDataList_;
     /**
-     * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 9;</code>
+     * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 12;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData> getActivityPushTipsDataListList() {
       return activityPushTipsDataList_;
     }
     /**
-     * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 9;</code>
+     * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 12;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsDataOrBuilder> 
@@ -189,37 +200,26 @@ public final class ActivityPushTipsInfoNotifyOuterClass {
       return activityPushTipsDataList_;
     }
     /**
-     * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 9;</code>
+     * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 12;</code>
      */
     @java.lang.Override
     public int getActivityPushTipsDataListCount() {
       return activityPushTipsDataList_.size();
     }
     /**
-     * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 9;</code>
+     * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 12;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData getActivityPushTipsDataList(int index) {
       return activityPushTipsDataList_.get(index);
     }
     /**
-     * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 9;</code>
+     * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 12;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsDataOrBuilder getActivityPushTipsDataListOrBuilder(
         int index) {
       return activityPushTipsDataList_.get(index);
-    }
-
-    public static final int SCHEDULE_ID_FIELD_NUMBER = 4;
-    private int scheduleId_;
-    /**
-     * <code>uint32 schedule_id = 4;</code>
-     * @return The scheduleId.
-     */
-    @java.lang.Override
-    public int getScheduleId() {
-      return scheduleId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -237,13 +237,13 @@ public final class ActivityPushTipsInfoNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (scheduleId_ != 0) {
-        output.writeUInt32(4, scheduleId_);
+        output.writeUInt32(5, scheduleId_);
       }
       if (activityId_ != 0) {
-        output.writeUInt32(5, activityId_);
+        output.writeUInt32(7, activityId_);
       }
       for (int i = 0; i < activityPushTipsDataList_.size(); i++) {
-        output.writeMessage(9, activityPushTipsDataList_.get(i));
+        output.writeMessage(12, activityPushTipsDataList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -256,15 +256,15 @@ public final class ActivityPushTipsInfoNotifyOuterClass {
       size = 0;
       if (scheduleId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, scheduleId_);
+          .computeUInt32Size(5, scheduleId_);
       }
       if (activityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, activityId_);
+          .computeUInt32Size(7, activityId_);
       }
       for (int i = 0; i < activityPushTipsDataList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, activityPushTipsDataList_.get(i));
+          .computeMessageSize(12, activityPushTipsDataList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -281,12 +281,12 @@ public final class ActivityPushTipsInfoNotifyOuterClass {
       }
       emu.grasscutter.net.proto.ActivityPushTipsInfoNotifyOuterClass.ActivityPushTipsInfoNotify other = (emu.grasscutter.net.proto.ActivityPushTipsInfoNotifyOuterClass.ActivityPushTipsInfoNotify) obj;
 
+      if (getScheduleId()
+          != other.getScheduleId()) return false;
       if (getActivityId()
           != other.getActivityId()) return false;
       if (!getActivityPushTipsDataListList()
           .equals(other.getActivityPushTipsDataListList())) return false;
-      if (getScheduleId()
-          != other.getScheduleId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -298,14 +298,14 @@ public final class ActivityPushTipsInfoNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SCHEDULE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getScheduleId();
       hash = (37 * hash) + ACTIVITY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getActivityId();
       if (getActivityPushTipsDataListCount() > 0) {
         hash = (37 * hash) + ACTIVITY_PUSH_TIPS_DATA_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getActivityPushTipsDataListList().hashCode();
       }
-      hash = (37 * hash) + SCHEDULE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getScheduleId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -403,8 +403,8 @@ public final class ActivityPushTipsInfoNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8720
-     * Obf: JDFBCDFOPFK
+     * CmdId: 22464
+     * Obf: HJAPAKFKNOA
      * </pre>
      *
      * Protobuf type {@code ActivityPushTipsInfoNotify}
@@ -445,6 +445,8 @@ public final class ActivityPushTipsInfoNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        scheduleId_ = 0;
+
         activityId_ = 0;
 
         if (activityPushTipsDataListBuilder_ == null) {
@@ -453,8 +455,6 @@ public final class ActivityPushTipsInfoNotifyOuterClass {
         } else {
           activityPushTipsDataListBuilder_.clear();
         }
-        scheduleId_ = 0;
-
         return this;
       }
 
@@ -482,6 +482,7 @@ public final class ActivityPushTipsInfoNotifyOuterClass {
       public emu.grasscutter.net.proto.ActivityPushTipsInfoNotifyOuterClass.ActivityPushTipsInfoNotify buildPartial() {
         emu.grasscutter.net.proto.ActivityPushTipsInfoNotifyOuterClass.ActivityPushTipsInfoNotify result = new emu.grasscutter.net.proto.ActivityPushTipsInfoNotifyOuterClass.ActivityPushTipsInfoNotify(this);
         int from_bitField0_ = bitField0_;
+        result.scheduleId_ = scheduleId_;
         result.activityId_ = activityId_;
         if (activityPushTipsDataListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
@@ -492,7 +493,6 @@ public final class ActivityPushTipsInfoNotifyOuterClass {
         } else {
           result.activityPushTipsDataList_ = activityPushTipsDataListBuilder_.build();
         }
-        result.scheduleId_ = scheduleId_;
         onBuilt();
         return result;
       }
@@ -541,6 +541,9 @@ public final class ActivityPushTipsInfoNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.ActivityPushTipsInfoNotifyOuterClass.ActivityPushTipsInfoNotify other) {
         if (other == emu.grasscutter.net.proto.ActivityPushTipsInfoNotifyOuterClass.ActivityPushTipsInfoNotify.getDefaultInstance()) return this;
+        if (other.getScheduleId() != 0) {
+          setScheduleId(other.getScheduleId());
+        }
         if (other.getActivityId() != 0) {
           setActivityId(other.getActivityId());
         }
@@ -569,9 +572,6 @@ public final class ActivityPushTipsInfoNotifyOuterClass {
               activityPushTipsDataListBuilder_.addAllMessages(other.activityPushTipsDataList_);
             }
           }
-        }
-        if (other.getScheduleId() != 0) {
-          setScheduleId(other.getScheduleId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -603,9 +603,40 @@ public final class ActivityPushTipsInfoNotifyOuterClass {
       }
       private int bitField0_;
 
+      private int scheduleId_ ;
+      /**
+       * <code>uint32 schedule_id = 5;</code>
+       * @return The scheduleId.
+       */
+      @java.lang.Override
+      public int getScheduleId() {
+        return scheduleId_;
+      }
+      /**
+       * <code>uint32 schedule_id = 5;</code>
+       * @param value The scheduleId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setScheduleId(int value) {
+        
+        scheduleId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 schedule_id = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearScheduleId() {
+        
+        scheduleId_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int activityId_ ;
       /**
-       * <code>uint32 activity_id = 5;</code>
+       * <code>uint32 activity_id = 7;</code>
        * @return The activityId.
        */
       @java.lang.Override
@@ -613,7 +644,7 @@ public final class ActivityPushTipsInfoNotifyOuterClass {
         return activityId_;
       }
       /**
-       * <code>uint32 activity_id = 5;</code>
+       * <code>uint32 activity_id = 7;</code>
        * @param value The activityId to set.
        * @return This builder for chaining.
        */
@@ -624,7 +655,7 @@ public final class ActivityPushTipsInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 activity_id = 5;</code>
+       * <code>uint32 activity_id = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearActivityId() {
@@ -647,7 +678,7 @@ public final class ActivityPushTipsInfoNotifyOuterClass {
           emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData, emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData.Builder, emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsDataOrBuilder> activityPushTipsDataListBuilder_;
 
       /**
-       * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 9;</code>
+       * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 12;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData> getActivityPushTipsDataListList() {
         if (activityPushTipsDataListBuilder_ == null) {
@@ -657,7 +688,7 @@ public final class ActivityPushTipsInfoNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 9;</code>
+       * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 12;</code>
        */
       public int getActivityPushTipsDataListCount() {
         if (activityPushTipsDataListBuilder_ == null) {
@@ -667,7 +698,7 @@ public final class ActivityPushTipsInfoNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 9;</code>
+       * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 12;</code>
        */
       public emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData getActivityPushTipsDataList(int index) {
         if (activityPushTipsDataListBuilder_ == null) {
@@ -677,7 +708,7 @@ public final class ActivityPushTipsInfoNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 9;</code>
+       * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 12;</code>
        */
       public Builder setActivityPushTipsDataList(
           int index, emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData value) {
@@ -694,7 +725,7 @@ public final class ActivityPushTipsInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 9;</code>
+       * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 12;</code>
        */
       public Builder setActivityPushTipsDataList(
           int index, emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData.Builder builderForValue) {
@@ -708,7 +739,7 @@ public final class ActivityPushTipsInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 9;</code>
+       * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 12;</code>
        */
       public Builder addActivityPushTipsDataList(emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData value) {
         if (activityPushTipsDataListBuilder_ == null) {
@@ -724,7 +755,7 @@ public final class ActivityPushTipsInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 9;</code>
+       * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 12;</code>
        */
       public Builder addActivityPushTipsDataList(
           int index, emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData value) {
@@ -741,7 +772,7 @@ public final class ActivityPushTipsInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 9;</code>
+       * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 12;</code>
        */
       public Builder addActivityPushTipsDataList(
           emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData.Builder builderForValue) {
@@ -755,7 +786,7 @@ public final class ActivityPushTipsInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 9;</code>
+       * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 12;</code>
        */
       public Builder addActivityPushTipsDataList(
           int index, emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData.Builder builderForValue) {
@@ -769,7 +800,7 @@ public final class ActivityPushTipsInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 9;</code>
+       * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 12;</code>
        */
       public Builder addAllActivityPushTipsDataList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData> values) {
@@ -784,7 +815,7 @@ public final class ActivityPushTipsInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 9;</code>
+       * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 12;</code>
        */
       public Builder clearActivityPushTipsDataList() {
         if (activityPushTipsDataListBuilder_ == null) {
@@ -797,7 +828,7 @@ public final class ActivityPushTipsInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 9;</code>
+       * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 12;</code>
        */
       public Builder removeActivityPushTipsDataList(int index) {
         if (activityPushTipsDataListBuilder_ == null) {
@@ -810,14 +841,14 @@ public final class ActivityPushTipsInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 9;</code>
+       * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 12;</code>
        */
       public emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData.Builder getActivityPushTipsDataListBuilder(
           int index) {
         return getActivityPushTipsDataListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 9;</code>
+       * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 12;</code>
        */
       public emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsDataOrBuilder getActivityPushTipsDataListOrBuilder(
           int index) {
@@ -827,7 +858,7 @@ public final class ActivityPushTipsInfoNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 9;</code>
+       * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 12;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsDataOrBuilder> 
            getActivityPushTipsDataListOrBuilderList() {
@@ -838,14 +869,14 @@ public final class ActivityPushTipsInfoNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 9;</code>
+       * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 12;</code>
        */
       public emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData.Builder addActivityPushTipsDataListBuilder() {
         return getActivityPushTipsDataListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData.getDefaultInstance());
       }
       /**
-       * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 9;</code>
+       * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 12;</code>
        */
       public emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData.Builder addActivityPushTipsDataListBuilder(
           int index) {
@@ -853,7 +884,7 @@ public final class ActivityPushTipsInfoNotifyOuterClass {
             index, emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData.getDefaultInstance());
       }
       /**
-       * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 9;</code>
+       * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 12;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData.Builder> 
            getActivityPushTipsDataListBuilderList() {
@@ -872,37 +903,6 @@ public final class ActivityPushTipsInfoNotifyOuterClass {
           activityPushTipsDataList_ = null;
         }
         return activityPushTipsDataListBuilder_;
-      }
-
-      private int scheduleId_ ;
-      /**
-       * <code>uint32 schedule_id = 4;</code>
-       * @return The scheduleId.
-       */
-      @java.lang.Override
-      public int getScheduleId() {
-        return scheduleId_;
-      }
-      /**
-       * <code>uint32 schedule_id = 4;</code>
-       * @param value The scheduleId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setScheduleId(int value) {
-        
-        scheduleId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 schedule_id = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearScheduleId() {
-        
-        scheduleId_ = 0;
-        onChanged();
-        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -973,9 +973,9 @@ public final class ActivityPushTipsInfoNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n ActivityPushTipsInfoNotify.proto\032\032Acti" +
       "vityPushTipsData.proto\"\203\001\n\032ActivityPushT" +
-      "ipsInfoNotify\022\023\n\013activity_id\030\005 \001(\r\022;\n\034ac" +
-      "tivity_push_tips_data_list\030\t \003(\0132\025.Activ" +
-      "ityPushTipsData\022\023\n\013schedule_id\030\004 \001(\rB\033\n\031" +
+      "ipsInfoNotify\022\023\n\013schedule_id\030\005 \001(\r\022\023\n\013ac" +
+      "tivity_id\030\007 \001(\r\022;\n\034activity_push_tips_da" +
+      "ta_list\030\014 \003(\0132\025.ActivityPushTipsDataB\033\n\031" +
       "emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -988,7 +988,7 @@ public final class ActivityPushTipsInfoNotifyOuterClass {
     internal_static_ActivityPushTipsInfoNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ActivityPushTipsInfoNotify_descriptor,
-        new java.lang.String[] { "ActivityId", "ActivityPushTipsDataList", "ScheduleId", });
+        new java.lang.String[] { "ScheduleId", "ActivityId", "ActivityPushTipsDataList", });
     emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.getDescriptor();
   }
 

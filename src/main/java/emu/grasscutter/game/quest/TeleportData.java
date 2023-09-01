@@ -1,7 +1,8 @@
 package emu.grasscutter.game.quest;
 
-import java.util.List;
 import lombok.Data;
+
+import java.util.List;
 
 @Data
 public class TeleportData {

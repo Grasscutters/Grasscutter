@@ -19,32 +19,32 @@ public final class WorktopOptionNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 gadget_entity_id = 4;</code>
-     * @return The gadgetEntityId.
-     */
-    int getGadgetEntityId();
-
-    /**
-     * <code>repeated uint32 option_list = 11;</code>
+     * <code>repeated uint32 option_list = 7;</code>
      * @return A list containing the optionList.
      */
     java.util.List<java.lang.Integer> getOptionListList();
     /**
-     * <code>repeated uint32 option_list = 11;</code>
+     * <code>repeated uint32 option_list = 7;</code>
      * @return The count of optionList.
      */
     int getOptionListCount();
     /**
-     * <code>repeated uint32 option_list = 11;</code>
+     * <code>repeated uint32 option_list = 7;</code>
      * @param index The index of the element to return.
      * @return The optionList at the given index.
      */
     int getOptionList(int index);
+
+    /**
+     * <code>uint32 gadget_entity_id = 3;</code>
+     * @return The gadgetEntityId.
+     */
+    int getGadgetEntityId();
   }
   /**
    * <pre>
-   * CmdId: 872
-   * Obf: DEJDCEGIBII
+   * CmdId: 925
+   * Obf: AMKENHADEJN
    * </pre>
    *
    * Protobuf type {@code WorktopOptionNotify}
@@ -93,12 +93,12 @@ public final class WorktopOptionNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
+            case 24: {
 
               gadgetEntityId_ = input.readUInt32();
               break;
             }
-            case 88: {
+            case 56: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 optionList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -106,7 +106,7 @@ public final class WorktopOptionNotifyOuterClass {
               optionList_.addInt(input.readUInt32());
               break;
             }
-            case 90: {
+            case 58: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -154,21 +154,10 @@ public final class WorktopOptionNotifyOuterClass {
               emu.grasscutter.net.proto.WorktopOptionNotifyOuterClass.WorktopOptionNotify.class, emu.grasscutter.net.proto.WorktopOptionNotifyOuterClass.WorktopOptionNotify.Builder.class);
     }
 
-    public static final int GADGET_ENTITY_ID_FIELD_NUMBER = 4;
-    private int gadgetEntityId_;
-    /**
-     * <code>uint32 gadget_entity_id = 4;</code>
-     * @return The gadgetEntityId.
-     */
-    @java.lang.Override
-    public int getGadgetEntityId() {
-      return gadgetEntityId_;
-    }
-
-    public static final int OPTION_LIST_FIELD_NUMBER = 11;
+    public static final int OPTION_LIST_FIELD_NUMBER = 7;
     private com.google.protobuf.Internal.IntList optionList_;
     /**
-     * <code>repeated uint32 option_list = 11;</code>
+     * <code>repeated uint32 option_list = 7;</code>
      * @return A list containing the optionList.
      */
     @java.lang.Override
@@ -177,14 +166,14 @@ public final class WorktopOptionNotifyOuterClass {
       return optionList_;
     }
     /**
-     * <code>repeated uint32 option_list = 11;</code>
+     * <code>repeated uint32 option_list = 7;</code>
      * @return The count of optionList.
      */
     public int getOptionListCount() {
       return optionList_.size();
     }
     /**
-     * <code>repeated uint32 option_list = 11;</code>
+     * <code>repeated uint32 option_list = 7;</code>
      * @param index The index of the element to return.
      * @return The optionList at the given index.
      */
@@ -192,6 +181,17 @@ public final class WorktopOptionNotifyOuterClass {
       return optionList_.getInt(index);
     }
     private int optionListMemoizedSerializedSize = -1;
+
+    public static final int GADGET_ENTITY_ID_FIELD_NUMBER = 3;
+    private int gadgetEntityId_;
+    /**
+     * <code>uint32 gadget_entity_id = 3;</code>
+     * @return The gadgetEntityId.
+     */
+    @java.lang.Override
+    public int getGadgetEntityId() {
+      return gadgetEntityId_;
+    }
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
@@ -209,10 +209,10 @@ public final class WorktopOptionNotifyOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (gadgetEntityId_ != 0) {
-        output.writeUInt32(4, gadgetEntityId_);
+        output.writeUInt32(3, gadgetEntityId_);
       }
       if (getOptionListList().size() > 0) {
-        output.writeUInt32NoTag(90);
+        output.writeUInt32NoTag(58);
         output.writeUInt32NoTag(optionListMemoizedSerializedSize);
       }
       for (int i = 0; i < optionList_.size(); i++) {
@@ -229,7 +229,7 @@ public final class WorktopOptionNotifyOuterClass {
       size = 0;
       if (gadgetEntityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, gadgetEntityId_);
+          .computeUInt32Size(3, gadgetEntityId_);
       }
       {
         int dataSize = 0;
@@ -260,10 +260,10 @@ public final class WorktopOptionNotifyOuterClass {
       }
       emu.grasscutter.net.proto.WorktopOptionNotifyOuterClass.WorktopOptionNotify other = (emu.grasscutter.net.proto.WorktopOptionNotifyOuterClass.WorktopOptionNotify) obj;
 
-      if (getGadgetEntityId()
-          != other.getGadgetEntityId()) return false;
       if (!getOptionListList()
           .equals(other.getOptionListList())) return false;
+      if (getGadgetEntityId()
+          != other.getGadgetEntityId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -275,12 +275,12 @@ public final class WorktopOptionNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + GADGET_ENTITY_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getGadgetEntityId();
       if (getOptionListCount() > 0) {
         hash = (37 * hash) + OPTION_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getOptionListList().hashCode();
       }
+      hash = (37 * hash) + GADGET_ENTITY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getGadgetEntityId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -378,8 +378,8 @@ public final class WorktopOptionNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 872
-     * Obf: DEJDCEGIBII
+     * CmdId: 925
+     * Obf: AMKENHADEJN
      * </pre>
      *
      * Protobuf type {@code WorktopOptionNotify}
@@ -419,10 +419,10 @@ public final class WorktopOptionNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        gadgetEntityId_ = 0;
-
         optionList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        gadgetEntityId_ = 0;
+
         return this;
       }
 
@@ -450,12 +450,12 @@ public final class WorktopOptionNotifyOuterClass {
       public emu.grasscutter.net.proto.WorktopOptionNotifyOuterClass.WorktopOptionNotify buildPartial() {
         emu.grasscutter.net.proto.WorktopOptionNotifyOuterClass.WorktopOptionNotify result = new emu.grasscutter.net.proto.WorktopOptionNotifyOuterClass.WorktopOptionNotify(this);
         int from_bitField0_ = bitField0_;
-        result.gadgetEntityId_ = gadgetEntityId_;
         if (((bitField0_ & 0x00000001) != 0)) {
           optionList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.optionList_ = optionList_;
+        result.gadgetEntityId_ = gadgetEntityId_;
         onBuilt();
         return result;
       }
@@ -504,9 +504,6 @@ public final class WorktopOptionNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.WorktopOptionNotifyOuterClass.WorktopOptionNotify other) {
         if (other == emu.grasscutter.net.proto.WorktopOptionNotifyOuterClass.WorktopOptionNotify.getDefaultInstance()) return this;
-        if (other.getGadgetEntityId() != 0) {
-          setGadgetEntityId(other.getGadgetEntityId());
-        }
         if (!other.optionList_.isEmpty()) {
           if (optionList_.isEmpty()) {
             optionList_ = other.optionList_;
@@ -516,6 +513,9 @@ public final class WorktopOptionNotifyOuterClass {
             optionList_.addAll(other.optionList_);
           }
           onChanged();
+        }
+        if (other.getGadgetEntityId() != 0) {
+          setGadgetEntityId(other.getGadgetEntityId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -547,37 +547,6 @@ public final class WorktopOptionNotifyOuterClass {
       }
       private int bitField0_;
 
-      private int gadgetEntityId_ ;
-      /**
-       * <code>uint32 gadget_entity_id = 4;</code>
-       * @return The gadgetEntityId.
-       */
-      @java.lang.Override
-      public int getGadgetEntityId() {
-        return gadgetEntityId_;
-      }
-      /**
-       * <code>uint32 gadget_entity_id = 4;</code>
-       * @param value The gadgetEntityId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setGadgetEntityId(int value) {
-        
-        gadgetEntityId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 gadget_entity_id = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearGadgetEntityId() {
-        
-        gadgetEntityId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private com.google.protobuf.Internal.IntList optionList_ = emptyIntList();
       private void ensureOptionListIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
@@ -586,7 +555,7 @@ public final class WorktopOptionNotifyOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 option_list = 11;</code>
+       * <code>repeated uint32 option_list = 7;</code>
        * @return A list containing the optionList.
        */
       public java.util.List<java.lang.Integer>
@@ -595,14 +564,14 @@ public final class WorktopOptionNotifyOuterClass {
                  java.util.Collections.unmodifiableList(optionList_) : optionList_;
       }
       /**
-       * <code>repeated uint32 option_list = 11;</code>
+       * <code>repeated uint32 option_list = 7;</code>
        * @return The count of optionList.
        */
       public int getOptionListCount() {
         return optionList_.size();
       }
       /**
-       * <code>repeated uint32 option_list = 11;</code>
+       * <code>repeated uint32 option_list = 7;</code>
        * @param index The index of the element to return.
        * @return The optionList at the given index.
        */
@@ -610,7 +579,7 @@ public final class WorktopOptionNotifyOuterClass {
         return optionList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 option_list = 11;</code>
+       * <code>repeated uint32 option_list = 7;</code>
        * @param index The index to set the value at.
        * @param value The optionList to set.
        * @return This builder for chaining.
@@ -623,7 +592,7 @@ public final class WorktopOptionNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 option_list = 11;</code>
+       * <code>repeated uint32 option_list = 7;</code>
        * @param value The optionList to add.
        * @return This builder for chaining.
        */
@@ -634,7 +603,7 @@ public final class WorktopOptionNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 option_list = 11;</code>
+       * <code>repeated uint32 option_list = 7;</code>
        * @param values The optionList to add.
        * @return This builder for chaining.
        */
@@ -647,12 +616,43 @@ public final class WorktopOptionNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 option_list = 11;</code>
+       * <code>repeated uint32 option_list = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearOptionList() {
         optionList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      private int gadgetEntityId_ ;
+      /**
+       * <code>uint32 gadget_entity_id = 3;</code>
+       * @return The gadgetEntityId.
+       */
+      @java.lang.Override
+      public int getGadgetEntityId() {
+        return gadgetEntityId_;
+      }
+      /**
+       * <code>uint32 gadget_entity_id = 3;</code>
+       * @param value The gadgetEntityId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGadgetEntityId(int value) {
+        
+        gadgetEntityId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 gadget_entity_id = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGadgetEntityId() {
+        
+        gadgetEntityId_ = 0;
         onChanged();
         return this;
       }
@@ -724,8 +724,8 @@ public final class WorktopOptionNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\031WorktopOptionNotify.proto\"D\n\023WorktopOp" +
-      "tionNotify\022\030\n\020gadget_entity_id\030\004 \001(\r\022\023\n\013" +
-      "option_list\030\013 \003(\rB\033\n\031emu.grasscutter.net" +
+      "tionNotify\022\023\n\013option_list\030\007 \003(\r\022\030\n\020gadge" +
+      "t_entity_id\030\003 \001(\rB\033\n\031emu.grasscutter.net" +
       ".protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -737,7 +737,7 @@ public final class WorktopOptionNotifyOuterClass {
     internal_static_WorktopOptionNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_WorktopOptionNotify_descriptor,
-        new java.lang.String[] { "GadgetEntityId", "OptionList", });
+        new java.lang.String[] { "OptionList", "GadgetEntityId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -19,15 +19,15 @@ public final class RogueDiaryCoinAddNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 num = 15;</code>
+     * <code>uint32 num = 11;</code>
      * @return The num.
      */
     int getNum();
   }
   /**
    * <pre>
-   * CmdId: 8422
-   * Obf: BHDGGBDBCKM
+   * CmdId: 21318
+   * Obf: AAOAGELEOBH
    * </pre>
    *
    * Protobuf type {@code RogueDiaryCoinAddNotify}
@@ -74,7 +74,7 @@ public final class RogueDiaryCoinAddNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 120: {
+            case 88: {
 
               num_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class RogueDiaryCoinAddNotifyOuterClass {
               emu.grasscutter.net.proto.RogueDiaryCoinAddNotifyOuterClass.RogueDiaryCoinAddNotify.class, emu.grasscutter.net.proto.RogueDiaryCoinAddNotifyOuterClass.RogueDiaryCoinAddNotify.Builder.class);
     }
 
-    public static final int NUM_FIELD_NUMBER = 15;
+    public static final int NUM_FIELD_NUMBER = 11;
     private int num_;
     /**
-     * <code>uint32 num = 15;</code>
+     * <code>uint32 num = 11;</code>
      * @return The num.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class RogueDiaryCoinAddNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (num_ != 0) {
-        output.writeUInt32(15, num_);
+        output.writeUInt32(11, num_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class RogueDiaryCoinAddNotifyOuterClass {
       size = 0;
       if (num_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, num_);
+          .computeUInt32Size(11, num_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class RogueDiaryCoinAddNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8422
-     * Obf: BHDGGBDBCKM
+     * CmdId: 21318
+     * Obf: AAOAGELEOBH
      * </pre>
      *
      * Protobuf type {@code RogueDiaryCoinAddNotify}
@@ -431,7 +431,7 @@ public final class RogueDiaryCoinAddNotifyOuterClass {
 
       private int num_ ;
       /**
-       * <code>uint32 num = 15;</code>
+       * <code>uint32 num = 11;</code>
        * @return The num.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class RogueDiaryCoinAddNotifyOuterClass {
         return num_;
       }
       /**
-       * <code>uint32 num = 15;</code>
+       * <code>uint32 num = 11;</code>
        * @param value The num to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class RogueDiaryCoinAddNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 num = 15;</code>
+       * <code>uint32 num = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearNum() {
@@ -527,7 +527,7 @@ public final class RogueDiaryCoinAddNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\035RogueDiaryCoinAddNotify.proto\"&\n\027Rogue" +
-      "DiaryCoinAddNotify\022\013\n\003num\030\017 \001(\rB\033\n\031emu.g" +
+      "DiaryCoinAddNotify\022\013\n\003num\030\013 \001(\rB\033\n\031emu.g" +
       "rasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

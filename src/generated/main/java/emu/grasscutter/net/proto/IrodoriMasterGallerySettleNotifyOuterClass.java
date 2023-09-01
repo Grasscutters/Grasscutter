@@ -19,30 +19,30 @@ public final class IrodoriMasterGallerySettleNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 gallery_id = 4;</code>
+     * <code>uint32 gallery_id = 12;</code>
      * @return The galleryId.
      */
     int getGalleryId();
 
     /**
-     * <code>.IrodoriMasterGallerySettleInfo settle_info = 3;</code>
+     * <code>.IrodoriMasterGallerySettleInfo settle_info = 6;</code>
      * @return Whether the settleInfo field is set.
      */
     boolean hasSettleInfo();
     /**
-     * <code>.IrodoriMasterGallerySettleInfo settle_info = 3;</code>
+     * <code>.IrodoriMasterGallerySettleInfo settle_info = 6;</code>
      * @return The settleInfo.
      */
     emu.grasscutter.net.proto.IrodoriMasterGallerySettleInfoOuterClass.IrodoriMasterGallerySettleInfo getSettleInfo();
     /**
-     * <code>.IrodoriMasterGallerySettleInfo settle_info = 3;</code>
+     * <code>.IrodoriMasterGallerySettleInfo settle_info = 6;</code>
      */
     emu.grasscutter.net.proto.IrodoriMasterGallerySettleInfoOuterClass.IrodoriMasterGallerySettleInfoOrBuilder getSettleInfoOrBuilder();
   }
   /**
    * <pre>
-   * CmdId: 8052
-   * Obf: APEKJHLJEAD
+   * CmdId: 9167
+   * Obf: EEGMIMKGMMK
    * </pre>
    *
    * Protobuf type {@code IrodoriMasterGallerySettleNotify}
@@ -89,7 +89,7 @@ public final class IrodoriMasterGallerySettleNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 26: {
+            case 50: {
               emu.grasscutter.net.proto.IrodoriMasterGallerySettleInfoOuterClass.IrodoriMasterGallerySettleInfo.Builder subBuilder = null;
               if (settleInfo_ != null) {
                 subBuilder = settleInfo_.toBuilder();
@@ -102,7 +102,7 @@ public final class IrodoriMasterGallerySettleNotifyOuterClass {
 
               break;
             }
-            case 32: {
+            case 96: {
 
               galleryId_ = input.readUInt32();
               break;
@@ -139,10 +139,10 @@ public final class IrodoriMasterGallerySettleNotifyOuterClass {
               emu.grasscutter.net.proto.IrodoriMasterGallerySettleNotifyOuterClass.IrodoriMasterGallerySettleNotify.class, emu.grasscutter.net.proto.IrodoriMasterGallerySettleNotifyOuterClass.IrodoriMasterGallerySettleNotify.Builder.class);
     }
 
-    public static final int GALLERY_ID_FIELD_NUMBER = 4;
+    public static final int GALLERY_ID_FIELD_NUMBER = 12;
     private int galleryId_;
     /**
-     * <code>uint32 gallery_id = 4;</code>
+     * <code>uint32 gallery_id = 12;</code>
      * @return The galleryId.
      */
     @java.lang.Override
@@ -150,10 +150,10 @@ public final class IrodoriMasterGallerySettleNotifyOuterClass {
       return galleryId_;
     }
 
-    public static final int SETTLE_INFO_FIELD_NUMBER = 3;
+    public static final int SETTLE_INFO_FIELD_NUMBER = 6;
     private emu.grasscutter.net.proto.IrodoriMasterGallerySettleInfoOuterClass.IrodoriMasterGallerySettleInfo settleInfo_;
     /**
-     * <code>.IrodoriMasterGallerySettleInfo settle_info = 3;</code>
+     * <code>.IrodoriMasterGallerySettleInfo settle_info = 6;</code>
      * @return Whether the settleInfo field is set.
      */
     @java.lang.Override
@@ -161,7 +161,7 @@ public final class IrodoriMasterGallerySettleNotifyOuterClass {
       return settleInfo_ != null;
     }
     /**
-     * <code>.IrodoriMasterGallerySettleInfo settle_info = 3;</code>
+     * <code>.IrodoriMasterGallerySettleInfo settle_info = 6;</code>
      * @return The settleInfo.
      */
     @java.lang.Override
@@ -169,7 +169,7 @@ public final class IrodoriMasterGallerySettleNotifyOuterClass {
       return settleInfo_ == null ? emu.grasscutter.net.proto.IrodoriMasterGallerySettleInfoOuterClass.IrodoriMasterGallerySettleInfo.getDefaultInstance() : settleInfo_;
     }
     /**
-     * <code>.IrodoriMasterGallerySettleInfo settle_info = 3;</code>
+     * <code>.IrodoriMasterGallerySettleInfo settle_info = 6;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.IrodoriMasterGallerySettleInfoOuterClass.IrodoriMasterGallerySettleInfoOrBuilder getSettleInfoOrBuilder() {
@@ -191,10 +191,10 @@ public final class IrodoriMasterGallerySettleNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (settleInfo_ != null) {
-        output.writeMessage(3, getSettleInfo());
+        output.writeMessage(6, getSettleInfo());
       }
       if (galleryId_ != 0) {
-        output.writeUInt32(4, galleryId_);
+        output.writeUInt32(12, galleryId_);
       }
       unknownFields.writeTo(output);
     }
@@ -207,11 +207,11 @@ public final class IrodoriMasterGallerySettleNotifyOuterClass {
       size = 0;
       if (settleInfo_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getSettleInfo());
+          .computeMessageSize(6, getSettleInfo());
       }
       if (galleryId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, galleryId_);
+          .computeUInt32Size(12, galleryId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -349,8 +349,8 @@ public final class IrodoriMasterGallerySettleNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8052
-     * Obf: APEKJHLJEAD
+     * CmdId: 9167
+     * Obf: EEGMIMKGMMK
      * </pre>
      *
      * Protobuf type {@code IrodoriMasterGallerySettleNotify}
@@ -515,7 +515,7 @@ public final class IrodoriMasterGallerySettleNotifyOuterClass {
 
       private int galleryId_ ;
       /**
-       * <code>uint32 gallery_id = 4;</code>
+       * <code>uint32 gallery_id = 12;</code>
        * @return The galleryId.
        */
       @java.lang.Override
@@ -523,7 +523,7 @@ public final class IrodoriMasterGallerySettleNotifyOuterClass {
         return galleryId_;
       }
       /**
-       * <code>uint32 gallery_id = 4;</code>
+       * <code>uint32 gallery_id = 12;</code>
        * @param value The galleryId to set.
        * @return This builder for chaining.
        */
@@ -534,7 +534,7 @@ public final class IrodoriMasterGallerySettleNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 gallery_id = 4;</code>
+       * <code>uint32 gallery_id = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearGalleryId() {
@@ -548,14 +548,14 @@ public final class IrodoriMasterGallerySettleNotifyOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.IrodoriMasterGallerySettleInfoOuterClass.IrodoriMasterGallerySettleInfo, emu.grasscutter.net.proto.IrodoriMasterGallerySettleInfoOuterClass.IrodoriMasterGallerySettleInfo.Builder, emu.grasscutter.net.proto.IrodoriMasterGallerySettleInfoOuterClass.IrodoriMasterGallerySettleInfoOrBuilder> settleInfoBuilder_;
       /**
-       * <code>.IrodoriMasterGallerySettleInfo settle_info = 3;</code>
+       * <code>.IrodoriMasterGallerySettleInfo settle_info = 6;</code>
        * @return Whether the settleInfo field is set.
        */
       public boolean hasSettleInfo() {
         return settleInfoBuilder_ != null || settleInfo_ != null;
       }
       /**
-       * <code>.IrodoriMasterGallerySettleInfo settle_info = 3;</code>
+       * <code>.IrodoriMasterGallerySettleInfo settle_info = 6;</code>
        * @return The settleInfo.
        */
       public emu.grasscutter.net.proto.IrodoriMasterGallerySettleInfoOuterClass.IrodoriMasterGallerySettleInfo getSettleInfo() {
@@ -566,7 +566,7 @@ public final class IrodoriMasterGallerySettleNotifyOuterClass {
         }
       }
       /**
-       * <code>.IrodoriMasterGallerySettleInfo settle_info = 3;</code>
+       * <code>.IrodoriMasterGallerySettleInfo settle_info = 6;</code>
        */
       public Builder setSettleInfo(emu.grasscutter.net.proto.IrodoriMasterGallerySettleInfoOuterClass.IrodoriMasterGallerySettleInfo value) {
         if (settleInfoBuilder_ == null) {
@@ -582,7 +582,7 @@ public final class IrodoriMasterGallerySettleNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.IrodoriMasterGallerySettleInfo settle_info = 3;</code>
+       * <code>.IrodoriMasterGallerySettleInfo settle_info = 6;</code>
        */
       public Builder setSettleInfo(
           emu.grasscutter.net.proto.IrodoriMasterGallerySettleInfoOuterClass.IrodoriMasterGallerySettleInfo.Builder builderForValue) {
@@ -596,7 +596,7 @@ public final class IrodoriMasterGallerySettleNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.IrodoriMasterGallerySettleInfo settle_info = 3;</code>
+       * <code>.IrodoriMasterGallerySettleInfo settle_info = 6;</code>
        */
       public Builder mergeSettleInfo(emu.grasscutter.net.proto.IrodoriMasterGallerySettleInfoOuterClass.IrodoriMasterGallerySettleInfo value) {
         if (settleInfoBuilder_ == null) {
@@ -614,7 +614,7 @@ public final class IrodoriMasterGallerySettleNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.IrodoriMasterGallerySettleInfo settle_info = 3;</code>
+       * <code>.IrodoriMasterGallerySettleInfo settle_info = 6;</code>
        */
       public Builder clearSettleInfo() {
         if (settleInfoBuilder_ == null) {
@@ -628,7 +628,7 @@ public final class IrodoriMasterGallerySettleNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.IrodoriMasterGallerySettleInfo settle_info = 3;</code>
+       * <code>.IrodoriMasterGallerySettleInfo settle_info = 6;</code>
        */
       public emu.grasscutter.net.proto.IrodoriMasterGallerySettleInfoOuterClass.IrodoriMasterGallerySettleInfo.Builder getSettleInfoBuilder() {
         
@@ -636,7 +636,7 @@ public final class IrodoriMasterGallerySettleNotifyOuterClass {
         return getSettleInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.IrodoriMasterGallerySettleInfo settle_info = 3;</code>
+       * <code>.IrodoriMasterGallerySettleInfo settle_info = 6;</code>
        */
       public emu.grasscutter.net.proto.IrodoriMasterGallerySettleInfoOuterClass.IrodoriMasterGallerySettleInfoOrBuilder getSettleInfoOrBuilder() {
         if (settleInfoBuilder_ != null) {
@@ -647,7 +647,7 @@ public final class IrodoriMasterGallerySettleNotifyOuterClass {
         }
       }
       /**
-       * <code>.IrodoriMasterGallerySettleInfo settle_info = 3;</code>
+       * <code>.IrodoriMasterGallerySettleInfo settle_info = 6;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.IrodoriMasterGallerySettleInfoOuterClass.IrodoriMasterGallerySettleInfo, emu.grasscutter.net.proto.IrodoriMasterGallerySettleInfoOuterClass.IrodoriMasterGallerySettleInfo.Builder, emu.grasscutter.net.proto.IrodoriMasterGallerySettleInfoOuterClass.IrodoriMasterGallerySettleInfoOrBuilder> 
@@ -732,7 +732,7 @@ public final class IrodoriMasterGallerySettleNotifyOuterClass {
       "\n&IrodoriMasterGallerySettleNotify.proto" +
       "\032$IrodoriMasterGallerySettleInfo.proto\"l" +
       "\n IrodoriMasterGallerySettleNotify\022\022\n\nga" +
-      "llery_id\030\004 \001(\r\0224\n\013settle_info\030\003 \001(\0132\037.Ir" +
+      "llery_id\030\014 \001(\r\0224\n\013settle_info\030\006 \001(\0132\037.Ir" +
       "odoriMasterGallerySettleInfoB\033\n\031emu.gras" +
       "scutter.net.protob\006proto3"
     };

@@ -20,8 +20,8 @@ public final class GetMechanicusInfoReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 3975
-   * Obf: HLKAJKMCKHA
+   * CmdId: 6012
+   * Obf: LAMDLLMLMJE
    * </pre>
    *
    * Protobuf type {@code GetMechanicusInfoReq}
@@ -246,8 +246,8 @@ public final class GetMechanicusInfoReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 3975
-     * Obf: HLKAJKMCKHA
+     * CmdId: 6012
+     * Obf: LAMDLLMLMJE
      * </pre>
      *
      * Protobuf type {@code GetMechanicusInfoReq}

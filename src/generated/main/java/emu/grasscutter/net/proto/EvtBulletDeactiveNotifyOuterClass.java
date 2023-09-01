@@ -19,41 +19,41 @@ public final class EvtBulletDeactiveNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.Vector disappear_pos = 10;</code>
-     * @return Whether the disappearPos field is set.
+     * <code>.ForwardType forward_type = 1;</code>
+     * @return The enum numeric value on the wire for forwardType.
      */
-    boolean hasDisappearPos();
+    int getForwardTypeValue();
     /**
-     * <code>.Vector disappear_pos = 10;</code>
-     * @return The disappearPos.
+     * <code>.ForwardType forward_type = 1;</code>
+     * @return The forwardType.
      */
-    emu.grasscutter.net.proto.VectorOuterClass.Vector getDisappearPos();
-    /**
-     * <code>.Vector disappear_pos = 10;</code>
-     */
-    emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getDisappearPosOrBuilder();
+    emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType getForwardType();
 
     /**
-     * <code>uint32 entity_id = 15;</code>
+     * <code>uint32 entity_id = 14;</code>
      * @return The entityId.
      */
     int getEntityId();
 
     /**
-     * <code>.ForwardType forward_type = 2;</code>
-     * @return The enum numeric value on the wire for forwardType.
+     * <code>.Vector disappear_pos = 8;</code>
+     * @return Whether the disappearPos field is set.
      */
-    int getForwardTypeValue();
+    boolean hasDisappearPos();
     /**
-     * <code>.ForwardType forward_type = 2;</code>
-     * @return The forwardType.
+     * <code>.Vector disappear_pos = 8;</code>
+     * @return The disappearPos.
      */
-    emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType getForwardType();
+    emu.grasscutter.net.proto.VectorOuterClass.Vector getDisappearPos();
+    /**
+     * <code>.Vector disappear_pos = 8;</code>
+     */
+    emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getDisappearPosOrBuilder();
   }
   /**
    * <pre>
-   * CmdId: 334
-   * Obf: KGCIBIOLFNL
+   * CmdId: 26348
+   * Obf: FJJAANMLOOB
    * </pre>
    *
    * Protobuf type {@code EvtBulletDeactiveNotify}
@@ -101,13 +101,13 @@ public final class EvtBulletDeactiveNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
+            case 8: {
               int rawValue = input.readEnum();
 
               forwardType_ = rawValue;
               break;
             }
-            case 82: {
+            case 66: {
               emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
               if (disappearPos_ != null) {
                 subBuilder = disappearPos_.toBuilder();
@@ -120,7 +120,7 @@ public final class EvtBulletDeactiveNotifyOuterClass {
 
               break;
             }
-            case 120: {
+            case 112: {
 
               entityId_ = input.readUInt32();
               break;
@@ -157,36 +157,29 @@ public final class EvtBulletDeactiveNotifyOuterClass {
               emu.grasscutter.net.proto.EvtBulletDeactiveNotifyOuterClass.EvtBulletDeactiveNotify.class, emu.grasscutter.net.proto.EvtBulletDeactiveNotifyOuterClass.EvtBulletDeactiveNotify.Builder.class);
     }
 
-    public static final int DISAPPEAR_POS_FIELD_NUMBER = 10;
-    private emu.grasscutter.net.proto.VectorOuterClass.Vector disappearPos_;
+    public static final int FORWARD_TYPE_FIELD_NUMBER = 1;
+    private int forwardType_;
     /**
-     * <code>.Vector disappear_pos = 10;</code>
-     * @return Whether the disappearPos field is set.
+     * <code>.ForwardType forward_type = 1;</code>
+     * @return The enum numeric value on the wire for forwardType.
      */
-    @java.lang.Override
-    public boolean hasDisappearPos() {
-      return disappearPos_ != null;
+    @java.lang.Override public int getForwardTypeValue() {
+      return forwardType_;
     }
     /**
-     * <code>.Vector disappear_pos = 10;</code>
-     * @return The disappearPos.
+     * <code>.ForwardType forward_type = 1;</code>
+     * @return The forwardType.
      */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.VectorOuterClass.Vector getDisappearPos() {
-      return disappearPos_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : disappearPos_;
-    }
-    /**
-     * <code>.Vector disappear_pos = 10;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getDisappearPosOrBuilder() {
-      return getDisappearPos();
+    @java.lang.Override public emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType getForwardType() {
+      @SuppressWarnings("deprecation")
+      emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType result = emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType.valueOf(forwardType_);
+      return result == null ? emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType.UNRECOGNIZED : result;
     }
 
-    public static final int ENTITY_ID_FIELD_NUMBER = 15;
+    public static final int ENTITY_ID_FIELD_NUMBER = 14;
     private int entityId_;
     /**
-     * <code>uint32 entity_id = 15;</code>
+     * <code>uint32 entity_id = 14;</code>
      * @return The entityId.
      */
     @java.lang.Override
@@ -194,23 +187,30 @@ public final class EvtBulletDeactiveNotifyOuterClass {
       return entityId_;
     }
 
-    public static final int FORWARD_TYPE_FIELD_NUMBER = 2;
-    private int forwardType_;
+    public static final int DISAPPEAR_POS_FIELD_NUMBER = 8;
+    private emu.grasscutter.net.proto.VectorOuterClass.Vector disappearPos_;
     /**
-     * <code>.ForwardType forward_type = 2;</code>
-     * @return The enum numeric value on the wire for forwardType.
+     * <code>.Vector disappear_pos = 8;</code>
+     * @return Whether the disappearPos field is set.
      */
-    @java.lang.Override public int getForwardTypeValue() {
-      return forwardType_;
+    @java.lang.Override
+    public boolean hasDisappearPos() {
+      return disappearPos_ != null;
     }
     /**
-     * <code>.ForwardType forward_type = 2;</code>
-     * @return The forwardType.
+     * <code>.Vector disappear_pos = 8;</code>
+     * @return The disappearPos.
      */
-    @java.lang.Override public emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType getForwardType() {
-      @SuppressWarnings("deprecation")
-      emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType result = emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType.valueOf(forwardType_);
-      return result == null ? emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType.UNRECOGNIZED : result;
+    @java.lang.Override
+    public emu.grasscutter.net.proto.VectorOuterClass.Vector getDisappearPos() {
+      return disappearPos_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : disappearPos_;
+    }
+    /**
+     * <code>.Vector disappear_pos = 8;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getDisappearPosOrBuilder() {
+      return getDisappearPos();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -228,13 +228,13 @@ public final class EvtBulletDeactiveNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (forwardType_ != emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType.FORWARD_TYPE_LOCAL.getNumber()) {
-        output.writeEnum(2, forwardType_);
+        output.writeEnum(1, forwardType_);
       }
       if (disappearPos_ != null) {
-        output.writeMessage(10, getDisappearPos());
+        output.writeMessage(8, getDisappearPos());
       }
       if (entityId_ != 0) {
-        output.writeUInt32(15, entityId_);
+        output.writeUInt32(14, entityId_);
       }
       unknownFields.writeTo(output);
     }
@@ -247,15 +247,15 @@ public final class EvtBulletDeactiveNotifyOuterClass {
       size = 0;
       if (forwardType_ != emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType.FORWARD_TYPE_LOCAL.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(2, forwardType_);
+          .computeEnumSize(1, forwardType_);
       }
       if (disappearPos_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, getDisappearPos());
+          .computeMessageSize(8, getDisappearPos());
       }
       if (entityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, entityId_);
+          .computeUInt32Size(14, entityId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -272,14 +272,14 @@ public final class EvtBulletDeactiveNotifyOuterClass {
       }
       emu.grasscutter.net.proto.EvtBulletDeactiveNotifyOuterClass.EvtBulletDeactiveNotify other = (emu.grasscutter.net.proto.EvtBulletDeactiveNotifyOuterClass.EvtBulletDeactiveNotify) obj;
 
+      if (forwardType_ != other.forwardType_) return false;
+      if (getEntityId()
+          != other.getEntityId()) return false;
       if (hasDisappearPos() != other.hasDisappearPos()) return false;
       if (hasDisappearPos()) {
         if (!getDisappearPos()
             .equals(other.getDisappearPos())) return false;
       }
-      if (getEntityId()
-          != other.getEntityId()) return false;
-      if (forwardType_ != other.forwardType_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -291,14 +291,14 @@ public final class EvtBulletDeactiveNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + FORWARD_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + forwardType_;
+      hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getEntityId();
       if (hasDisappearPos()) {
         hash = (37 * hash) + DISAPPEAR_POS_FIELD_NUMBER;
         hash = (53 * hash) + getDisappearPos().hashCode();
       }
-      hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getEntityId();
-      hash = (37 * hash) + FORWARD_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + forwardType_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -396,8 +396,8 @@ public final class EvtBulletDeactiveNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 334
-     * Obf: KGCIBIOLFNL
+     * CmdId: 26348
+     * Obf: FJJAANMLOOB
      * </pre>
      *
      * Protobuf type {@code EvtBulletDeactiveNotify}
@@ -437,16 +437,16 @@ public final class EvtBulletDeactiveNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        forwardType_ = 0;
+
+        entityId_ = 0;
+
         if (disappearPosBuilder_ == null) {
           disappearPos_ = null;
         } else {
           disappearPos_ = null;
           disappearPosBuilder_ = null;
         }
-        entityId_ = 0;
-
-        forwardType_ = 0;
-
         return this;
       }
 
@@ -473,13 +473,13 @@ public final class EvtBulletDeactiveNotifyOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.EvtBulletDeactiveNotifyOuterClass.EvtBulletDeactiveNotify buildPartial() {
         emu.grasscutter.net.proto.EvtBulletDeactiveNotifyOuterClass.EvtBulletDeactiveNotify result = new emu.grasscutter.net.proto.EvtBulletDeactiveNotifyOuterClass.EvtBulletDeactiveNotify(this);
+        result.forwardType_ = forwardType_;
+        result.entityId_ = entityId_;
         if (disappearPosBuilder_ == null) {
           result.disappearPos_ = disappearPos_;
         } else {
           result.disappearPos_ = disappearPosBuilder_.build();
         }
-        result.entityId_ = entityId_;
-        result.forwardType_ = forwardType_;
         onBuilt();
         return result;
       }
@@ -528,14 +528,14 @@ public final class EvtBulletDeactiveNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.EvtBulletDeactiveNotifyOuterClass.EvtBulletDeactiveNotify other) {
         if (other == emu.grasscutter.net.proto.EvtBulletDeactiveNotifyOuterClass.EvtBulletDeactiveNotify.getDefaultInstance()) return this;
-        if (other.hasDisappearPos()) {
-          mergeDisappearPos(other.getDisappearPos());
+        if (other.forwardType_ != 0) {
+          setForwardTypeValue(other.getForwardTypeValue());
         }
         if (other.getEntityId() != 0) {
           setEntityId(other.getEntityId());
         }
-        if (other.forwardType_ != 0) {
-          setForwardTypeValue(other.getForwardTypeValue());
+        if (other.hasDisappearPos()) {
+          mergeDisappearPos(other.getDisappearPos());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -566,18 +566,103 @@ public final class EvtBulletDeactiveNotifyOuterClass {
         return this;
       }
 
+      private int forwardType_ = 0;
+      /**
+       * <code>.ForwardType forward_type = 1;</code>
+       * @return The enum numeric value on the wire for forwardType.
+       */
+      @java.lang.Override public int getForwardTypeValue() {
+        return forwardType_;
+      }
+      /**
+       * <code>.ForwardType forward_type = 1;</code>
+       * @param value The enum numeric value on the wire for forwardType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setForwardTypeValue(int value) {
+        
+        forwardType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.ForwardType forward_type = 1;</code>
+       * @return The forwardType.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType getForwardType() {
+        @SuppressWarnings("deprecation")
+        emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType result = emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType.valueOf(forwardType_);
+        return result == null ? emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.ForwardType forward_type = 1;</code>
+       * @param value The forwardType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setForwardType(emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        forwardType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.ForwardType forward_type = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearForwardType() {
+        
+        forwardType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int entityId_ ;
+      /**
+       * <code>uint32 entity_id = 14;</code>
+       * @return The entityId.
+       */
+      @java.lang.Override
+      public int getEntityId() {
+        return entityId_;
+      }
+      /**
+       * <code>uint32 entity_id = 14;</code>
+       * @param value The entityId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEntityId(int value) {
+        
+        entityId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 entity_id = 14;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEntityId() {
+        
+        entityId_ = 0;
+        onChanged();
+        return this;
+      }
+
       private emu.grasscutter.net.proto.VectorOuterClass.Vector disappearPos_;
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> disappearPosBuilder_;
       /**
-       * <code>.Vector disappear_pos = 10;</code>
+       * <code>.Vector disappear_pos = 8;</code>
        * @return Whether the disappearPos field is set.
        */
       public boolean hasDisappearPos() {
         return disappearPosBuilder_ != null || disappearPos_ != null;
       }
       /**
-       * <code>.Vector disappear_pos = 10;</code>
+       * <code>.Vector disappear_pos = 8;</code>
        * @return The disappearPos.
        */
       public emu.grasscutter.net.proto.VectorOuterClass.Vector getDisappearPos() {
@@ -588,7 +673,7 @@ public final class EvtBulletDeactiveNotifyOuterClass {
         }
       }
       /**
-       * <code>.Vector disappear_pos = 10;</code>
+       * <code>.Vector disappear_pos = 8;</code>
        */
       public Builder setDisappearPos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
         if (disappearPosBuilder_ == null) {
@@ -604,7 +689,7 @@ public final class EvtBulletDeactiveNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.Vector disappear_pos = 10;</code>
+       * <code>.Vector disappear_pos = 8;</code>
        */
       public Builder setDisappearPos(
           emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
@@ -618,7 +703,7 @@ public final class EvtBulletDeactiveNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.Vector disappear_pos = 10;</code>
+       * <code>.Vector disappear_pos = 8;</code>
        */
       public Builder mergeDisappearPos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
         if (disappearPosBuilder_ == null) {
@@ -636,7 +721,7 @@ public final class EvtBulletDeactiveNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.Vector disappear_pos = 10;</code>
+       * <code>.Vector disappear_pos = 8;</code>
        */
       public Builder clearDisappearPos() {
         if (disappearPosBuilder_ == null) {
@@ -650,7 +735,7 @@ public final class EvtBulletDeactiveNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.Vector disappear_pos = 10;</code>
+       * <code>.Vector disappear_pos = 8;</code>
        */
       public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder getDisappearPosBuilder() {
         
@@ -658,7 +743,7 @@ public final class EvtBulletDeactiveNotifyOuterClass {
         return getDisappearPosFieldBuilder().getBuilder();
       }
       /**
-       * <code>.Vector disappear_pos = 10;</code>
+       * <code>.Vector disappear_pos = 8;</code>
        */
       public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getDisappearPosOrBuilder() {
         if (disappearPosBuilder_ != null) {
@@ -669,7 +754,7 @@ public final class EvtBulletDeactiveNotifyOuterClass {
         }
       }
       /**
-       * <code>.Vector disappear_pos = 10;</code>
+       * <code>.Vector disappear_pos = 8;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> 
@@ -683,91 +768,6 @@ public final class EvtBulletDeactiveNotifyOuterClass {
           disappearPos_ = null;
         }
         return disappearPosBuilder_;
-      }
-
-      private int entityId_ ;
-      /**
-       * <code>uint32 entity_id = 15;</code>
-       * @return The entityId.
-       */
-      @java.lang.Override
-      public int getEntityId() {
-        return entityId_;
-      }
-      /**
-       * <code>uint32 entity_id = 15;</code>
-       * @param value The entityId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEntityId(int value) {
-        
-        entityId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 entity_id = 15;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEntityId() {
-        
-        entityId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int forwardType_ = 0;
-      /**
-       * <code>.ForwardType forward_type = 2;</code>
-       * @return The enum numeric value on the wire for forwardType.
-       */
-      @java.lang.Override public int getForwardTypeValue() {
-        return forwardType_;
-      }
-      /**
-       * <code>.ForwardType forward_type = 2;</code>
-       * @param value The enum numeric value on the wire for forwardType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setForwardTypeValue(int value) {
-        
-        forwardType_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.ForwardType forward_type = 2;</code>
-       * @return The forwardType.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType getForwardType() {
-        @SuppressWarnings("deprecation")
-        emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType result = emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType.valueOf(forwardType_);
-        return result == null ? emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType.UNRECOGNIZED : result;
-      }
-      /**
-       * <code>.ForwardType forward_type = 2;</code>
-       * @param value The forwardType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setForwardType(emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        forwardType_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.ForwardType forward_type = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearForwardType() {
-        
-        forwardType_ = 0;
-        onChanged();
-        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -836,27 +836,27 @@ public final class EvtBulletDeactiveNotifyOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\035EvtBulletDeactiveNotify.proto\032\014Vector." +
-      "proto\032\021ForwardType.proto\"p\n\027EvtBulletDea" +
-      "ctiveNotify\022\036\n\rdisappear_pos\030\n \001(\0132\007.Vec" +
-      "tor\022\021\n\tentity_id\030\017 \001(\r\022\"\n\014forward_type\030\002" +
-      " \001(\0162\014.ForwardTypeB\033\n\031emu.grasscutter.ne" +
+      "\n\035EvtBulletDeactiveNotify.proto\032\021Forward" +
+      "Type.proto\032\014Vector.proto\"p\n\027EvtBulletDea" +
+      "ctiveNotify\022\"\n\014forward_type\030\001 \001(\0162\014.Forw" +
+      "ardType\022\021\n\tentity_id\030\016 \001(\r\022\036\n\rdisappear_" +
+      "pos\030\010 \001(\0132\007.VectorB\033\n\031emu.grasscutter.ne" +
       "t.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          emu.grasscutter.net.proto.VectorOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.ForwardTypeOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.VectorOuterClass.getDescriptor(),
         });
     internal_static_EvtBulletDeactiveNotify_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_EvtBulletDeactiveNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_EvtBulletDeactiveNotify_descriptor,
-        new java.lang.String[] { "DisappearPos", "EntityId", "ForwardType", });
-    emu.grasscutter.net.proto.VectorOuterClass.getDescriptor();
+        new java.lang.String[] { "ForwardType", "EntityId", "DisappearPos", });
     emu.grasscutter.net.proto.ForwardTypeOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.VectorOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -19,21 +19,21 @@ public final class SummerTimeSprintBoatRestartReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 schedule_id = 2;</code>
-     * @return The scheduleId.
-     */
-    int getScheduleId();
-
-    /**
-     * <code>uint32 group_id = 15;</code>
+     * <code>uint32 group_id = 7;</code>
      * @return The groupId.
      */
     int getGroupId();
+
+    /**
+     * <code>uint32 schedule_id = 5;</code>
+     * @return The scheduleId.
+     */
+    int getScheduleId();
   }
   /**
    * <pre>
-   * CmdId: 8170
-   * Obf: FMBKHMGAFLF
+   * CmdId: 23353
+   * Obf: EBPGPMJAIPH
    * </pre>
    *
    * Protobuf type {@code SummerTimeSprintBoatRestartReq}
@@ -80,12 +80,12 @@ public final class SummerTimeSprintBoatRestartReqOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
+            case 40: {
 
               scheduleId_ = input.readUInt32();
               break;
             }
-            case 120: {
+            case 56: {
 
               groupId_ = input.readUInt32();
               break;
@@ -122,26 +122,26 @@ public final class SummerTimeSprintBoatRestartReqOuterClass {
               emu.grasscutter.net.proto.SummerTimeSprintBoatRestartReqOuterClass.SummerTimeSprintBoatRestartReq.class, emu.grasscutter.net.proto.SummerTimeSprintBoatRestartReqOuterClass.SummerTimeSprintBoatRestartReq.Builder.class);
     }
 
-    public static final int SCHEDULE_ID_FIELD_NUMBER = 2;
-    private int scheduleId_;
-    /**
-     * <code>uint32 schedule_id = 2;</code>
-     * @return The scheduleId.
-     */
-    @java.lang.Override
-    public int getScheduleId() {
-      return scheduleId_;
-    }
-
-    public static final int GROUP_ID_FIELD_NUMBER = 15;
+    public static final int GROUP_ID_FIELD_NUMBER = 7;
     private int groupId_;
     /**
-     * <code>uint32 group_id = 15;</code>
+     * <code>uint32 group_id = 7;</code>
      * @return The groupId.
      */
     @java.lang.Override
     public int getGroupId() {
       return groupId_;
+    }
+
+    public static final int SCHEDULE_ID_FIELD_NUMBER = 5;
+    private int scheduleId_;
+    /**
+     * <code>uint32 schedule_id = 5;</code>
+     * @return The scheduleId.
+     */
+    @java.lang.Override
+    public int getScheduleId() {
+      return scheduleId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -159,10 +159,10 @@ public final class SummerTimeSprintBoatRestartReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (scheduleId_ != 0) {
-        output.writeUInt32(2, scheduleId_);
+        output.writeUInt32(5, scheduleId_);
       }
       if (groupId_ != 0) {
-        output.writeUInt32(15, groupId_);
+        output.writeUInt32(7, groupId_);
       }
       unknownFields.writeTo(output);
     }
@@ -175,11 +175,11 @@ public final class SummerTimeSprintBoatRestartReqOuterClass {
       size = 0;
       if (scheduleId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, scheduleId_);
+          .computeUInt32Size(5, scheduleId_);
       }
       if (groupId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, groupId_);
+          .computeUInt32Size(7, groupId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -196,10 +196,10 @@ public final class SummerTimeSprintBoatRestartReqOuterClass {
       }
       emu.grasscutter.net.proto.SummerTimeSprintBoatRestartReqOuterClass.SummerTimeSprintBoatRestartReq other = (emu.grasscutter.net.proto.SummerTimeSprintBoatRestartReqOuterClass.SummerTimeSprintBoatRestartReq) obj;
 
-      if (getScheduleId()
-          != other.getScheduleId()) return false;
       if (getGroupId()
           != other.getGroupId()) return false;
+      if (getScheduleId()
+          != other.getScheduleId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -211,10 +211,10 @@ public final class SummerTimeSprintBoatRestartReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + SCHEDULE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getScheduleId();
       hash = (37 * hash) + GROUP_ID_FIELD_NUMBER;
       hash = (53 * hash) + getGroupId();
+      hash = (37 * hash) + SCHEDULE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getScheduleId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -312,8 +312,8 @@ public final class SummerTimeSprintBoatRestartReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8170
-     * Obf: FMBKHMGAFLF
+     * CmdId: 23353
+     * Obf: EBPGPMJAIPH
      * </pre>
      *
      * Protobuf type {@code SummerTimeSprintBoatRestartReq}
@@ -353,9 +353,9 @@ public final class SummerTimeSprintBoatRestartReqOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        scheduleId_ = 0;
-
         groupId_ = 0;
+
+        scheduleId_ = 0;
 
         return this;
       }
@@ -383,8 +383,8 @@ public final class SummerTimeSprintBoatRestartReqOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.SummerTimeSprintBoatRestartReqOuterClass.SummerTimeSprintBoatRestartReq buildPartial() {
         emu.grasscutter.net.proto.SummerTimeSprintBoatRestartReqOuterClass.SummerTimeSprintBoatRestartReq result = new emu.grasscutter.net.proto.SummerTimeSprintBoatRestartReqOuterClass.SummerTimeSprintBoatRestartReq(this);
-        result.scheduleId_ = scheduleId_;
         result.groupId_ = groupId_;
+        result.scheduleId_ = scheduleId_;
         onBuilt();
         return result;
       }
@@ -433,11 +433,11 @@ public final class SummerTimeSprintBoatRestartReqOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.SummerTimeSprintBoatRestartReqOuterClass.SummerTimeSprintBoatRestartReq other) {
         if (other == emu.grasscutter.net.proto.SummerTimeSprintBoatRestartReqOuterClass.SummerTimeSprintBoatRestartReq.getDefaultInstance()) return this;
-        if (other.getScheduleId() != 0) {
-          setScheduleId(other.getScheduleId());
-        }
         if (other.getGroupId() != 0) {
           setGroupId(other.getGroupId());
+        }
+        if (other.getScheduleId() != 0) {
+          setScheduleId(other.getScheduleId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -468,40 +468,9 @@ public final class SummerTimeSprintBoatRestartReqOuterClass {
         return this;
       }
 
-      private int scheduleId_ ;
-      /**
-       * <code>uint32 schedule_id = 2;</code>
-       * @return The scheduleId.
-       */
-      @java.lang.Override
-      public int getScheduleId() {
-        return scheduleId_;
-      }
-      /**
-       * <code>uint32 schedule_id = 2;</code>
-       * @param value The scheduleId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setScheduleId(int value) {
-        
-        scheduleId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 schedule_id = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearScheduleId() {
-        
-        scheduleId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int groupId_ ;
       /**
-       * <code>uint32 group_id = 15;</code>
+       * <code>uint32 group_id = 7;</code>
        * @return The groupId.
        */
       @java.lang.Override
@@ -509,7 +478,7 @@ public final class SummerTimeSprintBoatRestartReqOuterClass {
         return groupId_;
       }
       /**
-       * <code>uint32 group_id = 15;</code>
+       * <code>uint32 group_id = 7;</code>
        * @param value The groupId to set.
        * @return This builder for chaining.
        */
@@ -520,12 +489,43 @@ public final class SummerTimeSprintBoatRestartReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 group_id = 15;</code>
+       * <code>uint32 group_id = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearGroupId() {
         
         groupId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int scheduleId_ ;
+      /**
+       * <code>uint32 schedule_id = 5;</code>
+       * @return The scheduleId.
+       */
+      @java.lang.Override
+      public int getScheduleId() {
+        return scheduleId_;
+      }
+      /**
+       * <code>uint32 schedule_id = 5;</code>
+       * @param value The scheduleId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setScheduleId(int value) {
+        
+        scheduleId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 schedule_id = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearScheduleId() {
+        
+        scheduleId_ = 0;
         onChanged();
         return this;
       }
@@ -597,8 +597,8 @@ public final class SummerTimeSprintBoatRestartReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n$SummerTimeSprintBoatRestartReq.proto\"G" +
-      "\n\036SummerTimeSprintBoatRestartReq\022\023\n\013sche" +
-      "dule_id\030\002 \001(\r\022\020\n\010group_id\030\017 \001(\rB\033\n\031emu.g" +
+      "\n\036SummerTimeSprintBoatRestartReq\022\020\n\010grou" +
+      "p_id\030\007 \001(\r\022\023\n\013schedule_id\030\005 \001(\rB\033\n\031emu.g" +
       "rasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -610,7 +610,7 @@ public final class SummerTimeSprintBoatRestartReqOuterClass {
     internal_static_SummerTimeSprintBoatRestartReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SummerTimeSprintBoatRestartReq_descriptor,
-        new java.lang.String[] { "ScheduleId", "GroupId", });
+        new java.lang.String[] { "GroupId", "ScheduleId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -19,21 +19,21 @@ public final class InterruptGalleryRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 gallery_id = 1;</code>
-     * @return The galleryId.
-     */
-    int getGalleryId();
-
-    /**
      * <code>int32 retcode = 10;</code>
      * @return The retcode.
      */
     int getRetcode();
+
+    /**
+     * <code>uint32 gallery_id = 13;</code>
+     * @return The galleryId.
+     */
+    int getGalleryId();
   }
   /**
    * <pre>
-   * CmdId: 5534
-   * Obf: MDKNCCBLKOA
+   * CmdId: 1940
+   * Obf: NGJJLICFOHI
    * </pre>
    *
    * Protobuf type {@code InterruptGalleryRsp}
@@ -80,14 +80,14 @@ public final class InterruptGalleryRspOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
-
-              galleryId_ = input.readUInt32();
-              break;
-            }
             case 80: {
 
               retcode_ = input.readInt32();
+              break;
+            }
+            case 104: {
+
+              galleryId_ = input.readUInt32();
               break;
             }
             default: {
@@ -122,17 +122,6 @@ public final class InterruptGalleryRspOuterClass {
               emu.grasscutter.net.proto.InterruptGalleryRspOuterClass.InterruptGalleryRsp.class, emu.grasscutter.net.proto.InterruptGalleryRspOuterClass.InterruptGalleryRsp.Builder.class);
     }
 
-    public static final int GALLERY_ID_FIELD_NUMBER = 1;
-    private int galleryId_;
-    /**
-     * <code>uint32 gallery_id = 1;</code>
-     * @return The galleryId.
-     */
-    @java.lang.Override
-    public int getGalleryId() {
-      return galleryId_;
-    }
-
     public static final int RETCODE_FIELD_NUMBER = 10;
     private int retcode_;
     /**
@@ -142,6 +131,17 @@ public final class InterruptGalleryRspOuterClass {
     @java.lang.Override
     public int getRetcode() {
       return retcode_;
+    }
+
+    public static final int GALLERY_ID_FIELD_NUMBER = 13;
+    private int galleryId_;
+    /**
+     * <code>uint32 gallery_id = 13;</code>
+     * @return The galleryId.
+     */
+    @java.lang.Override
+    public int getGalleryId() {
+      return galleryId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -158,11 +158,11 @@ public final class InterruptGalleryRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (galleryId_ != 0) {
-        output.writeUInt32(1, galleryId_);
-      }
       if (retcode_ != 0) {
         output.writeInt32(10, retcode_);
+      }
+      if (galleryId_ != 0) {
+        output.writeUInt32(13, galleryId_);
       }
       unknownFields.writeTo(output);
     }
@@ -173,13 +173,13 @@ public final class InterruptGalleryRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (galleryId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, galleryId_);
-      }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(10, retcode_);
+      }
+      if (galleryId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(13, galleryId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -196,10 +196,10 @@ public final class InterruptGalleryRspOuterClass {
       }
       emu.grasscutter.net.proto.InterruptGalleryRspOuterClass.InterruptGalleryRsp other = (emu.grasscutter.net.proto.InterruptGalleryRspOuterClass.InterruptGalleryRsp) obj;
 
-      if (getGalleryId()
-          != other.getGalleryId()) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
+      if (getGalleryId()
+          != other.getGalleryId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -211,10 +211,10 @@ public final class InterruptGalleryRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + GALLERY_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getGalleryId();
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
+      hash = (37 * hash) + GALLERY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getGalleryId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -312,8 +312,8 @@ public final class InterruptGalleryRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 5534
-     * Obf: MDKNCCBLKOA
+     * CmdId: 1940
+     * Obf: NGJJLICFOHI
      * </pre>
      *
      * Protobuf type {@code InterruptGalleryRsp}
@@ -353,9 +353,9 @@ public final class InterruptGalleryRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        galleryId_ = 0;
-
         retcode_ = 0;
+
+        galleryId_ = 0;
 
         return this;
       }
@@ -383,8 +383,8 @@ public final class InterruptGalleryRspOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.InterruptGalleryRspOuterClass.InterruptGalleryRsp buildPartial() {
         emu.grasscutter.net.proto.InterruptGalleryRspOuterClass.InterruptGalleryRsp result = new emu.grasscutter.net.proto.InterruptGalleryRspOuterClass.InterruptGalleryRsp(this);
-        result.galleryId_ = galleryId_;
         result.retcode_ = retcode_;
+        result.galleryId_ = galleryId_;
         onBuilt();
         return result;
       }
@@ -433,11 +433,11 @@ public final class InterruptGalleryRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.InterruptGalleryRspOuterClass.InterruptGalleryRsp other) {
         if (other == emu.grasscutter.net.proto.InterruptGalleryRspOuterClass.InterruptGalleryRsp.getDefaultInstance()) return this;
-        if (other.getGalleryId() != 0) {
-          setGalleryId(other.getGalleryId());
-        }
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
+        }
+        if (other.getGalleryId() != 0) {
+          setGalleryId(other.getGalleryId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -468,37 +468,6 @@ public final class InterruptGalleryRspOuterClass {
         return this;
       }
 
-      private int galleryId_ ;
-      /**
-       * <code>uint32 gallery_id = 1;</code>
-       * @return The galleryId.
-       */
-      @java.lang.Override
-      public int getGalleryId() {
-        return galleryId_;
-      }
-      /**
-       * <code>uint32 gallery_id = 1;</code>
-       * @param value The galleryId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setGalleryId(int value) {
-        
-        galleryId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 gallery_id = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearGalleryId() {
-        
-        galleryId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int retcode_ ;
       /**
        * <code>int32 retcode = 10;</code>
@@ -526,6 +495,37 @@ public final class InterruptGalleryRspOuterClass {
       public Builder clearRetcode() {
         
         retcode_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int galleryId_ ;
+      /**
+       * <code>uint32 gallery_id = 13;</code>
+       * @return The galleryId.
+       */
+      @java.lang.Override
+      public int getGalleryId() {
+        return galleryId_;
+      }
+      /**
+       * <code>uint32 gallery_id = 13;</code>
+       * @param value The galleryId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGalleryId(int value) {
+        
+        galleryId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 gallery_id = 13;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGalleryId() {
+        
+        galleryId_ = 0;
         onChanged();
         return this;
       }
@@ -597,8 +597,8 @@ public final class InterruptGalleryRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\031InterruptGalleryRsp.proto\":\n\023Interrupt" +
-      "GalleryRsp\022\022\n\ngallery_id\030\001 \001(\r\022\017\n\007retcod" +
-      "e\030\n \001(\005B\033\n\031emu.grasscutter.net.protob\006pr" +
+      "GalleryRsp\022\017\n\007retcode\030\n \001(\005\022\022\n\ngallery_i" +
+      "d\030\r \001(\rB\033\n\031emu.grasscutter.net.protob\006pr" +
       "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -610,7 +610,7 @@ public final class InterruptGalleryRspOuterClass {
     internal_static_InterruptGalleryRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_InterruptGalleryRsp_descriptor,
-        new java.lang.String[] { "GalleryId", "Retcode", });
+        new java.lang.String[] { "Retcode", "GalleryId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

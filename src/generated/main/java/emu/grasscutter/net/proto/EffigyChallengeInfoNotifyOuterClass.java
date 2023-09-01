@@ -19,44 +19,44 @@ public final class EffigyChallengeInfoNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 challenge_score = 10;</code>
-     * @return The challengeScore.
-     */
-    int getChallengeScore();
-
-    /**
-     * <code>uint32 challenge_id = 8;</code>
+     * <code>uint32 challenge_id = 4;</code>
      * @return The challengeId.
      */
     int getChallengeId();
 
     /**
-     * <code>uint32 difficulty_id = 1;</code>
-     * @return The difficultyId.
-     */
-    int getDifficultyId();
-
-    /**
-     * <code>repeated uint32 condition_id_list = 6;</code>
+     * <code>repeated uint32 condition_id_list = 11;</code>
      * @return A list containing the conditionIdList.
      */
     java.util.List<java.lang.Integer> getConditionIdListList();
     /**
-     * <code>repeated uint32 condition_id_list = 6;</code>
+     * <code>repeated uint32 condition_id_list = 11;</code>
      * @return The count of conditionIdList.
      */
     int getConditionIdListCount();
     /**
-     * <code>repeated uint32 condition_id_list = 6;</code>
+     * <code>repeated uint32 condition_id_list = 11;</code>
      * @param index The index of the element to return.
      * @return The conditionIdList at the given index.
      */
     int getConditionIdList(int index);
+
+    /**
+     * <code>uint32 challenge_score = 8;</code>
+     * @return The challengeScore.
+     */
+    int getChallengeScore();
+
+    /**
+     * <code>uint32 difficulty_id = 2;</code>
+     * @return The difficultyId.
+     */
+    int getDifficultyId();
   }
   /**
    * <pre>
-   * CmdId: 2066
-   * Obf: KKLFNKFMIGM
+   * CmdId: 25457
+   * Obf: PKDIAJHMPAP
    * </pre>
    *
    * Protobuf type {@code EffigyChallengeInfoNotify}
@@ -105,12 +105,22 @@ public final class EffigyChallengeInfoNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 16: {
 
               difficultyId_ = input.readUInt32();
               break;
             }
-            case 48: {
+            case 32: {
+
+              challengeId_ = input.readUInt32();
+              break;
+            }
+            case 64: {
+
+              challengeScore_ = input.readUInt32();
+              break;
+            }
+            case 88: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 conditionIdList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -118,7 +128,7 @@ public final class EffigyChallengeInfoNotifyOuterClass {
               conditionIdList_.addInt(input.readUInt32());
               break;
             }
-            case 50: {
+            case 90: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -129,16 +139,6 @@ public final class EffigyChallengeInfoNotifyOuterClass {
                 conditionIdList_.addInt(input.readUInt32());
               }
               input.popLimit(limit);
-              break;
-            }
-            case 64: {
-
-              challengeId_ = input.readUInt32();
-              break;
-            }
-            case 80: {
-
-              challengeScore_ = input.readUInt32();
               break;
             }
             default: {
@@ -176,21 +176,10 @@ public final class EffigyChallengeInfoNotifyOuterClass {
               emu.grasscutter.net.proto.EffigyChallengeInfoNotifyOuterClass.EffigyChallengeInfoNotify.class, emu.grasscutter.net.proto.EffigyChallengeInfoNotifyOuterClass.EffigyChallengeInfoNotify.Builder.class);
     }
 
-    public static final int CHALLENGE_SCORE_FIELD_NUMBER = 10;
-    private int challengeScore_;
-    /**
-     * <code>uint32 challenge_score = 10;</code>
-     * @return The challengeScore.
-     */
-    @java.lang.Override
-    public int getChallengeScore() {
-      return challengeScore_;
-    }
-
-    public static final int CHALLENGE_ID_FIELD_NUMBER = 8;
+    public static final int CHALLENGE_ID_FIELD_NUMBER = 4;
     private int challengeId_;
     /**
-     * <code>uint32 challenge_id = 8;</code>
+     * <code>uint32 challenge_id = 4;</code>
      * @return The challengeId.
      */
     @java.lang.Override
@@ -198,21 +187,10 @@ public final class EffigyChallengeInfoNotifyOuterClass {
       return challengeId_;
     }
 
-    public static final int DIFFICULTY_ID_FIELD_NUMBER = 1;
-    private int difficultyId_;
-    /**
-     * <code>uint32 difficulty_id = 1;</code>
-     * @return The difficultyId.
-     */
-    @java.lang.Override
-    public int getDifficultyId() {
-      return difficultyId_;
-    }
-
-    public static final int CONDITION_ID_LIST_FIELD_NUMBER = 6;
+    public static final int CONDITION_ID_LIST_FIELD_NUMBER = 11;
     private com.google.protobuf.Internal.IntList conditionIdList_;
     /**
-     * <code>repeated uint32 condition_id_list = 6;</code>
+     * <code>repeated uint32 condition_id_list = 11;</code>
      * @return A list containing the conditionIdList.
      */
     @java.lang.Override
@@ -221,14 +199,14 @@ public final class EffigyChallengeInfoNotifyOuterClass {
       return conditionIdList_;
     }
     /**
-     * <code>repeated uint32 condition_id_list = 6;</code>
+     * <code>repeated uint32 condition_id_list = 11;</code>
      * @return The count of conditionIdList.
      */
     public int getConditionIdListCount() {
       return conditionIdList_.size();
     }
     /**
-     * <code>repeated uint32 condition_id_list = 6;</code>
+     * <code>repeated uint32 condition_id_list = 11;</code>
      * @param index The index of the element to return.
      * @return The conditionIdList at the given index.
      */
@@ -236,6 +214,28 @@ public final class EffigyChallengeInfoNotifyOuterClass {
       return conditionIdList_.getInt(index);
     }
     private int conditionIdListMemoizedSerializedSize = -1;
+
+    public static final int CHALLENGE_SCORE_FIELD_NUMBER = 8;
+    private int challengeScore_;
+    /**
+     * <code>uint32 challenge_score = 8;</code>
+     * @return The challengeScore.
+     */
+    @java.lang.Override
+    public int getChallengeScore() {
+      return challengeScore_;
+    }
+
+    public static final int DIFFICULTY_ID_FIELD_NUMBER = 2;
+    private int difficultyId_;
+    /**
+     * <code>uint32 difficulty_id = 2;</code>
+     * @return The difficultyId.
+     */
+    @java.lang.Override
+    public int getDifficultyId() {
+      return difficultyId_;
+    }
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
@@ -253,20 +253,20 @@ public final class EffigyChallengeInfoNotifyOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (difficultyId_ != 0) {
-        output.writeUInt32(1, difficultyId_);
+        output.writeUInt32(2, difficultyId_);
+      }
+      if (challengeId_ != 0) {
+        output.writeUInt32(4, challengeId_);
+      }
+      if (challengeScore_ != 0) {
+        output.writeUInt32(8, challengeScore_);
       }
       if (getConditionIdListList().size() > 0) {
-        output.writeUInt32NoTag(50);
+        output.writeUInt32NoTag(90);
         output.writeUInt32NoTag(conditionIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < conditionIdList_.size(); i++) {
         output.writeUInt32NoTag(conditionIdList_.getInt(i));
-      }
-      if (challengeId_ != 0) {
-        output.writeUInt32(8, challengeId_);
-      }
-      if (challengeScore_ != 0) {
-        output.writeUInt32(10, challengeScore_);
       }
       unknownFields.writeTo(output);
     }
@@ -279,7 +279,15 @@ public final class EffigyChallengeInfoNotifyOuterClass {
       size = 0;
       if (difficultyId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, difficultyId_);
+          .computeUInt32Size(2, difficultyId_);
+      }
+      if (challengeId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(4, challengeId_);
+      }
+      if (challengeScore_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(8, challengeScore_);
       }
       {
         int dataSize = 0;
@@ -294,14 +302,6 @@ public final class EffigyChallengeInfoNotifyOuterClass {
               .computeInt32SizeNoTag(dataSize);
         }
         conditionIdListMemoizedSerializedSize = dataSize;
-      }
-      if (challengeId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, challengeId_);
-      }
-      if (challengeScore_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, challengeScore_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -318,14 +318,14 @@ public final class EffigyChallengeInfoNotifyOuterClass {
       }
       emu.grasscutter.net.proto.EffigyChallengeInfoNotifyOuterClass.EffigyChallengeInfoNotify other = (emu.grasscutter.net.proto.EffigyChallengeInfoNotifyOuterClass.EffigyChallengeInfoNotify) obj;
 
-      if (getChallengeScore()
-          != other.getChallengeScore()) return false;
       if (getChallengeId()
           != other.getChallengeId()) return false;
-      if (getDifficultyId()
-          != other.getDifficultyId()) return false;
       if (!getConditionIdListList()
           .equals(other.getConditionIdListList())) return false;
+      if (getChallengeScore()
+          != other.getChallengeScore()) return false;
+      if (getDifficultyId()
+          != other.getDifficultyId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -337,16 +337,16 @@ public final class EffigyChallengeInfoNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + CHALLENGE_SCORE_FIELD_NUMBER;
-      hash = (53 * hash) + getChallengeScore();
       hash = (37 * hash) + CHALLENGE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getChallengeId();
-      hash = (37 * hash) + DIFFICULTY_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getDifficultyId();
       if (getConditionIdListCount() > 0) {
         hash = (37 * hash) + CONDITION_ID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getConditionIdListList().hashCode();
       }
+      hash = (37 * hash) + CHALLENGE_SCORE_FIELD_NUMBER;
+      hash = (53 * hash) + getChallengeScore();
+      hash = (37 * hash) + DIFFICULTY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getDifficultyId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -444,8 +444,8 @@ public final class EffigyChallengeInfoNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2066
-     * Obf: KKLFNKFMIGM
+     * CmdId: 25457
+     * Obf: PKDIAJHMPAP
      * </pre>
      *
      * Protobuf type {@code EffigyChallengeInfoNotify}
@@ -485,14 +485,14 @@ public final class EffigyChallengeInfoNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        challengeScore_ = 0;
-
         challengeId_ = 0;
-
-        difficultyId_ = 0;
 
         conditionIdList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        challengeScore_ = 0;
+
+        difficultyId_ = 0;
+
         return this;
       }
 
@@ -520,14 +520,14 @@ public final class EffigyChallengeInfoNotifyOuterClass {
       public emu.grasscutter.net.proto.EffigyChallengeInfoNotifyOuterClass.EffigyChallengeInfoNotify buildPartial() {
         emu.grasscutter.net.proto.EffigyChallengeInfoNotifyOuterClass.EffigyChallengeInfoNotify result = new emu.grasscutter.net.proto.EffigyChallengeInfoNotifyOuterClass.EffigyChallengeInfoNotify(this);
         int from_bitField0_ = bitField0_;
-        result.challengeScore_ = challengeScore_;
         result.challengeId_ = challengeId_;
-        result.difficultyId_ = difficultyId_;
         if (((bitField0_ & 0x00000001) != 0)) {
           conditionIdList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.conditionIdList_ = conditionIdList_;
+        result.challengeScore_ = challengeScore_;
+        result.difficultyId_ = difficultyId_;
         onBuilt();
         return result;
       }
@@ -576,14 +576,8 @@ public final class EffigyChallengeInfoNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.EffigyChallengeInfoNotifyOuterClass.EffigyChallengeInfoNotify other) {
         if (other == emu.grasscutter.net.proto.EffigyChallengeInfoNotifyOuterClass.EffigyChallengeInfoNotify.getDefaultInstance()) return this;
-        if (other.getChallengeScore() != 0) {
-          setChallengeScore(other.getChallengeScore());
-        }
         if (other.getChallengeId() != 0) {
           setChallengeId(other.getChallengeId());
-        }
-        if (other.getDifficultyId() != 0) {
-          setDifficultyId(other.getDifficultyId());
         }
         if (!other.conditionIdList_.isEmpty()) {
           if (conditionIdList_.isEmpty()) {
@@ -594,6 +588,12 @@ public final class EffigyChallengeInfoNotifyOuterClass {
             conditionIdList_.addAll(other.conditionIdList_);
           }
           onChanged();
+        }
+        if (other.getChallengeScore() != 0) {
+          setChallengeScore(other.getChallengeScore());
+        }
+        if (other.getDifficultyId() != 0) {
+          setDifficultyId(other.getDifficultyId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -625,40 +625,9 @@ public final class EffigyChallengeInfoNotifyOuterClass {
       }
       private int bitField0_;
 
-      private int challengeScore_ ;
-      /**
-       * <code>uint32 challenge_score = 10;</code>
-       * @return The challengeScore.
-       */
-      @java.lang.Override
-      public int getChallengeScore() {
-        return challengeScore_;
-      }
-      /**
-       * <code>uint32 challenge_score = 10;</code>
-       * @param value The challengeScore to set.
-       * @return This builder for chaining.
-       */
-      public Builder setChallengeScore(int value) {
-        
-        challengeScore_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 challenge_score = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearChallengeScore() {
-        
-        challengeScore_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int challengeId_ ;
       /**
-       * <code>uint32 challenge_id = 8;</code>
+       * <code>uint32 challenge_id = 4;</code>
        * @return The challengeId.
        */
       @java.lang.Override
@@ -666,7 +635,7 @@ public final class EffigyChallengeInfoNotifyOuterClass {
         return challengeId_;
       }
       /**
-       * <code>uint32 challenge_id = 8;</code>
+       * <code>uint32 challenge_id = 4;</code>
        * @param value The challengeId to set.
        * @return This builder for chaining.
        */
@@ -677,43 +646,12 @@ public final class EffigyChallengeInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 challenge_id = 8;</code>
+       * <code>uint32 challenge_id = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearChallengeId() {
         
         challengeId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int difficultyId_ ;
-      /**
-       * <code>uint32 difficulty_id = 1;</code>
-       * @return The difficultyId.
-       */
-      @java.lang.Override
-      public int getDifficultyId() {
-        return difficultyId_;
-      }
-      /**
-       * <code>uint32 difficulty_id = 1;</code>
-       * @param value The difficultyId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDifficultyId(int value) {
-        
-        difficultyId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 difficulty_id = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDifficultyId() {
-        
-        difficultyId_ = 0;
         onChanged();
         return this;
       }
@@ -726,7 +664,7 @@ public final class EffigyChallengeInfoNotifyOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 condition_id_list = 6;</code>
+       * <code>repeated uint32 condition_id_list = 11;</code>
        * @return A list containing the conditionIdList.
        */
       public java.util.List<java.lang.Integer>
@@ -735,14 +673,14 @@ public final class EffigyChallengeInfoNotifyOuterClass {
                  java.util.Collections.unmodifiableList(conditionIdList_) : conditionIdList_;
       }
       /**
-       * <code>repeated uint32 condition_id_list = 6;</code>
+       * <code>repeated uint32 condition_id_list = 11;</code>
        * @return The count of conditionIdList.
        */
       public int getConditionIdListCount() {
         return conditionIdList_.size();
       }
       /**
-       * <code>repeated uint32 condition_id_list = 6;</code>
+       * <code>repeated uint32 condition_id_list = 11;</code>
        * @param index The index of the element to return.
        * @return The conditionIdList at the given index.
        */
@@ -750,7 +688,7 @@ public final class EffigyChallengeInfoNotifyOuterClass {
         return conditionIdList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 condition_id_list = 6;</code>
+       * <code>repeated uint32 condition_id_list = 11;</code>
        * @param index The index to set the value at.
        * @param value The conditionIdList to set.
        * @return This builder for chaining.
@@ -763,7 +701,7 @@ public final class EffigyChallengeInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 condition_id_list = 6;</code>
+       * <code>repeated uint32 condition_id_list = 11;</code>
        * @param value The conditionIdList to add.
        * @return This builder for chaining.
        */
@@ -774,7 +712,7 @@ public final class EffigyChallengeInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 condition_id_list = 6;</code>
+       * <code>repeated uint32 condition_id_list = 11;</code>
        * @param values The conditionIdList to add.
        * @return This builder for chaining.
        */
@@ -787,12 +725,74 @@ public final class EffigyChallengeInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 condition_id_list = 6;</code>
+       * <code>repeated uint32 condition_id_list = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearConditionIdList() {
         conditionIdList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      private int challengeScore_ ;
+      /**
+       * <code>uint32 challenge_score = 8;</code>
+       * @return The challengeScore.
+       */
+      @java.lang.Override
+      public int getChallengeScore() {
+        return challengeScore_;
+      }
+      /**
+       * <code>uint32 challenge_score = 8;</code>
+       * @param value The challengeScore to set.
+       * @return This builder for chaining.
+       */
+      public Builder setChallengeScore(int value) {
+        
+        challengeScore_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 challenge_score = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearChallengeScore() {
+        
+        challengeScore_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int difficultyId_ ;
+      /**
+       * <code>uint32 difficulty_id = 2;</code>
+       * @return The difficultyId.
+       */
+      @java.lang.Override
+      public int getDifficultyId() {
+        return difficultyId_;
+      }
+      /**
+       * <code>uint32 difficulty_id = 2;</code>
+       * @param value The difficultyId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDifficultyId(int value) {
+        
+        difficultyId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 difficulty_id = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDifficultyId() {
+        
+        difficultyId_ = 0;
         onChanged();
         return this;
       }
@@ -864,9 +864,9 @@ public final class EffigyChallengeInfoNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\037EffigyChallengeInfoNotify.proto\"|\n\031Eff" +
-      "igyChallengeInfoNotify\022\027\n\017challenge_scor" +
-      "e\030\n \001(\r\022\024\n\014challenge_id\030\010 \001(\r\022\025\n\rdifficu" +
-      "lty_id\030\001 \001(\r\022\031\n\021condition_id_list\030\006 \003(\rB" +
+      "igyChallengeInfoNotify\022\024\n\014challenge_id\030\004" +
+      " \001(\r\022\031\n\021condition_id_list\030\013 \003(\r\022\027\n\017chall" +
+      "enge_score\030\010 \001(\r\022\025\n\rdifficulty_id\030\002 \001(\rB" +
       "\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -878,7 +878,7 @@ public final class EffigyChallengeInfoNotifyOuterClass {
     internal_static_EffigyChallengeInfoNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_EffigyChallengeInfoNotify_descriptor,
-        new java.lang.String[] { "ChallengeScore", "ChallengeId", "DifficultyId", "ConditionIdList", });
+        new java.lang.String[] { "ChallengeId", "ConditionIdList", "ChallengeScore", "DifficultyId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -1,17 +1,18 @@
 package emu.grasscutter.plugin;
 
-import static emu.grasscutter.utils.lang.Language.translate;
-
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.server.event.*;
 import emu.grasscutter.utils.*;
+import lombok.*;
+
+import javax.annotation.Nullable;
 import java.io.*;
 import java.lang.reflect.Method;
 import java.net.*;
 import java.util.*;
 import java.util.jar.*;
-import javax.annotation.Nullable;
-import lombok.*;
+
+import static emu.grasscutter.utils.lang.Language.translate;
 
 /** Manages the server's plugins and the event system. */
 public final class PluginManager {
@@ -20,7 +21,7 @@ public final class PluginManager {
      * A 'breaking change' is something which changes the existing logic of the API.
      */
     @SuppressWarnings("FieldCanBeLocal")
-    private static int API_VERSION = 2;
+    public static int API_VERSION = 3;
 
     /* All loaded plugins. */
     private final Map<String, Plugin> plugins = new LinkedHashMap<>();

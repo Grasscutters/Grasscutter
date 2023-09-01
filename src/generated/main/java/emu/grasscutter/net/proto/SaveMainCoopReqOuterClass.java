@@ -19,95 +19,95 @@ public final class SaveMainCoopReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>map&lt;uint32, int32&gt; LJEBGEFGOAL = 9;</code>
+     * <code>map&lt;uint32, int32&gt; GEHNFJEPCJL = 3;</code>
      */
-    int getLJEBGEFGOALCount();
+    int getGEHNFJEPCJLCount();
     /**
-     * <code>map&lt;uint32, int32&gt; LJEBGEFGOAL = 9;</code>
+     * <code>map&lt;uint32, int32&gt; GEHNFJEPCJL = 3;</code>
      */
-    boolean containsLJEBGEFGOAL(
+    boolean containsGEHNFJEPCJL(
         int key);
     /**
-     * Use {@link #getLJEBGEFGOALMap()} instead.
+     * Use {@link #getGEHNFJEPCJLMap()} instead.
      */
     @java.lang.Deprecated
     java.util.Map<java.lang.Integer, java.lang.Integer>
-    getLJEBGEFGOAL();
+    getGEHNFJEPCJL();
     /**
-     * <code>map&lt;uint32, int32&gt; LJEBGEFGOAL = 9;</code>
+     * <code>map&lt;uint32, int32&gt; GEHNFJEPCJL = 3;</code>
      */
     java.util.Map<java.lang.Integer, java.lang.Integer>
-    getLJEBGEFGOALMap();
+    getGEHNFJEPCJLMap();
     /**
-     * <code>map&lt;uint32, int32&gt; LJEBGEFGOAL = 9;</code>
+     * <code>map&lt;uint32, int32&gt; GEHNFJEPCJL = 3;</code>
      */
 
-    int getLJEBGEFGOALOrDefault(
+    int getGEHNFJEPCJLOrDefault(
         int key,
         int defaultValue);
     /**
-     * <code>map&lt;uint32, int32&gt; LJEBGEFGOAL = 9;</code>
+     * <code>map&lt;uint32, int32&gt; GEHNFJEPCJL = 3;</code>
      */
 
-    int getLJEBGEFGOALOrThrow(
+    int getGEHNFJEPCJLOrThrow(
         int key);
 
     /**
-     * <code>uint32 save_point_id = 7;</code>
+     * <code>map&lt;uint32, int32&gt; GDBKBKACDFO = 10;</code>
+     */
+    int getGDBKBKACDFOCount();
+    /**
+     * <code>map&lt;uint32, int32&gt; GDBKBKACDFO = 10;</code>
+     */
+    boolean containsGDBKBKACDFO(
+        int key);
+    /**
+     * Use {@link #getGDBKBKACDFOMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.Integer, java.lang.Integer>
+    getGDBKBKACDFO();
+    /**
+     * <code>map&lt;uint32, int32&gt; GDBKBKACDFO = 10;</code>
+     */
+    java.util.Map<java.lang.Integer, java.lang.Integer>
+    getGDBKBKACDFOMap();
+    /**
+     * <code>map&lt;uint32, int32&gt; GDBKBKACDFO = 10;</code>
+     */
+
+    int getGDBKBKACDFOOrDefault(
+        int key,
+        int defaultValue);
+    /**
+     * <code>map&lt;uint32, int32&gt; GDBKBKACDFO = 10;</code>
+     */
+
+    int getGDBKBKACDFOOrThrow(
+        int key);
+
+    /**
+     * <code>uint32 save_point_id = 11;</code>
      * @return The savePointId.
      */
     int getSavePointId();
 
     /**
-     * <code>map&lt;uint32, int32&gt; PCCKFLCCIGB = 8;</code>
-     */
-    int getPCCKFLCCIGBCount();
-    /**
-     * <code>map&lt;uint32, int32&gt; PCCKFLCCIGB = 8;</code>
-     */
-    boolean containsPCCKFLCCIGB(
-        int key);
-    /**
-     * Use {@link #getPCCKFLCCIGBMap()} instead.
-     */
-    @java.lang.Deprecated
-    java.util.Map<java.lang.Integer, java.lang.Integer>
-    getPCCKFLCCIGB();
-    /**
-     * <code>map&lt;uint32, int32&gt; PCCKFLCCIGB = 8;</code>
-     */
-    java.util.Map<java.lang.Integer, java.lang.Integer>
-    getPCCKFLCCIGBMap();
-    /**
-     * <code>map&lt;uint32, int32&gt; PCCKFLCCIGB = 8;</code>
-     */
-
-    int getPCCKFLCCIGBOrDefault(
-        int key,
-        int defaultValue);
-    /**
-     * <code>map&lt;uint32, int32&gt; PCCKFLCCIGB = 8;</code>
-     */
-
-    int getPCCKFLCCIGBOrThrow(
-        int key);
-
-    /**
-     * <code>uint32 id = 5;</code>
+     * <code>uint32 id = 6;</code>
      * @return The id.
      */
     int getId();
 
     /**
-     * <code>uint32 self_confidence = 6;</code>
+     * <code>uint32 self_confidence = 7;</code>
      * @return The selfConfidence.
      */
     int getSelfConfidence();
   }
   /**
    * <pre>
-   * CmdId: 1987
-   * Obf: MCEIFCMNPHI
+   * CmdId: 764
+   * Obf: DEBIEHHKCMA
    * </pre>
    *
    * Protobuf type {@code SaveMainCoopReq}
@@ -155,45 +155,45 @@ public final class SaveMainCoopReqOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
-
-              id_ = input.readUInt32();
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                gEHNFJEPCJL_ = com.google.protobuf.MapField.newMapField(
+                    GEHNFJEPCJLDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+              gEHNFJEPCJL__ = input.readMessage(
+                  GEHNFJEPCJLDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              gEHNFJEPCJL_.getMutableMap().put(
+                  gEHNFJEPCJL__.getKey(), gEHNFJEPCJL__.getValue());
               break;
             }
             case 48: {
 
-              selfConfidence_ = input.readUInt32();
+              id_ = input.readUInt32();
               break;
             }
             case 56: {
 
-              savePointId_ = input.readUInt32();
+              selfConfidence_ = input.readUInt32();
               break;
             }
-            case 66: {
+            case 82: {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                pCCKFLCCIGB_ = com.google.protobuf.MapField.newMapField(
-                    PCCKFLCCIGBDefaultEntryHolder.defaultEntry);
+                gDBKBKACDFO_ = com.google.protobuf.MapField.newMapField(
+                    GDBKBKACDFODefaultEntryHolder.defaultEntry);
                 mutable_bitField0_ |= 0x00000002;
               }
               com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-              pCCKFLCCIGB__ = input.readMessage(
-                  PCCKFLCCIGBDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              pCCKFLCCIGB_.getMutableMap().put(
-                  pCCKFLCCIGB__.getKey(), pCCKFLCCIGB__.getValue());
+              gDBKBKACDFO__ = input.readMessage(
+                  GDBKBKACDFODefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              gDBKBKACDFO_.getMutableMap().put(
+                  gDBKBKACDFO__.getKey(), gDBKBKACDFO__.getValue());
               break;
             }
-            case 74: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                lJEBGEFGOAL_ = com.google.protobuf.MapField.newMapField(
-                    LJEBGEFGOALDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-              lJEBGEFGOAL__ = input.readMessage(
-                  LJEBGEFGOALDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              lJEBGEFGOAL_.getMutableMap().put(
-                  lJEBGEFGOAL__.getKey(), lJEBGEFGOAL__.getValue());
+            case 88: {
+
+              savePointId_ = input.readUInt32();
               break;
             }
             default: {
@@ -225,10 +225,10 @@ public final class SaveMainCoopReqOuterClass {
     protected com.google.protobuf.MapField internalGetMapField(
         int number) {
       switch (number) {
-        case 9:
-          return internalGetLJEBGEFGOAL();
-        case 8:
-          return internalGetPCCKFLCCIGB();
+        case 3:
+          return internalGetGEHNFJEPCJL();
+        case 10:
+          return internalGetGDBKBKACDFO();
         default:
           throw new RuntimeException(
               "Invalid map field number: " + number);
@@ -242,91 +242,172 @@ public final class SaveMainCoopReqOuterClass {
               emu.grasscutter.net.proto.SaveMainCoopReqOuterClass.SaveMainCoopReq.class, emu.grasscutter.net.proto.SaveMainCoopReqOuterClass.SaveMainCoopReq.Builder.class);
     }
 
-    public static final int LJEBGEFGOAL_FIELD_NUMBER = 9;
-    private static final class LJEBGEFGOALDefaultEntryHolder {
+    public static final int GEHNFJEPCJL_FIELD_NUMBER = 3;
+    private static final class GEHNFJEPCJLDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.Integer, java.lang.Integer> defaultEntry =
               com.google.protobuf.MapEntry
               .<java.lang.Integer, java.lang.Integer>newDefaultInstance(
-                  emu.grasscutter.net.proto.SaveMainCoopReqOuterClass.internal_static_SaveMainCoopReq_LJEBGEFGOALEntry_descriptor, 
+                  emu.grasscutter.net.proto.SaveMainCoopReqOuterClass.internal_static_SaveMainCoopReq_GEHNFJEPCJLEntry_descriptor, 
                   com.google.protobuf.WireFormat.FieldType.UINT32,
                   0,
                   com.google.protobuf.WireFormat.FieldType.INT32,
                   0);
     }
     private com.google.protobuf.MapField<
-        java.lang.Integer, java.lang.Integer> lJEBGEFGOAL_;
+        java.lang.Integer, java.lang.Integer> gEHNFJEPCJL_;
     private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-    internalGetLJEBGEFGOAL() {
-      if (lJEBGEFGOAL_ == null) {
+    internalGetGEHNFJEPCJL() {
+      if (gEHNFJEPCJL_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
-            LJEBGEFGOALDefaultEntryHolder.defaultEntry);
+            GEHNFJEPCJLDefaultEntryHolder.defaultEntry);
       }
-      return lJEBGEFGOAL_;
+      return gEHNFJEPCJL_;
     }
 
-    public int getLJEBGEFGOALCount() {
-      return internalGetLJEBGEFGOAL().getMap().size();
+    public int getGEHNFJEPCJLCount() {
+      return internalGetGEHNFJEPCJL().getMap().size();
     }
     /**
-     * <code>map&lt;uint32, int32&gt; LJEBGEFGOAL = 9;</code>
+     * <code>map&lt;uint32, int32&gt; GEHNFJEPCJL = 3;</code>
      */
 
     @java.lang.Override
-    public boolean containsLJEBGEFGOAL(
+    public boolean containsGEHNFJEPCJL(
         int key) {
       
-      return internalGetLJEBGEFGOAL().getMap().containsKey(key);
+      return internalGetGEHNFJEPCJL().getMap().containsKey(key);
     }
     /**
-     * Use {@link #getLJEBGEFGOALMap()} instead.
+     * Use {@link #getGEHNFJEPCJLMap()} instead.
      */
     @java.lang.Override
     @java.lang.Deprecated
-    public java.util.Map<java.lang.Integer, java.lang.Integer> getLJEBGEFGOAL() {
-      return getLJEBGEFGOALMap();
+    public java.util.Map<java.lang.Integer, java.lang.Integer> getGEHNFJEPCJL() {
+      return getGEHNFJEPCJLMap();
     }
     /**
-     * <code>map&lt;uint32, int32&gt; LJEBGEFGOAL = 9;</code>
+     * <code>map&lt;uint32, int32&gt; GEHNFJEPCJL = 3;</code>
      */
     @java.lang.Override
 
-    public java.util.Map<java.lang.Integer, java.lang.Integer> getLJEBGEFGOALMap() {
-      return internalGetLJEBGEFGOAL().getMap();
+    public java.util.Map<java.lang.Integer, java.lang.Integer> getGEHNFJEPCJLMap() {
+      return internalGetGEHNFJEPCJL().getMap();
     }
     /**
-     * <code>map&lt;uint32, int32&gt; LJEBGEFGOAL = 9;</code>
+     * <code>map&lt;uint32, int32&gt; GEHNFJEPCJL = 3;</code>
      */
     @java.lang.Override
 
-    public int getLJEBGEFGOALOrDefault(
+    public int getGEHNFJEPCJLOrDefault(
         int key,
         int defaultValue) {
       
       java.util.Map<java.lang.Integer, java.lang.Integer> map =
-          internalGetLJEBGEFGOAL().getMap();
+          internalGetGEHNFJEPCJL().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;uint32, int32&gt; LJEBGEFGOAL = 9;</code>
+     * <code>map&lt;uint32, int32&gt; GEHNFJEPCJL = 3;</code>
      */
     @java.lang.Override
 
-    public int getLJEBGEFGOALOrThrow(
+    public int getGEHNFJEPCJLOrThrow(
         int key) {
       
       java.util.Map<java.lang.Integer, java.lang.Integer> map =
-          internalGetLJEBGEFGOAL().getMap();
+          internalGetGEHNFJEPCJL().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
       }
       return map.get(key);
     }
 
-    public static final int SAVE_POINT_ID_FIELD_NUMBER = 7;
+    public static final int GDBKBKACDFO_FIELD_NUMBER = 10;
+    private static final class GDBKBKACDFODefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.Integer, java.lang.Integer> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.Integer, java.lang.Integer>newDefaultInstance(
+                  emu.grasscutter.net.proto.SaveMainCoopReqOuterClass.internal_static_SaveMainCoopReq_GDBKBKACDFOEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.UINT32,
+                  0,
+                  com.google.protobuf.WireFormat.FieldType.INT32,
+                  0);
+    }
+    private com.google.protobuf.MapField<
+        java.lang.Integer, java.lang.Integer> gDBKBKACDFO_;
+    private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
+    internalGetGDBKBKACDFO() {
+      if (gDBKBKACDFO_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            GDBKBKACDFODefaultEntryHolder.defaultEntry);
+      }
+      return gDBKBKACDFO_;
+    }
+
+    public int getGDBKBKACDFOCount() {
+      return internalGetGDBKBKACDFO().getMap().size();
+    }
+    /**
+     * <code>map&lt;uint32, int32&gt; GDBKBKACDFO = 10;</code>
+     */
+
+    @java.lang.Override
+    public boolean containsGDBKBKACDFO(
+        int key) {
+      
+      return internalGetGDBKBKACDFO().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getGDBKBKACDFOMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.Integer, java.lang.Integer> getGDBKBKACDFO() {
+      return getGDBKBKACDFOMap();
+    }
+    /**
+     * <code>map&lt;uint32, int32&gt; GDBKBKACDFO = 10;</code>
+     */
+    @java.lang.Override
+
+    public java.util.Map<java.lang.Integer, java.lang.Integer> getGDBKBKACDFOMap() {
+      return internalGetGDBKBKACDFO().getMap();
+    }
+    /**
+     * <code>map&lt;uint32, int32&gt; GDBKBKACDFO = 10;</code>
+     */
+    @java.lang.Override
+
+    public int getGDBKBKACDFOOrDefault(
+        int key,
+        int defaultValue) {
+      
+      java.util.Map<java.lang.Integer, java.lang.Integer> map =
+          internalGetGDBKBKACDFO().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;uint32, int32&gt; GDBKBKACDFO = 10;</code>
+     */
+    @java.lang.Override
+
+    public int getGDBKBKACDFOOrThrow(
+        int key) {
+      
+      java.util.Map<java.lang.Integer, java.lang.Integer> map =
+          internalGetGDBKBKACDFO().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public static final int SAVE_POINT_ID_FIELD_NUMBER = 11;
     private int savePointId_;
     /**
-     * <code>uint32 save_point_id = 7;</code>
+     * <code>uint32 save_point_id = 11;</code>
      * @return The savePointId.
      */
     @java.lang.Override
@@ -334,91 +415,10 @@ public final class SaveMainCoopReqOuterClass {
       return savePointId_;
     }
 
-    public static final int PCCKFLCCIGB_FIELD_NUMBER = 8;
-    private static final class PCCKFLCCIGBDefaultEntryHolder {
-      static final com.google.protobuf.MapEntry<
-          java.lang.Integer, java.lang.Integer> defaultEntry =
-              com.google.protobuf.MapEntry
-              .<java.lang.Integer, java.lang.Integer>newDefaultInstance(
-                  emu.grasscutter.net.proto.SaveMainCoopReqOuterClass.internal_static_SaveMainCoopReq_PCCKFLCCIGBEntry_descriptor, 
-                  com.google.protobuf.WireFormat.FieldType.UINT32,
-                  0,
-                  com.google.protobuf.WireFormat.FieldType.INT32,
-                  0);
-    }
-    private com.google.protobuf.MapField<
-        java.lang.Integer, java.lang.Integer> pCCKFLCCIGB_;
-    private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-    internalGetPCCKFLCCIGB() {
-      if (pCCKFLCCIGB_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            PCCKFLCCIGBDefaultEntryHolder.defaultEntry);
-      }
-      return pCCKFLCCIGB_;
-    }
-
-    public int getPCCKFLCCIGBCount() {
-      return internalGetPCCKFLCCIGB().getMap().size();
-    }
-    /**
-     * <code>map&lt;uint32, int32&gt; PCCKFLCCIGB = 8;</code>
-     */
-
-    @java.lang.Override
-    public boolean containsPCCKFLCCIGB(
-        int key) {
-      
-      return internalGetPCCKFLCCIGB().getMap().containsKey(key);
-    }
-    /**
-     * Use {@link #getPCCKFLCCIGBMap()} instead.
-     */
-    @java.lang.Override
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.Integer, java.lang.Integer> getPCCKFLCCIGB() {
-      return getPCCKFLCCIGBMap();
-    }
-    /**
-     * <code>map&lt;uint32, int32&gt; PCCKFLCCIGB = 8;</code>
-     */
-    @java.lang.Override
-
-    public java.util.Map<java.lang.Integer, java.lang.Integer> getPCCKFLCCIGBMap() {
-      return internalGetPCCKFLCCIGB().getMap();
-    }
-    /**
-     * <code>map&lt;uint32, int32&gt; PCCKFLCCIGB = 8;</code>
-     */
-    @java.lang.Override
-
-    public int getPCCKFLCCIGBOrDefault(
-        int key,
-        int defaultValue) {
-      
-      java.util.Map<java.lang.Integer, java.lang.Integer> map =
-          internalGetPCCKFLCCIGB().getMap();
-      return map.containsKey(key) ? map.get(key) : defaultValue;
-    }
-    /**
-     * <code>map&lt;uint32, int32&gt; PCCKFLCCIGB = 8;</code>
-     */
-    @java.lang.Override
-
-    public int getPCCKFLCCIGBOrThrow(
-        int key) {
-      
-      java.util.Map<java.lang.Integer, java.lang.Integer> map =
-          internalGetPCCKFLCCIGB().getMap();
-      if (!map.containsKey(key)) {
-        throw new java.lang.IllegalArgumentException();
-      }
-      return map.get(key);
-    }
-
-    public static final int ID_FIELD_NUMBER = 5;
+    public static final int ID_FIELD_NUMBER = 6;
     private int id_;
     /**
-     * <code>uint32 id = 5;</code>
+     * <code>uint32 id = 6;</code>
      * @return The id.
      */
     @java.lang.Override
@@ -426,10 +426,10 @@ public final class SaveMainCoopReqOuterClass {
       return id_;
     }
 
-    public static final int SELF_CONFIDENCE_FIELD_NUMBER = 6;
+    public static final int SELF_CONFIDENCE_FIELD_NUMBER = 7;
     private int selfConfidence_;
     /**
-     * <code>uint32 self_confidence = 6;</code>
+     * <code>uint32 self_confidence = 7;</code>
      * @return The selfConfidence.
      */
     @java.lang.Override
@@ -451,27 +451,27 @@ public final class SaveMainCoopReqOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      com.google.protobuf.GeneratedMessageV3
+        .serializeIntegerMapTo(
+          output,
+          internalGetGEHNFJEPCJL(),
+          GEHNFJEPCJLDefaultEntryHolder.defaultEntry,
+          3);
       if (id_ != 0) {
-        output.writeUInt32(5, id_);
+        output.writeUInt32(6, id_);
       }
       if (selfConfidence_ != 0) {
-        output.writeUInt32(6, selfConfidence_);
+        output.writeUInt32(7, selfConfidence_);
       }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeIntegerMapTo(
+          output,
+          internalGetGDBKBKACDFO(),
+          GDBKBKACDFODefaultEntryHolder.defaultEntry,
+          10);
       if (savePointId_ != 0) {
-        output.writeUInt32(7, savePointId_);
+        output.writeUInt32(11, savePointId_);
       }
-      com.google.protobuf.GeneratedMessageV3
-        .serializeIntegerMapTo(
-          output,
-          internalGetPCCKFLCCIGB(),
-          PCCKFLCCIGBDefaultEntryHolder.defaultEntry,
-          8);
-      com.google.protobuf.GeneratedMessageV3
-        .serializeIntegerMapTo(
-          output,
-          internalGetLJEBGEFGOAL(),
-          LJEBGEFGOALDefaultEntryHolder.defaultEntry,
-          9);
       unknownFields.writeTo(output);
     }
 
@@ -481,37 +481,37 @@ public final class SaveMainCoopReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      for (java.util.Map.Entry<java.lang.Integer, java.lang.Integer> entry
+           : internalGetGEHNFJEPCJL().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+        gEHNFJEPCJL__ = GEHNFJEPCJLDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(3, gEHNFJEPCJL__);
+      }
       if (id_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, id_);
+          .computeUInt32Size(6, id_);
       }
       if (selfConfidence_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, selfConfidence_);
+          .computeUInt32Size(7, selfConfidence_);
+      }
+      for (java.util.Map.Entry<java.lang.Integer, java.lang.Integer> entry
+           : internalGetGDBKBKACDFO().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+        gDBKBKACDFO__ = GDBKBKACDFODefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(10, gDBKBKACDFO__);
       }
       if (savePointId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, savePointId_);
-      }
-      for (java.util.Map.Entry<java.lang.Integer, java.lang.Integer> entry
-           : internalGetPCCKFLCCIGB().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-        pCCKFLCCIGB__ = PCCKFLCCIGBDefaultEntryHolder.defaultEntry.newBuilderForType()
-            .setKey(entry.getKey())
-            .setValue(entry.getValue())
-            .build();
-        size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(8, pCCKFLCCIGB__);
-      }
-      for (java.util.Map.Entry<java.lang.Integer, java.lang.Integer> entry
-           : internalGetLJEBGEFGOAL().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-        lJEBGEFGOAL__ = LJEBGEFGOALDefaultEntryHolder.defaultEntry.newBuilderForType()
-            .setKey(entry.getKey())
-            .setValue(entry.getValue())
-            .build();
-        size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(9, lJEBGEFGOAL__);
+          .computeUInt32Size(11, savePointId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -528,12 +528,12 @@ public final class SaveMainCoopReqOuterClass {
       }
       emu.grasscutter.net.proto.SaveMainCoopReqOuterClass.SaveMainCoopReq other = (emu.grasscutter.net.proto.SaveMainCoopReqOuterClass.SaveMainCoopReq) obj;
 
-      if (!internalGetLJEBGEFGOAL().equals(
-          other.internalGetLJEBGEFGOAL())) return false;
+      if (!internalGetGEHNFJEPCJL().equals(
+          other.internalGetGEHNFJEPCJL())) return false;
+      if (!internalGetGDBKBKACDFO().equals(
+          other.internalGetGDBKBKACDFO())) return false;
       if (getSavePointId()
           != other.getSavePointId()) return false;
-      if (!internalGetPCCKFLCCIGB().equals(
-          other.internalGetPCCKFLCCIGB())) return false;
       if (getId()
           != other.getId()) return false;
       if (getSelfConfidence()
@@ -549,16 +549,16 @@ public final class SaveMainCoopReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (!internalGetLJEBGEFGOAL().getMap().isEmpty()) {
-        hash = (37 * hash) + LJEBGEFGOAL_FIELD_NUMBER;
-        hash = (53 * hash) + internalGetLJEBGEFGOAL().hashCode();
+      if (!internalGetGEHNFJEPCJL().getMap().isEmpty()) {
+        hash = (37 * hash) + GEHNFJEPCJL_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetGEHNFJEPCJL().hashCode();
+      }
+      if (!internalGetGDBKBKACDFO().getMap().isEmpty()) {
+        hash = (37 * hash) + GDBKBKACDFO_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetGDBKBKACDFO().hashCode();
       }
       hash = (37 * hash) + SAVE_POINT_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSavePointId();
-      if (!internalGetPCCKFLCCIGB().getMap().isEmpty()) {
-        hash = (37 * hash) + PCCKFLCCIGB_FIELD_NUMBER;
-        hash = (53 * hash) + internalGetPCCKFLCCIGB().hashCode();
-      }
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId();
       hash = (37 * hash) + SELF_CONFIDENCE_FIELD_NUMBER;
@@ -660,8 +660,8 @@ public final class SaveMainCoopReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 1987
-     * Obf: MCEIFCMNPHI
+     * CmdId: 764
+     * Obf: DEBIEHHKCMA
      * </pre>
      *
      * Protobuf type {@code SaveMainCoopReq}
@@ -679,10 +679,10 @@ public final class SaveMainCoopReqOuterClass {
       protected com.google.protobuf.MapField internalGetMapField(
           int number) {
         switch (number) {
-          case 9:
-            return internalGetLJEBGEFGOAL();
-          case 8:
-            return internalGetPCCKFLCCIGB();
+          case 3:
+            return internalGetGEHNFJEPCJL();
+          case 10:
+            return internalGetGDBKBKACDFO();
           default:
             throw new RuntimeException(
                 "Invalid map field number: " + number);
@@ -692,10 +692,10 @@ public final class SaveMainCoopReqOuterClass {
       protected com.google.protobuf.MapField internalGetMutableMapField(
           int number) {
         switch (number) {
-          case 9:
-            return internalGetMutableLJEBGEFGOAL();
-          case 8:
-            return internalGetMutablePCCKFLCCIGB();
+          case 3:
+            return internalGetMutableGEHNFJEPCJL();
+          case 10:
+            return internalGetMutableGDBKBKACDFO();
           default:
             throw new RuntimeException(
                 "Invalid map field number: " + number);
@@ -727,10 +727,10 @@ public final class SaveMainCoopReqOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        internalGetMutableLJEBGEFGOAL().clear();
+        internalGetMutableGEHNFJEPCJL().clear();
+        internalGetMutableGDBKBKACDFO().clear();
         savePointId_ = 0;
 
-        internalGetMutablePCCKFLCCIGB().clear();
         id_ = 0;
 
         selfConfidence_ = 0;
@@ -762,11 +762,11 @@ public final class SaveMainCoopReqOuterClass {
       public emu.grasscutter.net.proto.SaveMainCoopReqOuterClass.SaveMainCoopReq buildPartial() {
         emu.grasscutter.net.proto.SaveMainCoopReqOuterClass.SaveMainCoopReq result = new emu.grasscutter.net.proto.SaveMainCoopReqOuterClass.SaveMainCoopReq(this);
         int from_bitField0_ = bitField0_;
-        result.lJEBGEFGOAL_ = internalGetLJEBGEFGOAL();
-        result.lJEBGEFGOAL_.makeImmutable();
+        result.gEHNFJEPCJL_ = internalGetGEHNFJEPCJL();
+        result.gEHNFJEPCJL_.makeImmutable();
+        result.gDBKBKACDFO_ = internalGetGDBKBKACDFO();
+        result.gDBKBKACDFO_.makeImmutable();
         result.savePointId_ = savePointId_;
-        result.pCCKFLCCIGB_ = internalGetPCCKFLCCIGB();
-        result.pCCKFLCCIGB_.makeImmutable();
         result.id_ = id_;
         result.selfConfidence_ = selfConfidence_;
         onBuilt();
@@ -817,13 +817,13 @@ public final class SaveMainCoopReqOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.SaveMainCoopReqOuterClass.SaveMainCoopReq other) {
         if (other == emu.grasscutter.net.proto.SaveMainCoopReqOuterClass.SaveMainCoopReq.getDefaultInstance()) return this;
-        internalGetMutableLJEBGEFGOAL().mergeFrom(
-            other.internalGetLJEBGEFGOAL());
+        internalGetMutableGEHNFJEPCJL().mergeFrom(
+            other.internalGetGEHNFJEPCJL());
+        internalGetMutableGDBKBKACDFO().mergeFrom(
+            other.internalGetGDBKBKACDFO());
         if (other.getSavePointId() != 0) {
           setSavePointId(other.getSavePointId());
         }
-        internalGetMutablePCCKFLCCIGB().mergeFrom(
-            other.internalGetPCCKFLCCIGB());
         if (other.getId() != 0) {
           setId(other.getId());
         }
@@ -861,99 +861,99 @@ public final class SaveMainCoopReqOuterClass {
       private int bitField0_;
 
       private com.google.protobuf.MapField<
-          java.lang.Integer, java.lang.Integer> lJEBGEFGOAL_;
+          java.lang.Integer, java.lang.Integer> gEHNFJEPCJL_;
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetLJEBGEFGOAL() {
-        if (lJEBGEFGOAL_ == null) {
+      internalGetGEHNFJEPCJL() {
+        if (gEHNFJEPCJL_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
-              LJEBGEFGOALDefaultEntryHolder.defaultEntry);
+              GEHNFJEPCJLDefaultEntryHolder.defaultEntry);
         }
-        return lJEBGEFGOAL_;
+        return gEHNFJEPCJL_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetMutableLJEBGEFGOAL() {
+      internalGetMutableGEHNFJEPCJL() {
         onChanged();;
-        if (lJEBGEFGOAL_ == null) {
-          lJEBGEFGOAL_ = com.google.protobuf.MapField.newMapField(
-              LJEBGEFGOALDefaultEntryHolder.defaultEntry);
+        if (gEHNFJEPCJL_ == null) {
+          gEHNFJEPCJL_ = com.google.protobuf.MapField.newMapField(
+              GEHNFJEPCJLDefaultEntryHolder.defaultEntry);
         }
-        if (!lJEBGEFGOAL_.isMutable()) {
-          lJEBGEFGOAL_ = lJEBGEFGOAL_.copy();
+        if (!gEHNFJEPCJL_.isMutable()) {
+          gEHNFJEPCJL_ = gEHNFJEPCJL_.copy();
         }
-        return lJEBGEFGOAL_;
+        return gEHNFJEPCJL_;
       }
 
-      public int getLJEBGEFGOALCount() {
-        return internalGetLJEBGEFGOAL().getMap().size();
+      public int getGEHNFJEPCJLCount() {
+        return internalGetGEHNFJEPCJL().getMap().size();
       }
       /**
-       * <code>map&lt;uint32, int32&gt; LJEBGEFGOAL = 9;</code>
+       * <code>map&lt;uint32, int32&gt; GEHNFJEPCJL = 3;</code>
        */
 
       @java.lang.Override
-      public boolean containsLJEBGEFGOAL(
+      public boolean containsGEHNFJEPCJL(
           int key) {
         
-        return internalGetLJEBGEFGOAL().getMap().containsKey(key);
+        return internalGetGEHNFJEPCJL().getMap().containsKey(key);
       }
       /**
-       * Use {@link #getLJEBGEFGOALMap()} instead.
+       * Use {@link #getGEHNFJEPCJLMap()} instead.
        */
       @java.lang.Override
       @java.lang.Deprecated
-      public java.util.Map<java.lang.Integer, java.lang.Integer> getLJEBGEFGOAL() {
-        return getLJEBGEFGOALMap();
+      public java.util.Map<java.lang.Integer, java.lang.Integer> getGEHNFJEPCJL() {
+        return getGEHNFJEPCJLMap();
       }
       /**
-       * <code>map&lt;uint32, int32&gt; LJEBGEFGOAL = 9;</code>
+       * <code>map&lt;uint32, int32&gt; GEHNFJEPCJL = 3;</code>
        */
       @java.lang.Override
 
-      public java.util.Map<java.lang.Integer, java.lang.Integer> getLJEBGEFGOALMap() {
-        return internalGetLJEBGEFGOAL().getMap();
+      public java.util.Map<java.lang.Integer, java.lang.Integer> getGEHNFJEPCJLMap() {
+        return internalGetGEHNFJEPCJL().getMap();
       }
       /**
-       * <code>map&lt;uint32, int32&gt; LJEBGEFGOAL = 9;</code>
+       * <code>map&lt;uint32, int32&gt; GEHNFJEPCJL = 3;</code>
        */
       @java.lang.Override
 
-      public int getLJEBGEFGOALOrDefault(
+      public int getGEHNFJEPCJLOrDefault(
           int key,
           int defaultValue) {
         
         java.util.Map<java.lang.Integer, java.lang.Integer> map =
-            internalGetLJEBGEFGOAL().getMap();
+            internalGetGEHNFJEPCJL().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
-       * <code>map&lt;uint32, int32&gt; LJEBGEFGOAL = 9;</code>
+       * <code>map&lt;uint32, int32&gt; GEHNFJEPCJL = 3;</code>
        */
       @java.lang.Override
 
-      public int getLJEBGEFGOALOrThrow(
+      public int getGEHNFJEPCJLOrThrow(
           int key) {
         
         java.util.Map<java.lang.Integer, java.lang.Integer> map =
-            internalGetLJEBGEFGOAL().getMap();
+            internalGetGEHNFJEPCJL().getMap();
         if (!map.containsKey(key)) {
           throw new java.lang.IllegalArgumentException();
         }
         return map.get(key);
       }
 
-      public Builder clearLJEBGEFGOAL() {
-        internalGetMutableLJEBGEFGOAL().getMutableMap()
+      public Builder clearGEHNFJEPCJL() {
+        internalGetMutableGEHNFJEPCJL().getMutableMap()
             .clear();
         return this;
       }
       /**
-       * <code>map&lt;uint32, int32&gt; LJEBGEFGOAL = 9;</code>
+       * <code>map&lt;uint32, int32&gt; GEHNFJEPCJL = 3;</code>
        */
 
-      public Builder removeLJEBGEFGOAL(
+      public Builder removeGEHNFJEPCJL(
           int key) {
         
-        internalGetMutableLJEBGEFGOAL().getMutableMap()
+        internalGetMutableGEHNFJEPCJL().getMutableMap()
             .remove(key);
         return this;
       }
@@ -962,35 +962,163 @@ public final class SaveMainCoopReqOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, java.lang.Integer>
-      getMutableLJEBGEFGOAL() {
-        return internalGetMutableLJEBGEFGOAL().getMutableMap();
+      getMutableGEHNFJEPCJL() {
+        return internalGetMutableGEHNFJEPCJL().getMutableMap();
       }
       /**
-       * <code>map&lt;uint32, int32&gt; LJEBGEFGOAL = 9;</code>
+       * <code>map&lt;uint32, int32&gt; GEHNFJEPCJL = 3;</code>
        */
-      public Builder putLJEBGEFGOAL(
+      public Builder putGEHNFJEPCJL(
           int key,
           int value) {
         
         
-        internalGetMutableLJEBGEFGOAL().getMutableMap()
+        internalGetMutableGEHNFJEPCJL().getMutableMap()
             .put(key, value);
         return this;
       }
       /**
-       * <code>map&lt;uint32, int32&gt; LJEBGEFGOAL = 9;</code>
+       * <code>map&lt;uint32, int32&gt; GEHNFJEPCJL = 3;</code>
        */
 
-      public Builder putAllLJEBGEFGOAL(
+      public Builder putAllGEHNFJEPCJL(
           java.util.Map<java.lang.Integer, java.lang.Integer> values) {
-        internalGetMutableLJEBGEFGOAL().getMutableMap()
+        internalGetMutableGEHNFJEPCJL().getMutableMap()
+            .putAll(values);
+        return this;
+      }
+
+      private com.google.protobuf.MapField<
+          java.lang.Integer, java.lang.Integer> gDBKBKACDFO_;
+      private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
+      internalGetGDBKBKACDFO() {
+        if (gDBKBKACDFO_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              GDBKBKACDFODefaultEntryHolder.defaultEntry);
+        }
+        return gDBKBKACDFO_;
+      }
+      private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
+      internalGetMutableGDBKBKACDFO() {
+        onChanged();;
+        if (gDBKBKACDFO_ == null) {
+          gDBKBKACDFO_ = com.google.protobuf.MapField.newMapField(
+              GDBKBKACDFODefaultEntryHolder.defaultEntry);
+        }
+        if (!gDBKBKACDFO_.isMutable()) {
+          gDBKBKACDFO_ = gDBKBKACDFO_.copy();
+        }
+        return gDBKBKACDFO_;
+      }
+
+      public int getGDBKBKACDFOCount() {
+        return internalGetGDBKBKACDFO().getMap().size();
+      }
+      /**
+       * <code>map&lt;uint32, int32&gt; GDBKBKACDFO = 10;</code>
+       */
+
+      @java.lang.Override
+      public boolean containsGDBKBKACDFO(
+          int key) {
+        
+        return internalGetGDBKBKACDFO().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getGDBKBKACDFOMap()} instead.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.Integer, java.lang.Integer> getGDBKBKACDFO() {
+        return getGDBKBKACDFOMap();
+      }
+      /**
+       * <code>map&lt;uint32, int32&gt; GDBKBKACDFO = 10;</code>
+       */
+      @java.lang.Override
+
+      public java.util.Map<java.lang.Integer, java.lang.Integer> getGDBKBKACDFOMap() {
+        return internalGetGDBKBKACDFO().getMap();
+      }
+      /**
+       * <code>map&lt;uint32, int32&gt; GDBKBKACDFO = 10;</code>
+       */
+      @java.lang.Override
+
+      public int getGDBKBKACDFOOrDefault(
+          int key,
+          int defaultValue) {
+        
+        java.util.Map<java.lang.Integer, java.lang.Integer> map =
+            internalGetGDBKBKACDFO().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;uint32, int32&gt; GDBKBKACDFO = 10;</code>
+       */
+      @java.lang.Override
+
+      public int getGDBKBKACDFOOrThrow(
+          int key) {
+        
+        java.util.Map<java.lang.Integer, java.lang.Integer> map =
+            internalGetGDBKBKACDFO().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearGDBKBKACDFO() {
+        internalGetMutableGDBKBKACDFO().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <code>map&lt;uint32, int32&gt; GDBKBKACDFO = 10;</code>
+       */
+
+      public Builder removeGDBKBKACDFO(
+          int key) {
+        
+        internalGetMutableGDBKBKACDFO().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.Integer, java.lang.Integer>
+      getMutableGDBKBKACDFO() {
+        return internalGetMutableGDBKBKACDFO().getMutableMap();
+      }
+      /**
+       * <code>map&lt;uint32, int32&gt; GDBKBKACDFO = 10;</code>
+       */
+      public Builder putGDBKBKACDFO(
+          int key,
+          int value) {
+        
+        
+        internalGetMutableGDBKBKACDFO().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <code>map&lt;uint32, int32&gt; GDBKBKACDFO = 10;</code>
+       */
+
+      public Builder putAllGDBKBKACDFO(
+          java.util.Map<java.lang.Integer, java.lang.Integer> values) {
+        internalGetMutableGDBKBKACDFO().getMutableMap()
             .putAll(values);
         return this;
       }
 
       private int savePointId_ ;
       /**
-       * <code>uint32 save_point_id = 7;</code>
+       * <code>uint32 save_point_id = 11;</code>
        * @return The savePointId.
        */
       @java.lang.Override
@@ -998,7 +1126,7 @@ public final class SaveMainCoopReqOuterClass {
         return savePointId_;
       }
       /**
-       * <code>uint32 save_point_id = 7;</code>
+       * <code>uint32 save_point_id = 11;</code>
        * @param value The savePointId to set.
        * @return This builder for chaining.
        */
@@ -1009,7 +1137,7 @@ public final class SaveMainCoopReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 save_point_id = 7;</code>
+       * <code>uint32 save_point_id = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearSavePointId() {
@@ -1019,137 +1147,9 @@ public final class SaveMainCoopReqOuterClass {
         return this;
       }
 
-      private com.google.protobuf.MapField<
-          java.lang.Integer, java.lang.Integer> pCCKFLCCIGB_;
-      private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetPCCKFLCCIGB() {
-        if (pCCKFLCCIGB_ == null) {
-          return com.google.protobuf.MapField.emptyMapField(
-              PCCKFLCCIGBDefaultEntryHolder.defaultEntry);
-        }
-        return pCCKFLCCIGB_;
-      }
-      private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetMutablePCCKFLCCIGB() {
-        onChanged();;
-        if (pCCKFLCCIGB_ == null) {
-          pCCKFLCCIGB_ = com.google.protobuf.MapField.newMapField(
-              PCCKFLCCIGBDefaultEntryHolder.defaultEntry);
-        }
-        if (!pCCKFLCCIGB_.isMutable()) {
-          pCCKFLCCIGB_ = pCCKFLCCIGB_.copy();
-        }
-        return pCCKFLCCIGB_;
-      }
-
-      public int getPCCKFLCCIGBCount() {
-        return internalGetPCCKFLCCIGB().getMap().size();
-      }
-      /**
-       * <code>map&lt;uint32, int32&gt; PCCKFLCCIGB = 8;</code>
-       */
-
-      @java.lang.Override
-      public boolean containsPCCKFLCCIGB(
-          int key) {
-        
-        return internalGetPCCKFLCCIGB().getMap().containsKey(key);
-      }
-      /**
-       * Use {@link #getPCCKFLCCIGBMap()} instead.
-       */
-      @java.lang.Override
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.Integer, java.lang.Integer> getPCCKFLCCIGB() {
-        return getPCCKFLCCIGBMap();
-      }
-      /**
-       * <code>map&lt;uint32, int32&gt; PCCKFLCCIGB = 8;</code>
-       */
-      @java.lang.Override
-
-      public java.util.Map<java.lang.Integer, java.lang.Integer> getPCCKFLCCIGBMap() {
-        return internalGetPCCKFLCCIGB().getMap();
-      }
-      /**
-       * <code>map&lt;uint32, int32&gt; PCCKFLCCIGB = 8;</code>
-       */
-      @java.lang.Override
-
-      public int getPCCKFLCCIGBOrDefault(
-          int key,
-          int defaultValue) {
-        
-        java.util.Map<java.lang.Integer, java.lang.Integer> map =
-            internalGetPCCKFLCCIGB().getMap();
-        return map.containsKey(key) ? map.get(key) : defaultValue;
-      }
-      /**
-       * <code>map&lt;uint32, int32&gt; PCCKFLCCIGB = 8;</code>
-       */
-      @java.lang.Override
-
-      public int getPCCKFLCCIGBOrThrow(
-          int key) {
-        
-        java.util.Map<java.lang.Integer, java.lang.Integer> map =
-            internalGetPCCKFLCCIGB().getMap();
-        if (!map.containsKey(key)) {
-          throw new java.lang.IllegalArgumentException();
-        }
-        return map.get(key);
-      }
-
-      public Builder clearPCCKFLCCIGB() {
-        internalGetMutablePCCKFLCCIGB().getMutableMap()
-            .clear();
-        return this;
-      }
-      /**
-       * <code>map&lt;uint32, int32&gt; PCCKFLCCIGB = 8;</code>
-       */
-
-      public Builder removePCCKFLCCIGB(
-          int key) {
-        
-        internalGetMutablePCCKFLCCIGB().getMutableMap()
-            .remove(key);
-        return this;
-      }
-      /**
-       * Use alternate mutation accessors instead.
-       */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.Integer, java.lang.Integer>
-      getMutablePCCKFLCCIGB() {
-        return internalGetMutablePCCKFLCCIGB().getMutableMap();
-      }
-      /**
-       * <code>map&lt;uint32, int32&gt; PCCKFLCCIGB = 8;</code>
-       */
-      public Builder putPCCKFLCCIGB(
-          int key,
-          int value) {
-        
-        
-        internalGetMutablePCCKFLCCIGB().getMutableMap()
-            .put(key, value);
-        return this;
-      }
-      /**
-       * <code>map&lt;uint32, int32&gt; PCCKFLCCIGB = 8;</code>
-       */
-
-      public Builder putAllPCCKFLCCIGB(
-          java.util.Map<java.lang.Integer, java.lang.Integer> values) {
-        internalGetMutablePCCKFLCCIGB().getMutableMap()
-            .putAll(values);
-        return this;
-      }
-
       private int id_ ;
       /**
-       * <code>uint32 id = 5;</code>
+       * <code>uint32 id = 6;</code>
        * @return The id.
        */
       @java.lang.Override
@@ -1157,7 +1157,7 @@ public final class SaveMainCoopReqOuterClass {
         return id_;
       }
       /**
-       * <code>uint32 id = 5;</code>
+       * <code>uint32 id = 6;</code>
        * @param value The id to set.
        * @return This builder for chaining.
        */
@@ -1168,7 +1168,7 @@ public final class SaveMainCoopReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 id = 5;</code>
+       * <code>uint32 id = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearId() {
@@ -1180,7 +1180,7 @@ public final class SaveMainCoopReqOuterClass {
 
       private int selfConfidence_ ;
       /**
-       * <code>uint32 self_confidence = 6;</code>
+       * <code>uint32 self_confidence = 7;</code>
        * @return The selfConfidence.
        */
       @java.lang.Override
@@ -1188,7 +1188,7 @@ public final class SaveMainCoopReqOuterClass {
         return selfConfidence_;
       }
       /**
-       * <code>uint32 self_confidence = 6;</code>
+       * <code>uint32 self_confidence = 7;</code>
        * @param value The selfConfidence to set.
        * @return This builder for chaining.
        */
@@ -1199,7 +1199,7 @@ public final class SaveMainCoopReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 self_confidence = 6;</code>
+       * <code>uint32 self_confidence = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearSelfConfidence() {
@@ -1267,15 +1267,15 @@ public final class SaveMainCoopReqOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_SaveMainCoopReq_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_SaveMainCoopReq_LJEBGEFGOALEntry_descriptor;
+    internal_static_SaveMainCoopReq_GEHNFJEPCJLEntry_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_SaveMainCoopReq_LJEBGEFGOALEntry_fieldAccessorTable;
+      internal_static_SaveMainCoopReq_GEHNFJEPCJLEntry_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_SaveMainCoopReq_PCCKFLCCIGBEntry_descriptor;
+    internal_static_SaveMainCoopReq_GDBKBKACDFOEntry_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_SaveMainCoopReq_PCCKFLCCIGBEntry_fieldAccessorTable;
+      internal_static_SaveMainCoopReq_GDBKBKACDFOEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -1286,13 +1286,13 @@ public final class SaveMainCoopReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\025SaveMainCoopReq.proto\"\245\002\n\017SaveMainCoop" +
-      "Req\0226\n\013LJEBGEFGOAL\030\t \003(\0132!.SaveMainCoopR" +
-      "eq.LJEBGEFGOALEntry\022\025\n\rsave_point_id\030\007 \001" +
-      "(\r\0226\n\013PCCKFLCCIGB\030\010 \003(\0132!.SaveMainCoopRe" +
-      "q.PCCKFLCCIGBEntry\022\n\n\002id\030\005 \001(\r\022\027\n\017self_c" +
-      "onfidence\030\006 \001(\r\0322\n\020LJEBGEFGOALEntry\022\013\n\003k" +
-      "ey\030\001 \001(\r\022\r\n\005value\030\002 \001(\005:\0028\001\0322\n\020PCCKFLCCI" +
-      "GBEntry\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(\005:\0028\001B" +
+      "Req\0226\n\013GEHNFJEPCJL\030\003 \003(\0132!.SaveMainCoopR" +
+      "eq.GEHNFJEPCJLEntry\0226\n\013GDBKBKACDFO\030\n \003(\013" +
+      "2!.SaveMainCoopReq.GDBKBKACDFOEntry\022\025\n\rs" +
+      "ave_point_id\030\013 \001(\r\022\n\n\002id\030\006 \001(\r\022\027\n\017self_c" +
+      "onfidence\030\007 \001(\r\0322\n\020GEHNFJEPCJLEntry\022\013\n\003k" +
+      "ey\030\001 \001(\r\022\r\n\005value\030\002 \001(\005:\0028\001\0322\n\020GDBKBKACD" +
+      "FOEntry\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(\005:\0028\001B" +
       "\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -1304,18 +1304,18 @@ public final class SaveMainCoopReqOuterClass {
     internal_static_SaveMainCoopReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SaveMainCoopReq_descriptor,
-        new java.lang.String[] { "LJEBGEFGOAL", "SavePointId", "PCCKFLCCIGB", "Id", "SelfConfidence", });
-    internal_static_SaveMainCoopReq_LJEBGEFGOALEntry_descriptor =
+        new java.lang.String[] { "GEHNFJEPCJL", "GDBKBKACDFO", "SavePointId", "Id", "SelfConfidence", });
+    internal_static_SaveMainCoopReq_GEHNFJEPCJLEntry_descriptor =
       internal_static_SaveMainCoopReq_descriptor.getNestedTypes().get(0);
-    internal_static_SaveMainCoopReq_LJEBGEFGOALEntry_fieldAccessorTable = new
+    internal_static_SaveMainCoopReq_GEHNFJEPCJLEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_SaveMainCoopReq_LJEBGEFGOALEntry_descriptor,
+        internal_static_SaveMainCoopReq_GEHNFJEPCJLEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
-    internal_static_SaveMainCoopReq_PCCKFLCCIGBEntry_descriptor =
+    internal_static_SaveMainCoopReq_GDBKBKACDFOEntry_descriptor =
       internal_static_SaveMainCoopReq_descriptor.getNestedTypes().get(1);
-    internal_static_SaveMainCoopReq_PCCKFLCCIGBEntry_fieldAccessorTable = new
+    internal_static_SaveMainCoopReq_GDBKBKACDFOEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_SaveMainCoopReq_PCCKFLCCIGBEntry_descriptor,
+        internal_static_SaveMainCoopReq_GDBKBKACDFOEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
   }
 

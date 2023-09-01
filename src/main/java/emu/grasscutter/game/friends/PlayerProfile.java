@@ -1,15 +1,17 @@
 package emu.grasscutter.game.friends;
 
-import dev.morphia.annotations.AlsoLoad;
-import dev.morphia.annotations.Entity;
-import dev.morphia.annotations.Transient;
+import dev.morphia.annotations.*;
+import emu.grasscutter.Grasscutter;
+import emu.grasscutter.game.home.GameHome;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.net.proto.FriendEnterHomeOptionOuterClass;
 import emu.grasscutter.utils.Utils;
+import lombok.Getter;
+import org.jetbrains.annotations.Nullable;
 
 @Entity
+@Getter
 public class PlayerProfile {
-    @Transient private Player player;
-
     @AlsoLoad("id")
     private int uid;
 
@@ -17,11 +19,17 @@ public class PlayerProfile {
     private int avatarId;
     private String name;
     private String signature;
-    private int achievements;
 
     private int playerLevel;
     private int worldLevel;
     private int lastActiveTime;
+
+    private boolean isInDuel = false; // TODO: Implement duels. (TCG)
+    private boolean isDuelObservable = false; // TODO: Implement duels. (TCG)
+
+    @Getter
+    private int enterHomeOption;
+
 
     @Deprecated // Morphia only
     public PlayerProfile() {}
@@ -31,48 +39,11 @@ public class PlayerProfile {
         this.syncWithCharacter(player);
     }
 
-    public int getUid() {
-        return uid;
-    }
-
+    @Nullable
     public Player getPlayer() {
+        var player = Grasscutter.getGameServer().getPlayerByUid(this.getUid(), true);
+        this.syncWithCharacter(player);
         return player;
-    }
-
-    public synchronized void setPlayer(Player player) {
-        this.player = player;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getNameCard() {
-        return nameCard;
-    }
-
-    public int getAvatarId() {
-        return avatarId;
-    }
-
-    public String getSignature() {
-        return signature;
-    }
-
-    public int getAchievements() {
-        return achievements;
-    }
-
-    public int getPlayerLevel() {
-        return playerLevel;
-    }
-
-    public int getWorldLevel() {
-        return worldLevel;
-    }
-
-    public int getLastActiveTime() {
-        return lastActiveTime;
     }
 
     public void updateLastActiveTime() {
@@ -81,10 +52,6 @@ public class PlayerProfile {
 
     public int getDaysSinceLogin() {
         return (int) Math.floor((Utils.getCurrentSeconds() - getLastActiveTime()) / 86400.0);
-    }
-
-    public boolean isOnline() {
-        return this.getPlayer() != null;
     }
 
     public void syncWithCharacter(Player player) {
@@ -99,7 +66,7 @@ public class PlayerProfile {
         this.nameCard = player.getNameCardId();
         this.playerLevel = player.getLevel();
         this.worldLevel = player.getWorldLevel();
-        // this.achievements = 0;
+        this.enterHomeOption = player.tryGetHome().map(GameHome::getEnterHomeOption).orElse(FriendEnterHomeOptionOuterClass.FriendEnterHomeOption.FRIEND_ENTER_HOME_OPTION_REFUSE_VALUE);
         this.updateLastActiveTime();
     }
 }

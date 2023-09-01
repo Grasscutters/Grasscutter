@@ -19,26 +19,26 @@ public final class SegmentInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 module = 15;</code>
+     * <code>uint32 module = 14;</code>
      * @return The module.
      */
     int getModule();
 
     /**
-     * <code>uint32 size = 9;</code>
+     * <code>uint32 size = 4;</code>
      * @return The size.
      */
     int getSize();
 
     /**
-     * <code>uint32 offset = 3;</code>
+     * <code>uint32 offset = 11;</code>
      * @return The offset.
      */
     int getOffset();
   }
   /**
    * <pre>
-   * Obf: HFJHDDHPCOB
+   * Obf: HKNFEBADGOE
    * </pre>
    *
    * Protobuf type {@code SegmentInfo}
@@ -85,17 +85,17 @@ public final class SegmentInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
-
-              offset_ = input.readUInt32();
-              break;
-            }
-            case 72: {
+            case 32: {
 
               size_ = input.readUInt32();
               break;
             }
-            case 120: {
+            case 88: {
+
+              offset_ = input.readUInt32();
+              break;
+            }
+            case 112: {
 
               module_ = input.readUInt32();
               break;
@@ -132,10 +132,10 @@ public final class SegmentInfoOuterClass {
               emu.grasscutter.net.proto.SegmentInfoOuterClass.SegmentInfo.class, emu.grasscutter.net.proto.SegmentInfoOuterClass.SegmentInfo.Builder.class);
     }
 
-    public static final int MODULE_FIELD_NUMBER = 15;
+    public static final int MODULE_FIELD_NUMBER = 14;
     private int module_;
     /**
-     * <code>uint32 module = 15;</code>
+     * <code>uint32 module = 14;</code>
      * @return The module.
      */
     @java.lang.Override
@@ -143,10 +143,10 @@ public final class SegmentInfoOuterClass {
       return module_;
     }
 
-    public static final int SIZE_FIELD_NUMBER = 9;
+    public static final int SIZE_FIELD_NUMBER = 4;
     private int size_;
     /**
-     * <code>uint32 size = 9;</code>
+     * <code>uint32 size = 4;</code>
      * @return The size.
      */
     @java.lang.Override
@@ -154,10 +154,10 @@ public final class SegmentInfoOuterClass {
       return size_;
     }
 
-    public static final int OFFSET_FIELD_NUMBER = 3;
+    public static final int OFFSET_FIELD_NUMBER = 11;
     private int offset_;
     /**
-     * <code>uint32 offset = 3;</code>
+     * <code>uint32 offset = 11;</code>
      * @return The offset.
      */
     @java.lang.Override
@@ -179,14 +179,14 @@ public final class SegmentInfoOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (offset_ != 0) {
-        output.writeUInt32(3, offset_);
-      }
       if (size_ != 0) {
-        output.writeUInt32(9, size_);
+        output.writeUInt32(4, size_);
+      }
+      if (offset_ != 0) {
+        output.writeUInt32(11, offset_);
       }
       if (module_ != 0) {
-        output.writeUInt32(15, module_);
+        output.writeUInt32(14, module_);
       }
       unknownFields.writeTo(output);
     }
@@ -197,17 +197,17 @@ public final class SegmentInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (offset_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, offset_);
-      }
       if (size_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, size_);
+          .computeUInt32Size(4, size_);
+      }
+      if (offset_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(11, offset_);
       }
       if (module_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, module_);
+          .computeUInt32Size(14, module_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -344,7 +344,7 @@ public final class SegmentInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: HFJHDDHPCOB
+     * Obf: HKNFEBADGOE
      * </pre>
      *
      * Protobuf type {@code SegmentInfo}
@@ -507,7 +507,7 @@ public final class SegmentInfoOuterClass {
 
       private int module_ ;
       /**
-       * <code>uint32 module = 15;</code>
+       * <code>uint32 module = 14;</code>
        * @return The module.
        */
       @java.lang.Override
@@ -515,7 +515,7 @@ public final class SegmentInfoOuterClass {
         return module_;
       }
       /**
-       * <code>uint32 module = 15;</code>
+       * <code>uint32 module = 14;</code>
        * @param value The module to set.
        * @return This builder for chaining.
        */
@@ -526,7 +526,7 @@ public final class SegmentInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 module = 15;</code>
+       * <code>uint32 module = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearModule() {
@@ -538,7 +538,7 @@ public final class SegmentInfoOuterClass {
 
       private int size_ ;
       /**
-       * <code>uint32 size = 9;</code>
+       * <code>uint32 size = 4;</code>
        * @return The size.
        */
       @java.lang.Override
@@ -546,7 +546,7 @@ public final class SegmentInfoOuterClass {
         return size_;
       }
       /**
-       * <code>uint32 size = 9;</code>
+       * <code>uint32 size = 4;</code>
        * @param value The size to set.
        * @return This builder for chaining.
        */
@@ -557,7 +557,7 @@ public final class SegmentInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 size = 9;</code>
+       * <code>uint32 size = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearSize() {
@@ -569,7 +569,7 @@ public final class SegmentInfoOuterClass {
 
       private int offset_ ;
       /**
-       * <code>uint32 offset = 3;</code>
+       * <code>uint32 offset = 11;</code>
        * @return The offset.
        */
       @java.lang.Override
@@ -577,7 +577,7 @@ public final class SegmentInfoOuterClass {
         return offset_;
       }
       /**
-       * <code>uint32 offset = 3;</code>
+       * <code>uint32 offset = 11;</code>
        * @param value The offset to set.
        * @return This builder for chaining.
        */
@@ -588,7 +588,7 @@ public final class SegmentInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 offset = 3;</code>
+       * <code>uint32 offset = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearOffset() {
@@ -665,7 +665,7 @@ public final class SegmentInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021SegmentInfo.proto\";\n\013SegmentInfo\022\016\n\006mo" +
-      "dule\030\017 \001(\r\022\014\n\004size\030\t \001(\r\022\016\n\006offset\030\003 \001(\r" +
+      "dule\030\016 \001(\r\022\014\n\004size\030\004 \001(\r\022\016\n\006offset\030\013 \001(\r" +
       "B\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

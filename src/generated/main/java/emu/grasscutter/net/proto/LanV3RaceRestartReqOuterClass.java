@@ -19,15 +19,15 @@ public final class LanV3RaceRestartReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 gallery_id = 12;</code>
+     * <code>uint32 gallery_id = 6;</code>
      * @return The galleryId.
      */
     int getGalleryId();
   }
   /**
    * <pre>
-   * CmdId: 20785
-   * Obf: APACBDJEDCB
+   * CmdId: 9782
+   * Obf: FGMKPEIMFDD
    * </pre>
    *
    * Protobuf type {@code LanV3RaceRestartReq}
@@ -74,7 +74,7 @@ public final class LanV3RaceRestartReqOuterClass {
             case 0:
               done = true;
               break;
-            case 96: {
+            case 48: {
 
               galleryId_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class LanV3RaceRestartReqOuterClass {
               emu.grasscutter.net.proto.LanV3RaceRestartReqOuterClass.LanV3RaceRestartReq.class, emu.grasscutter.net.proto.LanV3RaceRestartReqOuterClass.LanV3RaceRestartReq.Builder.class);
     }
 
-    public static final int GALLERY_ID_FIELD_NUMBER = 12;
+    public static final int GALLERY_ID_FIELD_NUMBER = 6;
     private int galleryId_;
     /**
-     * <code>uint32 gallery_id = 12;</code>
+     * <code>uint32 gallery_id = 6;</code>
      * @return The galleryId.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class LanV3RaceRestartReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (galleryId_ != 0) {
-        output.writeUInt32(12, galleryId_);
+        output.writeUInt32(6, galleryId_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class LanV3RaceRestartReqOuterClass {
       size = 0;
       if (galleryId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, galleryId_);
+          .computeUInt32Size(6, galleryId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class LanV3RaceRestartReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 20785
-     * Obf: APACBDJEDCB
+     * CmdId: 9782
+     * Obf: FGMKPEIMFDD
      * </pre>
      *
      * Protobuf type {@code LanV3RaceRestartReq}
@@ -431,7 +431,7 @@ public final class LanV3RaceRestartReqOuterClass {
 
       private int galleryId_ ;
       /**
-       * <code>uint32 gallery_id = 12;</code>
+       * <code>uint32 gallery_id = 6;</code>
        * @return The galleryId.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class LanV3RaceRestartReqOuterClass {
         return galleryId_;
       }
       /**
-       * <code>uint32 gallery_id = 12;</code>
+       * <code>uint32 gallery_id = 6;</code>
        * @param value The galleryId to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class LanV3RaceRestartReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 gallery_id = 12;</code>
+       * <code>uint32 gallery_id = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearGalleryId() {
@@ -527,7 +527,7 @@ public final class LanV3RaceRestartReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\031LanV3RaceRestartReq.proto\")\n\023LanV3Race" +
-      "RestartReq\022\022\n\ngallery_id\030\014 \001(\rB\033\n\031emu.gr" +
+      "RestartReq\022\022\n\ngallery_id\030\006 \001(\rB\033\n\031emu.gr" +
       "asscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

@@ -19,21 +19,21 @@ public final class TakeCityReputationLevelRewardReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 level = 9;</code>
+     * <code>uint32 level = 1;</code>
      * @return The level.
      */
     int getLevel();
 
     /**
-     * <code>uint32 city_id = 5;</code>
+     * <code>uint32 city_id = 8;</code>
      * @return The cityId.
      */
     int getCityId();
   }
   /**
    * <pre>
-   * CmdId: 2802
-   * Obf: NGCLFIIDAJC
+   * CmdId: 5580
+   * Obf: KMGPJEFACKI
    * </pre>
    *
    * Protobuf type {@code TakeCityReputationLevelRewardReq}
@@ -80,14 +80,14 @@ public final class TakeCityReputationLevelRewardReqOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
-
-              cityId_ = input.readUInt32();
-              break;
-            }
-            case 72: {
+            case 8: {
 
               level_ = input.readUInt32();
+              break;
+            }
+            case 64: {
+
+              cityId_ = input.readUInt32();
               break;
             }
             default: {
@@ -122,10 +122,10 @@ public final class TakeCityReputationLevelRewardReqOuterClass {
               emu.grasscutter.net.proto.TakeCityReputationLevelRewardReqOuterClass.TakeCityReputationLevelRewardReq.class, emu.grasscutter.net.proto.TakeCityReputationLevelRewardReqOuterClass.TakeCityReputationLevelRewardReq.Builder.class);
     }
 
-    public static final int LEVEL_FIELD_NUMBER = 9;
+    public static final int LEVEL_FIELD_NUMBER = 1;
     private int level_;
     /**
-     * <code>uint32 level = 9;</code>
+     * <code>uint32 level = 1;</code>
      * @return The level.
      */
     @java.lang.Override
@@ -133,10 +133,10 @@ public final class TakeCityReputationLevelRewardReqOuterClass {
       return level_;
     }
 
-    public static final int CITY_ID_FIELD_NUMBER = 5;
+    public static final int CITY_ID_FIELD_NUMBER = 8;
     private int cityId_;
     /**
-     * <code>uint32 city_id = 5;</code>
+     * <code>uint32 city_id = 8;</code>
      * @return The cityId.
      */
     @java.lang.Override
@@ -158,11 +158,11 @@ public final class TakeCityReputationLevelRewardReqOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (cityId_ != 0) {
-        output.writeUInt32(5, cityId_);
-      }
       if (level_ != 0) {
-        output.writeUInt32(9, level_);
+        output.writeUInt32(1, level_);
+      }
+      if (cityId_ != 0) {
+        output.writeUInt32(8, cityId_);
       }
       unknownFields.writeTo(output);
     }
@@ -173,13 +173,13 @@ public final class TakeCityReputationLevelRewardReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (cityId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, cityId_);
-      }
       if (level_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, level_);
+          .computeUInt32Size(1, level_);
+      }
+      if (cityId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(8, cityId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -312,8 +312,8 @@ public final class TakeCityReputationLevelRewardReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2802
-     * Obf: NGCLFIIDAJC
+     * CmdId: 5580
+     * Obf: KMGPJEFACKI
      * </pre>
      *
      * Protobuf type {@code TakeCityReputationLevelRewardReq}
@@ -470,7 +470,7 @@ public final class TakeCityReputationLevelRewardReqOuterClass {
 
       private int level_ ;
       /**
-       * <code>uint32 level = 9;</code>
+       * <code>uint32 level = 1;</code>
        * @return The level.
        */
       @java.lang.Override
@@ -478,7 +478,7 @@ public final class TakeCityReputationLevelRewardReqOuterClass {
         return level_;
       }
       /**
-       * <code>uint32 level = 9;</code>
+       * <code>uint32 level = 1;</code>
        * @param value The level to set.
        * @return This builder for chaining.
        */
@@ -489,7 +489,7 @@ public final class TakeCityReputationLevelRewardReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 level = 9;</code>
+       * <code>uint32 level = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearLevel() {
@@ -501,7 +501,7 @@ public final class TakeCityReputationLevelRewardReqOuterClass {
 
       private int cityId_ ;
       /**
-       * <code>uint32 city_id = 5;</code>
+       * <code>uint32 city_id = 8;</code>
        * @return The cityId.
        */
       @java.lang.Override
@@ -509,7 +509,7 @@ public final class TakeCityReputationLevelRewardReqOuterClass {
         return cityId_;
       }
       /**
-       * <code>uint32 city_id = 5;</code>
+       * <code>uint32 city_id = 8;</code>
        * @param value The cityId to set.
        * @return This builder for chaining.
        */
@@ -520,7 +520,7 @@ public final class TakeCityReputationLevelRewardReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 city_id = 5;</code>
+       * <code>uint32 city_id = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearCityId() {
@@ -598,7 +598,7 @@ public final class TakeCityReputationLevelRewardReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n&TakeCityReputationLevelRewardReq.proto" +
       "\"B\n TakeCityReputationLevelRewardReq\022\r\n\005" +
-      "level\030\t \001(\r\022\017\n\007city_id\030\005 \001(\rB\033\n\031emu.gras" +
+      "level\030\001 \001(\r\022\017\n\007city_id\030\010 \001(\rB\033\n\031emu.gras" +
       "scutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

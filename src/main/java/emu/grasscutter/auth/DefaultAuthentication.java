@@ -1,13 +1,12 @@
 package emu.grasscutter.auth;
 
-import static emu.grasscutter.config.Configuration.ACCOUNT;
-import static emu.grasscutter.utils.lang.Language.translate;
-
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.auth.DefaultAuthenticators.*;
 import emu.grasscutter.game.Account;
-import emu.grasscutter.server.http.objects.ComboTokenResJson;
-import emu.grasscutter.server.http.objects.LoginResultJson;
+import emu.grasscutter.server.http.objects.*;
+
+import static emu.grasscutter.config.Configuration.ACCOUNT;
+import static emu.grasscutter.utils.lang.Language.translate;
 
 /**
  * The default Grasscutter authentication implementation. Allows all users to access any account.

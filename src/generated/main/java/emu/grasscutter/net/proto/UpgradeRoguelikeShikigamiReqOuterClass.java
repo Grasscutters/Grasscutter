@@ -19,21 +19,21 @@ public final class UpgradeRoguelikeShikigamiReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 OOHLIPJCHNE = 3;</code>
-     * @return The oOHLIPJCHNE.
+     * <code>uint32 JGBONDOBAII = 10;</code>
+     * @return The jGBONDOBAII.
      */
-    int getOOHLIPJCHNE();
+    int getJGBONDOBAII();
 
     /**
-     * <code>uint32 HLODNDIEIJG = 11;</code>
-     * @return The hLODNDIEIJG.
+     * <code>uint32 FHBEKAOCDHF = 2;</code>
+     * @return The fHBEKAOCDHF.
      */
-    int getHLODNDIEIJG();
+    int getFHBEKAOCDHF();
   }
   /**
    * <pre>
-   * CmdId: 8187
-   * Obf: JDNNCJAMPJO
+   * CmdId: 23123
+   * Obf: GEMGPGPCCCD
    * </pre>
    *
    * Protobuf type {@code UpgradeRoguelikeShikigamiReq}
@@ -80,14 +80,14 @@ public final class UpgradeRoguelikeShikigamiReqOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 16: {
 
-              oOHLIPJCHNE_ = input.readUInt32();
+              fHBEKAOCDHF_ = input.readUInt32();
               break;
             }
-            case 88: {
+            case 80: {
 
-              hLODNDIEIJG_ = input.readUInt32();
+              jGBONDOBAII_ = input.readUInt32();
               break;
             }
             default: {
@@ -122,26 +122,26 @@ public final class UpgradeRoguelikeShikigamiReqOuterClass {
               emu.grasscutter.net.proto.UpgradeRoguelikeShikigamiReqOuterClass.UpgradeRoguelikeShikigamiReq.class, emu.grasscutter.net.proto.UpgradeRoguelikeShikigamiReqOuterClass.UpgradeRoguelikeShikigamiReq.Builder.class);
     }
 
-    public static final int OOHLIPJCHNE_FIELD_NUMBER = 3;
-    private int oOHLIPJCHNE_;
+    public static final int JGBONDOBAII_FIELD_NUMBER = 10;
+    private int jGBONDOBAII_;
     /**
-     * <code>uint32 OOHLIPJCHNE = 3;</code>
-     * @return The oOHLIPJCHNE.
+     * <code>uint32 JGBONDOBAII = 10;</code>
+     * @return The jGBONDOBAII.
      */
     @java.lang.Override
-    public int getOOHLIPJCHNE() {
-      return oOHLIPJCHNE_;
+    public int getJGBONDOBAII() {
+      return jGBONDOBAII_;
     }
 
-    public static final int HLODNDIEIJG_FIELD_NUMBER = 11;
-    private int hLODNDIEIJG_;
+    public static final int FHBEKAOCDHF_FIELD_NUMBER = 2;
+    private int fHBEKAOCDHF_;
     /**
-     * <code>uint32 HLODNDIEIJG = 11;</code>
-     * @return The hLODNDIEIJG.
+     * <code>uint32 FHBEKAOCDHF = 2;</code>
+     * @return The fHBEKAOCDHF.
      */
     @java.lang.Override
-    public int getHLODNDIEIJG() {
-      return hLODNDIEIJG_;
+    public int getFHBEKAOCDHF() {
+      return fHBEKAOCDHF_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -158,11 +158,11 @@ public final class UpgradeRoguelikeShikigamiReqOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (oOHLIPJCHNE_ != 0) {
-        output.writeUInt32(3, oOHLIPJCHNE_);
+      if (fHBEKAOCDHF_ != 0) {
+        output.writeUInt32(2, fHBEKAOCDHF_);
       }
-      if (hLODNDIEIJG_ != 0) {
-        output.writeUInt32(11, hLODNDIEIJG_);
+      if (jGBONDOBAII_ != 0) {
+        output.writeUInt32(10, jGBONDOBAII_);
       }
       unknownFields.writeTo(output);
     }
@@ -173,13 +173,13 @@ public final class UpgradeRoguelikeShikigamiReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (oOHLIPJCHNE_ != 0) {
+      if (fHBEKAOCDHF_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, oOHLIPJCHNE_);
+          .computeUInt32Size(2, fHBEKAOCDHF_);
       }
-      if (hLODNDIEIJG_ != 0) {
+      if (jGBONDOBAII_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, hLODNDIEIJG_);
+          .computeUInt32Size(10, jGBONDOBAII_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -196,10 +196,10 @@ public final class UpgradeRoguelikeShikigamiReqOuterClass {
       }
       emu.grasscutter.net.proto.UpgradeRoguelikeShikigamiReqOuterClass.UpgradeRoguelikeShikigamiReq other = (emu.grasscutter.net.proto.UpgradeRoguelikeShikigamiReqOuterClass.UpgradeRoguelikeShikigamiReq) obj;
 
-      if (getOOHLIPJCHNE()
-          != other.getOOHLIPJCHNE()) return false;
-      if (getHLODNDIEIJG()
-          != other.getHLODNDIEIJG()) return false;
+      if (getJGBONDOBAII()
+          != other.getJGBONDOBAII()) return false;
+      if (getFHBEKAOCDHF()
+          != other.getFHBEKAOCDHF()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -211,10 +211,10 @@ public final class UpgradeRoguelikeShikigamiReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + OOHLIPJCHNE_FIELD_NUMBER;
-      hash = (53 * hash) + getOOHLIPJCHNE();
-      hash = (37 * hash) + HLODNDIEIJG_FIELD_NUMBER;
-      hash = (53 * hash) + getHLODNDIEIJG();
+      hash = (37 * hash) + JGBONDOBAII_FIELD_NUMBER;
+      hash = (53 * hash) + getJGBONDOBAII();
+      hash = (37 * hash) + FHBEKAOCDHF_FIELD_NUMBER;
+      hash = (53 * hash) + getFHBEKAOCDHF();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -312,8 +312,8 @@ public final class UpgradeRoguelikeShikigamiReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8187
-     * Obf: JDNNCJAMPJO
+     * CmdId: 23123
+     * Obf: GEMGPGPCCCD
      * </pre>
      *
      * Protobuf type {@code UpgradeRoguelikeShikigamiReq}
@@ -353,9 +353,9 @@ public final class UpgradeRoguelikeShikigamiReqOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        oOHLIPJCHNE_ = 0;
+        jGBONDOBAII_ = 0;
 
-        hLODNDIEIJG_ = 0;
+        fHBEKAOCDHF_ = 0;
 
         return this;
       }
@@ -383,8 +383,8 @@ public final class UpgradeRoguelikeShikigamiReqOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.UpgradeRoguelikeShikigamiReqOuterClass.UpgradeRoguelikeShikigamiReq buildPartial() {
         emu.grasscutter.net.proto.UpgradeRoguelikeShikigamiReqOuterClass.UpgradeRoguelikeShikigamiReq result = new emu.grasscutter.net.proto.UpgradeRoguelikeShikigamiReqOuterClass.UpgradeRoguelikeShikigamiReq(this);
-        result.oOHLIPJCHNE_ = oOHLIPJCHNE_;
-        result.hLODNDIEIJG_ = hLODNDIEIJG_;
+        result.jGBONDOBAII_ = jGBONDOBAII_;
+        result.fHBEKAOCDHF_ = fHBEKAOCDHF_;
         onBuilt();
         return result;
       }
@@ -433,11 +433,11 @@ public final class UpgradeRoguelikeShikigamiReqOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.UpgradeRoguelikeShikigamiReqOuterClass.UpgradeRoguelikeShikigamiReq other) {
         if (other == emu.grasscutter.net.proto.UpgradeRoguelikeShikigamiReqOuterClass.UpgradeRoguelikeShikigamiReq.getDefaultInstance()) return this;
-        if (other.getOOHLIPJCHNE() != 0) {
-          setOOHLIPJCHNE(other.getOOHLIPJCHNE());
+        if (other.getJGBONDOBAII() != 0) {
+          setJGBONDOBAII(other.getJGBONDOBAII());
         }
-        if (other.getHLODNDIEIJG() != 0) {
-          setHLODNDIEIJG(other.getHLODNDIEIJG());
+        if (other.getFHBEKAOCDHF() != 0) {
+          setFHBEKAOCDHF(other.getFHBEKAOCDHF());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -468,64 +468,64 @@ public final class UpgradeRoguelikeShikigamiReqOuterClass {
         return this;
       }
 
-      private int oOHLIPJCHNE_ ;
+      private int jGBONDOBAII_ ;
       /**
-       * <code>uint32 OOHLIPJCHNE = 3;</code>
-       * @return The oOHLIPJCHNE.
+       * <code>uint32 JGBONDOBAII = 10;</code>
+       * @return The jGBONDOBAII.
        */
       @java.lang.Override
-      public int getOOHLIPJCHNE() {
-        return oOHLIPJCHNE_;
+      public int getJGBONDOBAII() {
+        return jGBONDOBAII_;
       }
       /**
-       * <code>uint32 OOHLIPJCHNE = 3;</code>
-       * @param value The oOHLIPJCHNE to set.
+       * <code>uint32 JGBONDOBAII = 10;</code>
+       * @param value The jGBONDOBAII to set.
        * @return This builder for chaining.
        */
-      public Builder setOOHLIPJCHNE(int value) {
+      public Builder setJGBONDOBAII(int value) {
         
-        oOHLIPJCHNE_ = value;
+        jGBONDOBAII_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 OOHLIPJCHNE = 3;</code>
+       * <code>uint32 JGBONDOBAII = 10;</code>
        * @return This builder for chaining.
        */
-      public Builder clearOOHLIPJCHNE() {
+      public Builder clearJGBONDOBAII() {
         
-        oOHLIPJCHNE_ = 0;
+        jGBONDOBAII_ = 0;
         onChanged();
         return this;
       }
 
-      private int hLODNDIEIJG_ ;
+      private int fHBEKAOCDHF_ ;
       /**
-       * <code>uint32 HLODNDIEIJG = 11;</code>
-       * @return The hLODNDIEIJG.
+       * <code>uint32 FHBEKAOCDHF = 2;</code>
+       * @return The fHBEKAOCDHF.
        */
       @java.lang.Override
-      public int getHLODNDIEIJG() {
-        return hLODNDIEIJG_;
+      public int getFHBEKAOCDHF() {
+        return fHBEKAOCDHF_;
       }
       /**
-       * <code>uint32 HLODNDIEIJG = 11;</code>
-       * @param value The hLODNDIEIJG to set.
+       * <code>uint32 FHBEKAOCDHF = 2;</code>
+       * @param value The fHBEKAOCDHF to set.
        * @return This builder for chaining.
        */
-      public Builder setHLODNDIEIJG(int value) {
+      public Builder setFHBEKAOCDHF(int value) {
         
-        hLODNDIEIJG_ = value;
+        fHBEKAOCDHF_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 HLODNDIEIJG = 11;</code>
+       * <code>uint32 FHBEKAOCDHF = 2;</code>
        * @return This builder for chaining.
        */
-      public Builder clearHLODNDIEIJG() {
+      public Builder clearFHBEKAOCDHF() {
         
-        hLODNDIEIJG_ = 0;
+        fHBEKAOCDHF_ = 0;
         onChanged();
         return this;
       }
@@ -597,8 +597,8 @@ public final class UpgradeRoguelikeShikigamiReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\"UpgradeRoguelikeShikigamiReq.proto\"H\n\034" +
-      "UpgradeRoguelikeShikigamiReq\022\023\n\013OOHLIPJC" +
-      "HNE\030\003 \001(\r\022\023\n\013HLODNDIEIJG\030\013 \001(\rB\033\n\031emu.gr" +
+      "UpgradeRoguelikeShikigamiReq\022\023\n\013JGBONDOB" +
+      "AII\030\n \001(\r\022\023\n\013FHBEKAOCDHF\030\002 \001(\rB\033\n\031emu.gr" +
       "asscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -610,7 +610,7 @@ public final class UpgradeRoguelikeShikigamiReqOuterClass {
     internal_static_UpgradeRoguelikeShikigamiReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_UpgradeRoguelikeShikigamiReq_descriptor,
-        new java.lang.String[] { "OOHLIPJCHNE", "HLODNDIEIJG", });
+        new java.lang.String[] { "JGBONDOBAII", "FHBEKAOCDHF", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

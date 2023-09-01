@@ -19,44 +19,21 @@ public final class ActivityCondStateChangeNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 activated_sale_id_list = 13;</code>
-     * @return A list containing the activatedSaleIdList.
+     * <code>repeated uint32 DCPENBLPKHK = 11;</code>
+     * @return A list containing the dCPENBLPKHK.
      */
-    java.util.List<java.lang.Integer> getActivatedSaleIdListList();
+    java.util.List<java.lang.Integer> getDCPENBLPKHKList();
     /**
-     * <code>repeated uint32 activated_sale_id_list = 13;</code>
-     * @return The count of activatedSaleIdList.
+     * <code>repeated uint32 DCPENBLPKHK = 11;</code>
+     * @return The count of dCPENBLPKHK.
      */
-    int getActivatedSaleIdListCount();
+    int getDCPENBLPKHKCount();
     /**
-     * <code>repeated uint32 activated_sale_id_list = 13;</code>
+     * <code>repeated uint32 DCPENBLPKHK = 11;</code>
      * @param index The index of the element to return.
-     * @return The activatedSaleIdList at the given index.
+     * @return The dCPENBLPKHK at the given index.
      */
-    int getActivatedSaleIdList(int index);
-
-    /**
-     * <code>repeated uint32 expire_cond_list = 7;</code>
-     * @return A list containing the expireCondList.
-     */
-    java.util.List<java.lang.Integer> getExpireCondListList();
-    /**
-     * <code>repeated uint32 expire_cond_list = 7;</code>
-     * @return The count of expireCondList.
-     */
-    int getExpireCondListCount();
-    /**
-     * <code>repeated uint32 expire_cond_list = 7;</code>
-     * @param index The index of the element to return.
-     * @return The expireCondList at the given index.
-     */
-    int getExpireCondList(int index);
-
-    /**
-     * <code>uint32 activity_id = 10;</code>
-     * @return The activityId.
-     */
-    int getActivityId();
+    int getDCPENBLPKHK(int index);
 
     /**
      * <code>repeated .Uint32Pair disable_transfer_point_interaction_list = 4;</code>
@@ -83,32 +60,55 @@ public final class ActivityCondStateChangeNotifyOuterClass {
         int index);
 
     /**
-     * <code>repeated uint32 meet_cond_list = 5;</code>
-     * @return A list containing the meetCondList.
+     * <code>uint32 activity_id = 1;</code>
+     * @return The activityId.
      */
-    java.util.List<java.lang.Integer> getMeetCondListList();
-    /**
-     * <code>repeated uint32 meet_cond_list = 5;</code>
-     * @return The count of meetCondList.
-     */
-    int getMeetCondListCount();
-    /**
-     * <code>repeated uint32 meet_cond_list = 5;</code>
-     * @param index The index of the element to return.
-     * @return The meetCondList at the given index.
-     */
-    int getMeetCondList(int index);
+    int getActivityId();
 
     /**
-     * <code>uint32 schedule_id = 6;</code>
+     * <code>repeated uint32 PHCOMIFAIJD = 8;</code>
+     * @return A list containing the pHCOMIFAIJD.
+     */
+    java.util.List<java.lang.Integer> getPHCOMIFAIJDList();
+    /**
+     * <code>repeated uint32 PHCOMIFAIJD = 8;</code>
+     * @return The count of pHCOMIFAIJD.
+     */
+    int getPHCOMIFAIJDCount();
+    /**
+     * <code>repeated uint32 PHCOMIFAIJD = 8;</code>
+     * @param index The index of the element to return.
+     * @return The pHCOMIFAIJD at the given index.
+     */
+    int getPHCOMIFAIJD(int index);
+
+    /**
+     * <code>repeated uint32 activated_sale_id_list = 14;</code>
+     * @return A list containing the activatedSaleIdList.
+     */
+    java.util.List<java.lang.Integer> getActivatedSaleIdListList();
+    /**
+     * <code>repeated uint32 activated_sale_id_list = 14;</code>
+     * @return The count of activatedSaleIdList.
+     */
+    int getActivatedSaleIdListCount();
+    /**
+     * <code>repeated uint32 activated_sale_id_list = 14;</code>
+     * @param index The index of the element to return.
+     * @return The activatedSaleIdList at the given index.
+     */
+    int getActivatedSaleIdList(int index);
+
+    /**
+     * <code>uint32 schedule_id = 10;</code>
      * @return The scheduleId.
      */
     int getScheduleId();
   }
   /**
    * <pre>
-   * CmdId: 2178
-   * Obf: GEKIGGBPDNC
+   * CmdId: 8757
+   * Obf: NEGNAIMEEAO
    * </pre>
    *
    * Protobuf type {@code ActivityCondStateChangeNotify}
@@ -123,10 +123,10 @@ public final class ActivityCondStateChangeNotifyOuterClass {
       super(builder);
     }
     private ActivityCondStateChangeNotify() {
-      activatedSaleIdList_ = emptyIntList();
-      expireCondList_ = emptyIntList();
+      dCPENBLPKHK_ = emptyIntList();
       disableTransferPointInteractionList_ = java.util.Collections.emptyList();
-      meetCondList_ = emptyIntList();
+      pHCOMIFAIJD_ = emptyIntList();
+      activatedSaleIdList_ = emptyIntList();
     }
 
     @java.lang.Override
@@ -160,81 +160,81 @@ public final class ActivityCondStateChangeNotifyOuterClass {
             case 0:
               done = true;
               break;
+            case 8: {
+
+              activityId_ = input.readUInt32();
+              break;
+            }
             case 34: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 disableTransferPointInteractionList_ = new java.util.ArrayList<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000002;
               }
               disableTransferPointInteractionList_.add(
                   input.readMessage(emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.parser(), extensionRegistry));
               break;
             }
-            case 40: {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                meetCondList_ = newIntList();
-                mutable_bitField0_ |= 0x00000008;
+            case 64: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                pHCOMIFAIJD_ = newIntList();
+                mutable_bitField0_ |= 0x00000004;
               }
-              meetCondList_.addInt(input.readUInt32());
+              pHCOMIFAIJD_.addInt(input.readUInt32());
               break;
             }
-            case 42: {
+            case 66: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000008) != 0) && input.getBytesUntilLimit() > 0) {
-                meetCondList_ = newIntList();
-                mutable_bitField0_ |= 0x00000008;
+              if (!((mutable_bitField0_ & 0x00000004) != 0) && input.getBytesUntilLimit() > 0) {
+                pHCOMIFAIJD_ = newIntList();
+                mutable_bitField0_ |= 0x00000004;
               }
               while (input.getBytesUntilLimit() > 0) {
-                meetCondList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 48: {
-
-              scheduleId_ = input.readUInt32();
-              break;
-            }
-            case 56: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                expireCondList_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              expireCondList_.addInt(input.readUInt32());
-              break;
-            }
-            case 58: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
-                expireCondList_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                expireCondList_.addInt(input.readUInt32());
+                pHCOMIFAIJD_.addInt(input.readUInt32());
               }
               input.popLimit(limit);
               break;
             }
             case 80: {
 
-              activityId_ = input.readUInt32();
+              scheduleId_ = input.readUInt32();
               break;
             }
-            case 104: {
+            case 88: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                activatedSaleIdList_ = newIntList();
+                dCPENBLPKHK_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
+              }
+              dCPENBLPKHK_.addInt(input.readUInt32());
+              break;
+            }
+            case 90: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                dCPENBLPKHK_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                dCPENBLPKHK_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 112: {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                activatedSaleIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000008;
               }
               activatedSaleIdList_.addInt(input.readUInt32());
               break;
             }
-            case 106: {
+            case 114: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0) && input.getBytesUntilLimit() > 0) {
                 activatedSaleIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000008;
               }
               while (input.getBytesUntilLimit() > 0) {
                 activatedSaleIdList_.addInt(input.readUInt32());
@@ -257,16 +257,16 @@ public final class ActivityCondStateChangeNotifyOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
           disableTransferPointInteractionList_ = java.util.Collections.unmodifiableList(disableTransferPointInteractionList_);
         }
-        if (((mutable_bitField0_ & 0x00000008) != 0)) {
-          meetCondList_.makeImmutable(); // C
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          expireCondList_.makeImmutable(); // C
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+          pHCOMIFAIJD_.makeImmutable(); // C
         }
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          dCPENBLPKHK_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000008) != 0)) {
           activatedSaleIdList_.makeImmutable(); // C
         }
         this.unknownFields = unknownFields.build();
@@ -286,72 +286,33 @@ public final class ActivityCondStateChangeNotifyOuterClass {
               emu.grasscutter.net.proto.ActivityCondStateChangeNotifyOuterClass.ActivityCondStateChangeNotify.class, emu.grasscutter.net.proto.ActivityCondStateChangeNotifyOuterClass.ActivityCondStateChangeNotify.Builder.class);
     }
 
-    public static final int ACTIVATED_SALE_ID_LIST_FIELD_NUMBER = 13;
-    private com.google.protobuf.Internal.IntList activatedSaleIdList_;
+    public static final int DCPENBLPKHK_FIELD_NUMBER = 11;
+    private com.google.protobuf.Internal.IntList dCPENBLPKHK_;
     /**
-     * <code>repeated uint32 activated_sale_id_list = 13;</code>
-     * @return A list containing the activatedSaleIdList.
+     * <code>repeated uint32 DCPENBLPKHK = 11;</code>
+     * @return A list containing the dCPENBLPKHK.
      */
     @java.lang.Override
     public java.util.List<java.lang.Integer>
-        getActivatedSaleIdListList() {
-      return activatedSaleIdList_;
+        getDCPENBLPKHKList() {
+      return dCPENBLPKHK_;
     }
     /**
-     * <code>repeated uint32 activated_sale_id_list = 13;</code>
-     * @return The count of activatedSaleIdList.
+     * <code>repeated uint32 DCPENBLPKHK = 11;</code>
+     * @return The count of dCPENBLPKHK.
      */
-    public int getActivatedSaleIdListCount() {
-      return activatedSaleIdList_.size();
+    public int getDCPENBLPKHKCount() {
+      return dCPENBLPKHK_.size();
     }
     /**
-     * <code>repeated uint32 activated_sale_id_list = 13;</code>
+     * <code>repeated uint32 DCPENBLPKHK = 11;</code>
      * @param index The index of the element to return.
-     * @return The activatedSaleIdList at the given index.
+     * @return The dCPENBLPKHK at the given index.
      */
-    public int getActivatedSaleIdList(int index) {
-      return activatedSaleIdList_.getInt(index);
+    public int getDCPENBLPKHK(int index) {
+      return dCPENBLPKHK_.getInt(index);
     }
-    private int activatedSaleIdListMemoizedSerializedSize = -1;
-
-    public static final int EXPIRE_COND_LIST_FIELD_NUMBER = 7;
-    private com.google.protobuf.Internal.IntList expireCondList_;
-    /**
-     * <code>repeated uint32 expire_cond_list = 7;</code>
-     * @return A list containing the expireCondList.
-     */
-    @java.lang.Override
-    public java.util.List<java.lang.Integer>
-        getExpireCondListList() {
-      return expireCondList_;
-    }
-    /**
-     * <code>repeated uint32 expire_cond_list = 7;</code>
-     * @return The count of expireCondList.
-     */
-    public int getExpireCondListCount() {
-      return expireCondList_.size();
-    }
-    /**
-     * <code>repeated uint32 expire_cond_list = 7;</code>
-     * @param index The index of the element to return.
-     * @return The expireCondList at the given index.
-     */
-    public int getExpireCondList(int index) {
-      return expireCondList_.getInt(index);
-    }
-    private int expireCondListMemoizedSerializedSize = -1;
-
-    public static final int ACTIVITY_ID_FIELD_NUMBER = 10;
-    private int activityId_;
-    /**
-     * <code>uint32 activity_id = 10;</code>
-     * @return The activityId.
-     */
-    @java.lang.Override
-    public int getActivityId() {
-      return activityId_;
-    }
+    private int dCPENBLPKHKMemoizedSerializedSize = -1;
 
     public static final int DISABLE_TRANSFER_POINT_INTERACTION_LIST_FIELD_NUMBER = 4;
     private java.util.List<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair> disableTransferPointInteractionList_;
@@ -393,38 +354,77 @@ public final class ActivityCondStateChangeNotifyOuterClass {
       return disableTransferPointInteractionList_.get(index);
     }
 
-    public static final int MEET_COND_LIST_FIELD_NUMBER = 5;
-    private com.google.protobuf.Internal.IntList meetCondList_;
+    public static final int ACTIVITY_ID_FIELD_NUMBER = 1;
+    private int activityId_;
     /**
-     * <code>repeated uint32 meet_cond_list = 5;</code>
-     * @return A list containing the meetCondList.
+     * <code>uint32 activity_id = 1;</code>
+     * @return The activityId.
+     */
+    @java.lang.Override
+    public int getActivityId() {
+      return activityId_;
+    }
+
+    public static final int PHCOMIFAIJD_FIELD_NUMBER = 8;
+    private com.google.protobuf.Internal.IntList pHCOMIFAIJD_;
+    /**
+     * <code>repeated uint32 PHCOMIFAIJD = 8;</code>
+     * @return A list containing the pHCOMIFAIJD.
      */
     @java.lang.Override
     public java.util.List<java.lang.Integer>
-        getMeetCondListList() {
-      return meetCondList_;
+        getPHCOMIFAIJDList() {
+      return pHCOMIFAIJD_;
     }
     /**
-     * <code>repeated uint32 meet_cond_list = 5;</code>
-     * @return The count of meetCondList.
+     * <code>repeated uint32 PHCOMIFAIJD = 8;</code>
+     * @return The count of pHCOMIFAIJD.
      */
-    public int getMeetCondListCount() {
-      return meetCondList_.size();
+    public int getPHCOMIFAIJDCount() {
+      return pHCOMIFAIJD_.size();
     }
     /**
-     * <code>repeated uint32 meet_cond_list = 5;</code>
+     * <code>repeated uint32 PHCOMIFAIJD = 8;</code>
      * @param index The index of the element to return.
-     * @return The meetCondList at the given index.
+     * @return The pHCOMIFAIJD at the given index.
      */
-    public int getMeetCondList(int index) {
-      return meetCondList_.getInt(index);
+    public int getPHCOMIFAIJD(int index) {
+      return pHCOMIFAIJD_.getInt(index);
     }
-    private int meetCondListMemoizedSerializedSize = -1;
+    private int pHCOMIFAIJDMemoizedSerializedSize = -1;
 
-    public static final int SCHEDULE_ID_FIELD_NUMBER = 6;
+    public static final int ACTIVATED_SALE_ID_LIST_FIELD_NUMBER = 14;
+    private com.google.protobuf.Internal.IntList activatedSaleIdList_;
+    /**
+     * <code>repeated uint32 activated_sale_id_list = 14;</code>
+     * @return A list containing the activatedSaleIdList.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Integer>
+        getActivatedSaleIdListList() {
+      return activatedSaleIdList_;
+    }
+    /**
+     * <code>repeated uint32 activated_sale_id_list = 14;</code>
+     * @return The count of activatedSaleIdList.
+     */
+    public int getActivatedSaleIdListCount() {
+      return activatedSaleIdList_.size();
+    }
+    /**
+     * <code>repeated uint32 activated_sale_id_list = 14;</code>
+     * @param index The index of the element to return.
+     * @return The activatedSaleIdList at the given index.
+     */
+    public int getActivatedSaleIdList(int index) {
+      return activatedSaleIdList_.getInt(index);
+    }
+    private int activatedSaleIdListMemoizedSerializedSize = -1;
+
+    public static final int SCHEDULE_ID_FIELD_NUMBER = 10;
     private int scheduleId_;
     /**
-     * <code>uint32 schedule_id = 6;</code>
+     * <code>uint32 schedule_id = 10;</code>
      * @return The scheduleId.
      */
     @java.lang.Override
@@ -447,31 +447,31 @@ public final class ActivityCondStateChangeNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
+      if (activityId_ != 0) {
+        output.writeUInt32(1, activityId_);
+      }
       for (int i = 0; i < disableTransferPointInteractionList_.size(); i++) {
         output.writeMessage(4, disableTransferPointInteractionList_.get(i));
       }
-      if (getMeetCondListList().size() > 0) {
-        output.writeUInt32NoTag(42);
-        output.writeUInt32NoTag(meetCondListMemoizedSerializedSize);
+      if (getPHCOMIFAIJDList().size() > 0) {
+        output.writeUInt32NoTag(66);
+        output.writeUInt32NoTag(pHCOMIFAIJDMemoizedSerializedSize);
       }
-      for (int i = 0; i < meetCondList_.size(); i++) {
-        output.writeUInt32NoTag(meetCondList_.getInt(i));
+      for (int i = 0; i < pHCOMIFAIJD_.size(); i++) {
+        output.writeUInt32NoTag(pHCOMIFAIJD_.getInt(i));
       }
       if (scheduleId_ != 0) {
-        output.writeUInt32(6, scheduleId_);
+        output.writeUInt32(10, scheduleId_);
       }
-      if (getExpireCondListList().size() > 0) {
-        output.writeUInt32NoTag(58);
-        output.writeUInt32NoTag(expireCondListMemoizedSerializedSize);
+      if (getDCPENBLPKHKList().size() > 0) {
+        output.writeUInt32NoTag(90);
+        output.writeUInt32NoTag(dCPENBLPKHKMemoizedSerializedSize);
       }
-      for (int i = 0; i < expireCondList_.size(); i++) {
-        output.writeUInt32NoTag(expireCondList_.getInt(i));
-      }
-      if (activityId_ != 0) {
-        output.writeUInt32(10, activityId_);
+      for (int i = 0; i < dCPENBLPKHK_.size(); i++) {
+        output.writeUInt32NoTag(dCPENBLPKHK_.getInt(i));
       }
       if (getActivatedSaleIdListList().size() > 0) {
-        output.writeUInt32NoTag(106);
+        output.writeUInt32NoTag(114);
         output.writeUInt32NoTag(activatedSaleIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < activatedSaleIdList_.size(); i++) {
@@ -486,45 +486,45 @@ public final class ActivityCondStateChangeNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (activityId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(1, activityId_);
+      }
       for (int i = 0; i < disableTransferPointInteractionList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, disableTransferPointInteractionList_.get(i));
       }
       {
         int dataSize = 0;
-        for (int i = 0; i < meetCondList_.size(); i++) {
+        for (int i = 0; i < pHCOMIFAIJD_.size(); i++) {
           dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(meetCondList_.getInt(i));
+            .computeUInt32SizeNoTag(pHCOMIFAIJD_.getInt(i));
         }
         size += dataSize;
-        if (!getMeetCondListList().isEmpty()) {
+        if (!getPHCOMIFAIJDList().isEmpty()) {
           size += 1;
           size += com.google.protobuf.CodedOutputStream
               .computeInt32SizeNoTag(dataSize);
         }
-        meetCondListMemoizedSerializedSize = dataSize;
+        pHCOMIFAIJDMemoizedSerializedSize = dataSize;
       }
       if (scheduleId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, scheduleId_);
+          .computeUInt32Size(10, scheduleId_);
       }
       {
         int dataSize = 0;
-        for (int i = 0; i < expireCondList_.size(); i++) {
+        for (int i = 0; i < dCPENBLPKHK_.size(); i++) {
           dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(expireCondList_.getInt(i));
+            .computeUInt32SizeNoTag(dCPENBLPKHK_.getInt(i));
         }
         size += dataSize;
-        if (!getExpireCondListList().isEmpty()) {
+        if (!getDCPENBLPKHKList().isEmpty()) {
           size += 1;
           size += com.google.protobuf.CodedOutputStream
               .computeInt32SizeNoTag(dataSize);
         }
-        expireCondListMemoizedSerializedSize = dataSize;
-      }
-      if (activityId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, activityId_);
+        dCPENBLPKHKMemoizedSerializedSize = dataSize;
       }
       {
         int dataSize = 0;
@@ -555,16 +555,16 @@ public final class ActivityCondStateChangeNotifyOuterClass {
       }
       emu.grasscutter.net.proto.ActivityCondStateChangeNotifyOuterClass.ActivityCondStateChangeNotify other = (emu.grasscutter.net.proto.ActivityCondStateChangeNotifyOuterClass.ActivityCondStateChangeNotify) obj;
 
-      if (!getActivatedSaleIdListList()
-          .equals(other.getActivatedSaleIdListList())) return false;
-      if (!getExpireCondListList()
-          .equals(other.getExpireCondListList())) return false;
-      if (getActivityId()
-          != other.getActivityId()) return false;
+      if (!getDCPENBLPKHKList()
+          .equals(other.getDCPENBLPKHKList())) return false;
       if (!getDisableTransferPointInteractionListList()
           .equals(other.getDisableTransferPointInteractionListList())) return false;
-      if (!getMeetCondListList()
-          .equals(other.getMeetCondListList())) return false;
+      if (getActivityId()
+          != other.getActivityId()) return false;
+      if (!getPHCOMIFAIJDList()
+          .equals(other.getPHCOMIFAIJDList())) return false;
+      if (!getActivatedSaleIdListList()
+          .equals(other.getActivatedSaleIdListList())) return false;
       if (getScheduleId()
           != other.getScheduleId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -578,23 +578,23 @@ public final class ActivityCondStateChangeNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getActivatedSaleIdListCount() > 0) {
-        hash = (37 * hash) + ACTIVATED_SALE_ID_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getActivatedSaleIdListList().hashCode();
+      if (getDCPENBLPKHKCount() > 0) {
+        hash = (37 * hash) + DCPENBLPKHK_FIELD_NUMBER;
+        hash = (53 * hash) + getDCPENBLPKHKList().hashCode();
       }
-      if (getExpireCondListCount() > 0) {
-        hash = (37 * hash) + EXPIRE_COND_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getExpireCondListList().hashCode();
-      }
-      hash = (37 * hash) + ACTIVITY_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getActivityId();
       if (getDisableTransferPointInteractionListCount() > 0) {
         hash = (37 * hash) + DISABLE_TRANSFER_POINT_INTERACTION_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getDisableTransferPointInteractionListList().hashCode();
       }
-      if (getMeetCondListCount() > 0) {
-        hash = (37 * hash) + MEET_COND_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getMeetCondListList().hashCode();
+      hash = (37 * hash) + ACTIVITY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getActivityId();
+      if (getPHCOMIFAIJDCount() > 0) {
+        hash = (37 * hash) + PHCOMIFAIJD_FIELD_NUMBER;
+        hash = (53 * hash) + getPHCOMIFAIJDList().hashCode();
+      }
+      if (getActivatedSaleIdListCount() > 0) {
+        hash = (37 * hash) + ACTIVATED_SALE_ID_LIST_FIELD_NUMBER;
+        hash = (53 * hash) + getActivatedSaleIdListList().hashCode();
       }
       hash = (37 * hash) + SCHEDULE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getScheduleId();
@@ -695,8 +695,8 @@ public final class ActivityCondStateChangeNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2178
-     * Obf: GEKIGGBPDNC
+     * CmdId: 8757
+     * Obf: NEGNAIMEEAO
      * </pre>
      *
      * Protobuf type {@code ActivityCondStateChangeNotify}
@@ -737,19 +737,19 @@ public final class ActivityCondStateChangeNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        activatedSaleIdList_ = emptyIntList();
+        dCPENBLPKHK_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
-        expireCondList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
-        activityId_ = 0;
-
         if (disableTransferPointInteractionListBuilder_ == null) {
           disableTransferPointInteractionList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           disableTransferPointInteractionListBuilder_.clear();
         }
-        meetCondList_ = emptyIntList();
+        activityId_ = 0;
+
+        pHCOMIFAIJD_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        activatedSaleIdList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000008);
         scheduleId_ = 0;
 
@@ -781,30 +781,30 @@ public final class ActivityCondStateChangeNotifyOuterClass {
         emu.grasscutter.net.proto.ActivityCondStateChangeNotifyOuterClass.ActivityCondStateChangeNotify result = new emu.grasscutter.net.proto.ActivityCondStateChangeNotifyOuterClass.ActivityCondStateChangeNotify(this);
         int from_bitField0_ = bitField0_;
         if (((bitField0_ & 0x00000001) != 0)) {
-          activatedSaleIdList_.makeImmutable();
+          dCPENBLPKHK_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
-        result.activatedSaleIdList_ = activatedSaleIdList_;
-        if (((bitField0_ & 0x00000002) != 0)) {
-          expireCondList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.expireCondList_ = expireCondList_;
-        result.activityId_ = activityId_;
+        result.dCPENBLPKHK_ = dCPENBLPKHK_;
         if (disableTransferPointInteractionListBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             disableTransferPointInteractionList_ = java.util.Collections.unmodifiableList(disableTransferPointInteractionList_);
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.disableTransferPointInteractionList_ = disableTransferPointInteractionList_;
         } else {
           result.disableTransferPointInteractionList_ = disableTransferPointInteractionListBuilder_.build();
         }
+        result.activityId_ = activityId_;
+        if (((bitField0_ & 0x00000004) != 0)) {
+          pHCOMIFAIJD_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.pHCOMIFAIJD_ = pHCOMIFAIJD_;
         if (((bitField0_ & 0x00000008) != 0)) {
-          meetCondList_.makeImmutable();
+          activatedSaleIdList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000008);
         }
-        result.meetCondList_ = meetCondList_;
+        result.activatedSaleIdList_ = activatedSaleIdList_;
         result.scheduleId_ = scheduleId_;
         onBuilt();
         return result;
@@ -854,34 +854,21 @@ public final class ActivityCondStateChangeNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.ActivityCondStateChangeNotifyOuterClass.ActivityCondStateChangeNotify other) {
         if (other == emu.grasscutter.net.proto.ActivityCondStateChangeNotifyOuterClass.ActivityCondStateChangeNotify.getDefaultInstance()) return this;
-        if (!other.activatedSaleIdList_.isEmpty()) {
-          if (activatedSaleIdList_.isEmpty()) {
-            activatedSaleIdList_ = other.activatedSaleIdList_;
+        if (!other.dCPENBLPKHK_.isEmpty()) {
+          if (dCPENBLPKHK_.isEmpty()) {
+            dCPENBLPKHK_ = other.dCPENBLPKHK_;
             bitField0_ = (bitField0_ & ~0x00000001);
           } else {
-            ensureActivatedSaleIdListIsMutable();
-            activatedSaleIdList_.addAll(other.activatedSaleIdList_);
+            ensureDCPENBLPKHKIsMutable();
+            dCPENBLPKHK_.addAll(other.dCPENBLPKHK_);
           }
           onChanged();
-        }
-        if (!other.expireCondList_.isEmpty()) {
-          if (expireCondList_.isEmpty()) {
-            expireCondList_ = other.expireCondList_;
-            bitField0_ = (bitField0_ & ~0x00000002);
-          } else {
-            ensureExpireCondListIsMutable();
-            expireCondList_.addAll(other.expireCondList_);
-          }
-          onChanged();
-        }
-        if (other.getActivityId() != 0) {
-          setActivityId(other.getActivityId());
         }
         if (disableTransferPointInteractionListBuilder_ == null) {
           if (!other.disableTransferPointInteractionList_.isEmpty()) {
             if (disableTransferPointInteractionList_.isEmpty()) {
               disableTransferPointInteractionList_ = other.disableTransferPointInteractionList_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureDisableTransferPointInteractionListIsMutable();
               disableTransferPointInteractionList_.addAll(other.disableTransferPointInteractionList_);
@@ -894,7 +881,7 @@ public final class ActivityCondStateChangeNotifyOuterClass {
               disableTransferPointInteractionListBuilder_.dispose();
               disableTransferPointInteractionListBuilder_ = null;
               disableTransferPointInteractionList_ = other.disableTransferPointInteractionList_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000002);
               disableTransferPointInteractionListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getDisableTransferPointInteractionListFieldBuilder() : null;
@@ -903,13 +890,26 @@ public final class ActivityCondStateChangeNotifyOuterClass {
             }
           }
         }
-        if (!other.meetCondList_.isEmpty()) {
-          if (meetCondList_.isEmpty()) {
-            meetCondList_ = other.meetCondList_;
+        if (other.getActivityId() != 0) {
+          setActivityId(other.getActivityId());
+        }
+        if (!other.pHCOMIFAIJD_.isEmpty()) {
+          if (pHCOMIFAIJD_.isEmpty()) {
+            pHCOMIFAIJD_ = other.pHCOMIFAIJD_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensurePHCOMIFAIJDIsMutable();
+            pHCOMIFAIJD_.addAll(other.pHCOMIFAIJD_);
+          }
+          onChanged();
+        }
+        if (!other.activatedSaleIdList_.isEmpty()) {
+          if (activatedSaleIdList_.isEmpty()) {
+            activatedSaleIdList_ = other.activatedSaleIdList_;
             bitField0_ = (bitField0_ & ~0x00000008);
           } else {
-            ensureMeetCondListIsMutable();
-            meetCondList_.addAll(other.meetCondList_);
+            ensureActivatedSaleIdListIsMutable();
+            activatedSaleIdList_.addAll(other.activatedSaleIdList_);
           }
           onChanged();
         }
@@ -946,191 +946,81 @@ public final class ActivityCondStateChangeNotifyOuterClass {
       }
       private int bitField0_;
 
-      private com.google.protobuf.Internal.IntList activatedSaleIdList_ = emptyIntList();
-      private void ensureActivatedSaleIdListIsMutable() {
+      private com.google.protobuf.Internal.IntList dCPENBLPKHK_ = emptyIntList();
+      private void ensureDCPENBLPKHKIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          activatedSaleIdList_ = mutableCopy(activatedSaleIdList_);
+          dCPENBLPKHK_ = mutableCopy(dCPENBLPKHK_);
           bitField0_ |= 0x00000001;
          }
       }
       /**
-       * <code>repeated uint32 activated_sale_id_list = 13;</code>
-       * @return A list containing the activatedSaleIdList.
+       * <code>repeated uint32 DCPENBLPKHK = 11;</code>
+       * @return A list containing the dCPENBLPKHK.
        */
       public java.util.List<java.lang.Integer>
-          getActivatedSaleIdListList() {
+          getDCPENBLPKHKList() {
         return ((bitField0_ & 0x00000001) != 0) ?
-                 java.util.Collections.unmodifiableList(activatedSaleIdList_) : activatedSaleIdList_;
+                 java.util.Collections.unmodifiableList(dCPENBLPKHK_) : dCPENBLPKHK_;
       }
       /**
-       * <code>repeated uint32 activated_sale_id_list = 13;</code>
-       * @return The count of activatedSaleIdList.
+       * <code>repeated uint32 DCPENBLPKHK = 11;</code>
+       * @return The count of dCPENBLPKHK.
        */
-      public int getActivatedSaleIdListCount() {
-        return activatedSaleIdList_.size();
+      public int getDCPENBLPKHKCount() {
+        return dCPENBLPKHK_.size();
       }
       /**
-       * <code>repeated uint32 activated_sale_id_list = 13;</code>
+       * <code>repeated uint32 DCPENBLPKHK = 11;</code>
        * @param index The index of the element to return.
-       * @return The activatedSaleIdList at the given index.
+       * @return The dCPENBLPKHK at the given index.
        */
-      public int getActivatedSaleIdList(int index) {
-        return activatedSaleIdList_.getInt(index);
+      public int getDCPENBLPKHK(int index) {
+        return dCPENBLPKHK_.getInt(index);
       }
       /**
-       * <code>repeated uint32 activated_sale_id_list = 13;</code>
+       * <code>repeated uint32 DCPENBLPKHK = 11;</code>
        * @param index The index to set the value at.
-       * @param value The activatedSaleIdList to set.
+       * @param value The dCPENBLPKHK to set.
        * @return This builder for chaining.
        */
-      public Builder setActivatedSaleIdList(
+      public Builder setDCPENBLPKHK(
           int index, int value) {
-        ensureActivatedSaleIdListIsMutable();
-        activatedSaleIdList_.setInt(index, value);
+        ensureDCPENBLPKHKIsMutable();
+        dCPENBLPKHK_.setInt(index, value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 activated_sale_id_list = 13;</code>
-       * @param value The activatedSaleIdList to add.
+       * <code>repeated uint32 DCPENBLPKHK = 11;</code>
+       * @param value The dCPENBLPKHK to add.
        * @return This builder for chaining.
        */
-      public Builder addActivatedSaleIdList(int value) {
-        ensureActivatedSaleIdListIsMutable();
-        activatedSaleIdList_.addInt(value);
+      public Builder addDCPENBLPKHK(int value) {
+        ensureDCPENBLPKHKIsMutable();
+        dCPENBLPKHK_.addInt(value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 activated_sale_id_list = 13;</code>
-       * @param values The activatedSaleIdList to add.
+       * <code>repeated uint32 DCPENBLPKHK = 11;</code>
+       * @param values The dCPENBLPKHK to add.
        * @return This builder for chaining.
        */
-      public Builder addAllActivatedSaleIdList(
+      public Builder addAllDCPENBLPKHK(
           java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureActivatedSaleIdListIsMutable();
+        ensureDCPENBLPKHKIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, activatedSaleIdList_);
+            values, dCPENBLPKHK_);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 activated_sale_id_list = 13;</code>
+       * <code>repeated uint32 DCPENBLPKHK = 11;</code>
        * @return This builder for chaining.
        */
-      public Builder clearActivatedSaleIdList() {
-        activatedSaleIdList_ = emptyIntList();
+      public Builder clearDCPENBLPKHK() {
+        dCPENBLPKHK_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.Internal.IntList expireCondList_ = emptyIntList();
-      private void ensureExpireCondListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
-          expireCondList_ = mutableCopy(expireCondList_);
-          bitField0_ |= 0x00000002;
-         }
-      }
-      /**
-       * <code>repeated uint32 expire_cond_list = 7;</code>
-       * @return A list containing the expireCondList.
-       */
-      public java.util.List<java.lang.Integer>
-          getExpireCondListList() {
-        return ((bitField0_ & 0x00000002) != 0) ?
-                 java.util.Collections.unmodifiableList(expireCondList_) : expireCondList_;
-      }
-      /**
-       * <code>repeated uint32 expire_cond_list = 7;</code>
-       * @return The count of expireCondList.
-       */
-      public int getExpireCondListCount() {
-        return expireCondList_.size();
-      }
-      /**
-       * <code>repeated uint32 expire_cond_list = 7;</code>
-       * @param index The index of the element to return.
-       * @return The expireCondList at the given index.
-       */
-      public int getExpireCondList(int index) {
-        return expireCondList_.getInt(index);
-      }
-      /**
-       * <code>repeated uint32 expire_cond_list = 7;</code>
-       * @param index The index to set the value at.
-       * @param value The expireCondList to set.
-       * @return This builder for chaining.
-       */
-      public Builder setExpireCondList(
-          int index, int value) {
-        ensureExpireCondListIsMutable();
-        expireCondList_.setInt(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 expire_cond_list = 7;</code>
-       * @param value The expireCondList to add.
-       * @return This builder for chaining.
-       */
-      public Builder addExpireCondList(int value) {
-        ensureExpireCondListIsMutable();
-        expireCondList_.addInt(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 expire_cond_list = 7;</code>
-       * @param values The expireCondList to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllExpireCondList(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureExpireCondListIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, expireCondList_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 expire_cond_list = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearExpireCondList() {
-        expireCondList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
-        onChanged();
-        return this;
-      }
-
-      private int activityId_ ;
-      /**
-       * <code>uint32 activity_id = 10;</code>
-       * @return The activityId.
-       */
-      @java.lang.Override
-      public int getActivityId() {
-        return activityId_;
-      }
-      /**
-       * <code>uint32 activity_id = 10;</code>
-       * @param value The activityId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setActivityId(int value) {
-        
-        activityId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 activity_id = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearActivityId() {
-        
-        activityId_ = 0;
         onChanged();
         return this;
       }
@@ -1138,9 +1028,9 @@ public final class ActivityCondStateChangeNotifyOuterClass {
       private java.util.List<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair> disableTransferPointInteractionList_ =
         java.util.Collections.emptyList();
       private void ensureDisableTransferPointInteractionListIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           disableTransferPointInteractionList_ = new java.util.ArrayList<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair>(disableTransferPointInteractionList_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -1290,7 +1180,7 @@ public final class ActivityCondStateChangeNotifyOuterClass {
       public Builder clearDisableTransferPointInteractionList() {
         if (disableTransferPointInteractionListBuilder_ == null) {
           disableTransferPointInteractionList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           disableTransferPointInteractionListBuilder_.clear();
@@ -1367,7 +1257,7 @@ public final class ActivityCondStateChangeNotifyOuterClass {
           disableTransferPointInteractionListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder>(
                   disableTransferPointInteractionList_,
-                  ((bitField0_ & 0x00000004) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           disableTransferPointInteractionList_ = null;
@@ -1375,80 +1265,190 @@ public final class ActivityCondStateChangeNotifyOuterClass {
         return disableTransferPointInteractionListBuilder_;
       }
 
-      private com.google.protobuf.Internal.IntList meetCondList_ = emptyIntList();
-      private void ensureMeetCondListIsMutable() {
+      private int activityId_ ;
+      /**
+       * <code>uint32 activity_id = 1;</code>
+       * @return The activityId.
+       */
+      @java.lang.Override
+      public int getActivityId() {
+        return activityId_;
+      }
+      /**
+       * <code>uint32 activity_id = 1;</code>
+       * @param value The activityId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setActivityId(int value) {
+        
+        activityId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 activity_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearActivityId() {
+        
+        activityId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Internal.IntList pHCOMIFAIJD_ = emptyIntList();
+      private void ensurePHCOMIFAIJDIsMutable() {
+        if (!((bitField0_ & 0x00000004) != 0)) {
+          pHCOMIFAIJD_ = mutableCopy(pHCOMIFAIJD_);
+          bitField0_ |= 0x00000004;
+         }
+      }
+      /**
+       * <code>repeated uint32 PHCOMIFAIJD = 8;</code>
+       * @return A list containing the pHCOMIFAIJD.
+       */
+      public java.util.List<java.lang.Integer>
+          getPHCOMIFAIJDList() {
+        return ((bitField0_ & 0x00000004) != 0) ?
+                 java.util.Collections.unmodifiableList(pHCOMIFAIJD_) : pHCOMIFAIJD_;
+      }
+      /**
+       * <code>repeated uint32 PHCOMIFAIJD = 8;</code>
+       * @return The count of pHCOMIFAIJD.
+       */
+      public int getPHCOMIFAIJDCount() {
+        return pHCOMIFAIJD_.size();
+      }
+      /**
+       * <code>repeated uint32 PHCOMIFAIJD = 8;</code>
+       * @param index The index of the element to return.
+       * @return The pHCOMIFAIJD at the given index.
+       */
+      public int getPHCOMIFAIJD(int index) {
+        return pHCOMIFAIJD_.getInt(index);
+      }
+      /**
+       * <code>repeated uint32 PHCOMIFAIJD = 8;</code>
+       * @param index The index to set the value at.
+       * @param value The pHCOMIFAIJD to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPHCOMIFAIJD(
+          int index, int value) {
+        ensurePHCOMIFAIJDIsMutable();
+        pHCOMIFAIJD_.setInt(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 PHCOMIFAIJD = 8;</code>
+       * @param value The pHCOMIFAIJD to add.
+       * @return This builder for chaining.
+       */
+      public Builder addPHCOMIFAIJD(int value) {
+        ensurePHCOMIFAIJDIsMutable();
+        pHCOMIFAIJD_.addInt(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 PHCOMIFAIJD = 8;</code>
+       * @param values The pHCOMIFAIJD to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllPHCOMIFAIJD(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensurePHCOMIFAIJDIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, pHCOMIFAIJD_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 PHCOMIFAIJD = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPHCOMIFAIJD() {
+        pHCOMIFAIJD_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Internal.IntList activatedSaleIdList_ = emptyIntList();
+      private void ensureActivatedSaleIdListIsMutable() {
         if (!((bitField0_ & 0x00000008) != 0)) {
-          meetCondList_ = mutableCopy(meetCondList_);
+          activatedSaleIdList_ = mutableCopy(activatedSaleIdList_);
           bitField0_ |= 0x00000008;
          }
       }
       /**
-       * <code>repeated uint32 meet_cond_list = 5;</code>
-       * @return A list containing the meetCondList.
+       * <code>repeated uint32 activated_sale_id_list = 14;</code>
+       * @return A list containing the activatedSaleIdList.
        */
       public java.util.List<java.lang.Integer>
-          getMeetCondListList() {
+          getActivatedSaleIdListList() {
         return ((bitField0_ & 0x00000008) != 0) ?
-                 java.util.Collections.unmodifiableList(meetCondList_) : meetCondList_;
+                 java.util.Collections.unmodifiableList(activatedSaleIdList_) : activatedSaleIdList_;
       }
       /**
-       * <code>repeated uint32 meet_cond_list = 5;</code>
-       * @return The count of meetCondList.
+       * <code>repeated uint32 activated_sale_id_list = 14;</code>
+       * @return The count of activatedSaleIdList.
        */
-      public int getMeetCondListCount() {
-        return meetCondList_.size();
+      public int getActivatedSaleIdListCount() {
+        return activatedSaleIdList_.size();
       }
       /**
-       * <code>repeated uint32 meet_cond_list = 5;</code>
+       * <code>repeated uint32 activated_sale_id_list = 14;</code>
        * @param index The index of the element to return.
-       * @return The meetCondList at the given index.
+       * @return The activatedSaleIdList at the given index.
        */
-      public int getMeetCondList(int index) {
-        return meetCondList_.getInt(index);
+      public int getActivatedSaleIdList(int index) {
+        return activatedSaleIdList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 meet_cond_list = 5;</code>
+       * <code>repeated uint32 activated_sale_id_list = 14;</code>
        * @param index The index to set the value at.
-       * @param value The meetCondList to set.
+       * @param value The activatedSaleIdList to set.
        * @return This builder for chaining.
        */
-      public Builder setMeetCondList(
+      public Builder setActivatedSaleIdList(
           int index, int value) {
-        ensureMeetCondListIsMutable();
-        meetCondList_.setInt(index, value);
+        ensureActivatedSaleIdListIsMutable();
+        activatedSaleIdList_.setInt(index, value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 meet_cond_list = 5;</code>
-       * @param value The meetCondList to add.
+       * <code>repeated uint32 activated_sale_id_list = 14;</code>
+       * @param value The activatedSaleIdList to add.
        * @return This builder for chaining.
        */
-      public Builder addMeetCondList(int value) {
-        ensureMeetCondListIsMutable();
-        meetCondList_.addInt(value);
+      public Builder addActivatedSaleIdList(int value) {
+        ensureActivatedSaleIdListIsMutable();
+        activatedSaleIdList_.addInt(value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 meet_cond_list = 5;</code>
-       * @param values The meetCondList to add.
+       * <code>repeated uint32 activated_sale_id_list = 14;</code>
+       * @param values The activatedSaleIdList to add.
        * @return This builder for chaining.
        */
-      public Builder addAllMeetCondList(
+      public Builder addAllActivatedSaleIdList(
           java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureMeetCondListIsMutable();
+        ensureActivatedSaleIdListIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, meetCondList_);
+            values, activatedSaleIdList_);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 meet_cond_list = 5;</code>
+       * <code>repeated uint32 activated_sale_id_list = 14;</code>
        * @return This builder for chaining.
        */
-      public Builder clearMeetCondList() {
-        meetCondList_ = emptyIntList();
+      public Builder clearActivatedSaleIdList() {
+        activatedSaleIdList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
@@ -1456,7 +1456,7 @@ public final class ActivityCondStateChangeNotifyOuterClass {
 
       private int scheduleId_ ;
       /**
-       * <code>uint32 schedule_id = 6;</code>
+       * <code>uint32 schedule_id = 10;</code>
        * @return The scheduleId.
        */
       @java.lang.Override
@@ -1464,7 +1464,7 @@ public final class ActivityCondStateChangeNotifyOuterClass {
         return scheduleId_;
       }
       /**
-       * <code>uint32 schedule_id = 6;</code>
+       * <code>uint32 schedule_id = 10;</code>
        * @param value The scheduleId to set.
        * @return This builder for chaining.
        */
@@ -1475,7 +1475,7 @@ public final class ActivityCondStateChangeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 schedule_id = 6;</code>
+       * <code>uint32 schedule_id = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearScheduleId() {
@@ -1552,13 +1552,13 @@ public final class ActivityCondStateChangeNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n#ActivityCondStateChangeNotify.proto\032\020U" +
-      "int32Pair.proto\"\331\001\n\035ActivityCondStateCha" +
-      "ngeNotify\022\036\n\026activated_sale_id_list\030\r \003(" +
-      "\r\022\030\n\020expire_cond_list\030\007 \003(\r\022\023\n\013activity_" +
-      "id\030\n \001(\r\022<\n\'disable_transfer_point_inter" +
-      "action_list\030\004 \003(\0132\013.Uint32Pair\022\026\n\016meet_c" +
-      "ond_list\030\005 \003(\r\022\023\n\013schedule_id\030\006 \001(\rB\033\n\031e" +
-      "mu.grasscutter.net.protob\006proto3"
+      "int32Pair.proto\"\321\001\n\035ActivityCondStateCha" +
+      "ngeNotify\022\023\n\013DCPENBLPKHK\030\013 \003(\r\022<\n\'disabl" +
+      "e_transfer_point_interaction_list\030\004 \003(\0132" +
+      "\013.Uint32Pair\022\023\n\013activity_id\030\001 \001(\r\022\023\n\013PHC" +
+      "OMIFAIJD\030\010 \003(\r\022\036\n\026activated_sale_id_list" +
+      "\030\016 \003(\r\022\023\n\013schedule_id\030\n \001(\rB\033\n\031emu.grass" +
+      "cutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1570,7 +1570,7 @@ public final class ActivityCondStateChangeNotifyOuterClass {
     internal_static_ActivityCondStateChangeNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ActivityCondStateChangeNotify_descriptor,
-        new java.lang.String[] { "ActivatedSaleIdList", "ExpireCondList", "ActivityId", "DisableTransferPointInteractionList", "MeetCondList", "ScheduleId", });
+        new java.lang.String[] { "DCPENBLPKHK", "DisableTransferPointInteractionList", "ActivityId", "PHCOMIFAIJD", "ActivatedSaleIdList", "ScheduleId", });
     emu.grasscutter.net.proto.Uint32PairOuterClass.getDescriptor();
   }
 

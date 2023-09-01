@@ -19,21 +19,21 @@ public final class UseMiracleRingRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 miracle_ring_op_type = 13;</code>
+     * <code>uint32 miracle_ring_op_type = 3;</code>
      * @return The miracleRingOpType.
      */
     int getMiracleRingOpType();
 
     /**
-     * <code>int32 retcode = 4;</code>
+     * <code>int32 retcode = 12;</code>
      * @return The retcode.
      */
     int getRetcode();
   }
   /**
    * <pre>
-   * CmdId: 5208
-   * Obf: JMGAHEKLPFD
+   * CmdId: 86
+   * Obf: BDHKHBMDEKI
    * </pre>
    *
    * Protobuf type {@code UseMiracleRingRsp}
@@ -80,14 +80,14 @@ public final class UseMiracleRingRspOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 104: {
+            case 24: {
 
               miracleRingOpType_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+
+              retcode_ = input.readInt32();
               break;
             }
             default: {
@@ -122,10 +122,10 @@ public final class UseMiracleRingRspOuterClass {
               emu.grasscutter.net.proto.UseMiracleRingRspOuterClass.UseMiracleRingRsp.class, emu.grasscutter.net.proto.UseMiracleRingRspOuterClass.UseMiracleRingRsp.Builder.class);
     }
 
-    public static final int MIRACLE_RING_OP_TYPE_FIELD_NUMBER = 13;
+    public static final int MIRACLE_RING_OP_TYPE_FIELD_NUMBER = 3;
     private int miracleRingOpType_;
     /**
-     * <code>uint32 miracle_ring_op_type = 13;</code>
+     * <code>uint32 miracle_ring_op_type = 3;</code>
      * @return The miracleRingOpType.
      */
     @java.lang.Override
@@ -133,10 +133,10 @@ public final class UseMiracleRingRspOuterClass {
       return miracleRingOpType_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 4;
+    public static final int RETCODE_FIELD_NUMBER = 12;
     private int retcode_;
     /**
-     * <code>int32 retcode = 4;</code>
+     * <code>int32 retcode = 12;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -158,11 +158,11 @@ public final class UseMiracleRingRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (retcode_ != 0) {
-        output.writeInt32(4, retcode_);
-      }
       if (miracleRingOpType_ != 0) {
-        output.writeUInt32(13, miracleRingOpType_);
+        output.writeUInt32(3, miracleRingOpType_);
+      }
+      if (retcode_ != 0) {
+        output.writeInt32(12, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -173,13 +173,13 @@ public final class UseMiracleRingRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (retcode_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(4, retcode_);
-      }
       if (miracleRingOpType_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, miracleRingOpType_);
+          .computeUInt32Size(3, miracleRingOpType_);
+      }
+      if (retcode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(12, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -312,8 +312,8 @@ public final class UseMiracleRingRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 5208
-     * Obf: JMGAHEKLPFD
+     * CmdId: 86
+     * Obf: BDHKHBMDEKI
      * </pre>
      *
      * Protobuf type {@code UseMiracleRingRsp}
@@ -470,7 +470,7 @@ public final class UseMiracleRingRspOuterClass {
 
       private int miracleRingOpType_ ;
       /**
-       * <code>uint32 miracle_ring_op_type = 13;</code>
+       * <code>uint32 miracle_ring_op_type = 3;</code>
        * @return The miracleRingOpType.
        */
       @java.lang.Override
@@ -478,7 +478,7 @@ public final class UseMiracleRingRspOuterClass {
         return miracleRingOpType_;
       }
       /**
-       * <code>uint32 miracle_ring_op_type = 13;</code>
+       * <code>uint32 miracle_ring_op_type = 3;</code>
        * @param value The miracleRingOpType to set.
        * @return This builder for chaining.
        */
@@ -489,7 +489,7 @@ public final class UseMiracleRingRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 miracle_ring_op_type = 13;</code>
+       * <code>uint32 miracle_ring_op_type = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearMiracleRingOpType() {
@@ -501,7 +501,7 @@ public final class UseMiracleRingRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 4;</code>
+       * <code>int32 retcode = 12;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -509,7 +509,7 @@ public final class UseMiracleRingRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 4;</code>
+       * <code>int32 retcode = 12;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -520,7 +520,7 @@ public final class UseMiracleRingRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 4;</code>
+       * <code>int32 retcode = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -597,8 +597,8 @@ public final class UseMiracleRingRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\027UseMiracleRingRsp.proto\"B\n\021UseMiracleR" +
-      "ingRsp\022\034\n\024miracle_ring_op_type\030\r \001(\r\022\017\n\007" +
-      "retcode\030\004 \001(\005B\033\n\031emu.grasscutter.net.pro" +
+      "ingRsp\022\034\n\024miracle_ring_op_type\030\003 \001(\r\022\017\n\007" +
+      "retcode\030\014 \001(\005B\033\n\031emu.grasscutter.net.pro" +
       "tob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

@@ -1,7 +1,5 @@
 package emu.grasscutter.game.world;
 
-import static emu.grasscutter.server.event.player.PlayerTeleportEvent.TeleportType.SCRIPT;
-
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.dungeon.DungeonData;
 import emu.grasscutter.game.entity.*;
@@ -20,13 +18,16 @@ import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.ConversionUtils;
 import it.unimi.dsi.fastutil.ints.*;
-import java.util.*;
 import lombok.*;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.*;
+
+import static emu.grasscutter.server.event.player.PlayerTeleportEvent.TeleportType.SCRIPT;
+
 public class World implements Iterable<Player> {
     @Getter private final GameServer server;
-    @Getter private final Player host;
+    @Getter private Player host;
     @Getter private final List<Player> players;
     @Getter private final Int2ObjectMap<Scene> scenes;
 
@@ -65,6 +66,15 @@ public class World implements Iterable<Player> {
         this.host.getServer().registerWorld(this);
     }
 
+    public World(GameServer server, Player owner) {
+        this.server = server;
+        this.host = owner;
+        this.players = Collections.synchronizedList(new ArrayList<>());
+        this.scenes = Int2ObjectMaps.synchronize(new Int2ObjectOpenHashMap<>());
+        this.entity = new EntityWorld(this);
+        this.lastUpdateTime = System.currentTimeMillis();
+    }
+
     public int getLevelEntityId() {
         return entity.getId();
     }
@@ -88,6 +98,10 @@ public class World implements Iterable<Player> {
 
     public void setWorldLevel(int worldLevel) {
         this.worldLevel = worldLevel;
+    }
+
+    protected synchronized void setHost(Player host) {
+        this.host = host;
     }
 
     /**
@@ -170,6 +184,58 @@ public class World implements Iterable<Player> {
         }
 
         // Add to scene
+        Scene scene = this.getSceneById(player.getSceneId());
+        scene.addPlayer(player);
+
+        // Info packet for other players
+        if (this.getPlayers().size() > 1) {
+            this.updatePlayerInfos(player);
+        }
+    }
+
+    public synchronized void addPlayer(Player player, int newSceneId) {
+        // Check if player already in
+        if (this.getPlayers().contains(player)) {
+            return;
+        }
+
+        // Remove player from prev world
+        if (player.getWorld() != null) {
+            player.getWorld().removePlayer(player);
+        }
+
+        // Register
+        player.setWorld(this);
+        this.getPlayers().add(player);
+
+        // Set player variables
+        player.setPeerId(this.getNextPeerId());
+        player.getTeamManager().setEntity(new EntityTeam(player));
+        // player.getTeamManager().setEntityId(this.getNextEntityId(EntityIdType.TEAM));
+
+        // Copy main team to multiplayer team
+        if (this.isMultiplayer()) {
+            player
+                .getTeamManager()
+                .getMpTeam()
+                .copyFrom(
+                    player.getTeamManager().getCurrentSinglePlayerTeamInfo(),
+                    player.getTeamManager().getMaxTeamSize());
+            player.getTeamManager().setCurrentCharacterIndex(0);
+
+            if (player != this.getHost()) {
+                this.broadcastPacket(
+                    new PacketPlayerChatNotify(
+                        player,
+                        0,
+                        SystemHint.newBuilder()
+                            .setType(SystemHintType.SYSTEM_HINT_TYPE_CHAT_ENTER_WORLD.getNumber())
+                            .build()));
+            }
+        }
+
+        // Add to scene
+        player.setSceneId(newSceneId);
         Scene scene = this.getSceneById(player.getSceneId());
         scene.addPlayer(player);
 
@@ -389,7 +455,7 @@ public class World implements Iterable<Player> {
         return true;
     }
 
-    private void updatePlayerInfos(Player paramPlayer) {
+    protected void updatePlayerInfos(Player paramPlayer) {
         for (Player player : this.getPlayers()) {
             // Dont send packets if player is logging in and filter out joining player
             if (!player.hasSentLoginPackets() || player == paramPlayer) {
@@ -408,7 +474,7 @@ public class World implements Iterable<Player> {
             }
 
             // Dont send packets if player is loading into the scene
-            if (player.getSceneLoadState().getValue() < SceneLoadState.INIT.getValue()) {
+            if (player.getSceneLoadState().getValue() >= SceneLoadState.INIT.getValue()) {
                 // World player info packets
                 player.getSession().send(new PacketWorldPlayerInfoNotify(this));
                 player.getSession().send(new PacketScenePlayerInfoNotify(this));

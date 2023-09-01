@@ -1,14 +1,10 @@
 package emu.grasscutter.server.packet.recv;
 
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.net.packet.Opcodes;
-import emu.grasscutter.net.packet.PacketHandler;
-import emu.grasscutter.net.packet.PacketOpcodes;
-import emu.grasscutter.net.proto.SetWidgetSlotReqOuterClass;
-import emu.grasscutter.net.proto.WidgetSlotOpOuterClass;
+import emu.grasscutter.net.packet.*;
+import emu.grasscutter.net.proto.*;
 import emu.grasscutter.server.game.GameSession;
-import emu.grasscutter.server.packet.send.PacketSetWidgetSlotRsp;
-import emu.grasscutter.server.packet.send.PacketWidgetSlotChangeNotify;
+import emu.grasscutter.server.packet.send.*;
 
 @Opcodes(PacketOpcodes.SetWidgetSlotReq)
 public class HandlerSetWidgetSlotReq extends PacketHandler {

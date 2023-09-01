@@ -19,7 +19,7 @@ public final class ActivitySetGiftWishReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 schedule_id = 1;</code>
+     * <code>uint32 schedule_id = 10;</code>
      * @return The scheduleId.
      */
     int getScheduleId();
@@ -60,8 +60,8 @@ public final class ActivitySetGiftWishReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 8597
-   * Obf: MGCLLPLFFDJ
+   * CmdId: 24397
+   * Obf: GLDKPGNMFGL
    * </pre>
    *
    * Protobuf type {@code ActivitySetGiftWishReq}
@@ -109,11 +109,6 @@ public final class ActivitySetGiftWishReqOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
-
-              scheduleId_ = input.readUInt32();
-              break;
-            }
             case 50: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 giftNumMap_ = com.google.protobuf.MapField.newMapField(
@@ -125,6 +120,11 @@ public final class ActivitySetGiftWishReqOuterClass {
                   GiftNumMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
               giftNumMap_.getMutableMap().put(
                   giftNumMap__.getKey(), giftNumMap__.getValue());
+              break;
+            }
+            case 80: {
+
+              scheduleId_ = input.readUInt32();
               break;
             }
             default: {
@@ -171,10 +171,10 @@ public final class ActivitySetGiftWishReqOuterClass {
               emu.grasscutter.net.proto.ActivitySetGiftWishReqOuterClass.ActivitySetGiftWishReq.class, emu.grasscutter.net.proto.ActivitySetGiftWishReqOuterClass.ActivitySetGiftWishReq.Builder.class);
     }
 
-    public static final int SCHEDULE_ID_FIELD_NUMBER = 1;
+    public static final int SCHEDULE_ID_FIELD_NUMBER = 10;
     private int scheduleId_;
     /**
-     * <code>uint32 schedule_id = 1;</code>
+     * <code>uint32 schedule_id = 10;</code>
      * @return The scheduleId.
      */
     @java.lang.Override
@@ -277,15 +277,15 @@ public final class ActivitySetGiftWishReqOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (scheduleId_ != 0) {
-        output.writeUInt32(1, scheduleId_);
-      }
       com.google.protobuf.GeneratedMessageV3
         .serializeIntegerMapTo(
           output,
           internalGetGiftNumMap(),
           GiftNumMapDefaultEntryHolder.defaultEntry,
           6);
+      if (scheduleId_ != 0) {
+        output.writeUInt32(10, scheduleId_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -295,10 +295,6 @@ public final class ActivitySetGiftWishReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (scheduleId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, scheduleId_);
-      }
       for (java.util.Map.Entry<java.lang.Integer, java.lang.Integer> entry
            : internalGetGiftNumMap().getMap().entrySet()) {
         com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
@@ -308,6 +304,10 @@ public final class ActivitySetGiftWishReqOuterClass {
             .build();
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(6, giftNumMap__);
+      }
+      if (scheduleId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(10, scheduleId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -442,8 +442,8 @@ public final class ActivitySetGiftWishReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8597
-     * Obf: MGCLLPLFFDJ
+     * CmdId: 24397
+     * Obf: GLDKPGNMFGL
      * </pre>
      *
      * Protobuf type {@code ActivitySetGiftWishReq}
@@ -623,7 +623,7 @@ public final class ActivitySetGiftWishReqOuterClass {
 
       private int scheduleId_ ;
       /**
-       * <code>uint32 schedule_id = 1;</code>
+       * <code>uint32 schedule_id = 10;</code>
        * @return The scheduleId.
        */
       @java.lang.Override
@@ -631,7 +631,7 @@ public final class ActivitySetGiftWishReqOuterClass {
         return scheduleId_;
       }
       /**
-       * <code>uint32 schedule_id = 1;</code>
+       * <code>uint32 schedule_id = 10;</code>
        * @param value The scheduleId to set.
        * @return This builder for chaining.
        */
@@ -642,7 +642,7 @@ public final class ActivitySetGiftWishReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 schedule_id = 1;</code>
+       * <code>uint32 schedule_id = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearScheduleId() {
@@ -852,7 +852,7 @@ public final class ActivitySetGiftWishReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\034ActivitySetGiftWishReq.proto\"\237\001\n\026Activ" +
-      "itySetGiftWishReq\022\023\n\013schedule_id\030\001 \001(\r\022=" +
+      "itySetGiftWishReq\022\023\n\013schedule_id\030\n \001(\r\022=" +
       "\n\014gift_num_map\030\006 \003(\0132\'.ActivitySetGiftWi" +
       "shReq.GiftNumMapEntry\0321\n\017GiftNumMapEntry" +
       "\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001B\033\n\031emu." +

@@ -19,24 +19,24 @@ public final class ProductPriceTierOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string product_id = 7;</code>
+     * <code>string product_id = 5;</code>
      * @return The productId.
      */
     java.lang.String getProductId();
     /**
-     * <code>string product_id = 7;</code>
+     * <code>string product_id = 5;</code>
      * @return The bytes for productId.
      */
     com.google.protobuf.ByteString
         getProductIdBytes();
 
     /**
-     * <code>string price_tier = 8;</code>
+     * <code>string price_tier = 4;</code>
      * @return The priceTier.
      */
     java.lang.String getPriceTier();
     /**
-     * <code>string price_tier = 8;</code>
+     * <code>string price_tier = 4;</code>
      * @return The bytes for priceTier.
      */
     com.google.protobuf.ByteString
@@ -44,7 +44,7 @@ public final class ProductPriceTierOuterClass {
   }
   /**
    * <pre>
-   * Obf: EPPOGIBBGIB
+   * Obf: NHOOLIOIMLH
    * </pre>
    *
    * Protobuf type {@code ProductPriceTier}
@@ -93,16 +93,16 @@ public final class ProductPriceTierOuterClass {
             case 0:
               done = true;
               break;
-            case 58: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              productId_ = s;
-              break;
-            }
-            case 66: {
+            case 34: {
               java.lang.String s = input.readStringRequireUtf8();
 
               priceTier_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              productId_ = s;
               break;
             }
             default: {
@@ -137,10 +137,10 @@ public final class ProductPriceTierOuterClass {
               emu.grasscutter.net.proto.ProductPriceTierOuterClass.ProductPriceTier.class, emu.grasscutter.net.proto.ProductPriceTierOuterClass.ProductPriceTier.Builder.class);
     }
 
-    public static final int PRODUCT_ID_FIELD_NUMBER = 7;
+    public static final int PRODUCT_ID_FIELD_NUMBER = 5;
     private volatile java.lang.Object productId_;
     /**
-     * <code>string product_id = 7;</code>
+     * <code>string product_id = 5;</code>
      * @return The productId.
      */
     @java.lang.Override
@@ -157,7 +157,7 @@ public final class ProductPriceTierOuterClass {
       }
     }
     /**
-     * <code>string product_id = 7;</code>
+     * <code>string product_id = 5;</code>
      * @return The bytes for productId.
      */
     @java.lang.Override
@@ -175,10 +175,10 @@ public final class ProductPriceTierOuterClass {
       }
     }
 
-    public static final int PRICE_TIER_FIELD_NUMBER = 8;
+    public static final int PRICE_TIER_FIELD_NUMBER = 4;
     private volatile java.lang.Object priceTier_;
     /**
-     * <code>string price_tier = 8;</code>
+     * <code>string price_tier = 4;</code>
      * @return The priceTier.
      */
     @java.lang.Override
@@ -195,7 +195,7 @@ public final class ProductPriceTierOuterClass {
       }
     }
     /**
-     * <code>string price_tier = 8;</code>
+     * <code>string price_tier = 4;</code>
      * @return The bytes for priceTier.
      */
     @java.lang.Override
@@ -227,11 +227,11 @@ public final class ProductPriceTierOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(productId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, productId_);
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(priceTier_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, priceTier_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, priceTier_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(productId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, productId_);
       }
       unknownFields.writeTo(output);
     }
@@ -242,11 +242,11 @@ public final class ProductPriceTierOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(productId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, productId_);
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(priceTier_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, priceTier_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, priceTier_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(productId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, productId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -379,7 +379,7 @@ public final class ProductPriceTierOuterClass {
     }
     /**
      * <pre>
-     * Obf: EPPOGIBBGIB
+     * Obf: NHOOLIOIMLH
      * </pre>
      *
      * Protobuf type {@code ProductPriceTier}
@@ -538,7 +538,7 @@ public final class ProductPriceTierOuterClass {
 
       private java.lang.Object productId_ = "";
       /**
-       * <code>string product_id = 7;</code>
+       * <code>string product_id = 5;</code>
        * @return The productId.
        */
       public java.lang.String getProductId() {
@@ -554,7 +554,7 @@ public final class ProductPriceTierOuterClass {
         }
       }
       /**
-       * <code>string product_id = 7;</code>
+       * <code>string product_id = 5;</code>
        * @return The bytes for productId.
        */
       public com.google.protobuf.ByteString
@@ -571,7 +571,7 @@ public final class ProductPriceTierOuterClass {
         }
       }
       /**
-       * <code>string product_id = 7;</code>
+       * <code>string product_id = 5;</code>
        * @param value The productId to set.
        * @return This builder for chaining.
        */
@@ -586,7 +586,7 @@ public final class ProductPriceTierOuterClass {
         return this;
       }
       /**
-       * <code>string product_id = 7;</code>
+       * <code>string product_id = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearProductId() {
@@ -596,7 +596,7 @@ public final class ProductPriceTierOuterClass {
         return this;
       }
       /**
-       * <code>string product_id = 7;</code>
+       * <code>string product_id = 5;</code>
        * @param value The bytes for productId to set.
        * @return This builder for chaining.
        */
@@ -614,7 +614,7 @@ public final class ProductPriceTierOuterClass {
 
       private java.lang.Object priceTier_ = "";
       /**
-       * <code>string price_tier = 8;</code>
+       * <code>string price_tier = 4;</code>
        * @return The priceTier.
        */
       public java.lang.String getPriceTier() {
@@ -630,7 +630,7 @@ public final class ProductPriceTierOuterClass {
         }
       }
       /**
-       * <code>string price_tier = 8;</code>
+       * <code>string price_tier = 4;</code>
        * @return The bytes for priceTier.
        */
       public com.google.protobuf.ByteString
@@ -647,7 +647,7 @@ public final class ProductPriceTierOuterClass {
         }
       }
       /**
-       * <code>string price_tier = 8;</code>
+       * <code>string price_tier = 4;</code>
        * @param value The priceTier to set.
        * @return This builder for chaining.
        */
@@ -662,7 +662,7 @@ public final class ProductPriceTierOuterClass {
         return this;
       }
       /**
-       * <code>string price_tier = 8;</code>
+       * <code>string price_tier = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearPriceTier() {
@@ -672,7 +672,7 @@ public final class ProductPriceTierOuterClass {
         return this;
       }
       /**
-       * <code>string price_tier = 8;</code>
+       * <code>string price_tier = 4;</code>
        * @param value The bytes for priceTier to set.
        * @return This builder for chaining.
        */
@@ -755,7 +755,7 @@ public final class ProductPriceTierOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\026ProductPriceTier.proto\":\n\020ProductPrice" +
-      "Tier\022\022\n\nproduct_id\030\007 \001(\t\022\022\n\nprice_tier\030\010" +
+      "Tier\022\022\n\nproduct_id\030\005 \001(\t\022\022\n\nprice_tier\030\004" +
       " \001(\tB\033\n\031emu.grasscutter.net.protob\006proto" +
       "3"
     };

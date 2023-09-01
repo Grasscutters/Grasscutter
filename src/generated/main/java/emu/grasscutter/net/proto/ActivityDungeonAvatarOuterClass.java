@@ -38,7 +38,7 @@ public final class ActivityDungeonAvatarOuterClass {
   }
   /**
    * <pre>
-   * Obf: EEGLOLFIAED
+   * Obf: OILMJMJGMKP
    * </pre>
    *
    * Protobuf type {@code ActivityDungeonAvatar}
@@ -345,7 +345,7 @@ public final class ActivityDungeonAvatarOuterClass {
     }
     /**
      * <pre>
-     * Obf: EEGLOLFIAED
+     * Obf: OILMJMJGMKP
      * </pre>
      *
      * Protobuf type {@code ActivityDungeonAvatar}

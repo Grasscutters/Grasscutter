@@ -19,15 +19,15 @@ public final class MistTrialGetDungeonExhibitionDataReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 trial_id = 5;</code>
+     * <code>uint32 trial_id = 3;</code>
      * @return The trialId.
      */
     int getTrialId();
   }
   /**
    * <pre>
-   * CmdId: 8109
-   * Obf: NIFOEEKBMCH
+   * CmdId: 29891
+   * Obf: AIMNFIMAJOC
    * </pre>
    *
    * Protobuf type {@code MistTrialGetDungeonExhibitionDataReq}
@@ -74,7 +74,7 @@ public final class MistTrialGetDungeonExhibitionDataReqOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
+            case 24: {
 
               trialId_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class MistTrialGetDungeonExhibitionDataReqOuterClass {
               emu.grasscutter.net.proto.MistTrialGetDungeonExhibitionDataReqOuterClass.MistTrialGetDungeonExhibitionDataReq.class, emu.grasscutter.net.proto.MistTrialGetDungeonExhibitionDataReqOuterClass.MistTrialGetDungeonExhibitionDataReq.Builder.class);
     }
 
-    public static final int TRIAL_ID_FIELD_NUMBER = 5;
+    public static final int TRIAL_ID_FIELD_NUMBER = 3;
     private int trialId_;
     /**
-     * <code>uint32 trial_id = 5;</code>
+     * <code>uint32 trial_id = 3;</code>
      * @return The trialId.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class MistTrialGetDungeonExhibitionDataReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (trialId_ != 0) {
-        output.writeUInt32(5, trialId_);
+        output.writeUInt32(3, trialId_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class MistTrialGetDungeonExhibitionDataReqOuterClass {
       size = 0;
       if (trialId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, trialId_);
+          .computeUInt32Size(3, trialId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class MistTrialGetDungeonExhibitionDataReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8109
-     * Obf: NIFOEEKBMCH
+     * CmdId: 29891
+     * Obf: AIMNFIMAJOC
      * </pre>
      *
      * Protobuf type {@code MistTrialGetDungeonExhibitionDataReq}
@@ -431,7 +431,7 @@ public final class MistTrialGetDungeonExhibitionDataReqOuterClass {
 
       private int trialId_ ;
       /**
-       * <code>uint32 trial_id = 5;</code>
+       * <code>uint32 trial_id = 3;</code>
        * @return The trialId.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class MistTrialGetDungeonExhibitionDataReqOuterClass {
         return trialId_;
       }
       /**
-       * <code>uint32 trial_id = 5;</code>
+       * <code>uint32 trial_id = 3;</code>
        * @param value The trialId to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class MistTrialGetDungeonExhibitionDataReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 trial_id = 5;</code>
+       * <code>uint32 trial_id = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearTrialId() {
@@ -528,7 +528,7 @@ public final class MistTrialGetDungeonExhibitionDataReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n*MistTrialGetDungeonExhibitionDataReq.p" +
       "roto\"8\n$MistTrialGetDungeonExhibitionDat" +
-      "aReq\022\020\n\010trial_id\030\005 \001(\rB\033\n\031emu.grasscutte" +
+      "aReq\022\020\n\010trial_id\030\003 \001(\rB\033\n\031emu.grasscutte" +
       "r.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

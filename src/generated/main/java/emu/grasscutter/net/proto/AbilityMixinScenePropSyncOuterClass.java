@@ -19,47 +19,47 @@ public final class AbilityMixinScenePropSyncOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool is_clear_all = 9;</code>
+     * <code>bool is_clear_all = 6;</code>
      * @return The isClearAll.
      */
     boolean getIsClearAll();
 
     /**
-     * <code>repeated .MassivePropSyncInfo massive_prop_list = 2;</code>
+     * <code>repeated .MassivePropSyncInfo massive_prop_list = 8;</code>
      */
     java.util.List<emu.grasscutter.net.proto.MassivePropSyncInfoOuterClass.MassivePropSyncInfo> 
         getMassivePropListList();
     /**
-     * <code>repeated .MassivePropSyncInfo massive_prop_list = 2;</code>
+     * <code>repeated .MassivePropSyncInfo massive_prop_list = 8;</code>
      */
     emu.grasscutter.net.proto.MassivePropSyncInfoOuterClass.MassivePropSyncInfo getMassivePropList(int index);
     /**
-     * <code>repeated .MassivePropSyncInfo massive_prop_list = 2;</code>
+     * <code>repeated .MassivePropSyncInfo massive_prop_list = 8;</code>
      */
     int getMassivePropListCount();
     /**
-     * <code>repeated .MassivePropSyncInfo massive_prop_list = 2;</code>
+     * <code>repeated .MassivePropSyncInfo massive_prop_list = 8;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.MassivePropSyncInfoOuterClass.MassivePropSyncInfoOrBuilder> 
         getMassivePropListOrBuilderList();
     /**
-     * <code>repeated .MassivePropSyncInfo massive_prop_list = 2;</code>
+     * <code>repeated .MassivePropSyncInfo massive_prop_list = 8;</code>
      */
     emu.grasscutter.net.proto.MassivePropSyncInfoOuterClass.MassivePropSyncInfoOrBuilder getMassivePropListOrBuilder(
         int index);
 
     /**
-     * <code>repeated int64 delete_id_list = 6;</code>
+     * <code>repeated int64 delete_id_list = 5;</code>
      * @return A list containing the deleteIdList.
      */
     java.util.List<java.lang.Long> getDeleteIdListList();
     /**
-     * <code>repeated int64 delete_id_list = 6;</code>
+     * <code>repeated int64 delete_id_list = 5;</code>
      * @return The count of deleteIdList.
      */
     int getDeleteIdListCount();
     /**
-     * <code>repeated int64 delete_id_list = 6;</code>
+     * <code>repeated int64 delete_id_list = 5;</code>
      * @param index The index of the element to return.
      * @return The deleteIdList at the given index.
      */
@@ -67,7 +67,7 @@ public final class AbilityMixinScenePropSyncOuterClass {
   }
   /**
    * <pre>
-   * Obf: CMGBBPPHNGC
+   * Obf: KEKBDPCNHFK
    * </pre>
    *
    * Protobuf type {@code AbilityMixinScenePropSync}
@@ -117,16 +117,7 @@ public final class AbilityMixinScenePropSyncOuterClass {
             case 0:
               done = true;
               break;
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                massivePropList_ = new java.util.ArrayList<emu.grasscutter.net.proto.MassivePropSyncInfoOuterClass.MassivePropSyncInfo>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              massivePropList_.add(
-                  input.readMessage(emu.grasscutter.net.proto.MassivePropSyncInfoOuterClass.MassivePropSyncInfo.parser(), extensionRegistry));
-              break;
-            }
-            case 48: {
+            case 40: {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 deleteIdList_ = newLongList();
                 mutable_bitField0_ |= 0x00000002;
@@ -134,7 +125,7 @@ public final class AbilityMixinScenePropSyncOuterClass {
               deleteIdList_.addLong(input.readInt64());
               break;
             }
-            case 50: {
+            case 42: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
@@ -147,9 +138,18 @@ public final class AbilityMixinScenePropSyncOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 72: {
+            case 48: {
 
               isClearAll_ = input.readBool();
+              break;
+            }
+            case 66: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                massivePropList_ = new java.util.ArrayList<emu.grasscutter.net.proto.MassivePropSyncInfoOuterClass.MassivePropSyncInfo>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              massivePropList_.add(
+                  input.readMessage(emu.grasscutter.net.proto.MassivePropSyncInfoOuterClass.MassivePropSyncInfo.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -167,11 +167,11 @@ public final class AbilityMixinScenePropSyncOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          massivePropList_ = java.util.Collections.unmodifiableList(massivePropList_);
-        }
         if (((mutable_bitField0_ & 0x00000002) != 0)) {
           deleteIdList_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          massivePropList_ = java.util.Collections.unmodifiableList(massivePropList_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -190,10 +190,10 @@ public final class AbilityMixinScenePropSyncOuterClass {
               emu.grasscutter.net.proto.AbilityMixinScenePropSyncOuterClass.AbilityMixinScenePropSync.class, emu.grasscutter.net.proto.AbilityMixinScenePropSyncOuterClass.AbilityMixinScenePropSync.Builder.class);
     }
 
-    public static final int IS_CLEAR_ALL_FIELD_NUMBER = 9;
+    public static final int IS_CLEAR_ALL_FIELD_NUMBER = 6;
     private boolean isClearAll_;
     /**
-     * <code>bool is_clear_all = 9;</code>
+     * <code>bool is_clear_all = 6;</code>
      * @return The isClearAll.
      */
     @java.lang.Override
@@ -201,17 +201,17 @@ public final class AbilityMixinScenePropSyncOuterClass {
       return isClearAll_;
     }
 
-    public static final int MASSIVE_PROP_LIST_FIELD_NUMBER = 2;
+    public static final int MASSIVE_PROP_LIST_FIELD_NUMBER = 8;
     private java.util.List<emu.grasscutter.net.proto.MassivePropSyncInfoOuterClass.MassivePropSyncInfo> massivePropList_;
     /**
-     * <code>repeated .MassivePropSyncInfo massive_prop_list = 2;</code>
+     * <code>repeated .MassivePropSyncInfo massive_prop_list = 8;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.MassivePropSyncInfoOuterClass.MassivePropSyncInfo> getMassivePropListList() {
       return massivePropList_;
     }
     /**
-     * <code>repeated .MassivePropSyncInfo massive_prop_list = 2;</code>
+     * <code>repeated .MassivePropSyncInfo massive_prop_list = 8;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.MassivePropSyncInfoOuterClass.MassivePropSyncInfoOrBuilder> 
@@ -219,21 +219,21 @@ public final class AbilityMixinScenePropSyncOuterClass {
       return massivePropList_;
     }
     /**
-     * <code>repeated .MassivePropSyncInfo massive_prop_list = 2;</code>
+     * <code>repeated .MassivePropSyncInfo massive_prop_list = 8;</code>
      */
     @java.lang.Override
     public int getMassivePropListCount() {
       return massivePropList_.size();
     }
     /**
-     * <code>repeated .MassivePropSyncInfo massive_prop_list = 2;</code>
+     * <code>repeated .MassivePropSyncInfo massive_prop_list = 8;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.MassivePropSyncInfoOuterClass.MassivePropSyncInfo getMassivePropList(int index) {
       return massivePropList_.get(index);
     }
     /**
-     * <code>repeated .MassivePropSyncInfo massive_prop_list = 2;</code>
+     * <code>repeated .MassivePropSyncInfo massive_prop_list = 8;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.MassivePropSyncInfoOuterClass.MassivePropSyncInfoOrBuilder getMassivePropListOrBuilder(
@@ -241,10 +241,10 @@ public final class AbilityMixinScenePropSyncOuterClass {
       return massivePropList_.get(index);
     }
 
-    public static final int DELETE_ID_LIST_FIELD_NUMBER = 6;
+    public static final int DELETE_ID_LIST_FIELD_NUMBER = 5;
     private com.google.protobuf.Internal.LongList deleteIdList_;
     /**
-     * <code>repeated int64 delete_id_list = 6;</code>
+     * <code>repeated int64 delete_id_list = 5;</code>
      * @return A list containing the deleteIdList.
      */
     @java.lang.Override
@@ -253,14 +253,14 @@ public final class AbilityMixinScenePropSyncOuterClass {
       return deleteIdList_;
     }
     /**
-     * <code>repeated int64 delete_id_list = 6;</code>
+     * <code>repeated int64 delete_id_list = 5;</code>
      * @return The count of deleteIdList.
      */
     public int getDeleteIdListCount() {
       return deleteIdList_.size();
     }
     /**
-     * <code>repeated int64 delete_id_list = 6;</code>
+     * <code>repeated int64 delete_id_list = 5;</code>
      * @param index The index of the element to return.
      * @return The deleteIdList at the given index.
      */
@@ -284,18 +284,18 @@ public final class AbilityMixinScenePropSyncOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      for (int i = 0; i < massivePropList_.size(); i++) {
-        output.writeMessage(2, massivePropList_.get(i));
-      }
       if (getDeleteIdListList().size() > 0) {
-        output.writeUInt32NoTag(50);
+        output.writeUInt32NoTag(42);
         output.writeUInt32NoTag(deleteIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < deleteIdList_.size(); i++) {
         output.writeInt64NoTag(deleteIdList_.getLong(i));
       }
       if (isClearAll_ != false) {
-        output.writeBool(9, isClearAll_);
+        output.writeBool(6, isClearAll_);
+      }
+      for (int i = 0; i < massivePropList_.size(); i++) {
+        output.writeMessage(8, massivePropList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -306,10 +306,6 @@ public final class AbilityMixinScenePropSyncOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < massivePropList_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, massivePropList_.get(i));
-      }
       {
         int dataSize = 0;
         for (int i = 0; i < deleteIdList_.size(); i++) {
@@ -326,7 +322,11 @@ public final class AbilityMixinScenePropSyncOuterClass {
       }
       if (isClearAll_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(9, isClearAll_);
+          .computeBoolSize(6, isClearAll_);
+      }
+      for (int i = 0; i < massivePropList_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(8, massivePropList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -468,7 +468,7 @@ public final class AbilityMixinScenePropSyncOuterClass {
     }
     /**
      * <pre>
-     * Obf: CMGBBPPHNGC
+     * Obf: KEKBDPCNHFK
      * </pre>
      *
      * Protobuf type {@code AbilityMixinScenePropSync}
@@ -680,7 +680,7 @@ public final class AbilityMixinScenePropSyncOuterClass {
 
       private boolean isClearAll_ ;
       /**
-       * <code>bool is_clear_all = 9;</code>
+       * <code>bool is_clear_all = 6;</code>
        * @return The isClearAll.
        */
       @java.lang.Override
@@ -688,7 +688,7 @@ public final class AbilityMixinScenePropSyncOuterClass {
         return isClearAll_;
       }
       /**
-       * <code>bool is_clear_all = 9;</code>
+       * <code>bool is_clear_all = 6;</code>
        * @param value The isClearAll to set.
        * @return This builder for chaining.
        */
@@ -699,7 +699,7 @@ public final class AbilityMixinScenePropSyncOuterClass {
         return this;
       }
       /**
-       * <code>bool is_clear_all = 9;</code>
+       * <code>bool is_clear_all = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsClearAll() {
@@ -722,7 +722,7 @@ public final class AbilityMixinScenePropSyncOuterClass {
           emu.grasscutter.net.proto.MassivePropSyncInfoOuterClass.MassivePropSyncInfo, emu.grasscutter.net.proto.MassivePropSyncInfoOuterClass.MassivePropSyncInfo.Builder, emu.grasscutter.net.proto.MassivePropSyncInfoOuterClass.MassivePropSyncInfoOrBuilder> massivePropListBuilder_;
 
       /**
-       * <code>repeated .MassivePropSyncInfo massive_prop_list = 2;</code>
+       * <code>repeated .MassivePropSyncInfo massive_prop_list = 8;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.MassivePropSyncInfoOuterClass.MassivePropSyncInfo> getMassivePropListList() {
         if (massivePropListBuilder_ == null) {
@@ -732,7 +732,7 @@ public final class AbilityMixinScenePropSyncOuterClass {
         }
       }
       /**
-       * <code>repeated .MassivePropSyncInfo massive_prop_list = 2;</code>
+       * <code>repeated .MassivePropSyncInfo massive_prop_list = 8;</code>
        */
       public int getMassivePropListCount() {
         if (massivePropListBuilder_ == null) {
@@ -742,7 +742,7 @@ public final class AbilityMixinScenePropSyncOuterClass {
         }
       }
       /**
-       * <code>repeated .MassivePropSyncInfo massive_prop_list = 2;</code>
+       * <code>repeated .MassivePropSyncInfo massive_prop_list = 8;</code>
        */
       public emu.grasscutter.net.proto.MassivePropSyncInfoOuterClass.MassivePropSyncInfo getMassivePropList(int index) {
         if (massivePropListBuilder_ == null) {
@@ -752,7 +752,7 @@ public final class AbilityMixinScenePropSyncOuterClass {
         }
       }
       /**
-       * <code>repeated .MassivePropSyncInfo massive_prop_list = 2;</code>
+       * <code>repeated .MassivePropSyncInfo massive_prop_list = 8;</code>
        */
       public Builder setMassivePropList(
           int index, emu.grasscutter.net.proto.MassivePropSyncInfoOuterClass.MassivePropSyncInfo value) {
@@ -769,7 +769,7 @@ public final class AbilityMixinScenePropSyncOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MassivePropSyncInfo massive_prop_list = 2;</code>
+       * <code>repeated .MassivePropSyncInfo massive_prop_list = 8;</code>
        */
       public Builder setMassivePropList(
           int index, emu.grasscutter.net.proto.MassivePropSyncInfoOuterClass.MassivePropSyncInfo.Builder builderForValue) {
@@ -783,7 +783,7 @@ public final class AbilityMixinScenePropSyncOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MassivePropSyncInfo massive_prop_list = 2;</code>
+       * <code>repeated .MassivePropSyncInfo massive_prop_list = 8;</code>
        */
       public Builder addMassivePropList(emu.grasscutter.net.proto.MassivePropSyncInfoOuterClass.MassivePropSyncInfo value) {
         if (massivePropListBuilder_ == null) {
@@ -799,7 +799,7 @@ public final class AbilityMixinScenePropSyncOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MassivePropSyncInfo massive_prop_list = 2;</code>
+       * <code>repeated .MassivePropSyncInfo massive_prop_list = 8;</code>
        */
       public Builder addMassivePropList(
           int index, emu.grasscutter.net.proto.MassivePropSyncInfoOuterClass.MassivePropSyncInfo value) {
@@ -816,7 +816,7 @@ public final class AbilityMixinScenePropSyncOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MassivePropSyncInfo massive_prop_list = 2;</code>
+       * <code>repeated .MassivePropSyncInfo massive_prop_list = 8;</code>
        */
       public Builder addMassivePropList(
           emu.grasscutter.net.proto.MassivePropSyncInfoOuterClass.MassivePropSyncInfo.Builder builderForValue) {
@@ -830,7 +830,7 @@ public final class AbilityMixinScenePropSyncOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MassivePropSyncInfo massive_prop_list = 2;</code>
+       * <code>repeated .MassivePropSyncInfo massive_prop_list = 8;</code>
        */
       public Builder addMassivePropList(
           int index, emu.grasscutter.net.proto.MassivePropSyncInfoOuterClass.MassivePropSyncInfo.Builder builderForValue) {
@@ -844,7 +844,7 @@ public final class AbilityMixinScenePropSyncOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MassivePropSyncInfo massive_prop_list = 2;</code>
+       * <code>repeated .MassivePropSyncInfo massive_prop_list = 8;</code>
        */
       public Builder addAllMassivePropList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.MassivePropSyncInfoOuterClass.MassivePropSyncInfo> values) {
@@ -859,7 +859,7 @@ public final class AbilityMixinScenePropSyncOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MassivePropSyncInfo massive_prop_list = 2;</code>
+       * <code>repeated .MassivePropSyncInfo massive_prop_list = 8;</code>
        */
       public Builder clearMassivePropList() {
         if (massivePropListBuilder_ == null) {
@@ -872,7 +872,7 @@ public final class AbilityMixinScenePropSyncOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MassivePropSyncInfo massive_prop_list = 2;</code>
+       * <code>repeated .MassivePropSyncInfo massive_prop_list = 8;</code>
        */
       public Builder removeMassivePropList(int index) {
         if (massivePropListBuilder_ == null) {
@@ -885,14 +885,14 @@ public final class AbilityMixinScenePropSyncOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MassivePropSyncInfo massive_prop_list = 2;</code>
+       * <code>repeated .MassivePropSyncInfo massive_prop_list = 8;</code>
        */
       public emu.grasscutter.net.proto.MassivePropSyncInfoOuterClass.MassivePropSyncInfo.Builder getMassivePropListBuilder(
           int index) {
         return getMassivePropListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .MassivePropSyncInfo massive_prop_list = 2;</code>
+       * <code>repeated .MassivePropSyncInfo massive_prop_list = 8;</code>
        */
       public emu.grasscutter.net.proto.MassivePropSyncInfoOuterClass.MassivePropSyncInfoOrBuilder getMassivePropListOrBuilder(
           int index) {
@@ -902,7 +902,7 @@ public final class AbilityMixinScenePropSyncOuterClass {
         }
       }
       /**
-       * <code>repeated .MassivePropSyncInfo massive_prop_list = 2;</code>
+       * <code>repeated .MassivePropSyncInfo massive_prop_list = 8;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.MassivePropSyncInfoOuterClass.MassivePropSyncInfoOrBuilder> 
            getMassivePropListOrBuilderList() {
@@ -913,14 +913,14 @@ public final class AbilityMixinScenePropSyncOuterClass {
         }
       }
       /**
-       * <code>repeated .MassivePropSyncInfo massive_prop_list = 2;</code>
+       * <code>repeated .MassivePropSyncInfo massive_prop_list = 8;</code>
        */
       public emu.grasscutter.net.proto.MassivePropSyncInfoOuterClass.MassivePropSyncInfo.Builder addMassivePropListBuilder() {
         return getMassivePropListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.MassivePropSyncInfoOuterClass.MassivePropSyncInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .MassivePropSyncInfo massive_prop_list = 2;</code>
+       * <code>repeated .MassivePropSyncInfo massive_prop_list = 8;</code>
        */
       public emu.grasscutter.net.proto.MassivePropSyncInfoOuterClass.MassivePropSyncInfo.Builder addMassivePropListBuilder(
           int index) {
@@ -928,7 +928,7 @@ public final class AbilityMixinScenePropSyncOuterClass {
             index, emu.grasscutter.net.proto.MassivePropSyncInfoOuterClass.MassivePropSyncInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .MassivePropSyncInfo massive_prop_list = 2;</code>
+       * <code>repeated .MassivePropSyncInfo massive_prop_list = 8;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.MassivePropSyncInfoOuterClass.MassivePropSyncInfo.Builder> 
            getMassivePropListBuilderList() {
@@ -957,7 +957,7 @@ public final class AbilityMixinScenePropSyncOuterClass {
          }
       }
       /**
-       * <code>repeated int64 delete_id_list = 6;</code>
+       * <code>repeated int64 delete_id_list = 5;</code>
        * @return A list containing the deleteIdList.
        */
       public java.util.List<java.lang.Long>
@@ -966,14 +966,14 @@ public final class AbilityMixinScenePropSyncOuterClass {
                  java.util.Collections.unmodifiableList(deleteIdList_) : deleteIdList_;
       }
       /**
-       * <code>repeated int64 delete_id_list = 6;</code>
+       * <code>repeated int64 delete_id_list = 5;</code>
        * @return The count of deleteIdList.
        */
       public int getDeleteIdListCount() {
         return deleteIdList_.size();
       }
       /**
-       * <code>repeated int64 delete_id_list = 6;</code>
+       * <code>repeated int64 delete_id_list = 5;</code>
        * @param index The index of the element to return.
        * @return The deleteIdList at the given index.
        */
@@ -981,7 +981,7 @@ public final class AbilityMixinScenePropSyncOuterClass {
         return deleteIdList_.getLong(index);
       }
       /**
-       * <code>repeated int64 delete_id_list = 6;</code>
+       * <code>repeated int64 delete_id_list = 5;</code>
        * @param index The index to set the value at.
        * @param value The deleteIdList to set.
        * @return This builder for chaining.
@@ -994,7 +994,7 @@ public final class AbilityMixinScenePropSyncOuterClass {
         return this;
       }
       /**
-       * <code>repeated int64 delete_id_list = 6;</code>
+       * <code>repeated int64 delete_id_list = 5;</code>
        * @param value The deleteIdList to add.
        * @return This builder for chaining.
        */
@@ -1005,7 +1005,7 @@ public final class AbilityMixinScenePropSyncOuterClass {
         return this;
       }
       /**
-       * <code>repeated int64 delete_id_list = 6;</code>
+       * <code>repeated int64 delete_id_list = 5;</code>
        * @param values The deleteIdList to add.
        * @return This builder for chaining.
        */
@@ -1018,7 +1018,7 @@ public final class AbilityMixinScenePropSyncOuterClass {
         return this;
       }
       /**
-       * <code>repeated int64 delete_id_list = 6;</code>
+       * <code>repeated int64 delete_id_list = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearDeleteIdList() {
@@ -1096,9 +1096,9 @@ public final class AbilityMixinScenePropSyncOuterClass {
     java.lang.String[] descriptorData = {
       "\n\037AbilityMixinScenePropSync.proto\032\031Massi" +
       "vePropSyncInfo.proto\"z\n\031AbilityMixinScen" +
-      "ePropSync\022\024\n\014is_clear_all\030\t \001(\010\022/\n\021massi" +
-      "ve_prop_list\030\002 \003(\0132\024.MassivePropSyncInfo" +
-      "\022\026\n\016delete_id_list\030\006 \003(\003B\033\n\031emu.grasscut" +
+      "ePropSync\022\024\n\014is_clear_all\030\006 \001(\010\022/\n\021massi" +
+      "ve_prop_list\030\010 \003(\0132\024.MassivePropSyncInfo" +
+      "\022\026\n\016delete_id_list\030\005 \003(\003B\033\n\031emu.grasscut" +
       "ter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

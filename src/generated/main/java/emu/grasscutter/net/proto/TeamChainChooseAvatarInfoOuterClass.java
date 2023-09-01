@@ -19,20 +19,20 @@ public final class TeamChainChooseAvatarInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool is_trial_avatar = 3;</code>
-     * @return The isTrialAvatar.
-     */
-    boolean getIsTrialAvatar();
-
-    /**
-     * <code>uint32 avatar_id = 8;</code>
+     * <code>uint32 avatar_id = 12;</code>
      * @return The avatarId.
      */
     int getAvatarId();
+
+    /**
+     * <code>bool is_trial_avatar = 5;</code>
+     * @return The isTrialAvatar.
+     */
+    boolean getIsTrialAvatar();
   }
   /**
    * <pre>
-   * Obf: CHLPLBEMOKI
+   * Obf: PILDGBGEJLC
    * </pre>
    *
    * Protobuf type {@code TeamChainChooseAvatarInfo}
@@ -79,12 +79,12 @@ public final class TeamChainChooseAvatarInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 40: {
 
               isTrialAvatar_ = input.readBool();
               break;
             }
-            case 64: {
+            case 96: {
 
               avatarId_ = input.readUInt32();
               break;
@@ -121,26 +121,26 @@ public final class TeamChainChooseAvatarInfoOuterClass {
               emu.grasscutter.net.proto.TeamChainChooseAvatarInfoOuterClass.TeamChainChooseAvatarInfo.class, emu.grasscutter.net.proto.TeamChainChooseAvatarInfoOuterClass.TeamChainChooseAvatarInfo.Builder.class);
     }
 
-    public static final int IS_TRIAL_AVATAR_FIELD_NUMBER = 3;
-    private boolean isTrialAvatar_;
-    /**
-     * <code>bool is_trial_avatar = 3;</code>
-     * @return The isTrialAvatar.
-     */
-    @java.lang.Override
-    public boolean getIsTrialAvatar() {
-      return isTrialAvatar_;
-    }
-
-    public static final int AVATAR_ID_FIELD_NUMBER = 8;
+    public static final int AVATAR_ID_FIELD_NUMBER = 12;
     private int avatarId_;
     /**
-     * <code>uint32 avatar_id = 8;</code>
+     * <code>uint32 avatar_id = 12;</code>
      * @return The avatarId.
      */
     @java.lang.Override
     public int getAvatarId() {
       return avatarId_;
+    }
+
+    public static final int IS_TRIAL_AVATAR_FIELD_NUMBER = 5;
+    private boolean isTrialAvatar_;
+    /**
+     * <code>bool is_trial_avatar = 5;</code>
+     * @return The isTrialAvatar.
+     */
+    @java.lang.Override
+    public boolean getIsTrialAvatar() {
+      return isTrialAvatar_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -158,10 +158,10 @@ public final class TeamChainChooseAvatarInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (isTrialAvatar_ != false) {
-        output.writeBool(3, isTrialAvatar_);
+        output.writeBool(5, isTrialAvatar_);
       }
       if (avatarId_ != 0) {
-        output.writeUInt32(8, avatarId_);
+        output.writeUInt32(12, avatarId_);
       }
       unknownFields.writeTo(output);
     }
@@ -174,11 +174,11 @@ public final class TeamChainChooseAvatarInfoOuterClass {
       size = 0;
       if (isTrialAvatar_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(3, isTrialAvatar_);
+          .computeBoolSize(5, isTrialAvatar_);
       }
       if (avatarId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, avatarId_);
+          .computeUInt32Size(12, avatarId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -195,10 +195,10 @@ public final class TeamChainChooseAvatarInfoOuterClass {
       }
       emu.grasscutter.net.proto.TeamChainChooseAvatarInfoOuterClass.TeamChainChooseAvatarInfo other = (emu.grasscutter.net.proto.TeamChainChooseAvatarInfoOuterClass.TeamChainChooseAvatarInfo) obj;
 
-      if (getIsTrialAvatar()
-          != other.getIsTrialAvatar()) return false;
       if (getAvatarId()
           != other.getAvatarId()) return false;
+      if (getIsTrialAvatar()
+          != other.getIsTrialAvatar()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -210,11 +210,11 @@ public final class TeamChainChooseAvatarInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + AVATAR_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getAvatarId();
       hash = (37 * hash) + IS_TRIAL_AVATAR_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsTrialAvatar());
-      hash = (37 * hash) + AVATAR_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getAvatarId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -312,7 +312,7 @@ public final class TeamChainChooseAvatarInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: CHLPLBEMOKI
+     * Obf: PILDGBGEJLC
      * </pre>
      *
      * Protobuf type {@code TeamChainChooseAvatarInfo}
@@ -352,9 +352,9 @@ public final class TeamChainChooseAvatarInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        isTrialAvatar_ = false;
-
         avatarId_ = 0;
+
+        isTrialAvatar_ = false;
 
         return this;
       }
@@ -382,8 +382,8 @@ public final class TeamChainChooseAvatarInfoOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.TeamChainChooseAvatarInfoOuterClass.TeamChainChooseAvatarInfo buildPartial() {
         emu.grasscutter.net.proto.TeamChainChooseAvatarInfoOuterClass.TeamChainChooseAvatarInfo result = new emu.grasscutter.net.proto.TeamChainChooseAvatarInfoOuterClass.TeamChainChooseAvatarInfo(this);
-        result.isTrialAvatar_ = isTrialAvatar_;
         result.avatarId_ = avatarId_;
+        result.isTrialAvatar_ = isTrialAvatar_;
         onBuilt();
         return result;
       }
@@ -432,11 +432,11 @@ public final class TeamChainChooseAvatarInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.TeamChainChooseAvatarInfoOuterClass.TeamChainChooseAvatarInfo other) {
         if (other == emu.grasscutter.net.proto.TeamChainChooseAvatarInfoOuterClass.TeamChainChooseAvatarInfo.getDefaultInstance()) return this;
-        if (other.getIsTrialAvatar() != false) {
-          setIsTrialAvatar(other.getIsTrialAvatar());
-        }
         if (other.getAvatarId() != 0) {
           setAvatarId(other.getAvatarId());
+        }
+        if (other.getIsTrialAvatar() != false) {
+          setIsTrialAvatar(other.getIsTrialAvatar());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -467,40 +467,9 @@ public final class TeamChainChooseAvatarInfoOuterClass {
         return this;
       }
 
-      private boolean isTrialAvatar_ ;
-      /**
-       * <code>bool is_trial_avatar = 3;</code>
-       * @return The isTrialAvatar.
-       */
-      @java.lang.Override
-      public boolean getIsTrialAvatar() {
-        return isTrialAvatar_;
-      }
-      /**
-       * <code>bool is_trial_avatar = 3;</code>
-       * @param value The isTrialAvatar to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsTrialAvatar(boolean value) {
-        
-        isTrialAvatar_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_trial_avatar = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsTrialAvatar() {
-        
-        isTrialAvatar_ = false;
-        onChanged();
-        return this;
-      }
-
       private int avatarId_ ;
       /**
-       * <code>uint32 avatar_id = 8;</code>
+       * <code>uint32 avatar_id = 12;</code>
        * @return The avatarId.
        */
       @java.lang.Override
@@ -508,7 +477,7 @@ public final class TeamChainChooseAvatarInfoOuterClass {
         return avatarId_;
       }
       /**
-       * <code>uint32 avatar_id = 8;</code>
+       * <code>uint32 avatar_id = 12;</code>
        * @param value The avatarId to set.
        * @return This builder for chaining.
        */
@@ -519,12 +488,43 @@ public final class TeamChainChooseAvatarInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 avatar_id = 8;</code>
+       * <code>uint32 avatar_id = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearAvatarId() {
         
         avatarId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean isTrialAvatar_ ;
+      /**
+       * <code>bool is_trial_avatar = 5;</code>
+       * @return The isTrialAvatar.
+       */
+      @java.lang.Override
+      public boolean getIsTrialAvatar() {
+        return isTrialAvatar_;
+      }
+      /**
+       * <code>bool is_trial_avatar = 5;</code>
+       * @param value The isTrialAvatar to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsTrialAvatar(boolean value) {
+        
+        isTrialAvatar_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_trial_avatar = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsTrialAvatar() {
+        
+        isTrialAvatar_ = false;
         onChanged();
         return this;
       }
@@ -596,8 +596,8 @@ public final class TeamChainChooseAvatarInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\037TeamChainChooseAvatarInfo.proto\"G\n\031Tea" +
-      "mChainChooseAvatarInfo\022\027\n\017is_trial_avata" +
-      "r\030\003 \001(\010\022\021\n\tavatar_id\030\010 \001(\rB\033\n\031emu.grassc" +
+      "mChainChooseAvatarInfo\022\021\n\tavatar_id\030\014 \001(" +
+      "\r\022\027\n\017is_trial_avatar\030\005 \001(\010B\033\n\031emu.grassc" +
       "utter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -609,7 +609,7 @@ public final class TeamChainChooseAvatarInfoOuterClass {
     internal_static_TeamChainChooseAvatarInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_TeamChainChooseAvatarInfo_descriptor,
-        new java.lang.String[] { "IsTrialAvatar", "AvatarId", });
+        new java.lang.String[] { "AvatarId", "IsTrialAvatar", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

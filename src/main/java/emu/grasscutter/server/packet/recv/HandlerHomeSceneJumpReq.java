@@ -1,10 +1,6 @@
 package emu.grasscutter.server.packet.recv;
 
-import emu.grasscutter.game.world.Position;
-import emu.grasscutter.game.world.Scene;
-import emu.grasscutter.net.packet.Opcodes;
-import emu.grasscutter.net.packet.PacketHandler;
-import emu.grasscutter.net.packet.PacketOpcodes;
+import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.HomeSceneJumpReqOuterClass;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketHomeSceneJumpRsp;
@@ -16,19 +12,16 @@ public class HandlerHomeSceneJumpReq extends PacketHandler {
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
         var req = HomeSceneJumpReqOuterClass.HomeSceneJumpReq.parseFrom(payload);
 
-        int realmId = 2000 + session.getPlayer().getCurrentRealmId();
-
-        var home = session.getPlayer().getHome();
+        var world = session.getPlayer().getCurHomeWorld();
+        var home = world.getHome();
+        var owner = world.getHost();
+        int realmId = 2000 + owner.getCurrentRealmId();
         var homeScene = home.getHomeSceneItem(realmId);
         home.save();
 
-        Scene scene =
-                session
-                        .getPlayer()
-                        .getWorld()
-                        .getSceneById(req.getIsEnterRoomScene() ? homeScene.getRoomSceneId() : realmId);
-        Position pos = scene.getScriptManager().getConfig().born_pos;
-        Position rot = home.getSceneMap().get(scene.getId()).getBornRot();
+        var scene = world.getSceneById(req.getIsEnterRoomScene() ? homeScene.getRoomSceneId() : realmId);
+        var pos = scene.getScriptManager().getConfig().born_pos;
+        var rot = home.getSceneMap().get(scene.getId()).getBornRot();
 
         // Make player face correct direction when entering or exiting
         session.getPlayer().getRotation().set(rot);
@@ -38,13 +31,7 @@ public class HandlerHomeSceneJumpReq extends PacketHandler {
             pos = home.getSceneMap().get(realmId).getBornPos();
         }
 
-        session
-                .getPlayer()
-                .getWorld()
-                .transferPlayerToScene(
-                        session.getPlayer(),
-                        req.getIsEnterRoomScene() ? homeScene.getRoomSceneId() : realmId,
-                        pos);
+        world.transferPlayerToScene(session.getPlayer(), req.getIsEnterRoomScene() ? homeScene.getRoomSceneId() : realmId, pos);
 
         session.send(new PacketHomeSceneJumpRsp(req.getIsEnterRoomScene()));
     }

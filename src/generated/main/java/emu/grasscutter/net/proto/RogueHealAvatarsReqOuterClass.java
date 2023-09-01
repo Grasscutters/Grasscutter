@@ -19,21 +19,21 @@ public final class RogueHealAvatarsReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 cell_id = 9;</code>
+     * <code>uint32 cell_id = 2;</code>
      * @return The cellId.
      */
     int getCellId();
 
     /**
-     * <code>uint32 dungeon_id = 3;</code>
+     * <code>uint32 dungeon_id = 4;</code>
      * @return The dungeonId.
      */
     int getDungeonId();
   }
   /**
    * <pre>
-   * CmdId: 8077
-   * Obf: DJILBHHLGAB
+   * CmdId: 7220
+   * Obf: PFIGBGCGBEB
    * </pre>
    *
    * Protobuf type {@code RogueHealAvatarsReq}
@@ -80,14 +80,14 @@ public final class RogueHealAvatarsReqOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
-
-              dungeonId_ = input.readUInt32();
-              break;
-            }
-            case 72: {
+            case 16: {
 
               cellId_ = input.readUInt32();
+              break;
+            }
+            case 32: {
+
+              dungeonId_ = input.readUInt32();
               break;
             }
             default: {
@@ -122,10 +122,10 @@ public final class RogueHealAvatarsReqOuterClass {
               emu.grasscutter.net.proto.RogueHealAvatarsReqOuterClass.RogueHealAvatarsReq.class, emu.grasscutter.net.proto.RogueHealAvatarsReqOuterClass.RogueHealAvatarsReq.Builder.class);
     }
 
-    public static final int CELL_ID_FIELD_NUMBER = 9;
+    public static final int CELL_ID_FIELD_NUMBER = 2;
     private int cellId_;
     /**
-     * <code>uint32 cell_id = 9;</code>
+     * <code>uint32 cell_id = 2;</code>
      * @return The cellId.
      */
     @java.lang.Override
@@ -133,10 +133,10 @@ public final class RogueHealAvatarsReqOuterClass {
       return cellId_;
     }
 
-    public static final int DUNGEON_ID_FIELD_NUMBER = 3;
+    public static final int DUNGEON_ID_FIELD_NUMBER = 4;
     private int dungeonId_;
     /**
-     * <code>uint32 dungeon_id = 3;</code>
+     * <code>uint32 dungeon_id = 4;</code>
      * @return The dungeonId.
      */
     @java.lang.Override
@@ -158,11 +158,11 @@ public final class RogueHealAvatarsReqOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (dungeonId_ != 0) {
-        output.writeUInt32(3, dungeonId_);
-      }
       if (cellId_ != 0) {
-        output.writeUInt32(9, cellId_);
+        output.writeUInt32(2, cellId_);
+      }
+      if (dungeonId_ != 0) {
+        output.writeUInt32(4, dungeonId_);
       }
       unknownFields.writeTo(output);
     }
@@ -173,13 +173,13 @@ public final class RogueHealAvatarsReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (dungeonId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, dungeonId_);
-      }
       if (cellId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, cellId_);
+          .computeUInt32Size(2, cellId_);
+      }
+      if (dungeonId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(4, dungeonId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -312,8 +312,8 @@ public final class RogueHealAvatarsReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8077
-     * Obf: DJILBHHLGAB
+     * CmdId: 7220
+     * Obf: PFIGBGCGBEB
      * </pre>
      *
      * Protobuf type {@code RogueHealAvatarsReq}
@@ -470,7 +470,7 @@ public final class RogueHealAvatarsReqOuterClass {
 
       private int cellId_ ;
       /**
-       * <code>uint32 cell_id = 9;</code>
+       * <code>uint32 cell_id = 2;</code>
        * @return The cellId.
        */
       @java.lang.Override
@@ -478,7 +478,7 @@ public final class RogueHealAvatarsReqOuterClass {
         return cellId_;
       }
       /**
-       * <code>uint32 cell_id = 9;</code>
+       * <code>uint32 cell_id = 2;</code>
        * @param value The cellId to set.
        * @return This builder for chaining.
        */
@@ -489,7 +489,7 @@ public final class RogueHealAvatarsReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 cell_id = 9;</code>
+       * <code>uint32 cell_id = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearCellId() {
@@ -501,7 +501,7 @@ public final class RogueHealAvatarsReqOuterClass {
 
       private int dungeonId_ ;
       /**
-       * <code>uint32 dungeon_id = 3;</code>
+       * <code>uint32 dungeon_id = 4;</code>
        * @return The dungeonId.
        */
       @java.lang.Override
@@ -509,7 +509,7 @@ public final class RogueHealAvatarsReqOuterClass {
         return dungeonId_;
       }
       /**
-       * <code>uint32 dungeon_id = 3;</code>
+       * <code>uint32 dungeon_id = 4;</code>
        * @param value The dungeonId to set.
        * @return This builder for chaining.
        */
@@ -520,7 +520,7 @@ public final class RogueHealAvatarsReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 dungeon_id = 3;</code>
+       * <code>uint32 dungeon_id = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearDungeonId() {
@@ -597,8 +597,8 @@ public final class RogueHealAvatarsReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\031RogueHealAvatarsReq.proto\":\n\023RogueHeal" +
-      "AvatarsReq\022\017\n\007cell_id\030\t \001(\r\022\022\n\ndungeon_i" +
-      "d\030\003 \001(\rB\033\n\031emu.grasscutter.net.protob\006pr" +
+      "AvatarsReq\022\017\n\007cell_id\030\002 \001(\r\022\022\n\ndungeon_i" +
+      "d\030\004 \001(\rB\033\n\031emu.grasscutter.net.protob\006pr" +
       "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

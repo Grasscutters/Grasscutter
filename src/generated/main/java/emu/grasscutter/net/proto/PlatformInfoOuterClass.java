@@ -154,7 +154,7 @@ public final class PlatformInfoOuterClass {
   }
   /**
    * <pre>
-   * Obf: JIHNBDJFOFI
+   * Obf: NEACNMDIMDL
    * </pre>
    *
    * Protobuf type {@code PlatformInfo}
@@ -908,7 +908,7 @@ public final class PlatformInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: JIHNBDJFOFI
+     * Obf: NEACNMDIMDL
      * </pre>
      *
      * Protobuf type {@code PlatformInfo}

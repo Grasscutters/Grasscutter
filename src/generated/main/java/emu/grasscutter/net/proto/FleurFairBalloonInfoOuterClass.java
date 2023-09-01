@@ -26,7 +26,7 @@ public final class FleurFairBalloonInfoOuterClass {
   }
   /**
    * <pre>
-   * Obf: GNDNOIIAFFH
+   * Obf: MKJJODENGPP
    * </pre>
    *
    * Protobuf type {@code FleurFairBalloonInfo}
@@ -278,7 +278,7 @@ public final class FleurFairBalloonInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: GNDNOIIAFFH
+     * Obf: MKJJODENGPP
      * </pre>
      *
      * Protobuf type {@code FleurFairBalloonInfo}

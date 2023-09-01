@@ -19,21 +19,21 @@ public final class WinterCampTriathlonRestartRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 gallery_id = 4;</code>
+     * <code>uint32 gallery_id = 5;</code>
      * @return The galleryId.
      */
     int getGalleryId();
 
     /**
-     * <code>int32 retcode = 1;</code>
+     * <code>int32 retcode = 14;</code>
      * @return The retcode.
      */
     int getRetcode();
   }
   /**
    * <pre>
-   * CmdId: 8957
-   * Obf: EPPNJFHOFAH
+   * CmdId: 27534
+   * Obf: DOPBINMGHKL
    * </pre>
    *
    * Protobuf type {@code WinterCampTriathlonRestartRsp}
@@ -80,14 +80,14 @@ public final class WinterCampTriathlonRestartRspOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 32: {
+            case 40: {
 
               galleryId_ = input.readUInt32();
+              break;
+            }
+            case 112: {
+
+              retcode_ = input.readInt32();
               break;
             }
             default: {
@@ -122,10 +122,10 @@ public final class WinterCampTriathlonRestartRspOuterClass {
               emu.grasscutter.net.proto.WinterCampTriathlonRestartRspOuterClass.WinterCampTriathlonRestartRsp.class, emu.grasscutter.net.proto.WinterCampTriathlonRestartRspOuterClass.WinterCampTriathlonRestartRsp.Builder.class);
     }
 
-    public static final int GALLERY_ID_FIELD_NUMBER = 4;
+    public static final int GALLERY_ID_FIELD_NUMBER = 5;
     private int galleryId_;
     /**
-     * <code>uint32 gallery_id = 4;</code>
+     * <code>uint32 gallery_id = 5;</code>
      * @return The galleryId.
      */
     @java.lang.Override
@@ -133,10 +133,10 @@ public final class WinterCampTriathlonRestartRspOuterClass {
       return galleryId_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 1;
+    public static final int RETCODE_FIELD_NUMBER = 14;
     private int retcode_;
     /**
-     * <code>int32 retcode = 1;</code>
+     * <code>int32 retcode = 14;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -158,11 +158,11 @@ public final class WinterCampTriathlonRestartRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (retcode_ != 0) {
-        output.writeInt32(1, retcode_);
-      }
       if (galleryId_ != 0) {
-        output.writeUInt32(4, galleryId_);
+        output.writeUInt32(5, galleryId_);
+      }
+      if (retcode_ != 0) {
+        output.writeInt32(14, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -173,13 +173,13 @@ public final class WinterCampTriathlonRestartRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (retcode_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, retcode_);
-      }
       if (galleryId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, galleryId_);
+          .computeUInt32Size(5, galleryId_);
+      }
+      if (retcode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(14, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -312,8 +312,8 @@ public final class WinterCampTriathlonRestartRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8957
-     * Obf: EPPNJFHOFAH
+     * CmdId: 27534
+     * Obf: DOPBINMGHKL
      * </pre>
      *
      * Protobuf type {@code WinterCampTriathlonRestartRsp}
@@ -470,7 +470,7 @@ public final class WinterCampTriathlonRestartRspOuterClass {
 
       private int galleryId_ ;
       /**
-       * <code>uint32 gallery_id = 4;</code>
+       * <code>uint32 gallery_id = 5;</code>
        * @return The galleryId.
        */
       @java.lang.Override
@@ -478,7 +478,7 @@ public final class WinterCampTriathlonRestartRspOuterClass {
         return galleryId_;
       }
       /**
-       * <code>uint32 gallery_id = 4;</code>
+       * <code>uint32 gallery_id = 5;</code>
        * @param value The galleryId to set.
        * @return This builder for chaining.
        */
@@ -489,7 +489,7 @@ public final class WinterCampTriathlonRestartRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 gallery_id = 4;</code>
+       * <code>uint32 gallery_id = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearGalleryId() {
@@ -501,7 +501,7 @@ public final class WinterCampTriathlonRestartRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 1;</code>
+       * <code>int32 retcode = 14;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -509,7 +509,7 @@ public final class WinterCampTriathlonRestartRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 1;</code>
+       * <code>int32 retcode = 14;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -520,7 +520,7 @@ public final class WinterCampTriathlonRestartRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 1;</code>
+       * <code>int32 retcode = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -598,7 +598,7 @@ public final class WinterCampTriathlonRestartRspOuterClass {
     java.lang.String[] descriptorData = {
       "\n#WinterCampTriathlonRestartRsp.proto\"D\n" +
       "\035WinterCampTriathlonRestartRsp\022\022\n\ngaller" +
-      "y_id\030\004 \001(\r\022\017\n\007retcode\030\001 \001(\005B\033\n\031emu.grass" +
+      "y_id\030\005 \001(\r\022\017\n\007retcode\030\016 \001(\005B\033\n\031emu.grass" +
       "cutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

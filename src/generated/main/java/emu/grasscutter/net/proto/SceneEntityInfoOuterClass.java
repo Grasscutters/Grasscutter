@@ -141,6 +141,66 @@ public final class SceneEntityInfoOuterClass {
         int index);
 
     /**
+     * <code>.SceneAvatarInfo avatar = 10;</code>
+     * @return Whether the avatar field is set.
+     */
+    boolean hasAvatar();
+    /**
+     * <code>.SceneAvatarInfo avatar = 10;</code>
+     * @return The avatar.
+     */
+    emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo getAvatar();
+    /**
+     * <code>.SceneAvatarInfo avatar = 10;</code>
+     */
+    emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfoOrBuilder getAvatarOrBuilder();
+
+    /**
+     * <code>.SceneMonsterInfo monster = 11;</code>
+     * @return Whether the monster field is set.
+     */
+    boolean hasMonster();
+    /**
+     * <code>.SceneMonsterInfo monster = 11;</code>
+     * @return The monster.
+     */
+    emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfo getMonster();
+    /**
+     * <code>.SceneMonsterInfo monster = 11;</code>
+     */
+    emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfoOrBuilder getMonsterOrBuilder();
+
+    /**
+     * <code>.SceneNpcInfo npc = 12;</code>
+     * @return Whether the npc field is set.
+     */
+    boolean hasNpc();
+    /**
+     * <code>.SceneNpcInfo npc = 12;</code>
+     * @return The npc.
+     */
+    emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfo getNpc();
+    /**
+     * <code>.SceneNpcInfo npc = 12;</code>
+     */
+    emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfoOrBuilder getNpcOrBuilder();
+
+    /**
+     * <code>.SceneGadgetInfo gadget = 13;</code>
+     * @return Whether the gadget field is set.
+     */
+    boolean hasGadget();
+    /**
+     * <code>.SceneGadgetInfo gadget = 13;</code>
+     * @return The gadget.
+     */
+    emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo getGadget();
+    /**
+     * <code>.SceneGadgetInfo gadget = 13;</code>
+     */
+    emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfoOrBuilder getGadgetOrBuilder();
+
+    /**
      * <code>uint32 last_move_scene_time_ms = 17;</code>
      * @return The lastMoveSceneTimeMs.
      */
@@ -255,71 +315,11 @@ public final class SceneEntityInfoOuterClass {
     emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuffOrBuilder getServerBuffListOrBuilder(
         int index);
 
-    /**
-     * <code>.SceneAvatarInfo avatar = 10;</code>
-     * @return Whether the avatar field is set.
-     */
-    boolean hasAvatar();
-    /**
-     * <code>.SceneAvatarInfo avatar = 10;</code>
-     * @return The avatar.
-     */
-    emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo getAvatar();
-    /**
-     * <code>.SceneAvatarInfo avatar = 10;</code>
-     */
-    emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfoOrBuilder getAvatarOrBuilder();
-
-    /**
-     * <code>.SceneMonsterInfo monster = 11;</code>
-     * @return Whether the monster field is set.
-     */
-    boolean hasMonster();
-    /**
-     * <code>.SceneMonsterInfo monster = 11;</code>
-     * @return The monster.
-     */
-    emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfo getMonster();
-    /**
-     * <code>.SceneMonsterInfo monster = 11;</code>
-     */
-    emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfoOrBuilder getMonsterOrBuilder();
-
-    /**
-     * <code>.SceneNpcInfo npc = 12;</code>
-     * @return Whether the npc field is set.
-     */
-    boolean hasNpc();
-    /**
-     * <code>.SceneNpcInfo npc = 12;</code>
-     * @return The npc.
-     */
-    emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfo getNpc();
-    /**
-     * <code>.SceneNpcInfo npc = 12;</code>
-     */
-    emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfoOrBuilder getNpcOrBuilder();
-
-    /**
-     * <code>.SceneGadgetInfo gadget = 13;</code>
-     * @return Whether the gadget field is set.
-     */
-    boolean hasGadget();
-    /**
-     * <code>.SceneGadgetInfo gadget = 13;</code>
-     * @return The gadget.
-     */
-    emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo getGadget();
-    /**
-     * <code>.SceneGadgetInfo gadget = 13;</code>
-     */
-    emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfoOrBuilder getGadgetOrBuilder();
-
     public emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo.EntityCase getEntityCase();
   }
   /**
    * <pre>
-   * Obf: LMOBCIGGDEA
+   * Obf: DGPPPPBJILO
    * </pre>
    *
    * Protobuf type {@code SceneEntityInfo}
@@ -876,6 +876,130 @@ public final class SceneEntityInfoOuterClass {
       return animatorParaList_.get(index);
     }
 
+    public static final int AVATAR_FIELD_NUMBER = 10;
+    /**
+     * <code>.SceneAvatarInfo avatar = 10;</code>
+     * @return Whether the avatar field is set.
+     */
+    @java.lang.Override
+    public boolean hasAvatar() {
+      return entityCase_ == 10;
+    }
+    /**
+     * <code>.SceneAvatarInfo avatar = 10;</code>
+     * @return The avatar.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo getAvatar() {
+      if (entityCase_ == 10) {
+         return (emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo) entity_;
+      }
+      return emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo.getDefaultInstance();
+    }
+    /**
+     * <code>.SceneAvatarInfo avatar = 10;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfoOrBuilder getAvatarOrBuilder() {
+      if (entityCase_ == 10) {
+         return (emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo) entity_;
+      }
+      return emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo.getDefaultInstance();
+    }
+
+    public static final int MONSTER_FIELD_NUMBER = 11;
+    /**
+     * <code>.SceneMonsterInfo monster = 11;</code>
+     * @return Whether the monster field is set.
+     */
+    @java.lang.Override
+    public boolean hasMonster() {
+      return entityCase_ == 11;
+    }
+    /**
+     * <code>.SceneMonsterInfo monster = 11;</code>
+     * @return The monster.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfo getMonster() {
+      if (entityCase_ == 11) {
+         return (emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfo) entity_;
+      }
+      return emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfo.getDefaultInstance();
+    }
+    /**
+     * <code>.SceneMonsterInfo monster = 11;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfoOrBuilder getMonsterOrBuilder() {
+      if (entityCase_ == 11) {
+         return (emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfo) entity_;
+      }
+      return emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfo.getDefaultInstance();
+    }
+
+    public static final int NPC_FIELD_NUMBER = 12;
+    /**
+     * <code>.SceneNpcInfo npc = 12;</code>
+     * @return Whether the npc field is set.
+     */
+    @java.lang.Override
+    public boolean hasNpc() {
+      return entityCase_ == 12;
+    }
+    /**
+     * <code>.SceneNpcInfo npc = 12;</code>
+     * @return The npc.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfo getNpc() {
+      if (entityCase_ == 12) {
+         return (emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfo) entity_;
+      }
+      return emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfo.getDefaultInstance();
+    }
+    /**
+     * <code>.SceneNpcInfo npc = 12;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfoOrBuilder getNpcOrBuilder() {
+      if (entityCase_ == 12) {
+         return (emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfo) entity_;
+      }
+      return emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfo.getDefaultInstance();
+    }
+
+    public static final int GADGET_FIELD_NUMBER = 13;
+    /**
+     * <code>.SceneGadgetInfo gadget = 13;</code>
+     * @return Whether the gadget field is set.
+     */
+    @java.lang.Override
+    public boolean hasGadget() {
+      return entityCase_ == 13;
+    }
+    /**
+     * <code>.SceneGadgetInfo gadget = 13;</code>
+     * @return The gadget.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo getGadget() {
+      if (entityCase_ == 13) {
+         return (emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo) entity_;
+      }
+      return emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo.getDefaultInstance();
+    }
+    /**
+     * <code>.SceneGadgetInfo gadget = 13;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfoOrBuilder getGadgetOrBuilder() {
+      if (entityCase_ == 13) {
+         return (emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo) entity_;
+      }
+      return emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo.getDefaultInstance();
+    }
+
     public static final int LAST_MOVE_SCENE_TIME_MS_FIELD_NUMBER = 17;
     private int lastMoveSceneTimeMs_;
     /**
@@ -1063,130 +1187,6 @@ public final class SceneEntityInfoOuterClass {
     public emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuffOrBuilder getServerBuffListOrBuilder(
         int index) {
       return serverBuffList_.get(index);
-    }
-
-    public static final int AVATAR_FIELD_NUMBER = 10;
-    /**
-     * <code>.SceneAvatarInfo avatar = 10;</code>
-     * @return Whether the avatar field is set.
-     */
-    @java.lang.Override
-    public boolean hasAvatar() {
-      return entityCase_ == 10;
-    }
-    /**
-     * <code>.SceneAvatarInfo avatar = 10;</code>
-     * @return The avatar.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo getAvatar() {
-      if (entityCase_ == 10) {
-         return (emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo) entity_;
-      }
-      return emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo.getDefaultInstance();
-    }
-    /**
-     * <code>.SceneAvatarInfo avatar = 10;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfoOrBuilder getAvatarOrBuilder() {
-      if (entityCase_ == 10) {
-         return (emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo) entity_;
-      }
-      return emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo.getDefaultInstance();
-    }
-
-    public static final int MONSTER_FIELD_NUMBER = 11;
-    /**
-     * <code>.SceneMonsterInfo monster = 11;</code>
-     * @return Whether the monster field is set.
-     */
-    @java.lang.Override
-    public boolean hasMonster() {
-      return entityCase_ == 11;
-    }
-    /**
-     * <code>.SceneMonsterInfo monster = 11;</code>
-     * @return The monster.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfo getMonster() {
-      if (entityCase_ == 11) {
-         return (emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfo) entity_;
-      }
-      return emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfo.getDefaultInstance();
-    }
-    /**
-     * <code>.SceneMonsterInfo monster = 11;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfoOrBuilder getMonsterOrBuilder() {
-      if (entityCase_ == 11) {
-         return (emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfo) entity_;
-      }
-      return emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfo.getDefaultInstance();
-    }
-
-    public static final int NPC_FIELD_NUMBER = 12;
-    /**
-     * <code>.SceneNpcInfo npc = 12;</code>
-     * @return Whether the npc field is set.
-     */
-    @java.lang.Override
-    public boolean hasNpc() {
-      return entityCase_ == 12;
-    }
-    /**
-     * <code>.SceneNpcInfo npc = 12;</code>
-     * @return The npc.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfo getNpc() {
-      if (entityCase_ == 12) {
-         return (emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfo) entity_;
-      }
-      return emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfo.getDefaultInstance();
-    }
-    /**
-     * <code>.SceneNpcInfo npc = 12;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfoOrBuilder getNpcOrBuilder() {
-      if (entityCase_ == 12) {
-         return (emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfo) entity_;
-      }
-      return emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfo.getDefaultInstance();
-    }
-
-    public static final int GADGET_FIELD_NUMBER = 13;
-    /**
-     * <code>.SceneGadgetInfo gadget = 13;</code>
-     * @return Whether the gadget field is set.
-     */
-    @java.lang.Override
-    public boolean hasGadget() {
-      return entityCase_ == 13;
-    }
-    /**
-     * <code>.SceneGadgetInfo gadget = 13;</code>
-     * @return The gadget.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo getGadget() {
-      if (entityCase_ == 13) {
-         return (emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo) entity_;
-      }
-      return emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo.getDefaultInstance();
-    }
-    /**
-     * <code>.SceneGadgetInfo gadget = 13;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfoOrBuilder getGadgetOrBuilder() {
-      if (entityCase_ == 13) {
-         return (emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo) entity_;
-      }
-      return emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo.getDefaultInstance();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1598,7 +1598,7 @@ public final class SceneEntityInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: LMOBCIGGDEA
+     * Obf: DGPPPPBJILO
      * </pre>
      *
      * Protobuf type {@code SceneEntityInfo}
@@ -1770,6 +1770,34 @@ public final class SceneEntityInfoOuterClass {
         } else {
           result.animatorParaList_ = animatorParaListBuilder_.build();
         }
+        if (entityCase_ == 10) {
+          if (avatarBuilder_ == null) {
+            result.entity_ = entity_;
+          } else {
+            result.entity_ = avatarBuilder_.build();
+          }
+        }
+        if (entityCase_ == 11) {
+          if (monsterBuilder_ == null) {
+            result.entity_ = entity_;
+          } else {
+            result.entity_ = monsterBuilder_.build();
+          }
+        }
+        if (entityCase_ == 12) {
+          if (npcBuilder_ == null) {
+            result.entity_ = entity_;
+          } else {
+            result.entity_ = npcBuilder_.build();
+          }
+        }
+        if (entityCase_ == 13) {
+          if (gadgetBuilder_ == null) {
+            result.entity_ = entity_;
+          } else {
+            result.entity_ = gadgetBuilder_.build();
+          }
+        }
         result.lastMoveSceneTimeMs_ = lastMoveSceneTimeMs_;
         result.lastMoveReliableSeq_ = lastMoveReliableSeq_;
         if (entityClientDataBuilder_ == null) {
@@ -1804,34 +1832,6 @@ public final class SceneEntityInfoOuterClass {
           result.serverBuffList_ = serverBuffList_;
         } else {
           result.serverBuffList_ = serverBuffListBuilder_.build();
-        }
-        if (entityCase_ == 10) {
-          if (avatarBuilder_ == null) {
-            result.entity_ = entity_;
-          } else {
-            result.entity_ = avatarBuilder_.build();
-          }
-        }
-        if (entityCase_ == 11) {
-          if (monsterBuilder_ == null) {
-            result.entity_ = entity_;
-          } else {
-            result.entity_ = monsterBuilder_.build();
-          }
-        }
-        if (entityCase_ == 12) {
-          if (npcBuilder_ == null) {
-            result.entity_ = entity_;
-          } else {
-            result.entity_ = npcBuilder_.build();
-          }
-        }
-        if (entityCase_ == 13) {
-          if (gadgetBuilder_ == null) {
-            result.entity_ = entity_;
-          } else {
-            result.entity_ = gadgetBuilder_.build();
-          }
         }
         result.entityCase_ = entityCase_;
         onBuilt();
@@ -3147,6 +3147,570 @@ public final class SceneEntityInfoOuterClass {
         return animatorParaListBuilder_;
       }
 
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo, emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo.Builder, emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfoOrBuilder> avatarBuilder_;
+      /**
+       * <code>.SceneAvatarInfo avatar = 10;</code>
+       * @return Whether the avatar field is set.
+       */
+      @java.lang.Override
+      public boolean hasAvatar() {
+        return entityCase_ == 10;
+      }
+      /**
+       * <code>.SceneAvatarInfo avatar = 10;</code>
+       * @return The avatar.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo getAvatar() {
+        if (avatarBuilder_ == null) {
+          if (entityCase_ == 10) {
+            return (emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo) entity_;
+          }
+          return emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo.getDefaultInstance();
+        } else {
+          if (entityCase_ == 10) {
+            return avatarBuilder_.getMessage();
+          }
+          return emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.SceneAvatarInfo avatar = 10;</code>
+       */
+      public Builder setAvatar(emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo value) {
+        if (avatarBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          entity_ = value;
+          onChanged();
+        } else {
+          avatarBuilder_.setMessage(value);
+        }
+        entityCase_ = 10;
+        return this;
+      }
+      /**
+       * <code>.SceneAvatarInfo avatar = 10;</code>
+       */
+      public Builder setAvatar(
+          emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo.Builder builderForValue) {
+        if (avatarBuilder_ == null) {
+          entity_ = builderForValue.build();
+          onChanged();
+        } else {
+          avatarBuilder_.setMessage(builderForValue.build());
+        }
+        entityCase_ = 10;
+        return this;
+      }
+      /**
+       * <code>.SceneAvatarInfo avatar = 10;</code>
+       */
+      public Builder mergeAvatar(emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo value) {
+        if (avatarBuilder_ == null) {
+          if (entityCase_ == 10 &&
+              entity_ != emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo.getDefaultInstance()) {
+            entity_ = emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo.newBuilder((emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo) entity_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            entity_ = value;
+          }
+          onChanged();
+        } else {
+          if (entityCase_ == 10) {
+            avatarBuilder_.mergeFrom(value);
+          }
+          avatarBuilder_.setMessage(value);
+        }
+        entityCase_ = 10;
+        return this;
+      }
+      /**
+       * <code>.SceneAvatarInfo avatar = 10;</code>
+       */
+      public Builder clearAvatar() {
+        if (avatarBuilder_ == null) {
+          if (entityCase_ == 10) {
+            entityCase_ = 0;
+            entity_ = null;
+            onChanged();
+          }
+        } else {
+          if (entityCase_ == 10) {
+            entityCase_ = 0;
+            entity_ = null;
+          }
+          avatarBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.SceneAvatarInfo avatar = 10;</code>
+       */
+      public emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo.Builder getAvatarBuilder() {
+        return getAvatarFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.SceneAvatarInfo avatar = 10;</code>
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfoOrBuilder getAvatarOrBuilder() {
+        if ((entityCase_ == 10) && (avatarBuilder_ != null)) {
+          return avatarBuilder_.getMessageOrBuilder();
+        } else {
+          if (entityCase_ == 10) {
+            return (emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo) entity_;
+          }
+          return emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.SceneAvatarInfo avatar = 10;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo, emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo.Builder, emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfoOrBuilder> 
+          getAvatarFieldBuilder() {
+        if (avatarBuilder_ == null) {
+          if (!(entityCase_ == 10)) {
+            entity_ = emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo.getDefaultInstance();
+          }
+          avatarBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo, emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo.Builder, emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfoOrBuilder>(
+                  (emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo) entity_,
+                  getParentForChildren(),
+                  isClean());
+          entity_ = null;
+        }
+        entityCase_ = 10;
+        onChanged();;
+        return avatarBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfo, emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfo.Builder, emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfoOrBuilder> monsterBuilder_;
+      /**
+       * <code>.SceneMonsterInfo monster = 11;</code>
+       * @return Whether the monster field is set.
+       */
+      @java.lang.Override
+      public boolean hasMonster() {
+        return entityCase_ == 11;
+      }
+      /**
+       * <code>.SceneMonsterInfo monster = 11;</code>
+       * @return The monster.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfo getMonster() {
+        if (monsterBuilder_ == null) {
+          if (entityCase_ == 11) {
+            return (emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfo) entity_;
+          }
+          return emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfo.getDefaultInstance();
+        } else {
+          if (entityCase_ == 11) {
+            return monsterBuilder_.getMessage();
+          }
+          return emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfo.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.SceneMonsterInfo monster = 11;</code>
+       */
+      public Builder setMonster(emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfo value) {
+        if (monsterBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          entity_ = value;
+          onChanged();
+        } else {
+          monsterBuilder_.setMessage(value);
+        }
+        entityCase_ = 11;
+        return this;
+      }
+      /**
+       * <code>.SceneMonsterInfo monster = 11;</code>
+       */
+      public Builder setMonster(
+          emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfo.Builder builderForValue) {
+        if (monsterBuilder_ == null) {
+          entity_ = builderForValue.build();
+          onChanged();
+        } else {
+          monsterBuilder_.setMessage(builderForValue.build());
+        }
+        entityCase_ = 11;
+        return this;
+      }
+      /**
+       * <code>.SceneMonsterInfo monster = 11;</code>
+       */
+      public Builder mergeMonster(emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfo value) {
+        if (monsterBuilder_ == null) {
+          if (entityCase_ == 11 &&
+              entity_ != emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfo.getDefaultInstance()) {
+            entity_ = emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfo.newBuilder((emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfo) entity_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            entity_ = value;
+          }
+          onChanged();
+        } else {
+          if (entityCase_ == 11) {
+            monsterBuilder_.mergeFrom(value);
+          }
+          monsterBuilder_.setMessage(value);
+        }
+        entityCase_ = 11;
+        return this;
+      }
+      /**
+       * <code>.SceneMonsterInfo monster = 11;</code>
+       */
+      public Builder clearMonster() {
+        if (monsterBuilder_ == null) {
+          if (entityCase_ == 11) {
+            entityCase_ = 0;
+            entity_ = null;
+            onChanged();
+          }
+        } else {
+          if (entityCase_ == 11) {
+            entityCase_ = 0;
+            entity_ = null;
+          }
+          monsterBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.SceneMonsterInfo monster = 11;</code>
+       */
+      public emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfo.Builder getMonsterBuilder() {
+        return getMonsterFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.SceneMonsterInfo monster = 11;</code>
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfoOrBuilder getMonsterOrBuilder() {
+        if ((entityCase_ == 11) && (monsterBuilder_ != null)) {
+          return monsterBuilder_.getMessageOrBuilder();
+        } else {
+          if (entityCase_ == 11) {
+            return (emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfo) entity_;
+          }
+          return emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfo.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.SceneMonsterInfo monster = 11;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfo, emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfo.Builder, emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfoOrBuilder> 
+          getMonsterFieldBuilder() {
+        if (monsterBuilder_ == null) {
+          if (!(entityCase_ == 11)) {
+            entity_ = emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfo.getDefaultInstance();
+          }
+          monsterBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfo, emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfo.Builder, emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfoOrBuilder>(
+                  (emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfo) entity_,
+                  getParentForChildren(),
+                  isClean());
+          entity_ = null;
+        }
+        entityCase_ = 11;
+        onChanged();;
+        return monsterBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfo, emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfo.Builder, emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfoOrBuilder> npcBuilder_;
+      /**
+       * <code>.SceneNpcInfo npc = 12;</code>
+       * @return Whether the npc field is set.
+       */
+      @java.lang.Override
+      public boolean hasNpc() {
+        return entityCase_ == 12;
+      }
+      /**
+       * <code>.SceneNpcInfo npc = 12;</code>
+       * @return The npc.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfo getNpc() {
+        if (npcBuilder_ == null) {
+          if (entityCase_ == 12) {
+            return (emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfo) entity_;
+          }
+          return emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfo.getDefaultInstance();
+        } else {
+          if (entityCase_ == 12) {
+            return npcBuilder_.getMessage();
+          }
+          return emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfo.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.SceneNpcInfo npc = 12;</code>
+       */
+      public Builder setNpc(emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfo value) {
+        if (npcBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          entity_ = value;
+          onChanged();
+        } else {
+          npcBuilder_.setMessage(value);
+        }
+        entityCase_ = 12;
+        return this;
+      }
+      /**
+       * <code>.SceneNpcInfo npc = 12;</code>
+       */
+      public Builder setNpc(
+          emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfo.Builder builderForValue) {
+        if (npcBuilder_ == null) {
+          entity_ = builderForValue.build();
+          onChanged();
+        } else {
+          npcBuilder_.setMessage(builderForValue.build());
+        }
+        entityCase_ = 12;
+        return this;
+      }
+      /**
+       * <code>.SceneNpcInfo npc = 12;</code>
+       */
+      public Builder mergeNpc(emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfo value) {
+        if (npcBuilder_ == null) {
+          if (entityCase_ == 12 &&
+              entity_ != emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfo.getDefaultInstance()) {
+            entity_ = emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfo.newBuilder((emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfo) entity_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            entity_ = value;
+          }
+          onChanged();
+        } else {
+          if (entityCase_ == 12) {
+            npcBuilder_.mergeFrom(value);
+          }
+          npcBuilder_.setMessage(value);
+        }
+        entityCase_ = 12;
+        return this;
+      }
+      /**
+       * <code>.SceneNpcInfo npc = 12;</code>
+       */
+      public Builder clearNpc() {
+        if (npcBuilder_ == null) {
+          if (entityCase_ == 12) {
+            entityCase_ = 0;
+            entity_ = null;
+            onChanged();
+          }
+        } else {
+          if (entityCase_ == 12) {
+            entityCase_ = 0;
+            entity_ = null;
+          }
+          npcBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.SceneNpcInfo npc = 12;</code>
+       */
+      public emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfo.Builder getNpcBuilder() {
+        return getNpcFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.SceneNpcInfo npc = 12;</code>
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfoOrBuilder getNpcOrBuilder() {
+        if ((entityCase_ == 12) && (npcBuilder_ != null)) {
+          return npcBuilder_.getMessageOrBuilder();
+        } else {
+          if (entityCase_ == 12) {
+            return (emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfo) entity_;
+          }
+          return emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfo.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.SceneNpcInfo npc = 12;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfo, emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfo.Builder, emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfoOrBuilder> 
+          getNpcFieldBuilder() {
+        if (npcBuilder_ == null) {
+          if (!(entityCase_ == 12)) {
+            entity_ = emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfo.getDefaultInstance();
+          }
+          npcBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfo, emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfo.Builder, emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfoOrBuilder>(
+                  (emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfo) entity_,
+                  getParentForChildren(),
+                  isClean());
+          entity_ = null;
+        }
+        entityCase_ = 12;
+        onChanged();;
+        return npcBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo, emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo.Builder, emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfoOrBuilder> gadgetBuilder_;
+      /**
+       * <code>.SceneGadgetInfo gadget = 13;</code>
+       * @return Whether the gadget field is set.
+       */
+      @java.lang.Override
+      public boolean hasGadget() {
+        return entityCase_ == 13;
+      }
+      /**
+       * <code>.SceneGadgetInfo gadget = 13;</code>
+       * @return The gadget.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo getGadget() {
+        if (gadgetBuilder_ == null) {
+          if (entityCase_ == 13) {
+            return (emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo) entity_;
+          }
+          return emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo.getDefaultInstance();
+        } else {
+          if (entityCase_ == 13) {
+            return gadgetBuilder_.getMessage();
+          }
+          return emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.SceneGadgetInfo gadget = 13;</code>
+       */
+      public Builder setGadget(emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo value) {
+        if (gadgetBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          entity_ = value;
+          onChanged();
+        } else {
+          gadgetBuilder_.setMessage(value);
+        }
+        entityCase_ = 13;
+        return this;
+      }
+      /**
+       * <code>.SceneGadgetInfo gadget = 13;</code>
+       */
+      public Builder setGadget(
+          emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo.Builder builderForValue) {
+        if (gadgetBuilder_ == null) {
+          entity_ = builderForValue.build();
+          onChanged();
+        } else {
+          gadgetBuilder_.setMessage(builderForValue.build());
+        }
+        entityCase_ = 13;
+        return this;
+      }
+      /**
+       * <code>.SceneGadgetInfo gadget = 13;</code>
+       */
+      public Builder mergeGadget(emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo value) {
+        if (gadgetBuilder_ == null) {
+          if (entityCase_ == 13 &&
+              entity_ != emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo.getDefaultInstance()) {
+            entity_ = emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo.newBuilder((emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo) entity_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            entity_ = value;
+          }
+          onChanged();
+        } else {
+          if (entityCase_ == 13) {
+            gadgetBuilder_.mergeFrom(value);
+          }
+          gadgetBuilder_.setMessage(value);
+        }
+        entityCase_ = 13;
+        return this;
+      }
+      /**
+       * <code>.SceneGadgetInfo gadget = 13;</code>
+       */
+      public Builder clearGadget() {
+        if (gadgetBuilder_ == null) {
+          if (entityCase_ == 13) {
+            entityCase_ = 0;
+            entity_ = null;
+            onChanged();
+          }
+        } else {
+          if (entityCase_ == 13) {
+            entityCase_ = 0;
+            entity_ = null;
+          }
+          gadgetBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.SceneGadgetInfo gadget = 13;</code>
+       */
+      public emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo.Builder getGadgetBuilder() {
+        return getGadgetFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.SceneGadgetInfo gadget = 13;</code>
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfoOrBuilder getGadgetOrBuilder() {
+        if ((entityCase_ == 13) && (gadgetBuilder_ != null)) {
+          return gadgetBuilder_.getMessageOrBuilder();
+        } else {
+          if (entityCase_ == 13) {
+            return (emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo) entity_;
+          }
+          return emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.SceneGadgetInfo gadget = 13;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo, emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo.Builder, emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfoOrBuilder> 
+          getGadgetFieldBuilder() {
+        if (gadgetBuilder_ == null) {
+          if (!(entityCase_ == 13)) {
+            entity_ = emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo.getDefaultInstance();
+          }
+          gadgetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo, emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo.Builder, emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfoOrBuilder>(
+                  (emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo) entity_,
+                  getParentForChildren(),
+                  isClean());
+          entity_ = null;
+        }
+        entityCase_ = 13;
+        onChanged();;
+        return gadgetBuilder_;
+      }
+
       private int lastMoveSceneTimeMs_ ;
       /**
        * <code>uint32 last_move_scene_time_ms = 17;</code>
@@ -4036,570 +4600,6 @@ public final class SceneEntityInfoOuterClass {
         }
         return serverBuffListBuilder_;
       }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo, emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo.Builder, emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfoOrBuilder> avatarBuilder_;
-      /**
-       * <code>.SceneAvatarInfo avatar = 10;</code>
-       * @return Whether the avatar field is set.
-       */
-      @java.lang.Override
-      public boolean hasAvatar() {
-        return entityCase_ == 10;
-      }
-      /**
-       * <code>.SceneAvatarInfo avatar = 10;</code>
-       * @return The avatar.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo getAvatar() {
-        if (avatarBuilder_ == null) {
-          if (entityCase_ == 10) {
-            return (emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo) entity_;
-          }
-          return emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo.getDefaultInstance();
-        } else {
-          if (entityCase_ == 10) {
-            return avatarBuilder_.getMessage();
-          }
-          return emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.SceneAvatarInfo avatar = 10;</code>
-       */
-      public Builder setAvatar(emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo value) {
-        if (avatarBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          entity_ = value;
-          onChanged();
-        } else {
-          avatarBuilder_.setMessage(value);
-        }
-        entityCase_ = 10;
-        return this;
-      }
-      /**
-       * <code>.SceneAvatarInfo avatar = 10;</code>
-       */
-      public Builder setAvatar(
-          emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo.Builder builderForValue) {
-        if (avatarBuilder_ == null) {
-          entity_ = builderForValue.build();
-          onChanged();
-        } else {
-          avatarBuilder_.setMessage(builderForValue.build());
-        }
-        entityCase_ = 10;
-        return this;
-      }
-      /**
-       * <code>.SceneAvatarInfo avatar = 10;</code>
-       */
-      public Builder mergeAvatar(emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo value) {
-        if (avatarBuilder_ == null) {
-          if (entityCase_ == 10 &&
-              entity_ != emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo.getDefaultInstance()) {
-            entity_ = emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo.newBuilder((emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo) entity_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            entity_ = value;
-          }
-          onChanged();
-        } else {
-          if (entityCase_ == 10) {
-            avatarBuilder_.mergeFrom(value);
-          }
-          avatarBuilder_.setMessage(value);
-        }
-        entityCase_ = 10;
-        return this;
-      }
-      /**
-       * <code>.SceneAvatarInfo avatar = 10;</code>
-       */
-      public Builder clearAvatar() {
-        if (avatarBuilder_ == null) {
-          if (entityCase_ == 10) {
-            entityCase_ = 0;
-            entity_ = null;
-            onChanged();
-          }
-        } else {
-          if (entityCase_ == 10) {
-            entityCase_ = 0;
-            entity_ = null;
-          }
-          avatarBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>.SceneAvatarInfo avatar = 10;</code>
-       */
-      public emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo.Builder getAvatarBuilder() {
-        return getAvatarFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.SceneAvatarInfo avatar = 10;</code>
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfoOrBuilder getAvatarOrBuilder() {
-        if ((entityCase_ == 10) && (avatarBuilder_ != null)) {
-          return avatarBuilder_.getMessageOrBuilder();
-        } else {
-          if (entityCase_ == 10) {
-            return (emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo) entity_;
-          }
-          return emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.SceneAvatarInfo avatar = 10;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo, emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo.Builder, emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfoOrBuilder> 
-          getAvatarFieldBuilder() {
-        if (avatarBuilder_ == null) {
-          if (!(entityCase_ == 10)) {
-            entity_ = emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo.getDefaultInstance();
-          }
-          avatarBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo, emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo.Builder, emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfoOrBuilder>(
-                  (emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo) entity_,
-                  getParentForChildren(),
-                  isClean());
-          entity_ = null;
-        }
-        entityCase_ = 10;
-        onChanged();;
-        return avatarBuilder_;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfo, emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfo.Builder, emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfoOrBuilder> monsterBuilder_;
-      /**
-       * <code>.SceneMonsterInfo monster = 11;</code>
-       * @return Whether the monster field is set.
-       */
-      @java.lang.Override
-      public boolean hasMonster() {
-        return entityCase_ == 11;
-      }
-      /**
-       * <code>.SceneMonsterInfo monster = 11;</code>
-       * @return The monster.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfo getMonster() {
-        if (monsterBuilder_ == null) {
-          if (entityCase_ == 11) {
-            return (emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfo) entity_;
-          }
-          return emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfo.getDefaultInstance();
-        } else {
-          if (entityCase_ == 11) {
-            return monsterBuilder_.getMessage();
-          }
-          return emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfo.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.SceneMonsterInfo monster = 11;</code>
-       */
-      public Builder setMonster(emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfo value) {
-        if (monsterBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          entity_ = value;
-          onChanged();
-        } else {
-          monsterBuilder_.setMessage(value);
-        }
-        entityCase_ = 11;
-        return this;
-      }
-      /**
-       * <code>.SceneMonsterInfo monster = 11;</code>
-       */
-      public Builder setMonster(
-          emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfo.Builder builderForValue) {
-        if (monsterBuilder_ == null) {
-          entity_ = builderForValue.build();
-          onChanged();
-        } else {
-          monsterBuilder_.setMessage(builderForValue.build());
-        }
-        entityCase_ = 11;
-        return this;
-      }
-      /**
-       * <code>.SceneMonsterInfo monster = 11;</code>
-       */
-      public Builder mergeMonster(emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfo value) {
-        if (monsterBuilder_ == null) {
-          if (entityCase_ == 11 &&
-              entity_ != emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfo.getDefaultInstance()) {
-            entity_ = emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfo.newBuilder((emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfo) entity_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            entity_ = value;
-          }
-          onChanged();
-        } else {
-          if (entityCase_ == 11) {
-            monsterBuilder_.mergeFrom(value);
-          }
-          monsterBuilder_.setMessage(value);
-        }
-        entityCase_ = 11;
-        return this;
-      }
-      /**
-       * <code>.SceneMonsterInfo monster = 11;</code>
-       */
-      public Builder clearMonster() {
-        if (monsterBuilder_ == null) {
-          if (entityCase_ == 11) {
-            entityCase_ = 0;
-            entity_ = null;
-            onChanged();
-          }
-        } else {
-          if (entityCase_ == 11) {
-            entityCase_ = 0;
-            entity_ = null;
-          }
-          monsterBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>.SceneMonsterInfo monster = 11;</code>
-       */
-      public emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfo.Builder getMonsterBuilder() {
-        return getMonsterFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.SceneMonsterInfo monster = 11;</code>
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfoOrBuilder getMonsterOrBuilder() {
-        if ((entityCase_ == 11) && (monsterBuilder_ != null)) {
-          return monsterBuilder_.getMessageOrBuilder();
-        } else {
-          if (entityCase_ == 11) {
-            return (emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfo) entity_;
-          }
-          return emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfo.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.SceneMonsterInfo monster = 11;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfo, emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfo.Builder, emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfoOrBuilder> 
-          getMonsterFieldBuilder() {
-        if (monsterBuilder_ == null) {
-          if (!(entityCase_ == 11)) {
-            entity_ = emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfo.getDefaultInstance();
-          }
-          monsterBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfo, emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfo.Builder, emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfoOrBuilder>(
-                  (emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfo) entity_,
-                  getParentForChildren(),
-                  isClean());
-          entity_ = null;
-        }
-        entityCase_ = 11;
-        onChanged();;
-        return monsterBuilder_;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfo, emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfo.Builder, emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfoOrBuilder> npcBuilder_;
-      /**
-       * <code>.SceneNpcInfo npc = 12;</code>
-       * @return Whether the npc field is set.
-       */
-      @java.lang.Override
-      public boolean hasNpc() {
-        return entityCase_ == 12;
-      }
-      /**
-       * <code>.SceneNpcInfo npc = 12;</code>
-       * @return The npc.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfo getNpc() {
-        if (npcBuilder_ == null) {
-          if (entityCase_ == 12) {
-            return (emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfo) entity_;
-          }
-          return emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfo.getDefaultInstance();
-        } else {
-          if (entityCase_ == 12) {
-            return npcBuilder_.getMessage();
-          }
-          return emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfo.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.SceneNpcInfo npc = 12;</code>
-       */
-      public Builder setNpc(emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfo value) {
-        if (npcBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          entity_ = value;
-          onChanged();
-        } else {
-          npcBuilder_.setMessage(value);
-        }
-        entityCase_ = 12;
-        return this;
-      }
-      /**
-       * <code>.SceneNpcInfo npc = 12;</code>
-       */
-      public Builder setNpc(
-          emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfo.Builder builderForValue) {
-        if (npcBuilder_ == null) {
-          entity_ = builderForValue.build();
-          onChanged();
-        } else {
-          npcBuilder_.setMessage(builderForValue.build());
-        }
-        entityCase_ = 12;
-        return this;
-      }
-      /**
-       * <code>.SceneNpcInfo npc = 12;</code>
-       */
-      public Builder mergeNpc(emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfo value) {
-        if (npcBuilder_ == null) {
-          if (entityCase_ == 12 &&
-              entity_ != emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfo.getDefaultInstance()) {
-            entity_ = emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfo.newBuilder((emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfo) entity_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            entity_ = value;
-          }
-          onChanged();
-        } else {
-          if (entityCase_ == 12) {
-            npcBuilder_.mergeFrom(value);
-          }
-          npcBuilder_.setMessage(value);
-        }
-        entityCase_ = 12;
-        return this;
-      }
-      /**
-       * <code>.SceneNpcInfo npc = 12;</code>
-       */
-      public Builder clearNpc() {
-        if (npcBuilder_ == null) {
-          if (entityCase_ == 12) {
-            entityCase_ = 0;
-            entity_ = null;
-            onChanged();
-          }
-        } else {
-          if (entityCase_ == 12) {
-            entityCase_ = 0;
-            entity_ = null;
-          }
-          npcBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>.SceneNpcInfo npc = 12;</code>
-       */
-      public emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfo.Builder getNpcBuilder() {
-        return getNpcFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.SceneNpcInfo npc = 12;</code>
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfoOrBuilder getNpcOrBuilder() {
-        if ((entityCase_ == 12) && (npcBuilder_ != null)) {
-          return npcBuilder_.getMessageOrBuilder();
-        } else {
-          if (entityCase_ == 12) {
-            return (emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfo) entity_;
-          }
-          return emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfo.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.SceneNpcInfo npc = 12;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfo, emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfo.Builder, emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfoOrBuilder> 
-          getNpcFieldBuilder() {
-        if (npcBuilder_ == null) {
-          if (!(entityCase_ == 12)) {
-            entity_ = emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfo.getDefaultInstance();
-          }
-          npcBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfo, emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfo.Builder, emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfoOrBuilder>(
-                  (emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfo) entity_,
-                  getParentForChildren(),
-                  isClean());
-          entity_ = null;
-        }
-        entityCase_ = 12;
-        onChanged();;
-        return npcBuilder_;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo, emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo.Builder, emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfoOrBuilder> gadgetBuilder_;
-      /**
-       * <code>.SceneGadgetInfo gadget = 13;</code>
-       * @return Whether the gadget field is set.
-       */
-      @java.lang.Override
-      public boolean hasGadget() {
-        return entityCase_ == 13;
-      }
-      /**
-       * <code>.SceneGadgetInfo gadget = 13;</code>
-       * @return The gadget.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo getGadget() {
-        if (gadgetBuilder_ == null) {
-          if (entityCase_ == 13) {
-            return (emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo) entity_;
-          }
-          return emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo.getDefaultInstance();
-        } else {
-          if (entityCase_ == 13) {
-            return gadgetBuilder_.getMessage();
-          }
-          return emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.SceneGadgetInfo gadget = 13;</code>
-       */
-      public Builder setGadget(emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo value) {
-        if (gadgetBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          entity_ = value;
-          onChanged();
-        } else {
-          gadgetBuilder_.setMessage(value);
-        }
-        entityCase_ = 13;
-        return this;
-      }
-      /**
-       * <code>.SceneGadgetInfo gadget = 13;</code>
-       */
-      public Builder setGadget(
-          emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo.Builder builderForValue) {
-        if (gadgetBuilder_ == null) {
-          entity_ = builderForValue.build();
-          onChanged();
-        } else {
-          gadgetBuilder_.setMessage(builderForValue.build());
-        }
-        entityCase_ = 13;
-        return this;
-      }
-      /**
-       * <code>.SceneGadgetInfo gadget = 13;</code>
-       */
-      public Builder mergeGadget(emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo value) {
-        if (gadgetBuilder_ == null) {
-          if (entityCase_ == 13 &&
-              entity_ != emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo.getDefaultInstance()) {
-            entity_ = emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo.newBuilder((emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo) entity_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            entity_ = value;
-          }
-          onChanged();
-        } else {
-          if (entityCase_ == 13) {
-            gadgetBuilder_.mergeFrom(value);
-          }
-          gadgetBuilder_.setMessage(value);
-        }
-        entityCase_ = 13;
-        return this;
-      }
-      /**
-       * <code>.SceneGadgetInfo gadget = 13;</code>
-       */
-      public Builder clearGadget() {
-        if (gadgetBuilder_ == null) {
-          if (entityCase_ == 13) {
-            entityCase_ = 0;
-            entity_ = null;
-            onChanged();
-          }
-        } else {
-          if (entityCase_ == 13) {
-            entityCase_ = 0;
-            entity_ = null;
-          }
-          gadgetBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>.SceneGadgetInfo gadget = 13;</code>
-       */
-      public emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo.Builder getGadgetBuilder() {
-        return getGadgetFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.SceneGadgetInfo gadget = 13;</code>
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfoOrBuilder getGadgetOrBuilder() {
-        if ((entityCase_ == 13) && (gadgetBuilder_ != null)) {
-          return gadgetBuilder_.getMessageOrBuilder();
-        } else {
-          if (entityCase_ == 13) {
-            return (emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo) entity_;
-          }
-          return emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.SceneGadgetInfo gadget = 13;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo, emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo.Builder, emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfoOrBuilder> 
-          getGadgetFieldBuilder() {
-        if (gadgetBuilder_ == null) {
-          if (!(entityCase_ == 13)) {
-            entity_ = emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo.getDefaultInstance();
-          }
-          gadgetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo, emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo.Builder, emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfoOrBuilder>(
-                  (emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo) entity_,
-                  getParentForChildren(),
-                  isClean());
-          entity_ = null;
-        }
-        entityCase_ = 13;
-        onChanged();;
-        return gadgetBuilder_;
-      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -4670,11 +4670,11 @@ public final class SceneEntityInfoOuterClass {
       "\n\025SceneEntityInfo.proto\032\024ProtEntityType." +
       "proto\032\020MotionInfo.proto\032\016PropPair.proto\032" +
       "\023FightPropPair.proto\032$AnimatorParameterV" +
-      "alueInfoPair.proto\032\026EntityClientData.pro" +
-      "to\032\033EntityEnvironmentInfo.proto\032\031EntityA" +
-      "uthorityInfo.proto\032\020ServerBuff.proto\032\025Sc" +
-      "eneAvatarInfo.proto\032\026SceneMonsterInfo.pr" +
-      "oto\032\022SceneNpcInfo.proto\032\025SceneGadgetInfo" +
+      "alueInfoPair.proto\032\025SceneAvatarInfo.prot" +
+      "o\032\026SceneMonsterInfo.proto\032\022SceneNpcInfo." +
+      "proto\032\025SceneGadgetInfo.proto\032\026EntityClie" +
+      "ntData.proto\032\033EntityEnvironmentInfo.prot" +
+      "o\032\031EntityAuthorityInfo.proto\032\020ServerBuff" +
       ".proto\"\304\005\n\017SceneEntityInfo\022$\n\013entity_typ" +
       "e\030\001 \001(\0162\017.ProtEntityType\022\021\n\tentity_id\030\002 " +
       "\001(\r\022\014\n\004name\030\003 \001(\t\022 \n\013motion_info\030\004 \001(\0132\013" +
@@ -4682,17 +4682,17 @@ public final class SceneEntityInfoOuterClass {
       "r\022\'\n\017fight_prop_list\030\006 \003(\0132\016.FightPropPa" +
       "ir\022\022\n\nlife_state\030\007 \001(\r\022;\n\022animator_para_" +
       "list\030\t \003(\0132\037.AnimatorParameterValueInfoP" +
-      "air\022\037\n\027last_move_scene_time_ms\030\021 \001(\r\022\036\n\026" +
-      "last_move_reliable_seq\030\022 \001(\r\022-\n\022entity_c" +
-      "lient_data\030\023 \001(\0132\021.EntityClientData\022<\n\034e" +
-      "ntity_environment_info_list\030\024 \003(\0132\026.Enti" +
-      "tyEnvironmentInfo\0223\n\025entity_authority_in" +
-      "fo\030\025 \001(\0132\024.EntityAuthorityInfo\022\020\n\010tag_li" +
-      "st\030\026 \003(\t\022%\n\020server_buff_list\030\027 \003(\0132\013.Ser" +
-      "verBuff\022\"\n\006avatar\030\n \001(\0132\020.SceneAvatarInf" +
-      "oH\000\022$\n\007monster\030\013 \001(\0132\021.SceneMonsterInfoH" +
-      "\000\022\034\n\003npc\030\014 \001(\0132\r.SceneNpcInfoH\000\022\"\n\006gadge" +
-      "t\030\r \001(\0132\020.SceneGadgetInfoH\000B\010\n\006entityB\033\n" +
+      "air\022\"\n\006avatar\030\n \001(\0132\020.SceneAvatarInfoH\000\022" +
+      "$\n\007monster\030\013 \001(\0132\021.SceneMonsterInfoH\000\022\034\n" +
+      "\003npc\030\014 \001(\0132\r.SceneNpcInfoH\000\022\"\n\006gadget\030\r " +
+      "\001(\0132\020.SceneGadgetInfoH\000\022\037\n\027last_move_sce" +
+      "ne_time_ms\030\021 \001(\r\022\036\n\026last_move_reliable_s" +
+      "eq\030\022 \001(\r\022-\n\022entity_client_data\030\023 \001(\0132\021.E" +
+      "ntityClientData\022<\n\034entity_environment_in" +
+      "fo_list\030\024 \003(\0132\026.EntityEnvironmentInfo\0223\n" +
+      "\025entity_authority_info\030\025 \001(\0132\024.EntityAut" +
+      "horityInfo\022\020\n\010tag_list\030\026 \003(\t\022%\n\020server_b" +
+      "uff_list\030\027 \003(\0132\013.ServerBuffB\010\n\006entityB\033\n" +
       "\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -4703,34 +4703,34 @@ public final class SceneEntityInfoOuterClass {
           emu.grasscutter.net.proto.PropPairOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.FightPropPairOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.AnimatorParameterValueInfoPairOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.EntityClientDataOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.EntityEnvironmentInfoOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.EntityAuthorityInfoOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.ServerBuffOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.SceneNpcInfoOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.EntityClientDataOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.EntityEnvironmentInfoOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.EntityAuthorityInfoOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.ServerBuffOuterClass.getDescriptor(),
         });
     internal_static_SceneEntityInfo_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_SceneEntityInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SceneEntityInfo_descriptor,
-        new java.lang.String[] { "EntityType", "EntityId", "Name", "MotionInfo", "PropList", "FightPropList", "LifeState", "AnimatorParaList", "LastMoveSceneTimeMs", "LastMoveReliableSeq", "EntityClientData", "EntityEnvironmentInfoList", "EntityAuthorityInfo", "TagList", "ServerBuffList", "Avatar", "Monster", "Npc", "Gadget", "Entity", });
+        new java.lang.String[] { "EntityType", "EntityId", "Name", "MotionInfo", "PropList", "FightPropList", "LifeState", "AnimatorParaList", "Avatar", "Monster", "Npc", "Gadget", "LastMoveSceneTimeMs", "LastMoveReliableSeq", "EntityClientData", "EntityEnvironmentInfoList", "EntityAuthorityInfo", "TagList", "ServerBuffList", "Entity", });
     emu.grasscutter.net.proto.ProtEntityTypeOuterClass.getDescriptor();
     emu.grasscutter.net.proto.MotionInfoOuterClass.getDescriptor();
     emu.grasscutter.net.proto.PropPairOuterClass.getDescriptor();
     emu.grasscutter.net.proto.FightPropPairOuterClass.getDescriptor();
     emu.grasscutter.net.proto.AnimatorParameterValueInfoPairOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.EntityClientDataOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.EntityEnvironmentInfoOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.EntityAuthorityInfoOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.ServerBuffOuterClass.getDescriptor();
     emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.getDescriptor();
     emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.getDescriptor();
     emu.grasscutter.net.proto.SceneNpcInfoOuterClass.getDescriptor();
     emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.EntityClientDataOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.EntityEnvironmentInfoOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.EntityAuthorityInfoOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.ServerBuffOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

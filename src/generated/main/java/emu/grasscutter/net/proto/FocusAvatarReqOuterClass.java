@@ -19,21 +19,21 @@ public final class FocusAvatarReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool is_focus = 14;</code>
+     * <code>bool is_focus = 5;</code>
      * @return The isFocus.
      */
     boolean getIsFocus();
 
     /**
-     * <code>uint64 avatar_guid = 9;</code>
+     * <code>uint64 avatar_guid = 2;</code>
      * @return The avatarGuid.
      */
     long getAvatarGuid();
   }
   /**
    * <pre>
-   * CmdId: 1636
-   * Obf: INPIDILEGCG
+   * CmdId: 26656
+   * Obf: OIHEDACFGPL
    * </pre>
    *
    * Protobuf type {@code FocusAvatarReq}
@@ -80,12 +80,12 @@ public final class FocusAvatarReqOuterClass {
             case 0:
               done = true;
               break;
-            case 72: {
+            case 16: {
 
               avatarGuid_ = input.readUInt64();
               break;
             }
-            case 112: {
+            case 40: {
 
               isFocus_ = input.readBool();
               break;
@@ -122,10 +122,10 @@ public final class FocusAvatarReqOuterClass {
               emu.grasscutter.net.proto.FocusAvatarReqOuterClass.FocusAvatarReq.class, emu.grasscutter.net.proto.FocusAvatarReqOuterClass.FocusAvatarReq.Builder.class);
     }
 
-    public static final int IS_FOCUS_FIELD_NUMBER = 14;
+    public static final int IS_FOCUS_FIELD_NUMBER = 5;
     private boolean isFocus_;
     /**
-     * <code>bool is_focus = 14;</code>
+     * <code>bool is_focus = 5;</code>
      * @return The isFocus.
      */
     @java.lang.Override
@@ -133,10 +133,10 @@ public final class FocusAvatarReqOuterClass {
       return isFocus_;
     }
 
-    public static final int AVATAR_GUID_FIELD_NUMBER = 9;
+    public static final int AVATAR_GUID_FIELD_NUMBER = 2;
     private long avatarGuid_;
     /**
-     * <code>uint64 avatar_guid = 9;</code>
+     * <code>uint64 avatar_guid = 2;</code>
      * @return The avatarGuid.
      */
     @java.lang.Override
@@ -159,10 +159,10 @@ public final class FocusAvatarReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (avatarGuid_ != 0L) {
-        output.writeUInt64(9, avatarGuid_);
+        output.writeUInt64(2, avatarGuid_);
       }
       if (isFocus_ != false) {
-        output.writeBool(14, isFocus_);
+        output.writeBool(5, isFocus_);
       }
       unknownFields.writeTo(output);
     }
@@ -175,11 +175,11 @@ public final class FocusAvatarReqOuterClass {
       size = 0;
       if (avatarGuid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(9, avatarGuid_);
+          .computeUInt64Size(2, avatarGuid_);
       }
       if (isFocus_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(14, isFocus_);
+          .computeBoolSize(5, isFocus_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -314,8 +314,8 @@ public final class FocusAvatarReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 1636
-     * Obf: INPIDILEGCG
+     * CmdId: 26656
+     * Obf: OIHEDACFGPL
      * </pre>
      *
      * Protobuf type {@code FocusAvatarReq}
@@ -472,7 +472,7 @@ public final class FocusAvatarReqOuterClass {
 
       private boolean isFocus_ ;
       /**
-       * <code>bool is_focus = 14;</code>
+       * <code>bool is_focus = 5;</code>
        * @return The isFocus.
        */
       @java.lang.Override
@@ -480,7 +480,7 @@ public final class FocusAvatarReqOuterClass {
         return isFocus_;
       }
       /**
-       * <code>bool is_focus = 14;</code>
+       * <code>bool is_focus = 5;</code>
        * @param value The isFocus to set.
        * @return This builder for chaining.
        */
@@ -491,7 +491,7 @@ public final class FocusAvatarReqOuterClass {
         return this;
       }
       /**
-       * <code>bool is_focus = 14;</code>
+       * <code>bool is_focus = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsFocus() {
@@ -503,7 +503,7 @@ public final class FocusAvatarReqOuterClass {
 
       private long avatarGuid_ ;
       /**
-       * <code>uint64 avatar_guid = 9;</code>
+       * <code>uint64 avatar_guid = 2;</code>
        * @return The avatarGuid.
        */
       @java.lang.Override
@@ -511,7 +511,7 @@ public final class FocusAvatarReqOuterClass {
         return avatarGuid_;
       }
       /**
-       * <code>uint64 avatar_guid = 9;</code>
+       * <code>uint64 avatar_guid = 2;</code>
        * @param value The avatarGuid to set.
        * @return This builder for chaining.
        */
@@ -522,7 +522,7 @@ public final class FocusAvatarReqOuterClass {
         return this;
       }
       /**
-       * <code>uint64 avatar_guid = 9;</code>
+       * <code>uint64 avatar_guid = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearAvatarGuid() {
@@ -599,7 +599,7 @@ public final class FocusAvatarReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\024FocusAvatarReq.proto\"7\n\016FocusAvatarReq" +
-      "\022\020\n\010is_focus\030\016 \001(\010\022\023\n\013avatar_guid\030\t \001(\004B" +
+      "\022\020\n\010is_focus\030\005 \001(\010\022\023\n\013avatar_guid\030\002 \001(\004B" +
       "\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

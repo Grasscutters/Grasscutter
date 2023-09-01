@@ -19,26 +19,26 @@ public final class ElectroherculesBattleLevelInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 min_finish_time = 15;</code>
+     * <code>uint32 min_finish_time = 10;</code>
      * @return The minFinishTime.
      */
     int getMinFinishTime();
 
     /**
-     * <code>uint32 level_id = 13;</code>
-     * @return The levelId.
-     */
-    int getLevelId();
-
-    /**
-     * <code>bool is_finish = 3;</code>
+     * <code>bool is_finish = 8;</code>
      * @return The isFinish.
      */
     boolean getIsFinish();
+
+    /**
+     * <code>uint32 level_id = 12;</code>
+     * @return The levelId.
+     */
+    int getLevelId();
   }
   /**
    * <pre>
-   * Obf: HNOJMOGEKCA
+   * Obf: FHJLJHALMBK
    * </pre>
    *
    * Protobuf type {@code ElectroherculesBattleLevelInfo}
@@ -85,19 +85,19 @@ public final class ElectroherculesBattleLevelInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 64: {
 
               isFinish_ = input.readBool();
               break;
             }
-            case 104: {
-
-              levelId_ = input.readUInt32();
-              break;
-            }
-            case 120: {
+            case 80: {
 
               minFinishTime_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+
+              levelId_ = input.readUInt32();
               break;
             }
             default: {
@@ -132,10 +132,10 @@ public final class ElectroherculesBattleLevelInfoOuterClass {
               emu.grasscutter.net.proto.ElectroherculesBattleLevelInfoOuterClass.ElectroherculesBattleLevelInfo.class, emu.grasscutter.net.proto.ElectroherculesBattleLevelInfoOuterClass.ElectroherculesBattleLevelInfo.Builder.class);
     }
 
-    public static final int MIN_FINISH_TIME_FIELD_NUMBER = 15;
+    public static final int MIN_FINISH_TIME_FIELD_NUMBER = 10;
     private int minFinishTime_;
     /**
-     * <code>uint32 min_finish_time = 15;</code>
+     * <code>uint32 min_finish_time = 10;</code>
      * @return The minFinishTime.
      */
     @java.lang.Override
@@ -143,26 +143,26 @@ public final class ElectroherculesBattleLevelInfoOuterClass {
       return minFinishTime_;
     }
 
-    public static final int LEVEL_ID_FIELD_NUMBER = 13;
-    private int levelId_;
-    /**
-     * <code>uint32 level_id = 13;</code>
-     * @return The levelId.
-     */
-    @java.lang.Override
-    public int getLevelId() {
-      return levelId_;
-    }
-
-    public static final int IS_FINISH_FIELD_NUMBER = 3;
+    public static final int IS_FINISH_FIELD_NUMBER = 8;
     private boolean isFinish_;
     /**
-     * <code>bool is_finish = 3;</code>
+     * <code>bool is_finish = 8;</code>
      * @return The isFinish.
      */
     @java.lang.Override
     public boolean getIsFinish() {
       return isFinish_;
+    }
+
+    public static final int LEVEL_ID_FIELD_NUMBER = 12;
+    private int levelId_;
+    /**
+     * <code>uint32 level_id = 12;</code>
+     * @return The levelId.
+     */
+    @java.lang.Override
+    public int getLevelId() {
+      return levelId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -180,13 +180,13 @@ public final class ElectroherculesBattleLevelInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (isFinish_ != false) {
-        output.writeBool(3, isFinish_);
-      }
-      if (levelId_ != 0) {
-        output.writeUInt32(13, levelId_);
+        output.writeBool(8, isFinish_);
       }
       if (minFinishTime_ != 0) {
-        output.writeUInt32(15, minFinishTime_);
+        output.writeUInt32(10, minFinishTime_);
+      }
+      if (levelId_ != 0) {
+        output.writeUInt32(12, levelId_);
       }
       unknownFields.writeTo(output);
     }
@@ -199,15 +199,15 @@ public final class ElectroherculesBattleLevelInfoOuterClass {
       size = 0;
       if (isFinish_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(3, isFinish_);
-      }
-      if (levelId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, levelId_);
+          .computeBoolSize(8, isFinish_);
       }
       if (minFinishTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, minFinishTime_);
+          .computeUInt32Size(10, minFinishTime_);
+      }
+      if (levelId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(12, levelId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -226,10 +226,10 @@ public final class ElectroherculesBattleLevelInfoOuterClass {
 
       if (getMinFinishTime()
           != other.getMinFinishTime()) return false;
-      if (getLevelId()
-          != other.getLevelId()) return false;
       if (getIsFinish()
           != other.getIsFinish()) return false;
+      if (getLevelId()
+          != other.getLevelId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -243,11 +243,11 @@ public final class ElectroherculesBattleLevelInfoOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + MIN_FINISH_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getMinFinishTime();
-      hash = (37 * hash) + LEVEL_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getLevelId();
       hash = (37 * hash) + IS_FINISH_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsFinish());
+      hash = (37 * hash) + LEVEL_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getLevelId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -345,7 +345,7 @@ public final class ElectroherculesBattleLevelInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: HNOJMOGEKCA
+     * Obf: FHJLJHALMBK
      * </pre>
      *
      * Protobuf type {@code ElectroherculesBattleLevelInfo}
@@ -387,9 +387,9 @@ public final class ElectroherculesBattleLevelInfoOuterClass {
         super.clear();
         minFinishTime_ = 0;
 
-        levelId_ = 0;
-
         isFinish_ = false;
+
+        levelId_ = 0;
 
         return this;
       }
@@ -418,8 +418,8 @@ public final class ElectroherculesBattleLevelInfoOuterClass {
       public emu.grasscutter.net.proto.ElectroherculesBattleLevelInfoOuterClass.ElectroherculesBattleLevelInfo buildPartial() {
         emu.grasscutter.net.proto.ElectroherculesBattleLevelInfoOuterClass.ElectroherculesBattleLevelInfo result = new emu.grasscutter.net.proto.ElectroherculesBattleLevelInfoOuterClass.ElectroherculesBattleLevelInfo(this);
         result.minFinishTime_ = minFinishTime_;
-        result.levelId_ = levelId_;
         result.isFinish_ = isFinish_;
+        result.levelId_ = levelId_;
         onBuilt();
         return result;
       }
@@ -471,11 +471,11 @@ public final class ElectroherculesBattleLevelInfoOuterClass {
         if (other.getMinFinishTime() != 0) {
           setMinFinishTime(other.getMinFinishTime());
         }
-        if (other.getLevelId() != 0) {
-          setLevelId(other.getLevelId());
-        }
         if (other.getIsFinish() != false) {
           setIsFinish(other.getIsFinish());
+        }
+        if (other.getLevelId() != 0) {
+          setLevelId(other.getLevelId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -508,7 +508,7 @@ public final class ElectroherculesBattleLevelInfoOuterClass {
 
       private int minFinishTime_ ;
       /**
-       * <code>uint32 min_finish_time = 15;</code>
+       * <code>uint32 min_finish_time = 10;</code>
        * @return The minFinishTime.
        */
       @java.lang.Override
@@ -516,7 +516,7 @@ public final class ElectroherculesBattleLevelInfoOuterClass {
         return minFinishTime_;
       }
       /**
-       * <code>uint32 min_finish_time = 15;</code>
+       * <code>uint32 min_finish_time = 10;</code>
        * @param value The minFinishTime to set.
        * @return This builder for chaining.
        */
@@ -527,7 +527,7 @@ public final class ElectroherculesBattleLevelInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 min_finish_time = 15;</code>
+       * <code>uint32 min_finish_time = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearMinFinishTime() {
@@ -537,40 +537,9 @@ public final class ElectroherculesBattleLevelInfoOuterClass {
         return this;
       }
 
-      private int levelId_ ;
-      /**
-       * <code>uint32 level_id = 13;</code>
-       * @return The levelId.
-       */
-      @java.lang.Override
-      public int getLevelId() {
-        return levelId_;
-      }
-      /**
-       * <code>uint32 level_id = 13;</code>
-       * @param value The levelId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLevelId(int value) {
-        
-        levelId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 level_id = 13;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLevelId() {
-        
-        levelId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private boolean isFinish_ ;
       /**
-       * <code>bool is_finish = 3;</code>
+       * <code>bool is_finish = 8;</code>
        * @return The isFinish.
        */
       @java.lang.Override
@@ -578,7 +547,7 @@ public final class ElectroherculesBattleLevelInfoOuterClass {
         return isFinish_;
       }
       /**
-       * <code>bool is_finish = 3;</code>
+       * <code>bool is_finish = 8;</code>
        * @param value The isFinish to set.
        * @return This builder for chaining.
        */
@@ -589,12 +558,43 @@ public final class ElectroherculesBattleLevelInfoOuterClass {
         return this;
       }
       /**
-       * <code>bool is_finish = 3;</code>
+       * <code>bool is_finish = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsFinish() {
         
         isFinish_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int levelId_ ;
+      /**
+       * <code>uint32 level_id = 12;</code>
+       * @return The levelId.
+       */
+      @java.lang.Override
+      public int getLevelId() {
+        return levelId_;
+      }
+      /**
+       * <code>uint32 level_id = 12;</code>
+       * @param value The levelId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLevelId(int value) {
+        
+        levelId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 level_id = 12;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLevelId() {
+        
+        levelId_ = 0;
         onChanged();
         return this;
       }
@@ -667,8 +667,8 @@ public final class ElectroherculesBattleLevelInfoOuterClass {
     java.lang.String[] descriptorData = {
       "\n$ElectroherculesBattleLevelInfo.proto\"^" +
       "\n\036ElectroherculesBattleLevelInfo\022\027\n\017min_" +
-      "finish_time\030\017 \001(\r\022\020\n\010level_id\030\r \001(\r\022\021\n\ti" +
-      "s_finish\030\003 \001(\010B\033\n\031emu.grasscutter.net.pr" +
+      "finish_time\030\n \001(\r\022\021\n\tis_finish\030\010 \001(\010\022\020\n\010" +
+      "level_id\030\014 \001(\rB\033\n\031emu.grasscutter.net.pr" +
       "otob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -680,7 +680,7 @@ public final class ElectroherculesBattleLevelInfoOuterClass {
     internal_static_ElectroherculesBattleLevelInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ElectroherculesBattleLevelInfo_descriptor,
-        new java.lang.String[] { "MinFinishTime", "LevelId", "IsFinish", });
+        new java.lang.String[] { "MinFinishTime", "IsFinish", "LevelId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

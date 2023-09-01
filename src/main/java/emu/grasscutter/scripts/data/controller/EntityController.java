@@ -1,16 +1,17 @@
 package emu.grasscutter.scripts.data.controller;
 
-import emu.grasscutter.Grasscutter;
+import emu.grasscutter.*;
 import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.props.ElementType;
-import emu.grasscutter.scripts.ScriptLib;
-import emu.grasscutter.scripts.ScriptLoader;
-import javax.script.Bindings;
-import javax.script.CompiledScript;
-import org.luaj.vm2.LuaError;
-import org.luaj.vm2.LuaValue;
+import emu.grasscutter.scripts.*;
+import org.luaj.vm2.*;
+
+import javax.script.*;
+import java.util.Set;
 
 public class EntityController {
+    private static final Set<String> SERVER_CALLED = Set.of("OnBeHurt", "OnDie", "OnTimer");
+
     private transient CompiledScript entityController;
     private transient Bindings entityControllerBindings;
 
@@ -38,9 +39,14 @@ public class EntityController {
     }
 
     public int onClientExecuteRequest(GameEntity entity, int param1, int param2, int param3) {
-        Grasscutter.getLogger()
-                .debug(
-                        "Request on {}, {}: {}", entity.getGroupId(), param1, entity.getPosition().toString());
+        if (DebugConstants.LOG_LUA_SCRIPTS) {
+            Grasscutter.getLogger()
+                    .debug(
+                            "Request on {}, {}: {}",
+                            entity.getGroupId(),
+                            param1,
+                            entity.getPosition().toString());
+        }
         LuaValue value =
                 callControllerScriptFunc(
                         entity,
@@ -90,7 +96,7 @@ public class EntityController {
                         error);
                 ret = LuaValue.valueOf(-1);
             }
-        } else if (funcName != null && !funcName.equals("OnTimer")) {
+        } else if (funcName != null && !SERVER_CALLED.contains(funcName)) {
             ScriptLib.logger.error(
                     "[LUA] unknown func in gadget {} with {} {} {} {}",
                     entity.getEntityTypeId(),

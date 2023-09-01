@@ -1,8 +1,7 @@
 package emu.grasscutter.data.binout.config.fields;
 
 import com.google.gson.annotations.SerializedName;
-import lombok.AccessLevel;
-import lombok.Data;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 @Data

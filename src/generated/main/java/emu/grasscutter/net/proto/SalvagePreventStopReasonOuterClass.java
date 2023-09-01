@@ -16,7 +16,7 @@ public final class SalvagePreventStopReasonOuterClass {
   }
   /**
    * <pre>
-   * Obf: FCFOOHDOGCJ
+   * Obf: MPKIGDOAHIH
    * </pre>
    *
    * Protobuf enum {@code SalvagePreventStopReason}

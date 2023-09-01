@@ -26,7 +26,7 @@ public final class MassiveWaterInfoOuterClass {
   }
   /**
    * <pre>
-   * Obf: EMAIJJNIDOE
+   * Obf: CGABDBLBBGF
    * </pre>
    *
    * Protobuf type {@code MassiveWaterInfo}
@@ -279,7 +279,7 @@ public final class MassiveWaterInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: EMAIJJNIDOE
+     * Obf: CGABDBLBBGF
      * </pre>
      *
      * Protobuf type {@code MassiveWaterInfo}

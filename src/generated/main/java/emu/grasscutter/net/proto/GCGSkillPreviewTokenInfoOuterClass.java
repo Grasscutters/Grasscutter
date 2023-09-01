@@ -19,26 +19,26 @@ public final class GCGSkillPreviewTokenInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 JAGENMHHAPJ = 9;</code>
-     * @return The jAGENMHHAPJ.
+     * <code>uint32 KFBIKHHBKEE = 3;</code>
+     * @return The kFBIKHHBKEE.
      */
-    int getJAGENMHHAPJ();
+    int getKFBIKHHBKEE();
 
     /**
-     * <code>uint32 KKPBODKKDGK = 4;</code>
-     * @return The kKPBODKKDGK.
+     * <code>uint32 BACKHFIPFPG = 8;</code>
+     * @return The bACKHFIPFPG.
      */
-    int getKKPBODKKDGK();
+    int getBACKHFIPFPG();
 
     /**
-     * <code>uint32 FIGGLGDEGIG = 14;</code>
-     * @return The fIGGLGDEGIG.
+     * <code>uint32 BKGKHIEOMFB = 12;</code>
+     * @return The bKGKHIEOMFB.
      */
-    int getFIGGLGDEGIG();
+    int getBKGKHIEOMFB();
   }
   /**
    * <pre>
-   * Obf: NDMOFEBNCGM
+   * Obf: OBLMNDJLEDI
    * </pre>
    *
    * Protobuf type {@code GCGSkillPreviewTokenInfo}
@@ -85,19 +85,19 @@ public final class GCGSkillPreviewTokenInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
+            case 24: {
 
-              kKPBODKKDGK_ = input.readUInt32();
+              kFBIKHHBKEE_ = input.readUInt32();
               break;
             }
-            case 72: {
+            case 64: {
 
-              jAGENMHHAPJ_ = input.readUInt32();
+              bACKHFIPFPG_ = input.readUInt32();
               break;
             }
-            case 112: {
+            case 96: {
 
-              fIGGLGDEGIG_ = input.readUInt32();
+              bKGKHIEOMFB_ = input.readUInt32();
               break;
             }
             default: {
@@ -132,37 +132,37 @@ public final class GCGSkillPreviewTokenInfoOuterClass {
               emu.grasscutter.net.proto.GCGSkillPreviewTokenInfoOuterClass.GCGSkillPreviewTokenInfo.class, emu.grasscutter.net.proto.GCGSkillPreviewTokenInfoOuterClass.GCGSkillPreviewTokenInfo.Builder.class);
     }
 
-    public static final int JAGENMHHAPJ_FIELD_NUMBER = 9;
-    private int jAGENMHHAPJ_;
+    public static final int KFBIKHHBKEE_FIELD_NUMBER = 3;
+    private int kFBIKHHBKEE_;
     /**
-     * <code>uint32 JAGENMHHAPJ = 9;</code>
-     * @return The jAGENMHHAPJ.
+     * <code>uint32 KFBIKHHBKEE = 3;</code>
+     * @return The kFBIKHHBKEE.
      */
     @java.lang.Override
-    public int getJAGENMHHAPJ() {
-      return jAGENMHHAPJ_;
+    public int getKFBIKHHBKEE() {
+      return kFBIKHHBKEE_;
     }
 
-    public static final int KKPBODKKDGK_FIELD_NUMBER = 4;
-    private int kKPBODKKDGK_;
+    public static final int BACKHFIPFPG_FIELD_NUMBER = 8;
+    private int bACKHFIPFPG_;
     /**
-     * <code>uint32 KKPBODKKDGK = 4;</code>
-     * @return The kKPBODKKDGK.
+     * <code>uint32 BACKHFIPFPG = 8;</code>
+     * @return The bACKHFIPFPG.
      */
     @java.lang.Override
-    public int getKKPBODKKDGK() {
-      return kKPBODKKDGK_;
+    public int getBACKHFIPFPG() {
+      return bACKHFIPFPG_;
     }
 
-    public static final int FIGGLGDEGIG_FIELD_NUMBER = 14;
-    private int fIGGLGDEGIG_;
+    public static final int BKGKHIEOMFB_FIELD_NUMBER = 12;
+    private int bKGKHIEOMFB_;
     /**
-     * <code>uint32 FIGGLGDEGIG = 14;</code>
-     * @return The fIGGLGDEGIG.
+     * <code>uint32 BKGKHIEOMFB = 12;</code>
+     * @return The bKGKHIEOMFB.
      */
     @java.lang.Override
-    public int getFIGGLGDEGIG() {
-      return fIGGLGDEGIG_;
+    public int getBKGKHIEOMFB() {
+      return bKGKHIEOMFB_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -179,14 +179,14 @@ public final class GCGSkillPreviewTokenInfoOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (kKPBODKKDGK_ != 0) {
-        output.writeUInt32(4, kKPBODKKDGK_);
+      if (kFBIKHHBKEE_ != 0) {
+        output.writeUInt32(3, kFBIKHHBKEE_);
       }
-      if (jAGENMHHAPJ_ != 0) {
-        output.writeUInt32(9, jAGENMHHAPJ_);
+      if (bACKHFIPFPG_ != 0) {
+        output.writeUInt32(8, bACKHFIPFPG_);
       }
-      if (fIGGLGDEGIG_ != 0) {
-        output.writeUInt32(14, fIGGLGDEGIG_);
+      if (bKGKHIEOMFB_ != 0) {
+        output.writeUInt32(12, bKGKHIEOMFB_);
       }
       unknownFields.writeTo(output);
     }
@@ -197,17 +197,17 @@ public final class GCGSkillPreviewTokenInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (kKPBODKKDGK_ != 0) {
+      if (kFBIKHHBKEE_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, kKPBODKKDGK_);
+          .computeUInt32Size(3, kFBIKHHBKEE_);
       }
-      if (jAGENMHHAPJ_ != 0) {
+      if (bACKHFIPFPG_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, jAGENMHHAPJ_);
+          .computeUInt32Size(8, bACKHFIPFPG_);
       }
-      if (fIGGLGDEGIG_ != 0) {
+      if (bKGKHIEOMFB_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, fIGGLGDEGIG_);
+          .computeUInt32Size(12, bKGKHIEOMFB_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -224,12 +224,12 @@ public final class GCGSkillPreviewTokenInfoOuterClass {
       }
       emu.grasscutter.net.proto.GCGSkillPreviewTokenInfoOuterClass.GCGSkillPreviewTokenInfo other = (emu.grasscutter.net.proto.GCGSkillPreviewTokenInfoOuterClass.GCGSkillPreviewTokenInfo) obj;
 
-      if (getJAGENMHHAPJ()
-          != other.getJAGENMHHAPJ()) return false;
-      if (getKKPBODKKDGK()
-          != other.getKKPBODKKDGK()) return false;
-      if (getFIGGLGDEGIG()
-          != other.getFIGGLGDEGIG()) return false;
+      if (getKFBIKHHBKEE()
+          != other.getKFBIKHHBKEE()) return false;
+      if (getBACKHFIPFPG()
+          != other.getBACKHFIPFPG()) return false;
+      if (getBKGKHIEOMFB()
+          != other.getBKGKHIEOMFB()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -241,12 +241,12 @@ public final class GCGSkillPreviewTokenInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + JAGENMHHAPJ_FIELD_NUMBER;
-      hash = (53 * hash) + getJAGENMHHAPJ();
-      hash = (37 * hash) + KKPBODKKDGK_FIELD_NUMBER;
-      hash = (53 * hash) + getKKPBODKKDGK();
-      hash = (37 * hash) + FIGGLGDEGIG_FIELD_NUMBER;
-      hash = (53 * hash) + getFIGGLGDEGIG();
+      hash = (37 * hash) + KFBIKHHBKEE_FIELD_NUMBER;
+      hash = (53 * hash) + getKFBIKHHBKEE();
+      hash = (37 * hash) + BACKHFIPFPG_FIELD_NUMBER;
+      hash = (53 * hash) + getBACKHFIPFPG();
+      hash = (37 * hash) + BKGKHIEOMFB_FIELD_NUMBER;
+      hash = (53 * hash) + getBKGKHIEOMFB();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -344,7 +344,7 @@ public final class GCGSkillPreviewTokenInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: NDMOFEBNCGM
+     * Obf: OBLMNDJLEDI
      * </pre>
      *
      * Protobuf type {@code GCGSkillPreviewTokenInfo}
@@ -384,11 +384,11 @@ public final class GCGSkillPreviewTokenInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        jAGENMHHAPJ_ = 0;
+        kFBIKHHBKEE_ = 0;
 
-        kKPBODKKDGK_ = 0;
+        bACKHFIPFPG_ = 0;
 
-        fIGGLGDEGIG_ = 0;
+        bKGKHIEOMFB_ = 0;
 
         return this;
       }
@@ -416,9 +416,9 @@ public final class GCGSkillPreviewTokenInfoOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.GCGSkillPreviewTokenInfoOuterClass.GCGSkillPreviewTokenInfo buildPartial() {
         emu.grasscutter.net.proto.GCGSkillPreviewTokenInfoOuterClass.GCGSkillPreviewTokenInfo result = new emu.grasscutter.net.proto.GCGSkillPreviewTokenInfoOuterClass.GCGSkillPreviewTokenInfo(this);
-        result.jAGENMHHAPJ_ = jAGENMHHAPJ_;
-        result.kKPBODKKDGK_ = kKPBODKKDGK_;
-        result.fIGGLGDEGIG_ = fIGGLGDEGIG_;
+        result.kFBIKHHBKEE_ = kFBIKHHBKEE_;
+        result.bACKHFIPFPG_ = bACKHFIPFPG_;
+        result.bKGKHIEOMFB_ = bKGKHIEOMFB_;
         onBuilt();
         return result;
       }
@@ -467,14 +467,14 @@ public final class GCGSkillPreviewTokenInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.GCGSkillPreviewTokenInfoOuterClass.GCGSkillPreviewTokenInfo other) {
         if (other == emu.grasscutter.net.proto.GCGSkillPreviewTokenInfoOuterClass.GCGSkillPreviewTokenInfo.getDefaultInstance()) return this;
-        if (other.getJAGENMHHAPJ() != 0) {
-          setJAGENMHHAPJ(other.getJAGENMHHAPJ());
+        if (other.getKFBIKHHBKEE() != 0) {
+          setKFBIKHHBKEE(other.getKFBIKHHBKEE());
         }
-        if (other.getKKPBODKKDGK() != 0) {
-          setKKPBODKKDGK(other.getKKPBODKKDGK());
+        if (other.getBACKHFIPFPG() != 0) {
+          setBACKHFIPFPG(other.getBACKHFIPFPG());
         }
-        if (other.getFIGGLGDEGIG() != 0) {
-          setFIGGLGDEGIG(other.getFIGGLGDEGIG());
+        if (other.getBKGKHIEOMFB() != 0) {
+          setBKGKHIEOMFB(other.getBKGKHIEOMFB());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -505,95 +505,95 @@ public final class GCGSkillPreviewTokenInfoOuterClass {
         return this;
       }
 
-      private int jAGENMHHAPJ_ ;
+      private int kFBIKHHBKEE_ ;
       /**
-       * <code>uint32 JAGENMHHAPJ = 9;</code>
-       * @return The jAGENMHHAPJ.
+       * <code>uint32 KFBIKHHBKEE = 3;</code>
+       * @return The kFBIKHHBKEE.
        */
       @java.lang.Override
-      public int getJAGENMHHAPJ() {
-        return jAGENMHHAPJ_;
+      public int getKFBIKHHBKEE() {
+        return kFBIKHHBKEE_;
       }
       /**
-       * <code>uint32 JAGENMHHAPJ = 9;</code>
-       * @param value The jAGENMHHAPJ to set.
+       * <code>uint32 KFBIKHHBKEE = 3;</code>
+       * @param value The kFBIKHHBKEE to set.
        * @return This builder for chaining.
        */
-      public Builder setJAGENMHHAPJ(int value) {
+      public Builder setKFBIKHHBKEE(int value) {
         
-        jAGENMHHAPJ_ = value;
+        kFBIKHHBKEE_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 JAGENMHHAPJ = 9;</code>
+       * <code>uint32 KFBIKHHBKEE = 3;</code>
        * @return This builder for chaining.
        */
-      public Builder clearJAGENMHHAPJ() {
+      public Builder clearKFBIKHHBKEE() {
         
-        jAGENMHHAPJ_ = 0;
+        kFBIKHHBKEE_ = 0;
         onChanged();
         return this;
       }
 
-      private int kKPBODKKDGK_ ;
+      private int bACKHFIPFPG_ ;
       /**
-       * <code>uint32 KKPBODKKDGK = 4;</code>
-       * @return The kKPBODKKDGK.
+       * <code>uint32 BACKHFIPFPG = 8;</code>
+       * @return The bACKHFIPFPG.
        */
       @java.lang.Override
-      public int getKKPBODKKDGK() {
-        return kKPBODKKDGK_;
+      public int getBACKHFIPFPG() {
+        return bACKHFIPFPG_;
       }
       /**
-       * <code>uint32 KKPBODKKDGK = 4;</code>
-       * @param value The kKPBODKKDGK to set.
+       * <code>uint32 BACKHFIPFPG = 8;</code>
+       * @param value The bACKHFIPFPG to set.
        * @return This builder for chaining.
        */
-      public Builder setKKPBODKKDGK(int value) {
+      public Builder setBACKHFIPFPG(int value) {
         
-        kKPBODKKDGK_ = value;
+        bACKHFIPFPG_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 KKPBODKKDGK = 4;</code>
+       * <code>uint32 BACKHFIPFPG = 8;</code>
        * @return This builder for chaining.
        */
-      public Builder clearKKPBODKKDGK() {
+      public Builder clearBACKHFIPFPG() {
         
-        kKPBODKKDGK_ = 0;
+        bACKHFIPFPG_ = 0;
         onChanged();
         return this;
       }
 
-      private int fIGGLGDEGIG_ ;
+      private int bKGKHIEOMFB_ ;
       /**
-       * <code>uint32 FIGGLGDEGIG = 14;</code>
-       * @return The fIGGLGDEGIG.
+       * <code>uint32 BKGKHIEOMFB = 12;</code>
+       * @return The bKGKHIEOMFB.
        */
       @java.lang.Override
-      public int getFIGGLGDEGIG() {
-        return fIGGLGDEGIG_;
+      public int getBKGKHIEOMFB() {
+        return bKGKHIEOMFB_;
       }
       /**
-       * <code>uint32 FIGGLGDEGIG = 14;</code>
-       * @param value The fIGGLGDEGIG to set.
+       * <code>uint32 BKGKHIEOMFB = 12;</code>
+       * @param value The bKGKHIEOMFB to set.
        * @return This builder for chaining.
        */
-      public Builder setFIGGLGDEGIG(int value) {
+      public Builder setBKGKHIEOMFB(int value) {
         
-        fIGGLGDEGIG_ = value;
+        bKGKHIEOMFB_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 FIGGLGDEGIG = 14;</code>
+       * <code>uint32 BKGKHIEOMFB = 12;</code>
        * @return This builder for chaining.
        */
-      public Builder clearFIGGLGDEGIG() {
+      public Builder clearBKGKHIEOMFB() {
         
-        fIGGLGDEGIG_ = 0;
+        bKGKHIEOMFB_ = 0;
         onChanged();
         return this;
       }
@@ -665,8 +665,8 @@ public final class GCGSkillPreviewTokenInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\036GCGSkillPreviewTokenInfo.proto\"Y\n\030GCGS" +
-      "killPreviewTokenInfo\022\023\n\013JAGENMHHAPJ\030\t \001(" +
-      "\r\022\023\n\013KKPBODKKDGK\030\004 \001(\r\022\023\n\013FIGGLGDEGIG\030\016 " +
+      "killPreviewTokenInfo\022\023\n\013KFBIKHHBKEE\030\003 \001(" +
+      "\r\022\023\n\013BACKHFIPFPG\030\010 \001(\r\022\023\n\013BKGKHIEOMFB\030\014 " +
       "\001(\rB\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -678,7 +678,7 @@ public final class GCGSkillPreviewTokenInfoOuterClass {
     internal_static_GCGSkillPreviewTokenInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GCGSkillPreviewTokenInfo_descriptor,
-        new java.lang.String[] { "JAGENMHHAPJ", "KKPBODKKDGK", "FIGGLGDEGIG", });
+        new java.lang.String[] { "KFBIKHHBKEE", "BACKHFIPFPG", "BKGKHIEOMFB", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

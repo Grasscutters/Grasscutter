@@ -2,11 +2,8 @@ package emu.grasscutter.server.packet.send;
 
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.dungeon.DungeonEntryData;
-import emu.grasscutter.net.packet.BasePacket;
-import emu.grasscutter.net.packet.PacketOpcodes;
-import emu.grasscutter.net.proto.DailyDungeonEntryInfoOuterClass;
-import emu.grasscutter.net.proto.DungeonEntryInfoOuterClass;
-import emu.grasscutter.net.proto.GetDailyDungeonEntryInfoRspOuterClass;
+import emu.grasscutter.net.packet.*;
+import emu.grasscutter.net.proto.*;
 
 public class PacketGetDailyDungeonEntryInfoRsp extends BasePacket {
 

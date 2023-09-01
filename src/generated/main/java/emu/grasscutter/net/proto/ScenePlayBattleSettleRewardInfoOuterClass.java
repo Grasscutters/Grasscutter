@@ -19,38 +19,38 @@ public final class ScenePlayBattleSettleRewardInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 uid = 2;</code>
+     * <code>uint32 uid = 3;</code>
      * @return The uid.
      */
     int getUid();
 
     /**
-     * <code>repeated .ItemParam reward_item_list = 13;</code>
+     * <code>repeated .ItemParam reward_item_list = 1;</code>
      */
     java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> 
         getRewardItemListList();
     /**
-     * <code>repeated .ItemParam reward_item_list = 13;</code>
+     * <code>repeated .ItemParam reward_item_list = 1;</code>
      */
     emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam getRewardItemList(int index);
     /**
-     * <code>repeated .ItemParam reward_item_list = 13;</code>
+     * <code>repeated .ItemParam reward_item_list = 1;</code>
      */
     int getRewardItemListCount();
     /**
-     * <code>repeated .ItemParam reward_item_list = 13;</code>
+     * <code>repeated .ItemParam reward_item_list = 1;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> 
         getRewardItemListOrBuilderList();
     /**
-     * <code>repeated .ItemParam reward_item_list = 13;</code>
+     * <code>repeated .ItemParam reward_item_list = 1;</code>
      */
     emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder getRewardItemListOrBuilder(
         int index);
   }
   /**
    * <pre>
-   * Obf: MLBPJOKJGAL
+   * Obf: PMGGFAAELEM
    * </pre>
    *
    * Protobuf type {@code ScenePlayBattleSettleRewardInfo}
@@ -99,18 +99,18 @@ public final class ScenePlayBattleSettleRewardInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
-
-              uid_ = input.readUInt32();
-              break;
-            }
-            case 106: {
+            case 10: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 rewardItemList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam>();
                 mutable_bitField0_ |= 0x00000001;
               }
               rewardItemList_.add(
                   input.readMessage(emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
+              break;
+            }
+            case 24: {
+
+              uid_ = input.readUInt32();
               break;
             }
             default: {
@@ -148,10 +148,10 @@ public final class ScenePlayBattleSettleRewardInfoOuterClass {
               emu.grasscutter.net.proto.ScenePlayBattleSettleRewardInfoOuterClass.ScenePlayBattleSettleRewardInfo.class, emu.grasscutter.net.proto.ScenePlayBattleSettleRewardInfoOuterClass.ScenePlayBattleSettleRewardInfo.Builder.class);
     }
 
-    public static final int UID_FIELD_NUMBER = 2;
+    public static final int UID_FIELD_NUMBER = 3;
     private int uid_;
     /**
-     * <code>uint32 uid = 2;</code>
+     * <code>uint32 uid = 3;</code>
      * @return The uid.
      */
     @java.lang.Override
@@ -159,17 +159,17 @@ public final class ScenePlayBattleSettleRewardInfoOuterClass {
       return uid_;
     }
 
-    public static final int REWARD_ITEM_LIST_FIELD_NUMBER = 13;
+    public static final int REWARD_ITEM_LIST_FIELD_NUMBER = 1;
     private java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> rewardItemList_;
     /**
-     * <code>repeated .ItemParam reward_item_list = 13;</code>
+     * <code>repeated .ItemParam reward_item_list = 1;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> getRewardItemListList() {
       return rewardItemList_;
     }
     /**
-     * <code>repeated .ItemParam reward_item_list = 13;</code>
+     * <code>repeated .ItemParam reward_item_list = 1;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> 
@@ -177,21 +177,21 @@ public final class ScenePlayBattleSettleRewardInfoOuterClass {
       return rewardItemList_;
     }
     /**
-     * <code>repeated .ItemParam reward_item_list = 13;</code>
+     * <code>repeated .ItemParam reward_item_list = 1;</code>
      */
     @java.lang.Override
     public int getRewardItemListCount() {
       return rewardItemList_.size();
     }
     /**
-     * <code>repeated .ItemParam reward_item_list = 13;</code>
+     * <code>repeated .ItemParam reward_item_list = 1;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam getRewardItemList(int index) {
       return rewardItemList_.get(index);
     }
     /**
-     * <code>repeated .ItemParam reward_item_list = 13;</code>
+     * <code>repeated .ItemParam reward_item_list = 1;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder getRewardItemListOrBuilder(
@@ -213,11 +213,11 @@ public final class ScenePlayBattleSettleRewardInfoOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (uid_ != 0) {
-        output.writeUInt32(2, uid_);
-      }
       for (int i = 0; i < rewardItemList_.size(); i++) {
-        output.writeMessage(13, rewardItemList_.get(i));
+        output.writeMessage(1, rewardItemList_.get(i));
+      }
+      if (uid_ != 0) {
+        output.writeUInt32(3, uid_);
       }
       unknownFields.writeTo(output);
     }
@@ -228,13 +228,13 @@ public final class ScenePlayBattleSettleRewardInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (uid_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, uid_);
-      }
       for (int i = 0; i < rewardItemList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(13, rewardItemList_.get(i));
+          .computeMessageSize(1, rewardItemList_.get(i));
+      }
+      if (uid_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(3, uid_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -369,7 +369,7 @@ public final class ScenePlayBattleSettleRewardInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: MLBPJOKJGAL
+     * Obf: PMGGFAAELEM
      * </pre>
      *
      * Protobuf type {@code ScenePlayBattleSettleRewardInfo}
@@ -564,7 +564,7 @@ public final class ScenePlayBattleSettleRewardInfoOuterClass {
 
       private int uid_ ;
       /**
-       * <code>uint32 uid = 2;</code>
+       * <code>uint32 uid = 3;</code>
        * @return The uid.
        */
       @java.lang.Override
@@ -572,7 +572,7 @@ public final class ScenePlayBattleSettleRewardInfoOuterClass {
         return uid_;
       }
       /**
-       * <code>uint32 uid = 2;</code>
+       * <code>uint32 uid = 3;</code>
        * @param value The uid to set.
        * @return This builder for chaining.
        */
@@ -583,7 +583,7 @@ public final class ScenePlayBattleSettleRewardInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 uid = 2;</code>
+       * <code>uint32 uid = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearUid() {
@@ -606,7 +606,7 @@ public final class ScenePlayBattleSettleRewardInfoOuterClass {
           emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> rewardItemListBuilder_;
 
       /**
-       * <code>repeated .ItemParam reward_item_list = 13;</code>
+       * <code>repeated .ItemParam reward_item_list = 1;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> getRewardItemListList() {
         if (rewardItemListBuilder_ == null) {
@@ -616,7 +616,7 @@ public final class ScenePlayBattleSettleRewardInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .ItemParam reward_item_list = 13;</code>
+       * <code>repeated .ItemParam reward_item_list = 1;</code>
        */
       public int getRewardItemListCount() {
         if (rewardItemListBuilder_ == null) {
@@ -626,7 +626,7 @@ public final class ScenePlayBattleSettleRewardInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .ItemParam reward_item_list = 13;</code>
+       * <code>repeated .ItemParam reward_item_list = 1;</code>
        */
       public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam getRewardItemList(int index) {
         if (rewardItemListBuilder_ == null) {
@@ -636,7 +636,7 @@ public final class ScenePlayBattleSettleRewardInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .ItemParam reward_item_list = 13;</code>
+       * <code>repeated .ItemParam reward_item_list = 1;</code>
        */
       public Builder setRewardItemList(
           int index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam value) {
@@ -653,7 +653,7 @@ public final class ScenePlayBattleSettleRewardInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam reward_item_list = 13;</code>
+       * <code>repeated .ItemParam reward_item_list = 1;</code>
        */
       public Builder setRewardItemList(
           int index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder builderForValue) {
@@ -667,7 +667,7 @@ public final class ScenePlayBattleSettleRewardInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam reward_item_list = 13;</code>
+       * <code>repeated .ItemParam reward_item_list = 1;</code>
        */
       public Builder addRewardItemList(emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam value) {
         if (rewardItemListBuilder_ == null) {
@@ -683,7 +683,7 @@ public final class ScenePlayBattleSettleRewardInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam reward_item_list = 13;</code>
+       * <code>repeated .ItemParam reward_item_list = 1;</code>
        */
       public Builder addRewardItemList(
           int index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam value) {
@@ -700,7 +700,7 @@ public final class ScenePlayBattleSettleRewardInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam reward_item_list = 13;</code>
+       * <code>repeated .ItemParam reward_item_list = 1;</code>
        */
       public Builder addRewardItemList(
           emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder builderForValue) {
@@ -714,7 +714,7 @@ public final class ScenePlayBattleSettleRewardInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam reward_item_list = 13;</code>
+       * <code>repeated .ItemParam reward_item_list = 1;</code>
        */
       public Builder addRewardItemList(
           int index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder builderForValue) {
@@ -728,7 +728,7 @@ public final class ScenePlayBattleSettleRewardInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam reward_item_list = 13;</code>
+       * <code>repeated .ItemParam reward_item_list = 1;</code>
        */
       public Builder addAllRewardItemList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> values) {
@@ -743,7 +743,7 @@ public final class ScenePlayBattleSettleRewardInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam reward_item_list = 13;</code>
+       * <code>repeated .ItemParam reward_item_list = 1;</code>
        */
       public Builder clearRewardItemList() {
         if (rewardItemListBuilder_ == null) {
@@ -756,7 +756,7 @@ public final class ScenePlayBattleSettleRewardInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam reward_item_list = 13;</code>
+       * <code>repeated .ItemParam reward_item_list = 1;</code>
        */
       public Builder removeRewardItemList(int index) {
         if (rewardItemListBuilder_ == null) {
@@ -769,14 +769,14 @@ public final class ScenePlayBattleSettleRewardInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam reward_item_list = 13;</code>
+       * <code>repeated .ItemParam reward_item_list = 1;</code>
        */
       public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder getRewardItemListBuilder(
           int index) {
         return getRewardItemListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .ItemParam reward_item_list = 13;</code>
+       * <code>repeated .ItemParam reward_item_list = 1;</code>
        */
       public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder getRewardItemListOrBuilder(
           int index) {
@@ -786,7 +786,7 @@ public final class ScenePlayBattleSettleRewardInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .ItemParam reward_item_list = 13;</code>
+       * <code>repeated .ItemParam reward_item_list = 1;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> 
            getRewardItemListOrBuilderList() {
@@ -797,14 +797,14 @@ public final class ScenePlayBattleSettleRewardInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .ItemParam reward_item_list = 13;</code>
+       * <code>repeated .ItemParam reward_item_list = 1;</code>
        */
       public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder addRewardItemListBuilder() {
         return getRewardItemListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.getDefaultInstance());
       }
       /**
-       * <code>repeated .ItemParam reward_item_list = 13;</code>
+       * <code>repeated .ItemParam reward_item_list = 1;</code>
        */
       public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder addRewardItemListBuilder(
           int index) {
@@ -812,7 +812,7 @@ public final class ScenePlayBattleSettleRewardInfoOuterClass {
             index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.getDefaultInstance());
       }
       /**
-       * <code>repeated .ItemParam reward_item_list = 13;</code>
+       * <code>repeated .ItemParam reward_item_list = 1;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder> 
            getRewardItemListBuilderList() {
@@ -901,8 +901,8 @@ public final class ScenePlayBattleSettleRewardInfoOuterClass {
     java.lang.String[] descriptorData = {
       "\n%ScenePlayBattleSettleRewardInfo.proto\032" +
       "\017ItemParam.proto\"T\n\037ScenePlayBattleSettl" +
-      "eRewardInfo\022\013\n\003uid\030\002 \001(\r\022$\n\020reward_item_" +
-      "list\030\r \003(\0132\n.ItemParamB\033\n\031emu.grasscutte" +
+      "eRewardInfo\022\013\n\003uid\030\003 \001(\r\022$\n\020reward_item_" +
+      "list\030\001 \003(\0132\n.ItemParamB\033\n\031emu.grasscutte" +
       "r.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

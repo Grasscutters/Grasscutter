@@ -19,6 +19,12 @@ public final class SceneGalleryBulletInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <code>uint32 end_time = 10;</code>
+     * @return The endTime.
+     */
+    int getEndTime();
+
+    /**
      * <code>map&lt;uint32, uint32&gt; hit_count_map = 14;</code>
      */
     int getHitCountMapCount();
@@ -51,16 +57,10 @@ public final class SceneGalleryBulletInfoOuterClass {
 
     int getHitCountMapOrThrow(
         int key);
-
-    /**
-     * <code>uint32 end_time = 5;</code>
-     * @return The endTime.
-     */
-    int getEndTime();
   }
   /**
    * <pre>
-   * Obf: JCHAFGJDGCD
+   * Obf: MGDFHDAFPOA
    * </pre>
    *
    * Protobuf type {@code SceneGalleryBulletInfo}
@@ -108,7 +108,7 @@ public final class SceneGalleryBulletInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
+            case 80: {
 
               endTime_ = input.readUInt32();
               break;
@@ -168,6 +168,17 @@ public final class SceneGalleryBulletInfoOuterClass {
       return emu.grasscutter.net.proto.SceneGalleryBulletInfoOuterClass.internal_static_SceneGalleryBulletInfo_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               emu.grasscutter.net.proto.SceneGalleryBulletInfoOuterClass.SceneGalleryBulletInfo.class, emu.grasscutter.net.proto.SceneGalleryBulletInfoOuterClass.SceneGalleryBulletInfo.Builder.class);
+    }
+
+    public static final int END_TIME_FIELD_NUMBER = 10;
+    private int endTime_;
+    /**
+     * <code>uint32 end_time = 10;</code>
+     * @return The endTime.
+     */
+    @java.lang.Override
+    public int getEndTime() {
+      return endTime_;
     }
 
     public static final int HIT_COUNT_MAP_FIELD_NUMBER = 14;
@@ -251,17 +262,6 @@ public final class SceneGalleryBulletInfoOuterClass {
       return map.get(key);
     }
 
-    public static final int END_TIME_FIELD_NUMBER = 5;
-    private int endTime_;
-    /**
-     * <code>uint32 end_time = 5;</code>
-     * @return The endTime.
-     */
-    @java.lang.Override
-    public int getEndTime() {
-      return endTime_;
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -277,7 +277,7 @@ public final class SceneGalleryBulletInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (endTime_ != 0) {
-        output.writeUInt32(5, endTime_);
+        output.writeUInt32(10, endTime_);
       }
       com.google.protobuf.GeneratedMessageV3
         .serializeIntegerMapTo(
@@ -296,7 +296,7 @@ public final class SceneGalleryBulletInfoOuterClass {
       size = 0;
       if (endTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, endTime_);
+          .computeUInt32Size(10, endTime_);
       }
       for (java.util.Map.Entry<java.lang.Integer, java.lang.Integer> entry
            : internalGetHitCountMap().getMap().entrySet()) {
@@ -323,10 +323,10 @@ public final class SceneGalleryBulletInfoOuterClass {
       }
       emu.grasscutter.net.proto.SceneGalleryBulletInfoOuterClass.SceneGalleryBulletInfo other = (emu.grasscutter.net.proto.SceneGalleryBulletInfoOuterClass.SceneGalleryBulletInfo) obj;
 
-      if (!internalGetHitCountMap().equals(
-          other.internalGetHitCountMap())) return false;
       if (getEndTime()
           != other.getEndTime()) return false;
+      if (!internalGetHitCountMap().equals(
+          other.internalGetHitCountMap())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -338,12 +338,12 @@ public final class SceneGalleryBulletInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + END_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getEndTime();
       if (!internalGetHitCountMap().getMap().isEmpty()) {
         hash = (37 * hash) + HIT_COUNT_MAP_FIELD_NUMBER;
         hash = (53 * hash) + internalGetHitCountMap().hashCode();
       }
-      hash = (37 * hash) + END_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + getEndTime();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -441,7 +441,7 @@ public final class SceneGalleryBulletInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: JCHAFGJDGCD
+     * Obf: MGDFHDAFPOA
      * </pre>
      *
      * Protobuf type {@code SceneGalleryBulletInfo}
@@ -503,9 +503,9 @@ public final class SceneGalleryBulletInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        internalGetMutableHitCountMap().clear();
         endTime_ = 0;
 
+        internalGetMutableHitCountMap().clear();
         return this;
       }
 
@@ -533,9 +533,9 @@ public final class SceneGalleryBulletInfoOuterClass {
       public emu.grasscutter.net.proto.SceneGalleryBulletInfoOuterClass.SceneGalleryBulletInfo buildPartial() {
         emu.grasscutter.net.proto.SceneGalleryBulletInfoOuterClass.SceneGalleryBulletInfo result = new emu.grasscutter.net.proto.SceneGalleryBulletInfoOuterClass.SceneGalleryBulletInfo(this);
         int from_bitField0_ = bitField0_;
+        result.endTime_ = endTime_;
         result.hitCountMap_ = internalGetHitCountMap();
         result.hitCountMap_.makeImmutable();
-        result.endTime_ = endTime_;
         onBuilt();
         return result;
       }
@@ -584,11 +584,11 @@ public final class SceneGalleryBulletInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.SceneGalleryBulletInfoOuterClass.SceneGalleryBulletInfo other) {
         if (other == emu.grasscutter.net.proto.SceneGalleryBulletInfoOuterClass.SceneGalleryBulletInfo.getDefaultInstance()) return this;
-        internalGetMutableHitCountMap().mergeFrom(
-            other.internalGetHitCountMap());
         if (other.getEndTime() != 0) {
           setEndTime(other.getEndTime());
         }
+        internalGetMutableHitCountMap().mergeFrom(
+            other.internalGetHitCountMap());
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -618,6 +618,37 @@ public final class SceneGalleryBulletInfoOuterClass {
         return this;
       }
       private int bitField0_;
+
+      private int endTime_ ;
+      /**
+       * <code>uint32 end_time = 10;</code>
+       * @return The endTime.
+       */
+      @java.lang.Override
+      public int getEndTime() {
+        return endTime_;
+      }
+      /**
+       * <code>uint32 end_time = 10;</code>
+       * @param value The endTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEndTime(int value) {
+        
+        endTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 end_time = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEndTime() {
+        
+        endTime_ = 0;
+        onChanged();
+        return this;
+      }
 
       private com.google.protobuf.MapField<
           java.lang.Integer, java.lang.Integer> hitCountMap_;
@@ -746,37 +777,6 @@ public final class SceneGalleryBulletInfoOuterClass {
             .putAll(values);
         return this;
       }
-
-      private int endTime_ ;
-      /**
-       * <code>uint32 end_time = 5;</code>
-       * @return The endTime.
-       */
-      @java.lang.Override
-      public int getEndTime() {
-        return endTime_;
-      }
-      /**
-       * <code>uint32 end_time = 5;</code>
-       * @param value The endTime to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEndTime(int value) {
-        
-        endTime_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 end_time = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEndTime() {
-        
-        endTime_ = 0;
-        onChanged();
-        return this;
-      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -850,9 +850,9 @@ public final class SceneGalleryBulletInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\034SceneGalleryBulletInfo.proto\"\237\001\n\026Scene" +
-      "GalleryBulletInfo\022?\n\rhit_count_map\030\016 \003(\013" +
-      "2(.SceneGalleryBulletInfo.HitCountMapEnt" +
-      "ry\022\020\n\010end_time\030\005 \001(\r\0322\n\020HitCountMapEntry" +
+      "GalleryBulletInfo\022\020\n\010end_time\030\n \001(\r\022?\n\rh" +
+      "it_count_map\030\016 \003(\0132(.SceneGalleryBulletI" +
+      "nfo.HitCountMapEntry\0322\n\020HitCountMapEntry" +
       "\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001B\033\n\031emu." +
       "grasscutter.net.protob\006proto3"
     };
@@ -865,7 +865,7 @@ public final class SceneGalleryBulletInfoOuterClass {
     internal_static_SceneGalleryBulletInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SceneGalleryBulletInfo_descriptor,
-        new java.lang.String[] { "HitCountMap", "EndTime", });
+        new java.lang.String[] { "EndTime", "HitCountMap", });
     internal_static_SceneGalleryBulletInfo_HitCountMapEntry_descriptor =
       internal_static_SceneGalleryBulletInfo_descriptor.getNestedTypes().get(0);
     internal_static_SceneGalleryBulletInfo_HitCountMapEntry_fieldAccessorTable = new

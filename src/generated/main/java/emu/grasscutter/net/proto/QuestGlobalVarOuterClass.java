@@ -19,7 +19,7 @@ public final class QuestGlobalVarOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 value = 13;</code>
+     * <code>int32 value = 14;</code>
      * @return The value.
      */
     int getValue();
@@ -32,7 +32,7 @@ public final class QuestGlobalVarOuterClass {
   }
   /**
    * <pre>
-   * Obf: ADPDFNABDCI
+   * Obf: PGEKJBDCGND
    * </pre>
    *
    * Protobuf type {@code QuestGlobalVar}
@@ -84,7 +84,7 @@ public final class QuestGlobalVarOuterClass {
               key_ = input.readUInt32();
               break;
             }
-            case 104: {
+            case 112: {
 
               value_ = input.readInt32();
               break;
@@ -121,10 +121,10 @@ public final class QuestGlobalVarOuterClass {
               emu.grasscutter.net.proto.QuestGlobalVarOuterClass.QuestGlobalVar.class, emu.grasscutter.net.proto.QuestGlobalVarOuterClass.QuestGlobalVar.Builder.class);
     }
 
-    public static final int VALUE_FIELD_NUMBER = 13;
+    public static final int VALUE_FIELD_NUMBER = 14;
     private int value_;
     /**
-     * <code>int32 value = 13;</code>
+     * <code>int32 value = 14;</code>
      * @return The value.
      */
     @java.lang.Override
@@ -161,7 +161,7 @@ public final class QuestGlobalVarOuterClass {
         output.writeUInt32(8, key_);
       }
       if (value_ != 0) {
-        output.writeInt32(13, value_);
+        output.writeInt32(14, value_);
       }
       unknownFields.writeTo(output);
     }
@@ -178,7 +178,7 @@ public final class QuestGlobalVarOuterClass {
       }
       if (value_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(13, value_);
+          .computeInt32Size(14, value_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -311,7 +311,7 @@ public final class QuestGlobalVarOuterClass {
     }
     /**
      * <pre>
-     * Obf: ADPDFNABDCI
+     * Obf: PGEKJBDCGND
      * </pre>
      *
      * Protobuf type {@code QuestGlobalVar}
@@ -468,7 +468,7 @@ public final class QuestGlobalVarOuterClass {
 
       private int value_ ;
       /**
-       * <code>int32 value = 13;</code>
+       * <code>int32 value = 14;</code>
        * @return The value.
        */
       @java.lang.Override
@@ -476,7 +476,7 @@ public final class QuestGlobalVarOuterClass {
         return value_;
       }
       /**
-       * <code>int32 value = 13;</code>
+       * <code>int32 value = 14;</code>
        * @param value The value to set.
        * @return This builder for chaining.
        */
@@ -487,7 +487,7 @@ public final class QuestGlobalVarOuterClass {
         return this;
       }
       /**
-       * <code>int32 value = 13;</code>
+       * <code>int32 value = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearValue() {
@@ -595,7 +595,7 @@ public final class QuestGlobalVarOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\024QuestGlobalVar.proto\",\n\016QuestGlobalVar" +
-      "\022\r\n\005value\030\r \001(\005\022\013\n\003key\030\010 \001(\rB\033\n\031emu.gras" +
+      "\022\r\n\005value\030\016 \001(\005\022\013\n\003key\030\010 \001(\rB\033\n\031emu.gras" +
       "scutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

@@ -1,7 +1,7 @@
 package emu.grasscutter.game.tower;
 
-import dev.morphia.annotations.Entity;
-import dev.morphia.annotations.Transient;
+import dev.morphia.annotations.*;
+
 import java.util.Map;
 
 @Entity

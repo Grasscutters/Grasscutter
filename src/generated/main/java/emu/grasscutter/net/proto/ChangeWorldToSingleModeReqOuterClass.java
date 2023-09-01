@@ -20,8 +20,8 @@ public final class ChangeWorldToSingleModeReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 3445
-   * Obf: HCIHPLMCEFF
+   * CmdId: 23683
+   * Obf: DBLNBBNCINO
    * </pre>
    *
    * Protobuf type {@code ChangeWorldToSingleModeReq}
@@ -246,8 +246,8 @@ public final class ChangeWorldToSingleModeReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 3445
-     * Obf: HCIHPLMCEFF
+     * CmdId: 23683
+     * Obf: DBLNBBNCINO
      * </pre>
      *
      * Protobuf type {@code ChangeWorldToSingleModeReq}

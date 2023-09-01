@@ -19,27 +19,27 @@ public final class StartRogueEliteCellChallengeRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 cell_id = 5;</code>
+     * <code>uint32 cell_id = 11;</code>
      * @return The cellId.
      */
     int getCellId();
 
     /**
-     * <code>uint32 dungeon_id = 7;</code>
+     * <code>uint32 dungeon_id = 1;</code>
      * @return The dungeonId.
      */
     int getDungeonId();
 
     /**
-     * <code>int32 retcode = 14;</code>
+     * <code>int32 retcode = 10;</code>
      * @return The retcode.
      */
     int getRetcode();
   }
   /**
    * <pre>
-   * CmdId: 8515
-   * Obf: JMJMCDKIAGM
+   * CmdId: 9589
+   * Obf: OENHEPNBPEF
    * </pre>
    *
    * Protobuf type {@code StartRogueEliteCellChallengeRsp}
@@ -86,19 +86,19 @@ public final class StartRogueEliteCellChallengeRspOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
-
-              cellId_ = input.readUInt32();
-              break;
-            }
-            case 56: {
+            case 8: {
 
               dungeonId_ = input.readUInt32();
               break;
             }
-            case 112: {
+            case 80: {
 
               retcode_ = input.readInt32();
+              break;
+            }
+            case 88: {
+
+              cellId_ = input.readUInt32();
               break;
             }
             default: {
@@ -133,10 +133,10 @@ public final class StartRogueEliteCellChallengeRspOuterClass {
               emu.grasscutter.net.proto.StartRogueEliteCellChallengeRspOuterClass.StartRogueEliteCellChallengeRsp.class, emu.grasscutter.net.proto.StartRogueEliteCellChallengeRspOuterClass.StartRogueEliteCellChallengeRsp.Builder.class);
     }
 
-    public static final int CELL_ID_FIELD_NUMBER = 5;
+    public static final int CELL_ID_FIELD_NUMBER = 11;
     private int cellId_;
     /**
-     * <code>uint32 cell_id = 5;</code>
+     * <code>uint32 cell_id = 11;</code>
      * @return The cellId.
      */
     @java.lang.Override
@@ -144,10 +144,10 @@ public final class StartRogueEliteCellChallengeRspOuterClass {
       return cellId_;
     }
 
-    public static final int DUNGEON_ID_FIELD_NUMBER = 7;
+    public static final int DUNGEON_ID_FIELD_NUMBER = 1;
     private int dungeonId_;
     /**
-     * <code>uint32 dungeon_id = 7;</code>
+     * <code>uint32 dungeon_id = 1;</code>
      * @return The dungeonId.
      */
     @java.lang.Override
@@ -155,10 +155,10 @@ public final class StartRogueEliteCellChallengeRspOuterClass {
       return dungeonId_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 14;
+    public static final int RETCODE_FIELD_NUMBER = 10;
     private int retcode_;
     /**
-     * <code>int32 retcode = 14;</code>
+     * <code>int32 retcode = 10;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -180,14 +180,14 @@ public final class StartRogueEliteCellChallengeRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (cellId_ != 0) {
-        output.writeUInt32(5, cellId_);
-      }
       if (dungeonId_ != 0) {
-        output.writeUInt32(7, dungeonId_);
+        output.writeUInt32(1, dungeonId_);
       }
       if (retcode_ != 0) {
-        output.writeInt32(14, retcode_);
+        output.writeInt32(10, retcode_);
+      }
+      if (cellId_ != 0) {
+        output.writeUInt32(11, cellId_);
       }
       unknownFields.writeTo(output);
     }
@@ -198,17 +198,17 @@ public final class StartRogueEliteCellChallengeRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (cellId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, cellId_);
-      }
       if (dungeonId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, dungeonId_);
+          .computeUInt32Size(1, dungeonId_);
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(14, retcode_);
+          .computeInt32Size(10, retcode_);
+      }
+      if (cellId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(11, cellId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -345,8 +345,8 @@ public final class StartRogueEliteCellChallengeRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8515
-     * Obf: JMJMCDKIAGM
+     * CmdId: 9589
+     * Obf: OENHEPNBPEF
      * </pre>
      *
      * Protobuf type {@code StartRogueEliteCellChallengeRsp}
@@ -509,7 +509,7 @@ public final class StartRogueEliteCellChallengeRspOuterClass {
 
       private int cellId_ ;
       /**
-       * <code>uint32 cell_id = 5;</code>
+       * <code>uint32 cell_id = 11;</code>
        * @return The cellId.
        */
       @java.lang.Override
@@ -517,7 +517,7 @@ public final class StartRogueEliteCellChallengeRspOuterClass {
         return cellId_;
       }
       /**
-       * <code>uint32 cell_id = 5;</code>
+       * <code>uint32 cell_id = 11;</code>
        * @param value The cellId to set.
        * @return This builder for chaining.
        */
@@ -528,7 +528,7 @@ public final class StartRogueEliteCellChallengeRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 cell_id = 5;</code>
+       * <code>uint32 cell_id = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearCellId() {
@@ -540,7 +540,7 @@ public final class StartRogueEliteCellChallengeRspOuterClass {
 
       private int dungeonId_ ;
       /**
-       * <code>uint32 dungeon_id = 7;</code>
+       * <code>uint32 dungeon_id = 1;</code>
        * @return The dungeonId.
        */
       @java.lang.Override
@@ -548,7 +548,7 @@ public final class StartRogueEliteCellChallengeRspOuterClass {
         return dungeonId_;
       }
       /**
-       * <code>uint32 dungeon_id = 7;</code>
+       * <code>uint32 dungeon_id = 1;</code>
        * @param value The dungeonId to set.
        * @return This builder for chaining.
        */
@@ -559,7 +559,7 @@ public final class StartRogueEliteCellChallengeRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 dungeon_id = 7;</code>
+       * <code>uint32 dungeon_id = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearDungeonId() {
@@ -571,7 +571,7 @@ public final class StartRogueEliteCellChallengeRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 14;</code>
+       * <code>int32 retcode = 10;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -579,7 +579,7 @@ public final class StartRogueEliteCellChallengeRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 14;</code>
+       * <code>int32 retcode = 10;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -590,7 +590,7 @@ public final class StartRogueEliteCellChallengeRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 14;</code>
+       * <code>int32 retcode = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -668,8 +668,8 @@ public final class StartRogueEliteCellChallengeRspOuterClass {
     java.lang.String[] descriptorData = {
       "\n%StartRogueEliteCellChallengeRsp.proto\"" +
       "W\n\037StartRogueEliteCellChallengeRsp\022\017\n\007ce" +
-      "ll_id\030\005 \001(\r\022\022\n\ndungeon_id\030\007 \001(\r\022\017\n\007retco" +
-      "de\030\016 \001(\005B\033\n\031emu.grasscutter.net.protob\006p" +
+      "ll_id\030\013 \001(\r\022\022\n\ndungeon_id\030\001 \001(\r\022\017\n\007retco" +
+      "de\030\n \001(\005B\033\n\031emu.grasscutter.net.protob\006p" +
       "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

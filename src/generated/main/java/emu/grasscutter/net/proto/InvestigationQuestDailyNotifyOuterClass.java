@@ -20,8 +20,8 @@ public final class InvestigationQuestDailyNotifyOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 1908
-   * Obf: BJMGDOLKAAL
+   * CmdId: 22478
+   * Obf: GKGAJBBBCDI
    * </pre>
    *
    * Protobuf type {@code InvestigationQuestDailyNotify}
@@ -246,8 +246,8 @@ public final class InvestigationQuestDailyNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 1908
-     * Obf: BJMGDOLKAAL
+     * CmdId: 22478
+     * Obf: GKGAJBBBCDI
      * </pre>
      *
      * Protobuf type {@code InvestigationQuestDailyNotify}

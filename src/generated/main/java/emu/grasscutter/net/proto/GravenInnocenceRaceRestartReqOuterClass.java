@@ -26,8 +26,8 @@ public final class GravenInnocenceRaceRestartReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 22570
-   * Obf: HIMHAELIHDM
+   * CmdId: 29239
+   * Obf: MFLNJOPOIIC
    * </pre>
    *
    * Protobuf type {@code GravenInnocenceRaceRestartReq}
@@ -279,8 +279,8 @@ public final class GravenInnocenceRaceRestartReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 22570
-     * Obf: HIMHAELIHDM
+     * CmdId: 29239
+     * Obf: MFLNJOPOIIC
      * </pre>
      *
      * Protobuf type {@code GravenInnocenceRaceRestartReq}

@@ -19,21 +19,21 @@ public final class GetSignInRewardReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 reward_day = 7;</code>
-     * @return The rewardDay.
-     */
-    int getRewardDay();
-
-    /**
-     * <code>uint32 schedule_id = 15;</code>
+     * <code>uint32 schedule_id = 7;</code>
      * @return The scheduleId.
      */
     int getScheduleId();
+
+    /**
+     * <code>uint32 reward_day = 2;</code>
+     * @return The rewardDay.
+     */
+    int getRewardDay();
   }
   /**
    * <pre>
-   * CmdId: 2555
-   * Obf: FNEBDDNALAP
+   * CmdId: 25930
+   * Obf: PBAPIOJOJFK
    * </pre>
    *
    * Protobuf type {@code GetSignInRewardReq}
@@ -80,12 +80,12 @@ public final class GetSignInRewardReqOuterClass {
             case 0:
               done = true;
               break;
-            case 56: {
+            case 16: {
 
               rewardDay_ = input.readUInt32();
               break;
             }
-            case 120: {
+            case 56: {
 
               scheduleId_ = input.readUInt32();
               break;
@@ -122,26 +122,26 @@ public final class GetSignInRewardReqOuterClass {
               emu.grasscutter.net.proto.GetSignInRewardReqOuterClass.GetSignInRewardReq.class, emu.grasscutter.net.proto.GetSignInRewardReqOuterClass.GetSignInRewardReq.Builder.class);
     }
 
-    public static final int REWARD_DAY_FIELD_NUMBER = 7;
-    private int rewardDay_;
-    /**
-     * <code>uint32 reward_day = 7;</code>
-     * @return The rewardDay.
-     */
-    @java.lang.Override
-    public int getRewardDay() {
-      return rewardDay_;
-    }
-
-    public static final int SCHEDULE_ID_FIELD_NUMBER = 15;
+    public static final int SCHEDULE_ID_FIELD_NUMBER = 7;
     private int scheduleId_;
     /**
-     * <code>uint32 schedule_id = 15;</code>
+     * <code>uint32 schedule_id = 7;</code>
      * @return The scheduleId.
      */
     @java.lang.Override
     public int getScheduleId() {
       return scheduleId_;
+    }
+
+    public static final int REWARD_DAY_FIELD_NUMBER = 2;
+    private int rewardDay_;
+    /**
+     * <code>uint32 reward_day = 2;</code>
+     * @return The rewardDay.
+     */
+    @java.lang.Override
+    public int getRewardDay() {
+      return rewardDay_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -159,10 +159,10 @@ public final class GetSignInRewardReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (rewardDay_ != 0) {
-        output.writeUInt32(7, rewardDay_);
+        output.writeUInt32(2, rewardDay_);
       }
       if (scheduleId_ != 0) {
-        output.writeUInt32(15, scheduleId_);
+        output.writeUInt32(7, scheduleId_);
       }
       unknownFields.writeTo(output);
     }
@@ -175,11 +175,11 @@ public final class GetSignInRewardReqOuterClass {
       size = 0;
       if (rewardDay_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, rewardDay_);
+          .computeUInt32Size(2, rewardDay_);
       }
       if (scheduleId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, scheduleId_);
+          .computeUInt32Size(7, scheduleId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -196,10 +196,10 @@ public final class GetSignInRewardReqOuterClass {
       }
       emu.grasscutter.net.proto.GetSignInRewardReqOuterClass.GetSignInRewardReq other = (emu.grasscutter.net.proto.GetSignInRewardReqOuterClass.GetSignInRewardReq) obj;
 
-      if (getRewardDay()
-          != other.getRewardDay()) return false;
       if (getScheduleId()
           != other.getScheduleId()) return false;
+      if (getRewardDay()
+          != other.getRewardDay()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -211,10 +211,10 @@ public final class GetSignInRewardReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + REWARD_DAY_FIELD_NUMBER;
-      hash = (53 * hash) + getRewardDay();
       hash = (37 * hash) + SCHEDULE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getScheduleId();
+      hash = (37 * hash) + REWARD_DAY_FIELD_NUMBER;
+      hash = (53 * hash) + getRewardDay();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -312,8 +312,8 @@ public final class GetSignInRewardReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2555
-     * Obf: FNEBDDNALAP
+     * CmdId: 25930
+     * Obf: PBAPIOJOJFK
      * </pre>
      *
      * Protobuf type {@code GetSignInRewardReq}
@@ -353,9 +353,9 @@ public final class GetSignInRewardReqOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        rewardDay_ = 0;
-
         scheduleId_ = 0;
+
+        rewardDay_ = 0;
 
         return this;
       }
@@ -383,8 +383,8 @@ public final class GetSignInRewardReqOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.GetSignInRewardReqOuterClass.GetSignInRewardReq buildPartial() {
         emu.grasscutter.net.proto.GetSignInRewardReqOuterClass.GetSignInRewardReq result = new emu.grasscutter.net.proto.GetSignInRewardReqOuterClass.GetSignInRewardReq(this);
-        result.rewardDay_ = rewardDay_;
         result.scheduleId_ = scheduleId_;
+        result.rewardDay_ = rewardDay_;
         onBuilt();
         return result;
       }
@@ -433,11 +433,11 @@ public final class GetSignInRewardReqOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.GetSignInRewardReqOuterClass.GetSignInRewardReq other) {
         if (other == emu.grasscutter.net.proto.GetSignInRewardReqOuterClass.GetSignInRewardReq.getDefaultInstance()) return this;
-        if (other.getRewardDay() != 0) {
-          setRewardDay(other.getRewardDay());
-        }
         if (other.getScheduleId() != 0) {
           setScheduleId(other.getScheduleId());
+        }
+        if (other.getRewardDay() != 0) {
+          setRewardDay(other.getRewardDay());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -468,40 +468,9 @@ public final class GetSignInRewardReqOuterClass {
         return this;
       }
 
-      private int rewardDay_ ;
-      /**
-       * <code>uint32 reward_day = 7;</code>
-       * @return The rewardDay.
-       */
-      @java.lang.Override
-      public int getRewardDay() {
-        return rewardDay_;
-      }
-      /**
-       * <code>uint32 reward_day = 7;</code>
-       * @param value The rewardDay to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRewardDay(int value) {
-        
-        rewardDay_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 reward_day = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRewardDay() {
-        
-        rewardDay_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int scheduleId_ ;
       /**
-       * <code>uint32 schedule_id = 15;</code>
+       * <code>uint32 schedule_id = 7;</code>
        * @return The scheduleId.
        */
       @java.lang.Override
@@ -509,7 +478,7 @@ public final class GetSignInRewardReqOuterClass {
         return scheduleId_;
       }
       /**
-       * <code>uint32 schedule_id = 15;</code>
+       * <code>uint32 schedule_id = 7;</code>
        * @param value The scheduleId to set.
        * @return This builder for chaining.
        */
@@ -520,12 +489,43 @@ public final class GetSignInRewardReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 schedule_id = 15;</code>
+       * <code>uint32 schedule_id = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearScheduleId() {
         
         scheduleId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int rewardDay_ ;
+      /**
+       * <code>uint32 reward_day = 2;</code>
+       * @return The rewardDay.
+       */
+      @java.lang.Override
+      public int getRewardDay() {
+        return rewardDay_;
+      }
+      /**
+       * <code>uint32 reward_day = 2;</code>
+       * @param value The rewardDay to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRewardDay(int value) {
+        
+        rewardDay_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 reward_day = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRewardDay() {
+        
+        rewardDay_ = 0;
         onChanged();
         return this;
       }
@@ -597,8 +597,8 @@ public final class GetSignInRewardReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\030GetSignInRewardReq.proto\"=\n\022GetSignInR" +
-      "ewardReq\022\022\n\nreward_day\030\007 \001(\r\022\023\n\013schedule" +
-      "_id\030\017 \001(\rB\033\n\031emu.grasscutter.net.protob\006" +
+      "ewardReq\022\023\n\013schedule_id\030\007 \001(\r\022\022\n\nreward_" +
+      "day\030\002 \001(\rB\033\n\031emu.grasscutter.net.protob\006" +
       "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -610,7 +610,7 @@ public final class GetSignInRewardReqOuterClass {
     internal_static_GetSignInRewardReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GetSignInRewardReq_descriptor,
-        new java.lang.String[] { "RewardDay", "ScheduleId", });
+        new java.lang.String[] { "ScheduleId", "RewardDay", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

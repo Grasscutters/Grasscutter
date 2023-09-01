@@ -32,7 +32,7 @@ public final class TrialAvatarGrantRecordOuterClass {
   }
   /**
    * <pre>
-   * Obf: GCFNFGACEOP
+   * Obf: KBNIDGMCKMD
    * </pre>
    *
    * Protobuf type {@code TrialAvatarGrantRecord}
@@ -545,7 +545,7 @@ public final class TrialAvatarGrantRecordOuterClass {
     }
     /**
      * <pre>
-     * Obf: GCFNFGACEOP
+     * Obf: KBNIDGMCKMD
      * </pre>
      *
      * Protobuf type {@code TrialAvatarGrantRecord}

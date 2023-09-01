@@ -19,15 +19,15 @@ public final class LunaRiteHintPointReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 area_id = 5;</code>
+     * <code>uint32 area_id = 6;</code>
      * @return The areaId.
      */
     int getAreaId();
   }
   /**
    * <pre>
-   * CmdId: 8302
-   * Obf: NGAIENINPOA
+   * CmdId: 9947
+   * Obf: CNCLAALAIML
    * </pre>
    *
    * Protobuf type {@code LunaRiteHintPointReq}
@@ -74,7 +74,7 @@ public final class LunaRiteHintPointReqOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
+            case 48: {
 
               areaId_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class LunaRiteHintPointReqOuterClass {
               emu.grasscutter.net.proto.LunaRiteHintPointReqOuterClass.LunaRiteHintPointReq.class, emu.grasscutter.net.proto.LunaRiteHintPointReqOuterClass.LunaRiteHintPointReq.Builder.class);
     }
 
-    public static final int AREA_ID_FIELD_NUMBER = 5;
+    public static final int AREA_ID_FIELD_NUMBER = 6;
     private int areaId_;
     /**
-     * <code>uint32 area_id = 5;</code>
+     * <code>uint32 area_id = 6;</code>
      * @return The areaId.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class LunaRiteHintPointReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (areaId_ != 0) {
-        output.writeUInt32(5, areaId_);
+        output.writeUInt32(6, areaId_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class LunaRiteHintPointReqOuterClass {
       size = 0;
       if (areaId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, areaId_);
+          .computeUInt32Size(6, areaId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class LunaRiteHintPointReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8302
-     * Obf: NGAIENINPOA
+     * CmdId: 9947
+     * Obf: CNCLAALAIML
      * </pre>
      *
      * Protobuf type {@code LunaRiteHintPointReq}
@@ -431,7 +431,7 @@ public final class LunaRiteHintPointReqOuterClass {
 
       private int areaId_ ;
       /**
-       * <code>uint32 area_id = 5;</code>
+       * <code>uint32 area_id = 6;</code>
        * @return The areaId.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class LunaRiteHintPointReqOuterClass {
         return areaId_;
       }
       /**
-       * <code>uint32 area_id = 5;</code>
+       * <code>uint32 area_id = 6;</code>
        * @param value The areaId to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class LunaRiteHintPointReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 area_id = 5;</code>
+       * <code>uint32 area_id = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearAreaId() {
@@ -527,7 +527,7 @@ public final class LunaRiteHintPointReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\032LunaRiteHintPointReq.proto\"\'\n\024LunaRite" +
-      "HintPointReq\022\017\n\007area_id\030\005 \001(\rB\033\n\031emu.gra" +
+      "HintPointReq\022\017\n\007area_id\030\006 \001(\rB\033\n\031emu.gra" +
       "sscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

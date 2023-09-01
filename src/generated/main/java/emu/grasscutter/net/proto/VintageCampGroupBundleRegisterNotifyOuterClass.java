@@ -19,15 +19,15 @@ public final class VintageCampGroupBundleRegisterNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 group_bundle_id = 13;</code>
+     * <code>uint32 group_bundle_id = 6;</code>
      * @return The groupBundleId.
      */
     int getGroupBundleId();
   }
   /**
    * <pre>
-   * CmdId: 21817
-   * Obf: CJNIMNCGHML
+   * CmdId: 21244
+   * Obf: AONPFFPGJBK
    * </pre>
    *
    * Protobuf type {@code VintageCampGroupBundleRegisterNotify}
@@ -74,7 +74,7 @@ public final class VintageCampGroupBundleRegisterNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 104: {
+            case 48: {
 
               groupBundleId_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class VintageCampGroupBundleRegisterNotifyOuterClass {
               emu.grasscutter.net.proto.VintageCampGroupBundleRegisterNotifyOuterClass.VintageCampGroupBundleRegisterNotify.class, emu.grasscutter.net.proto.VintageCampGroupBundleRegisterNotifyOuterClass.VintageCampGroupBundleRegisterNotify.Builder.class);
     }
 
-    public static final int GROUP_BUNDLE_ID_FIELD_NUMBER = 13;
+    public static final int GROUP_BUNDLE_ID_FIELD_NUMBER = 6;
     private int groupBundleId_;
     /**
-     * <code>uint32 group_bundle_id = 13;</code>
+     * <code>uint32 group_bundle_id = 6;</code>
      * @return The groupBundleId.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class VintageCampGroupBundleRegisterNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (groupBundleId_ != 0) {
-        output.writeUInt32(13, groupBundleId_);
+        output.writeUInt32(6, groupBundleId_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class VintageCampGroupBundleRegisterNotifyOuterClass {
       size = 0;
       if (groupBundleId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, groupBundleId_);
+          .computeUInt32Size(6, groupBundleId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class VintageCampGroupBundleRegisterNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 21817
-     * Obf: CJNIMNCGHML
+     * CmdId: 21244
+     * Obf: AONPFFPGJBK
      * </pre>
      *
      * Protobuf type {@code VintageCampGroupBundleRegisterNotify}
@@ -431,7 +431,7 @@ public final class VintageCampGroupBundleRegisterNotifyOuterClass {
 
       private int groupBundleId_ ;
       /**
-       * <code>uint32 group_bundle_id = 13;</code>
+       * <code>uint32 group_bundle_id = 6;</code>
        * @return The groupBundleId.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class VintageCampGroupBundleRegisterNotifyOuterClass {
         return groupBundleId_;
       }
       /**
-       * <code>uint32 group_bundle_id = 13;</code>
+       * <code>uint32 group_bundle_id = 6;</code>
        * @param value The groupBundleId to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class VintageCampGroupBundleRegisterNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 group_bundle_id = 13;</code>
+       * <code>uint32 group_bundle_id = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearGroupBundleId() {
@@ -528,7 +528,7 @@ public final class VintageCampGroupBundleRegisterNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n*VintageCampGroupBundleRegisterNotify.p" +
       "roto\"?\n$VintageCampGroupBundleRegisterNo" +
-      "tify\022\027\n\017group_bundle_id\030\r \001(\rB\033\n\031emu.gra" +
+      "tify\022\027\n\017group_bundle_id\030\006 \001(\rB\033\n\031emu.gra" +
       "sscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

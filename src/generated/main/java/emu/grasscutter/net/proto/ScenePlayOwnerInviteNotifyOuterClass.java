@@ -19,27 +19,27 @@ public final class ScenePlayOwnerInviteNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 invite_cd = 1;</code>
-     * @return The inviteCd.
-     */
-    int getInviteCd();
-
-    /**
-     * <code>uint32 play_id = 2;</code>
+     * <code>uint32 play_id = 5;</code>
      * @return The playId.
      */
     int getPlayId();
 
     /**
-     * <code>bool is_remain_reward = 8;</code>
+     * <code>bool is_remain_reward = 10;</code>
      * @return The isRemainReward.
      */
     boolean getIsRemainReward();
+
+    /**
+     * <code>uint32 invite_cd = 12;</code>
+     * @return The inviteCd.
+     */
+    int getInviteCd();
   }
   /**
    * <pre>
-   * CmdId: 4398
-   * Obf: CDGILLOLAKA
+   * CmdId: 7175
+   * Obf: MGJKDALKMIK
    * </pre>
    *
    * Protobuf type {@code ScenePlayOwnerInviteNotify}
@@ -86,19 +86,19 @@ public final class ScenePlayOwnerInviteNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
-
-              inviteCd_ = input.readUInt32();
-              break;
-            }
-            case 16: {
+            case 40: {
 
               playId_ = input.readUInt32();
               break;
             }
-            case 64: {
+            case 80: {
 
               isRemainReward_ = input.readBool();
+              break;
+            }
+            case 96: {
+
+              inviteCd_ = input.readUInt32();
               break;
             }
             default: {
@@ -133,21 +133,10 @@ public final class ScenePlayOwnerInviteNotifyOuterClass {
               emu.grasscutter.net.proto.ScenePlayOwnerInviteNotifyOuterClass.ScenePlayOwnerInviteNotify.class, emu.grasscutter.net.proto.ScenePlayOwnerInviteNotifyOuterClass.ScenePlayOwnerInviteNotify.Builder.class);
     }
 
-    public static final int INVITE_CD_FIELD_NUMBER = 1;
-    private int inviteCd_;
-    /**
-     * <code>uint32 invite_cd = 1;</code>
-     * @return The inviteCd.
-     */
-    @java.lang.Override
-    public int getInviteCd() {
-      return inviteCd_;
-    }
-
-    public static final int PLAY_ID_FIELD_NUMBER = 2;
+    public static final int PLAY_ID_FIELD_NUMBER = 5;
     private int playId_;
     /**
-     * <code>uint32 play_id = 2;</code>
+     * <code>uint32 play_id = 5;</code>
      * @return The playId.
      */
     @java.lang.Override
@@ -155,15 +144,26 @@ public final class ScenePlayOwnerInviteNotifyOuterClass {
       return playId_;
     }
 
-    public static final int IS_REMAIN_REWARD_FIELD_NUMBER = 8;
+    public static final int IS_REMAIN_REWARD_FIELD_NUMBER = 10;
     private boolean isRemainReward_;
     /**
-     * <code>bool is_remain_reward = 8;</code>
+     * <code>bool is_remain_reward = 10;</code>
      * @return The isRemainReward.
      */
     @java.lang.Override
     public boolean getIsRemainReward() {
       return isRemainReward_;
+    }
+
+    public static final int INVITE_CD_FIELD_NUMBER = 12;
+    private int inviteCd_;
+    /**
+     * <code>uint32 invite_cd = 12;</code>
+     * @return The inviteCd.
+     */
+    @java.lang.Override
+    public int getInviteCd() {
+      return inviteCd_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -180,14 +180,14 @@ public final class ScenePlayOwnerInviteNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (inviteCd_ != 0) {
-        output.writeUInt32(1, inviteCd_);
-      }
       if (playId_ != 0) {
-        output.writeUInt32(2, playId_);
+        output.writeUInt32(5, playId_);
       }
       if (isRemainReward_ != false) {
-        output.writeBool(8, isRemainReward_);
+        output.writeBool(10, isRemainReward_);
+      }
+      if (inviteCd_ != 0) {
+        output.writeUInt32(12, inviteCd_);
       }
       unknownFields.writeTo(output);
     }
@@ -198,17 +198,17 @@ public final class ScenePlayOwnerInviteNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (inviteCd_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, inviteCd_);
-      }
       if (playId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, playId_);
+          .computeUInt32Size(5, playId_);
       }
       if (isRemainReward_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(8, isRemainReward_);
+          .computeBoolSize(10, isRemainReward_);
+      }
+      if (inviteCd_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(12, inviteCd_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -225,12 +225,12 @@ public final class ScenePlayOwnerInviteNotifyOuterClass {
       }
       emu.grasscutter.net.proto.ScenePlayOwnerInviteNotifyOuterClass.ScenePlayOwnerInviteNotify other = (emu.grasscutter.net.proto.ScenePlayOwnerInviteNotifyOuterClass.ScenePlayOwnerInviteNotify) obj;
 
-      if (getInviteCd()
-          != other.getInviteCd()) return false;
       if (getPlayId()
           != other.getPlayId()) return false;
       if (getIsRemainReward()
           != other.getIsRemainReward()) return false;
+      if (getInviteCd()
+          != other.getInviteCd()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -242,13 +242,13 @@ public final class ScenePlayOwnerInviteNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + INVITE_CD_FIELD_NUMBER;
-      hash = (53 * hash) + getInviteCd();
       hash = (37 * hash) + PLAY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getPlayId();
       hash = (37 * hash) + IS_REMAIN_REWARD_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsRemainReward());
+      hash = (37 * hash) + INVITE_CD_FIELD_NUMBER;
+      hash = (53 * hash) + getInviteCd();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -346,8 +346,8 @@ public final class ScenePlayOwnerInviteNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4398
-     * Obf: CDGILLOLAKA
+     * CmdId: 7175
+     * Obf: MGJKDALKMIK
      * </pre>
      *
      * Protobuf type {@code ScenePlayOwnerInviteNotify}
@@ -387,11 +387,11 @@ public final class ScenePlayOwnerInviteNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        inviteCd_ = 0;
-
         playId_ = 0;
 
         isRemainReward_ = false;
+
+        inviteCd_ = 0;
 
         return this;
       }
@@ -419,9 +419,9 @@ public final class ScenePlayOwnerInviteNotifyOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.ScenePlayOwnerInviteNotifyOuterClass.ScenePlayOwnerInviteNotify buildPartial() {
         emu.grasscutter.net.proto.ScenePlayOwnerInviteNotifyOuterClass.ScenePlayOwnerInviteNotify result = new emu.grasscutter.net.proto.ScenePlayOwnerInviteNotifyOuterClass.ScenePlayOwnerInviteNotify(this);
-        result.inviteCd_ = inviteCd_;
         result.playId_ = playId_;
         result.isRemainReward_ = isRemainReward_;
+        result.inviteCd_ = inviteCd_;
         onBuilt();
         return result;
       }
@@ -470,14 +470,14 @@ public final class ScenePlayOwnerInviteNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.ScenePlayOwnerInviteNotifyOuterClass.ScenePlayOwnerInviteNotify other) {
         if (other == emu.grasscutter.net.proto.ScenePlayOwnerInviteNotifyOuterClass.ScenePlayOwnerInviteNotify.getDefaultInstance()) return this;
-        if (other.getInviteCd() != 0) {
-          setInviteCd(other.getInviteCd());
-        }
         if (other.getPlayId() != 0) {
           setPlayId(other.getPlayId());
         }
         if (other.getIsRemainReward() != false) {
           setIsRemainReward(other.getIsRemainReward());
+        }
+        if (other.getInviteCd() != 0) {
+          setInviteCd(other.getInviteCd());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -508,40 +508,9 @@ public final class ScenePlayOwnerInviteNotifyOuterClass {
         return this;
       }
 
-      private int inviteCd_ ;
-      /**
-       * <code>uint32 invite_cd = 1;</code>
-       * @return The inviteCd.
-       */
-      @java.lang.Override
-      public int getInviteCd() {
-        return inviteCd_;
-      }
-      /**
-       * <code>uint32 invite_cd = 1;</code>
-       * @param value The inviteCd to set.
-       * @return This builder for chaining.
-       */
-      public Builder setInviteCd(int value) {
-        
-        inviteCd_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 invite_cd = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearInviteCd() {
-        
-        inviteCd_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int playId_ ;
       /**
-       * <code>uint32 play_id = 2;</code>
+       * <code>uint32 play_id = 5;</code>
        * @return The playId.
        */
       @java.lang.Override
@@ -549,7 +518,7 @@ public final class ScenePlayOwnerInviteNotifyOuterClass {
         return playId_;
       }
       /**
-       * <code>uint32 play_id = 2;</code>
+       * <code>uint32 play_id = 5;</code>
        * @param value The playId to set.
        * @return This builder for chaining.
        */
@@ -560,7 +529,7 @@ public final class ScenePlayOwnerInviteNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 play_id = 2;</code>
+       * <code>uint32 play_id = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearPlayId() {
@@ -572,7 +541,7 @@ public final class ScenePlayOwnerInviteNotifyOuterClass {
 
       private boolean isRemainReward_ ;
       /**
-       * <code>bool is_remain_reward = 8;</code>
+       * <code>bool is_remain_reward = 10;</code>
        * @return The isRemainReward.
        */
       @java.lang.Override
@@ -580,7 +549,7 @@ public final class ScenePlayOwnerInviteNotifyOuterClass {
         return isRemainReward_;
       }
       /**
-       * <code>bool is_remain_reward = 8;</code>
+       * <code>bool is_remain_reward = 10;</code>
        * @param value The isRemainReward to set.
        * @return This builder for chaining.
        */
@@ -591,12 +560,43 @@ public final class ScenePlayOwnerInviteNotifyOuterClass {
         return this;
       }
       /**
-       * <code>bool is_remain_reward = 8;</code>
+       * <code>bool is_remain_reward = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsRemainReward() {
         
         isRemainReward_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int inviteCd_ ;
+      /**
+       * <code>uint32 invite_cd = 12;</code>
+       * @return The inviteCd.
+       */
+      @java.lang.Override
+      public int getInviteCd() {
+        return inviteCd_;
+      }
+      /**
+       * <code>uint32 invite_cd = 12;</code>
+       * @param value The inviteCd to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInviteCd(int value) {
+        
+        inviteCd_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 invite_cd = 12;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearInviteCd() {
+        
+        inviteCd_ = 0;
         onChanged();
         return this;
       }
@@ -668,9 +668,9 @@ public final class ScenePlayOwnerInviteNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n ScenePlayOwnerInviteNotify.proto\"Z\n\032Sc" +
-      "enePlayOwnerInviteNotify\022\021\n\tinvite_cd\030\001 " +
-      "\001(\r\022\017\n\007play_id\030\002 \001(\r\022\030\n\020is_remain_reward" +
-      "\030\010 \001(\010B\033\n\031emu.grasscutter.net.protob\006pro" +
+      "enePlayOwnerInviteNotify\022\017\n\007play_id\030\005 \001(" +
+      "\r\022\030\n\020is_remain_reward\030\n \001(\010\022\021\n\tinvite_cd" +
+      "\030\014 \001(\rB\033\n\031emu.grasscutter.net.protob\006pro" +
       "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -682,7 +682,7 @@ public final class ScenePlayOwnerInviteNotifyOuterClass {
     internal_static_ScenePlayOwnerInviteNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ScenePlayOwnerInviteNotify_descriptor,
-        new java.lang.String[] { "InviteCd", "PlayId", "IsRemainReward", });
+        new java.lang.String[] { "PlayId", "IsRemainReward", "InviteCd", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

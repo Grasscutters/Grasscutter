@@ -1,20 +1,19 @@
 package emu.grasscutter.server.packet.send;
 
-import static emu.grasscutter.config.Configuration.GAME_INFO;
-import static emu.grasscutter.config.Configuration.lr;
-
 import com.google.protobuf.ByteString;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.Grasscutter.ServerRunMode;
-import emu.grasscutter.net.packet.BasePacket;
-import emu.grasscutter.net.packet.PacketOpcodes;
+import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.PlayerLoginRspOuterClass.PlayerLoginRsp;
 import emu.grasscutter.net.proto.QueryCurrRegionHttpRspOuterClass;
 import emu.grasscutter.net.proto.RegionInfoOuterClass.RegionInfo;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.http.dispatch.RegionHandler;
 import emu.grasscutter.utils.Crypto;
+
 import java.util.Objects;
+
+import static emu.grasscutter.config.Configuration.*;
 
 public class PacketPlayerLoginRsp extends BasePacket {
 
@@ -64,9 +63,9 @@ public class PacketPlayerLoginRsp extends BasePacket {
                         .setResVersionConfig(info.getResVersionConfig())
                         .setClientVersionSuffix(info.getClientVersionSuffix())
                         .setClientSilenceVersionSuffix(info.getClientSilenceVersionSuffix())
-                        .setIsScOpen(false)
+                        // .setIsScOpen(false)
                         // .setScInfo(ByteString.copyFrom(new byte[] {}))
-                        .setRegisterCps("mihoyo")
+                        // .setRegisterCps("mihoyo")
                         .setCountryCode("US")
                         .build();
 

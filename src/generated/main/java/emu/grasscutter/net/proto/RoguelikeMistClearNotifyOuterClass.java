@@ -20,8 +20,8 @@ public final class RoguelikeMistClearNotifyOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 8708
-   * Obf: NFABAKHMLGP
+   * CmdId: 27988
+   * Obf: GJEHOHLDKCF
    * </pre>
    *
    * Protobuf type {@code RoguelikeMistClearNotify}
@@ -246,8 +246,8 @@ public final class RoguelikeMistClearNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8708
-     * Obf: NFABAKHMLGP
+     * CmdId: 27988
+     * Obf: GJEHOHLDKCF
      * </pre>
      *
      * Protobuf type {@code RoguelikeMistClearNotify}

@@ -1,7 +1,6 @@
 package emu.grasscutter.scripts.serializer;
 
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public interface Serializer {
 

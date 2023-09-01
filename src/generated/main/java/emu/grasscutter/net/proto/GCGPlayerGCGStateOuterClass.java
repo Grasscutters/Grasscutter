@@ -19,26 +19,26 @@ public final class GCGPlayerGCGStateOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool LAKOPLONGKL = 13;</code>
-     * @return The lAKOPLONGKL.
+     * <code>bool BBPAKEDIMOK = 1;</code>
+     * @return The bBPAKEDIMOK.
      */
-    boolean getLAKOPLONGKL();
+    boolean getBBPAKEDIMOK();
 
     /**
-     * <code>uint32 uid = 14;</code>
+     * <code>uint32 uid = 4;</code>
      * @return The uid.
      */
     int getUid();
 
     /**
-     * <code>bool MLIOBMAMIAI = 1;</code>
-     * @return The mLIOBMAMIAI.
+     * <code>bool FPKMCAHAFIF = 15;</code>
+     * @return The fPKMCAHAFIF.
      */
-    boolean getMLIOBMAMIAI();
+    boolean getFPKMCAHAFIF();
   }
   /**
    * <pre>
-   * Obf: BENCNDAAMML
+   * Obf: INLADMODIGO
    * </pre>
    *
    * Protobuf type {@code GCGPlayerGCGState}
@@ -87,17 +87,17 @@ public final class GCGPlayerGCGStateOuterClass {
               break;
             case 8: {
 
-              mLIOBMAMIAI_ = input.readBool();
+              bBPAKEDIMOK_ = input.readBool();
               break;
             }
-            case 104: {
-
-              lAKOPLONGKL_ = input.readBool();
-              break;
-            }
-            case 112: {
+            case 32: {
 
               uid_ = input.readUInt32();
+              break;
+            }
+            case 120: {
+
+              fPKMCAHAFIF_ = input.readBool();
               break;
             }
             default: {
@@ -132,21 +132,21 @@ public final class GCGPlayerGCGStateOuterClass {
               emu.grasscutter.net.proto.GCGPlayerGCGStateOuterClass.GCGPlayerGCGState.class, emu.grasscutter.net.proto.GCGPlayerGCGStateOuterClass.GCGPlayerGCGState.Builder.class);
     }
 
-    public static final int LAKOPLONGKL_FIELD_NUMBER = 13;
-    private boolean lAKOPLONGKL_;
+    public static final int BBPAKEDIMOK_FIELD_NUMBER = 1;
+    private boolean bBPAKEDIMOK_;
     /**
-     * <code>bool LAKOPLONGKL = 13;</code>
-     * @return The lAKOPLONGKL.
+     * <code>bool BBPAKEDIMOK = 1;</code>
+     * @return The bBPAKEDIMOK.
      */
     @java.lang.Override
-    public boolean getLAKOPLONGKL() {
-      return lAKOPLONGKL_;
+    public boolean getBBPAKEDIMOK() {
+      return bBPAKEDIMOK_;
     }
 
-    public static final int UID_FIELD_NUMBER = 14;
+    public static final int UID_FIELD_NUMBER = 4;
     private int uid_;
     /**
-     * <code>uint32 uid = 14;</code>
+     * <code>uint32 uid = 4;</code>
      * @return The uid.
      */
     @java.lang.Override
@@ -154,15 +154,15 @@ public final class GCGPlayerGCGStateOuterClass {
       return uid_;
     }
 
-    public static final int MLIOBMAMIAI_FIELD_NUMBER = 1;
-    private boolean mLIOBMAMIAI_;
+    public static final int FPKMCAHAFIF_FIELD_NUMBER = 15;
+    private boolean fPKMCAHAFIF_;
     /**
-     * <code>bool MLIOBMAMIAI = 1;</code>
-     * @return The mLIOBMAMIAI.
+     * <code>bool FPKMCAHAFIF = 15;</code>
+     * @return The fPKMCAHAFIF.
      */
     @java.lang.Override
-    public boolean getMLIOBMAMIAI() {
-      return mLIOBMAMIAI_;
+    public boolean getFPKMCAHAFIF() {
+      return fPKMCAHAFIF_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -179,14 +179,14 @@ public final class GCGPlayerGCGStateOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (mLIOBMAMIAI_ != false) {
-        output.writeBool(1, mLIOBMAMIAI_);
-      }
-      if (lAKOPLONGKL_ != false) {
-        output.writeBool(13, lAKOPLONGKL_);
+      if (bBPAKEDIMOK_ != false) {
+        output.writeBool(1, bBPAKEDIMOK_);
       }
       if (uid_ != 0) {
-        output.writeUInt32(14, uid_);
+        output.writeUInt32(4, uid_);
+      }
+      if (fPKMCAHAFIF_ != false) {
+        output.writeBool(15, fPKMCAHAFIF_);
       }
       unknownFields.writeTo(output);
     }
@@ -197,17 +197,17 @@ public final class GCGPlayerGCGStateOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (mLIOBMAMIAI_ != false) {
+      if (bBPAKEDIMOK_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(1, mLIOBMAMIAI_);
-      }
-      if (lAKOPLONGKL_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(13, lAKOPLONGKL_);
+          .computeBoolSize(1, bBPAKEDIMOK_);
       }
       if (uid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, uid_);
+          .computeUInt32Size(4, uid_);
+      }
+      if (fPKMCAHAFIF_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(15, fPKMCAHAFIF_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -224,12 +224,12 @@ public final class GCGPlayerGCGStateOuterClass {
       }
       emu.grasscutter.net.proto.GCGPlayerGCGStateOuterClass.GCGPlayerGCGState other = (emu.grasscutter.net.proto.GCGPlayerGCGStateOuterClass.GCGPlayerGCGState) obj;
 
-      if (getLAKOPLONGKL()
-          != other.getLAKOPLONGKL()) return false;
+      if (getBBPAKEDIMOK()
+          != other.getBBPAKEDIMOK()) return false;
       if (getUid()
           != other.getUid()) return false;
-      if (getMLIOBMAMIAI()
-          != other.getMLIOBMAMIAI()) return false;
+      if (getFPKMCAHAFIF()
+          != other.getFPKMCAHAFIF()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -241,14 +241,14 @@ public final class GCGPlayerGCGStateOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + LAKOPLONGKL_FIELD_NUMBER;
+      hash = (37 * hash) + BBPAKEDIMOK_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getLAKOPLONGKL());
+          getBBPAKEDIMOK());
       hash = (37 * hash) + UID_FIELD_NUMBER;
       hash = (53 * hash) + getUid();
-      hash = (37 * hash) + MLIOBMAMIAI_FIELD_NUMBER;
+      hash = (37 * hash) + FPKMCAHAFIF_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getMLIOBMAMIAI());
+          getFPKMCAHAFIF());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -346,7 +346,7 @@ public final class GCGPlayerGCGStateOuterClass {
     }
     /**
      * <pre>
-     * Obf: BENCNDAAMML
+     * Obf: INLADMODIGO
      * </pre>
      *
      * Protobuf type {@code GCGPlayerGCGState}
@@ -386,11 +386,11 @@ public final class GCGPlayerGCGStateOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        lAKOPLONGKL_ = false;
+        bBPAKEDIMOK_ = false;
 
         uid_ = 0;
 
-        mLIOBMAMIAI_ = false;
+        fPKMCAHAFIF_ = false;
 
         return this;
       }
@@ -418,9 +418,9 @@ public final class GCGPlayerGCGStateOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.GCGPlayerGCGStateOuterClass.GCGPlayerGCGState buildPartial() {
         emu.grasscutter.net.proto.GCGPlayerGCGStateOuterClass.GCGPlayerGCGState result = new emu.grasscutter.net.proto.GCGPlayerGCGStateOuterClass.GCGPlayerGCGState(this);
-        result.lAKOPLONGKL_ = lAKOPLONGKL_;
+        result.bBPAKEDIMOK_ = bBPAKEDIMOK_;
         result.uid_ = uid_;
-        result.mLIOBMAMIAI_ = mLIOBMAMIAI_;
+        result.fPKMCAHAFIF_ = fPKMCAHAFIF_;
         onBuilt();
         return result;
       }
@@ -469,14 +469,14 @@ public final class GCGPlayerGCGStateOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.GCGPlayerGCGStateOuterClass.GCGPlayerGCGState other) {
         if (other == emu.grasscutter.net.proto.GCGPlayerGCGStateOuterClass.GCGPlayerGCGState.getDefaultInstance()) return this;
-        if (other.getLAKOPLONGKL() != false) {
-          setLAKOPLONGKL(other.getLAKOPLONGKL());
+        if (other.getBBPAKEDIMOK() != false) {
+          setBBPAKEDIMOK(other.getBBPAKEDIMOK());
         }
         if (other.getUid() != 0) {
           setUid(other.getUid());
         }
-        if (other.getMLIOBMAMIAI() != false) {
-          setMLIOBMAMIAI(other.getMLIOBMAMIAI());
+        if (other.getFPKMCAHAFIF() != false) {
+          setFPKMCAHAFIF(other.getFPKMCAHAFIF());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -507,40 +507,40 @@ public final class GCGPlayerGCGStateOuterClass {
         return this;
       }
 
-      private boolean lAKOPLONGKL_ ;
+      private boolean bBPAKEDIMOK_ ;
       /**
-       * <code>bool LAKOPLONGKL = 13;</code>
-       * @return The lAKOPLONGKL.
+       * <code>bool BBPAKEDIMOK = 1;</code>
+       * @return The bBPAKEDIMOK.
        */
       @java.lang.Override
-      public boolean getLAKOPLONGKL() {
-        return lAKOPLONGKL_;
+      public boolean getBBPAKEDIMOK() {
+        return bBPAKEDIMOK_;
       }
       /**
-       * <code>bool LAKOPLONGKL = 13;</code>
-       * @param value The lAKOPLONGKL to set.
+       * <code>bool BBPAKEDIMOK = 1;</code>
+       * @param value The bBPAKEDIMOK to set.
        * @return This builder for chaining.
        */
-      public Builder setLAKOPLONGKL(boolean value) {
+      public Builder setBBPAKEDIMOK(boolean value) {
         
-        lAKOPLONGKL_ = value;
+        bBPAKEDIMOK_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bool LAKOPLONGKL = 13;</code>
+       * <code>bool BBPAKEDIMOK = 1;</code>
        * @return This builder for chaining.
        */
-      public Builder clearLAKOPLONGKL() {
+      public Builder clearBBPAKEDIMOK() {
         
-        lAKOPLONGKL_ = false;
+        bBPAKEDIMOK_ = false;
         onChanged();
         return this;
       }
 
       private int uid_ ;
       /**
-       * <code>uint32 uid = 14;</code>
+       * <code>uint32 uid = 4;</code>
        * @return The uid.
        */
       @java.lang.Override
@@ -548,7 +548,7 @@ public final class GCGPlayerGCGStateOuterClass {
         return uid_;
       }
       /**
-       * <code>uint32 uid = 14;</code>
+       * <code>uint32 uid = 4;</code>
        * @param value The uid to set.
        * @return This builder for chaining.
        */
@@ -559,7 +559,7 @@ public final class GCGPlayerGCGStateOuterClass {
         return this;
       }
       /**
-       * <code>uint32 uid = 14;</code>
+       * <code>uint32 uid = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearUid() {
@@ -569,33 +569,33 @@ public final class GCGPlayerGCGStateOuterClass {
         return this;
       }
 
-      private boolean mLIOBMAMIAI_ ;
+      private boolean fPKMCAHAFIF_ ;
       /**
-       * <code>bool MLIOBMAMIAI = 1;</code>
-       * @return The mLIOBMAMIAI.
+       * <code>bool FPKMCAHAFIF = 15;</code>
+       * @return The fPKMCAHAFIF.
        */
       @java.lang.Override
-      public boolean getMLIOBMAMIAI() {
-        return mLIOBMAMIAI_;
+      public boolean getFPKMCAHAFIF() {
+        return fPKMCAHAFIF_;
       }
       /**
-       * <code>bool MLIOBMAMIAI = 1;</code>
-       * @param value The mLIOBMAMIAI to set.
+       * <code>bool FPKMCAHAFIF = 15;</code>
+       * @param value The fPKMCAHAFIF to set.
        * @return This builder for chaining.
        */
-      public Builder setMLIOBMAMIAI(boolean value) {
+      public Builder setFPKMCAHAFIF(boolean value) {
         
-        mLIOBMAMIAI_ = value;
+        fPKMCAHAFIF_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bool MLIOBMAMIAI = 1;</code>
+       * <code>bool FPKMCAHAFIF = 15;</code>
        * @return This builder for chaining.
        */
-      public Builder clearMLIOBMAMIAI() {
+      public Builder clearFPKMCAHAFIF() {
         
-        mLIOBMAMIAI_ = false;
+        fPKMCAHAFIF_ = false;
         onChanged();
         return this;
       }
@@ -667,8 +667,8 @@ public final class GCGPlayerGCGStateOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\027GCGPlayerGCGState.proto\"J\n\021GCGPlayerGC" +
-      "GState\022\023\n\013LAKOPLONGKL\030\r \001(\010\022\013\n\003uid\030\016 \001(\r" +
-      "\022\023\n\013MLIOBMAMIAI\030\001 \001(\010B\033\n\031emu.grasscutter" +
+      "GState\022\023\n\013BBPAKEDIMOK\030\001 \001(\010\022\013\n\003uid\030\004 \001(\r" +
+      "\022\023\n\013FPKMCAHAFIF\030\017 \001(\010B\033\n\031emu.grasscutter" +
       ".net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -680,7 +680,7 @@ public final class GCGPlayerGCGStateOuterClass {
     internal_static_GCGPlayerGCGState_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GCGPlayerGCGState_descriptor,
-        new java.lang.String[] { "LAKOPLONGKL", "Uid", "MLIOBMAMIAI", });
+        new java.lang.String[] { "BBPAKEDIMOK", "Uid", "FPKMCAHAFIF", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

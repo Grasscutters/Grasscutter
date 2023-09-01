@@ -20,8 +20,8 @@ public final class BrickBreakerSetReadyReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 5357
-   * Obf: PPOLKPHMMPJ
+   * CmdId: 3864
+   * Obf: LMKDFOBJHKN
    * </pre>
    *
    * Protobuf type {@code BrickBreakerSetReadyReq}
@@ -246,8 +246,8 @@ public final class BrickBreakerSetReadyReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 5357
-     * Obf: PPOLKPHMMPJ
+     * CmdId: 3864
+     * Obf: LMKDFOBJHKN
      * </pre>
      *
      * Protobuf type {@code BrickBreakerSetReadyReq}

@@ -19,15 +19,15 @@ public final class MistTrialDunegonFailNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 dungeon_id = 12;</code>
+     * <code>int32 dungeon_id = 14;</code>
      * @return The dungeonId.
      */
     int getDungeonId();
   }
   /**
    * <pre>
-   * CmdId: 8015
-   * Obf: BKAPHGDLCNH
+   * CmdId: 9722
+   * Obf: IJCEGNADCHN
    * </pre>
    *
    * Protobuf type {@code MistTrialDunegonFailNotify}
@@ -74,7 +74,7 @@ public final class MistTrialDunegonFailNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 96: {
+            case 112: {
 
               dungeonId_ = input.readInt32();
               break;
@@ -111,10 +111,10 @@ public final class MistTrialDunegonFailNotifyOuterClass {
               emu.grasscutter.net.proto.MistTrialDunegonFailNotifyOuterClass.MistTrialDunegonFailNotify.class, emu.grasscutter.net.proto.MistTrialDunegonFailNotifyOuterClass.MistTrialDunegonFailNotify.Builder.class);
     }
 
-    public static final int DUNGEON_ID_FIELD_NUMBER = 12;
+    public static final int DUNGEON_ID_FIELD_NUMBER = 14;
     private int dungeonId_;
     /**
-     * <code>int32 dungeon_id = 12;</code>
+     * <code>int32 dungeon_id = 14;</code>
      * @return The dungeonId.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class MistTrialDunegonFailNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (dungeonId_ != 0) {
-        output.writeInt32(12, dungeonId_);
+        output.writeInt32(14, dungeonId_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class MistTrialDunegonFailNotifyOuterClass {
       size = 0;
       if (dungeonId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(12, dungeonId_);
+          .computeInt32Size(14, dungeonId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class MistTrialDunegonFailNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8015
-     * Obf: BKAPHGDLCNH
+     * CmdId: 9722
+     * Obf: IJCEGNADCHN
      * </pre>
      *
      * Protobuf type {@code MistTrialDunegonFailNotify}
@@ -431,7 +431,7 @@ public final class MistTrialDunegonFailNotifyOuterClass {
 
       private int dungeonId_ ;
       /**
-       * <code>int32 dungeon_id = 12;</code>
+       * <code>int32 dungeon_id = 14;</code>
        * @return The dungeonId.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class MistTrialDunegonFailNotifyOuterClass {
         return dungeonId_;
       }
       /**
-       * <code>int32 dungeon_id = 12;</code>
+       * <code>int32 dungeon_id = 14;</code>
        * @param value The dungeonId to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class MistTrialDunegonFailNotifyOuterClass {
         return this;
       }
       /**
-       * <code>int32 dungeon_id = 12;</code>
+       * <code>int32 dungeon_id = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearDungeonId() {
@@ -527,7 +527,7 @@ public final class MistTrialDunegonFailNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n MistTrialDunegonFailNotify.proto\"0\n\032Mi" +
-      "stTrialDunegonFailNotify\022\022\n\ndungeon_id\030\014" +
+      "stTrialDunegonFailNotify\022\022\n\ndungeon_id\030\016" +
       " \001(\005B\033\n\031emu.grasscutter.net.protob\006proto" +
       "3"
     };

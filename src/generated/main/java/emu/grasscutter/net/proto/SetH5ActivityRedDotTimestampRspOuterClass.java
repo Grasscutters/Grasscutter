@@ -26,8 +26,8 @@ public final class SetH5ActivityRedDotTimestampRspOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 5676
-   * Obf: ENJMOBCPNCM
+   * CmdId: 22816
+   * Obf: KMNNFEJJCAK
    * </pre>
    *
    * Protobuf type {@code SetH5ActivityRedDotTimestampRsp}
@@ -279,8 +279,8 @@ public final class SetH5ActivityRedDotTimestampRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 5676
-     * Obf: ENJMOBCPNCM
+     * CmdId: 22816
+     * Obf: KMNNFEJJCAK
      * </pre>
      *
      * Protobuf type {@code SetH5ActivityRedDotTimestampRsp}

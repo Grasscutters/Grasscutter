@@ -1,10 +1,7 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.net.packet.BasePacket;
-import emu.grasscutter.net.packet.PacketOpcodes;
-import emu.grasscutter.net.proto.MusicGameSettleReqOuterClass;
-import emu.grasscutter.net.proto.MusicGameSettleRspOuterClass;
-import emu.grasscutter.net.proto.RetcodeOuterClass;
+import emu.grasscutter.net.packet.*;
+import emu.grasscutter.net.proto.*;
 
 public class PacketMusicGameSettleRsp extends BasePacket {
 

@@ -20,8 +20,8 @@ public final class DungeonRestartReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 923
-   * Obf: PEJFOCNHIPI
+   * CmdId: 29252
+   * Obf: FFNEOOIKHIA
    * </pre>
    *
    * Protobuf type {@code DungeonRestartReq}
@@ -246,8 +246,8 @@ public final class DungeonRestartReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 923
-     * Obf: PEJFOCNHIPI
+     * CmdId: 29252
+     * Obf: FFNEOOIKHIA
      * </pre>
      *
      * Protobuf type {@code DungeonRestartReq}

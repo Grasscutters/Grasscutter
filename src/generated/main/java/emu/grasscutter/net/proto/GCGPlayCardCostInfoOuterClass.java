@@ -19,38 +19,38 @@ public final class GCGPlayCardCostInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 card_id = 7;</code>
-     * @return The cardId.
-     */
-    int getCardId();
-
-    /**
-     * <code>repeated .Uint32Pair cost_map = 15;</code>
+     * <code>repeated .Uint32Pair cost_map = 7;</code>
      */
     java.util.List<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair> 
         getCostMapList();
     /**
-     * <code>repeated .Uint32Pair cost_map = 15;</code>
+     * <code>repeated .Uint32Pair cost_map = 7;</code>
      */
     emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair getCostMap(int index);
     /**
-     * <code>repeated .Uint32Pair cost_map = 15;</code>
+     * <code>repeated .Uint32Pair cost_map = 7;</code>
      */
     int getCostMapCount();
     /**
-     * <code>repeated .Uint32Pair cost_map = 15;</code>
+     * <code>repeated .Uint32Pair cost_map = 7;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder> 
         getCostMapOrBuilderList();
     /**
-     * <code>repeated .Uint32Pair cost_map = 15;</code>
+     * <code>repeated .Uint32Pair cost_map = 7;</code>
      */
     emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder getCostMapOrBuilder(
         int index);
+
+    /**
+     * <code>uint32 card_id = 11;</code>
+     * @return The cardId.
+     */
+    int getCardId();
   }
   /**
    * <pre>
-   * Obf: ENEBDGIGECG
+   * Obf: COFFEJPLHGB
    * </pre>
    *
    * Protobuf type {@code GCGPlayCardCostInfo}
@@ -99,18 +99,18 @@ public final class GCGPlayCardCostInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 56: {
-
-              cardId_ = input.readUInt32();
-              break;
-            }
-            case 122: {
+            case 58: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 costMap_ = new java.util.ArrayList<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair>();
                 mutable_bitField0_ |= 0x00000001;
               }
               costMap_.add(
                   input.readMessage(emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.parser(), extensionRegistry));
+              break;
+            }
+            case 88: {
+
+              cardId_ = input.readUInt32();
               break;
             }
             default: {
@@ -148,28 +148,17 @@ public final class GCGPlayCardCostInfoOuterClass {
               emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo.class, emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo.Builder.class);
     }
 
-    public static final int CARD_ID_FIELD_NUMBER = 7;
-    private int cardId_;
-    /**
-     * <code>uint32 card_id = 7;</code>
-     * @return The cardId.
-     */
-    @java.lang.Override
-    public int getCardId() {
-      return cardId_;
-    }
-
-    public static final int COST_MAP_FIELD_NUMBER = 15;
+    public static final int COST_MAP_FIELD_NUMBER = 7;
     private java.util.List<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair> costMap_;
     /**
-     * <code>repeated .Uint32Pair cost_map = 15;</code>
+     * <code>repeated .Uint32Pair cost_map = 7;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair> getCostMapList() {
       return costMap_;
     }
     /**
-     * <code>repeated .Uint32Pair cost_map = 15;</code>
+     * <code>repeated .Uint32Pair cost_map = 7;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder> 
@@ -177,26 +166,37 @@ public final class GCGPlayCardCostInfoOuterClass {
       return costMap_;
     }
     /**
-     * <code>repeated .Uint32Pair cost_map = 15;</code>
+     * <code>repeated .Uint32Pair cost_map = 7;</code>
      */
     @java.lang.Override
     public int getCostMapCount() {
       return costMap_.size();
     }
     /**
-     * <code>repeated .Uint32Pair cost_map = 15;</code>
+     * <code>repeated .Uint32Pair cost_map = 7;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair getCostMap(int index) {
       return costMap_.get(index);
     }
     /**
-     * <code>repeated .Uint32Pair cost_map = 15;</code>
+     * <code>repeated .Uint32Pair cost_map = 7;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder getCostMapOrBuilder(
         int index) {
       return costMap_.get(index);
+    }
+
+    public static final int CARD_ID_FIELD_NUMBER = 11;
+    private int cardId_;
+    /**
+     * <code>uint32 card_id = 11;</code>
+     * @return The cardId.
+     */
+    @java.lang.Override
+    public int getCardId() {
+      return cardId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -213,11 +213,11 @@ public final class GCGPlayCardCostInfoOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (cardId_ != 0) {
-        output.writeUInt32(7, cardId_);
-      }
       for (int i = 0; i < costMap_.size(); i++) {
-        output.writeMessage(15, costMap_.get(i));
+        output.writeMessage(7, costMap_.get(i));
+      }
+      if (cardId_ != 0) {
+        output.writeUInt32(11, cardId_);
       }
       unknownFields.writeTo(output);
     }
@@ -228,13 +228,13 @@ public final class GCGPlayCardCostInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (cardId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, cardId_);
-      }
       for (int i = 0; i < costMap_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(15, costMap_.get(i));
+          .computeMessageSize(7, costMap_.get(i));
+      }
+      if (cardId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(11, cardId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -251,10 +251,10 @@ public final class GCGPlayCardCostInfoOuterClass {
       }
       emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo other = (emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo) obj;
 
-      if (getCardId()
-          != other.getCardId()) return false;
       if (!getCostMapList()
           .equals(other.getCostMapList())) return false;
+      if (getCardId()
+          != other.getCardId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -266,12 +266,12 @@ public final class GCGPlayCardCostInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + CARD_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getCardId();
       if (getCostMapCount() > 0) {
         hash = (37 * hash) + COST_MAP_FIELD_NUMBER;
         hash = (53 * hash) + getCostMapList().hashCode();
       }
+      hash = (37 * hash) + CARD_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getCardId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -369,7 +369,7 @@ public final class GCGPlayCardCostInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: ENEBDGIGECG
+     * Obf: COFFEJPLHGB
      * </pre>
      *
      * Protobuf type {@code GCGPlayCardCostInfo}
@@ -410,14 +410,14 @@ public final class GCGPlayCardCostInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        cardId_ = 0;
-
         if (costMapBuilder_ == null) {
           costMap_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           costMapBuilder_.clear();
         }
+        cardId_ = 0;
+
         return this;
       }
 
@@ -445,7 +445,6 @@ public final class GCGPlayCardCostInfoOuterClass {
       public emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo buildPartial() {
         emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo result = new emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo(this);
         int from_bitField0_ = bitField0_;
-        result.cardId_ = cardId_;
         if (costMapBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             costMap_ = java.util.Collections.unmodifiableList(costMap_);
@@ -455,6 +454,7 @@ public final class GCGPlayCardCostInfoOuterClass {
         } else {
           result.costMap_ = costMapBuilder_.build();
         }
+        result.cardId_ = cardId_;
         onBuilt();
         return result;
       }
@@ -503,9 +503,6 @@ public final class GCGPlayCardCostInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo other) {
         if (other == emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo.getDefaultInstance()) return this;
-        if (other.getCardId() != 0) {
-          setCardId(other.getCardId());
-        }
         if (costMapBuilder_ == null) {
           if (!other.costMap_.isEmpty()) {
             if (costMap_.isEmpty()) {
@@ -531,6 +528,9 @@ public final class GCGPlayCardCostInfoOuterClass {
               costMapBuilder_.addAllMessages(other.costMap_);
             }
           }
+        }
+        if (other.getCardId() != 0) {
+          setCardId(other.getCardId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -562,37 +562,6 @@ public final class GCGPlayCardCostInfoOuterClass {
       }
       private int bitField0_;
 
-      private int cardId_ ;
-      /**
-       * <code>uint32 card_id = 7;</code>
-       * @return The cardId.
-       */
-      @java.lang.Override
-      public int getCardId() {
-        return cardId_;
-      }
-      /**
-       * <code>uint32 card_id = 7;</code>
-       * @param value The cardId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCardId(int value) {
-        
-        cardId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 card_id = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCardId() {
-        
-        cardId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private java.util.List<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair> costMap_ =
         java.util.Collections.emptyList();
       private void ensureCostMapIsMutable() {
@@ -606,7 +575,7 @@ public final class GCGPlayCardCostInfoOuterClass {
           emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder> costMapBuilder_;
 
       /**
-       * <code>repeated .Uint32Pair cost_map = 15;</code>
+       * <code>repeated .Uint32Pair cost_map = 7;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair> getCostMapList() {
         if (costMapBuilder_ == null) {
@@ -616,7 +585,7 @@ public final class GCGPlayCardCostInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .Uint32Pair cost_map = 15;</code>
+       * <code>repeated .Uint32Pair cost_map = 7;</code>
        */
       public int getCostMapCount() {
         if (costMapBuilder_ == null) {
@@ -626,7 +595,7 @@ public final class GCGPlayCardCostInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .Uint32Pair cost_map = 15;</code>
+       * <code>repeated .Uint32Pair cost_map = 7;</code>
        */
       public emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair getCostMap(int index) {
         if (costMapBuilder_ == null) {
@@ -636,7 +605,7 @@ public final class GCGPlayCardCostInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .Uint32Pair cost_map = 15;</code>
+       * <code>repeated .Uint32Pair cost_map = 7;</code>
        */
       public Builder setCostMap(
           int index, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair value) {
@@ -653,7 +622,7 @@ public final class GCGPlayCardCostInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Uint32Pair cost_map = 15;</code>
+       * <code>repeated .Uint32Pair cost_map = 7;</code>
        */
       public Builder setCostMap(
           int index, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder builderForValue) {
@@ -667,7 +636,7 @@ public final class GCGPlayCardCostInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Uint32Pair cost_map = 15;</code>
+       * <code>repeated .Uint32Pair cost_map = 7;</code>
        */
       public Builder addCostMap(emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair value) {
         if (costMapBuilder_ == null) {
@@ -683,7 +652,7 @@ public final class GCGPlayCardCostInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Uint32Pair cost_map = 15;</code>
+       * <code>repeated .Uint32Pair cost_map = 7;</code>
        */
       public Builder addCostMap(
           int index, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair value) {
@@ -700,7 +669,7 @@ public final class GCGPlayCardCostInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Uint32Pair cost_map = 15;</code>
+       * <code>repeated .Uint32Pair cost_map = 7;</code>
        */
       public Builder addCostMap(
           emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder builderForValue) {
@@ -714,7 +683,7 @@ public final class GCGPlayCardCostInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Uint32Pair cost_map = 15;</code>
+       * <code>repeated .Uint32Pair cost_map = 7;</code>
        */
       public Builder addCostMap(
           int index, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder builderForValue) {
@@ -728,7 +697,7 @@ public final class GCGPlayCardCostInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Uint32Pair cost_map = 15;</code>
+       * <code>repeated .Uint32Pair cost_map = 7;</code>
        */
       public Builder addAllCostMap(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair> values) {
@@ -743,7 +712,7 @@ public final class GCGPlayCardCostInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Uint32Pair cost_map = 15;</code>
+       * <code>repeated .Uint32Pair cost_map = 7;</code>
        */
       public Builder clearCostMap() {
         if (costMapBuilder_ == null) {
@@ -756,7 +725,7 @@ public final class GCGPlayCardCostInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Uint32Pair cost_map = 15;</code>
+       * <code>repeated .Uint32Pair cost_map = 7;</code>
        */
       public Builder removeCostMap(int index) {
         if (costMapBuilder_ == null) {
@@ -769,14 +738,14 @@ public final class GCGPlayCardCostInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Uint32Pair cost_map = 15;</code>
+       * <code>repeated .Uint32Pair cost_map = 7;</code>
        */
       public emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder getCostMapBuilder(
           int index) {
         return getCostMapFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .Uint32Pair cost_map = 15;</code>
+       * <code>repeated .Uint32Pair cost_map = 7;</code>
        */
       public emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder getCostMapOrBuilder(
           int index) {
@@ -786,7 +755,7 @@ public final class GCGPlayCardCostInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .Uint32Pair cost_map = 15;</code>
+       * <code>repeated .Uint32Pair cost_map = 7;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder> 
            getCostMapOrBuilderList() {
@@ -797,14 +766,14 @@ public final class GCGPlayCardCostInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .Uint32Pair cost_map = 15;</code>
+       * <code>repeated .Uint32Pair cost_map = 7;</code>
        */
       public emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder addCostMapBuilder() {
         return getCostMapFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.getDefaultInstance());
       }
       /**
-       * <code>repeated .Uint32Pair cost_map = 15;</code>
+       * <code>repeated .Uint32Pair cost_map = 7;</code>
        */
       public emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder addCostMapBuilder(
           int index) {
@@ -812,7 +781,7 @@ public final class GCGPlayCardCostInfoOuterClass {
             index, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.getDefaultInstance());
       }
       /**
-       * <code>repeated .Uint32Pair cost_map = 15;</code>
+       * <code>repeated .Uint32Pair cost_map = 7;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder> 
            getCostMapBuilderList() {
@@ -831,6 +800,37 @@ public final class GCGPlayCardCostInfoOuterClass {
           costMap_ = null;
         }
         return costMapBuilder_;
+      }
+
+      private int cardId_ ;
+      /**
+       * <code>uint32 card_id = 11;</code>
+       * @return The cardId.
+       */
+      @java.lang.Override
+      public int getCardId() {
+        return cardId_;
+      }
+      /**
+       * <code>uint32 card_id = 11;</code>
+       * @param value The cardId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCardId(int value) {
+        
+        cardId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 card_id = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCardId() {
+        
+        cardId_ = 0;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -900,8 +900,8 @@ public final class GCGPlayCardCostInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\031GCGPlayCardCostInfo.proto\032\020Uint32Pair." +
-      "proto\"E\n\023GCGPlayCardCostInfo\022\017\n\007card_id\030" +
-      "\007 \001(\r\022\035\n\010cost_map\030\017 \003(\0132\013.Uint32PairB\033\n\031" +
+      "proto\"E\n\023GCGPlayCardCostInfo\022\035\n\010cost_map" +
+      "\030\007 \003(\0132\013.Uint32Pair\022\017\n\007card_id\030\013 \001(\rB\033\n\031" +
       "emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -914,7 +914,7 @@ public final class GCGPlayCardCostInfoOuterClass {
     internal_static_GCGPlayCardCostInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GCGPlayCardCostInfo_descriptor,
-        new java.lang.String[] { "CardId", "CostMap", });
+        new java.lang.String[] { "CostMap", "CardId", });
     emu.grasscutter.net.proto.Uint32PairOuterClass.getDescriptor();
   }
 

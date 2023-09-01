@@ -19,21 +19,21 @@ public final class StoreCustomDungeonReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint64 dungeon_guid = 15;</code>
-     * @return The dungeonGuid.
-     */
-    long getDungeonGuid();
-
-    /**
-     * <code>bool is_cancel_store = 11;</code>
+     * <code>bool is_cancel_store = 1;</code>
      * @return The isCancelStore.
      */
     boolean getIsCancelStore();
+
+    /**
+     * <code>uint64 dungeon_guid = 10;</code>
+     * @return The dungeonGuid.
+     */
+    long getDungeonGuid();
   }
   /**
    * <pre>
-   * CmdId: 6209
-   * Obf: OMEGEFIOLHF
+   * CmdId: 24734
+   * Obf: HPMKDKIAOCI
    * </pre>
    *
    * Protobuf type {@code StoreCustomDungeonReq}
@@ -80,12 +80,12 @@ public final class StoreCustomDungeonReqOuterClass {
             case 0:
               done = true;
               break;
-            case 88: {
+            case 8: {
 
               isCancelStore_ = input.readBool();
               break;
             }
-            case 120: {
+            case 80: {
 
               dungeonGuid_ = input.readUInt64();
               break;
@@ -122,26 +122,26 @@ public final class StoreCustomDungeonReqOuterClass {
               emu.grasscutter.net.proto.StoreCustomDungeonReqOuterClass.StoreCustomDungeonReq.class, emu.grasscutter.net.proto.StoreCustomDungeonReqOuterClass.StoreCustomDungeonReq.Builder.class);
     }
 
-    public static final int DUNGEON_GUID_FIELD_NUMBER = 15;
-    private long dungeonGuid_;
-    /**
-     * <code>uint64 dungeon_guid = 15;</code>
-     * @return The dungeonGuid.
-     */
-    @java.lang.Override
-    public long getDungeonGuid() {
-      return dungeonGuid_;
-    }
-
-    public static final int IS_CANCEL_STORE_FIELD_NUMBER = 11;
+    public static final int IS_CANCEL_STORE_FIELD_NUMBER = 1;
     private boolean isCancelStore_;
     /**
-     * <code>bool is_cancel_store = 11;</code>
+     * <code>bool is_cancel_store = 1;</code>
      * @return The isCancelStore.
      */
     @java.lang.Override
     public boolean getIsCancelStore() {
       return isCancelStore_;
+    }
+
+    public static final int DUNGEON_GUID_FIELD_NUMBER = 10;
+    private long dungeonGuid_;
+    /**
+     * <code>uint64 dungeon_guid = 10;</code>
+     * @return The dungeonGuid.
+     */
+    @java.lang.Override
+    public long getDungeonGuid() {
+      return dungeonGuid_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -159,10 +159,10 @@ public final class StoreCustomDungeonReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (isCancelStore_ != false) {
-        output.writeBool(11, isCancelStore_);
+        output.writeBool(1, isCancelStore_);
       }
       if (dungeonGuid_ != 0L) {
-        output.writeUInt64(15, dungeonGuid_);
+        output.writeUInt64(10, dungeonGuid_);
       }
       unknownFields.writeTo(output);
     }
@@ -175,11 +175,11 @@ public final class StoreCustomDungeonReqOuterClass {
       size = 0;
       if (isCancelStore_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(11, isCancelStore_);
+          .computeBoolSize(1, isCancelStore_);
       }
       if (dungeonGuid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(15, dungeonGuid_);
+          .computeUInt64Size(10, dungeonGuid_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -196,10 +196,10 @@ public final class StoreCustomDungeonReqOuterClass {
       }
       emu.grasscutter.net.proto.StoreCustomDungeonReqOuterClass.StoreCustomDungeonReq other = (emu.grasscutter.net.proto.StoreCustomDungeonReqOuterClass.StoreCustomDungeonReq) obj;
 
-      if (getDungeonGuid()
-          != other.getDungeonGuid()) return false;
       if (getIsCancelStore()
           != other.getIsCancelStore()) return false;
+      if (getDungeonGuid()
+          != other.getDungeonGuid()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -211,12 +211,12 @@ public final class StoreCustomDungeonReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + DUNGEON_GUID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getDungeonGuid());
       hash = (37 * hash) + IS_CANCEL_STORE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsCancelStore());
+      hash = (37 * hash) + DUNGEON_GUID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getDungeonGuid());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -314,8 +314,8 @@ public final class StoreCustomDungeonReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 6209
-     * Obf: OMEGEFIOLHF
+     * CmdId: 24734
+     * Obf: HPMKDKIAOCI
      * </pre>
      *
      * Protobuf type {@code StoreCustomDungeonReq}
@@ -355,9 +355,9 @@ public final class StoreCustomDungeonReqOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        dungeonGuid_ = 0L;
-
         isCancelStore_ = false;
+
+        dungeonGuid_ = 0L;
 
         return this;
       }
@@ -385,8 +385,8 @@ public final class StoreCustomDungeonReqOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.StoreCustomDungeonReqOuterClass.StoreCustomDungeonReq buildPartial() {
         emu.grasscutter.net.proto.StoreCustomDungeonReqOuterClass.StoreCustomDungeonReq result = new emu.grasscutter.net.proto.StoreCustomDungeonReqOuterClass.StoreCustomDungeonReq(this);
-        result.dungeonGuid_ = dungeonGuid_;
         result.isCancelStore_ = isCancelStore_;
+        result.dungeonGuid_ = dungeonGuid_;
         onBuilt();
         return result;
       }
@@ -435,11 +435,11 @@ public final class StoreCustomDungeonReqOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.StoreCustomDungeonReqOuterClass.StoreCustomDungeonReq other) {
         if (other == emu.grasscutter.net.proto.StoreCustomDungeonReqOuterClass.StoreCustomDungeonReq.getDefaultInstance()) return this;
-        if (other.getDungeonGuid() != 0L) {
-          setDungeonGuid(other.getDungeonGuid());
-        }
         if (other.getIsCancelStore() != false) {
           setIsCancelStore(other.getIsCancelStore());
+        }
+        if (other.getDungeonGuid() != 0L) {
+          setDungeonGuid(other.getDungeonGuid());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -470,40 +470,9 @@ public final class StoreCustomDungeonReqOuterClass {
         return this;
       }
 
-      private long dungeonGuid_ ;
-      /**
-       * <code>uint64 dungeon_guid = 15;</code>
-       * @return The dungeonGuid.
-       */
-      @java.lang.Override
-      public long getDungeonGuid() {
-        return dungeonGuid_;
-      }
-      /**
-       * <code>uint64 dungeon_guid = 15;</code>
-       * @param value The dungeonGuid to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDungeonGuid(long value) {
-        
-        dungeonGuid_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 dungeon_guid = 15;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDungeonGuid() {
-        
-        dungeonGuid_ = 0L;
-        onChanged();
-        return this;
-      }
-
       private boolean isCancelStore_ ;
       /**
-       * <code>bool is_cancel_store = 11;</code>
+       * <code>bool is_cancel_store = 1;</code>
        * @return The isCancelStore.
        */
       @java.lang.Override
@@ -511,7 +480,7 @@ public final class StoreCustomDungeonReqOuterClass {
         return isCancelStore_;
       }
       /**
-       * <code>bool is_cancel_store = 11;</code>
+       * <code>bool is_cancel_store = 1;</code>
        * @param value The isCancelStore to set.
        * @return This builder for chaining.
        */
@@ -522,12 +491,43 @@ public final class StoreCustomDungeonReqOuterClass {
         return this;
       }
       /**
-       * <code>bool is_cancel_store = 11;</code>
+       * <code>bool is_cancel_store = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsCancelStore() {
         
         isCancelStore_ = false;
+        onChanged();
+        return this;
+      }
+
+      private long dungeonGuid_ ;
+      /**
+       * <code>uint64 dungeon_guid = 10;</code>
+       * @return The dungeonGuid.
+       */
+      @java.lang.Override
+      public long getDungeonGuid() {
+        return dungeonGuid_;
+      }
+      /**
+       * <code>uint64 dungeon_guid = 10;</code>
+       * @param value The dungeonGuid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDungeonGuid(long value) {
+        
+        dungeonGuid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 dungeon_guid = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDungeonGuid() {
+        
+        dungeonGuid_ = 0L;
         onChanged();
         return this;
       }
@@ -599,8 +599,8 @@ public final class StoreCustomDungeonReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\033StoreCustomDungeonReq.proto\"F\n\025StoreCu" +
-      "stomDungeonReq\022\024\n\014dungeon_guid\030\017 \001(\004\022\027\n\017" +
-      "is_cancel_store\030\013 \001(\010B\033\n\031emu.grasscutter" +
+      "stomDungeonReq\022\027\n\017is_cancel_store\030\001 \001(\010\022" +
+      "\024\n\014dungeon_guid\030\n \001(\004B\033\n\031emu.grasscutter" +
       ".net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -612,7 +612,7 @@ public final class StoreCustomDungeonReqOuterClass {
     internal_static_StoreCustomDungeonReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_StoreCustomDungeonReq_descriptor,
-        new java.lang.String[] { "DungeonGuid", "IsCancelStore", });
+        new java.lang.String[] { "IsCancelStore", "DungeonGuid", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

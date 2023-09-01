@@ -19,83 +19,83 @@ public final class HideAndSeekSettleInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string online_id = 8;</code>
+     * <code>repeated .ExhibitionDisplayInfo card_list = 5;</code>
+     */
+    java.util.List<emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo> 
+        getCardListList();
+    /**
+     * <code>repeated .ExhibitionDisplayInfo card_list = 5;</code>
+     */
+    emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo getCardList(int index);
+    /**
+     * <code>repeated .ExhibitionDisplayInfo card_list = 5;</code>
+     */
+    int getCardListCount();
+    /**
+     * <code>repeated .ExhibitionDisplayInfo card_list = 5;</code>
+     */
+    java.util.List<? extends emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfoOrBuilder> 
+        getCardListOrBuilderList();
+    /**
+     * <code>repeated .ExhibitionDisplayInfo card_list = 5;</code>
+     */
+    emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfoOrBuilder getCardListOrBuilder(
+        int index);
+
+    /**
+     * <code>.ProfilePicture profile_picture = 13;</code>
+     * @return Whether the profilePicture field is set.
+     */
+    boolean hasProfilePicture();
+    /**
+     * <code>.ProfilePicture profile_picture = 13;</code>
+     * @return The profilePicture.
+     */
+    emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture getProfilePicture();
+    /**
+     * <code>.ProfilePicture profile_picture = 13;</code>
+     */
+    emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePictureOrBuilder getProfilePictureOrBuilder();
+
+    /**
+     * <code>string online_id = 7;</code>
      * @return The onlineId.
      */
     java.lang.String getOnlineId();
     /**
-     * <code>string online_id = 8;</code>
+     * <code>string online_id = 7;</code>
      * @return The bytes for onlineId.
      */
     com.google.protobuf.ByteString
         getOnlineIdBytes();
 
     /**
-     * <code>repeated .ExhibitionDisplayInfo card_list = 10;</code>
-     */
-    java.util.List<emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo> 
-        getCardListList();
-    /**
-     * <code>repeated .ExhibitionDisplayInfo card_list = 10;</code>
-     */
-    emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo getCardList(int index);
-    /**
-     * <code>repeated .ExhibitionDisplayInfo card_list = 10;</code>
-     */
-    int getCardListCount();
-    /**
-     * <code>repeated .ExhibitionDisplayInfo card_list = 10;</code>
-     */
-    java.util.List<? extends emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfoOrBuilder> 
-        getCardListOrBuilderList();
-    /**
-     * <code>repeated .ExhibitionDisplayInfo card_list = 10;</code>
-     */
-    emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfoOrBuilder getCardListOrBuilder(
-        int index);
-
-    /**
-     * <code>uint32 uid = 6;</code>
-     * @return The uid.
-     */
-    int getUid();
-
-    /**
-     * <code>uint32 head_image = 4;</code>
-     * @return The headImage.
-     */
-    int getHeadImage();
-
-    /**
-     * <code>string nickname = 14;</code>
+     * <code>string nickname = 10;</code>
      * @return The nickname.
      */
     java.lang.String getNickname();
     /**
-     * <code>string nickname = 14;</code>
+     * <code>string nickname = 10;</code>
      * @return The bytes for nickname.
      */
     com.google.protobuf.ByteString
         getNicknameBytes();
 
     /**
-     * <code>.ProfilePicture profile_picture = 1;</code>
-     * @return Whether the profilePicture field is set.
+     * <code>uint32 uid = 9;</code>
+     * @return The uid.
      */
-    boolean hasProfilePicture();
+    int getUid();
+
     /**
-     * <code>.ProfilePicture profile_picture = 1;</code>
-     * @return The profilePicture.
+     * <code>uint32 head_image = 3;</code>
+     * @return The headImage.
      */
-    emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture getProfilePicture();
-    /**
-     * <code>.ProfilePicture profile_picture = 1;</code>
-     */
-    emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePictureOrBuilder getProfilePictureOrBuilder();
+    int getHeadImage();
   }
   /**
    * <pre>
-   * Obf: LNHNJDPFDOM
+   * Obf: LGCEGKIPNGD
    * </pre>
    *
    * Protobuf type {@code HideAndSeekSettleInfo}
@@ -110,8 +110,8 @@ public final class HideAndSeekSettleInfoOuterClass {
       super(builder);
     }
     private HideAndSeekSettleInfo() {
-      onlineId_ = "";
       cardList_ = java.util.Collections.emptyList();
+      onlineId_ = "";
       nickname_ = "";
     }
 
@@ -146,7 +146,38 @@ public final class HideAndSeekSettleInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 10: {
+            case 24: {
+
+              headImage_ = input.readUInt32();
+              break;
+            }
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                cardList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              cardList_.add(
+                  input.readMessage(emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              onlineId_ = s;
+              break;
+            }
+            case 72: {
+
+              uid_ = input.readUInt32();
+              break;
+            }
+            case 82: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              nickname_ = s;
+              break;
+            }
+            case 106: {
               emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture.Builder subBuilder = null;
               if (profilePicture_ != null) {
                 subBuilder = profilePicture_.toBuilder();
@@ -157,37 +188,6 @@ public final class HideAndSeekSettleInfoOuterClass {
                 profilePicture_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-            case 32: {
-
-              headImage_ = input.readUInt32();
-              break;
-            }
-            case 48: {
-
-              uid_ = input.readUInt32();
-              break;
-            }
-            case 66: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              onlineId_ = s;
-              break;
-            }
-            case 82: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                cardList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              cardList_.add(
-                  input.readMessage(emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo.parser(), extensionRegistry));
-              break;
-            }
-            case 114: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              nickname_ = s;
               break;
             }
             default: {
@@ -225,10 +225,76 @@ public final class HideAndSeekSettleInfoOuterClass {
               emu.grasscutter.net.proto.HideAndSeekSettleInfoOuterClass.HideAndSeekSettleInfo.class, emu.grasscutter.net.proto.HideAndSeekSettleInfoOuterClass.HideAndSeekSettleInfo.Builder.class);
     }
 
-    public static final int ONLINE_ID_FIELD_NUMBER = 8;
+    public static final int CARD_LIST_FIELD_NUMBER = 5;
+    private java.util.List<emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo> cardList_;
+    /**
+     * <code>repeated .ExhibitionDisplayInfo card_list = 5;</code>
+     */
+    @java.lang.Override
+    public java.util.List<emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo> getCardListList() {
+      return cardList_;
+    }
+    /**
+     * <code>repeated .ExhibitionDisplayInfo card_list = 5;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfoOrBuilder> 
+        getCardListOrBuilderList() {
+      return cardList_;
+    }
+    /**
+     * <code>repeated .ExhibitionDisplayInfo card_list = 5;</code>
+     */
+    @java.lang.Override
+    public int getCardListCount() {
+      return cardList_.size();
+    }
+    /**
+     * <code>repeated .ExhibitionDisplayInfo card_list = 5;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo getCardList(int index) {
+      return cardList_.get(index);
+    }
+    /**
+     * <code>repeated .ExhibitionDisplayInfo card_list = 5;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfoOrBuilder getCardListOrBuilder(
+        int index) {
+      return cardList_.get(index);
+    }
+
+    public static final int PROFILE_PICTURE_FIELD_NUMBER = 13;
+    private emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture profilePicture_;
+    /**
+     * <code>.ProfilePicture profile_picture = 13;</code>
+     * @return Whether the profilePicture field is set.
+     */
+    @java.lang.Override
+    public boolean hasProfilePicture() {
+      return profilePicture_ != null;
+    }
+    /**
+     * <code>.ProfilePicture profile_picture = 13;</code>
+     * @return The profilePicture.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture getProfilePicture() {
+      return profilePicture_ == null ? emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture.getDefaultInstance() : profilePicture_;
+    }
+    /**
+     * <code>.ProfilePicture profile_picture = 13;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePictureOrBuilder getProfilePictureOrBuilder() {
+      return getProfilePicture();
+    }
+
+    public static final int ONLINE_ID_FIELD_NUMBER = 7;
     private volatile java.lang.Object onlineId_;
     /**
-     * <code>string online_id = 8;</code>
+     * <code>string online_id = 7;</code>
      * @return The onlineId.
      */
     @java.lang.Override
@@ -245,7 +311,7 @@ public final class HideAndSeekSettleInfoOuterClass {
       }
     }
     /**
-     * <code>string online_id = 8;</code>
+     * <code>string online_id = 7;</code>
      * @return The bytes for onlineId.
      */
     @java.lang.Override
@@ -263,72 +329,10 @@ public final class HideAndSeekSettleInfoOuterClass {
       }
     }
 
-    public static final int CARD_LIST_FIELD_NUMBER = 10;
-    private java.util.List<emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo> cardList_;
-    /**
-     * <code>repeated .ExhibitionDisplayInfo card_list = 10;</code>
-     */
-    @java.lang.Override
-    public java.util.List<emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo> getCardListList() {
-      return cardList_;
-    }
-    /**
-     * <code>repeated .ExhibitionDisplayInfo card_list = 10;</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfoOrBuilder> 
-        getCardListOrBuilderList() {
-      return cardList_;
-    }
-    /**
-     * <code>repeated .ExhibitionDisplayInfo card_list = 10;</code>
-     */
-    @java.lang.Override
-    public int getCardListCount() {
-      return cardList_.size();
-    }
-    /**
-     * <code>repeated .ExhibitionDisplayInfo card_list = 10;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo getCardList(int index) {
-      return cardList_.get(index);
-    }
-    /**
-     * <code>repeated .ExhibitionDisplayInfo card_list = 10;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfoOrBuilder getCardListOrBuilder(
-        int index) {
-      return cardList_.get(index);
-    }
-
-    public static final int UID_FIELD_NUMBER = 6;
-    private int uid_;
-    /**
-     * <code>uint32 uid = 6;</code>
-     * @return The uid.
-     */
-    @java.lang.Override
-    public int getUid() {
-      return uid_;
-    }
-
-    public static final int HEAD_IMAGE_FIELD_NUMBER = 4;
-    private int headImage_;
-    /**
-     * <code>uint32 head_image = 4;</code>
-     * @return The headImage.
-     */
-    @java.lang.Override
-    public int getHeadImage() {
-      return headImage_;
-    }
-
-    public static final int NICKNAME_FIELD_NUMBER = 14;
+    public static final int NICKNAME_FIELD_NUMBER = 10;
     private volatile java.lang.Object nickname_;
     /**
-     * <code>string nickname = 14;</code>
+     * <code>string nickname = 10;</code>
      * @return The nickname.
      */
     @java.lang.Override
@@ -345,7 +349,7 @@ public final class HideAndSeekSettleInfoOuterClass {
       }
     }
     /**
-     * <code>string nickname = 14;</code>
+     * <code>string nickname = 10;</code>
      * @return The bytes for nickname.
      */
     @java.lang.Override
@@ -363,30 +367,26 @@ public final class HideAndSeekSettleInfoOuterClass {
       }
     }
 
-    public static final int PROFILE_PICTURE_FIELD_NUMBER = 1;
-    private emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture profilePicture_;
+    public static final int UID_FIELD_NUMBER = 9;
+    private int uid_;
     /**
-     * <code>.ProfilePicture profile_picture = 1;</code>
-     * @return Whether the profilePicture field is set.
+     * <code>uint32 uid = 9;</code>
+     * @return The uid.
      */
     @java.lang.Override
-    public boolean hasProfilePicture() {
-      return profilePicture_ != null;
+    public int getUid() {
+      return uid_;
     }
+
+    public static final int HEAD_IMAGE_FIELD_NUMBER = 3;
+    private int headImage_;
     /**
-     * <code>.ProfilePicture profile_picture = 1;</code>
-     * @return The profilePicture.
+     * <code>uint32 head_image = 3;</code>
+     * @return The headImage.
      */
     @java.lang.Override
-    public emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture getProfilePicture() {
-      return profilePicture_ == null ? emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture.getDefaultInstance() : profilePicture_;
-    }
-    /**
-     * <code>.ProfilePicture profile_picture = 1;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePictureOrBuilder getProfilePictureOrBuilder() {
-      return getProfilePicture();
+    public int getHeadImage() {
+      return headImage_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -403,23 +403,23 @@ public final class HideAndSeekSettleInfoOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (profilePicture_ != null) {
-        output.writeMessage(1, getProfilePicture());
-      }
       if (headImage_ != 0) {
-        output.writeUInt32(4, headImage_);
-      }
-      if (uid_ != 0) {
-        output.writeUInt32(6, uid_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(onlineId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, onlineId_);
+        output.writeUInt32(3, headImage_);
       }
       for (int i = 0; i < cardList_.size(); i++) {
-        output.writeMessage(10, cardList_.get(i));
+        output.writeMessage(5, cardList_.get(i));
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(onlineId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, onlineId_);
+      }
+      if (uid_ != 0) {
+        output.writeUInt32(9, uid_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nickname_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 14, nickname_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, nickname_);
+      }
+      if (profilePicture_ != null) {
+        output.writeMessage(13, getProfilePicture());
       }
       unknownFields.writeTo(output);
     }
@@ -430,27 +430,27 @@ public final class HideAndSeekSettleInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (profilePicture_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getProfilePicture());
-      }
       if (headImage_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, headImage_);
-      }
-      if (uid_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, uid_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(onlineId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, onlineId_);
+          .computeUInt32Size(3, headImage_);
       }
       for (int i = 0; i < cardList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, cardList_.get(i));
+          .computeMessageSize(5, cardList_.get(i));
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(onlineId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, onlineId_);
+      }
+      if (uid_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(9, uid_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nickname_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, nickname_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, nickname_);
+      }
+      if (profilePicture_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(13, getProfilePicture());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -467,21 +467,21 @@ public final class HideAndSeekSettleInfoOuterClass {
       }
       emu.grasscutter.net.proto.HideAndSeekSettleInfoOuterClass.HideAndSeekSettleInfo other = (emu.grasscutter.net.proto.HideAndSeekSettleInfoOuterClass.HideAndSeekSettleInfo) obj;
 
-      if (!getOnlineId()
-          .equals(other.getOnlineId())) return false;
       if (!getCardListList()
           .equals(other.getCardListList())) return false;
-      if (getUid()
-          != other.getUid()) return false;
-      if (getHeadImage()
-          != other.getHeadImage()) return false;
-      if (!getNickname()
-          .equals(other.getNickname())) return false;
       if (hasProfilePicture() != other.hasProfilePicture()) return false;
       if (hasProfilePicture()) {
         if (!getProfilePicture()
             .equals(other.getProfilePicture())) return false;
       }
+      if (!getOnlineId()
+          .equals(other.getOnlineId())) return false;
+      if (!getNickname()
+          .equals(other.getNickname())) return false;
+      if (getUid()
+          != other.getUid()) return false;
+      if (getHeadImage()
+          != other.getHeadImage()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -493,22 +493,22 @@ public final class HideAndSeekSettleInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ONLINE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getOnlineId().hashCode();
       if (getCardListCount() > 0) {
         hash = (37 * hash) + CARD_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getCardListList().hashCode();
       }
-      hash = (37 * hash) + UID_FIELD_NUMBER;
-      hash = (53 * hash) + getUid();
-      hash = (37 * hash) + HEAD_IMAGE_FIELD_NUMBER;
-      hash = (53 * hash) + getHeadImage();
-      hash = (37 * hash) + NICKNAME_FIELD_NUMBER;
-      hash = (53 * hash) + getNickname().hashCode();
       if (hasProfilePicture()) {
         hash = (37 * hash) + PROFILE_PICTURE_FIELD_NUMBER;
         hash = (53 * hash) + getProfilePicture().hashCode();
       }
+      hash = (37 * hash) + ONLINE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getOnlineId().hashCode();
+      hash = (37 * hash) + NICKNAME_FIELD_NUMBER;
+      hash = (53 * hash) + getNickname().hashCode();
+      hash = (37 * hash) + UID_FIELD_NUMBER;
+      hash = (53 * hash) + getUid();
+      hash = (37 * hash) + HEAD_IMAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getHeadImage();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -606,7 +606,7 @@ public final class HideAndSeekSettleInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: LNHNJDPFDOM
+     * Obf: LGCEGKIPNGD
      * </pre>
      *
      * Protobuf type {@code HideAndSeekSettleInfo}
@@ -647,26 +647,26 @@ public final class HideAndSeekSettleInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        onlineId_ = "";
-
         if (cardListBuilder_ == null) {
           cardList_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           cardListBuilder_.clear();
         }
-        uid_ = 0;
-
-        headImage_ = 0;
-
-        nickname_ = "";
-
         if (profilePictureBuilder_ == null) {
           profilePicture_ = null;
         } else {
           profilePicture_ = null;
           profilePictureBuilder_ = null;
         }
+        onlineId_ = "";
+
+        nickname_ = "";
+
+        uid_ = 0;
+
+        headImage_ = 0;
+
         return this;
       }
 
@@ -694,7 +694,6 @@ public final class HideAndSeekSettleInfoOuterClass {
       public emu.grasscutter.net.proto.HideAndSeekSettleInfoOuterClass.HideAndSeekSettleInfo buildPartial() {
         emu.grasscutter.net.proto.HideAndSeekSettleInfoOuterClass.HideAndSeekSettleInfo result = new emu.grasscutter.net.proto.HideAndSeekSettleInfoOuterClass.HideAndSeekSettleInfo(this);
         int from_bitField0_ = bitField0_;
-        result.onlineId_ = onlineId_;
         if (cardListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             cardList_ = java.util.Collections.unmodifiableList(cardList_);
@@ -704,14 +703,15 @@ public final class HideAndSeekSettleInfoOuterClass {
         } else {
           result.cardList_ = cardListBuilder_.build();
         }
-        result.uid_ = uid_;
-        result.headImage_ = headImage_;
-        result.nickname_ = nickname_;
         if (profilePictureBuilder_ == null) {
           result.profilePicture_ = profilePicture_;
         } else {
           result.profilePicture_ = profilePictureBuilder_.build();
         }
+        result.onlineId_ = onlineId_;
+        result.nickname_ = nickname_;
+        result.uid_ = uid_;
+        result.headImage_ = headImage_;
         onBuilt();
         return result;
       }
@@ -760,10 +760,6 @@ public final class HideAndSeekSettleInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.HideAndSeekSettleInfoOuterClass.HideAndSeekSettleInfo other) {
         if (other == emu.grasscutter.net.proto.HideAndSeekSettleInfoOuterClass.HideAndSeekSettleInfo.getDefaultInstance()) return this;
-        if (!other.getOnlineId().isEmpty()) {
-          onlineId_ = other.onlineId_;
-          onChanged();
-        }
         if (cardListBuilder_ == null) {
           if (!other.cardList_.isEmpty()) {
             if (cardList_.isEmpty()) {
@@ -790,18 +786,22 @@ public final class HideAndSeekSettleInfoOuterClass {
             }
           }
         }
-        if (other.getUid() != 0) {
-          setUid(other.getUid());
+        if (other.hasProfilePicture()) {
+          mergeProfilePicture(other.getProfilePicture());
         }
-        if (other.getHeadImage() != 0) {
-          setHeadImage(other.getHeadImage());
+        if (!other.getOnlineId().isEmpty()) {
+          onlineId_ = other.onlineId_;
+          onChanged();
         }
         if (!other.getNickname().isEmpty()) {
           nickname_ = other.nickname_;
           onChanged();
         }
-        if (other.hasProfilePicture()) {
-          mergeProfilePicture(other.getProfilePicture());
+        if (other.getUid() != 0) {
+          setUid(other.getUid());
+        }
+        if (other.getHeadImage() != 0) {
+          setHeadImage(other.getHeadImage());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -833,82 +833,6 @@ public final class HideAndSeekSettleInfoOuterClass {
       }
       private int bitField0_;
 
-      private java.lang.Object onlineId_ = "";
-      /**
-       * <code>string online_id = 8;</code>
-       * @return The onlineId.
-       */
-      public java.lang.String getOnlineId() {
-        java.lang.Object ref = onlineId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          onlineId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string online_id = 8;</code>
-       * @return The bytes for onlineId.
-       */
-      public com.google.protobuf.ByteString
-          getOnlineIdBytes() {
-        java.lang.Object ref = onlineId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          onlineId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string online_id = 8;</code>
-       * @param value The onlineId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOnlineId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        onlineId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string online_id = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearOnlineId() {
-        
-        onlineId_ = getDefaultInstance().getOnlineId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string online_id = 8;</code>
-       * @param value The bytes for onlineId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOnlineIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        onlineId_ = value;
-        onChanged();
-        return this;
-      }
-
       private java.util.List<emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo> cardList_ =
         java.util.Collections.emptyList();
       private void ensureCardListIsMutable() {
@@ -922,7 +846,7 @@ public final class HideAndSeekSettleInfoOuterClass {
           emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo, emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo.Builder, emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfoOrBuilder> cardListBuilder_;
 
       /**
-       * <code>repeated .ExhibitionDisplayInfo card_list = 10;</code>
+       * <code>repeated .ExhibitionDisplayInfo card_list = 5;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo> getCardListList() {
         if (cardListBuilder_ == null) {
@@ -932,7 +856,7 @@ public final class HideAndSeekSettleInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .ExhibitionDisplayInfo card_list = 10;</code>
+       * <code>repeated .ExhibitionDisplayInfo card_list = 5;</code>
        */
       public int getCardListCount() {
         if (cardListBuilder_ == null) {
@@ -942,7 +866,7 @@ public final class HideAndSeekSettleInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .ExhibitionDisplayInfo card_list = 10;</code>
+       * <code>repeated .ExhibitionDisplayInfo card_list = 5;</code>
        */
       public emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo getCardList(int index) {
         if (cardListBuilder_ == null) {
@@ -952,7 +876,7 @@ public final class HideAndSeekSettleInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .ExhibitionDisplayInfo card_list = 10;</code>
+       * <code>repeated .ExhibitionDisplayInfo card_list = 5;</code>
        */
       public Builder setCardList(
           int index, emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo value) {
@@ -969,7 +893,7 @@ public final class HideAndSeekSettleInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ExhibitionDisplayInfo card_list = 10;</code>
+       * <code>repeated .ExhibitionDisplayInfo card_list = 5;</code>
        */
       public Builder setCardList(
           int index, emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo.Builder builderForValue) {
@@ -983,7 +907,7 @@ public final class HideAndSeekSettleInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ExhibitionDisplayInfo card_list = 10;</code>
+       * <code>repeated .ExhibitionDisplayInfo card_list = 5;</code>
        */
       public Builder addCardList(emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo value) {
         if (cardListBuilder_ == null) {
@@ -999,7 +923,7 @@ public final class HideAndSeekSettleInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ExhibitionDisplayInfo card_list = 10;</code>
+       * <code>repeated .ExhibitionDisplayInfo card_list = 5;</code>
        */
       public Builder addCardList(
           int index, emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo value) {
@@ -1016,7 +940,7 @@ public final class HideAndSeekSettleInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ExhibitionDisplayInfo card_list = 10;</code>
+       * <code>repeated .ExhibitionDisplayInfo card_list = 5;</code>
        */
       public Builder addCardList(
           emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo.Builder builderForValue) {
@@ -1030,7 +954,7 @@ public final class HideAndSeekSettleInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ExhibitionDisplayInfo card_list = 10;</code>
+       * <code>repeated .ExhibitionDisplayInfo card_list = 5;</code>
        */
       public Builder addCardList(
           int index, emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo.Builder builderForValue) {
@@ -1044,7 +968,7 @@ public final class HideAndSeekSettleInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ExhibitionDisplayInfo card_list = 10;</code>
+       * <code>repeated .ExhibitionDisplayInfo card_list = 5;</code>
        */
       public Builder addAllCardList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo> values) {
@@ -1059,7 +983,7 @@ public final class HideAndSeekSettleInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ExhibitionDisplayInfo card_list = 10;</code>
+       * <code>repeated .ExhibitionDisplayInfo card_list = 5;</code>
        */
       public Builder clearCardList() {
         if (cardListBuilder_ == null) {
@@ -1072,7 +996,7 @@ public final class HideAndSeekSettleInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ExhibitionDisplayInfo card_list = 10;</code>
+       * <code>repeated .ExhibitionDisplayInfo card_list = 5;</code>
        */
       public Builder removeCardList(int index) {
         if (cardListBuilder_ == null) {
@@ -1085,14 +1009,14 @@ public final class HideAndSeekSettleInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ExhibitionDisplayInfo card_list = 10;</code>
+       * <code>repeated .ExhibitionDisplayInfo card_list = 5;</code>
        */
       public emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo.Builder getCardListBuilder(
           int index) {
         return getCardListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .ExhibitionDisplayInfo card_list = 10;</code>
+       * <code>repeated .ExhibitionDisplayInfo card_list = 5;</code>
        */
       public emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfoOrBuilder getCardListOrBuilder(
           int index) {
@@ -1102,7 +1026,7 @@ public final class HideAndSeekSettleInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .ExhibitionDisplayInfo card_list = 10;</code>
+       * <code>repeated .ExhibitionDisplayInfo card_list = 5;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfoOrBuilder> 
            getCardListOrBuilderList() {
@@ -1113,14 +1037,14 @@ public final class HideAndSeekSettleInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .ExhibitionDisplayInfo card_list = 10;</code>
+       * <code>repeated .ExhibitionDisplayInfo card_list = 5;</code>
        */
       public emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo.Builder addCardListBuilder() {
         return getCardListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .ExhibitionDisplayInfo card_list = 10;</code>
+       * <code>repeated .ExhibitionDisplayInfo card_list = 5;</code>
        */
       public emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo.Builder addCardListBuilder(
           int index) {
@@ -1128,7 +1052,7 @@ public final class HideAndSeekSettleInfoOuterClass {
             index, emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .ExhibitionDisplayInfo card_list = 10;</code>
+       * <code>repeated .ExhibitionDisplayInfo card_list = 5;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo.Builder> 
            getCardListBuilderList() {
@@ -1149,156 +1073,18 @@ public final class HideAndSeekSettleInfoOuterClass {
         return cardListBuilder_;
       }
 
-      private int uid_ ;
-      /**
-       * <code>uint32 uid = 6;</code>
-       * @return The uid.
-       */
-      @java.lang.Override
-      public int getUid() {
-        return uid_;
-      }
-      /**
-       * <code>uint32 uid = 6;</code>
-       * @param value The uid to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUid(int value) {
-        
-        uid_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 uid = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearUid() {
-        
-        uid_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int headImage_ ;
-      /**
-       * <code>uint32 head_image = 4;</code>
-       * @return The headImage.
-       */
-      @java.lang.Override
-      public int getHeadImage() {
-        return headImage_;
-      }
-      /**
-       * <code>uint32 head_image = 4;</code>
-       * @param value The headImage to set.
-       * @return This builder for chaining.
-       */
-      public Builder setHeadImage(int value) {
-        
-        headImage_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 head_image = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearHeadImage() {
-        
-        headImage_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object nickname_ = "";
-      /**
-       * <code>string nickname = 14;</code>
-       * @return The nickname.
-       */
-      public java.lang.String getNickname() {
-        java.lang.Object ref = nickname_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          nickname_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string nickname = 14;</code>
-       * @return The bytes for nickname.
-       */
-      public com.google.protobuf.ByteString
-          getNicknameBytes() {
-        java.lang.Object ref = nickname_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          nickname_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string nickname = 14;</code>
-       * @param value The nickname to set.
-       * @return This builder for chaining.
-       */
-      public Builder setNickname(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        nickname_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string nickname = 14;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearNickname() {
-        
-        nickname_ = getDefaultInstance().getNickname();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string nickname = 14;</code>
-       * @param value The bytes for nickname to set.
-       * @return This builder for chaining.
-       */
-      public Builder setNicknameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        nickname_ = value;
-        onChanged();
-        return this;
-      }
-
       private emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture profilePicture_;
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture, emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture.Builder, emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePictureOrBuilder> profilePictureBuilder_;
       /**
-       * <code>.ProfilePicture profile_picture = 1;</code>
+       * <code>.ProfilePicture profile_picture = 13;</code>
        * @return Whether the profilePicture field is set.
        */
       public boolean hasProfilePicture() {
         return profilePictureBuilder_ != null || profilePicture_ != null;
       }
       /**
-       * <code>.ProfilePicture profile_picture = 1;</code>
+       * <code>.ProfilePicture profile_picture = 13;</code>
        * @return The profilePicture.
        */
       public emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture getProfilePicture() {
@@ -1309,7 +1095,7 @@ public final class HideAndSeekSettleInfoOuterClass {
         }
       }
       /**
-       * <code>.ProfilePicture profile_picture = 1;</code>
+       * <code>.ProfilePicture profile_picture = 13;</code>
        */
       public Builder setProfilePicture(emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture value) {
         if (profilePictureBuilder_ == null) {
@@ -1325,7 +1111,7 @@ public final class HideAndSeekSettleInfoOuterClass {
         return this;
       }
       /**
-       * <code>.ProfilePicture profile_picture = 1;</code>
+       * <code>.ProfilePicture profile_picture = 13;</code>
        */
       public Builder setProfilePicture(
           emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture.Builder builderForValue) {
@@ -1339,7 +1125,7 @@ public final class HideAndSeekSettleInfoOuterClass {
         return this;
       }
       /**
-       * <code>.ProfilePicture profile_picture = 1;</code>
+       * <code>.ProfilePicture profile_picture = 13;</code>
        */
       public Builder mergeProfilePicture(emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture value) {
         if (profilePictureBuilder_ == null) {
@@ -1357,7 +1143,7 @@ public final class HideAndSeekSettleInfoOuterClass {
         return this;
       }
       /**
-       * <code>.ProfilePicture profile_picture = 1;</code>
+       * <code>.ProfilePicture profile_picture = 13;</code>
        */
       public Builder clearProfilePicture() {
         if (profilePictureBuilder_ == null) {
@@ -1371,7 +1157,7 @@ public final class HideAndSeekSettleInfoOuterClass {
         return this;
       }
       /**
-       * <code>.ProfilePicture profile_picture = 1;</code>
+       * <code>.ProfilePicture profile_picture = 13;</code>
        */
       public emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture.Builder getProfilePictureBuilder() {
         
@@ -1379,7 +1165,7 @@ public final class HideAndSeekSettleInfoOuterClass {
         return getProfilePictureFieldBuilder().getBuilder();
       }
       /**
-       * <code>.ProfilePicture profile_picture = 1;</code>
+       * <code>.ProfilePicture profile_picture = 13;</code>
        */
       public emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePictureOrBuilder getProfilePictureOrBuilder() {
         if (profilePictureBuilder_ != null) {
@@ -1390,7 +1176,7 @@ public final class HideAndSeekSettleInfoOuterClass {
         }
       }
       /**
-       * <code>.ProfilePicture profile_picture = 1;</code>
+       * <code>.ProfilePicture profile_picture = 13;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture, emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture.Builder, emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePictureOrBuilder> 
@@ -1404,6 +1190,220 @@ public final class HideAndSeekSettleInfoOuterClass {
           profilePicture_ = null;
         }
         return profilePictureBuilder_;
+      }
+
+      private java.lang.Object onlineId_ = "";
+      /**
+       * <code>string online_id = 7;</code>
+       * @return The onlineId.
+       */
+      public java.lang.String getOnlineId() {
+        java.lang.Object ref = onlineId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          onlineId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string online_id = 7;</code>
+       * @return The bytes for onlineId.
+       */
+      public com.google.protobuf.ByteString
+          getOnlineIdBytes() {
+        java.lang.Object ref = onlineId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          onlineId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string online_id = 7;</code>
+       * @param value The onlineId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOnlineId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        onlineId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string online_id = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOnlineId() {
+        
+        onlineId_ = getDefaultInstance().getOnlineId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string online_id = 7;</code>
+       * @param value The bytes for onlineId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOnlineIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        onlineId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object nickname_ = "";
+      /**
+       * <code>string nickname = 10;</code>
+       * @return The nickname.
+       */
+      public java.lang.String getNickname() {
+        java.lang.Object ref = nickname_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          nickname_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string nickname = 10;</code>
+       * @return The bytes for nickname.
+       */
+      public com.google.protobuf.ByteString
+          getNicknameBytes() {
+        java.lang.Object ref = nickname_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          nickname_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string nickname = 10;</code>
+       * @param value The nickname to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNickname(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        nickname_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string nickname = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearNickname() {
+        
+        nickname_ = getDefaultInstance().getNickname();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string nickname = 10;</code>
+       * @param value The bytes for nickname to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNicknameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        nickname_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int uid_ ;
+      /**
+       * <code>uint32 uid = 9;</code>
+       * @return The uid.
+       */
+      @java.lang.Override
+      public int getUid() {
+        return uid_;
+      }
+      /**
+       * <code>uint32 uid = 9;</code>
+       * @param value The uid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUid(int value) {
+        
+        uid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 uid = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUid() {
+        
+        uid_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int headImage_ ;
+      /**
+       * <code>uint32 head_image = 3;</code>
+       * @return The headImage.
+       */
+      @java.lang.Override
+      public int getHeadImage() {
+        return headImage_;
+      }
+      /**
+       * <code>uint32 head_image = 3;</code>
+       * @param value The headImage to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHeadImage(int value) {
+        
+        headImage_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 head_image = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearHeadImage() {
+        
+        headImage_ = 0;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -1474,11 +1474,11 @@ public final class HideAndSeekSettleInfoOuterClass {
     java.lang.String[] descriptorData = {
       "\n\033HideAndSeekSettleInfo.proto\032\033Exhibitio" +
       "nDisplayInfo.proto\032\024ProfilePicture.proto" +
-      "\"\262\001\n\025HideAndSeekSettleInfo\022\021\n\tonline_id\030" +
-      "\010 \001(\t\022)\n\tcard_list\030\n \003(\0132\026.ExhibitionDis" +
-      "playInfo\022\013\n\003uid\030\006 \001(\r\022\022\n\nhead_image\030\004 \001(" +
-      "\r\022\020\n\010nickname\030\016 \001(\t\022(\n\017profile_picture\030\001" +
-      " \001(\0132\017.ProfilePictureB\033\n\031emu.grasscutter" +
+      "\"\262\001\n\025HideAndSeekSettleInfo\022)\n\tcard_list\030" +
+      "\005 \003(\0132\026.ExhibitionDisplayInfo\022(\n\017profile" +
+      "_picture\030\r \001(\0132\017.ProfilePicture\022\021\n\tonlin" +
+      "e_id\030\007 \001(\t\022\020\n\010nickname\030\n \001(\t\022\013\n\003uid\030\t \001(" +
+      "\r\022\022\n\nhead_image\030\003 \001(\rB\033\n\031emu.grasscutter" +
       ".net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -1492,7 +1492,7 @@ public final class HideAndSeekSettleInfoOuterClass {
     internal_static_HideAndSeekSettleInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_HideAndSeekSettleInfo_descriptor,
-        new java.lang.String[] { "OnlineId", "CardList", "Uid", "HeadImage", "Nickname", "ProfilePicture", });
+        new java.lang.String[] { "CardList", "ProfilePicture", "OnlineId", "Nickname", "Uid", "HeadImage", });
     emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.getDescriptor();
     emu.grasscutter.net.proto.ProfilePictureOuterClass.getDescriptor();
   }

@@ -19,38 +19,38 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 equip_type = 6;</code>
+     * <code>uint32 equip_type = 11;</code>
      * @return The equipType.
      */
     int getEquipType();
 
     /**
-     * <code>repeated .GameplayRecommendationReliquaryMainPropData main_prop_data_list = 5;</code>
+     * <code>repeated .GameplayRecommendationReliquaryMainPropData main_prop_data_list = 14;</code>
      */
     java.util.List<emu.grasscutter.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData> 
         getMainPropDataListList();
     /**
-     * <code>repeated .GameplayRecommendationReliquaryMainPropData main_prop_data_list = 5;</code>
+     * <code>repeated .GameplayRecommendationReliquaryMainPropData main_prop_data_list = 14;</code>
      */
     emu.grasscutter.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData getMainPropDataList(int index);
     /**
-     * <code>repeated .GameplayRecommendationReliquaryMainPropData main_prop_data_list = 5;</code>
+     * <code>repeated .GameplayRecommendationReliquaryMainPropData main_prop_data_list = 14;</code>
      */
     int getMainPropDataListCount();
     /**
-     * <code>repeated .GameplayRecommendationReliquaryMainPropData main_prop_data_list = 5;</code>
+     * <code>repeated .GameplayRecommendationReliquaryMainPropData main_prop_data_list = 14;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropDataOrBuilder> 
         getMainPropDataListOrBuilderList();
     /**
-     * <code>repeated .GameplayRecommendationReliquaryMainPropData main_prop_data_list = 5;</code>
+     * <code>repeated .GameplayRecommendationReliquaryMainPropData main_prop_data_list = 14;</code>
      */
     emu.grasscutter.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropDataOrBuilder getMainPropDataListOrBuilder(
         int index);
   }
   /**
    * <pre>
-   * Obf: DDGDNMGNCHP
+   * Obf: LHNBFIGNBPF
    * </pre>
    *
    * Protobuf type {@code GameplayRecommendationReliquaryResponse}
@@ -99,18 +99,18 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
             case 0:
               done = true;
               break;
-            case 42: {
+            case 88: {
+
+              equipType_ = input.readUInt32();
+              break;
+            }
+            case 114: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 mainPropDataList_ = new java.util.ArrayList<emu.grasscutter.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData>();
                 mutable_bitField0_ |= 0x00000001;
               }
               mainPropDataList_.add(
                   input.readMessage(emu.grasscutter.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData.parser(), extensionRegistry));
-              break;
-            }
-            case 48: {
-
-              equipType_ = input.readUInt32();
               break;
             }
             default: {
@@ -148,10 +148,10 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
               emu.grasscutter.net.proto.GameplayRecommendationReliquaryResponseOuterClass.GameplayRecommendationReliquaryResponse.class, emu.grasscutter.net.proto.GameplayRecommendationReliquaryResponseOuterClass.GameplayRecommendationReliquaryResponse.Builder.class);
     }
 
-    public static final int EQUIP_TYPE_FIELD_NUMBER = 6;
+    public static final int EQUIP_TYPE_FIELD_NUMBER = 11;
     private int equipType_;
     /**
-     * <code>uint32 equip_type = 6;</code>
+     * <code>uint32 equip_type = 11;</code>
      * @return The equipType.
      */
     @java.lang.Override
@@ -159,17 +159,17 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
       return equipType_;
     }
 
-    public static final int MAIN_PROP_DATA_LIST_FIELD_NUMBER = 5;
+    public static final int MAIN_PROP_DATA_LIST_FIELD_NUMBER = 14;
     private java.util.List<emu.grasscutter.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData> mainPropDataList_;
     /**
-     * <code>repeated .GameplayRecommendationReliquaryMainPropData main_prop_data_list = 5;</code>
+     * <code>repeated .GameplayRecommendationReliquaryMainPropData main_prop_data_list = 14;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData> getMainPropDataListList() {
       return mainPropDataList_;
     }
     /**
-     * <code>repeated .GameplayRecommendationReliquaryMainPropData main_prop_data_list = 5;</code>
+     * <code>repeated .GameplayRecommendationReliquaryMainPropData main_prop_data_list = 14;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropDataOrBuilder> 
@@ -177,21 +177,21 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
       return mainPropDataList_;
     }
     /**
-     * <code>repeated .GameplayRecommendationReliquaryMainPropData main_prop_data_list = 5;</code>
+     * <code>repeated .GameplayRecommendationReliquaryMainPropData main_prop_data_list = 14;</code>
      */
     @java.lang.Override
     public int getMainPropDataListCount() {
       return mainPropDataList_.size();
     }
     /**
-     * <code>repeated .GameplayRecommendationReliquaryMainPropData main_prop_data_list = 5;</code>
+     * <code>repeated .GameplayRecommendationReliquaryMainPropData main_prop_data_list = 14;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData getMainPropDataList(int index) {
       return mainPropDataList_.get(index);
     }
     /**
-     * <code>repeated .GameplayRecommendationReliquaryMainPropData main_prop_data_list = 5;</code>
+     * <code>repeated .GameplayRecommendationReliquaryMainPropData main_prop_data_list = 14;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropDataOrBuilder getMainPropDataListOrBuilder(
@@ -213,11 +213,11 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < mainPropDataList_.size(); i++) {
-        output.writeMessage(5, mainPropDataList_.get(i));
-      }
       if (equipType_ != 0) {
-        output.writeUInt32(6, equipType_);
+        output.writeUInt32(11, equipType_);
+      }
+      for (int i = 0; i < mainPropDataList_.size(); i++) {
+        output.writeMessage(14, mainPropDataList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -228,13 +228,13 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < mainPropDataList_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, mainPropDataList_.get(i));
-      }
       if (equipType_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, equipType_);
+          .computeUInt32Size(11, equipType_);
+      }
+      for (int i = 0; i < mainPropDataList_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(14, mainPropDataList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -369,7 +369,7 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
     }
     /**
      * <pre>
-     * Obf: DDGDNMGNCHP
+     * Obf: LHNBFIGNBPF
      * </pre>
      *
      * Protobuf type {@code GameplayRecommendationReliquaryResponse}
@@ -564,7 +564,7 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
 
       private int equipType_ ;
       /**
-       * <code>uint32 equip_type = 6;</code>
+       * <code>uint32 equip_type = 11;</code>
        * @return The equipType.
        */
       @java.lang.Override
@@ -572,7 +572,7 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
         return equipType_;
       }
       /**
-       * <code>uint32 equip_type = 6;</code>
+       * <code>uint32 equip_type = 11;</code>
        * @param value The equipType to set.
        * @return This builder for chaining.
        */
@@ -583,7 +583,7 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
         return this;
       }
       /**
-       * <code>uint32 equip_type = 6;</code>
+       * <code>uint32 equip_type = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearEquipType() {
@@ -606,7 +606,7 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
           emu.grasscutter.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData, emu.grasscutter.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData.Builder, emu.grasscutter.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropDataOrBuilder> mainPropDataListBuilder_;
 
       /**
-       * <code>repeated .GameplayRecommendationReliquaryMainPropData main_prop_data_list = 5;</code>
+       * <code>repeated .GameplayRecommendationReliquaryMainPropData main_prop_data_list = 14;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData> getMainPropDataListList() {
         if (mainPropDataListBuilder_ == null) {
@@ -616,7 +616,7 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
         }
       }
       /**
-       * <code>repeated .GameplayRecommendationReliquaryMainPropData main_prop_data_list = 5;</code>
+       * <code>repeated .GameplayRecommendationReliquaryMainPropData main_prop_data_list = 14;</code>
        */
       public int getMainPropDataListCount() {
         if (mainPropDataListBuilder_ == null) {
@@ -626,7 +626,7 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
         }
       }
       /**
-       * <code>repeated .GameplayRecommendationReliquaryMainPropData main_prop_data_list = 5;</code>
+       * <code>repeated .GameplayRecommendationReliquaryMainPropData main_prop_data_list = 14;</code>
        */
       public emu.grasscutter.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData getMainPropDataList(int index) {
         if (mainPropDataListBuilder_ == null) {
@@ -636,7 +636,7 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
         }
       }
       /**
-       * <code>repeated .GameplayRecommendationReliquaryMainPropData main_prop_data_list = 5;</code>
+       * <code>repeated .GameplayRecommendationReliquaryMainPropData main_prop_data_list = 14;</code>
        */
       public Builder setMainPropDataList(
           int index, emu.grasscutter.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData value) {
@@ -653,7 +653,7 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
         return this;
       }
       /**
-       * <code>repeated .GameplayRecommendationReliquaryMainPropData main_prop_data_list = 5;</code>
+       * <code>repeated .GameplayRecommendationReliquaryMainPropData main_prop_data_list = 14;</code>
        */
       public Builder setMainPropDataList(
           int index, emu.grasscutter.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData.Builder builderForValue) {
@@ -667,7 +667,7 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
         return this;
       }
       /**
-       * <code>repeated .GameplayRecommendationReliquaryMainPropData main_prop_data_list = 5;</code>
+       * <code>repeated .GameplayRecommendationReliquaryMainPropData main_prop_data_list = 14;</code>
        */
       public Builder addMainPropDataList(emu.grasscutter.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData value) {
         if (mainPropDataListBuilder_ == null) {
@@ -683,7 +683,7 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
         return this;
       }
       /**
-       * <code>repeated .GameplayRecommendationReliquaryMainPropData main_prop_data_list = 5;</code>
+       * <code>repeated .GameplayRecommendationReliquaryMainPropData main_prop_data_list = 14;</code>
        */
       public Builder addMainPropDataList(
           int index, emu.grasscutter.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData value) {
@@ -700,7 +700,7 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
         return this;
       }
       /**
-       * <code>repeated .GameplayRecommendationReliquaryMainPropData main_prop_data_list = 5;</code>
+       * <code>repeated .GameplayRecommendationReliquaryMainPropData main_prop_data_list = 14;</code>
        */
       public Builder addMainPropDataList(
           emu.grasscutter.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData.Builder builderForValue) {
@@ -714,7 +714,7 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
         return this;
       }
       /**
-       * <code>repeated .GameplayRecommendationReliquaryMainPropData main_prop_data_list = 5;</code>
+       * <code>repeated .GameplayRecommendationReliquaryMainPropData main_prop_data_list = 14;</code>
        */
       public Builder addMainPropDataList(
           int index, emu.grasscutter.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData.Builder builderForValue) {
@@ -728,7 +728,7 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
         return this;
       }
       /**
-       * <code>repeated .GameplayRecommendationReliquaryMainPropData main_prop_data_list = 5;</code>
+       * <code>repeated .GameplayRecommendationReliquaryMainPropData main_prop_data_list = 14;</code>
        */
       public Builder addAllMainPropDataList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData> values) {
@@ -743,7 +743,7 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
         return this;
       }
       /**
-       * <code>repeated .GameplayRecommendationReliquaryMainPropData main_prop_data_list = 5;</code>
+       * <code>repeated .GameplayRecommendationReliquaryMainPropData main_prop_data_list = 14;</code>
        */
       public Builder clearMainPropDataList() {
         if (mainPropDataListBuilder_ == null) {
@@ -756,7 +756,7 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
         return this;
       }
       /**
-       * <code>repeated .GameplayRecommendationReliquaryMainPropData main_prop_data_list = 5;</code>
+       * <code>repeated .GameplayRecommendationReliquaryMainPropData main_prop_data_list = 14;</code>
        */
       public Builder removeMainPropDataList(int index) {
         if (mainPropDataListBuilder_ == null) {
@@ -769,14 +769,14 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
         return this;
       }
       /**
-       * <code>repeated .GameplayRecommendationReliquaryMainPropData main_prop_data_list = 5;</code>
+       * <code>repeated .GameplayRecommendationReliquaryMainPropData main_prop_data_list = 14;</code>
        */
       public emu.grasscutter.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData.Builder getMainPropDataListBuilder(
           int index) {
         return getMainPropDataListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .GameplayRecommendationReliquaryMainPropData main_prop_data_list = 5;</code>
+       * <code>repeated .GameplayRecommendationReliquaryMainPropData main_prop_data_list = 14;</code>
        */
       public emu.grasscutter.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropDataOrBuilder getMainPropDataListOrBuilder(
           int index) {
@@ -786,7 +786,7 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
         }
       }
       /**
-       * <code>repeated .GameplayRecommendationReliquaryMainPropData main_prop_data_list = 5;</code>
+       * <code>repeated .GameplayRecommendationReliquaryMainPropData main_prop_data_list = 14;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropDataOrBuilder> 
            getMainPropDataListOrBuilderList() {
@@ -797,14 +797,14 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
         }
       }
       /**
-       * <code>repeated .GameplayRecommendationReliquaryMainPropData main_prop_data_list = 5;</code>
+       * <code>repeated .GameplayRecommendationReliquaryMainPropData main_prop_data_list = 14;</code>
        */
       public emu.grasscutter.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData.Builder addMainPropDataListBuilder() {
         return getMainPropDataListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData.getDefaultInstance());
       }
       /**
-       * <code>repeated .GameplayRecommendationReliquaryMainPropData main_prop_data_list = 5;</code>
+       * <code>repeated .GameplayRecommendationReliquaryMainPropData main_prop_data_list = 14;</code>
        */
       public emu.grasscutter.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData.Builder addMainPropDataListBuilder(
           int index) {
@@ -812,7 +812,7 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
             index, emu.grasscutter.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData.getDefaultInstance());
       }
       /**
-       * <code>repeated .GameplayRecommendationReliquaryMainPropData main_prop_data_list = 5;</code>
+       * <code>repeated .GameplayRecommendationReliquaryMainPropData main_prop_data_list = 14;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData.Builder> 
            getMainPropDataListBuilderList() {
@@ -902,8 +902,8 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
       "\n-GameplayRecommendationReliquaryRespons" +
       "e.proto\0321GameplayRecommendationReliquary" +
       "MainPropData.proto\"\210\001\n\'GameplayRecommend" +
-      "ationReliquaryResponse\022\022\n\nequip_type\030\006 \001" +
-      "(\r\022I\n\023main_prop_data_list\030\005 \003(\0132,.Gamepl" +
+      "ationReliquaryResponse\022\022\n\nequip_type\030\013 \001" +
+      "(\r\022I\n\023main_prop_data_list\030\016 \003(\0132,.Gamepl" +
       "ayRecommendationReliquaryMainPropDataB\033\n" +
       "\031emu.grasscutter.net.protob\006proto3"
     };

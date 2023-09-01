@@ -26,7 +26,7 @@ public final class OfferingInfoOuterClass {
   }
   /**
    * <pre>
-   * Obf: PKHMLMBDEPB
+   * Obf: CDAACMGIFGG
    * </pre>
    *
    * Protobuf type {@code OfferingInfo}
@@ -278,7 +278,7 @@ public final class OfferingInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: PKHMLMBDEPB
+     * Obf: CDAACMGIFGG
      * </pre>
      *
      * Protobuf type {@code OfferingInfo}

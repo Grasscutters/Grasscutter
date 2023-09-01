@@ -2,8 +2,7 @@ package emu.grasscutter.game.city;
 
 import dev.morphia.annotations.Entity;
 import emu.grasscutter.net.proto.CityInfoOuterClass.CityInfo;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
 public class CityInfoData {

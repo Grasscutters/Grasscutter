@@ -20,8 +20,8 @@ public final class HomeResourceTakeFetterExpReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 4766
-   * Obf: JAJFLCAJDNA
+   * CmdId: 4383
+   * Obf: KGCMMMMGDBC
    * </pre>
    *
    * Protobuf type {@code HomeResourceTakeFetterExpReq}
@@ -246,8 +246,8 @@ public final class HomeResourceTakeFetterExpReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4766
-     * Obf: JAJFLCAJDNA
+     * CmdId: 4383
+     * Obf: KGCMMMMGDBC
      * </pre>
      *
      * Protobuf type {@code HomeResourceTakeFetterExpReq}

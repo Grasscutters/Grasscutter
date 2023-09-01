@@ -19,15 +19,15 @@ public final class QuickOpenActivityReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 activity_id = 5;</code>
+     * <code>uint32 activity_id = 7;</code>
      * @return The activityId.
      */
     int getActivityId();
   }
   /**
    * <pre>
-   * CmdId: 8800
-   * Obf: BDDMCMNEFEE
+   * CmdId: 3073
+   * Obf: JOJPJIOKKGI
    * </pre>
    *
    * Protobuf type {@code QuickOpenActivityReq}
@@ -74,7 +74,7 @@ public final class QuickOpenActivityReqOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
+            case 56: {
 
               activityId_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class QuickOpenActivityReqOuterClass {
               emu.grasscutter.net.proto.QuickOpenActivityReqOuterClass.QuickOpenActivityReq.class, emu.grasscutter.net.proto.QuickOpenActivityReqOuterClass.QuickOpenActivityReq.Builder.class);
     }
 
-    public static final int ACTIVITY_ID_FIELD_NUMBER = 5;
+    public static final int ACTIVITY_ID_FIELD_NUMBER = 7;
     private int activityId_;
     /**
-     * <code>uint32 activity_id = 5;</code>
+     * <code>uint32 activity_id = 7;</code>
      * @return The activityId.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class QuickOpenActivityReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (activityId_ != 0) {
-        output.writeUInt32(5, activityId_);
+        output.writeUInt32(7, activityId_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class QuickOpenActivityReqOuterClass {
       size = 0;
       if (activityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, activityId_);
+          .computeUInt32Size(7, activityId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class QuickOpenActivityReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8800
-     * Obf: BDDMCMNEFEE
+     * CmdId: 3073
+     * Obf: JOJPJIOKKGI
      * </pre>
      *
      * Protobuf type {@code QuickOpenActivityReq}
@@ -431,7 +431,7 @@ public final class QuickOpenActivityReqOuterClass {
 
       private int activityId_ ;
       /**
-       * <code>uint32 activity_id = 5;</code>
+       * <code>uint32 activity_id = 7;</code>
        * @return The activityId.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class QuickOpenActivityReqOuterClass {
         return activityId_;
       }
       /**
-       * <code>uint32 activity_id = 5;</code>
+       * <code>uint32 activity_id = 7;</code>
        * @param value The activityId to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class QuickOpenActivityReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 activity_id = 5;</code>
+       * <code>uint32 activity_id = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearActivityId() {
@@ -527,7 +527,7 @@ public final class QuickOpenActivityReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\032QuickOpenActivityReq.proto\"+\n\024QuickOpe" +
-      "nActivityReq\022\023\n\013activity_id\030\005 \001(\rB\033\n\031emu" +
+      "nActivityReq\022\023\n\013activity_id\030\007 \001(\rB\033\n\031emu" +
       ".grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

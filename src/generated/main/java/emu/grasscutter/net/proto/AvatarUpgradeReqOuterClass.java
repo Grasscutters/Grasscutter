@@ -19,7 +19,13 @@ public final class AvatarUpgradeReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint64 avatar_guid = 12;</code>
+     * <code>uint32 item_id = 5;</code>
+     * @return The itemId.
+     */
+    int getItemId();
+
+    /**
+     * <code>uint64 avatar_guid = 10;</code>
      * @return The avatarGuid.
      */
     long getAvatarGuid();
@@ -29,17 +35,11 @@ public final class AvatarUpgradeReqOuterClass {
      * @return The count.
      */
     int getCount();
-
-    /**
-     * <code>uint32 item_id = 4;</code>
-     * @return The itemId.
-     */
-    int getItemId();
   }
   /**
    * <pre>
-   * CmdId: 1629
-   * Obf: FEBHFJCIKEH
+   * CmdId: 28204
+   * Obf: CFIFEHLBHPM
    * </pre>
    *
    * Protobuf type {@code AvatarUpgradeReq}
@@ -91,12 +91,12 @@ public final class AvatarUpgradeReqOuterClass {
               count_ = input.readUInt32();
               break;
             }
-            case 32: {
+            case 40: {
 
               itemId_ = input.readUInt32();
               break;
             }
-            case 96: {
+            case 80: {
 
               avatarGuid_ = input.readUInt64();
               break;
@@ -133,10 +133,21 @@ public final class AvatarUpgradeReqOuterClass {
               emu.grasscutter.net.proto.AvatarUpgradeReqOuterClass.AvatarUpgradeReq.class, emu.grasscutter.net.proto.AvatarUpgradeReqOuterClass.AvatarUpgradeReq.Builder.class);
     }
 
-    public static final int AVATAR_GUID_FIELD_NUMBER = 12;
+    public static final int ITEM_ID_FIELD_NUMBER = 5;
+    private int itemId_;
+    /**
+     * <code>uint32 item_id = 5;</code>
+     * @return The itemId.
+     */
+    @java.lang.Override
+    public int getItemId() {
+      return itemId_;
+    }
+
+    public static final int AVATAR_GUID_FIELD_NUMBER = 10;
     private long avatarGuid_;
     /**
-     * <code>uint64 avatar_guid = 12;</code>
+     * <code>uint64 avatar_guid = 10;</code>
      * @return The avatarGuid.
      */
     @java.lang.Override
@@ -153,17 +164,6 @@ public final class AvatarUpgradeReqOuterClass {
     @java.lang.Override
     public int getCount() {
       return count_;
-    }
-
-    public static final int ITEM_ID_FIELD_NUMBER = 4;
-    private int itemId_;
-    /**
-     * <code>uint32 item_id = 4;</code>
-     * @return The itemId.
-     */
-    @java.lang.Override
-    public int getItemId() {
-      return itemId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -184,10 +184,10 @@ public final class AvatarUpgradeReqOuterClass {
         output.writeUInt32(1, count_);
       }
       if (itemId_ != 0) {
-        output.writeUInt32(4, itemId_);
+        output.writeUInt32(5, itemId_);
       }
       if (avatarGuid_ != 0L) {
-        output.writeUInt64(12, avatarGuid_);
+        output.writeUInt64(10, avatarGuid_);
       }
       unknownFields.writeTo(output);
     }
@@ -204,11 +204,11 @@ public final class AvatarUpgradeReqOuterClass {
       }
       if (itemId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, itemId_);
+          .computeUInt32Size(5, itemId_);
       }
       if (avatarGuid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(12, avatarGuid_);
+          .computeUInt64Size(10, avatarGuid_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -225,12 +225,12 @@ public final class AvatarUpgradeReqOuterClass {
       }
       emu.grasscutter.net.proto.AvatarUpgradeReqOuterClass.AvatarUpgradeReq other = (emu.grasscutter.net.proto.AvatarUpgradeReqOuterClass.AvatarUpgradeReq) obj;
 
+      if (getItemId()
+          != other.getItemId()) return false;
       if (getAvatarGuid()
           != other.getAvatarGuid()) return false;
       if (getCount()
           != other.getCount()) return false;
-      if (getItemId()
-          != other.getItemId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -242,13 +242,13 @@ public final class AvatarUpgradeReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ITEM_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getItemId();
       hash = (37 * hash) + AVATAR_GUID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getAvatarGuid());
       hash = (37 * hash) + COUNT_FIELD_NUMBER;
       hash = (53 * hash) + getCount();
-      hash = (37 * hash) + ITEM_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getItemId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -346,8 +346,8 @@ public final class AvatarUpgradeReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 1629
-     * Obf: FEBHFJCIKEH
+     * CmdId: 28204
+     * Obf: CFIFEHLBHPM
      * </pre>
      *
      * Protobuf type {@code AvatarUpgradeReq}
@@ -387,11 +387,11 @@ public final class AvatarUpgradeReqOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        itemId_ = 0;
+
         avatarGuid_ = 0L;
 
         count_ = 0;
-
-        itemId_ = 0;
 
         return this;
       }
@@ -419,9 +419,9 @@ public final class AvatarUpgradeReqOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.AvatarUpgradeReqOuterClass.AvatarUpgradeReq buildPartial() {
         emu.grasscutter.net.proto.AvatarUpgradeReqOuterClass.AvatarUpgradeReq result = new emu.grasscutter.net.proto.AvatarUpgradeReqOuterClass.AvatarUpgradeReq(this);
+        result.itemId_ = itemId_;
         result.avatarGuid_ = avatarGuid_;
         result.count_ = count_;
-        result.itemId_ = itemId_;
         onBuilt();
         return result;
       }
@@ -470,14 +470,14 @@ public final class AvatarUpgradeReqOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.AvatarUpgradeReqOuterClass.AvatarUpgradeReq other) {
         if (other == emu.grasscutter.net.proto.AvatarUpgradeReqOuterClass.AvatarUpgradeReq.getDefaultInstance()) return this;
+        if (other.getItemId() != 0) {
+          setItemId(other.getItemId());
+        }
         if (other.getAvatarGuid() != 0L) {
           setAvatarGuid(other.getAvatarGuid());
         }
         if (other.getCount() != 0) {
           setCount(other.getCount());
-        }
-        if (other.getItemId() != 0) {
-          setItemId(other.getItemId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -508,9 +508,40 @@ public final class AvatarUpgradeReqOuterClass {
         return this;
       }
 
+      private int itemId_ ;
+      /**
+       * <code>uint32 item_id = 5;</code>
+       * @return The itemId.
+       */
+      @java.lang.Override
+      public int getItemId() {
+        return itemId_;
+      }
+      /**
+       * <code>uint32 item_id = 5;</code>
+       * @param value The itemId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setItemId(int value) {
+        
+        itemId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 item_id = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearItemId() {
+        
+        itemId_ = 0;
+        onChanged();
+        return this;
+      }
+
       private long avatarGuid_ ;
       /**
-       * <code>uint64 avatar_guid = 12;</code>
+       * <code>uint64 avatar_guid = 10;</code>
        * @return The avatarGuid.
        */
       @java.lang.Override
@@ -518,7 +549,7 @@ public final class AvatarUpgradeReqOuterClass {
         return avatarGuid_;
       }
       /**
-       * <code>uint64 avatar_guid = 12;</code>
+       * <code>uint64 avatar_guid = 10;</code>
        * @param value The avatarGuid to set.
        * @return This builder for chaining.
        */
@@ -529,7 +560,7 @@ public final class AvatarUpgradeReqOuterClass {
         return this;
       }
       /**
-       * <code>uint64 avatar_guid = 12;</code>
+       * <code>uint64 avatar_guid = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearAvatarGuid() {
@@ -566,37 +597,6 @@ public final class AvatarUpgradeReqOuterClass {
       public Builder clearCount() {
         
         count_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int itemId_ ;
-      /**
-       * <code>uint32 item_id = 4;</code>
-       * @return The itemId.
-       */
-      @java.lang.Override
-      public int getItemId() {
-        return itemId_;
-      }
-      /**
-       * <code>uint32 item_id = 4;</code>
-       * @param value The itemId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setItemId(int value) {
-        
-        itemId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 item_id = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearItemId() {
-        
-        itemId_ = 0;
         onChanged();
         return this;
       }
@@ -668,8 +668,8 @@ public final class AvatarUpgradeReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\026AvatarUpgradeReq.proto\"G\n\020AvatarUpgrad" +
-      "eReq\022\023\n\013avatar_guid\030\014 \001(\004\022\r\n\005count\030\001 \001(\r" +
-      "\022\017\n\007item_id\030\004 \001(\rB\033\n\031emu.grasscutter.net" +
+      "eReq\022\017\n\007item_id\030\005 \001(\r\022\023\n\013avatar_guid\030\n \001" +
+      "(\004\022\r\n\005count\030\001 \001(\rB\033\n\031emu.grasscutter.net" +
       ".protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -681,7 +681,7 @@ public final class AvatarUpgradeReqOuterClass {
     internal_static_AvatarUpgradeReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_AvatarUpgradeReq_descriptor,
-        new java.lang.String[] { "AvatarGuid", "Count", "ItemId", });
+        new java.lang.String[] { "ItemId", "AvatarGuid", "Count", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

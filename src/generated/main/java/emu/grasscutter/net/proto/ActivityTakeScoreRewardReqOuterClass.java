@@ -19,21 +19,21 @@ public final class ActivityTakeScoreRewardReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 reward_config_id = 12;</code>
-     * @return The rewardConfigId.
-     */
-    int getRewardConfigId();
-
-    /**
-     * <code>uint32 activity_id = 9;</code>
+     * <code>uint32 activity_id = 15;</code>
      * @return The activityId.
      */
     int getActivityId();
+
+    /**
+     * <code>uint32 reward_config_id = 1;</code>
+     * @return The rewardConfigId.
+     */
+    int getRewardConfigId();
   }
   /**
    * <pre>
-   * CmdId: 8041
-   * Obf: HLKHDKGNDPO
+   * CmdId: 2048
+   * Obf: JJICGLAAIJJ
    * </pre>
    *
    * Protobuf type {@code ActivityTakeScoreRewardReq}
@@ -80,14 +80,14 @@ public final class ActivityTakeScoreRewardReqOuterClass {
             case 0:
               done = true;
               break;
-            case 72: {
-
-              activityId_ = input.readUInt32();
-              break;
-            }
-            case 96: {
+            case 8: {
 
               rewardConfigId_ = input.readUInt32();
+              break;
+            }
+            case 120: {
+
+              activityId_ = input.readUInt32();
               break;
             }
             default: {
@@ -122,26 +122,26 @@ public final class ActivityTakeScoreRewardReqOuterClass {
               emu.grasscutter.net.proto.ActivityTakeScoreRewardReqOuterClass.ActivityTakeScoreRewardReq.class, emu.grasscutter.net.proto.ActivityTakeScoreRewardReqOuterClass.ActivityTakeScoreRewardReq.Builder.class);
     }
 
-    public static final int REWARD_CONFIG_ID_FIELD_NUMBER = 12;
-    private int rewardConfigId_;
-    /**
-     * <code>uint32 reward_config_id = 12;</code>
-     * @return The rewardConfigId.
-     */
-    @java.lang.Override
-    public int getRewardConfigId() {
-      return rewardConfigId_;
-    }
-
-    public static final int ACTIVITY_ID_FIELD_NUMBER = 9;
+    public static final int ACTIVITY_ID_FIELD_NUMBER = 15;
     private int activityId_;
     /**
-     * <code>uint32 activity_id = 9;</code>
+     * <code>uint32 activity_id = 15;</code>
      * @return The activityId.
      */
     @java.lang.Override
     public int getActivityId() {
       return activityId_;
+    }
+
+    public static final int REWARD_CONFIG_ID_FIELD_NUMBER = 1;
+    private int rewardConfigId_;
+    /**
+     * <code>uint32 reward_config_id = 1;</code>
+     * @return The rewardConfigId.
+     */
+    @java.lang.Override
+    public int getRewardConfigId() {
+      return rewardConfigId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -158,11 +158,11 @@ public final class ActivityTakeScoreRewardReqOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (activityId_ != 0) {
-        output.writeUInt32(9, activityId_);
-      }
       if (rewardConfigId_ != 0) {
-        output.writeUInt32(12, rewardConfigId_);
+        output.writeUInt32(1, rewardConfigId_);
+      }
+      if (activityId_ != 0) {
+        output.writeUInt32(15, activityId_);
       }
       unknownFields.writeTo(output);
     }
@@ -173,13 +173,13 @@ public final class ActivityTakeScoreRewardReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (activityId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, activityId_);
-      }
       if (rewardConfigId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, rewardConfigId_);
+          .computeUInt32Size(1, rewardConfigId_);
+      }
+      if (activityId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(15, activityId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -196,10 +196,10 @@ public final class ActivityTakeScoreRewardReqOuterClass {
       }
       emu.grasscutter.net.proto.ActivityTakeScoreRewardReqOuterClass.ActivityTakeScoreRewardReq other = (emu.grasscutter.net.proto.ActivityTakeScoreRewardReqOuterClass.ActivityTakeScoreRewardReq) obj;
 
-      if (getRewardConfigId()
-          != other.getRewardConfigId()) return false;
       if (getActivityId()
           != other.getActivityId()) return false;
+      if (getRewardConfigId()
+          != other.getRewardConfigId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -211,10 +211,10 @@ public final class ActivityTakeScoreRewardReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + REWARD_CONFIG_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getRewardConfigId();
       hash = (37 * hash) + ACTIVITY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getActivityId();
+      hash = (37 * hash) + REWARD_CONFIG_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRewardConfigId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -312,8 +312,8 @@ public final class ActivityTakeScoreRewardReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8041
-     * Obf: HLKHDKGNDPO
+     * CmdId: 2048
+     * Obf: JJICGLAAIJJ
      * </pre>
      *
      * Protobuf type {@code ActivityTakeScoreRewardReq}
@@ -353,9 +353,9 @@ public final class ActivityTakeScoreRewardReqOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        rewardConfigId_ = 0;
-
         activityId_ = 0;
+
+        rewardConfigId_ = 0;
 
         return this;
       }
@@ -383,8 +383,8 @@ public final class ActivityTakeScoreRewardReqOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.ActivityTakeScoreRewardReqOuterClass.ActivityTakeScoreRewardReq buildPartial() {
         emu.grasscutter.net.proto.ActivityTakeScoreRewardReqOuterClass.ActivityTakeScoreRewardReq result = new emu.grasscutter.net.proto.ActivityTakeScoreRewardReqOuterClass.ActivityTakeScoreRewardReq(this);
-        result.rewardConfigId_ = rewardConfigId_;
         result.activityId_ = activityId_;
+        result.rewardConfigId_ = rewardConfigId_;
         onBuilt();
         return result;
       }
@@ -433,11 +433,11 @@ public final class ActivityTakeScoreRewardReqOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.ActivityTakeScoreRewardReqOuterClass.ActivityTakeScoreRewardReq other) {
         if (other == emu.grasscutter.net.proto.ActivityTakeScoreRewardReqOuterClass.ActivityTakeScoreRewardReq.getDefaultInstance()) return this;
-        if (other.getRewardConfigId() != 0) {
-          setRewardConfigId(other.getRewardConfigId());
-        }
         if (other.getActivityId() != 0) {
           setActivityId(other.getActivityId());
+        }
+        if (other.getRewardConfigId() != 0) {
+          setRewardConfigId(other.getRewardConfigId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -468,40 +468,9 @@ public final class ActivityTakeScoreRewardReqOuterClass {
         return this;
       }
 
-      private int rewardConfigId_ ;
-      /**
-       * <code>uint32 reward_config_id = 12;</code>
-       * @return The rewardConfigId.
-       */
-      @java.lang.Override
-      public int getRewardConfigId() {
-        return rewardConfigId_;
-      }
-      /**
-       * <code>uint32 reward_config_id = 12;</code>
-       * @param value The rewardConfigId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRewardConfigId(int value) {
-        
-        rewardConfigId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 reward_config_id = 12;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRewardConfigId() {
-        
-        rewardConfigId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int activityId_ ;
       /**
-       * <code>uint32 activity_id = 9;</code>
+       * <code>uint32 activity_id = 15;</code>
        * @return The activityId.
        */
       @java.lang.Override
@@ -509,7 +478,7 @@ public final class ActivityTakeScoreRewardReqOuterClass {
         return activityId_;
       }
       /**
-       * <code>uint32 activity_id = 9;</code>
+       * <code>uint32 activity_id = 15;</code>
        * @param value The activityId to set.
        * @return This builder for chaining.
        */
@@ -520,12 +489,43 @@ public final class ActivityTakeScoreRewardReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 activity_id = 9;</code>
+       * <code>uint32 activity_id = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearActivityId() {
         
         activityId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int rewardConfigId_ ;
+      /**
+       * <code>uint32 reward_config_id = 1;</code>
+       * @return The rewardConfigId.
+       */
+      @java.lang.Override
+      public int getRewardConfigId() {
+        return rewardConfigId_;
+      }
+      /**
+       * <code>uint32 reward_config_id = 1;</code>
+       * @param value The rewardConfigId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRewardConfigId(int value) {
+        
+        rewardConfigId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 reward_config_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRewardConfigId() {
+        
+        rewardConfigId_ = 0;
         onChanged();
         return this;
       }
@@ -597,8 +597,8 @@ public final class ActivityTakeScoreRewardReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n ActivityTakeScoreRewardReq.proto\"K\n\032Ac" +
-      "tivityTakeScoreRewardReq\022\030\n\020reward_confi" +
-      "g_id\030\014 \001(\r\022\023\n\013activity_id\030\t \001(\rB\033\n\031emu.g" +
+      "tivityTakeScoreRewardReq\022\023\n\013activity_id\030" +
+      "\017 \001(\r\022\030\n\020reward_config_id\030\001 \001(\rB\033\n\031emu.g" +
       "rasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -610,7 +610,7 @@ public final class ActivityTakeScoreRewardReqOuterClass {
     internal_static_ActivityTakeScoreRewardReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ActivityTakeScoreRewardReq_descriptor,
-        new java.lang.String[] { "RewardConfigId", "ActivityId", });
+        new java.lang.String[] { "ActivityId", "RewardConfigId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

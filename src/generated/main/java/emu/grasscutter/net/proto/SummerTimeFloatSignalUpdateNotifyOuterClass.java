@@ -19,36 +19,36 @@ public final class SummerTimeFloatSignalUpdateNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool is_transfer_anchor = 14;</code>
+     * <code>bool is_transfer_anchor = 10;</code>
      * @return The isTransferAnchor.
      */
     boolean getIsTransferAnchor();
 
     /**
-     * <code>.Vector position = 10;</code>
+     * <code>uint32 float_signal_id = 14;</code>
+     * @return The floatSignalId.
+     */
+    int getFloatSignalId();
+
+    /**
+     * <code>.Vector position = 12;</code>
      * @return Whether the position field is set.
      */
     boolean hasPosition();
     /**
-     * <code>.Vector position = 10;</code>
+     * <code>.Vector position = 12;</code>
      * @return The position.
      */
     emu.grasscutter.net.proto.VectorOuterClass.Vector getPosition();
     /**
-     * <code>.Vector position = 10;</code>
+     * <code>.Vector position = 12;</code>
      */
     emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getPositionOrBuilder();
-
-    /**
-     * <code>uint32 float_signal_id = 7;</code>
-     * @return The floatSignalId.
-     */
-    int getFloatSignalId();
   }
   /**
    * <pre>
-   * CmdId: 8915
-   * Obf: ALNDGDHHIHD
+   * CmdId: 22089
+   * Obf: GELOEGAEKOH
    * </pre>
    *
    * Protobuf type {@code SummerTimeFloatSignalUpdateNotify}
@@ -95,12 +95,12 @@ public final class SummerTimeFloatSignalUpdateNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 56: {
+            case 80: {
 
-              floatSignalId_ = input.readUInt32();
+              isTransferAnchor_ = input.readBool();
               break;
             }
-            case 82: {
+            case 98: {
               emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
               if (position_ != null) {
                 subBuilder = position_.toBuilder();
@@ -115,7 +115,7 @@ public final class SummerTimeFloatSignalUpdateNotifyOuterClass {
             }
             case 112: {
 
-              isTransferAnchor_ = input.readBool();
+              floatSignalId_ = input.readUInt32();
               break;
             }
             default: {
@@ -150,10 +150,10 @@ public final class SummerTimeFloatSignalUpdateNotifyOuterClass {
               emu.grasscutter.net.proto.SummerTimeFloatSignalUpdateNotifyOuterClass.SummerTimeFloatSignalUpdateNotify.class, emu.grasscutter.net.proto.SummerTimeFloatSignalUpdateNotifyOuterClass.SummerTimeFloatSignalUpdateNotify.Builder.class);
     }
 
-    public static final int IS_TRANSFER_ANCHOR_FIELD_NUMBER = 14;
+    public static final int IS_TRANSFER_ANCHOR_FIELD_NUMBER = 10;
     private boolean isTransferAnchor_;
     /**
-     * <code>bool is_transfer_anchor = 14;</code>
+     * <code>bool is_transfer_anchor = 10;</code>
      * @return The isTransferAnchor.
      */
     @java.lang.Override
@@ -161,10 +161,21 @@ public final class SummerTimeFloatSignalUpdateNotifyOuterClass {
       return isTransferAnchor_;
     }
 
-    public static final int POSITION_FIELD_NUMBER = 10;
+    public static final int FLOAT_SIGNAL_ID_FIELD_NUMBER = 14;
+    private int floatSignalId_;
+    /**
+     * <code>uint32 float_signal_id = 14;</code>
+     * @return The floatSignalId.
+     */
+    @java.lang.Override
+    public int getFloatSignalId() {
+      return floatSignalId_;
+    }
+
+    public static final int POSITION_FIELD_NUMBER = 12;
     private emu.grasscutter.net.proto.VectorOuterClass.Vector position_;
     /**
-     * <code>.Vector position = 10;</code>
+     * <code>.Vector position = 12;</code>
      * @return Whether the position field is set.
      */
     @java.lang.Override
@@ -172,7 +183,7 @@ public final class SummerTimeFloatSignalUpdateNotifyOuterClass {
       return position_ != null;
     }
     /**
-     * <code>.Vector position = 10;</code>
+     * <code>.Vector position = 12;</code>
      * @return The position.
      */
     @java.lang.Override
@@ -180,22 +191,11 @@ public final class SummerTimeFloatSignalUpdateNotifyOuterClass {
       return position_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : position_;
     }
     /**
-     * <code>.Vector position = 10;</code>
+     * <code>.Vector position = 12;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getPositionOrBuilder() {
       return getPosition();
-    }
-
-    public static final int FLOAT_SIGNAL_ID_FIELD_NUMBER = 7;
-    private int floatSignalId_;
-    /**
-     * <code>uint32 float_signal_id = 7;</code>
-     * @return The floatSignalId.
-     */
-    @java.lang.Override
-    public int getFloatSignalId() {
-      return floatSignalId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -212,14 +212,14 @@ public final class SummerTimeFloatSignalUpdateNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (floatSignalId_ != 0) {
-        output.writeUInt32(7, floatSignalId_);
+      if (isTransferAnchor_ != false) {
+        output.writeBool(10, isTransferAnchor_);
       }
       if (position_ != null) {
-        output.writeMessage(10, getPosition());
+        output.writeMessage(12, getPosition());
       }
-      if (isTransferAnchor_ != false) {
-        output.writeBool(14, isTransferAnchor_);
+      if (floatSignalId_ != 0) {
+        output.writeUInt32(14, floatSignalId_);
       }
       unknownFields.writeTo(output);
     }
@@ -230,17 +230,17 @@ public final class SummerTimeFloatSignalUpdateNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (floatSignalId_ != 0) {
+      if (isTransferAnchor_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, floatSignalId_);
+          .computeBoolSize(10, isTransferAnchor_);
       }
       if (position_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, getPosition());
+          .computeMessageSize(12, getPosition());
       }
-      if (isTransferAnchor_ != false) {
+      if (floatSignalId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(14, isTransferAnchor_);
+          .computeUInt32Size(14, floatSignalId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -259,13 +259,13 @@ public final class SummerTimeFloatSignalUpdateNotifyOuterClass {
 
       if (getIsTransferAnchor()
           != other.getIsTransferAnchor()) return false;
+      if (getFloatSignalId()
+          != other.getFloatSignalId()) return false;
       if (hasPosition() != other.hasPosition()) return false;
       if (hasPosition()) {
         if (!getPosition()
             .equals(other.getPosition())) return false;
       }
-      if (getFloatSignalId()
-          != other.getFloatSignalId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -280,12 +280,12 @@ public final class SummerTimeFloatSignalUpdateNotifyOuterClass {
       hash = (37 * hash) + IS_TRANSFER_ANCHOR_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsTransferAnchor());
+      hash = (37 * hash) + FLOAT_SIGNAL_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getFloatSignalId();
       if (hasPosition()) {
         hash = (37 * hash) + POSITION_FIELD_NUMBER;
         hash = (53 * hash) + getPosition().hashCode();
       }
-      hash = (37 * hash) + FLOAT_SIGNAL_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getFloatSignalId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -383,8 +383,8 @@ public final class SummerTimeFloatSignalUpdateNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8915
-     * Obf: ALNDGDHHIHD
+     * CmdId: 22089
+     * Obf: GELOEGAEKOH
      * </pre>
      *
      * Protobuf type {@code SummerTimeFloatSignalUpdateNotify}
@@ -426,14 +426,14 @@ public final class SummerTimeFloatSignalUpdateNotifyOuterClass {
         super.clear();
         isTransferAnchor_ = false;
 
+        floatSignalId_ = 0;
+
         if (positionBuilder_ == null) {
           position_ = null;
         } else {
           position_ = null;
           positionBuilder_ = null;
         }
-        floatSignalId_ = 0;
-
         return this;
       }
 
@@ -461,12 +461,12 @@ public final class SummerTimeFloatSignalUpdateNotifyOuterClass {
       public emu.grasscutter.net.proto.SummerTimeFloatSignalUpdateNotifyOuterClass.SummerTimeFloatSignalUpdateNotify buildPartial() {
         emu.grasscutter.net.proto.SummerTimeFloatSignalUpdateNotifyOuterClass.SummerTimeFloatSignalUpdateNotify result = new emu.grasscutter.net.proto.SummerTimeFloatSignalUpdateNotifyOuterClass.SummerTimeFloatSignalUpdateNotify(this);
         result.isTransferAnchor_ = isTransferAnchor_;
+        result.floatSignalId_ = floatSignalId_;
         if (positionBuilder_ == null) {
           result.position_ = position_;
         } else {
           result.position_ = positionBuilder_.build();
         }
-        result.floatSignalId_ = floatSignalId_;
         onBuilt();
         return result;
       }
@@ -518,11 +518,11 @@ public final class SummerTimeFloatSignalUpdateNotifyOuterClass {
         if (other.getIsTransferAnchor() != false) {
           setIsTransferAnchor(other.getIsTransferAnchor());
         }
-        if (other.hasPosition()) {
-          mergePosition(other.getPosition());
-        }
         if (other.getFloatSignalId() != 0) {
           setFloatSignalId(other.getFloatSignalId());
+        }
+        if (other.hasPosition()) {
+          mergePosition(other.getPosition());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -555,7 +555,7 @@ public final class SummerTimeFloatSignalUpdateNotifyOuterClass {
 
       private boolean isTransferAnchor_ ;
       /**
-       * <code>bool is_transfer_anchor = 14;</code>
+       * <code>bool is_transfer_anchor = 10;</code>
        * @return The isTransferAnchor.
        */
       @java.lang.Override
@@ -563,7 +563,7 @@ public final class SummerTimeFloatSignalUpdateNotifyOuterClass {
         return isTransferAnchor_;
       }
       /**
-       * <code>bool is_transfer_anchor = 14;</code>
+       * <code>bool is_transfer_anchor = 10;</code>
        * @param value The isTransferAnchor to set.
        * @return This builder for chaining.
        */
@@ -574,7 +574,7 @@ public final class SummerTimeFloatSignalUpdateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>bool is_transfer_anchor = 14;</code>
+       * <code>bool is_transfer_anchor = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsTransferAnchor() {
@@ -584,18 +584,49 @@ public final class SummerTimeFloatSignalUpdateNotifyOuterClass {
         return this;
       }
 
+      private int floatSignalId_ ;
+      /**
+       * <code>uint32 float_signal_id = 14;</code>
+       * @return The floatSignalId.
+       */
+      @java.lang.Override
+      public int getFloatSignalId() {
+        return floatSignalId_;
+      }
+      /**
+       * <code>uint32 float_signal_id = 14;</code>
+       * @param value The floatSignalId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFloatSignalId(int value) {
+        
+        floatSignalId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 float_signal_id = 14;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFloatSignalId() {
+        
+        floatSignalId_ = 0;
+        onChanged();
+        return this;
+      }
+
       private emu.grasscutter.net.proto.VectorOuterClass.Vector position_;
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> positionBuilder_;
       /**
-       * <code>.Vector position = 10;</code>
+       * <code>.Vector position = 12;</code>
        * @return Whether the position field is set.
        */
       public boolean hasPosition() {
         return positionBuilder_ != null || position_ != null;
       }
       /**
-       * <code>.Vector position = 10;</code>
+       * <code>.Vector position = 12;</code>
        * @return The position.
        */
       public emu.grasscutter.net.proto.VectorOuterClass.Vector getPosition() {
@@ -606,7 +637,7 @@ public final class SummerTimeFloatSignalUpdateNotifyOuterClass {
         }
       }
       /**
-       * <code>.Vector position = 10;</code>
+       * <code>.Vector position = 12;</code>
        */
       public Builder setPosition(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
         if (positionBuilder_ == null) {
@@ -622,7 +653,7 @@ public final class SummerTimeFloatSignalUpdateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.Vector position = 10;</code>
+       * <code>.Vector position = 12;</code>
        */
       public Builder setPosition(
           emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
@@ -636,7 +667,7 @@ public final class SummerTimeFloatSignalUpdateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.Vector position = 10;</code>
+       * <code>.Vector position = 12;</code>
        */
       public Builder mergePosition(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
         if (positionBuilder_ == null) {
@@ -654,7 +685,7 @@ public final class SummerTimeFloatSignalUpdateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.Vector position = 10;</code>
+       * <code>.Vector position = 12;</code>
        */
       public Builder clearPosition() {
         if (positionBuilder_ == null) {
@@ -668,7 +699,7 @@ public final class SummerTimeFloatSignalUpdateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.Vector position = 10;</code>
+       * <code>.Vector position = 12;</code>
        */
       public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder getPositionBuilder() {
         
@@ -676,7 +707,7 @@ public final class SummerTimeFloatSignalUpdateNotifyOuterClass {
         return getPositionFieldBuilder().getBuilder();
       }
       /**
-       * <code>.Vector position = 10;</code>
+       * <code>.Vector position = 12;</code>
        */
       public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getPositionOrBuilder() {
         if (positionBuilder_ != null) {
@@ -687,7 +718,7 @@ public final class SummerTimeFloatSignalUpdateNotifyOuterClass {
         }
       }
       /**
-       * <code>.Vector position = 10;</code>
+       * <code>.Vector position = 12;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> 
@@ -701,37 +732,6 @@ public final class SummerTimeFloatSignalUpdateNotifyOuterClass {
           position_ = null;
         }
         return positionBuilder_;
-      }
-
-      private int floatSignalId_ ;
-      /**
-       * <code>uint32 float_signal_id = 7;</code>
-       * @return The floatSignalId.
-       */
-      @java.lang.Override
-      public int getFloatSignalId() {
-        return floatSignalId_;
-      }
-      /**
-       * <code>uint32 float_signal_id = 7;</code>
-       * @param value The floatSignalId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFloatSignalId(int value) {
-        
-        floatSignalId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 float_signal_id = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearFloatSignalId() {
-        
-        floatSignalId_ = 0;
-        onChanged();
-        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -802,9 +802,9 @@ public final class SummerTimeFloatSignalUpdateNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\'SummerTimeFloatSignalUpdateNotify.prot" +
       "o\032\014Vector.proto\"s\n!SummerTimeFloatSignal" +
-      "UpdateNotify\022\032\n\022is_transfer_anchor\030\016 \001(\010" +
-      "\022\031\n\010position\030\n \001(\0132\007.Vector\022\027\n\017float_sig" +
-      "nal_id\030\007 \001(\rB\033\n\031emu.grasscutter.net.prot" +
+      "UpdateNotify\022\032\n\022is_transfer_anchor\030\n \001(\010" +
+      "\022\027\n\017float_signal_id\030\016 \001(\r\022\031\n\010position\030\014 " +
+      "\001(\0132\007.VectorB\033\n\031emu.grasscutter.net.prot" +
       "ob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -817,7 +817,7 @@ public final class SummerTimeFloatSignalUpdateNotifyOuterClass {
     internal_static_SummerTimeFloatSignalUpdateNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SummerTimeFloatSignalUpdateNotify_descriptor,
-        new java.lang.String[] { "IsTransferAnchor", "Position", "FloatSignalId", });
+        new java.lang.String[] { "IsTransferAnchor", "FloatSignalId", "Position", });
     emu.grasscutter.net.proto.VectorOuterClass.getDescriptor();
   }
 

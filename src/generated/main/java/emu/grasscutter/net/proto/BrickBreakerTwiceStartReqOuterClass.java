@@ -20,8 +20,8 @@ public final class BrickBreakerTwiceStartReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 23603
-   * Obf: PGCGIEJBINH
+   * CmdId: 7000
+   * Obf: EBCGDCALGJI
    * </pre>
    *
    * Protobuf type {@code BrickBreakerTwiceStartReq}
@@ -246,8 +246,8 @@ public final class BrickBreakerTwiceStartReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 23603
-     * Obf: PGCGIEJBINH
+     * CmdId: 7000
+     * Obf: EBCGDCALGJI
      * </pre>
      *
      * Protobuf type {@code BrickBreakerTwiceStartReq}

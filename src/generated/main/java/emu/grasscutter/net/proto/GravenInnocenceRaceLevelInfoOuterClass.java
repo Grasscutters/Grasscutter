@@ -19,13 +19,13 @@ public final class GravenInnocenceRaceLevelInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 level_id = 13;</code>
+     * <code>uint32 level_id = 15;</code>
      * @return The levelId.
      */
     int getLevelId();
 
     /**
-     * <code>uint32 max_score = 5;</code>
+     * <code>uint32 max_score = 8;</code>
      * @return The maxScore.
      */
     int getMaxScore();
@@ -38,7 +38,7 @@ public final class GravenInnocenceRaceLevelInfoOuterClass {
   }
   /**
    * <pre>
-   * Obf: FNMECHIGPHP
+   * Obf: FPLDMIJMPGA
    * </pre>
    *
    * Protobuf type {@code GravenInnocenceRaceLevelInfo}
@@ -85,17 +85,17 @@ public final class GravenInnocenceRaceLevelInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
-
-              maxScore_ = input.readUInt32();
-              break;
-            }
             case 48: {
 
               isOpen_ = input.readBool();
               break;
             }
-            case 104: {
+            case 64: {
+
+              maxScore_ = input.readUInt32();
+              break;
+            }
+            case 120: {
 
               levelId_ = input.readUInt32();
               break;
@@ -132,10 +132,10 @@ public final class GravenInnocenceRaceLevelInfoOuterClass {
               emu.grasscutter.net.proto.GravenInnocenceRaceLevelInfoOuterClass.GravenInnocenceRaceLevelInfo.class, emu.grasscutter.net.proto.GravenInnocenceRaceLevelInfoOuterClass.GravenInnocenceRaceLevelInfo.Builder.class);
     }
 
-    public static final int LEVEL_ID_FIELD_NUMBER = 13;
+    public static final int LEVEL_ID_FIELD_NUMBER = 15;
     private int levelId_;
     /**
-     * <code>uint32 level_id = 13;</code>
+     * <code>uint32 level_id = 15;</code>
      * @return The levelId.
      */
     @java.lang.Override
@@ -143,10 +143,10 @@ public final class GravenInnocenceRaceLevelInfoOuterClass {
       return levelId_;
     }
 
-    public static final int MAX_SCORE_FIELD_NUMBER = 5;
+    public static final int MAX_SCORE_FIELD_NUMBER = 8;
     private int maxScore_;
     /**
-     * <code>uint32 max_score = 5;</code>
+     * <code>uint32 max_score = 8;</code>
      * @return The maxScore.
      */
     @java.lang.Override
@@ -179,14 +179,14 @@ public final class GravenInnocenceRaceLevelInfoOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (maxScore_ != 0) {
-        output.writeUInt32(5, maxScore_);
-      }
       if (isOpen_ != false) {
         output.writeBool(6, isOpen_);
       }
+      if (maxScore_ != 0) {
+        output.writeUInt32(8, maxScore_);
+      }
       if (levelId_ != 0) {
-        output.writeUInt32(13, levelId_);
+        output.writeUInt32(15, levelId_);
       }
       unknownFields.writeTo(output);
     }
@@ -197,17 +197,17 @@ public final class GravenInnocenceRaceLevelInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (maxScore_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, maxScore_);
-      }
       if (isOpen_ != false) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(6, isOpen_);
       }
+      if (maxScore_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(8, maxScore_);
+      }
       if (levelId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, levelId_);
+          .computeUInt32Size(15, levelId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -345,7 +345,7 @@ public final class GravenInnocenceRaceLevelInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: FNMECHIGPHP
+     * Obf: FPLDMIJMPGA
      * </pre>
      *
      * Protobuf type {@code GravenInnocenceRaceLevelInfo}
@@ -508,7 +508,7 @@ public final class GravenInnocenceRaceLevelInfoOuterClass {
 
       private int levelId_ ;
       /**
-       * <code>uint32 level_id = 13;</code>
+       * <code>uint32 level_id = 15;</code>
        * @return The levelId.
        */
       @java.lang.Override
@@ -516,7 +516,7 @@ public final class GravenInnocenceRaceLevelInfoOuterClass {
         return levelId_;
       }
       /**
-       * <code>uint32 level_id = 13;</code>
+       * <code>uint32 level_id = 15;</code>
        * @param value The levelId to set.
        * @return This builder for chaining.
        */
@@ -527,7 +527,7 @@ public final class GravenInnocenceRaceLevelInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 level_id = 13;</code>
+       * <code>uint32 level_id = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearLevelId() {
@@ -539,7 +539,7 @@ public final class GravenInnocenceRaceLevelInfoOuterClass {
 
       private int maxScore_ ;
       /**
-       * <code>uint32 max_score = 5;</code>
+       * <code>uint32 max_score = 8;</code>
        * @return The maxScore.
        */
       @java.lang.Override
@@ -547,7 +547,7 @@ public final class GravenInnocenceRaceLevelInfoOuterClass {
         return maxScore_;
       }
       /**
-       * <code>uint32 max_score = 5;</code>
+       * <code>uint32 max_score = 8;</code>
        * @param value The maxScore to set.
        * @return This builder for chaining.
        */
@@ -558,7 +558,7 @@ public final class GravenInnocenceRaceLevelInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 max_score = 5;</code>
+       * <code>uint32 max_score = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearMaxScore() {
@@ -667,7 +667,7 @@ public final class GravenInnocenceRaceLevelInfoOuterClass {
     java.lang.String[] descriptorData = {
       "\n\"GravenInnocenceRaceLevelInfo.proto\"T\n\034" +
       "GravenInnocenceRaceLevelInfo\022\020\n\010level_id" +
-      "\030\r \001(\r\022\021\n\tmax_score\030\005 \001(\r\022\017\n\007is_open\030\006 \001" +
+      "\030\017 \001(\r\022\021\n\tmax_score\030\010 \001(\r\022\017\n\007is_open\030\006 \001" +
       "(\010B\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

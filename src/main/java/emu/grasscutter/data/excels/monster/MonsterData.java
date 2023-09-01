@@ -1,17 +1,14 @@
 package emu.grasscutter.data.excels.monster;
 
 import com.google.gson.annotations.SerializedName;
-import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.GameResource;
-import emu.grasscutter.data.ResourceType;
+import emu.grasscutter.data.*;
 import emu.grasscutter.data.ResourceType.LoadPriority;
 import emu.grasscutter.data.common.PropGrowCurve;
 import emu.grasscutter.data.excels.GadgetData;
-import emu.grasscutter.game.props.FightProperty;
-import emu.grasscutter.game.props.MonsterType;
-import java.util.List;
-import java.util.Set;
+import emu.grasscutter.game.props.*;
 import lombok.Getter;
+
+import java.util.*;
 
 @ResourceType(name = "MonsterExcelConfigData.json", loadPriority = LoadPriority.LOW)
 @Getter

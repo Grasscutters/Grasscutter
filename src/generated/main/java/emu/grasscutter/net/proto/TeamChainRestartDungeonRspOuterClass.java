@@ -26,8 +26,8 @@ public final class TeamChainRestartDungeonRspOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 24739
-   * Obf: ALPEGHLBHIH
+   * CmdId: 6928
+   * Obf: EMFHOFBBBOM
    * </pre>
    *
    * Protobuf type {@code TeamChainRestartDungeonRsp}
@@ -279,8 +279,8 @@ public final class TeamChainRestartDungeonRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 24739
-     * Obf: ALPEGHLBHIH
+     * CmdId: 6928
+     * Obf: EMFHOFBBBOM
      * </pre>
      *
      * Protobuf type {@code TeamChainRestartDungeonRsp}

@@ -1,7 +1,6 @@
 package emu.grasscutter.game.ability;
 
-import emu.grasscutter.data.binout.AbilityData;
-import emu.grasscutter.data.binout.AbilityModifier;
+import emu.grasscutter.data.binout.*;
 import lombok.Getter;
 
 public class AbilityModifierController {

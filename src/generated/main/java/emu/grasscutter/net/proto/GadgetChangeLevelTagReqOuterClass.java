@@ -19,36 +19,36 @@ public final class GadgetChangeLevelTagReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 level_tag_id = 13;</code>
-     * @return The levelTagId.
-     */
-    int getLevelTagId();
-
-    /**
-     * <code>.CustomGadgetTreeInfo combination_info = 3;</code>
+     * <code>.CustomGadgetTreeInfo combination_info = 1;</code>
      * @return Whether the combinationInfo field is set.
      */
     boolean hasCombinationInfo();
     /**
-     * <code>.CustomGadgetTreeInfo combination_info = 3;</code>
+     * <code>.CustomGadgetTreeInfo combination_info = 1;</code>
      * @return The combinationInfo.
      */
     emu.grasscutter.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfo getCombinationInfo();
     /**
-     * <code>.CustomGadgetTreeInfo combination_info = 3;</code>
+     * <code>.CustomGadgetTreeInfo combination_info = 1;</code>
      */
     emu.grasscutter.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfoOrBuilder getCombinationInfoOrBuilder();
 
     /**
-     * <code>uint32 gadget_entity_id = 7;</code>
+     * <code>uint32 gadget_entity_id = 10;</code>
      * @return The gadgetEntityId.
      */
     int getGadgetEntityId();
+
+    /**
+     * <code>uint32 level_tag_id = 2;</code>
+     * @return The levelTagId.
+     */
+    int getLevelTagId();
   }
   /**
    * <pre>
-   * CmdId: 807
-   * Obf: LCGAKEFDFJB
+   * CmdId: 172
+   * Obf: HNJBNGIPOEK
    * </pre>
    *
    * Protobuf type {@code GadgetChangeLevelTagReq}
@@ -95,7 +95,7 @@ public final class GadgetChangeLevelTagReqOuterClass {
             case 0:
               done = true;
               break;
-            case 26: {
+            case 10: {
               emu.grasscutter.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfo.Builder subBuilder = null;
               if (combinationInfo_ != null) {
                 subBuilder = combinationInfo_.toBuilder();
@@ -108,14 +108,14 @@ public final class GadgetChangeLevelTagReqOuterClass {
 
               break;
             }
-            case 56: {
-
-              gadgetEntityId_ = input.readUInt32();
-              break;
-            }
-            case 104: {
+            case 16: {
 
               levelTagId_ = input.readUInt32();
+              break;
+            }
+            case 80: {
+
+              gadgetEntityId_ = input.readUInt32();
               break;
             }
             default: {
@@ -150,21 +150,10 @@ public final class GadgetChangeLevelTagReqOuterClass {
               emu.grasscutter.net.proto.GadgetChangeLevelTagReqOuterClass.GadgetChangeLevelTagReq.class, emu.grasscutter.net.proto.GadgetChangeLevelTagReqOuterClass.GadgetChangeLevelTagReq.Builder.class);
     }
 
-    public static final int LEVEL_TAG_ID_FIELD_NUMBER = 13;
-    private int levelTagId_;
-    /**
-     * <code>uint32 level_tag_id = 13;</code>
-     * @return The levelTagId.
-     */
-    @java.lang.Override
-    public int getLevelTagId() {
-      return levelTagId_;
-    }
-
-    public static final int COMBINATION_INFO_FIELD_NUMBER = 3;
+    public static final int COMBINATION_INFO_FIELD_NUMBER = 1;
     private emu.grasscutter.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfo combinationInfo_;
     /**
-     * <code>.CustomGadgetTreeInfo combination_info = 3;</code>
+     * <code>.CustomGadgetTreeInfo combination_info = 1;</code>
      * @return Whether the combinationInfo field is set.
      */
     @java.lang.Override
@@ -172,7 +161,7 @@ public final class GadgetChangeLevelTagReqOuterClass {
       return combinationInfo_ != null;
     }
     /**
-     * <code>.CustomGadgetTreeInfo combination_info = 3;</code>
+     * <code>.CustomGadgetTreeInfo combination_info = 1;</code>
      * @return The combinationInfo.
      */
     @java.lang.Override
@@ -180,22 +169,33 @@ public final class GadgetChangeLevelTagReqOuterClass {
       return combinationInfo_ == null ? emu.grasscutter.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfo.getDefaultInstance() : combinationInfo_;
     }
     /**
-     * <code>.CustomGadgetTreeInfo combination_info = 3;</code>
+     * <code>.CustomGadgetTreeInfo combination_info = 1;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfoOrBuilder getCombinationInfoOrBuilder() {
       return getCombinationInfo();
     }
 
-    public static final int GADGET_ENTITY_ID_FIELD_NUMBER = 7;
+    public static final int GADGET_ENTITY_ID_FIELD_NUMBER = 10;
     private int gadgetEntityId_;
     /**
-     * <code>uint32 gadget_entity_id = 7;</code>
+     * <code>uint32 gadget_entity_id = 10;</code>
      * @return The gadgetEntityId.
      */
     @java.lang.Override
     public int getGadgetEntityId() {
       return gadgetEntityId_;
+    }
+
+    public static final int LEVEL_TAG_ID_FIELD_NUMBER = 2;
+    private int levelTagId_;
+    /**
+     * <code>uint32 level_tag_id = 2;</code>
+     * @return The levelTagId.
+     */
+    @java.lang.Override
+    public int getLevelTagId() {
+      return levelTagId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -213,13 +213,13 @@ public final class GadgetChangeLevelTagReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (combinationInfo_ != null) {
-        output.writeMessage(3, getCombinationInfo());
-      }
-      if (gadgetEntityId_ != 0) {
-        output.writeUInt32(7, gadgetEntityId_);
+        output.writeMessage(1, getCombinationInfo());
       }
       if (levelTagId_ != 0) {
-        output.writeUInt32(13, levelTagId_);
+        output.writeUInt32(2, levelTagId_);
+      }
+      if (gadgetEntityId_ != 0) {
+        output.writeUInt32(10, gadgetEntityId_);
       }
       unknownFields.writeTo(output);
     }
@@ -232,15 +232,15 @@ public final class GadgetChangeLevelTagReqOuterClass {
       size = 0;
       if (combinationInfo_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getCombinationInfo());
-      }
-      if (gadgetEntityId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, gadgetEntityId_);
+          .computeMessageSize(1, getCombinationInfo());
       }
       if (levelTagId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, levelTagId_);
+          .computeUInt32Size(2, levelTagId_);
+      }
+      if (gadgetEntityId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(10, gadgetEntityId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -257,8 +257,6 @@ public final class GadgetChangeLevelTagReqOuterClass {
       }
       emu.grasscutter.net.proto.GadgetChangeLevelTagReqOuterClass.GadgetChangeLevelTagReq other = (emu.grasscutter.net.proto.GadgetChangeLevelTagReqOuterClass.GadgetChangeLevelTagReq) obj;
 
-      if (getLevelTagId()
-          != other.getLevelTagId()) return false;
       if (hasCombinationInfo() != other.hasCombinationInfo()) return false;
       if (hasCombinationInfo()) {
         if (!getCombinationInfo()
@@ -266,6 +264,8 @@ public final class GadgetChangeLevelTagReqOuterClass {
       }
       if (getGadgetEntityId()
           != other.getGadgetEntityId()) return false;
+      if (getLevelTagId()
+          != other.getLevelTagId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -277,14 +277,14 @@ public final class GadgetChangeLevelTagReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + LEVEL_TAG_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getLevelTagId();
       if (hasCombinationInfo()) {
         hash = (37 * hash) + COMBINATION_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getCombinationInfo().hashCode();
       }
       hash = (37 * hash) + GADGET_ENTITY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getGadgetEntityId();
+      hash = (37 * hash) + LEVEL_TAG_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getLevelTagId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -382,8 +382,8 @@ public final class GadgetChangeLevelTagReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 807
-     * Obf: LCGAKEFDFJB
+     * CmdId: 172
+     * Obf: HNJBNGIPOEK
      * </pre>
      *
      * Protobuf type {@code GadgetChangeLevelTagReq}
@@ -423,8 +423,6 @@ public final class GadgetChangeLevelTagReqOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        levelTagId_ = 0;
-
         if (combinationInfoBuilder_ == null) {
           combinationInfo_ = null;
         } else {
@@ -432,6 +430,8 @@ public final class GadgetChangeLevelTagReqOuterClass {
           combinationInfoBuilder_ = null;
         }
         gadgetEntityId_ = 0;
+
+        levelTagId_ = 0;
 
         return this;
       }
@@ -459,13 +459,13 @@ public final class GadgetChangeLevelTagReqOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.GadgetChangeLevelTagReqOuterClass.GadgetChangeLevelTagReq buildPartial() {
         emu.grasscutter.net.proto.GadgetChangeLevelTagReqOuterClass.GadgetChangeLevelTagReq result = new emu.grasscutter.net.proto.GadgetChangeLevelTagReqOuterClass.GadgetChangeLevelTagReq(this);
-        result.levelTagId_ = levelTagId_;
         if (combinationInfoBuilder_ == null) {
           result.combinationInfo_ = combinationInfo_;
         } else {
           result.combinationInfo_ = combinationInfoBuilder_.build();
         }
         result.gadgetEntityId_ = gadgetEntityId_;
+        result.levelTagId_ = levelTagId_;
         onBuilt();
         return result;
       }
@@ -514,14 +514,14 @@ public final class GadgetChangeLevelTagReqOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.GadgetChangeLevelTagReqOuterClass.GadgetChangeLevelTagReq other) {
         if (other == emu.grasscutter.net.proto.GadgetChangeLevelTagReqOuterClass.GadgetChangeLevelTagReq.getDefaultInstance()) return this;
-        if (other.getLevelTagId() != 0) {
-          setLevelTagId(other.getLevelTagId());
-        }
         if (other.hasCombinationInfo()) {
           mergeCombinationInfo(other.getCombinationInfo());
         }
         if (other.getGadgetEntityId() != 0) {
           setGadgetEntityId(other.getGadgetEntityId());
+        }
+        if (other.getLevelTagId() != 0) {
+          setLevelTagId(other.getLevelTagId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -552,49 +552,18 @@ public final class GadgetChangeLevelTagReqOuterClass {
         return this;
       }
 
-      private int levelTagId_ ;
-      /**
-       * <code>uint32 level_tag_id = 13;</code>
-       * @return The levelTagId.
-       */
-      @java.lang.Override
-      public int getLevelTagId() {
-        return levelTagId_;
-      }
-      /**
-       * <code>uint32 level_tag_id = 13;</code>
-       * @param value The levelTagId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLevelTagId(int value) {
-        
-        levelTagId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 level_tag_id = 13;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLevelTagId() {
-        
-        levelTagId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private emu.grasscutter.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfo combinationInfo_;
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfo, emu.grasscutter.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfo.Builder, emu.grasscutter.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfoOrBuilder> combinationInfoBuilder_;
       /**
-       * <code>.CustomGadgetTreeInfo combination_info = 3;</code>
+       * <code>.CustomGadgetTreeInfo combination_info = 1;</code>
        * @return Whether the combinationInfo field is set.
        */
       public boolean hasCombinationInfo() {
         return combinationInfoBuilder_ != null || combinationInfo_ != null;
       }
       /**
-       * <code>.CustomGadgetTreeInfo combination_info = 3;</code>
+       * <code>.CustomGadgetTreeInfo combination_info = 1;</code>
        * @return The combinationInfo.
        */
       public emu.grasscutter.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfo getCombinationInfo() {
@@ -605,7 +574,7 @@ public final class GadgetChangeLevelTagReqOuterClass {
         }
       }
       /**
-       * <code>.CustomGadgetTreeInfo combination_info = 3;</code>
+       * <code>.CustomGadgetTreeInfo combination_info = 1;</code>
        */
       public Builder setCombinationInfo(emu.grasscutter.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfo value) {
         if (combinationInfoBuilder_ == null) {
@@ -621,7 +590,7 @@ public final class GadgetChangeLevelTagReqOuterClass {
         return this;
       }
       /**
-       * <code>.CustomGadgetTreeInfo combination_info = 3;</code>
+       * <code>.CustomGadgetTreeInfo combination_info = 1;</code>
        */
       public Builder setCombinationInfo(
           emu.grasscutter.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfo.Builder builderForValue) {
@@ -635,7 +604,7 @@ public final class GadgetChangeLevelTagReqOuterClass {
         return this;
       }
       /**
-       * <code>.CustomGadgetTreeInfo combination_info = 3;</code>
+       * <code>.CustomGadgetTreeInfo combination_info = 1;</code>
        */
       public Builder mergeCombinationInfo(emu.grasscutter.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfo value) {
         if (combinationInfoBuilder_ == null) {
@@ -653,7 +622,7 @@ public final class GadgetChangeLevelTagReqOuterClass {
         return this;
       }
       /**
-       * <code>.CustomGadgetTreeInfo combination_info = 3;</code>
+       * <code>.CustomGadgetTreeInfo combination_info = 1;</code>
        */
       public Builder clearCombinationInfo() {
         if (combinationInfoBuilder_ == null) {
@@ -667,7 +636,7 @@ public final class GadgetChangeLevelTagReqOuterClass {
         return this;
       }
       /**
-       * <code>.CustomGadgetTreeInfo combination_info = 3;</code>
+       * <code>.CustomGadgetTreeInfo combination_info = 1;</code>
        */
       public emu.grasscutter.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfo.Builder getCombinationInfoBuilder() {
         
@@ -675,7 +644,7 @@ public final class GadgetChangeLevelTagReqOuterClass {
         return getCombinationInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.CustomGadgetTreeInfo combination_info = 3;</code>
+       * <code>.CustomGadgetTreeInfo combination_info = 1;</code>
        */
       public emu.grasscutter.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfoOrBuilder getCombinationInfoOrBuilder() {
         if (combinationInfoBuilder_ != null) {
@@ -686,7 +655,7 @@ public final class GadgetChangeLevelTagReqOuterClass {
         }
       }
       /**
-       * <code>.CustomGadgetTreeInfo combination_info = 3;</code>
+       * <code>.CustomGadgetTreeInfo combination_info = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfo, emu.grasscutter.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfo.Builder, emu.grasscutter.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfoOrBuilder> 
@@ -704,7 +673,7 @@ public final class GadgetChangeLevelTagReqOuterClass {
 
       private int gadgetEntityId_ ;
       /**
-       * <code>uint32 gadget_entity_id = 7;</code>
+       * <code>uint32 gadget_entity_id = 10;</code>
        * @return The gadgetEntityId.
        */
       @java.lang.Override
@@ -712,7 +681,7 @@ public final class GadgetChangeLevelTagReqOuterClass {
         return gadgetEntityId_;
       }
       /**
-       * <code>uint32 gadget_entity_id = 7;</code>
+       * <code>uint32 gadget_entity_id = 10;</code>
        * @param value The gadgetEntityId to set.
        * @return This builder for chaining.
        */
@@ -723,12 +692,43 @@ public final class GadgetChangeLevelTagReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 gadget_entity_id = 7;</code>
+       * <code>uint32 gadget_entity_id = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearGadgetEntityId() {
         
         gadgetEntityId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int levelTagId_ ;
+      /**
+       * <code>uint32 level_tag_id = 2;</code>
+       * @return The levelTagId.
+       */
+      @java.lang.Override
+      public int getLevelTagId() {
+        return levelTagId_;
+      }
+      /**
+       * <code>uint32 level_tag_id = 2;</code>
+       * @param value The levelTagId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLevelTagId(int value) {
+        
+        levelTagId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 level_tag_id = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLevelTagId() {
+        
+        levelTagId_ = 0;
         onChanged();
         return this;
       }
@@ -801,9 +801,9 @@ public final class GadgetChangeLevelTagReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n\035GadgetChangeLevelTagReq.proto\032\032CustomG" +
       "adgetTreeInfo.proto\"z\n\027GadgetChangeLevel" +
-      "TagReq\022\024\n\014level_tag_id\030\r \001(\r\022/\n\020combinat" +
-      "ion_info\030\003 \001(\0132\025.CustomGadgetTreeInfo\022\030\n" +
-      "\020gadget_entity_id\030\007 \001(\rB\033\n\031emu.grasscutt" +
+      "TagReq\022/\n\020combination_info\030\001 \001(\0132\025.Custo" +
+      "mGadgetTreeInfo\022\030\n\020gadget_entity_id\030\n \001(" +
+      "\r\022\024\n\014level_tag_id\030\002 \001(\rB\033\n\031emu.grasscutt" +
       "er.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -816,7 +816,7 @@ public final class GadgetChangeLevelTagReqOuterClass {
     internal_static_GadgetChangeLevelTagReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GadgetChangeLevelTagReq_descriptor,
-        new java.lang.String[] { "LevelTagId", "CombinationInfo", "GadgetEntityId", });
+        new java.lang.String[] { "CombinationInfo", "GadgetEntityId", "LevelTagId", });
     emu.grasscutter.net.proto.CustomGadgetTreeInfoOuterClass.getDescriptor();
   }
 

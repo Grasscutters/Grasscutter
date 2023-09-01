@@ -19,15 +19,15 @@ public final class HomeChangeEditModeReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool is_enter_edit_mode = 11;</code>
+     * <code>bool is_enter_edit_mode = 2;</code>
      * @return The isEnterEditMode.
      */
     boolean getIsEnterEditMode();
   }
   /**
    * <pre>
-   * CmdId: 4656
-   * Obf: AJILEMFFCIP
+   * CmdId: 8351
+   * Obf: ALGDHNPEBCO
    * </pre>
    *
    * Protobuf type {@code HomeChangeEditModeReq}
@@ -74,7 +74,7 @@ public final class HomeChangeEditModeReqOuterClass {
             case 0:
               done = true;
               break;
-            case 88: {
+            case 16: {
 
               isEnterEditMode_ = input.readBool();
               break;
@@ -111,10 +111,10 @@ public final class HomeChangeEditModeReqOuterClass {
               emu.grasscutter.net.proto.HomeChangeEditModeReqOuterClass.HomeChangeEditModeReq.class, emu.grasscutter.net.proto.HomeChangeEditModeReqOuterClass.HomeChangeEditModeReq.Builder.class);
     }
 
-    public static final int IS_ENTER_EDIT_MODE_FIELD_NUMBER = 11;
+    public static final int IS_ENTER_EDIT_MODE_FIELD_NUMBER = 2;
     private boolean isEnterEditMode_;
     /**
-     * <code>bool is_enter_edit_mode = 11;</code>
+     * <code>bool is_enter_edit_mode = 2;</code>
      * @return The isEnterEditMode.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class HomeChangeEditModeReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (isEnterEditMode_ != false) {
-        output.writeBool(11, isEnterEditMode_);
+        output.writeBool(2, isEnterEditMode_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class HomeChangeEditModeReqOuterClass {
       size = 0;
       if (isEnterEditMode_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(11, isEnterEditMode_);
+          .computeBoolSize(2, isEnterEditMode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -280,8 +280,8 @@ public final class HomeChangeEditModeReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4656
-     * Obf: AJILEMFFCIP
+     * CmdId: 8351
+     * Obf: ALGDHNPEBCO
      * </pre>
      *
      * Protobuf type {@code HomeChangeEditModeReq}
@@ -432,7 +432,7 @@ public final class HomeChangeEditModeReqOuterClass {
 
       private boolean isEnterEditMode_ ;
       /**
-       * <code>bool is_enter_edit_mode = 11;</code>
+       * <code>bool is_enter_edit_mode = 2;</code>
        * @return The isEnterEditMode.
        */
       @java.lang.Override
@@ -440,7 +440,7 @@ public final class HomeChangeEditModeReqOuterClass {
         return isEnterEditMode_;
       }
       /**
-       * <code>bool is_enter_edit_mode = 11;</code>
+       * <code>bool is_enter_edit_mode = 2;</code>
        * @param value The isEnterEditMode to set.
        * @return This builder for chaining.
        */
@@ -451,7 +451,7 @@ public final class HomeChangeEditModeReqOuterClass {
         return this;
       }
       /**
-       * <code>bool is_enter_edit_mode = 11;</code>
+       * <code>bool is_enter_edit_mode = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsEnterEditMode() {
@@ -528,7 +528,7 @@ public final class HomeChangeEditModeReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\033HomeChangeEditModeReq.proto\"3\n\025HomeCha" +
-      "ngeEditModeReq\022\032\n\022is_enter_edit_mode\030\013 \001" +
+      "ngeEditModeReq\022\032\n\022is_enter_edit_mode\030\002 \001" +
       "(\010B\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

@@ -16,7 +16,7 @@ public final class GadgetBornTypeOuterClass {
   }
   /**
    * <pre>
-   * Obf: OOFKDFMGBHE
+   * Obf: GPODMAALLGC
    * </pre>
    *
    * Protobuf enum {@code GadgetBornType}

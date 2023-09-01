@@ -19,21 +19,21 @@ public final class TreasureSeelieCollectOrbsNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 current_num = 10;</code>
-     * @return The currentNum.
-     */
-    int getCurrentNum();
-
-    /**
-     * <code>uint32 total_num = 2;</code>
+     * <code>uint32 total_num = 9;</code>
      * @return The totalNum.
      */
     int getTotalNum();
+
+    /**
+     * <code>uint32 current_num = 15;</code>
+     * @return The currentNum.
+     */
+    int getCurrentNum();
   }
   /**
    * <pre>
-   * CmdId: 21944
-   * Obf: OGKJEIDNHHC
+   * CmdId: 28836
+   * Obf: DEKFKAKMIAP
    * </pre>
    *
    * Protobuf type {@code TreasureSeelieCollectOrbsNotify}
@@ -80,12 +80,12 @@ public final class TreasureSeelieCollectOrbsNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
+            case 72: {
 
               totalNum_ = input.readUInt32();
               break;
             }
-            case 80: {
+            case 120: {
 
               currentNum_ = input.readUInt32();
               break;
@@ -122,26 +122,26 @@ public final class TreasureSeelieCollectOrbsNotifyOuterClass {
               emu.grasscutter.net.proto.TreasureSeelieCollectOrbsNotifyOuterClass.TreasureSeelieCollectOrbsNotify.class, emu.grasscutter.net.proto.TreasureSeelieCollectOrbsNotifyOuterClass.TreasureSeelieCollectOrbsNotify.Builder.class);
     }
 
-    public static final int CURRENT_NUM_FIELD_NUMBER = 10;
-    private int currentNum_;
-    /**
-     * <code>uint32 current_num = 10;</code>
-     * @return The currentNum.
-     */
-    @java.lang.Override
-    public int getCurrentNum() {
-      return currentNum_;
-    }
-
-    public static final int TOTAL_NUM_FIELD_NUMBER = 2;
+    public static final int TOTAL_NUM_FIELD_NUMBER = 9;
     private int totalNum_;
     /**
-     * <code>uint32 total_num = 2;</code>
+     * <code>uint32 total_num = 9;</code>
      * @return The totalNum.
      */
     @java.lang.Override
     public int getTotalNum() {
       return totalNum_;
+    }
+
+    public static final int CURRENT_NUM_FIELD_NUMBER = 15;
+    private int currentNum_;
+    /**
+     * <code>uint32 current_num = 15;</code>
+     * @return The currentNum.
+     */
+    @java.lang.Override
+    public int getCurrentNum() {
+      return currentNum_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -159,10 +159,10 @@ public final class TreasureSeelieCollectOrbsNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (totalNum_ != 0) {
-        output.writeUInt32(2, totalNum_);
+        output.writeUInt32(9, totalNum_);
       }
       if (currentNum_ != 0) {
-        output.writeUInt32(10, currentNum_);
+        output.writeUInt32(15, currentNum_);
       }
       unknownFields.writeTo(output);
     }
@@ -175,11 +175,11 @@ public final class TreasureSeelieCollectOrbsNotifyOuterClass {
       size = 0;
       if (totalNum_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, totalNum_);
+          .computeUInt32Size(9, totalNum_);
       }
       if (currentNum_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, currentNum_);
+          .computeUInt32Size(15, currentNum_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -196,10 +196,10 @@ public final class TreasureSeelieCollectOrbsNotifyOuterClass {
       }
       emu.grasscutter.net.proto.TreasureSeelieCollectOrbsNotifyOuterClass.TreasureSeelieCollectOrbsNotify other = (emu.grasscutter.net.proto.TreasureSeelieCollectOrbsNotifyOuterClass.TreasureSeelieCollectOrbsNotify) obj;
 
-      if (getCurrentNum()
-          != other.getCurrentNum()) return false;
       if (getTotalNum()
           != other.getTotalNum()) return false;
+      if (getCurrentNum()
+          != other.getCurrentNum()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -211,10 +211,10 @@ public final class TreasureSeelieCollectOrbsNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + CURRENT_NUM_FIELD_NUMBER;
-      hash = (53 * hash) + getCurrentNum();
       hash = (37 * hash) + TOTAL_NUM_FIELD_NUMBER;
       hash = (53 * hash) + getTotalNum();
+      hash = (37 * hash) + CURRENT_NUM_FIELD_NUMBER;
+      hash = (53 * hash) + getCurrentNum();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -312,8 +312,8 @@ public final class TreasureSeelieCollectOrbsNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 21944
-     * Obf: OGKJEIDNHHC
+     * CmdId: 28836
+     * Obf: DEKFKAKMIAP
      * </pre>
      *
      * Protobuf type {@code TreasureSeelieCollectOrbsNotify}
@@ -353,9 +353,9 @@ public final class TreasureSeelieCollectOrbsNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        currentNum_ = 0;
-
         totalNum_ = 0;
+
+        currentNum_ = 0;
 
         return this;
       }
@@ -383,8 +383,8 @@ public final class TreasureSeelieCollectOrbsNotifyOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.TreasureSeelieCollectOrbsNotifyOuterClass.TreasureSeelieCollectOrbsNotify buildPartial() {
         emu.grasscutter.net.proto.TreasureSeelieCollectOrbsNotifyOuterClass.TreasureSeelieCollectOrbsNotify result = new emu.grasscutter.net.proto.TreasureSeelieCollectOrbsNotifyOuterClass.TreasureSeelieCollectOrbsNotify(this);
-        result.currentNum_ = currentNum_;
         result.totalNum_ = totalNum_;
+        result.currentNum_ = currentNum_;
         onBuilt();
         return result;
       }
@@ -433,11 +433,11 @@ public final class TreasureSeelieCollectOrbsNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.TreasureSeelieCollectOrbsNotifyOuterClass.TreasureSeelieCollectOrbsNotify other) {
         if (other == emu.grasscutter.net.proto.TreasureSeelieCollectOrbsNotifyOuterClass.TreasureSeelieCollectOrbsNotify.getDefaultInstance()) return this;
-        if (other.getCurrentNum() != 0) {
-          setCurrentNum(other.getCurrentNum());
-        }
         if (other.getTotalNum() != 0) {
           setTotalNum(other.getTotalNum());
+        }
+        if (other.getCurrentNum() != 0) {
+          setCurrentNum(other.getCurrentNum());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -468,40 +468,9 @@ public final class TreasureSeelieCollectOrbsNotifyOuterClass {
         return this;
       }
 
-      private int currentNum_ ;
-      /**
-       * <code>uint32 current_num = 10;</code>
-       * @return The currentNum.
-       */
-      @java.lang.Override
-      public int getCurrentNum() {
-        return currentNum_;
-      }
-      /**
-       * <code>uint32 current_num = 10;</code>
-       * @param value The currentNum to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCurrentNum(int value) {
-        
-        currentNum_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 current_num = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCurrentNum() {
-        
-        currentNum_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int totalNum_ ;
       /**
-       * <code>uint32 total_num = 2;</code>
+       * <code>uint32 total_num = 9;</code>
        * @return The totalNum.
        */
       @java.lang.Override
@@ -509,7 +478,7 @@ public final class TreasureSeelieCollectOrbsNotifyOuterClass {
         return totalNum_;
       }
       /**
-       * <code>uint32 total_num = 2;</code>
+       * <code>uint32 total_num = 9;</code>
        * @param value The totalNum to set.
        * @return This builder for chaining.
        */
@@ -520,12 +489,43 @@ public final class TreasureSeelieCollectOrbsNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 total_num = 2;</code>
+       * <code>uint32 total_num = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearTotalNum() {
         
         totalNum_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int currentNum_ ;
+      /**
+       * <code>uint32 current_num = 15;</code>
+       * @return The currentNum.
+       */
+      @java.lang.Override
+      public int getCurrentNum() {
+        return currentNum_;
+      }
+      /**
+       * <code>uint32 current_num = 15;</code>
+       * @param value The currentNum to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCurrentNum(int value) {
+        
+        currentNum_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 current_num = 15;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCurrentNum() {
+        
+        currentNum_ = 0;
         onChanged();
         return this;
       }
@@ -597,8 +597,8 @@ public final class TreasureSeelieCollectOrbsNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n%TreasureSeelieCollectOrbsNotify.proto\"" +
-      "I\n\037TreasureSeelieCollectOrbsNotify\022\023\n\013cu" +
-      "rrent_num\030\n \001(\r\022\021\n\ttotal_num\030\002 \001(\rB\033\n\031em" +
+      "I\n\037TreasureSeelieCollectOrbsNotify\022\021\n\tto" +
+      "tal_num\030\t \001(\r\022\023\n\013current_num\030\017 \001(\rB\033\n\031em" +
       "u.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -610,7 +610,7 @@ public final class TreasureSeelieCollectOrbsNotifyOuterClass {
     internal_static_TreasureSeelieCollectOrbsNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_TreasureSeelieCollectOrbsNotify_descriptor,
-        new java.lang.String[] { "CurrentNum", "TotalNum", });
+        new java.lang.String[] { "TotalNum", "CurrentNum", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

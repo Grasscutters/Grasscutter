@@ -19,21 +19,21 @@ public final class SetCodexPushtipsReadReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 GMMHIHAOJIM = 12;</code>
-     * @return The gMMHIHAOJIM.
+     * <code>uint32 JKLHOJOCLJD = 9;</code>
+     * @return The jKLHOJOCLJD.
      */
-    int getGMMHIHAOJIM();
+    int getJKLHOJOCLJD();
 
     /**
-     * <code>uint32 HFJNAAGCKFJ = 15;</code>
-     * @return The hFJNAAGCKFJ.
+     * <code>uint32 CFNJIOIOLPG = 1;</code>
+     * @return The cFNJIOIOLPG.
      */
-    int getHFJNAAGCKFJ();
+    int getCFNJIOIOLPG();
   }
   /**
    * <pre>
-   * CmdId: 4205
-   * Obf: PHKFECLEDJN
+   * CmdId: 26795
+   * Obf: OHAHFGBBKCI
    * </pre>
    *
    * Protobuf type {@code SetCodexPushtipsReadReq}
@@ -80,14 +80,14 @@ public final class SetCodexPushtipsReadReqOuterClass {
             case 0:
               done = true;
               break;
-            case 96: {
+            case 8: {
 
-              gMMHIHAOJIM_ = input.readUInt32();
+              cFNJIOIOLPG_ = input.readUInt32();
               break;
             }
-            case 120: {
+            case 72: {
 
-              hFJNAAGCKFJ_ = input.readUInt32();
+              jKLHOJOCLJD_ = input.readUInt32();
               break;
             }
             default: {
@@ -122,26 +122,26 @@ public final class SetCodexPushtipsReadReqOuterClass {
               emu.grasscutter.net.proto.SetCodexPushtipsReadReqOuterClass.SetCodexPushtipsReadReq.class, emu.grasscutter.net.proto.SetCodexPushtipsReadReqOuterClass.SetCodexPushtipsReadReq.Builder.class);
     }
 
-    public static final int GMMHIHAOJIM_FIELD_NUMBER = 12;
-    private int gMMHIHAOJIM_;
+    public static final int JKLHOJOCLJD_FIELD_NUMBER = 9;
+    private int jKLHOJOCLJD_;
     /**
-     * <code>uint32 GMMHIHAOJIM = 12;</code>
-     * @return The gMMHIHAOJIM.
+     * <code>uint32 JKLHOJOCLJD = 9;</code>
+     * @return The jKLHOJOCLJD.
      */
     @java.lang.Override
-    public int getGMMHIHAOJIM() {
-      return gMMHIHAOJIM_;
+    public int getJKLHOJOCLJD() {
+      return jKLHOJOCLJD_;
     }
 
-    public static final int HFJNAAGCKFJ_FIELD_NUMBER = 15;
-    private int hFJNAAGCKFJ_;
+    public static final int CFNJIOIOLPG_FIELD_NUMBER = 1;
+    private int cFNJIOIOLPG_;
     /**
-     * <code>uint32 HFJNAAGCKFJ = 15;</code>
-     * @return The hFJNAAGCKFJ.
+     * <code>uint32 CFNJIOIOLPG = 1;</code>
+     * @return The cFNJIOIOLPG.
      */
     @java.lang.Override
-    public int getHFJNAAGCKFJ() {
-      return hFJNAAGCKFJ_;
+    public int getCFNJIOIOLPG() {
+      return cFNJIOIOLPG_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -158,11 +158,11 @@ public final class SetCodexPushtipsReadReqOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (gMMHIHAOJIM_ != 0) {
-        output.writeUInt32(12, gMMHIHAOJIM_);
+      if (cFNJIOIOLPG_ != 0) {
+        output.writeUInt32(1, cFNJIOIOLPG_);
       }
-      if (hFJNAAGCKFJ_ != 0) {
-        output.writeUInt32(15, hFJNAAGCKFJ_);
+      if (jKLHOJOCLJD_ != 0) {
+        output.writeUInt32(9, jKLHOJOCLJD_);
       }
       unknownFields.writeTo(output);
     }
@@ -173,13 +173,13 @@ public final class SetCodexPushtipsReadReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (gMMHIHAOJIM_ != 0) {
+      if (cFNJIOIOLPG_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, gMMHIHAOJIM_);
+          .computeUInt32Size(1, cFNJIOIOLPG_);
       }
-      if (hFJNAAGCKFJ_ != 0) {
+      if (jKLHOJOCLJD_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, hFJNAAGCKFJ_);
+          .computeUInt32Size(9, jKLHOJOCLJD_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -196,10 +196,10 @@ public final class SetCodexPushtipsReadReqOuterClass {
       }
       emu.grasscutter.net.proto.SetCodexPushtipsReadReqOuterClass.SetCodexPushtipsReadReq other = (emu.grasscutter.net.proto.SetCodexPushtipsReadReqOuterClass.SetCodexPushtipsReadReq) obj;
 
-      if (getGMMHIHAOJIM()
-          != other.getGMMHIHAOJIM()) return false;
-      if (getHFJNAAGCKFJ()
-          != other.getHFJNAAGCKFJ()) return false;
+      if (getJKLHOJOCLJD()
+          != other.getJKLHOJOCLJD()) return false;
+      if (getCFNJIOIOLPG()
+          != other.getCFNJIOIOLPG()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -211,10 +211,10 @@ public final class SetCodexPushtipsReadReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + GMMHIHAOJIM_FIELD_NUMBER;
-      hash = (53 * hash) + getGMMHIHAOJIM();
-      hash = (37 * hash) + HFJNAAGCKFJ_FIELD_NUMBER;
-      hash = (53 * hash) + getHFJNAAGCKFJ();
+      hash = (37 * hash) + JKLHOJOCLJD_FIELD_NUMBER;
+      hash = (53 * hash) + getJKLHOJOCLJD();
+      hash = (37 * hash) + CFNJIOIOLPG_FIELD_NUMBER;
+      hash = (53 * hash) + getCFNJIOIOLPG();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -312,8 +312,8 @@ public final class SetCodexPushtipsReadReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4205
-     * Obf: PHKFECLEDJN
+     * CmdId: 26795
+     * Obf: OHAHFGBBKCI
      * </pre>
      *
      * Protobuf type {@code SetCodexPushtipsReadReq}
@@ -353,9 +353,9 @@ public final class SetCodexPushtipsReadReqOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        gMMHIHAOJIM_ = 0;
+        jKLHOJOCLJD_ = 0;
 
-        hFJNAAGCKFJ_ = 0;
+        cFNJIOIOLPG_ = 0;
 
         return this;
       }
@@ -383,8 +383,8 @@ public final class SetCodexPushtipsReadReqOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.SetCodexPushtipsReadReqOuterClass.SetCodexPushtipsReadReq buildPartial() {
         emu.grasscutter.net.proto.SetCodexPushtipsReadReqOuterClass.SetCodexPushtipsReadReq result = new emu.grasscutter.net.proto.SetCodexPushtipsReadReqOuterClass.SetCodexPushtipsReadReq(this);
-        result.gMMHIHAOJIM_ = gMMHIHAOJIM_;
-        result.hFJNAAGCKFJ_ = hFJNAAGCKFJ_;
+        result.jKLHOJOCLJD_ = jKLHOJOCLJD_;
+        result.cFNJIOIOLPG_ = cFNJIOIOLPG_;
         onBuilt();
         return result;
       }
@@ -433,11 +433,11 @@ public final class SetCodexPushtipsReadReqOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.SetCodexPushtipsReadReqOuterClass.SetCodexPushtipsReadReq other) {
         if (other == emu.grasscutter.net.proto.SetCodexPushtipsReadReqOuterClass.SetCodexPushtipsReadReq.getDefaultInstance()) return this;
-        if (other.getGMMHIHAOJIM() != 0) {
-          setGMMHIHAOJIM(other.getGMMHIHAOJIM());
+        if (other.getJKLHOJOCLJD() != 0) {
+          setJKLHOJOCLJD(other.getJKLHOJOCLJD());
         }
-        if (other.getHFJNAAGCKFJ() != 0) {
-          setHFJNAAGCKFJ(other.getHFJNAAGCKFJ());
+        if (other.getCFNJIOIOLPG() != 0) {
+          setCFNJIOIOLPG(other.getCFNJIOIOLPG());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -468,64 +468,64 @@ public final class SetCodexPushtipsReadReqOuterClass {
         return this;
       }
 
-      private int gMMHIHAOJIM_ ;
+      private int jKLHOJOCLJD_ ;
       /**
-       * <code>uint32 GMMHIHAOJIM = 12;</code>
-       * @return The gMMHIHAOJIM.
+       * <code>uint32 JKLHOJOCLJD = 9;</code>
+       * @return The jKLHOJOCLJD.
        */
       @java.lang.Override
-      public int getGMMHIHAOJIM() {
-        return gMMHIHAOJIM_;
+      public int getJKLHOJOCLJD() {
+        return jKLHOJOCLJD_;
       }
       /**
-       * <code>uint32 GMMHIHAOJIM = 12;</code>
-       * @param value The gMMHIHAOJIM to set.
+       * <code>uint32 JKLHOJOCLJD = 9;</code>
+       * @param value The jKLHOJOCLJD to set.
        * @return This builder for chaining.
        */
-      public Builder setGMMHIHAOJIM(int value) {
+      public Builder setJKLHOJOCLJD(int value) {
         
-        gMMHIHAOJIM_ = value;
+        jKLHOJOCLJD_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 GMMHIHAOJIM = 12;</code>
+       * <code>uint32 JKLHOJOCLJD = 9;</code>
        * @return This builder for chaining.
        */
-      public Builder clearGMMHIHAOJIM() {
+      public Builder clearJKLHOJOCLJD() {
         
-        gMMHIHAOJIM_ = 0;
+        jKLHOJOCLJD_ = 0;
         onChanged();
         return this;
       }
 
-      private int hFJNAAGCKFJ_ ;
+      private int cFNJIOIOLPG_ ;
       /**
-       * <code>uint32 HFJNAAGCKFJ = 15;</code>
-       * @return The hFJNAAGCKFJ.
+       * <code>uint32 CFNJIOIOLPG = 1;</code>
+       * @return The cFNJIOIOLPG.
        */
       @java.lang.Override
-      public int getHFJNAAGCKFJ() {
-        return hFJNAAGCKFJ_;
+      public int getCFNJIOIOLPG() {
+        return cFNJIOIOLPG_;
       }
       /**
-       * <code>uint32 HFJNAAGCKFJ = 15;</code>
-       * @param value The hFJNAAGCKFJ to set.
+       * <code>uint32 CFNJIOIOLPG = 1;</code>
+       * @param value The cFNJIOIOLPG to set.
        * @return This builder for chaining.
        */
-      public Builder setHFJNAAGCKFJ(int value) {
+      public Builder setCFNJIOIOLPG(int value) {
         
-        hFJNAAGCKFJ_ = value;
+        cFNJIOIOLPG_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 HFJNAAGCKFJ = 15;</code>
+       * <code>uint32 CFNJIOIOLPG = 1;</code>
        * @return This builder for chaining.
        */
-      public Builder clearHFJNAAGCKFJ() {
+      public Builder clearCFNJIOIOLPG() {
         
-        hFJNAAGCKFJ_ = 0;
+        cFNJIOIOLPG_ = 0;
         onChanged();
         return this;
       }
@@ -597,8 +597,8 @@ public final class SetCodexPushtipsReadReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\035SetCodexPushtipsReadReq.proto\"C\n\027SetCo" +
-      "dexPushtipsReadReq\022\023\n\013GMMHIHAOJIM\030\014 \001(\r\022" +
-      "\023\n\013HFJNAAGCKFJ\030\017 \001(\rB\033\n\031emu.grasscutter." +
+      "dexPushtipsReadReq\022\023\n\013JKLHOJOCLJD\030\t \001(\r\022" +
+      "\023\n\013CFNJIOIOLPG\030\001 \001(\rB\033\n\031emu.grasscutter." +
       "net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -610,7 +610,7 @@ public final class SetCodexPushtipsReadReqOuterClass {
     internal_static_SetCodexPushtipsReadReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SetCodexPushtipsReadReq_descriptor,
-        new java.lang.String[] { "GMMHIHAOJIM", "HFJNAAGCKFJ", });
+        new java.lang.String[] { "JKLHOJOCLJD", "CFNJIOIOLPG", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

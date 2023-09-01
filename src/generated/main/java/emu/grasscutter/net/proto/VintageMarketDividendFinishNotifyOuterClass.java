@@ -19,21 +19,21 @@ public final class VintageMarketDividendFinishNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 LGCEBJNOBAM = 8;</code>
-     * @return The lGCEBJNOBAM.
+     * <code>uint32 FMABDGMGDAM = 14;</code>
+     * @return The fMABDGMGDAM.
      */
-    int getLGCEBJNOBAM();
+    int getFMABDGMGDAM();
 
     /**
-     * <code>uint32 LJIOMIABKJC = 2;</code>
-     * @return The lJIOMIABKJC.
+     * <code>uint32 LCIDAMLLGHM = 6;</code>
+     * @return The lCIDAMLLGHM.
      */
-    int getLJIOMIABKJC();
+    int getLCIDAMLLGHM();
   }
   /**
    * <pre>
-   * CmdId: 20538
-   * Obf: GOJPPFBAMPJ
+   * CmdId: 1158
+   * Obf: LKKGMJHPCCF
    * </pre>
    *
    * Protobuf type {@code VintageMarketDividendFinishNotify}
@@ -80,14 +80,14 @@ public final class VintageMarketDividendFinishNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
+            case 48: {
 
-              lJIOMIABKJC_ = input.readUInt32();
+              lCIDAMLLGHM_ = input.readUInt32();
               break;
             }
-            case 64: {
+            case 112: {
 
-              lGCEBJNOBAM_ = input.readUInt32();
+              fMABDGMGDAM_ = input.readUInt32();
               break;
             }
             default: {
@@ -122,26 +122,26 @@ public final class VintageMarketDividendFinishNotifyOuterClass {
               emu.grasscutter.net.proto.VintageMarketDividendFinishNotifyOuterClass.VintageMarketDividendFinishNotify.class, emu.grasscutter.net.proto.VintageMarketDividendFinishNotifyOuterClass.VintageMarketDividendFinishNotify.Builder.class);
     }
 
-    public static final int LGCEBJNOBAM_FIELD_NUMBER = 8;
-    private int lGCEBJNOBAM_;
+    public static final int FMABDGMGDAM_FIELD_NUMBER = 14;
+    private int fMABDGMGDAM_;
     /**
-     * <code>uint32 LGCEBJNOBAM = 8;</code>
-     * @return The lGCEBJNOBAM.
+     * <code>uint32 FMABDGMGDAM = 14;</code>
+     * @return The fMABDGMGDAM.
      */
     @java.lang.Override
-    public int getLGCEBJNOBAM() {
-      return lGCEBJNOBAM_;
+    public int getFMABDGMGDAM() {
+      return fMABDGMGDAM_;
     }
 
-    public static final int LJIOMIABKJC_FIELD_NUMBER = 2;
-    private int lJIOMIABKJC_;
+    public static final int LCIDAMLLGHM_FIELD_NUMBER = 6;
+    private int lCIDAMLLGHM_;
     /**
-     * <code>uint32 LJIOMIABKJC = 2;</code>
-     * @return The lJIOMIABKJC.
+     * <code>uint32 LCIDAMLLGHM = 6;</code>
+     * @return The lCIDAMLLGHM.
      */
     @java.lang.Override
-    public int getLJIOMIABKJC() {
-      return lJIOMIABKJC_;
+    public int getLCIDAMLLGHM() {
+      return lCIDAMLLGHM_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -158,11 +158,11 @@ public final class VintageMarketDividendFinishNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (lJIOMIABKJC_ != 0) {
-        output.writeUInt32(2, lJIOMIABKJC_);
+      if (lCIDAMLLGHM_ != 0) {
+        output.writeUInt32(6, lCIDAMLLGHM_);
       }
-      if (lGCEBJNOBAM_ != 0) {
-        output.writeUInt32(8, lGCEBJNOBAM_);
+      if (fMABDGMGDAM_ != 0) {
+        output.writeUInt32(14, fMABDGMGDAM_);
       }
       unknownFields.writeTo(output);
     }
@@ -173,13 +173,13 @@ public final class VintageMarketDividendFinishNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (lJIOMIABKJC_ != 0) {
+      if (lCIDAMLLGHM_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, lJIOMIABKJC_);
+          .computeUInt32Size(6, lCIDAMLLGHM_);
       }
-      if (lGCEBJNOBAM_ != 0) {
+      if (fMABDGMGDAM_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, lGCEBJNOBAM_);
+          .computeUInt32Size(14, fMABDGMGDAM_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -196,10 +196,10 @@ public final class VintageMarketDividendFinishNotifyOuterClass {
       }
       emu.grasscutter.net.proto.VintageMarketDividendFinishNotifyOuterClass.VintageMarketDividendFinishNotify other = (emu.grasscutter.net.proto.VintageMarketDividendFinishNotifyOuterClass.VintageMarketDividendFinishNotify) obj;
 
-      if (getLGCEBJNOBAM()
-          != other.getLGCEBJNOBAM()) return false;
-      if (getLJIOMIABKJC()
-          != other.getLJIOMIABKJC()) return false;
+      if (getFMABDGMGDAM()
+          != other.getFMABDGMGDAM()) return false;
+      if (getLCIDAMLLGHM()
+          != other.getLCIDAMLLGHM()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -211,10 +211,10 @@ public final class VintageMarketDividendFinishNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + LGCEBJNOBAM_FIELD_NUMBER;
-      hash = (53 * hash) + getLGCEBJNOBAM();
-      hash = (37 * hash) + LJIOMIABKJC_FIELD_NUMBER;
-      hash = (53 * hash) + getLJIOMIABKJC();
+      hash = (37 * hash) + FMABDGMGDAM_FIELD_NUMBER;
+      hash = (53 * hash) + getFMABDGMGDAM();
+      hash = (37 * hash) + LCIDAMLLGHM_FIELD_NUMBER;
+      hash = (53 * hash) + getLCIDAMLLGHM();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -312,8 +312,8 @@ public final class VintageMarketDividendFinishNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 20538
-     * Obf: GOJPPFBAMPJ
+     * CmdId: 1158
+     * Obf: LKKGMJHPCCF
      * </pre>
      *
      * Protobuf type {@code VintageMarketDividendFinishNotify}
@@ -353,9 +353,9 @@ public final class VintageMarketDividendFinishNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        lGCEBJNOBAM_ = 0;
+        fMABDGMGDAM_ = 0;
 
-        lJIOMIABKJC_ = 0;
+        lCIDAMLLGHM_ = 0;
 
         return this;
       }
@@ -383,8 +383,8 @@ public final class VintageMarketDividendFinishNotifyOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.VintageMarketDividendFinishNotifyOuterClass.VintageMarketDividendFinishNotify buildPartial() {
         emu.grasscutter.net.proto.VintageMarketDividendFinishNotifyOuterClass.VintageMarketDividendFinishNotify result = new emu.grasscutter.net.proto.VintageMarketDividendFinishNotifyOuterClass.VintageMarketDividendFinishNotify(this);
-        result.lGCEBJNOBAM_ = lGCEBJNOBAM_;
-        result.lJIOMIABKJC_ = lJIOMIABKJC_;
+        result.fMABDGMGDAM_ = fMABDGMGDAM_;
+        result.lCIDAMLLGHM_ = lCIDAMLLGHM_;
         onBuilt();
         return result;
       }
@@ -433,11 +433,11 @@ public final class VintageMarketDividendFinishNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.VintageMarketDividendFinishNotifyOuterClass.VintageMarketDividendFinishNotify other) {
         if (other == emu.grasscutter.net.proto.VintageMarketDividendFinishNotifyOuterClass.VintageMarketDividendFinishNotify.getDefaultInstance()) return this;
-        if (other.getLGCEBJNOBAM() != 0) {
-          setLGCEBJNOBAM(other.getLGCEBJNOBAM());
+        if (other.getFMABDGMGDAM() != 0) {
+          setFMABDGMGDAM(other.getFMABDGMGDAM());
         }
-        if (other.getLJIOMIABKJC() != 0) {
-          setLJIOMIABKJC(other.getLJIOMIABKJC());
+        if (other.getLCIDAMLLGHM() != 0) {
+          setLCIDAMLLGHM(other.getLCIDAMLLGHM());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -468,64 +468,64 @@ public final class VintageMarketDividendFinishNotifyOuterClass {
         return this;
       }
 
-      private int lGCEBJNOBAM_ ;
+      private int fMABDGMGDAM_ ;
       /**
-       * <code>uint32 LGCEBJNOBAM = 8;</code>
-       * @return The lGCEBJNOBAM.
+       * <code>uint32 FMABDGMGDAM = 14;</code>
+       * @return The fMABDGMGDAM.
        */
       @java.lang.Override
-      public int getLGCEBJNOBAM() {
-        return lGCEBJNOBAM_;
+      public int getFMABDGMGDAM() {
+        return fMABDGMGDAM_;
       }
       /**
-       * <code>uint32 LGCEBJNOBAM = 8;</code>
-       * @param value The lGCEBJNOBAM to set.
+       * <code>uint32 FMABDGMGDAM = 14;</code>
+       * @param value The fMABDGMGDAM to set.
        * @return This builder for chaining.
        */
-      public Builder setLGCEBJNOBAM(int value) {
+      public Builder setFMABDGMGDAM(int value) {
         
-        lGCEBJNOBAM_ = value;
+        fMABDGMGDAM_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 LGCEBJNOBAM = 8;</code>
+       * <code>uint32 FMABDGMGDAM = 14;</code>
        * @return This builder for chaining.
        */
-      public Builder clearLGCEBJNOBAM() {
+      public Builder clearFMABDGMGDAM() {
         
-        lGCEBJNOBAM_ = 0;
+        fMABDGMGDAM_ = 0;
         onChanged();
         return this;
       }
 
-      private int lJIOMIABKJC_ ;
+      private int lCIDAMLLGHM_ ;
       /**
-       * <code>uint32 LJIOMIABKJC = 2;</code>
-       * @return The lJIOMIABKJC.
+       * <code>uint32 LCIDAMLLGHM = 6;</code>
+       * @return The lCIDAMLLGHM.
        */
       @java.lang.Override
-      public int getLJIOMIABKJC() {
-        return lJIOMIABKJC_;
+      public int getLCIDAMLLGHM() {
+        return lCIDAMLLGHM_;
       }
       /**
-       * <code>uint32 LJIOMIABKJC = 2;</code>
-       * @param value The lJIOMIABKJC to set.
+       * <code>uint32 LCIDAMLLGHM = 6;</code>
+       * @param value The lCIDAMLLGHM to set.
        * @return This builder for chaining.
        */
-      public Builder setLJIOMIABKJC(int value) {
+      public Builder setLCIDAMLLGHM(int value) {
         
-        lJIOMIABKJC_ = value;
+        lCIDAMLLGHM_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 LJIOMIABKJC = 2;</code>
+       * <code>uint32 LCIDAMLLGHM = 6;</code>
        * @return This builder for chaining.
        */
-      public Builder clearLJIOMIABKJC() {
+      public Builder clearLCIDAMLLGHM() {
         
-        lJIOMIABKJC_ = 0;
+        lCIDAMLLGHM_ = 0;
         onChanged();
         return this;
       }
@@ -598,7 +598,7 @@ public final class VintageMarketDividendFinishNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\'VintageMarketDividendFinishNotify.prot" +
       "o\"M\n!VintageMarketDividendFinishNotify\022\023" +
-      "\n\013LGCEBJNOBAM\030\010 \001(\r\022\023\n\013LJIOMIABKJC\030\002 \001(\r" +
+      "\n\013FMABDGMGDAM\030\016 \001(\r\022\023\n\013LCIDAMLLGHM\030\006 \001(\r" +
       "B\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -610,7 +610,7 @@ public final class VintageMarketDividendFinishNotifyOuterClass {
     internal_static_VintageMarketDividendFinishNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_VintageMarketDividendFinishNotify_descriptor,
-        new java.lang.String[] { "LGCEBJNOBAM", "LJIOMIABKJC", });
+        new java.lang.String[] { "FMABDGMGDAM", "LCIDAMLLGHM", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -1,11 +1,8 @@
 package emu.grasscutter.game.home;
 
-import dev.morphia.annotations.Entity;
-import dev.morphia.annotations.Id;
+import dev.morphia.annotations.*;
 import emu.grasscutter.net.proto.FurnitureMakeDataOuterClass;
-import lombok.AccessLevel;
-import lombok.Builder;
-import lombok.Data;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 @Entity

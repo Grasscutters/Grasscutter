@@ -19,61 +19,61 @@ public final class GetCityReputationMapInfoRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool NNJLDLAOPIE = 10;</code>
-     * @return The nNJLDLAOPIE.
-     */
-    boolean getNNJLDLAOPIE();
-
-    /**
-     * <code>int32 retcode = 4;</code>
+     * <code>int32 retcode = 14;</code>
      * @return The retcode.
      */
     int getRetcode();
 
     /**
-     * <code>repeated uint32 BNOMCHCNPFP = 15;</code>
-     * @return A list containing the bNOMCHCNPFP.
+     * <code>bool JJGPNHBKGHG = 9;</code>
+     * @return The jJGPNHBKGHG.
      */
-    java.util.List<java.lang.Integer> getBNOMCHCNPFPList();
-    /**
-     * <code>repeated uint32 BNOMCHCNPFP = 15;</code>
-     * @return The count of bNOMCHCNPFP.
-     */
-    int getBNOMCHCNPFPCount();
-    /**
-     * <code>repeated uint32 BNOMCHCNPFP = 15;</code>
-     * @param index The index of the element to return.
-     * @return The bNOMCHCNPFP at the given index.
-     */
-    int getBNOMCHCNPFP(int index);
+    boolean getJJGPNHBKGHG();
 
     /**
-     * <code>repeated uint32 JCBEMEPIHGH = 14;</code>
-     * @return A list containing the jCBEMEPIHGH.
+     * <code>bool MOEFCHCBNGE = 8;</code>
+     * @return The mOEFCHCBNGE.
      */
-    java.util.List<java.lang.Integer> getJCBEMEPIHGHList();
-    /**
-     * <code>repeated uint32 JCBEMEPIHGH = 14;</code>
-     * @return The count of jCBEMEPIHGH.
-     */
-    int getJCBEMEPIHGHCount();
-    /**
-     * <code>repeated uint32 JCBEMEPIHGH = 14;</code>
-     * @param index The index of the element to return.
-     * @return The jCBEMEPIHGH at the given index.
-     */
-    int getJCBEMEPIHGH(int index);
+    boolean getMOEFCHCBNGE();
 
     /**
-     * <code>bool JGAFDIAMBKO = 8;</code>
-     * @return The jGAFDIAMBKO.
+     * <code>repeated uint32 BIDOKKBGJLG = 3;</code>
+     * @return A list containing the bIDOKKBGJLG.
      */
-    boolean getJGAFDIAMBKO();
+    java.util.List<java.lang.Integer> getBIDOKKBGJLGList();
+    /**
+     * <code>repeated uint32 BIDOKKBGJLG = 3;</code>
+     * @return The count of bIDOKKBGJLG.
+     */
+    int getBIDOKKBGJLGCount();
+    /**
+     * <code>repeated uint32 BIDOKKBGJLG = 3;</code>
+     * @param index The index of the element to return.
+     * @return The bIDOKKBGJLG at the given index.
+     */
+    int getBIDOKKBGJLG(int index);
+
+    /**
+     * <code>repeated uint32 BOMGJJFKDOC = 5;</code>
+     * @return A list containing the bOMGJJFKDOC.
+     */
+    java.util.List<java.lang.Integer> getBOMGJJFKDOCList();
+    /**
+     * <code>repeated uint32 BOMGJJFKDOC = 5;</code>
+     * @return The count of bOMGJJFKDOC.
+     */
+    int getBOMGJJFKDOCCount();
+    /**
+     * <code>repeated uint32 BOMGJJFKDOC = 5;</code>
+     * @param index The index of the element to return.
+     * @return The bOMGJJFKDOC at the given index.
+     */
+    int getBOMGJJFKDOC(int index);
   }
   /**
    * <pre>
-   * CmdId: 2821
-   * Obf: FOCHOIHCBHJ
+   * CmdId: 24830
+   * Obf: NFLPNFKGHED
    * </pre>
    *
    * Protobuf type {@code GetCityReputationMapInfoRsp}
@@ -88,8 +88,8 @@ public final class GetCityReputationMapInfoRspOuterClass {
       super(builder);
     }
     private GetCityReputationMapInfoRsp() {
-      bNOMCHCNPFP_ = emptyIntList();
-      jCBEMEPIHGH_ = emptyIntList();
+      bIDOKKBGJLG_ = emptyIntList();
+      bOMGJJFKDOC_ = emptyIntList();
     }
 
     @java.lang.Override
@@ -123,61 +123,61 @@ public final class GetCityReputationMapInfoRspOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
-
-              retcode_ = input.readInt32();
+            case 24: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                bIDOKKBGJLG_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              bIDOKKBGJLG_.addInt(input.readUInt32());
+              break;
+            }
+            case 26: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                bIDOKKBGJLG_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                bIDOKKBGJLG_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 40: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                bOMGJJFKDOC_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              bOMGJJFKDOC_.addInt(input.readUInt32());
+              break;
+            }
+            case 42: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+                bOMGJJFKDOC_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                bOMGJJFKDOC_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
               break;
             }
             case 64: {
 
-              jGAFDIAMBKO_ = input.readBool();
+              mOEFCHCBNGE_ = input.readBool();
               break;
             }
-            case 80: {
+            case 72: {
 
-              nNJLDLAOPIE_ = input.readBool();
+              jJGPNHBKGHG_ = input.readBool();
               break;
             }
             case 112: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                jCBEMEPIHGH_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              jCBEMEPIHGH_.addInt(input.readUInt32());
-              break;
-            }
-            case 114: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
-                jCBEMEPIHGH_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                jCBEMEPIHGH_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 120: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                bNOMCHCNPFP_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              bNOMCHCNPFP_.addInt(input.readUInt32());
-              break;
-            }
-            case 122: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                bNOMCHCNPFP_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                bNOMCHCNPFP_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
+
+              retcode_ = input.readInt32();
               break;
             }
             default: {
@@ -195,11 +195,11 @@ public final class GetCityReputationMapInfoRspOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          jCBEMEPIHGH_.makeImmutable(); // C
-        }
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          bNOMCHCNPFP_.makeImmutable(); // C
+          bIDOKKBGJLG_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          bOMGJJFKDOC_.makeImmutable(); // C
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -218,21 +218,10 @@ public final class GetCityReputationMapInfoRspOuterClass {
               emu.grasscutter.net.proto.GetCityReputationMapInfoRspOuterClass.GetCityReputationMapInfoRsp.class, emu.grasscutter.net.proto.GetCityReputationMapInfoRspOuterClass.GetCityReputationMapInfoRsp.Builder.class);
     }
 
-    public static final int NNJLDLAOPIE_FIELD_NUMBER = 10;
-    private boolean nNJLDLAOPIE_;
-    /**
-     * <code>bool NNJLDLAOPIE = 10;</code>
-     * @return The nNJLDLAOPIE.
-     */
-    @java.lang.Override
-    public boolean getNNJLDLAOPIE() {
-      return nNJLDLAOPIE_;
-    }
-
-    public static final int RETCODE_FIELD_NUMBER = 4;
+    public static final int RETCODE_FIELD_NUMBER = 14;
     private int retcode_;
     /**
-     * <code>int32 retcode = 4;</code>
+     * <code>int32 retcode = 14;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -240,72 +229,83 @@ public final class GetCityReputationMapInfoRspOuterClass {
       return retcode_;
     }
 
-    public static final int BNOMCHCNPFP_FIELD_NUMBER = 15;
-    private com.google.protobuf.Internal.IntList bNOMCHCNPFP_;
+    public static final int JJGPNHBKGHG_FIELD_NUMBER = 9;
+    private boolean jJGPNHBKGHG_;
     /**
-     * <code>repeated uint32 BNOMCHCNPFP = 15;</code>
-     * @return A list containing the bNOMCHCNPFP.
+     * <code>bool JJGPNHBKGHG = 9;</code>
+     * @return The jJGPNHBKGHG.
+     */
+    @java.lang.Override
+    public boolean getJJGPNHBKGHG() {
+      return jJGPNHBKGHG_;
+    }
+
+    public static final int MOEFCHCBNGE_FIELD_NUMBER = 8;
+    private boolean mOEFCHCBNGE_;
+    /**
+     * <code>bool MOEFCHCBNGE = 8;</code>
+     * @return The mOEFCHCBNGE.
+     */
+    @java.lang.Override
+    public boolean getMOEFCHCBNGE() {
+      return mOEFCHCBNGE_;
+    }
+
+    public static final int BIDOKKBGJLG_FIELD_NUMBER = 3;
+    private com.google.protobuf.Internal.IntList bIDOKKBGJLG_;
+    /**
+     * <code>repeated uint32 BIDOKKBGJLG = 3;</code>
+     * @return A list containing the bIDOKKBGJLG.
      */
     @java.lang.Override
     public java.util.List<java.lang.Integer>
-        getBNOMCHCNPFPList() {
-      return bNOMCHCNPFP_;
+        getBIDOKKBGJLGList() {
+      return bIDOKKBGJLG_;
     }
     /**
-     * <code>repeated uint32 BNOMCHCNPFP = 15;</code>
-     * @return The count of bNOMCHCNPFP.
+     * <code>repeated uint32 BIDOKKBGJLG = 3;</code>
+     * @return The count of bIDOKKBGJLG.
      */
-    public int getBNOMCHCNPFPCount() {
-      return bNOMCHCNPFP_.size();
+    public int getBIDOKKBGJLGCount() {
+      return bIDOKKBGJLG_.size();
     }
     /**
-     * <code>repeated uint32 BNOMCHCNPFP = 15;</code>
+     * <code>repeated uint32 BIDOKKBGJLG = 3;</code>
      * @param index The index of the element to return.
-     * @return The bNOMCHCNPFP at the given index.
+     * @return The bIDOKKBGJLG at the given index.
      */
-    public int getBNOMCHCNPFP(int index) {
-      return bNOMCHCNPFP_.getInt(index);
+    public int getBIDOKKBGJLG(int index) {
+      return bIDOKKBGJLG_.getInt(index);
     }
-    private int bNOMCHCNPFPMemoizedSerializedSize = -1;
+    private int bIDOKKBGJLGMemoizedSerializedSize = -1;
 
-    public static final int JCBEMEPIHGH_FIELD_NUMBER = 14;
-    private com.google.protobuf.Internal.IntList jCBEMEPIHGH_;
+    public static final int BOMGJJFKDOC_FIELD_NUMBER = 5;
+    private com.google.protobuf.Internal.IntList bOMGJJFKDOC_;
     /**
-     * <code>repeated uint32 JCBEMEPIHGH = 14;</code>
-     * @return A list containing the jCBEMEPIHGH.
+     * <code>repeated uint32 BOMGJJFKDOC = 5;</code>
+     * @return A list containing the bOMGJJFKDOC.
      */
     @java.lang.Override
     public java.util.List<java.lang.Integer>
-        getJCBEMEPIHGHList() {
-      return jCBEMEPIHGH_;
+        getBOMGJJFKDOCList() {
+      return bOMGJJFKDOC_;
     }
     /**
-     * <code>repeated uint32 JCBEMEPIHGH = 14;</code>
-     * @return The count of jCBEMEPIHGH.
+     * <code>repeated uint32 BOMGJJFKDOC = 5;</code>
+     * @return The count of bOMGJJFKDOC.
      */
-    public int getJCBEMEPIHGHCount() {
-      return jCBEMEPIHGH_.size();
+    public int getBOMGJJFKDOCCount() {
+      return bOMGJJFKDOC_.size();
     }
     /**
-     * <code>repeated uint32 JCBEMEPIHGH = 14;</code>
+     * <code>repeated uint32 BOMGJJFKDOC = 5;</code>
      * @param index The index of the element to return.
-     * @return The jCBEMEPIHGH at the given index.
+     * @return The bOMGJJFKDOC at the given index.
      */
-    public int getJCBEMEPIHGH(int index) {
-      return jCBEMEPIHGH_.getInt(index);
+    public int getBOMGJJFKDOC(int index) {
+      return bOMGJJFKDOC_.getInt(index);
     }
-    private int jCBEMEPIHGHMemoizedSerializedSize = -1;
-
-    public static final int JGAFDIAMBKO_FIELD_NUMBER = 8;
-    private boolean jGAFDIAMBKO_;
-    /**
-     * <code>bool JGAFDIAMBKO = 8;</code>
-     * @return The jGAFDIAMBKO.
-     */
-    @java.lang.Override
-    public boolean getJGAFDIAMBKO() {
-      return jGAFDIAMBKO_;
-    }
+    private int bOMGJJFKDOCMemoizedSerializedSize = -1;
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
@@ -322,28 +322,28 @@ public final class GetCityReputationMapInfoRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
+      if (getBIDOKKBGJLGList().size() > 0) {
+        output.writeUInt32NoTag(26);
+        output.writeUInt32NoTag(bIDOKKBGJLGMemoizedSerializedSize);
+      }
+      for (int i = 0; i < bIDOKKBGJLG_.size(); i++) {
+        output.writeUInt32NoTag(bIDOKKBGJLG_.getInt(i));
+      }
+      if (getBOMGJJFKDOCList().size() > 0) {
+        output.writeUInt32NoTag(42);
+        output.writeUInt32NoTag(bOMGJJFKDOCMemoizedSerializedSize);
+      }
+      for (int i = 0; i < bOMGJJFKDOC_.size(); i++) {
+        output.writeUInt32NoTag(bOMGJJFKDOC_.getInt(i));
+      }
+      if (mOEFCHCBNGE_ != false) {
+        output.writeBool(8, mOEFCHCBNGE_);
+      }
+      if (jJGPNHBKGHG_ != false) {
+        output.writeBool(9, jJGPNHBKGHG_);
+      }
       if (retcode_ != 0) {
-        output.writeInt32(4, retcode_);
-      }
-      if (jGAFDIAMBKO_ != false) {
-        output.writeBool(8, jGAFDIAMBKO_);
-      }
-      if (nNJLDLAOPIE_ != false) {
-        output.writeBool(10, nNJLDLAOPIE_);
-      }
-      if (getJCBEMEPIHGHList().size() > 0) {
-        output.writeUInt32NoTag(114);
-        output.writeUInt32NoTag(jCBEMEPIHGHMemoizedSerializedSize);
-      }
-      for (int i = 0; i < jCBEMEPIHGH_.size(); i++) {
-        output.writeUInt32NoTag(jCBEMEPIHGH_.getInt(i));
-      }
-      if (getBNOMCHCNPFPList().size() > 0) {
-        output.writeUInt32NoTag(122);
-        output.writeUInt32NoTag(bNOMCHCNPFPMemoizedSerializedSize);
-      }
-      for (int i = 0; i < bNOMCHCNPFP_.size(); i++) {
-        output.writeUInt32NoTag(bNOMCHCNPFP_.getInt(i));
+        output.writeInt32(14, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -354,45 +354,45 @@ public final class GetCityReputationMapInfoRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < bIDOKKBGJLG_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeUInt32SizeNoTag(bIDOKKBGJLG_.getInt(i));
+        }
+        size += dataSize;
+        if (!getBIDOKKBGJLGList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        bIDOKKBGJLGMemoizedSerializedSize = dataSize;
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < bOMGJJFKDOC_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeUInt32SizeNoTag(bOMGJJFKDOC_.getInt(i));
+        }
+        size += dataSize;
+        if (!getBOMGJJFKDOCList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        bOMGJJFKDOCMemoizedSerializedSize = dataSize;
+      }
+      if (mOEFCHCBNGE_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(8, mOEFCHCBNGE_);
+      }
+      if (jJGPNHBKGHG_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(9, jJGPNHBKGHG_);
+      }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(4, retcode_);
-      }
-      if (jGAFDIAMBKO_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(8, jGAFDIAMBKO_);
-      }
-      if (nNJLDLAOPIE_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(10, nNJLDLAOPIE_);
-      }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < jCBEMEPIHGH_.size(); i++) {
-          dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(jCBEMEPIHGH_.getInt(i));
-        }
-        size += dataSize;
-        if (!getJCBEMEPIHGHList().isEmpty()) {
-          size += 1;
-          size += com.google.protobuf.CodedOutputStream
-              .computeInt32SizeNoTag(dataSize);
-        }
-        jCBEMEPIHGHMemoizedSerializedSize = dataSize;
-      }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < bNOMCHCNPFP_.size(); i++) {
-          dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(bNOMCHCNPFP_.getInt(i));
-        }
-        size += dataSize;
-        if (!getBNOMCHCNPFPList().isEmpty()) {
-          size += 1;
-          size += com.google.protobuf.CodedOutputStream
-              .computeInt32SizeNoTag(dataSize);
-        }
-        bNOMCHCNPFPMemoizedSerializedSize = dataSize;
+          .computeInt32Size(14, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -409,16 +409,16 @@ public final class GetCityReputationMapInfoRspOuterClass {
       }
       emu.grasscutter.net.proto.GetCityReputationMapInfoRspOuterClass.GetCityReputationMapInfoRsp other = (emu.grasscutter.net.proto.GetCityReputationMapInfoRspOuterClass.GetCityReputationMapInfoRsp) obj;
 
-      if (getNNJLDLAOPIE()
-          != other.getNNJLDLAOPIE()) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
-      if (!getBNOMCHCNPFPList()
-          .equals(other.getBNOMCHCNPFPList())) return false;
-      if (!getJCBEMEPIHGHList()
-          .equals(other.getJCBEMEPIHGHList())) return false;
-      if (getJGAFDIAMBKO()
-          != other.getJGAFDIAMBKO()) return false;
+      if (getJJGPNHBKGHG()
+          != other.getJJGPNHBKGHG()) return false;
+      if (getMOEFCHCBNGE()
+          != other.getMOEFCHCBNGE()) return false;
+      if (!getBIDOKKBGJLGList()
+          .equals(other.getBIDOKKBGJLGList())) return false;
+      if (!getBOMGJJFKDOCList()
+          .equals(other.getBOMGJJFKDOCList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -430,22 +430,22 @@ public final class GetCityReputationMapInfoRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + NNJLDLAOPIE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getNNJLDLAOPIE());
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
-      if (getBNOMCHCNPFPCount() > 0) {
-        hash = (37 * hash) + BNOMCHCNPFP_FIELD_NUMBER;
-        hash = (53 * hash) + getBNOMCHCNPFPList().hashCode();
-      }
-      if (getJCBEMEPIHGHCount() > 0) {
-        hash = (37 * hash) + JCBEMEPIHGH_FIELD_NUMBER;
-        hash = (53 * hash) + getJCBEMEPIHGHList().hashCode();
-      }
-      hash = (37 * hash) + JGAFDIAMBKO_FIELD_NUMBER;
+      hash = (37 * hash) + JJGPNHBKGHG_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getJGAFDIAMBKO());
+          getJJGPNHBKGHG());
+      hash = (37 * hash) + MOEFCHCBNGE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getMOEFCHCBNGE());
+      if (getBIDOKKBGJLGCount() > 0) {
+        hash = (37 * hash) + BIDOKKBGJLG_FIELD_NUMBER;
+        hash = (53 * hash) + getBIDOKKBGJLGList().hashCode();
+      }
+      if (getBOMGJJFKDOCCount() > 0) {
+        hash = (37 * hash) + BOMGJJFKDOC_FIELD_NUMBER;
+        hash = (53 * hash) + getBOMGJJFKDOCList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -543,8 +543,8 @@ public final class GetCityReputationMapInfoRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2821
-     * Obf: FOCHOIHCBHJ
+     * CmdId: 24830
+     * Obf: NFLPNFKGHED
      * </pre>
      *
      * Protobuf type {@code GetCityReputationMapInfoRsp}
@@ -584,16 +584,16 @@ public final class GetCityReputationMapInfoRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        nNJLDLAOPIE_ = false;
-
         retcode_ = 0;
 
-        bNOMCHCNPFP_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        jCBEMEPIHGH_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
-        jGAFDIAMBKO_ = false;
+        jJGPNHBKGHG_ = false;
 
+        mOEFCHCBNGE_ = false;
+
+        bIDOKKBGJLG_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        bOMGJJFKDOC_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -621,19 +621,19 @@ public final class GetCityReputationMapInfoRspOuterClass {
       public emu.grasscutter.net.proto.GetCityReputationMapInfoRspOuterClass.GetCityReputationMapInfoRsp buildPartial() {
         emu.grasscutter.net.proto.GetCityReputationMapInfoRspOuterClass.GetCityReputationMapInfoRsp result = new emu.grasscutter.net.proto.GetCityReputationMapInfoRspOuterClass.GetCityReputationMapInfoRsp(this);
         int from_bitField0_ = bitField0_;
-        result.nNJLDLAOPIE_ = nNJLDLAOPIE_;
         result.retcode_ = retcode_;
+        result.jJGPNHBKGHG_ = jJGPNHBKGHG_;
+        result.mOEFCHCBNGE_ = mOEFCHCBNGE_;
         if (((bitField0_ & 0x00000001) != 0)) {
-          bNOMCHCNPFP_.makeImmutable();
+          bIDOKKBGJLG_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
-        result.bNOMCHCNPFP_ = bNOMCHCNPFP_;
+        result.bIDOKKBGJLG_ = bIDOKKBGJLG_;
         if (((bitField0_ & 0x00000002) != 0)) {
-          jCBEMEPIHGH_.makeImmutable();
+          bOMGJJFKDOC_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000002);
         }
-        result.jCBEMEPIHGH_ = jCBEMEPIHGH_;
-        result.jGAFDIAMBKO_ = jGAFDIAMBKO_;
+        result.bOMGJJFKDOC_ = bOMGJJFKDOC_;
         onBuilt();
         return result;
       }
@@ -682,34 +682,34 @@ public final class GetCityReputationMapInfoRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.GetCityReputationMapInfoRspOuterClass.GetCityReputationMapInfoRsp other) {
         if (other == emu.grasscutter.net.proto.GetCityReputationMapInfoRspOuterClass.GetCityReputationMapInfoRsp.getDefaultInstance()) return this;
-        if (other.getNNJLDLAOPIE() != false) {
-          setNNJLDLAOPIE(other.getNNJLDLAOPIE());
-        }
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
         }
-        if (!other.bNOMCHCNPFP_.isEmpty()) {
-          if (bNOMCHCNPFP_.isEmpty()) {
-            bNOMCHCNPFP_ = other.bNOMCHCNPFP_;
+        if (other.getJJGPNHBKGHG() != false) {
+          setJJGPNHBKGHG(other.getJJGPNHBKGHG());
+        }
+        if (other.getMOEFCHCBNGE() != false) {
+          setMOEFCHCBNGE(other.getMOEFCHCBNGE());
+        }
+        if (!other.bIDOKKBGJLG_.isEmpty()) {
+          if (bIDOKKBGJLG_.isEmpty()) {
+            bIDOKKBGJLG_ = other.bIDOKKBGJLG_;
             bitField0_ = (bitField0_ & ~0x00000001);
           } else {
-            ensureBNOMCHCNPFPIsMutable();
-            bNOMCHCNPFP_.addAll(other.bNOMCHCNPFP_);
+            ensureBIDOKKBGJLGIsMutable();
+            bIDOKKBGJLG_.addAll(other.bIDOKKBGJLG_);
           }
           onChanged();
         }
-        if (!other.jCBEMEPIHGH_.isEmpty()) {
-          if (jCBEMEPIHGH_.isEmpty()) {
-            jCBEMEPIHGH_ = other.jCBEMEPIHGH_;
+        if (!other.bOMGJJFKDOC_.isEmpty()) {
+          if (bOMGJJFKDOC_.isEmpty()) {
+            bOMGJJFKDOC_ = other.bOMGJJFKDOC_;
             bitField0_ = (bitField0_ & ~0x00000002);
           } else {
-            ensureJCBEMEPIHGHIsMutable();
-            jCBEMEPIHGH_.addAll(other.jCBEMEPIHGH_);
+            ensureBOMGJJFKDOCIsMutable();
+            bOMGJJFKDOC_.addAll(other.bOMGJJFKDOC_);
           }
           onChanged();
-        }
-        if (other.getJGAFDIAMBKO() != false) {
-          setJGAFDIAMBKO(other.getJGAFDIAMBKO());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -741,40 +741,9 @@ public final class GetCityReputationMapInfoRspOuterClass {
       }
       private int bitField0_;
 
-      private boolean nNJLDLAOPIE_ ;
-      /**
-       * <code>bool NNJLDLAOPIE = 10;</code>
-       * @return The nNJLDLAOPIE.
-       */
-      @java.lang.Override
-      public boolean getNNJLDLAOPIE() {
-        return nNJLDLAOPIE_;
-      }
-      /**
-       * <code>bool NNJLDLAOPIE = 10;</code>
-       * @param value The nNJLDLAOPIE to set.
-       * @return This builder for chaining.
-       */
-      public Builder setNNJLDLAOPIE(boolean value) {
-        
-        nNJLDLAOPIE_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool NNJLDLAOPIE = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearNNJLDLAOPIE() {
-        
-        nNJLDLAOPIE_ = false;
-        onChanged();
-        return this;
-      }
-
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 4;</code>
+       * <code>int32 retcode = 14;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -782,7 +751,7 @@ public final class GetCityReputationMapInfoRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 4;</code>
+       * <code>int32 retcode = 14;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -793,7 +762,7 @@ public final class GetCityReputationMapInfoRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 4;</code>
+       * <code>int32 retcode = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -803,191 +772,222 @@ public final class GetCityReputationMapInfoRspOuterClass {
         return this;
       }
 
-      private com.google.protobuf.Internal.IntList bNOMCHCNPFP_ = emptyIntList();
-      private void ensureBNOMCHCNPFPIsMutable() {
+      private boolean jJGPNHBKGHG_ ;
+      /**
+       * <code>bool JJGPNHBKGHG = 9;</code>
+       * @return The jJGPNHBKGHG.
+       */
+      @java.lang.Override
+      public boolean getJJGPNHBKGHG() {
+        return jJGPNHBKGHG_;
+      }
+      /**
+       * <code>bool JJGPNHBKGHG = 9;</code>
+       * @param value The jJGPNHBKGHG to set.
+       * @return This builder for chaining.
+       */
+      public Builder setJJGPNHBKGHG(boolean value) {
+        
+        jJGPNHBKGHG_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool JJGPNHBKGHG = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearJJGPNHBKGHG() {
+        
+        jJGPNHBKGHG_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean mOEFCHCBNGE_ ;
+      /**
+       * <code>bool MOEFCHCBNGE = 8;</code>
+       * @return The mOEFCHCBNGE.
+       */
+      @java.lang.Override
+      public boolean getMOEFCHCBNGE() {
+        return mOEFCHCBNGE_;
+      }
+      /**
+       * <code>bool MOEFCHCBNGE = 8;</code>
+       * @param value The mOEFCHCBNGE to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMOEFCHCBNGE(boolean value) {
+        
+        mOEFCHCBNGE_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool MOEFCHCBNGE = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMOEFCHCBNGE() {
+        
+        mOEFCHCBNGE_ = false;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Internal.IntList bIDOKKBGJLG_ = emptyIntList();
+      private void ensureBIDOKKBGJLGIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          bNOMCHCNPFP_ = mutableCopy(bNOMCHCNPFP_);
+          bIDOKKBGJLG_ = mutableCopy(bIDOKKBGJLG_);
           bitField0_ |= 0x00000001;
          }
       }
       /**
-       * <code>repeated uint32 BNOMCHCNPFP = 15;</code>
-       * @return A list containing the bNOMCHCNPFP.
+       * <code>repeated uint32 BIDOKKBGJLG = 3;</code>
+       * @return A list containing the bIDOKKBGJLG.
        */
       public java.util.List<java.lang.Integer>
-          getBNOMCHCNPFPList() {
+          getBIDOKKBGJLGList() {
         return ((bitField0_ & 0x00000001) != 0) ?
-                 java.util.Collections.unmodifiableList(bNOMCHCNPFP_) : bNOMCHCNPFP_;
+                 java.util.Collections.unmodifiableList(bIDOKKBGJLG_) : bIDOKKBGJLG_;
       }
       /**
-       * <code>repeated uint32 BNOMCHCNPFP = 15;</code>
-       * @return The count of bNOMCHCNPFP.
+       * <code>repeated uint32 BIDOKKBGJLG = 3;</code>
+       * @return The count of bIDOKKBGJLG.
        */
-      public int getBNOMCHCNPFPCount() {
-        return bNOMCHCNPFP_.size();
+      public int getBIDOKKBGJLGCount() {
+        return bIDOKKBGJLG_.size();
       }
       /**
-       * <code>repeated uint32 BNOMCHCNPFP = 15;</code>
+       * <code>repeated uint32 BIDOKKBGJLG = 3;</code>
        * @param index The index of the element to return.
-       * @return The bNOMCHCNPFP at the given index.
+       * @return The bIDOKKBGJLG at the given index.
        */
-      public int getBNOMCHCNPFP(int index) {
-        return bNOMCHCNPFP_.getInt(index);
+      public int getBIDOKKBGJLG(int index) {
+        return bIDOKKBGJLG_.getInt(index);
       }
       /**
-       * <code>repeated uint32 BNOMCHCNPFP = 15;</code>
+       * <code>repeated uint32 BIDOKKBGJLG = 3;</code>
        * @param index The index to set the value at.
-       * @param value The bNOMCHCNPFP to set.
+       * @param value The bIDOKKBGJLG to set.
        * @return This builder for chaining.
        */
-      public Builder setBNOMCHCNPFP(
+      public Builder setBIDOKKBGJLG(
           int index, int value) {
-        ensureBNOMCHCNPFPIsMutable();
-        bNOMCHCNPFP_.setInt(index, value);
+        ensureBIDOKKBGJLGIsMutable();
+        bIDOKKBGJLG_.setInt(index, value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 BNOMCHCNPFP = 15;</code>
-       * @param value The bNOMCHCNPFP to add.
+       * <code>repeated uint32 BIDOKKBGJLG = 3;</code>
+       * @param value The bIDOKKBGJLG to add.
        * @return This builder for chaining.
        */
-      public Builder addBNOMCHCNPFP(int value) {
-        ensureBNOMCHCNPFPIsMutable();
-        bNOMCHCNPFP_.addInt(value);
+      public Builder addBIDOKKBGJLG(int value) {
+        ensureBIDOKKBGJLGIsMutable();
+        bIDOKKBGJLG_.addInt(value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 BNOMCHCNPFP = 15;</code>
-       * @param values The bNOMCHCNPFP to add.
+       * <code>repeated uint32 BIDOKKBGJLG = 3;</code>
+       * @param values The bIDOKKBGJLG to add.
        * @return This builder for chaining.
        */
-      public Builder addAllBNOMCHCNPFP(
+      public Builder addAllBIDOKKBGJLG(
           java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureBNOMCHCNPFPIsMutable();
+        ensureBIDOKKBGJLGIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, bNOMCHCNPFP_);
+            values, bIDOKKBGJLG_);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 BNOMCHCNPFP = 15;</code>
+       * <code>repeated uint32 BIDOKKBGJLG = 3;</code>
        * @return This builder for chaining.
        */
-      public Builder clearBNOMCHCNPFP() {
-        bNOMCHCNPFP_ = emptyIntList();
+      public Builder clearBIDOKKBGJLG() {
+        bIDOKKBGJLG_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
 
-      private com.google.protobuf.Internal.IntList jCBEMEPIHGH_ = emptyIntList();
-      private void ensureJCBEMEPIHGHIsMutable() {
+      private com.google.protobuf.Internal.IntList bOMGJJFKDOC_ = emptyIntList();
+      private void ensureBOMGJJFKDOCIsMutable() {
         if (!((bitField0_ & 0x00000002) != 0)) {
-          jCBEMEPIHGH_ = mutableCopy(jCBEMEPIHGH_);
+          bOMGJJFKDOC_ = mutableCopy(bOMGJJFKDOC_);
           bitField0_ |= 0x00000002;
          }
       }
       /**
-       * <code>repeated uint32 JCBEMEPIHGH = 14;</code>
-       * @return A list containing the jCBEMEPIHGH.
+       * <code>repeated uint32 BOMGJJFKDOC = 5;</code>
+       * @return A list containing the bOMGJJFKDOC.
        */
       public java.util.List<java.lang.Integer>
-          getJCBEMEPIHGHList() {
+          getBOMGJJFKDOCList() {
         return ((bitField0_ & 0x00000002) != 0) ?
-                 java.util.Collections.unmodifiableList(jCBEMEPIHGH_) : jCBEMEPIHGH_;
+                 java.util.Collections.unmodifiableList(bOMGJJFKDOC_) : bOMGJJFKDOC_;
       }
       /**
-       * <code>repeated uint32 JCBEMEPIHGH = 14;</code>
-       * @return The count of jCBEMEPIHGH.
+       * <code>repeated uint32 BOMGJJFKDOC = 5;</code>
+       * @return The count of bOMGJJFKDOC.
        */
-      public int getJCBEMEPIHGHCount() {
-        return jCBEMEPIHGH_.size();
+      public int getBOMGJJFKDOCCount() {
+        return bOMGJJFKDOC_.size();
       }
       /**
-       * <code>repeated uint32 JCBEMEPIHGH = 14;</code>
+       * <code>repeated uint32 BOMGJJFKDOC = 5;</code>
        * @param index The index of the element to return.
-       * @return The jCBEMEPIHGH at the given index.
+       * @return The bOMGJJFKDOC at the given index.
        */
-      public int getJCBEMEPIHGH(int index) {
-        return jCBEMEPIHGH_.getInt(index);
+      public int getBOMGJJFKDOC(int index) {
+        return bOMGJJFKDOC_.getInt(index);
       }
       /**
-       * <code>repeated uint32 JCBEMEPIHGH = 14;</code>
+       * <code>repeated uint32 BOMGJJFKDOC = 5;</code>
        * @param index The index to set the value at.
-       * @param value The jCBEMEPIHGH to set.
+       * @param value The bOMGJJFKDOC to set.
        * @return This builder for chaining.
        */
-      public Builder setJCBEMEPIHGH(
+      public Builder setBOMGJJFKDOC(
           int index, int value) {
-        ensureJCBEMEPIHGHIsMutable();
-        jCBEMEPIHGH_.setInt(index, value);
+        ensureBOMGJJFKDOCIsMutable();
+        bOMGJJFKDOC_.setInt(index, value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 JCBEMEPIHGH = 14;</code>
-       * @param value The jCBEMEPIHGH to add.
+       * <code>repeated uint32 BOMGJJFKDOC = 5;</code>
+       * @param value The bOMGJJFKDOC to add.
        * @return This builder for chaining.
        */
-      public Builder addJCBEMEPIHGH(int value) {
-        ensureJCBEMEPIHGHIsMutable();
-        jCBEMEPIHGH_.addInt(value);
+      public Builder addBOMGJJFKDOC(int value) {
+        ensureBOMGJJFKDOCIsMutable();
+        bOMGJJFKDOC_.addInt(value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 JCBEMEPIHGH = 14;</code>
-       * @param values The jCBEMEPIHGH to add.
+       * <code>repeated uint32 BOMGJJFKDOC = 5;</code>
+       * @param values The bOMGJJFKDOC to add.
        * @return This builder for chaining.
        */
-      public Builder addAllJCBEMEPIHGH(
+      public Builder addAllBOMGJJFKDOC(
           java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureJCBEMEPIHGHIsMutable();
+        ensureBOMGJJFKDOCIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, jCBEMEPIHGH_);
+            values, bOMGJJFKDOC_);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 JCBEMEPIHGH = 14;</code>
+       * <code>repeated uint32 BOMGJJFKDOC = 5;</code>
        * @return This builder for chaining.
        */
-      public Builder clearJCBEMEPIHGH() {
-        jCBEMEPIHGH_ = emptyIntList();
+      public Builder clearBOMGJJFKDOC() {
+        bOMGJJFKDOC_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000002);
-        onChanged();
-        return this;
-      }
-
-      private boolean jGAFDIAMBKO_ ;
-      /**
-       * <code>bool JGAFDIAMBKO = 8;</code>
-       * @return The jGAFDIAMBKO.
-       */
-      @java.lang.Override
-      public boolean getJGAFDIAMBKO() {
-        return jGAFDIAMBKO_;
-      }
-      /**
-       * <code>bool JGAFDIAMBKO = 8;</code>
-       * @param value The jGAFDIAMBKO to set.
-       * @return This builder for chaining.
-       */
-      public Builder setJGAFDIAMBKO(boolean value) {
-        
-        jGAFDIAMBKO_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool JGAFDIAMBKO = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearJGAFDIAMBKO() {
-        
-        jGAFDIAMBKO_ = false;
         onChanged();
         return this;
       }
@@ -1059,10 +1059,10 @@ public final class GetCityReputationMapInfoRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n!GetCityReputationMapInfoRsp.proto\"\202\001\n\033" +
-      "GetCityReputationMapInfoRsp\022\023\n\013NNJLDLAOP" +
-      "IE\030\n \001(\010\022\017\n\007retcode\030\004 \001(\005\022\023\n\013BNOMCHCNPFP" +
-      "\030\017 \003(\r\022\023\n\013JCBEMEPIHGH\030\016 \003(\r\022\023\n\013JGAFDIAMB" +
-      "KO\030\010 \001(\010B\033\n\031emu.grasscutter.net.protob\006p" +
+      "GetCityReputationMapInfoRsp\022\017\n\007retcode\030\016" +
+      " \001(\005\022\023\n\013JJGPNHBKGHG\030\t \001(\010\022\023\n\013MOEFCHCBNGE" +
+      "\030\010 \001(\010\022\023\n\013BIDOKKBGJLG\030\003 \003(\r\022\023\n\013BOMGJJFKD" +
+      "OC\030\005 \003(\rB\033\n\031emu.grasscutter.net.protob\006p" +
       "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -1074,7 +1074,7 @@ public final class GetCityReputationMapInfoRspOuterClass {
     internal_static_GetCityReputationMapInfoRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GetCityReputationMapInfoRsp_descriptor,
-        new java.lang.String[] { "NNJLDLAOPIE", "Retcode", "BNOMCHCNPFP", "JCBEMEPIHGH", "JGAFDIAMBKO", });
+        new java.lang.String[] { "Retcode", "JJGPNHBKGHG", "MOEFCHCBNGE", "BIDOKKBGJLG", "BOMGJJFKDOC", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -19,21 +19,21 @@ public final class GearActivityStartPlayGearRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 3;</code>
-     * @return The retcode.
-     */
-    int getRetcode();
-
-    /**
-     * <code>uint32 level_id = 15;</code>
+     * <code>uint32 level_id = 7;</code>
      * @return The levelId.
      */
     int getLevelId();
+
+    /**
+     * <code>int32 retcode = 11;</code>
+     * @return The retcode.
+     */
+    int getRetcode();
   }
   /**
    * <pre>
-   * CmdId: 20735
-   * Obf: KMOELPBADJL
+   * CmdId: 25975
+   * Obf: NFOGPCEEEEH
    * </pre>
    *
    * Protobuf type {@code GearActivityStartPlayGearRsp}
@@ -80,14 +80,14 @@ public final class GearActivityStartPlayGearRspOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 120: {
+            case 56: {
 
               levelId_ = input.readUInt32();
+              break;
+            }
+            case 88: {
+
+              retcode_ = input.readInt32();
               break;
             }
             default: {
@@ -122,26 +122,26 @@ public final class GearActivityStartPlayGearRspOuterClass {
               emu.grasscutter.net.proto.GearActivityStartPlayGearRspOuterClass.GearActivityStartPlayGearRsp.class, emu.grasscutter.net.proto.GearActivityStartPlayGearRspOuterClass.GearActivityStartPlayGearRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 3;
-    private int retcode_;
-    /**
-     * <code>int32 retcode = 3;</code>
-     * @return The retcode.
-     */
-    @java.lang.Override
-    public int getRetcode() {
-      return retcode_;
-    }
-
-    public static final int LEVEL_ID_FIELD_NUMBER = 15;
+    public static final int LEVEL_ID_FIELD_NUMBER = 7;
     private int levelId_;
     /**
-     * <code>uint32 level_id = 15;</code>
+     * <code>uint32 level_id = 7;</code>
      * @return The levelId.
      */
     @java.lang.Override
     public int getLevelId() {
       return levelId_;
+    }
+
+    public static final int RETCODE_FIELD_NUMBER = 11;
+    private int retcode_;
+    /**
+     * <code>int32 retcode = 11;</code>
+     * @return The retcode.
+     */
+    @java.lang.Override
+    public int getRetcode() {
+      return retcode_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -158,11 +158,11 @@ public final class GearActivityStartPlayGearRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (retcode_ != 0) {
-        output.writeInt32(3, retcode_);
-      }
       if (levelId_ != 0) {
-        output.writeUInt32(15, levelId_);
+        output.writeUInt32(7, levelId_);
+      }
+      if (retcode_ != 0) {
+        output.writeInt32(11, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -173,13 +173,13 @@ public final class GearActivityStartPlayGearRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (retcode_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, retcode_);
-      }
       if (levelId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, levelId_);
+          .computeUInt32Size(7, levelId_);
+      }
+      if (retcode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(11, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -196,10 +196,10 @@ public final class GearActivityStartPlayGearRspOuterClass {
       }
       emu.grasscutter.net.proto.GearActivityStartPlayGearRspOuterClass.GearActivityStartPlayGearRsp other = (emu.grasscutter.net.proto.GearActivityStartPlayGearRspOuterClass.GearActivityStartPlayGearRsp) obj;
 
-      if (getRetcode()
-          != other.getRetcode()) return false;
       if (getLevelId()
           != other.getLevelId()) return false;
+      if (getRetcode()
+          != other.getRetcode()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -211,10 +211,10 @@ public final class GearActivityStartPlayGearRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getRetcode();
       hash = (37 * hash) + LEVEL_ID_FIELD_NUMBER;
       hash = (53 * hash) + getLevelId();
+      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
+      hash = (53 * hash) + getRetcode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -312,8 +312,8 @@ public final class GearActivityStartPlayGearRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 20735
-     * Obf: KMOELPBADJL
+     * CmdId: 25975
+     * Obf: NFOGPCEEEEH
      * </pre>
      *
      * Protobuf type {@code GearActivityStartPlayGearRsp}
@@ -353,9 +353,9 @@ public final class GearActivityStartPlayGearRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        retcode_ = 0;
-
         levelId_ = 0;
+
+        retcode_ = 0;
 
         return this;
       }
@@ -383,8 +383,8 @@ public final class GearActivityStartPlayGearRspOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.GearActivityStartPlayGearRspOuterClass.GearActivityStartPlayGearRsp buildPartial() {
         emu.grasscutter.net.proto.GearActivityStartPlayGearRspOuterClass.GearActivityStartPlayGearRsp result = new emu.grasscutter.net.proto.GearActivityStartPlayGearRspOuterClass.GearActivityStartPlayGearRsp(this);
-        result.retcode_ = retcode_;
         result.levelId_ = levelId_;
+        result.retcode_ = retcode_;
         onBuilt();
         return result;
       }
@@ -433,11 +433,11 @@ public final class GearActivityStartPlayGearRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.GearActivityStartPlayGearRspOuterClass.GearActivityStartPlayGearRsp other) {
         if (other == emu.grasscutter.net.proto.GearActivityStartPlayGearRspOuterClass.GearActivityStartPlayGearRsp.getDefaultInstance()) return this;
-        if (other.getRetcode() != 0) {
-          setRetcode(other.getRetcode());
-        }
         if (other.getLevelId() != 0) {
           setLevelId(other.getLevelId());
+        }
+        if (other.getRetcode() != 0) {
+          setRetcode(other.getRetcode());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -468,40 +468,9 @@ public final class GearActivityStartPlayGearRspOuterClass {
         return this;
       }
 
-      private int retcode_ ;
-      /**
-       * <code>int32 retcode = 3;</code>
-       * @return The retcode.
-       */
-      @java.lang.Override
-      public int getRetcode() {
-        return retcode_;
-      }
-      /**
-       * <code>int32 retcode = 3;</code>
-       * @param value The retcode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRetcode(int value) {
-        
-        retcode_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 retcode = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRetcode() {
-        
-        retcode_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int levelId_ ;
       /**
-       * <code>uint32 level_id = 15;</code>
+       * <code>uint32 level_id = 7;</code>
        * @return The levelId.
        */
       @java.lang.Override
@@ -509,7 +478,7 @@ public final class GearActivityStartPlayGearRspOuterClass {
         return levelId_;
       }
       /**
-       * <code>uint32 level_id = 15;</code>
+       * <code>uint32 level_id = 7;</code>
        * @param value The levelId to set.
        * @return This builder for chaining.
        */
@@ -520,12 +489,43 @@ public final class GearActivityStartPlayGearRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 level_id = 15;</code>
+       * <code>uint32 level_id = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearLevelId() {
         
         levelId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int retcode_ ;
+      /**
+       * <code>int32 retcode = 11;</code>
+       * @return The retcode.
+       */
+      @java.lang.Override
+      public int getRetcode() {
+        return retcode_;
+      }
+      /**
+       * <code>int32 retcode = 11;</code>
+       * @param value The retcode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRetcode(int value) {
+        
+        retcode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 retcode = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRetcode() {
+        
+        retcode_ = 0;
         onChanged();
         return this;
       }
@@ -597,8 +597,8 @@ public final class GearActivityStartPlayGearRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\"GearActivityStartPlayGearRsp.proto\"A\n\034" +
-      "GearActivityStartPlayGearRsp\022\017\n\007retcode\030" +
-      "\003 \001(\005\022\020\n\010level_id\030\017 \001(\rB\033\n\031emu.grasscutt" +
+      "GearActivityStartPlayGearRsp\022\020\n\010level_id" +
+      "\030\007 \001(\r\022\017\n\007retcode\030\013 \001(\005B\033\n\031emu.grasscutt" +
       "er.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -610,7 +610,7 @@ public final class GearActivityStartPlayGearRspOuterClass {
     internal_static_GearActivityStartPlayGearRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GearActivityStartPlayGearRsp_descriptor,
-        new java.lang.String[] { "Retcode", "LevelId", });
+        new java.lang.String[] { "LevelId", "Retcode", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

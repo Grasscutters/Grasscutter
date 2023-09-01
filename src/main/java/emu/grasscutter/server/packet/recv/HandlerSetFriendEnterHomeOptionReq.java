@@ -1,12 +1,9 @@
 package emu.grasscutter.server.packet.recv;
 
-import emu.grasscutter.net.packet.Opcodes;
-import emu.grasscutter.net.packet.PacketHandler;
-import emu.grasscutter.net.packet.PacketOpcodes;
+import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.SetFriendEnterHomeOptionReqOuterClass;
 import emu.grasscutter.server.game.GameSession;
-import emu.grasscutter.server.packet.send.PacketPlayerHomeCompInfoNotify;
-import emu.grasscutter.server.packet.send.PacketSetFriendEnterHomeOptionRsp;
+import emu.grasscutter.server.packet.send.*;
 
 @Opcodes(PacketOpcodes.SetFriendEnterHomeOptionReq)
 public class HandlerSetFriendEnterHomeOptionReq extends PacketHandler {

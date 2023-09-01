@@ -19,20 +19,20 @@ public final class GCGSkillPreviewOnstageChangeInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 DDICNPEPEMI = 2;</code>
-     * @return The dDICNPEPEMI.
+     * <code>uint32 JKMNPINFJFD = 4;</code>
+     * @return The jKMNPINFJFD.
      */
-    int getDDICNPEPEMI();
+    int getJKMNPINFJFD();
 
     /**
-     * <code>uint32 JMADKMJOCFO = 8;</code>
-     * @return The jMADKMJOCFO.
+     * <code>uint32 NACJJLMOIII = 13;</code>
+     * @return The nACJJLMOIII.
      */
-    int getJMADKMJOCFO();
+    int getNACJJLMOIII();
   }
   /**
    * <pre>
-   * Obf: ICIENKMONBE
+   * Obf: JFIHFGBEAOA
    * </pre>
    *
    * Protobuf type {@code GCGSkillPreviewOnstageChangeInfo}
@@ -79,14 +79,14 @@ public final class GCGSkillPreviewOnstageChangeInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
+            case 32: {
 
-              dDICNPEPEMI_ = input.readUInt32();
+              jKMNPINFJFD_ = input.readUInt32();
               break;
             }
-            case 64: {
+            case 104: {
 
-              jMADKMJOCFO_ = input.readUInt32();
+              nACJJLMOIII_ = input.readUInt32();
               break;
             }
             default: {
@@ -121,26 +121,26 @@ public final class GCGSkillPreviewOnstageChangeInfoOuterClass {
               emu.grasscutter.net.proto.GCGSkillPreviewOnstageChangeInfoOuterClass.GCGSkillPreviewOnstageChangeInfo.class, emu.grasscutter.net.proto.GCGSkillPreviewOnstageChangeInfoOuterClass.GCGSkillPreviewOnstageChangeInfo.Builder.class);
     }
 
-    public static final int DDICNPEPEMI_FIELD_NUMBER = 2;
-    private int dDICNPEPEMI_;
+    public static final int JKMNPINFJFD_FIELD_NUMBER = 4;
+    private int jKMNPINFJFD_;
     /**
-     * <code>uint32 DDICNPEPEMI = 2;</code>
-     * @return The dDICNPEPEMI.
+     * <code>uint32 JKMNPINFJFD = 4;</code>
+     * @return The jKMNPINFJFD.
      */
     @java.lang.Override
-    public int getDDICNPEPEMI() {
-      return dDICNPEPEMI_;
+    public int getJKMNPINFJFD() {
+      return jKMNPINFJFD_;
     }
 
-    public static final int JMADKMJOCFO_FIELD_NUMBER = 8;
-    private int jMADKMJOCFO_;
+    public static final int NACJJLMOIII_FIELD_NUMBER = 13;
+    private int nACJJLMOIII_;
     /**
-     * <code>uint32 JMADKMJOCFO = 8;</code>
-     * @return The jMADKMJOCFO.
+     * <code>uint32 NACJJLMOIII = 13;</code>
+     * @return The nACJJLMOIII.
      */
     @java.lang.Override
-    public int getJMADKMJOCFO() {
-      return jMADKMJOCFO_;
+    public int getNACJJLMOIII() {
+      return nACJJLMOIII_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -157,11 +157,11 @@ public final class GCGSkillPreviewOnstageChangeInfoOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (dDICNPEPEMI_ != 0) {
-        output.writeUInt32(2, dDICNPEPEMI_);
+      if (jKMNPINFJFD_ != 0) {
+        output.writeUInt32(4, jKMNPINFJFD_);
       }
-      if (jMADKMJOCFO_ != 0) {
-        output.writeUInt32(8, jMADKMJOCFO_);
+      if (nACJJLMOIII_ != 0) {
+        output.writeUInt32(13, nACJJLMOIII_);
       }
       unknownFields.writeTo(output);
     }
@@ -172,13 +172,13 @@ public final class GCGSkillPreviewOnstageChangeInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (dDICNPEPEMI_ != 0) {
+      if (jKMNPINFJFD_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, dDICNPEPEMI_);
+          .computeUInt32Size(4, jKMNPINFJFD_);
       }
-      if (jMADKMJOCFO_ != 0) {
+      if (nACJJLMOIII_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, jMADKMJOCFO_);
+          .computeUInt32Size(13, nACJJLMOIII_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -195,10 +195,10 @@ public final class GCGSkillPreviewOnstageChangeInfoOuterClass {
       }
       emu.grasscutter.net.proto.GCGSkillPreviewOnstageChangeInfoOuterClass.GCGSkillPreviewOnstageChangeInfo other = (emu.grasscutter.net.proto.GCGSkillPreviewOnstageChangeInfoOuterClass.GCGSkillPreviewOnstageChangeInfo) obj;
 
-      if (getDDICNPEPEMI()
-          != other.getDDICNPEPEMI()) return false;
-      if (getJMADKMJOCFO()
-          != other.getJMADKMJOCFO()) return false;
+      if (getJKMNPINFJFD()
+          != other.getJKMNPINFJFD()) return false;
+      if (getNACJJLMOIII()
+          != other.getNACJJLMOIII()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -210,10 +210,10 @@ public final class GCGSkillPreviewOnstageChangeInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + DDICNPEPEMI_FIELD_NUMBER;
-      hash = (53 * hash) + getDDICNPEPEMI();
-      hash = (37 * hash) + JMADKMJOCFO_FIELD_NUMBER;
-      hash = (53 * hash) + getJMADKMJOCFO();
+      hash = (37 * hash) + JKMNPINFJFD_FIELD_NUMBER;
+      hash = (53 * hash) + getJKMNPINFJFD();
+      hash = (37 * hash) + NACJJLMOIII_FIELD_NUMBER;
+      hash = (53 * hash) + getNACJJLMOIII();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -311,7 +311,7 @@ public final class GCGSkillPreviewOnstageChangeInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: ICIENKMONBE
+     * Obf: JFIHFGBEAOA
      * </pre>
      *
      * Protobuf type {@code GCGSkillPreviewOnstageChangeInfo}
@@ -351,9 +351,9 @@ public final class GCGSkillPreviewOnstageChangeInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        dDICNPEPEMI_ = 0;
+        jKMNPINFJFD_ = 0;
 
-        jMADKMJOCFO_ = 0;
+        nACJJLMOIII_ = 0;
 
         return this;
       }
@@ -381,8 +381,8 @@ public final class GCGSkillPreviewOnstageChangeInfoOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.GCGSkillPreviewOnstageChangeInfoOuterClass.GCGSkillPreviewOnstageChangeInfo buildPartial() {
         emu.grasscutter.net.proto.GCGSkillPreviewOnstageChangeInfoOuterClass.GCGSkillPreviewOnstageChangeInfo result = new emu.grasscutter.net.proto.GCGSkillPreviewOnstageChangeInfoOuterClass.GCGSkillPreviewOnstageChangeInfo(this);
-        result.dDICNPEPEMI_ = dDICNPEPEMI_;
-        result.jMADKMJOCFO_ = jMADKMJOCFO_;
+        result.jKMNPINFJFD_ = jKMNPINFJFD_;
+        result.nACJJLMOIII_ = nACJJLMOIII_;
         onBuilt();
         return result;
       }
@@ -431,11 +431,11 @@ public final class GCGSkillPreviewOnstageChangeInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.GCGSkillPreviewOnstageChangeInfoOuterClass.GCGSkillPreviewOnstageChangeInfo other) {
         if (other == emu.grasscutter.net.proto.GCGSkillPreviewOnstageChangeInfoOuterClass.GCGSkillPreviewOnstageChangeInfo.getDefaultInstance()) return this;
-        if (other.getDDICNPEPEMI() != 0) {
-          setDDICNPEPEMI(other.getDDICNPEPEMI());
+        if (other.getJKMNPINFJFD() != 0) {
+          setJKMNPINFJFD(other.getJKMNPINFJFD());
         }
-        if (other.getJMADKMJOCFO() != 0) {
-          setJMADKMJOCFO(other.getJMADKMJOCFO());
+        if (other.getNACJJLMOIII() != 0) {
+          setNACJJLMOIII(other.getNACJJLMOIII());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -466,64 +466,64 @@ public final class GCGSkillPreviewOnstageChangeInfoOuterClass {
         return this;
       }
 
-      private int dDICNPEPEMI_ ;
+      private int jKMNPINFJFD_ ;
       /**
-       * <code>uint32 DDICNPEPEMI = 2;</code>
-       * @return The dDICNPEPEMI.
+       * <code>uint32 JKMNPINFJFD = 4;</code>
+       * @return The jKMNPINFJFD.
        */
       @java.lang.Override
-      public int getDDICNPEPEMI() {
-        return dDICNPEPEMI_;
+      public int getJKMNPINFJFD() {
+        return jKMNPINFJFD_;
       }
       /**
-       * <code>uint32 DDICNPEPEMI = 2;</code>
-       * @param value The dDICNPEPEMI to set.
+       * <code>uint32 JKMNPINFJFD = 4;</code>
+       * @param value The jKMNPINFJFD to set.
        * @return This builder for chaining.
        */
-      public Builder setDDICNPEPEMI(int value) {
+      public Builder setJKMNPINFJFD(int value) {
         
-        dDICNPEPEMI_ = value;
+        jKMNPINFJFD_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 DDICNPEPEMI = 2;</code>
+       * <code>uint32 JKMNPINFJFD = 4;</code>
        * @return This builder for chaining.
        */
-      public Builder clearDDICNPEPEMI() {
+      public Builder clearJKMNPINFJFD() {
         
-        dDICNPEPEMI_ = 0;
+        jKMNPINFJFD_ = 0;
         onChanged();
         return this;
       }
 
-      private int jMADKMJOCFO_ ;
+      private int nACJJLMOIII_ ;
       /**
-       * <code>uint32 JMADKMJOCFO = 8;</code>
-       * @return The jMADKMJOCFO.
+       * <code>uint32 NACJJLMOIII = 13;</code>
+       * @return The nACJJLMOIII.
        */
       @java.lang.Override
-      public int getJMADKMJOCFO() {
-        return jMADKMJOCFO_;
+      public int getNACJJLMOIII() {
+        return nACJJLMOIII_;
       }
       /**
-       * <code>uint32 JMADKMJOCFO = 8;</code>
-       * @param value The jMADKMJOCFO to set.
+       * <code>uint32 NACJJLMOIII = 13;</code>
+       * @param value The nACJJLMOIII to set.
        * @return This builder for chaining.
        */
-      public Builder setJMADKMJOCFO(int value) {
+      public Builder setNACJJLMOIII(int value) {
         
-        jMADKMJOCFO_ = value;
+        nACJJLMOIII_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 JMADKMJOCFO = 8;</code>
+       * <code>uint32 NACJJLMOIII = 13;</code>
        * @return This builder for chaining.
        */
-      public Builder clearJMADKMJOCFO() {
+      public Builder clearNACJJLMOIII() {
         
-        jMADKMJOCFO_ = 0;
+        nACJJLMOIII_ = 0;
         onChanged();
         return this;
       }
@@ -596,7 +596,7 @@ public final class GCGSkillPreviewOnstageChangeInfoOuterClass {
     java.lang.String[] descriptorData = {
       "\n&GCGSkillPreviewOnstageChangeInfo.proto" +
       "\"L\n GCGSkillPreviewOnstageChangeInfo\022\023\n\013" +
-      "DDICNPEPEMI\030\002 \001(\r\022\023\n\013JMADKMJOCFO\030\010 \001(\rB\033" +
+      "JKMNPINFJFD\030\004 \001(\r\022\023\n\013NACJJLMOIII\030\r \001(\rB\033" +
       "\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -608,7 +608,7 @@ public final class GCGSkillPreviewOnstageChangeInfoOuterClass {
     internal_static_GCGSkillPreviewOnstageChangeInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GCGSkillPreviewOnstageChangeInfo_descriptor,
-        new java.lang.String[] { "DDICNPEPEMI", "JMADKMJOCFO", });
+        new java.lang.String[] { "JKMNPINFJFD", "NACJJLMOIII", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

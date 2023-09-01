@@ -19,15 +19,15 @@ public final class MpBlockNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 end_time = 12;</code>
+     * <code>uint32 end_time = 1;</code>
      * @return The endTime.
      */
     int getEndTime();
   }
   /**
    * <pre>
-   * CmdId: 1805
-   * Obf: MBDHLMOEAHN
+   * CmdId: 27749
+   * Obf: AEBMFPKLIHH
    * </pre>
    *
    * Protobuf type {@code MpBlockNotify}
@@ -74,7 +74,7 @@ public final class MpBlockNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 96: {
+            case 8: {
 
               endTime_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class MpBlockNotifyOuterClass {
               emu.grasscutter.net.proto.MpBlockNotifyOuterClass.MpBlockNotify.class, emu.grasscutter.net.proto.MpBlockNotifyOuterClass.MpBlockNotify.Builder.class);
     }
 
-    public static final int END_TIME_FIELD_NUMBER = 12;
+    public static final int END_TIME_FIELD_NUMBER = 1;
     private int endTime_;
     /**
-     * <code>uint32 end_time = 12;</code>
+     * <code>uint32 end_time = 1;</code>
      * @return The endTime.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class MpBlockNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (endTime_ != 0) {
-        output.writeUInt32(12, endTime_);
+        output.writeUInt32(1, endTime_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class MpBlockNotifyOuterClass {
       size = 0;
       if (endTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, endTime_);
+          .computeUInt32Size(1, endTime_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class MpBlockNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 1805
-     * Obf: MBDHLMOEAHN
+     * CmdId: 27749
+     * Obf: AEBMFPKLIHH
      * </pre>
      *
      * Protobuf type {@code MpBlockNotify}
@@ -431,7 +431,7 @@ public final class MpBlockNotifyOuterClass {
 
       private int endTime_ ;
       /**
-       * <code>uint32 end_time = 12;</code>
+       * <code>uint32 end_time = 1;</code>
        * @return The endTime.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class MpBlockNotifyOuterClass {
         return endTime_;
       }
       /**
-       * <code>uint32 end_time = 12;</code>
+       * <code>uint32 end_time = 1;</code>
        * @param value The endTime to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class MpBlockNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 end_time = 12;</code>
+       * <code>uint32 end_time = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearEndTime() {
@@ -527,7 +527,7 @@ public final class MpBlockNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\023MpBlockNotify.proto\"!\n\rMpBlockNotify\022\020" +
-      "\n\010end_time\030\014 \001(\rB\033\n\031emu.grasscutter.net." +
+      "\n\010end_time\030\001 \001(\rB\033\n\031emu.grasscutter.net." +
       "protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

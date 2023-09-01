@@ -26,8 +26,8 @@ public final class TreasureMapCurrencyNotifyOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 2060
-   * Obf: KLFPMMBEBEB
+   * CmdId: 24210
+   * Obf: HIBMEJAIMMJ
    * </pre>
    *
    * Protobuf type {@code TreasureMapCurrencyNotify}
@@ -279,8 +279,8 @@ public final class TreasureMapCurrencyNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2060
-     * Obf: KLFPMMBEBEB
+     * CmdId: 24210
+     * Obf: HIBMEJAIMMJ
      * </pre>
      *
      * Protobuf type {@code TreasureMapCurrencyNotify}

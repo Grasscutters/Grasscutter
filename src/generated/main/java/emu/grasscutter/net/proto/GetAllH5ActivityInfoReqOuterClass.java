@@ -20,8 +20,8 @@ public final class GetAllH5ActivityInfoReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 5658
-   * Obf: IFMGFGLPEJM
+   * CmdId: 4793
+   * Obf: CFMGENNHKOD
    * </pre>
    *
    * Protobuf type {@code GetAllH5ActivityInfoReq}
@@ -246,8 +246,8 @@ public final class GetAllH5ActivityInfoReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 5658
-     * Obf: IFMGFGLPEJM
+     * CmdId: 4793
+     * Obf: CFMGENNHKOD
      * </pre>
      *
      * Protobuf type {@code GetAllH5ActivityInfoReq}

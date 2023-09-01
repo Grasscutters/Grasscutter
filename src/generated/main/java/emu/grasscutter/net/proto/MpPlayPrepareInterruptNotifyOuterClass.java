@@ -19,15 +19,15 @@ public final class MpPlayPrepareInterruptNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 mp_play_id = 11;</code>
+     * <code>uint32 mp_play_id = 5;</code>
      * @return The mpPlayId.
      */
     int getMpPlayId();
   }
   /**
    * <pre>
-   * CmdId: 1809
-   * Obf: OBNKKKDMJHD
+   * CmdId: 3739
+   * Obf: GAJIFLDAKCO
    * </pre>
    *
    * Protobuf type {@code MpPlayPrepareInterruptNotify}
@@ -74,7 +74,7 @@ public final class MpPlayPrepareInterruptNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 88: {
+            case 40: {
 
               mpPlayId_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class MpPlayPrepareInterruptNotifyOuterClass {
               emu.grasscutter.net.proto.MpPlayPrepareInterruptNotifyOuterClass.MpPlayPrepareInterruptNotify.class, emu.grasscutter.net.proto.MpPlayPrepareInterruptNotifyOuterClass.MpPlayPrepareInterruptNotify.Builder.class);
     }
 
-    public static final int MP_PLAY_ID_FIELD_NUMBER = 11;
+    public static final int MP_PLAY_ID_FIELD_NUMBER = 5;
     private int mpPlayId_;
     /**
-     * <code>uint32 mp_play_id = 11;</code>
+     * <code>uint32 mp_play_id = 5;</code>
      * @return The mpPlayId.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class MpPlayPrepareInterruptNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (mpPlayId_ != 0) {
-        output.writeUInt32(11, mpPlayId_);
+        output.writeUInt32(5, mpPlayId_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class MpPlayPrepareInterruptNotifyOuterClass {
       size = 0;
       if (mpPlayId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, mpPlayId_);
+          .computeUInt32Size(5, mpPlayId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class MpPlayPrepareInterruptNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 1809
-     * Obf: OBNKKKDMJHD
+     * CmdId: 3739
+     * Obf: GAJIFLDAKCO
      * </pre>
      *
      * Protobuf type {@code MpPlayPrepareInterruptNotify}
@@ -431,7 +431,7 @@ public final class MpPlayPrepareInterruptNotifyOuterClass {
 
       private int mpPlayId_ ;
       /**
-       * <code>uint32 mp_play_id = 11;</code>
+       * <code>uint32 mp_play_id = 5;</code>
        * @return The mpPlayId.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class MpPlayPrepareInterruptNotifyOuterClass {
         return mpPlayId_;
       }
       /**
-       * <code>uint32 mp_play_id = 11;</code>
+       * <code>uint32 mp_play_id = 5;</code>
        * @param value The mpPlayId to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class MpPlayPrepareInterruptNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 mp_play_id = 11;</code>
+       * <code>uint32 mp_play_id = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearMpPlayId() {
@@ -528,7 +528,7 @@ public final class MpPlayPrepareInterruptNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\"MpPlayPrepareInterruptNotify.proto\"2\n\034" +
       "MpPlayPrepareInterruptNotify\022\022\n\nmp_play_" +
-      "id\030\013 \001(\rB\033\n\031emu.grasscutter.net.protob\006p" +
+      "id\030\005 \001(\rB\033\n\031emu.grasscutter.net.protob\006p" +
       "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

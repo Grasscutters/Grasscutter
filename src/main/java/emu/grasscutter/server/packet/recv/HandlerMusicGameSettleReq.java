@@ -1,17 +1,12 @@
 package emu.grasscutter.server.packet.recv;
 
-import emu.grasscutter.game.activity.musicgame.MusicGameActivityHandler;
-import emu.grasscutter.game.activity.musicgame.MusicGamePlayerData;
-import emu.grasscutter.game.props.ActivityType;
-import emu.grasscutter.game.props.WatcherTriggerType;
-import emu.grasscutter.net.packet.Opcodes;
-import emu.grasscutter.net.packet.PacketHandler;
-import emu.grasscutter.net.packet.PacketOpcodes;
+import emu.grasscutter.game.activity.musicgame.*;
+import emu.grasscutter.game.props.*;
+import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq;
 import emu.grasscutter.net.proto.RetcodeOuterClass;
 import emu.grasscutter.server.game.GameSession;
-import emu.grasscutter.server.packet.send.PacketActivityInfoNotify;
-import emu.grasscutter.server.packet.send.PacketMusicGameSettleRsp;
+import emu.grasscutter.server.packet.send.*;
 import lombok.val;
 
 @Opcodes(PacketOpcodes.MusicGameSettleReq)

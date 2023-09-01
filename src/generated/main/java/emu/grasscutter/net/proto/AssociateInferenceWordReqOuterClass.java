@@ -19,27 +19,27 @@ public final class AssociateInferenceWordReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 JNLFGLHFBBC = 7;</code>
-     * @return The jNLFGLHFBBC.
+     * <code>uint32 IJNKJEMGHDA = 3;</code>
+     * @return The iJNKJEMGHDA.
      */
-    int getJNLFGLHFBBC();
+    int getIJNKJEMGHDA();
 
     /**
-     * <code>uint32 page_id = 9;</code>
+     * <code>uint32 BPEAHKMACOJ = 1;</code>
+     * @return The bPEAHKMACOJ.
+     */
+    int getBPEAHKMACOJ();
+
+    /**
+     * <code>uint32 page_id = 6;</code>
      * @return The pageId.
      */
     int getPageId();
-
-    /**
-     * <code>uint32 PPMLICNJGAD = 8;</code>
-     * @return The pPMLICNJGAD.
-     */
-    int getPPMLICNJGAD();
   }
   /**
    * <pre>
-   * CmdId: 477
-   * Obf: DNCAJBNOPPP
+   * CmdId: 701
+   * Obf: JBCPALGFBLI
    * </pre>
    *
    * Protobuf type {@code AssociateInferenceWordReq}
@@ -86,17 +86,17 @@ public final class AssociateInferenceWordReqOuterClass {
             case 0:
               done = true;
               break;
-            case 56: {
+            case 8: {
 
-              jNLFGLHFBBC_ = input.readUInt32();
+              bPEAHKMACOJ_ = input.readUInt32();
               break;
             }
-            case 64: {
+            case 24: {
 
-              pPMLICNJGAD_ = input.readUInt32();
+              iJNKJEMGHDA_ = input.readUInt32();
               break;
             }
-            case 72: {
+            case 48: {
 
               pageId_ = input.readUInt32();
               break;
@@ -133,37 +133,37 @@ public final class AssociateInferenceWordReqOuterClass {
               emu.grasscutter.net.proto.AssociateInferenceWordReqOuterClass.AssociateInferenceWordReq.class, emu.grasscutter.net.proto.AssociateInferenceWordReqOuterClass.AssociateInferenceWordReq.Builder.class);
     }
 
-    public static final int JNLFGLHFBBC_FIELD_NUMBER = 7;
-    private int jNLFGLHFBBC_;
+    public static final int IJNKJEMGHDA_FIELD_NUMBER = 3;
+    private int iJNKJEMGHDA_;
     /**
-     * <code>uint32 JNLFGLHFBBC = 7;</code>
-     * @return The jNLFGLHFBBC.
+     * <code>uint32 IJNKJEMGHDA = 3;</code>
+     * @return The iJNKJEMGHDA.
      */
     @java.lang.Override
-    public int getJNLFGLHFBBC() {
-      return jNLFGLHFBBC_;
+    public int getIJNKJEMGHDA() {
+      return iJNKJEMGHDA_;
     }
 
-    public static final int PAGE_ID_FIELD_NUMBER = 9;
+    public static final int BPEAHKMACOJ_FIELD_NUMBER = 1;
+    private int bPEAHKMACOJ_;
+    /**
+     * <code>uint32 BPEAHKMACOJ = 1;</code>
+     * @return The bPEAHKMACOJ.
+     */
+    @java.lang.Override
+    public int getBPEAHKMACOJ() {
+      return bPEAHKMACOJ_;
+    }
+
+    public static final int PAGE_ID_FIELD_NUMBER = 6;
     private int pageId_;
     /**
-     * <code>uint32 page_id = 9;</code>
+     * <code>uint32 page_id = 6;</code>
      * @return The pageId.
      */
     @java.lang.Override
     public int getPageId() {
       return pageId_;
-    }
-
-    public static final int PPMLICNJGAD_FIELD_NUMBER = 8;
-    private int pPMLICNJGAD_;
-    /**
-     * <code>uint32 PPMLICNJGAD = 8;</code>
-     * @return The pPMLICNJGAD.
-     */
-    @java.lang.Override
-    public int getPPMLICNJGAD() {
-      return pPMLICNJGAD_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -180,14 +180,14 @@ public final class AssociateInferenceWordReqOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (jNLFGLHFBBC_ != 0) {
-        output.writeUInt32(7, jNLFGLHFBBC_);
+      if (bPEAHKMACOJ_ != 0) {
+        output.writeUInt32(1, bPEAHKMACOJ_);
       }
-      if (pPMLICNJGAD_ != 0) {
-        output.writeUInt32(8, pPMLICNJGAD_);
+      if (iJNKJEMGHDA_ != 0) {
+        output.writeUInt32(3, iJNKJEMGHDA_);
       }
       if (pageId_ != 0) {
-        output.writeUInt32(9, pageId_);
+        output.writeUInt32(6, pageId_);
       }
       unknownFields.writeTo(output);
     }
@@ -198,17 +198,17 @@ public final class AssociateInferenceWordReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (jNLFGLHFBBC_ != 0) {
+      if (bPEAHKMACOJ_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, jNLFGLHFBBC_);
+          .computeUInt32Size(1, bPEAHKMACOJ_);
       }
-      if (pPMLICNJGAD_ != 0) {
+      if (iJNKJEMGHDA_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, pPMLICNJGAD_);
+          .computeUInt32Size(3, iJNKJEMGHDA_);
       }
       if (pageId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, pageId_);
+          .computeUInt32Size(6, pageId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -225,12 +225,12 @@ public final class AssociateInferenceWordReqOuterClass {
       }
       emu.grasscutter.net.proto.AssociateInferenceWordReqOuterClass.AssociateInferenceWordReq other = (emu.grasscutter.net.proto.AssociateInferenceWordReqOuterClass.AssociateInferenceWordReq) obj;
 
-      if (getJNLFGLHFBBC()
-          != other.getJNLFGLHFBBC()) return false;
+      if (getIJNKJEMGHDA()
+          != other.getIJNKJEMGHDA()) return false;
+      if (getBPEAHKMACOJ()
+          != other.getBPEAHKMACOJ()) return false;
       if (getPageId()
           != other.getPageId()) return false;
-      if (getPPMLICNJGAD()
-          != other.getPPMLICNJGAD()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -242,12 +242,12 @@ public final class AssociateInferenceWordReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + JNLFGLHFBBC_FIELD_NUMBER;
-      hash = (53 * hash) + getJNLFGLHFBBC();
+      hash = (37 * hash) + IJNKJEMGHDA_FIELD_NUMBER;
+      hash = (53 * hash) + getIJNKJEMGHDA();
+      hash = (37 * hash) + BPEAHKMACOJ_FIELD_NUMBER;
+      hash = (53 * hash) + getBPEAHKMACOJ();
       hash = (37 * hash) + PAGE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getPageId();
-      hash = (37 * hash) + PPMLICNJGAD_FIELD_NUMBER;
-      hash = (53 * hash) + getPPMLICNJGAD();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -345,8 +345,8 @@ public final class AssociateInferenceWordReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 477
-     * Obf: DNCAJBNOPPP
+     * CmdId: 701
+     * Obf: JBCPALGFBLI
      * </pre>
      *
      * Protobuf type {@code AssociateInferenceWordReq}
@@ -386,11 +386,11 @@ public final class AssociateInferenceWordReqOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        jNLFGLHFBBC_ = 0;
+        iJNKJEMGHDA_ = 0;
+
+        bPEAHKMACOJ_ = 0;
 
         pageId_ = 0;
-
-        pPMLICNJGAD_ = 0;
 
         return this;
       }
@@ -418,9 +418,9 @@ public final class AssociateInferenceWordReqOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.AssociateInferenceWordReqOuterClass.AssociateInferenceWordReq buildPartial() {
         emu.grasscutter.net.proto.AssociateInferenceWordReqOuterClass.AssociateInferenceWordReq result = new emu.grasscutter.net.proto.AssociateInferenceWordReqOuterClass.AssociateInferenceWordReq(this);
-        result.jNLFGLHFBBC_ = jNLFGLHFBBC_;
+        result.iJNKJEMGHDA_ = iJNKJEMGHDA_;
+        result.bPEAHKMACOJ_ = bPEAHKMACOJ_;
         result.pageId_ = pageId_;
-        result.pPMLICNJGAD_ = pPMLICNJGAD_;
         onBuilt();
         return result;
       }
@@ -469,14 +469,14 @@ public final class AssociateInferenceWordReqOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.AssociateInferenceWordReqOuterClass.AssociateInferenceWordReq other) {
         if (other == emu.grasscutter.net.proto.AssociateInferenceWordReqOuterClass.AssociateInferenceWordReq.getDefaultInstance()) return this;
-        if (other.getJNLFGLHFBBC() != 0) {
-          setJNLFGLHFBBC(other.getJNLFGLHFBBC());
+        if (other.getIJNKJEMGHDA() != 0) {
+          setIJNKJEMGHDA(other.getIJNKJEMGHDA());
+        }
+        if (other.getBPEAHKMACOJ() != 0) {
+          setBPEAHKMACOJ(other.getBPEAHKMACOJ());
         }
         if (other.getPageId() != 0) {
           setPageId(other.getPageId());
-        }
-        if (other.getPPMLICNJGAD() != 0) {
-          setPPMLICNJGAD(other.getPPMLICNJGAD());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -507,40 +507,71 @@ public final class AssociateInferenceWordReqOuterClass {
         return this;
       }
 
-      private int jNLFGLHFBBC_ ;
+      private int iJNKJEMGHDA_ ;
       /**
-       * <code>uint32 JNLFGLHFBBC = 7;</code>
-       * @return The jNLFGLHFBBC.
+       * <code>uint32 IJNKJEMGHDA = 3;</code>
+       * @return The iJNKJEMGHDA.
        */
       @java.lang.Override
-      public int getJNLFGLHFBBC() {
-        return jNLFGLHFBBC_;
+      public int getIJNKJEMGHDA() {
+        return iJNKJEMGHDA_;
       }
       /**
-       * <code>uint32 JNLFGLHFBBC = 7;</code>
-       * @param value The jNLFGLHFBBC to set.
+       * <code>uint32 IJNKJEMGHDA = 3;</code>
+       * @param value The iJNKJEMGHDA to set.
        * @return This builder for chaining.
        */
-      public Builder setJNLFGLHFBBC(int value) {
+      public Builder setIJNKJEMGHDA(int value) {
         
-        jNLFGLHFBBC_ = value;
+        iJNKJEMGHDA_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 JNLFGLHFBBC = 7;</code>
+       * <code>uint32 IJNKJEMGHDA = 3;</code>
        * @return This builder for chaining.
        */
-      public Builder clearJNLFGLHFBBC() {
+      public Builder clearIJNKJEMGHDA() {
         
-        jNLFGLHFBBC_ = 0;
+        iJNKJEMGHDA_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int bPEAHKMACOJ_ ;
+      /**
+       * <code>uint32 BPEAHKMACOJ = 1;</code>
+       * @return The bPEAHKMACOJ.
+       */
+      @java.lang.Override
+      public int getBPEAHKMACOJ() {
+        return bPEAHKMACOJ_;
+      }
+      /**
+       * <code>uint32 BPEAHKMACOJ = 1;</code>
+       * @param value The bPEAHKMACOJ to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBPEAHKMACOJ(int value) {
+        
+        bPEAHKMACOJ_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 BPEAHKMACOJ = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBPEAHKMACOJ() {
+        
+        bPEAHKMACOJ_ = 0;
         onChanged();
         return this;
       }
 
       private int pageId_ ;
       /**
-       * <code>uint32 page_id = 9;</code>
+       * <code>uint32 page_id = 6;</code>
        * @return The pageId.
        */
       @java.lang.Override
@@ -548,7 +579,7 @@ public final class AssociateInferenceWordReqOuterClass {
         return pageId_;
       }
       /**
-       * <code>uint32 page_id = 9;</code>
+       * <code>uint32 page_id = 6;</code>
        * @param value The pageId to set.
        * @return This builder for chaining.
        */
@@ -559,43 +590,12 @@ public final class AssociateInferenceWordReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 page_id = 9;</code>
+       * <code>uint32 page_id = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearPageId() {
         
         pageId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int pPMLICNJGAD_ ;
-      /**
-       * <code>uint32 PPMLICNJGAD = 8;</code>
-       * @return The pPMLICNJGAD.
-       */
-      @java.lang.Override
-      public int getPPMLICNJGAD() {
-        return pPMLICNJGAD_;
-      }
-      /**
-       * <code>uint32 PPMLICNJGAD = 8;</code>
-       * @param value The pPMLICNJGAD to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPPMLICNJGAD(int value) {
-        
-        pPMLICNJGAD_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 PPMLICNJGAD = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPPMLICNJGAD() {
-        
-        pPMLICNJGAD_ = 0;
         onChanged();
         return this;
       }
@@ -667,8 +667,8 @@ public final class AssociateInferenceWordReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\037AssociateInferenceWordReq.proto\"V\n\031Ass" +
-      "ociateInferenceWordReq\022\023\n\013JNLFGLHFBBC\030\007 " +
-      "\001(\r\022\017\n\007page_id\030\t \001(\r\022\023\n\013PPMLICNJGAD\030\010 \001(" +
+      "ociateInferenceWordReq\022\023\n\013IJNKJEMGHDA\030\003 " +
+      "\001(\r\022\023\n\013BPEAHKMACOJ\030\001 \001(\r\022\017\n\007page_id\030\006 \001(" +
       "\rB\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -680,7 +680,7 @@ public final class AssociateInferenceWordReqOuterClass {
     internal_static_AssociateInferenceWordReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_AssociateInferenceWordReq_descriptor,
-        new java.lang.String[] { "JNLFGLHFBBC", "PageId", "PPMLICNJGAD", });
+        new java.lang.String[] { "IJNKJEMGHDA", "BPEAHKMACOJ", "PageId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

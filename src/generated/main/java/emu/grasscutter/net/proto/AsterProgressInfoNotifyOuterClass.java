@@ -19,24 +19,24 @@ public final class AsterProgressInfoNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.AsterProgressDetailInfo info = 4;</code>
+     * <code>.AsterProgressDetailInfo info = 13;</code>
      * @return Whether the info field is set.
      */
     boolean hasInfo();
     /**
-     * <code>.AsterProgressDetailInfo info = 4;</code>
+     * <code>.AsterProgressDetailInfo info = 13;</code>
      * @return The info.
      */
     emu.grasscutter.net.proto.AsterProgressDetailInfoOuterClass.AsterProgressDetailInfo getInfo();
     /**
-     * <code>.AsterProgressDetailInfo info = 4;</code>
+     * <code>.AsterProgressDetailInfo info = 13;</code>
      */
     emu.grasscutter.net.proto.AsterProgressDetailInfoOuterClass.AsterProgressDetailInfoOrBuilder getInfoOrBuilder();
   }
   /**
    * <pre>
-   * CmdId: 2017
-   * Obf: PIHDMHGAAJL
+   * CmdId: 26542
+   * Obf: KJJNHOPIBEI
    * </pre>
    *
    * Protobuf type {@code AsterProgressInfoNotify}
@@ -83,7 +83,7 @@ public final class AsterProgressInfoNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 34: {
+            case 106: {
               emu.grasscutter.net.proto.AsterProgressDetailInfoOuterClass.AsterProgressDetailInfo.Builder subBuilder = null;
               if (info_ != null) {
                 subBuilder = info_.toBuilder();
@@ -128,10 +128,10 @@ public final class AsterProgressInfoNotifyOuterClass {
               emu.grasscutter.net.proto.AsterProgressInfoNotifyOuterClass.AsterProgressInfoNotify.class, emu.grasscutter.net.proto.AsterProgressInfoNotifyOuterClass.AsterProgressInfoNotify.Builder.class);
     }
 
-    public static final int INFO_FIELD_NUMBER = 4;
+    public static final int INFO_FIELD_NUMBER = 13;
     private emu.grasscutter.net.proto.AsterProgressDetailInfoOuterClass.AsterProgressDetailInfo info_;
     /**
-     * <code>.AsterProgressDetailInfo info = 4;</code>
+     * <code>.AsterProgressDetailInfo info = 13;</code>
      * @return Whether the info field is set.
      */
     @java.lang.Override
@@ -139,7 +139,7 @@ public final class AsterProgressInfoNotifyOuterClass {
       return info_ != null;
     }
     /**
-     * <code>.AsterProgressDetailInfo info = 4;</code>
+     * <code>.AsterProgressDetailInfo info = 13;</code>
      * @return The info.
      */
     @java.lang.Override
@@ -147,7 +147,7 @@ public final class AsterProgressInfoNotifyOuterClass {
       return info_ == null ? emu.grasscutter.net.proto.AsterProgressDetailInfoOuterClass.AsterProgressDetailInfo.getDefaultInstance() : info_;
     }
     /**
-     * <code>.AsterProgressDetailInfo info = 4;</code>
+     * <code>.AsterProgressDetailInfo info = 13;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.AsterProgressDetailInfoOuterClass.AsterProgressDetailInfoOrBuilder getInfoOrBuilder() {
@@ -169,7 +169,7 @@ public final class AsterProgressInfoNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (info_ != null) {
-        output.writeMessage(4, getInfo());
+        output.writeMessage(13, getInfo());
       }
       unknownFields.writeTo(output);
     }
@@ -182,7 +182,7 @@ public final class AsterProgressInfoNotifyOuterClass {
       size = 0;
       if (info_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, getInfo());
+          .computeMessageSize(13, getInfo());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -316,8 +316,8 @@ public final class AsterProgressInfoNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2017
-     * Obf: PIHDMHGAAJL
+     * CmdId: 26542
+     * Obf: KJJNHOPIBEI
      * </pre>
      *
      * Protobuf type {@code AsterProgressInfoNotify}
@@ -478,14 +478,14 @@ public final class AsterProgressInfoNotifyOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.AsterProgressDetailInfoOuterClass.AsterProgressDetailInfo, emu.grasscutter.net.proto.AsterProgressDetailInfoOuterClass.AsterProgressDetailInfo.Builder, emu.grasscutter.net.proto.AsterProgressDetailInfoOuterClass.AsterProgressDetailInfoOrBuilder> infoBuilder_;
       /**
-       * <code>.AsterProgressDetailInfo info = 4;</code>
+       * <code>.AsterProgressDetailInfo info = 13;</code>
        * @return Whether the info field is set.
        */
       public boolean hasInfo() {
         return infoBuilder_ != null || info_ != null;
       }
       /**
-       * <code>.AsterProgressDetailInfo info = 4;</code>
+       * <code>.AsterProgressDetailInfo info = 13;</code>
        * @return The info.
        */
       public emu.grasscutter.net.proto.AsterProgressDetailInfoOuterClass.AsterProgressDetailInfo getInfo() {
@@ -496,7 +496,7 @@ public final class AsterProgressInfoNotifyOuterClass {
         }
       }
       /**
-       * <code>.AsterProgressDetailInfo info = 4;</code>
+       * <code>.AsterProgressDetailInfo info = 13;</code>
        */
       public Builder setInfo(emu.grasscutter.net.proto.AsterProgressDetailInfoOuterClass.AsterProgressDetailInfo value) {
         if (infoBuilder_ == null) {
@@ -512,7 +512,7 @@ public final class AsterProgressInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.AsterProgressDetailInfo info = 4;</code>
+       * <code>.AsterProgressDetailInfo info = 13;</code>
        */
       public Builder setInfo(
           emu.grasscutter.net.proto.AsterProgressDetailInfoOuterClass.AsterProgressDetailInfo.Builder builderForValue) {
@@ -526,7 +526,7 @@ public final class AsterProgressInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.AsterProgressDetailInfo info = 4;</code>
+       * <code>.AsterProgressDetailInfo info = 13;</code>
        */
       public Builder mergeInfo(emu.grasscutter.net.proto.AsterProgressDetailInfoOuterClass.AsterProgressDetailInfo value) {
         if (infoBuilder_ == null) {
@@ -544,7 +544,7 @@ public final class AsterProgressInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.AsterProgressDetailInfo info = 4;</code>
+       * <code>.AsterProgressDetailInfo info = 13;</code>
        */
       public Builder clearInfo() {
         if (infoBuilder_ == null) {
@@ -558,7 +558,7 @@ public final class AsterProgressInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.AsterProgressDetailInfo info = 4;</code>
+       * <code>.AsterProgressDetailInfo info = 13;</code>
        */
       public emu.grasscutter.net.proto.AsterProgressDetailInfoOuterClass.AsterProgressDetailInfo.Builder getInfoBuilder() {
         
@@ -566,7 +566,7 @@ public final class AsterProgressInfoNotifyOuterClass {
         return getInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.AsterProgressDetailInfo info = 4;</code>
+       * <code>.AsterProgressDetailInfo info = 13;</code>
        */
       public emu.grasscutter.net.proto.AsterProgressDetailInfoOuterClass.AsterProgressDetailInfoOrBuilder getInfoOrBuilder() {
         if (infoBuilder_ != null) {
@@ -577,7 +577,7 @@ public final class AsterProgressInfoNotifyOuterClass {
         }
       }
       /**
-       * <code>.AsterProgressDetailInfo info = 4;</code>
+       * <code>.AsterProgressDetailInfo info = 13;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.AsterProgressDetailInfoOuterClass.AsterProgressDetailInfo, emu.grasscutter.net.proto.AsterProgressDetailInfoOuterClass.AsterProgressDetailInfo.Builder, emu.grasscutter.net.proto.AsterProgressDetailInfoOuterClass.AsterProgressDetailInfoOrBuilder> 
@@ -661,7 +661,7 @@ public final class AsterProgressInfoNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\035AsterProgressInfoNotify.proto\032\035AsterPr" +
       "ogressDetailInfo.proto\"A\n\027AsterProgressI" +
-      "nfoNotify\022&\n\004info\030\004 \001(\0132\030.AsterProgressD" +
+      "nfoNotify\022&\n\004info\030\r \001(\0132\030.AsterProgressD" +
       "etailInfoB\033\n\031emu.grasscutter.net.protob\006" +
       "proto3"
     };

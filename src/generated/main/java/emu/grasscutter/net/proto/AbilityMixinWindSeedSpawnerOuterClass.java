@@ -19,47 +19,47 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.AbilityMixinWindSeedSpawner.AddSignal add_signal = 13;</code>
+     * <code>.AbilityMixinWindSeedSpawner.AddSignal add_signal = 2;</code>
      * @return Whether the addSignal field is set.
      */
     boolean hasAddSignal();
     /**
-     * <code>.AbilityMixinWindSeedSpawner.AddSignal add_signal = 13;</code>
+     * <code>.AbilityMixinWindSeedSpawner.AddSignal add_signal = 2;</code>
      * @return The addSignal.
      */
     emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.AddSignal getAddSignal();
     /**
-     * <code>.AbilityMixinWindSeedSpawner.AddSignal add_signal = 13;</code>
+     * <code>.AbilityMixinWindSeedSpawner.AddSignal add_signal = 2;</code>
      */
     emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.AddSignalOrBuilder getAddSignalOrBuilder();
 
     /**
-     * <code>.AbilityMixinWindSeedSpawner.RefreshSeed refresh_seed = 11;</code>
+     * <code>.AbilityMixinWindSeedSpawner.RefreshSeed refresh_seed = 8;</code>
      * @return Whether the refreshSeed field is set.
      */
     boolean hasRefreshSeed();
     /**
-     * <code>.AbilityMixinWindSeedSpawner.RefreshSeed refresh_seed = 11;</code>
+     * <code>.AbilityMixinWindSeedSpawner.RefreshSeed refresh_seed = 8;</code>
      * @return The refreshSeed.
      */
     emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.RefreshSeed getRefreshSeed();
     /**
-     * <code>.AbilityMixinWindSeedSpawner.RefreshSeed refresh_seed = 11;</code>
+     * <code>.AbilityMixinWindSeedSpawner.RefreshSeed refresh_seed = 8;</code>
      */
     emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.RefreshSeedOrBuilder getRefreshSeedOrBuilder();
 
     /**
-     * <code>.AbilityMixinWindSeedSpawner.CatchSeed catch_seed = 4;</code>
+     * <code>.AbilityMixinWindSeedSpawner.CatchSeed catch_seed = 15;</code>
      * @return Whether the catchSeed field is set.
      */
     boolean hasCatchSeed();
     /**
-     * <code>.AbilityMixinWindSeedSpawner.CatchSeed catch_seed = 4;</code>
+     * <code>.AbilityMixinWindSeedSpawner.CatchSeed catch_seed = 15;</code>
      * @return The catchSeed.
      */
     emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.CatchSeed getCatchSeed();
     /**
-     * <code>.AbilityMixinWindSeedSpawner.CatchSeed catch_seed = 4;</code>
+     * <code>.AbilityMixinWindSeedSpawner.CatchSeed catch_seed = 15;</code>
      */
     emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.CatchSeedOrBuilder getCatchSeedOrBuilder();
 
@@ -67,7 +67,7 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
   }
   /**
    * <pre>
-   * Obf: ECIPFNGJAIF
+   * Obf: GODBLNPFIIG
    * </pre>
    *
    * Protobuf type {@code AbilityMixinWindSeedSpawner}
@@ -114,37 +114,9 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
             case 0:
               done = true;
               break;
-            case 34: {
-              emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.CatchSeed.Builder subBuilder = null;
-              if (cmdCase_ == 4) {
-                subBuilder = ((emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.CatchSeed) cmd_).toBuilder();
-              }
-              cmd_ =
-                  input.readMessage(emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.CatchSeed.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.CatchSeed) cmd_);
-                cmd_ = subBuilder.buildPartial();
-              }
-              cmdCase_ = 4;
-              break;
-            }
-            case 90: {
-              emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.RefreshSeed.Builder subBuilder = null;
-              if (cmdCase_ == 11) {
-                subBuilder = ((emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.RefreshSeed) cmd_).toBuilder();
-              }
-              cmd_ =
-                  input.readMessage(emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.RefreshSeed.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.RefreshSeed) cmd_);
-                cmd_ = subBuilder.buildPartial();
-              }
-              cmdCase_ = 11;
-              break;
-            }
-            case 106: {
+            case 18: {
               emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.AddSignal.Builder subBuilder = null;
-              if (cmdCase_ == 13) {
+              if (cmdCase_ == 2) {
                 subBuilder = ((emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.AddSignal) cmd_).toBuilder();
               }
               cmd_ =
@@ -153,7 +125,35 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
                 subBuilder.mergeFrom((emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.AddSignal) cmd_);
                 cmd_ = subBuilder.buildPartial();
               }
-              cmdCase_ = 13;
+              cmdCase_ = 2;
+              break;
+            }
+            case 66: {
+              emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.RefreshSeed.Builder subBuilder = null;
+              if (cmdCase_ == 8) {
+                subBuilder = ((emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.RefreshSeed) cmd_).toBuilder();
+              }
+              cmd_ =
+                  input.readMessage(emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.RefreshSeed.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.RefreshSeed) cmd_);
+                cmd_ = subBuilder.buildPartial();
+              }
+              cmdCase_ = 8;
+              break;
+            }
+            case 122: {
+              emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.CatchSeed.Builder subBuilder = null;
+              if (cmdCase_ == 15) {
+                subBuilder = ((emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.CatchSeed) cmd_).toBuilder();
+              }
+              cmd_ =
+                  input.readMessage(emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.CatchSeed.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.CatchSeed) cmd_);
+                cmd_ = subBuilder.buildPartial();
+              }
+              cmdCase_ = 15;
               break;
             }
             default: {
@@ -194,7 +194,7 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
     }
     /**
      * <pre>
-     * Obf: EKDJLLIPACM
+     * Obf: KOLEALFBLKF
      * </pre>
      *
      * Protobuf type {@code AbilityMixinWindSeedSpawner.AddSignal}
@@ -419,7 +419,7 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
       }
       /**
        * <pre>
-       * Obf: EKDJLLIPACM
+       * Obf: KOLEALFBLKF
        * </pre>
        *
        * Protobuf type {@code AbilityMixinWindSeedSpawner.AddSignal}
@@ -619,32 +619,32 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
         com.google.protobuf.MessageOrBuilder {
 
       /**
-       * <code>repeated .Vector pos_list = 1;</code>
+       * <code>repeated .Vector pos_list = 9;</code>
        */
       java.util.List<emu.grasscutter.net.proto.VectorOuterClass.Vector> 
           getPosListList();
       /**
-       * <code>repeated .Vector pos_list = 1;</code>
+       * <code>repeated .Vector pos_list = 9;</code>
        */
       emu.grasscutter.net.proto.VectorOuterClass.Vector getPosList(int index);
       /**
-       * <code>repeated .Vector pos_list = 1;</code>
+       * <code>repeated .Vector pos_list = 9;</code>
        */
       int getPosListCount();
       /**
-       * <code>repeated .Vector pos_list = 1;</code>
+       * <code>repeated .Vector pos_list = 9;</code>
        */
       java.util.List<? extends emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> 
           getPosListOrBuilderList();
       /**
-       * <code>repeated .Vector pos_list = 1;</code>
+       * <code>repeated .Vector pos_list = 9;</code>
        */
       emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getPosListOrBuilder(
           int index);
     }
     /**
      * <pre>
-     * Obf: FLOPFNIHOIO
+     * Obf: PKIEIPCDKJN
      * </pre>
      *
      * Protobuf type {@code AbilityMixinWindSeedSpawner.RefreshSeed}
@@ -693,7 +693,7 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
               case 0:
                 done = true;
                 break;
-              case 10: {
+              case 74: {
                 if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   posList_ = new java.util.ArrayList<emu.grasscutter.net.proto.VectorOuterClass.Vector>();
                   mutable_bitField0_ |= 0x00000001;
@@ -737,17 +737,17 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
                 emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.RefreshSeed.class, emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.RefreshSeed.Builder.class);
       }
 
-      public static final int POS_LIST_FIELD_NUMBER = 1;
+      public static final int POS_LIST_FIELD_NUMBER = 9;
       private java.util.List<emu.grasscutter.net.proto.VectorOuterClass.Vector> posList_;
       /**
-       * <code>repeated .Vector pos_list = 1;</code>
+       * <code>repeated .Vector pos_list = 9;</code>
        */
       @java.lang.Override
       public java.util.List<emu.grasscutter.net.proto.VectorOuterClass.Vector> getPosListList() {
         return posList_;
       }
       /**
-       * <code>repeated .Vector pos_list = 1;</code>
+       * <code>repeated .Vector pos_list = 9;</code>
        */
       @java.lang.Override
       public java.util.List<? extends emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> 
@@ -755,21 +755,21 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
         return posList_;
       }
       /**
-       * <code>repeated .Vector pos_list = 1;</code>
+       * <code>repeated .Vector pos_list = 9;</code>
        */
       @java.lang.Override
       public int getPosListCount() {
         return posList_.size();
       }
       /**
-       * <code>repeated .Vector pos_list = 1;</code>
+       * <code>repeated .Vector pos_list = 9;</code>
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.VectorOuterClass.Vector getPosList(int index) {
         return posList_.get(index);
       }
       /**
-       * <code>repeated .Vector pos_list = 1;</code>
+       * <code>repeated .Vector pos_list = 9;</code>
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getPosListOrBuilder(
@@ -792,7 +792,7 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
         for (int i = 0; i < posList_.size(); i++) {
-          output.writeMessage(1, posList_.get(i));
+          output.writeMessage(9, posList_.get(i));
         }
         unknownFields.writeTo(output);
       }
@@ -805,7 +805,7 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
         size = 0;
         for (int i = 0; i < posList_.size(); i++) {
           size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(1, posList_.get(i));
+            .computeMessageSize(9, posList_.get(i));
         }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
@@ -936,7 +936,7 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
       }
       /**
        * <pre>
-       * Obf: FLOPFNIHOIO
+       * Obf: PKIEIPCDKJN
        * </pre>
        *
        * Protobuf type {@code AbilityMixinWindSeedSpawner.RefreshSeed}
@@ -1136,7 +1136,7 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
             emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> posListBuilder_;
 
         /**
-         * <code>repeated .Vector pos_list = 1;</code>
+         * <code>repeated .Vector pos_list = 9;</code>
          */
         public java.util.List<emu.grasscutter.net.proto.VectorOuterClass.Vector> getPosListList() {
           if (posListBuilder_ == null) {
@@ -1146,7 +1146,7 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
           }
         }
         /**
-         * <code>repeated .Vector pos_list = 1;</code>
+         * <code>repeated .Vector pos_list = 9;</code>
          */
         public int getPosListCount() {
           if (posListBuilder_ == null) {
@@ -1156,7 +1156,7 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
           }
         }
         /**
-         * <code>repeated .Vector pos_list = 1;</code>
+         * <code>repeated .Vector pos_list = 9;</code>
          */
         public emu.grasscutter.net.proto.VectorOuterClass.Vector getPosList(int index) {
           if (posListBuilder_ == null) {
@@ -1166,7 +1166,7 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
           }
         }
         /**
-         * <code>repeated .Vector pos_list = 1;</code>
+         * <code>repeated .Vector pos_list = 9;</code>
          */
         public Builder setPosList(
             int index, emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
@@ -1183,7 +1183,7 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
           return this;
         }
         /**
-         * <code>repeated .Vector pos_list = 1;</code>
+         * <code>repeated .Vector pos_list = 9;</code>
          */
         public Builder setPosList(
             int index, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
@@ -1197,7 +1197,7 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
           return this;
         }
         /**
-         * <code>repeated .Vector pos_list = 1;</code>
+         * <code>repeated .Vector pos_list = 9;</code>
          */
         public Builder addPosList(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
           if (posListBuilder_ == null) {
@@ -1213,7 +1213,7 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
           return this;
         }
         /**
-         * <code>repeated .Vector pos_list = 1;</code>
+         * <code>repeated .Vector pos_list = 9;</code>
          */
         public Builder addPosList(
             int index, emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
@@ -1230,7 +1230,7 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
           return this;
         }
         /**
-         * <code>repeated .Vector pos_list = 1;</code>
+         * <code>repeated .Vector pos_list = 9;</code>
          */
         public Builder addPosList(
             emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
@@ -1244,7 +1244,7 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
           return this;
         }
         /**
-         * <code>repeated .Vector pos_list = 1;</code>
+         * <code>repeated .Vector pos_list = 9;</code>
          */
         public Builder addPosList(
             int index, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
@@ -1258,7 +1258,7 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
           return this;
         }
         /**
-         * <code>repeated .Vector pos_list = 1;</code>
+         * <code>repeated .Vector pos_list = 9;</code>
          */
         public Builder addAllPosList(
             java.lang.Iterable<? extends emu.grasscutter.net.proto.VectorOuterClass.Vector> values) {
@@ -1273,7 +1273,7 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
           return this;
         }
         /**
-         * <code>repeated .Vector pos_list = 1;</code>
+         * <code>repeated .Vector pos_list = 9;</code>
          */
         public Builder clearPosList() {
           if (posListBuilder_ == null) {
@@ -1286,7 +1286,7 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
           return this;
         }
         /**
-         * <code>repeated .Vector pos_list = 1;</code>
+         * <code>repeated .Vector pos_list = 9;</code>
          */
         public Builder removePosList(int index) {
           if (posListBuilder_ == null) {
@@ -1299,14 +1299,14 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
           return this;
         }
         /**
-         * <code>repeated .Vector pos_list = 1;</code>
+         * <code>repeated .Vector pos_list = 9;</code>
          */
         public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder getPosListBuilder(
             int index) {
           return getPosListFieldBuilder().getBuilder(index);
         }
         /**
-         * <code>repeated .Vector pos_list = 1;</code>
+         * <code>repeated .Vector pos_list = 9;</code>
          */
         public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getPosListOrBuilder(
             int index) {
@@ -1316,7 +1316,7 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
           }
         }
         /**
-         * <code>repeated .Vector pos_list = 1;</code>
+         * <code>repeated .Vector pos_list = 9;</code>
          */
         public java.util.List<? extends emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> 
              getPosListOrBuilderList() {
@@ -1327,14 +1327,14 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
           }
         }
         /**
-         * <code>repeated .Vector pos_list = 1;</code>
+         * <code>repeated .Vector pos_list = 9;</code>
          */
         public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder addPosListBuilder() {
           return getPosListFieldBuilder().addBuilder(
               emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance());
         }
         /**
-         * <code>repeated .Vector pos_list = 1;</code>
+         * <code>repeated .Vector pos_list = 9;</code>
          */
         public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder addPosListBuilder(
             int index) {
@@ -1342,7 +1342,7 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
               index, emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance());
         }
         /**
-         * <code>repeated .Vector pos_list = 1;</code>
+         * <code>repeated .Vector pos_list = 9;</code>
          */
         public java.util.List<emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder> 
              getPosListBuilderList() {
@@ -1420,14 +1420,14 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
         com.google.protobuf.MessageOrBuilder {
 
       /**
-       * <code>uint32 entity_id = 1;</code>
+       * <code>uint32 entity_id = 9;</code>
        * @return The entityId.
        */
       int getEntityId();
     }
     /**
      * <pre>
-     * Obf: LEOLCCAAAPG
+     * Obf: CMGICLJOGAM
      * </pre>
      *
      * Protobuf type {@code AbilityMixinWindSeedSpawner.CatchSeed}
@@ -1474,7 +1474,7 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
               case 0:
                 done = true;
                 break;
-              case 8: {
+              case 72: {
 
                 entityId_ = input.readUInt32();
                 break;
@@ -1511,10 +1511,10 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
                 emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.CatchSeed.class, emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.CatchSeed.Builder.class);
       }
 
-      public static final int ENTITY_ID_FIELD_NUMBER = 1;
+      public static final int ENTITY_ID_FIELD_NUMBER = 9;
       private int entityId_;
       /**
-       * <code>uint32 entity_id = 1;</code>
+       * <code>uint32 entity_id = 9;</code>
        * @return The entityId.
        */
       @java.lang.Override
@@ -1537,7 +1537,7 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
         if (entityId_ != 0) {
-          output.writeUInt32(1, entityId_);
+          output.writeUInt32(9, entityId_);
         }
         unknownFields.writeTo(output);
       }
@@ -1550,7 +1550,7 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
         size = 0;
         if (entityId_ != 0) {
           size += com.google.protobuf.CodedOutputStream
-            .computeUInt32Size(1, entityId_);
+            .computeUInt32Size(9, entityId_);
         }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
@@ -1679,7 +1679,7 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
       }
       /**
        * <pre>
-       * Obf: LEOLCCAAAPG
+       * Obf: CMGICLJOGAM
        * </pre>
        *
        * Protobuf type {@code AbilityMixinWindSeedSpawner.CatchSeed}
@@ -1830,7 +1830,7 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
 
         private int entityId_ ;
         /**
-         * <code>uint32 entity_id = 1;</code>
+         * <code>uint32 entity_id = 9;</code>
          * @return The entityId.
          */
         @java.lang.Override
@@ -1838,7 +1838,7 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
           return entityId_;
         }
         /**
-         * <code>uint32 entity_id = 1;</code>
+         * <code>uint32 entity_id = 9;</code>
          * @param value The entityId to set.
          * @return This builder for chaining.
          */
@@ -1849,7 +1849,7 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
           return this;
         }
         /**
-         * <code>uint32 entity_id = 1;</code>
+         * <code>uint32 entity_id = 9;</code>
          * @return This builder for chaining.
          */
         public Builder clearEntityId() {
@@ -1916,9 +1916,9 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
     public enum CmdCase
         implements com.google.protobuf.Internal.EnumLite,
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
-      ADD_SIGNAL(13),
-      REFRESH_SEED(11),
-      CATCH_SEED(4),
+      ADD_SIGNAL(2),
+      REFRESH_SEED(8),
+      CATCH_SEED(15),
       CMD_NOT_SET(0);
       private final int value;
       private CmdCase(int value) {
@@ -1936,9 +1936,9 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
 
       public static CmdCase forNumber(int value) {
         switch (value) {
-          case 13: return ADD_SIGNAL;
-          case 11: return REFRESH_SEED;
-          case 4: return CATCH_SEED;
+          case 2: return ADD_SIGNAL;
+          case 8: return REFRESH_SEED;
+          case 15: return CATCH_SEED;
           case 0: return CMD_NOT_SET;
           default: return null;
         }
@@ -1954,94 +1954,94 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
           cmdCase_);
     }
 
-    public static final int ADD_SIGNAL_FIELD_NUMBER = 13;
+    public static final int ADD_SIGNAL_FIELD_NUMBER = 2;
     /**
-     * <code>.AbilityMixinWindSeedSpawner.AddSignal add_signal = 13;</code>
+     * <code>.AbilityMixinWindSeedSpawner.AddSignal add_signal = 2;</code>
      * @return Whether the addSignal field is set.
      */
     @java.lang.Override
     public boolean hasAddSignal() {
-      return cmdCase_ == 13;
+      return cmdCase_ == 2;
     }
     /**
-     * <code>.AbilityMixinWindSeedSpawner.AddSignal add_signal = 13;</code>
+     * <code>.AbilityMixinWindSeedSpawner.AddSignal add_signal = 2;</code>
      * @return The addSignal.
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.AddSignal getAddSignal() {
-      if (cmdCase_ == 13) {
+      if (cmdCase_ == 2) {
          return (emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.AddSignal) cmd_;
       }
       return emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.AddSignal.getDefaultInstance();
     }
     /**
-     * <code>.AbilityMixinWindSeedSpawner.AddSignal add_signal = 13;</code>
+     * <code>.AbilityMixinWindSeedSpawner.AddSignal add_signal = 2;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.AddSignalOrBuilder getAddSignalOrBuilder() {
-      if (cmdCase_ == 13) {
+      if (cmdCase_ == 2) {
          return (emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.AddSignal) cmd_;
       }
       return emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.AddSignal.getDefaultInstance();
     }
 
-    public static final int REFRESH_SEED_FIELD_NUMBER = 11;
+    public static final int REFRESH_SEED_FIELD_NUMBER = 8;
     /**
-     * <code>.AbilityMixinWindSeedSpawner.RefreshSeed refresh_seed = 11;</code>
+     * <code>.AbilityMixinWindSeedSpawner.RefreshSeed refresh_seed = 8;</code>
      * @return Whether the refreshSeed field is set.
      */
     @java.lang.Override
     public boolean hasRefreshSeed() {
-      return cmdCase_ == 11;
+      return cmdCase_ == 8;
     }
     /**
-     * <code>.AbilityMixinWindSeedSpawner.RefreshSeed refresh_seed = 11;</code>
+     * <code>.AbilityMixinWindSeedSpawner.RefreshSeed refresh_seed = 8;</code>
      * @return The refreshSeed.
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.RefreshSeed getRefreshSeed() {
-      if (cmdCase_ == 11) {
+      if (cmdCase_ == 8) {
          return (emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.RefreshSeed) cmd_;
       }
       return emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.RefreshSeed.getDefaultInstance();
     }
     /**
-     * <code>.AbilityMixinWindSeedSpawner.RefreshSeed refresh_seed = 11;</code>
+     * <code>.AbilityMixinWindSeedSpawner.RefreshSeed refresh_seed = 8;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.RefreshSeedOrBuilder getRefreshSeedOrBuilder() {
-      if (cmdCase_ == 11) {
+      if (cmdCase_ == 8) {
          return (emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.RefreshSeed) cmd_;
       }
       return emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.RefreshSeed.getDefaultInstance();
     }
 
-    public static final int CATCH_SEED_FIELD_NUMBER = 4;
+    public static final int CATCH_SEED_FIELD_NUMBER = 15;
     /**
-     * <code>.AbilityMixinWindSeedSpawner.CatchSeed catch_seed = 4;</code>
+     * <code>.AbilityMixinWindSeedSpawner.CatchSeed catch_seed = 15;</code>
      * @return Whether the catchSeed field is set.
      */
     @java.lang.Override
     public boolean hasCatchSeed() {
-      return cmdCase_ == 4;
+      return cmdCase_ == 15;
     }
     /**
-     * <code>.AbilityMixinWindSeedSpawner.CatchSeed catch_seed = 4;</code>
+     * <code>.AbilityMixinWindSeedSpawner.CatchSeed catch_seed = 15;</code>
      * @return The catchSeed.
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.CatchSeed getCatchSeed() {
-      if (cmdCase_ == 4) {
+      if (cmdCase_ == 15) {
          return (emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.CatchSeed) cmd_;
       }
       return emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.CatchSeed.getDefaultInstance();
     }
     /**
-     * <code>.AbilityMixinWindSeedSpawner.CatchSeed catch_seed = 4;</code>
+     * <code>.AbilityMixinWindSeedSpawner.CatchSeed catch_seed = 15;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.CatchSeedOrBuilder getCatchSeedOrBuilder() {
-      if (cmdCase_ == 4) {
+      if (cmdCase_ == 15) {
          return (emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.CatchSeed) cmd_;
       }
       return emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.CatchSeed.getDefaultInstance();
@@ -2061,14 +2061,14 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (cmdCase_ == 4) {
-        output.writeMessage(4, (emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.CatchSeed) cmd_);
+      if (cmdCase_ == 2) {
+        output.writeMessage(2, (emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.AddSignal) cmd_);
       }
-      if (cmdCase_ == 11) {
-        output.writeMessage(11, (emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.RefreshSeed) cmd_);
+      if (cmdCase_ == 8) {
+        output.writeMessage(8, (emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.RefreshSeed) cmd_);
       }
-      if (cmdCase_ == 13) {
-        output.writeMessage(13, (emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.AddSignal) cmd_);
+      if (cmdCase_ == 15) {
+        output.writeMessage(15, (emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.CatchSeed) cmd_);
       }
       unknownFields.writeTo(output);
     }
@@ -2079,17 +2079,17 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (cmdCase_ == 4) {
+      if (cmdCase_ == 2) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, (emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.CatchSeed) cmd_);
+          .computeMessageSize(2, (emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.AddSignal) cmd_);
       }
-      if (cmdCase_ == 11) {
+      if (cmdCase_ == 8) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(11, (emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.RefreshSeed) cmd_);
+          .computeMessageSize(8, (emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.RefreshSeed) cmd_);
       }
-      if (cmdCase_ == 13) {
+      if (cmdCase_ == 15) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(13, (emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.AddSignal) cmd_);
+          .computeMessageSize(15, (emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.CatchSeed) cmd_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2108,15 +2108,15 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
 
       if (!getCmdCase().equals(other.getCmdCase())) return false;
       switch (cmdCase_) {
-        case 13:
+        case 2:
           if (!getAddSignal()
               .equals(other.getAddSignal())) return false;
           break;
-        case 11:
+        case 8:
           if (!getRefreshSeed()
               .equals(other.getRefreshSeed())) return false;
           break;
-        case 4:
+        case 15:
           if (!getCatchSeed()
               .equals(other.getCatchSeed())) return false;
           break;
@@ -2135,15 +2135,15 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       switch (cmdCase_) {
-        case 13:
+        case 2:
           hash = (37 * hash) + ADD_SIGNAL_FIELD_NUMBER;
           hash = (53 * hash) + getAddSignal().hashCode();
           break;
-        case 11:
+        case 8:
           hash = (37 * hash) + REFRESH_SEED_FIELD_NUMBER;
           hash = (53 * hash) + getRefreshSeed().hashCode();
           break;
-        case 4:
+        case 15:
           hash = (37 * hash) + CATCH_SEED_FIELD_NUMBER;
           hash = (53 * hash) + getCatchSeed().hashCode();
           break;
@@ -2247,7 +2247,7 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
     }
     /**
      * <pre>
-     * Obf: ECIPFNGJAIF
+     * Obf: GODBLNPFIIG
      * </pre>
      *
      * Protobuf type {@code AbilityMixinWindSeedSpawner}
@@ -2315,21 +2315,21 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner buildPartial() {
         emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner result = new emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner(this);
-        if (cmdCase_ == 13) {
+        if (cmdCase_ == 2) {
           if (addSignalBuilder_ == null) {
             result.cmd_ = cmd_;
           } else {
             result.cmd_ = addSignalBuilder_.build();
           }
         }
-        if (cmdCase_ == 11) {
+        if (cmdCase_ == 8) {
           if (refreshSeedBuilder_ == null) {
             result.cmd_ = cmd_;
           } else {
             result.cmd_ = refreshSeedBuilder_.build();
           }
         }
-        if (cmdCase_ == 4) {
+        if (cmdCase_ == 15) {
           if (catchSeedBuilder_ == null) {
             result.cmd_ = cmd_;
           } else {
@@ -2449,33 +2449,33 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.AddSignal, emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.AddSignal.Builder, emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.AddSignalOrBuilder> addSignalBuilder_;
       /**
-       * <code>.AbilityMixinWindSeedSpawner.AddSignal add_signal = 13;</code>
+       * <code>.AbilityMixinWindSeedSpawner.AddSignal add_signal = 2;</code>
        * @return Whether the addSignal field is set.
        */
       @java.lang.Override
       public boolean hasAddSignal() {
-        return cmdCase_ == 13;
+        return cmdCase_ == 2;
       }
       /**
-       * <code>.AbilityMixinWindSeedSpawner.AddSignal add_signal = 13;</code>
+       * <code>.AbilityMixinWindSeedSpawner.AddSignal add_signal = 2;</code>
        * @return The addSignal.
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.AddSignal getAddSignal() {
         if (addSignalBuilder_ == null) {
-          if (cmdCase_ == 13) {
+          if (cmdCase_ == 2) {
             return (emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.AddSignal) cmd_;
           }
           return emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.AddSignal.getDefaultInstance();
         } else {
-          if (cmdCase_ == 13) {
+          if (cmdCase_ == 2) {
             return addSignalBuilder_.getMessage();
           }
           return emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.AddSignal.getDefaultInstance();
         }
       }
       /**
-       * <code>.AbilityMixinWindSeedSpawner.AddSignal add_signal = 13;</code>
+       * <code>.AbilityMixinWindSeedSpawner.AddSignal add_signal = 2;</code>
        */
       public Builder setAddSignal(emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.AddSignal value) {
         if (addSignalBuilder_ == null) {
@@ -2487,11 +2487,11 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
         } else {
           addSignalBuilder_.setMessage(value);
         }
-        cmdCase_ = 13;
+        cmdCase_ = 2;
         return this;
       }
       /**
-       * <code>.AbilityMixinWindSeedSpawner.AddSignal add_signal = 13;</code>
+       * <code>.AbilityMixinWindSeedSpawner.AddSignal add_signal = 2;</code>
        */
       public Builder setAddSignal(
           emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.AddSignal.Builder builderForValue) {
@@ -2501,15 +2501,15 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
         } else {
           addSignalBuilder_.setMessage(builderForValue.build());
         }
-        cmdCase_ = 13;
+        cmdCase_ = 2;
         return this;
       }
       /**
-       * <code>.AbilityMixinWindSeedSpawner.AddSignal add_signal = 13;</code>
+       * <code>.AbilityMixinWindSeedSpawner.AddSignal add_signal = 2;</code>
        */
       public Builder mergeAddSignal(emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.AddSignal value) {
         if (addSignalBuilder_ == null) {
-          if (cmdCase_ == 13 &&
+          if (cmdCase_ == 2 &&
               cmd_ != emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.AddSignal.getDefaultInstance()) {
             cmd_ = emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.AddSignal.newBuilder((emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.AddSignal) cmd_)
                 .mergeFrom(value).buildPartial();
@@ -2518,26 +2518,26 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
           }
           onChanged();
         } else {
-          if (cmdCase_ == 13) {
+          if (cmdCase_ == 2) {
             addSignalBuilder_.mergeFrom(value);
           }
           addSignalBuilder_.setMessage(value);
         }
-        cmdCase_ = 13;
+        cmdCase_ = 2;
         return this;
       }
       /**
-       * <code>.AbilityMixinWindSeedSpawner.AddSignal add_signal = 13;</code>
+       * <code>.AbilityMixinWindSeedSpawner.AddSignal add_signal = 2;</code>
        */
       public Builder clearAddSignal() {
         if (addSignalBuilder_ == null) {
-          if (cmdCase_ == 13) {
+          if (cmdCase_ == 2) {
             cmdCase_ = 0;
             cmd_ = null;
             onChanged();
           }
         } else {
-          if (cmdCase_ == 13) {
+          if (cmdCase_ == 2) {
             cmdCase_ = 0;
             cmd_ = null;
           }
@@ -2546,33 +2546,33 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
         return this;
       }
       /**
-       * <code>.AbilityMixinWindSeedSpawner.AddSignal add_signal = 13;</code>
+       * <code>.AbilityMixinWindSeedSpawner.AddSignal add_signal = 2;</code>
        */
       public emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.AddSignal.Builder getAddSignalBuilder() {
         return getAddSignalFieldBuilder().getBuilder();
       }
       /**
-       * <code>.AbilityMixinWindSeedSpawner.AddSignal add_signal = 13;</code>
+       * <code>.AbilityMixinWindSeedSpawner.AddSignal add_signal = 2;</code>
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.AddSignalOrBuilder getAddSignalOrBuilder() {
-        if ((cmdCase_ == 13) && (addSignalBuilder_ != null)) {
+        if ((cmdCase_ == 2) && (addSignalBuilder_ != null)) {
           return addSignalBuilder_.getMessageOrBuilder();
         } else {
-          if (cmdCase_ == 13) {
+          if (cmdCase_ == 2) {
             return (emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.AddSignal) cmd_;
           }
           return emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.AddSignal.getDefaultInstance();
         }
       }
       /**
-       * <code>.AbilityMixinWindSeedSpawner.AddSignal add_signal = 13;</code>
+       * <code>.AbilityMixinWindSeedSpawner.AddSignal add_signal = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.AddSignal, emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.AddSignal.Builder, emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.AddSignalOrBuilder> 
           getAddSignalFieldBuilder() {
         if (addSignalBuilder_ == null) {
-          if (!(cmdCase_ == 13)) {
+          if (!(cmdCase_ == 2)) {
             cmd_ = emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.AddSignal.getDefaultInstance();
           }
           addSignalBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -2582,7 +2582,7 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
                   isClean());
           cmd_ = null;
         }
-        cmdCase_ = 13;
+        cmdCase_ = 2;
         onChanged();;
         return addSignalBuilder_;
       }
@@ -2590,33 +2590,33 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.RefreshSeed, emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.RefreshSeed.Builder, emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.RefreshSeedOrBuilder> refreshSeedBuilder_;
       /**
-       * <code>.AbilityMixinWindSeedSpawner.RefreshSeed refresh_seed = 11;</code>
+       * <code>.AbilityMixinWindSeedSpawner.RefreshSeed refresh_seed = 8;</code>
        * @return Whether the refreshSeed field is set.
        */
       @java.lang.Override
       public boolean hasRefreshSeed() {
-        return cmdCase_ == 11;
+        return cmdCase_ == 8;
       }
       /**
-       * <code>.AbilityMixinWindSeedSpawner.RefreshSeed refresh_seed = 11;</code>
+       * <code>.AbilityMixinWindSeedSpawner.RefreshSeed refresh_seed = 8;</code>
        * @return The refreshSeed.
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.RefreshSeed getRefreshSeed() {
         if (refreshSeedBuilder_ == null) {
-          if (cmdCase_ == 11) {
+          if (cmdCase_ == 8) {
             return (emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.RefreshSeed) cmd_;
           }
           return emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.RefreshSeed.getDefaultInstance();
         } else {
-          if (cmdCase_ == 11) {
+          if (cmdCase_ == 8) {
             return refreshSeedBuilder_.getMessage();
           }
           return emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.RefreshSeed.getDefaultInstance();
         }
       }
       /**
-       * <code>.AbilityMixinWindSeedSpawner.RefreshSeed refresh_seed = 11;</code>
+       * <code>.AbilityMixinWindSeedSpawner.RefreshSeed refresh_seed = 8;</code>
        */
       public Builder setRefreshSeed(emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.RefreshSeed value) {
         if (refreshSeedBuilder_ == null) {
@@ -2628,11 +2628,11 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
         } else {
           refreshSeedBuilder_.setMessage(value);
         }
-        cmdCase_ = 11;
+        cmdCase_ = 8;
         return this;
       }
       /**
-       * <code>.AbilityMixinWindSeedSpawner.RefreshSeed refresh_seed = 11;</code>
+       * <code>.AbilityMixinWindSeedSpawner.RefreshSeed refresh_seed = 8;</code>
        */
       public Builder setRefreshSeed(
           emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.RefreshSeed.Builder builderForValue) {
@@ -2642,15 +2642,15 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
         } else {
           refreshSeedBuilder_.setMessage(builderForValue.build());
         }
-        cmdCase_ = 11;
+        cmdCase_ = 8;
         return this;
       }
       /**
-       * <code>.AbilityMixinWindSeedSpawner.RefreshSeed refresh_seed = 11;</code>
+       * <code>.AbilityMixinWindSeedSpawner.RefreshSeed refresh_seed = 8;</code>
        */
       public Builder mergeRefreshSeed(emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.RefreshSeed value) {
         if (refreshSeedBuilder_ == null) {
-          if (cmdCase_ == 11 &&
+          if (cmdCase_ == 8 &&
               cmd_ != emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.RefreshSeed.getDefaultInstance()) {
             cmd_ = emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.RefreshSeed.newBuilder((emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.RefreshSeed) cmd_)
                 .mergeFrom(value).buildPartial();
@@ -2659,26 +2659,26 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
           }
           onChanged();
         } else {
-          if (cmdCase_ == 11) {
+          if (cmdCase_ == 8) {
             refreshSeedBuilder_.mergeFrom(value);
           }
           refreshSeedBuilder_.setMessage(value);
         }
-        cmdCase_ = 11;
+        cmdCase_ = 8;
         return this;
       }
       /**
-       * <code>.AbilityMixinWindSeedSpawner.RefreshSeed refresh_seed = 11;</code>
+       * <code>.AbilityMixinWindSeedSpawner.RefreshSeed refresh_seed = 8;</code>
        */
       public Builder clearRefreshSeed() {
         if (refreshSeedBuilder_ == null) {
-          if (cmdCase_ == 11) {
+          if (cmdCase_ == 8) {
             cmdCase_ = 0;
             cmd_ = null;
             onChanged();
           }
         } else {
-          if (cmdCase_ == 11) {
+          if (cmdCase_ == 8) {
             cmdCase_ = 0;
             cmd_ = null;
           }
@@ -2687,33 +2687,33 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
         return this;
       }
       /**
-       * <code>.AbilityMixinWindSeedSpawner.RefreshSeed refresh_seed = 11;</code>
+       * <code>.AbilityMixinWindSeedSpawner.RefreshSeed refresh_seed = 8;</code>
        */
       public emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.RefreshSeed.Builder getRefreshSeedBuilder() {
         return getRefreshSeedFieldBuilder().getBuilder();
       }
       /**
-       * <code>.AbilityMixinWindSeedSpawner.RefreshSeed refresh_seed = 11;</code>
+       * <code>.AbilityMixinWindSeedSpawner.RefreshSeed refresh_seed = 8;</code>
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.RefreshSeedOrBuilder getRefreshSeedOrBuilder() {
-        if ((cmdCase_ == 11) && (refreshSeedBuilder_ != null)) {
+        if ((cmdCase_ == 8) && (refreshSeedBuilder_ != null)) {
           return refreshSeedBuilder_.getMessageOrBuilder();
         } else {
-          if (cmdCase_ == 11) {
+          if (cmdCase_ == 8) {
             return (emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.RefreshSeed) cmd_;
           }
           return emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.RefreshSeed.getDefaultInstance();
         }
       }
       /**
-       * <code>.AbilityMixinWindSeedSpawner.RefreshSeed refresh_seed = 11;</code>
+       * <code>.AbilityMixinWindSeedSpawner.RefreshSeed refresh_seed = 8;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.RefreshSeed, emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.RefreshSeed.Builder, emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.RefreshSeedOrBuilder> 
           getRefreshSeedFieldBuilder() {
         if (refreshSeedBuilder_ == null) {
-          if (!(cmdCase_ == 11)) {
+          if (!(cmdCase_ == 8)) {
             cmd_ = emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.RefreshSeed.getDefaultInstance();
           }
           refreshSeedBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -2723,7 +2723,7 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
                   isClean());
           cmd_ = null;
         }
-        cmdCase_ = 11;
+        cmdCase_ = 8;
         onChanged();;
         return refreshSeedBuilder_;
       }
@@ -2731,33 +2731,33 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.CatchSeed, emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.CatchSeed.Builder, emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.CatchSeedOrBuilder> catchSeedBuilder_;
       /**
-       * <code>.AbilityMixinWindSeedSpawner.CatchSeed catch_seed = 4;</code>
+       * <code>.AbilityMixinWindSeedSpawner.CatchSeed catch_seed = 15;</code>
        * @return Whether the catchSeed field is set.
        */
       @java.lang.Override
       public boolean hasCatchSeed() {
-        return cmdCase_ == 4;
+        return cmdCase_ == 15;
       }
       /**
-       * <code>.AbilityMixinWindSeedSpawner.CatchSeed catch_seed = 4;</code>
+       * <code>.AbilityMixinWindSeedSpawner.CatchSeed catch_seed = 15;</code>
        * @return The catchSeed.
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.CatchSeed getCatchSeed() {
         if (catchSeedBuilder_ == null) {
-          if (cmdCase_ == 4) {
+          if (cmdCase_ == 15) {
             return (emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.CatchSeed) cmd_;
           }
           return emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.CatchSeed.getDefaultInstance();
         } else {
-          if (cmdCase_ == 4) {
+          if (cmdCase_ == 15) {
             return catchSeedBuilder_.getMessage();
           }
           return emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.CatchSeed.getDefaultInstance();
         }
       }
       /**
-       * <code>.AbilityMixinWindSeedSpawner.CatchSeed catch_seed = 4;</code>
+       * <code>.AbilityMixinWindSeedSpawner.CatchSeed catch_seed = 15;</code>
        */
       public Builder setCatchSeed(emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.CatchSeed value) {
         if (catchSeedBuilder_ == null) {
@@ -2769,11 +2769,11 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
         } else {
           catchSeedBuilder_.setMessage(value);
         }
-        cmdCase_ = 4;
+        cmdCase_ = 15;
         return this;
       }
       /**
-       * <code>.AbilityMixinWindSeedSpawner.CatchSeed catch_seed = 4;</code>
+       * <code>.AbilityMixinWindSeedSpawner.CatchSeed catch_seed = 15;</code>
        */
       public Builder setCatchSeed(
           emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.CatchSeed.Builder builderForValue) {
@@ -2783,15 +2783,15 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
         } else {
           catchSeedBuilder_.setMessage(builderForValue.build());
         }
-        cmdCase_ = 4;
+        cmdCase_ = 15;
         return this;
       }
       /**
-       * <code>.AbilityMixinWindSeedSpawner.CatchSeed catch_seed = 4;</code>
+       * <code>.AbilityMixinWindSeedSpawner.CatchSeed catch_seed = 15;</code>
        */
       public Builder mergeCatchSeed(emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.CatchSeed value) {
         if (catchSeedBuilder_ == null) {
-          if (cmdCase_ == 4 &&
+          if (cmdCase_ == 15 &&
               cmd_ != emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.CatchSeed.getDefaultInstance()) {
             cmd_ = emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.CatchSeed.newBuilder((emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.CatchSeed) cmd_)
                 .mergeFrom(value).buildPartial();
@@ -2800,26 +2800,26 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
           }
           onChanged();
         } else {
-          if (cmdCase_ == 4) {
+          if (cmdCase_ == 15) {
             catchSeedBuilder_.mergeFrom(value);
           }
           catchSeedBuilder_.setMessage(value);
         }
-        cmdCase_ = 4;
+        cmdCase_ = 15;
         return this;
       }
       /**
-       * <code>.AbilityMixinWindSeedSpawner.CatchSeed catch_seed = 4;</code>
+       * <code>.AbilityMixinWindSeedSpawner.CatchSeed catch_seed = 15;</code>
        */
       public Builder clearCatchSeed() {
         if (catchSeedBuilder_ == null) {
-          if (cmdCase_ == 4) {
+          if (cmdCase_ == 15) {
             cmdCase_ = 0;
             cmd_ = null;
             onChanged();
           }
         } else {
-          if (cmdCase_ == 4) {
+          if (cmdCase_ == 15) {
             cmdCase_ = 0;
             cmd_ = null;
           }
@@ -2828,33 +2828,33 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
         return this;
       }
       /**
-       * <code>.AbilityMixinWindSeedSpawner.CatchSeed catch_seed = 4;</code>
+       * <code>.AbilityMixinWindSeedSpawner.CatchSeed catch_seed = 15;</code>
        */
       public emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.CatchSeed.Builder getCatchSeedBuilder() {
         return getCatchSeedFieldBuilder().getBuilder();
       }
       /**
-       * <code>.AbilityMixinWindSeedSpawner.CatchSeed catch_seed = 4;</code>
+       * <code>.AbilityMixinWindSeedSpawner.CatchSeed catch_seed = 15;</code>
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.CatchSeedOrBuilder getCatchSeedOrBuilder() {
-        if ((cmdCase_ == 4) && (catchSeedBuilder_ != null)) {
+        if ((cmdCase_ == 15) && (catchSeedBuilder_ != null)) {
           return catchSeedBuilder_.getMessageOrBuilder();
         } else {
-          if (cmdCase_ == 4) {
+          if (cmdCase_ == 15) {
             return (emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.CatchSeed) cmd_;
           }
           return emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.CatchSeed.getDefaultInstance();
         }
       }
       /**
-       * <code>.AbilityMixinWindSeedSpawner.CatchSeed catch_seed = 4;</code>
+       * <code>.AbilityMixinWindSeedSpawner.CatchSeed catch_seed = 15;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.CatchSeed, emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.CatchSeed.Builder, emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.CatchSeedOrBuilder> 
           getCatchSeedFieldBuilder() {
         if (catchSeedBuilder_ == null) {
-          if (!(cmdCase_ == 4)) {
+          if (!(cmdCase_ == 15)) {
             cmd_ = emu.grasscutter.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.CatchSeed.getDefaultInstance();
           }
           catchSeedBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -2864,7 +2864,7 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
                   isClean());
           cmd_ = null;
         }
-        cmdCase_ = 4;
+        cmdCase_ = 15;
         onChanged();;
         return catchSeedBuilder_;
       }
@@ -2952,13 +2952,13 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
     java.lang.String[] descriptorData = {
       "\n!AbilityMixinWindSeedSpawner.proto\032\014Vec" +
       "tor.proto\"\271\002\n\033AbilityMixinWindSeedSpawne" +
-      "r\022<\n\nadd_signal\030\r \001(\0132&.AbilityMixinWind" +
+      "r\022<\n\nadd_signal\030\002 \001(\0132&.AbilityMixinWind" +
       "SeedSpawner.AddSignalH\000\022@\n\014refresh_seed\030" +
-      "\013 \001(\0132(.AbilityMixinWindSeedSpawner.Refr" +
-      "eshSeedH\000\022<\n\ncatch_seed\030\004 \001(\0132&.AbilityM" +
+      "\010 \001(\0132(.AbilityMixinWindSeedSpawner.Refr" +
+      "eshSeedH\000\022<\n\ncatch_seed\030\017 \001(\0132&.AbilityM" +
       "ixinWindSeedSpawner.CatchSeedH\000\032\013\n\tAddSi" +
-      "gnal\032(\n\013RefreshSeed\022\031\n\010pos_list\030\001 \003(\0132\007." +
-      "Vector\032\036\n\tCatchSeed\022\021\n\tentity_id\030\001 \001(\rB\005" +
+      "gnal\032(\n\013RefreshSeed\022\031\n\010pos_list\030\t \003(\0132\007." +
+      "Vector\032\036\n\tCatchSeed\022\021\n\tentity_id\030\t \001(\rB\005" +
       "\n\003cmdB\033\n\031emu.grasscutter.net.protob\006prot" +
       "o3"
     };

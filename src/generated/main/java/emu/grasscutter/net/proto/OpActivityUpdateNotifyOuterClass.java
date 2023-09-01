@@ -35,8 +35,8 @@ public final class OpActivityUpdateNotifyOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 5172
-   * Obf: OCPKMKCBAPN
+   * CmdId: 24399
+   * Obf: DHHNLIGFEGF
    * </pre>
    *
    * Protobuf type {@code OpActivityUpdateNotify}
@@ -316,8 +316,8 @@ public final class OpActivityUpdateNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 5172
-     * Obf: OCPKMKCBAPN
+     * CmdId: 24399
+     * Obf: DHHNLIGFEGF
      * </pre>
      *
      * Protobuf type {@code OpActivityUpdateNotify}

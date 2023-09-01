@@ -19,15 +19,15 @@ public final class ChangeCustomDungeonRoomReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 room_id = 12;</code>
+     * <code>uint32 room_id = 6;</code>
      * @return The roomId.
      */
     int getRoomId();
   }
   /**
    * <pre>
-   * CmdId: 6207
-   * Obf: HGHLCDALDDF
+   * CmdId: 25611
+   * Obf: PCIKOGKJFDB
    * </pre>
    *
    * Protobuf type {@code ChangeCustomDungeonRoomReq}
@@ -74,7 +74,7 @@ public final class ChangeCustomDungeonRoomReqOuterClass {
             case 0:
               done = true;
               break;
-            case 96: {
+            case 48: {
 
               roomId_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class ChangeCustomDungeonRoomReqOuterClass {
               emu.grasscutter.net.proto.ChangeCustomDungeonRoomReqOuterClass.ChangeCustomDungeonRoomReq.class, emu.grasscutter.net.proto.ChangeCustomDungeonRoomReqOuterClass.ChangeCustomDungeonRoomReq.Builder.class);
     }
 
-    public static final int ROOM_ID_FIELD_NUMBER = 12;
+    public static final int ROOM_ID_FIELD_NUMBER = 6;
     private int roomId_;
     /**
-     * <code>uint32 room_id = 12;</code>
+     * <code>uint32 room_id = 6;</code>
      * @return The roomId.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class ChangeCustomDungeonRoomReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (roomId_ != 0) {
-        output.writeUInt32(12, roomId_);
+        output.writeUInt32(6, roomId_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class ChangeCustomDungeonRoomReqOuterClass {
       size = 0;
       if (roomId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, roomId_);
+          .computeUInt32Size(6, roomId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class ChangeCustomDungeonRoomReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 6207
-     * Obf: HGHLCDALDDF
+     * CmdId: 25611
+     * Obf: PCIKOGKJFDB
      * </pre>
      *
      * Protobuf type {@code ChangeCustomDungeonRoomReq}
@@ -431,7 +431,7 @@ public final class ChangeCustomDungeonRoomReqOuterClass {
 
       private int roomId_ ;
       /**
-       * <code>uint32 room_id = 12;</code>
+       * <code>uint32 room_id = 6;</code>
        * @return The roomId.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class ChangeCustomDungeonRoomReqOuterClass {
         return roomId_;
       }
       /**
-       * <code>uint32 room_id = 12;</code>
+       * <code>uint32 room_id = 6;</code>
        * @param value The roomId to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class ChangeCustomDungeonRoomReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 room_id = 12;</code>
+       * <code>uint32 room_id = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearRoomId() {
@@ -527,7 +527,7 @@ public final class ChangeCustomDungeonRoomReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n ChangeCustomDungeonRoomReq.proto\"-\n\032Ch" +
-      "angeCustomDungeonRoomReq\022\017\n\007room_id\030\014 \001(" +
+      "angeCustomDungeonRoomReq\022\017\n\007room_id\030\006 \001(" +
       "\rB\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

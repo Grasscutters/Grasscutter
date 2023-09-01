@@ -1,12 +1,13 @@
 package emu.grasscutter.game.talk;
 
-import static emu.grasscutter.game.quest.enums.QuestCond.QUEST_COND_COMPLETE_TALK;
-import static emu.grasscutter.game.quest.enums.QuestContent.*;
-
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.binout.MainQuestData.TalkData;
 import emu.grasscutter.game.player.*;
+import emu.grasscutter.server.event.player.PlayerNpcTalkEvent;
 import lombok.NonNull;
+
+import static emu.grasscutter.game.quest.enums.QuestCond.QUEST_COND_COMPLETE_TALK;
+import static emu.grasscutter.game.quest.enums.QuestContent.*;
 
 public final class TalkManager extends BasePlayerManager {
     public TalkManager(@NonNull Player player) {
@@ -23,6 +24,11 @@ public final class TalkManager extends BasePlayerManager {
         var player = this.getPlayer();
 
         var talkData = GameData.getTalkConfigDataMap().get(talkId);
+
+        // Invoke PlayerNpcTalkEvent.
+        var event = new PlayerNpcTalkEvent(player, talkData, talkId, npcEntityId);
+        if (!event.call()) return;
+
         if (talkData != null) {
             // Check if the NPC id is valid.
             var entity = player.getScene().getEntityById(npcEntityId);

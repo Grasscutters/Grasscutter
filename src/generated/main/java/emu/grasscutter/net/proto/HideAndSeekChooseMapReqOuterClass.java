@@ -19,17 +19,17 @@ public final class HideAndSeekChooseMapReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 map_list = 3;</code>
+     * <code>repeated uint32 map_list = 4;</code>
      * @return A list containing the mapList.
      */
     java.util.List<java.lang.Integer> getMapListList();
     /**
-     * <code>repeated uint32 map_list = 3;</code>
+     * <code>repeated uint32 map_list = 4;</code>
      * @return The count of mapList.
      */
     int getMapListCount();
     /**
-     * <code>repeated uint32 map_list = 3;</code>
+     * <code>repeated uint32 map_list = 4;</code>
      * @param index The index of the element to return.
      * @return The mapList at the given index.
      */
@@ -37,8 +37,8 @@ public final class HideAndSeekChooseMapReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 8653
-   * Obf: JEJBAADOPFM
+   * CmdId: 20570
+   * Obf: EALIDOJBPOA
    * </pre>
    *
    * Protobuf type {@code HideAndSeekChooseMapReq}
@@ -87,7 +87,7 @@ public final class HideAndSeekChooseMapReqOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 32: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 mapList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -95,7 +95,7 @@ public final class HideAndSeekChooseMapReqOuterClass {
               mapList_.addInt(input.readUInt32());
               break;
             }
-            case 26: {
+            case 34: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -143,10 +143,10 @@ public final class HideAndSeekChooseMapReqOuterClass {
               emu.grasscutter.net.proto.HideAndSeekChooseMapReqOuterClass.HideAndSeekChooseMapReq.class, emu.grasscutter.net.proto.HideAndSeekChooseMapReqOuterClass.HideAndSeekChooseMapReq.Builder.class);
     }
 
-    public static final int MAP_LIST_FIELD_NUMBER = 3;
+    public static final int MAP_LIST_FIELD_NUMBER = 4;
     private com.google.protobuf.Internal.IntList mapList_;
     /**
-     * <code>repeated uint32 map_list = 3;</code>
+     * <code>repeated uint32 map_list = 4;</code>
      * @return A list containing the mapList.
      */
     @java.lang.Override
@@ -155,14 +155,14 @@ public final class HideAndSeekChooseMapReqOuterClass {
       return mapList_;
     }
     /**
-     * <code>repeated uint32 map_list = 3;</code>
+     * <code>repeated uint32 map_list = 4;</code>
      * @return The count of mapList.
      */
     public int getMapListCount() {
       return mapList_.size();
     }
     /**
-     * <code>repeated uint32 map_list = 3;</code>
+     * <code>repeated uint32 map_list = 4;</code>
      * @param index The index of the element to return.
      * @return The mapList at the given index.
      */
@@ -187,7 +187,7 @@ public final class HideAndSeekChooseMapReqOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (getMapListList().size() > 0) {
-        output.writeUInt32NoTag(26);
+        output.writeUInt32NoTag(34);
         output.writeUInt32NoTag(mapListMemoizedSerializedSize);
       }
       for (int i = 0; i < mapList_.size(); i++) {
@@ -345,8 +345,8 @@ public final class HideAndSeekChooseMapReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8653
-     * Obf: JEJBAADOPFM
+     * CmdId: 20570
+     * Obf: EALIDOJBPOA
      * </pre>
      *
      * Protobuf type {@code HideAndSeekChooseMapReq}
@@ -516,7 +516,7 @@ public final class HideAndSeekChooseMapReqOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 map_list = 3;</code>
+       * <code>repeated uint32 map_list = 4;</code>
        * @return A list containing the mapList.
        */
       public java.util.List<java.lang.Integer>
@@ -525,14 +525,14 @@ public final class HideAndSeekChooseMapReqOuterClass {
                  java.util.Collections.unmodifiableList(mapList_) : mapList_;
       }
       /**
-       * <code>repeated uint32 map_list = 3;</code>
+       * <code>repeated uint32 map_list = 4;</code>
        * @return The count of mapList.
        */
       public int getMapListCount() {
         return mapList_.size();
       }
       /**
-       * <code>repeated uint32 map_list = 3;</code>
+       * <code>repeated uint32 map_list = 4;</code>
        * @param index The index of the element to return.
        * @return The mapList at the given index.
        */
@@ -540,7 +540,7 @@ public final class HideAndSeekChooseMapReqOuterClass {
         return mapList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 map_list = 3;</code>
+       * <code>repeated uint32 map_list = 4;</code>
        * @param index The index to set the value at.
        * @param value The mapList to set.
        * @return This builder for chaining.
@@ -553,7 +553,7 @@ public final class HideAndSeekChooseMapReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 map_list = 3;</code>
+       * <code>repeated uint32 map_list = 4;</code>
        * @param value The mapList to add.
        * @return This builder for chaining.
        */
@@ -564,7 +564,7 @@ public final class HideAndSeekChooseMapReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 map_list = 3;</code>
+       * <code>repeated uint32 map_list = 4;</code>
        * @param values The mapList to add.
        * @return This builder for chaining.
        */
@@ -577,7 +577,7 @@ public final class HideAndSeekChooseMapReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 map_list = 3;</code>
+       * <code>repeated uint32 map_list = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearMapList() {
@@ -654,7 +654,7 @@ public final class HideAndSeekChooseMapReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\035HideAndSeekChooseMapReq.proto\"+\n\027HideA" +
-      "ndSeekChooseMapReq\022\020\n\010map_list\030\003 \003(\rB\033\n\031" +
+      "ndSeekChooseMapReq\022\020\n\010map_list\030\004 \003(\rB\033\n\031" +
       "emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

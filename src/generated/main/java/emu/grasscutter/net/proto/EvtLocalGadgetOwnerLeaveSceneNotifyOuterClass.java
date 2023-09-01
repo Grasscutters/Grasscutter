@@ -19,15 +19,15 @@ public final class EvtLocalGadgetOwnerLeaveSceneNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 entity_id = 5;</code>
+     * <code>uint32 entity_id = 11;</code>
      * @return The entityId.
      */
     int getEntityId();
   }
   /**
    * <pre>
-   * CmdId: 319
-   * Obf: PCLLDJIMKHE
+   * CmdId: 4542
+   * Obf: MJLLALFOONC
    * </pre>
    *
    * Protobuf type {@code EvtLocalGadgetOwnerLeaveSceneNotify}
@@ -74,7 +74,7 @@ public final class EvtLocalGadgetOwnerLeaveSceneNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
+            case 88: {
 
               entityId_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class EvtLocalGadgetOwnerLeaveSceneNotifyOuterClass {
               emu.grasscutter.net.proto.EvtLocalGadgetOwnerLeaveSceneNotifyOuterClass.EvtLocalGadgetOwnerLeaveSceneNotify.class, emu.grasscutter.net.proto.EvtLocalGadgetOwnerLeaveSceneNotifyOuterClass.EvtLocalGadgetOwnerLeaveSceneNotify.Builder.class);
     }
 
-    public static final int ENTITY_ID_FIELD_NUMBER = 5;
+    public static final int ENTITY_ID_FIELD_NUMBER = 11;
     private int entityId_;
     /**
-     * <code>uint32 entity_id = 5;</code>
+     * <code>uint32 entity_id = 11;</code>
      * @return The entityId.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class EvtLocalGadgetOwnerLeaveSceneNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (entityId_ != 0) {
-        output.writeUInt32(5, entityId_);
+        output.writeUInt32(11, entityId_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class EvtLocalGadgetOwnerLeaveSceneNotifyOuterClass {
       size = 0;
       if (entityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, entityId_);
+          .computeUInt32Size(11, entityId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class EvtLocalGadgetOwnerLeaveSceneNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 319
-     * Obf: PCLLDJIMKHE
+     * CmdId: 4542
+     * Obf: MJLLALFOONC
      * </pre>
      *
      * Protobuf type {@code EvtLocalGadgetOwnerLeaveSceneNotify}
@@ -431,7 +431,7 @@ public final class EvtLocalGadgetOwnerLeaveSceneNotifyOuterClass {
 
       private int entityId_ ;
       /**
-       * <code>uint32 entity_id = 5;</code>
+       * <code>uint32 entity_id = 11;</code>
        * @return The entityId.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class EvtLocalGadgetOwnerLeaveSceneNotifyOuterClass {
         return entityId_;
       }
       /**
-       * <code>uint32 entity_id = 5;</code>
+       * <code>uint32 entity_id = 11;</code>
        * @param value The entityId to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class EvtLocalGadgetOwnerLeaveSceneNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 entity_id = 5;</code>
+       * <code>uint32 entity_id = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
@@ -528,7 +528,7 @@ public final class EvtLocalGadgetOwnerLeaveSceneNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n)EvtLocalGadgetOwnerLeaveSceneNotify.pr" +
       "oto\"8\n#EvtLocalGadgetOwnerLeaveSceneNoti" +
-      "fy\022\021\n\tentity_id\030\005 \001(\rB\033\n\031emu.grasscutter" +
+      "fy\022\021\n\tentity_id\030\013 \001(\rB\033\n\031emu.grasscutter" +
       ".net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

@@ -19,51 +19,51 @@ public final class GetBattlePassProductRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string product_id = 14;</code>
-     * @return The productId.
-     */
-    java.lang.String getProductId();
-    /**
-     * <code>string product_id = 14;</code>
-     * @return The bytes for productId.
-     */
-    com.google.protobuf.ByteString
-        getProductIdBytes();
-
-    /**
-     * <code>int32 retcode = 7;</code>
+     * <code>int32 retcode = 1;</code>
      * @return The retcode.
      */
     int getRetcode();
 
     /**
-     * <code>string price_tier = 12;</code>
+     * <code>string price_tier = 3;</code>
      * @return The priceTier.
      */
     java.lang.String getPriceTier();
     /**
-     * <code>string price_tier = 12;</code>
+     * <code>string price_tier = 3;</code>
      * @return The bytes for priceTier.
      */
     com.google.protobuf.ByteString
         getPriceTierBytes();
 
     /**
-     * <code>uint32 battle_pass_product_play_type = 15;</code>
-     * @return The battlePassProductPlayType.
+     * <code>string product_id = 10;</code>
+     * @return The productId.
      */
-    int getBattlePassProductPlayType();
+    java.lang.String getProductId();
+    /**
+     * <code>string product_id = 10;</code>
+     * @return The bytes for productId.
+     */
+    com.google.protobuf.ByteString
+        getProductIdBytes();
 
     /**
-     * <code>uint32 cur_schedule_id = 10;</code>
+     * <code>uint32 cur_schedule_id = 5;</code>
      * @return The curScheduleId.
      */
     int getCurScheduleId();
+
+    /**
+     * <code>uint32 battle_pass_product_play_type = 7;</code>
+     * @return The battlePassProductPlayType.
+     */
+    int getBattlePassProductPlayType();
   }
   /**
    * <pre>
-   * CmdId: 2616
-   * Obf: AFKHEFNDFAK
+   * CmdId: 29703
+   * Obf: JBBMCHOBBFD
    * </pre>
    *
    * Protobuf type {@code GetBattlePassProductRsp}
@@ -78,8 +78,8 @@ public final class GetBattlePassProductRspOuterClass {
       super(builder);
     }
     private GetBattlePassProductRsp() {
-      productId_ = "";
       priceTier_ = "";
+      productId_ = "";
     }
 
     @java.lang.Override
@@ -112,31 +112,31 @@ public final class GetBattlePassProductRspOuterClass {
             case 0:
               done = true;
               break;
-            case 56: {
+            case 8: {
 
               retcode_ = input.readInt32();
               break;
             }
-            case 80: {
-
-              curScheduleId_ = input.readUInt32();
-              break;
-            }
-            case 98: {
+            case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
               priceTier_ = s;
               break;
             }
-            case 114: {
+            case 40: {
+
+              curScheduleId_ = input.readUInt32();
+              break;
+            }
+            case 56: {
+
+              battlePassProductPlayType_ = input.readUInt32();
+              break;
+            }
+            case 82: {
               java.lang.String s = input.readStringRequireUtf8();
 
               productId_ = s;
-              break;
-            }
-            case 120: {
-
-              battlePassProductPlayType_ = input.readUInt32();
               break;
             }
             default: {
@@ -171,48 +171,10 @@ public final class GetBattlePassProductRspOuterClass {
               emu.grasscutter.net.proto.GetBattlePassProductRspOuterClass.GetBattlePassProductRsp.class, emu.grasscutter.net.proto.GetBattlePassProductRspOuterClass.GetBattlePassProductRsp.Builder.class);
     }
 
-    public static final int PRODUCT_ID_FIELD_NUMBER = 14;
-    private volatile java.lang.Object productId_;
-    /**
-     * <code>string product_id = 14;</code>
-     * @return The productId.
-     */
-    @java.lang.Override
-    public java.lang.String getProductId() {
-      java.lang.Object ref = productId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        productId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string product_id = 14;</code>
-     * @return The bytes for productId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getProductIdBytes() {
-      java.lang.Object ref = productId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        productId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int RETCODE_FIELD_NUMBER = 7;
+    public static final int RETCODE_FIELD_NUMBER = 1;
     private int retcode_;
     /**
-     * <code>int32 retcode = 7;</code>
+     * <code>int32 retcode = 1;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -220,10 +182,10 @@ public final class GetBattlePassProductRspOuterClass {
       return retcode_;
     }
 
-    public static final int PRICE_TIER_FIELD_NUMBER = 12;
+    public static final int PRICE_TIER_FIELD_NUMBER = 3;
     private volatile java.lang.Object priceTier_;
     /**
-     * <code>string price_tier = 12;</code>
+     * <code>string price_tier = 3;</code>
      * @return The priceTier.
      */
     @java.lang.Override
@@ -240,7 +202,7 @@ public final class GetBattlePassProductRspOuterClass {
       }
     }
     /**
-     * <code>string price_tier = 12;</code>
+     * <code>string price_tier = 3;</code>
      * @return The bytes for priceTier.
      */
     @java.lang.Override
@@ -258,26 +220,64 @@ public final class GetBattlePassProductRspOuterClass {
       }
     }
 
-    public static final int BATTLE_PASS_PRODUCT_PLAY_TYPE_FIELD_NUMBER = 15;
-    private int battlePassProductPlayType_;
+    public static final int PRODUCT_ID_FIELD_NUMBER = 10;
+    private volatile java.lang.Object productId_;
     /**
-     * <code>uint32 battle_pass_product_play_type = 15;</code>
-     * @return The battlePassProductPlayType.
+     * <code>string product_id = 10;</code>
+     * @return The productId.
      */
     @java.lang.Override
-    public int getBattlePassProductPlayType() {
-      return battlePassProductPlayType_;
+    public java.lang.String getProductId() {
+      java.lang.Object ref = productId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        productId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string product_id = 10;</code>
+     * @return The bytes for productId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getProductIdBytes() {
+      java.lang.Object ref = productId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        productId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
-    public static final int CUR_SCHEDULE_ID_FIELD_NUMBER = 10;
+    public static final int CUR_SCHEDULE_ID_FIELD_NUMBER = 5;
     private int curScheduleId_;
     /**
-     * <code>uint32 cur_schedule_id = 10;</code>
+     * <code>uint32 cur_schedule_id = 5;</code>
      * @return The curScheduleId.
      */
     @java.lang.Override
     public int getCurScheduleId() {
       return curScheduleId_;
+    }
+
+    public static final int BATTLE_PASS_PRODUCT_PLAY_TYPE_FIELD_NUMBER = 7;
+    private int battlePassProductPlayType_;
+    /**
+     * <code>uint32 battle_pass_product_play_type = 7;</code>
+     * @return The battlePassProductPlayType.
+     */
+    @java.lang.Override
+    public int getBattlePassProductPlayType() {
+      return battlePassProductPlayType_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -295,19 +295,19 @@ public final class GetBattlePassProductRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (retcode_ != 0) {
-        output.writeInt32(7, retcode_);
-      }
-      if (curScheduleId_ != 0) {
-        output.writeUInt32(10, curScheduleId_);
+        output.writeInt32(1, retcode_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(priceTier_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, priceTier_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, priceTier_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(productId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 14, productId_);
+      if (curScheduleId_ != 0) {
+        output.writeUInt32(5, curScheduleId_);
       }
       if (battlePassProductPlayType_ != 0) {
-        output.writeUInt32(15, battlePassProductPlayType_);
+        output.writeUInt32(7, battlePassProductPlayType_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(productId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, productId_);
       }
       unknownFields.writeTo(output);
     }
@@ -320,21 +320,21 @@ public final class GetBattlePassProductRspOuterClass {
       size = 0;
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(7, retcode_);
+          .computeInt32Size(1, retcode_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(priceTier_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, priceTier_);
       }
       if (curScheduleId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, curScheduleId_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(priceTier_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, priceTier_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(productId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, productId_);
+          .computeUInt32Size(5, curScheduleId_);
       }
       if (battlePassProductPlayType_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, battlePassProductPlayType_);
+          .computeUInt32Size(7, battlePassProductPlayType_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(productId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, productId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -351,16 +351,16 @@ public final class GetBattlePassProductRspOuterClass {
       }
       emu.grasscutter.net.proto.GetBattlePassProductRspOuterClass.GetBattlePassProductRsp other = (emu.grasscutter.net.proto.GetBattlePassProductRspOuterClass.GetBattlePassProductRsp) obj;
 
-      if (!getProductId()
-          .equals(other.getProductId())) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
       if (!getPriceTier()
           .equals(other.getPriceTier())) return false;
-      if (getBattlePassProductPlayType()
-          != other.getBattlePassProductPlayType()) return false;
+      if (!getProductId()
+          .equals(other.getProductId())) return false;
       if (getCurScheduleId()
           != other.getCurScheduleId()) return false;
+      if (getBattlePassProductPlayType()
+          != other.getBattlePassProductPlayType()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -372,16 +372,16 @@ public final class GetBattlePassProductRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + PRODUCT_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getProductId().hashCode();
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
       hash = (37 * hash) + PRICE_TIER_FIELD_NUMBER;
       hash = (53 * hash) + getPriceTier().hashCode();
-      hash = (37 * hash) + BATTLE_PASS_PRODUCT_PLAY_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + getBattlePassProductPlayType();
+      hash = (37 * hash) + PRODUCT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getProductId().hashCode();
       hash = (37 * hash) + CUR_SCHEDULE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getCurScheduleId();
+      hash = (37 * hash) + BATTLE_PASS_PRODUCT_PLAY_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getBattlePassProductPlayType();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -479,8 +479,8 @@ public final class GetBattlePassProductRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2616
-     * Obf: AFKHEFNDFAK
+     * CmdId: 29703
+     * Obf: JBBMCHOBBFD
      * </pre>
      *
      * Protobuf type {@code GetBattlePassProductRsp}
@@ -520,15 +520,15 @@ public final class GetBattlePassProductRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        productId_ = "";
-
         retcode_ = 0;
 
         priceTier_ = "";
 
-        battlePassProductPlayType_ = 0;
+        productId_ = "";
 
         curScheduleId_ = 0;
+
+        battlePassProductPlayType_ = 0;
 
         return this;
       }
@@ -556,11 +556,11 @@ public final class GetBattlePassProductRspOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.GetBattlePassProductRspOuterClass.GetBattlePassProductRsp buildPartial() {
         emu.grasscutter.net.proto.GetBattlePassProductRspOuterClass.GetBattlePassProductRsp result = new emu.grasscutter.net.proto.GetBattlePassProductRspOuterClass.GetBattlePassProductRsp(this);
-        result.productId_ = productId_;
         result.retcode_ = retcode_;
         result.priceTier_ = priceTier_;
-        result.battlePassProductPlayType_ = battlePassProductPlayType_;
+        result.productId_ = productId_;
         result.curScheduleId_ = curScheduleId_;
+        result.battlePassProductPlayType_ = battlePassProductPlayType_;
         onBuilt();
         return result;
       }
@@ -609,10 +609,6 @@ public final class GetBattlePassProductRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.GetBattlePassProductRspOuterClass.GetBattlePassProductRsp other) {
         if (other == emu.grasscutter.net.proto.GetBattlePassProductRspOuterClass.GetBattlePassProductRsp.getDefaultInstance()) return this;
-        if (!other.getProductId().isEmpty()) {
-          productId_ = other.productId_;
-          onChanged();
-        }
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
         }
@@ -620,11 +616,15 @@ public final class GetBattlePassProductRspOuterClass {
           priceTier_ = other.priceTier_;
           onChanged();
         }
-        if (other.getBattlePassProductPlayType() != 0) {
-          setBattlePassProductPlayType(other.getBattlePassProductPlayType());
+        if (!other.getProductId().isEmpty()) {
+          productId_ = other.productId_;
+          onChanged();
         }
         if (other.getCurScheduleId() != 0) {
           setCurScheduleId(other.getCurScheduleId());
+        }
+        if (other.getBattlePassProductPlayType() != 0) {
+          setBattlePassProductPlayType(other.getBattlePassProductPlayType());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -655,85 +655,9 @@ public final class GetBattlePassProductRspOuterClass {
         return this;
       }
 
-      private java.lang.Object productId_ = "";
-      /**
-       * <code>string product_id = 14;</code>
-       * @return The productId.
-       */
-      public java.lang.String getProductId() {
-        java.lang.Object ref = productId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          productId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string product_id = 14;</code>
-       * @return The bytes for productId.
-       */
-      public com.google.protobuf.ByteString
-          getProductIdBytes() {
-        java.lang.Object ref = productId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          productId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string product_id = 14;</code>
-       * @param value The productId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setProductId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        productId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string product_id = 14;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearProductId() {
-        
-        productId_ = getDefaultInstance().getProductId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string product_id = 14;</code>
-       * @param value The bytes for productId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setProductIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        productId_ = value;
-        onChanged();
-        return this;
-      }
-
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 7;</code>
+       * <code>int32 retcode = 1;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -741,7 +665,7 @@ public final class GetBattlePassProductRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 7;</code>
+       * <code>int32 retcode = 1;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -752,7 +676,7 @@ public final class GetBattlePassProductRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 7;</code>
+       * <code>int32 retcode = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -764,7 +688,7 @@ public final class GetBattlePassProductRspOuterClass {
 
       private java.lang.Object priceTier_ = "";
       /**
-       * <code>string price_tier = 12;</code>
+       * <code>string price_tier = 3;</code>
        * @return The priceTier.
        */
       public java.lang.String getPriceTier() {
@@ -780,7 +704,7 @@ public final class GetBattlePassProductRspOuterClass {
         }
       }
       /**
-       * <code>string price_tier = 12;</code>
+       * <code>string price_tier = 3;</code>
        * @return The bytes for priceTier.
        */
       public com.google.protobuf.ByteString
@@ -797,7 +721,7 @@ public final class GetBattlePassProductRspOuterClass {
         }
       }
       /**
-       * <code>string price_tier = 12;</code>
+       * <code>string price_tier = 3;</code>
        * @param value The priceTier to set.
        * @return This builder for chaining.
        */
@@ -812,7 +736,7 @@ public final class GetBattlePassProductRspOuterClass {
         return this;
       }
       /**
-       * <code>string price_tier = 12;</code>
+       * <code>string price_tier = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearPriceTier() {
@@ -822,7 +746,7 @@ public final class GetBattlePassProductRspOuterClass {
         return this;
       }
       /**
-       * <code>string price_tier = 12;</code>
+       * <code>string price_tier = 3;</code>
        * @param value The bytes for priceTier to set.
        * @return This builder for chaining.
        */
@@ -838,40 +762,85 @@ public final class GetBattlePassProductRspOuterClass {
         return this;
       }
 
-      private int battlePassProductPlayType_ ;
+      private java.lang.Object productId_ = "";
       /**
-       * <code>uint32 battle_pass_product_play_type = 15;</code>
-       * @return The battlePassProductPlayType.
+       * <code>string product_id = 10;</code>
+       * @return The productId.
        */
-      @java.lang.Override
-      public int getBattlePassProductPlayType() {
-        return battlePassProductPlayType_;
+      public java.lang.String getProductId() {
+        java.lang.Object ref = productId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          productId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>uint32 battle_pass_product_play_type = 15;</code>
-       * @param value The battlePassProductPlayType to set.
+       * <code>string product_id = 10;</code>
+       * @return The bytes for productId.
+       */
+      public com.google.protobuf.ByteString
+          getProductIdBytes() {
+        java.lang.Object ref = productId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          productId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string product_id = 10;</code>
+       * @param value The productId to set.
        * @return This builder for chaining.
        */
-      public Builder setBattlePassProductPlayType(int value) {
-        
-        battlePassProductPlayType_ = value;
+      public Builder setProductId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        productId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 battle_pass_product_play_type = 15;</code>
+       * <code>string product_id = 10;</code>
        * @return This builder for chaining.
        */
-      public Builder clearBattlePassProductPlayType() {
+      public Builder clearProductId() {
         
-        battlePassProductPlayType_ = 0;
+        productId_ = getDefaultInstance().getProductId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string product_id = 10;</code>
+       * @param value The bytes for productId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProductIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        productId_ = value;
         onChanged();
         return this;
       }
 
       private int curScheduleId_ ;
       /**
-       * <code>uint32 cur_schedule_id = 10;</code>
+       * <code>uint32 cur_schedule_id = 5;</code>
        * @return The curScheduleId.
        */
       @java.lang.Override
@@ -879,7 +848,7 @@ public final class GetBattlePassProductRspOuterClass {
         return curScheduleId_;
       }
       /**
-       * <code>uint32 cur_schedule_id = 10;</code>
+       * <code>uint32 cur_schedule_id = 5;</code>
        * @param value The curScheduleId to set.
        * @return This builder for chaining.
        */
@@ -890,12 +859,43 @@ public final class GetBattlePassProductRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 cur_schedule_id = 10;</code>
+       * <code>uint32 cur_schedule_id = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearCurScheduleId() {
         
         curScheduleId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int battlePassProductPlayType_ ;
+      /**
+       * <code>uint32 battle_pass_product_play_type = 7;</code>
+       * @return The battlePassProductPlayType.
+       */
+      @java.lang.Override
+      public int getBattlePassProductPlayType() {
+        return battlePassProductPlayType_;
+      }
+      /**
+       * <code>uint32 battle_pass_product_play_type = 7;</code>
+       * @param value The battlePassProductPlayType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBattlePassProductPlayType(int value) {
+        
+        battlePassProductPlayType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 battle_pass_product_play_type = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBattlePassProductPlayType() {
+        
+        battlePassProductPlayType_ = 0;
         onChanged();
         return this;
       }
@@ -967,10 +967,10 @@ public final class GetBattlePassProductRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\035GetBattlePassProductRsp.proto\"\222\001\n\027GetB" +
-      "attlePassProductRsp\022\022\n\nproduct_id\030\016 \001(\t\022" +
-      "\017\n\007retcode\030\007 \001(\005\022\022\n\nprice_tier\030\014 \001(\t\022%\n\035" +
-      "battle_pass_product_play_type\030\017 \001(\r\022\027\n\017c" +
-      "ur_schedule_id\030\n \001(\rB\033\n\031emu.grasscutter." +
+      "attlePassProductRsp\022\017\n\007retcode\030\001 \001(\005\022\022\n\n" +
+      "price_tier\030\003 \001(\t\022\022\n\nproduct_id\030\n \001(\t\022\027\n\017" +
+      "cur_schedule_id\030\005 \001(\r\022%\n\035battle_pass_pro" +
+      "duct_play_type\030\007 \001(\rB\033\n\031emu.grasscutter." +
       "net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -982,7 +982,7 @@ public final class GetBattlePassProductRspOuterClass {
     internal_static_GetBattlePassProductRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GetBattlePassProductRsp_descriptor,
-        new java.lang.String[] { "ProductId", "Retcode", "PriceTier", "BattlePassProductPlayType", "CurScheduleId", });
+        new java.lang.String[] { "Retcode", "PriceTier", "ProductId", "CurScheduleId", "BattlePassProductPlayType", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

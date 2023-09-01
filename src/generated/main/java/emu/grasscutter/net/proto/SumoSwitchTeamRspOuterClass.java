@@ -19,63 +19,63 @@ public final class SumoSwitchTeamRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 activity_id = 15;</code>
-     * @return The activityId.
-     */
-    int getActivityId();
-
-    /**
-     * <code>int32 retcode = 3;</code>
+     * <code>int32 retcode = 9;</code>
      * @return The retcode.
      */
     int getRetcode();
 
     /**
-     * <code>repeated .SumoDungeonTeam dungeon_team_list = 1;</code>
+     * <code>repeated .SumoDungeonTeam dungeon_team_list = 14;</code>
      */
     java.util.List<emu.grasscutter.net.proto.SumoDungeonTeamOuterClass.SumoDungeonTeam> 
         getDungeonTeamListList();
     /**
-     * <code>repeated .SumoDungeonTeam dungeon_team_list = 1;</code>
+     * <code>repeated .SumoDungeonTeam dungeon_team_list = 14;</code>
      */
     emu.grasscutter.net.proto.SumoDungeonTeamOuterClass.SumoDungeonTeam getDungeonTeamList(int index);
     /**
-     * <code>repeated .SumoDungeonTeam dungeon_team_list = 1;</code>
+     * <code>repeated .SumoDungeonTeam dungeon_team_list = 14;</code>
      */
     int getDungeonTeamListCount();
     /**
-     * <code>repeated .SumoDungeonTeam dungeon_team_list = 1;</code>
+     * <code>repeated .SumoDungeonTeam dungeon_team_list = 14;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.SumoDungeonTeamOuterClass.SumoDungeonTeamOrBuilder> 
         getDungeonTeamListOrBuilderList();
     /**
-     * <code>repeated .SumoDungeonTeam dungeon_team_list = 1;</code>
+     * <code>repeated .SumoDungeonTeam dungeon_team_list = 14;</code>
      */
     emu.grasscutter.net.proto.SumoDungeonTeamOuterClass.SumoDungeonTeamOrBuilder getDungeonTeamListOrBuilder(
         int index);
 
     /**
-     * <code>uint32 BDAFDFKPJAE = 10;</code>
-     * @return The bDAFDFKPJAE.
+     * <code>uint32 KLNJLIIECPD = 13;</code>
+     * @return The kLNJLIIECPD.
      */
-    int getBDAFDFKPJAE();
+    int getKLNJLIIECPD();
 
     /**
-     * <code>uint32 PHBHNGMAEKN = 12;</code>
-     * @return The pHBHNGMAEKN.
+     * <code>uint32 activity_id = 1;</code>
+     * @return The activityId.
      */
-    int getPHBHNGMAEKN();
+    int getActivityId();
 
     /**
-     * <code>uint32 stage_id = 9;</code>
+     * <code>uint32 stage_id = 6;</code>
      * @return The stageId.
      */
     int getStageId();
+
+    /**
+     * <code>uint32 GNDNKOIMJEL = 2;</code>
+     * @return The gNDNKOIMJEL.
+     */
+    int getGNDNKOIMJEL();
   }
   /**
    * <pre>
-   * CmdId: 8940
-   * Obf: JIGFKOGOJNJ
+   * CmdId: 28038
+   * Obf: KECJPLAKBOK
    * </pre>
    *
    * Protobuf type {@code SumoSwitchTeamRsp}
@@ -124,38 +124,38 @@ public final class SumoSwitchTeamRspOuterClass {
             case 0:
               done = true;
               break;
-            case 10: {
+            case 8: {
+
+              activityId_ = input.readUInt32();
+              break;
+            }
+            case 16: {
+
+              gNDNKOIMJEL_ = input.readUInt32();
+              break;
+            }
+            case 48: {
+
+              stageId_ = input.readUInt32();
+              break;
+            }
+            case 72: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 104: {
+
+              kLNJLIIECPD_ = input.readUInt32();
+              break;
+            }
+            case 114: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 dungeonTeamList_ = new java.util.ArrayList<emu.grasscutter.net.proto.SumoDungeonTeamOuterClass.SumoDungeonTeam>();
                 mutable_bitField0_ |= 0x00000001;
               }
               dungeonTeamList_.add(
                   input.readMessage(emu.grasscutter.net.proto.SumoDungeonTeamOuterClass.SumoDungeonTeam.parser(), extensionRegistry));
-              break;
-            }
-            case 24: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 72: {
-
-              stageId_ = input.readUInt32();
-              break;
-            }
-            case 80: {
-
-              bDAFDFKPJAE_ = input.readUInt32();
-              break;
-            }
-            case 96: {
-
-              pHBHNGMAEKN_ = input.readUInt32();
-              break;
-            }
-            case 120: {
-
-              activityId_ = input.readUInt32();
               break;
             }
             default: {
@@ -193,21 +193,10 @@ public final class SumoSwitchTeamRspOuterClass {
               emu.grasscutter.net.proto.SumoSwitchTeamRspOuterClass.SumoSwitchTeamRsp.class, emu.grasscutter.net.proto.SumoSwitchTeamRspOuterClass.SumoSwitchTeamRsp.Builder.class);
     }
 
-    public static final int ACTIVITY_ID_FIELD_NUMBER = 15;
-    private int activityId_;
-    /**
-     * <code>uint32 activity_id = 15;</code>
-     * @return The activityId.
-     */
-    @java.lang.Override
-    public int getActivityId() {
-      return activityId_;
-    }
-
-    public static final int RETCODE_FIELD_NUMBER = 3;
+    public static final int RETCODE_FIELD_NUMBER = 9;
     private int retcode_;
     /**
-     * <code>int32 retcode = 3;</code>
+     * <code>int32 retcode = 9;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -215,17 +204,17 @@ public final class SumoSwitchTeamRspOuterClass {
       return retcode_;
     }
 
-    public static final int DUNGEON_TEAM_LIST_FIELD_NUMBER = 1;
+    public static final int DUNGEON_TEAM_LIST_FIELD_NUMBER = 14;
     private java.util.List<emu.grasscutter.net.proto.SumoDungeonTeamOuterClass.SumoDungeonTeam> dungeonTeamList_;
     /**
-     * <code>repeated .SumoDungeonTeam dungeon_team_list = 1;</code>
+     * <code>repeated .SumoDungeonTeam dungeon_team_list = 14;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.SumoDungeonTeamOuterClass.SumoDungeonTeam> getDungeonTeamListList() {
       return dungeonTeamList_;
     }
     /**
-     * <code>repeated .SumoDungeonTeam dungeon_team_list = 1;</code>
+     * <code>repeated .SumoDungeonTeam dungeon_team_list = 14;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.SumoDungeonTeamOuterClass.SumoDungeonTeamOrBuilder> 
@@ -233,21 +222,21 @@ public final class SumoSwitchTeamRspOuterClass {
       return dungeonTeamList_;
     }
     /**
-     * <code>repeated .SumoDungeonTeam dungeon_team_list = 1;</code>
+     * <code>repeated .SumoDungeonTeam dungeon_team_list = 14;</code>
      */
     @java.lang.Override
     public int getDungeonTeamListCount() {
       return dungeonTeamList_.size();
     }
     /**
-     * <code>repeated .SumoDungeonTeam dungeon_team_list = 1;</code>
+     * <code>repeated .SumoDungeonTeam dungeon_team_list = 14;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.SumoDungeonTeamOuterClass.SumoDungeonTeam getDungeonTeamList(int index) {
       return dungeonTeamList_.get(index);
     }
     /**
-     * <code>repeated .SumoDungeonTeam dungeon_team_list = 1;</code>
+     * <code>repeated .SumoDungeonTeam dungeon_team_list = 14;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.SumoDungeonTeamOuterClass.SumoDungeonTeamOrBuilder getDungeonTeamListOrBuilder(
@@ -255,37 +244,48 @@ public final class SumoSwitchTeamRspOuterClass {
       return dungeonTeamList_.get(index);
     }
 
-    public static final int BDAFDFKPJAE_FIELD_NUMBER = 10;
-    private int bDAFDFKPJAE_;
+    public static final int KLNJLIIECPD_FIELD_NUMBER = 13;
+    private int kLNJLIIECPD_;
     /**
-     * <code>uint32 BDAFDFKPJAE = 10;</code>
-     * @return The bDAFDFKPJAE.
+     * <code>uint32 KLNJLIIECPD = 13;</code>
+     * @return The kLNJLIIECPD.
      */
     @java.lang.Override
-    public int getBDAFDFKPJAE() {
-      return bDAFDFKPJAE_;
+    public int getKLNJLIIECPD() {
+      return kLNJLIIECPD_;
     }
 
-    public static final int PHBHNGMAEKN_FIELD_NUMBER = 12;
-    private int pHBHNGMAEKN_;
+    public static final int ACTIVITY_ID_FIELD_NUMBER = 1;
+    private int activityId_;
     /**
-     * <code>uint32 PHBHNGMAEKN = 12;</code>
-     * @return The pHBHNGMAEKN.
+     * <code>uint32 activity_id = 1;</code>
+     * @return The activityId.
      */
     @java.lang.Override
-    public int getPHBHNGMAEKN() {
-      return pHBHNGMAEKN_;
+    public int getActivityId() {
+      return activityId_;
     }
 
-    public static final int STAGE_ID_FIELD_NUMBER = 9;
+    public static final int STAGE_ID_FIELD_NUMBER = 6;
     private int stageId_;
     /**
-     * <code>uint32 stage_id = 9;</code>
+     * <code>uint32 stage_id = 6;</code>
      * @return The stageId.
      */
     @java.lang.Override
     public int getStageId() {
       return stageId_;
+    }
+
+    public static final int GNDNKOIMJEL_FIELD_NUMBER = 2;
+    private int gNDNKOIMJEL_;
+    /**
+     * <code>uint32 GNDNKOIMJEL = 2;</code>
+     * @return The gNDNKOIMJEL.
+     */
+    @java.lang.Override
+    public int getGNDNKOIMJEL() {
+      return gNDNKOIMJEL_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -302,23 +302,23 @@ public final class SumoSwitchTeamRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < dungeonTeamList_.size(); i++) {
-        output.writeMessage(1, dungeonTeamList_.get(i));
+      if (activityId_ != 0) {
+        output.writeUInt32(1, activityId_);
       }
-      if (retcode_ != 0) {
-        output.writeInt32(3, retcode_);
+      if (gNDNKOIMJEL_ != 0) {
+        output.writeUInt32(2, gNDNKOIMJEL_);
       }
       if (stageId_ != 0) {
-        output.writeUInt32(9, stageId_);
+        output.writeUInt32(6, stageId_);
       }
-      if (bDAFDFKPJAE_ != 0) {
-        output.writeUInt32(10, bDAFDFKPJAE_);
+      if (retcode_ != 0) {
+        output.writeInt32(9, retcode_);
       }
-      if (pHBHNGMAEKN_ != 0) {
-        output.writeUInt32(12, pHBHNGMAEKN_);
+      if (kLNJLIIECPD_ != 0) {
+        output.writeUInt32(13, kLNJLIIECPD_);
       }
-      if (activityId_ != 0) {
-        output.writeUInt32(15, activityId_);
+      for (int i = 0; i < dungeonTeamList_.size(); i++) {
+        output.writeMessage(14, dungeonTeamList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -329,29 +329,29 @@ public final class SumoSwitchTeamRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < dungeonTeamList_.size(); i++) {
+      if (activityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, dungeonTeamList_.get(i));
+          .computeUInt32Size(1, activityId_);
       }
-      if (retcode_ != 0) {
+      if (gNDNKOIMJEL_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, retcode_);
+          .computeUInt32Size(2, gNDNKOIMJEL_);
       }
       if (stageId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, stageId_);
+          .computeUInt32Size(6, stageId_);
       }
-      if (bDAFDFKPJAE_ != 0) {
+      if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, bDAFDFKPJAE_);
+          .computeInt32Size(9, retcode_);
       }
-      if (pHBHNGMAEKN_ != 0) {
+      if (kLNJLIIECPD_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, pHBHNGMAEKN_);
+          .computeUInt32Size(13, kLNJLIIECPD_);
       }
-      if (activityId_ != 0) {
+      for (int i = 0; i < dungeonTeamList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, activityId_);
+          .computeMessageSize(14, dungeonTeamList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -368,18 +368,18 @@ public final class SumoSwitchTeamRspOuterClass {
       }
       emu.grasscutter.net.proto.SumoSwitchTeamRspOuterClass.SumoSwitchTeamRsp other = (emu.grasscutter.net.proto.SumoSwitchTeamRspOuterClass.SumoSwitchTeamRsp) obj;
 
-      if (getActivityId()
-          != other.getActivityId()) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
       if (!getDungeonTeamListList()
           .equals(other.getDungeonTeamListList())) return false;
-      if (getBDAFDFKPJAE()
-          != other.getBDAFDFKPJAE()) return false;
-      if (getPHBHNGMAEKN()
-          != other.getPHBHNGMAEKN()) return false;
+      if (getKLNJLIIECPD()
+          != other.getKLNJLIIECPD()) return false;
+      if (getActivityId()
+          != other.getActivityId()) return false;
       if (getStageId()
           != other.getStageId()) return false;
+      if (getGNDNKOIMJEL()
+          != other.getGNDNKOIMJEL()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -391,20 +391,20 @@ public final class SumoSwitchTeamRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ACTIVITY_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getActivityId();
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
       if (getDungeonTeamListCount() > 0) {
         hash = (37 * hash) + DUNGEON_TEAM_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getDungeonTeamListList().hashCode();
       }
-      hash = (37 * hash) + BDAFDFKPJAE_FIELD_NUMBER;
-      hash = (53 * hash) + getBDAFDFKPJAE();
-      hash = (37 * hash) + PHBHNGMAEKN_FIELD_NUMBER;
-      hash = (53 * hash) + getPHBHNGMAEKN();
+      hash = (37 * hash) + KLNJLIIECPD_FIELD_NUMBER;
+      hash = (53 * hash) + getKLNJLIIECPD();
+      hash = (37 * hash) + ACTIVITY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getActivityId();
       hash = (37 * hash) + STAGE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getStageId();
+      hash = (37 * hash) + GNDNKOIMJEL_FIELD_NUMBER;
+      hash = (53 * hash) + getGNDNKOIMJEL();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -502,8 +502,8 @@ public final class SumoSwitchTeamRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8940
-     * Obf: JIGFKOGOJNJ
+     * CmdId: 28038
+     * Obf: KECJPLAKBOK
      * </pre>
      *
      * Protobuf type {@code SumoSwitchTeamRsp}
@@ -544,8 +544,6 @@ public final class SumoSwitchTeamRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        activityId_ = 0;
-
         retcode_ = 0;
 
         if (dungeonTeamListBuilder_ == null) {
@@ -554,11 +552,13 @@ public final class SumoSwitchTeamRspOuterClass {
         } else {
           dungeonTeamListBuilder_.clear();
         }
-        bDAFDFKPJAE_ = 0;
+        kLNJLIIECPD_ = 0;
 
-        pHBHNGMAEKN_ = 0;
+        activityId_ = 0;
 
         stageId_ = 0;
+
+        gNDNKOIMJEL_ = 0;
 
         return this;
       }
@@ -587,7 +587,6 @@ public final class SumoSwitchTeamRspOuterClass {
       public emu.grasscutter.net.proto.SumoSwitchTeamRspOuterClass.SumoSwitchTeamRsp buildPartial() {
         emu.grasscutter.net.proto.SumoSwitchTeamRspOuterClass.SumoSwitchTeamRsp result = new emu.grasscutter.net.proto.SumoSwitchTeamRspOuterClass.SumoSwitchTeamRsp(this);
         int from_bitField0_ = bitField0_;
-        result.activityId_ = activityId_;
         result.retcode_ = retcode_;
         if (dungeonTeamListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
@@ -598,9 +597,10 @@ public final class SumoSwitchTeamRspOuterClass {
         } else {
           result.dungeonTeamList_ = dungeonTeamListBuilder_.build();
         }
-        result.bDAFDFKPJAE_ = bDAFDFKPJAE_;
-        result.pHBHNGMAEKN_ = pHBHNGMAEKN_;
+        result.kLNJLIIECPD_ = kLNJLIIECPD_;
+        result.activityId_ = activityId_;
         result.stageId_ = stageId_;
+        result.gNDNKOIMJEL_ = gNDNKOIMJEL_;
         onBuilt();
         return result;
       }
@@ -649,9 +649,6 @@ public final class SumoSwitchTeamRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.SumoSwitchTeamRspOuterClass.SumoSwitchTeamRsp other) {
         if (other == emu.grasscutter.net.proto.SumoSwitchTeamRspOuterClass.SumoSwitchTeamRsp.getDefaultInstance()) return this;
-        if (other.getActivityId() != 0) {
-          setActivityId(other.getActivityId());
-        }
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
         }
@@ -681,14 +678,17 @@ public final class SumoSwitchTeamRspOuterClass {
             }
           }
         }
-        if (other.getBDAFDFKPJAE() != 0) {
-          setBDAFDFKPJAE(other.getBDAFDFKPJAE());
+        if (other.getKLNJLIIECPD() != 0) {
+          setKLNJLIIECPD(other.getKLNJLIIECPD());
         }
-        if (other.getPHBHNGMAEKN() != 0) {
-          setPHBHNGMAEKN(other.getPHBHNGMAEKN());
+        if (other.getActivityId() != 0) {
+          setActivityId(other.getActivityId());
         }
         if (other.getStageId() != 0) {
           setStageId(other.getStageId());
+        }
+        if (other.getGNDNKOIMJEL() != 0) {
+          setGNDNKOIMJEL(other.getGNDNKOIMJEL());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -720,40 +720,9 @@ public final class SumoSwitchTeamRspOuterClass {
       }
       private int bitField0_;
 
-      private int activityId_ ;
-      /**
-       * <code>uint32 activity_id = 15;</code>
-       * @return The activityId.
-       */
-      @java.lang.Override
-      public int getActivityId() {
-        return activityId_;
-      }
-      /**
-       * <code>uint32 activity_id = 15;</code>
-       * @param value The activityId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setActivityId(int value) {
-        
-        activityId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 activity_id = 15;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearActivityId() {
-        
-        activityId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 3;</code>
+       * <code>int32 retcode = 9;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -761,7 +730,7 @@ public final class SumoSwitchTeamRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 3;</code>
+       * <code>int32 retcode = 9;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -772,7 +741,7 @@ public final class SumoSwitchTeamRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 3;</code>
+       * <code>int32 retcode = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -795,7 +764,7 @@ public final class SumoSwitchTeamRspOuterClass {
           emu.grasscutter.net.proto.SumoDungeonTeamOuterClass.SumoDungeonTeam, emu.grasscutter.net.proto.SumoDungeonTeamOuterClass.SumoDungeonTeam.Builder, emu.grasscutter.net.proto.SumoDungeonTeamOuterClass.SumoDungeonTeamOrBuilder> dungeonTeamListBuilder_;
 
       /**
-       * <code>repeated .SumoDungeonTeam dungeon_team_list = 1;</code>
+       * <code>repeated .SumoDungeonTeam dungeon_team_list = 14;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.SumoDungeonTeamOuterClass.SumoDungeonTeam> getDungeonTeamListList() {
         if (dungeonTeamListBuilder_ == null) {
@@ -805,7 +774,7 @@ public final class SumoSwitchTeamRspOuterClass {
         }
       }
       /**
-       * <code>repeated .SumoDungeonTeam dungeon_team_list = 1;</code>
+       * <code>repeated .SumoDungeonTeam dungeon_team_list = 14;</code>
        */
       public int getDungeonTeamListCount() {
         if (dungeonTeamListBuilder_ == null) {
@@ -815,7 +784,7 @@ public final class SumoSwitchTeamRspOuterClass {
         }
       }
       /**
-       * <code>repeated .SumoDungeonTeam dungeon_team_list = 1;</code>
+       * <code>repeated .SumoDungeonTeam dungeon_team_list = 14;</code>
        */
       public emu.grasscutter.net.proto.SumoDungeonTeamOuterClass.SumoDungeonTeam getDungeonTeamList(int index) {
         if (dungeonTeamListBuilder_ == null) {
@@ -825,7 +794,7 @@ public final class SumoSwitchTeamRspOuterClass {
         }
       }
       /**
-       * <code>repeated .SumoDungeonTeam dungeon_team_list = 1;</code>
+       * <code>repeated .SumoDungeonTeam dungeon_team_list = 14;</code>
        */
       public Builder setDungeonTeamList(
           int index, emu.grasscutter.net.proto.SumoDungeonTeamOuterClass.SumoDungeonTeam value) {
@@ -842,7 +811,7 @@ public final class SumoSwitchTeamRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .SumoDungeonTeam dungeon_team_list = 1;</code>
+       * <code>repeated .SumoDungeonTeam dungeon_team_list = 14;</code>
        */
       public Builder setDungeonTeamList(
           int index, emu.grasscutter.net.proto.SumoDungeonTeamOuterClass.SumoDungeonTeam.Builder builderForValue) {
@@ -856,7 +825,7 @@ public final class SumoSwitchTeamRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .SumoDungeonTeam dungeon_team_list = 1;</code>
+       * <code>repeated .SumoDungeonTeam dungeon_team_list = 14;</code>
        */
       public Builder addDungeonTeamList(emu.grasscutter.net.proto.SumoDungeonTeamOuterClass.SumoDungeonTeam value) {
         if (dungeonTeamListBuilder_ == null) {
@@ -872,7 +841,7 @@ public final class SumoSwitchTeamRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .SumoDungeonTeam dungeon_team_list = 1;</code>
+       * <code>repeated .SumoDungeonTeam dungeon_team_list = 14;</code>
        */
       public Builder addDungeonTeamList(
           int index, emu.grasscutter.net.proto.SumoDungeonTeamOuterClass.SumoDungeonTeam value) {
@@ -889,7 +858,7 @@ public final class SumoSwitchTeamRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .SumoDungeonTeam dungeon_team_list = 1;</code>
+       * <code>repeated .SumoDungeonTeam dungeon_team_list = 14;</code>
        */
       public Builder addDungeonTeamList(
           emu.grasscutter.net.proto.SumoDungeonTeamOuterClass.SumoDungeonTeam.Builder builderForValue) {
@@ -903,7 +872,7 @@ public final class SumoSwitchTeamRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .SumoDungeonTeam dungeon_team_list = 1;</code>
+       * <code>repeated .SumoDungeonTeam dungeon_team_list = 14;</code>
        */
       public Builder addDungeonTeamList(
           int index, emu.grasscutter.net.proto.SumoDungeonTeamOuterClass.SumoDungeonTeam.Builder builderForValue) {
@@ -917,7 +886,7 @@ public final class SumoSwitchTeamRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .SumoDungeonTeam dungeon_team_list = 1;</code>
+       * <code>repeated .SumoDungeonTeam dungeon_team_list = 14;</code>
        */
       public Builder addAllDungeonTeamList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.SumoDungeonTeamOuterClass.SumoDungeonTeam> values) {
@@ -932,7 +901,7 @@ public final class SumoSwitchTeamRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .SumoDungeonTeam dungeon_team_list = 1;</code>
+       * <code>repeated .SumoDungeonTeam dungeon_team_list = 14;</code>
        */
       public Builder clearDungeonTeamList() {
         if (dungeonTeamListBuilder_ == null) {
@@ -945,7 +914,7 @@ public final class SumoSwitchTeamRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .SumoDungeonTeam dungeon_team_list = 1;</code>
+       * <code>repeated .SumoDungeonTeam dungeon_team_list = 14;</code>
        */
       public Builder removeDungeonTeamList(int index) {
         if (dungeonTeamListBuilder_ == null) {
@@ -958,14 +927,14 @@ public final class SumoSwitchTeamRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .SumoDungeonTeam dungeon_team_list = 1;</code>
+       * <code>repeated .SumoDungeonTeam dungeon_team_list = 14;</code>
        */
       public emu.grasscutter.net.proto.SumoDungeonTeamOuterClass.SumoDungeonTeam.Builder getDungeonTeamListBuilder(
           int index) {
         return getDungeonTeamListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .SumoDungeonTeam dungeon_team_list = 1;</code>
+       * <code>repeated .SumoDungeonTeam dungeon_team_list = 14;</code>
        */
       public emu.grasscutter.net.proto.SumoDungeonTeamOuterClass.SumoDungeonTeamOrBuilder getDungeonTeamListOrBuilder(
           int index) {
@@ -975,7 +944,7 @@ public final class SumoSwitchTeamRspOuterClass {
         }
       }
       /**
-       * <code>repeated .SumoDungeonTeam dungeon_team_list = 1;</code>
+       * <code>repeated .SumoDungeonTeam dungeon_team_list = 14;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.SumoDungeonTeamOuterClass.SumoDungeonTeamOrBuilder> 
            getDungeonTeamListOrBuilderList() {
@@ -986,14 +955,14 @@ public final class SumoSwitchTeamRspOuterClass {
         }
       }
       /**
-       * <code>repeated .SumoDungeonTeam dungeon_team_list = 1;</code>
+       * <code>repeated .SumoDungeonTeam dungeon_team_list = 14;</code>
        */
       public emu.grasscutter.net.proto.SumoDungeonTeamOuterClass.SumoDungeonTeam.Builder addDungeonTeamListBuilder() {
         return getDungeonTeamListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.SumoDungeonTeamOuterClass.SumoDungeonTeam.getDefaultInstance());
       }
       /**
-       * <code>repeated .SumoDungeonTeam dungeon_team_list = 1;</code>
+       * <code>repeated .SumoDungeonTeam dungeon_team_list = 14;</code>
        */
       public emu.grasscutter.net.proto.SumoDungeonTeamOuterClass.SumoDungeonTeam.Builder addDungeonTeamListBuilder(
           int index) {
@@ -1001,7 +970,7 @@ public final class SumoSwitchTeamRspOuterClass {
             index, emu.grasscutter.net.proto.SumoDungeonTeamOuterClass.SumoDungeonTeam.getDefaultInstance());
       }
       /**
-       * <code>repeated .SumoDungeonTeam dungeon_team_list = 1;</code>
+       * <code>repeated .SumoDungeonTeam dungeon_team_list = 14;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.SumoDungeonTeamOuterClass.SumoDungeonTeam.Builder> 
            getDungeonTeamListBuilderList() {
@@ -1022,71 +991,71 @@ public final class SumoSwitchTeamRspOuterClass {
         return dungeonTeamListBuilder_;
       }
 
-      private int bDAFDFKPJAE_ ;
+      private int kLNJLIIECPD_ ;
       /**
-       * <code>uint32 BDAFDFKPJAE = 10;</code>
-       * @return The bDAFDFKPJAE.
+       * <code>uint32 KLNJLIIECPD = 13;</code>
+       * @return The kLNJLIIECPD.
        */
       @java.lang.Override
-      public int getBDAFDFKPJAE() {
-        return bDAFDFKPJAE_;
+      public int getKLNJLIIECPD() {
+        return kLNJLIIECPD_;
       }
       /**
-       * <code>uint32 BDAFDFKPJAE = 10;</code>
-       * @param value The bDAFDFKPJAE to set.
+       * <code>uint32 KLNJLIIECPD = 13;</code>
+       * @param value The kLNJLIIECPD to set.
        * @return This builder for chaining.
        */
-      public Builder setBDAFDFKPJAE(int value) {
+      public Builder setKLNJLIIECPD(int value) {
         
-        bDAFDFKPJAE_ = value;
+        kLNJLIIECPD_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 BDAFDFKPJAE = 10;</code>
+       * <code>uint32 KLNJLIIECPD = 13;</code>
        * @return This builder for chaining.
        */
-      public Builder clearBDAFDFKPJAE() {
+      public Builder clearKLNJLIIECPD() {
         
-        bDAFDFKPJAE_ = 0;
+        kLNJLIIECPD_ = 0;
         onChanged();
         return this;
       }
 
-      private int pHBHNGMAEKN_ ;
+      private int activityId_ ;
       /**
-       * <code>uint32 PHBHNGMAEKN = 12;</code>
-       * @return The pHBHNGMAEKN.
+       * <code>uint32 activity_id = 1;</code>
+       * @return The activityId.
        */
       @java.lang.Override
-      public int getPHBHNGMAEKN() {
-        return pHBHNGMAEKN_;
+      public int getActivityId() {
+        return activityId_;
       }
       /**
-       * <code>uint32 PHBHNGMAEKN = 12;</code>
-       * @param value The pHBHNGMAEKN to set.
+       * <code>uint32 activity_id = 1;</code>
+       * @param value The activityId to set.
        * @return This builder for chaining.
        */
-      public Builder setPHBHNGMAEKN(int value) {
+      public Builder setActivityId(int value) {
         
-        pHBHNGMAEKN_ = value;
+        activityId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 PHBHNGMAEKN = 12;</code>
+       * <code>uint32 activity_id = 1;</code>
        * @return This builder for chaining.
        */
-      public Builder clearPHBHNGMAEKN() {
+      public Builder clearActivityId() {
         
-        pHBHNGMAEKN_ = 0;
+        activityId_ = 0;
         onChanged();
         return this;
       }
 
       private int stageId_ ;
       /**
-       * <code>uint32 stage_id = 9;</code>
+       * <code>uint32 stage_id = 6;</code>
        * @return The stageId.
        */
       @java.lang.Override
@@ -1094,7 +1063,7 @@ public final class SumoSwitchTeamRspOuterClass {
         return stageId_;
       }
       /**
-       * <code>uint32 stage_id = 9;</code>
+       * <code>uint32 stage_id = 6;</code>
        * @param value The stageId to set.
        * @return This builder for chaining.
        */
@@ -1105,12 +1074,43 @@ public final class SumoSwitchTeamRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 stage_id = 9;</code>
+       * <code>uint32 stage_id = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearStageId() {
         
         stageId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int gNDNKOIMJEL_ ;
+      /**
+       * <code>uint32 GNDNKOIMJEL = 2;</code>
+       * @return The gNDNKOIMJEL.
+       */
+      @java.lang.Override
+      public int getGNDNKOIMJEL() {
+        return gNDNKOIMJEL_;
+      }
+      /**
+       * <code>uint32 GNDNKOIMJEL = 2;</code>
+       * @param value The gNDNKOIMJEL to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGNDNKOIMJEL(int value) {
+        
+        gNDNKOIMJEL_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 GNDNKOIMJEL = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGNDNKOIMJEL() {
+        
+        gNDNKOIMJEL_ = 0;
         onChanged();
         return this;
       }
@@ -1182,11 +1182,11 @@ public final class SumoSwitchTeamRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\027SumoSwitchTeamRsp.proto\032\025SumoDungeonTe" +
-      "am.proto\"\242\001\n\021SumoSwitchTeamRsp\022\023\n\013activi" +
-      "ty_id\030\017 \001(\r\022\017\n\007retcode\030\003 \001(\005\022+\n\021dungeon_" +
-      "team_list\030\001 \003(\0132\020.SumoDungeonTeam\022\023\n\013BDA" +
-      "FDFKPJAE\030\n \001(\r\022\023\n\013PHBHNGMAEKN\030\014 \001(\r\022\020\n\010s" +
-      "tage_id\030\t \001(\rB\033\n\031emu.grasscutter.net.pro" +
+      "am.proto\"\242\001\n\021SumoSwitchTeamRsp\022\017\n\007retcod" +
+      "e\030\t \001(\005\022+\n\021dungeon_team_list\030\016 \003(\0132\020.Sum" +
+      "oDungeonTeam\022\023\n\013KLNJLIIECPD\030\r \001(\r\022\023\n\013act" +
+      "ivity_id\030\001 \001(\r\022\020\n\010stage_id\030\006 \001(\r\022\023\n\013GNDN" +
+      "KOIMJEL\030\002 \001(\rB\033\n\031emu.grasscutter.net.pro" +
       "tob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -1199,7 +1199,7 @@ public final class SumoSwitchTeamRspOuterClass {
     internal_static_SumoSwitchTeamRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SumoSwitchTeamRsp_descriptor,
-        new java.lang.String[] { "ActivityId", "Retcode", "DungeonTeamList", "BDAFDFKPJAE", "PHBHNGMAEKN", "StageId", });
+        new java.lang.String[] { "Retcode", "DungeonTeamList", "KLNJLIIECPD", "ActivityId", "StageId", "GNDNKOIMJEL", });
     emu.grasscutter.net.proto.SumoDungeonTeamOuterClass.getDescriptor();
   }
 

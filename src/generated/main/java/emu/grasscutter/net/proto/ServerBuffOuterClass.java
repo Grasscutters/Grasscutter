@@ -50,7 +50,7 @@ public final class ServerBuffOuterClass {
   }
   /**
    * <pre>
-   * Obf: IKGPNFFPDOG
+   * Obf: JGJPJFGLDOE
    * </pre>
    *
    * Protobuf type {@code ServerBuff}
@@ -411,7 +411,7 @@ public final class ServerBuffOuterClass {
     }
     /**
      * <pre>
-     * Obf: IKGPNFFPDOG
+     * Obf: JGJPJFGLDOE
      * </pre>
      *
      * Protobuf type {@code ServerBuff}

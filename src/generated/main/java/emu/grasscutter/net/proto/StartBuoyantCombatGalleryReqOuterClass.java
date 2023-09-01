@@ -19,21 +19,21 @@ public final class StartBuoyantCombatGalleryReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 gallery_level = 7;</code>
+     * <code>uint32 gallery_level = 12;</code>
      * @return The galleryLevel.
      */
     int getGalleryLevel();
 
     /**
-     * <code>uint32 gallery_id = 5;</code>
+     * <code>uint32 gallery_id = 8;</code>
      * @return The galleryId.
      */
     int getGalleryId();
   }
   /**
    * <pre>
-   * CmdId: 8385
-   * Obf: GHHINIACJLE
+   * CmdId: 103
+   * Obf: AFLOCEGEGKO
    * </pre>
    *
    * Protobuf type {@code StartBuoyantCombatGalleryReq}
@@ -80,12 +80,12 @@ public final class StartBuoyantCombatGalleryReqOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
+            case 64: {
 
               galleryId_ = input.readUInt32();
               break;
             }
-            case 56: {
+            case 96: {
 
               galleryLevel_ = input.readUInt32();
               break;
@@ -122,10 +122,10 @@ public final class StartBuoyantCombatGalleryReqOuterClass {
               emu.grasscutter.net.proto.StartBuoyantCombatGalleryReqOuterClass.StartBuoyantCombatGalleryReq.class, emu.grasscutter.net.proto.StartBuoyantCombatGalleryReqOuterClass.StartBuoyantCombatGalleryReq.Builder.class);
     }
 
-    public static final int GALLERY_LEVEL_FIELD_NUMBER = 7;
+    public static final int GALLERY_LEVEL_FIELD_NUMBER = 12;
     private int galleryLevel_;
     /**
-     * <code>uint32 gallery_level = 7;</code>
+     * <code>uint32 gallery_level = 12;</code>
      * @return The galleryLevel.
      */
     @java.lang.Override
@@ -133,10 +133,10 @@ public final class StartBuoyantCombatGalleryReqOuterClass {
       return galleryLevel_;
     }
 
-    public static final int GALLERY_ID_FIELD_NUMBER = 5;
+    public static final int GALLERY_ID_FIELD_NUMBER = 8;
     private int galleryId_;
     /**
-     * <code>uint32 gallery_id = 5;</code>
+     * <code>uint32 gallery_id = 8;</code>
      * @return The galleryId.
      */
     @java.lang.Override
@@ -159,10 +159,10 @@ public final class StartBuoyantCombatGalleryReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (galleryId_ != 0) {
-        output.writeUInt32(5, galleryId_);
+        output.writeUInt32(8, galleryId_);
       }
       if (galleryLevel_ != 0) {
-        output.writeUInt32(7, galleryLevel_);
+        output.writeUInt32(12, galleryLevel_);
       }
       unknownFields.writeTo(output);
     }
@@ -175,11 +175,11 @@ public final class StartBuoyantCombatGalleryReqOuterClass {
       size = 0;
       if (galleryId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, galleryId_);
+          .computeUInt32Size(8, galleryId_);
       }
       if (galleryLevel_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, galleryLevel_);
+          .computeUInt32Size(12, galleryLevel_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -312,8 +312,8 @@ public final class StartBuoyantCombatGalleryReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8385
-     * Obf: GHHINIACJLE
+     * CmdId: 103
+     * Obf: AFLOCEGEGKO
      * </pre>
      *
      * Protobuf type {@code StartBuoyantCombatGalleryReq}
@@ -470,7 +470,7 @@ public final class StartBuoyantCombatGalleryReqOuterClass {
 
       private int galleryLevel_ ;
       /**
-       * <code>uint32 gallery_level = 7;</code>
+       * <code>uint32 gallery_level = 12;</code>
        * @return The galleryLevel.
        */
       @java.lang.Override
@@ -478,7 +478,7 @@ public final class StartBuoyantCombatGalleryReqOuterClass {
         return galleryLevel_;
       }
       /**
-       * <code>uint32 gallery_level = 7;</code>
+       * <code>uint32 gallery_level = 12;</code>
        * @param value The galleryLevel to set.
        * @return This builder for chaining.
        */
@@ -489,7 +489,7 @@ public final class StartBuoyantCombatGalleryReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 gallery_level = 7;</code>
+       * <code>uint32 gallery_level = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearGalleryLevel() {
@@ -501,7 +501,7 @@ public final class StartBuoyantCombatGalleryReqOuterClass {
 
       private int galleryId_ ;
       /**
-       * <code>uint32 gallery_id = 5;</code>
+       * <code>uint32 gallery_id = 8;</code>
        * @return The galleryId.
        */
       @java.lang.Override
@@ -509,7 +509,7 @@ public final class StartBuoyantCombatGalleryReqOuterClass {
         return galleryId_;
       }
       /**
-       * <code>uint32 gallery_id = 5;</code>
+       * <code>uint32 gallery_id = 8;</code>
        * @param value The galleryId to set.
        * @return This builder for chaining.
        */
@@ -520,7 +520,7 @@ public final class StartBuoyantCombatGalleryReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 gallery_id = 5;</code>
+       * <code>uint32 gallery_id = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearGalleryId() {
@@ -598,7 +598,7 @@ public final class StartBuoyantCombatGalleryReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n\"StartBuoyantCombatGalleryReq.proto\"I\n\034" +
       "StartBuoyantCombatGalleryReq\022\025\n\rgallery_" +
-      "level\030\007 \001(\r\022\022\n\ngallery_id\030\005 \001(\rB\033\n\031emu.g" +
+      "level\030\014 \001(\r\022\022\n\ngallery_id\030\010 \001(\rB\033\n\031emu.g" +
       "rasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

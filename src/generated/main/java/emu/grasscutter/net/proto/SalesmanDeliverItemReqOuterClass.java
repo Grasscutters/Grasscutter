@@ -19,15 +19,15 @@ public final class SalesmanDeliverItemReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 schedule_id = 13;</code>
+     * <code>uint32 schedule_id = 9;</code>
      * @return The scheduleId.
      */
     int getScheduleId();
   }
   /**
    * <pre>
-   * CmdId: 2172
-   * Obf: MDNOMIGCOMD
+   * CmdId: 2062
+   * Obf: GHBPLPABKMI
    * </pre>
    *
    * Protobuf type {@code SalesmanDeliverItemReq}
@@ -74,7 +74,7 @@ public final class SalesmanDeliverItemReqOuterClass {
             case 0:
               done = true;
               break;
-            case 104: {
+            case 72: {
 
               scheduleId_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class SalesmanDeliverItemReqOuterClass {
               emu.grasscutter.net.proto.SalesmanDeliverItemReqOuterClass.SalesmanDeliverItemReq.class, emu.grasscutter.net.proto.SalesmanDeliverItemReqOuterClass.SalesmanDeliverItemReq.Builder.class);
     }
 
-    public static final int SCHEDULE_ID_FIELD_NUMBER = 13;
+    public static final int SCHEDULE_ID_FIELD_NUMBER = 9;
     private int scheduleId_;
     /**
-     * <code>uint32 schedule_id = 13;</code>
+     * <code>uint32 schedule_id = 9;</code>
      * @return The scheduleId.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class SalesmanDeliverItemReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (scheduleId_ != 0) {
-        output.writeUInt32(13, scheduleId_);
+        output.writeUInt32(9, scheduleId_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class SalesmanDeliverItemReqOuterClass {
       size = 0;
       if (scheduleId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, scheduleId_);
+          .computeUInt32Size(9, scheduleId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class SalesmanDeliverItemReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2172
-     * Obf: MDNOMIGCOMD
+     * CmdId: 2062
+     * Obf: GHBPLPABKMI
      * </pre>
      *
      * Protobuf type {@code SalesmanDeliverItemReq}
@@ -431,7 +431,7 @@ public final class SalesmanDeliverItemReqOuterClass {
 
       private int scheduleId_ ;
       /**
-       * <code>uint32 schedule_id = 13;</code>
+       * <code>uint32 schedule_id = 9;</code>
        * @return The scheduleId.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class SalesmanDeliverItemReqOuterClass {
         return scheduleId_;
       }
       /**
-       * <code>uint32 schedule_id = 13;</code>
+       * <code>uint32 schedule_id = 9;</code>
        * @param value The scheduleId to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class SalesmanDeliverItemReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 schedule_id = 13;</code>
+       * <code>uint32 schedule_id = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearScheduleId() {
@@ -527,7 +527,7 @@ public final class SalesmanDeliverItemReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\034SalesmanDeliverItemReq.proto\"-\n\026Salesm" +
-      "anDeliverItemReq\022\023\n\013schedule_id\030\r \001(\rB\033\n" +
+      "anDeliverItemReq\022\023\n\013schedule_id\030\t \001(\rB\033\n" +
       "\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

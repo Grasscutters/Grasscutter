@@ -20,8 +20,8 @@ public final class OutStuckCustomDungeonReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 6232
-   * Obf: DBOACICOHED
+   * CmdId: 8657
+   * Obf: GONBFMOOHBP
    * </pre>
    *
    * Protobuf type {@code OutStuckCustomDungeonReq}
@@ -246,8 +246,8 @@ public final class OutStuckCustomDungeonReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 6232
-     * Obf: DBOACICOHED
+     * CmdId: 8657
+     * Obf: GONBFMOOHBP
      * </pre>
      *
      * Protobuf type {@code OutStuckCustomDungeonReq}

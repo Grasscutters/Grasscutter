@@ -19,80 +19,80 @@ public final class IslandPartySettleNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool is_new_record = 1;</code>
+     * <code>bool is_new_record = 12;</code>
      * @return The isNewRecord.
      */
     boolean getIsNewRecord();
 
     /**
-     * <code>repeated .IslandPartyGallerySettleInfo settle_info_list = 15;</code>
+     * <code>repeated .IslandPartyGallerySettleInfo settle_info_list = 4;</code>
      */
     java.util.List<emu.grasscutter.net.proto.IslandPartyGallerySettleInfoOuterClass.IslandPartyGallerySettleInfo> 
         getSettleInfoListList();
     /**
-     * <code>repeated .IslandPartyGallerySettleInfo settle_info_list = 15;</code>
+     * <code>repeated .IslandPartyGallerySettleInfo settle_info_list = 4;</code>
      */
     emu.grasscutter.net.proto.IslandPartyGallerySettleInfoOuterClass.IslandPartyGallerySettleInfo getSettleInfoList(int index);
     /**
-     * <code>repeated .IslandPartyGallerySettleInfo settle_info_list = 15;</code>
+     * <code>repeated .IslandPartyGallerySettleInfo settle_info_list = 4;</code>
      */
     int getSettleInfoListCount();
     /**
-     * <code>repeated .IslandPartyGallerySettleInfo settle_info_list = 15;</code>
+     * <code>repeated .IslandPartyGallerySettleInfo settle_info_list = 4;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.IslandPartyGallerySettleInfoOuterClass.IslandPartyGallerySettleInfoOrBuilder> 
         getSettleInfoListOrBuilderList();
     /**
-     * <code>repeated .IslandPartyGallerySettleInfo settle_info_list = 15;</code>
+     * <code>repeated .IslandPartyGallerySettleInfo settle_info_list = 4;</code>
      */
     emu.grasscutter.net.proto.IslandPartyGallerySettleInfoOuterClass.IslandPartyGallerySettleInfoOrBuilder getSettleInfoListOrBuilder(
         int index);
 
     /**
-     * <code>.HDDANIDHCMI reason = 5;</code>
-     * @return The enum numeric value on the wire for reason.
+     * <code>uint32 time_remain = 6;</code>
+     * @return The timeRemain.
      */
-    int getReasonValue();
-    /**
-     * <code>.HDDANIDHCMI reason = 5;</code>
-     * @return The reason.
-     */
-    emu.grasscutter.net.proto.HDDANIDHCMIOuterClass.HDDANIDHCMI getReason();
+    int getTimeRemain();
 
     /**
-     * <code>repeated .ExhibitionDisplayInfo score_list = 8;</code>
+     * <code>repeated .ExhibitionDisplayInfo score_list = 9;</code>
      */
     java.util.List<emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo> 
         getScoreListList();
     /**
-     * <code>repeated .ExhibitionDisplayInfo score_list = 8;</code>
+     * <code>repeated .ExhibitionDisplayInfo score_list = 9;</code>
      */
     emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo getScoreList(int index);
     /**
-     * <code>repeated .ExhibitionDisplayInfo score_list = 8;</code>
+     * <code>repeated .ExhibitionDisplayInfo score_list = 9;</code>
      */
     int getScoreListCount();
     /**
-     * <code>repeated .ExhibitionDisplayInfo score_list = 8;</code>
+     * <code>repeated .ExhibitionDisplayInfo score_list = 9;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfoOrBuilder> 
         getScoreListOrBuilderList();
     /**
-     * <code>repeated .ExhibitionDisplayInfo score_list = 8;</code>
+     * <code>repeated .ExhibitionDisplayInfo score_list = 9;</code>
      */
     emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfoOrBuilder getScoreListOrBuilder(
         int index);
 
     /**
-     * <code>uint32 time_remain = 12;</code>
-     * @return The timeRemain.
+     * <code>.KDHIAEFLGFM reason = 15;</code>
+     * @return The enum numeric value on the wire for reason.
      */
-    int getTimeRemain();
+    int getReasonValue();
+    /**
+     * <code>.KDHIAEFLGFM reason = 15;</code>
+     * @return The reason.
+     */
+    emu.grasscutter.net.proto.KDHIAEFLGFMOuterClass.KDHIAEFLGFM getReason();
   }
   /**
    * <pre>
-   * CmdId: 24605
-   * Obf: JFPKLLGALIJ
+   * CmdId: 23083
+   * Obf: HJBCADIELAO
    * </pre>
    *
    * Protobuf type {@code IslandPartySettleNotify}
@@ -108,8 +108,8 @@ public final class IslandPartySettleNotifyOuterClass {
     }
     private IslandPartySettleNotify() {
       settleInfoList_ = java.util.Collections.emptyList();
-      reason_ = 0;
       scoreList_ = java.util.Collections.emptyList();
+      reason_ = 0;
     }
 
     @java.lang.Override
@@ -143,18 +143,21 @@ public final class IslandPartySettleNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
-
-              isNewRecord_ = input.readBool();
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                settleInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.IslandPartyGallerySettleInfoOuterClass.IslandPartyGallerySettleInfo>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              settleInfoList_.add(
+                  input.readMessage(emu.grasscutter.net.proto.IslandPartyGallerySettleInfoOuterClass.IslandPartyGallerySettleInfo.parser(), extensionRegistry));
               break;
             }
-            case 40: {
-              int rawValue = input.readEnum();
+            case 48: {
 
-              reason_ = rawValue;
+              timeRemain_ = input.readUInt32();
               break;
             }
-            case 66: {
+            case 74: {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 scoreList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo>();
                 mutable_bitField0_ |= 0x00000002;
@@ -165,16 +168,13 @@ public final class IslandPartySettleNotifyOuterClass {
             }
             case 96: {
 
-              timeRemain_ = input.readUInt32();
+              isNewRecord_ = input.readBool();
               break;
             }
-            case 122: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                settleInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.IslandPartyGallerySettleInfoOuterClass.IslandPartyGallerySettleInfo>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              settleInfoList_.add(
-                  input.readMessage(emu.grasscutter.net.proto.IslandPartyGallerySettleInfoOuterClass.IslandPartyGallerySettleInfo.parser(), extensionRegistry));
+            case 120: {
+              int rawValue = input.readEnum();
+
+              reason_ = rawValue;
               break;
             }
             default: {
@@ -192,11 +192,11 @@ public final class IslandPartySettleNotifyOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          scoreList_ = java.util.Collections.unmodifiableList(scoreList_);
-        }
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
           settleInfoList_ = java.util.Collections.unmodifiableList(settleInfoList_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          scoreList_ = java.util.Collections.unmodifiableList(scoreList_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -215,10 +215,10 @@ public final class IslandPartySettleNotifyOuterClass {
               emu.grasscutter.net.proto.IslandPartySettleNotifyOuterClass.IslandPartySettleNotify.class, emu.grasscutter.net.proto.IslandPartySettleNotifyOuterClass.IslandPartySettleNotify.Builder.class);
     }
 
-    public static final int IS_NEW_RECORD_FIELD_NUMBER = 1;
+    public static final int IS_NEW_RECORD_FIELD_NUMBER = 12;
     private boolean isNewRecord_;
     /**
-     * <code>bool is_new_record = 1;</code>
+     * <code>bool is_new_record = 12;</code>
      * @return The isNewRecord.
      */
     @java.lang.Override
@@ -226,17 +226,17 @@ public final class IslandPartySettleNotifyOuterClass {
       return isNewRecord_;
     }
 
-    public static final int SETTLE_INFO_LIST_FIELD_NUMBER = 15;
+    public static final int SETTLE_INFO_LIST_FIELD_NUMBER = 4;
     private java.util.List<emu.grasscutter.net.proto.IslandPartyGallerySettleInfoOuterClass.IslandPartyGallerySettleInfo> settleInfoList_;
     /**
-     * <code>repeated .IslandPartyGallerySettleInfo settle_info_list = 15;</code>
+     * <code>repeated .IslandPartyGallerySettleInfo settle_info_list = 4;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.IslandPartyGallerySettleInfoOuterClass.IslandPartyGallerySettleInfo> getSettleInfoListList() {
       return settleInfoList_;
     }
     /**
-     * <code>repeated .IslandPartyGallerySettleInfo settle_info_list = 15;</code>
+     * <code>repeated .IslandPartyGallerySettleInfo settle_info_list = 4;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.IslandPartyGallerySettleInfoOuterClass.IslandPartyGallerySettleInfoOrBuilder> 
@@ -244,21 +244,21 @@ public final class IslandPartySettleNotifyOuterClass {
       return settleInfoList_;
     }
     /**
-     * <code>repeated .IslandPartyGallerySettleInfo settle_info_list = 15;</code>
+     * <code>repeated .IslandPartyGallerySettleInfo settle_info_list = 4;</code>
      */
     @java.lang.Override
     public int getSettleInfoListCount() {
       return settleInfoList_.size();
     }
     /**
-     * <code>repeated .IslandPartyGallerySettleInfo settle_info_list = 15;</code>
+     * <code>repeated .IslandPartyGallerySettleInfo settle_info_list = 4;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.IslandPartyGallerySettleInfoOuterClass.IslandPartyGallerySettleInfo getSettleInfoList(int index) {
       return settleInfoList_.get(index);
     }
     /**
-     * <code>repeated .IslandPartyGallerySettleInfo settle_info_list = 15;</code>
+     * <code>repeated .IslandPartyGallerySettleInfo settle_info_list = 4;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.IslandPartyGallerySettleInfoOuterClass.IslandPartyGallerySettleInfoOrBuilder getSettleInfoListOrBuilder(
@@ -266,36 +266,28 @@ public final class IslandPartySettleNotifyOuterClass {
       return settleInfoList_.get(index);
     }
 
-    public static final int REASON_FIELD_NUMBER = 5;
-    private int reason_;
+    public static final int TIME_REMAIN_FIELD_NUMBER = 6;
+    private int timeRemain_;
     /**
-     * <code>.HDDANIDHCMI reason = 5;</code>
-     * @return The enum numeric value on the wire for reason.
+     * <code>uint32 time_remain = 6;</code>
+     * @return The timeRemain.
      */
-    @java.lang.Override public int getReasonValue() {
-      return reason_;
-    }
-    /**
-     * <code>.HDDANIDHCMI reason = 5;</code>
-     * @return The reason.
-     */
-    @java.lang.Override public emu.grasscutter.net.proto.HDDANIDHCMIOuterClass.HDDANIDHCMI getReason() {
-      @SuppressWarnings("deprecation")
-      emu.grasscutter.net.proto.HDDANIDHCMIOuterClass.HDDANIDHCMI result = emu.grasscutter.net.proto.HDDANIDHCMIOuterClass.HDDANIDHCMI.valueOf(reason_);
-      return result == null ? emu.grasscutter.net.proto.HDDANIDHCMIOuterClass.HDDANIDHCMI.UNRECOGNIZED : result;
+    @java.lang.Override
+    public int getTimeRemain() {
+      return timeRemain_;
     }
 
-    public static final int SCORE_LIST_FIELD_NUMBER = 8;
+    public static final int SCORE_LIST_FIELD_NUMBER = 9;
     private java.util.List<emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo> scoreList_;
     /**
-     * <code>repeated .ExhibitionDisplayInfo score_list = 8;</code>
+     * <code>repeated .ExhibitionDisplayInfo score_list = 9;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo> getScoreListList() {
       return scoreList_;
     }
     /**
-     * <code>repeated .ExhibitionDisplayInfo score_list = 8;</code>
+     * <code>repeated .ExhibitionDisplayInfo score_list = 9;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfoOrBuilder> 
@@ -303,21 +295,21 @@ public final class IslandPartySettleNotifyOuterClass {
       return scoreList_;
     }
     /**
-     * <code>repeated .ExhibitionDisplayInfo score_list = 8;</code>
+     * <code>repeated .ExhibitionDisplayInfo score_list = 9;</code>
      */
     @java.lang.Override
     public int getScoreListCount() {
       return scoreList_.size();
     }
     /**
-     * <code>repeated .ExhibitionDisplayInfo score_list = 8;</code>
+     * <code>repeated .ExhibitionDisplayInfo score_list = 9;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo getScoreList(int index) {
       return scoreList_.get(index);
     }
     /**
-     * <code>repeated .ExhibitionDisplayInfo score_list = 8;</code>
+     * <code>repeated .ExhibitionDisplayInfo score_list = 9;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfoOrBuilder getScoreListOrBuilder(
@@ -325,15 +317,23 @@ public final class IslandPartySettleNotifyOuterClass {
       return scoreList_.get(index);
     }
 
-    public static final int TIME_REMAIN_FIELD_NUMBER = 12;
-    private int timeRemain_;
+    public static final int REASON_FIELD_NUMBER = 15;
+    private int reason_;
     /**
-     * <code>uint32 time_remain = 12;</code>
-     * @return The timeRemain.
+     * <code>.KDHIAEFLGFM reason = 15;</code>
+     * @return The enum numeric value on the wire for reason.
      */
-    @java.lang.Override
-    public int getTimeRemain() {
-      return timeRemain_;
+    @java.lang.Override public int getReasonValue() {
+      return reason_;
+    }
+    /**
+     * <code>.KDHIAEFLGFM reason = 15;</code>
+     * @return The reason.
+     */
+    @java.lang.Override public emu.grasscutter.net.proto.KDHIAEFLGFMOuterClass.KDHIAEFLGFM getReason() {
+      @SuppressWarnings("deprecation")
+      emu.grasscutter.net.proto.KDHIAEFLGFMOuterClass.KDHIAEFLGFM result = emu.grasscutter.net.proto.KDHIAEFLGFMOuterClass.KDHIAEFLGFM.valueOf(reason_);
+      return result == null ? emu.grasscutter.net.proto.KDHIAEFLGFMOuterClass.KDHIAEFLGFM.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -350,20 +350,20 @@ public final class IslandPartySettleNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (isNewRecord_ != false) {
-        output.writeBool(1, isNewRecord_);
-      }
-      if (reason_ != emu.grasscutter.net.proto.HDDANIDHCMIOuterClass.HDDANIDHCMI.HDDANIDHCMI_GalleryStopNone.getNumber()) {
-        output.writeEnum(5, reason_);
-      }
-      for (int i = 0; i < scoreList_.size(); i++) {
-        output.writeMessage(8, scoreList_.get(i));
+      for (int i = 0; i < settleInfoList_.size(); i++) {
+        output.writeMessage(4, settleInfoList_.get(i));
       }
       if (timeRemain_ != 0) {
-        output.writeUInt32(12, timeRemain_);
+        output.writeUInt32(6, timeRemain_);
       }
-      for (int i = 0; i < settleInfoList_.size(); i++) {
-        output.writeMessage(15, settleInfoList_.get(i));
+      for (int i = 0; i < scoreList_.size(); i++) {
+        output.writeMessage(9, scoreList_.get(i));
+      }
+      if (isNewRecord_ != false) {
+        output.writeBool(12, isNewRecord_);
+      }
+      if (reason_ != emu.grasscutter.net.proto.KDHIAEFLGFMOuterClass.KDHIAEFLGFM.KDHIAEFLGFM_GalleryStopNone.getNumber()) {
+        output.writeEnum(15, reason_);
       }
       unknownFields.writeTo(output);
     }
@@ -374,25 +374,25 @@ public final class IslandPartySettleNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (isNewRecord_ != false) {
+      for (int i = 0; i < settleInfoList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(1, isNewRecord_);
-      }
-      if (reason_ != emu.grasscutter.net.proto.HDDANIDHCMIOuterClass.HDDANIDHCMI.HDDANIDHCMI_GalleryStopNone.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(5, reason_);
-      }
-      for (int i = 0; i < scoreList_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(8, scoreList_.get(i));
+          .computeMessageSize(4, settleInfoList_.get(i));
       }
       if (timeRemain_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, timeRemain_);
+          .computeUInt32Size(6, timeRemain_);
       }
-      for (int i = 0; i < settleInfoList_.size(); i++) {
+      for (int i = 0; i < scoreList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(15, settleInfoList_.get(i));
+          .computeMessageSize(9, scoreList_.get(i));
+      }
+      if (isNewRecord_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(12, isNewRecord_);
+      }
+      if (reason_ != emu.grasscutter.net.proto.KDHIAEFLGFMOuterClass.KDHIAEFLGFM.KDHIAEFLGFM_GalleryStopNone.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(15, reason_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -413,11 +413,11 @@ public final class IslandPartySettleNotifyOuterClass {
           != other.getIsNewRecord()) return false;
       if (!getSettleInfoListList()
           .equals(other.getSettleInfoListList())) return false;
-      if (reason_ != other.reason_) return false;
-      if (!getScoreListList()
-          .equals(other.getScoreListList())) return false;
       if (getTimeRemain()
           != other.getTimeRemain()) return false;
+      if (!getScoreListList()
+          .equals(other.getScoreListList())) return false;
+      if (reason_ != other.reason_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -436,14 +436,14 @@ public final class IslandPartySettleNotifyOuterClass {
         hash = (37 * hash) + SETTLE_INFO_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getSettleInfoListList().hashCode();
       }
-      hash = (37 * hash) + REASON_FIELD_NUMBER;
-      hash = (53 * hash) + reason_;
+      hash = (37 * hash) + TIME_REMAIN_FIELD_NUMBER;
+      hash = (53 * hash) + getTimeRemain();
       if (getScoreListCount() > 0) {
         hash = (37 * hash) + SCORE_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getScoreListList().hashCode();
       }
-      hash = (37 * hash) + TIME_REMAIN_FIELD_NUMBER;
-      hash = (53 * hash) + getTimeRemain();
+      hash = (37 * hash) + REASON_FIELD_NUMBER;
+      hash = (53 * hash) + reason_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -541,8 +541,8 @@ public final class IslandPartySettleNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 24605
-     * Obf: JFPKLLGALIJ
+     * CmdId: 23083
+     * Obf: HJBCADIELAO
      * </pre>
      *
      * Protobuf type {@code IslandPartySettleNotify}
@@ -592,7 +592,7 @@ public final class IslandPartySettleNotifyOuterClass {
         } else {
           settleInfoListBuilder_.clear();
         }
-        reason_ = 0;
+        timeRemain_ = 0;
 
         if (scoreListBuilder_ == null) {
           scoreList_ = java.util.Collections.emptyList();
@@ -600,7 +600,7 @@ public final class IslandPartySettleNotifyOuterClass {
         } else {
           scoreListBuilder_.clear();
         }
-        timeRemain_ = 0;
+        reason_ = 0;
 
         return this;
       }
@@ -639,7 +639,7 @@ public final class IslandPartySettleNotifyOuterClass {
         } else {
           result.settleInfoList_ = settleInfoListBuilder_.build();
         }
-        result.reason_ = reason_;
+        result.timeRemain_ = timeRemain_;
         if (scoreListBuilder_ == null) {
           if (((bitField0_ & 0x00000002) != 0)) {
             scoreList_ = java.util.Collections.unmodifiableList(scoreList_);
@@ -649,7 +649,7 @@ public final class IslandPartySettleNotifyOuterClass {
         } else {
           result.scoreList_ = scoreListBuilder_.build();
         }
-        result.timeRemain_ = timeRemain_;
+        result.reason_ = reason_;
         onBuilt();
         return result;
       }
@@ -727,8 +727,8 @@ public final class IslandPartySettleNotifyOuterClass {
             }
           }
         }
-        if (other.reason_ != 0) {
-          setReasonValue(other.getReasonValue());
+        if (other.getTimeRemain() != 0) {
+          setTimeRemain(other.getTimeRemain());
         }
         if (scoreListBuilder_ == null) {
           if (!other.scoreList_.isEmpty()) {
@@ -756,8 +756,8 @@ public final class IslandPartySettleNotifyOuterClass {
             }
           }
         }
-        if (other.getTimeRemain() != 0) {
-          setTimeRemain(other.getTimeRemain());
+        if (other.reason_ != 0) {
+          setReasonValue(other.getReasonValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -791,7 +791,7 @@ public final class IslandPartySettleNotifyOuterClass {
 
       private boolean isNewRecord_ ;
       /**
-       * <code>bool is_new_record = 1;</code>
+       * <code>bool is_new_record = 12;</code>
        * @return The isNewRecord.
        */
       @java.lang.Override
@@ -799,7 +799,7 @@ public final class IslandPartySettleNotifyOuterClass {
         return isNewRecord_;
       }
       /**
-       * <code>bool is_new_record = 1;</code>
+       * <code>bool is_new_record = 12;</code>
        * @param value The isNewRecord to set.
        * @return This builder for chaining.
        */
@@ -810,7 +810,7 @@ public final class IslandPartySettleNotifyOuterClass {
         return this;
       }
       /**
-       * <code>bool is_new_record = 1;</code>
+       * <code>bool is_new_record = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsNewRecord() {
@@ -833,7 +833,7 @@ public final class IslandPartySettleNotifyOuterClass {
           emu.grasscutter.net.proto.IslandPartyGallerySettleInfoOuterClass.IslandPartyGallerySettleInfo, emu.grasscutter.net.proto.IslandPartyGallerySettleInfoOuterClass.IslandPartyGallerySettleInfo.Builder, emu.grasscutter.net.proto.IslandPartyGallerySettleInfoOuterClass.IslandPartyGallerySettleInfoOrBuilder> settleInfoListBuilder_;
 
       /**
-       * <code>repeated .IslandPartyGallerySettleInfo settle_info_list = 15;</code>
+       * <code>repeated .IslandPartyGallerySettleInfo settle_info_list = 4;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.IslandPartyGallerySettleInfoOuterClass.IslandPartyGallerySettleInfo> getSettleInfoListList() {
         if (settleInfoListBuilder_ == null) {
@@ -843,7 +843,7 @@ public final class IslandPartySettleNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .IslandPartyGallerySettleInfo settle_info_list = 15;</code>
+       * <code>repeated .IslandPartyGallerySettleInfo settle_info_list = 4;</code>
        */
       public int getSettleInfoListCount() {
         if (settleInfoListBuilder_ == null) {
@@ -853,7 +853,7 @@ public final class IslandPartySettleNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .IslandPartyGallerySettleInfo settle_info_list = 15;</code>
+       * <code>repeated .IslandPartyGallerySettleInfo settle_info_list = 4;</code>
        */
       public emu.grasscutter.net.proto.IslandPartyGallerySettleInfoOuterClass.IslandPartyGallerySettleInfo getSettleInfoList(int index) {
         if (settleInfoListBuilder_ == null) {
@@ -863,7 +863,7 @@ public final class IslandPartySettleNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .IslandPartyGallerySettleInfo settle_info_list = 15;</code>
+       * <code>repeated .IslandPartyGallerySettleInfo settle_info_list = 4;</code>
        */
       public Builder setSettleInfoList(
           int index, emu.grasscutter.net.proto.IslandPartyGallerySettleInfoOuterClass.IslandPartyGallerySettleInfo value) {
@@ -880,7 +880,7 @@ public final class IslandPartySettleNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .IslandPartyGallerySettleInfo settle_info_list = 15;</code>
+       * <code>repeated .IslandPartyGallerySettleInfo settle_info_list = 4;</code>
        */
       public Builder setSettleInfoList(
           int index, emu.grasscutter.net.proto.IslandPartyGallerySettleInfoOuterClass.IslandPartyGallerySettleInfo.Builder builderForValue) {
@@ -894,7 +894,7 @@ public final class IslandPartySettleNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .IslandPartyGallerySettleInfo settle_info_list = 15;</code>
+       * <code>repeated .IslandPartyGallerySettleInfo settle_info_list = 4;</code>
        */
       public Builder addSettleInfoList(emu.grasscutter.net.proto.IslandPartyGallerySettleInfoOuterClass.IslandPartyGallerySettleInfo value) {
         if (settleInfoListBuilder_ == null) {
@@ -910,7 +910,7 @@ public final class IslandPartySettleNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .IslandPartyGallerySettleInfo settle_info_list = 15;</code>
+       * <code>repeated .IslandPartyGallerySettleInfo settle_info_list = 4;</code>
        */
       public Builder addSettleInfoList(
           int index, emu.grasscutter.net.proto.IslandPartyGallerySettleInfoOuterClass.IslandPartyGallerySettleInfo value) {
@@ -927,7 +927,7 @@ public final class IslandPartySettleNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .IslandPartyGallerySettleInfo settle_info_list = 15;</code>
+       * <code>repeated .IslandPartyGallerySettleInfo settle_info_list = 4;</code>
        */
       public Builder addSettleInfoList(
           emu.grasscutter.net.proto.IslandPartyGallerySettleInfoOuterClass.IslandPartyGallerySettleInfo.Builder builderForValue) {
@@ -941,7 +941,7 @@ public final class IslandPartySettleNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .IslandPartyGallerySettleInfo settle_info_list = 15;</code>
+       * <code>repeated .IslandPartyGallerySettleInfo settle_info_list = 4;</code>
        */
       public Builder addSettleInfoList(
           int index, emu.grasscutter.net.proto.IslandPartyGallerySettleInfoOuterClass.IslandPartyGallerySettleInfo.Builder builderForValue) {
@@ -955,7 +955,7 @@ public final class IslandPartySettleNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .IslandPartyGallerySettleInfo settle_info_list = 15;</code>
+       * <code>repeated .IslandPartyGallerySettleInfo settle_info_list = 4;</code>
        */
       public Builder addAllSettleInfoList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.IslandPartyGallerySettleInfoOuterClass.IslandPartyGallerySettleInfo> values) {
@@ -970,7 +970,7 @@ public final class IslandPartySettleNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .IslandPartyGallerySettleInfo settle_info_list = 15;</code>
+       * <code>repeated .IslandPartyGallerySettleInfo settle_info_list = 4;</code>
        */
       public Builder clearSettleInfoList() {
         if (settleInfoListBuilder_ == null) {
@@ -983,7 +983,7 @@ public final class IslandPartySettleNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .IslandPartyGallerySettleInfo settle_info_list = 15;</code>
+       * <code>repeated .IslandPartyGallerySettleInfo settle_info_list = 4;</code>
        */
       public Builder removeSettleInfoList(int index) {
         if (settleInfoListBuilder_ == null) {
@@ -996,14 +996,14 @@ public final class IslandPartySettleNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .IslandPartyGallerySettleInfo settle_info_list = 15;</code>
+       * <code>repeated .IslandPartyGallerySettleInfo settle_info_list = 4;</code>
        */
       public emu.grasscutter.net.proto.IslandPartyGallerySettleInfoOuterClass.IslandPartyGallerySettleInfo.Builder getSettleInfoListBuilder(
           int index) {
         return getSettleInfoListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .IslandPartyGallerySettleInfo settle_info_list = 15;</code>
+       * <code>repeated .IslandPartyGallerySettleInfo settle_info_list = 4;</code>
        */
       public emu.grasscutter.net.proto.IslandPartyGallerySettleInfoOuterClass.IslandPartyGallerySettleInfoOrBuilder getSettleInfoListOrBuilder(
           int index) {
@@ -1013,7 +1013,7 @@ public final class IslandPartySettleNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .IslandPartyGallerySettleInfo settle_info_list = 15;</code>
+       * <code>repeated .IslandPartyGallerySettleInfo settle_info_list = 4;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.IslandPartyGallerySettleInfoOuterClass.IslandPartyGallerySettleInfoOrBuilder> 
            getSettleInfoListOrBuilderList() {
@@ -1024,14 +1024,14 @@ public final class IslandPartySettleNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .IslandPartyGallerySettleInfo settle_info_list = 15;</code>
+       * <code>repeated .IslandPartyGallerySettleInfo settle_info_list = 4;</code>
        */
       public emu.grasscutter.net.proto.IslandPartyGallerySettleInfoOuterClass.IslandPartyGallerySettleInfo.Builder addSettleInfoListBuilder() {
         return getSettleInfoListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.IslandPartyGallerySettleInfoOuterClass.IslandPartyGallerySettleInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .IslandPartyGallerySettleInfo settle_info_list = 15;</code>
+       * <code>repeated .IslandPartyGallerySettleInfo settle_info_list = 4;</code>
        */
       public emu.grasscutter.net.proto.IslandPartyGallerySettleInfoOuterClass.IslandPartyGallerySettleInfo.Builder addSettleInfoListBuilder(
           int index) {
@@ -1039,7 +1039,7 @@ public final class IslandPartySettleNotifyOuterClass {
             index, emu.grasscutter.net.proto.IslandPartyGallerySettleInfoOuterClass.IslandPartyGallerySettleInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .IslandPartyGallerySettleInfo settle_info_list = 15;</code>
+       * <code>repeated .IslandPartyGallerySettleInfo settle_info_list = 4;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.IslandPartyGallerySettleInfoOuterClass.IslandPartyGallerySettleInfo.Builder> 
            getSettleInfoListBuilderList() {
@@ -1060,56 +1060,33 @@ public final class IslandPartySettleNotifyOuterClass {
         return settleInfoListBuilder_;
       }
 
-      private int reason_ = 0;
+      private int timeRemain_ ;
       /**
-       * <code>.HDDANIDHCMI reason = 5;</code>
-       * @return The enum numeric value on the wire for reason.
-       */
-      @java.lang.Override public int getReasonValue() {
-        return reason_;
-      }
-      /**
-       * <code>.HDDANIDHCMI reason = 5;</code>
-       * @param value The enum numeric value on the wire for reason to set.
-       * @return This builder for chaining.
-       */
-      public Builder setReasonValue(int value) {
-        
-        reason_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.HDDANIDHCMI reason = 5;</code>
-       * @return The reason.
+       * <code>uint32 time_remain = 6;</code>
+       * @return The timeRemain.
        */
       @java.lang.Override
-      public emu.grasscutter.net.proto.HDDANIDHCMIOuterClass.HDDANIDHCMI getReason() {
-        @SuppressWarnings("deprecation")
-        emu.grasscutter.net.proto.HDDANIDHCMIOuterClass.HDDANIDHCMI result = emu.grasscutter.net.proto.HDDANIDHCMIOuterClass.HDDANIDHCMI.valueOf(reason_);
-        return result == null ? emu.grasscutter.net.proto.HDDANIDHCMIOuterClass.HDDANIDHCMI.UNRECOGNIZED : result;
+      public int getTimeRemain() {
+        return timeRemain_;
       }
       /**
-       * <code>.HDDANIDHCMI reason = 5;</code>
-       * @param value The reason to set.
+       * <code>uint32 time_remain = 6;</code>
+       * @param value The timeRemain to set.
        * @return This builder for chaining.
        */
-      public Builder setReason(emu.grasscutter.net.proto.HDDANIDHCMIOuterClass.HDDANIDHCMI value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
+      public Builder setTimeRemain(int value) {
         
-        reason_ = value.getNumber();
+        timeRemain_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>.HDDANIDHCMI reason = 5;</code>
+       * <code>uint32 time_remain = 6;</code>
        * @return This builder for chaining.
        */
-      public Builder clearReason() {
+      public Builder clearTimeRemain() {
         
-        reason_ = 0;
+        timeRemain_ = 0;
         onChanged();
         return this;
       }
@@ -1127,7 +1104,7 @@ public final class IslandPartySettleNotifyOuterClass {
           emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo, emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo.Builder, emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfoOrBuilder> scoreListBuilder_;
 
       /**
-       * <code>repeated .ExhibitionDisplayInfo score_list = 8;</code>
+       * <code>repeated .ExhibitionDisplayInfo score_list = 9;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo> getScoreListList() {
         if (scoreListBuilder_ == null) {
@@ -1137,7 +1114,7 @@ public final class IslandPartySettleNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .ExhibitionDisplayInfo score_list = 8;</code>
+       * <code>repeated .ExhibitionDisplayInfo score_list = 9;</code>
        */
       public int getScoreListCount() {
         if (scoreListBuilder_ == null) {
@@ -1147,7 +1124,7 @@ public final class IslandPartySettleNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .ExhibitionDisplayInfo score_list = 8;</code>
+       * <code>repeated .ExhibitionDisplayInfo score_list = 9;</code>
        */
       public emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo getScoreList(int index) {
         if (scoreListBuilder_ == null) {
@@ -1157,7 +1134,7 @@ public final class IslandPartySettleNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .ExhibitionDisplayInfo score_list = 8;</code>
+       * <code>repeated .ExhibitionDisplayInfo score_list = 9;</code>
        */
       public Builder setScoreList(
           int index, emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo value) {
@@ -1174,7 +1151,7 @@ public final class IslandPartySettleNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ExhibitionDisplayInfo score_list = 8;</code>
+       * <code>repeated .ExhibitionDisplayInfo score_list = 9;</code>
        */
       public Builder setScoreList(
           int index, emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo.Builder builderForValue) {
@@ -1188,7 +1165,7 @@ public final class IslandPartySettleNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ExhibitionDisplayInfo score_list = 8;</code>
+       * <code>repeated .ExhibitionDisplayInfo score_list = 9;</code>
        */
       public Builder addScoreList(emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo value) {
         if (scoreListBuilder_ == null) {
@@ -1204,7 +1181,7 @@ public final class IslandPartySettleNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ExhibitionDisplayInfo score_list = 8;</code>
+       * <code>repeated .ExhibitionDisplayInfo score_list = 9;</code>
        */
       public Builder addScoreList(
           int index, emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo value) {
@@ -1221,7 +1198,7 @@ public final class IslandPartySettleNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ExhibitionDisplayInfo score_list = 8;</code>
+       * <code>repeated .ExhibitionDisplayInfo score_list = 9;</code>
        */
       public Builder addScoreList(
           emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo.Builder builderForValue) {
@@ -1235,7 +1212,7 @@ public final class IslandPartySettleNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ExhibitionDisplayInfo score_list = 8;</code>
+       * <code>repeated .ExhibitionDisplayInfo score_list = 9;</code>
        */
       public Builder addScoreList(
           int index, emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo.Builder builderForValue) {
@@ -1249,7 +1226,7 @@ public final class IslandPartySettleNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ExhibitionDisplayInfo score_list = 8;</code>
+       * <code>repeated .ExhibitionDisplayInfo score_list = 9;</code>
        */
       public Builder addAllScoreList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo> values) {
@@ -1264,7 +1241,7 @@ public final class IslandPartySettleNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ExhibitionDisplayInfo score_list = 8;</code>
+       * <code>repeated .ExhibitionDisplayInfo score_list = 9;</code>
        */
       public Builder clearScoreList() {
         if (scoreListBuilder_ == null) {
@@ -1277,7 +1254,7 @@ public final class IslandPartySettleNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ExhibitionDisplayInfo score_list = 8;</code>
+       * <code>repeated .ExhibitionDisplayInfo score_list = 9;</code>
        */
       public Builder removeScoreList(int index) {
         if (scoreListBuilder_ == null) {
@@ -1290,14 +1267,14 @@ public final class IslandPartySettleNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ExhibitionDisplayInfo score_list = 8;</code>
+       * <code>repeated .ExhibitionDisplayInfo score_list = 9;</code>
        */
       public emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo.Builder getScoreListBuilder(
           int index) {
         return getScoreListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .ExhibitionDisplayInfo score_list = 8;</code>
+       * <code>repeated .ExhibitionDisplayInfo score_list = 9;</code>
        */
       public emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfoOrBuilder getScoreListOrBuilder(
           int index) {
@@ -1307,7 +1284,7 @@ public final class IslandPartySettleNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .ExhibitionDisplayInfo score_list = 8;</code>
+       * <code>repeated .ExhibitionDisplayInfo score_list = 9;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfoOrBuilder> 
            getScoreListOrBuilderList() {
@@ -1318,14 +1295,14 @@ public final class IslandPartySettleNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .ExhibitionDisplayInfo score_list = 8;</code>
+       * <code>repeated .ExhibitionDisplayInfo score_list = 9;</code>
        */
       public emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo.Builder addScoreListBuilder() {
         return getScoreListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .ExhibitionDisplayInfo score_list = 8;</code>
+       * <code>repeated .ExhibitionDisplayInfo score_list = 9;</code>
        */
       public emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo.Builder addScoreListBuilder(
           int index) {
@@ -1333,7 +1310,7 @@ public final class IslandPartySettleNotifyOuterClass {
             index, emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .ExhibitionDisplayInfo score_list = 8;</code>
+       * <code>repeated .ExhibitionDisplayInfo score_list = 9;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo.Builder> 
            getScoreListBuilderList() {
@@ -1354,33 +1331,56 @@ public final class IslandPartySettleNotifyOuterClass {
         return scoreListBuilder_;
       }
 
-      private int timeRemain_ ;
+      private int reason_ = 0;
       /**
-       * <code>uint32 time_remain = 12;</code>
-       * @return The timeRemain.
+       * <code>.KDHIAEFLGFM reason = 15;</code>
+       * @return The enum numeric value on the wire for reason.
        */
-      @java.lang.Override
-      public int getTimeRemain() {
-        return timeRemain_;
+      @java.lang.Override public int getReasonValue() {
+        return reason_;
       }
       /**
-       * <code>uint32 time_remain = 12;</code>
-       * @param value The timeRemain to set.
+       * <code>.KDHIAEFLGFM reason = 15;</code>
+       * @param value The enum numeric value on the wire for reason to set.
        * @return This builder for chaining.
        */
-      public Builder setTimeRemain(int value) {
+      public Builder setReasonValue(int value) {
         
-        timeRemain_ = value;
+        reason_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 time_remain = 12;</code>
+       * <code>.KDHIAEFLGFM reason = 15;</code>
+       * @return The reason.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.KDHIAEFLGFMOuterClass.KDHIAEFLGFM getReason() {
+        @SuppressWarnings("deprecation")
+        emu.grasscutter.net.proto.KDHIAEFLGFMOuterClass.KDHIAEFLGFM result = emu.grasscutter.net.proto.KDHIAEFLGFMOuterClass.KDHIAEFLGFM.valueOf(reason_);
+        return result == null ? emu.grasscutter.net.proto.KDHIAEFLGFMOuterClass.KDHIAEFLGFM.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.KDHIAEFLGFM reason = 15;</code>
+       * @param value The reason to set.
        * @return This builder for chaining.
        */
-      public Builder clearTimeRemain() {
+      public Builder setReason(emu.grasscutter.net.proto.KDHIAEFLGFMOuterClass.KDHIAEFLGFM value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
         
-        timeRemain_ = 0;
+        reason_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.KDHIAEFLGFM reason = 15;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearReason() {
+        
+        reason_ = 0;
         onChanged();
         return this;
       }
@@ -1452,31 +1452,31 @@ public final class IslandPartySettleNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\035IslandPartySettleNotify.proto\032\"IslandP" +
-      "artyGallerySettleInfo.proto\032\021HDDANIDHCMI" +
-      ".proto\032\033ExhibitionDisplayInfo.proto\"\310\001\n\027" +
+      "artyGallerySettleInfo.proto\032\033ExhibitionD" +
+      "isplayInfo.proto\032\021KDHIAEFLGFM.proto\"\310\001\n\027" +
       "IslandPartySettleNotify\022\025\n\ris_new_record" +
-      "\030\001 \001(\010\0227\n\020settle_info_list\030\017 \003(\0132\035.Islan" +
-      "dPartyGallerySettleInfo\022\034\n\006reason\030\005 \001(\0162" +
-      "\014.HDDANIDHCMI\022*\n\nscore_list\030\010 \003(\0132\026.Exhi" +
-      "bitionDisplayInfo\022\023\n\013time_remain\030\014 \001(\rB\033" +
+      "\030\014 \001(\010\0227\n\020settle_info_list\030\004 \003(\0132\035.Islan" +
+      "dPartyGallerySettleInfo\022\023\n\013time_remain\030\006" +
+      " \001(\r\022*\n\nscore_list\030\t \003(\0132\026.ExhibitionDis" +
+      "playInfo\022\034\n\006reason\030\017 \001(\0162\014.KDHIAEFLGFMB\033" +
       "\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           emu.grasscutter.net.proto.IslandPartyGallerySettleInfoOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.HDDANIDHCMIOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.KDHIAEFLGFMOuterClass.getDescriptor(),
         });
     internal_static_IslandPartySettleNotify_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_IslandPartySettleNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_IslandPartySettleNotify_descriptor,
-        new java.lang.String[] { "IsNewRecord", "SettleInfoList", "Reason", "ScoreList", "TimeRemain", });
+        new java.lang.String[] { "IsNewRecord", "SettleInfoList", "TimeRemain", "ScoreList", "Reason", });
     emu.grasscutter.net.proto.IslandPartyGallerySettleInfoOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.HDDANIDHCMIOuterClass.getDescriptor();
     emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.KDHIAEFLGFMOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

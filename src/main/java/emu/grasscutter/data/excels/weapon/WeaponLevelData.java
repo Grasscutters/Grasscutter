@@ -1,7 +1,6 @@
 package emu.grasscutter.data.excels.weapon;
 
-import emu.grasscutter.data.GameResource;
-import emu.grasscutter.data.ResourceType;
+import emu.grasscutter.data.*;
 
 @ResourceType(name = "WeaponLevelExcelConfigData.json")
 public class WeaponLevelData extends GameResource {

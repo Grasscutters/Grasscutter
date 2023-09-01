@@ -1,9 +1,8 @@
 package emu.grasscutter.game.quest.enums;
 
-import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
-import java.util.HashMap;
-import java.util.Map;
+import it.unimi.dsi.fastutil.ints.*;
+
+import java.util.*;
 import java.util.stream.Stream;
 
 public enum QuestExec implements QuestTrigger {
@@ -35,7 +34,7 @@ public enum QuestExec implements QuestTrigger {
     QUEST_EXEC_CREATE_PATTERN_GROUP(25), // missing, used for random quests
     QUEST_EXEC_REMOVE_PATTERN_GROUP(26), // missing, used for random quests
     QUEST_EXEC_REFRESH_GROUP_SUITE_RANDOM(27), // missing
-    QUEST_EXEC_ACTIVE_ITEM_GIVING(28), // missing
+    QUEST_EXEC_ACTIVE_ITEM_GIVING(28),
     QUEST_EXEC_DEL_ALL_SPECIFIC_PACK_ITEM(29), // missing
     QUEST_EXEC_ROLLBACK_PARENT_QUEST(30),
     QUEST_EXEC_LOCK_AVATAR_TEAM(31), // missing
@@ -47,8 +46,8 @@ public enum QuestExec implements QuestTrigger {
     QUEST_EXEC_ACTIVE_ACTIVITY_COND_STATE(37), // missing
     QUEST_EXEC_INACTIVE_ACTIVITY_COND_STATE(38), // missing
     QUEST_EXEC_ADD_CUR_AVATAR_ENERGY(39),
-    QUEST_EXEC_START_BARGAIN(41), // missing
-    QUEST_EXEC_STOP_BARGAIN(42), // missing
+    QUEST_EXEC_START_BARGAIN(41),
+    QUEST_EXEC_STOP_BARGAIN(42),
     QUEST_EXEC_SET_QUEST_GLOBAL_VAR(43),
     QUEST_EXEC_INC_QUEST_GLOBAL_VAR(44),
     QUEST_EXEC_DEC_QUEST_GLOBAL_VAR(45),
@@ -71,7 +70,7 @@ public enum QuestExec implements QuestTrigger {
     QUEST_EXEC_MODIFY_CLIMATE_AREA(60), // missing
     QUEST_EXEC_GRANT_TRIAL_AVATAR_AND_LOCK_TEAM(61), // missing
     QUEST_EXEC_CHANGE_MAP_AREA_STATE(62), // missing
-    QUEST_EXEC_DEACTIVE_ITEM_GIVING(63), // missing
+    QUEST_EXEC_DEACTIVE_ITEM_GIVING(63),
     QUEST_EXEC_CHANGE_SCENE_LEVEL_TAG(64), // missing
     QUEST_EXEC_UNLOCK_PLAYER_WORLD_SCENE(65), // missing
     QUEST_EXEC_LOCK_PLAYER_WORLD_SCENE(66), // missing

@@ -19,24 +19,24 @@ public final class MultistagePlayInfoNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.MultistagePlayInfo info = 1;</code>
+     * <code>.MultistagePlayInfo info = 8;</code>
      * @return Whether the info field is set.
      */
     boolean hasInfo();
     /**
-     * <code>.MultistagePlayInfo info = 1;</code>
+     * <code>.MultistagePlayInfo info = 8;</code>
      * @return The info.
      */
     emu.grasscutter.net.proto.MultistagePlayInfoOuterClass.MultistagePlayInfo getInfo();
     /**
-     * <code>.MultistagePlayInfo info = 1;</code>
+     * <code>.MultistagePlayInfo info = 8;</code>
      */
     emu.grasscutter.net.proto.MultistagePlayInfoOuterClass.MultistagePlayInfoOrBuilder getInfoOrBuilder();
   }
   /**
    * <pre>
-   * CmdId: 5375
-   * Obf: MIEJFIABBON
+   * CmdId: 7198
+   * Obf: DPIGADECPJK
    * </pre>
    *
    * Protobuf type {@code MultistagePlayInfoNotify}
@@ -83,7 +83,7 @@ public final class MultistagePlayInfoNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 10: {
+            case 66: {
               emu.grasscutter.net.proto.MultistagePlayInfoOuterClass.MultistagePlayInfo.Builder subBuilder = null;
               if (info_ != null) {
                 subBuilder = info_.toBuilder();
@@ -128,10 +128,10 @@ public final class MultistagePlayInfoNotifyOuterClass {
               emu.grasscutter.net.proto.MultistagePlayInfoNotifyOuterClass.MultistagePlayInfoNotify.class, emu.grasscutter.net.proto.MultistagePlayInfoNotifyOuterClass.MultistagePlayInfoNotify.Builder.class);
     }
 
-    public static final int INFO_FIELD_NUMBER = 1;
+    public static final int INFO_FIELD_NUMBER = 8;
     private emu.grasscutter.net.proto.MultistagePlayInfoOuterClass.MultistagePlayInfo info_;
     /**
-     * <code>.MultistagePlayInfo info = 1;</code>
+     * <code>.MultistagePlayInfo info = 8;</code>
      * @return Whether the info field is set.
      */
     @java.lang.Override
@@ -139,7 +139,7 @@ public final class MultistagePlayInfoNotifyOuterClass {
       return info_ != null;
     }
     /**
-     * <code>.MultistagePlayInfo info = 1;</code>
+     * <code>.MultistagePlayInfo info = 8;</code>
      * @return The info.
      */
     @java.lang.Override
@@ -147,7 +147,7 @@ public final class MultistagePlayInfoNotifyOuterClass {
       return info_ == null ? emu.grasscutter.net.proto.MultistagePlayInfoOuterClass.MultistagePlayInfo.getDefaultInstance() : info_;
     }
     /**
-     * <code>.MultistagePlayInfo info = 1;</code>
+     * <code>.MultistagePlayInfo info = 8;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.MultistagePlayInfoOuterClass.MultistagePlayInfoOrBuilder getInfoOrBuilder() {
@@ -169,7 +169,7 @@ public final class MultistagePlayInfoNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (info_ != null) {
-        output.writeMessage(1, getInfo());
+        output.writeMessage(8, getInfo());
       }
       unknownFields.writeTo(output);
     }
@@ -182,7 +182,7 @@ public final class MultistagePlayInfoNotifyOuterClass {
       size = 0;
       if (info_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getInfo());
+          .computeMessageSize(8, getInfo());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -316,8 +316,8 @@ public final class MultistagePlayInfoNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 5375
-     * Obf: MIEJFIABBON
+     * CmdId: 7198
+     * Obf: DPIGADECPJK
      * </pre>
      *
      * Protobuf type {@code MultistagePlayInfoNotify}
@@ -478,14 +478,14 @@ public final class MultistagePlayInfoNotifyOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.MultistagePlayInfoOuterClass.MultistagePlayInfo, emu.grasscutter.net.proto.MultistagePlayInfoOuterClass.MultistagePlayInfo.Builder, emu.grasscutter.net.proto.MultistagePlayInfoOuterClass.MultistagePlayInfoOrBuilder> infoBuilder_;
       /**
-       * <code>.MultistagePlayInfo info = 1;</code>
+       * <code>.MultistagePlayInfo info = 8;</code>
        * @return Whether the info field is set.
        */
       public boolean hasInfo() {
         return infoBuilder_ != null || info_ != null;
       }
       /**
-       * <code>.MultistagePlayInfo info = 1;</code>
+       * <code>.MultistagePlayInfo info = 8;</code>
        * @return The info.
        */
       public emu.grasscutter.net.proto.MultistagePlayInfoOuterClass.MultistagePlayInfo getInfo() {
@@ -496,7 +496,7 @@ public final class MultistagePlayInfoNotifyOuterClass {
         }
       }
       /**
-       * <code>.MultistagePlayInfo info = 1;</code>
+       * <code>.MultistagePlayInfo info = 8;</code>
        */
       public Builder setInfo(emu.grasscutter.net.proto.MultistagePlayInfoOuterClass.MultistagePlayInfo value) {
         if (infoBuilder_ == null) {
@@ -512,7 +512,7 @@ public final class MultistagePlayInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.MultistagePlayInfo info = 1;</code>
+       * <code>.MultistagePlayInfo info = 8;</code>
        */
       public Builder setInfo(
           emu.grasscutter.net.proto.MultistagePlayInfoOuterClass.MultistagePlayInfo.Builder builderForValue) {
@@ -526,7 +526,7 @@ public final class MultistagePlayInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.MultistagePlayInfo info = 1;</code>
+       * <code>.MultistagePlayInfo info = 8;</code>
        */
       public Builder mergeInfo(emu.grasscutter.net.proto.MultistagePlayInfoOuterClass.MultistagePlayInfo value) {
         if (infoBuilder_ == null) {
@@ -544,7 +544,7 @@ public final class MultistagePlayInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.MultistagePlayInfo info = 1;</code>
+       * <code>.MultistagePlayInfo info = 8;</code>
        */
       public Builder clearInfo() {
         if (infoBuilder_ == null) {
@@ -558,7 +558,7 @@ public final class MultistagePlayInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.MultistagePlayInfo info = 1;</code>
+       * <code>.MultistagePlayInfo info = 8;</code>
        */
       public emu.grasscutter.net.proto.MultistagePlayInfoOuterClass.MultistagePlayInfo.Builder getInfoBuilder() {
         
@@ -566,7 +566,7 @@ public final class MultistagePlayInfoNotifyOuterClass {
         return getInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.MultistagePlayInfo info = 1;</code>
+       * <code>.MultistagePlayInfo info = 8;</code>
        */
       public emu.grasscutter.net.proto.MultistagePlayInfoOuterClass.MultistagePlayInfoOrBuilder getInfoOrBuilder() {
         if (infoBuilder_ != null) {
@@ -577,7 +577,7 @@ public final class MultistagePlayInfoNotifyOuterClass {
         }
       }
       /**
-       * <code>.MultistagePlayInfo info = 1;</code>
+       * <code>.MultistagePlayInfo info = 8;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.MultistagePlayInfoOuterClass.MultistagePlayInfo, emu.grasscutter.net.proto.MultistagePlayInfoOuterClass.MultistagePlayInfo.Builder, emu.grasscutter.net.proto.MultistagePlayInfoOuterClass.MultistagePlayInfoOrBuilder> 
@@ -661,7 +661,7 @@ public final class MultistagePlayInfoNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\036MultistagePlayInfoNotify.proto\032\030Multis" +
       "tagePlayInfo.proto\"=\n\030MultistagePlayInfo" +
-      "Notify\022!\n\004info\030\001 \001(\0132\023.MultistagePlayInf" +
+      "Notify\022!\n\004info\030\010 \001(\0132\023.MultistagePlayInf" +
       "oB\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

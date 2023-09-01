@@ -19,30 +19,30 @@ public final class PotionResetChallengeRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 9;</code>
+     * <code>int32 retcode = 3;</code>
      * @return The retcode.
      */
     int getRetcode();
 
     /**
-     * <code>.PotionStageData stage_data = 10;</code>
+     * <code>.PotionStageData stage_data = 1;</code>
      * @return Whether the stageData field is set.
      */
     boolean hasStageData();
     /**
-     * <code>.PotionStageData stage_data = 10;</code>
+     * <code>.PotionStageData stage_data = 1;</code>
      * @return The stageData.
      */
     emu.grasscutter.net.proto.PotionStageDataOuterClass.PotionStageData getStageData();
     /**
-     * <code>.PotionStageData stage_data = 10;</code>
+     * <code>.PotionStageData stage_data = 1;</code>
      */
     emu.grasscutter.net.proto.PotionStageDataOuterClass.PotionStageDataOrBuilder getStageDataOrBuilder();
   }
   /**
    * <pre>
-   * CmdId: 8502
-   * Obf: KBJKNHIIGAC
+   * CmdId: 27694
+   * Obf: INHKNKCLHJC
    * </pre>
    *
    * Protobuf type {@code PotionResetChallengeRsp}
@@ -89,12 +89,7 @@ public final class PotionResetChallengeRspOuterClass {
             case 0:
               done = true;
               break;
-            case 72: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 82: {
+            case 10: {
               emu.grasscutter.net.proto.PotionStageDataOuterClass.PotionStageData.Builder subBuilder = null;
               if (stageData_ != null) {
                 subBuilder = stageData_.toBuilder();
@@ -105,6 +100,11 @@ public final class PotionResetChallengeRspOuterClass {
                 stageData_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 24: {
+
+              retcode_ = input.readInt32();
               break;
             }
             default: {
@@ -139,10 +139,10 @@ public final class PotionResetChallengeRspOuterClass {
               emu.grasscutter.net.proto.PotionResetChallengeRspOuterClass.PotionResetChallengeRsp.class, emu.grasscutter.net.proto.PotionResetChallengeRspOuterClass.PotionResetChallengeRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 9;
+    public static final int RETCODE_FIELD_NUMBER = 3;
     private int retcode_;
     /**
-     * <code>int32 retcode = 9;</code>
+     * <code>int32 retcode = 3;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -150,10 +150,10 @@ public final class PotionResetChallengeRspOuterClass {
       return retcode_;
     }
 
-    public static final int STAGE_DATA_FIELD_NUMBER = 10;
+    public static final int STAGE_DATA_FIELD_NUMBER = 1;
     private emu.grasscutter.net.proto.PotionStageDataOuterClass.PotionStageData stageData_;
     /**
-     * <code>.PotionStageData stage_data = 10;</code>
+     * <code>.PotionStageData stage_data = 1;</code>
      * @return Whether the stageData field is set.
      */
     @java.lang.Override
@@ -161,7 +161,7 @@ public final class PotionResetChallengeRspOuterClass {
       return stageData_ != null;
     }
     /**
-     * <code>.PotionStageData stage_data = 10;</code>
+     * <code>.PotionStageData stage_data = 1;</code>
      * @return The stageData.
      */
     @java.lang.Override
@@ -169,7 +169,7 @@ public final class PotionResetChallengeRspOuterClass {
       return stageData_ == null ? emu.grasscutter.net.proto.PotionStageDataOuterClass.PotionStageData.getDefaultInstance() : stageData_;
     }
     /**
-     * <code>.PotionStageData stage_data = 10;</code>
+     * <code>.PotionStageData stage_data = 1;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.PotionStageDataOuterClass.PotionStageDataOrBuilder getStageDataOrBuilder() {
@@ -190,11 +190,11 @@ public final class PotionResetChallengeRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (retcode_ != 0) {
-        output.writeInt32(9, retcode_);
-      }
       if (stageData_ != null) {
-        output.writeMessage(10, getStageData());
+        output.writeMessage(1, getStageData());
+      }
+      if (retcode_ != 0) {
+        output.writeInt32(3, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -205,13 +205,13 @@ public final class PotionResetChallengeRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (retcode_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(9, retcode_);
-      }
       if (stageData_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, getStageData());
+          .computeMessageSize(1, getStageData());
+      }
+      if (retcode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -349,8 +349,8 @@ public final class PotionResetChallengeRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8502
-     * Obf: KBJKNHIIGAC
+     * CmdId: 27694
+     * Obf: INHKNKCLHJC
      * </pre>
      *
      * Protobuf type {@code PotionResetChallengeRsp}
@@ -515,7 +515,7 @@ public final class PotionResetChallengeRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 9;</code>
+       * <code>int32 retcode = 3;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -523,7 +523,7 @@ public final class PotionResetChallengeRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 9;</code>
+       * <code>int32 retcode = 3;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -534,7 +534,7 @@ public final class PotionResetChallengeRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 9;</code>
+       * <code>int32 retcode = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -548,14 +548,14 @@ public final class PotionResetChallengeRspOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.PotionStageDataOuterClass.PotionStageData, emu.grasscutter.net.proto.PotionStageDataOuterClass.PotionStageData.Builder, emu.grasscutter.net.proto.PotionStageDataOuterClass.PotionStageDataOrBuilder> stageDataBuilder_;
       /**
-       * <code>.PotionStageData stage_data = 10;</code>
+       * <code>.PotionStageData stage_data = 1;</code>
        * @return Whether the stageData field is set.
        */
       public boolean hasStageData() {
         return stageDataBuilder_ != null || stageData_ != null;
       }
       /**
-       * <code>.PotionStageData stage_data = 10;</code>
+       * <code>.PotionStageData stage_data = 1;</code>
        * @return The stageData.
        */
       public emu.grasscutter.net.proto.PotionStageDataOuterClass.PotionStageData getStageData() {
@@ -566,7 +566,7 @@ public final class PotionResetChallengeRspOuterClass {
         }
       }
       /**
-       * <code>.PotionStageData stage_data = 10;</code>
+       * <code>.PotionStageData stage_data = 1;</code>
        */
       public Builder setStageData(emu.grasscutter.net.proto.PotionStageDataOuterClass.PotionStageData value) {
         if (stageDataBuilder_ == null) {
@@ -582,7 +582,7 @@ public final class PotionResetChallengeRspOuterClass {
         return this;
       }
       /**
-       * <code>.PotionStageData stage_data = 10;</code>
+       * <code>.PotionStageData stage_data = 1;</code>
        */
       public Builder setStageData(
           emu.grasscutter.net.proto.PotionStageDataOuterClass.PotionStageData.Builder builderForValue) {
@@ -596,7 +596,7 @@ public final class PotionResetChallengeRspOuterClass {
         return this;
       }
       /**
-       * <code>.PotionStageData stage_data = 10;</code>
+       * <code>.PotionStageData stage_data = 1;</code>
        */
       public Builder mergeStageData(emu.grasscutter.net.proto.PotionStageDataOuterClass.PotionStageData value) {
         if (stageDataBuilder_ == null) {
@@ -614,7 +614,7 @@ public final class PotionResetChallengeRspOuterClass {
         return this;
       }
       /**
-       * <code>.PotionStageData stage_data = 10;</code>
+       * <code>.PotionStageData stage_data = 1;</code>
        */
       public Builder clearStageData() {
         if (stageDataBuilder_ == null) {
@@ -628,7 +628,7 @@ public final class PotionResetChallengeRspOuterClass {
         return this;
       }
       /**
-       * <code>.PotionStageData stage_data = 10;</code>
+       * <code>.PotionStageData stage_data = 1;</code>
        */
       public emu.grasscutter.net.proto.PotionStageDataOuterClass.PotionStageData.Builder getStageDataBuilder() {
         
@@ -636,7 +636,7 @@ public final class PotionResetChallengeRspOuterClass {
         return getStageDataFieldBuilder().getBuilder();
       }
       /**
-       * <code>.PotionStageData stage_data = 10;</code>
+       * <code>.PotionStageData stage_data = 1;</code>
        */
       public emu.grasscutter.net.proto.PotionStageDataOuterClass.PotionStageDataOrBuilder getStageDataOrBuilder() {
         if (stageDataBuilder_ != null) {
@@ -647,7 +647,7 @@ public final class PotionResetChallengeRspOuterClass {
         }
       }
       /**
-       * <code>.PotionStageData stage_data = 10;</code>
+       * <code>.PotionStageData stage_data = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.PotionStageDataOuterClass.PotionStageData, emu.grasscutter.net.proto.PotionStageDataOuterClass.PotionStageData.Builder, emu.grasscutter.net.proto.PotionStageDataOuterClass.PotionStageDataOrBuilder> 
@@ -731,7 +731,7 @@ public final class PotionResetChallengeRspOuterClass {
     java.lang.String[] descriptorData = {
       "\n\035PotionResetChallengeRsp.proto\032\025PotionS" +
       "tageData.proto\"P\n\027PotionResetChallengeRs" +
-      "p\022\017\n\007retcode\030\t \001(\005\022$\n\nstage_data\030\n \001(\0132\020" +
+      "p\022\017\n\007retcode\030\003 \001(\005\022$\n\nstage_data\030\001 \001(\0132\020" +
       ".PotionStageDataB\033\n\031emu.grasscutter.net." +
       "protob\006proto3"
     };

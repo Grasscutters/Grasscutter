@@ -274,7 +274,7 @@ public final class SocialDetailOuterClass {
   }
   /**
    * <pre>
-   * Obf: JEKKBLBDEFP
+   * Obf: NBNCHDGBFEC
    * </pre>
    *
    * Protobuf type {@code SocialDetail}
@@ -1567,7 +1567,7 @@ public final class SocialDetailOuterClass {
     }
     /**
      * <pre>
-     * Obf: JEKKBLBDEFP
+     * Obf: NBNCHDGBFEC
      * </pre>
      *
      * Protobuf type {@code SocialDetail}

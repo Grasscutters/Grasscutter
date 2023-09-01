@@ -97,7 +97,7 @@ public final class ServerMassiveEntityOuterClass {
   }
   /**
    * <pre>
-   * Obf: NIMIKLAIICO
+   * Obf: JEJIJKEBLHM
    * </pre>
    *
    * Protobuf type {@code ServerMassiveEntity}
@@ -690,7 +690,7 @@ public final class ServerMassiveEntityOuterClass {
     }
     /**
      * <pre>
-     * Obf: NIMIKLAIICO
+     * Obf: JEJIJKEBLHM
      * </pre>
      *
      * Protobuf type {@code ServerMassiveEntity}

@@ -44,8 +44,8 @@ public final class HomePlantInfoNotifyOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 4606
-   * Obf: BPKLKNGIPAK
+   * CmdId: 27599
+   * Obf: MNCJNMKHBED
    * </pre>
    *
    * Protobuf type {@code HomePlantInfoNotify}
@@ -337,8 +337,8 @@ public final class HomePlantInfoNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4606
-     * Obf: BPKLKNGIPAK
+     * CmdId: 27599
+     * Obf: MNCJNMKHBED
      * </pre>
      *
      * Protobuf type {@code HomePlantInfoNotify}

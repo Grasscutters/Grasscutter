@@ -19,81 +19,81 @@ public final class GCGMsgMoveCardOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 controller_id = 10;</code>
+     * <code>.GCGZoneType JMJDDFNHGMK = 8;</code>
+     * @return The enum numeric value on the wire for jMJDDFNHGMK.
+     */
+    int getJMJDDFNHGMKValue();
+    /**
+     * <code>.GCGZoneType JMJDDFNHGMK = 8;</code>
+     * @return The jMJDDFNHGMK.
+     */
+    emu.grasscutter.net.proto.GCGZoneTypeOuterClass.GCGZoneType getJMJDDFNHGMK();
+
+    /**
+     * <code>.GCGZoneType BPFAOBOIEDL = 7;</code>
+     * @return The enum numeric value on the wire for bPFAOBOIEDL.
+     */
+    int getBPFAOBOIEDLValue();
+    /**
+     * <code>.GCGZoneType BPFAOBOIEDL = 7;</code>
+     * @return The bPFAOBOIEDL.
+     */
+    emu.grasscutter.net.proto.GCGZoneTypeOuterClass.GCGZoneType getBPFAOBOIEDL();
+
+    /**
+     * <code>.GCGReason reason = 1;</code>
+     * @return The enum numeric value on the wire for reason.
+     */
+    int getReasonValue();
+    /**
+     * <code>.GCGReason reason = 1;</code>
+     * @return The reason.
+     */
+    emu.grasscutter.net.proto.GCGReasonOuterClass.GCGReason getReason();
+
+    /**
+     * <code>uint32 controller_id = 14;</code>
      * @return The controllerId.
      */
     int getControllerId();
 
     /**
-     * <code>repeated uint32 card_guid_list = 8;</code>
-     * @return A list containing the cardGuidList.
-     */
-    java.util.List<java.lang.Integer> getCardGuidListList();
-    /**
-     * <code>repeated uint32 card_guid_list = 8;</code>
-     * @return The count of cardGuidList.
-     */
-    int getCardGuidListCount();
-    /**
-     * <code>repeated uint32 card_guid_list = 8;</code>
-     * @param index The index of the element to return.
-     * @return The cardGuidList at the given index.
-     */
-    int getCardGuidList(int index);
-
-    /**
-     * <code>.GCGZoneType CDODKAPBJGJ = 7;</code>
-     * @return The enum numeric value on the wire for cDODKAPBJGJ.
-     */
-    int getCDODKAPBJGJValue();
-    /**
-     * <code>.GCGZoneType CDODKAPBJGJ = 7;</code>
-     * @return The cDODKAPBJGJ.
-     */
-    emu.grasscutter.net.proto.GCGZoneTypeOuterClass.GCGZoneType getCDODKAPBJGJ();
-
-    /**
-     * <code>repeated uint32 fail_guid_list = 3;</code>
+     * <code>repeated uint32 fail_guid_list = 6;</code>
      * @return A list containing the failGuidList.
      */
     java.util.List<java.lang.Integer> getFailGuidListList();
     /**
-     * <code>repeated uint32 fail_guid_list = 3;</code>
+     * <code>repeated uint32 fail_guid_list = 6;</code>
      * @return The count of failGuidList.
      */
     int getFailGuidListCount();
     /**
-     * <code>repeated uint32 fail_guid_list = 3;</code>
+     * <code>repeated uint32 fail_guid_list = 6;</code>
      * @param index The index of the element to return.
      * @return The failGuidList at the given index.
      */
     int getFailGuidList(int index);
 
     /**
-     * <code>.MNDCMMKBIBP reason = 2;</code>
-     * @return The enum numeric value on the wire for reason.
+     * <code>repeated uint32 card_guid_list = 12;</code>
+     * @return A list containing the cardGuidList.
      */
-    int getReasonValue();
+    java.util.List<java.lang.Integer> getCardGuidListList();
     /**
-     * <code>.MNDCMMKBIBP reason = 2;</code>
-     * @return The reason.
+     * <code>repeated uint32 card_guid_list = 12;</code>
+     * @return The count of cardGuidList.
      */
-    emu.grasscutter.net.proto.MNDCMMKBIBPOuterClass.MNDCMMKBIBP getReason();
-
+    int getCardGuidListCount();
     /**
-     * <code>.GCGZoneType JDPOFKHHILC = 14;</code>
-     * @return The enum numeric value on the wire for jDPOFKHHILC.
+     * <code>repeated uint32 card_guid_list = 12;</code>
+     * @param index The index of the element to return.
+     * @return The cardGuidList at the given index.
      */
-    int getJDPOFKHHILCValue();
-    /**
-     * <code>.GCGZoneType JDPOFKHHILC = 14;</code>
-     * @return The jDPOFKHHILC.
-     */
-    emu.grasscutter.net.proto.GCGZoneTypeOuterClass.GCGZoneType getJDPOFKHHILC();
+    int getCardGuidList(int index);
   }
   /**
    * <pre>
-   * Obf: HJFECEDKNMO
+   * Obf: JCOEHGMCLBD
    * </pre>
    *
    * Protobuf type {@code GCGMsgMoveCard}
@@ -108,11 +108,11 @@ public final class GCGMsgMoveCardOuterClass {
       super(builder);
     }
     private GCGMsgMoveCard() {
-      cardGuidList_ = emptyIntList();
-      cDODKAPBJGJ_ = 0;
-      failGuidList_ = emptyIntList();
+      jMJDDFNHGMK_ = 0;
+      bPFAOBOIEDL_ = 0;
       reason_ = 0;
-      jDPOFKHHILC_ = 0;
+      failGuidList_ = emptyIntList();
+      cardGuidList_ = emptyIntList();
     }
 
     @java.lang.Override
@@ -146,26 +146,26 @@ public final class GCGMsgMoveCardOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
+            case 8: {
               int rawValue = input.readEnum();
 
               reason_ = rawValue;
               break;
             }
-            case 24: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+            case 48: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 failGuidList_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               failGuidList_.addInt(input.readUInt32());
               break;
             }
-            case 26: {
+            case 50: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
                 failGuidList_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               while (input.getBytesUntilLimit() > 0) {
                 failGuidList_.addInt(input.readUInt32());
@@ -176,23 +176,29 @@ public final class GCGMsgMoveCardOuterClass {
             case 56: {
               int rawValue = input.readEnum();
 
-              cDODKAPBJGJ_ = rawValue;
+              bPFAOBOIEDL_ = rawValue;
               break;
             }
             case 64: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              int rawValue = input.readEnum();
+
+              jMJDDFNHGMK_ = rawValue;
+              break;
+            }
+            case 96: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 cardGuidList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               cardGuidList_.addInt(input.readUInt32());
               break;
             }
-            case 66: {
+            case 98: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
                 cardGuidList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               while (input.getBytesUntilLimit() > 0) {
                 cardGuidList_.addInt(input.readUInt32());
@@ -200,15 +206,9 @@ public final class GCGMsgMoveCardOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 80: {
+            case 112: {
 
               controllerId_ = input.readUInt32();
-              break;
-            }
-            case 112: {
-              int rawValue = input.readEnum();
-
-              jDPOFKHHILC_ = rawValue;
               break;
             }
             default: {
@@ -226,10 +226,10 @@ public final class GCGMsgMoveCardOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           failGuidList_.makeImmutable(); // C
         }
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
           cardGuidList_.makeImmutable(); // C
         }
         this.unknownFields = unknownFields.build();
@@ -249,10 +249,67 @@ public final class GCGMsgMoveCardOuterClass {
               emu.grasscutter.net.proto.GCGMsgMoveCardOuterClass.GCGMsgMoveCard.class, emu.grasscutter.net.proto.GCGMsgMoveCardOuterClass.GCGMsgMoveCard.Builder.class);
     }
 
-    public static final int CONTROLLER_ID_FIELD_NUMBER = 10;
+    public static final int JMJDDFNHGMK_FIELD_NUMBER = 8;
+    private int jMJDDFNHGMK_;
+    /**
+     * <code>.GCGZoneType JMJDDFNHGMK = 8;</code>
+     * @return The enum numeric value on the wire for jMJDDFNHGMK.
+     */
+    @java.lang.Override public int getJMJDDFNHGMKValue() {
+      return jMJDDFNHGMK_;
+    }
+    /**
+     * <code>.GCGZoneType JMJDDFNHGMK = 8;</code>
+     * @return The jMJDDFNHGMK.
+     */
+    @java.lang.Override public emu.grasscutter.net.proto.GCGZoneTypeOuterClass.GCGZoneType getJMJDDFNHGMK() {
+      @SuppressWarnings("deprecation")
+      emu.grasscutter.net.proto.GCGZoneTypeOuterClass.GCGZoneType result = emu.grasscutter.net.proto.GCGZoneTypeOuterClass.GCGZoneType.valueOf(jMJDDFNHGMK_);
+      return result == null ? emu.grasscutter.net.proto.GCGZoneTypeOuterClass.GCGZoneType.UNRECOGNIZED : result;
+    }
+
+    public static final int BPFAOBOIEDL_FIELD_NUMBER = 7;
+    private int bPFAOBOIEDL_;
+    /**
+     * <code>.GCGZoneType BPFAOBOIEDL = 7;</code>
+     * @return The enum numeric value on the wire for bPFAOBOIEDL.
+     */
+    @java.lang.Override public int getBPFAOBOIEDLValue() {
+      return bPFAOBOIEDL_;
+    }
+    /**
+     * <code>.GCGZoneType BPFAOBOIEDL = 7;</code>
+     * @return The bPFAOBOIEDL.
+     */
+    @java.lang.Override public emu.grasscutter.net.proto.GCGZoneTypeOuterClass.GCGZoneType getBPFAOBOIEDL() {
+      @SuppressWarnings("deprecation")
+      emu.grasscutter.net.proto.GCGZoneTypeOuterClass.GCGZoneType result = emu.grasscutter.net.proto.GCGZoneTypeOuterClass.GCGZoneType.valueOf(bPFAOBOIEDL_);
+      return result == null ? emu.grasscutter.net.proto.GCGZoneTypeOuterClass.GCGZoneType.UNRECOGNIZED : result;
+    }
+
+    public static final int REASON_FIELD_NUMBER = 1;
+    private int reason_;
+    /**
+     * <code>.GCGReason reason = 1;</code>
+     * @return The enum numeric value on the wire for reason.
+     */
+    @java.lang.Override public int getReasonValue() {
+      return reason_;
+    }
+    /**
+     * <code>.GCGReason reason = 1;</code>
+     * @return The reason.
+     */
+    @java.lang.Override public emu.grasscutter.net.proto.GCGReasonOuterClass.GCGReason getReason() {
+      @SuppressWarnings("deprecation")
+      emu.grasscutter.net.proto.GCGReasonOuterClass.GCGReason result = emu.grasscutter.net.proto.GCGReasonOuterClass.GCGReason.valueOf(reason_);
+      return result == null ? emu.grasscutter.net.proto.GCGReasonOuterClass.GCGReason.UNRECOGNIZED : result;
+    }
+
+    public static final int CONTROLLER_ID_FIELD_NUMBER = 14;
     private int controllerId_;
     /**
-     * <code>uint32 controller_id = 10;</code>
+     * <code>uint32 controller_id = 14;</code>
      * @return The controllerId.
      */
     @java.lang.Override
@@ -260,57 +317,10 @@ public final class GCGMsgMoveCardOuterClass {
       return controllerId_;
     }
 
-    public static final int CARD_GUID_LIST_FIELD_NUMBER = 8;
-    private com.google.protobuf.Internal.IntList cardGuidList_;
-    /**
-     * <code>repeated uint32 card_guid_list = 8;</code>
-     * @return A list containing the cardGuidList.
-     */
-    @java.lang.Override
-    public java.util.List<java.lang.Integer>
-        getCardGuidListList() {
-      return cardGuidList_;
-    }
-    /**
-     * <code>repeated uint32 card_guid_list = 8;</code>
-     * @return The count of cardGuidList.
-     */
-    public int getCardGuidListCount() {
-      return cardGuidList_.size();
-    }
-    /**
-     * <code>repeated uint32 card_guid_list = 8;</code>
-     * @param index The index of the element to return.
-     * @return The cardGuidList at the given index.
-     */
-    public int getCardGuidList(int index) {
-      return cardGuidList_.getInt(index);
-    }
-    private int cardGuidListMemoizedSerializedSize = -1;
-
-    public static final int CDODKAPBJGJ_FIELD_NUMBER = 7;
-    private int cDODKAPBJGJ_;
-    /**
-     * <code>.GCGZoneType CDODKAPBJGJ = 7;</code>
-     * @return The enum numeric value on the wire for cDODKAPBJGJ.
-     */
-    @java.lang.Override public int getCDODKAPBJGJValue() {
-      return cDODKAPBJGJ_;
-    }
-    /**
-     * <code>.GCGZoneType CDODKAPBJGJ = 7;</code>
-     * @return The cDODKAPBJGJ.
-     */
-    @java.lang.Override public emu.grasscutter.net.proto.GCGZoneTypeOuterClass.GCGZoneType getCDODKAPBJGJ() {
-      @SuppressWarnings("deprecation")
-      emu.grasscutter.net.proto.GCGZoneTypeOuterClass.GCGZoneType result = emu.grasscutter.net.proto.GCGZoneTypeOuterClass.GCGZoneType.valueOf(cDODKAPBJGJ_);
-      return result == null ? emu.grasscutter.net.proto.GCGZoneTypeOuterClass.GCGZoneType.UNRECOGNIZED : result;
-    }
-
-    public static final int FAIL_GUID_LIST_FIELD_NUMBER = 3;
+    public static final int FAIL_GUID_LIST_FIELD_NUMBER = 6;
     private com.google.protobuf.Internal.IntList failGuidList_;
     /**
-     * <code>repeated uint32 fail_guid_list = 3;</code>
+     * <code>repeated uint32 fail_guid_list = 6;</code>
      * @return A list containing the failGuidList.
      */
     @java.lang.Override
@@ -319,14 +329,14 @@ public final class GCGMsgMoveCardOuterClass {
       return failGuidList_;
     }
     /**
-     * <code>repeated uint32 fail_guid_list = 3;</code>
+     * <code>repeated uint32 fail_guid_list = 6;</code>
      * @return The count of failGuidList.
      */
     public int getFailGuidListCount() {
       return failGuidList_.size();
     }
     /**
-     * <code>repeated uint32 fail_guid_list = 3;</code>
+     * <code>repeated uint32 fail_guid_list = 6;</code>
      * @param index The index of the element to return.
      * @return The failGuidList at the given index.
      */
@@ -335,43 +345,33 @@ public final class GCGMsgMoveCardOuterClass {
     }
     private int failGuidListMemoizedSerializedSize = -1;
 
-    public static final int REASON_FIELD_NUMBER = 2;
-    private int reason_;
+    public static final int CARD_GUID_LIST_FIELD_NUMBER = 12;
+    private com.google.protobuf.Internal.IntList cardGuidList_;
     /**
-     * <code>.MNDCMMKBIBP reason = 2;</code>
-     * @return The enum numeric value on the wire for reason.
+     * <code>repeated uint32 card_guid_list = 12;</code>
+     * @return A list containing the cardGuidList.
      */
-    @java.lang.Override public int getReasonValue() {
-      return reason_;
+    @java.lang.Override
+    public java.util.List<java.lang.Integer>
+        getCardGuidListList() {
+      return cardGuidList_;
     }
     /**
-     * <code>.MNDCMMKBIBP reason = 2;</code>
-     * @return The reason.
+     * <code>repeated uint32 card_guid_list = 12;</code>
+     * @return The count of cardGuidList.
      */
-    @java.lang.Override public emu.grasscutter.net.proto.MNDCMMKBIBPOuterClass.MNDCMMKBIBP getReason() {
-      @SuppressWarnings("deprecation")
-      emu.grasscutter.net.proto.MNDCMMKBIBPOuterClass.MNDCMMKBIBP result = emu.grasscutter.net.proto.MNDCMMKBIBPOuterClass.MNDCMMKBIBP.valueOf(reason_);
-      return result == null ? emu.grasscutter.net.proto.MNDCMMKBIBPOuterClass.MNDCMMKBIBP.UNRECOGNIZED : result;
-    }
-
-    public static final int JDPOFKHHILC_FIELD_NUMBER = 14;
-    private int jDPOFKHHILC_;
-    /**
-     * <code>.GCGZoneType JDPOFKHHILC = 14;</code>
-     * @return The enum numeric value on the wire for jDPOFKHHILC.
-     */
-    @java.lang.Override public int getJDPOFKHHILCValue() {
-      return jDPOFKHHILC_;
+    public int getCardGuidListCount() {
+      return cardGuidList_.size();
     }
     /**
-     * <code>.GCGZoneType JDPOFKHHILC = 14;</code>
-     * @return The jDPOFKHHILC.
+     * <code>repeated uint32 card_guid_list = 12;</code>
+     * @param index The index of the element to return.
+     * @return The cardGuidList at the given index.
      */
-    @java.lang.Override public emu.grasscutter.net.proto.GCGZoneTypeOuterClass.GCGZoneType getJDPOFKHHILC() {
-      @SuppressWarnings("deprecation")
-      emu.grasscutter.net.proto.GCGZoneTypeOuterClass.GCGZoneType result = emu.grasscutter.net.proto.GCGZoneTypeOuterClass.GCGZoneType.valueOf(jDPOFKHHILC_);
-      return result == null ? emu.grasscutter.net.proto.GCGZoneTypeOuterClass.GCGZoneType.UNRECOGNIZED : result;
+    public int getCardGuidList(int index) {
+      return cardGuidList_.getInt(index);
     }
+    private int cardGuidListMemoizedSerializedSize = -1;
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
@@ -388,31 +388,31 @@ public final class GCGMsgMoveCardOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (reason_ != emu.grasscutter.net.proto.MNDCMMKBIBPOuterClass.MNDCMMKBIBP.MNDCMMKBIBP_Default.getNumber()) {
-        output.writeEnum(2, reason_);
+      if (reason_ != emu.grasscutter.net.proto.GCGReasonOuterClass.GCGReason.MNDCMMKBIBP_Default.getNumber()) {
+        output.writeEnum(1, reason_);
       }
       if (getFailGuidListList().size() > 0) {
-        output.writeUInt32NoTag(26);
+        output.writeUInt32NoTag(50);
         output.writeUInt32NoTag(failGuidListMemoizedSerializedSize);
       }
       for (int i = 0; i < failGuidList_.size(); i++) {
         output.writeUInt32NoTag(failGuidList_.getInt(i));
       }
-      if (cDODKAPBJGJ_ != emu.grasscutter.net.proto.GCGZoneTypeOuterClass.GCGZoneType.GCG_ZONE_INVALID.getNumber()) {
-        output.writeEnum(7, cDODKAPBJGJ_);
+      if (bPFAOBOIEDL_ != emu.grasscutter.net.proto.GCGZoneTypeOuterClass.GCGZoneType.GCG_ZONE_INVALID.getNumber()) {
+        output.writeEnum(7, bPFAOBOIEDL_);
+      }
+      if (jMJDDFNHGMK_ != emu.grasscutter.net.proto.GCGZoneTypeOuterClass.GCGZoneType.GCG_ZONE_INVALID.getNumber()) {
+        output.writeEnum(8, jMJDDFNHGMK_);
       }
       if (getCardGuidListList().size() > 0) {
-        output.writeUInt32NoTag(66);
+        output.writeUInt32NoTag(98);
         output.writeUInt32NoTag(cardGuidListMemoizedSerializedSize);
       }
       for (int i = 0; i < cardGuidList_.size(); i++) {
         output.writeUInt32NoTag(cardGuidList_.getInt(i));
       }
       if (controllerId_ != 0) {
-        output.writeUInt32(10, controllerId_);
-      }
-      if (jDPOFKHHILC_ != emu.grasscutter.net.proto.GCGZoneTypeOuterClass.GCGZoneType.GCG_ZONE_INVALID.getNumber()) {
-        output.writeEnum(14, jDPOFKHHILC_);
+        output.writeUInt32(14, controllerId_);
       }
       unknownFields.writeTo(output);
     }
@@ -423,9 +423,9 @@ public final class GCGMsgMoveCardOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (reason_ != emu.grasscutter.net.proto.MNDCMMKBIBPOuterClass.MNDCMMKBIBP.MNDCMMKBIBP_Default.getNumber()) {
+      if (reason_ != emu.grasscutter.net.proto.GCGReasonOuterClass.GCGReason.MNDCMMKBIBP_Default.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(2, reason_);
+          .computeEnumSize(1, reason_);
       }
       {
         int dataSize = 0;
@@ -441,9 +441,13 @@ public final class GCGMsgMoveCardOuterClass {
         }
         failGuidListMemoizedSerializedSize = dataSize;
       }
-      if (cDODKAPBJGJ_ != emu.grasscutter.net.proto.GCGZoneTypeOuterClass.GCGZoneType.GCG_ZONE_INVALID.getNumber()) {
+      if (bPFAOBOIEDL_ != emu.grasscutter.net.proto.GCGZoneTypeOuterClass.GCGZoneType.GCG_ZONE_INVALID.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(7, cDODKAPBJGJ_);
+          .computeEnumSize(7, bPFAOBOIEDL_);
+      }
+      if (jMJDDFNHGMK_ != emu.grasscutter.net.proto.GCGZoneTypeOuterClass.GCGZoneType.GCG_ZONE_INVALID.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(8, jMJDDFNHGMK_);
       }
       {
         int dataSize = 0;
@@ -461,11 +465,7 @@ public final class GCGMsgMoveCardOuterClass {
       }
       if (controllerId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, controllerId_);
-      }
-      if (jDPOFKHHILC_ != emu.grasscutter.net.proto.GCGZoneTypeOuterClass.GCGZoneType.GCG_ZONE_INVALID.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(14, jDPOFKHHILC_);
+          .computeUInt32Size(14, controllerId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -482,15 +482,15 @@ public final class GCGMsgMoveCardOuterClass {
       }
       emu.grasscutter.net.proto.GCGMsgMoveCardOuterClass.GCGMsgMoveCard other = (emu.grasscutter.net.proto.GCGMsgMoveCardOuterClass.GCGMsgMoveCard) obj;
 
+      if (jMJDDFNHGMK_ != other.jMJDDFNHGMK_) return false;
+      if (bPFAOBOIEDL_ != other.bPFAOBOIEDL_) return false;
+      if (reason_ != other.reason_) return false;
       if (getControllerId()
           != other.getControllerId()) return false;
-      if (!getCardGuidListList()
-          .equals(other.getCardGuidListList())) return false;
-      if (cDODKAPBJGJ_ != other.cDODKAPBJGJ_) return false;
       if (!getFailGuidListList()
           .equals(other.getFailGuidListList())) return false;
-      if (reason_ != other.reason_) return false;
-      if (jDPOFKHHILC_ != other.jDPOFKHHILC_) return false;
+      if (!getCardGuidListList()
+          .equals(other.getCardGuidListList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -502,22 +502,22 @@ public final class GCGMsgMoveCardOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + JMJDDFNHGMK_FIELD_NUMBER;
+      hash = (53 * hash) + jMJDDFNHGMK_;
+      hash = (37 * hash) + BPFAOBOIEDL_FIELD_NUMBER;
+      hash = (53 * hash) + bPFAOBOIEDL_;
+      hash = (37 * hash) + REASON_FIELD_NUMBER;
+      hash = (53 * hash) + reason_;
       hash = (37 * hash) + CONTROLLER_ID_FIELD_NUMBER;
       hash = (53 * hash) + getControllerId();
-      if (getCardGuidListCount() > 0) {
-        hash = (37 * hash) + CARD_GUID_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getCardGuidListList().hashCode();
-      }
-      hash = (37 * hash) + CDODKAPBJGJ_FIELD_NUMBER;
-      hash = (53 * hash) + cDODKAPBJGJ_;
       if (getFailGuidListCount() > 0) {
         hash = (37 * hash) + FAIL_GUID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getFailGuidListList().hashCode();
       }
-      hash = (37 * hash) + REASON_FIELD_NUMBER;
-      hash = (53 * hash) + reason_;
-      hash = (37 * hash) + JDPOFKHHILC_FIELD_NUMBER;
-      hash = (53 * hash) + jDPOFKHHILC_;
+      if (getCardGuidListCount() > 0) {
+        hash = (37 * hash) + CARD_GUID_LIST_FIELD_NUMBER;
+        hash = (53 * hash) + getCardGuidListList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -615,7 +615,7 @@ public final class GCGMsgMoveCardOuterClass {
     }
     /**
      * <pre>
-     * Obf: HJFECEDKNMO
+     * Obf: JCOEHGMCLBD
      * </pre>
      *
      * Protobuf type {@code GCGMsgMoveCard}
@@ -655,18 +655,18 @@ public final class GCGMsgMoveCardOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        controllerId_ = 0;
+        jMJDDFNHGMK_ = 0;
 
-        cardGuidList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        cDODKAPBJGJ_ = 0;
+        bPFAOBOIEDL_ = 0;
 
-        failGuidList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
         reason_ = 0;
 
-        jDPOFKHHILC_ = 0;
+        controllerId_ = 0;
 
+        failGuidList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        cardGuidList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -694,20 +694,20 @@ public final class GCGMsgMoveCardOuterClass {
       public emu.grasscutter.net.proto.GCGMsgMoveCardOuterClass.GCGMsgMoveCard buildPartial() {
         emu.grasscutter.net.proto.GCGMsgMoveCardOuterClass.GCGMsgMoveCard result = new emu.grasscutter.net.proto.GCGMsgMoveCardOuterClass.GCGMsgMoveCard(this);
         int from_bitField0_ = bitField0_;
+        result.jMJDDFNHGMK_ = jMJDDFNHGMK_;
+        result.bPFAOBOIEDL_ = bPFAOBOIEDL_;
+        result.reason_ = reason_;
         result.controllerId_ = controllerId_;
         if (((bitField0_ & 0x00000001) != 0)) {
-          cardGuidList_.makeImmutable();
+          failGuidList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
-        result.cardGuidList_ = cardGuidList_;
-        result.cDODKAPBJGJ_ = cDODKAPBJGJ_;
+        result.failGuidList_ = failGuidList_;
         if (((bitField0_ & 0x00000002) != 0)) {
-          failGuidList_.makeImmutable();
+          cardGuidList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000002);
         }
-        result.failGuidList_ = failGuidList_;
-        result.reason_ = reason_;
-        result.jDPOFKHHILC_ = jDPOFKHHILC_;
+        result.cardGuidList_ = cardGuidList_;
         onBuilt();
         return result;
       }
@@ -756,37 +756,37 @@ public final class GCGMsgMoveCardOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.GCGMsgMoveCardOuterClass.GCGMsgMoveCard other) {
         if (other == emu.grasscutter.net.proto.GCGMsgMoveCardOuterClass.GCGMsgMoveCard.getDefaultInstance()) return this;
+        if (other.jMJDDFNHGMK_ != 0) {
+          setJMJDDFNHGMKValue(other.getJMJDDFNHGMKValue());
+        }
+        if (other.bPFAOBOIEDL_ != 0) {
+          setBPFAOBOIEDLValue(other.getBPFAOBOIEDLValue());
+        }
+        if (other.reason_ != 0) {
+          setReasonValue(other.getReasonValue());
+        }
         if (other.getControllerId() != 0) {
           setControllerId(other.getControllerId());
-        }
-        if (!other.cardGuidList_.isEmpty()) {
-          if (cardGuidList_.isEmpty()) {
-            cardGuidList_ = other.cardGuidList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureCardGuidListIsMutable();
-            cardGuidList_.addAll(other.cardGuidList_);
-          }
-          onChanged();
-        }
-        if (other.cDODKAPBJGJ_ != 0) {
-          setCDODKAPBJGJValue(other.getCDODKAPBJGJValue());
         }
         if (!other.failGuidList_.isEmpty()) {
           if (failGuidList_.isEmpty()) {
             failGuidList_ = other.failGuidList_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureFailGuidListIsMutable();
             failGuidList_.addAll(other.failGuidList_);
           }
           onChanged();
         }
-        if (other.reason_ != 0) {
-          setReasonValue(other.getReasonValue());
-        }
-        if (other.jDPOFKHHILC_ != 0) {
-          setJDPOFKHHILCValue(other.getJDPOFKHHILCValue());
+        if (!other.cardGuidList_.isEmpty()) {
+          if (cardGuidList_.isEmpty()) {
+            cardGuidList_ = other.cardGuidList_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureCardGuidListIsMutable();
+            cardGuidList_.addAll(other.cardGuidList_);
+          }
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -818,9 +818,171 @@ public final class GCGMsgMoveCardOuterClass {
       }
       private int bitField0_;
 
+      private int jMJDDFNHGMK_ = 0;
+      /**
+       * <code>.GCGZoneType JMJDDFNHGMK = 8;</code>
+       * @return The enum numeric value on the wire for jMJDDFNHGMK.
+       */
+      @java.lang.Override public int getJMJDDFNHGMKValue() {
+        return jMJDDFNHGMK_;
+      }
+      /**
+       * <code>.GCGZoneType JMJDDFNHGMK = 8;</code>
+       * @param value The enum numeric value on the wire for jMJDDFNHGMK to set.
+       * @return This builder for chaining.
+       */
+      public Builder setJMJDDFNHGMKValue(int value) {
+        
+        jMJDDFNHGMK_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.GCGZoneType JMJDDFNHGMK = 8;</code>
+       * @return The jMJDDFNHGMK.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.GCGZoneTypeOuterClass.GCGZoneType getJMJDDFNHGMK() {
+        @SuppressWarnings("deprecation")
+        emu.grasscutter.net.proto.GCGZoneTypeOuterClass.GCGZoneType result = emu.grasscutter.net.proto.GCGZoneTypeOuterClass.GCGZoneType.valueOf(jMJDDFNHGMK_);
+        return result == null ? emu.grasscutter.net.proto.GCGZoneTypeOuterClass.GCGZoneType.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.GCGZoneType JMJDDFNHGMK = 8;</code>
+       * @param value The jMJDDFNHGMK to set.
+       * @return This builder for chaining.
+       */
+      public Builder setJMJDDFNHGMK(emu.grasscutter.net.proto.GCGZoneTypeOuterClass.GCGZoneType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        jMJDDFNHGMK_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.GCGZoneType JMJDDFNHGMK = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearJMJDDFNHGMK() {
+        
+        jMJDDFNHGMK_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int bPFAOBOIEDL_ = 0;
+      /**
+       * <code>.GCGZoneType BPFAOBOIEDL = 7;</code>
+       * @return The enum numeric value on the wire for bPFAOBOIEDL.
+       */
+      @java.lang.Override public int getBPFAOBOIEDLValue() {
+        return bPFAOBOIEDL_;
+      }
+      /**
+       * <code>.GCGZoneType BPFAOBOIEDL = 7;</code>
+       * @param value The enum numeric value on the wire for bPFAOBOIEDL to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBPFAOBOIEDLValue(int value) {
+        
+        bPFAOBOIEDL_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.GCGZoneType BPFAOBOIEDL = 7;</code>
+       * @return The bPFAOBOIEDL.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.GCGZoneTypeOuterClass.GCGZoneType getBPFAOBOIEDL() {
+        @SuppressWarnings("deprecation")
+        emu.grasscutter.net.proto.GCGZoneTypeOuterClass.GCGZoneType result = emu.grasscutter.net.proto.GCGZoneTypeOuterClass.GCGZoneType.valueOf(bPFAOBOIEDL_);
+        return result == null ? emu.grasscutter.net.proto.GCGZoneTypeOuterClass.GCGZoneType.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.GCGZoneType BPFAOBOIEDL = 7;</code>
+       * @param value The bPFAOBOIEDL to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBPFAOBOIEDL(emu.grasscutter.net.proto.GCGZoneTypeOuterClass.GCGZoneType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        bPFAOBOIEDL_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.GCGZoneType BPFAOBOIEDL = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBPFAOBOIEDL() {
+        
+        bPFAOBOIEDL_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int reason_ = 0;
+      /**
+       * <code>.GCGReason reason = 1;</code>
+       * @return The enum numeric value on the wire for reason.
+       */
+      @java.lang.Override public int getReasonValue() {
+        return reason_;
+      }
+      /**
+       * <code>.GCGReason reason = 1;</code>
+       * @param value The enum numeric value on the wire for reason to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReasonValue(int value) {
+        
+        reason_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.GCGReason reason = 1;</code>
+       * @return The reason.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.GCGReasonOuterClass.GCGReason getReason() {
+        @SuppressWarnings("deprecation")
+        emu.grasscutter.net.proto.GCGReasonOuterClass.GCGReason result = emu.grasscutter.net.proto.GCGReasonOuterClass.GCGReason.valueOf(reason_);
+        return result == null ? emu.grasscutter.net.proto.GCGReasonOuterClass.GCGReason.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.GCGReason reason = 1;</code>
+       * @param value The reason to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReason(emu.grasscutter.net.proto.GCGReasonOuterClass.GCGReason value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        reason_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.GCGReason reason = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearReason() {
+        
+        reason_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int controllerId_ ;
       /**
-       * <code>uint32 controller_id = 10;</code>
+       * <code>uint32 controller_id = 14;</code>
        * @return The controllerId.
        */
       @java.lang.Override
@@ -828,7 +990,7 @@ public final class GCGMsgMoveCardOuterClass {
         return controllerId_;
       }
       /**
-       * <code>uint32 controller_id = 10;</code>
+       * <code>uint32 controller_id = 14;</code>
        * @param value The controllerId to set.
        * @return This builder for chaining.
        */
@@ -839,7 +1001,7 @@ public final class GCGMsgMoveCardOuterClass {
         return this;
       }
       /**
-       * <code>uint32 controller_id = 10;</code>
+       * <code>uint32 controller_id = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearControllerId() {
@@ -849,164 +1011,31 @@ public final class GCGMsgMoveCardOuterClass {
         return this;
       }
 
-      private com.google.protobuf.Internal.IntList cardGuidList_ = emptyIntList();
-      private void ensureCardGuidListIsMutable() {
+      private com.google.protobuf.Internal.IntList failGuidList_ = emptyIntList();
+      private void ensureFailGuidListIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          cardGuidList_ = mutableCopy(cardGuidList_);
+          failGuidList_ = mutableCopy(failGuidList_);
           bitField0_ |= 0x00000001;
          }
       }
       /**
-       * <code>repeated uint32 card_guid_list = 8;</code>
-       * @return A list containing the cardGuidList.
-       */
-      public java.util.List<java.lang.Integer>
-          getCardGuidListList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
-                 java.util.Collections.unmodifiableList(cardGuidList_) : cardGuidList_;
-      }
-      /**
-       * <code>repeated uint32 card_guid_list = 8;</code>
-       * @return The count of cardGuidList.
-       */
-      public int getCardGuidListCount() {
-        return cardGuidList_.size();
-      }
-      /**
-       * <code>repeated uint32 card_guid_list = 8;</code>
-       * @param index The index of the element to return.
-       * @return The cardGuidList at the given index.
-       */
-      public int getCardGuidList(int index) {
-        return cardGuidList_.getInt(index);
-      }
-      /**
-       * <code>repeated uint32 card_guid_list = 8;</code>
-       * @param index The index to set the value at.
-       * @param value The cardGuidList to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCardGuidList(
-          int index, int value) {
-        ensureCardGuidListIsMutable();
-        cardGuidList_.setInt(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 card_guid_list = 8;</code>
-       * @param value The cardGuidList to add.
-       * @return This builder for chaining.
-       */
-      public Builder addCardGuidList(int value) {
-        ensureCardGuidListIsMutable();
-        cardGuidList_.addInt(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 card_guid_list = 8;</code>
-       * @param values The cardGuidList to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllCardGuidList(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureCardGuidListIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, cardGuidList_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 card_guid_list = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCardGuidList() {
-        cardGuidList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-
-      private int cDODKAPBJGJ_ = 0;
-      /**
-       * <code>.GCGZoneType CDODKAPBJGJ = 7;</code>
-       * @return The enum numeric value on the wire for cDODKAPBJGJ.
-       */
-      @java.lang.Override public int getCDODKAPBJGJValue() {
-        return cDODKAPBJGJ_;
-      }
-      /**
-       * <code>.GCGZoneType CDODKAPBJGJ = 7;</code>
-       * @param value The enum numeric value on the wire for cDODKAPBJGJ to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCDODKAPBJGJValue(int value) {
-        
-        cDODKAPBJGJ_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.GCGZoneType CDODKAPBJGJ = 7;</code>
-       * @return The cDODKAPBJGJ.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.GCGZoneTypeOuterClass.GCGZoneType getCDODKAPBJGJ() {
-        @SuppressWarnings("deprecation")
-        emu.grasscutter.net.proto.GCGZoneTypeOuterClass.GCGZoneType result = emu.grasscutter.net.proto.GCGZoneTypeOuterClass.GCGZoneType.valueOf(cDODKAPBJGJ_);
-        return result == null ? emu.grasscutter.net.proto.GCGZoneTypeOuterClass.GCGZoneType.UNRECOGNIZED : result;
-      }
-      /**
-       * <code>.GCGZoneType CDODKAPBJGJ = 7;</code>
-       * @param value The cDODKAPBJGJ to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCDODKAPBJGJ(emu.grasscutter.net.proto.GCGZoneTypeOuterClass.GCGZoneType value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        cDODKAPBJGJ_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.GCGZoneType CDODKAPBJGJ = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCDODKAPBJGJ() {
-        
-        cDODKAPBJGJ_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.Internal.IntList failGuidList_ = emptyIntList();
-      private void ensureFailGuidListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
-          failGuidList_ = mutableCopy(failGuidList_);
-          bitField0_ |= 0x00000002;
-         }
-      }
-      /**
-       * <code>repeated uint32 fail_guid_list = 3;</code>
+       * <code>repeated uint32 fail_guid_list = 6;</code>
        * @return A list containing the failGuidList.
        */
       public java.util.List<java.lang.Integer>
           getFailGuidListList() {
-        return ((bitField0_ & 0x00000002) != 0) ?
+        return ((bitField0_ & 0x00000001) != 0) ?
                  java.util.Collections.unmodifiableList(failGuidList_) : failGuidList_;
       }
       /**
-       * <code>repeated uint32 fail_guid_list = 3;</code>
+       * <code>repeated uint32 fail_guid_list = 6;</code>
        * @return The count of failGuidList.
        */
       public int getFailGuidListCount() {
         return failGuidList_.size();
       }
       /**
-       * <code>repeated uint32 fail_guid_list = 3;</code>
+       * <code>repeated uint32 fail_guid_list = 6;</code>
        * @param index The index of the element to return.
        * @return The failGuidList at the given index.
        */
@@ -1014,7 +1043,7 @@ public final class GCGMsgMoveCardOuterClass {
         return failGuidList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 fail_guid_list = 3;</code>
+       * <code>repeated uint32 fail_guid_list = 6;</code>
        * @param index The index to set the value at.
        * @param value The failGuidList to set.
        * @return This builder for chaining.
@@ -1027,7 +1056,7 @@ public final class GCGMsgMoveCardOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 fail_guid_list = 3;</code>
+       * <code>repeated uint32 fail_guid_list = 6;</code>
        * @param value The failGuidList to add.
        * @return This builder for chaining.
        */
@@ -1038,7 +1067,7 @@ public final class GCGMsgMoveCardOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 fail_guid_list = 3;</code>
+       * <code>repeated uint32 fail_guid_list = 6;</code>
        * @param values The failGuidList to add.
        * @return This builder for chaining.
        */
@@ -1051,120 +1080,91 @@ public final class GCGMsgMoveCardOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 fail_guid_list = 3;</code>
+       * <code>repeated uint32 fail_guid_list = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearFailGuidList() {
         failGuidList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Internal.IntList cardGuidList_ = emptyIntList();
+      private void ensureCardGuidListIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          cardGuidList_ = mutableCopy(cardGuidList_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+      /**
+       * <code>repeated uint32 card_guid_list = 12;</code>
+       * @return A list containing the cardGuidList.
+       */
+      public java.util.List<java.lang.Integer>
+          getCardGuidListList() {
+        return ((bitField0_ & 0x00000002) != 0) ?
+                 java.util.Collections.unmodifiableList(cardGuidList_) : cardGuidList_;
+      }
+      /**
+       * <code>repeated uint32 card_guid_list = 12;</code>
+       * @return The count of cardGuidList.
+       */
+      public int getCardGuidListCount() {
+        return cardGuidList_.size();
+      }
+      /**
+       * <code>repeated uint32 card_guid_list = 12;</code>
+       * @param index The index of the element to return.
+       * @return The cardGuidList at the given index.
+       */
+      public int getCardGuidList(int index) {
+        return cardGuidList_.getInt(index);
+      }
+      /**
+       * <code>repeated uint32 card_guid_list = 12;</code>
+       * @param index The index to set the value at.
+       * @param value The cardGuidList to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCardGuidList(
+          int index, int value) {
+        ensureCardGuidListIsMutable();
+        cardGuidList_.setInt(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 card_guid_list = 12;</code>
+       * @param value The cardGuidList to add.
+       * @return This builder for chaining.
+       */
+      public Builder addCardGuidList(int value) {
+        ensureCardGuidListIsMutable();
+        cardGuidList_.addInt(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 card_guid_list = 12;</code>
+       * @param values The cardGuidList to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllCardGuidList(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureCardGuidListIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, cardGuidList_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 card_guid_list = 12;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCardGuidList() {
+        cardGuidList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000002);
-        onChanged();
-        return this;
-      }
-
-      private int reason_ = 0;
-      /**
-       * <code>.MNDCMMKBIBP reason = 2;</code>
-       * @return The enum numeric value on the wire for reason.
-       */
-      @java.lang.Override public int getReasonValue() {
-        return reason_;
-      }
-      /**
-       * <code>.MNDCMMKBIBP reason = 2;</code>
-       * @param value The enum numeric value on the wire for reason to set.
-       * @return This builder for chaining.
-       */
-      public Builder setReasonValue(int value) {
-        
-        reason_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.MNDCMMKBIBP reason = 2;</code>
-       * @return The reason.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.MNDCMMKBIBPOuterClass.MNDCMMKBIBP getReason() {
-        @SuppressWarnings("deprecation")
-        emu.grasscutter.net.proto.MNDCMMKBIBPOuterClass.MNDCMMKBIBP result = emu.grasscutter.net.proto.MNDCMMKBIBPOuterClass.MNDCMMKBIBP.valueOf(reason_);
-        return result == null ? emu.grasscutter.net.proto.MNDCMMKBIBPOuterClass.MNDCMMKBIBP.UNRECOGNIZED : result;
-      }
-      /**
-       * <code>.MNDCMMKBIBP reason = 2;</code>
-       * @param value The reason to set.
-       * @return This builder for chaining.
-       */
-      public Builder setReason(emu.grasscutter.net.proto.MNDCMMKBIBPOuterClass.MNDCMMKBIBP value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        reason_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.MNDCMMKBIBP reason = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearReason() {
-        
-        reason_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int jDPOFKHHILC_ = 0;
-      /**
-       * <code>.GCGZoneType JDPOFKHHILC = 14;</code>
-       * @return The enum numeric value on the wire for jDPOFKHHILC.
-       */
-      @java.lang.Override public int getJDPOFKHHILCValue() {
-        return jDPOFKHHILC_;
-      }
-      /**
-       * <code>.GCGZoneType JDPOFKHHILC = 14;</code>
-       * @param value The enum numeric value on the wire for jDPOFKHHILC to set.
-       * @return This builder for chaining.
-       */
-      public Builder setJDPOFKHHILCValue(int value) {
-        
-        jDPOFKHHILC_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.GCGZoneType JDPOFKHHILC = 14;</code>
-       * @return The jDPOFKHHILC.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.GCGZoneTypeOuterClass.GCGZoneType getJDPOFKHHILC() {
-        @SuppressWarnings("deprecation")
-        emu.grasscutter.net.proto.GCGZoneTypeOuterClass.GCGZoneType result = emu.grasscutter.net.proto.GCGZoneTypeOuterClass.GCGZoneType.valueOf(jDPOFKHHILC_);
-        return result == null ? emu.grasscutter.net.proto.GCGZoneTypeOuterClass.GCGZoneType.UNRECOGNIZED : result;
-      }
-      /**
-       * <code>.GCGZoneType JDPOFKHHILC = 14;</code>
-       * @param value The jDPOFKHHILC to set.
-       * @return This builder for chaining.
-       */
-      public Builder setJDPOFKHHILC(emu.grasscutter.net.proto.GCGZoneTypeOuterClass.GCGZoneType value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        jDPOFKHHILC_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.GCGZoneType JDPOFKHHILC = 14;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearJDPOFKHHILC() {
-        
-        jDPOFKHHILC_ = 0;
         onChanged();
         return this;
       }
@@ -1236,28 +1236,28 @@ public final class GCGMsgMoveCardOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\024GCGMsgMoveCard.proto\032\021GCGZoneType.prot" +
-      "o\032\021MNDCMMKBIBP.proto\"\273\001\n\016GCGMsgMoveCard\022" +
-      "\025\n\rcontroller_id\030\n \001(\r\022\026\n\016card_guid_list" +
-      "\030\010 \003(\r\022!\n\013CDODKAPBJGJ\030\007 \001(\0162\014.GCGZoneTyp" +
-      "e\022\026\n\016fail_guid_list\030\003 \003(\r\022\034\n\006reason\030\002 \001(" +
-      "\0162\014.MNDCMMKBIBP\022!\n\013JDPOFKHHILC\030\016 \001(\0162\014.G" +
-      "CGZoneTypeB\033\n\031emu.grasscutter.net.protob" +
-      "\006proto3"
+      "o\032\017GCGReason.proto\"\271\001\n\016GCGMsgMoveCard\022!\n" +
+      "\013JMJDDFNHGMK\030\010 \001(\0162\014.GCGZoneType\022!\n\013BPFA" +
+      "OBOIEDL\030\007 \001(\0162\014.GCGZoneType\022\032\n\006reason\030\001 " +
+      "\001(\0162\n.GCGReason\022\025\n\rcontroller_id\030\016 \001(\r\022\026" +
+      "\n\016fail_guid_list\030\006 \003(\r\022\026\n\016card_guid_list" +
+      "\030\014 \003(\rB\033\n\031emu.grasscutter.net.protob\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           emu.grasscutter.net.proto.GCGZoneTypeOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.MNDCMMKBIBPOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.GCGReasonOuterClass.getDescriptor(),
         });
     internal_static_GCGMsgMoveCard_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_GCGMsgMoveCard_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GCGMsgMoveCard_descriptor,
-        new java.lang.String[] { "ControllerId", "CardGuidList", "CDODKAPBJGJ", "FailGuidList", "Reason", "JDPOFKHHILC", });
+        new java.lang.String[] { "JMJDDFNHGMK", "BPFAOBOIEDL", "Reason", "ControllerId", "FailGuidList", "CardGuidList", });
     emu.grasscutter.net.proto.GCGZoneTypeOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.MNDCMMKBIBPOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.GCGReasonOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

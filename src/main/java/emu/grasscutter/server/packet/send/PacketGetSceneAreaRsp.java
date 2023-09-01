@@ -1,8 +1,7 @@
 package emu.grasscutter.server.packet.send;
 
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.net.packet.BasePacket;
-import emu.grasscutter.net.packet.PacketOpcodes;
+import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.GetSceneAreaRspOuterClass.GetSceneAreaRsp;
 
 public class PacketGetSceneAreaRsp extends BasePacket {
@@ -19,6 +18,8 @@ public class PacketGetSceneAreaRsp extends BasePacket {
                         .addCityInfoList(player.getSotsManager().getCityInfo(1).toProto())
                         .addCityInfoList(player.getSotsManager().getCityInfo(2).toProto())
                         .addCityInfoList(player.getSotsManager().getCityInfo(3).toProto())
+                        .addCityInfoList(player.getSotsManager().getCityInfo(4).toProto())
+                        .addCityInfoList(player.getSotsManager().getCityInfo(5).toProto())
                         .build();
 
         this.setData(p);

@@ -19,56 +19,56 @@ public final class GCGSkillPreviewExtraInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .GCGSkillPreviewCardInfo HDCFLCDAIDJ = 12;</code>
+     * <code>repeated .GCGSkillPreviewCardInfo HJKOLBBIEKP = 10;</code>
      */
     java.util.List<emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo> 
-        getHDCFLCDAIDJList();
+        getHJKOLBBIEKPList();
     /**
-     * <code>repeated .GCGSkillPreviewCardInfo HDCFLCDAIDJ = 12;</code>
+     * <code>repeated .GCGSkillPreviewCardInfo HJKOLBBIEKP = 10;</code>
      */
-    emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo getHDCFLCDAIDJ(int index);
+    emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo getHJKOLBBIEKP(int index);
     /**
-     * <code>repeated .GCGSkillPreviewCardInfo HDCFLCDAIDJ = 12;</code>
+     * <code>repeated .GCGSkillPreviewCardInfo HJKOLBBIEKP = 10;</code>
      */
-    int getHDCFLCDAIDJCount();
+    int getHJKOLBBIEKPCount();
     /**
-     * <code>repeated .GCGSkillPreviewCardInfo HDCFLCDAIDJ = 12;</code>
+     * <code>repeated .GCGSkillPreviewCardInfo HJKOLBBIEKP = 10;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfoOrBuilder> 
-        getHDCFLCDAIDJOrBuilderList();
+        getHJKOLBBIEKPOrBuilderList();
     /**
-     * <code>repeated .GCGSkillPreviewCardInfo HDCFLCDAIDJ = 12;</code>
+     * <code>repeated .GCGSkillPreviewCardInfo HJKOLBBIEKP = 10;</code>
      */
-    emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfoOrBuilder getHDCFLCDAIDJOrBuilder(
+    emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfoOrBuilder getHJKOLBBIEKPOrBuilder(
         int index);
 
     /**
-     * <code>repeated .GCGSkillPreviewCardInfo NFLBFMMOEOD = 1;</code>
+     * <code>repeated .GCGSkillPreviewCardInfo GDOGONCLICI = 13;</code>
      */
     java.util.List<emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo> 
-        getNFLBFMMOEODList();
+        getGDOGONCLICIList();
     /**
-     * <code>repeated .GCGSkillPreviewCardInfo NFLBFMMOEOD = 1;</code>
+     * <code>repeated .GCGSkillPreviewCardInfo GDOGONCLICI = 13;</code>
      */
-    emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo getNFLBFMMOEOD(int index);
+    emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo getGDOGONCLICI(int index);
     /**
-     * <code>repeated .GCGSkillPreviewCardInfo NFLBFMMOEOD = 1;</code>
+     * <code>repeated .GCGSkillPreviewCardInfo GDOGONCLICI = 13;</code>
      */
-    int getNFLBFMMOEODCount();
+    int getGDOGONCLICICount();
     /**
-     * <code>repeated .GCGSkillPreviewCardInfo NFLBFMMOEOD = 1;</code>
+     * <code>repeated .GCGSkillPreviewCardInfo GDOGONCLICI = 13;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfoOrBuilder> 
-        getNFLBFMMOEODOrBuilderList();
+        getGDOGONCLICIOrBuilderList();
     /**
-     * <code>repeated .GCGSkillPreviewCardInfo NFLBFMMOEOD = 1;</code>
+     * <code>repeated .GCGSkillPreviewCardInfo GDOGONCLICI = 13;</code>
      */
-    emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfoOrBuilder getNFLBFMMOEODOrBuilder(
+    emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfoOrBuilder getGDOGONCLICIOrBuilder(
         int index);
   }
   /**
    * <pre>
-   * Obf: GPBPONKAFJA
+   * Obf: FCPHAKGFEOD
    * </pre>
    *
    * Protobuf type {@code GCGSkillPreviewExtraInfo}
@@ -83,8 +83,8 @@ public final class GCGSkillPreviewExtraInfoOuterClass {
       super(builder);
     }
     private GCGSkillPreviewExtraInfo() {
-      hDCFLCDAIDJ_ = java.util.Collections.emptyList();
-      nFLBFMMOEOD_ = java.util.Collections.emptyList();
+      hJKOLBBIEKP_ = java.util.Collections.emptyList();
+      gDOGONCLICI_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -118,21 +118,21 @@ public final class GCGSkillPreviewExtraInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 10: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                nFLBFMMOEOD_ = new java.util.ArrayList<emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo>();
-                mutable_bitField0_ |= 0x00000002;
+            case 82: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                hJKOLBBIEKP_ = new java.util.ArrayList<emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo>();
+                mutable_bitField0_ |= 0x00000001;
               }
-              nFLBFMMOEOD_.add(
+              hJKOLBBIEKP_.add(
                   input.readMessage(emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo.parser(), extensionRegistry));
               break;
             }
-            case 98: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                hDCFLCDAIDJ_ = new java.util.ArrayList<emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo>();
-                mutable_bitField0_ |= 0x00000001;
+            case 106: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                gDOGONCLICI_ = new java.util.ArrayList<emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo>();
+                mutable_bitField0_ |= 0x00000002;
               }
-              hDCFLCDAIDJ_.add(
+              gDOGONCLICI_.add(
                   input.readMessage(emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo.parser(), extensionRegistry));
               break;
             }
@@ -151,11 +151,11 @@ public final class GCGSkillPreviewExtraInfoOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          nFLBFMMOEOD_ = java.util.Collections.unmodifiableList(nFLBFMMOEOD_);
-        }
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          hDCFLCDAIDJ_ = java.util.Collections.unmodifiableList(hDCFLCDAIDJ_);
+          hJKOLBBIEKP_ = java.util.Collections.unmodifiableList(hJKOLBBIEKP_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          gDOGONCLICI_ = java.util.Collections.unmodifiableList(gDOGONCLICI_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -174,84 +174,84 @@ public final class GCGSkillPreviewExtraInfoOuterClass {
               emu.grasscutter.net.proto.GCGSkillPreviewExtraInfoOuterClass.GCGSkillPreviewExtraInfo.class, emu.grasscutter.net.proto.GCGSkillPreviewExtraInfoOuterClass.GCGSkillPreviewExtraInfo.Builder.class);
     }
 
-    public static final int HDCFLCDAIDJ_FIELD_NUMBER = 12;
-    private java.util.List<emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo> hDCFLCDAIDJ_;
+    public static final int HJKOLBBIEKP_FIELD_NUMBER = 10;
+    private java.util.List<emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo> hJKOLBBIEKP_;
     /**
-     * <code>repeated .GCGSkillPreviewCardInfo HDCFLCDAIDJ = 12;</code>
+     * <code>repeated .GCGSkillPreviewCardInfo HJKOLBBIEKP = 10;</code>
      */
     @java.lang.Override
-    public java.util.List<emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo> getHDCFLCDAIDJList() {
-      return hDCFLCDAIDJ_;
+    public java.util.List<emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo> getHJKOLBBIEKPList() {
+      return hJKOLBBIEKP_;
     }
     /**
-     * <code>repeated .GCGSkillPreviewCardInfo HDCFLCDAIDJ = 12;</code>
+     * <code>repeated .GCGSkillPreviewCardInfo HJKOLBBIEKP = 10;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfoOrBuilder> 
-        getHDCFLCDAIDJOrBuilderList() {
-      return hDCFLCDAIDJ_;
+        getHJKOLBBIEKPOrBuilderList() {
+      return hJKOLBBIEKP_;
     }
     /**
-     * <code>repeated .GCGSkillPreviewCardInfo HDCFLCDAIDJ = 12;</code>
+     * <code>repeated .GCGSkillPreviewCardInfo HJKOLBBIEKP = 10;</code>
      */
     @java.lang.Override
-    public int getHDCFLCDAIDJCount() {
-      return hDCFLCDAIDJ_.size();
+    public int getHJKOLBBIEKPCount() {
+      return hJKOLBBIEKP_.size();
     }
     /**
-     * <code>repeated .GCGSkillPreviewCardInfo HDCFLCDAIDJ = 12;</code>
+     * <code>repeated .GCGSkillPreviewCardInfo HJKOLBBIEKP = 10;</code>
      */
     @java.lang.Override
-    public emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo getHDCFLCDAIDJ(int index) {
-      return hDCFLCDAIDJ_.get(index);
+    public emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo getHJKOLBBIEKP(int index) {
+      return hJKOLBBIEKP_.get(index);
     }
     /**
-     * <code>repeated .GCGSkillPreviewCardInfo HDCFLCDAIDJ = 12;</code>
+     * <code>repeated .GCGSkillPreviewCardInfo HJKOLBBIEKP = 10;</code>
      */
     @java.lang.Override
-    public emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfoOrBuilder getHDCFLCDAIDJOrBuilder(
+    public emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfoOrBuilder getHJKOLBBIEKPOrBuilder(
         int index) {
-      return hDCFLCDAIDJ_.get(index);
+      return hJKOLBBIEKP_.get(index);
     }
 
-    public static final int NFLBFMMOEOD_FIELD_NUMBER = 1;
-    private java.util.List<emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo> nFLBFMMOEOD_;
+    public static final int GDOGONCLICI_FIELD_NUMBER = 13;
+    private java.util.List<emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo> gDOGONCLICI_;
     /**
-     * <code>repeated .GCGSkillPreviewCardInfo NFLBFMMOEOD = 1;</code>
+     * <code>repeated .GCGSkillPreviewCardInfo GDOGONCLICI = 13;</code>
      */
     @java.lang.Override
-    public java.util.List<emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo> getNFLBFMMOEODList() {
-      return nFLBFMMOEOD_;
+    public java.util.List<emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo> getGDOGONCLICIList() {
+      return gDOGONCLICI_;
     }
     /**
-     * <code>repeated .GCGSkillPreviewCardInfo NFLBFMMOEOD = 1;</code>
+     * <code>repeated .GCGSkillPreviewCardInfo GDOGONCLICI = 13;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfoOrBuilder> 
-        getNFLBFMMOEODOrBuilderList() {
-      return nFLBFMMOEOD_;
+        getGDOGONCLICIOrBuilderList() {
+      return gDOGONCLICI_;
     }
     /**
-     * <code>repeated .GCGSkillPreviewCardInfo NFLBFMMOEOD = 1;</code>
+     * <code>repeated .GCGSkillPreviewCardInfo GDOGONCLICI = 13;</code>
      */
     @java.lang.Override
-    public int getNFLBFMMOEODCount() {
-      return nFLBFMMOEOD_.size();
+    public int getGDOGONCLICICount() {
+      return gDOGONCLICI_.size();
     }
     /**
-     * <code>repeated .GCGSkillPreviewCardInfo NFLBFMMOEOD = 1;</code>
+     * <code>repeated .GCGSkillPreviewCardInfo GDOGONCLICI = 13;</code>
      */
     @java.lang.Override
-    public emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo getNFLBFMMOEOD(int index) {
-      return nFLBFMMOEOD_.get(index);
+    public emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo getGDOGONCLICI(int index) {
+      return gDOGONCLICI_.get(index);
     }
     /**
-     * <code>repeated .GCGSkillPreviewCardInfo NFLBFMMOEOD = 1;</code>
+     * <code>repeated .GCGSkillPreviewCardInfo GDOGONCLICI = 13;</code>
      */
     @java.lang.Override
-    public emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfoOrBuilder getNFLBFMMOEODOrBuilder(
+    public emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfoOrBuilder getGDOGONCLICIOrBuilder(
         int index) {
-      return nFLBFMMOEOD_.get(index);
+      return gDOGONCLICI_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -268,11 +268,11 @@ public final class GCGSkillPreviewExtraInfoOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < nFLBFMMOEOD_.size(); i++) {
-        output.writeMessage(1, nFLBFMMOEOD_.get(i));
+      for (int i = 0; i < hJKOLBBIEKP_.size(); i++) {
+        output.writeMessage(10, hJKOLBBIEKP_.get(i));
       }
-      for (int i = 0; i < hDCFLCDAIDJ_.size(); i++) {
-        output.writeMessage(12, hDCFLCDAIDJ_.get(i));
+      for (int i = 0; i < gDOGONCLICI_.size(); i++) {
+        output.writeMessage(13, gDOGONCLICI_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -283,13 +283,13 @@ public final class GCGSkillPreviewExtraInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < nFLBFMMOEOD_.size(); i++) {
+      for (int i = 0; i < hJKOLBBIEKP_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, nFLBFMMOEOD_.get(i));
+          .computeMessageSize(10, hJKOLBBIEKP_.get(i));
       }
-      for (int i = 0; i < hDCFLCDAIDJ_.size(); i++) {
+      for (int i = 0; i < gDOGONCLICI_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(12, hDCFLCDAIDJ_.get(i));
+          .computeMessageSize(13, gDOGONCLICI_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -306,10 +306,10 @@ public final class GCGSkillPreviewExtraInfoOuterClass {
       }
       emu.grasscutter.net.proto.GCGSkillPreviewExtraInfoOuterClass.GCGSkillPreviewExtraInfo other = (emu.grasscutter.net.proto.GCGSkillPreviewExtraInfoOuterClass.GCGSkillPreviewExtraInfo) obj;
 
-      if (!getHDCFLCDAIDJList()
-          .equals(other.getHDCFLCDAIDJList())) return false;
-      if (!getNFLBFMMOEODList()
-          .equals(other.getNFLBFMMOEODList())) return false;
+      if (!getHJKOLBBIEKPList()
+          .equals(other.getHJKOLBBIEKPList())) return false;
+      if (!getGDOGONCLICIList()
+          .equals(other.getGDOGONCLICIList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -321,13 +321,13 @@ public final class GCGSkillPreviewExtraInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getHDCFLCDAIDJCount() > 0) {
-        hash = (37 * hash) + HDCFLCDAIDJ_FIELD_NUMBER;
-        hash = (53 * hash) + getHDCFLCDAIDJList().hashCode();
+      if (getHJKOLBBIEKPCount() > 0) {
+        hash = (37 * hash) + HJKOLBBIEKP_FIELD_NUMBER;
+        hash = (53 * hash) + getHJKOLBBIEKPList().hashCode();
       }
-      if (getNFLBFMMOEODCount() > 0) {
-        hash = (37 * hash) + NFLBFMMOEOD_FIELD_NUMBER;
-        hash = (53 * hash) + getNFLBFMMOEODList().hashCode();
+      if (getGDOGONCLICICount() > 0) {
+        hash = (37 * hash) + GDOGONCLICI_FIELD_NUMBER;
+        hash = (53 * hash) + getGDOGONCLICIList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -426,7 +426,7 @@ public final class GCGSkillPreviewExtraInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: GPBPONKAFJA
+     * Obf: FCPHAKGFEOD
      * </pre>
      *
      * Protobuf type {@code GCGSkillPreviewExtraInfo}
@@ -461,24 +461,24 @@ public final class GCGSkillPreviewExtraInfoOuterClass {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getHDCFLCDAIDJFieldBuilder();
-          getNFLBFMMOEODFieldBuilder();
+          getHJKOLBBIEKPFieldBuilder();
+          getGDOGONCLICIFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (hDCFLCDAIDJBuilder_ == null) {
-          hDCFLCDAIDJ_ = java.util.Collections.emptyList();
+        if (hJKOLBBIEKPBuilder_ == null) {
+          hJKOLBBIEKP_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          hDCFLCDAIDJBuilder_.clear();
+          hJKOLBBIEKPBuilder_.clear();
         }
-        if (nFLBFMMOEODBuilder_ == null) {
-          nFLBFMMOEOD_ = java.util.Collections.emptyList();
+        if (gDOGONCLICIBuilder_ == null) {
+          gDOGONCLICI_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000002);
         } else {
-          nFLBFMMOEODBuilder_.clear();
+          gDOGONCLICIBuilder_.clear();
         }
         return this;
       }
@@ -507,23 +507,23 @@ public final class GCGSkillPreviewExtraInfoOuterClass {
       public emu.grasscutter.net.proto.GCGSkillPreviewExtraInfoOuterClass.GCGSkillPreviewExtraInfo buildPartial() {
         emu.grasscutter.net.proto.GCGSkillPreviewExtraInfoOuterClass.GCGSkillPreviewExtraInfo result = new emu.grasscutter.net.proto.GCGSkillPreviewExtraInfoOuterClass.GCGSkillPreviewExtraInfo(this);
         int from_bitField0_ = bitField0_;
-        if (hDCFLCDAIDJBuilder_ == null) {
+        if (hJKOLBBIEKPBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
-            hDCFLCDAIDJ_ = java.util.Collections.unmodifiableList(hDCFLCDAIDJ_);
+            hJKOLBBIEKP_ = java.util.Collections.unmodifiableList(hJKOLBBIEKP_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
-          result.hDCFLCDAIDJ_ = hDCFLCDAIDJ_;
+          result.hJKOLBBIEKP_ = hJKOLBBIEKP_;
         } else {
-          result.hDCFLCDAIDJ_ = hDCFLCDAIDJBuilder_.build();
+          result.hJKOLBBIEKP_ = hJKOLBBIEKPBuilder_.build();
         }
-        if (nFLBFMMOEODBuilder_ == null) {
+        if (gDOGONCLICIBuilder_ == null) {
           if (((bitField0_ & 0x00000002) != 0)) {
-            nFLBFMMOEOD_ = java.util.Collections.unmodifiableList(nFLBFMMOEOD_);
+            gDOGONCLICI_ = java.util.Collections.unmodifiableList(gDOGONCLICI_);
             bitField0_ = (bitField0_ & ~0x00000002);
           }
-          result.nFLBFMMOEOD_ = nFLBFMMOEOD_;
+          result.gDOGONCLICI_ = gDOGONCLICI_;
         } else {
-          result.nFLBFMMOEOD_ = nFLBFMMOEODBuilder_.build();
+          result.gDOGONCLICI_ = gDOGONCLICIBuilder_.build();
         }
         onBuilt();
         return result;
@@ -573,55 +573,55 @@ public final class GCGSkillPreviewExtraInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.GCGSkillPreviewExtraInfoOuterClass.GCGSkillPreviewExtraInfo other) {
         if (other == emu.grasscutter.net.proto.GCGSkillPreviewExtraInfoOuterClass.GCGSkillPreviewExtraInfo.getDefaultInstance()) return this;
-        if (hDCFLCDAIDJBuilder_ == null) {
-          if (!other.hDCFLCDAIDJ_.isEmpty()) {
-            if (hDCFLCDAIDJ_.isEmpty()) {
-              hDCFLCDAIDJ_ = other.hDCFLCDAIDJ_;
+        if (hJKOLBBIEKPBuilder_ == null) {
+          if (!other.hJKOLBBIEKP_.isEmpty()) {
+            if (hJKOLBBIEKP_.isEmpty()) {
+              hJKOLBBIEKP_ = other.hJKOLBBIEKP_;
               bitField0_ = (bitField0_ & ~0x00000001);
             } else {
-              ensureHDCFLCDAIDJIsMutable();
-              hDCFLCDAIDJ_.addAll(other.hDCFLCDAIDJ_);
+              ensureHJKOLBBIEKPIsMutable();
+              hJKOLBBIEKP_.addAll(other.hJKOLBBIEKP_);
             }
             onChanged();
           }
         } else {
-          if (!other.hDCFLCDAIDJ_.isEmpty()) {
-            if (hDCFLCDAIDJBuilder_.isEmpty()) {
-              hDCFLCDAIDJBuilder_.dispose();
-              hDCFLCDAIDJBuilder_ = null;
-              hDCFLCDAIDJ_ = other.hDCFLCDAIDJ_;
+          if (!other.hJKOLBBIEKP_.isEmpty()) {
+            if (hJKOLBBIEKPBuilder_.isEmpty()) {
+              hJKOLBBIEKPBuilder_.dispose();
+              hJKOLBBIEKPBuilder_ = null;
+              hJKOLBBIEKP_ = other.hJKOLBBIEKP_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              hDCFLCDAIDJBuilder_ = 
+              hJKOLBBIEKPBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getHDCFLCDAIDJFieldBuilder() : null;
+                   getHJKOLBBIEKPFieldBuilder() : null;
             } else {
-              hDCFLCDAIDJBuilder_.addAllMessages(other.hDCFLCDAIDJ_);
+              hJKOLBBIEKPBuilder_.addAllMessages(other.hJKOLBBIEKP_);
             }
           }
         }
-        if (nFLBFMMOEODBuilder_ == null) {
-          if (!other.nFLBFMMOEOD_.isEmpty()) {
-            if (nFLBFMMOEOD_.isEmpty()) {
-              nFLBFMMOEOD_ = other.nFLBFMMOEOD_;
+        if (gDOGONCLICIBuilder_ == null) {
+          if (!other.gDOGONCLICI_.isEmpty()) {
+            if (gDOGONCLICI_.isEmpty()) {
+              gDOGONCLICI_ = other.gDOGONCLICI_;
               bitField0_ = (bitField0_ & ~0x00000002);
             } else {
-              ensureNFLBFMMOEODIsMutable();
-              nFLBFMMOEOD_.addAll(other.nFLBFMMOEOD_);
+              ensureGDOGONCLICIIsMutable();
+              gDOGONCLICI_.addAll(other.gDOGONCLICI_);
             }
             onChanged();
           }
         } else {
-          if (!other.nFLBFMMOEOD_.isEmpty()) {
-            if (nFLBFMMOEODBuilder_.isEmpty()) {
-              nFLBFMMOEODBuilder_.dispose();
-              nFLBFMMOEODBuilder_ = null;
-              nFLBFMMOEOD_ = other.nFLBFMMOEOD_;
+          if (!other.gDOGONCLICI_.isEmpty()) {
+            if (gDOGONCLICIBuilder_.isEmpty()) {
+              gDOGONCLICIBuilder_.dispose();
+              gDOGONCLICIBuilder_ = null;
+              gDOGONCLICI_ = other.gDOGONCLICI_;
               bitField0_ = (bitField0_ & ~0x00000002);
-              nFLBFMMOEODBuilder_ = 
+              gDOGONCLICIBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getNFLBFMMOEODFieldBuilder() : null;
+                   getGDOGONCLICIFieldBuilder() : null;
             } else {
-              nFLBFMMOEODBuilder_.addAllMessages(other.nFLBFMMOEOD_);
+              gDOGONCLICIBuilder_.addAllMessages(other.gDOGONCLICI_);
             }
           }
         }
@@ -655,484 +655,484 @@ public final class GCGSkillPreviewExtraInfoOuterClass {
       }
       private int bitField0_;
 
-      private java.util.List<emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo> hDCFLCDAIDJ_ =
+      private java.util.List<emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo> hJKOLBBIEKP_ =
         java.util.Collections.emptyList();
-      private void ensureHDCFLCDAIDJIsMutable() {
+      private void ensureHJKOLBBIEKPIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          hDCFLCDAIDJ_ = new java.util.ArrayList<emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo>(hDCFLCDAIDJ_);
+          hJKOLBBIEKP_ = new java.util.ArrayList<emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo>(hJKOLBBIEKP_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo, emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo.Builder, emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfoOrBuilder> hDCFLCDAIDJBuilder_;
+          emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo, emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo.Builder, emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfoOrBuilder> hJKOLBBIEKPBuilder_;
 
       /**
-       * <code>repeated .GCGSkillPreviewCardInfo HDCFLCDAIDJ = 12;</code>
+       * <code>repeated .GCGSkillPreviewCardInfo HJKOLBBIEKP = 10;</code>
        */
-      public java.util.List<emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo> getHDCFLCDAIDJList() {
-        if (hDCFLCDAIDJBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(hDCFLCDAIDJ_);
+      public java.util.List<emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo> getHJKOLBBIEKPList() {
+        if (hJKOLBBIEKPBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(hJKOLBBIEKP_);
         } else {
-          return hDCFLCDAIDJBuilder_.getMessageList();
+          return hJKOLBBIEKPBuilder_.getMessageList();
         }
       }
       /**
-       * <code>repeated .GCGSkillPreviewCardInfo HDCFLCDAIDJ = 12;</code>
+       * <code>repeated .GCGSkillPreviewCardInfo HJKOLBBIEKP = 10;</code>
        */
-      public int getHDCFLCDAIDJCount() {
-        if (hDCFLCDAIDJBuilder_ == null) {
-          return hDCFLCDAIDJ_.size();
+      public int getHJKOLBBIEKPCount() {
+        if (hJKOLBBIEKPBuilder_ == null) {
+          return hJKOLBBIEKP_.size();
         } else {
-          return hDCFLCDAIDJBuilder_.getCount();
+          return hJKOLBBIEKPBuilder_.getCount();
         }
       }
       /**
-       * <code>repeated .GCGSkillPreviewCardInfo HDCFLCDAIDJ = 12;</code>
+       * <code>repeated .GCGSkillPreviewCardInfo HJKOLBBIEKP = 10;</code>
        */
-      public emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo getHDCFLCDAIDJ(int index) {
-        if (hDCFLCDAIDJBuilder_ == null) {
-          return hDCFLCDAIDJ_.get(index);
+      public emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo getHJKOLBBIEKP(int index) {
+        if (hJKOLBBIEKPBuilder_ == null) {
+          return hJKOLBBIEKP_.get(index);
         } else {
-          return hDCFLCDAIDJBuilder_.getMessage(index);
+          return hJKOLBBIEKPBuilder_.getMessage(index);
         }
       }
       /**
-       * <code>repeated .GCGSkillPreviewCardInfo HDCFLCDAIDJ = 12;</code>
+       * <code>repeated .GCGSkillPreviewCardInfo HJKOLBBIEKP = 10;</code>
        */
-      public Builder setHDCFLCDAIDJ(
+      public Builder setHJKOLBBIEKP(
           int index, emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo value) {
-        if (hDCFLCDAIDJBuilder_ == null) {
+        if (hJKOLBBIEKPBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureHDCFLCDAIDJIsMutable();
-          hDCFLCDAIDJ_.set(index, value);
+          ensureHJKOLBBIEKPIsMutable();
+          hJKOLBBIEKP_.set(index, value);
           onChanged();
         } else {
-          hDCFLCDAIDJBuilder_.setMessage(index, value);
+          hJKOLBBIEKPBuilder_.setMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .GCGSkillPreviewCardInfo HDCFLCDAIDJ = 12;</code>
+       * <code>repeated .GCGSkillPreviewCardInfo HJKOLBBIEKP = 10;</code>
        */
-      public Builder setHDCFLCDAIDJ(
+      public Builder setHJKOLBBIEKP(
           int index, emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo.Builder builderForValue) {
-        if (hDCFLCDAIDJBuilder_ == null) {
-          ensureHDCFLCDAIDJIsMutable();
-          hDCFLCDAIDJ_.set(index, builderForValue.build());
+        if (hJKOLBBIEKPBuilder_ == null) {
+          ensureHJKOLBBIEKPIsMutable();
+          hJKOLBBIEKP_.set(index, builderForValue.build());
           onChanged();
         } else {
-          hDCFLCDAIDJBuilder_.setMessage(index, builderForValue.build());
+          hJKOLBBIEKPBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .GCGSkillPreviewCardInfo HDCFLCDAIDJ = 12;</code>
+       * <code>repeated .GCGSkillPreviewCardInfo HJKOLBBIEKP = 10;</code>
        */
-      public Builder addHDCFLCDAIDJ(emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo value) {
-        if (hDCFLCDAIDJBuilder_ == null) {
+      public Builder addHJKOLBBIEKP(emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo value) {
+        if (hJKOLBBIEKPBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureHDCFLCDAIDJIsMutable();
-          hDCFLCDAIDJ_.add(value);
+          ensureHJKOLBBIEKPIsMutable();
+          hJKOLBBIEKP_.add(value);
           onChanged();
         } else {
-          hDCFLCDAIDJBuilder_.addMessage(value);
+          hJKOLBBIEKPBuilder_.addMessage(value);
         }
         return this;
       }
       /**
-       * <code>repeated .GCGSkillPreviewCardInfo HDCFLCDAIDJ = 12;</code>
+       * <code>repeated .GCGSkillPreviewCardInfo HJKOLBBIEKP = 10;</code>
        */
-      public Builder addHDCFLCDAIDJ(
+      public Builder addHJKOLBBIEKP(
           int index, emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo value) {
-        if (hDCFLCDAIDJBuilder_ == null) {
+        if (hJKOLBBIEKPBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureHDCFLCDAIDJIsMutable();
-          hDCFLCDAIDJ_.add(index, value);
+          ensureHJKOLBBIEKPIsMutable();
+          hJKOLBBIEKP_.add(index, value);
           onChanged();
         } else {
-          hDCFLCDAIDJBuilder_.addMessage(index, value);
+          hJKOLBBIEKPBuilder_.addMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .GCGSkillPreviewCardInfo HDCFLCDAIDJ = 12;</code>
+       * <code>repeated .GCGSkillPreviewCardInfo HJKOLBBIEKP = 10;</code>
        */
-      public Builder addHDCFLCDAIDJ(
+      public Builder addHJKOLBBIEKP(
           emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo.Builder builderForValue) {
-        if (hDCFLCDAIDJBuilder_ == null) {
-          ensureHDCFLCDAIDJIsMutable();
-          hDCFLCDAIDJ_.add(builderForValue.build());
+        if (hJKOLBBIEKPBuilder_ == null) {
+          ensureHJKOLBBIEKPIsMutable();
+          hJKOLBBIEKP_.add(builderForValue.build());
           onChanged();
         } else {
-          hDCFLCDAIDJBuilder_.addMessage(builderForValue.build());
+          hJKOLBBIEKPBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .GCGSkillPreviewCardInfo HDCFLCDAIDJ = 12;</code>
+       * <code>repeated .GCGSkillPreviewCardInfo HJKOLBBIEKP = 10;</code>
        */
-      public Builder addHDCFLCDAIDJ(
+      public Builder addHJKOLBBIEKP(
           int index, emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo.Builder builderForValue) {
-        if (hDCFLCDAIDJBuilder_ == null) {
-          ensureHDCFLCDAIDJIsMutable();
-          hDCFLCDAIDJ_.add(index, builderForValue.build());
+        if (hJKOLBBIEKPBuilder_ == null) {
+          ensureHJKOLBBIEKPIsMutable();
+          hJKOLBBIEKP_.add(index, builderForValue.build());
           onChanged();
         } else {
-          hDCFLCDAIDJBuilder_.addMessage(index, builderForValue.build());
+          hJKOLBBIEKPBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .GCGSkillPreviewCardInfo HDCFLCDAIDJ = 12;</code>
+       * <code>repeated .GCGSkillPreviewCardInfo HJKOLBBIEKP = 10;</code>
        */
-      public Builder addAllHDCFLCDAIDJ(
+      public Builder addAllHJKOLBBIEKP(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo> values) {
-        if (hDCFLCDAIDJBuilder_ == null) {
-          ensureHDCFLCDAIDJIsMutable();
+        if (hJKOLBBIEKPBuilder_ == null) {
+          ensureHJKOLBBIEKPIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, hDCFLCDAIDJ_);
+              values, hJKOLBBIEKP_);
           onChanged();
         } else {
-          hDCFLCDAIDJBuilder_.addAllMessages(values);
+          hJKOLBBIEKPBuilder_.addAllMessages(values);
         }
         return this;
       }
       /**
-       * <code>repeated .GCGSkillPreviewCardInfo HDCFLCDAIDJ = 12;</code>
+       * <code>repeated .GCGSkillPreviewCardInfo HJKOLBBIEKP = 10;</code>
        */
-      public Builder clearHDCFLCDAIDJ() {
-        if (hDCFLCDAIDJBuilder_ == null) {
-          hDCFLCDAIDJ_ = java.util.Collections.emptyList();
+      public Builder clearHJKOLBBIEKP() {
+        if (hJKOLBBIEKPBuilder_ == null) {
+          hJKOLBBIEKP_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
-          hDCFLCDAIDJBuilder_.clear();
+          hJKOLBBIEKPBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>repeated .GCGSkillPreviewCardInfo HDCFLCDAIDJ = 12;</code>
+       * <code>repeated .GCGSkillPreviewCardInfo HJKOLBBIEKP = 10;</code>
        */
-      public Builder removeHDCFLCDAIDJ(int index) {
-        if (hDCFLCDAIDJBuilder_ == null) {
-          ensureHDCFLCDAIDJIsMutable();
-          hDCFLCDAIDJ_.remove(index);
+      public Builder removeHJKOLBBIEKP(int index) {
+        if (hJKOLBBIEKPBuilder_ == null) {
+          ensureHJKOLBBIEKPIsMutable();
+          hJKOLBBIEKP_.remove(index);
           onChanged();
         } else {
-          hDCFLCDAIDJBuilder_.remove(index);
+          hJKOLBBIEKPBuilder_.remove(index);
         }
         return this;
       }
       /**
-       * <code>repeated .GCGSkillPreviewCardInfo HDCFLCDAIDJ = 12;</code>
+       * <code>repeated .GCGSkillPreviewCardInfo HJKOLBBIEKP = 10;</code>
        */
-      public emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo.Builder getHDCFLCDAIDJBuilder(
+      public emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo.Builder getHJKOLBBIEKPBuilder(
           int index) {
-        return getHDCFLCDAIDJFieldBuilder().getBuilder(index);
+        return getHJKOLBBIEKPFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .GCGSkillPreviewCardInfo HDCFLCDAIDJ = 12;</code>
+       * <code>repeated .GCGSkillPreviewCardInfo HJKOLBBIEKP = 10;</code>
        */
-      public emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfoOrBuilder getHDCFLCDAIDJOrBuilder(
+      public emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfoOrBuilder getHJKOLBBIEKPOrBuilder(
           int index) {
-        if (hDCFLCDAIDJBuilder_ == null) {
-          return hDCFLCDAIDJ_.get(index);  } else {
-          return hDCFLCDAIDJBuilder_.getMessageOrBuilder(index);
+        if (hJKOLBBIEKPBuilder_ == null) {
+          return hJKOLBBIEKP_.get(index);  } else {
+          return hJKOLBBIEKPBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
-       * <code>repeated .GCGSkillPreviewCardInfo HDCFLCDAIDJ = 12;</code>
+       * <code>repeated .GCGSkillPreviewCardInfo HJKOLBBIEKP = 10;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfoOrBuilder> 
-           getHDCFLCDAIDJOrBuilderList() {
-        if (hDCFLCDAIDJBuilder_ != null) {
-          return hDCFLCDAIDJBuilder_.getMessageOrBuilderList();
+           getHJKOLBBIEKPOrBuilderList() {
+        if (hJKOLBBIEKPBuilder_ != null) {
+          return hJKOLBBIEKPBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(hDCFLCDAIDJ_);
+          return java.util.Collections.unmodifiableList(hJKOLBBIEKP_);
         }
       }
       /**
-       * <code>repeated .GCGSkillPreviewCardInfo HDCFLCDAIDJ = 12;</code>
+       * <code>repeated .GCGSkillPreviewCardInfo HJKOLBBIEKP = 10;</code>
        */
-      public emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo.Builder addHDCFLCDAIDJBuilder() {
-        return getHDCFLCDAIDJFieldBuilder().addBuilder(
+      public emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo.Builder addHJKOLBBIEKPBuilder() {
+        return getHJKOLBBIEKPFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .GCGSkillPreviewCardInfo HDCFLCDAIDJ = 12;</code>
+       * <code>repeated .GCGSkillPreviewCardInfo HJKOLBBIEKP = 10;</code>
        */
-      public emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo.Builder addHDCFLCDAIDJBuilder(
+      public emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo.Builder addHJKOLBBIEKPBuilder(
           int index) {
-        return getHDCFLCDAIDJFieldBuilder().addBuilder(
+        return getHJKOLBBIEKPFieldBuilder().addBuilder(
             index, emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .GCGSkillPreviewCardInfo HDCFLCDAIDJ = 12;</code>
+       * <code>repeated .GCGSkillPreviewCardInfo HJKOLBBIEKP = 10;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo.Builder> 
-           getHDCFLCDAIDJBuilderList() {
-        return getHDCFLCDAIDJFieldBuilder().getBuilderList();
+           getHJKOLBBIEKPBuilderList() {
+        return getHJKOLBBIEKPFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
           emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo, emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo.Builder, emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfoOrBuilder> 
-          getHDCFLCDAIDJFieldBuilder() {
-        if (hDCFLCDAIDJBuilder_ == null) {
-          hDCFLCDAIDJBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+          getHJKOLBBIEKPFieldBuilder() {
+        if (hJKOLBBIEKPBuilder_ == null) {
+          hJKOLBBIEKPBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo, emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo.Builder, emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfoOrBuilder>(
-                  hDCFLCDAIDJ_,
+                  hJKOLBBIEKP_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
-          hDCFLCDAIDJ_ = null;
+          hJKOLBBIEKP_ = null;
         }
-        return hDCFLCDAIDJBuilder_;
+        return hJKOLBBIEKPBuilder_;
       }
 
-      private java.util.List<emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo> nFLBFMMOEOD_ =
+      private java.util.List<emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo> gDOGONCLICI_ =
         java.util.Collections.emptyList();
-      private void ensureNFLBFMMOEODIsMutable() {
+      private void ensureGDOGONCLICIIsMutable() {
         if (!((bitField0_ & 0x00000002) != 0)) {
-          nFLBFMMOEOD_ = new java.util.ArrayList<emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo>(nFLBFMMOEOD_);
+          gDOGONCLICI_ = new java.util.ArrayList<emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo>(gDOGONCLICI_);
           bitField0_ |= 0x00000002;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo, emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo.Builder, emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfoOrBuilder> nFLBFMMOEODBuilder_;
+          emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo, emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo.Builder, emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfoOrBuilder> gDOGONCLICIBuilder_;
 
       /**
-       * <code>repeated .GCGSkillPreviewCardInfo NFLBFMMOEOD = 1;</code>
+       * <code>repeated .GCGSkillPreviewCardInfo GDOGONCLICI = 13;</code>
        */
-      public java.util.List<emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo> getNFLBFMMOEODList() {
-        if (nFLBFMMOEODBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(nFLBFMMOEOD_);
+      public java.util.List<emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo> getGDOGONCLICIList() {
+        if (gDOGONCLICIBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(gDOGONCLICI_);
         } else {
-          return nFLBFMMOEODBuilder_.getMessageList();
+          return gDOGONCLICIBuilder_.getMessageList();
         }
       }
       /**
-       * <code>repeated .GCGSkillPreviewCardInfo NFLBFMMOEOD = 1;</code>
+       * <code>repeated .GCGSkillPreviewCardInfo GDOGONCLICI = 13;</code>
        */
-      public int getNFLBFMMOEODCount() {
-        if (nFLBFMMOEODBuilder_ == null) {
-          return nFLBFMMOEOD_.size();
+      public int getGDOGONCLICICount() {
+        if (gDOGONCLICIBuilder_ == null) {
+          return gDOGONCLICI_.size();
         } else {
-          return nFLBFMMOEODBuilder_.getCount();
+          return gDOGONCLICIBuilder_.getCount();
         }
       }
       /**
-       * <code>repeated .GCGSkillPreviewCardInfo NFLBFMMOEOD = 1;</code>
+       * <code>repeated .GCGSkillPreviewCardInfo GDOGONCLICI = 13;</code>
        */
-      public emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo getNFLBFMMOEOD(int index) {
-        if (nFLBFMMOEODBuilder_ == null) {
-          return nFLBFMMOEOD_.get(index);
+      public emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo getGDOGONCLICI(int index) {
+        if (gDOGONCLICIBuilder_ == null) {
+          return gDOGONCLICI_.get(index);
         } else {
-          return nFLBFMMOEODBuilder_.getMessage(index);
+          return gDOGONCLICIBuilder_.getMessage(index);
         }
       }
       /**
-       * <code>repeated .GCGSkillPreviewCardInfo NFLBFMMOEOD = 1;</code>
+       * <code>repeated .GCGSkillPreviewCardInfo GDOGONCLICI = 13;</code>
        */
-      public Builder setNFLBFMMOEOD(
+      public Builder setGDOGONCLICI(
           int index, emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo value) {
-        if (nFLBFMMOEODBuilder_ == null) {
+        if (gDOGONCLICIBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureNFLBFMMOEODIsMutable();
-          nFLBFMMOEOD_.set(index, value);
+          ensureGDOGONCLICIIsMutable();
+          gDOGONCLICI_.set(index, value);
           onChanged();
         } else {
-          nFLBFMMOEODBuilder_.setMessage(index, value);
+          gDOGONCLICIBuilder_.setMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .GCGSkillPreviewCardInfo NFLBFMMOEOD = 1;</code>
+       * <code>repeated .GCGSkillPreviewCardInfo GDOGONCLICI = 13;</code>
        */
-      public Builder setNFLBFMMOEOD(
+      public Builder setGDOGONCLICI(
           int index, emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo.Builder builderForValue) {
-        if (nFLBFMMOEODBuilder_ == null) {
-          ensureNFLBFMMOEODIsMutable();
-          nFLBFMMOEOD_.set(index, builderForValue.build());
+        if (gDOGONCLICIBuilder_ == null) {
+          ensureGDOGONCLICIIsMutable();
+          gDOGONCLICI_.set(index, builderForValue.build());
           onChanged();
         } else {
-          nFLBFMMOEODBuilder_.setMessage(index, builderForValue.build());
+          gDOGONCLICIBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .GCGSkillPreviewCardInfo NFLBFMMOEOD = 1;</code>
+       * <code>repeated .GCGSkillPreviewCardInfo GDOGONCLICI = 13;</code>
        */
-      public Builder addNFLBFMMOEOD(emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo value) {
-        if (nFLBFMMOEODBuilder_ == null) {
+      public Builder addGDOGONCLICI(emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo value) {
+        if (gDOGONCLICIBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureNFLBFMMOEODIsMutable();
-          nFLBFMMOEOD_.add(value);
+          ensureGDOGONCLICIIsMutable();
+          gDOGONCLICI_.add(value);
           onChanged();
         } else {
-          nFLBFMMOEODBuilder_.addMessage(value);
+          gDOGONCLICIBuilder_.addMessage(value);
         }
         return this;
       }
       /**
-       * <code>repeated .GCGSkillPreviewCardInfo NFLBFMMOEOD = 1;</code>
+       * <code>repeated .GCGSkillPreviewCardInfo GDOGONCLICI = 13;</code>
        */
-      public Builder addNFLBFMMOEOD(
+      public Builder addGDOGONCLICI(
           int index, emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo value) {
-        if (nFLBFMMOEODBuilder_ == null) {
+        if (gDOGONCLICIBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureNFLBFMMOEODIsMutable();
-          nFLBFMMOEOD_.add(index, value);
+          ensureGDOGONCLICIIsMutable();
+          gDOGONCLICI_.add(index, value);
           onChanged();
         } else {
-          nFLBFMMOEODBuilder_.addMessage(index, value);
+          gDOGONCLICIBuilder_.addMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .GCGSkillPreviewCardInfo NFLBFMMOEOD = 1;</code>
+       * <code>repeated .GCGSkillPreviewCardInfo GDOGONCLICI = 13;</code>
        */
-      public Builder addNFLBFMMOEOD(
+      public Builder addGDOGONCLICI(
           emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo.Builder builderForValue) {
-        if (nFLBFMMOEODBuilder_ == null) {
-          ensureNFLBFMMOEODIsMutable();
-          nFLBFMMOEOD_.add(builderForValue.build());
+        if (gDOGONCLICIBuilder_ == null) {
+          ensureGDOGONCLICIIsMutable();
+          gDOGONCLICI_.add(builderForValue.build());
           onChanged();
         } else {
-          nFLBFMMOEODBuilder_.addMessage(builderForValue.build());
+          gDOGONCLICIBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .GCGSkillPreviewCardInfo NFLBFMMOEOD = 1;</code>
+       * <code>repeated .GCGSkillPreviewCardInfo GDOGONCLICI = 13;</code>
        */
-      public Builder addNFLBFMMOEOD(
+      public Builder addGDOGONCLICI(
           int index, emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo.Builder builderForValue) {
-        if (nFLBFMMOEODBuilder_ == null) {
-          ensureNFLBFMMOEODIsMutable();
-          nFLBFMMOEOD_.add(index, builderForValue.build());
+        if (gDOGONCLICIBuilder_ == null) {
+          ensureGDOGONCLICIIsMutable();
+          gDOGONCLICI_.add(index, builderForValue.build());
           onChanged();
         } else {
-          nFLBFMMOEODBuilder_.addMessage(index, builderForValue.build());
+          gDOGONCLICIBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .GCGSkillPreviewCardInfo NFLBFMMOEOD = 1;</code>
+       * <code>repeated .GCGSkillPreviewCardInfo GDOGONCLICI = 13;</code>
        */
-      public Builder addAllNFLBFMMOEOD(
+      public Builder addAllGDOGONCLICI(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo> values) {
-        if (nFLBFMMOEODBuilder_ == null) {
-          ensureNFLBFMMOEODIsMutable();
+        if (gDOGONCLICIBuilder_ == null) {
+          ensureGDOGONCLICIIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, nFLBFMMOEOD_);
+              values, gDOGONCLICI_);
           onChanged();
         } else {
-          nFLBFMMOEODBuilder_.addAllMessages(values);
+          gDOGONCLICIBuilder_.addAllMessages(values);
         }
         return this;
       }
       /**
-       * <code>repeated .GCGSkillPreviewCardInfo NFLBFMMOEOD = 1;</code>
+       * <code>repeated .GCGSkillPreviewCardInfo GDOGONCLICI = 13;</code>
        */
-      public Builder clearNFLBFMMOEOD() {
-        if (nFLBFMMOEODBuilder_ == null) {
-          nFLBFMMOEOD_ = java.util.Collections.emptyList();
+      public Builder clearGDOGONCLICI() {
+        if (gDOGONCLICIBuilder_ == null) {
+          gDOGONCLICI_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
-          nFLBFMMOEODBuilder_.clear();
+          gDOGONCLICIBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>repeated .GCGSkillPreviewCardInfo NFLBFMMOEOD = 1;</code>
+       * <code>repeated .GCGSkillPreviewCardInfo GDOGONCLICI = 13;</code>
        */
-      public Builder removeNFLBFMMOEOD(int index) {
-        if (nFLBFMMOEODBuilder_ == null) {
-          ensureNFLBFMMOEODIsMutable();
-          nFLBFMMOEOD_.remove(index);
+      public Builder removeGDOGONCLICI(int index) {
+        if (gDOGONCLICIBuilder_ == null) {
+          ensureGDOGONCLICIIsMutable();
+          gDOGONCLICI_.remove(index);
           onChanged();
         } else {
-          nFLBFMMOEODBuilder_.remove(index);
+          gDOGONCLICIBuilder_.remove(index);
         }
         return this;
       }
       /**
-       * <code>repeated .GCGSkillPreviewCardInfo NFLBFMMOEOD = 1;</code>
+       * <code>repeated .GCGSkillPreviewCardInfo GDOGONCLICI = 13;</code>
        */
-      public emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo.Builder getNFLBFMMOEODBuilder(
+      public emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo.Builder getGDOGONCLICIBuilder(
           int index) {
-        return getNFLBFMMOEODFieldBuilder().getBuilder(index);
+        return getGDOGONCLICIFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .GCGSkillPreviewCardInfo NFLBFMMOEOD = 1;</code>
+       * <code>repeated .GCGSkillPreviewCardInfo GDOGONCLICI = 13;</code>
        */
-      public emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfoOrBuilder getNFLBFMMOEODOrBuilder(
+      public emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfoOrBuilder getGDOGONCLICIOrBuilder(
           int index) {
-        if (nFLBFMMOEODBuilder_ == null) {
-          return nFLBFMMOEOD_.get(index);  } else {
-          return nFLBFMMOEODBuilder_.getMessageOrBuilder(index);
+        if (gDOGONCLICIBuilder_ == null) {
+          return gDOGONCLICI_.get(index);  } else {
+          return gDOGONCLICIBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
-       * <code>repeated .GCGSkillPreviewCardInfo NFLBFMMOEOD = 1;</code>
+       * <code>repeated .GCGSkillPreviewCardInfo GDOGONCLICI = 13;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfoOrBuilder> 
-           getNFLBFMMOEODOrBuilderList() {
-        if (nFLBFMMOEODBuilder_ != null) {
-          return nFLBFMMOEODBuilder_.getMessageOrBuilderList();
+           getGDOGONCLICIOrBuilderList() {
+        if (gDOGONCLICIBuilder_ != null) {
+          return gDOGONCLICIBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(nFLBFMMOEOD_);
+          return java.util.Collections.unmodifiableList(gDOGONCLICI_);
         }
       }
       /**
-       * <code>repeated .GCGSkillPreviewCardInfo NFLBFMMOEOD = 1;</code>
+       * <code>repeated .GCGSkillPreviewCardInfo GDOGONCLICI = 13;</code>
        */
-      public emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo.Builder addNFLBFMMOEODBuilder() {
-        return getNFLBFMMOEODFieldBuilder().addBuilder(
+      public emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo.Builder addGDOGONCLICIBuilder() {
+        return getGDOGONCLICIFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .GCGSkillPreviewCardInfo NFLBFMMOEOD = 1;</code>
+       * <code>repeated .GCGSkillPreviewCardInfo GDOGONCLICI = 13;</code>
        */
-      public emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo.Builder addNFLBFMMOEODBuilder(
+      public emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo.Builder addGDOGONCLICIBuilder(
           int index) {
-        return getNFLBFMMOEODFieldBuilder().addBuilder(
+        return getGDOGONCLICIFieldBuilder().addBuilder(
             index, emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .GCGSkillPreviewCardInfo NFLBFMMOEOD = 1;</code>
+       * <code>repeated .GCGSkillPreviewCardInfo GDOGONCLICI = 13;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo.Builder> 
-           getNFLBFMMOEODBuilderList() {
-        return getNFLBFMMOEODFieldBuilder().getBuilderList();
+           getGDOGONCLICIBuilderList() {
+        return getGDOGONCLICIFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
           emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo, emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo.Builder, emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfoOrBuilder> 
-          getNFLBFMMOEODFieldBuilder() {
-        if (nFLBFMMOEODBuilder_ == null) {
-          nFLBFMMOEODBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+          getGDOGONCLICIFieldBuilder() {
+        if (gDOGONCLICIBuilder_ == null) {
+          gDOGONCLICIBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo, emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo.Builder, emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfoOrBuilder>(
-                  nFLBFMMOEOD_,
+                  gDOGONCLICI_,
                   ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
-          nFLBFMMOEOD_ = null;
+          gDOGONCLICI_ = null;
         }
-        return nFLBFMMOEODBuilder_;
+        return gDOGONCLICIBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -1203,8 +1203,8 @@ public final class GCGSkillPreviewExtraInfoOuterClass {
     java.lang.String[] descriptorData = {
       "\n\036GCGSkillPreviewExtraInfo.proto\032\035GCGSki" +
       "llPreviewCardInfo.proto\"x\n\030GCGSkillPrevi" +
-      "ewExtraInfo\022-\n\013HDCFLCDAIDJ\030\014 \003(\0132\030.GCGSk" +
-      "illPreviewCardInfo\022-\n\013NFLBFMMOEOD\030\001 \003(\0132" +
+      "ewExtraInfo\022-\n\013HJKOLBBIEKP\030\n \003(\0132\030.GCGSk" +
+      "illPreviewCardInfo\022-\n\013GDOGONCLICI\030\r \003(\0132" +
       "\030.GCGSkillPreviewCardInfoB\033\n\031emu.grasscu" +
       "tter.net.protob\006proto3"
     };
@@ -1218,7 +1218,7 @@ public final class GCGSkillPreviewExtraInfoOuterClass {
     internal_static_GCGSkillPreviewExtraInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GCGSkillPreviewExtraInfo_descriptor,
-        new java.lang.String[] { "HDCFLCDAIDJ", "NFLBFMMOEOD", });
+        new java.lang.String[] { "HJKOLBBIEKP", "GDOGONCLICI", });
     emu.grasscutter.net.proto.GCGSkillPreviewCardInfoOuterClass.getDescriptor();
   }
 

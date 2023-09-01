@@ -19,21 +19,21 @@ public final class ChangeWorldToSingleModeRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 15;</code>
+     * <code>int32 retcode = 10;</code>
      * @return The retcode.
      */
     int getRetcode();
 
     /**
-     * <code>uint32 quit_mp_valid_time = 5;</code>
+     * <code>uint32 quit_mp_valid_time = 8;</code>
      * @return The quitMpValidTime.
      */
     int getQuitMpValidTime();
   }
   /**
    * <pre>
-   * CmdId: 3390
-   * Obf: IBKIGABFLNK
+   * CmdId: 5912
+   * Obf: HMECHAPKFND
    * </pre>
    *
    * Protobuf type {@code ChangeWorldToSingleModeRsp}
@@ -80,12 +80,12 @@ public final class ChangeWorldToSingleModeRspOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
+            case 64: {
 
               quitMpValidTime_ = input.readUInt32();
               break;
             }
-            case 120: {
+            case 80: {
 
               retcode_ = input.readInt32();
               break;
@@ -122,10 +122,10 @@ public final class ChangeWorldToSingleModeRspOuterClass {
               emu.grasscutter.net.proto.ChangeWorldToSingleModeRspOuterClass.ChangeWorldToSingleModeRsp.class, emu.grasscutter.net.proto.ChangeWorldToSingleModeRspOuterClass.ChangeWorldToSingleModeRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 15;
+    public static final int RETCODE_FIELD_NUMBER = 10;
     private int retcode_;
     /**
-     * <code>int32 retcode = 15;</code>
+     * <code>int32 retcode = 10;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -133,10 +133,10 @@ public final class ChangeWorldToSingleModeRspOuterClass {
       return retcode_;
     }
 
-    public static final int QUIT_MP_VALID_TIME_FIELD_NUMBER = 5;
+    public static final int QUIT_MP_VALID_TIME_FIELD_NUMBER = 8;
     private int quitMpValidTime_;
     /**
-     * <code>uint32 quit_mp_valid_time = 5;</code>
+     * <code>uint32 quit_mp_valid_time = 8;</code>
      * @return The quitMpValidTime.
      */
     @java.lang.Override
@@ -159,10 +159,10 @@ public final class ChangeWorldToSingleModeRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (quitMpValidTime_ != 0) {
-        output.writeUInt32(5, quitMpValidTime_);
+        output.writeUInt32(8, quitMpValidTime_);
       }
       if (retcode_ != 0) {
-        output.writeInt32(15, retcode_);
+        output.writeInt32(10, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -175,11 +175,11 @@ public final class ChangeWorldToSingleModeRspOuterClass {
       size = 0;
       if (quitMpValidTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, quitMpValidTime_);
+          .computeUInt32Size(8, quitMpValidTime_);
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(15, retcode_);
+          .computeInt32Size(10, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -312,8 +312,8 @@ public final class ChangeWorldToSingleModeRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 3390
-     * Obf: IBKIGABFLNK
+     * CmdId: 5912
+     * Obf: HMECHAPKFND
      * </pre>
      *
      * Protobuf type {@code ChangeWorldToSingleModeRsp}
@@ -470,7 +470,7 @@ public final class ChangeWorldToSingleModeRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 15;</code>
+       * <code>int32 retcode = 10;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -478,7 +478,7 @@ public final class ChangeWorldToSingleModeRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 15;</code>
+       * <code>int32 retcode = 10;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -489,7 +489,7 @@ public final class ChangeWorldToSingleModeRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 15;</code>
+       * <code>int32 retcode = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -501,7 +501,7 @@ public final class ChangeWorldToSingleModeRspOuterClass {
 
       private int quitMpValidTime_ ;
       /**
-       * <code>uint32 quit_mp_valid_time = 5;</code>
+       * <code>uint32 quit_mp_valid_time = 8;</code>
        * @return The quitMpValidTime.
        */
       @java.lang.Override
@@ -509,7 +509,7 @@ public final class ChangeWorldToSingleModeRspOuterClass {
         return quitMpValidTime_;
       }
       /**
-       * <code>uint32 quit_mp_valid_time = 5;</code>
+       * <code>uint32 quit_mp_valid_time = 8;</code>
        * @param value The quitMpValidTime to set.
        * @return This builder for chaining.
        */
@@ -520,7 +520,7 @@ public final class ChangeWorldToSingleModeRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 quit_mp_valid_time = 5;</code>
+       * <code>uint32 quit_mp_valid_time = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearQuitMpValidTime() {
@@ -597,8 +597,8 @@ public final class ChangeWorldToSingleModeRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n ChangeWorldToSingleModeRsp.proto\"I\n\032Ch" +
-      "angeWorldToSingleModeRsp\022\017\n\007retcode\030\017 \001(" +
-      "\005\022\032\n\022quit_mp_valid_time\030\005 \001(\rB\033\n\031emu.gra" +
+      "angeWorldToSingleModeRsp\022\017\n\007retcode\030\n \001(" +
+      "\005\022\032\n\022quit_mp_valid_time\030\010 \001(\rB\033\n\031emu.gra" +
       "sscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

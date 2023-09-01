@@ -407,8 +407,8 @@
       "failure": "Failed, player not found.",
       "description": "Unban a player"
     },
-    "troubleshoot": {
-      "description": "Generate debugging information for troubleshooting."
+    "info": {
+      "description": "Provides the sender information about the server."
     }
   },
   "gacha": {

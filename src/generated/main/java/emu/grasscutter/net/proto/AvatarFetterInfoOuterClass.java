@@ -107,7 +107,7 @@ public final class AvatarFetterInfoOuterClass {
   }
   /**
    * <pre>
-   * Obf: NLBKEEANDPH
+   * Obf: BJIGILJGKAI
    * </pre>
    *
    * Protobuf type {@code AvatarFetterInfo}
@@ -694,7 +694,7 @@ public final class AvatarFetterInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: NLBKEEANDPH
+     * Obf: BJIGILJGKAI
      * </pre>
      *
      * Protobuf type {@code AvatarFetterInfo}

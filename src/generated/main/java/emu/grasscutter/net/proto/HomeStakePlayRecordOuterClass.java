@@ -19,38 +19,38 @@ public final class HomeStakePlayRecordOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .HomeGroupPlayerInfo engaged_player_info_list = 1;</code>
+     * <code>repeated .HomeGroupPlayerInfo engaged_player_info_list = 14;</code>
      */
     java.util.List<emu.grasscutter.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfo> 
         getEngagedPlayerInfoListList();
     /**
-     * <code>repeated .HomeGroupPlayerInfo engaged_player_info_list = 1;</code>
+     * <code>repeated .HomeGroupPlayerInfo engaged_player_info_list = 14;</code>
      */
     emu.grasscutter.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfo getEngagedPlayerInfoList(int index);
     /**
-     * <code>repeated .HomeGroupPlayerInfo engaged_player_info_list = 1;</code>
+     * <code>repeated .HomeGroupPlayerInfo engaged_player_info_list = 14;</code>
      */
     int getEngagedPlayerInfoListCount();
     /**
-     * <code>repeated .HomeGroupPlayerInfo engaged_player_info_list = 1;</code>
+     * <code>repeated .HomeGroupPlayerInfo engaged_player_info_list = 14;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfoOrBuilder> 
         getEngagedPlayerInfoListOrBuilderList();
     /**
-     * <code>repeated .HomeGroupPlayerInfo engaged_player_info_list = 1;</code>
+     * <code>repeated .HomeGroupPlayerInfo engaged_player_info_list = 14;</code>
      */
     emu.grasscutter.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfoOrBuilder getEngagedPlayerInfoListOrBuilder(
         int index);
 
     /**
-     * <code>uint32 timestamp = 2;</code>
+     * <code>uint32 timestamp = 15;</code>
      * @return The timestamp.
      */
     int getTimestamp();
   }
   /**
    * <pre>
-   * Obf: PAALPLOAHON
+   * Obf: GBGHKILPOKF
    * </pre>
    *
    * Protobuf type {@code HomeStakePlayRecord}
@@ -99,7 +99,7 @@ public final class HomeStakePlayRecordOuterClass {
             case 0:
               done = true;
               break;
-            case 10: {
+            case 114: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 engagedPlayerInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfo>();
                 mutable_bitField0_ |= 0x00000001;
@@ -108,7 +108,7 @@ public final class HomeStakePlayRecordOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfo.parser(), extensionRegistry));
               break;
             }
-            case 16: {
+            case 120: {
 
               timestamp_ = input.readUInt32();
               break;
@@ -148,17 +148,17 @@ public final class HomeStakePlayRecordOuterClass {
               emu.grasscutter.net.proto.HomeStakePlayRecordOuterClass.HomeStakePlayRecord.class, emu.grasscutter.net.proto.HomeStakePlayRecordOuterClass.HomeStakePlayRecord.Builder.class);
     }
 
-    public static final int ENGAGED_PLAYER_INFO_LIST_FIELD_NUMBER = 1;
+    public static final int ENGAGED_PLAYER_INFO_LIST_FIELD_NUMBER = 14;
     private java.util.List<emu.grasscutter.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfo> engagedPlayerInfoList_;
     /**
-     * <code>repeated .HomeGroupPlayerInfo engaged_player_info_list = 1;</code>
+     * <code>repeated .HomeGroupPlayerInfo engaged_player_info_list = 14;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfo> getEngagedPlayerInfoListList() {
       return engagedPlayerInfoList_;
     }
     /**
-     * <code>repeated .HomeGroupPlayerInfo engaged_player_info_list = 1;</code>
+     * <code>repeated .HomeGroupPlayerInfo engaged_player_info_list = 14;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfoOrBuilder> 
@@ -166,21 +166,21 @@ public final class HomeStakePlayRecordOuterClass {
       return engagedPlayerInfoList_;
     }
     /**
-     * <code>repeated .HomeGroupPlayerInfo engaged_player_info_list = 1;</code>
+     * <code>repeated .HomeGroupPlayerInfo engaged_player_info_list = 14;</code>
      */
     @java.lang.Override
     public int getEngagedPlayerInfoListCount() {
       return engagedPlayerInfoList_.size();
     }
     /**
-     * <code>repeated .HomeGroupPlayerInfo engaged_player_info_list = 1;</code>
+     * <code>repeated .HomeGroupPlayerInfo engaged_player_info_list = 14;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfo getEngagedPlayerInfoList(int index) {
       return engagedPlayerInfoList_.get(index);
     }
     /**
-     * <code>repeated .HomeGroupPlayerInfo engaged_player_info_list = 1;</code>
+     * <code>repeated .HomeGroupPlayerInfo engaged_player_info_list = 14;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfoOrBuilder getEngagedPlayerInfoListOrBuilder(
@@ -188,10 +188,10 @@ public final class HomeStakePlayRecordOuterClass {
       return engagedPlayerInfoList_.get(index);
     }
 
-    public static final int TIMESTAMP_FIELD_NUMBER = 2;
+    public static final int TIMESTAMP_FIELD_NUMBER = 15;
     private int timestamp_;
     /**
-     * <code>uint32 timestamp = 2;</code>
+     * <code>uint32 timestamp = 15;</code>
      * @return The timestamp.
      */
     @java.lang.Override
@@ -214,10 +214,10 @@ public final class HomeStakePlayRecordOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < engagedPlayerInfoList_.size(); i++) {
-        output.writeMessage(1, engagedPlayerInfoList_.get(i));
+        output.writeMessage(14, engagedPlayerInfoList_.get(i));
       }
       if (timestamp_ != 0) {
-        output.writeUInt32(2, timestamp_);
+        output.writeUInt32(15, timestamp_);
       }
       unknownFields.writeTo(output);
     }
@@ -230,11 +230,11 @@ public final class HomeStakePlayRecordOuterClass {
       size = 0;
       for (int i = 0; i < engagedPlayerInfoList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, engagedPlayerInfoList_.get(i));
+          .computeMessageSize(14, engagedPlayerInfoList_.get(i));
       }
       if (timestamp_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, timestamp_);
+          .computeUInt32Size(15, timestamp_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -369,7 +369,7 @@ public final class HomeStakePlayRecordOuterClass {
     }
     /**
      * <pre>
-     * Obf: PAALPLOAHON
+     * Obf: GBGHKILPOKF
      * </pre>
      *
      * Protobuf type {@code HomeStakePlayRecord}
@@ -575,7 +575,7 @@ public final class HomeStakePlayRecordOuterClass {
           emu.grasscutter.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfo, emu.grasscutter.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfo.Builder, emu.grasscutter.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfoOrBuilder> engagedPlayerInfoListBuilder_;
 
       /**
-       * <code>repeated .HomeGroupPlayerInfo engaged_player_info_list = 1;</code>
+       * <code>repeated .HomeGroupPlayerInfo engaged_player_info_list = 14;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfo> getEngagedPlayerInfoListList() {
         if (engagedPlayerInfoListBuilder_ == null) {
@@ -585,7 +585,7 @@ public final class HomeStakePlayRecordOuterClass {
         }
       }
       /**
-       * <code>repeated .HomeGroupPlayerInfo engaged_player_info_list = 1;</code>
+       * <code>repeated .HomeGroupPlayerInfo engaged_player_info_list = 14;</code>
        */
       public int getEngagedPlayerInfoListCount() {
         if (engagedPlayerInfoListBuilder_ == null) {
@@ -595,7 +595,7 @@ public final class HomeStakePlayRecordOuterClass {
         }
       }
       /**
-       * <code>repeated .HomeGroupPlayerInfo engaged_player_info_list = 1;</code>
+       * <code>repeated .HomeGroupPlayerInfo engaged_player_info_list = 14;</code>
        */
       public emu.grasscutter.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfo getEngagedPlayerInfoList(int index) {
         if (engagedPlayerInfoListBuilder_ == null) {
@@ -605,7 +605,7 @@ public final class HomeStakePlayRecordOuterClass {
         }
       }
       /**
-       * <code>repeated .HomeGroupPlayerInfo engaged_player_info_list = 1;</code>
+       * <code>repeated .HomeGroupPlayerInfo engaged_player_info_list = 14;</code>
        */
       public Builder setEngagedPlayerInfoList(
           int index, emu.grasscutter.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfo value) {
@@ -622,7 +622,7 @@ public final class HomeStakePlayRecordOuterClass {
         return this;
       }
       /**
-       * <code>repeated .HomeGroupPlayerInfo engaged_player_info_list = 1;</code>
+       * <code>repeated .HomeGroupPlayerInfo engaged_player_info_list = 14;</code>
        */
       public Builder setEngagedPlayerInfoList(
           int index, emu.grasscutter.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfo.Builder builderForValue) {
@@ -636,7 +636,7 @@ public final class HomeStakePlayRecordOuterClass {
         return this;
       }
       /**
-       * <code>repeated .HomeGroupPlayerInfo engaged_player_info_list = 1;</code>
+       * <code>repeated .HomeGroupPlayerInfo engaged_player_info_list = 14;</code>
        */
       public Builder addEngagedPlayerInfoList(emu.grasscutter.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfo value) {
         if (engagedPlayerInfoListBuilder_ == null) {
@@ -652,7 +652,7 @@ public final class HomeStakePlayRecordOuterClass {
         return this;
       }
       /**
-       * <code>repeated .HomeGroupPlayerInfo engaged_player_info_list = 1;</code>
+       * <code>repeated .HomeGroupPlayerInfo engaged_player_info_list = 14;</code>
        */
       public Builder addEngagedPlayerInfoList(
           int index, emu.grasscutter.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfo value) {
@@ -669,7 +669,7 @@ public final class HomeStakePlayRecordOuterClass {
         return this;
       }
       /**
-       * <code>repeated .HomeGroupPlayerInfo engaged_player_info_list = 1;</code>
+       * <code>repeated .HomeGroupPlayerInfo engaged_player_info_list = 14;</code>
        */
       public Builder addEngagedPlayerInfoList(
           emu.grasscutter.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfo.Builder builderForValue) {
@@ -683,7 +683,7 @@ public final class HomeStakePlayRecordOuterClass {
         return this;
       }
       /**
-       * <code>repeated .HomeGroupPlayerInfo engaged_player_info_list = 1;</code>
+       * <code>repeated .HomeGroupPlayerInfo engaged_player_info_list = 14;</code>
        */
       public Builder addEngagedPlayerInfoList(
           int index, emu.grasscutter.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfo.Builder builderForValue) {
@@ -697,7 +697,7 @@ public final class HomeStakePlayRecordOuterClass {
         return this;
       }
       /**
-       * <code>repeated .HomeGroupPlayerInfo engaged_player_info_list = 1;</code>
+       * <code>repeated .HomeGroupPlayerInfo engaged_player_info_list = 14;</code>
        */
       public Builder addAllEngagedPlayerInfoList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfo> values) {
@@ -712,7 +712,7 @@ public final class HomeStakePlayRecordOuterClass {
         return this;
       }
       /**
-       * <code>repeated .HomeGroupPlayerInfo engaged_player_info_list = 1;</code>
+       * <code>repeated .HomeGroupPlayerInfo engaged_player_info_list = 14;</code>
        */
       public Builder clearEngagedPlayerInfoList() {
         if (engagedPlayerInfoListBuilder_ == null) {
@@ -725,7 +725,7 @@ public final class HomeStakePlayRecordOuterClass {
         return this;
       }
       /**
-       * <code>repeated .HomeGroupPlayerInfo engaged_player_info_list = 1;</code>
+       * <code>repeated .HomeGroupPlayerInfo engaged_player_info_list = 14;</code>
        */
       public Builder removeEngagedPlayerInfoList(int index) {
         if (engagedPlayerInfoListBuilder_ == null) {
@@ -738,14 +738,14 @@ public final class HomeStakePlayRecordOuterClass {
         return this;
       }
       /**
-       * <code>repeated .HomeGroupPlayerInfo engaged_player_info_list = 1;</code>
+       * <code>repeated .HomeGroupPlayerInfo engaged_player_info_list = 14;</code>
        */
       public emu.grasscutter.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfo.Builder getEngagedPlayerInfoListBuilder(
           int index) {
         return getEngagedPlayerInfoListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .HomeGroupPlayerInfo engaged_player_info_list = 1;</code>
+       * <code>repeated .HomeGroupPlayerInfo engaged_player_info_list = 14;</code>
        */
       public emu.grasscutter.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfoOrBuilder getEngagedPlayerInfoListOrBuilder(
           int index) {
@@ -755,7 +755,7 @@ public final class HomeStakePlayRecordOuterClass {
         }
       }
       /**
-       * <code>repeated .HomeGroupPlayerInfo engaged_player_info_list = 1;</code>
+       * <code>repeated .HomeGroupPlayerInfo engaged_player_info_list = 14;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfoOrBuilder> 
            getEngagedPlayerInfoListOrBuilderList() {
@@ -766,14 +766,14 @@ public final class HomeStakePlayRecordOuterClass {
         }
       }
       /**
-       * <code>repeated .HomeGroupPlayerInfo engaged_player_info_list = 1;</code>
+       * <code>repeated .HomeGroupPlayerInfo engaged_player_info_list = 14;</code>
        */
       public emu.grasscutter.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfo.Builder addEngagedPlayerInfoListBuilder() {
         return getEngagedPlayerInfoListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .HomeGroupPlayerInfo engaged_player_info_list = 1;</code>
+       * <code>repeated .HomeGroupPlayerInfo engaged_player_info_list = 14;</code>
        */
       public emu.grasscutter.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfo.Builder addEngagedPlayerInfoListBuilder(
           int index) {
@@ -781,7 +781,7 @@ public final class HomeStakePlayRecordOuterClass {
             index, emu.grasscutter.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .HomeGroupPlayerInfo engaged_player_info_list = 1;</code>
+       * <code>repeated .HomeGroupPlayerInfo engaged_player_info_list = 14;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfo.Builder> 
            getEngagedPlayerInfoListBuilderList() {
@@ -804,7 +804,7 @@ public final class HomeStakePlayRecordOuterClass {
 
       private int timestamp_ ;
       /**
-       * <code>uint32 timestamp = 2;</code>
+       * <code>uint32 timestamp = 15;</code>
        * @return The timestamp.
        */
       @java.lang.Override
@@ -812,7 +812,7 @@ public final class HomeStakePlayRecordOuterClass {
         return timestamp_;
       }
       /**
-       * <code>uint32 timestamp = 2;</code>
+       * <code>uint32 timestamp = 15;</code>
        * @param value The timestamp to set.
        * @return This builder for chaining.
        */
@@ -823,7 +823,7 @@ public final class HomeStakePlayRecordOuterClass {
         return this;
       }
       /**
-       * <code>uint32 timestamp = 2;</code>
+       * <code>uint32 timestamp = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearTimestamp() {
@@ -901,8 +901,8 @@ public final class HomeStakePlayRecordOuterClass {
     java.lang.String[] descriptorData = {
       "\n\031HomeStakePlayRecord.proto\032\031HomeGroupPl" +
       "ayerInfo.proto\"`\n\023HomeStakePlayRecord\0226\n" +
-      "\030engaged_player_info_list\030\001 \003(\0132\024.HomeGr" +
-      "oupPlayerInfo\022\021\n\ttimestamp\030\002 \001(\rB\033\n\031emu." +
+      "\030engaged_player_info_list\030\016 \003(\0132\024.HomeGr" +
+      "oupPlayerInfo\022\021\n\ttimestamp\030\017 \001(\rB\033\n\031emu." +
       "grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

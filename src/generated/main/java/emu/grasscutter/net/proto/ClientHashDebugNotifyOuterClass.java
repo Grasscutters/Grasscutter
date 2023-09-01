@@ -19,15 +19,15 @@ public final class ClientHashDebugNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 job_id = 9;</code>
+     * <code>uint32 job_id = 6;</code>
      * @return The jobId.
      */
     int getJobId();
   }
   /**
    * <pre>
-   * CmdId: 3061
-   * Obf: NPBHGFHPGBP
+   * CmdId: 7727
+   * Obf: MNCGJJDIJBL
    * </pre>
    *
    * Protobuf type {@code ClientHashDebugNotify}
@@ -74,7 +74,7 @@ public final class ClientHashDebugNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 72: {
+            case 48: {
 
               jobId_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class ClientHashDebugNotifyOuterClass {
               emu.grasscutter.net.proto.ClientHashDebugNotifyOuterClass.ClientHashDebugNotify.class, emu.grasscutter.net.proto.ClientHashDebugNotifyOuterClass.ClientHashDebugNotify.Builder.class);
     }
 
-    public static final int JOB_ID_FIELD_NUMBER = 9;
+    public static final int JOB_ID_FIELD_NUMBER = 6;
     private int jobId_;
     /**
-     * <code>uint32 job_id = 9;</code>
+     * <code>uint32 job_id = 6;</code>
      * @return The jobId.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class ClientHashDebugNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (jobId_ != 0) {
-        output.writeUInt32(9, jobId_);
+        output.writeUInt32(6, jobId_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class ClientHashDebugNotifyOuterClass {
       size = 0;
       if (jobId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, jobId_);
+          .computeUInt32Size(6, jobId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class ClientHashDebugNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 3061
-     * Obf: NPBHGFHPGBP
+     * CmdId: 7727
+     * Obf: MNCGJJDIJBL
      * </pre>
      *
      * Protobuf type {@code ClientHashDebugNotify}
@@ -431,7 +431,7 @@ public final class ClientHashDebugNotifyOuterClass {
 
       private int jobId_ ;
       /**
-       * <code>uint32 job_id = 9;</code>
+       * <code>uint32 job_id = 6;</code>
        * @return The jobId.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class ClientHashDebugNotifyOuterClass {
         return jobId_;
       }
       /**
-       * <code>uint32 job_id = 9;</code>
+       * <code>uint32 job_id = 6;</code>
        * @param value The jobId to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class ClientHashDebugNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 job_id = 9;</code>
+       * <code>uint32 job_id = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearJobId() {
@@ -527,7 +527,7 @@ public final class ClientHashDebugNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\033ClientHashDebugNotify.proto\"\'\n\025ClientH" +
-      "ashDebugNotify\022\016\n\006job_id\030\t \001(\rB\033\n\031emu.gr" +
+      "ashDebugNotify\022\016\n\006job_id\030\006 \001(\rB\033\n\031emu.gr" +
       "asscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

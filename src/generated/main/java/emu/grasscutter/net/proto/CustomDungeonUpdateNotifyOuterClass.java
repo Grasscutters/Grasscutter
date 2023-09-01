@@ -19,24 +19,24 @@ public final class CustomDungeonUpdateNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.CustomDungeonBrief dungeon_brief = 14;</code>
+     * <code>.CustomDungeonBrief dungeon_brief = 6;</code>
      * @return Whether the dungeonBrief field is set.
      */
     boolean hasDungeonBrief();
     /**
-     * <code>.CustomDungeonBrief dungeon_brief = 14;</code>
+     * <code>.CustomDungeonBrief dungeon_brief = 6;</code>
      * @return The dungeonBrief.
      */
     emu.grasscutter.net.proto.CustomDungeonBriefOuterClass.CustomDungeonBrief getDungeonBrief();
     /**
-     * <code>.CustomDungeonBrief dungeon_brief = 14;</code>
+     * <code>.CustomDungeonBrief dungeon_brief = 6;</code>
      */
     emu.grasscutter.net.proto.CustomDungeonBriefOuterClass.CustomDungeonBriefOrBuilder getDungeonBriefOrBuilder();
   }
   /**
    * <pre>
-   * CmdId: 6213
-   * Obf: BCEOFBOGIEI
+   * CmdId: 8476
+   * Obf: CPNIIHAEIPL
    * </pre>
    *
    * Protobuf type {@code CustomDungeonUpdateNotify}
@@ -83,7 +83,7 @@ public final class CustomDungeonUpdateNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 114: {
+            case 50: {
               emu.grasscutter.net.proto.CustomDungeonBriefOuterClass.CustomDungeonBrief.Builder subBuilder = null;
               if (dungeonBrief_ != null) {
                 subBuilder = dungeonBrief_.toBuilder();
@@ -128,10 +128,10 @@ public final class CustomDungeonUpdateNotifyOuterClass {
               emu.grasscutter.net.proto.CustomDungeonUpdateNotifyOuterClass.CustomDungeonUpdateNotify.class, emu.grasscutter.net.proto.CustomDungeonUpdateNotifyOuterClass.CustomDungeonUpdateNotify.Builder.class);
     }
 
-    public static final int DUNGEON_BRIEF_FIELD_NUMBER = 14;
+    public static final int DUNGEON_BRIEF_FIELD_NUMBER = 6;
     private emu.grasscutter.net.proto.CustomDungeonBriefOuterClass.CustomDungeonBrief dungeonBrief_;
     /**
-     * <code>.CustomDungeonBrief dungeon_brief = 14;</code>
+     * <code>.CustomDungeonBrief dungeon_brief = 6;</code>
      * @return Whether the dungeonBrief field is set.
      */
     @java.lang.Override
@@ -139,7 +139,7 @@ public final class CustomDungeonUpdateNotifyOuterClass {
       return dungeonBrief_ != null;
     }
     /**
-     * <code>.CustomDungeonBrief dungeon_brief = 14;</code>
+     * <code>.CustomDungeonBrief dungeon_brief = 6;</code>
      * @return The dungeonBrief.
      */
     @java.lang.Override
@@ -147,7 +147,7 @@ public final class CustomDungeonUpdateNotifyOuterClass {
       return dungeonBrief_ == null ? emu.grasscutter.net.proto.CustomDungeonBriefOuterClass.CustomDungeonBrief.getDefaultInstance() : dungeonBrief_;
     }
     /**
-     * <code>.CustomDungeonBrief dungeon_brief = 14;</code>
+     * <code>.CustomDungeonBrief dungeon_brief = 6;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.CustomDungeonBriefOuterClass.CustomDungeonBriefOrBuilder getDungeonBriefOrBuilder() {
@@ -169,7 +169,7 @@ public final class CustomDungeonUpdateNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (dungeonBrief_ != null) {
-        output.writeMessage(14, getDungeonBrief());
+        output.writeMessage(6, getDungeonBrief());
       }
       unknownFields.writeTo(output);
     }
@@ -182,7 +182,7 @@ public final class CustomDungeonUpdateNotifyOuterClass {
       size = 0;
       if (dungeonBrief_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(14, getDungeonBrief());
+          .computeMessageSize(6, getDungeonBrief());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -316,8 +316,8 @@ public final class CustomDungeonUpdateNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 6213
-     * Obf: BCEOFBOGIEI
+     * CmdId: 8476
+     * Obf: CPNIIHAEIPL
      * </pre>
      *
      * Protobuf type {@code CustomDungeonUpdateNotify}
@@ -478,14 +478,14 @@ public final class CustomDungeonUpdateNotifyOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.CustomDungeonBriefOuterClass.CustomDungeonBrief, emu.grasscutter.net.proto.CustomDungeonBriefOuterClass.CustomDungeonBrief.Builder, emu.grasscutter.net.proto.CustomDungeonBriefOuterClass.CustomDungeonBriefOrBuilder> dungeonBriefBuilder_;
       /**
-       * <code>.CustomDungeonBrief dungeon_brief = 14;</code>
+       * <code>.CustomDungeonBrief dungeon_brief = 6;</code>
        * @return Whether the dungeonBrief field is set.
        */
       public boolean hasDungeonBrief() {
         return dungeonBriefBuilder_ != null || dungeonBrief_ != null;
       }
       /**
-       * <code>.CustomDungeonBrief dungeon_brief = 14;</code>
+       * <code>.CustomDungeonBrief dungeon_brief = 6;</code>
        * @return The dungeonBrief.
        */
       public emu.grasscutter.net.proto.CustomDungeonBriefOuterClass.CustomDungeonBrief getDungeonBrief() {
@@ -496,7 +496,7 @@ public final class CustomDungeonUpdateNotifyOuterClass {
         }
       }
       /**
-       * <code>.CustomDungeonBrief dungeon_brief = 14;</code>
+       * <code>.CustomDungeonBrief dungeon_brief = 6;</code>
        */
       public Builder setDungeonBrief(emu.grasscutter.net.proto.CustomDungeonBriefOuterClass.CustomDungeonBrief value) {
         if (dungeonBriefBuilder_ == null) {
@@ -512,7 +512,7 @@ public final class CustomDungeonUpdateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.CustomDungeonBrief dungeon_brief = 14;</code>
+       * <code>.CustomDungeonBrief dungeon_brief = 6;</code>
        */
       public Builder setDungeonBrief(
           emu.grasscutter.net.proto.CustomDungeonBriefOuterClass.CustomDungeonBrief.Builder builderForValue) {
@@ -526,7 +526,7 @@ public final class CustomDungeonUpdateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.CustomDungeonBrief dungeon_brief = 14;</code>
+       * <code>.CustomDungeonBrief dungeon_brief = 6;</code>
        */
       public Builder mergeDungeonBrief(emu.grasscutter.net.proto.CustomDungeonBriefOuterClass.CustomDungeonBrief value) {
         if (dungeonBriefBuilder_ == null) {
@@ -544,7 +544,7 @@ public final class CustomDungeonUpdateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.CustomDungeonBrief dungeon_brief = 14;</code>
+       * <code>.CustomDungeonBrief dungeon_brief = 6;</code>
        */
       public Builder clearDungeonBrief() {
         if (dungeonBriefBuilder_ == null) {
@@ -558,7 +558,7 @@ public final class CustomDungeonUpdateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.CustomDungeonBrief dungeon_brief = 14;</code>
+       * <code>.CustomDungeonBrief dungeon_brief = 6;</code>
        */
       public emu.grasscutter.net.proto.CustomDungeonBriefOuterClass.CustomDungeonBrief.Builder getDungeonBriefBuilder() {
         
@@ -566,7 +566,7 @@ public final class CustomDungeonUpdateNotifyOuterClass {
         return getDungeonBriefFieldBuilder().getBuilder();
       }
       /**
-       * <code>.CustomDungeonBrief dungeon_brief = 14;</code>
+       * <code>.CustomDungeonBrief dungeon_brief = 6;</code>
        */
       public emu.grasscutter.net.proto.CustomDungeonBriefOuterClass.CustomDungeonBriefOrBuilder getDungeonBriefOrBuilder() {
         if (dungeonBriefBuilder_ != null) {
@@ -577,7 +577,7 @@ public final class CustomDungeonUpdateNotifyOuterClass {
         }
       }
       /**
-       * <code>.CustomDungeonBrief dungeon_brief = 14;</code>
+       * <code>.CustomDungeonBrief dungeon_brief = 6;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.CustomDungeonBriefOuterClass.CustomDungeonBrief, emu.grasscutter.net.proto.CustomDungeonBriefOuterClass.CustomDungeonBrief.Builder, emu.grasscutter.net.proto.CustomDungeonBriefOuterClass.CustomDungeonBriefOrBuilder> 
@@ -661,7 +661,7 @@ public final class CustomDungeonUpdateNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\037CustomDungeonUpdateNotify.proto\032\030Custo" +
       "mDungeonBrief.proto\"G\n\031CustomDungeonUpda" +
-      "teNotify\022*\n\rdungeon_brief\030\016 \001(\0132\023.Custom" +
+      "teNotify\022*\n\rdungeon_brief\030\006 \001(\0132\023.Custom" +
       "DungeonBriefB\033\n\031emu.grasscutter.net.prot" +
       "ob\006proto3"
     };

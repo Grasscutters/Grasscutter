@@ -19,38 +19,38 @@ public final class TryEnterHomeRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 target_uid = 11;</code>
-     * @return The targetUid.
-     */
-    int getTargetUid();
-
-    /**
-     * <code>repeated uint32 param_list = 6;</code>
+     * <code>repeated uint32 param_list = 8;</code>
      * @return A list containing the paramList.
      */
     java.util.List<java.lang.Integer> getParamListList();
     /**
-     * <code>repeated uint32 param_list = 6;</code>
+     * <code>repeated uint32 param_list = 8;</code>
      * @return The count of paramList.
      */
     int getParamListCount();
     /**
-     * <code>repeated uint32 param_list = 6;</code>
+     * <code>repeated uint32 param_list = 8;</code>
      * @param index The index of the element to return.
      * @return The paramList at the given index.
      */
     int getParamList(int index);
 
     /**
-     * <code>int32 retcode = 5;</code>
+     * <code>int32 retcode = 13;</code>
      * @return The retcode.
      */
     int getRetcode();
+
+    /**
+     * <code>uint32 target_uid = 6;</code>
+     * @return The targetUid.
+     */
+    int getTargetUid();
   }
   /**
    * <pre>
-   * CmdId: 4762
-   * Obf: KOMBHGLOIOI
+   * CmdId: 351
+   * Obf: NDAPMOBJOBI
    * </pre>
    *
    * Protobuf type {@code TryEnterHomeRsp}
@@ -99,12 +99,12 @@ public final class TryEnterHomeRspOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
+            case 48: {
 
-              retcode_ = input.readInt32();
+              targetUid_ = input.readUInt32();
               break;
             }
-            case 48: {
+            case 64: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 paramList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -112,7 +112,7 @@ public final class TryEnterHomeRspOuterClass {
               paramList_.addInt(input.readUInt32());
               break;
             }
-            case 50: {
+            case 66: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -125,9 +125,9 @@ public final class TryEnterHomeRspOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 88: {
+            case 104: {
 
-              targetUid_ = input.readUInt32();
+              retcode_ = input.readInt32();
               break;
             }
             default: {
@@ -165,21 +165,10 @@ public final class TryEnterHomeRspOuterClass {
               emu.grasscutter.net.proto.TryEnterHomeRspOuterClass.TryEnterHomeRsp.class, emu.grasscutter.net.proto.TryEnterHomeRspOuterClass.TryEnterHomeRsp.Builder.class);
     }
 
-    public static final int TARGET_UID_FIELD_NUMBER = 11;
-    private int targetUid_;
-    /**
-     * <code>uint32 target_uid = 11;</code>
-     * @return The targetUid.
-     */
-    @java.lang.Override
-    public int getTargetUid() {
-      return targetUid_;
-    }
-
-    public static final int PARAM_LIST_FIELD_NUMBER = 6;
+    public static final int PARAM_LIST_FIELD_NUMBER = 8;
     private com.google.protobuf.Internal.IntList paramList_;
     /**
-     * <code>repeated uint32 param_list = 6;</code>
+     * <code>repeated uint32 param_list = 8;</code>
      * @return A list containing the paramList.
      */
     @java.lang.Override
@@ -188,14 +177,14 @@ public final class TryEnterHomeRspOuterClass {
       return paramList_;
     }
     /**
-     * <code>repeated uint32 param_list = 6;</code>
+     * <code>repeated uint32 param_list = 8;</code>
      * @return The count of paramList.
      */
     public int getParamListCount() {
       return paramList_.size();
     }
     /**
-     * <code>repeated uint32 param_list = 6;</code>
+     * <code>repeated uint32 param_list = 8;</code>
      * @param index The index of the element to return.
      * @return The paramList at the given index.
      */
@@ -204,15 +193,26 @@ public final class TryEnterHomeRspOuterClass {
     }
     private int paramListMemoizedSerializedSize = -1;
 
-    public static final int RETCODE_FIELD_NUMBER = 5;
+    public static final int RETCODE_FIELD_NUMBER = 13;
     private int retcode_;
     /**
-     * <code>int32 retcode = 5;</code>
+     * <code>int32 retcode = 13;</code>
      * @return The retcode.
      */
     @java.lang.Override
     public int getRetcode() {
       return retcode_;
+    }
+
+    public static final int TARGET_UID_FIELD_NUMBER = 6;
+    private int targetUid_;
+    /**
+     * <code>uint32 target_uid = 6;</code>
+     * @return The targetUid.
+     */
+    @java.lang.Override
+    public int getTargetUid() {
+      return targetUid_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -230,18 +230,18 @@ public final class TryEnterHomeRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (retcode_ != 0) {
-        output.writeInt32(5, retcode_);
+      if (targetUid_ != 0) {
+        output.writeUInt32(6, targetUid_);
       }
       if (getParamListList().size() > 0) {
-        output.writeUInt32NoTag(50);
+        output.writeUInt32NoTag(66);
         output.writeUInt32NoTag(paramListMemoizedSerializedSize);
       }
       for (int i = 0; i < paramList_.size(); i++) {
         output.writeUInt32NoTag(paramList_.getInt(i));
       }
-      if (targetUid_ != 0) {
-        output.writeUInt32(11, targetUid_);
+      if (retcode_ != 0) {
+        output.writeInt32(13, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -252,9 +252,9 @@ public final class TryEnterHomeRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (retcode_ != 0) {
+      if (targetUid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(5, retcode_);
+          .computeUInt32Size(6, targetUid_);
       }
       {
         int dataSize = 0;
@@ -270,9 +270,9 @@ public final class TryEnterHomeRspOuterClass {
         }
         paramListMemoizedSerializedSize = dataSize;
       }
-      if (targetUid_ != 0) {
+      if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, targetUid_);
+          .computeInt32Size(13, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -289,12 +289,12 @@ public final class TryEnterHomeRspOuterClass {
       }
       emu.grasscutter.net.proto.TryEnterHomeRspOuterClass.TryEnterHomeRsp other = (emu.grasscutter.net.proto.TryEnterHomeRspOuterClass.TryEnterHomeRsp) obj;
 
-      if (getTargetUid()
-          != other.getTargetUid()) return false;
       if (!getParamListList()
           .equals(other.getParamListList())) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
+      if (getTargetUid()
+          != other.getTargetUid()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -306,14 +306,14 @@ public final class TryEnterHomeRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + TARGET_UID_FIELD_NUMBER;
-      hash = (53 * hash) + getTargetUid();
       if (getParamListCount() > 0) {
         hash = (37 * hash) + PARAM_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getParamListList().hashCode();
       }
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
+      hash = (37 * hash) + TARGET_UID_FIELD_NUMBER;
+      hash = (53 * hash) + getTargetUid();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -411,8 +411,8 @@ public final class TryEnterHomeRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4762
-     * Obf: KOMBHGLOIOI
+     * CmdId: 351
+     * Obf: NDAPMOBJOBI
      * </pre>
      *
      * Protobuf type {@code TryEnterHomeRsp}
@@ -452,11 +452,11 @@ public final class TryEnterHomeRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        targetUid_ = 0;
-
         paramList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
         retcode_ = 0;
+
+        targetUid_ = 0;
 
         return this;
       }
@@ -485,13 +485,13 @@ public final class TryEnterHomeRspOuterClass {
       public emu.grasscutter.net.proto.TryEnterHomeRspOuterClass.TryEnterHomeRsp buildPartial() {
         emu.grasscutter.net.proto.TryEnterHomeRspOuterClass.TryEnterHomeRsp result = new emu.grasscutter.net.proto.TryEnterHomeRspOuterClass.TryEnterHomeRsp(this);
         int from_bitField0_ = bitField0_;
-        result.targetUid_ = targetUid_;
         if (((bitField0_ & 0x00000001) != 0)) {
           paramList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.paramList_ = paramList_;
         result.retcode_ = retcode_;
+        result.targetUid_ = targetUid_;
         onBuilt();
         return result;
       }
@@ -540,9 +540,6 @@ public final class TryEnterHomeRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.TryEnterHomeRspOuterClass.TryEnterHomeRsp other) {
         if (other == emu.grasscutter.net.proto.TryEnterHomeRspOuterClass.TryEnterHomeRsp.getDefaultInstance()) return this;
-        if (other.getTargetUid() != 0) {
-          setTargetUid(other.getTargetUid());
-        }
         if (!other.paramList_.isEmpty()) {
           if (paramList_.isEmpty()) {
             paramList_ = other.paramList_;
@@ -555,6 +552,9 @@ public final class TryEnterHomeRspOuterClass {
         }
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
+        }
+        if (other.getTargetUid() != 0) {
+          setTargetUid(other.getTargetUid());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -586,37 +586,6 @@ public final class TryEnterHomeRspOuterClass {
       }
       private int bitField0_;
 
-      private int targetUid_ ;
-      /**
-       * <code>uint32 target_uid = 11;</code>
-       * @return The targetUid.
-       */
-      @java.lang.Override
-      public int getTargetUid() {
-        return targetUid_;
-      }
-      /**
-       * <code>uint32 target_uid = 11;</code>
-       * @param value The targetUid to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTargetUid(int value) {
-        
-        targetUid_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 target_uid = 11;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTargetUid() {
-        
-        targetUid_ = 0;
-        onChanged();
-        return this;
-      }
-
       private com.google.protobuf.Internal.IntList paramList_ = emptyIntList();
       private void ensureParamListIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
@@ -625,7 +594,7 @@ public final class TryEnterHomeRspOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 param_list = 6;</code>
+       * <code>repeated uint32 param_list = 8;</code>
        * @return A list containing the paramList.
        */
       public java.util.List<java.lang.Integer>
@@ -634,14 +603,14 @@ public final class TryEnterHomeRspOuterClass {
                  java.util.Collections.unmodifiableList(paramList_) : paramList_;
       }
       /**
-       * <code>repeated uint32 param_list = 6;</code>
+       * <code>repeated uint32 param_list = 8;</code>
        * @return The count of paramList.
        */
       public int getParamListCount() {
         return paramList_.size();
       }
       /**
-       * <code>repeated uint32 param_list = 6;</code>
+       * <code>repeated uint32 param_list = 8;</code>
        * @param index The index of the element to return.
        * @return The paramList at the given index.
        */
@@ -649,7 +618,7 @@ public final class TryEnterHomeRspOuterClass {
         return paramList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 param_list = 6;</code>
+       * <code>repeated uint32 param_list = 8;</code>
        * @param index The index to set the value at.
        * @param value The paramList to set.
        * @return This builder for chaining.
@@ -662,7 +631,7 @@ public final class TryEnterHomeRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 param_list = 6;</code>
+       * <code>repeated uint32 param_list = 8;</code>
        * @param value The paramList to add.
        * @return This builder for chaining.
        */
@@ -673,7 +642,7 @@ public final class TryEnterHomeRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 param_list = 6;</code>
+       * <code>repeated uint32 param_list = 8;</code>
        * @param values The paramList to add.
        * @return This builder for chaining.
        */
@@ -686,7 +655,7 @@ public final class TryEnterHomeRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 param_list = 6;</code>
+       * <code>repeated uint32 param_list = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearParamList() {
@@ -698,7 +667,7 @@ public final class TryEnterHomeRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 5;</code>
+       * <code>int32 retcode = 13;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -706,7 +675,7 @@ public final class TryEnterHomeRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 5;</code>
+       * <code>int32 retcode = 13;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -717,12 +686,43 @@ public final class TryEnterHomeRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 5;</code>
+       * <code>int32 retcode = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
         
         retcode_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int targetUid_ ;
+      /**
+       * <code>uint32 target_uid = 6;</code>
+       * @return The targetUid.
+       */
+      @java.lang.Override
+      public int getTargetUid() {
+        return targetUid_;
+      }
+      /**
+       * <code>uint32 target_uid = 6;</code>
+       * @param value The targetUid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTargetUid(int value) {
+        
+        targetUid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 target_uid = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTargetUid() {
+        
+        targetUid_ = 0;
         onChanged();
         return this;
       }
@@ -794,8 +794,8 @@ public final class TryEnterHomeRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\025TryEnterHomeRsp.proto\"J\n\017TryEnterHomeR" +
-      "sp\022\022\n\ntarget_uid\030\013 \001(\r\022\022\n\nparam_list\030\006 \003" +
-      "(\r\022\017\n\007retcode\030\005 \001(\005B\033\n\031emu.grasscutter.n" +
+      "sp\022\022\n\nparam_list\030\010 \003(\r\022\017\n\007retcode\030\r \001(\005\022" +
+      "\022\n\ntarget_uid\030\006 \001(\rB\033\n\031emu.grasscutter.n" +
       "et.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -807,7 +807,7 @@ public final class TryEnterHomeRspOuterClass {
     internal_static_TryEnterHomeRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_TryEnterHomeRsp_descriptor,
-        new java.lang.String[] { "TargetUid", "ParamList", "Retcode", });
+        new java.lang.String[] { "ParamList", "Retcode", "TargetUid", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -26,8 +26,8 @@ public final class GCGApplyInviteBattleReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 7769
-   * Obf: GEGPHCIODBB
+   * CmdId: 871
+   * Obf: EJIKDIPBAPO
    * </pre>
    *
    * Protobuf type {@code GCGApplyInviteBattleReq}
@@ -280,8 +280,8 @@ public final class GCGApplyInviteBattleReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 7769
-     * Obf: GEGPHCIODBB
+     * CmdId: 871
+     * Obf: EJIKDIPBAPO
      * </pre>
      *
      * Protobuf type {@code GCGApplyInviteBattleReq}

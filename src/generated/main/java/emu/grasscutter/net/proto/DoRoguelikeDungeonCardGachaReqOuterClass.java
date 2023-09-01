@@ -25,15 +25,15 @@ public final class DoRoguelikeDungeonCardGachaReqOuterClass {
     int getDungeonId();
 
     /**
-     * <code>uint32 cell_id = 9;</code>
+     * <code>uint32 cell_id = 3;</code>
      * @return The cellId.
      */
     int getCellId();
   }
   /**
    * <pre>
-   * CmdId: 8737
-   * Obf: OMAIPODJCNE
+   * CmdId: 21709
+   * Obf: BCNAOIAJONN
    * </pre>
    *
    * Protobuf type {@code DoRoguelikeDungeonCardGachaReq}
@@ -80,7 +80,7 @@ public final class DoRoguelikeDungeonCardGachaReqOuterClass {
             case 0:
               done = true;
               break;
-            case 72: {
+            case 24: {
 
               cellId_ = input.readUInt32();
               break;
@@ -133,10 +133,10 @@ public final class DoRoguelikeDungeonCardGachaReqOuterClass {
       return dungeonId_;
     }
 
-    public static final int CELL_ID_FIELD_NUMBER = 9;
+    public static final int CELL_ID_FIELD_NUMBER = 3;
     private int cellId_;
     /**
-     * <code>uint32 cell_id = 9;</code>
+     * <code>uint32 cell_id = 3;</code>
      * @return The cellId.
      */
     @java.lang.Override
@@ -159,7 +159,7 @@ public final class DoRoguelikeDungeonCardGachaReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (cellId_ != 0) {
-        output.writeUInt32(9, cellId_);
+        output.writeUInt32(3, cellId_);
       }
       if (dungeonId_ != 0) {
         output.writeUInt32(14, dungeonId_);
@@ -175,7 +175,7 @@ public final class DoRoguelikeDungeonCardGachaReqOuterClass {
       size = 0;
       if (cellId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, cellId_);
+          .computeUInt32Size(3, cellId_);
       }
       if (dungeonId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -312,8 +312,8 @@ public final class DoRoguelikeDungeonCardGachaReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8737
-     * Obf: OMAIPODJCNE
+     * CmdId: 21709
+     * Obf: BCNAOIAJONN
      * </pre>
      *
      * Protobuf type {@code DoRoguelikeDungeonCardGachaReq}
@@ -501,7 +501,7 @@ public final class DoRoguelikeDungeonCardGachaReqOuterClass {
 
       private int cellId_ ;
       /**
-       * <code>uint32 cell_id = 9;</code>
+       * <code>uint32 cell_id = 3;</code>
        * @return The cellId.
        */
       @java.lang.Override
@@ -509,7 +509,7 @@ public final class DoRoguelikeDungeonCardGachaReqOuterClass {
         return cellId_;
       }
       /**
-       * <code>uint32 cell_id = 9;</code>
+       * <code>uint32 cell_id = 3;</code>
        * @param value The cellId to set.
        * @return This builder for chaining.
        */
@@ -520,7 +520,7 @@ public final class DoRoguelikeDungeonCardGachaReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 cell_id = 9;</code>
+       * <code>uint32 cell_id = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearCellId() {
@@ -598,7 +598,7 @@ public final class DoRoguelikeDungeonCardGachaReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n$DoRoguelikeDungeonCardGachaReq.proto\"E" +
       "\n\036DoRoguelikeDungeonCardGachaReq\022\022\n\ndung" +
-      "eon_id\030\016 \001(\r\022\017\n\007cell_id\030\t \001(\rB\033\n\031emu.gra" +
+      "eon_id\030\016 \001(\r\022\017\n\007cell_id\030\003 \001(\rB\033\n\031emu.gra" +
       "sscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

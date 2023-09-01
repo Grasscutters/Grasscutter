@@ -4,9 +4,9 @@ import emu.grasscutter.data.GameData;
 import emu.grasscutter.game.dungeons.challenge.WorldChallenge;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.scripts.data.SceneGroup;
-import java.util.ArrayList;
-import java.util.List;
 import lombok.val;
+
+import java.util.*;
 
 public abstract class ChallengeFactory {
     private static final List<ChallengeFactoryHandler> challengeFactoryHandlers = new ArrayList<>();

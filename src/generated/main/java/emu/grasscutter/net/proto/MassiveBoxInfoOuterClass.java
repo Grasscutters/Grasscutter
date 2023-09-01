@@ -107,7 +107,7 @@ public final class MassiveBoxInfoOuterClass {
   }
   /**
    * <pre>
-   * Obf: ECODOBCMKIG
+   * Obf: GJEOHIBBKDA
    * </pre>
    *
    * Protobuf type {@code MassiveBoxInfo}
@@ -661,7 +661,7 @@ public final class MassiveBoxInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: ECODOBCMKIG
+     * Obf: GJEOHIBBKDA
      * </pre>
      *
      * Protobuf type {@code MassiveBoxInfo}

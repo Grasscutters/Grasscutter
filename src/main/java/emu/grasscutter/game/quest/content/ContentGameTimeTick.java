@@ -1,11 +1,10 @@
 package emu.grasscutter.game.quest.content;
 
-import static emu.grasscutter.game.quest.enums.QuestContent.QUEST_CONTENT_GAME_TIME_TICK;
-
 import emu.grasscutter.data.excels.quest.QuestData;
-import emu.grasscutter.game.quest.GameQuest;
-import emu.grasscutter.game.quest.QuestValueContent;
+import emu.grasscutter.game.quest.*;
 import lombok.val;
+
+import static emu.grasscutter.game.quest.enums.QuestContent.QUEST_CONTENT_GAME_TIME_TICK;
 
 @QuestValueContent(QUEST_CONTENT_GAME_TIME_TICK)
 public class ContentGameTimeTick extends BaseContent {

@@ -2,19 +2,14 @@ package emu.grasscutter.data;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.ResourceLoader.AvatarConfig;
-import emu.grasscutter.data.excels.reliquary.ReliquaryAffixData;
-import emu.grasscutter.data.excels.reliquary.ReliquaryMainPropData;
+import emu.grasscutter.data.excels.reliquary.*;
 import emu.grasscutter.game.managers.blossom.BlossomConfig;
 import emu.grasscutter.game.world.SpawnDataEntry;
 import emu.grasscutter.utils.objects.WeightedList;
-import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import lombok.Getter;
-import lombok.Setter;
+import it.unimi.dsi.fastutil.ints.*;
+import lombok.*;
+
+import java.util.*;
 
 public class GameDepot {
     public static final int[] BLOCK_SIZE = new int[] {50, 500}; // Scales

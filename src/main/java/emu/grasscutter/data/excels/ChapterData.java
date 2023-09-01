@@ -1,10 +1,9 @@
 package emu.grasscutter.data.excels;
 
-import emu.grasscutter.data.GameResource;
-import emu.grasscutter.data.ResourceType;
-import java.util.HashMap;
-import java.util.Map;
+import emu.grasscutter.data.*;
 import lombok.Getter;
+
+import java.util.*;
 
 @Getter
 @ResourceType(name = "ChapterExcelConfigData.json")

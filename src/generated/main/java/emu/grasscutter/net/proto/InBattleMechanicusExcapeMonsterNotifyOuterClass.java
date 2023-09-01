@@ -19,15 +19,15 @@ public final class InBattleMechanicusExcapeMonsterNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 excaped_monster_num = 5;</code>
+     * <code>uint32 excaped_monster_num = 3;</code>
      * @return The excapedMonsterNum.
      */
     int getExcapedMonsterNum();
   }
   /**
    * <pre>
-   * CmdId: 5355
-   * Obf: FDJHDFJOIHK
+   * CmdId: 5596
+   * Obf: KPNODICEEIG
    * </pre>
    *
    * Protobuf type {@code InBattleMechanicusExcapeMonsterNotify}
@@ -74,7 +74,7 @@ public final class InBattleMechanicusExcapeMonsterNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
+            case 24: {
 
               excapedMonsterNum_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class InBattleMechanicusExcapeMonsterNotifyOuterClass {
               emu.grasscutter.net.proto.InBattleMechanicusExcapeMonsterNotifyOuterClass.InBattleMechanicusExcapeMonsterNotify.class, emu.grasscutter.net.proto.InBattleMechanicusExcapeMonsterNotifyOuterClass.InBattleMechanicusExcapeMonsterNotify.Builder.class);
     }
 
-    public static final int EXCAPED_MONSTER_NUM_FIELD_NUMBER = 5;
+    public static final int EXCAPED_MONSTER_NUM_FIELD_NUMBER = 3;
     private int excapedMonsterNum_;
     /**
-     * <code>uint32 excaped_monster_num = 5;</code>
+     * <code>uint32 excaped_monster_num = 3;</code>
      * @return The excapedMonsterNum.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class InBattleMechanicusExcapeMonsterNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (excapedMonsterNum_ != 0) {
-        output.writeUInt32(5, excapedMonsterNum_);
+        output.writeUInt32(3, excapedMonsterNum_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class InBattleMechanicusExcapeMonsterNotifyOuterClass {
       size = 0;
       if (excapedMonsterNum_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, excapedMonsterNum_);
+          .computeUInt32Size(3, excapedMonsterNum_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class InBattleMechanicusExcapeMonsterNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 5355
-     * Obf: FDJHDFJOIHK
+     * CmdId: 5596
+     * Obf: KPNODICEEIG
      * </pre>
      *
      * Protobuf type {@code InBattleMechanicusExcapeMonsterNotify}
@@ -431,7 +431,7 @@ public final class InBattleMechanicusExcapeMonsterNotifyOuterClass {
 
       private int excapedMonsterNum_ ;
       /**
-       * <code>uint32 excaped_monster_num = 5;</code>
+       * <code>uint32 excaped_monster_num = 3;</code>
        * @return The excapedMonsterNum.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class InBattleMechanicusExcapeMonsterNotifyOuterClass {
         return excapedMonsterNum_;
       }
       /**
-       * <code>uint32 excaped_monster_num = 5;</code>
+       * <code>uint32 excaped_monster_num = 3;</code>
        * @param value The excapedMonsterNum to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class InBattleMechanicusExcapeMonsterNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 excaped_monster_num = 5;</code>
+       * <code>uint32 excaped_monster_num = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearExcapedMonsterNum() {
@@ -528,7 +528,7 @@ public final class InBattleMechanicusExcapeMonsterNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n+InBattleMechanicusExcapeMonsterNotify." +
       "proto\"D\n%InBattleMechanicusExcapeMonster" +
-      "Notify\022\033\n\023excaped_monster_num\030\005 \001(\rB\033\n\031e" +
+      "Notify\022\033\n\023excaped_monster_num\030\003 \001(\rB\033\n\031e" +
       "mu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

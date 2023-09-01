@@ -472,7 +472,7 @@ public class ScriptLib {
 
     private void printLog(String source, String msg){
         var currentGroup = this.currentGroup.getIfExists();
-        if(currentGroup != null) {
+        if (currentGroup != null) {
             Grasscutter.getLogger().trace("[LUA] {} {} {}", source, currentGroup.id, msg);
         } else {
             Grasscutter.getLogger().trace("[LUA] {} {}", source, msg);
@@ -782,7 +782,7 @@ public class ScriptLib {
         return 1;
     }
 
-    public LuaTable GetSceneUidList(){
+    public LuaTable GetSceneUidList() {
         logger.warn("[LUA] Call unchecked GetSceneUidList");
         //TODO check
         var scriptManager = sceneScriptManager.getIfExists();
@@ -956,14 +956,29 @@ public class ScriptLib {
         return 0;
     }
 
-    public int InitTimeAxis(String var1, int[] var2, boolean var3){
-        logger.warn("[LUA] Call unimplemented InitTimeAxis with {} {} {}", var1, var2, var3);
-        //TODO implement var1 == name? var2 == delay? var3 == should loop?
+    public int InitTimeAxis(String identifier, int[] delays, boolean shouldLoop) {
+        if (this.getCurrentGroup().isEmpty()) {
+            logger.warn("[LUA] Call InitTimeAxis without a group");
+            return 0;
+        }
+
+        var scriptManager = this.getSceneScriptManager();
+        var group = this.getCurrentGroup().get();
+
+        // Create a new time axis instance.
+        var timeAxis = new SceneTimeAxis(
+                scriptManager, group.id,
+                identifier, delays[0], shouldLoop
+        );
+        scriptManager.initTimeAxis(timeAxis);
+        timeAxis.start();
+
         return 0;
     }
-    public int EndTimeAxis(String var1){
-        logger.warn("[LUA] Call unimplemented EndTimeAxis with {}", var1);
-        //TODO implement var1 == name?
+
+    public int EndTimeAxis(String identifier) {
+        this.getSceneScriptManager().stopTimeAxis(identifier);
+
         return 0;
     }
 
@@ -1241,10 +1256,14 @@ public class ScriptLib {
         return dungeonManager.activateRespawnPoint(var1) ? 0:2;
     }
 
-    //TODO check
-    public int SetWeatherAreaState(int var1, int var2){
-        logger.warn("[LUA] Call unimplemented SetWeatherAreaState with {} {}", var1, var2);
-        getSceneScriptManager().getScene().getPlayers().forEach(p -> p.setWeather(var1, ClimateType.getTypeByValue(var2)));
+    public int[] GetOpeningDungeonListByRosterId(int var1){
+        logger.warn("[LUA] Call unimplemented GetOpeningDungeonListByRosterId with {}", var1);
+        return new int[] {0,0};
+    }
+
+    public int SetWeatherAreaState(int var1, int var2) {
+        this.getSceneScriptManager().getScene().getPlayers()
+            .forEach(p -> p.setWeather(var1, ClimateType.getTypeByValue(var2)));
         return 0;
     }
 
@@ -1254,10 +1273,19 @@ public class ScriptLib {
         return 0;
     }
 
-    //TODO check
+    public int ModifyClimatePolygonParamTable(int var1, LuaTable var2){
+        logger.warn("[LUA] Call unimplemented ModifyClimatePolygonParamTable with {} {}", var1, printTable(var2));
+        //TODO implement
+        return 0;
+    }
+
+    public int SetEnvironmentEffectState(int var1, String var2, int[] var3, int[] var4){
+        logger.warn("[LUA] Call unimplemented SetEnvironmentEffectState with {} {} {} {}", var1, var2, var3, var4);
+        return 0;
+    }
+
     public boolean CheckIsInMpMode(){
-        logger.debug("[LUA] Call CheckIsInMpMode");
-        return getSceneScriptManager().getScene().getWorld().isMultiplayer();
+        return this.getSceneScriptManager().getScene().getWorld().isMultiplayer();
     }
 
     /**
@@ -1521,6 +1549,16 @@ public class ScriptLib {
         }
 
         return result;
+    }
+
+    public int GetRegionConfigId(LuaTable var1){
+        logger.warn("[LUA] Call untested GetRegionConfigId with {}", printTable(var1));
+        var EntityId = var1.get("region_eid").toint();
+        var entity = getSceneScriptManager().getScene().getScriptManager().getRegionById(EntityId);
+        if (entity == null){
+            return -1;
+        }
+        return entity.getConfigId();
     }
 
     public int GetGameHour(){

@@ -19,62 +19,62 @@ public final class InstableSprayLevelFinishNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 level_id = 9;</code>
-     * @return The levelId.
-     */
-    int getLevelId();
-
-    /**
-     * <code>repeated uint32 score_list = 14;</code>
+     * <code>repeated uint32 score_list = 13;</code>
      * @return A list containing the scoreList.
      */
     java.util.List<java.lang.Integer> getScoreListList();
     /**
-     * <code>repeated uint32 score_list = 14;</code>
+     * <code>repeated uint32 score_list = 13;</code>
      * @return The count of scoreList.
      */
     int getScoreListCount();
     /**
-     * <code>repeated uint32 score_list = 14;</code>
+     * <code>repeated uint32 score_list = 13;</code>
      * @param index The index of the element to return.
      * @return The scoreList at the given index.
      */
     int getScoreList(int index);
 
     /**
-     * <code>uint32 round = 7;</code>
-     * @return The round.
+     * <code>uint32 level_id = 6;</code>
+     * @return The levelId.
      */
-    int getRound();
+    int getLevelId();
 
     /**
-     * <code>bool GAMNEAPANCK = 15;</code>
-     * @return The gAMNEAPANCK.
+     * <code>bool FOMGENIPFND = 7;</code>
+     * @return The fOMGENIPFND.
      */
-    boolean getGAMNEAPANCK();
+    boolean getFOMGENIPFND();
 
     /**
-     * <code>uint32 difficulty = 2;</code>
-     * @return The difficulty.
-     */
-    int getDifficulty();
-
-    /**
-     * <code>uint32 stage_id = 10;</code>
+     * <code>uint32 stage_id = 8;</code>
      * @return The stageId.
      */
     int getStageId();
 
     /**
-     * <code>bool JAHFFHODNDP = 5;</code>
-     * @return The jAHFFHODNDP.
+     * <code>uint32 difficulty = 10;</code>
+     * @return The difficulty.
      */
-    boolean getJAHFFHODNDP();
+    int getDifficulty();
+
+    /**
+     * <code>bool DKDOLLHPNDI = 11;</code>
+     * @return The dKDOLLHPNDI.
+     */
+    boolean getDKDOLLHPNDI();
+
+    /**
+     * <code>uint32 round = 14;</code>
+     * @return The round.
+     */
+    int getRound();
   }
   /**
    * <pre>
-   * CmdId: 24945
-   * Obf: NIHHEDEJIJA
+   * CmdId: 5076
+   * Obf: MFDDMHDLDHL
    * </pre>
    *
    * Protobuf type {@code InstableSprayLevelFinishNotify}
@@ -123,32 +123,32 @@ public final class InstableSprayLevelFinishNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
-
-              difficulty_ = input.readUInt32();
-              break;
-            }
-            case 40: {
-
-              jAHFFHODNDP_ = input.readBool();
-              break;
-            }
-            case 56: {
-
-              round_ = input.readUInt32();
-              break;
-            }
-            case 72: {
+            case 48: {
 
               levelId_ = input.readUInt32();
               break;
             }
-            case 80: {
+            case 56: {
+
+              fOMGENIPFND_ = input.readBool();
+              break;
+            }
+            case 64: {
 
               stageId_ = input.readUInt32();
               break;
             }
-            case 112: {
+            case 80: {
+
+              difficulty_ = input.readUInt32();
+              break;
+            }
+            case 88: {
+
+              dKDOLLHPNDI_ = input.readBool();
+              break;
+            }
+            case 104: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 scoreList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -156,7 +156,7 @@ public final class InstableSprayLevelFinishNotifyOuterClass {
               scoreList_.addInt(input.readUInt32());
               break;
             }
-            case 114: {
+            case 106: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -169,9 +169,9 @@ public final class InstableSprayLevelFinishNotifyOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 120: {
+            case 112: {
 
-              gAMNEAPANCK_ = input.readBool();
+              round_ = input.readUInt32();
               break;
             }
             default: {
@@ -209,21 +209,10 @@ public final class InstableSprayLevelFinishNotifyOuterClass {
               emu.grasscutter.net.proto.InstableSprayLevelFinishNotifyOuterClass.InstableSprayLevelFinishNotify.class, emu.grasscutter.net.proto.InstableSprayLevelFinishNotifyOuterClass.InstableSprayLevelFinishNotify.Builder.class);
     }
 
-    public static final int LEVEL_ID_FIELD_NUMBER = 9;
-    private int levelId_;
-    /**
-     * <code>uint32 level_id = 9;</code>
-     * @return The levelId.
-     */
-    @java.lang.Override
-    public int getLevelId() {
-      return levelId_;
-    }
-
-    public static final int SCORE_LIST_FIELD_NUMBER = 14;
+    public static final int SCORE_LIST_FIELD_NUMBER = 13;
     private com.google.protobuf.Internal.IntList scoreList_;
     /**
-     * <code>repeated uint32 score_list = 14;</code>
+     * <code>repeated uint32 score_list = 13;</code>
      * @return A list containing the scoreList.
      */
     @java.lang.Override
@@ -232,14 +221,14 @@ public final class InstableSprayLevelFinishNotifyOuterClass {
       return scoreList_;
     }
     /**
-     * <code>repeated uint32 score_list = 14;</code>
+     * <code>repeated uint32 score_list = 13;</code>
      * @return The count of scoreList.
      */
     public int getScoreListCount() {
       return scoreList_.size();
     }
     /**
-     * <code>repeated uint32 score_list = 14;</code>
+     * <code>repeated uint32 score_list = 13;</code>
      * @param index The index of the element to return.
      * @return The scoreList at the given index.
      */
@@ -248,43 +237,32 @@ public final class InstableSprayLevelFinishNotifyOuterClass {
     }
     private int scoreListMemoizedSerializedSize = -1;
 
-    public static final int ROUND_FIELD_NUMBER = 7;
-    private int round_;
+    public static final int LEVEL_ID_FIELD_NUMBER = 6;
+    private int levelId_;
     /**
-     * <code>uint32 round = 7;</code>
-     * @return The round.
+     * <code>uint32 level_id = 6;</code>
+     * @return The levelId.
      */
     @java.lang.Override
-    public int getRound() {
-      return round_;
+    public int getLevelId() {
+      return levelId_;
     }
 
-    public static final int GAMNEAPANCK_FIELD_NUMBER = 15;
-    private boolean gAMNEAPANCK_;
+    public static final int FOMGENIPFND_FIELD_NUMBER = 7;
+    private boolean fOMGENIPFND_;
     /**
-     * <code>bool GAMNEAPANCK = 15;</code>
-     * @return The gAMNEAPANCK.
+     * <code>bool FOMGENIPFND = 7;</code>
+     * @return The fOMGENIPFND.
      */
     @java.lang.Override
-    public boolean getGAMNEAPANCK() {
-      return gAMNEAPANCK_;
+    public boolean getFOMGENIPFND() {
+      return fOMGENIPFND_;
     }
 
-    public static final int DIFFICULTY_FIELD_NUMBER = 2;
-    private int difficulty_;
-    /**
-     * <code>uint32 difficulty = 2;</code>
-     * @return The difficulty.
-     */
-    @java.lang.Override
-    public int getDifficulty() {
-      return difficulty_;
-    }
-
-    public static final int STAGE_ID_FIELD_NUMBER = 10;
+    public static final int STAGE_ID_FIELD_NUMBER = 8;
     private int stageId_;
     /**
-     * <code>uint32 stage_id = 10;</code>
+     * <code>uint32 stage_id = 8;</code>
      * @return The stageId.
      */
     @java.lang.Override
@@ -292,15 +270,37 @@ public final class InstableSprayLevelFinishNotifyOuterClass {
       return stageId_;
     }
 
-    public static final int JAHFFHODNDP_FIELD_NUMBER = 5;
-    private boolean jAHFFHODNDP_;
+    public static final int DIFFICULTY_FIELD_NUMBER = 10;
+    private int difficulty_;
     /**
-     * <code>bool JAHFFHODNDP = 5;</code>
-     * @return The jAHFFHODNDP.
+     * <code>uint32 difficulty = 10;</code>
+     * @return The difficulty.
      */
     @java.lang.Override
-    public boolean getJAHFFHODNDP() {
-      return jAHFFHODNDP_;
+    public int getDifficulty() {
+      return difficulty_;
+    }
+
+    public static final int DKDOLLHPNDI_FIELD_NUMBER = 11;
+    private boolean dKDOLLHPNDI_;
+    /**
+     * <code>bool DKDOLLHPNDI = 11;</code>
+     * @return The dKDOLLHPNDI.
+     */
+    @java.lang.Override
+    public boolean getDKDOLLHPNDI() {
+      return dKDOLLHPNDI_;
+    }
+
+    public static final int ROUND_FIELD_NUMBER = 14;
+    private int round_;
+    /**
+     * <code>uint32 round = 14;</code>
+     * @return The round.
+     */
+    @java.lang.Override
+    public int getRound() {
+      return round_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -318,30 +318,30 @@ public final class InstableSprayLevelFinishNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (difficulty_ != 0) {
-        output.writeUInt32(2, difficulty_);
-      }
-      if (jAHFFHODNDP_ != false) {
-        output.writeBool(5, jAHFFHODNDP_);
-      }
-      if (round_ != 0) {
-        output.writeUInt32(7, round_);
-      }
       if (levelId_ != 0) {
-        output.writeUInt32(9, levelId_);
+        output.writeUInt32(6, levelId_);
+      }
+      if (fOMGENIPFND_ != false) {
+        output.writeBool(7, fOMGENIPFND_);
       }
       if (stageId_ != 0) {
-        output.writeUInt32(10, stageId_);
+        output.writeUInt32(8, stageId_);
+      }
+      if (difficulty_ != 0) {
+        output.writeUInt32(10, difficulty_);
+      }
+      if (dKDOLLHPNDI_ != false) {
+        output.writeBool(11, dKDOLLHPNDI_);
       }
       if (getScoreListList().size() > 0) {
-        output.writeUInt32NoTag(114);
+        output.writeUInt32NoTag(106);
         output.writeUInt32NoTag(scoreListMemoizedSerializedSize);
       }
       for (int i = 0; i < scoreList_.size(); i++) {
         output.writeUInt32NoTag(scoreList_.getInt(i));
       }
-      if (gAMNEAPANCK_ != false) {
-        output.writeBool(15, gAMNEAPANCK_);
+      if (round_ != 0) {
+        output.writeUInt32(14, round_);
       }
       unknownFields.writeTo(output);
     }
@@ -352,25 +352,25 @@ public final class InstableSprayLevelFinishNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (difficulty_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, difficulty_);
-      }
-      if (jAHFFHODNDP_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(5, jAHFFHODNDP_);
-      }
-      if (round_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, round_);
-      }
       if (levelId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, levelId_);
+          .computeUInt32Size(6, levelId_);
+      }
+      if (fOMGENIPFND_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(7, fOMGENIPFND_);
       }
       if (stageId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, stageId_);
+          .computeUInt32Size(8, stageId_);
+      }
+      if (difficulty_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(10, difficulty_);
+      }
+      if (dKDOLLHPNDI_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(11, dKDOLLHPNDI_);
       }
       {
         int dataSize = 0;
@@ -386,9 +386,9 @@ public final class InstableSprayLevelFinishNotifyOuterClass {
         }
         scoreListMemoizedSerializedSize = dataSize;
       }
-      if (gAMNEAPANCK_ != false) {
+      if (round_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(15, gAMNEAPANCK_);
+          .computeUInt32Size(14, round_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -405,20 +405,20 @@ public final class InstableSprayLevelFinishNotifyOuterClass {
       }
       emu.grasscutter.net.proto.InstableSprayLevelFinishNotifyOuterClass.InstableSprayLevelFinishNotify other = (emu.grasscutter.net.proto.InstableSprayLevelFinishNotifyOuterClass.InstableSprayLevelFinishNotify) obj;
 
-      if (getLevelId()
-          != other.getLevelId()) return false;
       if (!getScoreListList()
           .equals(other.getScoreListList())) return false;
-      if (getRound()
-          != other.getRound()) return false;
-      if (getGAMNEAPANCK()
-          != other.getGAMNEAPANCK()) return false;
-      if (getDifficulty()
-          != other.getDifficulty()) return false;
+      if (getLevelId()
+          != other.getLevelId()) return false;
+      if (getFOMGENIPFND()
+          != other.getFOMGENIPFND()) return false;
       if (getStageId()
           != other.getStageId()) return false;
-      if (getJAHFFHODNDP()
-          != other.getJAHFFHODNDP()) return false;
+      if (getDifficulty()
+          != other.getDifficulty()) return false;
+      if (getDKDOLLHPNDI()
+          != other.getDKDOLLHPNDI()) return false;
+      if (getRound()
+          != other.getRound()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -430,24 +430,24 @@ public final class InstableSprayLevelFinishNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + LEVEL_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getLevelId();
       if (getScoreListCount() > 0) {
         hash = (37 * hash) + SCORE_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getScoreListList().hashCode();
       }
-      hash = (37 * hash) + ROUND_FIELD_NUMBER;
-      hash = (53 * hash) + getRound();
-      hash = (37 * hash) + GAMNEAPANCK_FIELD_NUMBER;
+      hash = (37 * hash) + LEVEL_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getLevelId();
+      hash = (37 * hash) + FOMGENIPFND_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getGAMNEAPANCK());
-      hash = (37 * hash) + DIFFICULTY_FIELD_NUMBER;
-      hash = (53 * hash) + getDifficulty();
+          getFOMGENIPFND());
       hash = (37 * hash) + STAGE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getStageId();
-      hash = (37 * hash) + JAHFFHODNDP_FIELD_NUMBER;
+      hash = (37 * hash) + DIFFICULTY_FIELD_NUMBER;
+      hash = (53 * hash) + getDifficulty();
+      hash = (37 * hash) + DKDOLLHPNDI_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getJAHFFHODNDP());
+          getDKDOLLHPNDI());
+      hash = (37 * hash) + ROUND_FIELD_NUMBER;
+      hash = (53 * hash) + getRound();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -545,8 +545,8 @@ public final class InstableSprayLevelFinishNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 24945
-     * Obf: NIHHEDEJIJA
+     * CmdId: 5076
+     * Obf: MFDDMHDLDHL
      * </pre>
      *
      * Protobuf type {@code InstableSprayLevelFinishNotify}
@@ -586,19 +586,19 @@ public final class InstableSprayLevelFinishNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        levelId_ = 0;
-
         scoreList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
-        round_ = 0;
+        levelId_ = 0;
 
-        gAMNEAPANCK_ = false;
-
-        difficulty_ = 0;
+        fOMGENIPFND_ = false;
 
         stageId_ = 0;
 
-        jAHFFHODNDP_ = false;
+        difficulty_ = 0;
+
+        dKDOLLHPNDI_ = false;
+
+        round_ = 0;
 
         return this;
       }
@@ -627,17 +627,17 @@ public final class InstableSprayLevelFinishNotifyOuterClass {
       public emu.grasscutter.net.proto.InstableSprayLevelFinishNotifyOuterClass.InstableSprayLevelFinishNotify buildPartial() {
         emu.grasscutter.net.proto.InstableSprayLevelFinishNotifyOuterClass.InstableSprayLevelFinishNotify result = new emu.grasscutter.net.proto.InstableSprayLevelFinishNotifyOuterClass.InstableSprayLevelFinishNotify(this);
         int from_bitField0_ = bitField0_;
-        result.levelId_ = levelId_;
         if (((bitField0_ & 0x00000001) != 0)) {
           scoreList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.scoreList_ = scoreList_;
-        result.round_ = round_;
-        result.gAMNEAPANCK_ = gAMNEAPANCK_;
-        result.difficulty_ = difficulty_;
+        result.levelId_ = levelId_;
+        result.fOMGENIPFND_ = fOMGENIPFND_;
         result.stageId_ = stageId_;
-        result.jAHFFHODNDP_ = jAHFFHODNDP_;
+        result.difficulty_ = difficulty_;
+        result.dKDOLLHPNDI_ = dKDOLLHPNDI_;
+        result.round_ = round_;
         onBuilt();
         return result;
       }
@@ -686,9 +686,6 @@ public final class InstableSprayLevelFinishNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.InstableSprayLevelFinishNotifyOuterClass.InstableSprayLevelFinishNotify other) {
         if (other == emu.grasscutter.net.proto.InstableSprayLevelFinishNotifyOuterClass.InstableSprayLevelFinishNotify.getDefaultInstance()) return this;
-        if (other.getLevelId() != 0) {
-          setLevelId(other.getLevelId());
-        }
         if (!other.scoreList_.isEmpty()) {
           if (scoreList_.isEmpty()) {
             scoreList_ = other.scoreList_;
@@ -699,20 +696,23 @@ public final class InstableSprayLevelFinishNotifyOuterClass {
           }
           onChanged();
         }
-        if (other.getRound() != 0) {
-          setRound(other.getRound());
+        if (other.getLevelId() != 0) {
+          setLevelId(other.getLevelId());
         }
-        if (other.getGAMNEAPANCK() != false) {
-          setGAMNEAPANCK(other.getGAMNEAPANCK());
-        }
-        if (other.getDifficulty() != 0) {
-          setDifficulty(other.getDifficulty());
+        if (other.getFOMGENIPFND() != false) {
+          setFOMGENIPFND(other.getFOMGENIPFND());
         }
         if (other.getStageId() != 0) {
           setStageId(other.getStageId());
         }
-        if (other.getJAHFFHODNDP() != false) {
-          setJAHFFHODNDP(other.getJAHFFHODNDP());
+        if (other.getDifficulty() != 0) {
+          setDifficulty(other.getDifficulty());
+        }
+        if (other.getDKDOLLHPNDI() != false) {
+          setDKDOLLHPNDI(other.getDKDOLLHPNDI());
+        }
+        if (other.getRound() != 0) {
+          setRound(other.getRound());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -744,37 +744,6 @@ public final class InstableSprayLevelFinishNotifyOuterClass {
       }
       private int bitField0_;
 
-      private int levelId_ ;
-      /**
-       * <code>uint32 level_id = 9;</code>
-       * @return The levelId.
-       */
-      @java.lang.Override
-      public int getLevelId() {
-        return levelId_;
-      }
-      /**
-       * <code>uint32 level_id = 9;</code>
-       * @param value The levelId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLevelId(int value) {
-        
-        levelId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 level_id = 9;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLevelId() {
-        
-        levelId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private com.google.protobuf.Internal.IntList scoreList_ = emptyIntList();
       private void ensureScoreListIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
@@ -783,7 +752,7 @@ public final class InstableSprayLevelFinishNotifyOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 score_list = 14;</code>
+       * <code>repeated uint32 score_list = 13;</code>
        * @return A list containing the scoreList.
        */
       public java.util.List<java.lang.Integer>
@@ -792,14 +761,14 @@ public final class InstableSprayLevelFinishNotifyOuterClass {
                  java.util.Collections.unmodifiableList(scoreList_) : scoreList_;
       }
       /**
-       * <code>repeated uint32 score_list = 14;</code>
+       * <code>repeated uint32 score_list = 13;</code>
        * @return The count of scoreList.
        */
       public int getScoreListCount() {
         return scoreList_.size();
       }
       /**
-       * <code>repeated uint32 score_list = 14;</code>
+       * <code>repeated uint32 score_list = 13;</code>
        * @param index The index of the element to return.
        * @return The scoreList at the given index.
        */
@@ -807,7 +776,7 @@ public final class InstableSprayLevelFinishNotifyOuterClass {
         return scoreList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 score_list = 14;</code>
+       * <code>repeated uint32 score_list = 13;</code>
        * @param index The index to set the value at.
        * @param value The scoreList to set.
        * @return This builder for chaining.
@@ -820,7 +789,7 @@ public final class InstableSprayLevelFinishNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 score_list = 14;</code>
+       * <code>repeated uint32 score_list = 13;</code>
        * @param value The scoreList to add.
        * @return This builder for chaining.
        */
@@ -831,7 +800,7 @@ public final class InstableSprayLevelFinishNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 score_list = 14;</code>
+       * <code>repeated uint32 score_list = 13;</code>
        * @param values The scoreList to add.
        * @return This builder for chaining.
        */
@@ -844,7 +813,7 @@ public final class InstableSprayLevelFinishNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 score_list = 14;</code>
+       * <code>repeated uint32 score_list = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearScoreList() {
@@ -854,102 +823,71 @@ public final class InstableSprayLevelFinishNotifyOuterClass {
         return this;
       }
 
-      private int round_ ;
+      private int levelId_ ;
       /**
-       * <code>uint32 round = 7;</code>
-       * @return The round.
+       * <code>uint32 level_id = 6;</code>
+       * @return The levelId.
        */
       @java.lang.Override
-      public int getRound() {
-        return round_;
+      public int getLevelId() {
+        return levelId_;
       }
       /**
-       * <code>uint32 round = 7;</code>
-       * @param value The round to set.
+       * <code>uint32 level_id = 6;</code>
+       * @param value The levelId to set.
        * @return This builder for chaining.
        */
-      public Builder setRound(int value) {
+      public Builder setLevelId(int value) {
         
-        round_ = value;
+        levelId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 round = 7;</code>
+       * <code>uint32 level_id = 6;</code>
        * @return This builder for chaining.
        */
-      public Builder clearRound() {
+      public Builder clearLevelId() {
         
-        round_ = 0;
+        levelId_ = 0;
         onChanged();
         return this;
       }
 
-      private boolean gAMNEAPANCK_ ;
+      private boolean fOMGENIPFND_ ;
       /**
-       * <code>bool GAMNEAPANCK = 15;</code>
-       * @return The gAMNEAPANCK.
+       * <code>bool FOMGENIPFND = 7;</code>
+       * @return The fOMGENIPFND.
        */
       @java.lang.Override
-      public boolean getGAMNEAPANCK() {
-        return gAMNEAPANCK_;
+      public boolean getFOMGENIPFND() {
+        return fOMGENIPFND_;
       }
       /**
-       * <code>bool GAMNEAPANCK = 15;</code>
-       * @param value The gAMNEAPANCK to set.
+       * <code>bool FOMGENIPFND = 7;</code>
+       * @param value The fOMGENIPFND to set.
        * @return This builder for chaining.
        */
-      public Builder setGAMNEAPANCK(boolean value) {
+      public Builder setFOMGENIPFND(boolean value) {
         
-        gAMNEAPANCK_ = value;
+        fOMGENIPFND_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bool GAMNEAPANCK = 15;</code>
+       * <code>bool FOMGENIPFND = 7;</code>
        * @return This builder for chaining.
        */
-      public Builder clearGAMNEAPANCK() {
+      public Builder clearFOMGENIPFND() {
         
-        gAMNEAPANCK_ = false;
-        onChanged();
-        return this;
-      }
-
-      private int difficulty_ ;
-      /**
-       * <code>uint32 difficulty = 2;</code>
-       * @return The difficulty.
-       */
-      @java.lang.Override
-      public int getDifficulty() {
-        return difficulty_;
-      }
-      /**
-       * <code>uint32 difficulty = 2;</code>
-       * @param value The difficulty to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDifficulty(int value) {
-        
-        difficulty_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 difficulty = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDifficulty() {
-        
-        difficulty_ = 0;
+        fOMGENIPFND_ = false;
         onChanged();
         return this;
       }
 
       private int stageId_ ;
       /**
-       * <code>uint32 stage_id = 10;</code>
+       * <code>uint32 stage_id = 8;</code>
        * @return The stageId.
        */
       @java.lang.Override
@@ -957,7 +895,7 @@ public final class InstableSprayLevelFinishNotifyOuterClass {
         return stageId_;
       }
       /**
-       * <code>uint32 stage_id = 10;</code>
+       * <code>uint32 stage_id = 8;</code>
        * @param value The stageId to set.
        * @return This builder for chaining.
        */
@@ -968,7 +906,7 @@ public final class InstableSprayLevelFinishNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 stage_id = 10;</code>
+       * <code>uint32 stage_id = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearStageId() {
@@ -978,33 +916,95 @@ public final class InstableSprayLevelFinishNotifyOuterClass {
         return this;
       }
 
-      private boolean jAHFFHODNDP_ ;
+      private int difficulty_ ;
       /**
-       * <code>bool JAHFFHODNDP = 5;</code>
-       * @return The jAHFFHODNDP.
+       * <code>uint32 difficulty = 10;</code>
+       * @return The difficulty.
        */
       @java.lang.Override
-      public boolean getJAHFFHODNDP() {
-        return jAHFFHODNDP_;
+      public int getDifficulty() {
+        return difficulty_;
       }
       /**
-       * <code>bool JAHFFHODNDP = 5;</code>
-       * @param value The jAHFFHODNDP to set.
+       * <code>uint32 difficulty = 10;</code>
+       * @param value The difficulty to set.
        * @return This builder for chaining.
        */
-      public Builder setJAHFFHODNDP(boolean value) {
+      public Builder setDifficulty(int value) {
         
-        jAHFFHODNDP_ = value;
+        difficulty_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bool JAHFFHODNDP = 5;</code>
+       * <code>uint32 difficulty = 10;</code>
        * @return This builder for chaining.
        */
-      public Builder clearJAHFFHODNDP() {
+      public Builder clearDifficulty() {
         
-        jAHFFHODNDP_ = false;
+        difficulty_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean dKDOLLHPNDI_ ;
+      /**
+       * <code>bool DKDOLLHPNDI = 11;</code>
+       * @return The dKDOLLHPNDI.
+       */
+      @java.lang.Override
+      public boolean getDKDOLLHPNDI() {
+        return dKDOLLHPNDI_;
+      }
+      /**
+       * <code>bool DKDOLLHPNDI = 11;</code>
+       * @param value The dKDOLLHPNDI to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDKDOLLHPNDI(boolean value) {
+        
+        dKDOLLHPNDI_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool DKDOLLHPNDI = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDKDOLLHPNDI() {
+        
+        dKDOLLHPNDI_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int round_ ;
+      /**
+       * <code>uint32 round = 14;</code>
+       * @return The round.
+       */
+      @java.lang.Override
+      public int getRound() {
+        return round_;
+      }
+      /**
+       * <code>uint32 round = 14;</code>
+       * @param value The round to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRound(int value) {
+        
+        round_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 round = 14;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRound() {
+        
+        round_ = 0;
         onChanged();
         return this;
       }
@@ -1076,11 +1076,11 @@ public final class InstableSprayLevelFinishNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n$InstableSprayLevelFinishNotify.proto\"\245" +
-      "\001\n\036InstableSprayLevelFinishNotify\022\020\n\010lev" +
-      "el_id\030\t \001(\r\022\022\n\nscore_list\030\016 \003(\r\022\r\n\005round" +
-      "\030\007 \001(\r\022\023\n\013GAMNEAPANCK\030\017 \001(\010\022\022\n\ndifficult" +
-      "y\030\002 \001(\r\022\020\n\010stage_id\030\n \001(\r\022\023\n\013JAHFFHODNDP" +
-      "\030\005 \001(\010B\033\n\031emu.grasscutter.net.protob\006pro" +
+      "\001\n\036InstableSprayLevelFinishNotify\022\022\n\nsco" +
+      "re_list\030\r \003(\r\022\020\n\010level_id\030\006 \001(\r\022\023\n\013FOMGE" +
+      "NIPFND\030\007 \001(\010\022\020\n\010stage_id\030\010 \001(\r\022\022\n\ndiffic" +
+      "ulty\030\n \001(\r\022\023\n\013DKDOLLHPNDI\030\013 \001(\010\022\r\n\005round" +
+      "\030\016 \001(\rB\033\n\031emu.grasscutter.net.protob\006pro" +
       "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -1092,7 +1092,7 @@ public final class InstableSprayLevelFinishNotifyOuterClass {
     internal_static_InstableSprayLevelFinishNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_InstableSprayLevelFinishNotify_descriptor,
-        new java.lang.String[] { "LevelId", "ScoreList", "Round", "GAMNEAPANCK", "Difficulty", "StageId", "JAHFFHODNDP", });
+        new java.lang.String[] { "ScoreList", "LevelId", "FOMGENIPFND", "StageId", "Difficulty", "DKDOLLHPNDI", "Round", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -19,56 +19,56 @@ public final class GravenInnocencePhotoInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .GravenInnocencePhotoObjectInfo object_info_list = 8;</code>
-     */
-    java.util.List<emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfo> 
-        getObjectInfoListList();
-    /**
-     * <code>repeated .GravenInnocencePhotoObjectInfo object_info_list = 8;</code>
-     */
-    emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfo getObjectInfoList(int index);
-    /**
-     * <code>repeated .GravenInnocencePhotoObjectInfo object_info_list = 8;</code>
-     */
-    int getObjectInfoListCount();
-    /**
-     * <code>repeated .GravenInnocencePhotoObjectInfo object_info_list = 8;</code>
-     */
-    java.util.List<? extends emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfoOrBuilder> 
-        getObjectInfoListOrBuilderList();
-    /**
-     * <code>repeated .GravenInnocencePhotoObjectInfo object_info_list = 8;</code>
-     */
-    emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfoOrBuilder getObjectInfoListOrBuilder(
-        int index);
-
-    /**
-     * <code>repeated .GravenInnocencePhotoStageInfo stage_info_list = 13;</code>
+     * <code>repeated .GravenInnocencePhotoStageInfo stage_info_list = 11;</code>
      */
     java.util.List<emu.grasscutter.net.proto.GravenInnocencePhotoStageInfoOuterClass.GravenInnocencePhotoStageInfo> 
         getStageInfoListList();
     /**
-     * <code>repeated .GravenInnocencePhotoStageInfo stage_info_list = 13;</code>
+     * <code>repeated .GravenInnocencePhotoStageInfo stage_info_list = 11;</code>
      */
     emu.grasscutter.net.proto.GravenInnocencePhotoStageInfoOuterClass.GravenInnocencePhotoStageInfo getStageInfoList(int index);
     /**
-     * <code>repeated .GravenInnocencePhotoStageInfo stage_info_list = 13;</code>
+     * <code>repeated .GravenInnocencePhotoStageInfo stage_info_list = 11;</code>
      */
     int getStageInfoListCount();
     /**
-     * <code>repeated .GravenInnocencePhotoStageInfo stage_info_list = 13;</code>
+     * <code>repeated .GravenInnocencePhotoStageInfo stage_info_list = 11;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.GravenInnocencePhotoStageInfoOuterClass.GravenInnocencePhotoStageInfoOrBuilder> 
         getStageInfoListOrBuilderList();
     /**
-     * <code>repeated .GravenInnocencePhotoStageInfo stage_info_list = 13;</code>
+     * <code>repeated .GravenInnocencePhotoStageInfo stage_info_list = 11;</code>
      */
     emu.grasscutter.net.proto.GravenInnocencePhotoStageInfoOuterClass.GravenInnocencePhotoStageInfoOrBuilder getStageInfoListOrBuilder(
+        int index);
+
+    /**
+     * <code>repeated .GravenInnocencePhotoObjectInfo object_info_list = 15;</code>
+     */
+    java.util.List<emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfo> 
+        getObjectInfoListList();
+    /**
+     * <code>repeated .GravenInnocencePhotoObjectInfo object_info_list = 15;</code>
+     */
+    emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfo getObjectInfoList(int index);
+    /**
+     * <code>repeated .GravenInnocencePhotoObjectInfo object_info_list = 15;</code>
+     */
+    int getObjectInfoListCount();
+    /**
+     * <code>repeated .GravenInnocencePhotoObjectInfo object_info_list = 15;</code>
+     */
+    java.util.List<? extends emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfoOrBuilder> 
+        getObjectInfoListOrBuilderList();
+    /**
+     * <code>repeated .GravenInnocencePhotoObjectInfo object_info_list = 15;</code>
+     */
+    emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfoOrBuilder getObjectInfoListOrBuilder(
         int index);
   }
   /**
    * <pre>
-   * Obf: KOEBDBCCGLJ
+   * Obf: HLNCBIKONCA
    * </pre>
    *
    * Protobuf type {@code GravenInnocencePhotoInfo}
@@ -83,8 +83,8 @@ public final class GravenInnocencePhotoInfoOuterClass {
       super(builder);
     }
     private GravenInnocencePhotoInfo() {
-      objectInfoList_ = java.util.Collections.emptyList();
       stageInfoList_ = java.util.Collections.emptyList();
+      objectInfoList_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -118,22 +118,22 @@ public final class GravenInnocencePhotoInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 66: {
+            case 90: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                objectInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfo>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              objectInfoList_.add(
-                  input.readMessage(emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfo.parser(), extensionRegistry));
-              break;
-            }
-            case 106: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 stageInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.GravenInnocencePhotoStageInfoOuterClass.GravenInnocencePhotoStageInfo>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               stageInfoList_.add(
                   input.readMessage(emu.grasscutter.net.proto.GravenInnocencePhotoStageInfoOuterClass.GravenInnocencePhotoStageInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 122: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                objectInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfo>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              objectInfoList_.add(
+                  input.readMessage(emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfo.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -152,10 +152,10 @@ public final class GravenInnocencePhotoInfoOuterClass {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          objectInfoList_ = java.util.Collections.unmodifiableList(objectInfoList_);
+          stageInfoList_ = java.util.Collections.unmodifiableList(stageInfoList_);
         }
         if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          stageInfoList_ = java.util.Collections.unmodifiableList(stageInfoList_);
+          objectInfoList_ = java.util.Collections.unmodifiableList(objectInfoList_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -174,57 +174,17 @@ public final class GravenInnocencePhotoInfoOuterClass {
               emu.grasscutter.net.proto.GravenInnocencePhotoInfoOuterClass.GravenInnocencePhotoInfo.class, emu.grasscutter.net.proto.GravenInnocencePhotoInfoOuterClass.GravenInnocencePhotoInfo.Builder.class);
     }
 
-    public static final int OBJECT_INFO_LIST_FIELD_NUMBER = 8;
-    private java.util.List<emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfo> objectInfoList_;
-    /**
-     * <code>repeated .GravenInnocencePhotoObjectInfo object_info_list = 8;</code>
-     */
-    @java.lang.Override
-    public java.util.List<emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfo> getObjectInfoListList() {
-      return objectInfoList_;
-    }
-    /**
-     * <code>repeated .GravenInnocencePhotoObjectInfo object_info_list = 8;</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfoOrBuilder> 
-        getObjectInfoListOrBuilderList() {
-      return objectInfoList_;
-    }
-    /**
-     * <code>repeated .GravenInnocencePhotoObjectInfo object_info_list = 8;</code>
-     */
-    @java.lang.Override
-    public int getObjectInfoListCount() {
-      return objectInfoList_.size();
-    }
-    /**
-     * <code>repeated .GravenInnocencePhotoObjectInfo object_info_list = 8;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfo getObjectInfoList(int index) {
-      return objectInfoList_.get(index);
-    }
-    /**
-     * <code>repeated .GravenInnocencePhotoObjectInfo object_info_list = 8;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfoOrBuilder getObjectInfoListOrBuilder(
-        int index) {
-      return objectInfoList_.get(index);
-    }
-
-    public static final int STAGE_INFO_LIST_FIELD_NUMBER = 13;
+    public static final int STAGE_INFO_LIST_FIELD_NUMBER = 11;
     private java.util.List<emu.grasscutter.net.proto.GravenInnocencePhotoStageInfoOuterClass.GravenInnocencePhotoStageInfo> stageInfoList_;
     /**
-     * <code>repeated .GravenInnocencePhotoStageInfo stage_info_list = 13;</code>
+     * <code>repeated .GravenInnocencePhotoStageInfo stage_info_list = 11;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.GravenInnocencePhotoStageInfoOuterClass.GravenInnocencePhotoStageInfo> getStageInfoListList() {
       return stageInfoList_;
     }
     /**
-     * <code>repeated .GravenInnocencePhotoStageInfo stage_info_list = 13;</code>
+     * <code>repeated .GravenInnocencePhotoStageInfo stage_info_list = 11;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.GravenInnocencePhotoStageInfoOuterClass.GravenInnocencePhotoStageInfoOrBuilder> 
@@ -232,26 +192,66 @@ public final class GravenInnocencePhotoInfoOuterClass {
       return stageInfoList_;
     }
     /**
-     * <code>repeated .GravenInnocencePhotoStageInfo stage_info_list = 13;</code>
+     * <code>repeated .GravenInnocencePhotoStageInfo stage_info_list = 11;</code>
      */
     @java.lang.Override
     public int getStageInfoListCount() {
       return stageInfoList_.size();
     }
     /**
-     * <code>repeated .GravenInnocencePhotoStageInfo stage_info_list = 13;</code>
+     * <code>repeated .GravenInnocencePhotoStageInfo stage_info_list = 11;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.GravenInnocencePhotoStageInfoOuterClass.GravenInnocencePhotoStageInfo getStageInfoList(int index) {
       return stageInfoList_.get(index);
     }
     /**
-     * <code>repeated .GravenInnocencePhotoStageInfo stage_info_list = 13;</code>
+     * <code>repeated .GravenInnocencePhotoStageInfo stage_info_list = 11;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.GravenInnocencePhotoStageInfoOuterClass.GravenInnocencePhotoStageInfoOrBuilder getStageInfoListOrBuilder(
         int index) {
       return stageInfoList_.get(index);
+    }
+
+    public static final int OBJECT_INFO_LIST_FIELD_NUMBER = 15;
+    private java.util.List<emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfo> objectInfoList_;
+    /**
+     * <code>repeated .GravenInnocencePhotoObjectInfo object_info_list = 15;</code>
+     */
+    @java.lang.Override
+    public java.util.List<emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfo> getObjectInfoListList() {
+      return objectInfoList_;
+    }
+    /**
+     * <code>repeated .GravenInnocencePhotoObjectInfo object_info_list = 15;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfoOrBuilder> 
+        getObjectInfoListOrBuilderList() {
+      return objectInfoList_;
+    }
+    /**
+     * <code>repeated .GravenInnocencePhotoObjectInfo object_info_list = 15;</code>
+     */
+    @java.lang.Override
+    public int getObjectInfoListCount() {
+      return objectInfoList_.size();
+    }
+    /**
+     * <code>repeated .GravenInnocencePhotoObjectInfo object_info_list = 15;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfo getObjectInfoList(int index) {
+      return objectInfoList_.get(index);
+    }
+    /**
+     * <code>repeated .GravenInnocencePhotoObjectInfo object_info_list = 15;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfoOrBuilder getObjectInfoListOrBuilder(
+        int index) {
+      return objectInfoList_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -268,11 +268,11 @@ public final class GravenInnocencePhotoInfoOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < objectInfoList_.size(); i++) {
-        output.writeMessage(8, objectInfoList_.get(i));
-      }
       for (int i = 0; i < stageInfoList_.size(); i++) {
-        output.writeMessage(13, stageInfoList_.get(i));
+        output.writeMessage(11, stageInfoList_.get(i));
+      }
+      for (int i = 0; i < objectInfoList_.size(); i++) {
+        output.writeMessage(15, objectInfoList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -283,13 +283,13 @@ public final class GravenInnocencePhotoInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < objectInfoList_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(8, objectInfoList_.get(i));
-      }
       for (int i = 0; i < stageInfoList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(13, stageInfoList_.get(i));
+          .computeMessageSize(11, stageInfoList_.get(i));
+      }
+      for (int i = 0; i < objectInfoList_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(15, objectInfoList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -306,10 +306,10 @@ public final class GravenInnocencePhotoInfoOuterClass {
       }
       emu.grasscutter.net.proto.GravenInnocencePhotoInfoOuterClass.GravenInnocencePhotoInfo other = (emu.grasscutter.net.proto.GravenInnocencePhotoInfoOuterClass.GravenInnocencePhotoInfo) obj;
 
-      if (!getObjectInfoListList()
-          .equals(other.getObjectInfoListList())) return false;
       if (!getStageInfoListList()
           .equals(other.getStageInfoListList())) return false;
+      if (!getObjectInfoListList()
+          .equals(other.getObjectInfoListList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -321,13 +321,13 @@ public final class GravenInnocencePhotoInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getObjectInfoListCount() > 0) {
-        hash = (37 * hash) + OBJECT_INFO_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getObjectInfoListList().hashCode();
-      }
       if (getStageInfoListCount() > 0) {
         hash = (37 * hash) + STAGE_INFO_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getStageInfoListList().hashCode();
+      }
+      if (getObjectInfoListCount() > 0) {
+        hash = (37 * hash) + OBJECT_INFO_LIST_FIELD_NUMBER;
+        hash = (53 * hash) + getObjectInfoListList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -426,7 +426,7 @@ public final class GravenInnocencePhotoInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: KOEBDBCCGLJ
+     * Obf: HLNCBIKONCA
      * </pre>
      *
      * Protobuf type {@code GravenInnocencePhotoInfo}
@@ -461,24 +461,24 @@ public final class GravenInnocencePhotoInfoOuterClass {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getObjectInfoListFieldBuilder();
           getStageInfoListFieldBuilder();
+          getObjectInfoListFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (objectInfoListBuilder_ == null) {
-          objectInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        } else {
-          objectInfoListBuilder_.clear();
-        }
         if (stageInfoListBuilder_ == null) {
           stageInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           stageInfoListBuilder_.clear();
+        }
+        if (objectInfoListBuilder_ == null) {
+          objectInfoList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          objectInfoListBuilder_.clear();
         }
         return this;
       }
@@ -507,23 +507,23 @@ public final class GravenInnocencePhotoInfoOuterClass {
       public emu.grasscutter.net.proto.GravenInnocencePhotoInfoOuterClass.GravenInnocencePhotoInfo buildPartial() {
         emu.grasscutter.net.proto.GravenInnocencePhotoInfoOuterClass.GravenInnocencePhotoInfo result = new emu.grasscutter.net.proto.GravenInnocencePhotoInfoOuterClass.GravenInnocencePhotoInfo(this);
         int from_bitField0_ = bitField0_;
-        if (objectInfoListBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
-            objectInfoList_ = java.util.Collections.unmodifiableList(objectInfoList_);
-            bitField0_ = (bitField0_ & ~0x00000001);
-          }
-          result.objectInfoList_ = objectInfoList_;
-        } else {
-          result.objectInfoList_ = objectInfoListBuilder_.build();
-        }
         if (stageInfoListBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             stageInfoList_ = java.util.Collections.unmodifiableList(stageInfoList_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.stageInfoList_ = stageInfoList_;
         } else {
           result.stageInfoList_ = stageInfoListBuilder_.build();
+        }
+        if (objectInfoListBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)) {
+            objectInfoList_ = java.util.Collections.unmodifiableList(objectInfoList_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.objectInfoList_ = objectInfoList_;
+        } else {
+          result.objectInfoList_ = objectInfoListBuilder_.build();
         }
         onBuilt();
         return result;
@@ -573,37 +573,11 @@ public final class GravenInnocencePhotoInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.GravenInnocencePhotoInfoOuterClass.GravenInnocencePhotoInfo other) {
         if (other == emu.grasscutter.net.proto.GravenInnocencePhotoInfoOuterClass.GravenInnocencePhotoInfo.getDefaultInstance()) return this;
-        if (objectInfoListBuilder_ == null) {
-          if (!other.objectInfoList_.isEmpty()) {
-            if (objectInfoList_.isEmpty()) {
-              objectInfoList_ = other.objectInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-            } else {
-              ensureObjectInfoListIsMutable();
-              objectInfoList_.addAll(other.objectInfoList_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.objectInfoList_.isEmpty()) {
-            if (objectInfoListBuilder_.isEmpty()) {
-              objectInfoListBuilder_.dispose();
-              objectInfoListBuilder_ = null;
-              objectInfoList_ = other.objectInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-              objectInfoListBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getObjectInfoListFieldBuilder() : null;
-            } else {
-              objectInfoListBuilder_.addAllMessages(other.objectInfoList_);
-            }
-          }
-        }
         if (stageInfoListBuilder_ == null) {
           if (!other.stageInfoList_.isEmpty()) {
             if (stageInfoList_.isEmpty()) {
               stageInfoList_ = other.stageInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureStageInfoListIsMutable();
               stageInfoList_.addAll(other.stageInfoList_);
@@ -616,12 +590,38 @@ public final class GravenInnocencePhotoInfoOuterClass {
               stageInfoListBuilder_.dispose();
               stageInfoListBuilder_ = null;
               stageInfoList_ = other.stageInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
               stageInfoListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getStageInfoListFieldBuilder() : null;
             } else {
               stageInfoListBuilder_.addAllMessages(other.stageInfoList_);
+            }
+          }
+        }
+        if (objectInfoListBuilder_ == null) {
+          if (!other.objectInfoList_.isEmpty()) {
+            if (objectInfoList_.isEmpty()) {
+              objectInfoList_ = other.objectInfoList_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureObjectInfoListIsMutable();
+              objectInfoList_.addAll(other.objectInfoList_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.objectInfoList_.isEmpty()) {
+            if (objectInfoListBuilder_.isEmpty()) {
+              objectInfoListBuilder_.dispose();
+              objectInfoListBuilder_ = null;
+              objectInfoList_ = other.objectInfoList_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              objectInfoListBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getObjectInfoListFieldBuilder() : null;
+            } else {
+              objectInfoListBuilder_.addAllMessages(other.objectInfoList_);
             }
           }
         }
@@ -655,252 +655,12 @@ public final class GravenInnocencePhotoInfoOuterClass {
       }
       private int bitField0_;
 
-      private java.util.List<emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfo> objectInfoList_ =
-        java.util.Collections.emptyList();
-      private void ensureObjectInfoListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          objectInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfo>(objectInfoList_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfo, emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfo.Builder, emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfoOrBuilder> objectInfoListBuilder_;
-
-      /**
-       * <code>repeated .GravenInnocencePhotoObjectInfo object_info_list = 8;</code>
-       */
-      public java.util.List<emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfo> getObjectInfoListList() {
-        if (objectInfoListBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(objectInfoList_);
-        } else {
-          return objectInfoListBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <code>repeated .GravenInnocencePhotoObjectInfo object_info_list = 8;</code>
-       */
-      public int getObjectInfoListCount() {
-        if (objectInfoListBuilder_ == null) {
-          return objectInfoList_.size();
-        } else {
-          return objectInfoListBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .GravenInnocencePhotoObjectInfo object_info_list = 8;</code>
-       */
-      public emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfo getObjectInfoList(int index) {
-        if (objectInfoListBuilder_ == null) {
-          return objectInfoList_.get(index);
-        } else {
-          return objectInfoListBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .GravenInnocencePhotoObjectInfo object_info_list = 8;</code>
-       */
-      public Builder setObjectInfoList(
-          int index, emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfo value) {
-        if (objectInfoListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureObjectInfoListIsMutable();
-          objectInfoList_.set(index, value);
-          onChanged();
-        } else {
-          objectInfoListBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .GravenInnocencePhotoObjectInfo object_info_list = 8;</code>
-       */
-      public Builder setObjectInfoList(
-          int index, emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfo.Builder builderForValue) {
-        if (objectInfoListBuilder_ == null) {
-          ensureObjectInfoListIsMutable();
-          objectInfoList_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          objectInfoListBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .GravenInnocencePhotoObjectInfo object_info_list = 8;</code>
-       */
-      public Builder addObjectInfoList(emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfo value) {
-        if (objectInfoListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureObjectInfoListIsMutable();
-          objectInfoList_.add(value);
-          onChanged();
-        } else {
-          objectInfoListBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .GravenInnocencePhotoObjectInfo object_info_list = 8;</code>
-       */
-      public Builder addObjectInfoList(
-          int index, emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfo value) {
-        if (objectInfoListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureObjectInfoListIsMutable();
-          objectInfoList_.add(index, value);
-          onChanged();
-        } else {
-          objectInfoListBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .GravenInnocencePhotoObjectInfo object_info_list = 8;</code>
-       */
-      public Builder addObjectInfoList(
-          emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfo.Builder builderForValue) {
-        if (objectInfoListBuilder_ == null) {
-          ensureObjectInfoListIsMutable();
-          objectInfoList_.add(builderForValue.build());
-          onChanged();
-        } else {
-          objectInfoListBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .GravenInnocencePhotoObjectInfo object_info_list = 8;</code>
-       */
-      public Builder addObjectInfoList(
-          int index, emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfo.Builder builderForValue) {
-        if (objectInfoListBuilder_ == null) {
-          ensureObjectInfoListIsMutable();
-          objectInfoList_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          objectInfoListBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .GravenInnocencePhotoObjectInfo object_info_list = 8;</code>
-       */
-      public Builder addAllObjectInfoList(
-          java.lang.Iterable<? extends emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfo> values) {
-        if (objectInfoListBuilder_ == null) {
-          ensureObjectInfoListIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, objectInfoList_);
-          onChanged();
-        } else {
-          objectInfoListBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .GravenInnocencePhotoObjectInfo object_info_list = 8;</code>
-       */
-      public Builder clearObjectInfoList() {
-        if (objectInfoListBuilder_ == null) {
-          objectInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-          onChanged();
-        } else {
-          objectInfoListBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .GravenInnocencePhotoObjectInfo object_info_list = 8;</code>
-       */
-      public Builder removeObjectInfoList(int index) {
-        if (objectInfoListBuilder_ == null) {
-          ensureObjectInfoListIsMutable();
-          objectInfoList_.remove(index);
-          onChanged();
-        } else {
-          objectInfoListBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .GravenInnocencePhotoObjectInfo object_info_list = 8;</code>
-       */
-      public emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfo.Builder getObjectInfoListBuilder(
-          int index) {
-        return getObjectInfoListFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .GravenInnocencePhotoObjectInfo object_info_list = 8;</code>
-       */
-      public emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfoOrBuilder getObjectInfoListOrBuilder(
-          int index) {
-        if (objectInfoListBuilder_ == null) {
-          return objectInfoList_.get(index);  } else {
-          return objectInfoListBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .GravenInnocencePhotoObjectInfo object_info_list = 8;</code>
-       */
-      public java.util.List<? extends emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfoOrBuilder> 
-           getObjectInfoListOrBuilderList() {
-        if (objectInfoListBuilder_ != null) {
-          return objectInfoListBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(objectInfoList_);
-        }
-      }
-      /**
-       * <code>repeated .GravenInnocencePhotoObjectInfo object_info_list = 8;</code>
-       */
-      public emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfo.Builder addObjectInfoListBuilder() {
-        return getObjectInfoListFieldBuilder().addBuilder(
-            emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfo.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .GravenInnocencePhotoObjectInfo object_info_list = 8;</code>
-       */
-      public emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfo.Builder addObjectInfoListBuilder(
-          int index) {
-        return getObjectInfoListFieldBuilder().addBuilder(
-            index, emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfo.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .GravenInnocencePhotoObjectInfo object_info_list = 8;</code>
-       */
-      public java.util.List<emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfo.Builder> 
-           getObjectInfoListBuilderList() {
-        return getObjectInfoListFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfo, emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfo.Builder, emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfoOrBuilder> 
-          getObjectInfoListFieldBuilder() {
-        if (objectInfoListBuilder_ == null) {
-          objectInfoListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfo, emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfo.Builder, emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfoOrBuilder>(
-                  objectInfoList_,
-                  ((bitField0_ & 0x00000001) != 0),
-                  getParentForChildren(),
-                  isClean());
-          objectInfoList_ = null;
-        }
-        return objectInfoListBuilder_;
-      }
-
       private java.util.List<emu.grasscutter.net.proto.GravenInnocencePhotoStageInfoOuterClass.GravenInnocencePhotoStageInfo> stageInfoList_ =
         java.util.Collections.emptyList();
       private void ensureStageInfoListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           stageInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.GravenInnocencePhotoStageInfoOuterClass.GravenInnocencePhotoStageInfo>(stageInfoList_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -908,7 +668,7 @@ public final class GravenInnocencePhotoInfoOuterClass {
           emu.grasscutter.net.proto.GravenInnocencePhotoStageInfoOuterClass.GravenInnocencePhotoStageInfo, emu.grasscutter.net.proto.GravenInnocencePhotoStageInfoOuterClass.GravenInnocencePhotoStageInfo.Builder, emu.grasscutter.net.proto.GravenInnocencePhotoStageInfoOuterClass.GravenInnocencePhotoStageInfoOrBuilder> stageInfoListBuilder_;
 
       /**
-       * <code>repeated .GravenInnocencePhotoStageInfo stage_info_list = 13;</code>
+       * <code>repeated .GravenInnocencePhotoStageInfo stage_info_list = 11;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.GravenInnocencePhotoStageInfoOuterClass.GravenInnocencePhotoStageInfo> getStageInfoListList() {
         if (stageInfoListBuilder_ == null) {
@@ -918,7 +678,7 @@ public final class GravenInnocencePhotoInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .GravenInnocencePhotoStageInfo stage_info_list = 13;</code>
+       * <code>repeated .GravenInnocencePhotoStageInfo stage_info_list = 11;</code>
        */
       public int getStageInfoListCount() {
         if (stageInfoListBuilder_ == null) {
@@ -928,7 +688,7 @@ public final class GravenInnocencePhotoInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .GravenInnocencePhotoStageInfo stage_info_list = 13;</code>
+       * <code>repeated .GravenInnocencePhotoStageInfo stage_info_list = 11;</code>
        */
       public emu.grasscutter.net.proto.GravenInnocencePhotoStageInfoOuterClass.GravenInnocencePhotoStageInfo getStageInfoList(int index) {
         if (stageInfoListBuilder_ == null) {
@@ -938,7 +698,7 @@ public final class GravenInnocencePhotoInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .GravenInnocencePhotoStageInfo stage_info_list = 13;</code>
+       * <code>repeated .GravenInnocencePhotoStageInfo stage_info_list = 11;</code>
        */
       public Builder setStageInfoList(
           int index, emu.grasscutter.net.proto.GravenInnocencePhotoStageInfoOuterClass.GravenInnocencePhotoStageInfo value) {
@@ -955,7 +715,7 @@ public final class GravenInnocencePhotoInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .GravenInnocencePhotoStageInfo stage_info_list = 13;</code>
+       * <code>repeated .GravenInnocencePhotoStageInfo stage_info_list = 11;</code>
        */
       public Builder setStageInfoList(
           int index, emu.grasscutter.net.proto.GravenInnocencePhotoStageInfoOuterClass.GravenInnocencePhotoStageInfo.Builder builderForValue) {
@@ -969,7 +729,7 @@ public final class GravenInnocencePhotoInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .GravenInnocencePhotoStageInfo stage_info_list = 13;</code>
+       * <code>repeated .GravenInnocencePhotoStageInfo stage_info_list = 11;</code>
        */
       public Builder addStageInfoList(emu.grasscutter.net.proto.GravenInnocencePhotoStageInfoOuterClass.GravenInnocencePhotoStageInfo value) {
         if (stageInfoListBuilder_ == null) {
@@ -985,7 +745,7 @@ public final class GravenInnocencePhotoInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .GravenInnocencePhotoStageInfo stage_info_list = 13;</code>
+       * <code>repeated .GravenInnocencePhotoStageInfo stage_info_list = 11;</code>
        */
       public Builder addStageInfoList(
           int index, emu.grasscutter.net.proto.GravenInnocencePhotoStageInfoOuterClass.GravenInnocencePhotoStageInfo value) {
@@ -1002,7 +762,7 @@ public final class GravenInnocencePhotoInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .GravenInnocencePhotoStageInfo stage_info_list = 13;</code>
+       * <code>repeated .GravenInnocencePhotoStageInfo stage_info_list = 11;</code>
        */
       public Builder addStageInfoList(
           emu.grasscutter.net.proto.GravenInnocencePhotoStageInfoOuterClass.GravenInnocencePhotoStageInfo.Builder builderForValue) {
@@ -1016,7 +776,7 @@ public final class GravenInnocencePhotoInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .GravenInnocencePhotoStageInfo stage_info_list = 13;</code>
+       * <code>repeated .GravenInnocencePhotoStageInfo stage_info_list = 11;</code>
        */
       public Builder addStageInfoList(
           int index, emu.grasscutter.net.proto.GravenInnocencePhotoStageInfoOuterClass.GravenInnocencePhotoStageInfo.Builder builderForValue) {
@@ -1030,7 +790,7 @@ public final class GravenInnocencePhotoInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .GravenInnocencePhotoStageInfo stage_info_list = 13;</code>
+       * <code>repeated .GravenInnocencePhotoStageInfo stage_info_list = 11;</code>
        */
       public Builder addAllStageInfoList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.GravenInnocencePhotoStageInfoOuterClass.GravenInnocencePhotoStageInfo> values) {
@@ -1045,12 +805,12 @@ public final class GravenInnocencePhotoInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .GravenInnocencePhotoStageInfo stage_info_list = 13;</code>
+       * <code>repeated .GravenInnocencePhotoStageInfo stage_info_list = 11;</code>
        */
       public Builder clearStageInfoList() {
         if (stageInfoListBuilder_ == null) {
           stageInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           stageInfoListBuilder_.clear();
@@ -1058,7 +818,7 @@ public final class GravenInnocencePhotoInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .GravenInnocencePhotoStageInfo stage_info_list = 13;</code>
+       * <code>repeated .GravenInnocencePhotoStageInfo stage_info_list = 11;</code>
        */
       public Builder removeStageInfoList(int index) {
         if (stageInfoListBuilder_ == null) {
@@ -1071,14 +831,14 @@ public final class GravenInnocencePhotoInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .GravenInnocencePhotoStageInfo stage_info_list = 13;</code>
+       * <code>repeated .GravenInnocencePhotoStageInfo stage_info_list = 11;</code>
        */
       public emu.grasscutter.net.proto.GravenInnocencePhotoStageInfoOuterClass.GravenInnocencePhotoStageInfo.Builder getStageInfoListBuilder(
           int index) {
         return getStageInfoListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .GravenInnocencePhotoStageInfo stage_info_list = 13;</code>
+       * <code>repeated .GravenInnocencePhotoStageInfo stage_info_list = 11;</code>
        */
       public emu.grasscutter.net.proto.GravenInnocencePhotoStageInfoOuterClass.GravenInnocencePhotoStageInfoOrBuilder getStageInfoListOrBuilder(
           int index) {
@@ -1088,7 +848,7 @@ public final class GravenInnocencePhotoInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .GravenInnocencePhotoStageInfo stage_info_list = 13;</code>
+       * <code>repeated .GravenInnocencePhotoStageInfo stage_info_list = 11;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.GravenInnocencePhotoStageInfoOuterClass.GravenInnocencePhotoStageInfoOrBuilder> 
            getStageInfoListOrBuilderList() {
@@ -1099,14 +859,14 @@ public final class GravenInnocencePhotoInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .GravenInnocencePhotoStageInfo stage_info_list = 13;</code>
+       * <code>repeated .GravenInnocencePhotoStageInfo stage_info_list = 11;</code>
        */
       public emu.grasscutter.net.proto.GravenInnocencePhotoStageInfoOuterClass.GravenInnocencePhotoStageInfo.Builder addStageInfoListBuilder() {
         return getStageInfoListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.GravenInnocencePhotoStageInfoOuterClass.GravenInnocencePhotoStageInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .GravenInnocencePhotoStageInfo stage_info_list = 13;</code>
+       * <code>repeated .GravenInnocencePhotoStageInfo stage_info_list = 11;</code>
        */
       public emu.grasscutter.net.proto.GravenInnocencePhotoStageInfoOuterClass.GravenInnocencePhotoStageInfo.Builder addStageInfoListBuilder(
           int index) {
@@ -1114,7 +874,7 @@ public final class GravenInnocencePhotoInfoOuterClass {
             index, emu.grasscutter.net.proto.GravenInnocencePhotoStageInfoOuterClass.GravenInnocencePhotoStageInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .GravenInnocencePhotoStageInfo stage_info_list = 13;</code>
+       * <code>repeated .GravenInnocencePhotoStageInfo stage_info_list = 11;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.GravenInnocencePhotoStageInfoOuterClass.GravenInnocencePhotoStageInfo.Builder> 
            getStageInfoListBuilderList() {
@@ -1127,12 +887,252 @@ public final class GravenInnocencePhotoInfoOuterClass {
           stageInfoListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.grasscutter.net.proto.GravenInnocencePhotoStageInfoOuterClass.GravenInnocencePhotoStageInfo, emu.grasscutter.net.proto.GravenInnocencePhotoStageInfoOuterClass.GravenInnocencePhotoStageInfo.Builder, emu.grasscutter.net.proto.GravenInnocencePhotoStageInfoOuterClass.GravenInnocencePhotoStageInfoOrBuilder>(
                   stageInfoList_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           stageInfoList_ = null;
         }
         return stageInfoListBuilder_;
+      }
+
+      private java.util.List<emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfo> objectInfoList_ =
+        java.util.Collections.emptyList();
+      private void ensureObjectInfoListIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          objectInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfo>(objectInfoList_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfo, emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfo.Builder, emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfoOrBuilder> objectInfoListBuilder_;
+
+      /**
+       * <code>repeated .GravenInnocencePhotoObjectInfo object_info_list = 15;</code>
+       */
+      public java.util.List<emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfo> getObjectInfoListList() {
+        if (objectInfoListBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(objectInfoList_);
+        } else {
+          return objectInfoListBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .GravenInnocencePhotoObjectInfo object_info_list = 15;</code>
+       */
+      public int getObjectInfoListCount() {
+        if (objectInfoListBuilder_ == null) {
+          return objectInfoList_.size();
+        } else {
+          return objectInfoListBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .GravenInnocencePhotoObjectInfo object_info_list = 15;</code>
+       */
+      public emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfo getObjectInfoList(int index) {
+        if (objectInfoListBuilder_ == null) {
+          return objectInfoList_.get(index);
+        } else {
+          return objectInfoListBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .GravenInnocencePhotoObjectInfo object_info_list = 15;</code>
+       */
+      public Builder setObjectInfoList(
+          int index, emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfo value) {
+        if (objectInfoListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureObjectInfoListIsMutable();
+          objectInfoList_.set(index, value);
+          onChanged();
+        } else {
+          objectInfoListBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .GravenInnocencePhotoObjectInfo object_info_list = 15;</code>
+       */
+      public Builder setObjectInfoList(
+          int index, emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfo.Builder builderForValue) {
+        if (objectInfoListBuilder_ == null) {
+          ensureObjectInfoListIsMutable();
+          objectInfoList_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          objectInfoListBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .GravenInnocencePhotoObjectInfo object_info_list = 15;</code>
+       */
+      public Builder addObjectInfoList(emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfo value) {
+        if (objectInfoListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureObjectInfoListIsMutable();
+          objectInfoList_.add(value);
+          onChanged();
+        } else {
+          objectInfoListBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .GravenInnocencePhotoObjectInfo object_info_list = 15;</code>
+       */
+      public Builder addObjectInfoList(
+          int index, emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfo value) {
+        if (objectInfoListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureObjectInfoListIsMutable();
+          objectInfoList_.add(index, value);
+          onChanged();
+        } else {
+          objectInfoListBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .GravenInnocencePhotoObjectInfo object_info_list = 15;</code>
+       */
+      public Builder addObjectInfoList(
+          emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfo.Builder builderForValue) {
+        if (objectInfoListBuilder_ == null) {
+          ensureObjectInfoListIsMutable();
+          objectInfoList_.add(builderForValue.build());
+          onChanged();
+        } else {
+          objectInfoListBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .GravenInnocencePhotoObjectInfo object_info_list = 15;</code>
+       */
+      public Builder addObjectInfoList(
+          int index, emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfo.Builder builderForValue) {
+        if (objectInfoListBuilder_ == null) {
+          ensureObjectInfoListIsMutable();
+          objectInfoList_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          objectInfoListBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .GravenInnocencePhotoObjectInfo object_info_list = 15;</code>
+       */
+      public Builder addAllObjectInfoList(
+          java.lang.Iterable<? extends emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfo> values) {
+        if (objectInfoListBuilder_ == null) {
+          ensureObjectInfoListIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, objectInfoList_);
+          onChanged();
+        } else {
+          objectInfoListBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .GravenInnocencePhotoObjectInfo object_info_list = 15;</code>
+       */
+      public Builder clearObjectInfoList() {
+        if (objectInfoListBuilder_ == null) {
+          objectInfoList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          objectInfoListBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .GravenInnocencePhotoObjectInfo object_info_list = 15;</code>
+       */
+      public Builder removeObjectInfoList(int index) {
+        if (objectInfoListBuilder_ == null) {
+          ensureObjectInfoListIsMutable();
+          objectInfoList_.remove(index);
+          onChanged();
+        } else {
+          objectInfoListBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .GravenInnocencePhotoObjectInfo object_info_list = 15;</code>
+       */
+      public emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfo.Builder getObjectInfoListBuilder(
+          int index) {
+        return getObjectInfoListFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .GravenInnocencePhotoObjectInfo object_info_list = 15;</code>
+       */
+      public emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfoOrBuilder getObjectInfoListOrBuilder(
+          int index) {
+        if (objectInfoListBuilder_ == null) {
+          return objectInfoList_.get(index);  } else {
+          return objectInfoListBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .GravenInnocencePhotoObjectInfo object_info_list = 15;</code>
+       */
+      public java.util.List<? extends emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfoOrBuilder> 
+           getObjectInfoListOrBuilderList() {
+        if (objectInfoListBuilder_ != null) {
+          return objectInfoListBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(objectInfoList_);
+        }
+      }
+      /**
+       * <code>repeated .GravenInnocencePhotoObjectInfo object_info_list = 15;</code>
+       */
+      public emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfo.Builder addObjectInfoListBuilder() {
+        return getObjectInfoListFieldBuilder().addBuilder(
+            emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfo.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .GravenInnocencePhotoObjectInfo object_info_list = 15;</code>
+       */
+      public emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfo.Builder addObjectInfoListBuilder(
+          int index) {
+        return getObjectInfoListFieldBuilder().addBuilder(
+            index, emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfo.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .GravenInnocencePhotoObjectInfo object_info_list = 15;</code>
+       */
+      public java.util.List<emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfo.Builder> 
+           getObjectInfoListBuilderList() {
+        return getObjectInfoListFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfo, emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfo.Builder, emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfoOrBuilder> 
+          getObjectInfoListFieldBuilder() {
+        if (objectInfoListBuilder_ == null) {
+          objectInfoListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfo, emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfo.Builder, emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfoOrBuilder>(
+                  objectInfoList_,
+                  ((bitField0_ & 0x00000002) != 0),
+                  getParentForChildren(),
+                  isClean());
+          objectInfoList_ = null;
+        }
+        return objectInfoListBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -1201,29 +1201,29 @@ public final class GravenInnocencePhotoInfoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\036GravenInnocencePhotoInfo.proto\032$Graven" +
-      "InnocencePhotoObjectInfo.proto\032#GravenIn" +
-      "nocencePhotoStageInfo.proto\"\216\001\n\030GravenIn" +
-      "nocencePhotoInfo\0229\n\020object_info_list\030\010 \003" +
-      "(\0132\037.GravenInnocencePhotoObjectInfo\0227\n\017s" +
-      "tage_info_list\030\r \003(\0132\036.GravenInnocencePh" +
-      "otoStageInfoB\033\n\031emu.grasscutter.net.prot" +
+      "\n\036GravenInnocencePhotoInfo.proto\032#Graven" +
+      "InnocencePhotoStageInfo.proto\032$GravenInn" +
+      "ocencePhotoObjectInfo.proto\"\216\001\n\030GravenIn" +
+      "nocencePhotoInfo\0227\n\017stage_info_list\030\013 \003(" +
+      "\0132\036.GravenInnocencePhotoStageInfo\0229\n\020obj" +
+      "ect_info_list\030\017 \003(\0132\037.GravenInnocencePho" +
+      "toObjectInfoB\033\n\031emu.grasscutter.net.prot" +
       "ob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.GravenInnocencePhotoStageInfoOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.getDescriptor(),
         });
     internal_static_GravenInnocencePhotoInfo_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_GravenInnocencePhotoInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GravenInnocencePhotoInfo_descriptor,
-        new java.lang.String[] { "ObjectInfoList", "StageInfoList", });
-    emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.getDescriptor();
+        new java.lang.String[] { "StageInfoList", "ObjectInfoList", });
     emu.grasscutter.net.proto.GravenInnocencePhotoStageInfoOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

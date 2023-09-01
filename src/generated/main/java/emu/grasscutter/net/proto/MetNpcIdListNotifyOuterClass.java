@@ -19,17 +19,17 @@ public final class MetNpcIdListNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 npc_first_met_id_list = 5;</code>
+     * <code>repeated uint32 npc_first_met_id_list = 8;</code>
      * @return A list containing the npcFirstMetIdList.
      */
     java.util.List<java.lang.Integer> getNpcFirstMetIdListList();
     /**
-     * <code>repeated uint32 npc_first_met_id_list = 5;</code>
+     * <code>repeated uint32 npc_first_met_id_list = 8;</code>
      * @return The count of npcFirstMetIdList.
      */
     int getNpcFirstMetIdListCount();
     /**
-     * <code>repeated uint32 npc_first_met_id_list = 5;</code>
+     * <code>repeated uint32 npc_first_met_id_list = 8;</code>
      * @param index The index of the element to return.
      * @return The npcFirstMetIdList at the given index.
      */
@@ -37,8 +37,8 @@ public final class MetNpcIdListNotifyOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 548
-   * Obf: IAEGKEHDIDK
+   * CmdId: 28244
+   * Obf: IAHIGLINDHJ
    * </pre>
    *
    * Protobuf type {@code MetNpcIdListNotify}
@@ -87,7 +87,7 @@ public final class MetNpcIdListNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
+            case 64: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 npcFirstMetIdList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -95,7 +95,7 @@ public final class MetNpcIdListNotifyOuterClass {
               npcFirstMetIdList_.addInt(input.readUInt32());
               break;
             }
-            case 42: {
+            case 66: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -143,10 +143,10 @@ public final class MetNpcIdListNotifyOuterClass {
               emu.grasscutter.net.proto.MetNpcIdListNotifyOuterClass.MetNpcIdListNotify.class, emu.grasscutter.net.proto.MetNpcIdListNotifyOuterClass.MetNpcIdListNotify.Builder.class);
     }
 
-    public static final int NPC_FIRST_MET_ID_LIST_FIELD_NUMBER = 5;
+    public static final int NPC_FIRST_MET_ID_LIST_FIELD_NUMBER = 8;
     private com.google.protobuf.Internal.IntList npcFirstMetIdList_;
     /**
-     * <code>repeated uint32 npc_first_met_id_list = 5;</code>
+     * <code>repeated uint32 npc_first_met_id_list = 8;</code>
      * @return A list containing the npcFirstMetIdList.
      */
     @java.lang.Override
@@ -155,14 +155,14 @@ public final class MetNpcIdListNotifyOuterClass {
       return npcFirstMetIdList_;
     }
     /**
-     * <code>repeated uint32 npc_first_met_id_list = 5;</code>
+     * <code>repeated uint32 npc_first_met_id_list = 8;</code>
      * @return The count of npcFirstMetIdList.
      */
     public int getNpcFirstMetIdListCount() {
       return npcFirstMetIdList_.size();
     }
     /**
-     * <code>repeated uint32 npc_first_met_id_list = 5;</code>
+     * <code>repeated uint32 npc_first_met_id_list = 8;</code>
      * @param index The index of the element to return.
      * @return The npcFirstMetIdList at the given index.
      */
@@ -187,7 +187,7 @@ public final class MetNpcIdListNotifyOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (getNpcFirstMetIdListList().size() > 0) {
-        output.writeUInt32NoTag(42);
+        output.writeUInt32NoTag(66);
         output.writeUInt32NoTag(npcFirstMetIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < npcFirstMetIdList_.size(); i++) {
@@ -345,8 +345,8 @@ public final class MetNpcIdListNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 548
-     * Obf: IAEGKEHDIDK
+     * CmdId: 28244
+     * Obf: IAHIGLINDHJ
      * </pre>
      *
      * Protobuf type {@code MetNpcIdListNotify}
@@ -516,7 +516,7 @@ public final class MetNpcIdListNotifyOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 npc_first_met_id_list = 5;</code>
+       * <code>repeated uint32 npc_first_met_id_list = 8;</code>
        * @return A list containing the npcFirstMetIdList.
        */
       public java.util.List<java.lang.Integer>
@@ -525,14 +525,14 @@ public final class MetNpcIdListNotifyOuterClass {
                  java.util.Collections.unmodifiableList(npcFirstMetIdList_) : npcFirstMetIdList_;
       }
       /**
-       * <code>repeated uint32 npc_first_met_id_list = 5;</code>
+       * <code>repeated uint32 npc_first_met_id_list = 8;</code>
        * @return The count of npcFirstMetIdList.
        */
       public int getNpcFirstMetIdListCount() {
         return npcFirstMetIdList_.size();
       }
       /**
-       * <code>repeated uint32 npc_first_met_id_list = 5;</code>
+       * <code>repeated uint32 npc_first_met_id_list = 8;</code>
        * @param index The index of the element to return.
        * @return The npcFirstMetIdList at the given index.
        */
@@ -540,7 +540,7 @@ public final class MetNpcIdListNotifyOuterClass {
         return npcFirstMetIdList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 npc_first_met_id_list = 5;</code>
+       * <code>repeated uint32 npc_first_met_id_list = 8;</code>
        * @param index The index to set the value at.
        * @param value The npcFirstMetIdList to set.
        * @return This builder for chaining.
@@ -553,7 +553,7 @@ public final class MetNpcIdListNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 npc_first_met_id_list = 5;</code>
+       * <code>repeated uint32 npc_first_met_id_list = 8;</code>
        * @param value The npcFirstMetIdList to add.
        * @return This builder for chaining.
        */
@@ -564,7 +564,7 @@ public final class MetNpcIdListNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 npc_first_met_id_list = 5;</code>
+       * <code>repeated uint32 npc_first_met_id_list = 8;</code>
        * @param values The npcFirstMetIdList to add.
        * @return This builder for chaining.
        */
@@ -577,7 +577,7 @@ public final class MetNpcIdListNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 npc_first_met_id_list = 5;</code>
+       * <code>repeated uint32 npc_first_met_id_list = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearNpcFirstMetIdList() {
@@ -654,7 +654,7 @@ public final class MetNpcIdListNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\030MetNpcIdListNotify.proto\"3\n\022MetNpcIdLi" +
-      "stNotify\022\035\n\025npc_first_met_id_list\030\005 \003(\rB" +
+      "stNotify\022\035\n\025npc_first_met_id_list\030\010 \003(\rB" +
       "\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

@@ -19,55 +19,55 @@ public final class GCGMessagePackOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 controller_id = 15;</code>
+     * <code>uint32 controller_id = 6;</code>
      * @return The controllerId.
      */
     int getControllerId();
 
     /**
-     * <code>repeated .GCGMessage msg_list = 5;</code>
+     * <code>repeated .GCGMessage msg_list = 13;</code>
      */
     java.util.List<emu.grasscutter.net.proto.GCGMessageOuterClass.GCGMessage> 
         getMsgListList();
     /**
-     * <code>repeated .GCGMessage msg_list = 5;</code>
+     * <code>repeated .GCGMessage msg_list = 13;</code>
      */
     emu.grasscutter.net.proto.GCGMessageOuterClass.GCGMessage getMsgList(int index);
     /**
-     * <code>repeated .GCGMessage msg_list = 5;</code>
+     * <code>repeated .GCGMessage msg_list = 13;</code>
      */
     int getMsgListCount();
     /**
-     * <code>repeated .GCGMessage msg_list = 5;</code>
+     * <code>repeated .GCGMessage msg_list = 13;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.GCGMessageOuterClass.GCGMessageOrBuilder> 
         getMsgListOrBuilderList();
     /**
-     * <code>repeated .GCGMessage msg_list = 5;</code>
+     * <code>repeated .GCGMessage msg_list = 13;</code>
      */
     emu.grasscutter.net.proto.GCGMessageOuterClass.GCGMessageOrBuilder getMsgListOrBuilder(
         int index);
 
     /**
-     * <code>.PEONGPLDDGK action_type = 8;</code>
+     * <code>.DNLLNJDINJG action_type = 4;</code>
      * @return The enum numeric value on the wire for actionType.
      */
     int getActionTypeValue();
     /**
-     * <code>.PEONGPLDDGK action_type = 8;</code>
+     * <code>.DNLLNJDINJG action_type = 4;</code>
      * @return The actionType.
      */
-    emu.grasscutter.net.proto.PEONGPLDDGKOuterClass.PEONGPLDDGK getActionType();
+    emu.grasscutter.net.proto.DNLLNJDINJGOuterClass.DNLLNJDINJG getActionType();
 
     /**
-     * <code>uint32 IGCDCJEJMOF = 7;</code>
-     * @return The iGCDCJEJMOF.
+     * <code>uint32 BJMHCKLMAHH = 9;</code>
+     * @return The bJMHCKLMAHH.
      */
-    int getIGCDCJEJMOF();
+    int getBJMHCKLMAHH();
   }
   /**
    * <pre>
-   * Obf: MLKPIINGDEN
+   * Obf: FLLBCOEFODJ
    * </pre>
    *
    * Protobuf type {@code GCGMessagePack}
@@ -117,29 +117,29 @@ public final class GCGMessagePackOuterClass {
             case 0:
               done = true;
               break;
-            case 42: {
+            case 32: {
+              int rawValue = input.readEnum();
+
+              actionType_ = rawValue;
+              break;
+            }
+            case 48: {
+
+              controllerId_ = input.readUInt32();
+              break;
+            }
+            case 72: {
+
+              bJMHCKLMAHH_ = input.readUInt32();
+              break;
+            }
+            case 106: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 msgList_ = new java.util.ArrayList<emu.grasscutter.net.proto.GCGMessageOuterClass.GCGMessage>();
                 mutable_bitField0_ |= 0x00000001;
               }
               msgList_.add(
                   input.readMessage(emu.grasscutter.net.proto.GCGMessageOuterClass.GCGMessage.parser(), extensionRegistry));
-              break;
-            }
-            case 56: {
-
-              iGCDCJEJMOF_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-              int rawValue = input.readEnum();
-
-              actionType_ = rawValue;
-              break;
-            }
-            case 120: {
-
-              controllerId_ = input.readUInt32();
               break;
             }
             default: {
@@ -177,10 +177,10 @@ public final class GCGMessagePackOuterClass {
               emu.grasscutter.net.proto.GCGMessagePackOuterClass.GCGMessagePack.class, emu.grasscutter.net.proto.GCGMessagePackOuterClass.GCGMessagePack.Builder.class);
     }
 
-    public static final int CONTROLLER_ID_FIELD_NUMBER = 15;
+    public static final int CONTROLLER_ID_FIELD_NUMBER = 6;
     private int controllerId_;
     /**
-     * <code>uint32 controller_id = 15;</code>
+     * <code>uint32 controller_id = 6;</code>
      * @return The controllerId.
      */
     @java.lang.Override
@@ -188,17 +188,17 @@ public final class GCGMessagePackOuterClass {
       return controllerId_;
     }
 
-    public static final int MSG_LIST_FIELD_NUMBER = 5;
+    public static final int MSG_LIST_FIELD_NUMBER = 13;
     private java.util.List<emu.grasscutter.net.proto.GCGMessageOuterClass.GCGMessage> msgList_;
     /**
-     * <code>repeated .GCGMessage msg_list = 5;</code>
+     * <code>repeated .GCGMessage msg_list = 13;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.GCGMessageOuterClass.GCGMessage> getMsgListList() {
       return msgList_;
     }
     /**
-     * <code>repeated .GCGMessage msg_list = 5;</code>
+     * <code>repeated .GCGMessage msg_list = 13;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.GCGMessageOuterClass.GCGMessageOrBuilder> 
@@ -206,21 +206,21 @@ public final class GCGMessagePackOuterClass {
       return msgList_;
     }
     /**
-     * <code>repeated .GCGMessage msg_list = 5;</code>
+     * <code>repeated .GCGMessage msg_list = 13;</code>
      */
     @java.lang.Override
     public int getMsgListCount() {
       return msgList_.size();
     }
     /**
-     * <code>repeated .GCGMessage msg_list = 5;</code>
+     * <code>repeated .GCGMessage msg_list = 13;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.GCGMessageOuterClass.GCGMessage getMsgList(int index) {
       return msgList_.get(index);
     }
     /**
-     * <code>repeated .GCGMessage msg_list = 5;</code>
+     * <code>repeated .GCGMessage msg_list = 13;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.GCGMessageOuterClass.GCGMessageOrBuilder getMsgListOrBuilder(
@@ -228,34 +228,34 @@ public final class GCGMessagePackOuterClass {
       return msgList_.get(index);
     }
 
-    public static final int ACTION_TYPE_FIELD_NUMBER = 8;
+    public static final int ACTION_TYPE_FIELD_NUMBER = 4;
     private int actionType_;
     /**
-     * <code>.PEONGPLDDGK action_type = 8;</code>
+     * <code>.DNLLNJDINJG action_type = 4;</code>
      * @return The enum numeric value on the wire for actionType.
      */
     @java.lang.Override public int getActionTypeValue() {
       return actionType_;
     }
     /**
-     * <code>.PEONGPLDDGK action_type = 8;</code>
+     * <code>.DNLLNJDINJG action_type = 4;</code>
      * @return The actionType.
      */
-    @java.lang.Override public emu.grasscutter.net.proto.PEONGPLDDGKOuterClass.PEONGPLDDGK getActionType() {
+    @java.lang.Override public emu.grasscutter.net.proto.DNLLNJDINJGOuterClass.DNLLNJDINJG getActionType() {
       @SuppressWarnings("deprecation")
-      emu.grasscutter.net.proto.PEONGPLDDGKOuterClass.PEONGPLDDGK result = emu.grasscutter.net.proto.PEONGPLDDGKOuterClass.PEONGPLDDGK.valueOf(actionType_);
-      return result == null ? emu.grasscutter.net.proto.PEONGPLDDGKOuterClass.PEONGPLDDGK.UNRECOGNIZED : result;
+      emu.grasscutter.net.proto.DNLLNJDINJGOuterClass.DNLLNJDINJG result = emu.grasscutter.net.proto.DNLLNJDINJGOuterClass.DNLLNJDINJG.valueOf(actionType_);
+      return result == null ? emu.grasscutter.net.proto.DNLLNJDINJGOuterClass.DNLLNJDINJG.UNRECOGNIZED : result;
     }
 
-    public static final int IGCDCJEJMOF_FIELD_NUMBER = 7;
-    private int iGCDCJEJMOF_;
+    public static final int BJMHCKLMAHH_FIELD_NUMBER = 9;
+    private int bJMHCKLMAHH_;
     /**
-     * <code>uint32 IGCDCJEJMOF = 7;</code>
-     * @return The iGCDCJEJMOF.
+     * <code>uint32 BJMHCKLMAHH = 9;</code>
+     * @return The bJMHCKLMAHH.
      */
     @java.lang.Override
-    public int getIGCDCJEJMOF() {
-      return iGCDCJEJMOF_;
+    public int getBJMHCKLMAHH() {
+      return bJMHCKLMAHH_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -272,17 +272,17 @@ public final class GCGMessagePackOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < msgList_.size(); i++) {
-        output.writeMessage(5, msgList_.get(i));
-      }
-      if (iGCDCJEJMOF_ != 0) {
-        output.writeUInt32(7, iGCDCJEJMOF_);
-      }
-      if (actionType_ != emu.grasscutter.net.proto.PEONGPLDDGKOuterClass.PEONGPLDDGK.PEONGPLDDGK_GcgActionNone.getNumber()) {
-        output.writeEnum(8, actionType_);
+      if (actionType_ != emu.grasscutter.net.proto.DNLLNJDINJGOuterClass.DNLLNJDINJG.DNLLNJDINJG_GcgActionNone.getNumber()) {
+        output.writeEnum(4, actionType_);
       }
       if (controllerId_ != 0) {
-        output.writeUInt32(15, controllerId_);
+        output.writeUInt32(6, controllerId_);
+      }
+      if (bJMHCKLMAHH_ != 0) {
+        output.writeUInt32(9, bJMHCKLMAHH_);
+      }
+      for (int i = 0; i < msgList_.size(); i++) {
+        output.writeMessage(13, msgList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -293,21 +293,21 @@ public final class GCGMessagePackOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < msgList_.size(); i++) {
+      if (actionType_ != emu.grasscutter.net.proto.DNLLNJDINJGOuterClass.DNLLNJDINJG.DNLLNJDINJG_GcgActionNone.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, msgList_.get(i));
-      }
-      if (iGCDCJEJMOF_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, iGCDCJEJMOF_);
-      }
-      if (actionType_ != emu.grasscutter.net.proto.PEONGPLDDGKOuterClass.PEONGPLDDGK.PEONGPLDDGK_GcgActionNone.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(8, actionType_);
+          .computeEnumSize(4, actionType_);
       }
       if (controllerId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, controllerId_);
+          .computeUInt32Size(6, controllerId_);
+      }
+      if (bJMHCKLMAHH_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(9, bJMHCKLMAHH_);
+      }
+      for (int i = 0; i < msgList_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(13, msgList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -329,8 +329,8 @@ public final class GCGMessagePackOuterClass {
       if (!getMsgListList()
           .equals(other.getMsgListList())) return false;
       if (actionType_ != other.actionType_) return false;
-      if (getIGCDCJEJMOF()
-          != other.getIGCDCJEJMOF()) return false;
+      if (getBJMHCKLMAHH()
+          != other.getBJMHCKLMAHH()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -350,8 +350,8 @@ public final class GCGMessagePackOuterClass {
       }
       hash = (37 * hash) + ACTION_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + actionType_;
-      hash = (37 * hash) + IGCDCJEJMOF_FIELD_NUMBER;
-      hash = (53 * hash) + getIGCDCJEJMOF();
+      hash = (37 * hash) + BJMHCKLMAHH_FIELD_NUMBER;
+      hash = (53 * hash) + getBJMHCKLMAHH();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -449,7 +449,7 @@ public final class GCGMessagePackOuterClass {
     }
     /**
      * <pre>
-     * Obf: MLKPIINGDEN
+     * Obf: FLLBCOEFODJ
      * </pre>
      *
      * Protobuf type {@code GCGMessagePack}
@@ -500,7 +500,7 @@ public final class GCGMessagePackOuterClass {
         }
         actionType_ = 0;
 
-        iGCDCJEJMOF_ = 0;
+        bJMHCKLMAHH_ = 0;
 
         return this;
       }
@@ -540,7 +540,7 @@ public final class GCGMessagePackOuterClass {
           result.msgList_ = msgListBuilder_.build();
         }
         result.actionType_ = actionType_;
-        result.iGCDCJEJMOF_ = iGCDCJEJMOF_;
+        result.bJMHCKLMAHH_ = bJMHCKLMAHH_;
         onBuilt();
         return result;
       }
@@ -621,8 +621,8 @@ public final class GCGMessagePackOuterClass {
         if (other.actionType_ != 0) {
           setActionTypeValue(other.getActionTypeValue());
         }
-        if (other.getIGCDCJEJMOF() != 0) {
-          setIGCDCJEJMOF(other.getIGCDCJEJMOF());
+        if (other.getBJMHCKLMAHH() != 0) {
+          setBJMHCKLMAHH(other.getBJMHCKLMAHH());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -656,7 +656,7 @@ public final class GCGMessagePackOuterClass {
 
       private int controllerId_ ;
       /**
-       * <code>uint32 controller_id = 15;</code>
+       * <code>uint32 controller_id = 6;</code>
        * @return The controllerId.
        */
       @java.lang.Override
@@ -664,7 +664,7 @@ public final class GCGMessagePackOuterClass {
         return controllerId_;
       }
       /**
-       * <code>uint32 controller_id = 15;</code>
+       * <code>uint32 controller_id = 6;</code>
        * @param value The controllerId to set.
        * @return This builder for chaining.
        */
@@ -675,7 +675,7 @@ public final class GCGMessagePackOuterClass {
         return this;
       }
       /**
-       * <code>uint32 controller_id = 15;</code>
+       * <code>uint32 controller_id = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearControllerId() {
@@ -698,7 +698,7 @@ public final class GCGMessagePackOuterClass {
           emu.grasscutter.net.proto.GCGMessageOuterClass.GCGMessage, emu.grasscutter.net.proto.GCGMessageOuterClass.GCGMessage.Builder, emu.grasscutter.net.proto.GCGMessageOuterClass.GCGMessageOrBuilder> msgListBuilder_;
 
       /**
-       * <code>repeated .GCGMessage msg_list = 5;</code>
+       * <code>repeated .GCGMessage msg_list = 13;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.GCGMessageOuterClass.GCGMessage> getMsgListList() {
         if (msgListBuilder_ == null) {
@@ -708,7 +708,7 @@ public final class GCGMessagePackOuterClass {
         }
       }
       /**
-       * <code>repeated .GCGMessage msg_list = 5;</code>
+       * <code>repeated .GCGMessage msg_list = 13;</code>
        */
       public int getMsgListCount() {
         if (msgListBuilder_ == null) {
@@ -718,7 +718,7 @@ public final class GCGMessagePackOuterClass {
         }
       }
       /**
-       * <code>repeated .GCGMessage msg_list = 5;</code>
+       * <code>repeated .GCGMessage msg_list = 13;</code>
        */
       public emu.grasscutter.net.proto.GCGMessageOuterClass.GCGMessage getMsgList(int index) {
         if (msgListBuilder_ == null) {
@@ -728,7 +728,7 @@ public final class GCGMessagePackOuterClass {
         }
       }
       /**
-       * <code>repeated .GCGMessage msg_list = 5;</code>
+       * <code>repeated .GCGMessage msg_list = 13;</code>
        */
       public Builder setMsgList(
           int index, emu.grasscutter.net.proto.GCGMessageOuterClass.GCGMessage value) {
@@ -745,7 +745,7 @@ public final class GCGMessagePackOuterClass {
         return this;
       }
       /**
-       * <code>repeated .GCGMessage msg_list = 5;</code>
+       * <code>repeated .GCGMessage msg_list = 13;</code>
        */
       public Builder setMsgList(
           int index, emu.grasscutter.net.proto.GCGMessageOuterClass.GCGMessage.Builder builderForValue) {
@@ -759,7 +759,7 @@ public final class GCGMessagePackOuterClass {
         return this;
       }
       /**
-       * <code>repeated .GCGMessage msg_list = 5;</code>
+       * <code>repeated .GCGMessage msg_list = 13;</code>
        */
       public Builder addMsgList(emu.grasscutter.net.proto.GCGMessageOuterClass.GCGMessage value) {
         if (msgListBuilder_ == null) {
@@ -775,7 +775,7 @@ public final class GCGMessagePackOuterClass {
         return this;
       }
       /**
-       * <code>repeated .GCGMessage msg_list = 5;</code>
+       * <code>repeated .GCGMessage msg_list = 13;</code>
        */
       public Builder addMsgList(
           int index, emu.grasscutter.net.proto.GCGMessageOuterClass.GCGMessage value) {
@@ -792,7 +792,7 @@ public final class GCGMessagePackOuterClass {
         return this;
       }
       /**
-       * <code>repeated .GCGMessage msg_list = 5;</code>
+       * <code>repeated .GCGMessage msg_list = 13;</code>
        */
       public Builder addMsgList(
           emu.grasscutter.net.proto.GCGMessageOuterClass.GCGMessage.Builder builderForValue) {
@@ -806,7 +806,7 @@ public final class GCGMessagePackOuterClass {
         return this;
       }
       /**
-       * <code>repeated .GCGMessage msg_list = 5;</code>
+       * <code>repeated .GCGMessage msg_list = 13;</code>
        */
       public Builder addMsgList(
           int index, emu.grasscutter.net.proto.GCGMessageOuterClass.GCGMessage.Builder builderForValue) {
@@ -820,7 +820,7 @@ public final class GCGMessagePackOuterClass {
         return this;
       }
       /**
-       * <code>repeated .GCGMessage msg_list = 5;</code>
+       * <code>repeated .GCGMessage msg_list = 13;</code>
        */
       public Builder addAllMsgList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.GCGMessageOuterClass.GCGMessage> values) {
@@ -835,7 +835,7 @@ public final class GCGMessagePackOuterClass {
         return this;
       }
       /**
-       * <code>repeated .GCGMessage msg_list = 5;</code>
+       * <code>repeated .GCGMessage msg_list = 13;</code>
        */
       public Builder clearMsgList() {
         if (msgListBuilder_ == null) {
@@ -848,7 +848,7 @@ public final class GCGMessagePackOuterClass {
         return this;
       }
       /**
-       * <code>repeated .GCGMessage msg_list = 5;</code>
+       * <code>repeated .GCGMessage msg_list = 13;</code>
        */
       public Builder removeMsgList(int index) {
         if (msgListBuilder_ == null) {
@@ -861,14 +861,14 @@ public final class GCGMessagePackOuterClass {
         return this;
       }
       /**
-       * <code>repeated .GCGMessage msg_list = 5;</code>
+       * <code>repeated .GCGMessage msg_list = 13;</code>
        */
       public emu.grasscutter.net.proto.GCGMessageOuterClass.GCGMessage.Builder getMsgListBuilder(
           int index) {
         return getMsgListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .GCGMessage msg_list = 5;</code>
+       * <code>repeated .GCGMessage msg_list = 13;</code>
        */
       public emu.grasscutter.net.proto.GCGMessageOuterClass.GCGMessageOrBuilder getMsgListOrBuilder(
           int index) {
@@ -878,7 +878,7 @@ public final class GCGMessagePackOuterClass {
         }
       }
       /**
-       * <code>repeated .GCGMessage msg_list = 5;</code>
+       * <code>repeated .GCGMessage msg_list = 13;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.GCGMessageOuterClass.GCGMessageOrBuilder> 
            getMsgListOrBuilderList() {
@@ -889,14 +889,14 @@ public final class GCGMessagePackOuterClass {
         }
       }
       /**
-       * <code>repeated .GCGMessage msg_list = 5;</code>
+       * <code>repeated .GCGMessage msg_list = 13;</code>
        */
       public emu.grasscutter.net.proto.GCGMessageOuterClass.GCGMessage.Builder addMsgListBuilder() {
         return getMsgListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.GCGMessageOuterClass.GCGMessage.getDefaultInstance());
       }
       /**
-       * <code>repeated .GCGMessage msg_list = 5;</code>
+       * <code>repeated .GCGMessage msg_list = 13;</code>
        */
       public emu.grasscutter.net.proto.GCGMessageOuterClass.GCGMessage.Builder addMsgListBuilder(
           int index) {
@@ -904,7 +904,7 @@ public final class GCGMessagePackOuterClass {
             index, emu.grasscutter.net.proto.GCGMessageOuterClass.GCGMessage.getDefaultInstance());
       }
       /**
-       * <code>repeated .GCGMessage msg_list = 5;</code>
+       * <code>repeated .GCGMessage msg_list = 13;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.GCGMessageOuterClass.GCGMessage.Builder> 
            getMsgListBuilderList() {
@@ -927,14 +927,14 @@ public final class GCGMessagePackOuterClass {
 
       private int actionType_ = 0;
       /**
-       * <code>.PEONGPLDDGK action_type = 8;</code>
+       * <code>.DNLLNJDINJG action_type = 4;</code>
        * @return The enum numeric value on the wire for actionType.
        */
       @java.lang.Override public int getActionTypeValue() {
         return actionType_;
       }
       /**
-       * <code>.PEONGPLDDGK action_type = 8;</code>
+       * <code>.DNLLNJDINJG action_type = 4;</code>
        * @param value The enum numeric value on the wire for actionType to set.
        * @return This builder for chaining.
        */
@@ -945,21 +945,21 @@ public final class GCGMessagePackOuterClass {
         return this;
       }
       /**
-       * <code>.PEONGPLDDGK action_type = 8;</code>
+       * <code>.DNLLNJDINJG action_type = 4;</code>
        * @return The actionType.
        */
       @java.lang.Override
-      public emu.grasscutter.net.proto.PEONGPLDDGKOuterClass.PEONGPLDDGK getActionType() {
+      public emu.grasscutter.net.proto.DNLLNJDINJGOuterClass.DNLLNJDINJG getActionType() {
         @SuppressWarnings("deprecation")
-        emu.grasscutter.net.proto.PEONGPLDDGKOuterClass.PEONGPLDDGK result = emu.grasscutter.net.proto.PEONGPLDDGKOuterClass.PEONGPLDDGK.valueOf(actionType_);
-        return result == null ? emu.grasscutter.net.proto.PEONGPLDDGKOuterClass.PEONGPLDDGK.UNRECOGNIZED : result;
+        emu.grasscutter.net.proto.DNLLNJDINJGOuterClass.DNLLNJDINJG result = emu.grasscutter.net.proto.DNLLNJDINJGOuterClass.DNLLNJDINJG.valueOf(actionType_);
+        return result == null ? emu.grasscutter.net.proto.DNLLNJDINJGOuterClass.DNLLNJDINJG.UNRECOGNIZED : result;
       }
       /**
-       * <code>.PEONGPLDDGK action_type = 8;</code>
+       * <code>.DNLLNJDINJG action_type = 4;</code>
        * @param value The actionType to set.
        * @return This builder for chaining.
        */
-      public Builder setActionType(emu.grasscutter.net.proto.PEONGPLDDGKOuterClass.PEONGPLDDGK value) {
+      public Builder setActionType(emu.grasscutter.net.proto.DNLLNJDINJGOuterClass.DNLLNJDINJG value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -969,7 +969,7 @@ public final class GCGMessagePackOuterClass {
         return this;
       }
       /**
-       * <code>.PEONGPLDDGK action_type = 8;</code>
+       * <code>.DNLLNJDINJG action_type = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearActionType() {
@@ -979,33 +979,33 @@ public final class GCGMessagePackOuterClass {
         return this;
       }
 
-      private int iGCDCJEJMOF_ ;
+      private int bJMHCKLMAHH_ ;
       /**
-       * <code>uint32 IGCDCJEJMOF = 7;</code>
-       * @return The iGCDCJEJMOF.
+       * <code>uint32 BJMHCKLMAHH = 9;</code>
+       * @return The bJMHCKLMAHH.
        */
       @java.lang.Override
-      public int getIGCDCJEJMOF() {
-        return iGCDCJEJMOF_;
+      public int getBJMHCKLMAHH() {
+        return bJMHCKLMAHH_;
       }
       /**
-       * <code>uint32 IGCDCJEJMOF = 7;</code>
-       * @param value The iGCDCJEJMOF to set.
+       * <code>uint32 BJMHCKLMAHH = 9;</code>
+       * @param value The bJMHCKLMAHH to set.
        * @return This builder for chaining.
        */
-      public Builder setIGCDCJEJMOF(int value) {
+      public Builder setBJMHCKLMAHH(int value) {
         
-        iGCDCJEJMOF_ = value;
+        bJMHCKLMAHH_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 IGCDCJEJMOF = 7;</code>
+       * <code>uint32 BJMHCKLMAHH = 9;</code>
        * @return This builder for chaining.
        */
-      public Builder clearIGCDCJEJMOF() {
+      public Builder clearBJMHCKLMAHH() {
         
-        iGCDCJEJMOF_ = 0;
+        bJMHCKLMAHH_ = 0;
         onChanged();
         return this;
       }
@@ -1077,26 +1077,26 @@ public final class GCGMessagePackOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\024GCGMessagePack.proto\032\020GCGMessage.proto" +
-      "\032\021PEONGPLDDGK.proto\"~\n\016GCGMessagePack\022\025\n" +
-      "\rcontroller_id\030\017 \001(\r\022\035\n\010msg_list\030\005 \003(\0132\013" +
-      ".GCGMessage\022!\n\013action_type\030\010 \001(\0162\014.PEONG" +
-      "PLDDGK\022\023\n\013IGCDCJEJMOF\030\007 \001(\rB\033\n\031emu.grass" +
+      "\032\021DNLLNJDINJG.proto\"~\n\016GCGMessagePack\022\025\n" +
+      "\rcontroller_id\030\006 \001(\r\022\035\n\010msg_list\030\r \003(\0132\013" +
+      ".GCGMessage\022!\n\013action_type\030\004 \001(\0162\014.DNLLN" +
+      "JDINJG\022\023\n\013BJMHCKLMAHH\030\t \001(\rB\033\n\031emu.grass" +
       "cutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           emu.grasscutter.net.proto.GCGMessageOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.PEONGPLDDGKOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.DNLLNJDINJGOuterClass.getDescriptor(),
         });
     internal_static_GCGMessagePack_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_GCGMessagePack_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GCGMessagePack_descriptor,
-        new java.lang.String[] { "ControllerId", "MsgList", "ActionType", "IGCDCJEJMOF", });
+        new java.lang.String[] { "ControllerId", "MsgList", "ActionType", "BJMHCKLMAHH", });
     emu.grasscutter.net.proto.GCGMessageOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.PEONGPLDDGKOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.DNLLNJDINJGOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

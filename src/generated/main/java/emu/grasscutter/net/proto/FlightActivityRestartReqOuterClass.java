@@ -19,21 +19,21 @@ public final class FlightActivityRestartReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 group_id = 5;</code>
-     * @return The groupId.
-     */
-    int getGroupId();
-
-    /**
      * <code>uint32 schedule_id = 1;</code>
      * @return The scheduleId.
      */
     int getScheduleId();
+
+    /**
+     * <code>uint32 group_id = 10;</code>
+     * @return The groupId.
+     */
+    int getGroupId();
   }
   /**
    * <pre>
-   * CmdId: 2149
-   * Obf: MKGAAGMAIDL
+   * CmdId: 25206
+   * Obf: NGCKDMEDDHO
    * </pre>
    *
    * Protobuf type {@code FlightActivityRestartReq}
@@ -85,7 +85,7 @@ public final class FlightActivityRestartReqOuterClass {
               scheduleId_ = input.readUInt32();
               break;
             }
-            case 40: {
+            case 80: {
 
               groupId_ = input.readUInt32();
               break;
@@ -122,17 +122,6 @@ public final class FlightActivityRestartReqOuterClass {
               emu.grasscutter.net.proto.FlightActivityRestartReqOuterClass.FlightActivityRestartReq.class, emu.grasscutter.net.proto.FlightActivityRestartReqOuterClass.FlightActivityRestartReq.Builder.class);
     }
 
-    public static final int GROUP_ID_FIELD_NUMBER = 5;
-    private int groupId_;
-    /**
-     * <code>uint32 group_id = 5;</code>
-     * @return The groupId.
-     */
-    @java.lang.Override
-    public int getGroupId() {
-      return groupId_;
-    }
-
     public static final int SCHEDULE_ID_FIELD_NUMBER = 1;
     private int scheduleId_;
     /**
@@ -142,6 +131,17 @@ public final class FlightActivityRestartReqOuterClass {
     @java.lang.Override
     public int getScheduleId() {
       return scheduleId_;
+    }
+
+    public static final int GROUP_ID_FIELD_NUMBER = 10;
+    private int groupId_;
+    /**
+     * <code>uint32 group_id = 10;</code>
+     * @return The groupId.
+     */
+    @java.lang.Override
+    public int getGroupId() {
+      return groupId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -162,7 +162,7 @@ public final class FlightActivityRestartReqOuterClass {
         output.writeUInt32(1, scheduleId_);
       }
       if (groupId_ != 0) {
-        output.writeUInt32(5, groupId_);
+        output.writeUInt32(10, groupId_);
       }
       unknownFields.writeTo(output);
     }
@@ -179,7 +179,7 @@ public final class FlightActivityRestartReqOuterClass {
       }
       if (groupId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, groupId_);
+          .computeUInt32Size(10, groupId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -196,10 +196,10 @@ public final class FlightActivityRestartReqOuterClass {
       }
       emu.grasscutter.net.proto.FlightActivityRestartReqOuterClass.FlightActivityRestartReq other = (emu.grasscutter.net.proto.FlightActivityRestartReqOuterClass.FlightActivityRestartReq) obj;
 
-      if (getGroupId()
-          != other.getGroupId()) return false;
       if (getScheduleId()
           != other.getScheduleId()) return false;
+      if (getGroupId()
+          != other.getGroupId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -211,10 +211,10 @@ public final class FlightActivityRestartReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + GROUP_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getGroupId();
       hash = (37 * hash) + SCHEDULE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getScheduleId();
+      hash = (37 * hash) + GROUP_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getGroupId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -312,8 +312,8 @@ public final class FlightActivityRestartReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2149
-     * Obf: MKGAAGMAIDL
+     * CmdId: 25206
+     * Obf: NGCKDMEDDHO
      * </pre>
      *
      * Protobuf type {@code FlightActivityRestartReq}
@@ -353,9 +353,9 @@ public final class FlightActivityRestartReqOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        groupId_ = 0;
-
         scheduleId_ = 0;
+
+        groupId_ = 0;
 
         return this;
       }
@@ -383,8 +383,8 @@ public final class FlightActivityRestartReqOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.FlightActivityRestartReqOuterClass.FlightActivityRestartReq buildPartial() {
         emu.grasscutter.net.proto.FlightActivityRestartReqOuterClass.FlightActivityRestartReq result = new emu.grasscutter.net.proto.FlightActivityRestartReqOuterClass.FlightActivityRestartReq(this);
-        result.groupId_ = groupId_;
         result.scheduleId_ = scheduleId_;
+        result.groupId_ = groupId_;
         onBuilt();
         return result;
       }
@@ -433,11 +433,11 @@ public final class FlightActivityRestartReqOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.FlightActivityRestartReqOuterClass.FlightActivityRestartReq other) {
         if (other == emu.grasscutter.net.proto.FlightActivityRestartReqOuterClass.FlightActivityRestartReq.getDefaultInstance()) return this;
-        if (other.getGroupId() != 0) {
-          setGroupId(other.getGroupId());
-        }
         if (other.getScheduleId() != 0) {
           setScheduleId(other.getScheduleId());
+        }
+        if (other.getGroupId() != 0) {
+          setGroupId(other.getGroupId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -468,37 +468,6 @@ public final class FlightActivityRestartReqOuterClass {
         return this;
       }
 
-      private int groupId_ ;
-      /**
-       * <code>uint32 group_id = 5;</code>
-       * @return The groupId.
-       */
-      @java.lang.Override
-      public int getGroupId() {
-        return groupId_;
-      }
-      /**
-       * <code>uint32 group_id = 5;</code>
-       * @param value The groupId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setGroupId(int value) {
-        
-        groupId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 group_id = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearGroupId() {
-        
-        groupId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int scheduleId_ ;
       /**
        * <code>uint32 schedule_id = 1;</code>
@@ -526,6 +495,37 @@ public final class FlightActivityRestartReqOuterClass {
       public Builder clearScheduleId() {
         
         scheduleId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int groupId_ ;
+      /**
+       * <code>uint32 group_id = 10;</code>
+       * @return The groupId.
+       */
+      @java.lang.Override
+      public int getGroupId() {
+        return groupId_;
+      }
+      /**
+       * <code>uint32 group_id = 10;</code>
+       * @param value The groupId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGroupId(int value) {
+        
+        groupId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 group_id = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGroupId() {
+        
+        groupId_ = 0;
         onChanged();
         return this;
       }
@@ -597,8 +597,8 @@ public final class FlightActivityRestartReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\036FlightActivityRestartReq.proto\"A\n\030Flig" +
-      "htActivityRestartReq\022\020\n\010group_id\030\005 \001(\r\022\023" +
-      "\n\013schedule_id\030\001 \001(\rB\033\n\031emu.grasscutter.n" +
+      "htActivityRestartReq\022\023\n\013schedule_id\030\001 \001(" +
+      "\r\022\020\n\010group_id\030\n \001(\rB\033\n\031emu.grasscutter.n" +
       "et.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -610,7 +610,7 @@ public final class FlightActivityRestartReqOuterClass {
     internal_static_FlightActivityRestartReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_FlightActivityRestartReq_descriptor,
-        new java.lang.String[] { "GroupId", "ScheduleId", });
+        new java.lang.String[] { "ScheduleId", "GroupId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

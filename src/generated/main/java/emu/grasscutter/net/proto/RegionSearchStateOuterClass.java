@@ -16,7 +16,7 @@ public final class RegionSearchStateOuterClass {
   }
   /**
    * <pre>
-   * Obf: JEONFIOIHJC
+   * Obf: PNAKDNOMNOP
    * </pre>
    *
    * Protobuf enum {@code RegionSearchState}

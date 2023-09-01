@@ -41,7 +41,7 @@ public final class NpcPositionInfoOuterClass {
   }
   /**
    * <pre>
-   * Obf: AIOMPABPEOJ
+   * Obf: NCOCAOMPAEI
    * </pre>
    *
    * Protobuf type {@code NpcPositionInfo}
@@ -348,7 +348,7 @@ public final class NpcPositionInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: AIOMPABPEOJ
+     * Obf: NCOCAOMPAEI
      * </pre>
      *
      * Protobuf type {@code NpcPositionInfo}

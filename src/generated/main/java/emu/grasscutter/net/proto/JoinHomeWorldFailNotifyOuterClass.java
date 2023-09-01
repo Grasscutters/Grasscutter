@@ -19,21 +19,21 @@ public final class JoinHomeWorldFailNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 4;</code>
+     * <code>int32 retcode = 14;</code>
      * @return The retcode.
      */
     int getRetcode();
 
     /**
-     * <code>uint32 target_uid = 12;</code>
+     * <code>uint32 target_uid = 11;</code>
      * @return The targetUid.
      */
     int getTargetUid();
   }
   /**
    * <pre>
-   * CmdId: 4600
-   * Obf: OPGDMIEDCOP
+   * CmdId: 2403
+   * Obf: GBHNANPJGMC
    * </pre>
    *
    * Protobuf type {@code JoinHomeWorldFailNotify}
@@ -80,14 +80,14 @@ public final class JoinHomeWorldFailNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 96: {
+            case 88: {
 
               targetUid_ = input.readUInt32();
+              break;
+            }
+            case 112: {
+
+              retcode_ = input.readInt32();
               break;
             }
             default: {
@@ -122,10 +122,10 @@ public final class JoinHomeWorldFailNotifyOuterClass {
               emu.grasscutter.net.proto.JoinHomeWorldFailNotifyOuterClass.JoinHomeWorldFailNotify.class, emu.grasscutter.net.proto.JoinHomeWorldFailNotifyOuterClass.JoinHomeWorldFailNotify.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 4;
+    public static final int RETCODE_FIELD_NUMBER = 14;
     private int retcode_;
     /**
-     * <code>int32 retcode = 4;</code>
+     * <code>int32 retcode = 14;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -133,10 +133,10 @@ public final class JoinHomeWorldFailNotifyOuterClass {
       return retcode_;
     }
 
-    public static final int TARGET_UID_FIELD_NUMBER = 12;
+    public static final int TARGET_UID_FIELD_NUMBER = 11;
     private int targetUid_;
     /**
-     * <code>uint32 target_uid = 12;</code>
+     * <code>uint32 target_uid = 11;</code>
      * @return The targetUid.
      */
     @java.lang.Override
@@ -158,11 +158,11 @@ public final class JoinHomeWorldFailNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (retcode_ != 0) {
-        output.writeInt32(4, retcode_);
-      }
       if (targetUid_ != 0) {
-        output.writeUInt32(12, targetUid_);
+        output.writeUInt32(11, targetUid_);
+      }
+      if (retcode_ != 0) {
+        output.writeInt32(14, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -173,13 +173,13 @@ public final class JoinHomeWorldFailNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (retcode_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(4, retcode_);
-      }
       if (targetUid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, targetUid_);
+          .computeUInt32Size(11, targetUid_);
+      }
+      if (retcode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(14, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -312,8 +312,8 @@ public final class JoinHomeWorldFailNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4600
-     * Obf: OPGDMIEDCOP
+     * CmdId: 2403
+     * Obf: GBHNANPJGMC
      * </pre>
      *
      * Protobuf type {@code JoinHomeWorldFailNotify}
@@ -470,7 +470,7 @@ public final class JoinHomeWorldFailNotifyOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 4;</code>
+       * <code>int32 retcode = 14;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -478,7 +478,7 @@ public final class JoinHomeWorldFailNotifyOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 4;</code>
+       * <code>int32 retcode = 14;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -489,7 +489,7 @@ public final class JoinHomeWorldFailNotifyOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 4;</code>
+       * <code>int32 retcode = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -501,7 +501,7 @@ public final class JoinHomeWorldFailNotifyOuterClass {
 
       private int targetUid_ ;
       /**
-       * <code>uint32 target_uid = 12;</code>
+       * <code>uint32 target_uid = 11;</code>
        * @return The targetUid.
        */
       @java.lang.Override
@@ -509,7 +509,7 @@ public final class JoinHomeWorldFailNotifyOuterClass {
         return targetUid_;
       }
       /**
-       * <code>uint32 target_uid = 12;</code>
+       * <code>uint32 target_uid = 11;</code>
        * @param value The targetUid to set.
        * @return This builder for chaining.
        */
@@ -520,7 +520,7 @@ public final class JoinHomeWorldFailNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 target_uid = 12;</code>
+       * <code>uint32 target_uid = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearTargetUid() {
@@ -597,8 +597,8 @@ public final class JoinHomeWorldFailNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\035JoinHomeWorldFailNotify.proto\">\n\027JoinH" +
-      "omeWorldFailNotify\022\017\n\007retcode\030\004 \001(\005\022\022\n\nt" +
-      "arget_uid\030\014 \001(\rB\033\n\031emu.grasscutter.net.p" +
+      "omeWorldFailNotify\022\017\n\007retcode\030\016 \001(\005\022\022\n\nt" +
+      "arget_uid\030\013 \001(\rB\033\n\031emu.grasscutter.net.p" +
       "rotob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

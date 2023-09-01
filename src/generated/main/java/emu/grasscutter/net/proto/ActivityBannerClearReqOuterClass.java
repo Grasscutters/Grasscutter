@@ -19,21 +19,21 @@ public final class ActivityBannerClearReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 activity_id = 8;</code>
+     * <code>uint32 activity_id = 7;</code>
      * @return The activityId.
      */
     int getActivityId();
 
     /**
-     * <code>uint32 schedule_id = 5;</code>
+     * <code>uint32 schedule_id = 9;</code>
      * @return The scheduleId.
      */
     int getScheduleId();
   }
   /**
    * <pre>
-   * CmdId: 2077
-   * Obf: KEPNGAHDLEJ
+   * CmdId: 3086
+   * Obf: EDPJEMOMFFF
    * </pre>
    *
    * Protobuf type {@code ActivityBannerClearReq}
@@ -80,14 +80,14 @@ public final class ActivityBannerClearReqOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
-
-              scheduleId_ = input.readUInt32();
-              break;
-            }
-            case 64: {
+            case 56: {
 
               activityId_ = input.readUInt32();
+              break;
+            }
+            case 72: {
+
+              scheduleId_ = input.readUInt32();
               break;
             }
             default: {
@@ -122,10 +122,10 @@ public final class ActivityBannerClearReqOuterClass {
               emu.grasscutter.net.proto.ActivityBannerClearReqOuterClass.ActivityBannerClearReq.class, emu.grasscutter.net.proto.ActivityBannerClearReqOuterClass.ActivityBannerClearReq.Builder.class);
     }
 
-    public static final int ACTIVITY_ID_FIELD_NUMBER = 8;
+    public static final int ACTIVITY_ID_FIELD_NUMBER = 7;
     private int activityId_;
     /**
-     * <code>uint32 activity_id = 8;</code>
+     * <code>uint32 activity_id = 7;</code>
      * @return The activityId.
      */
     @java.lang.Override
@@ -133,10 +133,10 @@ public final class ActivityBannerClearReqOuterClass {
       return activityId_;
     }
 
-    public static final int SCHEDULE_ID_FIELD_NUMBER = 5;
+    public static final int SCHEDULE_ID_FIELD_NUMBER = 9;
     private int scheduleId_;
     /**
-     * <code>uint32 schedule_id = 5;</code>
+     * <code>uint32 schedule_id = 9;</code>
      * @return The scheduleId.
      */
     @java.lang.Override
@@ -158,11 +158,11 @@ public final class ActivityBannerClearReqOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (scheduleId_ != 0) {
-        output.writeUInt32(5, scheduleId_);
-      }
       if (activityId_ != 0) {
-        output.writeUInt32(8, activityId_);
+        output.writeUInt32(7, activityId_);
+      }
+      if (scheduleId_ != 0) {
+        output.writeUInt32(9, scheduleId_);
       }
       unknownFields.writeTo(output);
     }
@@ -173,13 +173,13 @@ public final class ActivityBannerClearReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (scheduleId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, scheduleId_);
-      }
       if (activityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, activityId_);
+          .computeUInt32Size(7, activityId_);
+      }
+      if (scheduleId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(9, scheduleId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -312,8 +312,8 @@ public final class ActivityBannerClearReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2077
-     * Obf: KEPNGAHDLEJ
+     * CmdId: 3086
+     * Obf: EDPJEMOMFFF
      * </pre>
      *
      * Protobuf type {@code ActivityBannerClearReq}
@@ -470,7 +470,7 @@ public final class ActivityBannerClearReqOuterClass {
 
       private int activityId_ ;
       /**
-       * <code>uint32 activity_id = 8;</code>
+       * <code>uint32 activity_id = 7;</code>
        * @return The activityId.
        */
       @java.lang.Override
@@ -478,7 +478,7 @@ public final class ActivityBannerClearReqOuterClass {
         return activityId_;
       }
       /**
-       * <code>uint32 activity_id = 8;</code>
+       * <code>uint32 activity_id = 7;</code>
        * @param value The activityId to set.
        * @return This builder for chaining.
        */
@@ -489,7 +489,7 @@ public final class ActivityBannerClearReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 activity_id = 8;</code>
+       * <code>uint32 activity_id = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearActivityId() {
@@ -501,7 +501,7 @@ public final class ActivityBannerClearReqOuterClass {
 
       private int scheduleId_ ;
       /**
-       * <code>uint32 schedule_id = 5;</code>
+       * <code>uint32 schedule_id = 9;</code>
        * @return The scheduleId.
        */
       @java.lang.Override
@@ -509,7 +509,7 @@ public final class ActivityBannerClearReqOuterClass {
         return scheduleId_;
       }
       /**
-       * <code>uint32 schedule_id = 5;</code>
+       * <code>uint32 schedule_id = 9;</code>
        * @param value The scheduleId to set.
        * @return This builder for chaining.
        */
@@ -520,7 +520,7 @@ public final class ActivityBannerClearReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 schedule_id = 5;</code>
+       * <code>uint32 schedule_id = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearScheduleId() {
@@ -597,8 +597,8 @@ public final class ActivityBannerClearReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\034ActivityBannerClearReq.proto\"B\n\026Activi" +
-      "tyBannerClearReq\022\023\n\013activity_id\030\010 \001(\r\022\023\n" +
-      "\013schedule_id\030\005 \001(\rB\033\n\031emu.grasscutter.ne" +
+      "tyBannerClearReq\022\023\n\013activity_id\030\007 \001(\r\022\023\n" +
+      "\013schedule_id\030\t \001(\rB\033\n\031emu.grasscutter.ne" +
       "t.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

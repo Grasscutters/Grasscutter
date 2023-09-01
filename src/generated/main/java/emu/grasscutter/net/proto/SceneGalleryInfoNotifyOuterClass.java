@@ -19,24 +19,24 @@ public final class SceneGalleryInfoNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.SceneGalleryInfo gallery_info = 15;</code>
+     * <code>.SceneGalleryInfo gallery_info = 12;</code>
      * @return Whether the galleryInfo field is set.
      */
     boolean hasGalleryInfo();
     /**
-     * <code>.SceneGalleryInfo gallery_info = 15;</code>
+     * <code>.SceneGalleryInfo gallery_info = 12;</code>
      * @return The galleryInfo.
      */
     emu.grasscutter.net.proto.SceneGalleryInfoOuterClass.SceneGalleryInfo getGalleryInfo();
     /**
-     * <code>.SceneGalleryInfo gallery_info = 15;</code>
+     * <code>.SceneGalleryInfo gallery_info = 12;</code>
      */
     emu.grasscutter.net.proto.SceneGalleryInfoOuterClass.SceneGalleryInfoOrBuilder getGalleryInfoOrBuilder();
   }
   /**
    * <pre>
-   * CmdId: 5594
-   * Obf: CPJDECLPLDA
+   * CmdId: 5587
+   * Obf: KONCIICIJOL
    * </pre>
    *
    * Protobuf type {@code SceneGalleryInfoNotify}
@@ -83,7 +83,7 @@ public final class SceneGalleryInfoNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 122: {
+            case 98: {
               emu.grasscutter.net.proto.SceneGalleryInfoOuterClass.SceneGalleryInfo.Builder subBuilder = null;
               if (galleryInfo_ != null) {
                 subBuilder = galleryInfo_.toBuilder();
@@ -128,10 +128,10 @@ public final class SceneGalleryInfoNotifyOuterClass {
               emu.grasscutter.net.proto.SceneGalleryInfoNotifyOuterClass.SceneGalleryInfoNotify.class, emu.grasscutter.net.proto.SceneGalleryInfoNotifyOuterClass.SceneGalleryInfoNotify.Builder.class);
     }
 
-    public static final int GALLERY_INFO_FIELD_NUMBER = 15;
+    public static final int GALLERY_INFO_FIELD_NUMBER = 12;
     private emu.grasscutter.net.proto.SceneGalleryInfoOuterClass.SceneGalleryInfo galleryInfo_;
     /**
-     * <code>.SceneGalleryInfo gallery_info = 15;</code>
+     * <code>.SceneGalleryInfo gallery_info = 12;</code>
      * @return Whether the galleryInfo field is set.
      */
     @java.lang.Override
@@ -139,7 +139,7 @@ public final class SceneGalleryInfoNotifyOuterClass {
       return galleryInfo_ != null;
     }
     /**
-     * <code>.SceneGalleryInfo gallery_info = 15;</code>
+     * <code>.SceneGalleryInfo gallery_info = 12;</code>
      * @return The galleryInfo.
      */
     @java.lang.Override
@@ -147,7 +147,7 @@ public final class SceneGalleryInfoNotifyOuterClass {
       return galleryInfo_ == null ? emu.grasscutter.net.proto.SceneGalleryInfoOuterClass.SceneGalleryInfo.getDefaultInstance() : galleryInfo_;
     }
     /**
-     * <code>.SceneGalleryInfo gallery_info = 15;</code>
+     * <code>.SceneGalleryInfo gallery_info = 12;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.SceneGalleryInfoOuterClass.SceneGalleryInfoOrBuilder getGalleryInfoOrBuilder() {
@@ -169,7 +169,7 @@ public final class SceneGalleryInfoNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (galleryInfo_ != null) {
-        output.writeMessage(15, getGalleryInfo());
+        output.writeMessage(12, getGalleryInfo());
       }
       unknownFields.writeTo(output);
     }
@@ -182,7 +182,7 @@ public final class SceneGalleryInfoNotifyOuterClass {
       size = 0;
       if (galleryInfo_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(15, getGalleryInfo());
+          .computeMessageSize(12, getGalleryInfo());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -316,8 +316,8 @@ public final class SceneGalleryInfoNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 5594
-     * Obf: CPJDECLPLDA
+     * CmdId: 5587
+     * Obf: KONCIICIJOL
      * </pre>
      *
      * Protobuf type {@code SceneGalleryInfoNotify}
@@ -478,14 +478,14 @@ public final class SceneGalleryInfoNotifyOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.SceneGalleryInfoOuterClass.SceneGalleryInfo, emu.grasscutter.net.proto.SceneGalleryInfoOuterClass.SceneGalleryInfo.Builder, emu.grasscutter.net.proto.SceneGalleryInfoOuterClass.SceneGalleryInfoOrBuilder> galleryInfoBuilder_;
       /**
-       * <code>.SceneGalleryInfo gallery_info = 15;</code>
+       * <code>.SceneGalleryInfo gallery_info = 12;</code>
        * @return Whether the galleryInfo field is set.
        */
       public boolean hasGalleryInfo() {
         return galleryInfoBuilder_ != null || galleryInfo_ != null;
       }
       /**
-       * <code>.SceneGalleryInfo gallery_info = 15;</code>
+       * <code>.SceneGalleryInfo gallery_info = 12;</code>
        * @return The galleryInfo.
        */
       public emu.grasscutter.net.proto.SceneGalleryInfoOuterClass.SceneGalleryInfo getGalleryInfo() {
@@ -496,7 +496,7 @@ public final class SceneGalleryInfoNotifyOuterClass {
         }
       }
       /**
-       * <code>.SceneGalleryInfo gallery_info = 15;</code>
+       * <code>.SceneGalleryInfo gallery_info = 12;</code>
        */
       public Builder setGalleryInfo(emu.grasscutter.net.proto.SceneGalleryInfoOuterClass.SceneGalleryInfo value) {
         if (galleryInfoBuilder_ == null) {
@@ -512,7 +512,7 @@ public final class SceneGalleryInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.SceneGalleryInfo gallery_info = 15;</code>
+       * <code>.SceneGalleryInfo gallery_info = 12;</code>
        */
       public Builder setGalleryInfo(
           emu.grasscutter.net.proto.SceneGalleryInfoOuterClass.SceneGalleryInfo.Builder builderForValue) {
@@ -526,7 +526,7 @@ public final class SceneGalleryInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.SceneGalleryInfo gallery_info = 15;</code>
+       * <code>.SceneGalleryInfo gallery_info = 12;</code>
        */
       public Builder mergeGalleryInfo(emu.grasscutter.net.proto.SceneGalleryInfoOuterClass.SceneGalleryInfo value) {
         if (galleryInfoBuilder_ == null) {
@@ -544,7 +544,7 @@ public final class SceneGalleryInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.SceneGalleryInfo gallery_info = 15;</code>
+       * <code>.SceneGalleryInfo gallery_info = 12;</code>
        */
       public Builder clearGalleryInfo() {
         if (galleryInfoBuilder_ == null) {
@@ -558,7 +558,7 @@ public final class SceneGalleryInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.SceneGalleryInfo gallery_info = 15;</code>
+       * <code>.SceneGalleryInfo gallery_info = 12;</code>
        */
       public emu.grasscutter.net.proto.SceneGalleryInfoOuterClass.SceneGalleryInfo.Builder getGalleryInfoBuilder() {
         
@@ -566,7 +566,7 @@ public final class SceneGalleryInfoNotifyOuterClass {
         return getGalleryInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.SceneGalleryInfo gallery_info = 15;</code>
+       * <code>.SceneGalleryInfo gallery_info = 12;</code>
        */
       public emu.grasscutter.net.proto.SceneGalleryInfoOuterClass.SceneGalleryInfoOrBuilder getGalleryInfoOrBuilder() {
         if (galleryInfoBuilder_ != null) {
@@ -577,7 +577,7 @@ public final class SceneGalleryInfoNotifyOuterClass {
         }
       }
       /**
-       * <code>.SceneGalleryInfo gallery_info = 15;</code>
+       * <code>.SceneGalleryInfo gallery_info = 12;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.SceneGalleryInfoOuterClass.SceneGalleryInfo, emu.grasscutter.net.proto.SceneGalleryInfoOuterClass.SceneGalleryInfo.Builder, emu.grasscutter.net.proto.SceneGalleryInfoOuterClass.SceneGalleryInfoOrBuilder> 
@@ -661,7 +661,7 @@ public final class SceneGalleryInfoNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\034SceneGalleryInfoNotify.proto\032\026SceneGal" +
       "leryInfo.proto\"A\n\026SceneGalleryInfoNotify" +
-      "\022\'\n\014gallery_info\030\017 \001(\0132\021.SceneGalleryInf" +
+      "\022\'\n\014gallery_info\030\014 \001(\0132\021.SceneGalleryInf" +
       "oB\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

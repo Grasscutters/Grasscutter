@@ -19,21 +19,21 @@ public final class QuickOpenActivityRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 12;</code>
-     * @return The retcode.
-     */
-    int getRetcode();
-
-    /**
-     * <code>uint32 activity_id = 10;</code>
+     * <code>uint32 activity_id = 8;</code>
      * @return The activityId.
      */
     int getActivityId();
+
+    /**
+     * <code>int32 retcode = 13;</code>
+     * @return The retcode.
+     */
+    int getRetcode();
   }
   /**
    * <pre>
-   * CmdId: 8579
-   * Obf: CBDBJBJJGFJ
+   * CmdId: 7953
+   * Obf: MDBECONHBKJ
    * </pre>
    *
    * Protobuf type {@code QuickOpenActivityRsp}
@@ -80,12 +80,12 @@ public final class QuickOpenActivityRspOuterClass {
             case 0:
               done = true;
               break;
-            case 80: {
+            case 64: {
 
               activityId_ = input.readUInt32();
               break;
             }
-            case 96: {
+            case 104: {
 
               retcode_ = input.readInt32();
               break;
@@ -122,26 +122,26 @@ public final class QuickOpenActivityRspOuterClass {
               emu.grasscutter.net.proto.QuickOpenActivityRspOuterClass.QuickOpenActivityRsp.class, emu.grasscutter.net.proto.QuickOpenActivityRspOuterClass.QuickOpenActivityRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 12;
-    private int retcode_;
-    /**
-     * <code>int32 retcode = 12;</code>
-     * @return The retcode.
-     */
-    @java.lang.Override
-    public int getRetcode() {
-      return retcode_;
-    }
-
-    public static final int ACTIVITY_ID_FIELD_NUMBER = 10;
+    public static final int ACTIVITY_ID_FIELD_NUMBER = 8;
     private int activityId_;
     /**
-     * <code>uint32 activity_id = 10;</code>
+     * <code>uint32 activity_id = 8;</code>
      * @return The activityId.
      */
     @java.lang.Override
     public int getActivityId() {
       return activityId_;
+    }
+
+    public static final int RETCODE_FIELD_NUMBER = 13;
+    private int retcode_;
+    /**
+     * <code>int32 retcode = 13;</code>
+     * @return The retcode.
+     */
+    @java.lang.Override
+    public int getRetcode() {
+      return retcode_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -159,10 +159,10 @@ public final class QuickOpenActivityRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (activityId_ != 0) {
-        output.writeUInt32(10, activityId_);
+        output.writeUInt32(8, activityId_);
       }
       if (retcode_ != 0) {
-        output.writeInt32(12, retcode_);
+        output.writeInt32(13, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -175,11 +175,11 @@ public final class QuickOpenActivityRspOuterClass {
       size = 0;
       if (activityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, activityId_);
+          .computeUInt32Size(8, activityId_);
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(12, retcode_);
+          .computeInt32Size(13, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -196,10 +196,10 @@ public final class QuickOpenActivityRspOuterClass {
       }
       emu.grasscutter.net.proto.QuickOpenActivityRspOuterClass.QuickOpenActivityRsp other = (emu.grasscutter.net.proto.QuickOpenActivityRspOuterClass.QuickOpenActivityRsp) obj;
 
-      if (getRetcode()
-          != other.getRetcode()) return false;
       if (getActivityId()
           != other.getActivityId()) return false;
+      if (getRetcode()
+          != other.getRetcode()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -211,10 +211,10 @@ public final class QuickOpenActivityRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getRetcode();
       hash = (37 * hash) + ACTIVITY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getActivityId();
+      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
+      hash = (53 * hash) + getRetcode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -312,8 +312,8 @@ public final class QuickOpenActivityRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8579
-     * Obf: CBDBJBJJGFJ
+     * CmdId: 7953
+     * Obf: MDBECONHBKJ
      * </pre>
      *
      * Protobuf type {@code QuickOpenActivityRsp}
@@ -353,9 +353,9 @@ public final class QuickOpenActivityRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        retcode_ = 0;
-
         activityId_ = 0;
+
+        retcode_ = 0;
 
         return this;
       }
@@ -383,8 +383,8 @@ public final class QuickOpenActivityRspOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.QuickOpenActivityRspOuterClass.QuickOpenActivityRsp buildPartial() {
         emu.grasscutter.net.proto.QuickOpenActivityRspOuterClass.QuickOpenActivityRsp result = new emu.grasscutter.net.proto.QuickOpenActivityRspOuterClass.QuickOpenActivityRsp(this);
-        result.retcode_ = retcode_;
         result.activityId_ = activityId_;
+        result.retcode_ = retcode_;
         onBuilt();
         return result;
       }
@@ -433,11 +433,11 @@ public final class QuickOpenActivityRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.QuickOpenActivityRspOuterClass.QuickOpenActivityRsp other) {
         if (other == emu.grasscutter.net.proto.QuickOpenActivityRspOuterClass.QuickOpenActivityRsp.getDefaultInstance()) return this;
-        if (other.getRetcode() != 0) {
-          setRetcode(other.getRetcode());
-        }
         if (other.getActivityId() != 0) {
           setActivityId(other.getActivityId());
+        }
+        if (other.getRetcode() != 0) {
+          setRetcode(other.getRetcode());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -468,40 +468,9 @@ public final class QuickOpenActivityRspOuterClass {
         return this;
       }
 
-      private int retcode_ ;
-      /**
-       * <code>int32 retcode = 12;</code>
-       * @return The retcode.
-       */
-      @java.lang.Override
-      public int getRetcode() {
-        return retcode_;
-      }
-      /**
-       * <code>int32 retcode = 12;</code>
-       * @param value The retcode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRetcode(int value) {
-        
-        retcode_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 retcode = 12;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRetcode() {
-        
-        retcode_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int activityId_ ;
       /**
-       * <code>uint32 activity_id = 10;</code>
+       * <code>uint32 activity_id = 8;</code>
        * @return The activityId.
        */
       @java.lang.Override
@@ -509,7 +478,7 @@ public final class QuickOpenActivityRspOuterClass {
         return activityId_;
       }
       /**
-       * <code>uint32 activity_id = 10;</code>
+       * <code>uint32 activity_id = 8;</code>
        * @param value The activityId to set.
        * @return This builder for chaining.
        */
@@ -520,12 +489,43 @@ public final class QuickOpenActivityRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 activity_id = 10;</code>
+       * <code>uint32 activity_id = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearActivityId() {
         
         activityId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int retcode_ ;
+      /**
+       * <code>int32 retcode = 13;</code>
+       * @return The retcode.
+       */
+      @java.lang.Override
+      public int getRetcode() {
+        return retcode_;
+      }
+      /**
+       * <code>int32 retcode = 13;</code>
+       * @param value The retcode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRetcode(int value) {
+        
+        retcode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 retcode = 13;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRetcode() {
+        
+        retcode_ = 0;
         onChanged();
         return this;
       }
@@ -597,8 +597,8 @@ public final class QuickOpenActivityRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\032QuickOpenActivityRsp.proto\"<\n\024QuickOpe" +
-      "nActivityRsp\022\017\n\007retcode\030\014 \001(\005\022\023\n\013activit" +
-      "y_id\030\n \001(\rB\033\n\031emu.grasscutter.net.protob" +
+      "nActivityRsp\022\023\n\013activity_id\030\010 \001(\r\022\017\n\007ret" +
+      "code\030\r \001(\005B\033\n\031emu.grasscutter.net.protob" +
       "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -610,7 +610,7 @@ public final class QuickOpenActivityRspOuterClass {
     internal_static_QuickOpenActivityRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_QuickOpenActivityRsp_descriptor,
-        new java.lang.String[] { "Retcode", "ActivityId", });
+        new java.lang.String[] { "ActivityId", "Retcode", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

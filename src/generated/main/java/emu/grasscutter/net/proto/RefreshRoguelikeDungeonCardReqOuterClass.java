@@ -20,8 +20,8 @@ public final class RefreshRoguelikeDungeonCardReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 8889
-   * Obf: BDKNNMGJLFL
+   * CmdId: 23467
+   * Obf: LFACOBOMPMG
    * </pre>
    *
    * Protobuf type {@code RefreshRoguelikeDungeonCardReq}
@@ -246,8 +246,8 @@ public final class RefreshRoguelikeDungeonCardReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8889
-     * Obf: BDKNNMGJLFL
+     * CmdId: 23467
+     * Obf: LFACOBOMPMG
      * </pre>
      *
      * Protobuf type {@code RefreshRoguelikeDungeonCardReq}

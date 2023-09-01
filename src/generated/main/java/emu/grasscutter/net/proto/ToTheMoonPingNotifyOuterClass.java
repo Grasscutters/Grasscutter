@@ -20,8 +20,8 @@ public final class ToTheMoonPingNotifyOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 6102
-   * Obf: LNMBNFLNFDN
+   * CmdId: 6154
+   * Obf: FONBLBBMKAG
    * </pre>
    *
    * Protobuf type {@code ToTheMoonPingNotify}
@@ -246,8 +246,8 @@ public final class ToTheMoonPingNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 6102
-     * Obf: LNMBNFLNFDN
+     * CmdId: 6154
+     * Obf: FONBLBBMKAG
      * </pre>
      *
      * Protobuf type {@code ToTheMoonPingNotify}

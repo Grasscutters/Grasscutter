@@ -16,7 +16,7 @@ public final class ChangeHpReasonOuterClass {
   }
   /**
    * <pre>
-   * Obf: DKMOJFDCKBB
+   * Obf: HANDEHKHMKN
    * </pre>
    *
    * Protobuf enum {@code ChangeHpReason}

@@ -19,30 +19,30 @@ public final class ActivityDisableTransferPointInteractionNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool is_disable = 8;</code>
+     * <code>bool is_disable = 14;</code>
      * @return The isDisable.
      */
     boolean getIsDisable();
 
     /**
-     * <code>.Uint32Pair scene_point_pair = 2;</code>
+     * <code>.Uint32Pair scene_point_pair = 7;</code>
      * @return Whether the scenePointPair field is set.
      */
     boolean hasScenePointPair();
     /**
-     * <code>.Uint32Pair scene_point_pair = 2;</code>
+     * <code>.Uint32Pair scene_point_pair = 7;</code>
      * @return The scenePointPair.
      */
     emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair getScenePointPair();
     /**
-     * <code>.Uint32Pair scene_point_pair = 2;</code>
+     * <code>.Uint32Pair scene_point_pair = 7;</code>
      */
     emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder getScenePointPairOrBuilder();
   }
   /**
    * <pre>
-   * CmdId: 8212
-   * Obf: KODDECOKPBA
+   * CmdId: 25185
+   * Obf: BOJFBMLODJO
    * </pre>
    *
    * Protobuf type {@code ActivityDisableTransferPointInteractionNotify}
@@ -89,7 +89,7 @@ public final class ActivityDisableTransferPointInteractionNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 18: {
+            case 58: {
               emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder subBuilder = null;
               if (scenePointPair_ != null) {
                 subBuilder = scenePointPair_.toBuilder();
@@ -102,7 +102,7 @@ public final class ActivityDisableTransferPointInteractionNotifyOuterClass {
 
               break;
             }
-            case 64: {
+            case 112: {
 
               isDisable_ = input.readBool();
               break;
@@ -139,10 +139,10 @@ public final class ActivityDisableTransferPointInteractionNotifyOuterClass {
               emu.grasscutter.net.proto.ActivityDisableTransferPointInteractionNotifyOuterClass.ActivityDisableTransferPointInteractionNotify.class, emu.grasscutter.net.proto.ActivityDisableTransferPointInteractionNotifyOuterClass.ActivityDisableTransferPointInteractionNotify.Builder.class);
     }
 
-    public static final int IS_DISABLE_FIELD_NUMBER = 8;
+    public static final int IS_DISABLE_FIELD_NUMBER = 14;
     private boolean isDisable_;
     /**
-     * <code>bool is_disable = 8;</code>
+     * <code>bool is_disable = 14;</code>
      * @return The isDisable.
      */
     @java.lang.Override
@@ -150,10 +150,10 @@ public final class ActivityDisableTransferPointInteractionNotifyOuterClass {
       return isDisable_;
     }
 
-    public static final int SCENE_POINT_PAIR_FIELD_NUMBER = 2;
+    public static final int SCENE_POINT_PAIR_FIELD_NUMBER = 7;
     private emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair scenePointPair_;
     /**
-     * <code>.Uint32Pair scene_point_pair = 2;</code>
+     * <code>.Uint32Pair scene_point_pair = 7;</code>
      * @return Whether the scenePointPair field is set.
      */
     @java.lang.Override
@@ -161,7 +161,7 @@ public final class ActivityDisableTransferPointInteractionNotifyOuterClass {
       return scenePointPair_ != null;
     }
     /**
-     * <code>.Uint32Pair scene_point_pair = 2;</code>
+     * <code>.Uint32Pair scene_point_pair = 7;</code>
      * @return The scenePointPair.
      */
     @java.lang.Override
@@ -169,7 +169,7 @@ public final class ActivityDisableTransferPointInteractionNotifyOuterClass {
       return scenePointPair_ == null ? emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.getDefaultInstance() : scenePointPair_;
     }
     /**
-     * <code>.Uint32Pair scene_point_pair = 2;</code>
+     * <code>.Uint32Pair scene_point_pair = 7;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder getScenePointPairOrBuilder() {
@@ -191,10 +191,10 @@ public final class ActivityDisableTransferPointInteractionNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (scenePointPair_ != null) {
-        output.writeMessage(2, getScenePointPair());
+        output.writeMessage(7, getScenePointPair());
       }
       if (isDisable_ != false) {
-        output.writeBool(8, isDisable_);
+        output.writeBool(14, isDisable_);
       }
       unknownFields.writeTo(output);
     }
@@ -207,11 +207,11 @@ public final class ActivityDisableTransferPointInteractionNotifyOuterClass {
       size = 0;
       if (scenePointPair_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getScenePointPair());
+          .computeMessageSize(7, getScenePointPair());
       }
       if (isDisable_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(8, isDisable_);
+          .computeBoolSize(14, isDisable_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -350,8 +350,8 @@ public final class ActivityDisableTransferPointInteractionNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8212
-     * Obf: KODDECOKPBA
+     * CmdId: 25185
+     * Obf: BOJFBMLODJO
      * </pre>
      *
      * Protobuf type {@code ActivityDisableTransferPointInteractionNotify}
@@ -516,7 +516,7 @@ public final class ActivityDisableTransferPointInteractionNotifyOuterClass {
 
       private boolean isDisable_ ;
       /**
-       * <code>bool is_disable = 8;</code>
+       * <code>bool is_disable = 14;</code>
        * @return The isDisable.
        */
       @java.lang.Override
@@ -524,7 +524,7 @@ public final class ActivityDisableTransferPointInteractionNotifyOuterClass {
         return isDisable_;
       }
       /**
-       * <code>bool is_disable = 8;</code>
+       * <code>bool is_disable = 14;</code>
        * @param value The isDisable to set.
        * @return This builder for chaining.
        */
@@ -535,7 +535,7 @@ public final class ActivityDisableTransferPointInteractionNotifyOuterClass {
         return this;
       }
       /**
-       * <code>bool is_disable = 8;</code>
+       * <code>bool is_disable = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsDisable() {
@@ -549,14 +549,14 @@ public final class ActivityDisableTransferPointInteractionNotifyOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder> scenePointPairBuilder_;
       /**
-       * <code>.Uint32Pair scene_point_pair = 2;</code>
+       * <code>.Uint32Pair scene_point_pair = 7;</code>
        * @return Whether the scenePointPair field is set.
        */
       public boolean hasScenePointPair() {
         return scenePointPairBuilder_ != null || scenePointPair_ != null;
       }
       /**
-       * <code>.Uint32Pair scene_point_pair = 2;</code>
+       * <code>.Uint32Pair scene_point_pair = 7;</code>
        * @return The scenePointPair.
        */
       public emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair getScenePointPair() {
@@ -567,7 +567,7 @@ public final class ActivityDisableTransferPointInteractionNotifyOuterClass {
         }
       }
       /**
-       * <code>.Uint32Pair scene_point_pair = 2;</code>
+       * <code>.Uint32Pair scene_point_pair = 7;</code>
        */
       public Builder setScenePointPair(emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair value) {
         if (scenePointPairBuilder_ == null) {
@@ -583,7 +583,7 @@ public final class ActivityDisableTransferPointInteractionNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.Uint32Pair scene_point_pair = 2;</code>
+       * <code>.Uint32Pair scene_point_pair = 7;</code>
        */
       public Builder setScenePointPair(
           emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder builderForValue) {
@@ -597,7 +597,7 @@ public final class ActivityDisableTransferPointInteractionNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.Uint32Pair scene_point_pair = 2;</code>
+       * <code>.Uint32Pair scene_point_pair = 7;</code>
        */
       public Builder mergeScenePointPair(emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair value) {
         if (scenePointPairBuilder_ == null) {
@@ -615,7 +615,7 @@ public final class ActivityDisableTransferPointInteractionNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.Uint32Pair scene_point_pair = 2;</code>
+       * <code>.Uint32Pair scene_point_pair = 7;</code>
        */
       public Builder clearScenePointPair() {
         if (scenePointPairBuilder_ == null) {
@@ -629,7 +629,7 @@ public final class ActivityDisableTransferPointInteractionNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.Uint32Pair scene_point_pair = 2;</code>
+       * <code>.Uint32Pair scene_point_pair = 7;</code>
        */
       public emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder getScenePointPairBuilder() {
         
@@ -637,7 +637,7 @@ public final class ActivityDisableTransferPointInteractionNotifyOuterClass {
         return getScenePointPairFieldBuilder().getBuilder();
       }
       /**
-       * <code>.Uint32Pair scene_point_pair = 2;</code>
+       * <code>.Uint32Pair scene_point_pair = 7;</code>
        */
       public emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder getScenePointPairOrBuilder() {
         if (scenePointPairBuilder_ != null) {
@@ -648,7 +648,7 @@ public final class ActivityDisableTransferPointInteractionNotifyOuterClass {
         }
       }
       /**
-       * <code>.Uint32Pair scene_point_pair = 2;</code>
+       * <code>.Uint32Pair scene_point_pair = 7;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder> 
@@ -733,8 +733,8 @@ public final class ActivityDisableTransferPointInteractionNotifyOuterClass {
       "\n3ActivityDisableTransferPointInteractio" +
       "nNotify.proto\032\020Uint32Pair.proto\"j\n-Activ" +
       "ityDisableTransferPointInteractionNotify" +
-      "\022\022\n\nis_disable\030\010 \001(\010\022%\n\020scene_point_pair" +
-      "\030\002 \001(\0132\013.Uint32PairB\033\n\031emu.grasscutter.n" +
+      "\022\022\n\nis_disable\030\016 \001(\010\022%\n\020scene_point_pair" +
+      "\030\007 \001(\0132\013.Uint32PairB\033\n\031emu.grasscutter.n" +
       "et.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

@@ -16,7 +16,7 @@ public final class SalvageEscortStopReasonOuterClass {
   }
   /**
    * <pre>
-   * Obf: GOPAHHOIEBG
+   * Obf: IEFIFHKIGNC
    * </pre>
    *
    * Protobuf enum {@code SalvageEscortStopReason}

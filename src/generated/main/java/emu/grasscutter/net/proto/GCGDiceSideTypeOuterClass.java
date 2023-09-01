@@ -16,7 +16,7 @@ public final class GCGDiceSideTypeOuterClass {
   }
   /**
    * <pre>
-   * Obf: CIIKACHFINK
+   * Obf: FNMHKJNGFMI
    * </pre>
    *
    * Protobuf enum {@code GCGDiceSideType}

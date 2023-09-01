@@ -35,8 +35,8 @@ public final class SkyCrystalDetectorDataUpdateNotifyOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 4260
-   * Obf: OGKOCKOKONN
+   * CmdId: 5621
+   * Obf: GAKEMNAPLEC
    * </pre>
    *
    * Protobuf type {@code SkyCrystalDetectorDataUpdateNotify}
@@ -316,8 +316,8 @@ public final class SkyCrystalDetectorDataUpdateNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4260
-     * Obf: OGKOCKOKONN
+     * CmdId: 5621
+     * Obf: GAKEMNAPLEC
      * </pre>
      *
      * Protobuf type {@code SkyCrystalDetectorDataUpdateNotify}

@@ -19,27 +19,27 @@ public final class SetPlayerNameRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 14;</code>
-     * @return The retcode.
-     */
-    int getRetcode();
-
-    /**
-     * <code>string nick_name = 15;</code>
+     * <code>string nick_name = 12;</code>
      * @return The nickName.
      */
     java.lang.String getNickName();
     /**
-     * <code>string nick_name = 15;</code>
+     * <code>string nick_name = 12;</code>
      * @return The bytes for nickName.
      */
     com.google.protobuf.ByteString
         getNickNameBytes();
+
+    /**
+     * <code>int32 retcode = 6;</code>
+     * @return The retcode.
+     */
+    int getRetcode();
   }
   /**
    * <pre>
-   * CmdId: 106
-   * Obf: DPMBIHGIAKA
+   * CmdId: 25056
+   * Obf: FEDOJGKOGLO
    * </pre>
    *
    * Protobuf type {@code SetPlayerNameRsp}
@@ -87,12 +87,12 @@ public final class SetPlayerNameRspOuterClass {
             case 0:
               done = true;
               break;
-            case 112: {
+            case 48: {
 
               retcode_ = input.readInt32();
               break;
             }
-            case 122: {
+            case 98: {
               java.lang.String s = input.readStringRequireUtf8();
 
               nickName_ = s;
@@ -130,21 +130,10 @@ public final class SetPlayerNameRspOuterClass {
               emu.grasscutter.net.proto.SetPlayerNameRspOuterClass.SetPlayerNameRsp.class, emu.grasscutter.net.proto.SetPlayerNameRspOuterClass.SetPlayerNameRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 14;
-    private int retcode_;
-    /**
-     * <code>int32 retcode = 14;</code>
-     * @return The retcode.
-     */
-    @java.lang.Override
-    public int getRetcode() {
-      return retcode_;
-    }
-
-    public static final int NICK_NAME_FIELD_NUMBER = 15;
+    public static final int NICK_NAME_FIELD_NUMBER = 12;
     private volatile java.lang.Object nickName_;
     /**
-     * <code>string nick_name = 15;</code>
+     * <code>string nick_name = 12;</code>
      * @return The nickName.
      */
     @java.lang.Override
@@ -161,7 +150,7 @@ public final class SetPlayerNameRspOuterClass {
       }
     }
     /**
-     * <code>string nick_name = 15;</code>
+     * <code>string nick_name = 12;</code>
      * @return The bytes for nickName.
      */
     @java.lang.Override
@@ -179,6 +168,17 @@ public final class SetPlayerNameRspOuterClass {
       }
     }
 
+    public static final int RETCODE_FIELD_NUMBER = 6;
+    private int retcode_;
+    /**
+     * <code>int32 retcode = 6;</code>
+     * @return The retcode.
+     */
+    @java.lang.Override
+    public int getRetcode() {
+      return retcode_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -194,10 +194,10 @@ public final class SetPlayerNameRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (retcode_ != 0) {
-        output.writeInt32(14, retcode_);
+        output.writeInt32(6, retcode_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nickName_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 15, nickName_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, nickName_);
       }
       unknownFields.writeTo(output);
     }
@@ -210,10 +210,10 @@ public final class SetPlayerNameRspOuterClass {
       size = 0;
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(14, retcode_);
+          .computeInt32Size(6, retcode_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nickName_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, nickName_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, nickName_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -230,10 +230,10 @@ public final class SetPlayerNameRspOuterClass {
       }
       emu.grasscutter.net.proto.SetPlayerNameRspOuterClass.SetPlayerNameRsp other = (emu.grasscutter.net.proto.SetPlayerNameRspOuterClass.SetPlayerNameRsp) obj;
 
-      if (getRetcode()
-          != other.getRetcode()) return false;
       if (!getNickName()
           .equals(other.getNickName())) return false;
+      if (getRetcode()
+          != other.getRetcode()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -245,10 +245,10 @@ public final class SetPlayerNameRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getRetcode();
       hash = (37 * hash) + NICK_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getNickName().hashCode();
+      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
+      hash = (53 * hash) + getRetcode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -346,8 +346,8 @@ public final class SetPlayerNameRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 106
-     * Obf: DPMBIHGIAKA
+     * CmdId: 25056
+     * Obf: FEDOJGKOGLO
      * </pre>
      *
      * Protobuf type {@code SetPlayerNameRsp}
@@ -387,9 +387,9 @@ public final class SetPlayerNameRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        retcode_ = 0;
-
         nickName_ = "";
+
+        retcode_ = 0;
 
         return this;
       }
@@ -417,8 +417,8 @@ public final class SetPlayerNameRspOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.SetPlayerNameRspOuterClass.SetPlayerNameRsp buildPartial() {
         emu.grasscutter.net.proto.SetPlayerNameRspOuterClass.SetPlayerNameRsp result = new emu.grasscutter.net.proto.SetPlayerNameRspOuterClass.SetPlayerNameRsp(this);
-        result.retcode_ = retcode_;
         result.nickName_ = nickName_;
+        result.retcode_ = retcode_;
         onBuilt();
         return result;
       }
@@ -467,12 +467,12 @@ public final class SetPlayerNameRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.SetPlayerNameRspOuterClass.SetPlayerNameRsp other) {
         if (other == emu.grasscutter.net.proto.SetPlayerNameRspOuterClass.SetPlayerNameRsp.getDefaultInstance()) return this;
-        if (other.getRetcode() != 0) {
-          setRetcode(other.getRetcode());
-        }
         if (!other.getNickName().isEmpty()) {
           nickName_ = other.nickName_;
           onChanged();
+        }
+        if (other.getRetcode() != 0) {
+          setRetcode(other.getRetcode());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -503,40 +503,9 @@ public final class SetPlayerNameRspOuterClass {
         return this;
       }
 
-      private int retcode_ ;
-      /**
-       * <code>int32 retcode = 14;</code>
-       * @return The retcode.
-       */
-      @java.lang.Override
-      public int getRetcode() {
-        return retcode_;
-      }
-      /**
-       * <code>int32 retcode = 14;</code>
-       * @param value The retcode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRetcode(int value) {
-        
-        retcode_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 retcode = 14;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRetcode() {
-        
-        retcode_ = 0;
-        onChanged();
-        return this;
-      }
-
       private java.lang.Object nickName_ = "";
       /**
-       * <code>string nick_name = 15;</code>
+       * <code>string nick_name = 12;</code>
        * @return The nickName.
        */
       public java.lang.String getNickName() {
@@ -552,7 +521,7 @@ public final class SetPlayerNameRspOuterClass {
         }
       }
       /**
-       * <code>string nick_name = 15;</code>
+       * <code>string nick_name = 12;</code>
        * @return The bytes for nickName.
        */
       public com.google.protobuf.ByteString
@@ -569,7 +538,7 @@ public final class SetPlayerNameRspOuterClass {
         }
       }
       /**
-       * <code>string nick_name = 15;</code>
+       * <code>string nick_name = 12;</code>
        * @param value The nickName to set.
        * @return This builder for chaining.
        */
@@ -584,7 +553,7 @@ public final class SetPlayerNameRspOuterClass {
         return this;
       }
       /**
-       * <code>string nick_name = 15;</code>
+       * <code>string nick_name = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearNickName() {
@@ -594,7 +563,7 @@ public final class SetPlayerNameRspOuterClass {
         return this;
       }
       /**
-       * <code>string nick_name = 15;</code>
+       * <code>string nick_name = 12;</code>
        * @param value The bytes for nickName to set.
        * @return This builder for chaining.
        */
@@ -606,6 +575,37 @@ public final class SetPlayerNameRspOuterClass {
   checkByteStringIsUtf8(value);
         
         nickName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int retcode_ ;
+      /**
+       * <code>int32 retcode = 6;</code>
+       * @return The retcode.
+       */
+      @java.lang.Override
+      public int getRetcode() {
+        return retcode_;
+      }
+      /**
+       * <code>int32 retcode = 6;</code>
+       * @param value The retcode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRetcode(int value) {
+        
+        retcode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 retcode = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRetcode() {
+        
+        retcode_ = 0;
         onChanged();
         return this;
       }
@@ -677,7 +677,7 @@ public final class SetPlayerNameRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\026SetPlayerNameRsp.proto\"6\n\020SetPlayerNam" +
-      "eRsp\022\017\n\007retcode\030\016 \001(\005\022\021\n\tnick_name\030\017 \001(\t" +
+      "eRsp\022\021\n\tnick_name\030\014 \001(\t\022\017\n\007retcode\030\006 \001(\005" +
       "B\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -689,7 +689,7 @@ public final class SetPlayerNameRspOuterClass {
     internal_static_SetPlayerNameRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SetPlayerNameRsp_descriptor,
-        new java.lang.String[] { "Retcode", "NickName", });
+        new java.lang.String[] { "NickName", "Retcode", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

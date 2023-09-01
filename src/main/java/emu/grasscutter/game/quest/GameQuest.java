@@ -1,7 +1,7 @@
 package emu.grasscutter.game.quest;
 
 import dev.morphia.annotations.*;
-import emu.grasscutter.Grasscutter;
+import emu.grasscutter.*;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.*;
 import emu.grasscutter.data.excels.quest.QuestData;
@@ -12,12 +12,14 @@ import emu.grasscutter.game.quest.enums.*;
 import emu.grasscutter.net.proto.ChapterStateOuterClass;
 import emu.grasscutter.net.proto.QuestOuterClass.Quest;
 import emu.grasscutter.scripts.data.SceneGroup;
+import emu.grasscutter.server.event.player.PlayerCompleteQuestEvent;
 import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.IntIntImmutablePair;
-import java.util.*;
-import javax.script.Bindings;
 import lombok.*;
+
+import javax.script.Bindings;
+import java.util.*;
 
 @Entity
 public class GameQuest {
@@ -104,7 +106,10 @@ public class GameQuest {
                 .forEach(e -> getOwner().getServer().getQuestSystem().triggerExec(this, e, e.getParam()));
         this.getOwner().getQuestManager().checkQuestAlreadyFulfilled(this);
 
-        Grasscutter.getLogger().debug("Quest {} is started", subQuestId);
+        if (DebugConstants.LOG_QUEST_START) {
+            Grasscutter.getLogger().debug("Quest {} is started", subQuestId);
+        }
+
         this.save();
     }
 
@@ -192,6 +197,10 @@ public class GameQuest {
     }
 
     public void finish() {
+        // Call PlayerCompleteQuestEvent.
+        var event = new PlayerCompleteQuestEvent(this.getOwner(), this);
+        if (!event.call()) return;
+
         // Check if the quest has been finished.
         synchronized (this) {
             if (this.state == QuestState.QUEST_STATE_FINISHED) {

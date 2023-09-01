@@ -19,108 +19,108 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 uid_list = 15;</code>
-     * @return A list containing the uidList.
-     */
-    java.util.List<java.lang.Integer> getUidListList();
-    /**
-     * <code>repeated uint32 uid_list = 15;</code>
-     * @return The count of uidList.
-     */
-    int getUidListCount();
-    /**
-     * <code>repeated uint32 uid_list = 15;</code>
-     * @param index The index of the element to return.
-     * @return The uidList at the given index.
-     */
-    int getUidList(int index);
-
-    /**
-     * <code>uint32 play_type = 6;</code>
+     * <code>uint32 play_type = 8;</code>
      * @return The playType.
      */
     int getPlayType();
 
     /**
-     * <code>string param_str = 11;</code>
+     * <code>string param_str = 15;</code>
      * @return The paramStr.
      */
     java.lang.String getParamStr();
     /**
-     * <code>string param_str = 11;</code>
+     * <code>string param_str = 15;</code>
      * @return The bytes for paramStr.
      */
     com.google.protobuf.ByteString
         getParamStrBytes();
 
     /**
-     * <code>uint32 param_duration = 2;</code>
+     * <code>uint32 param_duration = 9;</code>
      * @return The paramDuration.
      */
     int getParamDuration();
 
     /**
-     * <code>repeated uint32 param_list = 1;</code>
+     * <code>uint32 op = 5;</code>
+     * @return The op.
+     */
+    int getOp();
+
+    /**
+     * <code>uint32 entity_id = 2;</code>
+     * @return The entityId.
+     */
+    int getEntityId();
+
+    /**
+     * <code>uint32 param_index = 4;</code>
+     * @return The paramIndex.
+     */
+    int getParamIndex();
+
+    /**
+     * <code>repeated uint32 uid_list = 14;</code>
+     * @return A list containing the uidList.
+     */
+    java.util.List<java.lang.Integer> getUidListList();
+    /**
+     * <code>repeated uint32 uid_list = 14;</code>
+     * @return The count of uidList.
+     */
+    int getUidListCount();
+    /**
+     * <code>repeated uint32 uid_list = 14;</code>
+     * @param index The index of the element to return.
+     * @return The uidList at the given index.
+     */
+    int getUidList(int index);
+
+    /**
+     * <code>repeated uint32 param_list = 7;</code>
      * @return A list containing the paramList.
      */
     java.util.List<java.lang.Integer> getParamListList();
     /**
-     * <code>repeated uint32 param_list = 1;</code>
+     * <code>repeated uint32 param_list = 7;</code>
      * @return The count of paramList.
      */
     int getParamListCount();
     /**
-     * <code>repeated uint32 param_list = 1;</code>
+     * <code>repeated uint32 param_list = 7;</code>
      * @param index The index of the element to return.
      * @return The paramList at the given index.
      */
     int getParamList(int index);
 
     /**
-     * <code>uint32 op = 13;</code>
-     * @return The op.
-     */
-    int getOp();
-
-    /**
-     * <code>uint32 entity_id = 3;</code>
-     * @return The entityId.
-     */
-    int getEntityId();
-
-    /**
-     * <code>uint32 param_index = 12;</code>
-     * @return The paramIndex.
-     */
-    int getParamIndex();
-
-    /**
-     * <code>uint32 play_id = 8;</code>
-     * @return The playId.
-     */
-    int getPlayId();
-
-    /**
-     * <code>repeated uint32 param_target_list = 7;</code>
+     * <code>repeated uint32 param_target_list = 12;</code>
      * @return A list containing the paramTargetList.
      */
     java.util.List<java.lang.Integer> getParamTargetListList();
     /**
-     * <code>repeated uint32 param_target_list = 7;</code>
+     * <code>repeated uint32 param_target_list = 12;</code>
      * @return The count of paramTargetList.
      */
     int getParamTargetListCount();
     /**
-     * <code>repeated uint32 param_target_list = 7;</code>
+     * <code>repeated uint32 param_target_list = 12;</code>
      * @param index The index of the element to return.
      * @return The paramTargetList at the given index.
      */
     int getParamTargetList(int index);
+
+    /**
+     * <code>uint32 play_id = 3;</code>
+     * @return The playId.
+     */
+    int getPlayId();
   }
   /**
    * <pre>
-   * CmdId: 4384
-   * Obf: IHPPLJPPAJH
+   * CmdId: 602
+   * Obf: FOEFOFMLBAI
    * </pre>
    *
    * Protobuf type {@code ScenePlayBattleUidOpNotify}
@@ -135,8 +135,8 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
       super(builder);
     }
     private ScenePlayBattleUidOpNotify() {
-      uidList_ = emptyIntList();
       paramStr_ = "";
+      uidList_ = emptyIntList();
       paramList_ = emptyIntList();
       paramTargetList_ = emptyIntList();
     }
@@ -172,7 +172,27 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 16: {
+
+              entityId_ = input.readUInt32();
+              break;
+            }
+            case 24: {
+
+              playId_ = input.readUInt32();
+              break;
+            }
+            case 32: {
+
+              paramIndex_ = input.readUInt32();
+              break;
+            }
+            case 40: {
+
+              op_ = input.readUInt32();
+              break;
+            }
+            case 56: {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 paramList_ = newIntList();
                 mutable_bitField0_ |= 0x00000002;
@@ -180,7 +200,7 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
               paramList_.addInt(input.readUInt32());
               break;
             }
-            case 10: {
+            case 58: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
@@ -193,22 +213,17 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 16: {
-
-              paramDuration_ = input.readUInt32();
-              break;
-            }
-            case 24: {
-
-              entityId_ = input.readUInt32();
-              break;
-            }
-            case 48: {
+            case 64: {
 
               playType_ = input.readUInt32();
               break;
             }
-            case 56: {
+            case 72: {
+
+              paramDuration_ = input.readUInt32();
+              break;
+            }
+            case 96: {
               if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 paramTargetList_ = newIntList();
                 mutable_bitField0_ |= 0x00000004;
@@ -216,7 +231,7 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
               paramTargetList_.addInt(input.readUInt32());
               break;
             }
-            case 58: {
+            case 98: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000004) != 0) && input.getBytesUntilLimit() > 0) {
@@ -229,28 +244,7 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 64: {
-
-              playId_ = input.readUInt32();
-              break;
-            }
-            case 90: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              paramStr_ = s;
-              break;
-            }
-            case 96: {
-
-              paramIndex_ = input.readUInt32();
-              break;
-            }
-            case 104: {
-
-              op_ = input.readUInt32();
-              break;
-            }
-            case 120: {
+            case 112: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 uidList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -258,7 +252,7 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
               uidList_.addInt(input.readUInt32());
               break;
             }
-            case 122: {
+            case 114: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -269,6 +263,12 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
                 uidList_.addInt(input.readUInt32());
               }
               input.popLimit(limit);
+              break;
+            }
+            case 122: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              paramStr_ = s;
               break;
             }
             default: {
@@ -312,38 +312,10 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
               emu.grasscutter.net.proto.ScenePlayBattleUidOpNotifyOuterClass.ScenePlayBattleUidOpNotify.class, emu.grasscutter.net.proto.ScenePlayBattleUidOpNotifyOuterClass.ScenePlayBattleUidOpNotify.Builder.class);
     }
 
-    public static final int UID_LIST_FIELD_NUMBER = 15;
-    private com.google.protobuf.Internal.IntList uidList_;
-    /**
-     * <code>repeated uint32 uid_list = 15;</code>
-     * @return A list containing the uidList.
-     */
-    @java.lang.Override
-    public java.util.List<java.lang.Integer>
-        getUidListList() {
-      return uidList_;
-    }
-    /**
-     * <code>repeated uint32 uid_list = 15;</code>
-     * @return The count of uidList.
-     */
-    public int getUidListCount() {
-      return uidList_.size();
-    }
-    /**
-     * <code>repeated uint32 uid_list = 15;</code>
-     * @param index The index of the element to return.
-     * @return The uidList at the given index.
-     */
-    public int getUidList(int index) {
-      return uidList_.getInt(index);
-    }
-    private int uidListMemoizedSerializedSize = -1;
-
-    public static final int PLAY_TYPE_FIELD_NUMBER = 6;
+    public static final int PLAY_TYPE_FIELD_NUMBER = 8;
     private int playType_;
     /**
-     * <code>uint32 play_type = 6;</code>
+     * <code>uint32 play_type = 8;</code>
      * @return The playType.
      */
     @java.lang.Override
@@ -351,10 +323,10 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
       return playType_;
     }
 
-    public static final int PARAM_STR_FIELD_NUMBER = 11;
+    public static final int PARAM_STR_FIELD_NUMBER = 15;
     private volatile java.lang.Object paramStr_;
     /**
-     * <code>string param_str = 11;</code>
+     * <code>string param_str = 15;</code>
      * @return The paramStr.
      */
     @java.lang.Override
@@ -371,7 +343,7 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
       }
     }
     /**
-     * <code>string param_str = 11;</code>
+     * <code>string param_str = 15;</code>
      * @return The bytes for paramStr.
      */
     @java.lang.Override
@@ -389,10 +361,10 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
       }
     }
 
-    public static final int PARAM_DURATION_FIELD_NUMBER = 2;
+    public static final int PARAM_DURATION_FIELD_NUMBER = 9;
     private int paramDuration_;
     /**
-     * <code>uint32 param_duration = 2;</code>
+     * <code>uint32 param_duration = 9;</code>
      * @return The paramDuration.
      */
     @java.lang.Override
@@ -400,10 +372,71 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
       return paramDuration_;
     }
 
-    public static final int PARAM_LIST_FIELD_NUMBER = 1;
+    public static final int OP_FIELD_NUMBER = 5;
+    private int op_;
+    /**
+     * <code>uint32 op = 5;</code>
+     * @return The op.
+     */
+    @java.lang.Override
+    public int getOp() {
+      return op_;
+    }
+
+    public static final int ENTITY_ID_FIELD_NUMBER = 2;
+    private int entityId_;
+    /**
+     * <code>uint32 entity_id = 2;</code>
+     * @return The entityId.
+     */
+    @java.lang.Override
+    public int getEntityId() {
+      return entityId_;
+    }
+
+    public static final int PARAM_INDEX_FIELD_NUMBER = 4;
+    private int paramIndex_;
+    /**
+     * <code>uint32 param_index = 4;</code>
+     * @return The paramIndex.
+     */
+    @java.lang.Override
+    public int getParamIndex() {
+      return paramIndex_;
+    }
+
+    public static final int UID_LIST_FIELD_NUMBER = 14;
+    private com.google.protobuf.Internal.IntList uidList_;
+    /**
+     * <code>repeated uint32 uid_list = 14;</code>
+     * @return A list containing the uidList.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Integer>
+        getUidListList() {
+      return uidList_;
+    }
+    /**
+     * <code>repeated uint32 uid_list = 14;</code>
+     * @return The count of uidList.
+     */
+    public int getUidListCount() {
+      return uidList_.size();
+    }
+    /**
+     * <code>repeated uint32 uid_list = 14;</code>
+     * @param index The index of the element to return.
+     * @return The uidList at the given index.
+     */
+    public int getUidList(int index) {
+      return uidList_.getInt(index);
+    }
+    private int uidListMemoizedSerializedSize = -1;
+
+    public static final int PARAM_LIST_FIELD_NUMBER = 7;
     private com.google.protobuf.Internal.IntList paramList_;
     /**
-     * <code>repeated uint32 param_list = 1;</code>
+     * <code>repeated uint32 param_list = 7;</code>
      * @return A list containing the paramList.
      */
     @java.lang.Override
@@ -412,14 +445,14 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
       return paramList_;
     }
     /**
-     * <code>repeated uint32 param_list = 1;</code>
+     * <code>repeated uint32 param_list = 7;</code>
      * @return The count of paramList.
      */
     public int getParamListCount() {
       return paramList_.size();
     }
     /**
-     * <code>repeated uint32 param_list = 1;</code>
+     * <code>repeated uint32 param_list = 7;</code>
      * @param index The index of the element to return.
      * @return The paramList at the given index.
      */
@@ -428,54 +461,10 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
     }
     private int paramListMemoizedSerializedSize = -1;
 
-    public static final int OP_FIELD_NUMBER = 13;
-    private int op_;
-    /**
-     * <code>uint32 op = 13;</code>
-     * @return The op.
-     */
-    @java.lang.Override
-    public int getOp() {
-      return op_;
-    }
-
-    public static final int ENTITY_ID_FIELD_NUMBER = 3;
-    private int entityId_;
-    /**
-     * <code>uint32 entity_id = 3;</code>
-     * @return The entityId.
-     */
-    @java.lang.Override
-    public int getEntityId() {
-      return entityId_;
-    }
-
-    public static final int PARAM_INDEX_FIELD_NUMBER = 12;
-    private int paramIndex_;
-    /**
-     * <code>uint32 param_index = 12;</code>
-     * @return The paramIndex.
-     */
-    @java.lang.Override
-    public int getParamIndex() {
-      return paramIndex_;
-    }
-
-    public static final int PLAY_ID_FIELD_NUMBER = 8;
-    private int playId_;
-    /**
-     * <code>uint32 play_id = 8;</code>
-     * @return The playId.
-     */
-    @java.lang.Override
-    public int getPlayId() {
-      return playId_;
-    }
-
-    public static final int PARAM_TARGET_LIST_FIELD_NUMBER = 7;
+    public static final int PARAM_TARGET_LIST_FIELD_NUMBER = 12;
     private com.google.protobuf.Internal.IntList paramTargetList_;
     /**
-     * <code>repeated uint32 param_target_list = 7;</code>
+     * <code>repeated uint32 param_target_list = 12;</code>
      * @return A list containing the paramTargetList.
      */
     @java.lang.Override
@@ -484,14 +473,14 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
       return paramTargetList_;
     }
     /**
-     * <code>repeated uint32 param_target_list = 7;</code>
+     * <code>repeated uint32 param_target_list = 12;</code>
      * @return The count of paramTargetList.
      */
     public int getParamTargetListCount() {
       return paramTargetList_.size();
     }
     /**
-     * <code>repeated uint32 param_target_list = 7;</code>
+     * <code>repeated uint32 param_target_list = 12;</code>
      * @param index The index of the element to return.
      * @return The paramTargetList at the given index.
      */
@@ -499,6 +488,17 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
       return paramTargetList_.getInt(index);
     }
     private int paramTargetListMemoizedSerializedSize = -1;
+
+    public static final int PLAY_ID_FIELD_NUMBER = 3;
+    private int playId_;
+    /**
+     * <code>uint32 play_id = 3;</code>
+     * @return The playId.
+     */
+    @java.lang.Override
+    public int getPlayId() {
+      return playId_;
+    }
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
@@ -515,47 +515,47 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
+      if (entityId_ != 0) {
+        output.writeUInt32(2, entityId_);
+      }
+      if (playId_ != 0) {
+        output.writeUInt32(3, playId_);
+      }
+      if (paramIndex_ != 0) {
+        output.writeUInt32(4, paramIndex_);
+      }
+      if (op_ != 0) {
+        output.writeUInt32(5, op_);
+      }
       if (getParamListList().size() > 0) {
-        output.writeUInt32NoTag(10);
+        output.writeUInt32NoTag(58);
         output.writeUInt32NoTag(paramListMemoizedSerializedSize);
       }
       for (int i = 0; i < paramList_.size(); i++) {
         output.writeUInt32NoTag(paramList_.getInt(i));
       }
-      if (paramDuration_ != 0) {
-        output.writeUInt32(2, paramDuration_);
-      }
-      if (entityId_ != 0) {
-        output.writeUInt32(3, entityId_);
-      }
       if (playType_ != 0) {
-        output.writeUInt32(6, playType_);
+        output.writeUInt32(8, playType_);
+      }
+      if (paramDuration_ != 0) {
+        output.writeUInt32(9, paramDuration_);
       }
       if (getParamTargetListList().size() > 0) {
-        output.writeUInt32NoTag(58);
+        output.writeUInt32NoTag(98);
         output.writeUInt32NoTag(paramTargetListMemoizedSerializedSize);
       }
       for (int i = 0; i < paramTargetList_.size(); i++) {
         output.writeUInt32NoTag(paramTargetList_.getInt(i));
       }
-      if (playId_ != 0) {
-        output.writeUInt32(8, playId_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(paramStr_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, paramStr_);
-      }
-      if (paramIndex_ != 0) {
-        output.writeUInt32(12, paramIndex_);
-      }
-      if (op_ != 0) {
-        output.writeUInt32(13, op_);
-      }
       if (getUidListList().size() > 0) {
-        output.writeUInt32NoTag(122);
+        output.writeUInt32NoTag(114);
         output.writeUInt32NoTag(uidListMemoizedSerializedSize);
       }
       for (int i = 0; i < uidList_.size(); i++) {
         output.writeUInt32NoTag(uidList_.getInt(i));
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(paramStr_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 15, paramStr_);
       }
       unknownFields.writeTo(output);
     }
@@ -566,6 +566,22 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (entityId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(2, entityId_);
+      }
+      if (playId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(3, playId_);
+      }
+      if (paramIndex_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(4, paramIndex_);
+      }
+      if (op_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(5, op_);
+      }
       {
         int dataSize = 0;
         for (int i = 0; i < paramList_.size(); i++) {
@@ -580,17 +596,13 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
         }
         paramListMemoizedSerializedSize = dataSize;
       }
-      if (paramDuration_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, paramDuration_);
-      }
-      if (entityId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, entityId_);
-      }
       if (playType_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, playType_);
+          .computeUInt32Size(8, playType_);
+      }
+      if (paramDuration_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(9, paramDuration_);
       }
       {
         int dataSize = 0;
@@ -606,21 +618,6 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
         }
         paramTargetListMemoizedSerializedSize = dataSize;
       }
-      if (playId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, playId_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(paramStr_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, paramStr_);
-      }
-      if (paramIndex_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, paramIndex_);
-      }
-      if (op_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, op_);
-      }
       {
         int dataSize = 0;
         for (int i = 0; i < uidList_.size(); i++) {
@@ -634,6 +631,9 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
               .computeInt32SizeNoTag(dataSize);
         }
         uidListMemoizedSerializedSize = dataSize;
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(paramStr_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, paramStr_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -650,26 +650,26 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
       }
       emu.grasscutter.net.proto.ScenePlayBattleUidOpNotifyOuterClass.ScenePlayBattleUidOpNotify other = (emu.grasscutter.net.proto.ScenePlayBattleUidOpNotifyOuterClass.ScenePlayBattleUidOpNotify) obj;
 
-      if (!getUidListList()
-          .equals(other.getUidListList())) return false;
       if (getPlayType()
           != other.getPlayType()) return false;
       if (!getParamStr()
           .equals(other.getParamStr())) return false;
       if (getParamDuration()
           != other.getParamDuration()) return false;
-      if (!getParamListList()
-          .equals(other.getParamListList())) return false;
       if (getOp()
           != other.getOp()) return false;
       if (getEntityId()
           != other.getEntityId()) return false;
       if (getParamIndex()
           != other.getParamIndex()) return false;
-      if (getPlayId()
-          != other.getPlayId()) return false;
+      if (!getUidListList()
+          .equals(other.getUidListList())) return false;
+      if (!getParamListList()
+          .equals(other.getParamListList())) return false;
       if (!getParamTargetListList()
           .equals(other.getParamTargetListList())) return false;
+      if (getPlayId()
+          != other.getPlayId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -681,32 +681,32 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getUidListCount() > 0) {
-        hash = (37 * hash) + UID_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getUidListList().hashCode();
-      }
       hash = (37 * hash) + PLAY_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getPlayType();
       hash = (37 * hash) + PARAM_STR_FIELD_NUMBER;
       hash = (53 * hash) + getParamStr().hashCode();
       hash = (37 * hash) + PARAM_DURATION_FIELD_NUMBER;
       hash = (53 * hash) + getParamDuration();
-      if (getParamListCount() > 0) {
-        hash = (37 * hash) + PARAM_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getParamListList().hashCode();
-      }
       hash = (37 * hash) + OP_FIELD_NUMBER;
       hash = (53 * hash) + getOp();
       hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getEntityId();
       hash = (37 * hash) + PARAM_INDEX_FIELD_NUMBER;
       hash = (53 * hash) + getParamIndex();
-      hash = (37 * hash) + PLAY_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getPlayId();
+      if (getUidListCount() > 0) {
+        hash = (37 * hash) + UID_LIST_FIELD_NUMBER;
+        hash = (53 * hash) + getUidListList().hashCode();
+      }
+      if (getParamListCount() > 0) {
+        hash = (37 * hash) + PARAM_LIST_FIELD_NUMBER;
+        hash = (53 * hash) + getParamListList().hashCode();
+      }
       if (getParamTargetListCount() > 0) {
         hash = (37 * hash) + PARAM_TARGET_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getParamTargetListList().hashCode();
       }
+      hash = (37 * hash) + PLAY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getPlayId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -804,8 +804,8 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4384
-     * Obf: IHPPLJPPAJH
+     * CmdId: 602
+     * Obf: FOEFOFMLBAI
      * </pre>
      *
      * Protobuf type {@code ScenePlayBattleUidOpNotify}
@@ -845,26 +845,26 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        uidList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         playType_ = 0;
 
         paramStr_ = "";
 
         paramDuration_ = 0;
 
-        paramList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
         op_ = 0;
 
         entityId_ = 0;
 
         paramIndex_ = 0;
 
-        playId_ = 0;
-
+        uidList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        paramList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
         paramTargetList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000004);
+        playId_ = 0;
+
         return this;
       }
 
@@ -892,28 +892,28 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
       public emu.grasscutter.net.proto.ScenePlayBattleUidOpNotifyOuterClass.ScenePlayBattleUidOpNotify buildPartial() {
         emu.grasscutter.net.proto.ScenePlayBattleUidOpNotifyOuterClass.ScenePlayBattleUidOpNotify result = new emu.grasscutter.net.proto.ScenePlayBattleUidOpNotifyOuterClass.ScenePlayBattleUidOpNotify(this);
         int from_bitField0_ = bitField0_;
+        result.playType_ = playType_;
+        result.paramStr_ = paramStr_;
+        result.paramDuration_ = paramDuration_;
+        result.op_ = op_;
+        result.entityId_ = entityId_;
+        result.paramIndex_ = paramIndex_;
         if (((bitField0_ & 0x00000001) != 0)) {
           uidList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.uidList_ = uidList_;
-        result.playType_ = playType_;
-        result.paramStr_ = paramStr_;
-        result.paramDuration_ = paramDuration_;
         if (((bitField0_ & 0x00000002) != 0)) {
           paramList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.paramList_ = paramList_;
-        result.op_ = op_;
-        result.entityId_ = entityId_;
-        result.paramIndex_ = paramIndex_;
-        result.playId_ = playId_;
         if (((bitField0_ & 0x00000004) != 0)) {
           paramTargetList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.paramTargetList_ = paramTargetList_;
+        result.playId_ = playId_;
         onBuilt();
         return result;
       }
@@ -962,16 +962,6 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.ScenePlayBattleUidOpNotifyOuterClass.ScenePlayBattleUidOpNotify other) {
         if (other == emu.grasscutter.net.proto.ScenePlayBattleUidOpNotifyOuterClass.ScenePlayBattleUidOpNotify.getDefaultInstance()) return this;
-        if (!other.uidList_.isEmpty()) {
-          if (uidList_.isEmpty()) {
-            uidList_ = other.uidList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureUidListIsMutable();
-            uidList_.addAll(other.uidList_);
-          }
-          onChanged();
-        }
         if (other.getPlayType() != 0) {
           setPlayType(other.getPlayType());
         }
@@ -981,6 +971,25 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
         }
         if (other.getParamDuration() != 0) {
           setParamDuration(other.getParamDuration());
+        }
+        if (other.getOp() != 0) {
+          setOp(other.getOp());
+        }
+        if (other.getEntityId() != 0) {
+          setEntityId(other.getEntityId());
+        }
+        if (other.getParamIndex() != 0) {
+          setParamIndex(other.getParamIndex());
+        }
+        if (!other.uidList_.isEmpty()) {
+          if (uidList_.isEmpty()) {
+            uidList_ = other.uidList_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureUidListIsMutable();
+            uidList_.addAll(other.uidList_);
+          }
+          onChanged();
         }
         if (!other.paramList_.isEmpty()) {
           if (paramList_.isEmpty()) {
@@ -992,18 +1001,6 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
           }
           onChanged();
         }
-        if (other.getOp() != 0) {
-          setOp(other.getOp());
-        }
-        if (other.getEntityId() != 0) {
-          setEntityId(other.getEntityId());
-        }
-        if (other.getParamIndex() != 0) {
-          setParamIndex(other.getParamIndex());
-        }
-        if (other.getPlayId() != 0) {
-          setPlayId(other.getPlayId());
-        }
         if (!other.paramTargetList_.isEmpty()) {
           if (paramTargetList_.isEmpty()) {
             paramTargetList_ = other.paramTargetList_;
@@ -1013,6 +1010,9 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
             paramTargetList_.addAll(other.paramTargetList_);
           }
           onChanged();
+        }
+        if (other.getPlayId() != 0) {
+          setPlayId(other.getPlayId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1044,88 +1044,9 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
       }
       private int bitField0_;
 
-      private com.google.protobuf.Internal.IntList uidList_ = emptyIntList();
-      private void ensureUidListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          uidList_ = mutableCopy(uidList_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-      /**
-       * <code>repeated uint32 uid_list = 15;</code>
-       * @return A list containing the uidList.
-       */
-      public java.util.List<java.lang.Integer>
-          getUidListList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
-                 java.util.Collections.unmodifiableList(uidList_) : uidList_;
-      }
-      /**
-       * <code>repeated uint32 uid_list = 15;</code>
-       * @return The count of uidList.
-       */
-      public int getUidListCount() {
-        return uidList_.size();
-      }
-      /**
-       * <code>repeated uint32 uid_list = 15;</code>
-       * @param index The index of the element to return.
-       * @return The uidList at the given index.
-       */
-      public int getUidList(int index) {
-        return uidList_.getInt(index);
-      }
-      /**
-       * <code>repeated uint32 uid_list = 15;</code>
-       * @param index The index to set the value at.
-       * @param value The uidList to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUidList(
-          int index, int value) {
-        ensureUidListIsMutable();
-        uidList_.setInt(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 uid_list = 15;</code>
-       * @param value The uidList to add.
-       * @return This builder for chaining.
-       */
-      public Builder addUidList(int value) {
-        ensureUidListIsMutable();
-        uidList_.addInt(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 uid_list = 15;</code>
-       * @param values The uidList to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllUidList(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureUidListIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, uidList_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 uid_list = 15;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearUidList() {
-        uidList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-
       private int playType_ ;
       /**
-       * <code>uint32 play_type = 6;</code>
+       * <code>uint32 play_type = 8;</code>
        * @return The playType.
        */
       @java.lang.Override
@@ -1133,7 +1054,7 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
         return playType_;
       }
       /**
-       * <code>uint32 play_type = 6;</code>
+       * <code>uint32 play_type = 8;</code>
        * @param value The playType to set.
        * @return This builder for chaining.
        */
@@ -1144,7 +1065,7 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 play_type = 6;</code>
+       * <code>uint32 play_type = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearPlayType() {
@@ -1156,7 +1077,7 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
 
       private java.lang.Object paramStr_ = "";
       /**
-       * <code>string param_str = 11;</code>
+       * <code>string param_str = 15;</code>
        * @return The paramStr.
        */
       public java.lang.String getParamStr() {
@@ -1172,7 +1093,7 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
         }
       }
       /**
-       * <code>string param_str = 11;</code>
+       * <code>string param_str = 15;</code>
        * @return The bytes for paramStr.
        */
       public com.google.protobuf.ByteString
@@ -1189,7 +1110,7 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
         }
       }
       /**
-       * <code>string param_str = 11;</code>
+       * <code>string param_str = 15;</code>
        * @param value The paramStr to set.
        * @return This builder for chaining.
        */
@@ -1204,7 +1125,7 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
         return this;
       }
       /**
-       * <code>string param_str = 11;</code>
+       * <code>string param_str = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearParamStr() {
@@ -1214,7 +1135,7 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
         return this;
       }
       /**
-       * <code>string param_str = 11;</code>
+       * <code>string param_str = 15;</code>
        * @param value The bytes for paramStr to set.
        * @return This builder for chaining.
        */
@@ -1232,7 +1153,7 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
 
       private int paramDuration_ ;
       /**
-       * <code>uint32 param_duration = 2;</code>
+       * <code>uint32 param_duration = 9;</code>
        * @return The paramDuration.
        */
       @java.lang.Override
@@ -1240,7 +1161,7 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
         return paramDuration_;
       }
       /**
-       * <code>uint32 param_duration = 2;</code>
+       * <code>uint32 param_duration = 9;</code>
        * @param value The paramDuration to set.
        * @return This builder for chaining.
        */
@@ -1251,12 +1172,184 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 param_duration = 2;</code>
+       * <code>uint32 param_duration = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearParamDuration() {
         
         paramDuration_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int op_ ;
+      /**
+       * <code>uint32 op = 5;</code>
+       * @return The op.
+       */
+      @java.lang.Override
+      public int getOp() {
+        return op_;
+      }
+      /**
+       * <code>uint32 op = 5;</code>
+       * @param value The op to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOp(int value) {
+        
+        op_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 op = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOp() {
+        
+        op_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int entityId_ ;
+      /**
+       * <code>uint32 entity_id = 2;</code>
+       * @return The entityId.
+       */
+      @java.lang.Override
+      public int getEntityId() {
+        return entityId_;
+      }
+      /**
+       * <code>uint32 entity_id = 2;</code>
+       * @param value The entityId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEntityId(int value) {
+        
+        entityId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 entity_id = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEntityId() {
+        
+        entityId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int paramIndex_ ;
+      /**
+       * <code>uint32 param_index = 4;</code>
+       * @return The paramIndex.
+       */
+      @java.lang.Override
+      public int getParamIndex() {
+        return paramIndex_;
+      }
+      /**
+       * <code>uint32 param_index = 4;</code>
+       * @param value The paramIndex to set.
+       * @return This builder for chaining.
+       */
+      public Builder setParamIndex(int value) {
+        
+        paramIndex_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 param_index = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearParamIndex() {
+        
+        paramIndex_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Internal.IntList uidList_ = emptyIntList();
+      private void ensureUidListIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          uidList_ = mutableCopy(uidList_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <code>repeated uint32 uid_list = 14;</code>
+       * @return A list containing the uidList.
+       */
+      public java.util.List<java.lang.Integer>
+          getUidListList() {
+        return ((bitField0_ & 0x00000001) != 0) ?
+                 java.util.Collections.unmodifiableList(uidList_) : uidList_;
+      }
+      /**
+       * <code>repeated uint32 uid_list = 14;</code>
+       * @return The count of uidList.
+       */
+      public int getUidListCount() {
+        return uidList_.size();
+      }
+      /**
+       * <code>repeated uint32 uid_list = 14;</code>
+       * @param index The index of the element to return.
+       * @return The uidList at the given index.
+       */
+      public int getUidList(int index) {
+        return uidList_.getInt(index);
+      }
+      /**
+       * <code>repeated uint32 uid_list = 14;</code>
+       * @param index The index to set the value at.
+       * @param value The uidList to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUidList(
+          int index, int value) {
+        ensureUidListIsMutable();
+        uidList_.setInt(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 uid_list = 14;</code>
+       * @param value The uidList to add.
+       * @return This builder for chaining.
+       */
+      public Builder addUidList(int value) {
+        ensureUidListIsMutable();
+        uidList_.addInt(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 uid_list = 14;</code>
+       * @param values The uidList to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllUidList(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureUidListIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, uidList_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 uid_list = 14;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUidList() {
+        uidList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1269,7 +1362,7 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 param_list = 1;</code>
+       * <code>repeated uint32 param_list = 7;</code>
        * @return A list containing the paramList.
        */
       public java.util.List<java.lang.Integer>
@@ -1278,14 +1371,14 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
                  java.util.Collections.unmodifiableList(paramList_) : paramList_;
       }
       /**
-       * <code>repeated uint32 param_list = 1;</code>
+       * <code>repeated uint32 param_list = 7;</code>
        * @return The count of paramList.
        */
       public int getParamListCount() {
         return paramList_.size();
       }
       /**
-       * <code>repeated uint32 param_list = 1;</code>
+       * <code>repeated uint32 param_list = 7;</code>
        * @param index The index of the element to return.
        * @return The paramList at the given index.
        */
@@ -1293,7 +1386,7 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
         return paramList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 param_list = 1;</code>
+       * <code>repeated uint32 param_list = 7;</code>
        * @param index The index to set the value at.
        * @param value The paramList to set.
        * @return This builder for chaining.
@@ -1306,7 +1399,7 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 param_list = 1;</code>
+       * <code>repeated uint32 param_list = 7;</code>
        * @param value The paramList to add.
        * @return This builder for chaining.
        */
@@ -1317,7 +1410,7 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 param_list = 1;</code>
+       * <code>repeated uint32 param_list = 7;</code>
        * @param values The paramList to add.
        * @return This builder for chaining.
        */
@@ -1330,136 +1423,12 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 param_list = 1;</code>
+       * <code>repeated uint32 param_list = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearParamList() {
         paramList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000002);
-        onChanged();
-        return this;
-      }
-
-      private int op_ ;
-      /**
-       * <code>uint32 op = 13;</code>
-       * @return The op.
-       */
-      @java.lang.Override
-      public int getOp() {
-        return op_;
-      }
-      /**
-       * <code>uint32 op = 13;</code>
-       * @param value The op to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOp(int value) {
-        
-        op_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 op = 13;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearOp() {
-        
-        op_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int entityId_ ;
-      /**
-       * <code>uint32 entity_id = 3;</code>
-       * @return The entityId.
-       */
-      @java.lang.Override
-      public int getEntityId() {
-        return entityId_;
-      }
-      /**
-       * <code>uint32 entity_id = 3;</code>
-       * @param value The entityId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEntityId(int value) {
-        
-        entityId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 entity_id = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEntityId() {
-        
-        entityId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int paramIndex_ ;
-      /**
-       * <code>uint32 param_index = 12;</code>
-       * @return The paramIndex.
-       */
-      @java.lang.Override
-      public int getParamIndex() {
-        return paramIndex_;
-      }
-      /**
-       * <code>uint32 param_index = 12;</code>
-       * @param value The paramIndex to set.
-       * @return This builder for chaining.
-       */
-      public Builder setParamIndex(int value) {
-        
-        paramIndex_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 param_index = 12;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearParamIndex() {
-        
-        paramIndex_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int playId_ ;
-      /**
-       * <code>uint32 play_id = 8;</code>
-       * @return The playId.
-       */
-      @java.lang.Override
-      public int getPlayId() {
-        return playId_;
-      }
-      /**
-       * <code>uint32 play_id = 8;</code>
-       * @param value The playId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPlayId(int value) {
-        
-        playId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 play_id = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPlayId() {
-        
-        playId_ = 0;
         onChanged();
         return this;
       }
@@ -1472,7 +1441,7 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 param_target_list = 7;</code>
+       * <code>repeated uint32 param_target_list = 12;</code>
        * @return A list containing the paramTargetList.
        */
       public java.util.List<java.lang.Integer>
@@ -1481,14 +1450,14 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
                  java.util.Collections.unmodifiableList(paramTargetList_) : paramTargetList_;
       }
       /**
-       * <code>repeated uint32 param_target_list = 7;</code>
+       * <code>repeated uint32 param_target_list = 12;</code>
        * @return The count of paramTargetList.
        */
       public int getParamTargetListCount() {
         return paramTargetList_.size();
       }
       /**
-       * <code>repeated uint32 param_target_list = 7;</code>
+       * <code>repeated uint32 param_target_list = 12;</code>
        * @param index The index of the element to return.
        * @return The paramTargetList at the given index.
        */
@@ -1496,7 +1465,7 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
         return paramTargetList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 param_target_list = 7;</code>
+       * <code>repeated uint32 param_target_list = 12;</code>
        * @param index The index to set the value at.
        * @param value The paramTargetList to set.
        * @return This builder for chaining.
@@ -1509,7 +1478,7 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 param_target_list = 7;</code>
+       * <code>repeated uint32 param_target_list = 12;</code>
        * @param value The paramTargetList to add.
        * @return This builder for chaining.
        */
@@ -1520,7 +1489,7 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 param_target_list = 7;</code>
+       * <code>repeated uint32 param_target_list = 12;</code>
        * @param values The paramTargetList to add.
        * @return This builder for chaining.
        */
@@ -1533,12 +1502,43 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 param_target_list = 7;</code>
+       * <code>repeated uint32 param_target_list = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearParamTargetList() {
         paramTargetList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+
+      private int playId_ ;
+      /**
+       * <code>uint32 play_id = 3;</code>
+       * @return The playId.
+       */
+      @java.lang.Override
+      public int getPlayId() {
+        return playId_;
+      }
+      /**
+       * <code>uint32 play_id = 3;</code>
+       * @param value The playId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPlayId(int value) {
+        
+        playId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 play_id = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPlayId() {
+        
+        playId_ = 0;
         onChanged();
         return this;
       }
@@ -1610,12 +1610,12 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n ScenePlayBattleUidOpNotify.proto\"\340\001\n\032S" +
-      "cenePlayBattleUidOpNotify\022\020\n\010uid_list\030\017 " +
-      "\003(\r\022\021\n\tplay_type\030\006 \001(\r\022\021\n\tparam_str\030\013 \001(" +
-      "\t\022\026\n\016param_duration\030\002 \001(\r\022\022\n\nparam_list\030" +
-      "\001 \003(\r\022\n\n\002op\030\r \001(\r\022\021\n\tentity_id\030\003 \001(\r\022\023\n\013" +
-      "param_index\030\014 \001(\r\022\017\n\007play_id\030\010 \001(\r\022\031\n\021pa" +
-      "ram_target_list\030\007 \003(\rB\033\n\031emu.grasscutter" +
+      "cenePlayBattleUidOpNotify\022\021\n\tplay_type\030\010" +
+      " \001(\r\022\021\n\tparam_str\030\017 \001(\t\022\026\n\016param_duratio" +
+      "n\030\t \001(\r\022\n\n\002op\030\005 \001(\r\022\021\n\tentity_id\030\002 \001(\r\022\023" +
+      "\n\013param_index\030\004 \001(\r\022\020\n\010uid_list\030\016 \003(\r\022\022\n" +
+      "\nparam_list\030\007 \003(\r\022\031\n\021param_target_list\030\014" +
+      " \003(\r\022\017\n\007play_id\030\003 \001(\rB\033\n\031emu.grasscutter" +
       ".net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -1627,7 +1627,7 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
     internal_static_ScenePlayBattleUidOpNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ScenePlayBattleUidOpNotify_descriptor,
-        new java.lang.String[] { "UidList", "PlayType", "ParamStr", "ParamDuration", "ParamList", "Op", "EntityId", "ParamIndex", "PlayId", "ParamTargetList", });
+        new java.lang.String[] { "PlayType", "ParamStr", "ParamDuration", "Op", "EntityId", "ParamIndex", "UidList", "ParamList", "ParamTargetList", "PlayId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

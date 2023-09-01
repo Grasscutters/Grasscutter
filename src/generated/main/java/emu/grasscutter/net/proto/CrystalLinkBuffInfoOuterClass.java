@@ -19,20 +19,20 @@ public final class CrystalLinkBuffInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 DBKGEODHPNC = 7;</code>
-     * @return The dBKGEODHPNC.
+     * <code>uint32 FJLJNEAMGHL = 12;</code>
+     * @return The fJLJNEAMGHL.
      */
-    int getDBKGEODHPNC();
+    int getFJLJNEAMGHL();
 
     /**
-     * <code>uint32 OECGHFDFIII = 2;</code>
-     * @return The oECGHFDFIII.
+     * <code>uint32 JIBBBGMJKBF = 6;</code>
+     * @return The jIBBBGMJKBF.
      */
-    int getOECGHFDFIII();
+    int getJIBBBGMJKBF();
   }
   /**
    * <pre>
-   * Obf: PHGJADJONIC
+   * Obf: JHCGNCCGBFI
    * </pre>
    *
    * Protobuf type {@code CrystalLinkBuffInfo}
@@ -79,14 +79,14 @@ public final class CrystalLinkBuffInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
+            case 48: {
 
-              oECGHFDFIII_ = input.readUInt32();
+              jIBBBGMJKBF_ = input.readUInt32();
               break;
             }
-            case 56: {
+            case 96: {
 
-              dBKGEODHPNC_ = input.readUInt32();
+              fJLJNEAMGHL_ = input.readUInt32();
               break;
             }
             default: {
@@ -121,26 +121,26 @@ public final class CrystalLinkBuffInfoOuterClass {
               emu.grasscutter.net.proto.CrystalLinkBuffInfoOuterClass.CrystalLinkBuffInfo.class, emu.grasscutter.net.proto.CrystalLinkBuffInfoOuterClass.CrystalLinkBuffInfo.Builder.class);
     }
 
-    public static final int DBKGEODHPNC_FIELD_NUMBER = 7;
-    private int dBKGEODHPNC_;
+    public static final int FJLJNEAMGHL_FIELD_NUMBER = 12;
+    private int fJLJNEAMGHL_;
     /**
-     * <code>uint32 DBKGEODHPNC = 7;</code>
-     * @return The dBKGEODHPNC.
+     * <code>uint32 FJLJNEAMGHL = 12;</code>
+     * @return The fJLJNEAMGHL.
      */
     @java.lang.Override
-    public int getDBKGEODHPNC() {
-      return dBKGEODHPNC_;
+    public int getFJLJNEAMGHL() {
+      return fJLJNEAMGHL_;
     }
 
-    public static final int OECGHFDFIII_FIELD_NUMBER = 2;
-    private int oECGHFDFIII_;
+    public static final int JIBBBGMJKBF_FIELD_NUMBER = 6;
+    private int jIBBBGMJKBF_;
     /**
-     * <code>uint32 OECGHFDFIII = 2;</code>
-     * @return The oECGHFDFIII.
+     * <code>uint32 JIBBBGMJKBF = 6;</code>
+     * @return The jIBBBGMJKBF.
      */
     @java.lang.Override
-    public int getOECGHFDFIII() {
-      return oECGHFDFIII_;
+    public int getJIBBBGMJKBF() {
+      return jIBBBGMJKBF_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -157,11 +157,11 @@ public final class CrystalLinkBuffInfoOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (oECGHFDFIII_ != 0) {
-        output.writeUInt32(2, oECGHFDFIII_);
+      if (jIBBBGMJKBF_ != 0) {
+        output.writeUInt32(6, jIBBBGMJKBF_);
       }
-      if (dBKGEODHPNC_ != 0) {
-        output.writeUInt32(7, dBKGEODHPNC_);
+      if (fJLJNEAMGHL_ != 0) {
+        output.writeUInt32(12, fJLJNEAMGHL_);
       }
       unknownFields.writeTo(output);
     }
@@ -172,13 +172,13 @@ public final class CrystalLinkBuffInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (oECGHFDFIII_ != 0) {
+      if (jIBBBGMJKBF_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, oECGHFDFIII_);
+          .computeUInt32Size(6, jIBBBGMJKBF_);
       }
-      if (dBKGEODHPNC_ != 0) {
+      if (fJLJNEAMGHL_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, dBKGEODHPNC_);
+          .computeUInt32Size(12, fJLJNEAMGHL_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -195,10 +195,10 @@ public final class CrystalLinkBuffInfoOuterClass {
       }
       emu.grasscutter.net.proto.CrystalLinkBuffInfoOuterClass.CrystalLinkBuffInfo other = (emu.grasscutter.net.proto.CrystalLinkBuffInfoOuterClass.CrystalLinkBuffInfo) obj;
 
-      if (getDBKGEODHPNC()
-          != other.getDBKGEODHPNC()) return false;
-      if (getOECGHFDFIII()
-          != other.getOECGHFDFIII()) return false;
+      if (getFJLJNEAMGHL()
+          != other.getFJLJNEAMGHL()) return false;
+      if (getJIBBBGMJKBF()
+          != other.getJIBBBGMJKBF()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -210,10 +210,10 @@ public final class CrystalLinkBuffInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + DBKGEODHPNC_FIELD_NUMBER;
-      hash = (53 * hash) + getDBKGEODHPNC();
-      hash = (37 * hash) + OECGHFDFIII_FIELD_NUMBER;
-      hash = (53 * hash) + getOECGHFDFIII();
+      hash = (37 * hash) + FJLJNEAMGHL_FIELD_NUMBER;
+      hash = (53 * hash) + getFJLJNEAMGHL();
+      hash = (37 * hash) + JIBBBGMJKBF_FIELD_NUMBER;
+      hash = (53 * hash) + getJIBBBGMJKBF();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -311,7 +311,7 @@ public final class CrystalLinkBuffInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: PHGJADJONIC
+     * Obf: JHCGNCCGBFI
      * </pre>
      *
      * Protobuf type {@code CrystalLinkBuffInfo}
@@ -351,9 +351,9 @@ public final class CrystalLinkBuffInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        dBKGEODHPNC_ = 0;
+        fJLJNEAMGHL_ = 0;
 
-        oECGHFDFIII_ = 0;
+        jIBBBGMJKBF_ = 0;
 
         return this;
       }
@@ -381,8 +381,8 @@ public final class CrystalLinkBuffInfoOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.CrystalLinkBuffInfoOuterClass.CrystalLinkBuffInfo buildPartial() {
         emu.grasscutter.net.proto.CrystalLinkBuffInfoOuterClass.CrystalLinkBuffInfo result = new emu.grasscutter.net.proto.CrystalLinkBuffInfoOuterClass.CrystalLinkBuffInfo(this);
-        result.dBKGEODHPNC_ = dBKGEODHPNC_;
-        result.oECGHFDFIII_ = oECGHFDFIII_;
+        result.fJLJNEAMGHL_ = fJLJNEAMGHL_;
+        result.jIBBBGMJKBF_ = jIBBBGMJKBF_;
         onBuilt();
         return result;
       }
@@ -431,11 +431,11 @@ public final class CrystalLinkBuffInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.CrystalLinkBuffInfoOuterClass.CrystalLinkBuffInfo other) {
         if (other == emu.grasscutter.net.proto.CrystalLinkBuffInfoOuterClass.CrystalLinkBuffInfo.getDefaultInstance()) return this;
-        if (other.getDBKGEODHPNC() != 0) {
-          setDBKGEODHPNC(other.getDBKGEODHPNC());
+        if (other.getFJLJNEAMGHL() != 0) {
+          setFJLJNEAMGHL(other.getFJLJNEAMGHL());
         }
-        if (other.getOECGHFDFIII() != 0) {
-          setOECGHFDFIII(other.getOECGHFDFIII());
+        if (other.getJIBBBGMJKBF() != 0) {
+          setJIBBBGMJKBF(other.getJIBBBGMJKBF());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -466,64 +466,64 @@ public final class CrystalLinkBuffInfoOuterClass {
         return this;
       }
 
-      private int dBKGEODHPNC_ ;
+      private int fJLJNEAMGHL_ ;
       /**
-       * <code>uint32 DBKGEODHPNC = 7;</code>
-       * @return The dBKGEODHPNC.
+       * <code>uint32 FJLJNEAMGHL = 12;</code>
+       * @return The fJLJNEAMGHL.
        */
       @java.lang.Override
-      public int getDBKGEODHPNC() {
-        return dBKGEODHPNC_;
+      public int getFJLJNEAMGHL() {
+        return fJLJNEAMGHL_;
       }
       /**
-       * <code>uint32 DBKGEODHPNC = 7;</code>
-       * @param value The dBKGEODHPNC to set.
+       * <code>uint32 FJLJNEAMGHL = 12;</code>
+       * @param value The fJLJNEAMGHL to set.
        * @return This builder for chaining.
        */
-      public Builder setDBKGEODHPNC(int value) {
+      public Builder setFJLJNEAMGHL(int value) {
         
-        dBKGEODHPNC_ = value;
+        fJLJNEAMGHL_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 DBKGEODHPNC = 7;</code>
+       * <code>uint32 FJLJNEAMGHL = 12;</code>
        * @return This builder for chaining.
        */
-      public Builder clearDBKGEODHPNC() {
+      public Builder clearFJLJNEAMGHL() {
         
-        dBKGEODHPNC_ = 0;
+        fJLJNEAMGHL_ = 0;
         onChanged();
         return this;
       }
 
-      private int oECGHFDFIII_ ;
+      private int jIBBBGMJKBF_ ;
       /**
-       * <code>uint32 OECGHFDFIII = 2;</code>
-       * @return The oECGHFDFIII.
+       * <code>uint32 JIBBBGMJKBF = 6;</code>
+       * @return The jIBBBGMJKBF.
        */
       @java.lang.Override
-      public int getOECGHFDFIII() {
-        return oECGHFDFIII_;
+      public int getJIBBBGMJKBF() {
+        return jIBBBGMJKBF_;
       }
       /**
-       * <code>uint32 OECGHFDFIII = 2;</code>
-       * @param value The oECGHFDFIII to set.
+       * <code>uint32 JIBBBGMJKBF = 6;</code>
+       * @param value The jIBBBGMJKBF to set.
        * @return This builder for chaining.
        */
-      public Builder setOECGHFDFIII(int value) {
+      public Builder setJIBBBGMJKBF(int value) {
         
-        oECGHFDFIII_ = value;
+        jIBBBGMJKBF_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 OECGHFDFIII = 2;</code>
+       * <code>uint32 JIBBBGMJKBF = 6;</code>
        * @return This builder for chaining.
        */
-      public Builder clearOECGHFDFIII() {
+      public Builder clearJIBBBGMJKBF() {
         
-        oECGHFDFIII_ = 0;
+        jIBBBGMJKBF_ = 0;
         onChanged();
         return this;
       }
@@ -595,8 +595,8 @@ public final class CrystalLinkBuffInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\031CrystalLinkBuffInfo.proto\"?\n\023CrystalLi" +
-      "nkBuffInfo\022\023\n\013DBKGEODHPNC\030\007 \001(\r\022\023\n\013OECGH" +
-      "FDFIII\030\002 \001(\rB\033\n\031emu.grasscutter.net.prot" +
+      "nkBuffInfo\022\023\n\013FJLJNEAMGHL\030\014 \001(\r\022\023\n\013JIBBB" +
+      "GMJKBF\030\006 \001(\rB\033\n\031emu.grasscutter.net.prot" +
       "ob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -608,7 +608,7 @@ public final class CrystalLinkBuffInfoOuterClass {
     internal_static_CrystalLinkBuffInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CrystalLinkBuffInfo_descriptor,
-        new java.lang.String[] { "DBKGEODHPNC", "OECGHFDFIII", });
+        new java.lang.String[] { "FJLJNEAMGHL", "JIBBBGMJKBF", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

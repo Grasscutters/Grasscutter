@@ -19,15 +19,15 @@ public final class PlantFlowerGetCanGiveFriendFlowerReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 schedule_id = 9;</code>
+     * <code>uint32 schedule_id = 1;</code>
      * @return The scheduleId.
      */
     int getScheduleId();
   }
   /**
    * <pre>
-   * CmdId: 8429
-   * Obf: BGIJBGIEPLN
+   * CmdId: 21688
+   * Obf: MGMFHDMPPIH
    * </pre>
    *
    * Protobuf type {@code PlantFlowerGetCanGiveFriendFlowerReq}
@@ -74,7 +74,7 @@ public final class PlantFlowerGetCanGiveFriendFlowerReqOuterClass {
             case 0:
               done = true;
               break;
-            case 72: {
+            case 8: {
 
               scheduleId_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class PlantFlowerGetCanGiveFriendFlowerReqOuterClass {
               emu.grasscutter.net.proto.PlantFlowerGetCanGiveFriendFlowerReqOuterClass.PlantFlowerGetCanGiveFriendFlowerReq.class, emu.grasscutter.net.proto.PlantFlowerGetCanGiveFriendFlowerReqOuterClass.PlantFlowerGetCanGiveFriendFlowerReq.Builder.class);
     }
 
-    public static final int SCHEDULE_ID_FIELD_NUMBER = 9;
+    public static final int SCHEDULE_ID_FIELD_NUMBER = 1;
     private int scheduleId_;
     /**
-     * <code>uint32 schedule_id = 9;</code>
+     * <code>uint32 schedule_id = 1;</code>
      * @return The scheduleId.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class PlantFlowerGetCanGiveFriendFlowerReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (scheduleId_ != 0) {
-        output.writeUInt32(9, scheduleId_);
+        output.writeUInt32(1, scheduleId_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class PlantFlowerGetCanGiveFriendFlowerReqOuterClass {
       size = 0;
       if (scheduleId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, scheduleId_);
+          .computeUInt32Size(1, scheduleId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class PlantFlowerGetCanGiveFriendFlowerReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8429
-     * Obf: BGIJBGIEPLN
+     * CmdId: 21688
+     * Obf: MGMFHDMPPIH
      * </pre>
      *
      * Protobuf type {@code PlantFlowerGetCanGiveFriendFlowerReq}
@@ -431,7 +431,7 @@ public final class PlantFlowerGetCanGiveFriendFlowerReqOuterClass {
 
       private int scheduleId_ ;
       /**
-       * <code>uint32 schedule_id = 9;</code>
+       * <code>uint32 schedule_id = 1;</code>
        * @return The scheduleId.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class PlantFlowerGetCanGiveFriendFlowerReqOuterClass {
         return scheduleId_;
       }
       /**
-       * <code>uint32 schedule_id = 9;</code>
+       * <code>uint32 schedule_id = 1;</code>
        * @param value The scheduleId to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class PlantFlowerGetCanGiveFriendFlowerReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 schedule_id = 9;</code>
+       * <code>uint32 schedule_id = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearScheduleId() {
@@ -528,7 +528,7 @@ public final class PlantFlowerGetCanGiveFriendFlowerReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n*PlantFlowerGetCanGiveFriendFlowerReq.p" +
       "roto\";\n$PlantFlowerGetCanGiveFriendFlowe" +
-      "rReq\022\023\n\013schedule_id\030\t \001(\rB\033\n\031emu.grasscu" +
+      "rReq\022\023\n\013schedule_id\030\001 \001(\rB\033\n\031emu.grasscu" +
       "tter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

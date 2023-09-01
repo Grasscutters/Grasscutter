@@ -85,7 +85,7 @@ public final class HomeMarkPointFurnitureDataOuterClass {
   }
   /**
    * <pre>
-   * Obf: AAMJFNLFJIJ
+   * Obf: MDHHDACNAEL
    * </pre>
    *
    * Protobuf type {@code HomeMarkPointFurnitureData}
@@ -616,7 +616,7 @@ public final class HomeMarkPointFurnitureDataOuterClass {
     }
     /**
      * <pre>
-     * Obf: AAMJFNLFJIJ
+     * Obf: MDHHDACNAEL
      * </pre>
      *
      * Protobuf type {@code HomeMarkPointFurnitureData}

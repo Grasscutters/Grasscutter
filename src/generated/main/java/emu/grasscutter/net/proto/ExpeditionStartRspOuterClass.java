@@ -19,50 +19,50 @@ public final class ExpeditionStartRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 3;</code>
-     * @return The retcode.
+     * <code>uint32 DDCIILLJCLH = 11;</code>
+     * @return The dDCIILLJCLH.
      */
-    int getRetcode();
+    int getDDCIILLJCLH();
 
     /**
-     * <code>uint32 FLHKBCEIKLE = 9;</code>
-     * @return The fLHKBCEIKLE.
+     * <code>uint32 path_id = 3;</code>
+     * @return The pathId.
      */
-    int getFLHKBCEIKLE();
+    int getPathId();
 
     /**
-     * <code>repeated uint32 avatar_id_list = 8;</code>
+     * <code>repeated uint32 avatar_id_list = 6;</code>
      * @return A list containing the avatarIdList.
      */
     java.util.List<java.lang.Integer> getAvatarIdListList();
     /**
-     * <code>repeated uint32 avatar_id_list = 8;</code>
+     * <code>repeated uint32 avatar_id_list = 6;</code>
      * @return The count of avatarIdList.
      */
     int getAvatarIdListCount();
     /**
-     * <code>repeated uint32 avatar_id_list = 8;</code>
+     * <code>repeated uint32 avatar_id_list = 6;</code>
      * @param index The index of the element to return.
      * @return The avatarIdList at the given index.
      */
     int getAvatarIdList(int index);
 
     /**
-     * <code>uint32 MFNGJOCIAPE = 6;</code>
-     * @return The mFNGJOCIAPE.
+     * <code>uint32 EPLFCNHCJOD = 10;</code>
+     * @return The ePLFCNHCJOD.
      */
-    int getMFNGJOCIAPE();
+    int getEPLFCNHCJOD();
 
     /**
-     * <code>uint32 path_id = 1;</code>
-     * @return The pathId.
+     * <code>int32 retcode = 13;</code>
+     * @return The retcode.
      */
-    int getPathId();
+    int getRetcode();
   }
   /**
    * <pre>
-   * CmdId: 2049
-   * Obf: OKAMLPHOFID
+   * CmdId: 23532
+   * Obf: PBOFMNJLMLI
    * </pre>
    *
    * Protobuf type {@code ExpeditionStartRsp}
@@ -111,22 +111,12 @@ public final class ExpeditionStartRspOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 24: {
 
               pathId_ = input.readUInt32();
               break;
             }
-            case 24: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
             case 48: {
-
-              mFNGJOCIAPE_ = input.readUInt32();
-              break;
-            }
-            case 64: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 avatarIdList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -134,7 +124,7 @@ public final class ExpeditionStartRspOuterClass {
               avatarIdList_.addInt(input.readUInt32());
               break;
             }
-            case 66: {
+            case 50: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -147,9 +137,19 @@ public final class ExpeditionStartRspOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 72: {
+            case 80: {
 
-              fLHKBCEIKLE_ = input.readUInt32();
+              ePLFCNHCJOD_ = input.readUInt32();
+              break;
+            }
+            case 88: {
+
+              dDCIILLJCLH_ = input.readUInt32();
+              break;
+            }
+            case 104: {
+
+              retcode_ = input.readInt32();
               break;
             }
             default: {
@@ -187,32 +187,32 @@ public final class ExpeditionStartRspOuterClass {
               emu.grasscutter.net.proto.ExpeditionStartRspOuterClass.ExpeditionStartRsp.class, emu.grasscutter.net.proto.ExpeditionStartRspOuterClass.ExpeditionStartRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 3;
-    private int retcode_;
+    public static final int DDCIILLJCLH_FIELD_NUMBER = 11;
+    private int dDCIILLJCLH_;
     /**
-     * <code>int32 retcode = 3;</code>
-     * @return The retcode.
+     * <code>uint32 DDCIILLJCLH = 11;</code>
+     * @return The dDCIILLJCLH.
      */
     @java.lang.Override
-    public int getRetcode() {
-      return retcode_;
+    public int getDDCIILLJCLH() {
+      return dDCIILLJCLH_;
     }
 
-    public static final int FLHKBCEIKLE_FIELD_NUMBER = 9;
-    private int fLHKBCEIKLE_;
+    public static final int PATH_ID_FIELD_NUMBER = 3;
+    private int pathId_;
     /**
-     * <code>uint32 FLHKBCEIKLE = 9;</code>
-     * @return The fLHKBCEIKLE.
+     * <code>uint32 path_id = 3;</code>
+     * @return The pathId.
      */
     @java.lang.Override
-    public int getFLHKBCEIKLE() {
-      return fLHKBCEIKLE_;
+    public int getPathId() {
+      return pathId_;
     }
 
-    public static final int AVATAR_ID_LIST_FIELD_NUMBER = 8;
+    public static final int AVATAR_ID_LIST_FIELD_NUMBER = 6;
     private com.google.protobuf.Internal.IntList avatarIdList_;
     /**
-     * <code>repeated uint32 avatar_id_list = 8;</code>
+     * <code>repeated uint32 avatar_id_list = 6;</code>
      * @return A list containing the avatarIdList.
      */
     @java.lang.Override
@@ -221,14 +221,14 @@ public final class ExpeditionStartRspOuterClass {
       return avatarIdList_;
     }
     /**
-     * <code>repeated uint32 avatar_id_list = 8;</code>
+     * <code>repeated uint32 avatar_id_list = 6;</code>
      * @return The count of avatarIdList.
      */
     public int getAvatarIdListCount() {
       return avatarIdList_.size();
     }
     /**
-     * <code>repeated uint32 avatar_id_list = 8;</code>
+     * <code>repeated uint32 avatar_id_list = 6;</code>
      * @param index The index of the element to return.
      * @return The avatarIdList at the given index.
      */
@@ -237,26 +237,26 @@ public final class ExpeditionStartRspOuterClass {
     }
     private int avatarIdListMemoizedSerializedSize = -1;
 
-    public static final int MFNGJOCIAPE_FIELD_NUMBER = 6;
-    private int mFNGJOCIAPE_;
+    public static final int EPLFCNHCJOD_FIELD_NUMBER = 10;
+    private int ePLFCNHCJOD_;
     /**
-     * <code>uint32 MFNGJOCIAPE = 6;</code>
-     * @return The mFNGJOCIAPE.
+     * <code>uint32 EPLFCNHCJOD = 10;</code>
+     * @return The ePLFCNHCJOD.
      */
     @java.lang.Override
-    public int getMFNGJOCIAPE() {
-      return mFNGJOCIAPE_;
+    public int getEPLFCNHCJOD() {
+      return ePLFCNHCJOD_;
     }
 
-    public static final int PATH_ID_FIELD_NUMBER = 1;
-    private int pathId_;
+    public static final int RETCODE_FIELD_NUMBER = 13;
+    private int retcode_;
     /**
-     * <code>uint32 path_id = 1;</code>
-     * @return The pathId.
+     * <code>int32 retcode = 13;</code>
+     * @return The retcode.
      */
     @java.lang.Override
-    public int getPathId() {
-      return pathId_;
+    public int getRetcode() {
+      return retcode_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -275,23 +275,23 @@ public final class ExpeditionStartRspOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (pathId_ != 0) {
-        output.writeUInt32(1, pathId_);
-      }
-      if (retcode_ != 0) {
-        output.writeInt32(3, retcode_);
-      }
-      if (mFNGJOCIAPE_ != 0) {
-        output.writeUInt32(6, mFNGJOCIAPE_);
+        output.writeUInt32(3, pathId_);
       }
       if (getAvatarIdListList().size() > 0) {
-        output.writeUInt32NoTag(66);
+        output.writeUInt32NoTag(50);
         output.writeUInt32NoTag(avatarIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < avatarIdList_.size(); i++) {
         output.writeUInt32NoTag(avatarIdList_.getInt(i));
       }
-      if (fLHKBCEIKLE_ != 0) {
-        output.writeUInt32(9, fLHKBCEIKLE_);
+      if (ePLFCNHCJOD_ != 0) {
+        output.writeUInt32(10, ePLFCNHCJOD_);
+      }
+      if (dDCIILLJCLH_ != 0) {
+        output.writeUInt32(11, dDCIILLJCLH_);
+      }
+      if (retcode_ != 0) {
+        output.writeInt32(13, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -304,15 +304,7 @@ public final class ExpeditionStartRspOuterClass {
       size = 0;
       if (pathId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, pathId_);
-      }
-      if (retcode_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, retcode_);
-      }
-      if (mFNGJOCIAPE_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, mFNGJOCIAPE_);
+          .computeUInt32Size(3, pathId_);
       }
       {
         int dataSize = 0;
@@ -328,9 +320,17 @@ public final class ExpeditionStartRspOuterClass {
         }
         avatarIdListMemoizedSerializedSize = dataSize;
       }
-      if (fLHKBCEIKLE_ != 0) {
+      if (ePLFCNHCJOD_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, fLHKBCEIKLE_);
+          .computeUInt32Size(10, ePLFCNHCJOD_);
+      }
+      if (dDCIILLJCLH_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(11, dDCIILLJCLH_);
+      }
+      if (retcode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(13, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -347,16 +347,16 @@ public final class ExpeditionStartRspOuterClass {
       }
       emu.grasscutter.net.proto.ExpeditionStartRspOuterClass.ExpeditionStartRsp other = (emu.grasscutter.net.proto.ExpeditionStartRspOuterClass.ExpeditionStartRsp) obj;
 
-      if (getRetcode()
-          != other.getRetcode()) return false;
-      if (getFLHKBCEIKLE()
-          != other.getFLHKBCEIKLE()) return false;
-      if (!getAvatarIdListList()
-          .equals(other.getAvatarIdListList())) return false;
-      if (getMFNGJOCIAPE()
-          != other.getMFNGJOCIAPE()) return false;
+      if (getDDCIILLJCLH()
+          != other.getDDCIILLJCLH()) return false;
       if (getPathId()
           != other.getPathId()) return false;
+      if (!getAvatarIdListList()
+          .equals(other.getAvatarIdListList())) return false;
+      if (getEPLFCNHCJOD()
+          != other.getEPLFCNHCJOD()) return false;
+      if (getRetcode()
+          != other.getRetcode()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -368,18 +368,18 @@ public final class ExpeditionStartRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getRetcode();
-      hash = (37 * hash) + FLHKBCEIKLE_FIELD_NUMBER;
-      hash = (53 * hash) + getFLHKBCEIKLE();
+      hash = (37 * hash) + DDCIILLJCLH_FIELD_NUMBER;
+      hash = (53 * hash) + getDDCIILLJCLH();
+      hash = (37 * hash) + PATH_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getPathId();
       if (getAvatarIdListCount() > 0) {
         hash = (37 * hash) + AVATAR_ID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getAvatarIdListList().hashCode();
       }
-      hash = (37 * hash) + MFNGJOCIAPE_FIELD_NUMBER;
-      hash = (53 * hash) + getMFNGJOCIAPE();
-      hash = (37 * hash) + PATH_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getPathId();
+      hash = (37 * hash) + EPLFCNHCJOD_FIELD_NUMBER;
+      hash = (53 * hash) + getEPLFCNHCJOD();
+      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
+      hash = (53 * hash) + getRetcode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -477,8 +477,8 @@ public final class ExpeditionStartRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2049
-     * Obf: OKAMLPHOFID
+     * CmdId: 23532
+     * Obf: PBOFMNJLMLI
      * </pre>
      *
      * Protobuf type {@code ExpeditionStartRsp}
@@ -518,15 +518,15 @@ public final class ExpeditionStartRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        retcode_ = 0;
+        dDCIILLJCLH_ = 0;
 
-        fLHKBCEIKLE_ = 0;
+        pathId_ = 0;
 
         avatarIdList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
-        mFNGJOCIAPE_ = 0;
+        ePLFCNHCJOD_ = 0;
 
-        pathId_ = 0;
+        retcode_ = 0;
 
         return this;
       }
@@ -555,15 +555,15 @@ public final class ExpeditionStartRspOuterClass {
       public emu.grasscutter.net.proto.ExpeditionStartRspOuterClass.ExpeditionStartRsp buildPartial() {
         emu.grasscutter.net.proto.ExpeditionStartRspOuterClass.ExpeditionStartRsp result = new emu.grasscutter.net.proto.ExpeditionStartRspOuterClass.ExpeditionStartRsp(this);
         int from_bitField0_ = bitField0_;
-        result.retcode_ = retcode_;
-        result.fLHKBCEIKLE_ = fLHKBCEIKLE_;
+        result.dDCIILLJCLH_ = dDCIILLJCLH_;
+        result.pathId_ = pathId_;
         if (((bitField0_ & 0x00000001) != 0)) {
           avatarIdList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.avatarIdList_ = avatarIdList_;
-        result.mFNGJOCIAPE_ = mFNGJOCIAPE_;
-        result.pathId_ = pathId_;
+        result.ePLFCNHCJOD_ = ePLFCNHCJOD_;
+        result.retcode_ = retcode_;
         onBuilt();
         return result;
       }
@@ -612,11 +612,11 @@ public final class ExpeditionStartRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.ExpeditionStartRspOuterClass.ExpeditionStartRsp other) {
         if (other == emu.grasscutter.net.proto.ExpeditionStartRspOuterClass.ExpeditionStartRsp.getDefaultInstance()) return this;
-        if (other.getRetcode() != 0) {
-          setRetcode(other.getRetcode());
+        if (other.getDDCIILLJCLH() != 0) {
+          setDDCIILLJCLH(other.getDDCIILLJCLH());
         }
-        if (other.getFLHKBCEIKLE() != 0) {
-          setFLHKBCEIKLE(other.getFLHKBCEIKLE());
+        if (other.getPathId() != 0) {
+          setPathId(other.getPathId());
         }
         if (!other.avatarIdList_.isEmpty()) {
           if (avatarIdList_.isEmpty()) {
@@ -628,11 +628,11 @@ public final class ExpeditionStartRspOuterClass {
           }
           onChanged();
         }
-        if (other.getMFNGJOCIAPE() != 0) {
-          setMFNGJOCIAPE(other.getMFNGJOCIAPE());
+        if (other.getEPLFCNHCJOD() != 0) {
+          setEPLFCNHCJOD(other.getEPLFCNHCJOD());
         }
-        if (other.getPathId() != 0) {
-          setPathId(other.getPathId());
+        if (other.getRetcode() != 0) {
+          setRetcode(other.getRetcode());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -664,64 +664,64 @@ public final class ExpeditionStartRspOuterClass {
       }
       private int bitField0_;
 
-      private int retcode_ ;
+      private int dDCIILLJCLH_ ;
       /**
-       * <code>int32 retcode = 3;</code>
-       * @return The retcode.
+       * <code>uint32 DDCIILLJCLH = 11;</code>
+       * @return The dDCIILLJCLH.
        */
       @java.lang.Override
-      public int getRetcode() {
-        return retcode_;
+      public int getDDCIILLJCLH() {
+        return dDCIILLJCLH_;
       }
       /**
-       * <code>int32 retcode = 3;</code>
-       * @param value The retcode to set.
+       * <code>uint32 DDCIILLJCLH = 11;</code>
+       * @param value The dDCIILLJCLH to set.
        * @return This builder for chaining.
        */
-      public Builder setRetcode(int value) {
+      public Builder setDDCIILLJCLH(int value) {
         
-        retcode_ = value;
+        dDCIILLJCLH_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 retcode = 3;</code>
+       * <code>uint32 DDCIILLJCLH = 11;</code>
        * @return This builder for chaining.
        */
-      public Builder clearRetcode() {
+      public Builder clearDDCIILLJCLH() {
         
-        retcode_ = 0;
+        dDCIILLJCLH_ = 0;
         onChanged();
         return this;
       }
 
-      private int fLHKBCEIKLE_ ;
+      private int pathId_ ;
       /**
-       * <code>uint32 FLHKBCEIKLE = 9;</code>
-       * @return The fLHKBCEIKLE.
+       * <code>uint32 path_id = 3;</code>
+       * @return The pathId.
        */
       @java.lang.Override
-      public int getFLHKBCEIKLE() {
-        return fLHKBCEIKLE_;
+      public int getPathId() {
+        return pathId_;
       }
       /**
-       * <code>uint32 FLHKBCEIKLE = 9;</code>
-       * @param value The fLHKBCEIKLE to set.
+       * <code>uint32 path_id = 3;</code>
+       * @param value The pathId to set.
        * @return This builder for chaining.
        */
-      public Builder setFLHKBCEIKLE(int value) {
+      public Builder setPathId(int value) {
         
-        fLHKBCEIKLE_ = value;
+        pathId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 FLHKBCEIKLE = 9;</code>
+       * <code>uint32 path_id = 3;</code>
        * @return This builder for chaining.
        */
-      public Builder clearFLHKBCEIKLE() {
+      public Builder clearPathId() {
         
-        fLHKBCEIKLE_ = 0;
+        pathId_ = 0;
         onChanged();
         return this;
       }
@@ -734,7 +734,7 @@ public final class ExpeditionStartRspOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 avatar_id_list = 8;</code>
+       * <code>repeated uint32 avatar_id_list = 6;</code>
        * @return A list containing the avatarIdList.
        */
       public java.util.List<java.lang.Integer>
@@ -743,14 +743,14 @@ public final class ExpeditionStartRspOuterClass {
                  java.util.Collections.unmodifiableList(avatarIdList_) : avatarIdList_;
       }
       /**
-       * <code>repeated uint32 avatar_id_list = 8;</code>
+       * <code>repeated uint32 avatar_id_list = 6;</code>
        * @return The count of avatarIdList.
        */
       public int getAvatarIdListCount() {
         return avatarIdList_.size();
       }
       /**
-       * <code>repeated uint32 avatar_id_list = 8;</code>
+       * <code>repeated uint32 avatar_id_list = 6;</code>
        * @param index The index of the element to return.
        * @return The avatarIdList at the given index.
        */
@@ -758,7 +758,7 @@ public final class ExpeditionStartRspOuterClass {
         return avatarIdList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 avatar_id_list = 8;</code>
+       * <code>repeated uint32 avatar_id_list = 6;</code>
        * @param index The index to set the value at.
        * @param value The avatarIdList to set.
        * @return This builder for chaining.
@@ -771,7 +771,7 @@ public final class ExpeditionStartRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 avatar_id_list = 8;</code>
+       * <code>repeated uint32 avatar_id_list = 6;</code>
        * @param value The avatarIdList to add.
        * @return This builder for chaining.
        */
@@ -782,7 +782,7 @@ public final class ExpeditionStartRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 avatar_id_list = 8;</code>
+       * <code>repeated uint32 avatar_id_list = 6;</code>
        * @param values The avatarIdList to add.
        * @return This builder for chaining.
        */
@@ -795,7 +795,7 @@ public final class ExpeditionStartRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 avatar_id_list = 8;</code>
+       * <code>repeated uint32 avatar_id_list = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearAvatarIdList() {
@@ -805,64 +805,64 @@ public final class ExpeditionStartRspOuterClass {
         return this;
       }
 
-      private int mFNGJOCIAPE_ ;
+      private int ePLFCNHCJOD_ ;
       /**
-       * <code>uint32 MFNGJOCIAPE = 6;</code>
-       * @return The mFNGJOCIAPE.
+       * <code>uint32 EPLFCNHCJOD = 10;</code>
+       * @return The ePLFCNHCJOD.
        */
       @java.lang.Override
-      public int getMFNGJOCIAPE() {
-        return mFNGJOCIAPE_;
+      public int getEPLFCNHCJOD() {
+        return ePLFCNHCJOD_;
       }
       /**
-       * <code>uint32 MFNGJOCIAPE = 6;</code>
-       * @param value The mFNGJOCIAPE to set.
+       * <code>uint32 EPLFCNHCJOD = 10;</code>
+       * @param value The ePLFCNHCJOD to set.
        * @return This builder for chaining.
        */
-      public Builder setMFNGJOCIAPE(int value) {
+      public Builder setEPLFCNHCJOD(int value) {
         
-        mFNGJOCIAPE_ = value;
+        ePLFCNHCJOD_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 MFNGJOCIAPE = 6;</code>
+       * <code>uint32 EPLFCNHCJOD = 10;</code>
        * @return This builder for chaining.
        */
-      public Builder clearMFNGJOCIAPE() {
+      public Builder clearEPLFCNHCJOD() {
         
-        mFNGJOCIAPE_ = 0;
+        ePLFCNHCJOD_ = 0;
         onChanged();
         return this;
       }
 
-      private int pathId_ ;
+      private int retcode_ ;
       /**
-       * <code>uint32 path_id = 1;</code>
-       * @return The pathId.
+       * <code>int32 retcode = 13;</code>
+       * @return The retcode.
        */
       @java.lang.Override
-      public int getPathId() {
-        return pathId_;
+      public int getRetcode() {
+        return retcode_;
       }
       /**
-       * <code>uint32 path_id = 1;</code>
-       * @param value The pathId to set.
+       * <code>int32 retcode = 13;</code>
+       * @param value The retcode to set.
        * @return This builder for chaining.
        */
-      public Builder setPathId(int value) {
+      public Builder setRetcode(int value) {
         
-        pathId_ = value;
+        retcode_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 path_id = 1;</code>
+       * <code>int32 retcode = 13;</code>
        * @return This builder for chaining.
        */
-      public Builder clearPathId() {
+      public Builder clearRetcode() {
         
-        pathId_ = 0;
+        retcode_ = 0;
         onChanged();
         return this;
       }
@@ -934,9 +934,9 @@ public final class ExpeditionStartRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\030ExpeditionStartRsp.proto\"x\n\022Expedition" +
-      "StartRsp\022\017\n\007retcode\030\003 \001(\005\022\023\n\013FLHKBCEIKLE" +
-      "\030\t \001(\r\022\026\n\016avatar_id_list\030\010 \003(\r\022\023\n\013MFNGJO" +
-      "CIAPE\030\006 \001(\r\022\017\n\007path_id\030\001 \001(\rB\033\n\031emu.gras" +
+      "StartRsp\022\023\n\013DDCIILLJCLH\030\013 \001(\r\022\017\n\007path_id" +
+      "\030\003 \001(\r\022\026\n\016avatar_id_list\030\006 \003(\r\022\023\n\013EPLFCN" +
+      "HCJOD\030\n \001(\r\022\017\n\007retcode\030\r \001(\005B\033\n\031emu.gras" +
       "scutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -948,7 +948,7 @@ public final class ExpeditionStartRspOuterClass {
     internal_static_ExpeditionStartRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ExpeditionStartRsp_descriptor,
-        new java.lang.String[] { "Retcode", "FLHKBCEIKLE", "AvatarIdList", "MFNGJOCIAPE", "PathId", });
+        new java.lang.String[] { "DDCIILLJCLH", "PathId", "AvatarIdList", "EPLFCNHCJOD", "Retcode", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

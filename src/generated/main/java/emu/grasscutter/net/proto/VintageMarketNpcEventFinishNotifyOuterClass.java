@@ -19,12 +19,6 @@ public final class VintageMarketNpcEventFinishNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 LGCEBJNOBAM = 13;</code>
-     * @return The lGCEBJNOBAM.
-     */
-    int getLGCEBJNOBAM();
-
-    /**
      * <code>repeated uint32 unlock_strategy_list = 10;</code>
      * @return A list containing the unlockStrategyList.
      */
@@ -42,15 +36,21 @@ public final class VintageMarketNpcEventFinishNotifyOuterClass {
     int getUnlockStrategyList(int index);
 
     /**
-     * <code>uint32 LJIOMIABKJC = 4;</code>
-     * @return The lJIOMIABKJC.
+     * <code>uint32 LCIDAMLLGHM = 9;</code>
+     * @return The lCIDAMLLGHM.
      */
-    int getLJIOMIABKJC();
+    int getLCIDAMLLGHM();
+
+    /**
+     * <code>uint32 FMABDGMGDAM = 8;</code>
+     * @return The fMABDGMGDAM.
+     */
+    int getFMABDGMGDAM();
   }
   /**
    * <pre>
-   * CmdId: 24968
-   * Obf: ELIGGGIBOGD
+   * CmdId: 26218
+   * Obf: ECDDILMHJFE
    * </pre>
    *
    * Protobuf type {@code VintageMarketNpcEventFinishNotify}
@@ -99,9 +99,14 @@ public final class VintageMarketNpcEventFinishNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
+            case 64: {
 
-              lJIOMIABKJC_ = input.readUInt32();
+              fMABDGMGDAM_ = input.readUInt32();
+              break;
+            }
+            case 72: {
+
+              lCIDAMLLGHM_ = input.readUInt32();
               break;
             }
             case 80: {
@@ -123,11 +128,6 @@ public final class VintageMarketNpcEventFinishNotifyOuterClass {
                 unlockStrategyList_.addInt(input.readUInt32());
               }
               input.popLimit(limit);
-              break;
-            }
-            case 104: {
-
-              lGCEBJNOBAM_ = input.readUInt32();
               break;
             }
             default: {
@@ -165,17 +165,6 @@ public final class VintageMarketNpcEventFinishNotifyOuterClass {
               emu.grasscutter.net.proto.VintageMarketNpcEventFinishNotifyOuterClass.VintageMarketNpcEventFinishNotify.class, emu.grasscutter.net.proto.VintageMarketNpcEventFinishNotifyOuterClass.VintageMarketNpcEventFinishNotify.Builder.class);
     }
 
-    public static final int LGCEBJNOBAM_FIELD_NUMBER = 13;
-    private int lGCEBJNOBAM_;
-    /**
-     * <code>uint32 LGCEBJNOBAM = 13;</code>
-     * @return The lGCEBJNOBAM.
-     */
-    @java.lang.Override
-    public int getLGCEBJNOBAM() {
-      return lGCEBJNOBAM_;
-    }
-
     public static final int UNLOCK_STRATEGY_LIST_FIELD_NUMBER = 10;
     private com.google.protobuf.Internal.IntList unlockStrategyList_;
     /**
@@ -204,15 +193,26 @@ public final class VintageMarketNpcEventFinishNotifyOuterClass {
     }
     private int unlockStrategyListMemoizedSerializedSize = -1;
 
-    public static final int LJIOMIABKJC_FIELD_NUMBER = 4;
-    private int lJIOMIABKJC_;
+    public static final int LCIDAMLLGHM_FIELD_NUMBER = 9;
+    private int lCIDAMLLGHM_;
     /**
-     * <code>uint32 LJIOMIABKJC = 4;</code>
-     * @return The lJIOMIABKJC.
+     * <code>uint32 LCIDAMLLGHM = 9;</code>
+     * @return The lCIDAMLLGHM.
      */
     @java.lang.Override
-    public int getLJIOMIABKJC() {
-      return lJIOMIABKJC_;
+    public int getLCIDAMLLGHM() {
+      return lCIDAMLLGHM_;
+    }
+
+    public static final int FMABDGMGDAM_FIELD_NUMBER = 8;
+    private int fMABDGMGDAM_;
+    /**
+     * <code>uint32 FMABDGMGDAM = 8;</code>
+     * @return The fMABDGMGDAM.
+     */
+    @java.lang.Override
+    public int getFMABDGMGDAM() {
+      return fMABDGMGDAM_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -230,8 +230,11 @@ public final class VintageMarketNpcEventFinishNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (lJIOMIABKJC_ != 0) {
-        output.writeUInt32(4, lJIOMIABKJC_);
+      if (fMABDGMGDAM_ != 0) {
+        output.writeUInt32(8, fMABDGMGDAM_);
+      }
+      if (lCIDAMLLGHM_ != 0) {
+        output.writeUInt32(9, lCIDAMLLGHM_);
       }
       if (getUnlockStrategyListList().size() > 0) {
         output.writeUInt32NoTag(82);
@@ -239,9 +242,6 @@ public final class VintageMarketNpcEventFinishNotifyOuterClass {
       }
       for (int i = 0; i < unlockStrategyList_.size(); i++) {
         output.writeUInt32NoTag(unlockStrategyList_.getInt(i));
-      }
-      if (lGCEBJNOBAM_ != 0) {
-        output.writeUInt32(13, lGCEBJNOBAM_);
       }
       unknownFields.writeTo(output);
     }
@@ -252,9 +252,13 @@ public final class VintageMarketNpcEventFinishNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (lJIOMIABKJC_ != 0) {
+      if (fMABDGMGDAM_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, lJIOMIABKJC_);
+          .computeUInt32Size(8, fMABDGMGDAM_);
+      }
+      if (lCIDAMLLGHM_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(9, lCIDAMLLGHM_);
       }
       {
         int dataSize = 0;
@@ -269,10 +273,6 @@ public final class VintageMarketNpcEventFinishNotifyOuterClass {
               .computeInt32SizeNoTag(dataSize);
         }
         unlockStrategyListMemoizedSerializedSize = dataSize;
-      }
-      if (lGCEBJNOBAM_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, lGCEBJNOBAM_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -289,12 +289,12 @@ public final class VintageMarketNpcEventFinishNotifyOuterClass {
       }
       emu.grasscutter.net.proto.VintageMarketNpcEventFinishNotifyOuterClass.VintageMarketNpcEventFinishNotify other = (emu.grasscutter.net.proto.VintageMarketNpcEventFinishNotifyOuterClass.VintageMarketNpcEventFinishNotify) obj;
 
-      if (getLGCEBJNOBAM()
-          != other.getLGCEBJNOBAM()) return false;
       if (!getUnlockStrategyListList()
           .equals(other.getUnlockStrategyListList())) return false;
-      if (getLJIOMIABKJC()
-          != other.getLJIOMIABKJC()) return false;
+      if (getLCIDAMLLGHM()
+          != other.getLCIDAMLLGHM()) return false;
+      if (getFMABDGMGDAM()
+          != other.getFMABDGMGDAM()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -306,14 +306,14 @@ public final class VintageMarketNpcEventFinishNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + LGCEBJNOBAM_FIELD_NUMBER;
-      hash = (53 * hash) + getLGCEBJNOBAM();
       if (getUnlockStrategyListCount() > 0) {
         hash = (37 * hash) + UNLOCK_STRATEGY_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getUnlockStrategyListList().hashCode();
       }
-      hash = (37 * hash) + LJIOMIABKJC_FIELD_NUMBER;
-      hash = (53 * hash) + getLJIOMIABKJC();
+      hash = (37 * hash) + LCIDAMLLGHM_FIELD_NUMBER;
+      hash = (53 * hash) + getLCIDAMLLGHM();
+      hash = (37 * hash) + FMABDGMGDAM_FIELD_NUMBER;
+      hash = (53 * hash) + getFMABDGMGDAM();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -411,8 +411,8 @@ public final class VintageMarketNpcEventFinishNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 24968
-     * Obf: ELIGGGIBOGD
+     * CmdId: 26218
+     * Obf: ECDDILMHJFE
      * </pre>
      *
      * Protobuf type {@code VintageMarketNpcEventFinishNotify}
@@ -452,11 +452,11 @@ public final class VintageMarketNpcEventFinishNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        lGCEBJNOBAM_ = 0;
-
         unlockStrategyList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
-        lJIOMIABKJC_ = 0;
+        lCIDAMLLGHM_ = 0;
+
+        fMABDGMGDAM_ = 0;
 
         return this;
       }
@@ -485,13 +485,13 @@ public final class VintageMarketNpcEventFinishNotifyOuterClass {
       public emu.grasscutter.net.proto.VintageMarketNpcEventFinishNotifyOuterClass.VintageMarketNpcEventFinishNotify buildPartial() {
         emu.grasscutter.net.proto.VintageMarketNpcEventFinishNotifyOuterClass.VintageMarketNpcEventFinishNotify result = new emu.grasscutter.net.proto.VintageMarketNpcEventFinishNotifyOuterClass.VintageMarketNpcEventFinishNotify(this);
         int from_bitField0_ = bitField0_;
-        result.lGCEBJNOBAM_ = lGCEBJNOBAM_;
         if (((bitField0_ & 0x00000001) != 0)) {
           unlockStrategyList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.unlockStrategyList_ = unlockStrategyList_;
-        result.lJIOMIABKJC_ = lJIOMIABKJC_;
+        result.lCIDAMLLGHM_ = lCIDAMLLGHM_;
+        result.fMABDGMGDAM_ = fMABDGMGDAM_;
         onBuilt();
         return result;
       }
@@ -540,9 +540,6 @@ public final class VintageMarketNpcEventFinishNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.VintageMarketNpcEventFinishNotifyOuterClass.VintageMarketNpcEventFinishNotify other) {
         if (other == emu.grasscutter.net.proto.VintageMarketNpcEventFinishNotifyOuterClass.VintageMarketNpcEventFinishNotify.getDefaultInstance()) return this;
-        if (other.getLGCEBJNOBAM() != 0) {
-          setLGCEBJNOBAM(other.getLGCEBJNOBAM());
-        }
         if (!other.unlockStrategyList_.isEmpty()) {
           if (unlockStrategyList_.isEmpty()) {
             unlockStrategyList_ = other.unlockStrategyList_;
@@ -553,8 +550,11 @@ public final class VintageMarketNpcEventFinishNotifyOuterClass {
           }
           onChanged();
         }
-        if (other.getLJIOMIABKJC() != 0) {
-          setLJIOMIABKJC(other.getLJIOMIABKJC());
+        if (other.getLCIDAMLLGHM() != 0) {
+          setLCIDAMLLGHM(other.getLCIDAMLLGHM());
+        }
+        if (other.getFMABDGMGDAM() != 0) {
+          setFMABDGMGDAM(other.getFMABDGMGDAM());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -585,37 +585,6 @@ public final class VintageMarketNpcEventFinishNotifyOuterClass {
         return this;
       }
       private int bitField0_;
-
-      private int lGCEBJNOBAM_ ;
-      /**
-       * <code>uint32 LGCEBJNOBAM = 13;</code>
-       * @return The lGCEBJNOBAM.
-       */
-      @java.lang.Override
-      public int getLGCEBJNOBAM() {
-        return lGCEBJNOBAM_;
-      }
-      /**
-       * <code>uint32 LGCEBJNOBAM = 13;</code>
-       * @param value The lGCEBJNOBAM to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLGCEBJNOBAM(int value) {
-        
-        lGCEBJNOBAM_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 LGCEBJNOBAM = 13;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLGCEBJNOBAM() {
-        
-        lGCEBJNOBAM_ = 0;
-        onChanged();
-        return this;
-      }
 
       private com.google.protobuf.Internal.IntList unlockStrategyList_ = emptyIntList();
       private void ensureUnlockStrategyListIsMutable() {
@@ -696,33 +665,64 @@ public final class VintageMarketNpcEventFinishNotifyOuterClass {
         return this;
       }
 
-      private int lJIOMIABKJC_ ;
+      private int lCIDAMLLGHM_ ;
       /**
-       * <code>uint32 LJIOMIABKJC = 4;</code>
-       * @return The lJIOMIABKJC.
+       * <code>uint32 LCIDAMLLGHM = 9;</code>
+       * @return The lCIDAMLLGHM.
        */
       @java.lang.Override
-      public int getLJIOMIABKJC() {
-        return lJIOMIABKJC_;
+      public int getLCIDAMLLGHM() {
+        return lCIDAMLLGHM_;
       }
       /**
-       * <code>uint32 LJIOMIABKJC = 4;</code>
-       * @param value The lJIOMIABKJC to set.
+       * <code>uint32 LCIDAMLLGHM = 9;</code>
+       * @param value The lCIDAMLLGHM to set.
        * @return This builder for chaining.
        */
-      public Builder setLJIOMIABKJC(int value) {
+      public Builder setLCIDAMLLGHM(int value) {
         
-        lJIOMIABKJC_ = value;
+        lCIDAMLLGHM_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 LJIOMIABKJC = 4;</code>
+       * <code>uint32 LCIDAMLLGHM = 9;</code>
        * @return This builder for chaining.
        */
-      public Builder clearLJIOMIABKJC() {
+      public Builder clearLCIDAMLLGHM() {
         
-        lJIOMIABKJC_ = 0;
+        lCIDAMLLGHM_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int fMABDGMGDAM_ ;
+      /**
+       * <code>uint32 FMABDGMGDAM = 8;</code>
+       * @return The fMABDGMGDAM.
+       */
+      @java.lang.Override
+      public int getFMABDGMGDAM() {
+        return fMABDGMGDAM_;
+      }
+      /**
+       * <code>uint32 FMABDGMGDAM = 8;</code>
+       * @param value The fMABDGMGDAM to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFMABDGMGDAM(int value) {
+        
+        fMABDGMGDAM_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 FMABDGMGDAM = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFMABDGMGDAM() {
+        
+        fMABDGMGDAM_ = 0;
         onChanged();
         return this;
       }
@@ -794,9 +794,9 @@ public final class VintageMarketNpcEventFinishNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\'VintageMarketNpcEventFinishNotify.prot" +
-      "o\"k\n!VintageMarketNpcEventFinishNotify\022\023" +
-      "\n\013LGCEBJNOBAM\030\r \001(\r\022\034\n\024unlock_strategy_l" +
-      "ist\030\n \003(\r\022\023\n\013LJIOMIABKJC\030\004 \001(\rB\033\n\031emu.gr" +
+      "o\"k\n!VintageMarketNpcEventFinishNotify\022\034" +
+      "\n\024unlock_strategy_list\030\n \003(\r\022\023\n\013LCIDAMLL" +
+      "GHM\030\t \001(\r\022\023\n\013FMABDGMGDAM\030\010 \001(\rB\033\n\031emu.gr" +
       "asscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -808,7 +808,7 @@ public final class VintageMarketNpcEventFinishNotifyOuterClass {
     internal_static_VintageMarketNpcEventFinishNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_VintageMarketNpcEventFinishNotify_descriptor,
-        new java.lang.String[] { "LGCEBJNOBAM", "UnlockStrategyList", "LJIOMIABKJC", });
+        new java.lang.String[] { "UnlockStrategyList", "LCIDAMLLGHM", "FMABDGMGDAM", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

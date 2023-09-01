@@ -19,27 +19,27 @@ public final class HomePreviewBlueprintReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string share_code = 12;</code>
+     * <code>string share_code = 3;</code>
      * @return The shareCode.
      */
     java.lang.String getShareCode();
     /**
-     * <code>string share_code = 12;</code>
+     * <code>string share_code = 3;</code>
      * @return The bytes for shareCode.
      */
     com.google.protobuf.ByteString
         getShareCodeBytes();
 
     /**
-     * <code>uint32 slot_id = 13;</code>
+     * <code>uint32 slot_id = 1;</code>
      * @return The slotId.
      */
     int getSlotId();
   }
   /**
    * <pre>
-   * CmdId: 4508
-   * Obf: NGCKGLKOPIO
+   * CmdId: 4668
+   * Obf: LPBJNGOBKPA
    * </pre>
    *
    * Protobuf type {@code HomePreviewBlueprintReq}
@@ -87,15 +87,15 @@ public final class HomePreviewBlueprintReqOuterClass {
             case 0:
               done = true;
               break;
-            case 98: {
+            case 8: {
+
+              slotId_ = input.readUInt32();
+              break;
+            }
+            case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
               shareCode_ = s;
-              break;
-            }
-            case 104: {
-
-              slotId_ = input.readUInt32();
               break;
             }
             default: {
@@ -130,10 +130,10 @@ public final class HomePreviewBlueprintReqOuterClass {
               emu.grasscutter.net.proto.HomePreviewBlueprintReqOuterClass.HomePreviewBlueprintReq.class, emu.grasscutter.net.proto.HomePreviewBlueprintReqOuterClass.HomePreviewBlueprintReq.Builder.class);
     }
 
-    public static final int SHARE_CODE_FIELD_NUMBER = 12;
+    public static final int SHARE_CODE_FIELD_NUMBER = 3;
     private volatile java.lang.Object shareCode_;
     /**
-     * <code>string share_code = 12;</code>
+     * <code>string share_code = 3;</code>
      * @return The shareCode.
      */
     @java.lang.Override
@@ -150,7 +150,7 @@ public final class HomePreviewBlueprintReqOuterClass {
       }
     }
     /**
-     * <code>string share_code = 12;</code>
+     * <code>string share_code = 3;</code>
      * @return The bytes for shareCode.
      */
     @java.lang.Override
@@ -168,10 +168,10 @@ public final class HomePreviewBlueprintReqOuterClass {
       }
     }
 
-    public static final int SLOT_ID_FIELD_NUMBER = 13;
+    public static final int SLOT_ID_FIELD_NUMBER = 1;
     private int slotId_;
     /**
-     * <code>uint32 slot_id = 13;</code>
+     * <code>uint32 slot_id = 1;</code>
      * @return The slotId.
      */
     @java.lang.Override
@@ -193,11 +193,11 @@ public final class HomePreviewBlueprintReqOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(shareCode_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, shareCode_);
-      }
       if (slotId_ != 0) {
-        output.writeUInt32(13, slotId_);
+        output.writeUInt32(1, slotId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(shareCode_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, shareCode_);
       }
       unknownFields.writeTo(output);
     }
@@ -208,12 +208,12 @@ public final class HomePreviewBlueprintReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(shareCode_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, shareCode_);
-      }
       if (slotId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, slotId_);
+          .computeUInt32Size(1, slotId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(shareCode_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, shareCode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -346,8 +346,8 @@ public final class HomePreviewBlueprintReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4508
-     * Obf: NGCKGLKOPIO
+     * CmdId: 4668
+     * Obf: LPBJNGOBKPA
      * </pre>
      *
      * Protobuf type {@code HomePreviewBlueprintReq}
@@ -505,7 +505,7 @@ public final class HomePreviewBlueprintReqOuterClass {
 
       private java.lang.Object shareCode_ = "";
       /**
-       * <code>string share_code = 12;</code>
+       * <code>string share_code = 3;</code>
        * @return The shareCode.
        */
       public java.lang.String getShareCode() {
@@ -521,7 +521,7 @@ public final class HomePreviewBlueprintReqOuterClass {
         }
       }
       /**
-       * <code>string share_code = 12;</code>
+       * <code>string share_code = 3;</code>
        * @return The bytes for shareCode.
        */
       public com.google.protobuf.ByteString
@@ -538,7 +538,7 @@ public final class HomePreviewBlueprintReqOuterClass {
         }
       }
       /**
-       * <code>string share_code = 12;</code>
+       * <code>string share_code = 3;</code>
        * @param value The shareCode to set.
        * @return This builder for chaining.
        */
@@ -553,7 +553,7 @@ public final class HomePreviewBlueprintReqOuterClass {
         return this;
       }
       /**
-       * <code>string share_code = 12;</code>
+       * <code>string share_code = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearShareCode() {
@@ -563,7 +563,7 @@ public final class HomePreviewBlueprintReqOuterClass {
         return this;
       }
       /**
-       * <code>string share_code = 12;</code>
+       * <code>string share_code = 3;</code>
        * @param value The bytes for shareCode to set.
        * @return This builder for chaining.
        */
@@ -581,7 +581,7 @@ public final class HomePreviewBlueprintReqOuterClass {
 
       private int slotId_ ;
       /**
-       * <code>uint32 slot_id = 13;</code>
+       * <code>uint32 slot_id = 1;</code>
        * @return The slotId.
        */
       @java.lang.Override
@@ -589,7 +589,7 @@ public final class HomePreviewBlueprintReqOuterClass {
         return slotId_;
       }
       /**
-       * <code>uint32 slot_id = 13;</code>
+       * <code>uint32 slot_id = 1;</code>
        * @param value The slotId to set.
        * @return This builder for chaining.
        */
@@ -600,7 +600,7 @@ public final class HomePreviewBlueprintReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 slot_id = 13;</code>
+       * <code>uint32 slot_id = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearSlotId() {
@@ -677,8 +677,8 @@ public final class HomePreviewBlueprintReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\035HomePreviewBlueprintReq.proto\">\n\027HomeP" +
-      "reviewBlueprintReq\022\022\n\nshare_code\030\014 \001(\t\022\017" +
-      "\n\007slot_id\030\r \001(\rB\033\n\031emu.grasscutter.net.p" +
+      "reviewBlueprintReq\022\022\n\nshare_code\030\003 \001(\t\022\017" +
+      "\n\007slot_id\030\001 \001(\rB\033\n\031emu.grasscutter.net.p" +
       "rotob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

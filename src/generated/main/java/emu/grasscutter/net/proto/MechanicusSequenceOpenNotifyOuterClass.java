@@ -19,21 +19,21 @@ public final class MechanicusSequenceOpenNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 mechanicus_id = 1;</code>
-     * @return The mechanicusId.
-     */
-    int getMechanicusId();
-
-    /**
-     * <code>uint32 sequence_id = 11;</code>
+     * <code>uint32 sequence_id = 12;</code>
      * @return The sequenceId.
      */
     int getSequenceId();
+
+    /**
+     * <code>uint32 mechanicus_id = 5;</code>
+     * @return The mechanicusId.
+     */
+    int getMechanicusId();
   }
   /**
    * <pre>
-   * CmdId: 3902
-   * Obf: JKINALBHPOK
+   * CmdId: 9692
+   * Obf: OOBCLBNAACN
    * </pre>
    *
    * Protobuf type {@code MechanicusSequenceOpenNotify}
@@ -80,12 +80,12 @@ public final class MechanicusSequenceOpenNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 40: {
 
               mechanicusId_ = input.readUInt32();
               break;
             }
-            case 88: {
+            case 96: {
 
               sequenceId_ = input.readUInt32();
               break;
@@ -122,26 +122,26 @@ public final class MechanicusSequenceOpenNotifyOuterClass {
               emu.grasscutter.net.proto.MechanicusSequenceOpenNotifyOuterClass.MechanicusSequenceOpenNotify.class, emu.grasscutter.net.proto.MechanicusSequenceOpenNotifyOuterClass.MechanicusSequenceOpenNotify.Builder.class);
     }
 
-    public static final int MECHANICUS_ID_FIELD_NUMBER = 1;
-    private int mechanicusId_;
-    /**
-     * <code>uint32 mechanicus_id = 1;</code>
-     * @return The mechanicusId.
-     */
-    @java.lang.Override
-    public int getMechanicusId() {
-      return mechanicusId_;
-    }
-
-    public static final int SEQUENCE_ID_FIELD_NUMBER = 11;
+    public static final int SEQUENCE_ID_FIELD_NUMBER = 12;
     private int sequenceId_;
     /**
-     * <code>uint32 sequence_id = 11;</code>
+     * <code>uint32 sequence_id = 12;</code>
      * @return The sequenceId.
      */
     @java.lang.Override
     public int getSequenceId() {
       return sequenceId_;
+    }
+
+    public static final int MECHANICUS_ID_FIELD_NUMBER = 5;
+    private int mechanicusId_;
+    /**
+     * <code>uint32 mechanicus_id = 5;</code>
+     * @return The mechanicusId.
+     */
+    @java.lang.Override
+    public int getMechanicusId() {
+      return mechanicusId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -159,10 +159,10 @@ public final class MechanicusSequenceOpenNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (mechanicusId_ != 0) {
-        output.writeUInt32(1, mechanicusId_);
+        output.writeUInt32(5, mechanicusId_);
       }
       if (sequenceId_ != 0) {
-        output.writeUInt32(11, sequenceId_);
+        output.writeUInt32(12, sequenceId_);
       }
       unknownFields.writeTo(output);
     }
@@ -175,11 +175,11 @@ public final class MechanicusSequenceOpenNotifyOuterClass {
       size = 0;
       if (mechanicusId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, mechanicusId_);
+          .computeUInt32Size(5, mechanicusId_);
       }
       if (sequenceId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, sequenceId_);
+          .computeUInt32Size(12, sequenceId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -196,10 +196,10 @@ public final class MechanicusSequenceOpenNotifyOuterClass {
       }
       emu.grasscutter.net.proto.MechanicusSequenceOpenNotifyOuterClass.MechanicusSequenceOpenNotify other = (emu.grasscutter.net.proto.MechanicusSequenceOpenNotifyOuterClass.MechanicusSequenceOpenNotify) obj;
 
-      if (getMechanicusId()
-          != other.getMechanicusId()) return false;
       if (getSequenceId()
           != other.getSequenceId()) return false;
+      if (getMechanicusId()
+          != other.getMechanicusId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -211,10 +211,10 @@ public final class MechanicusSequenceOpenNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + MECHANICUS_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getMechanicusId();
       hash = (37 * hash) + SEQUENCE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSequenceId();
+      hash = (37 * hash) + MECHANICUS_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getMechanicusId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -312,8 +312,8 @@ public final class MechanicusSequenceOpenNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 3902
-     * Obf: JKINALBHPOK
+     * CmdId: 9692
+     * Obf: OOBCLBNAACN
      * </pre>
      *
      * Protobuf type {@code MechanicusSequenceOpenNotify}
@@ -353,9 +353,9 @@ public final class MechanicusSequenceOpenNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        mechanicusId_ = 0;
-
         sequenceId_ = 0;
+
+        mechanicusId_ = 0;
 
         return this;
       }
@@ -383,8 +383,8 @@ public final class MechanicusSequenceOpenNotifyOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.MechanicusSequenceOpenNotifyOuterClass.MechanicusSequenceOpenNotify buildPartial() {
         emu.grasscutter.net.proto.MechanicusSequenceOpenNotifyOuterClass.MechanicusSequenceOpenNotify result = new emu.grasscutter.net.proto.MechanicusSequenceOpenNotifyOuterClass.MechanicusSequenceOpenNotify(this);
-        result.mechanicusId_ = mechanicusId_;
         result.sequenceId_ = sequenceId_;
+        result.mechanicusId_ = mechanicusId_;
         onBuilt();
         return result;
       }
@@ -433,11 +433,11 @@ public final class MechanicusSequenceOpenNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.MechanicusSequenceOpenNotifyOuterClass.MechanicusSequenceOpenNotify other) {
         if (other == emu.grasscutter.net.proto.MechanicusSequenceOpenNotifyOuterClass.MechanicusSequenceOpenNotify.getDefaultInstance()) return this;
-        if (other.getMechanicusId() != 0) {
-          setMechanicusId(other.getMechanicusId());
-        }
         if (other.getSequenceId() != 0) {
           setSequenceId(other.getSequenceId());
+        }
+        if (other.getMechanicusId() != 0) {
+          setMechanicusId(other.getMechanicusId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -468,40 +468,9 @@ public final class MechanicusSequenceOpenNotifyOuterClass {
         return this;
       }
 
-      private int mechanicusId_ ;
-      /**
-       * <code>uint32 mechanicus_id = 1;</code>
-       * @return The mechanicusId.
-       */
-      @java.lang.Override
-      public int getMechanicusId() {
-        return mechanicusId_;
-      }
-      /**
-       * <code>uint32 mechanicus_id = 1;</code>
-       * @param value The mechanicusId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMechanicusId(int value) {
-        
-        mechanicusId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 mechanicus_id = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMechanicusId() {
-        
-        mechanicusId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int sequenceId_ ;
       /**
-       * <code>uint32 sequence_id = 11;</code>
+       * <code>uint32 sequence_id = 12;</code>
        * @return The sequenceId.
        */
       @java.lang.Override
@@ -509,7 +478,7 @@ public final class MechanicusSequenceOpenNotifyOuterClass {
         return sequenceId_;
       }
       /**
-       * <code>uint32 sequence_id = 11;</code>
+       * <code>uint32 sequence_id = 12;</code>
        * @param value The sequenceId to set.
        * @return This builder for chaining.
        */
@@ -520,12 +489,43 @@ public final class MechanicusSequenceOpenNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 sequence_id = 11;</code>
+       * <code>uint32 sequence_id = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearSequenceId() {
         
         sequenceId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int mechanicusId_ ;
+      /**
+       * <code>uint32 mechanicus_id = 5;</code>
+       * @return The mechanicusId.
+       */
+      @java.lang.Override
+      public int getMechanicusId() {
+        return mechanicusId_;
+      }
+      /**
+       * <code>uint32 mechanicus_id = 5;</code>
+       * @param value The mechanicusId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMechanicusId(int value) {
+        
+        mechanicusId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 mechanicus_id = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMechanicusId() {
+        
+        mechanicusId_ = 0;
         onChanged();
         return this;
       }
@@ -597,8 +597,8 @@ public final class MechanicusSequenceOpenNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\"MechanicusSequenceOpenNotify.proto\"J\n\034" +
-      "MechanicusSequenceOpenNotify\022\025\n\rmechanic" +
-      "us_id\030\001 \001(\r\022\023\n\013sequence_id\030\013 \001(\rB\033\n\031emu." +
+      "MechanicusSequenceOpenNotify\022\023\n\013sequence" +
+      "_id\030\014 \001(\r\022\025\n\rmechanicus_id\030\005 \001(\rB\033\n\031emu." +
       "grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -610,7 +610,7 @@ public final class MechanicusSequenceOpenNotifyOuterClass {
     internal_static_MechanicusSequenceOpenNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_MechanicusSequenceOpenNotify_descriptor,
-        new java.lang.String[] { "MechanicusId", "SequenceId", });
+        new java.lang.String[] { "SequenceId", "MechanicusId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

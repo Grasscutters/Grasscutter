@@ -19,21 +19,21 @@ public final class DraftGuestReplyInviteReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 draft_id = 14;</code>
-     * @return The draftId.
-     */
-    int getDraftId();
-
-    /**
-     * <code>bool is_agree = 7;</code>
+     * <code>bool is_agree = 8;</code>
      * @return The isAgree.
      */
     boolean getIsAgree();
+
+    /**
+     * <code>uint32 draft_id = 5;</code>
+     * @return The draftId.
+     */
+    int getDraftId();
   }
   /**
    * <pre>
-   * CmdId: 5448
-   * Obf: MDJEKMALCPP
+   * CmdId: 2082
+   * Obf: FAGAEMNKFEE
    * </pre>
    *
    * Protobuf type {@code DraftGuestReplyInviteReq}
@@ -80,14 +80,14 @@ public final class DraftGuestReplyInviteReqOuterClass {
             case 0:
               done = true;
               break;
-            case 56: {
-
-              isAgree_ = input.readBool();
-              break;
-            }
-            case 112: {
+            case 40: {
 
               draftId_ = input.readUInt32();
+              break;
+            }
+            case 64: {
+
+              isAgree_ = input.readBool();
               break;
             }
             default: {
@@ -122,26 +122,26 @@ public final class DraftGuestReplyInviteReqOuterClass {
               emu.grasscutter.net.proto.DraftGuestReplyInviteReqOuterClass.DraftGuestReplyInviteReq.class, emu.grasscutter.net.proto.DraftGuestReplyInviteReqOuterClass.DraftGuestReplyInviteReq.Builder.class);
     }
 
-    public static final int DRAFT_ID_FIELD_NUMBER = 14;
-    private int draftId_;
-    /**
-     * <code>uint32 draft_id = 14;</code>
-     * @return The draftId.
-     */
-    @java.lang.Override
-    public int getDraftId() {
-      return draftId_;
-    }
-
-    public static final int IS_AGREE_FIELD_NUMBER = 7;
+    public static final int IS_AGREE_FIELD_NUMBER = 8;
     private boolean isAgree_;
     /**
-     * <code>bool is_agree = 7;</code>
+     * <code>bool is_agree = 8;</code>
      * @return The isAgree.
      */
     @java.lang.Override
     public boolean getIsAgree() {
       return isAgree_;
+    }
+
+    public static final int DRAFT_ID_FIELD_NUMBER = 5;
+    private int draftId_;
+    /**
+     * <code>uint32 draft_id = 5;</code>
+     * @return The draftId.
+     */
+    @java.lang.Override
+    public int getDraftId() {
+      return draftId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -158,11 +158,11 @@ public final class DraftGuestReplyInviteReqOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (isAgree_ != false) {
-        output.writeBool(7, isAgree_);
-      }
       if (draftId_ != 0) {
-        output.writeUInt32(14, draftId_);
+        output.writeUInt32(5, draftId_);
+      }
+      if (isAgree_ != false) {
+        output.writeBool(8, isAgree_);
       }
       unknownFields.writeTo(output);
     }
@@ -173,13 +173,13 @@ public final class DraftGuestReplyInviteReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (isAgree_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(7, isAgree_);
-      }
       if (draftId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, draftId_);
+          .computeUInt32Size(5, draftId_);
+      }
+      if (isAgree_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(8, isAgree_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -196,10 +196,10 @@ public final class DraftGuestReplyInviteReqOuterClass {
       }
       emu.grasscutter.net.proto.DraftGuestReplyInviteReqOuterClass.DraftGuestReplyInviteReq other = (emu.grasscutter.net.proto.DraftGuestReplyInviteReqOuterClass.DraftGuestReplyInviteReq) obj;
 
-      if (getDraftId()
-          != other.getDraftId()) return false;
       if (getIsAgree()
           != other.getIsAgree()) return false;
+      if (getDraftId()
+          != other.getDraftId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -211,11 +211,11 @@ public final class DraftGuestReplyInviteReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + DRAFT_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getDraftId();
       hash = (37 * hash) + IS_AGREE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsAgree());
+      hash = (37 * hash) + DRAFT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getDraftId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -313,8 +313,8 @@ public final class DraftGuestReplyInviteReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 5448
-     * Obf: MDJEKMALCPP
+     * CmdId: 2082
+     * Obf: FAGAEMNKFEE
      * </pre>
      *
      * Protobuf type {@code DraftGuestReplyInviteReq}
@@ -354,9 +354,9 @@ public final class DraftGuestReplyInviteReqOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        draftId_ = 0;
-
         isAgree_ = false;
+
+        draftId_ = 0;
 
         return this;
       }
@@ -384,8 +384,8 @@ public final class DraftGuestReplyInviteReqOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.DraftGuestReplyInviteReqOuterClass.DraftGuestReplyInviteReq buildPartial() {
         emu.grasscutter.net.proto.DraftGuestReplyInviteReqOuterClass.DraftGuestReplyInviteReq result = new emu.grasscutter.net.proto.DraftGuestReplyInviteReqOuterClass.DraftGuestReplyInviteReq(this);
-        result.draftId_ = draftId_;
         result.isAgree_ = isAgree_;
+        result.draftId_ = draftId_;
         onBuilt();
         return result;
       }
@@ -434,11 +434,11 @@ public final class DraftGuestReplyInviteReqOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.DraftGuestReplyInviteReqOuterClass.DraftGuestReplyInviteReq other) {
         if (other == emu.grasscutter.net.proto.DraftGuestReplyInviteReqOuterClass.DraftGuestReplyInviteReq.getDefaultInstance()) return this;
-        if (other.getDraftId() != 0) {
-          setDraftId(other.getDraftId());
-        }
         if (other.getIsAgree() != false) {
           setIsAgree(other.getIsAgree());
+        }
+        if (other.getDraftId() != 0) {
+          setDraftId(other.getDraftId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -469,40 +469,9 @@ public final class DraftGuestReplyInviteReqOuterClass {
         return this;
       }
 
-      private int draftId_ ;
-      /**
-       * <code>uint32 draft_id = 14;</code>
-       * @return The draftId.
-       */
-      @java.lang.Override
-      public int getDraftId() {
-        return draftId_;
-      }
-      /**
-       * <code>uint32 draft_id = 14;</code>
-       * @param value The draftId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDraftId(int value) {
-        
-        draftId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 draft_id = 14;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDraftId() {
-        
-        draftId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private boolean isAgree_ ;
       /**
-       * <code>bool is_agree = 7;</code>
+       * <code>bool is_agree = 8;</code>
        * @return The isAgree.
        */
       @java.lang.Override
@@ -510,7 +479,7 @@ public final class DraftGuestReplyInviteReqOuterClass {
         return isAgree_;
       }
       /**
-       * <code>bool is_agree = 7;</code>
+       * <code>bool is_agree = 8;</code>
        * @param value The isAgree to set.
        * @return This builder for chaining.
        */
@@ -521,12 +490,43 @@ public final class DraftGuestReplyInviteReqOuterClass {
         return this;
       }
       /**
-       * <code>bool is_agree = 7;</code>
+       * <code>bool is_agree = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsAgree() {
         
         isAgree_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int draftId_ ;
+      /**
+       * <code>uint32 draft_id = 5;</code>
+       * @return The draftId.
+       */
+      @java.lang.Override
+      public int getDraftId() {
+        return draftId_;
+      }
+      /**
+       * <code>uint32 draft_id = 5;</code>
+       * @param value The draftId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDraftId(int value) {
+        
+        draftId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 draft_id = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDraftId() {
+        
+        draftId_ = 0;
         onChanged();
         return this;
       }
@@ -598,8 +598,8 @@ public final class DraftGuestReplyInviteReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\036DraftGuestReplyInviteReq.proto\">\n\030Draf" +
-      "tGuestReplyInviteReq\022\020\n\010draft_id\030\016 \001(\r\022\020" +
-      "\n\010is_agree\030\007 \001(\010B\033\n\031emu.grasscutter.net." +
+      "tGuestReplyInviteReq\022\020\n\010is_agree\030\010 \001(\010\022\020" +
+      "\n\010draft_id\030\005 \001(\rB\033\n\031emu.grasscutter.net." +
       "protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -611,7 +611,7 @@ public final class DraftGuestReplyInviteReqOuterClass {
     internal_static_DraftGuestReplyInviteReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_DraftGuestReplyInviteReq_descriptor,
-        new java.lang.String[] { "DraftId", "IsAgree", });
+        new java.lang.String[] { "IsAgree", "DraftId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

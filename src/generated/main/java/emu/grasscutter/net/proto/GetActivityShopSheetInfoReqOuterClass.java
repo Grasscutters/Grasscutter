@@ -26,8 +26,8 @@ public final class GetActivityShopSheetInfoReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 758
-   * Obf: DHPDMPCGMFL
+   * CmdId: 24121
+   * Obf: CFLICFMDOBD
    * </pre>
    *
    * Protobuf type {@code GetActivityShopSheetInfoReq}
@@ -279,8 +279,8 @@ public final class GetActivityShopSheetInfoReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 758
-     * Obf: DHPDMPCGMFL
+     * CmdId: 24121
+     * Obf: CFLICFMDOBD
      * </pre>
      *
      * Protobuf type {@code GetActivityShopSheetInfoReq}

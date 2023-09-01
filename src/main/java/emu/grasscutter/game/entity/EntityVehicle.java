@@ -4,11 +4,8 @@ import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.binout.config.ConfigEntityGadget;
 import emu.grasscutter.data.excels.GadgetData;
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.game.props.EntityIdType;
-import emu.grasscutter.game.props.FightProperty;
-import emu.grasscutter.game.props.PlayerProperty;
-import emu.grasscutter.game.world.Position;
-import emu.grasscutter.game.world.Scene;
+import emu.grasscutter.game.props.*;
+import emu.grasscutter.game.world.*;
 import emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo;
 import emu.grasscutter.net.proto.AnimatorParameterValueInfoPairOuterClass.AnimatorParameterValueInfoPair;
 import emu.grasscutter.net.proto.EntityAuthorityInfoOuterClass.EntityAuthorityInfo;
@@ -23,13 +20,11 @@ import emu.grasscutter.net.proto.VectorOuterClass.Vector;
 import emu.grasscutter.net.proto.VehicleInfoOuterClass.VehicleInfo;
 import emu.grasscutter.net.proto.VehicleMemberOuterClass.VehicleMember;
 import emu.grasscutter.utils.helpers.ProtoHelper;
-import it.unimi.dsi.fastutil.ints.Int2FloatMap;
-import it.unimi.dsi.fastutil.ints.Int2FloatOpenHashMap;
-import java.util.ArrayList;
-import java.util.List;
+import it.unimi.dsi.fastutil.ints.*;
+import lombok.*;
+
 import javax.annotation.Nullable;
-import lombok.Getter;
-import lombok.Setter;
+import java.util.*;
 
 public class EntityVehicle extends EntityBaseGadget {
 

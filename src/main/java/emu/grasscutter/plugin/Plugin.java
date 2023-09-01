@@ -5,10 +5,11 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.plugin.api.ServerHelper;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.utils.FileUtils;
-import java.io.*;
-import java.net.URLClassLoader;
 import lombok.EqualsAndHashCode;
 import org.slf4j.*;
+
+import java.io.*;
+import java.net.URLClassLoader;
 
 /** The base class for all plugins to extend. */
 @EqualsAndHashCode

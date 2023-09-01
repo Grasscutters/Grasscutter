@@ -19,6 +19,50 @@ public final class CreateEntityInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <code>uint32 monster_id = 1;</code>
+     * @return Whether the monsterId field is set.
+     */
+    boolean hasMonsterId();
+    /**
+     * <code>uint32 monster_id = 1;</code>
+     * @return The monsterId.
+     */
+    int getMonsterId();
+
+    /**
+     * <code>uint32 npc_id = 2;</code>
+     * @return Whether the npcId field is set.
+     */
+    boolean hasNpcId();
+    /**
+     * <code>uint32 npc_id = 2;</code>
+     * @return The npcId.
+     */
+    int getNpcId();
+
+    /**
+     * <code>uint32 gadget_id = 3;</code>
+     * @return Whether the gadgetId field is set.
+     */
+    boolean hasGadgetId();
+    /**
+     * <code>uint32 gadget_id = 3;</code>
+     * @return The gadgetId.
+     */
+    int getGadgetId();
+
+    /**
+     * <code>uint32 item_id = 4;</code>
+     * @return Whether the itemId field is set.
+     */
+    boolean hasItemId();
+    /**
+     * <code>uint32 item_id = 4;</code>
+     * @return The itemId.
+     */
+    int getItemId();
+
+    /**
      * <code>uint32 level = 5;</code>
      * @return The level.
      */
@@ -73,50 +117,6 @@ public final class CreateEntityInfoOuterClass {
     int getClientUniqueId();
 
     /**
-     * <code>uint32 monster_id = 1;</code>
-     * @return Whether the monsterId field is set.
-     */
-    boolean hasMonsterId();
-    /**
-     * <code>uint32 monster_id = 1;</code>
-     * @return The monsterId.
-     */
-    int getMonsterId();
-
-    /**
-     * <code>uint32 npc_id = 2;</code>
-     * @return Whether the npcId field is set.
-     */
-    boolean hasNpcId();
-    /**
-     * <code>uint32 npc_id = 2;</code>
-     * @return The npcId.
-     */
-    int getNpcId();
-
-    /**
-     * <code>uint32 gadget_id = 3;</code>
-     * @return Whether the gadgetId field is set.
-     */
-    boolean hasGadgetId();
-    /**
-     * <code>uint32 gadget_id = 3;</code>
-     * @return The gadgetId.
-     */
-    int getGadgetId();
-
-    /**
-     * <code>uint32 item_id = 4;</code>
-     * @return Whether the itemId field is set.
-     */
-    boolean hasItemId();
-    /**
-     * <code>uint32 item_id = 4;</code>
-     * @return The itemId.
-     */
-    int getItemId();
-
-    /**
      * <code>optional .CreateGadgetInfo gadget = 13;</code>
      * @return Whether the gadget field is set.
      */
@@ -135,7 +135,7 @@ public final class CreateEntityInfoOuterClass {
   }
   /**
    * <pre>
-   * Obf: MLAIAFGGNLF
+   * Obf: CIDLLJOHEFL
    * </pre>
    *
    * Protobuf type {@code CreateEntityInfo}
@@ -340,6 +340,90 @@ public final class CreateEntityInfoOuterClass {
           entityCase_);
     }
 
+    public static final int MONSTER_ID_FIELD_NUMBER = 1;
+    /**
+     * <code>uint32 monster_id = 1;</code>
+     * @return Whether the monsterId field is set.
+     */
+    @java.lang.Override
+    public boolean hasMonsterId() {
+      return entityCase_ == 1;
+    }
+    /**
+     * <code>uint32 monster_id = 1;</code>
+     * @return The monsterId.
+     */
+    @java.lang.Override
+    public int getMonsterId() {
+      if (entityCase_ == 1) {
+        return (java.lang.Integer) entity_;
+      }
+      return 0;
+    }
+
+    public static final int NPC_ID_FIELD_NUMBER = 2;
+    /**
+     * <code>uint32 npc_id = 2;</code>
+     * @return Whether the npcId field is set.
+     */
+    @java.lang.Override
+    public boolean hasNpcId() {
+      return entityCase_ == 2;
+    }
+    /**
+     * <code>uint32 npc_id = 2;</code>
+     * @return The npcId.
+     */
+    @java.lang.Override
+    public int getNpcId() {
+      if (entityCase_ == 2) {
+        return (java.lang.Integer) entity_;
+      }
+      return 0;
+    }
+
+    public static final int GADGET_ID_FIELD_NUMBER = 3;
+    /**
+     * <code>uint32 gadget_id = 3;</code>
+     * @return Whether the gadgetId field is set.
+     */
+    @java.lang.Override
+    public boolean hasGadgetId() {
+      return entityCase_ == 3;
+    }
+    /**
+     * <code>uint32 gadget_id = 3;</code>
+     * @return The gadgetId.
+     */
+    @java.lang.Override
+    public int getGadgetId() {
+      if (entityCase_ == 3) {
+        return (java.lang.Integer) entity_;
+      }
+      return 0;
+    }
+
+    public static final int ITEM_ID_FIELD_NUMBER = 4;
+    /**
+     * <code>uint32 item_id = 4;</code>
+     * @return Whether the itemId field is set.
+     */
+    @java.lang.Override
+    public boolean hasItemId() {
+      return entityCase_ == 4;
+    }
+    /**
+     * <code>uint32 item_id = 4;</code>
+     * @return The itemId.
+     */
+    @java.lang.Override
+    public int getItemId() {
+      if (entityCase_ == 4) {
+        return (java.lang.Integer) entity_;
+      }
+      return 0;
+    }
+
     public static final int LEVEL_FIELD_NUMBER = 5;
     private int level_;
     /**
@@ -434,90 +518,6 @@ public final class CreateEntityInfoOuterClass {
     @java.lang.Override
     public int getClientUniqueId() {
       return clientUniqueId_;
-    }
-
-    public static final int MONSTER_ID_FIELD_NUMBER = 1;
-    /**
-     * <code>uint32 monster_id = 1;</code>
-     * @return Whether the monsterId field is set.
-     */
-    @java.lang.Override
-    public boolean hasMonsterId() {
-      return entityCase_ == 1;
-    }
-    /**
-     * <code>uint32 monster_id = 1;</code>
-     * @return The monsterId.
-     */
-    @java.lang.Override
-    public int getMonsterId() {
-      if (entityCase_ == 1) {
-        return (java.lang.Integer) entity_;
-      }
-      return 0;
-    }
-
-    public static final int NPC_ID_FIELD_NUMBER = 2;
-    /**
-     * <code>uint32 npc_id = 2;</code>
-     * @return Whether the npcId field is set.
-     */
-    @java.lang.Override
-    public boolean hasNpcId() {
-      return entityCase_ == 2;
-    }
-    /**
-     * <code>uint32 npc_id = 2;</code>
-     * @return The npcId.
-     */
-    @java.lang.Override
-    public int getNpcId() {
-      if (entityCase_ == 2) {
-        return (java.lang.Integer) entity_;
-      }
-      return 0;
-    }
-
-    public static final int GADGET_ID_FIELD_NUMBER = 3;
-    /**
-     * <code>uint32 gadget_id = 3;</code>
-     * @return Whether the gadgetId field is set.
-     */
-    @java.lang.Override
-    public boolean hasGadgetId() {
-      return entityCase_ == 3;
-    }
-    /**
-     * <code>uint32 gadget_id = 3;</code>
-     * @return The gadgetId.
-     */
-    @java.lang.Override
-    public int getGadgetId() {
-      if (entityCase_ == 3) {
-        return (java.lang.Integer) entity_;
-      }
-      return 0;
-    }
-
-    public static final int ITEM_ID_FIELD_NUMBER = 4;
-    /**
-     * <code>uint32 item_id = 4;</code>
-     * @return Whether the itemId field is set.
-     */
-    @java.lang.Override
-    public boolean hasItemId() {
-      return entityCase_ == 4;
-    }
-    /**
-     * <code>uint32 item_id = 4;</code>
-     * @return The itemId.
-     */
-    @java.lang.Override
-    public int getItemId() {
-      if (entityCase_ == 4) {
-        return (java.lang.Integer) entity_;
-      }
-      return 0;
     }
 
     public static final int GADGET_FIELD_NUMBER = 13;
@@ -861,7 +861,7 @@ public final class CreateEntityInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: MLAIAFGGNLF
+     * Obf: CIDLLJOHEFL
      * </pre>
      *
      * Protobuf type {@code CreateEntityInfo}
@@ -958,6 +958,18 @@ public final class CreateEntityInfoOuterClass {
         emu.grasscutter.net.proto.CreateEntityInfoOuterClass.CreateEntityInfo result = new emu.grasscutter.net.proto.CreateEntityInfoOuterClass.CreateEntityInfo(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
+        if (entityCase_ == 1) {
+          result.entity_ = entity_;
+        }
+        if (entityCase_ == 2) {
+          result.entity_ = entity_;
+        }
+        if (entityCase_ == 3) {
+          result.entity_ = entity_;
+        }
+        if (entityCase_ == 4) {
+          result.entity_ = entity_;
+        }
         result.level_ = level_;
         if (posBuilder_ == null) {
           result.pos_ = pos_;
@@ -972,18 +984,6 @@ public final class CreateEntityInfoOuterClass {
         result.sceneId_ = sceneId_;
         result.roomId_ = roomId_;
         result.clientUniqueId_ = clientUniqueId_;
-        if (entityCase_ == 1) {
-          result.entity_ = entity_;
-        }
-        if (entityCase_ == 2) {
-          result.entity_ = entity_;
-        }
-        if (entityCase_ == 3) {
-          result.entity_ = entity_;
-        }
-        if (entityCase_ == 4) {
-          result.entity_ = entity_;
-        }
         if (((from_bitField0_ & 0x00000001) != 0)) {
           if (gadgetBuilder_ == null) {
             result.gadget_ = gadget_;
@@ -1128,6 +1128,170 @@ public final class CreateEntityInfoOuterClass {
       }
 
       private int bitField0_;
+
+      /**
+       * <code>uint32 monster_id = 1;</code>
+       * @return Whether the monsterId field is set.
+       */
+      public boolean hasMonsterId() {
+        return entityCase_ == 1;
+      }
+      /**
+       * <code>uint32 monster_id = 1;</code>
+       * @return The monsterId.
+       */
+      public int getMonsterId() {
+        if (entityCase_ == 1) {
+          return (java.lang.Integer) entity_;
+        }
+        return 0;
+      }
+      /**
+       * <code>uint32 monster_id = 1;</code>
+       * @param value The monsterId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMonsterId(int value) {
+        entityCase_ = 1;
+        entity_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 monster_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMonsterId() {
+        if (entityCase_ == 1) {
+          entityCase_ = 0;
+          entity_ = null;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       * <code>uint32 npc_id = 2;</code>
+       * @return Whether the npcId field is set.
+       */
+      public boolean hasNpcId() {
+        return entityCase_ == 2;
+      }
+      /**
+       * <code>uint32 npc_id = 2;</code>
+       * @return The npcId.
+       */
+      public int getNpcId() {
+        if (entityCase_ == 2) {
+          return (java.lang.Integer) entity_;
+        }
+        return 0;
+      }
+      /**
+       * <code>uint32 npc_id = 2;</code>
+       * @param value The npcId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNpcId(int value) {
+        entityCase_ = 2;
+        entity_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 npc_id = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearNpcId() {
+        if (entityCase_ == 2) {
+          entityCase_ = 0;
+          entity_ = null;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       * <code>uint32 gadget_id = 3;</code>
+       * @return Whether the gadgetId field is set.
+       */
+      public boolean hasGadgetId() {
+        return entityCase_ == 3;
+      }
+      /**
+       * <code>uint32 gadget_id = 3;</code>
+       * @return The gadgetId.
+       */
+      public int getGadgetId() {
+        if (entityCase_ == 3) {
+          return (java.lang.Integer) entity_;
+        }
+        return 0;
+      }
+      /**
+       * <code>uint32 gadget_id = 3;</code>
+       * @param value The gadgetId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGadgetId(int value) {
+        entityCase_ = 3;
+        entity_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 gadget_id = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGadgetId() {
+        if (entityCase_ == 3) {
+          entityCase_ = 0;
+          entity_ = null;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       * <code>uint32 item_id = 4;</code>
+       * @return Whether the itemId field is set.
+       */
+      public boolean hasItemId() {
+        return entityCase_ == 4;
+      }
+      /**
+       * <code>uint32 item_id = 4;</code>
+       * @return The itemId.
+       */
+      public int getItemId() {
+        if (entityCase_ == 4) {
+          return (java.lang.Integer) entity_;
+        }
+        return 0;
+      }
+      /**
+       * <code>uint32 item_id = 4;</code>
+       * @param value The itemId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setItemId(int value) {
+        entityCase_ = 4;
+        entity_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 item_id = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearItemId() {
+        if (entityCase_ == 4) {
+          entityCase_ = 0;
+          entity_ = null;
+          onChanged();
+        }
+        return this;
+      }
 
       private int level_ ;
       /**
@@ -1491,170 +1655,6 @@ public final class CreateEntityInfoOuterClass {
         return this;
       }
 
-      /**
-       * <code>uint32 monster_id = 1;</code>
-       * @return Whether the monsterId field is set.
-       */
-      public boolean hasMonsterId() {
-        return entityCase_ == 1;
-      }
-      /**
-       * <code>uint32 monster_id = 1;</code>
-       * @return The monsterId.
-       */
-      public int getMonsterId() {
-        if (entityCase_ == 1) {
-          return (java.lang.Integer) entity_;
-        }
-        return 0;
-      }
-      /**
-       * <code>uint32 monster_id = 1;</code>
-       * @param value The monsterId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMonsterId(int value) {
-        entityCase_ = 1;
-        entity_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 monster_id = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMonsterId() {
-        if (entityCase_ == 1) {
-          entityCase_ = 0;
-          entity_ = null;
-          onChanged();
-        }
-        return this;
-      }
-
-      /**
-       * <code>uint32 npc_id = 2;</code>
-       * @return Whether the npcId field is set.
-       */
-      public boolean hasNpcId() {
-        return entityCase_ == 2;
-      }
-      /**
-       * <code>uint32 npc_id = 2;</code>
-       * @return The npcId.
-       */
-      public int getNpcId() {
-        if (entityCase_ == 2) {
-          return (java.lang.Integer) entity_;
-        }
-        return 0;
-      }
-      /**
-       * <code>uint32 npc_id = 2;</code>
-       * @param value The npcId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setNpcId(int value) {
-        entityCase_ = 2;
-        entity_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 npc_id = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearNpcId() {
-        if (entityCase_ == 2) {
-          entityCase_ = 0;
-          entity_ = null;
-          onChanged();
-        }
-        return this;
-      }
-
-      /**
-       * <code>uint32 gadget_id = 3;</code>
-       * @return Whether the gadgetId field is set.
-       */
-      public boolean hasGadgetId() {
-        return entityCase_ == 3;
-      }
-      /**
-       * <code>uint32 gadget_id = 3;</code>
-       * @return The gadgetId.
-       */
-      public int getGadgetId() {
-        if (entityCase_ == 3) {
-          return (java.lang.Integer) entity_;
-        }
-        return 0;
-      }
-      /**
-       * <code>uint32 gadget_id = 3;</code>
-       * @param value The gadgetId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setGadgetId(int value) {
-        entityCase_ = 3;
-        entity_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 gadget_id = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearGadgetId() {
-        if (entityCase_ == 3) {
-          entityCase_ = 0;
-          entity_ = null;
-          onChanged();
-        }
-        return this;
-      }
-
-      /**
-       * <code>uint32 item_id = 4;</code>
-       * @return Whether the itemId field is set.
-       */
-      public boolean hasItemId() {
-        return entityCase_ == 4;
-      }
-      /**
-       * <code>uint32 item_id = 4;</code>
-       * @return The itemId.
-       */
-      public int getItemId() {
-        if (entityCase_ == 4) {
-          return (java.lang.Integer) entity_;
-        }
-        return 0;
-      }
-      /**
-       * <code>uint32 item_id = 4;</code>
-       * @param value The itemId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setItemId(int value) {
-        entityCase_ = 4;
-        entity_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 item_id = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearItemId() {
-        if (entityCase_ == 4) {
-          entityCase_ = 0;
-          entity_ = null;
-          onChanged();
-        }
-        return this;
-      }
-
       private emu.grasscutter.net.proto.CreateGadgetInfoOuterClass.CreateGadgetInfo gadget_;
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.CreateGadgetInfoOuterClass.CreateGadgetInfo, emu.grasscutter.net.proto.CreateGadgetInfoOuterClass.CreateGadgetInfo.Builder, emu.grasscutter.net.proto.CreateGadgetInfoOuterClass.CreateGadgetInfoOrBuilder> gadgetBuilder_;
@@ -1843,12 +1843,12 @@ public final class CreateEntityInfoOuterClass {
     java.lang.String[] descriptorData = {
       "\n\026CreateEntityInfo.proto\032\014Vector.proto\032\026" +
       "CreateGadgetInfo.proto\"\227\002\n\020CreateEntityI" +
-      "nfo\022\r\n\005level\030\005 \001(\r\022\024\n\003pos\030\006 \001(\0132\007.Vector" +
+      "nfo\022\024\n\nmonster_id\030\001 \001(\rH\000\022\020\n\006npc_id\030\002 \001(" +
+      "\rH\000\022\023\n\tgadget_id\030\003 \001(\rH\000\022\021\n\007item_id\030\004 \001(" +
+      "\rH\000\022\r\n\005level\030\005 \001(\r\022\024\n\003pos\030\006 \001(\0132\007.Vector" +
       "\022\024\n\003rot\030\007 \001(\0132\007.Vector\022\020\n\010scene_id\030\n \001(\r" +
       "\022\017\n\007room_id\030\013 \001(\r\022\030\n\020client_unique_id\030\014 " +
-      "\001(\r\022\024\n\nmonster_id\030\001 \001(\rH\000\022\020\n\006npc_id\030\002 \001(" +
-      "\rH\000\022\023\n\tgadget_id\030\003 \001(\rH\000\022\021\n\007item_id\030\004 \001(" +
-      "\rH\000\022&\n\006gadget\030\r \001(\0132\021.CreateGadgetInfoH\001" +
+      "\001(\r\022&\n\006gadget\030\r \001(\0132\021.CreateGadgetInfoH\001" +
       "\210\001\001B\010\n\006entityB\t\n\007_gadgetB\033\n\031emu.grasscut" +
       "ter.net.protob\006proto3"
     };
@@ -1863,7 +1863,7 @@ public final class CreateEntityInfoOuterClass {
     internal_static_CreateEntityInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CreateEntityInfo_descriptor,
-        new java.lang.String[] { "Level", "Pos", "Rot", "SceneId", "RoomId", "ClientUniqueId", "MonsterId", "NpcId", "GadgetId", "ItemId", "Gadget", "Entity", "Gadget", });
+        new java.lang.String[] { "MonsterId", "NpcId", "GadgetId", "ItemId", "Level", "Pos", "Rot", "SceneId", "RoomId", "ClientUniqueId", "Gadget", "Entity", "Gadget", });
     emu.grasscutter.net.proto.VectorOuterClass.getDescriptor();
     emu.grasscutter.net.proto.CreateGadgetInfoOuterClass.getDescriptor();
   }

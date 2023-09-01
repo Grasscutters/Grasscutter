@@ -1,23 +1,18 @@
 package emu.grasscutter.game.drop;
 
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.data.DataLoader;
-import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.*;
 import emu.grasscutter.data.common.DropItemData;
-import emu.grasscutter.data.excels.DropMaterialData;
-import emu.grasscutter.data.excels.DropTableData;
-import emu.grasscutter.game.entity.EntityMonster;
-import emu.grasscutter.game.entity.GameEntity;
-import emu.grasscutter.game.inventory.GameItem;
-import emu.grasscutter.game.inventory.ItemType;
+import emu.grasscutter.data.excels.*;
+import emu.grasscutter.game.entity.*;
+import emu.grasscutter.game.inventory.*;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.scripts.data.SceneMonster;
-import emu.grasscutter.server.game.BaseGameSystem;
-import emu.grasscutter.server.game.GameServer;
-import emu.grasscutter.server.packet.send.PacketDropHintNotify;
-import emu.grasscutter.server.packet.send.PacketGadgetAutoPickDropInfoNotify;
+import emu.grasscutter.server.game.*;
+import emu.grasscutter.server.packet.send.*;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+
 import java.util.*;
 
 public final class DropSystem extends BaseGameSystem {

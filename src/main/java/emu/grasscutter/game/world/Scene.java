@@ -4,9 +4,10 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.*;
 import emu.grasscutter.data.binout.SceneNpcBornEntry;
 import emu.grasscutter.data.binout.routes.Route;
-import emu.grasscutter.data.excels.*;
+import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.data.excels.codex.CodexAnimalData;
 import emu.grasscutter.data.excels.monster.MonsterData;
+import emu.grasscutter.data.excels.scene.SceneData;
 import emu.grasscutter.data.excels.world.WorldLevelData;
 import emu.grasscutter.data.server.Grid;
 import emu.grasscutter.game.avatar.Avatar;
@@ -22,8 +23,8 @@ import emu.grasscutter.game.props.*;
 import emu.grasscutter.game.quest.QuestGroupSuite;
 import emu.grasscutter.game.world.data.TeleportProperties;
 import emu.grasscutter.net.packet.BasePacket;
-import emu.grasscutter.net.proto.*;
 import emu.grasscutter.net.proto.AttackResultOuterClass.AttackResult;
+import emu.grasscutter.net.proto.*;
 import emu.grasscutter.net.proto.VisionTypeOuterClass.VisionType;
 import emu.grasscutter.scripts.*;
 import emu.grasscutter.scripts.constants.EventType;
@@ -34,11 +35,12 @@ import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.server.scheduler.ServerTaskScheduler;
 import emu.grasscutter.utils.objects.KahnsSort;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import lombok.*;
+
+import javax.annotation.Nullable;
 import java.util.*;
 import java.util.concurrent.*;
 import java.util.stream.Collectors;
-import javax.annotation.Nullable;
-import lombok.*;
 
 public final class Scene {
     @Getter private final World world;
@@ -258,6 +260,13 @@ public final class Scene {
             this.removeEntity(gadget);
         }
 
+        // Remove player widget gadgets
+        this.getEntities().values().stream()
+            .filter(gameEntity -> gameEntity instanceof EntityVehicle)
+            .map(gameEntity -> (EntityVehicle) gameEntity)
+            .filter(entityVehicle -> entityVehicle.getOwner().equals(player))
+            .forEach(entityVehicle -> this.removeEntity(entityVehicle, VisionType.VISION_TYPE_REMOVE));
+
         // Deregister scene if not in use
         if (this.getPlayerCount() <= 0 && !this.dontDestroyWhenEmpty) {
             this.getScriptManager().onDestroy();
@@ -430,7 +439,7 @@ public final class Scene {
                         .map(this::removeEntityDirectly)
                         .filter(Objects::nonNull)
                         .toList();
-        if (toRemove.size() > 0) {
+        if (!toRemove.isEmpty()) {
             this.broadcastPacket(new PacketSceneEntityDisappearNotify(toRemove, visionType));
         }
     }
@@ -714,6 +723,11 @@ public final class Scene {
      * @param runnable The callback to be executed.
      */
     public void runWhenHostInitialized(Runnable runnable) {
+        if (this.isFinishedLoading()) {
+            runnable.run();
+            return;
+        }
+
         this.afterHostInitCallbacks.add(runnable);
     }
 
@@ -910,8 +924,7 @@ public final class Scene {
 
     public int loadDynamicGroup(int group_id) {
         SceneGroup group = getScriptManager().getGroupById(group_id);
-        if (group == null || getScriptManager().getGroupInstanceById(group_id) != null)
-            return -1; // Group not found or already instanced
+        if (group == null) return -1; // Group not found
 
         this.onLoadGroup(new ArrayList<>(List.of(group)));
 

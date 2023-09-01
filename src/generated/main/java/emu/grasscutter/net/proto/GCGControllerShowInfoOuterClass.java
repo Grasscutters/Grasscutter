@@ -19,65 +19,65 @@ public final class GCGControllerShowInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string online_id = 4;</code>
-     * @return The onlineId.
-     */
-    java.lang.String getOnlineId();
-    /**
-     * <code>string online_id = 4;</code>
-     * @return The bytes for onlineId.
-     */
-    com.google.protobuf.ByteString
-        getOnlineIdBytes();
-
-    /**
-     * <code>string nick_name = 2;</code>
+     * <code>string nick_name = 12;</code>
      * @return The nickName.
      */
     java.lang.String getNickName();
     /**
-     * <code>string nick_name = 2;</code>
+     * <code>string nick_name = 12;</code>
      * @return The bytes for nickName.
      */
     com.google.protobuf.ByteString
         getNickNameBytes();
 
     /**
-     * <code>uint32 controller_id = 12;</code>
+     * <code>.ProfilePicture profile_picture = 4;</code>
+     * @return Whether the profilePicture field is set.
+     */
+    boolean hasProfilePicture();
+    /**
+     * <code>.ProfilePicture profile_picture = 4;</code>
+     * @return The profilePicture.
+     */
+    emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture getProfilePicture();
+    /**
+     * <code>.ProfilePicture profile_picture = 4;</code>
+     */
+    emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePictureOrBuilder getProfilePictureOrBuilder();
+
+    /**
+     * <code>string online_id = 15;</code>
+     * @return The onlineId.
+     */
+    java.lang.String getOnlineId();
+    /**
+     * <code>string online_id = 15;</code>
+     * @return The bytes for onlineId.
+     */
+    com.google.protobuf.ByteString
+        getOnlineIdBytes();
+
+    /**
+     * <code>uint32 controller_id = 14;</code>
      * @return The controllerId.
      */
     int getControllerId();
 
     /**
-     * <code>string psn_id = 1;</code>
+     * <code>string psn_id = 3;</code>
      * @return The psnId.
      */
     java.lang.String getPsnId();
     /**
-     * <code>string psn_id = 1;</code>
+     * <code>string psn_id = 3;</code>
      * @return The bytes for psnId.
      */
     com.google.protobuf.ByteString
         getPsnIdBytes();
-
-    /**
-     * <code>.ProfilePicture profile_picture = 10;</code>
-     * @return Whether the profilePicture field is set.
-     */
-    boolean hasProfilePicture();
-    /**
-     * <code>.ProfilePicture profile_picture = 10;</code>
-     * @return The profilePicture.
-     */
-    emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture getProfilePicture();
-    /**
-     * <code>.ProfilePicture profile_picture = 10;</code>
-     */
-    emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePictureOrBuilder getProfilePictureOrBuilder();
   }
   /**
    * <pre>
-   * Obf: HDJKAINGGJN
+   * Obf: LKDLHNOBDFB
    * </pre>
    *
    * Protobuf type {@code GCGControllerShowInfo}
@@ -92,8 +92,8 @@ public final class GCGControllerShowInfoOuterClass {
       super(builder);
     }
     private GCGControllerShowInfo() {
-      onlineId_ = "";
       nickName_ = "";
+      onlineId_ = "";
       psnId_ = "";
     }
 
@@ -127,25 +127,13 @@ public final class GCGControllerShowInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 10: {
+            case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
               psnId_ = s;
               break;
             }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              nickName_ = s;
-              break;
-            }
             case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              onlineId_ = s;
-              break;
-            }
-            case 82: {
               emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture.Builder subBuilder = null;
               if (profilePicture_ != null) {
                 subBuilder = profilePicture_.toBuilder();
@@ -158,9 +146,21 @@ public final class GCGControllerShowInfoOuterClass {
 
               break;
             }
-            case 96: {
+            case 98: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              nickName_ = s;
+              break;
+            }
+            case 112: {
 
               controllerId_ = input.readUInt32();
+              break;
+            }
+            case 122: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              onlineId_ = s;
               break;
             }
             default: {
@@ -195,48 +195,10 @@ public final class GCGControllerShowInfoOuterClass {
               emu.grasscutter.net.proto.GCGControllerShowInfoOuterClass.GCGControllerShowInfo.class, emu.grasscutter.net.proto.GCGControllerShowInfoOuterClass.GCGControllerShowInfo.Builder.class);
     }
 
-    public static final int ONLINE_ID_FIELD_NUMBER = 4;
-    private volatile java.lang.Object onlineId_;
-    /**
-     * <code>string online_id = 4;</code>
-     * @return The onlineId.
-     */
-    @java.lang.Override
-    public java.lang.String getOnlineId() {
-      java.lang.Object ref = onlineId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        onlineId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string online_id = 4;</code>
-     * @return The bytes for onlineId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getOnlineIdBytes() {
-      java.lang.Object ref = onlineId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        onlineId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int NICK_NAME_FIELD_NUMBER = 2;
+    public static final int NICK_NAME_FIELD_NUMBER = 12;
     private volatile java.lang.Object nickName_;
     /**
-     * <code>string nick_name = 2;</code>
+     * <code>string nick_name = 12;</code>
      * @return The nickName.
      */
     @java.lang.Override
@@ -253,7 +215,7 @@ public final class GCGControllerShowInfoOuterClass {
       }
     }
     /**
-     * <code>string nick_name = 2;</code>
+     * <code>string nick_name = 12;</code>
      * @return The bytes for nickName.
      */
     @java.lang.Override
@@ -271,10 +233,74 @@ public final class GCGControllerShowInfoOuterClass {
       }
     }
 
-    public static final int CONTROLLER_ID_FIELD_NUMBER = 12;
+    public static final int PROFILE_PICTURE_FIELD_NUMBER = 4;
+    private emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture profilePicture_;
+    /**
+     * <code>.ProfilePicture profile_picture = 4;</code>
+     * @return Whether the profilePicture field is set.
+     */
+    @java.lang.Override
+    public boolean hasProfilePicture() {
+      return profilePicture_ != null;
+    }
+    /**
+     * <code>.ProfilePicture profile_picture = 4;</code>
+     * @return The profilePicture.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture getProfilePicture() {
+      return profilePicture_ == null ? emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture.getDefaultInstance() : profilePicture_;
+    }
+    /**
+     * <code>.ProfilePicture profile_picture = 4;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePictureOrBuilder getProfilePictureOrBuilder() {
+      return getProfilePicture();
+    }
+
+    public static final int ONLINE_ID_FIELD_NUMBER = 15;
+    private volatile java.lang.Object onlineId_;
+    /**
+     * <code>string online_id = 15;</code>
+     * @return The onlineId.
+     */
+    @java.lang.Override
+    public java.lang.String getOnlineId() {
+      java.lang.Object ref = onlineId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        onlineId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string online_id = 15;</code>
+     * @return The bytes for onlineId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getOnlineIdBytes() {
+      java.lang.Object ref = onlineId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        onlineId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CONTROLLER_ID_FIELD_NUMBER = 14;
     private int controllerId_;
     /**
-     * <code>uint32 controller_id = 12;</code>
+     * <code>uint32 controller_id = 14;</code>
      * @return The controllerId.
      */
     @java.lang.Override
@@ -282,10 +308,10 @@ public final class GCGControllerShowInfoOuterClass {
       return controllerId_;
     }
 
-    public static final int PSN_ID_FIELD_NUMBER = 1;
+    public static final int PSN_ID_FIELD_NUMBER = 3;
     private volatile java.lang.Object psnId_;
     /**
-     * <code>string psn_id = 1;</code>
+     * <code>string psn_id = 3;</code>
      * @return The psnId.
      */
     @java.lang.Override
@@ -302,7 +328,7 @@ public final class GCGControllerShowInfoOuterClass {
       }
     }
     /**
-     * <code>string psn_id = 1;</code>
+     * <code>string psn_id = 3;</code>
      * @return The bytes for psnId.
      */
     @java.lang.Override
@@ -320,32 +346,6 @@ public final class GCGControllerShowInfoOuterClass {
       }
     }
 
-    public static final int PROFILE_PICTURE_FIELD_NUMBER = 10;
-    private emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture profilePicture_;
-    /**
-     * <code>.ProfilePicture profile_picture = 10;</code>
-     * @return Whether the profilePicture field is set.
-     */
-    @java.lang.Override
-    public boolean hasProfilePicture() {
-      return profilePicture_ != null;
-    }
-    /**
-     * <code>.ProfilePicture profile_picture = 10;</code>
-     * @return The profilePicture.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture getProfilePicture() {
-      return profilePicture_ == null ? emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture.getDefaultInstance() : profilePicture_;
-    }
-    /**
-     * <code>.ProfilePicture profile_picture = 10;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePictureOrBuilder getProfilePictureOrBuilder() {
-      return getProfilePicture();
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -361,19 +361,19 @@ public final class GCGControllerShowInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(psnId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, psnId_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nickName_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nickName_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(onlineId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, onlineId_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, psnId_);
       }
       if (profilePicture_ != null) {
-        output.writeMessage(10, getProfilePicture());
+        output.writeMessage(4, getProfilePicture());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nickName_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, nickName_);
       }
       if (controllerId_ != 0) {
-        output.writeUInt32(12, controllerId_);
+        output.writeUInt32(14, controllerId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(onlineId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 15, onlineId_);
       }
       unknownFields.writeTo(output);
     }
@@ -385,21 +385,21 @@ public final class GCGControllerShowInfoOuterClass {
 
       size = 0;
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(psnId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, psnId_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nickName_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nickName_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(onlineId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, onlineId_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, psnId_);
       }
       if (profilePicture_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, getProfilePicture());
+          .computeMessageSize(4, getProfilePicture());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nickName_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, nickName_);
       }
       if (controllerId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, controllerId_);
+          .computeUInt32Size(14, controllerId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(onlineId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, onlineId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -416,19 +416,19 @@ public final class GCGControllerShowInfoOuterClass {
       }
       emu.grasscutter.net.proto.GCGControllerShowInfoOuterClass.GCGControllerShowInfo other = (emu.grasscutter.net.proto.GCGControllerShowInfoOuterClass.GCGControllerShowInfo) obj;
 
-      if (!getOnlineId()
-          .equals(other.getOnlineId())) return false;
       if (!getNickName()
           .equals(other.getNickName())) return false;
-      if (getControllerId()
-          != other.getControllerId()) return false;
-      if (!getPsnId()
-          .equals(other.getPsnId())) return false;
       if (hasProfilePicture() != other.hasProfilePicture()) return false;
       if (hasProfilePicture()) {
         if (!getProfilePicture()
             .equals(other.getProfilePicture())) return false;
       }
+      if (!getOnlineId()
+          .equals(other.getOnlineId())) return false;
+      if (getControllerId()
+          != other.getControllerId()) return false;
+      if (!getPsnId()
+          .equals(other.getPsnId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -440,18 +440,18 @@ public final class GCGControllerShowInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ONLINE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getOnlineId().hashCode();
       hash = (37 * hash) + NICK_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getNickName().hashCode();
-      hash = (37 * hash) + CONTROLLER_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getControllerId();
-      hash = (37 * hash) + PSN_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getPsnId().hashCode();
       if (hasProfilePicture()) {
         hash = (37 * hash) + PROFILE_PICTURE_FIELD_NUMBER;
         hash = (53 * hash) + getProfilePicture().hashCode();
       }
+      hash = (37 * hash) + ONLINE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getOnlineId().hashCode();
+      hash = (37 * hash) + CONTROLLER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getControllerId();
+      hash = (37 * hash) + PSN_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getPsnId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -549,7 +549,7 @@ public final class GCGControllerShowInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: HDJKAINGGJN
+     * Obf: LKDLHNOBDFB
      * </pre>
      *
      * Protobuf type {@code GCGControllerShowInfo}
@@ -589,13 +589,7 @@ public final class GCGControllerShowInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        onlineId_ = "";
-
         nickName_ = "";
-
-        controllerId_ = 0;
-
-        psnId_ = "";
 
         if (profilePictureBuilder_ == null) {
           profilePicture_ = null;
@@ -603,6 +597,12 @@ public final class GCGControllerShowInfoOuterClass {
           profilePicture_ = null;
           profilePictureBuilder_ = null;
         }
+        onlineId_ = "";
+
+        controllerId_ = 0;
+
+        psnId_ = "";
+
         return this;
       }
 
@@ -629,15 +629,15 @@ public final class GCGControllerShowInfoOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.GCGControllerShowInfoOuterClass.GCGControllerShowInfo buildPartial() {
         emu.grasscutter.net.proto.GCGControllerShowInfoOuterClass.GCGControllerShowInfo result = new emu.grasscutter.net.proto.GCGControllerShowInfoOuterClass.GCGControllerShowInfo(this);
-        result.onlineId_ = onlineId_;
         result.nickName_ = nickName_;
-        result.controllerId_ = controllerId_;
-        result.psnId_ = psnId_;
         if (profilePictureBuilder_ == null) {
           result.profilePicture_ = profilePicture_;
         } else {
           result.profilePicture_ = profilePictureBuilder_.build();
         }
+        result.onlineId_ = onlineId_;
+        result.controllerId_ = controllerId_;
+        result.psnId_ = psnId_;
         onBuilt();
         return result;
       }
@@ -686,12 +686,15 @@ public final class GCGControllerShowInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.GCGControllerShowInfoOuterClass.GCGControllerShowInfo other) {
         if (other == emu.grasscutter.net.proto.GCGControllerShowInfoOuterClass.GCGControllerShowInfo.getDefaultInstance()) return this;
-        if (!other.getOnlineId().isEmpty()) {
-          onlineId_ = other.onlineId_;
-          onChanged();
-        }
         if (!other.getNickName().isEmpty()) {
           nickName_ = other.nickName_;
+          onChanged();
+        }
+        if (other.hasProfilePicture()) {
+          mergeProfilePicture(other.getProfilePicture());
+        }
+        if (!other.getOnlineId().isEmpty()) {
+          onlineId_ = other.onlineId_;
           onChanged();
         }
         if (other.getControllerId() != 0) {
@@ -700,9 +703,6 @@ public final class GCGControllerShowInfoOuterClass {
         if (!other.getPsnId().isEmpty()) {
           psnId_ = other.psnId_;
           onChanged();
-        }
-        if (other.hasProfilePicture()) {
-          mergeProfilePicture(other.getProfilePicture());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -733,85 +733,9 @@ public final class GCGControllerShowInfoOuterClass {
         return this;
       }
 
-      private java.lang.Object onlineId_ = "";
-      /**
-       * <code>string online_id = 4;</code>
-       * @return The onlineId.
-       */
-      public java.lang.String getOnlineId() {
-        java.lang.Object ref = onlineId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          onlineId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string online_id = 4;</code>
-       * @return The bytes for onlineId.
-       */
-      public com.google.protobuf.ByteString
-          getOnlineIdBytes() {
-        java.lang.Object ref = onlineId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          onlineId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string online_id = 4;</code>
-       * @param value The onlineId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOnlineId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        onlineId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string online_id = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearOnlineId() {
-        
-        onlineId_ = getDefaultInstance().getOnlineId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string online_id = 4;</code>
-       * @param value The bytes for onlineId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOnlineIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        onlineId_ = value;
-        onChanged();
-        return this;
-      }
-
       private java.lang.Object nickName_ = "";
       /**
-       * <code>string nick_name = 2;</code>
+       * <code>string nick_name = 12;</code>
        * @return The nickName.
        */
       public java.lang.String getNickName() {
@@ -827,7 +751,7 @@ public final class GCGControllerShowInfoOuterClass {
         }
       }
       /**
-       * <code>string nick_name = 2;</code>
+       * <code>string nick_name = 12;</code>
        * @return The bytes for nickName.
        */
       public com.google.protobuf.ByteString
@@ -844,7 +768,7 @@ public final class GCGControllerShowInfoOuterClass {
         }
       }
       /**
-       * <code>string nick_name = 2;</code>
+       * <code>string nick_name = 12;</code>
        * @param value The nickName to set.
        * @return This builder for chaining.
        */
@@ -859,7 +783,7 @@ public final class GCGControllerShowInfoOuterClass {
         return this;
       }
       /**
-       * <code>string nick_name = 2;</code>
+       * <code>string nick_name = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearNickName() {
@@ -869,7 +793,7 @@ public final class GCGControllerShowInfoOuterClass {
         return this;
       }
       /**
-       * <code>string nick_name = 2;</code>
+       * <code>string nick_name = 12;</code>
        * @param value The bytes for nickName to set.
        * @return This builder for chaining.
        */
@@ -885,125 +809,18 @@ public final class GCGControllerShowInfoOuterClass {
         return this;
       }
 
-      private int controllerId_ ;
-      /**
-       * <code>uint32 controller_id = 12;</code>
-       * @return The controllerId.
-       */
-      @java.lang.Override
-      public int getControllerId() {
-        return controllerId_;
-      }
-      /**
-       * <code>uint32 controller_id = 12;</code>
-       * @param value The controllerId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setControllerId(int value) {
-        
-        controllerId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 controller_id = 12;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearControllerId() {
-        
-        controllerId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object psnId_ = "";
-      /**
-       * <code>string psn_id = 1;</code>
-       * @return The psnId.
-       */
-      public java.lang.String getPsnId() {
-        java.lang.Object ref = psnId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          psnId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string psn_id = 1;</code>
-       * @return The bytes for psnId.
-       */
-      public com.google.protobuf.ByteString
-          getPsnIdBytes() {
-        java.lang.Object ref = psnId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          psnId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string psn_id = 1;</code>
-       * @param value The psnId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPsnId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        psnId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string psn_id = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPsnId() {
-        
-        psnId_ = getDefaultInstance().getPsnId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string psn_id = 1;</code>
-       * @param value The bytes for psnId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPsnIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        psnId_ = value;
-        onChanged();
-        return this;
-      }
-
       private emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture profilePicture_;
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture, emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture.Builder, emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePictureOrBuilder> profilePictureBuilder_;
       /**
-       * <code>.ProfilePicture profile_picture = 10;</code>
+       * <code>.ProfilePicture profile_picture = 4;</code>
        * @return Whether the profilePicture field is set.
        */
       public boolean hasProfilePicture() {
         return profilePictureBuilder_ != null || profilePicture_ != null;
       }
       /**
-       * <code>.ProfilePicture profile_picture = 10;</code>
+       * <code>.ProfilePicture profile_picture = 4;</code>
        * @return The profilePicture.
        */
       public emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture getProfilePicture() {
@@ -1014,7 +831,7 @@ public final class GCGControllerShowInfoOuterClass {
         }
       }
       /**
-       * <code>.ProfilePicture profile_picture = 10;</code>
+       * <code>.ProfilePicture profile_picture = 4;</code>
        */
       public Builder setProfilePicture(emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture value) {
         if (profilePictureBuilder_ == null) {
@@ -1030,7 +847,7 @@ public final class GCGControllerShowInfoOuterClass {
         return this;
       }
       /**
-       * <code>.ProfilePicture profile_picture = 10;</code>
+       * <code>.ProfilePicture profile_picture = 4;</code>
        */
       public Builder setProfilePicture(
           emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture.Builder builderForValue) {
@@ -1044,7 +861,7 @@ public final class GCGControllerShowInfoOuterClass {
         return this;
       }
       /**
-       * <code>.ProfilePicture profile_picture = 10;</code>
+       * <code>.ProfilePicture profile_picture = 4;</code>
        */
       public Builder mergeProfilePicture(emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture value) {
         if (profilePictureBuilder_ == null) {
@@ -1062,7 +879,7 @@ public final class GCGControllerShowInfoOuterClass {
         return this;
       }
       /**
-       * <code>.ProfilePicture profile_picture = 10;</code>
+       * <code>.ProfilePicture profile_picture = 4;</code>
        */
       public Builder clearProfilePicture() {
         if (profilePictureBuilder_ == null) {
@@ -1076,7 +893,7 @@ public final class GCGControllerShowInfoOuterClass {
         return this;
       }
       /**
-       * <code>.ProfilePicture profile_picture = 10;</code>
+       * <code>.ProfilePicture profile_picture = 4;</code>
        */
       public emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture.Builder getProfilePictureBuilder() {
         
@@ -1084,7 +901,7 @@ public final class GCGControllerShowInfoOuterClass {
         return getProfilePictureFieldBuilder().getBuilder();
       }
       /**
-       * <code>.ProfilePicture profile_picture = 10;</code>
+       * <code>.ProfilePicture profile_picture = 4;</code>
        */
       public emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePictureOrBuilder getProfilePictureOrBuilder() {
         if (profilePictureBuilder_ != null) {
@@ -1095,7 +912,7 @@ public final class GCGControllerShowInfoOuterClass {
         }
       }
       /**
-       * <code>.ProfilePicture profile_picture = 10;</code>
+       * <code>.ProfilePicture profile_picture = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture, emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture.Builder, emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePictureOrBuilder> 
@@ -1109,6 +926,189 @@ public final class GCGControllerShowInfoOuterClass {
           profilePicture_ = null;
         }
         return profilePictureBuilder_;
+      }
+
+      private java.lang.Object onlineId_ = "";
+      /**
+       * <code>string online_id = 15;</code>
+       * @return The onlineId.
+       */
+      public java.lang.String getOnlineId() {
+        java.lang.Object ref = onlineId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          onlineId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string online_id = 15;</code>
+       * @return The bytes for onlineId.
+       */
+      public com.google.protobuf.ByteString
+          getOnlineIdBytes() {
+        java.lang.Object ref = onlineId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          onlineId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string online_id = 15;</code>
+       * @param value The onlineId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOnlineId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        onlineId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string online_id = 15;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOnlineId() {
+        
+        onlineId_ = getDefaultInstance().getOnlineId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string online_id = 15;</code>
+       * @param value The bytes for onlineId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOnlineIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        onlineId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int controllerId_ ;
+      /**
+       * <code>uint32 controller_id = 14;</code>
+       * @return The controllerId.
+       */
+      @java.lang.Override
+      public int getControllerId() {
+        return controllerId_;
+      }
+      /**
+       * <code>uint32 controller_id = 14;</code>
+       * @param value The controllerId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setControllerId(int value) {
+        
+        controllerId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 controller_id = 14;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearControllerId() {
+        
+        controllerId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object psnId_ = "";
+      /**
+       * <code>string psn_id = 3;</code>
+       * @return The psnId.
+       */
+      public java.lang.String getPsnId() {
+        java.lang.Object ref = psnId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          psnId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string psn_id = 3;</code>
+       * @return The bytes for psnId.
+       */
+      public com.google.protobuf.ByteString
+          getPsnIdBytes() {
+        java.lang.Object ref = psnId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          psnId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string psn_id = 3;</code>
+       * @param value The psnId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPsnId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        psnId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string psn_id = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPsnId() {
+        
+        psnId_ = getDefaultInstance().getPsnId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string psn_id = 3;</code>
+       * @param value The bytes for psnId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPsnIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        psnId_ = value;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -1179,9 +1179,9 @@ public final class GCGControllerShowInfoOuterClass {
     java.lang.String[] descriptorData = {
       "\n\033GCGControllerShowInfo.proto\032\024ProfilePi" +
       "cture.proto\"\216\001\n\025GCGControllerShowInfo\022\021\n" +
-      "\tonline_id\030\004 \001(\t\022\021\n\tnick_name\030\002 \001(\t\022\025\n\rc" +
-      "ontroller_id\030\014 \001(\r\022\016\n\006psn_id\030\001 \001(\t\022(\n\017pr" +
-      "ofile_picture\030\n \001(\0132\017.ProfilePictureB\033\n\031" +
+      "\tnick_name\030\014 \001(\t\022(\n\017profile_picture\030\004 \001(" +
+      "\0132\017.ProfilePicture\022\021\n\tonline_id\030\017 \001(\t\022\025\n" +
+      "\rcontroller_id\030\016 \001(\r\022\016\n\006psn_id\030\003 \001(\tB\033\n\031" +
       "emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -1194,7 +1194,7 @@ public final class GCGControllerShowInfoOuterClass {
     internal_static_GCGControllerShowInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GCGControllerShowInfo_descriptor,
-        new java.lang.String[] { "OnlineId", "NickName", "ControllerId", "PsnId", "ProfilePicture", });
+        new java.lang.String[] { "NickName", "ProfilePicture", "OnlineId", "ControllerId", "PsnId", });
     emu.grasscutter.net.proto.ProfilePictureOuterClass.getDescriptor();
   }
 

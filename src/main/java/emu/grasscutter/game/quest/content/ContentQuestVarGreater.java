@@ -1,11 +1,10 @@
 package emu.grasscutter.game.quest.content;
 
-import static emu.grasscutter.game.quest.enums.QuestContent.QUEST_CONTENT_QUEST_VAR_GREATER;
-
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.excels.quest.QuestData;
-import emu.grasscutter.game.quest.GameQuest;
-import emu.grasscutter.game.quest.QuestValueContent;
+import emu.grasscutter.game.quest.*;
+
+import static emu.grasscutter.game.quest.enums.QuestContent.QUEST_CONTENT_QUEST_VAR_GREATER;
 
 @QuestValueContent(QUEST_CONTENT_QUEST_VAR_GREATER)
 public class ContentQuestVarGreater extends BaseContent {

@@ -16,7 +16,7 @@ public final class GCGSettleOptionOuterClass {
   }
   /**
    * <pre>
-   * Obf: CNJAAHMIHJF
+   * Obf: HMHCFCIHGCO
    * </pre>
    *
    * Protobuf enum {@code GCGSettleOption}

@@ -19,32 +19,32 @@ public final class TeamChainDungeonInfoNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 skill_no_list = 3;</code>
+     * <code>repeated uint32 skill_no_list = 13;</code>
      * @return A list containing the skillNoList.
      */
     java.util.List<java.lang.Integer> getSkillNoListList();
     /**
-     * <code>repeated uint32 skill_no_list = 3;</code>
+     * <code>repeated uint32 skill_no_list = 13;</code>
      * @return The count of skillNoList.
      */
     int getSkillNoListCount();
     /**
-     * <code>repeated uint32 skill_no_list = 3;</code>
+     * <code>repeated uint32 skill_no_list = 13;</code>
      * @param index The index of the element to return.
      * @return The skillNoList at the given index.
      */
     int getSkillNoList(int index);
 
     /**
-     * <code>uint32 stage_id = 2;</code>
+     * <code>uint32 stage_id = 8;</code>
      * @return The stageId.
      */
     int getStageId();
   }
   /**
    * <pre>
-   * CmdId: 21169
-   * Obf: DOFEGBADGKC
+   * CmdId: 22413
+   * Obf: NNMIGBAIKAA
    * </pre>
    *
    * Protobuf type {@code TeamChainDungeonInfoNotify}
@@ -93,12 +93,12 @@ public final class TeamChainDungeonInfoNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
+            case 64: {
 
               stageId_ = input.readUInt32();
               break;
             }
-            case 24: {
+            case 104: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 skillNoList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -106,7 +106,7 @@ public final class TeamChainDungeonInfoNotifyOuterClass {
               skillNoList_.addInt(input.readUInt32());
               break;
             }
-            case 26: {
+            case 106: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -154,10 +154,10 @@ public final class TeamChainDungeonInfoNotifyOuterClass {
               emu.grasscutter.net.proto.TeamChainDungeonInfoNotifyOuterClass.TeamChainDungeonInfoNotify.class, emu.grasscutter.net.proto.TeamChainDungeonInfoNotifyOuterClass.TeamChainDungeonInfoNotify.Builder.class);
     }
 
-    public static final int SKILL_NO_LIST_FIELD_NUMBER = 3;
+    public static final int SKILL_NO_LIST_FIELD_NUMBER = 13;
     private com.google.protobuf.Internal.IntList skillNoList_;
     /**
-     * <code>repeated uint32 skill_no_list = 3;</code>
+     * <code>repeated uint32 skill_no_list = 13;</code>
      * @return A list containing the skillNoList.
      */
     @java.lang.Override
@@ -166,14 +166,14 @@ public final class TeamChainDungeonInfoNotifyOuterClass {
       return skillNoList_;
     }
     /**
-     * <code>repeated uint32 skill_no_list = 3;</code>
+     * <code>repeated uint32 skill_no_list = 13;</code>
      * @return The count of skillNoList.
      */
     public int getSkillNoListCount() {
       return skillNoList_.size();
     }
     /**
-     * <code>repeated uint32 skill_no_list = 3;</code>
+     * <code>repeated uint32 skill_no_list = 13;</code>
      * @param index The index of the element to return.
      * @return The skillNoList at the given index.
      */
@@ -182,10 +182,10 @@ public final class TeamChainDungeonInfoNotifyOuterClass {
     }
     private int skillNoListMemoizedSerializedSize = -1;
 
-    public static final int STAGE_ID_FIELD_NUMBER = 2;
+    public static final int STAGE_ID_FIELD_NUMBER = 8;
     private int stageId_;
     /**
-     * <code>uint32 stage_id = 2;</code>
+     * <code>uint32 stage_id = 8;</code>
      * @return The stageId.
      */
     @java.lang.Override
@@ -209,10 +209,10 @@ public final class TeamChainDungeonInfoNotifyOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (stageId_ != 0) {
-        output.writeUInt32(2, stageId_);
+        output.writeUInt32(8, stageId_);
       }
       if (getSkillNoListList().size() > 0) {
-        output.writeUInt32NoTag(26);
+        output.writeUInt32NoTag(106);
         output.writeUInt32NoTag(skillNoListMemoizedSerializedSize);
       }
       for (int i = 0; i < skillNoList_.size(); i++) {
@@ -229,7 +229,7 @@ public final class TeamChainDungeonInfoNotifyOuterClass {
       size = 0;
       if (stageId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, stageId_);
+          .computeUInt32Size(8, stageId_);
       }
       {
         int dataSize = 0;
@@ -378,8 +378,8 @@ public final class TeamChainDungeonInfoNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 21169
-     * Obf: DOFEGBADGKC
+     * CmdId: 22413
+     * Obf: NNMIGBAIKAA
      * </pre>
      *
      * Protobuf type {@code TeamChainDungeonInfoNotify}
@@ -555,7 +555,7 @@ public final class TeamChainDungeonInfoNotifyOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 skill_no_list = 3;</code>
+       * <code>repeated uint32 skill_no_list = 13;</code>
        * @return A list containing the skillNoList.
        */
       public java.util.List<java.lang.Integer>
@@ -564,14 +564,14 @@ public final class TeamChainDungeonInfoNotifyOuterClass {
                  java.util.Collections.unmodifiableList(skillNoList_) : skillNoList_;
       }
       /**
-       * <code>repeated uint32 skill_no_list = 3;</code>
+       * <code>repeated uint32 skill_no_list = 13;</code>
        * @return The count of skillNoList.
        */
       public int getSkillNoListCount() {
         return skillNoList_.size();
       }
       /**
-       * <code>repeated uint32 skill_no_list = 3;</code>
+       * <code>repeated uint32 skill_no_list = 13;</code>
        * @param index The index of the element to return.
        * @return The skillNoList at the given index.
        */
@@ -579,7 +579,7 @@ public final class TeamChainDungeonInfoNotifyOuterClass {
         return skillNoList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 skill_no_list = 3;</code>
+       * <code>repeated uint32 skill_no_list = 13;</code>
        * @param index The index to set the value at.
        * @param value The skillNoList to set.
        * @return This builder for chaining.
@@ -592,7 +592,7 @@ public final class TeamChainDungeonInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 skill_no_list = 3;</code>
+       * <code>repeated uint32 skill_no_list = 13;</code>
        * @param value The skillNoList to add.
        * @return This builder for chaining.
        */
@@ -603,7 +603,7 @@ public final class TeamChainDungeonInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 skill_no_list = 3;</code>
+       * <code>repeated uint32 skill_no_list = 13;</code>
        * @param values The skillNoList to add.
        * @return This builder for chaining.
        */
@@ -616,7 +616,7 @@ public final class TeamChainDungeonInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 skill_no_list = 3;</code>
+       * <code>repeated uint32 skill_no_list = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearSkillNoList() {
@@ -628,7 +628,7 @@ public final class TeamChainDungeonInfoNotifyOuterClass {
 
       private int stageId_ ;
       /**
-       * <code>uint32 stage_id = 2;</code>
+       * <code>uint32 stage_id = 8;</code>
        * @return The stageId.
        */
       @java.lang.Override
@@ -636,7 +636,7 @@ public final class TeamChainDungeonInfoNotifyOuterClass {
         return stageId_;
       }
       /**
-       * <code>uint32 stage_id = 2;</code>
+       * <code>uint32 stage_id = 8;</code>
        * @param value The stageId to set.
        * @return This builder for chaining.
        */
@@ -647,7 +647,7 @@ public final class TeamChainDungeonInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 stage_id = 2;</code>
+       * <code>uint32 stage_id = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearStageId() {
@@ -725,7 +725,7 @@ public final class TeamChainDungeonInfoNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n TeamChainDungeonInfoNotify.proto\"E\n\032Te" +
       "amChainDungeonInfoNotify\022\025\n\rskill_no_lis" +
-      "t\030\003 \003(\r\022\020\n\010stage_id\030\002 \001(\rB\033\n\031emu.grasscu" +
+      "t\030\r \003(\r\022\020\n\010stage_id\030\010 \001(\rB\033\n\031emu.grasscu" +
       "tter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

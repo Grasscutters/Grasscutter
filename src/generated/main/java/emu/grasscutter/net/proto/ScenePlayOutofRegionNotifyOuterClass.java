@@ -19,15 +19,15 @@ public final class ScenePlayOutofRegionNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 play_id = 8;</code>
+     * <code>uint32 play_id = 14;</code>
      * @return The playId.
      */
     int getPlayId();
   }
   /**
    * <pre>
-   * CmdId: 4366
-   * Obf: PDPKMLMBMCJ
+   * CmdId: 26290
+   * Obf: NINFJMKNMAC
    * </pre>
    *
    * Protobuf type {@code ScenePlayOutofRegionNotify}
@@ -74,7 +74,7 @@ public final class ScenePlayOutofRegionNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 64: {
+            case 112: {
 
               playId_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class ScenePlayOutofRegionNotifyOuterClass {
               emu.grasscutter.net.proto.ScenePlayOutofRegionNotifyOuterClass.ScenePlayOutofRegionNotify.class, emu.grasscutter.net.proto.ScenePlayOutofRegionNotifyOuterClass.ScenePlayOutofRegionNotify.Builder.class);
     }
 
-    public static final int PLAY_ID_FIELD_NUMBER = 8;
+    public static final int PLAY_ID_FIELD_NUMBER = 14;
     private int playId_;
     /**
-     * <code>uint32 play_id = 8;</code>
+     * <code>uint32 play_id = 14;</code>
      * @return The playId.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class ScenePlayOutofRegionNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (playId_ != 0) {
-        output.writeUInt32(8, playId_);
+        output.writeUInt32(14, playId_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class ScenePlayOutofRegionNotifyOuterClass {
       size = 0;
       if (playId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, playId_);
+          .computeUInt32Size(14, playId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class ScenePlayOutofRegionNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4366
-     * Obf: PDPKMLMBMCJ
+     * CmdId: 26290
+     * Obf: NINFJMKNMAC
      * </pre>
      *
      * Protobuf type {@code ScenePlayOutofRegionNotify}
@@ -431,7 +431,7 @@ public final class ScenePlayOutofRegionNotifyOuterClass {
 
       private int playId_ ;
       /**
-       * <code>uint32 play_id = 8;</code>
+       * <code>uint32 play_id = 14;</code>
        * @return The playId.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class ScenePlayOutofRegionNotifyOuterClass {
         return playId_;
       }
       /**
-       * <code>uint32 play_id = 8;</code>
+       * <code>uint32 play_id = 14;</code>
        * @param value The playId to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class ScenePlayOutofRegionNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 play_id = 8;</code>
+       * <code>uint32 play_id = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearPlayId() {
@@ -527,7 +527,7 @@ public final class ScenePlayOutofRegionNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n ScenePlayOutofRegionNotify.proto\"-\n\032Sc" +
-      "enePlayOutofRegionNotify\022\017\n\007play_id\030\010 \001(" +
+      "enePlayOutofRegionNotify\022\017\n\007play_id\030\016 \001(" +
       "\rB\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

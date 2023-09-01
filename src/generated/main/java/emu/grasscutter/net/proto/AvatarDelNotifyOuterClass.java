@@ -19,17 +19,17 @@ public final class AvatarDelNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint64 avatar_guid_list = 5;</code>
+     * <code>repeated uint64 avatar_guid_list = 7;</code>
      * @return A list containing the avatarGuidList.
      */
     java.util.List<java.lang.Long> getAvatarGuidListList();
     /**
-     * <code>repeated uint64 avatar_guid_list = 5;</code>
+     * <code>repeated uint64 avatar_guid_list = 7;</code>
      * @return The count of avatarGuidList.
      */
     int getAvatarGuidListCount();
     /**
-     * <code>repeated uint64 avatar_guid_list = 5;</code>
+     * <code>repeated uint64 avatar_guid_list = 7;</code>
      * @param index The index of the element to return.
      * @return The avatarGuidList at the given index.
      */
@@ -37,8 +37,8 @@ public final class AvatarDelNotifyOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 1701
-   * Obf: OICLNIIPCBB
+   * CmdId: 8219
+   * Obf: IOKBLLAGPJD
    * </pre>
    *
    * Protobuf type {@code AvatarDelNotify}
@@ -87,7 +87,7 @@ public final class AvatarDelNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
+            case 56: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 avatarGuidList_ = newLongList();
                 mutable_bitField0_ |= 0x00000001;
@@ -95,7 +95,7 @@ public final class AvatarDelNotifyOuterClass {
               avatarGuidList_.addLong(input.readUInt64());
               break;
             }
-            case 42: {
+            case 58: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -143,10 +143,10 @@ public final class AvatarDelNotifyOuterClass {
               emu.grasscutter.net.proto.AvatarDelNotifyOuterClass.AvatarDelNotify.class, emu.grasscutter.net.proto.AvatarDelNotifyOuterClass.AvatarDelNotify.Builder.class);
     }
 
-    public static final int AVATAR_GUID_LIST_FIELD_NUMBER = 5;
+    public static final int AVATAR_GUID_LIST_FIELD_NUMBER = 7;
     private com.google.protobuf.Internal.LongList avatarGuidList_;
     /**
-     * <code>repeated uint64 avatar_guid_list = 5;</code>
+     * <code>repeated uint64 avatar_guid_list = 7;</code>
      * @return A list containing the avatarGuidList.
      */
     @java.lang.Override
@@ -155,14 +155,14 @@ public final class AvatarDelNotifyOuterClass {
       return avatarGuidList_;
     }
     /**
-     * <code>repeated uint64 avatar_guid_list = 5;</code>
+     * <code>repeated uint64 avatar_guid_list = 7;</code>
      * @return The count of avatarGuidList.
      */
     public int getAvatarGuidListCount() {
       return avatarGuidList_.size();
     }
     /**
-     * <code>repeated uint64 avatar_guid_list = 5;</code>
+     * <code>repeated uint64 avatar_guid_list = 7;</code>
      * @param index The index of the element to return.
      * @return The avatarGuidList at the given index.
      */
@@ -187,7 +187,7 @@ public final class AvatarDelNotifyOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (getAvatarGuidListList().size() > 0) {
-        output.writeUInt32NoTag(42);
+        output.writeUInt32NoTag(58);
         output.writeUInt32NoTag(avatarGuidListMemoizedSerializedSize);
       }
       for (int i = 0; i < avatarGuidList_.size(); i++) {
@@ -345,8 +345,8 @@ public final class AvatarDelNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 1701
-     * Obf: OICLNIIPCBB
+     * CmdId: 8219
+     * Obf: IOKBLLAGPJD
      * </pre>
      *
      * Protobuf type {@code AvatarDelNotify}
@@ -516,7 +516,7 @@ public final class AvatarDelNotifyOuterClass {
          }
       }
       /**
-       * <code>repeated uint64 avatar_guid_list = 5;</code>
+       * <code>repeated uint64 avatar_guid_list = 7;</code>
        * @return A list containing the avatarGuidList.
        */
       public java.util.List<java.lang.Long>
@@ -525,14 +525,14 @@ public final class AvatarDelNotifyOuterClass {
                  java.util.Collections.unmodifiableList(avatarGuidList_) : avatarGuidList_;
       }
       /**
-       * <code>repeated uint64 avatar_guid_list = 5;</code>
+       * <code>repeated uint64 avatar_guid_list = 7;</code>
        * @return The count of avatarGuidList.
        */
       public int getAvatarGuidListCount() {
         return avatarGuidList_.size();
       }
       /**
-       * <code>repeated uint64 avatar_guid_list = 5;</code>
+       * <code>repeated uint64 avatar_guid_list = 7;</code>
        * @param index The index of the element to return.
        * @return The avatarGuidList at the given index.
        */
@@ -540,7 +540,7 @@ public final class AvatarDelNotifyOuterClass {
         return avatarGuidList_.getLong(index);
       }
       /**
-       * <code>repeated uint64 avatar_guid_list = 5;</code>
+       * <code>repeated uint64 avatar_guid_list = 7;</code>
        * @param index The index to set the value at.
        * @param value The avatarGuidList to set.
        * @return This builder for chaining.
@@ -553,7 +553,7 @@ public final class AvatarDelNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint64 avatar_guid_list = 5;</code>
+       * <code>repeated uint64 avatar_guid_list = 7;</code>
        * @param value The avatarGuidList to add.
        * @return This builder for chaining.
        */
@@ -564,7 +564,7 @@ public final class AvatarDelNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint64 avatar_guid_list = 5;</code>
+       * <code>repeated uint64 avatar_guid_list = 7;</code>
        * @param values The avatarGuidList to add.
        * @return This builder for chaining.
        */
@@ -577,7 +577,7 @@ public final class AvatarDelNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint64 avatar_guid_list = 5;</code>
+       * <code>repeated uint64 avatar_guid_list = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearAvatarGuidList() {
@@ -654,7 +654,7 @@ public final class AvatarDelNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\025AvatarDelNotify.proto\"+\n\017AvatarDelNoti" +
-      "fy\022\030\n\020avatar_guid_list\030\005 \003(\004B\033\n\031emu.gras" +
+      "fy\022\030\n\020avatar_guid_list\030\007 \003(\004B\033\n\031emu.gras" +
       "scutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

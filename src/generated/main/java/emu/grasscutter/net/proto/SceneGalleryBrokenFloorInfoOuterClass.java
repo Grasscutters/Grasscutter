@@ -19,11 +19,17 @@ public final class SceneGalleryBrokenFloorInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>map&lt;uint32, uint32&gt; fall_count_map = 6;</code>
+     * <code>uint32 end_time = 4;</code>
+     * @return The endTime.
+     */
+    int getEndTime();
+
+    /**
+     * <code>map&lt;uint32, uint32&gt; fall_count_map = 14;</code>
      */
     int getFallCountMapCount();
     /**
-     * <code>map&lt;uint32, uint32&gt; fall_count_map = 6;</code>
+     * <code>map&lt;uint32, uint32&gt; fall_count_map = 14;</code>
      */
     boolean containsFallCountMap(
         int key);
@@ -34,33 +40,27 @@ public final class SceneGalleryBrokenFloorInfoOuterClass {
     java.util.Map<java.lang.Integer, java.lang.Integer>
     getFallCountMap();
     /**
-     * <code>map&lt;uint32, uint32&gt; fall_count_map = 6;</code>
+     * <code>map&lt;uint32, uint32&gt; fall_count_map = 14;</code>
      */
     java.util.Map<java.lang.Integer, java.lang.Integer>
     getFallCountMapMap();
     /**
-     * <code>map&lt;uint32, uint32&gt; fall_count_map = 6;</code>
+     * <code>map&lt;uint32, uint32&gt; fall_count_map = 14;</code>
      */
 
     int getFallCountMapOrDefault(
         int key,
         int defaultValue);
     /**
-     * <code>map&lt;uint32, uint32&gt; fall_count_map = 6;</code>
+     * <code>map&lt;uint32, uint32&gt; fall_count_map = 14;</code>
      */
 
     int getFallCountMapOrThrow(
         int key);
-
-    /**
-     * <code>uint32 end_time = 11;</code>
-     * @return The endTime.
-     */
-    int getEndTime();
   }
   /**
    * <pre>
-   * Obf: NBMIJCFNNEK
+   * Obf: FAPAGMKKDJG
    * </pre>
    *
    * Protobuf type {@code SceneGalleryBrokenFloorInfo}
@@ -108,7 +108,12 @@ public final class SceneGalleryBrokenFloorInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 50: {
+            case 32: {
+
+              endTime_ = input.readUInt32();
+              break;
+            }
+            case 114: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 fallCountMap_ = com.google.protobuf.MapField.newMapField(
                     FallCountMapDefaultEntryHolder.defaultEntry);
@@ -119,11 +124,6 @@ public final class SceneGalleryBrokenFloorInfoOuterClass {
                   FallCountMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
               fallCountMap_.getMutableMap().put(
                   fallCountMap__.getKey(), fallCountMap__.getValue());
-              break;
-            }
-            case 88: {
-
-              endTime_ = input.readUInt32();
               break;
             }
             default: {
@@ -155,7 +155,7 @@ public final class SceneGalleryBrokenFloorInfoOuterClass {
     protected com.google.protobuf.MapField internalGetMapField(
         int number) {
       switch (number) {
-        case 6:
+        case 14:
           return internalGetFallCountMap();
         default:
           throw new RuntimeException(
@@ -170,7 +170,18 @@ public final class SceneGalleryBrokenFloorInfoOuterClass {
               emu.grasscutter.net.proto.SceneGalleryBrokenFloorInfoOuterClass.SceneGalleryBrokenFloorInfo.class, emu.grasscutter.net.proto.SceneGalleryBrokenFloorInfoOuterClass.SceneGalleryBrokenFloorInfo.Builder.class);
     }
 
-    public static final int FALL_COUNT_MAP_FIELD_NUMBER = 6;
+    public static final int END_TIME_FIELD_NUMBER = 4;
+    private int endTime_;
+    /**
+     * <code>uint32 end_time = 4;</code>
+     * @return The endTime.
+     */
+    @java.lang.Override
+    public int getEndTime() {
+      return endTime_;
+    }
+
+    public static final int FALL_COUNT_MAP_FIELD_NUMBER = 14;
     private static final class FallCountMapDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.Integer, java.lang.Integer> defaultEntry =
@@ -197,7 +208,7 @@ public final class SceneGalleryBrokenFloorInfoOuterClass {
       return internalGetFallCountMap().getMap().size();
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; fall_count_map = 6;</code>
+     * <code>map&lt;uint32, uint32&gt; fall_count_map = 14;</code>
      */
 
     @java.lang.Override
@@ -215,7 +226,7 @@ public final class SceneGalleryBrokenFloorInfoOuterClass {
       return getFallCountMapMap();
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; fall_count_map = 6;</code>
+     * <code>map&lt;uint32, uint32&gt; fall_count_map = 14;</code>
      */
     @java.lang.Override
 
@@ -223,7 +234,7 @@ public final class SceneGalleryBrokenFloorInfoOuterClass {
       return internalGetFallCountMap().getMap();
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; fall_count_map = 6;</code>
+     * <code>map&lt;uint32, uint32&gt; fall_count_map = 14;</code>
      */
     @java.lang.Override
 
@@ -236,7 +247,7 @@ public final class SceneGalleryBrokenFloorInfoOuterClass {
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; fall_count_map = 6;</code>
+     * <code>map&lt;uint32, uint32&gt; fall_count_map = 14;</code>
      */
     @java.lang.Override
 
@@ -249,17 +260,6 @@ public final class SceneGalleryBrokenFloorInfoOuterClass {
         throw new java.lang.IllegalArgumentException();
       }
       return map.get(key);
-    }
-
-    public static final int END_TIME_FIELD_NUMBER = 11;
-    private int endTime_;
-    /**
-     * <code>uint32 end_time = 11;</code>
-     * @return The endTime.
-     */
-    @java.lang.Override
-    public int getEndTime() {
-      return endTime_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -276,15 +276,15 @@ public final class SceneGalleryBrokenFloorInfoOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (endTime_ != 0) {
+        output.writeUInt32(4, endTime_);
+      }
       com.google.protobuf.GeneratedMessageV3
         .serializeIntegerMapTo(
           output,
           internalGetFallCountMap(),
           FallCountMapDefaultEntryHolder.defaultEntry,
-          6);
-      if (endTime_ != 0) {
-        output.writeUInt32(11, endTime_);
-      }
+          14);
       unknownFields.writeTo(output);
     }
 
@@ -294,6 +294,10 @@ public final class SceneGalleryBrokenFloorInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (endTime_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(4, endTime_);
+      }
       for (java.util.Map.Entry<java.lang.Integer, java.lang.Integer> entry
            : internalGetFallCountMap().getMap().entrySet()) {
         com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
@@ -302,11 +306,7 @@ public final class SceneGalleryBrokenFloorInfoOuterClass {
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(6, fallCountMap__);
-      }
-      if (endTime_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, endTime_);
+            .computeMessageSize(14, fallCountMap__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -323,10 +323,10 @@ public final class SceneGalleryBrokenFloorInfoOuterClass {
       }
       emu.grasscutter.net.proto.SceneGalleryBrokenFloorInfoOuterClass.SceneGalleryBrokenFloorInfo other = (emu.grasscutter.net.proto.SceneGalleryBrokenFloorInfoOuterClass.SceneGalleryBrokenFloorInfo) obj;
 
-      if (!internalGetFallCountMap().equals(
-          other.internalGetFallCountMap())) return false;
       if (getEndTime()
           != other.getEndTime()) return false;
+      if (!internalGetFallCountMap().equals(
+          other.internalGetFallCountMap())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -338,12 +338,12 @@ public final class SceneGalleryBrokenFloorInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + END_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getEndTime();
       if (!internalGetFallCountMap().getMap().isEmpty()) {
         hash = (37 * hash) + FALL_COUNT_MAP_FIELD_NUMBER;
         hash = (53 * hash) + internalGetFallCountMap().hashCode();
       }
-      hash = (37 * hash) + END_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + getEndTime();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -441,7 +441,7 @@ public final class SceneGalleryBrokenFloorInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: NBMIJCFNNEK
+     * Obf: FAPAGMKKDJG
      * </pre>
      *
      * Protobuf type {@code SceneGalleryBrokenFloorInfo}
@@ -459,7 +459,7 @@ public final class SceneGalleryBrokenFloorInfoOuterClass {
       protected com.google.protobuf.MapField internalGetMapField(
           int number) {
         switch (number) {
-          case 6:
+          case 14:
             return internalGetFallCountMap();
           default:
             throw new RuntimeException(
@@ -470,7 +470,7 @@ public final class SceneGalleryBrokenFloorInfoOuterClass {
       protected com.google.protobuf.MapField internalGetMutableMapField(
           int number) {
         switch (number) {
-          case 6:
+          case 14:
             return internalGetMutableFallCountMap();
           default:
             throw new RuntimeException(
@@ -503,9 +503,9 @@ public final class SceneGalleryBrokenFloorInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        internalGetMutableFallCountMap().clear();
         endTime_ = 0;
 
+        internalGetMutableFallCountMap().clear();
         return this;
       }
 
@@ -533,9 +533,9 @@ public final class SceneGalleryBrokenFloorInfoOuterClass {
       public emu.grasscutter.net.proto.SceneGalleryBrokenFloorInfoOuterClass.SceneGalleryBrokenFloorInfo buildPartial() {
         emu.grasscutter.net.proto.SceneGalleryBrokenFloorInfoOuterClass.SceneGalleryBrokenFloorInfo result = new emu.grasscutter.net.proto.SceneGalleryBrokenFloorInfoOuterClass.SceneGalleryBrokenFloorInfo(this);
         int from_bitField0_ = bitField0_;
+        result.endTime_ = endTime_;
         result.fallCountMap_ = internalGetFallCountMap();
         result.fallCountMap_.makeImmutable();
-        result.endTime_ = endTime_;
         onBuilt();
         return result;
       }
@@ -584,11 +584,11 @@ public final class SceneGalleryBrokenFloorInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.SceneGalleryBrokenFloorInfoOuterClass.SceneGalleryBrokenFloorInfo other) {
         if (other == emu.grasscutter.net.proto.SceneGalleryBrokenFloorInfoOuterClass.SceneGalleryBrokenFloorInfo.getDefaultInstance()) return this;
-        internalGetMutableFallCountMap().mergeFrom(
-            other.internalGetFallCountMap());
         if (other.getEndTime() != 0) {
           setEndTime(other.getEndTime());
         }
+        internalGetMutableFallCountMap().mergeFrom(
+            other.internalGetFallCountMap());
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -619,6 +619,37 @@ public final class SceneGalleryBrokenFloorInfoOuterClass {
       }
       private int bitField0_;
 
+      private int endTime_ ;
+      /**
+       * <code>uint32 end_time = 4;</code>
+       * @return The endTime.
+       */
+      @java.lang.Override
+      public int getEndTime() {
+        return endTime_;
+      }
+      /**
+       * <code>uint32 end_time = 4;</code>
+       * @param value The endTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEndTime(int value) {
+        
+        endTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 end_time = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEndTime() {
+        
+        endTime_ = 0;
+        onChanged();
+        return this;
+      }
+
       private com.google.protobuf.MapField<
           java.lang.Integer, java.lang.Integer> fallCountMap_;
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
@@ -646,7 +677,7 @@ public final class SceneGalleryBrokenFloorInfoOuterClass {
         return internalGetFallCountMap().getMap().size();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; fall_count_map = 6;</code>
+       * <code>map&lt;uint32, uint32&gt; fall_count_map = 14;</code>
        */
 
       @java.lang.Override
@@ -664,7 +695,7 @@ public final class SceneGalleryBrokenFloorInfoOuterClass {
         return getFallCountMapMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; fall_count_map = 6;</code>
+       * <code>map&lt;uint32, uint32&gt; fall_count_map = 14;</code>
        */
       @java.lang.Override
 
@@ -672,7 +703,7 @@ public final class SceneGalleryBrokenFloorInfoOuterClass {
         return internalGetFallCountMap().getMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; fall_count_map = 6;</code>
+       * <code>map&lt;uint32, uint32&gt; fall_count_map = 14;</code>
        */
       @java.lang.Override
 
@@ -685,7 +716,7 @@ public final class SceneGalleryBrokenFloorInfoOuterClass {
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; fall_count_map = 6;</code>
+       * <code>map&lt;uint32, uint32&gt; fall_count_map = 14;</code>
        */
       @java.lang.Override
 
@@ -706,7 +737,7 @@ public final class SceneGalleryBrokenFloorInfoOuterClass {
         return this;
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; fall_count_map = 6;</code>
+       * <code>map&lt;uint32, uint32&gt; fall_count_map = 14;</code>
        */
 
       public Builder removeFallCountMap(
@@ -725,7 +756,7 @@ public final class SceneGalleryBrokenFloorInfoOuterClass {
         return internalGetMutableFallCountMap().getMutableMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; fall_count_map = 6;</code>
+       * <code>map&lt;uint32, uint32&gt; fall_count_map = 14;</code>
        */
       public Builder putFallCountMap(
           int key,
@@ -737,44 +768,13 @@ public final class SceneGalleryBrokenFloorInfoOuterClass {
         return this;
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; fall_count_map = 6;</code>
+       * <code>map&lt;uint32, uint32&gt; fall_count_map = 14;</code>
        */
 
       public Builder putAllFallCountMap(
           java.util.Map<java.lang.Integer, java.lang.Integer> values) {
         internalGetMutableFallCountMap().getMutableMap()
             .putAll(values);
-        return this;
-      }
-
-      private int endTime_ ;
-      /**
-       * <code>uint32 end_time = 11;</code>
-       * @return The endTime.
-       */
-      @java.lang.Override
-      public int getEndTime() {
-        return endTime_;
-      }
-      /**
-       * <code>uint32 end_time = 11;</code>
-       * @param value The endTime to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEndTime(int value) {
-        
-        endTime_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 end_time = 11;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEndTime() {
-        
-        endTime_ = 0;
-        onChanged();
         return this;
       }
       @java.lang.Override
@@ -850,9 +850,9 @@ public final class SceneGalleryBrokenFloorInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n!SceneGalleryBrokenFloorInfo.proto\"\254\001\n\033" +
-      "SceneGalleryBrokenFloorInfo\022F\n\016fall_coun" +
-      "t_map\030\006 \003(\0132..SceneGalleryBrokenFloorInf" +
-      "o.FallCountMapEntry\022\020\n\010end_time\030\013 \001(\r\0323\n" +
+      "SceneGalleryBrokenFloorInfo\022\020\n\010end_time\030" +
+      "\004 \001(\r\022F\n\016fall_count_map\030\016 \003(\0132..SceneGal" +
+      "leryBrokenFloorInfo.FallCountMapEntry\0323\n" +
       "\021FallCountMapEntry\022\013\n\003key\030\001 \001(\r\022\r\n\005value" +
       "\030\002 \001(\r:\0028\001B\033\n\031emu.grasscutter.net.protob" +
       "\006proto3"
@@ -866,7 +866,7 @@ public final class SceneGalleryBrokenFloorInfoOuterClass {
     internal_static_SceneGalleryBrokenFloorInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SceneGalleryBrokenFloorInfo_descriptor,
-        new java.lang.String[] { "FallCountMap", "EndTime", });
+        new java.lang.String[] { "EndTime", "FallCountMap", });
     internal_static_SceneGalleryBrokenFloorInfo_FallCountMapEntry_descriptor =
       internal_static_SceneGalleryBrokenFloorInfo_descriptor.getNestedTypes().get(0);
     internal_static_SceneGalleryBrokenFloorInfo_FallCountMapEntry_fieldAccessorTable = new

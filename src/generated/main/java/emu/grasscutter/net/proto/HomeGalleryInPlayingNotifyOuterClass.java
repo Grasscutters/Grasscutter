@@ -19,15 +19,15 @@ public final class HomeGalleryInPlayingNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 gallery_id = 14;</code>
+     * <code>uint32 gallery_id = 11;</code>
      * @return The galleryId.
      */
     int getGalleryId();
   }
   /**
    * <pre>
-   * CmdId: 5568
-   * Obf: EGCCNDJADBN
+   * CmdId: 20552
+   * Obf: MECIBLPNLEF
    * </pre>
    *
    * Protobuf type {@code HomeGalleryInPlayingNotify}
@@ -74,7 +74,7 @@ public final class HomeGalleryInPlayingNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 112: {
+            case 88: {
 
               galleryId_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class HomeGalleryInPlayingNotifyOuterClass {
               emu.grasscutter.net.proto.HomeGalleryInPlayingNotifyOuterClass.HomeGalleryInPlayingNotify.class, emu.grasscutter.net.proto.HomeGalleryInPlayingNotifyOuterClass.HomeGalleryInPlayingNotify.Builder.class);
     }
 
-    public static final int GALLERY_ID_FIELD_NUMBER = 14;
+    public static final int GALLERY_ID_FIELD_NUMBER = 11;
     private int galleryId_;
     /**
-     * <code>uint32 gallery_id = 14;</code>
+     * <code>uint32 gallery_id = 11;</code>
      * @return The galleryId.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class HomeGalleryInPlayingNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (galleryId_ != 0) {
-        output.writeUInt32(14, galleryId_);
+        output.writeUInt32(11, galleryId_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class HomeGalleryInPlayingNotifyOuterClass {
       size = 0;
       if (galleryId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, galleryId_);
+          .computeUInt32Size(11, galleryId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class HomeGalleryInPlayingNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 5568
-     * Obf: EGCCNDJADBN
+     * CmdId: 20552
+     * Obf: MECIBLPNLEF
      * </pre>
      *
      * Protobuf type {@code HomeGalleryInPlayingNotify}
@@ -431,7 +431,7 @@ public final class HomeGalleryInPlayingNotifyOuterClass {
 
       private int galleryId_ ;
       /**
-       * <code>uint32 gallery_id = 14;</code>
+       * <code>uint32 gallery_id = 11;</code>
        * @return The galleryId.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class HomeGalleryInPlayingNotifyOuterClass {
         return galleryId_;
       }
       /**
-       * <code>uint32 gallery_id = 14;</code>
+       * <code>uint32 gallery_id = 11;</code>
        * @param value The galleryId to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class HomeGalleryInPlayingNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 gallery_id = 14;</code>
+       * <code>uint32 gallery_id = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearGalleryId() {
@@ -527,7 +527,7 @@ public final class HomeGalleryInPlayingNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n HomeGalleryInPlayingNotify.proto\"0\n\032Ho" +
-      "meGalleryInPlayingNotify\022\022\n\ngallery_id\030\016" +
+      "meGalleryInPlayingNotify\022\022\n\ngallery_id\030\013" +
       " \001(\rB\033\n\031emu.grasscutter.net.protob\006proto" +
       "3"
     };

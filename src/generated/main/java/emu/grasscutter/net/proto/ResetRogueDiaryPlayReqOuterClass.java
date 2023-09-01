@@ -19,15 +19,15 @@ public final class ResetRogueDiaryPlayReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 stage_id = 15;</code>
+     * <code>uint32 stage_id = 4;</code>
      * @return The stageId.
      */
     int getStageId();
   }
   /**
    * <pre>
-   * CmdId: 8459
-   * Obf: HMACMGIOHDG
+   * CmdId: 3800
+   * Obf: KDHFDDAOPEN
    * </pre>
    *
    * Protobuf type {@code ResetRogueDiaryPlayReq}
@@ -74,7 +74,7 @@ public final class ResetRogueDiaryPlayReqOuterClass {
             case 0:
               done = true;
               break;
-            case 120: {
+            case 32: {
 
               stageId_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class ResetRogueDiaryPlayReqOuterClass {
               emu.grasscutter.net.proto.ResetRogueDiaryPlayReqOuterClass.ResetRogueDiaryPlayReq.class, emu.grasscutter.net.proto.ResetRogueDiaryPlayReqOuterClass.ResetRogueDiaryPlayReq.Builder.class);
     }
 
-    public static final int STAGE_ID_FIELD_NUMBER = 15;
+    public static final int STAGE_ID_FIELD_NUMBER = 4;
     private int stageId_;
     /**
-     * <code>uint32 stage_id = 15;</code>
+     * <code>uint32 stage_id = 4;</code>
      * @return The stageId.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class ResetRogueDiaryPlayReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (stageId_ != 0) {
-        output.writeUInt32(15, stageId_);
+        output.writeUInt32(4, stageId_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class ResetRogueDiaryPlayReqOuterClass {
       size = 0;
       if (stageId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, stageId_);
+          .computeUInt32Size(4, stageId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class ResetRogueDiaryPlayReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8459
-     * Obf: HMACMGIOHDG
+     * CmdId: 3800
+     * Obf: KDHFDDAOPEN
      * </pre>
      *
      * Protobuf type {@code ResetRogueDiaryPlayReq}
@@ -431,7 +431,7 @@ public final class ResetRogueDiaryPlayReqOuterClass {
 
       private int stageId_ ;
       /**
-       * <code>uint32 stage_id = 15;</code>
+       * <code>uint32 stage_id = 4;</code>
        * @return The stageId.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class ResetRogueDiaryPlayReqOuterClass {
         return stageId_;
       }
       /**
-       * <code>uint32 stage_id = 15;</code>
+       * <code>uint32 stage_id = 4;</code>
        * @param value The stageId to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class ResetRogueDiaryPlayReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 stage_id = 15;</code>
+       * <code>uint32 stage_id = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearStageId() {
@@ -527,7 +527,7 @@ public final class ResetRogueDiaryPlayReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\034ResetRogueDiaryPlayReq.proto\"*\n\026ResetR" +
-      "ogueDiaryPlayReq\022\020\n\010stage_id\030\017 \001(\rB\033\n\031em" +
+      "ogueDiaryPlayReq\022\020\n\010stage_id\030\004 \001(\rB\033\n\031em" +
       "u.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

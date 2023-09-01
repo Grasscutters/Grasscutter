@@ -19,32 +19,32 @@ public final class BreakoutSyncCreateConnectOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .BreakoutSyncConnectUidInfo uid_info_list = 2;</code>
+     * <code>repeated .BreakoutSyncConnectUidInfo uid_info_list = 11;</code>
      */
     java.util.List<emu.grasscutter.net.proto.BreakoutSyncConnectUidInfoOuterClass.BreakoutSyncConnectUidInfo> 
         getUidInfoListList();
     /**
-     * <code>repeated .BreakoutSyncConnectUidInfo uid_info_list = 2;</code>
+     * <code>repeated .BreakoutSyncConnectUidInfo uid_info_list = 11;</code>
      */
     emu.grasscutter.net.proto.BreakoutSyncConnectUidInfoOuterClass.BreakoutSyncConnectUidInfo getUidInfoList(int index);
     /**
-     * <code>repeated .BreakoutSyncConnectUidInfo uid_info_list = 2;</code>
+     * <code>repeated .BreakoutSyncConnectUidInfo uid_info_list = 11;</code>
      */
     int getUidInfoListCount();
     /**
-     * <code>repeated .BreakoutSyncConnectUidInfo uid_info_list = 2;</code>
+     * <code>repeated .BreakoutSyncConnectUidInfo uid_info_list = 11;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.BreakoutSyncConnectUidInfoOuterClass.BreakoutSyncConnectUidInfoOrBuilder> 
         getUidInfoListOrBuilderList();
     /**
-     * <code>repeated .BreakoutSyncConnectUidInfo uid_info_list = 2;</code>
+     * <code>repeated .BreakoutSyncConnectUidInfo uid_info_list = 11;</code>
      */
     emu.grasscutter.net.proto.BreakoutSyncConnectUidInfoOuterClass.BreakoutSyncConnectUidInfoOrBuilder getUidInfoListOrBuilder(
         int index);
   }
   /**
    * <pre>
-   * Obf: OHONHNDAHHA
+   * Obf: DGCAHJEHMHC
    * </pre>
    *
    * Protobuf type {@code BreakoutSyncCreateConnect}
@@ -93,7 +93,7 @@ public final class BreakoutSyncCreateConnectOuterClass {
             case 0:
               done = true;
               break;
-            case 18: {
+            case 90: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 uidInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.BreakoutSyncConnectUidInfoOuterClass.BreakoutSyncConnectUidInfo>();
                 mutable_bitField0_ |= 0x00000001;
@@ -137,17 +137,17 @@ public final class BreakoutSyncCreateConnectOuterClass {
               emu.grasscutter.net.proto.BreakoutSyncCreateConnectOuterClass.BreakoutSyncCreateConnect.class, emu.grasscutter.net.proto.BreakoutSyncCreateConnectOuterClass.BreakoutSyncCreateConnect.Builder.class);
     }
 
-    public static final int UID_INFO_LIST_FIELD_NUMBER = 2;
+    public static final int UID_INFO_LIST_FIELD_NUMBER = 11;
     private java.util.List<emu.grasscutter.net.proto.BreakoutSyncConnectUidInfoOuterClass.BreakoutSyncConnectUidInfo> uidInfoList_;
     /**
-     * <code>repeated .BreakoutSyncConnectUidInfo uid_info_list = 2;</code>
+     * <code>repeated .BreakoutSyncConnectUidInfo uid_info_list = 11;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.BreakoutSyncConnectUidInfoOuterClass.BreakoutSyncConnectUidInfo> getUidInfoListList() {
       return uidInfoList_;
     }
     /**
-     * <code>repeated .BreakoutSyncConnectUidInfo uid_info_list = 2;</code>
+     * <code>repeated .BreakoutSyncConnectUidInfo uid_info_list = 11;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.BreakoutSyncConnectUidInfoOuterClass.BreakoutSyncConnectUidInfoOrBuilder> 
@@ -155,21 +155,21 @@ public final class BreakoutSyncCreateConnectOuterClass {
       return uidInfoList_;
     }
     /**
-     * <code>repeated .BreakoutSyncConnectUidInfo uid_info_list = 2;</code>
+     * <code>repeated .BreakoutSyncConnectUidInfo uid_info_list = 11;</code>
      */
     @java.lang.Override
     public int getUidInfoListCount() {
       return uidInfoList_.size();
     }
     /**
-     * <code>repeated .BreakoutSyncConnectUidInfo uid_info_list = 2;</code>
+     * <code>repeated .BreakoutSyncConnectUidInfo uid_info_list = 11;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.BreakoutSyncConnectUidInfoOuterClass.BreakoutSyncConnectUidInfo getUidInfoList(int index) {
       return uidInfoList_.get(index);
     }
     /**
-     * <code>repeated .BreakoutSyncConnectUidInfo uid_info_list = 2;</code>
+     * <code>repeated .BreakoutSyncConnectUidInfo uid_info_list = 11;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.BreakoutSyncConnectUidInfoOuterClass.BreakoutSyncConnectUidInfoOrBuilder getUidInfoListOrBuilder(
@@ -192,7 +192,7 @@ public final class BreakoutSyncCreateConnectOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < uidInfoList_.size(); i++) {
-        output.writeMessage(2, uidInfoList_.get(i));
+        output.writeMessage(11, uidInfoList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -205,7 +205,7 @@ public final class BreakoutSyncCreateConnectOuterClass {
       size = 0;
       for (int i = 0; i < uidInfoList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, uidInfoList_.get(i));
+          .computeMessageSize(11, uidInfoList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -336,7 +336,7 @@ public final class BreakoutSyncCreateConnectOuterClass {
     }
     /**
      * <pre>
-     * Obf: OHONHNDAHHA
+     * Obf: DGCAHJEHMHC
      * </pre>
      *
      * Protobuf type {@code BreakoutSyncCreateConnect}
@@ -536,7 +536,7 @@ public final class BreakoutSyncCreateConnectOuterClass {
           emu.grasscutter.net.proto.BreakoutSyncConnectUidInfoOuterClass.BreakoutSyncConnectUidInfo, emu.grasscutter.net.proto.BreakoutSyncConnectUidInfoOuterClass.BreakoutSyncConnectUidInfo.Builder, emu.grasscutter.net.proto.BreakoutSyncConnectUidInfoOuterClass.BreakoutSyncConnectUidInfoOrBuilder> uidInfoListBuilder_;
 
       /**
-       * <code>repeated .BreakoutSyncConnectUidInfo uid_info_list = 2;</code>
+       * <code>repeated .BreakoutSyncConnectUidInfo uid_info_list = 11;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.BreakoutSyncConnectUidInfoOuterClass.BreakoutSyncConnectUidInfo> getUidInfoListList() {
         if (uidInfoListBuilder_ == null) {
@@ -546,7 +546,7 @@ public final class BreakoutSyncCreateConnectOuterClass {
         }
       }
       /**
-       * <code>repeated .BreakoutSyncConnectUidInfo uid_info_list = 2;</code>
+       * <code>repeated .BreakoutSyncConnectUidInfo uid_info_list = 11;</code>
        */
       public int getUidInfoListCount() {
         if (uidInfoListBuilder_ == null) {
@@ -556,7 +556,7 @@ public final class BreakoutSyncCreateConnectOuterClass {
         }
       }
       /**
-       * <code>repeated .BreakoutSyncConnectUidInfo uid_info_list = 2;</code>
+       * <code>repeated .BreakoutSyncConnectUidInfo uid_info_list = 11;</code>
        */
       public emu.grasscutter.net.proto.BreakoutSyncConnectUidInfoOuterClass.BreakoutSyncConnectUidInfo getUidInfoList(int index) {
         if (uidInfoListBuilder_ == null) {
@@ -566,7 +566,7 @@ public final class BreakoutSyncCreateConnectOuterClass {
         }
       }
       /**
-       * <code>repeated .BreakoutSyncConnectUidInfo uid_info_list = 2;</code>
+       * <code>repeated .BreakoutSyncConnectUidInfo uid_info_list = 11;</code>
        */
       public Builder setUidInfoList(
           int index, emu.grasscutter.net.proto.BreakoutSyncConnectUidInfoOuterClass.BreakoutSyncConnectUidInfo value) {
@@ -583,7 +583,7 @@ public final class BreakoutSyncCreateConnectOuterClass {
         return this;
       }
       /**
-       * <code>repeated .BreakoutSyncConnectUidInfo uid_info_list = 2;</code>
+       * <code>repeated .BreakoutSyncConnectUidInfo uid_info_list = 11;</code>
        */
       public Builder setUidInfoList(
           int index, emu.grasscutter.net.proto.BreakoutSyncConnectUidInfoOuterClass.BreakoutSyncConnectUidInfo.Builder builderForValue) {
@@ -597,7 +597,7 @@ public final class BreakoutSyncCreateConnectOuterClass {
         return this;
       }
       /**
-       * <code>repeated .BreakoutSyncConnectUidInfo uid_info_list = 2;</code>
+       * <code>repeated .BreakoutSyncConnectUidInfo uid_info_list = 11;</code>
        */
       public Builder addUidInfoList(emu.grasscutter.net.proto.BreakoutSyncConnectUidInfoOuterClass.BreakoutSyncConnectUidInfo value) {
         if (uidInfoListBuilder_ == null) {
@@ -613,7 +613,7 @@ public final class BreakoutSyncCreateConnectOuterClass {
         return this;
       }
       /**
-       * <code>repeated .BreakoutSyncConnectUidInfo uid_info_list = 2;</code>
+       * <code>repeated .BreakoutSyncConnectUidInfo uid_info_list = 11;</code>
        */
       public Builder addUidInfoList(
           int index, emu.grasscutter.net.proto.BreakoutSyncConnectUidInfoOuterClass.BreakoutSyncConnectUidInfo value) {
@@ -630,7 +630,7 @@ public final class BreakoutSyncCreateConnectOuterClass {
         return this;
       }
       /**
-       * <code>repeated .BreakoutSyncConnectUidInfo uid_info_list = 2;</code>
+       * <code>repeated .BreakoutSyncConnectUidInfo uid_info_list = 11;</code>
        */
       public Builder addUidInfoList(
           emu.grasscutter.net.proto.BreakoutSyncConnectUidInfoOuterClass.BreakoutSyncConnectUidInfo.Builder builderForValue) {
@@ -644,7 +644,7 @@ public final class BreakoutSyncCreateConnectOuterClass {
         return this;
       }
       /**
-       * <code>repeated .BreakoutSyncConnectUidInfo uid_info_list = 2;</code>
+       * <code>repeated .BreakoutSyncConnectUidInfo uid_info_list = 11;</code>
        */
       public Builder addUidInfoList(
           int index, emu.grasscutter.net.proto.BreakoutSyncConnectUidInfoOuterClass.BreakoutSyncConnectUidInfo.Builder builderForValue) {
@@ -658,7 +658,7 @@ public final class BreakoutSyncCreateConnectOuterClass {
         return this;
       }
       /**
-       * <code>repeated .BreakoutSyncConnectUidInfo uid_info_list = 2;</code>
+       * <code>repeated .BreakoutSyncConnectUidInfo uid_info_list = 11;</code>
        */
       public Builder addAllUidInfoList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.BreakoutSyncConnectUidInfoOuterClass.BreakoutSyncConnectUidInfo> values) {
@@ -673,7 +673,7 @@ public final class BreakoutSyncCreateConnectOuterClass {
         return this;
       }
       /**
-       * <code>repeated .BreakoutSyncConnectUidInfo uid_info_list = 2;</code>
+       * <code>repeated .BreakoutSyncConnectUidInfo uid_info_list = 11;</code>
        */
       public Builder clearUidInfoList() {
         if (uidInfoListBuilder_ == null) {
@@ -686,7 +686,7 @@ public final class BreakoutSyncCreateConnectOuterClass {
         return this;
       }
       /**
-       * <code>repeated .BreakoutSyncConnectUidInfo uid_info_list = 2;</code>
+       * <code>repeated .BreakoutSyncConnectUidInfo uid_info_list = 11;</code>
        */
       public Builder removeUidInfoList(int index) {
         if (uidInfoListBuilder_ == null) {
@@ -699,14 +699,14 @@ public final class BreakoutSyncCreateConnectOuterClass {
         return this;
       }
       /**
-       * <code>repeated .BreakoutSyncConnectUidInfo uid_info_list = 2;</code>
+       * <code>repeated .BreakoutSyncConnectUidInfo uid_info_list = 11;</code>
        */
       public emu.grasscutter.net.proto.BreakoutSyncConnectUidInfoOuterClass.BreakoutSyncConnectUidInfo.Builder getUidInfoListBuilder(
           int index) {
         return getUidInfoListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .BreakoutSyncConnectUidInfo uid_info_list = 2;</code>
+       * <code>repeated .BreakoutSyncConnectUidInfo uid_info_list = 11;</code>
        */
       public emu.grasscutter.net.proto.BreakoutSyncConnectUidInfoOuterClass.BreakoutSyncConnectUidInfoOrBuilder getUidInfoListOrBuilder(
           int index) {
@@ -716,7 +716,7 @@ public final class BreakoutSyncCreateConnectOuterClass {
         }
       }
       /**
-       * <code>repeated .BreakoutSyncConnectUidInfo uid_info_list = 2;</code>
+       * <code>repeated .BreakoutSyncConnectUidInfo uid_info_list = 11;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.BreakoutSyncConnectUidInfoOuterClass.BreakoutSyncConnectUidInfoOrBuilder> 
            getUidInfoListOrBuilderList() {
@@ -727,14 +727,14 @@ public final class BreakoutSyncCreateConnectOuterClass {
         }
       }
       /**
-       * <code>repeated .BreakoutSyncConnectUidInfo uid_info_list = 2;</code>
+       * <code>repeated .BreakoutSyncConnectUidInfo uid_info_list = 11;</code>
        */
       public emu.grasscutter.net.proto.BreakoutSyncConnectUidInfoOuterClass.BreakoutSyncConnectUidInfo.Builder addUidInfoListBuilder() {
         return getUidInfoListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.BreakoutSyncConnectUidInfoOuterClass.BreakoutSyncConnectUidInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .BreakoutSyncConnectUidInfo uid_info_list = 2;</code>
+       * <code>repeated .BreakoutSyncConnectUidInfo uid_info_list = 11;</code>
        */
       public emu.grasscutter.net.proto.BreakoutSyncConnectUidInfoOuterClass.BreakoutSyncConnectUidInfo.Builder addUidInfoListBuilder(
           int index) {
@@ -742,7 +742,7 @@ public final class BreakoutSyncCreateConnectOuterClass {
             index, emu.grasscutter.net.proto.BreakoutSyncConnectUidInfoOuterClass.BreakoutSyncConnectUidInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .BreakoutSyncConnectUidInfo uid_info_list = 2;</code>
+       * <code>repeated .BreakoutSyncConnectUidInfo uid_info_list = 11;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.BreakoutSyncConnectUidInfoOuterClass.BreakoutSyncConnectUidInfo.Builder> 
            getUidInfoListBuilderList() {
@@ -831,7 +831,7 @@ public final class BreakoutSyncCreateConnectOuterClass {
     java.lang.String[] descriptorData = {
       "\n\037BreakoutSyncCreateConnect.proto\032 Break" +
       "outSyncConnectUidInfo.proto\"O\n\031BreakoutS" +
-      "yncCreateConnect\0222\n\ruid_info_list\030\002 \003(\0132" +
+      "yncCreateConnect\0222\n\ruid_info_list\030\013 \003(\0132" +
       "\033.BreakoutSyncConnectUidInfoB\033\n\031emu.gras" +
       "scutter.net.protob\006proto3"
     };

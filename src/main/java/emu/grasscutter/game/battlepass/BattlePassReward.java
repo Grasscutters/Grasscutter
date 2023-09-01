@@ -1,7 +1,6 @@
 package emu.grasscutter.game.battlepass;
 
-import dev.morphia.annotations.Entity;
-import dev.morphia.annotations.Transient;
+import dev.morphia.annotations.*;
 import emu.grasscutter.data.excels.BattlePassMissionData;
 import emu.grasscutter.net.proto.BattlePassRewardTagOuterClass.BattlePassRewardTag;
 import emu.grasscutter.net.proto.BattlePassUnlockStatusOuterClass.BattlePassUnlockStatus;

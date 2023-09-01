@@ -26,8 +26,8 @@ public final class EnterFishingReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 5828
-   * Obf: OOAMFNEMEBB
+   * CmdId: 26577
+   * Obf: IINOFMOLGIL
    * </pre>
    *
    * Protobuf type {@code EnterFishingReq}
@@ -279,8 +279,8 @@ public final class EnterFishingReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 5828
-     * Obf: OOAMFNEMEBB
+     * CmdId: 26577
+     * Obf: IINOFMOLGIL
      * </pre>
      *
      * Protobuf type {@code EnterFishingReq}

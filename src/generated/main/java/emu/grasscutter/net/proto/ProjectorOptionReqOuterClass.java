@@ -19,21 +19,21 @@ public final class ProjectorOptionReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 op_type = 5;</code>
-     * @return The opType.
-     */
-    int getOpType();
-
-    /**
-     * <code>uint32 entity_id = 1;</code>
+     * <code>uint32 entity_id = 5;</code>
      * @return The entityId.
      */
     int getEntityId();
+
+    /**
+     * <code>uint32 op_type = 15;</code>
+     * @return The opType.
+     */
+    int getOpType();
   }
   /**
    * <pre>
-   * CmdId: 836
-   * Obf: HLMNMEGJJAO
+   * CmdId: 5441
+   * Obf: HENBPBCCNHC
    * </pre>
    *
    * Protobuf type {@code ProjectorOptionReq}
@@ -80,12 +80,12 @@ public final class ProjectorOptionReqOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 40: {
 
               entityId_ = input.readUInt32();
               break;
             }
-            case 40: {
+            case 120: {
 
               opType_ = input.readUInt32();
               break;
@@ -123,9 +123,9 @@ public final class ProjectorOptionReqOuterClass {
     }
 
     /**
-     * Protobuf enum {@code ProjectorOptionReq.OPFNDCJBDLI}
+     * Protobuf enum {@code ProjectorOptionReq.NFEFIEJPDGO}
      */
-    public enum OPFNDCJBDLI
+    public enum NFEFIEJPDGO
         implements com.google.protobuf.ProtocolMessageEnum {
       /**
        * <code>DOENKMNEPFO_PROJECTOR_OP_NONE = 0;</code>
@@ -170,7 +170,7 @@ public final class ProjectorOptionReqOuterClass {
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
-      public static OPFNDCJBDLI valueOf(int value) {
+      public static NFEFIEJPDGO valueOf(int value) {
         return forNumber(value);
       }
 
@@ -178,7 +178,7 @@ public final class ProjectorOptionReqOuterClass {
        * @param value The numeric wire value of the corresponding enum entry.
        * @return The enum associated with the given numeric wire value.
        */
-      public static OPFNDCJBDLI forNumber(int value) {
+      public static NFEFIEJPDGO forNumber(int value) {
         switch (value) {
           case 0: return DOENKMNEPFO_PROJECTOR_OP_NONE;
           case 1: return DOENKMNEPFO_PROJECTOR_OP_CREATE;
@@ -187,15 +187,15 @@ public final class ProjectorOptionReqOuterClass {
         }
       }
 
-      public static com.google.protobuf.Internal.EnumLiteMap<OPFNDCJBDLI>
+      public static com.google.protobuf.Internal.EnumLiteMap<NFEFIEJPDGO>
           internalGetValueMap() {
         return internalValueMap;
       }
       private static final com.google.protobuf.Internal.EnumLiteMap<
-          OPFNDCJBDLI> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<OPFNDCJBDLI>() {
-              public OPFNDCJBDLI findValueByNumber(int number) {
-                return OPFNDCJBDLI.forNumber(number);
+          NFEFIEJPDGO> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<NFEFIEJPDGO>() {
+              public NFEFIEJPDGO findValueByNumber(int number) {
+                return NFEFIEJPDGO.forNumber(number);
               }
             };
 
@@ -216,9 +216,9 @@ public final class ProjectorOptionReqOuterClass {
         return emu.grasscutter.net.proto.ProjectorOptionReqOuterClass.ProjectorOptionReq.getDescriptor().getEnumTypes().get(0);
       }
 
-      private static final OPFNDCJBDLI[] VALUES = values();
+      private static final NFEFIEJPDGO[] VALUES = values();
 
-      public static OPFNDCJBDLI valueOf(
+      public static NFEFIEJPDGO valueOf(
           com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
         if (desc.getType() != getDescriptor()) {
           throw new java.lang.IllegalArgumentException(
@@ -232,33 +232,33 @@ public final class ProjectorOptionReqOuterClass {
 
       private final int value;
 
-      private OPFNDCJBDLI(int value) {
+      private NFEFIEJPDGO(int value) {
         this.value = value;
       }
 
-      // @@protoc_insertion_point(enum_scope:ProjectorOptionReq.OPFNDCJBDLI)
+      // @@protoc_insertion_point(enum_scope:ProjectorOptionReq.NFEFIEJPDGO)
     }
 
-    public static final int OP_TYPE_FIELD_NUMBER = 5;
-    private int opType_;
-    /**
-     * <code>uint32 op_type = 5;</code>
-     * @return The opType.
-     */
-    @java.lang.Override
-    public int getOpType() {
-      return opType_;
-    }
-
-    public static final int ENTITY_ID_FIELD_NUMBER = 1;
+    public static final int ENTITY_ID_FIELD_NUMBER = 5;
     private int entityId_;
     /**
-     * <code>uint32 entity_id = 1;</code>
+     * <code>uint32 entity_id = 5;</code>
      * @return The entityId.
      */
     @java.lang.Override
     public int getEntityId() {
       return entityId_;
+    }
+
+    public static final int OP_TYPE_FIELD_NUMBER = 15;
+    private int opType_;
+    /**
+     * <code>uint32 op_type = 15;</code>
+     * @return The opType.
+     */
+    @java.lang.Override
+    public int getOpType() {
+      return opType_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -276,10 +276,10 @@ public final class ProjectorOptionReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (entityId_ != 0) {
-        output.writeUInt32(1, entityId_);
+        output.writeUInt32(5, entityId_);
       }
       if (opType_ != 0) {
-        output.writeUInt32(5, opType_);
+        output.writeUInt32(15, opType_);
       }
       unknownFields.writeTo(output);
     }
@@ -292,11 +292,11 @@ public final class ProjectorOptionReqOuterClass {
       size = 0;
       if (entityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, entityId_);
+          .computeUInt32Size(5, entityId_);
       }
       if (opType_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, opType_);
+          .computeUInt32Size(15, opType_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -313,10 +313,10 @@ public final class ProjectorOptionReqOuterClass {
       }
       emu.grasscutter.net.proto.ProjectorOptionReqOuterClass.ProjectorOptionReq other = (emu.grasscutter.net.proto.ProjectorOptionReqOuterClass.ProjectorOptionReq) obj;
 
-      if (getOpType()
-          != other.getOpType()) return false;
       if (getEntityId()
           != other.getEntityId()) return false;
+      if (getOpType()
+          != other.getOpType()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -328,10 +328,10 @@ public final class ProjectorOptionReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + OP_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + getOpType();
       hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getEntityId();
+      hash = (37 * hash) + OP_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getOpType();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -429,8 +429,8 @@ public final class ProjectorOptionReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 836
-     * Obf: HLMNMEGJJAO
+     * CmdId: 5441
+     * Obf: HENBPBCCNHC
      * </pre>
      *
      * Protobuf type {@code ProjectorOptionReq}
@@ -470,9 +470,9 @@ public final class ProjectorOptionReqOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        opType_ = 0;
-
         entityId_ = 0;
+
+        opType_ = 0;
 
         return this;
       }
@@ -500,8 +500,8 @@ public final class ProjectorOptionReqOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.ProjectorOptionReqOuterClass.ProjectorOptionReq buildPartial() {
         emu.grasscutter.net.proto.ProjectorOptionReqOuterClass.ProjectorOptionReq result = new emu.grasscutter.net.proto.ProjectorOptionReqOuterClass.ProjectorOptionReq(this);
-        result.opType_ = opType_;
         result.entityId_ = entityId_;
+        result.opType_ = opType_;
         onBuilt();
         return result;
       }
@@ -550,11 +550,11 @@ public final class ProjectorOptionReqOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.ProjectorOptionReqOuterClass.ProjectorOptionReq other) {
         if (other == emu.grasscutter.net.proto.ProjectorOptionReqOuterClass.ProjectorOptionReq.getDefaultInstance()) return this;
-        if (other.getOpType() != 0) {
-          setOpType(other.getOpType());
-        }
         if (other.getEntityId() != 0) {
           setEntityId(other.getEntityId());
+        }
+        if (other.getOpType() != 0) {
+          setOpType(other.getOpType());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -585,40 +585,9 @@ public final class ProjectorOptionReqOuterClass {
         return this;
       }
 
-      private int opType_ ;
-      /**
-       * <code>uint32 op_type = 5;</code>
-       * @return The opType.
-       */
-      @java.lang.Override
-      public int getOpType() {
-        return opType_;
-      }
-      /**
-       * <code>uint32 op_type = 5;</code>
-       * @param value The opType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOpType(int value) {
-        
-        opType_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 op_type = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearOpType() {
-        
-        opType_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int entityId_ ;
       /**
-       * <code>uint32 entity_id = 1;</code>
+       * <code>uint32 entity_id = 5;</code>
        * @return The entityId.
        */
       @java.lang.Override
@@ -626,7 +595,7 @@ public final class ProjectorOptionReqOuterClass {
         return entityId_;
       }
       /**
-       * <code>uint32 entity_id = 1;</code>
+       * <code>uint32 entity_id = 5;</code>
        * @param value The entityId to set.
        * @return This builder for chaining.
        */
@@ -637,12 +606,43 @@ public final class ProjectorOptionReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 entity_id = 1;</code>
+       * <code>uint32 entity_id = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
         
         entityId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int opType_ ;
+      /**
+       * <code>uint32 op_type = 15;</code>
+       * @return The opType.
+       */
+      @java.lang.Override
+      public int getOpType() {
+        return opType_;
+      }
+      /**
+       * <code>uint32 op_type = 15;</code>
+       * @param value The opType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOpType(int value) {
+        
+        opType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 op_type = 15;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOpType() {
+        
+        opType_ = 0;
         onChanged();
         return this;
       }
@@ -714,8 +714,8 @@ public final class ProjectorOptionReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\030ProjectorOptionReq.proto\"\265\001\n\022Projector" +
-      "OptionReq\022\017\n\007op_type\030\005 \001(\r\022\021\n\tentity_id\030" +
-      "\001 \001(\r\"{\n\013OPFNDCJBDLI\022!\n\035DOENKMNEPFO_PROJ" +
+      "OptionReq\022\021\n\tentity_id\030\005 \001(\r\022\017\n\007op_type\030" +
+      "\017 \001(\r\"{\n\013NFEFIEJPDGO\022!\n\035DOENKMNEPFO_PROJ" +
       "ECTOR_OP_NONE\020\000\022#\n\037DOENKMNEPFO_PROJECTOR" +
       "_OP_CREATE\020\001\022$\n DOENKMNEPFO_PROJECTOR_OP" +
       "_DESTROY\020\002B\033\n\031emu.grasscutter.net.protob" +
@@ -730,7 +730,7 @@ public final class ProjectorOptionReqOuterClass {
     internal_static_ProjectorOptionReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ProjectorOptionReq_descriptor,
-        new java.lang.String[] { "OpType", "EntityId", });
+        new java.lang.String[] { "EntityId", "OpType", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

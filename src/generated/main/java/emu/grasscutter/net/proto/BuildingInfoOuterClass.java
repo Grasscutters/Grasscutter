@@ -62,7 +62,7 @@ public final class BuildingInfoOuterClass {
   }
   /**
    * <pre>
-   * Obf: JBIEMDCOMAM
+   * Obf: OPKICDMJEJM
    * </pre>
    *
    * Protobuf type {@code BuildingInfo}
@@ -476,7 +476,7 @@ public final class BuildingInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: JBIEMDCOMAM
+     * Obf: OPKICDMJEJM
      * </pre>
      *
      * Protobuf type {@code BuildingInfo}

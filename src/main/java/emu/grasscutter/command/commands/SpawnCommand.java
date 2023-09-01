@@ -1,26 +1,22 @@
 package emu.grasscutter.command.commands;
 
-import static emu.grasscutter.command.CommandHelpers.*;
-import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
-import static emu.grasscutter.utils.lang.Language.translate;
-
-import emu.grasscutter.command.Command;
-import emu.grasscutter.command.CommandHandler;
+import emu.grasscutter.command.*;
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.excels.GadgetData;
-import emu.grasscutter.data.excels.ItemData;
+import emu.grasscutter.data.excels.*;
 import emu.grasscutter.data.excels.monster.MonsterData;
 import emu.grasscutter.game.entity.*;
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.game.props.EntityType;
-import emu.grasscutter.game.props.FightProperty;
-import emu.grasscutter.game.world.Position;
-import emu.grasscutter.game.world.Scene;
-import java.util.List;
-import java.util.Map;
+import emu.grasscutter.game.props.*;
+import emu.grasscutter.game.world.*;
+import lombok.Setter;
+
+import java.util.*;
 import java.util.function.BiConsumer;
 import java.util.regex.Pattern;
-import lombok.Setter;
+
+import static emu.grasscutter.command.CommandHelpers.*;
+import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
+import static emu.grasscutter.utils.lang.Language.translate;
 
 @Command(
         label = "spawn",

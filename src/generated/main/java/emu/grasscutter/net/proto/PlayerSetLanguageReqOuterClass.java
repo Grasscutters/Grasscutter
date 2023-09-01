@@ -19,15 +19,15 @@ public final class PlayerSetLanguageReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 language_type = 8;</code>
+     * <code>uint32 language_type = 1;</code>
      * @return The languageType.
      */
     int getLanguageType();
   }
   /**
    * <pre>
-   * CmdId: 112
-   * Obf: KHDJGGHLMMJ
+   * CmdId: 27872
+   * Obf: HLIBOIANBJM
    * </pre>
    *
    * Protobuf type {@code PlayerSetLanguageReq}
@@ -74,7 +74,7 @@ public final class PlayerSetLanguageReqOuterClass {
             case 0:
               done = true;
               break;
-            case 64: {
+            case 8: {
 
               languageType_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class PlayerSetLanguageReqOuterClass {
               emu.grasscutter.net.proto.PlayerSetLanguageReqOuterClass.PlayerSetLanguageReq.class, emu.grasscutter.net.proto.PlayerSetLanguageReqOuterClass.PlayerSetLanguageReq.Builder.class);
     }
 
-    public static final int LANGUAGE_TYPE_FIELD_NUMBER = 8;
+    public static final int LANGUAGE_TYPE_FIELD_NUMBER = 1;
     private int languageType_;
     /**
-     * <code>uint32 language_type = 8;</code>
+     * <code>uint32 language_type = 1;</code>
      * @return The languageType.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class PlayerSetLanguageReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (languageType_ != 0) {
-        output.writeUInt32(8, languageType_);
+        output.writeUInt32(1, languageType_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class PlayerSetLanguageReqOuterClass {
       size = 0;
       if (languageType_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, languageType_);
+          .computeUInt32Size(1, languageType_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class PlayerSetLanguageReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 112
-     * Obf: KHDJGGHLMMJ
+     * CmdId: 27872
+     * Obf: HLIBOIANBJM
      * </pre>
      *
      * Protobuf type {@code PlayerSetLanguageReq}
@@ -431,7 +431,7 @@ public final class PlayerSetLanguageReqOuterClass {
 
       private int languageType_ ;
       /**
-       * <code>uint32 language_type = 8;</code>
+       * <code>uint32 language_type = 1;</code>
        * @return The languageType.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class PlayerSetLanguageReqOuterClass {
         return languageType_;
       }
       /**
-       * <code>uint32 language_type = 8;</code>
+       * <code>uint32 language_type = 1;</code>
        * @param value The languageType to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class PlayerSetLanguageReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 language_type = 8;</code>
+       * <code>uint32 language_type = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearLanguageType() {
@@ -527,7 +527,7 @@ public final class PlayerSetLanguageReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\032PlayerSetLanguageReq.proto\"-\n\024PlayerSe" +
-      "tLanguageReq\022\025\n\rlanguage_type\030\010 \001(\rB\033\n\031e" +
+      "tLanguageReq\022\025\n\rlanguage_type\030\001 \001(\rB\033\n\031e" +
       "mu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

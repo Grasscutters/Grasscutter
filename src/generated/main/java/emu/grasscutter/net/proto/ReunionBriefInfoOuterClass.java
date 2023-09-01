@@ -19,124 +19,124 @@ public final class ReunionBriefInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 first_day_start_time = 9;</code>
-     * @return The firstDayStartTime.
-     */
-    int getFirstDayStartTime();
-
-    /**
-     * <code>uint32 finish_time = 15;</code>
-     * @return The finishTime.
-     */
-    int getFinishTime();
-
-    /**
-     * <code>uint32 start_time = 14;</code>
+     * <code>uint32 start_time = 1;</code>
      * @return The startTime.
      */
     int getStartTime();
 
     /**
-     * <code>bool PHFGHHKNPCJ = 4;</code>
-     * @return The pHFGHHKNPCJ.
-     */
-    boolean getPHFGHHKNPCJ();
-
-    /**
-     * <code>uint32 sign_in_config_id = 2;</code>
+     * <code>uint32 sign_in_config_id = 6;</code>
      * @return The signInConfigId.
      */
     int getSignInConfigId();
 
     /**
-     * <code>.ReunionPrivilegeInfo privilege_info = 7;</code>
-     * @return Whether the privilegeInfo field is set.
+     * <code>uint32 OGDAOPBFBKM = 12;</code>
+     * @return The oGDAOPBFBKM.
      */
-    boolean hasPrivilegeInfo();
-    /**
-     * <code>.ReunionPrivilegeInfo privilege_info = 7;</code>
-     * @return The privilegeInfo.
-     */
-    emu.grasscutter.net.proto.ReunionPrivilegeInfoOuterClass.ReunionPrivilegeInfo getPrivilegeInfo();
-    /**
-     * <code>.ReunionPrivilegeInfo privilege_info = 7;</code>
-     */
-    emu.grasscutter.net.proto.ReunionPrivilegeInfoOuterClass.ReunionPrivilegeInfoOrBuilder getPrivilegeInfoOrBuilder();
+    int getOGDAOPBFBKM();
 
     /**
-     * <code>uint32 OCNMNFKHAEH = 8;</code>
-     * @return The oCNMNFKHAEH.
+     * <code>bool PBKEBOEICMN = 14;</code>
+     * @return The pBKEBOEICMN.
      */
-    int getOCNMNFKHAEH();
+    boolean getPBKEBOEICMN();
 
     /**
-     * <code>string version = 10;</code>
+     * <code>repeated .PEKMJNLFFEE NMAEOONHPIJ = 15;</code>
+     * @return A list containing the nMAEOONHPIJ.
+     */
+    java.util.List<emu.grasscutter.net.proto.PEKMJNLFFEEOuterClass.PEKMJNLFFEE> getNMAEOONHPIJList();
+    /**
+     * <code>repeated .PEKMJNLFFEE NMAEOONHPIJ = 15;</code>
+     * @return The count of nMAEOONHPIJ.
+     */
+    int getNMAEOONHPIJCount();
+    /**
+     * <code>repeated .PEKMJNLFFEE NMAEOONHPIJ = 15;</code>
+     * @param index The index of the element to return.
+     * @return The nMAEOONHPIJ at the given index.
+     */
+    emu.grasscutter.net.proto.PEKMJNLFFEEOuterClass.PEKMJNLFFEE getNMAEOONHPIJ(int index);
+    /**
+     * <code>repeated .PEKMJNLFFEE NMAEOONHPIJ = 15;</code>
+     * @return A list containing the enum numeric values on the wire for nMAEOONHPIJ.
+     */
+    java.util.List<java.lang.Integer>
+    getNMAEOONHPIJValueList();
+    /**
+     * <code>repeated .PEKMJNLFFEE NMAEOONHPIJ = 15;</code>
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of nMAEOONHPIJ at the given index.
+     */
+    int getNMAEOONHPIJValue(int index);
+
+    /**
+     * <code>uint32 mission_id = 8;</code>
+     * @return The missionId.
+     */
+    int getMissionId();
+
+    /**
+     * <code>uint32 first_day_start_time = 2;</code>
+     * @return The firstDayStartTime.
+     */
+    int getFirstDayStartTime();
+
+    /**
+     * <code>uint32 privilege_id = 11;</code>
+     * @return The privilegeId.
+     */
+    int getPrivilegeId();
+
+    /**
+     * <code>string version = 7;</code>
      * @return The version.
      */
     java.lang.String getVersion();
     /**
-     * <code>string version = 10;</code>
+     * <code>string version = 7;</code>
      * @return The bytes for version.
      */
     com.google.protobuf.ByteString
         getVersionBytes();
 
     /**
-     * <code>repeated .LNCJHILJOBA HJNFOKADAEN = 6;</code>
-     * @return A list containing the hJNFOKADAEN.
+     * <code>bool CJMFAOILNFB = 4;</code>
+     * @return The cJMFAOILNFB.
      */
-    java.util.List<emu.grasscutter.net.proto.LNCJHILJOBAOuterClass.LNCJHILJOBA> getHJNFOKADAENList();
-    /**
-     * <code>repeated .LNCJHILJOBA HJNFOKADAEN = 6;</code>
-     * @return The count of hJNFOKADAEN.
-     */
-    int getHJNFOKADAENCount();
-    /**
-     * <code>repeated .LNCJHILJOBA HJNFOKADAEN = 6;</code>
-     * @param index The index of the element to return.
-     * @return The hJNFOKADAEN at the given index.
-     */
-    emu.grasscutter.net.proto.LNCJHILJOBAOuterClass.LNCJHILJOBA getHJNFOKADAEN(int index);
-    /**
-     * <code>repeated .LNCJHILJOBA HJNFOKADAEN = 6;</code>
-     * @return A list containing the enum numeric values on the wire for hJNFOKADAEN.
-     */
-    java.util.List<java.lang.Integer>
-    getHJNFOKADAENValueList();
-    /**
-     * <code>repeated .LNCJHILJOBA HJNFOKADAEN = 6;</code>
-     * @param index The index of the value to return.
-     * @return The enum numeric value on the wire of hJNFOKADAEN at the given index.
-     */
-    int getHJNFOKADAENValue(int index);
+    boolean getCJMFAOILNFB();
 
     /**
-     * <code>uint32 privilege_id = 3;</code>
-     * @return The privilegeId.
+     * <code>.ReunionPrivilegeInfo privilege_info = 9;</code>
+     * @return Whether the privilegeInfo field is set.
      */
-    int getPrivilegeId();
+    boolean hasPrivilegeInfo();
+    /**
+     * <code>.ReunionPrivilegeInfo privilege_info = 9;</code>
+     * @return The privilegeInfo.
+     */
+    emu.grasscutter.net.proto.ReunionPrivilegeInfoOuterClass.ReunionPrivilegeInfo getPrivilegeInfo();
+    /**
+     * <code>.ReunionPrivilegeInfo privilege_info = 9;</code>
+     */
+    emu.grasscutter.net.proto.ReunionPrivilegeInfoOuterClass.ReunionPrivilegeInfoOrBuilder getPrivilegeInfoOrBuilder();
 
     /**
-     * <code>bool CJKNNLMFNAH = 5;</code>
-     * @return The cJKNNLMFNAH.
+     * <code>uint32 finish_time = 13;</code>
+     * @return The finishTime.
      */
-    boolean getCJKNNLMFNAH();
+    int getFinishTime();
 
     /**
-     * <code>uint32 mission_id = 11;</code>
-     * @return The missionId.
+     * <code>bool KKDLAEGCONN = 5;</code>
+     * @return The kKDLAEGCONN.
      */
-    int getMissionId();
-
-    /**
-     * <code>bool JFFIEEJGKBG = 13;</code>
-     * @return The jFFIEEJGKBG.
-     */
-    boolean getJFFIEEJGKBG();
+    boolean getKKDLAEGCONN();
   }
   /**
    * <pre>
-   * Obf: BEMBBGJJLHH
+   * Obf: PLPECNHEMCO
    * </pre>
    *
    * Protobuf type {@code ReunionBriefInfo}
@@ -151,8 +151,8 @@ public final class ReunionBriefInfoOuterClass {
       super(builder);
     }
     private ReunionBriefInfo() {
+      nMAEOONHPIJ_ = java.util.Collections.emptyList();
       version_ = "";
-      hJNFOKADAEN_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -186,50 +186,43 @@ public final class ReunionBriefInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
+            case 8: {
 
-              signInConfigId_ = input.readUInt32();
+              startTime_ = input.readUInt32();
               break;
             }
-            case 24: {
+            case 16: {
 
-              privilegeId_ = input.readUInt32();
+              firstDayStartTime_ = input.readUInt32();
               break;
             }
             case 32: {
 
-              pHFGHHKNPCJ_ = input.readBool();
+              cJMFAOILNFB_ = input.readBool();
               break;
             }
             case 40: {
 
-              cJKNNLMFNAH_ = input.readBool();
+              kKDLAEGCONN_ = input.readBool();
               break;
             }
             case 48: {
-              int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                hJNFOKADAEN_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              hJNFOKADAEN_.add(rawValue);
-              break;
-            }
-            case 50: {
-              int length = input.readRawVarint32();
-              int oldLimit = input.pushLimit(length);
-              while(input.getBytesUntilLimit() > 0) {
-                int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  hJNFOKADAEN_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                hJNFOKADAEN_.add(rawValue);
-              }
-              input.popLimit(oldLimit);
+
+              signInConfigId_ = input.readUInt32();
               break;
             }
             case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              version_ = s;
+              break;
+            }
+            case 64: {
+
+              missionId_ = input.readUInt32();
+              break;
+            }
+            case 74: {
               emu.grasscutter.net.proto.ReunionPrivilegeInfoOuterClass.ReunionPrivilegeInfo.Builder subBuilder = null;
               if (privilegeInfo_ != null) {
                 subBuilder = privilegeInfo_.toBuilder();
@@ -242,40 +235,47 @@ public final class ReunionBriefInfoOuterClass {
 
               break;
             }
-            case 64: {
-
-              oCNMNFKHAEH_ = input.readUInt32();
-              break;
-            }
-            case 72: {
-
-              firstDayStartTime_ = input.readUInt32();
-              break;
-            }
-            case 82: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              version_ = s;
-              break;
-            }
             case 88: {
 
-              missionId_ = input.readUInt32();
+              privilegeId_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+
+              oGDAOPBFBKM_ = input.readUInt32();
               break;
             }
             case 104: {
 
-              jFFIEEJGKBG_ = input.readBool();
+              finishTime_ = input.readUInt32();
               break;
             }
             case 112: {
 
-              startTime_ = input.readUInt32();
+              pBKEBOEICMN_ = input.readBool();
               break;
             }
             case 120: {
-
-              finishTime_ = input.readUInt32();
+              int rawValue = input.readEnum();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                nMAEOONHPIJ_ = new java.util.ArrayList<java.lang.Integer>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              nMAEOONHPIJ_.add(rawValue);
+              break;
+            }
+            case 122: {
+              int length = input.readRawVarint32();
+              int oldLimit = input.pushLimit(length);
+              while(input.getBytesUntilLimit() > 0) {
+                int rawValue = input.readEnum();
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                  nMAEOONHPIJ_ = new java.util.ArrayList<java.lang.Integer>();
+                  mutable_bitField0_ |= 0x00000001;
+                }
+                nMAEOONHPIJ_.add(rawValue);
+              }
+              input.popLimit(oldLimit);
               break;
             }
             default: {
@@ -294,7 +294,7 @@ public final class ReunionBriefInfoOuterClass {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          hJNFOKADAEN_ = java.util.Collections.unmodifiableList(hJNFOKADAEN_);
+          nMAEOONHPIJ_ = java.util.Collections.unmodifiableList(nMAEOONHPIJ_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -313,32 +313,10 @@ public final class ReunionBriefInfoOuterClass {
               emu.grasscutter.net.proto.ReunionBriefInfoOuterClass.ReunionBriefInfo.class, emu.grasscutter.net.proto.ReunionBriefInfoOuterClass.ReunionBriefInfo.Builder.class);
     }
 
-    public static final int FIRST_DAY_START_TIME_FIELD_NUMBER = 9;
-    private int firstDayStartTime_;
-    /**
-     * <code>uint32 first_day_start_time = 9;</code>
-     * @return The firstDayStartTime.
-     */
-    @java.lang.Override
-    public int getFirstDayStartTime() {
-      return firstDayStartTime_;
-    }
-
-    public static final int FINISH_TIME_FIELD_NUMBER = 15;
-    private int finishTime_;
-    /**
-     * <code>uint32 finish_time = 15;</code>
-     * @return The finishTime.
-     */
-    @java.lang.Override
-    public int getFinishTime() {
-      return finishTime_;
-    }
-
-    public static final int START_TIME_FIELD_NUMBER = 14;
+    public static final int START_TIME_FIELD_NUMBER = 1;
     private int startTime_;
     /**
-     * <code>uint32 start_time = 14;</code>
+     * <code>uint32 start_time = 1;</code>
      * @return The startTime.
      */
     @java.lang.Override
@@ -346,21 +324,10 @@ public final class ReunionBriefInfoOuterClass {
       return startTime_;
     }
 
-    public static final int PHFGHHKNPCJ_FIELD_NUMBER = 4;
-    private boolean pHFGHHKNPCJ_;
-    /**
-     * <code>bool PHFGHHKNPCJ = 4;</code>
-     * @return The pHFGHHKNPCJ.
-     */
-    @java.lang.Override
-    public boolean getPHFGHHKNPCJ() {
-      return pHFGHHKNPCJ_;
-    }
-
-    public static final int SIGN_IN_CONFIG_ID_FIELD_NUMBER = 2;
+    public static final int SIGN_IN_CONFIG_ID_FIELD_NUMBER = 6;
     private int signInConfigId_;
     /**
-     * <code>uint32 sign_in_config_id = 2;</code>
+     * <code>uint32 sign_in_config_id = 6;</code>
      * @return The signInConfigId.
      */
     @java.lang.Override
@@ -368,47 +335,123 @@ public final class ReunionBriefInfoOuterClass {
       return signInConfigId_;
     }
 
-    public static final int PRIVILEGE_INFO_FIELD_NUMBER = 7;
-    private emu.grasscutter.net.proto.ReunionPrivilegeInfoOuterClass.ReunionPrivilegeInfo privilegeInfo_;
+    public static final int OGDAOPBFBKM_FIELD_NUMBER = 12;
+    private int oGDAOPBFBKM_;
     /**
-     * <code>.ReunionPrivilegeInfo privilege_info = 7;</code>
-     * @return Whether the privilegeInfo field is set.
+     * <code>uint32 OGDAOPBFBKM = 12;</code>
+     * @return The oGDAOPBFBKM.
      */
     @java.lang.Override
-    public boolean hasPrivilegeInfo() {
-      return privilegeInfo_ != null;
-    }
-    /**
-     * <code>.ReunionPrivilegeInfo privilege_info = 7;</code>
-     * @return The privilegeInfo.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.ReunionPrivilegeInfoOuterClass.ReunionPrivilegeInfo getPrivilegeInfo() {
-      return privilegeInfo_ == null ? emu.grasscutter.net.proto.ReunionPrivilegeInfoOuterClass.ReunionPrivilegeInfo.getDefaultInstance() : privilegeInfo_;
-    }
-    /**
-     * <code>.ReunionPrivilegeInfo privilege_info = 7;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.ReunionPrivilegeInfoOuterClass.ReunionPrivilegeInfoOrBuilder getPrivilegeInfoOrBuilder() {
-      return getPrivilegeInfo();
+    public int getOGDAOPBFBKM() {
+      return oGDAOPBFBKM_;
     }
 
-    public static final int OCNMNFKHAEH_FIELD_NUMBER = 8;
-    private int oCNMNFKHAEH_;
+    public static final int PBKEBOEICMN_FIELD_NUMBER = 14;
+    private boolean pBKEBOEICMN_;
     /**
-     * <code>uint32 OCNMNFKHAEH = 8;</code>
-     * @return The oCNMNFKHAEH.
+     * <code>bool PBKEBOEICMN = 14;</code>
+     * @return The pBKEBOEICMN.
      */
     @java.lang.Override
-    public int getOCNMNFKHAEH() {
-      return oCNMNFKHAEH_;
+    public boolean getPBKEBOEICMN() {
+      return pBKEBOEICMN_;
     }
 
-    public static final int VERSION_FIELD_NUMBER = 10;
+    public static final int NMAEOONHPIJ_FIELD_NUMBER = 15;
+    private java.util.List<java.lang.Integer> nMAEOONHPIJ_;
+    private static final com.google.protobuf.Internal.ListAdapter.Converter<
+        java.lang.Integer, emu.grasscutter.net.proto.PEKMJNLFFEEOuterClass.PEKMJNLFFEE> nMAEOONHPIJ_converter_ =
+            new com.google.protobuf.Internal.ListAdapter.Converter<
+                java.lang.Integer, emu.grasscutter.net.proto.PEKMJNLFFEEOuterClass.PEKMJNLFFEE>() {
+              public emu.grasscutter.net.proto.PEKMJNLFFEEOuterClass.PEKMJNLFFEE convert(java.lang.Integer from) {
+                @SuppressWarnings("deprecation")
+                emu.grasscutter.net.proto.PEKMJNLFFEEOuterClass.PEKMJNLFFEE result = emu.grasscutter.net.proto.PEKMJNLFFEEOuterClass.PEKMJNLFFEE.valueOf(from);
+                return result == null ? emu.grasscutter.net.proto.PEKMJNLFFEEOuterClass.PEKMJNLFFEE.UNRECOGNIZED : result;
+              }
+            };
+    /**
+     * <code>repeated .PEKMJNLFFEE NMAEOONHPIJ = 15;</code>
+     * @return A list containing the nMAEOONHPIJ.
+     */
+    @java.lang.Override
+    public java.util.List<emu.grasscutter.net.proto.PEKMJNLFFEEOuterClass.PEKMJNLFFEE> getNMAEOONHPIJList() {
+      return new com.google.protobuf.Internal.ListAdapter<
+          java.lang.Integer, emu.grasscutter.net.proto.PEKMJNLFFEEOuterClass.PEKMJNLFFEE>(nMAEOONHPIJ_, nMAEOONHPIJ_converter_);
+    }
+    /**
+     * <code>repeated .PEKMJNLFFEE NMAEOONHPIJ = 15;</code>
+     * @return The count of nMAEOONHPIJ.
+     */
+    @java.lang.Override
+    public int getNMAEOONHPIJCount() {
+      return nMAEOONHPIJ_.size();
+    }
+    /**
+     * <code>repeated .PEKMJNLFFEE NMAEOONHPIJ = 15;</code>
+     * @param index The index of the element to return.
+     * @return The nMAEOONHPIJ at the given index.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.PEKMJNLFFEEOuterClass.PEKMJNLFFEE getNMAEOONHPIJ(int index) {
+      return nMAEOONHPIJ_converter_.convert(nMAEOONHPIJ_.get(index));
+    }
+    /**
+     * <code>repeated .PEKMJNLFFEE NMAEOONHPIJ = 15;</code>
+     * @return A list containing the enum numeric values on the wire for nMAEOONHPIJ.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Integer>
+    getNMAEOONHPIJValueList() {
+      return nMAEOONHPIJ_;
+    }
+    /**
+     * <code>repeated .PEKMJNLFFEE NMAEOONHPIJ = 15;</code>
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of nMAEOONHPIJ at the given index.
+     */
+    @java.lang.Override
+    public int getNMAEOONHPIJValue(int index) {
+      return nMAEOONHPIJ_.get(index);
+    }
+    private int nMAEOONHPIJMemoizedSerializedSize;
+
+    public static final int MISSION_ID_FIELD_NUMBER = 8;
+    private int missionId_;
+    /**
+     * <code>uint32 mission_id = 8;</code>
+     * @return The missionId.
+     */
+    @java.lang.Override
+    public int getMissionId() {
+      return missionId_;
+    }
+
+    public static final int FIRST_DAY_START_TIME_FIELD_NUMBER = 2;
+    private int firstDayStartTime_;
+    /**
+     * <code>uint32 first_day_start_time = 2;</code>
+     * @return The firstDayStartTime.
+     */
+    @java.lang.Override
+    public int getFirstDayStartTime() {
+      return firstDayStartTime_;
+    }
+
+    public static final int PRIVILEGE_ID_FIELD_NUMBER = 11;
+    private int privilegeId_;
+    /**
+     * <code>uint32 privilege_id = 11;</code>
+     * @return The privilegeId.
+     */
+    @java.lang.Override
+    public int getPrivilegeId() {
+      return privilegeId_;
+    }
+
+    public static final int VERSION_FIELD_NUMBER = 7;
     private volatile java.lang.Object version_;
     /**
-     * <code>string version = 10;</code>
+     * <code>string version = 7;</code>
      * @return The version.
      */
     @java.lang.Override
@@ -425,7 +468,7 @@ public final class ReunionBriefInfoOuterClass {
       }
     }
     /**
-     * <code>string version = 10;</code>
+     * <code>string version = 7;</code>
      * @return The bytes for version.
      */
     @java.lang.Override
@@ -443,106 +486,63 @@ public final class ReunionBriefInfoOuterClass {
       }
     }
 
-    public static final int HJNFOKADAEN_FIELD_NUMBER = 6;
-    private java.util.List<java.lang.Integer> hJNFOKADAEN_;
-    private static final com.google.protobuf.Internal.ListAdapter.Converter<
-        java.lang.Integer, emu.grasscutter.net.proto.LNCJHILJOBAOuterClass.LNCJHILJOBA> hJNFOKADAEN_converter_ =
-            new com.google.protobuf.Internal.ListAdapter.Converter<
-                java.lang.Integer, emu.grasscutter.net.proto.LNCJHILJOBAOuterClass.LNCJHILJOBA>() {
-              public emu.grasscutter.net.proto.LNCJHILJOBAOuterClass.LNCJHILJOBA convert(java.lang.Integer from) {
-                @SuppressWarnings("deprecation")
-                emu.grasscutter.net.proto.LNCJHILJOBAOuterClass.LNCJHILJOBA result = emu.grasscutter.net.proto.LNCJHILJOBAOuterClass.LNCJHILJOBA.valueOf(from);
-                return result == null ? emu.grasscutter.net.proto.LNCJHILJOBAOuterClass.LNCJHILJOBA.UNRECOGNIZED : result;
-              }
-            };
+    public static final int CJMFAOILNFB_FIELD_NUMBER = 4;
+    private boolean cJMFAOILNFB_;
     /**
-     * <code>repeated .LNCJHILJOBA HJNFOKADAEN = 6;</code>
-     * @return A list containing the hJNFOKADAEN.
+     * <code>bool CJMFAOILNFB = 4;</code>
+     * @return The cJMFAOILNFB.
      */
     @java.lang.Override
-    public java.util.List<emu.grasscutter.net.proto.LNCJHILJOBAOuterClass.LNCJHILJOBA> getHJNFOKADAENList() {
-      return new com.google.protobuf.Internal.ListAdapter<
-          java.lang.Integer, emu.grasscutter.net.proto.LNCJHILJOBAOuterClass.LNCJHILJOBA>(hJNFOKADAEN_, hJNFOKADAEN_converter_);
-    }
-    /**
-     * <code>repeated .LNCJHILJOBA HJNFOKADAEN = 6;</code>
-     * @return The count of hJNFOKADAEN.
-     */
-    @java.lang.Override
-    public int getHJNFOKADAENCount() {
-      return hJNFOKADAEN_.size();
-    }
-    /**
-     * <code>repeated .LNCJHILJOBA HJNFOKADAEN = 6;</code>
-     * @param index The index of the element to return.
-     * @return The hJNFOKADAEN at the given index.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.LNCJHILJOBAOuterClass.LNCJHILJOBA getHJNFOKADAEN(int index) {
-      return hJNFOKADAEN_converter_.convert(hJNFOKADAEN_.get(index));
-    }
-    /**
-     * <code>repeated .LNCJHILJOBA HJNFOKADAEN = 6;</code>
-     * @return A list containing the enum numeric values on the wire for hJNFOKADAEN.
-     */
-    @java.lang.Override
-    public java.util.List<java.lang.Integer>
-    getHJNFOKADAENValueList() {
-      return hJNFOKADAEN_;
-    }
-    /**
-     * <code>repeated .LNCJHILJOBA HJNFOKADAEN = 6;</code>
-     * @param index The index of the value to return.
-     * @return The enum numeric value on the wire of hJNFOKADAEN at the given index.
-     */
-    @java.lang.Override
-    public int getHJNFOKADAENValue(int index) {
-      return hJNFOKADAEN_.get(index);
-    }
-    private int hJNFOKADAENMemoizedSerializedSize;
-
-    public static final int PRIVILEGE_ID_FIELD_NUMBER = 3;
-    private int privilegeId_;
-    /**
-     * <code>uint32 privilege_id = 3;</code>
-     * @return The privilegeId.
-     */
-    @java.lang.Override
-    public int getPrivilegeId() {
-      return privilegeId_;
+    public boolean getCJMFAOILNFB() {
+      return cJMFAOILNFB_;
     }
 
-    public static final int CJKNNLMFNAH_FIELD_NUMBER = 5;
-    private boolean cJKNNLMFNAH_;
+    public static final int PRIVILEGE_INFO_FIELD_NUMBER = 9;
+    private emu.grasscutter.net.proto.ReunionPrivilegeInfoOuterClass.ReunionPrivilegeInfo privilegeInfo_;
     /**
-     * <code>bool CJKNNLMFNAH = 5;</code>
-     * @return The cJKNNLMFNAH.
+     * <code>.ReunionPrivilegeInfo privilege_info = 9;</code>
+     * @return Whether the privilegeInfo field is set.
      */
     @java.lang.Override
-    public boolean getCJKNNLMFNAH() {
-      return cJKNNLMFNAH_;
+    public boolean hasPrivilegeInfo() {
+      return privilegeInfo_ != null;
+    }
+    /**
+     * <code>.ReunionPrivilegeInfo privilege_info = 9;</code>
+     * @return The privilegeInfo.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.ReunionPrivilegeInfoOuterClass.ReunionPrivilegeInfo getPrivilegeInfo() {
+      return privilegeInfo_ == null ? emu.grasscutter.net.proto.ReunionPrivilegeInfoOuterClass.ReunionPrivilegeInfo.getDefaultInstance() : privilegeInfo_;
+    }
+    /**
+     * <code>.ReunionPrivilegeInfo privilege_info = 9;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.ReunionPrivilegeInfoOuterClass.ReunionPrivilegeInfoOrBuilder getPrivilegeInfoOrBuilder() {
+      return getPrivilegeInfo();
     }
 
-    public static final int MISSION_ID_FIELD_NUMBER = 11;
-    private int missionId_;
+    public static final int FINISH_TIME_FIELD_NUMBER = 13;
+    private int finishTime_;
     /**
-     * <code>uint32 mission_id = 11;</code>
-     * @return The missionId.
+     * <code>uint32 finish_time = 13;</code>
+     * @return The finishTime.
      */
     @java.lang.Override
-    public int getMissionId() {
-      return missionId_;
+    public int getFinishTime() {
+      return finishTime_;
     }
 
-    public static final int JFFIEEJGKBG_FIELD_NUMBER = 13;
-    private boolean jFFIEEJGKBG_;
+    public static final int KKDLAEGCONN_FIELD_NUMBER = 5;
+    private boolean kKDLAEGCONN_;
     /**
-     * <code>bool JFFIEEJGKBG = 13;</code>
-     * @return The jFFIEEJGKBG.
+     * <code>bool KKDLAEGCONN = 5;</code>
+     * @return The kKDLAEGCONN.
      */
     @java.lang.Override
-    public boolean getJFFIEEJGKBG() {
-      return jFFIEEJGKBG_;
+    public boolean getKKDLAEGCONN() {
+      return kKDLAEGCONN_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -560,48 +560,48 @@ public final class ReunionBriefInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (signInConfigId_ != 0) {
-        output.writeUInt32(2, signInConfigId_);
-      }
-      if (privilegeId_ != 0) {
-        output.writeUInt32(3, privilegeId_);
-      }
-      if (pHFGHHKNPCJ_ != false) {
-        output.writeBool(4, pHFGHHKNPCJ_);
-      }
-      if (cJKNNLMFNAH_ != false) {
-        output.writeBool(5, cJKNNLMFNAH_);
-      }
-      if (getHJNFOKADAENList().size() > 0) {
-        output.writeUInt32NoTag(50);
-        output.writeUInt32NoTag(hJNFOKADAENMemoizedSerializedSize);
-      }
-      for (int i = 0; i < hJNFOKADAEN_.size(); i++) {
-        output.writeEnumNoTag(hJNFOKADAEN_.get(i));
-      }
-      if (privilegeInfo_ != null) {
-        output.writeMessage(7, getPrivilegeInfo());
-      }
-      if (oCNMNFKHAEH_ != 0) {
-        output.writeUInt32(8, oCNMNFKHAEH_);
+      if (startTime_ != 0) {
+        output.writeUInt32(1, startTime_);
       }
       if (firstDayStartTime_ != 0) {
-        output.writeUInt32(9, firstDayStartTime_);
+        output.writeUInt32(2, firstDayStartTime_);
+      }
+      if (cJMFAOILNFB_ != false) {
+        output.writeBool(4, cJMFAOILNFB_);
+      }
+      if (kKDLAEGCONN_ != false) {
+        output.writeBool(5, kKDLAEGCONN_);
+      }
+      if (signInConfigId_ != 0) {
+        output.writeUInt32(6, signInConfigId_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, version_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, version_);
       }
       if (missionId_ != 0) {
-        output.writeUInt32(11, missionId_);
+        output.writeUInt32(8, missionId_);
       }
-      if (jFFIEEJGKBG_ != false) {
-        output.writeBool(13, jFFIEEJGKBG_);
+      if (privilegeInfo_ != null) {
+        output.writeMessage(9, getPrivilegeInfo());
       }
-      if (startTime_ != 0) {
-        output.writeUInt32(14, startTime_);
+      if (privilegeId_ != 0) {
+        output.writeUInt32(11, privilegeId_);
+      }
+      if (oGDAOPBFBKM_ != 0) {
+        output.writeUInt32(12, oGDAOPBFBKM_);
       }
       if (finishTime_ != 0) {
-        output.writeUInt32(15, finishTime_);
+        output.writeUInt32(13, finishTime_);
+      }
+      if (pBKEBOEICMN_ != false) {
+        output.writeBool(14, pBKEBOEICMN_);
+      }
+      if (getNMAEOONHPIJList().size() > 0) {
+        output.writeUInt32NoTag(122);
+        output.writeUInt32NoTag(nMAEOONHPIJMemoizedSerializedSize);
+      }
+      for (int i = 0; i < nMAEOONHPIJ_.size(); i++) {
+        output.writeEnumNoTag(nMAEOONHPIJ_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -612,64 +612,64 @@ public final class ReunionBriefInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (signInConfigId_ != 0) {
+      if (startTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, signInConfigId_);
-      }
-      if (privilegeId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, privilegeId_);
-      }
-      if (pHFGHHKNPCJ_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(4, pHFGHHKNPCJ_);
-      }
-      if (cJKNNLMFNAH_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(5, cJKNNLMFNAH_);
-      }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < hJNFOKADAEN_.size(); i++) {
-          dataSize += com.google.protobuf.CodedOutputStream
-            .computeEnumSizeNoTag(hJNFOKADAEN_.get(i));
-        }
-        size += dataSize;
-        if (!getHJNFOKADAENList().isEmpty()) {  size += 1;
-          size += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(dataSize);
-        }hJNFOKADAENMemoizedSerializedSize = dataSize;
-      }
-      if (privilegeInfo_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, getPrivilegeInfo());
-      }
-      if (oCNMNFKHAEH_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, oCNMNFKHAEH_);
+          .computeUInt32Size(1, startTime_);
       }
       if (firstDayStartTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, firstDayStartTime_);
+          .computeUInt32Size(2, firstDayStartTime_);
+      }
+      if (cJMFAOILNFB_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(4, cJMFAOILNFB_);
+      }
+      if (kKDLAEGCONN_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(5, kKDLAEGCONN_);
+      }
+      if (signInConfigId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(6, signInConfigId_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, version_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, version_);
       }
       if (missionId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, missionId_);
+          .computeUInt32Size(8, missionId_);
       }
-      if (jFFIEEJGKBG_ != false) {
+      if (privilegeInfo_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(13, jFFIEEJGKBG_);
+          .computeMessageSize(9, getPrivilegeInfo());
       }
-      if (startTime_ != 0) {
+      if (privilegeId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, startTime_);
+          .computeUInt32Size(11, privilegeId_);
+      }
+      if (oGDAOPBFBKM_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(12, oGDAOPBFBKM_);
       }
       if (finishTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, finishTime_);
+          .computeUInt32Size(13, finishTime_);
+      }
+      if (pBKEBOEICMN_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(14, pBKEBOEICMN_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < nMAEOONHPIJ_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeEnumSizeNoTag(nMAEOONHPIJ_.get(i));
+        }
+        size += dataSize;
+        if (!getNMAEOONHPIJList().isEmpty()) {  size += 1;
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt32SizeNoTag(dataSize);
+        }nMAEOONHPIJMemoizedSerializedSize = dataSize;
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -686,34 +686,34 @@ public final class ReunionBriefInfoOuterClass {
       }
       emu.grasscutter.net.proto.ReunionBriefInfoOuterClass.ReunionBriefInfo other = (emu.grasscutter.net.proto.ReunionBriefInfoOuterClass.ReunionBriefInfo) obj;
 
-      if (getFirstDayStartTime()
-          != other.getFirstDayStartTime()) return false;
-      if (getFinishTime()
-          != other.getFinishTime()) return false;
       if (getStartTime()
           != other.getStartTime()) return false;
-      if (getPHFGHHKNPCJ()
-          != other.getPHFGHHKNPCJ()) return false;
       if (getSignInConfigId()
           != other.getSignInConfigId()) return false;
+      if (getOGDAOPBFBKM()
+          != other.getOGDAOPBFBKM()) return false;
+      if (getPBKEBOEICMN()
+          != other.getPBKEBOEICMN()) return false;
+      if (!nMAEOONHPIJ_.equals(other.nMAEOONHPIJ_)) return false;
+      if (getMissionId()
+          != other.getMissionId()) return false;
+      if (getFirstDayStartTime()
+          != other.getFirstDayStartTime()) return false;
+      if (getPrivilegeId()
+          != other.getPrivilegeId()) return false;
+      if (!getVersion()
+          .equals(other.getVersion())) return false;
+      if (getCJMFAOILNFB()
+          != other.getCJMFAOILNFB()) return false;
       if (hasPrivilegeInfo() != other.hasPrivilegeInfo()) return false;
       if (hasPrivilegeInfo()) {
         if (!getPrivilegeInfo()
             .equals(other.getPrivilegeInfo())) return false;
       }
-      if (getOCNMNFKHAEH()
-          != other.getOCNMNFKHAEH()) return false;
-      if (!getVersion()
-          .equals(other.getVersion())) return false;
-      if (!hJNFOKADAEN_.equals(other.hJNFOKADAEN_)) return false;
-      if (getPrivilegeId()
-          != other.getPrivilegeId()) return false;
-      if (getCJKNNLMFNAH()
-          != other.getCJKNNLMFNAH()) return false;
-      if (getMissionId()
-          != other.getMissionId()) return false;
-      if (getJFFIEEJGKBG()
-          != other.getJFFIEEJGKBG()) return false;
+      if (getFinishTime()
+          != other.getFinishTime()) return false;
+      if (getKKDLAEGCONN()
+          != other.getKKDLAEGCONN()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -725,39 +725,39 @@ public final class ReunionBriefInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + FIRST_DAY_START_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + getFirstDayStartTime();
-      hash = (37 * hash) + FINISH_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + getFinishTime();
       hash = (37 * hash) + START_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getStartTime();
-      hash = (37 * hash) + PHFGHHKNPCJ_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getPHFGHHKNPCJ());
       hash = (37 * hash) + SIGN_IN_CONFIG_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSignInConfigId();
+      hash = (37 * hash) + OGDAOPBFBKM_FIELD_NUMBER;
+      hash = (53 * hash) + getOGDAOPBFBKM();
+      hash = (37 * hash) + PBKEBOEICMN_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getPBKEBOEICMN());
+      if (getNMAEOONHPIJCount() > 0) {
+        hash = (37 * hash) + NMAEOONHPIJ_FIELD_NUMBER;
+        hash = (53 * hash) + nMAEOONHPIJ_.hashCode();
+      }
+      hash = (37 * hash) + MISSION_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getMissionId();
+      hash = (37 * hash) + FIRST_DAY_START_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getFirstDayStartTime();
+      hash = (37 * hash) + PRIVILEGE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getPrivilegeId();
+      hash = (37 * hash) + VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getVersion().hashCode();
+      hash = (37 * hash) + CJMFAOILNFB_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getCJMFAOILNFB());
       if (hasPrivilegeInfo()) {
         hash = (37 * hash) + PRIVILEGE_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getPrivilegeInfo().hashCode();
       }
-      hash = (37 * hash) + OCNMNFKHAEH_FIELD_NUMBER;
-      hash = (53 * hash) + getOCNMNFKHAEH();
-      hash = (37 * hash) + VERSION_FIELD_NUMBER;
-      hash = (53 * hash) + getVersion().hashCode();
-      if (getHJNFOKADAENCount() > 0) {
-        hash = (37 * hash) + HJNFOKADAEN_FIELD_NUMBER;
-        hash = (53 * hash) + hJNFOKADAEN_.hashCode();
-      }
-      hash = (37 * hash) + PRIVILEGE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getPrivilegeId();
-      hash = (37 * hash) + CJKNNLMFNAH_FIELD_NUMBER;
+      hash = (37 * hash) + FINISH_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getFinishTime();
+      hash = (37 * hash) + KKDLAEGCONN_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getCJKNNLMFNAH());
-      hash = (37 * hash) + MISSION_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getMissionId();
-      hash = (37 * hash) + JFFIEEJGKBG_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getJFFIEEJGKBG());
+          getKKDLAEGCONN());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -855,7 +855,7 @@ public final class ReunionBriefInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: BEMBBGJJLHH
+     * Obf: PLPECNHEMCO
      * </pre>
      *
      * Protobuf type {@code ReunionBriefInfo}
@@ -895,15 +895,25 @@ public final class ReunionBriefInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        firstDayStartTime_ = 0;
-
-        finishTime_ = 0;
-
         startTime_ = 0;
 
-        pHFGHHKNPCJ_ = false;
-
         signInConfigId_ = 0;
+
+        oGDAOPBFBKM_ = 0;
+
+        pBKEBOEICMN_ = false;
+
+        nMAEOONHPIJ_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        missionId_ = 0;
+
+        firstDayStartTime_ = 0;
+
+        privilegeId_ = 0;
+
+        version_ = "";
+
+        cJMFAOILNFB_ = false;
 
         if (privilegeInfoBuilder_ == null) {
           privilegeInfo_ = null;
@@ -911,19 +921,9 @@ public final class ReunionBriefInfoOuterClass {
           privilegeInfo_ = null;
           privilegeInfoBuilder_ = null;
         }
-        oCNMNFKHAEH_ = 0;
+        finishTime_ = 0;
 
-        version_ = "";
-
-        hJNFOKADAEN_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        privilegeId_ = 0;
-
-        cJKNNLMFNAH_ = false;
-
-        missionId_ = 0;
-
-        jFFIEEJGKBG_ = false;
+        kKDLAEGCONN_ = false;
 
         return this;
       }
@@ -952,27 +952,27 @@ public final class ReunionBriefInfoOuterClass {
       public emu.grasscutter.net.proto.ReunionBriefInfoOuterClass.ReunionBriefInfo buildPartial() {
         emu.grasscutter.net.proto.ReunionBriefInfoOuterClass.ReunionBriefInfo result = new emu.grasscutter.net.proto.ReunionBriefInfoOuterClass.ReunionBriefInfo(this);
         int from_bitField0_ = bitField0_;
-        result.firstDayStartTime_ = firstDayStartTime_;
-        result.finishTime_ = finishTime_;
         result.startTime_ = startTime_;
-        result.pHFGHHKNPCJ_ = pHFGHHKNPCJ_;
         result.signInConfigId_ = signInConfigId_;
+        result.oGDAOPBFBKM_ = oGDAOPBFBKM_;
+        result.pBKEBOEICMN_ = pBKEBOEICMN_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          nMAEOONHPIJ_ = java.util.Collections.unmodifiableList(nMAEOONHPIJ_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.nMAEOONHPIJ_ = nMAEOONHPIJ_;
+        result.missionId_ = missionId_;
+        result.firstDayStartTime_ = firstDayStartTime_;
+        result.privilegeId_ = privilegeId_;
+        result.version_ = version_;
+        result.cJMFAOILNFB_ = cJMFAOILNFB_;
         if (privilegeInfoBuilder_ == null) {
           result.privilegeInfo_ = privilegeInfo_;
         } else {
           result.privilegeInfo_ = privilegeInfoBuilder_.build();
         }
-        result.oCNMNFKHAEH_ = oCNMNFKHAEH_;
-        result.version_ = version_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          hJNFOKADAEN_ = java.util.Collections.unmodifiableList(hJNFOKADAEN_);
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.hJNFOKADAEN_ = hJNFOKADAEN_;
-        result.privilegeId_ = privilegeId_;
-        result.cJKNNLMFNAH_ = cJKNNLMFNAH_;
-        result.missionId_ = missionId_;
-        result.jFFIEEJGKBG_ = jFFIEEJGKBG_;
+        result.finishTime_ = finishTime_;
+        result.kKDLAEGCONN_ = kKDLAEGCONN_;
         onBuilt();
         return result;
       }
@@ -1021,52 +1021,52 @@ public final class ReunionBriefInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.ReunionBriefInfoOuterClass.ReunionBriefInfo other) {
         if (other == emu.grasscutter.net.proto.ReunionBriefInfoOuterClass.ReunionBriefInfo.getDefaultInstance()) return this;
-        if (other.getFirstDayStartTime() != 0) {
-          setFirstDayStartTime(other.getFirstDayStartTime());
-        }
-        if (other.getFinishTime() != 0) {
-          setFinishTime(other.getFinishTime());
-        }
         if (other.getStartTime() != 0) {
           setStartTime(other.getStartTime());
-        }
-        if (other.getPHFGHHKNPCJ() != false) {
-          setPHFGHHKNPCJ(other.getPHFGHHKNPCJ());
         }
         if (other.getSignInConfigId() != 0) {
           setSignInConfigId(other.getSignInConfigId());
         }
-        if (other.hasPrivilegeInfo()) {
-          mergePrivilegeInfo(other.getPrivilegeInfo());
+        if (other.getOGDAOPBFBKM() != 0) {
+          setOGDAOPBFBKM(other.getOGDAOPBFBKM());
         }
-        if (other.getOCNMNFKHAEH() != 0) {
-          setOCNMNFKHAEH(other.getOCNMNFKHAEH());
+        if (other.getPBKEBOEICMN() != false) {
+          setPBKEBOEICMN(other.getPBKEBOEICMN());
+        }
+        if (!other.nMAEOONHPIJ_.isEmpty()) {
+          if (nMAEOONHPIJ_.isEmpty()) {
+            nMAEOONHPIJ_ = other.nMAEOONHPIJ_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureNMAEOONHPIJIsMutable();
+            nMAEOONHPIJ_.addAll(other.nMAEOONHPIJ_);
+          }
+          onChanged();
+        }
+        if (other.getMissionId() != 0) {
+          setMissionId(other.getMissionId());
+        }
+        if (other.getFirstDayStartTime() != 0) {
+          setFirstDayStartTime(other.getFirstDayStartTime());
+        }
+        if (other.getPrivilegeId() != 0) {
+          setPrivilegeId(other.getPrivilegeId());
         }
         if (!other.getVersion().isEmpty()) {
           version_ = other.version_;
           onChanged();
         }
-        if (!other.hJNFOKADAEN_.isEmpty()) {
-          if (hJNFOKADAEN_.isEmpty()) {
-            hJNFOKADAEN_ = other.hJNFOKADAEN_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureHJNFOKADAENIsMutable();
-            hJNFOKADAEN_.addAll(other.hJNFOKADAEN_);
-          }
-          onChanged();
+        if (other.getCJMFAOILNFB() != false) {
+          setCJMFAOILNFB(other.getCJMFAOILNFB());
         }
-        if (other.getPrivilegeId() != 0) {
-          setPrivilegeId(other.getPrivilegeId());
+        if (other.hasPrivilegeInfo()) {
+          mergePrivilegeInfo(other.getPrivilegeInfo());
         }
-        if (other.getCJKNNLMFNAH() != false) {
-          setCJKNNLMFNAH(other.getCJKNNLMFNAH());
+        if (other.getFinishTime() != 0) {
+          setFinishTime(other.getFinishTime());
         }
-        if (other.getMissionId() != 0) {
-          setMissionId(other.getMissionId());
-        }
-        if (other.getJFFIEEJGKBG() != false) {
-          setJFFIEEJGKBG(other.getJFFIEEJGKBG());
+        if (other.getKKDLAEGCONN() != false) {
+          setKKDLAEGCONN(other.getKKDLAEGCONN());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1098,71 +1098,9 @@ public final class ReunionBriefInfoOuterClass {
       }
       private int bitField0_;
 
-      private int firstDayStartTime_ ;
-      /**
-       * <code>uint32 first_day_start_time = 9;</code>
-       * @return The firstDayStartTime.
-       */
-      @java.lang.Override
-      public int getFirstDayStartTime() {
-        return firstDayStartTime_;
-      }
-      /**
-       * <code>uint32 first_day_start_time = 9;</code>
-       * @param value The firstDayStartTime to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFirstDayStartTime(int value) {
-        
-        firstDayStartTime_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 first_day_start_time = 9;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearFirstDayStartTime() {
-        
-        firstDayStartTime_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int finishTime_ ;
-      /**
-       * <code>uint32 finish_time = 15;</code>
-       * @return The finishTime.
-       */
-      @java.lang.Override
-      public int getFinishTime() {
-        return finishTime_;
-      }
-      /**
-       * <code>uint32 finish_time = 15;</code>
-       * @param value The finishTime to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFinishTime(int value) {
-        
-        finishTime_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 finish_time = 15;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearFinishTime() {
-        
-        finishTime_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int startTime_ ;
       /**
-       * <code>uint32 start_time = 14;</code>
+       * <code>uint32 start_time = 1;</code>
        * @return The startTime.
        */
       @java.lang.Override
@@ -1170,7 +1108,7 @@ public final class ReunionBriefInfoOuterClass {
         return startTime_;
       }
       /**
-       * <code>uint32 start_time = 14;</code>
+       * <code>uint32 start_time = 1;</code>
        * @param value The startTime to set.
        * @return This builder for chaining.
        */
@@ -1181,7 +1119,7 @@ public final class ReunionBriefInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 start_time = 14;</code>
+       * <code>uint32 start_time = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearStartTime() {
@@ -1191,40 +1129,9 @@ public final class ReunionBriefInfoOuterClass {
         return this;
       }
 
-      private boolean pHFGHHKNPCJ_ ;
-      /**
-       * <code>bool PHFGHHKNPCJ = 4;</code>
-       * @return The pHFGHHKNPCJ.
-       */
-      @java.lang.Override
-      public boolean getPHFGHHKNPCJ() {
-        return pHFGHHKNPCJ_;
-      }
-      /**
-       * <code>bool PHFGHHKNPCJ = 4;</code>
-       * @param value The pHFGHHKNPCJ to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPHFGHHKNPCJ(boolean value) {
-        
-        pHFGHHKNPCJ_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool PHFGHHKNPCJ = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPHFGHHKNPCJ() {
-        
-        pHFGHHKNPCJ_ = false;
-        onChanged();
-        return this;
-      }
-
       private int signInConfigId_ ;
       /**
-       * <code>uint32 sign_in_config_id = 2;</code>
+       * <code>uint32 sign_in_config_id = 6;</code>
        * @return The signInConfigId.
        */
       @java.lang.Override
@@ -1232,7 +1139,7 @@ public final class ReunionBriefInfoOuterClass {
         return signInConfigId_;
       }
       /**
-       * <code>uint32 sign_in_config_id = 2;</code>
+       * <code>uint32 sign_in_config_id = 6;</code>
        * @param value The signInConfigId to set.
        * @return This builder for chaining.
        */
@@ -1243,7 +1150,7 @@ public final class ReunionBriefInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 sign_in_config_id = 2;</code>
+       * <code>uint32 sign_in_config_id = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearSignInConfigId() {
@@ -1253,18 +1160,420 @@ public final class ReunionBriefInfoOuterClass {
         return this;
       }
 
+      private int oGDAOPBFBKM_ ;
+      /**
+       * <code>uint32 OGDAOPBFBKM = 12;</code>
+       * @return The oGDAOPBFBKM.
+       */
+      @java.lang.Override
+      public int getOGDAOPBFBKM() {
+        return oGDAOPBFBKM_;
+      }
+      /**
+       * <code>uint32 OGDAOPBFBKM = 12;</code>
+       * @param value The oGDAOPBFBKM to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOGDAOPBFBKM(int value) {
+        
+        oGDAOPBFBKM_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 OGDAOPBFBKM = 12;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOGDAOPBFBKM() {
+        
+        oGDAOPBFBKM_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean pBKEBOEICMN_ ;
+      /**
+       * <code>bool PBKEBOEICMN = 14;</code>
+       * @return The pBKEBOEICMN.
+       */
+      @java.lang.Override
+      public boolean getPBKEBOEICMN() {
+        return pBKEBOEICMN_;
+      }
+      /**
+       * <code>bool PBKEBOEICMN = 14;</code>
+       * @param value The pBKEBOEICMN to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPBKEBOEICMN(boolean value) {
+        
+        pBKEBOEICMN_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool PBKEBOEICMN = 14;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPBKEBOEICMN() {
+        
+        pBKEBOEICMN_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<java.lang.Integer> nMAEOONHPIJ_ =
+        java.util.Collections.emptyList();
+      private void ensureNMAEOONHPIJIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          nMAEOONHPIJ_ = new java.util.ArrayList<java.lang.Integer>(nMAEOONHPIJ_);
+          bitField0_ |= 0x00000001;
+        }
+      }
+      /**
+       * <code>repeated .PEKMJNLFFEE NMAEOONHPIJ = 15;</code>
+       * @return A list containing the nMAEOONHPIJ.
+       */
+      public java.util.List<emu.grasscutter.net.proto.PEKMJNLFFEEOuterClass.PEKMJNLFFEE> getNMAEOONHPIJList() {
+        return new com.google.protobuf.Internal.ListAdapter<
+            java.lang.Integer, emu.grasscutter.net.proto.PEKMJNLFFEEOuterClass.PEKMJNLFFEE>(nMAEOONHPIJ_, nMAEOONHPIJ_converter_);
+      }
+      /**
+       * <code>repeated .PEKMJNLFFEE NMAEOONHPIJ = 15;</code>
+       * @return The count of nMAEOONHPIJ.
+       */
+      public int getNMAEOONHPIJCount() {
+        return nMAEOONHPIJ_.size();
+      }
+      /**
+       * <code>repeated .PEKMJNLFFEE NMAEOONHPIJ = 15;</code>
+       * @param index The index of the element to return.
+       * @return The nMAEOONHPIJ at the given index.
+       */
+      public emu.grasscutter.net.proto.PEKMJNLFFEEOuterClass.PEKMJNLFFEE getNMAEOONHPIJ(int index) {
+        return nMAEOONHPIJ_converter_.convert(nMAEOONHPIJ_.get(index));
+      }
+      /**
+       * <code>repeated .PEKMJNLFFEE NMAEOONHPIJ = 15;</code>
+       * @param index The index to set the value at.
+       * @param value The nMAEOONHPIJ to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNMAEOONHPIJ(
+          int index, emu.grasscutter.net.proto.PEKMJNLFFEEOuterClass.PEKMJNLFFEE value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureNMAEOONHPIJIsMutable();
+        nMAEOONHPIJ_.set(index, value.getNumber());
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated .PEKMJNLFFEE NMAEOONHPIJ = 15;</code>
+       * @param value The nMAEOONHPIJ to add.
+       * @return This builder for chaining.
+       */
+      public Builder addNMAEOONHPIJ(emu.grasscutter.net.proto.PEKMJNLFFEEOuterClass.PEKMJNLFFEE value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureNMAEOONHPIJIsMutable();
+        nMAEOONHPIJ_.add(value.getNumber());
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated .PEKMJNLFFEE NMAEOONHPIJ = 15;</code>
+       * @param values The nMAEOONHPIJ to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllNMAEOONHPIJ(
+          java.lang.Iterable<? extends emu.grasscutter.net.proto.PEKMJNLFFEEOuterClass.PEKMJNLFFEE> values) {
+        ensureNMAEOONHPIJIsMutable();
+        for (emu.grasscutter.net.proto.PEKMJNLFFEEOuterClass.PEKMJNLFFEE value : values) {
+          nMAEOONHPIJ_.add(value.getNumber());
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated .PEKMJNLFFEE NMAEOONHPIJ = 15;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearNMAEOONHPIJ() {
+        nMAEOONHPIJ_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated .PEKMJNLFFEE NMAEOONHPIJ = 15;</code>
+       * @return A list containing the enum numeric values on the wire for nMAEOONHPIJ.
+       */
+      public java.util.List<java.lang.Integer>
+      getNMAEOONHPIJValueList() {
+        return java.util.Collections.unmodifiableList(nMAEOONHPIJ_);
+      }
+      /**
+       * <code>repeated .PEKMJNLFFEE NMAEOONHPIJ = 15;</code>
+       * @param index The index of the value to return.
+       * @return The enum numeric value on the wire of nMAEOONHPIJ at the given index.
+       */
+      public int getNMAEOONHPIJValue(int index) {
+        return nMAEOONHPIJ_.get(index);
+      }
+      /**
+       * <code>repeated .PEKMJNLFFEE NMAEOONHPIJ = 15;</code>
+       * @param index The index of the value to return.
+       * @return The enum numeric value on the wire of nMAEOONHPIJ at the given index.
+       * @return This builder for chaining.
+       */
+      public Builder setNMAEOONHPIJValue(
+          int index, int value) {
+        ensureNMAEOONHPIJIsMutable();
+        nMAEOONHPIJ_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated .PEKMJNLFFEE NMAEOONHPIJ = 15;</code>
+       * @param value The enum numeric value on the wire for nMAEOONHPIJ to add.
+       * @return This builder for chaining.
+       */
+      public Builder addNMAEOONHPIJValue(int value) {
+        ensureNMAEOONHPIJIsMutable();
+        nMAEOONHPIJ_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated .PEKMJNLFFEE NMAEOONHPIJ = 15;</code>
+       * @param values The enum numeric values on the wire for nMAEOONHPIJ to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllNMAEOONHPIJValue(
+          java.lang.Iterable<java.lang.Integer> values) {
+        ensureNMAEOONHPIJIsMutable();
+        for (int value : values) {
+          nMAEOONHPIJ_.add(value);
+        }
+        onChanged();
+        return this;
+      }
+
+      private int missionId_ ;
+      /**
+       * <code>uint32 mission_id = 8;</code>
+       * @return The missionId.
+       */
+      @java.lang.Override
+      public int getMissionId() {
+        return missionId_;
+      }
+      /**
+       * <code>uint32 mission_id = 8;</code>
+       * @param value The missionId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMissionId(int value) {
+        
+        missionId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 mission_id = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMissionId() {
+        
+        missionId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int firstDayStartTime_ ;
+      /**
+       * <code>uint32 first_day_start_time = 2;</code>
+       * @return The firstDayStartTime.
+       */
+      @java.lang.Override
+      public int getFirstDayStartTime() {
+        return firstDayStartTime_;
+      }
+      /**
+       * <code>uint32 first_day_start_time = 2;</code>
+       * @param value The firstDayStartTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFirstDayStartTime(int value) {
+        
+        firstDayStartTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 first_day_start_time = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFirstDayStartTime() {
+        
+        firstDayStartTime_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int privilegeId_ ;
+      /**
+       * <code>uint32 privilege_id = 11;</code>
+       * @return The privilegeId.
+       */
+      @java.lang.Override
+      public int getPrivilegeId() {
+        return privilegeId_;
+      }
+      /**
+       * <code>uint32 privilege_id = 11;</code>
+       * @param value The privilegeId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPrivilegeId(int value) {
+        
+        privilegeId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 privilege_id = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPrivilegeId() {
+        
+        privilegeId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object version_ = "";
+      /**
+       * <code>string version = 7;</code>
+       * @return The version.
+       */
+      public java.lang.String getVersion() {
+        java.lang.Object ref = version_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          version_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string version = 7;</code>
+       * @return The bytes for version.
+       */
+      public com.google.protobuf.ByteString
+          getVersionBytes() {
+        java.lang.Object ref = version_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          version_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string version = 7;</code>
+       * @param value The version to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVersion(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        version_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string version = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearVersion() {
+        
+        version_ = getDefaultInstance().getVersion();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string version = 7;</code>
+       * @param value The bytes for version to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVersionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        version_ = value;
+        onChanged();
+        return this;
+      }
+
+      private boolean cJMFAOILNFB_ ;
+      /**
+       * <code>bool CJMFAOILNFB = 4;</code>
+       * @return The cJMFAOILNFB.
+       */
+      @java.lang.Override
+      public boolean getCJMFAOILNFB() {
+        return cJMFAOILNFB_;
+      }
+      /**
+       * <code>bool CJMFAOILNFB = 4;</code>
+       * @param value The cJMFAOILNFB to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCJMFAOILNFB(boolean value) {
+        
+        cJMFAOILNFB_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool CJMFAOILNFB = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCJMFAOILNFB() {
+        
+        cJMFAOILNFB_ = false;
+        onChanged();
+        return this;
+      }
+
       private emu.grasscutter.net.proto.ReunionPrivilegeInfoOuterClass.ReunionPrivilegeInfo privilegeInfo_;
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.ReunionPrivilegeInfoOuterClass.ReunionPrivilegeInfo, emu.grasscutter.net.proto.ReunionPrivilegeInfoOuterClass.ReunionPrivilegeInfo.Builder, emu.grasscutter.net.proto.ReunionPrivilegeInfoOuterClass.ReunionPrivilegeInfoOrBuilder> privilegeInfoBuilder_;
       /**
-       * <code>.ReunionPrivilegeInfo privilege_info = 7;</code>
+       * <code>.ReunionPrivilegeInfo privilege_info = 9;</code>
        * @return Whether the privilegeInfo field is set.
        */
       public boolean hasPrivilegeInfo() {
         return privilegeInfoBuilder_ != null || privilegeInfo_ != null;
       }
       /**
-       * <code>.ReunionPrivilegeInfo privilege_info = 7;</code>
+       * <code>.ReunionPrivilegeInfo privilege_info = 9;</code>
        * @return The privilegeInfo.
        */
       public emu.grasscutter.net.proto.ReunionPrivilegeInfoOuterClass.ReunionPrivilegeInfo getPrivilegeInfo() {
@@ -1275,7 +1584,7 @@ public final class ReunionBriefInfoOuterClass {
         }
       }
       /**
-       * <code>.ReunionPrivilegeInfo privilege_info = 7;</code>
+       * <code>.ReunionPrivilegeInfo privilege_info = 9;</code>
        */
       public Builder setPrivilegeInfo(emu.grasscutter.net.proto.ReunionPrivilegeInfoOuterClass.ReunionPrivilegeInfo value) {
         if (privilegeInfoBuilder_ == null) {
@@ -1291,7 +1600,7 @@ public final class ReunionBriefInfoOuterClass {
         return this;
       }
       /**
-       * <code>.ReunionPrivilegeInfo privilege_info = 7;</code>
+       * <code>.ReunionPrivilegeInfo privilege_info = 9;</code>
        */
       public Builder setPrivilegeInfo(
           emu.grasscutter.net.proto.ReunionPrivilegeInfoOuterClass.ReunionPrivilegeInfo.Builder builderForValue) {
@@ -1305,7 +1614,7 @@ public final class ReunionBriefInfoOuterClass {
         return this;
       }
       /**
-       * <code>.ReunionPrivilegeInfo privilege_info = 7;</code>
+       * <code>.ReunionPrivilegeInfo privilege_info = 9;</code>
        */
       public Builder mergePrivilegeInfo(emu.grasscutter.net.proto.ReunionPrivilegeInfoOuterClass.ReunionPrivilegeInfo value) {
         if (privilegeInfoBuilder_ == null) {
@@ -1323,7 +1632,7 @@ public final class ReunionBriefInfoOuterClass {
         return this;
       }
       /**
-       * <code>.ReunionPrivilegeInfo privilege_info = 7;</code>
+       * <code>.ReunionPrivilegeInfo privilege_info = 9;</code>
        */
       public Builder clearPrivilegeInfo() {
         if (privilegeInfoBuilder_ == null) {
@@ -1337,7 +1646,7 @@ public final class ReunionBriefInfoOuterClass {
         return this;
       }
       /**
-       * <code>.ReunionPrivilegeInfo privilege_info = 7;</code>
+       * <code>.ReunionPrivilegeInfo privilege_info = 9;</code>
        */
       public emu.grasscutter.net.proto.ReunionPrivilegeInfoOuterClass.ReunionPrivilegeInfo.Builder getPrivilegeInfoBuilder() {
         
@@ -1345,7 +1654,7 @@ public final class ReunionBriefInfoOuterClass {
         return getPrivilegeInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.ReunionPrivilegeInfo privilege_info = 7;</code>
+       * <code>.ReunionPrivilegeInfo privilege_info = 9;</code>
        */
       public emu.grasscutter.net.proto.ReunionPrivilegeInfoOuterClass.ReunionPrivilegeInfoOrBuilder getPrivilegeInfoOrBuilder() {
         if (privilegeInfoBuilder_ != null) {
@@ -1356,7 +1665,7 @@ public final class ReunionBriefInfoOuterClass {
         }
       }
       /**
-       * <code>.ReunionPrivilegeInfo privilege_info = 7;</code>
+       * <code>.ReunionPrivilegeInfo privilege_info = 9;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.ReunionPrivilegeInfoOuterClass.ReunionPrivilegeInfo, emu.grasscutter.net.proto.ReunionPrivilegeInfoOuterClass.ReunionPrivilegeInfo.Builder, emu.grasscutter.net.proto.ReunionPrivilegeInfoOuterClass.ReunionPrivilegeInfoOrBuilder> 
@@ -1372,373 +1681,64 @@ public final class ReunionBriefInfoOuterClass {
         return privilegeInfoBuilder_;
       }
 
-      private int oCNMNFKHAEH_ ;
+      private int finishTime_ ;
       /**
-       * <code>uint32 OCNMNFKHAEH = 8;</code>
-       * @return The oCNMNFKHAEH.
+       * <code>uint32 finish_time = 13;</code>
+       * @return The finishTime.
        */
       @java.lang.Override
-      public int getOCNMNFKHAEH() {
-        return oCNMNFKHAEH_;
+      public int getFinishTime() {
+        return finishTime_;
       }
       /**
-       * <code>uint32 OCNMNFKHAEH = 8;</code>
-       * @param value The oCNMNFKHAEH to set.
+       * <code>uint32 finish_time = 13;</code>
+       * @param value The finishTime to set.
        * @return This builder for chaining.
        */
-      public Builder setOCNMNFKHAEH(int value) {
+      public Builder setFinishTime(int value) {
         
-        oCNMNFKHAEH_ = value;
+        finishTime_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 OCNMNFKHAEH = 8;</code>
+       * <code>uint32 finish_time = 13;</code>
        * @return This builder for chaining.
        */
-      public Builder clearOCNMNFKHAEH() {
+      public Builder clearFinishTime() {
         
-        oCNMNFKHAEH_ = 0;
+        finishTime_ = 0;
         onChanged();
         return this;
       }
 
-      private java.lang.Object version_ = "";
+      private boolean kKDLAEGCONN_ ;
       /**
-       * <code>string version = 10;</code>
-       * @return The version.
-       */
-      public java.lang.String getVersion() {
-        java.lang.Object ref = version_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          version_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string version = 10;</code>
-       * @return The bytes for version.
-       */
-      public com.google.protobuf.ByteString
-          getVersionBytes() {
-        java.lang.Object ref = version_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          version_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string version = 10;</code>
-       * @param value The version to set.
-       * @return This builder for chaining.
-       */
-      public Builder setVersion(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        version_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string version = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearVersion() {
-        
-        version_ = getDefaultInstance().getVersion();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string version = 10;</code>
-       * @param value The bytes for version to set.
-       * @return This builder for chaining.
-       */
-      public Builder setVersionBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        version_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.util.List<java.lang.Integer> hJNFOKADAEN_ =
-        java.util.Collections.emptyList();
-      private void ensureHJNFOKADAENIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          hJNFOKADAEN_ = new java.util.ArrayList<java.lang.Integer>(hJNFOKADAEN_);
-          bitField0_ |= 0x00000001;
-        }
-      }
-      /**
-       * <code>repeated .LNCJHILJOBA HJNFOKADAEN = 6;</code>
-       * @return A list containing the hJNFOKADAEN.
-       */
-      public java.util.List<emu.grasscutter.net.proto.LNCJHILJOBAOuterClass.LNCJHILJOBA> getHJNFOKADAENList() {
-        return new com.google.protobuf.Internal.ListAdapter<
-            java.lang.Integer, emu.grasscutter.net.proto.LNCJHILJOBAOuterClass.LNCJHILJOBA>(hJNFOKADAEN_, hJNFOKADAEN_converter_);
-      }
-      /**
-       * <code>repeated .LNCJHILJOBA HJNFOKADAEN = 6;</code>
-       * @return The count of hJNFOKADAEN.
-       */
-      public int getHJNFOKADAENCount() {
-        return hJNFOKADAEN_.size();
-      }
-      /**
-       * <code>repeated .LNCJHILJOBA HJNFOKADAEN = 6;</code>
-       * @param index The index of the element to return.
-       * @return The hJNFOKADAEN at the given index.
-       */
-      public emu.grasscutter.net.proto.LNCJHILJOBAOuterClass.LNCJHILJOBA getHJNFOKADAEN(int index) {
-        return hJNFOKADAEN_converter_.convert(hJNFOKADAEN_.get(index));
-      }
-      /**
-       * <code>repeated .LNCJHILJOBA HJNFOKADAEN = 6;</code>
-       * @param index The index to set the value at.
-       * @param value The hJNFOKADAEN to set.
-       * @return This builder for chaining.
-       */
-      public Builder setHJNFOKADAEN(
-          int index, emu.grasscutter.net.proto.LNCJHILJOBAOuterClass.LNCJHILJOBA value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureHJNFOKADAENIsMutable();
-        hJNFOKADAEN_.set(index, value.getNumber());
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated .LNCJHILJOBA HJNFOKADAEN = 6;</code>
-       * @param value The hJNFOKADAEN to add.
-       * @return This builder for chaining.
-       */
-      public Builder addHJNFOKADAEN(emu.grasscutter.net.proto.LNCJHILJOBAOuterClass.LNCJHILJOBA value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureHJNFOKADAENIsMutable();
-        hJNFOKADAEN_.add(value.getNumber());
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated .LNCJHILJOBA HJNFOKADAEN = 6;</code>
-       * @param values The hJNFOKADAEN to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllHJNFOKADAEN(
-          java.lang.Iterable<? extends emu.grasscutter.net.proto.LNCJHILJOBAOuterClass.LNCJHILJOBA> values) {
-        ensureHJNFOKADAENIsMutable();
-        for (emu.grasscutter.net.proto.LNCJHILJOBAOuterClass.LNCJHILJOBA value : values) {
-          hJNFOKADAEN_.add(value.getNumber());
-        }
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated .LNCJHILJOBA HJNFOKADAEN = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearHJNFOKADAEN() {
-        hJNFOKADAEN_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated .LNCJHILJOBA HJNFOKADAEN = 6;</code>
-       * @return A list containing the enum numeric values on the wire for hJNFOKADAEN.
-       */
-      public java.util.List<java.lang.Integer>
-      getHJNFOKADAENValueList() {
-        return java.util.Collections.unmodifiableList(hJNFOKADAEN_);
-      }
-      /**
-       * <code>repeated .LNCJHILJOBA HJNFOKADAEN = 6;</code>
-       * @param index The index of the value to return.
-       * @return The enum numeric value on the wire of hJNFOKADAEN at the given index.
-       */
-      public int getHJNFOKADAENValue(int index) {
-        return hJNFOKADAEN_.get(index);
-      }
-      /**
-       * <code>repeated .LNCJHILJOBA HJNFOKADAEN = 6;</code>
-       * @param index The index of the value to return.
-       * @return The enum numeric value on the wire of hJNFOKADAEN at the given index.
-       * @return This builder for chaining.
-       */
-      public Builder setHJNFOKADAENValue(
-          int index, int value) {
-        ensureHJNFOKADAENIsMutable();
-        hJNFOKADAEN_.set(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated .LNCJHILJOBA HJNFOKADAEN = 6;</code>
-       * @param value The enum numeric value on the wire for hJNFOKADAEN to add.
-       * @return This builder for chaining.
-       */
-      public Builder addHJNFOKADAENValue(int value) {
-        ensureHJNFOKADAENIsMutable();
-        hJNFOKADAEN_.add(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated .LNCJHILJOBA HJNFOKADAEN = 6;</code>
-       * @param values The enum numeric values on the wire for hJNFOKADAEN to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllHJNFOKADAENValue(
-          java.lang.Iterable<java.lang.Integer> values) {
-        ensureHJNFOKADAENIsMutable();
-        for (int value : values) {
-          hJNFOKADAEN_.add(value);
-        }
-        onChanged();
-        return this;
-      }
-
-      private int privilegeId_ ;
-      /**
-       * <code>uint32 privilege_id = 3;</code>
-       * @return The privilegeId.
+       * <code>bool KKDLAEGCONN = 5;</code>
+       * @return The kKDLAEGCONN.
        */
       @java.lang.Override
-      public int getPrivilegeId() {
-        return privilegeId_;
+      public boolean getKKDLAEGCONN() {
+        return kKDLAEGCONN_;
       }
       /**
-       * <code>uint32 privilege_id = 3;</code>
-       * @param value The privilegeId to set.
+       * <code>bool KKDLAEGCONN = 5;</code>
+       * @param value The kKDLAEGCONN to set.
        * @return This builder for chaining.
        */
-      public Builder setPrivilegeId(int value) {
+      public Builder setKKDLAEGCONN(boolean value) {
         
-        privilegeId_ = value;
+        kKDLAEGCONN_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 privilege_id = 3;</code>
+       * <code>bool KKDLAEGCONN = 5;</code>
        * @return This builder for chaining.
        */
-      public Builder clearPrivilegeId() {
+      public Builder clearKKDLAEGCONN() {
         
-        privilegeId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private boolean cJKNNLMFNAH_ ;
-      /**
-       * <code>bool CJKNNLMFNAH = 5;</code>
-       * @return The cJKNNLMFNAH.
-       */
-      @java.lang.Override
-      public boolean getCJKNNLMFNAH() {
-        return cJKNNLMFNAH_;
-      }
-      /**
-       * <code>bool CJKNNLMFNAH = 5;</code>
-       * @param value The cJKNNLMFNAH to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCJKNNLMFNAH(boolean value) {
-        
-        cJKNNLMFNAH_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool CJKNNLMFNAH = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCJKNNLMFNAH() {
-        
-        cJKNNLMFNAH_ = false;
-        onChanged();
-        return this;
-      }
-
-      private int missionId_ ;
-      /**
-       * <code>uint32 mission_id = 11;</code>
-       * @return The missionId.
-       */
-      @java.lang.Override
-      public int getMissionId() {
-        return missionId_;
-      }
-      /**
-       * <code>uint32 mission_id = 11;</code>
-       * @param value The missionId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMissionId(int value) {
-        
-        missionId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 mission_id = 11;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMissionId() {
-        
-        missionId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private boolean jFFIEEJGKBG_ ;
-      /**
-       * <code>bool JFFIEEJGKBG = 13;</code>
-       * @return The jFFIEEJGKBG.
-       */
-      @java.lang.Override
-      public boolean getJFFIEEJGKBG() {
-        return jFFIEEJGKBG_;
-      }
-      /**
-       * <code>bool JFFIEEJGKBG = 13;</code>
-       * @param value The jFFIEEJGKBG to set.
-       * @return This builder for chaining.
-       */
-      public Builder setJFFIEEJGKBG(boolean value) {
-        
-        jFFIEEJGKBG_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool JFFIEEJGKBG = 13;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearJFFIEEJGKBG() {
-        
-        jFFIEEJGKBG_ = false;
+        kKDLAEGCONN_ = false;
         onChanged();
         return this;
       }
@@ -1809,33 +1809,33 @@ public final class ReunionBriefInfoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\026ReunionBriefInfo.proto\032\032ReunionPrivile" +
-      "geInfo.proto\032\021LNCJHILJOBA.proto\"\325\002\n\020Reun" +
-      "ionBriefInfo\022\034\n\024first_day_start_time\030\t \001" +
-      "(\r\022\023\n\013finish_time\030\017 \001(\r\022\022\n\nstart_time\030\016 " +
-      "\001(\r\022\023\n\013PHFGHHKNPCJ\030\004 \001(\010\022\031\n\021sign_in_conf" +
-      "ig_id\030\002 \001(\r\022-\n\016privilege_info\030\007 \001(\0132\025.Re" +
-      "unionPrivilegeInfo\022\023\n\013OCNMNFKHAEH\030\010 \001(\r\022" +
-      "\017\n\007version\030\n \001(\t\022!\n\013HJNFOKADAEN\030\006 \003(\0162\014." +
-      "LNCJHILJOBA\022\024\n\014privilege_id\030\003 \001(\r\022\023\n\013CJK" +
-      "NNLMFNAH\030\005 \001(\010\022\022\n\nmission_id\030\013 \001(\r\022\023\n\013JF" +
-      "FIEEJGKBG\030\r \001(\010B\033\n\031emu.grasscutter.net.p" +
+      "\n\026ReunionBriefInfo.proto\032\021PEKMJNLFFEE.pr" +
+      "oto\032\032ReunionPrivilegeInfo.proto\"\325\002\n\020Reun" +
+      "ionBriefInfo\022\022\n\nstart_time\030\001 \001(\r\022\031\n\021sign" +
+      "_in_config_id\030\006 \001(\r\022\023\n\013OGDAOPBFBKM\030\014 \001(\r" +
+      "\022\023\n\013PBKEBOEICMN\030\016 \001(\010\022!\n\013NMAEOONHPIJ\030\017 \003" +
+      "(\0162\014.PEKMJNLFFEE\022\022\n\nmission_id\030\010 \001(\r\022\034\n\024" +
+      "first_day_start_time\030\002 \001(\r\022\024\n\014privilege_" +
+      "id\030\013 \001(\r\022\017\n\007version\030\007 \001(\t\022\023\n\013CJMFAOILNFB" +
+      "\030\004 \001(\010\022-\n\016privilege_info\030\t \001(\0132\025.Reunion" +
+      "PrivilegeInfo\022\023\n\013finish_time\030\r \001(\r\022\023\n\013KK" +
+      "DLAEGCONN\030\005 \001(\010B\033\n\031emu.grasscutter.net.p" +
       "rotob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          emu.grasscutter.net.proto.PEKMJNLFFEEOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.ReunionPrivilegeInfoOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.LNCJHILJOBAOuterClass.getDescriptor(),
         });
     internal_static_ReunionBriefInfo_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_ReunionBriefInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ReunionBriefInfo_descriptor,
-        new java.lang.String[] { "FirstDayStartTime", "FinishTime", "StartTime", "PHFGHHKNPCJ", "SignInConfigId", "PrivilegeInfo", "OCNMNFKHAEH", "Version", "HJNFOKADAEN", "PrivilegeId", "CJKNNLMFNAH", "MissionId", "JFFIEEJGKBG", });
+        new java.lang.String[] { "StartTime", "SignInConfigId", "OGDAOPBFBKM", "PBKEBOEICMN", "NMAEOONHPIJ", "MissionId", "FirstDayStartTime", "PrivilegeId", "Version", "CJMFAOILNFB", "PrivilegeInfo", "FinishTime", "KKDLAEGCONN", });
+    emu.grasscutter.net.proto.PEKMJNLFFEEOuterClass.getDescriptor();
     emu.grasscutter.net.proto.ReunionPrivilegeInfoOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.LNCJHILJOBAOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

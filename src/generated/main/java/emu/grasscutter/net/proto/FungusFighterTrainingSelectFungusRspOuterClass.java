@@ -26,8 +26,8 @@ public final class FungusFighterTrainingSelectFungusRspOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 24204
-   * Obf: PLPBOCNNPOJ
+   * CmdId: 22849
+   * Obf: EDMLJJBCENE
    * </pre>
    *
    * Protobuf type {@code FungusFighterTrainingSelectFungusRsp}
@@ -279,8 +279,8 @@ public final class FungusFighterTrainingSelectFungusRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 24204
-     * Obf: PLPBOCNNPOJ
+     * CmdId: 22849
+     * Obf: EDMLJJBCENE
      * </pre>
      *
      * Protobuf type {@code FungusFighterTrainingSelectFungusRsp}

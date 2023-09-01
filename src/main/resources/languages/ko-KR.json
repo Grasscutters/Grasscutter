@@ -407,8 +407,8 @@
       "failure": "실패, 플레이어를 찾을 수 없습니다.",
       "description": "플레이어에 대한 밴을 해제합니다"
     },
-    "troubleshoot": {
-      "description": "🇺🇸Generate debugging information for troubleshooting."
+    "info": {
+      "description": "🇺🇸Provides the sender information about the server."
     }
   },
   "gacha": {

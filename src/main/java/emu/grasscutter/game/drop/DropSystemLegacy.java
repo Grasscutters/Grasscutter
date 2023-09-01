@@ -1,22 +1,17 @@
 package emu.grasscutter.game.drop;
 
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.data.DataLoader;
-import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.*;
 import emu.grasscutter.data.excels.ItemData;
-import emu.grasscutter.game.entity.EntityItem;
-import emu.grasscutter.game.entity.EntityMonster;
-import emu.grasscutter.game.inventory.GameItem;
-import emu.grasscutter.game.inventory.ItemType;
+import emu.grasscutter.game.entity.*;
+import emu.grasscutter.game.inventory.*;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
-import emu.grasscutter.game.world.Position;
-import emu.grasscutter.game.world.Scene;
-import emu.grasscutter.server.game.BaseGameSystem;
-import emu.grasscutter.server.game.GameServer;
+import emu.grasscutter.game.world.*;
+import emu.grasscutter.server.game.*;
 import emu.grasscutter.utils.Utils;
-import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+import it.unimi.dsi.fastutil.ints.*;
+
 import java.util.List;
 
 @SuppressWarnings("deprecation")

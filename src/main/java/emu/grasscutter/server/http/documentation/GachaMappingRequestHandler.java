@@ -1,12 +1,12 @@
 package emu.grasscutter.server.http.documentation;
 
-import static emu.grasscutter.config.Configuration.DOCUMENT_LANGUAGE;
-
 import emu.grasscutter.tools.Tools;
 import emu.grasscutter.utils.lang.Language;
-import io.javalin.http.ContentType;
-import io.javalin.http.Context;
+import io.javalin.http.*;
+
 import java.util.List;
+
+import static emu.grasscutter.config.Configuration.DOCUMENT_LANGUAGE;
 
 final class GachaMappingRequestHandler implements DocumentationHandler {
     private final List<String> gachaJsons;

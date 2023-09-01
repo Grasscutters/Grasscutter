@@ -32,7 +32,7 @@ public final class BreakoutVector2OuterClass {
   }
   /**
    * <pre>
-   * Obf: FBODBKPINBJ
+   * Obf: FIGLCLAIOJM
    * </pre>
    *
    * Protobuf type {@code BreakoutVector2}
@@ -311,7 +311,7 @@ public final class BreakoutVector2OuterClass {
     }
     /**
      * <pre>
-     * Obf: FBODBKPINBJ
+     * Obf: FIGLCLAIOJM
      * </pre>
      *
      * Protobuf type {@code BreakoutVector2}

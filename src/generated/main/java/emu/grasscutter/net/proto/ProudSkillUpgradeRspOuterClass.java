@@ -19,27 +19,27 @@ public final class ProudSkillUpgradeRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 proud_skill_id = 11;</code>
+     * <code>uint32 proud_skill_id = 15;</code>
      * @return The proudSkillId.
      */
     int getProudSkillId();
 
     /**
-     * <code>uint64 avatar_guid = 5;</code>
-     * @return The avatarGuid.
-     */
-    long getAvatarGuid();
-
-    /**
-     * <code>int32 retcode = 9;</code>
+     * <code>int32 retcode = 7;</code>
      * @return The retcode.
      */
     int getRetcode();
+
+    /**
+     * <code>uint64 avatar_guid = 2;</code>
+     * @return The avatarGuid.
+     */
+    long getAvatarGuid();
   }
   /**
    * <pre>
-   * CmdId: 1030
-   * Obf: CAMMOIFNHBP
+   * CmdId: 8300
+   * Obf: JNAGAKFGDJO
    * </pre>
    *
    * Protobuf type {@code ProudSkillUpgradeRsp}
@@ -86,17 +86,17 @@ public final class ProudSkillUpgradeRspOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
+            case 16: {
 
               avatarGuid_ = input.readUInt64();
               break;
             }
-            case 72: {
+            case 56: {
 
               retcode_ = input.readInt32();
               break;
             }
-            case 88: {
+            case 120: {
 
               proudSkillId_ = input.readUInt32();
               break;
@@ -133,10 +133,10 @@ public final class ProudSkillUpgradeRspOuterClass {
               emu.grasscutter.net.proto.ProudSkillUpgradeRspOuterClass.ProudSkillUpgradeRsp.class, emu.grasscutter.net.proto.ProudSkillUpgradeRspOuterClass.ProudSkillUpgradeRsp.Builder.class);
     }
 
-    public static final int PROUD_SKILL_ID_FIELD_NUMBER = 11;
+    public static final int PROUD_SKILL_ID_FIELD_NUMBER = 15;
     private int proudSkillId_;
     /**
-     * <code>uint32 proud_skill_id = 11;</code>
+     * <code>uint32 proud_skill_id = 15;</code>
      * @return The proudSkillId.
      */
     @java.lang.Override
@@ -144,26 +144,26 @@ public final class ProudSkillUpgradeRspOuterClass {
       return proudSkillId_;
     }
 
-    public static final int AVATAR_GUID_FIELD_NUMBER = 5;
-    private long avatarGuid_;
-    /**
-     * <code>uint64 avatar_guid = 5;</code>
-     * @return The avatarGuid.
-     */
-    @java.lang.Override
-    public long getAvatarGuid() {
-      return avatarGuid_;
-    }
-
-    public static final int RETCODE_FIELD_NUMBER = 9;
+    public static final int RETCODE_FIELD_NUMBER = 7;
     private int retcode_;
     /**
-     * <code>int32 retcode = 9;</code>
+     * <code>int32 retcode = 7;</code>
      * @return The retcode.
      */
     @java.lang.Override
     public int getRetcode() {
       return retcode_;
+    }
+
+    public static final int AVATAR_GUID_FIELD_NUMBER = 2;
+    private long avatarGuid_;
+    /**
+     * <code>uint64 avatar_guid = 2;</code>
+     * @return The avatarGuid.
+     */
+    @java.lang.Override
+    public long getAvatarGuid() {
+      return avatarGuid_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -181,13 +181,13 @@ public final class ProudSkillUpgradeRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (avatarGuid_ != 0L) {
-        output.writeUInt64(5, avatarGuid_);
+        output.writeUInt64(2, avatarGuid_);
       }
       if (retcode_ != 0) {
-        output.writeInt32(9, retcode_);
+        output.writeInt32(7, retcode_);
       }
       if (proudSkillId_ != 0) {
-        output.writeUInt32(11, proudSkillId_);
+        output.writeUInt32(15, proudSkillId_);
       }
       unknownFields.writeTo(output);
     }
@@ -200,15 +200,15 @@ public final class ProudSkillUpgradeRspOuterClass {
       size = 0;
       if (avatarGuid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(5, avatarGuid_);
+          .computeUInt64Size(2, avatarGuid_);
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(9, retcode_);
+          .computeInt32Size(7, retcode_);
       }
       if (proudSkillId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, proudSkillId_);
+          .computeUInt32Size(15, proudSkillId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -227,10 +227,10 @@ public final class ProudSkillUpgradeRspOuterClass {
 
       if (getProudSkillId()
           != other.getProudSkillId()) return false;
-      if (getAvatarGuid()
-          != other.getAvatarGuid()) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
+      if (getAvatarGuid()
+          != other.getAvatarGuid()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -244,11 +244,11 @@ public final class ProudSkillUpgradeRspOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + PROUD_SKILL_ID_FIELD_NUMBER;
       hash = (53 * hash) + getProudSkillId();
+      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
+      hash = (53 * hash) + getRetcode();
       hash = (37 * hash) + AVATAR_GUID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getAvatarGuid());
-      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getRetcode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -346,8 +346,8 @@ public final class ProudSkillUpgradeRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 1030
-     * Obf: CAMMOIFNHBP
+     * CmdId: 8300
+     * Obf: JNAGAKFGDJO
      * </pre>
      *
      * Protobuf type {@code ProudSkillUpgradeRsp}
@@ -389,9 +389,9 @@ public final class ProudSkillUpgradeRspOuterClass {
         super.clear();
         proudSkillId_ = 0;
 
-        avatarGuid_ = 0L;
-
         retcode_ = 0;
+
+        avatarGuid_ = 0L;
 
         return this;
       }
@@ -420,8 +420,8 @@ public final class ProudSkillUpgradeRspOuterClass {
       public emu.grasscutter.net.proto.ProudSkillUpgradeRspOuterClass.ProudSkillUpgradeRsp buildPartial() {
         emu.grasscutter.net.proto.ProudSkillUpgradeRspOuterClass.ProudSkillUpgradeRsp result = new emu.grasscutter.net.proto.ProudSkillUpgradeRspOuterClass.ProudSkillUpgradeRsp(this);
         result.proudSkillId_ = proudSkillId_;
-        result.avatarGuid_ = avatarGuid_;
         result.retcode_ = retcode_;
+        result.avatarGuid_ = avatarGuid_;
         onBuilt();
         return result;
       }
@@ -473,11 +473,11 @@ public final class ProudSkillUpgradeRspOuterClass {
         if (other.getProudSkillId() != 0) {
           setProudSkillId(other.getProudSkillId());
         }
-        if (other.getAvatarGuid() != 0L) {
-          setAvatarGuid(other.getAvatarGuid());
-        }
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
+        }
+        if (other.getAvatarGuid() != 0L) {
+          setAvatarGuid(other.getAvatarGuid());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -510,7 +510,7 @@ public final class ProudSkillUpgradeRspOuterClass {
 
       private int proudSkillId_ ;
       /**
-       * <code>uint32 proud_skill_id = 11;</code>
+       * <code>uint32 proud_skill_id = 15;</code>
        * @return The proudSkillId.
        */
       @java.lang.Override
@@ -518,7 +518,7 @@ public final class ProudSkillUpgradeRspOuterClass {
         return proudSkillId_;
       }
       /**
-       * <code>uint32 proud_skill_id = 11;</code>
+       * <code>uint32 proud_skill_id = 15;</code>
        * @param value The proudSkillId to set.
        * @return This builder for chaining.
        */
@@ -529,7 +529,7 @@ public final class ProudSkillUpgradeRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 proud_skill_id = 11;</code>
+       * <code>uint32 proud_skill_id = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearProudSkillId() {
@@ -539,40 +539,9 @@ public final class ProudSkillUpgradeRspOuterClass {
         return this;
       }
 
-      private long avatarGuid_ ;
-      /**
-       * <code>uint64 avatar_guid = 5;</code>
-       * @return The avatarGuid.
-       */
-      @java.lang.Override
-      public long getAvatarGuid() {
-        return avatarGuid_;
-      }
-      /**
-       * <code>uint64 avatar_guid = 5;</code>
-       * @param value The avatarGuid to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAvatarGuid(long value) {
-        
-        avatarGuid_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 avatar_guid = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearAvatarGuid() {
-        
-        avatarGuid_ = 0L;
-        onChanged();
-        return this;
-      }
-
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 9;</code>
+       * <code>int32 retcode = 7;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -580,7 +549,7 @@ public final class ProudSkillUpgradeRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 9;</code>
+       * <code>int32 retcode = 7;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -591,12 +560,43 @@ public final class ProudSkillUpgradeRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 9;</code>
+       * <code>int32 retcode = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
         
         retcode_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private long avatarGuid_ ;
+      /**
+       * <code>uint64 avatar_guid = 2;</code>
+       * @return The avatarGuid.
+       */
+      @java.lang.Override
+      public long getAvatarGuid() {
+        return avatarGuid_;
+      }
+      /**
+       * <code>uint64 avatar_guid = 2;</code>
+       * @param value The avatarGuid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAvatarGuid(long value) {
+        
+        avatarGuid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 avatar_guid = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAvatarGuid() {
+        
+        avatarGuid_ = 0L;
         onChanged();
         return this;
       }
@@ -668,8 +668,8 @@ public final class ProudSkillUpgradeRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\032ProudSkillUpgradeRsp.proto\"T\n\024ProudSki" +
-      "llUpgradeRsp\022\026\n\016proud_skill_id\030\013 \001(\r\022\023\n\013" +
-      "avatar_guid\030\005 \001(\004\022\017\n\007retcode\030\t \001(\005B\033\n\031em" +
+      "llUpgradeRsp\022\026\n\016proud_skill_id\030\017 \001(\r\022\017\n\007" +
+      "retcode\030\007 \001(\005\022\023\n\013avatar_guid\030\002 \001(\004B\033\n\031em" +
       "u.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -681,7 +681,7 @@ public final class ProudSkillUpgradeRspOuterClass {
     internal_static_ProudSkillUpgradeRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ProudSkillUpgradeRsp_descriptor,
-        new java.lang.String[] { "ProudSkillId", "AvatarGuid", "Retcode", });
+        new java.lang.String[] { "ProudSkillId", "Retcode", "AvatarGuid", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

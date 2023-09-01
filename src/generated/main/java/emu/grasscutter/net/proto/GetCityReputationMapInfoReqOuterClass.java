@@ -20,8 +20,8 @@ public final class GetCityReputationMapInfoReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 2864
-   * Obf: OADAOMNGDEO
+   * CmdId: 26582
+   * Obf: MOGOMIBKAHA
    * </pre>
    *
    * Protobuf type {@code GetCityReputationMapInfoReq}
@@ -246,8 +246,8 @@ public final class GetCityReputationMapInfoReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2864
-     * Obf: OADAOMNGDEO
+     * CmdId: 26582
+     * Obf: MOGOMIBKAHA
      * </pre>
      *
      * Protobuf type {@code GetCityReputationMapInfoReq}

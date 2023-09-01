@@ -19,27 +19,27 @@ public final class AvatarChangeCostumeRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint64 avatar_guid = 9;</code>
+     * <code>uint64 avatar_guid = 4;</code>
      * @return The avatarGuid.
      */
     long getAvatarGuid();
 
     /**
-     * <code>int32 retcode = 12;</code>
+     * <code>int32 retcode = 1;</code>
      * @return The retcode.
      */
     int getRetcode();
 
     /**
-     * <code>uint32 costume_id = 4;</code>
+     * <code>uint32 costume_id = 9;</code>
      * @return The costumeId.
      */
     int getCostumeId();
   }
   /**
    * <pre>
-   * CmdId: 1625
-   * Obf: LECIDBKINPN
+   * CmdId: 9148
+   * Obf: KGBMPCNCLNC
    * </pre>
    *
    * Protobuf type {@code AvatarChangeCostumeRsp}
@@ -86,19 +86,19 @@ public final class AvatarChangeCostumeRspOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
+            case 8: {
 
-              costumeId_ = input.readUInt32();
+              retcode_ = input.readInt32();
               break;
             }
-            case 72: {
+            case 32: {
 
               avatarGuid_ = input.readUInt64();
               break;
             }
-            case 96: {
+            case 72: {
 
-              retcode_ = input.readInt32();
+              costumeId_ = input.readUInt32();
               break;
             }
             default: {
@@ -133,10 +133,10 @@ public final class AvatarChangeCostumeRspOuterClass {
               emu.grasscutter.net.proto.AvatarChangeCostumeRspOuterClass.AvatarChangeCostumeRsp.class, emu.grasscutter.net.proto.AvatarChangeCostumeRspOuterClass.AvatarChangeCostumeRsp.Builder.class);
     }
 
-    public static final int AVATAR_GUID_FIELD_NUMBER = 9;
+    public static final int AVATAR_GUID_FIELD_NUMBER = 4;
     private long avatarGuid_;
     /**
-     * <code>uint64 avatar_guid = 9;</code>
+     * <code>uint64 avatar_guid = 4;</code>
      * @return The avatarGuid.
      */
     @java.lang.Override
@@ -144,10 +144,10 @@ public final class AvatarChangeCostumeRspOuterClass {
       return avatarGuid_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 12;
+    public static final int RETCODE_FIELD_NUMBER = 1;
     private int retcode_;
     /**
-     * <code>int32 retcode = 12;</code>
+     * <code>int32 retcode = 1;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -155,10 +155,10 @@ public final class AvatarChangeCostumeRspOuterClass {
       return retcode_;
     }
 
-    public static final int COSTUME_ID_FIELD_NUMBER = 4;
+    public static final int COSTUME_ID_FIELD_NUMBER = 9;
     private int costumeId_;
     /**
-     * <code>uint32 costume_id = 4;</code>
+     * <code>uint32 costume_id = 9;</code>
      * @return The costumeId.
      */
     @java.lang.Override
@@ -180,14 +180,14 @@ public final class AvatarChangeCostumeRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (costumeId_ != 0) {
-        output.writeUInt32(4, costumeId_);
+      if (retcode_ != 0) {
+        output.writeInt32(1, retcode_);
       }
       if (avatarGuid_ != 0L) {
-        output.writeUInt64(9, avatarGuid_);
+        output.writeUInt64(4, avatarGuid_);
       }
-      if (retcode_ != 0) {
-        output.writeInt32(12, retcode_);
+      if (costumeId_ != 0) {
+        output.writeUInt32(9, costumeId_);
       }
       unknownFields.writeTo(output);
     }
@@ -198,17 +198,17 @@ public final class AvatarChangeCostumeRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (costumeId_ != 0) {
+      if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, costumeId_);
+          .computeInt32Size(1, retcode_);
       }
       if (avatarGuid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(9, avatarGuid_);
+          .computeUInt64Size(4, avatarGuid_);
       }
-      if (retcode_ != 0) {
+      if (costumeId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(12, retcode_);
+          .computeUInt32Size(9, costumeId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -346,8 +346,8 @@ public final class AvatarChangeCostumeRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 1625
-     * Obf: LECIDBKINPN
+     * CmdId: 9148
+     * Obf: KGBMPCNCLNC
      * </pre>
      *
      * Protobuf type {@code AvatarChangeCostumeRsp}
@@ -510,7 +510,7 @@ public final class AvatarChangeCostumeRspOuterClass {
 
       private long avatarGuid_ ;
       /**
-       * <code>uint64 avatar_guid = 9;</code>
+       * <code>uint64 avatar_guid = 4;</code>
        * @return The avatarGuid.
        */
       @java.lang.Override
@@ -518,7 +518,7 @@ public final class AvatarChangeCostumeRspOuterClass {
         return avatarGuid_;
       }
       /**
-       * <code>uint64 avatar_guid = 9;</code>
+       * <code>uint64 avatar_guid = 4;</code>
        * @param value The avatarGuid to set.
        * @return This builder for chaining.
        */
@@ -529,7 +529,7 @@ public final class AvatarChangeCostumeRspOuterClass {
         return this;
       }
       /**
-       * <code>uint64 avatar_guid = 9;</code>
+       * <code>uint64 avatar_guid = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearAvatarGuid() {
@@ -541,7 +541,7 @@ public final class AvatarChangeCostumeRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 12;</code>
+       * <code>int32 retcode = 1;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -549,7 +549,7 @@ public final class AvatarChangeCostumeRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 12;</code>
+       * <code>int32 retcode = 1;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -560,7 +560,7 @@ public final class AvatarChangeCostumeRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 12;</code>
+       * <code>int32 retcode = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -572,7 +572,7 @@ public final class AvatarChangeCostumeRspOuterClass {
 
       private int costumeId_ ;
       /**
-       * <code>uint32 costume_id = 4;</code>
+       * <code>uint32 costume_id = 9;</code>
        * @return The costumeId.
        */
       @java.lang.Override
@@ -580,7 +580,7 @@ public final class AvatarChangeCostumeRspOuterClass {
         return costumeId_;
       }
       /**
-       * <code>uint32 costume_id = 4;</code>
+       * <code>uint32 costume_id = 9;</code>
        * @param value The costumeId to set.
        * @return This builder for chaining.
        */
@@ -591,7 +591,7 @@ public final class AvatarChangeCostumeRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 costume_id = 4;</code>
+       * <code>uint32 costume_id = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearCostumeId() {
@@ -668,8 +668,8 @@ public final class AvatarChangeCostumeRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\034AvatarChangeCostumeRsp.proto\"R\n\026Avatar" +
-      "ChangeCostumeRsp\022\023\n\013avatar_guid\030\t \001(\004\022\017\n" +
-      "\007retcode\030\014 \001(\005\022\022\n\ncostume_id\030\004 \001(\rB\033\n\031em" +
+      "ChangeCostumeRsp\022\023\n\013avatar_guid\030\004 \001(\004\022\017\n" +
+      "\007retcode\030\001 \001(\005\022\022\n\ncostume_id\030\t \001(\rB\033\n\031em" +
       "u.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

@@ -16,7 +16,7 @@ public final class ProtEntityTypeOuterClass {
   }
   /**
    * <pre>
-   * Obf: KLLMIOGKNNI
+   * Obf: HFCNMMNOEDA
    * </pre>
    *
    * Protobuf enum {@code ProtEntityType}

@@ -26,8 +26,8 @@ public final class VintageHuntingStartGalleryReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 20089
-   * Obf: ALIGFBMFEOC
+   * CmdId: 21081
+   * Obf: EKFLIDIIPKF
    * </pre>
    *
    * Protobuf type {@code VintageHuntingStartGalleryReq}
@@ -279,8 +279,8 @@ public final class VintageHuntingStartGalleryReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 20089
-     * Obf: ALIGFBMFEOC
+     * CmdId: 21081
+     * Obf: EKFLIDIIPKF
      * </pre>
      *
      * Protobuf type {@code VintageHuntingStartGalleryReq}

@@ -19,15 +19,15 @@ public final class DraftOwnerStartInviteReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 draft_id = 5;</code>
+     * <code>uint32 draft_id = 7;</code>
      * @return The draftId.
      */
     int getDraftId();
   }
   /**
    * <pre>
-   * CmdId: 5402
-   * Obf: CMKGNPCIDPA
+   * CmdId: 26294
+   * Obf: HGGNBCGAGGC
    * </pre>
    *
    * Protobuf type {@code DraftOwnerStartInviteReq}
@@ -74,7 +74,7 @@ public final class DraftOwnerStartInviteReqOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
+            case 56: {
 
               draftId_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class DraftOwnerStartInviteReqOuterClass {
               emu.grasscutter.net.proto.DraftOwnerStartInviteReqOuterClass.DraftOwnerStartInviteReq.class, emu.grasscutter.net.proto.DraftOwnerStartInviteReqOuterClass.DraftOwnerStartInviteReq.Builder.class);
     }
 
-    public static final int DRAFT_ID_FIELD_NUMBER = 5;
+    public static final int DRAFT_ID_FIELD_NUMBER = 7;
     private int draftId_;
     /**
-     * <code>uint32 draft_id = 5;</code>
+     * <code>uint32 draft_id = 7;</code>
      * @return The draftId.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class DraftOwnerStartInviteReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (draftId_ != 0) {
-        output.writeUInt32(5, draftId_);
+        output.writeUInt32(7, draftId_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class DraftOwnerStartInviteReqOuterClass {
       size = 0;
       if (draftId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, draftId_);
+          .computeUInt32Size(7, draftId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class DraftOwnerStartInviteReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 5402
-     * Obf: CMKGNPCIDPA
+     * CmdId: 26294
+     * Obf: HGGNBCGAGGC
      * </pre>
      *
      * Protobuf type {@code DraftOwnerStartInviteReq}
@@ -431,7 +431,7 @@ public final class DraftOwnerStartInviteReqOuterClass {
 
       private int draftId_ ;
       /**
-       * <code>uint32 draft_id = 5;</code>
+       * <code>uint32 draft_id = 7;</code>
        * @return The draftId.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class DraftOwnerStartInviteReqOuterClass {
         return draftId_;
       }
       /**
-       * <code>uint32 draft_id = 5;</code>
+       * <code>uint32 draft_id = 7;</code>
        * @param value The draftId to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class DraftOwnerStartInviteReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 draft_id = 5;</code>
+       * <code>uint32 draft_id = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearDraftId() {
@@ -527,7 +527,7 @@ public final class DraftOwnerStartInviteReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\036DraftOwnerStartInviteReq.proto\",\n\030Draf" +
-      "tOwnerStartInviteReq\022\020\n\010draft_id\030\005 \001(\rB\033" +
+      "tOwnerStartInviteReq\022\020\n\010draft_id\030\007 \001(\rB\033" +
       "\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

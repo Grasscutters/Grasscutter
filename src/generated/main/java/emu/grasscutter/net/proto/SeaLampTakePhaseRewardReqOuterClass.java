@@ -19,21 +19,21 @@ public final class SeaLampTakePhaseRewardReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 phase_id = 13;</code>
-     * @return The phaseId.
-     */
-    int getPhaseId();
-
-    /**
-     * <code>uint32 activity_id = 15;</code>
+     * <code>uint32 activity_id = 11;</code>
      * @return The activityId.
      */
     int getActivityId();
+
+    /**
+     * <code>uint32 phase_id = 6;</code>
+     * @return The phaseId.
+     */
+    int getPhaseId();
   }
   /**
    * <pre>
-   * CmdId: 2018
-   * Obf: ELKCIDGPCNM
+   * CmdId: 2574
+   * Obf: IMKIOIGBIND
    * </pre>
    *
    * Protobuf type {@code SeaLampTakePhaseRewardReq}
@@ -80,12 +80,12 @@ public final class SeaLampTakePhaseRewardReqOuterClass {
             case 0:
               done = true;
               break;
-            case 104: {
+            case 48: {
 
               phaseId_ = input.readUInt32();
               break;
             }
-            case 120: {
+            case 88: {
 
               activityId_ = input.readUInt32();
               break;
@@ -122,26 +122,26 @@ public final class SeaLampTakePhaseRewardReqOuterClass {
               emu.grasscutter.net.proto.SeaLampTakePhaseRewardReqOuterClass.SeaLampTakePhaseRewardReq.class, emu.grasscutter.net.proto.SeaLampTakePhaseRewardReqOuterClass.SeaLampTakePhaseRewardReq.Builder.class);
     }
 
-    public static final int PHASE_ID_FIELD_NUMBER = 13;
-    private int phaseId_;
-    /**
-     * <code>uint32 phase_id = 13;</code>
-     * @return The phaseId.
-     */
-    @java.lang.Override
-    public int getPhaseId() {
-      return phaseId_;
-    }
-
-    public static final int ACTIVITY_ID_FIELD_NUMBER = 15;
+    public static final int ACTIVITY_ID_FIELD_NUMBER = 11;
     private int activityId_;
     /**
-     * <code>uint32 activity_id = 15;</code>
+     * <code>uint32 activity_id = 11;</code>
      * @return The activityId.
      */
     @java.lang.Override
     public int getActivityId() {
       return activityId_;
+    }
+
+    public static final int PHASE_ID_FIELD_NUMBER = 6;
+    private int phaseId_;
+    /**
+     * <code>uint32 phase_id = 6;</code>
+     * @return The phaseId.
+     */
+    @java.lang.Override
+    public int getPhaseId() {
+      return phaseId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -159,10 +159,10 @@ public final class SeaLampTakePhaseRewardReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (phaseId_ != 0) {
-        output.writeUInt32(13, phaseId_);
+        output.writeUInt32(6, phaseId_);
       }
       if (activityId_ != 0) {
-        output.writeUInt32(15, activityId_);
+        output.writeUInt32(11, activityId_);
       }
       unknownFields.writeTo(output);
     }
@@ -175,11 +175,11 @@ public final class SeaLampTakePhaseRewardReqOuterClass {
       size = 0;
       if (phaseId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, phaseId_);
+          .computeUInt32Size(6, phaseId_);
       }
       if (activityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, activityId_);
+          .computeUInt32Size(11, activityId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -196,10 +196,10 @@ public final class SeaLampTakePhaseRewardReqOuterClass {
       }
       emu.grasscutter.net.proto.SeaLampTakePhaseRewardReqOuterClass.SeaLampTakePhaseRewardReq other = (emu.grasscutter.net.proto.SeaLampTakePhaseRewardReqOuterClass.SeaLampTakePhaseRewardReq) obj;
 
-      if (getPhaseId()
-          != other.getPhaseId()) return false;
       if (getActivityId()
           != other.getActivityId()) return false;
+      if (getPhaseId()
+          != other.getPhaseId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -211,10 +211,10 @@ public final class SeaLampTakePhaseRewardReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + PHASE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getPhaseId();
       hash = (37 * hash) + ACTIVITY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getActivityId();
+      hash = (37 * hash) + PHASE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getPhaseId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -312,8 +312,8 @@ public final class SeaLampTakePhaseRewardReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2018
-     * Obf: ELKCIDGPCNM
+     * CmdId: 2574
+     * Obf: IMKIOIGBIND
      * </pre>
      *
      * Protobuf type {@code SeaLampTakePhaseRewardReq}
@@ -353,9 +353,9 @@ public final class SeaLampTakePhaseRewardReqOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        phaseId_ = 0;
-
         activityId_ = 0;
+
+        phaseId_ = 0;
 
         return this;
       }
@@ -383,8 +383,8 @@ public final class SeaLampTakePhaseRewardReqOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.SeaLampTakePhaseRewardReqOuterClass.SeaLampTakePhaseRewardReq buildPartial() {
         emu.grasscutter.net.proto.SeaLampTakePhaseRewardReqOuterClass.SeaLampTakePhaseRewardReq result = new emu.grasscutter.net.proto.SeaLampTakePhaseRewardReqOuterClass.SeaLampTakePhaseRewardReq(this);
-        result.phaseId_ = phaseId_;
         result.activityId_ = activityId_;
+        result.phaseId_ = phaseId_;
         onBuilt();
         return result;
       }
@@ -433,11 +433,11 @@ public final class SeaLampTakePhaseRewardReqOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.SeaLampTakePhaseRewardReqOuterClass.SeaLampTakePhaseRewardReq other) {
         if (other == emu.grasscutter.net.proto.SeaLampTakePhaseRewardReqOuterClass.SeaLampTakePhaseRewardReq.getDefaultInstance()) return this;
-        if (other.getPhaseId() != 0) {
-          setPhaseId(other.getPhaseId());
-        }
         if (other.getActivityId() != 0) {
           setActivityId(other.getActivityId());
+        }
+        if (other.getPhaseId() != 0) {
+          setPhaseId(other.getPhaseId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -468,40 +468,9 @@ public final class SeaLampTakePhaseRewardReqOuterClass {
         return this;
       }
 
-      private int phaseId_ ;
-      /**
-       * <code>uint32 phase_id = 13;</code>
-       * @return The phaseId.
-       */
-      @java.lang.Override
-      public int getPhaseId() {
-        return phaseId_;
-      }
-      /**
-       * <code>uint32 phase_id = 13;</code>
-       * @param value The phaseId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPhaseId(int value) {
-        
-        phaseId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 phase_id = 13;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPhaseId() {
-        
-        phaseId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int activityId_ ;
       /**
-       * <code>uint32 activity_id = 15;</code>
+       * <code>uint32 activity_id = 11;</code>
        * @return The activityId.
        */
       @java.lang.Override
@@ -509,7 +478,7 @@ public final class SeaLampTakePhaseRewardReqOuterClass {
         return activityId_;
       }
       /**
-       * <code>uint32 activity_id = 15;</code>
+       * <code>uint32 activity_id = 11;</code>
        * @param value The activityId to set.
        * @return This builder for chaining.
        */
@@ -520,12 +489,43 @@ public final class SeaLampTakePhaseRewardReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 activity_id = 15;</code>
+       * <code>uint32 activity_id = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearActivityId() {
         
         activityId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int phaseId_ ;
+      /**
+       * <code>uint32 phase_id = 6;</code>
+       * @return The phaseId.
+       */
+      @java.lang.Override
+      public int getPhaseId() {
+        return phaseId_;
+      }
+      /**
+       * <code>uint32 phase_id = 6;</code>
+       * @param value The phaseId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPhaseId(int value) {
+        
+        phaseId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 phase_id = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPhaseId() {
+        
+        phaseId_ = 0;
         onChanged();
         return this;
       }
@@ -597,8 +597,8 @@ public final class SeaLampTakePhaseRewardReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\037SeaLampTakePhaseRewardReq.proto\"B\n\031Sea" +
-      "LampTakePhaseRewardReq\022\020\n\010phase_id\030\r \001(\r" +
-      "\022\023\n\013activity_id\030\017 \001(\rB\033\n\031emu.grasscutter" +
+      "LampTakePhaseRewardReq\022\023\n\013activity_id\030\013 " +
+      "\001(\r\022\020\n\010phase_id\030\006 \001(\rB\033\n\031emu.grasscutter" +
       ".net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -610,7 +610,7 @@ public final class SeaLampTakePhaseRewardReqOuterClass {
     internal_static_SeaLampTakePhaseRewardReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SeaLampTakePhaseRewardReq_descriptor,
-        new java.lang.String[] { "PhaseId", "ActivityId", });
+        new java.lang.String[] { "ActivityId", "PhaseId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

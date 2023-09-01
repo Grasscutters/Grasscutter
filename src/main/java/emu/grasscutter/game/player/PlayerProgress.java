@@ -1,40 +1,42 @@
 package emu.grasscutter.game.player;
 
-import dev.morphia.annotations.Entity;
-import dev.morphia.annotations.Transient;
+import dev.morphia.annotations.*;
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.game.quest.*;
 import emu.grasscutter.game.quest.enums.QuestContent;
-import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
-import it.unimi.dsi.fastutil.ints.IntArrayList;
+import it.unimi.dsi.fastutil.ints.*;
+import lombok.*;
+
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.val;
 
 /** Tracks progress the player made in the world, like obtained items, seen characters and more */
+@Getter
 @Entity
 public class PlayerProgress {
-    @Getter @Setter @Transient private Player player;
-
-    @Getter private Map<Integer, ItemEntry> itemHistory;
+    @Setter @Transient private Player player;
+    private Map<Integer, ItemEntry> itemHistory;
 
     /*
      * A list of dungeon IDs which have been completed.
      * This only applies to one-time dungeons.
      */
-    @Getter private IntArrayList completedDungeons;
+    private IntArrayList completedDungeons;
 
     // keep track of EXEC_ADD_QUEST_PROGRESS count, will be used in CONTENT_ADD_QUEST_PROGRESS
     // not sure where to put this, this should be saved to DB but not to individual quest, since
     // it will be hard to loop and compare
     private Map<String, Integer> questProgressCountMap;
 
+    private Map<Integer, ItemGiveRecord> itemGivings;
+    private Map<Integer, BargainRecord> bargains;
+
     public PlayerProgress() {
         this.questProgressCountMap = new ConcurrentHashMap<>();
         this.completedDungeons = new IntArrayList();
         this.itemHistory = new Int2ObjectOpenHashMap<>();
+        this.itemGivings = new Int2ObjectOpenHashMap<>();
+        this.bargains = new Int2ObjectOpenHashMap<>();
     }
 
     /**

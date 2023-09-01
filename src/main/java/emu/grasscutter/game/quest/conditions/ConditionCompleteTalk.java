@@ -1,11 +1,11 @@
 package emu.grasscutter.game.quest.conditions;
 
-import static emu.grasscutter.game.quest.enums.QuestCond.QUEST_COND_COMPLETE_TALK;
-
 import emu.grasscutter.data.excels.quest.QuestData;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.quest.QuestValueCond;
 import lombok.val;
+
+import static emu.grasscutter.game.quest.enums.QuestCond.QUEST_COND_COMPLETE_TALK;
 
 @QuestValueCond(QUEST_COND_COMPLETE_TALK)
 public class ConditionCompleteTalk extends BaseCondition {

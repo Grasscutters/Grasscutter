@@ -19,33 +19,33 @@ public final class CheckSegmentCRCNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .SegmentInfo info_list = 2;</code>
+     * <code>repeated .SegmentInfo info_list = 15;</code>
      */
     java.util.List<emu.grasscutter.net.proto.SegmentInfoOuterClass.SegmentInfo> 
         getInfoListList();
     /**
-     * <code>repeated .SegmentInfo info_list = 2;</code>
+     * <code>repeated .SegmentInfo info_list = 15;</code>
      */
     emu.grasscutter.net.proto.SegmentInfoOuterClass.SegmentInfo getInfoList(int index);
     /**
-     * <code>repeated .SegmentInfo info_list = 2;</code>
+     * <code>repeated .SegmentInfo info_list = 15;</code>
      */
     int getInfoListCount();
     /**
-     * <code>repeated .SegmentInfo info_list = 2;</code>
+     * <code>repeated .SegmentInfo info_list = 15;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.SegmentInfoOuterClass.SegmentInfoOrBuilder> 
         getInfoListOrBuilderList();
     /**
-     * <code>repeated .SegmentInfo info_list = 2;</code>
+     * <code>repeated .SegmentInfo info_list = 15;</code>
      */
     emu.grasscutter.net.proto.SegmentInfoOuterClass.SegmentInfoOrBuilder getInfoListOrBuilder(
         int index);
   }
   /**
    * <pre>
-   * CmdId: 88
-   * Obf: FEKKMMKAEEM
+   * CmdId: 2228
+   * Obf: HHDCDJFCNJG
    * </pre>
    *
    * Protobuf type {@code CheckSegmentCRCNotify}
@@ -94,7 +94,7 @@ public final class CheckSegmentCRCNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 18: {
+            case 122: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 infoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.SegmentInfoOuterClass.SegmentInfo>();
                 mutable_bitField0_ |= 0x00000001;
@@ -138,17 +138,17 @@ public final class CheckSegmentCRCNotifyOuterClass {
               emu.grasscutter.net.proto.CheckSegmentCRCNotifyOuterClass.CheckSegmentCRCNotify.class, emu.grasscutter.net.proto.CheckSegmentCRCNotifyOuterClass.CheckSegmentCRCNotify.Builder.class);
     }
 
-    public static final int INFO_LIST_FIELD_NUMBER = 2;
+    public static final int INFO_LIST_FIELD_NUMBER = 15;
     private java.util.List<emu.grasscutter.net.proto.SegmentInfoOuterClass.SegmentInfo> infoList_;
     /**
-     * <code>repeated .SegmentInfo info_list = 2;</code>
+     * <code>repeated .SegmentInfo info_list = 15;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.SegmentInfoOuterClass.SegmentInfo> getInfoListList() {
       return infoList_;
     }
     /**
-     * <code>repeated .SegmentInfo info_list = 2;</code>
+     * <code>repeated .SegmentInfo info_list = 15;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.SegmentInfoOuterClass.SegmentInfoOrBuilder> 
@@ -156,21 +156,21 @@ public final class CheckSegmentCRCNotifyOuterClass {
       return infoList_;
     }
     /**
-     * <code>repeated .SegmentInfo info_list = 2;</code>
+     * <code>repeated .SegmentInfo info_list = 15;</code>
      */
     @java.lang.Override
     public int getInfoListCount() {
       return infoList_.size();
     }
     /**
-     * <code>repeated .SegmentInfo info_list = 2;</code>
+     * <code>repeated .SegmentInfo info_list = 15;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.SegmentInfoOuterClass.SegmentInfo getInfoList(int index) {
       return infoList_.get(index);
     }
     /**
-     * <code>repeated .SegmentInfo info_list = 2;</code>
+     * <code>repeated .SegmentInfo info_list = 15;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.SegmentInfoOuterClass.SegmentInfoOrBuilder getInfoListOrBuilder(
@@ -193,7 +193,7 @@ public final class CheckSegmentCRCNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < infoList_.size(); i++) {
-        output.writeMessage(2, infoList_.get(i));
+        output.writeMessage(15, infoList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -206,7 +206,7 @@ public final class CheckSegmentCRCNotifyOuterClass {
       size = 0;
       for (int i = 0; i < infoList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, infoList_.get(i));
+          .computeMessageSize(15, infoList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -337,8 +337,8 @@ public final class CheckSegmentCRCNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 88
-     * Obf: FEKKMMKAEEM
+     * CmdId: 2228
+     * Obf: HHDCDJFCNJG
      * </pre>
      *
      * Protobuf type {@code CheckSegmentCRCNotify}
@@ -538,7 +538,7 @@ public final class CheckSegmentCRCNotifyOuterClass {
           emu.grasscutter.net.proto.SegmentInfoOuterClass.SegmentInfo, emu.grasscutter.net.proto.SegmentInfoOuterClass.SegmentInfo.Builder, emu.grasscutter.net.proto.SegmentInfoOuterClass.SegmentInfoOrBuilder> infoListBuilder_;
 
       /**
-       * <code>repeated .SegmentInfo info_list = 2;</code>
+       * <code>repeated .SegmentInfo info_list = 15;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.SegmentInfoOuterClass.SegmentInfo> getInfoListList() {
         if (infoListBuilder_ == null) {
@@ -548,7 +548,7 @@ public final class CheckSegmentCRCNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .SegmentInfo info_list = 2;</code>
+       * <code>repeated .SegmentInfo info_list = 15;</code>
        */
       public int getInfoListCount() {
         if (infoListBuilder_ == null) {
@@ -558,7 +558,7 @@ public final class CheckSegmentCRCNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .SegmentInfo info_list = 2;</code>
+       * <code>repeated .SegmentInfo info_list = 15;</code>
        */
       public emu.grasscutter.net.proto.SegmentInfoOuterClass.SegmentInfo getInfoList(int index) {
         if (infoListBuilder_ == null) {
@@ -568,7 +568,7 @@ public final class CheckSegmentCRCNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .SegmentInfo info_list = 2;</code>
+       * <code>repeated .SegmentInfo info_list = 15;</code>
        */
       public Builder setInfoList(
           int index, emu.grasscutter.net.proto.SegmentInfoOuterClass.SegmentInfo value) {
@@ -585,7 +585,7 @@ public final class CheckSegmentCRCNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .SegmentInfo info_list = 2;</code>
+       * <code>repeated .SegmentInfo info_list = 15;</code>
        */
       public Builder setInfoList(
           int index, emu.grasscutter.net.proto.SegmentInfoOuterClass.SegmentInfo.Builder builderForValue) {
@@ -599,7 +599,7 @@ public final class CheckSegmentCRCNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .SegmentInfo info_list = 2;</code>
+       * <code>repeated .SegmentInfo info_list = 15;</code>
        */
       public Builder addInfoList(emu.grasscutter.net.proto.SegmentInfoOuterClass.SegmentInfo value) {
         if (infoListBuilder_ == null) {
@@ -615,7 +615,7 @@ public final class CheckSegmentCRCNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .SegmentInfo info_list = 2;</code>
+       * <code>repeated .SegmentInfo info_list = 15;</code>
        */
       public Builder addInfoList(
           int index, emu.grasscutter.net.proto.SegmentInfoOuterClass.SegmentInfo value) {
@@ -632,7 +632,7 @@ public final class CheckSegmentCRCNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .SegmentInfo info_list = 2;</code>
+       * <code>repeated .SegmentInfo info_list = 15;</code>
        */
       public Builder addInfoList(
           emu.grasscutter.net.proto.SegmentInfoOuterClass.SegmentInfo.Builder builderForValue) {
@@ -646,7 +646,7 @@ public final class CheckSegmentCRCNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .SegmentInfo info_list = 2;</code>
+       * <code>repeated .SegmentInfo info_list = 15;</code>
        */
       public Builder addInfoList(
           int index, emu.grasscutter.net.proto.SegmentInfoOuterClass.SegmentInfo.Builder builderForValue) {
@@ -660,7 +660,7 @@ public final class CheckSegmentCRCNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .SegmentInfo info_list = 2;</code>
+       * <code>repeated .SegmentInfo info_list = 15;</code>
        */
       public Builder addAllInfoList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.SegmentInfoOuterClass.SegmentInfo> values) {
@@ -675,7 +675,7 @@ public final class CheckSegmentCRCNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .SegmentInfo info_list = 2;</code>
+       * <code>repeated .SegmentInfo info_list = 15;</code>
        */
       public Builder clearInfoList() {
         if (infoListBuilder_ == null) {
@@ -688,7 +688,7 @@ public final class CheckSegmentCRCNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .SegmentInfo info_list = 2;</code>
+       * <code>repeated .SegmentInfo info_list = 15;</code>
        */
       public Builder removeInfoList(int index) {
         if (infoListBuilder_ == null) {
@@ -701,14 +701,14 @@ public final class CheckSegmentCRCNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .SegmentInfo info_list = 2;</code>
+       * <code>repeated .SegmentInfo info_list = 15;</code>
        */
       public emu.grasscutter.net.proto.SegmentInfoOuterClass.SegmentInfo.Builder getInfoListBuilder(
           int index) {
         return getInfoListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .SegmentInfo info_list = 2;</code>
+       * <code>repeated .SegmentInfo info_list = 15;</code>
        */
       public emu.grasscutter.net.proto.SegmentInfoOuterClass.SegmentInfoOrBuilder getInfoListOrBuilder(
           int index) {
@@ -718,7 +718,7 @@ public final class CheckSegmentCRCNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .SegmentInfo info_list = 2;</code>
+       * <code>repeated .SegmentInfo info_list = 15;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.SegmentInfoOuterClass.SegmentInfoOrBuilder> 
            getInfoListOrBuilderList() {
@@ -729,14 +729,14 @@ public final class CheckSegmentCRCNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .SegmentInfo info_list = 2;</code>
+       * <code>repeated .SegmentInfo info_list = 15;</code>
        */
       public emu.grasscutter.net.proto.SegmentInfoOuterClass.SegmentInfo.Builder addInfoListBuilder() {
         return getInfoListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.SegmentInfoOuterClass.SegmentInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .SegmentInfo info_list = 2;</code>
+       * <code>repeated .SegmentInfo info_list = 15;</code>
        */
       public emu.grasscutter.net.proto.SegmentInfoOuterClass.SegmentInfo.Builder addInfoListBuilder(
           int index) {
@@ -744,7 +744,7 @@ public final class CheckSegmentCRCNotifyOuterClass {
             index, emu.grasscutter.net.proto.SegmentInfoOuterClass.SegmentInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .SegmentInfo info_list = 2;</code>
+       * <code>repeated .SegmentInfo info_list = 15;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.SegmentInfoOuterClass.SegmentInfo.Builder> 
            getInfoListBuilderList() {
@@ -833,7 +833,7 @@ public final class CheckSegmentCRCNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\033CheckSegmentCRCNotify.proto\032\021SegmentIn" +
       "fo.proto\"8\n\025CheckSegmentCRCNotify\022\037\n\tinf" +
-      "o_list\030\002 \003(\0132\014.SegmentInfoB\033\n\031emu.grassc" +
+      "o_list\030\017 \003(\0132\014.SegmentInfoB\033\n\031emu.grassc" +
       "utter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

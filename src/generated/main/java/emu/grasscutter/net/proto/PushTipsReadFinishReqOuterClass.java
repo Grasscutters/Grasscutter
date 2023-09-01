@@ -19,15 +19,15 @@ public final class PushTipsReadFinishReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 push_tips_id = 1;</code>
+     * <code>uint32 push_tips_id = 2;</code>
      * @return The pushTipsId.
      */
     int getPushTipsId();
   }
   /**
    * <pre>
-   * CmdId: 2224
-   * Obf: LFLDAIMDGIB
+   * CmdId: 1612
+   * Obf: LNAHCLEAOFF
    * </pre>
    *
    * Protobuf type {@code PushTipsReadFinishReq}
@@ -74,7 +74,7 @@ public final class PushTipsReadFinishReqOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 16: {
 
               pushTipsId_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class PushTipsReadFinishReqOuterClass {
               emu.grasscutter.net.proto.PushTipsReadFinishReqOuterClass.PushTipsReadFinishReq.class, emu.grasscutter.net.proto.PushTipsReadFinishReqOuterClass.PushTipsReadFinishReq.Builder.class);
     }
 
-    public static final int PUSH_TIPS_ID_FIELD_NUMBER = 1;
+    public static final int PUSH_TIPS_ID_FIELD_NUMBER = 2;
     private int pushTipsId_;
     /**
-     * <code>uint32 push_tips_id = 1;</code>
+     * <code>uint32 push_tips_id = 2;</code>
      * @return The pushTipsId.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class PushTipsReadFinishReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (pushTipsId_ != 0) {
-        output.writeUInt32(1, pushTipsId_);
+        output.writeUInt32(2, pushTipsId_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class PushTipsReadFinishReqOuterClass {
       size = 0;
       if (pushTipsId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, pushTipsId_);
+          .computeUInt32Size(2, pushTipsId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class PushTipsReadFinishReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2224
-     * Obf: LFLDAIMDGIB
+     * CmdId: 1612
+     * Obf: LNAHCLEAOFF
      * </pre>
      *
      * Protobuf type {@code PushTipsReadFinishReq}
@@ -431,7 +431,7 @@ public final class PushTipsReadFinishReqOuterClass {
 
       private int pushTipsId_ ;
       /**
-       * <code>uint32 push_tips_id = 1;</code>
+       * <code>uint32 push_tips_id = 2;</code>
        * @return The pushTipsId.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class PushTipsReadFinishReqOuterClass {
         return pushTipsId_;
       }
       /**
-       * <code>uint32 push_tips_id = 1;</code>
+       * <code>uint32 push_tips_id = 2;</code>
        * @param value The pushTipsId to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class PushTipsReadFinishReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 push_tips_id = 1;</code>
+       * <code>uint32 push_tips_id = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearPushTipsId() {
@@ -527,7 +527,7 @@ public final class PushTipsReadFinishReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\033PushTipsReadFinishReq.proto\"-\n\025PushTip" +
-      "sReadFinishReq\022\024\n\014push_tips_id\030\001 \001(\rB\033\n\031" +
+      "sReadFinishReq\022\024\n\014push_tips_id\030\002 \001(\rB\033\n\031" +
       "emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

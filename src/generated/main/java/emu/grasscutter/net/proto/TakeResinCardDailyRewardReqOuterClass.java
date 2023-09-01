@@ -19,15 +19,15 @@ public final class TakeResinCardDailyRewardReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 product_config_id = 2;</code>
+     * <code>uint32 product_config_id = 12;</code>
      * @return The productConfigId.
      */
     int getProductConfigId();
   }
   /**
    * <pre>
-   * CmdId: 4107
-   * Obf: JHCCDEMDHEC
+   * CmdId: 29342
+   * Obf: OMJGLPPNBMP
    * </pre>
    *
    * Protobuf type {@code TakeResinCardDailyRewardReq}
@@ -74,7 +74,7 @@ public final class TakeResinCardDailyRewardReqOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
+            case 96: {
 
               productConfigId_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class TakeResinCardDailyRewardReqOuterClass {
               emu.grasscutter.net.proto.TakeResinCardDailyRewardReqOuterClass.TakeResinCardDailyRewardReq.class, emu.grasscutter.net.proto.TakeResinCardDailyRewardReqOuterClass.TakeResinCardDailyRewardReq.Builder.class);
     }
 
-    public static final int PRODUCT_CONFIG_ID_FIELD_NUMBER = 2;
+    public static final int PRODUCT_CONFIG_ID_FIELD_NUMBER = 12;
     private int productConfigId_;
     /**
-     * <code>uint32 product_config_id = 2;</code>
+     * <code>uint32 product_config_id = 12;</code>
      * @return The productConfigId.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class TakeResinCardDailyRewardReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (productConfigId_ != 0) {
-        output.writeUInt32(2, productConfigId_);
+        output.writeUInt32(12, productConfigId_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class TakeResinCardDailyRewardReqOuterClass {
       size = 0;
       if (productConfigId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, productConfigId_);
+          .computeUInt32Size(12, productConfigId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class TakeResinCardDailyRewardReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4107
-     * Obf: JHCCDEMDHEC
+     * CmdId: 29342
+     * Obf: OMJGLPPNBMP
      * </pre>
      *
      * Protobuf type {@code TakeResinCardDailyRewardReq}
@@ -431,7 +431,7 @@ public final class TakeResinCardDailyRewardReqOuterClass {
 
       private int productConfigId_ ;
       /**
-       * <code>uint32 product_config_id = 2;</code>
+       * <code>uint32 product_config_id = 12;</code>
        * @return The productConfigId.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class TakeResinCardDailyRewardReqOuterClass {
         return productConfigId_;
       }
       /**
-       * <code>uint32 product_config_id = 2;</code>
+       * <code>uint32 product_config_id = 12;</code>
        * @param value The productConfigId to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class TakeResinCardDailyRewardReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 product_config_id = 2;</code>
+       * <code>uint32 product_config_id = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearProductConfigId() {
@@ -528,7 +528,7 @@ public final class TakeResinCardDailyRewardReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n!TakeResinCardDailyRewardReq.proto\"8\n\033T" +
       "akeResinCardDailyRewardReq\022\031\n\021product_co" +
-      "nfig_id\030\002 \001(\rB\033\n\031emu.grasscutter.net.pro" +
+      "nfig_id\030\014 \001(\rB\033\n\031emu.grasscutter.net.pro" +
       "tob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

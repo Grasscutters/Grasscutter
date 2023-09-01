@@ -20,8 +20,8 @@ public final class ReadSignatureAuditReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 4079
-   * Obf: KAPHPPKCKBK
+   * CmdId: 29290
+   * Obf: GCJILPOLMJP
    * </pre>
    *
    * Protobuf type {@code ReadSignatureAuditReq}
@@ -246,8 +246,8 @@ public final class ReadSignatureAuditReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4079
-     * Obf: KAPHPPKCKBK
+     * CmdId: 29290
+     * Obf: GCJILPOLMJP
      * </pre>
      *
      * Protobuf type {@code ReadSignatureAuditReq}

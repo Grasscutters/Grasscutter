@@ -19,15 +19,15 @@ public final class DuelHeartEnterDungeonReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 level_id = 10;</code>
+     * <code>uint32 level_id = 7;</code>
      * @return The levelId.
      */
     int getLevelId();
   }
   /**
    * <pre>
-   * CmdId: 22959
-   * Obf: GOOFGFLGKHM
+   * CmdId: 26744
+   * Obf: OPNLJBEEMKD
    * </pre>
    *
    * Protobuf type {@code DuelHeartEnterDungeonReq}
@@ -74,7 +74,7 @@ public final class DuelHeartEnterDungeonReqOuterClass {
             case 0:
               done = true;
               break;
-            case 80: {
+            case 56: {
 
               levelId_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class DuelHeartEnterDungeonReqOuterClass {
               emu.grasscutter.net.proto.DuelHeartEnterDungeonReqOuterClass.DuelHeartEnterDungeonReq.class, emu.grasscutter.net.proto.DuelHeartEnterDungeonReqOuterClass.DuelHeartEnterDungeonReq.Builder.class);
     }
 
-    public static final int LEVEL_ID_FIELD_NUMBER = 10;
+    public static final int LEVEL_ID_FIELD_NUMBER = 7;
     private int levelId_;
     /**
-     * <code>uint32 level_id = 10;</code>
+     * <code>uint32 level_id = 7;</code>
      * @return The levelId.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class DuelHeartEnterDungeonReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (levelId_ != 0) {
-        output.writeUInt32(10, levelId_);
+        output.writeUInt32(7, levelId_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class DuelHeartEnterDungeonReqOuterClass {
       size = 0;
       if (levelId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, levelId_);
+          .computeUInt32Size(7, levelId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class DuelHeartEnterDungeonReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 22959
-     * Obf: GOOFGFLGKHM
+     * CmdId: 26744
+     * Obf: OPNLJBEEMKD
      * </pre>
      *
      * Protobuf type {@code DuelHeartEnterDungeonReq}
@@ -431,7 +431,7 @@ public final class DuelHeartEnterDungeonReqOuterClass {
 
       private int levelId_ ;
       /**
-       * <code>uint32 level_id = 10;</code>
+       * <code>uint32 level_id = 7;</code>
        * @return The levelId.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class DuelHeartEnterDungeonReqOuterClass {
         return levelId_;
       }
       /**
-       * <code>uint32 level_id = 10;</code>
+       * <code>uint32 level_id = 7;</code>
        * @param value The levelId to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class DuelHeartEnterDungeonReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 level_id = 10;</code>
+       * <code>uint32 level_id = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearLevelId() {
@@ -527,7 +527,7 @@ public final class DuelHeartEnterDungeonReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\036DuelHeartEnterDungeonReq.proto\",\n\030Duel" +
-      "HeartEnterDungeonReq\022\020\n\010level_id\030\n \001(\rB\033" +
+      "HeartEnterDungeonReq\022\020\n\010level_id\030\007 \001(\rB\033" +
       "\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

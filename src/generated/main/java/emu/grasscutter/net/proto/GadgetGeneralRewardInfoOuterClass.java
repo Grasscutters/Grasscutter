@@ -81,7 +81,7 @@ public final class GadgetGeneralRewardInfoOuterClass {
   }
   /**
    * <pre>
-   * Obf: PDEOKHPGMIJ
+   * Obf: AHGOAHBMENB
    * </pre>
    *
    * Protobuf type {@code GadgetGeneralRewardInfo}
@@ -577,7 +577,7 @@ public final class GadgetGeneralRewardInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: PDEOKHPGMIJ
+     * Obf: AHGOAHBMENB
      * </pre>
      *
      * Protobuf type {@code GadgetGeneralRewardInfo}

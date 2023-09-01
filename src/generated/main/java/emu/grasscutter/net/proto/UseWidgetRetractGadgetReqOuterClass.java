@@ -19,15 +19,15 @@ public final class UseWidgetRetractGadgetReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 entity_id = 2;</code>
+     * <code>uint32 entity_id = 14;</code>
      * @return The entityId.
      */
     int getEntityId();
   }
   /**
    * <pre>
-   * CmdId: 4256
-   * Obf: LNHMLLJDNFJ
+   * CmdId: 9147
+   * Obf: NIMGOEPOCNP
    * </pre>
    *
    * Protobuf type {@code UseWidgetRetractGadgetReq}
@@ -74,7 +74,7 @@ public final class UseWidgetRetractGadgetReqOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
+            case 112: {
 
               entityId_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class UseWidgetRetractGadgetReqOuterClass {
               emu.grasscutter.net.proto.UseWidgetRetractGadgetReqOuterClass.UseWidgetRetractGadgetReq.class, emu.grasscutter.net.proto.UseWidgetRetractGadgetReqOuterClass.UseWidgetRetractGadgetReq.Builder.class);
     }
 
-    public static final int ENTITY_ID_FIELD_NUMBER = 2;
+    public static final int ENTITY_ID_FIELD_NUMBER = 14;
     private int entityId_;
     /**
-     * <code>uint32 entity_id = 2;</code>
+     * <code>uint32 entity_id = 14;</code>
      * @return The entityId.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class UseWidgetRetractGadgetReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (entityId_ != 0) {
-        output.writeUInt32(2, entityId_);
+        output.writeUInt32(14, entityId_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class UseWidgetRetractGadgetReqOuterClass {
       size = 0;
       if (entityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, entityId_);
+          .computeUInt32Size(14, entityId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class UseWidgetRetractGadgetReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4256
-     * Obf: LNHMLLJDNFJ
+     * CmdId: 9147
+     * Obf: NIMGOEPOCNP
      * </pre>
      *
      * Protobuf type {@code UseWidgetRetractGadgetReq}
@@ -431,7 +431,7 @@ public final class UseWidgetRetractGadgetReqOuterClass {
 
       private int entityId_ ;
       /**
-       * <code>uint32 entity_id = 2;</code>
+       * <code>uint32 entity_id = 14;</code>
        * @return The entityId.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class UseWidgetRetractGadgetReqOuterClass {
         return entityId_;
       }
       /**
-       * <code>uint32 entity_id = 2;</code>
+       * <code>uint32 entity_id = 14;</code>
        * @param value The entityId to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class UseWidgetRetractGadgetReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 entity_id = 2;</code>
+       * <code>uint32 entity_id = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
@@ -527,7 +527,7 @@ public final class UseWidgetRetractGadgetReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\037UseWidgetRetractGadgetReq.proto\".\n\031Use" +
-      "WidgetRetractGadgetReq\022\021\n\tentity_id\030\002 \001(" +
+      "WidgetRetractGadgetReq\022\021\n\tentity_id\030\016 \001(" +
       "\rB\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

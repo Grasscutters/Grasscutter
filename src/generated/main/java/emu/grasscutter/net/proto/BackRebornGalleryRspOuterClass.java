@@ -19,21 +19,21 @@ public final class BackRebornGalleryRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 gallery_id = 9;</code>
+     * <code>uint32 gallery_id = 6;</code>
      * @return The galleryId.
      */
     int getGalleryId();
 
     /**
-     * <code>int32 retcode = 12;</code>
+     * <code>int32 retcode = 2;</code>
      * @return The retcode.
      */
     int getRetcode();
   }
   /**
    * <pre>
-   * CmdId: 5576
-   * Obf: MKMKNCMAPPG
+   * CmdId: 25773
+   * Obf: ODFHDFBJDIN
    * </pre>
    *
    * Protobuf type {@code BackRebornGalleryRsp}
@@ -80,14 +80,14 @@ public final class BackRebornGalleryRspOuterClass {
             case 0:
               done = true;
               break;
-            case 72: {
-
-              galleryId_ = input.readUInt32();
-              break;
-            }
-            case 96: {
+            case 16: {
 
               retcode_ = input.readInt32();
+              break;
+            }
+            case 48: {
+
+              galleryId_ = input.readUInt32();
               break;
             }
             default: {
@@ -122,10 +122,10 @@ public final class BackRebornGalleryRspOuterClass {
               emu.grasscutter.net.proto.BackRebornGalleryRspOuterClass.BackRebornGalleryRsp.class, emu.grasscutter.net.proto.BackRebornGalleryRspOuterClass.BackRebornGalleryRsp.Builder.class);
     }
 
-    public static final int GALLERY_ID_FIELD_NUMBER = 9;
+    public static final int GALLERY_ID_FIELD_NUMBER = 6;
     private int galleryId_;
     /**
-     * <code>uint32 gallery_id = 9;</code>
+     * <code>uint32 gallery_id = 6;</code>
      * @return The galleryId.
      */
     @java.lang.Override
@@ -133,10 +133,10 @@ public final class BackRebornGalleryRspOuterClass {
       return galleryId_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 12;
+    public static final int RETCODE_FIELD_NUMBER = 2;
     private int retcode_;
     /**
-     * <code>int32 retcode = 12;</code>
+     * <code>int32 retcode = 2;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -158,11 +158,11 @@ public final class BackRebornGalleryRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (galleryId_ != 0) {
-        output.writeUInt32(9, galleryId_);
-      }
       if (retcode_ != 0) {
-        output.writeInt32(12, retcode_);
+        output.writeInt32(2, retcode_);
+      }
+      if (galleryId_ != 0) {
+        output.writeUInt32(6, galleryId_);
       }
       unknownFields.writeTo(output);
     }
@@ -173,13 +173,13 @@ public final class BackRebornGalleryRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (galleryId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, galleryId_);
-      }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(12, retcode_);
+          .computeInt32Size(2, retcode_);
+      }
+      if (galleryId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(6, galleryId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -312,8 +312,8 @@ public final class BackRebornGalleryRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 5576
-     * Obf: MKMKNCMAPPG
+     * CmdId: 25773
+     * Obf: ODFHDFBJDIN
      * </pre>
      *
      * Protobuf type {@code BackRebornGalleryRsp}
@@ -470,7 +470,7 @@ public final class BackRebornGalleryRspOuterClass {
 
       private int galleryId_ ;
       /**
-       * <code>uint32 gallery_id = 9;</code>
+       * <code>uint32 gallery_id = 6;</code>
        * @return The galleryId.
        */
       @java.lang.Override
@@ -478,7 +478,7 @@ public final class BackRebornGalleryRspOuterClass {
         return galleryId_;
       }
       /**
-       * <code>uint32 gallery_id = 9;</code>
+       * <code>uint32 gallery_id = 6;</code>
        * @param value The galleryId to set.
        * @return This builder for chaining.
        */
@@ -489,7 +489,7 @@ public final class BackRebornGalleryRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 gallery_id = 9;</code>
+       * <code>uint32 gallery_id = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearGalleryId() {
@@ -501,7 +501,7 @@ public final class BackRebornGalleryRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 12;</code>
+       * <code>int32 retcode = 2;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -509,7 +509,7 @@ public final class BackRebornGalleryRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 12;</code>
+       * <code>int32 retcode = 2;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -520,7 +520,7 @@ public final class BackRebornGalleryRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 12;</code>
+       * <code>int32 retcode = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -597,8 +597,8 @@ public final class BackRebornGalleryRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\032BackRebornGalleryRsp.proto\";\n\024BackRebo" +
-      "rnGalleryRsp\022\022\n\ngallery_id\030\t \001(\r\022\017\n\007retc" +
-      "ode\030\014 \001(\005B\033\n\031emu.grasscutter.net.protob\006" +
+      "rnGalleryRsp\022\022\n\ngallery_id\030\006 \001(\r\022\017\n\007retc" +
+      "ode\030\002 \001(\005B\033\n\031emu.grasscutter.net.protob\006" +
       "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

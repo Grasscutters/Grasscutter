@@ -16,7 +16,7 @@ public final class DungeonCandidateTeamDismissReasonOuterClass {
   }
   /**
    * <pre>
-   * Obf: FHEGOCNGNBI
+   * Obf: MFAGPGGHPLK
    * </pre>
    *
    * Protobuf enum {@code DungeonCandidateTeamDismissReason}

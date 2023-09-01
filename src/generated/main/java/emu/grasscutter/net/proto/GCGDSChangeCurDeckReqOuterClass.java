@@ -19,15 +19,15 @@ public final class GCGDSChangeCurDeckReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 deck_id = 5;</code>
+     * <code>uint32 deck_id = 3;</code>
      * @return The deckId.
      */
     int getDeckId();
   }
   /**
    * <pre>
-   * CmdId: 7299
-   * Obf: GNKKEOBHHDP
+   * CmdId: 29055
+   * Obf: GMJFJIFBJAH
    * </pre>
    *
    * Protobuf type {@code GCGDSChangeCurDeckReq}
@@ -74,7 +74,7 @@ public final class GCGDSChangeCurDeckReqOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
+            case 24: {
 
               deckId_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class GCGDSChangeCurDeckReqOuterClass {
               emu.grasscutter.net.proto.GCGDSChangeCurDeckReqOuterClass.GCGDSChangeCurDeckReq.class, emu.grasscutter.net.proto.GCGDSChangeCurDeckReqOuterClass.GCGDSChangeCurDeckReq.Builder.class);
     }
 
-    public static final int DECK_ID_FIELD_NUMBER = 5;
+    public static final int DECK_ID_FIELD_NUMBER = 3;
     private int deckId_;
     /**
-     * <code>uint32 deck_id = 5;</code>
+     * <code>uint32 deck_id = 3;</code>
      * @return The deckId.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class GCGDSChangeCurDeckReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (deckId_ != 0) {
-        output.writeUInt32(5, deckId_);
+        output.writeUInt32(3, deckId_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class GCGDSChangeCurDeckReqOuterClass {
       size = 0;
       if (deckId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, deckId_);
+          .computeUInt32Size(3, deckId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class GCGDSChangeCurDeckReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 7299
-     * Obf: GNKKEOBHHDP
+     * CmdId: 29055
+     * Obf: GMJFJIFBJAH
      * </pre>
      *
      * Protobuf type {@code GCGDSChangeCurDeckReq}
@@ -431,7 +431,7 @@ public final class GCGDSChangeCurDeckReqOuterClass {
 
       private int deckId_ ;
       /**
-       * <code>uint32 deck_id = 5;</code>
+       * <code>uint32 deck_id = 3;</code>
        * @return The deckId.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class GCGDSChangeCurDeckReqOuterClass {
         return deckId_;
       }
       /**
-       * <code>uint32 deck_id = 5;</code>
+       * <code>uint32 deck_id = 3;</code>
        * @param value The deckId to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class GCGDSChangeCurDeckReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 deck_id = 5;</code>
+       * <code>uint32 deck_id = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearDeckId() {
@@ -527,7 +527,7 @@ public final class GCGDSChangeCurDeckReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\033GCGDSChangeCurDeckReq.proto\"(\n\025GCGDSCh" +
-      "angeCurDeckReq\022\017\n\007deck_id\030\005 \001(\rB\033\n\031emu.g" +
+      "angeCurDeckReq\022\017\n\007deck_id\030\003 \001(\rB\033\n\031emu.g" +
       "rasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

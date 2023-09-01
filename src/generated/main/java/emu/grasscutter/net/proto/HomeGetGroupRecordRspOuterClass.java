@@ -19,36 +19,36 @@ public final class HomeGetGroupRecordRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 record_type = 5;</code>
-     * @return The recordType.
+     * <code>.HomeGroupRecord group_record = 12;</code>
+     * @return Whether the groupRecord field is set.
      */
-    int getRecordType();
+    boolean hasGroupRecord();
+    /**
+     * <code>.HomeGroupRecord group_record = 12;</code>
+     * @return The groupRecord.
+     */
+    emu.grasscutter.net.proto.HomeGroupRecordOuterClass.HomeGroupRecord getGroupRecord();
+    /**
+     * <code>.HomeGroupRecord group_record = 12;</code>
+     */
+    emu.grasscutter.net.proto.HomeGroupRecordOuterClass.HomeGroupRecordOrBuilder getGroupRecordOrBuilder();
 
     /**
-     * <code>int32 retcode = 10;</code>
+     * <code>int32 retcode = 6;</code>
      * @return The retcode.
      */
     int getRetcode();
 
     /**
-     * <code>.HomeGroupRecord group_record = 4;</code>
-     * @return Whether the groupRecord field is set.
+     * <code>uint32 record_type = 11;</code>
+     * @return The recordType.
      */
-    boolean hasGroupRecord();
-    /**
-     * <code>.HomeGroupRecord group_record = 4;</code>
-     * @return The groupRecord.
-     */
-    emu.grasscutter.net.proto.HomeGroupRecordOuterClass.HomeGroupRecord getGroupRecord();
-    /**
-     * <code>.HomeGroupRecord group_record = 4;</code>
-     */
-    emu.grasscutter.net.proto.HomeGroupRecordOuterClass.HomeGroupRecordOrBuilder getGroupRecordOrBuilder();
+    int getRecordType();
   }
   /**
    * <pre>
-   * CmdId: 4798
-   * Obf: GBLINHCLCKG
+   * CmdId: 4005
+   * Obf: ONMPLCIJJJH
    * </pre>
    *
    * Protobuf type {@code HomeGetGroupRecordRsp}
@@ -95,7 +95,17 @@ public final class HomeGetGroupRecordRspOuterClass {
             case 0:
               done = true;
               break;
-            case 34: {
+            case 48: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 88: {
+
+              recordType_ = input.readUInt32();
+              break;
+            }
+            case 98: {
               emu.grasscutter.net.proto.HomeGroupRecordOuterClass.HomeGroupRecord.Builder subBuilder = null;
               if (groupRecord_ != null) {
                 subBuilder = groupRecord_.toBuilder();
@@ -106,16 +116,6 @@ public final class HomeGetGroupRecordRspOuterClass {
                 groupRecord_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-            case 40: {
-
-              recordType_ = input.readUInt32();
-              break;
-            }
-            case 80: {
-
-              retcode_ = input.readInt32();
               break;
             }
             default: {
@@ -150,32 +150,10 @@ public final class HomeGetGroupRecordRspOuterClass {
               emu.grasscutter.net.proto.HomeGetGroupRecordRspOuterClass.HomeGetGroupRecordRsp.class, emu.grasscutter.net.proto.HomeGetGroupRecordRspOuterClass.HomeGetGroupRecordRsp.Builder.class);
     }
 
-    public static final int RECORD_TYPE_FIELD_NUMBER = 5;
-    private int recordType_;
-    /**
-     * <code>uint32 record_type = 5;</code>
-     * @return The recordType.
-     */
-    @java.lang.Override
-    public int getRecordType() {
-      return recordType_;
-    }
-
-    public static final int RETCODE_FIELD_NUMBER = 10;
-    private int retcode_;
-    /**
-     * <code>int32 retcode = 10;</code>
-     * @return The retcode.
-     */
-    @java.lang.Override
-    public int getRetcode() {
-      return retcode_;
-    }
-
-    public static final int GROUP_RECORD_FIELD_NUMBER = 4;
+    public static final int GROUP_RECORD_FIELD_NUMBER = 12;
     private emu.grasscutter.net.proto.HomeGroupRecordOuterClass.HomeGroupRecord groupRecord_;
     /**
-     * <code>.HomeGroupRecord group_record = 4;</code>
+     * <code>.HomeGroupRecord group_record = 12;</code>
      * @return Whether the groupRecord field is set.
      */
     @java.lang.Override
@@ -183,7 +161,7 @@ public final class HomeGetGroupRecordRspOuterClass {
       return groupRecord_ != null;
     }
     /**
-     * <code>.HomeGroupRecord group_record = 4;</code>
+     * <code>.HomeGroupRecord group_record = 12;</code>
      * @return The groupRecord.
      */
     @java.lang.Override
@@ -191,11 +169,33 @@ public final class HomeGetGroupRecordRspOuterClass {
       return groupRecord_ == null ? emu.grasscutter.net.proto.HomeGroupRecordOuterClass.HomeGroupRecord.getDefaultInstance() : groupRecord_;
     }
     /**
-     * <code>.HomeGroupRecord group_record = 4;</code>
+     * <code>.HomeGroupRecord group_record = 12;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.HomeGroupRecordOuterClass.HomeGroupRecordOrBuilder getGroupRecordOrBuilder() {
       return getGroupRecord();
+    }
+
+    public static final int RETCODE_FIELD_NUMBER = 6;
+    private int retcode_;
+    /**
+     * <code>int32 retcode = 6;</code>
+     * @return The retcode.
+     */
+    @java.lang.Override
+    public int getRetcode() {
+      return retcode_;
+    }
+
+    public static final int RECORD_TYPE_FIELD_NUMBER = 11;
+    private int recordType_;
+    /**
+     * <code>uint32 record_type = 11;</code>
+     * @return The recordType.
+     */
+    @java.lang.Override
+    public int getRecordType() {
+      return recordType_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -212,14 +212,14 @@ public final class HomeGetGroupRecordRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (groupRecord_ != null) {
-        output.writeMessage(4, getGroupRecord());
+      if (retcode_ != 0) {
+        output.writeInt32(6, retcode_);
       }
       if (recordType_ != 0) {
-        output.writeUInt32(5, recordType_);
+        output.writeUInt32(11, recordType_);
       }
-      if (retcode_ != 0) {
-        output.writeInt32(10, retcode_);
+      if (groupRecord_ != null) {
+        output.writeMessage(12, getGroupRecord());
       }
       unknownFields.writeTo(output);
     }
@@ -230,17 +230,17 @@ public final class HomeGetGroupRecordRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (groupRecord_ != null) {
+      if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, getGroupRecord());
+          .computeInt32Size(6, retcode_);
       }
       if (recordType_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, recordType_);
+          .computeUInt32Size(11, recordType_);
       }
-      if (retcode_ != 0) {
+      if (groupRecord_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(10, retcode_);
+          .computeMessageSize(12, getGroupRecord());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -257,15 +257,15 @@ public final class HomeGetGroupRecordRspOuterClass {
       }
       emu.grasscutter.net.proto.HomeGetGroupRecordRspOuterClass.HomeGetGroupRecordRsp other = (emu.grasscutter.net.proto.HomeGetGroupRecordRspOuterClass.HomeGetGroupRecordRsp) obj;
 
-      if (getRecordType()
-          != other.getRecordType()) return false;
-      if (getRetcode()
-          != other.getRetcode()) return false;
       if (hasGroupRecord() != other.hasGroupRecord()) return false;
       if (hasGroupRecord()) {
         if (!getGroupRecord()
             .equals(other.getGroupRecord())) return false;
       }
+      if (getRetcode()
+          != other.getRetcode()) return false;
+      if (getRecordType()
+          != other.getRecordType()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -277,14 +277,14 @@ public final class HomeGetGroupRecordRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + RECORD_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + getRecordType();
-      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getRetcode();
       if (hasGroupRecord()) {
         hash = (37 * hash) + GROUP_RECORD_FIELD_NUMBER;
         hash = (53 * hash) + getGroupRecord().hashCode();
       }
+      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
+      hash = (53 * hash) + getRetcode();
+      hash = (37 * hash) + RECORD_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getRecordType();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -382,8 +382,8 @@ public final class HomeGetGroupRecordRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4798
-     * Obf: GBLINHCLCKG
+     * CmdId: 4005
+     * Obf: ONMPLCIJJJH
      * </pre>
      *
      * Protobuf type {@code HomeGetGroupRecordRsp}
@@ -423,16 +423,16 @@ public final class HomeGetGroupRecordRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        recordType_ = 0;
-
-        retcode_ = 0;
-
         if (groupRecordBuilder_ == null) {
           groupRecord_ = null;
         } else {
           groupRecord_ = null;
           groupRecordBuilder_ = null;
         }
+        retcode_ = 0;
+
+        recordType_ = 0;
+
         return this;
       }
 
@@ -459,13 +459,13 @@ public final class HomeGetGroupRecordRspOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.HomeGetGroupRecordRspOuterClass.HomeGetGroupRecordRsp buildPartial() {
         emu.grasscutter.net.proto.HomeGetGroupRecordRspOuterClass.HomeGetGroupRecordRsp result = new emu.grasscutter.net.proto.HomeGetGroupRecordRspOuterClass.HomeGetGroupRecordRsp(this);
-        result.recordType_ = recordType_;
-        result.retcode_ = retcode_;
         if (groupRecordBuilder_ == null) {
           result.groupRecord_ = groupRecord_;
         } else {
           result.groupRecord_ = groupRecordBuilder_.build();
         }
+        result.retcode_ = retcode_;
+        result.recordType_ = recordType_;
         onBuilt();
         return result;
       }
@@ -514,14 +514,14 @@ public final class HomeGetGroupRecordRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.HomeGetGroupRecordRspOuterClass.HomeGetGroupRecordRsp other) {
         if (other == emu.grasscutter.net.proto.HomeGetGroupRecordRspOuterClass.HomeGetGroupRecordRsp.getDefaultInstance()) return this;
-        if (other.getRecordType() != 0) {
-          setRecordType(other.getRecordType());
+        if (other.hasGroupRecord()) {
+          mergeGroupRecord(other.getGroupRecord());
         }
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
         }
-        if (other.hasGroupRecord()) {
-          mergeGroupRecord(other.getGroupRecord());
+        if (other.getRecordType() != 0) {
+          setRecordType(other.getRecordType());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -552,80 +552,18 @@ public final class HomeGetGroupRecordRspOuterClass {
         return this;
       }
 
-      private int recordType_ ;
-      /**
-       * <code>uint32 record_type = 5;</code>
-       * @return The recordType.
-       */
-      @java.lang.Override
-      public int getRecordType() {
-        return recordType_;
-      }
-      /**
-       * <code>uint32 record_type = 5;</code>
-       * @param value The recordType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRecordType(int value) {
-        
-        recordType_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 record_type = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRecordType() {
-        
-        recordType_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int retcode_ ;
-      /**
-       * <code>int32 retcode = 10;</code>
-       * @return The retcode.
-       */
-      @java.lang.Override
-      public int getRetcode() {
-        return retcode_;
-      }
-      /**
-       * <code>int32 retcode = 10;</code>
-       * @param value The retcode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRetcode(int value) {
-        
-        retcode_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 retcode = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRetcode() {
-        
-        retcode_ = 0;
-        onChanged();
-        return this;
-      }
-
       private emu.grasscutter.net.proto.HomeGroupRecordOuterClass.HomeGroupRecord groupRecord_;
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.HomeGroupRecordOuterClass.HomeGroupRecord, emu.grasscutter.net.proto.HomeGroupRecordOuterClass.HomeGroupRecord.Builder, emu.grasscutter.net.proto.HomeGroupRecordOuterClass.HomeGroupRecordOrBuilder> groupRecordBuilder_;
       /**
-       * <code>.HomeGroupRecord group_record = 4;</code>
+       * <code>.HomeGroupRecord group_record = 12;</code>
        * @return Whether the groupRecord field is set.
        */
       public boolean hasGroupRecord() {
         return groupRecordBuilder_ != null || groupRecord_ != null;
       }
       /**
-       * <code>.HomeGroupRecord group_record = 4;</code>
+       * <code>.HomeGroupRecord group_record = 12;</code>
        * @return The groupRecord.
        */
       public emu.grasscutter.net.proto.HomeGroupRecordOuterClass.HomeGroupRecord getGroupRecord() {
@@ -636,7 +574,7 @@ public final class HomeGetGroupRecordRspOuterClass {
         }
       }
       /**
-       * <code>.HomeGroupRecord group_record = 4;</code>
+       * <code>.HomeGroupRecord group_record = 12;</code>
        */
       public Builder setGroupRecord(emu.grasscutter.net.proto.HomeGroupRecordOuterClass.HomeGroupRecord value) {
         if (groupRecordBuilder_ == null) {
@@ -652,7 +590,7 @@ public final class HomeGetGroupRecordRspOuterClass {
         return this;
       }
       /**
-       * <code>.HomeGroupRecord group_record = 4;</code>
+       * <code>.HomeGroupRecord group_record = 12;</code>
        */
       public Builder setGroupRecord(
           emu.grasscutter.net.proto.HomeGroupRecordOuterClass.HomeGroupRecord.Builder builderForValue) {
@@ -666,7 +604,7 @@ public final class HomeGetGroupRecordRspOuterClass {
         return this;
       }
       /**
-       * <code>.HomeGroupRecord group_record = 4;</code>
+       * <code>.HomeGroupRecord group_record = 12;</code>
        */
       public Builder mergeGroupRecord(emu.grasscutter.net.proto.HomeGroupRecordOuterClass.HomeGroupRecord value) {
         if (groupRecordBuilder_ == null) {
@@ -684,7 +622,7 @@ public final class HomeGetGroupRecordRspOuterClass {
         return this;
       }
       /**
-       * <code>.HomeGroupRecord group_record = 4;</code>
+       * <code>.HomeGroupRecord group_record = 12;</code>
        */
       public Builder clearGroupRecord() {
         if (groupRecordBuilder_ == null) {
@@ -698,7 +636,7 @@ public final class HomeGetGroupRecordRspOuterClass {
         return this;
       }
       /**
-       * <code>.HomeGroupRecord group_record = 4;</code>
+       * <code>.HomeGroupRecord group_record = 12;</code>
        */
       public emu.grasscutter.net.proto.HomeGroupRecordOuterClass.HomeGroupRecord.Builder getGroupRecordBuilder() {
         
@@ -706,7 +644,7 @@ public final class HomeGetGroupRecordRspOuterClass {
         return getGroupRecordFieldBuilder().getBuilder();
       }
       /**
-       * <code>.HomeGroupRecord group_record = 4;</code>
+       * <code>.HomeGroupRecord group_record = 12;</code>
        */
       public emu.grasscutter.net.proto.HomeGroupRecordOuterClass.HomeGroupRecordOrBuilder getGroupRecordOrBuilder() {
         if (groupRecordBuilder_ != null) {
@@ -717,7 +655,7 @@ public final class HomeGetGroupRecordRspOuterClass {
         }
       }
       /**
-       * <code>.HomeGroupRecord group_record = 4;</code>
+       * <code>.HomeGroupRecord group_record = 12;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.HomeGroupRecordOuterClass.HomeGroupRecord, emu.grasscutter.net.proto.HomeGroupRecordOuterClass.HomeGroupRecord.Builder, emu.grasscutter.net.proto.HomeGroupRecordOuterClass.HomeGroupRecordOrBuilder> 
@@ -731,6 +669,68 @@ public final class HomeGetGroupRecordRspOuterClass {
           groupRecord_ = null;
         }
         return groupRecordBuilder_;
+      }
+
+      private int retcode_ ;
+      /**
+       * <code>int32 retcode = 6;</code>
+       * @return The retcode.
+       */
+      @java.lang.Override
+      public int getRetcode() {
+        return retcode_;
+      }
+      /**
+       * <code>int32 retcode = 6;</code>
+       * @param value The retcode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRetcode(int value) {
+        
+        retcode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 retcode = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRetcode() {
+        
+        retcode_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int recordType_ ;
+      /**
+       * <code>uint32 record_type = 11;</code>
+       * @return The recordType.
+       */
+      @java.lang.Override
+      public int getRecordType() {
+        return recordType_;
+      }
+      /**
+       * <code>uint32 record_type = 11;</code>
+       * @param value The recordType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRecordType(int value) {
+        
+        recordType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 record_type = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRecordType() {
+        
+        recordType_ = 0;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -800,9 +800,9 @@ public final class HomeGetGroupRecordRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\033HomeGetGroupRecordRsp.proto\032\025HomeGroup" +
-      "Record.proto\"e\n\025HomeGetGroupRecordRsp\022\023\n" +
-      "\013record_type\030\005 \001(\r\022\017\n\007retcode\030\n \001(\005\022&\n\014g" +
-      "roup_record\030\004 \001(\0132\020.HomeGroupRecordB\033\n\031e" +
+      "Record.proto\"e\n\025HomeGetGroupRecordRsp\022&\n" +
+      "\014group_record\030\014 \001(\0132\020.HomeGroupRecord\022\017\n" +
+      "\007retcode\030\006 \001(\005\022\023\n\013record_type\030\013 \001(\rB\033\n\031e" +
       "mu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -815,7 +815,7 @@ public final class HomeGetGroupRecordRspOuterClass {
     internal_static_HomeGetGroupRecordRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_HomeGetGroupRecordRsp_descriptor,
-        new java.lang.String[] { "RecordType", "Retcode", "GroupRecord", });
+        new java.lang.String[] { "GroupRecord", "Retcode", "RecordType", });
     emu.grasscutter.net.proto.HomeGroupRecordOuterClass.getDescriptor();
   }
 

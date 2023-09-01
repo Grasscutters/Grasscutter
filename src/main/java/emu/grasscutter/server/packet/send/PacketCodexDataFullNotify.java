@@ -2,10 +2,10 @@ package emu.grasscutter.server.packet.send;
 
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.net.packet.BasePacket;
-import emu.grasscutter.net.packet.PacketOpcodes;
+import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify;
 import emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData;
+
 import java.util.Collections;
 
 public class PacketCodexDataFullNotify extends BasePacket {

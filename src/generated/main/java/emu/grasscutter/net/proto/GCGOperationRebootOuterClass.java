@@ -19,42 +19,42 @@ public final class GCGOperationRebootOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 cost_card_guid_list = 4;</code>
-     * @return A list containing the costCardGuidList.
-     */
-    java.util.List<java.lang.Integer> getCostCardGuidListList();
-    /**
-     * <code>repeated uint32 cost_card_guid_list = 4;</code>
-     * @return The count of costCardGuidList.
-     */
-    int getCostCardGuidListCount();
-    /**
-     * <code>repeated uint32 cost_card_guid_list = 4;</code>
-     * @param index The index of the element to return.
-     * @return The costCardGuidList at the given index.
-     */
-    int getCostCardGuidList(int index);
-
-    /**
-     * <code>repeated uint32 dice_index_list = 8;</code>
+     * <code>repeated uint32 dice_index_list = 5;</code>
      * @return A list containing the diceIndexList.
      */
     java.util.List<java.lang.Integer> getDiceIndexListList();
     /**
-     * <code>repeated uint32 dice_index_list = 8;</code>
+     * <code>repeated uint32 dice_index_list = 5;</code>
      * @return The count of diceIndexList.
      */
     int getDiceIndexListCount();
     /**
-     * <code>repeated uint32 dice_index_list = 8;</code>
+     * <code>repeated uint32 dice_index_list = 5;</code>
      * @param index The index of the element to return.
      * @return The diceIndexList at the given index.
      */
     int getDiceIndexList(int index);
+
+    /**
+     * <code>repeated uint32 cost_card_guid_list = 7;</code>
+     * @return A list containing the costCardGuidList.
+     */
+    java.util.List<java.lang.Integer> getCostCardGuidListList();
+    /**
+     * <code>repeated uint32 cost_card_guid_list = 7;</code>
+     * @return The count of costCardGuidList.
+     */
+    int getCostCardGuidListCount();
+    /**
+     * <code>repeated uint32 cost_card_guid_list = 7;</code>
+     * @param index The index of the element to return.
+     * @return The costCardGuidList at the given index.
+     */
+    int getCostCardGuidList(int index);
   }
   /**
    * <pre>
-   * Obf: HLLFOJAOECP
+   * Obf: LKCLDCKNEGO
    * </pre>
    *
    * Protobuf type {@code GCGOperationReboot}
@@ -69,8 +69,8 @@ public final class GCGOperationRebootOuterClass {
       super(builder);
     }
     private GCGOperationReboot() {
-      costCardGuidList_ = emptyIntList();
       diceIndexList_ = emptyIntList();
+      costCardGuidList_ = emptyIntList();
     }
 
     @java.lang.Override
@@ -104,44 +104,44 @@ public final class GCGOperationRebootOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
+            case 40: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                costCardGuidList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              costCardGuidList_.addInt(input.readUInt32());
-              break;
-            }
-            case 34: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                costCardGuidList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                costCardGuidList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 64: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 diceIndexList_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               diceIndexList_.addInt(input.readUInt32());
               break;
             }
-            case 66: {
+            case 42: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
                 diceIndexList_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               while (input.getBytesUntilLimit() > 0) {
                 diceIndexList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 56: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                costCardGuidList_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              costCardGuidList_.addInt(input.readUInt32());
+              break;
+            }
+            case 58: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+                costCardGuidList_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                costCardGuidList_.addInt(input.readUInt32());
               }
               input.popLimit(limit);
               break;
@@ -162,10 +162,10 @@ public final class GCGOperationRebootOuterClass {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          costCardGuidList_.makeImmutable(); // C
+          diceIndexList_.makeImmutable(); // C
         }
         if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          diceIndexList_.makeImmutable(); // C
+          costCardGuidList_.makeImmutable(); // C
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -184,38 +184,10 @@ public final class GCGOperationRebootOuterClass {
               emu.grasscutter.net.proto.GCGOperationRebootOuterClass.GCGOperationReboot.class, emu.grasscutter.net.proto.GCGOperationRebootOuterClass.GCGOperationReboot.Builder.class);
     }
 
-    public static final int COST_CARD_GUID_LIST_FIELD_NUMBER = 4;
-    private com.google.protobuf.Internal.IntList costCardGuidList_;
-    /**
-     * <code>repeated uint32 cost_card_guid_list = 4;</code>
-     * @return A list containing the costCardGuidList.
-     */
-    @java.lang.Override
-    public java.util.List<java.lang.Integer>
-        getCostCardGuidListList() {
-      return costCardGuidList_;
-    }
-    /**
-     * <code>repeated uint32 cost_card_guid_list = 4;</code>
-     * @return The count of costCardGuidList.
-     */
-    public int getCostCardGuidListCount() {
-      return costCardGuidList_.size();
-    }
-    /**
-     * <code>repeated uint32 cost_card_guid_list = 4;</code>
-     * @param index The index of the element to return.
-     * @return The costCardGuidList at the given index.
-     */
-    public int getCostCardGuidList(int index) {
-      return costCardGuidList_.getInt(index);
-    }
-    private int costCardGuidListMemoizedSerializedSize = -1;
-
-    public static final int DICE_INDEX_LIST_FIELD_NUMBER = 8;
+    public static final int DICE_INDEX_LIST_FIELD_NUMBER = 5;
     private com.google.protobuf.Internal.IntList diceIndexList_;
     /**
-     * <code>repeated uint32 dice_index_list = 8;</code>
+     * <code>repeated uint32 dice_index_list = 5;</code>
      * @return A list containing the diceIndexList.
      */
     @java.lang.Override
@@ -224,14 +196,14 @@ public final class GCGOperationRebootOuterClass {
       return diceIndexList_;
     }
     /**
-     * <code>repeated uint32 dice_index_list = 8;</code>
+     * <code>repeated uint32 dice_index_list = 5;</code>
      * @return The count of diceIndexList.
      */
     public int getDiceIndexListCount() {
       return diceIndexList_.size();
     }
     /**
-     * <code>repeated uint32 dice_index_list = 8;</code>
+     * <code>repeated uint32 dice_index_list = 5;</code>
      * @param index The index of the element to return.
      * @return The diceIndexList at the given index.
      */
@@ -239,6 +211,34 @@ public final class GCGOperationRebootOuterClass {
       return diceIndexList_.getInt(index);
     }
     private int diceIndexListMemoizedSerializedSize = -1;
+
+    public static final int COST_CARD_GUID_LIST_FIELD_NUMBER = 7;
+    private com.google.protobuf.Internal.IntList costCardGuidList_;
+    /**
+     * <code>repeated uint32 cost_card_guid_list = 7;</code>
+     * @return A list containing the costCardGuidList.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Integer>
+        getCostCardGuidListList() {
+      return costCardGuidList_;
+    }
+    /**
+     * <code>repeated uint32 cost_card_guid_list = 7;</code>
+     * @return The count of costCardGuidList.
+     */
+    public int getCostCardGuidListCount() {
+      return costCardGuidList_.size();
+    }
+    /**
+     * <code>repeated uint32 cost_card_guid_list = 7;</code>
+     * @param index The index of the element to return.
+     * @return The costCardGuidList at the given index.
+     */
+    public int getCostCardGuidList(int index) {
+      return costCardGuidList_.getInt(index);
+    }
+    private int costCardGuidListMemoizedSerializedSize = -1;
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
@@ -255,19 +255,19 @@ public final class GCGOperationRebootOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (getCostCardGuidListList().size() > 0) {
-        output.writeUInt32NoTag(34);
-        output.writeUInt32NoTag(costCardGuidListMemoizedSerializedSize);
-      }
-      for (int i = 0; i < costCardGuidList_.size(); i++) {
-        output.writeUInt32NoTag(costCardGuidList_.getInt(i));
-      }
       if (getDiceIndexListList().size() > 0) {
-        output.writeUInt32NoTag(66);
+        output.writeUInt32NoTag(42);
         output.writeUInt32NoTag(diceIndexListMemoizedSerializedSize);
       }
       for (int i = 0; i < diceIndexList_.size(); i++) {
         output.writeUInt32NoTag(diceIndexList_.getInt(i));
+      }
+      if (getCostCardGuidListList().size() > 0) {
+        output.writeUInt32NoTag(58);
+        output.writeUInt32NoTag(costCardGuidListMemoizedSerializedSize);
+      }
+      for (int i = 0; i < costCardGuidList_.size(); i++) {
+        output.writeUInt32NoTag(costCardGuidList_.getInt(i));
       }
       unknownFields.writeTo(output);
     }
@@ -278,20 +278,6 @@ public final class GCGOperationRebootOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      {
-        int dataSize = 0;
-        for (int i = 0; i < costCardGuidList_.size(); i++) {
-          dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(costCardGuidList_.getInt(i));
-        }
-        size += dataSize;
-        if (!getCostCardGuidListList().isEmpty()) {
-          size += 1;
-          size += com.google.protobuf.CodedOutputStream
-              .computeInt32SizeNoTag(dataSize);
-        }
-        costCardGuidListMemoizedSerializedSize = dataSize;
-      }
       {
         int dataSize = 0;
         for (int i = 0; i < diceIndexList_.size(); i++) {
@@ -305,6 +291,20 @@ public final class GCGOperationRebootOuterClass {
               .computeInt32SizeNoTag(dataSize);
         }
         diceIndexListMemoizedSerializedSize = dataSize;
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < costCardGuidList_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeUInt32SizeNoTag(costCardGuidList_.getInt(i));
+        }
+        size += dataSize;
+        if (!getCostCardGuidListList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        costCardGuidListMemoizedSerializedSize = dataSize;
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -321,10 +321,10 @@ public final class GCGOperationRebootOuterClass {
       }
       emu.grasscutter.net.proto.GCGOperationRebootOuterClass.GCGOperationReboot other = (emu.grasscutter.net.proto.GCGOperationRebootOuterClass.GCGOperationReboot) obj;
 
-      if (!getCostCardGuidListList()
-          .equals(other.getCostCardGuidListList())) return false;
       if (!getDiceIndexListList()
           .equals(other.getDiceIndexListList())) return false;
+      if (!getCostCardGuidListList()
+          .equals(other.getCostCardGuidListList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -336,13 +336,13 @@ public final class GCGOperationRebootOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getCostCardGuidListCount() > 0) {
-        hash = (37 * hash) + COST_CARD_GUID_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getCostCardGuidListList().hashCode();
-      }
       if (getDiceIndexListCount() > 0) {
         hash = (37 * hash) + DICE_INDEX_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getDiceIndexListList().hashCode();
+      }
+      if (getCostCardGuidListCount() > 0) {
+        hash = (37 * hash) + COST_CARD_GUID_LIST_FIELD_NUMBER;
+        hash = (53 * hash) + getCostCardGuidListList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -441,7 +441,7 @@ public final class GCGOperationRebootOuterClass {
     }
     /**
      * <pre>
-     * Obf: HLLFOJAOECP
+     * Obf: LKCLDCKNEGO
      * </pre>
      *
      * Protobuf type {@code GCGOperationReboot}
@@ -481,9 +481,9 @@ public final class GCGOperationRebootOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        costCardGuidList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         diceIndexList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        costCardGuidList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
@@ -513,15 +513,15 @@ public final class GCGOperationRebootOuterClass {
         emu.grasscutter.net.proto.GCGOperationRebootOuterClass.GCGOperationReboot result = new emu.grasscutter.net.proto.GCGOperationRebootOuterClass.GCGOperationReboot(this);
         int from_bitField0_ = bitField0_;
         if (((bitField0_ & 0x00000001) != 0)) {
-          costCardGuidList_.makeImmutable();
+          diceIndexList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
-        result.costCardGuidList_ = costCardGuidList_;
+        result.diceIndexList_ = diceIndexList_;
         if (((bitField0_ & 0x00000002) != 0)) {
-          diceIndexList_.makeImmutable();
+          costCardGuidList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000002);
         }
-        result.diceIndexList_ = diceIndexList_;
+        result.costCardGuidList_ = costCardGuidList_;
         onBuilt();
         return result;
       }
@@ -570,23 +570,23 @@ public final class GCGOperationRebootOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.GCGOperationRebootOuterClass.GCGOperationReboot other) {
         if (other == emu.grasscutter.net.proto.GCGOperationRebootOuterClass.GCGOperationReboot.getDefaultInstance()) return this;
-        if (!other.costCardGuidList_.isEmpty()) {
-          if (costCardGuidList_.isEmpty()) {
-            costCardGuidList_ = other.costCardGuidList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureCostCardGuidListIsMutable();
-            costCardGuidList_.addAll(other.costCardGuidList_);
-          }
-          onChanged();
-        }
         if (!other.diceIndexList_.isEmpty()) {
           if (diceIndexList_.isEmpty()) {
             diceIndexList_ = other.diceIndexList_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureDiceIndexListIsMutable();
             diceIndexList_.addAll(other.diceIndexList_);
+          }
+          onChanged();
+        }
+        if (!other.costCardGuidList_.isEmpty()) {
+          if (costCardGuidList_.isEmpty()) {
+            costCardGuidList_ = other.costCardGuidList_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureCostCardGuidListIsMutable();
+            costCardGuidList_.addAll(other.costCardGuidList_);
           }
           onChanged();
         }
@@ -620,110 +620,31 @@ public final class GCGOperationRebootOuterClass {
       }
       private int bitField0_;
 
-      private com.google.protobuf.Internal.IntList costCardGuidList_ = emptyIntList();
-      private void ensureCostCardGuidListIsMutable() {
+      private com.google.protobuf.Internal.IntList diceIndexList_ = emptyIntList();
+      private void ensureDiceIndexListIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          costCardGuidList_ = mutableCopy(costCardGuidList_);
+          diceIndexList_ = mutableCopy(diceIndexList_);
           bitField0_ |= 0x00000001;
          }
       }
       /**
-       * <code>repeated uint32 cost_card_guid_list = 4;</code>
-       * @return A list containing the costCardGuidList.
-       */
-      public java.util.List<java.lang.Integer>
-          getCostCardGuidListList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
-                 java.util.Collections.unmodifiableList(costCardGuidList_) : costCardGuidList_;
-      }
-      /**
-       * <code>repeated uint32 cost_card_guid_list = 4;</code>
-       * @return The count of costCardGuidList.
-       */
-      public int getCostCardGuidListCount() {
-        return costCardGuidList_.size();
-      }
-      /**
-       * <code>repeated uint32 cost_card_guid_list = 4;</code>
-       * @param index The index of the element to return.
-       * @return The costCardGuidList at the given index.
-       */
-      public int getCostCardGuidList(int index) {
-        return costCardGuidList_.getInt(index);
-      }
-      /**
-       * <code>repeated uint32 cost_card_guid_list = 4;</code>
-       * @param index The index to set the value at.
-       * @param value The costCardGuidList to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCostCardGuidList(
-          int index, int value) {
-        ensureCostCardGuidListIsMutable();
-        costCardGuidList_.setInt(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 cost_card_guid_list = 4;</code>
-       * @param value The costCardGuidList to add.
-       * @return This builder for chaining.
-       */
-      public Builder addCostCardGuidList(int value) {
-        ensureCostCardGuidListIsMutable();
-        costCardGuidList_.addInt(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 cost_card_guid_list = 4;</code>
-       * @param values The costCardGuidList to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllCostCardGuidList(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureCostCardGuidListIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, costCardGuidList_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 cost_card_guid_list = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCostCardGuidList() {
-        costCardGuidList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.Internal.IntList diceIndexList_ = emptyIntList();
-      private void ensureDiceIndexListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
-          diceIndexList_ = mutableCopy(diceIndexList_);
-          bitField0_ |= 0x00000002;
-         }
-      }
-      /**
-       * <code>repeated uint32 dice_index_list = 8;</code>
+       * <code>repeated uint32 dice_index_list = 5;</code>
        * @return A list containing the diceIndexList.
        */
       public java.util.List<java.lang.Integer>
           getDiceIndexListList() {
-        return ((bitField0_ & 0x00000002) != 0) ?
+        return ((bitField0_ & 0x00000001) != 0) ?
                  java.util.Collections.unmodifiableList(diceIndexList_) : diceIndexList_;
       }
       /**
-       * <code>repeated uint32 dice_index_list = 8;</code>
+       * <code>repeated uint32 dice_index_list = 5;</code>
        * @return The count of diceIndexList.
        */
       public int getDiceIndexListCount() {
         return diceIndexList_.size();
       }
       /**
-       * <code>repeated uint32 dice_index_list = 8;</code>
+       * <code>repeated uint32 dice_index_list = 5;</code>
        * @param index The index of the element to return.
        * @return The diceIndexList at the given index.
        */
@@ -731,7 +652,7 @@ public final class GCGOperationRebootOuterClass {
         return diceIndexList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 dice_index_list = 8;</code>
+       * <code>repeated uint32 dice_index_list = 5;</code>
        * @param index The index to set the value at.
        * @param value The diceIndexList to set.
        * @return This builder for chaining.
@@ -744,7 +665,7 @@ public final class GCGOperationRebootOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 dice_index_list = 8;</code>
+       * <code>repeated uint32 dice_index_list = 5;</code>
        * @param value The diceIndexList to add.
        * @return This builder for chaining.
        */
@@ -755,7 +676,7 @@ public final class GCGOperationRebootOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 dice_index_list = 8;</code>
+       * <code>repeated uint32 dice_index_list = 5;</code>
        * @param values The diceIndexList to add.
        * @return This builder for chaining.
        */
@@ -768,11 +689,90 @@ public final class GCGOperationRebootOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 dice_index_list = 8;</code>
+       * <code>repeated uint32 dice_index_list = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearDiceIndexList() {
         diceIndexList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Internal.IntList costCardGuidList_ = emptyIntList();
+      private void ensureCostCardGuidListIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          costCardGuidList_ = mutableCopy(costCardGuidList_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+      /**
+       * <code>repeated uint32 cost_card_guid_list = 7;</code>
+       * @return A list containing the costCardGuidList.
+       */
+      public java.util.List<java.lang.Integer>
+          getCostCardGuidListList() {
+        return ((bitField0_ & 0x00000002) != 0) ?
+                 java.util.Collections.unmodifiableList(costCardGuidList_) : costCardGuidList_;
+      }
+      /**
+       * <code>repeated uint32 cost_card_guid_list = 7;</code>
+       * @return The count of costCardGuidList.
+       */
+      public int getCostCardGuidListCount() {
+        return costCardGuidList_.size();
+      }
+      /**
+       * <code>repeated uint32 cost_card_guid_list = 7;</code>
+       * @param index The index of the element to return.
+       * @return The costCardGuidList at the given index.
+       */
+      public int getCostCardGuidList(int index) {
+        return costCardGuidList_.getInt(index);
+      }
+      /**
+       * <code>repeated uint32 cost_card_guid_list = 7;</code>
+       * @param index The index to set the value at.
+       * @param value The costCardGuidList to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCostCardGuidList(
+          int index, int value) {
+        ensureCostCardGuidListIsMutable();
+        costCardGuidList_.setInt(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 cost_card_guid_list = 7;</code>
+       * @param value The costCardGuidList to add.
+       * @return This builder for chaining.
+       */
+      public Builder addCostCardGuidList(int value) {
+        ensureCostCardGuidListIsMutable();
+        costCardGuidList_.addInt(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 cost_card_guid_list = 7;</code>
+       * @param values The costCardGuidList to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllCostCardGuidList(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureCostCardGuidListIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, costCardGuidList_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 cost_card_guid_list = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCostCardGuidList() {
+        costCardGuidList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
@@ -845,8 +845,8 @@ public final class GCGOperationRebootOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\030GCGOperationReboot.proto\"J\n\022GCGOperati" +
-      "onReboot\022\033\n\023cost_card_guid_list\030\004 \003(\r\022\027\n" +
-      "\017dice_index_list\030\010 \003(\rB\033\n\031emu.grasscutte" +
+      "onReboot\022\027\n\017dice_index_list\030\005 \003(\r\022\033\n\023cos" +
+      "t_card_guid_list\030\007 \003(\rB\033\n\031emu.grasscutte" +
       "r.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -858,7 +858,7 @@ public final class GCGOperationRebootOuterClass {
     internal_static_GCGOperationReboot_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GCGOperationReboot_descriptor,
-        new java.lang.String[] { "CostCardGuidList", "DiceIndexList", });
+        new java.lang.String[] { "DiceIndexList", "CostCardGuidList", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

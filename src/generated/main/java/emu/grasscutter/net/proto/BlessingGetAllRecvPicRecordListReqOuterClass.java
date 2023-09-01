@@ -20,8 +20,8 @@ public final class BlessingGetAllRecvPicRecordListReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 2067
-   * Obf: MBLFJLBGFCG
+   * CmdId: 22820
+   * Obf: EDJKPCNNFJC
    * </pre>
    *
    * Protobuf type {@code BlessingGetAllRecvPicRecordListReq}
@@ -246,8 +246,8 @@ public final class BlessingGetAllRecvPicRecordListReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2067
-     * Obf: MBLFJLBGFCG
+     * CmdId: 22820
+     * Obf: EDJKPCNNFJC
      * </pre>
      *
      * Protobuf type {@code BlessingGetAllRecvPicRecordListReq}

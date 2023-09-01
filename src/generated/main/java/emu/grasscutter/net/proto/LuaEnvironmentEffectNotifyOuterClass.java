@@ -19,61 +19,61 @@ public final class LuaEnvironmentEffectNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated float float_param_list = 12;</code>
-     * @return A list containing the floatParamList.
-     */
-    java.util.List<java.lang.Float> getFloatParamListList();
-    /**
-     * <code>repeated float float_param_list = 12;</code>
-     * @return The count of floatParamList.
-     */
-    int getFloatParamListCount();
-    /**
-     * <code>repeated float float_param_list = 12;</code>
-     * @param index The index of the element to return.
-     * @return The floatParamList at the given index.
-     */
-    float getFloatParamList(int index);
-
-    /**
-     * <code>uint32 type = 14;</code>
-     * @return The type.
-     */
-    int getType();
-
-    /**
-     * <code>string effect_alias = 13;</code>
+     * <code>string effect_alias = 5;</code>
      * @return The effectAlias.
      */
     java.lang.String getEffectAlias();
     /**
-     * <code>string effect_alias = 13;</code>
+     * <code>string effect_alias = 5;</code>
      * @return The bytes for effectAlias.
      */
     com.google.protobuf.ByteString
         getEffectAliasBytes();
 
     /**
-     * <code>repeated int32 int_param_list = 1;</code>
+     * <code>uint32 type = 10;</code>
+     * @return The type.
+     */
+    int getType();
+
+    /**
+     * <code>repeated int32 int_param_list = 11;</code>
      * @return A list containing the intParamList.
      */
     java.util.List<java.lang.Integer> getIntParamListList();
     /**
-     * <code>repeated int32 int_param_list = 1;</code>
+     * <code>repeated int32 int_param_list = 11;</code>
      * @return The count of intParamList.
      */
     int getIntParamListCount();
     /**
-     * <code>repeated int32 int_param_list = 1;</code>
+     * <code>repeated int32 int_param_list = 11;</code>
      * @param index The index of the element to return.
      * @return The intParamList at the given index.
      */
     int getIntParamList(int index);
+
+    /**
+     * <code>repeated float float_param_list = 3;</code>
+     * @return A list containing the floatParamList.
+     */
+    java.util.List<java.lang.Float> getFloatParamListList();
+    /**
+     * <code>repeated float float_param_list = 3;</code>
+     * @return The count of floatParamList.
+     */
+    int getFloatParamListCount();
+    /**
+     * <code>repeated float float_param_list = 3;</code>
+     * @param index The index of the element to return.
+     * @return The floatParamList at the given index.
+     */
+    float getFloatParamList(int index);
   }
   /**
    * <pre>
-   * CmdId: 3456
-   * Obf: ALPHBKNIOPJ
+   * CmdId: 3994
+   * Obf: KEJHFACJGNI
    * </pre>
    *
    * Protobuf type {@code LuaEnvironmentEffectNotify}
@@ -88,9 +88,9 @@ public final class LuaEnvironmentEffectNotifyOuterClass {
       super(builder);
     }
     private LuaEnvironmentEffectNotify() {
-      floatParamList_ = emptyFloatList();
       effectAlias_ = "";
       intParamList_ = emptyIntList();
+      floatParamList_ = emptyFloatList();
     }
 
     @java.lang.Override
@@ -124,41 +124,20 @@ public final class LuaEnvironmentEffectNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 29: {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                intParamList_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              intParamList_.addInt(input.readInt32());
-              break;
-            }
-            case 10: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
-                intParamList_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                intParamList_.addInt(input.readInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 101: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 floatParamList_ = newFloatList();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               floatParamList_.addFloat(input.readFloat());
               break;
             }
-            case 98: {
+            case 26: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
                 floatParamList_ = newFloatList();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               while (input.getBytesUntilLimit() > 0) {
                 floatParamList_.addFloat(input.readFloat());
@@ -166,15 +145,36 @@ public final class LuaEnvironmentEffectNotifyOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 106: {
+            case 42: {
               java.lang.String s = input.readStringRequireUtf8();
 
               effectAlias_ = s;
               break;
             }
-            case 112: {
+            case 80: {
 
               type_ = input.readUInt32();
+              break;
+            }
+            case 88: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                intParamList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              intParamList_.addInt(input.readInt32());
+              break;
+            }
+            case 90: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                intParamList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                intParamList_.addInt(input.readInt32());
+              }
+              input.popLimit(limit);
               break;
             }
             default: {
@@ -193,10 +193,10 @@ public final class LuaEnvironmentEffectNotifyOuterClass {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          intParamList_.makeImmutable(); // C
+          floatParamList_.makeImmutable(); // C
         }
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          floatParamList_.makeImmutable(); // C
+          intParamList_.makeImmutable(); // C
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -215,49 +215,10 @@ public final class LuaEnvironmentEffectNotifyOuterClass {
               emu.grasscutter.net.proto.LuaEnvironmentEffectNotifyOuterClass.LuaEnvironmentEffectNotify.class, emu.grasscutter.net.proto.LuaEnvironmentEffectNotifyOuterClass.LuaEnvironmentEffectNotify.Builder.class);
     }
 
-    public static final int FLOAT_PARAM_LIST_FIELD_NUMBER = 12;
-    private com.google.protobuf.Internal.FloatList floatParamList_;
-    /**
-     * <code>repeated float float_param_list = 12;</code>
-     * @return A list containing the floatParamList.
-     */
-    @java.lang.Override
-    public java.util.List<java.lang.Float>
-        getFloatParamListList() {
-      return floatParamList_;
-    }
-    /**
-     * <code>repeated float float_param_list = 12;</code>
-     * @return The count of floatParamList.
-     */
-    public int getFloatParamListCount() {
-      return floatParamList_.size();
-    }
-    /**
-     * <code>repeated float float_param_list = 12;</code>
-     * @param index The index of the element to return.
-     * @return The floatParamList at the given index.
-     */
-    public float getFloatParamList(int index) {
-      return floatParamList_.getFloat(index);
-    }
-    private int floatParamListMemoizedSerializedSize = -1;
-
-    public static final int TYPE_FIELD_NUMBER = 14;
-    private int type_;
-    /**
-     * <code>uint32 type = 14;</code>
-     * @return The type.
-     */
-    @java.lang.Override
-    public int getType() {
-      return type_;
-    }
-
-    public static final int EFFECT_ALIAS_FIELD_NUMBER = 13;
+    public static final int EFFECT_ALIAS_FIELD_NUMBER = 5;
     private volatile java.lang.Object effectAlias_;
     /**
-     * <code>string effect_alias = 13;</code>
+     * <code>string effect_alias = 5;</code>
      * @return The effectAlias.
      */
     @java.lang.Override
@@ -274,7 +235,7 @@ public final class LuaEnvironmentEffectNotifyOuterClass {
       }
     }
     /**
-     * <code>string effect_alias = 13;</code>
+     * <code>string effect_alias = 5;</code>
      * @return The bytes for effectAlias.
      */
     @java.lang.Override
@@ -292,10 +253,21 @@ public final class LuaEnvironmentEffectNotifyOuterClass {
       }
     }
 
-    public static final int INT_PARAM_LIST_FIELD_NUMBER = 1;
+    public static final int TYPE_FIELD_NUMBER = 10;
+    private int type_;
+    /**
+     * <code>uint32 type = 10;</code>
+     * @return The type.
+     */
+    @java.lang.Override
+    public int getType() {
+      return type_;
+    }
+
+    public static final int INT_PARAM_LIST_FIELD_NUMBER = 11;
     private com.google.protobuf.Internal.IntList intParamList_;
     /**
-     * <code>repeated int32 int_param_list = 1;</code>
+     * <code>repeated int32 int_param_list = 11;</code>
      * @return A list containing the intParamList.
      */
     @java.lang.Override
@@ -304,14 +276,14 @@ public final class LuaEnvironmentEffectNotifyOuterClass {
       return intParamList_;
     }
     /**
-     * <code>repeated int32 int_param_list = 1;</code>
+     * <code>repeated int32 int_param_list = 11;</code>
      * @return The count of intParamList.
      */
     public int getIntParamListCount() {
       return intParamList_.size();
     }
     /**
-     * <code>repeated int32 int_param_list = 1;</code>
+     * <code>repeated int32 int_param_list = 11;</code>
      * @param index The index of the element to return.
      * @return The intParamList at the given index.
      */
@@ -319,6 +291,34 @@ public final class LuaEnvironmentEffectNotifyOuterClass {
       return intParamList_.getInt(index);
     }
     private int intParamListMemoizedSerializedSize = -1;
+
+    public static final int FLOAT_PARAM_LIST_FIELD_NUMBER = 3;
+    private com.google.protobuf.Internal.FloatList floatParamList_;
+    /**
+     * <code>repeated float float_param_list = 3;</code>
+     * @return A list containing the floatParamList.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Float>
+        getFloatParamListList() {
+      return floatParamList_;
+    }
+    /**
+     * <code>repeated float float_param_list = 3;</code>
+     * @return The count of floatParamList.
+     */
+    public int getFloatParamListCount() {
+      return floatParamList_.size();
+    }
+    /**
+     * <code>repeated float float_param_list = 3;</code>
+     * @param index The index of the element to return.
+     * @return The floatParamList at the given index.
+     */
+    public float getFloatParamList(int index) {
+      return floatParamList_.getFloat(index);
+    }
+    private int floatParamListMemoizedSerializedSize = -1;
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
@@ -335,25 +335,25 @@ public final class LuaEnvironmentEffectNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (getIntParamListList().size() > 0) {
-        output.writeUInt32NoTag(10);
-        output.writeUInt32NoTag(intParamListMemoizedSerializedSize);
-      }
-      for (int i = 0; i < intParamList_.size(); i++) {
-        output.writeInt32NoTag(intParamList_.getInt(i));
-      }
       if (getFloatParamListList().size() > 0) {
-        output.writeUInt32NoTag(98);
+        output.writeUInt32NoTag(26);
         output.writeUInt32NoTag(floatParamListMemoizedSerializedSize);
       }
       for (int i = 0; i < floatParamList_.size(); i++) {
         output.writeFloatNoTag(floatParamList_.getFloat(i));
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(effectAlias_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, effectAlias_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, effectAlias_);
       }
       if (type_ != 0) {
-        output.writeUInt32(14, type_);
+        output.writeUInt32(10, type_);
+      }
+      if (getIntParamListList().size() > 0) {
+        output.writeUInt32NoTag(90);
+        output.writeUInt32NoTag(intParamListMemoizedSerializedSize);
+      }
+      for (int i = 0; i < intParamList_.size(); i++) {
+        output.writeInt32NoTag(intParamList_.getInt(i));
       }
       unknownFields.writeTo(output);
     }
@@ -364,6 +364,24 @@ public final class LuaEnvironmentEffectNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      {
+        int dataSize = 0;
+        dataSize = 4 * getFloatParamListList().size();
+        size += dataSize;
+        if (!getFloatParamListList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        floatParamListMemoizedSerializedSize = dataSize;
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(effectAlias_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, effectAlias_);
+      }
+      if (type_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(10, type_);
+      }
       {
         int dataSize = 0;
         for (int i = 0; i < intParamList_.size(); i++) {
@@ -377,24 +395,6 @@ public final class LuaEnvironmentEffectNotifyOuterClass {
               .computeInt32SizeNoTag(dataSize);
         }
         intParamListMemoizedSerializedSize = dataSize;
-      }
-      {
-        int dataSize = 0;
-        dataSize = 4 * getFloatParamListList().size();
-        size += dataSize;
-        if (!getFloatParamListList().isEmpty()) {
-          size += 1;
-          size += com.google.protobuf.CodedOutputStream
-              .computeInt32SizeNoTag(dataSize);
-        }
-        floatParamListMemoizedSerializedSize = dataSize;
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(effectAlias_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, effectAlias_);
-      }
-      if (type_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, type_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -411,14 +411,14 @@ public final class LuaEnvironmentEffectNotifyOuterClass {
       }
       emu.grasscutter.net.proto.LuaEnvironmentEffectNotifyOuterClass.LuaEnvironmentEffectNotify other = (emu.grasscutter.net.proto.LuaEnvironmentEffectNotifyOuterClass.LuaEnvironmentEffectNotify) obj;
 
-      if (!getFloatParamListList()
-          .equals(other.getFloatParamListList())) return false;
-      if (getType()
-          != other.getType()) return false;
       if (!getEffectAlias()
           .equals(other.getEffectAlias())) return false;
+      if (getType()
+          != other.getType()) return false;
       if (!getIntParamListList()
           .equals(other.getIntParamListList())) return false;
+      if (!getFloatParamListList()
+          .equals(other.getFloatParamListList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -430,17 +430,17 @@ public final class LuaEnvironmentEffectNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getFloatParamListCount() > 0) {
-        hash = (37 * hash) + FLOAT_PARAM_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getFloatParamListList().hashCode();
-      }
-      hash = (37 * hash) + TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + getType();
       hash = (37 * hash) + EFFECT_ALIAS_FIELD_NUMBER;
       hash = (53 * hash) + getEffectAlias().hashCode();
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getType();
       if (getIntParamListCount() > 0) {
         hash = (37 * hash) + INT_PARAM_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getIntParamListList().hashCode();
+      }
+      if (getFloatParamListCount() > 0) {
+        hash = (37 * hash) + FLOAT_PARAM_LIST_FIELD_NUMBER;
+        hash = (53 * hash) + getFloatParamListList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -539,8 +539,8 @@ public final class LuaEnvironmentEffectNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 3456
-     * Obf: ALPHBKNIOPJ
+     * CmdId: 3994
+     * Obf: KEJHFACJGNI
      * </pre>
      *
      * Protobuf type {@code LuaEnvironmentEffectNotify}
@@ -580,13 +580,13 @@ public final class LuaEnvironmentEffectNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        floatParamList_ = emptyFloatList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        type_ = 0;
-
         effectAlias_ = "";
 
+        type_ = 0;
+
         intParamList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        floatParamList_ = emptyFloatList();
         bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
@@ -615,18 +615,18 @@ public final class LuaEnvironmentEffectNotifyOuterClass {
       public emu.grasscutter.net.proto.LuaEnvironmentEffectNotifyOuterClass.LuaEnvironmentEffectNotify buildPartial() {
         emu.grasscutter.net.proto.LuaEnvironmentEffectNotifyOuterClass.LuaEnvironmentEffectNotify result = new emu.grasscutter.net.proto.LuaEnvironmentEffectNotifyOuterClass.LuaEnvironmentEffectNotify(this);
         int from_bitField0_ = bitField0_;
+        result.effectAlias_ = effectAlias_;
+        result.type_ = type_;
         if (((bitField0_ & 0x00000001) != 0)) {
-          floatParamList_.makeImmutable();
+          intParamList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
-        result.floatParamList_ = floatParamList_;
-        result.type_ = type_;
-        result.effectAlias_ = effectAlias_;
+        result.intParamList_ = intParamList_;
         if (((bitField0_ & 0x00000002) != 0)) {
-          intParamList_.makeImmutable();
+          floatParamList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000002);
         }
-        result.intParamList_ = intParamList_;
+        result.floatParamList_ = floatParamList_;
         onBuilt();
         return result;
       }
@@ -675,30 +675,30 @@ public final class LuaEnvironmentEffectNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.LuaEnvironmentEffectNotifyOuterClass.LuaEnvironmentEffectNotify other) {
         if (other == emu.grasscutter.net.proto.LuaEnvironmentEffectNotifyOuterClass.LuaEnvironmentEffectNotify.getDefaultInstance()) return this;
-        if (!other.floatParamList_.isEmpty()) {
-          if (floatParamList_.isEmpty()) {
-            floatParamList_ = other.floatParamList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureFloatParamListIsMutable();
-            floatParamList_.addAll(other.floatParamList_);
-          }
+        if (!other.getEffectAlias().isEmpty()) {
+          effectAlias_ = other.effectAlias_;
           onChanged();
         }
         if (other.getType() != 0) {
           setType(other.getType());
         }
-        if (!other.getEffectAlias().isEmpty()) {
-          effectAlias_ = other.effectAlias_;
-          onChanged();
-        }
         if (!other.intParamList_.isEmpty()) {
           if (intParamList_.isEmpty()) {
             intParamList_ = other.intParamList_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureIntParamListIsMutable();
             intParamList_.addAll(other.intParamList_);
+          }
+          onChanged();
+        }
+        if (!other.floatParamList_.isEmpty()) {
+          if (floatParamList_.isEmpty()) {
+            floatParamList_ = other.floatParamList_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureFloatParamListIsMutable();
+            floatParamList_.addAll(other.floatParamList_);
           }
           onChanged();
         }
@@ -732,119 +732,9 @@ public final class LuaEnvironmentEffectNotifyOuterClass {
       }
       private int bitField0_;
 
-      private com.google.protobuf.Internal.FloatList floatParamList_ = emptyFloatList();
-      private void ensureFloatParamListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          floatParamList_ = mutableCopy(floatParamList_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-      /**
-       * <code>repeated float float_param_list = 12;</code>
-       * @return A list containing the floatParamList.
-       */
-      public java.util.List<java.lang.Float>
-          getFloatParamListList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
-                 java.util.Collections.unmodifiableList(floatParamList_) : floatParamList_;
-      }
-      /**
-       * <code>repeated float float_param_list = 12;</code>
-       * @return The count of floatParamList.
-       */
-      public int getFloatParamListCount() {
-        return floatParamList_.size();
-      }
-      /**
-       * <code>repeated float float_param_list = 12;</code>
-       * @param index The index of the element to return.
-       * @return The floatParamList at the given index.
-       */
-      public float getFloatParamList(int index) {
-        return floatParamList_.getFloat(index);
-      }
-      /**
-       * <code>repeated float float_param_list = 12;</code>
-       * @param index The index to set the value at.
-       * @param value The floatParamList to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFloatParamList(
-          int index, float value) {
-        ensureFloatParamListIsMutable();
-        floatParamList_.setFloat(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated float float_param_list = 12;</code>
-       * @param value The floatParamList to add.
-       * @return This builder for chaining.
-       */
-      public Builder addFloatParamList(float value) {
-        ensureFloatParamListIsMutable();
-        floatParamList_.addFloat(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated float float_param_list = 12;</code>
-       * @param values The floatParamList to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllFloatParamList(
-          java.lang.Iterable<? extends java.lang.Float> values) {
-        ensureFloatParamListIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, floatParamList_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated float float_param_list = 12;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearFloatParamList() {
-        floatParamList_ = emptyFloatList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-
-      private int type_ ;
-      /**
-       * <code>uint32 type = 14;</code>
-       * @return The type.
-       */
-      @java.lang.Override
-      public int getType() {
-        return type_;
-      }
-      /**
-       * <code>uint32 type = 14;</code>
-       * @param value The type to set.
-       * @return This builder for chaining.
-       */
-      public Builder setType(int value) {
-        
-        type_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 type = 14;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearType() {
-        
-        type_ = 0;
-        onChanged();
-        return this;
-      }
-
       private java.lang.Object effectAlias_ = "";
       /**
-       * <code>string effect_alias = 13;</code>
+       * <code>string effect_alias = 5;</code>
        * @return The effectAlias.
        */
       public java.lang.String getEffectAlias() {
@@ -860,7 +750,7 @@ public final class LuaEnvironmentEffectNotifyOuterClass {
         }
       }
       /**
-       * <code>string effect_alias = 13;</code>
+       * <code>string effect_alias = 5;</code>
        * @return The bytes for effectAlias.
        */
       public com.google.protobuf.ByteString
@@ -877,7 +767,7 @@ public final class LuaEnvironmentEffectNotifyOuterClass {
         }
       }
       /**
-       * <code>string effect_alias = 13;</code>
+       * <code>string effect_alias = 5;</code>
        * @param value The effectAlias to set.
        * @return This builder for chaining.
        */
@@ -892,7 +782,7 @@ public final class LuaEnvironmentEffectNotifyOuterClass {
         return this;
       }
       /**
-       * <code>string effect_alias = 13;</code>
+       * <code>string effect_alias = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearEffectAlias() {
@@ -902,7 +792,7 @@ public final class LuaEnvironmentEffectNotifyOuterClass {
         return this;
       }
       /**
-       * <code>string effect_alias = 13;</code>
+       * <code>string effect_alias = 5;</code>
        * @param value The bytes for effectAlias to set.
        * @return This builder for chaining.
        */
@@ -918,31 +808,62 @@ public final class LuaEnvironmentEffectNotifyOuterClass {
         return this;
       }
 
+      private int type_ ;
+      /**
+       * <code>uint32 type = 10;</code>
+       * @return The type.
+       */
+      @java.lang.Override
+      public int getType() {
+        return type_;
+      }
+      /**
+       * <code>uint32 type = 10;</code>
+       * @param value The type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setType(int value) {
+        
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 type = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearType() {
+        
+        type_ = 0;
+        onChanged();
+        return this;
+      }
+
       private com.google.protobuf.Internal.IntList intParamList_ = emptyIntList();
       private void ensureIntParamListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           intParamList_ = mutableCopy(intParamList_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
          }
       }
       /**
-       * <code>repeated int32 int_param_list = 1;</code>
+       * <code>repeated int32 int_param_list = 11;</code>
        * @return A list containing the intParamList.
        */
       public java.util.List<java.lang.Integer>
           getIntParamListList() {
-        return ((bitField0_ & 0x00000002) != 0) ?
+        return ((bitField0_ & 0x00000001) != 0) ?
                  java.util.Collections.unmodifiableList(intParamList_) : intParamList_;
       }
       /**
-       * <code>repeated int32 int_param_list = 1;</code>
+       * <code>repeated int32 int_param_list = 11;</code>
        * @return The count of intParamList.
        */
       public int getIntParamListCount() {
         return intParamList_.size();
       }
       /**
-       * <code>repeated int32 int_param_list = 1;</code>
+       * <code>repeated int32 int_param_list = 11;</code>
        * @param index The index of the element to return.
        * @return The intParamList at the given index.
        */
@@ -950,7 +871,7 @@ public final class LuaEnvironmentEffectNotifyOuterClass {
         return intParamList_.getInt(index);
       }
       /**
-       * <code>repeated int32 int_param_list = 1;</code>
+       * <code>repeated int32 int_param_list = 11;</code>
        * @param index The index to set the value at.
        * @param value The intParamList to set.
        * @return This builder for chaining.
@@ -963,7 +884,7 @@ public final class LuaEnvironmentEffectNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated int32 int_param_list = 1;</code>
+       * <code>repeated int32 int_param_list = 11;</code>
        * @param value The intParamList to add.
        * @return This builder for chaining.
        */
@@ -974,7 +895,7 @@ public final class LuaEnvironmentEffectNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated int32 int_param_list = 1;</code>
+       * <code>repeated int32 int_param_list = 11;</code>
        * @param values The intParamList to add.
        * @return This builder for chaining.
        */
@@ -987,11 +908,90 @@ public final class LuaEnvironmentEffectNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated int32 int_param_list = 1;</code>
+       * <code>repeated int32 int_param_list = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearIntParamList() {
         intParamList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Internal.FloatList floatParamList_ = emptyFloatList();
+      private void ensureFloatParamListIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          floatParamList_ = mutableCopy(floatParamList_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+      /**
+       * <code>repeated float float_param_list = 3;</code>
+       * @return A list containing the floatParamList.
+       */
+      public java.util.List<java.lang.Float>
+          getFloatParamListList() {
+        return ((bitField0_ & 0x00000002) != 0) ?
+                 java.util.Collections.unmodifiableList(floatParamList_) : floatParamList_;
+      }
+      /**
+       * <code>repeated float float_param_list = 3;</code>
+       * @return The count of floatParamList.
+       */
+      public int getFloatParamListCount() {
+        return floatParamList_.size();
+      }
+      /**
+       * <code>repeated float float_param_list = 3;</code>
+       * @param index The index of the element to return.
+       * @return The floatParamList at the given index.
+       */
+      public float getFloatParamList(int index) {
+        return floatParamList_.getFloat(index);
+      }
+      /**
+       * <code>repeated float float_param_list = 3;</code>
+       * @param index The index to set the value at.
+       * @param value The floatParamList to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFloatParamList(
+          int index, float value) {
+        ensureFloatParamListIsMutable();
+        floatParamList_.setFloat(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated float float_param_list = 3;</code>
+       * @param value The floatParamList to add.
+       * @return This builder for chaining.
+       */
+      public Builder addFloatParamList(float value) {
+        ensureFloatParamListIsMutable();
+        floatParamList_.addFloat(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated float float_param_list = 3;</code>
+       * @param values The floatParamList to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllFloatParamList(
+          java.lang.Iterable<? extends java.lang.Float> values) {
+        ensureFloatParamListIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, floatParamList_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated float float_param_list = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFloatParamList() {
+        floatParamList_ = emptyFloatList();
         bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
@@ -1064,9 +1064,9 @@ public final class LuaEnvironmentEffectNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n LuaEnvironmentEffectNotify.proto\"r\n\032Lu" +
-      "aEnvironmentEffectNotify\022\030\n\020float_param_" +
-      "list\030\014 \003(\002\022\014\n\004type\030\016 \001(\r\022\024\n\014effect_alias" +
-      "\030\r \001(\t\022\026\n\016int_param_list\030\001 \003(\005B\033\n\031emu.gr" +
+      "aEnvironmentEffectNotify\022\024\n\014effect_alias" +
+      "\030\005 \001(\t\022\014\n\004type\030\n \001(\r\022\026\n\016int_param_list\030\013" +
+      " \003(\005\022\030\n\020float_param_list\030\003 \003(\002B\033\n\031emu.gr" +
       "asscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -1078,7 +1078,7 @@ public final class LuaEnvironmentEffectNotifyOuterClass {
     internal_static_LuaEnvironmentEffectNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_LuaEnvironmentEffectNotify_descriptor,
-        new java.lang.String[] { "FloatParamList", "Type", "EffectAlias", "IntParamList", });
+        new java.lang.String[] { "EffectAlias", "Type", "IntParamList", "FloatParamList", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

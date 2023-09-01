@@ -16,7 +16,7 @@ public final class ForgeQueueManipulateTypeOuterClass {
   }
   /**
    * <pre>
-   * Obf: HAIPAFCEBEI
+   * Obf: DLEFODPKAGI
    * </pre>
    *
    * Protobuf enum {@code ForgeQueueManipulateType}

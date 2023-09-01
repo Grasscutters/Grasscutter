@@ -407,7 +407,7 @@
       "failure": "取消玩家的封禁失败，因为玩家不存在。",
       "description": "取消玩家的封禁"
     },
-    "troubleshoot": {
+    "info": {
       "description": "生成问题排除用的 debug 信息"
     }
   },

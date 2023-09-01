@@ -19,6 +19,23 @@ public final class EnterRogueDiaryDungeonReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <code>repeated uint32 chosen_card_list = 3;</code>
+     * @return A list containing the chosenCardList.
+     */
+    java.util.List<java.lang.Integer> getChosenCardListList();
+    /**
+     * <code>repeated uint32 chosen_card_list = 3;</code>
+     * @return The count of chosenCardList.
+     */
+    int getChosenCardListCount();
+    /**
+     * <code>repeated uint32 chosen_card_list = 3;</code>
+     * @param index The index of the element to return.
+     * @return The chosenCardList at the given index.
+     */
+    int getChosenCardList(int index);
+
+    /**
      * <code>repeated .RogueDiaryAvatar chosen_avatar_list = 1;</code>
      */
     java.util.List<emu.grasscutter.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar> 
@@ -41,28 +58,11 @@ public final class EnterRogueDiaryDungeonReqOuterClass {
      */
     emu.grasscutter.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatarOrBuilder getChosenAvatarListOrBuilder(
         int index);
-
-    /**
-     * <code>repeated uint32 chosen_card_list = 3;</code>
-     * @return A list containing the chosenCardList.
-     */
-    java.util.List<java.lang.Integer> getChosenCardListList();
-    /**
-     * <code>repeated uint32 chosen_card_list = 3;</code>
-     * @return The count of chosenCardList.
-     */
-    int getChosenCardListCount();
-    /**
-     * <code>repeated uint32 chosen_card_list = 3;</code>
-     * @param index The index of the element to return.
-     * @return The chosenCardList at the given index.
-     */
-    int getChosenCardList(int index);
   }
   /**
    * <pre>
-   * CmdId: 8477
-   * Obf: LIIEHDOMENC
+   * CmdId: 6423
+   * Obf: EPOPECKEHCC
    * </pre>
    *
    * Protobuf type {@code EnterRogueDiaryDungeonReq}
@@ -77,8 +77,8 @@ public final class EnterRogueDiaryDungeonReqOuterClass {
       super(builder);
     }
     private EnterRogueDiaryDungeonReq() {
-      chosenAvatarList_ = java.util.Collections.emptyList();
       chosenCardList_ = emptyIntList();
+      chosenAvatarList_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -113,18 +113,18 @@ public final class EnterRogueDiaryDungeonReqOuterClass {
               done = true;
               break;
             case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 chosenAvatarList_ = new java.util.ArrayList<emu.grasscutter.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar>();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               chosenAvatarList_.add(
                   input.readMessage(emu.grasscutter.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar.parser(), extensionRegistry));
               break;
             }
             case 24: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 chosenCardList_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               chosenCardList_.addInt(input.readUInt32());
               break;
@@ -132,9 +132,9 @@ public final class EnterRogueDiaryDungeonReqOuterClass {
             case 26: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
                 chosenCardList_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               while (input.getBytesUntilLimit() > 0) {
                 chosenCardList_.addInt(input.readUInt32());
@@ -157,10 +157,10 @@ public final class EnterRogueDiaryDungeonReqOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
           chosenAvatarList_ = java.util.Collections.unmodifiableList(chosenAvatarList_);
         }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           chosenCardList_.makeImmutable(); // C
         }
         this.unknownFields = unknownFields.build();
@@ -179,6 +179,34 @@ public final class EnterRogueDiaryDungeonReqOuterClass {
           .ensureFieldAccessorsInitialized(
               emu.grasscutter.net.proto.EnterRogueDiaryDungeonReqOuterClass.EnterRogueDiaryDungeonReq.class, emu.grasscutter.net.proto.EnterRogueDiaryDungeonReqOuterClass.EnterRogueDiaryDungeonReq.Builder.class);
     }
+
+    public static final int CHOSEN_CARD_LIST_FIELD_NUMBER = 3;
+    private com.google.protobuf.Internal.IntList chosenCardList_;
+    /**
+     * <code>repeated uint32 chosen_card_list = 3;</code>
+     * @return A list containing the chosenCardList.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Integer>
+        getChosenCardListList() {
+      return chosenCardList_;
+    }
+    /**
+     * <code>repeated uint32 chosen_card_list = 3;</code>
+     * @return The count of chosenCardList.
+     */
+    public int getChosenCardListCount() {
+      return chosenCardList_.size();
+    }
+    /**
+     * <code>repeated uint32 chosen_card_list = 3;</code>
+     * @param index The index of the element to return.
+     * @return The chosenCardList at the given index.
+     */
+    public int getChosenCardList(int index) {
+      return chosenCardList_.getInt(index);
+    }
+    private int chosenCardListMemoizedSerializedSize = -1;
 
     public static final int CHOSEN_AVATAR_LIST_FIELD_NUMBER = 1;
     private java.util.List<emu.grasscutter.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar> chosenAvatarList_;
@@ -219,34 +247,6 @@ public final class EnterRogueDiaryDungeonReqOuterClass {
         int index) {
       return chosenAvatarList_.get(index);
     }
-
-    public static final int CHOSEN_CARD_LIST_FIELD_NUMBER = 3;
-    private com.google.protobuf.Internal.IntList chosenCardList_;
-    /**
-     * <code>repeated uint32 chosen_card_list = 3;</code>
-     * @return A list containing the chosenCardList.
-     */
-    @java.lang.Override
-    public java.util.List<java.lang.Integer>
-        getChosenCardListList() {
-      return chosenCardList_;
-    }
-    /**
-     * <code>repeated uint32 chosen_card_list = 3;</code>
-     * @return The count of chosenCardList.
-     */
-    public int getChosenCardListCount() {
-      return chosenCardList_.size();
-    }
-    /**
-     * <code>repeated uint32 chosen_card_list = 3;</code>
-     * @param index The index of the element to return.
-     * @return The chosenCardList at the given index.
-     */
-    public int getChosenCardList(int index) {
-      return chosenCardList_.getInt(index);
-    }
-    private int chosenCardListMemoizedSerializedSize = -1;
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
@@ -315,10 +315,10 @@ public final class EnterRogueDiaryDungeonReqOuterClass {
       }
       emu.grasscutter.net.proto.EnterRogueDiaryDungeonReqOuterClass.EnterRogueDiaryDungeonReq other = (emu.grasscutter.net.proto.EnterRogueDiaryDungeonReqOuterClass.EnterRogueDiaryDungeonReq) obj;
 
-      if (!getChosenAvatarListList()
-          .equals(other.getChosenAvatarListList())) return false;
       if (!getChosenCardListList()
           .equals(other.getChosenCardListList())) return false;
+      if (!getChosenAvatarListList()
+          .equals(other.getChosenAvatarListList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -330,13 +330,13 @@ public final class EnterRogueDiaryDungeonReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getChosenAvatarListCount() > 0) {
-        hash = (37 * hash) + CHOSEN_AVATAR_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getChosenAvatarListList().hashCode();
-      }
       if (getChosenCardListCount() > 0) {
         hash = (37 * hash) + CHOSEN_CARD_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getChosenCardListList().hashCode();
+      }
+      if (getChosenAvatarListCount() > 0) {
+        hash = (37 * hash) + CHOSEN_AVATAR_LIST_FIELD_NUMBER;
+        hash = (53 * hash) + getChosenAvatarListList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -435,8 +435,8 @@ public final class EnterRogueDiaryDungeonReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8477
-     * Obf: LIIEHDOMENC
+     * CmdId: 6423
+     * Obf: EPOPECKEHCC
      * </pre>
      *
      * Protobuf type {@code EnterRogueDiaryDungeonReq}
@@ -477,14 +477,14 @@ public final class EnterRogueDiaryDungeonReqOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        chosenCardList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         if (chosenAvatarListBuilder_ == null) {
           chosenAvatarList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           chosenAvatarListBuilder_.clear();
         }
-        chosenCardList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -512,20 +512,20 @@ public final class EnterRogueDiaryDungeonReqOuterClass {
       public emu.grasscutter.net.proto.EnterRogueDiaryDungeonReqOuterClass.EnterRogueDiaryDungeonReq buildPartial() {
         emu.grasscutter.net.proto.EnterRogueDiaryDungeonReqOuterClass.EnterRogueDiaryDungeonReq result = new emu.grasscutter.net.proto.EnterRogueDiaryDungeonReqOuterClass.EnterRogueDiaryDungeonReq(this);
         int from_bitField0_ = bitField0_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          chosenCardList_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.chosenCardList_ = chosenCardList_;
         if (chosenAvatarListBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             chosenAvatarList_ = java.util.Collections.unmodifiableList(chosenAvatarList_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.chosenAvatarList_ = chosenAvatarList_;
         } else {
           result.chosenAvatarList_ = chosenAvatarListBuilder_.build();
         }
-        if (((bitField0_ & 0x00000002) != 0)) {
-          chosenCardList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.chosenCardList_ = chosenCardList_;
         onBuilt();
         return result;
       }
@@ -574,11 +574,21 @@ public final class EnterRogueDiaryDungeonReqOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.EnterRogueDiaryDungeonReqOuterClass.EnterRogueDiaryDungeonReq other) {
         if (other == emu.grasscutter.net.proto.EnterRogueDiaryDungeonReqOuterClass.EnterRogueDiaryDungeonReq.getDefaultInstance()) return this;
+        if (!other.chosenCardList_.isEmpty()) {
+          if (chosenCardList_.isEmpty()) {
+            chosenCardList_ = other.chosenCardList_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureChosenCardListIsMutable();
+            chosenCardList_.addAll(other.chosenCardList_);
+          }
+          onChanged();
+        }
         if (chosenAvatarListBuilder_ == null) {
           if (!other.chosenAvatarList_.isEmpty()) {
             if (chosenAvatarList_.isEmpty()) {
               chosenAvatarList_ = other.chosenAvatarList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureChosenAvatarListIsMutable();
               chosenAvatarList_.addAll(other.chosenAvatarList_);
@@ -591,7 +601,7 @@ public final class EnterRogueDiaryDungeonReqOuterClass {
               chosenAvatarListBuilder_.dispose();
               chosenAvatarListBuilder_ = null;
               chosenAvatarList_ = other.chosenAvatarList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
               chosenAvatarListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getChosenAvatarListFieldBuilder() : null;
@@ -599,16 +609,6 @@ public final class EnterRogueDiaryDungeonReqOuterClass {
               chosenAvatarListBuilder_.addAllMessages(other.chosenAvatarList_);
             }
           }
-        }
-        if (!other.chosenCardList_.isEmpty()) {
-          if (chosenCardList_.isEmpty()) {
-            chosenCardList_ = other.chosenCardList_;
-            bitField0_ = (bitField0_ & ~0x00000002);
-          } else {
-            ensureChosenCardListIsMutable();
-            chosenCardList_.addAll(other.chosenCardList_);
-          }
-          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -640,12 +640,91 @@ public final class EnterRogueDiaryDungeonReqOuterClass {
       }
       private int bitField0_;
 
+      private com.google.protobuf.Internal.IntList chosenCardList_ = emptyIntList();
+      private void ensureChosenCardListIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          chosenCardList_ = mutableCopy(chosenCardList_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <code>repeated uint32 chosen_card_list = 3;</code>
+       * @return A list containing the chosenCardList.
+       */
+      public java.util.List<java.lang.Integer>
+          getChosenCardListList() {
+        return ((bitField0_ & 0x00000001) != 0) ?
+                 java.util.Collections.unmodifiableList(chosenCardList_) : chosenCardList_;
+      }
+      /**
+       * <code>repeated uint32 chosen_card_list = 3;</code>
+       * @return The count of chosenCardList.
+       */
+      public int getChosenCardListCount() {
+        return chosenCardList_.size();
+      }
+      /**
+       * <code>repeated uint32 chosen_card_list = 3;</code>
+       * @param index The index of the element to return.
+       * @return The chosenCardList at the given index.
+       */
+      public int getChosenCardList(int index) {
+        return chosenCardList_.getInt(index);
+      }
+      /**
+       * <code>repeated uint32 chosen_card_list = 3;</code>
+       * @param index The index to set the value at.
+       * @param value The chosenCardList to set.
+       * @return This builder for chaining.
+       */
+      public Builder setChosenCardList(
+          int index, int value) {
+        ensureChosenCardListIsMutable();
+        chosenCardList_.setInt(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 chosen_card_list = 3;</code>
+       * @param value The chosenCardList to add.
+       * @return This builder for chaining.
+       */
+      public Builder addChosenCardList(int value) {
+        ensureChosenCardListIsMutable();
+        chosenCardList_.addInt(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 chosen_card_list = 3;</code>
+       * @param values The chosenCardList to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllChosenCardList(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureChosenCardListIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, chosenCardList_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 chosen_card_list = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearChosenCardList() {
+        chosenCardList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
       private java.util.List<emu.grasscutter.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar> chosenAvatarList_ =
         java.util.Collections.emptyList();
       private void ensureChosenAvatarListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           chosenAvatarList_ = new java.util.ArrayList<emu.grasscutter.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar>(chosenAvatarList_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -795,7 +874,7 @@ public final class EnterRogueDiaryDungeonReqOuterClass {
       public Builder clearChosenAvatarList() {
         if (chosenAvatarListBuilder_ == null) {
           chosenAvatarList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           chosenAvatarListBuilder_.clear();
@@ -872,91 +951,12 @@ public final class EnterRogueDiaryDungeonReqOuterClass {
           chosenAvatarListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.grasscutter.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar, emu.grasscutter.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar.Builder, emu.grasscutter.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatarOrBuilder>(
                   chosenAvatarList_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           chosenAvatarList_ = null;
         }
         return chosenAvatarListBuilder_;
-      }
-
-      private com.google.protobuf.Internal.IntList chosenCardList_ = emptyIntList();
-      private void ensureChosenCardListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
-          chosenCardList_ = mutableCopy(chosenCardList_);
-          bitField0_ |= 0x00000002;
-         }
-      }
-      /**
-       * <code>repeated uint32 chosen_card_list = 3;</code>
-       * @return A list containing the chosenCardList.
-       */
-      public java.util.List<java.lang.Integer>
-          getChosenCardListList() {
-        return ((bitField0_ & 0x00000002) != 0) ?
-                 java.util.Collections.unmodifiableList(chosenCardList_) : chosenCardList_;
-      }
-      /**
-       * <code>repeated uint32 chosen_card_list = 3;</code>
-       * @return The count of chosenCardList.
-       */
-      public int getChosenCardListCount() {
-        return chosenCardList_.size();
-      }
-      /**
-       * <code>repeated uint32 chosen_card_list = 3;</code>
-       * @param index The index of the element to return.
-       * @return The chosenCardList at the given index.
-       */
-      public int getChosenCardList(int index) {
-        return chosenCardList_.getInt(index);
-      }
-      /**
-       * <code>repeated uint32 chosen_card_list = 3;</code>
-       * @param index The index to set the value at.
-       * @param value The chosenCardList to set.
-       * @return This builder for chaining.
-       */
-      public Builder setChosenCardList(
-          int index, int value) {
-        ensureChosenCardListIsMutable();
-        chosenCardList_.setInt(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 chosen_card_list = 3;</code>
-       * @param value The chosenCardList to add.
-       * @return This builder for chaining.
-       */
-      public Builder addChosenCardList(int value) {
-        ensureChosenCardListIsMutable();
-        chosenCardList_.addInt(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 chosen_card_list = 3;</code>
-       * @param values The chosenCardList to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllChosenCardList(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureChosenCardListIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, chosenCardList_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 chosen_card_list = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearChosenCardList() {
-        chosenCardList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
-        onChanged();
-        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -1027,8 +1027,8 @@ public final class EnterRogueDiaryDungeonReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n\037EnterRogueDiaryDungeonReq.proto\032\026Rogue" +
       "DiaryAvatar.proto\"d\n\031EnterRogueDiaryDung" +
-      "eonReq\022-\n\022chosen_avatar_list\030\001 \003(\0132\021.Rog" +
-      "ueDiaryAvatar\022\030\n\020chosen_card_list\030\003 \003(\rB" +
+      "eonReq\022\030\n\020chosen_card_list\030\003 \003(\r\022-\n\022chos" +
+      "en_avatar_list\030\001 \003(\0132\021.RogueDiaryAvatarB" +
       "\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -1041,7 +1041,7 @@ public final class EnterRogueDiaryDungeonReqOuterClass {
     internal_static_EnterRogueDiaryDungeonReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_EnterRogueDiaryDungeonReq_descriptor,
-        new java.lang.String[] { "ChosenAvatarList", "ChosenCardList", });
+        new java.lang.String[] { "ChosenCardList", "ChosenAvatarList", });
     emu.grasscutter.net.proto.RogueDiaryAvatarOuterClass.getDescriptor();
   }
 

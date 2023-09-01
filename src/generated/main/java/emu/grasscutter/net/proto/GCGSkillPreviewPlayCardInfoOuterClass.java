@@ -19,35 +19,35 @@ public final class GCGSkillPreviewPlayCardInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 NDJABBCPLBB = 6;</code>
-     * @return The nDJABBCPLBB.
+     * <code>uint32 OLIGHPNIHNG = 15;</code>
+     * @return The oLIGHPNIHNG.
      */
-    int getNDJABBCPLBB();
+    int getOLIGHPNIHNG();
 
     /**
-     * <code>uint32 OFFCPFLINJN = 14;</code>
-     * @return The oFFCPFLINJN.
+     * <code>uint32 CNKPKHNGILK = 1;</code>
+     * @return The cNKPKHNGILK.
      */
-    int getOFFCPFLINJN();
+    int getCNKPKHNGILK();
 
     /**
-     * <code>.GCGSkillPreviewInfo play_card_info = 8;</code>
+     * <code>.GCGSkillPreviewInfo play_card_info = 9;</code>
      * @return Whether the playCardInfo field is set.
      */
     boolean hasPlayCardInfo();
     /**
-     * <code>.GCGSkillPreviewInfo play_card_info = 8;</code>
+     * <code>.GCGSkillPreviewInfo play_card_info = 9;</code>
      * @return The playCardInfo.
      */
     emu.grasscutter.net.proto.GCGSkillPreviewInfoOuterClass.GCGSkillPreviewInfo getPlayCardInfo();
     /**
-     * <code>.GCGSkillPreviewInfo play_card_info = 8;</code>
+     * <code>.GCGSkillPreviewInfo play_card_info = 9;</code>
      */
     emu.grasscutter.net.proto.GCGSkillPreviewInfoOuterClass.GCGSkillPreviewInfoOrBuilder getPlayCardInfoOrBuilder();
   }
   /**
    * <pre>
-   * Obf: FLMAALGBMNM
+   * Obf: ICPJOFEGFJA
    * </pre>
    *
    * Protobuf type {@code GCGSkillPreviewPlayCardInfo}
@@ -94,12 +94,12 @@ public final class GCGSkillPreviewPlayCardInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 48: {
+            case 8: {
 
-              nDJABBCPLBB_ = input.readUInt32();
+              cNKPKHNGILK_ = input.readUInt32();
               break;
             }
-            case 66: {
+            case 74: {
               emu.grasscutter.net.proto.GCGSkillPreviewInfoOuterClass.GCGSkillPreviewInfo.Builder subBuilder = null;
               if (playCardInfo_ != null) {
                 subBuilder = playCardInfo_.toBuilder();
@@ -112,9 +112,9 @@ public final class GCGSkillPreviewPlayCardInfoOuterClass {
 
               break;
             }
-            case 112: {
+            case 120: {
 
-              oFFCPFLINJN_ = input.readUInt32();
+              oLIGHPNIHNG_ = input.readUInt32();
               break;
             }
             default: {
@@ -149,32 +149,32 @@ public final class GCGSkillPreviewPlayCardInfoOuterClass {
               emu.grasscutter.net.proto.GCGSkillPreviewPlayCardInfoOuterClass.GCGSkillPreviewPlayCardInfo.class, emu.grasscutter.net.proto.GCGSkillPreviewPlayCardInfoOuterClass.GCGSkillPreviewPlayCardInfo.Builder.class);
     }
 
-    public static final int NDJABBCPLBB_FIELD_NUMBER = 6;
-    private int nDJABBCPLBB_;
+    public static final int OLIGHPNIHNG_FIELD_NUMBER = 15;
+    private int oLIGHPNIHNG_;
     /**
-     * <code>uint32 NDJABBCPLBB = 6;</code>
-     * @return The nDJABBCPLBB.
+     * <code>uint32 OLIGHPNIHNG = 15;</code>
+     * @return The oLIGHPNIHNG.
      */
     @java.lang.Override
-    public int getNDJABBCPLBB() {
-      return nDJABBCPLBB_;
+    public int getOLIGHPNIHNG() {
+      return oLIGHPNIHNG_;
     }
 
-    public static final int OFFCPFLINJN_FIELD_NUMBER = 14;
-    private int oFFCPFLINJN_;
+    public static final int CNKPKHNGILK_FIELD_NUMBER = 1;
+    private int cNKPKHNGILK_;
     /**
-     * <code>uint32 OFFCPFLINJN = 14;</code>
-     * @return The oFFCPFLINJN.
+     * <code>uint32 CNKPKHNGILK = 1;</code>
+     * @return The cNKPKHNGILK.
      */
     @java.lang.Override
-    public int getOFFCPFLINJN() {
-      return oFFCPFLINJN_;
+    public int getCNKPKHNGILK() {
+      return cNKPKHNGILK_;
     }
 
-    public static final int PLAY_CARD_INFO_FIELD_NUMBER = 8;
+    public static final int PLAY_CARD_INFO_FIELD_NUMBER = 9;
     private emu.grasscutter.net.proto.GCGSkillPreviewInfoOuterClass.GCGSkillPreviewInfo playCardInfo_;
     /**
-     * <code>.GCGSkillPreviewInfo play_card_info = 8;</code>
+     * <code>.GCGSkillPreviewInfo play_card_info = 9;</code>
      * @return Whether the playCardInfo field is set.
      */
     @java.lang.Override
@@ -182,7 +182,7 @@ public final class GCGSkillPreviewPlayCardInfoOuterClass {
       return playCardInfo_ != null;
     }
     /**
-     * <code>.GCGSkillPreviewInfo play_card_info = 8;</code>
+     * <code>.GCGSkillPreviewInfo play_card_info = 9;</code>
      * @return The playCardInfo.
      */
     @java.lang.Override
@@ -190,7 +190,7 @@ public final class GCGSkillPreviewPlayCardInfoOuterClass {
       return playCardInfo_ == null ? emu.grasscutter.net.proto.GCGSkillPreviewInfoOuterClass.GCGSkillPreviewInfo.getDefaultInstance() : playCardInfo_;
     }
     /**
-     * <code>.GCGSkillPreviewInfo play_card_info = 8;</code>
+     * <code>.GCGSkillPreviewInfo play_card_info = 9;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.GCGSkillPreviewInfoOuterClass.GCGSkillPreviewInfoOrBuilder getPlayCardInfoOrBuilder() {
@@ -211,14 +211,14 @@ public final class GCGSkillPreviewPlayCardInfoOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (nDJABBCPLBB_ != 0) {
-        output.writeUInt32(6, nDJABBCPLBB_);
+      if (cNKPKHNGILK_ != 0) {
+        output.writeUInt32(1, cNKPKHNGILK_);
       }
       if (playCardInfo_ != null) {
-        output.writeMessage(8, getPlayCardInfo());
+        output.writeMessage(9, getPlayCardInfo());
       }
-      if (oFFCPFLINJN_ != 0) {
-        output.writeUInt32(14, oFFCPFLINJN_);
+      if (oLIGHPNIHNG_ != 0) {
+        output.writeUInt32(15, oLIGHPNIHNG_);
       }
       unknownFields.writeTo(output);
     }
@@ -229,17 +229,17 @@ public final class GCGSkillPreviewPlayCardInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (nDJABBCPLBB_ != 0) {
+      if (cNKPKHNGILK_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, nDJABBCPLBB_);
+          .computeUInt32Size(1, cNKPKHNGILK_);
       }
       if (playCardInfo_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(8, getPlayCardInfo());
+          .computeMessageSize(9, getPlayCardInfo());
       }
-      if (oFFCPFLINJN_ != 0) {
+      if (oLIGHPNIHNG_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, oFFCPFLINJN_);
+          .computeUInt32Size(15, oLIGHPNIHNG_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -256,10 +256,10 @@ public final class GCGSkillPreviewPlayCardInfoOuterClass {
       }
       emu.grasscutter.net.proto.GCGSkillPreviewPlayCardInfoOuterClass.GCGSkillPreviewPlayCardInfo other = (emu.grasscutter.net.proto.GCGSkillPreviewPlayCardInfoOuterClass.GCGSkillPreviewPlayCardInfo) obj;
 
-      if (getNDJABBCPLBB()
-          != other.getNDJABBCPLBB()) return false;
-      if (getOFFCPFLINJN()
-          != other.getOFFCPFLINJN()) return false;
+      if (getOLIGHPNIHNG()
+          != other.getOLIGHPNIHNG()) return false;
+      if (getCNKPKHNGILK()
+          != other.getCNKPKHNGILK()) return false;
       if (hasPlayCardInfo() != other.hasPlayCardInfo()) return false;
       if (hasPlayCardInfo()) {
         if (!getPlayCardInfo()
@@ -276,10 +276,10 @@ public final class GCGSkillPreviewPlayCardInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + NDJABBCPLBB_FIELD_NUMBER;
-      hash = (53 * hash) + getNDJABBCPLBB();
-      hash = (37 * hash) + OFFCPFLINJN_FIELD_NUMBER;
-      hash = (53 * hash) + getOFFCPFLINJN();
+      hash = (37 * hash) + OLIGHPNIHNG_FIELD_NUMBER;
+      hash = (53 * hash) + getOLIGHPNIHNG();
+      hash = (37 * hash) + CNKPKHNGILK_FIELD_NUMBER;
+      hash = (53 * hash) + getCNKPKHNGILK();
       if (hasPlayCardInfo()) {
         hash = (37 * hash) + PLAY_CARD_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getPlayCardInfo().hashCode();
@@ -381,7 +381,7 @@ public final class GCGSkillPreviewPlayCardInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: FLMAALGBMNM
+     * Obf: ICPJOFEGFJA
      * </pre>
      *
      * Protobuf type {@code GCGSkillPreviewPlayCardInfo}
@@ -421,9 +421,9 @@ public final class GCGSkillPreviewPlayCardInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        nDJABBCPLBB_ = 0;
+        oLIGHPNIHNG_ = 0;
 
-        oFFCPFLINJN_ = 0;
+        cNKPKHNGILK_ = 0;
 
         if (playCardInfoBuilder_ == null) {
           playCardInfo_ = null;
@@ -457,8 +457,8 @@ public final class GCGSkillPreviewPlayCardInfoOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.GCGSkillPreviewPlayCardInfoOuterClass.GCGSkillPreviewPlayCardInfo buildPartial() {
         emu.grasscutter.net.proto.GCGSkillPreviewPlayCardInfoOuterClass.GCGSkillPreviewPlayCardInfo result = new emu.grasscutter.net.proto.GCGSkillPreviewPlayCardInfoOuterClass.GCGSkillPreviewPlayCardInfo(this);
-        result.nDJABBCPLBB_ = nDJABBCPLBB_;
-        result.oFFCPFLINJN_ = oFFCPFLINJN_;
+        result.oLIGHPNIHNG_ = oLIGHPNIHNG_;
+        result.cNKPKHNGILK_ = cNKPKHNGILK_;
         if (playCardInfoBuilder_ == null) {
           result.playCardInfo_ = playCardInfo_;
         } else {
@@ -512,11 +512,11 @@ public final class GCGSkillPreviewPlayCardInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.GCGSkillPreviewPlayCardInfoOuterClass.GCGSkillPreviewPlayCardInfo other) {
         if (other == emu.grasscutter.net.proto.GCGSkillPreviewPlayCardInfoOuterClass.GCGSkillPreviewPlayCardInfo.getDefaultInstance()) return this;
-        if (other.getNDJABBCPLBB() != 0) {
-          setNDJABBCPLBB(other.getNDJABBCPLBB());
+        if (other.getOLIGHPNIHNG() != 0) {
+          setOLIGHPNIHNG(other.getOLIGHPNIHNG());
         }
-        if (other.getOFFCPFLINJN() != 0) {
-          setOFFCPFLINJN(other.getOFFCPFLINJN());
+        if (other.getCNKPKHNGILK() != 0) {
+          setCNKPKHNGILK(other.getCNKPKHNGILK());
         }
         if (other.hasPlayCardInfo()) {
           mergePlayCardInfo(other.getPlayCardInfo());
@@ -550,64 +550,64 @@ public final class GCGSkillPreviewPlayCardInfoOuterClass {
         return this;
       }
 
-      private int nDJABBCPLBB_ ;
+      private int oLIGHPNIHNG_ ;
       /**
-       * <code>uint32 NDJABBCPLBB = 6;</code>
-       * @return The nDJABBCPLBB.
+       * <code>uint32 OLIGHPNIHNG = 15;</code>
+       * @return The oLIGHPNIHNG.
        */
       @java.lang.Override
-      public int getNDJABBCPLBB() {
-        return nDJABBCPLBB_;
+      public int getOLIGHPNIHNG() {
+        return oLIGHPNIHNG_;
       }
       /**
-       * <code>uint32 NDJABBCPLBB = 6;</code>
-       * @param value The nDJABBCPLBB to set.
+       * <code>uint32 OLIGHPNIHNG = 15;</code>
+       * @param value The oLIGHPNIHNG to set.
        * @return This builder for chaining.
        */
-      public Builder setNDJABBCPLBB(int value) {
+      public Builder setOLIGHPNIHNG(int value) {
         
-        nDJABBCPLBB_ = value;
+        oLIGHPNIHNG_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 NDJABBCPLBB = 6;</code>
+       * <code>uint32 OLIGHPNIHNG = 15;</code>
        * @return This builder for chaining.
        */
-      public Builder clearNDJABBCPLBB() {
+      public Builder clearOLIGHPNIHNG() {
         
-        nDJABBCPLBB_ = 0;
+        oLIGHPNIHNG_ = 0;
         onChanged();
         return this;
       }
 
-      private int oFFCPFLINJN_ ;
+      private int cNKPKHNGILK_ ;
       /**
-       * <code>uint32 OFFCPFLINJN = 14;</code>
-       * @return The oFFCPFLINJN.
+       * <code>uint32 CNKPKHNGILK = 1;</code>
+       * @return The cNKPKHNGILK.
        */
       @java.lang.Override
-      public int getOFFCPFLINJN() {
-        return oFFCPFLINJN_;
+      public int getCNKPKHNGILK() {
+        return cNKPKHNGILK_;
       }
       /**
-       * <code>uint32 OFFCPFLINJN = 14;</code>
-       * @param value The oFFCPFLINJN to set.
+       * <code>uint32 CNKPKHNGILK = 1;</code>
+       * @param value The cNKPKHNGILK to set.
        * @return This builder for chaining.
        */
-      public Builder setOFFCPFLINJN(int value) {
+      public Builder setCNKPKHNGILK(int value) {
         
-        oFFCPFLINJN_ = value;
+        cNKPKHNGILK_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 OFFCPFLINJN = 14;</code>
+       * <code>uint32 CNKPKHNGILK = 1;</code>
        * @return This builder for chaining.
        */
-      public Builder clearOFFCPFLINJN() {
+      public Builder clearCNKPKHNGILK() {
         
-        oFFCPFLINJN_ = 0;
+        cNKPKHNGILK_ = 0;
         onChanged();
         return this;
       }
@@ -616,14 +616,14 @@ public final class GCGSkillPreviewPlayCardInfoOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.GCGSkillPreviewInfoOuterClass.GCGSkillPreviewInfo, emu.grasscutter.net.proto.GCGSkillPreviewInfoOuterClass.GCGSkillPreviewInfo.Builder, emu.grasscutter.net.proto.GCGSkillPreviewInfoOuterClass.GCGSkillPreviewInfoOrBuilder> playCardInfoBuilder_;
       /**
-       * <code>.GCGSkillPreviewInfo play_card_info = 8;</code>
+       * <code>.GCGSkillPreviewInfo play_card_info = 9;</code>
        * @return Whether the playCardInfo field is set.
        */
       public boolean hasPlayCardInfo() {
         return playCardInfoBuilder_ != null || playCardInfo_ != null;
       }
       /**
-       * <code>.GCGSkillPreviewInfo play_card_info = 8;</code>
+       * <code>.GCGSkillPreviewInfo play_card_info = 9;</code>
        * @return The playCardInfo.
        */
       public emu.grasscutter.net.proto.GCGSkillPreviewInfoOuterClass.GCGSkillPreviewInfo getPlayCardInfo() {
@@ -634,7 +634,7 @@ public final class GCGSkillPreviewPlayCardInfoOuterClass {
         }
       }
       /**
-       * <code>.GCGSkillPreviewInfo play_card_info = 8;</code>
+       * <code>.GCGSkillPreviewInfo play_card_info = 9;</code>
        */
       public Builder setPlayCardInfo(emu.grasscutter.net.proto.GCGSkillPreviewInfoOuterClass.GCGSkillPreviewInfo value) {
         if (playCardInfoBuilder_ == null) {
@@ -650,7 +650,7 @@ public final class GCGSkillPreviewPlayCardInfoOuterClass {
         return this;
       }
       /**
-       * <code>.GCGSkillPreviewInfo play_card_info = 8;</code>
+       * <code>.GCGSkillPreviewInfo play_card_info = 9;</code>
        */
       public Builder setPlayCardInfo(
           emu.grasscutter.net.proto.GCGSkillPreviewInfoOuterClass.GCGSkillPreviewInfo.Builder builderForValue) {
@@ -664,7 +664,7 @@ public final class GCGSkillPreviewPlayCardInfoOuterClass {
         return this;
       }
       /**
-       * <code>.GCGSkillPreviewInfo play_card_info = 8;</code>
+       * <code>.GCGSkillPreviewInfo play_card_info = 9;</code>
        */
       public Builder mergePlayCardInfo(emu.grasscutter.net.proto.GCGSkillPreviewInfoOuterClass.GCGSkillPreviewInfo value) {
         if (playCardInfoBuilder_ == null) {
@@ -682,7 +682,7 @@ public final class GCGSkillPreviewPlayCardInfoOuterClass {
         return this;
       }
       /**
-       * <code>.GCGSkillPreviewInfo play_card_info = 8;</code>
+       * <code>.GCGSkillPreviewInfo play_card_info = 9;</code>
        */
       public Builder clearPlayCardInfo() {
         if (playCardInfoBuilder_ == null) {
@@ -696,7 +696,7 @@ public final class GCGSkillPreviewPlayCardInfoOuterClass {
         return this;
       }
       /**
-       * <code>.GCGSkillPreviewInfo play_card_info = 8;</code>
+       * <code>.GCGSkillPreviewInfo play_card_info = 9;</code>
        */
       public emu.grasscutter.net.proto.GCGSkillPreviewInfoOuterClass.GCGSkillPreviewInfo.Builder getPlayCardInfoBuilder() {
         
@@ -704,7 +704,7 @@ public final class GCGSkillPreviewPlayCardInfoOuterClass {
         return getPlayCardInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.GCGSkillPreviewInfo play_card_info = 8;</code>
+       * <code>.GCGSkillPreviewInfo play_card_info = 9;</code>
        */
       public emu.grasscutter.net.proto.GCGSkillPreviewInfoOuterClass.GCGSkillPreviewInfoOrBuilder getPlayCardInfoOrBuilder() {
         if (playCardInfoBuilder_ != null) {
@@ -715,7 +715,7 @@ public final class GCGSkillPreviewPlayCardInfoOuterClass {
         }
       }
       /**
-       * <code>.GCGSkillPreviewInfo play_card_info = 8;</code>
+       * <code>.GCGSkillPreviewInfo play_card_info = 9;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.GCGSkillPreviewInfoOuterClass.GCGSkillPreviewInfo, emu.grasscutter.net.proto.GCGSkillPreviewInfoOuterClass.GCGSkillPreviewInfo.Builder, emu.grasscutter.net.proto.GCGSkillPreviewInfoOuterClass.GCGSkillPreviewInfoOrBuilder> 
@@ -799,8 +799,8 @@ public final class GCGSkillPreviewPlayCardInfoOuterClass {
     java.lang.String[] descriptorData = {
       "\n!GCGSkillPreviewPlayCardInfo.proto\032\031GCG" +
       "SkillPreviewInfo.proto\"u\n\033GCGSkillPrevie" +
-      "wPlayCardInfo\022\023\n\013NDJABBCPLBB\030\006 \001(\r\022\023\n\013OF" +
-      "FCPFLINJN\030\016 \001(\r\022,\n\016play_card_info\030\010 \001(\0132" +
+      "wPlayCardInfo\022\023\n\013OLIGHPNIHNG\030\017 \001(\r\022\023\n\013CN" +
+      "KPKHNGILK\030\001 \001(\r\022,\n\016play_card_info\030\t \001(\0132" +
       "\024.GCGSkillPreviewInfoB\033\n\031emu.grasscutter" +
       ".net.protob\006proto3"
     };
@@ -814,7 +814,7 @@ public final class GCGSkillPreviewPlayCardInfoOuterClass {
     internal_static_GCGSkillPreviewPlayCardInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GCGSkillPreviewPlayCardInfo_descriptor,
-        new java.lang.String[] { "NDJABBCPLBB", "OFFCPFLINJN", "PlayCardInfo", });
+        new java.lang.String[] { "OLIGHPNIHNG", "CNKPKHNGILK", "PlayCardInfo", });
     emu.grasscutter.net.proto.GCGSkillPreviewInfoOuterClass.getDescriptor();
   }
 

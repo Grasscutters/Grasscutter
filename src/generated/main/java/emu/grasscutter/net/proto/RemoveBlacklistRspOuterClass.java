@@ -19,21 +19,21 @@ public final class RemoveBlacklistRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 9;</code>
+     * <code>int32 retcode = 7;</code>
      * @return The retcode.
      */
     int getRetcode();
 
     /**
-     * <code>uint32 target_uid = 12;</code>
+     * <code>uint32 target_uid = 11;</code>
      * @return The targetUid.
      */
     int getTargetUid();
   }
   /**
    * <pre>
-   * CmdId: 4066
-   * Obf: HBGFPLDINMA
+   * CmdId: 22319
+   * Obf: ADDINGBOAFE
    * </pre>
    *
    * Protobuf type {@code RemoveBlacklistRsp}
@@ -80,12 +80,12 @@ public final class RemoveBlacklistRspOuterClass {
             case 0:
               done = true;
               break;
-            case 72: {
+            case 56: {
 
               retcode_ = input.readInt32();
               break;
             }
-            case 96: {
+            case 88: {
 
               targetUid_ = input.readUInt32();
               break;
@@ -122,10 +122,10 @@ public final class RemoveBlacklistRspOuterClass {
               emu.grasscutter.net.proto.RemoveBlacklistRspOuterClass.RemoveBlacklistRsp.class, emu.grasscutter.net.proto.RemoveBlacklistRspOuterClass.RemoveBlacklistRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 9;
+    public static final int RETCODE_FIELD_NUMBER = 7;
     private int retcode_;
     /**
-     * <code>int32 retcode = 9;</code>
+     * <code>int32 retcode = 7;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -133,10 +133,10 @@ public final class RemoveBlacklistRspOuterClass {
       return retcode_;
     }
 
-    public static final int TARGET_UID_FIELD_NUMBER = 12;
+    public static final int TARGET_UID_FIELD_NUMBER = 11;
     private int targetUid_;
     /**
-     * <code>uint32 target_uid = 12;</code>
+     * <code>uint32 target_uid = 11;</code>
      * @return The targetUid.
      */
     @java.lang.Override
@@ -159,10 +159,10 @@ public final class RemoveBlacklistRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (retcode_ != 0) {
-        output.writeInt32(9, retcode_);
+        output.writeInt32(7, retcode_);
       }
       if (targetUid_ != 0) {
-        output.writeUInt32(12, targetUid_);
+        output.writeUInt32(11, targetUid_);
       }
       unknownFields.writeTo(output);
     }
@@ -175,11 +175,11 @@ public final class RemoveBlacklistRspOuterClass {
       size = 0;
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(9, retcode_);
+          .computeInt32Size(7, retcode_);
       }
       if (targetUid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, targetUid_);
+          .computeUInt32Size(11, targetUid_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -312,8 +312,8 @@ public final class RemoveBlacklistRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4066
-     * Obf: HBGFPLDINMA
+     * CmdId: 22319
+     * Obf: ADDINGBOAFE
      * </pre>
      *
      * Protobuf type {@code RemoveBlacklistRsp}
@@ -470,7 +470,7 @@ public final class RemoveBlacklistRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 9;</code>
+       * <code>int32 retcode = 7;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -478,7 +478,7 @@ public final class RemoveBlacklistRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 9;</code>
+       * <code>int32 retcode = 7;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -489,7 +489,7 @@ public final class RemoveBlacklistRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 9;</code>
+       * <code>int32 retcode = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -501,7 +501,7 @@ public final class RemoveBlacklistRspOuterClass {
 
       private int targetUid_ ;
       /**
-       * <code>uint32 target_uid = 12;</code>
+       * <code>uint32 target_uid = 11;</code>
        * @return The targetUid.
        */
       @java.lang.Override
@@ -509,7 +509,7 @@ public final class RemoveBlacklistRspOuterClass {
         return targetUid_;
       }
       /**
-       * <code>uint32 target_uid = 12;</code>
+       * <code>uint32 target_uid = 11;</code>
        * @param value The targetUid to set.
        * @return This builder for chaining.
        */
@@ -520,7 +520,7 @@ public final class RemoveBlacklistRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 target_uid = 12;</code>
+       * <code>uint32 target_uid = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearTargetUid() {
@@ -597,8 +597,8 @@ public final class RemoveBlacklistRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\030RemoveBlacklistRsp.proto\"9\n\022RemoveBlac" +
-      "klistRsp\022\017\n\007retcode\030\t \001(\005\022\022\n\ntarget_uid\030" +
-      "\014 \001(\rB\033\n\031emu.grasscutter.net.protob\006prot" +
+      "klistRsp\022\017\n\007retcode\030\007 \001(\005\022\022\n\ntarget_uid\030" +
+      "\013 \001(\rB\033\n\031emu.grasscutter.net.protob\006prot" +
       "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

@@ -19,53 +19,53 @@ public final class SeaLampV3DetailInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.SeaLampV3CampInfo camp_info = 13;</code>
+     * <code>.SeaLampV3CampInfo camp_info = 11;</code>
      * @return Whether the campInfo field is set.
      */
     boolean hasCampInfo();
     /**
-     * <code>.SeaLampV3CampInfo camp_info = 13;</code>
+     * <code>.SeaLampV3CampInfo camp_info = 11;</code>
      * @return The campInfo.
      */
     emu.grasscutter.net.proto.SeaLampV3CampInfoOuterClass.SeaLampV3CampInfo getCampInfo();
     /**
-     * <code>.SeaLampV3CampInfo camp_info = 13;</code>
+     * <code>.SeaLampV3CampInfo camp_info = 11;</code>
      */
     emu.grasscutter.net.proto.SeaLampV3CampInfoOuterClass.SeaLampV3CampInfoOrBuilder getCampInfoOrBuilder();
 
     /**
-     * <code>.SeaLampV3ShadowInfo shadow_info = 1;</code>
+     * <code>.SeaLampV3ShadowInfo shadow_info = 7;</code>
      * @return Whether the shadowInfo field is set.
      */
     boolean hasShadowInfo();
     /**
-     * <code>.SeaLampV3ShadowInfo shadow_info = 1;</code>
+     * <code>.SeaLampV3ShadowInfo shadow_info = 7;</code>
      * @return The shadowInfo.
      */
     emu.grasscutter.net.proto.SeaLampV3ShadowInfoOuterClass.SeaLampV3ShadowInfo getShadowInfo();
     /**
-     * <code>.SeaLampV3ShadowInfo shadow_info = 1;</code>
+     * <code>.SeaLampV3ShadowInfo shadow_info = 7;</code>
      */
     emu.grasscutter.net.proto.SeaLampV3ShadowInfoOuterClass.SeaLampV3ShadowInfoOrBuilder getShadowInfoOrBuilder();
 
     /**
-     * <code>.SeaLampV3RaceInfo race_info = 5;</code>
+     * <code>.SeaLampV3RaceInfo race_info = 1;</code>
      * @return Whether the raceInfo field is set.
      */
     boolean hasRaceInfo();
     /**
-     * <code>.SeaLampV3RaceInfo race_info = 5;</code>
+     * <code>.SeaLampV3RaceInfo race_info = 1;</code>
      * @return The raceInfo.
      */
     emu.grasscutter.net.proto.SeaLampV3RaceInfoOuterClass.SeaLampV3RaceInfo getRaceInfo();
     /**
-     * <code>.SeaLampV3RaceInfo race_info = 5;</code>
+     * <code>.SeaLampV3RaceInfo race_info = 1;</code>
      */
     emu.grasscutter.net.proto.SeaLampV3RaceInfoOuterClass.SeaLampV3RaceInfoOrBuilder getRaceInfoOrBuilder();
   }
   /**
    * <pre>
-   * Obf: GNIMFGCJKMP
+   * Obf: FJJFJJIFIOF
    * </pre>
    *
    * Protobuf type {@code SeaLampV3DetailInfo}
@@ -113,19 +113,6 @@ public final class SeaLampV3DetailInfoOuterClass {
               done = true;
               break;
             case 10: {
-              emu.grasscutter.net.proto.SeaLampV3ShadowInfoOuterClass.SeaLampV3ShadowInfo.Builder subBuilder = null;
-              if (shadowInfo_ != null) {
-                subBuilder = shadowInfo_.toBuilder();
-              }
-              shadowInfo_ = input.readMessage(emu.grasscutter.net.proto.SeaLampV3ShadowInfoOuterClass.SeaLampV3ShadowInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(shadowInfo_);
-                shadowInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 42: {
               emu.grasscutter.net.proto.SeaLampV3RaceInfoOuterClass.SeaLampV3RaceInfo.Builder subBuilder = null;
               if (raceInfo_ != null) {
                 subBuilder = raceInfo_.toBuilder();
@@ -138,7 +125,20 @@ public final class SeaLampV3DetailInfoOuterClass {
 
               break;
             }
-            case 106: {
+            case 58: {
+              emu.grasscutter.net.proto.SeaLampV3ShadowInfoOuterClass.SeaLampV3ShadowInfo.Builder subBuilder = null;
+              if (shadowInfo_ != null) {
+                subBuilder = shadowInfo_.toBuilder();
+              }
+              shadowInfo_ = input.readMessage(emu.grasscutter.net.proto.SeaLampV3ShadowInfoOuterClass.SeaLampV3ShadowInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(shadowInfo_);
+                shadowInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 90: {
               emu.grasscutter.net.proto.SeaLampV3CampInfoOuterClass.SeaLampV3CampInfo.Builder subBuilder = null;
               if (campInfo_ != null) {
                 subBuilder = campInfo_.toBuilder();
@@ -183,10 +183,10 @@ public final class SeaLampV3DetailInfoOuterClass {
               emu.grasscutter.net.proto.SeaLampV3DetailInfoOuterClass.SeaLampV3DetailInfo.class, emu.grasscutter.net.proto.SeaLampV3DetailInfoOuterClass.SeaLampV3DetailInfo.Builder.class);
     }
 
-    public static final int CAMP_INFO_FIELD_NUMBER = 13;
+    public static final int CAMP_INFO_FIELD_NUMBER = 11;
     private emu.grasscutter.net.proto.SeaLampV3CampInfoOuterClass.SeaLampV3CampInfo campInfo_;
     /**
-     * <code>.SeaLampV3CampInfo camp_info = 13;</code>
+     * <code>.SeaLampV3CampInfo camp_info = 11;</code>
      * @return Whether the campInfo field is set.
      */
     @java.lang.Override
@@ -194,7 +194,7 @@ public final class SeaLampV3DetailInfoOuterClass {
       return campInfo_ != null;
     }
     /**
-     * <code>.SeaLampV3CampInfo camp_info = 13;</code>
+     * <code>.SeaLampV3CampInfo camp_info = 11;</code>
      * @return The campInfo.
      */
     @java.lang.Override
@@ -202,17 +202,17 @@ public final class SeaLampV3DetailInfoOuterClass {
       return campInfo_ == null ? emu.grasscutter.net.proto.SeaLampV3CampInfoOuterClass.SeaLampV3CampInfo.getDefaultInstance() : campInfo_;
     }
     /**
-     * <code>.SeaLampV3CampInfo camp_info = 13;</code>
+     * <code>.SeaLampV3CampInfo camp_info = 11;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.SeaLampV3CampInfoOuterClass.SeaLampV3CampInfoOrBuilder getCampInfoOrBuilder() {
       return getCampInfo();
     }
 
-    public static final int SHADOW_INFO_FIELD_NUMBER = 1;
+    public static final int SHADOW_INFO_FIELD_NUMBER = 7;
     private emu.grasscutter.net.proto.SeaLampV3ShadowInfoOuterClass.SeaLampV3ShadowInfo shadowInfo_;
     /**
-     * <code>.SeaLampV3ShadowInfo shadow_info = 1;</code>
+     * <code>.SeaLampV3ShadowInfo shadow_info = 7;</code>
      * @return Whether the shadowInfo field is set.
      */
     @java.lang.Override
@@ -220,7 +220,7 @@ public final class SeaLampV3DetailInfoOuterClass {
       return shadowInfo_ != null;
     }
     /**
-     * <code>.SeaLampV3ShadowInfo shadow_info = 1;</code>
+     * <code>.SeaLampV3ShadowInfo shadow_info = 7;</code>
      * @return The shadowInfo.
      */
     @java.lang.Override
@@ -228,17 +228,17 @@ public final class SeaLampV3DetailInfoOuterClass {
       return shadowInfo_ == null ? emu.grasscutter.net.proto.SeaLampV3ShadowInfoOuterClass.SeaLampV3ShadowInfo.getDefaultInstance() : shadowInfo_;
     }
     /**
-     * <code>.SeaLampV3ShadowInfo shadow_info = 1;</code>
+     * <code>.SeaLampV3ShadowInfo shadow_info = 7;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.SeaLampV3ShadowInfoOuterClass.SeaLampV3ShadowInfoOrBuilder getShadowInfoOrBuilder() {
       return getShadowInfo();
     }
 
-    public static final int RACE_INFO_FIELD_NUMBER = 5;
+    public static final int RACE_INFO_FIELD_NUMBER = 1;
     private emu.grasscutter.net.proto.SeaLampV3RaceInfoOuterClass.SeaLampV3RaceInfo raceInfo_;
     /**
-     * <code>.SeaLampV3RaceInfo race_info = 5;</code>
+     * <code>.SeaLampV3RaceInfo race_info = 1;</code>
      * @return Whether the raceInfo field is set.
      */
     @java.lang.Override
@@ -246,7 +246,7 @@ public final class SeaLampV3DetailInfoOuterClass {
       return raceInfo_ != null;
     }
     /**
-     * <code>.SeaLampV3RaceInfo race_info = 5;</code>
+     * <code>.SeaLampV3RaceInfo race_info = 1;</code>
      * @return The raceInfo.
      */
     @java.lang.Override
@@ -254,7 +254,7 @@ public final class SeaLampV3DetailInfoOuterClass {
       return raceInfo_ == null ? emu.grasscutter.net.proto.SeaLampV3RaceInfoOuterClass.SeaLampV3RaceInfo.getDefaultInstance() : raceInfo_;
     }
     /**
-     * <code>.SeaLampV3RaceInfo race_info = 5;</code>
+     * <code>.SeaLampV3RaceInfo race_info = 1;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.SeaLampV3RaceInfoOuterClass.SeaLampV3RaceInfoOrBuilder getRaceInfoOrBuilder() {
@@ -275,14 +275,14 @@ public final class SeaLampV3DetailInfoOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (shadowInfo_ != null) {
-        output.writeMessage(1, getShadowInfo());
-      }
       if (raceInfo_ != null) {
-        output.writeMessage(5, getRaceInfo());
+        output.writeMessage(1, getRaceInfo());
+      }
+      if (shadowInfo_ != null) {
+        output.writeMessage(7, getShadowInfo());
       }
       if (campInfo_ != null) {
-        output.writeMessage(13, getCampInfo());
+        output.writeMessage(11, getCampInfo());
       }
       unknownFields.writeTo(output);
     }
@@ -293,17 +293,17 @@ public final class SeaLampV3DetailInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (shadowInfo_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getShadowInfo());
-      }
       if (raceInfo_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, getRaceInfo());
+          .computeMessageSize(1, getRaceInfo());
+      }
+      if (shadowInfo_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(7, getShadowInfo());
       }
       if (campInfo_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(13, getCampInfo());
+          .computeMessageSize(11, getCampInfo());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -455,7 +455,7 @@ public final class SeaLampV3DetailInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: GNIMFGCJKMP
+     * Obf: FJJFJJIFIOF
      * </pre>
      *
      * Protobuf type {@code SeaLampV3DetailInfo}
@@ -644,14 +644,14 @@ public final class SeaLampV3DetailInfoOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.SeaLampV3CampInfoOuterClass.SeaLampV3CampInfo, emu.grasscutter.net.proto.SeaLampV3CampInfoOuterClass.SeaLampV3CampInfo.Builder, emu.grasscutter.net.proto.SeaLampV3CampInfoOuterClass.SeaLampV3CampInfoOrBuilder> campInfoBuilder_;
       /**
-       * <code>.SeaLampV3CampInfo camp_info = 13;</code>
+       * <code>.SeaLampV3CampInfo camp_info = 11;</code>
        * @return Whether the campInfo field is set.
        */
       public boolean hasCampInfo() {
         return campInfoBuilder_ != null || campInfo_ != null;
       }
       /**
-       * <code>.SeaLampV3CampInfo camp_info = 13;</code>
+       * <code>.SeaLampV3CampInfo camp_info = 11;</code>
        * @return The campInfo.
        */
       public emu.grasscutter.net.proto.SeaLampV3CampInfoOuterClass.SeaLampV3CampInfo getCampInfo() {
@@ -662,7 +662,7 @@ public final class SeaLampV3DetailInfoOuterClass {
         }
       }
       /**
-       * <code>.SeaLampV3CampInfo camp_info = 13;</code>
+       * <code>.SeaLampV3CampInfo camp_info = 11;</code>
        */
       public Builder setCampInfo(emu.grasscutter.net.proto.SeaLampV3CampInfoOuterClass.SeaLampV3CampInfo value) {
         if (campInfoBuilder_ == null) {
@@ -678,7 +678,7 @@ public final class SeaLampV3DetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>.SeaLampV3CampInfo camp_info = 13;</code>
+       * <code>.SeaLampV3CampInfo camp_info = 11;</code>
        */
       public Builder setCampInfo(
           emu.grasscutter.net.proto.SeaLampV3CampInfoOuterClass.SeaLampV3CampInfo.Builder builderForValue) {
@@ -692,7 +692,7 @@ public final class SeaLampV3DetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>.SeaLampV3CampInfo camp_info = 13;</code>
+       * <code>.SeaLampV3CampInfo camp_info = 11;</code>
        */
       public Builder mergeCampInfo(emu.grasscutter.net.proto.SeaLampV3CampInfoOuterClass.SeaLampV3CampInfo value) {
         if (campInfoBuilder_ == null) {
@@ -710,7 +710,7 @@ public final class SeaLampV3DetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>.SeaLampV3CampInfo camp_info = 13;</code>
+       * <code>.SeaLampV3CampInfo camp_info = 11;</code>
        */
       public Builder clearCampInfo() {
         if (campInfoBuilder_ == null) {
@@ -724,7 +724,7 @@ public final class SeaLampV3DetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>.SeaLampV3CampInfo camp_info = 13;</code>
+       * <code>.SeaLampV3CampInfo camp_info = 11;</code>
        */
       public emu.grasscutter.net.proto.SeaLampV3CampInfoOuterClass.SeaLampV3CampInfo.Builder getCampInfoBuilder() {
         
@@ -732,7 +732,7 @@ public final class SeaLampV3DetailInfoOuterClass {
         return getCampInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.SeaLampV3CampInfo camp_info = 13;</code>
+       * <code>.SeaLampV3CampInfo camp_info = 11;</code>
        */
       public emu.grasscutter.net.proto.SeaLampV3CampInfoOuterClass.SeaLampV3CampInfoOrBuilder getCampInfoOrBuilder() {
         if (campInfoBuilder_ != null) {
@@ -743,7 +743,7 @@ public final class SeaLampV3DetailInfoOuterClass {
         }
       }
       /**
-       * <code>.SeaLampV3CampInfo camp_info = 13;</code>
+       * <code>.SeaLampV3CampInfo camp_info = 11;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.SeaLampV3CampInfoOuterClass.SeaLampV3CampInfo, emu.grasscutter.net.proto.SeaLampV3CampInfoOuterClass.SeaLampV3CampInfo.Builder, emu.grasscutter.net.proto.SeaLampV3CampInfoOuterClass.SeaLampV3CampInfoOrBuilder> 
@@ -763,14 +763,14 @@ public final class SeaLampV3DetailInfoOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.SeaLampV3ShadowInfoOuterClass.SeaLampV3ShadowInfo, emu.grasscutter.net.proto.SeaLampV3ShadowInfoOuterClass.SeaLampV3ShadowInfo.Builder, emu.grasscutter.net.proto.SeaLampV3ShadowInfoOuterClass.SeaLampV3ShadowInfoOrBuilder> shadowInfoBuilder_;
       /**
-       * <code>.SeaLampV3ShadowInfo shadow_info = 1;</code>
+       * <code>.SeaLampV3ShadowInfo shadow_info = 7;</code>
        * @return Whether the shadowInfo field is set.
        */
       public boolean hasShadowInfo() {
         return shadowInfoBuilder_ != null || shadowInfo_ != null;
       }
       /**
-       * <code>.SeaLampV3ShadowInfo shadow_info = 1;</code>
+       * <code>.SeaLampV3ShadowInfo shadow_info = 7;</code>
        * @return The shadowInfo.
        */
       public emu.grasscutter.net.proto.SeaLampV3ShadowInfoOuterClass.SeaLampV3ShadowInfo getShadowInfo() {
@@ -781,7 +781,7 @@ public final class SeaLampV3DetailInfoOuterClass {
         }
       }
       /**
-       * <code>.SeaLampV3ShadowInfo shadow_info = 1;</code>
+       * <code>.SeaLampV3ShadowInfo shadow_info = 7;</code>
        */
       public Builder setShadowInfo(emu.grasscutter.net.proto.SeaLampV3ShadowInfoOuterClass.SeaLampV3ShadowInfo value) {
         if (shadowInfoBuilder_ == null) {
@@ -797,7 +797,7 @@ public final class SeaLampV3DetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>.SeaLampV3ShadowInfo shadow_info = 1;</code>
+       * <code>.SeaLampV3ShadowInfo shadow_info = 7;</code>
        */
       public Builder setShadowInfo(
           emu.grasscutter.net.proto.SeaLampV3ShadowInfoOuterClass.SeaLampV3ShadowInfo.Builder builderForValue) {
@@ -811,7 +811,7 @@ public final class SeaLampV3DetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>.SeaLampV3ShadowInfo shadow_info = 1;</code>
+       * <code>.SeaLampV3ShadowInfo shadow_info = 7;</code>
        */
       public Builder mergeShadowInfo(emu.grasscutter.net.proto.SeaLampV3ShadowInfoOuterClass.SeaLampV3ShadowInfo value) {
         if (shadowInfoBuilder_ == null) {
@@ -829,7 +829,7 @@ public final class SeaLampV3DetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>.SeaLampV3ShadowInfo shadow_info = 1;</code>
+       * <code>.SeaLampV3ShadowInfo shadow_info = 7;</code>
        */
       public Builder clearShadowInfo() {
         if (shadowInfoBuilder_ == null) {
@@ -843,7 +843,7 @@ public final class SeaLampV3DetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>.SeaLampV3ShadowInfo shadow_info = 1;</code>
+       * <code>.SeaLampV3ShadowInfo shadow_info = 7;</code>
        */
       public emu.grasscutter.net.proto.SeaLampV3ShadowInfoOuterClass.SeaLampV3ShadowInfo.Builder getShadowInfoBuilder() {
         
@@ -851,7 +851,7 @@ public final class SeaLampV3DetailInfoOuterClass {
         return getShadowInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.SeaLampV3ShadowInfo shadow_info = 1;</code>
+       * <code>.SeaLampV3ShadowInfo shadow_info = 7;</code>
        */
       public emu.grasscutter.net.proto.SeaLampV3ShadowInfoOuterClass.SeaLampV3ShadowInfoOrBuilder getShadowInfoOrBuilder() {
         if (shadowInfoBuilder_ != null) {
@@ -862,7 +862,7 @@ public final class SeaLampV3DetailInfoOuterClass {
         }
       }
       /**
-       * <code>.SeaLampV3ShadowInfo shadow_info = 1;</code>
+       * <code>.SeaLampV3ShadowInfo shadow_info = 7;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.SeaLampV3ShadowInfoOuterClass.SeaLampV3ShadowInfo, emu.grasscutter.net.proto.SeaLampV3ShadowInfoOuterClass.SeaLampV3ShadowInfo.Builder, emu.grasscutter.net.proto.SeaLampV3ShadowInfoOuterClass.SeaLampV3ShadowInfoOrBuilder> 
@@ -882,14 +882,14 @@ public final class SeaLampV3DetailInfoOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.SeaLampV3RaceInfoOuterClass.SeaLampV3RaceInfo, emu.grasscutter.net.proto.SeaLampV3RaceInfoOuterClass.SeaLampV3RaceInfo.Builder, emu.grasscutter.net.proto.SeaLampV3RaceInfoOuterClass.SeaLampV3RaceInfoOrBuilder> raceInfoBuilder_;
       /**
-       * <code>.SeaLampV3RaceInfo race_info = 5;</code>
+       * <code>.SeaLampV3RaceInfo race_info = 1;</code>
        * @return Whether the raceInfo field is set.
        */
       public boolean hasRaceInfo() {
         return raceInfoBuilder_ != null || raceInfo_ != null;
       }
       /**
-       * <code>.SeaLampV3RaceInfo race_info = 5;</code>
+       * <code>.SeaLampV3RaceInfo race_info = 1;</code>
        * @return The raceInfo.
        */
       public emu.grasscutter.net.proto.SeaLampV3RaceInfoOuterClass.SeaLampV3RaceInfo getRaceInfo() {
@@ -900,7 +900,7 @@ public final class SeaLampV3DetailInfoOuterClass {
         }
       }
       /**
-       * <code>.SeaLampV3RaceInfo race_info = 5;</code>
+       * <code>.SeaLampV3RaceInfo race_info = 1;</code>
        */
       public Builder setRaceInfo(emu.grasscutter.net.proto.SeaLampV3RaceInfoOuterClass.SeaLampV3RaceInfo value) {
         if (raceInfoBuilder_ == null) {
@@ -916,7 +916,7 @@ public final class SeaLampV3DetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>.SeaLampV3RaceInfo race_info = 5;</code>
+       * <code>.SeaLampV3RaceInfo race_info = 1;</code>
        */
       public Builder setRaceInfo(
           emu.grasscutter.net.proto.SeaLampV3RaceInfoOuterClass.SeaLampV3RaceInfo.Builder builderForValue) {
@@ -930,7 +930,7 @@ public final class SeaLampV3DetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>.SeaLampV3RaceInfo race_info = 5;</code>
+       * <code>.SeaLampV3RaceInfo race_info = 1;</code>
        */
       public Builder mergeRaceInfo(emu.grasscutter.net.proto.SeaLampV3RaceInfoOuterClass.SeaLampV3RaceInfo value) {
         if (raceInfoBuilder_ == null) {
@@ -948,7 +948,7 @@ public final class SeaLampV3DetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>.SeaLampV3RaceInfo race_info = 5;</code>
+       * <code>.SeaLampV3RaceInfo race_info = 1;</code>
        */
       public Builder clearRaceInfo() {
         if (raceInfoBuilder_ == null) {
@@ -962,7 +962,7 @@ public final class SeaLampV3DetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>.SeaLampV3RaceInfo race_info = 5;</code>
+       * <code>.SeaLampV3RaceInfo race_info = 1;</code>
        */
       public emu.grasscutter.net.proto.SeaLampV3RaceInfoOuterClass.SeaLampV3RaceInfo.Builder getRaceInfoBuilder() {
         
@@ -970,7 +970,7 @@ public final class SeaLampV3DetailInfoOuterClass {
         return getRaceInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.SeaLampV3RaceInfo race_info = 5;</code>
+       * <code>.SeaLampV3RaceInfo race_info = 1;</code>
        */
       public emu.grasscutter.net.proto.SeaLampV3RaceInfoOuterClass.SeaLampV3RaceInfoOrBuilder getRaceInfoOrBuilder() {
         if (raceInfoBuilder_ != null) {
@@ -981,7 +981,7 @@ public final class SeaLampV3DetailInfoOuterClass {
         }
       }
       /**
-       * <code>.SeaLampV3RaceInfo race_info = 5;</code>
+       * <code>.SeaLampV3RaceInfo race_info = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.SeaLampV3RaceInfoOuterClass.SeaLampV3RaceInfo, emu.grasscutter.net.proto.SeaLampV3RaceInfoOuterClass.SeaLampV3RaceInfo.Builder, emu.grasscutter.net.proto.SeaLampV3RaceInfoOuterClass.SeaLampV3RaceInfoOrBuilder> 
@@ -1066,9 +1066,9 @@ public final class SeaLampV3DetailInfoOuterClass {
       "\n\031SeaLampV3DetailInfo.proto\032\027SeaLampV3Ca" +
       "mpInfo.proto\032\031SeaLampV3ShadowInfo.proto\032" +
       "\027SeaLampV3RaceInfo.proto\"\216\001\n\023SeaLampV3De" +
-      "tailInfo\022%\n\tcamp_info\030\r \001(\0132\022.SeaLampV3C" +
-      "ampInfo\022)\n\013shadow_info\030\001 \001(\0132\024.SeaLampV3" +
-      "ShadowInfo\022%\n\trace_info\030\005 \001(\0132\022.SeaLampV" +
+      "tailInfo\022%\n\tcamp_info\030\013 \001(\0132\022.SeaLampV3C" +
+      "ampInfo\022)\n\013shadow_info\030\007 \001(\0132\024.SeaLampV3" +
+      "ShadowInfo\022%\n\trace_info\030\001 \001(\0132\022.SeaLampV" +
       "3RaceInfoB\033\n\031emu.grasscutter.net.protob\006" +
       "proto3"
     };

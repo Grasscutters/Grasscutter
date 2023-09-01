@@ -19,21 +19,21 @@ public final class IrodoriMasterGalleryCgEndNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 level_id = 14;</code>
+     * <code>uint32 level_id = 15;</code>
      * @return The levelId.
      */
     int getLevelId();
 
     /**
-     * <code>uint32 gallery_id = 5;</code>
+     * <code>uint32 gallery_id = 14;</code>
      * @return The galleryId.
      */
     int getGalleryId();
   }
   /**
    * <pre>
-   * CmdId: 8270
-   * Obf: FBHCGKGPOID
+   * CmdId: 23987
+   * Obf: GEIMKHDDGJK
    * </pre>
    *
    * Protobuf type {@code IrodoriMasterGalleryCgEndNotify}
@@ -80,12 +80,12 @@ public final class IrodoriMasterGalleryCgEndNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
+            case 112: {
 
               galleryId_ = input.readUInt32();
               break;
             }
-            case 112: {
+            case 120: {
 
               levelId_ = input.readUInt32();
               break;
@@ -122,10 +122,10 @@ public final class IrodoriMasterGalleryCgEndNotifyOuterClass {
               emu.grasscutter.net.proto.IrodoriMasterGalleryCgEndNotifyOuterClass.IrodoriMasterGalleryCgEndNotify.class, emu.grasscutter.net.proto.IrodoriMasterGalleryCgEndNotifyOuterClass.IrodoriMasterGalleryCgEndNotify.Builder.class);
     }
 
-    public static final int LEVEL_ID_FIELD_NUMBER = 14;
+    public static final int LEVEL_ID_FIELD_NUMBER = 15;
     private int levelId_;
     /**
-     * <code>uint32 level_id = 14;</code>
+     * <code>uint32 level_id = 15;</code>
      * @return The levelId.
      */
     @java.lang.Override
@@ -133,10 +133,10 @@ public final class IrodoriMasterGalleryCgEndNotifyOuterClass {
       return levelId_;
     }
 
-    public static final int GALLERY_ID_FIELD_NUMBER = 5;
+    public static final int GALLERY_ID_FIELD_NUMBER = 14;
     private int galleryId_;
     /**
-     * <code>uint32 gallery_id = 5;</code>
+     * <code>uint32 gallery_id = 14;</code>
      * @return The galleryId.
      */
     @java.lang.Override
@@ -159,10 +159,10 @@ public final class IrodoriMasterGalleryCgEndNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (galleryId_ != 0) {
-        output.writeUInt32(5, galleryId_);
+        output.writeUInt32(14, galleryId_);
       }
       if (levelId_ != 0) {
-        output.writeUInt32(14, levelId_);
+        output.writeUInt32(15, levelId_);
       }
       unknownFields.writeTo(output);
     }
@@ -175,11 +175,11 @@ public final class IrodoriMasterGalleryCgEndNotifyOuterClass {
       size = 0;
       if (galleryId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, galleryId_);
+          .computeUInt32Size(14, galleryId_);
       }
       if (levelId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, levelId_);
+          .computeUInt32Size(15, levelId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -312,8 +312,8 @@ public final class IrodoriMasterGalleryCgEndNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8270
-     * Obf: FBHCGKGPOID
+     * CmdId: 23987
+     * Obf: GEIMKHDDGJK
      * </pre>
      *
      * Protobuf type {@code IrodoriMasterGalleryCgEndNotify}
@@ -470,7 +470,7 @@ public final class IrodoriMasterGalleryCgEndNotifyOuterClass {
 
       private int levelId_ ;
       /**
-       * <code>uint32 level_id = 14;</code>
+       * <code>uint32 level_id = 15;</code>
        * @return The levelId.
        */
       @java.lang.Override
@@ -478,7 +478,7 @@ public final class IrodoriMasterGalleryCgEndNotifyOuterClass {
         return levelId_;
       }
       /**
-       * <code>uint32 level_id = 14;</code>
+       * <code>uint32 level_id = 15;</code>
        * @param value The levelId to set.
        * @return This builder for chaining.
        */
@@ -489,7 +489,7 @@ public final class IrodoriMasterGalleryCgEndNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 level_id = 14;</code>
+       * <code>uint32 level_id = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearLevelId() {
@@ -501,7 +501,7 @@ public final class IrodoriMasterGalleryCgEndNotifyOuterClass {
 
       private int galleryId_ ;
       /**
-       * <code>uint32 gallery_id = 5;</code>
+       * <code>uint32 gallery_id = 14;</code>
        * @return The galleryId.
        */
       @java.lang.Override
@@ -509,7 +509,7 @@ public final class IrodoriMasterGalleryCgEndNotifyOuterClass {
         return galleryId_;
       }
       /**
-       * <code>uint32 gallery_id = 5;</code>
+       * <code>uint32 gallery_id = 14;</code>
        * @param value The galleryId to set.
        * @return This builder for chaining.
        */
@@ -520,7 +520,7 @@ public final class IrodoriMasterGalleryCgEndNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 gallery_id = 5;</code>
+       * <code>uint32 gallery_id = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearGalleryId() {
@@ -598,7 +598,7 @@ public final class IrodoriMasterGalleryCgEndNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n%IrodoriMasterGalleryCgEndNotify.proto\"" +
       "G\n\037IrodoriMasterGalleryCgEndNotify\022\020\n\010le" +
-      "vel_id\030\016 \001(\r\022\022\n\ngallery_id\030\005 \001(\rB\033\n\031emu." +
+      "vel_id\030\017 \001(\r\022\022\n\ngallery_id\030\016 \001(\rB\033\n\031emu." +
       "grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

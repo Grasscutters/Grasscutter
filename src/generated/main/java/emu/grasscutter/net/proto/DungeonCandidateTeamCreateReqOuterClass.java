@@ -25,15 +25,15 @@ public final class DungeonCandidateTeamCreateReqOuterClass {
     int getDungeonId();
 
     /**
-     * <code>uint32 point_id = 7;</code>
+     * <code>uint32 point_id = 13;</code>
      * @return The pointId.
      */
     int getPointId();
   }
   /**
    * <pre>
-   * CmdId: 966
-   * Obf: NHJEKHCOAEA
+   * CmdId: 6341
+   * Obf: ICOKGCHCLNL
    * </pre>
    *
    * Protobuf type {@code DungeonCandidateTeamCreateReq}
@@ -80,14 +80,14 @@ public final class DungeonCandidateTeamCreateReqOuterClass {
             case 0:
               done = true;
               break;
-            case 56: {
-
-              pointId_ = input.readUInt32();
-              break;
-            }
             case 96: {
 
               dungeonId_ = input.readUInt32();
+              break;
+            }
+            case 104: {
+
+              pointId_ = input.readUInt32();
               break;
             }
             default: {
@@ -133,10 +133,10 @@ public final class DungeonCandidateTeamCreateReqOuterClass {
       return dungeonId_;
     }
 
-    public static final int POINT_ID_FIELD_NUMBER = 7;
+    public static final int POINT_ID_FIELD_NUMBER = 13;
     private int pointId_;
     /**
-     * <code>uint32 point_id = 7;</code>
+     * <code>uint32 point_id = 13;</code>
      * @return The pointId.
      */
     @java.lang.Override
@@ -158,11 +158,11 @@ public final class DungeonCandidateTeamCreateReqOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (pointId_ != 0) {
-        output.writeUInt32(7, pointId_);
-      }
       if (dungeonId_ != 0) {
         output.writeUInt32(12, dungeonId_);
+      }
+      if (pointId_ != 0) {
+        output.writeUInt32(13, pointId_);
       }
       unknownFields.writeTo(output);
     }
@@ -173,13 +173,13 @@ public final class DungeonCandidateTeamCreateReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (pointId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, pointId_);
-      }
       if (dungeonId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(12, dungeonId_);
+      }
+      if (pointId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(13, pointId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -312,8 +312,8 @@ public final class DungeonCandidateTeamCreateReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 966
-     * Obf: NHJEKHCOAEA
+     * CmdId: 6341
+     * Obf: ICOKGCHCLNL
      * </pre>
      *
      * Protobuf type {@code DungeonCandidateTeamCreateReq}
@@ -501,7 +501,7 @@ public final class DungeonCandidateTeamCreateReqOuterClass {
 
       private int pointId_ ;
       /**
-       * <code>uint32 point_id = 7;</code>
+       * <code>uint32 point_id = 13;</code>
        * @return The pointId.
        */
       @java.lang.Override
@@ -509,7 +509,7 @@ public final class DungeonCandidateTeamCreateReqOuterClass {
         return pointId_;
       }
       /**
-       * <code>uint32 point_id = 7;</code>
+       * <code>uint32 point_id = 13;</code>
        * @param value The pointId to set.
        * @return This builder for chaining.
        */
@@ -520,7 +520,7 @@ public final class DungeonCandidateTeamCreateReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 point_id = 7;</code>
+       * <code>uint32 point_id = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearPointId() {
@@ -598,7 +598,7 @@ public final class DungeonCandidateTeamCreateReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n#DungeonCandidateTeamCreateReq.proto\"E\n" +
       "\035DungeonCandidateTeamCreateReq\022\022\n\ndungeo" +
-      "n_id\030\014 \001(\r\022\020\n\010point_id\030\007 \001(\rB\033\n\031emu.gras" +
+      "n_id\030\014 \001(\r\022\020\n\010point_id\030\r \001(\rB\033\n\031emu.gras" +
       "scutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

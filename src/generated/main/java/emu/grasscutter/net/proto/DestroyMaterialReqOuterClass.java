@@ -44,8 +44,8 @@ public final class DestroyMaterialReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 697
-   * Obf: AFOBMEMONBP
+   * CmdId: 6985
+   * Obf: MGALBJFALCL
    * </pre>
    *
    * Protobuf type {@code DestroyMaterialReq}
@@ -337,8 +337,8 @@ public final class DestroyMaterialReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 697
-     * Obf: AFOBMEMONBP
+     * CmdId: 6985
+     * Obf: MGALBJFALCL
      * </pre>
      *
      * Protobuf type {@code DestroyMaterialReq}

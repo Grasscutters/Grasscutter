@@ -1,7 +1,6 @@
 package emu.grasscutter.data.excels;
 
-import emu.grasscutter.data.GameResource;
-import emu.grasscutter.data.ResourceType;
+import emu.grasscutter.data.*;
 
 @ResourceType(name = "GatherExcelConfigData.json")
 public class GatherData extends GameResource {

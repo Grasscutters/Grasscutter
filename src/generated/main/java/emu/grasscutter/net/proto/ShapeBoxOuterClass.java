@@ -95,7 +95,7 @@ public final class ShapeBoxOuterClass {
   }
   /**
    * <pre>
-   * Obf: KEOGDMLAMBC
+   * Obf: BFCLKLDHKOM
    * </pre>
    *
    * Protobuf type {@code ShapeBox}
@@ -595,7 +595,7 @@ public final class ShapeBoxOuterClass {
     }
     /**
      * <pre>
-     * Obf: KEOGDMLAMBC
+     * Obf: BFCLKLDHKOM
      * </pre>
      *
      * Protobuf type {@code ShapeBox}

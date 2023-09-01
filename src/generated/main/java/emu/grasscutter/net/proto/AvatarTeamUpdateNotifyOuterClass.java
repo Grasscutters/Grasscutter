@@ -19,28 +19,28 @@ public final class AvatarTeamUpdateNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint64 temp_avatar_guid_list = 11;</code>
+     * <code>repeated uint64 temp_avatar_guid_list = 14;</code>
      * @return A list containing the tempAvatarGuidList.
      */
     java.util.List<java.lang.Long> getTempAvatarGuidListList();
     /**
-     * <code>repeated uint64 temp_avatar_guid_list = 11;</code>
+     * <code>repeated uint64 temp_avatar_guid_list = 14;</code>
      * @return The count of tempAvatarGuidList.
      */
     int getTempAvatarGuidListCount();
     /**
-     * <code>repeated uint64 temp_avatar_guid_list = 11;</code>
+     * <code>repeated uint64 temp_avatar_guid_list = 14;</code>
      * @param index The index of the element to return.
      * @return The tempAvatarGuidList at the given index.
      */
     long getTempAvatarGuidList(int index);
 
     /**
-     * <code>map&lt;uint32, .AvatarTeam&gt; avatar_team_map = 7;</code>
+     * <code>map&lt;uint32, .AvatarTeam&gt; avatar_team_map = 3;</code>
      */
     int getAvatarTeamMapCount();
     /**
-     * <code>map&lt;uint32, .AvatarTeam&gt; avatar_team_map = 7;</code>
+     * <code>map&lt;uint32, .AvatarTeam&gt; avatar_team_map = 3;</code>
      */
     boolean containsAvatarTeamMap(
         int key);
@@ -51,19 +51,19 @@ public final class AvatarTeamUpdateNotifyOuterClass {
     java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.AvatarTeamOuterClass.AvatarTeam>
     getAvatarTeamMap();
     /**
-     * <code>map&lt;uint32, .AvatarTeam&gt; avatar_team_map = 7;</code>
+     * <code>map&lt;uint32, .AvatarTeam&gt; avatar_team_map = 3;</code>
      */
     java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.AvatarTeamOuterClass.AvatarTeam>
     getAvatarTeamMapMap();
     /**
-     * <code>map&lt;uint32, .AvatarTeam&gt; avatar_team_map = 7;</code>
+     * <code>map&lt;uint32, .AvatarTeam&gt; avatar_team_map = 3;</code>
      */
 
     emu.grasscutter.net.proto.AvatarTeamOuterClass.AvatarTeam getAvatarTeamMapOrDefault(
         int key,
         emu.grasscutter.net.proto.AvatarTeamOuterClass.AvatarTeam defaultValue);
     /**
-     * <code>map&lt;uint32, .AvatarTeam&gt; avatar_team_map = 7;</code>
+     * <code>map&lt;uint32, .AvatarTeam&gt; avatar_team_map = 3;</code>
      */
 
     emu.grasscutter.net.proto.AvatarTeamOuterClass.AvatarTeam getAvatarTeamMapOrThrow(
@@ -71,8 +71,8 @@ public final class AvatarTeamUpdateNotifyOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 1633
-   * Obf: NFCODIPLJGM
+   * CmdId: 7828
+   * Obf: OLBHAPJCKDM
    * </pre>
    *
    * Protobuf type {@code AvatarTeamUpdateNotify}
@@ -121,7 +121,7 @@ public final class AvatarTeamUpdateNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 58: {
+            case 26: {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 avatarTeamMap_ = com.google.protobuf.MapField.newMapField(
                     AvatarTeamMapDefaultEntryHolder.defaultEntry);
@@ -134,7 +134,7 @@ public final class AvatarTeamUpdateNotifyOuterClass {
                   avatarTeamMap__.getKey(), avatarTeamMap__.getValue());
               break;
             }
-            case 88: {
+            case 112: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 tempAvatarGuidList_ = newLongList();
                 mutable_bitField0_ |= 0x00000001;
@@ -142,7 +142,7 @@ public final class AvatarTeamUpdateNotifyOuterClass {
               tempAvatarGuidList_.addLong(input.readUInt64());
               break;
             }
-            case 90: {
+            case 114: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -187,7 +187,7 @@ public final class AvatarTeamUpdateNotifyOuterClass {
     protected com.google.protobuf.MapField internalGetMapField(
         int number) {
       switch (number) {
-        case 7:
+        case 3:
           return internalGetAvatarTeamMap();
         default:
           throw new RuntimeException(
@@ -202,10 +202,10 @@ public final class AvatarTeamUpdateNotifyOuterClass {
               emu.grasscutter.net.proto.AvatarTeamUpdateNotifyOuterClass.AvatarTeamUpdateNotify.class, emu.grasscutter.net.proto.AvatarTeamUpdateNotifyOuterClass.AvatarTeamUpdateNotify.Builder.class);
     }
 
-    public static final int TEMP_AVATAR_GUID_LIST_FIELD_NUMBER = 11;
+    public static final int TEMP_AVATAR_GUID_LIST_FIELD_NUMBER = 14;
     private com.google.protobuf.Internal.LongList tempAvatarGuidList_;
     /**
-     * <code>repeated uint64 temp_avatar_guid_list = 11;</code>
+     * <code>repeated uint64 temp_avatar_guid_list = 14;</code>
      * @return A list containing the tempAvatarGuidList.
      */
     @java.lang.Override
@@ -214,14 +214,14 @@ public final class AvatarTeamUpdateNotifyOuterClass {
       return tempAvatarGuidList_;
     }
     /**
-     * <code>repeated uint64 temp_avatar_guid_list = 11;</code>
+     * <code>repeated uint64 temp_avatar_guid_list = 14;</code>
      * @return The count of tempAvatarGuidList.
      */
     public int getTempAvatarGuidListCount() {
       return tempAvatarGuidList_.size();
     }
     /**
-     * <code>repeated uint64 temp_avatar_guid_list = 11;</code>
+     * <code>repeated uint64 temp_avatar_guid_list = 14;</code>
      * @param index The index of the element to return.
      * @return The tempAvatarGuidList at the given index.
      */
@@ -230,7 +230,7 @@ public final class AvatarTeamUpdateNotifyOuterClass {
     }
     private int tempAvatarGuidListMemoizedSerializedSize = -1;
 
-    public static final int AVATAR_TEAM_MAP_FIELD_NUMBER = 7;
+    public static final int AVATAR_TEAM_MAP_FIELD_NUMBER = 3;
     private static final class AvatarTeamMapDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.Integer, emu.grasscutter.net.proto.AvatarTeamOuterClass.AvatarTeam> defaultEntry =
@@ -257,7 +257,7 @@ public final class AvatarTeamUpdateNotifyOuterClass {
       return internalGetAvatarTeamMap().getMap().size();
     }
     /**
-     * <code>map&lt;uint32, .AvatarTeam&gt; avatar_team_map = 7;</code>
+     * <code>map&lt;uint32, .AvatarTeam&gt; avatar_team_map = 3;</code>
      */
 
     @java.lang.Override
@@ -275,7 +275,7 @@ public final class AvatarTeamUpdateNotifyOuterClass {
       return getAvatarTeamMapMap();
     }
     /**
-     * <code>map&lt;uint32, .AvatarTeam&gt; avatar_team_map = 7;</code>
+     * <code>map&lt;uint32, .AvatarTeam&gt; avatar_team_map = 3;</code>
      */
     @java.lang.Override
 
@@ -283,7 +283,7 @@ public final class AvatarTeamUpdateNotifyOuterClass {
       return internalGetAvatarTeamMap().getMap();
     }
     /**
-     * <code>map&lt;uint32, .AvatarTeam&gt; avatar_team_map = 7;</code>
+     * <code>map&lt;uint32, .AvatarTeam&gt; avatar_team_map = 3;</code>
      */
     @java.lang.Override
 
@@ -296,7 +296,7 @@ public final class AvatarTeamUpdateNotifyOuterClass {
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;uint32, .AvatarTeam&gt; avatar_team_map = 7;</code>
+     * <code>map&lt;uint32, .AvatarTeam&gt; avatar_team_map = 3;</code>
      */
     @java.lang.Override
 
@@ -331,9 +331,9 @@ public final class AvatarTeamUpdateNotifyOuterClass {
           output,
           internalGetAvatarTeamMap(),
           AvatarTeamMapDefaultEntryHolder.defaultEntry,
-          7);
+          3);
       if (getTempAvatarGuidListList().size() > 0) {
-        output.writeUInt32NoTag(90);
+        output.writeUInt32NoTag(114);
         output.writeUInt32NoTag(tempAvatarGuidListMemoizedSerializedSize);
       }
       for (int i = 0; i < tempAvatarGuidList_.size(); i++) {
@@ -356,7 +356,7 @@ public final class AvatarTeamUpdateNotifyOuterClass {
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(7, avatarTeamMap__);
+            .computeMessageSize(3, avatarTeamMap__);
       }
       {
         int dataSize = 0;
@@ -507,8 +507,8 @@ public final class AvatarTeamUpdateNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 1633
-     * Obf: NFCODIPLJGM
+     * CmdId: 7828
+     * Obf: OLBHAPJCKDM
      * </pre>
      *
      * Protobuf type {@code AvatarTeamUpdateNotify}
@@ -526,7 +526,7 @@ public final class AvatarTeamUpdateNotifyOuterClass {
       protected com.google.protobuf.MapField internalGetMapField(
           int number) {
         switch (number) {
-          case 7:
+          case 3:
             return internalGetAvatarTeamMap();
           default:
             throw new RuntimeException(
@@ -537,7 +537,7 @@ public final class AvatarTeamUpdateNotifyOuterClass {
       protected com.google.protobuf.MapField internalGetMutableMapField(
           int number) {
         switch (number) {
-          case 7:
+          case 3:
             return internalGetMutableAvatarTeamMap();
           default:
             throw new RuntimeException(
@@ -705,7 +705,7 @@ public final class AvatarTeamUpdateNotifyOuterClass {
          }
       }
       /**
-       * <code>repeated uint64 temp_avatar_guid_list = 11;</code>
+       * <code>repeated uint64 temp_avatar_guid_list = 14;</code>
        * @return A list containing the tempAvatarGuidList.
        */
       public java.util.List<java.lang.Long>
@@ -714,14 +714,14 @@ public final class AvatarTeamUpdateNotifyOuterClass {
                  java.util.Collections.unmodifiableList(tempAvatarGuidList_) : tempAvatarGuidList_;
       }
       /**
-       * <code>repeated uint64 temp_avatar_guid_list = 11;</code>
+       * <code>repeated uint64 temp_avatar_guid_list = 14;</code>
        * @return The count of tempAvatarGuidList.
        */
       public int getTempAvatarGuidListCount() {
         return tempAvatarGuidList_.size();
       }
       /**
-       * <code>repeated uint64 temp_avatar_guid_list = 11;</code>
+       * <code>repeated uint64 temp_avatar_guid_list = 14;</code>
        * @param index The index of the element to return.
        * @return The tempAvatarGuidList at the given index.
        */
@@ -729,7 +729,7 @@ public final class AvatarTeamUpdateNotifyOuterClass {
         return tempAvatarGuidList_.getLong(index);
       }
       /**
-       * <code>repeated uint64 temp_avatar_guid_list = 11;</code>
+       * <code>repeated uint64 temp_avatar_guid_list = 14;</code>
        * @param index The index to set the value at.
        * @param value The tempAvatarGuidList to set.
        * @return This builder for chaining.
@@ -742,7 +742,7 @@ public final class AvatarTeamUpdateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint64 temp_avatar_guid_list = 11;</code>
+       * <code>repeated uint64 temp_avatar_guid_list = 14;</code>
        * @param value The tempAvatarGuidList to add.
        * @return This builder for chaining.
        */
@@ -753,7 +753,7 @@ public final class AvatarTeamUpdateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint64 temp_avatar_guid_list = 11;</code>
+       * <code>repeated uint64 temp_avatar_guid_list = 14;</code>
        * @param values The tempAvatarGuidList to add.
        * @return This builder for chaining.
        */
@@ -766,7 +766,7 @@ public final class AvatarTeamUpdateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint64 temp_avatar_guid_list = 11;</code>
+       * <code>repeated uint64 temp_avatar_guid_list = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearTempAvatarGuidList() {
@@ -803,7 +803,7 @@ public final class AvatarTeamUpdateNotifyOuterClass {
         return internalGetAvatarTeamMap().getMap().size();
       }
       /**
-       * <code>map&lt;uint32, .AvatarTeam&gt; avatar_team_map = 7;</code>
+       * <code>map&lt;uint32, .AvatarTeam&gt; avatar_team_map = 3;</code>
        */
 
       @java.lang.Override
@@ -821,7 +821,7 @@ public final class AvatarTeamUpdateNotifyOuterClass {
         return getAvatarTeamMapMap();
       }
       /**
-       * <code>map&lt;uint32, .AvatarTeam&gt; avatar_team_map = 7;</code>
+       * <code>map&lt;uint32, .AvatarTeam&gt; avatar_team_map = 3;</code>
        */
       @java.lang.Override
 
@@ -829,7 +829,7 @@ public final class AvatarTeamUpdateNotifyOuterClass {
         return internalGetAvatarTeamMap().getMap();
       }
       /**
-       * <code>map&lt;uint32, .AvatarTeam&gt; avatar_team_map = 7;</code>
+       * <code>map&lt;uint32, .AvatarTeam&gt; avatar_team_map = 3;</code>
        */
       @java.lang.Override
 
@@ -842,7 +842,7 @@ public final class AvatarTeamUpdateNotifyOuterClass {
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
-       * <code>map&lt;uint32, .AvatarTeam&gt; avatar_team_map = 7;</code>
+       * <code>map&lt;uint32, .AvatarTeam&gt; avatar_team_map = 3;</code>
        */
       @java.lang.Override
 
@@ -863,7 +863,7 @@ public final class AvatarTeamUpdateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>map&lt;uint32, .AvatarTeam&gt; avatar_team_map = 7;</code>
+       * <code>map&lt;uint32, .AvatarTeam&gt; avatar_team_map = 3;</code>
        */
 
       public Builder removeAvatarTeamMap(
@@ -882,7 +882,7 @@ public final class AvatarTeamUpdateNotifyOuterClass {
         return internalGetMutableAvatarTeamMap().getMutableMap();
       }
       /**
-       * <code>map&lt;uint32, .AvatarTeam&gt; avatar_team_map = 7;</code>
+       * <code>map&lt;uint32, .AvatarTeam&gt; avatar_team_map = 3;</code>
        */
       public Builder putAvatarTeamMap(
           int key,
@@ -894,7 +894,7 @@ public final class AvatarTeamUpdateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>map&lt;uint32, .AvatarTeam&gt; avatar_team_map = 7;</code>
+       * <code>map&lt;uint32, .AvatarTeam&gt; avatar_team_map = 3;</code>
        */
 
       public Builder putAllAvatarTeamMap(
@@ -977,8 +977,8 @@ public final class AvatarTeamUpdateNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\034AvatarTeamUpdateNotify.proto\032\020AvatarTe" +
       "am.proto\"\277\001\n\026AvatarTeamUpdateNotify\022\035\n\025t" +
-      "emp_avatar_guid_list\030\013 \003(\004\022C\n\017avatar_tea" +
-      "m_map\030\007 \003(\0132*.AvatarTeamUpdateNotify.Ava" +
+      "emp_avatar_guid_list\030\016 \003(\004\022C\n\017avatar_tea" +
+      "m_map\030\003 \003(\0132*.AvatarTeamUpdateNotify.Ava" +
       "tarTeamMapEntry\032A\n\022AvatarTeamMapEntry\022\013\n" +
       "\003key\030\001 \001(\r\022\032\n\005value\030\002 \001(\0132\013.AvatarTeam:\002" +
       "8\001B\033\n\031emu.grasscutter.net.protob\006proto3"

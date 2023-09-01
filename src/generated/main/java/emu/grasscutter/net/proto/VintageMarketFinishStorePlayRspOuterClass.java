@@ -19,80 +19,17 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 store_round = 2;</code>
-     * @return The storeRound.
+     * <code>uint32 LKAAFHACDFC = 4;</code>
+     * @return The lKAAFHACDFC.
      */
-    int getStoreRound();
+    int getLKAAFHACDFC();
 
     /**
-     * <code>repeated uint32 ANCAJOMMFCH = 4;</code>
-     * @return A list containing the aNCAJOMMFCH.
-     */
-    java.util.List<java.lang.Integer> getANCAJOMMFCHList();
-    /**
-     * <code>repeated uint32 ANCAJOMMFCH = 4;</code>
-     * @return The count of aNCAJOMMFCH.
-     */
-    int getANCAJOMMFCHCount();
-    /**
-     * <code>repeated uint32 ANCAJOMMFCH = 4;</code>
-     * @param index The index of the element to return.
-     * @return The aNCAJOMMFCH at the given index.
-     */
-    int getANCAJOMMFCH(int index);
-
-    /**
-     * <code>uint32 DOKMLEHIOEC = 15;</code>
-     * @return The dOKMLEHIOEC.
-     */
-    int getDOKMLEHIOEC();
-
-    /**
-     * <code>uint32 IIHEIILJCOF = 9;</code>
-     * @return The iIHEIILJCOF.
-     */
-    int getIIHEIILJCOF();
-
-    /**
-     * <code>repeated uint32 LMJAOBFADPK = 8;</code>
-     * @return A list containing the lMJAOBFADPK.
-     */
-    java.util.List<java.lang.Integer> getLMJAOBFADPKList();
-    /**
-     * <code>repeated uint32 LMJAOBFADPK = 8;</code>
-     * @return The count of lMJAOBFADPK.
-     */
-    int getLMJAOBFADPKCount();
-    /**
-     * <code>repeated uint32 LMJAOBFADPK = 8;</code>
-     * @param index The index of the element to return.
-     * @return The lMJAOBFADPK at the given index.
-     */
-    int getLMJAOBFADPK(int index);
-
-    /**
-     * <code>repeated uint32 HLECFMJDPKN = 10;</code>
-     * @return A list containing the hLECFMJDPKN.
-     */
-    java.util.List<java.lang.Integer> getHLECFMJDPKNList();
-    /**
-     * <code>repeated uint32 HLECFMJDPKN = 10;</code>
-     * @return The count of hLECFMJDPKN.
-     */
-    int getHLECFMJDPKNCount();
-    /**
-     * <code>repeated uint32 HLECFMJDPKN = 10;</code>
-     * @param index The index of the element to return.
-     * @return The hLECFMJDPKN at the given index.
-     */
-    int getHLECFMJDPKN(int index);
-
-    /**
-     * <code>map&lt;uint32, uint32&gt; store_income_map = 1;</code>
+     * <code>map&lt;uint32, uint32&gt; store_income_map = 13;</code>
      */
     int getStoreIncomeMapCount();
     /**
-     * <code>map&lt;uint32, uint32&gt; store_income_map = 1;</code>
+     * <code>map&lt;uint32, uint32&gt; store_income_map = 13;</code>
      */
     boolean containsStoreIncomeMap(
         int key);
@@ -103,46 +40,109 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
     java.util.Map<java.lang.Integer, java.lang.Integer>
     getStoreIncomeMap();
     /**
-     * <code>map&lt;uint32, uint32&gt; store_income_map = 1;</code>
+     * <code>map&lt;uint32, uint32&gt; store_income_map = 13;</code>
      */
     java.util.Map<java.lang.Integer, java.lang.Integer>
     getStoreIncomeMapMap();
     /**
-     * <code>map&lt;uint32, uint32&gt; store_income_map = 1;</code>
+     * <code>map&lt;uint32, uint32&gt; store_income_map = 13;</code>
      */
 
     int getStoreIncomeMapOrDefault(
         int key,
         int defaultValue);
     /**
-     * <code>map&lt;uint32, uint32&gt; store_income_map = 1;</code>
+     * <code>map&lt;uint32, uint32&gt; store_income_map = 13;</code>
      */
 
     int getStoreIncomeMapOrThrow(
         int key);
 
     /**
-     * <code>uint32 GNABNHELILJ = 14;</code>
-     * @return The gNABNHELILJ.
+     * <code>uint32 store_round = 8;</code>
+     * @return The storeRound.
      */
-    int getGNABNHELILJ();
+    int getStoreRound();
 
     /**
-     * <code>int32 retcode = 7;</code>
+     * <code>repeated uint32 DBHHFCGNKPL = 7;</code>
+     * @return A list containing the dBHHFCGNKPL.
+     */
+    java.util.List<java.lang.Integer> getDBHHFCGNKPLList();
+    /**
+     * <code>repeated uint32 DBHHFCGNKPL = 7;</code>
+     * @return The count of dBHHFCGNKPL.
+     */
+    int getDBHHFCGNKPLCount();
+    /**
+     * <code>repeated uint32 DBHHFCGNKPL = 7;</code>
+     * @param index The index of the element to return.
+     * @return The dBHHFCGNKPL at the given index.
+     */
+    int getDBHHFCGNKPL(int index);
+
+    /**
+     * <code>int32 retcode = 15;</code>
      * @return The retcode.
      */
     int getRetcode();
 
     /**
-     * <code>uint32 KIEEJLCCNIE = 13;</code>
-     * @return The kIEEJLCCNIE.
+     * <code>uint32 KNAKMHNLEJG = 1;</code>
+     * @return The kNAKMHNLEJG.
      */
-    int getKIEEJLCCNIE();
+    int getKNAKMHNLEJG();
+
+    /**
+     * <code>repeated uint32 FNEJNJNILKJ = 10;</code>
+     * @return A list containing the fNEJNJNILKJ.
+     */
+    java.util.List<java.lang.Integer> getFNEJNJNILKJList();
+    /**
+     * <code>repeated uint32 FNEJNJNILKJ = 10;</code>
+     * @return The count of fNEJNJNILKJ.
+     */
+    int getFNEJNJNILKJCount();
+    /**
+     * <code>repeated uint32 FNEJNJNILKJ = 10;</code>
+     * @param index The index of the element to return.
+     * @return The fNEJNJNILKJ at the given index.
+     */
+    int getFNEJNJNILKJ(int index);
+
+    /**
+     * <code>uint32 EBGJAODGLHK = 5;</code>
+     * @return The eBGJAODGLHK.
+     */
+    int getEBGJAODGLHK();
+
+    /**
+     * <code>uint32 JJJNGDOHBKG = 11;</code>
+     * @return The jJJNGDOHBKG.
+     */
+    int getJJJNGDOHBKG();
+
+    /**
+     * <code>repeated uint32 JFLJGFOIKED = 9;</code>
+     * @return A list containing the jFLJGFOIKED.
+     */
+    java.util.List<java.lang.Integer> getJFLJGFOIKEDList();
+    /**
+     * <code>repeated uint32 JFLJGFOIKED = 9;</code>
+     * @return The count of jFLJGFOIKED.
+     */
+    int getJFLJGFOIKEDCount();
+    /**
+     * <code>repeated uint32 JFLJGFOIKED = 9;</code>
+     * @param index The index of the element to return.
+     * @return The jFLJGFOIKED at the given index.
+     */
+    int getJFLJGFOIKED(int index);
   }
   /**
    * <pre>
-   * CmdId: 23124
-   * Obf: MFJJOHIPMMC
+   * CmdId: 26589
+   * Obf: CGBKFHKIFGO
    * </pre>
    *
    * Protobuf type {@code VintageMarketFinishStorePlayRsp}
@@ -157,9 +157,9 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
       super(builder);
     }
     private VintageMarketFinishStorePlayRsp() {
-      aNCAJOMMFCH_ = emptyIntList();
-      lMJAOBFADPK_ = emptyIntList();
-      hLECFMJDPKN_ = emptyIntList();
+      dBHHFCGNKPL_ = emptyIntList();
+      fNEJNJNILKJ_ = emptyIntList();
+      jFLJGFOIKED_ = emptyIntList();
     }
 
     @java.lang.Override
@@ -193,11 +193,99 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
             case 0:
               done = true;
               break;
-            case 10: {
+            case 8: {
+
+              kNAKMHNLEJG_ = input.readUInt32();
+              break;
+            }
+            case 32: {
+
+              lKAAFHACDFC_ = input.readUInt32();
+              break;
+            }
+            case 40: {
+
+              eBGJAODGLHK_ = input.readUInt32();
+              break;
+            }
+            case 56: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                dBHHFCGNKPL_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              dBHHFCGNKPL_.addInt(input.readUInt32());
+              break;
+            }
+            case 58: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+                dBHHFCGNKPL_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                dBHHFCGNKPL_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 64: {
+
+              storeRound_ = input.readUInt32();
+              break;
+            }
+            case 72: {
               if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                jFLJGFOIKED_ = newIntList();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              jFLJGFOIKED_.addInt(input.readUInt32());
+              break;
+            }
+            case 74: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000008) != 0) && input.getBytesUntilLimit() > 0) {
+                jFLJGFOIKED_ = newIntList();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                jFLJGFOIKED_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 80: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                fNEJNJNILKJ_ = newIntList();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              fNEJNJNILKJ_.addInt(input.readUInt32());
+              break;
+            }
+            case 82: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000004) != 0) && input.getBytesUntilLimit() > 0) {
+                fNEJNJNILKJ_ = newIntList();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                fNEJNJNILKJ_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 88: {
+
+              jJJNGDOHBKG_ = input.readUInt32();
+              break;
+            }
+            case 106: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 storeIncomeMap_ = com.google.protobuf.MapField.newMapField(
                     StoreIncomeMapDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
               storeIncomeMap__ = input.readMessage(
@@ -206,97 +294,9 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
                   storeIncomeMap__.getKey(), storeIncomeMap__.getValue());
               break;
             }
-            case 16: {
-
-              storeRound_ = input.readUInt32();
-              break;
-            }
-            case 32: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                aNCAJOMMFCH_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              aNCAJOMMFCH_.addInt(input.readUInt32());
-              break;
-            }
-            case 34: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                aNCAJOMMFCH_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                aNCAJOMMFCH_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 56: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 64: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                lMJAOBFADPK_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              lMJAOBFADPK_.addInt(input.readUInt32());
-              break;
-            }
-            case 66: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
-                lMJAOBFADPK_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                lMJAOBFADPK_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 72: {
-
-              iIHEIILJCOF_ = input.readUInt32();
-              break;
-            }
-            case 80: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                hLECFMJDPKN_ = newIntList();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              hLECFMJDPKN_.addInt(input.readUInt32());
-              break;
-            }
-            case 82: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000004) != 0) && input.getBytesUntilLimit() > 0) {
-                hLECFMJDPKN_ = newIntList();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                hLECFMJDPKN_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 104: {
-
-              kIEEJLCCNIE_ = input.readUInt32();
-              break;
-            }
-            case 112: {
-
-              gNABNHELILJ_ = input.readUInt32();
-              break;
-            }
             case 120: {
 
-              dOKMLEHIOEC_ = input.readUInt32();
+              retcode_ = input.readInt32();
               break;
             }
             default: {
@@ -314,14 +314,14 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          aNCAJOMMFCH_.makeImmutable(); // C
-        }
         if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          lMJAOBFADPK_.makeImmutable(); // C
+          dBHHFCGNKPL_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000008) != 0)) {
+          jFLJGFOIKED_.makeImmutable(); // C
         }
         if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          hLECFMJDPKN_.makeImmutable(); // C
+          fNEJNJNILKJ_.makeImmutable(); // C
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -337,7 +337,7 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
     protected com.google.protobuf.MapField internalGetMapField(
         int number) {
       switch (number) {
-        case 1:
+        case 13:
           return internalGetStoreIncomeMap();
         default:
           throw new RuntimeException(
@@ -352,124 +352,18 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
               emu.grasscutter.net.proto.VintageMarketFinishStorePlayRspOuterClass.VintageMarketFinishStorePlayRsp.class, emu.grasscutter.net.proto.VintageMarketFinishStorePlayRspOuterClass.VintageMarketFinishStorePlayRsp.Builder.class);
     }
 
-    public static final int STORE_ROUND_FIELD_NUMBER = 2;
-    private int storeRound_;
+    public static final int LKAAFHACDFC_FIELD_NUMBER = 4;
+    private int lKAAFHACDFC_;
     /**
-     * <code>uint32 store_round = 2;</code>
-     * @return The storeRound.
+     * <code>uint32 LKAAFHACDFC = 4;</code>
+     * @return The lKAAFHACDFC.
      */
     @java.lang.Override
-    public int getStoreRound() {
-      return storeRound_;
+    public int getLKAAFHACDFC() {
+      return lKAAFHACDFC_;
     }
 
-    public static final int ANCAJOMMFCH_FIELD_NUMBER = 4;
-    private com.google.protobuf.Internal.IntList aNCAJOMMFCH_;
-    /**
-     * <code>repeated uint32 ANCAJOMMFCH = 4;</code>
-     * @return A list containing the aNCAJOMMFCH.
-     */
-    @java.lang.Override
-    public java.util.List<java.lang.Integer>
-        getANCAJOMMFCHList() {
-      return aNCAJOMMFCH_;
-    }
-    /**
-     * <code>repeated uint32 ANCAJOMMFCH = 4;</code>
-     * @return The count of aNCAJOMMFCH.
-     */
-    public int getANCAJOMMFCHCount() {
-      return aNCAJOMMFCH_.size();
-    }
-    /**
-     * <code>repeated uint32 ANCAJOMMFCH = 4;</code>
-     * @param index The index of the element to return.
-     * @return The aNCAJOMMFCH at the given index.
-     */
-    public int getANCAJOMMFCH(int index) {
-      return aNCAJOMMFCH_.getInt(index);
-    }
-    private int aNCAJOMMFCHMemoizedSerializedSize = -1;
-
-    public static final int DOKMLEHIOEC_FIELD_NUMBER = 15;
-    private int dOKMLEHIOEC_;
-    /**
-     * <code>uint32 DOKMLEHIOEC = 15;</code>
-     * @return The dOKMLEHIOEC.
-     */
-    @java.lang.Override
-    public int getDOKMLEHIOEC() {
-      return dOKMLEHIOEC_;
-    }
-
-    public static final int IIHEIILJCOF_FIELD_NUMBER = 9;
-    private int iIHEIILJCOF_;
-    /**
-     * <code>uint32 IIHEIILJCOF = 9;</code>
-     * @return The iIHEIILJCOF.
-     */
-    @java.lang.Override
-    public int getIIHEIILJCOF() {
-      return iIHEIILJCOF_;
-    }
-
-    public static final int LMJAOBFADPK_FIELD_NUMBER = 8;
-    private com.google.protobuf.Internal.IntList lMJAOBFADPK_;
-    /**
-     * <code>repeated uint32 LMJAOBFADPK = 8;</code>
-     * @return A list containing the lMJAOBFADPK.
-     */
-    @java.lang.Override
-    public java.util.List<java.lang.Integer>
-        getLMJAOBFADPKList() {
-      return lMJAOBFADPK_;
-    }
-    /**
-     * <code>repeated uint32 LMJAOBFADPK = 8;</code>
-     * @return The count of lMJAOBFADPK.
-     */
-    public int getLMJAOBFADPKCount() {
-      return lMJAOBFADPK_.size();
-    }
-    /**
-     * <code>repeated uint32 LMJAOBFADPK = 8;</code>
-     * @param index The index of the element to return.
-     * @return The lMJAOBFADPK at the given index.
-     */
-    public int getLMJAOBFADPK(int index) {
-      return lMJAOBFADPK_.getInt(index);
-    }
-    private int lMJAOBFADPKMemoizedSerializedSize = -1;
-
-    public static final int HLECFMJDPKN_FIELD_NUMBER = 10;
-    private com.google.protobuf.Internal.IntList hLECFMJDPKN_;
-    /**
-     * <code>repeated uint32 HLECFMJDPKN = 10;</code>
-     * @return A list containing the hLECFMJDPKN.
-     */
-    @java.lang.Override
-    public java.util.List<java.lang.Integer>
-        getHLECFMJDPKNList() {
-      return hLECFMJDPKN_;
-    }
-    /**
-     * <code>repeated uint32 HLECFMJDPKN = 10;</code>
-     * @return The count of hLECFMJDPKN.
-     */
-    public int getHLECFMJDPKNCount() {
-      return hLECFMJDPKN_.size();
-    }
-    /**
-     * <code>repeated uint32 HLECFMJDPKN = 10;</code>
-     * @param index The index of the element to return.
-     * @return The hLECFMJDPKN at the given index.
-     */
-    public int getHLECFMJDPKN(int index) {
-      return hLECFMJDPKN_.getInt(index);
-    }
-    private int hLECFMJDPKNMemoizedSerializedSize = -1;
-
-    public static final int STORE_INCOME_MAP_FIELD_NUMBER = 1;
+    public static final int STORE_INCOME_MAP_FIELD_NUMBER = 13;
     private static final class StoreIncomeMapDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.Integer, java.lang.Integer> defaultEntry =
@@ -496,7 +390,7 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
       return internalGetStoreIncomeMap().getMap().size();
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; store_income_map = 1;</code>
+     * <code>map&lt;uint32, uint32&gt; store_income_map = 13;</code>
      */
 
     @java.lang.Override
@@ -514,7 +408,7 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
       return getStoreIncomeMapMap();
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; store_income_map = 1;</code>
+     * <code>map&lt;uint32, uint32&gt; store_income_map = 13;</code>
      */
     @java.lang.Override
 
@@ -522,7 +416,7 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
       return internalGetStoreIncomeMap().getMap();
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; store_income_map = 1;</code>
+     * <code>map&lt;uint32, uint32&gt; store_income_map = 13;</code>
      */
     @java.lang.Override
 
@@ -535,7 +429,7 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; store_income_map = 1;</code>
+     * <code>map&lt;uint32, uint32&gt; store_income_map = 13;</code>
      */
     @java.lang.Override
 
@@ -550,21 +444,49 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
       return map.get(key);
     }
 
-    public static final int GNABNHELILJ_FIELD_NUMBER = 14;
-    private int gNABNHELILJ_;
+    public static final int STORE_ROUND_FIELD_NUMBER = 8;
+    private int storeRound_;
     /**
-     * <code>uint32 GNABNHELILJ = 14;</code>
-     * @return The gNABNHELILJ.
+     * <code>uint32 store_round = 8;</code>
+     * @return The storeRound.
      */
     @java.lang.Override
-    public int getGNABNHELILJ() {
-      return gNABNHELILJ_;
+    public int getStoreRound() {
+      return storeRound_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 7;
+    public static final int DBHHFCGNKPL_FIELD_NUMBER = 7;
+    private com.google.protobuf.Internal.IntList dBHHFCGNKPL_;
+    /**
+     * <code>repeated uint32 DBHHFCGNKPL = 7;</code>
+     * @return A list containing the dBHHFCGNKPL.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Integer>
+        getDBHHFCGNKPLList() {
+      return dBHHFCGNKPL_;
+    }
+    /**
+     * <code>repeated uint32 DBHHFCGNKPL = 7;</code>
+     * @return The count of dBHHFCGNKPL.
+     */
+    public int getDBHHFCGNKPLCount() {
+      return dBHHFCGNKPL_.size();
+    }
+    /**
+     * <code>repeated uint32 DBHHFCGNKPL = 7;</code>
+     * @param index The index of the element to return.
+     * @return The dBHHFCGNKPL at the given index.
+     */
+    public int getDBHHFCGNKPL(int index) {
+      return dBHHFCGNKPL_.getInt(index);
+    }
+    private int dBHHFCGNKPLMemoizedSerializedSize = -1;
+
+    public static final int RETCODE_FIELD_NUMBER = 15;
     private int retcode_;
     /**
-     * <code>int32 retcode = 7;</code>
+     * <code>int32 retcode = 15;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -572,16 +494,94 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
       return retcode_;
     }
 
-    public static final int KIEEJLCCNIE_FIELD_NUMBER = 13;
-    private int kIEEJLCCNIE_;
+    public static final int KNAKMHNLEJG_FIELD_NUMBER = 1;
+    private int kNAKMHNLEJG_;
     /**
-     * <code>uint32 KIEEJLCCNIE = 13;</code>
-     * @return The kIEEJLCCNIE.
+     * <code>uint32 KNAKMHNLEJG = 1;</code>
+     * @return The kNAKMHNLEJG.
      */
     @java.lang.Override
-    public int getKIEEJLCCNIE() {
-      return kIEEJLCCNIE_;
+    public int getKNAKMHNLEJG() {
+      return kNAKMHNLEJG_;
     }
+
+    public static final int FNEJNJNILKJ_FIELD_NUMBER = 10;
+    private com.google.protobuf.Internal.IntList fNEJNJNILKJ_;
+    /**
+     * <code>repeated uint32 FNEJNJNILKJ = 10;</code>
+     * @return A list containing the fNEJNJNILKJ.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Integer>
+        getFNEJNJNILKJList() {
+      return fNEJNJNILKJ_;
+    }
+    /**
+     * <code>repeated uint32 FNEJNJNILKJ = 10;</code>
+     * @return The count of fNEJNJNILKJ.
+     */
+    public int getFNEJNJNILKJCount() {
+      return fNEJNJNILKJ_.size();
+    }
+    /**
+     * <code>repeated uint32 FNEJNJNILKJ = 10;</code>
+     * @param index The index of the element to return.
+     * @return The fNEJNJNILKJ at the given index.
+     */
+    public int getFNEJNJNILKJ(int index) {
+      return fNEJNJNILKJ_.getInt(index);
+    }
+    private int fNEJNJNILKJMemoizedSerializedSize = -1;
+
+    public static final int EBGJAODGLHK_FIELD_NUMBER = 5;
+    private int eBGJAODGLHK_;
+    /**
+     * <code>uint32 EBGJAODGLHK = 5;</code>
+     * @return The eBGJAODGLHK.
+     */
+    @java.lang.Override
+    public int getEBGJAODGLHK() {
+      return eBGJAODGLHK_;
+    }
+
+    public static final int JJJNGDOHBKG_FIELD_NUMBER = 11;
+    private int jJJNGDOHBKG_;
+    /**
+     * <code>uint32 JJJNGDOHBKG = 11;</code>
+     * @return The jJJNGDOHBKG.
+     */
+    @java.lang.Override
+    public int getJJJNGDOHBKG() {
+      return jJJNGDOHBKG_;
+    }
+
+    public static final int JFLJGFOIKED_FIELD_NUMBER = 9;
+    private com.google.protobuf.Internal.IntList jFLJGFOIKED_;
+    /**
+     * <code>repeated uint32 JFLJGFOIKED = 9;</code>
+     * @return A list containing the jFLJGFOIKED.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Integer>
+        getJFLJGFOIKEDList() {
+      return jFLJGFOIKED_;
+    }
+    /**
+     * <code>repeated uint32 JFLJGFOIKED = 9;</code>
+     * @return The count of jFLJGFOIKED.
+     */
+    public int getJFLJGFOIKEDCount() {
+      return jFLJGFOIKED_.size();
+    }
+    /**
+     * <code>repeated uint32 JFLJGFOIKED = 9;</code>
+     * @param index The index of the element to return.
+     * @return The jFLJGFOIKED at the given index.
+     */
+    public int getJFLJGFOIKED(int index) {
+      return jFLJGFOIKED_.getInt(index);
+    }
+    private int jFLJGFOIKEDMemoizedSerializedSize = -1;
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
@@ -598,50 +598,50 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
+      if (kNAKMHNLEJG_ != 0) {
+        output.writeUInt32(1, kNAKMHNLEJG_);
+      }
+      if (lKAAFHACDFC_ != 0) {
+        output.writeUInt32(4, lKAAFHACDFC_);
+      }
+      if (eBGJAODGLHK_ != 0) {
+        output.writeUInt32(5, eBGJAODGLHK_);
+      }
+      if (getDBHHFCGNKPLList().size() > 0) {
+        output.writeUInt32NoTag(58);
+        output.writeUInt32NoTag(dBHHFCGNKPLMemoizedSerializedSize);
+      }
+      for (int i = 0; i < dBHHFCGNKPL_.size(); i++) {
+        output.writeUInt32NoTag(dBHHFCGNKPL_.getInt(i));
+      }
+      if (storeRound_ != 0) {
+        output.writeUInt32(8, storeRound_);
+      }
+      if (getJFLJGFOIKEDList().size() > 0) {
+        output.writeUInt32NoTag(74);
+        output.writeUInt32NoTag(jFLJGFOIKEDMemoizedSerializedSize);
+      }
+      for (int i = 0; i < jFLJGFOIKED_.size(); i++) {
+        output.writeUInt32NoTag(jFLJGFOIKED_.getInt(i));
+      }
+      if (getFNEJNJNILKJList().size() > 0) {
+        output.writeUInt32NoTag(82);
+        output.writeUInt32NoTag(fNEJNJNILKJMemoizedSerializedSize);
+      }
+      for (int i = 0; i < fNEJNJNILKJ_.size(); i++) {
+        output.writeUInt32NoTag(fNEJNJNILKJ_.getInt(i));
+      }
+      if (jJJNGDOHBKG_ != 0) {
+        output.writeUInt32(11, jJJNGDOHBKG_);
+      }
       com.google.protobuf.GeneratedMessageV3
         .serializeIntegerMapTo(
           output,
           internalGetStoreIncomeMap(),
           StoreIncomeMapDefaultEntryHolder.defaultEntry,
-          1);
-      if (storeRound_ != 0) {
-        output.writeUInt32(2, storeRound_);
-      }
-      if (getANCAJOMMFCHList().size() > 0) {
-        output.writeUInt32NoTag(34);
-        output.writeUInt32NoTag(aNCAJOMMFCHMemoizedSerializedSize);
-      }
-      for (int i = 0; i < aNCAJOMMFCH_.size(); i++) {
-        output.writeUInt32NoTag(aNCAJOMMFCH_.getInt(i));
-      }
+          13);
       if (retcode_ != 0) {
-        output.writeInt32(7, retcode_);
-      }
-      if (getLMJAOBFADPKList().size() > 0) {
-        output.writeUInt32NoTag(66);
-        output.writeUInt32NoTag(lMJAOBFADPKMemoizedSerializedSize);
-      }
-      for (int i = 0; i < lMJAOBFADPK_.size(); i++) {
-        output.writeUInt32NoTag(lMJAOBFADPK_.getInt(i));
-      }
-      if (iIHEIILJCOF_ != 0) {
-        output.writeUInt32(9, iIHEIILJCOF_);
-      }
-      if (getHLECFMJDPKNList().size() > 0) {
-        output.writeUInt32NoTag(82);
-        output.writeUInt32NoTag(hLECFMJDPKNMemoizedSerializedSize);
-      }
-      for (int i = 0; i < hLECFMJDPKN_.size(); i++) {
-        output.writeUInt32NoTag(hLECFMJDPKN_.getInt(i));
-      }
-      if (kIEEJLCCNIE_ != 0) {
-        output.writeUInt32(13, kIEEJLCCNIE_);
-      }
-      if (gNABNHELILJ_ != 0) {
-        output.writeUInt32(14, gNABNHELILJ_);
-      }
-      if (dOKMLEHIOEC_ != 0) {
-        output.writeUInt32(15, dOKMLEHIOEC_);
+        output.writeInt32(15, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -652,6 +652,68 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (kNAKMHNLEJG_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(1, kNAKMHNLEJG_);
+      }
+      if (lKAAFHACDFC_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(4, lKAAFHACDFC_);
+      }
+      if (eBGJAODGLHK_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(5, eBGJAODGLHK_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < dBHHFCGNKPL_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeUInt32SizeNoTag(dBHHFCGNKPL_.getInt(i));
+        }
+        size += dataSize;
+        if (!getDBHHFCGNKPLList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        dBHHFCGNKPLMemoizedSerializedSize = dataSize;
+      }
+      if (storeRound_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(8, storeRound_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < jFLJGFOIKED_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeUInt32SizeNoTag(jFLJGFOIKED_.getInt(i));
+        }
+        size += dataSize;
+        if (!getJFLJGFOIKEDList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        jFLJGFOIKEDMemoizedSerializedSize = dataSize;
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < fNEJNJNILKJ_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeUInt32SizeNoTag(fNEJNJNILKJ_.getInt(i));
+        }
+        size += dataSize;
+        if (!getFNEJNJNILKJList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        fNEJNJNILKJMemoizedSerializedSize = dataSize;
+      }
+      if (jJJNGDOHBKG_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(11, jJJNGDOHBKG_);
+      }
       for (java.util.Map.Entry<java.lang.Integer, java.lang.Integer> entry
            : internalGetStoreIncomeMap().getMap().entrySet()) {
         com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
@@ -660,73 +722,11 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(1, storeIncomeMap__);
-      }
-      if (storeRound_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, storeRound_);
-      }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < aNCAJOMMFCH_.size(); i++) {
-          dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(aNCAJOMMFCH_.getInt(i));
-        }
-        size += dataSize;
-        if (!getANCAJOMMFCHList().isEmpty()) {
-          size += 1;
-          size += com.google.protobuf.CodedOutputStream
-              .computeInt32SizeNoTag(dataSize);
-        }
-        aNCAJOMMFCHMemoizedSerializedSize = dataSize;
+            .computeMessageSize(13, storeIncomeMap__);
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(7, retcode_);
-      }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < lMJAOBFADPK_.size(); i++) {
-          dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(lMJAOBFADPK_.getInt(i));
-        }
-        size += dataSize;
-        if (!getLMJAOBFADPKList().isEmpty()) {
-          size += 1;
-          size += com.google.protobuf.CodedOutputStream
-              .computeInt32SizeNoTag(dataSize);
-        }
-        lMJAOBFADPKMemoizedSerializedSize = dataSize;
-      }
-      if (iIHEIILJCOF_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, iIHEIILJCOF_);
-      }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < hLECFMJDPKN_.size(); i++) {
-          dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(hLECFMJDPKN_.getInt(i));
-        }
-        size += dataSize;
-        if (!getHLECFMJDPKNList().isEmpty()) {
-          size += 1;
-          size += com.google.protobuf.CodedOutputStream
-              .computeInt32SizeNoTag(dataSize);
-        }
-        hLECFMJDPKNMemoizedSerializedSize = dataSize;
-      }
-      if (kIEEJLCCNIE_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, kIEEJLCCNIE_);
-      }
-      if (gNABNHELILJ_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, gNABNHELILJ_);
-      }
-      if (dOKMLEHIOEC_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, dOKMLEHIOEC_);
+          .computeInt32Size(15, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -743,26 +743,26 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
       }
       emu.grasscutter.net.proto.VintageMarketFinishStorePlayRspOuterClass.VintageMarketFinishStorePlayRsp other = (emu.grasscutter.net.proto.VintageMarketFinishStorePlayRspOuterClass.VintageMarketFinishStorePlayRsp) obj;
 
-      if (getStoreRound()
-          != other.getStoreRound()) return false;
-      if (!getANCAJOMMFCHList()
-          .equals(other.getANCAJOMMFCHList())) return false;
-      if (getDOKMLEHIOEC()
-          != other.getDOKMLEHIOEC()) return false;
-      if (getIIHEIILJCOF()
-          != other.getIIHEIILJCOF()) return false;
-      if (!getLMJAOBFADPKList()
-          .equals(other.getLMJAOBFADPKList())) return false;
-      if (!getHLECFMJDPKNList()
-          .equals(other.getHLECFMJDPKNList())) return false;
+      if (getLKAAFHACDFC()
+          != other.getLKAAFHACDFC()) return false;
       if (!internalGetStoreIncomeMap().equals(
           other.internalGetStoreIncomeMap())) return false;
-      if (getGNABNHELILJ()
-          != other.getGNABNHELILJ()) return false;
+      if (getStoreRound()
+          != other.getStoreRound()) return false;
+      if (!getDBHHFCGNKPLList()
+          .equals(other.getDBHHFCGNKPLList())) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
-      if (getKIEEJLCCNIE()
-          != other.getKIEEJLCCNIE()) return false;
+      if (getKNAKMHNLEJG()
+          != other.getKNAKMHNLEJG()) return false;
+      if (!getFNEJNJNILKJList()
+          .equals(other.getFNEJNJNILKJList())) return false;
+      if (getEBGJAODGLHK()
+          != other.getEBGJAODGLHK()) return false;
+      if (getJJJNGDOHBKG()
+          != other.getJJJNGDOHBKG()) return false;
+      if (!getJFLJGFOIKEDList()
+          .equals(other.getJFLJGFOIKEDList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -774,34 +774,34 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + STORE_ROUND_FIELD_NUMBER;
-      hash = (53 * hash) + getStoreRound();
-      if (getANCAJOMMFCHCount() > 0) {
-        hash = (37 * hash) + ANCAJOMMFCH_FIELD_NUMBER;
-        hash = (53 * hash) + getANCAJOMMFCHList().hashCode();
-      }
-      hash = (37 * hash) + DOKMLEHIOEC_FIELD_NUMBER;
-      hash = (53 * hash) + getDOKMLEHIOEC();
-      hash = (37 * hash) + IIHEIILJCOF_FIELD_NUMBER;
-      hash = (53 * hash) + getIIHEIILJCOF();
-      if (getLMJAOBFADPKCount() > 0) {
-        hash = (37 * hash) + LMJAOBFADPK_FIELD_NUMBER;
-        hash = (53 * hash) + getLMJAOBFADPKList().hashCode();
-      }
-      if (getHLECFMJDPKNCount() > 0) {
-        hash = (37 * hash) + HLECFMJDPKN_FIELD_NUMBER;
-        hash = (53 * hash) + getHLECFMJDPKNList().hashCode();
-      }
+      hash = (37 * hash) + LKAAFHACDFC_FIELD_NUMBER;
+      hash = (53 * hash) + getLKAAFHACDFC();
       if (!internalGetStoreIncomeMap().getMap().isEmpty()) {
         hash = (37 * hash) + STORE_INCOME_MAP_FIELD_NUMBER;
         hash = (53 * hash) + internalGetStoreIncomeMap().hashCode();
       }
-      hash = (37 * hash) + GNABNHELILJ_FIELD_NUMBER;
-      hash = (53 * hash) + getGNABNHELILJ();
+      hash = (37 * hash) + STORE_ROUND_FIELD_NUMBER;
+      hash = (53 * hash) + getStoreRound();
+      if (getDBHHFCGNKPLCount() > 0) {
+        hash = (37 * hash) + DBHHFCGNKPL_FIELD_NUMBER;
+        hash = (53 * hash) + getDBHHFCGNKPLList().hashCode();
+      }
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
-      hash = (37 * hash) + KIEEJLCCNIE_FIELD_NUMBER;
-      hash = (53 * hash) + getKIEEJLCCNIE();
+      hash = (37 * hash) + KNAKMHNLEJG_FIELD_NUMBER;
+      hash = (53 * hash) + getKNAKMHNLEJG();
+      if (getFNEJNJNILKJCount() > 0) {
+        hash = (37 * hash) + FNEJNJNILKJ_FIELD_NUMBER;
+        hash = (53 * hash) + getFNEJNJNILKJList().hashCode();
+      }
+      hash = (37 * hash) + EBGJAODGLHK_FIELD_NUMBER;
+      hash = (53 * hash) + getEBGJAODGLHK();
+      hash = (37 * hash) + JJJNGDOHBKG_FIELD_NUMBER;
+      hash = (53 * hash) + getJJJNGDOHBKG();
+      if (getJFLJGFOIKEDCount() > 0) {
+        hash = (37 * hash) + JFLJGFOIKED_FIELD_NUMBER;
+        hash = (53 * hash) + getJFLJGFOIKEDList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -899,8 +899,8 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 23124
-     * Obf: MFJJOHIPMMC
+     * CmdId: 26589
+     * Obf: CGBKFHKIFGO
      * </pre>
      *
      * Protobuf type {@code VintageMarketFinishStorePlayRsp}
@@ -918,7 +918,7 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
       protected com.google.protobuf.MapField internalGetMapField(
           int number) {
         switch (number) {
-          case 1:
+          case 13:
             return internalGetStoreIncomeMap();
           default:
             throw new RuntimeException(
@@ -929,7 +929,7 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
       protected com.google.protobuf.MapField internalGetMutableMapField(
           int number) {
         switch (number) {
-          case 1:
+          case 13:
             return internalGetMutableStoreIncomeMap();
           default:
             throw new RuntimeException(
@@ -962,25 +962,25 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        lKAAFHACDFC_ = 0;
+
+        internalGetMutableStoreIncomeMap().clear();
         storeRound_ = 0;
 
-        aNCAJOMMFCH_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        dOKMLEHIOEC_ = 0;
-
-        iIHEIILJCOF_ = 0;
-
-        lMJAOBFADPK_ = emptyIntList();
+        dBHHFCGNKPL_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000002);
-        hLECFMJDPKN_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000004);
-        internalGetMutableStoreIncomeMap().clear();
-        gNABNHELILJ_ = 0;
-
         retcode_ = 0;
 
-        kIEEJLCCNIE_ = 0;
+        kNAKMHNLEJG_ = 0;
 
+        fNEJNJNILKJ_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        eBGJAODGLHK_ = 0;
+
+        jJJNGDOHBKG_ = 0;
+
+        jFLJGFOIKED_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -1008,29 +1008,29 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
       public emu.grasscutter.net.proto.VintageMarketFinishStorePlayRspOuterClass.VintageMarketFinishStorePlayRsp buildPartial() {
         emu.grasscutter.net.proto.VintageMarketFinishStorePlayRspOuterClass.VintageMarketFinishStorePlayRsp result = new emu.grasscutter.net.proto.VintageMarketFinishStorePlayRspOuterClass.VintageMarketFinishStorePlayRsp(this);
         int from_bitField0_ = bitField0_;
-        result.storeRound_ = storeRound_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          aNCAJOMMFCH_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.aNCAJOMMFCH_ = aNCAJOMMFCH_;
-        result.dOKMLEHIOEC_ = dOKMLEHIOEC_;
-        result.iIHEIILJCOF_ = iIHEIILJCOF_;
-        if (((bitField0_ & 0x00000002) != 0)) {
-          lMJAOBFADPK_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.lMJAOBFADPK_ = lMJAOBFADPK_;
-        if (((bitField0_ & 0x00000004) != 0)) {
-          hLECFMJDPKN_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000004);
-        }
-        result.hLECFMJDPKN_ = hLECFMJDPKN_;
+        result.lKAAFHACDFC_ = lKAAFHACDFC_;
         result.storeIncomeMap_ = internalGetStoreIncomeMap();
         result.storeIncomeMap_.makeImmutable();
-        result.gNABNHELILJ_ = gNABNHELILJ_;
+        result.storeRound_ = storeRound_;
+        if (((bitField0_ & 0x00000002) != 0)) {
+          dBHHFCGNKPL_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.dBHHFCGNKPL_ = dBHHFCGNKPL_;
         result.retcode_ = retcode_;
-        result.kIEEJLCCNIE_ = kIEEJLCCNIE_;
+        result.kNAKMHNLEJG_ = kNAKMHNLEJG_;
+        if (((bitField0_ & 0x00000004) != 0)) {
+          fNEJNJNILKJ_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.fNEJNJNILKJ_ = fNEJNJNILKJ_;
+        result.eBGJAODGLHK_ = eBGJAODGLHK_;
+        result.jJJNGDOHBKG_ = jJJNGDOHBKG_;
+        if (((bitField0_ & 0x00000008) != 0)) {
+          jFLJGFOIKED_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.jFLJGFOIKED_ = jFLJGFOIKED_;
         onBuilt();
         return result;
       }
@@ -1079,55 +1079,55 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.VintageMarketFinishStorePlayRspOuterClass.VintageMarketFinishStorePlayRsp other) {
         if (other == emu.grasscutter.net.proto.VintageMarketFinishStorePlayRspOuterClass.VintageMarketFinishStorePlayRsp.getDefaultInstance()) return this;
-        if (other.getStoreRound() != 0) {
-          setStoreRound(other.getStoreRound());
-        }
-        if (!other.aNCAJOMMFCH_.isEmpty()) {
-          if (aNCAJOMMFCH_.isEmpty()) {
-            aNCAJOMMFCH_ = other.aNCAJOMMFCH_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureANCAJOMMFCHIsMutable();
-            aNCAJOMMFCH_.addAll(other.aNCAJOMMFCH_);
-          }
-          onChanged();
-        }
-        if (other.getDOKMLEHIOEC() != 0) {
-          setDOKMLEHIOEC(other.getDOKMLEHIOEC());
-        }
-        if (other.getIIHEIILJCOF() != 0) {
-          setIIHEIILJCOF(other.getIIHEIILJCOF());
-        }
-        if (!other.lMJAOBFADPK_.isEmpty()) {
-          if (lMJAOBFADPK_.isEmpty()) {
-            lMJAOBFADPK_ = other.lMJAOBFADPK_;
-            bitField0_ = (bitField0_ & ~0x00000002);
-          } else {
-            ensureLMJAOBFADPKIsMutable();
-            lMJAOBFADPK_.addAll(other.lMJAOBFADPK_);
-          }
-          onChanged();
-        }
-        if (!other.hLECFMJDPKN_.isEmpty()) {
-          if (hLECFMJDPKN_.isEmpty()) {
-            hLECFMJDPKN_ = other.hLECFMJDPKN_;
-            bitField0_ = (bitField0_ & ~0x00000004);
-          } else {
-            ensureHLECFMJDPKNIsMutable();
-            hLECFMJDPKN_.addAll(other.hLECFMJDPKN_);
-          }
-          onChanged();
+        if (other.getLKAAFHACDFC() != 0) {
+          setLKAAFHACDFC(other.getLKAAFHACDFC());
         }
         internalGetMutableStoreIncomeMap().mergeFrom(
             other.internalGetStoreIncomeMap());
-        if (other.getGNABNHELILJ() != 0) {
-          setGNABNHELILJ(other.getGNABNHELILJ());
+        if (other.getStoreRound() != 0) {
+          setStoreRound(other.getStoreRound());
+        }
+        if (!other.dBHHFCGNKPL_.isEmpty()) {
+          if (dBHHFCGNKPL_.isEmpty()) {
+            dBHHFCGNKPL_ = other.dBHHFCGNKPL_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureDBHHFCGNKPLIsMutable();
+            dBHHFCGNKPL_.addAll(other.dBHHFCGNKPL_);
+          }
+          onChanged();
         }
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
         }
-        if (other.getKIEEJLCCNIE() != 0) {
-          setKIEEJLCCNIE(other.getKIEEJLCCNIE());
+        if (other.getKNAKMHNLEJG() != 0) {
+          setKNAKMHNLEJG(other.getKNAKMHNLEJG());
+        }
+        if (!other.fNEJNJNILKJ_.isEmpty()) {
+          if (fNEJNJNILKJ_.isEmpty()) {
+            fNEJNJNILKJ_ = other.fNEJNJNILKJ_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensureFNEJNJNILKJIsMutable();
+            fNEJNJNILKJ_.addAll(other.fNEJNJNILKJ_);
+          }
+          onChanged();
+        }
+        if (other.getEBGJAODGLHK() != 0) {
+          setEBGJAODGLHK(other.getEBGJAODGLHK());
+        }
+        if (other.getJJJNGDOHBKG() != 0) {
+          setJJJNGDOHBKG(other.getJJJNGDOHBKG());
+        }
+        if (!other.jFLJGFOIKED_.isEmpty()) {
+          if (jFLJGFOIKED_.isEmpty()) {
+            jFLJGFOIKED_ = other.jFLJGFOIKED_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+          } else {
+            ensureJFLJGFOIKEDIsMutable();
+            jFLJGFOIKED_.addAll(other.jFLJGFOIKED_);
+          }
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1159,332 +1159,33 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
       }
       private int bitField0_;
 
-      private int storeRound_ ;
+      private int lKAAFHACDFC_ ;
       /**
-       * <code>uint32 store_round = 2;</code>
-       * @return The storeRound.
+       * <code>uint32 LKAAFHACDFC = 4;</code>
+       * @return The lKAAFHACDFC.
        */
       @java.lang.Override
-      public int getStoreRound() {
-        return storeRound_;
+      public int getLKAAFHACDFC() {
+        return lKAAFHACDFC_;
       }
       /**
-       * <code>uint32 store_round = 2;</code>
-       * @param value The storeRound to set.
+       * <code>uint32 LKAAFHACDFC = 4;</code>
+       * @param value The lKAAFHACDFC to set.
        * @return This builder for chaining.
        */
-      public Builder setStoreRound(int value) {
+      public Builder setLKAAFHACDFC(int value) {
         
-        storeRound_ = value;
+        lKAAFHACDFC_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 store_round = 2;</code>
+       * <code>uint32 LKAAFHACDFC = 4;</code>
        * @return This builder for chaining.
        */
-      public Builder clearStoreRound() {
+      public Builder clearLKAAFHACDFC() {
         
-        storeRound_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.Internal.IntList aNCAJOMMFCH_ = emptyIntList();
-      private void ensureANCAJOMMFCHIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          aNCAJOMMFCH_ = mutableCopy(aNCAJOMMFCH_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-      /**
-       * <code>repeated uint32 ANCAJOMMFCH = 4;</code>
-       * @return A list containing the aNCAJOMMFCH.
-       */
-      public java.util.List<java.lang.Integer>
-          getANCAJOMMFCHList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
-                 java.util.Collections.unmodifiableList(aNCAJOMMFCH_) : aNCAJOMMFCH_;
-      }
-      /**
-       * <code>repeated uint32 ANCAJOMMFCH = 4;</code>
-       * @return The count of aNCAJOMMFCH.
-       */
-      public int getANCAJOMMFCHCount() {
-        return aNCAJOMMFCH_.size();
-      }
-      /**
-       * <code>repeated uint32 ANCAJOMMFCH = 4;</code>
-       * @param index The index of the element to return.
-       * @return The aNCAJOMMFCH at the given index.
-       */
-      public int getANCAJOMMFCH(int index) {
-        return aNCAJOMMFCH_.getInt(index);
-      }
-      /**
-       * <code>repeated uint32 ANCAJOMMFCH = 4;</code>
-       * @param index The index to set the value at.
-       * @param value The aNCAJOMMFCH to set.
-       * @return This builder for chaining.
-       */
-      public Builder setANCAJOMMFCH(
-          int index, int value) {
-        ensureANCAJOMMFCHIsMutable();
-        aNCAJOMMFCH_.setInt(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 ANCAJOMMFCH = 4;</code>
-       * @param value The aNCAJOMMFCH to add.
-       * @return This builder for chaining.
-       */
-      public Builder addANCAJOMMFCH(int value) {
-        ensureANCAJOMMFCHIsMutable();
-        aNCAJOMMFCH_.addInt(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 ANCAJOMMFCH = 4;</code>
-       * @param values The aNCAJOMMFCH to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllANCAJOMMFCH(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureANCAJOMMFCHIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, aNCAJOMMFCH_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 ANCAJOMMFCH = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearANCAJOMMFCH() {
-        aNCAJOMMFCH_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-
-      private int dOKMLEHIOEC_ ;
-      /**
-       * <code>uint32 DOKMLEHIOEC = 15;</code>
-       * @return The dOKMLEHIOEC.
-       */
-      @java.lang.Override
-      public int getDOKMLEHIOEC() {
-        return dOKMLEHIOEC_;
-      }
-      /**
-       * <code>uint32 DOKMLEHIOEC = 15;</code>
-       * @param value The dOKMLEHIOEC to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDOKMLEHIOEC(int value) {
-        
-        dOKMLEHIOEC_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 DOKMLEHIOEC = 15;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDOKMLEHIOEC() {
-        
-        dOKMLEHIOEC_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int iIHEIILJCOF_ ;
-      /**
-       * <code>uint32 IIHEIILJCOF = 9;</code>
-       * @return The iIHEIILJCOF.
-       */
-      @java.lang.Override
-      public int getIIHEIILJCOF() {
-        return iIHEIILJCOF_;
-      }
-      /**
-       * <code>uint32 IIHEIILJCOF = 9;</code>
-       * @param value The iIHEIILJCOF to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIIHEIILJCOF(int value) {
-        
-        iIHEIILJCOF_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 IIHEIILJCOF = 9;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIIHEIILJCOF() {
-        
-        iIHEIILJCOF_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.Internal.IntList lMJAOBFADPK_ = emptyIntList();
-      private void ensureLMJAOBFADPKIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
-          lMJAOBFADPK_ = mutableCopy(lMJAOBFADPK_);
-          bitField0_ |= 0x00000002;
-         }
-      }
-      /**
-       * <code>repeated uint32 LMJAOBFADPK = 8;</code>
-       * @return A list containing the lMJAOBFADPK.
-       */
-      public java.util.List<java.lang.Integer>
-          getLMJAOBFADPKList() {
-        return ((bitField0_ & 0x00000002) != 0) ?
-                 java.util.Collections.unmodifiableList(lMJAOBFADPK_) : lMJAOBFADPK_;
-      }
-      /**
-       * <code>repeated uint32 LMJAOBFADPK = 8;</code>
-       * @return The count of lMJAOBFADPK.
-       */
-      public int getLMJAOBFADPKCount() {
-        return lMJAOBFADPK_.size();
-      }
-      /**
-       * <code>repeated uint32 LMJAOBFADPK = 8;</code>
-       * @param index The index of the element to return.
-       * @return The lMJAOBFADPK at the given index.
-       */
-      public int getLMJAOBFADPK(int index) {
-        return lMJAOBFADPK_.getInt(index);
-      }
-      /**
-       * <code>repeated uint32 LMJAOBFADPK = 8;</code>
-       * @param index The index to set the value at.
-       * @param value The lMJAOBFADPK to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLMJAOBFADPK(
-          int index, int value) {
-        ensureLMJAOBFADPKIsMutable();
-        lMJAOBFADPK_.setInt(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 LMJAOBFADPK = 8;</code>
-       * @param value The lMJAOBFADPK to add.
-       * @return This builder for chaining.
-       */
-      public Builder addLMJAOBFADPK(int value) {
-        ensureLMJAOBFADPKIsMutable();
-        lMJAOBFADPK_.addInt(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 LMJAOBFADPK = 8;</code>
-       * @param values The lMJAOBFADPK to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllLMJAOBFADPK(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureLMJAOBFADPKIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, lMJAOBFADPK_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 LMJAOBFADPK = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLMJAOBFADPK() {
-        lMJAOBFADPK_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.Internal.IntList hLECFMJDPKN_ = emptyIntList();
-      private void ensureHLECFMJDPKNIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
-          hLECFMJDPKN_ = mutableCopy(hLECFMJDPKN_);
-          bitField0_ |= 0x00000004;
-         }
-      }
-      /**
-       * <code>repeated uint32 HLECFMJDPKN = 10;</code>
-       * @return A list containing the hLECFMJDPKN.
-       */
-      public java.util.List<java.lang.Integer>
-          getHLECFMJDPKNList() {
-        return ((bitField0_ & 0x00000004) != 0) ?
-                 java.util.Collections.unmodifiableList(hLECFMJDPKN_) : hLECFMJDPKN_;
-      }
-      /**
-       * <code>repeated uint32 HLECFMJDPKN = 10;</code>
-       * @return The count of hLECFMJDPKN.
-       */
-      public int getHLECFMJDPKNCount() {
-        return hLECFMJDPKN_.size();
-      }
-      /**
-       * <code>repeated uint32 HLECFMJDPKN = 10;</code>
-       * @param index The index of the element to return.
-       * @return The hLECFMJDPKN at the given index.
-       */
-      public int getHLECFMJDPKN(int index) {
-        return hLECFMJDPKN_.getInt(index);
-      }
-      /**
-       * <code>repeated uint32 HLECFMJDPKN = 10;</code>
-       * @param index The index to set the value at.
-       * @param value The hLECFMJDPKN to set.
-       * @return This builder for chaining.
-       */
-      public Builder setHLECFMJDPKN(
-          int index, int value) {
-        ensureHLECFMJDPKNIsMutable();
-        hLECFMJDPKN_.setInt(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 HLECFMJDPKN = 10;</code>
-       * @param value The hLECFMJDPKN to add.
-       * @return This builder for chaining.
-       */
-      public Builder addHLECFMJDPKN(int value) {
-        ensureHLECFMJDPKNIsMutable();
-        hLECFMJDPKN_.addInt(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 HLECFMJDPKN = 10;</code>
-       * @param values The hLECFMJDPKN to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllHLECFMJDPKN(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureHLECFMJDPKNIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, hLECFMJDPKN_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 HLECFMJDPKN = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearHLECFMJDPKN() {
-        hLECFMJDPKN_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        lKAAFHACDFC_ = 0;
         onChanged();
         return this;
       }
@@ -1516,7 +1217,7 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
         return internalGetStoreIncomeMap().getMap().size();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; store_income_map = 1;</code>
+       * <code>map&lt;uint32, uint32&gt; store_income_map = 13;</code>
        */
 
       @java.lang.Override
@@ -1534,7 +1235,7 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
         return getStoreIncomeMapMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; store_income_map = 1;</code>
+       * <code>map&lt;uint32, uint32&gt; store_income_map = 13;</code>
        */
       @java.lang.Override
 
@@ -1542,7 +1243,7 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
         return internalGetStoreIncomeMap().getMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; store_income_map = 1;</code>
+       * <code>map&lt;uint32, uint32&gt; store_income_map = 13;</code>
        */
       @java.lang.Override
 
@@ -1555,7 +1256,7 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; store_income_map = 1;</code>
+       * <code>map&lt;uint32, uint32&gt; store_income_map = 13;</code>
        */
       @java.lang.Override
 
@@ -1576,7 +1277,7 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
         return this;
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; store_income_map = 1;</code>
+       * <code>map&lt;uint32, uint32&gt; store_income_map = 13;</code>
        */
 
       public Builder removeStoreIncomeMap(
@@ -1595,7 +1296,7 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
         return internalGetMutableStoreIncomeMap().getMutableMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; store_income_map = 1;</code>
+       * <code>map&lt;uint32, uint32&gt; store_income_map = 13;</code>
        */
       public Builder putStoreIncomeMap(
           int key,
@@ -1607,7 +1308,7 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
         return this;
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; store_income_map = 1;</code>
+       * <code>map&lt;uint32, uint32&gt; store_income_map = 13;</code>
        */
 
       public Builder putAllStoreIncomeMap(
@@ -1617,40 +1318,119 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
         return this;
       }
 
-      private int gNABNHELILJ_ ;
+      private int storeRound_ ;
       /**
-       * <code>uint32 GNABNHELILJ = 14;</code>
-       * @return The gNABNHELILJ.
+       * <code>uint32 store_round = 8;</code>
+       * @return The storeRound.
        */
       @java.lang.Override
-      public int getGNABNHELILJ() {
-        return gNABNHELILJ_;
+      public int getStoreRound() {
+        return storeRound_;
       }
       /**
-       * <code>uint32 GNABNHELILJ = 14;</code>
-       * @param value The gNABNHELILJ to set.
+       * <code>uint32 store_round = 8;</code>
+       * @param value The storeRound to set.
        * @return This builder for chaining.
        */
-      public Builder setGNABNHELILJ(int value) {
+      public Builder setStoreRound(int value) {
         
-        gNABNHELILJ_ = value;
+        storeRound_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 GNABNHELILJ = 14;</code>
+       * <code>uint32 store_round = 8;</code>
        * @return This builder for chaining.
        */
-      public Builder clearGNABNHELILJ() {
+      public Builder clearStoreRound() {
         
-        gNABNHELILJ_ = 0;
+        storeRound_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Internal.IntList dBHHFCGNKPL_ = emptyIntList();
+      private void ensureDBHHFCGNKPLIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          dBHHFCGNKPL_ = mutableCopy(dBHHFCGNKPL_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+      /**
+       * <code>repeated uint32 DBHHFCGNKPL = 7;</code>
+       * @return A list containing the dBHHFCGNKPL.
+       */
+      public java.util.List<java.lang.Integer>
+          getDBHHFCGNKPLList() {
+        return ((bitField0_ & 0x00000002) != 0) ?
+                 java.util.Collections.unmodifiableList(dBHHFCGNKPL_) : dBHHFCGNKPL_;
+      }
+      /**
+       * <code>repeated uint32 DBHHFCGNKPL = 7;</code>
+       * @return The count of dBHHFCGNKPL.
+       */
+      public int getDBHHFCGNKPLCount() {
+        return dBHHFCGNKPL_.size();
+      }
+      /**
+       * <code>repeated uint32 DBHHFCGNKPL = 7;</code>
+       * @param index The index of the element to return.
+       * @return The dBHHFCGNKPL at the given index.
+       */
+      public int getDBHHFCGNKPL(int index) {
+        return dBHHFCGNKPL_.getInt(index);
+      }
+      /**
+       * <code>repeated uint32 DBHHFCGNKPL = 7;</code>
+       * @param index The index to set the value at.
+       * @param value The dBHHFCGNKPL to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDBHHFCGNKPL(
+          int index, int value) {
+        ensureDBHHFCGNKPLIsMutable();
+        dBHHFCGNKPL_.setInt(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 DBHHFCGNKPL = 7;</code>
+       * @param value The dBHHFCGNKPL to add.
+       * @return This builder for chaining.
+       */
+      public Builder addDBHHFCGNKPL(int value) {
+        ensureDBHHFCGNKPLIsMutable();
+        dBHHFCGNKPL_.addInt(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 DBHHFCGNKPL = 7;</code>
+       * @param values The dBHHFCGNKPL to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllDBHHFCGNKPL(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureDBHHFCGNKPLIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, dBHHFCGNKPL_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 DBHHFCGNKPL = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDBHHFCGNKPL() {
+        dBHHFCGNKPL_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 7;</code>
+       * <code>int32 retcode = 15;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -1658,7 +1438,7 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 7;</code>
+       * <code>int32 retcode = 15;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -1669,7 +1449,7 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 7;</code>
+       * <code>int32 retcode = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -1679,33 +1459,253 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
         return this;
       }
 
-      private int kIEEJLCCNIE_ ;
+      private int kNAKMHNLEJG_ ;
       /**
-       * <code>uint32 KIEEJLCCNIE = 13;</code>
-       * @return The kIEEJLCCNIE.
+       * <code>uint32 KNAKMHNLEJG = 1;</code>
+       * @return The kNAKMHNLEJG.
        */
       @java.lang.Override
-      public int getKIEEJLCCNIE() {
-        return kIEEJLCCNIE_;
+      public int getKNAKMHNLEJG() {
+        return kNAKMHNLEJG_;
       }
       /**
-       * <code>uint32 KIEEJLCCNIE = 13;</code>
-       * @param value The kIEEJLCCNIE to set.
+       * <code>uint32 KNAKMHNLEJG = 1;</code>
+       * @param value The kNAKMHNLEJG to set.
        * @return This builder for chaining.
        */
-      public Builder setKIEEJLCCNIE(int value) {
+      public Builder setKNAKMHNLEJG(int value) {
         
-        kIEEJLCCNIE_ = value;
+        kNAKMHNLEJG_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 KIEEJLCCNIE = 13;</code>
+       * <code>uint32 KNAKMHNLEJG = 1;</code>
        * @return This builder for chaining.
        */
-      public Builder clearKIEEJLCCNIE() {
+      public Builder clearKNAKMHNLEJG() {
         
-        kIEEJLCCNIE_ = 0;
+        kNAKMHNLEJG_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Internal.IntList fNEJNJNILKJ_ = emptyIntList();
+      private void ensureFNEJNJNILKJIsMutable() {
+        if (!((bitField0_ & 0x00000004) != 0)) {
+          fNEJNJNILKJ_ = mutableCopy(fNEJNJNILKJ_);
+          bitField0_ |= 0x00000004;
+         }
+      }
+      /**
+       * <code>repeated uint32 FNEJNJNILKJ = 10;</code>
+       * @return A list containing the fNEJNJNILKJ.
+       */
+      public java.util.List<java.lang.Integer>
+          getFNEJNJNILKJList() {
+        return ((bitField0_ & 0x00000004) != 0) ?
+                 java.util.Collections.unmodifiableList(fNEJNJNILKJ_) : fNEJNJNILKJ_;
+      }
+      /**
+       * <code>repeated uint32 FNEJNJNILKJ = 10;</code>
+       * @return The count of fNEJNJNILKJ.
+       */
+      public int getFNEJNJNILKJCount() {
+        return fNEJNJNILKJ_.size();
+      }
+      /**
+       * <code>repeated uint32 FNEJNJNILKJ = 10;</code>
+       * @param index The index of the element to return.
+       * @return The fNEJNJNILKJ at the given index.
+       */
+      public int getFNEJNJNILKJ(int index) {
+        return fNEJNJNILKJ_.getInt(index);
+      }
+      /**
+       * <code>repeated uint32 FNEJNJNILKJ = 10;</code>
+       * @param index The index to set the value at.
+       * @param value The fNEJNJNILKJ to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFNEJNJNILKJ(
+          int index, int value) {
+        ensureFNEJNJNILKJIsMutable();
+        fNEJNJNILKJ_.setInt(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 FNEJNJNILKJ = 10;</code>
+       * @param value The fNEJNJNILKJ to add.
+       * @return This builder for chaining.
+       */
+      public Builder addFNEJNJNILKJ(int value) {
+        ensureFNEJNJNILKJIsMutable();
+        fNEJNJNILKJ_.addInt(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 FNEJNJNILKJ = 10;</code>
+       * @param values The fNEJNJNILKJ to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllFNEJNJNILKJ(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureFNEJNJNILKJIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, fNEJNJNILKJ_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 FNEJNJNILKJ = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFNEJNJNILKJ() {
+        fNEJNJNILKJ_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+
+      private int eBGJAODGLHK_ ;
+      /**
+       * <code>uint32 EBGJAODGLHK = 5;</code>
+       * @return The eBGJAODGLHK.
+       */
+      @java.lang.Override
+      public int getEBGJAODGLHK() {
+        return eBGJAODGLHK_;
+      }
+      /**
+       * <code>uint32 EBGJAODGLHK = 5;</code>
+       * @param value The eBGJAODGLHK to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEBGJAODGLHK(int value) {
+        
+        eBGJAODGLHK_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 EBGJAODGLHK = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEBGJAODGLHK() {
+        
+        eBGJAODGLHK_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int jJJNGDOHBKG_ ;
+      /**
+       * <code>uint32 JJJNGDOHBKG = 11;</code>
+       * @return The jJJNGDOHBKG.
+       */
+      @java.lang.Override
+      public int getJJJNGDOHBKG() {
+        return jJJNGDOHBKG_;
+      }
+      /**
+       * <code>uint32 JJJNGDOHBKG = 11;</code>
+       * @param value The jJJNGDOHBKG to set.
+       * @return This builder for chaining.
+       */
+      public Builder setJJJNGDOHBKG(int value) {
+        
+        jJJNGDOHBKG_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 JJJNGDOHBKG = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearJJJNGDOHBKG() {
+        
+        jJJNGDOHBKG_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Internal.IntList jFLJGFOIKED_ = emptyIntList();
+      private void ensureJFLJGFOIKEDIsMutable() {
+        if (!((bitField0_ & 0x00000008) != 0)) {
+          jFLJGFOIKED_ = mutableCopy(jFLJGFOIKED_);
+          bitField0_ |= 0x00000008;
+         }
+      }
+      /**
+       * <code>repeated uint32 JFLJGFOIKED = 9;</code>
+       * @return A list containing the jFLJGFOIKED.
+       */
+      public java.util.List<java.lang.Integer>
+          getJFLJGFOIKEDList() {
+        return ((bitField0_ & 0x00000008) != 0) ?
+                 java.util.Collections.unmodifiableList(jFLJGFOIKED_) : jFLJGFOIKED_;
+      }
+      /**
+       * <code>repeated uint32 JFLJGFOIKED = 9;</code>
+       * @return The count of jFLJGFOIKED.
+       */
+      public int getJFLJGFOIKEDCount() {
+        return jFLJGFOIKED_.size();
+      }
+      /**
+       * <code>repeated uint32 JFLJGFOIKED = 9;</code>
+       * @param index The index of the element to return.
+       * @return The jFLJGFOIKED at the given index.
+       */
+      public int getJFLJGFOIKED(int index) {
+        return jFLJGFOIKED_.getInt(index);
+      }
+      /**
+       * <code>repeated uint32 JFLJGFOIKED = 9;</code>
+       * @param index The index to set the value at.
+       * @param value The jFLJGFOIKED to set.
+       * @return This builder for chaining.
+       */
+      public Builder setJFLJGFOIKED(
+          int index, int value) {
+        ensureJFLJGFOIKEDIsMutable();
+        jFLJGFOIKED_.setInt(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 JFLJGFOIKED = 9;</code>
+       * @param value The jFLJGFOIKED to add.
+       * @return This builder for chaining.
+       */
+      public Builder addJFLJGFOIKED(int value) {
+        ensureJFLJGFOIKEDIsMutable();
+        jFLJGFOIKED_.addInt(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 JFLJGFOIKED = 9;</code>
+       * @param values The jFLJGFOIKED to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllJFLJGFOIKED(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureJFLJGFOIKEDIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, jFLJGFOIKED_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 JFLJGFOIKED = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearJFLJGFOIKED() {
+        jFLJGFOIKED_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -1782,14 +1782,14 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n%VintageMarketFinishStorePlayRsp.proto\"" +
-      "\341\002\n\037VintageMarketFinishStorePlayRsp\022\023\n\013s" +
-      "tore_round\030\002 \001(\r\022\023\n\013ANCAJOMMFCH\030\004 \003(\r\022\023\n" +
-      "\013DOKMLEHIOEC\030\017 \001(\r\022\023\n\013IIHEIILJCOF\030\t \001(\r\022" +
-      "\023\n\013LMJAOBFADPK\030\010 \003(\r\022\023\n\013HLECFMJDPKN\030\n \003(" +
-      "\r\022N\n\020store_income_map\030\001 \003(\01324.VintageMar" +
-      "ketFinishStorePlayRsp.StoreIncomeMapEntr" +
-      "y\022\023\n\013GNABNHELILJ\030\016 \001(\r\022\017\n\007retcode\030\007 \001(\005\022" +
-      "\023\n\013KIEEJLCCNIE\030\r \001(\r\0325\n\023StoreIncomeMapEn" +
+      "\341\002\n\037VintageMarketFinishStorePlayRsp\022\023\n\013L" +
+      "KAAFHACDFC\030\004 \001(\r\022N\n\020store_income_map\030\r \003" +
+      "(\01324.VintageMarketFinishStorePlayRsp.Sto" +
+      "reIncomeMapEntry\022\023\n\013store_round\030\010 \001(\r\022\023\n" +
+      "\013DBHHFCGNKPL\030\007 \003(\r\022\017\n\007retcode\030\017 \001(\005\022\023\n\013K" +
+      "NAKMHNLEJG\030\001 \001(\r\022\023\n\013FNEJNJNILKJ\030\n \003(\r\022\023\n" +
+      "\013EBGJAODGLHK\030\005 \001(\r\022\023\n\013JJJNGDOHBKG\030\013 \001(\r\022" +
+      "\023\n\013JFLJGFOIKED\030\t \003(\r\0325\n\023StoreIncomeMapEn" +
       "try\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001B\033\n\031e" +
       "mu.grasscutter.net.protob\006proto3"
     };
@@ -1802,7 +1802,7 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
     internal_static_VintageMarketFinishStorePlayRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_VintageMarketFinishStorePlayRsp_descriptor,
-        new java.lang.String[] { "StoreRound", "ANCAJOMMFCH", "DOKMLEHIOEC", "IIHEIILJCOF", "LMJAOBFADPK", "HLECFMJDPKN", "StoreIncomeMap", "GNABNHELILJ", "Retcode", "KIEEJLCCNIE", });
+        new java.lang.String[] { "LKAAFHACDFC", "StoreIncomeMap", "StoreRound", "DBHHFCGNKPL", "Retcode", "KNAKMHNLEJG", "FNEJNJNILKJ", "EBGJAODGLHK", "JJJNGDOHBKG", "JFLJGFOIKED", });
     internal_static_VintageMarketFinishStorePlayRsp_StoreIncomeMapEntry_descriptor =
       internal_static_VintageMarketFinishStorePlayRsp_descriptor.getNestedTypes().get(0);
     internal_static_VintageMarketFinishStorePlayRsp_StoreIncomeMapEntry_fieldAccessorTable = new

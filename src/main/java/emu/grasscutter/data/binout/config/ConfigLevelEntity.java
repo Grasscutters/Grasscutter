@@ -1,8 +1,9 @@
 package emu.grasscutter.data.binout.config;
 
 import emu.grasscutter.data.binout.config.fields.ConfigAbilityData;
-import java.util.List;
 import lombok.Getter;
+
+import java.util.List;
 
 public class ConfigLevelEntity {
 

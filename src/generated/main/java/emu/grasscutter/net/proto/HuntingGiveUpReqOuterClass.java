@@ -19,24 +19,24 @@ public final class HuntingGiveUpReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.HuntingPair hunting_pair = 8;</code>
+     * <code>.HuntingPair hunting_pair = 2;</code>
      * @return Whether the huntingPair field is set.
      */
     boolean hasHuntingPair();
     /**
-     * <code>.HuntingPair hunting_pair = 8;</code>
+     * <code>.HuntingPair hunting_pair = 2;</code>
      * @return The huntingPair.
      */
     emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPair getHuntingPair();
     /**
-     * <code>.HuntingPair hunting_pair = 8;</code>
+     * <code>.HuntingPair hunting_pair = 2;</code>
      */
     emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPairOrBuilder getHuntingPairOrBuilder();
   }
   /**
    * <pre>
-   * CmdId: 4301
-   * Obf: BLAENPLHGNJ
+   * CmdId: 2156
+   * Obf: NDKEKIINJHO
    * </pre>
    *
    * Protobuf type {@code HuntingGiveUpReq}
@@ -83,7 +83,7 @@ public final class HuntingGiveUpReqOuterClass {
             case 0:
               done = true;
               break;
-            case 66: {
+            case 18: {
               emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPair.Builder subBuilder = null;
               if (huntingPair_ != null) {
                 subBuilder = huntingPair_.toBuilder();
@@ -128,10 +128,10 @@ public final class HuntingGiveUpReqOuterClass {
               emu.grasscutter.net.proto.HuntingGiveUpReqOuterClass.HuntingGiveUpReq.class, emu.grasscutter.net.proto.HuntingGiveUpReqOuterClass.HuntingGiveUpReq.Builder.class);
     }
 
-    public static final int HUNTING_PAIR_FIELD_NUMBER = 8;
+    public static final int HUNTING_PAIR_FIELD_NUMBER = 2;
     private emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPair huntingPair_;
     /**
-     * <code>.HuntingPair hunting_pair = 8;</code>
+     * <code>.HuntingPair hunting_pair = 2;</code>
      * @return Whether the huntingPair field is set.
      */
     @java.lang.Override
@@ -139,7 +139,7 @@ public final class HuntingGiveUpReqOuterClass {
       return huntingPair_ != null;
     }
     /**
-     * <code>.HuntingPair hunting_pair = 8;</code>
+     * <code>.HuntingPair hunting_pair = 2;</code>
      * @return The huntingPair.
      */
     @java.lang.Override
@@ -147,7 +147,7 @@ public final class HuntingGiveUpReqOuterClass {
       return huntingPair_ == null ? emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPair.getDefaultInstance() : huntingPair_;
     }
     /**
-     * <code>.HuntingPair hunting_pair = 8;</code>
+     * <code>.HuntingPair hunting_pair = 2;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPairOrBuilder getHuntingPairOrBuilder() {
@@ -169,7 +169,7 @@ public final class HuntingGiveUpReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (huntingPair_ != null) {
-        output.writeMessage(8, getHuntingPair());
+        output.writeMessage(2, getHuntingPair());
       }
       unknownFields.writeTo(output);
     }
@@ -182,7 +182,7 @@ public final class HuntingGiveUpReqOuterClass {
       size = 0;
       if (huntingPair_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(8, getHuntingPair());
+          .computeMessageSize(2, getHuntingPair());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -316,8 +316,8 @@ public final class HuntingGiveUpReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4301
-     * Obf: BLAENPLHGNJ
+     * CmdId: 2156
+     * Obf: NDKEKIINJHO
      * </pre>
      *
      * Protobuf type {@code HuntingGiveUpReq}
@@ -478,14 +478,14 @@ public final class HuntingGiveUpReqOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPair, emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPair.Builder, emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPairOrBuilder> huntingPairBuilder_;
       /**
-       * <code>.HuntingPair hunting_pair = 8;</code>
+       * <code>.HuntingPair hunting_pair = 2;</code>
        * @return Whether the huntingPair field is set.
        */
       public boolean hasHuntingPair() {
         return huntingPairBuilder_ != null || huntingPair_ != null;
       }
       /**
-       * <code>.HuntingPair hunting_pair = 8;</code>
+       * <code>.HuntingPair hunting_pair = 2;</code>
        * @return The huntingPair.
        */
       public emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPair getHuntingPair() {
@@ -496,7 +496,7 @@ public final class HuntingGiveUpReqOuterClass {
         }
       }
       /**
-       * <code>.HuntingPair hunting_pair = 8;</code>
+       * <code>.HuntingPair hunting_pair = 2;</code>
        */
       public Builder setHuntingPair(emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPair value) {
         if (huntingPairBuilder_ == null) {
@@ -512,7 +512,7 @@ public final class HuntingGiveUpReqOuterClass {
         return this;
       }
       /**
-       * <code>.HuntingPair hunting_pair = 8;</code>
+       * <code>.HuntingPair hunting_pair = 2;</code>
        */
       public Builder setHuntingPair(
           emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPair.Builder builderForValue) {
@@ -526,7 +526,7 @@ public final class HuntingGiveUpReqOuterClass {
         return this;
       }
       /**
-       * <code>.HuntingPair hunting_pair = 8;</code>
+       * <code>.HuntingPair hunting_pair = 2;</code>
        */
       public Builder mergeHuntingPair(emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPair value) {
         if (huntingPairBuilder_ == null) {
@@ -544,7 +544,7 @@ public final class HuntingGiveUpReqOuterClass {
         return this;
       }
       /**
-       * <code>.HuntingPair hunting_pair = 8;</code>
+       * <code>.HuntingPair hunting_pair = 2;</code>
        */
       public Builder clearHuntingPair() {
         if (huntingPairBuilder_ == null) {
@@ -558,7 +558,7 @@ public final class HuntingGiveUpReqOuterClass {
         return this;
       }
       /**
-       * <code>.HuntingPair hunting_pair = 8;</code>
+       * <code>.HuntingPair hunting_pair = 2;</code>
        */
       public emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPair.Builder getHuntingPairBuilder() {
         
@@ -566,7 +566,7 @@ public final class HuntingGiveUpReqOuterClass {
         return getHuntingPairFieldBuilder().getBuilder();
       }
       /**
-       * <code>.HuntingPair hunting_pair = 8;</code>
+       * <code>.HuntingPair hunting_pair = 2;</code>
        */
       public emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPairOrBuilder getHuntingPairOrBuilder() {
         if (huntingPairBuilder_ != null) {
@@ -577,7 +577,7 @@ public final class HuntingGiveUpReqOuterClass {
         }
       }
       /**
-       * <code>.HuntingPair hunting_pair = 8;</code>
+       * <code>.HuntingPair hunting_pair = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPair, emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPair.Builder, emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPairOrBuilder> 
@@ -661,7 +661,7 @@ public final class HuntingGiveUpReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n\026HuntingGiveUpReq.proto\032\021HuntingPair.pr" +
       "oto\"6\n\020HuntingGiveUpReq\022\"\n\014hunting_pair\030" +
-      "\010 \001(\0132\014.HuntingPairB\033\n\031emu.grasscutter.n" +
+      "\002 \001(\0132\014.HuntingPairB\033\n\031emu.grasscutter.n" +
       "et.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

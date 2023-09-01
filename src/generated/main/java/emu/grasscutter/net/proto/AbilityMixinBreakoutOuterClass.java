@@ -19,34 +19,34 @@ public final class AbilityMixinBreakoutOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 2;</code>
-     * @return The retcode.
-     */
-    int getRetcode();
-
-    /**
-     * <code>.AbilityMixinBreakout.SyncType sync_type = 4;</code>
+     * <code>.AbilityMixinBreakout.SyncType sync_type = 14;</code>
      * @return The enum numeric value on the wire for syncType.
      */
     int getSyncTypeValue();
     /**
-     * <code>.AbilityMixinBreakout.SyncType sync_type = 4;</code>
+     * <code>.AbilityMixinBreakout.SyncType sync_type = 14;</code>
      * @return The syncType.
      */
     emu.grasscutter.net.proto.AbilityMixinBreakoutOuterClass.AbilityMixinBreakout.SyncType getSyncType();
 
     /**
-     * <code>.BreakoutSyncCreateConnect sync_create_connect = 6;</code>
+     * <code>int32 retcode = 8;</code>
+     * @return The retcode.
+     */
+    int getRetcode();
+
+    /**
+     * <code>.BreakoutSyncCreateConnect sync_create_connect = 12;</code>
      * @return Whether the syncCreateConnect field is set.
      */
     boolean hasSyncCreateConnect();
     /**
-     * <code>.BreakoutSyncCreateConnect sync_create_connect = 6;</code>
+     * <code>.BreakoutSyncCreateConnect sync_create_connect = 12;</code>
      * @return The syncCreateConnect.
      */
     emu.grasscutter.net.proto.BreakoutSyncCreateConnectOuterClass.BreakoutSyncCreateConnect getSyncCreateConnect();
     /**
-     * <code>.BreakoutSyncCreateConnect sync_create_connect = 6;</code>
+     * <code>.BreakoutSyncCreateConnect sync_create_connect = 12;</code>
      */
     emu.grasscutter.net.proto.BreakoutSyncCreateConnectOuterClass.BreakoutSyncCreateConnectOrBuilder getSyncCreateConnectOrBuilder();
 
@@ -66,47 +66,47 @@ public final class AbilityMixinBreakoutOuterClass {
     emu.grasscutter.net.proto.BreakoutSyncPingOuterClass.BreakoutSyncPingOrBuilder getSyncPingOrBuilder();
 
     /**
-     * <code>.BreakoutSyncFinishGame sync_finish_game = 13;</code>
+     * <code>.BreakoutSyncFinishGame sync_finish_game = 4;</code>
      * @return Whether the syncFinishGame field is set.
      */
     boolean hasSyncFinishGame();
     /**
-     * <code>.BreakoutSyncFinishGame sync_finish_game = 13;</code>
+     * <code>.BreakoutSyncFinishGame sync_finish_game = 4;</code>
      * @return The syncFinishGame.
      */
     emu.grasscutter.net.proto.BreakoutSyncFinishGameOuterClass.BreakoutSyncFinishGame getSyncFinishGame();
     /**
-     * <code>.BreakoutSyncFinishGame sync_finish_game = 13;</code>
+     * <code>.BreakoutSyncFinishGame sync_finish_game = 4;</code>
      */
     emu.grasscutter.net.proto.BreakoutSyncFinishGameOuterClass.BreakoutSyncFinishGameOrBuilder getSyncFinishGameOrBuilder();
 
     /**
-     * <code>.BreakoutSyncSnapShot sync_snap_shot = 5;</code>
+     * <code>.BreakoutSyncSnapShot sync_snap_shot = 2;</code>
      * @return Whether the syncSnapShot field is set.
      */
     boolean hasSyncSnapShot();
     /**
-     * <code>.BreakoutSyncSnapShot sync_snap_shot = 5;</code>
+     * <code>.BreakoutSyncSnapShot sync_snap_shot = 2;</code>
      * @return The syncSnapShot.
      */
     emu.grasscutter.net.proto.BreakoutSyncSnapShotOuterClass.BreakoutSyncSnapShot getSyncSnapShot();
     /**
-     * <code>.BreakoutSyncSnapShot sync_snap_shot = 5;</code>
+     * <code>.BreakoutSyncSnapShot sync_snap_shot = 2;</code>
      */
     emu.grasscutter.net.proto.BreakoutSyncSnapShotOuterClass.BreakoutSyncSnapShotOrBuilder getSyncSnapShotOrBuilder();
 
     /**
-     * <code>.BreakoutSyncAction sync_action = 15;</code>
+     * <code>.BreakoutSyncAction sync_action = 6;</code>
      * @return Whether the syncAction field is set.
      */
     boolean hasSyncAction();
     /**
-     * <code>.BreakoutSyncAction sync_action = 15;</code>
+     * <code>.BreakoutSyncAction sync_action = 6;</code>
      * @return The syncAction.
      */
     emu.grasscutter.net.proto.BreakoutSyncActionOuterClass.BreakoutSyncAction getSyncAction();
     /**
-     * <code>.BreakoutSyncAction sync_action = 15;</code>
+     * <code>.BreakoutSyncAction sync_action = 6;</code>
      */
     emu.grasscutter.net.proto.BreakoutSyncActionOuterClass.BreakoutSyncActionOrBuilder getSyncActionOrBuilder();
 
@@ -114,7 +114,7 @@ public final class AbilityMixinBreakoutOuterClass {
   }
   /**
    * <pre>
-   * Obf: PKJJKBLLIGJ
+   * Obf: KOPLDLJGNEO
    * </pre>
    *
    * Protobuf type {@code AbilityMixinBreakout}
@@ -162,20 +162,9 @@ public final class AbilityMixinBreakoutOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 32: {
-              int rawValue = input.readEnum();
-
-              syncType_ = rawValue;
-              break;
-            }
-            case 42: {
+            case 18: {
               emu.grasscutter.net.proto.BreakoutSyncSnapShotOuterClass.BreakoutSyncSnapShot.Builder subBuilder = null;
-              if (syncCase_ == 5) {
+              if (syncCase_ == 2) {
                 subBuilder = ((emu.grasscutter.net.proto.BreakoutSyncSnapShotOuterClass.BreakoutSyncSnapShot) sync_).toBuilder();
               }
               sync_ =
@@ -184,21 +173,40 @@ public final class AbilityMixinBreakoutOuterClass {
                 subBuilder.mergeFrom((emu.grasscutter.net.proto.BreakoutSyncSnapShotOuterClass.BreakoutSyncSnapShot) sync_);
                 sync_ = subBuilder.buildPartial();
               }
-              syncCase_ = 5;
+              syncCase_ = 2;
+              break;
+            }
+            case 34: {
+              emu.grasscutter.net.proto.BreakoutSyncFinishGameOuterClass.BreakoutSyncFinishGame.Builder subBuilder = null;
+              if (syncCase_ == 4) {
+                subBuilder = ((emu.grasscutter.net.proto.BreakoutSyncFinishGameOuterClass.BreakoutSyncFinishGame) sync_).toBuilder();
+              }
+              sync_ =
+                  input.readMessage(emu.grasscutter.net.proto.BreakoutSyncFinishGameOuterClass.BreakoutSyncFinishGame.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.grasscutter.net.proto.BreakoutSyncFinishGameOuterClass.BreakoutSyncFinishGame) sync_);
+                sync_ = subBuilder.buildPartial();
+              }
+              syncCase_ = 4;
               break;
             }
             case 50: {
-              emu.grasscutter.net.proto.BreakoutSyncCreateConnectOuterClass.BreakoutSyncCreateConnect.Builder subBuilder = null;
+              emu.grasscutter.net.proto.BreakoutSyncActionOuterClass.BreakoutSyncAction.Builder subBuilder = null;
               if (syncCase_ == 6) {
-                subBuilder = ((emu.grasscutter.net.proto.BreakoutSyncCreateConnectOuterClass.BreakoutSyncCreateConnect) sync_).toBuilder();
+                subBuilder = ((emu.grasscutter.net.proto.BreakoutSyncActionOuterClass.BreakoutSyncAction) sync_).toBuilder();
               }
               sync_ =
-                  input.readMessage(emu.grasscutter.net.proto.BreakoutSyncCreateConnectOuterClass.BreakoutSyncCreateConnect.parser(), extensionRegistry);
+                  input.readMessage(emu.grasscutter.net.proto.BreakoutSyncActionOuterClass.BreakoutSyncAction.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.grasscutter.net.proto.BreakoutSyncCreateConnectOuterClass.BreakoutSyncCreateConnect) sync_);
+                subBuilder.mergeFrom((emu.grasscutter.net.proto.BreakoutSyncActionOuterClass.BreakoutSyncAction) sync_);
                 sync_ = subBuilder.buildPartial();
               }
               syncCase_ = 6;
+              break;
+            }
+            case 64: {
+
+              retcode_ = input.readInt32();
               break;
             }
             case 74: {
@@ -215,32 +223,24 @@ public final class AbilityMixinBreakoutOuterClass {
               syncCase_ = 9;
               break;
             }
-            case 106: {
-              emu.grasscutter.net.proto.BreakoutSyncFinishGameOuterClass.BreakoutSyncFinishGame.Builder subBuilder = null;
-              if (syncCase_ == 13) {
-                subBuilder = ((emu.grasscutter.net.proto.BreakoutSyncFinishGameOuterClass.BreakoutSyncFinishGame) sync_).toBuilder();
+            case 98: {
+              emu.grasscutter.net.proto.BreakoutSyncCreateConnectOuterClass.BreakoutSyncCreateConnect.Builder subBuilder = null;
+              if (syncCase_ == 12) {
+                subBuilder = ((emu.grasscutter.net.proto.BreakoutSyncCreateConnectOuterClass.BreakoutSyncCreateConnect) sync_).toBuilder();
               }
               sync_ =
-                  input.readMessage(emu.grasscutter.net.proto.BreakoutSyncFinishGameOuterClass.BreakoutSyncFinishGame.parser(), extensionRegistry);
+                  input.readMessage(emu.grasscutter.net.proto.BreakoutSyncCreateConnectOuterClass.BreakoutSyncCreateConnect.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.grasscutter.net.proto.BreakoutSyncFinishGameOuterClass.BreakoutSyncFinishGame) sync_);
+                subBuilder.mergeFrom((emu.grasscutter.net.proto.BreakoutSyncCreateConnectOuterClass.BreakoutSyncCreateConnect) sync_);
                 sync_ = subBuilder.buildPartial();
               }
-              syncCase_ = 13;
+              syncCase_ = 12;
               break;
             }
-            case 122: {
-              emu.grasscutter.net.proto.BreakoutSyncActionOuterClass.BreakoutSyncAction.Builder subBuilder = null;
-              if (syncCase_ == 15) {
-                subBuilder = ((emu.grasscutter.net.proto.BreakoutSyncActionOuterClass.BreakoutSyncAction) sync_).toBuilder();
-              }
-              sync_ =
-                  input.readMessage(emu.grasscutter.net.proto.BreakoutSyncActionOuterClass.BreakoutSyncAction.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.grasscutter.net.proto.BreakoutSyncActionOuterClass.BreakoutSyncAction) sync_);
-                sync_ = subBuilder.buildPartial();
-              }
-              syncCase_ = 15;
+            case 112: {
+              int rawValue = input.readEnum();
+
+              syncType_ = rawValue;
               break;
             }
             default: {
@@ -277,7 +277,7 @@ public final class AbilityMixinBreakoutOuterClass {
 
     /**
      * <pre>
-     * Obf: IJFMHDDKKMJ
+     * Obf: IMAGJJCOADH
      * </pre>
      *
      * Protobuf enum {@code AbilityMixinBreakout.SyncType}
@@ -437,11 +437,11 @@ public final class AbilityMixinBreakoutOuterClass {
     public enum SyncCase
         implements com.google.protobuf.Internal.EnumLite,
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
-      SYNC_CREATE_CONNECT(6),
+      SYNC_CREATE_CONNECT(12),
       SYNC_PING(9),
-      SYNC_FINISH_GAME(13),
-      SYNC_SNAP_SHOT(5),
-      SYNC_ACTION(15),
+      SYNC_FINISH_GAME(4),
+      SYNC_SNAP_SHOT(2),
+      SYNC_ACTION(6),
       SYNC_NOT_SET(0);
       private final int value;
       private SyncCase(int value) {
@@ -459,11 +459,11 @@ public final class AbilityMixinBreakoutOuterClass {
 
       public static SyncCase forNumber(int value) {
         switch (value) {
-          case 6: return SYNC_CREATE_CONNECT;
+          case 12: return SYNC_CREATE_CONNECT;
           case 9: return SYNC_PING;
-          case 13: return SYNC_FINISH_GAME;
-          case 5: return SYNC_SNAP_SHOT;
-          case 15: return SYNC_ACTION;
+          case 4: return SYNC_FINISH_GAME;
+          case 2: return SYNC_SNAP_SHOT;
+          case 6: return SYNC_ACTION;
           case 0: return SYNC_NOT_SET;
           default: return null;
         }
@@ -479,28 +479,17 @@ public final class AbilityMixinBreakoutOuterClass {
           syncCase_);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 2;
-    private int retcode_;
-    /**
-     * <code>int32 retcode = 2;</code>
-     * @return The retcode.
-     */
-    @java.lang.Override
-    public int getRetcode() {
-      return retcode_;
-    }
-
-    public static final int SYNC_TYPE_FIELD_NUMBER = 4;
+    public static final int SYNC_TYPE_FIELD_NUMBER = 14;
     private int syncType_;
     /**
-     * <code>.AbilityMixinBreakout.SyncType sync_type = 4;</code>
+     * <code>.AbilityMixinBreakout.SyncType sync_type = 14;</code>
      * @return The enum numeric value on the wire for syncType.
      */
     @java.lang.Override public int getSyncTypeValue() {
       return syncType_;
     }
     /**
-     * <code>.AbilityMixinBreakout.SyncType sync_type = 4;</code>
+     * <code>.AbilityMixinBreakout.SyncType sync_type = 14;</code>
      * @return The syncType.
      */
     @java.lang.Override public emu.grasscutter.net.proto.AbilityMixinBreakoutOuterClass.AbilityMixinBreakout.SyncType getSyncType() {
@@ -509,32 +498,43 @@ public final class AbilityMixinBreakoutOuterClass {
       return result == null ? emu.grasscutter.net.proto.AbilityMixinBreakoutOuterClass.AbilityMixinBreakout.SyncType.UNRECOGNIZED : result;
     }
 
-    public static final int SYNC_CREATE_CONNECT_FIELD_NUMBER = 6;
+    public static final int RETCODE_FIELD_NUMBER = 8;
+    private int retcode_;
     /**
-     * <code>.BreakoutSyncCreateConnect sync_create_connect = 6;</code>
+     * <code>int32 retcode = 8;</code>
+     * @return The retcode.
+     */
+    @java.lang.Override
+    public int getRetcode() {
+      return retcode_;
+    }
+
+    public static final int SYNC_CREATE_CONNECT_FIELD_NUMBER = 12;
+    /**
+     * <code>.BreakoutSyncCreateConnect sync_create_connect = 12;</code>
      * @return Whether the syncCreateConnect field is set.
      */
     @java.lang.Override
     public boolean hasSyncCreateConnect() {
-      return syncCase_ == 6;
+      return syncCase_ == 12;
     }
     /**
-     * <code>.BreakoutSyncCreateConnect sync_create_connect = 6;</code>
+     * <code>.BreakoutSyncCreateConnect sync_create_connect = 12;</code>
      * @return The syncCreateConnect.
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.BreakoutSyncCreateConnectOuterClass.BreakoutSyncCreateConnect getSyncCreateConnect() {
-      if (syncCase_ == 6) {
+      if (syncCase_ == 12) {
          return (emu.grasscutter.net.proto.BreakoutSyncCreateConnectOuterClass.BreakoutSyncCreateConnect) sync_;
       }
       return emu.grasscutter.net.proto.BreakoutSyncCreateConnectOuterClass.BreakoutSyncCreateConnect.getDefaultInstance();
     }
     /**
-     * <code>.BreakoutSyncCreateConnect sync_create_connect = 6;</code>
+     * <code>.BreakoutSyncCreateConnect sync_create_connect = 12;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.BreakoutSyncCreateConnectOuterClass.BreakoutSyncCreateConnectOrBuilder getSyncCreateConnectOrBuilder() {
-      if (syncCase_ == 6) {
+      if (syncCase_ == 12) {
          return (emu.grasscutter.net.proto.BreakoutSyncCreateConnectOuterClass.BreakoutSyncCreateConnect) sync_;
       }
       return emu.grasscutter.net.proto.BreakoutSyncCreateConnectOuterClass.BreakoutSyncCreateConnect.getDefaultInstance();
@@ -571,94 +571,94 @@ public final class AbilityMixinBreakoutOuterClass {
       return emu.grasscutter.net.proto.BreakoutSyncPingOuterClass.BreakoutSyncPing.getDefaultInstance();
     }
 
-    public static final int SYNC_FINISH_GAME_FIELD_NUMBER = 13;
+    public static final int SYNC_FINISH_GAME_FIELD_NUMBER = 4;
     /**
-     * <code>.BreakoutSyncFinishGame sync_finish_game = 13;</code>
+     * <code>.BreakoutSyncFinishGame sync_finish_game = 4;</code>
      * @return Whether the syncFinishGame field is set.
      */
     @java.lang.Override
     public boolean hasSyncFinishGame() {
-      return syncCase_ == 13;
+      return syncCase_ == 4;
     }
     /**
-     * <code>.BreakoutSyncFinishGame sync_finish_game = 13;</code>
+     * <code>.BreakoutSyncFinishGame sync_finish_game = 4;</code>
      * @return The syncFinishGame.
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.BreakoutSyncFinishGameOuterClass.BreakoutSyncFinishGame getSyncFinishGame() {
-      if (syncCase_ == 13) {
+      if (syncCase_ == 4) {
          return (emu.grasscutter.net.proto.BreakoutSyncFinishGameOuterClass.BreakoutSyncFinishGame) sync_;
       }
       return emu.grasscutter.net.proto.BreakoutSyncFinishGameOuterClass.BreakoutSyncFinishGame.getDefaultInstance();
     }
     /**
-     * <code>.BreakoutSyncFinishGame sync_finish_game = 13;</code>
+     * <code>.BreakoutSyncFinishGame sync_finish_game = 4;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.BreakoutSyncFinishGameOuterClass.BreakoutSyncFinishGameOrBuilder getSyncFinishGameOrBuilder() {
-      if (syncCase_ == 13) {
+      if (syncCase_ == 4) {
          return (emu.grasscutter.net.proto.BreakoutSyncFinishGameOuterClass.BreakoutSyncFinishGame) sync_;
       }
       return emu.grasscutter.net.proto.BreakoutSyncFinishGameOuterClass.BreakoutSyncFinishGame.getDefaultInstance();
     }
 
-    public static final int SYNC_SNAP_SHOT_FIELD_NUMBER = 5;
+    public static final int SYNC_SNAP_SHOT_FIELD_NUMBER = 2;
     /**
-     * <code>.BreakoutSyncSnapShot sync_snap_shot = 5;</code>
+     * <code>.BreakoutSyncSnapShot sync_snap_shot = 2;</code>
      * @return Whether the syncSnapShot field is set.
      */
     @java.lang.Override
     public boolean hasSyncSnapShot() {
-      return syncCase_ == 5;
+      return syncCase_ == 2;
     }
     /**
-     * <code>.BreakoutSyncSnapShot sync_snap_shot = 5;</code>
+     * <code>.BreakoutSyncSnapShot sync_snap_shot = 2;</code>
      * @return The syncSnapShot.
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.BreakoutSyncSnapShotOuterClass.BreakoutSyncSnapShot getSyncSnapShot() {
-      if (syncCase_ == 5) {
+      if (syncCase_ == 2) {
          return (emu.grasscutter.net.proto.BreakoutSyncSnapShotOuterClass.BreakoutSyncSnapShot) sync_;
       }
       return emu.grasscutter.net.proto.BreakoutSyncSnapShotOuterClass.BreakoutSyncSnapShot.getDefaultInstance();
     }
     /**
-     * <code>.BreakoutSyncSnapShot sync_snap_shot = 5;</code>
+     * <code>.BreakoutSyncSnapShot sync_snap_shot = 2;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.BreakoutSyncSnapShotOuterClass.BreakoutSyncSnapShotOrBuilder getSyncSnapShotOrBuilder() {
-      if (syncCase_ == 5) {
+      if (syncCase_ == 2) {
          return (emu.grasscutter.net.proto.BreakoutSyncSnapShotOuterClass.BreakoutSyncSnapShot) sync_;
       }
       return emu.grasscutter.net.proto.BreakoutSyncSnapShotOuterClass.BreakoutSyncSnapShot.getDefaultInstance();
     }
 
-    public static final int SYNC_ACTION_FIELD_NUMBER = 15;
+    public static final int SYNC_ACTION_FIELD_NUMBER = 6;
     /**
-     * <code>.BreakoutSyncAction sync_action = 15;</code>
+     * <code>.BreakoutSyncAction sync_action = 6;</code>
      * @return Whether the syncAction field is set.
      */
     @java.lang.Override
     public boolean hasSyncAction() {
-      return syncCase_ == 15;
+      return syncCase_ == 6;
     }
     /**
-     * <code>.BreakoutSyncAction sync_action = 15;</code>
+     * <code>.BreakoutSyncAction sync_action = 6;</code>
      * @return The syncAction.
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.BreakoutSyncActionOuterClass.BreakoutSyncAction getSyncAction() {
-      if (syncCase_ == 15) {
+      if (syncCase_ == 6) {
          return (emu.grasscutter.net.proto.BreakoutSyncActionOuterClass.BreakoutSyncAction) sync_;
       }
       return emu.grasscutter.net.proto.BreakoutSyncActionOuterClass.BreakoutSyncAction.getDefaultInstance();
     }
     /**
-     * <code>.BreakoutSyncAction sync_action = 15;</code>
+     * <code>.BreakoutSyncAction sync_action = 6;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.BreakoutSyncActionOuterClass.BreakoutSyncActionOrBuilder getSyncActionOrBuilder() {
-      if (syncCase_ == 15) {
+      if (syncCase_ == 6) {
          return (emu.grasscutter.net.proto.BreakoutSyncActionOuterClass.BreakoutSyncAction) sync_;
       }
       return emu.grasscutter.net.proto.BreakoutSyncActionOuterClass.BreakoutSyncAction.getDefaultInstance();
@@ -678,26 +678,26 @@ public final class AbilityMixinBreakoutOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (retcode_ != 0) {
-        output.writeInt32(2, retcode_);
+      if (syncCase_ == 2) {
+        output.writeMessage(2, (emu.grasscutter.net.proto.BreakoutSyncSnapShotOuterClass.BreakoutSyncSnapShot) sync_);
       }
-      if (syncType_ != emu.grasscutter.net.proto.AbilityMixinBreakoutOuterClass.AbilityMixinBreakout.SyncType.SYNC_TYPE_NONE.getNumber()) {
-        output.writeEnum(4, syncType_);
-      }
-      if (syncCase_ == 5) {
-        output.writeMessage(5, (emu.grasscutter.net.proto.BreakoutSyncSnapShotOuterClass.BreakoutSyncSnapShot) sync_);
+      if (syncCase_ == 4) {
+        output.writeMessage(4, (emu.grasscutter.net.proto.BreakoutSyncFinishGameOuterClass.BreakoutSyncFinishGame) sync_);
       }
       if (syncCase_ == 6) {
-        output.writeMessage(6, (emu.grasscutter.net.proto.BreakoutSyncCreateConnectOuterClass.BreakoutSyncCreateConnect) sync_);
+        output.writeMessage(6, (emu.grasscutter.net.proto.BreakoutSyncActionOuterClass.BreakoutSyncAction) sync_);
+      }
+      if (retcode_ != 0) {
+        output.writeInt32(8, retcode_);
       }
       if (syncCase_ == 9) {
         output.writeMessage(9, (emu.grasscutter.net.proto.BreakoutSyncPingOuterClass.BreakoutSyncPing) sync_);
       }
-      if (syncCase_ == 13) {
-        output.writeMessage(13, (emu.grasscutter.net.proto.BreakoutSyncFinishGameOuterClass.BreakoutSyncFinishGame) sync_);
+      if (syncCase_ == 12) {
+        output.writeMessage(12, (emu.grasscutter.net.proto.BreakoutSyncCreateConnectOuterClass.BreakoutSyncCreateConnect) sync_);
       }
-      if (syncCase_ == 15) {
-        output.writeMessage(15, (emu.grasscutter.net.proto.BreakoutSyncActionOuterClass.BreakoutSyncAction) sync_);
+      if (syncType_ != emu.grasscutter.net.proto.AbilityMixinBreakoutOuterClass.AbilityMixinBreakout.SyncType.SYNC_TYPE_NONE.getNumber()) {
+        output.writeEnum(14, syncType_);
       }
       unknownFields.writeTo(output);
     }
@@ -708,33 +708,33 @@ public final class AbilityMixinBreakoutOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (retcode_ != 0) {
+      if (syncCase_ == 2) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, retcode_);
+          .computeMessageSize(2, (emu.grasscutter.net.proto.BreakoutSyncSnapShotOuterClass.BreakoutSyncSnapShot) sync_);
       }
-      if (syncType_ != emu.grasscutter.net.proto.AbilityMixinBreakoutOuterClass.AbilityMixinBreakout.SyncType.SYNC_TYPE_NONE.getNumber()) {
+      if (syncCase_ == 4) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(4, syncType_);
-      }
-      if (syncCase_ == 5) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, (emu.grasscutter.net.proto.BreakoutSyncSnapShotOuterClass.BreakoutSyncSnapShot) sync_);
+          .computeMessageSize(4, (emu.grasscutter.net.proto.BreakoutSyncFinishGameOuterClass.BreakoutSyncFinishGame) sync_);
       }
       if (syncCase_ == 6) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, (emu.grasscutter.net.proto.BreakoutSyncCreateConnectOuterClass.BreakoutSyncCreateConnect) sync_);
+          .computeMessageSize(6, (emu.grasscutter.net.proto.BreakoutSyncActionOuterClass.BreakoutSyncAction) sync_);
+      }
+      if (retcode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(8, retcode_);
       }
       if (syncCase_ == 9) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(9, (emu.grasscutter.net.proto.BreakoutSyncPingOuterClass.BreakoutSyncPing) sync_);
       }
-      if (syncCase_ == 13) {
+      if (syncCase_ == 12) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(13, (emu.grasscutter.net.proto.BreakoutSyncFinishGameOuterClass.BreakoutSyncFinishGame) sync_);
+          .computeMessageSize(12, (emu.grasscutter.net.proto.BreakoutSyncCreateConnectOuterClass.BreakoutSyncCreateConnect) sync_);
       }
-      if (syncCase_ == 15) {
+      if (syncType_ != emu.grasscutter.net.proto.AbilityMixinBreakoutOuterClass.AbilityMixinBreakout.SyncType.SYNC_TYPE_NONE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(15, (emu.grasscutter.net.proto.BreakoutSyncActionOuterClass.BreakoutSyncAction) sync_);
+          .computeEnumSize(14, syncType_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -751,12 +751,12 @@ public final class AbilityMixinBreakoutOuterClass {
       }
       emu.grasscutter.net.proto.AbilityMixinBreakoutOuterClass.AbilityMixinBreakout other = (emu.grasscutter.net.proto.AbilityMixinBreakoutOuterClass.AbilityMixinBreakout) obj;
 
+      if (syncType_ != other.syncType_) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
-      if (syncType_ != other.syncType_) return false;
       if (!getSyncCase().equals(other.getSyncCase())) return false;
       switch (syncCase_) {
-        case 6:
+        case 12:
           if (!getSyncCreateConnect()
               .equals(other.getSyncCreateConnect())) return false;
           break;
@@ -764,15 +764,15 @@ public final class AbilityMixinBreakoutOuterClass {
           if (!getSyncPing()
               .equals(other.getSyncPing())) return false;
           break;
-        case 13:
+        case 4:
           if (!getSyncFinishGame()
               .equals(other.getSyncFinishGame())) return false;
           break;
-        case 5:
+        case 2:
           if (!getSyncSnapShot()
               .equals(other.getSyncSnapShot())) return false;
           break;
-        case 15:
+        case 6:
           if (!getSyncAction()
               .equals(other.getSyncAction())) return false;
           break;
@@ -790,12 +790,12 @@ public final class AbilityMixinBreakoutOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getRetcode();
       hash = (37 * hash) + SYNC_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + syncType_;
+      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
+      hash = (53 * hash) + getRetcode();
       switch (syncCase_) {
-        case 6:
+        case 12:
           hash = (37 * hash) + SYNC_CREATE_CONNECT_FIELD_NUMBER;
           hash = (53 * hash) + getSyncCreateConnect().hashCode();
           break;
@@ -803,15 +803,15 @@ public final class AbilityMixinBreakoutOuterClass {
           hash = (37 * hash) + SYNC_PING_FIELD_NUMBER;
           hash = (53 * hash) + getSyncPing().hashCode();
           break;
-        case 13:
+        case 4:
           hash = (37 * hash) + SYNC_FINISH_GAME_FIELD_NUMBER;
           hash = (53 * hash) + getSyncFinishGame().hashCode();
           break;
-        case 5:
+        case 2:
           hash = (37 * hash) + SYNC_SNAP_SHOT_FIELD_NUMBER;
           hash = (53 * hash) + getSyncSnapShot().hashCode();
           break;
-        case 15:
+        case 6:
           hash = (37 * hash) + SYNC_ACTION_FIELD_NUMBER;
           hash = (53 * hash) + getSyncAction().hashCode();
           break;
@@ -915,7 +915,7 @@ public final class AbilityMixinBreakoutOuterClass {
     }
     /**
      * <pre>
-     * Obf: PKJJKBLLIGJ
+     * Obf: KOPLDLJGNEO
      * </pre>
      *
      * Protobuf type {@code AbilityMixinBreakout}
@@ -955,9 +955,9 @@ public final class AbilityMixinBreakoutOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        retcode_ = 0;
-
         syncType_ = 0;
+
+        retcode_ = 0;
 
         syncCase_ = 0;
         sync_ = null;
@@ -987,9 +987,9 @@ public final class AbilityMixinBreakoutOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.AbilityMixinBreakoutOuterClass.AbilityMixinBreakout buildPartial() {
         emu.grasscutter.net.proto.AbilityMixinBreakoutOuterClass.AbilityMixinBreakout result = new emu.grasscutter.net.proto.AbilityMixinBreakoutOuterClass.AbilityMixinBreakout(this);
-        result.retcode_ = retcode_;
         result.syncType_ = syncType_;
-        if (syncCase_ == 6) {
+        result.retcode_ = retcode_;
+        if (syncCase_ == 12) {
           if (syncCreateConnectBuilder_ == null) {
             result.sync_ = sync_;
           } else {
@@ -1003,21 +1003,21 @@ public final class AbilityMixinBreakoutOuterClass {
             result.sync_ = syncPingBuilder_.build();
           }
         }
-        if (syncCase_ == 13) {
+        if (syncCase_ == 4) {
           if (syncFinishGameBuilder_ == null) {
             result.sync_ = sync_;
           } else {
             result.sync_ = syncFinishGameBuilder_.build();
           }
         }
-        if (syncCase_ == 5) {
+        if (syncCase_ == 2) {
           if (syncSnapShotBuilder_ == null) {
             result.sync_ = sync_;
           } else {
             result.sync_ = syncSnapShotBuilder_.build();
           }
         }
-        if (syncCase_ == 15) {
+        if (syncCase_ == 6) {
           if (syncActionBuilder_ == null) {
             result.sync_ = sync_;
           } else {
@@ -1073,11 +1073,11 @@ public final class AbilityMixinBreakoutOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.AbilityMixinBreakoutOuterClass.AbilityMixinBreakout other) {
         if (other == emu.grasscutter.net.proto.AbilityMixinBreakoutOuterClass.AbilityMixinBreakout.getDefaultInstance()) return this;
-        if (other.getRetcode() != 0) {
-          setRetcode(other.getRetcode());
-        }
         if (other.syncType_ != 0) {
           setSyncTypeValue(other.getSyncTypeValue());
+        }
+        if (other.getRetcode() != 0) {
+          setRetcode(other.getRetcode());
         }
         switch (other.getSyncCase()) {
           case SYNC_CREATE_CONNECT: {
@@ -1148,47 +1148,16 @@ public final class AbilityMixinBreakoutOuterClass {
       }
 
 
-      private int retcode_ ;
-      /**
-       * <code>int32 retcode = 2;</code>
-       * @return The retcode.
-       */
-      @java.lang.Override
-      public int getRetcode() {
-        return retcode_;
-      }
-      /**
-       * <code>int32 retcode = 2;</code>
-       * @param value The retcode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRetcode(int value) {
-        
-        retcode_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 retcode = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRetcode() {
-        
-        retcode_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int syncType_ = 0;
       /**
-       * <code>.AbilityMixinBreakout.SyncType sync_type = 4;</code>
+       * <code>.AbilityMixinBreakout.SyncType sync_type = 14;</code>
        * @return The enum numeric value on the wire for syncType.
        */
       @java.lang.Override public int getSyncTypeValue() {
         return syncType_;
       }
       /**
-       * <code>.AbilityMixinBreakout.SyncType sync_type = 4;</code>
+       * <code>.AbilityMixinBreakout.SyncType sync_type = 14;</code>
        * @param value The enum numeric value on the wire for syncType to set.
        * @return This builder for chaining.
        */
@@ -1199,7 +1168,7 @@ public final class AbilityMixinBreakoutOuterClass {
         return this;
       }
       /**
-       * <code>.AbilityMixinBreakout.SyncType sync_type = 4;</code>
+       * <code>.AbilityMixinBreakout.SyncType sync_type = 14;</code>
        * @return The syncType.
        */
       @java.lang.Override
@@ -1209,7 +1178,7 @@ public final class AbilityMixinBreakoutOuterClass {
         return result == null ? emu.grasscutter.net.proto.AbilityMixinBreakoutOuterClass.AbilityMixinBreakout.SyncType.UNRECOGNIZED : result;
       }
       /**
-       * <code>.AbilityMixinBreakout.SyncType sync_type = 4;</code>
+       * <code>.AbilityMixinBreakout.SyncType sync_type = 14;</code>
        * @param value The syncType to set.
        * @return This builder for chaining.
        */
@@ -1223,7 +1192,7 @@ public final class AbilityMixinBreakoutOuterClass {
         return this;
       }
       /**
-       * <code>.AbilityMixinBreakout.SyncType sync_type = 4;</code>
+       * <code>.AbilityMixinBreakout.SyncType sync_type = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearSyncType() {
@@ -1233,36 +1202,67 @@ public final class AbilityMixinBreakoutOuterClass {
         return this;
       }
 
+      private int retcode_ ;
+      /**
+       * <code>int32 retcode = 8;</code>
+       * @return The retcode.
+       */
+      @java.lang.Override
+      public int getRetcode() {
+        return retcode_;
+      }
+      /**
+       * <code>int32 retcode = 8;</code>
+       * @param value The retcode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRetcode(int value) {
+        
+        retcode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 retcode = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRetcode() {
+        
+        retcode_ = 0;
+        onChanged();
+        return this;
+      }
+
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.BreakoutSyncCreateConnectOuterClass.BreakoutSyncCreateConnect, emu.grasscutter.net.proto.BreakoutSyncCreateConnectOuterClass.BreakoutSyncCreateConnect.Builder, emu.grasscutter.net.proto.BreakoutSyncCreateConnectOuterClass.BreakoutSyncCreateConnectOrBuilder> syncCreateConnectBuilder_;
       /**
-       * <code>.BreakoutSyncCreateConnect sync_create_connect = 6;</code>
+       * <code>.BreakoutSyncCreateConnect sync_create_connect = 12;</code>
        * @return Whether the syncCreateConnect field is set.
        */
       @java.lang.Override
       public boolean hasSyncCreateConnect() {
-        return syncCase_ == 6;
+        return syncCase_ == 12;
       }
       /**
-       * <code>.BreakoutSyncCreateConnect sync_create_connect = 6;</code>
+       * <code>.BreakoutSyncCreateConnect sync_create_connect = 12;</code>
        * @return The syncCreateConnect.
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.BreakoutSyncCreateConnectOuterClass.BreakoutSyncCreateConnect getSyncCreateConnect() {
         if (syncCreateConnectBuilder_ == null) {
-          if (syncCase_ == 6) {
+          if (syncCase_ == 12) {
             return (emu.grasscutter.net.proto.BreakoutSyncCreateConnectOuterClass.BreakoutSyncCreateConnect) sync_;
           }
           return emu.grasscutter.net.proto.BreakoutSyncCreateConnectOuterClass.BreakoutSyncCreateConnect.getDefaultInstance();
         } else {
-          if (syncCase_ == 6) {
+          if (syncCase_ == 12) {
             return syncCreateConnectBuilder_.getMessage();
           }
           return emu.grasscutter.net.proto.BreakoutSyncCreateConnectOuterClass.BreakoutSyncCreateConnect.getDefaultInstance();
         }
       }
       /**
-       * <code>.BreakoutSyncCreateConnect sync_create_connect = 6;</code>
+       * <code>.BreakoutSyncCreateConnect sync_create_connect = 12;</code>
        */
       public Builder setSyncCreateConnect(emu.grasscutter.net.proto.BreakoutSyncCreateConnectOuterClass.BreakoutSyncCreateConnect value) {
         if (syncCreateConnectBuilder_ == null) {
@@ -1274,11 +1274,11 @@ public final class AbilityMixinBreakoutOuterClass {
         } else {
           syncCreateConnectBuilder_.setMessage(value);
         }
-        syncCase_ = 6;
+        syncCase_ = 12;
         return this;
       }
       /**
-       * <code>.BreakoutSyncCreateConnect sync_create_connect = 6;</code>
+       * <code>.BreakoutSyncCreateConnect sync_create_connect = 12;</code>
        */
       public Builder setSyncCreateConnect(
           emu.grasscutter.net.proto.BreakoutSyncCreateConnectOuterClass.BreakoutSyncCreateConnect.Builder builderForValue) {
@@ -1288,15 +1288,15 @@ public final class AbilityMixinBreakoutOuterClass {
         } else {
           syncCreateConnectBuilder_.setMessage(builderForValue.build());
         }
-        syncCase_ = 6;
+        syncCase_ = 12;
         return this;
       }
       /**
-       * <code>.BreakoutSyncCreateConnect sync_create_connect = 6;</code>
+       * <code>.BreakoutSyncCreateConnect sync_create_connect = 12;</code>
        */
       public Builder mergeSyncCreateConnect(emu.grasscutter.net.proto.BreakoutSyncCreateConnectOuterClass.BreakoutSyncCreateConnect value) {
         if (syncCreateConnectBuilder_ == null) {
-          if (syncCase_ == 6 &&
+          if (syncCase_ == 12 &&
               sync_ != emu.grasscutter.net.proto.BreakoutSyncCreateConnectOuterClass.BreakoutSyncCreateConnect.getDefaultInstance()) {
             sync_ = emu.grasscutter.net.proto.BreakoutSyncCreateConnectOuterClass.BreakoutSyncCreateConnect.newBuilder((emu.grasscutter.net.proto.BreakoutSyncCreateConnectOuterClass.BreakoutSyncCreateConnect) sync_)
                 .mergeFrom(value).buildPartial();
@@ -1305,26 +1305,26 @@ public final class AbilityMixinBreakoutOuterClass {
           }
           onChanged();
         } else {
-          if (syncCase_ == 6) {
+          if (syncCase_ == 12) {
             syncCreateConnectBuilder_.mergeFrom(value);
           }
           syncCreateConnectBuilder_.setMessage(value);
         }
-        syncCase_ = 6;
+        syncCase_ = 12;
         return this;
       }
       /**
-       * <code>.BreakoutSyncCreateConnect sync_create_connect = 6;</code>
+       * <code>.BreakoutSyncCreateConnect sync_create_connect = 12;</code>
        */
       public Builder clearSyncCreateConnect() {
         if (syncCreateConnectBuilder_ == null) {
-          if (syncCase_ == 6) {
+          if (syncCase_ == 12) {
             syncCase_ = 0;
             sync_ = null;
             onChanged();
           }
         } else {
-          if (syncCase_ == 6) {
+          if (syncCase_ == 12) {
             syncCase_ = 0;
             sync_ = null;
           }
@@ -1333,33 +1333,33 @@ public final class AbilityMixinBreakoutOuterClass {
         return this;
       }
       /**
-       * <code>.BreakoutSyncCreateConnect sync_create_connect = 6;</code>
+       * <code>.BreakoutSyncCreateConnect sync_create_connect = 12;</code>
        */
       public emu.grasscutter.net.proto.BreakoutSyncCreateConnectOuterClass.BreakoutSyncCreateConnect.Builder getSyncCreateConnectBuilder() {
         return getSyncCreateConnectFieldBuilder().getBuilder();
       }
       /**
-       * <code>.BreakoutSyncCreateConnect sync_create_connect = 6;</code>
+       * <code>.BreakoutSyncCreateConnect sync_create_connect = 12;</code>
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.BreakoutSyncCreateConnectOuterClass.BreakoutSyncCreateConnectOrBuilder getSyncCreateConnectOrBuilder() {
-        if ((syncCase_ == 6) && (syncCreateConnectBuilder_ != null)) {
+        if ((syncCase_ == 12) && (syncCreateConnectBuilder_ != null)) {
           return syncCreateConnectBuilder_.getMessageOrBuilder();
         } else {
-          if (syncCase_ == 6) {
+          if (syncCase_ == 12) {
             return (emu.grasscutter.net.proto.BreakoutSyncCreateConnectOuterClass.BreakoutSyncCreateConnect) sync_;
           }
           return emu.grasscutter.net.proto.BreakoutSyncCreateConnectOuterClass.BreakoutSyncCreateConnect.getDefaultInstance();
         }
       }
       /**
-       * <code>.BreakoutSyncCreateConnect sync_create_connect = 6;</code>
+       * <code>.BreakoutSyncCreateConnect sync_create_connect = 12;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.BreakoutSyncCreateConnectOuterClass.BreakoutSyncCreateConnect, emu.grasscutter.net.proto.BreakoutSyncCreateConnectOuterClass.BreakoutSyncCreateConnect.Builder, emu.grasscutter.net.proto.BreakoutSyncCreateConnectOuterClass.BreakoutSyncCreateConnectOrBuilder> 
           getSyncCreateConnectFieldBuilder() {
         if (syncCreateConnectBuilder_ == null) {
-          if (!(syncCase_ == 6)) {
+          if (!(syncCase_ == 12)) {
             sync_ = emu.grasscutter.net.proto.BreakoutSyncCreateConnectOuterClass.BreakoutSyncCreateConnect.getDefaultInstance();
           }
           syncCreateConnectBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -1369,7 +1369,7 @@ public final class AbilityMixinBreakoutOuterClass {
                   isClean());
           sync_ = null;
         }
-        syncCase_ = 6;
+        syncCase_ = 12;
         onChanged();;
         return syncCreateConnectBuilder_;
       }
@@ -1518,33 +1518,33 @@ public final class AbilityMixinBreakoutOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.BreakoutSyncFinishGameOuterClass.BreakoutSyncFinishGame, emu.grasscutter.net.proto.BreakoutSyncFinishGameOuterClass.BreakoutSyncFinishGame.Builder, emu.grasscutter.net.proto.BreakoutSyncFinishGameOuterClass.BreakoutSyncFinishGameOrBuilder> syncFinishGameBuilder_;
       /**
-       * <code>.BreakoutSyncFinishGame sync_finish_game = 13;</code>
+       * <code>.BreakoutSyncFinishGame sync_finish_game = 4;</code>
        * @return Whether the syncFinishGame field is set.
        */
       @java.lang.Override
       public boolean hasSyncFinishGame() {
-        return syncCase_ == 13;
+        return syncCase_ == 4;
       }
       /**
-       * <code>.BreakoutSyncFinishGame sync_finish_game = 13;</code>
+       * <code>.BreakoutSyncFinishGame sync_finish_game = 4;</code>
        * @return The syncFinishGame.
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.BreakoutSyncFinishGameOuterClass.BreakoutSyncFinishGame getSyncFinishGame() {
         if (syncFinishGameBuilder_ == null) {
-          if (syncCase_ == 13) {
+          if (syncCase_ == 4) {
             return (emu.grasscutter.net.proto.BreakoutSyncFinishGameOuterClass.BreakoutSyncFinishGame) sync_;
           }
           return emu.grasscutter.net.proto.BreakoutSyncFinishGameOuterClass.BreakoutSyncFinishGame.getDefaultInstance();
         } else {
-          if (syncCase_ == 13) {
+          if (syncCase_ == 4) {
             return syncFinishGameBuilder_.getMessage();
           }
           return emu.grasscutter.net.proto.BreakoutSyncFinishGameOuterClass.BreakoutSyncFinishGame.getDefaultInstance();
         }
       }
       /**
-       * <code>.BreakoutSyncFinishGame sync_finish_game = 13;</code>
+       * <code>.BreakoutSyncFinishGame sync_finish_game = 4;</code>
        */
       public Builder setSyncFinishGame(emu.grasscutter.net.proto.BreakoutSyncFinishGameOuterClass.BreakoutSyncFinishGame value) {
         if (syncFinishGameBuilder_ == null) {
@@ -1556,11 +1556,11 @@ public final class AbilityMixinBreakoutOuterClass {
         } else {
           syncFinishGameBuilder_.setMessage(value);
         }
-        syncCase_ = 13;
+        syncCase_ = 4;
         return this;
       }
       /**
-       * <code>.BreakoutSyncFinishGame sync_finish_game = 13;</code>
+       * <code>.BreakoutSyncFinishGame sync_finish_game = 4;</code>
        */
       public Builder setSyncFinishGame(
           emu.grasscutter.net.proto.BreakoutSyncFinishGameOuterClass.BreakoutSyncFinishGame.Builder builderForValue) {
@@ -1570,15 +1570,15 @@ public final class AbilityMixinBreakoutOuterClass {
         } else {
           syncFinishGameBuilder_.setMessage(builderForValue.build());
         }
-        syncCase_ = 13;
+        syncCase_ = 4;
         return this;
       }
       /**
-       * <code>.BreakoutSyncFinishGame sync_finish_game = 13;</code>
+       * <code>.BreakoutSyncFinishGame sync_finish_game = 4;</code>
        */
       public Builder mergeSyncFinishGame(emu.grasscutter.net.proto.BreakoutSyncFinishGameOuterClass.BreakoutSyncFinishGame value) {
         if (syncFinishGameBuilder_ == null) {
-          if (syncCase_ == 13 &&
+          if (syncCase_ == 4 &&
               sync_ != emu.grasscutter.net.proto.BreakoutSyncFinishGameOuterClass.BreakoutSyncFinishGame.getDefaultInstance()) {
             sync_ = emu.grasscutter.net.proto.BreakoutSyncFinishGameOuterClass.BreakoutSyncFinishGame.newBuilder((emu.grasscutter.net.proto.BreakoutSyncFinishGameOuterClass.BreakoutSyncFinishGame) sync_)
                 .mergeFrom(value).buildPartial();
@@ -1587,26 +1587,26 @@ public final class AbilityMixinBreakoutOuterClass {
           }
           onChanged();
         } else {
-          if (syncCase_ == 13) {
+          if (syncCase_ == 4) {
             syncFinishGameBuilder_.mergeFrom(value);
           }
           syncFinishGameBuilder_.setMessage(value);
         }
-        syncCase_ = 13;
+        syncCase_ = 4;
         return this;
       }
       /**
-       * <code>.BreakoutSyncFinishGame sync_finish_game = 13;</code>
+       * <code>.BreakoutSyncFinishGame sync_finish_game = 4;</code>
        */
       public Builder clearSyncFinishGame() {
         if (syncFinishGameBuilder_ == null) {
-          if (syncCase_ == 13) {
+          if (syncCase_ == 4) {
             syncCase_ = 0;
             sync_ = null;
             onChanged();
           }
         } else {
-          if (syncCase_ == 13) {
+          if (syncCase_ == 4) {
             syncCase_ = 0;
             sync_ = null;
           }
@@ -1615,33 +1615,33 @@ public final class AbilityMixinBreakoutOuterClass {
         return this;
       }
       /**
-       * <code>.BreakoutSyncFinishGame sync_finish_game = 13;</code>
+       * <code>.BreakoutSyncFinishGame sync_finish_game = 4;</code>
        */
       public emu.grasscutter.net.proto.BreakoutSyncFinishGameOuterClass.BreakoutSyncFinishGame.Builder getSyncFinishGameBuilder() {
         return getSyncFinishGameFieldBuilder().getBuilder();
       }
       /**
-       * <code>.BreakoutSyncFinishGame sync_finish_game = 13;</code>
+       * <code>.BreakoutSyncFinishGame sync_finish_game = 4;</code>
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.BreakoutSyncFinishGameOuterClass.BreakoutSyncFinishGameOrBuilder getSyncFinishGameOrBuilder() {
-        if ((syncCase_ == 13) && (syncFinishGameBuilder_ != null)) {
+        if ((syncCase_ == 4) && (syncFinishGameBuilder_ != null)) {
           return syncFinishGameBuilder_.getMessageOrBuilder();
         } else {
-          if (syncCase_ == 13) {
+          if (syncCase_ == 4) {
             return (emu.grasscutter.net.proto.BreakoutSyncFinishGameOuterClass.BreakoutSyncFinishGame) sync_;
           }
           return emu.grasscutter.net.proto.BreakoutSyncFinishGameOuterClass.BreakoutSyncFinishGame.getDefaultInstance();
         }
       }
       /**
-       * <code>.BreakoutSyncFinishGame sync_finish_game = 13;</code>
+       * <code>.BreakoutSyncFinishGame sync_finish_game = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.BreakoutSyncFinishGameOuterClass.BreakoutSyncFinishGame, emu.grasscutter.net.proto.BreakoutSyncFinishGameOuterClass.BreakoutSyncFinishGame.Builder, emu.grasscutter.net.proto.BreakoutSyncFinishGameOuterClass.BreakoutSyncFinishGameOrBuilder> 
           getSyncFinishGameFieldBuilder() {
         if (syncFinishGameBuilder_ == null) {
-          if (!(syncCase_ == 13)) {
+          if (!(syncCase_ == 4)) {
             sync_ = emu.grasscutter.net.proto.BreakoutSyncFinishGameOuterClass.BreakoutSyncFinishGame.getDefaultInstance();
           }
           syncFinishGameBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -1651,7 +1651,7 @@ public final class AbilityMixinBreakoutOuterClass {
                   isClean());
           sync_ = null;
         }
-        syncCase_ = 13;
+        syncCase_ = 4;
         onChanged();;
         return syncFinishGameBuilder_;
       }
@@ -1659,33 +1659,33 @@ public final class AbilityMixinBreakoutOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.BreakoutSyncSnapShotOuterClass.BreakoutSyncSnapShot, emu.grasscutter.net.proto.BreakoutSyncSnapShotOuterClass.BreakoutSyncSnapShot.Builder, emu.grasscutter.net.proto.BreakoutSyncSnapShotOuterClass.BreakoutSyncSnapShotOrBuilder> syncSnapShotBuilder_;
       /**
-       * <code>.BreakoutSyncSnapShot sync_snap_shot = 5;</code>
+       * <code>.BreakoutSyncSnapShot sync_snap_shot = 2;</code>
        * @return Whether the syncSnapShot field is set.
        */
       @java.lang.Override
       public boolean hasSyncSnapShot() {
-        return syncCase_ == 5;
+        return syncCase_ == 2;
       }
       /**
-       * <code>.BreakoutSyncSnapShot sync_snap_shot = 5;</code>
+       * <code>.BreakoutSyncSnapShot sync_snap_shot = 2;</code>
        * @return The syncSnapShot.
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.BreakoutSyncSnapShotOuterClass.BreakoutSyncSnapShot getSyncSnapShot() {
         if (syncSnapShotBuilder_ == null) {
-          if (syncCase_ == 5) {
+          if (syncCase_ == 2) {
             return (emu.grasscutter.net.proto.BreakoutSyncSnapShotOuterClass.BreakoutSyncSnapShot) sync_;
           }
           return emu.grasscutter.net.proto.BreakoutSyncSnapShotOuterClass.BreakoutSyncSnapShot.getDefaultInstance();
         } else {
-          if (syncCase_ == 5) {
+          if (syncCase_ == 2) {
             return syncSnapShotBuilder_.getMessage();
           }
           return emu.grasscutter.net.proto.BreakoutSyncSnapShotOuterClass.BreakoutSyncSnapShot.getDefaultInstance();
         }
       }
       /**
-       * <code>.BreakoutSyncSnapShot sync_snap_shot = 5;</code>
+       * <code>.BreakoutSyncSnapShot sync_snap_shot = 2;</code>
        */
       public Builder setSyncSnapShot(emu.grasscutter.net.proto.BreakoutSyncSnapShotOuterClass.BreakoutSyncSnapShot value) {
         if (syncSnapShotBuilder_ == null) {
@@ -1697,11 +1697,11 @@ public final class AbilityMixinBreakoutOuterClass {
         } else {
           syncSnapShotBuilder_.setMessage(value);
         }
-        syncCase_ = 5;
+        syncCase_ = 2;
         return this;
       }
       /**
-       * <code>.BreakoutSyncSnapShot sync_snap_shot = 5;</code>
+       * <code>.BreakoutSyncSnapShot sync_snap_shot = 2;</code>
        */
       public Builder setSyncSnapShot(
           emu.grasscutter.net.proto.BreakoutSyncSnapShotOuterClass.BreakoutSyncSnapShot.Builder builderForValue) {
@@ -1711,15 +1711,15 @@ public final class AbilityMixinBreakoutOuterClass {
         } else {
           syncSnapShotBuilder_.setMessage(builderForValue.build());
         }
-        syncCase_ = 5;
+        syncCase_ = 2;
         return this;
       }
       /**
-       * <code>.BreakoutSyncSnapShot sync_snap_shot = 5;</code>
+       * <code>.BreakoutSyncSnapShot sync_snap_shot = 2;</code>
        */
       public Builder mergeSyncSnapShot(emu.grasscutter.net.proto.BreakoutSyncSnapShotOuterClass.BreakoutSyncSnapShot value) {
         if (syncSnapShotBuilder_ == null) {
-          if (syncCase_ == 5 &&
+          if (syncCase_ == 2 &&
               sync_ != emu.grasscutter.net.proto.BreakoutSyncSnapShotOuterClass.BreakoutSyncSnapShot.getDefaultInstance()) {
             sync_ = emu.grasscutter.net.proto.BreakoutSyncSnapShotOuterClass.BreakoutSyncSnapShot.newBuilder((emu.grasscutter.net.proto.BreakoutSyncSnapShotOuterClass.BreakoutSyncSnapShot) sync_)
                 .mergeFrom(value).buildPartial();
@@ -1728,26 +1728,26 @@ public final class AbilityMixinBreakoutOuterClass {
           }
           onChanged();
         } else {
-          if (syncCase_ == 5) {
+          if (syncCase_ == 2) {
             syncSnapShotBuilder_.mergeFrom(value);
           }
           syncSnapShotBuilder_.setMessage(value);
         }
-        syncCase_ = 5;
+        syncCase_ = 2;
         return this;
       }
       /**
-       * <code>.BreakoutSyncSnapShot sync_snap_shot = 5;</code>
+       * <code>.BreakoutSyncSnapShot sync_snap_shot = 2;</code>
        */
       public Builder clearSyncSnapShot() {
         if (syncSnapShotBuilder_ == null) {
-          if (syncCase_ == 5) {
+          if (syncCase_ == 2) {
             syncCase_ = 0;
             sync_ = null;
             onChanged();
           }
         } else {
-          if (syncCase_ == 5) {
+          if (syncCase_ == 2) {
             syncCase_ = 0;
             sync_ = null;
           }
@@ -1756,33 +1756,33 @@ public final class AbilityMixinBreakoutOuterClass {
         return this;
       }
       /**
-       * <code>.BreakoutSyncSnapShot sync_snap_shot = 5;</code>
+       * <code>.BreakoutSyncSnapShot sync_snap_shot = 2;</code>
        */
       public emu.grasscutter.net.proto.BreakoutSyncSnapShotOuterClass.BreakoutSyncSnapShot.Builder getSyncSnapShotBuilder() {
         return getSyncSnapShotFieldBuilder().getBuilder();
       }
       /**
-       * <code>.BreakoutSyncSnapShot sync_snap_shot = 5;</code>
+       * <code>.BreakoutSyncSnapShot sync_snap_shot = 2;</code>
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.BreakoutSyncSnapShotOuterClass.BreakoutSyncSnapShotOrBuilder getSyncSnapShotOrBuilder() {
-        if ((syncCase_ == 5) && (syncSnapShotBuilder_ != null)) {
+        if ((syncCase_ == 2) && (syncSnapShotBuilder_ != null)) {
           return syncSnapShotBuilder_.getMessageOrBuilder();
         } else {
-          if (syncCase_ == 5) {
+          if (syncCase_ == 2) {
             return (emu.grasscutter.net.proto.BreakoutSyncSnapShotOuterClass.BreakoutSyncSnapShot) sync_;
           }
           return emu.grasscutter.net.proto.BreakoutSyncSnapShotOuterClass.BreakoutSyncSnapShot.getDefaultInstance();
         }
       }
       /**
-       * <code>.BreakoutSyncSnapShot sync_snap_shot = 5;</code>
+       * <code>.BreakoutSyncSnapShot sync_snap_shot = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.BreakoutSyncSnapShotOuterClass.BreakoutSyncSnapShot, emu.grasscutter.net.proto.BreakoutSyncSnapShotOuterClass.BreakoutSyncSnapShot.Builder, emu.grasscutter.net.proto.BreakoutSyncSnapShotOuterClass.BreakoutSyncSnapShotOrBuilder> 
           getSyncSnapShotFieldBuilder() {
         if (syncSnapShotBuilder_ == null) {
-          if (!(syncCase_ == 5)) {
+          if (!(syncCase_ == 2)) {
             sync_ = emu.grasscutter.net.proto.BreakoutSyncSnapShotOuterClass.BreakoutSyncSnapShot.getDefaultInstance();
           }
           syncSnapShotBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -1792,7 +1792,7 @@ public final class AbilityMixinBreakoutOuterClass {
                   isClean());
           sync_ = null;
         }
-        syncCase_ = 5;
+        syncCase_ = 2;
         onChanged();;
         return syncSnapShotBuilder_;
       }
@@ -1800,33 +1800,33 @@ public final class AbilityMixinBreakoutOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.BreakoutSyncActionOuterClass.BreakoutSyncAction, emu.grasscutter.net.proto.BreakoutSyncActionOuterClass.BreakoutSyncAction.Builder, emu.grasscutter.net.proto.BreakoutSyncActionOuterClass.BreakoutSyncActionOrBuilder> syncActionBuilder_;
       /**
-       * <code>.BreakoutSyncAction sync_action = 15;</code>
+       * <code>.BreakoutSyncAction sync_action = 6;</code>
        * @return Whether the syncAction field is set.
        */
       @java.lang.Override
       public boolean hasSyncAction() {
-        return syncCase_ == 15;
+        return syncCase_ == 6;
       }
       /**
-       * <code>.BreakoutSyncAction sync_action = 15;</code>
+       * <code>.BreakoutSyncAction sync_action = 6;</code>
        * @return The syncAction.
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.BreakoutSyncActionOuterClass.BreakoutSyncAction getSyncAction() {
         if (syncActionBuilder_ == null) {
-          if (syncCase_ == 15) {
+          if (syncCase_ == 6) {
             return (emu.grasscutter.net.proto.BreakoutSyncActionOuterClass.BreakoutSyncAction) sync_;
           }
           return emu.grasscutter.net.proto.BreakoutSyncActionOuterClass.BreakoutSyncAction.getDefaultInstance();
         } else {
-          if (syncCase_ == 15) {
+          if (syncCase_ == 6) {
             return syncActionBuilder_.getMessage();
           }
           return emu.grasscutter.net.proto.BreakoutSyncActionOuterClass.BreakoutSyncAction.getDefaultInstance();
         }
       }
       /**
-       * <code>.BreakoutSyncAction sync_action = 15;</code>
+       * <code>.BreakoutSyncAction sync_action = 6;</code>
        */
       public Builder setSyncAction(emu.grasscutter.net.proto.BreakoutSyncActionOuterClass.BreakoutSyncAction value) {
         if (syncActionBuilder_ == null) {
@@ -1838,11 +1838,11 @@ public final class AbilityMixinBreakoutOuterClass {
         } else {
           syncActionBuilder_.setMessage(value);
         }
-        syncCase_ = 15;
+        syncCase_ = 6;
         return this;
       }
       /**
-       * <code>.BreakoutSyncAction sync_action = 15;</code>
+       * <code>.BreakoutSyncAction sync_action = 6;</code>
        */
       public Builder setSyncAction(
           emu.grasscutter.net.proto.BreakoutSyncActionOuterClass.BreakoutSyncAction.Builder builderForValue) {
@@ -1852,15 +1852,15 @@ public final class AbilityMixinBreakoutOuterClass {
         } else {
           syncActionBuilder_.setMessage(builderForValue.build());
         }
-        syncCase_ = 15;
+        syncCase_ = 6;
         return this;
       }
       /**
-       * <code>.BreakoutSyncAction sync_action = 15;</code>
+       * <code>.BreakoutSyncAction sync_action = 6;</code>
        */
       public Builder mergeSyncAction(emu.grasscutter.net.proto.BreakoutSyncActionOuterClass.BreakoutSyncAction value) {
         if (syncActionBuilder_ == null) {
-          if (syncCase_ == 15 &&
+          if (syncCase_ == 6 &&
               sync_ != emu.grasscutter.net.proto.BreakoutSyncActionOuterClass.BreakoutSyncAction.getDefaultInstance()) {
             sync_ = emu.grasscutter.net.proto.BreakoutSyncActionOuterClass.BreakoutSyncAction.newBuilder((emu.grasscutter.net.proto.BreakoutSyncActionOuterClass.BreakoutSyncAction) sync_)
                 .mergeFrom(value).buildPartial();
@@ -1869,26 +1869,26 @@ public final class AbilityMixinBreakoutOuterClass {
           }
           onChanged();
         } else {
-          if (syncCase_ == 15) {
+          if (syncCase_ == 6) {
             syncActionBuilder_.mergeFrom(value);
           }
           syncActionBuilder_.setMessage(value);
         }
-        syncCase_ = 15;
+        syncCase_ = 6;
         return this;
       }
       /**
-       * <code>.BreakoutSyncAction sync_action = 15;</code>
+       * <code>.BreakoutSyncAction sync_action = 6;</code>
        */
       public Builder clearSyncAction() {
         if (syncActionBuilder_ == null) {
-          if (syncCase_ == 15) {
+          if (syncCase_ == 6) {
             syncCase_ = 0;
             sync_ = null;
             onChanged();
           }
         } else {
-          if (syncCase_ == 15) {
+          if (syncCase_ == 6) {
             syncCase_ = 0;
             sync_ = null;
           }
@@ -1897,33 +1897,33 @@ public final class AbilityMixinBreakoutOuterClass {
         return this;
       }
       /**
-       * <code>.BreakoutSyncAction sync_action = 15;</code>
+       * <code>.BreakoutSyncAction sync_action = 6;</code>
        */
       public emu.grasscutter.net.proto.BreakoutSyncActionOuterClass.BreakoutSyncAction.Builder getSyncActionBuilder() {
         return getSyncActionFieldBuilder().getBuilder();
       }
       /**
-       * <code>.BreakoutSyncAction sync_action = 15;</code>
+       * <code>.BreakoutSyncAction sync_action = 6;</code>
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.BreakoutSyncActionOuterClass.BreakoutSyncActionOrBuilder getSyncActionOrBuilder() {
-        if ((syncCase_ == 15) && (syncActionBuilder_ != null)) {
+        if ((syncCase_ == 6) && (syncActionBuilder_ != null)) {
           return syncActionBuilder_.getMessageOrBuilder();
         } else {
-          if (syncCase_ == 15) {
+          if (syncCase_ == 6) {
             return (emu.grasscutter.net.proto.BreakoutSyncActionOuterClass.BreakoutSyncAction) sync_;
           }
           return emu.grasscutter.net.proto.BreakoutSyncActionOuterClass.BreakoutSyncAction.getDefaultInstance();
         }
       }
       /**
-       * <code>.BreakoutSyncAction sync_action = 15;</code>
+       * <code>.BreakoutSyncAction sync_action = 6;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.BreakoutSyncActionOuterClass.BreakoutSyncAction, emu.grasscutter.net.proto.BreakoutSyncActionOuterClass.BreakoutSyncAction.Builder, emu.grasscutter.net.proto.BreakoutSyncActionOuterClass.BreakoutSyncActionOrBuilder> 
           getSyncActionFieldBuilder() {
         if (syncActionBuilder_ == null) {
-          if (!(syncCase_ == 15)) {
+          if (!(syncCase_ == 6)) {
             sync_ = emu.grasscutter.net.proto.BreakoutSyncActionOuterClass.BreakoutSyncAction.getDefaultInstance();
           }
           syncActionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -1933,7 +1933,7 @@ public final class AbilityMixinBreakoutOuterClass {
                   isClean());
           sync_ = null;
         }
-        syncCase_ = 15;
+        syncCase_ = 6;
         onChanged();;
         return syncActionBuilder_;
       }
@@ -2008,14 +2008,14 @@ public final class AbilityMixinBreakoutOuterClass {
       "ncCreateConnect.proto\032\026BreakoutSyncPing." +
       "proto\032\034BreakoutSyncFinishGame.proto\032\032Bre" +
       "akoutSyncSnapShot.proto\032\030BreakoutSyncAct" +
-      "ion.proto\"\216\004\n\024AbilityMixinBreakout\022\017\n\007re" +
-      "tcode\030\002 \001(\005\0221\n\tsync_type\030\004 \001(\0162\036.Ability" +
-      "MixinBreakout.SyncType\0229\n\023sync_create_co" +
-      "nnect\030\006 \001(\0132\032.BreakoutSyncCreateConnectH" +
+      "ion.proto\"\216\004\n\024AbilityMixinBreakout\0221\n\tsy" +
+      "nc_type\030\016 \001(\0162\036.AbilityMixinBreakout.Syn" +
+      "cType\022\017\n\007retcode\030\010 \001(\005\0229\n\023sync_create_co" +
+      "nnect\030\014 \001(\0132\032.BreakoutSyncCreateConnectH" +
       "\000\022&\n\tsync_ping\030\t \001(\0132\021.BreakoutSyncPingH" +
-      "\000\0223\n\020sync_finish_game\030\r \001(\0132\027.BreakoutSy" +
-      "ncFinishGameH\000\022/\n\016sync_snap_shot\030\005 \001(\0132\025" +
-      ".BreakoutSyncSnapShotH\000\022*\n\013sync_action\030\017" +
+      "\000\0223\n\020sync_finish_game\030\004 \001(\0132\027.BreakoutSy" +
+      "ncFinishGameH\000\022/\n\016sync_snap_shot\030\002 \001(\0132\025" +
+      ".BreakoutSyncSnapShotH\000\022*\n\013sync_action\030\006" +
       " \001(\0132\023.BreakoutSyncActionH\000\"\264\001\n\010SyncType" +
       "\022\022\n\016SYNC_TYPE_NONE\020\000\022\034\n\030SYNC_TYPE_CREATE" +
       "_CONNECT\020\001\022\030\n\024SYNC_TYPE_START_GAME\020\002\022\022\n\016" +
@@ -2038,7 +2038,7 @@ public final class AbilityMixinBreakoutOuterClass {
     internal_static_AbilityMixinBreakout_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_AbilityMixinBreakout_descriptor,
-        new java.lang.String[] { "Retcode", "SyncType", "SyncCreateConnect", "SyncPing", "SyncFinishGame", "SyncSnapShot", "SyncAction", "Sync", });
+        new java.lang.String[] { "SyncType", "Retcode", "SyncCreateConnect", "SyncPing", "SyncFinishGame", "SyncSnapShot", "SyncAction", "Sync", });
     emu.grasscutter.net.proto.BreakoutSyncCreateConnectOuterClass.getDescriptor();
     emu.grasscutter.net.proto.BreakoutSyncPingOuterClass.getDescriptor();
     emu.grasscutter.net.proto.BreakoutSyncFinishGameOuterClass.getDescriptor();

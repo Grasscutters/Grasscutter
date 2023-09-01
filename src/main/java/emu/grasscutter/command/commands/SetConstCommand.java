@@ -1,14 +1,12 @@
 package emu.grasscutter.command.commands;
 
-import emu.grasscutter.command.Command;
-import emu.grasscutter.command.CommandHandler;
+import emu.grasscutter.command.*;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.game.world.Position;
-import emu.grasscutter.game.world.Scene;
-import emu.grasscutter.game.world.World;
+import emu.grasscutter.game.world.*;
 import emu.grasscutter.server.packet.send.PacketSceneEntityAppearNotify;
+
 import java.util.List;
 
 @Command(

@@ -19,21 +19,21 @@ public final class MpPlayOwnerCheckReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 mp_play_id = 2;</code>
-     * @return The mpPlayId.
-     */
-    int getMpPlayId();
-
-    /**
-     * <code>bool is_skip_match = 11;</code>
+     * <code>bool is_skip_match = 3;</code>
      * @return The isSkipMatch.
      */
     boolean getIsSkipMatch();
+
+    /**
+     * <code>uint32 mp_play_id = 13;</code>
+     * @return The mpPlayId.
+     */
+    int getMpPlayId();
   }
   /**
    * <pre>
-   * CmdId: 1835
-   * Obf: BPKJMBHAOLL
+   * CmdId: 27770
+   * Obf: CHOIHMDHOIA
    * </pre>
    *
    * Protobuf type {@code MpPlayOwnerCheckReq}
@@ -80,14 +80,14 @@ public final class MpPlayOwnerCheckReqOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
-
-              mpPlayId_ = input.readUInt32();
-              break;
-            }
-            case 88: {
+            case 24: {
 
               isSkipMatch_ = input.readBool();
+              break;
+            }
+            case 104: {
+
+              mpPlayId_ = input.readUInt32();
               break;
             }
             default: {
@@ -122,26 +122,26 @@ public final class MpPlayOwnerCheckReqOuterClass {
               emu.grasscutter.net.proto.MpPlayOwnerCheckReqOuterClass.MpPlayOwnerCheckReq.class, emu.grasscutter.net.proto.MpPlayOwnerCheckReqOuterClass.MpPlayOwnerCheckReq.Builder.class);
     }
 
-    public static final int MP_PLAY_ID_FIELD_NUMBER = 2;
-    private int mpPlayId_;
-    /**
-     * <code>uint32 mp_play_id = 2;</code>
-     * @return The mpPlayId.
-     */
-    @java.lang.Override
-    public int getMpPlayId() {
-      return mpPlayId_;
-    }
-
-    public static final int IS_SKIP_MATCH_FIELD_NUMBER = 11;
+    public static final int IS_SKIP_MATCH_FIELD_NUMBER = 3;
     private boolean isSkipMatch_;
     /**
-     * <code>bool is_skip_match = 11;</code>
+     * <code>bool is_skip_match = 3;</code>
      * @return The isSkipMatch.
      */
     @java.lang.Override
     public boolean getIsSkipMatch() {
       return isSkipMatch_;
+    }
+
+    public static final int MP_PLAY_ID_FIELD_NUMBER = 13;
+    private int mpPlayId_;
+    /**
+     * <code>uint32 mp_play_id = 13;</code>
+     * @return The mpPlayId.
+     */
+    @java.lang.Override
+    public int getMpPlayId() {
+      return mpPlayId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -158,11 +158,11 @@ public final class MpPlayOwnerCheckReqOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (mpPlayId_ != 0) {
-        output.writeUInt32(2, mpPlayId_);
-      }
       if (isSkipMatch_ != false) {
-        output.writeBool(11, isSkipMatch_);
+        output.writeBool(3, isSkipMatch_);
+      }
+      if (mpPlayId_ != 0) {
+        output.writeUInt32(13, mpPlayId_);
       }
       unknownFields.writeTo(output);
     }
@@ -173,13 +173,13 @@ public final class MpPlayOwnerCheckReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (mpPlayId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, mpPlayId_);
-      }
       if (isSkipMatch_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(11, isSkipMatch_);
+          .computeBoolSize(3, isSkipMatch_);
+      }
+      if (mpPlayId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(13, mpPlayId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -196,10 +196,10 @@ public final class MpPlayOwnerCheckReqOuterClass {
       }
       emu.grasscutter.net.proto.MpPlayOwnerCheckReqOuterClass.MpPlayOwnerCheckReq other = (emu.grasscutter.net.proto.MpPlayOwnerCheckReqOuterClass.MpPlayOwnerCheckReq) obj;
 
-      if (getMpPlayId()
-          != other.getMpPlayId()) return false;
       if (getIsSkipMatch()
           != other.getIsSkipMatch()) return false;
+      if (getMpPlayId()
+          != other.getMpPlayId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -211,11 +211,11 @@ public final class MpPlayOwnerCheckReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + MP_PLAY_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getMpPlayId();
       hash = (37 * hash) + IS_SKIP_MATCH_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsSkipMatch());
+      hash = (37 * hash) + MP_PLAY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getMpPlayId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -313,8 +313,8 @@ public final class MpPlayOwnerCheckReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 1835
-     * Obf: BPKJMBHAOLL
+     * CmdId: 27770
+     * Obf: CHOIHMDHOIA
      * </pre>
      *
      * Protobuf type {@code MpPlayOwnerCheckReq}
@@ -354,9 +354,9 @@ public final class MpPlayOwnerCheckReqOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        mpPlayId_ = 0;
-
         isSkipMatch_ = false;
+
+        mpPlayId_ = 0;
 
         return this;
       }
@@ -384,8 +384,8 @@ public final class MpPlayOwnerCheckReqOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.MpPlayOwnerCheckReqOuterClass.MpPlayOwnerCheckReq buildPartial() {
         emu.grasscutter.net.proto.MpPlayOwnerCheckReqOuterClass.MpPlayOwnerCheckReq result = new emu.grasscutter.net.proto.MpPlayOwnerCheckReqOuterClass.MpPlayOwnerCheckReq(this);
-        result.mpPlayId_ = mpPlayId_;
         result.isSkipMatch_ = isSkipMatch_;
+        result.mpPlayId_ = mpPlayId_;
         onBuilt();
         return result;
       }
@@ -434,11 +434,11 @@ public final class MpPlayOwnerCheckReqOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.MpPlayOwnerCheckReqOuterClass.MpPlayOwnerCheckReq other) {
         if (other == emu.grasscutter.net.proto.MpPlayOwnerCheckReqOuterClass.MpPlayOwnerCheckReq.getDefaultInstance()) return this;
-        if (other.getMpPlayId() != 0) {
-          setMpPlayId(other.getMpPlayId());
-        }
         if (other.getIsSkipMatch() != false) {
           setIsSkipMatch(other.getIsSkipMatch());
+        }
+        if (other.getMpPlayId() != 0) {
+          setMpPlayId(other.getMpPlayId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -469,40 +469,9 @@ public final class MpPlayOwnerCheckReqOuterClass {
         return this;
       }
 
-      private int mpPlayId_ ;
-      /**
-       * <code>uint32 mp_play_id = 2;</code>
-       * @return The mpPlayId.
-       */
-      @java.lang.Override
-      public int getMpPlayId() {
-        return mpPlayId_;
-      }
-      /**
-       * <code>uint32 mp_play_id = 2;</code>
-       * @param value The mpPlayId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMpPlayId(int value) {
-        
-        mpPlayId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 mp_play_id = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMpPlayId() {
-        
-        mpPlayId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private boolean isSkipMatch_ ;
       /**
-       * <code>bool is_skip_match = 11;</code>
+       * <code>bool is_skip_match = 3;</code>
        * @return The isSkipMatch.
        */
       @java.lang.Override
@@ -510,7 +479,7 @@ public final class MpPlayOwnerCheckReqOuterClass {
         return isSkipMatch_;
       }
       /**
-       * <code>bool is_skip_match = 11;</code>
+       * <code>bool is_skip_match = 3;</code>
        * @param value The isSkipMatch to set.
        * @return This builder for chaining.
        */
@@ -521,12 +490,43 @@ public final class MpPlayOwnerCheckReqOuterClass {
         return this;
       }
       /**
-       * <code>bool is_skip_match = 11;</code>
+       * <code>bool is_skip_match = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsSkipMatch() {
         
         isSkipMatch_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int mpPlayId_ ;
+      /**
+       * <code>uint32 mp_play_id = 13;</code>
+       * @return The mpPlayId.
+       */
+      @java.lang.Override
+      public int getMpPlayId() {
+        return mpPlayId_;
+      }
+      /**
+       * <code>uint32 mp_play_id = 13;</code>
+       * @param value The mpPlayId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMpPlayId(int value) {
+        
+        mpPlayId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 mp_play_id = 13;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMpPlayId() {
+        
+        mpPlayId_ = 0;
         onChanged();
         return this;
       }
@@ -598,8 +598,8 @@ public final class MpPlayOwnerCheckReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\031MpPlayOwnerCheckReq.proto\"@\n\023MpPlayOwn" +
-      "erCheckReq\022\022\n\nmp_play_id\030\002 \001(\r\022\025\n\ris_ski" +
-      "p_match\030\013 \001(\010B\033\n\031emu.grasscutter.net.pro" +
+      "erCheckReq\022\025\n\ris_skip_match\030\003 \001(\010\022\022\n\nmp_" +
+      "play_id\030\r \001(\rB\033\n\031emu.grasscutter.net.pro" +
       "tob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -611,7 +611,7 @@ public final class MpPlayOwnerCheckReqOuterClass {
     internal_static_MpPlayOwnerCheckReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_MpPlayOwnerCheckReq_descriptor,
-        new java.lang.String[] { "MpPlayId", "IsSkipMatch", });
+        new java.lang.String[] { "IsSkipMatch", "MpPlayId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

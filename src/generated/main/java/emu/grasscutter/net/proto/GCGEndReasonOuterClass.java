@@ -16,7 +16,7 @@ public final class GCGEndReasonOuterClass {
   }
   /**
    * <pre>
-   * Obf: KHBHKELMHNO
+   * Obf: PNMCCGIBCDL
    * </pre>
    *
    * Protobuf enum {@code GCGEndReason}

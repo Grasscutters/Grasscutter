@@ -19,27 +19,27 @@ public final class AvatarDieAnimationEndRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 skill_id = 10;</code>
-     * @return The skillId.
-     */
-    int getSkillId();
-
-    /**
-     * <code>int32 retcode = 9;</code>
+     * <code>int32 retcode = 4;</code>
      * @return The retcode.
      */
     int getRetcode();
 
     /**
-     * <code>uint64 die_guid = 14;</code>
+     * <code>uint32 skill_id = 13;</code>
+     * @return The skillId.
+     */
+    int getSkillId();
+
+    /**
+     * <code>uint64 die_guid = 5;</code>
      * @return The dieGuid.
      */
     long getDieGuid();
   }
   /**
    * <pre>
-   * CmdId: 1621
-   * Obf: DBPKLLBDNMP
+   * CmdId: 24745
+   * Obf: LPNGCMDGKEM
    * </pre>
    *
    * Protobuf type {@code AvatarDieAnimationEndRsp}
@@ -86,19 +86,19 @@ public final class AvatarDieAnimationEndRspOuterClass {
             case 0:
               done = true;
               break;
-            case 72: {
+            case 32: {
 
               retcode_ = input.readInt32();
               break;
             }
-            case 80: {
-
-              skillId_ = input.readUInt32();
-              break;
-            }
-            case 112: {
+            case 40: {
 
               dieGuid_ = input.readUInt64();
+              break;
+            }
+            case 104: {
+
+              skillId_ = input.readUInt32();
               break;
             }
             default: {
@@ -133,21 +133,10 @@ public final class AvatarDieAnimationEndRspOuterClass {
               emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp.class, emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp.Builder.class);
     }
 
-    public static final int SKILL_ID_FIELD_NUMBER = 10;
-    private int skillId_;
-    /**
-     * <code>uint32 skill_id = 10;</code>
-     * @return The skillId.
-     */
-    @java.lang.Override
-    public int getSkillId() {
-      return skillId_;
-    }
-
-    public static final int RETCODE_FIELD_NUMBER = 9;
+    public static final int RETCODE_FIELD_NUMBER = 4;
     private int retcode_;
     /**
-     * <code>int32 retcode = 9;</code>
+     * <code>int32 retcode = 4;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -155,10 +144,21 @@ public final class AvatarDieAnimationEndRspOuterClass {
       return retcode_;
     }
 
-    public static final int DIE_GUID_FIELD_NUMBER = 14;
+    public static final int SKILL_ID_FIELD_NUMBER = 13;
+    private int skillId_;
+    /**
+     * <code>uint32 skill_id = 13;</code>
+     * @return The skillId.
+     */
+    @java.lang.Override
+    public int getSkillId() {
+      return skillId_;
+    }
+
+    public static final int DIE_GUID_FIELD_NUMBER = 5;
     private long dieGuid_;
     /**
-     * <code>uint64 die_guid = 14;</code>
+     * <code>uint64 die_guid = 5;</code>
      * @return The dieGuid.
      */
     @java.lang.Override
@@ -181,13 +181,13 @@ public final class AvatarDieAnimationEndRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (retcode_ != 0) {
-        output.writeInt32(9, retcode_);
-      }
-      if (skillId_ != 0) {
-        output.writeUInt32(10, skillId_);
+        output.writeInt32(4, retcode_);
       }
       if (dieGuid_ != 0L) {
-        output.writeUInt64(14, dieGuid_);
+        output.writeUInt64(5, dieGuid_);
+      }
+      if (skillId_ != 0) {
+        output.writeUInt32(13, skillId_);
       }
       unknownFields.writeTo(output);
     }
@@ -200,15 +200,15 @@ public final class AvatarDieAnimationEndRspOuterClass {
       size = 0;
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(9, retcode_);
-      }
-      if (skillId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, skillId_);
+          .computeInt32Size(4, retcode_);
       }
       if (dieGuid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(14, dieGuid_);
+          .computeUInt64Size(5, dieGuid_);
+      }
+      if (skillId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(13, skillId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -225,10 +225,10 @@ public final class AvatarDieAnimationEndRspOuterClass {
       }
       emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp other = (emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp) obj;
 
-      if (getSkillId()
-          != other.getSkillId()) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
+      if (getSkillId()
+          != other.getSkillId()) return false;
       if (getDieGuid()
           != other.getDieGuid()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -242,10 +242,10 @@ public final class AvatarDieAnimationEndRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + SKILL_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getSkillId();
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
+      hash = (37 * hash) + SKILL_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSkillId();
       hash = (37 * hash) + DIE_GUID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getDieGuid());
@@ -346,8 +346,8 @@ public final class AvatarDieAnimationEndRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 1621
-     * Obf: DBPKLLBDNMP
+     * CmdId: 24745
+     * Obf: LPNGCMDGKEM
      * </pre>
      *
      * Protobuf type {@code AvatarDieAnimationEndRsp}
@@ -387,9 +387,9 @@ public final class AvatarDieAnimationEndRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        skillId_ = 0;
-
         retcode_ = 0;
+
+        skillId_ = 0;
 
         dieGuid_ = 0L;
 
@@ -419,8 +419,8 @@ public final class AvatarDieAnimationEndRspOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp buildPartial() {
         emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp result = new emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp(this);
-        result.skillId_ = skillId_;
         result.retcode_ = retcode_;
+        result.skillId_ = skillId_;
         result.dieGuid_ = dieGuid_;
         onBuilt();
         return result;
@@ -470,11 +470,11 @@ public final class AvatarDieAnimationEndRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp other) {
         if (other == emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp.getDefaultInstance()) return this;
-        if (other.getSkillId() != 0) {
-          setSkillId(other.getSkillId());
-        }
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
+        }
+        if (other.getSkillId() != 0) {
+          setSkillId(other.getSkillId());
         }
         if (other.getDieGuid() != 0L) {
           setDieGuid(other.getDieGuid());
@@ -508,40 +508,9 @@ public final class AvatarDieAnimationEndRspOuterClass {
         return this;
       }
 
-      private int skillId_ ;
-      /**
-       * <code>uint32 skill_id = 10;</code>
-       * @return The skillId.
-       */
-      @java.lang.Override
-      public int getSkillId() {
-        return skillId_;
-      }
-      /**
-       * <code>uint32 skill_id = 10;</code>
-       * @param value The skillId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSkillId(int value) {
-        
-        skillId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 skill_id = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSkillId() {
-        
-        skillId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 9;</code>
+       * <code>int32 retcode = 4;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -549,7 +518,7 @@ public final class AvatarDieAnimationEndRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 9;</code>
+       * <code>int32 retcode = 4;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -560,7 +529,7 @@ public final class AvatarDieAnimationEndRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 9;</code>
+       * <code>int32 retcode = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -570,9 +539,40 @@ public final class AvatarDieAnimationEndRspOuterClass {
         return this;
       }
 
+      private int skillId_ ;
+      /**
+       * <code>uint32 skill_id = 13;</code>
+       * @return The skillId.
+       */
+      @java.lang.Override
+      public int getSkillId() {
+        return skillId_;
+      }
+      /**
+       * <code>uint32 skill_id = 13;</code>
+       * @param value The skillId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSkillId(int value) {
+        
+        skillId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 skill_id = 13;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSkillId() {
+        
+        skillId_ = 0;
+        onChanged();
+        return this;
+      }
+
       private long dieGuid_ ;
       /**
-       * <code>uint64 die_guid = 14;</code>
+       * <code>uint64 die_guid = 5;</code>
        * @return The dieGuid.
        */
       @java.lang.Override
@@ -580,7 +580,7 @@ public final class AvatarDieAnimationEndRspOuterClass {
         return dieGuid_;
       }
       /**
-       * <code>uint64 die_guid = 14;</code>
+       * <code>uint64 die_guid = 5;</code>
        * @param value The dieGuid to set.
        * @return This builder for chaining.
        */
@@ -591,7 +591,7 @@ public final class AvatarDieAnimationEndRspOuterClass {
         return this;
       }
       /**
-       * <code>uint64 die_guid = 14;</code>
+       * <code>uint64 die_guid = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearDieGuid() {
@@ -668,8 +668,8 @@ public final class AvatarDieAnimationEndRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\036AvatarDieAnimationEndRsp.proto\"O\n\030Avat" +
-      "arDieAnimationEndRsp\022\020\n\010skill_id\030\n \001(\r\022\017" +
-      "\n\007retcode\030\t \001(\005\022\020\n\010die_guid\030\016 \001(\004B\033\n\031emu" +
+      "arDieAnimationEndRsp\022\017\n\007retcode\030\004 \001(\005\022\020\n" +
+      "\010skill_id\030\r \001(\r\022\020\n\010die_guid\030\005 \001(\004B\033\n\031emu" +
       ".grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -681,7 +681,7 @@ public final class AvatarDieAnimationEndRspOuterClass {
     internal_static_AvatarDieAnimationEndRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_AvatarDieAnimationEndRsp_descriptor,
-        new java.lang.String[] { "SkillId", "Retcode", "DieGuid", });
+        new java.lang.String[] { "Retcode", "SkillId", "DieGuid", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

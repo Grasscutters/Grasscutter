@@ -1,7 +1,6 @@
 package emu.grasscutter.data.excels.avatar;
 
-import emu.grasscutter.data.GameResource;
-import emu.grasscutter.data.ResourceType;
+import emu.grasscutter.data.*;
 
 @ResourceType(name = "AvatarFettersLevelExcelConfigData.json")
 public class AvatarFetterLevelData extends GameResource {

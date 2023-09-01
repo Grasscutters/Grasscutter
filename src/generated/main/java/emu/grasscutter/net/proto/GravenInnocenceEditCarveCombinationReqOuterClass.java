@@ -19,30 +19,30 @@ public final class GravenInnocenceEditCarveCombinationReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 entity_id = 10;</code>
-     * @return The entityId.
-     */
-    int getEntityId();
-
-    /**
-     * <code>.CustomGadgetTreeInfo combination_info = 9;</code>
+     * <code>.CustomGadgetTreeInfo combination_info = 7;</code>
      * @return Whether the combinationInfo field is set.
      */
     boolean hasCombinationInfo();
     /**
-     * <code>.CustomGadgetTreeInfo combination_info = 9;</code>
+     * <code>.CustomGadgetTreeInfo combination_info = 7;</code>
      * @return The combinationInfo.
      */
     emu.grasscutter.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfo getCombinationInfo();
     /**
-     * <code>.CustomGadgetTreeInfo combination_info = 9;</code>
+     * <code>.CustomGadgetTreeInfo combination_info = 7;</code>
      */
     emu.grasscutter.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfoOrBuilder getCombinationInfoOrBuilder();
+
+    /**
+     * <code>uint32 entity_id = 1;</code>
+     * @return The entityId.
+     */
+    int getEntityId();
   }
   /**
    * <pre>
-   * CmdId: 21123
-   * Obf: NHDALOLAKAL
+   * CmdId: 8110
+   * Obf: EPMCIOGKKND
    * </pre>
    *
    * Protobuf type {@code GravenInnocenceEditCarveCombinationReq}
@@ -89,7 +89,12 @@ public final class GravenInnocenceEditCarveCombinationReqOuterClass {
             case 0:
               done = true;
               break;
-            case 74: {
+            case 8: {
+
+              entityId_ = input.readUInt32();
+              break;
+            }
+            case 58: {
               emu.grasscutter.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfo.Builder subBuilder = null;
               if (combinationInfo_ != null) {
                 subBuilder = combinationInfo_.toBuilder();
@@ -100,11 +105,6 @@ public final class GravenInnocenceEditCarveCombinationReqOuterClass {
                 combinationInfo_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-            case 80: {
-
-              entityId_ = input.readUInt32();
               break;
             }
             default: {
@@ -139,21 +139,10 @@ public final class GravenInnocenceEditCarveCombinationReqOuterClass {
               emu.grasscutter.net.proto.GravenInnocenceEditCarveCombinationReqOuterClass.GravenInnocenceEditCarveCombinationReq.class, emu.grasscutter.net.proto.GravenInnocenceEditCarveCombinationReqOuterClass.GravenInnocenceEditCarveCombinationReq.Builder.class);
     }
 
-    public static final int ENTITY_ID_FIELD_NUMBER = 10;
-    private int entityId_;
-    /**
-     * <code>uint32 entity_id = 10;</code>
-     * @return The entityId.
-     */
-    @java.lang.Override
-    public int getEntityId() {
-      return entityId_;
-    }
-
-    public static final int COMBINATION_INFO_FIELD_NUMBER = 9;
+    public static final int COMBINATION_INFO_FIELD_NUMBER = 7;
     private emu.grasscutter.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfo combinationInfo_;
     /**
-     * <code>.CustomGadgetTreeInfo combination_info = 9;</code>
+     * <code>.CustomGadgetTreeInfo combination_info = 7;</code>
      * @return Whether the combinationInfo field is set.
      */
     @java.lang.Override
@@ -161,7 +150,7 @@ public final class GravenInnocenceEditCarveCombinationReqOuterClass {
       return combinationInfo_ != null;
     }
     /**
-     * <code>.CustomGadgetTreeInfo combination_info = 9;</code>
+     * <code>.CustomGadgetTreeInfo combination_info = 7;</code>
      * @return The combinationInfo.
      */
     @java.lang.Override
@@ -169,11 +158,22 @@ public final class GravenInnocenceEditCarveCombinationReqOuterClass {
       return combinationInfo_ == null ? emu.grasscutter.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfo.getDefaultInstance() : combinationInfo_;
     }
     /**
-     * <code>.CustomGadgetTreeInfo combination_info = 9;</code>
+     * <code>.CustomGadgetTreeInfo combination_info = 7;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfoOrBuilder getCombinationInfoOrBuilder() {
       return getCombinationInfo();
+    }
+
+    public static final int ENTITY_ID_FIELD_NUMBER = 1;
+    private int entityId_;
+    /**
+     * <code>uint32 entity_id = 1;</code>
+     * @return The entityId.
+     */
+    @java.lang.Override
+    public int getEntityId() {
+      return entityId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -190,11 +190,11 @@ public final class GravenInnocenceEditCarveCombinationReqOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (combinationInfo_ != null) {
-        output.writeMessage(9, getCombinationInfo());
-      }
       if (entityId_ != 0) {
-        output.writeUInt32(10, entityId_);
+        output.writeUInt32(1, entityId_);
+      }
+      if (combinationInfo_ != null) {
+        output.writeMessage(7, getCombinationInfo());
       }
       unknownFields.writeTo(output);
     }
@@ -205,13 +205,13 @@ public final class GravenInnocenceEditCarveCombinationReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (combinationInfo_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, getCombinationInfo());
-      }
       if (entityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, entityId_);
+          .computeUInt32Size(1, entityId_);
+      }
+      if (combinationInfo_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(7, getCombinationInfo());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -228,13 +228,13 @@ public final class GravenInnocenceEditCarveCombinationReqOuterClass {
       }
       emu.grasscutter.net.proto.GravenInnocenceEditCarveCombinationReqOuterClass.GravenInnocenceEditCarveCombinationReq other = (emu.grasscutter.net.proto.GravenInnocenceEditCarveCombinationReqOuterClass.GravenInnocenceEditCarveCombinationReq) obj;
 
-      if (getEntityId()
-          != other.getEntityId()) return false;
       if (hasCombinationInfo() != other.hasCombinationInfo()) return false;
       if (hasCombinationInfo()) {
         if (!getCombinationInfo()
             .equals(other.getCombinationInfo())) return false;
       }
+      if (getEntityId()
+          != other.getEntityId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -246,12 +246,12 @@ public final class GravenInnocenceEditCarveCombinationReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getEntityId();
       if (hasCombinationInfo()) {
         hash = (37 * hash) + COMBINATION_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getCombinationInfo().hashCode();
       }
+      hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getEntityId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -349,8 +349,8 @@ public final class GravenInnocenceEditCarveCombinationReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 21123
-     * Obf: NHDALOLAKAL
+     * CmdId: 8110
+     * Obf: EPMCIOGKKND
      * </pre>
      *
      * Protobuf type {@code GravenInnocenceEditCarveCombinationReq}
@@ -390,14 +390,14 @@ public final class GravenInnocenceEditCarveCombinationReqOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        entityId_ = 0;
-
         if (combinationInfoBuilder_ == null) {
           combinationInfo_ = null;
         } else {
           combinationInfo_ = null;
           combinationInfoBuilder_ = null;
         }
+        entityId_ = 0;
+
         return this;
       }
 
@@ -424,12 +424,12 @@ public final class GravenInnocenceEditCarveCombinationReqOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.GravenInnocenceEditCarveCombinationReqOuterClass.GravenInnocenceEditCarveCombinationReq buildPartial() {
         emu.grasscutter.net.proto.GravenInnocenceEditCarveCombinationReqOuterClass.GravenInnocenceEditCarveCombinationReq result = new emu.grasscutter.net.proto.GravenInnocenceEditCarveCombinationReqOuterClass.GravenInnocenceEditCarveCombinationReq(this);
-        result.entityId_ = entityId_;
         if (combinationInfoBuilder_ == null) {
           result.combinationInfo_ = combinationInfo_;
         } else {
           result.combinationInfo_ = combinationInfoBuilder_.build();
         }
+        result.entityId_ = entityId_;
         onBuilt();
         return result;
       }
@@ -478,11 +478,11 @@ public final class GravenInnocenceEditCarveCombinationReqOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.GravenInnocenceEditCarveCombinationReqOuterClass.GravenInnocenceEditCarveCombinationReq other) {
         if (other == emu.grasscutter.net.proto.GravenInnocenceEditCarveCombinationReqOuterClass.GravenInnocenceEditCarveCombinationReq.getDefaultInstance()) return this;
-        if (other.getEntityId() != 0) {
-          setEntityId(other.getEntityId());
-        }
         if (other.hasCombinationInfo()) {
           mergeCombinationInfo(other.getCombinationInfo());
+        }
+        if (other.getEntityId() != 0) {
+          setEntityId(other.getEntityId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -513,49 +513,18 @@ public final class GravenInnocenceEditCarveCombinationReqOuterClass {
         return this;
       }
 
-      private int entityId_ ;
-      /**
-       * <code>uint32 entity_id = 10;</code>
-       * @return The entityId.
-       */
-      @java.lang.Override
-      public int getEntityId() {
-        return entityId_;
-      }
-      /**
-       * <code>uint32 entity_id = 10;</code>
-       * @param value The entityId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEntityId(int value) {
-        
-        entityId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 entity_id = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEntityId() {
-        
-        entityId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private emu.grasscutter.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfo combinationInfo_;
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfo, emu.grasscutter.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfo.Builder, emu.grasscutter.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfoOrBuilder> combinationInfoBuilder_;
       /**
-       * <code>.CustomGadgetTreeInfo combination_info = 9;</code>
+       * <code>.CustomGadgetTreeInfo combination_info = 7;</code>
        * @return Whether the combinationInfo field is set.
        */
       public boolean hasCombinationInfo() {
         return combinationInfoBuilder_ != null || combinationInfo_ != null;
       }
       /**
-       * <code>.CustomGadgetTreeInfo combination_info = 9;</code>
+       * <code>.CustomGadgetTreeInfo combination_info = 7;</code>
        * @return The combinationInfo.
        */
       public emu.grasscutter.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfo getCombinationInfo() {
@@ -566,7 +535,7 @@ public final class GravenInnocenceEditCarveCombinationReqOuterClass {
         }
       }
       /**
-       * <code>.CustomGadgetTreeInfo combination_info = 9;</code>
+       * <code>.CustomGadgetTreeInfo combination_info = 7;</code>
        */
       public Builder setCombinationInfo(emu.grasscutter.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfo value) {
         if (combinationInfoBuilder_ == null) {
@@ -582,7 +551,7 @@ public final class GravenInnocenceEditCarveCombinationReqOuterClass {
         return this;
       }
       /**
-       * <code>.CustomGadgetTreeInfo combination_info = 9;</code>
+       * <code>.CustomGadgetTreeInfo combination_info = 7;</code>
        */
       public Builder setCombinationInfo(
           emu.grasscutter.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfo.Builder builderForValue) {
@@ -596,7 +565,7 @@ public final class GravenInnocenceEditCarveCombinationReqOuterClass {
         return this;
       }
       /**
-       * <code>.CustomGadgetTreeInfo combination_info = 9;</code>
+       * <code>.CustomGadgetTreeInfo combination_info = 7;</code>
        */
       public Builder mergeCombinationInfo(emu.grasscutter.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfo value) {
         if (combinationInfoBuilder_ == null) {
@@ -614,7 +583,7 @@ public final class GravenInnocenceEditCarveCombinationReqOuterClass {
         return this;
       }
       /**
-       * <code>.CustomGadgetTreeInfo combination_info = 9;</code>
+       * <code>.CustomGadgetTreeInfo combination_info = 7;</code>
        */
       public Builder clearCombinationInfo() {
         if (combinationInfoBuilder_ == null) {
@@ -628,7 +597,7 @@ public final class GravenInnocenceEditCarveCombinationReqOuterClass {
         return this;
       }
       /**
-       * <code>.CustomGadgetTreeInfo combination_info = 9;</code>
+       * <code>.CustomGadgetTreeInfo combination_info = 7;</code>
        */
       public emu.grasscutter.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfo.Builder getCombinationInfoBuilder() {
         
@@ -636,7 +605,7 @@ public final class GravenInnocenceEditCarveCombinationReqOuterClass {
         return getCombinationInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.CustomGadgetTreeInfo combination_info = 9;</code>
+       * <code>.CustomGadgetTreeInfo combination_info = 7;</code>
        */
       public emu.grasscutter.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfoOrBuilder getCombinationInfoOrBuilder() {
         if (combinationInfoBuilder_ != null) {
@@ -647,7 +616,7 @@ public final class GravenInnocenceEditCarveCombinationReqOuterClass {
         }
       }
       /**
-       * <code>.CustomGadgetTreeInfo combination_info = 9;</code>
+       * <code>.CustomGadgetTreeInfo combination_info = 7;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfo, emu.grasscutter.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfo.Builder, emu.grasscutter.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfoOrBuilder> 
@@ -661,6 +630,37 @@ public final class GravenInnocenceEditCarveCombinationReqOuterClass {
           combinationInfo_ = null;
         }
         return combinationInfoBuilder_;
+      }
+
+      private int entityId_ ;
+      /**
+       * <code>uint32 entity_id = 1;</code>
+       * @return The entityId.
+       */
+      @java.lang.Override
+      public int getEntityId() {
+        return entityId_;
+      }
+      /**
+       * <code>uint32 entity_id = 1;</code>
+       * @param value The entityId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEntityId(int value) {
+        
+        entityId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 entity_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEntityId() {
+        
+        entityId_ = 0;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -731,9 +731,9 @@ public final class GravenInnocenceEditCarveCombinationReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n,GravenInnocenceEditCarveCombinationReq" +
       ".proto\032\032CustomGadgetTreeInfo.proto\"l\n&Gr" +
-      "avenInnocenceEditCarveCombinationReq\022\021\n\t" +
-      "entity_id\030\n \001(\r\022/\n\020combination_info\030\t \001(" +
-      "\0132\025.CustomGadgetTreeInfoB\033\n\031emu.grasscut" +
+      "avenInnocenceEditCarveCombinationReq\022/\n\020" +
+      "combination_info\030\007 \001(\0132\025.CustomGadgetTre" +
+      "eInfo\022\021\n\tentity_id\030\001 \001(\rB\033\n\031emu.grasscut" +
       "ter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -746,7 +746,7 @@ public final class GravenInnocenceEditCarveCombinationReqOuterClass {
     internal_static_GravenInnocenceEditCarveCombinationReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GravenInnocenceEditCarveCombinationReq_descriptor,
-        new java.lang.String[] { "EntityId", "CombinationInfo", });
+        new java.lang.String[] { "CombinationInfo", "EntityId", });
     emu.grasscutter.net.proto.CustomGadgetTreeInfoOuterClass.getDescriptor();
   }
 

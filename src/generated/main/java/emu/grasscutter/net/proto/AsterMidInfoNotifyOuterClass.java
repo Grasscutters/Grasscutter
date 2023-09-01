@@ -19,24 +19,24 @@ public final class AsterMidInfoNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.AsterMidDetailInfo info = 7;</code>
+     * <code>.AsterMidDetailInfo info = 6;</code>
      * @return Whether the info field is set.
      */
     boolean hasInfo();
     /**
-     * <code>.AsterMidDetailInfo info = 7;</code>
+     * <code>.AsterMidDetailInfo info = 6;</code>
      * @return The info.
      */
     emu.grasscutter.net.proto.AsterMidDetailInfoOuterClass.AsterMidDetailInfo getInfo();
     /**
-     * <code>.AsterMidDetailInfo info = 7;</code>
+     * <code>.AsterMidDetailInfo info = 6;</code>
      */
     emu.grasscutter.net.proto.AsterMidDetailInfoOuterClass.AsterMidDetailInfoOrBuilder getInfoOrBuilder();
   }
   /**
    * <pre>
-   * CmdId: 2162
-   * Obf: ELFBKKOKEGJ
+   * CmdId: 6512
+   * Obf: HJNPLOKNKDD
    * </pre>
    *
    * Protobuf type {@code AsterMidInfoNotify}
@@ -83,7 +83,7 @@ public final class AsterMidInfoNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 58: {
+            case 50: {
               emu.grasscutter.net.proto.AsterMidDetailInfoOuterClass.AsterMidDetailInfo.Builder subBuilder = null;
               if (info_ != null) {
                 subBuilder = info_.toBuilder();
@@ -128,10 +128,10 @@ public final class AsterMidInfoNotifyOuterClass {
               emu.grasscutter.net.proto.AsterMidInfoNotifyOuterClass.AsterMidInfoNotify.class, emu.grasscutter.net.proto.AsterMidInfoNotifyOuterClass.AsterMidInfoNotify.Builder.class);
     }
 
-    public static final int INFO_FIELD_NUMBER = 7;
+    public static final int INFO_FIELD_NUMBER = 6;
     private emu.grasscutter.net.proto.AsterMidDetailInfoOuterClass.AsterMidDetailInfo info_;
     /**
-     * <code>.AsterMidDetailInfo info = 7;</code>
+     * <code>.AsterMidDetailInfo info = 6;</code>
      * @return Whether the info field is set.
      */
     @java.lang.Override
@@ -139,7 +139,7 @@ public final class AsterMidInfoNotifyOuterClass {
       return info_ != null;
     }
     /**
-     * <code>.AsterMidDetailInfo info = 7;</code>
+     * <code>.AsterMidDetailInfo info = 6;</code>
      * @return The info.
      */
     @java.lang.Override
@@ -147,7 +147,7 @@ public final class AsterMidInfoNotifyOuterClass {
       return info_ == null ? emu.grasscutter.net.proto.AsterMidDetailInfoOuterClass.AsterMidDetailInfo.getDefaultInstance() : info_;
     }
     /**
-     * <code>.AsterMidDetailInfo info = 7;</code>
+     * <code>.AsterMidDetailInfo info = 6;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.AsterMidDetailInfoOuterClass.AsterMidDetailInfoOrBuilder getInfoOrBuilder() {
@@ -169,7 +169,7 @@ public final class AsterMidInfoNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (info_ != null) {
-        output.writeMessage(7, getInfo());
+        output.writeMessage(6, getInfo());
       }
       unknownFields.writeTo(output);
     }
@@ -182,7 +182,7 @@ public final class AsterMidInfoNotifyOuterClass {
       size = 0;
       if (info_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, getInfo());
+          .computeMessageSize(6, getInfo());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -316,8 +316,8 @@ public final class AsterMidInfoNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2162
-     * Obf: ELFBKKOKEGJ
+     * CmdId: 6512
+     * Obf: HJNPLOKNKDD
      * </pre>
      *
      * Protobuf type {@code AsterMidInfoNotify}
@@ -478,14 +478,14 @@ public final class AsterMidInfoNotifyOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.AsterMidDetailInfoOuterClass.AsterMidDetailInfo, emu.grasscutter.net.proto.AsterMidDetailInfoOuterClass.AsterMidDetailInfo.Builder, emu.grasscutter.net.proto.AsterMidDetailInfoOuterClass.AsterMidDetailInfoOrBuilder> infoBuilder_;
       /**
-       * <code>.AsterMidDetailInfo info = 7;</code>
+       * <code>.AsterMidDetailInfo info = 6;</code>
        * @return Whether the info field is set.
        */
       public boolean hasInfo() {
         return infoBuilder_ != null || info_ != null;
       }
       /**
-       * <code>.AsterMidDetailInfo info = 7;</code>
+       * <code>.AsterMidDetailInfo info = 6;</code>
        * @return The info.
        */
       public emu.grasscutter.net.proto.AsterMidDetailInfoOuterClass.AsterMidDetailInfo getInfo() {
@@ -496,7 +496,7 @@ public final class AsterMidInfoNotifyOuterClass {
         }
       }
       /**
-       * <code>.AsterMidDetailInfo info = 7;</code>
+       * <code>.AsterMidDetailInfo info = 6;</code>
        */
       public Builder setInfo(emu.grasscutter.net.proto.AsterMidDetailInfoOuterClass.AsterMidDetailInfo value) {
         if (infoBuilder_ == null) {
@@ -512,7 +512,7 @@ public final class AsterMidInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.AsterMidDetailInfo info = 7;</code>
+       * <code>.AsterMidDetailInfo info = 6;</code>
        */
       public Builder setInfo(
           emu.grasscutter.net.proto.AsterMidDetailInfoOuterClass.AsterMidDetailInfo.Builder builderForValue) {
@@ -526,7 +526,7 @@ public final class AsterMidInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.AsterMidDetailInfo info = 7;</code>
+       * <code>.AsterMidDetailInfo info = 6;</code>
        */
       public Builder mergeInfo(emu.grasscutter.net.proto.AsterMidDetailInfoOuterClass.AsterMidDetailInfo value) {
         if (infoBuilder_ == null) {
@@ -544,7 +544,7 @@ public final class AsterMidInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.AsterMidDetailInfo info = 7;</code>
+       * <code>.AsterMidDetailInfo info = 6;</code>
        */
       public Builder clearInfo() {
         if (infoBuilder_ == null) {
@@ -558,7 +558,7 @@ public final class AsterMidInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.AsterMidDetailInfo info = 7;</code>
+       * <code>.AsterMidDetailInfo info = 6;</code>
        */
       public emu.grasscutter.net.proto.AsterMidDetailInfoOuterClass.AsterMidDetailInfo.Builder getInfoBuilder() {
         
@@ -566,7 +566,7 @@ public final class AsterMidInfoNotifyOuterClass {
         return getInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.AsterMidDetailInfo info = 7;</code>
+       * <code>.AsterMidDetailInfo info = 6;</code>
        */
       public emu.grasscutter.net.proto.AsterMidDetailInfoOuterClass.AsterMidDetailInfoOrBuilder getInfoOrBuilder() {
         if (infoBuilder_ != null) {
@@ -577,7 +577,7 @@ public final class AsterMidInfoNotifyOuterClass {
         }
       }
       /**
-       * <code>.AsterMidDetailInfo info = 7;</code>
+       * <code>.AsterMidDetailInfo info = 6;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.AsterMidDetailInfoOuterClass.AsterMidDetailInfo, emu.grasscutter.net.proto.AsterMidDetailInfoOuterClass.AsterMidDetailInfo.Builder, emu.grasscutter.net.proto.AsterMidDetailInfoOuterClass.AsterMidDetailInfoOrBuilder> 
@@ -661,7 +661,7 @@ public final class AsterMidInfoNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\030AsterMidInfoNotify.proto\032\030AsterMidDeta" +
       "ilInfo.proto\"7\n\022AsterMidInfoNotify\022!\n\004in" +
-      "fo\030\007 \001(\0132\023.AsterMidDetailInfoB\033\n\031emu.gra" +
+      "fo\030\006 \001(\0132\023.AsterMidDetailInfoB\033\n\031emu.gra" +
       "sscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

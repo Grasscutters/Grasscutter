@@ -1,10 +1,9 @@
 package emu.grasscutter.game.gacha;
 
-import dev.morphia.annotations.Entity;
-import dev.morphia.annotations.Id;
-import dev.morphia.annotations.Indexed;
-import java.util.Date;
+import dev.morphia.annotations.*;
 import org.bson.types.ObjectId;
+
+import java.util.Date;
 
 @Entity(value = "gachas", useDiscriminator = false)
 public class GachaRecord {

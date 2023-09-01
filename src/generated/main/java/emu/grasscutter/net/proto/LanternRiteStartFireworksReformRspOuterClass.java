@@ -19,99 +19,99 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 MBEGNNPJAPL = 12;</code>
-     * @return The mBEGNNPJAPL.
+     * <code>uint32 COOIJAMKABA = 14;</code>
+     * @return The cOOIJAMKABA.
      */
-    int getMBEGNNPJAPL();
+    int getCOOIJAMKABA();
 
     /**
-     * <code>int32 retcode = 8;</code>
-     * @return The retcode.
+     * <code>uint32 KCHDLMCFANC = 3;</code>
+     * @return The kCHDLMCFANC.
      */
-    int getRetcode();
+    int getKCHDLMCFANC();
 
     /**
-     * <code>repeated .LanternRiteFireworksReformSkillInfo skill_info_list = 1;</code>
-     */
-    java.util.List<emu.grasscutter.net.proto.LanternRiteFireworksReformSkillInfoOuterClass.LanternRiteFireworksReformSkillInfo> 
-        getSkillInfoListList();
-    /**
-     * <code>repeated .LanternRiteFireworksReformSkillInfo skill_info_list = 1;</code>
-     */
-    emu.grasscutter.net.proto.LanternRiteFireworksReformSkillInfoOuterClass.LanternRiteFireworksReformSkillInfo getSkillInfoList(int index);
-    /**
-     * <code>repeated .LanternRiteFireworksReformSkillInfo skill_info_list = 1;</code>
-     */
-    int getSkillInfoListCount();
-    /**
-     * <code>repeated .LanternRiteFireworksReformSkillInfo skill_info_list = 1;</code>
-     */
-    java.util.List<? extends emu.grasscutter.net.proto.LanternRiteFireworksReformSkillInfoOuterClass.LanternRiteFireworksReformSkillInfoOrBuilder> 
-        getSkillInfoListOrBuilderList();
-    /**
-     * <code>repeated .LanternRiteFireworksReformSkillInfo skill_info_list = 1;</code>
-     */
-    emu.grasscutter.net.proto.LanternRiteFireworksReformSkillInfoOuterClass.LanternRiteFireworksReformSkillInfoOrBuilder getSkillInfoListOrBuilder(
-        int index);
-
-    /**
-     * <code>uint32 DKBBJDIMJPB = 10;</code>
-     * @return The dKBBJDIMJPB.
-     */
-    int getDKBBJDIMJPB();
-
-    /**
-     * <code>repeated .LanternRiteFireworksReformFactorInfo factor_info_list = 6;</code>
-     */
-    java.util.List<emu.grasscutter.net.proto.LanternRiteFireworksReformFactorInfoOuterClass.LanternRiteFireworksReformFactorInfo> 
-        getFactorInfoListList();
-    /**
-     * <code>repeated .LanternRiteFireworksReformFactorInfo factor_info_list = 6;</code>
-     */
-    emu.grasscutter.net.proto.LanternRiteFireworksReformFactorInfoOuterClass.LanternRiteFireworksReformFactorInfo getFactorInfoList(int index);
-    /**
-     * <code>repeated .LanternRiteFireworksReformFactorInfo factor_info_list = 6;</code>
-     */
-    int getFactorInfoListCount();
-    /**
-     * <code>repeated .LanternRiteFireworksReformFactorInfo factor_info_list = 6;</code>
-     */
-    java.util.List<? extends emu.grasscutter.net.proto.LanternRiteFireworksReformFactorInfoOuterClass.LanternRiteFireworksReformFactorInfoOrBuilder> 
-        getFactorInfoListOrBuilderList();
-    /**
-     * <code>repeated .LanternRiteFireworksReformFactorInfo factor_info_list = 6;</code>
-     */
-    emu.grasscutter.net.proto.LanternRiteFireworksReformFactorInfoOuterClass.LanternRiteFireworksReformFactorInfoOrBuilder getFactorInfoListOrBuilder(
-        int index);
-
-    /**
-     * <code>uint32 JGLNDBHIAPK = 9;</code>
-     * @return The jGLNDBHIAPK.
-     */
-    int getJGLNDBHIAPK();
-
-    /**
-     * <code>uint32 FCGOPINPKBP = 3;</code>
-     * @return The fCGOPINPKBP.
-     */
-    int getFCGOPINPKBP();
-
-    /**
-     * <code>uint32 challenge_id = 13;</code>
+     * <code>uint32 challenge_id = 2;</code>
      * @return The challengeId.
      */
     int getChallengeId();
 
     /**
-     * <code>uint32 stage_id = 14;</code>
+     * <code>uint32 stage_id = 11;</code>
      * @return The stageId.
      */
     int getStageId();
+
+    /**
+     * <code>uint32 NACPGJMEPCP = 5;</code>
+     * @return The nACPGJMEPCP.
+     */
+    int getNACPGJMEPCP();
+
+    /**
+     * <code>repeated .LanternRiteFireworksReformSkillInfo skill_info_list = 9;</code>
+     */
+    java.util.List<emu.grasscutter.net.proto.LanternRiteFireworksReformSkillInfoOuterClass.LanternRiteFireworksReformSkillInfo> 
+        getSkillInfoListList();
+    /**
+     * <code>repeated .LanternRiteFireworksReformSkillInfo skill_info_list = 9;</code>
+     */
+    emu.grasscutter.net.proto.LanternRiteFireworksReformSkillInfoOuterClass.LanternRiteFireworksReformSkillInfo getSkillInfoList(int index);
+    /**
+     * <code>repeated .LanternRiteFireworksReformSkillInfo skill_info_list = 9;</code>
+     */
+    int getSkillInfoListCount();
+    /**
+     * <code>repeated .LanternRiteFireworksReformSkillInfo skill_info_list = 9;</code>
+     */
+    java.util.List<? extends emu.grasscutter.net.proto.LanternRiteFireworksReformSkillInfoOuterClass.LanternRiteFireworksReformSkillInfoOrBuilder> 
+        getSkillInfoListOrBuilderList();
+    /**
+     * <code>repeated .LanternRiteFireworksReformSkillInfo skill_info_list = 9;</code>
+     */
+    emu.grasscutter.net.proto.LanternRiteFireworksReformSkillInfoOuterClass.LanternRiteFireworksReformSkillInfoOrBuilder getSkillInfoListOrBuilder(
+        int index);
+
+    /**
+     * <code>uint32 ONFGHBLOLCK = 12;</code>
+     * @return The oNFGHBLOLCK.
+     */
+    int getONFGHBLOLCK();
+
+    /**
+     * <code>repeated .LanternRiteFireworksReformFactorInfo factor_info_list = 10;</code>
+     */
+    java.util.List<emu.grasscutter.net.proto.LanternRiteFireworksReformFactorInfoOuterClass.LanternRiteFireworksReformFactorInfo> 
+        getFactorInfoListList();
+    /**
+     * <code>repeated .LanternRiteFireworksReformFactorInfo factor_info_list = 10;</code>
+     */
+    emu.grasscutter.net.proto.LanternRiteFireworksReformFactorInfoOuterClass.LanternRiteFireworksReformFactorInfo getFactorInfoList(int index);
+    /**
+     * <code>repeated .LanternRiteFireworksReformFactorInfo factor_info_list = 10;</code>
+     */
+    int getFactorInfoListCount();
+    /**
+     * <code>repeated .LanternRiteFireworksReformFactorInfo factor_info_list = 10;</code>
+     */
+    java.util.List<? extends emu.grasscutter.net.proto.LanternRiteFireworksReformFactorInfoOuterClass.LanternRiteFireworksReformFactorInfoOrBuilder> 
+        getFactorInfoListOrBuilderList();
+    /**
+     * <code>repeated .LanternRiteFireworksReformFactorInfo factor_info_list = 10;</code>
+     */
+    emu.grasscutter.net.proto.LanternRiteFireworksReformFactorInfoOuterClass.LanternRiteFireworksReformFactorInfoOrBuilder getFactorInfoListOrBuilder(
+        int index);
+
+    /**
+     * <code>int32 retcode = 1;</code>
+     * @return The retcode.
+     */
+    int getRetcode();
   }
   /**
    * <pre>
-   * CmdId: 8260
-   * Obf: MNFKALOFEIO
+   * CmdId: 9926
+   * Obf: HNEJCEGCLLM
    * </pre>
    *
    * Protobuf type {@code LanternRiteStartFireworksReformRsp}
@@ -161,7 +161,27 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
             case 0:
               done = true;
               break;
-            case 10: {
+            case 8: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 16: {
+
+              challengeId_ = input.readUInt32();
+              break;
+            }
+            case 24: {
+
+              kCHDLMCFANC_ = input.readUInt32();
+              break;
+            }
+            case 40: {
+
+              nACPGJMEPCP_ = input.readUInt32();
+              break;
+            }
+            case 74: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 skillInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.LanternRiteFireworksReformSkillInfoOuterClass.LanternRiteFireworksReformSkillInfo>();
                 mutable_bitField0_ |= 0x00000001;
@@ -170,12 +190,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.LanternRiteFireworksReformSkillInfoOuterClass.LanternRiteFireworksReformSkillInfo.parser(), extensionRegistry));
               break;
             }
-            case 24: {
-
-              fCGOPINPKBP_ = input.readUInt32();
-              break;
-            }
-            case 50: {
+            case 82: {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 factorInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.LanternRiteFireworksReformFactorInfoOuterClass.LanternRiteFireworksReformFactorInfo>();
                 mutable_bitField0_ |= 0x00000002;
@@ -184,34 +199,19 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.LanternRiteFireworksReformFactorInfoOuterClass.LanternRiteFireworksReformFactorInfo.parser(), extensionRegistry));
               break;
             }
-            case 64: {
+            case 88: {
 
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 72: {
-
-              jGLNDBHIAPK_ = input.readUInt32();
-              break;
-            }
-            case 80: {
-
-              dKBBJDIMJPB_ = input.readUInt32();
+              stageId_ = input.readUInt32();
               break;
             }
             case 96: {
 
-              mBEGNNPJAPL_ = input.readUInt32();
-              break;
-            }
-            case 104: {
-
-              challengeId_ = input.readUInt32();
+              oNFGHBLOLCK_ = input.readUInt32();
               break;
             }
             case 112: {
 
-              stageId_ = input.readUInt32();
+              cOOIJAMKABA_ = input.readUInt32();
               break;
             }
             default: {
@@ -252,145 +252,32 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
               emu.grasscutter.net.proto.LanternRiteStartFireworksReformRspOuterClass.LanternRiteStartFireworksReformRsp.class, emu.grasscutter.net.proto.LanternRiteStartFireworksReformRspOuterClass.LanternRiteStartFireworksReformRsp.Builder.class);
     }
 
-    public static final int MBEGNNPJAPL_FIELD_NUMBER = 12;
-    private int mBEGNNPJAPL_;
+    public static final int COOIJAMKABA_FIELD_NUMBER = 14;
+    private int cOOIJAMKABA_;
     /**
-     * <code>uint32 MBEGNNPJAPL = 12;</code>
-     * @return The mBEGNNPJAPL.
+     * <code>uint32 COOIJAMKABA = 14;</code>
+     * @return The cOOIJAMKABA.
      */
     @java.lang.Override
-    public int getMBEGNNPJAPL() {
-      return mBEGNNPJAPL_;
+    public int getCOOIJAMKABA() {
+      return cOOIJAMKABA_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 8;
-    private int retcode_;
+    public static final int KCHDLMCFANC_FIELD_NUMBER = 3;
+    private int kCHDLMCFANC_;
     /**
-     * <code>int32 retcode = 8;</code>
-     * @return The retcode.
+     * <code>uint32 KCHDLMCFANC = 3;</code>
+     * @return The kCHDLMCFANC.
      */
     @java.lang.Override
-    public int getRetcode() {
-      return retcode_;
+    public int getKCHDLMCFANC() {
+      return kCHDLMCFANC_;
     }
 
-    public static final int SKILL_INFO_LIST_FIELD_NUMBER = 1;
-    private java.util.List<emu.grasscutter.net.proto.LanternRiteFireworksReformSkillInfoOuterClass.LanternRiteFireworksReformSkillInfo> skillInfoList_;
-    /**
-     * <code>repeated .LanternRiteFireworksReformSkillInfo skill_info_list = 1;</code>
-     */
-    @java.lang.Override
-    public java.util.List<emu.grasscutter.net.proto.LanternRiteFireworksReformSkillInfoOuterClass.LanternRiteFireworksReformSkillInfo> getSkillInfoListList() {
-      return skillInfoList_;
-    }
-    /**
-     * <code>repeated .LanternRiteFireworksReformSkillInfo skill_info_list = 1;</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends emu.grasscutter.net.proto.LanternRiteFireworksReformSkillInfoOuterClass.LanternRiteFireworksReformSkillInfoOrBuilder> 
-        getSkillInfoListOrBuilderList() {
-      return skillInfoList_;
-    }
-    /**
-     * <code>repeated .LanternRiteFireworksReformSkillInfo skill_info_list = 1;</code>
-     */
-    @java.lang.Override
-    public int getSkillInfoListCount() {
-      return skillInfoList_.size();
-    }
-    /**
-     * <code>repeated .LanternRiteFireworksReformSkillInfo skill_info_list = 1;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.LanternRiteFireworksReformSkillInfoOuterClass.LanternRiteFireworksReformSkillInfo getSkillInfoList(int index) {
-      return skillInfoList_.get(index);
-    }
-    /**
-     * <code>repeated .LanternRiteFireworksReformSkillInfo skill_info_list = 1;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.LanternRiteFireworksReformSkillInfoOuterClass.LanternRiteFireworksReformSkillInfoOrBuilder getSkillInfoListOrBuilder(
-        int index) {
-      return skillInfoList_.get(index);
-    }
-
-    public static final int DKBBJDIMJPB_FIELD_NUMBER = 10;
-    private int dKBBJDIMJPB_;
-    /**
-     * <code>uint32 DKBBJDIMJPB = 10;</code>
-     * @return The dKBBJDIMJPB.
-     */
-    @java.lang.Override
-    public int getDKBBJDIMJPB() {
-      return dKBBJDIMJPB_;
-    }
-
-    public static final int FACTOR_INFO_LIST_FIELD_NUMBER = 6;
-    private java.util.List<emu.grasscutter.net.proto.LanternRiteFireworksReformFactorInfoOuterClass.LanternRiteFireworksReformFactorInfo> factorInfoList_;
-    /**
-     * <code>repeated .LanternRiteFireworksReformFactorInfo factor_info_list = 6;</code>
-     */
-    @java.lang.Override
-    public java.util.List<emu.grasscutter.net.proto.LanternRiteFireworksReformFactorInfoOuterClass.LanternRiteFireworksReformFactorInfo> getFactorInfoListList() {
-      return factorInfoList_;
-    }
-    /**
-     * <code>repeated .LanternRiteFireworksReformFactorInfo factor_info_list = 6;</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends emu.grasscutter.net.proto.LanternRiteFireworksReformFactorInfoOuterClass.LanternRiteFireworksReformFactorInfoOrBuilder> 
-        getFactorInfoListOrBuilderList() {
-      return factorInfoList_;
-    }
-    /**
-     * <code>repeated .LanternRiteFireworksReformFactorInfo factor_info_list = 6;</code>
-     */
-    @java.lang.Override
-    public int getFactorInfoListCount() {
-      return factorInfoList_.size();
-    }
-    /**
-     * <code>repeated .LanternRiteFireworksReformFactorInfo factor_info_list = 6;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.LanternRiteFireworksReformFactorInfoOuterClass.LanternRiteFireworksReformFactorInfo getFactorInfoList(int index) {
-      return factorInfoList_.get(index);
-    }
-    /**
-     * <code>repeated .LanternRiteFireworksReformFactorInfo factor_info_list = 6;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.LanternRiteFireworksReformFactorInfoOuterClass.LanternRiteFireworksReformFactorInfoOrBuilder getFactorInfoListOrBuilder(
-        int index) {
-      return factorInfoList_.get(index);
-    }
-
-    public static final int JGLNDBHIAPK_FIELD_NUMBER = 9;
-    private int jGLNDBHIAPK_;
-    /**
-     * <code>uint32 JGLNDBHIAPK = 9;</code>
-     * @return The jGLNDBHIAPK.
-     */
-    @java.lang.Override
-    public int getJGLNDBHIAPK() {
-      return jGLNDBHIAPK_;
-    }
-
-    public static final int FCGOPINPKBP_FIELD_NUMBER = 3;
-    private int fCGOPINPKBP_;
-    /**
-     * <code>uint32 FCGOPINPKBP = 3;</code>
-     * @return The fCGOPINPKBP.
-     */
-    @java.lang.Override
-    public int getFCGOPINPKBP() {
-      return fCGOPINPKBP_;
-    }
-
-    public static final int CHALLENGE_ID_FIELD_NUMBER = 13;
+    public static final int CHALLENGE_ID_FIELD_NUMBER = 2;
     private int challengeId_;
     /**
-     * <code>uint32 challenge_id = 13;</code>
+     * <code>uint32 challenge_id = 2;</code>
      * @return The challengeId.
      */
     @java.lang.Override
@@ -398,15 +285,128 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
       return challengeId_;
     }
 
-    public static final int STAGE_ID_FIELD_NUMBER = 14;
+    public static final int STAGE_ID_FIELD_NUMBER = 11;
     private int stageId_;
     /**
-     * <code>uint32 stage_id = 14;</code>
+     * <code>uint32 stage_id = 11;</code>
      * @return The stageId.
      */
     @java.lang.Override
     public int getStageId() {
       return stageId_;
+    }
+
+    public static final int NACPGJMEPCP_FIELD_NUMBER = 5;
+    private int nACPGJMEPCP_;
+    /**
+     * <code>uint32 NACPGJMEPCP = 5;</code>
+     * @return The nACPGJMEPCP.
+     */
+    @java.lang.Override
+    public int getNACPGJMEPCP() {
+      return nACPGJMEPCP_;
+    }
+
+    public static final int SKILL_INFO_LIST_FIELD_NUMBER = 9;
+    private java.util.List<emu.grasscutter.net.proto.LanternRiteFireworksReformSkillInfoOuterClass.LanternRiteFireworksReformSkillInfo> skillInfoList_;
+    /**
+     * <code>repeated .LanternRiteFireworksReformSkillInfo skill_info_list = 9;</code>
+     */
+    @java.lang.Override
+    public java.util.List<emu.grasscutter.net.proto.LanternRiteFireworksReformSkillInfoOuterClass.LanternRiteFireworksReformSkillInfo> getSkillInfoListList() {
+      return skillInfoList_;
+    }
+    /**
+     * <code>repeated .LanternRiteFireworksReformSkillInfo skill_info_list = 9;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends emu.grasscutter.net.proto.LanternRiteFireworksReformSkillInfoOuterClass.LanternRiteFireworksReformSkillInfoOrBuilder> 
+        getSkillInfoListOrBuilderList() {
+      return skillInfoList_;
+    }
+    /**
+     * <code>repeated .LanternRiteFireworksReformSkillInfo skill_info_list = 9;</code>
+     */
+    @java.lang.Override
+    public int getSkillInfoListCount() {
+      return skillInfoList_.size();
+    }
+    /**
+     * <code>repeated .LanternRiteFireworksReformSkillInfo skill_info_list = 9;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.LanternRiteFireworksReformSkillInfoOuterClass.LanternRiteFireworksReformSkillInfo getSkillInfoList(int index) {
+      return skillInfoList_.get(index);
+    }
+    /**
+     * <code>repeated .LanternRiteFireworksReformSkillInfo skill_info_list = 9;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.LanternRiteFireworksReformSkillInfoOuterClass.LanternRiteFireworksReformSkillInfoOrBuilder getSkillInfoListOrBuilder(
+        int index) {
+      return skillInfoList_.get(index);
+    }
+
+    public static final int ONFGHBLOLCK_FIELD_NUMBER = 12;
+    private int oNFGHBLOLCK_;
+    /**
+     * <code>uint32 ONFGHBLOLCK = 12;</code>
+     * @return The oNFGHBLOLCK.
+     */
+    @java.lang.Override
+    public int getONFGHBLOLCK() {
+      return oNFGHBLOLCK_;
+    }
+
+    public static final int FACTOR_INFO_LIST_FIELD_NUMBER = 10;
+    private java.util.List<emu.grasscutter.net.proto.LanternRiteFireworksReformFactorInfoOuterClass.LanternRiteFireworksReformFactorInfo> factorInfoList_;
+    /**
+     * <code>repeated .LanternRiteFireworksReformFactorInfo factor_info_list = 10;</code>
+     */
+    @java.lang.Override
+    public java.util.List<emu.grasscutter.net.proto.LanternRiteFireworksReformFactorInfoOuterClass.LanternRiteFireworksReformFactorInfo> getFactorInfoListList() {
+      return factorInfoList_;
+    }
+    /**
+     * <code>repeated .LanternRiteFireworksReformFactorInfo factor_info_list = 10;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends emu.grasscutter.net.proto.LanternRiteFireworksReformFactorInfoOuterClass.LanternRiteFireworksReformFactorInfoOrBuilder> 
+        getFactorInfoListOrBuilderList() {
+      return factorInfoList_;
+    }
+    /**
+     * <code>repeated .LanternRiteFireworksReformFactorInfo factor_info_list = 10;</code>
+     */
+    @java.lang.Override
+    public int getFactorInfoListCount() {
+      return factorInfoList_.size();
+    }
+    /**
+     * <code>repeated .LanternRiteFireworksReformFactorInfo factor_info_list = 10;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.LanternRiteFireworksReformFactorInfoOuterClass.LanternRiteFireworksReformFactorInfo getFactorInfoList(int index) {
+      return factorInfoList_.get(index);
+    }
+    /**
+     * <code>repeated .LanternRiteFireworksReformFactorInfo factor_info_list = 10;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.LanternRiteFireworksReformFactorInfoOuterClass.LanternRiteFireworksReformFactorInfoOrBuilder getFactorInfoListOrBuilder(
+        int index) {
+      return factorInfoList_.get(index);
+    }
+
+    public static final int RETCODE_FIELD_NUMBER = 1;
+    private int retcode_;
+    /**
+     * <code>int32 retcode = 1;</code>
+     * @return The retcode.
+     */
+    @java.lang.Override
+    public int getRetcode() {
+      return retcode_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -423,32 +423,32 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < skillInfoList_.size(); i++) {
-        output.writeMessage(1, skillInfoList_.get(i));
-      }
-      if (fCGOPINPKBP_ != 0) {
-        output.writeUInt32(3, fCGOPINPKBP_);
-      }
-      for (int i = 0; i < factorInfoList_.size(); i++) {
-        output.writeMessage(6, factorInfoList_.get(i));
-      }
       if (retcode_ != 0) {
-        output.writeInt32(8, retcode_);
-      }
-      if (jGLNDBHIAPK_ != 0) {
-        output.writeUInt32(9, jGLNDBHIAPK_);
-      }
-      if (dKBBJDIMJPB_ != 0) {
-        output.writeUInt32(10, dKBBJDIMJPB_);
-      }
-      if (mBEGNNPJAPL_ != 0) {
-        output.writeUInt32(12, mBEGNNPJAPL_);
+        output.writeInt32(1, retcode_);
       }
       if (challengeId_ != 0) {
-        output.writeUInt32(13, challengeId_);
+        output.writeUInt32(2, challengeId_);
+      }
+      if (kCHDLMCFANC_ != 0) {
+        output.writeUInt32(3, kCHDLMCFANC_);
+      }
+      if (nACPGJMEPCP_ != 0) {
+        output.writeUInt32(5, nACPGJMEPCP_);
+      }
+      for (int i = 0; i < skillInfoList_.size(); i++) {
+        output.writeMessage(9, skillInfoList_.get(i));
+      }
+      for (int i = 0; i < factorInfoList_.size(); i++) {
+        output.writeMessage(10, factorInfoList_.get(i));
       }
       if (stageId_ != 0) {
-        output.writeUInt32(14, stageId_);
+        output.writeUInt32(11, stageId_);
+      }
+      if (oNFGHBLOLCK_ != 0) {
+        output.writeUInt32(12, oNFGHBLOLCK_);
+      }
+      if (cOOIJAMKABA_ != 0) {
+        output.writeUInt32(14, cOOIJAMKABA_);
       }
       unknownFields.writeTo(output);
     }
@@ -459,41 +459,41 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < skillInfoList_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, skillInfoList_.get(i));
-      }
-      if (fCGOPINPKBP_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, fCGOPINPKBP_);
-      }
-      for (int i = 0; i < factorInfoList_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, factorInfoList_.get(i));
-      }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(8, retcode_);
-      }
-      if (jGLNDBHIAPK_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, jGLNDBHIAPK_);
-      }
-      if (dKBBJDIMJPB_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, dKBBJDIMJPB_);
-      }
-      if (mBEGNNPJAPL_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, mBEGNNPJAPL_);
+          .computeInt32Size(1, retcode_);
       }
       if (challengeId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, challengeId_);
+          .computeUInt32Size(2, challengeId_);
+      }
+      if (kCHDLMCFANC_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(3, kCHDLMCFANC_);
+      }
+      if (nACPGJMEPCP_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(5, nACPGJMEPCP_);
+      }
+      for (int i = 0; i < skillInfoList_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(9, skillInfoList_.get(i));
+      }
+      for (int i = 0; i < factorInfoList_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(10, factorInfoList_.get(i));
       }
       if (stageId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, stageId_);
+          .computeUInt32Size(11, stageId_);
+      }
+      if (oNFGHBLOLCK_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(12, oNFGHBLOLCK_);
+      }
+      if (cOOIJAMKABA_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(14, cOOIJAMKABA_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -510,24 +510,24 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
       }
       emu.grasscutter.net.proto.LanternRiteStartFireworksReformRspOuterClass.LanternRiteStartFireworksReformRsp other = (emu.grasscutter.net.proto.LanternRiteStartFireworksReformRspOuterClass.LanternRiteStartFireworksReformRsp) obj;
 
-      if (getMBEGNNPJAPL()
-          != other.getMBEGNNPJAPL()) return false;
-      if (getRetcode()
-          != other.getRetcode()) return false;
-      if (!getSkillInfoListList()
-          .equals(other.getSkillInfoListList())) return false;
-      if (getDKBBJDIMJPB()
-          != other.getDKBBJDIMJPB()) return false;
-      if (!getFactorInfoListList()
-          .equals(other.getFactorInfoListList())) return false;
-      if (getJGLNDBHIAPK()
-          != other.getJGLNDBHIAPK()) return false;
-      if (getFCGOPINPKBP()
-          != other.getFCGOPINPKBP()) return false;
+      if (getCOOIJAMKABA()
+          != other.getCOOIJAMKABA()) return false;
+      if (getKCHDLMCFANC()
+          != other.getKCHDLMCFANC()) return false;
       if (getChallengeId()
           != other.getChallengeId()) return false;
       if (getStageId()
           != other.getStageId()) return false;
+      if (getNACPGJMEPCP()
+          != other.getNACPGJMEPCP()) return false;
+      if (!getSkillInfoListList()
+          .equals(other.getSkillInfoListList())) return false;
+      if (getONFGHBLOLCK()
+          != other.getONFGHBLOLCK()) return false;
+      if (!getFactorInfoListList()
+          .equals(other.getFactorInfoListList())) return false;
+      if (getRetcode()
+          != other.getRetcode()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -539,28 +539,28 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + MBEGNNPJAPL_FIELD_NUMBER;
-      hash = (53 * hash) + getMBEGNNPJAPL();
-      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getRetcode();
-      if (getSkillInfoListCount() > 0) {
-        hash = (37 * hash) + SKILL_INFO_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getSkillInfoListList().hashCode();
-      }
-      hash = (37 * hash) + DKBBJDIMJPB_FIELD_NUMBER;
-      hash = (53 * hash) + getDKBBJDIMJPB();
-      if (getFactorInfoListCount() > 0) {
-        hash = (37 * hash) + FACTOR_INFO_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getFactorInfoListList().hashCode();
-      }
-      hash = (37 * hash) + JGLNDBHIAPK_FIELD_NUMBER;
-      hash = (53 * hash) + getJGLNDBHIAPK();
-      hash = (37 * hash) + FCGOPINPKBP_FIELD_NUMBER;
-      hash = (53 * hash) + getFCGOPINPKBP();
+      hash = (37 * hash) + COOIJAMKABA_FIELD_NUMBER;
+      hash = (53 * hash) + getCOOIJAMKABA();
+      hash = (37 * hash) + KCHDLMCFANC_FIELD_NUMBER;
+      hash = (53 * hash) + getKCHDLMCFANC();
       hash = (37 * hash) + CHALLENGE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getChallengeId();
       hash = (37 * hash) + STAGE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getStageId();
+      hash = (37 * hash) + NACPGJMEPCP_FIELD_NUMBER;
+      hash = (53 * hash) + getNACPGJMEPCP();
+      if (getSkillInfoListCount() > 0) {
+        hash = (37 * hash) + SKILL_INFO_LIST_FIELD_NUMBER;
+        hash = (53 * hash) + getSkillInfoListList().hashCode();
+      }
+      hash = (37 * hash) + ONFGHBLOLCK_FIELD_NUMBER;
+      hash = (53 * hash) + getONFGHBLOLCK();
+      if (getFactorInfoListCount() > 0) {
+        hash = (37 * hash) + FACTOR_INFO_LIST_FIELD_NUMBER;
+        hash = (53 * hash) + getFactorInfoListList().hashCode();
+      }
+      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
+      hash = (53 * hash) + getRetcode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -658,8 +658,8 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8260
-     * Obf: MNFKALOFEIO
+     * CmdId: 9926
+     * Obf: HNEJCEGCLLM
      * </pre>
      *
      * Protobuf type {@code LanternRiteStartFireworksReformRsp}
@@ -701,9 +701,15 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        mBEGNNPJAPL_ = 0;
+        cOOIJAMKABA_ = 0;
 
-        retcode_ = 0;
+        kCHDLMCFANC_ = 0;
+
+        challengeId_ = 0;
+
+        stageId_ = 0;
+
+        nACPGJMEPCP_ = 0;
 
         if (skillInfoListBuilder_ == null) {
           skillInfoList_ = java.util.Collections.emptyList();
@@ -711,7 +717,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
         } else {
           skillInfoListBuilder_.clear();
         }
-        dKBBJDIMJPB_ = 0;
+        oNFGHBLOLCK_ = 0;
 
         if (factorInfoListBuilder_ == null) {
           factorInfoList_ = java.util.Collections.emptyList();
@@ -719,13 +725,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
         } else {
           factorInfoListBuilder_.clear();
         }
-        jGLNDBHIAPK_ = 0;
-
-        fCGOPINPKBP_ = 0;
-
-        challengeId_ = 0;
-
-        stageId_ = 0;
+        retcode_ = 0;
 
         return this;
       }
@@ -754,8 +754,11 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
       public emu.grasscutter.net.proto.LanternRiteStartFireworksReformRspOuterClass.LanternRiteStartFireworksReformRsp buildPartial() {
         emu.grasscutter.net.proto.LanternRiteStartFireworksReformRspOuterClass.LanternRiteStartFireworksReformRsp result = new emu.grasscutter.net.proto.LanternRiteStartFireworksReformRspOuterClass.LanternRiteStartFireworksReformRsp(this);
         int from_bitField0_ = bitField0_;
-        result.mBEGNNPJAPL_ = mBEGNNPJAPL_;
-        result.retcode_ = retcode_;
+        result.cOOIJAMKABA_ = cOOIJAMKABA_;
+        result.kCHDLMCFANC_ = kCHDLMCFANC_;
+        result.challengeId_ = challengeId_;
+        result.stageId_ = stageId_;
+        result.nACPGJMEPCP_ = nACPGJMEPCP_;
         if (skillInfoListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             skillInfoList_ = java.util.Collections.unmodifiableList(skillInfoList_);
@@ -765,7 +768,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
         } else {
           result.skillInfoList_ = skillInfoListBuilder_.build();
         }
-        result.dKBBJDIMJPB_ = dKBBJDIMJPB_;
+        result.oNFGHBLOLCK_ = oNFGHBLOLCK_;
         if (factorInfoListBuilder_ == null) {
           if (((bitField0_ & 0x00000002) != 0)) {
             factorInfoList_ = java.util.Collections.unmodifiableList(factorInfoList_);
@@ -775,10 +778,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
         } else {
           result.factorInfoList_ = factorInfoListBuilder_.build();
         }
-        result.jGLNDBHIAPK_ = jGLNDBHIAPK_;
-        result.fCGOPINPKBP_ = fCGOPINPKBP_;
-        result.challengeId_ = challengeId_;
-        result.stageId_ = stageId_;
+        result.retcode_ = retcode_;
         onBuilt();
         return result;
       }
@@ -827,11 +827,20 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.LanternRiteStartFireworksReformRspOuterClass.LanternRiteStartFireworksReformRsp other) {
         if (other == emu.grasscutter.net.proto.LanternRiteStartFireworksReformRspOuterClass.LanternRiteStartFireworksReformRsp.getDefaultInstance()) return this;
-        if (other.getMBEGNNPJAPL() != 0) {
-          setMBEGNNPJAPL(other.getMBEGNNPJAPL());
+        if (other.getCOOIJAMKABA() != 0) {
+          setCOOIJAMKABA(other.getCOOIJAMKABA());
         }
-        if (other.getRetcode() != 0) {
-          setRetcode(other.getRetcode());
+        if (other.getKCHDLMCFANC() != 0) {
+          setKCHDLMCFANC(other.getKCHDLMCFANC());
+        }
+        if (other.getChallengeId() != 0) {
+          setChallengeId(other.getChallengeId());
+        }
+        if (other.getStageId() != 0) {
+          setStageId(other.getStageId());
+        }
+        if (other.getNACPGJMEPCP() != 0) {
+          setNACPGJMEPCP(other.getNACPGJMEPCP());
         }
         if (skillInfoListBuilder_ == null) {
           if (!other.skillInfoList_.isEmpty()) {
@@ -859,8 +868,8 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
             }
           }
         }
-        if (other.getDKBBJDIMJPB() != 0) {
-          setDKBBJDIMJPB(other.getDKBBJDIMJPB());
+        if (other.getONFGHBLOLCK() != 0) {
+          setONFGHBLOLCK(other.getONFGHBLOLCK());
         }
         if (factorInfoListBuilder_ == null) {
           if (!other.factorInfoList_.isEmpty()) {
@@ -888,17 +897,8 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
             }
           }
         }
-        if (other.getJGLNDBHIAPK() != 0) {
-          setJGLNDBHIAPK(other.getJGLNDBHIAPK());
-        }
-        if (other.getFCGOPINPKBP() != 0) {
-          setFCGOPINPKBP(other.getFCGOPINPKBP());
-        }
-        if (other.getChallengeId() != 0) {
-          setChallengeId(other.getChallengeId());
-        }
-        if (other.getStageId() != 0) {
-          setStageId(other.getStageId());
+        if (other.getRetcode() != 0) {
+          setRetcode(other.getRetcode());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -930,64 +930,157 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
       }
       private int bitField0_;
 
-      private int mBEGNNPJAPL_ ;
+      private int cOOIJAMKABA_ ;
       /**
-       * <code>uint32 MBEGNNPJAPL = 12;</code>
-       * @return The mBEGNNPJAPL.
+       * <code>uint32 COOIJAMKABA = 14;</code>
+       * @return The cOOIJAMKABA.
        */
       @java.lang.Override
-      public int getMBEGNNPJAPL() {
-        return mBEGNNPJAPL_;
+      public int getCOOIJAMKABA() {
+        return cOOIJAMKABA_;
       }
       /**
-       * <code>uint32 MBEGNNPJAPL = 12;</code>
-       * @param value The mBEGNNPJAPL to set.
+       * <code>uint32 COOIJAMKABA = 14;</code>
+       * @param value The cOOIJAMKABA to set.
        * @return This builder for chaining.
        */
-      public Builder setMBEGNNPJAPL(int value) {
+      public Builder setCOOIJAMKABA(int value) {
         
-        mBEGNNPJAPL_ = value;
+        cOOIJAMKABA_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 MBEGNNPJAPL = 12;</code>
+       * <code>uint32 COOIJAMKABA = 14;</code>
        * @return This builder for chaining.
        */
-      public Builder clearMBEGNNPJAPL() {
+      public Builder clearCOOIJAMKABA() {
         
-        mBEGNNPJAPL_ = 0;
+        cOOIJAMKABA_ = 0;
         onChanged();
         return this;
       }
 
-      private int retcode_ ;
+      private int kCHDLMCFANC_ ;
       /**
-       * <code>int32 retcode = 8;</code>
-       * @return The retcode.
+       * <code>uint32 KCHDLMCFANC = 3;</code>
+       * @return The kCHDLMCFANC.
        */
       @java.lang.Override
-      public int getRetcode() {
-        return retcode_;
+      public int getKCHDLMCFANC() {
+        return kCHDLMCFANC_;
       }
       /**
-       * <code>int32 retcode = 8;</code>
-       * @param value The retcode to set.
+       * <code>uint32 KCHDLMCFANC = 3;</code>
+       * @param value The kCHDLMCFANC to set.
        * @return This builder for chaining.
        */
-      public Builder setRetcode(int value) {
+      public Builder setKCHDLMCFANC(int value) {
         
-        retcode_ = value;
+        kCHDLMCFANC_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 retcode = 8;</code>
+       * <code>uint32 KCHDLMCFANC = 3;</code>
        * @return This builder for chaining.
        */
-      public Builder clearRetcode() {
+      public Builder clearKCHDLMCFANC() {
         
-        retcode_ = 0;
+        kCHDLMCFANC_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int challengeId_ ;
+      /**
+       * <code>uint32 challenge_id = 2;</code>
+       * @return The challengeId.
+       */
+      @java.lang.Override
+      public int getChallengeId() {
+        return challengeId_;
+      }
+      /**
+       * <code>uint32 challenge_id = 2;</code>
+       * @param value The challengeId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setChallengeId(int value) {
+        
+        challengeId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 challenge_id = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearChallengeId() {
+        
+        challengeId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int stageId_ ;
+      /**
+       * <code>uint32 stage_id = 11;</code>
+       * @return The stageId.
+       */
+      @java.lang.Override
+      public int getStageId() {
+        return stageId_;
+      }
+      /**
+       * <code>uint32 stage_id = 11;</code>
+       * @param value The stageId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStageId(int value) {
+        
+        stageId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 stage_id = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStageId() {
+        
+        stageId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int nACPGJMEPCP_ ;
+      /**
+       * <code>uint32 NACPGJMEPCP = 5;</code>
+       * @return The nACPGJMEPCP.
+       */
+      @java.lang.Override
+      public int getNACPGJMEPCP() {
+        return nACPGJMEPCP_;
+      }
+      /**
+       * <code>uint32 NACPGJMEPCP = 5;</code>
+       * @param value The nACPGJMEPCP to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNACPGJMEPCP(int value) {
+        
+        nACPGJMEPCP_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 NACPGJMEPCP = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearNACPGJMEPCP() {
+        
+        nACPGJMEPCP_ = 0;
         onChanged();
         return this;
       }
@@ -1005,7 +1098,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
           emu.grasscutter.net.proto.LanternRiteFireworksReformSkillInfoOuterClass.LanternRiteFireworksReformSkillInfo, emu.grasscutter.net.proto.LanternRiteFireworksReformSkillInfoOuterClass.LanternRiteFireworksReformSkillInfo.Builder, emu.grasscutter.net.proto.LanternRiteFireworksReformSkillInfoOuterClass.LanternRiteFireworksReformSkillInfoOrBuilder> skillInfoListBuilder_;
 
       /**
-       * <code>repeated .LanternRiteFireworksReformSkillInfo skill_info_list = 1;</code>
+       * <code>repeated .LanternRiteFireworksReformSkillInfo skill_info_list = 9;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.LanternRiteFireworksReformSkillInfoOuterClass.LanternRiteFireworksReformSkillInfo> getSkillInfoListList() {
         if (skillInfoListBuilder_ == null) {
@@ -1015,7 +1108,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
         }
       }
       /**
-       * <code>repeated .LanternRiteFireworksReformSkillInfo skill_info_list = 1;</code>
+       * <code>repeated .LanternRiteFireworksReformSkillInfo skill_info_list = 9;</code>
        */
       public int getSkillInfoListCount() {
         if (skillInfoListBuilder_ == null) {
@@ -1025,7 +1118,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
         }
       }
       /**
-       * <code>repeated .LanternRiteFireworksReformSkillInfo skill_info_list = 1;</code>
+       * <code>repeated .LanternRiteFireworksReformSkillInfo skill_info_list = 9;</code>
        */
       public emu.grasscutter.net.proto.LanternRiteFireworksReformSkillInfoOuterClass.LanternRiteFireworksReformSkillInfo getSkillInfoList(int index) {
         if (skillInfoListBuilder_ == null) {
@@ -1035,7 +1128,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
         }
       }
       /**
-       * <code>repeated .LanternRiteFireworksReformSkillInfo skill_info_list = 1;</code>
+       * <code>repeated .LanternRiteFireworksReformSkillInfo skill_info_list = 9;</code>
        */
       public Builder setSkillInfoList(
           int index, emu.grasscutter.net.proto.LanternRiteFireworksReformSkillInfoOuterClass.LanternRiteFireworksReformSkillInfo value) {
@@ -1052,7 +1145,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .LanternRiteFireworksReformSkillInfo skill_info_list = 1;</code>
+       * <code>repeated .LanternRiteFireworksReformSkillInfo skill_info_list = 9;</code>
        */
       public Builder setSkillInfoList(
           int index, emu.grasscutter.net.proto.LanternRiteFireworksReformSkillInfoOuterClass.LanternRiteFireworksReformSkillInfo.Builder builderForValue) {
@@ -1066,7 +1159,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .LanternRiteFireworksReformSkillInfo skill_info_list = 1;</code>
+       * <code>repeated .LanternRiteFireworksReformSkillInfo skill_info_list = 9;</code>
        */
       public Builder addSkillInfoList(emu.grasscutter.net.proto.LanternRiteFireworksReformSkillInfoOuterClass.LanternRiteFireworksReformSkillInfo value) {
         if (skillInfoListBuilder_ == null) {
@@ -1082,7 +1175,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .LanternRiteFireworksReformSkillInfo skill_info_list = 1;</code>
+       * <code>repeated .LanternRiteFireworksReformSkillInfo skill_info_list = 9;</code>
        */
       public Builder addSkillInfoList(
           int index, emu.grasscutter.net.proto.LanternRiteFireworksReformSkillInfoOuterClass.LanternRiteFireworksReformSkillInfo value) {
@@ -1099,7 +1192,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .LanternRiteFireworksReformSkillInfo skill_info_list = 1;</code>
+       * <code>repeated .LanternRiteFireworksReformSkillInfo skill_info_list = 9;</code>
        */
       public Builder addSkillInfoList(
           emu.grasscutter.net.proto.LanternRiteFireworksReformSkillInfoOuterClass.LanternRiteFireworksReformSkillInfo.Builder builderForValue) {
@@ -1113,7 +1206,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .LanternRiteFireworksReformSkillInfo skill_info_list = 1;</code>
+       * <code>repeated .LanternRiteFireworksReformSkillInfo skill_info_list = 9;</code>
        */
       public Builder addSkillInfoList(
           int index, emu.grasscutter.net.proto.LanternRiteFireworksReformSkillInfoOuterClass.LanternRiteFireworksReformSkillInfo.Builder builderForValue) {
@@ -1127,7 +1220,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .LanternRiteFireworksReformSkillInfo skill_info_list = 1;</code>
+       * <code>repeated .LanternRiteFireworksReformSkillInfo skill_info_list = 9;</code>
        */
       public Builder addAllSkillInfoList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.LanternRiteFireworksReformSkillInfoOuterClass.LanternRiteFireworksReformSkillInfo> values) {
@@ -1142,7 +1235,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .LanternRiteFireworksReformSkillInfo skill_info_list = 1;</code>
+       * <code>repeated .LanternRiteFireworksReformSkillInfo skill_info_list = 9;</code>
        */
       public Builder clearSkillInfoList() {
         if (skillInfoListBuilder_ == null) {
@@ -1155,7 +1248,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .LanternRiteFireworksReformSkillInfo skill_info_list = 1;</code>
+       * <code>repeated .LanternRiteFireworksReformSkillInfo skill_info_list = 9;</code>
        */
       public Builder removeSkillInfoList(int index) {
         if (skillInfoListBuilder_ == null) {
@@ -1168,14 +1261,14 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .LanternRiteFireworksReformSkillInfo skill_info_list = 1;</code>
+       * <code>repeated .LanternRiteFireworksReformSkillInfo skill_info_list = 9;</code>
        */
       public emu.grasscutter.net.proto.LanternRiteFireworksReformSkillInfoOuterClass.LanternRiteFireworksReformSkillInfo.Builder getSkillInfoListBuilder(
           int index) {
         return getSkillInfoListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .LanternRiteFireworksReformSkillInfo skill_info_list = 1;</code>
+       * <code>repeated .LanternRiteFireworksReformSkillInfo skill_info_list = 9;</code>
        */
       public emu.grasscutter.net.proto.LanternRiteFireworksReformSkillInfoOuterClass.LanternRiteFireworksReformSkillInfoOrBuilder getSkillInfoListOrBuilder(
           int index) {
@@ -1185,7 +1278,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
         }
       }
       /**
-       * <code>repeated .LanternRiteFireworksReformSkillInfo skill_info_list = 1;</code>
+       * <code>repeated .LanternRiteFireworksReformSkillInfo skill_info_list = 9;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.LanternRiteFireworksReformSkillInfoOuterClass.LanternRiteFireworksReformSkillInfoOrBuilder> 
            getSkillInfoListOrBuilderList() {
@@ -1196,14 +1289,14 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
         }
       }
       /**
-       * <code>repeated .LanternRiteFireworksReformSkillInfo skill_info_list = 1;</code>
+       * <code>repeated .LanternRiteFireworksReformSkillInfo skill_info_list = 9;</code>
        */
       public emu.grasscutter.net.proto.LanternRiteFireworksReformSkillInfoOuterClass.LanternRiteFireworksReformSkillInfo.Builder addSkillInfoListBuilder() {
         return getSkillInfoListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.LanternRiteFireworksReformSkillInfoOuterClass.LanternRiteFireworksReformSkillInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .LanternRiteFireworksReformSkillInfo skill_info_list = 1;</code>
+       * <code>repeated .LanternRiteFireworksReformSkillInfo skill_info_list = 9;</code>
        */
       public emu.grasscutter.net.proto.LanternRiteFireworksReformSkillInfoOuterClass.LanternRiteFireworksReformSkillInfo.Builder addSkillInfoListBuilder(
           int index) {
@@ -1211,7 +1304,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
             index, emu.grasscutter.net.proto.LanternRiteFireworksReformSkillInfoOuterClass.LanternRiteFireworksReformSkillInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .LanternRiteFireworksReformSkillInfo skill_info_list = 1;</code>
+       * <code>repeated .LanternRiteFireworksReformSkillInfo skill_info_list = 9;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.LanternRiteFireworksReformSkillInfoOuterClass.LanternRiteFireworksReformSkillInfo.Builder> 
            getSkillInfoListBuilderList() {
@@ -1232,33 +1325,33 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
         return skillInfoListBuilder_;
       }
 
-      private int dKBBJDIMJPB_ ;
+      private int oNFGHBLOLCK_ ;
       /**
-       * <code>uint32 DKBBJDIMJPB = 10;</code>
-       * @return The dKBBJDIMJPB.
+       * <code>uint32 ONFGHBLOLCK = 12;</code>
+       * @return The oNFGHBLOLCK.
        */
       @java.lang.Override
-      public int getDKBBJDIMJPB() {
-        return dKBBJDIMJPB_;
+      public int getONFGHBLOLCK() {
+        return oNFGHBLOLCK_;
       }
       /**
-       * <code>uint32 DKBBJDIMJPB = 10;</code>
-       * @param value The dKBBJDIMJPB to set.
+       * <code>uint32 ONFGHBLOLCK = 12;</code>
+       * @param value The oNFGHBLOLCK to set.
        * @return This builder for chaining.
        */
-      public Builder setDKBBJDIMJPB(int value) {
+      public Builder setONFGHBLOLCK(int value) {
         
-        dKBBJDIMJPB_ = value;
+        oNFGHBLOLCK_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 DKBBJDIMJPB = 10;</code>
+       * <code>uint32 ONFGHBLOLCK = 12;</code>
        * @return This builder for chaining.
        */
-      public Builder clearDKBBJDIMJPB() {
+      public Builder clearONFGHBLOLCK() {
         
-        dKBBJDIMJPB_ = 0;
+        oNFGHBLOLCK_ = 0;
         onChanged();
         return this;
       }
@@ -1276,7 +1369,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
           emu.grasscutter.net.proto.LanternRiteFireworksReformFactorInfoOuterClass.LanternRiteFireworksReformFactorInfo, emu.grasscutter.net.proto.LanternRiteFireworksReformFactorInfoOuterClass.LanternRiteFireworksReformFactorInfo.Builder, emu.grasscutter.net.proto.LanternRiteFireworksReformFactorInfoOuterClass.LanternRiteFireworksReformFactorInfoOrBuilder> factorInfoListBuilder_;
 
       /**
-       * <code>repeated .LanternRiteFireworksReformFactorInfo factor_info_list = 6;</code>
+       * <code>repeated .LanternRiteFireworksReformFactorInfo factor_info_list = 10;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.LanternRiteFireworksReformFactorInfoOuterClass.LanternRiteFireworksReformFactorInfo> getFactorInfoListList() {
         if (factorInfoListBuilder_ == null) {
@@ -1286,7 +1379,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
         }
       }
       /**
-       * <code>repeated .LanternRiteFireworksReformFactorInfo factor_info_list = 6;</code>
+       * <code>repeated .LanternRiteFireworksReformFactorInfo factor_info_list = 10;</code>
        */
       public int getFactorInfoListCount() {
         if (factorInfoListBuilder_ == null) {
@@ -1296,7 +1389,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
         }
       }
       /**
-       * <code>repeated .LanternRiteFireworksReformFactorInfo factor_info_list = 6;</code>
+       * <code>repeated .LanternRiteFireworksReformFactorInfo factor_info_list = 10;</code>
        */
       public emu.grasscutter.net.proto.LanternRiteFireworksReformFactorInfoOuterClass.LanternRiteFireworksReformFactorInfo getFactorInfoList(int index) {
         if (factorInfoListBuilder_ == null) {
@@ -1306,7 +1399,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
         }
       }
       /**
-       * <code>repeated .LanternRiteFireworksReformFactorInfo factor_info_list = 6;</code>
+       * <code>repeated .LanternRiteFireworksReformFactorInfo factor_info_list = 10;</code>
        */
       public Builder setFactorInfoList(
           int index, emu.grasscutter.net.proto.LanternRiteFireworksReformFactorInfoOuterClass.LanternRiteFireworksReformFactorInfo value) {
@@ -1323,7 +1416,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .LanternRiteFireworksReformFactorInfo factor_info_list = 6;</code>
+       * <code>repeated .LanternRiteFireworksReformFactorInfo factor_info_list = 10;</code>
        */
       public Builder setFactorInfoList(
           int index, emu.grasscutter.net.proto.LanternRiteFireworksReformFactorInfoOuterClass.LanternRiteFireworksReformFactorInfo.Builder builderForValue) {
@@ -1337,7 +1430,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .LanternRiteFireworksReformFactorInfo factor_info_list = 6;</code>
+       * <code>repeated .LanternRiteFireworksReformFactorInfo factor_info_list = 10;</code>
        */
       public Builder addFactorInfoList(emu.grasscutter.net.proto.LanternRiteFireworksReformFactorInfoOuterClass.LanternRiteFireworksReformFactorInfo value) {
         if (factorInfoListBuilder_ == null) {
@@ -1353,7 +1446,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .LanternRiteFireworksReformFactorInfo factor_info_list = 6;</code>
+       * <code>repeated .LanternRiteFireworksReformFactorInfo factor_info_list = 10;</code>
        */
       public Builder addFactorInfoList(
           int index, emu.grasscutter.net.proto.LanternRiteFireworksReformFactorInfoOuterClass.LanternRiteFireworksReformFactorInfo value) {
@@ -1370,7 +1463,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .LanternRiteFireworksReformFactorInfo factor_info_list = 6;</code>
+       * <code>repeated .LanternRiteFireworksReformFactorInfo factor_info_list = 10;</code>
        */
       public Builder addFactorInfoList(
           emu.grasscutter.net.proto.LanternRiteFireworksReformFactorInfoOuterClass.LanternRiteFireworksReformFactorInfo.Builder builderForValue) {
@@ -1384,7 +1477,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .LanternRiteFireworksReformFactorInfo factor_info_list = 6;</code>
+       * <code>repeated .LanternRiteFireworksReformFactorInfo factor_info_list = 10;</code>
        */
       public Builder addFactorInfoList(
           int index, emu.grasscutter.net.proto.LanternRiteFireworksReformFactorInfoOuterClass.LanternRiteFireworksReformFactorInfo.Builder builderForValue) {
@@ -1398,7 +1491,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .LanternRiteFireworksReformFactorInfo factor_info_list = 6;</code>
+       * <code>repeated .LanternRiteFireworksReformFactorInfo factor_info_list = 10;</code>
        */
       public Builder addAllFactorInfoList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.LanternRiteFireworksReformFactorInfoOuterClass.LanternRiteFireworksReformFactorInfo> values) {
@@ -1413,7 +1506,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .LanternRiteFireworksReformFactorInfo factor_info_list = 6;</code>
+       * <code>repeated .LanternRiteFireworksReformFactorInfo factor_info_list = 10;</code>
        */
       public Builder clearFactorInfoList() {
         if (factorInfoListBuilder_ == null) {
@@ -1426,7 +1519,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .LanternRiteFireworksReformFactorInfo factor_info_list = 6;</code>
+       * <code>repeated .LanternRiteFireworksReformFactorInfo factor_info_list = 10;</code>
        */
       public Builder removeFactorInfoList(int index) {
         if (factorInfoListBuilder_ == null) {
@@ -1439,14 +1532,14 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .LanternRiteFireworksReformFactorInfo factor_info_list = 6;</code>
+       * <code>repeated .LanternRiteFireworksReformFactorInfo factor_info_list = 10;</code>
        */
       public emu.grasscutter.net.proto.LanternRiteFireworksReformFactorInfoOuterClass.LanternRiteFireworksReformFactorInfo.Builder getFactorInfoListBuilder(
           int index) {
         return getFactorInfoListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .LanternRiteFireworksReformFactorInfo factor_info_list = 6;</code>
+       * <code>repeated .LanternRiteFireworksReformFactorInfo factor_info_list = 10;</code>
        */
       public emu.grasscutter.net.proto.LanternRiteFireworksReformFactorInfoOuterClass.LanternRiteFireworksReformFactorInfoOrBuilder getFactorInfoListOrBuilder(
           int index) {
@@ -1456,7 +1549,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
         }
       }
       /**
-       * <code>repeated .LanternRiteFireworksReformFactorInfo factor_info_list = 6;</code>
+       * <code>repeated .LanternRiteFireworksReformFactorInfo factor_info_list = 10;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.LanternRiteFireworksReformFactorInfoOuterClass.LanternRiteFireworksReformFactorInfoOrBuilder> 
            getFactorInfoListOrBuilderList() {
@@ -1467,14 +1560,14 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
         }
       }
       /**
-       * <code>repeated .LanternRiteFireworksReformFactorInfo factor_info_list = 6;</code>
+       * <code>repeated .LanternRiteFireworksReformFactorInfo factor_info_list = 10;</code>
        */
       public emu.grasscutter.net.proto.LanternRiteFireworksReformFactorInfoOuterClass.LanternRiteFireworksReformFactorInfo.Builder addFactorInfoListBuilder() {
         return getFactorInfoListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.LanternRiteFireworksReformFactorInfoOuterClass.LanternRiteFireworksReformFactorInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .LanternRiteFireworksReformFactorInfo factor_info_list = 6;</code>
+       * <code>repeated .LanternRiteFireworksReformFactorInfo factor_info_list = 10;</code>
        */
       public emu.grasscutter.net.proto.LanternRiteFireworksReformFactorInfoOuterClass.LanternRiteFireworksReformFactorInfo.Builder addFactorInfoListBuilder(
           int index) {
@@ -1482,7 +1575,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
             index, emu.grasscutter.net.proto.LanternRiteFireworksReformFactorInfoOuterClass.LanternRiteFireworksReformFactorInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .LanternRiteFireworksReformFactorInfo factor_info_list = 6;</code>
+       * <code>repeated .LanternRiteFireworksReformFactorInfo factor_info_list = 10;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.LanternRiteFireworksReformFactorInfoOuterClass.LanternRiteFireworksReformFactorInfo.Builder> 
            getFactorInfoListBuilderList() {
@@ -1503,126 +1596,33 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
         return factorInfoListBuilder_;
       }
 
-      private int jGLNDBHIAPK_ ;
+      private int retcode_ ;
       /**
-       * <code>uint32 JGLNDBHIAPK = 9;</code>
-       * @return The jGLNDBHIAPK.
+       * <code>int32 retcode = 1;</code>
+       * @return The retcode.
        */
       @java.lang.Override
-      public int getJGLNDBHIAPK() {
-        return jGLNDBHIAPK_;
+      public int getRetcode() {
+        return retcode_;
       }
       /**
-       * <code>uint32 JGLNDBHIAPK = 9;</code>
-       * @param value The jGLNDBHIAPK to set.
+       * <code>int32 retcode = 1;</code>
+       * @param value The retcode to set.
        * @return This builder for chaining.
        */
-      public Builder setJGLNDBHIAPK(int value) {
+      public Builder setRetcode(int value) {
         
-        jGLNDBHIAPK_ = value;
+        retcode_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 JGLNDBHIAPK = 9;</code>
+       * <code>int32 retcode = 1;</code>
        * @return This builder for chaining.
        */
-      public Builder clearJGLNDBHIAPK() {
+      public Builder clearRetcode() {
         
-        jGLNDBHIAPK_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int fCGOPINPKBP_ ;
-      /**
-       * <code>uint32 FCGOPINPKBP = 3;</code>
-       * @return The fCGOPINPKBP.
-       */
-      @java.lang.Override
-      public int getFCGOPINPKBP() {
-        return fCGOPINPKBP_;
-      }
-      /**
-       * <code>uint32 FCGOPINPKBP = 3;</code>
-       * @param value The fCGOPINPKBP to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFCGOPINPKBP(int value) {
-        
-        fCGOPINPKBP_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 FCGOPINPKBP = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearFCGOPINPKBP() {
-        
-        fCGOPINPKBP_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int challengeId_ ;
-      /**
-       * <code>uint32 challenge_id = 13;</code>
-       * @return The challengeId.
-       */
-      @java.lang.Override
-      public int getChallengeId() {
-        return challengeId_;
-      }
-      /**
-       * <code>uint32 challenge_id = 13;</code>
-       * @param value The challengeId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setChallengeId(int value) {
-        
-        challengeId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 challenge_id = 13;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearChallengeId() {
-        
-        challengeId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int stageId_ ;
-      /**
-       * <code>uint32 stage_id = 14;</code>
-       * @return The stageId.
-       */
-      @java.lang.Override
-      public int getStageId() {
-        return stageId_;
-      }
-      /**
-       * <code>uint32 stage_id = 14;</code>
-       * @param value The stageId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStageId(int value) {
-        
-        stageId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 stage_id = 14;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearStageId() {
-        
-        stageId_ = 0;
+        retcode_ = 0;
         onChanged();
         return this;
       }
@@ -1697,13 +1697,13 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
       "to\032)LanternRiteFireworksReformSkillInfo." +
       "proto\032*LanternRiteFireworksReformFactorI" +
       "nfo.proto\"\261\002\n\"LanternRiteStartFireworksR" +
-      "eformRsp\022\023\n\013MBEGNNPJAPL\030\014 \001(\r\022\017\n\007retcode" +
-      "\030\010 \001(\005\022=\n\017skill_info_list\030\001 \003(\0132$.Lanter" +
-      "nRiteFireworksReformSkillInfo\022\023\n\013DKBBJDI" +
-      "MJPB\030\n \001(\r\022?\n\020factor_info_list\030\006 \003(\0132%.L" +
-      "anternRiteFireworksReformFactorInfo\022\023\n\013J" +
-      "GLNDBHIAPK\030\t \001(\r\022\023\n\013FCGOPINPKBP\030\003 \001(\r\022\024\n" +
-      "\014challenge_id\030\r \001(\r\022\020\n\010stage_id\030\016 \001(\rB\033\n" +
+      "eformRsp\022\023\n\013COOIJAMKABA\030\016 \001(\r\022\023\n\013KCHDLMC" +
+      "FANC\030\003 \001(\r\022\024\n\014challenge_id\030\002 \001(\r\022\020\n\010stag" +
+      "e_id\030\013 \001(\r\022\023\n\013NACPGJMEPCP\030\005 \001(\r\022=\n\017skill" +
+      "_info_list\030\t \003(\0132$.LanternRiteFireworksR" +
+      "eformSkillInfo\022\023\n\013ONFGHBLOLCK\030\014 \001(\r\022?\n\020f" +
+      "actor_info_list\030\n \003(\0132%.LanternRiteFirew" +
+      "orksReformFactorInfo\022\017\n\007retcode\030\001 \001(\005B\033\n" +
       "\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -1717,7 +1717,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
     internal_static_LanternRiteStartFireworksReformRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_LanternRiteStartFireworksReformRsp_descriptor,
-        new java.lang.String[] { "MBEGNNPJAPL", "Retcode", "SkillInfoList", "DKBBJDIMJPB", "FactorInfoList", "JGLNDBHIAPK", "FCGOPINPKBP", "ChallengeId", "StageId", });
+        new java.lang.String[] { "COOIJAMKABA", "KCHDLMCFANC", "ChallengeId", "StageId", "NACPGJMEPCP", "SkillInfoList", "ONFGHBLOLCK", "FactorInfoList", "Retcode", });
     emu.grasscutter.net.proto.LanternRiteFireworksReformSkillInfoOuterClass.getDescriptor();
     emu.grasscutter.net.proto.LanternRiteFireworksReformFactorInfoOuterClass.getDescriptor();
   }

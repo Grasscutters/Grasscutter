@@ -19,15 +19,15 @@ public final class SelectRoguelikeDungeonCardReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 card_id = 4;</code>
+     * <code>uint32 card_id = 11;</code>
      * @return The cardId.
      */
     int getCardId();
   }
   /**
    * <pre>
-   * CmdId: 8701
-   * Obf: KKCJPHLNHFE
+   * CmdId: 20123
+   * Obf: GKBHKPMNPHK
    * </pre>
    *
    * Protobuf type {@code SelectRoguelikeDungeonCardReq}
@@ -74,7 +74,7 @@ public final class SelectRoguelikeDungeonCardReqOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
+            case 88: {
 
               cardId_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class SelectRoguelikeDungeonCardReqOuterClass {
               emu.grasscutter.net.proto.SelectRoguelikeDungeonCardReqOuterClass.SelectRoguelikeDungeonCardReq.class, emu.grasscutter.net.proto.SelectRoguelikeDungeonCardReqOuterClass.SelectRoguelikeDungeonCardReq.Builder.class);
     }
 
-    public static final int CARD_ID_FIELD_NUMBER = 4;
+    public static final int CARD_ID_FIELD_NUMBER = 11;
     private int cardId_;
     /**
-     * <code>uint32 card_id = 4;</code>
+     * <code>uint32 card_id = 11;</code>
      * @return The cardId.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class SelectRoguelikeDungeonCardReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (cardId_ != 0) {
-        output.writeUInt32(4, cardId_);
+        output.writeUInt32(11, cardId_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class SelectRoguelikeDungeonCardReqOuterClass {
       size = 0;
       if (cardId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, cardId_);
+          .computeUInt32Size(11, cardId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class SelectRoguelikeDungeonCardReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8701
-     * Obf: KKCJPHLNHFE
+     * CmdId: 20123
+     * Obf: GKBHKPMNPHK
      * </pre>
      *
      * Protobuf type {@code SelectRoguelikeDungeonCardReq}
@@ -431,7 +431,7 @@ public final class SelectRoguelikeDungeonCardReqOuterClass {
 
       private int cardId_ ;
       /**
-       * <code>uint32 card_id = 4;</code>
+       * <code>uint32 card_id = 11;</code>
        * @return The cardId.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class SelectRoguelikeDungeonCardReqOuterClass {
         return cardId_;
       }
       /**
-       * <code>uint32 card_id = 4;</code>
+       * <code>uint32 card_id = 11;</code>
        * @param value The cardId to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class SelectRoguelikeDungeonCardReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 card_id = 4;</code>
+       * <code>uint32 card_id = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearCardId() {
@@ -528,7 +528,7 @@ public final class SelectRoguelikeDungeonCardReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n#SelectRoguelikeDungeonCardReq.proto\"0\n" +
       "\035SelectRoguelikeDungeonCardReq\022\017\n\007card_i" +
-      "d\030\004 \001(\rB\033\n\031emu.grasscutter.net.protob\006pr" +
+      "d\030\013 \001(\rB\033\n\031emu.grasscutter.net.protob\006pr" +
       "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

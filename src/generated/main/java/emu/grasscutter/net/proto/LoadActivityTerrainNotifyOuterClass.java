@@ -26,8 +26,8 @@ public final class LoadActivityTerrainNotifyOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 2032
-   * Obf: MALICCMIPPP
+   * CmdId: 5
+   * Obf: KLFGBKPBBFB
    * </pre>
    *
    * Protobuf type {@code LoadActivityTerrainNotify}
@@ -279,8 +279,8 @@ public final class LoadActivityTerrainNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2032
-     * Obf: MALICCMIPPP
+     * CmdId: 5
+     * Obf: KLFGBKPBBFB
      * </pre>
      *
      * Protobuf type {@code LoadActivityTerrainNotify}

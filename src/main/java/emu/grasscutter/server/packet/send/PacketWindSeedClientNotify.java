@@ -1,8 +1,7 @@
 package emu.grasscutter.server.packet.send;
 
 import com.google.protobuf.ByteString;
-import emu.grasscutter.net.packet.BasePacket;
-import emu.grasscutter.net.packet.PacketOpcodes;
+import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.WindSeedType1NotifyOuterClass.WindSeedType1Notify;
 
 public final class PacketWindSeedClientNotify extends BasePacket {

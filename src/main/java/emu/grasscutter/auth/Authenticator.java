@@ -1,7 +1,6 @@
 package emu.grasscutter.auth;
 
-import emu.grasscutter.server.http.objects.ComboTokenResJson;
-import emu.grasscutter.server.http.objects.LoginResultJson;
+import emu.grasscutter.server.http.objects.*;
 
 /**
  * Handles username/password authentication from the client.

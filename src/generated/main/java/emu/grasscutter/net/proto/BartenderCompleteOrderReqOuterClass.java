@@ -19,80 +19,80 @@ public final class BartenderCompleteOrderReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 OIBFDJOINLD = 3;</code>
-     * @return The oIBFDJOINLD.
-     */
-    int getOIBFDJOINLD();
-
-    /**
-     * <code>uint32 GAPDCJGFION = 7;</code>
-     * @return The gAPDCJGFION.
-     */
-    int getGAPDCJGFION();
-
-    /**
-     * <code>uint32 NJHLGJPCJJP = 10;</code>
-     * @return The nJHLGJPCJJP.
-     */
-    int getNJHLGJPCJJP();
-
-    /**
-     * <code>repeated uint32 optional_order_list = 2;</code>
-     * @return A list containing the optionalOrderList.
-     */
-    java.util.List<java.lang.Integer> getOptionalOrderListList();
-    /**
-     * <code>repeated uint32 optional_order_list = 2;</code>
-     * @return The count of optionalOrderList.
-     */
-    int getOptionalOrderListCount();
-    /**
-     * <code>repeated uint32 optional_order_list = 2;</code>
-     * @param index The index of the element to return.
-     * @return The optionalOrderList at the given index.
-     */
-    int getOptionalOrderList(int index);
-
-    /**
-     * <code>bool is_view_formula = 4;</code>
-     * @return The isViewFormula.
-     */
-    boolean getIsViewFormula();
-
-    /**
-     * <code>uint32 quest_id = 8;</code>
+     * <code>uint32 quest_id = 10;</code>
      * @return The questId.
      */
     int getQuestId();
 
     /**
-     * <code>repeated .ItemParam item_list = 13;</code>
+     * <code>uint32 MBAAHPBEAEI = 5;</code>
+     * @return The mBAAHPBEAEI.
+     */
+    int getMBAAHPBEAEI();
+
+    /**
+     * <code>bool is_view_formula = 7;</code>
+     * @return The isViewFormula.
+     */
+    boolean getIsViewFormula();
+
+    /**
+     * <code>uint32 GPGCCDPDENJ = 11;</code>
+     * @return The gPGCCDPDENJ.
+     */
+    int getGPGCCDPDENJ();
+
+    /**
+     * <code>repeated .ItemParam item_list = 4;</code>
      */
     java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> 
         getItemListList();
     /**
-     * <code>repeated .ItemParam item_list = 13;</code>
+     * <code>repeated .ItemParam item_list = 4;</code>
      */
     emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam getItemList(int index);
     /**
-     * <code>repeated .ItemParam item_list = 13;</code>
+     * <code>repeated .ItemParam item_list = 4;</code>
      */
     int getItemListCount();
     /**
-     * <code>repeated .ItemParam item_list = 13;</code>
+     * <code>repeated .ItemParam item_list = 4;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> 
         getItemListOrBuilderList();
     /**
-     * <code>repeated .ItemParam item_list = 13;</code>
+     * <code>repeated .ItemParam item_list = 4;</code>
      */
     emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder getItemListOrBuilder(
         int index);
+
+    /**
+     * <code>uint32 BBNAEDJABBD = 8;</code>
+     * @return The bBNAEDJABBD.
+     */
+    int getBBNAEDJABBD();
+
+    /**
+     * <code>repeated uint32 optional_order_list = 6;</code>
+     * @return A list containing the optionalOrderList.
+     */
+    java.util.List<java.lang.Integer> getOptionalOrderListList();
+    /**
+     * <code>repeated uint32 optional_order_list = 6;</code>
+     * @return The count of optionalOrderList.
+     */
+    int getOptionalOrderListCount();
+    /**
+     * <code>repeated uint32 optional_order_list = 6;</code>
+     * @param index The index of the element to return.
+     * @return The optionalOrderList at the given index.
+     */
+    int getOptionalOrderList(int index);
   }
   /**
    * <pre>
-   * CmdId: 8107
-   * Obf: DMOJHANFDAB
+   * CmdId: 25372
+   * Obf: FEFHCLAIFHB
    * </pre>
    *
    * Protobuf type {@code BartenderCompleteOrderReq}
@@ -107,8 +107,8 @@ public final class BartenderCompleteOrderReqOuterClass {
       super(builder);
     }
     private BartenderCompleteOrderReq() {
-      optionalOrderList_ = emptyIntList();
       itemList_ = java.util.Collections.emptyList();
+      optionalOrderList_ = emptyIntList();
     }
 
     @java.lang.Override
@@ -142,20 +142,34 @@ public final class BartenderCompleteOrderReqOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
+            case 34: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                optionalOrderList_ = newIntList();
+                itemList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam>();
                 mutable_bitField0_ |= 0x00000001;
+              }
+              itemList_.add(
+                  input.readMessage(emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
+              break;
+            }
+            case 40: {
+
+              mBAAHPBEAEI_ = input.readUInt32();
+              break;
+            }
+            case 48: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                optionalOrderList_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
               }
               optionalOrderList_.addInt(input.readUInt32());
               break;
             }
-            case 18: {
+            case 50: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
                 optionalOrderList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               while (input.getBytesUntilLimit() > 0) {
                 optionalOrderList_.addInt(input.readUInt32());
@@ -163,38 +177,24 @@ public final class BartenderCompleteOrderReqOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 24: {
-
-              oIBFDJOINLD_ = input.readUInt32();
-              break;
-            }
-            case 32: {
+            case 56: {
 
               isViewFormula_ = input.readBool();
               break;
             }
-            case 56: {
-
-              gAPDCJGFION_ = input.readUInt32();
-              break;
-            }
             case 64: {
 
-              questId_ = input.readUInt32();
+              bBNAEDJABBD_ = input.readUInt32();
               break;
             }
             case 80: {
 
-              nJHLGJPCJJP_ = input.readUInt32();
+              questId_ = input.readUInt32();
               break;
             }
-            case 106: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                itemList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              itemList_.add(
-                  input.readMessage(emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
+            case 88: {
+
+              gPGCCDPDENJ_ = input.readUInt32();
               break;
             }
             default: {
@@ -213,10 +213,10 @@ public final class BartenderCompleteOrderReqOuterClass {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          optionalOrderList_.makeImmutable(); // C
+          itemList_ = java.util.Collections.unmodifiableList(itemList_);
         }
         if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          itemList_ = java.util.Collections.unmodifiableList(itemList_);
+          optionalOrderList_.makeImmutable(); // C
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -235,43 +235,105 @@ public final class BartenderCompleteOrderReqOuterClass {
               emu.grasscutter.net.proto.BartenderCompleteOrderReqOuterClass.BartenderCompleteOrderReq.class, emu.grasscutter.net.proto.BartenderCompleteOrderReqOuterClass.BartenderCompleteOrderReq.Builder.class);
     }
 
-    public static final int OIBFDJOINLD_FIELD_NUMBER = 3;
-    private int oIBFDJOINLD_;
+    public static final int QUEST_ID_FIELD_NUMBER = 10;
+    private int questId_;
     /**
-     * <code>uint32 OIBFDJOINLD = 3;</code>
-     * @return The oIBFDJOINLD.
+     * <code>uint32 quest_id = 10;</code>
+     * @return The questId.
      */
     @java.lang.Override
-    public int getOIBFDJOINLD() {
-      return oIBFDJOINLD_;
+    public int getQuestId() {
+      return questId_;
     }
 
-    public static final int GAPDCJGFION_FIELD_NUMBER = 7;
-    private int gAPDCJGFION_;
+    public static final int MBAAHPBEAEI_FIELD_NUMBER = 5;
+    private int mBAAHPBEAEI_;
     /**
-     * <code>uint32 GAPDCJGFION = 7;</code>
-     * @return The gAPDCJGFION.
+     * <code>uint32 MBAAHPBEAEI = 5;</code>
+     * @return The mBAAHPBEAEI.
      */
     @java.lang.Override
-    public int getGAPDCJGFION() {
-      return gAPDCJGFION_;
+    public int getMBAAHPBEAEI() {
+      return mBAAHPBEAEI_;
     }
 
-    public static final int NJHLGJPCJJP_FIELD_NUMBER = 10;
-    private int nJHLGJPCJJP_;
+    public static final int IS_VIEW_FORMULA_FIELD_NUMBER = 7;
+    private boolean isViewFormula_;
     /**
-     * <code>uint32 NJHLGJPCJJP = 10;</code>
-     * @return The nJHLGJPCJJP.
+     * <code>bool is_view_formula = 7;</code>
+     * @return The isViewFormula.
      */
     @java.lang.Override
-    public int getNJHLGJPCJJP() {
-      return nJHLGJPCJJP_;
+    public boolean getIsViewFormula() {
+      return isViewFormula_;
     }
 
-    public static final int OPTIONAL_ORDER_LIST_FIELD_NUMBER = 2;
+    public static final int GPGCCDPDENJ_FIELD_NUMBER = 11;
+    private int gPGCCDPDENJ_;
+    /**
+     * <code>uint32 GPGCCDPDENJ = 11;</code>
+     * @return The gPGCCDPDENJ.
+     */
+    @java.lang.Override
+    public int getGPGCCDPDENJ() {
+      return gPGCCDPDENJ_;
+    }
+
+    public static final int ITEM_LIST_FIELD_NUMBER = 4;
+    private java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> itemList_;
+    /**
+     * <code>repeated .ItemParam item_list = 4;</code>
+     */
+    @java.lang.Override
+    public java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> getItemListList() {
+      return itemList_;
+    }
+    /**
+     * <code>repeated .ItemParam item_list = 4;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> 
+        getItemListOrBuilderList() {
+      return itemList_;
+    }
+    /**
+     * <code>repeated .ItemParam item_list = 4;</code>
+     */
+    @java.lang.Override
+    public int getItemListCount() {
+      return itemList_.size();
+    }
+    /**
+     * <code>repeated .ItemParam item_list = 4;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam getItemList(int index) {
+      return itemList_.get(index);
+    }
+    /**
+     * <code>repeated .ItemParam item_list = 4;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder getItemListOrBuilder(
+        int index) {
+      return itemList_.get(index);
+    }
+
+    public static final int BBNAEDJABBD_FIELD_NUMBER = 8;
+    private int bBNAEDJABBD_;
+    /**
+     * <code>uint32 BBNAEDJABBD = 8;</code>
+     * @return The bBNAEDJABBD.
+     */
+    @java.lang.Override
+    public int getBBNAEDJABBD() {
+      return bBNAEDJABBD_;
+    }
+
+    public static final int OPTIONAL_ORDER_LIST_FIELD_NUMBER = 6;
     private com.google.protobuf.Internal.IntList optionalOrderList_;
     /**
-     * <code>repeated uint32 optional_order_list = 2;</code>
+     * <code>repeated uint32 optional_order_list = 6;</code>
      * @return A list containing the optionalOrderList.
      */
     @java.lang.Override
@@ -280,14 +342,14 @@ public final class BartenderCompleteOrderReqOuterClass {
       return optionalOrderList_;
     }
     /**
-     * <code>repeated uint32 optional_order_list = 2;</code>
+     * <code>repeated uint32 optional_order_list = 6;</code>
      * @return The count of optionalOrderList.
      */
     public int getOptionalOrderListCount() {
       return optionalOrderList_.size();
     }
     /**
-     * <code>repeated uint32 optional_order_list = 2;</code>
+     * <code>repeated uint32 optional_order_list = 6;</code>
      * @param index The index of the element to return.
      * @return The optionalOrderList at the given index.
      */
@@ -295,68 +357,6 @@ public final class BartenderCompleteOrderReqOuterClass {
       return optionalOrderList_.getInt(index);
     }
     private int optionalOrderListMemoizedSerializedSize = -1;
-
-    public static final int IS_VIEW_FORMULA_FIELD_NUMBER = 4;
-    private boolean isViewFormula_;
-    /**
-     * <code>bool is_view_formula = 4;</code>
-     * @return The isViewFormula.
-     */
-    @java.lang.Override
-    public boolean getIsViewFormula() {
-      return isViewFormula_;
-    }
-
-    public static final int QUEST_ID_FIELD_NUMBER = 8;
-    private int questId_;
-    /**
-     * <code>uint32 quest_id = 8;</code>
-     * @return The questId.
-     */
-    @java.lang.Override
-    public int getQuestId() {
-      return questId_;
-    }
-
-    public static final int ITEM_LIST_FIELD_NUMBER = 13;
-    private java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> itemList_;
-    /**
-     * <code>repeated .ItemParam item_list = 13;</code>
-     */
-    @java.lang.Override
-    public java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> getItemListList() {
-      return itemList_;
-    }
-    /**
-     * <code>repeated .ItemParam item_list = 13;</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> 
-        getItemListOrBuilderList() {
-      return itemList_;
-    }
-    /**
-     * <code>repeated .ItemParam item_list = 13;</code>
-     */
-    @java.lang.Override
-    public int getItemListCount() {
-      return itemList_.size();
-    }
-    /**
-     * <code>repeated .ItemParam item_list = 13;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam getItemList(int index) {
-      return itemList_.get(index);
-    }
-    /**
-     * <code>repeated .ItemParam item_list = 13;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder getItemListOrBuilder(
-        int index) {
-      return itemList_.get(index);
-    }
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
@@ -373,30 +373,30 @@ public final class BartenderCompleteOrderReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
+      for (int i = 0; i < itemList_.size(); i++) {
+        output.writeMessage(4, itemList_.get(i));
+      }
+      if (mBAAHPBEAEI_ != 0) {
+        output.writeUInt32(5, mBAAHPBEAEI_);
+      }
       if (getOptionalOrderListList().size() > 0) {
-        output.writeUInt32NoTag(18);
+        output.writeUInt32NoTag(50);
         output.writeUInt32NoTag(optionalOrderListMemoizedSerializedSize);
       }
       for (int i = 0; i < optionalOrderList_.size(); i++) {
         output.writeUInt32NoTag(optionalOrderList_.getInt(i));
       }
-      if (oIBFDJOINLD_ != 0) {
-        output.writeUInt32(3, oIBFDJOINLD_);
-      }
       if (isViewFormula_ != false) {
-        output.writeBool(4, isViewFormula_);
+        output.writeBool(7, isViewFormula_);
       }
-      if (gAPDCJGFION_ != 0) {
-        output.writeUInt32(7, gAPDCJGFION_);
+      if (bBNAEDJABBD_ != 0) {
+        output.writeUInt32(8, bBNAEDJABBD_);
       }
       if (questId_ != 0) {
-        output.writeUInt32(8, questId_);
+        output.writeUInt32(10, questId_);
       }
-      if (nJHLGJPCJJP_ != 0) {
-        output.writeUInt32(10, nJHLGJPCJJP_);
-      }
-      for (int i = 0; i < itemList_.size(); i++) {
-        output.writeMessage(13, itemList_.get(i));
+      if (gPGCCDPDENJ_ != 0) {
+        output.writeUInt32(11, gPGCCDPDENJ_);
       }
       unknownFields.writeTo(output);
     }
@@ -407,6 +407,14 @@ public final class BartenderCompleteOrderReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      for (int i = 0; i < itemList_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, itemList_.get(i));
+      }
+      if (mBAAHPBEAEI_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(5, mBAAHPBEAEI_);
+      }
       {
         int dataSize = 0;
         for (int i = 0; i < optionalOrderList_.size(); i++) {
@@ -421,29 +429,21 @@ public final class BartenderCompleteOrderReqOuterClass {
         }
         optionalOrderListMemoizedSerializedSize = dataSize;
       }
-      if (oIBFDJOINLD_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, oIBFDJOINLD_);
-      }
       if (isViewFormula_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(4, isViewFormula_);
+          .computeBoolSize(7, isViewFormula_);
       }
-      if (gAPDCJGFION_ != 0) {
+      if (bBNAEDJABBD_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, gAPDCJGFION_);
+          .computeUInt32Size(8, bBNAEDJABBD_);
       }
       if (questId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, questId_);
+          .computeUInt32Size(10, questId_);
       }
-      if (nJHLGJPCJJP_ != 0) {
+      if (gPGCCDPDENJ_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, nJHLGJPCJJP_);
-      }
-      for (int i = 0; i < itemList_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(13, itemList_.get(i));
+          .computeUInt32Size(11, gPGCCDPDENJ_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -460,20 +460,20 @@ public final class BartenderCompleteOrderReqOuterClass {
       }
       emu.grasscutter.net.proto.BartenderCompleteOrderReqOuterClass.BartenderCompleteOrderReq other = (emu.grasscutter.net.proto.BartenderCompleteOrderReqOuterClass.BartenderCompleteOrderReq) obj;
 
-      if (getOIBFDJOINLD()
-          != other.getOIBFDJOINLD()) return false;
-      if (getGAPDCJGFION()
-          != other.getGAPDCJGFION()) return false;
-      if (getNJHLGJPCJJP()
-          != other.getNJHLGJPCJJP()) return false;
-      if (!getOptionalOrderListList()
-          .equals(other.getOptionalOrderListList())) return false;
-      if (getIsViewFormula()
-          != other.getIsViewFormula()) return false;
       if (getQuestId()
           != other.getQuestId()) return false;
+      if (getMBAAHPBEAEI()
+          != other.getMBAAHPBEAEI()) return false;
+      if (getIsViewFormula()
+          != other.getIsViewFormula()) return false;
+      if (getGPGCCDPDENJ()
+          != other.getGPGCCDPDENJ()) return false;
       if (!getItemListList()
           .equals(other.getItemListList())) return false;
+      if (getBBNAEDJABBD()
+          != other.getBBNAEDJABBD()) return false;
+      if (!getOptionalOrderListList()
+          .equals(other.getOptionalOrderListList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -485,24 +485,24 @@ public final class BartenderCompleteOrderReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + OIBFDJOINLD_FIELD_NUMBER;
-      hash = (53 * hash) + getOIBFDJOINLD();
-      hash = (37 * hash) + GAPDCJGFION_FIELD_NUMBER;
-      hash = (53 * hash) + getGAPDCJGFION();
-      hash = (37 * hash) + NJHLGJPCJJP_FIELD_NUMBER;
-      hash = (53 * hash) + getNJHLGJPCJJP();
-      if (getOptionalOrderListCount() > 0) {
-        hash = (37 * hash) + OPTIONAL_ORDER_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getOptionalOrderListList().hashCode();
-      }
+      hash = (37 * hash) + QUEST_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getQuestId();
+      hash = (37 * hash) + MBAAHPBEAEI_FIELD_NUMBER;
+      hash = (53 * hash) + getMBAAHPBEAEI();
       hash = (37 * hash) + IS_VIEW_FORMULA_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsViewFormula());
-      hash = (37 * hash) + QUEST_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getQuestId();
+      hash = (37 * hash) + GPGCCDPDENJ_FIELD_NUMBER;
+      hash = (53 * hash) + getGPGCCDPDENJ();
       if (getItemListCount() > 0) {
         hash = (37 * hash) + ITEM_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getItemListList().hashCode();
+      }
+      hash = (37 * hash) + BBNAEDJABBD_FIELD_NUMBER;
+      hash = (53 * hash) + getBBNAEDJABBD();
+      if (getOptionalOrderListCount() > 0) {
+        hash = (37 * hash) + OPTIONAL_ORDER_LIST_FIELD_NUMBER;
+        hash = (53 * hash) + getOptionalOrderListList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -601,8 +601,8 @@ public final class BartenderCompleteOrderReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8107
-     * Obf: DMOJHANFDAB
+     * CmdId: 25372
+     * Obf: FEFHCLAIFHB
      * </pre>
      *
      * Protobuf type {@code BartenderCompleteOrderReq}
@@ -643,24 +643,24 @@ public final class BartenderCompleteOrderReqOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        oIBFDJOINLD_ = 0;
+        questId_ = 0;
 
-        gAPDCJGFION_ = 0;
+        mBAAHPBEAEI_ = 0;
 
-        nJHLGJPCJJP_ = 0;
-
-        optionalOrderList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         isViewFormula_ = false;
 
-        questId_ = 0;
+        gPGCCDPDENJ_ = 0;
 
         if (itemListBuilder_ == null) {
           itemList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           itemListBuilder_.clear();
         }
+        bBNAEDJABBD_ = 0;
+
+        optionalOrderList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -688,25 +688,25 @@ public final class BartenderCompleteOrderReqOuterClass {
       public emu.grasscutter.net.proto.BartenderCompleteOrderReqOuterClass.BartenderCompleteOrderReq buildPartial() {
         emu.grasscutter.net.proto.BartenderCompleteOrderReqOuterClass.BartenderCompleteOrderReq result = new emu.grasscutter.net.proto.BartenderCompleteOrderReqOuterClass.BartenderCompleteOrderReq(this);
         int from_bitField0_ = bitField0_;
-        result.oIBFDJOINLD_ = oIBFDJOINLD_;
-        result.gAPDCJGFION_ = gAPDCJGFION_;
-        result.nJHLGJPCJJP_ = nJHLGJPCJJP_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          optionalOrderList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.optionalOrderList_ = optionalOrderList_;
-        result.isViewFormula_ = isViewFormula_;
         result.questId_ = questId_;
+        result.mBAAHPBEAEI_ = mBAAHPBEAEI_;
+        result.isViewFormula_ = isViewFormula_;
+        result.gPGCCDPDENJ_ = gPGCCDPDENJ_;
         if (itemListBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             itemList_ = java.util.Collections.unmodifiableList(itemList_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.itemList_ = itemList_;
         } else {
           result.itemList_ = itemListBuilder_.build();
         }
+        result.bBNAEDJABBD_ = bBNAEDJABBD_;
+        if (((bitField0_ & 0x00000002) != 0)) {
+          optionalOrderList_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.optionalOrderList_ = optionalOrderList_;
         onBuilt();
         return result;
       }
@@ -755,36 +755,23 @@ public final class BartenderCompleteOrderReqOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.BartenderCompleteOrderReqOuterClass.BartenderCompleteOrderReq other) {
         if (other == emu.grasscutter.net.proto.BartenderCompleteOrderReqOuterClass.BartenderCompleteOrderReq.getDefaultInstance()) return this;
-        if (other.getOIBFDJOINLD() != 0) {
-          setOIBFDJOINLD(other.getOIBFDJOINLD());
+        if (other.getQuestId() != 0) {
+          setQuestId(other.getQuestId());
         }
-        if (other.getGAPDCJGFION() != 0) {
-          setGAPDCJGFION(other.getGAPDCJGFION());
-        }
-        if (other.getNJHLGJPCJJP() != 0) {
-          setNJHLGJPCJJP(other.getNJHLGJPCJJP());
-        }
-        if (!other.optionalOrderList_.isEmpty()) {
-          if (optionalOrderList_.isEmpty()) {
-            optionalOrderList_ = other.optionalOrderList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureOptionalOrderListIsMutable();
-            optionalOrderList_.addAll(other.optionalOrderList_);
-          }
-          onChanged();
+        if (other.getMBAAHPBEAEI() != 0) {
+          setMBAAHPBEAEI(other.getMBAAHPBEAEI());
         }
         if (other.getIsViewFormula() != false) {
           setIsViewFormula(other.getIsViewFormula());
         }
-        if (other.getQuestId() != 0) {
-          setQuestId(other.getQuestId());
+        if (other.getGPGCCDPDENJ() != 0) {
+          setGPGCCDPDENJ(other.getGPGCCDPDENJ());
         }
         if (itemListBuilder_ == null) {
           if (!other.itemList_.isEmpty()) {
             if (itemList_.isEmpty()) {
               itemList_ = other.itemList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureItemListIsMutable();
               itemList_.addAll(other.itemList_);
@@ -797,7 +784,7 @@ public final class BartenderCompleteOrderReqOuterClass {
               itemListBuilder_.dispose();
               itemListBuilder_ = null;
               itemList_ = other.itemList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
               itemListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getItemListFieldBuilder() : null;
@@ -805,6 +792,19 @@ public final class BartenderCompleteOrderReqOuterClass {
               itemListBuilder_.addAllMessages(other.itemList_);
             }
           }
+        }
+        if (other.getBBNAEDJABBD() != 0) {
+          setBBNAEDJABBD(other.getBBNAEDJABBD());
+        }
+        if (!other.optionalOrderList_.isEmpty()) {
+          if (optionalOrderList_.isEmpty()) {
+            optionalOrderList_ = other.optionalOrderList_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureOptionalOrderListIsMutable();
+            optionalOrderList_.addAll(other.optionalOrderList_);
+          }
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -836,212 +836,9 @@ public final class BartenderCompleteOrderReqOuterClass {
       }
       private int bitField0_;
 
-      private int oIBFDJOINLD_ ;
-      /**
-       * <code>uint32 OIBFDJOINLD = 3;</code>
-       * @return The oIBFDJOINLD.
-       */
-      @java.lang.Override
-      public int getOIBFDJOINLD() {
-        return oIBFDJOINLD_;
-      }
-      /**
-       * <code>uint32 OIBFDJOINLD = 3;</code>
-       * @param value The oIBFDJOINLD to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOIBFDJOINLD(int value) {
-        
-        oIBFDJOINLD_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 OIBFDJOINLD = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearOIBFDJOINLD() {
-        
-        oIBFDJOINLD_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int gAPDCJGFION_ ;
-      /**
-       * <code>uint32 GAPDCJGFION = 7;</code>
-       * @return The gAPDCJGFION.
-       */
-      @java.lang.Override
-      public int getGAPDCJGFION() {
-        return gAPDCJGFION_;
-      }
-      /**
-       * <code>uint32 GAPDCJGFION = 7;</code>
-       * @param value The gAPDCJGFION to set.
-       * @return This builder for chaining.
-       */
-      public Builder setGAPDCJGFION(int value) {
-        
-        gAPDCJGFION_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 GAPDCJGFION = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearGAPDCJGFION() {
-        
-        gAPDCJGFION_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int nJHLGJPCJJP_ ;
-      /**
-       * <code>uint32 NJHLGJPCJJP = 10;</code>
-       * @return The nJHLGJPCJJP.
-       */
-      @java.lang.Override
-      public int getNJHLGJPCJJP() {
-        return nJHLGJPCJJP_;
-      }
-      /**
-       * <code>uint32 NJHLGJPCJJP = 10;</code>
-       * @param value The nJHLGJPCJJP to set.
-       * @return This builder for chaining.
-       */
-      public Builder setNJHLGJPCJJP(int value) {
-        
-        nJHLGJPCJJP_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 NJHLGJPCJJP = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearNJHLGJPCJJP() {
-        
-        nJHLGJPCJJP_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.Internal.IntList optionalOrderList_ = emptyIntList();
-      private void ensureOptionalOrderListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          optionalOrderList_ = mutableCopy(optionalOrderList_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-      /**
-       * <code>repeated uint32 optional_order_list = 2;</code>
-       * @return A list containing the optionalOrderList.
-       */
-      public java.util.List<java.lang.Integer>
-          getOptionalOrderListList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
-                 java.util.Collections.unmodifiableList(optionalOrderList_) : optionalOrderList_;
-      }
-      /**
-       * <code>repeated uint32 optional_order_list = 2;</code>
-       * @return The count of optionalOrderList.
-       */
-      public int getOptionalOrderListCount() {
-        return optionalOrderList_.size();
-      }
-      /**
-       * <code>repeated uint32 optional_order_list = 2;</code>
-       * @param index The index of the element to return.
-       * @return The optionalOrderList at the given index.
-       */
-      public int getOptionalOrderList(int index) {
-        return optionalOrderList_.getInt(index);
-      }
-      /**
-       * <code>repeated uint32 optional_order_list = 2;</code>
-       * @param index The index to set the value at.
-       * @param value The optionalOrderList to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOptionalOrderList(
-          int index, int value) {
-        ensureOptionalOrderListIsMutable();
-        optionalOrderList_.setInt(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 optional_order_list = 2;</code>
-       * @param value The optionalOrderList to add.
-       * @return This builder for chaining.
-       */
-      public Builder addOptionalOrderList(int value) {
-        ensureOptionalOrderListIsMutable();
-        optionalOrderList_.addInt(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 optional_order_list = 2;</code>
-       * @param values The optionalOrderList to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllOptionalOrderList(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureOptionalOrderListIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, optionalOrderList_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 optional_order_list = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearOptionalOrderList() {
-        optionalOrderList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-
-      private boolean isViewFormula_ ;
-      /**
-       * <code>bool is_view_formula = 4;</code>
-       * @return The isViewFormula.
-       */
-      @java.lang.Override
-      public boolean getIsViewFormula() {
-        return isViewFormula_;
-      }
-      /**
-       * <code>bool is_view_formula = 4;</code>
-       * @param value The isViewFormula to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsViewFormula(boolean value) {
-        
-        isViewFormula_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_view_formula = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsViewFormula() {
-        
-        isViewFormula_ = false;
-        onChanged();
-        return this;
-      }
-
       private int questId_ ;
       /**
-       * <code>uint32 quest_id = 8;</code>
+       * <code>uint32 quest_id = 10;</code>
        * @return The questId.
        */
       @java.lang.Override
@@ -1049,7 +846,7 @@ public final class BartenderCompleteOrderReqOuterClass {
         return questId_;
       }
       /**
-       * <code>uint32 quest_id = 8;</code>
+       * <code>uint32 quest_id = 10;</code>
        * @param value The questId to set.
        * @return This builder for chaining.
        */
@@ -1060,7 +857,7 @@ public final class BartenderCompleteOrderReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 quest_id = 8;</code>
+       * <code>uint32 quest_id = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearQuestId() {
@@ -1070,12 +867,105 @@ public final class BartenderCompleteOrderReqOuterClass {
         return this;
       }
 
+      private int mBAAHPBEAEI_ ;
+      /**
+       * <code>uint32 MBAAHPBEAEI = 5;</code>
+       * @return The mBAAHPBEAEI.
+       */
+      @java.lang.Override
+      public int getMBAAHPBEAEI() {
+        return mBAAHPBEAEI_;
+      }
+      /**
+       * <code>uint32 MBAAHPBEAEI = 5;</code>
+       * @param value The mBAAHPBEAEI to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMBAAHPBEAEI(int value) {
+        
+        mBAAHPBEAEI_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 MBAAHPBEAEI = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMBAAHPBEAEI() {
+        
+        mBAAHPBEAEI_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean isViewFormula_ ;
+      /**
+       * <code>bool is_view_formula = 7;</code>
+       * @return The isViewFormula.
+       */
+      @java.lang.Override
+      public boolean getIsViewFormula() {
+        return isViewFormula_;
+      }
+      /**
+       * <code>bool is_view_formula = 7;</code>
+       * @param value The isViewFormula to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsViewFormula(boolean value) {
+        
+        isViewFormula_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_view_formula = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsViewFormula() {
+        
+        isViewFormula_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int gPGCCDPDENJ_ ;
+      /**
+       * <code>uint32 GPGCCDPDENJ = 11;</code>
+       * @return The gPGCCDPDENJ.
+       */
+      @java.lang.Override
+      public int getGPGCCDPDENJ() {
+        return gPGCCDPDENJ_;
+      }
+      /**
+       * <code>uint32 GPGCCDPDENJ = 11;</code>
+       * @param value The gPGCCDPDENJ to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGPGCCDPDENJ(int value) {
+        
+        gPGCCDPDENJ_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 GPGCCDPDENJ = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGPGCCDPDENJ() {
+        
+        gPGCCDPDENJ_ = 0;
+        onChanged();
+        return this;
+      }
+
       private java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> itemList_ =
         java.util.Collections.emptyList();
       private void ensureItemListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           itemList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam>(itemList_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -1083,7 +973,7 @@ public final class BartenderCompleteOrderReqOuterClass {
           emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> itemListBuilder_;
 
       /**
-       * <code>repeated .ItemParam item_list = 13;</code>
+       * <code>repeated .ItemParam item_list = 4;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> getItemListList() {
         if (itemListBuilder_ == null) {
@@ -1093,7 +983,7 @@ public final class BartenderCompleteOrderReqOuterClass {
         }
       }
       /**
-       * <code>repeated .ItemParam item_list = 13;</code>
+       * <code>repeated .ItemParam item_list = 4;</code>
        */
       public int getItemListCount() {
         if (itemListBuilder_ == null) {
@@ -1103,7 +993,7 @@ public final class BartenderCompleteOrderReqOuterClass {
         }
       }
       /**
-       * <code>repeated .ItemParam item_list = 13;</code>
+       * <code>repeated .ItemParam item_list = 4;</code>
        */
       public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam getItemList(int index) {
         if (itemListBuilder_ == null) {
@@ -1113,7 +1003,7 @@ public final class BartenderCompleteOrderReqOuterClass {
         }
       }
       /**
-       * <code>repeated .ItemParam item_list = 13;</code>
+       * <code>repeated .ItemParam item_list = 4;</code>
        */
       public Builder setItemList(
           int index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam value) {
@@ -1130,7 +1020,7 @@ public final class BartenderCompleteOrderReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 13;</code>
+       * <code>repeated .ItemParam item_list = 4;</code>
        */
       public Builder setItemList(
           int index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder builderForValue) {
@@ -1144,7 +1034,7 @@ public final class BartenderCompleteOrderReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 13;</code>
+       * <code>repeated .ItemParam item_list = 4;</code>
        */
       public Builder addItemList(emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam value) {
         if (itemListBuilder_ == null) {
@@ -1160,7 +1050,7 @@ public final class BartenderCompleteOrderReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 13;</code>
+       * <code>repeated .ItemParam item_list = 4;</code>
        */
       public Builder addItemList(
           int index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam value) {
@@ -1177,7 +1067,7 @@ public final class BartenderCompleteOrderReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 13;</code>
+       * <code>repeated .ItemParam item_list = 4;</code>
        */
       public Builder addItemList(
           emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder builderForValue) {
@@ -1191,7 +1081,7 @@ public final class BartenderCompleteOrderReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 13;</code>
+       * <code>repeated .ItemParam item_list = 4;</code>
        */
       public Builder addItemList(
           int index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder builderForValue) {
@@ -1205,7 +1095,7 @@ public final class BartenderCompleteOrderReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 13;</code>
+       * <code>repeated .ItemParam item_list = 4;</code>
        */
       public Builder addAllItemList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> values) {
@@ -1220,12 +1110,12 @@ public final class BartenderCompleteOrderReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 13;</code>
+       * <code>repeated .ItemParam item_list = 4;</code>
        */
       public Builder clearItemList() {
         if (itemListBuilder_ == null) {
           itemList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           itemListBuilder_.clear();
@@ -1233,7 +1123,7 @@ public final class BartenderCompleteOrderReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 13;</code>
+       * <code>repeated .ItemParam item_list = 4;</code>
        */
       public Builder removeItemList(int index) {
         if (itemListBuilder_ == null) {
@@ -1246,14 +1136,14 @@ public final class BartenderCompleteOrderReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 13;</code>
+       * <code>repeated .ItemParam item_list = 4;</code>
        */
       public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder getItemListBuilder(
           int index) {
         return getItemListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .ItemParam item_list = 13;</code>
+       * <code>repeated .ItemParam item_list = 4;</code>
        */
       public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder getItemListOrBuilder(
           int index) {
@@ -1263,7 +1153,7 @@ public final class BartenderCompleteOrderReqOuterClass {
         }
       }
       /**
-       * <code>repeated .ItemParam item_list = 13;</code>
+       * <code>repeated .ItemParam item_list = 4;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> 
            getItemListOrBuilderList() {
@@ -1274,14 +1164,14 @@ public final class BartenderCompleteOrderReqOuterClass {
         }
       }
       /**
-       * <code>repeated .ItemParam item_list = 13;</code>
+       * <code>repeated .ItemParam item_list = 4;</code>
        */
       public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder addItemListBuilder() {
         return getItemListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.getDefaultInstance());
       }
       /**
-       * <code>repeated .ItemParam item_list = 13;</code>
+       * <code>repeated .ItemParam item_list = 4;</code>
        */
       public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder addItemListBuilder(
           int index) {
@@ -1289,7 +1179,7 @@ public final class BartenderCompleteOrderReqOuterClass {
             index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.getDefaultInstance());
       }
       /**
-       * <code>repeated .ItemParam item_list = 13;</code>
+       * <code>repeated .ItemParam item_list = 4;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder> 
            getItemListBuilderList() {
@@ -1302,12 +1192,122 @@ public final class BartenderCompleteOrderReqOuterClass {
           itemListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder>(
                   itemList_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           itemList_ = null;
         }
         return itemListBuilder_;
+      }
+
+      private int bBNAEDJABBD_ ;
+      /**
+       * <code>uint32 BBNAEDJABBD = 8;</code>
+       * @return The bBNAEDJABBD.
+       */
+      @java.lang.Override
+      public int getBBNAEDJABBD() {
+        return bBNAEDJABBD_;
+      }
+      /**
+       * <code>uint32 BBNAEDJABBD = 8;</code>
+       * @param value The bBNAEDJABBD to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBBNAEDJABBD(int value) {
+        
+        bBNAEDJABBD_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 BBNAEDJABBD = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBBNAEDJABBD() {
+        
+        bBNAEDJABBD_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Internal.IntList optionalOrderList_ = emptyIntList();
+      private void ensureOptionalOrderListIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          optionalOrderList_ = mutableCopy(optionalOrderList_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+      /**
+       * <code>repeated uint32 optional_order_list = 6;</code>
+       * @return A list containing the optionalOrderList.
+       */
+      public java.util.List<java.lang.Integer>
+          getOptionalOrderListList() {
+        return ((bitField0_ & 0x00000002) != 0) ?
+                 java.util.Collections.unmodifiableList(optionalOrderList_) : optionalOrderList_;
+      }
+      /**
+       * <code>repeated uint32 optional_order_list = 6;</code>
+       * @return The count of optionalOrderList.
+       */
+      public int getOptionalOrderListCount() {
+        return optionalOrderList_.size();
+      }
+      /**
+       * <code>repeated uint32 optional_order_list = 6;</code>
+       * @param index The index of the element to return.
+       * @return The optionalOrderList at the given index.
+       */
+      public int getOptionalOrderList(int index) {
+        return optionalOrderList_.getInt(index);
+      }
+      /**
+       * <code>repeated uint32 optional_order_list = 6;</code>
+       * @param index The index to set the value at.
+       * @param value The optionalOrderList to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOptionalOrderList(
+          int index, int value) {
+        ensureOptionalOrderListIsMutable();
+        optionalOrderList_.setInt(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 optional_order_list = 6;</code>
+       * @param value The optionalOrderList to add.
+       * @return This builder for chaining.
+       */
+      public Builder addOptionalOrderList(int value) {
+        ensureOptionalOrderListIsMutable();
+        optionalOrderList_.addInt(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 optional_order_list = 6;</code>
+       * @param values The optionalOrderList to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllOptionalOrderList(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureOptionalOrderListIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, optionalOrderList_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 optional_order_list = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOptionalOrderList() {
+        optionalOrderList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -1378,11 +1378,11 @@ public final class BartenderCompleteOrderReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n\037BartenderCompleteOrderReq.proto\032\017ItemP" +
       "aram.proto\"\301\001\n\031BartenderCompleteOrderReq" +
-      "\022\023\n\013OIBFDJOINLD\030\003 \001(\r\022\023\n\013GAPDCJGFION\030\007 \001" +
-      "(\r\022\023\n\013NJHLGJPCJJP\030\n \001(\r\022\033\n\023optional_orde" +
-      "r_list\030\002 \003(\r\022\027\n\017is_view_formula\030\004 \001(\010\022\020\n" +
-      "\010quest_id\030\010 \001(\r\022\035\n\titem_list\030\r \003(\0132\n.Ite" +
-      "mParamB\033\n\031emu.grasscutter.net.protob\006pro" +
+      "\022\020\n\010quest_id\030\n \001(\r\022\023\n\013MBAAHPBEAEI\030\005 \001(\r\022" +
+      "\027\n\017is_view_formula\030\007 \001(\010\022\023\n\013GPGCCDPDENJ\030" +
+      "\013 \001(\r\022\035\n\titem_list\030\004 \003(\0132\n.ItemParam\022\023\n\013" +
+      "BBNAEDJABBD\030\010 \001(\r\022\033\n\023optional_order_list" +
+      "\030\006 \003(\rB\033\n\031emu.grasscutter.net.protob\006pro" +
       "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -1395,7 +1395,7 @@ public final class BartenderCompleteOrderReqOuterClass {
     internal_static_BartenderCompleteOrderReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_BartenderCompleteOrderReq_descriptor,
-        new java.lang.String[] { "OIBFDJOINLD", "GAPDCJGFION", "NJHLGJPCJJP", "OptionalOrderList", "IsViewFormula", "QuestId", "ItemList", });
+        new java.lang.String[] { "QuestId", "MBAAHPBEAEI", "IsViewFormula", "GPGCCDPDENJ", "ItemList", "BBNAEDJABBD", "OptionalOrderList", });
     emu.grasscutter.net.proto.ItemParamOuterClass.getDescriptor();
   }
 

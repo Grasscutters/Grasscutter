@@ -19,57 +19,57 @@ public final class RoguelikeEffectDataNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .RogueEffectRecord card_list = 15;</code>
-     */
-    java.util.List<emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord> 
-        getCardListList();
-    /**
-     * <code>repeated .RogueEffectRecord card_list = 15;</code>
-     */
-    emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord getCardList(int index);
-    /**
-     * <code>repeated .RogueEffectRecord card_list = 15;</code>
-     */
-    int getCardListCount();
-    /**
-     * <code>repeated .RogueEffectRecord card_list = 15;</code>
-     */
-    java.util.List<? extends emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecordOrBuilder> 
-        getCardListOrBuilderList();
-    /**
-     * <code>repeated .RogueEffectRecord card_list = 15;</code>
-     */
-    emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecordOrBuilder getCardListOrBuilder(
-        int index);
-
-    /**
-     * <code>repeated .RogueEffectRecord curse_list = 7;</code>
+     * <code>repeated .RogueEffectRecord curse_list = 10;</code>
      */
     java.util.List<emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord> 
         getCurseListList();
     /**
-     * <code>repeated .RogueEffectRecord curse_list = 7;</code>
+     * <code>repeated .RogueEffectRecord curse_list = 10;</code>
      */
     emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord getCurseList(int index);
     /**
-     * <code>repeated .RogueEffectRecord curse_list = 7;</code>
+     * <code>repeated .RogueEffectRecord curse_list = 10;</code>
      */
     int getCurseListCount();
     /**
-     * <code>repeated .RogueEffectRecord curse_list = 7;</code>
+     * <code>repeated .RogueEffectRecord curse_list = 10;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecordOrBuilder> 
         getCurseListOrBuilderList();
     /**
-     * <code>repeated .RogueEffectRecord curse_list = 7;</code>
+     * <code>repeated .RogueEffectRecord curse_list = 10;</code>
      */
     emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecordOrBuilder getCurseListOrBuilder(
+        int index);
+
+    /**
+     * <code>repeated .RogueEffectRecord card_list = 3;</code>
+     */
+    java.util.List<emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord> 
+        getCardListList();
+    /**
+     * <code>repeated .RogueEffectRecord card_list = 3;</code>
+     */
+    emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord getCardList(int index);
+    /**
+     * <code>repeated .RogueEffectRecord card_list = 3;</code>
+     */
+    int getCardListCount();
+    /**
+     * <code>repeated .RogueEffectRecord card_list = 3;</code>
+     */
+    java.util.List<? extends emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecordOrBuilder> 
+        getCardListOrBuilderList();
+    /**
+     * <code>repeated .RogueEffectRecord card_list = 3;</code>
+     */
+    emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecordOrBuilder getCardListOrBuilder(
         int index);
   }
   /**
    * <pre>
-   * CmdId: 8729
-   * Obf: MCCLLLHNFLA
+   * CmdId: 920
+   * Obf: NDEIBOEENEJ
    * </pre>
    *
    * Protobuf type {@code RoguelikeEffectDataNotify}
@@ -84,8 +84,8 @@ public final class RoguelikeEffectDataNotifyOuterClass {
       super(builder);
     }
     private RoguelikeEffectDataNotify() {
-      cardList_ = java.util.Collections.emptyList();
       curseList_ = java.util.Collections.emptyList();
+      cardList_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -119,21 +119,21 @@ public final class RoguelikeEffectDataNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 58: {
+            case 26: {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                curseList_ = new java.util.ArrayList<emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord>();
+                cardList_ = new java.util.ArrayList<emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord>();
                 mutable_bitField0_ |= 0x00000002;
               }
-              curseList_.add(
+              cardList_.add(
                   input.readMessage(emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord.parser(), extensionRegistry));
               break;
             }
-            case 122: {
+            case 82: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                cardList_ = new java.util.ArrayList<emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord>();
+                curseList_ = new java.util.ArrayList<emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord>();
                 mutable_bitField0_ |= 0x00000001;
               }
-              cardList_.add(
+              curseList_.add(
                   input.readMessage(emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord.parser(), extensionRegistry));
               break;
             }
@@ -153,10 +153,10 @@ public final class RoguelikeEffectDataNotifyOuterClass {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          curseList_ = java.util.Collections.unmodifiableList(curseList_);
+          cardList_ = java.util.Collections.unmodifiableList(cardList_);
         }
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          cardList_ = java.util.Collections.unmodifiableList(cardList_);
+          curseList_ = java.util.Collections.unmodifiableList(curseList_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -175,57 +175,17 @@ public final class RoguelikeEffectDataNotifyOuterClass {
               emu.grasscutter.net.proto.RoguelikeEffectDataNotifyOuterClass.RoguelikeEffectDataNotify.class, emu.grasscutter.net.proto.RoguelikeEffectDataNotifyOuterClass.RoguelikeEffectDataNotify.Builder.class);
     }
 
-    public static final int CARD_LIST_FIELD_NUMBER = 15;
-    private java.util.List<emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord> cardList_;
-    /**
-     * <code>repeated .RogueEffectRecord card_list = 15;</code>
-     */
-    @java.lang.Override
-    public java.util.List<emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord> getCardListList() {
-      return cardList_;
-    }
-    /**
-     * <code>repeated .RogueEffectRecord card_list = 15;</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecordOrBuilder> 
-        getCardListOrBuilderList() {
-      return cardList_;
-    }
-    /**
-     * <code>repeated .RogueEffectRecord card_list = 15;</code>
-     */
-    @java.lang.Override
-    public int getCardListCount() {
-      return cardList_.size();
-    }
-    /**
-     * <code>repeated .RogueEffectRecord card_list = 15;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord getCardList(int index) {
-      return cardList_.get(index);
-    }
-    /**
-     * <code>repeated .RogueEffectRecord card_list = 15;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecordOrBuilder getCardListOrBuilder(
-        int index) {
-      return cardList_.get(index);
-    }
-
-    public static final int CURSE_LIST_FIELD_NUMBER = 7;
+    public static final int CURSE_LIST_FIELD_NUMBER = 10;
     private java.util.List<emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord> curseList_;
     /**
-     * <code>repeated .RogueEffectRecord curse_list = 7;</code>
+     * <code>repeated .RogueEffectRecord curse_list = 10;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord> getCurseListList() {
       return curseList_;
     }
     /**
-     * <code>repeated .RogueEffectRecord curse_list = 7;</code>
+     * <code>repeated .RogueEffectRecord curse_list = 10;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecordOrBuilder> 
@@ -233,26 +193,66 @@ public final class RoguelikeEffectDataNotifyOuterClass {
       return curseList_;
     }
     /**
-     * <code>repeated .RogueEffectRecord curse_list = 7;</code>
+     * <code>repeated .RogueEffectRecord curse_list = 10;</code>
      */
     @java.lang.Override
     public int getCurseListCount() {
       return curseList_.size();
     }
     /**
-     * <code>repeated .RogueEffectRecord curse_list = 7;</code>
+     * <code>repeated .RogueEffectRecord curse_list = 10;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord getCurseList(int index) {
       return curseList_.get(index);
     }
     /**
-     * <code>repeated .RogueEffectRecord curse_list = 7;</code>
+     * <code>repeated .RogueEffectRecord curse_list = 10;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecordOrBuilder getCurseListOrBuilder(
         int index) {
       return curseList_.get(index);
+    }
+
+    public static final int CARD_LIST_FIELD_NUMBER = 3;
+    private java.util.List<emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord> cardList_;
+    /**
+     * <code>repeated .RogueEffectRecord card_list = 3;</code>
+     */
+    @java.lang.Override
+    public java.util.List<emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord> getCardListList() {
+      return cardList_;
+    }
+    /**
+     * <code>repeated .RogueEffectRecord card_list = 3;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecordOrBuilder> 
+        getCardListOrBuilderList() {
+      return cardList_;
+    }
+    /**
+     * <code>repeated .RogueEffectRecord card_list = 3;</code>
+     */
+    @java.lang.Override
+    public int getCardListCount() {
+      return cardList_.size();
+    }
+    /**
+     * <code>repeated .RogueEffectRecord card_list = 3;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord getCardList(int index) {
+      return cardList_.get(index);
+    }
+    /**
+     * <code>repeated .RogueEffectRecord card_list = 3;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecordOrBuilder getCardListOrBuilder(
+        int index) {
+      return cardList_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -269,11 +269,11 @@ public final class RoguelikeEffectDataNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < curseList_.size(); i++) {
-        output.writeMessage(7, curseList_.get(i));
-      }
       for (int i = 0; i < cardList_.size(); i++) {
-        output.writeMessage(15, cardList_.get(i));
+        output.writeMessage(3, cardList_.get(i));
+      }
+      for (int i = 0; i < curseList_.size(); i++) {
+        output.writeMessage(10, curseList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -284,13 +284,13 @@ public final class RoguelikeEffectDataNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < curseList_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, curseList_.get(i));
-      }
       for (int i = 0; i < cardList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(15, cardList_.get(i));
+          .computeMessageSize(3, cardList_.get(i));
+      }
+      for (int i = 0; i < curseList_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(10, curseList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -307,10 +307,10 @@ public final class RoguelikeEffectDataNotifyOuterClass {
       }
       emu.grasscutter.net.proto.RoguelikeEffectDataNotifyOuterClass.RoguelikeEffectDataNotify other = (emu.grasscutter.net.proto.RoguelikeEffectDataNotifyOuterClass.RoguelikeEffectDataNotify) obj;
 
-      if (!getCardListList()
-          .equals(other.getCardListList())) return false;
       if (!getCurseListList()
           .equals(other.getCurseListList())) return false;
+      if (!getCardListList()
+          .equals(other.getCardListList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -322,13 +322,13 @@ public final class RoguelikeEffectDataNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getCardListCount() > 0) {
-        hash = (37 * hash) + CARD_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getCardListList().hashCode();
-      }
       if (getCurseListCount() > 0) {
         hash = (37 * hash) + CURSE_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getCurseListList().hashCode();
+      }
+      if (getCardListCount() > 0) {
+        hash = (37 * hash) + CARD_LIST_FIELD_NUMBER;
+        hash = (53 * hash) + getCardListList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -427,8 +427,8 @@ public final class RoguelikeEffectDataNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8729
-     * Obf: MCCLLLHNFLA
+     * CmdId: 920
+     * Obf: NDEIBOEENEJ
      * </pre>
      *
      * Protobuf type {@code RoguelikeEffectDataNotify}
@@ -463,24 +463,24 @@ public final class RoguelikeEffectDataNotifyOuterClass {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getCardListFieldBuilder();
           getCurseListFieldBuilder();
+          getCardListFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (cardListBuilder_ == null) {
-          cardList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        } else {
-          cardListBuilder_.clear();
-        }
         if (curseListBuilder_ == null) {
           curseList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           curseListBuilder_.clear();
+        }
+        if (cardListBuilder_ == null) {
+          cardList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          cardListBuilder_.clear();
         }
         return this;
       }
@@ -509,23 +509,23 @@ public final class RoguelikeEffectDataNotifyOuterClass {
       public emu.grasscutter.net.proto.RoguelikeEffectDataNotifyOuterClass.RoguelikeEffectDataNotify buildPartial() {
         emu.grasscutter.net.proto.RoguelikeEffectDataNotifyOuterClass.RoguelikeEffectDataNotify result = new emu.grasscutter.net.proto.RoguelikeEffectDataNotifyOuterClass.RoguelikeEffectDataNotify(this);
         int from_bitField0_ = bitField0_;
-        if (cardListBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
-            cardList_ = java.util.Collections.unmodifiableList(cardList_);
-            bitField0_ = (bitField0_ & ~0x00000001);
-          }
-          result.cardList_ = cardList_;
-        } else {
-          result.cardList_ = cardListBuilder_.build();
-        }
         if (curseListBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             curseList_ = java.util.Collections.unmodifiableList(curseList_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.curseList_ = curseList_;
         } else {
           result.curseList_ = curseListBuilder_.build();
+        }
+        if (cardListBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)) {
+            cardList_ = java.util.Collections.unmodifiableList(cardList_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.cardList_ = cardList_;
+        } else {
+          result.cardList_ = cardListBuilder_.build();
         }
         onBuilt();
         return result;
@@ -575,37 +575,11 @@ public final class RoguelikeEffectDataNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.RoguelikeEffectDataNotifyOuterClass.RoguelikeEffectDataNotify other) {
         if (other == emu.grasscutter.net.proto.RoguelikeEffectDataNotifyOuterClass.RoguelikeEffectDataNotify.getDefaultInstance()) return this;
-        if (cardListBuilder_ == null) {
-          if (!other.cardList_.isEmpty()) {
-            if (cardList_.isEmpty()) {
-              cardList_ = other.cardList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-            } else {
-              ensureCardListIsMutable();
-              cardList_.addAll(other.cardList_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.cardList_.isEmpty()) {
-            if (cardListBuilder_.isEmpty()) {
-              cardListBuilder_.dispose();
-              cardListBuilder_ = null;
-              cardList_ = other.cardList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-              cardListBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getCardListFieldBuilder() : null;
-            } else {
-              cardListBuilder_.addAllMessages(other.cardList_);
-            }
-          }
-        }
         if (curseListBuilder_ == null) {
           if (!other.curseList_.isEmpty()) {
             if (curseList_.isEmpty()) {
               curseList_ = other.curseList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureCurseListIsMutable();
               curseList_.addAll(other.curseList_);
@@ -618,12 +592,38 @@ public final class RoguelikeEffectDataNotifyOuterClass {
               curseListBuilder_.dispose();
               curseListBuilder_ = null;
               curseList_ = other.curseList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
               curseListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getCurseListFieldBuilder() : null;
             } else {
               curseListBuilder_.addAllMessages(other.curseList_);
+            }
+          }
+        }
+        if (cardListBuilder_ == null) {
+          if (!other.cardList_.isEmpty()) {
+            if (cardList_.isEmpty()) {
+              cardList_ = other.cardList_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureCardListIsMutable();
+              cardList_.addAll(other.cardList_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.cardList_.isEmpty()) {
+            if (cardListBuilder_.isEmpty()) {
+              cardListBuilder_.dispose();
+              cardListBuilder_ = null;
+              cardList_ = other.cardList_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              cardListBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getCardListFieldBuilder() : null;
+            } else {
+              cardListBuilder_.addAllMessages(other.cardList_);
             }
           }
         }
@@ -657,252 +657,12 @@ public final class RoguelikeEffectDataNotifyOuterClass {
       }
       private int bitField0_;
 
-      private java.util.List<emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord> cardList_ =
-        java.util.Collections.emptyList();
-      private void ensureCardListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          cardList_ = new java.util.ArrayList<emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord>(cardList_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord, emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord.Builder, emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecordOrBuilder> cardListBuilder_;
-
-      /**
-       * <code>repeated .RogueEffectRecord card_list = 15;</code>
-       */
-      public java.util.List<emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord> getCardListList() {
-        if (cardListBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(cardList_);
-        } else {
-          return cardListBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <code>repeated .RogueEffectRecord card_list = 15;</code>
-       */
-      public int getCardListCount() {
-        if (cardListBuilder_ == null) {
-          return cardList_.size();
-        } else {
-          return cardListBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .RogueEffectRecord card_list = 15;</code>
-       */
-      public emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord getCardList(int index) {
-        if (cardListBuilder_ == null) {
-          return cardList_.get(index);
-        } else {
-          return cardListBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .RogueEffectRecord card_list = 15;</code>
-       */
-      public Builder setCardList(
-          int index, emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord value) {
-        if (cardListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureCardListIsMutable();
-          cardList_.set(index, value);
-          onChanged();
-        } else {
-          cardListBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .RogueEffectRecord card_list = 15;</code>
-       */
-      public Builder setCardList(
-          int index, emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord.Builder builderForValue) {
-        if (cardListBuilder_ == null) {
-          ensureCardListIsMutable();
-          cardList_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          cardListBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .RogueEffectRecord card_list = 15;</code>
-       */
-      public Builder addCardList(emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord value) {
-        if (cardListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureCardListIsMutable();
-          cardList_.add(value);
-          onChanged();
-        } else {
-          cardListBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .RogueEffectRecord card_list = 15;</code>
-       */
-      public Builder addCardList(
-          int index, emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord value) {
-        if (cardListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureCardListIsMutable();
-          cardList_.add(index, value);
-          onChanged();
-        } else {
-          cardListBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .RogueEffectRecord card_list = 15;</code>
-       */
-      public Builder addCardList(
-          emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord.Builder builderForValue) {
-        if (cardListBuilder_ == null) {
-          ensureCardListIsMutable();
-          cardList_.add(builderForValue.build());
-          onChanged();
-        } else {
-          cardListBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .RogueEffectRecord card_list = 15;</code>
-       */
-      public Builder addCardList(
-          int index, emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord.Builder builderForValue) {
-        if (cardListBuilder_ == null) {
-          ensureCardListIsMutable();
-          cardList_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          cardListBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .RogueEffectRecord card_list = 15;</code>
-       */
-      public Builder addAllCardList(
-          java.lang.Iterable<? extends emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord> values) {
-        if (cardListBuilder_ == null) {
-          ensureCardListIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, cardList_);
-          onChanged();
-        } else {
-          cardListBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .RogueEffectRecord card_list = 15;</code>
-       */
-      public Builder clearCardList() {
-        if (cardListBuilder_ == null) {
-          cardList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-          onChanged();
-        } else {
-          cardListBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .RogueEffectRecord card_list = 15;</code>
-       */
-      public Builder removeCardList(int index) {
-        if (cardListBuilder_ == null) {
-          ensureCardListIsMutable();
-          cardList_.remove(index);
-          onChanged();
-        } else {
-          cardListBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .RogueEffectRecord card_list = 15;</code>
-       */
-      public emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord.Builder getCardListBuilder(
-          int index) {
-        return getCardListFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .RogueEffectRecord card_list = 15;</code>
-       */
-      public emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecordOrBuilder getCardListOrBuilder(
-          int index) {
-        if (cardListBuilder_ == null) {
-          return cardList_.get(index);  } else {
-          return cardListBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .RogueEffectRecord card_list = 15;</code>
-       */
-      public java.util.List<? extends emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecordOrBuilder> 
-           getCardListOrBuilderList() {
-        if (cardListBuilder_ != null) {
-          return cardListBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(cardList_);
-        }
-      }
-      /**
-       * <code>repeated .RogueEffectRecord card_list = 15;</code>
-       */
-      public emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord.Builder addCardListBuilder() {
-        return getCardListFieldBuilder().addBuilder(
-            emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .RogueEffectRecord card_list = 15;</code>
-       */
-      public emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord.Builder addCardListBuilder(
-          int index) {
-        return getCardListFieldBuilder().addBuilder(
-            index, emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .RogueEffectRecord card_list = 15;</code>
-       */
-      public java.util.List<emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord.Builder> 
-           getCardListBuilderList() {
-        return getCardListFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord, emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord.Builder, emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecordOrBuilder> 
-          getCardListFieldBuilder() {
-        if (cardListBuilder_ == null) {
-          cardListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord, emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord.Builder, emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecordOrBuilder>(
-                  cardList_,
-                  ((bitField0_ & 0x00000001) != 0),
-                  getParentForChildren(),
-                  isClean());
-          cardList_ = null;
-        }
-        return cardListBuilder_;
-      }
-
       private java.util.List<emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord> curseList_ =
         java.util.Collections.emptyList();
       private void ensureCurseListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           curseList_ = new java.util.ArrayList<emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord>(curseList_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -910,7 +670,7 @@ public final class RoguelikeEffectDataNotifyOuterClass {
           emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord, emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord.Builder, emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecordOrBuilder> curseListBuilder_;
 
       /**
-       * <code>repeated .RogueEffectRecord curse_list = 7;</code>
+       * <code>repeated .RogueEffectRecord curse_list = 10;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord> getCurseListList() {
         if (curseListBuilder_ == null) {
@@ -920,7 +680,7 @@ public final class RoguelikeEffectDataNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .RogueEffectRecord curse_list = 7;</code>
+       * <code>repeated .RogueEffectRecord curse_list = 10;</code>
        */
       public int getCurseListCount() {
         if (curseListBuilder_ == null) {
@@ -930,7 +690,7 @@ public final class RoguelikeEffectDataNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .RogueEffectRecord curse_list = 7;</code>
+       * <code>repeated .RogueEffectRecord curse_list = 10;</code>
        */
       public emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord getCurseList(int index) {
         if (curseListBuilder_ == null) {
@@ -940,7 +700,7 @@ public final class RoguelikeEffectDataNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .RogueEffectRecord curse_list = 7;</code>
+       * <code>repeated .RogueEffectRecord curse_list = 10;</code>
        */
       public Builder setCurseList(
           int index, emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord value) {
@@ -957,7 +717,7 @@ public final class RoguelikeEffectDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .RogueEffectRecord curse_list = 7;</code>
+       * <code>repeated .RogueEffectRecord curse_list = 10;</code>
        */
       public Builder setCurseList(
           int index, emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord.Builder builderForValue) {
@@ -971,7 +731,7 @@ public final class RoguelikeEffectDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .RogueEffectRecord curse_list = 7;</code>
+       * <code>repeated .RogueEffectRecord curse_list = 10;</code>
        */
       public Builder addCurseList(emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord value) {
         if (curseListBuilder_ == null) {
@@ -987,7 +747,7 @@ public final class RoguelikeEffectDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .RogueEffectRecord curse_list = 7;</code>
+       * <code>repeated .RogueEffectRecord curse_list = 10;</code>
        */
       public Builder addCurseList(
           int index, emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord value) {
@@ -1004,7 +764,7 @@ public final class RoguelikeEffectDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .RogueEffectRecord curse_list = 7;</code>
+       * <code>repeated .RogueEffectRecord curse_list = 10;</code>
        */
       public Builder addCurseList(
           emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord.Builder builderForValue) {
@@ -1018,7 +778,7 @@ public final class RoguelikeEffectDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .RogueEffectRecord curse_list = 7;</code>
+       * <code>repeated .RogueEffectRecord curse_list = 10;</code>
        */
       public Builder addCurseList(
           int index, emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord.Builder builderForValue) {
@@ -1032,7 +792,7 @@ public final class RoguelikeEffectDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .RogueEffectRecord curse_list = 7;</code>
+       * <code>repeated .RogueEffectRecord curse_list = 10;</code>
        */
       public Builder addAllCurseList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord> values) {
@@ -1047,12 +807,12 @@ public final class RoguelikeEffectDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .RogueEffectRecord curse_list = 7;</code>
+       * <code>repeated .RogueEffectRecord curse_list = 10;</code>
        */
       public Builder clearCurseList() {
         if (curseListBuilder_ == null) {
           curseList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           curseListBuilder_.clear();
@@ -1060,7 +820,7 @@ public final class RoguelikeEffectDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .RogueEffectRecord curse_list = 7;</code>
+       * <code>repeated .RogueEffectRecord curse_list = 10;</code>
        */
       public Builder removeCurseList(int index) {
         if (curseListBuilder_ == null) {
@@ -1073,14 +833,14 @@ public final class RoguelikeEffectDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .RogueEffectRecord curse_list = 7;</code>
+       * <code>repeated .RogueEffectRecord curse_list = 10;</code>
        */
       public emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord.Builder getCurseListBuilder(
           int index) {
         return getCurseListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .RogueEffectRecord curse_list = 7;</code>
+       * <code>repeated .RogueEffectRecord curse_list = 10;</code>
        */
       public emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecordOrBuilder getCurseListOrBuilder(
           int index) {
@@ -1090,7 +850,7 @@ public final class RoguelikeEffectDataNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .RogueEffectRecord curse_list = 7;</code>
+       * <code>repeated .RogueEffectRecord curse_list = 10;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecordOrBuilder> 
            getCurseListOrBuilderList() {
@@ -1101,14 +861,14 @@ public final class RoguelikeEffectDataNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .RogueEffectRecord curse_list = 7;</code>
+       * <code>repeated .RogueEffectRecord curse_list = 10;</code>
        */
       public emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord.Builder addCurseListBuilder() {
         return getCurseListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord.getDefaultInstance());
       }
       /**
-       * <code>repeated .RogueEffectRecord curse_list = 7;</code>
+       * <code>repeated .RogueEffectRecord curse_list = 10;</code>
        */
       public emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord.Builder addCurseListBuilder(
           int index) {
@@ -1116,7 +876,7 @@ public final class RoguelikeEffectDataNotifyOuterClass {
             index, emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord.getDefaultInstance());
       }
       /**
-       * <code>repeated .RogueEffectRecord curse_list = 7;</code>
+       * <code>repeated .RogueEffectRecord curse_list = 10;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord.Builder> 
            getCurseListBuilderList() {
@@ -1129,12 +889,252 @@ public final class RoguelikeEffectDataNotifyOuterClass {
           curseListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord, emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord.Builder, emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecordOrBuilder>(
                   curseList_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           curseList_ = null;
         }
         return curseListBuilder_;
+      }
+
+      private java.util.List<emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord> cardList_ =
+        java.util.Collections.emptyList();
+      private void ensureCardListIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          cardList_ = new java.util.ArrayList<emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord>(cardList_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord, emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord.Builder, emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecordOrBuilder> cardListBuilder_;
+
+      /**
+       * <code>repeated .RogueEffectRecord card_list = 3;</code>
+       */
+      public java.util.List<emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord> getCardListList() {
+        if (cardListBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(cardList_);
+        } else {
+          return cardListBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .RogueEffectRecord card_list = 3;</code>
+       */
+      public int getCardListCount() {
+        if (cardListBuilder_ == null) {
+          return cardList_.size();
+        } else {
+          return cardListBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .RogueEffectRecord card_list = 3;</code>
+       */
+      public emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord getCardList(int index) {
+        if (cardListBuilder_ == null) {
+          return cardList_.get(index);
+        } else {
+          return cardListBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .RogueEffectRecord card_list = 3;</code>
+       */
+      public Builder setCardList(
+          int index, emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord value) {
+        if (cardListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCardListIsMutable();
+          cardList_.set(index, value);
+          onChanged();
+        } else {
+          cardListBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .RogueEffectRecord card_list = 3;</code>
+       */
+      public Builder setCardList(
+          int index, emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord.Builder builderForValue) {
+        if (cardListBuilder_ == null) {
+          ensureCardListIsMutable();
+          cardList_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          cardListBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .RogueEffectRecord card_list = 3;</code>
+       */
+      public Builder addCardList(emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord value) {
+        if (cardListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCardListIsMutable();
+          cardList_.add(value);
+          onChanged();
+        } else {
+          cardListBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .RogueEffectRecord card_list = 3;</code>
+       */
+      public Builder addCardList(
+          int index, emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord value) {
+        if (cardListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCardListIsMutable();
+          cardList_.add(index, value);
+          onChanged();
+        } else {
+          cardListBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .RogueEffectRecord card_list = 3;</code>
+       */
+      public Builder addCardList(
+          emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord.Builder builderForValue) {
+        if (cardListBuilder_ == null) {
+          ensureCardListIsMutable();
+          cardList_.add(builderForValue.build());
+          onChanged();
+        } else {
+          cardListBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .RogueEffectRecord card_list = 3;</code>
+       */
+      public Builder addCardList(
+          int index, emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord.Builder builderForValue) {
+        if (cardListBuilder_ == null) {
+          ensureCardListIsMutable();
+          cardList_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          cardListBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .RogueEffectRecord card_list = 3;</code>
+       */
+      public Builder addAllCardList(
+          java.lang.Iterable<? extends emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord> values) {
+        if (cardListBuilder_ == null) {
+          ensureCardListIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, cardList_);
+          onChanged();
+        } else {
+          cardListBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .RogueEffectRecord card_list = 3;</code>
+       */
+      public Builder clearCardList() {
+        if (cardListBuilder_ == null) {
+          cardList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          cardListBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .RogueEffectRecord card_list = 3;</code>
+       */
+      public Builder removeCardList(int index) {
+        if (cardListBuilder_ == null) {
+          ensureCardListIsMutable();
+          cardList_.remove(index);
+          onChanged();
+        } else {
+          cardListBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .RogueEffectRecord card_list = 3;</code>
+       */
+      public emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord.Builder getCardListBuilder(
+          int index) {
+        return getCardListFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .RogueEffectRecord card_list = 3;</code>
+       */
+      public emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecordOrBuilder getCardListOrBuilder(
+          int index) {
+        if (cardListBuilder_ == null) {
+          return cardList_.get(index);  } else {
+          return cardListBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .RogueEffectRecord card_list = 3;</code>
+       */
+      public java.util.List<? extends emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecordOrBuilder> 
+           getCardListOrBuilderList() {
+        if (cardListBuilder_ != null) {
+          return cardListBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(cardList_);
+        }
+      }
+      /**
+       * <code>repeated .RogueEffectRecord card_list = 3;</code>
+       */
+      public emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord.Builder addCardListBuilder() {
+        return getCardListFieldBuilder().addBuilder(
+            emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .RogueEffectRecord card_list = 3;</code>
+       */
+      public emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord.Builder addCardListBuilder(
+          int index) {
+        return getCardListFieldBuilder().addBuilder(
+            index, emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .RogueEffectRecord card_list = 3;</code>
+       */
+      public java.util.List<emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord.Builder> 
+           getCardListBuilderList() {
+        return getCardListFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord, emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord.Builder, emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecordOrBuilder> 
+          getCardListFieldBuilder() {
+        if (cardListBuilder_ == null) {
+          cardListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord, emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord.Builder, emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecordOrBuilder>(
+                  cardList_,
+                  ((bitField0_ & 0x00000002) != 0),
+                  getParentForChildren(),
+                  isClean());
+          cardList_ = null;
+        }
+        return cardListBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -1205,8 +1205,8 @@ public final class RoguelikeEffectDataNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\037RoguelikeEffectDataNotify.proto\032\027Rogue" +
       "EffectRecord.proto\"j\n\031RoguelikeEffectDat" +
-      "aNotify\022%\n\tcard_list\030\017 \003(\0132\022.RogueEffect" +
-      "Record\022&\n\ncurse_list\030\007 \003(\0132\022.RogueEffect" +
+      "aNotify\022&\n\ncurse_list\030\n \003(\0132\022.RogueEffec" +
+      "tRecord\022%\n\tcard_list\030\003 \003(\0132\022.RogueEffect" +
       "RecordB\033\n\031emu.grasscutter.net.protob\006pro" +
       "to3"
     };
@@ -1220,7 +1220,7 @@ public final class RoguelikeEffectDataNotifyOuterClass {
     internal_static_RoguelikeEffectDataNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_RoguelikeEffectDataNotify_descriptor,
-        new java.lang.String[] { "CardList", "CurseList", });
+        new java.lang.String[] { "CurseList", "CardList", });
     emu.grasscutter.net.proto.RogueEffectRecordOuterClass.getDescriptor();
   }
 

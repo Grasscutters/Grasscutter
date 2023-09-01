@@ -20,8 +20,8 @@ public final class CheckUgcStateReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 6342
-   * Obf: MPGDDPFMIPD
+   * CmdId: 3955
+   * Obf: HAIPIFGOHHJ
    * </pre>
    *
    * Protobuf type {@code CheckUgcStateReq}
@@ -246,8 +246,8 @@ public final class CheckUgcStateReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 6342
-     * Obf: MPGDDPFMIPD
+     * CmdId: 3955
+     * Obf: HAIPIFGOHHJ
      * </pre>
      *
      * Protobuf type {@code CheckUgcStateReq}

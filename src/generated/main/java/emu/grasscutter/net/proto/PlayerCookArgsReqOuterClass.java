@@ -19,21 +19,21 @@ public final class PlayerCookArgsReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 recipe_id = 9;</code>
+     * <code>uint32 recipe_id = 13;</code>
      * @return The recipeId.
      */
     int getRecipeId();
 
     /**
-     * <code>uint32 assist_avatar = 13;</code>
+     * <code>uint32 assist_avatar = 10;</code>
      * @return The assistAvatar.
      */
     int getAssistAvatar();
   }
   /**
    * <pre>
-   * CmdId: 161
-   * Obf: FDMAEEECEHB
+   * CmdId: 7878
+   * Obf: OKKPNPMEOJN
    * </pre>
    *
    * Protobuf type {@code PlayerCookArgsReq}
@@ -80,14 +80,14 @@ public final class PlayerCookArgsReqOuterClass {
             case 0:
               done = true;
               break;
-            case 72: {
+            case 80: {
 
-              recipeId_ = input.readUInt32();
+              assistAvatar_ = input.readUInt32();
               break;
             }
             case 104: {
 
-              assistAvatar_ = input.readUInt32();
+              recipeId_ = input.readUInt32();
               break;
             }
             default: {
@@ -122,10 +122,10 @@ public final class PlayerCookArgsReqOuterClass {
               emu.grasscutter.net.proto.PlayerCookArgsReqOuterClass.PlayerCookArgsReq.class, emu.grasscutter.net.proto.PlayerCookArgsReqOuterClass.PlayerCookArgsReq.Builder.class);
     }
 
-    public static final int RECIPE_ID_FIELD_NUMBER = 9;
+    public static final int RECIPE_ID_FIELD_NUMBER = 13;
     private int recipeId_;
     /**
-     * <code>uint32 recipe_id = 9;</code>
+     * <code>uint32 recipe_id = 13;</code>
      * @return The recipeId.
      */
     @java.lang.Override
@@ -133,10 +133,10 @@ public final class PlayerCookArgsReqOuterClass {
       return recipeId_;
     }
 
-    public static final int ASSIST_AVATAR_FIELD_NUMBER = 13;
+    public static final int ASSIST_AVATAR_FIELD_NUMBER = 10;
     private int assistAvatar_;
     /**
-     * <code>uint32 assist_avatar = 13;</code>
+     * <code>uint32 assist_avatar = 10;</code>
      * @return The assistAvatar.
      */
     @java.lang.Override
@@ -158,11 +158,11 @@ public final class PlayerCookArgsReqOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (recipeId_ != 0) {
-        output.writeUInt32(9, recipeId_);
-      }
       if (assistAvatar_ != 0) {
-        output.writeUInt32(13, assistAvatar_);
+        output.writeUInt32(10, assistAvatar_);
+      }
+      if (recipeId_ != 0) {
+        output.writeUInt32(13, recipeId_);
       }
       unknownFields.writeTo(output);
     }
@@ -173,13 +173,13 @@ public final class PlayerCookArgsReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (recipeId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, recipeId_);
-      }
       if (assistAvatar_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, assistAvatar_);
+          .computeUInt32Size(10, assistAvatar_);
+      }
+      if (recipeId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(13, recipeId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -312,8 +312,8 @@ public final class PlayerCookArgsReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 161
-     * Obf: FDMAEEECEHB
+     * CmdId: 7878
+     * Obf: OKKPNPMEOJN
      * </pre>
      *
      * Protobuf type {@code PlayerCookArgsReq}
@@ -470,7 +470,7 @@ public final class PlayerCookArgsReqOuterClass {
 
       private int recipeId_ ;
       /**
-       * <code>uint32 recipe_id = 9;</code>
+       * <code>uint32 recipe_id = 13;</code>
        * @return The recipeId.
        */
       @java.lang.Override
@@ -478,7 +478,7 @@ public final class PlayerCookArgsReqOuterClass {
         return recipeId_;
       }
       /**
-       * <code>uint32 recipe_id = 9;</code>
+       * <code>uint32 recipe_id = 13;</code>
        * @param value The recipeId to set.
        * @return This builder for chaining.
        */
@@ -489,7 +489,7 @@ public final class PlayerCookArgsReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 recipe_id = 9;</code>
+       * <code>uint32 recipe_id = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearRecipeId() {
@@ -501,7 +501,7 @@ public final class PlayerCookArgsReqOuterClass {
 
       private int assistAvatar_ ;
       /**
-       * <code>uint32 assist_avatar = 13;</code>
+       * <code>uint32 assist_avatar = 10;</code>
        * @return The assistAvatar.
        */
       @java.lang.Override
@@ -509,7 +509,7 @@ public final class PlayerCookArgsReqOuterClass {
         return assistAvatar_;
       }
       /**
-       * <code>uint32 assist_avatar = 13;</code>
+       * <code>uint32 assist_avatar = 10;</code>
        * @param value The assistAvatar to set.
        * @return This builder for chaining.
        */
@@ -520,7 +520,7 @@ public final class PlayerCookArgsReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 assist_avatar = 13;</code>
+       * <code>uint32 assist_avatar = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearAssistAvatar() {
@@ -597,8 +597,8 @@ public final class PlayerCookArgsReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\027PlayerCookArgsReq.proto\"=\n\021PlayerCookA" +
-      "rgsReq\022\021\n\trecipe_id\030\t \001(\r\022\025\n\rassist_avat" +
-      "ar\030\r \001(\rB\033\n\031emu.grasscutter.net.protob\006p" +
+      "rgsReq\022\021\n\trecipe_id\030\r \001(\r\022\025\n\rassist_avat" +
+      "ar\030\n \001(\rB\033\n\031emu.grasscutter.net.protob\006p" +
       "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

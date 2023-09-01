@@ -56,7 +56,7 @@ public final class BreakoutSpawnPointOuterClass {
   }
   /**
    * <pre>
-   * Obf: OCEKCPLEHCI
+   * Obf: COLAAGNOBFN
    * </pre>
    *
    * Protobuf type {@code BreakoutSpawnPoint}
@@ -402,7 +402,7 @@ public final class BreakoutSpawnPointOuterClass {
     }
     /**
      * <pre>
-     * Obf: OCEKCPLEHCI
+     * Obf: COLAAGNOBFN
      * </pre>
      *
      * Protobuf type {@code BreakoutSpawnPoint}

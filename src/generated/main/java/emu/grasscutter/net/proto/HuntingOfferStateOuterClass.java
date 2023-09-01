@@ -16,7 +16,7 @@ public final class HuntingOfferStateOuterClass {
   }
   /**
    * <pre>
-   * Obf: NAEFMCHLNCK
+   * Obf: DINBLJHHDJN
    * </pre>
    *
    * Protobuf enum {@code HuntingOfferState}

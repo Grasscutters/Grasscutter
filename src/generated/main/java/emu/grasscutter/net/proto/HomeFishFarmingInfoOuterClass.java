@@ -19,31 +19,31 @@ public final class HomeFishFarmingInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 fish_id_list = 8;</code>
+     * <code>uint32 fishpond_guid = 1;</code>
+     * @return The fishpondGuid.
+     */
+    int getFishpondGuid();
+
+    /**
+     * <code>repeated uint32 fish_id_list = 15;</code>
      * @return A list containing the fishIdList.
      */
     java.util.List<java.lang.Integer> getFishIdListList();
     /**
-     * <code>repeated uint32 fish_id_list = 8;</code>
+     * <code>repeated uint32 fish_id_list = 15;</code>
      * @return The count of fishIdList.
      */
     int getFishIdListCount();
     /**
-     * <code>repeated uint32 fish_id_list = 8;</code>
+     * <code>repeated uint32 fish_id_list = 15;</code>
      * @param index The index of the element to return.
      * @return The fishIdList at the given index.
      */
     int getFishIdList(int index);
-
-    /**
-     * <code>uint32 fishpond_guid = 2;</code>
-     * @return The fishpondGuid.
-     */
-    int getFishpondGuid();
   }
   /**
    * <pre>
-   * Obf: CHEPDPBCKDP
+   * Obf: CBMABNMGGCK
    * </pre>
    *
    * Protobuf type {@code HomeFishFarmingInfo}
@@ -92,12 +92,12 @@ public final class HomeFishFarmingInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
+            case 8: {
 
               fishpondGuid_ = input.readUInt32();
               break;
             }
-            case 64: {
+            case 120: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 fishIdList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -105,7 +105,7 @@ public final class HomeFishFarmingInfoOuterClass {
               fishIdList_.addInt(input.readUInt32());
               break;
             }
-            case 66: {
+            case 122: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -153,10 +153,21 @@ public final class HomeFishFarmingInfoOuterClass {
               emu.grasscutter.net.proto.HomeFishFarmingInfoOuterClass.HomeFishFarmingInfo.class, emu.grasscutter.net.proto.HomeFishFarmingInfoOuterClass.HomeFishFarmingInfo.Builder.class);
     }
 
-    public static final int FISH_ID_LIST_FIELD_NUMBER = 8;
+    public static final int FISHPOND_GUID_FIELD_NUMBER = 1;
+    private int fishpondGuid_;
+    /**
+     * <code>uint32 fishpond_guid = 1;</code>
+     * @return The fishpondGuid.
+     */
+    @java.lang.Override
+    public int getFishpondGuid() {
+      return fishpondGuid_;
+    }
+
+    public static final int FISH_ID_LIST_FIELD_NUMBER = 15;
     private com.google.protobuf.Internal.IntList fishIdList_;
     /**
-     * <code>repeated uint32 fish_id_list = 8;</code>
+     * <code>repeated uint32 fish_id_list = 15;</code>
      * @return A list containing the fishIdList.
      */
     @java.lang.Override
@@ -165,14 +176,14 @@ public final class HomeFishFarmingInfoOuterClass {
       return fishIdList_;
     }
     /**
-     * <code>repeated uint32 fish_id_list = 8;</code>
+     * <code>repeated uint32 fish_id_list = 15;</code>
      * @return The count of fishIdList.
      */
     public int getFishIdListCount() {
       return fishIdList_.size();
     }
     /**
-     * <code>repeated uint32 fish_id_list = 8;</code>
+     * <code>repeated uint32 fish_id_list = 15;</code>
      * @param index The index of the element to return.
      * @return The fishIdList at the given index.
      */
@@ -180,17 +191,6 @@ public final class HomeFishFarmingInfoOuterClass {
       return fishIdList_.getInt(index);
     }
     private int fishIdListMemoizedSerializedSize = -1;
-
-    public static final int FISHPOND_GUID_FIELD_NUMBER = 2;
-    private int fishpondGuid_;
-    /**
-     * <code>uint32 fishpond_guid = 2;</code>
-     * @return The fishpondGuid.
-     */
-    @java.lang.Override
-    public int getFishpondGuid() {
-      return fishpondGuid_;
-    }
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
@@ -208,10 +208,10 @@ public final class HomeFishFarmingInfoOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (fishpondGuid_ != 0) {
-        output.writeUInt32(2, fishpondGuid_);
+        output.writeUInt32(1, fishpondGuid_);
       }
       if (getFishIdListList().size() > 0) {
-        output.writeUInt32NoTag(66);
+        output.writeUInt32NoTag(122);
         output.writeUInt32NoTag(fishIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < fishIdList_.size(); i++) {
@@ -228,7 +228,7 @@ public final class HomeFishFarmingInfoOuterClass {
       size = 0;
       if (fishpondGuid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, fishpondGuid_);
+          .computeUInt32Size(1, fishpondGuid_);
       }
       {
         int dataSize = 0;
@@ -259,10 +259,10 @@ public final class HomeFishFarmingInfoOuterClass {
       }
       emu.grasscutter.net.proto.HomeFishFarmingInfoOuterClass.HomeFishFarmingInfo other = (emu.grasscutter.net.proto.HomeFishFarmingInfoOuterClass.HomeFishFarmingInfo) obj;
 
-      if (!getFishIdListList()
-          .equals(other.getFishIdListList())) return false;
       if (getFishpondGuid()
           != other.getFishpondGuid()) return false;
+      if (!getFishIdListList()
+          .equals(other.getFishIdListList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -274,12 +274,12 @@ public final class HomeFishFarmingInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + FISHPOND_GUID_FIELD_NUMBER;
+      hash = (53 * hash) + getFishpondGuid();
       if (getFishIdListCount() > 0) {
         hash = (37 * hash) + FISH_ID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getFishIdListList().hashCode();
       }
-      hash = (37 * hash) + FISHPOND_GUID_FIELD_NUMBER;
-      hash = (53 * hash) + getFishpondGuid();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -377,7 +377,7 @@ public final class HomeFishFarmingInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: CHEPDPBCKDP
+     * Obf: CBMABNMGGCK
      * </pre>
      *
      * Protobuf type {@code HomeFishFarmingInfo}
@@ -417,10 +417,10 @@ public final class HomeFishFarmingInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        fishIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         fishpondGuid_ = 0;
 
+        fishIdList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -448,12 +448,12 @@ public final class HomeFishFarmingInfoOuterClass {
       public emu.grasscutter.net.proto.HomeFishFarmingInfoOuterClass.HomeFishFarmingInfo buildPartial() {
         emu.grasscutter.net.proto.HomeFishFarmingInfoOuterClass.HomeFishFarmingInfo result = new emu.grasscutter.net.proto.HomeFishFarmingInfoOuterClass.HomeFishFarmingInfo(this);
         int from_bitField0_ = bitField0_;
+        result.fishpondGuid_ = fishpondGuid_;
         if (((bitField0_ & 0x00000001) != 0)) {
           fishIdList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.fishIdList_ = fishIdList_;
-        result.fishpondGuid_ = fishpondGuid_;
         onBuilt();
         return result;
       }
@@ -502,6 +502,9 @@ public final class HomeFishFarmingInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.HomeFishFarmingInfoOuterClass.HomeFishFarmingInfo other) {
         if (other == emu.grasscutter.net.proto.HomeFishFarmingInfoOuterClass.HomeFishFarmingInfo.getDefaultInstance()) return this;
+        if (other.getFishpondGuid() != 0) {
+          setFishpondGuid(other.getFishpondGuid());
+        }
         if (!other.fishIdList_.isEmpty()) {
           if (fishIdList_.isEmpty()) {
             fishIdList_ = other.fishIdList_;
@@ -511,9 +514,6 @@ public final class HomeFishFarmingInfoOuterClass {
             fishIdList_.addAll(other.fishIdList_);
           }
           onChanged();
-        }
-        if (other.getFishpondGuid() != 0) {
-          setFishpondGuid(other.getFishpondGuid());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -545,6 +545,37 @@ public final class HomeFishFarmingInfoOuterClass {
       }
       private int bitField0_;
 
+      private int fishpondGuid_ ;
+      /**
+       * <code>uint32 fishpond_guid = 1;</code>
+       * @return The fishpondGuid.
+       */
+      @java.lang.Override
+      public int getFishpondGuid() {
+        return fishpondGuid_;
+      }
+      /**
+       * <code>uint32 fishpond_guid = 1;</code>
+       * @param value The fishpondGuid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFishpondGuid(int value) {
+        
+        fishpondGuid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 fishpond_guid = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFishpondGuid() {
+        
+        fishpondGuid_ = 0;
+        onChanged();
+        return this;
+      }
+
       private com.google.protobuf.Internal.IntList fishIdList_ = emptyIntList();
       private void ensureFishIdListIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
@@ -553,7 +584,7 @@ public final class HomeFishFarmingInfoOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 fish_id_list = 8;</code>
+       * <code>repeated uint32 fish_id_list = 15;</code>
        * @return A list containing the fishIdList.
        */
       public java.util.List<java.lang.Integer>
@@ -562,14 +593,14 @@ public final class HomeFishFarmingInfoOuterClass {
                  java.util.Collections.unmodifiableList(fishIdList_) : fishIdList_;
       }
       /**
-       * <code>repeated uint32 fish_id_list = 8;</code>
+       * <code>repeated uint32 fish_id_list = 15;</code>
        * @return The count of fishIdList.
        */
       public int getFishIdListCount() {
         return fishIdList_.size();
       }
       /**
-       * <code>repeated uint32 fish_id_list = 8;</code>
+       * <code>repeated uint32 fish_id_list = 15;</code>
        * @param index The index of the element to return.
        * @return The fishIdList at the given index.
        */
@@ -577,7 +608,7 @@ public final class HomeFishFarmingInfoOuterClass {
         return fishIdList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 fish_id_list = 8;</code>
+       * <code>repeated uint32 fish_id_list = 15;</code>
        * @param index The index to set the value at.
        * @param value The fishIdList to set.
        * @return This builder for chaining.
@@ -590,7 +621,7 @@ public final class HomeFishFarmingInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 fish_id_list = 8;</code>
+       * <code>repeated uint32 fish_id_list = 15;</code>
        * @param value The fishIdList to add.
        * @return This builder for chaining.
        */
@@ -601,7 +632,7 @@ public final class HomeFishFarmingInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 fish_id_list = 8;</code>
+       * <code>repeated uint32 fish_id_list = 15;</code>
        * @param values The fishIdList to add.
        * @return This builder for chaining.
        */
@@ -614,43 +645,12 @@ public final class HomeFishFarmingInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 fish_id_list = 8;</code>
+       * <code>repeated uint32 fish_id_list = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearFishIdList() {
         fishIdList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-
-      private int fishpondGuid_ ;
-      /**
-       * <code>uint32 fishpond_guid = 2;</code>
-       * @return The fishpondGuid.
-       */
-      @java.lang.Override
-      public int getFishpondGuid() {
-        return fishpondGuid_;
-      }
-      /**
-       * <code>uint32 fishpond_guid = 2;</code>
-       * @param value The fishpondGuid to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFishpondGuid(int value) {
-        
-        fishpondGuid_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 fishpond_guid = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearFishpondGuid() {
-        
-        fishpondGuid_ = 0;
         onChanged();
         return this;
       }
@@ -722,8 +722,8 @@ public final class HomeFishFarmingInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\031HomeFishFarmingInfo.proto\"B\n\023HomeFishF" +
-      "armingInfo\022\024\n\014fish_id_list\030\010 \003(\r\022\025\n\rfish" +
-      "pond_guid\030\002 \001(\rB\033\n\031emu.grasscutter.net.p" +
+      "armingInfo\022\025\n\rfishpond_guid\030\001 \001(\r\022\024\n\014fis" +
+      "h_id_list\030\017 \003(\rB\033\n\031emu.grasscutter.net.p" +
       "rotob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -735,7 +735,7 @@ public final class HomeFishFarmingInfoOuterClass {
     internal_static_HomeFishFarmingInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_HomeFishFarmingInfo_descriptor,
-        new java.lang.String[] { "FishIdList", "FishpondGuid", });
+        new java.lang.String[] { "FishpondGuid", "FishIdList", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

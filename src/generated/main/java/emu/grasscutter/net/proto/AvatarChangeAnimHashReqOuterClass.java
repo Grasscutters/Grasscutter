@@ -19,21 +19,21 @@ public final class AvatarChangeAnimHashReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 anim_hash = 8;</code>
-     * @return The animHash.
-     */
-    int getAnimHash();
-
-    /**
-     * <code>uint64 avatar_guid = 4;</code>
+     * <code>uint64 avatar_guid = 5;</code>
      * @return The avatarGuid.
      */
     long getAvatarGuid();
+
+    /**
+     * <code>uint32 anim_hash = 9;</code>
+     * @return The animHash.
+     */
+    int getAnimHash();
   }
   /**
    * <pre>
-   * CmdId: 1792
-   * Obf: OOCCNLEACHD
+   * CmdId: 4097
+   * Obf: CGOOAFFMLEF
    * </pre>
    *
    * Protobuf type {@code AvatarChangeAnimHashReq}
@@ -80,12 +80,12 @@ public final class AvatarChangeAnimHashReqOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
+            case 40: {
 
               avatarGuid_ = input.readUInt64();
               break;
             }
-            case 64: {
+            case 72: {
 
               animHash_ = input.readUInt32();
               break;
@@ -122,26 +122,26 @@ public final class AvatarChangeAnimHashReqOuterClass {
               emu.grasscutter.net.proto.AvatarChangeAnimHashReqOuterClass.AvatarChangeAnimHashReq.class, emu.grasscutter.net.proto.AvatarChangeAnimHashReqOuterClass.AvatarChangeAnimHashReq.Builder.class);
     }
 
-    public static final int ANIM_HASH_FIELD_NUMBER = 8;
-    private int animHash_;
-    /**
-     * <code>uint32 anim_hash = 8;</code>
-     * @return The animHash.
-     */
-    @java.lang.Override
-    public int getAnimHash() {
-      return animHash_;
-    }
-
-    public static final int AVATAR_GUID_FIELD_NUMBER = 4;
+    public static final int AVATAR_GUID_FIELD_NUMBER = 5;
     private long avatarGuid_;
     /**
-     * <code>uint64 avatar_guid = 4;</code>
+     * <code>uint64 avatar_guid = 5;</code>
      * @return The avatarGuid.
      */
     @java.lang.Override
     public long getAvatarGuid() {
       return avatarGuid_;
+    }
+
+    public static final int ANIM_HASH_FIELD_NUMBER = 9;
+    private int animHash_;
+    /**
+     * <code>uint32 anim_hash = 9;</code>
+     * @return The animHash.
+     */
+    @java.lang.Override
+    public int getAnimHash() {
+      return animHash_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -159,10 +159,10 @@ public final class AvatarChangeAnimHashReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (avatarGuid_ != 0L) {
-        output.writeUInt64(4, avatarGuid_);
+        output.writeUInt64(5, avatarGuid_);
       }
       if (animHash_ != 0) {
-        output.writeUInt32(8, animHash_);
+        output.writeUInt32(9, animHash_);
       }
       unknownFields.writeTo(output);
     }
@@ -175,11 +175,11 @@ public final class AvatarChangeAnimHashReqOuterClass {
       size = 0;
       if (avatarGuid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(4, avatarGuid_);
+          .computeUInt64Size(5, avatarGuid_);
       }
       if (animHash_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, animHash_);
+          .computeUInt32Size(9, animHash_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -196,10 +196,10 @@ public final class AvatarChangeAnimHashReqOuterClass {
       }
       emu.grasscutter.net.proto.AvatarChangeAnimHashReqOuterClass.AvatarChangeAnimHashReq other = (emu.grasscutter.net.proto.AvatarChangeAnimHashReqOuterClass.AvatarChangeAnimHashReq) obj;
 
-      if (getAnimHash()
-          != other.getAnimHash()) return false;
       if (getAvatarGuid()
           != other.getAvatarGuid()) return false;
+      if (getAnimHash()
+          != other.getAnimHash()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -211,11 +211,11 @@ public final class AvatarChangeAnimHashReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ANIM_HASH_FIELD_NUMBER;
-      hash = (53 * hash) + getAnimHash();
       hash = (37 * hash) + AVATAR_GUID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getAvatarGuid());
+      hash = (37 * hash) + ANIM_HASH_FIELD_NUMBER;
+      hash = (53 * hash) + getAnimHash();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -313,8 +313,8 @@ public final class AvatarChangeAnimHashReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 1792
-     * Obf: OOCCNLEACHD
+     * CmdId: 4097
+     * Obf: CGOOAFFMLEF
      * </pre>
      *
      * Protobuf type {@code AvatarChangeAnimHashReq}
@@ -354,9 +354,9 @@ public final class AvatarChangeAnimHashReqOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        animHash_ = 0;
-
         avatarGuid_ = 0L;
+
+        animHash_ = 0;
 
         return this;
       }
@@ -384,8 +384,8 @@ public final class AvatarChangeAnimHashReqOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.AvatarChangeAnimHashReqOuterClass.AvatarChangeAnimHashReq buildPartial() {
         emu.grasscutter.net.proto.AvatarChangeAnimHashReqOuterClass.AvatarChangeAnimHashReq result = new emu.grasscutter.net.proto.AvatarChangeAnimHashReqOuterClass.AvatarChangeAnimHashReq(this);
-        result.animHash_ = animHash_;
         result.avatarGuid_ = avatarGuid_;
+        result.animHash_ = animHash_;
         onBuilt();
         return result;
       }
@@ -434,11 +434,11 @@ public final class AvatarChangeAnimHashReqOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.AvatarChangeAnimHashReqOuterClass.AvatarChangeAnimHashReq other) {
         if (other == emu.grasscutter.net.proto.AvatarChangeAnimHashReqOuterClass.AvatarChangeAnimHashReq.getDefaultInstance()) return this;
-        if (other.getAnimHash() != 0) {
-          setAnimHash(other.getAnimHash());
-        }
         if (other.getAvatarGuid() != 0L) {
           setAvatarGuid(other.getAvatarGuid());
+        }
+        if (other.getAnimHash() != 0) {
+          setAnimHash(other.getAnimHash());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -469,40 +469,9 @@ public final class AvatarChangeAnimHashReqOuterClass {
         return this;
       }
 
-      private int animHash_ ;
-      /**
-       * <code>uint32 anim_hash = 8;</code>
-       * @return The animHash.
-       */
-      @java.lang.Override
-      public int getAnimHash() {
-        return animHash_;
-      }
-      /**
-       * <code>uint32 anim_hash = 8;</code>
-       * @param value The animHash to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAnimHash(int value) {
-        
-        animHash_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 anim_hash = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearAnimHash() {
-        
-        animHash_ = 0;
-        onChanged();
-        return this;
-      }
-
       private long avatarGuid_ ;
       /**
-       * <code>uint64 avatar_guid = 4;</code>
+       * <code>uint64 avatar_guid = 5;</code>
        * @return The avatarGuid.
        */
       @java.lang.Override
@@ -510,7 +479,7 @@ public final class AvatarChangeAnimHashReqOuterClass {
         return avatarGuid_;
       }
       /**
-       * <code>uint64 avatar_guid = 4;</code>
+       * <code>uint64 avatar_guid = 5;</code>
        * @param value The avatarGuid to set.
        * @return This builder for chaining.
        */
@@ -521,12 +490,43 @@ public final class AvatarChangeAnimHashReqOuterClass {
         return this;
       }
       /**
-       * <code>uint64 avatar_guid = 4;</code>
+       * <code>uint64 avatar_guid = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearAvatarGuid() {
         
         avatarGuid_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private int animHash_ ;
+      /**
+       * <code>uint32 anim_hash = 9;</code>
+       * @return The animHash.
+       */
+      @java.lang.Override
+      public int getAnimHash() {
+        return animHash_;
+      }
+      /**
+       * <code>uint32 anim_hash = 9;</code>
+       * @param value The animHash to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAnimHash(int value) {
+        
+        animHash_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 anim_hash = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAnimHash() {
+        
+        animHash_ = 0;
         onChanged();
         return this;
       }
@@ -598,8 +598,8 @@ public final class AvatarChangeAnimHashReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\035AvatarChangeAnimHashReq.proto\"A\n\027Avata" +
-      "rChangeAnimHashReq\022\021\n\tanim_hash\030\010 \001(\r\022\023\n" +
-      "\013avatar_guid\030\004 \001(\004B\033\n\031emu.grasscutter.ne" +
+      "rChangeAnimHashReq\022\023\n\013avatar_guid\030\005 \001(\004\022" +
+      "\021\n\tanim_hash\030\t \001(\rB\033\n\031emu.grasscutter.ne" +
       "t.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -611,7 +611,7 @@ public final class AvatarChangeAnimHashReqOuterClass {
     internal_static_AvatarChangeAnimHashReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_AvatarChangeAnimHashReq_descriptor,
-        new java.lang.String[] { "AnimHash", "AvatarGuid", });
+        new java.lang.String[] { "AvatarGuid", "AnimHash", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

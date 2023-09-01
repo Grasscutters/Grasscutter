@@ -204,7 +204,7 @@ public final class QuestOuterClass {
   }
   /**
    * <pre>
-   * Obf: LGKNABFOEKJ
+   * Obf: BLFINGECHDB
    * </pre>
    *
    * Protobuf type {@code Quest}
@@ -1214,7 +1214,7 @@ public final class QuestOuterClass {
     }
     /**
      * <pre>
-     * Obf: LGKNABFOEKJ
+     * Obf: BLFINGECHDB
      * </pre>
      *
      * Protobuf type {@code Quest}

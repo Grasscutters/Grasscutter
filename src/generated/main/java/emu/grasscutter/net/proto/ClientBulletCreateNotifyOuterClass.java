@@ -19,15 +19,15 @@ public final class ClientBulletCreateNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 param = 7;</code>
+     * <code>uint32 param = 2;</code>
      * @return The param.
      */
     int getParam();
   }
   /**
    * <pre>
-   * CmdId: 24
-   * Obf: EHMCALABOPM
+   * CmdId: 4966
+   * Obf: GPOBOMCCOMK
    * </pre>
    *
    * Protobuf type {@code ClientBulletCreateNotify}
@@ -74,7 +74,7 @@ public final class ClientBulletCreateNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 56: {
+            case 16: {
 
               param_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class ClientBulletCreateNotifyOuterClass {
               emu.grasscutter.net.proto.ClientBulletCreateNotifyOuterClass.ClientBulletCreateNotify.class, emu.grasscutter.net.proto.ClientBulletCreateNotifyOuterClass.ClientBulletCreateNotify.Builder.class);
     }
 
-    public static final int PARAM_FIELD_NUMBER = 7;
+    public static final int PARAM_FIELD_NUMBER = 2;
     private int param_;
     /**
-     * <code>uint32 param = 7;</code>
+     * <code>uint32 param = 2;</code>
      * @return The param.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class ClientBulletCreateNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (param_ != 0) {
-        output.writeUInt32(7, param_);
+        output.writeUInt32(2, param_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class ClientBulletCreateNotifyOuterClass {
       size = 0;
       if (param_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, param_);
+          .computeUInt32Size(2, param_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class ClientBulletCreateNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 24
-     * Obf: EHMCALABOPM
+     * CmdId: 4966
+     * Obf: GPOBOMCCOMK
      * </pre>
      *
      * Protobuf type {@code ClientBulletCreateNotify}
@@ -431,7 +431,7 @@ public final class ClientBulletCreateNotifyOuterClass {
 
       private int param_ ;
       /**
-       * <code>uint32 param = 7;</code>
+       * <code>uint32 param = 2;</code>
        * @return The param.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class ClientBulletCreateNotifyOuterClass {
         return param_;
       }
       /**
-       * <code>uint32 param = 7;</code>
+       * <code>uint32 param = 2;</code>
        * @param value The param to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class ClientBulletCreateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 param = 7;</code>
+       * <code>uint32 param = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearParam() {
@@ -527,7 +527,7 @@ public final class ClientBulletCreateNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\036ClientBulletCreateNotify.proto\")\n\030Clie" +
-      "ntBulletCreateNotify\022\r\n\005param\030\007 \001(\rB\033\n\031e" +
+      "ntBulletCreateNotify\022\r\n\005param\030\002 \001(\rB\033\n\031e" +
       "mu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

@@ -25,15 +25,15 @@ public final class GCGGrowthLevelTakeRewardRspOuterClass {
     int getLevel();
 
     /**
-     * <code>int32 retcode = 5;</code>
+     * <code>int32 retcode = 6;</code>
      * @return The retcode.
      */
     int getRetcode();
   }
   /**
    * <pre>
-   * CmdId: 7443
-   * Obf: LNDFIODJJAK
+   * CmdId: 20350
+   * Obf: PBDBDIHNCJP
    * </pre>
    *
    * Protobuf type {@code GCGGrowthLevelTakeRewardRsp}
@@ -80,7 +80,7 @@ public final class GCGGrowthLevelTakeRewardRspOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
+            case 48: {
 
               retcode_ = input.readInt32();
               break;
@@ -133,10 +133,10 @@ public final class GCGGrowthLevelTakeRewardRspOuterClass {
       return level_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 5;
+    public static final int RETCODE_FIELD_NUMBER = 6;
     private int retcode_;
     /**
-     * <code>int32 retcode = 5;</code>
+     * <code>int32 retcode = 6;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -159,7 +159,7 @@ public final class GCGGrowthLevelTakeRewardRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (retcode_ != 0) {
-        output.writeInt32(5, retcode_);
+        output.writeInt32(6, retcode_);
       }
       if (level_ != 0) {
         output.writeUInt32(10, level_);
@@ -175,7 +175,7 @@ public final class GCGGrowthLevelTakeRewardRspOuterClass {
       size = 0;
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(5, retcode_);
+          .computeInt32Size(6, retcode_);
       }
       if (level_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -312,8 +312,8 @@ public final class GCGGrowthLevelTakeRewardRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 7443
-     * Obf: LNDFIODJJAK
+     * CmdId: 20350
+     * Obf: PBDBDIHNCJP
      * </pre>
      *
      * Protobuf type {@code GCGGrowthLevelTakeRewardRsp}
@@ -501,7 +501,7 @@ public final class GCGGrowthLevelTakeRewardRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 5;</code>
+       * <code>int32 retcode = 6;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -509,7 +509,7 @@ public final class GCGGrowthLevelTakeRewardRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 5;</code>
+       * <code>int32 retcode = 6;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -520,7 +520,7 @@ public final class GCGGrowthLevelTakeRewardRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 5;</code>
+       * <code>int32 retcode = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -598,7 +598,7 @@ public final class GCGGrowthLevelTakeRewardRspOuterClass {
     java.lang.String[] descriptorData = {
       "\n!GCGGrowthLevelTakeRewardRsp.proto\"=\n\033G" +
       "CGGrowthLevelTakeRewardRsp\022\r\n\005level\030\n \001(" +
-      "\r\022\017\n\007retcode\030\005 \001(\005B\033\n\031emu.grasscutter.ne" +
+      "\r\022\017\n\007retcode\030\006 \001(\005B\033\n\031emu.grasscutter.ne" +
       "t.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

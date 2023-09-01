@@ -19,21 +19,21 @@ public final class UpdateSalvageBundleMarkReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 challenge_type = 9;</code>
+     * <code>uint32 challenge_type = 2;</code>
      * @return The challengeType.
      */
     int getChallengeType();
 
     /**
-     * <code>uint32 stage_id = 14;</code>
+     * <code>uint32 stage_id = 1;</code>
      * @return The stageId.
      */
     int getStageId();
   }
   /**
    * <pre>
-   * CmdId: 8244
-   * Obf: JGCICOBMJOI
+   * CmdId: 20695
+   * Obf: JCFJMOGFDFD
    * </pre>
    *
    * Protobuf type {@code UpdateSalvageBundleMarkReq}
@@ -80,14 +80,14 @@ public final class UpdateSalvageBundleMarkReqOuterClass {
             case 0:
               done = true;
               break;
-            case 72: {
-
-              challengeType_ = input.readUInt32();
-              break;
-            }
-            case 112: {
+            case 8: {
 
               stageId_ = input.readUInt32();
+              break;
+            }
+            case 16: {
+
+              challengeType_ = input.readUInt32();
               break;
             }
             default: {
@@ -122,10 +122,10 @@ public final class UpdateSalvageBundleMarkReqOuterClass {
               emu.grasscutter.net.proto.UpdateSalvageBundleMarkReqOuterClass.UpdateSalvageBundleMarkReq.class, emu.grasscutter.net.proto.UpdateSalvageBundleMarkReqOuterClass.UpdateSalvageBundleMarkReq.Builder.class);
     }
 
-    public static final int CHALLENGE_TYPE_FIELD_NUMBER = 9;
+    public static final int CHALLENGE_TYPE_FIELD_NUMBER = 2;
     private int challengeType_;
     /**
-     * <code>uint32 challenge_type = 9;</code>
+     * <code>uint32 challenge_type = 2;</code>
      * @return The challengeType.
      */
     @java.lang.Override
@@ -133,10 +133,10 @@ public final class UpdateSalvageBundleMarkReqOuterClass {
       return challengeType_;
     }
 
-    public static final int STAGE_ID_FIELD_NUMBER = 14;
+    public static final int STAGE_ID_FIELD_NUMBER = 1;
     private int stageId_;
     /**
-     * <code>uint32 stage_id = 14;</code>
+     * <code>uint32 stage_id = 1;</code>
      * @return The stageId.
      */
     @java.lang.Override
@@ -158,11 +158,11 @@ public final class UpdateSalvageBundleMarkReqOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (challengeType_ != 0) {
-        output.writeUInt32(9, challengeType_);
-      }
       if (stageId_ != 0) {
-        output.writeUInt32(14, stageId_);
+        output.writeUInt32(1, stageId_);
+      }
+      if (challengeType_ != 0) {
+        output.writeUInt32(2, challengeType_);
       }
       unknownFields.writeTo(output);
     }
@@ -173,13 +173,13 @@ public final class UpdateSalvageBundleMarkReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (challengeType_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, challengeType_);
-      }
       if (stageId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, stageId_);
+          .computeUInt32Size(1, stageId_);
+      }
+      if (challengeType_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(2, challengeType_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -312,8 +312,8 @@ public final class UpdateSalvageBundleMarkReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8244
-     * Obf: JGCICOBMJOI
+     * CmdId: 20695
+     * Obf: JCFJMOGFDFD
      * </pre>
      *
      * Protobuf type {@code UpdateSalvageBundleMarkReq}
@@ -470,7 +470,7 @@ public final class UpdateSalvageBundleMarkReqOuterClass {
 
       private int challengeType_ ;
       /**
-       * <code>uint32 challenge_type = 9;</code>
+       * <code>uint32 challenge_type = 2;</code>
        * @return The challengeType.
        */
       @java.lang.Override
@@ -478,7 +478,7 @@ public final class UpdateSalvageBundleMarkReqOuterClass {
         return challengeType_;
       }
       /**
-       * <code>uint32 challenge_type = 9;</code>
+       * <code>uint32 challenge_type = 2;</code>
        * @param value The challengeType to set.
        * @return This builder for chaining.
        */
@@ -489,7 +489,7 @@ public final class UpdateSalvageBundleMarkReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 challenge_type = 9;</code>
+       * <code>uint32 challenge_type = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearChallengeType() {
@@ -501,7 +501,7 @@ public final class UpdateSalvageBundleMarkReqOuterClass {
 
       private int stageId_ ;
       /**
-       * <code>uint32 stage_id = 14;</code>
+       * <code>uint32 stage_id = 1;</code>
        * @return The stageId.
        */
       @java.lang.Override
@@ -509,7 +509,7 @@ public final class UpdateSalvageBundleMarkReqOuterClass {
         return stageId_;
       }
       /**
-       * <code>uint32 stage_id = 14;</code>
+       * <code>uint32 stage_id = 1;</code>
        * @param value The stageId to set.
        * @return This builder for chaining.
        */
@@ -520,7 +520,7 @@ public final class UpdateSalvageBundleMarkReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 stage_id = 14;</code>
+       * <code>uint32 stage_id = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearStageId() {
@@ -598,7 +598,7 @@ public final class UpdateSalvageBundleMarkReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n UpdateSalvageBundleMarkReq.proto\"F\n\032Up" +
       "dateSalvageBundleMarkReq\022\026\n\016challenge_ty" +
-      "pe\030\t \001(\r\022\020\n\010stage_id\030\016 \001(\rB\033\n\031emu.grassc" +
+      "pe\030\002 \001(\r\022\020\n\010stage_id\030\001 \001(\rB\033\n\031emu.grassc" +
       "utter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

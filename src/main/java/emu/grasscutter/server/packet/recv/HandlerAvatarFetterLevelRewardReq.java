@@ -5,15 +5,10 @@ import emu.grasscutter.data.excels.RewardData;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.props.ActionReason;
-import emu.grasscutter.net.packet.Opcodes;
-import emu.grasscutter.net.packet.PacketHandler;
-import emu.grasscutter.net.packet.PacketOpcodes;
+import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.AvatarFetterLevelRewardReqOuterClass.AvatarFetterLevelRewardReq;
 import emu.grasscutter.server.game.GameSession;
-import emu.grasscutter.server.packet.send.PacketAvatarDataNotify;
-import emu.grasscutter.server.packet.send.PacketAvatarFetterDataNotify;
-import emu.grasscutter.server.packet.send.PacketAvatarFetterLevelRewardRsp;
-import emu.grasscutter.server.packet.send.PacketUnlockNameCardNotify;
+import emu.grasscutter.server.packet.send.*;
 
 @Opcodes(PacketOpcodes.AvatarFetterLevelRewardReq)
 public class HandlerAvatarFetterLevelRewardReq extends PacketHandler {

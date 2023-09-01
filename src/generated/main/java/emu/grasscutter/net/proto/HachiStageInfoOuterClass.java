@@ -19,32 +19,32 @@ public final class HachiStageInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 open_time = 3;</code>
+     * <code>uint32 open_time = 9;</code>
      * @return The openTime.
      */
     int getOpenTime();
 
     /**
-     * <code>bool is_open = 7;</code>
+     * <code>bool is_open = 6;</code>
      * @return The isOpen.
      */
     boolean getIsOpen();
 
     /**
-     * <code>uint32 stage_id = 11;</code>
+     * <code>uint32 stage_id = 3;</code>
      * @return The stageId.
      */
     int getStageId();
 
     /**
-     * <code>bool is_finished = 10;</code>
+     * <code>bool is_finished = 14;</code>
      * @return The isFinished.
      */
     boolean getIsFinished();
   }
   /**
    * <pre>
-   * Obf: AAALOFKKDHO
+   * Obf: JMOKJKJMOBG
    * </pre>
    *
    * Protobuf type {@code HachiStageInfo}
@@ -93,22 +93,22 @@ public final class HachiStageInfoOuterClass {
               break;
             case 24: {
 
-              openTime_ = input.readUInt32();
+              stageId_ = input.readUInt32();
               break;
             }
-            case 56: {
+            case 48: {
 
               isOpen_ = input.readBool();
               break;
             }
-            case 80: {
+            case 72: {
 
-              isFinished_ = input.readBool();
+              openTime_ = input.readUInt32();
               break;
             }
-            case 88: {
+            case 112: {
 
-              stageId_ = input.readUInt32();
+              isFinished_ = input.readBool();
               break;
             }
             default: {
@@ -143,10 +143,10 @@ public final class HachiStageInfoOuterClass {
               emu.grasscutter.net.proto.HachiStageInfoOuterClass.HachiStageInfo.class, emu.grasscutter.net.proto.HachiStageInfoOuterClass.HachiStageInfo.Builder.class);
     }
 
-    public static final int OPEN_TIME_FIELD_NUMBER = 3;
+    public static final int OPEN_TIME_FIELD_NUMBER = 9;
     private int openTime_;
     /**
-     * <code>uint32 open_time = 3;</code>
+     * <code>uint32 open_time = 9;</code>
      * @return The openTime.
      */
     @java.lang.Override
@@ -154,10 +154,10 @@ public final class HachiStageInfoOuterClass {
       return openTime_;
     }
 
-    public static final int IS_OPEN_FIELD_NUMBER = 7;
+    public static final int IS_OPEN_FIELD_NUMBER = 6;
     private boolean isOpen_;
     /**
-     * <code>bool is_open = 7;</code>
+     * <code>bool is_open = 6;</code>
      * @return The isOpen.
      */
     @java.lang.Override
@@ -165,10 +165,10 @@ public final class HachiStageInfoOuterClass {
       return isOpen_;
     }
 
-    public static final int STAGE_ID_FIELD_NUMBER = 11;
+    public static final int STAGE_ID_FIELD_NUMBER = 3;
     private int stageId_;
     /**
-     * <code>uint32 stage_id = 11;</code>
+     * <code>uint32 stage_id = 3;</code>
      * @return The stageId.
      */
     @java.lang.Override
@@ -176,10 +176,10 @@ public final class HachiStageInfoOuterClass {
       return stageId_;
     }
 
-    public static final int IS_FINISHED_FIELD_NUMBER = 10;
+    public static final int IS_FINISHED_FIELD_NUMBER = 14;
     private boolean isFinished_;
     /**
-     * <code>bool is_finished = 10;</code>
+     * <code>bool is_finished = 14;</code>
      * @return The isFinished.
      */
     @java.lang.Override
@@ -201,17 +201,17 @@ public final class HachiStageInfoOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (openTime_ != 0) {
-        output.writeUInt32(3, openTime_);
+      if (stageId_ != 0) {
+        output.writeUInt32(3, stageId_);
       }
       if (isOpen_ != false) {
-        output.writeBool(7, isOpen_);
+        output.writeBool(6, isOpen_);
+      }
+      if (openTime_ != 0) {
+        output.writeUInt32(9, openTime_);
       }
       if (isFinished_ != false) {
-        output.writeBool(10, isFinished_);
-      }
-      if (stageId_ != 0) {
-        output.writeUInt32(11, stageId_);
+        output.writeBool(14, isFinished_);
       }
       unknownFields.writeTo(output);
     }
@@ -222,21 +222,21 @@ public final class HachiStageInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (openTime_ != 0) {
+      if (stageId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, openTime_);
+          .computeUInt32Size(3, stageId_);
       }
       if (isOpen_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(7, isOpen_);
+          .computeBoolSize(6, isOpen_);
+      }
+      if (openTime_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(9, openTime_);
       }
       if (isFinished_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(10, isFinished_);
-      }
-      if (stageId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, stageId_);
+          .computeBoolSize(14, isFinished_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -379,7 +379,7 @@ public final class HachiStageInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: AAALOFKKDHO
+     * Obf: JMOKJKJMOBG
      * </pre>
      *
      * Protobuf type {@code HachiStageInfo}
@@ -548,7 +548,7 @@ public final class HachiStageInfoOuterClass {
 
       private int openTime_ ;
       /**
-       * <code>uint32 open_time = 3;</code>
+       * <code>uint32 open_time = 9;</code>
        * @return The openTime.
        */
       @java.lang.Override
@@ -556,7 +556,7 @@ public final class HachiStageInfoOuterClass {
         return openTime_;
       }
       /**
-       * <code>uint32 open_time = 3;</code>
+       * <code>uint32 open_time = 9;</code>
        * @param value The openTime to set.
        * @return This builder for chaining.
        */
@@ -567,7 +567,7 @@ public final class HachiStageInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 open_time = 3;</code>
+       * <code>uint32 open_time = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearOpenTime() {
@@ -579,7 +579,7 @@ public final class HachiStageInfoOuterClass {
 
       private boolean isOpen_ ;
       /**
-       * <code>bool is_open = 7;</code>
+       * <code>bool is_open = 6;</code>
        * @return The isOpen.
        */
       @java.lang.Override
@@ -587,7 +587,7 @@ public final class HachiStageInfoOuterClass {
         return isOpen_;
       }
       /**
-       * <code>bool is_open = 7;</code>
+       * <code>bool is_open = 6;</code>
        * @param value The isOpen to set.
        * @return This builder for chaining.
        */
@@ -598,7 +598,7 @@ public final class HachiStageInfoOuterClass {
         return this;
       }
       /**
-       * <code>bool is_open = 7;</code>
+       * <code>bool is_open = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsOpen() {
@@ -610,7 +610,7 @@ public final class HachiStageInfoOuterClass {
 
       private int stageId_ ;
       /**
-       * <code>uint32 stage_id = 11;</code>
+       * <code>uint32 stage_id = 3;</code>
        * @return The stageId.
        */
       @java.lang.Override
@@ -618,7 +618,7 @@ public final class HachiStageInfoOuterClass {
         return stageId_;
       }
       /**
-       * <code>uint32 stage_id = 11;</code>
+       * <code>uint32 stage_id = 3;</code>
        * @param value The stageId to set.
        * @return This builder for chaining.
        */
@@ -629,7 +629,7 @@ public final class HachiStageInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 stage_id = 11;</code>
+       * <code>uint32 stage_id = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearStageId() {
@@ -641,7 +641,7 @@ public final class HachiStageInfoOuterClass {
 
       private boolean isFinished_ ;
       /**
-       * <code>bool is_finished = 10;</code>
+       * <code>bool is_finished = 14;</code>
        * @return The isFinished.
        */
       @java.lang.Override
@@ -649,7 +649,7 @@ public final class HachiStageInfoOuterClass {
         return isFinished_;
       }
       /**
-       * <code>bool is_finished = 10;</code>
+       * <code>bool is_finished = 14;</code>
        * @param value The isFinished to set.
        * @return This builder for chaining.
        */
@@ -660,7 +660,7 @@ public final class HachiStageInfoOuterClass {
         return this;
       }
       /**
-       * <code>bool is_finished = 10;</code>
+       * <code>bool is_finished = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsFinished() {
@@ -737,8 +737,8 @@ public final class HachiStageInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\024HachiStageInfo.proto\"[\n\016HachiStageInfo" +
-      "\022\021\n\topen_time\030\003 \001(\r\022\017\n\007is_open\030\007 \001(\010\022\020\n\010" +
-      "stage_id\030\013 \001(\r\022\023\n\013is_finished\030\n \001(\010B\033\n\031e" +
+      "\022\021\n\topen_time\030\t \001(\r\022\017\n\007is_open\030\006 \001(\010\022\020\n\010" +
+      "stage_id\030\003 \001(\r\022\023\n\013is_finished\030\016 \001(\010B\033\n\031e" +
       "mu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

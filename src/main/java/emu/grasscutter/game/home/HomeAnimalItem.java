@@ -3,9 +3,7 @@ package emu.grasscutter.game.home;
 import dev.morphia.annotations.Entity;
 import emu.grasscutter.game.world.Position;
 import emu.grasscutter.net.proto.HomeAnimalDataOuterClass;
-import lombok.AccessLevel;
-import lombok.Builder;
-import lombok.Data;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 @Entity

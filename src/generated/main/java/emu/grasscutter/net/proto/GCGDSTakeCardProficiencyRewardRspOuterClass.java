@@ -19,27 +19,27 @@ public final class GCGDSTakeCardProficiencyRewardRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 card_id = 10;</code>
-     * @return The cardId.
-     */
-    int getCardId();
-
-    /**
-     * <code>uint32 reward_index = 12;</code>
+     * <code>uint32 reward_index = 3;</code>
      * @return The rewardIndex.
      */
     int getRewardIndex();
 
     /**
-     * <code>int32 retcode = 6;</code>
+     * <code>uint32 card_id = 8;</code>
+     * @return The cardId.
+     */
+    int getCardId();
+
+    /**
+     * <code>int32 retcode = 5;</code>
      * @return The retcode.
      */
     int getRetcode();
   }
   /**
    * <pre>
-   * CmdId: 7933
-   * Obf: KDBIJBGDHPA
+   * CmdId: 9709
+   * Obf: ABHIEBPNLDG
    * </pre>
    *
    * Protobuf type {@code GCGDSTakeCardProficiencyRewardRsp}
@@ -86,19 +86,19 @@ public final class GCGDSTakeCardProficiencyRewardRspOuterClass {
             case 0:
               done = true;
               break;
-            case 48: {
+            case 24: {
+
+              rewardIndex_ = input.readUInt32();
+              break;
+            }
+            case 40: {
 
               retcode_ = input.readInt32();
               break;
             }
-            case 80: {
+            case 64: {
 
               cardId_ = input.readUInt32();
-              break;
-            }
-            case 96: {
-
-              rewardIndex_ = input.readUInt32();
               break;
             }
             default: {
@@ -133,21 +133,10 @@ public final class GCGDSTakeCardProficiencyRewardRspOuterClass {
               emu.grasscutter.net.proto.GCGDSTakeCardProficiencyRewardRspOuterClass.GCGDSTakeCardProficiencyRewardRsp.class, emu.grasscutter.net.proto.GCGDSTakeCardProficiencyRewardRspOuterClass.GCGDSTakeCardProficiencyRewardRsp.Builder.class);
     }
 
-    public static final int CARD_ID_FIELD_NUMBER = 10;
-    private int cardId_;
-    /**
-     * <code>uint32 card_id = 10;</code>
-     * @return The cardId.
-     */
-    @java.lang.Override
-    public int getCardId() {
-      return cardId_;
-    }
-
-    public static final int REWARD_INDEX_FIELD_NUMBER = 12;
+    public static final int REWARD_INDEX_FIELD_NUMBER = 3;
     private int rewardIndex_;
     /**
-     * <code>uint32 reward_index = 12;</code>
+     * <code>uint32 reward_index = 3;</code>
      * @return The rewardIndex.
      */
     @java.lang.Override
@@ -155,10 +144,21 @@ public final class GCGDSTakeCardProficiencyRewardRspOuterClass {
       return rewardIndex_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 6;
+    public static final int CARD_ID_FIELD_NUMBER = 8;
+    private int cardId_;
+    /**
+     * <code>uint32 card_id = 8;</code>
+     * @return The cardId.
+     */
+    @java.lang.Override
+    public int getCardId() {
+      return cardId_;
+    }
+
+    public static final int RETCODE_FIELD_NUMBER = 5;
     private int retcode_;
     /**
-     * <code>int32 retcode = 6;</code>
+     * <code>int32 retcode = 5;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -180,14 +180,14 @@ public final class GCGDSTakeCardProficiencyRewardRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (rewardIndex_ != 0) {
+        output.writeUInt32(3, rewardIndex_);
+      }
       if (retcode_ != 0) {
-        output.writeInt32(6, retcode_);
+        output.writeInt32(5, retcode_);
       }
       if (cardId_ != 0) {
-        output.writeUInt32(10, cardId_);
-      }
-      if (rewardIndex_ != 0) {
-        output.writeUInt32(12, rewardIndex_);
+        output.writeUInt32(8, cardId_);
       }
       unknownFields.writeTo(output);
     }
@@ -198,17 +198,17 @@ public final class GCGDSTakeCardProficiencyRewardRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (rewardIndex_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(3, rewardIndex_);
+      }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(6, retcode_);
+          .computeInt32Size(5, retcode_);
       }
       if (cardId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, cardId_);
-      }
-      if (rewardIndex_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, rewardIndex_);
+          .computeUInt32Size(8, cardId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -225,10 +225,10 @@ public final class GCGDSTakeCardProficiencyRewardRspOuterClass {
       }
       emu.grasscutter.net.proto.GCGDSTakeCardProficiencyRewardRspOuterClass.GCGDSTakeCardProficiencyRewardRsp other = (emu.grasscutter.net.proto.GCGDSTakeCardProficiencyRewardRspOuterClass.GCGDSTakeCardProficiencyRewardRsp) obj;
 
-      if (getCardId()
-          != other.getCardId()) return false;
       if (getRewardIndex()
           != other.getRewardIndex()) return false;
+      if (getCardId()
+          != other.getCardId()) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -242,10 +242,10 @@ public final class GCGDSTakeCardProficiencyRewardRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + CARD_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getCardId();
       hash = (37 * hash) + REWARD_INDEX_FIELD_NUMBER;
       hash = (53 * hash) + getRewardIndex();
+      hash = (37 * hash) + CARD_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getCardId();
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -345,8 +345,8 @@ public final class GCGDSTakeCardProficiencyRewardRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 7933
-     * Obf: KDBIJBGDHPA
+     * CmdId: 9709
+     * Obf: ABHIEBPNLDG
      * </pre>
      *
      * Protobuf type {@code GCGDSTakeCardProficiencyRewardRsp}
@@ -386,9 +386,9 @@ public final class GCGDSTakeCardProficiencyRewardRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        cardId_ = 0;
-
         rewardIndex_ = 0;
+
+        cardId_ = 0;
 
         retcode_ = 0;
 
@@ -418,8 +418,8 @@ public final class GCGDSTakeCardProficiencyRewardRspOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.GCGDSTakeCardProficiencyRewardRspOuterClass.GCGDSTakeCardProficiencyRewardRsp buildPartial() {
         emu.grasscutter.net.proto.GCGDSTakeCardProficiencyRewardRspOuterClass.GCGDSTakeCardProficiencyRewardRsp result = new emu.grasscutter.net.proto.GCGDSTakeCardProficiencyRewardRspOuterClass.GCGDSTakeCardProficiencyRewardRsp(this);
-        result.cardId_ = cardId_;
         result.rewardIndex_ = rewardIndex_;
+        result.cardId_ = cardId_;
         result.retcode_ = retcode_;
         onBuilt();
         return result;
@@ -469,11 +469,11 @@ public final class GCGDSTakeCardProficiencyRewardRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.GCGDSTakeCardProficiencyRewardRspOuterClass.GCGDSTakeCardProficiencyRewardRsp other) {
         if (other == emu.grasscutter.net.proto.GCGDSTakeCardProficiencyRewardRspOuterClass.GCGDSTakeCardProficiencyRewardRsp.getDefaultInstance()) return this;
-        if (other.getCardId() != 0) {
-          setCardId(other.getCardId());
-        }
         if (other.getRewardIndex() != 0) {
           setRewardIndex(other.getRewardIndex());
+        }
+        if (other.getCardId() != 0) {
+          setCardId(other.getCardId());
         }
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
@@ -507,40 +507,9 @@ public final class GCGDSTakeCardProficiencyRewardRspOuterClass {
         return this;
       }
 
-      private int cardId_ ;
-      /**
-       * <code>uint32 card_id = 10;</code>
-       * @return The cardId.
-       */
-      @java.lang.Override
-      public int getCardId() {
-        return cardId_;
-      }
-      /**
-       * <code>uint32 card_id = 10;</code>
-       * @param value The cardId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCardId(int value) {
-        
-        cardId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 card_id = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCardId() {
-        
-        cardId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int rewardIndex_ ;
       /**
-       * <code>uint32 reward_index = 12;</code>
+       * <code>uint32 reward_index = 3;</code>
        * @return The rewardIndex.
        */
       @java.lang.Override
@@ -548,7 +517,7 @@ public final class GCGDSTakeCardProficiencyRewardRspOuterClass {
         return rewardIndex_;
       }
       /**
-       * <code>uint32 reward_index = 12;</code>
+       * <code>uint32 reward_index = 3;</code>
        * @param value The rewardIndex to set.
        * @return This builder for chaining.
        */
@@ -559,7 +528,7 @@ public final class GCGDSTakeCardProficiencyRewardRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 reward_index = 12;</code>
+       * <code>uint32 reward_index = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearRewardIndex() {
@@ -569,9 +538,40 @@ public final class GCGDSTakeCardProficiencyRewardRspOuterClass {
         return this;
       }
 
+      private int cardId_ ;
+      /**
+       * <code>uint32 card_id = 8;</code>
+       * @return The cardId.
+       */
+      @java.lang.Override
+      public int getCardId() {
+        return cardId_;
+      }
+      /**
+       * <code>uint32 card_id = 8;</code>
+       * @param value The cardId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCardId(int value) {
+        
+        cardId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 card_id = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCardId() {
+        
+        cardId_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 6;</code>
+       * <code>int32 retcode = 5;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -579,7 +579,7 @@ public final class GCGDSTakeCardProficiencyRewardRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 6;</code>
+       * <code>int32 retcode = 5;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -590,7 +590,7 @@ public final class GCGDSTakeCardProficiencyRewardRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 6;</code>
+       * <code>int32 retcode = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -667,9 +667,9 @@ public final class GCGDSTakeCardProficiencyRewardRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\'GCGDSTakeCardProficiencyRewardRsp.prot" +
-      "o\"[\n!GCGDSTakeCardProficiencyRewardRsp\022\017" +
-      "\n\007card_id\030\n \001(\r\022\024\n\014reward_index\030\014 \001(\r\022\017\n" +
-      "\007retcode\030\006 \001(\005B\033\n\031emu.grasscutter.net.pr" +
+      "o\"[\n!GCGDSTakeCardProficiencyRewardRsp\022\024" +
+      "\n\014reward_index\030\003 \001(\r\022\017\n\007card_id\030\010 \001(\r\022\017\n" +
+      "\007retcode\030\005 \001(\005B\033\n\031emu.grasscutter.net.pr" +
       "otob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -681,7 +681,7 @@ public final class GCGDSTakeCardProficiencyRewardRspOuterClass {
     internal_static_GCGDSTakeCardProficiencyRewardRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GCGDSTakeCardProficiencyRewardRsp_descriptor,
-        new java.lang.String[] { "CardId", "RewardIndex", "Retcode", });
+        new java.lang.String[] { "RewardIndex", "CardId", "Retcode", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

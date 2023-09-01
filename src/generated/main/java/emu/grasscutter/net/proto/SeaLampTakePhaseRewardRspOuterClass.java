@@ -19,21 +19,21 @@ public final class SeaLampTakePhaseRewardRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 phase_id = 14;</code>
+     * <code>uint32 phase_id = 10;</code>
      * @return The phaseId.
      */
     int getPhaseId();
 
     /**
-     * <code>int32 retcode = 10;</code>
+     * <code>int32 retcode = 3;</code>
      * @return The retcode.
      */
     int getRetcode();
   }
   /**
    * <pre>
-   * CmdId: 2079
-   * Obf: GEGLGDKPHPC
+   * CmdId: 7734
+   * Obf: BCBKBAPGEGC
    * </pre>
    *
    * Protobuf type {@code SeaLampTakePhaseRewardRsp}
@@ -80,12 +80,12 @@ public final class SeaLampTakePhaseRewardRspOuterClass {
             case 0:
               done = true;
               break;
-            case 80: {
+            case 24: {
 
               retcode_ = input.readInt32();
               break;
             }
-            case 112: {
+            case 80: {
 
               phaseId_ = input.readUInt32();
               break;
@@ -122,10 +122,10 @@ public final class SeaLampTakePhaseRewardRspOuterClass {
               emu.grasscutter.net.proto.SeaLampTakePhaseRewardRspOuterClass.SeaLampTakePhaseRewardRsp.class, emu.grasscutter.net.proto.SeaLampTakePhaseRewardRspOuterClass.SeaLampTakePhaseRewardRsp.Builder.class);
     }
 
-    public static final int PHASE_ID_FIELD_NUMBER = 14;
+    public static final int PHASE_ID_FIELD_NUMBER = 10;
     private int phaseId_;
     /**
-     * <code>uint32 phase_id = 14;</code>
+     * <code>uint32 phase_id = 10;</code>
      * @return The phaseId.
      */
     @java.lang.Override
@@ -133,10 +133,10 @@ public final class SeaLampTakePhaseRewardRspOuterClass {
       return phaseId_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 10;
+    public static final int RETCODE_FIELD_NUMBER = 3;
     private int retcode_;
     /**
-     * <code>int32 retcode = 10;</code>
+     * <code>int32 retcode = 3;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -159,10 +159,10 @@ public final class SeaLampTakePhaseRewardRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (retcode_ != 0) {
-        output.writeInt32(10, retcode_);
+        output.writeInt32(3, retcode_);
       }
       if (phaseId_ != 0) {
-        output.writeUInt32(14, phaseId_);
+        output.writeUInt32(10, phaseId_);
       }
       unknownFields.writeTo(output);
     }
@@ -175,11 +175,11 @@ public final class SeaLampTakePhaseRewardRspOuterClass {
       size = 0;
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(10, retcode_);
+          .computeInt32Size(3, retcode_);
       }
       if (phaseId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, phaseId_);
+          .computeUInt32Size(10, phaseId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -312,8 +312,8 @@ public final class SeaLampTakePhaseRewardRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2079
-     * Obf: GEGLGDKPHPC
+     * CmdId: 7734
+     * Obf: BCBKBAPGEGC
      * </pre>
      *
      * Protobuf type {@code SeaLampTakePhaseRewardRsp}
@@ -470,7 +470,7 @@ public final class SeaLampTakePhaseRewardRspOuterClass {
 
       private int phaseId_ ;
       /**
-       * <code>uint32 phase_id = 14;</code>
+       * <code>uint32 phase_id = 10;</code>
        * @return The phaseId.
        */
       @java.lang.Override
@@ -478,7 +478,7 @@ public final class SeaLampTakePhaseRewardRspOuterClass {
         return phaseId_;
       }
       /**
-       * <code>uint32 phase_id = 14;</code>
+       * <code>uint32 phase_id = 10;</code>
        * @param value The phaseId to set.
        * @return This builder for chaining.
        */
@@ -489,7 +489,7 @@ public final class SeaLampTakePhaseRewardRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 phase_id = 14;</code>
+       * <code>uint32 phase_id = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearPhaseId() {
@@ -501,7 +501,7 @@ public final class SeaLampTakePhaseRewardRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 10;</code>
+       * <code>int32 retcode = 3;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -509,7 +509,7 @@ public final class SeaLampTakePhaseRewardRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 10;</code>
+       * <code>int32 retcode = 3;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -520,7 +520,7 @@ public final class SeaLampTakePhaseRewardRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 10;</code>
+       * <code>int32 retcode = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -597,8 +597,8 @@ public final class SeaLampTakePhaseRewardRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\037SeaLampTakePhaseRewardRsp.proto\">\n\031Sea" +
-      "LampTakePhaseRewardRsp\022\020\n\010phase_id\030\016 \001(\r" +
-      "\022\017\n\007retcode\030\n \001(\005B\033\n\031emu.grasscutter.net" +
+      "LampTakePhaseRewardRsp\022\020\n\010phase_id\030\n \001(\r" +
+      "\022\017\n\007retcode\030\003 \001(\005B\033\n\031emu.grasscutter.net" +
       ".protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

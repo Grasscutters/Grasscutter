@@ -19,18 +19,18 @@ public final class FriendInfoChangeNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 uid = 7;</code>
+     * <code>uint32 uid = 13;</code>
      * @return The uid.
      */
     int getUid();
 
     /**
-     * <code>string online_id = 13;</code>
+     * <code>string online_id = 6;</code>
      * @return The onlineId.
      */
     java.lang.String getOnlineId();
     /**
-     * <code>string online_id = 13;</code>
+     * <code>string online_id = 6;</code>
      * @return The bytes for onlineId.
      */
     com.google.protobuf.ByteString
@@ -38,8 +38,8 @@ public final class FriendInfoChangeNotifyOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 4078
-   * Obf: PPOCFBPEEAL
+   * CmdId: 21775
+   * Obf: BDOIGJMDPCO
    * </pre>
    *
    * Protobuf type {@code FriendInfoChangeNotify}
@@ -87,15 +87,15 @@ public final class FriendInfoChangeNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 56: {
-
-              uid_ = input.readUInt32();
-              break;
-            }
-            case 106: {
+            case 50: {
               java.lang.String s = input.readStringRequireUtf8();
 
               onlineId_ = s;
+              break;
+            }
+            case 104: {
+
+              uid_ = input.readUInt32();
               break;
             }
             default: {
@@ -130,10 +130,10 @@ public final class FriendInfoChangeNotifyOuterClass {
               emu.grasscutter.net.proto.FriendInfoChangeNotifyOuterClass.FriendInfoChangeNotify.class, emu.grasscutter.net.proto.FriendInfoChangeNotifyOuterClass.FriendInfoChangeNotify.Builder.class);
     }
 
-    public static final int UID_FIELD_NUMBER = 7;
+    public static final int UID_FIELD_NUMBER = 13;
     private int uid_;
     /**
-     * <code>uint32 uid = 7;</code>
+     * <code>uint32 uid = 13;</code>
      * @return The uid.
      */
     @java.lang.Override
@@ -141,10 +141,10 @@ public final class FriendInfoChangeNotifyOuterClass {
       return uid_;
     }
 
-    public static final int ONLINE_ID_FIELD_NUMBER = 13;
+    public static final int ONLINE_ID_FIELD_NUMBER = 6;
     private volatile java.lang.Object onlineId_;
     /**
-     * <code>string online_id = 13;</code>
+     * <code>string online_id = 6;</code>
      * @return The onlineId.
      */
     @java.lang.Override
@@ -161,7 +161,7 @@ public final class FriendInfoChangeNotifyOuterClass {
       }
     }
     /**
-     * <code>string online_id = 13;</code>
+     * <code>string online_id = 6;</code>
      * @return The bytes for onlineId.
      */
     @java.lang.Override
@@ -193,11 +193,11 @@ public final class FriendInfoChangeNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (uid_ != 0) {
-        output.writeUInt32(7, uid_);
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(onlineId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, onlineId_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, onlineId_);
+      }
+      if (uid_ != 0) {
+        output.writeUInt32(13, uid_);
       }
       unknownFields.writeTo(output);
     }
@@ -208,12 +208,12 @@ public final class FriendInfoChangeNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(onlineId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, onlineId_);
+      }
       if (uid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, uid_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(onlineId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, onlineId_);
+          .computeUInt32Size(13, uid_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -346,8 +346,8 @@ public final class FriendInfoChangeNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4078
-     * Obf: PPOCFBPEEAL
+     * CmdId: 21775
+     * Obf: BDOIGJMDPCO
      * </pre>
      *
      * Protobuf type {@code FriendInfoChangeNotify}
@@ -505,7 +505,7 @@ public final class FriendInfoChangeNotifyOuterClass {
 
       private int uid_ ;
       /**
-       * <code>uint32 uid = 7;</code>
+       * <code>uint32 uid = 13;</code>
        * @return The uid.
        */
       @java.lang.Override
@@ -513,7 +513,7 @@ public final class FriendInfoChangeNotifyOuterClass {
         return uid_;
       }
       /**
-       * <code>uint32 uid = 7;</code>
+       * <code>uint32 uid = 13;</code>
        * @param value The uid to set.
        * @return This builder for chaining.
        */
@@ -524,7 +524,7 @@ public final class FriendInfoChangeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 uid = 7;</code>
+       * <code>uint32 uid = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearUid() {
@@ -536,7 +536,7 @@ public final class FriendInfoChangeNotifyOuterClass {
 
       private java.lang.Object onlineId_ = "";
       /**
-       * <code>string online_id = 13;</code>
+       * <code>string online_id = 6;</code>
        * @return The onlineId.
        */
       public java.lang.String getOnlineId() {
@@ -552,7 +552,7 @@ public final class FriendInfoChangeNotifyOuterClass {
         }
       }
       /**
-       * <code>string online_id = 13;</code>
+       * <code>string online_id = 6;</code>
        * @return The bytes for onlineId.
        */
       public com.google.protobuf.ByteString
@@ -569,7 +569,7 @@ public final class FriendInfoChangeNotifyOuterClass {
         }
       }
       /**
-       * <code>string online_id = 13;</code>
+       * <code>string online_id = 6;</code>
        * @param value The onlineId to set.
        * @return This builder for chaining.
        */
@@ -584,7 +584,7 @@ public final class FriendInfoChangeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>string online_id = 13;</code>
+       * <code>string online_id = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearOnlineId() {
@@ -594,7 +594,7 @@ public final class FriendInfoChangeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>string online_id = 13;</code>
+       * <code>string online_id = 6;</code>
        * @param value The bytes for onlineId to set.
        * @return This builder for chaining.
        */
@@ -677,8 +677,8 @@ public final class FriendInfoChangeNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\034FriendInfoChangeNotify.proto\"8\n\026Friend" +
-      "InfoChangeNotify\022\013\n\003uid\030\007 \001(\r\022\021\n\tonline_" +
-      "id\030\r \001(\tB\033\n\031emu.grasscutter.net.protob\006p" +
+      "InfoChangeNotify\022\013\n\003uid\030\r \001(\r\022\021\n\tonline_" +
+      "id\030\006 \001(\tB\033\n\031emu.grasscutter.net.protob\006p" +
       "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

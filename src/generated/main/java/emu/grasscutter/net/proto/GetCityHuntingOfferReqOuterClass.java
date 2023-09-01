@@ -19,15 +19,15 @@ public final class GetCityHuntingOfferReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 city_id = 3;</code>
+     * <code>uint32 city_id = 2;</code>
      * @return The cityId.
      */
     int getCityId();
   }
   /**
    * <pre>
-   * CmdId: 4337
-   * Obf: BPMBCDOIIDJ
+   * CmdId: 6556
+   * Obf: HKCGDJANEBA
    * </pre>
    *
    * Protobuf type {@code GetCityHuntingOfferReq}
@@ -74,7 +74,7 @@ public final class GetCityHuntingOfferReqOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 16: {
 
               cityId_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class GetCityHuntingOfferReqOuterClass {
               emu.grasscutter.net.proto.GetCityHuntingOfferReqOuterClass.GetCityHuntingOfferReq.class, emu.grasscutter.net.proto.GetCityHuntingOfferReqOuterClass.GetCityHuntingOfferReq.Builder.class);
     }
 
-    public static final int CITY_ID_FIELD_NUMBER = 3;
+    public static final int CITY_ID_FIELD_NUMBER = 2;
     private int cityId_;
     /**
-     * <code>uint32 city_id = 3;</code>
+     * <code>uint32 city_id = 2;</code>
      * @return The cityId.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class GetCityHuntingOfferReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (cityId_ != 0) {
-        output.writeUInt32(3, cityId_);
+        output.writeUInt32(2, cityId_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class GetCityHuntingOfferReqOuterClass {
       size = 0;
       if (cityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, cityId_);
+          .computeUInt32Size(2, cityId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class GetCityHuntingOfferReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4337
-     * Obf: BPMBCDOIIDJ
+     * CmdId: 6556
+     * Obf: HKCGDJANEBA
      * </pre>
      *
      * Protobuf type {@code GetCityHuntingOfferReq}
@@ -431,7 +431,7 @@ public final class GetCityHuntingOfferReqOuterClass {
 
       private int cityId_ ;
       /**
-       * <code>uint32 city_id = 3;</code>
+       * <code>uint32 city_id = 2;</code>
        * @return The cityId.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class GetCityHuntingOfferReqOuterClass {
         return cityId_;
       }
       /**
-       * <code>uint32 city_id = 3;</code>
+       * <code>uint32 city_id = 2;</code>
        * @param value The cityId to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class GetCityHuntingOfferReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 city_id = 3;</code>
+       * <code>uint32 city_id = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearCityId() {
@@ -527,7 +527,7 @@ public final class GetCityHuntingOfferReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\034GetCityHuntingOfferReq.proto\")\n\026GetCit" +
-      "yHuntingOfferReq\022\017\n\007city_id\030\003 \001(\rB\033\n\031emu" +
+      "yHuntingOfferReq\022\017\n\007city_id\030\002 \001(\rB\033\n\031emu" +
       ".grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

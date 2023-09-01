@@ -19,32 +19,32 @@ public final class ChallengeRecordOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 NHCAFELKGEN = 13;</code>
-     * @return The nHCAFELKGEN.
+     * <code>uint32 DBFALDONGOJ = 7;</code>
+     * @return The dBFALDONGOJ.
      */
-    int getNHCAFELKGEN();
+    int getDBFALDONGOJ();
 
     /**
-     * <code>uint32 challenge_id = 14;</code>
-     * @return The challengeId.
-     */
-    int getChallengeId();
-
-    /**
-     * <code>uint32 challenge_index = 15;</code>
+     * <code>uint32 challenge_index = 12;</code>
      * @return The challengeIndex.
      */
     int getChallengeIndex();
 
     /**
-     * <code>uint32 currentValue = 5;</code>
+     * <code>uint32 challenge_id = 4;</code>
+     * @return The challengeId.
+     */
+    int getChallengeId();
+
+    /**
+     * <code>uint32 currentValue = 14;</code>
      * @return The currentValue.
      */
     int getCurrentValue();
   }
   /**
    * <pre>
-   * Obf: EGHGIMHDENL
+   * Obf: EENKPMILDBO
    * </pre>
    *
    * Protobuf type {@code ChallengeRecord}
@@ -91,24 +91,24 @@ public final class ChallengeRecordOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
-
-              currentValue_ = input.readUInt32();
-              break;
-            }
-            case 104: {
-
-              nHCAFELKGEN_ = input.readUInt32();
-              break;
-            }
-            case 112: {
+            case 32: {
 
               challengeId_ = input.readUInt32();
               break;
             }
-            case 120: {
+            case 56: {
+
+              dBFALDONGOJ_ = input.readUInt32();
+              break;
+            }
+            case 96: {
 
               challengeIndex_ = input.readUInt32();
+              break;
+            }
+            case 112: {
+
+              currentValue_ = input.readUInt32();
               break;
             }
             default: {
@@ -143,32 +143,21 @@ public final class ChallengeRecordOuterClass {
               emu.grasscutter.net.proto.ChallengeRecordOuterClass.ChallengeRecord.class, emu.grasscutter.net.proto.ChallengeRecordOuterClass.ChallengeRecord.Builder.class);
     }
 
-    public static final int NHCAFELKGEN_FIELD_NUMBER = 13;
-    private int nHCAFELKGEN_;
+    public static final int DBFALDONGOJ_FIELD_NUMBER = 7;
+    private int dBFALDONGOJ_;
     /**
-     * <code>uint32 NHCAFELKGEN = 13;</code>
-     * @return The nHCAFELKGEN.
+     * <code>uint32 DBFALDONGOJ = 7;</code>
+     * @return The dBFALDONGOJ.
      */
     @java.lang.Override
-    public int getNHCAFELKGEN() {
-      return nHCAFELKGEN_;
+    public int getDBFALDONGOJ() {
+      return dBFALDONGOJ_;
     }
 
-    public static final int CHALLENGE_ID_FIELD_NUMBER = 14;
-    private int challengeId_;
-    /**
-     * <code>uint32 challenge_id = 14;</code>
-     * @return The challengeId.
-     */
-    @java.lang.Override
-    public int getChallengeId() {
-      return challengeId_;
-    }
-
-    public static final int CHALLENGE_INDEX_FIELD_NUMBER = 15;
+    public static final int CHALLENGE_INDEX_FIELD_NUMBER = 12;
     private int challengeIndex_;
     /**
-     * <code>uint32 challenge_index = 15;</code>
+     * <code>uint32 challenge_index = 12;</code>
      * @return The challengeIndex.
      */
     @java.lang.Override
@@ -176,10 +165,21 @@ public final class ChallengeRecordOuterClass {
       return challengeIndex_;
     }
 
-    public static final int CURRENTVALUE_FIELD_NUMBER = 5;
+    public static final int CHALLENGE_ID_FIELD_NUMBER = 4;
+    private int challengeId_;
+    /**
+     * <code>uint32 challenge_id = 4;</code>
+     * @return The challengeId.
+     */
+    @java.lang.Override
+    public int getChallengeId() {
+      return challengeId_;
+    }
+
+    public static final int CURRENTVALUE_FIELD_NUMBER = 14;
     private int currentValue_;
     /**
-     * <code>uint32 currentValue = 5;</code>
+     * <code>uint32 currentValue = 14;</code>
      * @return The currentValue.
      */
     @java.lang.Override
@@ -201,17 +201,17 @@ public final class ChallengeRecordOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (currentValue_ != 0) {
-        output.writeUInt32(5, currentValue_);
-      }
-      if (nHCAFELKGEN_ != 0) {
-        output.writeUInt32(13, nHCAFELKGEN_);
-      }
       if (challengeId_ != 0) {
-        output.writeUInt32(14, challengeId_);
+        output.writeUInt32(4, challengeId_);
+      }
+      if (dBFALDONGOJ_ != 0) {
+        output.writeUInt32(7, dBFALDONGOJ_);
       }
       if (challengeIndex_ != 0) {
-        output.writeUInt32(15, challengeIndex_);
+        output.writeUInt32(12, challengeIndex_);
+      }
+      if (currentValue_ != 0) {
+        output.writeUInt32(14, currentValue_);
       }
       unknownFields.writeTo(output);
     }
@@ -222,21 +222,21 @@ public final class ChallengeRecordOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (currentValue_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, currentValue_);
-      }
-      if (nHCAFELKGEN_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, nHCAFELKGEN_);
-      }
       if (challengeId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, challengeId_);
+          .computeUInt32Size(4, challengeId_);
+      }
+      if (dBFALDONGOJ_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(7, dBFALDONGOJ_);
       }
       if (challengeIndex_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, challengeIndex_);
+          .computeUInt32Size(12, challengeIndex_);
+      }
+      if (currentValue_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(14, currentValue_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -253,12 +253,12 @@ public final class ChallengeRecordOuterClass {
       }
       emu.grasscutter.net.proto.ChallengeRecordOuterClass.ChallengeRecord other = (emu.grasscutter.net.proto.ChallengeRecordOuterClass.ChallengeRecord) obj;
 
-      if (getNHCAFELKGEN()
-          != other.getNHCAFELKGEN()) return false;
-      if (getChallengeId()
-          != other.getChallengeId()) return false;
+      if (getDBFALDONGOJ()
+          != other.getDBFALDONGOJ()) return false;
       if (getChallengeIndex()
           != other.getChallengeIndex()) return false;
+      if (getChallengeId()
+          != other.getChallengeId()) return false;
       if (getCurrentValue()
           != other.getCurrentValue()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -272,12 +272,12 @@ public final class ChallengeRecordOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + NHCAFELKGEN_FIELD_NUMBER;
-      hash = (53 * hash) + getNHCAFELKGEN();
-      hash = (37 * hash) + CHALLENGE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getChallengeId();
+      hash = (37 * hash) + DBFALDONGOJ_FIELD_NUMBER;
+      hash = (53 * hash) + getDBFALDONGOJ();
       hash = (37 * hash) + CHALLENGE_INDEX_FIELD_NUMBER;
       hash = (53 * hash) + getChallengeIndex();
+      hash = (37 * hash) + CHALLENGE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getChallengeId();
       hash = (37 * hash) + CURRENTVALUE_FIELD_NUMBER;
       hash = (53 * hash) + getCurrentValue();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -377,7 +377,7 @@ public final class ChallengeRecordOuterClass {
     }
     /**
      * <pre>
-     * Obf: EGHGIMHDENL
+     * Obf: EENKPMILDBO
      * </pre>
      *
      * Protobuf type {@code ChallengeRecord}
@@ -417,11 +417,11 @@ public final class ChallengeRecordOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        nHCAFELKGEN_ = 0;
-
-        challengeId_ = 0;
+        dBFALDONGOJ_ = 0;
 
         challengeIndex_ = 0;
+
+        challengeId_ = 0;
 
         currentValue_ = 0;
 
@@ -451,9 +451,9 @@ public final class ChallengeRecordOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.ChallengeRecordOuterClass.ChallengeRecord buildPartial() {
         emu.grasscutter.net.proto.ChallengeRecordOuterClass.ChallengeRecord result = new emu.grasscutter.net.proto.ChallengeRecordOuterClass.ChallengeRecord(this);
-        result.nHCAFELKGEN_ = nHCAFELKGEN_;
-        result.challengeId_ = challengeId_;
+        result.dBFALDONGOJ_ = dBFALDONGOJ_;
         result.challengeIndex_ = challengeIndex_;
+        result.challengeId_ = challengeId_;
         result.currentValue_ = currentValue_;
         onBuilt();
         return result;
@@ -503,14 +503,14 @@ public final class ChallengeRecordOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.ChallengeRecordOuterClass.ChallengeRecord other) {
         if (other == emu.grasscutter.net.proto.ChallengeRecordOuterClass.ChallengeRecord.getDefaultInstance()) return this;
-        if (other.getNHCAFELKGEN() != 0) {
-          setNHCAFELKGEN(other.getNHCAFELKGEN());
-        }
-        if (other.getChallengeId() != 0) {
-          setChallengeId(other.getChallengeId());
+        if (other.getDBFALDONGOJ() != 0) {
+          setDBFALDONGOJ(other.getDBFALDONGOJ());
         }
         if (other.getChallengeIndex() != 0) {
           setChallengeIndex(other.getChallengeIndex());
+        }
+        if (other.getChallengeId() != 0) {
+          setChallengeId(other.getChallengeId());
         }
         if (other.getCurrentValue() != 0) {
           setCurrentValue(other.getCurrentValue());
@@ -544,71 +544,40 @@ public final class ChallengeRecordOuterClass {
         return this;
       }
 
-      private int nHCAFELKGEN_ ;
+      private int dBFALDONGOJ_ ;
       /**
-       * <code>uint32 NHCAFELKGEN = 13;</code>
-       * @return The nHCAFELKGEN.
+       * <code>uint32 DBFALDONGOJ = 7;</code>
+       * @return The dBFALDONGOJ.
        */
       @java.lang.Override
-      public int getNHCAFELKGEN() {
-        return nHCAFELKGEN_;
+      public int getDBFALDONGOJ() {
+        return dBFALDONGOJ_;
       }
       /**
-       * <code>uint32 NHCAFELKGEN = 13;</code>
-       * @param value The nHCAFELKGEN to set.
+       * <code>uint32 DBFALDONGOJ = 7;</code>
+       * @param value The dBFALDONGOJ to set.
        * @return This builder for chaining.
        */
-      public Builder setNHCAFELKGEN(int value) {
+      public Builder setDBFALDONGOJ(int value) {
         
-        nHCAFELKGEN_ = value;
+        dBFALDONGOJ_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 NHCAFELKGEN = 13;</code>
+       * <code>uint32 DBFALDONGOJ = 7;</code>
        * @return This builder for chaining.
        */
-      public Builder clearNHCAFELKGEN() {
+      public Builder clearDBFALDONGOJ() {
         
-        nHCAFELKGEN_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int challengeId_ ;
-      /**
-       * <code>uint32 challenge_id = 14;</code>
-       * @return The challengeId.
-       */
-      @java.lang.Override
-      public int getChallengeId() {
-        return challengeId_;
-      }
-      /**
-       * <code>uint32 challenge_id = 14;</code>
-       * @param value The challengeId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setChallengeId(int value) {
-        
-        challengeId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 challenge_id = 14;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearChallengeId() {
-        
-        challengeId_ = 0;
+        dBFALDONGOJ_ = 0;
         onChanged();
         return this;
       }
 
       private int challengeIndex_ ;
       /**
-       * <code>uint32 challenge_index = 15;</code>
+       * <code>uint32 challenge_index = 12;</code>
        * @return The challengeIndex.
        */
       @java.lang.Override
@@ -616,7 +585,7 @@ public final class ChallengeRecordOuterClass {
         return challengeIndex_;
       }
       /**
-       * <code>uint32 challenge_index = 15;</code>
+       * <code>uint32 challenge_index = 12;</code>
        * @param value The challengeIndex to set.
        * @return This builder for chaining.
        */
@@ -627,7 +596,7 @@ public final class ChallengeRecordOuterClass {
         return this;
       }
       /**
-       * <code>uint32 challenge_index = 15;</code>
+       * <code>uint32 challenge_index = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearChallengeIndex() {
@@ -637,9 +606,40 @@ public final class ChallengeRecordOuterClass {
         return this;
       }
 
+      private int challengeId_ ;
+      /**
+       * <code>uint32 challenge_id = 4;</code>
+       * @return The challengeId.
+       */
+      @java.lang.Override
+      public int getChallengeId() {
+        return challengeId_;
+      }
+      /**
+       * <code>uint32 challenge_id = 4;</code>
+       * @param value The challengeId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setChallengeId(int value) {
+        
+        challengeId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 challenge_id = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearChallengeId() {
+        
+        challengeId_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int currentValue_ ;
       /**
-       * <code>uint32 currentValue = 5;</code>
+       * <code>uint32 currentValue = 14;</code>
        * @return The currentValue.
        */
       @java.lang.Override
@@ -647,7 +647,7 @@ public final class ChallengeRecordOuterClass {
         return currentValue_;
       }
       /**
-       * <code>uint32 currentValue = 5;</code>
+       * <code>uint32 currentValue = 14;</code>
        * @param value The currentValue to set.
        * @return This builder for chaining.
        */
@@ -658,7 +658,7 @@ public final class ChallengeRecordOuterClass {
         return this;
       }
       /**
-       * <code>uint32 currentValue = 5;</code>
+       * <code>uint32 currentValue = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearCurrentValue() {
@@ -735,9 +735,9 @@ public final class ChallengeRecordOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\025ChallengeRecord.proto\"k\n\017ChallengeReco" +
-      "rd\022\023\n\013NHCAFELKGEN\030\r \001(\r\022\024\n\014challenge_id\030" +
-      "\016 \001(\r\022\027\n\017challenge_index\030\017 \001(\r\022\024\n\014curren" +
-      "tValue\030\005 \001(\rB\033\n\031emu.grasscutter.net.prot" +
+      "rd\022\023\n\013DBFALDONGOJ\030\007 \001(\r\022\027\n\017challenge_ind" +
+      "ex\030\014 \001(\r\022\024\n\014challenge_id\030\004 \001(\r\022\024\n\014curren" +
+      "tValue\030\016 \001(\rB\033\n\031emu.grasscutter.net.prot" +
       "ob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -749,7 +749,7 @@ public final class ChallengeRecordOuterClass {
     internal_static_ChallengeRecord_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ChallengeRecord_descriptor,
-        new java.lang.String[] { "NHCAFELKGEN", "ChallengeId", "ChallengeIndex", "CurrentValue", });
+        new java.lang.String[] { "DBFALDONGOJ", "ChallengeIndex", "ChallengeId", "CurrentValue", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

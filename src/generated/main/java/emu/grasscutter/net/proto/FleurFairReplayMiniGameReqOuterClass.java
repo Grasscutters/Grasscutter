@@ -19,15 +19,15 @@ public final class FleurFairReplayMiniGameReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 minigame_id = 14;</code>
+     * <code>uint32 minigame_id = 12;</code>
      * @return The minigameId.
      */
     int getMinigameId();
   }
   /**
    * <pre>
-   * CmdId: 2030
-   * Obf: DHAINHKDPGH
+   * CmdId: 23867
+   * Obf: NHIKGFGDGHP
    * </pre>
    *
    * Protobuf type {@code FleurFairReplayMiniGameReq}
@@ -74,7 +74,7 @@ public final class FleurFairReplayMiniGameReqOuterClass {
             case 0:
               done = true;
               break;
-            case 112: {
+            case 96: {
 
               minigameId_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class FleurFairReplayMiniGameReqOuterClass {
               emu.grasscutter.net.proto.FleurFairReplayMiniGameReqOuterClass.FleurFairReplayMiniGameReq.class, emu.grasscutter.net.proto.FleurFairReplayMiniGameReqOuterClass.FleurFairReplayMiniGameReq.Builder.class);
     }
 
-    public static final int MINIGAME_ID_FIELD_NUMBER = 14;
+    public static final int MINIGAME_ID_FIELD_NUMBER = 12;
     private int minigameId_;
     /**
-     * <code>uint32 minigame_id = 14;</code>
+     * <code>uint32 minigame_id = 12;</code>
      * @return The minigameId.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class FleurFairReplayMiniGameReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (minigameId_ != 0) {
-        output.writeUInt32(14, minigameId_);
+        output.writeUInt32(12, minigameId_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class FleurFairReplayMiniGameReqOuterClass {
       size = 0;
       if (minigameId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, minigameId_);
+          .computeUInt32Size(12, minigameId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class FleurFairReplayMiniGameReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2030
-     * Obf: DHAINHKDPGH
+     * CmdId: 23867
+     * Obf: NHIKGFGDGHP
      * </pre>
      *
      * Protobuf type {@code FleurFairReplayMiniGameReq}
@@ -431,7 +431,7 @@ public final class FleurFairReplayMiniGameReqOuterClass {
 
       private int minigameId_ ;
       /**
-       * <code>uint32 minigame_id = 14;</code>
+       * <code>uint32 minigame_id = 12;</code>
        * @return The minigameId.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class FleurFairReplayMiniGameReqOuterClass {
         return minigameId_;
       }
       /**
-       * <code>uint32 minigame_id = 14;</code>
+       * <code>uint32 minigame_id = 12;</code>
        * @param value The minigameId to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class FleurFairReplayMiniGameReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 minigame_id = 14;</code>
+       * <code>uint32 minigame_id = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearMinigameId() {
@@ -528,7 +528,7 @@ public final class FleurFairReplayMiniGameReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n FleurFairReplayMiniGameReq.proto\"1\n\032Fl" +
       "eurFairReplayMiniGameReq\022\023\n\013minigame_id\030" +
-      "\016 \001(\rB\033\n\031emu.grasscutter.net.protob\006prot" +
+      "\014 \001(\rB\033\n\031emu.grasscutter.net.protob\006prot" +
       "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

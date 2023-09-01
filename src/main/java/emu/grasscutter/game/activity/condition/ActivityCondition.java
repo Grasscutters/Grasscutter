@@ -1,8 +1,8 @@
 package emu.grasscutter.game.activity.condition;
 
 import emu.grasscutter.data.excels.activity.ActivityCondExcelConfigData;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
+
+import java.lang.annotation.*;
 
 /**
  * This annotation marks condition types for NewActivityCondExcelConfigData.json ({@link

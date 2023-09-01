@@ -1,7 +1,6 @@
 package emu.grasscutter.game.entity.gadget;
 
-import emu.grasscutter.game.entity.EntityBaseGadget;
-import emu.grasscutter.game.entity.EntityGadget;
+import emu.grasscutter.game.entity.*;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.proto.AbilityGadgetInfoOuterClass;
 import emu.grasscutter.net.proto.GadgetInteractReqOuterClass.GadgetInteractReq;

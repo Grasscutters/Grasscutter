@@ -1,19 +1,16 @@
 package emu.grasscutter.scripts.serializer;
 
-import com.fasterxml.jackson.annotation.JsonSetter;
-import com.fasterxml.jackson.annotation.Nulls;
-import com.fasterxml.jackson.core.JsonGenerator;
-import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.core.*;
 import com.fasterxml.jackson.databind.*;
 import com.fasterxml.jackson.databind.json.JsonMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
-import com.fasterxml.jackson.databind.type.CollectionType;
-import com.fasterxml.jackson.databind.type.MapType;
+import com.fasterxml.jackson.databind.type.*;
 import emu.grasscutter.Grasscutter;
+import org.luaj.vm2.*;
+
 import java.io.IOException;
 import java.util.*;
-import org.luaj.vm2.LuaTable;
-import org.luaj.vm2.LuaValue;
 
 public class LuaTableJacksonSerializer extends JsonSerializer<LuaTable> implements Serializer {
 

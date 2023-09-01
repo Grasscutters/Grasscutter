@@ -19,21 +19,21 @@ public final class ChannelerSlabStageOneoffDungeonNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool is_done = 4;</code>
-     * @return The isDone.
-     */
-    boolean getIsDone();
-
-    /**
-     * <code>uint32 stage_id = 14;</code>
+     * <code>uint32 stage_id = 9;</code>
      * @return The stageId.
      */
     int getStageId();
+
+    /**
+     * <code>bool is_done = 2;</code>
+     * @return The isDone.
+     */
+    boolean getIsDone();
   }
   /**
    * <pre>
-   * CmdId: 8399
-   * Obf: AHAAPGGGCCK
+   * CmdId: 7389
+   * Obf: FAHPKGKLMJJ
    * </pre>
    *
    * Protobuf type {@code ChannelerSlabStageOneoffDungeonNotify}
@@ -80,12 +80,12 @@ public final class ChannelerSlabStageOneoffDungeonNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
+            case 16: {
 
               isDone_ = input.readBool();
               break;
             }
-            case 112: {
+            case 72: {
 
               stageId_ = input.readUInt32();
               break;
@@ -122,26 +122,26 @@ public final class ChannelerSlabStageOneoffDungeonNotifyOuterClass {
               emu.grasscutter.net.proto.ChannelerSlabStageOneoffDungeonNotifyOuterClass.ChannelerSlabStageOneoffDungeonNotify.class, emu.grasscutter.net.proto.ChannelerSlabStageOneoffDungeonNotifyOuterClass.ChannelerSlabStageOneoffDungeonNotify.Builder.class);
     }
 
-    public static final int IS_DONE_FIELD_NUMBER = 4;
-    private boolean isDone_;
-    /**
-     * <code>bool is_done = 4;</code>
-     * @return The isDone.
-     */
-    @java.lang.Override
-    public boolean getIsDone() {
-      return isDone_;
-    }
-
-    public static final int STAGE_ID_FIELD_NUMBER = 14;
+    public static final int STAGE_ID_FIELD_NUMBER = 9;
     private int stageId_;
     /**
-     * <code>uint32 stage_id = 14;</code>
+     * <code>uint32 stage_id = 9;</code>
      * @return The stageId.
      */
     @java.lang.Override
     public int getStageId() {
       return stageId_;
+    }
+
+    public static final int IS_DONE_FIELD_NUMBER = 2;
+    private boolean isDone_;
+    /**
+     * <code>bool is_done = 2;</code>
+     * @return The isDone.
+     */
+    @java.lang.Override
+    public boolean getIsDone() {
+      return isDone_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -159,10 +159,10 @@ public final class ChannelerSlabStageOneoffDungeonNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (isDone_ != false) {
-        output.writeBool(4, isDone_);
+        output.writeBool(2, isDone_);
       }
       if (stageId_ != 0) {
-        output.writeUInt32(14, stageId_);
+        output.writeUInt32(9, stageId_);
       }
       unknownFields.writeTo(output);
     }
@@ -175,11 +175,11 @@ public final class ChannelerSlabStageOneoffDungeonNotifyOuterClass {
       size = 0;
       if (isDone_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(4, isDone_);
+          .computeBoolSize(2, isDone_);
       }
       if (stageId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, stageId_);
+          .computeUInt32Size(9, stageId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -196,10 +196,10 @@ public final class ChannelerSlabStageOneoffDungeonNotifyOuterClass {
       }
       emu.grasscutter.net.proto.ChannelerSlabStageOneoffDungeonNotifyOuterClass.ChannelerSlabStageOneoffDungeonNotify other = (emu.grasscutter.net.proto.ChannelerSlabStageOneoffDungeonNotifyOuterClass.ChannelerSlabStageOneoffDungeonNotify) obj;
 
-      if (getIsDone()
-          != other.getIsDone()) return false;
       if (getStageId()
           != other.getStageId()) return false;
+      if (getIsDone()
+          != other.getIsDone()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -211,11 +211,11 @@ public final class ChannelerSlabStageOneoffDungeonNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + STAGE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getStageId();
       hash = (37 * hash) + IS_DONE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsDone());
-      hash = (37 * hash) + STAGE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getStageId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -313,8 +313,8 @@ public final class ChannelerSlabStageOneoffDungeonNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8399
-     * Obf: AHAAPGGGCCK
+     * CmdId: 7389
+     * Obf: FAHPKGKLMJJ
      * </pre>
      *
      * Protobuf type {@code ChannelerSlabStageOneoffDungeonNotify}
@@ -354,9 +354,9 @@ public final class ChannelerSlabStageOneoffDungeonNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        isDone_ = false;
-
         stageId_ = 0;
+
+        isDone_ = false;
 
         return this;
       }
@@ -384,8 +384,8 @@ public final class ChannelerSlabStageOneoffDungeonNotifyOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.ChannelerSlabStageOneoffDungeonNotifyOuterClass.ChannelerSlabStageOneoffDungeonNotify buildPartial() {
         emu.grasscutter.net.proto.ChannelerSlabStageOneoffDungeonNotifyOuterClass.ChannelerSlabStageOneoffDungeonNotify result = new emu.grasscutter.net.proto.ChannelerSlabStageOneoffDungeonNotifyOuterClass.ChannelerSlabStageOneoffDungeonNotify(this);
-        result.isDone_ = isDone_;
         result.stageId_ = stageId_;
+        result.isDone_ = isDone_;
         onBuilt();
         return result;
       }
@@ -434,11 +434,11 @@ public final class ChannelerSlabStageOneoffDungeonNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.ChannelerSlabStageOneoffDungeonNotifyOuterClass.ChannelerSlabStageOneoffDungeonNotify other) {
         if (other == emu.grasscutter.net.proto.ChannelerSlabStageOneoffDungeonNotifyOuterClass.ChannelerSlabStageOneoffDungeonNotify.getDefaultInstance()) return this;
-        if (other.getIsDone() != false) {
-          setIsDone(other.getIsDone());
-        }
         if (other.getStageId() != 0) {
           setStageId(other.getStageId());
+        }
+        if (other.getIsDone() != false) {
+          setIsDone(other.getIsDone());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -469,40 +469,9 @@ public final class ChannelerSlabStageOneoffDungeonNotifyOuterClass {
         return this;
       }
 
-      private boolean isDone_ ;
-      /**
-       * <code>bool is_done = 4;</code>
-       * @return The isDone.
-       */
-      @java.lang.Override
-      public boolean getIsDone() {
-        return isDone_;
-      }
-      /**
-       * <code>bool is_done = 4;</code>
-       * @param value The isDone to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsDone(boolean value) {
-        
-        isDone_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_done = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsDone() {
-        
-        isDone_ = false;
-        onChanged();
-        return this;
-      }
-
       private int stageId_ ;
       /**
-       * <code>uint32 stage_id = 14;</code>
+       * <code>uint32 stage_id = 9;</code>
        * @return The stageId.
        */
       @java.lang.Override
@@ -510,7 +479,7 @@ public final class ChannelerSlabStageOneoffDungeonNotifyOuterClass {
         return stageId_;
       }
       /**
-       * <code>uint32 stage_id = 14;</code>
+       * <code>uint32 stage_id = 9;</code>
        * @param value The stageId to set.
        * @return This builder for chaining.
        */
@@ -521,12 +490,43 @@ public final class ChannelerSlabStageOneoffDungeonNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 stage_id = 14;</code>
+       * <code>uint32 stage_id = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearStageId() {
         
         stageId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean isDone_ ;
+      /**
+       * <code>bool is_done = 2;</code>
+       * @return The isDone.
+       */
+      @java.lang.Override
+      public boolean getIsDone() {
+        return isDone_;
+      }
+      /**
+       * <code>bool is_done = 2;</code>
+       * @param value The isDone to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsDone(boolean value) {
+        
+        isDone_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_done = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsDone() {
+        
+        isDone_ = false;
         onChanged();
         return this;
       }
@@ -599,8 +599,8 @@ public final class ChannelerSlabStageOneoffDungeonNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n+ChannelerSlabStageOneoffDungeonNotify." +
       "proto\"J\n%ChannelerSlabStageOneoffDungeon" +
-      "Notify\022\017\n\007is_done\030\004 \001(\010\022\020\n\010stage_id\030\016 \001(" +
-      "\rB\033\n\031emu.grasscutter.net.protob\006proto3"
+      "Notify\022\020\n\010stage_id\030\t \001(\r\022\017\n\007is_done\030\002 \001(" +
+      "\010B\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -611,7 +611,7 @@ public final class ChannelerSlabStageOneoffDungeonNotifyOuterClass {
     internal_static_ChannelerSlabStageOneoffDungeonNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ChannelerSlabStageOneoffDungeonNotify_descriptor,
-        new java.lang.String[] { "IsDone", "StageId", });
+        new java.lang.String[] { "StageId", "IsDone", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

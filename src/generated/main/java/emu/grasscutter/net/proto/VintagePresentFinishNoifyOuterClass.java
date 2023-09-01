@@ -19,15 +19,15 @@ public final class VintagePresentFinishNoifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 present_id = 14;</code>
+     * <code>uint32 present_id = 12;</code>
      * @return The presentId.
      */
     int getPresentId();
   }
   /**
    * <pre>
-   * CmdId: 23227
-   * Obf: AAJPNCAGJPI
+   * CmdId: 7068
+   * Obf: HPKLGLKHIJC
    * </pre>
    *
    * Protobuf type {@code VintagePresentFinishNoify}
@@ -74,7 +74,7 @@ public final class VintagePresentFinishNoifyOuterClass {
             case 0:
               done = true;
               break;
-            case 112: {
+            case 96: {
 
               presentId_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class VintagePresentFinishNoifyOuterClass {
               emu.grasscutter.net.proto.VintagePresentFinishNoifyOuterClass.VintagePresentFinishNoify.class, emu.grasscutter.net.proto.VintagePresentFinishNoifyOuterClass.VintagePresentFinishNoify.Builder.class);
     }
 
-    public static final int PRESENT_ID_FIELD_NUMBER = 14;
+    public static final int PRESENT_ID_FIELD_NUMBER = 12;
     private int presentId_;
     /**
-     * <code>uint32 present_id = 14;</code>
+     * <code>uint32 present_id = 12;</code>
      * @return The presentId.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class VintagePresentFinishNoifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (presentId_ != 0) {
-        output.writeUInt32(14, presentId_);
+        output.writeUInt32(12, presentId_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class VintagePresentFinishNoifyOuterClass {
       size = 0;
       if (presentId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, presentId_);
+          .computeUInt32Size(12, presentId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class VintagePresentFinishNoifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 23227
-     * Obf: AAJPNCAGJPI
+     * CmdId: 7068
+     * Obf: HPKLGLKHIJC
      * </pre>
      *
      * Protobuf type {@code VintagePresentFinishNoify}
@@ -431,7 +431,7 @@ public final class VintagePresentFinishNoifyOuterClass {
 
       private int presentId_ ;
       /**
-       * <code>uint32 present_id = 14;</code>
+       * <code>uint32 present_id = 12;</code>
        * @return The presentId.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class VintagePresentFinishNoifyOuterClass {
         return presentId_;
       }
       /**
-       * <code>uint32 present_id = 14;</code>
+       * <code>uint32 present_id = 12;</code>
        * @param value The presentId to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class VintagePresentFinishNoifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 present_id = 14;</code>
+       * <code>uint32 present_id = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearPresentId() {
@@ -527,7 +527,7 @@ public final class VintagePresentFinishNoifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\037VintagePresentFinishNoify.proto\"/\n\031Vin" +
-      "tagePresentFinishNoify\022\022\n\npresent_id\030\016 \001" +
+      "tagePresentFinishNoify\022\022\n\npresent_id\030\014 \001" +
       "(\rB\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

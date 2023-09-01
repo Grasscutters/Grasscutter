@@ -1,28 +1,22 @@
 package emu.grasscutter.command.commands;
 
-import static emu.grasscutter.GameConstants.*;
-import static emu.grasscutter.command.CommandHelpers.*;
-
-import emu.grasscutter.command.Command;
-import emu.grasscutter.command.CommandHandler;
-import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.GameDepot;
+import emu.grasscutter.command.*;
+import emu.grasscutter.data.*;
 import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.data.excels.avatar.AvatarData;
-import emu.grasscutter.data.excels.reliquary.ReliquaryAffixData;
-import emu.grasscutter.data.excels.reliquary.ReliquaryMainPropData;
+import emu.grasscutter.data.excels.reliquary.*;
 import emu.grasscutter.game.avatar.Avatar;
-import emu.grasscutter.game.inventory.GameItem;
-import emu.grasscutter.game.inventory.ItemType;
+import emu.grasscutter.game.inventory.*;
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.game.props.ActionReason;
-import emu.grasscutter.game.props.FightProperty;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import emu.grasscutter.game.props.*;
+import lombok.Setter;
+
+import java.util.*;
 import java.util.function.BiConsumer;
 import java.util.regex.Pattern;
-import lombok.Setter;
+
+import static emu.grasscutter.GameConstants.*;
+import static emu.grasscutter.command.CommandHelpers.*;
 
 @Command(
         label = "give",

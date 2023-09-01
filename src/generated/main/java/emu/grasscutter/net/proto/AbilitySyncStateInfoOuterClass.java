@@ -146,7 +146,7 @@ public final class AbilitySyncStateInfoOuterClass {
   }
   /**
    * <pre>
-   * Obf: LKMIECILJCL
+   * Obf: JDIFMANDKLC
    * </pre>
    *
    * Protobuf type {@code AbilitySyncStateInfo}
@@ -730,7 +730,7 @@ public final class AbilitySyncStateInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: LKMIECILJCL
+     * Obf: JDIFMANDKLC
      * </pre>
      *
      * Protobuf type {@code AbilitySyncStateInfo}

@@ -1,7 +1,7 @@
 package emu.grasscutter.game.dungeons.challenge;
 
-import emu.grasscutter.game.dungeons.enums.DungeonPassConditionType;
 import emu.grasscutter.game.dungeons.challenge.trigger.ChallengeTrigger;
+import emu.grasscutter.game.dungeons.enums.DungeonPassConditionType;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.scripts.data.SceneGroup;
 

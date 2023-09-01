@@ -19,15 +19,15 @@ public final class TakeEffigyRewardReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 reward_index = 9;</code>
+     * <code>uint32 reward_index = 2;</code>
      * @return The rewardIndex.
      */
     int getRewardIndex();
   }
   /**
    * <pre>
-   * CmdId: 2090
-   * Obf: PBCGIHFNCKC
+   * CmdId: 28268
+   * Obf: IEJENPJJIFF
    * </pre>
    *
    * Protobuf type {@code TakeEffigyRewardReq}
@@ -74,7 +74,7 @@ public final class TakeEffigyRewardReqOuterClass {
             case 0:
               done = true;
               break;
-            case 72: {
+            case 16: {
 
               rewardIndex_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class TakeEffigyRewardReqOuterClass {
               emu.grasscutter.net.proto.TakeEffigyRewardReqOuterClass.TakeEffigyRewardReq.class, emu.grasscutter.net.proto.TakeEffigyRewardReqOuterClass.TakeEffigyRewardReq.Builder.class);
     }
 
-    public static final int REWARD_INDEX_FIELD_NUMBER = 9;
+    public static final int REWARD_INDEX_FIELD_NUMBER = 2;
     private int rewardIndex_;
     /**
-     * <code>uint32 reward_index = 9;</code>
+     * <code>uint32 reward_index = 2;</code>
      * @return The rewardIndex.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class TakeEffigyRewardReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (rewardIndex_ != 0) {
-        output.writeUInt32(9, rewardIndex_);
+        output.writeUInt32(2, rewardIndex_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class TakeEffigyRewardReqOuterClass {
       size = 0;
       if (rewardIndex_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, rewardIndex_);
+          .computeUInt32Size(2, rewardIndex_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class TakeEffigyRewardReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2090
-     * Obf: PBCGIHFNCKC
+     * CmdId: 28268
+     * Obf: IEJENPJJIFF
      * </pre>
      *
      * Protobuf type {@code TakeEffigyRewardReq}
@@ -431,7 +431,7 @@ public final class TakeEffigyRewardReqOuterClass {
 
       private int rewardIndex_ ;
       /**
-       * <code>uint32 reward_index = 9;</code>
+       * <code>uint32 reward_index = 2;</code>
        * @return The rewardIndex.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class TakeEffigyRewardReqOuterClass {
         return rewardIndex_;
       }
       /**
-       * <code>uint32 reward_index = 9;</code>
+       * <code>uint32 reward_index = 2;</code>
        * @param value The rewardIndex to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class TakeEffigyRewardReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 reward_index = 9;</code>
+       * <code>uint32 reward_index = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearRewardIndex() {
@@ -527,7 +527,7 @@ public final class TakeEffigyRewardReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\031TakeEffigyRewardReq.proto\"+\n\023TakeEffig" +
-      "yRewardReq\022\024\n\014reward_index\030\t \001(\rB\033\n\031emu." +
+      "yRewardReq\022\024\n\014reward_index\030\002 \001(\rB\033\n\031emu." +
       "grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

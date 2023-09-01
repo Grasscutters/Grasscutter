@@ -19,27 +19,27 @@ public final class GadgetPlayDataNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 progress = 5;</code>
+     * <code>uint32 progress = 2;</code>
      * @return The progress.
      */
     int getProgress();
 
     /**
-     * <code>uint32 entity_id = 9;</code>
-     * @return The entityId.
-     */
-    int getEntityId();
-
-    /**
-     * <code>uint32 play_type = 7;</code>
+     * <code>uint32 play_type = 4;</code>
      * @return The playType.
      */
     int getPlayType();
+
+    /**
+     * <code>uint32 entity_id = 11;</code>
+     * @return The entityId.
+     */
+    int getEntityId();
   }
   /**
    * <pre>
-   * CmdId: 884
-   * Obf: LAALMJMDDMO
+   * CmdId: 29586
+   * Obf: IIHEOPMCIKE
    * </pre>
    *
    * Protobuf type {@code GadgetPlayDataNotify}
@@ -86,17 +86,17 @@ public final class GadgetPlayDataNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
+            case 16: {
 
               progress_ = input.readUInt32();
               break;
             }
-            case 56: {
+            case 32: {
 
               playType_ = input.readUInt32();
               break;
             }
-            case 72: {
+            case 88: {
 
               entityId_ = input.readUInt32();
               break;
@@ -133,10 +133,10 @@ public final class GadgetPlayDataNotifyOuterClass {
               emu.grasscutter.net.proto.GadgetPlayDataNotifyOuterClass.GadgetPlayDataNotify.class, emu.grasscutter.net.proto.GadgetPlayDataNotifyOuterClass.GadgetPlayDataNotify.Builder.class);
     }
 
-    public static final int PROGRESS_FIELD_NUMBER = 5;
+    public static final int PROGRESS_FIELD_NUMBER = 2;
     private int progress_;
     /**
-     * <code>uint32 progress = 5;</code>
+     * <code>uint32 progress = 2;</code>
      * @return The progress.
      */
     @java.lang.Override
@@ -144,26 +144,26 @@ public final class GadgetPlayDataNotifyOuterClass {
       return progress_;
     }
 
-    public static final int ENTITY_ID_FIELD_NUMBER = 9;
-    private int entityId_;
-    /**
-     * <code>uint32 entity_id = 9;</code>
-     * @return The entityId.
-     */
-    @java.lang.Override
-    public int getEntityId() {
-      return entityId_;
-    }
-
-    public static final int PLAY_TYPE_FIELD_NUMBER = 7;
+    public static final int PLAY_TYPE_FIELD_NUMBER = 4;
     private int playType_;
     /**
-     * <code>uint32 play_type = 7;</code>
+     * <code>uint32 play_type = 4;</code>
      * @return The playType.
      */
     @java.lang.Override
     public int getPlayType() {
       return playType_;
+    }
+
+    public static final int ENTITY_ID_FIELD_NUMBER = 11;
+    private int entityId_;
+    /**
+     * <code>uint32 entity_id = 11;</code>
+     * @return The entityId.
+     */
+    @java.lang.Override
+    public int getEntityId() {
+      return entityId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -181,13 +181,13 @@ public final class GadgetPlayDataNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (progress_ != 0) {
-        output.writeUInt32(5, progress_);
+        output.writeUInt32(2, progress_);
       }
       if (playType_ != 0) {
-        output.writeUInt32(7, playType_);
+        output.writeUInt32(4, playType_);
       }
       if (entityId_ != 0) {
-        output.writeUInt32(9, entityId_);
+        output.writeUInt32(11, entityId_);
       }
       unknownFields.writeTo(output);
     }
@@ -200,15 +200,15 @@ public final class GadgetPlayDataNotifyOuterClass {
       size = 0;
       if (progress_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, progress_);
+          .computeUInt32Size(2, progress_);
       }
       if (playType_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, playType_);
+          .computeUInt32Size(4, playType_);
       }
       if (entityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, entityId_);
+          .computeUInt32Size(11, entityId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -227,10 +227,10 @@ public final class GadgetPlayDataNotifyOuterClass {
 
       if (getProgress()
           != other.getProgress()) return false;
-      if (getEntityId()
-          != other.getEntityId()) return false;
       if (getPlayType()
           != other.getPlayType()) return false;
+      if (getEntityId()
+          != other.getEntityId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -244,10 +244,10 @@ public final class GadgetPlayDataNotifyOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + PROGRESS_FIELD_NUMBER;
       hash = (53 * hash) + getProgress();
-      hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getEntityId();
       hash = (37 * hash) + PLAY_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getPlayType();
+      hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getEntityId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -345,8 +345,8 @@ public final class GadgetPlayDataNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 884
-     * Obf: LAALMJMDDMO
+     * CmdId: 29586
+     * Obf: IIHEOPMCIKE
      * </pre>
      *
      * Protobuf type {@code GadgetPlayDataNotify}
@@ -388,9 +388,9 @@ public final class GadgetPlayDataNotifyOuterClass {
         super.clear();
         progress_ = 0;
 
-        entityId_ = 0;
-
         playType_ = 0;
+
+        entityId_ = 0;
 
         return this;
       }
@@ -419,8 +419,8 @@ public final class GadgetPlayDataNotifyOuterClass {
       public emu.grasscutter.net.proto.GadgetPlayDataNotifyOuterClass.GadgetPlayDataNotify buildPartial() {
         emu.grasscutter.net.proto.GadgetPlayDataNotifyOuterClass.GadgetPlayDataNotify result = new emu.grasscutter.net.proto.GadgetPlayDataNotifyOuterClass.GadgetPlayDataNotify(this);
         result.progress_ = progress_;
-        result.entityId_ = entityId_;
         result.playType_ = playType_;
+        result.entityId_ = entityId_;
         onBuilt();
         return result;
       }
@@ -472,11 +472,11 @@ public final class GadgetPlayDataNotifyOuterClass {
         if (other.getProgress() != 0) {
           setProgress(other.getProgress());
         }
-        if (other.getEntityId() != 0) {
-          setEntityId(other.getEntityId());
-        }
         if (other.getPlayType() != 0) {
           setPlayType(other.getPlayType());
+        }
+        if (other.getEntityId() != 0) {
+          setEntityId(other.getEntityId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -509,7 +509,7 @@ public final class GadgetPlayDataNotifyOuterClass {
 
       private int progress_ ;
       /**
-       * <code>uint32 progress = 5;</code>
+       * <code>uint32 progress = 2;</code>
        * @return The progress.
        */
       @java.lang.Override
@@ -517,7 +517,7 @@ public final class GadgetPlayDataNotifyOuterClass {
         return progress_;
       }
       /**
-       * <code>uint32 progress = 5;</code>
+       * <code>uint32 progress = 2;</code>
        * @param value The progress to set.
        * @return This builder for chaining.
        */
@@ -528,7 +528,7 @@ public final class GadgetPlayDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 progress = 5;</code>
+       * <code>uint32 progress = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearProgress() {
@@ -538,40 +538,9 @@ public final class GadgetPlayDataNotifyOuterClass {
         return this;
       }
 
-      private int entityId_ ;
-      /**
-       * <code>uint32 entity_id = 9;</code>
-       * @return The entityId.
-       */
-      @java.lang.Override
-      public int getEntityId() {
-        return entityId_;
-      }
-      /**
-       * <code>uint32 entity_id = 9;</code>
-       * @param value The entityId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEntityId(int value) {
-        
-        entityId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 entity_id = 9;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEntityId() {
-        
-        entityId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int playType_ ;
       /**
-       * <code>uint32 play_type = 7;</code>
+       * <code>uint32 play_type = 4;</code>
        * @return The playType.
        */
       @java.lang.Override
@@ -579,7 +548,7 @@ public final class GadgetPlayDataNotifyOuterClass {
         return playType_;
       }
       /**
-       * <code>uint32 play_type = 7;</code>
+       * <code>uint32 play_type = 4;</code>
        * @param value The playType to set.
        * @return This builder for chaining.
        */
@@ -590,12 +559,43 @@ public final class GadgetPlayDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 play_type = 7;</code>
+       * <code>uint32 play_type = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearPlayType() {
         
         playType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int entityId_ ;
+      /**
+       * <code>uint32 entity_id = 11;</code>
+       * @return The entityId.
+       */
+      @java.lang.Override
+      public int getEntityId() {
+        return entityId_;
+      }
+      /**
+       * <code>uint32 entity_id = 11;</code>
+       * @param value The entityId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEntityId(int value) {
+        
+        entityId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 entity_id = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEntityId() {
+        
+        entityId_ = 0;
         onChanged();
         return this;
       }
@@ -667,8 +667,8 @@ public final class GadgetPlayDataNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\032GadgetPlayDataNotify.proto\"N\n\024GadgetPl" +
-      "ayDataNotify\022\020\n\010progress\030\005 \001(\r\022\021\n\tentity" +
-      "_id\030\t \001(\r\022\021\n\tplay_type\030\007 \001(\rB\033\n\031emu.gras" +
+      "ayDataNotify\022\020\n\010progress\030\002 \001(\r\022\021\n\tplay_t" +
+      "ype\030\004 \001(\r\022\021\n\tentity_id\030\013 \001(\rB\033\n\031emu.gras" +
       "scutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -680,7 +680,7 @@ public final class GadgetPlayDataNotifyOuterClass {
     internal_static_GadgetPlayDataNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GadgetPlayDataNotify_descriptor,
-        new java.lang.String[] { "Progress", "EntityId", "PlayType", });
+        new java.lang.String[] { "Progress", "PlayType", "EntityId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

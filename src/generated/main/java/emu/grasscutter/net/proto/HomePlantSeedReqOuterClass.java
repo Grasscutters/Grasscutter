@@ -19,38 +19,38 @@ public final class HomePlantSeedReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 seed_id_list = 7;</code>
+     * <code>repeated uint32 seed_id_list = 4;</code>
      * @return A list containing the seedIdList.
      */
     java.util.List<java.lang.Integer> getSeedIdListList();
     /**
-     * <code>repeated uint32 seed_id_list = 7;</code>
+     * <code>repeated uint32 seed_id_list = 4;</code>
      * @return The count of seedIdList.
      */
     int getSeedIdListCount();
     /**
-     * <code>repeated uint32 seed_id_list = 7;</code>
+     * <code>repeated uint32 seed_id_list = 4;</code>
      * @param index The index of the element to return.
      * @return The seedIdList at the given index.
      */
     int getSeedIdList(int index);
 
     /**
-     * <code>uint32 field_guid = 6;</code>
-     * @return The fieldGuid.
-     */
-    int getFieldGuid();
-
-    /**
-     * <code>uint32 index = 10;</code>
+     * <code>uint32 index = 12;</code>
      * @return The index.
      */
     int getIndex();
+
+    /**
+     * <code>uint32 field_guid = 10;</code>
+     * @return The fieldGuid.
+     */
+    int getFieldGuid();
   }
   /**
    * <pre>
-   * CmdId: 4578
-   * Obf: LNJFLEBKHEP
+   * CmdId: 20675
+   * Obf: ICKLAFNIFMO
    * </pre>
    *
    * Protobuf type {@code HomePlantSeedReq}
@@ -99,12 +99,7 @@ public final class HomePlantSeedReqOuterClass {
             case 0:
               done = true;
               break;
-            case 48: {
-
-              fieldGuid_ = input.readUInt32();
-              break;
-            }
-            case 56: {
+            case 32: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 seedIdList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -112,7 +107,7 @@ public final class HomePlantSeedReqOuterClass {
               seedIdList_.addInt(input.readUInt32());
               break;
             }
-            case 58: {
+            case 34: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -126,6 +121,11 @@ public final class HomePlantSeedReqOuterClass {
               break;
             }
             case 80: {
+
+              fieldGuid_ = input.readUInt32();
+              break;
+            }
+            case 96: {
 
               index_ = input.readUInt32();
               break;
@@ -165,10 +165,10 @@ public final class HomePlantSeedReqOuterClass {
               emu.grasscutter.net.proto.HomePlantSeedReqOuterClass.HomePlantSeedReq.class, emu.grasscutter.net.proto.HomePlantSeedReqOuterClass.HomePlantSeedReq.Builder.class);
     }
 
-    public static final int SEED_ID_LIST_FIELD_NUMBER = 7;
+    public static final int SEED_ID_LIST_FIELD_NUMBER = 4;
     private com.google.protobuf.Internal.IntList seedIdList_;
     /**
-     * <code>repeated uint32 seed_id_list = 7;</code>
+     * <code>repeated uint32 seed_id_list = 4;</code>
      * @return A list containing the seedIdList.
      */
     @java.lang.Override
@@ -177,14 +177,14 @@ public final class HomePlantSeedReqOuterClass {
       return seedIdList_;
     }
     /**
-     * <code>repeated uint32 seed_id_list = 7;</code>
+     * <code>repeated uint32 seed_id_list = 4;</code>
      * @return The count of seedIdList.
      */
     public int getSeedIdListCount() {
       return seedIdList_.size();
     }
     /**
-     * <code>repeated uint32 seed_id_list = 7;</code>
+     * <code>repeated uint32 seed_id_list = 4;</code>
      * @param index The index of the element to return.
      * @return The seedIdList at the given index.
      */
@@ -193,26 +193,26 @@ public final class HomePlantSeedReqOuterClass {
     }
     private int seedIdListMemoizedSerializedSize = -1;
 
-    public static final int FIELD_GUID_FIELD_NUMBER = 6;
-    private int fieldGuid_;
-    /**
-     * <code>uint32 field_guid = 6;</code>
-     * @return The fieldGuid.
-     */
-    @java.lang.Override
-    public int getFieldGuid() {
-      return fieldGuid_;
-    }
-
-    public static final int INDEX_FIELD_NUMBER = 10;
+    public static final int INDEX_FIELD_NUMBER = 12;
     private int index_;
     /**
-     * <code>uint32 index = 10;</code>
+     * <code>uint32 index = 12;</code>
      * @return The index.
      */
     @java.lang.Override
     public int getIndex() {
       return index_;
+    }
+
+    public static final int FIELD_GUID_FIELD_NUMBER = 10;
+    private int fieldGuid_;
+    /**
+     * <code>uint32 field_guid = 10;</code>
+     * @return The fieldGuid.
+     */
+    @java.lang.Override
+    public int getFieldGuid() {
+      return fieldGuid_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -230,18 +230,18 @@ public final class HomePlantSeedReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (fieldGuid_ != 0) {
-        output.writeUInt32(6, fieldGuid_);
-      }
       if (getSeedIdListList().size() > 0) {
-        output.writeUInt32NoTag(58);
+        output.writeUInt32NoTag(34);
         output.writeUInt32NoTag(seedIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < seedIdList_.size(); i++) {
         output.writeUInt32NoTag(seedIdList_.getInt(i));
       }
+      if (fieldGuid_ != 0) {
+        output.writeUInt32(10, fieldGuid_);
+      }
       if (index_ != 0) {
-        output.writeUInt32(10, index_);
+        output.writeUInt32(12, index_);
       }
       unknownFields.writeTo(output);
     }
@@ -252,10 +252,6 @@ public final class HomePlantSeedReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (fieldGuid_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, fieldGuid_);
-      }
       {
         int dataSize = 0;
         for (int i = 0; i < seedIdList_.size(); i++) {
@@ -270,9 +266,13 @@ public final class HomePlantSeedReqOuterClass {
         }
         seedIdListMemoizedSerializedSize = dataSize;
       }
+      if (fieldGuid_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(10, fieldGuid_);
+      }
       if (index_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, index_);
+          .computeUInt32Size(12, index_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -291,10 +291,10 @@ public final class HomePlantSeedReqOuterClass {
 
       if (!getSeedIdListList()
           .equals(other.getSeedIdListList())) return false;
-      if (getFieldGuid()
-          != other.getFieldGuid()) return false;
       if (getIndex()
           != other.getIndex()) return false;
+      if (getFieldGuid()
+          != other.getFieldGuid()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -310,10 +310,10 @@ public final class HomePlantSeedReqOuterClass {
         hash = (37 * hash) + SEED_ID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getSeedIdListList().hashCode();
       }
-      hash = (37 * hash) + FIELD_GUID_FIELD_NUMBER;
-      hash = (53 * hash) + getFieldGuid();
       hash = (37 * hash) + INDEX_FIELD_NUMBER;
       hash = (53 * hash) + getIndex();
+      hash = (37 * hash) + FIELD_GUID_FIELD_NUMBER;
+      hash = (53 * hash) + getFieldGuid();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -411,8 +411,8 @@ public final class HomePlantSeedReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4578
-     * Obf: LNJFLEBKHEP
+     * CmdId: 20675
+     * Obf: ICKLAFNIFMO
      * </pre>
      *
      * Protobuf type {@code HomePlantSeedReq}
@@ -454,9 +454,9 @@ public final class HomePlantSeedReqOuterClass {
         super.clear();
         seedIdList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
-        fieldGuid_ = 0;
-
         index_ = 0;
+
+        fieldGuid_ = 0;
 
         return this;
       }
@@ -490,8 +490,8 @@ public final class HomePlantSeedReqOuterClass {
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.seedIdList_ = seedIdList_;
-        result.fieldGuid_ = fieldGuid_;
         result.index_ = index_;
+        result.fieldGuid_ = fieldGuid_;
         onBuilt();
         return result;
       }
@@ -550,11 +550,11 @@ public final class HomePlantSeedReqOuterClass {
           }
           onChanged();
         }
-        if (other.getFieldGuid() != 0) {
-          setFieldGuid(other.getFieldGuid());
-        }
         if (other.getIndex() != 0) {
           setIndex(other.getIndex());
+        }
+        if (other.getFieldGuid() != 0) {
+          setFieldGuid(other.getFieldGuid());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -594,7 +594,7 @@ public final class HomePlantSeedReqOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 seed_id_list = 7;</code>
+       * <code>repeated uint32 seed_id_list = 4;</code>
        * @return A list containing the seedIdList.
        */
       public java.util.List<java.lang.Integer>
@@ -603,14 +603,14 @@ public final class HomePlantSeedReqOuterClass {
                  java.util.Collections.unmodifiableList(seedIdList_) : seedIdList_;
       }
       /**
-       * <code>repeated uint32 seed_id_list = 7;</code>
+       * <code>repeated uint32 seed_id_list = 4;</code>
        * @return The count of seedIdList.
        */
       public int getSeedIdListCount() {
         return seedIdList_.size();
       }
       /**
-       * <code>repeated uint32 seed_id_list = 7;</code>
+       * <code>repeated uint32 seed_id_list = 4;</code>
        * @param index The index of the element to return.
        * @return The seedIdList at the given index.
        */
@@ -618,7 +618,7 @@ public final class HomePlantSeedReqOuterClass {
         return seedIdList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 seed_id_list = 7;</code>
+       * <code>repeated uint32 seed_id_list = 4;</code>
        * @param index The index to set the value at.
        * @param value The seedIdList to set.
        * @return This builder for chaining.
@@ -631,7 +631,7 @@ public final class HomePlantSeedReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 seed_id_list = 7;</code>
+       * <code>repeated uint32 seed_id_list = 4;</code>
        * @param value The seedIdList to add.
        * @return This builder for chaining.
        */
@@ -642,7 +642,7 @@ public final class HomePlantSeedReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 seed_id_list = 7;</code>
+       * <code>repeated uint32 seed_id_list = 4;</code>
        * @param values The seedIdList to add.
        * @return This builder for chaining.
        */
@@ -655,7 +655,7 @@ public final class HomePlantSeedReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 seed_id_list = 7;</code>
+       * <code>repeated uint32 seed_id_list = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearSeedIdList() {
@@ -665,40 +665,9 @@ public final class HomePlantSeedReqOuterClass {
         return this;
       }
 
-      private int fieldGuid_ ;
-      /**
-       * <code>uint32 field_guid = 6;</code>
-       * @return The fieldGuid.
-       */
-      @java.lang.Override
-      public int getFieldGuid() {
-        return fieldGuid_;
-      }
-      /**
-       * <code>uint32 field_guid = 6;</code>
-       * @param value The fieldGuid to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFieldGuid(int value) {
-        
-        fieldGuid_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 field_guid = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearFieldGuid() {
-        
-        fieldGuid_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int index_ ;
       /**
-       * <code>uint32 index = 10;</code>
+       * <code>uint32 index = 12;</code>
        * @return The index.
        */
       @java.lang.Override
@@ -706,7 +675,7 @@ public final class HomePlantSeedReqOuterClass {
         return index_;
       }
       /**
-       * <code>uint32 index = 10;</code>
+       * <code>uint32 index = 12;</code>
        * @param value The index to set.
        * @return This builder for chaining.
        */
@@ -717,12 +686,43 @@ public final class HomePlantSeedReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 index = 10;</code>
+       * <code>uint32 index = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearIndex() {
         
         index_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int fieldGuid_ ;
+      /**
+       * <code>uint32 field_guid = 10;</code>
+       * @return The fieldGuid.
+       */
+      @java.lang.Override
+      public int getFieldGuid() {
+        return fieldGuid_;
+      }
+      /**
+       * <code>uint32 field_guid = 10;</code>
+       * @param value The fieldGuid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFieldGuid(int value) {
+        
+        fieldGuid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 field_guid = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFieldGuid() {
+        
+        fieldGuid_ = 0;
         onChanged();
         return this;
       }
@@ -794,8 +794,8 @@ public final class HomePlantSeedReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\026HomePlantSeedReq.proto\"K\n\020HomePlantSee" +
-      "dReq\022\024\n\014seed_id_list\030\007 \003(\r\022\022\n\nfield_guid" +
-      "\030\006 \001(\r\022\r\n\005index\030\n \001(\rB\033\n\031emu.grasscutter" +
+      "dReq\022\024\n\014seed_id_list\030\004 \003(\r\022\r\n\005index\030\014 \001(" +
+      "\r\022\022\n\nfield_guid\030\n \001(\rB\033\n\031emu.grasscutter" +
       ".net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -807,7 +807,7 @@ public final class HomePlantSeedReqOuterClass {
     internal_static_HomePlantSeedReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_HomePlantSeedReq_descriptor,
-        new java.lang.String[] { "SeedIdList", "FieldGuid", "Index", });
+        new java.lang.String[] { "SeedIdList", "Index", "FieldGuid", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

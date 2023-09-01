@@ -55,7 +55,7 @@ public final class AvatarExpeditionInfoOuterClass {
   }
   /**
    * <pre>
-   * Obf: DPCLGNACIJE
+   * Obf: MBBNGLKDKFD
    * </pre>
    *
    * Protobuf type {@code AvatarExpeditionInfo}
@@ -426,7 +426,7 @@ public final class AvatarExpeditionInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: DPCLGNACIJE
+     * Obf: MBBNGLKDKFD
      * </pre>
      *
      * Protobuf type {@code AvatarExpeditionInfo}

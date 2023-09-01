@@ -1,7 +1,6 @@
 package emu.grasscutter.game.inventory;
 
-import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+import it.unimi.dsi.fastutil.ints.*;
 import lombok.val;
 
 public class MaterialInventoryTab implements InventoryTab {

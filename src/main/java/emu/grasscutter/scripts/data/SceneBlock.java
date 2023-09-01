@@ -1,19 +1,15 @@
 package emu.grasscutter.scripts.data;
 
 import com.github.davidmoten.rtreemulti.RTree;
-import com.github.davidmoten.rtreemulti.geometry.Geometry;
-import com.github.davidmoten.rtreemulti.geometry.Rectangle;
+import com.github.davidmoten.rtreemulti.geometry.*;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.world.Position;
-import emu.grasscutter.scripts.SceneIndexManager;
-import emu.grasscutter.scripts.ScriptLoader;
+import emu.grasscutter.scripts.*;
+import lombok.*;
+
+import javax.script.*;
 import java.util.Map;
 import java.util.stream.Collectors;
-import javax.script.Bindings;
-import javax.script.CompiledScript;
-import javax.script.ScriptException;
-import lombok.Setter;
-import lombok.ToString;
 
 @ToString
 @Setter
@@ -61,7 +57,7 @@ public class SceneBlock {
 
         // Eval script
         try {
-            cs.eval(bindings);
+            ScriptLoader.eval(cs, bindings);
 
             // Set groups
             this.groups =

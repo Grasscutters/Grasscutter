@@ -19,21 +19,21 @@ public final class StartRogueDiaryPlayReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 difficulty = 6;</code>
+     * <code>uint32 difficulty = 4;</code>
      * @return The difficulty.
      */
     int getDifficulty();
 
     /**
-     * <code>uint32 stage_id = 12;</code>
+     * <code>uint32 stage_id = 10;</code>
      * @return The stageId.
      */
     int getStageId();
   }
   /**
    * <pre>
-   * CmdId: 8254
-   * Obf: PPCGLLKDMIC
+   * CmdId: 29988
+   * Obf: LCFLBJAGLAO
    * </pre>
    *
    * Protobuf type {@code StartRogueDiaryPlayReq}
@@ -80,12 +80,12 @@ public final class StartRogueDiaryPlayReqOuterClass {
             case 0:
               done = true;
               break;
-            case 48: {
+            case 32: {
 
               difficulty_ = input.readUInt32();
               break;
             }
-            case 96: {
+            case 80: {
 
               stageId_ = input.readUInt32();
               break;
@@ -122,10 +122,10 @@ public final class StartRogueDiaryPlayReqOuterClass {
               emu.grasscutter.net.proto.StartRogueDiaryPlayReqOuterClass.StartRogueDiaryPlayReq.class, emu.grasscutter.net.proto.StartRogueDiaryPlayReqOuterClass.StartRogueDiaryPlayReq.Builder.class);
     }
 
-    public static final int DIFFICULTY_FIELD_NUMBER = 6;
+    public static final int DIFFICULTY_FIELD_NUMBER = 4;
     private int difficulty_;
     /**
-     * <code>uint32 difficulty = 6;</code>
+     * <code>uint32 difficulty = 4;</code>
      * @return The difficulty.
      */
     @java.lang.Override
@@ -133,10 +133,10 @@ public final class StartRogueDiaryPlayReqOuterClass {
       return difficulty_;
     }
 
-    public static final int STAGE_ID_FIELD_NUMBER = 12;
+    public static final int STAGE_ID_FIELD_NUMBER = 10;
     private int stageId_;
     /**
-     * <code>uint32 stage_id = 12;</code>
+     * <code>uint32 stage_id = 10;</code>
      * @return The stageId.
      */
     @java.lang.Override
@@ -159,10 +159,10 @@ public final class StartRogueDiaryPlayReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (difficulty_ != 0) {
-        output.writeUInt32(6, difficulty_);
+        output.writeUInt32(4, difficulty_);
       }
       if (stageId_ != 0) {
-        output.writeUInt32(12, stageId_);
+        output.writeUInt32(10, stageId_);
       }
       unknownFields.writeTo(output);
     }
@@ -175,11 +175,11 @@ public final class StartRogueDiaryPlayReqOuterClass {
       size = 0;
       if (difficulty_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, difficulty_);
+          .computeUInt32Size(4, difficulty_);
       }
       if (stageId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, stageId_);
+          .computeUInt32Size(10, stageId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -312,8 +312,8 @@ public final class StartRogueDiaryPlayReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8254
-     * Obf: PPCGLLKDMIC
+     * CmdId: 29988
+     * Obf: LCFLBJAGLAO
      * </pre>
      *
      * Protobuf type {@code StartRogueDiaryPlayReq}
@@ -470,7 +470,7 @@ public final class StartRogueDiaryPlayReqOuterClass {
 
       private int difficulty_ ;
       /**
-       * <code>uint32 difficulty = 6;</code>
+       * <code>uint32 difficulty = 4;</code>
        * @return The difficulty.
        */
       @java.lang.Override
@@ -478,7 +478,7 @@ public final class StartRogueDiaryPlayReqOuterClass {
         return difficulty_;
       }
       /**
-       * <code>uint32 difficulty = 6;</code>
+       * <code>uint32 difficulty = 4;</code>
        * @param value The difficulty to set.
        * @return This builder for chaining.
        */
@@ -489,7 +489,7 @@ public final class StartRogueDiaryPlayReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 difficulty = 6;</code>
+       * <code>uint32 difficulty = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearDifficulty() {
@@ -501,7 +501,7 @@ public final class StartRogueDiaryPlayReqOuterClass {
 
       private int stageId_ ;
       /**
-       * <code>uint32 stage_id = 12;</code>
+       * <code>uint32 stage_id = 10;</code>
        * @return The stageId.
        */
       @java.lang.Override
@@ -509,7 +509,7 @@ public final class StartRogueDiaryPlayReqOuterClass {
         return stageId_;
       }
       /**
-       * <code>uint32 stage_id = 12;</code>
+       * <code>uint32 stage_id = 10;</code>
        * @param value The stageId to set.
        * @return This builder for chaining.
        */
@@ -520,7 +520,7 @@ public final class StartRogueDiaryPlayReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 stage_id = 12;</code>
+       * <code>uint32 stage_id = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearStageId() {
@@ -597,8 +597,8 @@ public final class StartRogueDiaryPlayReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\034StartRogueDiaryPlayReq.proto\">\n\026StartR" +
-      "ogueDiaryPlayReq\022\022\n\ndifficulty\030\006 \001(\r\022\020\n\010" +
-      "stage_id\030\014 \001(\rB\033\n\031emu.grasscutter.net.pr" +
+      "ogueDiaryPlayReq\022\022\n\ndifficulty\030\004 \001(\r\022\020\n\010" +
+      "stage_id\030\n \001(\rB\033\n\031emu.grasscutter.net.pr" +
       "otob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

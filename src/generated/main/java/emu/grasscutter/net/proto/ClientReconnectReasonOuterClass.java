@@ -16,7 +16,7 @@ public final class ClientReconnectReasonOuterClass {
   }
   /**
    * <pre>
-   * Obf: DAFLDPNBLMC
+   * Obf: BKNDPKGIHLP
    * </pre>
    *
    * Protobuf enum {@code ClientReconnectReason}

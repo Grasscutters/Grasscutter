@@ -20,8 +20,8 @@ public final class SignInInfoReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 2502
-   * Obf: GEOAIECJEOJ
+   * CmdId: 1091
+   * Obf: LEEKMMIELMG
    * </pre>
    *
    * Protobuf type {@code SignInInfoReq}
@@ -246,8 +246,8 @@ public final class SignInInfoReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2502
-     * Obf: GEOAIECJEOJ
+     * CmdId: 1091
+     * Obf: LEEKMMIELMG
      * </pre>
      *
      * Protobuf type {@code SignInInfoReq}

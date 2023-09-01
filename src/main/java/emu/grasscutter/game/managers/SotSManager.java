@@ -3,26 +3,18 @@ package emu.grasscutter.game.managers;
 import ch.qos.logback.classic.Logger;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.excels.CityData;
-import emu.grasscutter.data.excels.RewardData;
+import emu.grasscutter.data.excels.*;
 import emu.grasscutter.game.city.CityInfoData;
 import emu.grasscutter.game.entity.EntityAvatar;
-import emu.grasscutter.game.player.BasePlayerManager;
-import emu.grasscutter.game.player.Player;
-import emu.grasscutter.game.props.ActionReason;
-import emu.grasscutter.game.props.FightProperty;
-import emu.grasscutter.game.props.PlayerProperty;
+import emu.grasscutter.game.player.*;
+import emu.grasscutter.game.props.*;
 import emu.grasscutter.game.quest.enums.QuestContent;
 import emu.grasscutter.net.proto.ChangeHpReasonOuterClass.ChangeHpReason;
 import emu.grasscutter.net.proto.PropChangeReasonOuterClass.PropChangeReason;
-import emu.grasscutter.server.packet.send.PacketEntityFightPropChangeReasonNotify;
-import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
-import emu.grasscutter.server.packet.send.PacketLevelupCityRsp;
-import emu.grasscutter.server.packet.send.PacketSceneForceUnlockNotify;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Timer;
-import java.util.TimerTask;
+import emu.grasscutter.server.event.player.PlayerLevelStatueEvent;
+import emu.grasscutter.server.packet.send.*;
+
+import java.util.*;
 
 // Statue of the Seven Manager
 public class SotSManager extends BasePlayerManager {
@@ -303,5 +295,8 @@ public class SotSManager extends BasePlayerManager {
         player.sendPacket(
                 new PacketLevelupCityRsp(
                         sceneId, cityInfo.getLevel(), cityId, cityInfo.getNumCrystal(), areaId, 0));
+
+        // Call PlayerLevelStatueEvent.
+        new PlayerLevelStatueEvent(this.getPlayer(), cityInfo, sceneId, areaId);
     }
 }

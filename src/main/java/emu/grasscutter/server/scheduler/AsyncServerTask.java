@@ -1,7 +1,8 @@
 package emu.grasscutter.server.scheduler;
 
-import javax.annotation.Nullable;
 import lombok.Getter;
+
+import javax.annotation.Nullable;
 
 /** A server task that should be run asynchronously. */
 public final class AsyncServerTask implements Runnable {

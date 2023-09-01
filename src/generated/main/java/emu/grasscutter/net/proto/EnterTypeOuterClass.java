@@ -16,7 +16,7 @@ public final class EnterTypeOuterClass {
   }
   /**
    * <pre>
-   * Obf: JFDPPEKABPL
+   * Obf: NMCABLGJJEK
    * </pre>
    *
    * Protobuf enum {@code EnterType}
@@ -71,6 +71,10 @@ public final class EnterTypeOuterClass {
      * <code>ENTER_TYPE_GOTO_RECREATE = 11;</code>
      */
     ENTER_TYPE_GOTO_RECREATE(11),
+    /**
+     * <code>ENTER_TYPE_GOTO_BY_TPL = 12;</code>
+     */
+    ENTER_TYPE_GOTO_BY_TPL(12),
     UNRECOGNIZED(-1),
     ;
 
@@ -122,6 +126,10 @@ public final class EnterTypeOuterClass {
      * <code>ENTER_TYPE_GOTO_RECREATE = 11;</code>
      */
     public static final int ENTER_TYPE_GOTO_RECREATE_VALUE = 11;
+    /**
+     * <code>ENTER_TYPE_GOTO_BY_TPL = 12;</code>
+     */
+    public static final int ENTER_TYPE_GOTO_BY_TPL_VALUE = 12;
 
 
     public final int getNumber() {
@@ -160,6 +168,7 @@ public final class EnterTypeOuterClass {
         case 9: return ENTER_TYPE_SELF_HOME;
         case 10: return ENTER_TYPE_OTHER_HOME;
         case 11: return ENTER_TYPE_GOTO_RECREATE;
+        case 12: return ENTER_TYPE_GOTO_BY_TPL;
         default: return null;
       }
     }
@@ -225,7 +234,7 @@ public final class EnterTypeOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\017EnterType.proto*\263\002\n\tEnterType\022\023\n\017ENTER" +
+      "\n\017EnterType.proto*\317\002\n\tEnterType\022\023\n\017ENTER" +
       "_TYPE_NONE\020\000\022\023\n\017ENTER_TYPE_SELF\020\001\022\023\n\017ENT" +
       "ER_TYPE_GOTO\020\002\022\023\n\017ENTER_TYPE_JUMP\020\003\022\024\n\020E" +
       "NTER_TYPE_OTHER\020\004\022\023\n\017ENTER_TYPE_BACK\020\005\022\026" +
@@ -233,8 +242,8 @@ public final class EnterTypeOuterClass {
       "GEON_REPLAY\020\007\022\035\n\031ENTER_TYPE_GOTO_BY_PORT" +
       "AL\020\010\022\030\n\024ENTER_TYPE_SELF_HOME\020\t\022\031\n\025ENTER_" +
       "TYPE_OTHER_HOME\020\n\022\034\n\030ENTER_TYPE_GOTO_REC" +
-      "REATE\020\013B\033\n\031emu.grasscutter.net.protob\006pr" +
-      "oto3"
+      "REATE\020\013\022\032\n\026ENTER_TYPE_GOTO_BY_TPL\020\014B\033\n\031e" +
+      "mu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

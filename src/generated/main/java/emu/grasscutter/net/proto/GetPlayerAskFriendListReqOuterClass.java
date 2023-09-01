@@ -20,8 +20,8 @@ public final class GetPlayerAskFriendListReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 4070
-   * Obf: MEEGKFLOAKG
+   * CmdId: 3520
+   * Obf: FHNBEAINLJA
    * </pre>
    *
    * Protobuf type {@code GetPlayerAskFriendListReq}
@@ -246,8 +246,8 @@ public final class GetPlayerAskFriendListReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4070
-     * Obf: MEEGKFLOAKG
+     * CmdId: 3520
+     * Obf: FHNBEAINLJA
      * </pre>
      *
      * Protobuf type {@code GetPlayerAskFriendListReq}

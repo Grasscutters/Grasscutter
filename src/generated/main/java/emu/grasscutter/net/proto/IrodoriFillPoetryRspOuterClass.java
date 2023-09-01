@@ -19,30 +19,30 @@ public final class IrodoriFillPoetryRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 14;</code>
+     * <code>int32 retcode = 2;</code>
      * @return The retcode.
      */
     int getRetcode();
 
     /**
-     * <code>.IrodoriPoetryThemeData theme_data = 8;</code>
+     * <code>.IrodoriPoetryThemeData theme_data = 13;</code>
      * @return Whether the themeData field is set.
      */
     boolean hasThemeData();
     /**
-     * <code>.IrodoriPoetryThemeData theme_data = 8;</code>
+     * <code>.IrodoriPoetryThemeData theme_data = 13;</code>
      * @return The themeData.
      */
     emu.grasscutter.net.proto.IrodoriPoetryThemeDataOuterClass.IrodoriPoetryThemeData getThemeData();
     /**
-     * <code>.IrodoriPoetryThemeData theme_data = 8;</code>
+     * <code>.IrodoriPoetryThemeData theme_data = 13;</code>
      */
     emu.grasscutter.net.proto.IrodoriPoetryThemeDataOuterClass.IrodoriPoetryThemeDataOrBuilder getThemeDataOrBuilder();
   }
   /**
    * <pre>
-   * CmdId: 8240
-   * Obf: HJMIABNAPAF
+   * CmdId: 26146
+   * Obf: ADHEDEOBDII
    * </pre>
    *
    * Protobuf type {@code IrodoriFillPoetryRsp}
@@ -89,7 +89,12 @@ public final class IrodoriFillPoetryRspOuterClass {
             case 0:
               done = true;
               break;
-            case 66: {
+            case 16: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 106: {
               emu.grasscutter.net.proto.IrodoriPoetryThemeDataOuterClass.IrodoriPoetryThemeData.Builder subBuilder = null;
               if (themeData_ != null) {
                 subBuilder = themeData_.toBuilder();
@@ -100,11 +105,6 @@ public final class IrodoriFillPoetryRspOuterClass {
                 themeData_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-            case 112: {
-
-              retcode_ = input.readInt32();
               break;
             }
             default: {
@@ -139,10 +139,10 @@ public final class IrodoriFillPoetryRspOuterClass {
               emu.grasscutter.net.proto.IrodoriFillPoetryRspOuterClass.IrodoriFillPoetryRsp.class, emu.grasscutter.net.proto.IrodoriFillPoetryRspOuterClass.IrodoriFillPoetryRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 14;
+    public static final int RETCODE_FIELD_NUMBER = 2;
     private int retcode_;
     /**
-     * <code>int32 retcode = 14;</code>
+     * <code>int32 retcode = 2;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -150,10 +150,10 @@ public final class IrodoriFillPoetryRspOuterClass {
       return retcode_;
     }
 
-    public static final int THEME_DATA_FIELD_NUMBER = 8;
+    public static final int THEME_DATA_FIELD_NUMBER = 13;
     private emu.grasscutter.net.proto.IrodoriPoetryThemeDataOuterClass.IrodoriPoetryThemeData themeData_;
     /**
-     * <code>.IrodoriPoetryThemeData theme_data = 8;</code>
+     * <code>.IrodoriPoetryThemeData theme_data = 13;</code>
      * @return Whether the themeData field is set.
      */
     @java.lang.Override
@@ -161,7 +161,7 @@ public final class IrodoriFillPoetryRspOuterClass {
       return themeData_ != null;
     }
     /**
-     * <code>.IrodoriPoetryThemeData theme_data = 8;</code>
+     * <code>.IrodoriPoetryThemeData theme_data = 13;</code>
      * @return The themeData.
      */
     @java.lang.Override
@@ -169,7 +169,7 @@ public final class IrodoriFillPoetryRspOuterClass {
       return themeData_ == null ? emu.grasscutter.net.proto.IrodoriPoetryThemeDataOuterClass.IrodoriPoetryThemeData.getDefaultInstance() : themeData_;
     }
     /**
-     * <code>.IrodoriPoetryThemeData theme_data = 8;</code>
+     * <code>.IrodoriPoetryThemeData theme_data = 13;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.IrodoriPoetryThemeDataOuterClass.IrodoriPoetryThemeDataOrBuilder getThemeDataOrBuilder() {
@@ -190,11 +190,11 @@ public final class IrodoriFillPoetryRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (themeData_ != null) {
-        output.writeMessage(8, getThemeData());
-      }
       if (retcode_ != 0) {
-        output.writeInt32(14, retcode_);
+        output.writeInt32(2, retcode_);
+      }
+      if (themeData_ != null) {
+        output.writeMessage(13, getThemeData());
       }
       unknownFields.writeTo(output);
     }
@@ -205,13 +205,13 @@ public final class IrodoriFillPoetryRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (themeData_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(8, getThemeData());
-      }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(14, retcode_);
+          .computeInt32Size(2, retcode_);
+      }
+      if (themeData_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(13, getThemeData());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -349,8 +349,8 @@ public final class IrodoriFillPoetryRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8240
-     * Obf: HJMIABNAPAF
+     * CmdId: 26146
+     * Obf: ADHEDEOBDII
      * </pre>
      *
      * Protobuf type {@code IrodoriFillPoetryRsp}
@@ -515,7 +515,7 @@ public final class IrodoriFillPoetryRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 14;</code>
+       * <code>int32 retcode = 2;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -523,7 +523,7 @@ public final class IrodoriFillPoetryRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 14;</code>
+       * <code>int32 retcode = 2;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -534,7 +534,7 @@ public final class IrodoriFillPoetryRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 14;</code>
+       * <code>int32 retcode = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -548,14 +548,14 @@ public final class IrodoriFillPoetryRspOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.IrodoriPoetryThemeDataOuterClass.IrodoriPoetryThemeData, emu.grasscutter.net.proto.IrodoriPoetryThemeDataOuterClass.IrodoriPoetryThemeData.Builder, emu.grasscutter.net.proto.IrodoriPoetryThemeDataOuterClass.IrodoriPoetryThemeDataOrBuilder> themeDataBuilder_;
       /**
-       * <code>.IrodoriPoetryThemeData theme_data = 8;</code>
+       * <code>.IrodoriPoetryThemeData theme_data = 13;</code>
        * @return Whether the themeData field is set.
        */
       public boolean hasThemeData() {
         return themeDataBuilder_ != null || themeData_ != null;
       }
       /**
-       * <code>.IrodoriPoetryThemeData theme_data = 8;</code>
+       * <code>.IrodoriPoetryThemeData theme_data = 13;</code>
        * @return The themeData.
        */
       public emu.grasscutter.net.proto.IrodoriPoetryThemeDataOuterClass.IrodoriPoetryThemeData getThemeData() {
@@ -566,7 +566,7 @@ public final class IrodoriFillPoetryRspOuterClass {
         }
       }
       /**
-       * <code>.IrodoriPoetryThemeData theme_data = 8;</code>
+       * <code>.IrodoriPoetryThemeData theme_data = 13;</code>
        */
       public Builder setThemeData(emu.grasscutter.net.proto.IrodoriPoetryThemeDataOuterClass.IrodoriPoetryThemeData value) {
         if (themeDataBuilder_ == null) {
@@ -582,7 +582,7 @@ public final class IrodoriFillPoetryRspOuterClass {
         return this;
       }
       /**
-       * <code>.IrodoriPoetryThemeData theme_data = 8;</code>
+       * <code>.IrodoriPoetryThemeData theme_data = 13;</code>
        */
       public Builder setThemeData(
           emu.grasscutter.net.proto.IrodoriPoetryThemeDataOuterClass.IrodoriPoetryThemeData.Builder builderForValue) {
@@ -596,7 +596,7 @@ public final class IrodoriFillPoetryRspOuterClass {
         return this;
       }
       /**
-       * <code>.IrodoriPoetryThemeData theme_data = 8;</code>
+       * <code>.IrodoriPoetryThemeData theme_data = 13;</code>
        */
       public Builder mergeThemeData(emu.grasscutter.net.proto.IrodoriPoetryThemeDataOuterClass.IrodoriPoetryThemeData value) {
         if (themeDataBuilder_ == null) {
@@ -614,7 +614,7 @@ public final class IrodoriFillPoetryRspOuterClass {
         return this;
       }
       /**
-       * <code>.IrodoriPoetryThemeData theme_data = 8;</code>
+       * <code>.IrodoriPoetryThemeData theme_data = 13;</code>
        */
       public Builder clearThemeData() {
         if (themeDataBuilder_ == null) {
@@ -628,7 +628,7 @@ public final class IrodoriFillPoetryRspOuterClass {
         return this;
       }
       /**
-       * <code>.IrodoriPoetryThemeData theme_data = 8;</code>
+       * <code>.IrodoriPoetryThemeData theme_data = 13;</code>
        */
       public emu.grasscutter.net.proto.IrodoriPoetryThemeDataOuterClass.IrodoriPoetryThemeData.Builder getThemeDataBuilder() {
         
@@ -636,7 +636,7 @@ public final class IrodoriFillPoetryRspOuterClass {
         return getThemeDataFieldBuilder().getBuilder();
       }
       /**
-       * <code>.IrodoriPoetryThemeData theme_data = 8;</code>
+       * <code>.IrodoriPoetryThemeData theme_data = 13;</code>
        */
       public emu.grasscutter.net.proto.IrodoriPoetryThemeDataOuterClass.IrodoriPoetryThemeDataOrBuilder getThemeDataOrBuilder() {
         if (themeDataBuilder_ != null) {
@@ -647,7 +647,7 @@ public final class IrodoriFillPoetryRspOuterClass {
         }
       }
       /**
-       * <code>.IrodoriPoetryThemeData theme_data = 8;</code>
+       * <code>.IrodoriPoetryThemeData theme_data = 13;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.IrodoriPoetryThemeDataOuterClass.IrodoriPoetryThemeData, emu.grasscutter.net.proto.IrodoriPoetryThemeDataOuterClass.IrodoriPoetryThemeData.Builder, emu.grasscutter.net.proto.IrodoriPoetryThemeDataOuterClass.IrodoriPoetryThemeDataOrBuilder> 
@@ -731,7 +731,7 @@ public final class IrodoriFillPoetryRspOuterClass {
     java.lang.String[] descriptorData = {
       "\n\032IrodoriFillPoetryRsp.proto\032\034IrodoriPoe" +
       "tryThemeData.proto\"T\n\024IrodoriFillPoetryR" +
-      "sp\022\017\n\007retcode\030\016 \001(\005\022+\n\ntheme_data\030\010 \001(\0132" +
+      "sp\022\017\n\007retcode\030\002 \001(\005\022+\n\ntheme_data\030\r \001(\0132" +
       "\027.IrodoriPoetryThemeDataB\033\n\031emu.grasscut" +
       "ter.net.protob\006proto3"
     };

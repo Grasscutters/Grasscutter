@@ -1,8 +1,9 @@
 package emu.grasscutter.data.custom;
 
 import emu.grasscutter.data.common.BaseTrialActivityData;
+import lombok.Data;
+
 import java.util.List;
-import lombok.*;
 
 @Data
 public class TrialAvatarActivityCustomData implements BaseTrialActivityData {

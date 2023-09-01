@@ -19,32 +19,32 @@ public final class PbNavMeshStatsInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 HDAAEDFOOOI = 5;</code>
-     * @return The hDAAEDFOOOI.
+     * <code>int32 CHFIALNCEIP = 15;</code>
+     * @return The cHFIALNCEIP.
      */
-    int getHDAAEDFOOOI();
+    int getCHFIALNCEIP();
 
     /**
-     * <code>int32 ECNPOEJHPCI = 10;</code>
-     * @return The eCNPOEJHPCI.
+     * <code>int32 AGNHGNPIGEK = 9;</code>
+     * @return The aGNHGNPIGEK.
      */
-    int getECNPOEJHPCI();
+    int getAGNHGNPIGEK();
 
     /**
-     * <code>int32 FJGDCFHBCLI = 3;</code>
-     * @return The fJGDCFHBCLI.
+     * <code>int32 CIHNJIPBEOG = 6;</code>
+     * @return The cIHNJIPBEOG.
      */
-    int getFJGDCFHBCLI();
+    int getCIHNJIPBEOG();
 
     /**
-     * <code>int32 GNLELCLHHDK = 14;</code>
-     * @return The gNLELCLHHDK.
+     * <code>int32 EDCEJJGNHBP = 13;</code>
+     * @return The eDCEJJGNHBP.
      */
-    int getGNLELCLHHDK();
+    int getEDCEJJGNHBP();
   }
   /**
    * <pre>
-   * Obf: MOELDGBGLLB
+   * Obf: FCCJMOOLKKB
    * </pre>
    *
    * Protobuf type {@code PbNavMeshStatsInfo}
@@ -91,24 +91,24 @@ public final class PbNavMeshStatsInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 48: {
 
-              fJGDCFHBCLI_ = input.readInt32();
+              cIHNJIPBEOG_ = input.readInt32();
               break;
             }
-            case 40: {
+            case 72: {
 
-              hDAAEDFOOOI_ = input.readInt32();
+              aGNHGNPIGEK_ = input.readInt32();
               break;
             }
-            case 80: {
+            case 104: {
 
-              eCNPOEJHPCI_ = input.readInt32();
+              eDCEJJGNHBP_ = input.readInt32();
               break;
             }
-            case 112: {
+            case 120: {
 
-              gNLELCLHHDK_ = input.readInt32();
+              cHFIALNCEIP_ = input.readInt32();
               break;
             }
             default: {
@@ -143,48 +143,48 @@ public final class PbNavMeshStatsInfoOuterClass {
               emu.grasscutter.net.proto.PbNavMeshStatsInfoOuterClass.PbNavMeshStatsInfo.class, emu.grasscutter.net.proto.PbNavMeshStatsInfoOuterClass.PbNavMeshStatsInfo.Builder.class);
     }
 
-    public static final int HDAAEDFOOOI_FIELD_NUMBER = 5;
-    private int hDAAEDFOOOI_;
+    public static final int CHFIALNCEIP_FIELD_NUMBER = 15;
+    private int cHFIALNCEIP_;
     /**
-     * <code>int32 HDAAEDFOOOI = 5;</code>
-     * @return The hDAAEDFOOOI.
+     * <code>int32 CHFIALNCEIP = 15;</code>
+     * @return The cHFIALNCEIP.
      */
     @java.lang.Override
-    public int getHDAAEDFOOOI() {
-      return hDAAEDFOOOI_;
+    public int getCHFIALNCEIP() {
+      return cHFIALNCEIP_;
     }
 
-    public static final int ECNPOEJHPCI_FIELD_NUMBER = 10;
-    private int eCNPOEJHPCI_;
+    public static final int AGNHGNPIGEK_FIELD_NUMBER = 9;
+    private int aGNHGNPIGEK_;
     /**
-     * <code>int32 ECNPOEJHPCI = 10;</code>
-     * @return The eCNPOEJHPCI.
+     * <code>int32 AGNHGNPIGEK = 9;</code>
+     * @return The aGNHGNPIGEK.
      */
     @java.lang.Override
-    public int getECNPOEJHPCI() {
-      return eCNPOEJHPCI_;
+    public int getAGNHGNPIGEK() {
+      return aGNHGNPIGEK_;
     }
 
-    public static final int FJGDCFHBCLI_FIELD_NUMBER = 3;
-    private int fJGDCFHBCLI_;
+    public static final int CIHNJIPBEOG_FIELD_NUMBER = 6;
+    private int cIHNJIPBEOG_;
     /**
-     * <code>int32 FJGDCFHBCLI = 3;</code>
-     * @return The fJGDCFHBCLI.
+     * <code>int32 CIHNJIPBEOG = 6;</code>
+     * @return The cIHNJIPBEOG.
      */
     @java.lang.Override
-    public int getFJGDCFHBCLI() {
-      return fJGDCFHBCLI_;
+    public int getCIHNJIPBEOG() {
+      return cIHNJIPBEOG_;
     }
 
-    public static final int GNLELCLHHDK_FIELD_NUMBER = 14;
-    private int gNLELCLHHDK_;
+    public static final int EDCEJJGNHBP_FIELD_NUMBER = 13;
+    private int eDCEJJGNHBP_;
     /**
-     * <code>int32 GNLELCLHHDK = 14;</code>
-     * @return The gNLELCLHHDK.
+     * <code>int32 EDCEJJGNHBP = 13;</code>
+     * @return The eDCEJJGNHBP.
      */
     @java.lang.Override
-    public int getGNLELCLHHDK() {
-      return gNLELCLHHDK_;
+    public int getEDCEJJGNHBP() {
+      return eDCEJJGNHBP_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -201,17 +201,17 @@ public final class PbNavMeshStatsInfoOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (fJGDCFHBCLI_ != 0) {
-        output.writeInt32(3, fJGDCFHBCLI_);
+      if (cIHNJIPBEOG_ != 0) {
+        output.writeInt32(6, cIHNJIPBEOG_);
       }
-      if (hDAAEDFOOOI_ != 0) {
-        output.writeInt32(5, hDAAEDFOOOI_);
+      if (aGNHGNPIGEK_ != 0) {
+        output.writeInt32(9, aGNHGNPIGEK_);
       }
-      if (eCNPOEJHPCI_ != 0) {
-        output.writeInt32(10, eCNPOEJHPCI_);
+      if (eDCEJJGNHBP_ != 0) {
+        output.writeInt32(13, eDCEJJGNHBP_);
       }
-      if (gNLELCLHHDK_ != 0) {
-        output.writeInt32(14, gNLELCLHHDK_);
+      if (cHFIALNCEIP_ != 0) {
+        output.writeInt32(15, cHFIALNCEIP_);
       }
       unknownFields.writeTo(output);
     }
@@ -222,21 +222,21 @@ public final class PbNavMeshStatsInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (fJGDCFHBCLI_ != 0) {
+      if (cIHNJIPBEOG_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, fJGDCFHBCLI_);
+          .computeInt32Size(6, cIHNJIPBEOG_);
       }
-      if (hDAAEDFOOOI_ != 0) {
+      if (aGNHGNPIGEK_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(5, hDAAEDFOOOI_);
+          .computeInt32Size(9, aGNHGNPIGEK_);
       }
-      if (eCNPOEJHPCI_ != 0) {
+      if (eDCEJJGNHBP_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(10, eCNPOEJHPCI_);
+          .computeInt32Size(13, eDCEJJGNHBP_);
       }
-      if (gNLELCLHHDK_ != 0) {
+      if (cHFIALNCEIP_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(14, gNLELCLHHDK_);
+          .computeInt32Size(15, cHFIALNCEIP_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -253,14 +253,14 @@ public final class PbNavMeshStatsInfoOuterClass {
       }
       emu.grasscutter.net.proto.PbNavMeshStatsInfoOuterClass.PbNavMeshStatsInfo other = (emu.grasscutter.net.proto.PbNavMeshStatsInfoOuterClass.PbNavMeshStatsInfo) obj;
 
-      if (getHDAAEDFOOOI()
-          != other.getHDAAEDFOOOI()) return false;
-      if (getECNPOEJHPCI()
-          != other.getECNPOEJHPCI()) return false;
-      if (getFJGDCFHBCLI()
-          != other.getFJGDCFHBCLI()) return false;
-      if (getGNLELCLHHDK()
-          != other.getGNLELCLHHDK()) return false;
+      if (getCHFIALNCEIP()
+          != other.getCHFIALNCEIP()) return false;
+      if (getAGNHGNPIGEK()
+          != other.getAGNHGNPIGEK()) return false;
+      if (getCIHNJIPBEOG()
+          != other.getCIHNJIPBEOG()) return false;
+      if (getEDCEJJGNHBP()
+          != other.getEDCEJJGNHBP()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -272,14 +272,14 @@ public final class PbNavMeshStatsInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + HDAAEDFOOOI_FIELD_NUMBER;
-      hash = (53 * hash) + getHDAAEDFOOOI();
-      hash = (37 * hash) + ECNPOEJHPCI_FIELD_NUMBER;
-      hash = (53 * hash) + getECNPOEJHPCI();
-      hash = (37 * hash) + FJGDCFHBCLI_FIELD_NUMBER;
-      hash = (53 * hash) + getFJGDCFHBCLI();
-      hash = (37 * hash) + GNLELCLHHDK_FIELD_NUMBER;
-      hash = (53 * hash) + getGNLELCLHHDK();
+      hash = (37 * hash) + CHFIALNCEIP_FIELD_NUMBER;
+      hash = (53 * hash) + getCHFIALNCEIP();
+      hash = (37 * hash) + AGNHGNPIGEK_FIELD_NUMBER;
+      hash = (53 * hash) + getAGNHGNPIGEK();
+      hash = (37 * hash) + CIHNJIPBEOG_FIELD_NUMBER;
+      hash = (53 * hash) + getCIHNJIPBEOG();
+      hash = (37 * hash) + EDCEJJGNHBP_FIELD_NUMBER;
+      hash = (53 * hash) + getEDCEJJGNHBP();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -377,7 +377,7 @@ public final class PbNavMeshStatsInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: MOELDGBGLLB
+     * Obf: FCCJMOOLKKB
      * </pre>
      *
      * Protobuf type {@code PbNavMeshStatsInfo}
@@ -417,13 +417,13 @@ public final class PbNavMeshStatsInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        hDAAEDFOOOI_ = 0;
+        cHFIALNCEIP_ = 0;
 
-        eCNPOEJHPCI_ = 0;
+        aGNHGNPIGEK_ = 0;
 
-        fJGDCFHBCLI_ = 0;
+        cIHNJIPBEOG_ = 0;
 
-        gNLELCLHHDK_ = 0;
+        eDCEJJGNHBP_ = 0;
 
         return this;
       }
@@ -451,10 +451,10 @@ public final class PbNavMeshStatsInfoOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.PbNavMeshStatsInfoOuterClass.PbNavMeshStatsInfo buildPartial() {
         emu.grasscutter.net.proto.PbNavMeshStatsInfoOuterClass.PbNavMeshStatsInfo result = new emu.grasscutter.net.proto.PbNavMeshStatsInfoOuterClass.PbNavMeshStatsInfo(this);
-        result.hDAAEDFOOOI_ = hDAAEDFOOOI_;
-        result.eCNPOEJHPCI_ = eCNPOEJHPCI_;
-        result.fJGDCFHBCLI_ = fJGDCFHBCLI_;
-        result.gNLELCLHHDK_ = gNLELCLHHDK_;
+        result.cHFIALNCEIP_ = cHFIALNCEIP_;
+        result.aGNHGNPIGEK_ = aGNHGNPIGEK_;
+        result.cIHNJIPBEOG_ = cIHNJIPBEOG_;
+        result.eDCEJJGNHBP_ = eDCEJJGNHBP_;
         onBuilt();
         return result;
       }
@@ -503,17 +503,17 @@ public final class PbNavMeshStatsInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.PbNavMeshStatsInfoOuterClass.PbNavMeshStatsInfo other) {
         if (other == emu.grasscutter.net.proto.PbNavMeshStatsInfoOuterClass.PbNavMeshStatsInfo.getDefaultInstance()) return this;
-        if (other.getHDAAEDFOOOI() != 0) {
-          setHDAAEDFOOOI(other.getHDAAEDFOOOI());
+        if (other.getCHFIALNCEIP() != 0) {
+          setCHFIALNCEIP(other.getCHFIALNCEIP());
         }
-        if (other.getECNPOEJHPCI() != 0) {
-          setECNPOEJHPCI(other.getECNPOEJHPCI());
+        if (other.getAGNHGNPIGEK() != 0) {
+          setAGNHGNPIGEK(other.getAGNHGNPIGEK());
         }
-        if (other.getFJGDCFHBCLI() != 0) {
-          setFJGDCFHBCLI(other.getFJGDCFHBCLI());
+        if (other.getCIHNJIPBEOG() != 0) {
+          setCIHNJIPBEOG(other.getCIHNJIPBEOG());
         }
-        if (other.getGNLELCLHHDK() != 0) {
-          setGNLELCLHHDK(other.getGNLELCLHHDK());
+        if (other.getEDCEJJGNHBP() != 0) {
+          setEDCEJJGNHBP(other.getEDCEJJGNHBP());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -544,126 +544,126 @@ public final class PbNavMeshStatsInfoOuterClass {
         return this;
       }
 
-      private int hDAAEDFOOOI_ ;
+      private int cHFIALNCEIP_ ;
       /**
-       * <code>int32 HDAAEDFOOOI = 5;</code>
-       * @return The hDAAEDFOOOI.
+       * <code>int32 CHFIALNCEIP = 15;</code>
+       * @return The cHFIALNCEIP.
        */
       @java.lang.Override
-      public int getHDAAEDFOOOI() {
-        return hDAAEDFOOOI_;
+      public int getCHFIALNCEIP() {
+        return cHFIALNCEIP_;
       }
       /**
-       * <code>int32 HDAAEDFOOOI = 5;</code>
-       * @param value The hDAAEDFOOOI to set.
+       * <code>int32 CHFIALNCEIP = 15;</code>
+       * @param value The cHFIALNCEIP to set.
        * @return This builder for chaining.
        */
-      public Builder setHDAAEDFOOOI(int value) {
+      public Builder setCHFIALNCEIP(int value) {
         
-        hDAAEDFOOOI_ = value;
+        cHFIALNCEIP_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 HDAAEDFOOOI = 5;</code>
+       * <code>int32 CHFIALNCEIP = 15;</code>
        * @return This builder for chaining.
        */
-      public Builder clearHDAAEDFOOOI() {
+      public Builder clearCHFIALNCEIP() {
         
-        hDAAEDFOOOI_ = 0;
+        cHFIALNCEIP_ = 0;
         onChanged();
         return this;
       }
 
-      private int eCNPOEJHPCI_ ;
+      private int aGNHGNPIGEK_ ;
       /**
-       * <code>int32 ECNPOEJHPCI = 10;</code>
-       * @return The eCNPOEJHPCI.
+       * <code>int32 AGNHGNPIGEK = 9;</code>
+       * @return The aGNHGNPIGEK.
        */
       @java.lang.Override
-      public int getECNPOEJHPCI() {
-        return eCNPOEJHPCI_;
+      public int getAGNHGNPIGEK() {
+        return aGNHGNPIGEK_;
       }
       /**
-       * <code>int32 ECNPOEJHPCI = 10;</code>
-       * @param value The eCNPOEJHPCI to set.
+       * <code>int32 AGNHGNPIGEK = 9;</code>
+       * @param value The aGNHGNPIGEK to set.
        * @return This builder for chaining.
        */
-      public Builder setECNPOEJHPCI(int value) {
+      public Builder setAGNHGNPIGEK(int value) {
         
-        eCNPOEJHPCI_ = value;
+        aGNHGNPIGEK_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 ECNPOEJHPCI = 10;</code>
+       * <code>int32 AGNHGNPIGEK = 9;</code>
        * @return This builder for chaining.
        */
-      public Builder clearECNPOEJHPCI() {
+      public Builder clearAGNHGNPIGEK() {
         
-        eCNPOEJHPCI_ = 0;
+        aGNHGNPIGEK_ = 0;
         onChanged();
         return this;
       }
 
-      private int fJGDCFHBCLI_ ;
+      private int cIHNJIPBEOG_ ;
       /**
-       * <code>int32 FJGDCFHBCLI = 3;</code>
-       * @return The fJGDCFHBCLI.
+       * <code>int32 CIHNJIPBEOG = 6;</code>
+       * @return The cIHNJIPBEOG.
        */
       @java.lang.Override
-      public int getFJGDCFHBCLI() {
-        return fJGDCFHBCLI_;
+      public int getCIHNJIPBEOG() {
+        return cIHNJIPBEOG_;
       }
       /**
-       * <code>int32 FJGDCFHBCLI = 3;</code>
-       * @param value The fJGDCFHBCLI to set.
+       * <code>int32 CIHNJIPBEOG = 6;</code>
+       * @param value The cIHNJIPBEOG to set.
        * @return This builder for chaining.
        */
-      public Builder setFJGDCFHBCLI(int value) {
+      public Builder setCIHNJIPBEOG(int value) {
         
-        fJGDCFHBCLI_ = value;
+        cIHNJIPBEOG_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 FJGDCFHBCLI = 3;</code>
+       * <code>int32 CIHNJIPBEOG = 6;</code>
        * @return This builder for chaining.
        */
-      public Builder clearFJGDCFHBCLI() {
+      public Builder clearCIHNJIPBEOG() {
         
-        fJGDCFHBCLI_ = 0;
+        cIHNJIPBEOG_ = 0;
         onChanged();
         return this;
       }
 
-      private int gNLELCLHHDK_ ;
+      private int eDCEJJGNHBP_ ;
       /**
-       * <code>int32 GNLELCLHHDK = 14;</code>
-       * @return The gNLELCLHHDK.
+       * <code>int32 EDCEJJGNHBP = 13;</code>
+       * @return The eDCEJJGNHBP.
        */
       @java.lang.Override
-      public int getGNLELCLHHDK() {
-        return gNLELCLHHDK_;
+      public int getEDCEJJGNHBP() {
+        return eDCEJJGNHBP_;
       }
       /**
-       * <code>int32 GNLELCLHHDK = 14;</code>
-       * @param value The gNLELCLHHDK to set.
+       * <code>int32 EDCEJJGNHBP = 13;</code>
+       * @param value The eDCEJJGNHBP to set.
        * @return This builder for chaining.
        */
-      public Builder setGNLELCLHHDK(int value) {
+      public Builder setEDCEJJGNHBP(int value) {
         
-        gNLELCLHHDK_ = value;
+        eDCEJJGNHBP_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 GNLELCLHHDK = 14;</code>
+       * <code>int32 EDCEJJGNHBP = 13;</code>
        * @return This builder for chaining.
        */
-      public Builder clearGNLELCLHHDK() {
+      public Builder clearEDCEJJGNHBP() {
         
-        gNLELCLHHDK_ = 0;
+        eDCEJJGNHBP_ = 0;
         onChanged();
         return this;
       }
@@ -735,9 +735,9 @@ public final class PbNavMeshStatsInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\030PbNavMeshStatsInfo.proto\"h\n\022PbNavMeshS" +
-      "tatsInfo\022\023\n\013HDAAEDFOOOI\030\005 \001(\005\022\023\n\013ECNPOEJ" +
-      "HPCI\030\n \001(\005\022\023\n\013FJGDCFHBCLI\030\003 \001(\005\022\023\n\013GNLEL" +
-      "CLHHDK\030\016 \001(\005B\033\n\031emu.grasscutter.net.prot" +
+      "tatsInfo\022\023\n\013CHFIALNCEIP\030\017 \001(\005\022\023\n\013AGNHGNP" +
+      "IGEK\030\t \001(\005\022\023\n\013CIHNJIPBEOG\030\006 \001(\005\022\023\n\013EDCEJ" +
+      "JGNHBP\030\r \001(\005B\033\n\031emu.grasscutter.net.prot" +
       "ob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -749,7 +749,7 @@ public final class PbNavMeshStatsInfoOuterClass {
     internal_static_PbNavMeshStatsInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_PbNavMeshStatsInfo_descriptor,
-        new java.lang.String[] { "HDAAEDFOOOI", "ECNPOEJHPCI", "FJGDCFHBCLI", "GNLELCLHHDK", });
+        new java.lang.String[] { "CHFIALNCEIP", "AGNHGNPIGEK", "CIHNJIPBEOG", "EDCEJJGNHBP", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

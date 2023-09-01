@@ -19,15 +19,15 @@ public final class GetReunionSignInInfoReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 sign_in_config_id = 14;</code>
+     * <code>uint32 sign_in_config_id = 12;</code>
      * @return The signInConfigId.
      */
     int getSignInConfigId();
   }
   /**
    * <pre>
-   * CmdId: 5076
-   * Obf: ABJPIGAFKGD
+   * CmdId: 28782
+   * Obf: EMEEMDIOGFH
    * </pre>
    *
    * Protobuf type {@code GetReunionSignInInfoReq}
@@ -74,7 +74,7 @@ public final class GetReunionSignInInfoReqOuterClass {
             case 0:
               done = true;
               break;
-            case 112: {
+            case 96: {
 
               signInConfigId_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class GetReunionSignInInfoReqOuterClass {
               emu.grasscutter.net.proto.GetReunionSignInInfoReqOuterClass.GetReunionSignInInfoReq.class, emu.grasscutter.net.proto.GetReunionSignInInfoReqOuterClass.GetReunionSignInInfoReq.Builder.class);
     }
 
-    public static final int SIGN_IN_CONFIG_ID_FIELD_NUMBER = 14;
+    public static final int SIGN_IN_CONFIG_ID_FIELD_NUMBER = 12;
     private int signInConfigId_;
     /**
-     * <code>uint32 sign_in_config_id = 14;</code>
+     * <code>uint32 sign_in_config_id = 12;</code>
      * @return The signInConfigId.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class GetReunionSignInInfoReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (signInConfigId_ != 0) {
-        output.writeUInt32(14, signInConfigId_);
+        output.writeUInt32(12, signInConfigId_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class GetReunionSignInInfoReqOuterClass {
       size = 0;
       if (signInConfigId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, signInConfigId_);
+          .computeUInt32Size(12, signInConfigId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class GetReunionSignInInfoReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 5076
-     * Obf: ABJPIGAFKGD
+     * CmdId: 28782
+     * Obf: EMEEMDIOGFH
      * </pre>
      *
      * Protobuf type {@code GetReunionSignInInfoReq}
@@ -431,7 +431,7 @@ public final class GetReunionSignInInfoReqOuterClass {
 
       private int signInConfigId_ ;
       /**
-       * <code>uint32 sign_in_config_id = 14;</code>
+       * <code>uint32 sign_in_config_id = 12;</code>
        * @return The signInConfigId.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class GetReunionSignInInfoReqOuterClass {
         return signInConfigId_;
       }
       /**
-       * <code>uint32 sign_in_config_id = 14;</code>
+       * <code>uint32 sign_in_config_id = 12;</code>
        * @param value The signInConfigId to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class GetReunionSignInInfoReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 sign_in_config_id = 14;</code>
+       * <code>uint32 sign_in_config_id = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearSignInConfigId() {
@@ -528,7 +528,7 @@ public final class GetReunionSignInInfoReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n\035GetReunionSignInInfoReq.proto\"4\n\027GetRe" +
       "unionSignInInfoReq\022\031\n\021sign_in_config_id\030" +
-      "\016 \001(\rB\033\n\031emu.grasscutter.net.protob\006prot" +
+      "\014 \001(\rB\033\n\031emu.grasscutter.net.protob\006prot" +
       "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

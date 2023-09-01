@@ -19,21 +19,21 @@ public final class BlitzRushParkourRestartReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 group_id = 1;</code>
-     * @return The groupId.
-     */
-    int getGroupId();
-
-    /**
-     * <code>uint32 schedule_id = 6;</code>
+     * <code>uint32 schedule_id = 11;</code>
      * @return The scheduleId.
      */
     int getScheduleId();
+
+    /**
+     * <code>uint32 group_id = 2;</code>
+     * @return The groupId.
+     */
+    int getGroupId();
   }
   /**
    * <pre>
-   * CmdId: 8225
-   * Obf: JCKMKHACOPM
+   * CmdId: 6829
+   * Obf: PMICKJFENDE
    * </pre>
    *
    * Protobuf type {@code BlitzRushParkourRestartReq}
@@ -80,12 +80,12 @@ public final class BlitzRushParkourRestartReqOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 16: {
 
               groupId_ = input.readUInt32();
               break;
             }
-            case 48: {
+            case 88: {
 
               scheduleId_ = input.readUInt32();
               break;
@@ -122,26 +122,26 @@ public final class BlitzRushParkourRestartReqOuterClass {
               emu.grasscutter.net.proto.BlitzRushParkourRestartReqOuterClass.BlitzRushParkourRestartReq.class, emu.grasscutter.net.proto.BlitzRushParkourRestartReqOuterClass.BlitzRushParkourRestartReq.Builder.class);
     }
 
-    public static final int GROUP_ID_FIELD_NUMBER = 1;
-    private int groupId_;
-    /**
-     * <code>uint32 group_id = 1;</code>
-     * @return The groupId.
-     */
-    @java.lang.Override
-    public int getGroupId() {
-      return groupId_;
-    }
-
-    public static final int SCHEDULE_ID_FIELD_NUMBER = 6;
+    public static final int SCHEDULE_ID_FIELD_NUMBER = 11;
     private int scheduleId_;
     /**
-     * <code>uint32 schedule_id = 6;</code>
+     * <code>uint32 schedule_id = 11;</code>
      * @return The scheduleId.
      */
     @java.lang.Override
     public int getScheduleId() {
       return scheduleId_;
+    }
+
+    public static final int GROUP_ID_FIELD_NUMBER = 2;
+    private int groupId_;
+    /**
+     * <code>uint32 group_id = 2;</code>
+     * @return The groupId.
+     */
+    @java.lang.Override
+    public int getGroupId() {
+      return groupId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -159,10 +159,10 @@ public final class BlitzRushParkourRestartReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (groupId_ != 0) {
-        output.writeUInt32(1, groupId_);
+        output.writeUInt32(2, groupId_);
       }
       if (scheduleId_ != 0) {
-        output.writeUInt32(6, scheduleId_);
+        output.writeUInt32(11, scheduleId_);
       }
       unknownFields.writeTo(output);
     }
@@ -175,11 +175,11 @@ public final class BlitzRushParkourRestartReqOuterClass {
       size = 0;
       if (groupId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, groupId_);
+          .computeUInt32Size(2, groupId_);
       }
       if (scheduleId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, scheduleId_);
+          .computeUInt32Size(11, scheduleId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -196,10 +196,10 @@ public final class BlitzRushParkourRestartReqOuterClass {
       }
       emu.grasscutter.net.proto.BlitzRushParkourRestartReqOuterClass.BlitzRushParkourRestartReq other = (emu.grasscutter.net.proto.BlitzRushParkourRestartReqOuterClass.BlitzRushParkourRestartReq) obj;
 
-      if (getGroupId()
-          != other.getGroupId()) return false;
       if (getScheduleId()
           != other.getScheduleId()) return false;
+      if (getGroupId()
+          != other.getGroupId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -211,10 +211,10 @@ public final class BlitzRushParkourRestartReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + GROUP_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getGroupId();
       hash = (37 * hash) + SCHEDULE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getScheduleId();
+      hash = (37 * hash) + GROUP_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getGroupId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -312,8 +312,8 @@ public final class BlitzRushParkourRestartReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8225
-     * Obf: JCKMKHACOPM
+     * CmdId: 6829
+     * Obf: PMICKJFENDE
      * </pre>
      *
      * Protobuf type {@code BlitzRushParkourRestartReq}
@@ -353,9 +353,9 @@ public final class BlitzRushParkourRestartReqOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        groupId_ = 0;
-
         scheduleId_ = 0;
+
+        groupId_ = 0;
 
         return this;
       }
@@ -383,8 +383,8 @@ public final class BlitzRushParkourRestartReqOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.BlitzRushParkourRestartReqOuterClass.BlitzRushParkourRestartReq buildPartial() {
         emu.grasscutter.net.proto.BlitzRushParkourRestartReqOuterClass.BlitzRushParkourRestartReq result = new emu.grasscutter.net.proto.BlitzRushParkourRestartReqOuterClass.BlitzRushParkourRestartReq(this);
-        result.groupId_ = groupId_;
         result.scheduleId_ = scheduleId_;
+        result.groupId_ = groupId_;
         onBuilt();
         return result;
       }
@@ -433,11 +433,11 @@ public final class BlitzRushParkourRestartReqOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.BlitzRushParkourRestartReqOuterClass.BlitzRushParkourRestartReq other) {
         if (other == emu.grasscutter.net.proto.BlitzRushParkourRestartReqOuterClass.BlitzRushParkourRestartReq.getDefaultInstance()) return this;
-        if (other.getGroupId() != 0) {
-          setGroupId(other.getGroupId());
-        }
         if (other.getScheduleId() != 0) {
           setScheduleId(other.getScheduleId());
+        }
+        if (other.getGroupId() != 0) {
+          setGroupId(other.getGroupId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -468,40 +468,9 @@ public final class BlitzRushParkourRestartReqOuterClass {
         return this;
       }
 
-      private int groupId_ ;
-      /**
-       * <code>uint32 group_id = 1;</code>
-       * @return The groupId.
-       */
-      @java.lang.Override
-      public int getGroupId() {
-        return groupId_;
-      }
-      /**
-       * <code>uint32 group_id = 1;</code>
-       * @param value The groupId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setGroupId(int value) {
-        
-        groupId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 group_id = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearGroupId() {
-        
-        groupId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int scheduleId_ ;
       /**
-       * <code>uint32 schedule_id = 6;</code>
+       * <code>uint32 schedule_id = 11;</code>
        * @return The scheduleId.
        */
       @java.lang.Override
@@ -509,7 +478,7 @@ public final class BlitzRushParkourRestartReqOuterClass {
         return scheduleId_;
       }
       /**
-       * <code>uint32 schedule_id = 6;</code>
+       * <code>uint32 schedule_id = 11;</code>
        * @param value The scheduleId to set.
        * @return This builder for chaining.
        */
@@ -520,12 +489,43 @@ public final class BlitzRushParkourRestartReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 schedule_id = 6;</code>
+       * <code>uint32 schedule_id = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearScheduleId() {
         
         scheduleId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int groupId_ ;
+      /**
+       * <code>uint32 group_id = 2;</code>
+       * @return The groupId.
+       */
+      @java.lang.Override
+      public int getGroupId() {
+        return groupId_;
+      }
+      /**
+       * <code>uint32 group_id = 2;</code>
+       * @param value The groupId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGroupId(int value) {
+        
+        groupId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 group_id = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGroupId() {
+        
+        groupId_ = 0;
         onChanged();
         return this;
       }
@@ -597,8 +597,8 @@ public final class BlitzRushParkourRestartReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n BlitzRushParkourRestartReq.proto\"C\n\032Bl" +
-      "itzRushParkourRestartReq\022\020\n\010group_id\030\001 \001" +
-      "(\r\022\023\n\013schedule_id\030\006 \001(\rB\033\n\031emu.grasscutt" +
+      "itzRushParkourRestartReq\022\023\n\013schedule_id\030" +
+      "\013 \001(\r\022\020\n\010group_id\030\002 \001(\rB\033\n\031emu.grasscutt" +
       "er.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -610,7 +610,7 @@ public final class BlitzRushParkourRestartReqOuterClass {
     internal_static_BlitzRushParkourRestartReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_BlitzRushParkourRestartReq_descriptor,
-        new java.lang.String[] { "GroupId", "ScheduleId", });
+        new java.lang.String[] { "ScheduleId", "GroupId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

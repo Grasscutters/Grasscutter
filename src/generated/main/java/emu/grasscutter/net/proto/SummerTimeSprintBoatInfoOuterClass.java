@@ -44,7 +44,7 @@ public final class SummerTimeSprintBoatInfoOuterClass {
   }
   /**
    * <pre>
-   * Obf: OJNCOEHJAKA
+   * Obf: MBIICFNNNII
    * </pre>
    *
    * Protobuf type {@code SummerTimeSprintBoatInfo}
@@ -336,7 +336,7 @@ public final class SummerTimeSprintBoatInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: OJNCOEHJAKA
+     * Obf: MBIICFNNNII
      * </pre>
      *
      * Protobuf type {@code SummerTimeSprintBoatInfo}

@@ -1,11 +1,10 @@
 package emu.grasscutter.game.inventory;
 
-import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.stream.Stream;
+import it.unimi.dsi.fastutil.ints.*;
 import lombok.Getter;
+
+import java.util.*;
+import java.util.stream.Stream;
 
 public enum MaterialType {
     MATERIAL_NONE(0),

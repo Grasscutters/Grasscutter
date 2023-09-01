@@ -26,8 +26,8 @@ public final class SetIsAutoUnlockSpecificEquipRspOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 690
-   * Obf: EEAPJGDCCKD
+   * CmdId: 23704
+   * Obf: EOOCECPKMAG
    * </pre>
    *
    * Protobuf type {@code SetIsAutoUnlockSpecificEquipRsp}
@@ -279,8 +279,8 @@ public final class SetIsAutoUnlockSpecificEquipRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 690
-     * Obf: EEAPJGDCCKD
+     * CmdId: 23704
+     * Obf: EOOCECPKMAG
      * </pre>
      *
      * Protobuf type {@code SetIsAutoUnlockSpecificEquipRsp}

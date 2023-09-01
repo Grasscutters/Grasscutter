@@ -19,39 +19,39 @@ public final class VintageMarketDeliverItemReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 trader_id = 15;</code>
-     * @return The traderId.
-     */
-    int getTraderId();
-
-    /**
-     * <code>repeated .ItemParam deliver_item_list = 10;</code>
+     * <code>repeated .ItemParam deliver_item_list = 5;</code>
      */
     java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> 
         getDeliverItemListList();
     /**
-     * <code>repeated .ItemParam deliver_item_list = 10;</code>
+     * <code>repeated .ItemParam deliver_item_list = 5;</code>
      */
     emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam getDeliverItemList(int index);
     /**
-     * <code>repeated .ItemParam deliver_item_list = 10;</code>
+     * <code>repeated .ItemParam deliver_item_list = 5;</code>
      */
     int getDeliverItemListCount();
     /**
-     * <code>repeated .ItemParam deliver_item_list = 10;</code>
+     * <code>repeated .ItemParam deliver_item_list = 5;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> 
         getDeliverItemListOrBuilderList();
     /**
-     * <code>repeated .ItemParam deliver_item_list = 10;</code>
+     * <code>repeated .ItemParam deliver_item_list = 5;</code>
      */
     emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder getDeliverItemListOrBuilder(
         int index);
+
+    /**
+     * <code>uint32 trader_id = 11;</code>
+     * @return The traderId.
+     */
+    int getTraderId();
   }
   /**
    * <pre>
-   * CmdId: 23543
-   * Obf: MHMGHKMPJDE
+   * CmdId: 27142
+   * Obf: GGLDPBHFMIE
    * </pre>
    *
    * Protobuf type {@code VintageMarketDeliverItemReq}
@@ -100,7 +100,7 @@ public final class VintageMarketDeliverItemReqOuterClass {
             case 0:
               done = true;
               break;
-            case 82: {
+            case 42: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 deliverItemList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam>();
                 mutable_bitField0_ |= 0x00000001;
@@ -109,7 +109,7 @@ public final class VintageMarketDeliverItemReqOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
               break;
             }
-            case 120: {
+            case 88: {
 
               traderId_ = input.readUInt32();
               break;
@@ -149,28 +149,17 @@ public final class VintageMarketDeliverItemReqOuterClass {
               emu.grasscutter.net.proto.VintageMarketDeliverItemReqOuterClass.VintageMarketDeliverItemReq.class, emu.grasscutter.net.proto.VintageMarketDeliverItemReqOuterClass.VintageMarketDeliverItemReq.Builder.class);
     }
 
-    public static final int TRADER_ID_FIELD_NUMBER = 15;
-    private int traderId_;
-    /**
-     * <code>uint32 trader_id = 15;</code>
-     * @return The traderId.
-     */
-    @java.lang.Override
-    public int getTraderId() {
-      return traderId_;
-    }
-
-    public static final int DELIVER_ITEM_LIST_FIELD_NUMBER = 10;
+    public static final int DELIVER_ITEM_LIST_FIELD_NUMBER = 5;
     private java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> deliverItemList_;
     /**
-     * <code>repeated .ItemParam deliver_item_list = 10;</code>
+     * <code>repeated .ItemParam deliver_item_list = 5;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> getDeliverItemListList() {
       return deliverItemList_;
     }
     /**
-     * <code>repeated .ItemParam deliver_item_list = 10;</code>
+     * <code>repeated .ItemParam deliver_item_list = 5;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> 
@@ -178,26 +167,37 @@ public final class VintageMarketDeliverItemReqOuterClass {
       return deliverItemList_;
     }
     /**
-     * <code>repeated .ItemParam deliver_item_list = 10;</code>
+     * <code>repeated .ItemParam deliver_item_list = 5;</code>
      */
     @java.lang.Override
     public int getDeliverItemListCount() {
       return deliverItemList_.size();
     }
     /**
-     * <code>repeated .ItemParam deliver_item_list = 10;</code>
+     * <code>repeated .ItemParam deliver_item_list = 5;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam getDeliverItemList(int index) {
       return deliverItemList_.get(index);
     }
     /**
-     * <code>repeated .ItemParam deliver_item_list = 10;</code>
+     * <code>repeated .ItemParam deliver_item_list = 5;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder getDeliverItemListOrBuilder(
         int index) {
       return deliverItemList_.get(index);
+    }
+
+    public static final int TRADER_ID_FIELD_NUMBER = 11;
+    private int traderId_;
+    /**
+     * <code>uint32 trader_id = 11;</code>
+     * @return The traderId.
+     */
+    @java.lang.Override
+    public int getTraderId() {
+      return traderId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -215,10 +215,10 @@ public final class VintageMarketDeliverItemReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < deliverItemList_.size(); i++) {
-        output.writeMessage(10, deliverItemList_.get(i));
+        output.writeMessage(5, deliverItemList_.get(i));
       }
       if (traderId_ != 0) {
-        output.writeUInt32(15, traderId_);
+        output.writeUInt32(11, traderId_);
       }
       unknownFields.writeTo(output);
     }
@@ -231,11 +231,11 @@ public final class VintageMarketDeliverItemReqOuterClass {
       size = 0;
       for (int i = 0; i < deliverItemList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, deliverItemList_.get(i));
+          .computeMessageSize(5, deliverItemList_.get(i));
       }
       if (traderId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, traderId_);
+          .computeUInt32Size(11, traderId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -252,10 +252,10 @@ public final class VintageMarketDeliverItemReqOuterClass {
       }
       emu.grasscutter.net.proto.VintageMarketDeliverItemReqOuterClass.VintageMarketDeliverItemReq other = (emu.grasscutter.net.proto.VintageMarketDeliverItemReqOuterClass.VintageMarketDeliverItemReq) obj;
 
-      if (getTraderId()
-          != other.getTraderId()) return false;
       if (!getDeliverItemListList()
           .equals(other.getDeliverItemListList())) return false;
+      if (getTraderId()
+          != other.getTraderId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -267,12 +267,12 @@ public final class VintageMarketDeliverItemReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + TRADER_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getTraderId();
       if (getDeliverItemListCount() > 0) {
         hash = (37 * hash) + DELIVER_ITEM_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getDeliverItemListList().hashCode();
       }
+      hash = (37 * hash) + TRADER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getTraderId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -370,8 +370,8 @@ public final class VintageMarketDeliverItemReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 23543
-     * Obf: MHMGHKMPJDE
+     * CmdId: 27142
+     * Obf: GGLDPBHFMIE
      * </pre>
      *
      * Protobuf type {@code VintageMarketDeliverItemReq}
@@ -412,14 +412,14 @@ public final class VintageMarketDeliverItemReqOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        traderId_ = 0;
-
         if (deliverItemListBuilder_ == null) {
           deliverItemList_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           deliverItemListBuilder_.clear();
         }
+        traderId_ = 0;
+
         return this;
       }
 
@@ -447,7 +447,6 @@ public final class VintageMarketDeliverItemReqOuterClass {
       public emu.grasscutter.net.proto.VintageMarketDeliverItemReqOuterClass.VintageMarketDeliverItemReq buildPartial() {
         emu.grasscutter.net.proto.VintageMarketDeliverItemReqOuterClass.VintageMarketDeliverItemReq result = new emu.grasscutter.net.proto.VintageMarketDeliverItemReqOuterClass.VintageMarketDeliverItemReq(this);
         int from_bitField0_ = bitField0_;
-        result.traderId_ = traderId_;
         if (deliverItemListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             deliverItemList_ = java.util.Collections.unmodifiableList(deliverItemList_);
@@ -457,6 +456,7 @@ public final class VintageMarketDeliverItemReqOuterClass {
         } else {
           result.deliverItemList_ = deliverItemListBuilder_.build();
         }
+        result.traderId_ = traderId_;
         onBuilt();
         return result;
       }
@@ -505,9 +505,6 @@ public final class VintageMarketDeliverItemReqOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.VintageMarketDeliverItemReqOuterClass.VintageMarketDeliverItemReq other) {
         if (other == emu.grasscutter.net.proto.VintageMarketDeliverItemReqOuterClass.VintageMarketDeliverItemReq.getDefaultInstance()) return this;
-        if (other.getTraderId() != 0) {
-          setTraderId(other.getTraderId());
-        }
         if (deliverItemListBuilder_ == null) {
           if (!other.deliverItemList_.isEmpty()) {
             if (deliverItemList_.isEmpty()) {
@@ -533,6 +530,9 @@ public final class VintageMarketDeliverItemReqOuterClass {
               deliverItemListBuilder_.addAllMessages(other.deliverItemList_);
             }
           }
+        }
+        if (other.getTraderId() != 0) {
+          setTraderId(other.getTraderId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -564,37 +564,6 @@ public final class VintageMarketDeliverItemReqOuterClass {
       }
       private int bitField0_;
 
-      private int traderId_ ;
-      /**
-       * <code>uint32 trader_id = 15;</code>
-       * @return The traderId.
-       */
-      @java.lang.Override
-      public int getTraderId() {
-        return traderId_;
-      }
-      /**
-       * <code>uint32 trader_id = 15;</code>
-       * @param value The traderId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTraderId(int value) {
-        
-        traderId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 trader_id = 15;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTraderId() {
-        
-        traderId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> deliverItemList_ =
         java.util.Collections.emptyList();
       private void ensureDeliverItemListIsMutable() {
@@ -608,7 +577,7 @@ public final class VintageMarketDeliverItemReqOuterClass {
           emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> deliverItemListBuilder_;
 
       /**
-       * <code>repeated .ItemParam deliver_item_list = 10;</code>
+       * <code>repeated .ItemParam deliver_item_list = 5;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> getDeliverItemListList() {
         if (deliverItemListBuilder_ == null) {
@@ -618,7 +587,7 @@ public final class VintageMarketDeliverItemReqOuterClass {
         }
       }
       /**
-       * <code>repeated .ItemParam deliver_item_list = 10;</code>
+       * <code>repeated .ItemParam deliver_item_list = 5;</code>
        */
       public int getDeliverItemListCount() {
         if (deliverItemListBuilder_ == null) {
@@ -628,7 +597,7 @@ public final class VintageMarketDeliverItemReqOuterClass {
         }
       }
       /**
-       * <code>repeated .ItemParam deliver_item_list = 10;</code>
+       * <code>repeated .ItemParam deliver_item_list = 5;</code>
        */
       public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam getDeliverItemList(int index) {
         if (deliverItemListBuilder_ == null) {
@@ -638,7 +607,7 @@ public final class VintageMarketDeliverItemReqOuterClass {
         }
       }
       /**
-       * <code>repeated .ItemParam deliver_item_list = 10;</code>
+       * <code>repeated .ItemParam deliver_item_list = 5;</code>
        */
       public Builder setDeliverItemList(
           int index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam value) {
@@ -655,7 +624,7 @@ public final class VintageMarketDeliverItemReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam deliver_item_list = 10;</code>
+       * <code>repeated .ItemParam deliver_item_list = 5;</code>
        */
       public Builder setDeliverItemList(
           int index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder builderForValue) {
@@ -669,7 +638,7 @@ public final class VintageMarketDeliverItemReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam deliver_item_list = 10;</code>
+       * <code>repeated .ItemParam deliver_item_list = 5;</code>
        */
       public Builder addDeliverItemList(emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam value) {
         if (deliverItemListBuilder_ == null) {
@@ -685,7 +654,7 @@ public final class VintageMarketDeliverItemReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam deliver_item_list = 10;</code>
+       * <code>repeated .ItemParam deliver_item_list = 5;</code>
        */
       public Builder addDeliverItemList(
           int index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam value) {
@@ -702,7 +671,7 @@ public final class VintageMarketDeliverItemReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam deliver_item_list = 10;</code>
+       * <code>repeated .ItemParam deliver_item_list = 5;</code>
        */
       public Builder addDeliverItemList(
           emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder builderForValue) {
@@ -716,7 +685,7 @@ public final class VintageMarketDeliverItemReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam deliver_item_list = 10;</code>
+       * <code>repeated .ItemParam deliver_item_list = 5;</code>
        */
       public Builder addDeliverItemList(
           int index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder builderForValue) {
@@ -730,7 +699,7 @@ public final class VintageMarketDeliverItemReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam deliver_item_list = 10;</code>
+       * <code>repeated .ItemParam deliver_item_list = 5;</code>
        */
       public Builder addAllDeliverItemList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> values) {
@@ -745,7 +714,7 @@ public final class VintageMarketDeliverItemReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam deliver_item_list = 10;</code>
+       * <code>repeated .ItemParam deliver_item_list = 5;</code>
        */
       public Builder clearDeliverItemList() {
         if (deliverItemListBuilder_ == null) {
@@ -758,7 +727,7 @@ public final class VintageMarketDeliverItemReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam deliver_item_list = 10;</code>
+       * <code>repeated .ItemParam deliver_item_list = 5;</code>
        */
       public Builder removeDeliverItemList(int index) {
         if (deliverItemListBuilder_ == null) {
@@ -771,14 +740,14 @@ public final class VintageMarketDeliverItemReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam deliver_item_list = 10;</code>
+       * <code>repeated .ItemParam deliver_item_list = 5;</code>
        */
       public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder getDeliverItemListBuilder(
           int index) {
         return getDeliverItemListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .ItemParam deliver_item_list = 10;</code>
+       * <code>repeated .ItemParam deliver_item_list = 5;</code>
        */
       public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder getDeliverItemListOrBuilder(
           int index) {
@@ -788,7 +757,7 @@ public final class VintageMarketDeliverItemReqOuterClass {
         }
       }
       /**
-       * <code>repeated .ItemParam deliver_item_list = 10;</code>
+       * <code>repeated .ItemParam deliver_item_list = 5;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> 
            getDeliverItemListOrBuilderList() {
@@ -799,14 +768,14 @@ public final class VintageMarketDeliverItemReqOuterClass {
         }
       }
       /**
-       * <code>repeated .ItemParam deliver_item_list = 10;</code>
+       * <code>repeated .ItemParam deliver_item_list = 5;</code>
        */
       public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder addDeliverItemListBuilder() {
         return getDeliverItemListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.getDefaultInstance());
       }
       /**
-       * <code>repeated .ItemParam deliver_item_list = 10;</code>
+       * <code>repeated .ItemParam deliver_item_list = 5;</code>
        */
       public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder addDeliverItemListBuilder(
           int index) {
@@ -814,7 +783,7 @@ public final class VintageMarketDeliverItemReqOuterClass {
             index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.getDefaultInstance());
       }
       /**
-       * <code>repeated .ItemParam deliver_item_list = 10;</code>
+       * <code>repeated .ItemParam deliver_item_list = 5;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder> 
            getDeliverItemListBuilderList() {
@@ -833,6 +802,37 @@ public final class VintageMarketDeliverItemReqOuterClass {
           deliverItemList_ = null;
         }
         return deliverItemListBuilder_;
+      }
+
+      private int traderId_ ;
+      /**
+       * <code>uint32 trader_id = 11;</code>
+       * @return The traderId.
+       */
+      @java.lang.Override
+      public int getTraderId() {
+        return traderId_;
+      }
+      /**
+       * <code>uint32 trader_id = 11;</code>
+       * @param value The traderId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTraderId(int value) {
+        
+        traderId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 trader_id = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTraderId() {
+        
+        traderId_ = 0;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -903,8 +903,8 @@ public final class VintageMarketDeliverItemReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n!VintageMarketDeliverItemReq.proto\032\017Ite" +
       "mParam.proto\"W\n\033VintageMarketDeliverItem" +
-      "Req\022\021\n\ttrader_id\030\017 \001(\r\022%\n\021deliver_item_l" +
-      "ist\030\n \003(\0132\n.ItemParamB\033\n\031emu.grasscutter" +
+      "Req\022%\n\021deliver_item_list\030\005 \003(\0132\n.ItemPar" +
+      "am\022\021\n\ttrader_id\030\013 \001(\rB\033\n\031emu.grasscutter" +
       ".net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -917,7 +917,7 @@ public final class VintageMarketDeliverItemReqOuterClass {
     internal_static_VintageMarketDeliverItemReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_VintageMarketDeliverItemReq_descriptor,
-        new java.lang.String[] { "TraderId", "DeliverItemList", });
+        new java.lang.String[] { "DeliverItemList", "TraderId", });
     emu.grasscutter.net.proto.ItemParamOuterClass.getDescriptor();
   }
 

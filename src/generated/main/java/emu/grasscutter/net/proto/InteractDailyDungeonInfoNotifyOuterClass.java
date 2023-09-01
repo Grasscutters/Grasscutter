@@ -20,8 +20,8 @@ public final class InteractDailyDungeonInfoNotifyOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 910
-   * Obf: ENGKPNHPHEN
+   * CmdId: 2249
+   * Obf: CCJDIFPEDOP
    * </pre>
    *
    * Protobuf type {@code InteractDailyDungeonInfoNotify}
@@ -246,8 +246,8 @@ public final class InteractDailyDungeonInfoNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 910
-     * Obf: ENGKPNHPHEN
+     * CmdId: 2249
+     * Obf: CCJDIFPEDOP
      * </pre>
      *
      * Protobuf type {@code InteractDailyDungeonInfoNotify}

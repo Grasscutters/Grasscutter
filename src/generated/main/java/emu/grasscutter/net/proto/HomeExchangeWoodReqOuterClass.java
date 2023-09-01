@@ -19,6 +19,12 @@ public final class HomeExchangeWoodReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <code>uint32 wood_id = 8;</code>
+     * @return The woodId.
+     */
+    int getWoodId();
+
+    /**
      * <code>map&lt;uint32, uint32&gt; material_count_map = 6;</code>
      */
     int getMaterialCountMapCount();
@@ -51,17 +57,11 @@ public final class HomeExchangeWoodReqOuterClass {
 
     int getMaterialCountMapOrThrow(
         int key);
-
-    /**
-     * <code>uint32 wood_id = 10;</code>
-     * @return The woodId.
-     */
-    int getWoodId();
   }
   /**
    * <pre>
-   * CmdId: 4648
-   * Obf: PPFBLNPIJCM
+   * CmdId: 20572
+   * Obf: IIECGONCCKO
    * </pre>
    *
    * Protobuf type {@code HomeExchangeWoodReq}
@@ -122,7 +122,7 @@ public final class HomeExchangeWoodReqOuterClass {
                   materialCountMap__.getKey(), materialCountMap__.getValue());
               break;
             }
-            case 80: {
+            case 64: {
 
               woodId_ = input.readUInt32();
               break;
@@ -169,6 +169,17 @@ public final class HomeExchangeWoodReqOuterClass {
       return emu.grasscutter.net.proto.HomeExchangeWoodReqOuterClass.internal_static_HomeExchangeWoodReq_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               emu.grasscutter.net.proto.HomeExchangeWoodReqOuterClass.HomeExchangeWoodReq.class, emu.grasscutter.net.proto.HomeExchangeWoodReqOuterClass.HomeExchangeWoodReq.Builder.class);
+    }
+
+    public static final int WOOD_ID_FIELD_NUMBER = 8;
+    private int woodId_;
+    /**
+     * <code>uint32 wood_id = 8;</code>
+     * @return The woodId.
+     */
+    @java.lang.Override
+    public int getWoodId() {
+      return woodId_;
     }
 
     public static final int MATERIAL_COUNT_MAP_FIELD_NUMBER = 6;
@@ -252,17 +263,6 @@ public final class HomeExchangeWoodReqOuterClass {
       return map.get(key);
     }
 
-    public static final int WOOD_ID_FIELD_NUMBER = 10;
-    private int woodId_;
-    /**
-     * <code>uint32 wood_id = 10;</code>
-     * @return The woodId.
-     */
-    @java.lang.Override
-    public int getWoodId() {
-      return woodId_;
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -284,7 +284,7 @@ public final class HomeExchangeWoodReqOuterClass {
           MaterialCountMapDefaultEntryHolder.defaultEntry,
           6);
       if (woodId_ != 0) {
-        output.writeUInt32(10, woodId_);
+        output.writeUInt32(8, woodId_);
       }
       unknownFields.writeTo(output);
     }
@@ -307,7 +307,7 @@ public final class HomeExchangeWoodReqOuterClass {
       }
       if (woodId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, woodId_);
+          .computeUInt32Size(8, woodId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -324,10 +324,10 @@ public final class HomeExchangeWoodReqOuterClass {
       }
       emu.grasscutter.net.proto.HomeExchangeWoodReqOuterClass.HomeExchangeWoodReq other = (emu.grasscutter.net.proto.HomeExchangeWoodReqOuterClass.HomeExchangeWoodReq) obj;
 
-      if (!internalGetMaterialCountMap().equals(
-          other.internalGetMaterialCountMap())) return false;
       if (getWoodId()
           != other.getWoodId()) return false;
+      if (!internalGetMaterialCountMap().equals(
+          other.internalGetMaterialCountMap())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -339,12 +339,12 @@ public final class HomeExchangeWoodReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + WOOD_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getWoodId();
       if (!internalGetMaterialCountMap().getMap().isEmpty()) {
         hash = (37 * hash) + MATERIAL_COUNT_MAP_FIELD_NUMBER;
         hash = (53 * hash) + internalGetMaterialCountMap().hashCode();
       }
-      hash = (37 * hash) + WOOD_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getWoodId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -442,8 +442,8 @@ public final class HomeExchangeWoodReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4648
-     * Obf: PPFBLNPIJCM
+     * CmdId: 20572
+     * Obf: IIECGONCCKO
      * </pre>
      *
      * Protobuf type {@code HomeExchangeWoodReq}
@@ -505,9 +505,9 @@ public final class HomeExchangeWoodReqOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        internalGetMutableMaterialCountMap().clear();
         woodId_ = 0;
 
+        internalGetMutableMaterialCountMap().clear();
         return this;
       }
 
@@ -535,9 +535,9 @@ public final class HomeExchangeWoodReqOuterClass {
       public emu.grasscutter.net.proto.HomeExchangeWoodReqOuterClass.HomeExchangeWoodReq buildPartial() {
         emu.grasscutter.net.proto.HomeExchangeWoodReqOuterClass.HomeExchangeWoodReq result = new emu.grasscutter.net.proto.HomeExchangeWoodReqOuterClass.HomeExchangeWoodReq(this);
         int from_bitField0_ = bitField0_;
+        result.woodId_ = woodId_;
         result.materialCountMap_ = internalGetMaterialCountMap();
         result.materialCountMap_.makeImmutable();
-        result.woodId_ = woodId_;
         onBuilt();
         return result;
       }
@@ -586,11 +586,11 @@ public final class HomeExchangeWoodReqOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.HomeExchangeWoodReqOuterClass.HomeExchangeWoodReq other) {
         if (other == emu.grasscutter.net.proto.HomeExchangeWoodReqOuterClass.HomeExchangeWoodReq.getDefaultInstance()) return this;
-        internalGetMutableMaterialCountMap().mergeFrom(
-            other.internalGetMaterialCountMap());
         if (other.getWoodId() != 0) {
           setWoodId(other.getWoodId());
         }
+        internalGetMutableMaterialCountMap().mergeFrom(
+            other.internalGetMaterialCountMap());
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -620,6 +620,37 @@ public final class HomeExchangeWoodReqOuterClass {
         return this;
       }
       private int bitField0_;
+
+      private int woodId_ ;
+      /**
+       * <code>uint32 wood_id = 8;</code>
+       * @return The woodId.
+       */
+      @java.lang.Override
+      public int getWoodId() {
+        return woodId_;
+      }
+      /**
+       * <code>uint32 wood_id = 8;</code>
+       * @param value The woodId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setWoodId(int value) {
+        
+        woodId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 wood_id = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearWoodId() {
+        
+        woodId_ = 0;
+        onChanged();
+        return this;
+      }
 
       private com.google.protobuf.MapField<
           java.lang.Integer, java.lang.Integer> materialCountMap_;
@@ -748,37 +779,6 @@ public final class HomeExchangeWoodReqOuterClass {
             .putAll(values);
         return this;
       }
-
-      private int woodId_ ;
-      /**
-       * <code>uint32 wood_id = 10;</code>
-       * @return The woodId.
-       */
-      @java.lang.Override
-      public int getWoodId() {
-        return woodId_;
-      }
-      /**
-       * <code>uint32 wood_id = 10;</code>
-       * @param value The woodId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setWoodId(int value) {
-        
-        woodId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 wood_id = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearWoodId() {
-        
-        woodId_ = 0;
-        onChanged();
-        return this;
-      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -852,9 +852,9 @@ public final class HomeExchangeWoodReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\031HomeExchangeWoodReq.proto\"\247\001\n\023HomeExch" +
-      "angeWoodReq\022F\n\022material_count_map\030\006 \003(\0132" +
-      "*.HomeExchangeWoodReq.MaterialCountMapEn" +
-      "try\022\017\n\007wood_id\030\n \001(\r\0327\n\025MaterialCountMap" +
+      "angeWoodReq\022\017\n\007wood_id\030\010 \001(\r\022F\n\022material" +
+      "_count_map\030\006 \003(\0132*.HomeExchangeWoodReq.M" +
+      "aterialCountMapEntry\0327\n\025MaterialCountMap" +
       "Entry\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001B\033\n" +
       "\031emu.grasscutter.net.protob\006proto3"
     };
@@ -867,7 +867,7 @@ public final class HomeExchangeWoodReqOuterClass {
     internal_static_HomeExchangeWoodReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_HomeExchangeWoodReq_descriptor,
-        new java.lang.String[] { "MaterialCountMap", "WoodId", });
+        new java.lang.String[] { "WoodId", "MaterialCountMap", });
     internal_static_HomeExchangeWoodReq_MaterialCountMapEntry_descriptor =
       internal_static_HomeExchangeWoodReq_descriptor.getNestedTypes().get(0);
     internal_static_HomeExchangeWoodReq_MaterialCountMapEntry_fieldAccessorTable = new

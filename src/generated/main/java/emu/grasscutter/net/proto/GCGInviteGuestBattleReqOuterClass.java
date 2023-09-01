@@ -19,21 +19,21 @@ public final class GCGInviteGuestBattleReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 OANEDGGOLIL = 14;</code>
-     * @return The oANEDGGOLIL.
+     * <code>uint32 GCKJBMKBJEF = 9;</code>
+     * @return The gCKJBMKBJEF.
      */
-    int getOANEDGGOLIL();
+    int getGCKJBMKBJEF();
 
     /**
-     * <code>uint32 uid = 4;</code>
+     * <code>uint32 uid = 8;</code>
      * @return The uid.
      */
     int getUid();
   }
   /**
    * <pre>
-   * CmdId: 7467
-   * Obf: NGGCCHMAKHA
+   * CmdId: 8113
+   * Obf: DNMKFELFKPN
    * </pre>
    *
    * Protobuf type {@code GCGInviteGuestBattleReq}
@@ -80,14 +80,14 @@ public final class GCGInviteGuestBattleReqOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
+            case 64: {
 
               uid_ = input.readUInt32();
               break;
             }
-            case 112: {
+            case 72: {
 
-              oANEDGGOLIL_ = input.readUInt32();
+              gCKJBMKBJEF_ = input.readUInt32();
               break;
             }
             default: {
@@ -122,21 +122,21 @@ public final class GCGInviteGuestBattleReqOuterClass {
               emu.grasscutter.net.proto.GCGInviteGuestBattleReqOuterClass.GCGInviteGuestBattleReq.class, emu.grasscutter.net.proto.GCGInviteGuestBattleReqOuterClass.GCGInviteGuestBattleReq.Builder.class);
     }
 
-    public static final int OANEDGGOLIL_FIELD_NUMBER = 14;
-    private int oANEDGGOLIL_;
+    public static final int GCKJBMKBJEF_FIELD_NUMBER = 9;
+    private int gCKJBMKBJEF_;
     /**
-     * <code>uint32 OANEDGGOLIL = 14;</code>
-     * @return The oANEDGGOLIL.
+     * <code>uint32 GCKJBMKBJEF = 9;</code>
+     * @return The gCKJBMKBJEF.
      */
     @java.lang.Override
-    public int getOANEDGGOLIL() {
-      return oANEDGGOLIL_;
+    public int getGCKJBMKBJEF() {
+      return gCKJBMKBJEF_;
     }
 
-    public static final int UID_FIELD_NUMBER = 4;
+    public static final int UID_FIELD_NUMBER = 8;
     private int uid_;
     /**
-     * <code>uint32 uid = 4;</code>
+     * <code>uint32 uid = 8;</code>
      * @return The uid.
      */
     @java.lang.Override
@@ -159,10 +159,10 @@ public final class GCGInviteGuestBattleReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (uid_ != 0) {
-        output.writeUInt32(4, uid_);
+        output.writeUInt32(8, uid_);
       }
-      if (oANEDGGOLIL_ != 0) {
-        output.writeUInt32(14, oANEDGGOLIL_);
+      if (gCKJBMKBJEF_ != 0) {
+        output.writeUInt32(9, gCKJBMKBJEF_);
       }
       unknownFields.writeTo(output);
     }
@@ -175,11 +175,11 @@ public final class GCGInviteGuestBattleReqOuterClass {
       size = 0;
       if (uid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, uid_);
+          .computeUInt32Size(8, uid_);
       }
-      if (oANEDGGOLIL_ != 0) {
+      if (gCKJBMKBJEF_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, oANEDGGOLIL_);
+          .computeUInt32Size(9, gCKJBMKBJEF_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -196,8 +196,8 @@ public final class GCGInviteGuestBattleReqOuterClass {
       }
       emu.grasscutter.net.proto.GCGInviteGuestBattleReqOuterClass.GCGInviteGuestBattleReq other = (emu.grasscutter.net.proto.GCGInviteGuestBattleReqOuterClass.GCGInviteGuestBattleReq) obj;
 
-      if (getOANEDGGOLIL()
-          != other.getOANEDGGOLIL()) return false;
+      if (getGCKJBMKBJEF()
+          != other.getGCKJBMKBJEF()) return false;
       if (getUid()
           != other.getUid()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -211,8 +211,8 @@ public final class GCGInviteGuestBattleReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + OANEDGGOLIL_FIELD_NUMBER;
-      hash = (53 * hash) + getOANEDGGOLIL();
+      hash = (37 * hash) + GCKJBMKBJEF_FIELD_NUMBER;
+      hash = (53 * hash) + getGCKJBMKBJEF();
       hash = (37 * hash) + UID_FIELD_NUMBER;
       hash = (53 * hash) + getUid();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -312,8 +312,8 @@ public final class GCGInviteGuestBattleReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 7467
-     * Obf: NGGCCHMAKHA
+     * CmdId: 8113
+     * Obf: DNMKFELFKPN
      * </pre>
      *
      * Protobuf type {@code GCGInviteGuestBattleReq}
@@ -353,7 +353,7 @@ public final class GCGInviteGuestBattleReqOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        oANEDGGOLIL_ = 0;
+        gCKJBMKBJEF_ = 0;
 
         uid_ = 0;
 
@@ -383,7 +383,7 @@ public final class GCGInviteGuestBattleReqOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.GCGInviteGuestBattleReqOuterClass.GCGInviteGuestBattleReq buildPartial() {
         emu.grasscutter.net.proto.GCGInviteGuestBattleReqOuterClass.GCGInviteGuestBattleReq result = new emu.grasscutter.net.proto.GCGInviteGuestBattleReqOuterClass.GCGInviteGuestBattleReq(this);
-        result.oANEDGGOLIL_ = oANEDGGOLIL_;
+        result.gCKJBMKBJEF_ = gCKJBMKBJEF_;
         result.uid_ = uid_;
         onBuilt();
         return result;
@@ -433,8 +433,8 @@ public final class GCGInviteGuestBattleReqOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.GCGInviteGuestBattleReqOuterClass.GCGInviteGuestBattleReq other) {
         if (other == emu.grasscutter.net.proto.GCGInviteGuestBattleReqOuterClass.GCGInviteGuestBattleReq.getDefaultInstance()) return this;
-        if (other.getOANEDGGOLIL() != 0) {
-          setOANEDGGOLIL(other.getOANEDGGOLIL());
+        if (other.getGCKJBMKBJEF() != 0) {
+          setGCKJBMKBJEF(other.getGCKJBMKBJEF());
         }
         if (other.getUid() != 0) {
           setUid(other.getUid());
@@ -468,40 +468,40 @@ public final class GCGInviteGuestBattleReqOuterClass {
         return this;
       }
 
-      private int oANEDGGOLIL_ ;
+      private int gCKJBMKBJEF_ ;
       /**
-       * <code>uint32 OANEDGGOLIL = 14;</code>
-       * @return The oANEDGGOLIL.
+       * <code>uint32 GCKJBMKBJEF = 9;</code>
+       * @return The gCKJBMKBJEF.
        */
       @java.lang.Override
-      public int getOANEDGGOLIL() {
-        return oANEDGGOLIL_;
+      public int getGCKJBMKBJEF() {
+        return gCKJBMKBJEF_;
       }
       /**
-       * <code>uint32 OANEDGGOLIL = 14;</code>
-       * @param value The oANEDGGOLIL to set.
+       * <code>uint32 GCKJBMKBJEF = 9;</code>
+       * @param value The gCKJBMKBJEF to set.
        * @return This builder for chaining.
        */
-      public Builder setOANEDGGOLIL(int value) {
+      public Builder setGCKJBMKBJEF(int value) {
         
-        oANEDGGOLIL_ = value;
+        gCKJBMKBJEF_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 OANEDGGOLIL = 14;</code>
+       * <code>uint32 GCKJBMKBJEF = 9;</code>
        * @return This builder for chaining.
        */
-      public Builder clearOANEDGGOLIL() {
+      public Builder clearGCKJBMKBJEF() {
         
-        oANEDGGOLIL_ = 0;
+        gCKJBMKBJEF_ = 0;
         onChanged();
         return this;
       }
 
       private int uid_ ;
       /**
-       * <code>uint32 uid = 4;</code>
+       * <code>uint32 uid = 8;</code>
        * @return The uid.
        */
       @java.lang.Override
@@ -509,7 +509,7 @@ public final class GCGInviteGuestBattleReqOuterClass {
         return uid_;
       }
       /**
-       * <code>uint32 uid = 4;</code>
+       * <code>uint32 uid = 8;</code>
        * @param value The uid to set.
        * @return This builder for chaining.
        */
@@ -520,7 +520,7 @@ public final class GCGInviteGuestBattleReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 uid = 4;</code>
+       * <code>uint32 uid = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearUid() {
@@ -597,8 +597,8 @@ public final class GCGInviteGuestBattleReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\035GCGInviteGuestBattleReq.proto\";\n\027GCGIn" +
-      "viteGuestBattleReq\022\023\n\013OANEDGGOLIL\030\016 \001(\r\022" +
-      "\013\n\003uid\030\004 \001(\rB\033\n\031emu.grasscutter.net.prot" +
+      "viteGuestBattleReq\022\023\n\013GCKJBMKBJEF\030\t \001(\r\022" +
+      "\013\n\003uid\030\010 \001(\rB\033\n\031emu.grasscutter.net.prot" +
       "ob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -610,7 +610,7 @@ public final class GCGInviteGuestBattleReqOuterClass {
     internal_static_GCGInviteGuestBattleReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GCGInviteGuestBattleReq_descriptor,
-        new java.lang.String[] { "OANEDGGOLIL", "Uid", });
+        new java.lang.String[] { "GCKJBMKBJEF", "Uid", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

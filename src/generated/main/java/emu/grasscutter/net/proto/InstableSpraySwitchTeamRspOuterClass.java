@@ -19,21 +19,21 @@ public final class InstableSpraySwitchTeamRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 level_id = 9;</code>
+     * <code>uint32 level_id = 3;</code>
      * @return The levelId.
      */
     int getLevelId();
 
     /**
-     * <code>int32 retcode = 6;</code>
+     * <code>int32 retcode = 7;</code>
      * @return The retcode.
      */
     int getRetcode();
   }
   /**
    * <pre>
-   * CmdId: 24774
-   * Obf: NDJNCJJLLNI
+   * CmdId: 25633
+   * Obf: PDIJEFMDCDK
    * </pre>
    *
    * Protobuf type {@code InstableSpraySwitchTeamRsp}
@@ -80,14 +80,14 @@ public final class InstableSpraySwitchTeamRspOuterClass {
             case 0:
               done = true;
               break;
-            case 48: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 72: {
+            case 24: {
 
               levelId_ = input.readUInt32();
+              break;
+            }
+            case 56: {
+
+              retcode_ = input.readInt32();
               break;
             }
             default: {
@@ -122,10 +122,10 @@ public final class InstableSpraySwitchTeamRspOuterClass {
               emu.grasscutter.net.proto.InstableSpraySwitchTeamRspOuterClass.InstableSpraySwitchTeamRsp.class, emu.grasscutter.net.proto.InstableSpraySwitchTeamRspOuterClass.InstableSpraySwitchTeamRsp.Builder.class);
     }
 
-    public static final int LEVEL_ID_FIELD_NUMBER = 9;
+    public static final int LEVEL_ID_FIELD_NUMBER = 3;
     private int levelId_;
     /**
-     * <code>uint32 level_id = 9;</code>
+     * <code>uint32 level_id = 3;</code>
      * @return The levelId.
      */
     @java.lang.Override
@@ -133,10 +133,10 @@ public final class InstableSpraySwitchTeamRspOuterClass {
       return levelId_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 6;
+    public static final int RETCODE_FIELD_NUMBER = 7;
     private int retcode_;
     /**
-     * <code>int32 retcode = 6;</code>
+     * <code>int32 retcode = 7;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -158,11 +158,11 @@ public final class InstableSpraySwitchTeamRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (retcode_ != 0) {
-        output.writeInt32(6, retcode_);
-      }
       if (levelId_ != 0) {
-        output.writeUInt32(9, levelId_);
+        output.writeUInt32(3, levelId_);
+      }
+      if (retcode_ != 0) {
+        output.writeInt32(7, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -173,13 +173,13 @@ public final class InstableSpraySwitchTeamRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (retcode_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(6, retcode_);
-      }
       if (levelId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, levelId_);
+          .computeUInt32Size(3, levelId_);
+      }
+      if (retcode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(7, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -312,8 +312,8 @@ public final class InstableSpraySwitchTeamRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 24774
-     * Obf: NDJNCJJLLNI
+     * CmdId: 25633
+     * Obf: PDIJEFMDCDK
      * </pre>
      *
      * Protobuf type {@code InstableSpraySwitchTeamRsp}
@@ -470,7 +470,7 @@ public final class InstableSpraySwitchTeamRspOuterClass {
 
       private int levelId_ ;
       /**
-       * <code>uint32 level_id = 9;</code>
+       * <code>uint32 level_id = 3;</code>
        * @return The levelId.
        */
       @java.lang.Override
@@ -478,7 +478,7 @@ public final class InstableSpraySwitchTeamRspOuterClass {
         return levelId_;
       }
       /**
-       * <code>uint32 level_id = 9;</code>
+       * <code>uint32 level_id = 3;</code>
        * @param value The levelId to set.
        * @return This builder for chaining.
        */
@@ -489,7 +489,7 @@ public final class InstableSpraySwitchTeamRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 level_id = 9;</code>
+       * <code>uint32 level_id = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearLevelId() {
@@ -501,7 +501,7 @@ public final class InstableSpraySwitchTeamRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 6;</code>
+       * <code>int32 retcode = 7;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -509,7 +509,7 @@ public final class InstableSpraySwitchTeamRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 6;</code>
+       * <code>int32 retcode = 7;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -520,7 +520,7 @@ public final class InstableSpraySwitchTeamRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 6;</code>
+       * <code>int32 retcode = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -597,8 +597,8 @@ public final class InstableSpraySwitchTeamRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n InstableSpraySwitchTeamRsp.proto\"?\n\032In" +
-      "stableSpraySwitchTeamRsp\022\020\n\010level_id\030\t \001" +
-      "(\r\022\017\n\007retcode\030\006 \001(\005B\033\n\031emu.grasscutter.n" +
+      "stableSpraySwitchTeamRsp\022\020\n\010level_id\030\003 \001" +
+      "(\r\022\017\n\007retcode\030\007 \001(\005B\033\n\031emu.grasscutter.n" +
       "et.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

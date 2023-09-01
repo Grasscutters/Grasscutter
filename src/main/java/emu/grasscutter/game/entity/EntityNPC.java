@@ -1,8 +1,7 @@
 package emu.grasscutter.game.entity;
 
 import emu.grasscutter.game.props.EntityIdType;
-import emu.grasscutter.game.world.Position;
-import emu.grasscutter.game.world.Scene;
+import emu.grasscutter.game.world.*;
 import emu.grasscutter.net.proto.*;
 import emu.grasscutter.scripts.data.SceneNPC;
 import it.unimi.dsi.fastutil.ints.Int2FloatMap;

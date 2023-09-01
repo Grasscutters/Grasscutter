@@ -19,32 +19,32 @@ public final class BigTalentPointConvertReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint64 item_guid_list = 12;</code>
+     * <code>repeated uint64 item_guid_list = 13;</code>
      * @return A list containing the itemGuidList.
      */
     java.util.List<java.lang.Long> getItemGuidListList();
     /**
-     * <code>repeated uint64 item_guid_list = 12;</code>
+     * <code>repeated uint64 item_guid_list = 13;</code>
      * @return The count of itemGuidList.
      */
     int getItemGuidListCount();
     /**
-     * <code>repeated uint64 item_guid_list = 12;</code>
+     * <code>repeated uint64 item_guid_list = 13;</code>
      * @param index The index of the element to return.
      * @return The itemGuidList at the given index.
      */
     long getItemGuidList(int index);
 
     /**
-     * <code>uint64 avatar_guid = 11;</code>
+     * <code>uint64 avatar_guid = 1;</code>
      * @return The avatarGuid.
      */
     long getAvatarGuid();
   }
   /**
    * <pre>
-   * CmdId: 1055
-   * Obf: MNCGEGPGLJE
+   * CmdId: 23728
+   * Obf: ILIIEMMFOAM
    * </pre>
    *
    * Protobuf type {@code BigTalentPointConvertReq}
@@ -93,12 +93,12 @@ public final class BigTalentPointConvertReqOuterClass {
             case 0:
               done = true;
               break;
-            case 88: {
+            case 8: {
 
               avatarGuid_ = input.readUInt64();
               break;
             }
-            case 96: {
+            case 104: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 itemGuidList_ = newLongList();
                 mutable_bitField0_ |= 0x00000001;
@@ -106,7 +106,7 @@ public final class BigTalentPointConvertReqOuterClass {
               itemGuidList_.addLong(input.readUInt64());
               break;
             }
-            case 98: {
+            case 106: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -154,10 +154,10 @@ public final class BigTalentPointConvertReqOuterClass {
               emu.grasscutter.net.proto.BigTalentPointConvertReqOuterClass.BigTalentPointConvertReq.class, emu.grasscutter.net.proto.BigTalentPointConvertReqOuterClass.BigTalentPointConvertReq.Builder.class);
     }
 
-    public static final int ITEM_GUID_LIST_FIELD_NUMBER = 12;
+    public static final int ITEM_GUID_LIST_FIELD_NUMBER = 13;
     private com.google.protobuf.Internal.LongList itemGuidList_;
     /**
-     * <code>repeated uint64 item_guid_list = 12;</code>
+     * <code>repeated uint64 item_guid_list = 13;</code>
      * @return A list containing the itemGuidList.
      */
     @java.lang.Override
@@ -166,14 +166,14 @@ public final class BigTalentPointConvertReqOuterClass {
       return itemGuidList_;
     }
     /**
-     * <code>repeated uint64 item_guid_list = 12;</code>
+     * <code>repeated uint64 item_guid_list = 13;</code>
      * @return The count of itemGuidList.
      */
     public int getItemGuidListCount() {
       return itemGuidList_.size();
     }
     /**
-     * <code>repeated uint64 item_guid_list = 12;</code>
+     * <code>repeated uint64 item_guid_list = 13;</code>
      * @param index The index of the element to return.
      * @return The itemGuidList at the given index.
      */
@@ -182,10 +182,10 @@ public final class BigTalentPointConvertReqOuterClass {
     }
     private int itemGuidListMemoizedSerializedSize = -1;
 
-    public static final int AVATAR_GUID_FIELD_NUMBER = 11;
+    public static final int AVATAR_GUID_FIELD_NUMBER = 1;
     private long avatarGuid_;
     /**
-     * <code>uint64 avatar_guid = 11;</code>
+     * <code>uint64 avatar_guid = 1;</code>
      * @return The avatarGuid.
      */
     @java.lang.Override
@@ -209,10 +209,10 @@ public final class BigTalentPointConvertReqOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (avatarGuid_ != 0L) {
-        output.writeUInt64(11, avatarGuid_);
+        output.writeUInt64(1, avatarGuid_);
       }
       if (getItemGuidListList().size() > 0) {
-        output.writeUInt32NoTag(98);
+        output.writeUInt32NoTag(106);
         output.writeUInt32NoTag(itemGuidListMemoizedSerializedSize);
       }
       for (int i = 0; i < itemGuidList_.size(); i++) {
@@ -229,7 +229,7 @@ public final class BigTalentPointConvertReqOuterClass {
       size = 0;
       if (avatarGuid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(11, avatarGuid_);
+          .computeUInt64Size(1, avatarGuid_);
       }
       {
         int dataSize = 0;
@@ -379,8 +379,8 @@ public final class BigTalentPointConvertReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 1055
-     * Obf: MNCGEGPGLJE
+     * CmdId: 23728
+     * Obf: ILIIEMMFOAM
      * </pre>
      *
      * Protobuf type {@code BigTalentPointConvertReq}
@@ -556,7 +556,7 @@ public final class BigTalentPointConvertReqOuterClass {
          }
       }
       /**
-       * <code>repeated uint64 item_guid_list = 12;</code>
+       * <code>repeated uint64 item_guid_list = 13;</code>
        * @return A list containing the itemGuidList.
        */
       public java.util.List<java.lang.Long>
@@ -565,14 +565,14 @@ public final class BigTalentPointConvertReqOuterClass {
                  java.util.Collections.unmodifiableList(itemGuidList_) : itemGuidList_;
       }
       /**
-       * <code>repeated uint64 item_guid_list = 12;</code>
+       * <code>repeated uint64 item_guid_list = 13;</code>
        * @return The count of itemGuidList.
        */
       public int getItemGuidListCount() {
         return itemGuidList_.size();
       }
       /**
-       * <code>repeated uint64 item_guid_list = 12;</code>
+       * <code>repeated uint64 item_guid_list = 13;</code>
        * @param index The index of the element to return.
        * @return The itemGuidList at the given index.
        */
@@ -580,7 +580,7 @@ public final class BigTalentPointConvertReqOuterClass {
         return itemGuidList_.getLong(index);
       }
       /**
-       * <code>repeated uint64 item_guid_list = 12;</code>
+       * <code>repeated uint64 item_guid_list = 13;</code>
        * @param index The index to set the value at.
        * @param value The itemGuidList to set.
        * @return This builder for chaining.
@@ -593,7 +593,7 @@ public final class BigTalentPointConvertReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint64 item_guid_list = 12;</code>
+       * <code>repeated uint64 item_guid_list = 13;</code>
        * @param value The itemGuidList to add.
        * @return This builder for chaining.
        */
@@ -604,7 +604,7 @@ public final class BigTalentPointConvertReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint64 item_guid_list = 12;</code>
+       * <code>repeated uint64 item_guid_list = 13;</code>
        * @param values The itemGuidList to add.
        * @return This builder for chaining.
        */
@@ -617,7 +617,7 @@ public final class BigTalentPointConvertReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint64 item_guid_list = 12;</code>
+       * <code>repeated uint64 item_guid_list = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearItemGuidList() {
@@ -629,7 +629,7 @@ public final class BigTalentPointConvertReqOuterClass {
 
       private long avatarGuid_ ;
       /**
-       * <code>uint64 avatar_guid = 11;</code>
+       * <code>uint64 avatar_guid = 1;</code>
        * @return The avatarGuid.
        */
       @java.lang.Override
@@ -637,7 +637,7 @@ public final class BigTalentPointConvertReqOuterClass {
         return avatarGuid_;
       }
       /**
-       * <code>uint64 avatar_guid = 11;</code>
+       * <code>uint64 avatar_guid = 1;</code>
        * @param value The avatarGuid to set.
        * @return This builder for chaining.
        */
@@ -648,7 +648,7 @@ public final class BigTalentPointConvertReqOuterClass {
         return this;
       }
       /**
-       * <code>uint64 avatar_guid = 11;</code>
+       * <code>uint64 avatar_guid = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearAvatarGuid() {
@@ -725,8 +725,8 @@ public final class BigTalentPointConvertReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\036BigTalentPointConvertReq.proto\"G\n\030BigT" +
-      "alentPointConvertReq\022\026\n\016item_guid_list\030\014" +
-      " \003(\004\022\023\n\013avatar_guid\030\013 \001(\004B\033\n\031emu.grasscu" +
+      "alentPointConvertReq\022\026\n\016item_guid_list\030\r" +
+      " \003(\004\022\023\n\013avatar_guid\030\001 \001(\004B\033\n\031emu.grasscu" +
       "tter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

@@ -19,21 +19,21 @@ public final class WinterCampRaceScoreNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 max_score = 4;</code>
+     * <code>uint32 max_score = 9;</code>
      * @return The maxScore.
      */
     int getMaxScore();
 
     /**
-     * <code>uint32 id = 7;</code>
+     * <code>uint32 id = 6;</code>
      * @return The id.
      */
     int getId();
   }
   /**
    * <pre>
-   * CmdId: 8372
-   * Obf: NNOEOPFIHPB
+   * CmdId: 20047
+   * Obf: OKGEHGOEJKK
    * </pre>
    *
    * Protobuf type {@code WinterCampRaceScoreNotify}
@@ -80,14 +80,14 @@ public final class WinterCampRaceScoreNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
-
-              maxScore_ = input.readUInt32();
-              break;
-            }
-            case 56: {
+            case 48: {
 
               id_ = input.readUInt32();
+              break;
+            }
+            case 72: {
+
+              maxScore_ = input.readUInt32();
               break;
             }
             default: {
@@ -122,10 +122,10 @@ public final class WinterCampRaceScoreNotifyOuterClass {
               emu.grasscutter.net.proto.WinterCampRaceScoreNotifyOuterClass.WinterCampRaceScoreNotify.class, emu.grasscutter.net.proto.WinterCampRaceScoreNotifyOuterClass.WinterCampRaceScoreNotify.Builder.class);
     }
 
-    public static final int MAX_SCORE_FIELD_NUMBER = 4;
+    public static final int MAX_SCORE_FIELD_NUMBER = 9;
     private int maxScore_;
     /**
-     * <code>uint32 max_score = 4;</code>
+     * <code>uint32 max_score = 9;</code>
      * @return The maxScore.
      */
     @java.lang.Override
@@ -133,10 +133,10 @@ public final class WinterCampRaceScoreNotifyOuterClass {
       return maxScore_;
     }
 
-    public static final int ID_FIELD_NUMBER = 7;
+    public static final int ID_FIELD_NUMBER = 6;
     private int id_;
     /**
-     * <code>uint32 id = 7;</code>
+     * <code>uint32 id = 6;</code>
      * @return The id.
      */
     @java.lang.Override
@@ -158,11 +158,11 @@ public final class WinterCampRaceScoreNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (maxScore_ != 0) {
-        output.writeUInt32(4, maxScore_);
-      }
       if (id_ != 0) {
-        output.writeUInt32(7, id_);
+        output.writeUInt32(6, id_);
+      }
+      if (maxScore_ != 0) {
+        output.writeUInt32(9, maxScore_);
       }
       unknownFields.writeTo(output);
     }
@@ -173,13 +173,13 @@ public final class WinterCampRaceScoreNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (maxScore_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, maxScore_);
-      }
       if (id_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, id_);
+          .computeUInt32Size(6, id_);
+      }
+      if (maxScore_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(9, maxScore_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -312,8 +312,8 @@ public final class WinterCampRaceScoreNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8372
-     * Obf: NNOEOPFIHPB
+     * CmdId: 20047
+     * Obf: OKGEHGOEJKK
      * </pre>
      *
      * Protobuf type {@code WinterCampRaceScoreNotify}
@@ -470,7 +470,7 @@ public final class WinterCampRaceScoreNotifyOuterClass {
 
       private int maxScore_ ;
       /**
-       * <code>uint32 max_score = 4;</code>
+       * <code>uint32 max_score = 9;</code>
        * @return The maxScore.
        */
       @java.lang.Override
@@ -478,7 +478,7 @@ public final class WinterCampRaceScoreNotifyOuterClass {
         return maxScore_;
       }
       /**
-       * <code>uint32 max_score = 4;</code>
+       * <code>uint32 max_score = 9;</code>
        * @param value The maxScore to set.
        * @return This builder for chaining.
        */
@@ -489,7 +489,7 @@ public final class WinterCampRaceScoreNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 max_score = 4;</code>
+       * <code>uint32 max_score = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearMaxScore() {
@@ -501,7 +501,7 @@ public final class WinterCampRaceScoreNotifyOuterClass {
 
       private int id_ ;
       /**
-       * <code>uint32 id = 7;</code>
+       * <code>uint32 id = 6;</code>
        * @return The id.
        */
       @java.lang.Override
@@ -509,7 +509,7 @@ public final class WinterCampRaceScoreNotifyOuterClass {
         return id_;
       }
       /**
-       * <code>uint32 id = 7;</code>
+       * <code>uint32 id = 6;</code>
        * @param value The id to set.
        * @return This builder for chaining.
        */
@@ -520,7 +520,7 @@ public final class WinterCampRaceScoreNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 id = 7;</code>
+       * <code>uint32 id = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearId() {
@@ -597,8 +597,8 @@ public final class WinterCampRaceScoreNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\037WinterCampRaceScoreNotify.proto\":\n\031Win" +
-      "terCampRaceScoreNotify\022\021\n\tmax_score\030\004 \001(" +
-      "\r\022\n\n\002id\030\007 \001(\rB\033\n\031emu.grasscutter.net.pro" +
+      "terCampRaceScoreNotify\022\021\n\tmax_score\030\t \001(" +
+      "\r\022\n\n\002id\030\006 \001(\rB\033\n\031emu.grasscutter.net.pro" +
       "tob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

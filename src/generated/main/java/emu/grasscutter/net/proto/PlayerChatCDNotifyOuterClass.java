@@ -19,15 +19,15 @@ public final class PlayerChatCDNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 over_time = 1;</code>
+     * <code>uint32 over_time = 2;</code>
      * @return The overTime.
      */
     int getOverTime();
   }
   /**
    * <pre>
-   * CmdId: 3227
-   * Obf: GOGNIJGLMLG
+   * CmdId: 26350
+   * Obf: NOKLHPPCPKB
    * </pre>
    *
    * Protobuf type {@code PlayerChatCDNotify}
@@ -74,7 +74,7 @@ public final class PlayerChatCDNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 16: {
 
               overTime_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class PlayerChatCDNotifyOuterClass {
               emu.grasscutter.net.proto.PlayerChatCDNotifyOuterClass.PlayerChatCDNotify.class, emu.grasscutter.net.proto.PlayerChatCDNotifyOuterClass.PlayerChatCDNotify.Builder.class);
     }
 
-    public static final int OVER_TIME_FIELD_NUMBER = 1;
+    public static final int OVER_TIME_FIELD_NUMBER = 2;
     private int overTime_;
     /**
-     * <code>uint32 over_time = 1;</code>
+     * <code>uint32 over_time = 2;</code>
      * @return The overTime.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class PlayerChatCDNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (overTime_ != 0) {
-        output.writeUInt32(1, overTime_);
+        output.writeUInt32(2, overTime_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class PlayerChatCDNotifyOuterClass {
       size = 0;
       if (overTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, overTime_);
+          .computeUInt32Size(2, overTime_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class PlayerChatCDNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 3227
-     * Obf: GOGNIJGLMLG
+     * CmdId: 26350
+     * Obf: NOKLHPPCPKB
      * </pre>
      *
      * Protobuf type {@code PlayerChatCDNotify}
@@ -431,7 +431,7 @@ public final class PlayerChatCDNotifyOuterClass {
 
       private int overTime_ ;
       /**
-       * <code>uint32 over_time = 1;</code>
+       * <code>uint32 over_time = 2;</code>
        * @return The overTime.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class PlayerChatCDNotifyOuterClass {
         return overTime_;
       }
       /**
-       * <code>uint32 over_time = 1;</code>
+       * <code>uint32 over_time = 2;</code>
        * @param value The overTime to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class PlayerChatCDNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 over_time = 1;</code>
+       * <code>uint32 over_time = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearOverTime() {
@@ -527,7 +527,7 @@ public final class PlayerChatCDNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\030PlayerChatCDNotify.proto\"\'\n\022PlayerChat" +
-      "CDNotify\022\021\n\tover_time\030\001 \001(\rB\033\n\031emu.grass" +
+      "CDNotify\022\021\n\tover_time\030\002 \001(\rB\033\n\031emu.grass" +
       "cutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

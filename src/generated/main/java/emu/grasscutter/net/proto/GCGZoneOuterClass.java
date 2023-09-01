@@ -19,17 +19,17 @@ public final class GCGZoneOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 card_list = 15;</code>
+     * <code>repeated uint32 card_list = 1;</code>
      * @return A list containing the cardList.
      */
     java.util.List<java.lang.Integer> getCardListList();
     /**
-     * <code>repeated uint32 card_list = 15;</code>
+     * <code>repeated uint32 card_list = 1;</code>
      * @return The count of cardList.
      */
     int getCardListCount();
     /**
-     * <code>repeated uint32 card_list = 15;</code>
+     * <code>repeated uint32 card_list = 1;</code>
      * @param index The index of the element to return.
      * @return The cardList at the given index.
      */
@@ -37,7 +37,7 @@ public final class GCGZoneOuterClass {
   }
   /**
    * <pre>
-   * Obf: ABJNNNLHPNF
+   * Obf: OLBMLCGCKDN
    * </pre>
    *
    * Protobuf type {@code GCGZone}
@@ -86,7 +86,7 @@ public final class GCGZoneOuterClass {
             case 0:
               done = true;
               break;
-            case 120: {
+            case 8: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 cardList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -94,7 +94,7 @@ public final class GCGZoneOuterClass {
               cardList_.addInt(input.readUInt32());
               break;
             }
-            case 122: {
+            case 10: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -142,10 +142,10 @@ public final class GCGZoneOuterClass {
               emu.grasscutter.net.proto.GCGZoneOuterClass.GCGZone.class, emu.grasscutter.net.proto.GCGZoneOuterClass.GCGZone.Builder.class);
     }
 
-    public static final int CARD_LIST_FIELD_NUMBER = 15;
+    public static final int CARD_LIST_FIELD_NUMBER = 1;
     private com.google.protobuf.Internal.IntList cardList_;
     /**
-     * <code>repeated uint32 card_list = 15;</code>
+     * <code>repeated uint32 card_list = 1;</code>
      * @return A list containing the cardList.
      */
     @java.lang.Override
@@ -154,14 +154,14 @@ public final class GCGZoneOuterClass {
       return cardList_;
     }
     /**
-     * <code>repeated uint32 card_list = 15;</code>
+     * <code>repeated uint32 card_list = 1;</code>
      * @return The count of cardList.
      */
     public int getCardListCount() {
       return cardList_.size();
     }
     /**
-     * <code>repeated uint32 card_list = 15;</code>
+     * <code>repeated uint32 card_list = 1;</code>
      * @param index The index of the element to return.
      * @return The cardList at the given index.
      */
@@ -186,7 +186,7 @@ public final class GCGZoneOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (getCardListList().size() > 0) {
-        output.writeUInt32NoTag(122);
+        output.writeUInt32NoTag(10);
         output.writeUInt32NoTag(cardListMemoizedSerializedSize);
       }
       for (int i = 0; i < cardList_.size(); i++) {
@@ -344,7 +344,7 @@ public final class GCGZoneOuterClass {
     }
     /**
      * <pre>
-     * Obf: ABJNNNLHPNF
+     * Obf: OLBMLCGCKDN
      * </pre>
      *
      * Protobuf type {@code GCGZone}
@@ -514,7 +514,7 @@ public final class GCGZoneOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 card_list = 15;</code>
+       * <code>repeated uint32 card_list = 1;</code>
        * @return A list containing the cardList.
        */
       public java.util.List<java.lang.Integer>
@@ -523,14 +523,14 @@ public final class GCGZoneOuterClass {
                  java.util.Collections.unmodifiableList(cardList_) : cardList_;
       }
       /**
-       * <code>repeated uint32 card_list = 15;</code>
+       * <code>repeated uint32 card_list = 1;</code>
        * @return The count of cardList.
        */
       public int getCardListCount() {
         return cardList_.size();
       }
       /**
-       * <code>repeated uint32 card_list = 15;</code>
+       * <code>repeated uint32 card_list = 1;</code>
        * @param index The index of the element to return.
        * @return The cardList at the given index.
        */
@@ -538,7 +538,7 @@ public final class GCGZoneOuterClass {
         return cardList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 card_list = 15;</code>
+       * <code>repeated uint32 card_list = 1;</code>
        * @param index The index to set the value at.
        * @param value The cardList to set.
        * @return This builder for chaining.
@@ -551,7 +551,7 @@ public final class GCGZoneOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 card_list = 15;</code>
+       * <code>repeated uint32 card_list = 1;</code>
        * @param value The cardList to add.
        * @return This builder for chaining.
        */
@@ -562,7 +562,7 @@ public final class GCGZoneOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 card_list = 15;</code>
+       * <code>repeated uint32 card_list = 1;</code>
        * @param values The cardList to add.
        * @return This builder for chaining.
        */
@@ -575,7 +575,7 @@ public final class GCGZoneOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 card_list = 15;</code>
+       * <code>repeated uint32 card_list = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearCardList() {
@@ -652,7 +652,7 @@ public final class GCGZoneOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\rGCGZone.proto\"\034\n\007GCGZone\022\021\n\tcard_list\030" +
-      "\017 \003(\rB\033\n\031emu.grasscutter.net.protob\006prot" +
+      "\001 \003(\rB\033\n\031emu.grasscutter.net.protob\006prot" +
       "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

@@ -19,43 +19,43 @@ public final class PacmanSettleInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 final_score = 12;</code>
+     * <code>uint32 final_score = 8;</code>
      * @return The finalScore.
      */
     int getFinalScore();
 
     /**
-     * <code>uint32 CGLDHPKMAGO = 4;</code>
-     * @return The cGLDHPKMAGO.
+     * <code>uint32 GIMCFEIADKI = 6;</code>
+     * @return The gIMCFEIADKI.
      */
-    int getCGLDHPKMAGO();
+    int getGIMCFEIADKI();
 
     /**
-     * <code>bool is_new_record = 9;</code>
+     * <code>bool is_new_record = 3;</code>
      * @return The isNewRecord.
      */
     boolean getIsNewRecord();
 
     /**
-     * <code>uint32 AFJNAIOEMJG = 1;</code>
-     * @return The aFJNAIOEMJG.
+     * <code>uint32 NHFGIBDCPGC = 4;</code>
+     * @return The nHFGIBDCPGC.
      */
-    int getAFJNAIOEMJG();
+    int getNHFGIBDCPGC();
 
     /**
-     * <code>.AEIMLNONEAP reason = 14;</code>
+     * <code>.FKMJAPDCONH reason = 5;</code>
      * @return The enum numeric value on the wire for reason.
      */
     int getReasonValue();
     /**
-     * <code>.AEIMLNONEAP reason = 14;</code>
+     * <code>.FKMJAPDCONH reason = 5;</code>
      * @return The reason.
      */
-    emu.grasscutter.net.proto.AEIMLNONEAPOuterClass.AEIMLNONEAP getReason();
+    emu.grasscutter.net.proto.FKMJAPDCONHOuterClass.FKMJAPDCONH getReason();
   }
   /**
    * <pre>
-   * Obf: CIOHOKKNJLI
+   * Obf: EIBDAICPDMP
    * </pre>
    *
    * Protobuf type {@code PacmanSettleInfo}
@@ -103,30 +103,30 @@ public final class PacmanSettleInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
-
-              aFJNAIOEMJG_ = input.readUInt32();
-              break;
-            }
-            case 32: {
-
-              cGLDHPKMAGO_ = input.readUInt32();
-              break;
-            }
-            case 72: {
+            case 24: {
 
               isNewRecord_ = input.readBool();
               break;
             }
-            case 96: {
+            case 32: {
 
-              finalScore_ = input.readUInt32();
+              nHFGIBDCPGC_ = input.readUInt32();
               break;
             }
-            case 112: {
+            case 40: {
               int rawValue = input.readEnum();
 
               reason_ = rawValue;
+              break;
+            }
+            case 48: {
+
+              gIMCFEIADKI_ = input.readUInt32();
+              break;
+            }
+            case 64: {
+
+              finalScore_ = input.readUInt32();
               break;
             }
             default: {
@@ -161,10 +161,10 @@ public final class PacmanSettleInfoOuterClass {
               emu.grasscutter.net.proto.PacmanSettleInfoOuterClass.PacmanSettleInfo.class, emu.grasscutter.net.proto.PacmanSettleInfoOuterClass.PacmanSettleInfo.Builder.class);
     }
 
-    public static final int FINAL_SCORE_FIELD_NUMBER = 12;
+    public static final int FINAL_SCORE_FIELD_NUMBER = 8;
     private int finalScore_;
     /**
-     * <code>uint32 final_score = 12;</code>
+     * <code>uint32 final_score = 8;</code>
      * @return The finalScore.
      */
     @java.lang.Override
@@ -172,21 +172,21 @@ public final class PacmanSettleInfoOuterClass {
       return finalScore_;
     }
 
-    public static final int CGLDHPKMAGO_FIELD_NUMBER = 4;
-    private int cGLDHPKMAGO_;
+    public static final int GIMCFEIADKI_FIELD_NUMBER = 6;
+    private int gIMCFEIADKI_;
     /**
-     * <code>uint32 CGLDHPKMAGO = 4;</code>
-     * @return The cGLDHPKMAGO.
+     * <code>uint32 GIMCFEIADKI = 6;</code>
+     * @return The gIMCFEIADKI.
      */
     @java.lang.Override
-    public int getCGLDHPKMAGO() {
-      return cGLDHPKMAGO_;
+    public int getGIMCFEIADKI() {
+      return gIMCFEIADKI_;
     }
 
-    public static final int IS_NEW_RECORD_FIELD_NUMBER = 9;
+    public static final int IS_NEW_RECORD_FIELD_NUMBER = 3;
     private boolean isNewRecord_;
     /**
-     * <code>bool is_new_record = 9;</code>
+     * <code>bool is_new_record = 3;</code>
      * @return The isNewRecord.
      */
     @java.lang.Override
@@ -194,34 +194,34 @@ public final class PacmanSettleInfoOuterClass {
       return isNewRecord_;
     }
 
-    public static final int AFJNAIOEMJG_FIELD_NUMBER = 1;
-    private int aFJNAIOEMJG_;
+    public static final int NHFGIBDCPGC_FIELD_NUMBER = 4;
+    private int nHFGIBDCPGC_;
     /**
-     * <code>uint32 AFJNAIOEMJG = 1;</code>
-     * @return The aFJNAIOEMJG.
+     * <code>uint32 NHFGIBDCPGC = 4;</code>
+     * @return The nHFGIBDCPGC.
      */
     @java.lang.Override
-    public int getAFJNAIOEMJG() {
-      return aFJNAIOEMJG_;
+    public int getNHFGIBDCPGC() {
+      return nHFGIBDCPGC_;
     }
 
-    public static final int REASON_FIELD_NUMBER = 14;
+    public static final int REASON_FIELD_NUMBER = 5;
     private int reason_;
     /**
-     * <code>.AEIMLNONEAP reason = 14;</code>
+     * <code>.FKMJAPDCONH reason = 5;</code>
      * @return The enum numeric value on the wire for reason.
      */
     @java.lang.Override public int getReasonValue() {
       return reason_;
     }
     /**
-     * <code>.AEIMLNONEAP reason = 14;</code>
+     * <code>.FKMJAPDCONH reason = 5;</code>
      * @return The reason.
      */
-    @java.lang.Override public emu.grasscutter.net.proto.AEIMLNONEAPOuterClass.AEIMLNONEAP getReason() {
+    @java.lang.Override public emu.grasscutter.net.proto.FKMJAPDCONHOuterClass.FKMJAPDCONH getReason() {
       @SuppressWarnings("deprecation")
-      emu.grasscutter.net.proto.AEIMLNONEAPOuterClass.AEIMLNONEAP result = emu.grasscutter.net.proto.AEIMLNONEAPOuterClass.AEIMLNONEAP.valueOf(reason_);
-      return result == null ? emu.grasscutter.net.proto.AEIMLNONEAPOuterClass.AEIMLNONEAP.UNRECOGNIZED : result;
+      emu.grasscutter.net.proto.FKMJAPDCONHOuterClass.FKMJAPDCONH result = emu.grasscutter.net.proto.FKMJAPDCONHOuterClass.FKMJAPDCONH.valueOf(reason_);
+      return result == null ? emu.grasscutter.net.proto.FKMJAPDCONHOuterClass.FKMJAPDCONH.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -238,20 +238,20 @@ public final class PacmanSettleInfoOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (aFJNAIOEMJG_ != 0) {
-        output.writeUInt32(1, aFJNAIOEMJG_);
-      }
-      if (cGLDHPKMAGO_ != 0) {
-        output.writeUInt32(4, cGLDHPKMAGO_);
-      }
       if (isNewRecord_ != false) {
-        output.writeBool(9, isNewRecord_);
+        output.writeBool(3, isNewRecord_);
+      }
+      if (nHFGIBDCPGC_ != 0) {
+        output.writeUInt32(4, nHFGIBDCPGC_);
+      }
+      if (reason_ != emu.grasscutter.net.proto.FKMJAPDCONHOuterClass.FKMJAPDCONH.FKMJAPDCONH_PacmanDungeonStopNone.getNumber()) {
+        output.writeEnum(5, reason_);
+      }
+      if (gIMCFEIADKI_ != 0) {
+        output.writeUInt32(6, gIMCFEIADKI_);
       }
       if (finalScore_ != 0) {
-        output.writeUInt32(12, finalScore_);
-      }
-      if (reason_ != emu.grasscutter.net.proto.AEIMLNONEAPOuterClass.AEIMLNONEAP.AEIMLNONEAP_PacmanDungeonStopNone.getNumber()) {
-        output.writeEnum(14, reason_);
+        output.writeUInt32(8, finalScore_);
       }
       unknownFields.writeTo(output);
     }
@@ -262,25 +262,25 @@ public final class PacmanSettleInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (aFJNAIOEMJG_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, aFJNAIOEMJG_);
-      }
-      if (cGLDHPKMAGO_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, cGLDHPKMAGO_);
-      }
       if (isNewRecord_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(9, isNewRecord_);
+          .computeBoolSize(3, isNewRecord_);
+      }
+      if (nHFGIBDCPGC_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(4, nHFGIBDCPGC_);
+      }
+      if (reason_ != emu.grasscutter.net.proto.FKMJAPDCONHOuterClass.FKMJAPDCONH.FKMJAPDCONH_PacmanDungeonStopNone.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(5, reason_);
+      }
+      if (gIMCFEIADKI_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(6, gIMCFEIADKI_);
       }
       if (finalScore_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, finalScore_);
-      }
-      if (reason_ != emu.grasscutter.net.proto.AEIMLNONEAPOuterClass.AEIMLNONEAP.AEIMLNONEAP_PacmanDungeonStopNone.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(14, reason_);
+          .computeUInt32Size(8, finalScore_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -299,12 +299,12 @@ public final class PacmanSettleInfoOuterClass {
 
       if (getFinalScore()
           != other.getFinalScore()) return false;
-      if (getCGLDHPKMAGO()
-          != other.getCGLDHPKMAGO()) return false;
+      if (getGIMCFEIADKI()
+          != other.getGIMCFEIADKI()) return false;
       if (getIsNewRecord()
           != other.getIsNewRecord()) return false;
-      if (getAFJNAIOEMJG()
-          != other.getAFJNAIOEMJG()) return false;
+      if (getNHFGIBDCPGC()
+          != other.getNHFGIBDCPGC()) return false;
       if (reason_ != other.reason_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -319,13 +319,13 @@ public final class PacmanSettleInfoOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + FINAL_SCORE_FIELD_NUMBER;
       hash = (53 * hash) + getFinalScore();
-      hash = (37 * hash) + CGLDHPKMAGO_FIELD_NUMBER;
-      hash = (53 * hash) + getCGLDHPKMAGO();
+      hash = (37 * hash) + GIMCFEIADKI_FIELD_NUMBER;
+      hash = (53 * hash) + getGIMCFEIADKI();
       hash = (37 * hash) + IS_NEW_RECORD_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsNewRecord());
-      hash = (37 * hash) + AFJNAIOEMJG_FIELD_NUMBER;
-      hash = (53 * hash) + getAFJNAIOEMJG();
+      hash = (37 * hash) + NHFGIBDCPGC_FIELD_NUMBER;
+      hash = (53 * hash) + getNHFGIBDCPGC();
       hash = (37 * hash) + REASON_FIELD_NUMBER;
       hash = (53 * hash) + reason_;
       hash = (29 * hash) + unknownFields.hashCode();
@@ -425,7 +425,7 @@ public final class PacmanSettleInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: CIOHOKKNJLI
+     * Obf: EIBDAICPDMP
      * </pre>
      *
      * Protobuf type {@code PacmanSettleInfo}
@@ -467,11 +467,11 @@ public final class PacmanSettleInfoOuterClass {
         super.clear();
         finalScore_ = 0;
 
-        cGLDHPKMAGO_ = 0;
+        gIMCFEIADKI_ = 0;
 
         isNewRecord_ = false;
 
-        aFJNAIOEMJG_ = 0;
+        nHFGIBDCPGC_ = 0;
 
         reason_ = 0;
 
@@ -502,9 +502,9 @@ public final class PacmanSettleInfoOuterClass {
       public emu.grasscutter.net.proto.PacmanSettleInfoOuterClass.PacmanSettleInfo buildPartial() {
         emu.grasscutter.net.proto.PacmanSettleInfoOuterClass.PacmanSettleInfo result = new emu.grasscutter.net.proto.PacmanSettleInfoOuterClass.PacmanSettleInfo(this);
         result.finalScore_ = finalScore_;
-        result.cGLDHPKMAGO_ = cGLDHPKMAGO_;
+        result.gIMCFEIADKI_ = gIMCFEIADKI_;
         result.isNewRecord_ = isNewRecord_;
-        result.aFJNAIOEMJG_ = aFJNAIOEMJG_;
+        result.nHFGIBDCPGC_ = nHFGIBDCPGC_;
         result.reason_ = reason_;
         onBuilt();
         return result;
@@ -557,14 +557,14 @@ public final class PacmanSettleInfoOuterClass {
         if (other.getFinalScore() != 0) {
           setFinalScore(other.getFinalScore());
         }
-        if (other.getCGLDHPKMAGO() != 0) {
-          setCGLDHPKMAGO(other.getCGLDHPKMAGO());
+        if (other.getGIMCFEIADKI() != 0) {
+          setGIMCFEIADKI(other.getGIMCFEIADKI());
         }
         if (other.getIsNewRecord() != false) {
           setIsNewRecord(other.getIsNewRecord());
         }
-        if (other.getAFJNAIOEMJG() != 0) {
-          setAFJNAIOEMJG(other.getAFJNAIOEMJG());
+        if (other.getNHFGIBDCPGC() != 0) {
+          setNHFGIBDCPGC(other.getNHFGIBDCPGC());
         }
         if (other.reason_ != 0) {
           setReasonValue(other.getReasonValue());
@@ -600,7 +600,7 @@ public final class PacmanSettleInfoOuterClass {
 
       private int finalScore_ ;
       /**
-       * <code>uint32 final_score = 12;</code>
+       * <code>uint32 final_score = 8;</code>
        * @return The finalScore.
        */
       @java.lang.Override
@@ -608,7 +608,7 @@ public final class PacmanSettleInfoOuterClass {
         return finalScore_;
       }
       /**
-       * <code>uint32 final_score = 12;</code>
+       * <code>uint32 final_score = 8;</code>
        * @param value The finalScore to set.
        * @return This builder for chaining.
        */
@@ -619,7 +619,7 @@ public final class PacmanSettleInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 final_score = 12;</code>
+       * <code>uint32 final_score = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearFinalScore() {
@@ -629,40 +629,40 @@ public final class PacmanSettleInfoOuterClass {
         return this;
       }
 
-      private int cGLDHPKMAGO_ ;
+      private int gIMCFEIADKI_ ;
       /**
-       * <code>uint32 CGLDHPKMAGO = 4;</code>
-       * @return The cGLDHPKMAGO.
+       * <code>uint32 GIMCFEIADKI = 6;</code>
+       * @return The gIMCFEIADKI.
        */
       @java.lang.Override
-      public int getCGLDHPKMAGO() {
-        return cGLDHPKMAGO_;
+      public int getGIMCFEIADKI() {
+        return gIMCFEIADKI_;
       }
       /**
-       * <code>uint32 CGLDHPKMAGO = 4;</code>
-       * @param value The cGLDHPKMAGO to set.
+       * <code>uint32 GIMCFEIADKI = 6;</code>
+       * @param value The gIMCFEIADKI to set.
        * @return This builder for chaining.
        */
-      public Builder setCGLDHPKMAGO(int value) {
+      public Builder setGIMCFEIADKI(int value) {
         
-        cGLDHPKMAGO_ = value;
+        gIMCFEIADKI_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 CGLDHPKMAGO = 4;</code>
+       * <code>uint32 GIMCFEIADKI = 6;</code>
        * @return This builder for chaining.
        */
-      public Builder clearCGLDHPKMAGO() {
+      public Builder clearGIMCFEIADKI() {
         
-        cGLDHPKMAGO_ = 0;
+        gIMCFEIADKI_ = 0;
         onChanged();
         return this;
       }
 
       private boolean isNewRecord_ ;
       /**
-       * <code>bool is_new_record = 9;</code>
+       * <code>bool is_new_record = 3;</code>
        * @return The isNewRecord.
        */
       @java.lang.Override
@@ -670,7 +670,7 @@ public final class PacmanSettleInfoOuterClass {
         return isNewRecord_;
       }
       /**
-       * <code>bool is_new_record = 9;</code>
+       * <code>bool is_new_record = 3;</code>
        * @param value The isNewRecord to set.
        * @return This builder for chaining.
        */
@@ -681,7 +681,7 @@ public final class PacmanSettleInfoOuterClass {
         return this;
       }
       /**
-       * <code>bool is_new_record = 9;</code>
+       * <code>bool is_new_record = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsNewRecord() {
@@ -691,47 +691,47 @@ public final class PacmanSettleInfoOuterClass {
         return this;
       }
 
-      private int aFJNAIOEMJG_ ;
+      private int nHFGIBDCPGC_ ;
       /**
-       * <code>uint32 AFJNAIOEMJG = 1;</code>
-       * @return The aFJNAIOEMJG.
+       * <code>uint32 NHFGIBDCPGC = 4;</code>
+       * @return The nHFGIBDCPGC.
        */
       @java.lang.Override
-      public int getAFJNAIOEMJG() {
-        return aFJNAIOEMJG_;
+      public int getNHFGIBDCPGC() {
+        return nHFGIBDCPGC_;
       }
       /**
-       * <code>uint32 AFJNAIOEMJG = 1;</code>
-       * @param value The aFJNAIOEMJG to set.
+       * <code>uint32 NHFGIBDCPGC = 4;</code>
+       * @param value The nHFGIBDCPGC to set.
        * @return This builder for chaining.
        */
-      public Builder setAFJNAIOEMJG(int value) {
+      public Builder setNHFGIBDCPGC(int value) {
         
-        aFJNAIOEMJG_ = value;
+        nHFGIBDCPGC_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 AFJNAIOEMJG = 1;</code>
+       * <code>uint32 NHFGIBDCPGC = 4;</code>
        * @return This builder for chaining.
        */
-      public Builder clearAFJNAIOEMJG() {
+      public Builder clearNHFGIBDCPGC() {
         
-        aFJNAIOEMJG_ = 0;
+        nHFGIBDCPGC_ = 0;
         onChanged();
         return this;
       }
 
       private int reason_ = 0;
       /**
-       * <code>.AEIMLNONEAP reason = 14;</code>
+       * <code>.FKMJAPDCONH reason = 5;</code>
        * @return The enum numeric value on the wire for reason.
        */
       @java.lang.Override public int getReasonValue() {
         return reason_;
       }
       /**
-       * <code>.AEIMLNONEAP reason = 14;</code>
+       * <code>.FKMJAPDCONH reason = 5;</code>
        * @param value The enum numeric value on the wire for reason to set.
        * @return This builder for chaining.
        */
@@ -742,21 +742,21 @@ public final class PacmanSettleInfoOuterClass {
         return this;
       }
       /**
-       * <code>.AEIMLNONEAP reason = 14;</code>
+       * <code>.FKMJAPDCONH reason = 5;</code>
        * @return The reason.
        */
       @java.lang.Override
-      public emu.grasscutter.net.proto.AEIMLNONEAPOuterClass.AEIMLNONEAP getReason() {
+      public emu.grasscutter.net.proto.FKMJAPDCONHOuterClass.FKMJAPDCONH getReason() {
         @SuppressWarnings("deprecation")
-        emu.grasscutter.net.proto.AEIMLNONEAPOuterClass.AEIMLNONEAP result = emu.grasscutter.net.proto.AEIMLNONEAPOuterClass.AEIMLNONEAP.valueOf(reason_);
-        return result == null ? emu.grasscutter.net.proto.AEIMLNONEAPOuterClass.AEIMLNONEAP.UNRECOGNIZED : result;
+        emu.grasscutter.net.proto.FKMJAPDCONHOuterClass.FKMJAPDCONH result = emu.grasscutter.net.proto.FKMJAPDCONHOuterClass.FKMJAPDCONH.valueOf(reason_);
+        return result == null ? emu.grasscutter.net.proto.FKMJAPDCONHOuterClass.FKMJAPDCONH.UNRECOGNIZED : result;
       }
       /**
-       * <code>.AEIMLNONEAP reason = 14;</code>
+       * <code>.FKMJAPDCONH reason = 5;</code>
        * @param value The reason to set.
        * @return This builder for chaining.
        */
-      public Builder setReason(emu.grasscutter.net.proto.AEIMLNONEAPOuterClass.AEIMLNONEAP value) {
+      public Builder setReason(emu.grasscutter.net.proto.FKMJAPDCONHOuterClass.FKMJAPDCONH value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -766,7 +766,7 @@ public final class PacmanSettleInfoOuterClass {
         return this;
       }
       /**
-       * <code>.AEIMLNONEAP reason = 14;</code>
+       * <code>.FKMJAPDCONH reason = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearReason() {
@@ -842,25 +842,25 @@ public final class PacmanSettleInfoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\026PacmanSettleInfo.proto\032\021AEIMLNONEAP.pr" +
+      "\n\026PacmanSettleInfo.proto\032\021FKMJAPDCONH.pr" +
       "oto\"\206\001\n\020PacmanSettleInfo\022\023\n\013final_score\030" +
-      "\014 \001(\r\022\023\n\013CGLDHPKMAGO\030\004 \001(\r\022\025\n\ris_new_rec" +
-      "ord\030\t \001(\010\022\023\n\013AFJNAIOEMJG\030\001 \001(\r\022\034\n\006reason" +
-      "\030\016 \001(\0162\014.AEIMLNONEAPB\033\n\031emu.grasscutter." +
+      "\010 \001(\r\022\023\n\013GIMCFEIADKI\030\006 \001(\r\022\025\n\ris_new_rec" +
+      "ord\030\003 \001(\010\022\023\n\013NHFGIBDCPGC\030\004 \001(\r\022\034\n\006reason" +
+      "\030\005 \001(\0162\014.FKMJAPDCONHB\033\n\031emu.grasscutter." +
       "net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          emu.grasscutter.net.proto.AEIMLNONEAPOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.FKMJAPDCONHOuterClass.getDescriptor(),
         });
     internal_static_PacmanSettleInfo_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_PacmanSettleInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_PacmanSettleInfo_descriptor,
-        new java.lang.String[] { "FinalScore", "CGLDHPKMAGO", "IsNewRecord", "AFJNAIOEMJG", "Reason", });
-    emu.grasscutter.net.proto.AEIMLNONEAPOuterClass.getDescriptor();
+        new java.lang.String[] { "FinalScore", "GIMCFEIADKI", "IsNewRecord", "NHFGIBDCPGC", "Reason", });
+    emu.grasscutter.net.proto.FKMJAPDCONHOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

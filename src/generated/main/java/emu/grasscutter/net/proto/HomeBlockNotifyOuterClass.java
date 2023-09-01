@@ -26,8 +26,8 @@ public final class HomeBlockNotifyOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 4506
-   * Obf: MDNHCNLMFGF
+   * CmdId: 20667
+   * Obf: IGGBNCBJKJL
    * </pre>
    *
    * Protobuf type {@code HomeBlockNotify}
@@ -279,8 +279,8 @@ public final class HomeBlockNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4506
-     * Obf: MDNHCNLMFGF
+     * CmdId: 20667
+     * Obf: IGGBNCBJKJL
      * </pre>
      *
      * Protobuf type {@code HomeBlockNotify}

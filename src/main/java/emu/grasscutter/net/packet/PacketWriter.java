@@ -1,7 +1,6 @@
 package emu.grasscutter.net.packet;
 
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
+import java.io.*;
 
 public class PacketWriter {
     // Little endian

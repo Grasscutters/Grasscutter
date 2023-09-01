@@ -19,27 +19,27 @@ public final class PlayerGeneralMatchConfirmNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool is_agree = 7;</code>
+     * <code>uint32 match_id = 8;</code>
+     * @return The matchId.
+     */
+    int getMatchId();
+
+    /**
+     * <code>bool is_agree = 15;</code>
      * @return The isAgree.
      */
     boolean getIsAgree();
 
     /**
-     * <code>uint32 uid = 9;</code>
+     * <code>uint32 uid = 10;</code>
      * @return The uid.
      */
     int getUid();
-
-    /**
-     * <code>uint32 match_id = 4;</code>
-     * @return The matchId.
-     */
-    int getMatchId();
   }
   /**
    * <pre>
-   * CmdId: 4192
-   * Obf: BPBHPAMFJCL
+   * CmdId: 1380
+   * Obf: GIJKNFDOPEF
    * </pre>
    *
    * Protobuf type {@code PlayerGeneralMatchConfirmNotify}
@@ -86,19 +86,19 @@ public final class PlayerGeneralMatchConfirmNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
+            case 64: {
 
               matchId_ = input.readUInt32();
               break;
             }
-            case 56: {
-
-              isAgree_ = input.readBool();
-              break;
-            }
-            case 72: {
+            case 80: {
 
               uid_ = input.readUInt32();
+              break;
+            }
+            case 120: {
+
+              isAgree_ = input.readBool();
               break;
             }
             default: {
@@ -133,10 +133,21 @@ public final class PlayerGeneralMatchConfirmNotifyOuterClass {
               emu.grasscutter.net.proto.PlayerGeneralMatchConfirmNotifyOuterClass.PlayerGeneralMatchConfirmNotify.class, emu.grasscutter.net.proto.PlayerGeneralMatchConfirmNotifyOuterClass.PlayerGeneralMatchConfirmNotify.Builder.class);
     }
 
-    public static final int IS_AGREE_FIELD_NUMBER = 7;
+    public static final int MATCH_ID_FIELD_NUMBER = 8;
+    private int matchId_;
+    /**
+     * <code>uint32 match_id = 8;</code>
+     * @return The matchId.
+     */
+    @java.lang.Override
+    public int getMatchId() {
+      return matchId_;
+    }
+
+    public static final int IS_AGREE_FIELD_NUMBER = 15;
     private boolean isAgree_;
     /**
-     * <code>bool is_agree = 7;</code>
+     * <code>bool is_agree = 15;</code>
      * @return The isAgree.
      */
     @java.lang.Override
@@ -144,26 +155,15 @@ public final class PlayerGeneralMatchConfirmNotifyOuterClass {
       return isAgree_;
     }
 
-    public static final int UID_FIELD_NUMBER = 9;
+    public static final int UID_FIELD_NUMBER = 10;
     private int uid_;
     /**
-     * <code>uint32 uid = 9;</code>
+     * <code>uint32 uid = 10;</code>
      * @return The uid.
      */
     @java.lang.Override
     public int getUid() {
       return uid_;
-    }
-
-    public static final int MATCH_ID_FIELD_NUMBER = 4;
-    private int matchId_;
-    /**
-     * <code>uint32 match_id = 4;</code>
-     * @return The matchId.
-     */
-    @java.lang.Override
-    public int getMatchId() {
-      return matchId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -181,13 +181,13 @@ public final class PlayerGeneralMatchConfirmNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (matchId_ != 0) {
-        output.writeUInt32(4, matchId_);
-      }
-      if (isAgree_ != false) {
-        output.writeBool(7, isAgree_);
+        output.writeUInt32(8, matchId_);
       }
       if (uid_ != 0) {
-        output.writeUInt32(9, uid_);
+        output.writeUInt32(10, uid_);
+      }
+      if (isAgree_ != false) {
+        output.writeBool(15, isAgree_);
       }
       unknownFields.writeTo(output);
     }
@@ -200,15 +200,15 @@ public final class PlayerGeneralMatchConfirmNotifyOuterClass {
       size = 0;
       if (matchId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, matchId_);
-      }
-      if (isAgree_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(7, isAgree_);
+          .computeUInt32Size(8, matchId_);
       }
       if (uid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, uid_);
+          .computeUInt32Size(10, uid_);
+      }
+      if (isAgree_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(15, isAgree_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -225,12 +225,12 @@ public final class PlayerGeneralMatchConfirmNotifyOuterClass {
       }
       emu.grasscutter.net.proto.PlayerGeneralMatchConfirmNotifyOuterClass.PlayerGeneralMatchConfirmNotify other = (emu.grasscutter.net.proto.PlayerGeneralMatchConfirmNotifyOuterClass.PlayerGeneralMatchConfirmNotify) obj;
 
+      if (getMatchId()
+          != other.getMatchId()) return false;
       if (getIsAgree()
           != other.getIsAgree()) return false;
       if (getUid()
           != other.getUid()) return false;
-      if (getMatchId()
-          != other.getMatchId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -242,13 +242,13 @@ public final class PlayerGeneralMatchConfirmNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + MATCH_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getMatchId();
       hash = (37 * hash) + IS_AGREE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsAgree());
       hash = (37 * hash) + UID_FIELD_NUMBER;
       hash = (53 * hash) + getUid();
-      hash = (37 * hash) + MATCH_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getMatchId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -346,8 +346,8 @@ public final class PlayerGeneralMatchConfirmNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4192
-     * Obf: BPBHPAMFJCL
+     * CmdId: 1380
+     * Obf: GIJKNFDOPEF
      * </pre>
      *
      * Protobuf type {@code PlayerGeneralMatchConfirmNotify}
@@ -387,11 +387,11 @@ public final class PlayerGeneralMatchConfirmNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        matchId_ = 0;
+
         isAgree_ = false;
 
         uid_ = 0;
-
-        matchId_ = 0;
 
         return this;
       }
@@ -419,9 +419,9 @@ public final class PlayerGeneralMatchConfirmNotifyOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.PlayerGeneralMatchConfirmNotifyOuterClass.PlayerGeneralMatchConfirmNotify buildPartial() {
         emu.grasscutter.net.proto.PlayerGeneralMatchConfirmNotifyOuterClass.PlayerGeneralMatchConfirmNotify result = new emu.grasscutter.net.proto.PlayerGeneralMatchConfirmNotifyOuterClass.PlayerGeneralMatchConfirmNotify(this);
+        result.matchId_ = matchId_;
         result.isAgree_ = isAgree_;
         result.uid_ = uid_;
-        result.matchId_ = matchId_;
         onBuilt();
         return result;
       }
@@ -470,14 +470,14 @@ public final class PlayerGeneralMatchConfirmNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.PlayerGeneralMatchConfirmNotifyOuterClass.PlayerGeneralMatchConfirmNotify other) {
         if (other == emu.grasscutter.net.proto.PlayerGeneralMatchConfirmNotifyOuterClass.PlayerGeneralMatchConfirmNotify.getDefaultInstance()) return this;
+        if (other.getMatchId() != 0) {
+          setMatchId(other.getMatchId());
+        }
         if (other.getIsAgree() != false) {
           setIsAgree(other.getIsAgree());
         }
         if (other.getUid() != 0) {
           setUid(other.getUid());
-        }
-        if (other.getMatchId() != 0) {
-          setMatchId(other.getMatchId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -508,9 +508,40 @@ public final class PlayerGeneralMatchConfirmNotifyOuterClass {
         return this;
       }
 
+      private int matchId_ ;
+      /**
+       * <code>uint32 match_id = 8;</code>
+       * @return The matchId.
+       */
+      @java.lang.Override
+      public int getMatchId() {
+        return matchId_;
+      }
+      /**
+       * <code>uint32 match_id = 8;</code>
+       * @param value The matchId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMatchId(int value) {
+        
+        matchId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 match_id = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMatchId() {
+        
+        matchId_ = 0;
+        onChanged();
+        return this;
+      }
+
       private boolean isAgree_ ;
       /**
-       * <code>bool is_agree = 7;</code>
+       * <code>bool is_agree = 15;</code>
        * @return The isAgree.
        */
       @java.lang.Override
@@ -518,7 +549,7 @@ public final class PlayerGeneralMatchConfirmNotifyOuterClass {
         return isAgree_;
       }
       /**
-       * <code>bool is_agree = 7;</code>
+       * <code>bool is_agree = 15;</code>
        * @param value The isAgree to set.
        * @return This builder for chaining.
        */
@@ -529,7 +560,7 @@ public final class PlayerGeneralMatchConfirmNotifyOuterClass {
         return this;
       }
       /**
-       * <code>bool is_agree = 7;</code>
+       * <code>bool is_agree = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsAgree() {
@@ -541,7 +572,7 @@ public final class PlayerGeneralMatchConfirmNotifyOuterClass {
 
       private int uid_ ;
       /**
-       * <code>uint32 uid = 9;</code>
+       * <code>uint32 uid = 10;</code>
        * @return The uid.
        */
       @java.lang.Override
@@ -549,7 +580,7 @@ public final class PlayerGeneralMatchConfirmNotifyOuterClass {
         return uid_;
       }
       /**
-       * <code>uint32 uid = 9;</code>
+       * <code>uint32 uid = 10;</code>
        * @param value The uid to set.
        * @return This builder for chaining.
        */
@@ -560,43 +591,12 @@ public final class PlayerGeneralMatchConfirmNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 uid = 9;</code>
+       * <code>uint32 uid = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearUid() {
         
         uid_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int matchId_ ;
-      /**
-       * <code>uint32 match_id = 4;</code>
-       * @return The matchId.
-       */
-      @java.lang.Override
-      public int getMatchId() {
-        return matchId_;
-      }
-      /**
-       * <code>uint32 match_id = 4;</code>
-       * @param value The matchId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMatchId(int value) {
-        
-        matchId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 match_id = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMatchId() {
-        
-        matchId_ = 0;
         onChanged();
         return this;
       }
@@ -668,8 +668,8 @@ public final class PlayerGeneralMatchConfirmNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n%PlayerGeneralMatchConfirmNotify.proto\"" +
-      "R\n\037PlayerGeneralMatchConfirmNotify\022\020\n\010is" +
-      "_agree\030\007 \001(\010\022\013\n\003uid\030\t \001(\r\022\020\n\010match_id\030\004 " +
+      "R\n\037PlayerGeneralMatchConfirmNotify\022\020\n\010ma" +
+      "tch_id\030\010 \001(\r\022\020\n\010is_agree\030\017 \001(\010\022\013\n\003uid\030\n " +
       "\001(\rB\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -681,7 +681,7 @@ public final class PlayerGeneralMatchConfirmNotifyOuterClass {
     internal_static_PlayerGeneralMatchConfirmNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_PlayerGeneralMatchConfirmNotify_descriptor,
-        new java.lang.String[] { "IsAgree", "Uid", "MatchId", });
+        new java.lang.String[] { "MatchId", "IsAgree", "Uid", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

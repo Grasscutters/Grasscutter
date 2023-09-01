@@ -19,15 +19,15 @@ public final class HideAndSeekSelectAvatarReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 avatar_id = 13;</code>
+     * <code>uint32 avatar_id = 9;</code>
      * @return The avatarId.
      */
     int getAvatarId();
   }
   /**
    * <pre>
-   * CmdId: 5341
-   * Obf: JJHJDHFPIOP
+   * CmdId: 1259
+   * Obf: HEHLJCHPHKF
    * </pre>
    *
    * Protobuf type {@code HideAndSeekSelectAvatarReq}
@@ -74,7 +74,7 @@ public final class HideAndSeekSelectAvatarReqOuterClass {
             case 0:
               done = true;
               break;
-            case 104: {
+            case 72: {
 
               avatarId_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class HideAndSeekSelectAvatarReqOuterClass {
               emu.grasscutter.net.proto.HideAndSeekSelectAvatarReqOuterClass.HideAndSeekSelectAvatarReq.class, emu.grasscutter.net.proto.HideAndSeekSelectAvatarReqOuterClass.HideAndSeekSelectAvatarReq.Builder.class);
     }
 
-    public static final int AVATAR_ID_FIELD_NUMBER = 13;
+    public static final int AVATAR_ID_FIELD_NUMBER = 9;
     private int avatarId_;
     /**
-     * <code>uint32 avatar_id = 13;</code>
+     * <code>uint32 avatar_id = 9;</code>
      * @return The avatarId.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class HideAndSeekSelectAvatarReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (avatarId_ != 0) {
-        output.writeUInt32(13, avatarId_);
+        output.writeUInt32(9, avatarId_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class HideAndSeekSelectAvatarReqOuterClass {
       size = 0;
       if (avatarId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, avatarId_);
+          .computeUInt32Size(9, avatarId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class HideAndSeekSelectAvatarReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 5341
-     * Obf: JJHJDHFPIOP
+     * CmdId: 1259
+     * Obf: HEHLJCHPHKF
      * </pre>
      *
      * Protobuf type {@code HideAndSeekSelectAvatarReq}
@@ -431,7 +431,7 @@ public final class HideAndSeekSelectAvatarReqOuterClass {
 
       private int avatarId_ ;
       /**
-       * <code>uint32 avatar_id = 13;</code>
+       * <code>uint32 avatar_id = 9;</code>
        * @return The avatarId.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class HideAndSeekSelectAvatarReqOuterClass {
         return avatarId_;
       }
       /**
-       * <code>uint32 avatar_id = 13;</code>
+       * <code>uint32 avatar_id = 9;</code>
        * @param value The avatarId to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class HideAndSeekSelectAvatarReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 avatar_id = 13;</code>
+       * <code>uint32 avatar_id = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearAvatarId() {
@@ -527,7 +527,7 @@ public final class HideAndSeekSelectAvatarReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n HideAndSeekSelectAvatarReq.proto\"/\n\032Hi" +
-      "deAndSeekSelectAvatarReq\022\021\n\tavatar_id\030\r " +
+      "deAndSeekSelectAvatarReq\022\021\n\tavatar_id\030\t " +
       "\001(\rB\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

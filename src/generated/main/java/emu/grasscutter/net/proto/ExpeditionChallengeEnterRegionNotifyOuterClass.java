@@ -19,21 +19,21 @@ public final class ExpeditionChallengeEnterRegionNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool is_puzzle_finished = 11;</code>
+     * <code>bool is_puzzle_finished = 4;</code>
      * @return The isPuzzleFinished.
      */
     boolean getIsPuzzleFinished();
 
     /**
-     * <code>uint32 id = 8;</code>
+     * <code>uint32 id = 9;</code>
      * @return The id.
      */
     int getId();
   }
   /**
    * <pre>
-   * CmdId: 2188
-   * Obf: CFOKBBGKOKA
+   * CmdId: 29889
+   * Obf: KJLCCOGJHIP
    * </pre>
    *
    * Protobuf type {@code ExpeditionChallengeEnterRegionNotify}
@@ -80,14 +80,14 @@ public final class ExpeditionChallengeEnterRegionNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 64: {
-
-              id_ = input.readUInt32();
-              break;
-            }
-            case 88: {
+            case 32: {
 
               isPuzzleFinished_ = input.readBool();
+              break;
+            }
+            case 72: {
+
+              id_ = input.readUInt32();
               break;
             }
             default: {
@@ -122,10 +122,10 @@ public final class ExpeditionChallengeEnterRegionNotifyOuterClass {
               emu.grasscutter.net.proto.ExpeditionChallengeEnterRegionNotifyOuterClass.ExpeditionChallengeEnterRegionNotify.class, emu.grasscutter.net.proto.ExpeditionChallengeEnterRegionNotifyOuterClass.ExpeditionChallengeEnterRegionNotify.Builder.class);
     }
 
-    public static final int IS_PUZZLE_FINISHED_FIELD_NUMBER = 11;
+    public static final int IS_PUZZLE_FINISHED_FIELD_NUMBER = 4;
     private boolean isPuzzleFinished_;
     /**
-     * <code>bool is_puzzle_finished = 11;</code>
+     * <code>bool is_puzzle_finished = 4;</code>
      * @return The isPuzzleFinished.
      */
     @java.lang.Override
@@ -133,10 +133,10 @@ public final class ExpeditionChallengeEnterRegionNotifyOuterClass {
       return isPuzzleFinished_;
     }
 
-    public static final int ID_FIELD_NUMBER = 8;
+    public static final int ID_FIELD_NUMBER = 9;
     private int id_;
     /**
-     * <code>uint32 id = 8;</code>
+     * <code>uint32 id = 9;</code>
      * @return The id.
      */
     @java.lang.Override
@@ -158,11 +158,11 @@ public final class ExpeditionChallengeEnterRegionNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (id_ != 0) {
-        output.writeUInt32(8, id_);
-      }
       if (isPuzzleFinished_ != false) {
-        output.writeBool(11, isPuzzleFinished_);
+        output.writeBool(4, isPuzzleFinished_);
+      }
+      if (id_ != 0) {
+        output.writeUInt32(9, id_);
       }
       unknownFields.writeTo(output);
     }
@@ -173,13 +173,13 @@ public final class ExpeditionChallengeEnterRegionNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (id_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, id_);
-      }
       if (isPuzzleFinished_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(11, isPuzzleFinished_);
+          .computeBoolSize(4, isPuzzleFinished_);
+      }
+      if (id_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(9, id_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -313,8 +313,8 @@ public final class ExpeditionChallengeEnterRegionNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2188
-     * Obf: CFOKBBGKOKA
+     * CmdId: 29889
+     * Obf: KJLCCOGJHIP
      * </pre>
      *
      * Protobuf type {@code ExpeditionChallengeEnterRegionNotify}
@@ -471,7 +471,7 @@ public final class ExpeditionChallengeEnterRegionNotifyOuterClass {
 
       private boolean isPuzzleFinished_ ;
       /**
-       * <code>bool is_puzzle_finished = 11;</code>
+       * <code>bool is_puzzle_finished = 4;</code>
        * @return The isPuzzleFinished.
        */
       @java.lang.Override
@@ -479,7 +479,7 @@ public final class ExpeditionChallengeEnterRegionNotifyOuterClass {
         return isPuzzleFinished_;
       }
       /**
-       * <code>bool is_puzzle_finished = 11;</code>
+       * <code>bool is_puzzle_finished = 4;</code>
        * @param value The isPuzzleFinished to set.
        * @return This builder for chaining.
        */
@@ -490,7 +490,7 @@ public final class ExpeditionChallengeEnterRegionNotifyOuterClass {
         return this;
       }
       /**
-       * <code>bool is_puzzle_finished = 11;</code>
+       * <code>bool is_puzzle_finished = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsPuzzleFinished() {
@@ -502,7 +502,7 @@ public final class ExpeditionChallengeEnterRegionNotifyOuterClass {
 
       private int id_ ;
       /**
-       * <code>uint32 id = 8;</code>
+       * <code>uint32 id = 9;</code>
        * @return The id.
        */
       @java.lang.Override
@@ -510,7 +510,7 @@ public final class ExpeditionChallengeEnterRegionNotifyOuterClass {
         return id_;
       }
       /**
-       * <code>uint32 id = 8;</code>
+       * <code>uint32 id = 9;</code>
        * @param value The id to set.
        * @return This builder for chaining.
        */
@@ -521,7 +521,7 @@ public final class ExpeditionChallengeEnterRegionNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 id = 8;</code>
+       * <code>uint32 id = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearId() {
@@ -599,7 +599,7 @@ public final class ExpeditionChallengeEnterRegionNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n*ExpeditionChallengeEnterRegionNotify.p" +
       "roto\"N\n$ExpeditionChallengeEnterRegionNo" +
-      "tify\022\032\n\022is_puzzle_finished\030\013 \001(\010\022\n\n\002id\030\010" +
+      "tify\022\032\n\022is_puzzle_finished\030\004 \001(\010\022\n\n\002id\030\t" +
       " \001(\rB\033\n\031emu.grasscutter.net.protob\006proto" +
       "3"
     };

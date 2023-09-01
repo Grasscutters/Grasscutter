@@ -19,33 +19,33 @@ public final class UgcNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool LMICNFHFLFF = 4;</code>
-     * @return The lMICNFHFLFF.
+     * <code>bool GKJAPKJDBPN = 8;</code>
+     * @return The gKJAPKJDBPN.
      */
-    boolean getLMICNFHFLFF();
+    boolean getGKJAPKJDBPN();
 
     /**
-     * <code>bool PNILOAIHDHO = 3;</code>
-     * @return The pNILOAIHDHO.
+     * <code>bool POPHCJEGGJG = 3;</code>
+     * @return The pOPHCJEGGJG.
      */
-    boolean getPNILOAIHDHO();
+    boolean getPOPHCJEGGJG();
 
     /**
-     * <code>bool IGIJBHLPGJD = 6;</code>
-     * @return The iGIJBHLPGJD.
+     * <code>bool IOPFGIPIHAG = 2;</code>
+     * @return The iOPFGIPIHAG.
      */
-    boolean getIGIJBHLPGJD();
+    boolean getIOPFGIPIHAG();
 
     /**
-     * <code>bool FHPMJMNGPMO = 13;</code>
-     * @return The fHPMJMNGPMO.
+     * <code>bool KOJNKEAKAFK = 10;</code>
+     * @return The kOJNKEAKAFK.
      */
-    boolean getFHPMJMNGPMO();
+    boolean getKOJNKEAKAFK();
   }
   /**
    * <pre>
-   * CmdId: 6301
-   * Obf: BDKJKLBIEHJ
+   * CmdId: 24435
+   * Obf: BNKNLILOIHN
    * </pre>
    *
    * Protobuf type {@code UgcNotify}
@@ -92,24 +92,24 @@ public final class UgcNotifyOuterClass {
             case 0:
               done = true;
               break;
+            case 16: {
+
+              iOPFGIPIHAG_ = input.readBool();
+              break;
+            }
             case 24: {
 
-              pNILOAIHDHO_ = input.readBool();
+              pOPHCJEGGJG_ = input.readBool();
               break;
             }
-            case 32: {
+            case 64: {
 
-              lMICNFHFLFF_ = input.readBool();
+              gKJAPKJDBPN_ = input.readBool();
               break;
             }
-            case 48: {
+            case 80: {
 
-              iGIJBHLPGJD_ = input.readBool();
-              break;
-            }
-            case 104: {
-
-              fHPMJMNGPMO_ = input.readBool();
+              kOJNKEAKAFK_ = input.readBool();
               break;
             }
             default: {
@@ -144,48 +144,48 @@ public final class UgcNotifyOuterClass {
               emu.grasscutter.net.proto.UgcNotifyOuterClass.UgcNotify.class, emu.grasscutter.net.proto.UgcNotifyOuterClass.UgcNotify.Builder.class);
     }
 
-    public static final int LMICNFHFLFF_FIELD_NUMBER = 4;
-    private boolean lMICNFHFLFF_;
+    public static final int GKJAPKJDBPN_FIELD_NUMBER = 8;
+    private boolean gKJAPKJDBPN_;
     /**
-     * <code>bool LMICNFHFLFF = 4;</code>
-     * @return The lMICNFHFLFF.
+     * <code>bool GKJAPKJDBPN = 8;</code>
+     * @return The gKJAPKJDBPN.
      */
     @java.lang.Override
-    public boolean getLMICNFHFLFF() {
-      return lMICNFHFLFF_;
+    public boolean getGKJAPKJDBPN() {
+      return gKJAPKJDBPN_;
     }
 
-    public static final int PNILOAIHDHO_FIELD_NUMBER = 3;
-    private boolean pNILOAIHDHO_;
+    public static final int POPHCJEGGJG_FIELD_NUMBER = 3;
+    private boolean pOPHCJEGGJG_;
     /**
-     * <code>bool PNILOAIHDHO = 3;</code>
-     * @return The pNILOAIHDHO.
+     * <code>bool POPHCJEGGJG = 3;</code>
+     * @return The pOPHCJEGGJG.
      */
     @java.lang.Override
-    public boolean getPNILOAIHDHO() {
-      return pNILOAIHDHO_;
+    public boolean getPOPHCJEGGJG() {
+      return pOPHCJEGGJG_;
     }
 
-    public static final int IGIJBHLPGJD_FIELD_NUMBER = 6;
-    private boolean iGIJBHLPGJD_;
+    public static final int IOPFGIPIHAG_FIELD_NUMBER = 2;
+    private boolean iOPFGIPIHAG_;
     /**
-     * <code>bool IGIJBHLPGJD = 6;</code>
-     * @return The iGIJBHLPGJD.
+     * <code>bool IOPFGIPIHAG = 2;</code>
+     * @return The iOPFGIPIHAG.
      */
     @java.lang.Override
-    public boolean getIGIJBHLPGJD() {
-      return iGIJBHLPGJD_;
+    public boolean getIOPFGIPIHAG() {
+      return iOPFGIPIHAG_;
     }
 
-    public static final int FHPMJMNGPMO_FIELD_NUMBER = 13;
-    private boolean fHPMJMNGPMO_;
+    public static final int KOJNKEAKAFK_FIELD_NUMBER = 10;
+    private boolean kOJNKEAKAFK_;
     /**
-     * <code>bool FHPMJMNGPMO = 13;</code>
-     * @return The fHPMJMNGPMO.
+     * <code>bool KOJNKEAKAFK = 10;</code>
+     * @return The kOJNKEAKAFK.
      */
     @java.lang.Override
-    public boolean getFHPMJMNGPMO() {
-      return fHPMJMNGPMO_;
+    public boolean getKOJNKEAKAFK() {
+      return kOJNKEAKAFK_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -202,17 +202,17 @@ public final class UgcNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (pNILOAIHDHO_ != false) {
-        output.writeBool(3, pNILOAIHDHO_);
+      if (iOPFGIPIHAG_ != false) {
+        output.writeBool(2, iOPFGIPIHAG_);
       }
-      if (lMICNFHFLFF_ != false) {
-        output.writeBool(4, lMICNFHFLFF_);
+      if (pOPHCJEGGJG_ != false) {
+        output.writeBool(3, pOPHCJEGGJG_);
       }
-      if (iGIJBHLPGJD_ != false) {
-        output.writeBool(6, iGIJBHLPGJD_);
+      if (gKJAPKJDBPN_ != false) {
+        output.writeBool(8, gKJAPKJDBPN_);
       }
-      if (fHPMJMNGPMO_ != false) {
-        output.writeBool(13, fHPMJMNGPMO_);
+      if (kOJNKEAKAFK_ != false) {
+        output.writeBool(10, kOJNKEAKAFK_);
       }
       unknownFields.writeTo(output);
     }
@@ -223,21 +223,21 @@ public final class UgcNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (pNILOAIHDHO_ != false) {
+      if (iOPFGIPIHAG_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(3, pNILOAIHDHO_);
+          .computeBoolSize(2, iOPFGIPIHAG_);
       }
-      if (lMICNFHFLFF_ != false) {
+      if (pOPHCJEGGJG_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(4, lMICNFHFLFF_);
+          .computeBoolSize(3, pOPHCJEGGJG_);
       }
-      if (iGIJBHLPGJD_ != false) {
+      if (gKJAPKJDBPN_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(6, iGIJBHLPGJD_);
+          .computeBoolSize(8, gKJAPKJDBPN_);
       }
-      if (fHPMJMNGPMO_ != false) {
+      if (kOJNKEAKAFK_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(13, fHPMJMNGPMO_);
+          .computeBoolSize(10, kOJNKEAKAFK_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -254,14 +254,14 @@ public final class UgcNotifyOuterClass {
       }
       emu.grasscutter.net.proto.UgcNotifyOuterClass.UgcNotify other = (emu.grasscutter.net.proto.UgcNotifyOuterClass.UgcNotify) obj;
 
-      if (getLMICNFHFLFF()
-          != other.getLMICNFHFLFF()) return false;
-      if (getPNILOAIHDHO()
-          != other.getPNILOAIHDHO()) return false;
-      if (getIGIJBHLPGJD()
-          != other.getIGIJBHLPGJD()) return false;
-      if (getFHPMJMNGPMO()
-          != other.getFHPMJMNGPMO()) return false;
+      if (getGKJAPKJDBPN()
+          != other.getGKJAPKJDBPN()) return false;
+      if (getPOPHCJEGGJG()
+          != other.getPOPHCJEGGJG()) return false;
+      if (getIOPFGIPIHAG()
+          != other.getIOPFGIPIHAG()) return false;
+      if (getKOJNKEAKAFK()
+          != other.getKOJNKEAKAFK()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -273,18 +273,18 @@ public final class UgcNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + LMICNFHFLFF_FIELD_NUMBER;
+      hash = (37 * hash) + GKJAPKJDBPN_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getLMICNFHFLFF());
-      hash = (37 * hash) + PNILOAIHDHO_FIELD_NUMBER;
+          getGKJAPKJDBPN());
+      hash = (37 * hash) + POPHCJEGGJG_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getPNILOAIHDHO());
-      hash = (37 * hash) + IGIJBHLPGJD_FIELD_NUMBER;
+          getPOPHCJEGGJG());
+      hash = (37 * hash) + IOPFGIPIHAG_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIGIJBHLPGJD());
-      hash = (37 * hash) + FHPMJMNGPMO_FIELD_NUMBER;
+          getIOPFGIPIHAG());
+      hash = (37 * hash) + KOJNKEAKAFK_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getFHPMJMNGPMO());
+          getKOJNKEAKAFK());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -382,8 +382,8 @@ public final class UgcNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 6301
-     * Obf: BDKJKLBIEHJ
+     * CmdId: 24435
+     * Obf: BNKNLILOIHN
      * </pre>
      *
      * Protobuf type {@code UgcNotify}
@@ -423,13 +423,13 @@ public final class UgcNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        lMICNFHFLFF_ = false;
+        gKJAPKJDBPN_ = false;
 
-        pNILOAIHDHO_ = false;
+        pOPHCJEGGJG_ = false;
 
-        iGIJBHLPGJD_ = false;
+        iOPFGIPIHAG_ = false;
 
-        fHPMJMNGPMO_ = false;
+        kOJNKEAKAFK_ = false;
 
         return this;
       }
@@ -457,10 +457,10 @@ public final class UgcNotifyOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.UgcNotifyOuterClass.UgcNotify buildPartial() {
         emu.grasscutter.net.proto.UgcNotifyOuterClass.UgcNotify result = new emu.grasscutter.net.proto.UgcNotifyOuterClass.UgcNotify(this);
-        result.lMICNFHFLFF_ = lMICNFHFLFF_;
-        result.pNILOAIHDHO_ = pNILOAIHDHO_;
-        result.iGIJBHLPGJD_ = iGIJBHLPGJD_;
-        result.fHPMJMNGPMO_ = fHPMJMNGPMO_;
+        result.gKJAPKJDBPN_ = gKJAPKJDBPN_;
+        result.pOPHCJEGGJG_ = pOPHCJEGGJG_;
+        result.iOPFGIPIHAG_ = iOPFGIPIHAG_;
+        result.kOJNKEAKAFK_ = kOJNKEAKAFK_;
         onBuilt();
         return result;
       }
@@ -509,17 +509,17 @@ public final class UgcNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.UgcNotifyOuterClass.UgcNotify other) {
         if (other == emu.grasscutter.net.proto.UgcNotifyOuterClass.UgcNotify.getDefaultInstance()) return this;
-        if (other.getLMICNFHFLFF() != false) {
-          setLMICNFHFLFF(other.getLMICNFHFLFF());
+        if (other.getGKJAPKJDBPN() != false) {
+          setGKJAPKJDBPN(other.getGKJAPKJDBPN());
         }
-        if (other.getPNILOAIHDHO() != false) {
-          setPNILOAIHDHO(other.getPNILOAIHDHO());
+        if (other.getPOPHCJEGGJG() != false) {
+          setPOPHCJEGGJG(other.getPOPHCJEGGJG());
         }
-        if (other.getIGIJBHLPGJD() != false) {
-          setIGIJBHLPGJD(other.getIGIJBHLPGJD());
+        if (other.getIOPFGIPIHAG() != false) {
+          setIOPFGIPIHAG(other.getIOPFGIPIHAG());
         }
-        if (other.getFHPMJMNGPMO() != false) {
-          setFHPMJMNGPMO(other.getFHPMJMNGPMO());
+        if (other.getKOJNKEAKAFK() != false) {
+          setKOJNKEAKAFK(other.getKOJNKEAKAFK());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -550,126 +550,126 @@ public final class UgcNotifyOuterClass {
         return this;
       }
 
-      private boolean lMICNFHFLFF_ ;
+      private boolean gKJAPKJDBPN_ ;
       /**
-       * <code>bool LMICNFHFLFF = 4;</code>
-       * @return The lMICNFHFLFF.
+       * <code>bool GKJAPKJDBPN = 8;</code>
+       * @return The gKJAPKJDBPN.
        */
       @java.lang.Override
-      public boolean getLMICNFHFLFF() {
-        return lMICNFHFLFF_;
+      public boolean getGKJAPKJDBPN() {
+        return gKJAPKJDBPN_;
       }
       /**
-       * <code>bool LMICNFHFLFF = 4;</code>
-       * @param value The lMICNFHFLFF to set.
+       * <code>bool GKJAPKJDBPN = 8;</code>
+       * @param value The gKJAPKJDBPN to set.
        * @return This builder for chaining.
        */
-      public Builder setLMICNFHFLFF(boolean value) {
+      public Builder setGKJAPKJDBPN(boolean value) {
         
-        lMICNFHFLFF_ = value;
+        gKJAPKJDBPN_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bool LMICNFHFLFF = 4;</code>
+       * <code>bool GKJAPKJDBPN = 8;</code>
        * @return This builder for chaining.
        */
-      public Builder clearLMICNFHFLFF() {
+      public Builder clearGKJAPKJDBPN() {
         
-        lMICNFHFLFF_ = false;
+        gKJAPKJDBPN_ = false;
         onChanged();
         return this;
       }
 
-      private boolean pNILOAIHDHO_ ;
+      private boolean pOPHCJEGGJG_ ;
       /**
-       * <code>bool PNILOAIHDHO = 3;</code>
-       * @return The pNILOAIHDHO.
+       * <code>bool POPHCJEGGJG = 3;</code>
+       * @return The pOPHCJEGGJG.
        */
       @java.lang.Override
-      public boolean getPNILOAIHDHO() {
-        return pNILOAIHDHO_;
+      public boolean getPOPHCJEGGJG() {
+        return pOPHCJEGGJG_;
       }
       /**
-       * <code>bool PNILOAIHDHO = 3;</code>
-       * @param value The pNILOAIHDHO to set.
+       * <code>bool POPHCJEGGJG = 3;</code>
+       * @param value The pOPHCJEGGJG to set.
        * @return This builder for chaining.
        */
-      public Builder setPNILOAIHDHO(boolean value) {
+      public Builder setPOPHCJEGGJG(boolean value) {
         
-        pNILOAIHDHO_ = value;
+        pOPHCJEGGJG_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bool PNILOAIHDHO = 3;</code>
+       * <code>bool POPHCJEGGJG = 3;</code>
        * @return This builder for chaining.
        */
-      public Builder clearPNILOAIHDHO() {
+      public Builder clearPOPHCJEGGJG() {
         
-        pNILOAIHDHO_ = false;
+        pOPHCJEGGJG_ = false;
         onChanged();
         return this;
       }
 
-      private boolean iGIJBHLPGJD_ ;
+      private boolean iOPFGIPIHAG_ ;
       /**
-       * <code>bool IGIJBHLPGJD = 6;</code>
-       * @return The iGIJBHLPGJD.
+       * <code>bool IOPFGIPIHAG = 2;</code>
+       * @return The iOPFGIPIHAG.
        */
       @java.lang.Override
-      public boolean getIGIJBHLPGJD() {
-        return iGIJBHLPGJD_;
+      public boolean getIOPFGIPIHAG() {
+        return iOPFGIPIHAG_;
       }
       /**
-       * <code>bool IGIJBHLPGJD = 6;</code>
-       * @param value The iGIJBHLPGJD to set.
+       * <code>bool IOPFGIPIHAG = 2;</code>
+       * @param value The iOPFGIPIHAG to set.
        * @return This builder for chaining.
        */
-      public Builder setIGIJBHLPGJD(boolean value) {
+      public Builder setIOPFGIPIHAG(boolean value) {
         
-        iGIJBHLPGJD_ = value;
+        iOPFGIPIHAG_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bool IGIJBHLPGJD = 6;</code>
+       * <code>bool IOPFGIPIHAG = 2;</code>
        * @return This builder for chaining.
        */
-      public Builder clearIGIJBHLPGJD() {
+      public Builder clearIOPFGIPIHAG() {
         
-        iGIJBHLPGJD_ = false;
+        iOPFGIPIHAG_ = false;
         onChanged();
         return this;
       }
 
-      private boolean fHPMJMNGPMO_ ;
+      private boolean kOJNKEAKAFK_ ;
       /**
-       * <code>bool FHPMJMNGPMO = 13;</code>
-       * @return The fHPMJMNGPMO.
+       * <code>bool KOJNKEAKAFK = 10;</code>
+       * @return The kOJNKEAKAFK.
        */
       @java.lang.Override
-      public boolean getFHPMJMNGPMO() {
-        return fHPMJMNGPMO_;
+      public boolean getKOJNKEAKAFK() {
+        return kOJNKEAKAFK_;
       }
       /**
-       * <code>bool FHPMJMNGPMO = 13;</code>
-       * @param value The fHPMJMNGPMO to set.
+       * <code>bool KOJNKEAKAFK = 10;</code>
+       * @param value The kOJNKEAKAFK to set.
        * @return This builder for chaining.
        */
-      public Builder setFHPMJMNGPMO(boolean value) {
+      public Builder setKOJNKEAKAFK(boolean value) {
         
-        fHPMJMNGPMO_ = value;
+        kOJNKEAKAFK_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bool FHPMJMNGPMO = 13;</code>
+       * <code>bool KOJNKEAKAFK = 10;</code>
        * @return This builder for chaining.
        */
-      public Builder clearFHPMJMNGPMO() {
+      public Builder clearKOJNKEAKAFK() {
         
-        fHPMJMNGPMO_ = false;
+        kOJNKEAKAFK_ = false;
         onChanged();
         return this;
       }
@@ -740,9 +740,9 @@ public final class UgcNotifyOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\017UgcNotify.proto\"_\n\tUgcNotify\022\023\n\013LMICNF" +
-      "HFLFF\030\004 \001(\010\022\023\n\013PNILOAIHDHO\030\003 \001(\010\022\023\n\013IGIJ" +
-      "BHLPGJD\030\006 \001(\010\022\023\n\013FHPMJMNGPMO\030\r \001(\010B\033\n\031em" +
+      "\n\017UgcNotify.proto\"_\n\tUgcNotify\022\023\n\013GKJAPK" +
+      "JDBPN\030\010 \001(\010\022\023\n\013POPHCJEGGJG\030\003 \001(\010\022\023\n\013IOPF" +
+      "GIPIHAG\030\002 \001(\010\022\023\n\013KOJNKEAKAFK\030\n \001(\010B\033\n\031em" +
       "u.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -754,7 +754,7 @@ public final class UgcNotifyOuterClass {
     internal_static_UgcNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_UgcNotify_descriptor,
-        new java.lang.String[] { "LMICNFHFLFF", "PNILOAIHDHO", "IGIJBHLPGJD", "FHPMJMNGPMO", });
+        new java.lang.String[] { "GKJAPKJDBPN", "POPHCJEGGJG", "IOPFGIPIHAG", "KOJNKEAKAFK", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

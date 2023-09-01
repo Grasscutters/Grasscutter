@@ -19,31 +19,31 @@ public final class GCGBossChallengeDataOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 unlock_level_id_list = 2;</code>
+     * <code>repeated uint32 unlock_level_id_list = 7;</code>
      * @return A list containing the unlockLevelIdList.
      */
     java.util.List<java.lang.Integer> getUnlockLevelIdListList();
     /**
-     * <code>repeated uint32 unlock_level_id_list = 2;</code>
+     * <code>repeated uint32 unlock_level_id_list = 7;</code>
      * @return The count of unlockLevelIdList.
      */
     int getUnlockLevelIdListCount();
     /**
-     * <code>repeated uint32 unlock_level_id_list = 2;</code>
+     * <code>repeated uint32 unlock_level_id_list = 7;</code>
      * @param index The index of the element to return.
      * @return The unlockLevelIdList at the given index.
      */
     int getUnlockLevelIdList(int index);
 
     /**
-     * <code>uint32 id = 8;</code>
+     * <code>uint32 id = 13;</code>
      * @return The id.
      */
     int getId();
   }
   /**
    * <pre>
-   * Obf: KLKBCNOPODD
+   * Obf: KNOMEKLEAGH
    * </pre>
    *
    * Protobuf type {@code GCGBossChallengeData}
@@ -92,7 +92,7 @@ public final class GCGBossChallengeDataOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
+            case 56: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 unlockLevelIdList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -100,7 +100,7 @@ public final class GCGBossChallengeDataOuterClass {
               unlockLevelIdList_.addInt(input.readUInt32());
               break;
             }
-            case 18: {
+            case 58: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -113,7 +113,7 @@ public final class GCGBossChallengeDataOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 64: {
+            case 104: {
 
               id_ = input.readUInt32();
               break;
@@ -153,10 +153,10 @@ public final class GCGBossChallengeDataOuterClass {
               emu.grasscutter.net.proto.GCGBossChallengeDataOuterClass.GCGBossChallengeData.class, emu.grasscutter.net.proto.GCGBossChallengeDataOuterClass.GCGBossChallengeData.Builder.class);
     }
 
-    public static final int UNLOCK_LEVEL_ID_LIST_FIELD_NUMBER = 2;
+    public static final int UNLOCK_LEVEL_ID_LIST_FIELD_NUMBER = 7;
     private com.google.protobuf.Internal.IntList unlockLevelIdList_;
     /**
-     * <code>repeated uint32 unlock_level_id_list = 2;</code>
+     * <code>repeated uint32 unlock_level_id_list = 7;</code>
      * @return A list containing the unlockLevelIdList.
      */
     @java.lang.Override
@@ -165,14 +165,14 @@ public final class GCGBossChallengeDataOuterClass {
       return unlockLevelIdList_;
     }
     /**
-     * <code>repeated uint32 unlock_level_id_list = 2;</code>
+     * <code>repeated uint32 unlock_level_id_list = 7;</code>
      * @return The count of unlockLevelIdList.
      */
     public int getUnlockLevelIdListCount() {
       return unlockLevelIdList_.size();
     }
     /**
-     * <code>repeated uint32 unlock_level_id_list = 2;</code>
+     * <code>repeated uint32 unlock_level_id_list = 7;</code>
      * @param index The index of the element to return.
      * @return The unlockLevelIdList at the given index.
      */
@@ -181,10 +181,10 @@ public final class GCGBossChallengeDataOuterClass {
     }
     private int unlockLevelIdListMemoizedSerializedSize = -1;
 
-    public static final int ID_FIELD_NUMBER = 8;
+    public static final int ID_FIELD_NUMBER = 13;
     private int id_;
     /**
-     * <code>uint32 id = 8;</code>
+     * <code>uint32 id = 13;</code>
      * @return The id.
      */
     @java.lang.Override
@@ -208,14 +208,14 @@ public final class GCGBossChallengeDataOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (getUnlockLevelIdListList().size() > 0) {
-        output.writeUInt32NoTag(18);
+        output.writeUInt32NoTag(58);
         output.writeUInt32NoTag(unlockLevelIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < unlockLevelIdList_.size(); i++) {
         output.writeUInt32NoTag(unlockLevelIdList_.getInt(i));
       }
       if (id_ != 0) {
-        output.writeUInt32(8, id_);
+        output.writeUInt32(13, id_);
       }
       unknownFields.writeTo(output);
     }
@@ -242,7 +242,7 @@ public final class GCGBossChallengeDataOuterClass {
       }
       if (id_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, id_);
+          .computeUInt32Size(13, id_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -377,7 +377,7 @@ public final class GCGBossChallengeDataOuterClass {
     }
     /**
      * <pre>
-     * Obf: KLKBCNOPODD
+     * Obf: KNOMEKLEAGH
      * </pre>
      *
      * Protobuf type {@code GCGBossChallengeData}
@@ -553,7 +553,7 @@ public final class GCGBossChallengeDataOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 unlock_level_id_list = 2;</code>
+       * <code>repeated uint32 unlock_level_id_list = 7;</code>
        * @return A list containing the unlockLevelIdList.
        */
       public java.util.List<java.lang.Integer>
@@ -562,14 +562,14 @@ public final class GCGBossChallengeDataOuterClass {
                  java.util.Collections.unmodifiableList(unlockLevelIdList_) : unlockLevelIdList_;
       }
       /**
-       * <code>repeated uint32 unlock_level_id_list = 2;</code>
+       * <code>repeated uint32 unlock_level_id_list = 7;</code>
        * @return The count of unlockLevelIdList.
        */
       public int getUnlockLevelIdListCount() {
         return unlockLevelIdList_.size();
       }
       /**
-       * <code>repeated uint32 unlock_level_id_list = 2;</code>
+       * <code>repeated uint32 unlock_level_id_list = 7;</code>
        * @param index The index of the element to return.
        * @return The unlockLevelIdList at the given index.
        */
@@ -577,7 +577,7 @@ public final class GCGBossChallengeDataOuterClass {
         return unlockLevelIdList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 unlock_level_id_list = 2;</code>
+       * <code>repeated uint32 unlock_level_id_list = 7;</code>
        * @param index The index to set the value at.
        * @param value The unlockLevelIdList to set.
        * @return This builder for chaining.
@@ -590,7 +590,7 @@ public final class GCGBossChallengeDataOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 unlock_level_id_list = 2;</code>
+       * <code>repeated uint32 unlock_level_id_list = 7;</code>
        * @param value The unlockLevelIdList to add.
        * @return This builder for chaining.
        */
@@ -601,7 +601,7 @@ public final class GCGBossChallengeDataOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 unlock_level_id_list = 2;</code>
+       * <code>repeated uint32 unlock_level_id_list = 7;</code>
        * @param values The unlockLevelIdList to add.
        * @return This builder for chaining.
        */
@@ -614,7 +614,7 @@ public final class GCGBossChallengeDataOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 unlock_level_id_list = 2;</code>
+       * <code>repeated uint32 unlock_level_id_list = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearUnlockLevelIdList() {
@@ -626,7 +626,7 @@ public final class GCGBossChallengeDataOuterClass {
 
       private int id_ ;
       /**
-       * <code>uint32 id = 8;</code>
+       * <code>uint32 id = 13;</code>
        * @return The id.
        */
       @java.lang.Override
@@ -634,7 +634,7 @@ public final class GCGBossChallengeDataOuterClass {
         return id_;
       }
       /**
-       * <code>uint32 id = 8;</code>
+       * <code>uint32 id = 13;</code>
        * @param value The id to set.
        * @return This builder for chaining.
        */
@@ -645,7 +645,7 @@ public final class GCGBossChallengeDataOuterClass {
         return this;
       }
       /**
-       * <code>uint32 id = 8;</code>
+       * <code>uint32 id = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearId() {
@@ -722,8 +722,8 @@ public final class GCGBossChallengeDataOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\032GCGBossChallengeData.proto\"@\n\024GCGBossC" +
-      "hallengeData\022\034\n\024unlock_level_id_list\030\002 \003" +
-      "(\r\022\n\n\002id\030\010 \001(\rB\033\n\031emu.grasscutter.net.pr" +
+      "hallengeData\022\034\n\024unlock_level_id_list\030\007 \003" +
+      "(\r\022\n\n\002id\030\r \001(\rB\033\n\031emu.grasscutter.net.pr" +
       "otob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

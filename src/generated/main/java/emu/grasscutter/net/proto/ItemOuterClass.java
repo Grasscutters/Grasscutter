@@ -79,7 +79,7 @@ public final class ItemOuterClass {
   }
   /**
    * <pre>
-   * Obf: EBCKEILKJOG
+   * Obf: EPFDENHAINI
    * </pre>
    *
    * Protobuf type {@code Item}
@@ -591,7 +591,7 @@ public final class ItemOuterClass {
     }
     /**
      * <pre>
-     * Obf: EBCKEILKJOG
+     * Obf: EPFDENHAINI
      * </pre>
      *
      * Protobuf type {@code Item}

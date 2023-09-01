@@ -16,7 +16,7 @@ public final class CodexTypeOuterClass {
   }
   /**
    * <pre>
-   * Obf: BLGBHLOPHLA
+   * Obf: LHGEGGKAFLM
    * </pre>
    *
    * Protobuf enum {@code CodexType}

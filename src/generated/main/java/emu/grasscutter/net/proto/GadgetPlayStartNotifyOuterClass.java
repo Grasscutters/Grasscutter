@@ -19,27 +19,27 @@ public final class GadgetPlayStartNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 start_time = 7;</code>
-     * @return The startTime.
+     * <code>uint32 entity_id = 4;</code>
+     * @return The entityId.
      */
-    int getStartTime();
+    int getEntityId();
 
     /**
-     * <code>uint32 play_type = 3;</code>
+     * <code>uint32 play_type = 13;</code>
      * @return The playType.
      */
     int getPlayType();
 
     /**
-     * <code>uint32 entity_id = 1;</code>
-     * @return The entityId.
+     * <code>uint32 start_time = 6;</code>
+     * @return The startTime.
      */
-    int getEntityId();
+    int getStartTime();
   }
   /**
    * <pre>
-   * CmdId: 887
-   * Obf: BJANKDMFCMN
+   * CmdId: 1524
+   * Obf: PPGEEFEAOCO
    * </pre>
    *
    * Protobuf type {@code GadgetPlayStartNotify}
@@ -86,19 +86,19 @@ public final class GadgetPlayStartNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 32: {
 
               entityId_ = input.readUInt32();
               break;
             }
-            case 24: {
-
-              playType_ = input.readUInt32();
-              break;
-            }
-            case 56: {
+            case 48: {
 
               startTime_ = input.readUInt32();
+              break;
+            }
+            case 104: {
+
+              playType_ = input.readUInt32();
               break;
             }
             default: {
@@ -133,21 +133,21 @@ public final class GadgetPlayStartNotifyOuterClass {
               emu.grasscutter.net.proto.GadgetPlayStartNotifyOuterClass.GadgetPlayStartNotify.class, emu.grasscutter.net.proto.GadgetPlayStartNotifyOuterClass.GadgetPlayStartNotify.Builder.class);
     }
 
-    public static final int START_TIME_FIELD_NUMBER = 7;
-    private int startTime_;
+    public static final int ENTITY_ID_FIELD_NUMBER = 4;
+    private int entityId_;
     /**
-     * <code>uint32 start_time = 7;</code>
-     * @return The startTime.
+     * <code>uint32 entity_id = 4;</code>
+     * @return The entityId.
      */
     @java.lang.Override
-    public int getStartTime() {
-      return startTime_;
+    public int getEntityId() {
+      return entityId_;
     }
 
-    public static final int PLAY_TYPE_FIELD_NUMBER = 3;
+    public static final int PLAY_TYPE_FIELD_NUMBER = 13;
     private int playType_;
     /**
-     * <code>uint32 play_type = 3;</code>
+     * <code>uint32 play_type = 13;</code>
      * @return The playType.
      */
     @java.lang.Override
@@ -155,15 +155,15 @@ public final class GadgetPlayStartNotifyOuterClass {
       return playType_;
     }
 
-    public static final int ENTITY_ID_FIELD_NUMBER = 1;
-    private int entityId_;
+    public static final int START_TIME_FIELD_NUMBER = 6;
+    private int startTime_;
     /**
-     * <code>uint32 entity_id = 1;</code>
-     * @return The entityId.
+     * <code>uint32 start_time = 6;</code>
+     * @return The startTime.
      */
     @java.lang.Override
-    public int getEntityId() {
-      return entityId_;
+    public int getStartTime() {
+      return startTime_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -181,13 +181,13 @@ public final class GadgetPlayStartNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (entityId_ != 0) {
-        output.writeUInt32(1, entityId_);
-      }
-      if (playType_ != 0) {
-        output.writeUInt32(3, playType_);
+        output.writeUInt32(4, entityId_);
       }
       if (startTime_ != 0) {
-        output.writeUInt32(7, startTime_);
+        output.writeUInt32(6, startTime_);
+      }
+      if (playType_ != 0) {
+        output.writeUInt32(13, playType_);
       }
       unknownFields.writeTo(output);
     }
@@ -200,15 +200,15 @@ public final class GadgetPlayStartNotifyOuterClass {
       size = 0;
       if (entityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, entityId_);
-      }
-      if (playType_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, playType_);
+          .computeUInt32Size(4, entityId_);
       }
       if (startTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, startTime_);
+          .computeUInt32Size(6, startTime_);
+      }
+      if (playType_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(13, playType_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -225,12 +225,12 @@ public final class GadgetPlayStartNotifyOuterClass {
       }
       emu.grasscutter.net.proto.GadgetPlayStartNotifyOuterClass.GadgetPlayStartNotify other = (emu.grasscutter.net.proto.GadgetPlayStartNotifyOuterClass.GadgetPlayStartNotify) obj;
 
-      if (getStartTime()
-          != other.getStartTime()) return false;
-      if (getPlayType()
-          != other.getPlayType()) return false;
       if (getEntityId()
           != other.getEntityId()) return false;
+      if (getPlayType()
+          != other.getPlayType()) return false;
+      if (getStartTime()
+          != other.getStartTime()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -242,12 +242,12 @@ public final class GadgetPlayStartNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + START_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + getStartTime();
-      hash = (37 * hash) + PLAY_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + getPlayType();
       hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getEntityId();
+      hash = (37 * hash) + PLAY_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getPlayType();
+      hash = (37 * hash) + START_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getStartTime();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -345,8 +345,8 @@ public final class GadgetPlayStartNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 887
-     * Obf: BJANKDMFCMN
+     * CmdId: 1524
+     * Obf: PPGEEFEAOCO
      * </pre>
      *
      * Protobuf type {@code GadgetPlayStartNotify}
@@ -386,11 +386,11 @@ public final class GadgetPlayStartNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        startTime_ = 0;
+        entityId_ = 0;
 
         playType_ = 0;
 
-        entityId_ = 0;
+        startTime_ = 0;
 
         return this;
       }
@@ -418,9 +418,9 @@ public final class GadgetPlayStartNotifyOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.GadgetPlayStartNotifyOuterClass.GadgetPlayStartNotify buildPartial() {
         emu.grasscutter.net.proto.GadgetPlayStartNotifyOuterClass.GadgetPlayStartNotify result = new emu.grasscutter.net.proto.GadgetPlayStartNotifyOuterClass.GadgetPlayStartNotify(this);
-        result.startTime_ = startTime_;
-        result.playType_ = playType_;
         result.entityId_ = entityId_;
+        result.playType_ = playType_;
+        result.startTime_ = startTime_;
         onBuilt();
         return result;
       }
@@ -469,14 +469,14 @@ public final class GadgetPlayStartNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.GadgetPlayStartNotifyOuterClass.GadgetPlayStartNotify other) {
         if (other == emu.grasscutter.net.proto.GadgetPlayStartNotifyOuterClass.GadgetPlayStartNotify.getDefaultInstance()) return this;
-        if (other.getStartTime() != 0) {
-          setStartTime(other.getStartTime());
+        if (other.getEntityId() != 0) {
+          setEntityId(other.getEntityId());
         }
         if (other.getPlayType() != 0) {
           setPlayType(other.getPlayType());
         }
-        if (other.getEntityId() != 0) {
-          setEntityId(other.getEntityId());
+        if (other.getStartTime() != 0) {
+          setStartTime(other.getStartTime());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -507,71 +507,9 @@ public final class GadgetPlayStartNotifyOuterClass {
         return this;
       }
 
-      private int startTime_ ;
-      /**
-       * <code>uint32 start_time = 7;</code>
-       * @return The startTime.
-       */
-      @java.lang.Override
-      public int getStartTime() {
-        return startTime_;
-      }
-      /**
-       * <code>uint32 start_time = 7;</code>
-       * @param value The startTime to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStartTime(int value) {
-        
-        startTime_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 start_time = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearStartTime() {
-        
-        startTime_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int playType_ ;
-      /**
-       * <code>uint32 play_type = 3;</code>
-       * @return The playType.
-       */
-      @java.lang.Override
-      public int getPlayType() {
-        return playType_;
-      }
-      /**
-       * <code>uint32 play_type = 3;</code>
-       * @param value The playType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPlayType(int value) {
-        
-        playType_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 play_type = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPlayType() {
-        
-        playType_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int entityId_ ;
       /**
-       * <code>uint32 entity_id = 1;</code>
+       * <code>uint32 entity_id = 4;</code>
        * @return The entityId.
        */
       @java.lang.Override
@@ -579,7 +517,7 @@ public final class GadgetPlayStartNotifyOuterClass {
         return entityId_;
       }
       /**
-       * <code>uint32 entity_id = 1;</code>
+       * <code>uint32 entity_id = 4;</code>
        * @param value The entityId to set.
        * @return This builder for chaining.
        */
@@ -590,12 +528,74 @@ public final class GadgetPlayStartNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 entity_id = 1;</code>
+       * <code>uint32 entity_id = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
         
         entityId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int playType_ ;
+      /**
+       * <code>uint32 play_type = 13;</code>
+       * @return The playType.
+       */
+      @java.lang.Override
+      public int getPlayType() {
+        return playType_;
+      }
+      /**
+       * <code>uint32 play_type = 13;</code>
+       * @param value The playType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPlayType(int value) {
+        
+        playType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 play_type = 13;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPlayType() {
+        
+        playType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int startTime_ ;
+      /**
+       * <code>uint32 start_time = 6;</code>
+       * @return The startTime.
+       */
+      @java.lang.Override
+      public int getStartTime() {
+        return startTime_;
+      }
+      /**
+       * <code>uint32 start_time = 6;</code>
+       * @param value The startTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStartTime(int value) {
+        
+        startTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 start_time = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStartTime() {
+        
+        startTime_ = 0;
         onChanged();
         return this;
       }
@@ -667,8 +667,8 @@ public final class GadgetPlayStartNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\033GadgetPlayStartNotify.proto\"Q\n\025GadgetP" +
-      "layStartNotify\022\022\n\nstart_time\030\007 \001(\r\022\021\n\tpl" +
-      "ay_type\030\003 \001(\r\022\021\n\tentity_id\030\001 \001(\rB\033\n\031emu." +
+      "layStartNotify\022\021\n\tentity_id\030\004 \001(\r\022\021\n\tpla" +
+      "y_type\030\r \001(\r\022\022\n\nstart_time\030\006 \001(\rB\033\n\031emu." +
       "grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -680,7 +680,7 @@ public final class GadgetPlayStartNotifyOuterClass {
     internal_static_GadgetPlayStartNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GadgetPlayStartNotify_descriptor,
-        new java.lang.String[] { "StartTime", "PlayType", "EntityId", });
+        new java.lang.String[] { "EntityId", "PlayType", "StartTime", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -19,21 +19,21 @@ public final class TryCustomDungeonRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 6;</code>
+     * <code>int32 retcode = 4;</code>
      * @return The retcode.
      */
     int getRetcode();
 
     /**
-     * <code>uint32 room_id = 2;</code>
+     * <code>uint32 room_id = 12;</code>
      * @return The roomId.
      */
     int getRoomId();
   }
   /**
    * <pre>
-   * CmdId: 6201
-   * Obf: LBPPMLPMJKD
+   * CmdId: 9741
+   * Obf: NMKPMDOGHFG
    * </pre>
    *
    * Protobuf type {@code TryCustomDungeonRsp}
@@ -80,14 +80,14 @@ public final class TryCustomDungeonRspOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
-
-              roomId_ = input.readUInt32();
-              break;
-            }
-            case 48: {
+            case 32: {
 
               retcode_ = input.readInt32();
+              break;
+            }
+            case 96: {
+
+              roomId_ = input.readUInt32();
               break;
             }
             default: {
@@ -122,10 +122,10 @@ public final class TryCustomDungeonRspOuterClass {
               emu.grasscutter.net.proto.TryCustomDungeonRspOuterClass.TryCustomDungeonRsp.class, emu.grasscutter.net.proto.TryCustomDungeonRspOuterClass.TryCustomDungeonRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 6;
+    public static final int RETCODE_FIELD_NUMBER = 4;
     private int retcode_;
     /**
-     * <code>int32 retcode = 6;</code>
+     * <code>int32 retcode = 4;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -133,10 +133,10 @@ public final class TryCustomDungeonRspOuterClass {
       return retcode_;
     }
 
-    public static final int ROOM_ID_FIELD_NUMBER = 2;
+    public static final int ROOM_ID_FIELD_NUMBER = 12;
     private int roomId_;
     /**
-     * <code>uint32 room_id = 2;</code>
+     * <code>uint32 room_id = 12;</code>
      * @return The roomId.
      */
     @java.lang.Override
@@ -158,11 +158,11 @@ public final class TryCustomDungeonRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (roomId_ != 0) {
-        output.writeUInt32(2, roomId_);
-      }
       if (retcode_ != 0) {
-        output.writeInt32(6, retcode_);
+        output.writeInt32(4, retcode_);
+      }
+      if (roomId_ != 0) {
+        output.writeUInt32(12, roomId_);
       }
       unknownFields.writeTo(output);
     }
@@ -173,13 +173,13 @@ public final class TryCustomDungeonRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (roomId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, roomId_);
-      }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(6, retcode_);
+          .computeInt32Size(4, retcode_);
+      }
+      if (roomId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(12, roomId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -312,8 +312,8 @@ public final class TryCustomDungeonRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 6201
-     * Obf: LBPPMLPMJKD
+     * CmdId: 9741
+     * Obf: NMKPMDOGHFG
      * </pre>
      *
      * Protobuf type {@code TryCustomDungeonRsp}
@@ -470,7 +470,7 @@ public final class TryCustomDungeonRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 6;</code>
+       * <code>int32 retcode = 4;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -478,7 +478,7 @@ public final class TryCustomDungeonRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 6;</code>
+       * <code>int32 retcode = 4;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -489,7 +489,7 @@ public final class TryCustomDungeonRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 6;</code>
+       * <code>int32 retcode = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -501,7 +501,7 @@ public final class TryCustomDungeonRspOuterClass {
 
       private int roomId_ ;
       /**
-       * <code>uint32 room_id = 2;</code>
+       * <code>uint32 room_id = 12;</code>
        * @return The roomId.
        */
       @java.lang.Override
@@ -509,7 +509,7 @@ public final class TryCustomDungeonRspOuterClass {
         return roomId_;
       }
       /**
-       * <code>uint32 room_id = 2;</code>
+       * <code>uint32 room_id = 12;</code>
        * @param value The roomId to set.
        * @return This builder for chaining.
        */
@@ -520,7 +520,7 @@ public final class TryCustomDungeonRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 room_id = 2;</code>
+       * <code>uint32 room_id = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearRoomId() {
@@ -597,7 +597,7 @@ public final class TryCustomDungeonRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\031TryCustomDungeonRsp.proto\"7\n\023TryCustom" +
-      "DungeonRsp\022\017\n\007retcode\030\006 \001(\005\022\017\n\007room_id\030\002" +
+      "DungeonRsp\022\017\n\007retcode\030\004 \001(\005\022\017\n\007room_id\030\014" +
       " \001(\rB\033\n\031emu.grasscutter.net.protob\006proto" +
       "3"
     };

@@ -20,8 +20,8 @@ public final class ReunionBriefInfoReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 5078
-   * Obf: MEHKKJBJLDD
+   * CmdId: 27557
+   * Obf: KPHAJMCKDFC
    * </pre>
    *
    * Protobuf type {@code ReunionBriefInfoReq}
@@ -246,8 +246,8 @@ public final class ReunionBriefInfoReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 5078
-     * Obf: MEHKKJBJLDD
+     * CmdId: 27557
+     * Obf: KPHAJMCKDFC
      * </pre>
      *
      * Protobuf type {@code ReunionBriefInfoReq}

@@ -1,7 +1,6 @@
 package emu.grasscutter.game.inventory;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class EquipInventoryTab implements InventoryTab {
     private final Set<GameItem> items;

@@ -19,15 +19,15 @@ public final class ExitSceneWeatherAreaNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 weather_gadget_id = 4;</code>
+     * <code>uint32 weather_gadget_id = 7;</code>
      * @return The weatherGadgetId.
      */
     int getWeatherGadgetId();
   }
   /**
    * <pre>
-   * CmdId: 212
-   * Obf: PPIMKDPAHCB
+   * CmdId: 29563
+   * Obf: PMMNBAJNFDK
    * </pre>
    *
    * Protobuf type {@code ExitSceneWeatherAreaNotify}
@@ -74,7 +74,7 @@ public final class ExitSceneWeatherAreaNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
+            case 56: {
 
               weatherGadgetId_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class ExitSceneWeatherAreaNotifyOuterClass {
               emu.grasscutter.net.proto.ExitSceneWeatherAreaNotifyOuterClass.ExitSceneWeatherAreaNotify.class, emu.grasscutter.net.proto.ExitSceneWeatherAreaNotifyOuterClass.ExitSceneWeatherAreaNotify.Builder.class);
     }
 
-    public static final int WEATHER_GADGET_ID_FIELD_NUMBER = 4;
+    public static final int WEATHER_GADGET_ID_FIELD_NUMBER = 7;
     private int weatherGadgetId_;
     /**
-     * <code>uint32 weather_gadget_id = 4;</code>
+     * <code>uint32 weather_gadget_id = 7;</code>
      * @return The weatherGadgetId.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class ExitSceneWeatherAreaNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (weatherGadgetId_ != 0) {
-        output.writeUInt32(4, weatherGadgetId_);
+        output.writeUInt32(7, weatherGadgetId_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class ExitSceneWeatherAreaNotifyOuterClass {
       size = 0;
       if (weatherGadgetId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, weatherGadgetId_);
+          .computeUInt32Size(7, weatherGadgetId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class ExitSceneWeatherAreaNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 212
-     * Obf: PPIMKDPAHCB
+     * CmdId: 29563
+     * Obf: PMMNBAJNFDK
      * </pre>
      *
      * Protobuf type {@code ExitSceneWeatherAreaNotify}
@@ -431,7 +431,7 @@ public final class ExitSceneWeatherAreaNotifyOuterClass {
 
       private int weatherGadgetId_ ;
       /**
-       * <code>uint32 weather_gadget_id = 4;</code>
+       * <code>uint32 weather_gadget_id = 7;</code>
        * @return The weatherGadgetId.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class ExitSceneWeatherAreaNotifyOuterClass {
         return weatherGadgetId_;
       }
       /**
-       * <code>uint32 weather_gadget_id = 4;</code>
+       * <code>uint32 weather_gadget_id = 7;</code>
        * @param value The weatherGadgetId to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class ExitSceneWeatherAreaNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 weather_gadget_id = 4;</code>
+       * <code>uint32 weather_gadget_id = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearWeatherGadgetId() {
@@ -528,7 +528,7 @@ public final class ExitSceneWeatherAreaNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n ExitSceneWeatherAreaNotify.proto\"7\n\032Ex" +
       "itSceneWeatherAreaNotify\022\031\n\021weather_gadg" +
-      "et_id\030\004 \001(\rB\033\n\031emu.grasscutter.net.proto" +
+      "et_id\030\007 \001(\rB\033\n\031emu.grasscutter.net.proto" +
       "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

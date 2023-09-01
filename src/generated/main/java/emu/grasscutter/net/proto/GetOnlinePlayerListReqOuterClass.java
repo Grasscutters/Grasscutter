@@ -20,8 +20,8 @@ public final class GetOnlinePlayerListReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 35
-   * Obf: PEHFIKEEKHF
+   * CmdId: 27587
+   * Obf: IGNGJNHHJBM
    * </pre>
    *
    * Protobuf type {@code GetOnlinePlayerListReq}
@@ -246,8 +246,8 @@ public final class GetOnlinePlayerListReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 35
-     * Obf: PEHFIKEEKHF
+     * CmdId: 27587
+     * Obf: IGNGJNHHJBM
      * </pre>
      *
      * Protobuf type {@code GetOnlinePlayerListReq}

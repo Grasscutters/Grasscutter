@@ -1,9 +1,7 @@
 package emu.grasscutter.game.quest;
 
 import dev.morphia.annotations.Entity;
-import lombok.AccessLevel;
-import lombok.Builder;
-import lombok.Data;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 @Entity

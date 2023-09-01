@@ -19,23 +19,23 @@ public final class GCGLevelDataOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 level_id = 11;</code>
+     * <code>uint32 level_id = 13;</code>
      * @return The levelId.
      */
     int getLevelId();
 
     /**
-     * <code>repeated uint32 finished_challenge_id_list = 9;</code>
+     * <code>repeated uint32 finished_challenge_id_list = 2;</code>
      * @return A list containing the finishedChallengeIdList.
      */
     java.util.List<java.lang.Integer> getFinishedChallengeIdListList();
     /**
-     * <code>repeated uint32 finished_challenge_id_list = 9;</code>
+     * <code>repeated uint32 finished_challenge_id_list = 2;</code>
      * @return The count of finishedChallengeIdList.
      */
     int getFinishedChallengeIdListCount();
     /**
-     * <code>repeated uint32 finished_challenge_id_list = 9;</code>
+     * <code>repeated uint32 finished_challenge_id_list = 2;</code>
      * @param index The index of the element to return.
      * @return The finishedChallengeIdList at the given index.
      */
@@ -43,7 +43,7 @@ public final class GCGLevelDataOuterClass {
   }
   /**
    * <pre>
-   * Obf: OANGFNFEPOH
+   * Obf: CBLALJMNGHC
    * </pre>
    *
    * Protobuf type {@code GCGLevelData}
@@ -92,7 +92,7 @@ public final class GCGLevelDataOuterClass {
             case 0:
               done = true;
               break;
-            case 72: {
+            case 16: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 finishedChallengeIdList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -100,7 +100,7 @@ public final class GCGLevelDataOuterClass {
               finishedChallengeIdList_.addInt(input.readUInt32());
               break;
             }
-            case 74: {
+            case 18: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -113,7 +113,7 @@ public final class GCGLevelDataOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 88: {
+            case 104: {
 
               levelId_ = input.readUInt32();
               break;
@@ -153,10 +153,10 @@ public final class GCGLevelDataOuterClass {
               emu.grasscutter.net.proto.GCGLevelDataOuterClass.GCGLevelData.class, emu.grasscutter.net.proto.GCGLevelDataOuterClass.GCGLevelData.Builder.class);
     }
 
-    public static final int LEVEL_ID_FIELD_NUMBER = 11;
+    public static final int LEVEL_ID_FIELD_NUMBER = 13;
     private int levelId_;
     /**
-     * <code>uint32 level_id = 11;</code>
+     * <code>uint32 level_id = 13;</code>
      * @return The levelId.
      */
     @java.lang.Override
@@ -164,10 +164,10 @@ public final class GCGLevelDataOuterClass {
       return levelId_;
     }
 
-    public static final int FINISHED_CHALLENGE_ID_LIST_FIELD_NUMBER = 9;
+    public static final int FINISHED_CHALLENGE_ID_LIST_FIELD_NUMBER = 2;
     private com.google.protobuf.Internal.IntList finishedChallengeIdList_;
     /**
-     * <code>repeated uint32 finished_challenge_id_list = 9;</code>
+     * <code>repeated uint32 finished_challenge_id_list = 2;</code>
      * @return A list containing the finishedChallengeIdList.
      */
     @java.lang.Override
@@ -176,14 +176,14 @@ public final class GCGLevelDataOuterClass {
       return finishedChallengeIdList_;
     }
     /**
-     * <code>repeated uint32 finished_challenge_id_list = 9;</code>
+     * <code>repeated uint32 finished_challenge_id_list = 2;</code>
      * @return The count of finishedChallengeIdList.
      */
     public int getFinishedChallengeIdListCount() {
       return finishedChallengeIdList_.size();
     }
     /**
-     * <code>repeated uint32 finished_challenge_id_list = 9;</code>
+     * <code>repeated uint32 finished_challenge_id_list = 2;</code>
      * @param index The index of the element to return.
      * @return The finishedChallengeIdList at the given index.
      */
@@ -208,14 +208,14 @@ public final class GCGLevelDataOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (getFinishedChallengeIdListList().size() > 0) {
-        output.writeUInt32NoTag(74);
+        output.writeUInt32NoTag(18);
         output.writeUInt32NoTag(finishedChallengeIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < finishedChallengeIdList_.size(); i++) {
         output.writeUInt32NoTag(finishedChallengeIdList_.getInt(i));
       }
       if (levelId_ != 0) {
-        output.writeUInt32(11, levelId_);
+        output.writeUInt32(13, levelId_);
       }
       unknownFields.writeTo(output);
     }
@@ -242,7 +242,7 @@ public final class GCGLevelDataOuterClass {
       }
       if (levelId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, levelId_);
+          .computeUInt32Size(13, levelId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -377,7 +377,7 @@ public final class GCGLevelDataOuterClass {
     }
     /**
      * <pre>
-     * Obf: OANGFNFEPOH
+     * Obf: CBLALJMNGHC
      * </pre>
      *
      * Protobuf type {@code GCGLevelData}
@@ -547,7 +547,7 @@ public final class GCGLevelDataOuterClass {
 
       private int levelId_ ;
       /**
-       * <code>uint32 level_id = 11;</code>
+       * <code>uint32 level_id = 13;</code>
        * @return The levelId.
        */
       @java.lang.Override
@@ -555,7 +555,7 @@ public final class GCGLevelDataOuterClass {
         return levelId_;
       }
       /**
-       * <code>uint32 level_id = 11;</code>
+       * <code>uint32 level_id = 13;</code>
        * @param value The levelId to set.
        * @return This builder for chaining.
        */
@@ -566,7 +566,7 @@ public final class GCGLevelDataOuterClass {
         return this;
       }
       /**
-       * <code>uint32 level_id = 11;</code>
+       * <code>uint32 level_id = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearLevelId() {
@@ -584,7 +584,7 @@ public final class GCGLevelDataOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 finished_challenge_id_list = 9;</code>
+       * <code>repeated uint32 finished_challenge_id_list = 2;</code>
        * @return A list containing the finishedChallengeIdList.
        */
       public java.util.List<java.lang.Integer>
@@ -593,14 +593,14 @@ public final class GCGLevelDataOuterClass {
                  java.util.Collections.unmodifiableList(finishedChallengeIdList_) : finishedChallengeIdList_;
       }
       /**
-       * <code>repeated uint32 finished_challenge_id_list = 9;</code>
+       * <code>repeated uint32 finished_challenge_id_list = 2;</code>
        * @return The count of finishedChallengeIdList.
        */
       public int getFinishedChallengeIdListCount() {
         return finishedChallengeIdList_.size();
       }
       /**
-       * <code>repeated uint32 finished_challenge_id_list = 9;</code>
+       * <code>repeated uint32 finished_challenge_id_list = 2;</code>
        * @param index The index of the element to return.
        * @return The finishedChallengeIdList at the given index.
        */
@@ -608,7 +608,7 @@ public final class GCGLevelDataOuterClass {
         return finishedChallengeIdList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 finished_challenge_id_list = 9;</code>
+       * <code>repeated uint32 finished_challenge_id_list = 2;</code>
        * @param index The index to set the value at.
        * @param value The finishedChallengeIdList to set.
        * @return This builder for chaining.
@@ -621,7 +621,7 @@ public final class GCGLevelDataOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 finished_challenge_id_list = 9;</code>
+       * <code>repeated uint32 finished_challenge_id_list = 2;</code>
        * @param value The finishedChallengeIdList to add.
        * @return This builder for chaining.
        */
@@ -632,7 +632,7 @@ public final class GCGLevelDataOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 finished_challenge_id_list = 9;</code>
+       * <code>repeated uint32 finished_challenge_id_list = 2;</code>
        * @param values The finishedChallengeIdList to add.
        * @return This builder for chaining.
        */
@@ -645,7 +645,7 @@ public final class GCGLevelDataOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 finished_challenge_id_list = 9;</code>
+       * <code>repeated uint32 finished_challenge_id_list = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearFinishedChallengeIdList() {
@@ -722,8 +722,8 @@ public final class GCGLevelDataOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\022GCGLevelData.proto\"D\n\014GCGLevelData\022\020\n\010" +
-      "level_id\030\013 \001(\r\022\"\n\032finished_challenge_id_" +
-      "list\030\t \003(\rB\033\n\031emu.grasscutter.net.protob" +
+      "level_id\030\r \001(\r\022\"\n\032finished_challenge_id_" +
+      "list\030\002 \003(\rB\033\n\031emu.grasscutter.net.protob" +
       "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

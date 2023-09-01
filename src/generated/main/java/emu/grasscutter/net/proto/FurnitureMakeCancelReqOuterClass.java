@@ -19,21 +19,21 @@ public final class FurnitureMakeCancelReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 index = 6;</code>
-     * @return The index.
-     */
-    int getIndex();
-
-    /**
      * <code>uint32 make_id = 1;</code>
      * @return The makeId.
      */
     int getMakeId();
+
+    /**
+     * <code>uint32 index = 12;</code>
+     * @return The index.
+     */
+    int getIndex();
   }
   /**
    * <pre>
-   * CmdId: 4663
-   * Obf: NNJHMCNPNHK
+   * CmdId: 29262
+   * Obf: EPJPMHPGODB
    * </pre>
    *
    * Protobuf type {@code FurnitureMakeCancelReq}
@@ -85,7 +85,7 @@ public final class FurnitureMakeCancelReqOuterClass {
               makeId_ = input.readUInt32();
               break;
             }
-            case 48: {
+            case 96: {
 
               index_ = input.readUInt32();
               break;
@@ -122,17 +122,6 @@ public final class FurnitureMakeCancelReqOuterClass {
               emu.grasscutter.net.proto.FurnitureMakeCancelReqOuterClass.FurnitureMakeCancelReq.class, emu.grasscutter.net.proto.FurnitureMakeCancelReqOuterClass.FurnitureMakeCancelReq.Builder.class);
     }
 
-    public static final int INDEX_FIELD_NUMBER = 6;
-    private int index_;
-    /**
-     * <code>uint32 index = 6;</code>
-     * @return The index.
-     */
-    @java.lang.Override
-    public int getIndex() {
-      return index_;
-    }
-
     public static final int MAKE_ID_FIELD_NUMBER = 1;
     private int makeId_;
     /**
@@ -142,6 +131,17 @@ public final class FurnitureMakeCancelReqOuterClass {
     @java.lang.Override
     public int getMakeId() {
       return makeId_;
+    }
+
+    public static final int INDEX_FIELD_NUMBER = 12;
+    private int index_;
+    /**
+     * <code>uint32 index = 12;</code>
+     * @return The index.
+     */
+    @java.lang.Override
+    public int getIndex() {
+      return index_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -162,7 +162,7 @@ public final class FurnitureMakeCancelReqOuterClass {
         output.writeUInt32(1, makeId_);
       }
       if (index_ != 0) {
-        output.writeUInt32(6, index_);
+        output.writeUInt32(12, index_);
       }
       unknownFields.writeTo(output);
     }
@@ -179,7 +179,7 @@ public final class FurnitureMakeCancelReqOuterClass {
       }
       if (index_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, index_);
+          .computeUInt32Size(12, index_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -196,10 +196,10 @@ public final class FurnitureMakeCancelReqOuterClass {
       }
       emu.grasscutter.net.proto.FurnitureMakeCancelReqOuterClass.FurnitureMakeCancelReq other = (emu.grasscutter.net.proto.FurnitureMakeCancelReqOuterClass.FurnitureMakeCancelReq) obj;
 
-      if (getIndex()
-          != other.getIndex()) return false;
       if (getMakeId()
           != other.getMakeId()) return false;
+      if (getIndex()
+          != other.getIndex()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -211,10 +211,10 @@ public final class FurnitureMakeCancelReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + INDEX_FIELD_NUMBER;
-      hash = (53 * hash) + getIndex();
       hash = (37 * hash) + MAKE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getMakeId();
+      hash = (37 * hash) + INDEX_FIELD_NUMBER;
+      hash = (53 * hash) + getIndex();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -312,8 +312,8 @@ public final class FurnitureMakeCancelReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4663
-     * Obf: NNJHMCNPNHK
+     * CmdId: 29262
+     * Obf: EPJPMHPGODB
      * </pre>
      *
      * Protobuf type {@code FurnitureMakeCancelReq}
@@ -353,9 +353,9 @@ public final class FurnitureMakeCancelReqOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        index_ = 0;
-
         makeId_ = 0;
+
+        index_ = 0;
 
         return this;
       }
@@ -383,8 +383,8 @@ public final class FurnitureMakeCancelReqOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.FurnitureMakeCancelReqOuterClass.FurnitureMakeCancelReq buildPartial() {
         emu.grasscutter.net.proto.FurnitureMakeCancelReqOuterClass.FurnitureMakeCancelReq result = new emu.grasscutter.net.proto.FurnitureMakeCancelReqOuterClass.FurnitureMakeCancelReq(this);
-        result.index_ = index_;
         result.makeId_ = makeId_;
+        result.index_ = index_;
         onBuilt();
         return result;
       }
@@ -433,11 +433,11 @@ public final class FurnitureMakeCancelReqOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.FurnitureMakeCancelReqOuterClass.FurnitureMakeCancelReq other) {
         if (other == emu.grasscutter.net.proto.FurnitureMakeCancelReqOuterClass.FurnitureMakeCancelReq.getDefaultInstance()) return this;
-        if (other.getIndex() != 0) {
-          setIndex(other.getIndex());
-        }
         if (other.getMakeId() != 0) {
           setMakeId(other.getMakeId());
+        }
+        if (other.getIndex() != 0) {
+          setIndex(other.getIndex());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -468,37 +468,6 @@ public final class FurnitureMakeCancelReqOuterClass {
         return this;
       }
 
-      private int index_ ;
-      /**
-       * <code>uint32 index = 6;</code>
-       * @return The index.
-       */
-      @java.lang.Override
-      public int getIndex() {
-        return index_;
-      }
-      /**
-       * <code>uint32 index = 6;</code>
-       * @param value The index to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIndex(int value) {
-        
-        index_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 index = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIndex() {
-        
-        index_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int makeId_ ;
       /**
        * <code>uint32 make_id = 1;</code>
@@ -526,6 +495,37 @@ public final class FurnitureMakeCancelReqOuterClass {
       public Builder clearMakeId() {
         
         makeId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int index_ ;
+      /**
+       * <code>uint32 index = 12;</code>
+       * @return The index.
+       */
+      @java.lang.Override
+      public int getIndex() {
+        return index_;
+      }
+      /**
+       * <code>uint32 index = 12;</code>
+       * @param value The index to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIndex(int value) {
+        
+        index_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 index = 12;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIndex() {
+        
+        index_ = 0;
         onChanged();
         return this;
       }
@@ -597,8 +597,8 @@ public final class FurnitureMakeCancelReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\034FurnitureMakeCancelReq.proto\"8\n\026Furnit" +
-      "ureMakeCancelReq\022\r\n\005index\030\006 \001(\r\022\017\n\007make_" +
-      "id\030\001 \001(\rB\033\n\031emu.grasscutter.net.protob\006p" +
+      "ureMakeCancelReq\022\017\n\007make_id\030\001 \001(\r\022\r\n\005ind" +
+      "ex\030\014 \001(\rB\033\n\031emu.grasscutter.net.protob\006p" +
       "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -610,7 +610,7 @@ public final class FurnitureMakeCancelReqOuterClass {
     internal_static_FurnitureMakeCancelReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_FurnitureMakeCancelReq_descriptor,
-        new java.lang.String[] { "Index", "MakeId", });
+        new java.lang.String[] { "MakeId", "Index", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

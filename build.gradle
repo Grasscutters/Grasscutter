@@ -39,6 +39,7 @@ spotless {
         target fileTree(rootDir) {
             include '**/*.java'
             exclude '**/generated/**/*.*'
+            exclude '.idea/**/*.*'
         }
 
         importOrder('io.grasscutter', '', 'java', 'javax', '\\#java', '\\#') // Configure import order.
@@ -57,7 +58,7 @@ sourceCompatibility = JavaVersion.VERSION_17
 targetCompatibility = JavaVersion.VERSION_17
 
 group = 'io.grasscutter'
-version = '1.6.3'
+version = '1.7.0'
 
 java {
     withJavadocJar()

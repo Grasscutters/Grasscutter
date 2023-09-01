@@ -1,9 +1,8 @@
 package emu.grasscutter.game.props;
 
-import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
-import java.util.HashMap;
-import java.util.Map;
+import it.unimi.dsi.fastutil.ints.*;
+
+import java.util.*;
 import java.util.stream.Stream;
 
 public enum ClimateType {
@@ -13,7 +12,8 @@ public enum ClimateType {
     CLIMATE_RAIN(3),
     CLIMATE_THUNDERSTORM(4),
     CLIMATE_SNOW(5),
-    CLIMATE_MIST(6);
+    CLIMATE_MIST(6),
+    CLIMATE_DESERT(7);
 
     private static final Int2ObjectMap<ClimateType> map = new Int2ObjectOpenHashMap<>();
     private static final Map<String, ClimateType> stringMap = new HashMap<>();

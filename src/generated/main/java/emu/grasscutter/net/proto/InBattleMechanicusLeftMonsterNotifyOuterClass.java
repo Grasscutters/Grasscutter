@@ -19,15 +19,15 @@ public final class InBattleMechanicusLeftMonsterNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 left_monster = 11;</code>
+     * <code>uint32 left_monster = 3;</code>
      * @return The leftMonster.
      */
     int getLeftMonster();
   }
   /**
    * <pre>
-   * CmdId: 5348
-   * Obf: OJPFPFGNELP
+   * CmdId: 9107
+   * Obf: EPHLIIMGJPA
    * </pre>
    *
    * Protobuf type {@code InBattleMechanicusLeftMonsterNotify}
@@ -74,7 +74,7 @@ public final class InBattleMechanicusLeftMonsterNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 88: {
+            case 24: {
 
               leftMonster_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class InBattleMechanicusLeftMonsterNotifyOuterClass {
               emu.grasscutter.net.proto.InBattleMechanicusLeftMonsterNotifyOuterClass.InBattleMechanicusLeftMonsterNotify.class, emu.grasscutter.net.proto.InBattleMechanicusLeftMonsterNotifyOuterClass.InBattleMechanicusLeftMonsterNotify.Builder.class);
     }
 
-    public static final int LEFT_MONSTER_FIELD_NUMBER = 11;
+    public static final int LEFT_MONSTER_FIELD_NUMBER = 3;
     private int leftMonster_;
     /**
-     * <code>uint32 left_monster = 11;</code>
+     * <code>uint32 left_monster = 3;</code>
      * @return The leftMonster.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class InBattleMechanicusLeftMonsterNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (leftMonster_ != 0) {
-        output.writeUInt32(11, leftMonster_);
+        output.writeUInt32(3, leftMonster_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class InBattleMechanicusLeftMonsterNotifyOuterClass {
       size = 0;
       if (leftMonster_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, leftMonster_);
+          .computeUInt32Size(3, leftMonster_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class InBattleMechanicusLeftMonsterNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 5348
-     * Obf: OJPFPFGNELP
+     * CmdId: 9107
+     * Obf: EPHLIIMGJPA
      * </pre>
      *
      * Protobuf type {@code InBattleMechanicusLeftMonsterNotify}
@@ -431,7 +431,7 @@ public final class InBattleMechanicusLeftMonsterNotifyOuterClass {
 
       private int leftMonster_ ;
       /**
-       * <code>uint32 left_monster = 11;</code>
+       * <code>uint32 left_monster = 3;</code>
        * @return The leftMonster.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class InBattleMechanicusLeftMonsterNotifyOuterClass {
         return leftMonster_;
       }
       /**
-       * <code>uint32 left_monster = 11;</code>
+       * <code>uint32 left_monster = 3;</code>
        * @param value The leftMonster to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class InBattleMechanicusLeftMonsterNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 left_monster = 11;</code>
+       * <code>uint32 left_monster = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearLeftMonster() {
@@ -528,7 +528,7 @@ public final class InBattleMechanicusLeftMonsterNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n)InBattleMechanicusLeftMonsterNotify.pr" +
       "oto\";\n#InBattleMechanicusLeftMonsterNoti" +
-      "fy\022\024\n\014left_monster\030\013 \001(\rB\033\n\031emu.grasscut" +
+      "fy\022\024\n\014left_monster\030\003 \001(\rB\033\n\031emu.grasscut" +
       "ter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

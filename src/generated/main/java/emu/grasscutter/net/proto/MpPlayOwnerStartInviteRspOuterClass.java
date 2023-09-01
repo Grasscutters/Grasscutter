@@ -19,7 +19,13 @@ public final class MpPlayOwnerStartInviteRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 11;</code>
+     * <code>bool is_skip_match = 8;</code>
+     * @return The isSkipMatch.
+     */
+    boolean getIsSkipMatch();
+
+    /**
+     * <code>int32 retcode = 1;</code>
      * @return The retcode.
      */
     int getRetcode();
@@ -29,17 +35,11 @@ public final class MpPlayOwnerStartInviteRspOuterClass {
      * @return The mpPlayId.
      */
     int getMpPlayId();
-
-    /**
-     * <code>bool is_skip_match = 2;</code>
-     * @return The isSkipMatch.
-     */
-    boolean getIsSkipMatch();
   }
   /**
    * <pre>
-   * CmdId: 1813
-   * Obf: EPNIBNCAMOE
+   * CmdId: 20017
+   * Obf: JBFAELEDEGP
    * </pre>
    *
    * Protobuf type {@code MpPlayOwnerStartInviteRsp}
@@ -86,14 +86,14 @@ public final class MpPlayOwnerStartInviteRspOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
-
-              isSkipMatch_ = input.readBool();
-              break;
-            }
-            case 88: {
+            case 8: {
 
               retcode_ = input.readInt32();
+              break;
+            }
+            case 64: {
+
+              isSkipMatch_ = input.readBool();
               break;
             }
             case 104: {
@@ -133,10 +133,21 @@ public final class MpPlayOwnerStartInviteRspOuterClass {
               emu.grasscutter.net.proto.MpPlayOwnerStartInviteRspOuterClass.MpPlayOwnerStartInviteRsp.class, emu.grasscutter.net.proto.MpPlayOwnerStartInviteRspOuterClass.MpPlayOwnerStartInviteRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 11;
+    public static final int IS_SKIP_MATCH_FIELD_NUMBER = 8;
+    private boolean isSkipMatch_;
+    /**
+     * <code>bool is_skip_match = 8;</code>
+     * @return The isSkipMatch.
+     */
+    @java.lang.Override
+    public boolean getIsSkipMatch() {
+      return isSkipMatch_;
+    }
+
+    public static final int RETCODE_FIELD_NUMBER = 1;
     private int retcode_;
     /**
-     * <code>int32 retcode = 11;</code>
+     * <code>int32 retcode = 1;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -155,17 +166,6 @@ public final class MpPlayOwnerStartInviteRspOuterClass {
       return mpPlayId_;
     }
 
-    public static final int IS_SKIP_MATCH_FIELD_NUMBER = 2;
-    private boolean isSkipMatch_;
-    /**
-     * <code>bool is_skip_match = 2;</code>
-     * @return The isSkipMatch.
-     */
-    @java.lang.Override
-    public boolean getIsSkipMatch() {
-      return isSkipMatch_;
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -180,11 +180,11 @@ public final class MpPlayOwnerStartInviteRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (isSkipMatch_ != false) {
-        output.writeBool(2, isSkipMatch_);
-      }
       if (retcode_ != 0) {
-        output.writeInt32(11, retcode_);
+        output.writeInt32(1, retcode_);
+      }
+      if (isSkipMatch_ != false) {
+        output.writeBool(8, isSkipMatch_);
       }
       if (mpPlayId_ != 0) {
         output.writeUInt32(13, mpPlayId_);
@@ -198,13 +198,13 @@ public final class MpPlayOwnerStartInviteRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (isSkipMatch_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(2, isSkipMatch_);
-      }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(11, retcode_);
+          .computeInt32Size(1, retcode_);
+      }
+      if (isSkipMatch_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(8, isSkipMatch_);
       }
       if (mpPlayId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -225,12 +225,12 @@ public final class MpPlayOwnerStartInviteRspOuterClass {
       }
       emu.grasscutter.net.proto.MpPlayOwnerStartInviteRspOuterClass.MpPlayOwnerStartInviteRsp other = (emu.grasscutter.net.proto.MpPlayOwnerStartInviteRspOuterClass.MpPlayOwnerStartInviteRsp) obj;
 
+      if (getIsSkipMatch()
+          != other.getIsSkipMatch()) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
       if (getMpPlayId()
           != other.getMpPlayId()) return false;
-      if (getIsSkipMatch()
-          != other.getIsSkipMatch()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -242,13 +242,13 @@ public final class MpPlayOwnerStartInviteRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + IS_SKIP_MATCH_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsSkipMatch());
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
       hash = (37 * hash) + MP_PLAY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getMpPlayId();
-      hash = (37 * hash) + IS_SKIP_MATCH_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsSkipMatch());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -346,8 +346,8 @@ public final class MpPlayOwnerStartInviteRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 1813
-     * Obf: EPNIBNCAMOE
+     * CmdId: 20017
+     * Obf: JBFAELEDEGP
      * </pre>
      *
      * Protobuf type {@code MpPlayOwnerStartInviteRsp}
@@ -387,11 +387,11 @@ public final class MpPlayOwnerStartInviteRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        isSkipMatch_ = false;
+
         retcode_ = 0;
 
         mpPlayId_ = 0;
-
-        isSkipMatch_ = false;
 
         return this;
       }
@@ -419,9 +419,9 @@ public final class MpPlayOwnerStartInviteRspOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.MpPlayOwnerStartInviteRspOuterClass.MpPlayOwnerStartInviteRsp buildPartial() {
         emu.grasscutter.net.proto.MpPlayOwnerStartInviteRspOuterClass.MpPlayOwnerStartInviteRsp result = new emu.grasscutter.net.proto.MpPlayOwnerStartInviteRspOuterClass.MpPlayOwnerStartInviteRsp(this);
+        result.isSkipMatch_ = isSkipMatch_;
         result.retcode_ = retcode_;
         result.mpPlayId_ = mpPlayId_;
-        result.isSkipMatch_ = isSkipMatch_;
         onBuilt();
         return result;
       }
@@ -470,14 +470,14 @@ public final class MpPlayOwnerStartInviteRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.MpPlayOwnerStartInviteRspOuterClass.MpPlayOwnerStartInviteRsp other) {
         if (other == emu.grasscutter.net.proto.MpPlayOwnerStartInviteRspOuterClass.MpPlayOwnerStartInviteRsp.getDefaultInstance()) return this;
+        if (other.getIsSkipMatch() != false) {
+          setIsSkipMatch(other.getIsSkipMatch());
+        }
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
         }
         if (other.getMpPlayId() != 0) {
           setMpPlayId(other.getMpPlayId());
-        }
-        if (other.getIsSkipMatch() != false) {
-          setIsSkipMatch(other.getIsSkipMatch());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -508,9 +508,40 @@ public final class MpPlayOwnerStartInviteRspOuterClass {
         return this;
       }
 
+      private boolean isSkipMatch_ ;
+      /**
+       * <code>bool is_skip_match = 8;</code>
+       * @return The isSkipMatch.
+       */
+      @java.lang.Override
+      public boolean getIsSkipMatch() {
+        return isSkipMatch_;
+      }
+      /**
+       * <code>bool is_skip_match = 8;</code>
+       * @param value The isSkipMatch to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsSkipMatch(boolean value) {
+        
+        isSkipMatch_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_skip_match = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsSkipMatch() {
+        
+        isSkipMatch_ = false;
+        onChanged();
+        return this;
+      }
+
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 11;</code>
+       * <code>int32 retcode = 1;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -518,7 +549,7 @@ public final class MpPlayOwnerStartInviteRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 11;</code>
+       * <code>int32 retcode = 1;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -529,7 +560,7 @@ public final class MpPlayOwnerStartInviteRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 11;</code>
+       * <code>int32 retcode = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -566,37 +597,6 @@ public final class MpPlayOwnerStartInviteRspOuterClass {
       public Builder clearMpPlayId() {
         
         mpPlayId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private boolean isSkipMatch_ ;
-      /**
-       * <code>bool is_skip_match = 2;</code>
-       * @return The isSkipMatch.
-       */
-      @java.lang.Override
-      public boolean getIsSkipMatch() {
-        return isSkipMatch_;
-      }
-      /**
-       * <code>bool is_skip_match = 2;</code>
-       * @param value The isSkipMatch to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsSkipMatch(boolean value) {
-        
-        isSkipMatch_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_skip_match = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsSkipMatch() {
-        
-        isSkipMatch_ = false;
         onChanged();
         return this;
       }
@@ -668,9 +668,9 @@ public final class MpPlayOwnerStartInviteRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\037MpPlayOwnerStartInviteRsp.proto\"W\n\031MpP" +
-      "layOwnerStartInviteRsp\022\017\n\007retcode\030\013 \001(\005\022" +
-      "\022\n\nmp_play_id\030\r \001(\r\022\025\n\ris_skip_match\030\002 \001" +
-      "(\010B\033\n\031emu.grasscutter.net.protob\006proto3"
+      "layOwnerStartInviteRsp\022\025\n\ris_skip_match\030" +
+      "\010 \001(\010\022\017\n\007retcode\030\001 \001(\005\022\022\n\nmp_play_id\030\r \001" +
+      "(\rB\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -681,7 +681,7 @@ public final class MpPlayOwnerStartInviteRspOuterClass {
     internal_static_MpPlayOwnerStartInviteRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_MpPlayOwnerStartInviteRsp_descriptor,
-        new java.lang.String[] { "Retcode", "MpPlayId", "IsSkipMatch", });
+        new java.lang.String[] { "IsSkipMatch", "Retcode", "MpPlayId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

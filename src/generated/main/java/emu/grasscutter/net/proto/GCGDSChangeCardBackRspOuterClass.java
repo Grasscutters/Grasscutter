@@ -19,27 +19,27 @@ public final class GCGDSChangeCardBackRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 9;</code>
+     * <code>uint32 deck_id = 12;</code>
+     * @return The deckId.
+     */
+    int getDeckId();
+
+    /**
+     * <code>int32 retcode = 14;</code>
      * @return The retcode.
      */
     int getRetcode();
 
     /**
-     * <code>uint32 card_back_id = 1;</code>
+     * <code>uint32 card_back_id = 3;</code>
      * @return The cardBackId.
      */
     int getCardBackId();
-
-    /**
-     * <code>uint32 deck_id = 11;</code>
-     * @return The deckId.
-     */
-    int getDeckId();
   }
   /**
    * <pre>
-   * CmdId: 7490
-   * Obf: IAHHCOJOHNK
+   * CmdId: 22521
+   * Obf: JLDCHJHDMLI
    * </pre>
    *
    * Protobuf type {@code GCGDSChangeCardBackRsp}
@@ -86,19 +86,19 @@ public final class GCGDSChangeCardBackRspOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 24: {
 
               cardBackId_ = input.readUInt32();
               break;
             }
-            case 72: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 88: {
+            case 96: {
 
               deckId_ = input.readUInt32();
+              break;
+            }
+            case 112: {
+
+              retcode_ = input.readInt32();
               break;
             }
             default: {
@@ -133,10 +133,21 @@ public final class GCGDSChangeCardBackRspOuterClass {
               emu.grasscutter.net.proto.GCGDSChangeCardBackRspOuterClass.GCGDSChangeCardBackRsp.class, emu.grasscutter.net.proto.GCGDSChangeCardBackRspOuterClass.GCGDSChangeCardBackRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 9;
+    public static final int DECK_ID_FIELD_NUMBER = 12;
+    private int deckId_;
+    /**
+     * <code>uint32 deck_id = 12;</code>
+     * @return The deckId.
+     */
+    @java.lang.Override
+    public int getDeckId() {
+      return deckId_;
+    }
+
+    public static final int RETCODE_FIELD_NUMBER = 14;
     private int retcode_;
     /**
-     * <code>int32 retcode = 9;</code>
+     * <code>int32 retcode = 14;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -144,26 +155,15 @@ public final class GCGDSChangeCardBackRspOuterClass {
       return retcode_;
     }
 
-    public static final int CARD_BACK_ID_FIELD_NUMBER = 1;
+    public static final int CARD_BACK_ID_FIELD_NUMBER = 3;
     private int cardBackId_;
     /**
-     * <code>uint32 card_back_id = 1;</code>
+     * <code>uint32 card_back_id = 3;</code>
      * @return The cardBackId.
      */
     @java.lang.Override
     public int getCardBackId() {
       return cardBackId_;
-    }
-
-    public static final int DECK_ID_FIELD_NUMBER = 11;
-    private int deckId_;
-    /**
-     * <code>uint32 deck_id = 11;</code>
-     * @return The deckId.
-     */
-    @java.lang.Override
-    public int getDeckId() {
-      return deckId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -181,13 +181,13 @@ public final class GCGDSChangeCardBackRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (cardBackId_ != 0) {
-        output.writeUInt32(1, cardBackId_);
-      }
-      if (retcode_ != 0) {
-        output.writeInt32(9, retcode_);
+        output.writeUInt32(3, cardBackId_);
       }
       if (deckId_ != 0) {
-        output.writeUInt32(11, deckId_);
+        output.writeUInt32(12, deckId_);
+      }
+      if (retcode_ != 0) {
+        output.writeInt32(14, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -200,15 +200,15 @@ public final class GCGDSChangeCardBackRspOuterClass {
       size = 0;
       if (cardBackId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, cardBackId_);
-      }
-      if (retcode_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(9, retcode_);
+          .computeUInt32Size(3, cardBackId_);
       }
       if (deckId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, deckId_);
+          .computeUInt32Size(12, deckId_);
+      }
+      if (retcode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(14, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -225,12 +225,12 @@ public final class GCGDSChangeCardBackRspOuterClass {
       }
       emu.grasscutter.net.proto.GCGDSChangeCardBackRspOuterClass.GCGDSChangeCardBackRsp other = (emu.grasscutter.net.proto.GCGDSChangeCardBackRspOuterClass.GCGDSChangeCardBackRsp) obj;
 
+      if (getDeckId()
+          != other.getDeckId()) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
       if (getCardBackId()
           != other.getCardBackId()) return false;
-      if (getDeckId()
-          != other.getDeckId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -242,12 +242,12 @@ public final class GCGDSChangeCardBackRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + DECK_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getDeckId();
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
       hash = (37 * hash) + CARD_BACK_ID_FIELD_NUMBER;
       hash = (53 * hash) + getCardBackId();
-      hash = (37 * hash) + DECK_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getDeckId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -345,8 +345,8 @@ public final class GCGDSChangeCardBackRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 7490
-     * Obf: IAHHCOJOHNK
+     * CmdId: 22521
+     * Obf: JLDCHJHDMLI
      * </pre>
      *
      * Protobuf type {@code GCGDSChangeCardBackRsp}
@@ -386,11 +386,11 @@ public final class GCGDSChangeCardBackRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        deckId_ = 0;
+
         retcode_ = 0;
 
         cardBackId_ = 0;
-
-        deckId_ = 0;
 
         return this;
       }
@@ -418,9 +418,9 @@ public final class GCGDSChangeCardBackRspOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.GCGDSChangeCardBackRspOuterClass.GCGDSChangeCardBackRsp buildPartial() {
         emu.grasscutter.net.proto.GCGDSChangeCardBackRspOuterClass.GCGDSChangeCardBackRsp result = new emu.grasscutter.net.proto.GCGDSChangeCardBackRspOuterClass.GCGDSChangeCardBackRsp(this);
+        result.deckId_ = deckId_;
         result.retcode_ = retcode_;
         result.cardBackId_ = cardBackId_;
-        result.deckId_ = deckId_;
         onBuilt();
         return result;
       }
@@ -469,14 +469,14 @@ public final class GCGDSChangeCardBackRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.GCGDSChangeCardBackRspOuterClass.GCGDSChangeCardBackRsp other) {
         if (other == emu.grasscutter.net.proto.GCGDSChangeCardBackRspOuterClass.GCGDSChangeCardBackRsp.getDefaultInstance()) return this;
+        if (other.getDeckId() != 0) {
+          setDeckId(other.getDeckId());
+        }
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
         }
         if (other.getCardBackId() != 0) {
           setCardBackId(other.getCardBackId());
-        }
-        if (other.getDeckId() != 0) {
-          setDeckId(other.getDeckId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -507,9 +507,40 @@ public final class GCGDSChangeCardBackRspOuterClass {
         return this;
       }
 
+      private int deckId_ ;
+      /**
+       * <code>uint32 deck_id = 12;</code>
+       * @return The deckId.
+       */
+      @java.lang.Override
+      public int getDeckId() {
+        return deckId_;
+      }
+      /**
+       * <code>uint32 deck_id = 12;</code>
+       * @param value The deckId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDeckId(int value) {
+        
+        deckId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 deck_id = 12;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDeckId() {
+        
+        deckId_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 9;</code>
+       * <code>int32 retcode = 14;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -517,7 +548,7 @@ public final class GCGDSChangeCardBackRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 9;</code>
+       * <code>int32 retcode = 14;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -528,7 +559,7 @@ public final class GCGDSChangeCardBackRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 9;</code>
+       * <code>int32 retcode = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -540,7 +571,7 @@ public final class GCGDSChangeCardBackRspOuterClass {
 
       private int cardBackId_ ;
       /**
-       * <code>uint32 card_back_id = 1;</code>
+       * <code>uint32 card_back_id = 3;</code>
        * @return The cardBackId.
        */
       @java.lang.Override
@@ -548,7 +579,7 @@ public final class GCGDSChangeCardBackRspOuterClass {
         return cardBackId_;
       }
       /**
-       * <code>uint32 card_back_id = 1;</code>
+       * <code>uint32 card_back_id = 3;</code>
        * @param value The cardBackId to set.
        * @return This builder for chaining.
        */
@@ -559,43 +590,12 @@ public final class GCGDSChangeCardBackRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 card_back_id = 1;</code>
+       * <code>uint32 card_back_id = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearCardBackId() {
         
         cardBackId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int deckId_ ;
-      /**
-       * <code>uint32 deck_id = 11;</code>
-       * @return The deckId.
-       */
-      @java.lang.Override
-      public int getDeckId() {
-        return deckId_;
-      }
-      /**
-       * <code>uint32 deck_id = 11;</code>
-       * @param value The deckId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDeckId(int value) {
-        
-        deckId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 deck_id = 11;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDeckId() {
-        
-        deckId_ = 0;
         onChanged();
         return this;
       }
@@ -667,8 +667,8 @@ public final class GCGDSChangeCardBackRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\034GCGDSChangeCardBackRsp.proto\"P\n\026GCGDSC" +
-      "hangeCardBackRsp\022\017\n\007retcode\030\t \001(\005\022\024\n\014car" +
-      "d_back_id\030\001 \001(\r\022\017\n\007deck_id\030\013 \001(\rB\033\n\031emu." +
+      "hangeCardBackRsp\022\017\n\007deck_id\030\014 \001(\r\022\017\n\007ret" +
+      "code\030\016 \001(\005\022\024\n\014card_back_id\030\003 \001(\rB\033\n\031emu." +
       "grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -680,7 +680,7 @@ public final class GCGDSChangeCardBackRspOuterClass {
     internal_static_GCGDSChangeCardBackRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GCGDSChangeCardBackRsp_descriptor,
-        new java.lang.String[] { "Retcode", "CardBackId", "DeckId", });
+        new java.lang.String[] { "DeckId", "Retcode", "CardBackId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -58,7 +58,7 @@ public final class ShowEquipOuterClass {
   }
   /**
    * <pre>
-   * Obf: EPAIHJBBEOM
+   * Obf: OJMNHOEOFAN
    * </pre>
    *
    * Protobuf type {@code ShowEquip}
@@ -480,7 +480,7 @@ public final class ShowEquipOuterClass {
     }
     /**
      * <pre>
-     * Obf: EPAIHJBBEOM
+     * Obf: OJMNHOEOFAN
      * </pre>
      *
      * Protobuf type {@code ShowEquip}

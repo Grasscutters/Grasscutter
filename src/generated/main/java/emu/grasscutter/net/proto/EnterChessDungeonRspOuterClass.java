@@ -19,21 +19,21 @@ public final class EnterChessDungeonRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 map_id = 13;</code>
-     * @return The mapId.
-     */
-    int getMapId();
-
-    /**
-     * <code>int32 retcode = 6;</code>
+     * <code>int32 retcode = 10;</code>
      * @return The retcode.
      */
     int getRetcode();
+
+    /**
+     * <code>uint32 map_id = 3;</code>
+     * @return The mapId.
+     */
+    int getMapId();
   }
   /**
    * <pre>
-   * CmdId: 8204
-   * Obf: PGHMJNCFCNG
+   * CmdId: 918
+   * Obf: ABMKFPFKNML
    * </pre>
    *
    * Protobuf type {@code EnterChessDungeonRsp}
@@ -80,14 +80,14 @@ public final class EnterChessDungeonRspOuterClass {
             case 0:
               done = true;
               break;
-            case 48: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 104: {
+            case 24: {
 
               mapId_ = input.readUInt32();
+              break;
+            }
+            case 80: {
+
+              retcode_ = input.readInt32();
               break;
             }
             default: {
@@ -122,26 +122,26 @@ public final class EnterChessDungeonRspOuterClass {
               emu.grasscutter.net.proto.EnterChessDungeonRspOuterClass.EnterChessDungeonRsp.class, emu.grasscutter.net.proto.EnterChessDungeonRspOuterClass.EnterChessDungeonRsp.Builder.class);
     }
 
-    public static final int MAP_ID_FIELD_NUMBER = 13;
-    private int mapId_;
-    /**
-     * <code>uint32 map_id = 13;</code>
-     * @return The mapId.
-     */
-    @java.lang.Override
-    public int getMapId() {
-      return mapId_;
-    }
-
-    public static final int RETCODE_FIELD_NUMBER = 6;
+    public static final int RETCODE_FIELD_NUMBER = 10;
     private int retcode_;
     /**
-     * <code>int32 retcode = 6;</code>
+     * <code>int32 retcode = 10;</code>
      * @return The retcode.
      */
     @java.lang.Override
     public int getRetcode() {
       return retcode_;
+    }
+
+    public static final int MAP_ID_FIELD_NUMBER = 3;
+    private int mapId_;
+    /**
+     * <code>uint32 map_id = 3;</code>
+     * @return The mapId.
+     */
+    @java.lang.Override
+    public int getMapId() {
+      return mapId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -158,11 +158,11 @@ public final class EnterChessDungeonRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (retcode_ != 0) {
-        output.writeInt32(6, retcode_);
-      }
       if (mapId_ != 0) {
-        output.writeUInt32(13, mapId_);
+        output.writeUInt32(3, mapId_);
+      }
+      if (retcode_ != 0) {
+        output.writeInt32(10, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -173,13 +173,13 @@ public final class EnterChessDungeonRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (retcode_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(6, retcode_);
-      }
       if (mapId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, mapId_);
+          .computeUInt32Size(3, mapId_);
+      }
+      if (retcode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(10, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -196,10 +196,10 @@ public final class EnterChessDungeonRspOuterClass {
       }
       emu.grasscutter.net.proto.EnterChessDungeonRspOuterClass.EnterChessDungeonRsp other = (emu.grasscutter.net.proto.EnterChessDungeonRspOuterClass.EnterChessDungeonRsp) obj;
 
-      if (getMapId()
-          != other.getMapId()) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
+      if (getMapId()
+          != other.getMapId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -211,10 +211,10 @@ public final class EnterChessDungeonRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + MAP_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getMapId();
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
+      hash = (37 * hash) + MAP_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getMapId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -312,8 +312,8 @@ public final class EnterChessDungeonRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8204
-     * Obf: PGHMJNCFCNG
+     * CmdId: 918
+     * Obf: ABMKFPFKNML
      * </pre>
      *
      * Protobuf type {@code EnterChessDungeonRsp}
@@ -353,9 +353,9 @@ public final class EnterChessDungeonRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        mapId_ = 0;
-
         retcode_ = 0;
+
+        mapId_ = 0;
 
         return this;
       }
@@ -383,8 +383,8 @@ public final class EnterChessDungeonRspOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.EnterChessDungeonRspOuterClass.EnterChessDungeonRsp buildPartial() {
         emu.grasscutter.net.proto.EnterChessDungeonRspOuterClass.EnterChessDungeonRsp result = new emu.grasscutter.net.proto.EnterChessDungeonRspOuterClass.EnterChessDungeonRsp(this);
-        result.mapId_ = mapId_;
         result.retcode_ = retcode_;
+        result.mapId_ = mapId_;
         onBuilt();
         return result;
       }
@@ -433,11 +433,11 @@ public final class EnterChessDungeonRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.EnterChessDungeonRspOuterClass.EnterChessDungeonRsp other) {
         if (other == emu.grasscutter.net.proto.EnterChessDungeonRspOuterClass.EnterChessDungeonRsp.getDefaultInstance()) return this;
-        if (other.getMapId() != 0) {
-          setMapId(other.getMapId());
-        }
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
+        }
+        if (other.getMapId() != 0) {
+          setMapId(other.getMapId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -468,40 +468,9 @@ public final class EnterChessDungeonRspOuterClass {
         return this;
       }
 
-      private int mapId_ ;
-      /**
-       * <code>uint32 map_id = 13;</code>
-       * @return The mapId.
-       */
-      @java.lang.Override
-      public int getMapId() {
-        return mapId_;
-      }
-      /**
-       * <code>uint32 map_id = 13;</code>
-       * @param value The mapId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMapId(int value) {
-        
-        mapId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 map_id = 13;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMapId() {
-        
-        mapId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 6;</code>
+       * <code>int32 retcode = 10;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -509,7 +478,7 @@ public final class EnterChessDungeonRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 6;</code>
+       * <code>int32 retcode = 10;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -520,12 +489,43 @@ public final class EnterChessDungeonRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 6;</code>
+       * <code>int32 retcode = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
         
         retcode_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int mapId_ ;
+      /**
+       * <code>uint32 map_id = 3;</code>
+       * @return The mapId.
+       */
+      @java.lang.Override
+      public int getMapId() {
+        return mapId_;
+      }
+      /**
+       * <code>uint32 map_id = 3;</code>
+       * @param value The mapId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMapId(int value) {
+        
+        mapId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 map_id = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMapId() {
+        
+        mapId_ = 0;
         onChanged();
         return this;
       }
@@ -597,8 +597,8 @@ public final class EnterChessDungeonRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\032EnterChessDungeonRsp.proto\"7\n\024EnterChe" +
-      "ssDungeonRsp\022\016\n\006map_id\030\r \001(\r\022\017\n\007retcode\030" +
-      "\006 \001(\005B\033\n\031emu.grasscutter.net.protob\006prot" +
+      "ssDungeonRsp\022\017\n\007retcode\030\n \001(\005\022\016\n\006map_id\030" +
+      "\003 \001(\rB\033\n\031emu.grasscutter.net.protob\006prot" +
       "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -610,7 +610,7 @@ public final class EnterChessDungeonRspOuterClass {
     internal_static_EnterChessDungeonRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_EnterChessDungeonRsp_descriptor,
-        new java.lang.String[] { "MapId", "Retcode", });
+        new java.lang.String[] { "Retcode", "MapId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

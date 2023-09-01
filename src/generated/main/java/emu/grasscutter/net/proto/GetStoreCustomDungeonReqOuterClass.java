@@ -20,8 +20,8 @@ public final class GetStoreCustomDungeonReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 6238
-   * Obf: FLDHFMFJMEP
+   * CmdId: 8591
+   * Obf: JOIHPLKGFJD
    * </pre>
    *
    * Protobuf type {@code GetStoreCustomDungeonReq}
@@ -246,8 +246,8 @@ public final class GetStoreCustomDungeonReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 6238
-     * Obf: FLDHFMFJMEP
+     * CmdId: 8591
+     * Obf: JOIHPLKGFJD
      * </pre>
      *
      * Protobuf type {@code GetStoreCustomDungeonReq}

@@ -19,11 +19,17 @@ public final class ActivityGetCanGiveFriendGiftRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>map&lt;uint32, uint32&gt; gift_num_map = 6;</code>
+     * <code>int32 retcode = 4;</code>
+     * @return The retcode.
+     */
+    int getRetcode();
+
+    /**
+     * <code>map&lt;uint32, uint32&gt; gift_num_map = 1;</code>
      */
     int getGiftNumMapCount();
     /**
-     * <code>map&lt;uint32, uint32&gt; gift_num_map = 6;</code>
+     * <code>map&lt;uint32, uint32&gt; gift_num_map = 1;</code>
      */
     boolean containsGiftNumMap(
         int key);
@@ -34,40 +40,34 @@ public final class ActivityGetCanGiveFriendGiftRspOuterClass {
     java.util.Map<java.lang.Integer, java.lang.Integer>
     getGiftNumMap();
     /**
-     * <code>map&lt;uint32, uint32&gt; gift_num_map = 6;</code>
+     * <code>map&lt;uint32, uint32&gt; gift_num_map = 1;</code>
      */
     java.util.Map<java.lang.Integer, java.lang.Integer>
     getGiftNumMapMap();
     /**
-     * <code>map&lt;uint32, uint32&gt; gift_num_map = 6;</code>
+     * <code>map&lt;uint32, uint32&gt; gift_num_map = 1;</code>
      */
 
     int getGiftNumMapOrDefault(
         int key,
         int defaultValue);
     /**
-     * <code>map&lt;uint32, uint32&gt; gift_num_map = 6;</code>
+     * <code>map&lt;uint32, uint32&gt; gift_num_map = 1;</code>
      */
 
     int getGiftNumMapOrThrow(
         int key);
 
     /**
-     * <code>uint32 schedule_id = 1;</code>
+     * <code>uint32 schedule_id = 14;</code>
      * @return The scheduleId.
      */
     int getScheduleId();
-
-    /**
-     * <code>int32 retcode = 14;</code>
-     * @return The retcode.
-     */
-    int getRetcode();
   }
   /**
    * <pre>
-   * CmdId: 8782
-   * Obf: PPHCLADLDMD
+   * CmdId: 23758
+   * Obf: IGCLOKNBJDJ
    * </pre>
    *
    * Protobuf type {@code ActivityGetCanGiveFriendGiftRsp}
@@ -115,12 +115,7 @@ public final class ActivityGetCanGiveFriendGiftRspOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
-
-              scheduleId_ = input.readUInt32();
-              break;
-            }
-            case 50: {
+            case 10: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 giftNumMap_ = com.google.protobuf.MapField.newMapField(
                     GiftNumMapDefaultEntryHolder.defaultEntry);
@@ -133,9 +128,14 @@ public final class ActivityGetCanGiveFriendGiftRspOuterClass {
                   giftNumMap__.getKey(), giftNumMap__.getValue());
               break;
             }
-            case 112: {
+            case 32: {
 
               retcode_ = input.readInt32();
+              break;
+            }
+            case 112: {
+
+              scheduleId_ = input.readUInt32();
               break;
             }
             default: {
@@ -167,7 +167,7 @@ public final class ActivityGetCanGiveFriendGiftRspOuterClass {
     protected com.google.protobuf.MapField internalGetMapField(
         int number) {
       switch (number) {
-        case 6:
+        case 1:
           return internalGetGiftNumMap();
         default:
           throw new RuntimeException(
@@ -182,7 +182,18 @@ public final class ActivityGetCanGiveFriendGiftRspOuterClass {
               emu.grasscutter.net.proto.ActivityGetCanGiveFriendGiftRspOuterClass.ActivityGetCanGiveFriendGiftRsp.class, emu.grasscutter.net.proto.ActivityGetCanGiveFriendGiftRspOuterClass.ActivityGetCanGiveFriendGiftRsp.Builder.class);
     }
 
-    public static final int GIFT_NUM_MAP_FIELD_NUMBER = 6;
+    public static final int RETCODE_FIELD_NUMBER = 4;
+    private int retcode_;
+    /**
+     * <code>int32 retcode = 4;</code>
+     * @return The retcode.
+     */
+    @java.lang.Override
+    public int getRetcode() {
+      return retcode_;
+    }
+
+    public static final int GIFT_NUM_MAP_FIELD_NUMBER = 1;
     private static final class GiftNumMapDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.Integer, java.lang.Integer> defaultEntry =
@@ -209,7 +220,7 @@ public final class ActivityGetCanGiveFriendGiftRspOuterClass {
       return internalGetGiftNumMap().getMap().size();
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; gift_num_map = 6;</code>
+     * <code>map&lt;uint32, uint32&gt; gift_num_map = 1;</code>
      */
 
     @java.lang.Override
@@ -227,7 +238,7 @@ public final class ActivityGetCanGiveFriendGiftRspOuterClass {
       return getGiftNumMapMap();
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; gift_num_map = 6;</code>
+     * <code>map&lt;uint32, uint32&gt; gift_num_map = 1;</code>
      */
     @java.lang.Override
 
@@ -235,7 +246,7 @@ public final class ActivityGetCanGiveFriendGiftRspOuterClass {
       return internalGetGiftNumMap().getMap();
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; gift_num_map = 6;</code>
+     * <code>map&lt;uint32, uint32&gt; gift_num_map = 1;</code>
      */
     @java.lang.Override
 
@@ -248,7 +259,7 @@ public final class ActivityGetCanGiveFriendGiftRspOuterClass {
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; gift_num_map = 6;</code>
+     * <code>map&lt;uint32, uint32&gt; gift_num_map = 1;</code>
      */
     @java.lang.Override
 
@@ -263,26 +274,15 @@ public final class ActivityGetCanGiveFriendGiftRspOuterClass {
       return map.get(key);
     }
 
-    public static final int SCHEDULE_ID_FIELD_NUMBER = 1;
+    public static final int SCHEDULE_ID_FIELD_NUMBER = 14;
     private int scheduleId_;
     /**
-     * <code>uint32 schedule_id = 1;</code>
+     * <code>uint32 schedule_id = 14;</code>
      * @return The scheduleId.
      */
     @java.lang.Override
     public int getScheduleId() {
       return scheduleId_;
-    }
-
-    public static final int RETCODE_FIELD_NUMBER = 14;
-    private int retcode_;
-    /**
-     * <code>int32 retcode = 14;</code>
-     * @return The retcode.
-     */
-    @java.lang.Override
-    public int getRetcode() {
-      return retcode_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -299,17 +299,17 @@ public final class ActivityGetCanGiveFriendGiftRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (scheduleId_ != 0) {
-        output.writeUInt32(1, scheduleId_);
-      }
       com.google.protobuf.GeneratedMessageV3
         .serializeIntegerMapTo(
           output,
           internalGetGiftNumMap(),
           GiftNumMapDefaultEntryHolder.defaultEntry,
-          6);
+          1);
       if (retcode_ != 0) {
-        output.writeInt32(14, retcode_);
+        output.writeInt32(4, retcode_);
+      }
+      if (scheduleId_ != 0) {
+        output.writeUInt32(14, scheduleId_);
       }
       unknownFields.writeTo(output);
     }
@@ -320,10 +320,6 @@ public final class ActivityGetCanGiveFriendGiftRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (scheduleId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, scheduleId_);
-      }
       for (java.util.Map.Entry<java.lang.Integer, java.lang.Integer> entry
            : internalGetGiftNumMap().getMap().entrySet()) {
         com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
@@ -332,11 +328,15 @@ public final class ActivityGetCanGiveFriendGiftRspOuterClass {
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(6, giftNumMap__);
+            .computeMessageSize(1, giftNumMap__);
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(14, retcode_);
+          .computeInt32Size(4, retcode_);
+      }
+      if (scheduleId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(14, scheduleId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -353,12 +353,12 @@ public final class ActivityGetCanGiveFriendGiftRspOuterClass {
       }
       emu.grasscutter.net.proto.ActivityGetCanGiveFriendGiftRspOuterClass.ActivityGetCanGiveFriendGiftRsp other = (emu.grasscutter.net.proto.ActivityGetCanGiveFriendGiftRspOuterClass.ActivityGetCanGiveFriendGiftRsp) obj;
 
+      if (getRetcode()
+          != other.getRetcode()) return false;
       if (!internalGetGiftNumMap().equals(
           other.internalGetGiftNumMap())) return false;
       if (getScheduleId()
           != other.getScheduleId()) return false;
-      if (getRetcode()
-          != other.getRetcode()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -370,14 +370,14 @@ public final class ActivityGetCanGiveFriendGiftRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
+      hash = (53 * hash) + getRetcode();
       if (!internalGetGiftNumMap().getMap().isEmpty()) {
         hash = (37 * hash) + GIFT_NUM_MAP_FIELD_NUMBER;
         hash = (53 * hash) + internalGetGiftNumMap().hashCode();
       }
       hash = (37 * hash) + SCHEDULE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getScheduleId();
-      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getRetcode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -475,8 +475,8 @@ public final class ActivityGetCanGiveFriendGiftRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8782
-     * Obf: PPHCLADLDMD
+     * CmdId: 23758
+     * Obf: IGCLOKNBJDJ
      * </pre>
      *
      * Protobuf type {@code ActivityGetCanGiveFriendGiftRsp}
@@ -494,7 +494,7 @@ public final class ActivityGetCanGiveFriendGiftRspOuterClass {
       protected com.google.protobuf.MapField internalGetMapField(
           int number) {
         switch (number) {
-          case 6:
+          case 1:
             return internalGetGiftNumMap();
           default:
             throw new RuntimeException(
@@ -505,7 +505,7 @@ public final class ActivityGetCanGiveFriendGiftRspOuterClass {
       protected com.google.protobuf.MapField internalGetMutableMapField(
           int number) {
         switch (number) {
-          case 6:
+          case 1:
             return internalGetMutableGiftNumMap();
           default:
             throw new RuntimeException(
@@ -538,10 +538,10 @@ public final class ActivityGetCanGiveFriendGiftRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        retcode_ = 0;
+
         internalGetMutableGiftNumMap().clear();
         scheduleId_ = 0;
-
-        retcode_ = 0;
 
         return this;
       }
@@ -570,10 +570,10 @@ public final class ActivityGetCanGiveFriendGiftRspOuterClass {
       public emu.grasscutter.net.proto.ActivityGetCanGiveFriendGiftRspOuterClass.ActivityGetCanGiveFriendGiftRsp buildPartial() {
         emu.grasscutter.net.proto.ActivityGetCanGiveFriendGiftRspOuterClass.ActivityGetCanGiveFriendGiftRsp result = new emu.grasscutter.net.proto.ActivityGetCanGiveFriendGiftRspOuterClass.ActivityGetCanGiveFriendGiftRsp(this);
         int from_bitField0_ = bitField0_;
+        result.retcode_ = retcode_;
         result.giftNumMap_ = internalGetGiftNumMap();
         result.giftNumMap_.makeImmutable();
         result.scheduleId_ = scheduleId_;
-        result.retcode_ = retcode_;
         onBuilt();
         return result;
       }
@@ -622,13 +622,13 @@ public final class ActivityGetCanGiveFriendGiftRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.ActivityGetCanGiveFriendGiftRspOuterClass.ActivityGetCanGiveFriendGiftRsp other) {
         if (other == emu.grasscutter.net.proto.ActivityGetCanGiveFriendGiftRspOuterClass.ActivityGetCanGiveFriendGiftRsp.getDefaultInstance()) return this;
+        if (other.getRetcode() != 0) {
+          setRetcode(other.getRetcode());
+        }
         internalGetMutableGiftNumMap().mergeFrom(
             other.internalGetGiftNumMap());
         if (other.getScheduleId() != 0) {
           setScheduleId(other.getScheduleId());
-        }
-        if (other.getRetcode() != 0) {
-          setRetcode(other.getRetcode());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -660,6 +660,37 @@ public final class ActivityGetCanGiveFriendGiftRspOuterClass {
       }
       private int bitField0_;
 
+      private int retcode_ ;
+      /**
+       * <code>int32 retcode = 4;</code>
+       * @return The retcode.
+       */
+      @java.lang.Override
+      public int getRetcode() {
+        return retcode_;
+      }
+      /**
+       * <code>int32 retcode = 4;</code>
+       * @param value The retcode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRetcode(int value) {
+        
+        retcode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 retcode = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRetcode() {
+        
+        retcode_ = 0;
+        onChanged();
+        return this;
+      }
+
       private com.google.protobuf.MapField<
           java.lang.Integer, java.lang.Integer> giftNumMap_;
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
@@ -687,7 +718,7 @@ public final class ActivityGetCanGiveFriendGiftRspOuterClass {
         return internalGetGiftNumMap().getMap().size();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; gift_num_map = 6;</code>
+       * <code>map&lt;uint32, uint32&gt; gift_num_map = 1;</code>
        */
 
       @java.lang.Override
@@ -705,7 +736,7 @@ public final class ActivityGetCanGiveFriendGiftRspOuterClass {
         return getGiftNumMapMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; gift_num_map = 6;</code>
+       * <code>map&lt;uint32, uint32&gt; gift_num_map = 1;</code>
        */
       @java.lang.Override
 
@@ -713,7 +744,7 @@ public final class ActivityGetCanGiveFriendGiftRspOuterClass {
         return internalGetGiftNumMap().getMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; gift_num_map = 6;</code>
+       * <code>map&lt;uint32, uint32&gt; gift_num_map = 1;</code>
        */
       @java.lang.Override
 
@@ -726,7 +757,7 @@ public final class ActivityGetCanGiveFriendGiftRspOuterClass {
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; gift_num_map = 6;</code>
+       * <code>map&lt;uint32, uint32&gt; gift_num_map = 1;</code>
        */
       @java.lang.Override
 
@@ -747,7 +778,7 @@ public final class ActivityGetCanGiveFriendGiftRspOuterClass {
         return this;
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; gift_num_map = 6;</code>
+       * <code>map&lt;uint32, uint32&gt; gift_num_map = 1;</code>
        */
 
       public Builder removeGiftNumMap(
@@ -766,7 +797,7 @@ public final class ActivityGetCanGiveFriendGiftRspOuterClass {
         return internalGetMutableGiftNumMap().getMutableMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; gift_num_map = 6;</code>
+       * <code>map&lt;uint32, uint32&gt; gift_num_map = 1;</code>
        */
       public Builder putGiftNumMap(
           int key,
@@ -778,7 +809,7 @@ public final class ActivityGetCanGiveFriendGiftRspOuterClass {
         return this;
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; gift_num_map = 6;</code>
+       * <code>map&lt;uint32, uint32&gt; gift_num_map = 1;</code>
        */
 
       public Builder putAllGiftNumMap(
@@ -790,7 +821,7 @@ public final class ActivityGetCanGiveFriendGiftRspOuterClass {
 
       private int scheduleId_ ;
       /**
-       * <code>uint32 schedule_id = 1;</code>
+       * <code>uint32 schedule_id = 14;</code>
        * @return The scheduleId.
        */
       @java.lang.Override
@@ -798,7 +829,7 @@ public final class ActivityGetCanGiveFriendGiftRspOuterClass {
         return scheduleId_;
       }
       /**
-       * <code>uint32 schedule_id = 1;</code>
+       * <code>uint32 schedule_id = 14;</code>
        * @param value The scheduleId to set.
        * @return This builder for chaining.
        */
@@ -809,43 +840,12 @@ public final class ActivityGetCanGiveFriendGiftRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 schedule_id = 1;</code>
+       * <code>uint32 schedule_id = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearScheduleId() {
         
         scheduleId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int retcode_ ;
-      /**
-       * <code>int32 retcode = 14;</code>
-       * @return The retcode.
-       */
-      @java.lang.Override
-      public int getRetcode() {
-        return retcode_;
-      }
-      /**
-       * <code>int32 retcode = 14;</code>
-       * @param value The retcode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRetcode(int value) {
-        
-        retcode_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 retcode = 14;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRetcode() {
-        
-        retcode_ = 0;
         onChanged();
         return this;
       }
@@ -922,10 +922,10 @@ public final class ActivityGetCanGiveFriendGiftRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n%ActivityGetCanGiveFriendGiftRsp.proto\"" +
-      "\302\001\n\037ActivityGetCanGiveFriendGiftRsp\022F\n\014g" +
-      "ift_num_map\030\006 \003(\01320.ActivityGetCanGiveFr" +
-      "iendGiftRsp.GiftNumMapEntry\022\023\n\013schedule_" +
-      "id\030\001 \001(\r\022\017\n\007retcode\030\016 \001(\005\0321\n\017GiftNumMapE" +
+      "\302\001\n\037ActivityGetCanGiveFriendGiftRsp\022\017\n\007r" +
+      "etcode\030\004 \001(\005\022F\n\014gift_num_map\030\001 \003(\01320.Act" +
+      "ivityGetCanGiveFriendGiftRsp.GiftNumMapE" +
+      "ntry\022\023\n\013schedule_id\030\016 \001(\r\0321\n\017GiftNumMapE" +
       "ntry\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001B\033\n\031" +
       "emu.grasscutter.net.protob\006proto3"
     };
@@ -938,7 +938,7 @@ public final class ActivityGetCanGiveFriendGiftRspOuterClass {
     internal_static_ActivityGetCanGiveFriendGiftRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ActivityGetCanGiveFriendGiftRsp_descriptor,
-        new java.lang.String[] { "GiftNumMap", "ScheduleId", "Retcode", });
+        new java.lang.String[] { "Retcode", "GiftNumMap", "ScheduleId", });
     internal_static_ActivityGetCanGiveFriendGiftRsp_GiftNumMapEntry_descriptor =
       internal_static_ActivityGetCanGiveFriendGiftRsp_descriptor.getNestedTypes().get(0);
     internal_static_ActivityGetCanGiveFriendGiftRsp_GiftNumMapEntry_fieldAccessorTable = new

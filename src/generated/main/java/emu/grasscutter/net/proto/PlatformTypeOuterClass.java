@@ -16,7 +16,7 @@ public final class PlatformTypeOuterClass {
   }
   /**
    * <pre>
-   * Obf: OBGLBKLIHPE
+   * Obf: MLEBHNLEKAB
    * </pre>
    *
    * Protobuf enum {@code PlatformType}
@@ -83,6 +83,30 @@ public final class PlatformTypeOuterClass {
      * <code>PLATFORM_TYPE_CLOUD_THIRD_PARTY_PC = 14;</code>
      */
     PLATFORM_TYPE_CLOUD_THIRD_PARTY_PC(14),
+    /**
+     * <code>PLATFORM_TYPE_CLOUD_WEB_ANDROID = 15;</code>
+     */
+    PLATFORM_TYPE_CLOUD_WEB_ANDROID(15),
+    /**
+     * <code>PLATFORM_TYPE_CLOUD_WEB_IOS = 16;</code>
+     */
+    PLATFORM_TYPE_CLOUD_WEB_IOS(16),
+    /**
+     * <code>PLATFORM_TYPE_CLOUD_WEB_PC = 17;</code>
+     */
+    PLATFORM_TYPE_CLOUD_WEB_PC(17),
+    /**
+     * <code>PLATFORM_TYPE_CLOUD_WEB_MAC = 18;</code>
+     */
+    PLATFORM_TYPE_CLOUD_WEB_MAC(18),
+    /**
+     * <code>PLATFORM_TYPE_CLOUD_WEB_TOUCH = 19;</code>
+     */
+    PLATFORM_TYPE_CLOUD_WEB_TOUCH(19),
+    /**
+     * <code>PLATFORM_TYPE_CLOUD_WEB_KEYBOARD = 20;</code>
+     */
+    PLATFORM_TYPE_CLOUD_WEB_KEYBOARD(20),
     UNRECOGNIZED(-1),
     ;
 
@@ -146,6 +170,30 @@ public final class PlatformTypeOuterClass {
      * <code>PLATFORM_TYPE_CLOUD_THIRD_PARTY_PC = 14;</code>
      */
     public static final int PLATFORM_TYPE_CLOUD_THIRD_PARTY_PC_VALUE = 14;
+    /**
+     * <code>PLATFORM_TYPE_CLOUD_WEB_ANDROID = 15;</code>
+     */
+    public static final int PLATFORM_TYPE_CLOUD_WEB_ANDROID_VALUE = 15;
+    /**
+     * <code>PLATFORM_TYPE_CLOUD_WEB_IOS = 16;</code>
+     */
+    public static final int PLATFORM_TYPE_CLOUD_WEB_IOS_VALUE = 16;
+    /**
+     * <code>PLATFORM_TYPE_CLOUD_WEB_PC = 17;</code>
+     */
+    public static final int PLATFORM_TYPE_CLOUD_WEB_PC_VALUE = 17;
+    /**
+     * <code>PLATFORM_TYPE_CLOUD_WEB_MAC = 18;</code>
+     */
+    public static final int PLATFORM_TYPE_CLOUD_WEB_MAC_VALUE = 18;
+    /**
+     * <code>PLATFORM_TYPE_CLOUD_WEB_TOUCH = 19;</code>
+     */
+    public static final int PLATFORM_TYPE_CLOUD_WEB_TOUCH_VALUE = 19;
+    /**
+     * <code>PLATFORM_TYPE_CLOUD_WEB_KEYBOARD = 20;</code>
+     */
+    public static final int PLATFORM_TYPE_CLOUD_WEB_KEYBOARD_VALUE = 20;
 
 
     public final int getNumber() {
@@ -187,6 +235,12 @@ public final class PlatformTypeOuterClass {
         case 12: return PLATFORM_TYPE_CLOUD_PC;
         case 13: return PLATFORM_TYPE_CLOUD_THIRD_PARTY_MOBILE;
         case 14: return PLATFORM_TYPE_CLOUD_THIRD_PARTY_PC;
+        case 15: return PLATFORM_TYPE_CLOUD_WEB_ANDROID;
+        case 16: return PLATFORM_TYPE_CLOUD_WEB_IOS;
+        case 17: return PLATFORM_TYPE_CLOUD_WEB_PC;
+        case 18: return PLATFORM_TYPE_CLOUD_WEB_MAC;
+        case 19: return PLATFORM_TYPE_CLOUD_WEB_TOUCH;
+        case 20: return PLATFORM_TYPE_CLOUD_WEB_KEYBOARD;
         default: return null;
       }
     }
@@ -252,7 +306,7 @@ public final class PlatformTypeOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\022PlatformType.proto*\274\003\n\014PlatformType\022\030\n" +
+      "\n\022PlatformType.proto*\214\005\n\014PlatformType\022\030\n" +
       "\024PLATFORM_TYPE_EDITOR\020\000\022\025\n\021PLATFORM_TYPE" +
       "_IOS\020\001\022\031\n\025PLATFORM_TYPE_ANDROID\020\002\022\024\n\020PLA" +
       "TFORM_TYPE_PC\020\003\022\025\n\021PLATFORM_TYPE_PS4\020\004\022\030" +
@@ -263,8 +317,13 @@ public final class PlatformTypeOuterClass {
       "D_TV\020\n\022\033\n\027PLATFORM_TYPE_CLOUD_MAC\020\013\022\032\n\026P" +
       "LATFORM_TYPE_CLOUD_PC\020\014\022*\n&PLATFORM_TYPE" +
       "_CLOUD_THIRD_PARTY_MOBILE\020\r\022&\n\"PLATFORM_" +
-      "TYPE_CLOUD_THIRD_PARTY_PC\020\016B\033\n\031emu.grass" +
-      "cutter.net.protob\006proto3"
+      "TYPE_CLOUD_THIRD_PARTY_PC\020\016\022#\n\037PLATFORM_" +
+      "TYPE_CLOUD_WEB_ANDROID\020\017\022\037\n\033PLATFORM_TYP" +
+      "E_CLOUD_WEB_IOS\020\020\022\036\n\032PLATFORM_TYPE_CLOUD" +
+      "_WEB_PC\020\021\022\037\n\033PLATFORM_TYPE_CLOUD_WEB_MAC" +
+      "\020\022\022!\n\035PLATFORM_TYPE_CLOUD_WEB_TOUCH\020\023\022$\n" +
+      " PLATFORM_TYPE_CLOUD_WEB_KEYBOARD\020\024B\033\n\031e" +
+      "mu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

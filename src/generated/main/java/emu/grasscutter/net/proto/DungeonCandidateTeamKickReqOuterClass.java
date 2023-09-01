@@ -26,8 +26,8 @@ public final class DungeonCandidateTeamKickReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 907
-   * Obf: GIGAIOEBJNC
+   * CmdId: 28294
+   * Obf: MAHEAEBNDNP
    * </pre>
    *
    * Protobuf type {@code DungeonCandidateTeamKickReq}
@@ -279,8 +279,8 @@ public final class DungeonCandidateTeamKickReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 907
-     * Obf: GIGAIOEBJNC
+     * CmdId: 28294
+     * Obf: MAHEAEBNDNP
      * </pre>
      *
      * Protobuf type {@code DungeonCandidateTeamKickReq}

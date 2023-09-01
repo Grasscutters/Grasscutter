@@ -19,23 +19,23 @@ public final class GCGMsgPVEIntentionOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 card_guid = 9;</code>
+     * <code>uint32 card_guid = 6;</code>
      * @return The cardGuid.
      */
     int getCardGuid();
 
     /**
-     * <code>repeated uint32 skill_id_list = 3;</code>
+     * <code>repeated uint32 skill_id_list = 11;</code>
      * @return A list containing the skillIdList.
      */
     java.util.List<java.lang.Integer> getSkillIdListList();
     /**
-     * <code>repeated uint32 skill_id_list = 3;</code>
+     * <code>repeated uint32 skill_id_list = 11;</code>
      * @return The count of skillIdList.
      */
     int getSkillIdListCount();
     /**
-     * <code>repeated uint32 skill_id_list = 3;</code>
+     * <code>repeated uint32 skill_id_list = 11;</code>
      * @param index The index of the element to return.
      * @return The skillIdList at the given index.
      */
@@ -43,7 +43,7 @@ public final class GCGMsgPVEIntentionOuterClass {
   }
   /**
    * <pre>
-   * Obf: ADPMJBODPGK
+   * Obf: CFFLBIIIKLH
    * </pre>
    *
    * Protobuf type {@code GCGMsgPVEIntention}
@@ -92,7 +92,12 @@ public final class GCGMsgPVEIntentionOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 48: {
+
+              cardGuid_ = input.readUInt32();
+              break;
+            }
+            case 88: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 skillIdList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -100,7 +105,7 @@ public final class GCGMsgPVEIntentionOuterClass {
               skillIdList_.addInt(input.readUInt32());
               break;
             }
-            case 26: {
+            case 90: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -111,11 +116,6 @@ public final class GCGMsgPVEIntentionOuterClass {
                 skillIdList_.addInt(input.readUInt32());
               }
               input.popLimit(limit);
-              break;
-            }
-            case 72: {
-
-              cardGuid_ = input.readUInt32();
               break;
             }
             default: {
@@ -153,10 +153,10 @@ public final class GCGMsgPVEIntentionOuterClass {
               emu.grasscutter.net.proto.GCGMsgPVEIntentionOuterClass.GCGMsgPVEIntention.class, emu.grasscutter.net.proto.GCGMsgPVEIntentionOuterClass.GCGMsgPVEIntention.Builder.class);
     }
 
-    public static final int CARD_GUID_FIELD_NUMBER = 9;
+    public static final int CARD_GUID_FIELD_NUMBER = 6;
     private int cardGuid_;
     /**
-     * <code>uint32 card_guid = 9;</code>
+     * <code>uint32 card_guid = 6;</code>
      * @return The cardGuid.
      */
     @java.lang.Override
@@ -164,10 +164,10 @@ public final class GCGMsgPVEIntentionOuterClass {
       return cardGuid_;
     }
 
-    public static final int SKILL_ID_LIST_FIELD_NUMBER = 3;
+    public static final int SKILL_ID_LIST_FIELD_NUMBER = 11;
     private com.google.protobuf.Internal.IntList skillIdList_;
     /**
-     * <code>repeated uint32 skill_id_list = 3;</code>
+     * <code>repeated uint32 skill_id_list = 11;</code>
      * @return A list containing the skillIdList.
      */
     @java.lang.Override
@@ -176,14 +176,14 @@ public final class GCGMsgPVEIntentionOuterClass {
       return skillIdList_;
     }
     /**
-     * <code>repeated uint32 skill_id_list = 3;</code>
+     * <code>repeated uint32 skill_id_list = 11;</code>
      * @return The count of skillIdList.
      */
     public int getSkillIdListCount() {
       return skillIdList_.size();
     }
     /**
-     * <code>repeated uint32 skill_id_list = 3;</code>
+     * <code>repeated uint32 skill_id_list = 11;</code>
      * @param index The index of the element to return.
      * @return The skillIdList at the given index.
      */
@@ -207,15 +207,15 @@ public final class GCGMsgPVEIntentionOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
+      if (cardGuid_ != 0) {
+        output.writeUInt32(6, cardGuid_);
+      }
       if (getSkillIdListList().size() > 0) {
-        output.writeUInt32NoTag(26);
+        output.writeUInt32NoTag(90);
         output.writeUInt32NoTag(skillIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < skillIdList_.size(); i++) {
         output.writeUInt32NoTag(skillIdList_.getInt(i));
-      }
-      if (cardGuid_ != 0) {
-        output.writeUInt32(9, cardGuid_);
       }
       unknownFields.writeTo(output);
     }
@@ -226,6 +226,10 @@ public final class GCGMsgPVEIntentionOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (cardGuid_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(6, cardGuid_);
+      }
       {
         int dataSize = 0;
         for (int i = 0; i < skillIdList_.size(); i++) {
@@ -239,10 +243,6 @@ public final class GCGMsgPVEIntentionOuterClass {
               .computeInt32SizeNoTag(dataSize);
         }
         skillIdListMemoizedSerializedSize = dataSize;
-      }
-      if (cardGuid_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, cardGuid_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -377,7 +377,7 @@ public final class GCGMsgPVEIntentionOuterClass {
     }
     /**
      * <pre>
-     * Obf: ADPMJBODPGK
+     * Obf: CFFLBIIIKLH
      * </pre>
      *
      * Protobuf type {@code GCGMsgPVEIntention}
@@ -547,7 +547,7 @@ public final class GCGMsgPVEIntentionOuterClass {
 
       private int cardGuid_ ;
       /**
-       * <code>uint32 card_guid = 9;</code>
+       * <code>uint32 card_guid = 6;</code>
        * @return The cardGuid.
        */
       @java.lang.Override
@@ -555,7 +555,7 @@ public final class GCGMsgPVEIntentionOuterClass {
         return cardGuid_;
       }
       /**
-       * <code>uint32 card_guid = 9;</code>
+       * <code>uint32 card_guid = 6;</code>
        * @param value The cardGuid to set.
        * @return This builder for chaining.
        */
@@ -566,7 +566,7 @@ public final class GCGMsgPVEIntentionOuterClass {
         return this;
       }
       /**
-       * <code>uint32 card_guid = 9;</code>
+       * <code>uint32 card_guid = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearCardGuid() {
@@ -584,7 +584,7 @@ public final class GCGMsgPVEIntentionOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 skill_id_list = 3;</code>
+       * <code>repeated uint32 skill_id_list = 11;</code>
        * @return A list containing the skillIdList.
        */
       public java.util.List<java.lang.Integer>
@@ -593,14 +593,14 @@ public final class GCGMsgPVEIntentionOuterClass {
                  java.util.Collections.unmodifiableList(skillIdList_) : skillIdList_;
       }
       /**
-       * <code>repeated uint32 skill_id_list = 3;</code>
+       * <code>repeated uint32 skill_id_list = 11;</code>
        * @return The count of skillIdList.
        */
       public int getSkillIdListCount() {
         return skillIdList_.size();
       }
       /**
-       * <code>repeated uint32 skill_id_list = 3;</code>
+       * <code>repeated uint32 skill_id_list = 11;</code>
        * @param index The index of the element to return.
        * @return The skillIdList at the given index.
        */
@@ -608,7 +608,7 @@ public final class GCGMsgPVEIntentionOuterClass {
         return skillIdList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 skill_id_list = 3;</code>
+       * <code>repeated uint32 skill_id_list = 11;</code>
        * @param index The index to set the value at.
        * @param value The skillIdList to set.
        * @return This builder for chaining.
@@ -621,7 +621,7 @@ public final class GCGMsgPVEIntentionOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 skill_id_list = 3;</code>
+       * <code>repeated uint32 skill_id_list = 11;</code>
        * @param value The skillIdList to add.
        * @return This builder for chaining.
        */
@@ -632,7 +632,7 @@ public final class GCGMsgPVEIntentionOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 skill_id_list = 3;</code>
+       * <code>repeated uint32 skill_id_list = 11;</code>
        * @param values The skillIdList to add.
        * @return This builder for chaining.
        */
@@ -645,7 +645,7 @@ public final class GCGMsgPVEIntentionOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 skill_id_list = 3;</code>
+       * <code>repeated uint32 skill_id_list = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearSkillIdList() {
@@ -722,8 +722,8 @@ public final class GCGMsgPVEIntentionOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\030GCGMsgPVEIntention.proto\">\n\022GCGMsgPVEI" +
-      "ntention\022\021\n\tcard_guid\030\t \001(\r\022\025\n\rskill_id_" +
-      "list\030\003 \003(\rB\033\n\031emu.grasscutter.net.protob" +
+      "ntention\022\021\n\tcard_guid\030\006 \001(\r\022\025\n\rskill_id_" +
+      "list\030\013 \003(\rB\033\n\031emu.grasscutter.net.protob" +
       "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

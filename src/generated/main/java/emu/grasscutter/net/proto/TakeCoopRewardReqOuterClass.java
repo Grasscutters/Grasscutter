@@ -19,15 +19,15 @@ public final class TakeCoopRewardReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 reward_config_id = 5;</code>
+     * <code>uint32 reward_config_id = 2;</code>
      * @return The rewardConfigId.
      */
     int getRewardConfigId();
   }
   /**
    * <pre>
-   * CmdId: 1963
-   * Obf: DFDBGBKBEAK
+   * CmdId: 23462
+   * Obf: FELHCPBNOHO
    * </pre>
    *
    * Protobuf type {@code TakeCoopRewardReq}
@@ -74,7 +74,7 @@ public final class TakeCoopRewardReqOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
+            case 16: {
 
               rewardConfigId_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class TakeCoopRewardReqOuterClass {
               emu.grasscutter.net.proto.TakeCoopRewardReqOuterClass.TakeCoopRewardReq.class, emu.grasscutter.net.proto.TakeCoopRewardReqOuterClass.TakeCoopRewardReq.Builder.class);
     }
 
-    public static final int REWARD_CONFIG_ID_FIELD_NUMBER = 5;
+    public static final int REWARD_CONFIG_ID_FIELD_NUMBER = 2;
     private int rewardConfigId_;
     /**
-     * <code>uint32 reward_config_id = 5;</code>
+     * <code>uint32 reward_config_id = 2;</code>
      * @return The rewardConfigId.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class TakeCoopRewardReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (rewardConfigId_ != 0) {
-        output.writeUInt32(5, rewardConfigId_);
+        output.writeUInt32(2, rewardConfigId_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class TakeCoopRewardReqOuterClass {
       size = 0;
       if (rewardConfigId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, rewardConfigId_);
+          .computeUInt32Size(2, rewardConfigId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class TakeCoopRewardReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 1963
-     * Obf: DFDBGBKBEAK
+     * CmdId: 23462
+     * Obf: FELHCPBNOHO
      * </pre>
      *
      * Protobuf type {@code TakeCoopRewardReq}
@@ -431,7 +431,7 @@ public final class TakeCoopRewardReqOuterClass {
 
       private int rewardConfigId_ ;
       /**
-       * <code>uint32 reward_config_id = 5;</code>
+       * <code>uint32 reward_config_id = 2;</code>
        * @return The rewardConfigId.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class TakeCoopRewardReqOuterClass {
         return rewardConfigId_;
       }
       /**
-       * <code>uint32 reward_config_id = 5;</code>
+       * <code>uint32 reward_config_id = 2;</code>
        * @param value The rewardConfigId to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class TakeCoopRewardReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 reward_config_id = 5;</code>
+       * <code>uint32 reward_config_id = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearRewardConfigId() {
@@ -527,7 +527,7 @@ public final class TakeCoopRewardReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\027TakeCoopRewardReq.proto\"-\n\021TakeCoopRew" +
-      "ardReq\022\030\n\020reward_config_id\030\005 \001(\rB\033\n\031emu." +
+      "ardReq\022\030\n\020reward_config_id\030\002 \001(\rB\033\n\031emu." +
       "grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

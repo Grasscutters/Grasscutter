@@ -1,8 +1,7 @@
 package emu.grasscutter.game.activity.condition;
 
 import emu.grasscutter.data.excels.activity.ActivityCondExcelConfigData;
-import emu.grasscutter.game.activity.ActivityConfigItem;
-import emu.grasscutter.game.activity.PlayerActivityData;
+import emu.grasscutter.game.activity.*;
 
 /**
  * Base handler for all activity conditions that are listed in NewActivityCondExcelConfigData.json

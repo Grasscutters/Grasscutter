@@ -19,15 +19,15 @@ public final class ClientPauseNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool is_open = 6;</code>
+     * <code>bool is_open = 8;</code>
      * @return The isOpen.
      */
     boolean getIsOpen();
   }
   /**
    * <pre>
-   * CmdId: 239
-   * Obf: FAOFIMHCBEM
+   * CmdId: 29272
+   * Obf: FFFCAOAIFDJ
    * </pre>
    *
    * Protobuf type {@code ClientPauseNotify}
@@ -74,7 +74,7 @@ public final class ClientPauseNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 48: {
+            case 64: {
 
               isOpen_ = input.readBool();
               break;
@@ -111,10 +111,10 @@ public final class ClientPauseNotifyOuterClass {
               emu.grasscutter.net.proto.ClientPauseNotifyOuterClass.ClientPauseNotify.class, emu.grasscutter.net.proto.ClientPauseNotifyOuterClass.ClientPauseNotify.Builder.class);
     }
 
-    public static final int IS_OPEN_FIELD_NUMBER = 6;
+    public static final int IS_OPEN_FIELD_NUMBER = 8;
     private boolean isOpen_;
     /**
-     * <code>bool is_open = 6;</code>
+     * <code>bool is_open = 8;</code>
      * @return The isOpen.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class ClientPauseNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (isOpen_ != false) {
-        output.writeBool(6, isOpen_);
+        output.writeBool(8, isOpen_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class ClientPauseNotifyOuterClass {
       size = 0;
       if (isOpen_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(6, isOpen_);
+          .computeBoolSize(8, isOpen_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -280,8 +280,8 @@ public final class ClientPauseNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 239
-     * Obf: FAOFIMHCBEM
+     * CmdId: 29272
+     * Obf: FFFCAOAIFDJ
      * </pre>
      *
      * Protobuf type {@code ClientPauseNotify}
@@ -432,7 +432,7 @@ public final class ClientPauseNotifyOuterClass {
 
       private boolean isOpen_ ;
       /**
-       * <code>bool is_open = 6;</code>
+       * <code>bool is_open = 8;</code>
        * @return The isOpen.
        */
       @java.lang.Override
@@ -440,7 +440,7 @@ public final class ClientPauseNotifyOuterClass {
         return isOpen_;
       }
       /**
-       * <code>bool is_open = 6;</code>
+       * <code>bool is_open = 8;</code>
        * @param value The isOpen to set.
        * @return This builder for chaining.
        */
@@ -451,7 +451,7 @@ public final class ClientPauseNotifyOuterClass {
         return this;
       }
       /**
-       * <code>bool is_open = 6;</code>
+       * <code>bool is_open = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsOpen() {
@@ -528,7 +528,7 @@ public final class ClientPauseNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\027ClientPauseNotify.proto\"$\n\021ClientPause" +
-      "Notify\022\017\n\007is_open\030\006 \001(\010B\033\n\031emu.grasscutt" +
+      "Notify\022\017\n\007is_open\030\010 \001(\010B\033\n\031emu.grasscutt" +
       "er.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

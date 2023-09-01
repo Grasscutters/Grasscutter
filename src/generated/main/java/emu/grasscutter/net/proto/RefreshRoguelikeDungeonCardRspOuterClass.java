@@ -19,7 +19,7 @@ public final class RefreshRoguelikeDungeonCardRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 14;</code>
+     * <code>int32 retcode = 6;</code>
      * @return The retcode.
      */
     int getRetcode();
@@ -43,8 +43,8 @@ public final class RefreshRoguelikeDungeonCardRspOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 8479
-   * Obf: MBFLONFIIIE
+   * CmdId: 7915
+   * Obf: LLJDDPALBGB
    * </pre>
    *
    * Protobuf type {@code RefreshRoguelikeDungeonCardRsp}
@@ -114,7 +114,7 @@ public final class RefreshRoguelikeDungeonCardRspOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 112: {
+            case 48: {
 
               retcode_ = input.readInt32();
               break;
@@ -154,10 +154,10 @@ public final class RefreshRoguelikeDungeonCardRspOuterClass {
               emu.grasscutter.net.proto.RefreshRoguelikeDungeonCardRspOuterClass.RefreshRoguelikeDungeonCardRsp.class, emu.grasscutter.net.proto.RefreshRoguelikeDungeonCardRspOuterClass.RefreshRoguelikeDungeonCardRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 14;
+    public static final int RETCODE_FIELD_NUMBER = 6;
     private int retcode_;
     /**
-     * <code>int32 retcode = 14;</code>
+     * <code>int32 retcode = 6;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -216,7 +216,7 @@ public final class RefreshRoguelikeDungeonCardRspOuterClass {
         output.writeUInt32NoTag(resCardList_.getInt(i));
       }
       if (retcode_ != 0) {
-        output.writeInt32(14, retcode_);
+        output.writeInt32(6, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -243,7 +243,7 @@ public final class RefreshRoguelikeDungeonCardRspOuterClass {
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(14, retcode_);
+          .computeInt32Size(6, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -378,8 +378,8 @@ public final class RefreshRoguelikeDungeonCardRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8479
-     * Obf: MBFLONFIIIE
+     * CmdId: 7915
+     * Obf: LLJDDPALBGB
      * </pre>
      *
      * Protobuf type {@code RefreshRoguelikeDungeonCardRsp}
@@ -549,7 +549,7 @@ public final class RefreshRoguelikeDungeonCardRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 14;</code>
+       * <code>int32 retcode = 6;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -557,7 +557,7 @@ public final class RefreshRoguelikeDungeonCardRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 14;</code>
+       * <code>int32 retcode = 6;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -568,7 +568,7 @@ public final class RefreshRoguelikeDungeonCardRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 14;</code>
+       * <code>int32 retcode = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -725,7 +725,7 @@ public final class RefreshRoguelikeDungeonCardRspOuterClass {
     java.lang.String[] descriptorData = {
       "\n$RefreshRoguelikeDungeonCardRsp.proto\"H" +
       "\n\036RefreshRoguelikeDungeonCardRsp\022\017\n\007retc" +
-      "ode\030\016 \001(\005\022\025\n\rres_card_list\030\002 \003(\rB\033\n\031emu." +
+      "ode\030\006 \001(\005\022\025\n\rres_card_list\030\002 \003(\rB\033\n\031emu." +
       "grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

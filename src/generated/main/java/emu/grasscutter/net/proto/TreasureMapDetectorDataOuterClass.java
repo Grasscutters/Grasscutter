@@ -19,65 +19,65 @@ public final class TreasureMapDetectorDataOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 region_id = 2;</code>
-     * @return The regionId.
-     */
-    int getRegionId();
-
-    /**
-     * <code>.Vector center_pos = 1;</code>
+     * <code>.Vector center_pos = 3;</code>
      * @return Whether the centerPos field is set.
      */
     boolean hasCenterPos();
     /**
-     * <code>.Vector center_pos = 1;</code>
+     * <code>.Vector center_pos = 3;</code>
      * @return The centerPos.
      */
     emu.grasscutter.net.proto.VectorOuterClass.Vector getCenterPos();
     /**
-     * <code>.Vector center_pos = 1;</code>
+     * <code>.Vector center_pos = 3;</code>
      */
     emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getCenterPosOrBuilder();
 
     /**
-     * <code>uint32 radius = 11;</code>
-     * @return The radius.
-     */
-    int getRadius();
-
-    /**
-     * <code>bool is_region_detected = 6;</code>
+     * <code>bool is_region_detected = 11;</code>
      * @return The isRegionDetected.
      */
     boolean getIsRegionDetected();
 
     /**
-     * <code>repeated .Vector spot_list = 5;</code>
+     * <code>uint32 radius = 10;</code>
+     * @return The radius.
+     */
+    int getRadius();
+
+    /**
+     * <code>repeated .Vector spot_list = 9;</code>
      */
     java.util.List<emu.grasscutter.net.proto.VectorOuterClass.Vector> 
         getSpotListList();
     /**
-     * <code>repeated .Vector spot_list = 5;</code>
+     * <code>repeated .Vector spot_list = 9;</code>
      */
     emu.grasscutter.net.proto.VectorOuterClass.Vector getSpotList(int index);
     /**
-     * <code>repeated .Vector spot_list = 5;</code>
+     * <code>repeated .Vector spot_list = 9;</code>
      */
     int getSpotListCount();
     /**
-     * <code>repeated .Vector spot_list = 5;</code>
+     * <code>repeated .Vector spot_list = 9;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> 
         getSpotListOrBuilderList();
     /**
-     * <code>repeated .Vector spot_list = 5;</code>
+     * <code>repeated .Vector spot_list = 9;</code>
      */
     emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getSpotListOrBuilder(
         int index);
+
+    /**
+     * <code>uint32 region_id = 4;</code>
+     * @return The regionId.
+     */
+    int getRegionId();
   }
   /**
    * <pre>
-   * Obf: NJDELGNKEFM
+   * Obf: DJEPGGNFHDL
    * </pre>
    *
    * Protobuf type {@code TreasureMapDetectorData}
@@ -126,7 +126,7 @@ public final class TreasureMapDetectorDataOuterClass {
             case 0:
               done = true;
               break;
-            case 10: {
+            case 26: {
               emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
               if (centerPos_ != null) {
                 subBuilder = centerPos_.toBuilder();
@@ -139,12 +139,12 @@ public final class TreasureMapDetectorDataOuterClass {
 
               break;
             }
-            case 16: {
+            case 32: {
 
               regionId_ = input.readUInt32();
               break;
             }
-            case 42: {
+            case 74: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 spotList_ = new java.util.ArrayList<emu.grasscutter.net.proto.VectorOuterClass.Vector>();
                 mutable_bitField0_ |= 0x00000001;
@@ -153,14 +153,14 @@ public final class TreasureMapDetectorDataOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry));
               break;
             }
-            case 48: {
+            case 80: {
 
-              isRegionDetected_ = input.readBool();
+              radius_ = input.readUInt32();
               break;
             }
             case 88: {
 
-              radius_ = input.readUInt32();
+              isRegionDetected_ = input.readBool();
               break;
             }
             default: {
@@ -198,21 +198,10 @@ public final class TreasureMapDetectorDataOuterClass {
               emu.grasscutter.net.proto.TreasureMapDetectorDataOuterClass.TreasureMapDetectorData.class, emu.grasscutter.net.proto.TreasureMapDetectorDataOuterClass.TreasureMapDetectorData.Builder.class);
     }
 
-    public static final int REGION_ID_FIELD_NUMBER = 2;
-    private int regionId_;
-    /**
-     * <code>uint32 region_id = 2;</code>
-     * @return The regionId.
-     */
-    @java.lang.Override
-    public int getRegionId() {
-      return regionId_;
-    }
-
-    public static final int CENTER_POS_FIELD_NUMBER = 1;
+    public static final int CENTER_POS_FIELD_NUMBER = 3;
     private emu.grasscutter.net.proto.VectorOuterClass.Vector centerPos_;
     /**
-     * <code>.Vector center_pos = 1;</code>
+     * <code>.Vector center_pos = 3;</code>
      * @return Whether the centerPos field is set.
      */
     @java.lang.Override
@@ -220,7 +209,7 @@ public final class TreasureMapDetectorDataOuterClass {
       return centerPos_ != null;
     }
     /**
-     * <code>.Vector center_pos = 1;</code>
+     * <code>.Vector center_pos = 3;</code>
      * @return The centerPos.
      */
     @java.lang.Override
@@ -228,28 +217,17 @@ public final class TreasureMapDetectorDataOuterClass {
       return centerPos_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : centerPos_;
     }
     /**
-     * <code>.Vector center_pos = 1;</code>
+     * <code>.Vector center_pos = 3;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getCenterPosOrBuilder() {
       return getCenterPos();
     }
 
-    public static final int RADIUS_FIELD_NUMBER = 11;
-    private int radius_;
-    /**
-     * <code>uint32 radius = 11;</code>
-     * @return The radius.
-     */
-    @java.lang.Override
-    public int getRadius() {
-      return radius_;
-    }
-
-    public static final int IS_REGION_DETECTED_FIELD_NUMBER = 6;
+    public static final int IS_REGION_DETECTED_FIELD_NUMBER = 11;
     private boolean isRegionDetected_;
     /**
-     * <code>bool is_region_detected = 6;</code>
+     * <code>bool is_region_detected = 11;</code>
      * @return The isRegionDetected.
      */
     @java.lang.Override
@@ -257,17 +235,28 @@ public final class TreasureMapDetectorDataOuterClass {
       return isRegionDetected_;
     }
 
-    public static final int SPOT_LIST_FIELD_NUMBER = 5;
+    public static final int RADIUS_FIELD_NUMBER = 10;
+    private int radius_;
+    /**
+     * <code>uint32 radius = 10;</code>
+     * @return The radius.
+     */
+    @java.lang.Override
+    public int getRadius() {
+      return radius_;
+    }
+
+    public static final int SPOT_LIST_FIELD_NUMBER = 9;
     private java.util.List<emu.grasscutter.net.proto.VectorOuterClass.Vector> spotList_;
     /**
-     * <code>repeated .Vector spot_list = 5;</code>
+     * <code>repeated .Vector spot_list = 9;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.VectorOuterClass.Vector> getSpotListList() {
       return spotList_;
     }
     /**
-     * <code>repeated .Vector spot_list = 5;</code>
+     * <code>repeated .Vector spot_list = 9;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> 
@@ -275,26 +264,37 @@ public final class TreasureMapDetectorDataOuterClass {
       return spotList_;
     }
     /**
-     * <code>repeated .Vector spot_list = 5;</code>
+     * <code>repeated .Vector spot_list = 9;</code>
      */
     @java.lang.Override
     public int getSpotListCount() {
       return spotList_.size();
     }
     /**
-     * <code>repeated .Vector spot_list = 5;</code>
+     * <code>repeated .Vector spot_list = 9;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.VectorOuterClass.Vector getSpotList(int index) {
       return spotList_.get(index);
     }
     /**
-     * <code>repeated .Vector spot_list = 5;</code>
+     * <code>repeated .Vector spot_list = 9;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getSpotListOrBuilder(
         int index) {
       return spotList_.get(index);
+    }
+
+    public static final int REGION_ID_FIELD_NUMBER = 4;
+    private int regionId_;
+    /**
+     * <code>uint32 region_id = 4;</code>
+     * @return The regionId.
+     */
+    @java.lang.Override
+    public int getRegionId() {
+      return regionId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -312,19 +312,19 @@ public final class TreasureMapDetectorDataOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (centerPos_ != null) {
-        output.writeMessage(1, getCenterPos());
+        output.writeMessage(3, getCenterPos());
       }
       if (regionId_ != 0) {
-        output.writeUInt32(2, regionId_);
+        output.writeUInt32(4, regionId_);
       }
       for (int i = 0; i < spotList_.size(); i++) {
-        output.writeMessage(5, spotList_.get(i));
-      }
-      if (isRegionDetected_ != false) {
-        output.writeBool(6, isRegionDetected_);
+        output.writeMessage(9, spotList_.get(i));
       }
       if (radius_ != 0) {
-        output.writeUInt32(11, radius_);
+        output.writeUInt32(10, radius_);
+      }
+      if (isRegionDetected_ != false) {
+        output.writeBool(11, isRegionDetected_);
       }
       unknownFields.writeTo(output);
     }
@@ -337,23 +337,23 @@ public final class TreasureMapDetectorDataOuterClass {
       size = 0;
       if (centerPos_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getCenterPos());
+          .computeMessageSize(3, getCenterPos());
       }
       if (regionId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, regionId_);
+          .computeUInt32Size(4, regionId_);
       }
       for (int i = 0; i < spotList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, spotList_.get(i));
-      }
-      if (isRegionDetected_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(6, isRegionDetected_);
+          .computeMessageSize(9, spotList_.get(i));
       }
       if (radius_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, radius_);
+          .computeUInt32Size(10, radius_);
+      }
+      if (isRegionDetected_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(11, isRegionDetected_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -370,19 +370,19 @@ public final class TreasureMapDetectorDataOuterClass {
       }
       emu.grasscutter.net.proto.TreasureMapDetectorDataOuterClass.TreasureMapDetectorData other = (emu.grasscutter.net.proto.TreasureMapDetectorDataOuterClass.TreasureMapDetectorData) obj;
 
-      if (getRegionId()
-          != other.getRegionId()) return false;
       if (hasCenterPos() != other.hasCenterPos()) return false;
       if (hasCenterPos()) {
         if (!getCenterPos()
             .equals(other.getCenterPos())) return false;
       }
-      if (getRadius()
-          != other.getRadius()) return false;
       if (getIsRegionDetected()
           != other.getIsRegionDetected()) return false;
+      if (getRadius()
+          != other.getRadius()) return false;
       if (!getSpotListList()
           .equals(other.getSpotListList())) return false;
+      if (getRegionId()
+          != other.getRegionId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -394,21 +394,21 @@ public final class TreasureMapDetectorDataOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + REGION_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getRegionId();
       if (hasCenterPos()) {
         hash = (37 * hash) + CENTER_POS_FIELD_NUMBER;
         hash = (53 * hash) + getCenterPos().hashCode();
       }
-      hash = (37 * hash) + RADIUS_FIELD_NUMBER;
-      hash = (53 * hash) + getRadius();
       hash = (37 * hash) + IS_REGION_DETECTED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsRegionDetected());
+      hash = (37 * hash) + RADIUS_FIELD_NUMBER;
+      hash = (53 * hash) + getRadius();
       if (getSpotListCount() > 0) {
         hash = (37 * hash) + SPOT_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getSpotListList().hashCode();
       }
+      hash = (37 * hash) + REGION_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRegionId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -506,7 +506,7 @@ public final class TreasureMapDetectorDataOuterClass {
     }
     /**
      * <pre>
-     * Obf: NJDELGNKEFM
+     * Obf: DJEPGGNFHDL
      * </pre>
      *
      * Protobuf type {@code TreasureMapDetectorData}
@@ -547,17 +547,15 @@ public final class TreasureMapDetectorDataOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        regionId_ = 0;
-
         if (centerPosBuilder_ == null) {
           centerPos_ = null;
         } else {
           centerPos_ = null;
           centerPosBuilder_ = null;
         }
-        radius_ = 0;
-
         isRegionDetected_ = false;
+
+        radius_ = 0;
 
         if (spotListBuilder_ == null) {
           spotList_ = java.util.Collections.emptyList();
@@ -565,6 +563,8 @@ public final class TreasureMapDetectorDataOuterClass {
         } else {
           spotListBuilder_.clear();
         }
+        regionId_ = 0;
+
         return this;
       }
 
@@ -592,14 +592,13 @@ public final class TreasureMapDetectorDataOuterClass {
       public emu.grasscutter.net.proto.TreasureMapDetectorDataOuterClass.TreasureMapDetectorData buildPartial() {
         emu.grasscutter.net.proto.TreasureMapDetectorDataOuterClass.TreasureMapDetectorData result = new emu.grasscutter.net.proto.TreasureMapDetectorDataOuterClass.TreasureMapDetectorData(this);
         int from_bitField0_ = bitField0_;
-        result.regionId_ = regionId_;
         if (centerPosBuilder_ == null) {
           result.centerPos_ = centerPos_;
         } else {
           result.centerPos_ = centerPosBuilder_.build();
         }
-        result.radius_ = radius_;
         result.isRegionDetected_ = isRegionDetected_;
+        result.radius_ = radius_;
         if (spotListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             spotList_ = java.util.Collections.unmodifiableList(spotList_);
@@ -609,6 +608,7 @@ public final class TreasureMapDetectorDataOuterClass {
         } else {
           result.spotList_ = spotListBuilder_.build();
         }
+        result.regionId_ = regionId_;
         onBuilt();
         return result;
       }
@@ -657,17 +657,14 @@ public final class TreasureMapDetectorDataOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.TreasureMapDetectorDataOuterClass.TreasureMapDetectorData other) {
         if (other == emu.grasscutter.net.proto.TreasureMapDetectorDataOuterClass.TreasureMapDetectorData.getDefaultInstance()) return this;
-        if (other.getRegionId() != 0) {
-          setRegionId(other.getRegionId());
-        }
         if (other.hasCenterPos()) {
           mergeCenterPos(other.getCenterPos());
         }
-        if (other.getRadius() != 0) {
-          setRadius(other.getRadius());
-        }
         if (other.getIsRegionDetected() != false) {
           setIsRegionDetected(other.getIsRegionDetected());
+        }
+        if (other.getRadius() != 0) {
+          setRadius(other.getRadius());
         }
         if (spotListBuilder_ == null) {
           if (!other.spotList_.isEmpty()) {
@@ -694,6 +691,9 @@ public final class TreasureMapDetectorDataOuterClass {
               spotListBuilder_.addAllMessages(other.spotList_);
             }
           }
+        }
+        if (other.getRegionId() != 0) {
+          setRegionId(other.getRegionId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -725,49 +725,18 @@ public final class TreasureMapDetectorDataOuterClass {
       }
       private int bitField0_;
 
-      private int regionId_ ;
-      /**
-       * <code>uint32 region_id = 2;</code>
-       * @return The regionId.
-       */
-      @java.lang.Override
-      public int getRegionId() {
-        return regionId_;
-      }
-      /**
-       * <code>uint32 region_id = 2;</code>
-       * @param value The regionId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRegionId(int value) {
-        
-        regionId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 region_id = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRegionId() {
-        
-        regionId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private emu.grasscutter.net.proto.VectorOuterClass.Vector centerPos_;
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> centerPosBuilder_;
       /**
-       * <code>.Vector center_pos = 1;</code>
+       * <code>.Vector center_pos = 3;</code>
        * @return Whether the centerPos field is set.
        */
       public boolean hasCenterPos() {
         return centerPosBuilder_ != null || centerPos_ != null;
       }
       /**
-       * <code>.Vector center_pos = 1;</code>
+       * <code>.Vector center_pos = 3;</code>
        * @return The centerPos.
        */
       public emu.grasscutter.net.proto.VectorOuterClass.Vector getCenterPos() {
@@ -778,7 +747,7 @@ public final class TreasureMapDetectorDataOuterClass {
         }
       }
       /**
-       * <code>.Vector center_pos = 1;</code>
+       * <code>.Vector center_pos = 3;</code>
        */
       public Builder setCenterPos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
         if (centerPosBuilder_ == null) {
@@ -794,7 +763,7 @@ public final class TreasureMapDetectorDataOuterClass {
         return this;
       }
       /**
-       * <code>.Vector center_pos = 1;</code>
+       * <code>.Vector center_pos = 3;</code>
        */
       public Builder setCenterPos(
           emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
@@ -808,7 +777,7 @@ public final class TreasureMapDetectorDataOuterClass {
         return this;
       }
       /**
-       * <code>.Vector center_pos = 1;</code>
+       * <code>.Vector center_pos = 3;</code>
        */
       public Builder mergeCenterPos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
         if (centerPosBuilder_ == null) {
@@ -826,7 +795,7 @@ public final class TreasureMapDetectorDataOuterClass {
         return this;
       }
       /**
-       * <code>.Vector center_pos = 1;</code>
+       * <code>.Vector center_pos = 3;</code>
        */
       public Builder clearCenterPos() {
         if (centerPosBuilder_ == null) {
@@ -840,7 +809,7 @@ public final class TreasureMapDetectorDataOuterClass {
         return this;
       }
       /**
-       * <code>.Vector center_pos = 1;</code>
+       * <code>.Vector center_pos = 3;</code>
        */
       public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder getCenterPosBuilder() {
         
@@ -848,7 +817,7 @@ public final class TreasureMapDetectorDataOuterClass {
         return getCenterPosFieldBuilder().getBuilder();
       }
       /**
-       * <code>.Vector center_pos = 1;</code>
+       * <code>.Vector center_pos = 3;</code>
        */
       public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getCenterPosOrBuilder() {
         if (centerPosBuilder_ != null) {
@@ -859,7 +828,7 @@ public final class TreasureMapDetectorDataOuterClass {
         }
       }
       /**
-       * <code>.Vector center_pos = 1;</code>
+       * <code>.Vector center_pos = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> 
@@ -875,40 +844,9 @@ public final class TreasureMapDetectorDataOuterClass {
         return centerPosBuilder_;
       }
 
-      private int radius_ ;
-      /**
-       * <code>uint32 radius = 11;</code>
-       * @return The radius.
-       */
-      @java.lang.Override
-      public int getRadius() {
-        return radius_;
-      }
-      /**
-       * <code>uint32 radius = 11;</code>
-       * @param value The radius to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRadius(int value) {
-        
-        radius_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 radius = 11;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRadius() {
-        
-        radius_ = 0;
-        onChanged();
-        return this;
-      }
-
       private boolean isRegionDetected_ ;
       /**
-       * <code>bool is_region_detected = 6;</code>
+       * <code>bool is_region_detected = 11;</code>
        * @return The isRegionDetected.
        */
       @java.lang.Override
@@ -916,7 +854,7 @@ public final class TreasureMapDetectorDataOuterClass {
         return isRegionDetected_;
       }
       /**
-       * <code>bool is_region_detected = 6;</code>
+       * <code>bool is_region_detected = 11;</code>
        * @param value The isRegionDetected to set.
        * @return This builder for chaining.
        */
@@ -927,12 +865,43 @@ public final class TreasureMapDetectorDataOuterClass {
         return this;
       }
       /**
-       * <code>bool is_region_detected = 6;</code>
+       * <code>bool is_region_detected = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsRegionDetected() {
         
         isRegionDetected_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int radius_ ;
+      /**
+       * <code>uint32 radius = 10;</code>
+       * @return The radius.
+       */
+      @java.lang.Override
+      public int getRadius() {
+        return radius_;
+      }
+      /**
+       * <code>uint32 radius = 10;</code>
+       * @param value The radius to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRadius(int value) {
+        
+        radius_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 radius = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRadius() {
+        
+        radius_ = 0;
         onChanged();
         return this;
       }
@@ -950,7 +919,7 @@ public final class TreasureMapDetectorDataOuterClass {
           emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> spotListBuilder_;
 
       /**
-       * <code>repeated .Vector spot_list = 5;</code>
+       * <code>repeated .Vector spot_list = 9;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.VectorOuterClass.Vector> getSpotListList() {
         if (spotListBuilder_ == null) {
@@ -960,7 +929,7 @@ public final class TreasureMapDetectorDataOuterClass {
         }
       }
       /**
-       * <code>repeated .Vector spot_list = 5;</code>
+       * <code>repeated .Vector spot_list = 9;</code>
        */
       public int getSpotListCount() {
         if (spotListBuilder_ == null) {
@@ -970,7 +939,7 @@ public final class TreasureMapDetectorDataOuterClass {
         }
       }
       /**
-       * <code>repeated .Vector spot_list = 5;</code>
+       * <code>repeated .Vector spot_list = 9;</code>
        */
       public emu.grasscutter.net.proto.VectorOuterClass.Vector getSpotList(int index) {
         if (spotListBuilder_ == null) {
@@ -980,7 +949,7 @@ public final class TreasureMapDetectorDataOuterClass {
         }
       }
       /**
-       * <code>repeated .Vector spot_list = 5;</code>
+       * <code>repeated .Vector spot_list = 9;</code>
        */
       public Builder setSpotList(
           int index, emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
@@ -997,7 +966,7 @@ public final class TreasureMapDetectorDataOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Vector spot_list = 5;</code>
+       * <code>repeated .Vector spot_list = 9;</code>
        */
       public Builder setSpotList(
           int index, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
@@ -1011,7 +980,7 @@ public final class TreasureMapDetectorDataOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Vector spot_list = 5;</code>
+       * <code>repeated .Vector spot_list = 9;</code>
        */
       public Builder addSpotList(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
         if (spotListBuilder_ == null) {
@@ -1027,7 +996,7 @@ public final class TreasureMapDetectorDataOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Vector spot_list = 5;</code>
+       * <code>repeated .Vector spot_list = 9;</code>
        */
       public Builder addSpotList(
           int index, emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
@@ -1044,7 +1013,7 @@ public final class TreasureMapDetectorDataOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Vector spot_list = 5;</code>
+       * <code>repeated .Vector spot_list = 9;</code>
        */
       public Builder addSpotList(
           emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
@@ -1058,7 +1027,7 @@ public final class TreasureMapDetectorDataOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Vector spot_list = 5;</code>
+       * <code>repeated .Vector spot_list = 9;</code>
        */
       public Builder addSpotList(
           int index, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
@@ -1072,7 +1041,7 @@ public final class TreasureMapDetectorDataOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Vector spot_list = 5;</code>
+       * <code>repeated .Vector spot_list = 9;</code>
        */
       public Builder addAllSpotList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.VectorOuterClass.Vector> values) {
@@ -1087,7 +1056,7 @@ public final class TreasureMapDetectorDataOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Vector spot_list = 5;</code>
+       * <code>repeated .Vector spot_list = 9;</code>
        */
       public Builder clearSpotList() {
         if (spotListBuilder_ == null) {
@@ -1100,7 +1069,7 @@ public final class TreasureMapDetectorDataOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Vector spot_list = 5;</code>
+       * <code>repeated .Vector spot_list = 9;</code>
        */
       public Builder removeSpotList(int index) {
         if (spotListBuilder_ == null) {
@@ -1113,14 +1082,14 @@ public final class TreasureMapDetectorDataOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Vector spot_list = 5;</code>
+       * <code>repeated .Vector spot_list = 9;</code>
        */
       public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder getSpotListBuilder(
           int index) {
         return getSpotListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .Vector spot_list = 5;</code>
+       * <code>repeated .Vector spot_list = 9;</code>
        */
       public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getSpotListOrBuilder(
           int index) {
@@ -1130,7 +1099,7 @@ public final class TreasureMapDetectorDataOuterClass {
         }
       }
       /**
-       * <code>repeated .Vector spot_list = 5;</code>
+       * <code>repeated .Vector spot_list = 9;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> 
            getSpotListOrBuilderList() {
@@ -1141,14 +1110,14 @@ public final class TreasureMapDetectorDataOuterClass {
         }
       }
       /**
-       * <code>repeated .Vector spot_list = 5;</code>
+       * <code>repeated .Vector spot_list = 9;</code>
        */
       public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder addSpotListBuilder() {
         return getSpotListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance());
       }
       /**
-       * <code>repeated .Vector spot_list = 5;</code>
+       * <code>repeated .Vector spot_list = 9;</code>
        */
       public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder addSpotListBuilder(
           int index) {
@@ -1156,7 +1125,7 @@ public final class TreasureMapDetectorDataOuterClass {
             index, emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance());
       }
       /**
-       * <code>repeated .Vector spot_list = 5;</code>
+       * <code>repeated .Vector spot_list = 9;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder> 
            getSpotListBuilderList() {
@@ -1175,6 +1144,37 @@ public final class TreasureMapDetectorDataOuterClass {
           spotList_ = null;
         }
         return spotListBuilder_;
+      }
+
+      private int regionId_ ;
+      /**
+       * <code>uint32 region_id = 4;</code>
+       * @return The regionId.
+       */
+      @java.lang.Override
+      public int getRegionId() {
+        return regionId_;
+      }
+      /**
+       * <code>uint32 region_id = 4;</code>
+       * @param value The regionId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRegionId(int value) {
+        
+        regionId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 region_id = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRegionId() {
+        
+        regionId_ = 0;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -1244,10 +1244,10 @@ public final class TreasureMapDetectorDataOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\035TreasureMapDetectorData.proto\032\014Vector." +
-      "proto\"\221\001\n\027TreasureMapDetectorData\022\021\n\treg" +
-      "ion_id\030\002 \001(\r\022\033\n\ncenter_pos\030\001 \001(\0132\007.Vecto" +
-      "r\022\016\n\006radius\030\013 \001(\r\022\032\n\022is_region_detected\030" +
-      "\006 \001(\010\022\032\n\tspot_list\030\005 \003(\0132\007.VectorB\033\n\031emu" +
+      "proto\"\221\001\n\027TreasureMapDetectorData\022\033\n\ncen" +
+      "ter_pos\030\003 \001(\0132\007.Vector\022\032\n\022is_region_dete" +
+      "cted\030\013 \001(\010\022\016\n\006radius\030\n \001(\r\022\032\n\tspot_list\030" +
+      "\t \003(\0132\007.Vector\022\021\n\tregion_id\030\004 \001(\rB\033\n\031emu" +
       ".grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -1260,7 +1260,7 @@ public final class TreasureMapDetectorDataOuterClass {
     internal_static_TreasureMapDetectorData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_TreasureMapDetectorData_descriptor,
-        new java.lang.String[] { "RegionId", "CenterPos", "Radius", "IsRegionDetected", "SpotList", });
+        new java.lang.String[] { "CenterPos", "IsRegionDetected", "Radius", "SpotList", "RegionId", });
     emu.grasscutter.net.proto.VectorOuterClass.getDescriptor();
   }
 

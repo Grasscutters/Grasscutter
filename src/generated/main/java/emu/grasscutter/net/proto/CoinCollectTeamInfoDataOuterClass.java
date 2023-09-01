@@ -19,77 +19,77 @@ public final class CoinCollectTeamInfoDataOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 JFLEEJGJDBJ = 4;</code>
-     * @return A list containing the jFLEEJGJDBJ.
+     * <code>repeated uint32 avatar_id_list = 4;</code>
+     * @return A list containing the avatarIdList.
      */
-    java.util.List<java.lang.Integer> getJFLEEJGJDBJList();
+    java.util.List<java.lang.Integer> getAvatarIdListList();
     /**
-     * <code>repeated uint32 JFLEEJGJDBJ = 4;</code>
-     * @return The count of jFLEEJGJDBJ.
+     * <code>repeated uint32 avatar_id_list = 4;</code>
+     * @return The count of avatarIdList.
      */
-    int getJFLEEJGJDBJCount();
+    int getAvatarIdListCount();
     /**
-     * <code>repeated uint32 JFLEEJGJDBJ = 4;</code>
+     * <code>repeated uint32 avatar_id_list = 4;</code>
      * @param index The index of the element to return.
-     * @return The jFLEEJGJDBJ at the given index.
+     * @return The avatarIdList at the given index.
      */
-    int getJFLEEJGJDBJ(int index);
+    int getAvatarIdList(int index);
 
     /**
-     * <code>uint32 choose_skill_no = 14;</code>
-     * @return The chooseSkillNo.
-     */
-    int getChooseSkillNo();
-
-    /**
-     * <code>uint32 player_uid = 3;</code>
+     * <code>uint32 player_uid = 13;</code>
      * @return The playerUid.
      */
     int getPlayerUid();
 
     /**
-     * <code>repeated uint32 HNHLEEPCLEC = 5;</code>
-     * @return A list containing the hNHLEEPCLEC.
-     */
-    java.util.List<java.lang.Integer> getHNHLEEPCLECList();
-    /**
-     * <code>repeated uint32 HNHLEEPCLEC = 5;</code>
-     * @return The count of hNHLEEPCLEC.
-     */
-    int getHNHLEEPCLECCount();
-    /**
-     * <code>repeated uint32 HNHLEEPCLEC = 5;</code>
-     * @param index The index of the element to return.
-     * @return The hNHLEEPCLEC at the given index.
-     */
-    int getHNHLEEPCLEC(int index);
-
-    /**
-     * <code>bool is_host = 1;</code>
+     * <code>bool is_host = 8;</code>
      * @return The isHost.
      */
     boolean getIsHost();
 
     /**
-     * <code>repeated uint32 avatar_id_list = 6;</code>
-     * @return A list containing the avatarIdList.
+     * <code>uint32 choose_skill_no = 15;</code>
+     * @return The chooseSkillNo.
      */
-    java.util.List<java.lang.Integer> getAvatarIdListList();
+    int getChooseSkillNo();
+
     /**
-     * <code>repeated uint32 avatar_id_list = 6;</code>
-     * @return The count of avatarIdList.
+     * <code>repeated uint32 PLDBCFMDGLP = 12;</code>
+     * @return A list containing the pLDBCFMDGLP.
      */
-    int getAvatarIdListCount();
+    java.util.List<java.lang.Integer> getPLDBCFMDGLPList();
     /**
-     * <code>repeated uint32 avatar_id_list = 6;</code>
+     * <code>repeated uint32 PLDBCFMDGLP = 12;</code>
+     * @return The count of pLDBCFMDGLP.
+     */
+    int getPLDBCFMDGLPCount();
+    /**
+     * <code>repeated uint32 PLDBCFMDGLP = 12;</code>
      * @param index The index of the element to return.
-     * @return The avatarIdList at the given index.
+     * @return The pLDBCFMDGLP at the given index.
      */
-    int getAvatarIdList(int index);
+    int getPLDBCFMDGLP(int index);
+
+    /**
+     * <code>repeated uint32 DIDCPEELBFN = 5;</code>
+     * @return A list containing the dIDCPEELBFN.
+     */
+    java.util.List<java.lang.Integer> getDIDCPEELBFNList();
+    /**
+     * <code>repeated uint32 DIDCPEELBFN = 5;</code>
+     * @return The count of dIDCPEELBFN.
+     */
+    int getDIDCPEELBFNCount();
+    /**
+     * <code>repeated uint32 DIDCPEELBFN = 5;</code>
+     * @param index The index of the element to return.
+     * @return The dIDCPEELBFN at the given index.
+     */
+    int getDIDCPEELBFN(int index);
   }
   /**
    * <pre>
-   * Obf: PJFMFEFLOHD
+   * Obf: NHCKJHAHCFJ
    * </pre>
    *
    * Protobuf type {@code CoinCollectTeamInfoData}
@@ -104,9 +104,9 @@ public final class CoinCollectTeamInfoDataOuterClass {
       super(builder);
     }
     private CoinCollectTeamInfoData() {
-      jFLEEJGJDBJ_ = emptyIntList();
-      hNHLEEPCLEC_ = emptyIntList();
       avatarIdList_ = emptyIntList();
+      pLDBCFMDGLP_ = emptyIntList();
+      dIDCPEELBFN_ = emptyIntList();
     }
 
     @java.lang.Override
@@ -140,72 +140,20 @@ public final class CoinCollectTeamInfoDataOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
-
-              isHost_ = input.readBool();
-              break;
-            }
-            case 24: {
-
-              playerUid_ = input.readUInt32();
-              break;
-            }
             case 32: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                jFLEEJGJDBJ_ = newIntList();
+                avatarIdList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
               }
-              jFLEEJGJDBJ_.addInt(input.readUInt32());
+              avatarIdList_.addInt(input.readUInt32());
               break;
             }
             case 34: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                jFLEEJGJDBJ_ = newIntList();
+                avatarIdList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                jFLEEJGJDBJ_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 40: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                hNHLEEPCLEC_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              hNHLEEPCLEC_.addInt(input.readUInt32());
-              break;
-            }
-            case 42: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
-                hNHLEEPCLEC_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                hNHLEEPCLEC_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 48: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                avatarIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              avatarIdList_.addInt(input.readUInt32());
-              break;
-            }
-            case 50: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000004) != 0) && input.getBytesUntilLimit() > 0) {
-                avatarIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000004;
               }
               while (input.getBytesUntilLimit() > 0) {
                 avatarIdList_.addInt(input.readUInt32());
@@ -213,7 +161,59 @@ public final class CoinCollectTeamInfoDataOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 112: {
+            case 40: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                dIDCPEELBFN_ = newIntList();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              dIDCPEELBFN_.addInt(input.readUInt32());
+              break;
+            }
+            case 42: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000004) != 0) && input.getBytesUntilLimit() > 0) {
+                dIDCPEELBFN_ = newIntList();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                dIDCPEELBFN_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 64: {
+
+              isHost_ = input.readBool();
+              break;
+            }
+            case 96: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                pLDBCFMDGLP_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              pLDBCFMDGLP_.addInt(input.readUInt32());
+              break;
+            }
+            case 98: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+                pLDBCFMDGLP_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                pLDBCFMDGLP_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 104: {
+
+              playerUid_ = input.readUInt32();
+              break;
+            }
+            case 120: {
 
               chooseSkillNo_ = input.readUInt32();
               break;
@@ -234,13 +234,13 @@ public final class CoinCollectTeamInfoDataOuterClass {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          jFLEEJGJDBJ_.makeImmutable(); // C
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          hNHLEEPCLEC_.makeImmutable(); // C
+          avatarIdList_.makeImmutable(); // C
         }
         if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          avatarIdList_.makeImmutable(); // C
+          dIDCPEELBFN_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          pLDBCFMDGLP_.makeImmutable(); // C
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -259,99 +259,10 @@ public final class CoinCollectTeamInfoDataOuterClass {
               emu.grasscutter.net.proto.CoinCollectTeamInfoDataOuterClass.CoinCollectTeamInfoData.class, emu.grasscutter.net.proto.CoinCollectTeamInfoDataOuterClass.CoinCollectTeamInfoData.Builder.class);
     }
 
-    public static final int JFLEEJGJDBJ_FIELD_NUMBER = 4;
-    private com.google.protobuf.Internal.IntList jFLEEJGJDBJ_;
-    /**
-     * <code>repeated uint32 JFLEEJGJDBJ = 4;</code>
-     * @return A list containing the jFLEEJGJDBJ.
-     */
-    @java.lang.Override
-    public java.util.List<java.lang.Integer>
-        getJFLEEJGJDBJList() {
-      return jFLEEJGJDBJ_;
-    }
-    /**
-     * <code>repeated uint32 JFLEEJGJDBJ = 4;</code>
-     * @return The count of jFLEEJGJDBJ.
-     */
-    public int getJFLEEJGJDBJCount() {
-      return jFLEEJGJDBJ_.size();
-    }
-    /**
-     * <code>repeated uint32 JFLEEJGJDBJ = 4;</code>
-     * @param index The index of the element to return.
-     * @return The jFLEEJGJDBJ at the given index.
-     */
-    public int getJFLEEJGJDBJ(int index) {
-      return jFLEEJGJDBJ_.getInt(index);
-    }
-    private int jFLEEJGJDBJMemoizedSerializedSize = -1;
-
-    public static final int CHOOSE_SKILL_NO_FIELD_NUMBER = 14;
-    private int chooseSkillNo_;
-    /**
-     * <code>uint32 choose_skill_no = 14;</code>
-     * @return The chooseSkillNo.
-     */
-    @java.lang.Override
-    public int getChooseSkillNo() {
-      return chooseSkillNo_;
-    }
-
-    public static final int PLAYER_UID_FIELD_NUMBER = 3;
-    private int playerUid_;
-    /**
-     * <code>uint32 player_uid = 3;</code>
-     * @return The playerUid.
-     */
-    @java.lang.Override
-    public int getPlayerUid() {
-      return playerUid_;
-    }
-
-    public static final int HNHLEEPCLEC_FIELD_NUMBER = 5;
-    private com.google.protobuf.Internal.IntList hNHLEEPCLEC_;
-    /**
-     * <code>repeated uint32 HNHLEEPCLEC = 5;</code>
-     * @return A list containing the hNHLEEPCLEC.
-     */
-    @java.lang.Override
-    public java.util.List<java.lang.Integer>
-        getHNHLEEPCLECList() {
-      return hNHLEEPCLEC_;
-    }
-    /**
-     * <code>repeated uint32 HNHLEEPCLEC = 5;</code>
-     * @return The count of hNHLEEPCLEC.
-     */
-    public int getHNHLEEPCLECCount() {
-      return hNHLEEPCLEC_.size();
-    }
-    /**
-     * <code>repeated uint32 HNHLEEPCLEC = 5;</code>
-     * @param index The index of the element to return.
-     * @return The hNHLEEPCLEC at the given index.
-     */
-    public int getHNHLEEPCLEC(int index) {
-      return hNHLEEPCLEC_.getInt(index);
-    }
-    private int hNHLEEPCLECMemoizedSerializedSize = -1;
-
-    public static final int IS_HOST_FIELD_NUMBER = 1;
-    private boolean isHost_;
-    /**
-     * <code>bool is_host = 1;</code>
-     * @return The isHost.
-     */
-    @java.lang.Override
-    public boolean getIsHost() {
-      return isHost_;
-    }
-
-    public static final int AVATAR_ID_LIST_FIELD_NUMBER = 6;
+    public static final int AVATAR_ID_LIST_FIELD_NUMBER = 4;
     private com.google.protobuf.Internal.IntList avatarIdList_;
     /**
-     * <code>repeated uint32 avatar_id_list = 6;</code>
+     * <code>repeated uint32 avatar_id_list = 4;</code>
      * @return A list containing the avatarIdList.
      */
     @java.lang.Override
@@ -360,14 +271,14 @@ public final class CoinCollectTeamInfoDataOuterClass {
       return avatarIdList_;
     }
     /**
-     * <code>repeated uint32 avatar_id_list = 6;</code>
+     * <code>repeated uint32 avatar_id_list = 4;</code>
      * @return The count of avatarIdList.
      */
     public int getAvatarIdListCount() {
       return avatarIdList_.size();
     }
     /**
-     * <code>repeated uint32 avatar_id_list = 6;</code>
+     * <code>repeated uint32 avatar_id_list = 4;</code>
      * @param index The index of the element to return.
      * @return The avatarIdList at the given index.
      */
@@ -375,6 +286,95 @@ public final class CoinCollectTeamInfoDataOuterClass {
       return avatarIdList_.getInt(index);
     }
     private int avatarIdListMemoizedSerializedSize = -1;
+
+    public static final int PLAYER_UID_FIELD_NUMBER = 13;
+    private int playerUid_;
+    /**
+     * <code>uint32 player_uid = 13;</code>
+     * @return The playerUid.
+     */
+    @java.lang.Override
+    public int getPlayerUid() {
+      return playerUid_;
+    }
+
+    public static final int IS_HOST_FIELD_NUMBER = 8;
+    private boolean isHost_;
+    /**
+     * <code>bool is_host = 8;</code>
+     * @return The isHost.
+     */
+    @java.lang.Override
+    public boolean getIsHost() {
+      return isHost_;
+    }
+
+    public static final int CHOOSE_SKILL_NO_FIELD_NUMBER = 15;
+    private int chooseSkillNo_;
+    /**
+     * <code>uint32 choose_skill_no = 15;</code>
+     * @return The chooseSkillNo.
+     */
+    @java.lang.Override
+    public int getChooseSkillNo() {
+      return chooseSkillNo_;
+    }
+
+    public static final int PLDBCFMDGLP_FIELD_NUMBER = 12;
+    private com.google.protobuf.Internal.IntList pLDBCFMDGLP_;
+    /**
+     * <code>repeated uint32 PLDBCFMDGLP = 12;</code>
+     * @return A list containing the pLDBCFMDGLP.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Integer>
+        getPLDBCFMDGLPList() {
+      return pLDBCFMDGLP_;
+    }
+    /**
+     * <code>repeated uint32 PLDBCFMDGLP = 12;</code>
+     * @return The count of pLDBCFMDGLP.
+     */
+    public int getPLDBCFMDGLPCount() {
+      return pLDBCFMDGLP_.size();
+    }
+    /**
+     * <code>repeated uint32 PLDBCFMDGLP = 12;</code>
+     * @param index The index of the element to return.
+     * @return The pLDBCFMDGLP at the given index.
+     */
+    public int getPLDBCFMDGLP(int index) {
+      return pLDBCFMDGLP_.getInt(index);
+    }
+    private int pLDBCFMDGLPMemoizedSerializedSize = -1;
+
+    public static final int DIDCPEELBFN_FIELD_NUMBER = 5;
+    private com.google.protobuf.Internal.IntList dIDCPEELBFN_;
+    /**
+     * <code>repeated uint32 DIDCPEELBFN = 5;</code>
+     * @return A list containing the dIDCPEELBFN.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Integer>
+        getDIDCPEELBFNList() {
+      return dIDCPEELBFN_;
+    }
+    /**
+     * <code>repeated uint32 DIDCPEELBFN = 5;</code>
+     * @return The count of dIDCPEELBFN.
+     */
+    public int getDIDCPEELBFNCount() {
+      return dIDCPEELBFN_.size();
+    }
+    /**
+     * <code>repeated uint32 DIDCPEELBFN = 5;</code>
+     * @param index The index of the element to return.
+     * @return The dIDCPEELBFN at the given index.
+     */
+    public int getDIDCPEELBFN(int index) {
+      return dIDCPEELBFN_.getInt(index);
+    }
+    private int dIDCPEELBFNMemoizedSerializedSize = -1;
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
@@ -391,35 +391,35 @@ public final class CoinCollectTeamInfoDataOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (isHost_ != false) {
-        output.writeBool(1, isHost_);
-      }
-      if (playerUid_ != 0) {
-        output.writeUInt32(3, playerUid_);
-      }
-      if (getJFLEEJGJDBJList().size() > 0) {
-        output.writeUInt32NoTag(34);
-        output.writeUInt32NoTag(jFLEEJGJDBJMemoizedSerializedSize);
-      }
-      for (int i = 0; i < jFLEEJGJDBJ_.size(); i++) {
-        output.writeUInt32NoTag(jFLEEJGJDBJ_.getInt(i));
-      }
-      if (getHNHLEEPCLECList().size() > 0) {
-        output.writeUInt32NoTag(42);
-        output.writeUInt32NoTag(hNHLEEPCLECMemoizedSerializedSize);
-      }
-      for (int i = 0; i < hNHLEEPCLEC_.size(); i++) {
-        output.writeUInt32NoTag(hNHLEEPCLEC_.getInt(i));
-      }
       if (getAvatarIdListList().size() > 0) {
-        output.writeUInt32NoTag(50);
+        output.writeUInt32NoTag(34);
         output.writeUInt32NoTag(avatarIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < avatarIdList_.size(); i++) {
         output.writeUInt32NoTag(avatarIdList_.getInt(i));
       }
+      if (getDIDCPEELBFNList().size() > 0) {
+        output.writeUInt32NoTag(42);
+        output.writeUInt32NoTag(dIDCPEELBFNMemoizedSerializedSize);
+      }
+      for (int i = 0; i < dIDCPEELBFN_.size(); i++) {
+        output.writeUInt32NoTag(dIDCPEELBFN_.getInt(i));
+      }
+      if (isHost_ != false) {
+        output.writeBool(8, isHost_);
+      }
+      if (getPLDBCFMDGLPList().size() > 0) {
+        output.writeUInt32NoTag(98);
+        output.writeUInt32NoTag(pLDBCFMDGLPMemoizedSerializedSize);
+      }
+      for (int i = 0; i < pLDBCFMDGLP_.size(); i++) {
+        output.writeUInt32NoTag(pLDBCFMDGLP_.getInt(i));
+      }
+      if (playerUid_ != 0) {
+        output.writeUInt32(13, playerUid_);
+      }
       if (chooseSkillNo_ != 0) {
-        output.writeUInt32(14, chooseSkillNo_);
+        output.writeUInt32(15, chooseSkillNo_);
       }
       unknownFields.writeTo(output);
     }
@@ -430,42 +430,6 @@ public final class CoinCollectTeamInfoDataOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (isHost_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(1, isHost_);
-      }
-      if (playerUid_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, playerUid_);
-      }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < jFLEEJGJDBJ_.size(); i++) {
-          dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(jFLEEJGJDBJ_.getInt(i));
-        }
-        size += dataSize;
-        if (!getJFLEEJGJDBJList().isEmpty()) {
-          size += 1;
-          size += com.google.protobuf.CodedOutputStream
-              .computeInt32SizeNoTag(dataSize);
-        }
-        jFLEEJGJDBJMemoizedSerializedSize = dataSize;
-      }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < hNHLEEPCLEC_.size(); i++) {
-          dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(hNHLEEPCLEC_.getInt(i));
-        }
-        size += dataSize;
-        if (!getHNHLEEPCLECList().isEmpty()) {
-          size += 1;
-          size += com.google.protobuf.CodedOutputStream
-              .computeInt32SizeNoTag(dataSize);
-        }
-        hNHLEEPCLECMemoizedSerializedSize = dataSize;
-      }
       {
         int dataSize = 0;
         for (int i = 0; i < avatarIdList_.size(); i++) {
@@ -480,9 +444,45 @@ public final class CoinCollectTeamInfoDataOuterClass {
         }
         avatarIdListMemoizedSerializedSize = dataSize;
       }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < dIDCPEELBFN_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeUInt32SizeNoTag(dIDCPEELBFN_.getInt(i));
+        }
+        size += dataSize;
+        if (!getDIDCPEELBFNList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        dIDCPEELBFNMemoizedSerializedSize = dataSize;
+      }
+      if (isHost_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(8, isHost_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < pLDBCFMDGLP_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeUInt32SizeNoTag(pLDBCFMDGLP_.getInt(i));
+        }
+        size += dataSize;
+        if (!getPLDBCFMDGLPList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        pLDBCFMDGLPMemoizedSerializedSize = dataSize;
+      }
+      if (playerUid_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(13, playerUid_);
+      }
       if (chooseSkillNo_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, chooseSkillNo_);
+          .computeUInt32Size(15, chooseSkillNo_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -499,18 +499,18 @@ public final class CoinCollectTeamInfoDataOuterClass {
       }
       emu.grasscutter.net.proto.CoinCollectTeamInfoDataOuterClass.CoinCollectTeamInfoData other = (emu.grasscutter.net.proto.CoinCollectTeamInfoDataOuterClass.CoinCollectTeamInfoData) obj;
 
-      if (!getJFLEEJGJDBJList()
-          .equals(other.getJFLEEJGJDBJList())) return false;
-      if (getChooseSkillNo()
-          != other.getChooseSkillNo()) return false;
-      if (getPlayerUid()
-          != other.getPlayerUid()) return false;
-      if (!getHNHLEEPCLECList()
-          .equals(other.getHNHLEEPCLECList())) return false;
-      if (getIsHost()
-          != other.getIsHost()) return false;
       if (!getAvatarIdListList()
           .equals(other.getAvatarIdListList())) return false;
+      if (getPlayerUid()
+          != other.getPlayerUid()) return false;
+      if (getIsHost()
+          != other.getIsHost()) return false;
+      if (getChooseSkillNo()
+          != other.getChooseSkillNo()) return false;
+      if (!getPLDBCFMDGLPList()
+          .equals(other.getPLDBCFMDGLPList())) return false;
+      if (!getDIDCPEELBFNList()
+          .equals(other.getDIDCPEELBFNList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -522,24 +522,24 @@ public final class CoinCollectTeamInfoDataOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getJFLEEJGJDBJCount() > 0) {
-        hash = (37 * hash) + JFLEEJGJDBJ_FIELD_NUMBER;
-        hash = (53 * hash) + getJFLEEJGJDBJList().hashCode();
-      }
-      hash = (37 * hash) + CHOOSE_SKILL_NO_FIELD_NUMBER;
-      hash = (53 * hash) + getChooseSkillNo();
-      hash = (37 * hash) + PLAYER_UID_FIELD_NUMBER;
-      hash = (53 * hash) + getPlayerUid();
-      if (getHNHLEEPCLECCount() > 0) {
-        hash = (37 * hash) + HNHLEEPCLEC_FIELD_NUMBER;
-        hash = (53 * hash) + getHNHLEEPCLECList().hashCode();
-      }
-      hash = (37 * hash) + IS_HOST_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsHost());
       if (getAvatarIdListCount() > 0) {
         hash = (37 * hash) + AVATAR_ID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getAvatarIdListList().hashCode();
+      }
+      hash = (37 * hash) + PLAYER_UID_FIELD_NUMBER;
+      hash = (53 * hash) + getPlayerUid();
+      hash = (37 * hash) + IS_HOST_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsHost());
+      hash = (37 * hash) + CHOOSE_SKILL_NO_FIELD_NUMBER;
+      hash = (53 * hash) + getChooseSkillNo();
+      if (getPLDBCFMDGLPCount() > 0) {
+        hash = (37 * hash) + PLDBCFMDGLP_FIELD_NUMBER;
+        hash = (53 * hash) + getPLDBCFMDGLPList().hashCode();
+      }
+      if (getDIDCPEELBFNCount() > 0) {
+        hash = (37 * hash) + DIDCPEELBFN_FIELD_NUMBER;
+        hash = (53 * hash) + getDIDCPEELBFNList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -638,7 +638,7 @@ public final class CoinCollectTeamInfoDataOuterClass {
     }
     /**
      * <pre>
-     * Obf: PJFMFEFLOHD
+     * Obf: NHCKJHAHCFJ
      * </pre>
      *
      * Protobuf type {@code CoinCollectTeamInfoData}
@@ -678,17 +678,17 @@ public final class CoinCollectTeamInfoDataOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        jFLEEJGJDBJ_ = emptyIntList();
+        avatarIdList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
-        chooseSkillNo_ = 0;
-
         playerUid_ = 0;
 
-        hNHLEEPCLEC_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
         isHost_ = false;
 
-        avatarIdList_ = emptyIntList();
+        chooseSkillNo_ = 0;
+
+        pLDBCFMDGLP_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        dIDCPEELBFN_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
@@ -718,23 +718,23 @@ public final class CoinCollectTeamInfoDataOuterClass {
         emu.grasscutter.net.proto.CoinCollectTeamInfoDataOuterClass.CoinCollectTeamInfoData result = new emu.grasscutter.net.proto.CoinCollectTeamInfoDataOuterClass.CoinCollectTeamInfoData(this);
         int from_bitField0_ = bitField0_;
         if (((bitField0_ & 0x00000001) != 0)) {
-          jFLEEJGJDBJ_.makeImmutable();
+          avatarIdList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
-        result.jFLEEJGJDBJ_ = jFLEEJGJDBJ_;
-        result.chooseSkillNo_ = chooseSkillNo_;
+        result.avatarIdList_ = avatarIdList_;
         result.playerUid_ = playerUid_;
+        result.isHost_ = isHost_;
+        result.chooseSkillNo_ = chooseSkillNo_;
         if (((bitField0_ & 0x00000002) != 0)) {
-          hNHLEEPCLEC_.makeImmutable();
+          pLDBCFMDGLP_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000002);
         }
-        result.hNHLEEPCLEC_ = hNHLEEPCLEC_;
-        result.isHost_ = isHost_;
+        result.pLDBCFMDGLP_ = pLDBCFMDGLP_;
         if (((bitField0_ & 0x00000004) != 0)) {
-          avatarIdList_.makeImmutable();
+          dIDCPEELBFN_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000004);
         }
-        result.avatarIdList_ = avatarIdList_;
+        result.dIDCPEELBFN_ = dIDCPEELBFN_;
         onBuilt();
         return result;
       }
@@ -783,42 +783,42 @@ public final class CoinCollectTeamInfoDataOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.CoinCollectTeamInfoDataOuterClass.CoinCollectTeamInfoData other) {
         if (other == emu.grasscutter.net.proto.CoinCollectTeamInfoDataOuterClass.CoinCollectTeamInfoData.getDefaultInstance()) return this;
-        if (!other.jFLEEJGJDBJ_.isEmpty()) {
-          if (jFLEEJGJDBJ_.isEmpty()) {
-            jFLEEJGJDBJ_ = other.jFLEEJGJDBJ_;
+        if (!other.avatarIdList_.isEmpty()) {
+          if (avatarIdList_.isEmpty()) {
+            avatarIdList_ = other.avatarIdList_;
             bitField0_ = (bitField0_ & ~0x00000001);
           } else {
-            ensureJFLEEJGJDBJIsMutable();
-            jFLEEJGJDBJ_.addAll(other.jFLEEJGJDBJ_);
+            ensureAvatarIdListIsMutable();
+            avatarIdList_.addAll(other.avatarIdList_);
           }
           onChanged();
-        }
-        if (other.getChooseSkillNo() != 0) {
-          setChooseSkillNo(other.getChooseSkillNo());
         }
         if (other.getPlayerUid() != 0) {
           setPlayerUid(other.getPlayerUid());
         }
-        if (!other.hNHLEEPCLEC_.isEmpty()) {
-          if (hNHLEEPCLEC_.isEmpty()) {
-            hNHLEEPCLEC_ = other.hNHLEEPCLEC_;
-            bitField0_ = (bitField0_ & ~0x00000002);
-          } else {
-            ensureHNHLEEPCLECIsMutable();
-            hNHLEEPCLEC_.addAll(other.hNHLEEPCLEC_);
-          }
-          onChanged();
-        }
         if (other.getIsHost() != false) {
           setIsHost(other.getIsHost());
         }
-        if (!other.avatarIdList_.isEmpty()) {
-          if (avatarIdList_.isEmpty()) {
-            avatarIdList_ = other.avatarIdList_;
+        if (other.getChooseSkillNo() != 0) {
+          setChooseSkillNo(other.getChooseSkillNo());
+        }
+        if (!other.pLDBCFMDGLP_.isEmpty()) {
+          if (pLDBCFMDGLP_.isEmpty()) {
+            pLDBCFMDGLP_ = other.pLDBCFMDGLP_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensurePLDBCFMDGLPIsMutable();
+            pLDBCFMDGLP_.addAll(other.pLDBCFMDGLP_);
+          }
+          onChanged();
+        }
+        if (!other.dIDCPEELBFN_.isEmpty()) {
+          if (dIDCPEELBFN_.isEmpty()) {
+            dIDCPEELBFN_ = other.dIDCPEELBFN_;
             bitField0_ = (bitField0_ & ~0x00000004);
           } else {
-            ensureAvatarIdListIsMutable();
-            avatarIdList_.addAll(other.avatarIdList_);
+            ensureDIDCPEELBFNIsMutable();
+            dIDCPEELBFN_.addAll(other.dIDCPEELBFN_);
           }
           onChanged();
         }
@@ -852,282 +852,31 @@ public final class CoinCollectTeamInfoDataOuterClass {
       }
       private int bitField0_;
 
-      private com.google.protobuf.Internal.IntList jFLEEJGJDBJ_ = emptyIntList();
-      private void ensureJFLEEJGJDBJIsMutable() {
+      private com.google.protobuf.Internal.IntList avatarIdList_ = emptyIntList();
+      private void ensureAvatarIdListIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          jFLEEJGJDBJ_ = mutableCopy(jFLEEJGJDBJ_);
+          avatarIdList_ = mutableCopy(avatarIdList_);
           bitField0_ |= 0x00000001;
          }
       }
       /**
-       * <code>repeated uint32 JFLEEJGJDBJ = 4;</code>
-       * @return A list containing the jFLEEJGJDBJ.
-       */
-      public java.util.List<java.lang.Integer>
-          getJFLEEJGJDBJList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
-                 java.util.Collections.unmodifiableList(jFLEEJGJDBJ_) : jFLEEJGJDBJ_;
-      }
-      /**
-       * <code>repeated uint32 JFLEEJGJDBJ = 4;</code>
-       * @return The count of jFLEEJGJDBJ.
-       */
-      public int getJFLEEJGJDBJCount() {
-        return jFLEEJGJDBJ_.size();
-      }
-      /**
-       * <code>repeated uint32 JFLEEJGJDBJ = 4;</code>
-       * @param index The index of the element to return.
-       * @return The jFLEEJGJDBJ at the given index.
-       */
-      public int getJFLEEJGJDBJ(int index) {
-        return jFLEEJGJDBJ_.getInt(index);
-      }
-      /**
-       * <code>repeated uint32 JFLEEJGJDBJ = 4;</code>
-       * @param index The index to set the value at.
-       * @param value The jFLEEJGJDBJ to set.
-       * @return This builder for chaining.
-       */
-      public Builder setJFLEEJGJDBJ(
-          int index, int value) {
-        ensureJFLEEJGJDBJIsMutable();
-        jFLEEJGJDBJ_.setInt(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 JFLEEJGJDBJ = 4;</code>
-       * @param value The jFLEEJGJDBJ to add.
-       * @return This builder for chaining.
-       */
-      public Builder addJFLEEJGJDBJ(int value) {
-        ensureJFLEEJGJDBJIsMutable();
-        jFLEEJGJDBJ_.addInt(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 JFLEEJGJDBJ = 4;</code>
-       * @param values The jFLEEJGJDBJ to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllJFLEEJGJDBJ(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureJFLEEJGJDBJIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, jFLEEJGJDBJ_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 JFLEEJGJDBJ = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearJFLEEJGJDBJ() {
-        jFLEEJGJDBJ_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-
-      private int chooseSkillNo_ ;
-      /**
-       * <code>uint32 choose_skill_no = 14;</code>
-       * @return The chooseSkillNo.
-       */
-      @java.lang.Override
-      public int getChooseSkillNo() {
-        return chooseSkillNo_;
-      }
-      /**
-       * <code>uint32 choose_skill_no = 14;</code>
-       * @param value The chooseSkillNo to set.
-       * @return This builder for chaining.
-       */
-      public Builder setChooseSkillNo(int value) {
-        
-        chooseSkillNo_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 choose_skill_no = 14;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearChooseSkillNo() {
-        
-        chooseSkillNo_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int playerUid_ ;
-      /**
-       * <code>uint32 player_uid = 3;</code>
-       * @return The playerUid.
-       */
-      @java.lang.Override
-      public int getPlayerUid() {
-        return playerUid_;
-      }
-      /**
-       * <code>uint32 player_uid = 3;</code>
-       * @param value The playerUid to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPlayerUid(int value) {
-        
-        playerUid_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 player_uid = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPlayerUid() {
-        
-        playerUid_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.Internal.IntList hNHLEEPCLEC_ = emptyIntList();
-      private void ensureHNHLEEPCLECIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
-          hNHLEEPCLEC_ = mutableCopy(hNHLEEPCLEC_);
-          bitField0_ |= 0x00000002;
-         }
-      }
-      /**
-       * <code>repeated uint32 HNHLEEPCLEC = 5;</code>
-       * @return A list containing the hNHLEEPCLEC.
-       */
-      public java.util.List<java.lang.Integer>
-          getHNHLEEPCLECList() {
-        return ((bitField0_ & 0x00000002) != 0) ?
-                 java.util.Collections.unmodifiableList(hNHLEEPCLEC_) : hNHLEEPCLEC_;
-      }
-      /**
-       * <code>repeated uint32 HNHLEEPCLEC = 5;</code>
-       * @return The count of hNHLEEPCLEC.
-       */
-      public int getHNHLEEPCLECCount() {
-        return hNHLEEPCLEC_.size();
-      }
-      /**
-       * <code>repeated uint32 HNHLEEPCLEC = 5;</code>
-       * @param index The index of the element to return.
-       * @return The hNHLEEPCLEC at the given index.
-       */
-      public int getHNHLEEPCLEC(int index) {
-        return hNHLEEPCLEC_.getInt(index);
-      }
-      /**
-       * <code>repeated uint32 HNHLEEPCLEC = 5;</code>
-       * @param index The index to set the value at.
-       * @param value The hNHLEEPCLEC to set.
-       * @return This builder for chaining.
-       */
-      public Builder setHNHLEEPCLEC(
-          int index, int value) {
-        ensureHNHLEEPCLECIsMutable();
-        hNHLEEPCLEC_.setInt(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 HNHLEEPCLEC = 5;</code>
-       * @param value The hNHLEEPCLEC to add.
-       * @return This builder for chaining.
-       */
-      public Builder addHNHLEEPCLEC(int value) {
-        ensureHNHLEEPCLECIsMutable();
-        hNHLEEPCLEC_.addInt(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 HNHLEEPCLEC = 5;</code>
-       * @param values The hNHLEEPCLEC to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllHNHLEEPCLEC(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureHNHLEEPCLECIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, hNHLEEPCLEC_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 HNHLEEPCLEC = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearHNHLEEPCLEC() {
-        hNHLEEPCLEC_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
-        onChanged();
-        return this;
-      }
-
-      private boolean isHost_ ;
-      /**
-       * <code>bool is_host = 1;</code>
-       * @return The isHost.
-       */
-      @java.lang.Override
-      public boolean getIsHost() {
-        return isHost_;
-      }
-      /**
-       * <code>bool is_host = 1;</code>
-       * @param value The isHost to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsHost(boolean value) {
-        
-        isHost_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_host = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsHost() {
-        
-        isHost_ = false;
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.Internal.IntList avatarIdList_ = emptyIntList();
-      private void ensureAvatarIdListIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
-          avatarIdList_ = mutableCopy(avatarIdList_);
-          bitField0_ |= 0x00000004;
-         }
-      }
-      /**
-       * <code>repeated uint32 avatar_id_list = 6;</code>
+       * <code>repeated uint32 avatar_id_list = 4;</code>
        * @return A list containing the avatarIdList.
        */
       public java.util.List<java.lang.Integer>
           getAvatarIdListList() {
-        return ((bitField0_ & 0x00000004) != 0) ?
+        return ((bitField0_ & 0x00000001) != 0) ?
                  java.util.Collections.unmodifiableList(avatarIdList_) : avatarIdList_;
       }
       /**
-       * <code>repeated uint32 avatar_id_list = 6;</code>
+       * <code>repeated uint32 avatar_id_list = 4;</code>
        * @return The count of avatarIdList.
        */
       public int getAvatarIdListCount() {
         return avatarIdList_.size();
       }
       /**
-       * <code>repeated uint32 avatar_id_list = 6;</code>
+       * <code>repeated uint32 avatar_id_list = 4;</code>
        * @param index The index of the element to return.
        * @return The avatarIdList at the given index.
        */
@@ -1135,7 +884,7 @@ public final class CoinCollectTeamInfoDataOuterClass {
         return avatarIdList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 avatar_id_list = 6;</code>
+       * <code>repeated uint32 avatar_id_list = 4;</code>
        * @param index The index to set the value at.
        * @param value The avatarIdList to set.
        * @return This builder for chaining.
@@ -1148,7 +897,7 @@ public final class CoinCollectTeamInfoDataOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 avatar_id_list = 6;</code>
+       * <code>repeated uint32 avatar_id_list = 4;</code>
        * @param value The avatarIdList to add.
        * @return This builder for chaining.
        */
@@ -1159,7 +908,7 @@ public final class CoinCollectTeamInfoDataOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 avatar_id_list = 6;</code>
+       * <code>repeated uint32 avatar_id_list = 4;</code>
        * @param values The avatarIdList to add.
        * @return This builder for chaining.
        */
@@ -1172,11 +921,262 @@ public final class CoinCollectTeamInfoDataOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 avatar_id_list = 6;</code>
+       * <code>repeated uint32 avatar_id_list = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearAvatarIdList() {
         avatarIdList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      private int playerUid_ ;
+      /**
+       * <code>uint32 player_uid = 13;</code>
+       * @return The playerUid.
+       */
+      @java.lang.Override
+      public int getPlayerUid() {
+        return playerUid_;
+      }
+      /**
+       * <code>uint32 player_uid = 13;</code>
+       * @param value The playerUid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPlayerUid(int value) {
+        
+        playerUid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 player_uid = 13;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPlayerUid() {
+        
+        playerUid_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean isHost_ ;
+      /**
+       * <code>bool is_host = 8;</code>
+       * @return The isHost.
+       */
+      @java.lang.Override
+      public boolean getIsHost() {
+        return isHost_;
+      }
+      /**
+       * <code>bool is_host = 8;</code>
+       * @param value The isHost to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsHost(boolean value) {
+        
+        isHost_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_host = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsHost() {
+        
+        isHost_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int chooseSkillNo_ ;
+      /**
+       * <code>uint32 choose_skill_no = 15;</code>
+       * @return The chooseSkillNo.
+       */
+      @java.lang.Override
+      public int getChooseSkillNo() {
+        return chooseSkillNo_;
+      }
+      /**
+       * <code>uint32 choose_skill_no = 15;</code>
+       * @param value The chooseSkillNo to set.
+       * @return This builder for chaining.
+       */
+      public Builder setChooseSkillNo(int value) {
+        
+        chooseSkillNo_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 choose_skill_no = 15;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearChooseSkillNo() {
+        
+        chooseSkillNo_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Internal.IntList pLDBCFMDGLP_ = emptyIntList();
+      private void ensurePLDBCFMDGLPIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          pLDBCFMDGLP_ = mutableCopy(pLDBCFMDGLP_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+      /**
+       * <code>repeated uint32 PLDBCFMDGLP = 12;</code>
+       * @return A list containing the pLDBCFMDGLP.
+       */
+      public java.util.List<java.lang.Integer>
+          getPLDBCFMDGLPList() {
+        return ((bitField0_ & 0x00000002) != 0) ?
+                 java.util.Collections.unmodifiableList(pLDBCFMDGLP_) : pLDBCFMDGLP_;
+      }
+      /**
+       * <code>repeated uint32 PLDBCFMDGLP = 12;</code>
+       * @return The count of pLDBCFMDGLP.
+       */
+      public int getPLDBCFMDGLPCount() {
+        return pLDBCFMDGLP_.size();
+      }
+      /**
+       * <code>repeated uint32 PLDBCFMDGLP = 12;</code>
+       * @param index The index of the element to return.
+       * @return The pLDBCFMDGLP at the given index.
+       */
+      public int getPLDBCFMDGLP(int index) {
+        return pLDBCFMDGLP_.getInt(index);
+      }
+      /**
+       * <code>repeated uint32 PLDBCFMDGLP = 12;</code>
+       * @param index The index to set the value at.
+       * @param value The pLDBCFMDGLP to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPLDBCFMDGLP(
+          int index, int value) {
+        ensurePLDBCFMDGLPIsMutable();
+        pLDBCFMDGLP_.setInt(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 PLDBCFMDGLP = 12;</code>
+       * @param value The pLDBCFMDGLP to add.
+       * @return This builder for chaining.
+       */
+      public Builder addPLDBCFMDGLP(int value) {
+        ensurePLDBCFMDGLPIsMutable();
+        pLDBCFMDGLP_.addInt(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 PLDBCFMDGLP = 12;</code>
+       * @param values The pLDBCFMDGLP to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllPLDBCFMDGLP(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensurePLDBCFMDGLPIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, pLDBCFMDGLP_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 PLDBCFMDGLP = 12;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPLDBCFMDGLP() {
+        pLDBCFMDGLP_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Internal.IntList dIDCPEELBFN_ = emptyIntList();
+      private void ensureDIDCPEELBFNIsMutable() {
+        if (!((bitField0_ & 0x00000004) != 0)) {
+          dIDCPEELBFN_ = mutableCopy(dIDCPEELBFN_);
+          bitField0_ |= 0x00000004;
+         }
+      }
+      /**
+       * <code>repeated uint32 DIDCPEELBFN = 5;</code>
+       * @return A list containing the dIDCPEELBFN.
+       */
+      public java.util.List<java.lang.Integer>
+          getDIDCPEELBFNList() {
+        return ((bitField0_ & 0x00000004) != 0) ?
+                 java.util.Collections.unmodifiableList(dIDCPEELBFN_) : dIDCPEELBFN_;
+      }
+      /**
+       * <code>repeated uint32 DIDCPEELBFN = 5;</code>
+       * @return The count of dIDCPEELBFN.
+       */
+      public int getDIDCPEELBFNCount() {
+        return dIDCPEELBFN_.size();
+      }
+      /**
+       * <code>repeated uint32 DIDCPEELBFN = 5;</code>
+       * @param index The index of the element to return.
+       * @return The dIDCPEELBFN at the given index.
+       */
+      public int getDIDCPEELBFN(int index) {
+        return dIDCPEELBFN_.getInt(index);
+      }
+      /**
+       * <code>repeated uint32 DIDCPEELBFN = 5;</code>
+       * @param index The index to set the value at.
+       * @param value The dIDCPEELBFN to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDIDCPEELBFN(
+          int index, int value) {
+        ensureDIDCPEELBFNIsMutable();
+        dIDCPEELBFN_.setInt(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 DIDCPEELBFN = 5;</code>
+       * @param value The dIDCPEELBFN to add.
+       * @return This builder for chaining.
+       */
+      public Builder addDIDCPEELBFN(int value) {
+        ensureDIDCPEELBFNIsMutable();
+        dIDCPEELBFN_.addInt(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 DIDCPEELBFN = 5;</code>
+       * @param values The dIDCPEELBFN to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllDIDCPEELBFN(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureDIDCPEELBFNIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, dIDCPEELBFN_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 DIDCPEELBFN = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDIDCPEELBFN() {
+        dIDCPEELBFN_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
@@ -1249,10 +1249,10 @@ public final class CoinCollectTeamInfoDataOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\035CoinCollectTeamInfoData.proto\"\231\001\n\027Coin" +
-      "CollectTeamInfoData\022\023\n\013JFLEEJGJDBJ\030\004 \003(\r" +
-      "\022\027\n\017choose_skill_no\030\016 \001(\r\022\022\n\nplayer_uid\030" +
-      "\003 \001(\r\022\023\n\013HNHLEEPCLEC\030\005 \003(\r\022\017\n\007is_host\030\001 " +
-      "\001(\010\022\026\n\016avatar_id_list\030\006 \003(\rB\033\n\031emu.grass" +
+      "CollectTeamInfoData\022\026\n\016avatar_id_list\030\004 " +
+      "\003(\r\022\022\n\nplayer_uid\030\r \001(\r\022\017\n\007is_host\030\010 \001(\010" +
+      "\022\027\n\017choose_skill_no\030\017 \001(\r\022\023\n\013PLDBCFMDGLP" +
+      "\030\014 \003(\r\022\023\n\013DIDCPEELBFN\030\005 \003(\rB\033\n\031emu.grass" +
       "cutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -1264,7 +1264,7 @@ public final class CoinCollectTeamInfoDataOuterClass {
     internal_static_CoinCollectTeamInfoData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CoinCollectTeamInfoData_descriptor,
-        new java.lang.String[] { "JFLEEJGJDBJ", "ChooseSkillNo", "PlayerUid", "HNHLEEPCLEC", "IsHost", "AvatarIdList", });
+        new java.lang.String[] { "AvatarIdList", "PlayerUid", "IsHost", "ChooseSkillNo", "PLDBCFMDGLP", "DIDCPEELBFN", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

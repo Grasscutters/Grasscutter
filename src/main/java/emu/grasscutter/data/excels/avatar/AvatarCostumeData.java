@@ -1,9 +1,7 @@
 package emu.grasscutter.data.excels.avatar;
 
 import com.google.gson.annotations.SerializedName;
-import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.GameResource;
-import emu.grasscutter.data.ResourceType;
+import emu.grasscutter.data.*;
 
 @ResourceType(name = "AvatarCostumeExcelConfigData.json")
 public class AvatarCostumeData extends GameResource {

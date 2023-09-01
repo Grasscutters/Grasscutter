@@ -19,43 +19,43 @@ public final class ServerLogNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.ServerLogType FHJIOJOGJHJ = 1;</code>
-     * @return The enum numeric value on the wire for fHJIOJOGJHJ.
+     * <code>.ServerLogType log_type = 7;</code>
+     * @return The enum numeric value on the wire for logType.
      */
-    int getFHJIOJOGJHJValue();
+    int getLogTypeValue();
     /**
-     * <code>.ServerLogType FHJIOJOGJHJ = 1;</code>
-     * @return The fHJIOJOGJHJ.
+     * <code>.ServerLogType log_type = 7;</code>
+     * @return The logType.
      */
-    emu.grasscutter.net.proto.ServerLogTypeOuterClass.ServerLogType getFHJIOJOGJHJ();
+    emu.grasscutter.net.proto.ServerLogTypeOuterClass.ServerLogType getLogType();
 
     /**
-     * <code>string server_log = 4;</code>
+     * <code>.ServerLogLevel log_level = 8;</code>
+     * @return The enum numeric value on the wire for logLevel.
+     */
+    int getLogLevelValue();
+    /**
+     * <code>.ServerLogLevel log_level = 8;</code>
+     * @return The logLevel.
+     */
+    emu.grasscutter.net.proto.ServerLogLevelOuterClass.ServerLogLevel getLogLevel();
+
+    /**
+     * <code>string server_log = 3;</code>
      * @return The serverLog.
      */
     java.lang.String getServerLog();
     /**
-     * <code>string server_log = 4;</code>
+     * <code>string server_log = 3;</code>
      * @return The bytes for serverLog.
      */
     com.google.protobuf.ByteString
         getServerLogBytes();
-
-    /**
-     * <code>.ServerLogLevel DBILBLAGLPC = 9;</code>
-     * @return The enum numeric value on the wire for dBILBLAGLPC.
-     */
-    int getDBILBLAGLPCValue();
-    /**
-     * <code>.ServerLogLevel DBILBLAGLPC = 9;</code>
-     * @return The dBILBLAGLPC.
-     */
-    emu.grasscutter.net.proto.ServerLogLevelOuterClass.ServerLogLevel getDBILBLAGLPC();
   }
   /**
    * <pre>
-   * CmdId: 84
-   * Obf: PAIOIAPJEEM
+   * CmdId: 7350
+   * Obf: FLLKMEPDPHJ
    * </pre>
    *
    * Protobuf type {@code ServerLogNotify}
@@ -70,9 +70,9 @@ public final class ServerLogNotifyOuterClass {
       super(builder);
     }
     private ServerLogNotify() {
-      fHJIOJOGJHJ_ = 0;
+      logType_ = 0;
+      logLevel_ = 0;
       serverLog_ = "";
-      dBILBLAGLPC_ = 0;
     }
 
     @java.lang.Override
@@ -105,22 +105,22 @@ public final class ServerLogNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
-              int rawValue = input.readEnum();
-
-              fHJIOJOGJHJ_ = rawValue;
-              break;
-            }
-            case 34: {
+            case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
               serverLog_ = s;
               break;
             }
-            case 72: {
+            case 56: {
               int rawValue = input.readEnum();
 
-              dBILBLAGLPC_ = rawValue;
+              logType_ = rawValue;
+              break;
+            }
+            case 64: {
+              int rawValue = input.readEnum();
+
+              logLevel_ = rawValue;
               break;
             }
             default: {
@@ -155,29 +155,48 @@ public final class ServerLogNotifyOuterClass {
               emu.grasscutter.net.proto.ServerLogNotifyOuterClass.ServerLogNotify.class, emu.grasscutter.net.proto.ServerLogNotifyOuterClass.ServerLogNotify.Builder.class);
     }
 
-    public static final int FHJIOJOGJHJ_FIELD_NUMBER = 1;
-    private int fHJIOJOGJHJ_;
+    public static final int LOG_TYPE_FIELD_NUMBER = 7;
+    private int logType_;
     /**
-     * <code>.ServerLogType FHJIOJOGJHJ = 1;</code>
-     * @return The enum numeric value on the wire for fHJIOJOGJHJ.
+     * <code>.ServerLogType log_type = 7;</code>
+     * @return The enum numeric value on the wire for logType.
      */
-    @java.lang.Override public int getFHJIOJOGJHJValue() {
-      return fHJIOJOGJHJ_;
+    @java.lang.Override public int getLogTypeValue() {
+      return logType_;
     }
     /**
-     * <code>.ServerLogType FHJIOJOGJHJ = 1;</code>
-     * @return The fHJIOJOGJHJ.
+     * <code>.ServerLogType log_type = 7;</code>
+     * @return The logType.
      */
-    @java.lang.Override public emu.grasscutter.net.proto.ServerLogTypeOuterClass.ServerLogType getFHJIOJOGJHJ() {
+    @java.lang.Override public emu.grasscutter.net.proto.ServerLogTypeOuterClass.ServerLogType getLogType() {
       @SuppressWarnings("deprecation")
-      emu.grasscutter.net.proto.ServerLogTypeOuterClass.ServerLogType result = emu.grasscutter.net.proto.ServerLogTypeOuterClass.ServerLogType.valueOf(fHJIOJOGJHJ_);
+      emu.grasscutter.net.proto.ServerLogTypeOuterClass.ServerLogType result = emu.grasscutter.net.proto.ServerLogTypeOuterClass.ServerLogType.valueOf(logType_);
       return result == null ? emu.grasscutter.net.proto.ServerLogTypeOuterClass.ServerLogType.UNRECOGNIZED : result;
     }
 
-    public static final int SERVER_LOG_FIELD_NUMBER = 4;
+    public static final int LOG_LEVEL_FIELD_NUMBER = 8;
+    private int logLevel_;
+    /**
+     * <code>.ServerLogLevel log_level = 8;</code>
+     * @return The enum numeric value on the wire for logLevel.
+     */
+    @java.lang.Override public int getLogLevelValue() {
+      return logLevel_;
+    }
+    /**
+     * <code>.ServerLogLevel log_level = 8;</code>
+     * @return The logLevel.
+     */
+    @java.lang.Override public emu.grasscutter.net.proto.ServerLogLevelOuterClass.ServerLogLevel getLogLevel() {
+      @SuppressWarnings("deprecation")
+      emu.grasscutter.net.proto.ServerLogLevelOuterClass.ServerLogLevel result = emu.grasscutter.net.proto.ServerLogLevelOuterClass.ServerLogLevel.valueOf(logLevel_);
+      return result == null ? emu.grasscutter.net.proto.ServerLogLevelOuterClass.ServerLogLevel.UNRECOGNIZED : result;
+    }
+
+    public static final int SERVER_LOG_FIELD_NUMBER = 3;
     private volatile java.lang.Object serverLog_;
     /**
-     * <code>string server_log = 4;</code>
+     * <code>string server_log = 3;</code>
      * @return The serverLog.
      */
     @java.lang.Override
@@ -194,7 +213,7 @@ public final class ServerLogNotifyOuterClass {
       }
     }
     /**
-     * <code>string server_log = 4;</code>
+     * <code>string server_log = 3;</code>
      * @return The bytes for serverLog.
      */
     @java.lang.Override
@@ -212,25 +231,6 @@ public final class ServerLogNotifyOuterClass {
       }
     }
 
-    public static final int DBILBLAGLPC_FIELD_NUMBER = 9;
-    private int dBILBLAGLPC_;
-    /**
-     * <code>.ServerLogLevel DBILBLAGLPC = 9;</code>
-     * @return The enum numeric value on the wire for dBILBLAGLPC.
-     */
-    @java.lang.Override public int getDBILBLAGLPCValue() {
-      return dBILBLAGLPC_;
-    }
-    /**
-     * <code>.ServerLogLevel DBILBLAGLPC = 9;</code>
-     * @return The dBILBLAGLPC.
-     */
-    @java.lang.Override public emu.grasscutter.net.proto.ServerLogLevelOuterClass.ServerLogLevel getDBILBLAGLPC() {
-      @SuppressWarnings("deprecation")
-      emu.grasscutter.net.proto.ServerLogLevelOuterClass.ServerLogLevel result = emu.grasscutter.net.proto.ServerLogLevelOuterClass.ServerLogLevel.valueOf(dBILBLAGLPC_);
-      return result == null ? emu.grasscutter.net.proto.ServerLogLevelOuterClass.ServerLogLevel.UNRECOGNIZED : result;
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -245,14 +245,14 @@ public final class ServerLogNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (fHJIOJOGJHJ_ != emu.grasscutter.net.proto.ServerLogTypeOuterClass.ServerLogType.SERVER_LOG_NONE.getNumber()) {
-        output.writeEnum(1, fHJIOJOGJHJ_);
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serverLog_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, serverLog_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, serverLog_);
       }
-      if (dBILBLAGLPC_ != emu.grasscutter.net.proto.ServerLogLevelOuterClass.ServerLogLevel.LOG_LEVEL_NONE.getNumber()) {
-        output.writeEnum(9, dBILBLAGLPC_);
+      if (logType_ != emu.grasscutter.net.proto.ServerLogTypeOuterClass.ServerLogType.SERVER_LOG_NONE.getNumber()) {
+        output.writeEnum(7, logType_);
+      }
+      if (logLevel_ != emu.grasscutter.net.proto.ServerLogLevelOuterClass.ServerLogLevel.LOG_LEVEL_NONE.getNumber()) {
+        output.writeEnum(8, logLevel_);
       }
       unknownFields.writeTo(output);
     }
@@ -263,16 +263,16 @@ public final class ServerLogNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (fHJIOJOGJHJ_ != emu.grasscutter.net.proto.ServerLogTypeOuterClass.ServerLogType.SERVER_LOG_NONE.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(1, fHJIOJOGJHJ_);
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serverLog_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, serverLog_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, serverLog_);
       }
-      if (dBILBLAGLPC_ != emu.grasscutter.net.proto.ServerLogLevelOuterClass.ServerLogLevel.LOG_LEVEL_NONE.getNumber()) {
+      if (logType_ != emu.grasscutter.net.proto.ServerLogTypeOuterClass.ServerLogType.SERVER_LOG_NONE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(9, dBILBLAGLPC_);
+          .computeEnumSize(7, logType_);
+      }
+      if (logLevel_ != emu.grasscutter.net.proto.ServerLogLevelOuterClass.ServerLogLevel.LOG_LEVEL_NONE.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(8, logLevel_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -289,10 +289,10 @@ public final class ServerLogNotifyOuterClass {
       }
       emu.grasscutter.net.proto.ServerLogNotifyOuterClass.ServerLogNotify other = (emu.grasscutter.net.proto.ServerLogNotifyOuterClass.ServerLogNotify) obj;
 
-      if (fHJIOJOGJHJ_ != other.fHJIOJOGJHJ_) return false;
+      if (logType_ != other.logType_) return false;
+      if (logLevel_ != other.logLevel_) return false;
       if (!getServerLog()
           .equals(other.getServerLog())) return false;
-      if (dBILBLAGLPC_ != other.dBILBLAGLPC_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -304,12 +304,12 @@ public final class ServerLogNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + FHJIOJOGJHJ_FIELD_NUMBER;
-      hash = (53 * hash) + fHJIOJOGJHJ_;
+      hash = (37 * hash) + LOG_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + logType_;
+      hash = (37 * hash) + LOG_LEVEL_FIELD_NUMBER;
+      hash = (53 * hash) + logLevel_;
       hash = (37 * hash) + SERVER_LOG_FIELD_NUMBER;
       hash = (53 * hash) + getServerLog().hashCode();
-      hash = (37 * hash) + DBILBLAGLPC_FIELD_NUMBER;
-      hash = (53 * hash) + dBILBLAGLPC_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -407,8 +407,8 @@ public final class ServerLogNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 84
-     * Obf: PAIOIAPJEEM
+     * CmdId: 7350
+     * Obf: FLLKMEPDPHJ
      * </pre>
      *
      * Protobuf type {@code ServerLogNotify}
@@ -448,11 +448,11 @@ public final class ServerLogNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        fHJIOJOGJHJ_ = 0;
+        logType_ = 0;
+
+        logLevel_ = 0;
 
         serverLog_ = "";
-
-        dBILBLAGLPC_ = 0;
 
         return this;
       }
@@ -480,9 +480,9 @@ public final class ServerLogNotifyOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.ServerLogNotifyOuterClass.ServerLogNotify buildPartial() {
         emu.grasscutter.net.proto.ServerLogNotifyOuterClass.ServerLogNotify result = new emu.grasscutter.net.proto.ServerLogNotifyOuterClass.ServerLogNotify(this);
-        result.fHJIOJOGJHJ_ = fHJIOJOGJHJ_;
+        result.logType_ = logType_;
+        result.logLevel_ = logLevel_;
         result.serverLog_ = serverLog_;
-        result.dBILBLAGLPC_ = dBILBLAGLPC_;
         onBuilt();
         return result;
       }
@@ -531,15 +531,15 @@ public final class ServerLogNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.ServerLogNotifyOuterClass.ServerLogNotify other) {
         if (other == emu.grasscutter.net.proto.ServerLogNotifyOuterClass.ServerLogNotify.getDefaultInstance()) return this;
-        if (other.fHJIOJOGJHJ_ != 0) {
-          setFHJIOJOGJHJValue(other.getFHJIOJOGJHJValue());
+        if (other.logType_ != 0) {
+          setLogTypeValue(other.getLogTypeValue());
+        }
+        if (other.logLevel_ != 0) {
+          setLogLevelValue(other.getLogLevelValue());
         }
         if (!other.getServerLog().isEmpty()) {
           serverLog_ = other.serverLog_;
           onChanged();
-        }
-        if (other.dBILBLAGLPC_ != 0) {
-          setDBILBLAGLPCValue(other.getDBILBLAGLPCValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -570,63 +570,117 @@ public final class ServerLogNotifyOuterClass {
         return this;
       }
 
-      private int fHJIOJOGJHJ_ = 0;
+      private int logType_ = 0;
       /**
-       * <code>.ServerLogType FHJIOJOGJHJ = 1;</code>
-       * @return The enum numeric value on the wire for fHJIOJOGJHJ.
+       * <code>.ServerLogType log_type = 7;</code>
+       * @return The enum numeric value on the wire for logType.
        */
-      @java.lang.Override public int getFHJIOJOGJHJValue() {
-        return fHJIOJOGJHJ_;
+      @java.lang.Override public int getLogTypeValue() {
+        return logType_;
       }
       /**
-       * <code>.ServerLogType FHJIOJOGJHJ = 1;</code>
-       * @param value The enum numeric value on the wire for fHJIOJOGJHJ to set.
+       * <code>.ServerLogType log_type = 7;</code>
+       * @param value The enum numeric value on the wire for logType to set.
        * @return This builder for chaining.
        */
-      public Builder setFHJIOJOGJHJValue(int value) {
+      public Builder setLogTypeValue(int value) {
         
-        fHJIOJOGJHJ_ = value;
+        logType_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>.ServerLogType FHJIOJOGJHJ = 1;</code>
-       * @return The fHJIOJOGJHJ.
+       * <code>.ServerLogType log_type = 7;</code>
+       * @return The logType.
        */
       @java.lang.Override
-      public emu.grasscutter.net.proto.ServerLogTypeOuterClass.ServerLogType getFHJIOJOGJHJ() {
+      public emu.grasscutter.net.proto.ServerLogTypeOuterClass.ServerLogType getLogType() {
         @SuppressWarnings("deprecation")
-        emu.grasscutter.net.proto.ServerLogTypeOuterClass.ServerLogType result = emu.grasscutter.net.proto.ServerLogTypeOuterClass.ServerLogType.valueOf(fHJIOJOGJHJ_);
+        emu.grasscutter.net.proto.ServerLogTypeOuterClass.ServerLogType result = emu.grasscutter.net.proto.ServerLogTypeOuterClass.ServerLogType.valueOf(logType_);
         return result == null ? emu.grasscutter.net.proto.ServerLogTypeOuterClass.ServerLogType.UNRECOGNIZED : result;
       }
       /**
-       * <code>.ServerLogType FHJIOJOGJHJ = 1;</code>
-       * @param value The fHJIOJOGJHJ to set.
+       * <code>.ServerLogType log_type = 7;</code>
+       * @param value The logType to set.
        * @return This builder for chaining.
        */
-      public Builder setFHJIOJOGJHJ(emu.grasscutter.net.proto.ServerLogTypeOuterClass.ServerLogType value) {
+      public Builder setLogType(emu.grasscutter.net.proto.ServerLogTypeOuterClass.ServerLogType value) {
         if (value == null) {
           throw new NullPointerException();
         }
         
-        fHJIOJOGJHJ_ = value.getNumber();
+        logType_ = value.getNumber();
         onChanged();
         return this;
       }
       /**
-       * <code>.ServerLogType FHJIOJOGJHJ = 1;</code>
+       * <code>.ServerLogType log_type = 7;</code>
        * @return This builder for chaining.
        */
-      public Builder clearFHJIOJOGJHJ() {
+      public Builder clearLogType() {
         
-        fHJIOJOGJHJ_ = 0;
+        logType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int logLevel_ = 0;
+      /**
+       * <code>.ServerLogLevel log_level = 8;</code>
+       * @return The enum numeric value on the wire for logLevel.
+       */
+      @java.lang.Override public int getLogLevelValue() {
+        return logLevel_;
+      }
+      /**
+       * <code>.ServerLogLevel log_level = 8;</code>
+       * @param value The enum numeric value on the wire for logLevel to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLogLevelValue(int value) {
+        
+        logLevel_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.ServerLogLevel log_level = 8;</code>
+       * @return The logLevel.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.ServerLogLevelOuterClass.ServerLogLevel getLogLevel() {
+        @SuppressWarnings("deprecation")
+        emu.grasscutter.net.proto.ServerLogLevelOuterClass.ServerLogLevel result = emu.grasscutter.net.proto.ServerLogLevelOuterClass.ServerLogLevel.valueOf(logLevel_);
+        return result == null ? emu.grasscutter.net.proto.ServerLogLevelOuterClass.ServerLogLevel.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.ServerLogLevel log_level = 8;</code>
+       * @param value The logLevel to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLogLevel(emu.grasscutter.net.proto.ServerLogLevelOuterClass.ServerLogLevel value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        logLevel_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.ServerLogLevel log_level = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLogLevel() {
+        
+        logLevel_ = 0;
         onChanged();
         return this;
       }
 
       private java.lang.Object serverLog_ = "";
       /**
-       * <code>string server_log = 4;</code>
+       * <code>string server_log = 3;</code>
        * @return The serverLog.
        */
       public java.lang.String getServerLog() {
@@ -642,7 +696,7 @@ public final class ServerLogNotifyOuterClass {
         }
       }
       /**
-       * <code>string server_log = 4;</code>
+       * <code>string server_log = 3;</code>
        * @return The bytes for serverLog.
        */
       public com.google.protobuf.ByteString
@@ -659,7 +713,7 @@ public final class ServerLogNotifyOuterClass {
         }
       }
       /**
-       * <code>string server_log = 4;</code>
+       * <code>string server_log = 3;</code>
        * @param value The serverLog to set.
        * @return This builder for chaining.
        */
@@ -674,7 +728,7 @@ public final class ServerLogNotifyOuterClass {
         return this;
       }
       /**
-       * <code>string server_log = 4;</code>
+       * <code>string server_log = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearServerLog() {
@@ -684,7 +738,7 @@ public final class ServerLogNotifyOuterClass {
         return this;
       }
       /**
-       * <code>string server_log = 4;</code>
+       * <code>string server_log = 3;</code>
        * @param value The bytes for serverLog to set.
        * @return This builder for chaining.
        */
@@ -696,60 +750,6 @@ public final class ServerLogNotifyOuterClass {
   checkByteStringIsUtf8(value);
         
         serverLog_ = value;
-        onChanged();
-        return this;
-      }
-
-      private int dBILBLAGLPC_ = 0;
-      /**
-       * <code>.ServerLogLevel DBILBLAGLPC = 9;</code>
-       * @return The enum numeric value on the wire for dBILBLAGLPC.
-       */
-      @java.lang.Override public int getDBILBLAGLPCValue() {
-        return dBILBLAGLPC_;
-      }
-      /**
-       * <code>.ServerLogLevel DBILBLAGLPC = 9;</code>
-       * @param value The enum numeric value on the wire for dBILBLAGLPC to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDBILBLAGLPCValue(int value) {
-        
-        dBILBLAGLPC_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.ServerLogLevel DBILBLAGLPC = 9;</code>
-       * @return The dBILBLAGLPC.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.ServerLogLevelOuterClass.ServerLogLevel getDBILBLAGLPC() {
-        @SuppressWarnings("deprecation")
-        emu.grasscutter.net.proto.ServerLogLevelOuterClass.ServerLogLevel result = emu.grasscutter.net.proto.ServerLogLevelOuterClass.ServerLogLevel.valueOf(dBILBLAGLPC_);
-        return result == null ? emu.grasscutter.net.proto.ServerLogLevelOuterClass.ServerLogLevel.UNRECOGNIZED : result;
-      }
-      /**
-       * <code>.ServerLogLevel DBILBLAGLPC = 9;</code>
-       * @param value The dBILBLAGLPC to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDBILBLAGLPC(emu.grasscutter.net.proto.ServerLogLevelOuterClass.ServerLogLevel value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        dBILBLAGLPC_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.ServerLogLevel DBILBLAGLPC = 9;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDBILBLAGLPC() {
-        
-        dBILBLAGLPC_ = 0;
         onChanged();
         return this;
       }
@@ -821,11 +821,11 @@ public final class ServerLogNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\025ServerLogNotify.proto\032\023ServerLogType.p" +
-      "roto\032\024ServerLogLevel.proto\"p\n\017ServerLogN" +
-      "otify\022#\n\013FHJIOJOGJHJ\030\001 \001(\0162\016.ServerLogTy" +
-      "pe\022\022\n\nserver_log\030\004 \001(\t\022$\n\013DBILBLAGLPC\030\t " +
-      "\001(\0162\017.ServerLogLevelB\033\n\031emu.grasscutter." +
-      "net.protob\006proto3"
+      "roto\032\024ServerLogLevel.proto\"k\n\017ServerLogN" +
+      "otify\022 \n\010log_type\030\007 \001(\0162\016.ServerLogType\022" +
+      "\"\n\tlog_level\030\010 \001(\0162\017.ServerLogLevel\022\022\n\ns" +
+      "erver_log\030\003 \001(\tB\033\n\031emu.grasscutter.net.p" +
+      "rotob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -838,7 +838,7 @@ public final class ServerLogNotifyOuterClass {
     internal_static_ServerLogNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ServerLogNotify_descriptor,
-        new java.lang.String[] { "FHJIOJOGJHJ", "ServerLog", "DBILBLAGLPC", });
+        new java.lang.String[] { "LogType", "LogLevel", "ServerLog", });
     emu.grasscutter.net.proto.ServerLogTypeOuterClass.getDescriptor();
     emu.grasscutter.net.proto.ServerLogLevelOuterClass.getDescriptor();
   }

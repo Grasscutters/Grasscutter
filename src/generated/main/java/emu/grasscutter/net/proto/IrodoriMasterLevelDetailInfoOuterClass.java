@@ -19,32 +19,32 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 min_finish_time = 9;</code>
+     * <code>uint32 min_finish_time = 15;</code>
      * @return The minFinishTime.
      */
     int getMinFinishTime();
 
     /**
-     * <code>bool is_finish = 14;</code>
+     * <code>bool is_finish = 12;</code>
      * @return The isFinish.
      */
     boolean getIsFinish();
 
     /**
-     * <code>bool is_have_try = 1;</code>
+     * <code>uint32 diffculty = 6;</code>
+     * @return The diffculty.
+     */
+    int getDiffculty();
+
+    /**
+     * <code>bool is_have_try = 8;</code>
      * @return The isHaveTry.
      */
     boolean getIsHaveTry();
-
-    /**
-     * <code>uint32 BNMHJGCJAPB = 10;</code>
-     * @return The bNMHJGCJAPB.
-     */
-    int getBNMHJGCJAPB();
   }
   /**
    * <pre>
-   * Obf: ECNEMFHPDMN
+   * Obf: GJPCKKKPDEI
    * </pre>
    *
    * Protobuf type {@code IrodoriMasterLevelDetailInfo}
@@ -91,24 +91,24 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 48: {
+
+              diffculty_ = input.readUInt32();
+              break;
+            }
+            case 64: {
 
               isHaveTry_ = input.readBool();
               break;
             }
-            case 72: {
-
-              minFinishTime_ = input.readUInt32();
-              break;
-            }
-            case 80: {
-
-              bNMHJGCJAPB_ = input.readUInt32();
-              break;
-            }
-            case 112: {
+            case 96: {
 
               isFinish_ = input.readBool();
+              break;
+            }
+            case 120: {
+
+              minFinishTime_ = input.readUInt32();
               break;
             }
             default: {
@@ -143,10 +143,10 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
               emu.grasscutter.net.proto.IrodoriMasterLevelDetailInfoOuterClass.IrodoriMasterLevelDetailInfo.class, emu.grasscutter.net.proto.IrodoriMasterLevelDetailInfoOuterClass.IrodoriMasterLevelDetailInfo.Builder.class);
     }
 
-    public static final int MIN_FINISH_TIME_FIELD_NUMBER = 9;
+    public static final int MIN_FINISH_TIME_FIELD_NUMBER = 15;
     private int minFinishTime_;
     /**
-     * <code>uint32 min_finish_time = 9;</code>
+     * <code>uint32 min_finish_time = 15;</code>
      * @return The minFinishTime.
      */
     @java.lang.Override
@@ -154,10 +154,10 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
       return minFinishTime_;
     }
 
-    public static final int IS_FINISH_FIELD_NUMBER = 14;
+    public static final int IS_FINISH_FIELD_NUMBER = 12;
     private boolean isFinish_;
     /**
-     * <code>bool is_finish = 14;</code>
+     * <code>bool is_finish = 12;</code>
      * @return The isFinish.
      */
     @java.lang.Override
@@ -165,26 +165,26 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
       return isFinish_;
     }
 
-    public static final int IS_HAVE_TRY_FIELD_NUMBER = 1;
+    public static final int DIFFCULTY_FIELD_NUMBER = 6;
+    private int diffculty_;
+    /**
+     * <code>uint32 diffculty = 6;</code>
+     * @return The diffculty.
+     */
+    @java.lang.Override
+    public int getDiffculty() {
+      return diffculty_;
+    }
+
+    public static final int IS_HAVE_TRY_FIELD_NUMBER = 8;
     private boolean isHaveTry_;
     /**
-     * <code>bool is_have_try = 1;</code>
+     * <code>bool is_have_try = 8;</code>
      * @return The isHaveTry.
      */
     @java.lang.Override
     public boolean getIsHaveTry() {
       return isHaveTry_;
-    }
-
-    public static final int BNMHJGCJAPB_FIELD_NUMBER = 10;
-    private int bNMHJGCJAPB_;
-    /**
-     * <code>uint32 BNMHJGCJAPB = 10;</code>
-     * @return The bNMHJGCJAPB.
-     */
-    @java.lang.Override
-    public int getBNMHJGCJAPB() {
-      return bNMHJGCJAPB_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -201,17 +201,17 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (diffculty_ != 0) {
+        output.writeUInt32(6, diffculty_);
+      }
       if (isHaveTry_ != false) {
-        output.writeBool(1, isHaveTry_);
-      }
-      if (minFinishTime_ != 0) {
-        output.writeUInt32(9, minFinishTime_);
-      }
-      if (bNMHJGCJAPB_ != 0) {
-        output.writeUInt32(10, bNMHJGCJAPB_);
+        output.writeBool(8, isHaveTry_);
       }
       if (isFinish_ != false) {
-        output.writeBool(14, isFinish_);
+        output.writeBool(12, isFinish_);
+      }
+      if (minFinishTime_ != 0) {
+        output.writeUInt32(15, minFinishTime_);
       }
       unknownFields.writeTo(output);
     }
@@ -222,21 +222,21 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (diffculty_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(6, diffculty_);
+      }
       if (isHaveTry_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(1, isHaveTry_);
-      }
-      if (minFinishTime_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, minFinishTime_);
-      }
-      if (bNMHJGCJAPB_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, bNMHJGCJAPB_);
+          .computeBoolSize(8, isHaveTry_);
       }
       if (isFinish_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(14, isFinish_);
+          .computeBoolSize(12, isFinish_);
+      }
+      if (minFinishTime_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(15, minFinishTime_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -257,10 +257,10 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
           != other.getMinFinishTime()) return false;
       if (getIsFinish()
           != other.getIsFinish()) return false;
+      if (getDiffculty()
+          != other.getDiffculty()) return false;
       if (getIsHaveTry()
           != other.getIsHaveTry()) return false;
-      if (getBNMHJGCJAPB()
-          != other.getBNMHJGCJAPB()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -277,11 +277,11 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
       hash = (37 * hash) + IS_FINISH_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsFinish());
+      hash = (37 * hash) + DIFFCULTY_FIELD_NUMBER;
+      hash = (53 * hash) + getDiffculty();
       hash = (37 * hash) + IS_HAVE_TRY_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsHaveTry());
-      hash = (37 * hash) + BNMHJGCJAPB_FIELD_NUMBER;
-      hash = (53 * hash) + getBNMHJGCJAPB();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -379,7 +379,7 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: ECNEMFHPDMN
+     * Obf: GJPCKKKPDEI
      * </pre>
      *
      * Protobuf type {@code IrodoriMasterLevelDetailInfo}
@@ -423,9 +423,9 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
 
         isFinish_ = false;
 
-        isHaveTry_ = false;
+        diffculty_ = 0;
 
-        bNMHJGCJAPB_ = 0;
+        isHaveTry_ = false;
 
         return this;
       }
@@ -455,8 +455,8 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
         emu.grasscutter.net.proto.IrodoriMasterLevelDetailInfoOuterClass.IrodoriMasterLevelDetailInfo result = new emu.grasscutter.net.proto.IrodoriMasterLevelDetailInfoOuterClass.IrodoriMasterLevelDetailInfo(this);
         result.minFinishTime_ = minFinishTime_;
         result.isFinish_ = isFinish_;
+        result.diffculty_ = diffculty_;
         result.isHaveTry_ = isHaveTry_;
-        result.bNMHJGCJAPB_ = bNMHJGCJAPB_;
         onBuilt();
         return result;
       }
@@ -511,11 +511,11 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
         if (other.getIsFinish() != false) {
           setIsFinish(other.getIsFinish());
         }
+        if (other.getDiffculty() != 0) {
+          setDiffculty(other.getDiffculty());
+        }
         if (other.getIsHaveTry() != false) {
           setIsHaveTry(other.getIsHaveTry());
-        }
-        if (other.getBNMHJGCJAPB() != 0) {
-          setBNMHJGCJAPB(other.getBNMHJGCJAPB());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -548,7 +548,7 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
 
       private int minFinishTime_ ;
       /**
-       * <code>uint32 min_finish_time = 9;</code>
+       * <code>uint32 min_finish_time = 15;</code>
        * @return The minFinishTime.
        */
       @java.lang.Override
@@ -556,7 +556,7 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
         return minFinishTime_;
       }
       /**
-       * <code>uint32 min_finish_time = 9;</code>
+       * <code>uint32 min_finish_time = 15;</code>
        * @param value The minFinishTime to set.
        * @return This builder for chaining.
        */
@@ -567,7 +567,7 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 min_finish_time = 9;</code>
+       * <code>uint32 min_finish_time = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearMinFinishTime() {
@@ -579,7 +579,7 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
 
       private boolean isFinish_ ;
       /**
-       * <code>bool is_finish = 14;</code>
+       * <code>bool is_finish = 12;</code>
        * @return The isFinish.
        */
       @java.lang.Override
@@ -587,7 +587,7 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
         return isFinish_;
       }
       /**
-       * <code>bool is_finish = 14;</code>
+       * <code>bool is_finish = 12;</code>
        * @param value The isFinish to set.
        * @return This builder for chaining.
        */
@@ -598,7 +598,7 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>bool is_finish = 14;</code>
+       * <code>bool is_finish = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsFinish() {
@@ -608,9 +608,40 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
         return this;
       }
 
+      private int diffculty_ ;
+      /**
+       * <code>uint32 diffculty = 6;</code>
+       * @return The diffculty.
+       */
+      @java.lang.Override
+      public int getDiffculty() {
+        return diffculty_;
+      }
+      /**
+       * <code>uint32 diffculty = 6;</code>
+       * @param value The diffculty to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDiffculty(int value) {
+        
+        diffculty_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 diffculty = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDiffculty() {
+        
+        diffculty_ = 0;
+        onChanged();
+        return this;
+      }
+
       private boolean isHaveTry_ ;
       /**
-       * <code>bool is_have_try = 1;</code>
+       * <code>bool is_have_try = 8;</code>
        * @return The isHaveTry.
        */
       @java.lang.Override
@@ -618,7 +649,7 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
         return isHaveTry_;
       }
       /**
-       * <code>bool is_have_try = 1;</code>
+       * <code>bool is_have_try = 8;</code>
        * @param value The isHaveTry to set.
        * @return This builder for chaining.
        */
@@ -629,43 +660,12 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>bool is_have_try = 1;</code>
+       * <code>bool is_have_try = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsHaveTry() {
         
         isHaveTry_ = false;
-        onChanged();
-        return this;
-      }
-
-      private int bNMHJGCJAPB_ ;
-      /**
-       * <code>uint32 BNMHJGCJAPB = 10;</code>
-       * @return The bNMHJGCJAPB.
-       */
-      @java.lang.Override
-      public int getBNMHJGCJAPB() {
-        return bNMHJGCJAPB_;
-      }
-      /**
-       * <code>uint32 BNMHJGCJAPB = 10;</code>
-       * @param value The bNMHJGCJAPB to set.
-       * @return This builder for chaining.
-       */
-      public Builder setBNMHJGCJAPB(int value) {
-        
-        bNMHJGCJAPB_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 BNMHJGCJAPB = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearBNMHJGCJAPB() {
-        
-        bNMHJGCJAPB_ = 0;
         onChanged();
         return this;
       }
@@ -736,11 +736,11 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\"IrodoriMasterLevelDetailInfo.proto\"t\n\034" +
+      "\n\"IrodoriMasterLevelDetailInfo.proto\"r\n\034" +
       "IrodoriMasterLevelDetailInfo\022\027\n\017min_fini" +
-      "sh_time\030\t \001(\r\022\021\n\tis_finish\030\016 \001(\010\022\023\n\013is_h" +
-      "ave_try\030\001 \001(\010\022\023\n\013BNMHJGCJAPB\030\n \001(\rB\033\n\031em" +
-      "u.grasscutter.net.protob\006proto3"
+      "sh_time\030\017 \001(\r\022\021\n\tis_finish\030\014 \001(\010\022\021\n\tdiff" +
+      "culty\030\006 \001(\r\022\023\n\013is_have_try\030\010 \001(\010B\033\n\031emu." +
+      "grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -751,7 +751,7 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
     internal_static_IrodoriMasterLevelDetailInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_IrodoriMasterLevelDetailInfo_descriptor,
-        new java.lang.String[] { "MinFinishTime", "IsFinish", "IsHaveTry", "BNMHJGCJAPB", });
+        new java.lang.String[] { "MinFinishTime", "IsFinish", "Diffculty", "IsHaveTry", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

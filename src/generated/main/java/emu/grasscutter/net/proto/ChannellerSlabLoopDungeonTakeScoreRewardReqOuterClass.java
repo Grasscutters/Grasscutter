@@ -19,15 +19,15 @@ public final class ChannellerSlabLoopDungeonTakeScoreRewardReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 reward_index = 10;</code>
+     * <code>uint32 reward_index = 7;</code>
      * @return The rewardIndex.
      */
     int getRewardIndex();
   }
   /**
    * <pre>
-   * CmdId: 8642
-   * Obf: FJHDJGFNLPD
+   * CmdId: 26903
+   * Obf: JKIOKMHNAGO
    * </pre>
    *
    * Protobuf type {@code ChannellerSlabLoopDungeonTakeScoreRewardReq}
@@ -74,7 +74,7 @@ public final class ChannellerSlabLoopDungeonTakeScoreRewardReqOuterClass {
             case 0:
               done = true;
               break;
-            case 80: {
+            case 56: {
 
               rewardIndex_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class ChannellerSlabLoopDungeonTakeScoreRewardReqOuterClass {
               emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewardReqOuterClass.ChannellerSlabLoopDungeonTakeScoreRewardReq.class, emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewardReqOuterClass.ChannellerSlabLoopDungeonTakeScoreRewardReq.Builder.class);
     }
 
-    public static final int REWARD_INDEX_FIELD_NUMBER = 10;
+    public static final int REWARD_INDEX_FIELD_NUMBER = 7;
     private int rewardIndex_;
     /**
-     * <code>uint32 reward_index = 10;</code>
+     * <code>uint32 reward_index = 7;</code>
      * @return The rewardIndex.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class ChannellerSlabLoopDungeonTakeScoreRewardReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (rewardIndex_ != 0) {
-        output.writeUInt32(10, rewardIndex_);
+        output.writeUInt32(7, rewardIndex_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class ChannellerSlabLoopDungeonTakeScoreRewardReqOuterClass {
       size = 0;
       if (rewardIndex_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, rewardIndex_);
+          .computeUInt32Size(7, rewardIndex_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class ChannellerSlabLoopDungeonTakeScoreRewardReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8642
-     * Obf: FJHDJGFNLPD
+     * CmdId: 26903
+     * Obf: JKIOKMHNAGO
      * </pre>
      *
      * Protobuf type {@code ChannellerSlabLoopDungeonTakeScoreRewardReq}
@@ -431,7 +431,7 @@ public final class ChannellerSlabLoopDungeonTakeScoreRewardReqOuterClass {
 
       private int rewardIndex_ ;
       /**
-       * <code>uint32 reward_index = 10;</code>
+       * <code>uint32 reward_index = 7;</code>
        * @return The rewardIndex.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class ChannellerSlabLoopDungeonTakeScoreRewardReqOuterClass {
         return rewardIndex_;
       }
       /**
-       * <code>uint32 reward_index = 10;</code>
+       * <code>uint32 reward_index = 7;</code>
        * @param value The rewardIndex to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class ChannellerSlabLoopDungeonTakeScoreRewardReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 reward_index = 10;</code>
+       * <code>uint32 reward_index = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearRewardIndex() {
@@ -528,7 +528,7 @@ public final class ChannellerSlabLoopDungeonTakeScoreRewardReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n1ChannellerSlabLoopDungeonTakeScoreRewa" +
       "rdReq.proto\"C\n+ChannellerSlabLoopDungeon" +
-      "TakeScoreRewardReq\022\024\n\014reward_index\030\n \001(\r" +
+      "TakeScoreRewardReq\022\024\n\014reward_index\030\007 \001(\r" +
       "B\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

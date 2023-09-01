@@ -5,8 +5,9 @@ import emu.grasscutter.game.dungeons.challenge.enums.ChallengeType;
 import emu.grasscutter.game.dungeons.challenge.trigger.KillMonsterCountTrigger;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.scripts.data.SceneGroup;
-import java.util.List;
 import lombok.val;
+
+import java.util.List;
 
 public class KillMonsterCountChallengeFactoryHandler implements ChallengeFactoryHandler {
     @Override

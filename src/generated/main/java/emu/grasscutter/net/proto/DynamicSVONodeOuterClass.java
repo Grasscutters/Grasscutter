@@ -19,35 +19,35 @@ public final class DynamicSVONodeOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int64 index = 3;</code>
-     * @return The index.
-     */
-    long getIndex();
-
-    /**
-     * <code>.Vector refer_pos = 14;</code>
+     * <code>.Vector refer_pos = 10;</code>
      * @return Whether the referPos field is set.
      */
     boolean hasReferPos();
     /**
-     * <code>.Vector refer_pos = 14;</code>
+     * <code>.Vector refer_pos = 10;</code>
      * @return The referPos.
      */
     emu.grasscutter.net.proto.VectorOuterClass.Vector getReferPos();
     /**
-     * <code>.Vector refer_pos = 14;</code>
+     * <code>.Vector refer_pos = 10;</code>
      */
     emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getReferPosOrBuilder();
 
     /**
-     * <code>int32 area = 4;</code>
+     * <code>int32 area = 7;</code>
      * @return The area.
      */
     int getArea();
+
+    /**
+     * <code>int64 index = 11;</code>
+     * @return The index.
+     */
+    long getIndex();
   }
   /**
    * <pre>
-   * Obf: JPEGENEFKLC
+   * Obf: HOJNPGJMOML
    * </pre>
    *
    * Protobuf type {@code DynamicSVONode}
@@ -94,17 +94,12 @@ public final class DynamicSVONodeOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
-
-              index_ = input.readInt64();
-              break;
-            }
-            case 32: {
+            case 56: {
 
               area_ = input.readInt32();
               break;
             }
-            case 114: {
+            case 82: {
               emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
               if (referPos_ != null) {
                 subBuilder = referPos_.toBuilder();
@@ -115,6 +110,11 @@ public final class DynamicSVONodeOuterClass {
                 referPos_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 88: {
+
+              index_ = input.readInt64();
               break;
             }
             default: {
@@ -149,21 +149,10 @@ public final class DynamicSVONodeOuterClass {
               emu.grasscutter.net.proto.DynamicSVONodeOuterClass.DynamicSVONode.class, emu.grasscutter.net.proto.DynamicSVONodeOuterClass.DynamicSVONode.Builder.class);
     }
 
-    public static final int INDEX_FIELD_NUMBER = 3;
-    private long index_;
-    /**
-     * <code>int64 index = 3;</code>
-     * @return The index.
-     */
-    @java.lang.Override
-    public long getIndex() {
-      return index_;
-    }
-
-    public static final int REFER_POS_FIELD_NUMBER = 14;
+    public static final int REFER_POS_FIELD_NUMBER = 10;
     private emu.grasscutter.net.proto.VectorOuterClass.Vector referPos_;
     /**
-     * <code>.Vector refer_pos = 14;</code>
+     * <code>.Vector refer_pos = 10;</code>
      * @return Whether the referPos field is set.
      */
     @java.lang.Override
@@ -171,7 +160,7 @@ public final class DynamicSVONodeOuterClass {
       return referPos_ != null;
     }
     /**
-     * <code>.Vector refer_pos = 14;</code>
+     * <code>.Vector refer_pos = 10;</code>
      * @return The referPos.
      */
     @java.lang.Override
@@ -179,22 +168,33 @@ public final class DynamicSVONodeOuterClass {
       return referPos_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : referPos_;
     }
     /**
-     * <code>.Vector refer_pos = 14;</code>
+     * <code>.Vector refer_pos = 10;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getReferPosOrBuilder() {
       return getReferPos();
     }
 
-    public static final int AREA_FIELD_NUMBER = 4;
+    public static final int AREA_FIELD_NUMBER = 7;
     private int area_;
     /**
-     * <code>int32 area = 4;</code>
+     * <code>int32 area = 7;</code>
      * @return The area.
      */
     @java.lang.Override
     public int getArea() {
       return area_;
+    }
+
+    public static final int INDEX_FIELD_NUMBER = 11;
+    private long index_;
+    /**
+     * <code>int64 index = 11;</code>
+     * @return The index.
+     */
+    @java.lang.Override
+    public long getIndex() {
+      return index_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -211,14 +211,14 @@ public final class DynamicSVONodeOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (index_ != 0L) {
-        output.writeInt64(3, index_);
-      }
       if (area_ != 0) {
-        output.writeInt32(4, area_);
+        output.writeInt32(7, area_);
       }
       if (referPos_ != null) {
-        output.writeMessage(14, getReferPos());
+        output.writeMessage(10, getReferPos());
+      }
+      if (index_ != 0L) {
+        output.writeInt64(11, index_);
       }
       unknownFields.writeTo(output);
     }
@@ -229,17 +229,17 @@ public final class DynamicSVONodeOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (index_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(3, index_);
-      }
       if (area_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(4, area_);
+          .computeInt32Size(7, area_);
       }
       if (referPos_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(14, getReferPos());
+          .computeMessageSize(10, getReferPos());
+      }
+      if (index_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(11, index_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -256,8 +256,6 @@ public final class DynamicSVONodeOuterClass {
       }
       emu.grasscutter.net.proto.DynamicSVONodeOuterClass.DynamicSVONode other = (emu.grasscutter.net.proto.DynamicSVONodeOuterClass.DynamicSVONode) obj;
 
-      if (getIndex()
-          != other.getIndex()) return false;
       if (hasReferPos() != other.hasReferPos()) return false;
       if (hasReferPos()) {
         if (!getReferPos()
@@ -265,6 +263,8 @@ public final class DynamicSVONodeOuterClass {
       }
       if (getArea()
           != other.getArea()) return false;
+      if (getIndex()
+          != other.getIndex()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -276,15 +276,15 @@ public final class DynamicSVONodeOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + INDEX_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getIndex());
       if (hasReferPos()) {
         hash = (37 * hash) + REFER_POS_FIELD_NUMBER;
         hash = (53 * hash) + getReferPos().hashCode();
       }
       hash = (37 * hash) + AREA_FIELD_NUMBER;
       hash = (53 * hash) + getArea();
+      hash = (37 * hash) + INDEX_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getIndex());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -382,7 +382,7 @@ public final class DynamicSVONodeOuterClass {
     }
     /**
      * <pre>
-     * Obf: JPEGENEFKLC
+     * Obf: HOJNPGJMOML
      * </pre>
      *
      * Protobuf type {@code DynamicSVONode}
@@ -422,8 +422,6 @@ public final class DynamicSVONodeOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        index_ = 0L;
-
         if (referPosBuilder_ == null) {
           referPos_ = null;
         } else {
@@ -431,6 +429,8 @@ public final class DynamicSVONodeOuterClass {
           referPosBuilder_ = null;
         }
         area_ = 0;
+
+        index_ = 0L;
 
         return this;
       }
@@ -458,13 +458,13 @@ public final class DynamicSVONodeOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.DynamicSVONodeOuterClass.DynamicSVONode buildPartial() {
         emu.grasscutter.net.proto.DynamicSVONodeOuterClass.DynamicSVONode result = new emu.grasscutter.net.proto.DynamicSVONodeOuterClass.DynamicSVONode(this);
-        result.index_ = index_;
         if (referPosBuilder_ == null) {
           result.referPos_ = referPos_;
         } else {
           result.referPos_ = referPosBuilder_.build();
         }
         result.area_ = area_;
+        result.index_ = index_;
         onBuilt();
         return result;
       }
@@ -513,14 +513,14 @@ public final class DynamicSVONodeOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.DynamicSVONodeOuterClass.DynamicSVONode other) {
         if (other == emu.grasscutter.net.proto.DynamicSVONodeOuterClass.DynamicSVONode.getDefaultInstance()) return this;
-        if (other.getIndex() != 0L) {
-          setIndex(other.getIndex());
-        }
         if (other.hasReferPos()) {
           mergeReferPos(other.getReferPos());
         }
         if (other.getArea() != 0) {
           setArea(other.getArea());
+        }
+        if (other.getIndex() != 0L) {
+          setIndex(other.getIndex());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -551,49 +551,18 @@ public final class DynamicSVONodeOuterClass {
         return this;
       }
 
-      private long index_ ;
-      /**
-       * <code>int64 index = 3;</code>
-       * @return The index.
-       */
-      @java.lang.Override
-      public long getIndex() {
-        return index_;
-      }
-      /**
-       * <code>int64 index = 3;</code>
-       * @param value The index to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIndex(long value) {
-        
-        index_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int64 index = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIndex() {
-        
-        index_ = 0L;
-        onChanged();
-        return this;
-      }
-
       private emu.grasscutter.net.proto.VectorOuterClass.Vector referPos_;
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> referPosBuilder_;
       /**
-       * <code>.Vector refer_pos = 14;</code>
+       * <code>.Vector refer_pos = 10;</code>
        * @return Whether the referPos field is set.
        */
       public boolean hasReferPos() {
         return referPosBuilder_ != null || referPos_ != null;
       }
       /**
-       * <code>.Vector refer_pos = 14;</code>
+       * <code>.Vector refer_pos = 10;</code>
        * @return The referPos.
        */
       public emu.grasscutter.net.proto.VectorOuterClass.Vector getReferPos() {
@@ -604,7 +573,7 @@ public final class DynamicSVONodeOuterClass {
         }
       }
       /**
-       * <code>.Vector refer_pos = 14;</code>
+       * <code>.Vector refer_pos = 10;</code>
        */
       public Builder setReferPos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
         if (referPosBuilder_ == null) {
@@ -620,7 +589,7 @@ public final class DynamicSVONodeOuterClass {
         return this;
       }
       /**
-       * <code>.Vector refer_pos = 14;</code>
+       * <code>.Vector refer_pos = 10;</code>
        */
       public Builder setReferPos(
           emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
@@ -634,7 +603,7 @@ public final class DynamicSVONodeOuterClass {
         return this;
       }
       /**
-       * <code>.Vector refer_pos = 14;</code>
+       * <code>.Vector refer_pos = 10;</code>
        */
       public Builder mergeReferPos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
         if (referPosBuilder_ == null) {
@@ -652,7 +621,7 @@ public final class DynamicSVONodeOuterClass {
         return this;
       }
       /**
-       * <code>.Vector refer_pos = 14;</code>
+       * <code>.Vector refer_pos = 10;</code>
        */
       public Builder clearReferPos() {
         if (referPosBuilder_ == null) {
@@ -666,7 +635,7 @@ public final class DynamicSVONodeOuterClass {
         return this;
       }
       /**
-       * <code>.Vector refer_pos = 14;</code>
+       * <code>.Vector refer_pos = 10;</code>
        */
       public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder getReferPosBuilder() {
         
@@ -674,7 +643,7 @@ public final class DynamicSVONodeOuterClass {
         return getReferPosFieldBuilder().getBuilder();
       }
       /**
-       * <code>.Vector refer_pos = 14;</code>
+       * <code>.Vector refer_pos = 10;</code>
        */
       public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getReferPosOrBuilder() {
         if (referPosBuilder_ != null) {
@@ -685,7 +654,7 @@ public final class DynamicSVONodeOuterClass {
         }
       }
       /**
-       * <code>.Vector refer_pos = 14;</code>
+       * <code>.Vector refer_pos = 10;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> 
@@ -703,7 +672,7 @@ public final class DynamicSVONodeOuterClass {
 
       private int area_ ;
       /**
-       * <code>int32 area = 4;</code>
+       * <code>int32 area = 7;</code>
        * @return The area.
        */
       @java.lang.Override
@@ -711,7 +680,7 @@ public final class DynamicSVONodeOuterClass {
         return area_;
       }
       /**
-       * <code>int32 area = 4;</code>
+       * <code>int32 area = 7;</code>
        * @param value The area to set.
        * @return This builder for chaining.
        */
@@ -722,12 +691,43 @@ public final class DynamicSVONodeOuterClass {
         return this;
       }
       /**
-       * <code>int32 area = 4;</code>
+       * <code>int32 area = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearArea() {
         
         area_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private long index_ ;
+      /**
+       * <code>int64 index = 11;</code>
+       * @return The index.
+       */
+      @java.lang.Override
+      public long getIndex() {
+        return index_;
+      }
+      /**
+       * <code>int64 index = 11;</code>
+       * @param value The index to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIndex(long value) {
+        
+        index_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 index = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIndex() {
+        
+        index_ = 0L;
         onChanged();
         return this;
       }
@@ -799,8 +799,8 @@ public final class DynamicSVONodeOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\024DynamicSVONode.proto\032\014Vector.proto\"I\n\016" +
-      "DynamicSVONode\022\r\n\005index\030\003 \001(\003\022\032\n\trefer_p" +
-      "os\030\016 \001(\0132\007.Vector\022\014\n\004area\030\004 \001(\005B\033\n\031emu.g" +
+      "DynamicSVONode\022\032\n\trefer_pos\030\n \001(\0132\007.Vect" +
+      "or\022\014\n\004area\030\007 \001(\005\022\r\n\005index\030\013 \001(\003B\033\n\031emu.g" +
       "rasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -813,7 +813,7 @@ public final class DynamicSVONodeOuterClass {
     internal_static_DynamicSVONode_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_DynamicSVONode_descriptor,
-        new java.lang.String[] { "Index", "ReferPos", "Area", });
+        new java.lang.String[] { "ReferPos", "Area", "Index", });
     emu.grasscutter.net.proto.VectorOuterClass.getDescriptor();
   }
 

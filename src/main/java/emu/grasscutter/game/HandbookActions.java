@@ -9,6 +9,7 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.server.packet.send.PacketAddNoGachaAvatarCardNotify;
 import emu.grasscutter.utils.objects.HandbookBody.*;
+
 import java.util.Objects;
 
 /** Commands executed by the handbook. */

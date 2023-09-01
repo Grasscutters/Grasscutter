@@ -19,27 +19,27 @@ public final class VintageMarketStoreUnlockSlotRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <code>uint32 slot_count = 4;</code>
+     * @return The slotCount.
+     */
+    int getSlotCount();
+
+    /**
      * <code>int32 retcode = 6;</code>
      * @return The retcode.
      */
     int getRetcode();
 
     /**
-     * <code>uint32 slot_count = 10;</code>
-     * @return The slotCount.
-     */
-    int getSlotCount();
-
-    /**
-     * <code>uint32 store_id = 9;</code>
+     * <code>uint32 store_id = 14;</code>
      * @return The storeId.
      */
     int getStoreId();
   }
   /**
    * <pre>
-   * CmdId: 23887
-   * Obf: HJLCNOBFIHJ
+   * CmdId: 25104
+   * Obf: HMBCBBBOBJD
    * </pre>
    *
    * Protobuf type {@code VintageMarketStoreUnlockSlotRsp}
@@ -86,19 +86,19 @@ public final class VintageMarketStoreUnlockSlotRspOuterClass {
             case 0:
               done = true;
               break;
+            case 32: {
+
+              slotCount_ = input.readUInt32();
+              break;
+            }
             case 48: {
 
               retcode_ = input.readInt32();
               break;
             }
-            case 72: {
+            case 112: {
 
               storeId_ = input.readUInt32();
-              break;
-            }
-            case 80: {
-
-              slotCount_ = input.readUInt32();
               break;
             }
             default: {
@@ -133,6 +133,17 @@ public final class VintageMarketStoreUnlockSlotRspOuterClass {
               emu.grasscutter.net.proto.VintageMarketStoreUnlockSlotRspOuterClass.VintageMarketStoreUnlockSlotRsp.class, emu.grasscutter.net.proto.VintageMarketStoreUnlockSlotRspOuterClass.VintageMarketStoreUnlockSlotRsp.Builder.class);
     }
 
+    public static final int SLOT_COUNT_FIELD_NUMBER = 4;
+    private int slotCount_;
+    /**
+     * <code>uint32 slot_count = 4;</code>
+     * @return The slotCount.
+     */
+    @java.lang.Override
+    public int getSlotCount() {
+      return slotCount_;
+    }
+
     public static final int RETCODE_FIELD_NUMBER = 6;
     private int retcode_;
     /**
@@ -144,21 +155,10 @@ public final class VintageMarketStoreUnlockSlotRspOuterClass {
       return retcode_;
     }
 
-    public static final int SLOT_COUNT_FIELD_NUMBER = 10;
-    private int slotCount_;
-    /**
-     * <code>uint32 slot_count = 10;</code>
-     * @return The slotCount.
-     */
-    @java.lang.Override
-    public int getSlotCount() {
-      return slotCount_;
-    }
-
-    public static final int STORE_ID_FIELD_NUMBER = 9;
+    public static final int STORE_ID_FIELD_NUMBER = 14;
     private int storeId_;
     /**
-     * <code>uint32 store_id = 9;</code>
+     * <code>uint32 store_id = 14;</code>
      * @return The storeId.
      */
     @java.lang.Override
@@ -180,14 +180,14 @@ public final class VintageMarketStoreUnlockSlotRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (slotCount_ != 0) {
+        output.writeUInt32(4, slotCount_);
+      }
       if (retcode_ != 0) {
         output.writeInt32(6, retcode_);
       }
       if (storeId_ != 0) {
-        output.writeUInt32(9, storeId_);
-      }
-      if (slotCount_ != 0) {
-        output.writeUInt32(10, slotCount_);
+        output.writeUInt32(14, storeId_);
       }
       unknownFields.writeTo(output);
     }
@@ -198,17 +198,17 @@ public final class VintageMarketStoreUnlockSlotRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (slotCount_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(4, slotCount_);
+      }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(6, retcode_);
       }
       if (storeId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, storeId_);
-      }
-      if (slotCount_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, slotCount_);
+          .computeUInt32Size(14, storeId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -225,10 +225,10 @@ public final class VintageMarketStoreUnlockSlotRspOuterClass {
       }
       emu.grasscutter.net.proto.VintageMarketStoreUnlockSlotRspOuterClass.VintageMarketStoreUnlockSlotRsp other = (emu.grasscutter.net.proto.VintageMarketStoreUnlockSlotRspOuterClass.VintageMarketStoreUnlockSlotRsp) obj;
 
-      if (getRetcode()
-          != other.getRetcode()) return false;
       if (getSlotCount()
           != other.getSlotCount()) return false;
+      if (getRetcode()
+          != other.getRetcode()) return false;
       if (getStoreId()
           != other.getStoreId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -242,10 +242,10 @@ public final class VintageMarketStoreUnlockSlotRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getRetcode();
       hash = (37 * hash) + SLOT_COUNT_FIELD_NUMBER;
       hash = (53 * hash) + getSlotCount();
+      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
+      hash = (53 * hash) + getRetcode();
       hash = (37 * hash) + STORE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getStoreId();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -345,8 +345,8 @@ public final class VintageMarketStoreUnlockSlotRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 23887
-     * Obf: HJLCNOBFIHJ
+     * CmdId: 25104
+     * Obf: HMBCBBBOBJD
      * </pre>
      *
      * Protobuf type {@code VintageMarketStoreUnlockSlotRsp}
@@ -386,9 +386,9 @@ public final class VintageMarketStoreUnlockSlotRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        retcode_ = 0;
-
         slotCount_ = 0;
+
+        retcode_ = 0;
 
         storeId_ = 0;
 
@@ -418,8 +418,8 @@ public final class VintageMarketStoreUnlockSlotRspOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.VintageMarketStoreUnlockSlotRspOuterClass.VintageMarketStoreUnlockSlotRsp buildPartial() {
         emu.grasscutter.net.proto.VintageMarketStoreUnlockSlotRspOuterClass.VintageMarketStoreUnlockSlotRsp result = new emu.grasscutter.net.proto.VintageMarketStoreUnlockSlotRspOuterClass.VintageMarketStoreUnlockSlotRsp(this);
-        result.retcode_ = retcode_;
         result.slotCount_ = slotCount_;
+        result.retcode_ = retcode_;
         result.storeId_ = storeId_;
         onBuilt();
         return result;
@@ -469,11 +469,11 @@ public final class VintageMarketStoreUnlockSlotRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.VintageMarketStoreUnlockSlotRspOuterClass.VintageMarketStoreUnlockSlotRsp other) {
         if (other == emu.grasscutter.net.proto.VintageMarketStoreUnlockSlotRspOuterClass.VintageMarketStoreUnlockSlotRsp.getDefaultInstance()) return this;
-        if (other.getRetcode() != 0) {
-          setRetcode(other.getRetcode());
-        }
         if (other.getSlotCount() != 0) {
           setSlotCount(other.getSlotCount());
+        }
+        if (other.getRetcode() != 0) {
+          setRetcode(other.getRetcode());
         }
         if (other.getStoreId() != 0) {
           setStoreId(other.getStoreId());
@@ -504,6 +504,37 @@ public final class VintageMarketStoreUnlockSlotRspOuterClass {
             mergeFrom(parsedMessage);
           }
         }
+        return this;
+      }
+
+      private int slotCount_ ;
+      /**
+       * <code>uint32 slot_count = 4;</code>
+       * @return The slotCount.
+       */
+      @java.lang.Override
+      public int getSlotCount() {
+        return slotCount_;
+      }
+      /**
+       * <code>uint32 slot_count = 4;</code>
+       * @param value The slotCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSlotCount(int value) {
+        
+        slotCount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 slot_count = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSlotCount() {
+        
+        slotCount_ = 0;
+        onChanged();
         return this;
       }
 
@@ -538,40 +569,9 @@ public final class VintageMarketStoreUnlockSlotRspOuterClass {
         return this;
       }
 
-      private int slotCount_ ;
-      /**
-       * <code>uint32 slot_count = 10;</code>
-       * @return The slotCount.
-       */
-      @java.lang.Override
-      public int getSlotCount() {
-        return slotCount_;
-      }
-      /**
-       * <code>uint32 slot_count = 10;</code>
-       * @param value The slotCount to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSlotCount(int value) {
-        
-        slotCount_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 slot_count = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSlotCount() {
-        
-        slotCount_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int storeId_ ;
       /**
-       * <code>uint32 store_id = 9;</code>
+       * <code>uint32 store_id = 14;</code>
        * @return The storeId.
        */
       @java.lang.Override
@@ -579,7 +579,7 @@ public final class VintageMarketStoreUnlockSlotRspOuterClass {
         return storeId_;
       }
       /**
-       * <code>uint32 store_id = 9;</code>
+       * <code>uint32 store_id = 14;</code>
        * @param value The storeId to set.
        * @return This builder for chaining.
        */
@@ -590,7 +590,7 @@ public final class VintageMarketStoreUnlockSlotRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 store_id = 9;</code>
+       * <code>uint32 store_id = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearStoreId() {
@@ -667,9 +667,9 @@ public final class VintageMarketStoreUnlockSlotRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n%VintageMarketStoreUnlockSlotRsp.proto\"" +
-      "X\n\037VintageMarketStoreUnlockSlotRsp\022\017\n\007re" +
-      "tcode\030\006 \001(\005\022\022\n\nslot_count\030\n \001(\r\022\020\n\010store" +
-      "_id\030\t \001(\rB\033\n\031emu.grasscutter.net.protob\006" +
+      "X\n\037VintageMarketStoreUnlockSlotRsp\022\022\n\nsl" +
+      "ot_count\030\004 \001(\r\022\017\n\007retcode\030\006 \001(\005\022\020\n\010store" +
+      "_id\030\016 \001(\rB\033\n\031emu.grasscutter.net.protob\006" +
       "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -681,7 +681,7 @@ public final class VintageMarketStoreUnlockSlotRspOuterClass {
     internal_static_VintageMarketStoreUnlockSlotRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_VintageMarketStoreUnlockSlotRsp_descriptor,
-        new java.lang.String[] { "Retcode", "SlotCount", "StoreId", });
+        new java.lang.String[] { "SlotCount", "Retcode", "StoreId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

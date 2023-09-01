@@ -16,7 +16,7 @@ public final class GCGIntentionChangeTypeOuterClass {
   }
   /**
    * <pre>
-   * Obf: NLNPAPLIEDM
+   * Obf: EKDNNONAKME
    * </pre>
    *
    * Protobuf enum {@code GCGIntentionChangeType}

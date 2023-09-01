@@ -19,32 +19,32 @@ public final class DungeonCandidateTeamInviteRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 3;</code>
-     * @return The retcode.
-     */
-    int getRetcode();
-
-    /**
-     * <code>repeated uint32 invalid_player_uids = 7;</code>
+     * <code>repeated uint32 invalid_player_uids = 10;</code>
      * @return A list containing the invalidPlayerUids.
      */
     java.util.List<java.lang.Integer> getInvalidPlayerUidsList();
     /**
-     * <code>repeated uint32 invalid_player_uids = 7;</code>
+     * <code>repeated uint32 invalid_player_uids = 10;</code>
      * @return The count of invalidPlayerUids.
      */
     int getInvalidPlayerUidsCount();
     /**
-     * <code>repeated uint32 invalid_player_uids = 7;</code>
+     * <code>repeated uint32 invalid_player_uids = 10;</code>
      * @param index The index of the element to return.
      * @return The invalidPlayerUids at the given index.
      */
     int getInvalidPlayerUids(int index);
+
+    /**
+     * <code>int32 retcode = 13;</code>
+     * @return The retcode.
+     */
+    int getRetcode();
   }
   /**
    * <pre>
-   * CmdId: 942
-   * Obf: FAHLANECJGN
+   * CmdId: 23686
+   * Obf: PLDKBBCIIFK
    * </pre>
    *
    * Protobuf type {@code DungeonCandidateTeamInviteRsp}
@@ -93,12 +93,7 @@ public final class DungeonCandidateTeamInviteRspOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 56: {
+            case 80: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 invalidPlayerUids_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -106,7 +101,7 @@ public final class DungeonCandidateTeamInviteRspOuterClass {
               invalidPlayerUids_.addInt(input.readUInt32());
               break;
             }
-            case 58: {
+            case 82: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -117,6 +112,11 @@ public final class DungeonCandidateTeamInviteRspOuterClass {
                 invalidPlayerUids_.addInt(input.readUInt32());
               }
               input.popLimit(limit);
+              break;
+            }
+            case 104: {
+
+              retcode_ = input.readInt32();
               break;
             }
             default: {
@@ -154,21 +154,10 @@ public final class DungeonCandidateTeamInviteRspOuterClass {
               emu.grasscutter.net.proto.DungeonCandidateTeamInviteRspOuterClass.DungeonCandidateTeamInviteRsp.class, emu.grasscutter.net.proto.DungeonCandidateTeamInviteRspOuterClass.DungeonCandidateTeamInviteRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 3;
-    private int retcode_;
-    /**
-     * <code>int32 retcode = 3;</code>
-     * @return The retcode.
-     */
-    @java.lang.Override
-    public int getRetcode() {
-      return retcode_;
-    }
-
-    public static final int INVALID_PLAYER_UIDS_FIELD_NUMBER = 7;
+    public static final int INVALID_PLAYER_UIDS_FIELD_NUMBER = 10;
     private com.google.protobuf.Internal.IntList invalidPlayerUids_;
     /**
-     * <code>repeated uint32 invalid_player_uids = 7;</code>
+     * <code>repeated uint32 invalid_player_uids = 10;</code>
      * @return A list containing the invalidPlayerUids.
      */
     @java.lang.Override
@@ -177,14 +166,14 @@ public final class DungeonCandidateTeamInviteRspOuterClass {
       return invalidPlayerUids_;
     }
     /**
-     * <code>repeated uint32 invalid_player_uids = 7;</code>
+     * <code>repeated uint32 invalid_player_uids = 10;</code>
      * @return The count of invalidPlayerUids.
      */
     public int getInvalidPlayerUidsCount() {
       return invalidPlayerUids_.size();
     }
     /**
-     * <code>repeated uint32 invalid_player_uids = 7;</code>
+     * <code>repeated uint32 invalid_player_uids = 10;</code>
      * @param index The index of the element to return.
      * @return The invalidPlayerUids at the given index.
      */
@@ -192,6 +181,17 @@ public final class DungeonCandidateTeamInviteRspOuterClass {
       return invalidPlayerUids_.getInt(index);
     }
     private int invalidPlayerUidsMemoizedSerializedSize = -1;
+
+    public static final int RETCODE_FIELD_NUMBER = 13;
+    private int retcode_;
+    /**
+     * <code>int32 retcode = 13;</code>
+     * @return The retcode.
+     */
+    @java.lang.Override
+    public int getRetcode() {
+      return retcode_;
+    }
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
@@ -208,15 +208,15 @@ public final class DungeonCandidateTeamInviteRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (retcode_ != 0) {
-        output.writeInt32(3, retcode_);
-      }
       if (getInvalidPlayerUidsList().size() > 0) {
-        output.writeUInt32NoTag(58);
+        output.writeUInt32NoTag(82);
         output.writeUInt32NoTag(invalidPlayerUidsMemoizedSerializedSize);
       }
       for (int i = 0; i < invalidPlayerUids_.size(); i++) {
         output.writeUInt32NoTag(invalidPlayerUids_.getInt(i));
+      }
+      if (retcode_ != 0) {
+        output.writeInt32(13, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -227,10 +227,6 @@ public final class DungeonCandidateTeamInviteRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (retcode_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, retcode_);
-      }
       {
         int dataSize = 0;
         for (int i = 0; i < invalidPlayerUids_.size(); i++) {
@@ -244,6 +240,10 @@ public final class DungeonCandidateTeamInviteRspOuterClass {
               .computeInt32SizeNoTag(dataSize);
         }
         invalidPlayerUidsMemoizedSerializedSize = dataSize;
+      }
+      if (retcode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(13, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -260,10 +260,10 @@ public final class DungeonCandidateTeamInviteRspOuterClass {
       }
       emu.grasscutter.net.proto.DungeonCandidateTeamInviteRspOuterClass.DungeonCandidateTeamInviteRsp other = (emu.grasscutter.net.proto.DungeonCandidateTeamInviteRspOuterClass.DungeonCandidateTeamInviteRsp) obj;
 
-      if (getRetcode()
-          != other.getRetcode()) return false;
       if (!getInvalidPlayerUidsList()
           .equals(other.getInvalidPlayerUidsList())) return false;
+      if (getRetcode()
+          != other.getRetcode()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -275,12 +275,12 @@ public final class DungeonCandidateTeamInviteRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getRetcode();
       if (getInvalidPlayerUidsCount() > 0) {
         hash = (37 * hash) + INVALID_PLAYER_UIDS_FIELD_NUMBER;
         hash = (53 * hash) + getInvalidPlayerUidsList().hashCode();
       }
+      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
+      hash = (53 * hash) + getRetcode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -378,8 +378,8 @@ public final class DungeonCandidateTeamInviteRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 942
-     * Obf: FAHLANECJGN
+     * CmdId: 23686
+     * Obf: PLDKBBCIIFK
      * </pre>
      *
      * Protobuf type {@code DungeonCandidateTeamInviteRsp}
@@ -419,10 +419,10 @@ public final class DungeonCandidateTeamInviteRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        retcode_ = 0;
-
         invalidPlayerUids_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        retcode_ = 0;
+
         return this;
       }
 
@@ -450,12 +450,12 @@ public final class DungeonCandidateTeamInviteRspOuterClass {
       public emu.grasscutter.net.proto.DungeonCandidateTeamInviteRspOuterClass.DungeonCandidateTeamInviteRsp buildPartial() {
         emu.grasscutter.net.proto.DungeonCandidateTeamInviteRspOuterClass.DungeonCandidateTeamInviteRsp result = new emu.grasscutter.net.proto.DungeonCandidateTeamInviteRspOuterClass.DungeonCandidateTeamInviteRsp(this);
         int from_bitField0_ = bitField0_;
-        result.retcode_ = retcode_;
         if (((bitField0_ & 0x00000001) != 0)) {
           invalidPlayerUids_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.invalidPlayerUids_ = invalidPlayerUids_;
+        result.retcode_ = retcode_;
         onBuilt();
         return result;
       }
@@ -504,9 +504,6 @@ public final class DungeonCandidateTeamInviteRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.DungeonCandidateTeamInviteRspOuterClass.DungeonCandidateTeamInviteRsp other) {
         if (other == emu.grasscutter.net.proto.DungeonCandidateTeamInviteRspOuterClass.DungeonCandidateTeamInviteRsp.getDefaultInstance()) return this;
-        if (other.getRetcode() != 0) {
-          setRetcode(other.getRetcode());
-        }
         if (!other.invalidPlayerUids_.isEmpty()) {
           if (invalidPlayerUids_.isEmpty()) {
             invalidPlayerUids_ = other.invalidPlayerUids_;
@@ -516,6 +513,9 @@ public final class DungeonCandidateTeamInviteRspOuterClass {
             invalidPlayerUids_.addAll(other.invalidPlayerUids_);
           }
           onChanged();
+        }
+        if (other.getRetcode() != 0) {
+          setRetcode(other.getRetcode());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -547,37 +547,6 @@ public final class DungeonCandidateTeamInviteRspOuterClass {
       }
       private int bitField0_;
 
-      private int retcode_ ;
-      /**
-       * <code>int32 retcode = 3;</code>
-       * @return The retcode.
-       */
-      @java.lang.Override
-      public int getRetcode() {
-        return retcode_;
-      }
-      /**
-       * <code>int32 retcode = 3;</code>
-       * @param value The retcode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRetcode(int value) {
-        
-        retcode_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 retcode = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRetcode() {
-        
-        retcode_ = 0;
-        onChanged();
-        return this;
-      }
-
       private com.google.protobuf.Internal.IntList invalidPlayerUids_ = emptyIntList();
       private void ensureInvalidPlayerUidsIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
@@ -586,7 +555,7 @@ public final class DungeonCandidateTeamInviteRspOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 invalid_player_uids = 7;</code>
+       * <code>repeated uint32 invalid_player_uids = 10;</code>
        * @return A list containing the invalidPlayerUids.
        */
       public java.util.List<java.lang.Integer>
@@ -595,14 +564,14 @@ public final class DungeonCandidateTeamInviteRspOuterClass {
                  java.util.Collections.unmodifiableList(invalidPlayerUids_) : invalidPlayerUids_;
       }
       /**
-       * <code>repeated uint32 invalid_player_uids = 7;</code>
+       * <code>repeated uint32 invalid_player_uids = 10;</code>
        * @return The count of invalidPlayerUids.
        */
       public int getInvalidPlayerUidsCount() {
         return invalidPlayerUids_.size();
       }
       /**
-       * <code>repeated uint32 invalid_player_uids = 7;</code>
+       * <code>repeated uint32 invalid_player_uids = 10;</code>
        * @param index The index of the element to return.
        * @return The invalidPlayerUids at the given index.
        */
@@ -610,7 +579,7 @@ public final class DungeonCandidateTeamInviteRspOuterClass {
         return invalidPlayerUids_.getInt(index);
       }
       /**
-       * <code>repeated uint32 invalid_player_uids = 7;</code>
+       * <code>repeated uint32 invalid_player_uids = 10;</code>
        * @param index The index to set the value at.
        * @param value The invalidPlayerUids to set.
        * @return This builder for chaining.
@@ -623,7 +592,7 @@ public final class DungeonCandidateTeamInviteRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 invalid_player_uids = 7;</code>
+       * <code>repeated uint32 invalid_player_uids = 10;</code>
        * @param value The invalidPlayerUids to add.
        * @return This builder for chaining.
        */
@@ -634,7 +603,7 @@ public final class DungeonCandidateTeamInviteRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 invalid_player_uids = 7;</code>
+       * <code>repeated uint32 invalid_player_uids = 10;</code>
        * @param values The invalidPlayerUids to add.
        * @return This builder for chaining.
        */
@@ -647,12 +616,43 @@ public final class DungeonCandidateTeamInviteRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 invalid_player_uids = 7;</code>
+       * <code>repeated uint32 invalid_player_uids = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearInvalidPlayerUids() {
         invalidPlayerUids_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      private int retcode_ ;
+      /**
+       * <code>int32 retcode = 13;</code>
+       * @return The retcode.
+       */
+      @java.lang.Override
+      public int getRetcode() {
+        return retcode_;
+      }
+      /**
+       * <code>int32 retcode = 13;</code>
+       * @param value The retcode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRetcode(int value) {
+        
+        retcode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 retcode = 13;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRetcode() {
+        
+        retcode_ = 0;
         onChanged();
         return this;
       }
@@ -724,8 +724,8 @@ public final class DungeonCandidateTeamInviteRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n#DungeonCandidateTeamInviteRsp.proto\"M\n" +
-      "\035DungeonCandidateTeamInviteRsp\022\017\n\007retcod" +
-      "e\030\003 \001(\005\022\033\n\023invalid_player_uids\030\007 \003(\rB\033\n\031" +
+      "\035DungeonCandidateTeamInviteRsp\022\033\n\023invali" +
+      "d_player_uids\030\n \003(\r\022\017\n\007retcode\030\r \001(\005B\033\n\031" +
       "emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -737,7 +737,7 @@ public final class DungeonCandidateTeamInviteRspOuterClass {
     internal_static_DungeonCandidateTeamInviteRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_DungeonCandidateTeamInviteRsp_descriptor,
-        new java.lang.String[] { "Retcode", "InvalidPlayerUids", });
+        new java.lang.String[] { "InvalidPlayerUids", "Retcode", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -19,60 +19,60 @@ public final class PBNavMeshPolyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated int32 vects = 2;</code>
-     * @return A list containing the vects.
+     * <code>int32 area = 1;</code>
+     * @return The area.
      */
-    java.util.List<java.lang.Integer> getVectsList();
-    /**
-     * <code>repeated int32 vects = 2;</code>
-     * @return The count of vects.
-     */
-    int getVectsCount();
-    /**
-     * <code>repeated int32 vects = 2;</code>
-     * @param index The index of the element to return.
-     * @return The vects at the given index.
-     */
-    int getVects(int index);
+    int getArea();
 
     /**
-     * <code>repeated .PBNavMeshPoly.EdgeType edge_types = 13;</code>
+     * <code>repeated .PBNavMeshPoly.EdgeType edge_types = 11;</code>
      * @return A list containing the edgeTypes.
      */
     java.util.List<emu.grasscutter.net.proto.PBNavMeshPolyOuterClass.PBNavMeshPoly.EdgeType> getEdgeTypesList();
     /**
-     * <code>repeated .PBNavMeshPoly.EdgeType edge_types = 13;</code>
+     * <code>repeated .PBNavMeshPoly.EdgeType edge_types = 11;</code>
      * @return The count of edgeTypes.
      */
     int getEdgeTypesCount();
     /**
-     * <code>repeated .PBNavMeshPoly.EdgeType edge_types = 13;</code>
+     * <code>repeated .PBNavMeshPoly.EdgeType edge_types = 11;</code>
      * @param index The index of the element to return.
      * @return The edgeTypes at the given index.
      */
     emu.grasscutter.net.proto.PBNavMeshPolyOuterClass.PBNavMeshPoly.EdgeType getEdgeTypes(int index);
     /**
-     * <code>repeated .PBNavMeshPoly.EdgeType edge_types = 13;</code>
+     * <code>repeated .PBNavMeshPoly.EdgeType edge_types = 11;</code>
      * @return A list containing the enum numeric values on the wire for edgeTypes.
      */
     java.util.List<java.lang.Integer>
     getEdgeTypesValueList();
     /**
-     * <code>repeated .PBNavMeshPoly.EdgeType edge_types = 13;</code>
+     * <code>repeated .PBNavMeshPoly.EdgeType edge_types = 11;</code>
      * @param index The index of the value to return.
      * @return The enum numeric value on the wire of edgeTypes at the given index.
      */
     int getEdgeTypesValue(int index);
 
     /**
-     * <code>int32 area = 5;</code>
-     * @return The area.
+     * <code>repeated int32 vects = 7;</code>
+     * @return A list containing the vects.
      */
-    int getArea();
+    java.util.List<java.lang.Integer> getVectsList();
+    /**
+     * <code>repeated int32 vects = 7;</code>
+     * @return The count of vects.
+     */
+    int getVectsCount();
+    /**
+     * <code>repeated int32 vects = 7;</code>
+     * @param index The index of the element to return.
+     * @return The vects at the given index.
+     */
+    int getVects(int index);
   }
   /**
    * <pre>
-   * Obf: JGBCFAMHKCP
+   * Obf: KFCPBANHIDH
    * </pre>
    *
    * Protobuf type {@code PBNavMeshPoly}
@@ -87,8 +87,8 @@ public final class PBNavMeshPolyOuterClass {
       super(builder);
     }
     private PBNavMeshPoly() {
-      vects_ = emptyIntList();
       edgeTypes_ = java.util.Collections.emptyList();
+      vects_ = emptyIntList();
     }
 
     @java.lang.Override
@@ -122,20 +122,25 @@ public final class PBNavMeshPolyOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+            case 8: {
+
+              area_ = input.readInt32();
+              break;
+            }
+            case 56: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 vects_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               vects_.addInt(input.readInt32());
               break;
             }
-            case 18: {
+            case 58: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
                 vects_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               while (input.getBytesUntilLimit() > 0) {
                 vects_.addInt(input.readInt32());
@@ -143,28 +148,23 @@ public final class PBNavMeshPolyOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 40: {
-
-              area_ = input.readInt32();
-              break;
-            }
-            case 104: {
+            case 88: {
               int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 edgeTypes_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               edgeTypes_.add(rawValue);
               break;
             }
-            case 106: {
+            case 90: {
               int length = input.readRawVarint32();
               int oldLimit = input.pushLimit(length);
               while(input.getBytesUntilLimit() > 0) {
                 int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   edgeTypes_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000002;
+                  mutable_bitField0_ |= 0x00000001;
                 }
                 edgeTypes_.add(rawValue);
               }
@@ -186,10 +186,10 @@ public final class PBNavMeshPolyOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
           vects_.makeImmutable(); // C
         }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           edgeTypes_ = java.util.Collections.unmodifiableList(edgeTypes_);
         }
         this.unknownFields = unknownFields.build();
@@ -211,7 +211,7 @@ public final class PBNavMeshPolyOuterClass {
 
     /**
      * <pre>
-     * Obf: NENAAAKMHPN
+     * Obf: LDJGIJGJJBP
      * </pre>
      *
      * Protobuf enum {@code PBNavMeshPoly.EdgeType}
@@ -339,35 +339,18 @@ public final class PBNavMeshPolyOuterClass {
       // @@protoc_insertion_point(enum_scope:PBNavMeshPoly.EdgeType)
     }
 
-    public static final int VECTS_FIELD_NUMBER = 2;
-    private com.google.protobuf.Internal.IntList vects_;
+    public static final int AREA_FIELD_NUMBER = 1;
+    private int area_;
     /**
-     * <code>repeated int32 vects = 2;</code>
-     * @return A list containing the vects.
+     * <code>int32 area = 1;</code>
+     * @return The area.
      */
     @java.lang.Override
-    public java.util.List<java.lang.Integer>
-        getVectsList() {
-      return vects_;
+    public int getArea() {
+      return area_;
     }
-    /**
-     * <code>repeated int32 vects = 2;</code>
-     * @return The count of vects.
-     */
-    public int getVectsCount() {
-      return vects_.size();
-    }
-    /**
-     * <code>repeated int32 vects = 2;</code>
-     * @param index The index of the element to return.
-     * @return The vects at the given index.
-     */
-    public int getVects(int index) {
-      return vects_.getInt(index);
-    }
-    private int vectsMemoizedSerializedSize = -1;
 
-    public static final int EDGE_TYPES_FIELD_NUMBER = 13;
+    public static final int EDGE_TYPES_FIELD_NUMBER = 11;
     private java.util.List<java.lang.Integer> edgeTypes_;
     private static final com.google.protobuf.Internal.ListAdapter.Converter<
         java.lang.Integer, emu.grasscutter.net.proto.PBNavMeshPolyOuterClass.PBNavMeshPoly.EdgeType> edgeTypes_converter_ =
@@ -380,7 +363,7 @@ public final class PBNavMeshPolyOuterClass {
               }
             };
     /**
-     * <code>repeated .PBNavMeshPoly.EdgeType edge_types = 13;</code>
+     * <code>repeated .PBNavMeshPoly.EdgeType edge_types = 11;</code>
      * @return A list containing the edgeTypes.
      */
     @java.lang.Override
@@ -389,7 +372,7 @@ public final class PBNavMeshPolyOuterClass {
           java.lang.Integer, emu.grasscutter.net.proto.PBNavMeshPolyOuterClass.PBNavMeshPoly.EdgeType>(edgeTypes_, edgeTypes_converter_);
     }
     /**
-     * <code>repeated .PBNavMeshPoly.EdgeType edge_types = 13;</code>
+     * <code>repeated .PBNavMeshPoly.EdgeType edge_types = 11;</code>
      * @return The count of edgeTypes.
      */
     @java.lang.Override
@@ -397,7 +380,7 @@ public final class PBNavMeshPolyOuterClass {
       return edgeTypes_.size();
     }
     /**
-     * <code>repeated .PBNavMeshPoly.EdgeType edge_types = 13;</code>
+     * <code>repeated .PBNavMeshPoly.EdgeType edge_types = 11;</code>
      * @param index The index of the element to return.
      * @return The edgeTypes at the given index.
      */
@@ -406,7 +389,7 @@ public final class PBNavMeshPolyOuterClass {
       return edgeTypes_converter_.convert(edgeTypes_.get(index));
     }
     /**
-     * <code>repeated .PBNavMeshPoly.EdgeType edge_types = 13;</code>
+     * <code>repeated .PBNavMeshPoly.EdgeType edge_types = 11;</code>
      * @return A list containing the enum numeric values on the wire for edgeTypes.
      */
     @java.lang.Override
@@ -415,7 +398,7 @@ public final class PBNavMeshPolyOuterClass {
       return edgeTypes_;
     }
     /**
-     * <code>repeated .PBNavMeshPoly.EdgeType edge_types = 13;</code>
+     * <code>repeated .PBNavMeshPoly.EdgeType edge_types = 11;</code>
      * @param index The index of the value to return.
      * @return The enum numeric value on the wire of edgeTypes at the given index.
      */
@@ -425,16 +408,33 @@ public final class PBNavMeshPolyOuterClass {
     }
     private int edgeTypesMemoizedSerializedSize;
 
-    public static final int AREA_FIELD_NUMBER = 5;
-    private int area_;
+    public static final int VECTS_FIELD_NUMBER = 7;
+    private com.google.protobuf.Internal.IntList vects_;
     /**
-     * <code>int32 area = 5;</code>
-     * @return The area.
+     * <code>repeated int32 vects = 7;</code>
+     * @return A list containing the vects.
      */
     @java.lang.Override
-    public int getArea() {
-      return area_;
+    public java.util.List<java.lang.Integer>
+        getVectsList() {
+      return vects_;
     }
+    /**
+     * <code>repeated int32 vects = 7;</code>
+     * @return The count of vects.
+     */
+    public int getVectsCount() {
+      return vects_.size();
+    }
+    /**
+     * <code>repeated int32 vects = 7;</code>
+     * @param index The index of the element to return.
+     * @return The vects at the given index.
+     */
+    public int getVects(int index) {
+      return vects_.getInt(index);
+    }
+    private int vectsMemoizedSerializedSize = -1;
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
@@ -451,18 +451,18 @@ public final class PBNavMeshPolyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
+      if (area_ != 0) {
+        output.writeInt32(1, area_);
+      }
       if (getVectsList().size() > 0) {
-        output.writeUInt32NoTag(18);
+        output.writeUInt32NoTag(58);
         output.writeUInt32NoTag(vectsMemoizedSerializedSize);
       }
       for (int i = 0; i < vects_.size(); i++) {
         output.writeInt32NoTag(vects_.getInt(i));
       }
-      if (area_ != 0) {
-        output.writeInt32(5, area_);
-      }
       if (getEdgeTypesList().size() > 0) {
-        output.writeUInt32NoTag(106);
+        output.writeUInt32NoTag(90);
         output.writeUInt32NoTag(edgeTypesMemoizedSerializedSize);
       }
       for (int i = 0; i < edgeTypes_.size(); i++) {
@@ -477,6 +477,10 @@ public final class PBNavMeshPolyOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (area_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, area_);
+      }
       {
         int dataSize = 0;
         for (int i = 0; i < vects_.size(); i++) {
@@ -490,10 +494,6 @@ public final class PBNavMeshPolyOuterClass {
               .computeInt32SizeNoTag(dataSize);
         }
         vectsMemoizedSerializedSize = dataSize;
-      }
-      if (area_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(5, area_);
       }
       {
         int dataSize = 0;
@@ -522,11 +522,11 @@ public final class PBNavMeshPolyOuterClass {
       }
       emu.grasscutter.net.proto.PBNavMeshPolyOuterClass.PBNavMeshPoly other = (emu.grasscutter.net.proto.PBNavMeshPolyOuterClass.PBNavMeshPoly) obj;
 
-      if (!getVectsList()
-          .equals(other.getVectsList())) return false;
-      if (!edgeTypes_.equals(other.edgeTypes_)) return false;
       if (getArea()
           != other.getArea()) return false;
+      if (!edgeTypes_.equals(other.edgeTypes_)) return false;
+      if (!getVectsList()
+          .equals(other.getVectsList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -538,16 +538,16 @@ public final class PBNavMeshPolyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getVectsCount() > 0) {
-        hash = (37 * hash) + VECTS_FIELD_NUMBER;
-        hash = (53 * hash) + getVectsList().hashCode();
-      }
+      hash = (37 * hash) + AREA_FIELD_NUMBER;
+      hash = (53 * hash) + getArea();
       if (getEdgeTypesCount() > 0) {
         hash = (37 * hash) + EDGE_TYPES_FIELD_NUMBER;
         hash = (53 * hash) + edgeTypes_.hashCode();
       }
-      hash = (37 * hash) + AREA_FIELD_NUMBER;
-      hash = (53 * hash) + getArea();
+      if (getVectsCount() > 0) {
+        hash = (37 * hash) + VECTS_FIELD_NUMBER;
+        hash = (53 * hash) + getVectsList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -645,7 +645,7 @@ public final class PBNavMeshPolyOuterClass {
     }
     /**
      * <pre>
-     * Obf: JGBCFAMHKCP
+     * Obf: KFCPBANHIDH
      * </pre>
      *
      * Protobuf type {@code PBNavMeshPoly}
@@ -685,12 +685,12 @@ public final class PBNavMeshPolyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        vects_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        edgeTypes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
         area_ = 0;
 
+        edgeTypes_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        vects_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -718,17 +718,17 @@ public final class PBNavMeshPolyOuterClass {
       public emu.grasscutter.net.proto.PBNavMeshPolyOuterClass.PBNavMeshPoly buildPartial() {
         emu.grasscutter.net.proto.PBNavMeshPolyOuterClass.PBNavMeshPoly result = new emu.grasscutter.net.proto.PBNavMeshPolyOuterClass.PBNavMeshPoly(this);
         int from_bitField0_ = bitField0_;
+        result.area_ = area_;
         if (((bitField0_ & 0x00000001) != 0)) {
-          vects_.makeImmutable();
+          edgeTypes_ = java.util.Collections.unmodifiableList(edgeTypes_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
-        result.vects_ = vects_;
+        result.edgeTypes_ = edgeTypes_;
         if (((bitField0_ & 0x00000002) != 0)) {
-          edgeTypes_ = java.util.Collections.unmodifiableList(edgeTypes_);
+          vects_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000002);
         }
-        result.edgeTypes_ = edgeTypes_;
-        result.area_ = area_;
+        result.vects_ = vects_;
         onBuilt();
         return result;
       }
@@ -777,28 +777,28 @@ public final class PBNavMeshPolyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.PBNavMeshPolyOuterClass.PBNavMeshPoly other) {
         if (other == emu.grasscutter.net.proto.PBNavMeshPolyOuterClass.PBNavMeshPoly.getDefaultInstance()) return this;
-        if (!other.vects_.isEmpty()) {
-          if (vects_.isEmpty()) {
-            vects_ = other.vects_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureVectsIsMutable();
-            vects_.addAll(other.vects_);
-          }
-          onChanged();
+        if (other.getArea() != 0) {
+          setArea(other.getArea());
         }
         if (!other.edgeTypes_.isEmpty()) {
           if (edgeTypes_.isEmpty()) {
             edgeTypes_ = other.edgeTypes_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureEdgeTypesIsMutable();
             edgeTypes_.addAll(other.edgeTypes_);
           }
           onChanged();
         }
-        if (other.getArea() != 0) {
-          setArea(other.getArea());
+        if (!other.vects_.isEmpty()) {
+          if (vects_.isEmpty()) {
+            vects_ = other.vects_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureVectsIsMutable();
+            vects_.addAll(other.vects_);
+          }
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -830,81 +830,33 @@ public final class PBNavMeshPolyOuterClass {
       }
       private int bitField0_;
 
-      private com.google.protobuf.Internal.IntList vects_ = emptyIntList();
-      private void ensureVectsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          vects_ = mutableCopy(vects_);
-          bitField0_ |= 0x00000001;
-         }
-      }
+      private int area_ ;
       /**
-       * <code>repeated int32 vects = 2;</code>
-       * @return A list containing the vects.
+       * <code>int32 area = 1;</code>
+       * @return The area.
        */
-      public java.util.List<java.lang.Integer>
-          getVectsList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
-                 java.util.Collections.unmodifiableList(vects_) : vects_;
+      @java.lang.Override
+      public int getArea() {
+        return area_;
       }
       /**
-       * <code>repeated int32 vects = 2;</code>
-       * @return The count of vects.
-       */
-      public int getVectsCount() {
-        return vects_.size();
-      }
-      /**
-       * <code>repeated int32 vects = 2;</code>
-       * @param index The index of the element to return.
-       * @return The vects at the given index.
-       */
-      public int getVects(int index) {
-        return vects_.getInt(index);
-      }
-      /**
-       * <code>repeated int32 vects = 2;</code>
-       * @param index The index to set the value at.
-       * @param value The vects to set.
+       * <code>int32 area = 1;</code>
+       * @param value The area to set.
        * @return This builder for chaining.
        */
-      public Builder setVects(
-          int index, int value) {
-        ensureVectsIsMutable();
-        vects_.setInt(index, value);
+      public Builder setArea(int value) {
+        
+        area_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>repeated int32 vects = 2;</code>
-       * @param value The vects to add.
+       * <code>int32 area = 1;</code>
        * @return This builder for chaining.
        */
-      public Builder addVects(int value) {
-        ensureVectsIsMutable();
-        vects_.addInt(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated int32 vects = 2;</code>
-       * @param values The vects to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllVects(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureVectsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, vects_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated int32 vects = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearVects() {
-        vects_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      public Builder clearArea() {
+        
+        area_ = 0;
         onChanged();
         return this;
       }
@@ -912,13 +864,13 @@ public final class PBNavMeshPolyOuterClass {
       private java.util.List<java.lang.Integer> edgeTypes_ =
         java.util.Collections.emptyList();
       private void ensureEdgeTypesIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           edgeTypes_ = new java.util.ArrayList<java.lang.Integer>(edgeTypes_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
         }
       }
       /**
-       * <code>repeated .PBNavMeshPoly.EdgeType edge_types = 13;</code>
+       * <code>repeated .PBNavMeshPoly.EdgeType edge_types = 11;</code>
        * @return A list containing the edgeTypes.
        */
       public java.util.List<emu.grasscutter.net.proto.PBNavMeshPolyOuterClass.PBNavMeshPoly.EdgeType> getEdgeTypesList() {
@@ -926,14 +878,14 @@ public final class PBNavMeshPolyOuterClass {
             java.lang.Integer, emu.grasscutter.net.proto.PBNavMeshPolyOuterClass.PBNavMeshPoly.EdgeType>(edgeTypes_, edgeTypes_converter_);
       }
       /**
-       * <code>repeated .PBNavMeshPoly.EdgeType edge_types = 13;</code>
+       * <code>repeated .PBNavMeshPoly.EdgeType edge_types = 11;</code>
        * @return The count of edgeTypes.
        */
       public int getEdgeTypesCount() {
         return edgeTypes_.size();
       }
       /**
-       * <code>repeated .PBNavMeshPoly.EdgeType edge_types = 13;</code>
+       * <code>repeated .PBNavMeshPoly.EdgeType edge_types = 11;</code>
        * @param index The index of the element to return.
        * @return The edgeTypes at the given index.
        */
@@ -941,7 +893,7 @@ public final class PBNavMeshPolyOuterClass {
         return edgeTypes_converter_.convert(edgeTypes_.get(index));
       }
       /**
-       * <code>repeated .PBNavMeshPoly.EdgeType edge_types = 13;</code>
+       * <code>repeated .PBNavMeshPoly.EdgeType edge_types = 11;</code>
        * @param index The index to set the value at.
        * @param value The edgeTypes to set.
        * @return This builder for chaining.
@@ -957,7 +909,7 @@ public final class PBNavMeshPolyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PBNavMeshPoly.EdgeType edge_types = 13;</code>
+       * <code>repeated .PBNavMeshPoly.EdgeType edge_types = 11;</code>
        * @param value The edgeTypes to add.
        * @return This builder for chaining.
        */
@@ -971,7 +923,7 @@ public final class PBNavMeshPolyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PBNavMeshPoly.EdgeType edge_types = 13;</code>
+       * <code>repeated .PBNavMeshPoly.EdgeType edge_types = 11;</code>
        * @param values The edgeTypes to add.
        * @return This builder for chaining.
        */
@@ -985,17 +937,17 @@ public final class PBNavMeshPolyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PBNavMeshPoly.EdgeType edge_types = 13;</code>
+       * <code>repeated .PBNavMeshPoly.EdgeType edge_types = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearEdgeTypes() {
         edgeTypes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated .PBNavMeshPoly.EdgeType edge_types = 13;</code>
+       * <code>repeated .PBNavMeshPoly.EdgeType edge_types = 11;</code>
        * @return A list containing the enum numeric values on the wire for edgeTypes.
        */
       public java.util.List<java.lang.Integer>
@@ -1003,7 +955,7 @@ public final class PBNavMeshPolyOuterClass {
         return java.util.Collections.unmodifiableList(edgeTypes_);
       }
       /**
-       * <code>repeated .PBNavMeshPoly.EdgeType edge_types = 13;</code>
+       * <code>repeated .PBNavMeshPoly.EdgeType edge_types = 11;</code>
        * @param index The index of the value to return.
        * @return The enum numeric value on the wire of edgeTypes at the given index.
        */
@@ -1011,7 +963,7 @@ public final class PBNavMeshPolyOuterClass {
         return edgeTypes_.get(index);
       }
       /**
-       * <code>repeated .PBNavMeshPoly.EdgeType edge_types = 13;</code>
+       * <code>repeated .PBNavMeshPoly.EdgeType edge_types = 11;</code>
        * @param index The index of the value to return.
        * @return The enum numeric value on the wire of edgeTypes at the given index.
        * @return This builder for chaining.
@@ -1024,7 +976,7 @@ public final class PBNavMeshPolyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PBNavMeshPoly.EdgeType edge_types = 13;</code>
+       * <code>repeated .PBNavMeshPoly.EdgeType edge_types = 11;</code>
        * @param value The enum numeric value on the wire for edgeTypes to add.
        * @return This builder for chaining.
        */
@@ -1035,7 +987,7 @@ public final class PBNavMeshPolyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PBNavMeshPoly.EdgeType edge_types = 13;</code>
+       * <code>repeated .PBNavMeshPoly.EdgeType edge_types = 11;</code>
        * @param values The enum numeric values on the wire for edgeTypes to add.
        * @return This builder for chaining.
        */
@@ -1049,33 +1001,81 @@ public final class PBNavMeshPolyOuterClass {
         return this;
       }
 
-      private int area_ ;
-      /**
-       * <code>int32 area = 5;</code>
-       * @return The area.
-       */
-      @java.lang.Override
-      public int getArea() {
-        return area_;
+      private com.google.protobuf.Internal.IntList vects_ = emptyIntList();
+      private void ensureVectsIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          vects_ = mutableCopy(vects_);
+          bitField0_ |= 0x00000002;
+         }
       }
       /**
-       * <code>int32 area = 5;</code>
-       * @param value The area to set.
+       * <code>repeated int32 vects = 7;</code>
+       * @return A list containing the vects.
+       */
+      public java.util.List<java.lang.Integer>
+          getVectsList() {
+        return ((bitField0_ & 0x00000002) != 0) ?
+                 java.util.Collections.unmodifiableList(vects_) : vects_;
+      }
+      /**
+       * <code>repeated int32 vects = 7;</code>
+       * @return The count of vects.
+       */
+      public int getVectsCount() {
+        return vects_.size();
+      }
+      /**
+       * <code>repeated int32 vects = 7;</code>
+       * @param index The index of the element to return.
+       * @return The vects at the given index.
+       */
+      public int getVects(int index) {
+        return vects_.getInt(index);
+      }
+      /**
+       * <code>repeated int32 vects = 7;</code>
+       * @param index The index to set the value at.
+       * @param value The vects to set.
        * @return This builder for chaining.
        */
-      public Builder setArea(int value) {
-        
-        area_ = value;
+      public Builder setVects(
+          int index, int value) {
+        ensureVectsIsMutable();
+        vects_.setInt(index, value);
         onChanged();
         return this;
       }
       /**
-       * <code>int32 area = 5;</code>
+       * <code>repeated int32 vects = 7;</code>
+       * @param value The vects to add.
        * @return This builder for chaining.
        */
-      public Builder clearArea() {
-        
-        area_ = 0;
+      public Builder addVects(int value) {
+        ensureVectsIsMutable();
+        vects_.addInt(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated int32 vects = 7;</code>
+       * @param values The vects to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllVects(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureVectsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, vects_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated int32 vects = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearVects() {
+        vects_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1147,8 +1147,8 @@ public final class PBNavMeshPolyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\023PBNavMeshPoly.proto\"\262\001\n\rPBNavMeshPoly\022" +
-      "\r\n\005vects\030\002 \003(\005\022+\n\nedge_types\030\r \003(\0162\027.PBN" +
-      "avMeshPoly.EdgeType\022\014\n\004area\030\005 \001(\005\"W\n\010Edg" +
+      "\014\n\004area\030\001 \001(\005\022+\n\nedge_types\030\013 \003(\0162\027.PBNa" +
+      "vMeshPoly.EdgeType\022\r\n\005vects\030\007 \003(\005\"W\n\010Edg" +
       "eType\022\t\n\005INNER\020\000\022\016\n\nTILE_BOUND\020\001\022\030\n\024TILE" +
       "_BOUND_UNCONNECT\020\002\022\026\n\022TILE_BOUND_OVERIDE" +
       "\020\003B\033\n\031emu.grasscutter.net.protob\006proto3"
@@ -1162,7 +1162,7 @@ public final class PBNavMeshPolyOuterClass {
     internal_static_PBNavMeshPoly_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_PBNavMeshPoly_descriptor,
-        new java.lang.String[] { "Vects", "EdgeTypes", "Area", });
+        new java.lang.String[] { "Area", "EdgeTypes", "Vects", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -19,33 +19,33 @@ public final class VintageMarketStartStorePlayRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 2;</code>
-     * @return The retcode.
-     */
-    int getRetcode();
-
-    /**
-     * <code>uint32 store_round = 5;</code>
+     * <code>uint32 store_round = 4;</code>
      * @return The storeRound.
      */
     int getStoreRound();
 
     /**
-     * <code>uint32 DOBPHKELDMI = 14;</code>
-     * @return The dOBPHKELDMI.
+     * <code>uint32 NDKCCHHJMCG = 14;</code>
+     * @return The nDKCCHHJMCG.
      */
-    int getDOBPHKELDMI();
+    int getNDKCCHHJMCG();
 
     /**
-     * <code>uint32 DPCAMJBDBNC = 15;</code>
-     * @return The dPCAMJBDBNC.
+     * <code>uint32 ACGCAGDFOCM = 1;</code>
+     * @return The aCGCAGDFOCM.
      */
-    int getDPCAMJBDBNC();
+    int getACGCAGDFOCM();
+
+    /**
+     * <code>int32 retcode = 12;</code>
+     * @return The retcode.
+     */
+    int getRetcode();
   }
   /**
    * <pre>
-   * CmdId: 21534
-   * Obf: EOJPDJPAPHI
+   * CmdId: 6794
+   * Obf: CKCAFGJGOIL
    * </pre>
    *
    * Protobuf type {@code VintageMarketStartStorePlayRsp}
@@ -92,24 +92,24 @@ public final class VintageMarketStartStorePlayRspOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
+            case 8: {
 
-              retcode_ = input.readInt32();
+              aCGCAGDFOCM_ = input.readUInt32();
               break;
             }
-            case 40: {
+            case 32: {
 
               storeRound_ = input.readUInt32();
               break;
             }
-            case 112: {
+            case 96: {
 
-              dOBPHKELDMI_ = input.readUInt32();
+              retcode_ = input.readInt32();
               break;
             }
-            case 120: {
+            case 112: {
 
-              dPCAMJBDBNC_ = input.readUInt32();
+              nDKCCHHJMCG_ = input.readUInt32();
               break;
             }
             default: {
@@ -144,21 +144,10 @@ public final class VintageMarketStartStorePlayRspOuterClass {
               emu.grasscutter.net.proto.VintageMarketStartStorePlayRspOuterClass.VintageMarketStartStorePlayRsp.class, emu.grasscutter.net.proto.VintageMarketStartStorePlayRspOuterClass.VintageMarketStartStorePlayRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 2;
-    private int retcode_;
-    /**
-     * <code>int32 retcode = 2;</code>
-     * @return The retcode.
-     */
-    @java.lang.Override
-    public int getRetcode() {
-      return retcode_;
-    }
-
-    public static final int STORE_ROUND_FIELD_NUMBER = 5;
+    public static final int STORE_ROUND_FIELD_NUMBER = 4;
     private int storeRound_;
     /**
-     * <code>uint32 store_round = 5;</code>
+     * <code>uint32 store_round = 4;</code>
      * @return The storeRound.
      */
     @java.lang.Override
@@ -166,26 +155,37 @@ public final class VintageMarketStartStorePlayRspOuterClass {
       return storeRound_;
     }
 
-    public static final int DOBPHKELDMI_FIELD_NUMBER = 14;
-    private int dOBPHKELDMI_;
+    public static final int NDKCCHHJMCG_FIELD_NUMBER = 14;
+    private int nDKCCHHJMCG_;
     /**
-     * <code>uint32 DOBPHKELDMI = 14;</code>
-     * @return The dOBPHKELDMI.
+     * <code>uint32 NDKCCHHJMCG = 14;</code>
+     * @return The nDKCCHHJMCG.
      */
     @java.lang.Override
-    public int getDOBPHKELDMI() {
-      return dOBPHKELDMI_;
+    public int getNDKCCHHJMCG() {
+      return nDKCCHHJMCG_;
     }
 
-    public static final int DPCAMJBDBNC_FIELD_NUMBER = 15;
-    private int dPCAMJBDBNC_;
+    public static final int ACGCAGDFOCM_FIELD_NUMBER = 1;
+    private int aCGCAGDFOCM_;
     /**
-     * <code>uint32 DPCAMJBDBNC = 15;</code>
-     * @return The dPCAMJBDBNC.
+     * <code>uint32 ACGCAGDFOCM = 1;</code>
+     * @return The aCGCAGDFOCM.
      */
     @java.lang.Override
-    public int getDPCAMJBDBNC() {
-      return dPCAMJBDBNC_;
+    public int getACGCAGDFOCM() {
+      return aCGCAGDFOCM_;
+    }
+
+    public static final int RETCODE_FIELD_NUMBER = 12;
+    private int retcode_;
+    /**
+     * <code>int32 retcode = 12;</code>
+     * @return The retcode.
+     */
+    @java.lang.Override
+    public int getRetcode() {
+      return retcode_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -202,17 +202,17 @@ public final class VintageMarketStartStorePlayRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (retcode_ != 0) {
-        output.writeInt32(2, retcode_);
+      if (aCGCAGDFOCM_ != 0) {
+        output.writeUInt32(1, aCGCAGDFOCM_);
       }
       if (storeRound_ != 0) {
-        output.writeUInt32(5, storeRound_);
+        output.writeUInt32(4, storeRound_);
       }
-      if (dOBPHKELDMI_ != 0) {
-        output.writeUInt32(14, dOBPHKELDMI_);
+      if (retcode_ != 0) {
+        output.writeInt32(12, retcode_);
       }
-      if (dPCAMJBDBNC_ != 0) {
-        output.writeUInt32(15, dPCAMJBDBNC_);
+      if (nDKCCHHJMCG_ != 0) {
+        output.writeUInt32(14, nDKCCHHJMCG_);
       }
       unknownFields.writeTo(output);
     }
@@ -223,21 +223,21 @@ public final class VintageMarketStartStorePlayRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (retcode_ != 0) {
+      if (aCGCAGDFOCM_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, retcode_);
+          .computeUInt32Size(1, aCGCAGDFOCM_);
       }
       if (storeRound_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, storeRound_);
+          .computeUInt32Size(4, storeRound_);
       }
-      if (dOBPHKELDMI_ != 0) {
+      if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, dOBPHKELDMI_);
+          .computeInt32Size(12, retcode_);
       }
-      if (dPCAMJBDBNC_ != 0) {
+      if (nDKCCHHJMCG_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, dPCAMJBDBNC_);
+          .computeUInt32Size(14, nDKCCHHJMCG_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -254,14 +254,14 @@ public final class VintageMarketStartStorePlayRspOuterClass {
       }
       emu.grasscutter.net.proto.VintageMarketStartStorePlayRspOuterClass.VintageMarketStartStorePlayRsp other = (emu.grasscutter.net.proto.VintageMarketStartStorePlayRspOuterClass.VintageMarketStartStorePlayRsp) obj;
 
-      if (getRetcode()
-          != other.getRetcode()) return false;
       if (getStoreRound()
           != other.getStoreRound()) return false;
-      if (getDOBPHKELDMI()
-          != other.getDOBPHKELDMI()) return false;
-      if (getDPCAMJBDBNC()
-          != other.getDPCAMJBDBNC()) return false;
+      if (getNDKCCHHJMCG()
+          != other.getNDKCCHHJMCG()) return false;
+      if (getACGCAGDFOCM()
+          != other.getACGCAGDFOCM()) return false;
+      if (getRetcode()
+          != other.getRetcode()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -273,14 +273,14 @@ public final class VintageMarketStartStorePlayRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getRetcode();
       hash = (37 * hash) + STORE_ROUND_FIELD_NUMBER;
       hash = (53 * hash) + getStoreRound();
-      hash = (37 * hash) + DOBPHKELDMI_FIELD_NUMBER;
-      hash = (53 * hash) + getDOBPHKELDMI();
-      hash = (37 * hash) + DPCAMJBDBNC_FIELD_NUMBER;
-      hash = (53 * hash) + getDPCAMJBDBNC();
+      hash = (37 * hash) + NDKCCHHJMCG_FIELD_NUMBER;
+      hash = (53 * hash) + getNDKCCHHJMCG();
+      hash = (37 * hash) + ACGCAGDFOCM_FIELD_NUMBER;
+      hash = (53 * hash) + getACGCAGDFOCM();
+      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
+      hash = (53 * hash) + getRetcode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -378,8 +378,8 @@ public final class VintageMarketStartStorePlayRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 21534
-     * Obf: EOJPDJPAPHI
+     * CmdId: 6794
+     * Obf: CKCAFGJGOIL
      * </pre>
      *
      * Protobuf type {@code VintageMarketStartStorePlayRsp}
@@ -419,13 +419,13 @@ public final class VintageMarketStartStorePlayRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        retcode_ = 0;
-
         storeRound_ = 0;
 
-        dOBPHKELDMI_ = 0;
+        nDKCCHHJMCG_ = 0;
 
-        dPCAMJBDBNC_ = 0;
+        aCGCAGDFOCM_ = 0;
+
+        retcode_ = 0;
 
         return this;
       }
@@ -453,10 +453,10 @@ public final class VintageMarketStartStorePlayRspOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.VintageMarketStartStorePlayRspOuterClass.VintageMarketStartStorePlayRsp buildPartial() {
         emu.grasscutter.net.proto.VintageMarketStartStorePlayRspOuterClass.VintageMarketStartStorePlayRsp result = new emu.grasscutter.net.proto.VintageMarketStartStorePlayRspOuterClass.VintageMarketStartStorePlayRsp(this);
-        result.retcode_ = retcode_;
         result.storeRound_ = storeRound_;
-        result.dOBPHKELDMI_ = dOBPHKELDMI_;
-        result.dPCAMJBDBNC_ = dPCAMJBDBNC_;
+        result.nDKCCHHJMCG_ = nDKCCHHJMCG_;
+        result.aCGCAGDFOCM_ = aCGCAGDFOCM_;
+        result.retcode_ = retcode_;
         onBuilt();
         return result;
       }
@@ -505,17 +505,17 @@ public final class VintageMarketStartStorePlayRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.VintageMarketStartStorePlayRspOuterClass.VintageMarketStartStorePlayRsp other) {
         if (other == emu.grasscutter.net.proto.VintageMarketStartStorePlayRspOuterClass.VintageMarketStartStorePlayRsp.getDefaultInstance()) return this;
-        if (other.getRetcode() != 0) {
-          setRetcode(other.getRetcode());
-        }
         if (other.getStoreRound() != 0) {
           setStoreRound(other.getStoreRound());
         }
-        if (other.getDOBPHKELDMI() != 0) {
-          setDOBPHKELDMI(other.getDOBPHKELDMI());
+        if (other.getNDKCCHHJMCG() != 0) {
+          setNDKCCHHJMCG(other.getNDKCCHHJMCG());
         }
-        if (other.getDPCAMJBDBNC() != 0) {
-          setDPCAMJBDBNC(other.getDPCAMJBDBNC());
+        if (other.getACGCAGDFOCM() != 0) {
+          setACGCAGDFOCM(other.getACGCAGDFOCM());
+        }
+        if (other.getRetcode() != 0) {
+          setRetcode(other.getRetcode());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -546,40 +546,9 @@ public final class VintageMarketStartStorePlayRspOuterClass {
         return this;
       }
 
-      private int retcode_ ;
-      /**
-       * <code>int32 retcode = 2;</code>
-       * @return The retcode.
-       */
-      @java.lang.Override
-      public int getRetcode() {
-        return retcode_;
-      }
-      /**
-       * <code>int32 retcode = 2;</code>
-       * @param value The retcode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRetcode(int value) {
-        
-        retcode_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 retcode = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRetcode() {
-        
-        retcode_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int storeRound_ ;
       /**
-       * <code>uint32 store_round = 5;</code>
+       * <code>uint32 store_round = 4;</code>
        * @return The storeRound.
        */
       @java.lang.Override
@@ -587,7 +556,7 @@ public final class VintageMarketStartStorePlayRspOuterClass {
         return storeRound_;
       }
       /**
-       * <code>uint32 store_round = 5;</code>
+       * <code>uint32 store_round = 4;</code>
        * @param value The storeRound to set.
        * @return This builder for chaining.
        */
@@ -598,7 +567,7 @@ public final class VintageMarketStartStorePlayRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 store_round = 5;</code>
+       * <code>uint32 store_round = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearStoreRound() {
@@ -608,64 +577,95 @@ public final class VintageMarketStartStorePlayRspOuterClass {
         return this;
       }
 
-      private int dOBPHKELDMI_ ;
+      private int nDKCCHHJMCG_ ;
       /**
-       * <code>uint32 DOBPHKELDMI = 14;</code>
-       * @return The dOBPHKELDMI.
+       * <code>uint32 NDKCCHHJMCG = 14;</code>
+       * @return The nDKCCHHJMCG.
        */
       @java.lang.Override
-      public int getDOBPHKELDMI() {
-        return dOBPHKELDMI_;
+      public int getNDKCCHHJMCG() {
+        return nDKCCHHJMCG_;
       }
       /**
-       * <code>uint32 DOBPHKELDMI = 14;</code>
-       * @param value The dOBPHKELDMI to set.
+       * <code>uint32 NDKCCHHJMCG = 14;</code>
+       * @param value The nDKCCHHJMCG to set.
        * @return This builder for chaining.
        */
-      public Builder setDOBPHKELDMI(int value) {
+      public Builder setNDKCCHHJMCG(int value) {
         
-        dOBPHKELDMI_ = value;
+        nDKCCHHJMCG_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 DOBPHKELDMI = 14;</code>
+       * <code>uint32 NDKCCHHJMCG = 14;</code>
        * @return This builder for chaining.
        */
-      public Builder clearDOBPHKELDMI() {
+      public Builder clearNDKCCHHJMCG() {
         
-        dOBPHKELDMI_ = 0;
+        nDKCCHHJMCG_ = 0;
         onChanged();
         return this;
       }
 
-      private int dPCAMJBDBNC_ ;
+      private int aCGCAGDFOCM_ ;
       /**
-       * <code>uint32 DPCAMJBDBNC = 15;</code>
-       * @return The dPCAMJBDBNC.
+       * <code>uint32 ACGCAGDFOCM = 1;</code>
+       * @return The aCGCAGDFOCM.
        */
       @java.lang.Override
-      public int getDPCAMJBDBNC() {
-        return dPCAMJBDBNC_;
+      public int getACGCAGDFOCM() {
+        return aCGCAGDFOCM_;
       }
       /**
-       * <code>uint32 DPCAMJBDBNC = 15;</code>
-       * @param value The dPCAMJBDBNC to set.
+       * <code>uint32 ACGCAGDFOCM = 1;</code>
+       * @param value The aCGCAGDFOCM to set.
        * @return This builder for chaining.
        */
-      public Builder setDPCAMJBDBNC(int value) {
+      public Builder setACGCAGDFOCM(int value) {
         
-        dPCAMJBDBNC_ = value;
+        aCGCAGDFOCM_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 DPCAMJBDBNC = 15;</code>
+       * <code>uint32 ACGCAGDFOCM = 1;</code>
        * @return This builder for chaining.
        */
-      public Builder clearDPCAMJBDBNC() {
+      public Builder clearACGCAGDFOCM() {
         
-        dPCAMJBDBNC_ = 0;
+        aCGCAGDFOCM_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int retcode_ ;
+      /**
+       * <code>int32 retcode = 12;</code>
+       * @return The retcode.
+       */
+      @java.lang.Override
+      public int getRetcode() {
+        return retcode_;
+      }
+      /**
+       * <code>int32 retcode = 12;</code>
+       * @param value The retcode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRetcode(int value) {
+        
+        retcode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 retcode = 12;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRetcode() {
+        
+        retcode_ = 0;
         onChanged();
         return this;
       }
@@ -737,9 +737,9 @@ public final class VintageMarketStartStorePlayRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n$VintageMarketStartStorePlayRsp.proto\"p" +
-      "\n\036VintageMarketStartStorePlayRsp\022\017\n\007retc" +
-      "ode\030\002 \001(\005\022\023\n\013store_round\030\005 \001(\r\022\023\n\013DOBPHK" +
-      "ELDMI\030\016 \001(\r\022\023\n\013DPCAMJBDBNC\030\017 \001(\rB\033\n\031emu." +
+      "\n\036VintageMarketStartStorePlayRsp\022\023\n\013stor" +
+      "e_round\030\004 \001(\r\022\023\n\013NDKCCHHJMCG\030\016 \001(\r\022\023\n\013AC" +
+      "GCAGDFOCM\030\001 \001(\r\022\017\n\007retcode\030\014 \001(\005B\033\n\031emu." +
       "grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -751,7 +751,7 @@ public final class VintageMarketStartStorePlayRspOuterClass {
     internal_static_VintageMarketStartStorePlayRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_VintageMarketStartStorePlayRsp_descriptor,
-        new java.lang.String[] { "Retcode", "StoreRound", "DOBPHKELDMI", "DPCAMJBDBNC", });
+        new java.lang.String[] { "StoreRound", "NDKCCHHJMCG", "ACGCAGDFOCM", "Retcode", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

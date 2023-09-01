@@ -19,27 +19,27 @@ public final class MainCoopFailNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string textmap_id = 12;</code>
+     * <code>string textmap_id = 14;</code>
      * @return The textmapId.
      */
     java.lang.String getTextmapId();
     /**
-     * <code>string textmap_id = 12;</code>
+     * <code>string textmap_id = 14;</code>
      * @return The bytes for textmapId.
      */
     com.google.protobuf.ByteString
         getTextmapIdBytes();
 
     /**
-     * <code>uint32 chapter_id = 5;</code>
+     * <code>uint32 chapter_id = 11;</code>
      * @return The chapterId.
      */
     int getChapterId();
   }
   /**
    * <pre>
-   * CmdId: 1955
-   * Obf: AKEBOMFKDLE
+   * CmdId: 2503
+   * Obf: IEMIIPKOOLI
    * </pre>
    *
    * Protobuf type {@code MainCoopFailNotify}
@@ -87,12 +87,12 @@ public final class MainCoopFailNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
+            case 88: {
 
               chapterId_ = input.readUInt32();
               break;
             }
-            case 98: {
+            case 114: {
               java.lang.String s = input.readStringRequireUtf8();
 
               textmapId_ = s;
@@ -130,10 +130,10 @@ public final class MainCoopFailNotifyOuterClass {
               emu.grasscutter.net.proto.MainCoopFailNotifyOuterClass.MainCoopFailNotify.class, emu.grasscutter.net.proto.MainCoopFailNotifyOuterClass.MainCoopFailNotify.Builder.class);
     }
 
-    public static final int TEXTMAP_ID_FIELD_NUMBER = 12;
+    public static final int TEXTMAP_ID_FIELD_NUMBER = 14;
     private volatile java.lang.Object textmapId_;
     /**
-     * <code>string textmap_id = 12;</code>
+     * <code>string textmap_id = 14;</code>
      * @return The textmapId.
      */
     @java.lang.Override
@@ -150,7 +150,7 @@ public final class MainCoopFailNotifyOuterClass {
       }
     }
     /**
-     * <code>string textmap_id = 12;</code>
+     * <code>string textmap_id = 14;</code>
      * @return The bytes for textmapId.
      */
     @java.lang.Override
@@ -168,10 +168,10 @@ public final class MainCoopFailNotifyOuterClass {
       }
     }
 
-    public static final int CHAPTER_ID_FIELD_NUMBER = 5;
+    public static final int CHAPTER_ID_FIELD_NUMBER = 11;
     private int chapterId_;
     /**
-     * <code>uint32 chapter_id = 5;</code>
+     * <code>uint32 chapter_id = 11;</code>
      * @return The chapterId.
      */
     @java.lang.Override
@@ -194,10 +194,10 @@ public final class MainCoopFailNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (chapterId_ != 0) {
-        output.writeUInt32(5, chapterId_);
+        output.writeUInt32(11, chapterId_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(textmapId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, textmapId_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 14, textmapId_);
       }
       unknownFields.writeTo(output);
     }
@@ -210,10 +210,10 @@ public final class MainCoopFailNotifyOuterClass {
       size = 0;
       if (chapterId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, chapterId_);
+          .computeUInt32Size(11, chapterId_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(textmapId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, textmapId_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, textmapId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -346,8 +346,8 @@ public final class MainCoopFailNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 1955
-     * Obf: AKEBOMFKDLE
+     * CmdId: 2503
+     * Obf: IEMIIPKOOLI
      * </pre>
      *
      * Protobuf type {@code MainCoopFailNotify}
@@ -505,7 +505,7 @@ public final class MainCoopFailNotifyOuterClass {
 
       private java.lang.Object textmapId_ = "";
       /**
-       * <code>string textmap_id = 12;</code>
+       * <code>string textmap_id = 14;</code>
        * @return The textmapId.
        */
       public java.lang.String getTextmapId() {
@@ -521,7 +521,7 @@ public final class MainCoopFailNotifyOuterClass {
         }
       }
       /**
-       * <code>string textmap_id = 12;</code>
+       * <code>string textmap_id = 14;</code>
        * @return The bytes for textmapId.
        */
       public com.google.protobuf.ByteString
@@ -538,7 +538,7 @@ public final class MainCoopFailNotifyOuterClass {
         }
       }
       /**
-       * <code>string textmap_id = 12;</code>
+       * <code>string textmap_id = 14;</code>
        * @param value The textmapId to set.
        * @return This builder for chaining.
        */
@@ -553,7 +553,7 @@ public final class MainCoopFailNotifyOuterClass {
         return this;
       }
       /**
-       * <code>string textmap_id = 12;</code>
+       * <code>string textmap_id = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearTextmapId() {
@@ -563,7 +563,7 @@ public final class MainCoopFailNotifyOuterClass {
         return this;
       }
       /**
-       * <code>string textmap_id = 12;</code>
+       * <code>string textmap_id = 14;</code>
        * @param value The bytes for textmapId to set.
        * @return This builder for chaining.
        */
@@ -581,7 +581,7 @@ public final class MainCoopFailNotifyOuterClass {
 
       private int chapterId_ ;
       /**
-       * <code>uint32 chapter_id = 5;</code>
+       * <code>uint32 chapter_id = 11;</code>
        * @return The chapterId.
        */
       @java.lang.Override
@@ -589,7 +589,7 @@ public final class MainCoopFailNotifyOuterClass {
         return chapterId_;
       }
       /**
-       * <code>uint32 chapter_id = 5;</code>
+       * <code>uint32 chapter_id = 11;</code>
        * @param value The chapterId to set.
        * @return This builder for chaining.
        */
@@ -600,7 +600,7 @@ public final class MainCoopFailNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 chapter_id = 5;</code>
+       * <code>uint32 chapter_id = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearChapterId() {
@@ -677,8 +677,8 @@ public final class MainCoopFailNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\030MainCoopFailNotify.proto\"<\n\022MainCoopFa" +
-      "ilNotify\022\022\n\ntextmap_id\030\014 \001(\t\022\022\n\nchapter_" +
-      "id\030\005 \001(\rB\033\n\031emu.grasscutter.net.protob\006p" +
+      "ilNotify\022\022\n\ntextmap_id\030\016 \001(\t\022\022\n\nchapter_" +
+      "id\030\013 \001(\rB\033\n\031emu.grasscutter.net.protob\006p" +
       "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

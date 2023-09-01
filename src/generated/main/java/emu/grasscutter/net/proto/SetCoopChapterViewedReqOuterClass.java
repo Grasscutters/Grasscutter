@@ -19,15 +19,15 @@ public final class SetCoopChapterViewedReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 chapter_id = 6;</code>
+     * <code>uint32 chapter_id = 4;</code>
      * @return The chapterId.
      */
     int getChapterId();
   }
   /**
    * <pre>
-   * CmdId: 1967
-   * Obf: HEJHEALLOIH
+   * CmdId: 2879
+   * Obf: BJCIIGPPDJB
    * </pre>
    *
    * Protobuf type {@code SetCoopChapterViewedReq}
@@ -74,7 +74,7 @@ public final class SetCoopChapterViewedReqOuterClass {
             case 0:
               done = true;
               break;
-            case 48: {
+            case 32: {
 
               chapterId_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class SetCoopChapterViewedReqOuterClass {
               emu.grasscutter.net.proto.SetCoopChapterViewedReqOuterClass.SetCoopChapterViewedReq.class, emu.grasscutter.net.proto.SetCoopChapterViewedReqOuterClass.SetCoopChapterViewedReq.Builder.class);
     }
 
-    public static final int CHAPTER_ID_FIELD_NUMBER = 6;
+    public static final int CHAPTER_ID_FIELD_NUMBER = 4;
     private int chapterId_;
     /**
-     * <code>uint32 chapter_id = 6;</code>
+     * <code>uint32 chapter_id = 4;</code>
      * @return The chapterId.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class SetCoopChapterViewedReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (chapterId_ != 0) {
-        output.writeUInt32(6, chapterId_);
+        output.writeUInt32(4, chapterId_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class SetCoopChapterViewedReqOuterClass {
       size = 0;
       if (chapterId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, chapterId_);
+          .computeUInt32Size(4, chapterId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class SetCoopChapterViewedReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 1967
-     * Obf: HEJHEALLOIH
+     * CmdId: 2879
+     * Obf: BJCIIGPPDJB
      * </pre>
      *
      * Protobuf type {@code SetCoopChapterViewedReq}
@@ -431,7 +431,7 @@ public final class SetCoopChapterViewedReqOuterClass {
 
       private int chapterId_ ;
       /**
-       * <code>uint32 chapter_id = 6;</code>
+       * <code>uint32 chapter_id = 4;</code>
        * @return The chapterId.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class SetCoopChapterViewedReqOuterClass {
         return chapterId_;
       }
       /**
-       * <code>uint32 chapter_id = 6;</code>
+       * <code>uint32 chapter_id = 4;</code>
        * @param value The chapterId to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class SetCoopChapterViewedReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 chapter_id = 6;</code>
+       * <code>uint32 chapter_id = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearChapterId() {
@@ -527,7 +527,7 @@ public final class SetCoopChapterViewedReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\035SetCoopChapterViewedReq.proto\"-\n\027SetCo" +
-      "opChapterViewedReq\022\022\n\nchapter_id\030\006 \001(\rB\033" +
+      "opChapterViewedReq\022\022\n\nchapter_id\030\004 \001(\rB\033" +
       "\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

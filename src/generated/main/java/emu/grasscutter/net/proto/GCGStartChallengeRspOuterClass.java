@@ -19,38 +19,38 @@ public final class GCGStartChallengeRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.JKLJHDFICPL KPHEDFKMFOG = 6;</code>
-     * @return The enum numeric value on the wire for kPHEDFKMFOG.
-     */
-    int getKPHEDFKMFOGValue();
-    /**
-     * <code>.JKLJHDFICPL KPHEDFKMFOG = 6;</code>
-     * @return The kPHEDFKMFOG.
-     */
-    emu.grasscutter.net.proto.JKLJHDFICPLOuterClass.JKLJHDFICPL getKPHEDFKMFOG();
-
-    /**
-     * <code>uint32 level_id = 11;</code>
+     * <code>uint32 level_id = 14;</code>
      * @return The levelId.
      */
     int getLevelId();
 
     /**
-     * <code>uint32 config_id = 7;</code>
+     * <code>int32 retcode = 9;</code>
+     * @return The retcode.
+     */
+    int getRetcode();
+
+    /**
+     * <code>uint32 config_id = 2;</code>
      * @return The configId.
      */
     int getConfigId();
 
     /**
-     * <code>int32 retcode = 13;</code>
-     * @return The retcode.
+     * <code>.HPJPOMAIPNC OJJEDPGEKFK = 3;</code>
+     * @return The enum numeric value on the wire for oJJEDPGEKFK.
      */
-    int getRetcode();
+    int getOJJEDPGEKFKValue();
+    /**
+     * <code>.HPJPOMAIPNC OJJEDPGEKFK = 3;</code>
+     * @return The oJJEDPGEKFK.
+     */
+    emu.grasscutter.net.proto.HPJPOMAIPNCOuterClass.HPJPOMAIPNC getOJJEDPGEKFK();
   }
   /**
    * <pre>
-   * CmdId: 7358
-   * Obf: PPGHMAMMLHN
+   * CmdId: 25227
+   * Obf: LJFKIPPJOBK
    * </pre>
    *
    * Protobuf type {@code GCGStartChallengeRsp}
@@ -65,7 +65,7 @@ public final class GCGStartChallengeRspOuterClass {
       super(builder);
     }
     private GCGStartChallengeRsp() {
-      kPHEDFKMFOG_ = 0;
+      oJJEDPGEKFK_ = 0;
     }
 
     @java.lang.Override
@@ -98,25 +98,25 @@ public final class GCGStartChallengeRspOuterClass {
             case 0:
               done = true;
               break;
-            case 48: {
-              int rawValue = input.readEnum();
-
-              kPHEDFKMFOG_ = rawValue;
-              break;
-            }
-            case 56: {
+            case 16: {
 
               configId_ = input.readUInt32();
               break;
             }
-            case 88: {
+            case 24: {
+              int rawValue = input.readEnum();
 
-              levelId_ = input.readUInt32();
+              oJJEDPGEKFK_ = rawValue;
               break;
             }
-            case 104: {
+            case 72: {
 
               retcode_ = input.readInt32();
+              break;
+            }
+            case 112: {
+
+              levelId_ = input.readUInt32();
               break;
             }
             default: {
@@ -151,29 +151,10 @@ public final class GCGStartChallengeRspOuterClass {
               emu.grasscutter.net.proto.GCGStartChallengeRspOuterClass.GCGStartChallengeRsp.class, emu.grasscutter.net.proto.GCGStartChallengeRspOuterClass.GCGStartChallengeRsp.Builder.class);
     }
 
-    public static final int KPHEDFKMFOG_FIELD_NUMBER = 6;
-    private int kPHEDFKMFOG_;
-    /**
-     * <code>.JKLJHDFICPL KPHEDFKMFOG = 6;</code>
-     * @return The enum numeric value on the wire for kPHEDFKMFOG.
-     */
-    @java.lang.Override public int getKPHEDFKMFOGValue() {
-      return kPHEDFKMFOG_;
-    }
-    /**
-     * <code>.JKLJHDFICPL KPHEDFKMFOG = 6;</code>
-     * @return The kPHEDFKMFOG.
-     */
-    @java.lang.Override public emu.grasscutter.net.proto.JKLJHDFICPLOuterClass.JKLJHDFICPL getKPHEDFKMFOG() {
-      @SuppressWarnings("deprecation")
-      emu.grasscutter.net.proto.JKLJHDFICPLOuterClass.JKLJHDFICPL result = emu.grasscutter.net.proto.JKLJHDFICPLOuterClass.JKLJHDFICPL.valueOf(kPHEDFKMFOG_);
-      return result == null ? emu.grasscutter.net.proto.JKLJHDFICPLOuterClass.JKLJHDFICPL.UNRECOGNIZED : result;
-    }
-
-    public static final int LEVEL_ID_FIELD_NUMBER = 11;
+    public static final int LEVEL_ID_FIELD_NUMBER = 14;
     private int levelId_;
     /**
-     * <code>uint32 level_id = 11;</code>
+     * <code>uint32 level_id = 14;</code>
      * @return The levelId.
      */
     @java.lang.Override
@@ -181,10 +162,21 @@ public final class GCGStartChallengeRspOuterClass {
       return levelId_;
     }
 
-    public static final int CONFIG_ID_FIELD_NUMBER = 7;
+    public static final int RETCODE_FIELD_NUMBER = 9;
+    private int retcode_;
+    /**
+     * <code>int32 retcode = 9;</code>
+     * @return The retcode.
+     */
+    @java.lang.Override
+    public int getRetcode() {
+      return retcode_;
+    }
+
+    public static final int CONFIG_ID_FIELD_NUMBER = 2;
     private int configId_;
     /**
-     * <code>uint32 config_id = 7;</code>
+     * <code>uint32 config_id = 2;</code>
      * @return The configId.
      */
     @java.lang.Override
@@ -192,15 +184,23 @@ public final class GCGStartChallengeRspOuterClass {
       return configId_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 13;
-    private int retcode_;
+    public static final int OJJEDPGEKFK_FIELD_NUMBER = 3;
+    private int oJJEDPGEKFK_;
     /**
-     * <code>int32 retcode = 13;</code>
-     * @return The retcode.
+     * <code>.HPJPOMAIPNC OJJEDPGEKFK = 3;</code>
+     * @return The enum numeric value on the wire for oJJEDPGEKFK.
      */
-    @java.lang.Override
-    public int getRetcode() {
-      return retcode_;
+    @java.lang.Override public int getOJJEDPGEKFKValue() {
+      return oJJEDPGEKFK_;
+    }
+    /**
+     * <code>.HPJPOMAIPNC OJJEDPGEKFK = 3;</code>
+     * @return The oJJEDPGEKFK.
+     */
+    @java.lang.Override public emu.grasscutter.net.proto.HPJPOMAIPNCOuterClass.HPJPOMAIPNC getOJJEDPGEKFK() {
+      @SuppressWarnings("deprecation")
+      emu.grasscutter.net.proto.HPJPOMAIPNCOuterClass.HPJPOMAIPNC result = emu.grasscutter.net.proto.HPJPOMAIPNCOuterClass.HPJPOMAIPNC.valueOf(oJJEDPGEKFK_);
+      return result == null ? emu.grasscutter.net.proto.HPJPOMAIPNCOuterClass.HPJPOMAIPNC.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -217,17 +217,17 @@ public final class GCGStartChallengeRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (kPHEDFKMFOG_ != emu.grasscutter.net.proto.JKLJHDFICPLOuterClass.JKLJHDFICPL.JKLJHDFICPL_GcgLevelNone.getNumber()) {
-        output.writeEnum(6, kPHEDFKMFOG_);
-      }
       if (configId_ != 0) {
-        output.writeUInt32(7, configId_);
+        output.writeUInt32(2, configId_);
       }
-      if (levelId_ != 0) {
-        output.writeUInt32(11, levelId_);
+      if (oJJEDPGEKFK_ != emu.grasscutter.net.proto.HPJPOMAIPNCOuterClass.HPJPOMAIPNC.HPJPOMAIPNC_GcgLevelNone.getNumber()) {
+        output.writeEnum(3, oJJEDPGEKFK_);
       }
       if (retcode_ != 0) {
-        output.writeInt32(13, retcode_);
+        output.writeInt32(9, retcode_);
+      }
+      if (levelId_ != 0) {
+        output.writeUInt32(14, levelId_);
       }
       unknownFields.writeTo(output);
     }
@@ -238,21 +238,21 @@ public final class GCGStartChallengeRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (kPHEDFKMFOG_ != emu.grasscutter.net.proto.JKLJHDFICPLOuterClass.JKLJHDFICPL.JKLJHDFICPL_GcgLevelNone.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(6, kPHEDFKMFOG_);
-      }
       if (configId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, configId_);
+          .computeUInt32Size(2, configId_);
       }
-      if (levelId_ != 0) {
+      if (oJJEDPGEKFK_ != emu.grasscutter.net.proto.HPJPOMAIPNCOuterClass.HPJPOMAIPNC.HPJPOMAIPNC_GcgLevelNone.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, levelId_);
+          .computeEnumSize(3, oJJEDPGEKFK_);
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(13, retcode_);
+          .computeInt32Size(9, retcode_);
+      }
+      if (levelId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(14, levelId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -269,13 +269,13 @@ public final class GCGStartChallengeRspOuterClass {
       }
       emu.grasscutter.net.proto.GCGStartChallengeRspOuterClass.GCGStartChallengeRsp other = (emu.grasscutter.net.proto.GCGStartChallengeRspOuterClass.GCGStartChallengeRsp) obj;
 
-      if (kPHEDFKMFOG_ != other.kPHEDFKMFOG_) return false;
       if (getLevelId()
           != other.getLevelId()) return false;
-      if (getConfigId()
-          != other.getConfigId()) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
+      if (getConfigId()
+          != other.getConfigId()) return false;
+      if (oJJEDPGEKFK_ != other.oJJEDPGEKFK_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -287,14 +287,14 @@ public final class GCGStartChallengeRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + KPHEDFKMFOG_FIELD_NUMBER;
-      hash = (53 * hash) + kPHEDFKMFOG_;
       hash = (37 * hash) + LEVEL_ID_FIELD_NUMBER;
       hash = (53 * hash) + getLevelId();
-      hash = (37 * hash) + CONFIG_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getConfigId();
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
+      hash = (37 * hash) + CONFIG_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getConfigId();
+      hash = (37 * hash) + OJJEDPGEKFK_FIELD_NUMBER;
+      hash = (53 * hash) + oJJEDPGEKFK_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -392,8 +392,8 @@ public final class GCGStartChallengeRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 7358
-     * Obf: PPGHMAMMLHN
+     * CmdId: 25227
+     * Obf: LJFKIPPJOBK
      * </pre>
      *
      * Protobuf type {@code GCGStartChallengeRsp}
@@ -433,13 +433,13 @@ public final class GCGStartChallengeRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        kPHEDFKMFOG_ = 0;
-
         levelId_ = 0;
+
+        retcode_ = 0;
 
         configId_ = 0;
 
-        retcode_ = 0;
+        oJJEDPGEKFK_ = 0;
 
         return this;
       }
@@ -467,10 +467,10 @@ public final class GCGStartChallengeRspOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.GCGStartChallengeRspOuterClass.GCGStartChallengeRsp buildPartial() {
         emu.grasscutter.net.proto.GCGStartChallengeRspOuterClass.GCGStartChallengeRsp result = new emu.grasscutter.net.proto.GCGStartChallengeRspOuterClass.GCGStartChallengeRsp(this);
-        result.kPHEDFKMFOG_ = kPHEDFKMFOG_;
         result.levelId_ = levelId_;
-        result.configId_ = configId_;
         result.retcode_ = retcode_;
+        result.configId_ = configId_;
+        result.oJJEDPGEKFK_ = oJJEDPGEKFK_;
         onBuilt();
         return result;
       }
@@ -519,17 +519,17 @@ public final class GCGStartChallengeRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.GCGStartChallengeRspOuterClass.GCGStartChallengeRsp other) {
         if (other == emu.grasscutter.net.proto.GCGStartChallengeRspOuterClass.GCGStartChallengeRsp.getDefaultInstance()) return this;
-        if (other.kPHEDFKMFOG_ != 0) {
-          setKPHEDFKMFOGValue(other.getKPHEDFKMFOGValue());
-        }
         if (other.getLevelId() != 0) {
           setLevelId(other.getLevelId());
+        }
+        if (other.getRetcode() != 0) {
+          setRetcode(other.getRetcode());
         }
         if (other.getConfigId() != 0) {
           setConfigId(other.getConfigId());
         }
-        if (other.getRetcode() != 0) {
-          setRetcode(other.getRetcode());
+        if (other.oJJEDPGEKFK_ != 0) {
+          setOJJEDPGEKFKValue(other.getOJJEDPGEKFKValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -560,63 +560,9 @@ public final class GCGStartChallengeRspOuterClass {
         return this;
       }
 
-      private int kPHEDFKMFOG_ = 0;
-      /**
-       * <code>.JKLJHDFICPL KPHEDFKMFOG = 6;</code>
-       * @return The enum numeric value on the wire for kPHEDFKMFOG.
-       */
-      @java.lang.Override public int getKPHEDFKMFOGValue() {
-        return kPHEDFKMFOG_;
-      }
-      /**
-       * <code>.JKLJHDFICPL KPHEDFKMFOG = 6;</code>
-       * @param value The enum numeric value on the wire for kPHEDFKMFOG to set.
-       * @return This builder for chaining.
-       */
-      public Builder setKPHEDFKMFOGValue(int value) {
-        
-        kPHEDFKMFOG_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.JKLJHDFICPL KPHEDFKMFOG = 6;</code>
-       * @return The kPHEDFKMFOG.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.JKLJHDFICPLOuterClass.JKLJHDFICPL getKPHEDFKMFOG() {
-        @SuppressWarnings("deprecation")
-        emu.grasscutter.net.proto.JKLJHDFICPLOuterClass.JKLJHDFICPL result = emu.grasscutter.net.proto.JKLJHDFICPLOuterClass.JKLJHDFICPL.valueOf(kPHEDFKMFOG_);
-        return result == null ? emu.grasscutter.net.proto.JKLJHDFICPLOuterClass.JKLJHDFICPL.UNRECOGNIZED : result;
-      }
-      /**
-       * <code>.JKLJHDFICPL KPHEDFKMFOG = 6;</code>
-       * @param value The kPHEDFKMFOG to set.
-       * @return This builder for chaining.
-       */
-      public Builder setKPHEDFKMFOG(emu.grasscutter.net.proto.JKLJHDFICPLOuterClass.JKLJHDFICPL value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        kPHEDFKMFOG_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.JKLJHDFICPL KPHEDFKMFOG = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearKPHEDFKMFOG() {
-        
-        kPHEDFKMFOG_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int levelId_ ;
       /**
-       * <code>uint32 level_id = 11;</code>
+       * <code>uint32 level_id = 14;</code>
        * @return The levelId.
        */
       @java.lang.Override
@@ -624,7 +570,7 @@ public final class GCGStartChallengeRspOuterClass {
         return levelId_;
       }
       /**
-       * <code>uint32 level_id = 11;</code>
+       * <code>uint32 level_id = 14;</code>
        * @param value The levelId to set.
        * @return This builder for chaining.
        */
@@ -635,7 +581,7 @@ public final class GCGStartChallengeRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 level_id = 11;</code>
+       * <code>uint32 level_id = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearLevelId() {
@@ -645,40 +591,9 @@ public final class GCGStartChallengeRspOuterClass {
         return this;
       }
 
-      private int configId_ ;
-      /**
-       * <code>uint32 config_id = 7;</code>
-       * @return The configId.
-       */
-      @java.lang.Override
-      public int getConfigId() {
-        return configId_;
-      }
-      /**
-       * <code>uint32 config_id = 7;</code>
-       * @param value The configId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setConfigId(int value) {
-        
-        configId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 config_id = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearConfigId() {
-        
-        configId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 13;</code>
+       * <code>int32 retcode = 9;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -686,7 +601,7 @@ public final class GCGStartChallengeRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 13;</code>
+       * <code>int32 retcode = 9;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -697,12 +612,97 @@ public final class GCGStartChallengeRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 13;</code>
+       * <code>int32 retcode = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
         
         retcode_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int configId_ ;
+      /**
+       * <code>uint32 config_id = 2;</code>
+       * @return The configId.
+       */
+      @java.lang.Override
+      public int getConfigId() {
+        return configId_;
+      }
+      /**
+       * <code>uint32 config_id = 2;</code>
+       * @param value The configId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConfigId(int value) {
+        
+        configId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 config_id = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearConfigId() {
+        
+        configId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int oJJEDPGEKFK_ = 0;
+      /**
+       * <code>.HPJPOMAIPNC OJJEDPGEKFK = 3;</code>
+       * @return The enum numeric value on the wire for oJJEDPGEKFK.
+       */
+      @java.lang.Override public int getOJJEDPGEKFKValue() {
+        return oJJEDPGEKFK_;
+      }
+      /**
+       * <code>.HPJPOMAIPNC OJJEDPGEKFK = 3;</code>
+       * @param value The enum numeric value on the wire for oJJEDPGEKFK to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOJJEDPGEKFKValue(int value) {
+        
+        oJJEDPGEKFK_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.HPJPOMAIPNC OJJEDPGEKFK = 3;</code>
+       * @return The oJJEDPGEKFK.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.HPJPOMAIPNCOuterClass.HPJPOMAIPNC getOJJEDPGEKFK() {
+        @SuppressWarnings("deprecation")
+        emu.grasscutter.net.proto.HPJPOMAIPNCOuterClass.HPJPOMAIPNC result = emu.grasscutter.net.proto.HPJPOMAIPNCOuterClass.HPJPOMAIPNC.valueOf(oJJEDPGEKFK_);
+        return result == null ? emu.grasscutter.net.proto.HPJPOMAIPNCOuterClass.HPJPOMAIPNC.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.HPJPOMAIPNC OJJEDPGEKFK = 3;</code>
+       * @param value The oJJEDPGEKFK to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOJJEDPGEKFK(emu.grasscutter.net.proto.HPJPOMAIPNCOuterClass.HPJPOMAIPNC value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        oJJEDPGEKFK_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.HPJPOMAIPNC OJJEDPGEKFK = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOJJEDPGEKFK() {
+        
+        oJJEDPGEKFK_ = 0;
         onChanged();
         return this;
       }
@@ -773,24 +773,24 @@ public final class GCGStartChallengeRspOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\032GCGStartChallengeRsp.proto\032\021JKLJHDFICP" +
-      "L.proto\"o\n\024GCGStartChallengeRsp\022!\n\013KPHED" +
-      "FKMFOG\030\006 \001(\0162\014.JKLJHDFICPL\022\020\n\010level_id\030\013" +
-      " \001(\r\022\021\n\tconfig_id\030\007 \001(\r\022\017\n\007retcode\030\r \001(\005" +
+      "\n\032GCGStartChallengeRsp.proto\032\021HPJPOMAIPN" +
+      "C.proto\"o\n\024GCGStartChallengeRsp\022\020\n\010level" +
+      "_id\030\016 \001(\r\022\017\n\007retcode\030\t \001(\005\022\021\n\tconfig_id\030" +
+      "\002 \001(\r\022!\n\013OJJEDPGEKFK\030\003 \001(\0162\014.HPJPOMAIPNC" +
       "B\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          emu.grasscutter.net.proto.JKLJHDFICPLOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.HPJPOMAIPNCOuterClass.getDescriptor(),
         });
     internal_static_GCGStartChallengeRsp_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_GCGStartChallengeRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GCGStartChallengeRsp_descriptor,
-        new java.lang.String[] { "KPHEDFKMFOG", "LevelId", "ConfigId", "Retcode", });
-    emu.grasscutter.net.proto.JKLJHDFICPLOuterClass.getDescriptor();
+        new java.lang.String[] { "LevelId", "Retcode", "ConfigId", "OJJEDPGEKFK", });
+    emu.grasscutter.net.proto.HPJPOMAIPNCOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -1,7 +1,6 @@
 package emu.grasscutter.game.props.ItemUseAction;
 
-import emu.grasscutter.game.props.ActionReason;
-import emu.grasscutter.game.props.ItemUseOp;
+import emu.grasscutter.game.props.*;
 
 public class ItemUseAddItem extends ItemUseInt {
     private int count = 0;

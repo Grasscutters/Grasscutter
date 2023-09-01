@@ -44,8 +44,8 @@ public final class TeamChainRestartDungeonReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 24341
-   * Obf: DAFIHNKHLII
+   * CmdId: 24770
+   * Obf: JLKCAJELBHP
    * </pre>
    *
    * Protobuf type {@code TeamChainRestartDungeonReq}
@@ -337,8 +337,8 @@ public final class TeamChainRestartDungeonReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 24341
-     * Obf: DAFIHNKHLII
+     * CmdId: 24770
+     * Obf: JLKCAJELBHP
      * </pre>
      *
      * Protobuf type {@code TeamChainRestartDungeonReq}

@@ -19,31 +19,31 @@ public final class GCGSkillPreviewHpInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 hp_change_value = 11;</code>
+     * <code>uint32 hp_change_value = 3;</code>
      * @return The hpChangeValue.
      */
     int getHpChangeValue();
 
     /**
-     * <code>bool DACHPDNJOHH = 12;</code>
-     * @return The dACHPDNJOHH.
-     */
-    boolean getDACHPDNJOHH();
-
-    /**
-     * <code>.GCGSkillHpChangeType change_type = 2;</code>
+     * <code>.GCGSkillHpChangeType change_type = 11;</code>
      * @return The enum numeric value on the wire for changeType.
      */
     int getChangeTypeValue();
     /**
-     * <code>.GCGSkillHpChangeType change_type = 2;</code>
+     * <code>.GCGSkillHpChangeType change_type = 11;</code>
      * @return The changeType.
      */
     emu.grasscutter.net.proto.GCGSkillHpChangeTypeOuterClass.GCGSkillHpChangeType getChangeType();
+
+    /**
+     * <code>bool EDMLPODGFDC = 13;</code>
+     * @return The eDMLPODGFDC.
+     */
+    boolean getEDMLPODGFDC();
   }
   /**
    * <pre>
-   * Obf: CIIICCKMFEP
+   * Obf: FKPBPGIEJDA
    * </pre>
    *
    * Protobuf type {@code GCGSkillPreviewHpInfo}
@@ -91,20 +91,20 @@ public final class GCGSkillPreviewHpInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
+            case 24: {
+
+              hpChangeValue_ = input.readUInt32();
+              break;
+            }
+            case 88: {
               int rawValue = input.readEnum();
 
               changeType_ = rawValue;
               break;
             }
-            case 88: {
+            case 104: {
 
-              hpChangeValue_ = input.readUInt32();
-              break;
-            }
-            case 96: {
-
-              dACHPDNJOHH_ = input.readBool();
+              eDMLPODGFDC_ = input.readBool();
               break;
             }
             default: {
@@ -139,10 +139,10 @@ public final class GCGSkillPreviewHpInfoOuterClass {
               emu.grasscutter.net.proto.GCGSkillPreviewHpInfoOuterClass.GCGSkillPreviewHpInfo.class, emu.grasscutter.net.proto.GCGSkillPreviewHpInfoOuterClass.GCGSkillPreviewHpInfo.Builder.class);
     }
 
-    public static final int HP_CHANGE_VALUE_FIELD_NUMBER = 11;
+    public static final int HP_CHANGE_VALUE_FIELD_NUMBER = 3;
     private int hpChangeValue_;
     /**
-     * <code>uint32 hp_change_value = 11;</code>
+     * <code>uint32 hp_change_value = 3;</code>
      * @return The hpChangeValue.
      */
     @java.lang.Override
@@ -150,34 +150,34 @@ public final class GCGSkillPreviewHpInfoOuterClass {
       return hpChangeValue_;
     }
 
-    public static final int DACHPDNJOHH_FIELD_NUMBER = 12;
-    private boolean dACHPDNJOHH_;
-    /**
-     * <code>bool DACHPDNJOHH = 12;</code>
-     * @return The dACHPDNJOHH.
-     */
-    @java.lang.Override
-    public boolean getDACHPDNJOHH() {
-      return dACHPDNJOHH_;
-    }
-
-    public static final int CHANGE_TYPE_FIELD_NUMBER = 2;
+    public static final int CHANGE_TYPE_FIELD_NUMBER = 11;
     private int changeType_;
     /**
-     * <code>.GCGSkillHpChangeType change_type = 2;</code>
+     * <code>.GCGSkillHpChangeType change_type = 11;</code>
      * @return The enum numeric value on the wire for changeType.
      */
     @java.lang.Override public int getChangeTypeValue() {
       return changeType_;
     }
     /**
-     * <code>.GCGSkillHpChangeType change_type = 2;</code>
+     * <code>.GCGSkillHpChangeType change_type = 11;</code>
      * @return The changeType.
      */
     @java.lang.Override public emu.grasscutter.net.proto.GCGSkillHpChangeTypeOuterClass.GCGSkillHpChangeType getChangeType() {
       @SuppressWarnings("deprecation")
       emu.grasscutter.net.proto.GCGSkillHpChangeTypeOuterClass.GCGSkillHpChangeType result = emu.grasscutter.net.proto.GCGSkillHpChangeTypeOuterClass.GCGSkillHpChangeType.valueOf(changeType_);
       return result == null ? emu.grasscutter.net.proto.GCGSkillHpChangeTypeOuterClass.GCGSkillHpChangeType.UNRECOGNIZED : result;
+    }
+
+    public static final int EDMLPODGFDC_FIELD_NUMBER = 13;
+    private boolean eDMLPODGFDC_;
+    /**
+     * <code>bool EDMLPODGFDC = 13;</code>
+     * @return The eDMLPODGFDC.
+     */
+    @java.lang.Override
+    public boolean getEDMLPODGFDC() {
+      return eDMLPODGFDC_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -194,14 +194,14 @@ public final class GCGSkillPreviewHpInfoOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (changeType_ != emu.grasscutter.net.proto.GCGSkillHpChangeTypeOuterClass.GCGSkillHpChangeType.GCG_SKILL_HP_CHANGE_NONE.getNumber()) {
-        output.writeEnum(2, changeType_);
-      }
       if (hpChangeValue_ != 0) {
-        output.writeUInt32(11, hpChangeValue_);
+        output.writeUInt32(3, hpChangeValue_);
       }
-      if (dACHPDNJOHH_ != false) {
-        output.writeBool(12, dACHPDNJOHH_);
+      if (changeType_ != emu.grasscutter.net.proto.GCGSkillHpChangeTypeOuterClass.GCGSkillHpChangeType.GCG_SKILL_HP_CHANGE_NONE.getNumber()) {
+        output.writeEnum(11, changeType_);
+      }
+      if (eDMLPODGFDC_ != false) {
+        output.writeBool(13, eDMLPODGFDC_);
       }
       unknownFields.writeTo(output);
     }
@@ -212,17 +212,17 @@ public final class GCGSkillPreviewHpInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (changeType_ != emu.grasscutter.net.proto.GCGSkillHpChangeTypeOuterClass.GCGSkillHpChangeType.GCG_SKILL_HP_CHANGE_NONE.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(2, changeType_);
-      }
       if (hpChangeValue_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, hpChangeValue_);
+          .computeUInt32Size(3, hpChangeValue_);
       }
-      if (dACHPDNJOHH_ != false) {
+      if (changeType_ != emu.grasscutter.net.proto.GCGSkillHpChangeTypeOuterClass.GCGSkillHpChangeType.GCG_SKILL_HP_CHANGE_NONE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(12, dACHPDNJOHH_);
+          .computeEnumSize(11, changeType_);
+      }
+      if (eDMLPODGFDC_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(13, eDMLPODGFDC_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -241,9 +241,9 @@ public final class GCGSkillPreviewHpInfoOuterClass {
 
       if (getHpChangeValue()
           != other.getHpChangeValue()) return false;
-      if (getDACHPDNJOHH()
-          != other.getDACHPDNJOHH()) return false;
       if (changeType_ != other.changeType_) return false;
+      if (getEDMLPODGFDC()
+          != other.getEDMLPODGFDC()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -257,11 +257,11 @@ public final class GCGSkillPreviewHpInfoOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + HP_CHANGE_VALUE_FIELD_NUMBER;
       hash = (53 * hash) + getHpChangeValue();
-      hash = (37 * hash) + DACHPDNJOHH_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getDACHPDNJOHH());
       hash = (37 * hash) + CHANGE_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + changeType_;
+      hash = (37 * hash) + EDMLPODGFDC_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getEDMLPODGFDC());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -359,7 +359,7 @@ public final class GCGSkillPreviewHpInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: CIIICCKMFEP
+     * Obf: FKPBPGIEJDA
      * </pre>
      *
      * Protobuf type {@code GCGSkillPreviewHpInfo}
@@ -401,9 +401,9 @@ public final class GCGSkillPreviewHpInfoOuterClass {
         super.clear();
         hpChangeValue_ = 0;
 
-        dACHPDNJOHH_ = false;
-
         changeType_ = 0;
+
+        eDMLPODGFDC_ = false;
 
         return this;
       }
@@ -432,8 +432,8 @@ public final class GCGSkillPreviewHpInfoOuterClass {
       public emu.grasscutter.net.proto.GCGSkillPreviewHpInfoOuterClass.GCGSkillPreviewHpInfo buildPartial() {
         emu.grasscutter.net.proto.GCGSkillPreviewHpInfoOuterClass.GCGSkillPreviewHpInfo result = new emu.grasscutter.net.proto.GCGSkillPreviewHpInfoOuterClass.GCGSkillPreviewHpInfo(this);
         result.hpChangeValue_ = hpChangeValue_;
-        result.dACHPDNJOHH_ = dACHPDNJOHH_;
         result.changeType_ = changeType_;
+        result.eDMLPODGFDC_ = eDMLPODGFDC_;
         onBuilt();
         return result;
       }
@@ -485,11 +485,11 @@ public final class GCGSkillPreviewHpInfoOuterClass {
         if (other.getHpChangeValue() != 0) {
           setHpChangeValue(other.getHpChangeValue());
         }
-        if (other.getDACHPDNJOHH() != false) {
-          setDACHPDNJOHH(other.getDACHPDNJOHH());
-        }
         if (other.changeType_ != 0) {
           setChangeTypeValue(other.getChangeTypeValue());
+        }
+        if (other.getEDMLPODGFDC() != false) {
+          setEDMLPODGFDC(other.getEDMLPODGFDC());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -522,7 +522,7 @@ public final class GCGSkillPreviewHpInfoOuterClass {
 
       private int hpChangeValue_ ;
       /**
-       * <code>uint32 hp_change_value = 11;</code>
+       * <code>uint32 hp_change_value = 3;</code>
        * @return The hpChangeValue.
        */
       @java.lang.Override
@@ -530,7 +530,7 @@ public final class GCGSkillPreviewHpInfoOuterClass {
         return hpChangeValue_;
       }
       /**
-       * <code>uint32 hp_change_value = 11;</code>
+       * <code>uint32 hp_change_value = 3;</code>
        * @param value The hpChangeValue to set.
        * @return This builder for chaining.
        */
@@ -541,7 +541,7 @@ public final class GCGSkillPreviewHpInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 hp_change_value = 11;</code>
+       * <code>uint32 hp_change_value = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearHpChangeValue() {
@@ -551,47 +551,16 @@ public final class GCGSkillPreviewHpInfoOuterClass {
         return this;
       }
 
-      private boolean dACHPDNJOHH_ ;
-      /**
-       * <code>bool DACHPDNJOHH = 12;</code>
-       * @return The dACHPDNJOHH.
-       */
-      @java.lang.Override
-      public boolean getDACHPDNJOHH() {
-        return dACHPDNJOHH_;
-      }
-      /**
-       * <code>bool DACHPDNJOHH = 12;</code>
-       * @param value The dACHPDNJOHH to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDACHPDNJOHH(boolean value) {
-        
-        dACHPDNJOHH_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool DACHPDNJOHH = 12;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDACHPDNJOHH() {
-        
-        dACHPDNJOHH_ = false;
-        onChanged();
-        return this;
-      }
-
       private int changeType_ = 0;
       /**
-       * <code>.GCGSkillHpChangeType change_type = 2;</code>
+       * <code>.GCGSkillHpChangeType change_type = 11;</code>
        * @return The enum numeric value on the wire for changeType.
        */
       @java.lang.Override public int getChangeTypeValue() {
         return changeType_;
       }
       /**
-       * <code>.GCGSkillHpChangeType change_type = 2;</code>
+       * <code>.GCGSkillHpChangeType change_type = 11;</code>
        * @param value The enum numeric value on the wire for changeType to set.
        * @return This builder for chaining.
        */
@@ -602,7 +571,7 @@ public final class GCGSkillPreviewHpInfoOuterClass {
         return this;
       }
       /**
-       * <code>.GCGSkillHpChangeType change_type = 2;</code>
+       * <code>.GCGSkillHpChangeType change_type = 11;</code>
        * @return The changeType.
        */
       @java.lang.Override
@@ -612,7 +581,7 @@ public final class GCGSkillPreviewHpInfoOuterClass {
         return result == null ? emu.grasscutter.net.proto.GCGSkillHpChangeTypeOuterClass.GCGSkillHpChangeType.UNRECOGNIZED : result;
       }
       /**
-       * <code>.GCGSkillHpChangeType change_type = 2;</code>
+       * <code>.GCGSkillHpChangeType change_type = 11;</code>
        * @param value The changeType to set.
        * @return This builder for chaining.
        */
@@ -626,12 +595,43 @@ public final class GCGSkillPreviewHpInfoOuterClass {
         return this;
       }
       /**
-       * <code>.GCGSkillHpChangeType change_type = 2;</code>
+       * <code>.GCGSkillHpChangeType change_type = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearChangeType() {
         
         changeType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean eDMLPODGFDC_ ;
+      /**
+       * <code>bool EDMLPODGFDC = 13;</code>
+       * @return The eDMLPODGFDC.
+       */
+      @java.lang.Override
+      public boolean getEDMLPODGFDC() {
+        return eDMLPODGFDC_;
+      }
+      /**
+       * <code>bool EDMLPODGFDC = 13;</code>
+       * @param value The eDMLPODGFDC to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEDMLPODGFDC(boolean value) {
+        
+        eDMLPODGFDC_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool EDMLPODGFDC = 13;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEDMLPODGFDC() {
+        
+        eDMLPODGFDC_ = false;
         onChanged();
         return this;
       }
@@ -704,9 +704,9 @@ public final class GCGSkillPreviewHpInfoOuterClass {
     java.lang.String[] descriptorData = {
       "\n\033GCGSkillPreviewHpInfo.proto\032\032GCGSkillH" +
       "pChangeType.proto\"q\n\025GCGSkillPreviewHpIn" +
-      "fo\022\027\n\017hp_change_value\030\013 \001(\r\022\023\n\013DACHPDNJO" +
-      "HH\030\014 \001(\010\022*\n\013change_type\030\002 \001(\0162\025.GCGSkill" +
-      "HpChangeTypeB\033\n\031emu.grasscutter.net.prot" +
+      "fo\022\027\n\017hp_change_value\030\003 \001(\r\022*\n\013change_ty" +
+      "pe\030\013 \001(\0162\025.GCGSkillHpChangeType\022\023\n\013EDMLP" +
+      "ODGFDC\030\r \001(\010B\033\n\031emu.grasscutter.net.prot" +
       "ob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -719,7 +719,7 @@ public final class GCGSkillPreviewHpInfoOuterClass {
     internal_static_GCGSkillPreviewHpInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GCGSkillPreviewHpInfo_descriptor,
-        new java.lang.String[] { "HpChangeValue", "DACHPDNJOHH", "ChangeType", });
+        new java.lang.String[] { "HpChangeValue", "ChangeType", "EDMLPODGFDC", });
     emu.grasscutter.net.proto.GCGSkillHpChangeTypeOuterClass.getDescriptor();
   }
 

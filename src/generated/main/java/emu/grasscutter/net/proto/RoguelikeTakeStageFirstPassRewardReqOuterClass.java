@@ -19,15 +19,15 @@ public final class RoguelikeTakeStageFirstPassRewardReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 stage_id = 1;</code>
+     * <code>uint32 stage_id = 2;</code>
      * @return The stageId.
      */
     int getStageId();
   }
   /**
    * <pre>
-   * CmdId: 8289
-   * Obf: EIJPCMFIDMP
+   * CmdId: 6306
+   * Obf: HFGJBHEJPJD
    * </pre>
    *
    * Protobuf type {@code RoguelikeTakeStageFirstPassRewardReq}
@@ -74,7 +74,7 @@ public final class RoguelikeTakeStageFirstPassRewardReqOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 16: {
 
               stageId_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class RoguelikeTakeStageFirstPassRewardReqOuterClass {
               emu.grasscutter.net.proto.RoguelikeTakeStageFirstPassRewardReqOuterClass.RoguelikeTakeStageFirstPassRewardReq.class, emu.grasscutter.net.proto.RoguelikeTakeStageFirstPassRewardReqOuterClass.RoguelikeTakeStageFirstPassRewardReq.Builder.class);
     }
 
-    public static final int STAGE_ID_FIELD_NUMBER = 1;
+    public static final int STAGE_ID_FIELD_NUMBER = 2;
     private int stageId_;
     /**
-     * <code>uint32 stage_id = 1;</code>
+     * <code>uint32 stage_id = 2;</code>
      * @return The stageId.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class RoguelikeTakeStageFirstPassRewardReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (stageId_ != 0) {
-        output.writeUInt32(1, stageId_);
+        output.writeUInt32(2, stageId_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class RoguelikeTakeStageFirstPassRewardReqOuterClass {
       size = 0;
       if (stageId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, stageId_);
+          .computeUInt32Size(2, stageId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class RoguelikeTakeStageFirstPassRewardReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8289
-     * Obf: EIJPCMFIDMP
+     * CmdId: 6306
+     * Obf: HFGJBHEJPJD
      * </pre>
      *
      * Protobuf type {@code RoguelikeTakeStageFirstPassRewardReq}
@@ -431,7 +431,7 @@ public final class RoguelikeTakeStageFirstPassRewardReqOuterClass {
 
       private int stageId_ ;
       /**
-       * <code>uint32 stage_id = 1;</code>
+       * <code>uint32 stage_id = 2;</code>
        * @return The stageId.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class RoguelikeTakeStageFirstPassRewardReqOuterClass {
         return stageId_;
       }
       /**
-       * <code>uint32 stage_id = 1;</code>
+       * <code>uint32 stage_id = 2;</code>
        * @param value The stageId to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class RoguelikeTakeStageFirstPassRewardReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 stage_id = 1;</code>
+       * <code>uint32 stage_id = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearStageId() {
@@ -528,7 +528,7 @@ public final class RoguelikeTakeStageFirstPassRewardReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n*RoguelikeTakeStageFirstPassRewardReq.p" +
       "roto\"8\n$RoguelikeTakeStageFirstPassRewar" +
-      "dReq\022\020\n\010stage_id\030\001 \001(\rB\033\n\031emu.grasscutte" +
+      "dReq\022\020\n\010stage_id\030\002 \001(\rB\033\n\031emu.grasscutte" +
       "r.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

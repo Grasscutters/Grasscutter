@@ -19,15 +19,15 @@ public final class SeeMonsterRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 15;</code>
+     * <code>int32 retcode = 2;</code>
      * @return The retcode.
      */
     int getRetcode();
   }
   /**
    * <pre>
-   * CmdId: 295
-   * Obf: KFCNCIDMOJO
+   * CmdId: 26264
+   * Obf: DPAIPJGEIND
    * </pre>
    *
    * Protobuf type {@code SeeMonsterRsp}
@@ -74,7 +74,7 @@ public final class SeeMonsterRspOuterClass {
             case 0:
               done = true;
               break;
-            case 120: {
+            case 16: {
 
               retcode_ = input.readInt32();
               break;
@@ -111,10 +111,10 @@ public final class SeeMonsterRspOuterClass {
               emu.grasscutter.net.proto.SeeMonsterRspOuterClass.SeeMonsterRsp.class, emu.grasscutter.net.proto.SeeMonsterRspOuterClass.SeeMonsterRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 15;
+    public static final int RETCODE_FIELD_NUMBER = 2;
     private int retcode_;
     /**
-     * <code>int32 retcode = 15;</code>
+     * <code>int32 retcode = 2;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class SeeMonsterRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (retcode_ != 0) {
-        output.writeInt32(15, retcode_);
+        output.writeInt32(2, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class SeeMonsterRspOuterClass {
       size = 0;
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(15, retcode_);
+          .computeInt32Size(2, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class SeeMonsterRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 295
-     * Obf: KFCNCIDMOJO
+     * CmdId: 26264
+     * Obf: DPAIPJGEIND
      * </pre>
      *
      * Protobuf type {@code SeeMonsterRsp}
@@ -431,7 +431,7 @@ public final class SeeMonsterRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 15;</code>
+       * <code>int32 retcode = 2;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class SeeMonsterRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 15;</code>
+       * <code>int32 retcode = 2;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class SeeMonsterRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 15;</code>
+       * <code>int32 retcode = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -527,7 +527,7 @@ public final class SeeMonsterRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\023SeeMonsterRsp.proto\" \n\rSeeMonsterRsp\022\017" +
-      "\n\007retcode\030\017 \001(\005B\033\n\031emu.grasscutter.net.p" +
+      "\n\007retcode\030\002 \001(\005B\033\n\031emu.grasscutter.net.p" +
       "rotob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

@@ -19,20 +19,20 @@ public final class SceneGalleryAkaFesArchaeologyInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 EDBAKLDPAAD = 8;</code>
-     * @return The eDBAKLDPAAD.
+     * <code>uint32 DPFKGAJIFGG = 4;</code>
+     * @return The dPFKGAJIFGG.
      */
-    int getEDBAKLDPAAD();
+    int getDPFKGAJIFGG();
 
     /**
-     * <code>uint32 IDOPBHGABCE = 2;</code>
-     * @return The iDOPBHGABCE.
+     * <code>uint32 FNFGFKGDJPH = 7;</code>
+     * @return The fNFGFKGDJPH.
      */
-    int getIDOPBHGABCE();
+    int getFNFGFKGDJPH();
   }
   /**
    * <pre>
-   * Obf: AIMPMCMFJIK
+   * Obf: EBKELAKJJEC
    * </pre>
    *
    * Protobuf type {@code SceneGalleryAkaFesArchaeologyInfo}
@@ -79,14 +79,14 @@ public final class SceneGalleryAkaFesArchaeologyInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
+            case 32: {
 
-              iDOPBHGABCE_ = input.readUInt32();
+              dPFKGAJIFGG_ = input.readUInt32();
               break;
             }
-            case 64: {
+            case 56: {
 
-              eDBAKLDPAAD_ = input.readUInt32();
+              fNFGFKGDJPH_ = input.readUInt32();
               break;
             }
             default: {
@@ -121,26 +121,26 @@ public final class SceneGalleryAkaFesArchaeologyInfoOuterClass {
               emu.grasscutter.net.proto.SceneGalleryAkaFesArchaeologyInfoOuterClass.SceneGalleryAkaFesArchaeologyInfo.class, emu.grasscutter.net.proto.SceneGalleryAkaFesArchaeologyInfoOuterClass.SceneGalleryAkaFesArchaeologyInfo.Builder.class);
     }
 
-    public static final int EDBAKLDPAAD_FIELD_NUMBER = 8;
-    private int eDBAKLDPAAD_;
+    public static final int DPFKGAJIFGG_FIELD_NUMBER = 4;
+    private int dPFKGAJIFGG_;
     /**
-     * <code>uint32 EDBAKLDPAAD = 8;</code>
-     * @return The eDBAKLDPAAD.
+     * <code>uint32 DPFKGAJIFGG = 4;</code>
+     * @return The dPFKGAJIFGG.
      */
     @java.lang.Override
-    public int getEDBAKLDPAAD() {
-      return eDBAKLDPAAD_;
+    public int getDPFKGAJIFGG() {
+      return dPFKGAJIFGG_;
     }
 
-    public static final int IDOPBHGABCE_FIELD_NUMBER = 2;
-    private int iDOPBHGABCE_;
+    public static final int FNFGFKGDJPH_FIELD_NUMBER = 7;
+    private int fNFGFKGDJPH_;
     /**
-     * <code>uint32 IDOPBHGABCE = 2;</code>
-     * @return The iDOPBHGABCE.
+     * <code>uint32 FNFGFKGDJPH = 7;</code>
+     * @return The fNFGFKGDJPH.
      */
     @java.lang.Override
-    public int getIDOPBHGABCE() {
-      return iDOPBHGABCE_;
+    public int getFNFGFKGDJPH() {
+      return fNFGFKGDJPH_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -157,11 +157,11 @@ public final class SceneGalleryAkaFesArchaeologyInfoOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (iDOPBHGABCE_ != 0) {
-        output.writeUInt32(2, iDOPBHGABCE_);
+      if (dPFKGAJIFGG_ != 0) {
+        output.writeUInt32(4, dPFKGAJIFGG_);
       }
-      if (eDBAKLDPAAD_ != 0) {
-        output.writeUInt32(8, eDBAKLDPAAD_);
+      if (fNFGFKGDJPH_ != 0) {
+        output.writeUInt32(7, fNFGFKGDJPH_);
       }
       unknownFields.writeTo(output);
     }
@@ -172,13 +172,13 @@ public final class SceneGalleryAkaFesArchaeologyInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (iDOPBHGABCE_ != 0) {
+      if (dPFKGAJIFGG_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, iDOPBHGABCE_);
+          .computeUInt32Size(4, dPFKGAJIFGG_);
       }
-      if (eDBAKLDPAAD_ != 0) {
+      if (fNFGFKGDJPH_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, eDBAKLDPAAD_);
+          .computeUInt32Size(7, fNFGFKGDJPH_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -195,10 +195,10 @@ public final class SceneGalleryAkaFesArchaeologyInfoOuterClass {
       }
       emu.grasscutter.net.proto.SceneGalleryAkaFesArchaeologyInfoOuterClass.SceneGalleryAkaFesArchaeologyInfo other = (emu.grasscutter.net.proto.SceneGalleryAkaFesArchaeologyInfoOuterClass.SceneGalleryAkaFesArchaeologyInfo) obj;
 
-      if (getEDBAKLDPAAD()
-          != other.getEDBAKLDPAAD()) return false;
-      if (getIDOPBHGABCE()
-          != other.getIDOPBHGABCE()) return false;
+      if (getDPFKGAJIFGG()
+          != other.getDPFKGAJIFGG()) return false;
+      if (getFNFGFKGDJPH()
+          != other.getFNFGFKGDJPH()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -210,10 +210,10 @@ public final class SceneGalleryAkaFesArchaeologyInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + EDBAKLDPAAD_FIELD_NUMBER;
-      hash = (53 * hash) + getEDBAKLDPAAD();
-      hash = (37 * hash) + IDOPBHGABCE_FIELD_NUMBER;
-      hash = (53 * hash) + getIDOPBHGABCE();
+      hash = (37 * hash) + DPFKGAJIFGG_FIELD_NUMBER;
+      hash = (53 * hash) + getDPFKGAJIFGG();
+      hash = (37 * hash) + FNFGFKGDJPH_FIELD_NUMBER;
+      hash = (53 * hash) + getFNFGFKGDJPH();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -311,7 +311,7 @@ public final class SceneGalleryAkaFesArchaeologyInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: AIMPMCMFJIK
+     * Obf: EBKELAKJJEC
      * </pre>
      *
      * Protobuf type {@code SceneGalleryAkaFesArchaeologyInfo}
@@ -351,9 +351,9 @@ public final class SceneGalleryAkaFesArchaeologyInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        eDBAKLDPAAD_ = 0;
+        dPFKGAJIFGG_ = 0;
 
-        iDOPBHGABCE_ = 0;
+        fNFGFKGDJPH_ = 0;
 
         return this;
       }
@@ -381,8 +381,8 @@ public final class SceneGalleryAkaFesArchaeologyInfoOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.SceneGalleryAkaFesArchaeologyInfoOuterClass.SceneGalleryAkaFesArchaeologyInfo buildPartial() {
         emu.grasscutter.net.proto.SceneGalleryAkaFesArchaeologyInfoOuterClass.SceneGalleryAkaFesArchaeologyInfo result = new emu.grasscutter.net.proto.SceneGalleryAkaFesArchaeologyInfoOuterClass.SceneGalleryAkaFesArchaeologyInfo(this);
-        result.eDBAKLDPAAD_ = eDBAKLDPAAD_;
-        result.iDOPBHGABCE_ = iDOPBHGABCE_;
+        result.dPFKGAJIFGG_ = dPFKGAJIFGG_;
+        result.fNFGFKGDJPH_ = fNFGFKGDJPH_;
         onBuilt();
         return result;
       }
@@ -431,11 +431,11 @@ public final class SceneGalleryAkaFesArchaeologyInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.SceneGalleryAkaFesArchaeologyInfoOuterClass.SceneGalleryAkaFesArchaeologyInfo other) {
         if (other == emu.grasscutter.net.proto.SceneGalleryAkaFesArchaeologyInfoOuterClass.SceneGalleryAkaFesArchaeologyInfo.getDefaultInstance()) return this;
-        if (other.getEDBAKLDPAAD() != 0) {
-          setEDBAKLDPAAD(other.getEDBAKLDPAAD());
+        if (other.getDPFKGAJIFGG() != 0) {
+          setDPFKGAJIFGG(other.getDPFKGAJIFGG());
         }
-        if (other.getIDOPBHGABCE() != 0) {
-          setIDOPBHGABCE(other.getIDOPBHGABCE());
+        if (other.getFNFGFKGDJPH() != 0) {
+          setFNFGFKGDJPH(other.getFNFGFKGDJPH());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -466,64 +466,64 @@ public final class SceneGalleryAkaFesArchaeologyInfoOuterClass {
         return this;
       }
 
-      private int eDBAKLDPAAD_ ;
+      private int dPFKGAJIFGG_ ;
       /**
-       * <code>uint32 EDBAKLDPAAD = 8;</code>
-       * @return The eDBAKLDPAAD.
+       * <code>uint32 DPFKGAJIFGG = 4;</code>
+       * @return The dPFKGAJIFGG.
        */
       @java.lang.Override
-      public int getEDBAKLDPAAD() {
-        return eDBAKLDPAAD_;
+      public int getDPFKGAJIFGG() {
+        return dPFKGAJIFGG_;
       }
       /**
-       * <code>uint32 EDBAKLDPAAD = 8;</code>
-       * @param value The eDBAKLDPAAD to set.
+       * <code>uint32 DPFKGAJIFGG = 4;</code>
+       * @param value The dPFKGAJIFGG to set.
        * @return This builder for chaining.
        */
-      public Builder setEDBAKLDPAAD(int value) {
+      public Builder setDPFKGAJIFGG(int value) {
         
-        eDBAKLDPAAD_ = value;
+        dPFKGAJIFGG_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 EDBAKLDPAAD = 8;</code>
+       * <code>uint32 DPFKGAJIFGG = 4;</code>
        * @return This builder for chaining.
        */
-      public Builder clearEDBAKLDPAAD() {
+      public Builder clearDPFKGAJIFGG() {
         
-        eDBAKLDPAAD_ = 0;
+        dPFKGAJIFGG_ = 0;
         onChanged();
         return this;
       }
 
-      private int iDOPBHGABCE_ ;
+      private int fNFGFKGDJPH_ ;
       /**
-       * <code>uint32 IDOPBHGABCE = 2;</code>
-       * @return The iDOPBHGABCE.
+       * <code>uint32 FNFGFKGDJPH = 7;</code>
+       * @return The fNFGFKGDJPH.
        */
       @java.lang.Override
-      public int getIDOPBHGABCE() {
-        return iDOPBHGABCE_;
+      public int getFNFGFKGDJPH() {
+        return fNFGFKGDJPH_;
       }
       /**
-       * <code>uint32 IDOPBHGABCE = 2;</code>
-       * @param value The iDOPBHGABCE to set.
+       * <code>uint32 FNFGFKGDJPH = 7;</code>
+       * @param value The fNFGFKGDJPH to set.
        * @return This builder for chaining.
        */
-      public Builder setIDOPBHGABCE(int value) {
+      public Builder setFNFGFKGDJPH(int value) {
         
-        iDOPBHGABCE_ = value;
+        fNFGFKGDJPH_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 IDOPBHGABCE = 2;</code>
+       * <code>uint32 FNFGFKGDJPH = 7;</code>
        * @return This builder for chaining.
        */
-      public Builder clearIDOPBHGABCE() {
+      public Builder clearFNFGFKGDJPH() {
         
-        iDOPBHGABCE_ = 0;
+        fNFGFKGDJPH_ = 0;
         onChanged();
         return this;
       }
@@ -596,7 +596,7 @@ public final class SceneGalleryAkaFesArchaeologyInfoOuterClass {
     java.lang.String[] descriptorData = {
       "\n\'SceneGalleryAkaFesArchaeologyInfo.prot" +
       "o\"M\n!SceneGalleryAkaFesArchaeologyInfo\022\023" +
-      "\n\013EDBAKLDPAAD\030\010 \001(\r\022\023\n\013IDOPBHGABCE\030\002 \001(\r" +
+      "\n\013DPFKGAJIFGG\030\004 \001(\r\022\023\n\013FNFGFKGDJPH\030\007 \001(\r" +
       "B\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -608,7 +608,7 @@ public final class SceneGalleryAkaFesArchaeologyInfoOuterClass {
     internal_static_SceneGalleryAkaFesArchaeologyInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SceneGalleryAkaFesArchaeologyInfo_descriptor,
-        new java.lang.String[] { "EDBAKLDPAAD", "IDOPBHGABCE", });
+        new java.lang.String[] { "DPFKGAJIFGG", "FNFGFKGDJPH", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

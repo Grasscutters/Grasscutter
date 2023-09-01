@@ -4,31 +4,24 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.data.excels.ItemData;
-import emu.grasscutter.data.excels.avatar.AvatarPromoteData;
-import emu.grasscutter.data.excels.avatar.AvatarSkillDepotData;
+import emu.grasscutter.data.excels.avatar.*;
 import emu.grasscutter.data.excels.weapon.WeaponPromoteData;
 import emu.grasscutter.game.avatar.Avatar;
-import emu.grasscutter.game.inventory.GameItem;
-import emu.grasscutter.game.inventory.ItemType;
-import emu.grasscutter.game.inventory.MaterialType;
+import emu.grasscutter.game.inventory.*;
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.game.props.FightProperty;
-import emu.grasscutter.game.props.ItemUseAction.ItemUseAddExp;
-import emu.grasscutter.game.props.ItemUseAction.ItemUseAddReliquaryExp;
-import emu.grasscutter.game.props.ItemUseAction.ItemUseAddWeaponExp;
-import emu.grasscutter.game.props.ItemUseAction.UseItemParams;
-import emu.grasscutter.game.props.ItemUseOp;
+import emu.grasscutter.game.props.*;
+import emu.grasscutter.game.props.ItemUseAction.*;
 import emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam;
 import emu.grasscutter.net.proto.MaterialInfoOuterClass.MaterialInfo;
-import emu.grasscutter.server.event.player.PlayerUseFoodEvent;
-import emu.grasscutter.server.game.BaseGameSystem;
-import emu.grasscutter.server.game.GameServer;
+import emu.grasscutter.server.event.player.*;
+import emu.grasscutter.server.game.*;
 import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.*;
+import lombok.val;
+
 import java.util.*;
 import java.util.stream.Stream;
-import lombok.val;
 
 public class InventorySystem extends BaseGameSystem {
     private static final Int2IntMap weaponRefundMaterials = new Int2IntArrayMap();
@@ -448,6 +441,9 @@ public class InventorySystem extends BaseGameSystem {
         // Packets
         player.sendPacket(new PacketStoreItemChangeNotify(weapon));
         player.sendPacket(new PacketWeaponUpgradeRsp(weapon, oldLevel, leftovers));
+
+        // Call PlayerLevelItemEvent.
+        new PlayerLevelItemEvent(player, oldLevel, weapon);
     }
 
     private List<ItemParam> getLeftoverOres(int leftover) {
@@ -743,6 +739,9 @@ public class InventorySystem extends BaseGameSystem {
         // Packets
         player.sendPacket(new PacketAvatarPropNotify(avatar));
         player.sendPacket(new PacketAvatarUpgradeRsp(avatar, oldLevel, oldPropMap));
+
+        // Call PlayerLevelAvatarEvent.
+        new PlayerLevelAvatarEvent(player, oldLevel, avatar).call();
     }
 
     public void upgradeAvatarFetterLevel(Player player, Avatar avatar, int expGain) {

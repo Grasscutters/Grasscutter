@@ -20,8 +20,8 @@ public final class HomeGetFishFarmingInfoReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 4837
-   * Obf: JHCNCPIGNBK
+   * CmdId: 21521
+   * Obf: AFLAFOBONGJ
    * </pre>
    *
    * Protobuf type {@code HomeGetFishFarmingInfoReq}
@@ -246,8 +246,8 @@ public final class HomeGetFishFarmingInfoReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4837
-     * Obf: JHCNCPIGNBK
+     * CmdId: 21521
+     * Obf: AFLAFOBONGJ
      * </pre>
      *
      * Protobuf type {@code HomeGetFishFarmingInfoReq}

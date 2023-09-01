@@ -1,13 +1,10 @@
 package emu.grasscutter.game.entity.gadget.platform;
 
-import emu.grasscutter.game.world.Position;
-import emu.grasscutter.game.world.Scene;
+import emu.grasscutter.game.world.*;
 import emu.grasscutter.net.proto.MathQuaternionOuterClass.MathQuaternion;
 import emu.grasscutter.net.proto.PlatformInfoOuterClass.PlatformInfo;
 import emu.grasscutter.scripts.data.SceneGadget;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.val;
+import lombok.*;
 
 public abstract class BaseRoute {
     @Getter @Setter private boolean isStarted;
@@ -63,7 +60,25 @@ public abstract class BaseRoute {
     private MathQuaternion.Builder rotAsMathQuaternion() {
         val result = MathQuaternion.newBuilder();
         if (startRot != null) {
-            result.setX(startRot.getX()).setY(startRot.getY()).setZ(startRot.getZ());
+            // https://en.wikipedia.org/wiki/Conversion_between_quaternions_and_Euler_angles
+            // "MY BRAIN!" - Nazrin
+            val roll = Math.toRadians(startRot.getX());
+            val pitch = Math.toRadians(startRot.getY());
+            val yaw = Math.toRadians(startRot.getZ());
+
+            val cr = (float) Math.cos(roll * 0.5);
+            val sr = (float) Math.sin(roll * 0.5);
+            val cp = (float) Math.cos(pitch * 0.5);
+            val sp = (float) Math.sin(pitch * 0.5);
+            val cy = (float) Math.cos(yaw * 0.5);
+            val sy = (float) Math.sin(yaw * 0.5);
+
+            result.setW(cr * cp * cy + sr * sp * sy);
+            result.setX(sr * cp * cy - cr * sp * sy);
+            result.setY(cr * sp * cy + sr * cp * sy);
+            result.setZ(cr * cp * sy - sr * sp * cy);
+        } else {
+            result.setW(1f);
         }
         return result;
     }

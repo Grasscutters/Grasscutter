@@ -19,27 +19,27 @@ public final class SingleRestartBrickBreakerRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 1;</code>
-     * @return The retcode.
+     * <code>bool is_dungeon = 7;</code>
+     * @return The isDungeon.
      */
-    int getRetcode();
+    boolean getIsDungeon();
 
     /**
-     * <code>uint32 level_id = 15;</code>
+     * <code>uint32 level_id = 5;</code>
      * @return The levelId.
      */
     int getLevelId();
 
     /**
-     * <code>bool is_dungeon = 9;</code>
-     * @return The isDungeon.
+     * <code>int32 retcode = 9;</code>
+     * @return The retcode.
      */
-    boolean getIsDungeon();
+    int getRetcode();
   }
   /**
    * <pre>
-   * CmdId: 24342
-   * Obf: BJMHICIGOFI
+   * CmdId: 22220
+   * Obf: KIDKGKAGJBF
    * </pre>
    *
    * Protobuf type {@code SingleRestartBrickBreakerRsp}
@@ -86,19 +86,19 @@ public final class SingleRestartBrickBreakerRspOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 40: {
 
-              retcode_ = input.readInt32();
+              levelId_ = input.readUInt32();
               break;
             }
-            case 72: {
+            case 56: {
 
               isDungeon_ = input.readBool();
               break;
             }
-            case 120: {
+            case 72: {
 
-              levelId_ = input.readUInt32();
+              retcode_ = input.readInt32();
               break;
             }
             default: {
@@ -133,21 +133,21 @@ public final class SingleRestartBrickBreakerRspOuterClass {
               emu.grasscutter.net.proto.SingleRestartBrickBreakerRspOuterClass.SingleRestartBrickBreakerRsp.class, emu.grasscutter.net.proto.SingleRestartBrickBreakerRspOuterClass.SingleRestartBrickBreakerRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 1;
-    private int retcode_;
+    public static final int IS_DUNGEON_FIELD_NUMBER = 7;
+    private boolean isDungeon_;
     /**
-     * <code>int32 retcode = 1;</code>
-     * @return The retcode.
+     * <code>bool is_dungeon = 7;</code>
+     * @return The isDungeon.
      */
     @java.lang.Override
-    public int getRetcode() {
-      return retcode_;
+    public boolean getIsDungeon() {
+      return isDungeon_;
     }
 
-    public static final int LEVEL_ID_FIELD_NUMBER = 15;
+    public static final int LEVEL_ID_FIELD_NUMBER = 5;
     private int levelId_;
     /**
-     * <code>uint32 level_id = 15;</code>
+     * <code>uint32 level_id = 5;</code>
      * @return The levelId.
      */
     @java.lang.Override
@@ -155,15 +155,15 @@ public final class SingleRestartBrickBreakerRspOuterClass {
       return levelId_;
     }
 
-    public static final int IS_DUNGEON_FIELD_NUMBER = 9;
-    private boolean isDungeon_;
+    public static final int RETCODE_FIELD_NUMBER = 9;
+    private int retcode_;
     /**
-     * <code>bool is_dungeon = 9;</code>
-     * @return The isDungeon.
+     * <code>int32 retcode = 9;</code>
+     * @return The retcode.
      */
     @java.lang.Override
-    public boolean getIsDungeon() {
-      return isDungeon_;
+    public int getRetcode() {
+      return retcode_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -180,14 +180,14 @@ public final class SingleRestartBrickBreakerRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (retcode_ != 0) {
-        output.writeInt32(1, retcode_);
+      if (levelId_ != 0) {
+        output.writeUInt32(5, levelId_);
       }
       if (isDungeon_ != false) {
-        output.writeBool(9, isDungeon_);
+        output.writeBool(7, isDungeon_);
       }
-      if (levelId_ != 0) {
-        output.writeUInt32(15, levelId_);
+      if (retcode_ != 0) {
+        output.writeInt32(9, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -198,17 +198,17 @@ public final class SingleRestartBrickBreakerRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (retcode_ != 0) {
+      if (levelId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, retcode_);
+          .computeUInt32Size(5, levelId_);
       }
       if (isDungeon_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(9, isDungeon_);
+          .computeBoolSize(7, isDungeon_);
       }
-      if (levelId_ != 0) {
+      if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, levelId_);
+          .computeInt32Size(9, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -225,12 +225,12 @@ public final class SingleRestartBrickBreakerRspOuterClass {
       }
       emu.grasscutter.net.proto.SingleRestartBrickBreakerRspOuterClass.SingleRestartBrickBreakerRsp other = (emu.grasscutter.net.proto.SingleRestartBrickBreakerRspOuterClass.SingleRestartBrickBreakerRsp) obj;
 
-      if (getRetcode()
-          != other.getRetcode()) return false;
-      if (getLevelId()
-          != other.getLevelId()) return false;
       if (getIsDungeon()
           != other.getIsDungeon()) return false;
+      if (getLevelId()
+          != other.getLevelId()) return false;
+      if (getRetcode()
+          != other.getRetcode()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -242,13 +242,13 @@ public final class SingleRestartBrickBreakerRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getRetcode();
-      hash = (37 * hash) + LEVEL_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getLevelId();
       hash = (37 * hash) + IS_DUNGEON_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsDungeon());
+      hash = (37 * hash) + LEVEL_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getLevelId();
+      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
+      hash = (53 * hash) + getRetcode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -346,8 +346,8 @@ public final class SingleRestartBrickBreakerRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 24342
-     * Obf: BJMHICIGOFI
+     * CmdId: 22220
+     * Obf: KIDKGKAGJBF
      * </pre>
      *
      * Protobuf type {@code SingleRestartBrickBreakerRsp}
@@ -387,11 +387,11 @@ public final class SingleRestartBrickBreakerRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        retcode_ = 0;
+        isDungeon_ = false;
 
         levelId_ = 0;
 
-        isDungeon_ = false;
+        retcode_ = 0;
 
         return this;
       }
@@ -419,9 +419,9 @@ public final class SingleRestartBrickBreakerRspOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.SingleRestartBrickBreakerRspOuterClass.SingleRestartBrickBreakerRsp buildPartial() {
         emu.grasscutter.net.proto.SingleRestartBrickBreakerRspOuterClass.SingleRestartBrickBreakerRsp result = new emu.grasscutter.net.proto.SingleRestartBrickBreakerRspOuterClass.SingleRestartBrickBreakerRsp(this);
-        result.retcode_ = retcode_;
-        result.levelId_ = levelId_;
         result.isDungeon_ = isDungeon_;
+        result.levelId_ = levelId_;
+        result.retcode_ = retcode_;
         onBuilt();
         return result;
       }
@@ -470,14 +470,14 @@ public final class SingleRestartBrickBreakerRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.SingleRestartBrickBreakerRspOuterClass.SingleRestartBrickBreakerRsp other) {
         if (other == emu.grasscutter.net.proto.SingleRestartBrickBreakerRspOuterClass.SingleRestartBrickBreakerRsp.getDefaultInstance()) return this;
-        if (other.getRetcode() != 0) {
-          setRetcode(other.getRetcode());
+        if (other.getIsDungeon() != false) {
+          setIsDungeon(other.getIsDungeon());
         }
         if (other.getLevelId() != 0) {
           setLevelId(other.getLevelId());
         }
-        if (other.getIsDungeon() != false) {
-          setIsDungeon(other.getIsDungeon());
+        if (other.getRetcode() != 0) {
+          setRetcode(other.getRetcode());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -508,71 +508,9 @@ public final class SingleRestartBrickBreakerRspOuterClass {
         return this;
       }
 
-      private int retcode_ ;
-      /**
-       * <code>int32 retcode = 1;</code>
-       * @return The retcode.
-       */
-      @java.lang.Override
-      public int getRetcode() {
-        return retcode_;
-      }
-      /**
-       * <code>int32 retcode = 1;</code>
-       * @param value The retcode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRetcode(int value) {
-        
-        retcode_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 retcode = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRetcode() {
-        
-        retcode_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int levelId_ ;
-      /**
-       * <code>uint32 level_id = 15;</code>
-       * @return The levelId.
-       */
-      @java.lang.Override
-      public int getLevelId() {
-        return levelId_;
-      }
-      /**
-       * <code>uint32 level_id = 15;</code>
-       * @param value The levelId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLevelId(int value) {
-        
-        levelId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 level_id = 15;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLevelId() {
-        
-        levelId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private boolean isDungeon_ ;
       /**
-       * <code>bool is_dungeon = 9;</code>
+       * <code>bool is_dungeon = 7;</code>
        * @return The isDungeon.
        */
       @java.lang.Override
@@ -580,7 +518,7 @@ public final class SingleRestartBrickBreakerRspOuterClass {
         return isDungeon_;
       }
       /**
-       * <code>bool is_dungeon = 9;</code>
+       * <code>bool is_dungeon = 7;</code>
        * @param value The isDungeon to set.
        * @return This builder for chaining.
        */
@@ -591,12 +529,74 @@ public final class SingleRestartBrickBreakerRspOuterClass {
         return this;
       }
       /**
-       * <code>bool is_dungeon = 9;</code>
+       * <code>bool is_dungeon = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsDungeon() {
         
         isDungeon_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int levelId_ ;
+      /**
+       * <code>uint32 level_id = 5;</code>
+       * @return The levelId.
+       */
+      @java.lang.Override
+      public int getLevelId() {
+        return levelId_;
+      }
+      /**
+       * <code>uint32 level_id = 5;</code>
+       * @param value The levelId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLevelId(int value) {
+        
+        levelId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 level_id = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLevelId() {
+        
+        levelId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int retcode_ ;
+      /**
+       * <code>int32 retcode = 9;</code>
+       * @return The retcode.
+       */
+      @java.lang.Override
+      public int getRetcode() {
+        return retcode_;
+      }
+      /**
+       * <code>int32 retcode = 9;</code>
+       * @param value The retcode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRetcode(int value) {
+        
+        retcode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 retcode = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRetcode() {
+        
+        retcode_ = 0;
         onChanged();
         return this;
       }
@@ -668,9 +668,9 @@ public final class SingleRestartBrickBreakerRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\"SingleRestartBrickBreakerRsp.proto\"U\n\034" +
-      "SingleRestartBrickBreakerRsp\022\017\n\007retcode\030" +
-      "\001 \001(\005\022\020\n\010level_id\030\017 \001(\r\022\022\n\nis_dungeon\030\t " +
-      "\001(\010B\033\n\031emu.grasscutter.net.protob\006proto3"
+      "SingleRestartBrickBreakerRsp\022\022\n\nis_dunge" +
+      "on\030\007 \001(\010\022\020\n\010level_id\030\005 \001(\r\022\017\n\007retcode\030\t " +
+      "\001(\005B\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -681,7 +681,7 @@ public final class SingleRestartBrickBreakerRspOuterClass {
     internal_static_SingleRestartBrickBreakerRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SingleRestartBrickBreakerRsp_descriptor,
-        new java.lang.String[] { "Retcode", "LevelId", "IsDungeon", });
+        new java.lang.String[] { "IsDungeon", "LevelId", "Retcode", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

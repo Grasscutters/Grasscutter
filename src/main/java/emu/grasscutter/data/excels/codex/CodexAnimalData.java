@@ -1,8 +1,7 @@
 package emu.grasscutter.data.excels.codex;
 
 import com.google.gson.annotations.SerializedName;
-import emu.grasscutter.data.GameResource;
-import emu.grasscutter.data.ResourceType;
+import emu.grasscutter.data.*;
 import lombok.Getter;
 
 @ResourceType(name = {"AnimalCodexExcelConfigData.json"})

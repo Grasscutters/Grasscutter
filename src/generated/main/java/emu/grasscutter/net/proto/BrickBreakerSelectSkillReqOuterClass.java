@@ -19,17 +19,17 @@ public final class BrickBreakerSelectSkillReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 skill_id = 4;</code>
+     * <code>repeated uint32 skill_id = 11;</code>
      * @return A list containing the skillId.
      */
     java.util.List<java.lang.Integer> getSkillIdList();
     /**
-     * <code>repeated uint32 skill_id = 4;</code>
+     * <code>repeated uint32 skill_id = 11;</code>
      * @return The count of skillId.
      */
     int getSkillIdCount();
     /**
-     * <code>repeated uint32 skill_id = 4;</code>
+     * <code>repeated uint32 skill_id = 11;</code>
      * @param index The index of the element to return.
      * @return The skillId at the given index.
      */
@@ -37,8 +37,8 @@ public final class BrickBreakerSelectSkillReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 5373
-   * Obf: BFNKMJAECAD
+   * CmdId: 7306
+   * Obf: CJFFCEKLLOE
    * </pre>
    *
    * Protobuf type {@code BrickBreakerSelectSkillReq}
@@ -87,7 +87,7 @@ public final class BrickBreakerSelectSkillReqOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
+            case 88: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 skillId_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -95,7 +95,7 @@ public final class BrickBreakerSelectSkillReqOuterClass {
               skillId_.addInt(input.readUInt32());
               break;
             }
-            case 34: {
+            case 90: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -143,10 +143,10 @@ public final class BrickBreakerSelectSkillReqOuterClass {
               emu.grasscutter.net.proto.BrickBreakerSelectSkillReqOuterClass.BrickBreakerSelectSkillReq.class, emu.grasscutter.net.proto.BrickBreakerSelectSkillReqOuterClass.BrickBreakerSelectSkillReq.Builder.class);
     }
 
-    public static final int SKILL_ID_FIELD_NUMBER = 4;
+    public static final int SKILL_ID_FIELD_NUMBER = 11;
     private com.google.protobuf.Internal.IntList skillId_;
     /**
-     * <code>repeated uint32 skill_id = 4;</code>
+     * <code>repeated uint32 skill_id = 11;</code>
      * @return A list containing the skillId.
      */
     @java.lang.Override
@@ -155,14 +155,14 @@ public final class BrickBreakerSelectSkillReqOuterClass {
       return skillId_;
     }
     /**
-     * <code>repeated uint32 skill_id = 4;</code>
+     * <code>repeated uint32 skill_id = 11;</code>
      * @return The count of skillId.
      */
     public int getSkillIdCount() {
       return skillId_.size();
     }
     /**
-     * <code>repeated uint32 skill_id = 4;</code>
+     * <code>repeated uint32 skill_id = 11;</code>
      * @param index The index of the element to return.
      * @return The skillId at the given index.
      */
@@ -187,7 +187,7 @@ public final class BrickBreakerSelectSkillReqOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (getSkillIdList().size() > 0) {
-        output.writeUInt32NoTag(34);
+        output.writeUInt32NoTag(90);
         output.writeUInt32NoTag(skillIdMemoizedSerializedSize);
       }
       for (int i = 0; i < skillId_.size(); i++) {
@@ -345,8 +345,8 @@ public final class BrickBreakerSelectSkillReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 5373
-     * Obf: BFNKMJAECAD
+     * CmdId: 7306
+     * Obf: CJFFCEKLLOE
      * </pre>
      *
      * Protobuf type {@code BrickBreakerSelectSkillReq}
@@ -516,7 +516,7 @@ public final class BrickBreakerSelectSkillReqOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 skill_id = 4;</code>
+       * <code>repeated uint32 skill_id = 11;</code>
        * @return A list containing the skillId.
        */
       public java.util.List<java.lang.Integer>
@@ -525,14 +525,14 @@ public final class BrickBreakerSelectSkillReqOuterClass {
                  java.util.Collections.unmodifiableList(skillId_) : skillId_;
       }
       /**
-       * <code>repeated uint32 skill_id = 4;</code>
+       * <code>repeated uint32 skill_id = 11;</code>
        * @return The count of skillId.
        */
       public int getSkillIdCount() {
         return skillId_.size();
       }
       /**
-       * <code>repeated uint32 skill_id = 4;</code>
+       * <code>repeated uint32 skill_id = 11;</code>
        * @param index The index of the element to return.
        * @return The skillId at the given index.
        */
@@ -540,7 +540,7 @@ public final class BrickBreakerSelectSkillReqOuterClass {
         return skillId_.getInt(index);
       }
       /**
-       * <code>repeated uint32 skill_id = 4;</code>
+       * <code>repeated uint32 skill_id = 11;</code>
        * @param index The index to set the value at.
        * @param value The skillId to set.
        * @return This builder for chaining.
@@ -553,7 +553,7 @@ public final class BrickBreakerSelectSkillReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 skill_id = 4;</code>
+       * <code>repeated uint32 skill_id = 11;</code>
        * @param value The skillId to add.
        * @return This builder for chaining.
        */
@@ -564,7 +564,7 @@ public final class BrickBreakerSelectSkillReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 skill_id = 4;</code>
+       * <code>repeated uint32 skill_id = 11;</code>
        * @param values The skillId to add.
        * @return This builder for chaining.
        */
@@ -577,7 +577,7 @@ public final class BrickBreakerSelectSkillReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 skill_id = 4;</code>
+       * <code>repeated uint32 skill_id = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearSkillId() {
@@ -654,7 +654,7 @@ public final class BrickBreakerSelectSkillReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n BrickBreakerSelectSkillReq.proto\".\n\032Br" +
-      "ickBreakerSelectSkillReq\022\020\n\010skill_id\030\004 \003" +
+      "ickBreakerSelectSkillReq\022\020\n\010skill_id\030\013 \003" +
       "(\rB\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

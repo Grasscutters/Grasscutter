@@ -19,7 +19,7 @@ public final class GravenInnocenceCarveStageInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool is_open = 7;</code>
+     * <code>bool is_open = 3;</code>
      * @return The isOpen.
      */
     boolean getIsOpen();
@@ -32,7 +32,7 @@ public final class GravenInnocenceCarveStageInfoOuterClass {
   }
   /**
    * <pre>
-   * Obf: DCLHODJLHDM
+   * Obf: HLIANKOLINB
    * </pre>
    *
    * Protobuf type {@code GravenInnocenceCarveStageInfo}
@@ -79,7 +79,7 @@ public final class GravenInnocenceCarveStageInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 56: {
+            case 24: {
 
               isOpen_ = input.readBool();
               break;
@@ -121,10 +121,10 @@ public final class GravenInnocenceCarveStageInfoOuterClass {
               emu.grasscutter.net.proto.GravenInnocenceCarveStageInfoOuterClass.GravenInnocenceCarveStageInfo.class, emu.grasscutter.net.proto.GravenInnocenceCarveStageInfoOuterClass.GravenInnocenceCarveStageInfo.Builder.class);
     }
 
-    public static final int IS_OPEN_FIELD_NUMBER = 7;
+    public static final int IS_OPEN_FIELD_NUMBER = 3;
     private boolean isOpen_;
     /**
-     * <code>bool is_open = 7;</code>
+     * <code>bool is_open = 3;</code>
      * @return The isOpen.
      */
     @java.lang.Override
@@ -158,7 +158,7 @@ public final class GravenInnocenceCarveStageInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (isOpen_ != false) {
-        output.writeBool(7, isOpen_);
+        output.writeBool(3, isOpen_);
       }
       if (stageId_ != 0) {
         output.writeUInt32(14, stageId_);
@@ -174,7 +174,7 @@ public final class GravenInnocenceCarveStageInfoOuterClass {
       size = 0;
       if (isOpen_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(7, isOpen_);
+          .computeBoolSize(3, isOpen_);
       }
       if (stageId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -312,7 +312,7 @@ public final class GravenInnocenceCarveStageInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: DCLHODJLHDM
+     * Obf: HLIANKOLINB
      * </pre>
      *
      * Protobuf type {@code GravenInnocenceCarveStageInfo}
@@ -469,7 +469,7 @@ public final class GravenInnocenceCarveStageInfoOuterClass {
 
       private boolean isOpen_ ;
       /**
-       * <code>bool is_open = 7;</code>
+       * <code>bool is_open = 3;</code>
        * @return The isOpen.
        */
       @java.lang.Override
@@ -477,7 +477,7 @@ public final class GravenInnocenceCarveStageInfoOuterClass {
         return isOpen_;
       }
       /**
-       * <code>bool is_open = 7;</code>
+       * <code>bool is_open = 3;</code>
        * @param value The isOpen to set.
        * @return This builder for chaining.
        */
@@ -488,7 +488,7 @@ public final class GravenInnocenceCarveStageInfoOuterClass {
         return this;
       }
       /**
-       * <code>bool is_open = 7;</code>
+       * <code>bool is_open = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsOpen() {
@@ -597,7 +597,7 @@ public final class GravenInnocenceCarveStageInfoOuterClass {
     java.lang.String[] descriptorData = {
       "\n#GravenInnocenceCarveStageInfo.proto\"B\n" +
       "\035GravenInnocenceCarveStageInfo\022\017\n\007is_ope" +
-      "n\030\007 \001(\010\022\020\n\010stage_id\030\016 \001(\rB\033\n\031emu.grasscu" +
+      "n\030\003 \001(\010\022\020\n\010stage_id\030\016 \001(\rB\033\n\031emu.grasscu" +
       "tter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

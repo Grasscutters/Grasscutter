@@ -20,8 +20,8 @@ public final class BuyResinReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 669
-   * Obf: DLBNPMLGDHF
+   * CmdId: 9368
+   * Obf: CJKAMIJPOHL
    * </pre>
    *
    * Protobuf type {@code BuyResinReq}
@@ -246,8 +246,8 @@ public final class BuyResinReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 669
-     * Obf: DLBNPMLGDHF
+     * CmdId: 9368
+     * Obf: CJKAMIJPOHL
      * </pre>
      *
      * Protobuf type {@code BuyResinReq}

@@ -19,24 +19,24 @@ public final class ReunionDailyRefreshNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.ReunionBriefInfo reunion_brief_info = 5;</code>
+     * <code>.ReunionBriefInfo reunion_brief_info = 7;</code>
      * @return Whether the reunionBriefInfo field is set.
      */
     boolean hasReunionBriefInfo();
     /**
-     * <code>.ReunionBriefInfo reunion_brief_info = 5;</code>
+     * <code>.ReunionBriefInfo reunion_brief_info = 7;</code>
      * @return The reunionBriefInfo.
      */
     emu.grasscutter.net.proto.ReunionBriefInfoOuterClass.ReunionBriefInfo getReunionBriefInfo();
     /**
-     * <code>.ReunionBriefInfo reunion_brief_info = 5;</code>
+     * <code>.ReunionBriefInfo reunion_brief_info = 7;</code>
      */
     emu.grasscutter.net.proto.ReunionBriefInfoOuterClass.ReunionBriefInfoOrBuilder getReunionBriefInfoOrBuilder();
   }
   /**
    * <pre>
-   * CmdId: 5088
-   * Obf: DBHIKKMABNM
+   * CmdId: 505
+   * Obf: BFKFMPLPOAG
    * </pre>
    *
    * Protobuf type {@code ReunionDailyRefreshNotify}
@@ -83,7 +83,7 @@ public final class ReunionDailyRefreshNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 42: {
+            case 58: {
               emu.grasscutter.net.proto.ReunionBriefInfoOuterClass.ReunionBriefInfo.Builder subBuilder = null;
               if (reunionBriefInfo_ != null) {
                 subBuilder = reunionBriefInfo_.toBuilder();
@@ -128,10 +128,10 @@ public final class ReunionDailyRefreshNotifyOuterClass {
               emu.grasscutter.net.proto.ReunionDailyRefreshNotifyOuterClass.ReunionDailyRefreshNotify.class, emu.grasscutter.net.proto.ReunionDailyRefreshNotifyOuterClass.ReunionDailyRefreshNotify.Builder.class);
     }
 
-    public static final int REUNION_BRIEF_INFO_FIELD_NUMBER = 5;
+    public static final int REUNION_BRIEF_INFO_FIELD_NUMBER = 7;
     private emu.grasscutter.net.proto.ReunionBriefInfoOuterClass.ReunionBriefInfo reunionBriefInfo_;
     /**
-     * <code>.ReunionBriefInfo reunion_brief_info = 5;</code>
+     * <code>.ReunionBriefInfo reunion_brief_info = 7;</code>
      * @return Whether the reunionBriefInfo field is set.
      */
     @java.lang.Override
@@ -139,7 +139,7 @@ public final class ReunionDailyRefreshNotifyOuterClass {
       return reunionBriefInfo_ != null;
     }
     /**
-     * <code>.ReunionBriefInfo reunion_brief_info = 5;</code>
+     * <code>.ReunionBriefInfo reunion_brief_info = 7;</code>
      * @return The reunionBriefInfo.
      */
     @java.lang.Override
@@ -147,7 +147,7 @@ public final class ReunionDailyRefreshNotifyOuterClass {
       return reunionBriefInfo_ == null ? emu.grasscutter.net.proto.ReunionBriefInfoOuterClass.ReunionBriefInfo.getDefaultInstance() : reunionBriefInfo_;
     }
     /**
-     * <code>.ReunionBriefInfo reunion_brief_info = 5;</code>
+     * <code>.ReunionBriefInfo reunion_brief_info = 7;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.ReunionBriefInfoOuterClass.ReunionBriefInfoOrBuilder getReunionBriefInfoOrBuilder() {
@@ -169,7 +169,7 @@ public final class ReunionDailyRefreshNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (reunionBriefInfo_ != null) {
-        output.writeMessage(5, getReunionBriefInfo());
+        output.writeMessage(7, getReunionBriefInfo());
       }
       unknownFields.writeTo(output);
     }
@@ -182,7 +182,7 @@ public final class ReunionDailyRefreshNotifyOuterClass {
       size = 0;
       if (reunionBriefInfo_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, getReunionBriefInfo());
+          .computeMessageSize(7, getReunionBriefInfo());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -316,8 +316,8 @@ public final class ReunionDailyRefreshNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 5088
-     * Obf: DBHIKKMABNM
+     * CmdId: 505
+     * Obf: BFKFMPLPOAG
      * </pre>
      *
      * Protobuf type {@code ReunionDailyRefreshNotify}
@@ -478,14 +478,14 @@ public final class ReunionDailyRefreshNotifyOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.ReunionBriefInfoOuterClass.ReunionBriefInfo, emu.grasscutter.net.proto.ReunionBriefInfoOuterClass.ReunionBriefInfo.Builder, emu.grasscutter.net.proto.ReunionBriefInfoOuterClass.ReunionBriefInfoOrBuilder> reunionBriefInfoBuilder_;
       /**
-       * <code>.ReunionBriefInfo reunion_brief_info = 5;</code>
+       * <code>.ReunionBriefInfo reunion_brief_info = 7;</code>
        * @return Whether the reunionBriefInfo field is set.
        */
       public boolean hasReunionBriefInfo() {
         return reunionBriefInfoBuilder_ != null || reunionBriefInfo_ != null;
       }
       /**
-       * <code>.ReunionBriefInfo reunion_brief_info = 5;</code>
+       * <code>.ReunionBriefInfo reunion_brief_info = 7;</code>
        * @return The reunionBriefInfo.
        */
       public emu.grasscutter.net.proto.ReunionBriefInfoOuterClass.ReunionBriefInfo getReunionBriefInfo() {
@@ -496,7 +496,7 @@ public final class ReunionDailyRefreshNotifyOuterClass {
         }
       }
       /**
-       * <code>.ReunionBriefInfo reunion_brief_info = 5;</code>
+       * <code>.ReunionBriefInfo reunion_brief_info = 7;</code>
        */
       public Builder setReunionBriefInfo(emu.grasscutter.net.proto.ReunionBriefInfoOuterClass.ReunionBriefInfo value) {
         if (reunionBriefInfoBuilder_ == null) {
@@ -512,7 +512,7 @@ public final class ReunionDailyRefreshNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.ReunionBriefInfo reunion_brief_info = 5;</code>
+       * <code>.ReunionBriefInfo reunion_brief_info = 7;</code>
        */
       public Builder setReunionBriefInfo(
           emu.grasscutter.net.proto.ReunionBriefInfoOuterClass.ReunionBriefInfo.Builder builderForValue) {
@@ -526,7 +526,7 @@ public final class ReunionDailyRefreshNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.ReunionBriefInfo reunion_brief_info = 5;</code>
+       * <code>.ReunionBriefInfo reunion_brief_info = 7;</code>
        */
       public Builder mergeReunionBriefInfo(emu.grasscutter.net.proto.ReunionBriefInfoOuterClass.ReunionBriefInfo value) {
         if (reunionBriefInfoBuilder_ == null) {
@@ -544,7 +544,7 @@ public final class ReunionDailyRefreshNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.ReunionBriefInfo reunion_brief_info = 5;</code>
+       * <code>.ReunionBriefInfo reunion_brief_info = 7;</code>
        */
       public Builder clearReunionBriefInfo() {
         if (reunionBriefInfoBuilder_ == null) {
@@ -558,7 +558,7 @@ public final class ReunionDailyRefreshNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.ReunionBriefInfo reunion_brief_info = 5;</code>
+       * <code>.ReunionBriefInfo reunion_brief_info = 7;</code>
        */
       public emu.grasscutter.net.proto.ReunionBriefInfoOuterClass.ReunionBriefInfo.Builder getReunionBriefInfoBuilder() {
         
@@ -566,7 +566,7 @@ public final class ReunionDailyRefreshNotifyOuterClass {
         return getReunionBriefInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.ReunionBriefInfo reunion_brief_info = 5;</code>
+       * <code>.ReunionBriefInfo reunion_brief_info = 7;</code>
        */
       public emu.grasscutter.net.proto.ReunionBriefInfoOuterClass.ReunionBriefInfoOrBuilder getReunionBriefInfoOrBuilder() {
         if (reunionBriefInfoBuilder_ != null) {
@@ -577,7 +577,7 @@ public final class ReunionDailyRefreshNotifyOuterClass {
         }
       }
       /**
-       * <code>.ReunionBriefInfo reunion_brief_info = 5;</code>
+       * <code>.ReunionBriefInfo reunion_brief_info = 7;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.ReunionBriefInfoOuterClass.ReunionBriefInfo, emu.grasscutter.net.proto.ReunionBriefInfoOuterClass.ReunionBriefInfo.Builder, emu.grasscutter.net.proto.ReunionBriefInfoOuterClass.ReunionBriefInfoOrBuilder> 
@@ -661,7 +661,7 @@ public final class ReunionDailyRefreshNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\037ReunionDailyRefreshNotify.proto\032\026Reuni" +
       "onBriefInfo.proto\"J\n\031ReunionDailyRefresh" +
-      "Notify\022-\n\022reunion_brief_info\030\005 \001(\0132\021.Reu" +
+      "Notify\022-\n\022reunion_brief_info\030\007 \001(\0132\021.Reu" +
       "nionBriefInfoB\033\n\031emu.grasscutter.net.pro" +
       "tob\006proto3"
     };

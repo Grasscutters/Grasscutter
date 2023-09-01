@@ -19,7 +19,7 @@ public final class RechargeRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 7;</code>
+     * <code>int32 retcode = 1;</code>
      * @return The retcode.
      */
     int getRetcode();
@@ -37,15 +37,15 @@ public final class RechargeRspOuterClass {
         getProductIdBytes();
 
     /**
-     * <code>bool is_show_minors_hint = 15;</code>
+     * <code>bool is_show_minors_hint = 9;</code>
      * @return The isShowMinorsHint.
      */
     boolean getIsShowMinorsHint();
   }
   /**
    * <pre>
-   * CmdId: 4108
-   * Obf: PICIJDFCGNC
+   * CmdId: 22287
+   * Obf: KMMHBDNEIPO
    * </pre>
    *
    * Protobuf type {@code RechargeRsp}
@@ -93,20 +93,20 @@ public final class RechargeRspOuterClass {
             case 0:
               done = true;
               break;
-            case 56: {
+            case 8: {
 
               retcode_ = input.readInt32();
+              break;
+            }
+            case 72: {
+
+              isShowMinorsHint_ = input.readBool();
               break;
             }
             case 106: {
               java.lang.String s = input.readStringRequireUtf8();
 
               productId_ = s;
-              break;
-            }
-            case 120: {
-
-              isShowMinorsHint_ = input.readBool();
               break;
             }
             default: {
@@ -141,10 +141,10 @@ public final class RechargeRspOuterClass {
               emu.grasscutter.net.proto.RechargeRspOuterClass.RechargeRsp.class, emu.grasscutter.net.proto.RechargeRspOuterClass.RechargeRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 7;
+    public static final int RETCODE_FIELD_NUMBER = 1;
     private int retcode_;
     /**
-     * <code>int32 retcode = 7;</code>
+     * <code>int32 retcode = 1;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -190,10 +190,10 @@ public final class RechargeRspOuterClass {
       }
     }
 
-    public static final int IS_SHOW_MINORS_HINT_FIELD_NUMBER = 15;
+    public static final int IS_SHOW_MINORS_HINT_FIELD_NUMBER = 9;
     private boolean isShowMinorsHint_;
     /**
-     * <code>bool is_show_minors_hint = 15;</code>
+     * <code>bool is_show_minors_hint = 9;</code>
      * @return The isShowMinorsHint.
      */
     @java.lang.Override
@@ -216,13 +216,13 @@ public final class RechargeRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (retcode_ != 0) {
-        output.writeInt32(7, retcode_);
+        output.writeInt32(1, retcode_);
+      }
+      if (isShowMinorsHint_ != false) {
+        output.writeBool(9, isShowMinorsHint_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(productId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 13, productId_);
-      }
-      if (isShowMinorsHint_ != false) {
-        output.writeBool(15, isShowMinorsHint_);
       }
       unknownFields.writeTo(output);
     }
@@ -235,14 +235,14 @@ public final class RechargeRspOuterClass {
       size = 0;
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(7, retcode_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(productId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, productId_);
+          .computeInt32Size(1, retcode_);
       }
       if (isShowMinorsHint_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(15, isShowMinorsHint_);
+          .computeBoolSize(9, isShowMinorsHint_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(productId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, productId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -380,8 +380,8 @@ public final class RechargeRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4108
-     * Obf: PICIJDFCGNC
+     * CmdId: 22287
+     * Obf: KMMHBDNEIPO
      * </pre>
      *
      * Protobuf type {@code RechargeRsp}
@@ -545,7 +545,7 @@ public final class RechargeRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 7;</code>
+       * <code>int32 retcode = 1;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -553,7 +553,7 @@ public final class RechargeRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 7;</code>
+       * <code>int32 retcode = 1;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -564,7 +564,7 @@ public final class RechargeRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 7;</code>
+       * <code>int32 retcode = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -652,7 +652,7 @@ public final class RechargeRspOuterClass {
 
       private boolean isShowMinorsHint_ ;
       /**
-       * <code>bool is_show_minors_hint = 15;</code>
+       * <code>bool is_show_minors_hint = 9;</code>
        * @return The isShowMinorsHint.
        */
       @java.lang.Override
@@ -660,7 +660,7 @@ public final class RechargeRspOuterClass {
         return isShowMinorsHint_;
       }
       /**
-       * <code>bool is_show_minors_hint = 15;</code>
+       * <code>bool is_show_minors_hint = 9;</code>
        * @param value The isShowMinorsHint to set.
        * @return This builder for chaining.
        */
@@ -671,7 +671,7 @@ public final class RechargeRspOuterClass {
         return this;
       }
       /**
-       * <code>bool is_show_minors_hint = 15;</code>
+       * <code>bool is_show_minors_hint = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsShowMinorsHint() {
@@ -748,8 +748,8 @@ public final class RechargeRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021RechargeRsp.proto\"O\n\013RechargeRsp\022\017\n\007re" +
-      "tcode\030\007 \001(\005\022\022\n\nproduct_id\030\r \001(\t\022\033\n\023is_sh" +
-      "ow_minors_hint\030\017 \001(\010B\033\n\031emu.grasscutter." +
+      "tcode\030\001 \001(\005\022\022\n\nproduct_id\030\r \001(\t\022\033\n\023is_sh" +
+      "ow_minors_hint\030\t \001(\010B\033\n\031emu.grasscutter." +
       "net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

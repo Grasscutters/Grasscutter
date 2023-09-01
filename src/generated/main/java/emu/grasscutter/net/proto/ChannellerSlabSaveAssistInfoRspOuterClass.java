@@ -19,39 +19,39 @@ public final class ChannellerSlabSaveAssistInfoRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 3;</code>
+     * <code>int32 retcode = 8;</code>
      * @return The retcode.
      */
     int getRetcode();
 
     /**
-     * <code>repeated .ChannellerSlabAssistInfo assist_info_list = 5;</code>
+     * <code>repeated .ChannellerSlabAssistInfo assist_info_list = 2;</code>
      */
     java.util.List<emu.grasscutter.net.proto.ChannellerSlabAssistInfoOuterClass.ChannellerSlabAssistInfo> 
         getAssistInfoListList();
     /**
-     * <code>repeated .ChannellerSlabAssistInfo assist_info_list = 5;</code>
+     * <code>repeated .ChannellerSlabAssistInfo assist_info_list = 2;</code>
      */
     emu.grasscutter.net.proto.ChannellerSlabAssistInfoOuterClass.ChannellerSlabAssistInfo getAssistInfoList(int index);
     /**
-     * <code>repeated .ChannellerSlabAssistInfo assist_info_list = 5;</code>
+     * <code>repeated .ChannellerSlabAssistInfo assist_info_list = 2;</code>
      */
     int getAssistInfoListCount();
     /**
-     * <code>repeated .ChannellerSlabAssistInfo assist_info_list = 5;</code>
+     * <code>repeated .ChannellerSlabAssistInfo assist_info_list = 2;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.ChannellerSlabAssistInfoOuterClass.ChannellerSlabAssistInfoOrBuilder> 
         getAssistInfoListOrBuilderList();
     /**
-     * <code>repeated .ChannellerSlabAssistInfo assist_info_list = 5;</code>
+     * <code>repeated .ChannellerSlabAssistInfo assist_info_list = 2;</code>
      */
     emu.grasscutter.net.proto.ChannellerSlabAssistInfoOuterClass.ChannellerSlabAssistInfoOrBuilder getAssistInfoListOrBuilder(
         int index);
   }
   /**
    * <pre>
-   * CmdId: 8160
-   * Obf: HIBPEIGJKDP
+   * CmdId: 25405
+   * Obf: MMDHICCHBPG
    * </pre>
    *
    * Protobuf type {@code ChannellerSlabSaveAssistInfoRsp}
@@ -100,18 +100,18 @@ public final class ChannellerSlabSaveAssistInfoRspOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 42: {
+            case 18: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 assistInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ChannellerSlabAssistInfoOuterClass.ChannellerSlabAssistInfo>();
                 mutable_bitField0_ |= 0x00000001;
               }
               assistInfoList_.add(
                   input.readMessage(emu.grasscutter.net.proto.ChannellerSlabAssistInfoOuterClass.ChannellerSlabAssistInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 64: {
+
+              retcode_ = input.readInt32();
               break;
             }
             default: {
@@ -149,10 +149,10 @@ public final class ChannellerSlabSaveAssistInfoRspOuterClass {
               emu.grasscutter.net.proto.ChannellerSlabSaveAssistInfoRspOuterClass.ChannellerSlabSaveAssistInfoRsp.class, emu.grasscutter.net.proto.ChannellerSlabSaveAssistInfoRspOuterClass.ChannellerSlabSaveAssistInfoRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 3;
+    public static final int RETCODE_FIELD_NUMBER = 8;
     private int retcode_;
     /**
-     * <code>int32 retcode = 3;</code>
+     * <code>int32 retcode = 8;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -160,17 +160,17 @@ public final class ChannellerSlabSaveAssistInfoRspOuterClass {
       return retcode_;
     }
 
-    public static final int ASSIST_INFO_LIST_FIELD_NUMBER = 5;
+    public static final int ASSIST_INFO_LIST_FIELD_NUMBER = 2;
     private java.util.List<emu.grasscutter.net.proto.ChannellerSlabAssistInfoOuterClass.ChannellerSlabAssistInfo> assistInfoList_;
     /**
-     * <code>repeated .ChannellerSlabAssistInfo assist_info_list = 5;</code>
+     * <code>repeated .ChannellerSlabAssistInfo assist_info_list = 2;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.ChannellerSlabAssistInfoOuterClass.ChannellerSlabAssistInfo> getAssistInfoListList() {
       return assistInfoList_;
     }
     /**
-     * <code>repeated .ChannellerSlabAssistInfo assist_info_list = 5;</code>
+     * <code>repeated .ChannellerSlabAssistInfo assist_info_list = 2;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.ChannellerSlabAssistInfoOuterClass.ChannellerSlabAssistInfoOrBuilder> 
@@ -178,21 +178,21 @@ public final class ChannellerSlabSaveAssistInfoRspOuterClass {
       return assistInfoList_;
     }
     /**
-     * <code>repeated .ChannellerSlabAssistInfo assist_info_list = 5;</code>
+     * <code>repeated .ChannellerSlabAssistInfo assist_info_list = 2;</code>
      */
     @java.lang.Override
     public int getAssistInfoListCount() {
       return assistInfoList_.size();
     }
     /**
-     * <code>repeated .ChannellerSlabAssistInfo assist_info_list = 5;</code>
+     * <code>repeated .ChannellerSlabAssistInfo assist_info_list = 2;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.ChannellerSlabAssistInfoOuterClass.ChannellerSlabAssistInfo getAssistInfoList(int index) {
       return assistInfoList_.get(index);
     }
     /**
-     * <code>repeated .ChannellerSlabAssistInfo assist_info_list = 5;</code>
+     * <code>repeated .ChannellerSlabAssistInfo assist_info_list = 2;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.ChannellerSlabAssistInfoOuterClass.ChannellerSlabAssistInfoOrBuilder getAssistInfoListOrBuilder(
@@ -214,11 +214,11 @@ public final class ChannellerSlabSaveAssistInfoRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (retcode_ != 0) {
-        output.writeInt32(3, retcode_);
-      }
       for (int i = 0; i < assistInfoList_.size(); i++) {
-        output.writeMessage(5, assistInfoList_.get(i));
+        output.writeMessage(2, assistInfoList_.get(i));
+      }
+      if (retcode_ != 0) {
+        output.writeInt32(8, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -229,13 +229,13 @@ public final class ChannellerSlabSaveAssistInfoRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (retcode_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, retcode_);
-      }
       for (int i = 0; i < assistInfoList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, assistInfoList_.get(i));
+          .computeMessageSize(2, assistInfoList_.get(i));
+      }
+      if (retcode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(8, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -370,8 +370,8 @@ public final class ChannellerSlabSaveAssistInfoRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8160
-     * Obf: HIBPEIGJKDP
+     * CmdId: 25405
+     * Obf: MMDHICCHBPG
      * </pre>
      *
      * Protobuf type {@code ChannellerSlabSaveAssistInfoRsp}
@@ -566,7 +566,7 @@ public final class ChannellerSlabSaveAssistInfoRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 3;</code>
+       * <code>int32 retcode = 8;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -574,7 +574,7 @@ public final class ChannellerSlabSaveAssistInfoRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 3;</code>
+       * <code>int32 retcode = 8;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -585,7 +585,7 @@ public final class ChannellerSlabSaveAssistInfoRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 3;</code>
+       * <code>int32 retcode = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -608,7 +608,7 @@ public final class ChannellerSlabSaveAssistInfoRspOuterClass {
           emu.grasscutter.net.proto.ChannellerSlabAssistInfoOuterClass.ChannellerSlabAssistInfo, emu.grasscutter.net.proto.ChannellerSlabAssistInfoOuterClass.ChannellerSlabAssistInfo.Builder, emu.grasscutter.net.proto.ChannellerSlabAssistInfoOuterClass.ChannellerSlabAssistInfoOrBuilder> assistInfoListBuilder_;
 
       /**
-       * <code>repeated .ChannellerSlabAssistInfo assist_info_list = 5;</code>
+       * <code>repeated .ChannellerSlabAssistInfo assist_info_list = 2;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.ChannellerSlabAssistInfoOuterClass.ChannellerSlabAssistInfo> getAssistInfoListList() {
         if (assistInfoListBuilder_ == null) {
@@ -618,7 +618,7 @@ public final class ChannellerSlabSaveAssistInfoRspOuterClass {
         }
       }
       /**
-       * <code>repeated .ChannellerSlabAssistInfo assist_info_list = 5;</code>
+       * <code>repeated .ChannellerSlabAssistInfo assist_info_list = 2;</code>
        */
       public int getAssistInfoListCount() {
         if (assistInfoListBuilder_ == null) {
@@ -628,7 +628,7 @@ public final class ChannellerSlabSaveAssistInfoRspOuterClass {
         }
       }
       /**
-       * <code>repeated .ChannellerSlabAssistInfo assist_info_list = 5;</code>
+       * <code>repeated .ChannellerSlabAssistInfo assist_info_list = 2;</code>
        */
       public emu.grasscutter.net.proto.ChannellerSlabAssistInfoOuterClass.ChannellerSlabAssistInfo getAssistInfoList(int index) {
         if (assistInfoListBuilder_ == null) {
@@ -638,7 +638,7 @@ public final class ChannellerSlabSaveAssistInfoRspOuterClass {
         }
       }
       /**
-       * <code>repeated .ChannellerSlabAssistInfo assist_info_list = 5;</code>
+       * <code>repeated .ChannellerSlabAssistInfo assist_info_list = 2;</code>
        */
       public Builder setAssistInfoList(
           int index, emu.grasscutter.net.proto.ChannellerSlabAssistInfoOuterClass.ChannellerSlabAssistInfo value) {
@@ -655,7 +655,7 @@ public final class ChannellerSlabSaveAssistInfoRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ChannellerSlabAssistInfo assist_info_list = 5;</code>
+       * <code>repeated .ChannellerSlabAssistInfo assist_info_list = 2;</code>
        */
       public Builder setAssistInfoList(
           int index, emu.grasscutter.net.proto.ChannellerSlabAssistInfoOuterClass.ChannellerSlabAssistInfo.Builder builderForValue) {
@@ -669,7 +669,7 @@ public final class ChannellerSlabSaveAssistInfoRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ChannellerSlabAssistInfo assist_info_list = 5;</code>
+       * <code>repeated .ChannellerSlabAssistInfo assist_info_list = 2;</code>
        */
       public Builder addAssistInfoList(emu.grasscutter.net.proto.ChannellerSlabAssistInfoOuterClass.ChannellerSlabAssistInfo value) {
         if (assistInfoListBuilder_ == null) {
@@ -685,7 +685,7 @@ public final class ChannellerSlabSaveAssistInfoRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ChannellerSlabAssistInfo assist_info_list = 5;</code>
+       * <code>repeated .ChannellerSlabAssistInfo assist_info_list = 2;</code>
        */
       public Builder addAssistInfoList(
           int index, emu.grasscutter.net.proto.ChannellerSlabAssistInfoOuterClass.ChannellerSlabAssistInfo value) {
@@ -702,7 +702,7 @@ public final class ChannellerSlabSaveAssistInfoRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ChannellerSlabAssistInfo assist_info_list = 5;</code>
+       * <code>repeated .ChannellerSlabAssistInfo assist_info_list = 2;</code>
        */
       public Builder addAssistInfoList(
           emu.grasscutter.net.proto.ChannellerSlabAssistInfoOuterClass.ChannellerSlabAssistInfo.Builder builderForValue) {
@@ -716,7 +716,7 @@ public final class ChannellerSlabSaveAssistInfoRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ChannellerSlabAssistInfo assist_info_list = 5;</code>
+       * <code>repeated .ChannellerSlabAssistInfo assist_info_list = 2;</code>
        */
       public Builder addAssistInfoList(
           int index, emu.grasscutter.net.proto.ChannellerSlabAssistInfoOuterClass.ChannellerSlabAssistInfo.Builder builderForValue) {
@@ -730,7 +730,7 @@ public final class ChannellerSlabSaveAssistInfoRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ChannellerSlabAssistInfo assist_info_list = 5;</code>
+       * <code>repeated .ChannellerSlabAssistInfo assist_info_list = 2;</code>
        */
       public Builder addAllAssistInfoList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.ChannellerSlabAssistInfoOuterClass.ChannellerSlabAssistInfo> values) {
@@ -745,7 +745,7 @@ public final class ChannellerSlabSaveAssistInfoRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ChannellerSlabAssistInfo assist_info_list = 5;</code>
+       * <code>repeated .ChannellerSlabAssistInfo assist_info_list = 2;</code>
        */
       public Builder clearAssistInfoList() {
         if (assistInfoListBuilder_ == null) {
@@ -758,7 +758,7 @@ public final class ChannellerSlabSaveAssistInfoRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ChannellerSlabAssistInfo assist_info_list = 5;</code>
+       * <code>repeated .ChannellerSlabAssistInfo assist_info_list = 2;</code>
        */
       public Builder removeAssistInfoList(int index) {
         if (assistInfoListBuilder_ == null) {
@@ -771,14 +771,14 @@ public final class ChannellerSlabSaveAssistInfoRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ChannellerSlabAssistInfo assist_info_list = 5;</code>
+       * <code>repeated .ChannellerSlabAssistInfo assist_info_list = 2;</code>
        */
       public emu.grasscutter.net.proto.ChannellerSlabAssistInfoOuterClass.ChannellerSlabAssistInfo.Builder getAssistInfoListBuilder(
           int index) {
         return getAssistInfoListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .ChannellerSlabAssistInfo assist_info_list = 5;</code>
+       * <code>repeated .ChannellerSlabAssistInfo assist_info_list = 2;</code>
        */
       public emu.grasscutter.net.proto.ChannellerSlabAssistInfoOuterClass.ChannellerSlabAssistInfoOrBuilder getAssistInfoListOrBuilder(
           int index) {
@@ -788,7 +788,7 @@ public final class ChannellerSlabSaveAssistInfoRspOuterClass {
         }
       }
       /**
-       * <code>repeated .ChannellerSlabAssistInfo assist_info_list = 5;</code>
+       * <code>repeated .ChannellerSlabAssistInfo assist_info_list = 2;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.ChannellerSlabAssistInfoOuterClass.ChannellerSlabAssistInfoOrBuilder> 
            getAssistInfoListOrBuilderList() {
@@ -799,14 +799,14 @@ public final class ChannellerSlabSaveAssistInfoRspOuterClass {
         }
       }
       /**
-       * <code>repeated .ChannellerSlabAssistInfo assist_info_list = 5;</code>
+       * <code>repeated .ChannellerSlabAssistInfo assist_info_list = 2;</code>
        */
       public emu.grasscutter.net.proto.ChannellerSlabAssistInfoOuterClass.ChannellerSlabAssistInfo.Builder addAssistInfoListBuilder() {
         return getAssistInfoListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.ChannellerSlabAssistInfoOuterClass.ChannellerSlabAssistInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .ChannellerSlabAssistInfo assist_info_list = 5;</code>
+       * <code>repeated .ChannellerSlabAssistInfo assist_info_list = 2;</code>
        */
       public emu.grasscutter.net.proto.ChannellerSlabAssistInfoOuterClass.ChannellerSlabAssistInfo.Builder addAssistInfoListBuilder(
           int index) {
@@ -814,7 +814,7 @@ public final class ChannellerSlabSaveAssistInfoRspOuterClass {
             index, emu.grasscutter.net.proto.ChannellerSlabAssistInfoOuterClass.ChannellerSlabAssistInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .ChannellerSlabAssistInfo assist_info_list = 5;</code>
+       * <code>repeated .ChannellerSlabAssistInfo assist_info_list = 2;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.ChannellerSlabAssistInfoOuterClass.ChannellerSlabAssistInfo.Builder> 
            getAssistInfoListBuilderList() {
@@ -903,8 +903,8 @@ public final class ChannellerSlabSaveAssistInfoRspOuterClass {
     java.lang.String[] descriptorData = {
       "\n%ChannellerSlabSaveAssistInfoRsp.proto\032" +
       "\036ChannellerSlabAssistInfo.proto\"g\n\037Chann" +
-      "ellerSlabSaveAssistInfoRsp\022\017\n\007retcode\030\003 " +
-      "\001(\005\0223\n\020assist_info_list\030\005 \003(\0132\031.Channell" +
+      "ellerSlabSaveAssistInfoRsp\022\017\n\007retcode\030\010 " +
+      "\001(\005\0223\n\020assist_info_list\030\002 \003(\0132\031.Channell" +
       "erSlabAssistInfoB\033\n\031emu.grasscutter.net." +
       "protob\006proto3"
     };

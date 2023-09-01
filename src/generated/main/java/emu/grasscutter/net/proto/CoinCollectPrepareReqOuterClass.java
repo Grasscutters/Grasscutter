@@ -20,8 +20,8 @@ public final class CoinCollectPrepareReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 20940
-   * Obf: GGNKGLLPGMP
+   * CmdId: 21763
+   * Obf: MCJPOLDLGHL
    * </pre>
    *
    * Protobuf type {@code CoinCollectPrepareReq}
@@ -246,8 +246,8 @@ public final class CoinCollectPrepareReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 20940
-     * Obf: GGNKGLLPGMP
+     * CmdId: 21763
+     * Obf: MCJPOLDLGHL
      * </pre>
      *
      * Protobuf type {@code CoinCollectPrepareReq}

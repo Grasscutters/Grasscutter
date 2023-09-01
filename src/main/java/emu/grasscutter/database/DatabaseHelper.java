@@ -1,7 +1,5 @@
 package emu.grasscutter.database;
 
-import static com.mongodb.client.model.Filters.eq;
-
 import dev.morphia.query.*;
 import dev.morphia.query.experimental.filters.Filters;
 import emu.grasscutter.*;
@@ -21,10 +19,14 @@ import emu.grasscutter.game.quest.GameMainQuest;
 import emu.grasscutter.game.world.SceneGroupInstance;
 import emu.grasscutter.utils.objects.Returnable;
 import io.netty.util.concurrent.FastThreadLocalThread;
+import lombok.Getter;
+
+import javax.annotation.Nullable;
 import java.util.List;
 import java.util.concurrent.*;
 import java.util.stream.Stream;
-import lombok.Getter;
+
+import static com.mongodb.client.model.Filters.eq;
 
 public final class DatabaseHelper {
     @Getter
@@ -541,11 +543,18 @@ public final class DatabaseHelper {
         DatabaseHelper.saveGameAsync(musicGameBeatmap);
     }
 
-    public static Achievements getAchievementData(int uid) {
-        return DatabaseManager.getGameDatastore()
-                .find(Achievements.class)
-                .filter(Filters.and(Filters.eq("uid", uid)))
-                .first();
+    @Nullable public static Achievements getAchievementData(int uid) {
+        try {
+            return DatabaseManager.getGameDatastore()
+                    .find(Achievements.class)
+                    .filter(Filters.and(Filters.eq("uid", uid)))
+                    .first();
+        } catch (IllegalArgumentException e) {
+            Grasscutter.getLogger()
+                    .debug("Error occurred while getting uid " + uid + "'s achievement data", e);
+            DatabaseManager.getGameDatabase().getCollection("achievements").deleteMany(eq("uid", uid));
+            return null;
+        }
     }
 
     public static void saveAchievementData(Achievements achievements) {

@@ -20,8 +20,8 @@ public final class PathfindingPingNotifyOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 2372
-   * Obf: HNANOCBJCEE
+   * CmdId: 2311
+   * Obf: IGADOOAJCML
    * </pre>
    *
    * Protobuf type {@code PathfindingPingNotify}
@@ -246,8 +246,8 @@ public final class PathfindingPingNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2372
-     * Obf: HNANOCBJCEE
+     * CmdId: 2311
+     * Obf: IGADOOAJCML
      * </pre>
      *
      * Protobuf type {@code PathfindingPingNotify}

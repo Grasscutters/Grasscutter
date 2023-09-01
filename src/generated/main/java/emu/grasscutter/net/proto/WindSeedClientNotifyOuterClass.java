@@ -34,32 +34,32 @@ public final class WindSeedClientNotifyOuterClass {
     emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.RefreshNotifyOrBuilder getRefreshNotifyOrBuilder();
 
     /**
-     * <code>.WindSeedClientNotify.AddWindBulletNotify add_wind_bullet_notify = 3;</code>
+     * <code>.WindSeedClientNotify.AddWindBulletNotify add_wind_bullet_notify = 11;</code>
      * @return Whether the addWindBulletNotify field is set.
      */
     boolean hasAddWindBulletNotify();
     /**
-     * <code>.WindSeedClientNotify.AddWindBulletNotify add_wind_bullet_notify = 3;</code>
+     * <code>.WindSeedClientNotify.AddWindBulletNotify add_wind_bullet_notify = 11;</code>
      * @return The addWindBulletNotify.
      */
     emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AddWindBulletNotify getAddWindBulletNotify();
     /**
-     * <code>.WindSeedClientNotify.AddWindBulletNotify add_wind_bullet_notify = 3;</code>
+     * <code>.WindSeedClientNotify.AddWindBulletNotify add_wind_bullet_notify = 11;</code>
      */
     emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AddWindBulletNotifyOrBuilder getAddWindBulletNotifyOrBuilder();
 
     /**
-     * <code>.WindSeedClientNotify.AreaNotify area_notify = 11;</code>
+     * <code>.WindSeedClientNotify.AreaNotify area_notify = 14;</code>
      * @return Whether the areaNotify field is set.
      */
     boolean hasAreaNotify();
     /**
-     * <code>.WindSeedClientNotify.AreaNotify area_notify = 11;</code>
+     * <code>.WindSeedClientNotify.AreaNotify area_notify = 14;</code>
      * @return The areaNotify.
      */
     emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AreaNotify getAreaNotify();
     /**
-     * <code>.WindSeedClientNotify.AreaNotify area_notify = 11;</code>
+     * <code>.WindSeedClientNotify.AreaNotify area_notify = 14;</code>
      */
     emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AreaNotifyOrBuilder getAreaNotifyOrBuilder();
 
@@ -67,8 +67,8 @@ public final class WindSeedClientNotifyOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 1130
-   * Obf: MOKHOJLFPPI
+   * CmdId: 28351
+   * Obf: HLBBDEJIMLI
    * </pre>
    *
    * Protobuf type {@code WindSeedClientNotify}
@@ -129,9 +129,9 @@ public final class WindSeedClientNotifyOuterClass {
               notifyCase_ = 2;
               break;
             }
-            case 26: {
+            case 90: {
               emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AddWindBulletNotify.Builder subBuilder = null;
-              if (notifyCase_ == 3) {
+              if (notifyCase_ == 11) {
                 subBuilder = ((emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AddWindBulletNotify) notify_).toBuilder();
               }
               notify_ =
@@ -140,12 +140,12 @@ public final class WindSeedClientNotifyOuterClass {
                 subBuilder.mergeFrom((emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AddWindBulletNotify) notify_);
                 notify_ = subBuilder.buildPartial();
               }
-              notifyCase_ = 3;
+              notifyCase_ = 11;
               break;
             }
-            case 90: {
+            case 114: {
               emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AreaNotify.Builder subBuilder = null;
-              if (notifyCase_ == 11) {
+              if (notifyCase_ == 14) {
                 subBuilder = ((emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AreaNotify) notify_).toBuilder();
               }
               notify_ =
@@ -154,7 +154,7 @@ public final class WindSeedClientNotifyOuterClass {
                 subBuilder.mergeFrom((emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AreaNotify) notify_);
                 notify_ = subBuilder.buildPartial();
               }
-              notifyCase_ = 11;
+              notifyCase_ = 14;
               break;
             }
             default: {
@@ -194,14 +194,14 @@ public final class WindSeedClientNotifyOuterClass {
         com.google.protobuf.MessageOrBuilder {
 
       /**
-       * <code>uint32 refresh_num = 9;</code>
+       * <code>uint32 refresh_num = 1;</code>
        * @return The refreshNum.
        */
       int getRefreshNum();
     }
     /**
      * <pre>
-     * Obf: GEAHCBGKECM
+     * Obf: NEABCKDIKBA
      * </pre>
      *
      * Protobuf type {@code WindSeedClientNotify.RefreshNotify}
@@ -248,7 +248,7 @@ public final class WindSeedClientNotifyOuterClass {
               case 0:
                 done = true;
                 break;
-              case 72: {
+              case 8: {
 
                 refreshNum_ = input.readUInt32();
                 break;
@@ -285,10 +285,10 @@ public final class WindSeedClientNotifyOuterClass {
                 emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.RefreshNotify.class, emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.RefreshNotify.Builder.class);
       }
 
-      public static final int REFRESH_NUM_FIELD_NUMBER = 9;
+      public static final int REFRESH_NUM_FIELD_NUMBER = 1;
       private int refreshNum_;
       /**
-       * <code>uint32 refresh_num = 9;</code>
+       * <code>uint32 refresh_num = 1;</code>
        * @return The refreshNum.
        */
       @java.lang.Override
@@ -311,7 +311,7 @@ public final class WindSeedClientNotifyOuterClass {
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
         if (refreshNum_ != 0) {
-          output.writeUInt32(9, refreshNum_);
+          output.writeUInt32(1, refreshNum_);
         }
         unknownFields.writeTo(output);
       }
@@ -324,7 +324,7 @@ public final class WindSeedClientNotifyOuterClass {
         size = 0;
         if (refreshNum_ != 0) {
           size += com.google.protobuf.CodedOutputStream
-            .computeUInt32Size(9, refreshNum_);
+            .computeUInt32Size(1, refreshNum_);
         }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
@@ -453,7 +453,7 @@ public final class WindSeedClientNotifyOuterClass {
       }
       /**
        * <pre>
-       * Obf: GEAHCBGKECM
+       * Obf: NEABCKDIKBA
        * </pre>
        *
        * Protobuf type {@code WindSeedClientNotify.RefreshNotify}
@@ -604,7 +604,7 @@ public final class WindSeedClientNotifyOuterClass {
 
         private int refreshNum_ ;
         /**
-         * <code>uint32 refresh_num = 9;</code>
+         * <code>uint32 refresh_num = 1;</code>
          * @return The refreshNum.
          */
         @java.lang.Override
@@ -612,7 +612,7 @@ public final class WindSeedClientNotifyOuterClass {
           return refreshNum_;
         }
         /**
-         * <code>uint32 refresh_num = 9;</code>
+         * <code>uint32 refresh_num = 1;</code>
          * @param value The refreshNum to set.
          * @return This builder for chaining.
          */
@@ -623,7 +623,7 @@ public final class WindSeedClientNotifyOuterClass {
           return this;
         }
         /**
-         * <code>uint32 refresh_num = 9;</code>
+         * <code>uint32 refresh_num = 1;</code>
          * @return This builder for chaining.
          */
         public Builder clearRefreshNum() {
@@ -690,35 +690,35 @@ public final class WindSeedClientNotifyOuterClass {
         com.google.protobuf.MessageOrBuilder {
 
       /**
-       * <code>.Vector seed_pos = 3;</code>
+       * <code>.Vector seed_pos = 8;</code>
        * @return Whether the seedPos field is set.
        */
       boolean hasSeedPos();
       /**
-       * <code>.Vector seed_pos = 3;</code>
+       * <code>.Vector seed_pos = 8;</code>
        * @return The seedPos.
        */
       emu.grasscutter.net.proto.VectorOuterClass.Vector getSeedPos();
       /**
-       * <code>.Vector seed_pos = 3;</code>
+       * <code>.Vector seed_pos = 8;</code>
        */
       emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getSeedPosOrBuilder();
 
       /**
-       * <code>uint32 FCPFBPBHHLA = 15;</code>
-       * @return The fCPFBPBHHLA.
+       * <code>uint32 AACKLENGCOO = 5;</code>
+       * @return The aACKLENGCOO.
        */
-      int getFCPFBPBHHLA();
+      int getAACKLENGCOO();
 
       /**
-       * <code>uint32 LFGEDEIMJNM = 13;</code>
-       * @return The lFGEDEIMJNM.
+       * <code>uint32 AAJBMHIIPBP = 9;</code>
+       * @return The aAJBMHIIPBP.
        */
-      int getLFGEDEIMJNM();
+      int getAAJBMHIIPBP();
     }
     /**
      * <pre>
-     * Obf: JONENPANFIF
+     * Obf: FENMFHPLEIM
      * </pre>
      *
      * Protobuf type {@code WindSeedClientNotify.AddWindBulletNotify}
@@ -765,7 +765,12 @@ public final class WindSeedClientNotifyOuterClass {
               case 0:
                 done = true;
                 break;
-              case 26: {
+              case 40: {
+
+                aACKLENGCOO_ = input.readUInt32();
+                break;
+              }
+              case 66: {
                 emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
                 if (seedPos_ != null) {
                   subBuilder = seedPos_.toBuilder();
@@ -778,14 +783,9 @@ public final class WindSeedClientNotifyOuterClass {
 
                 break;
               }
-              case 104: {
+              case 72: {
 
-                lFGEDEIMJNM_ = input.readUInt32();
-                break;
-              }
-              case 120: {
-
-                fCPFBPBHHLA_ = input.readUInt32();
+                aAJBMHIIPBP_ = input.readUInt32();
                 break;
               }
               default: {
@@ -820,10 +820,10 @@ public final class WindSeedClientNotifyOuterClass {
                 emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AddWindBulletNotify.class, emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AddWindBulletNotify.Builder.class);
       }
 
-      public static final int SEED_POS_FIELD_NUMBER = 3;
+      public static final int SEED_POS_FIELD_NUMBER = 8;
       private emu.grasscutter.net.proto.VectorOuterClass.Vector seedPos_;
       /**
-       * <code>.Vector seed_pos = 3;</code>
+       * <code>.Vector seed_pos = 8;</code>
        * @return Whether the seedPos field is set.
        */
       @java.lang.Override
@@ -831,7 +831,7 @@ public final class WindSeedClientNotifyOuterClass {
         return seedPos_ != null;
       }
       /**
-       * <code>.Vector seed_pos = 3;</code>
+       * <code>.Vector seed_pos = 8;</code>
        * @return The seedPos.
        */
       @java.lang.Override
@@ -839,33 +839,33 @@ public final class WindSeedClientNotifyOuterClass {
         return seedPos_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : seedPos_;
       }
       /**
-       * <code>.Vector seed_pos = 3;</code>
+       * <code>.Vector seed_pos = 8;</code>
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getSeedPosOrBuilder() {
         return getSeedPos();
       }
 
-      public static final int FCPFBPBHHLA_FIELD_NUMBER = 15;
-      private int fCPFBPBHHLA_;
+      public static final int AACKLENGCOO_FIELD_NUMBER = 5;
+      private int aACKLENGCOO_;
       /**
-       * <code>uint32 FCPFBPBHHLA = 15;</code>
-       * @return The fCPFBPBHHLA.
+       * <code>uint32 AACKLENGCOO = 5;</code>
+       * @return The aACKLENGCOO.
        */
       @java.lang.Override
-      public int getFCPFBPBHHLA() {
-        return fCPFBPBHHLA_;
+      public int getAACKLENGCOO() {
+        return aACKLENGCOO_;
       }
 
-      public static final int LFGEDEIMJNM_FIELD_NUMBER = 13;
-      private int lFGEDEIMJNM_;
+      public static final int AAJBMHIIPBP_FIELD_NUMBER = 9;
+      private int aAJBMHIIPBP_;
       /**
-       * <code>uint32 LFGEDEIMJNM = 13;</code>
-       * @return The lFGEDEIMJNM.
+       * <code>uint32 AAJBMHIIPBP = 9;</code>
+       * @return The aAJBMHIIPBP.
        */
       @java.lang.Override
-      public int getLFGEDEIMJNM() {
-        return lFGEDEIMJNM_;
+      public int getAAJBMHIIPBP() {
+        return aAJBMHIIPBP_;
       }
 
       private byte memoizedIsInitialized = -1;
@@ -882,14 +882,14 @@ public final class WindSeedClientNotifyOuterClass {
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
+        if (aACKLENGCOO_ != 0) {
+          output.writeUInt32(5, aACKLENGCOO_);
+        }
         if (seedPos_ != null) {
-          output.writeMessage(3, getSeedPos());
+          output.writeMessage(8, getSeedPos());
         }
-        if (lFGEDEIMJNM_ != 0) {
-          output.writeUInt32(13, lFGEDEIMJNM_);
-        }
-        if (fCPFBPBHHLA_ != 0) {
-          output.writeUInt32(15, fCPFBPBHHLA_);
+        if (aAJBMHIIPBP_ != 0) {
+          output.writeUInt32(9, aAJBMHIIPBP_);
         }
         unknownFields.writeTo(output);
       }
@@ -900,17 +900,17 @@ public final class WindSeedClientNotifyOuterClass {
         if (size != -1) return size;
 
         size = 0;
+        if (aACKLENGCOO_ != 0) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt32Size(5, aACKLENGCOO_);
+        }
         if (seedPos_ != null) {
           size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(3, getSeedPos());
+            .computeMessageSize(8, getSeedPos());
         }
-        if (lFGEDEIMJNM_ != 0) {
+        if (aAJBMHIIPBP_ != 0) {
           size += com.google.protobuf.CodedOutputStream
-            .computeUInt32Size(13, lFGEDEIMJNM_);
-        }
-        if (fCPFBPBHHLA_ != 0) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeUInt32Size(15, fCPFBPBHHLA_);
+            .computeUInt32Size(9, aAJBMHIIPBP_);
         }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
@@ -932,10 +932,10 @@ public final class WindSeedClientNotifyOuterClass {
           if (!getSeedPos()
               .equals(other.getSeedPos())) return false;
         }
-        if (getFCPFBPBHHLA()
-            != other.getFCPFBPBHHLA()) return false;
-        if (getLFGEDEIMJNM()
-            != other.getLFGEDEIMJNM()) return false;
+        if (getAACKLENGCOO()
+            != other.getAACKLENGCOO()) return false;
+        if (getAAJBMHIIPBP()
+            != other.getAAJBMHIIPBP()) return false;
         if (!unknownFields.equals(other.unknownFields)) return false;
         return true;
       }
@@ -951,10 +951,10 @@ public final class WindSeedClientNotifyOuterClass {
           hash = (37 * hash) + SEED_POS_FIELD_NUMBER;
           hash = (53 * hash) + getSeedPos().hashCode();
         }
-        hash = (37 * hash) + FCPFBPBHHLA_FIELD_NUMBER;
-        hash = (53 * hash) + getFCPFBPBHHLA();
-        hash = (37 * hash) + LFGEDEIMJNM_FIELD_NUMBER;
-        hash = (53 * hash) + getLFGEDEIMJNM();
+        hash = (37 * hash) + AACKLENGCOO_FIELD_NUMBER;
+        hash = (53 * hash) + getAACKLENGCOO();
+        hash = (37 * hash) + AAJBMHIIPBP_FIELD_NUMBER;
+        hash = (53 * hash) + getAAJBMHIIPBP();
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -1052,7 +1052,7 @@ public final class WindSeedClientNotifyOuterClass {
       }
       /**
        * <pre>
-       * Obf: JONENPANFIF
+       * Obf: FENMFHPLEIM
        * </pre>
        *
        * Protobuf type {@code WindSeedClientNotify.AddWindBulletNotify}
@@ -1098,9 +1098,9 @@ public final class WindSeedClientNotifyOuterClass {
             seedPos_ = null;
             seedPosBuilder_ = null;
           }
-          fCPFBPBHHLA_ = 0;
+          aACKLENGCOO_ = 0;
 
-          lFGEDEIMJNM_ = 0;
+          aAJBMHIIPBP_ = 0;
 
           return this;
         }
@@ -1133,8 +1133,8 @@ public final class WindSeedClientNotifyOuterClass {
           } else {
             result.seedPos_ = seedPosBuilder_.build();
           }
-          result.fCPFBPBHHLA_ = fCPFBPBHHLA_;
-          result.lFGEDEIMJNM_ = lFGEDEIMJNM_;
+          result.aACKLENGCOO_ = aACKLENGCOO_;
+          result.aAJBMHIIPBP_ = aAJBMHIIPBP_;
           onBuilt();
           return result;
         }
@@ -1186,11 +1186,11 @@ public final class WindSeedClientNotifyOuterClass {
           if (other.hasSeedPos()) {
             mergeSeedPos(other.getSeedPos());
           }
-          if (other.getFCPFBPBHHLA() != 0) {
-            setFCPFBPBHHLA(other.getFCPFBPBHHLA());
+          if (other.getAACKLENGCOO() != 0) {
+            setAACKLENGCOO(other.getAACKLENGCOO());
           }
-          if (other.getLFGEDEIMJNM() != 0) {
-            setLFGEDEIMJNM(other.getLFGEDEIMJNM());
+          if (other.getAAJBMHIIPBP() != 0) {
+            setAAJBMHIIPBP(other.getAAJBMHIIPBP());
           }
           this.mergeUnknownFields(other.unknownFields);
           onChanged();
@@ -1225,14 +1225,14 @@ public final class WindSeedClientNotifyOuterClass {
         private com.google.protobuf.SingleFieldBuilderV3<
             emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> seedPosBuilder_;
         /**
-         * <code>.Vector seed_pos = 3;</code>
+         * <code>.Vector seed_pos = 8;</code>
          * @return Whether the seedPos field is set.
          */
         public boolean hasSeedPos() {
           return seedPosBuilder_ != null || seedPos_ != null;
         }
         /**
-         * <code>.Vector seed_pos = 3;</code>
+         * <code>.Vector seed_pos = 8;</code>
          * @return The seedPos.
          */
         public emu.grasscutter.net.proto.VectorOuterClass.Vector getSeedPos() {
@@ -1243,7 +1243,7 @@ public final class WindSeedClientNotifyOuterClass {
           }
         }
         /**
-         * <code>.Vector seed_pos = 3;</code>
+         * <code>.Vector seed_pos = 8;</code>
          */
         public Builder setSeedPos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
           if (seedPosBuilder_ == null) {
@@ -1259,7 +1259,7 @@ public final class WindSeedClientNotifyOuterClass {
           return this;
         }
         /**
-         * <code>.Vector seed_pos = 3;</code>
+         * <code>.Vector seed_pos = 8;</code>
          */
         public Builder setSeedPos(
             emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
@@ -1273,7 +1273,7 @@ public final class WindSeedClientNotifyOuterClass {
           return this;
         }
         /**
-         * <code>.Vector seed_pos = 3;</code>
+         * <code>.Vector seed_pos = 8;</code>
          */
         public Builder mergeSeedPos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
           if (seedPosBuilder_ == null) {
@@ -1291,7 +1291,7 @@ public final class WindSeedClientNotifyOuterClass {
           return this;
         }
         /**
-         * <code>.Vector seed_pos = 3;</code>
+         * <code>.Vector seed_pos = 8;</code>
          */
         public Builder clearSeedPos() {
           if (seedPosBuilder_ == null) {
@@ -1305,7 +1305,7 @@ public final class WindSeedClientNotifyOuterClass {
           return this;
         }
         /**
-         * <code>.Vector seed_pos = 3;</code>
+         * <code>.Vector seed_pos = 8;</code>
          */
         public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder getSeedPosBuilder() {
           
@@ -1313,7 +1313,7 @@ public final class WindSeedClientNotifyOuterClass {
           return getSeedPosFieldBuilder().getBuilder();
         }
         /**
-         * <code>.Vector seed_pos = 3;</code>
+         * <code>.Vector seed_pos = 8;</code>
          */
         public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getSeedPosOrBuilder() {
           if (seedPosBuilder_ != null) {
@@ -1324,7 +1324,7 @@ public final class WindSeedClientNotifyOuterClass {
           }
         }
         /**
-         * <code>.Vector seed_pos = 3;</code>
+         * <code>.Vector seed_pos = 8;</code>
          */
         private com.google.protobuf.SingleFieldBuilderV3<
             emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> 
@@ -1340,64 +1340,64 @@ public final class WindSeedClientNotifyOuterClass {
           return seedPosBuilder_;
         }
 
-        private int fCPFBPBHHLA_ ;
+        private int aACKLENGCOO_ ;
         /**
-         * <code>uint32 FCPFBPBHHLA = 15;</code>
-         * @return The fCPFBPBHHLA.
+         * <code>uint32 AACKLENGCOO = 5;</code>
+         * @return The aACKLENGCOO.
          */
         @java.lang.Override
-        public int getFCPFBPBHHLA() {
-          return fCPFBPBHHLA_;
+        public int getAACKLENGCOO() {
+          return aACKLENGCOO_;
         }
         /**
-         * <code>uint32 FCPFBPBHHLA = 15;</code>
-         * @param value The fCPFBPBHHLA to set.
+         * <code>uint32 AACKLENGCOO = 5;</code>
+         * @param value The aACKLENGCOO to set.
          * @return This builder for chaining.
          */
-        public Builder setFCPFBPBHHLA(int value) {
+        public Builder setAACKLENGCOO(int value) {
           
-          fCPFBPBHHLA_ = value;
+          aACKLENGCOO_ = value;
           onChanged();
           return this;
         }
         /**
-         * <code>uint32 FCPFBPBHHLA = 15;</code>
+         * <code>uint32 AACKLENGCOO = 5;</code>
          * @return This builder for chaining.
          */
-        public Builder clearFCPFBPBHHLA() {
+        public Builder clearAACKLENGCOO() {
           
-          fCPFBPBHHLA_ = 0;
+          aACKLENGCOO_ = 0;
           onChanged();
           return this;
         }
 
-        private int lFGEDEIMJNM_ ;
+        private int aAJBMHIIPBP_ ;
         /**
-         * <code>uint32 LFGEDEIMJNM = 13;</code>
-         * @return The lFGEDEIMJNM.
+         * <code>uint32 AAJBMHIIPBP = 9;</code>
+         * @return The aAJBMHIIPBP.
          */
         @java.lang.Override
-        public int getLFGEDEIMJNM() {
-          return lFGEDEIMJNM_;
+        public int getAAJBMHIIPBP() {
+          return aAJBMHIIPBP_;
         }
         /**
-         * <code>uint32 LFGEDEIMJNM = 13;</code>
-         * @param value The lFGEDEIMJNM to set.
+         * <code>uint32 AAJBMHIIPBP = 9;</code>
+         * @param value The aAJBMHIIPBP to set.
          * @return This builder for chaining.
          */
-        public Builder setLFGEDEIMJNM(int value) {
+        public Builder setAAJBMHIIPBP(int value) {
           
-          lFGEDEIMJNM_ = value;
+          aAJBMHIIPBP_ = value;
           onChanged();
           return this;
         }
         /**
-         * <code>uint32 LFGEDEIMJNM = 13;</code>
+         * <code>uint32 AAJBMHIIPBP = 9;</code>
          * @return This builder for chaining.
          */
-        public Builder clearLFGEDEIMJNM() {
+        public Builder clearAAJBMHIIPBP() {
           
-          lFGEDEIMJNM_ = 0;
+          aAJBMHIIPBP_ = 0;
           onChanged();
           return this;
         }
@@ -1459,26 +1459,26 @@ public final class WindSeedClientNotifyOuterClass {
         com.google.protobuf.MessageOrBuilder {
 
       /**
-       * <code>uint32 area_type = 15;</code>
+       * <code>uint32 area_id = 10;</code>
+       * @return The areaId.
+       */
+      int getAreaId();
+
+      /**
+       * <code>uint32 area_type = 6;</code>
        * @return The areaType.
        */
       int getAreaType();
 
       /**
-       * <code>bytes area_code = 1;</code>
+       * <code>bytes area_code = 5;</code>
        * @return The areaCode.
        */
       com.google.protobuf.ByteString getAreaCode();
-
-      /**
-       * <code>uint32 area_id = 6;</code>
-       * @return The areaId.
-       */
-      int getAreaId();
     }
     /**
      * <pre>
-     * Obf: GPMJILMANBH
+     * Obf: IKBNJENCHHH
      * </pre>
      *
      * Protobuf type {@code WindSeedClientNotify.AreaNotify}
@@ -1526,19 +1526,19 @@ public final class WindSeedClientNotifyOuterClass {
               case 0:
                 done = true;
                 break;
-              case 10: {
+              case 42: {
 
                 areaCode_ = input.readBytes();
                 break;
               }
               case 48: {
 
-                areaId_ = input.readUInt32();
+                areaType_ = input.readUInt32();
                 break;
               }
-              case 120: {
+              case 80: {
 
-                areaType_ = input.readUInt32();
+                areaId_ = input.readUInt32();
                 break;
               }
               default: {
@@ -1573,10 +1573,21 @@ public final class WindSeedClientNotifyOuterClass {
                 emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AreaNotify.class, emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AreaNotify.Builder.class);
       }
 
-      public static final int AREA_TYPE_FIELD_NUMBER = 15;
+      public static final int AREA_ID_FIELD_NUMBER = 10;
+      private int areaId_;
+      /**
+       * <code>uint32 area_id = 10;</code>
+       * @return The areaId.
+       */
+      @java.lang.Override
+      public int getAreaId() {
+        return areaId_;
+      }
+
+      public static final int AREA_TYPE_FIELD_NUMBER = 6;
       private int areaType_;
       /**
-       * <code>uint32 area_type = 15;</code>
+       * <code>uint32 area_type = 6;</code>
        * @return The areaType.
        */
       @java.lang.Override
@@ -1584,26 +1595,15 @@ public final class WindSeedClientNotifyOuterClass {
         return areaType_;
       }
 
-      public static final int AREA_CODE_FIELD_NUMBER = 1;
+      public static final int AREA_CODE_FIELD_NUMBER = 5;
       private com.google.protobuf.ByteString areaCode_;
       /**
-       * <code>bytes area_code = 1;</code>
+       * <code>bytes area_code = 5;</code>
        * @return The areaCode.
        */
       @java.lang.Override
       public com.google.protobuf.ByteString getAreaCode() {
         return areaCode_;
-      }
-
-      public static final int AREA_ID_FIELD_NUMBER = 6;
-      private int areaId_;
-      /**
-       * <code>uint32 area_id = 6;</code>
-       * @return The areaId.
-       */
-      @java.lang.Override
-      public int getAreaId() {
-        return areaId_;
       }
 
       private byte memoizedIsInitialized = -1;
@@ -1621,13 +1621,13 @@ public final class WindSeedClientNotifyOuterClass {
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
         if (!areaCode_.isEmpty()) {
-          output.writeBytes(1, areaCode_);
-        }
-        if (areaId_ != 0) {
-          output.writeUInt32(6, areaId_);
+          output.writeBytes(5, areaCode_);
         }
         if (areaType_ != 0) {
-          output.writeUInt32(15, areaType_);
+          output.writeUInt32(6, areaType_);
+        }
+        if (areaId_ != 0) {
+          output.writeUInt32(10, areaId_);
         }
         unknownFields.writeTo(output);
       }
@@ -1640,15 +1640,15 @@ public final class WindSeedClientNotifyOuterClass {
         size = 0;
         if (!areaCode_.isEmpty()) {
           size += com.google.protobuf.CodedOutputStream
-            .computeBytesSize(1, areaCode_);
-        }
-        if (areaId_ != 0) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeUInt32Size(6, areaId_);
+            .computeBytesSize(5, areaCode_);
         }
         if (areaType_ != 0) {
           size += com.google.protobuf.CodedOutputStream
-            .computeUInt32Size(15, areaType_);
+            .computeUInt32Size(6, areaType_);
+        }
+        if (areaId_ != 0) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt32Size(10, areaId_);
         }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
@@ -1665,12 +1665,12 @@ public final class WindSeedClientNotifyOuterClass {
         }
         emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AreaNotify other = (emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AreaNotify) obj;
 
+        if (getAreaId()
+            != other.getAreaId()) return false;
         if (getAreaType()
             != other.getAreaType()) return false;
         if (!getAreaCode()
             .equals(other.getAreaCode())) return false;
-        if (getAreaId()
-            != other.getAreaId()) return false;
         if (!unknownFields.equals(other.unknownFields)) return false;
         return true;
       }
@@ -1682,12 +1682,12 @@ public final class WindSeedClientNotifyOuterClass {
         }
         int hash = 41;
         hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + AREA_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getAreaId();
         hash = (37 * hash) + AREA_TYPE_FIELD_NUMBER;
         hash = (53 * hash) + getAreaType();
         hash = (37 * hash) + AREA_CODE_FIELD_NUMBER;
         hash = (53 * hash) + getAreaCode().hashCode();
-        hash = (37 * hash) + AREA_ID_FIELD_NUMBER;
-        hash = (53 * hash) + getAreaId();
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -1785,7 +1785,7 @@ public final class WindSeedClientNotifyOuterClass {
       }
       /**
        * <pre>
-       * Obf: GPMJILMANBH
+       * Obf: IKBNJENCHHH
        * </pre>
        *
        * Protobuf type {@code WindSeedClientNotify.AreaNotify}
@@ -1825,11 +1825,11 @@ public final class WindSeedClientNotifyOuterClass {
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          areaId_ = 0;
+
           areaType_ = 0;
 
           areaCode_ = com.google.protobuf.ByteString.EMPTY;
-
-          areaId_ = 0;
 
           return this;
         }
@@ -1857,9 +1857,9 @@ public final class WindSeedClientNotifyOuterClass {
         @java.lang.Override
         public emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AreaNotify buildPartial() {
           emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AreaNotify result = new emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AreaNotify(this);
+          result.areaId_ = areaId_;
           result.areaType_ = areaType_;
           result.areaCode_ = areaCode_;
-          result.areaId_ = areaId_;
           onBuilt();
           return result;
         }
@@ -1908,14 +1908,14 @@ public final class WindSeedClientNotifyOuterClass {
 
         public Builder mergeFrom(emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AreaNotify other) {
           if (other == emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AreaNotify.getDefaultInstance()) return this;
+          if (other.getAreaId() != 0) {
+            setAreaId(other.getAreaId());
+          }
           if (other.getAreaType() != 0) {
             setAreaType(other.getAreaType());
           }
           if (other.getAreaCode() != com.google.protobuf.ByteString.EMPTY) {
             setAreaCode(other.getAreaCode());
-          }
-          if (other.getAreaId() != 0) {
-            setAreaId(other.getAreaId());
           }
           this.mergeUnknownFields(other.unknownFields);
           onChanged();
@@ -1946,9 +1946,40 @@ public final class WindSeedClientNotifyOuterClass {
           return this;
         }
 
+        private int areaId_ ;
+        /**
+         * <code>uint32 area_id = 10;</code>
+         * @return The areaId.
+         */
+        @java.lang.Override
+        public int getAreaId() {
+          return areaId_;
+        }
+        /**
+         * <code>uint32 area_id = 10;</code>
+         * @param value The areaId to set.
+         * @return This builder for chaining.
+         */
+        public Builder setAreaId(int value) {
+          
+          areaId_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>uint32 area_id = 10;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearAreaId() {
+          
+          areaId_ = 0;
+          onChanged();
+          return this;
+        }
+
         private int areaType_ ;
         /**
-         * <code>uint32 area_type = 15;</code>
+         * <code>uint32 area_type = 6;</code>
          * @return The areaType.
          */
         @java.lang.Override
@@ -1956,7 +1987,7 @@ public final class WindSeedClientNotifyOuterClass {
           return areaType_;
         }
         /**
-         * <code>uint32 area_type = 15;</code>
+         * <code>uint32 area_type = 6;</code>
          * @param value The areaType to set.
          * @return This builder for chaining.
          */
@@ -1967,7 +1998,7 @@ public final class WindSeedClientNotifyOuterClass {
           return this;
         }
         /**
-         * <code>uint32 area_type = 15;</code>
+         * <code>uint32 area_type = 6;</code>
          * @return This builder for chaining.
          */
         public Builder clearAreaType() {
@@ -1979,7 +2010,7 @@ public final class WindSeedClientNotifyOuterClass {
 
         private com.google.protobuf.ByteString areaCode_ = com.google.protobuf.ByteString.EMPTY;
         /**
-         * <code>bytes area_code = 1;</code>
+         * <code>bytes area_code = 5;</code>
          * @return The areaCode.
          */
         @java.lang.Override
@@ -1987,7 +2018,7 @@ public final class WindSeedClientNotifyOuterClass {
           return areaCode_;
         }
         /**
-         * <code>bytes area_code = 1;</code>
+         * <code>bytes area_code = 5;</code>
          * @param value The areaCode to set.
          * @return This builder for chaining.
          */
@@ -2001,43 +2032,12 @@ public final class WindSeedClientNotifyOuterClass {
           return this;
         }
         /**
-         * <code>bytes area_code = 1;</code>
+         * <code>bytes area_code = 5;</code>
          * @return This builder for chaining.
          */
         public Builder clearAreaCode() {
           
           areaCode_ = getDefaultInstance().getAreaCode();
-          onChanged();
-          return this;
-        }
-
-        private int areaId_ ;
-        /**
-         * <code>uint32 area_id = 6;</code>
-         * @return The areaId.
-         */
-        @java.lang.Override
-        public int getAreaId() {
-          return areaId_;
-        }
-        /**
-         * <code>uint32 area_id = 6;</code>
-         * @param value The areaId to set.
-         * @return This builder for chaining.
-         */
-        public Builder setAreaId(int value) {
-          
-          areaId_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>uint32 area_id = 6;</code>
-         * @return This builder for chaining.
-         */
-        public Builder clearAreaId() {
-          
-          areaId_ = 0;
           onChanged();
           return this;
         }
@@ -2100,8 +2100,8 @@ public final class WindSeedClientNotifyOuterClass {
         implements com.google.protobuf.Internal.EnumLite,
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       REFRESH_NOTIFY(2),
-      ADD_WIND_BULLET_NOTIFY(3),
-      AREA_NOTIFY(11),
+      ADD_WIND_BULLET_NOTIFY(11),
+      AREA_NOTIFY(14),
       NOTIFY_NOT_SET(0);
       private final int value;
       private NotifyCase(int value) {
@@ -2120,8 +2120,8 @@ public final class WindSeedClientNotifyOuterClass {
       public static NotifyCase forNumber(int value) {
         switch (value) {
           case 2: return REFRESH_NOTIFY;
-          case 3: return ADD_WIND_BULLET_NOTIFY;
-          case 11: return AREA_NOTIFY;
+          case 11: return ADD_WIND_BULLET_NOTIFY;
+          case 14: return AREA_NOTIFY;
           case 0: return NOTIFY_NOT_SET;
           default: return null;
         }
@@ -2168,63 +2168,63 @@ public final class WindSeedClientNotifyOuterClass {
       return emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.RefreshNotify.getDefaultInstance();
     }
 
-    public static final int ADD_WIND_BULLET_NOTIFY_FIELD_NUMBER = 3;
+    public static final int ADD_WIND_BULLET_NOTIFY_FIELD_NUMBER = 11;
     /**
-     * <code>.WindSeedClientNotify.AddWindBulletNotify add_wind_bullet_notify = 3;</code>
+     * <code>.WindSeedClientNotify.AddWindBulletNotify add_wind_bullet_notify = 11;</code>
      * @return Whether the addWindBulletNotify field is set.
      */
     @java.lang.Override
     public boolean hasAddWindBulletNotify() {
-      return notifyCase_ == 3;
+      return notifyCase_ == 11;
     }
     /**
-     * <code>.WindSeedClientNotify.AddWindBulletNotify add_wind_bullet_notify = 3;</code>
+     * <code>.WindSeedClientNotify.AddWindBulletNotify add_wind_bullet_notify = 11;</code>
      * @return The addWindBulletNotify.
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AddWindBulletNotify getAddWindBulletNotify() {
-      if (notifyCase_ == 3) {
+      if (notifyCase_ == 11) {
          return (emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AddWindBulletNotify) notify_;
       }
       return emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AddWindBulletNotify.getDefaultInstance();
     }
     /**
-     * <code>.WindSeedClientNotify.AddWindBulletNotify add_wind_bullet_notify = 3;</code>
+     * <code>.WindSeedClientNotify.AddWindBulletNotify add_wind_bullet_notify = 11;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AddWindBulletNotifyOrBuilder getAddWindBulletNotifyOrBuilder() {
-      if (notifyCase_ == 3) {
+      if (notifyCase_ == 11) {
          return (emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AddWindBulletNotify) notify_;
       }
       return emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AddWindBulletNotify.getDefaultInstance();
     }
 
-    public static final int AREA_NOTIFY_FIELD_NUMBER = 11;
+    public static final int AREA_NOTIFY_FIELD_NUMBER = 14;
     /**
-     * <code>.WindSeedClientNotify.AreaNotify area_notify = 11;</code>
+     * <code>.WindSeedClientNotify.AreaNotify area_notify = 14;</code>
      * @return Whether the areaNotify field is set.
      */
     @java.lang.Override
     public boolean hasAreaNotify() {
-      return notifyCase_ == 11;
+      return notifyCase_ == 14;
     }
     /**
-     * <code>.WindSeedClientNotify.AreaNotify area_notify = 11;</code>
+     * <code>.WindSeedClientNotify.AreaNotify area_notify = 14;</code>
      * @return The areaNotify.
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AreaNotify getAreaNotify() {
-      if (notifyCase_ == 11) {
+      if (notifyCase_ == 14) {
          return (emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AreaNotify) notify_;
       }
       return emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AreaNotify.getDefaultInstance();
     }
     /**
-     * <code>.WindSeedClientNotify.AreaNotify area_notify = 11;</code>
+     * <code>.WindSeedClientNotify.AreaNotify area_notify = 14;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AreaNotifyOrBuilder getAreaNotifyOrBuilder() {
-      if (notifyCase_ == 11) {
+      if (notifyCase_ == 14) {
          return (emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AreaNotify) notify_;
       }
       return emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AreaNotify.getDefaultInstance();
@@ -2247,11 +2247,11 @@ public final class WindSeedClientNotifyOuterClass {
       if (notifyCase_ == 2) {
         output.writeMessage(2, (emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.RefreshNotify) notify_);
       }
-      if (notifyCase_ == 3) {
-        output.writeMessage(3, (emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AddWindBulletNotify) notify_);
-      }
       if (notifyCase_ == 11) {
-        output.writeMessage(11, (emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AreaNotify) notify_);
+        output.writeMessage(11, (emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AddWindBulletNotify) notify_);
+      }
+      if (notifyCase_ == 14) {
+        output.writeMessage(14, (emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AreaNotify) notify_);
       }
       unknownFields.writeTo(output);
     }
@@ -2266,13 +2266,13 @@ public final class WindSeedClientNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, (emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.RefreshNotify) notify_);
       }
-      if (notifyCase_ == 3) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, (emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AddWindBulletNotify) notify_);
-      }
       if (notifyCase_ == 11) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(11, (emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AreaNotify) notify_);
+          .computeMessageSize(11, (emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AddWindBulletNotify) notify_);
+      }
+      if (notifyCase_ == 14) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(14, (emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AreaNotify) notify_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2295,11 +2295,11 @@ public final class WindSeedClientNotifyOuterClass {
           if (!getRefreshNotify()
               .equals(other.getRefreshNotify())) return false;
           break;
-        case 3:
+        case 11:
           if (!getAddWindBulletNotify()
               .equals(other.getAddWindBulletNotify())) return false;
           break;
-        case 11:
+        case 14:
           if (!getAreaNotify()
               .equals(other.getAreaNotify())) return false;
           break;
@@ -2322,11 +2322,11 @@ public final class WindSeedClientNotifyOuterClass {
           hash = (37 * hash) + REFRESH_NOTIFY_FIELD_NUMBER;
           hash = (53 * hash) + getRefreshNotify().hashCode();
           break;
-        case 3:
+        case 11:
           hash = (37 * hash) + ADD_WIND_BULLET_NOTIFY_FIELD_NUMBER;
           hash = (53 * hash) + getAddWindBulletNotify().hashCode();
           break;
-        case 11:
+        case 14:
           hash = (37 * hash) + AREA_NOTIFY_FIELD_NUMBER;
           hash = (53 * hash) + getAreaNotify().hashCode();
           break;
@@ -2430,8 +2430,8 @@ public final class WindSeedClientNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 1130
-     * Obf: MOKHOJLFPPI
+     * CmdId: 28351
+     * Obf: HLBBDEJIMLI
      * </pre>
      *
      * Protobuf type {@code WindSeedClientNotify}
@@ -2506,14 +2506,14 @@ public final class WindSeedClientNotifyOuterClass {
             result.notify_ = refreshNotifyBuilder_.build();
           }
         }
-        if (notifyCase_ == 3) {
+        if (notifyCase_ == 11) {
           if (addWindBulletNotifyBuilder_ == null) {
             result.notify_ = notify_;
           } else {
             result.notify_ = addWindBulletNotifyBuilder_.build();
           }
         }
-        if (notifyCase_ == 11) {
+        if (notifyCase_ == 14) {
           if (areaNotifyBuilder_ == null) {
             result.notify_ = notify_;
           } else {
@@ -2774,33 +2774,33 @@ public final class WindSeedClientNotifyOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AddWindBulletNotify, emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AddWindBulletNotify.Builder, emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AddWindBulletNotifyOrBuilder> addWindBulletNotifyBuilder_;
       /**
-       * <code>.WindSeedClientNotify.AddWindBulletNotify add_wind_bullet_notify = 3;</code>
+       * <code>.WindSeedClientNotify.AddWindBulletNotify add_wind_bullet_notify = 11;</code>
        * @return Whether the addWindBulletNotify field is set.
        */
       @java.lang.Override
       public boolean hasAddWindBulletNotify() {
-        return notifyCase_ == 3;
+        return notifyCase_ == 11;
       }
       /**
-       * <code>.WindSeedClientNotify.AddWindBulletNotify add_wind_bullet_notify = 3;</code>
+       * <code>.WindSeedClientNotify.AddWindBulletNotify add_wind_bullet_notify = 11;</code>
        * @return The addWindBulletNotify.
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AddWindBulletNotify getAddWindBulletNotify() {
         if (addWindBulletNotifyBuilder_ == null) {
-          if (notifyCase_ == 3) {
+          if (notifyCase_ == 11) {
             return (emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AddWindBulletNotify) notify_;
           }
           return emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AddWindBulletNotify.getDefaultInstance();
         } else {
-          if (notifyCase_ == 3) {
+          if (notifyCase_ == 11) {
             return addWindBulletNotifyBuilder_.getMessage();
           }
           return emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AddWindBulletNotify.getDefaultInstance();
         }
       }
       /**
-       * <code>.WindSeedClientNotify.AddWindBulletNotify add_wind_bullet_notify = 3;</code>
+       * <code>.WindSeedClientNotify.AddWindBulletNotify add_wind_bullet_notify = 11;</code>
        */
       public Builder setAddWindBulletNotify(emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AddWindBulletNotify value) {
         if (addWindBulletNotifyBuilder_ == null) {
@@ -2812,11 +2812,11 @@ public final class WindSeedClientNotifyOuterClass {
         } else {
           addWindBulletNotifyBuilder_.setMessage(value);
         }
-        notifyCase_ = 3;
+        notifyCase_ = 11;
         return this;
       }
       /**
-       * <code>.WindSeedClientNotify.AddWindBulletNotify add_wind_bullet_notify = 3;</code>
+       * <code>.WindSeedClientNotify.AddWindBulletNotify add_wind_bullet_notify = 11;</code>
        */
       public Builder setAddWindBulletNotify(
           emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AddWindBulletNotify.Builder builderForValue) {
@@ -2826,15 +2826,15 @@ public final class WindSeedClientNotifyOuterClass {
         } else {
           addWindBulletNotifyBuilder_.setMessage(builderForValue.build());
         }
-        notifyCase_ = 3;
+        notifyCase_ = 11;
         return this;
       }
       /**
-       * <code>.WindSeedClientNotify.AddWindBulletNotify add_wind_bullet_notify = 3;</code>
+       * <code>.WindSeedClientNotify.AddWindBulletNotify add_wind_bullet_notify = 11;</code>
        */
       public Builder mergeAddWindBulletNotify(emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AddWindBulletNotify value) {
         if (addWindBulletNotifyBuilder_ == null) {
-          if (notifyCase_ == 3 &&
+          if (notifyCase_ == 11 &&
               notify_ != emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AddWindBulletNotify.getDefaultInstance()) {
             notify_ = emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AddWindBulletNotify.newBuilder((emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AddWindBulletNotify) notify_)
                 .mergeFrom(value).buildPartial();
@@ -2843,26 +2843,26 @@ public final class WindSeedClientNotifyOuterClass {
           }
           onChanged();
         } else {
-          if (notifyCase_ == 3) {
+          if (notifyCase_ == 11) {
             addWindBulletNotifyBuilder_.mergeFrom(value);
           }
           addWindBulletNotifyBuilder_.setMessage(value);
         }
-        notifyCase_ = 3;
+        notifyCase_ = 11;
         return this;
       }
       /**
-       * <code>.WindSeedClientNotify.AddWindBulletNotify add_wind_bullet_notify = 3;</code>
+       * <code>.WindSeedClientNotify.AddWindBulletNotify add_wind_bullet_notify = 11;</code>
        */
       public Builder clearAddWindBulletNotify() {
         if (addWindBulletNotifyBuilder_ == null) {
-          if (notifyCase_ == 3) {
+          if (notifyCase_ == 11) {
             notifyCase_ = 0;
             notify_ = null;
             onChanged();
           }
         } else {
-          if (notifyCase_ == 3) {
+          if (notifyCase_ == 11) {
             notifyCase_ = 0;
             notify_ = null;
           }
@@ -2871,33 +2871,33 @@ public final class WindSeedClientNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.WindSeedClientNotify.AddWindBulletNotify add_wind_bullet_notify = 3;</code>
+       * <code>.WindSeedClientNotify.AddWindBulletNotify add_wind_bullet_notify = 11;</code>
        */
       public emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AddWindBulletNotify.Builder getAddWindBulletNotifyBuilder() {
         return getAddWindBulletNotifyFieldBuilder().getBuilder();
       }
       /**
-       * <code>.WindSeedClientNotify.AddWindBulletNotify add_wind_bullet_notify = 3;</code>
+       * <code>.WindSeedClientNotify.AddWindBulletNotify add_wind_bullet_notify = 11;</code>
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AddWindBulletNotifyOrBuilder getAddWindBulletNotifyOrBuilder() {
-        if ((notifyCase_ == 3) && (addWindBulletNotifyBuilder_ != null)) {
+        if ((notifyCase_ == 11) && (addWindBulletNotifyBuilder_ != null)) {
           return addWindBulletNotifyBuilder_.getMessageOrBuilder();
         } else {
-          if (notifyCase_ == 3) {
+          if (notifyCase_ == 11) {
             return (emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AddWindBulletNotify) notify_;
           }
           return emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AddWindBulletNotify.getDefaultInstance();
         }
       }
       /**
-       * <code>.WindSeedClientNotify.AddWindBulletNotify add_wind_bullet_notify = 3;</code>
+       * <code>.WindSeedClientNotify.AddWindBulletNotify add_wind_bullet_notify = 11;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AddWindBulletNotify, emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AddWindBulletNotify.Builder, emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AddWindBulletNotifyOrBuilder> 
           getAddWindBulletNotifyFieldBuilder() {
         if (addWindBulletNotifyBuilder_ == null) {
-          if (!(notifyCase_ == 3)) {
+          if (!(notifyCase_ == 11)) {
             notify_ = emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AddWindBulletNotify.getDefaultInstance();
           }
           addWindBulletNotifyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -2907,7 +2907,7 @@ public final class WindSeedClientNotifyOuterClass {
                   isClean());
           notify_ = null;
         }
-        notifyCase_ = 3;
+        notifyCase_ = 11;
         onChanged();;
         return addWindBulletNotifyBuilder_;
       }
@@ -2915,33 +2915,33 @@ public final class WindSeedClientNotifyOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AreaNotify, emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AreaNotify.Builder, emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AreaNotifyOrBuilder> areaNotifyBuilder_;
       /**
-       * <code>.WindSeedClientNotify.AreaNotify area_notify = 11;</code>
+       * <code>.WindSeedClientNotify.AreaNotify area_notify = 14;</code>
        * @return Whether the areaNotify field is set.
        */
       @java.lang.Override
       public boolean hasAreaNotify() {
-        return notifyCase_ == 11;
+        return notifyCase_ == 14;
       }
       /**
-       * <code>.WindSeedClientNotify.AreaNotify area_notify = 11;</code>
+       * <code>.WindSeedClientNotify.AreaNotify area_notify = 14;</code>
        * @return The areaNotify.
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AreaNotify getAreaNotify() {
         if (areaNotifyBuilder_ == null) {
-          if (notifyCase_ == 11) {
+          if (notifyCase_ == 14) {
             return (emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AreaNotify) notify_;
           }
           return emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AreaNotify.getDefaultInstance();
         } else {
-          if (notifyCase_ == 11) {
+          if (notifyCase_ == 14) {
             return areaNotifyBuilder_.getMessage();
           }
           return emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AreaNotify.getDefaultInstance();
         }
       }
       /**
-       * <code>.WindSeedClientNotify.AreaNotify area_notify = 11;</code>
+       * <code>.WindSeedClientNotify.AreaNotify area_notify = 14;</code>
        */
       public Builder setAreaNotify(emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AreaNotify value) {
         if (areaNotifyBuilder_ == null) {
@@ -2953,11 +2953,11 @@ public final class WindSeedClientNotifyOuterClass {
         } else {
           areaNotifyBuilder_.setMessage(value);
         }
-        notifyCase_ = 11;
+        notifyCase_ = 14;
         return this;
       }
       /**
-       * <code>.WindSeedClientNotify.AreaNotify area_notify = 11;</code>
+       * <code>.WindSeedClientNotify.AreaNotify area_notify = 14;</code>
        */
       public Builder setAreaNotify(
           emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AreaNotify.Builder builderForValue) {
@@ -2967,15 +2967,15 @@ public final class WindSeedClientNotifyOuterClass {
         } else {
           areaNotifyBuilder_.setMessage(builderForValue.build());
         }
-        notifyCase_ = 11;
+        notifyCase_ = 14;
         return this;
       }
       /**
-       * <code>.WindSeedClientNotify.AreaNotify area_notify = 11;</code>
+       * <code>.WindSeedClientNotify.AreaNotify area_notify = 14;</code>
        */
       public Builder mergeAreaNotify(emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AreaNotify value) {
         if (areaNotifyBuilder_ == null) {
-          if (notifyCase_ == 11 &&
+          if (notifyCase_ == 14 &&
               notify_ != emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AreaNotify.getDefaultInstance()) {
             notify_ = emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AreaNotify.newBuilder((emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AreaNotify) notify_)
                 .mergeFrom(value).buildPartial();
@@ -2984,26 +2984,26 @@ public final class WindSeedClientNotifyOuterClass {
           }
           onChanged();
         } else {
-          if (notifyCase_ == 11) {
+          if (notifyCase_ == 14) {
             areaNotifyBuilder_.mergeFrom(value);
           }
           areaNotifyBuilder_.setMessage(value);
         }
-        notifyCase_ = 11;
+        notifyCase_ = 14;
         return this;
       }
       /**
-       * <code>.WindSeedClientNotify.AreaNotify area_notify = 11;</code>
+       * <code>.WindSeedClientNotify.AreaNotify area_notify = 14;</code>
        */
       public Builder clearAreaNotify() {
         if (areaNotifyBuilder_ == null) {
-          if (notifyCase_ == 11) {
+          if (notifyCase_ == 14) {
             notifyCase_ = 0;
             notify_ = null;
             onChanged();
           }
         } else {
-          if (notifyCase_ == 11) {
+          if (notifyCase_ == 14) {
             notifyCase_ = 0;
             notify_ = null;
           }
@@ -3012,33 +3012,33 @@ public final class WindSeedClientNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.WindSeedClientNotify.AreaNotify area_notify = 11;</code>
+       * <code>.WindSeedClientNotify.AreaNotify area_notify = 14;</code>
        */
       public emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AreaNotify.Builder getAreaNotifyBuilder() {
         return getAreaNotifyFieldBuilder().getBuilder();
       }
       /**
-       * <code>.WindSeedClientNotify.AreaNotify area_notify = 11;</code>
+       * <code>.WindSeedClientNotify.AreaNotify area_notify = 14;</code>
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AreaNotifyOrBuilder getAreaNotifyOrBuilder() {
-        if ((notifyCase_ == 11) && (areaNotifyBuilder_ != null)) {
+        if ((notifyCase_ == 14) && (areaNotifyBuilder_ != null)) {
           return areaNotifyBuilder_.getMessageOrBuilder();
         } else {
-          if (notifyCase_ == 11) {
+          if (notifyCase_ == 14) {
             return (emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AreaNotify) notify_;
           }
           return emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AreaNotify.getDefaultInstance();
         }
       }
       /**
-       * <code>.WindSeedClientNotify.AreaNotify area_notify = 11;</code>
+       * <code>.WindSeedClientNotify.AreaNotify area_notify = 14;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AreaNotify, emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AreaNotify.Builder, emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AreaNotifyOrBuilder> 
           getAreaNotifyFieldBuilder() {
         if (areaNotifyBuilder_ == null) {
-          if (!(notifyCase_ == 11)) {
+          if (!(notifyCase_ == 14)) {
             notify_ = emu.grasscutter.net.proto.WindSeedClientNotifyOuterClass.WindSeedClientNotify.AreaNotify.getDefaultInstance();
           }
           areaNotifyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -3048,7 +3048,7 @@ public final class WindSeedClientNotifyOuterClass {
                   isClean());
           notify_ = null;
         }
-        notifyCase_ = 11;
+        notifyCase_ = 14;
         onChanged();;
         return areaNotifyBuilder_;
       }
@@ -3137,15 +3137,15 @@ public final class WindSeedClientNotifyOuterClass {
       "\n\032WindSeedClientNotify.proto\032\014Vector.pro" +
       "to\"\254\003\n\024WindSeedClientNotify\022=\n\016refresh_n" +
       "otify\030\002 \001(\0132#.WindSeedClientNotify.Refre" +
-      "shNotifyH\000\022K\n\026add_wind_bullet_notify\030\003 \001" +
+      "shNotifyH\000\022K\n\026add_wind_bullet_notify\030\013 \001" +
       "(\0132).WindSeedClientNotify.AddWindBulletN" +
-      "otifyH\000\0227\n\013area_notify\030\013 \001(\0132 .WindSeedC" +
+      "otifyH\000\0227\n\013area_notify\030\016 \001(\0132 .WindSeedC" +
       "lientNotify.AreaNotifyH\000\032$\n\rRefreshNotif" +
-      "y\022\023\n\013refresh_num\030\t \001(\r\032Z\n\023AddWindBulletN" +
-      "otify\022\031\n\010seed_pos\030\003 \001(\0132\007.Vector\022\023\n\013FCPF" +
-      "BPBHHLA\030\017 \001(\r\022\023\n\013LFGEDEIMJNM\030\r \001(\r\032C\n\nAr" +
-      "eaNotify\022\021\n\tarea_type\030\017 \001(\r\022\021\n\tarea_code" +
-      "\030\001 \001(\014\022\017\n\007area_id\030\006 \001(\rB\010\n\006notifyB\033\n\031emu" +
+      "y\022\023\n\013refresh_num\030\001 \001(\r\032Z\n\023AddWindBulletN" +
+      "otify\022\031\n\010seed_pos\030\010 \001(\0132\007.Vector\022\023\n\013AACK" +
+      "LENGCOO\030\005 \001(\r\022\023\n\013AAJBMHIIPBP\030\t \001(\r\032C\n\nAr" +
+      "eaNotify\022\017\n\007area_id\030\n \001(\r\022\021\n\tarea_type\030\006" +
+      " \001(\r\022\021\n\tarea_code\030\005 \001(\014B\010\n\006notifyB\033\n\031emu" +
       ".grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -3170,13 +3170,13 @@ public final class WindSeedClientNotifyOuterClass {
     internal_static_WindSeedClientNotify_AddWindBulletNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_WindSeedClientNotify_AddWindBulletNotify_descriptor,
-        new java.lang.String[] { "SeedPos", "FCPFBPBHHLA", "LFGEDEIMJNM", });
+        new java.lang.String[] { "SeedPos", "AACKLENGCOO", "AAJBMHIIPBP", });
     internal_static_WindSeedClientNotify_AreaNotify_descriptor =
       internal_static_WindSeedClientNotify_descriptor.getNestedTypes().get(2);
     internal_static_WindSeedClientNotify_AreaNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_WindSeedClientNotify_AreaNotify_descriptor,
-        new java.lang.String[] { "AreaType", "AreaCode", "AreaId", });
+        new java.lang.String[] { "AreaId", "AreaType", "AreaCode", });
     emu.grasscutter.net.proto.VectorOuterClass.getDescriptor();
   }
 

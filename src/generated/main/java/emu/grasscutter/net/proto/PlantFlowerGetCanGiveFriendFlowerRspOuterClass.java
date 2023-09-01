@@ -19,23 +19,11 @@ public final class PlantFlowerGetCanGiveFriendFlowerRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 13;</code>
-     * @return The retcode.
-     */
-    int getRetcode();
-
-    /**
-     * <code>uint32 schedule_id = 12;</code>
-     * @return The scheduleId.
-     */
-    int getScheduleId();
-
-    /**
-     * <code>map&lt;uint32, uint32&gt; flower_num_map = 1;</code>
+     * <code>map&lt;uint32, uint32&gt; flower_num_map = 12;</code>
      */
     int getFlowerNumMapCount();
     /**
-     * <code>map&lt;uint32, uint32&gt; flower_num_map = 1;</code>
+     * <code>map&lt;uint32, uint32&gt; flower_num_map = 12;</code>
      */
     boolean containsFlowerNumMap(
         int key);
@@ -46,28 +34,40 @@ public final class PlantFlowerGetCanGiveFriendFlowerRspOuterClass {
     java.util.Map<java.lang.Integer, java.lang.Integer>
     getFlowerNumMap();
     /**
-     * <code>map&lt;uint32, uint32&gt; flower_num_map = 1;</code>
+     * <code>map&lt;uint32, uint32&gt; flower_num_map = 12;</code>
      */
     java.util.Map<java.lang.Integer, java.lang.Integer>
     getFlowerNumMapMap();
     /**
-     * <code>map&lt;uint32, uint32&gt; flower_num_map = 1;</code>
+     * <code>map&lt;uint32, uint32&gt; flower_num_map = 12;</code>
      */
 
     int getFlowerNumMapOrDefault(
         int key,
         int defaultValue);
     /**
-     * <code>map&lt;uint32, uint32&gt; flower_num_map = 1;</code>
+     * <code>map&lt;uint32, uint32&gt; flower_num_map = 12;</code>
      */
 
     int getFlowerNumMapOrThrow(
         int key);
+
+    /**
+     * <code>int32 retcode = 1;</code>
+     * @return The retcode.
+     */
+    int getRetcode();
+
+    /**
+     * <code>uint32 schedule_id = 8;</code>
+     * @return The scheduleId.
+     */
+    int getScheduleId();
   }
   /**
    * <pre>
-   * CmdId: 8596
-   * Obf: PFHPIMLLFPC
+   * CmdId: 2946
+   * Obf: JFCFIKFLOBF
    * </pre>
    *
    * Protobuf type {@code PlantFlowerGetCanGiveFriendFlowerRsp}
@@ -115,7 +115,17 @@ public final class PlantFlowerGetCanGiveFriendFlowerRspOuterClass {
             case 0:
               done = true;
               break;
-            case 10: {
+            case 8: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 64: {
+
+              scheduleId_ = input.readUInt32();
+              break;
+            }
+            case 98: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 flowerNumMap_ = com.google.protobuf.MapField.newMapField(
                     FlowerNumMapDefaultEntryHolder.defaultEntry);
@@ -126,16 +136,6 @@ public final class PlantFlowerGetCanGiveFriendFlowerRspOuterClass {
                   FlowerNumMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
               flowerNumMap_.getMutableMap().put(
                   flowerNumMap__.getKey(), flowerNumMap__.getValue());
-              break;
-            }
-            case 96: {
-
-              scheduleId_ = input.readUInt32();
-              break;
-            }
-            case 104: {
-
-              retcode_ = input.readInt32();
               break;
             }
             default: {
@@ -167,7 +167,7 @@ public final class PlantFlowerGetCanGiveFriendFlowerRspOuterClass {
     protected com.google.protobuf.MapField internalGetMapField(
         int number) {
       switch (number) {
-        case 1:
+        case 12:
           return internalGetFlowerNumMap();
         default:
           throw new RuntimeException(
@@ -182,29 +182,7 @@ public final class PlantFlowerGetCanGiveFriendFlowerRspOuterClass {
               emu.grasscutter.net.proto.PlantFlowerGetCanGiveFriendFlowerRspOuterClass.PlantFlowerGetCanGiveFriendFlowerRsp.class, emu.grasscutter.net.proto.PlantFlowerGetCanGiveFriendFlowerRspOuterClass.PlantFlowerGetCanGiveFriendFlowerRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 13;
-    private int retcode_;
-    /**
-     * <code>int32 retcode = 13;</code>
-     * @return The retcode.
-     */
-    @java.lang.Override
-    public int getRetcode() {
-      return retcode_;
-    }
-
-    public static final int SCHEDULE_ID_FIELD_NUMBER = 12;
-    private int scheduleId_;
-    /**
-     * <code>uint32 schedule_id = 12;</code>
-     * @return The scheduleId.
-     */
-    @java.lang.Override
-    public int getScheduleId() {
-      return scheduleId_;
-    }
-
-    public static final int FLOWER_NUM_MAP_FIELD_NUMBER = 1;
+    public static final int FLOWER_NUM_MAP_FIELD_NUMBER = 12;
     private static final class FlowerNumMapDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.Integer, java.lang.Integer> defaultEntry =
@@ -231,7 +209,7 @@ public final class PlantFlowerGetCanGiveFriendFlowerRspOuterClass {
       return internalGetFlowerNumMap().getMap().size();
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; flower_num_map = 1;</code>
+     * <code>map&lt;uint32, uint32&gt; flower_num_map = 12;</code>
      */
 
     @java.lang.Override
@@ -249,7 +227,7 @@ public final class PlantFlowerGetCanGiveFriendFlowerRspOuterClass {
       return getFlowerNumMapMap();
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; flower_num_map = 1;</code>
+     * <code>map&lt;uint32, uint32&gt; flower_num_map = 12;</code>
      */
     @java.lang.Override
 
@@ -257,7 +235,7 @@ public final class PlantFlowerGetCanGiveFriendFlowerRspOuterClass {
       return internalGetFlowerNumMap().getMap();
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; flower_num_map = 1;</code>
+     * <code>map&lt;uint32, uint32&gt; flower_num_map = 12;</code>
      */
     @java.lang.Override
 
@@ -270,7 +248,7 @@ public final class PlantFlowerGetCanGiveFriendFlowerRspOuterClass {
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; flower_num_map = 1;</code>
+     * <code>map&lt;uint32, uint32&gt; flower_num_map = 12;</code>
      */
     @java.lang.Override
 
@@ -283,6 +261,28 @@ public final class PlantFlowerGetCanGiveFriendFlowerRspOuterClass {
         throw new java.lang.IllegalArgumentException();
       }
       return map.get(key);
+    }
+
+    public static final int RETCODE_FIELD_NUMBER = 1;
+    private int retcode_;
+    /**
+     * <code>int32 retcode = 1;</code>
+     * @return The retcode.
+     */
+    @java.lang.Override
+    public int getRetcode() {
+      return retcode_;
+    }
+
+    public static final int SCHEDULE_ID_FIELD_NUMBER = 8;
+    private int scheduleId_;
+    /**
+     * <code>uint32 schedule_id = 8;</code>
+     * @return The scheduleId.
+     */
+    @java.lang.Override
+    public int getScheduleId() {
+      return scheduleId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -299,18 +299,18 @@ public final class PlantFlowerGetCanGiveFriendFlowerRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (retcode_ != 0) {
+        output.writeInt32(1, retcode_);
+      }
+      if (scheduleId_ != 0) {
+        output.writeUInt32(8, scheduleId_);
+      }
       com.google.protobuf.GeneratedMessageV3
         .serializeIntegerMapTo(
           output,
           internalGetFlowerNumMap(),
           FlowerNumMapDefaultEntryHolder.defaultEntry,
-          1);
-      if (scheduleId_ != 0) {
-        output.writeUInt32(12, scheduleId_);
-      }
-      if (retcode_ != 0) {
-        output.writeInt32(13, retcode_);
-      }
+          12);
       unknownFields.writeTo(output);
     }
 
@@ -320,6 +320,14 @@ public final class PlantFlowerGetCanGiveFriendFlowerRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (retcode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, retcode_);
+      }
+      if (scheduleId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(8, scheduleId_);
+      }
       for (java.util.Map.Entry<java.lang.Integer, java.lang.Integer> entry
            : internalGetFlowerNumMap().getMap().entrySet()) {
         com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
@@ -328,15 +336,7 @@ public final class PlantFlowerGetCanGiveFriendFlowerRspOuterClass {
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(1, flowerNumMap__);
-      }
-      if (scheduleId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, scheduleId_);
-      }
-      if (retcode_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(13, retcode_);
+            .computeMessageSize(12, flowerNumMap__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -353,12 +353,12 @@ public final class PlantFlowerGetCanGiveFriendFlowerRspOuterClass {
       }
       emu.grasscutter.net.proto.PlantFlowerGetCanGiveFriendFlowerRspOuterClass.PlantFlowerGetCanGiveFriendFlowerRsp other = (emu.grasscutter.net.proto.PlantFlowerGetCanGiveFriendFlowerRspOuterClass.PlantFlowerGetCanGiveFriendFlowerRsp) obj;
 
+      if (!internalGetFlowerNumMap().equals(
+          other.internalGetFlowerNumMap())) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
       if (getScheduleId()
           != other.getScheduleId()) return false;
-      if (!internalGetFlowerNumMap().equals(
-          other.internalGetFlowerNumMap())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -370,14 +370,14 @@ public final class PlantFlowerGetCanGiveFriendFlowerRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getRetcode();
-      hash = (37 * hash) + SCHEDULE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getScheduleId();
       if (!internalGetFlowerNumMap().getMap().isEmpty()) {
         hash = (37 * hash) + FLOWER_NUM_MAP_FIELD_NUMBER;
         hash = (53 * hash) + internalGetFlowerNumMap().hashCode();
       }
+      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
+      hash = (53 * hash) + getRetcode();
+      hash = (37 * hash) + SCHEDULE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getScheduleId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -475,8 +475,8 @@ public final class PlantFlowerGetCanGiveFriendFlowerRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8596
-     * Obf: PFHPIMLLFPC
+     * CmdId: 2946
+     * Obf: JFCFIKFLOBF
      * </pre>
      *
      * Protobuf type {@code PlantFlowerGetCanGiveFriendFlowerRsp}
@@ -494,7 +494,7 @@ public final class PlantFlowerGetCanGiveFriendFlowerRspOuterClass {
       protected com.google.protobuf.MapField internalGetMapField(
           int number) {
         switch (number) {
-          case 1:
+          case 12:
             return internalGetFlowerNumMap();
           default:
             throw new RuntimeException(
@@ -505,7 +505,7 @@ public final class PlantFlowerGetCanGiveFriendFlowerRspOuterClass {
       protected com.google.protobuf.MapField internalGetMutableMapField(
           int number) {
         switch (number) {
-          case 1:
+          case 12:
             return internalGetMutableFlowerNumMap();
           default:
             throw new RuntimeException(
@@ -538,11 +538,11 @@ public final class PlantFlowerGetCanGiveFriendFlowerRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        internalGetMutableFlowerNumMap().clear();
         retcode_ = 0;
 
         scheduleId_ = 0;
 
-        internalGetMutableFlowerNumMap().clear();
         return this;
       }
 
@@ -570,10 +570,10 @@ public final class PlantFlowerGetCanGiveFriendFlowerRspOuterClass {
       public emu.grasscutter.net.proto.PlantFlowerGetCanGiveFriendFlowerRspOuterClass.PlantFlowerGetCanGiveFriendFlowerRsp buildPartial() {
         emu.grasscutter.net.proto.PlantFlowerGetCanGiveFriendFlowerRspOuterClass.PlantFlowerGetCanGiveFriendFlowerRsp result = new emu.grasscutter.net.proto.PlantFlowerGetCanGiveFriendFlowerRspOuterClass.PlantFlowerGetCanGiveFriendFlowerRsp(this);
         int from_bitField0_ = bitField0_;
-        result.retcode_ = retcode_;
-        result.scheduleId_ = scheduleId_;
         result.flowerNumMap_ = internalGetFlowerNumMap();
         result.flowerNumMap_.makeImmutable();
+        result.retcode_ = retcode_;
+        result.scheduleId_ = scheduleId_;
         onBuilt();
         return result;
       }
@@ -622,14 +622,14 @@ public final class PlantFlowerGetCanGiveFriendFlowerRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.PlantFlowerGetCanGiveFriendFlowerRspOuterClass.PlantFlowerGetCanGiveFriendFlowerRsp other) {
         if (other == emu.grasscutter.net.proto.PlantFlowerGetCanGiveFriendFlowerRspOuterClass.PlantFlowerGetCanGiveFriendFlowerRsp.getDefaultInstance()) return this;
+        internalGetMutableFlowerNumMap().mergeFrom(
+            other.internalGetFlowerNumMap());
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
         }
         if (other.getScheduleId() != 0) {
           setScheduleId(other.getScheduleId());
         }
-        internalGetMutableFlowerNumMap().mergeFrom(
-            other.internalGetFlowerNumMap());
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -660,68 +660,6 @@ public final class PlantFlowerGetCanGiveFriendFlowerRspOuterClass {
       }
       private int bitField0_;
 
-      private int retcode_ ;
-      /**
-       * <code>int32 retcode = 13;</code>
-       * @return The retcode.
-       */
-      @java.lang.Override
-      public int getRetcode() {
-        return retcode_;
-      }
-      /**
-       * <code>int32 retcode = 13;</code>
-       * @param value The retcode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRetcode(int value) {
-        
-        retcode_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 retcode = 13;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRetcode() {
-        
-        retcode_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int scheduleId_ ;
-      /**
-       * <code>uint32 schedule_id = 12;</code>
-       * @return The scheduleId.
-       */
-      @java.lang.Override
-      public int getScheduleId() {
-        return scheduleId_;
-      }
-      /**
-       * <code>uint32 schedule_id = 12;</code>
-       * @param value The scheduleId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setScheduleId(int value) {
-        
-        scheduleId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 schedule_id = 12;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearScheduleId() {
-        
-        scheduleId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private com.google.protobuf.MapField<
           java.lang.Integer, java.lang.Integer> flowerNumMap_;
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
@@ -749,7 +687,7 @@ public final class PlantFlowerGetCanGiveFriendFlowerRspOuterClass {
         return internalGetFlowerNumMap().getMap().size();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; flower_num_map = 1;</code>
+       * <code>map&lt;uint32, uint32&gt; flower_num_map = 12;</code>
        */
 
       @java.lang.Override
@@ -767,7 +705,7 @@ public final class PlantFlowerGetCanGiveFriendFlowerRspOuterClass {
         return getFlowerNumMapMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; flower_num_map = 1;</code>
+       * <code>map&lt;uint32, uint32&gt; flower_num_map = 12;</code>
        */
       @java.lang.Override
 
@@ -775,7 +713,7 @@ public final class PlantFlowerGetCanGiveFriendFlowerRspOuterClass {
         return internalGetFlowerNumMap().getMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; flower_num_map = 1;</code>
+       * <code>map&lt;uint32, uint32&gt; flower_num_map = 12;</code>
        */
       @java.lang.Override
 
@@ -788,7 +726,7 @@ public final class PlantFlowerGetCanGiveFriendFlowerRspOuterClass {
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; flower_num_map = 1;</code>
+       * <code>map&lt;uint32, uint32&gt; flower_num_map = 12;</code>
        */
       @java.lang.Override
 
@@ -809,7 +747,7 @@ public final class PlantFlowerGetCanGiveFriendFlowerRspOuterClass {
         return this;
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; flower_num_map = 1;</code>
+       * <code>map&lt;uint32, uint32&gt; flower_num_map = 12;</code>
        */
 
       public Builder removeFlowerNumMap(
@@ -828,7 +766,7 @@ public final class PlantFlowerGetCanGiveFriendFlowerRspOuterClass {
         return internalGetMutableFlowerNumMap().getMutableMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; flower_num_map = 1;</code>
+       * <code>map&lt;uint32, uint32&gt; flower_num_map = 12;</code>
        */
       public Builder putFlowerNumMap(
           int key,
@@ -840,13 +778,75 @@ public final class PlantFlowerGetCanGiveFriendFlowerRspOuterClass {
         return this;
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; flower_num_map = 1;</code>
+       * <code>map&lt;uint32, uint32&gt; flower_num_map = 12;</code>
        */
 
       public Builder putAllFlowerNumMap(
           java.util.Map<java.lang.Integer, java.lang.Integer> values) {
         internalGetMutableFlowerNumMap().getMutableMap()
             .putAll(values);
+        return this;
+      }
+
+      private int retcode_ ;
+      /**
+       * <code>int32 retcode = 1;</code>
+       * @return The retcode.
+       */
+      @java.lang.Override
+      public int getRetcode() {
+        return retcode_;
+      }
+      /**
+       * <code>int32 retcode = 1;</code>
+       * @param value The retcode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRetcode(int value) {
+        
+        retcode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 retcode = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRetcode() {
+        
+        retcode_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int scheduleId_ ;
+      /**
+       * <code>uint32 schedule_id = 8;</code>
+       * @return The scheduleId.
+       */
+      @java.lang.Override
+      public int getScheduleId() {
+        return scheduleId_;
+      }
+      /**
+       * <code>uint32 schedule_id = 8;</code>
+       * @param value The scheduleId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setScheduleId(int value) {
+        
+        scheduleId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 schedule_id = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearScheduleId() {
+        
+        scheduleId_ = 0;
+        onChanged();
         return this;
       }
       @java.lang.Override
@@ -923,10 +923,10 @@ public final class PlantFlowerGetCanGiveFriendFlowerRspOuterClass {
     java.lang.String[] descriptorData = {
       "\n*PlantFlowerGetCanGiveFriendFlowerRsp.p" +
       "roto\"\322\001\n$PlantFlowerGetCanGiveFriendFlow" +
-      "erRsp\022\017\n\007retcode\030\r \001(\005\022\023\n\013schedule_id\030\014 " +
-      "\001(\r\022O\n\016flower_num_map\030\001 \003(\01327.PlantFlowe" +
-      "rGetCanGiveFriendFlowerRsp.FlowerNumMapE" +
-      "ntry\0323\n\021FlowerNumMapEntry\022\013\n\003key\030\001 \001(\r\022\r" +
+      "erRsp\022O\n\016flower_num_map\030\014 \003(\01327.PlantFlo" +
+      "werGetCanGiveFriendFlowerRsp.FlowerNumMa" +
+      "pEntry\022\017\n\007retcode\030\001 \001(\005\022\023\n\013schedule_id\030\010" +
+      " \001(\r\0323\n\021FlowerNumMapEntry\022\013\n\003key\030\001 \001(\r\022\r" +
       "\n\005value\030\002 \001(\r:\0028\001B\033\n\031emu.grasscutter.net" +
       ".protob\006proto3"
     };
@@ -939,7 +939,7 @@ public final class PlantFlowerGetCanGiveFriendFlowerRspOuterClass {
     internal_static_PlantFlowerGetCanGiveFriendFlowerRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_PlantFlowerGetCanGiveFriendFlowerRsp_descriptor,
-        new java.lang.String[] { "Retcode", "ScheduleId", "FlowerNumMap", });
+        new java.lang.String[] { "FlowerNumMap", "Retcode", "ScheduleId", });
     internal_static_PlantFlowerGetCanGiveFriendFlowerRsp_FlowerNumMapEntry_descriptor =
       internal_static_PlantFlowerGetCanGiveFriendFlowerRsp_descriptor.getNestedTypes().get(0);
     internal_static_PlantFlowerGetCanGiveFriendFlowerRsp_FlowerNumMapEntry_fieldAccessorTable = new

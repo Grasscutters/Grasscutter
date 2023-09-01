@@ -19,28 +19,28 @@ public final class GCGTCTavernInfoNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 level_id = 14;</code>
-     * @return The levelId.
-     */
-    int getLevelId();
-
-    /**
-     * <code>bool GDNNFNKDFIP = 7;</code>
-     * @return The gDNNFNKDFIP.
-     */
-    boolean getGDNNFNKDFIP();
-
-    /**
-     * <code>uint32 point_id = 8;</code>
-     * @return The pointId.
-     */
-    int getPointId();
-
-    /**
-     * <code>uint32 character_id = 2;</code>
+     * <code>uint32 character_id = 11;</code>
      * @return The characterId.
      */
     int getCharacterId();
+
+    /**
+     * <code>uint32 avatar_id = 7;</code>
+     * @return The avatarId.
+     */
+    int getAvatarId();
+
+    /**
+     * <code>bool KPBIEOPHOHC = 4;</code>
+     * @return The kPBIEOPHOHC.
+     */
+    boolean getKPBIEOPHOHC();
+
+    /**
+     * <code>uint32 level_id = 13;</code>
+     * @return The levelId.
+     */
+    int getLevelId();
 
     /**
      * <code>uint32 element_type = 5;</code>
@@ -49,21 +49,21 @@ public final class GCGTCTavernInfoNotifyOuterClass {
     int getElementType();
 
     /**
-     * <code>uint32 avatar_id = 12;</code>
-     * @return The avatarId.
+     * <code>uint32 point_id = 6;</code>
+     * @return The pointId.
      */
-    int getAvatarId();
+    int getPointId();
 
     /**
-     * <code>bool OAIBMHHIOFA = 11;</code>
-     * @return The oAIBMHHIOFA.
+     * <code>bool EKEOEIDDHCN = 3;</code>
+     * @return The eKEOEIDDHCN.
      */
-    boolean getOAIBMHHIOFA();
+    boolean getEKEOEIDDHCN();
   }
   /**
    * <pre>
-   * CmdId: 7194
-   * Obf: LGEBINHGCCF
+   * CmdId: 22639
+   * Obf: KLMPBEENMNG
    * </pre>
    *
    * Protobuf type {@code GCGTCTavernInfoNotify}
@@ -110,9 +110,14 @@ public final class GCGTCTavernInfoNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
+            case 24: {
 
-              characterId_ = input.readUInt32();
+              eKEOEIDDHCN_ = input.readBool();
+              break;
+            }
+            case 32: {
+
+              kPBIEOPHOHC_ = input.readBool();
               break;
             }
             case 40: {
@@ -120,27 +125,22 @@ public final class GCGTCTavernInfoNotifyOuterClass {
               elementType_ = input.readUInt32();
               break;
             }
-            case 56: {
-
-              gDNNFNKDFIP_ = input.readBool();
-              break;
-            }
-            case 64: {
+            case 48: {
 
               pointId_ = input.readUInt32();
               break;
             }
-            case 88: {
-
-              oAIBMHHIOFA_ = input.readBool();
-              break;
-            }
-            case 96: {
+            case 56: {
 
               avatarId_ = input.readUInt32();
               break;
             }
-            case 112: {
+            case 88: {
+
+              characterId_ = input.readUInt32();
+              break;
+            }
+            case 104: {
 
               levelId_ = input.readUInt32();
               break;
@@ -177,48 +177,48 @@ public final class GCGTCTavernInfoNotifyOuterClass {
               emu.grasscutter.net.proto.GCGTCTavernInfoNotifyOuterClass.GCGTCTavernInfoNotify.class, emu.grasscutter.net.proto.GCGTCTavernInfoNotifyOuterClass.GCGTCTavernInfoNotify.Builder.class);
     }
 
-    public static final int LEVEL_ID_FIELD_NUMBER = 14;
-    private int levelId_;
-    /**
-     * <code>uint32 level_id = 14;</code>
-     * @return The levelId.
-     */
-    @java.lang.Override
-    public int getLevelId() {
-      return levelId_;
-    }
-
-    public static final int GDNNFNKDFIP_FIELD_NUMBER = 7;
-    private boolean gDNNFNKDFIP_;
-    /**
-     * <code>bool GDNNFNKDFIP = 7;</code>
-     * @return The gDNNFNKDFIP.
-     */
-    @java.lang.Override
-    public boolean getGDNNFNKDFIP() {
-      return gDNNFNKDFIP_;
-    }
-
-    public static final int POINT_ID_FIELD_NUMBER = 8;
-    private int pointId_;
-    /**
-     * <code>uint32 point_id = 8;</code>
-     * @return The pointId.
-     */
-    @java.lang.Override
-    public int getPointId() {
-      return pointId_;
-    }
-
-    public static final int CHARACTER_ID_FIELD_NUMBER = 2;
+    public static final int CHARACTER_ID_FIELD_NUMBER = 11;
     private int characterId_;
     /**
-     * <code>uint32 character_id = 2;</code>
+     * <code>uint32 character_id = 11;</code>
      * @return The characterId.
      */
     @java.lang.Override
     public int getCharacterId() {
       return characterId_;
+    }
+
+    public static final int AVATAR_ID_FIELD_NUMBER = 7;
+    private int avatarId_;
+    /**
+     * <code>uint32 avatar_id = 7;</code>
+     * @return The avatarId.
+     */
+    @java.lang.Override
+    public int getAvatarId() {
+      return avatarId_;
+    }
+
+    public static final int KPBIEOPHOHC_FIELD_NUMBER = 4;
+    private boolean kPBIEOPHOHC_;
+    /**
+     * <code>bool KPBIEOPHOHC = 4;</code>
+     * @return The kPBIEOPHOHC.
+     */
+    @java.lang.Override
+    public boolean getKPBIEOPHOHC() {
+      return kPBIEOPHOHC_;
+    }
+
+    public static final int LEVEL_ID_FIELD_NUMBER = 13;
+    private int levelId_;
+    /**
+     * <code>uint32 level_id = 13;</code>
+     * @return The levelId.
+     */
+    @java.lang.Override
+    public int getLevelId() {
+      return levelId_;
     }
 
     public static final int ELEMENT_TYPE_FIELD_NUMBER = 5;
@@ -232,26 +232,26 @@ public final class GCGTCTavernInfoNotifyOuterClass {
       return elementType_;
     }
 
-    public static final int AVATAR_ID_FIELD_NUMBER = 12;
-    private int avatarId_;
+    public static final int POINT_ID_FIELD_NUMBER = 6;
+    private int pointId_;
     /**
-     * <code>uint32 avatar_id = 12;</code>
-     * @return The avatarId.
+     * <code>uint32 point_id = 6;</code>
+     * @return The pointId.
      */
     @java.lang.Override
-    public int getAvatarId() {
-      return avatarId_;
+    public int getPointId() {
+      return pointId_;
     }
 
-    public static final int OAIBMHHIOFA_FIELD_NUMBER = 11;
-    private boolean oAIBMHHIOFA_;
+    public static final int EKEOEIDDHCN_FIELD_NUMBER = 3;
+    private boolean eKEOEIDDHCN_;
     /**
-     * <code>bool OAIBMHHIOFA = 11;</code>
-     * @return The oAIBMHHIOFA.
+     * <code>bool EKEOEIDDHCN = 3;</code>
+     * @return The eKEOEIDDHCN.
      */
     @java.lang.Override
-    public boolean getOAIBMHHIOFA() {
-      return oAIBMHHIOFA_;
+    public boolean getEKEOEIDDHCN() {
+      return eKEOEIDDHCN_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -268,26 +268,26 @@ public final class GCGTCTavernInfoNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (characterId_ != 0) {
-        output.writeUInt32(2, characterId_);
+      if (eKEOEIDDHCN_ != false) {
+        output.writeBool(3, eKEOEIDDHCN_);
+      }
+      if (kPBIEOPHOHC_ != false) {
+        output.writeBool(4, kPBIEOPHOHC_);
       }
       if (elementType_ != 0) {
         output.writeUInt32(5, elementType_);
       }
-      if (gDNNFNKDFIP_ != false) {
-        output.writeBool(7, gDNNFNKDFIP_);
-      }
       if (pointId_ != 0) {
-        output.writeUInt32(8, pointId_);
-      }
-      if (oAIBMHHIOFA_ != false) {
-        output.writeBool(11, oAIBMHHIOFA_);
+        output.writeUInt32(6, pointId_);
       }
       if (avatarId_ != 0) {
-        output.writeUInt32(12, avatarId_);
+        output.writeUInt32(7, avatarId_);
+      }
+      if (characterId_ != 0) {
+        output.writeUInt32(11, characterId_);
       }
       if (levelId_ != 0) {
-        output.writeUInt32(14, levelId_);
+        output.writeUInt32(13, levelId_);
       }
       unknownFields.writeTo(output);
     }
@@ -298,33 +298,33 @@ public final class GCGTCTavernInfoNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (characterId_ != 0) {
+      if (eKEOEIDDHCN_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, characterId_);
+          .computeBoolSize(3, eKEOEIDDHCN_);
+      }
+      if (kPBIEOPHOHC_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(4, kPBIEOPHOHC_);
       }
       if (elementType_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(5, elementType_);
       }
-      if (gDNNFNKDFIP_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(7, gDNNFNKDFIP_);
-      }
       if (pointId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, pointId_);
-      }
-      if (oAIBMHHIOFA_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(11, oAIBMHHIOFA_);
+          .computeUInt32Size(6, pointId_);
       }
       if (avatarId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, avatarId_);
+          .computeUInt32Size(7, avatarId_);
+      }
+      if (characterId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(11, characterId_);
       }
       if (levelId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, levelId_);
+          .computeUInt32Size(13, levelId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -341,20 +341,20 @@ public final class GCGTCTavernInfoNotifyOuterClass {
       }
       emu.grasscutter.net.proto.GCGTCTavernInfoNotifyOuterClass.GCGTCTavernInfoNotify other = (emu.grasscutter.net.proto.GCGTCTavernInfoNotifyOuterClass.GCGTCTavernInfoNotify) obj;
 
-      if (getLevelId()
-          != other.getLevelId()) return false;
-      if (getGDNNFNKDFIP()
-          != other.getGDNNFNKDFIP()) return false;
-      if (getPointId()
-          != other.getPointId()) return false;
       if (getCharacterId()
           != other.getCharacterId()) return false;
-      if (getElementType()
-          != other.getElementType()) return false;
       if (getAvatarId()
           != other.getAvatarId()) return false;
-      if (getOAIBMHHIOFA()
-          != other.getOAIBMHHIOFA()) return false;
+      if (getKPBIEOPHOHC()
+          != other.getKPBIEOPHOHC()) return false;
+      if (getLevelId()
+          != other.getLevelId()) return false;
+      if (getElementType()
+          != other.getElementType()) return false;
+      if (getPointId()
+          != other.getPointId()) return false;
+      if (getEKEOEIDDHCN()
+          != other.getEKEOEIDDHCN()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -366,22 +366,22 @@ public final class GCGTCTavernInfoNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + LEVEL_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getLevelId();
-      hash = (37 * hash) + GDNNFNKDFIP_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getGDNNFNKDFIP());
-      hash = (37 * hash) + POINT_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getPointId();
       hash = (37 * hash) + CHARACTER_ID_FIELD_NUMBER;
       hash = (53 * hash) + getCharacterId();
-      hash = (37 * hash) + ELEMENT_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + getElementType();
       hash = (37 * hash) + AVATAR_ID_FIELD_NUMBER;
       hash = (53 * hash) + getAvatarId();
-      hash = (37 * hash) + OAIBMHHIOFA_FIELD_NUMBER;
+      hash = (37 * hash) + KPBIEOPHOHC_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getOAIBMHHIOFA());
+          getKPBIEOPHOHC());
+      hash = (37 * hash) + LEVEL_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getLevelId();
+      hash = (37 * hash) + ELEMENT_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getElementType();
+      hash = (37 * hash) + POINT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getPointId();
+      hash = (37 * hash) + EKEOEIDDHCN_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getEKEOEIDDHCN());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -479,8 +479,8 @@ public final class GCGTCTavernInfoNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 7194
-     * Obf: LGEBINHGCCF
+     * CmdId: 22639
+     * Obf: KLMPBEENMNG
      * </pre>
      *
      * Protobuf type {@code GCGTCTavernInfoNotify}
@@ -520,19 +520,19 @@ public final class GCGTCTavernInfoNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        levelId_ = 0;
-
-        gDNNFNKDFIP_ = false;
-
-        pointId_ = 0;
-
         characterId_ = 0;
-
-        elementType_ = 0;
 
         avatarId_ = 0;
 
-        oAIBMHHIOFA_ = false;
+        kPBIEOPHOHC_ = false;
+
+        levelId_ = 0;
+
+        elementType_ = 0;
+
+        pointId_ = 0;
+
+        eKEOEIDDHCN_ = false;
 
         return this;
       }
@@ -560,13 +560,13 @@ public final class GCGTCTavernInfoNotifyOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.GCGTCTavernInfoNotifyOuterClass.GCGTCTavernInfoNotify buildPartial() {
         emu.grasscutter.net.proto.GCGTCTavernInfoNotifyOuterClass.GCGTCTavernInfoNotify result = new emu.grasscutter.net.proto.GCGTCTavernInfoNotifyOuterClass.GCGTCTavernInfoNotify(this);
-        result.levelId_ = levelId_;
-        result.gDNNFNKDFIP_ = gDNNFNKDFIP_;
-        result.pointId_ = pointId_;
         result.characterId_ = characterId_;
-        result.elementType_ = elementType_;
         result.avatarId_ = avatarId_;
-        result.oAIBMHHIOFA_ = oAIBMHHIOFA_;
+        result.kPBIEOPHOHC_ = kPBIEOPHOHC_;
+        result.levelId_ = levelId_;
+        result.elementType_ = elementType_;
+        result.pointId_ = pointId_;
+        result.eKEOEIDDHCN_ = eKEOEIDDHCN_;
         onBuilt();
         return result;
       }
@@ -615,26 +615,26 @@ public final class GCGTCTavernInfoNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.GCGTCTavernInfoNotifyOuterClass.GCGTCTavernInfoNotify other) {
         if (other == emu.grasscutter.net.proto.GCGTCTavernInfoNotifyOuterClass.GCGTCTavernInfoNotify.getDefaultInstance()) return this;
-        if (other.getLevelId() != 0) {
-          setLevelId(other.getLevelId());
-        }
-        if (other.getGDNNFNKDFIP() != false) {
-          setGDNNFNKDFIP(other.getGDNNFNKDFIP());
-        }
-        if (other.getPointId() != 0) {
-          setPointId(other.getPointId());
-        }
         if (other.getCharacterId() != 0) {
           setCharacterId(other.getCharacterId());
-        }
-        if (other.getElementType() != 0) {
-          setElementType(other.getElementType());
         }
         if (other.getAvatarId() != 0) {
           setAvatarId(other.getAvatarId());
         }
-        if (other.getOAIBMHHIOFA() != false) {
-          setOAIBMHHIOFA(other.getOAIBMHHIOFA());
+        if (other.getKPBIEOPHOHC() != false) {
+          setKPBIEOPHOHC(other.getKPBIEOPHOHC());
+        }
+        if (other.getLevelId() != 0) {
+          setLevelId(other.getLevelId());
+        }
+        if (other.getElementType() != 0) {
+          setElementType(other.getElementType());
+        }
+        if (other.getPointId() != 0) {
+          setPointId(other.getPointId());
+        }
+        if (other.getEKEOEIDDHCN() != false) {
+          setEKEOEIDDHCN(other.getEKEOEIDDHCN());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -665,102 +665,9 @@ public final class GCGTCTavernInfoNotifyOuterClass {
         return this;
       }
 
-      private int levelId_ ;
-      /**
-       * <code>uint32 level_id = 14;</code>
-       * @return The levelId.
-       */
-      @java.lang.Override
-      public int getLevelId() {
-        return levelId_;
-      }
-      /**
-       * <code>uint32 level_id = 14;</code>
-       * @param value The levelId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLevelId(int value) {
-        
-        levelId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 level_id = 14;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLevelId() {
-        
-        levelId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private boolean gDNNFNKDFIP_ ;
-      /**
-       * <code>bool GDNNFNKDFIP = 7;</code>
-       * @return The gDNNFNKDFIP.
-       */
-      @java.lang.Override
-      public boolean getGDNNFNKDFIP() {
-        return gDNNFNKDFIP_;
-      }
-      /**
-       * <code>bool GDNNFNKDFIP = 7;</code>
-       * @param value The gDNNFNKDFIP to set.
-       * @return This builder for chaining.
-       */
-      public Builder setGDNNFNKDFIP(boolean value) {
-        
-        gDNNFNKDFIP_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool GDNNFNKDFIP = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearGDNNFNKDFIP() {
-        
-        gDNNFNKDFIP_ = false;
-        onChanged();
-        return this;
-      }
-
-      private int pointId_ ;
-      /**
-       * <code>uint32 point_id = 8;</code>
-       * @return The pointId.
-       */
-      @java.lang.Override
-      public int getPointId() {
-        return pointId_;
-      }
-      /**
-       * <code>uint32 point_id = 8;</code>
-       * @param value The pointId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPointId(int value) {
-        
-        pointId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 point_id = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPointId() {
-        
-        pointId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int characterId_ ;
       /**
-       * <code>uint32 character_id = 2;</code>
+       * <code>uint32 character_id = 11;</code>
        * @return The characterId.
        */
       @java.lang.Override
@@ -768,7 +675,7 @@ public final class GCGTCTavernInfoNotifyOuterClass {
         return characterId_;
       }
       /**
-       * <code>uint32 character_id = 2;</code>
+       * <code>uint32 character_id = 11;</code>
        * @param value The characterId to set.
        * @return This builder for chaining.
        */
@@ -779,12 +686,105 @@ public final class GCGTCTavernInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 character_id = 2;</code>
+       * <code>uint32 character_id = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearCharacterId() {
         
         characterId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int avatarId_ ;
+      /**
+       * <code>uint32 avatar_id = 7;</code>
+       * @return The avatarId.
+       */
+      @java.lang.Override
+      public int getAvatarId() {
+        return avatarId_;
+      }
+      /**
+       * <code>uint32 avatar_id = 7;</code>
+       * @param value The avatarId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAvatarId(int value) {
+        
+        avatarId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 avatar_id = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAvatarId() {
+        
+        avatarId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean kPBIEOPHOHC_ ;
+      /**
+       * <code>bool KPBIEOPHOHC = 4;</code>
+       * @return The kPBIEOPHOHC.
+       */
+      @java.lang.Override
+      public boolean getKPBIEOPHOHC() {
+        return kPBIEOPHOHC_;
+      }
+      /**
+       * <code>bool KPBIEOPHOHC = 4;</code>
+       * @param value The kPBIEOPHOHC to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKPBIEOPHOHC(boolean value) {
+        
+        kPBIEOPHOHC_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool KPBIEOPHOHC = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearKPBIEOPHOHC() {
+        
+        kPBIEOPHOHC_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int levelId_ ;
+      /**
+       * <code>uint32 level_id = 13;</code>
+       * @return The levelId.
+       */
+      @java.lang.Override
+      public int getLevelId() {
+        return levelId_;
+      }
+      /**
+       * <code>uint32 level_id = 13;</code>
+       * @param value The levelId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLevelId(int value) {
+        
+        levelId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 level_id = 13;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLevelId() {
+        
+        levelId_ = 0;
         onChanged();
         return this;
       }
@@ -820,64 +820,64 @@ public final class GCGTCTavernInfoNotifyOuterClass {
         return this;
       }
 
-      private int avatarId_ ;
+      private int pointId_ ;
       /**
-       * <code>uint32 avatar_id = 12;</code>
-       * @return The avatarId.
+       * <code>uint32 point_id = 6;</code>
+       * @return The pointId.
        */
       @java.lang.Override
-      public int getAvatarId() {
-        return avatarId_;
+      public int getPointId() {
+        return pointId_;
       }
       /**
-       * <code>uint32 avatar_id = 12;</code>
-       * @param value The avatarId to set.
+       * <code>uint32 point_id = 6;</code>
+       * @param value The pointId to set.
        * @return This builder for chaining.
        */
-      public Builder setAvatarId(int value) {
+      public Builder setPointId(int value) {
         
-        avatarId_ = value;
+        pointId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 avatar_id = 12;</code>
+       * <code>uint32 point_id = 6;</code>
        * @return This builder for chaining.
        */
-      public Builder clearAvatarId() {
+      public Builder clearPointId() {
         
-        avatarId_ = 0;
+        pointId_ = 0;
         onChanged();
         return this;
       }
 
-      private boolean oAIBMHHIOFA_ ;
+      private boolean eKEOEIDDHCN_ ;
       /**
-       * <code>bool OAIBMHHIOFA = 11;</code>
-       * @return The oAIBMHHIOFA.
+       * <code>bool EKEOEIDDHCN = 3;</code>
+       * @return The eKEOEIDDHCN.
        */
       @java.lang.Override
-      public boolean getOAIBMHHIOFA() {
-        return oAIBMHHIOFA_;
+      public boolean getEKEOEIDDHCN() {
+        return eKEOEIDDHCN_;
       }
       /**
-       * <code>bool OAIBMHHIOFA = 11;</code>
-       * @param value The oAIBMHHIOFA to set.
+       * <code>bool EKEOEIDDHCN = 3;</code>
+       * @param value The eKEOEIDDHCN to set.
        * @return This builder for chaining.
        */
-      public Builder setOAIBMHHIOFA(boolean value) {
+      public Builder setEKEOEIDDHCN(boolean value) {
         
-        oAIBMHHIOFA_ = value;
+        eKEOEIDDHCN_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bool OAIBMHHIOFA = 11;</code>
+       * <code>bool EKEOEIDDHCN = 3;</code>
        * @return This builder for chaining.
        */
-      public Builder clearOAIBMHHIOFA() {
+      public Builder clearEKEOEIDDHCN() {
         
-        oAIBMHHIOFA_ = false;
+        eKEOEIDDHCN_ = false;
         onChanged();
         return this;
       }
@@ -949,10 +949,10 @@ public final class GCGTCTavernInfoNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\033GCGTCTavernInfoNotify.proto\"\244\001\n\025GCGTCT" +
-      "avernInfoNotify\022\020\n\010level_id\030\016 \001(\r\022\023\n\013GDN" +
-      "NFNKDFIP\030\007 \001(\010\022\020\n\010point_id\030\010 \001(\r\022\024\n\014char" +
-      "acter_id\030\002 \001(\r\022\024\n\014element_type\030\005 \001(\r\022\021\n\t" +
-      "avatar_id\030\014 \001(\r\022\023\n\013OAIBMHHIOFA\030\013 \001(\010B\033\n\031" +
+      "avernInfoNotify\022\024\n\014character_id\030\013 \001(\r\022\021\n" +
+      "\tavatar_id\030\007 \001(\r\022\023\n\013KPBIEOPHOHC\030\004 \001(\010\022\020\n" +
+      "\010level_id\030\r \001(\r\022\024\n\014element_type\030\005 \001(\r\022\020\n" +
+      "\010point_id\030\006 \001(\r\022\023\n\013EKEOEIDDHCN\030\003 \001(\010B\033\n\031" +
       "emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -964,7 +964,7 @@ public final class GCGTCTavernInfoNotifyOuterClass {
     internal_static_GCGTCTavernInfoNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GCGTCTavernInfoNotify_descriptor,
-        new java.lang.String[] { "LevelId", "GDNNFNKDFIP", "PointId", "CharacterId", "ElementType", "AvatarId", "OAIBMHHIOFA", });
+        new java.lang.String[] { "CharacterId", "AvatarId", "KPBIEOPHOHC", "LevelId", "ElementType", "PointId", "EKEOEIDDHCN", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

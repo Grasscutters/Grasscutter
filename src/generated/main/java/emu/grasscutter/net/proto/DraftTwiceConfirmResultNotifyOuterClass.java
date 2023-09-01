@@ -19,21 +19,21 @@ public final class DraftTwiceConfirmResultNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 draft_id = 4;</code>
+     * <code>uint32 draft_id = 11;</code>
      * @return The draftId.
      */
     int getDraftId();
 
     /**
-     * <code>bool is_all_argee = 5;</code>
+     * <code>bool is_all_argee = 3;</code>
      * @return The isAllArgee.
      */
     boolean getIsAllArgee();
   }
   /**
    * <pre>
-   * CmdId: 5421
-   * Obf: GKFGBAAFEIN
+   * CmdId: 24753
+   * Obf: NLNCHHAMKLJ
    * </pre>
    *
    * Protobuf type {@code DraftTwiceConfirmResultNotify}
@@ -80,14 +80,14 @@ public final class DraftTwiceConfirmResultNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
-
-              draftId_ = input.readUInt32();
-              break;
-            }
-            case 40: {
+            case 24: {
 
               isAllArgee_ = input.readBool();
+              break;
+            }
+            case 88: {
+
+              draftId_ = input.readUInt32();
               break;
             }
             default: {
@@ -122,10 +122,10 @@ public final class DraftTwiceConfirmResultNotifyOuterClass {
               emu.grasscutter.net.proto.DraftTwiceConfirmResultNotifyOuterClass.DraftTwiceConfirmResultNotify.class, emu.grasscutter.net.proto.DraftTwiceConfirmResultNotifyOuterClass.DraftTwiceConfirmResultNotify.Builder.class);
     }
 
-    public static final int DRAFT_ID_FIELD_NUMBER = 4;
+    public static final int DRAFT_ID_FIELD_NUMBER = 11;
     private int draftId_;
     /**
-     * <code>uint32 draft_id = 4;</code>
+     * <code>uint32 draft_id = 11;</code>
      * @return The draftId.
      */
     @java.lang.Override
@@ -133,10 +133,10 @@ public final class DraftTwiceConfirmResultNotifyOuterClass {
       return draftId_;
     }
 
-    public static final int IS_ALL_ARGEE_FIELD_NUMBER = 5;
+    public static final int IS_ALL_ARGEE_FIELD_NUMBER = 3;
     private boolean isAllArgee_;
     /**
-     * <code>bool is_all_argee = 5;</code>
+     * <code>bool is_all_argee = 3;</code>
      * @return The isAllArgee.
      */
     @java.lang.Override
@@ -158,11 +158,11 @@ public final class DraftTwiceConfirmResultNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (draftId_ != 0) {
-        output.writeUInt32(4, draftId_);
-      }
       if (isAllArgee_ != false) {
-        output.writeBool(5, isAllArgee_);
+        output.writeBool(3, isAllArgee_);
+      }
+      if (draftId_ != 0) {
+        output.writeUInt32(11, draftId_);
       }
       unknownFields.writeTo(output);
     }
@@ -173,13 +173,13 @@ public final class DraftTwiceConfirmResultNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (draftId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, draftId_);
-      }
       if (isAllArgee_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(5, isAllArgee_);
+          .computeBoolSize(3, isAllArgee_);
+      }
+      if (draftId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(11, draftId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -313,8 +313,8 @@ public final class DraftTwiceConfirmResultNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 5421
-     * Obf: GKFGBAAFEIN
+     * CmdId: 24753
+     * Obf: NLNCHHAMKLJ
      * </pre>
      *
      * Protobuf type {@code DraftTwiceConfirmResultNotify}
@@ -471,7 +471,7 @@ public final class DraftTwiceConfirmResultNotifyOuterClass {
 
       private int draftId_ ;
       /**
-       * <code>uint32 draft_id = 4;</code>
+       * <code>uint32 draft_id = 11;</code>
        * @return The draftId.
        */
       @java.lang.Override
@@ -479,7 +479,7 @@ public final class DraftTwiceConfirmResultNotifyOuterClass {
         return draftId_;
       }
       /**
-       * <code>uint32 draft_id = 4;</code>
+       * <code>uint32 draft_id = 11;</code>
        * @param value The draftId to set.
        * @return This builder for chaining.
        */
@@ -490,7 +490,7 @@ public final class DraftTwiceConfirmResultNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 draft_id = 4;</code>
+       * <code>uint32 draft_id = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearDraftId() {
@@ -502,7 +502,7 @@ public final class DraftTwiceConfirmResultNotifyOuterClass {
 
       private boolean isAllArgee_ ;
       /**
-       * <code>bool is_all_argee = 5;</code>
+       * <code>bool is_all_argee = 3;</code>
        * @return The isAllArgee.
        */
       @java.lang.Override
@@ -510,7 +510,7 @@ public final class DraftTwiceConfirmResultNotifyOuterClass {
         return isAllArgee_;
       }
       /**
-       * <code>bool is_all_argee = 5;</code>
+       * <code>bool is_all_argee = 3;</code>
        * @param value The isAllArgee to set.
        * @return This builder for chaining.
        */
@@ -521,7 +521,7 @@ public final class DraftTwiceConfirmResultNotifyOuterClass {
         return this;
       }
       /**
-       * <code>bool is_all_argee = 5;</code>
+       * <code>bool is_all_argee = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsAllArgee() {
@@ -599,7 +599,7 @@ public final class DraftTwiceConfirmResultNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n#DraftTwiceConfirmResultNotify.proto\"G\n" +
       "\035DraftTwiceConfirmResultNotify\022\020\n\010draft_" +
-      "id\030\004 \001(\r\022\024\n\014is_all_argee\030\005 \001(\010B\033\n\031emu.gr" +
+      "id\030\013 \001(\r\022\024\n\014is_all_argee\030\003 \001(\010B\033\n\031emu.gr" +
       "asscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

@@ -19,7 +19,7 @@ public final class GCGMsgUseSkillEndOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 card_guid = 3;</code>
+     * <code>uint32 card_guid = 6;</code>
      * @return The cardGuid.
      */
     int getCardGuid();
@@ -32,7 +32,7 @@ public final class GCGMsgUseSkillEndOuterClass {
   }
   /**
    * <pre>
-   * Obf: OBFOLLGDLOI
+   * Obf: KFNCHLFIKJO
    * </pre>
    *
    * Protobuf type {@code GCGMsgUseSkillEnd}
@@ -79,14 +79,14 @@ public final class GCGMsgUseSkillEndOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
-
-              cardGuid_ = input.readUInt32();
-              break;
-            }
             case 40: {
 
               skillId_ = input.readUInt32();
+              break;
+            }
+            case 48: {
+
+              cardGuid_ = input.readUInt32();
               break;
             }
             default: {
@@ -121,10 +121,10 @@ public final class GCGMsgUseSkillEndOuterClass {
               emu.grasscutter.net.proto.GCGMsgUseSkillEndOuterClass.GCGMsgUseSkillEnd.class, emu.grasscutter.net.proto.GCGMsgUseSkillEndOuterClass.GCGMsgUseSkillEnd.Builder.class);
     }
 
-    public static final int CARD_GUID_FIELD_NUMBER = 3;
+    public static final int CARD_GUID_FIELD_NUMBER = 6;
     private int cardGuid_;
     /**
-     * <code>uint32 card_guid = 3;</code>
+     * <code>uint32 card_guid = 6;</code>
      * @return The cardGuid.
      */
     @java.lang.Override
@@ -157,11 +157,11 @@ public final class GCGMsgUseSkillEndOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (cardGuid_ != 0) {
-        output.writeUInt32(3, cardGuid_);
-      }
       if (skillId_ != 0) {
         output.writeUInt32(5, skillId_);
+      }
+      if (cardGuid_ != 0) {
+        output.writeUInt32(6, cardGuid_);
       }
       unknownFields.writeTo(output);
     }
@@ -172,13 +172,13 @@ public final class GCGMsgUseSkillEndOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (cardGuid_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, cardGuid_);
-      }
       if (skillId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(5, skillId_);
+      }
+      if (cardGuid_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(6, cardGuid_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -311,7 +311,7 @@ public final class GCGMsgUseSkillEndOuterClass {
     }
     /**
      * <pre>
-     * Obf: OBFOLLGDLOI
+     * Obf: KFNCHLFIKJO
      * </pre>
      *
      * Protobuf type {@code GCGMsgUseSkillEnd}
@@ -468,7 +468,7 @@ public final class GCGMsgUseSkillEndOuterClass {
 
       private int cardGuid_ ;
       /**
-       * <code>uint32 card_guid = 3;</code>
+       * <code>uint32 card_guid = 6;</code>
        * @return The cardGuid.
        */
       @java.lang.Override
@@ -476,7 +476,7 @@ public final class GCGMsgUseSkillEndOuterClass {
         return cardGuid_;
       }
       /**
-       * <code>uint32 card_guid = 3;</code>
+       * <code>uint32 card_guid = 6;</code>
        * @param value The cardGuid to set.
        * @return This builder for chaining.
        */
@@ -487,7 +487,7 @@ public final class GCGMsgUseSkillEndOuterClass {
         return this;
       }
       /**
-       * <code>uint32 card_guid = 3;</code>
+       * <code>uint32 card_guid = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearCardGuid() {
@@ -595,7 +595,7 @@ public final class GCGMsgUseSkillEndOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\027GCGMsgUseSkillEnd.proto\"8\n\021GCGMsgUseSk" +
-      "illEnd\022\021\n\tcard_guid\030\003 \001(\r\022\020\n\010skill_id\030\005 " +
+      "illEnd\022\021\n\tcard_guid\030\006 \001(\r\022\020\n\010skill_id\030\005 " +
       "\001(\rB\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

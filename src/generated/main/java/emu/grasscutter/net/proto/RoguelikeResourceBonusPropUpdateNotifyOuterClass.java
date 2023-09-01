@@ -19,15 +19,15 @@ public final class RoguelikeResourceBonusPropUpdateNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>float bonus_resource_prop = 2;</code>
+     * <code>float bonus_resource_prop = 3;</code>
      * @return The bonusResourceProp.
      */
     float getBonusResourceProp();
   }
   /**
    * <pre>
-   * CmdId: 8700
-   * Obf: FPDJKFMIFHI
+   * CmdId: 9873
+   * Obf: IGFNELOOAML
    * </pre>
    *
    * Protobuf type {@code RoguelikeResourceBonusPropUpdateNotify}
@@ -74,7 +74,7 @@ public final class RoguelikeResourceBonusPropUpdateNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 21: {
+            case 29: {
 
               bonusResourceProp_ = input.readFloat();
               break;
@@ -111,10 +111,10 @@ public final class RoguelikeResourceBonusPropUpdateNotifyOuterClass {
               emu.grasscutter.net.proto.RoguelikeResourceBonusPropUpdateNotifyOuterClass.RoguelikeResourceBonusPropUpdateNotify.class, emu.grasscutter.net.proto.RoguelikeResourceBonusPropUpdateNotifyOuterClass.RoguelikeResourceBonusPropUpdateNotify.Builder.class);
     }
 
-    public static final int BONUS_RESOURCE_PROP_FIELD_NUMBER = 2;
+    public static final int BONUS_RESOURCE_PROP_FIELD_NUMBER = 3;
     private float bonusResourceProp_;
     /**
-     * <code>float bonus_resource_prop = 2;</code>
+     * <code>float bonus_resource_prop = 3;</code>
      * @return The bonusResourceProp.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class RoguelikeResourceBonusPropUpdateNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (bonusResourceProp_ != 0F) {
-        output.writeFloat(2, bonusResourceProp_);
+        output.writeFloat(3, bonusResourceProp_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class RoguelikeResourceBonusPropUpdateNotifyOuterClass {
       size = 0;
       if (bonusResourceProp_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(2, bonusResourceProp_);
+          .computeFloatSize(3, bonusResourceProp_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -281,8 +281,8 @@ public final class RoguelikeResourceBonusPropUpdateNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8700
-     * Obf: FPDJKFMIFHI
+     * CmdId: 9873
+     * Obf: IGFNELOOAML
      * </pre>
      *
      * Protobuf type {@code RoguelikeResourceBonusPropUpdateNotify}
@@ -433,7 +433,7 @@ public final class RoguelikeResourceBonusPropUpdateNotifyOuterClass {
 
       private float bonusResourceProp_ ;
       /**
-       * <code>float bonus_resource_prop = 2;</code>
+       * <code>float bonus_resource_prop = 3;</code>
        * @return The bonusResourceProp.
        */
       @java.lang.Override
@@ -441,7 +441,7 @@ public final class RoguelikeResourceBonusPropUpdateNotifyOuterClass {
         return bonusResourceProp_;
       }
       /**
-       * <code>float bonus_resource_prop = 2;</code>
+       * <code>float bonus_resource_prop = 3;</code>
        * @param value The bonusResourceProp to set.
        * @return This builder for chaining.
        */
@@ -452,7 +452,7 @@ public final class RoguelikeResourceBonusPropUpdateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>float bonus_resource_prop = 2;</code>
+       * <code>float bonus_resource_prop = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearBonusResourceProp() {
@@ -530,7 +530,7 @@ public final class RoguelikeResourceBonusPropUpdateNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n,RoguelikeResourceBonusPropUpdateNotify" +
       ".proto\"E\n&RoguelikeResourceBonusPropUpda" +
-      "teNotify\022\033\n\023bonus_resource_prop\030\002 \001(\002B\033\n" +
+      "teNotify\022\033\n\023bonus_resource_prop\030\003 \001(\002B\033\n" +
       "\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

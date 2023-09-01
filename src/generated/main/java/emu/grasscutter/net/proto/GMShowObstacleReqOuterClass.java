@@ -19,15 +19,15 @@ public final class GMShowObstacleReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 uid = 2;</code>
+     * <code>int32 uid = 10;</code>
      * @return The uid.
      */
     int getUid();
   }
   /**
    * <pre>
-   * CmdId: 2323
-   * Obf: PMCGAFLHICE
+   * CmdId: 2365
+   * Obf: AIEICOGPIKC
    * </pre>
    *
    * Protobuf type {@code GMShowObstacleReq}
@@ -74,7 +74,7 @@ public final class GMShowObstacleReqOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
+            case 80: {
 
               uid_ = input.readInt32();
               break;
@@ -111,10 +111,10 @@ public final class GMShowObstacleReqOuterClass {
               emu.grasscutter.net.proto.GMShowObstacleReqOuterClass.GMShowObstacleReq.class, emu.grasscutter.net.proto.GMShowObstacleReqOuterClass.GMShowObstacleReq.Builder.class);
     }
 
-    public static final int UID_FIELD_NUMBER = 2;
+    public static final int UID_FIELD_NUMBER = 10;
     private int uid_;
     /**
-     * <code>int32 uid = 2;</code>
+     * <code>int32 uid = 10;</code>
      * @return The uid.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class GMShowObstacleReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (uid_ != 0) {
-        output.writeInt32(2, uid_);
+        output.writeInt32(10, uid_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class GMShowObstacleReqOuterClass {
       size = 0;
       if (uid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, uid_);
+          .computeInt32Size(10, uid_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class GMShowObstacleReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2323
-     * Obf: PMCGAFLHICE
+     * CmdId: 2365
+     * Obf: AIEICOGPIKC
      * </pre>
      *
      * Protobuf type {@code GMShowObstacleReq}
@@ -431,7 +431,7 @@ public final class GMShowObstacleReqOuterClass {
 
       private int uid_ ;
       /**
-       * <code>int32 uid = 2;</code>
+       * <code>int32 uid = 10;</code>
        * @return The uid.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class GMShowObstacleReqOuterClass {
         return uid_;
       }
       /**
-       * <code>int32 uid = 2;</code>
+       * <code>int32 uid = 10;</code>
        * @param value The uid to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class GMShowObstacleReqOuterClass {
         return this;
       }
       /**
-       * <code>int32 uid = 2;</code>
+       * <code>int32 uid = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearUid() {
@@ -527,7 +527,7 @@ public final class GMShowObstacleReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\027GMShowObstacleReq.proto\" \n\021GMShowObsta" +
-      "cleReq\022\013\n\003uid\030\002 \001(\005B\033\n\031emu.grasscutter.n" +
+      "cleReq\022\013\n\003uid\030\n \001(\005B\033\n\031emu.grasscutter.n" +
       "et.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

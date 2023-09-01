@@ -1,15 +1,14 @@
 package emu.grasscutter.game;
 
-import static emu.grasscutter.config.Configuration.ACCOUNT;
-import static emu.grasscutter.config.Configuration.LANGUAGE;
-
 import dev.morphia.annotations.*;
 import emu.grasscutter.database.DatabaseHelper;
-import emu.grasscutter.utils.Crypto;
-import emu.grasscutter.utils.Utils;
+import emu.grasscutter.utils.*;
+import org.bson.Document;
+
 import java.util.*;
 import java.util.stream.Stream;
-import org.bson.Document;
+
+import static emu.grasscutter.config.Configuration.*;
 
 @Entity(value = "accounts", useDiscriminator = false)
 public class Account {
@@ -241,5 +240,10 @@ public class Account {
         if (!document.containsKey("locale")) {
             this.locale = LANGUAGE;
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Account ID: %s; Username: %s".formatted(this.id, this.username);
     }
 }

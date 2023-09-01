@@ -215,10 +215,22 @@ public final class FriendBriefOuterClass {
      * @return The platformType.
      */
     emu.grasscutter.net.proto.PlatformTypeOuterClass.PlatformType getPlatformType();
+
+    /**
+     * <code>bool is_in_duel = 28;</code>
+     * @return The isInDuel.
+     */
+    boolean getIsInDuel();
+
+    /**
+     * <code>bool is_duel_observable = 29;</code>
+     * @return The isDuelObservable.
+     */
+    boolean getIsDuelObservable();
   }
   /**
    * <pre>
-   * Obf: LOJEJNBFKEA
+   * Obf: JIFKJKFNBFF
    * </pre>
    *
    * Protobuf type {@code FriendBrief}
@@ -401,6 +413,16 @@ public final class FriendBriefOuterClass {
               int rawValue = input.readEnum();
 
               platformType_ = rawValue;
+              break;
+            }
+            case 224: {
+
+              isInDuel_ = input.readBool();
+              break;
+            }
+            case 232: {
+
+              isDuelObservable_ = input.readBool();
               break;
             }
             default: {
@@ -856,6 +878,28 @@ public final class FriendBriefOuterClass {
       return result == null ? emu.grasscutter.net.proto.PlatformTypeOuterClass.PlatformType.UNRECOGNIZED : result;
     }
 
+    public static final int IS_IN_DUEL_FIELD_NUMBER = 28;
+    private boolean isInDuel_;
+    /**
+     * <code>bool is_in_duel = 28;</code>
+     * @return The isInDuel.
+     */
+    @java.lang.Override
+    public boolean getIsInDuel() {
+      return isInDuel_;
+    }
+
+    public static final int IS_DUEL_OBSERVABLE_FIELD_NUMBER = 29;
+    private boolean isDuelObservable_;
+    /**
+     * <code>bool is_duel_observable = 29;</code>
+     * @return The isDuelObservable.
+     */
+    @java.lang.Override
+    public boolean getIsDuelObservable() {
+      return isDuelObservable_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -935,6 +979,12 @@ public final class FriendBriefOuterClass {
       }
       if (platformType_ != emu.grasscutter.net.proto.PlatformTypeOuterClass.PlatformType.PLATFORM_TYPE_EDITOR.getNumber()) {
         output.writeEnum(27, platformType_);
+      }
+      if (isInDuel_ != false) {
+        output.writeBool(28, isInDuel_);
+      }
+      if (isDuelObservable_ != false) {
+        output.writeBool(29, isDuelObservable_);
       }
       unknownFields.writeTo(output);
     }
@@ -1029,6 +1079,14 @@ public final class FriendBriefOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(27, platformType_);
       }
+      if (isInDuel_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(28, isInDuel_);
+      }
+      if (isDuelObservable_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(29, isDuelObservable_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1088,6 +1146,10 @@ public final class FriendBriefOuterClass {
       if (getIsPsnSource()
           != other.getIsPsnSource()) return false;
       if (platformType_ != other.platformType_) return false;
+      if (getIsInDuel()
+          != other.getIsInDuel()) return false;
+      if (getIsDuelObservable()
+          != other.getIsDuelObservable()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1151,6 +1213,12 @@ public final class FriendBriefOuterClass {
           getIsPsnSource());
       hash = (37 * hash) + PLATFORM_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + platformType_;
+      hash = (37 * hash) + IS_IN_DUEL_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsInDuel());
+      hash = (37 * hash) + IS_DUEL_OBSERVABLE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsDuelObservable());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1248,7 +1316,7 @@ public final class FriendBriefOuterClass {
     }
     /**
      * <pre>
-     * Obf: LOJEJNBFKEA
+     * Obf: JIFKJKFNBFF
      * </pre>
      *
      * Protobuf type {@code FriendBrief}
@@ -1341,6 +1409,10 @@ public final class FriendBriefOuterClass {
 
         platformType_ = 0;
 
+        isInDuel_ = false;
+
+        isDuelObservable_ = false;
+
         return this;
       }
 
@@ -1402,6 +1474,8 @@ public final class FriendBriefOuterClass {
         result.isGameSource_ = isGameSource_;
         result.isPsnSource_ = isPsnSource_;
         result.platformType_ = platformType_;
+        result.isInDuel_ = isInDuel_;
+        result.isDuelObservable_ = isDuelObservable_;
         onBuilt();
         return result;
       }
@@ -1542,6 +1616,12 @@ public final class FriendBriefOuterClass {
         }
         if (other.platformType_ != 0) {
           setPlatformTypeValue(other.getPlatformTypeValue());
+        }
+        if (other.getIsInDuel() != false) {
+          setIsInDuel(other.getIsInDuel());
+        }
+        if (other.getIsDuelObservable() != false) {
+          setIsDuelObservable(other.getIsDuelObservable());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2800,6 +2880,68 @@ public final class FriendBriefOuterClass {
         onChanged();
         return this;
       }
+
+      private boolean isInDuel_ ;
+      /**
+       * <code>bool is_in_duel = 28;</code>
+       * @return The isInDuel.
+       */
+      @java.lang.Override
+      public boolean getIsInDuel() {
+        return isInDuel_;
+      }
+      /**
+       * <code>bool is_in_duel = 28;</code>
+       * @param value The isInDuel to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsInDuel(boolean value) {
+        
+        isInDuel_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_in_duel = 28;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsInDuel() {
+        
+        isInDuel_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean isDuelObservable_ ;
+      /**
+       * <code>bool is_duel_observable = 29;</code>
+       * @return The isDuelObservable.
+       */
+      @java.lang.Override
+      public boolean getIsDuelObservable() {
+        return isDuelObservable_;
+      }
+      /**
+       * <code>bool is_duel_observable = 29;</code>
+       * @param value The isDuelObservable to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsDuelObservable(boolean value) {
+        
+        isDuelObservable_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_duel_observable = 29;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsDuelObservable() {
+        
+        isDuelObservable_ = false;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -2870,7 +3012,7 @@ public final class FriendBriefOuterClass {
       "\n\021FriendBrief.proto\032\027FriendOnlineState.p" +
       "roto\032\032SocialShowAvatarInfo.proto\032\033Friend" +
       "EnterHomeOption.proto\032\024ProfilePicture.pr" +
-      "oto\032\022PlatformType.proto\"\336\004\n\013FriendBrief\022" +
+      "oto\032\022PlatformType.proto\"\216\005\n\013FriendBrief\022" +
       "\013\n\003uid\030\001 \001(\r\022\020\n\010nickname\030\002 \001(\t\022\r\n\005level\030" +
       "\003 \001(\r\022\021\n\tavatar_id\030\004 \001(\r\022\023\n\013world_level\030" +
       "\005 \001(\r\022\021\n\tsignature\030\006 \001(\t\022(\n\014online_state" +
@@ -2885,8 +3027,9 @@ public final class FriendBriefOuterClass {
       "\0162\026.FriendEnterHomeOption\022(\n\017profile_pic" +
       "ture\030\030 \001(\0132\017.ProfilePicture\022\026\n\016is_game_s" +
       "ource\030\031 \001(\010\022\025\n\ris_psn_source\030\032 \001(\010\022$\n\rpl" +
-      "atform_type\030\033 \001(\0162\r.PlatformTypeB\033\n\031emu." +
-      "grasscutter.net.protob\006proto3"
+      "atform_type\030\033 \001(\0162\r.PlatformType\022\022\n\nis_i" +
+      "n_duel\030\034 \001(\010\022\032\n\022is_duel_observable\030\035 \001(\010" +
+      "B\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -2902,7 +3045,7 @@ public final class FriendBriefOuterClass {
     internal_static_FriendBrief_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_FriendBrief_descriptor,
-        new java.lang.String[] { "Uid", "Nickname", "Level", "AvatarId", "WorldLevel", "Signature", "OnlineState", "Param", "IsMpModeAvailable", "OnlineId", "LastActiveTime", "NameCardId", "MpPlayerNum", "IsChatNoDisturb", "ChatSequence", "RemarkName", "ShowAvatarInfoList", "FriendEnterHomeOption", "ProfilePicture", "IsGameSource", "IsPsnSource", "PlatformType", });
+        new java.lang.String[] { "Uid", "Nickname", "Level", "AvatarId", "WorldLevel", "Signature", "OnlineState", "Param", "IsMpModeAvailable", "OnlineId", "LastActiveTime", "NameCardId", "MpPlayerNum", "IsChatNoDisturb", "ChatSequence", "RemarkName", "ShowAvatarInfoList", "FriendEnterHomeOption", "ProfilePicture", "IsGameSource", "IsPsnSource", "PlatformType", "IsInDuel", "IsDuelObservable", });
     emu.grasscutter.net.proto.FriendOnlineStateOuterClass.getDescriptor();
     emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.getDescriptor();
     emu.grasscutter.net.proto.FriendEnterHomeOptionOuterClass.getDescriptor();

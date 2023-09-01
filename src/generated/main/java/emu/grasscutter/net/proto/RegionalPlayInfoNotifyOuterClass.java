@@ -19,63 +19,63 @@ public final class RegionalPlayInfoNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool IMILCAENOIO = 15;</code>
-     * @return The iMILCAENOIO.
+     * <code>repeated .RegionalPlayVar var_list = 10;</code>
      */
-    boolean getIMILCAENOIO();
+    java.util.List<emu.grasscutter.net.proto.RegionalPlayVarOuterClass.RegionalPlayVar> 
+        getVarListList();
+    /**
+     * <code>repeated .RegionalPlayVar var_list = 10;</code>
+     */
+    emu.grasscutter.net.proto.RegionalPlayVarOuterClass.RegionalPlayVar getVarList(int index);
+    /**
+     * <code>repeated .RegionalPlayVar var_list = 10;</code>
+     */
+    int getVarListCount();
+    /**
+     * <code>repeated .RegionalPlayVar var_list = 10;</code>
+     */
+    java.util.List<? extends emu.grasscutter.net.proto.RegionalPlayVarOuterClass.RegionalPlayVarOrBuilder> 
+        getVarListOrBuilderList();
+    /**
+     * <code>repeated .RegionalPlayVar var_list = 10;</code>
+     */
+    emu.grasscutter.net.proto.RegionalPlayVarOuterClass.RegionalPlayVarOrBuilder getVarListOrBuilder(
+        int index);
 
     /**
-     * <code>string play_name = 9;</code>
+     * <code>uint32 play_type = 13;</code>
+     * @return The playType.
+     */
+    int getPlayType();
+
+    /**
+     * <code>bool KEJHFKOBNCA = 1;</code>
+     * @return The kEJHFKOBNCA.
+     */
+    boolean getKEJHFKOBNCA();
+
+    /**
+     * <code>string play_name = 7;</code>
      * @return The playName.
      */
     java.lang.String getPlayName();
     /**
-     * <code>string play_name = 9;</code>
+     * <code>string play_name = 7;</code>
      * @return The bytes for playName.
      */
     com.google.protobuf.ByteString
         getPlayNameBytes();
 
     /**
-     * <code>uint32 play_type = 11;</code>
-     * @return The playType.
+     * <code>bool PCOOBDADEBL = 15;</code>
+     * @return The pCOOBDADEBL.
      */
-    int getPlayType();
-
-    /**
-     * <code>bool KDMLEACLKKL = 13;</code>
-     * @return The kDMLEACLKKL.
-     */
-    boolean getKDMLEACLKKL();
-
-    /**
-     * <code>repeated .RegionalPlayVar var_list = 3;</code>
-     */
-    java.util.List<emu.grasscutter.net.proto.RegionalPlayVarOuterClass.RegionalPlayVar> 
-        getVarListList();
-    /**
-     * <code>repeated .RegionalPlayVar var_list = 3;</code>
-     */
-    emu.grasscutter.net.proto.RegionalPlayVarOuterClass.RegionalPlayVar getVarList(int index);
-    /**
-     * <code>repeated .RegionalPlayVar var_list = 3;</code>
-     */
-    int getVarListCount();
-    /**
-     * <code>repeated .RegionalPlayVar var_list = 3;</code>
-     */
-    java.util.List<? extends emu.grasscutter.net.proto.RegionalPlayVarOuterClass.RegionalPlayVarOrBuilder> 
-        getVarListOrBuilderList();
-    /**
-     * <code>repeated .RegionalPlayVar var_list = 3;</code>
-     */
-    emu.grasscutter.net.proto.RegionalPlayVarOuterClass.RegionalPlayVarOrBuilder getVarListOrBuilder(
-        int index);
+    boolean getPCOOBDADEBL();
   }
   /**
    * <pre>
-   * CmdId: 6278
-   * Obf: DCJGGGDJFDC
+   * CmdId: 4556
+   * Obf: HJFCIJGAIEP
    * </pre>
    *
    * Protobuf type {@code RegionalPlayInfoNotify}
@@ -90,8 +90,8 @@ public final class RegionalPlayInfoNotifyOuterClass {
       super(builder);
     }
     private RegionalPlayInfoNotify() {
-      playName_ = "";
       varList_ = java.util.Collections.emptyList();
+      playName_ = "";
     }
 
     @java.lang.Override
@@ -125,7 +125,18 @@ public final class RegionalPlayInfoNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 26: {
+            case 8: {
+
+              kEJHFKOBNCA_ = input.readBool();
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              playName_ = s;
+              break;
+            }
+            case 82: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 varList_ = new java.util.ArrayList<emu.grasscutter.net.proto.RegionalPlayVarOuterClass.RegionalPlayVar>();
                 mutable_bitField0_ |= 0x00000001;
@@ -134,25 +145,14 @@ public final class RegionalPlayInfoNotifyOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.RegionalPlayVarOuterClass.RegionalPlayVar.parser(), extensionRegistry));
               break;
             }
-            case 74: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              playName_ = s;
-              break;
-            }
-            case 88: {
+            case 104: {
 
               playType_ = input.readUInt32();
               break;
             }
-            case 104: {
-
-              kDMLEACLKKL_ = input.readBool();
-              break;
-            }
             case 120: {
 
-              iMILCAENOIO_ = input.readBool();
+              pCOOBDADEBL_ = input.readBool();
               break;
             }
             default: {
@@ -190,21 +190,72 @@ public final class RegionalPlayInfoNotifyOuterClass {
               emu.grasscutter.net.proto.RegionalPlayInfoNotifyOuterClass.RegionalPlayInfoNotify.class, emu.grasscutter.net.proto.RegionalPlayInfoNotifyOuterClass.RegionalPlayInfoNotify.Builder.class);
     }
 
-    public static final int IMILCAENOIO_FIELD_NUMBER = 15;
-    private boolean iMILCAENOIO_;
+    public static final int VAR_LIST_FIELD_NUMBER = 10;
+    private java.util.List<emu.grasscutter.net.proto.RegionalPlayVarOuterClass.RegionalPlayVar> varList_;
     /**
-     * <code>bool IMILCAENOIO = 15;</code>
-     * @return The iMILCAENOIO.
+     * <code>repeated .RegionalPlayVar var_list = 10;</code>
      */
     @java.lang.Override
-    public boolean getIMILCAENOIO() {
-      return iMILCAENOIO_;
+    public java.util.List<emu.grasscutter.net.proto.RegionalPlayVarOuterClass.RegionalPlayVar> getVarListList() {
+      return varList_;
+    }
+    /**
+     * <code>repeated .RegionalPlayVar var_list = 10;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends emu.grasscutter.net.proto.RegionalPlayVarOuterClass.RegionalPlayVarOrBuilder> 
+        getVarListOrBuilderList() {
+      return varList_;
+    }
+    /**
+     * <code>repeated .RegionalPlayVar var_list = 10;</code>
+     */
+    @java.lang.Override
+    public int getVarListCount() {
+      return varList_.size();
+    }
+    /**
+     * <code>repeated .RegionalPlayVar var_list = 10;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.RegionalPlayVarOuterClass.RegionalPlayVar getVarList(int index) {
+      return varList_.get(index);
+    }
+    /**
+     * <code>repeated .RegionalPlayVar var_list = 10;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.RegionalPlayVarOuterClass.RegionalPlayVarOrBuilder getVarListOrBuilder(
+        int index) {
+      return varList_.get(index);
     }
 
-    public static final int PLAY_NAME_FIELD_NUMBER = 9;
+    public static final int PLAY_TYPE_FIELD_NUMBER = 13;
+    private int playType_;
+    /**
+     * <code>uint32 play_type = 13;</code>
+     * @return The playType.
+     */
+    @java.lang.Override
+    public int getPlayType() {
+      return playType_;
+    }
+
+    public static final int KEJHFKOBNCA_FIELD_NUMBER = 1;
+    private boolean kEJHFKOBNCA_;
+    /**
+     * <code>bool KEJHFKOBNCA = 1;</code>
+     * @return The kEJHFKOBNCA.
+     */
+    @java.lang.Override
+    public boolean getKEJHFKOBNCA() {
+      return kEJHFKOBNCA_;
+    }
+
+    public static final int PLAY_NAME_FIELD_NUMBER = 7;
     private volatile java.lang.Object playName_;
     /**
-     * <code>string play_name = 9;</code>
+     * <code>string play_name = 7;</code>
      * @return The playName.
      */
     @java.lang.Override
@@ -221,7 +272,7 @@ public final class RegionalPlayInfoNotifyOuterClass {
       }
     }
     /**
-     * <code>string play_name = 9;</code>
+     * <code>string play_name = 7;</code>
      * @return The bytes for playName.
      */
     @java.lang.Override
@@ -239,66 +290,15 @@ public final class RegionalPlayInfoNotifyOuterClass {
       }
     }
 
-    public static final int PLAY_TYPE_FIELD_NUMBER = 11;
-    private int playType_;
+    public static final int PCOOBDADEBL_FIELD_NUMBER = 15;
+    private boolean pCOOBDADEBL_;
     /**
-     * <code>uint32 play_type = 11;</code>
-     * @return The playType.
+     * <code>bool PCOOBDADEBL = 15;</code>
+     * @return The pCOOBDADEBL.
      */
     @java.lang.Override
-    public int getPlayType() {
-      return playType_;
-    }
-
-    public static final int KDMLEACLKKL_FIELD_NUMBER = 13;
-    private boolean kDMLEACLKKL_;
-    /**
-     * <code>bool KDMLEACLKKL = 13;</code>
-     * @return The kDMLEACLKKL.
-     */
-    @java.lang.Override
-    public boolean getKDMLEACLKKL() {
-      return kDMLEACLKKL_;
-    }
-
-    public static final int VAR_LIST_FIELD_NUMBER = 3;
-    private java.util.List<emu.grasscutter.net.proto.RegionalPlayVarOuterClass.RegionalPlayVar> varList_;
-    /**
-     * <code>repeated .RegionalPlayVar var_list = 3;</code>
-     */
-    @java.lang.Override
-    public java.util.List<emu.grasscutter.net.proto.RegionalPlayVarOuterClass.RegionalPlayVar> getVarListList() {
-      return varList_;
-    }
-    /**
-     * <code>repeated .RegionalPlayVar var_list = 3;</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends emu.grasscutter.net.proto.RegionalPlayVarOuterClass.RegionalPlayVarOrBuilder> 
-        getVarListOrBuilderList() {
-      return varList_;
-    }
-    /**
-     * <code>repeated .RegionalPlayVar var_list = 3;</code>
-     */
-    @java.lang.Override
-    public int getVarListCount() {
-      return varList_.size();
-    }
-    /**
-     * <code>repeated .RegionalPlayVar var_list = 3;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.RegionalPlayVarOuterClass.RegionalPlayVar getVarList(int index) {
-      return varList_.get(index);
-    }
-    /**
-     * <code>repeated .RegionalPlayVar var_list = 3;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.RegionalPlayVarOuterClass.RegionalPlayVarOrBuilder getVarListOrBuilder(
-        int index) {
-      return varList_.get(index);
+    public boolean getPCOOBDADEBL() {
+      return pCOOBDADEBL_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -315,20 +315,20 @@ public final class RegionalPlayInfoNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < varList_.size(); i++) {
-        output.writeMessage(3, varList_.get(i));
+      if (kEJHFKOBNCA_ != false) {
+        output.writeBool(1, kEJHFKOBNCA_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(playName_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, playName_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, playName_);
+      }
+      for (int i = 0; i < varList_.size(); i++) {
+        output.writeMessage(10, varList_.get(i));
       }
       if (playType_ != 0) {
-        output.writeUInt32(11, playType_);
+        output.writeUInt32(13, playType_);
       }
-      if (kDMLEACLKKL_ != false) {
-        output.writeBool(13, kDMLEACLKKL_);
-      }
-      if (iMILCAENOIO_ != false) {
-        output.writeBool(15, iMILCAENOIO_);
+      if (pCOOBDADEBL_ != false) {
+        output.writeBool(15, pCOOBDADEBL_);
       }
       unknownFields.writeTo(output);
     }
@@ -339,24 +339,24 @@ public final class RegionalPlayInfoNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < varList_.size(); i++) {
+      if (kEJHFKOBNCA_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, varList_.get(i));
+          .computeBoolSize(1, kEJHFKOBNCA_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(playName_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, playName_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, playName_);
+      }
+      for (int i = 0; i < varList_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(10, varList_.get(i));
       }
       if (playType_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, playType_);
+          .computeUInt32Size(13, playType_);
       }
-      if (kDMLEACLKKL_ != false) {
+      if (pCOOBDADEBL_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(13, kDMLEACLKKL_);
-      }
-      if (iMILCAENOIO_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(15, iMILCAENOIO_);
+          .computeBoolSize(15, pCOOBDADEBL_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -373,16 +373,16 @@ public final class RegionalPlayInfoNotifyOuterClass {
       }
       emu.grasscutter.net.proto.RegionalPlayInfoNotifyOuterClass.RegionalPlayInfoNotify other = (emu.grasscutter.net.proto.RegionalPlayInfoNotifyOuterClass.RegionalPlayInfoNotify) obj;
 
-      if (getIMILCAENOIO()
-          != other.getIMILCAENOIO()) return false;
-      if (!getPlayName()
-          .equals(other.getPlayName())) return false;
-      if (getPlayType()
-          != other.getPlayType()) return false;
-      if (getKDMLEACLKKL()
-          != other.getKDMLEACLKKL()) return false;
       if (!getVarListList()
           .equals(other.getVarListList())) return false;
+      if (getPlayType()
+          != other.getPlayType()) return false;
+      if (getKEJHFKOBNCA()
+          != other.getKEJHFKOBNCA()) return false;
+      if (!getPlayName()
+          .equals(other.getPlayName())) return false;
+      if (getPCOOBDADEBL()
+          != other.getPCOOBDADEBL()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -394,20 +394,20 @@ public final class RegionalPlayInfoNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + IMILCAENOIO_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIMILCAENOIO());
-      hash = (37 * hash) + PLAY_NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getPlayName().hashCode();
-      hash = (37 * hash) + PLAY_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + getPlayType();
-      hash = (37 * hash) + KDMLEACLKKL_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getKDMLEACLKKL());
       if (getVarListCount() > 0) {
         hash = (37 * hash) + VAR_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getVarListList().hashCode();
       }
+      hash = (37 * hash) + PLAY_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getPlayType();
+      hash = (37 * hash) + KEJHFKOBNCA_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getKEJHFKOBNCA());
+      hash = (37 * hash) + PLAY_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getPlayName().hashCode();
+      hash = (37 * hash) + PCOOBDADEBL_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getPCOOBDADEBL());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -505,8 +505,8 @@ public final class RegionalPlayInfoNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 6278
-     * Obf: DCJGGGDJFDC
+     * CmdId: 4556
+     * Obf: HJFCIJGAIEP
      * </pre>
      *
      * Protobuf type {@code RegionalPlayInfoNotify}
@@ -547,20 +547,20 @@ public final class RegionalPlayInfoNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        iMILCAENOIO_ = false;
-
-        playName_ = "";
-
-        playType_ = 0;
-
-        kDMLEACLKKL_ = false;
-
         if (varListBuilder_ == null) {
           varList_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           varListBuilder_.clear();
         }
+        playType_ = 0;
+
+        kEJHFKOBNCA_ = false;
+
+        playName_ = "";
+
+        pCOOBDADEBL_ = false;
+
         return this;
       }
 
@@ -588,10 +588,6 @@ public final class RegionalPlayInfoNotifyOuterClass {
       public emu.grasscutter.net.proto.RegionalPlayInfoNotifyOuterClass.RegionalPlayInfoNotify buildPartial() {
         emu.grasscutter.net.proto.RegionalPlayInfoNotifyOuterClass.RegionalPlayInfoNotify result = new emu.grasscutter.net.proto.RegionalPlayInfoNotifyOuterClass.RegionalPlayInfoNotify(this);
         int from_bitField0_ = bitField0_;
-        result.iMILCAENOIO_ = iMILCAENOIO_;
-        result.playName_ = playName_;
-        result.playType_ = playType_;
-        result.kDMLEACLKKL_ = kDMLEACLKKL_;
         if (varListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             varList_ = java.util.Collections.unmodifiableList(varList_);
@@ -601,6 +597,10 @@ public final class RegionalPlayInfoNotifyOuterClass {
         } else {
           result.varList_ = varListBuilder_.build();
         }
+        result.playType_ = playType_;
+        result.kEJHFKOBNCA_ = kEJHFKOBNCA_;
+        result.playName_ = playName_;
+        result.pCOOBDADEBL_ = pCOOBDADEBL_;
         onBuilt();
         return result;
       }
@@ -649,19 +649,6 @@ public final class RegionalPlayInfoNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.RegionalPlayInfoNotifyOuterClass.RegionalPlayInfoNotify other) {
         if (other == emu.grasscutter.net.proto.RegionalPlayInfoNotifyOuterClass.RegionalPlayInfoNotify.getDefaultInstance()) return this;
-        if (other.getIMILCAENOIO() != false) {
-          setIMILCAENOIO(other.getIMILCAENOIO());
-        }
-        if (!other.getPlayName().isEmpty()) {
-          playName_ = other.playName_;
-          onChanged();
-        }
-        if (other.getPlayType() != 0) {
-          setPlayType(other.getPlayType());
-        }
-        if (other.getKDMLEACLKKL() != false) {
-          setKDMLEACLKKL(other.getKDMLEACLKKL());
-        }
         if (varListBuilder_ == null) {
           if (!other.varList_.isEmpty()) {
             if (varList_.isEmpty()) {
@@ -687,6 +674,19 @@ public final class RegionalPlayInfoNotifyOuterClass {
               varListBuilder_.addAllMessages(other.varList_);
             }
           }
+        }
+        if (other.getPlayType() != 0) {
+          setPlayType(other.getPlayType());
+        }
+        if (other.getKEJHFKOBNCA() != false) {
+          setKEJHFKOBNCA(other.getKEJHFKOBNCA());
+        }
+        if (!other.getPlayName().isEmpty()) {
+          playName_ = other.playName_;
+          onChanged();
+        }
+        if (other.getPCOOBDADEBL() != false) {
+          setPCOOBDADEBL(other.getPCOOBDADEBL());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -718,175 +718,6 @@ public final class RegionalPlayInfoNotifyOuterClass {
       }
       private int bitField0_;
 
-      private boolean iMILCAENOIO_ ;
-      /**
-       * <code>bool IMILCAENOIO = 15;</code>
-       * @return The iMILCAENOIO.
-       */
-      @java.lang.Override
-      public boolean getIMILCAENOIO() {
-        return iMILCAENOIO_;
-      }
-      /**
-       * <code>bool IMILCAENOIO = 15;</code>
-       * @param value The iMILCAENOIO to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIMILCAENOIO(boolean value) {
-        
-        iMILCAENOIO_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool IMILCAENOIO = 15;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIMILCAENOIO() {
-        
-        iMILCAENOIO_ = false;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object playName_ = "";
-      /**
-       * <code>string play_name = 9;</code>
-       * @return The playName.
-       */
-      public java.lang.String getPlayName() {
-        java.lang.Object ref = playName_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          playName_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string play_name = 9;</code>
-       * @return The bytes for playName.
-       */
-      public com.google.protobuf.ByteString
-          getPlayNameBytes() {
-        java.lang.Object ref = playName_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          playName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string play_name = 9;</code>
-       * @param value The playName to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPlayName(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        playName_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string play_name = 9;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPlayName() {
-        
-        playName_ = getDefaultInstance().getPlayName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string play_name = 9;</code>
-       * @param value The bytes for playName to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPlayNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        playName_ = value;
-        onChanged();
-        return this;
-      }
-
-      private int playType_ ;
-      /**
-       * <code>uint32 play_type = 11;</code>
-       * @return The playType.
-       */
-      @java.lang.Override
-      public int getPlayType() {
-        return playType_;
-      }
-      /**
-       * <code>uint32 play_type = 11;</code>
-       * @param value The playType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPlayType(int value) {
-        
-        playType_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 play_type = 11;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPlayType() {
-        
-        playType_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private boolean kDMLEACLKKL_ ;
-      /**
-       * <code>bool KDMLEACLKKL = 13;</code>
-       * @return The kDMLEACLKKL.
-       */
-      @java.lang.Override
-      public boolean getKDMLEACLKKL() {
-        return kDMLEACLKKL_;
-      }
-      /**
-       * <code>bool KDMLEACLKKL = 13;</code>
-       * @param value The kDMLEACLKKL to set.
-       * @return This builder for chaining.
-       */
-      public Builder setKDMLEACLKKL(boolean value) {
-        
-        kDMLEACLKKL_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool KDMLEACLKKL = 13;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearKDMLEACLKKL() {
-        
-        kDMLEACLKKL_ = false;
-        onChanged();
-        return this;
-      }
-
       private java.util.List<emu.grasscutter.net.proto.RegionalPlayVarOuterClass.RegionalPlayVar> varList_ =
         java.util.Collections.emptyList();
       private void ensureVarListIsMutable() {
@@ -900,7 +731,7 @@ public final class RegionalPlayInfoNotifyOuterClass {
           emu.grasscutter.net.proto.RegionalPlayVarOuterClass.RegionalPlayVar, emu.grasscutter.net.proto.RegionalPlayVarOuterClass.RegionalPlayVar.Builder, emu.grasscutter.net.proto.RegionalPlayVarOuterClass.RegionalPlayVarOrBuilder> varListBuilder_;
 
       /**
-       * <code>repeated .RegionalPlayVar var_list = 3;</code>
+       * <code>repeated .RegionalPlayVar var_list = 10;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.RegionalPlayVarOuterClass.RegionalPlayVar> getVarListList() {
         if (varListBuilder_ == null) {
@@ -910,7 +741,7 @@ public final class RegionalPlayInfoNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .RegionalPlayVar var_list = 3;</code>
+       * <code>repeated .RegionalPlayVar var_list = 10;</code>
        */
       public int getVarListCount() {
         if (varListBuilder_ == null) {
@@ -920,7 +751,7 @@ public final class RegionalPlayInfoNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .RegionalPlayVar var_list = 3;</code>
+       * <code>repeated .RegionalPlayVar var_list = 10;</code>
        */
       public emu.grasscutter.net.proto.RegionalPlayVarOuterClass.RegionalPlayVar getVarList(int index) {
         if (varListBuilder_ == null) {
@@ -930,7 +761,7 @@ public final class RegionalPlayInfoNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .RegionalPlayVar var_list = 3;</code>
+       * <code>repeated .RegionalPlayVar var_list = 10;</code>
        */
       public Builder setVarList(
           int index, emu.grasscutter.net.proto.RegionalPlayVarOuterClass.RegionalPlayVar value) {
@@ -947,7 +778,7 @@ public final class RegionalPlayInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .RegionalPlayVar var_list = 3;</code>
+       * <code>repeated .RegionalPlayVar var_list = 10;</code>
        */
       public Builder setVarList(
           int index, emu.grasscutter.net.proto.RegionalPlayVarOuterClass.RegionalPlayVar.Builder builderForValue) {
@@ -961,7 +792,7 @@ public final class RegionalPlayInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .RegionalPlayVar var_list = 3;</code>
+       * <code>repeated .RegionalPlayVar var_list = 10;</code>
        */
       public Builder addVarList(emu.grasscutter.net.proto.RegionalPlayVarOuterClass.RegionalPlayVar value) {
         if (varListBuilder_ == null) {
@@ -977,7 +808,7 @@ public final class RegionalPlayInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .RegionalPlayVar var_list = 3;</code>
+       * <code>repeated .RegionalPlayVar var_list = 10;</code>
        */
       public Builder addVarList(
           int index, emu.grasscutter.net.proto.RegionalPlayVarOuterClass.RegionalPlayVar value) {
@@ -994,7 +825,7 @@ public final class RegionalPlayInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .RegionalPlayVar var_list = 3;</code>
+       * <code>repeated .RegionalPlayVar var_list = 10;</code>
        */
       public Builder addVarList(
           emu.grasscutter.net.proto.RegionalPlayVarOuterClass.RegionalPlayVar.Builder builderForValue) {
@@ -1008,7 +839,7 @@ public final class RegionalPlayInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .RegionalPlayVar var_list = 3;</code>
+       * <code>repeated .RegionalPlayVar var_list = 10;</code>
        */
       public Builder addVarList(
           int index, emu.grasscutter.net.proto.RegionalPlayVarOuterClass.RegionalPlayVar.Builder builderForValue) {
@@ -1022,7 +853,7 @@ public final class RegionalPlayInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .RegionalPlayVar var_list = 3;</code>
+       * <code>repeated .RegionalPlayVar var_list = 10;</code>
        */
       public Builder addAllVarList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.RegionalPlayVarOuterClass.RegionalPlayVar> values) {
@@ -1037,7 +868,7 @@ public final class RegionalPlayInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .RegionalPlayVar var_list = 3;</code>
+       * <code>repeated .RegionalPlayVar var_list = 10;</code>
        */
       public Builder clearVarList() {
         if (varListBuilder_ == null) {
@@ -1050,7 +881,7 @@ public final class RegionalPlayInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .RegionalPlayVar var_list = 3;</code>
+       * <code>repeated .RegionalPlayVar var_list = 10;</code>
        */
       public Builder removeVarList(int index) {
         if (varListBuilder_ == null) {
@@ -1063,14 +894,14 @@ public final class RegionalPlayInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .RegionalPlayVar var_list = 3;</code>
+       * <code>repeated .RegionalPlayVar var_list = 10;</code>
        */
       public emu.grasscutter.net.proto.RegionalPlayVarOuterClass.RegionalPlayVar.Builder getVarListBuilder(
           int index) {
         return getVarListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .RegionalPlayVar var_list = 3;</code>
+       * <code>repeated .RegionalPlayVar var_list = 10;</code>
        */
       public emu.grasscutter.net.proto.RegionalPlayVarOuterClass.RegionalPlayVarOrBuilder getVarListOrBuilder(
           int index) {
@@ -1080,7 +911,7 @@ public final class RegionalPlayInfoNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .RegionalPlayVar var_list = 3;</code>
+       * <code>repeated .RegionalPlayVar var_list = 10;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.RegionalPlayVarOuterClass.RegionalPlayVarOrBuilder> 
            getVarListOrBuilderList() {
@@ -1091,14 +922,14 @@ public final class RegionalPlayInfoNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .RegionalPlayVar var_list = 3;</code>
+       * <code>repeated .RegionalPlayVar var_list = 10;</code>
        */
       public emu.grasscutter.net.proto.RegionalPlayVarOuterClass.RegionalPlayVar.Builder addVarListBuilder() {
         return getVarListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.RegionalPlayVarOuterClass.RegionalPlayVar.getDefaultInstance());
       }
       /**
-       * <code>repeated .RegionalPlayVar var_list = 3;</code>
+       * <code>repeated .RegionalPlayVar var_list = 10;</code>
        */
       public emu.grasscutter.net.proto.RegionalPlayVarOuterClass.RegionalPlayVar.Builder addVarListBuilder(
           int index) {
@@ -1106,7 +937,7 @@ public final class RegionalPlayInfoNotifyOuterClass {
             index, emu.grasscutter.net.proto.RegionalPlayVarOuterClass.RegionalPlayVar.getDefaultInstance());
       }
       /**
-       * <code>repeated .RegionalPlayVar var_list = 3;</code>
+       * <code>repeated .RegionalPlayVar var_list = 10;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.RegionalPlayVarOuterClass.RegionalPlayVar.Builder> 
            getVarListBuilderList() {
@@ -1125,6 +956,175 @@ public final class RegionalPlayInfoNotifyOuterClass {
           varList_ = null;
         }
         return varListBuilder_;
+      }
+
+      private int playType_ ;
+      /**
+       * <code>uint32 play_type = 13;</code>
+       * @return The playType.
+       */
+      @java.lang.Override
+      public int getPlayType() {
+        return playType_;
+      }
+      /**
+       * <code>uint32 play_type = 13;</code>
+       * @param value The playType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPlayType(int value) {
+        
+        playType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 play_type = 13;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPlayType() {
+        
+        playType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean kEJHFKOBNCA_ ;
+      /**
+       * <code>bool KEJHFKOBNCA = 1;</code>
+       * @return The kEJHFKOBNCA.
+       */
+      @java.lang.Override
+      public boolean getKEJHFKOBNCA() {
+        return kEJHFKOBNCA_;
+      }
+      /**
+       * <code>bool KEJHFKOBNCA = 1;</code>
+       * @param value The kEJHFKOBNCA to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKEJHFKOBNCA(boolean value) {
+        
+        kEJHFKOBNCA_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool KEJHFKOBNCA = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearKEJHFKOBNCA() {
+        
+        kEJHFKOBNCA_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object playName_ = "";
+      /**
+       * <code>string play_name = 7;</code>
+       * @return The playName.
+       */
+      public java.lang.String getPlayName() {
+        java.lang.Object ref = playName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          playName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string play_name = 7;</code>
+       * @return The bytes for playName.
+       */
+      public com.google.protobuf.ByteString
+          getPlayNameBytes() {
+        java.lang.Object ref = playName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          playName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string play_name = 7;</code>
+       * @param value The playName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPlayName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        playName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string play_name = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPlayName() {
+        
+        playName_ = getDefaultInstance().getPlayName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string play_name = 7;</code>
+       * @param value The bytes for playName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPlayNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        playName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private boolean pCOOBDADEBL_ ;
+      /**
+       * <code>bool PCOOBDADEBL = 15;</code>
+       * @return The pCOOBDADEBL.
+       */
+      @java.lang.Override
+      public boolean getPCOOBDADEBL() {
+        return pCOOBDADEBL_;
+      }
+      /**
+       * <code>bool PCOOBDADEBL = 15;</code>
+       * @param value The pCOOBDADEBL to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPCOOBDADEBL(boolean value) {
+        
+        pCOOBDADEBL_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool PCOOBDADEBL = 15;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPCOOBDADEBL() {
+        
+        pCOOBDADEBL_ = false;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -1195,9 +1195,9 @@ public final class RegionalPlayInfoNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\034RegionalPlayInfoNotify.proto\032\025Regional" +
       "PlayVar.proto\"\214\001\n\026RegionalPlayInfoNotify" +
-      "\022\023\n\013IMILCAENOIO\030\017 \001(\010\022\021\n\tplay_name\030\t \001(\t" +
-      "\022\021\n\tplay_type\030\013 \001(\r\022\023\n\013KDMLEACLKKL\030\r \001(\010" +
-      "\022\"\n\010var_list\030\003 \003(\0132\020.RegionalPlayVarB\033\n\031" +
+      "\022\"\n\010var_list\030\n \003(\0132\020.RegionalPlayVar\022\021\n\t" +
+      "play_type\030\r \001(\r\022\023\n\013KEJHFKOBNCA\030\001 \001(\010\022\021\n\t" +
+      "play_name\030\007 \001(\t\022\023\n\013PCOOBDADEBL\030\017 \001(\010B\033\n\031" +
       "emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -1210,7 +1210,7 @@ public final class RegionalPlayInfoNotifyOuterClass {
     internal_static_RegionalPlayInfoNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_RegionalPlayInfoNotify_descriptor,
-        new java.lang.String[] { "IMILCAENOIO", "PlayName", "PlayType", "KDMLEACLKKL", "VarList", });
+        new java.lang.String[] { "VarList", "PlayType", "KEJHFKOBNCA", "PlayName", "PCOOBDADEBL", });
     emu.grasscutter.net.proto.RegionalPlayVarOuterClass.getDescriptor();
   }
 

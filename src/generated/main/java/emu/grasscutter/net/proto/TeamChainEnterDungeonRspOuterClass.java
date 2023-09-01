@@ -19,15 +19,15 @@ public final class TeamChainEnterDungeonRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 9;</code>
+     * <code>int32 retcode = 11;</code>
      * @return The retcode.
      */
     int getRetcode();
   }
   /**
    * <pre>
-   * CmdId: 23443
-   * Obf: FEPBLOOMKIC
+   * CmdId: 1959
+   * Obf: IIJOEHJFBIH
    * </pre>
    *
    * Protobuf type {@code TeamChainEnterDungeonRsp}
@@ -74,7 +74,7 @@ public final class TeamChainEnterDungeonRspOuterClass {
             case 0:
               done = true;
               break;
-            case 72: {
+            case 88: {
 
               retcode_ = input.readInt32();
               break;
@@ -111,10 +111,10 @@ public final class TeamChainEnterDungeonRspOuterClass {
               emu.grasscutter.net.proto.TeamChainEnterDungeonRspOuterClass.TeamChainEnterDungeonRsp.class, emu.grasscutter.net.proto.TeamChainEnterDungeonRspOuterClass.TeamChainEnterDungeonRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 9;
+    public static final int RETCODE_FIELD_NUMBER = 11;
     private int retcode_;
     /**
-     * <code>int32 retcode = 9;</code>
+     * <code>int32 retcode = 11;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class TeamChainEnterDungeonRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (retcode_ != 0) {
-        output.writeInt32(9, retcode_);
+        output.writeInt32(11, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class TeamChainEnterDungeonRspOuterClass {
       size = 0;
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(9, retcode_);
+          .computeInt32Size(11, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class TeamChainEnterDungeonRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 23443
-     * Obf: FEPBLOOMKIC
+     * CmdId: 1959
+     * Obf: IIJOEHJFBIH
      * </pre>
      *
      * Protobuf type {@code TeamChainEnterDungeonRsp}
@@ -431,7 +431,7 @@ public final class TeamChainEnterDungeonRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 9;</code>
+       * <code>int32 retcode = 11;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class TeamChainEnterDungeonRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 9;</code>
+       * <code>int32 retcode = 11;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class TeamChainEnterDungeonRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 9;</code>
+       * <code>int32 retcode = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -527,7 +527,7 @@ public final class TeamChainEnterDungeonRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\036TeamChainEnterDungeonRsp.proto\"+\n\030Team" +
-      "ChainEnterDungeonRsp\022\017\n\007retcode\030\t \001(\005B\033\n" +
+      "ChainEnterDungeonRsp\022\017\n\007retcode\030\013 \001(\005B\033\n" +
       "\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

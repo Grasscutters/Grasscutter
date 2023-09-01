@@ -19,15 +19,15 @@ public final class MichiaeMatsuriDarkPressureLevelUpdateNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 dark_pressure_level = 1;</code>
+     * <code>uint32 dark_pressure_level = 8;</code>
      * @return The darkPressureLevel.
      */
     int getDarkPressureLevel();
   }
   /**
    * <pre>
-   * CmdId: 8677
-   * Obf: BMOFCFPGHPI
+   * CmdId: 29941
+   * Obf: AFHLMAHKNEH
    * </pre>
    *
    * Protobuf type {@code MichiaeMatsuriDarkPressureLevelUpdateNotify}
@@ -74,7 +74,7 @@ public final class MichiaeMatsuriDarkPressureLevelUpdateNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 64: {
 
               darkPressureLevel_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class MichiaeMatsuriDarkPressureLevelUpdateNotifyOuterClass {
               emu.grasscutter.net.proto.MichiaeMatsuriDarkPressureLevelUpdateNotifyOuterClass.MichiaeMatsuriDarkPressureLevelUpdateNotify.class, emu.grasscutter.net.proto.MichiaeMatsuriDarkPressureLevelUpdateNotifyOuterClass.MichiaeMatsuriDarkPressureLevelUpdateNotify.Builder.class);
     }
 
-    public static final int DARK_PRESSURE_LEVEL_FIELD_NUMBER = 1;
+    public static final int DARK_PRESSURE_LEVEL_FIELD_NUMBER = 8;
     private int darkPressureLevel_;
     /**
-     * <code>uint32 dark_pressure_level = 1;</code>
+     * <code>uint32 dark_pressure_level = 8;</code>
      * @return The darkPressureLevel.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class MichiaeMatsuriDarkPressureLevelUpdateNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (darkPressureLevel_ != 0) {
-        output.writeUInt32(1, darkPressureLevel_);
+        output.writeUInt32(8, darkPressureLevel_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class MichiaeMatsuriDarkPressureLevelUpdateNotifyOuterClass {
       size = 0;
       if (darkPressureLevel_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, darkPressureLevel_);
+          .computeUInt32Size(8, darkPressureLevel_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class MichiaeMatsuriDarkPressureLevelUpdateNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8677
-     * Obf: BMOFCFPGHPI
+     * CmdId: 29941
+     * Obf: AFHLMAHKNEH
      * </pre>
      *
      * Protobuf type {@code MichiaeMatsuriDarkPressureLevelUpdateNotify}
@@ -431,7 +431,7 @@ public final class MichiaeMatsuriDarkPressureLevelUpdateNotifyOuterClass {
 
       private int darkPressureLevel_ ;
       /**
-       * <code>uint32 dark_pressure_level = 1;</code>
+       * <code>uint32 dark_pressure_level = 8;</code>
        * @return The darkPressureLevel.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class MichiaeMatsuriDarkPressureLevelUpdateNotifyOuterClass {
         return darkPressureLevel_;
       }
       /**
-       * <code>uint32 dark_pressure_level = 1;</code>
+       * <code>uint32 dark_pressure_level = 8;</code>
        * @param value The darkPressureLevel to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class MichiaeMatsuriDarkPressureLevelUpdateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 dark_pressure_level = 1;</code>
+       * <code>uint32 dark_pressure_level = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearDarkPressureLevel() {
@@ -529,7 +529,7 @@ public final class MichiaeMatsuriDarkPressureLevelUpdateNotifyOuterClass {
       "\n1MichiaeMatsuriDarkPressureLevelUpdateN" +
       "otify.proto\"J\n+MichiaeMatsuriDarkPressur" +
       "eLevelUpdateNotify\022\033\n\023dark_pressure_leve" +
-      "l\030\001 \001(\rB\033\n\031emu.grasscutter.net.protob\006pr" +
+      "l\030\010 \001(\rB\033\n\031emu.grasscutter.net.protob\006pr" +
       "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

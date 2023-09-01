@@ -19,32 +19,32 @@ public final class DynamicNodesOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .DynamicLayerNodes nodes = 14;</code>
+     * <code>repeated .DynamicLayerNodes nodes = 15;</code>
      */
     java.util.List<emu.grasscutter.net.proto.DynamicLayerNodesOuterClass.DynamicLayerNodes> 
         getNodesList();
     /**
-     * <code>repeated .DynamicLayerNodes nodes = 14;</code>
+     * <code>repeated .DynamicLayerNodes nodes = 15;</code>
      */
     emu.grasscutter.net.proto.DynamicLayerNodesOuterClass.DynamicLayerNodes getNodes(int index);
     /**
-     * <code>repeated .DynamicLayerNodes nodes = 14;</code>
+     * <code>repeated .DynamicLayerNodes nodes = 15;</code>
      */
     int getNodesCount();
     /**
-     * <code>repeated .DynamicLayerNodes nodes = 14;</code>
+     * <code>repeated .DynamicLayerNodes nodes = 15;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.DynamicLayerNodesOuterClass.DynamicLayerNodesOrBuilder> 
         getNodesOrBuilderList();
     /**
-     * <code>repeated .DynamicLayerNodes nodes = 14;</code>
+     * <code>repeated .DynamicLayerNodes nodes = 15;</code>
      */
     emu.grasscutter.net.proto.DynamicLayerNodesOuterClass.DynamicLayerNodesOrBuilder getNodesOrBuilder(
         int index);
   }
   /**
    * <pre>
-   * Obf: KBNJMNFKECD
+   * Obf: OPEOGJDEIKG
    * </pre>
    *
    * Protobuf type {@code DynamicNodes}
@@ -93,7 +93,7 @@ public final class DynamicNodesOuterClass {
             case 0:
               done = true;
               break;
-            case 114: {
+            case 122: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 nodes_ = new java.util.ArrayList<emu.grasscutter.net.proto.DynamicLayerNodesOuterClass.DynamicLayerNodes>();
                 mutable_bitField0_ |= 0x00000001;
@@ -137,17 +137,17 @@ public final class DynamicNodesOuterClass {
               emu.grasscutter.net.proto.DynamicNodesOuterClass.DynamicNodes.class, emu.grasscutter.net.proto.DynamicNodesOuterClass.DynamicNodes.Builder.class);
     }
 
-    public static final int NODES_FIELD_NUMBER = 14;
+    public static final int NODES_FIELD_NUMBER = 15;
     private java.util.List<emu.grasscutter.net.proto.DynamicLayerNodesOuterClass.DynamicLayerNodes> nodes_;
     /**
-     * <code>repeated .DynamicLayerNodes nodes = 14;</code>
+     * <code>repeated .DynamicLayerNodes nodes = 15;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.DynamicLayerNodesOuterClass.DynamicLayerNodes> getNodesList() {
       return nodes_;
     }
     /**
-     * <code>repeated .DynamicLayerNodes nodes = 14;</code>
+     * <code>repeated .DynamicLayerNodes nodes = 15;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.DynamicLayerNodesOuterClass.DynamicLayerNodesOrBuilder> 
@@ -155,21 +155,21 @@ public final class DynamicNodesOuterClass {
       return nodes_;
     }
     /**
-     * <code>repeated .DynamicLayerNodes nodes = 14;</code>
+     * <code>repeated .DynamicLayerNodes nodes = 15;</code>
      */
     @java.lang.Override
     public int getNodesCount() {
       return nodes_.size();
     }
     /**
-     * <code>repeated .DynamicLayerNodes nodes = 14;</code>
+     * <code>repeated .DynamicLayerNodes nodes = 15;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.DynamicLayerNodesOuterClass.DynamicLayerNodes getNodes(int index) {
       return nodes_.get(index);
     }
     /**
-     * <code>repeated .DynamicLayerNodes nodes = 14;</code>
+     * <code>repeated .DynamicLayerNodes nodes = 15;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.DynamicLayerNodesOuterClass.DynamicLayerNodesOrBuilder getNodesOrBuilder(
@@ -192,7 +192,7 @@ public final class DynamicNodesOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < nodes_.size(); i++) {
-        output.writeMessage(14, nodes_.get(i));
+        output.writeMessage(15, nodes_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -205,7 +205,7 @@ public final class DynamicNodesOuterClass {
       size = 0;
       for (int i = 0; i < nodes_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(14, nodes_.get(i));
+          .computeMessageSize(15, nodes_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -336,7 +336,7 @@ public final class DynamicNodesOuterClass {
     }
     /**
      * <pre>
-     * Obf: KBNJMNFKECD
+     * Obf: OPEOGJDEIKG
      * </pre>
      *
      * Protobuf type {@code DynamicNodes}
@@ -536,7 +536,7 @@ public final class DynamicNodesOuterClass {
           emu.grasscutter.net.proto.DynamicLayerNodesOuterClass.DynamicLayerNodes, emu.grasscutter.net.proto.DynamicLayerNodesOuterClass.DynamicLayerNodes.Builder, emu.grasscutter.net.proto.DynamicLayerNodesOuterClass.DynamicLayerNodesOrBuilder> nodesBuilder_;
 
       /**
-       * <code>repeated .DynamicLayerNodes nodes = 14;</code>
+       * <code>repeated .DynamicLayerNodes nodes = 15;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.DynamicLayerNodesOuterClass.DynamicLayerNodes> getNodesList() {
         if (nodesBuilder_ == null) {
@@ -546,7 +546,7 @@ public final class DynamicNodesOuterClass {
         }
       }
       /**
-       * <code>repeated .DynamicLayerNodes nodes = 14;</code>
+       * <code>repeated .DynamicLayerNodes nodes = 15;</code>
        */
       public int getNodesCount() {
         if (nodesBuilder_ == null) {
@@ -556,7 +556,7 @@ public final class DynamicNodesOuterClass {
         }
       }
       /**
-       * <code>repeated .DynamicLayerNodes nodes = 14;</code>
+       * <code>repeated .DynamicLayerNodes nodes = 15;</code>
        */
       public emu.grasscutter.net.proto.DynamicLayerNodesOuterClass.DynamicLayerNodes getNodes(int index) {
         if (nodesBuilder_ == null) {
@@ -566,7 +566,7 @@ public final class DynamicNodesOuterClass {
         }
       }
       /**
-       * <code>repeated .DynamicLayerNodes nodes = 14;</code>
+       * <code>repeated .DynamicLayerNodes nodes = 15;</code>
        */
       public Builder setNodes(
           int index, emu.grasscutter.net.proto.DynamicLayerNodesOuterClass.DynamicLayerNodes value) {
@@ -583,7 +583,7 @@ public final class DynamicNodesOuterClass {
         return this;
       }
       /**
-       * <code>repeated .DynamicLayerNodes nodes = 14;</code>
+       * <code>repeated .DynamicLayerNodes nodes = 15;</code>
        */
       public Builder setNodes(
           int index, emu.grasscutter.net.proto.DynamicLayerNodesOuterClass.DynamicLayerNodes.Builder builderForValue) {
@@ -597,7 +597,7 @@ public final class DynamicNodesOuterClass {
         return this;
       }
       /**
-       * <code>repeated .DynamicLayerNodes nodes = 14;</code>
+       * <code>repeated .DynamicLayerNodes nodes = 15;</code>
        */
       public Builder addNodes(emu.grasscutter.net.proto.DynamicLayerNodesOuterClass.DynamicLayerNodes value) {
         if (nodesBuilder_ == null) {
@@ -613,7 +613,7 @@ public final class DynamicNodesOuterClass {
         return this;
       }
       /**
-       * <code>repeated .DynamicLayerNodes nodes = 14;</code>
+       * <code>repeated .DynamicLayerNodes nodes = 15;</code>
        */
       public Builder addNodes(
           int index, emu.grasscutter.net.proto.DynamicLayerNodesOuterClass.DynamicLayerNodes value) {
@@ -630,7 +630,7 @@ public final class DynamicNodesOuterClass {
         return this;
       }
       /**
-       * <code>repeated .DynamicLayerNodes nodes = 14;</code>
+       * <code>repeated .DynamicLayerNodes nodes = 15;</code>
        */
       public Builder addNodes(
           emu.grasscutter.net.proto.DynamicLayerNodesOuterClass.DynamicLayerNodes.Builder builderForValue) {
@@ -644,7 +644,7 @@ public final class DynamicNodesOuterClass {
         return this;
       }
       /**
-       * <code>repeated .DynamicLayerNodes nodes = 14;</code>
+       * <code>repeated .DynamicLayerNodes nodes = 15;</code>
        */
       public Builder addNodes(
           int index, emu.grasscutter.net.proto.DynamicLayerNodesOuterClass.DynamicLayerNodes.Builder builderForValue) {
@@ -658,7 +658,7 @@ public final class DynamicNodesOuterClass {
         return this;
       }
       /**
-       * <code>repeated .DynamicLayerNodes nodes = 14;</code>
+       * <code>repeated .DynamicLayerNodes nodes = 15;</code>
        */
       public Builder addAllNodes(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.DynamicLayerNodesOuterClass.DynamicLayerNodes> values) {
@@ -673,7 +673,7 @@ public final class DynamicNodesOuterClass {
         return this;
       }
       /**
-       * <code>repeated .DynamicLayerNodes nodes = 14;</code>
+       * <code>repeated .DynamicLayerNodes nodes = 15;</code>
        */
       public Builder clearNodes() {
         if (nodesBuilder_ == null) {
@@ -686,7 +686,7 @@ public final class DynamicNodesOuterClass {
         return this;
       }
       /**
-       * <code>repeated .DynamicLayerNodes nodes = 14;</code>
+       * <code>repeated .DynamicLayerNodes nodes = 15;</code>
        */
       public Builder removeNodes(int index) {
         if (nodesBuilder_ == null) {
@@ -699,14 +699,14 @@ public final class DynamicNodesOuterClass {
         return this;
       }
       /**
-       * <code>repeated .DynamicLayerNodes nodes = 14;</code>
+       * <code>repeated .DynamicLayerNodes nodes = 15;</code>
        */
       public emu.grasscutter.net.proto.DynamicLayerNodesOuterClass.DynamicLayerNodes.Builder getNodesBuilder(
           int index) {
         return getNodesFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .DynamicLayerNodes nodes = 14;</code>
+       * <code>repeated .DynamicLayerNodes nodes = 15;</code>
        */
       public emu.grasscutter.net.proto.DynamicLayerNodesOuterClass.DynamicLayerNodesOrBuilder getNodesOrBuilder(
           int index) {
@@ -716,7 +716,7 @@ public final class DynamicNodesOuterClass {
         }
       }
       /**
-       * <code>repeated .DynamicLayerNodes nodes = 14;</code>
+       * <code>repeated .DynamicLayerNodes nodes = 15;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.DynamicLayerNodesOuterClass.DynamicLayerNodesOrBuilder> 
            getNodesOrBuilderList() {
@@ -727,14 +727,14 @@ public final class DynamicNodesOuterClass {
         }
       }
       /**
-       * <code>repeated .DynamicLayerNodes nodes = 14;</code>
+       * <code>repeated .DynamicLayerNodes nodes = 15;</code>
        */
       public emu.grasscutter.net.proto.DynamicLayerNodesOuterClass.DynamicLayerNodes.Builder addNodesBuilder() {
         return getNodesFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.DynamicLayerNodesOuterClass.DynamicLayerNodes.getDefaultInstance());
       }
       /**
-       * <code>repeated .DynamicLayerNodes nodes = 14;</code>
+       * <code>repeated .DynamicLayerNodes nodes = 15;</code>
        */
       public emu.grasscutter.net.proto.DynamicLayerNodesOuterClass.DynamicLayerNodes.Builder addNodesBuilder(
           int index) {
@@ -742,7 +742,7 @@ public final class DynamicNodesOuterClass {
             index, emu.grasscutter.net.proto.DynamicLayerNodesOuterClass.DynamicLayerNodes.getDefaultInstance());
       }
       /**
-       * <code>repeated .DynamicLayerNodes nodes = 14;</code>
+       * <code>repeated .DynamicLayerNodes nodes = 15;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.DynamicLayerNodesOuterClass.DynamicLayerNodes.Builder> 
            getNodesBuilderList() {
@@ -830,7 +830,7 @@ public final class DynamicNodesOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\022DynamicNodes.proto\032\027DynamicLayerNodes." +
-      "proto\"1\n\014DynamicNodes\022!\n\005nodes\030\016 \003(\0132\022.D" +
+      "proto\"1\n\014DynamicNodes\022!\n\005nodes\030\017 \003(\0132\022.D" +
       "ynamicLayerNodesB\033\n\031emu.grasscutter.net." +
       "protob\006proto3"
     };

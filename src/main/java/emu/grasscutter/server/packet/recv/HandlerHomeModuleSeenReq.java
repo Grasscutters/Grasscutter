@@ -1,12 +1,9 @@
 package emu.grasscutter.server.packet.recv;
 
-import emu.grasscutter.net.packet.Opcodes;
-import emu.grasscutter.net.packet.PacketHandler;
-import emu.grasscutter.net.packet.PacketOpcodes;
+import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.HomeModuleSeenReqOuterClass.HomeModuleSeenReq;
 import emu.grasscutter.server.game.GameSession;
-import emu.grasscutter.server.packet.send.PacketHomeModuleSeenRsp;
-import emu.grasscutter.server.packet.send.PacketPlayerHomeCompInfoNotify;
+import emu.grasscutter.server.packet.send.*;
 
 @Opcodes(PacketOpcodes.HomeModuleSeenReq)
 public class HandlerHomeModuleSeenReq extends PacketHandler {

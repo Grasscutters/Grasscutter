@@ -20,8 +20,8 @@ public final class GetNextResourceInfoReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 144
-   * Obf: DBIBJAANOIA
+   * CmdId: 24599
+   * Obf: EOODHGFCINK
    * </pre>
    *
    * Protobuf type {@code GetNextResourceInfoReq}
@@ -246,8 +246,8 @@ public final class GetNextResourceInfoReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 144
-     * Obf: DBIBJAANOIA
+     * CmdId: 24599
+     * Obf: EOODHGFCINK
      * </pre>
      *
      * Protobuf type {@code GetNextResourceInfoReq}

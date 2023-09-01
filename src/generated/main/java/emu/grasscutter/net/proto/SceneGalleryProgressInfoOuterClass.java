@@ -19,49 +19,49 @@ public final class SceneGalleryProgressInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 progress = 3;</code>
-     * @return The progress.
-     */
-    int getProgress();
-
-    /**
-     * <code>repeated uint32 progress_stage_list = 6;</code>
-     * @return A list containing the progressStageList.
-     */
-    java.util.List<java.lang.Integer> getProgressStageListList();
-    /**
-     * <code>repeated uint32 progress_stage_list = 6;</code>
-     * @return The count of progressStageList.
-     */
-    int getProgressStageListCount();
-    /**
-     * <code>repeated uint32 progress_stage_list = 6;</code>
-     * @param index The index of the element to return.
-     * @return The progressStageList at the given index.
-     */
-    int getProgressStageList(int index);
-
-    /**
-     * <code>string key = 10;</code>
+     * <code>string key = 5;</code>
      * @return The key.
      */
     java.lang.String getKey();
     /**
-     * <code>string key = 10;</code>
+     * <code>string key = 5;</code>
      * @return The bytes for key.
      */
     com.google.protobuf.ByteString
         getKeyBytes();
 
     /**
-     * <code>uint32 PINFNMPCGIF = 15;</code>
-     * @return The pINFNMPCGIF.
+     * <code>uint32 progress = 4;</code>
+     * @return The progress.
      */
-    int getPINFNMPCGIF();
+    int getProgress();
+
+    /**
+     * <code>uint32 ui_form = 3;</code>
+     * @return The uiForm.
+     */
+    int getUiForm();
+
+    /**
+     * <code>repeated uint32 progress_stage_list = 13;</code>
+     * @return A list containing the progressStageList.
+     */
+    java.util.List<java.lang.Integer> getProgressStageListList();
+    /**
+     * <code>repeated uint32 progress_stage_list = 13;</code>
+     * @return The count of progressStageList.
+     */
+    int getProgressStageListCount();
+    /**
+     * <code>repeated uint32 progress_stage_list = 13;</code>
+     * @param index The index of the element to return.
+     * @return The progressStageList at the given index.
+     */
+    int getProgressStageList(int index);
   }
   /**
    * <pre>
-   * Obf: CCEEIMHAFHM
+   * Obf: IHIKIBFDDFL
    * </pre>
    *
    * Protobuf type {@code SceneGalleryProgressInfo}
@@ -76,8 +76,8 @@ public final class SceneGalleryProgressInfoOuterClass {
       super(builder);
     }
     private SceneGalleryProgressInfo() {
-      progressStageList_ = emptyIntList();
       key_ = "";
+      progressStageList_ = emptyIntList();
     }
 
     @java.lang.Override
@@ -113,10 +113,21 @@ public final class SceneGalleryProgressInfoOuterClass {
               break;
             case 24: {
 
+              uiForm_ = input.readUInt32();
+              break;
+            }
+            case 32: {
+
               progress_ = input.readUInt32();
               break;
             }
-            case 48: {
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              key_ = s;
+              break;
+            }
+            case 104: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 progressStageList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -124,7 +135,7 @@ public final class SceneGalleryProgressInfoOuterClass {
               progressStageList_.addInt(input.readUInt32());
               break;
             }
-            case 50: {
+            case 106: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -135,17 +146,6 @@ public final class SceneGalleryProgressInfoOuterClass {
                 progressStageList_.addInt(input.readUInt32());
               }
               input.popLimit(limit);
-              break;
-            }
-            case 82: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              key_ = s;
-              break;
-            }
-            case 120: {
-
-              pINFNMPCGIF_ = input.readUInt32();
               break;
             }
             default: {
@@ -183,49 +183,10 @@ public final class SceneGalleryProgressInfoOuterClass {
               emu.grasscutter.net.proto.SceneGalleryProgressInfoOuterClass.SceneGalleryProgressInfo.class, emu.grasscutter.net.proto.SceneGalleryProgressInfoOuterClass.SceneGalleryProgressInfo.Builder.class);
     }
 
-    public static final int PROGRESS_FIELD_NUMBER = 3;
-    private int progress_;
-    /**
-     * <code>uint32 progress = 3;</code>
-     * @return The progress.
-     */
-    @java.lang.Override
-    public int getProgress() {
-      return progress_;
-    }
-
-    public static final int PROGRESS_STAGE_LIST_FIELD_NUMBER = 6;
-    private com.google.protobuf.Internal.IntList progressStageList_;
-    /**
-     * <code>repeated uint32 progress_stage_list = 6;</code>
-     * @return A list containing the progressStageList.
-     */
-    @java.lang.Override
-    public java.util.List<java.lang.Integer>
-        getProgressStageListList() {
-      return progressStageList_;
-    }
-    /**
-     * <code>repeated uint32 progress_stage_list = 6;</code>
-     * @return The count of progressStageList.
-     */
-    public int getProgressStageListCount() {
-      return progressStageList_.size();
-    }
-    /**
-     * <code>repeated uint32 progress_stage_list = 6;</code>
-     * @param index The index of the element to return.
-     * @return The progressStageList at the given index.
-     */
-    public int getProgressStageList(int index) {
-      return progressStageList_.getInt(index);
-    }
-    private int progressStageListMemoizedSerializedSize = -1;
-
-    public static final int KEY_FIELD_NUMBER = 10;
+    public static final int KEY_FIELD_NUMBER = 5;
     private volatile java.lang.Object key_;
     /**
-     * <code>string key = 10;</code>
+     * <code>string key = 5;</code>
      * @return The key.
      */
     @java.lang.Override
@@ -242,7 +203,7 @@ public final class SceneGalleryProgressInfoOuterClass {
       }
     }
     /**
-     * <code>string key = 10;</code>
+     * <code>string key = 5;</code>
      * @return The bytes for key.
      */
     @java.lang.Override
@@ -260,16 +221,55 @@ public final class SceneGalleryProgressInfoOuterClass {
       }
     }
 
-    public static final int PINFNMPCGIF_FIELD_NUMBER = 15;
-    private int pINFNMPCGIF_;
+    public static final int PROGRESS_FIELD_NUMBER = 4;
+    private int progress_;
     /**
-     * <code>uint32 PINFNMPCGIF = 15;</code>
-     * @return The pINFNMPCGIF.
+     * <code>uint32 progress = 4;</code>
+     * @return The progress.
      */
     @java.lang.Override
-    public int getPINFNMPCGIF() {
-      return pINFNMPCGIF_;
+    public int getProgress() {
+      return progress_;
     }
+
+    public static final int UI_FORM_FIELD_NUMBER = 3;
+    private int uiForm_;
+    /**
+     * <code>uint32 ui_form = 3;</code>
+     * @return The uiForm.
+     */
+    @java.lang.Override
+    public int getUiForm() {
+      return uiForm_;
+    }
+
+    public static final int PROGRESS_STAGE_LIST_FIELD_NUMBER = 13;
+    private com.google.protobuf.Internal.IntList progressStageList_;
+    /**
+     * <code>repeated uint32 progress_stage_list = 13;</code>
+     * @return A list containing the progressStageList.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Integer>
+        getProgressStageListList() {
+      return progressStageList_;
+    }
+    /**
+     * <code>repeated uint32 progress_stage_list = 13;</code>
+     * @return The count of progressStageList.
+     */
+    public int getProgressStageListCount() {
+      return progressStageList_.size();
+    }
+    /**
+     * <code>repeated uint32 progress_stage_list = 13;</code>
+     * @param index The index of the element to return.
+     * @return The progressStageList at the given index.
+     */
+    public int getProgressStageList(int index) {
+      return progressStageList_.getInt(index);
+    }
+    private int progressStageListMemoizedSerializedSize = -1;
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
@@ -286,21 +286,21 @@ public final class SceneGalleryProgressInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
+      if (uiForm_ != 0) {
+        output.writeUInt32(3, uiForm_);
+      }
       if (progress_ != 0) {
-        output.writeUInt32(3, progress_);
+        output.writeUInt32(4, progress_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(key_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, key_);
       }
       if (getProgressStageListList().size() > 0) {
-        output.writeUInt32NoTag(50);
+        output.writeUInt32NoTag(106);
         output.writeUInt32NoTag(progressStageListMemoizedSerializedSize);
       }
       for (int i = 0; i < progressStageList_.size(); i++) {
         output.writeUInt32NoTag(progressStageList_.getInt(i));
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(key_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, key_);
-      }
-      if (pINFNMPCGIF_ != 0) {
-        output.writeUInt32(15, pINFNMPCGIF_);
       }
       unknownFields.writeTo(output);
     }
@@ -311,9 +311,16 @@ public final class SceneGalleryProgressInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (uiForm_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(3, uiForm_);
+      }
       if (progress_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, progress_);
+          .computeUInt32Size(4, progress_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(key_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, key_);
       }
       {
         int dataSize = 0;
@@ -328,13 +335,6 @@ public final class SceneGalleryProgressInfoOuterClass {
               .computeInt32SizeNoTag(dataSize);
         }
         progressStageListMemoizedSerializedSize = dataSize;
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(key_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, key_);
-      }
-      if (pINFNMPCGIF_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, pINFNMPCGIF_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -351,14 +351,14 @@ public final class SceneGalleryProgressInfoOuterClass {
       }
       emu.grasscutter.net.proto.SceneGalleryProgressInfoOuterClass.SceneGalleryProgressInfo other = (emu.grasscutter.net.proto.SceneGalleryProgressInfoOuterClass.SceneGalleryProgressInfo) obj;
 
-      if (getProgress()
-          != other.getProgress()) return false;
-      if (!getProgressStageListList()
-          .equals(other.getProgressStageListList())) return false;
       if (!getKey()
           .equals(other.getKey())) return false;
-      if (getPINFNMPCGIF()
-          != other.getPINFNMPCGIF()) return false;
+      if (getProgress()
+          != other.getProgress()) return false;
+      if (getUiForm()
+          != other.getUiForm()) return false;
+      if (!getProgressStageListList()
+          .equals(other.getProgressStageListList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -370,16 +370,16 @@ public final class SceneGalleryProgressInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getKey().hashCode();
       hash = (37 * hash) + PROGRESS_FIELD_NUMBER;
       hash = (53 * hash) + getProgress();
+      hash = (37 * hash) + UI_FORM_FIELD_NUMBER;
+      hash = (53 * hash) + getUiForm();
       if (getProgressStageListCount() > 0) {
         hash = (37 * hash) + PROGRESS_STAGE_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getProgressStageListList().hashCode();
       }
-      hash = (37 * hash) + KEY_FIELD_NUMBER;
-      hash = (53 * hash) + getKey().hashCode();
-      hash = (37 * hash) + PINFNMPCGIF_FIELD_NUMBER;
-      hash = (53 * hash) + getPINFNMPCGIF();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -477,7 +477,7 @@ public final class SceneGalleryProgressInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: CCEEIMHAFHM
+     * Obf: IHIKIBFDDFL
      * </pre>
      *
      * Protobuf type {@code SceneGalleryProgressInfo}
@@ -517,14 +517,14 @@ public final class SceneGalleryProgressInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        key_ = "";
+
         progress_ = 0;
+
+        uiForm_ = 0;
 
         progressStageList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
-        key_ = "";
-
-        pINFNMPCGIF_ = 0;
-
         return this;
       }
 
@@ -552,14 +552,14 @@ public final class SceneGalleryProgressInfoOuterClass {
       public emu.grasscutter.net.proto.SceneGalleryProgressInfoOuterClass.SceneGalleryProgressInfo buildPartial() {
         emu.grasscutter.net.proto.SceneGalleryProgressInfoOuterClass.SceneGalleryProgressInfo result = new emu.grasscutter.net.proto.SceneGalleryProgressInfoOuterClass.SceneGalleryProgressInfo(this);
         int from_bitField0_ = bitField0_;
+        result.key_ = key_;
         result.progress_ = progress_;
+        result.uiForm_ = uiForm_;
         if (((bitField0_ & 0x00000001) != 0)) {
           progressStageList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.progressStageList_ = progressStageList_;
-        result.key_ = key_;
-        result.pINFNMPCGIF_ = pINFNMPCGIF_;
         onBuilt();
         return result;
       }
@@ -608,8 +608,15 @@ public final class SceneGalleryProgressInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.SceneGalleryProgressInfoOuterClass.SceneGalleryProgressInfo other) {
         if (other == emu.grasscutter.net.proto.SceneGalleryProgressInfoOuterClass.SceneGalleryProgressInfo.getDefaultInstance()) return this;
+        if (!other.getKey().isEmpty()) {
+          key_ = other.key_;
+          onChanged();
+        }
         if (other.getProgress() != 0) {
           setProgress(other.getProgress());
+        }
+        if (other.getUiForm() != 0) {
+          setUiForm(other.getUiForm());
         }
         if (!other.progressStageList_.isEmpty()) {
           if (progressStageList_.isEmpty()) {
@@ -620,13 +627,6 @@ public final class SceneGalleryProgressInfoOuterClass {
             progressStageList_.addAll(other.progressStageList_);
           }
           onChanged();
-        }
-        if (!other.getKey().isEmpty()) {
-          key_ = other.key_;
-          onChanged();
-        }
-        if (other.getPINFNMPCGIF() != 0) {
-          setPINFNMPCGIF(other.getPINFNMPCGIF());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -658,119 +658,9 @@ public final class SceneGalleryProgressInfoOuterClass {
       }
       private int bitField0_;
 
-      private int progress_ ;
-      /**
-       * <code>uint32 progress = 3;</code>
-       * @return The progress.
-       */
-      @java.lang.Override
-      public int getProgress() {
-        return progress_;
-      }
-      /**
-       * <code>uint32 progress = 3;</code>
-       * @param value The progress to set.
-       * @return This builder for chaining.
-       */
-      public Builder setProgress(int value) {
-        
-        progress_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 progress = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearProgress() {
-        
-        progress_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.Internal.IntList progressStageList_ = emptyIntList();
-      private void ensureProgressStageListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          progressStageList_ = mutableCopy(progressStageList_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-      /**
-       * <code>repeated uint32 progress_stage_list = 6;</code>
-       * @return A list containing the progressStageList.
-       */
-      public java.util.List<java.lang.Integer>
-          getProgressStageListList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
-                 java.util.Collections.unmodifiableList(progressStageList_) : progressStageList_;
-      }
-      /**
-       * <code>repeated uint32 progress_stage_list = 6;</code>
-       * @return The count of progressStageList.
-       */
-      public int getProgressStageListCount() {
-        return progressStageList_.size();
-      }
-      /**
-       * <code>repeated uint32 progress_stage_list = 6;</code>
-       * @param index The index of the element to return.
-       * @return The progressStageList at the given index.
-       */
-      public int getProgressStageList(int index) {
-        return progressStageList_.getInt(index);
-      }
-      /**
-       * <code>repeated uint32 progress_stage_list = 6;</code>
-       * @param index The index to set the value at.
-       * @param value The progressStageList to set.
-       * @return This builder for chaining.
-       */
-      public Builder setProgressStageList(
-          int index, int value) {
-        ensureProgressStageListIsMutable();
-        progressStageList_.setInt(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 progress_stage_list = 6;</code>
-       * @param value The progressStageList to add.
-       * @return This builder for chaining.
-       */
-      public Builder addProgressStageList(int value) {
-        ensureProgressStageListIsMutable();
-        progressStageList_.addInt(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 progress_stage_list = 6;</code>
-       * @param values The progressStageList to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllProgressStageList(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureProgressStageListIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, progressStageList_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 progress_stage_list = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearProgressStageList() {
-        progressStageList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-
       private java.lang.Object key_ = "";
       /**
-       * <code>string key = 10;</code>
+       * <code>string key = 5;</code>
        * @return The key.
        */
       public java.lang.String getKey() {
@@ -786,7 +676,7 @@ public final class SceneGalleryProgressInfoOuterClass {
         }
       }
       /**
-       * <code>string key = 10;</code>
+       * <code>string key = 5;</code>
        * @return The bytes for key.
        */
       public com.google.protobuf.ByteString
@@ -803,7 +693,7 @@ public final class SceneGalleryProgressInfoOuterClass {
         }
       }
       /**
-       * <code>string key = 10;</code>
+       * <code>string key = 5;</code>
        * @param value The key to set.
        * @return This builder for chaining.
        */
@@ -818,7 +708,7 @@ public final class SceneGalleryProgressInfoOuterClass {
         return this;
       }
       /**
-       * <code>string key = 10;</code>
+       * <code>string key = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearKey() {
@@ -828,7 +718,7 @@ public final class SceneGalleryProgressInfoOuterClass {
         return this;
       }
       /**
-       * <code>string key = 10;</code>
+       * <code>string key = 5;</code>
        * @param value The bytes for key to set.
        * @return This builder for chaining.
        */
@@ -844,33 +734,143 @@ public final class SceneGalleryProgressInfoOuterClass {
         return this;
       }
 
-      private int pINFNMPCGIF_ ;
+      private int progress_ ;
       /**
-       * <code>uint32 PINFNMPCGIF = 15;</code>
-       * @return The pINFNMPCGIF.
+       * <code>uint32 progress = 4;</code>
+       * @return The progress.
        */
       @java.lang.Override
-      public int getPINFNMPCGIF() {
-        return pINFNMPCGIF_;
+      public int getProgress() {
+        return progress_;
       }
       /**
-       * <code>uint32 PINFNMPCGIF = 15;</code>
-       * @param value The pINFNMPCGIF to set.
+       * <code>uint32 progress = 4;</code>
+       * @param value The progress to set.
        * @return This builder for chaining.
        */
-      public Builder setPINFNMPCGIF(int value) {
+      public Builder setProgress(int value) {
         
-        pINFNMPCGIF_ = value;
+        progress_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 PINFNMPCGIF = 15;</code>
+       * <code>uint32 progress = 4;</code>
        * @return This builder for chaining.
        */
-      public Builder clearPINFNMPCGIF() {
+      public Builder clearProgress() {
         
-        pINFNMPCGIF_ = 0;
+        progress_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int uiForm_ ;
+      /**
+       * <code>uint32 ui_form = 3;</code>
+       * @return The uiForm.
+       */
+      @java.lang.Override
+      public int getUiForm() {
+        return uiForm_;
+      }
+      /**
+       * <code>uint32 ui_form = 3;</code>
+       * @param value The uiForm to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUiForm(int value) {
+        
+        uiForm_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 ui_form = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUiForm() {
+        
+        uiForm_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Internal.IntList progressStageList_ = emptyIntList();
+      private void ensureProgressStageListIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          progressStageList_ = mutableCopy(progressStageList_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <code>repeated uint32 progress_stage_list = 13;</code>
+       * @return A list containing the progressStageList.
+       */
+      public java.util.List<java.lang.Integer>
+          getProgressStageListList() {
+        return ((bitField0_ & 0x00000001) != 0) ?
+                 java.util.Collections.unmodifiableList(progressStageList_) : progressStageList_;
+      }
+      /**
+       * <code>repeated uint32 progress_stage_list = 13;</code>
+       * @return The count of progressStageList.
+       */
+      public int getProgressStageListCount() {
+        return progressStageList_.size();
+      }
+      /**
+       * <code>repeated uint32 progress_stage_list = 13;</code>
+       * @param index The index of the element to return.
+       * @return The progressStageList at the given index.
+       */
+      public int getProgressStageList(int index) {
+        return progressStageList_.getInt(index);
+      }
+      /**
+       * <code>repeated uint32 progress_stage_list = 13;</code>
+       * @param index The index to set the value at.
+       * @param value The progressStageList to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProgressStageList(
+          int index, int value) {
+        ensureProgressStageListIsMutable();
+        progressStageList_.setInt(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 progress_stage_list = 13;</code>
+       * @param value The progressStageList to add.
+       * @return This builder for chaining.
+       */
+      public Builder addProgressStageList(int value) {
+        ensureProgressStageListIsMutable();
+        progressStageList_.addInt(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 progress_stage_list = 13;</code>
+       * @param values The progressStageList to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllProgressStageList(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureProgressStageListIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, progressStageList_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 progress_stage_list = 13;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearProgressStageList() {
+        progressStageList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -941,11 +941,11 @@ public final class SceneGalleryProgressInfoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\036SceneGalleryProgressInfo.proto\"k\n\030Scen" +
-      "eGalleryProgressInfo\022\020\n\010progress\030\003 \001(\r\022\033" +
-      "\n\023progress_stage_list\030\006 \003(\r\022\013\n\003key\030\n \001(\t" +
-      "\022\023\n\013PINFNMPCGIF\030\017 \001(\rB\033\n\031emu.grasscutter" +
-      ".net.protob\006proto3"
+      "\n\036SceneGalleryProgressInfo.proto\"g\n\030Scen" +
+      "eGalleryProgressInfo\022\013\n\003key\030\005 \001(\t\022\020\n\010pro" +
+      "gress\030\004 \001(\r\022\017\n\007ui_form\030\003 \001(\r\022\033\n\023progress" +
+      "_stage_list\030\r \003(\rB\033\n\031emu.grasscutter.net" +
+      ".protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -956,7 +956,7 @@ public final class SceneGalleryProgressInfoOuterClass {
     internal_static_SceneGalleryProgressInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SceneGalleryProgressInfo_descriptor,
-        new java.lang.String[] { "Progress", "ProgressStageList", "Key", "PINFNMPCGIF", });
+        new java.lang.String[] { "Key", "Progress", "UiForm", "ProgressStageList", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

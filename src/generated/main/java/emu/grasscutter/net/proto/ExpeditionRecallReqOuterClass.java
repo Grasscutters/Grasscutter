@@ -19,15 +19,15 @@ public final class ExpeditionRecallReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 path_id = 8;</code>
+     * <code>uint32 path_id = 4;</code>
      * @return The pathId.
      */
     int getPathId();
   }
   /**
    * <pre>
-   * CmdId: 2009
-   * Obf: HNAMCNLJFFI
+   * CmdId: 24533
+   * Obf: CFNODODEEEK
    * </pre>
    *
    * Protobuf type {@code ExpeditionRecallReq}
@@ -74,7 +74,7 @@ public final class ExpeditionRecallReqOuterClass {
             case 0:
               done = true;
               break;
-            case 64: {
+            case 32: {
 
               pathId_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class ExpeditionRecallReqOuterClass {
               emu.grasscutter.net.proto.ExpeditionRecallReqOuterClass.ExpeditionRecallReq.class, emu.grasscutter.net.proto.ExpeditionRecallReqOuterClass.ExpeditionRecallReq.Builder.class);
     }
 
-    public static final int PATH_ID_FIELD_NUMBER = 8;
+    public static final int PATH_ID_FIELD_NUMBER = 4;
     private int pathId_;
     /**
-     * <code>uint32 path_id = 8;</code>
+     * <code>uint32 path_id = 4;</code>
      * @return The pathId.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class ExpeditionRecallReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (pathId_ != 0) {
-        output.writeUInt32(8, pathId_);
+        output.writeUInt32(4, pathId_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class ExpeditionRecallReqOuterClass {
       size = 0;
       if (pathId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, pathId_);
+          .computeUInt32Size(4, pathId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class ExpeditionRecallReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2009
-     * Obf: HNAMCNLJFFI
+     * CmdId: 24533
+     * Obf: CFNODODEEEK
      * </pre>
      *
      * Protobuf type {@code ExpeditionRecallReq}
@@ -431,7 +431,7 @@ public final class ExpeditionRecallReqOuterClass {
 
       private int pathId_ ;
       /**
-       * <code>uint32 path_id = 8;</code>
+       * <code>uint32 path_id = 4;</code>
        * @return The pathId.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class ExpeditionRecallReqOuterClass {
         return pathId_;
       }
       /**
-       * <code>uint32 path_id = 8;</code>
+       * <code>uint32 path_id = 4;</code>
        * @param value The pathId to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class ExpeditionRecallReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 path_id = 8;</code>
+       * <code>uint32 path_id = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearPathId() {
@@ -527,7 +527,7 @@ public final class ExpeditionRecallReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\031ExpeditionRecallReq.proto\"&\n\023Expeditio" +
-      "nRecallReq\022\017\n\007path_id\030\010 \001(\rB\033\n\031emu.grass" +
+      "nRecallReq\022\017\n\007path_id\030\004 \001(\rB\033\n\031emu.grass" +
       "cutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

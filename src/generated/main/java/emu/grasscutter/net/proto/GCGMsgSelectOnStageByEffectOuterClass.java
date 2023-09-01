@@ -19,10 +19,10 @@ public final class GCGMsgSelectOnStageByEffectOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 card_guid = 11;</code>
-     * @return The cardGuid.
+     * <code>uint32 controller_id = 15;</code>
+     * @return The controllerId.
      */
-    int getCardGuid();
+    int getControllerId();
 
     /**
      * <code>uint32 skill_id = 3;</code>
@@ -31,14 +31,14 @@ public final class GCGMsgSelectOnStageByEffectOuterClass {
     int getSkillId();
 
     /**
-     * <code>uint32 controller_id = 5;</code>
-     * @return The controllerId.
+     * <code>uint32 card_guid = 12;</code>
+     * @return The cardGuid.
      */
-    int getControllerId();
+    int getCardGuid();
   }
   /**
    * <pre>
-   * Obf: FGPAKGPNGHM
+   * Obf: DKHMOCAKHKK
    * </pre>
    *
    * Protobuf type {@code GCGMsgSelectOnStageByEffect}
@@ -90,14 +90,14 @@ public final class GCGMsgSelectOnStageByEffectOuterClass {
               skillId_ = input.readUInt32();
               break;
             }
-            case 40: {
-
-              controllerId_ = input.readUInt32();
-              break;
-            }
-            case 88: {
+            case 96: {
 
               cardGuid_ = input.readUInt32();
+              break;
+            }
+            case 120: {
+
+              controllerId_ = input.readUInt32();
               break;
             }
             default: {
@@ -132,15 +132,15 @@ public final class GCGMsgSelectOnStageByEffectOuterClass {
               emu.grasscutter.net.proto.GCGMsgSelectOnStageByEffectOuterClass.GCGMsgSelectOnStageByEffect.class, emu.grasscutter.net.proto.GCGMsgSelectOnStageByEffectOuterClass.GCGMsgSelectOnStageByEffect.Builder.class);
     }
 
-    public static final int CARD_GUID_FIELD_NUMBER = 11;
-    private int cardGuid_;
+    public static final int CONTROLLER_ID_FIELD_NUMBER = 15;
+    private int controllerId_;
     /**
-     * <code>uint32 card_guid = 11;</code>
-     * @return The cardGuid.
+     * <code>uint32 controller_id = 15;</code>
+     * @return The controllerId.
      */
     @java.lang.Override
-    public int getCardGuid() {
-      return cardGuid_;
+    public int getControllerId() {
+      return controllerId_;
     }
 
     public static final int SKILL_ID_FIELD_NUMBER = 3;
@@ -154,15 +154,15 @@ public final class GCGMsgSelectOnStageByEffectOuterClass {
       return skillId_;
     }
 
-    public static final int CONTROLLER_ID_FIELD_NUMBER = 5;
-    private int controllerId_;
+    public static final int CARD_GUID_FIELD_NUMBER = 12;
+    private int cardGuid_;
     /**
-     * <code>uint32 controller_id = 5;</code>
-     * @return The controllerId.
+     * <code>uint32 card_guid = 12;</code>
+     * @return The cardGuid.
      */
     @java.lang.Override
-    public int getControllerId() {
-      return controllerId_;
+    public int getCardGuid() {
+      return cardGuid_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -182,11 +182,11 @@ public final class GCGMsgSelectOnStageByEffectOuterClass {
       if (skillId_ != 0) {
         output.writeUInt32(3, skillId_);
       }
-      if (controllerId_ != 0) {
-        output.writeUInt32(5, controllerId_);
-      }
       if (cardGuid_ != 0) {
-        output.writeUInt32(11, cardGuid_);
+        output.writeUInt32(12, cardGuid_);
+      }
+      if (controllerId_ != 0) {
+        output.writeUInt32(15, controllerId_);
       }
       unknownFields.writeTo(output);
     }
@@ -201,13 +201,13 @@ public final class GCGMsgSelectOnStageByEffectOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(3, skillId_);
       }
-      if (controllerId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, controllerId_);
-      }
       if (cardGuid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, cardGuid_);
+          .computeUInt32Size(12, cardGuid_);
+      }
+      if (controllerId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(15, controllerId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -224,12 +224,12 @@ public final class GCGMsgSelectOnStageByEffectOuterClass {
       }
       emu.grasscutter.net.proto.GCGMsgSelectOnStageByEffectOuterClass.GCGMsgSelectOnStageByEffect other = (emu.grasscutter.net.proto.GCGMsgSelectOnStageByEffectOuterClass.GCGMsgSelectOnStageByEffect) obj;
 
-      if (getCardGuid()
-          != other.getCardGuid()) return false;
-      if (getSkillId()
-          != other.getSkillId()) return false;
       if (getControllerId()
           != other.getControllerId()) return false;
+      if (getSkillId()
+          != other.getSkillId()) return false;
+      if (getCardGuid()
+          != other.getCardGuid()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -241,12 +241,12 @@ public final class GCGMsgSelectOnStageByEffectOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + CARD_GUID_FIELD_NUMBER;
-      hash = (53 * hash) + getCardGuid();
-      hash = (37 * hash) + SKILL_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getSkillId();
       hash = (37 * hash) + CONTROLLER_ID_FIELD_NUMBER;
       hash = (53 * hash) + getControllerId();
+      hash = (37 * hash) + SKILL_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSkillId();
+      hash = (37 * hash) + CARD_GUID_FIELD_NUMBER;
+      hash = (53 * hash) + getCardGuid();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -344,7 +344,7 @@ public final class GCGMsgSelectOnStageByEffectOuterClass {
     }
     /**
      * <pre>
-     * Obf: FGPAKGPNGHM
+     * Obf: DKHMOCAKHKK
      * </pre>
      *
      * Protobuf type {@code GCGMsgSelectOnStageByEffect}
@@ -384,11 +384,11 @@ public final class GCGMsgSelectOnStageByEffectOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        cardGuid_ = 0;
+        controllerId_ = 0;
 
         skillId_ = 0;
 
-        controllerId_ = 0;
+        cardGuid_ = 0;
 
         return this;
       }
@@ -416,9 +416,9 @@ public final class GCGMsgSelectOnStageByEffectOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.GCGMsgSelectOnStageByEffectOuterClass.GCGMsgSelectOnStageByEffect buildPartial() {
         emu.grasscutter.net.proto.GCGMsgSelectOnStageByEffectOuterClass.GCGMsgSelectOnStageByEffect result = new emu.grasscutter.net.proto.GCGMsgSelectOnStageByEffectOuterClass.GCGMsgSelectOnStageByEffect(this);
-        result.cardGuid_ = cardGuid_;
-        result.skillId_ = skillId_;
         result.controllerId_ = controllerId_;
+        result.skillId_ = skillId_;
+        result.cardGuid_ = cardGuid_;
         onBuilt();
         return result;
       }
@@ -467,14 +467,14 @@ public final class GCGMsgSelectOnStageByEffectOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.GCGMsgSelectOnStageByEffectOuterClass.GCGMsgSelectOnStageByEffect other) {
         if (other == emu.grasscutter.net.proto.GCGMsgSelectOnStageByEffectOuterClass.GCGMsgSelectOnStageByEffect.getDefaultInstance()) return this;
-        if (other.getCardGuid() != 0) {
-          setCardGuid(other.getCardGuid());
+        if (other.getControllerId() != 0) {
+          setControllerId(other.getControllerId());
         }
         if (other.getSkillId() != 0) {
           setSkillId(other.getSkillId());
         }
-        if (other.getControllerId() != 0) {
-          setControllerId(other.getControllerId());
+        if (other.getCardGuid() != 0) {
+          setCardGuid(other.getCardGuid());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -505,33 +505,33 @@ public final class GCGMsgSelectOnStageByEffectOuterClass {
         return this;
       }
 
-      private int cardGuid_ ;
+      private int controllerId_ ;
       /**
-       * <code>uint32 card_guid = 11;</code>
-       * @return The cardGuid.
+       * <code>uint32 controller_id = 15;</code>
+       * @return The controllerId.
        */
       @java.lang.Override
-      public int getCardGuid() {
-        return cardGuid_;
+      public int getControllerId() {
+        return controllerId_;
       }
       /**
-       * <code>uint32 card_guid = 11;</code>
-       * @param value The cardGuid to set.
+       * <code>uint32 controller_id = 15;</code>
+       * @param value The controllerId to set.
        * @return This builder for chaining.
        */
-      public Builder setCardGuid(int value) {
+      public Builder setControllerId(int value) {
         
-        cardGuid_ = value;
+        controllerId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 card_guid = 11;</code>
+       * <code>uint32 controller_id = 15;</code>
        * @return This builder for chaining.
        */
-      public Builder clearCardGuid() {
+      public Builder clearControllerId() {
         
-        cardGuid_ = 0;
+        controllerId_ = 0;
         onChanged();
         return this;
       }
@@ -567,33 +567,33 @@ public final class GCGMsgSelectOnStageByEffectOuterClass {
         return this;
       }
 
-      private int controllerId_ ;
+      private int cardGuid_ ;
       /**
-       * <code>uint32 controller_id = 5;</code>
-       * @return The controllerId.
+       * <code>uint32 card_guid = 12;</code>
+       * @return The cardGuid.
        */
       @java.lang.Override
-      public int getControllerId() {
-        return controllerId_;
+      public int getCardGuid() {
+        return cardGuid_;
       }
       /**
-       * <code>uint32 controller_id = 5;</code>
-       * @param value The controllerId to set.
+       * <code>uint32 card_guid = 12;</code>
+       * @param value The cardGuid to set.
        * @return This builder for chaining.
        */
-      public Builder setControllerId(int value) {
+      public Builder setCardGuid(int value) {
         
-        controllerId_ = value;
+        cardGuid_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 controller_id = 5;</code>
+       * <code>uint32 card_guid = 12;</code>
        * @return This builder for chaining.
        */
-      public Builder clearControllerId() {
+      public Builder clearCardGuid() {
         
-        controllerId_ = 0;
+        cardGuid_ = 0;
         onChanged();
         return this;
       }
@@ -665,9 +665,9 @@ public final class GCGMsgSelectOnStageByEffectOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n!GCGMsgSelectOnStageByEffect.proto\"Y\n\033G" +
-      "CGMsgSelectOnStageByEffect\022\021\n\tcard_guid\030" +
-      "\013 \001(\r\022\020\n\010skill_id\030\003 \001(\r\022\025\n\rcontroller_id" +
-      "\030\005 \001(\rB\033\n\031emu.grasscutter.net.protob\006pro" +
+      "CGMsgSelectOnStageByEffect\022\025\n\rcontroller" +
+      "_id\030\017 \001(\r\022\020\n\010skill_id\030\003 \001(\r\022\021\n\tcard_guid" +
+      "\030\014 \001(\rB\033\n\031emu.grasscutter.net.protob\006pro" +
       "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -679,7 +679,7 @@ public final class GCGMsgSelectOnStageByEffectOuterClass {
     internal_static_GCGMsgSelectOnStageByEffect_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GCGMsgSelectOnStageByEffect_descriptor,
-        new java.lang.String[] { "CardGuid", "SkillId", "ControllerId", });
+        new java.lang.String[] { "ControllerId", "SkillId", "CardGuid", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

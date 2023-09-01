@@ -19,33 +19,33 @@ public final class OneoffGatherPointDetectorDataNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 8;</code>
+     * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 10;</code>
      */
     java.util.List<emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData> 
         getOneoffGatherPointDetectorDataListList();
     /**
-     * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 8;</code>
+     * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 10;</code>
      */
     emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData getOneoffGatherPointDetectorDataList(int index);
     /**
-     * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 8;</code>
+     * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 10;</code>
      */
     int getOneoffGatherPointDetectorDataListCount();
     /**
-     * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 8;</code>
+     * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 10;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorDataOrBuilder> 
         getOneoffGatherPointDetectorDataListOrBuilderList();
     /**
-     * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 8;</code>
+     * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 10;</code>
      */
     emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorDataOrBuilder getOneoffGatherPointDetectorDataListOrBuilder(
         int index);
   }
   /**
    * <pre>
-   * CmdId: 4281
-   * Obf: GHAEGOOJNCI
+   * CmdId: 2925
+   * Obf: LBDCKAKMLOP
    * </pre>
    *
    * Protobuf type {@code OneoffGatherPointDetectorDataNotify}
@@ -94,7 +94,7 @@ public final class OneoffGatherPointDetectorDataNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 66: {
+            case 82: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 oneoffGatherPointDetectorDataList_ = new java.util.ArrayList<emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData>();
                 mutable_bitField0_ |= 0x00000001;
@@ -138,17 +138,17 @@ public final class OneoffGatherPointDetectorDataNotifyOuterClass {
               emu.grasscutter.net.proto.OneoffGatherPointDetectorDataNotifyOuterClass.OneoffGatherPointDetectorDataNotify.class, emu.grasscutter.net.proto.OneoffGatherPointDetectorDataNotifyOuterClass.OneoffGatherPointDetectorDataNotify.Builder.class);
     }
 
-    public static final int ONEOFF_GATHER_POINT_DETECTOR_DATA_LIST_FIELD_NUMBER = 8;
+    public static final int ONEOFF_GATHER_POINT_DETECTOR_DATA_LIST_FIELD_NUMBER = 10;
     private java.util.List<emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData> oneoffGatherPointDetectorDataList_;
     /**
-     * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 8;</code>
+     * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 10;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData> getOneoffGatherPointDetectorDataListList() {
       return oneoffGatherPointDetectorDataList_;
     }
     /**
-     * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 8;</code>
+     * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 10;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorDataOrBuilder> 
@@ -156,21 +156,21 @@ public final class OneoffGatherPointDetectorDataNotifyOuterClass {
       return oneoffGatherPointDetectorDataList_;
     }
     /**
-     * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 8;</code>
+     * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 10;</code>
      */
     @java.lang.Override
     public int getOneoffGatherPointDetectorDataListCount() {
       return oneoffGatherPointDetectorDataList_.size();
     }
     /**
-     * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 8;</code>
+     * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 10;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData getOneoffGatherPointDetectorDataList(int index) {
       return oneoffGatherPointDetectorDataList_.get(index);
     }
     /**
-     * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 8;</code>
+     * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 10;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorDataOrBuilder getOneoffGatherPointDetectorDataListOrBuilder(
@@ -193,7 +193,7 @@ public final class OneoffGatherPointDetectorDataNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < oneoffGatherPointDetectorDataList_.size(); i++) {
-        output.writeMessage(8, oneoffGatherPointDetectorDataList_.get(i));
+        output.writeMessage(10, oneoffGatherPointDetectorDataList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -206,7 +206,7 @@ public final class OneoffGatherPointDetectorDataNotifyOuterClass {
       size = 0;
       for (int i = 0; i < oneoffGatherPointDetectorDataList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(8, oneoffGatherPointDetectorDataList_.get(i));
+          .computeMessageSize(10, oneoffGatherPointDetectorDataList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -337,8 +337,8 @@ public final class OneoffGatherPointDetectorDataNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4281
-     * Obf: GHAEGOOJNCI
+     * CmdId: 2925
+     * Obf: LBDCKAKMLOP
      * </pre>
      *
      * Protobuf type {@code OneoffGatherPointDetectorDataNotify}
@@ -538,7 +538,7 @@ public final class OneoffGatherPointDetectorDataNotifyOuterClass {
           emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData, emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData.Builder, emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorDataOrBuilder> oneoffGatherPointDetectorDataListBuilder_;
 
       /**
-       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 8;</code>
+       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 10;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData> getOneoffGatherPointDetectorDataListList() {
         if (oneoffGatherPointDetectorDataListBuilder_ == null) {
@@ -548,7 +548,7 @@ public final class OneoffGatherPointDetectorDataNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 8;</code>
+       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 10;</code>
        */
       public int getOneoffGatherPointDetectorDataListCount() {
         if (oneoffGatherPointDetectorDataListBuilder_ == null) {
@@ -558,7 +558,7 @@ public final class OneoffGatherPointDetectorDataNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 8;</code>
+       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 10;</code>
        */
       public emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData getOneoffGatherPointDetectorDataList(int index) {
         if (oneoffGatherPointDetectorDataListBuilder_ == null) {
@@ -568,7 +568,7 @@ public final class OneoffGatherPointDetectorDataNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 8;</code>
+       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 10;</code>
        */
       public Builder setOneoffGatherPointDetectorDataList(
           int index, emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData value) {
@@ -585,7 +585,7 @@ public final class OneoffGatherPointDetectorDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 8;</code>
+       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 10;</code>
        */
       public Builder setOneoffGatherPointDetectorDataList(
           int index, emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData.Builder builderForValue) {
@@ -599,7 +599,7 @@ public final class OneoffGatherPointDetectorDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 8;</code>
+       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 10;</code>
        */
       public Builder addOneoffGatherPointDetectorDataList(emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData value) {
         if (oneoffGatherPointDetectorDataListBuilder_ == null) {
@@ -615,7 +615,7 @@ public final class OneoffGatherPointDetectorDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 8;</code>
+       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 10;</code>
        */
       public Builder addOneoffGatherPointDetectorDataList(
           int index, emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData value) {
@@ -632,7 +632,7 @@ public final class OneoffGatherPointDetectorDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 8;</code>
+       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 10;</code>
        */
       public Builder addOneoffGatherPointDetectorDataList(
           emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData.Builder builderForValue) {
@@ -646,7 +646,7 @@ public final class OneoffGatherPointDetectorDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 8;</code>
+       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 10;</code>
        */
       public Builder addOneoffGatherPointDetectorDataList(
           int index, emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData.Builder builderForValue) {
@@ -660,7 +660,7 @@ public final class OneoffGatherPointDetectorDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 8;</code>
+       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 10;</code>
        */
       public Builder addAllOneoffGatherPointDetectorDataList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData> values) {
@@ -675,7 +675,7 @@ public final class OneoffGatherPointDetectorDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 8;</code>
+       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 10;</code>
        */
       public Builder clearOneoffGatherPointDetectorDataList() {
         if (oneoffGatherPointDetectorDataListBuilder_ == null) {
@@ -688,7 +688,7 @@ public final class OneoffGatherPointDetectorDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 8;</code>
+       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 10;</code>
        */
       public Builder removeOneoffGatherPointDetectorDataList(int index) {
         if (oneoffGatherPointDetectorDataListBuilder_ == null) {
@@ -701,14 +701,14 @@ public final class OneoffGatherPointDetectorDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 8;</code>
+       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 10;</code>
        */
       public emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData.Builder getOneoffGatherPointDetectorDataListBuilder(
           int index) {
         return getOneoffGatherPointDetectorDataListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 8;</code>
+       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 10;</code>
        */
       public emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorDataOrBuilder getOneoffGatherPointDetectorDataListOrBuilder(
           int index) {
@@ -718,7 +718,7 @@ public final class OneoffGatherPointDetectorDataNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 8;</code>
+       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 10;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorDataOrBuilder> 
            getOneoffGatherPointDetectorDataListOrBuilderList() {
@@ -729,14 +729,14 @@ public final class OneoffGatherPointDetectorDataNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 8;</code>
+       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 10;</code>
        */
       public emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData.Builder addOneoffGatherPointDetectorDataListBuilder() {
         return getOneoffGatherPointDetectorDataListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData.getDefaultInstance());
       }
       /**
-       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 8;</code>
+       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 10;</code>
        */
       public emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData.Builder addOneoffGatherPointDetectorDataListBuilder(
           int index) {
@@ -744,7 +744,7 @@ public final class OneoffGatherPointDetectorDataNotifyOuterClass {
             index, emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData.getDefaultInstance());
       }
       /**
-       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 8;</code>
+       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 10;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData.Builder> 
            getOneoffGatherPointDetectorDataListBuilderList() {
@@ -835,7 +835,7 @@ public final class OneoffGatherPointDetectorDataNotifyOuterClass {
       "oto\032#OneoffGatherPointDetectorData.proto" +
       "\"u\n#OneoffGatherPointDetectorDataNotify\022" +
       "N\n&oneoff_gather_point_detector_data_lis" +
-      "t\030\010 \003(\0132\036.OneoffGatherPointDetectorDataB" +
+      "t\030\n \003(\0132\036.OneoffGatherPointDetectorDataB" +
       "\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

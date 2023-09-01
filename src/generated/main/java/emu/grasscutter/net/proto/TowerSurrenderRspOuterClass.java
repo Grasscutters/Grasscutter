@@ -19,15 +19,15 @@ public final class TowerSurrenderRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 10;</code>
+     * <code>int32 retcode = 5;</code>
      * @return The retcode.
      */
     int getRetcode();
   }
   /**
    * <pre>
-   * CmdId: 2433
-   * Obf: GDJBAKHBAAE
+   * CmdId: 22267
+   * Obf: EGGOCENDCNC
    * </pre>
    *
    * Protobuf type {@code TowerSurrenderRsp}
@@ -74,7 +74,7 @@ public final class TowerSurrenderRspOuterClass {
             case 0:
               done = true;
               break;
-            case 80: {
+            case 40: {
 
               retcode_ = input.readInt32();
               break;
@@ -111,10 +111,10 @@ public final class TowerSurrenderRspOuterClass {
               emu.grasscutter.net.proto.TowerSurrenderRspOuterClass.TowerSurrenderRsp.class, emu.grasscutter.net.proto.TowerSurrenderRspOuterClass.TowerSurrenderRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 10;
+    public static final int RETCODE_FIELD_NUMBER = 5;
     private int retcode_;
     /**
-     * <code>int32 retcode = 10;</code>
+     * <code>int32 retcode = 5;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class TowerSurrenderRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (retcode_ != 0) {
-        output.writeInt32(10, retcode_);
+        output.writeInt32(5, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class TowerSurrenderRspOuterClass {
       size = 0;
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(10, retcode_);
+          .computeInt32Size(5, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class TowerSurrenderRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2433
-     * Obf: GDJBAKHBAAE
+     * CmdId: 22267
+     * Obf: EGGOCENDCNC
      * </pre>
      *
      * Protobuf type {@code TowerSurrenderRsp}
@@ -431,7 +431,7 @@ public final class TowerSurrenderRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 10;</code>
+       * <code>int32 retcode = 5;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class TowerSurrenderRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 10;</code>
+       * <code>int32 retcode = 5;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class TowerSurrenderRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 10;</code>
+       * <code>int32 retcode = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -527,7 +527,7 @@ public final class TowerSurrenderRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\027TowerSurrenderRsp.proto\"$\n\021TowerSurren" +
-      "derRsp\022\017\n\007retcode\030\n \001(\005B\033\n\031emu.grasscutt" +
+      "derRsp\022\017\n\007retcode\030\005 \001(\005B\033\n\031emu.grasscutt" +
       "er.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

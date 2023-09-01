@@ -19,39 +19,39 @@ public final class ResinCardDataUpdateNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .ResinCardData card_data_list = 4;</code>
+     * <code>uint32 today_start_time = 10;</code>
+     * @return The todayStartTime.
+     */
+    int getTodayStartTime();
+
+    /**
+     * <code>repeated .ResinCardData card_data_list = 7;</code>
      */
     java.util.List<emu.grasscutter.net.proto.ResinCardDataOuterClass.ResinCardData> 
         getCardDataListList();
     /**
-     * <code>repeated .ResinCardData card_data_list = 4;</code>
+     * <code>repeated .ResinCardData card_data_list = 7;</code>
      */
     emu.grasscutter.net.proto.ResinCardDataOuterClass.ResinCardData getCardDataList(int index);
     /**
-     * <code>repeated .ResinCardData card_data_list = 4;</code>
+     * <code>repeated .ResinCardData card_data_list = 7;</code>
      */
     int getCardDataListCount();
     /**
-     * <code>repeated .ResinCardData card_data_list = 4;</code>
+     * <code>repeated .ResinCardData card_data_list = 7;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.ResinCardDataOuterClass.ResinCardDataOrBuilder> 
         getCardDataListOrBuilderList();
     /**
-     * <code>repeated .ResinCardData card_data_list = 4;</code>
+     * <code>repeated .ResinCardData card_data_list = 7;</code>
      */
     emu.grasscutter.net.proto.ResinCardDataOuterClass.ResinCardDataOrBuilder getCardDataListOrBuilder(
         int index);
-
-    /**
-     * <code>uint32 today_start_time = 14;</code>
-     * @return The todayStartTime.
-     */
-    int getTodayStartTime();
   }
   /**
    * <pre>
-   * CmdId: 4116
-   * Obf: HDIPGJDMBOA
+   * CmdId: 6072
+   * Obf: ILIKBAGAKKB
    * </pre>
    *
    * Protobuf type {@code ResinCardDataUpdateNotify}
@@ -100,7 +100,7 @@ public final class ResinCardDataUpdateNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 34: {
+            case 58: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 cardDataList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ResinCardDataOuterClass.ResinCardData>();
                 mutable_bitField0_ |= 0x00000001;
@@ -109,7 +109,7 @@ public final class ResinCardDataUpdateNotifyOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.ResinCardDataOuterClass.ResinCardData.parser(), extensionRegistry));
               break;
             }
-            case 112: {
+            case 80: {
 
               todayStartTime_ = input.readUInt32();
               break;
@@ -149,17 +149,28 @@ public final class ResinCardDataUpdateNotifyOuterClass {
               emu.grasscutter.net.proto.ResinCardDataUpdateNotifyOuterClass.ResinCardDataUpdateNotify.class, emu.grasscutter.net.proto.ResinCardDataUpdateNotifyOuterClass.ResinCardDataUpdateNotify.Builder.class);
     }
 
-    public static final int CARD_DATA_LIST_FIELD_NUMBER = 4;
+    public static final int TODAY_START_TIME_FIELD_NUMBER = 10;
+    private int todayStartTime_;
+    /**
+     * <code>uint32 today_start_time = 10;</code>
+     * @return The todayStartTime.
+     */
+    @java.lang.Override
+    public int getTodayStartTime() {
+      return todayStartTime_;
+    }
+
+    public static final int CARD_DATA_LIST_FIELD_NUMBER = 7;
     private java.util.List<emu.grasscutter.net.proto.ResinCardDataOuterClass.ResinCardData> cardDataList_;
     /**
-     * <code>repeated .ResinCardData card_data_list = 4;</code>
+     * <code>repeated .ResinCardData card_data_list = 7;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.ResinCardDataOuterClass.ResinCardData> getCardDataListList() {
       return cardDataList_;
     }
     /**
-     * <code>repeated .ResinCardData card_data_list = 4;</code>
+     * <code>repeated .ResinCardData card_data_list = 7;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.ResinCardDataOuterClass.ResinCardDataOrBuilder> 
@@ -167,37 +178,26 @@ public final class ResinCardDataUpdateNotifyOuterClass {
       return cardDataList_;
     }
     /**
-     * <code>repeated .ResinCardData card_data_list = 4;</code>
+     * <code>repeated .ResinCardData card_data_list = 7;</code>
      */
     @java.lang.Override
     public int getCardDataListCount() {
       return cardDataList_.size();
     }
     /**
-     * <code>repeated .ResinCardData card_data_list = 4;</code>
+     * <code>repeated .ResinCardData card_data_list = 7;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.ResinCardDataOuterClass.ResinCardData getCardDataList(int index) {
       return cardDataList_.get(index);
     }
     /**
-     * <code>repeated .ResinCardData card_data_list = 4;</code>
+     * <code>repeated .ResinCardData card_data_list = 7;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.ResinCardDataOuterClass.ResinCardDataOrBuilder getCardDataListOrBuilder(
         int index) {
       return cardDataList_.get(index);
-    }
-
-    public static final int TODAY_START_TIME_FIELD_NUMBER = 14;
-    private int todayStartTime_;
-    /**
-     * <code>uint32 today_start_time = 14;</code>
-     * @return The todayStartTime.
-     */
-    @java.lang.Override
-    public int getTodayStartTime() {
-      return todayStartTime_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -215,10 +215,10 @@ public final class ResinCardDataUpdateNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < cardDataList_.size(); i++) {
-        output.writeMessage(4, cardDataList_.get(i));
+        output.writeMessage(7, cardDataList_.get(i));
       }
       if (todayStartTime_ != 0) {
-        output.writeUInt32(14, todayStartTime_);
+        output.writeUInt32(10, todayStartTime_);
       }
       unknownFields.writeTo(output);
     }
@@ -231,11 +231,11 @@ public final class ResinCardDataUpdateNotifyOuterClass {
       size = 0;
       for (int i = 0; i < cardDataList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, cardDataList_.get(i));
+          .computeMessageSize(7, cardDataList_.get(i));
       }
       if (todayStartTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, todayStartTime_);
+          .computeUInt32Size(10, todayStartTime_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -252,10 +252,10 @@ public final class ResinCardDataUpdateNotifyOuterClass {
       }
       emu.grasscutter.net.proto.ResinCardDataUpdateNotifyOuterClass.ResinCardDataUpdateNotify other = (emu.grasscutter.net.proto.ResinCardDataUpdateNotifyOuterClass.ResinCardDataUpdateNotify) obj;
 
-      if (!getCardDataListList()
-          .equals(other.getCardDataListList())) return false;
       if (getTodayStartTime()
           != other.getTodayStartTime()) return false;
+      if (!getCardDataListList()
+          .equals(other.getCardDataListList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -267,12 +267,12 @@ public final class ResinCardDataUpdateNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TODAY_START_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getTodayStartTime();
       if (getCardDataListCount() > 0) {
         hash = (37 * hash) + CARD_DATA_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getCardDataListList().hashCode();
       }
-      hash = (37 * hash) + TODAY_START_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + getTodayStartTime();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -370,8 +370,8 @@ public final class ResinCardDataUpdateNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4116
-     * Obf: HDIPGJDMBOA
+     * CmdId: 6072
+     * Obf: ILIKBAGAKKB
      * </pre>
      *
      * Protobuf type {@code ResinCardDataUpdateNotify}
@@ -412,14 +412,14 @@ public final class ResinCardDataUpdateNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        todayStartTime_ = 0;
+
         if (cardDataListBuilder_ == null) {
           cardDataList_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           cardDataListBuilder_.clear();
         }
-        todayStartTime_ = 0;
-
         return this;
       }
 
@@ -447,6 +447,7 @@ public final class ResinCardDataUpdateNotifyOuterClass {
       public emu.grasscutter.net.proto.ResinCardDataUpdateNotifyOuterClass.ResinCardDataUpdateNotify buildPartial() {
         emu.grasscutter.net.proto.ResinCardDataUpdateNotifyOuterClass.ResinCardDataUpdateNotify result = new emu.grasscutter.net.proto.ResinCardDataUpdateNotifyOuterClass.ResinCardDataUpdateNotify(this);
         int from_bitField0_ = bitField0_;
+        result.todayStartTime_ = todayStartTime_;
         if (cardDataListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             cardDataList_ = java.util.Collections.unmodifiableList(cardDataList_);
@@ -456,7 +457,6 @@ public final class ResinCardDataUpdateNotifyOuterClass {
         } else {
           result.cardDataList_ = cardDataListBuilder_.build();
         }
-        result.todayStartTime_ = todayStartTime_;
         onBuilt();
         return result;
       }
@@ -505,6 +505,9 @@ public final class ResinCardDataUpdateNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.ResinCardDataUpdateNotifyOuterClass.ResinCardDataUpdateNotify other) {
         if (other == emu.grasscutter.net.proto.ResinCardDataUpdateNotifyOuterClass.ResinCardDataUpdateNotify.getDefaultInstance()) return this;
+        if (other.getTodayStartTime() != 0) {
+          setTodayStartTime(other.getTodayStartTime());
+        }
         if (cardDataListBuilder_ == null) {
           if (!other.cardDataList_.isEmpty()) {
             if (cardDataList_.isEmpty()) {
@@ -530,9 +533,6 @@ public final class ResinCardDataUpdateNotifyOuterClass {
               cardDataListBuilder_.addAllMessages(other.cardDataList_);
             }
           }
-        }
-        if (other.getTodayStartTime() != 0) {
-          setTodayStartTime(other.getTodayStartTime());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -564,6 +564,37 @@ public final class ResinCardDataUpdateNotifyOuterClass {
       }
       private int bitField0_;
 
+      private int todayStartTime_ ;
+      /**
+       * <code>uint32 today_start_time = 10;</code>
+       * @return The todayStartTime.
+       */
+      @java.lang.Override
+      public int getTodayStartTime() {
+        return todayStartTime_;
+      }
+      /**
+       * <code>uint32 today_start_time = 10;</code>
+       * @param value The todayStartTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTodayStartTime(int value) {
+        
+        todayStartTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 today_start_time = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTodayStartTime() {
+        
+        todayStartTime_ = 0;
+        onChanged();
+        return this;
+      }
+
       private java.util.List<emu.grasscutter.net.proto.ResinCardDataOuterClass.ResinCardData> cardDataList_ =
         java.util.Collections.emptyList();
       private void ensureCardDataListIsMutable() {
@@ -577,7 +608,7 @@ public final class ResinCardDataUpdateNotifyOuterClass {
           emu.grasscutter.net.proto.ResinCardDataOuterClass.ResinCardData, emu.grasscutter.net.proto.ResinCardDataOuterClass.ResinCardData.Builder, emu.grasscutter.net.proto.ResinCardDataOuterClass.ResinCardDataOrBuilder> cardDataListBuilder_;
 
       /**
-       * <code>repeated .ResinCardData card_data_list = 4;</code>
+       * <code>repeated .ResinCardData card_data_list = 7;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.ResinCardDataOuterClass.ResinCardData> getCardDataListList() {
         if (cardDataListBuilder_ == null) {
@@ -587,7 +618,7 @@ public final class ResinCardDataUpdateNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .ResinCardData card_data_list = 4;</code>
+       * <code>repeated .ResinCardData card_data_list = 7;</code>
        */
       public int getCardDataListCount() {
         if (cardDataListBuilder_ == null) {
@@ -597,7 +628,7 @@ public final class ResinCardDataUpdateNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .ResinCardData card_data_list = 4;</code>
+       * <code>repeated .ResinCardData card_data_list = 7;</code>
        */
       public emu.grasscutter.net.proto.ResinCardDataOuterClass.ResinCardData getCardDataList(int index) {
         if (cardDataListBuilder_ == null) {
@@ -607,7 +638,7 @@ public final class ResinCardDataUpdateNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .ResinCardData card_data_list = 4;</code>
+       * <code>repeated .ResinCardData card_data_list = 7;</code>
        */
       public Builder setCardDataList(
           int index, emu.grasscutter.net.proto.ResinCardDataOuterClass.ResinCardData value) {
@@ -624,7 +655,7 @@ public final class ResinCardDataUpdateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ResinCardData card_data_list = 4;</code>
+       * <code>repeated .ResinCardData card_data_list = 7;</code>
        */
       public Builder setCardDataList(
           int index, emu.grasscutter.net.proto.ResinCardDataOuterClass.ResinCardData.Builder builderForValue) {
@@ -638,7 +669,7 @@ public final class ResinCardDataUpdateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ResinCardData card_data_list = 4;</code>
+       * <code>repeated .ResinCardData card_data_list = 7;</code>
        */
       public Builder addCardDataList(emu.grasscutter.net.proto.ResinCardDataOuterClass.ResinCardData value) {
         if (cardDataListBuilder_ == null) {
@@ -654,7 +685,7 @@ public final class ResinCardDataUpdateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ResinCardData card_data_list = 4;</code>
+       * <code>repeated .ResinCardData card_data_list = 7;</code>
        */
       public Builder addCardDataList(
           int index, emu.grasscutter.net.proto.ResinCardDataOuterClass.ResinCardData value) {
@@ -671,7 +702,7 @@ public final class ResinCardDataUpdateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ResinCardData card_data_list = 4;</code>
+       * <code>repeated .ResinCardData card_data_list = 7;</code>
        */
       public Builder addCardDataList(
           emu.grasscutter.net.proto.ResinCardDataOuterClass.ResinCardData.Builder builderForValue) {
@@ -685,7 +716,7 @@ public final class ResinCardDataUpdateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ResinCardData card_data_list = 4;</code>
+       * <code>repeated .ResinCardData card_data_list = 7;</code>
        */
       public Builder addCardDataList(
           int index, emu.grasscutter.net.proto.ResinCardDataOuterClass.ResinCardData.Builder builderForValue) {
@@ -699,7 +730,7 @@ public final class ResinCardDataUpdateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ResinCardData card_data_list = 4;</code>
+       * <code>repeated .ResinCardData card_data_list = 7;</code>
        */
       public Builder addAllCardDataList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.ResinCardDataOuterClass.ResinCardData> values) {
@@ -714,7 +745,7 @@ public final class ResinCardDataUpdateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ResinCardData card_data_list = 4;</code>
+       * <code>repeated .ResinCardData card_data_list = 7;</code>
        */
       public Builder clearCardDataList() {
         if (cardDataListBuilder_ == null) {
@@ -727,7 +758,7 @@ public final class ResinCardDataUpdateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ResinCardData card_data_list = 4;</code>
+       * <code>repeated .ResinCardData card_data_list = 7;</code>
        */
       public Builder removeCardDataList(int index) {
         if (cardDataListBuilder_ == null) {
@@ -740,14 +771,14 @@ public final class ResinCardDataUpdateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ResinCardData card_data_list = 4;</code>
+       * <code>repeated .ResinCardData card_data_list = 7;</code>
        */
       public emu.grasscutter.net.proto.ResinCardDataOuterClass.ResinCardData.Builder getCardDataListBuilder(
           int index) {
         return getCardDataListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .ResinCardData card_data_list = 4;</code>
+       * <code>repeated .ResinCardData card_data_list = 7;</code>
        */
       public emu.grasscutter.net.proto.ResinCardDataOuterClass.ResinCardDataOrBuilder getCardDataListOrBuilder(
           int index) {
@@ -757,7 +788,7 @@ public final class ResinCardDataUpdateNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .ResinCardData card_data_list = 4;</code>
+       * <code>repeated .ResinCardData card_data_list = 7;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.ResinCardDataOuterClass.ResinCardDataOrBuilder> 
            getCardDataListOrBuilderList() {
@@ -768,14 +799,14 @@ public final class ResinCardDataUpdateNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .ResinCardData card_data_list = 4;</code>
+       * <code>repeated .ResinCardData card_data_list = 7;</code>
        */
       public emu.grasscutter.net.proto.ResinCardDataOuterClass.ResinCardData.Builder addCardDataListBuilder() {
         return getCardDataListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.ResinCardDataOuterClass.ResinCardData.getDefaultInstance());
       }
       /**
-       * <code>repeated .ResinCardData card_data_list = 4;</code>
+       * <code>repeated .ResinCardData card_data_list = 7;</code>
        */
       public emu.grasscutter.net.proto.ResinCardDataOuterClass.ResinCardData.Builder addCardDataListBuilder(
           int index) {
@@ -783,7 +814,7 @@ public final class ResinCardDataUpdateNotifyOuterClass {
             index, emu.grasscutter.net.proto.ResinCardDataOuterClass.ResinCardData.getDefaultInstance());
       }
       /**
-       * <code>repeated .ResinCardData card_data_list = 4;</code>
+       * <code>repeated .ResinCardData card_data_list = 7;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.ResinCardDataOuterClass.ResinCardData.Builder> 
            getCardDataListBuilderList() {
@@ -802,37 +833,6 @@ public final class ResinCardDataUpdateNotifyOuterClass {
           cardDataList_ = null;
         }
         return cardDataListBuilder_;
-      }
-
-      private int todayStartTime_ ;
-      /**
-       * <code>uint32 today_start_time = 14;</code>
-       * @return The todayStartTime.
-       */
-      @java.lang.Override
-      public int getTodayStartTime() {
-        return todayStartTime_;
-      }
-      /**
-       * <code>uint32 today_start_time = 14;</code>
-       * @param value The todayStartTime to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTodayStartTime(int value) {
-        
-        todayStartTime_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 today_start_time = 14;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTodayStartTime() {
-        
-        todayStartTime_ = 0;
-        onChanged();
-        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -903,8 +903,8 @@ public final class ResinCardDataUpdateNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\037ResinCardDataUpdateNotify.proto\032\023Resin" +
       "CardData.proto\"]\n\031ResinCardDataUpdateNot" +
-      "ify\022&\n\016card_data_list\030\004 \003(\0132\016.ResinCardD" +
-      "ata\022\030\n\020today_start_time\030\016 \001(\rB\033\n\031emu.gra" +
+      "ify\022\030\n\020today_start_time\030\n \001(\r\022&\n\016card_da" +
+      "ta_list\030\007 \003(\0132\016.ResinCardDataB\033\n\031emu.gra" +
       "sscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -917,7 +917,7 @@ public final class ResinCardDataUpdateNotifyOuterClass {
     internal_static_ResinCardDataUpdateNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ResinCardDataUpdateNotify_descriptor,
-        new java.lang.String[] { "CardDataList", "TodayStartTime", });
+        new java.lang.String[] { "TodayStartTime", "CardDataList", });
     emu.grasscutter.net.proto.ResinCardDataOuterClass.getDescriptor();
   }
 

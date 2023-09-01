@@ -20,8 +20,8 @@ public final class ForgeGetQueueDataReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 680
-   * Obf: ICIPKMHLDKP
+   * CmdId: 477
+   * Obf: AFDBIGNEOMH
    * </pre>
    *
    * Protobuf type {@code ForgeGetQueueDataReq}
@@ -246,8 +246,8 @@ public final class ForgeGetQueueDataReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 680
-     * Obf: ICIPKMHLDKP
+     * CmdId: 477
+     * Obf: AFDBIGNEOMH
      * </pre>
      *
      * Protobuf type {@code ForgeGetQueueDataReq}

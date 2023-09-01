@@ -16,7 +16,7 @@ public final class ActivityPushTipsStateOuterClass {
   }
   /**
    * <pre>
-   * Obf: OPOLNPOBLMB
+   * Obf: DKHCNPIKCHO
    * </pre>
    *
    * Protobuf enum {@code ActivityPushTipsState}

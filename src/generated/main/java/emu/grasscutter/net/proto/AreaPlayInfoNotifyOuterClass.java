@@ -19,26 +19,26 @@ public final class AreaPlayInfoNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 detail_play_type = 3;</code>
+     * <code>uint32 detail_play_type = 15;</code>
      * @return The detailPlayType.
      */
     int getDetailPlayType();
 
     /**
-     * <code>.AreaPlayType area_play_type = 1;</code>
+     * <code>.AreaPlayType area_play_type = 10;</code>
      * @return The enum numeric value on the wire for areaPlayType.
      */
     int getAreaPlayTypeValue();
     /**
-     * <code>.AreaPlayType area_play_type = 1;</code>
+     * <code>.AreaPlayType area_play_type = 10;</code>
      * @return The areaPlayType.
      */
     emu.grasscutter.net.proto.AreaPlayTypeOuterClass.AreaPlayType getAreaPlayType();
   }
   /**
    * <pre>
-   * CmdId: 3153
-   * Obf: OCJMKKKGBIK
+   * CmdId: 23472
+   * Obf: DFPINIJHMOB
    * </pre>
    *
    * Protobuf type {@code AreaPlayInfoNotify}
@@ -86,13 +86,13 @@ public final class AreaPlayInfoNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 80: {
               int rawValue = input.readEnum();
 
               areaPlayType_ = rawValue;
               break;
             }
-            case 24: {
+            case 120: {
 
               detailPlayType_ = input.readUInt32();
               break;
@@ -129,10 +129,10 @@ public final class AreaPlayInfoNotifyOuterClass {
               emu.grasscutter.net.proto.AreaPlayInfoNotifyOuterClass.AreaPlayInfoNotify.class, emu.grasscutter.net.proto.AreaPlayInfoNotifyOuterClass.AreaPlayInfoNotify.Builder.class);
     }
 
-    public static final int DETAIL_PLAY_TYPE_FIELD_NUMBER = 3;
+    public static final int DETAIL_PLAY_TYPE_FIELD_NUMBER = 15;
     private int detailPlayType_;
     /**
-     * <code>uint32 detail_play_type = 3;</code>
+     * <code>uint32 detail_play_type = 15;</code>
      * @return The detailPlayType.
      */
     @java.lang.Override
@@ -140,17 +140,17 @@ public final class AreaPlayInfoNotifyOuterClass {
       return detailPlayType_;
     }
 
-    public static final int AREA_PLAY_TYPE_FIELD_NUMBER = 1;
+    public static final int AREA_PLAY_TYPE_FIELD_NUMBER = 10;
     private int areaPlayType_;
     /**
-     * <code>.AreaPlayType area_play_type = 1;</code>
+     * <code>.AreaPlayType area_play_type = 10;</code>
      * @return The enum numeric value on the wire for areaPlayType.
      */
     @java.lang.Override public int getAreaPlayTypeValue() {
       return areaPlayType_;
     }
     /**
-     * <code>.AreaPlayType area_play_type = 1;</code>
+     * <code>.AreaPlayType area_play_type = 10;</code>
      * @return The areaPlayType.
      */
     @java.lang.Override public emu.grasscutter.net.proto.AreaPlayTypeOuterClass.AreaPlayType getAreaPlayType() {
@@ -174,10 +174,10 @@ public final class AreaPlayInfoNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (areaPlayType_ != emu.grasscutter.net.proto.AreaPlayTypeOuterClass.AreaPlayType.AREA_PLAY_NONE.getNumber()) {
-        output.writeEnum(1, areaPlayType_);
+        output.writeEnum(10, areaPlayType_);
       }
       if (detailPlayType_ != 0) {
-        output.writeUInt32(3, detailPlayType_);
+        output.writeUInt32(15, detailPlayType_);
       }
       unknownFields.writeTo(output);
     }
@@ -190,11 +190,11 @@ public final class AreaPlayInfoNotifyOuterClass {
       size = 0;
       if (areaPlayType_ != emu.grasscutter.net.proto.AreaPlayTypeOuterClass.AreaPlayType.AREA_PLAY_NONE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(1, areaPlayType_);
+          .computeEnumSize(10, areaPlayType_);
       }
       if (detailPlayType_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, detailPlayType_);
+          .computeUInt32Size(15, detailPlayType_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -326,8 +326,8 @@ public final class AreaPlayInfoNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 3153
-     * Obf: OCJMKKKGBIK
+     * CmdId: 23472
+     * Obf: DFPINIJHMOB
      * </pre>
      *
      * Protobuf type {@code AreaPlayInfoNotify}
@@ -484,7 +484,7 @@ public final class AreaPlayInfoNotifyOuterClass {
 
       private int detailPlayType_ ;
       /**
-       * <code>uint32 detail_play_type = 3;</code>
+       * <code>uint32 detail_play_type = 15;</code>
        * @return The detailPlayType.
        */
       @java.lang.Override
@@ -492,7 +492,7 @@ public final class AreaPlayInfoNotifyOuterClass {
         return detailPlayType_;
       }
       /**
-       * <code>uint32 detail_play_type = 3;</code>
+       * <code>uint32 detail_play_type = 15;</code>
        * @param value The detailPlayType to set.
        * @return This builder for chaining.
        */
@@ -503,7 +503,7 @@ public final class AreaPlayInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 detail_play_type = 3;</code>
+       * <code>uint32 detail_play_type = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearDetailPlayType() {
@@ -515,14 +515,14 @@ public final class AreaPlayInfoNotifyOuterClass {
 
       private int areaPlayType_ = 0;
       /**
-       * <code>.AreaPlayType area_play_type = 1;</code>
+       * <code>.AreaPlayType area_play_type = 10;</code>
        * @return The enum numeric value on the wire for areaPlayType.
        */
       @java.lang.Override public int getAreaPlayTypeValue() {
         return areaPlayType_;
       }
       /**
-       * <code>.AreaPlayType area_play_type = 1;</code>
+       * <code>.AreaPlayType area_play_type = 10;</code>
        * @param value The enum numeric value on the wire for areaPlayType to set.
        * @return This builder for chaining.
        */
@@ -533,7 +533,7 @@ public final class AreaPlayInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.AreaPlayType area_play_type = 1;</code>
+       * <code>.AreaPlayType area_play_type = 10;</code>
        * @return The areaPlayType.
        */
       @java.lang.Override
@@ -543,7 +543,7 @@ public final class AreaPlayInfoNotifyOuterClass {
         return result == null ? emu.grasscutter.net.proto.AreaPlayTypeOuterClass.AreaPlayType.UNRECOGNIZED : result;
       }
       /**
-       * <code>.AreaPlayType area_play_type = 1;</code>
+       * <code>.AreaPlayType area_play_type = 10;</code>
        * @param value The areaPlayType to set.
        * @return This builder for chaining.
        */
@@ -557,7 +557,7 @@ public final class AreaPlayInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.AreaPlayType area_play_type = 1;</code>
+       * <code>.AreaPlayType area_play_type = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearAreaPlayType() {
@@ -635,7 +635,7 @@ public final class AreaPlayInfoNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\030AreaPlayInfoNotify.proto\032\022AreaPlayType" +
       ".proto\"U\n\022AreaPlayInfoNotify\022\030\n\020detail_p" +
-      "lay_type\030\003 \001(\r\022%\n\016area_play_type\030\001 \001(\0162\r" +
+      "lay_type\030\017 \001(\r\022%\n\016area_play_type\030\n \001(\0162\r" +
       ".AreaPlayTypeB\033\n\031emu.grasscutter.net.pro" +
       "tob\006proto3"
     };

@@ -3,8 +3,8 @@ package emu.grasscutter.net.packet;
 import com.google.protobuf.GeneratedMessageV3;
 import emu.grasscutter.net.proto.PacketHeadOuterClass.PacketHead;
 import emu.grasscutter.utils.Crypto;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
+
+import java.io.*;
 
 public class BasePacket {
     private static final int const1 = 17767; // 0x4567

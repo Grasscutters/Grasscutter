@@ -19,21 +19,21 @@ public final class RedeemLegendaryKeyRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 legendary_key_count = 3;</code>
-     * @return The legendaryKeyCount.
-     */
-    int getLegendaryKeyCount();
-
-    /**
-     * <code>int32 retcode = 11;</code>
+     * <code>int32 retcode = 15;</code>
      * @return The retcode.
      */
     int getRetcode();
+
+    /**
+     * <code>uint32 legendary_key_count = 2;</code>
+     * @return The legendaryKeyCount.
+     */
+    int getLegendaryKeyCount();
   }
   /**
    * <pre>
-   * CmdId: 459
-   * Obf: GNDIOCKBMPI
+   * CmdId: 7270
+   * Obf: DDNNDBFNHKE
    * </pre>
    *
    * Protobuf type {@code RedeemLegendaryKeyRsp}
@@ -80,12 +80,12 @@ public final class RedeemLegendaryKeyRspOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 16: {
 
               legendaryKeyCount_ = input.readUInt32();
               break;
             }
-            case 88: {
+            case 120: {
 
               retcode_ = input.readInt32();
               break;
@@ -122,26 +122,26 @@ public final class RedeemLegendaryKeyRspOuterClass {
               emu.grasscutter.net.proto.RedeemLegendaryKeyRspOuterClass.RedeemLegendaryKeyRsp.class, emu.grasscutter.net.proto.RedeemLegendaryKeyRspOuterClass.RedeemLegendaryKeyRsp.Builder.class);
     }
 
-    public static final int LEGENDARY_KEY_COUNT_FIELD_NUMBER = 3;
-    private int legendaryKeyCount_;
-    /**
-     * <code>uint32 legendary_key_count = 3;</code>
-     * @return The legendaryKeyCount.
-     */
-    @java.lang.Override
-    public int getLegendaryKeyCount() {
-      return legendaryKeyCount_;
-    }
-
-    public static final int RETCODE_FIELD_NUMBER = 11;
+    public static final int RETCODE_FIELD_NUMBER = 15;
     private int retcode_;
     /**
-     * <code>int32 retcode = 11;</code>
+     * <code>int32 retcode = 15;</code>
      * @return The retcode.
      */
     @java.lang.Override
     public int getRetcode() {
       return retcode_;
+    }
+
+    public static final int LEGENDARY_KEY_COUNT_FIELD_NUMBER = 2;
+    private int legendaryKeyCount_;
+    /**
+     * <code>uint32 legendary_key_count = 2;</code>
+     * @return The legendaryKeyCount.
+     */
+    @java.lang.Override
+    public int getLegendaryKeyCount() {
+      return legendaryKeyCount_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -159,10 +159,10 @@ public final class RedeemLegendaryKeyRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (legendaryKeyCount_ != 0) {
-        output.writeUInt32(3, legendaryKeyCount_);
+        output.writeUInt32(2, legendaryKeyCount_);
       }
       if (retcode_ != 0) {
-        output.writeInt32(11, retcode_);
+        output.writeInt32(15, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -175,11 +175,11 @@ public final class RedeemLegendaryKeyRspOuterClass {
       size = 0;
       if (legendaryKeyCount_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, legendaryKeyCount_);
+          .computeUInt32Size(2, legendaryKeyCount_);
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(11, retcode_);
+          .computeInt32Size(15, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -196,10 +196,10 @@ public final class RedeemLegendaryKeyRspOuterClass {
       }
       emu.grasscutter.net.proto.RedeemLegendaryKeyRspOuterClass.RedeemLegendaryKeyRsp other = (emu.grasscutter.net.proto.RedeemLegendaryKeyRspOuterClass.RedeemLegendaryKeyRsp) obj;
 
-      if (getLegendaryKeyCount()
-          != other.getLegendaryKeyCount()) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
+      if (getLegendaryKeyCount()
+          != other.getLegendaryKeyCount()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -211,10 +211,10 @@ public final class RedeemLegendaryKeyRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + LEGENDARY_KEY_COUNT_FIELD_NUMBER;
-      hash = (53 * hash) + getLegendaryKeyCount();
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
+      hash = (37 * hash) + LEGENDARY_KEY_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getLegendaryKeyCount();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -312,8 +312,8 @@ public final class RedeemLegendaryKeyRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 459
-     * Obf: GNDIOCKBMPI
+     * CmdId: 7270
+     * Obf: DDNNDBFNHKE
      * </pre>
      *
      * Protobuf type {@code RedeemLegendaryKeyRsp}
@@ -353,9 +353,9 @@ public final class RedeemLegendaryKeyRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        legendaryKeyCount_ = 0;
-
         retcode_ = 0;
+
+        legendaryKeyCount_ = 0;
 
         return this;
       }
@@ -383,8 +383,8 @@ public final class RedeemLegendaryKeyRspOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.RedeemLegendaryKeyRspOuterClass.RedeemLegendaryKeyRsp buildPartial() {
         emu.grasscutter.net.proto.RedeemLegendaryKeyRspOuterClass.RedeemLegendaryKeyRsp result = new emu.grasscutter.net.proto.RedeemLegendaryKeyRspOuterClass.RedeemLegendaryKeyRsp(this);
-        result.legendaryKeyCount_ = legendaryKeyCount_;
         result.retcode_ = retcode_;
+        result.legendaryKeyCount_ = legendaryKeyCount_;
         onBuilt();
         return result;
       }
@@ -433,11 +433,11 @@ public final class RedeemLegendaryKeyRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.RedeemLegendaryKeyRspOuterClass.RedeemLegendaryKeyRsp other) {
         if (other == emu.grasscutter.net.proto.RedeemLegendaryKeyRspOuterClass.RedeemLegendaryKeyRsp.getDefaultInstance()) return this;
-        if (other.getLegendaryKeyCount() != 0) {
-          setLegendaryKeyCount(other.getLegendaryKeyCount());
-        }
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
+        }
+        if (other.getLegendaryKeyCount() != 0) {
+          setLegendaryKeyCount(other.getLegendaryKeyCount());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -468,40 +468,9 @@ public final class RedeemLegendaryKeyRspOuterClass {
         return this;
       }
 
-      private int legendaryKeyCount_ ;
-      /**
-       * <code>uint32 legendary_key_count = 3;</code>
-       * @return The legendaryKeyCount.
-       */
-      @java.lang.Override
-      public int getLegendaryKeyCount() {
-        return legendaryKeyCount_;
-      }
-      /**
-       * <code>uint32 legendary_key_count = 3;</code>
-       * @param value The legendaryKeyCount to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLegendaryKeyCount(int value) {
-        
-        legendaryKeyCount_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 legendary_key_count = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLegendaryKeyCount() {
-        
-        legendaryKeyCount_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 11;</code>
+       * <code>int32 retcode = 15;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -509,7 +478,7 @@ public final class RedeemLegendaryKeyRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 11;</code>
+       * <code>int32 retcode = 15;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -520,12 +489,43 @@ public final class RedeemLegendaryKeyRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 11;</code>
+       * <code>int32 retcode = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
         
         retcode_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int legendaryKeyCount_ ;
+      /**
+       * <code>uint32 legendary_key_count = 2;</code>
+       * @return The legendaryKeyCount.
+       */
+      @java.lang.Override
+      public int getLegendaryKeyCount() {
+        return legendaryKeyCount_;
+      }
+      /**
+       * <code>uint32 legendary_key_count = 2;</code>
+       * @param value The legendaryKeyCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLegendaryKeyCount(int value) {
+        
+        legendaryKeyCount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 legendary_key_count = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLegendaryKeyCount() {
+        
+        legendaryKeyCount_ = 0;
         onChanged();
         return this;
       }
@@ -597,8 +597,8 @@ public final class RedeemLegendaryKeyRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\033RedeemLegendaryKeyRsp.proto\"E\n\025RedeemL" +
-      "egendaryKeyRsp\022\033\n\023legendary_key_count\030\003 " +
-      "\001(\r\022\017\n\007retcode\030\013 \001(\005B\033\n\031emu.grasscutter." +
+      "egendaryKeyRsp\022\017\n\007retcode\030\017 \001(\005\022\033\n\023legen" +
+      "dary_key_count\030\002 \001(\rB\033\n\031emu.grasscutter." +
       "net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -610,7 +610,7 @@ public final class RedeemLegendaryKeyRspOuterClass {
     internal_static_RedeemLegendaryKeyRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_RedeemLegendaryKeyRsp_descriptor,
-        new java.lang.String[] { "LegendaryKeyCount", "Retcode", });
+        new java.lang.String[] { "Retcode", "LegendaryKeyCount", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

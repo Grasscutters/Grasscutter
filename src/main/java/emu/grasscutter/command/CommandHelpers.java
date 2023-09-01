@@ -1,11 +1,9 @@
 package emu.grasscutter.command;
 
-import java.util.List;
-import java.util.Map;
-import java.util.function.BiConsumer;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import javax.annotation.Nonnull;
+import java.util.*;
+import java.util.function.BiConsumer;
+import java.util.regex.*;
 
 public class CommandHelpers {
     public static final Pattern lvlRegex =

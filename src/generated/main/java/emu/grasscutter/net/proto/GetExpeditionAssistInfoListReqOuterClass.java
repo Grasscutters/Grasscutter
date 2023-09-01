@@ -20,8 +20,8 @@ public final class GetExpeditionAssistInfoListReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 2097
-   * Obf: POEHJGPBMFO
+   * CmdId: 2643
+   * Obf: PDAPPFINCAE
    * </pre>
    *
    * Protobuf type {@code GetExpeditionAssistInfoListReq}
@@ -246,8 +246,8 @@ public final class GetExpeditionAssistInfoListReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2097
-     * Obf: POEHJGPBMFO
+     * CmdId: 2643
+     * Obf: PDAPPFINCAE
      * </pre>
      *
      * Protobuf type {@code GetExpeditionAssistInfoListReq}

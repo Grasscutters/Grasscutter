@@ -89,7 +89,7 @@ public final class ShopCardProductOuterClass {
   }
   /**
    * <pre>
-   * Obf: BBANKBFEFAA
+   * Obf: LJJFPCDLGIJ
    * </pre>
    *
    * Protobuf type {@code ShopCardProduct}
@@ -275,7 +275,7 @@ public final class ShopCardProductOuterClass {
     }
     /**
      * <pre>
-     * Obf: NGEFDJMEEDL
+     * Obf: JIBALNEIBIK
      * </pre>
      *
      * Protobuf type {@code ShopCardProduct.ResinCard}
@@ -633,7 +633,7 @@ public final class ShopCardProductOuterClass {
       }
       /**
        * <pre>
-       * Obf: NGEFDJMEEDL
+       * Obf: JIBALNEIBIK
        * </pre>
        *
        * Protobuf type {@code ShopCardProduct.ResinCard}
@@ -1789,7 +1789,7 @@ public final class ShopCardProductOuterClass {
     }
     /**
      * <pre>
-     * Obf: BBANKBFEFAA
+     * Obf: LJJFPCDLGIJ
      * </pre>
      *
      * Protobuf type {@code ShopCardProduct}

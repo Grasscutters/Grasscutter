@@ -1,14 +1,12 @@
 package emu.grasscutter.command.commands;
 
-import emu.grasscutter.command.Command;
-import emu.grasscutter.command.CommandHandler;
+import emu.grasscutter.command.*;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.achievement.AchievementData;
-import emu.grasscutter.game.achievement.AchievementControlReturns;
-import emu.grasscutter.game.achievement.Achievements;
+import emu.grasscutter.game.achievement.*;
 import emu.grasscutter.game.player.Player;
-import java.util.List;
-import java.util.Optional;
+
+import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
 @Command(

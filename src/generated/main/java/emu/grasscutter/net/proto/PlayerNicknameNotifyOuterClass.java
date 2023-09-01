@@ -19,12 +19,12 @@ public final class PlayerNicknameNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string nickname = 1;</code>
+     * <code>string nickname = 11;</code>
      * @return The nickname.
      */
     java.lang.String getNickname();
     /**
-     * <code>string nickname = 1;</code>
+     * <code>string nickname = 11;</code>
      * @return The bytes for nickname.
      */
     com.google.protobuf.ByteString
@@ -32,8 +32,8 @@ public final class PlayerNicknameNotifyOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 182
-   * Obf: FGOFANGPPIN
+   * CmdId: 25316
+   * Obf: KDCHOGMENPG
    * </pre>
    *
    * Protobuf type {@code PlayerNicknameNotify}
@@ -81,7 +81,7 @@ public final class PlayerNicknameNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 10: {
+            case 90: {
               java.lang.String s = input.readStringRequireUtf8();
 
               nickname_ = s;
@@ -119,10 +119,10 @@ public final class PlayerNicknameNotifyOuterClass {
               emu.grasscutter.net.proto.PlayerNicknameNotifyOuterClass.PlayerNicknameNotify.class, emu.grasscutter.net.proto.PlayerNicknameNotifyOuterClass.PlayerNicknameNotify.Builder.class);
     }
 
-    public static final int NICKNAME_FIELD_NUMBER = 1;
+    public static final int NICKNAME_FIELD_NUMBER = 11;
     private volatile java.lang.Object nickname_;
     /**
-     * <code>string nickname = 1;</code>
+     * <code>string nickname = 11;</code>
      * @return The nickname.
      */
     @java.lang.Override
@@ -139,7 +139,7 @@ public final class PlayerNicknameNotifyOuterClass {
       }
     }
     /**
-     * <code>string nickname = 1;</code>
+     * <code>string nickname = 11;</code>
      * @return The bytes for nickname.
      */
     @java.lang.Override
@@ -172,7 +172,7 @@ public final class PlayerNicknameNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nickname_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, nickname_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, nickname_);
       }
       unknownFields.writeTo(output);
     }
@@ -184,7 +184,7 @@ public final class PlayerNicknameNotifyOuterClass {
 
       size = 0;
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nickname_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, nickname_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, nickname_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -313,8 +313,8 @@ public final class PlayerNicknameNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 182
-     * Obf: FGOFANGPPIN
+     * CmdId: 25316
+     * Obf: KDCHOGMENPG
      * </pre>
      *
      * Protobuf type {@code PlayerNicknameNotify}
@@ -466,7 +466,7 @@ public final class PlayerNicknameNotifyOuterClass {
 
       private java.lang.Object nickname_ = "";
       /**
-       * <code>string nickname = 1;</code>
+       * <code>string nickname = 11;</code>
        * @return The nickname.
        */
       public java.lang.String getNickname() {
@@ -482,7 +482,7 @@ public final class PlayerNicknameNotifyOuterClass {
         }
       }
       /**
-       * <code>string nickname = 1;</code>
+       * <code>string nickname = 11;</code>
        * @return The bytes for nickname.
        */
       public com.google.protobuf.ByteString
@@ -499,7 +499,7 @@ public final class PlayerNicknameNotifyOuterClass {
         }
       }
       /**
-       * <code>string nickname = 1;</code>
+       * <code>string nickname = 11;</code>
        * @param value The nickname to set.
        * @return This builder for chaining.
        */
@@ -514,7 +514,7 @@ public final class PlayerNicknameNotifyOuterClass {
         return this;
       }
       /**
-       * <code>string nickname = 1;</code>
+       * <code>string nickname = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearNickname() {
@@ -524,7 +524,7 @@ public final class PlayerNicknameNotifyOuterClass {
         return this;
       }
       /**
-       * <code>string nickname = 1;</code>
+       * <code>string nickname = 11;</code>
        * @param value The bytes for nickname to set.
        * @return This builder for chaining.
        */
@@ -607,7 +607,7 @@ public final class PlayerNicknameNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\032PlayerNicknameNotify.proto\"(\n\024PlayerNi" +
-      "cknameNotify\022\020\n\010nickname\030\001 \001(\tB\033\n\031emu.gr" +
+      "cknameNotify\022\020\n\010nickname\030\013 \001(\tB\033\n\031emu.gr" +
       "asscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

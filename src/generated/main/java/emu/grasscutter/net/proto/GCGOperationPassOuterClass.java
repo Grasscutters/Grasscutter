@@ -20,7 +20,7 @@ public final class GCGOperationPassOuterClass {
   }
   /**
    * <pre>
-   * Obf: PDEMKHPAFIA
+   * Obf: NIFHACLJODD
    * </pre>
    *
    * Protobuf type {@code GCGOperationPass}
@@ -245,7 +245,7 @@ public final class GCGOperationPassOuterClass {
     }
     /**
      * <pre>
-     * Obf: PDEMKHPAFIA
+     * Obf: NIFHACLJODD
      * </pre>
      *
      * Protobuf type {@code GCGOperationPass}

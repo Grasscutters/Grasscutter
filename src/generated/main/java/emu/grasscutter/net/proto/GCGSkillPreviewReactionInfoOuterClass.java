@@ -19,20 +19,20 @@ public final class GCGSkillPreviewReactionInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 IKBOBKNGGIH = 14;</code>
-     * @return The iKBOBKNGGIH.
+     * <code>uint32 MDCBCLNOGNC = 10;</code>
+     * @return The mDCBCLNOGNC.
      */
-    int getIKBOBKNGGIH();
+    int getMDCBCLNOGNC();
 
     /**
-     * <code>uint32 AGNBFAGMNIO = 4;</code>
-     * @return The aGNBFAGMNIO.
+     * <code>uint32 EMCIICOHDNB = 9;</code>
+     * @return The eMCIICOHDNB.
      */
-    int getAGNBFAGMNIO();
+    int getEMCIICOHDNB();
   }
   /**
    * <pre>
-   * Obf: JNKPNKFNAFB
+   * Obf: FBHMAFBNDNF
    * </pre>
    *
    * Protobuf type {@code GCGSkillPreviewReactionInfo}
@@ -79,14 +79,14 @@ public final class GCGSkillPreviewReactionInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
+            case 72: {
 
-              aGNBFAGMNIO_ = input.readUInt32();
+              eMCIICOHDNB_ = input.readUInt32();
               break;
             }
-            case 112: {
+            case 80: {
 
-              iKBOBKNGGIH_ = input.readUInt32();
+              mDCBCLNOGNC_ = input.readUInt32();
               break;
             }
             default: {
@@ -121,26 +121,26 @@ public final class GCGSkillPreviewReactionInfoOuterClass {
               emu.grasscutter.net.proto.GCGSkillPreviewReactionInfoOuterClass.GCGSkillPreviewReactionInfo.class, emu.grasscutter.net.proto.GCGSkillPreviewReactionInfoOuterClass.GCGSkillPreviewReactionInfo.Builder.class);
     }
 
-    public static final int IKBOBKNGGIH_FIELD_NUMBER = 14;
-    private int iKBOBKNGGIH_;
+    public static final int MDCBCLNOGNC_FIELD_NUMBER = 10;
+    private int mDCBCLNOGNC_;
     /**
-     * <code>uint32 IKBOBKNGGIH = 14;</code>
-     * @return The iKBOBKNGGIH.
+     * <code>uint32 MDCBCLNOGNC = 10;</code>
+     * @return The mDCBCLNOGNC.
      */
     @java.lang.Override
-    public int getIKBOBKNGGIH() {
-      return iKBOBKNGGIH_;
+    public int getMDCBCLNOGNC() {
+      return mDCBCLNOGNC_;
     }
 
-    public static final int AGNBFAGMNIO_FIELD_NUMBER = 4;
-    private int aGNBFAGMNIO_;
+    public static final int EMCIICOHDNB_FIELD_NUMBER = 9;
+    private int eMCIICOHDNB_;
     /**
-     * <code>uint32 AGNBFAGMNIO = 4;</code>
-     * @return The aGNBFAGMNIO.
+     * <code>uint32 EMCIICOHDNB = 9;</code>
+     * @return The eMCIICOHDNB.
      */
     @java.lang.Override
-    public int getAGNBFAGMNIO() {
-      return aGNBFAGMNIO_;
+    public int getEMCIICOHDNB() {
+      return eMCIICOHDNB_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -157,11 +157,11 @@ public final class GCGSkillPreviewReactionInfoOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (aGNBFAGMNIO_ != 0) {
-        output.writeUInt32(4, aGNBFAGMNIO_);
+      if (eMCIICOHDNB_ != 0) {
+        output.writeUInt32(9, eMCIICOHDNB_);
       }
-      if (iKBOBKNGGIH_ != 0) {
-        output.writeUInt32(14, iKBOBKNGGIH_);
+      if (mDCBCLNOGNC_ != 0) {
+        output.writeUInt32(10, mDCBCLNOGNC_);
       }
       unknownFields.writeTo(output);
     }
@@ -172,13 +172,13 @@ public final class GCGSkillPreviewReactionInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (aGNBFAGMNIO_ != 0) {
+      if (eMCIICOHDNB_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, aGNBFAGMNIO_);
+          .computeUInt32Size(9, eMCIICOHDNB_);
       }
-      if (iKBOBKNGGIH_ != 0) {
+      if (mDCBCLNOGNC_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, iKBOBKNGGIH_);
+          .computeUInt32Size(10, mDCBCLNOGNC_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -195,10 +195,10 @@ public final class GCGSkillPreviewReactionInfoOuterClass {
       }
       emu.grasscutter.net.proto.GCGSkillPreviewReactionInfoOuterClass.GCGSkillPreviewReactionInfo other = (emu.grasscutter.net.proto.GCGSkillPreviewReactionInfoOuterClass.GCGSkillPreviewReactionInfo) obj;
 
-      if (getIKBOBKNGGIH()
-          != other.getIKBOBKNGGIH()) return false;
-      if (getAGNBFAGMNIO()
-          != other.getAGNBFAGMNIO()) return false;
+      if (getMDCBCLNOGNC()
+          != other.getMDCBCLNOGNC()) return false;
+      if (getEMCIICOHDNB()
+          != other.getEMCIICOHDNB()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -210,10 +210,10 @@ public final class GCGSkillPreviewReactionInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + IKBOBKNGGIH_FIELD_NUMBER;
-      hash = (53 * hash) + getIKBOBKNGGIH();
-      hash = (37 * hash) + AGNBFAGMNIO_FIELD_NUMBER;
-      hash = (53 * hash) + getAGNBFAGMNIO();
+      hash = (37 * hash) + MDCBCLNOGNC_FIELD_NUMBER;
+      hash = (53 * hash) + getMDCBCLNOGNC();
+      hash = (37 * hash) + EMCIICOHDNB_FIELD_NUMBER;
+      hash = (53 * hash) + getEMCIICOHDNB();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -311,7 +311,7 @@ public final class GCGSkillPreviewReactionInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: JNKPNKFNAFB
+     * Obf: FBHMAFBNDNF
      * </pre>
      *
      * Protobuf type {@code GCGSkillPreviewReactionInfo}
@@ -351,9 +351,9 @@ public final class GCGSkillPreviewReactionInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        iKBOBKNGGIH_ = 0;
+        mDCBCLNOGNC_ = 0;
 
-        aGNBFAGMNIO_ = 0;
+        eMCIICOHDNB_ = 0;
 
         return this;
       }
@@ -381,8 +381,8 @@ public final class GCGSkillPreviewReactionInfoOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.GCGSkillPreviewReactionInfoOuterClass.GCGSkillPreviewReactionInfo buildPartial() {
         emu.grasscutter.net.proto.GCGSkillPreviewReactionInfoOuterClass.GCGSkillPreviewReactionInfo result = new emu.grasscutter.net.proto.GCGSkillPreviewReactionInfoOuterClass.GCGSkillPreviewReactionInfo(this);
-        result.iKBOBKNGGIH_ = iKBOBKNGGIH_;
-        result.aGNBFAGMNIO_ = aGNBFAGMNIO_;
+        result.mDCBCLNOGNC_ = mDCBCLNOGNC_;
+        result.eMCIICOHDNB_ = eMCIICOHDNB_;
         onBuilt();
         return result;
       }
@@ -431,11 +431,11 @@ public final class GCGSkillPreviewReactionInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.GCGSkillPreviewReactionInfoOuterClass.GCGSkillPreviewReactionInfo other) {
         if (other == emu.grasscutter.net.proto.GCGSkillPreviewReactionInfoOuterClass.GCGSkillPreviewReactionInfo.getDefaultInstance()) return this;
-        if (other.getIKBOBKNGGIH() != 0) {
-          setIKBOBKNGGIH(other.getIKBOBKNGGIH());
+        if (other.getMDCBCLNOGNC() != 0) {
+          setMDCBCLNOGNC(other.getMDCBCLNOGNC());
         }
-        if (other.getAGNBFAGMNIO() != 0) {
-          setAGNBFAGMNIO(other.getAGNBFAGMNIO());
+        if (other.getEMCIICOHDNB() != 0) {
+          setEMCIICOHDNB(other.getEMCIICOHDNB());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -466,64 +466,64 @@ public final class GCGSkillPreviewReactionInfoOuterClass {
         return this;
       }
 
-      private int iKBOBKNGGIH_ ;
+      private int mDCBCLNOGNC_ ;
       /**
-       * <code>uint32 IKBOBKNGGIH = 14;</code>
-       * @return The iKBOBKNGGIH.
+       * <code>uint32 MDCBCLNOGNC = 10;</code>
+       * @return The mDCBCLNOGNC.
        */
       @java.lang.Override
-      public int getIKBOBKNGGIH() {
-        return iKBOBKNGGIH_;
+      public int getMDCBCLNOGNC() {
+        return mDCBCLNOGNC_;
       }
       /**
-       * <code>uint32 IKBOBKNGGIH = 14;</code>
-       * @param value The iKBOBKNGGIH to set.
+       * <code>uint32 MDCBCLNOGNC = 10;</code>
+       * @param value The mDCBCLNOGNC to set.
        * @return This builder for chaining.
        */
-      public Builder setIKBOBKNGGIH(int value) {
+      public Builder setMDCBCLNOGNC(int value) {
         
-        iKBOBKNGGIH_ = value;
+        mDCBCLNOGNC_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 IKBOBKNGGIH = 14;</code>
+       * <code>uint32 MDCBCLNOGNC = 10;</code>
        * @return This builder for chaining.
        */
-      public Builder clearIKBOBKNGGIH() {
+      public Builder clearMDCBCLNOGNC() {
         
-        iKBOBKNGGIH_ = 0;
+        mDCBCLNOGNC_ = 0;
         onChanged();
         return this;
       }
 
-      private int aGNBFAGMNIO_ ;
+      private int eMCIICOHDNB_ ;
       /**
-       * <code>uint32 AGNBFAGMNIO = 4;</code>
-       * @return The aGNBFAGMNIO.
+       * <code>uint32 EMCIICOHDNB = 9;</code>
+       * @return The eMCIICOHDNB.
        */
       @java.lang.Override
-      public int getAGNBFAGMNIO() {
-        return aGNBFAGMNIO_;
+      public int getEMCIICOHDNB() {
+        return eMCIICOHDNB_;
       }
       /**
-       * <code>uint32 AGNBFAGMNIO = 4;</code>
-       * @param value The aGNBFAGMNIO to set.
+       * <code>uint32 EMCIICOHDNB = 9;</code>
+       * @param value The eMCIICOHDNB to set.
        * @return This builder for chaining.
        */
-      public Builder setAGNBFAGMNIO(int value) {
+      public Builder setEMCIICOHDNB(int value) {
         
-        aGNBFAGMNIO_ = value;
+        eMCIICOHDNB_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 AGNBFAGMNIO = 4;</code>
+       * <code>uint32 EMCIICOHDNB = 9;</code>
        * @return This builder for chaining.
        */
-      public Builder clearAGNBFAGMNIO() {
+      public Builder clearEMCIICOHDNB() {
         
-        aGNBFAGMNIO_ = 0;
+        eMCIICOHDNB_ = 0;
         onChanged();
         return this;
       }
@@ -595,8 +595,8 @@ public final class GCGSkillPreviewReactionInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n!GCGSkillPreviewReactionInfo.proto\"G\n\033G" +
-      "CGSkillPreviewReactionInfo\022\023\n\013IKBOBKNGGI" +
-      "H\030\016 \001(\r\022\023\n\013AGNBFAGMNIO\030\004 \001(\rB\033\n\031emu.gras" +
+      "CGSkillPreviewReactionInfo\022\023\n\013MDCBCLNOGN" +
+      "C\030\n \001(\r\022\023\n\013EMCIICOHDNB\030\t \001(\rB\033\n\031emu.gras" +
       "scutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -608,7 +608,7 @@ public final class GCGSkillPreviewReactionInfoOuterClass {
     internal_static_GCGSkillPreviewReactionInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GCGSkillPreviewReactionInfo_descriptor,
-        new java.lang.String[] { "IKBOBKNGGIH", "AGNBFAGMNIO", });
+        new java.lang.String[] { "MDCBCLNOGNC", "EMCIICOHDNB", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

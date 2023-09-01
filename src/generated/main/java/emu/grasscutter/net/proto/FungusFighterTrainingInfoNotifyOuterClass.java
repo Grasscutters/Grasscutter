@@ -19,51 +19,51 @@ public final class FungusFighterTrainingInfoNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 MPEELPGPHIJ = 7;</code>
-     * @return The mPEELPGPHIJ.
+     * <code>uint32 JGFOFOCHKGG = 13;</code>
+     * @return The jGFOFOCHKGG.
      */
-    int getMPEELPGPHIJ();
+    int getJGFOFOCHKGG();
 
     /**
-     * <code>uint32 PJDEJHODAMK = 8;</code>
-     * @return The pJDEJHODAMK.
+     * <code>uint32 ODNFAFPKLKF = 3;</code>
+     * @return The oDNFAFPKLKF.
      */
-    int getPJDEJHODAMK();
+    int getODNFAFPKLKF();
 
     /**
-     * <code>uint32 KPCEBEHOKNO = 1;</code>
-     * @return The kPCEBEHOKNO.
+     * <code>uint32 AAIGFGNIFNF = 12;</code>
+     * @return The aAIGFGNIFNF.
      */
-    int getKPCEBEHOKNO();
+    int getAAIGFGNIFNF();
 
     /**
-     * <code>uint32 NHGJDJBLEFA = 2;</code>
-     * @return The nHGJDJBLEFA.
+     * <code>uint32 NKDAHKKLFMC = 14;</code>
+     * @return The nKDAHKKLFMC.
      */
-    int getNHGJDJBLEFA();
+    int getNKDAHKKLFMC();
 
     /**
-     * <code>uint32 NDNFMHHOMCM = 15;</code>
-     * @return The nDNFMHHOMCM.
-     */
-    int getNDNFMHHOMCM();
-
-    /**
-     * <code>uint32 CJLJCDGDKPD = 14;</code>
-     * @return The cJLJCDGDKPD.
-     */
-    int getCJLJCDGDKPD();
-
-    /**
-     * <code>uint32 buff_id = 4;</code>
+     * <code>uint32 buff_id = 9;</code>
      * @return The buffId.
      */
     int getBuffId();
+
+    /**
+     * <code>uint32 FPODCAPPDKP = 6;</code>
+     * @return The fPODCAPPDKP.
+     */
+    int getFPODCAPPDKP();
+
+    /**
+     * <code>uint32 HELFHNFBNNE = 8;</code>
+     * @return The hELFHNFBNNE.
+     */
+    int getHELFHNFBNNE();
   }
   /**
    * <pre>
-   * CmdId: 5566
-   * Obf: CIBENDOKFKH
+   * CmdId: 23534
+   * Obf: OJOKNMJALIF
    * </pre>
    *
    * Protobuf type {@code FungusFighterTrainingInfoNotify}
@@ -110,39 +110,39 @@ public final class FungusFighterTrainingInfoNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 24: {
 
-              kPCEBEHOKNO_ = input.readUInt32();
+              oDNFAFPKLKF_ = input.readUInt32();
               break;
             }
-            case 16: {
+            case 48: {
 
-              nHGJDJBLEFA_ = input.readUInt32();
-              break;
-            }
-            case 32: {
-
-              buffId_ = input.readUInt32();
-              break;
-            }
-            case 56: {
-
-              mPEELPGPHIJ_ = input.readUInt32();
+              fPODCAPPDKP_ = input.readUInt32();
               break;
             }
             case 64: {
 
-              pJDEJHODAMK_ = input.readUInt32();
+              hELFHNFBNNE_ = input.readUInt32();
+              break;
+            }
+            case 72: {
+
+              buffId_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+
+              aAIGFGNIFNF_ = input.readUInt32();
+              break;
+            }
+            case 104: {
+
+              jGFOFOCHKGG_ = input.readUInt32();
               break;
             }
             case 112: {
 
-              cJLJCDGDKPD_ = input.readUInt32();
-              break;
-            }
-            case 120: {
-
-              nDNFMHHOMCM_ = input.readUInt32();
+              nKDAHKKLFMC_ = input.readUInt32();
               break;
             }
             default: {
@@ -177,81 +177,81 @@ public final class FungusFighterTrainingInfoNotifyOuterClass {
               emu.grasscutter.net.proto.FungusFighterTrainingInfoNotifyOuterClass.FungusFighterTrainingInfoNotify.class, emu.grasscutter.net.proto.FungusFighterTrainingInfoNotifyOuterClass.FungusFighterTrainingInfoNotify.Builder.class);
     }
 
-    public static final int MPEELPGPHIJ_FIELD_NUMBER = 7;
-    private int mPEELPGPHIJ_;
+    public static final int JGFOFOCHKGG_FIELD_NUMBER = 13;
+    private int jGFOFOCHKGG_;
     /**
-     * <code>uint32 MPEELPGPHIJ = 7;</code>
-     * @return The mPEELPGPHIJ.
+     * <code>uint32 JGFOFOCHKGG = 13;</code>
+     * @return The jGFOFOCHKGG.
      */
     @java.lang.Override
-    public int getMPEELPGPHIJ() {
-      return mPEELPGPHIJ_;
+    public int getJGFOFOCHKGG() {
+      return jGFOFOCHKGG_;
     }
 
-    public static final int PJDEJHODAMK_FIELD_NUMBER = 8;
-    private int pJDEJHODAMK_;
+    public static final int ODNFAFPKLKF_FIELD_NUMBER = 3;
+    private int oDNFAFPKLKF_;
     /**
-     * <code>uint32 PJDEJHODAMK = 8;</code>
-     * @return The pJDEJHODAMK.
+     * <code>uint32 ODNFAFPKLKF = 3;</code>
+     * @return The oDNFAFPKLKF.
      */
     @java.lang.Override
-    public int getPJDEJHODAMK() {
-      return pJDEJHODAMK_;
+    public int getODNFAFPKLKF() {
+      return oDNFAFPKLKF_;
     }
 
-    public static final int KPCEBEHOKNO_FIELD_NUMBER = 1;
-    private int kPCEBEHOKNO_;
+    public static final int AAIGFGNIFNF_FIELD_NUMBER = 12;
+    private int aAIGFGNIFNF_;
     /**
-     * <code>uint32 KPCEBEHOKNO = 1;</code>
-     * @return The kPCEBEHOKNO.
+     * <code>uint32 AAIGFGNIFNF = 12;</code>
+     * @return The aAIGFGNIFNF.
      */
     @java.lang.Override
-    public int getKPCEBEHOKNO() {
-      return kPCEBEHOKNO_;
+    public int getAAIGFGNIFNF() {
+      return aAIGFGNIFNF_;
     }
 
-    public static final int NHGJDJBLEFA_FIELD_NUMBER = 2;
-    private int nHGJDJBLEFA_;
+    public static final int NKDAHKKLFMC_FIELD_NUMBER = 14;
+    private int nKDAHKKLFMC_;
     /**
-     * <code>uint32 NHGJDJBLEFA = 2;</code>
-     * @return The nHGJDJBLEFA.
+     * <code>uint32 NKDAHKKLFMC = 14;</code>
+     * @return The nKDAHKKLFMC.
      */
     @java.lang.Override
-    public int getNHGJDJBLEFA() {
-      return nHGJDJBLEFA_;
+    public int getNKDAHKKLFMC() {
+      return nKDAHKKLFMC_;
     }
 
-    public static final int NDNFMHHOMCM_FIELD_NUMBER = 15;
-    private int nDNFMHHOMCM_;
-    /**
-     * <code>uint32 NDNFMHHOMCM = 15;</code>
-     * @return The nDNFMHHOMCM.
-     */
-    @java.lang.Override
-    public int getNDNFMHHOMCM() {
-      return nDNFMHHOMCM_;
-    }
-
-    public static final int CJLJCDGDKPD_FIELD_NUMBER = 14;
-    private int cJLJCDGDKPD_;
-    /**
-     * <code>uint32 CJLJCDGDKPD = 14;</code>
-     * @return The cJLJCDGDKPD.
-     */
-    @java.lang.Override
-    public int getCJLJCDGDKPD() {
-      return cJLJCDGDKPD_;
-    }
-
-    public static final int BUFF_ID_FIELD_NUMBER = 4;
+    public static final int BUFF_ID_FIELD_NUMBER = 9;
     private int buffId_;
     /**
-     * <code>uint32 buff_id = 4;</code>
+     * <code>uint32 buff_id = 9;</code>
      * @return The buffId.
      */
     @java.lang.Override
     public int getBuffId() {
       return buffId_;
+    }
+
+    public static final int FPODCAPPDKP_FIELD_NUMBER = 6;
+    private int fPODCAPPDKP_;
+    /**
+     * <code>uint32 FPODCAPPDKP = 6;</code>
+     * @return The fPODCAPPDKP.
+     */
+    @java.lang.Override
+    public int getFPODCAPPDKP() {
+      return fPODCAPPDKP_;
+    }
+
+    public static final int HELFHNFBNNE_FIELD_NUMBER = 8;
+    private int hELFHNFBNNE_;
+    /**
+     * <code>uint32 HELFHNFBNNE = 8;</code>
+     * @return The hELFHNFBNNE.
+     */
+    @java.lang.Override
+    public int getHELFHNFBNNE() {
+      return hELFHNFBNNE_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -268,26 +268,26 @@ public final class FungusFighterTrainingInfoNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (kPCEBEHOKNO_ != 0) {
-        output.writeUInt32(1, kPCEBEHOKNO_);
+      if (oDNFAFPKLKF_ != 0) {
+        output.writeUInt32(3, oDNFAFPKLKF_);
       }
-      if (nHGJDJBLEFA_ != 0) {
-        output.writeUInt32(2, nHGJDJBLEFA_);
+      if (fPODCAPPDKP_ != 0) {
+        output.writeUInt32(6, fPODCAPPDKP_);
+      }
+      if (hELFHNFBNNE_ != 0) {
+        output.writeUInt32(8, hELFHNFBNNE_);
       }
       if (buffId_ != 0) {
-        output.writeUInt32(4, buffId_);
+        output.writeUInt32(9, buffId_);
       }
-      if (mPEELPGPHIJ_ != 0) {
-        output.writeUInt32(7, mPEELPGPHIJ_);
+      if (aAIGFGNIFNF_ != 0) {
+        output.writeUInt32(12, aAIGFGNIFNF_);
       }
-      if (pJDEJHODAMK_ != 0) {
-        output.writeUInt32(8, pJDEJHODAMK_);
+      if (jGFOFOCHKGG_ != 0) {
+        output.writeUInt32(13, jGFOFOCHKGG_);
       }
-      if (cJLJCDGDKPD_ != 0) {
-        output.writeUInt32(14, cJLJCDGDKPD_);
-      }
-      if (nDNFMHHOMCM_ != 0) {
-        output.writeUInt32(15, nDNFMHHOMCM_);
+      if (nKDAHKKLFMC_ != 0) {
+        output.writeUInt32(14, nKDAHKKLFMC_);
       }
       unknownFields.writeTo(output);
     }
@@ -298,33 +298,33 @@ public final class FungusFighterTrainingInfoNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (kPCEBEHOKNO_ != 0) {
+      if (oDNFAFPKLKF_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, kPCEBEHOKNO_);
+          .computeUInt32Size(3, oDNFAFPKLKF_);
       }
-      if (nHGJDJBLEFA_ != 0) {
+      if (fPODCAPPDKP_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, nHGJDJBLEFA_);
+          .computeUInt32Size(6, fPODCAPPDKP_);
+      }
+      if (hELFHNFBNNE_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(8, hELFHNFBNNE_);
       }
       if (buffId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, buffId_);
+          .computeUInt32Size(9, buffId_);
       }
-      if (mPEELPGPHIJ_ != 0) {
+      if (aAIGFGNIFNF_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, mPEELPGPHIJ_);
+          .computeUInt32Size(12, aAIGFGNIFNF_);
       }
-      if (pJDEJHODAMK_ != 0) {
+      if (jGFOFOCHKGG_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, pJDEJHODAMK_);
+          .computeUInt32Size(13, jGFOFOCHKGG_);
       }
-      if (cJLJCDGDKPD_ != 0) {
+      if (nKDAHKKLFMC_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, cJLJCDGDKPD_);
-      }
-      if (nDNFMHHOMCM_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, nDNFMHHOMCM_);
+          .computeUInt32Size(14, nKDAHKKLFMC_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -341,20 +341,20 @@ public final class FungusFighterTrainingInfoNotifyOuterClass {
       }
       emu.grasscutter.net.proto.FungusFighterTrainingInfoNotifyOuterClass.FungusFighterTrainingInfoNotify other = (emu.grasscutter.net.proto.FungusFighterTrainingInfoNotifyOuterClass.FungusFighterTrainingInfoNotify) obj;
 
-      if (getMPEELPGPHIJ()
-          != other.getMPEELPGPHIJ()) return false;
-      if (getPJDEJHODAMK()
-          != other.getPJDEJHODAMK()) return false;
-      if (getKPCEBEHOKNO()
-          != other.getKPCEBEHOKNO()) return false;
-      if (getNHGJDJBLEFA()
-          != other.getNHGJDJBLEFA()) return false;
-      if (getNDNFMHHOMCM()
-          != other.getNDNFMHHOMCM()) return false;
-      if (getCJLJCDGDKPD()
-          != other.getCJLJCDGDKPD()) return false;
+      if (getJGFOFOCHKGG()
+          != other.getJGFOFOCHKGG()) return false;
+      if (getODNFAFPKLKF()
+          != other.getODNFAFPKLKF()) return false;
+      if (getAAIGFGNIFNF()
+          != other.getAAIGFGNIFNF()) return false;
+      if (getNKDAHKKLFMC()
+          != other.getNKDAHKKLFMC()) return false;
       if (getBuffId()
           != other.getBuffId()) return false;
+      if (getFPODCAPPDKP()
+          != other.getFPODCAPPDKP()) return false;
+      if (getHELFHNFBNNE()
+          != other.getHELFHNFBNNE()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -366,20 +366,20 @@ public final class FungusFighterTrainingInfoNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + MPEELPGPHIJ_FIELD_NUMBER;
-      hash = (53 * hash) + getMPEELPGPHIJ();
-      hash = (37 * hash) + PJDEJHODAMK_FIELD_NUMBER;
-      hash = (53 * hash) + getPJDEJHODAMK();
-      hash = (37 * hash) + KPCEBEHOKNO_FIELD_NUMBER;
-      hash = (53 * hash) + getKPCEBEHOKNO();
-      hash = (37 * hash) + NHGJDJBLEFA_FIELD_NUMBER;
-      hash = (53 * hash) + getNHGJDJBLEFA();
-      hash = (37 * hash) + NDNFMHHOMCM_FIELD_NUMBER;
-      hash = (53 * hash) + getNDNFMHHOMCM();
-      hash = (37 * hash) + CJLJCDGDKPD_FIELD_NUMBER;
-      hash = (53 * hash) + getCJLJCDGDKPD();
+      hash = (37 * hash) + JGFOFOCHKGG_FIELD_NUMBER;
+      hash = (53 * hash) + getJGFOFOCHKGG();
+      hash = (37 * hash) + ODNFAFPKLKF_FIELD_NUMBER;
+      hash = (53 * hash) + getODNFAFPKLKF();
+      hash = (37 * hash) + AAIGFGNIFNF_FIELD_NUMBER;
+      hash = (53 * hash) + getAAIGFGNIFNF();
+      hash = (37 * hash) + NKDAHKKLFMC_FIELD_NUMBER;
+      hash = (53 * hash) + getNKDAHKKLFMC();
       hash = (37 * hash) + BUFF_ID_FIELD_NUMBER;
       hash = (53 * hash) + getBuffId();
+      hash = (37 * hash) + FPODCAPPDKP_FIELD_NUMBER;
+      hash = (53 * hash) + getFPODCAPPDKP();
+      hash = (37 * hash) + HELFHNFBNNE_FIELD_NUMBER;
+      hash = (53 * hash) + getHELFHNFBNNE();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -477,8 +477,8 @@ public final class FungusFighterTrainingInfoNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 5566
-     * Obf: CIBENDOKFKH
+     * CmdId: 23534
+     * Obf: OJOKNMJALIF
      * </pre>
      *
      * Protobuf type {@code FungusFighterTrainingInfoNotify}
@@ -518,19 +518,19 @@ public final class FungusFighterTrainingInfoNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        mPEELPGPHIJ_ = 0;
+        jGFOFOCHKGG_ = 0;
 
-        pJDEJHODAMK_ = 0;
+        oDNFAFPKLKF_ = 0;
 
-        kPCEBEHOKNO_ = 0;
+        aAIGFGNIFNF_ = 0;
 
-        nHGJDJBLEFA_ = 0;
-
-        nDNFMHHOMCM_ = 0;
-
-        cJLJCDGDKPD_ = 0;
+        nKDAHKKLFMC_ = 0;
 
         buffId_ = 0;
+
+        fPODCAPPDKP_ = 0;
+
+        hELFHNFBNNE_ = 0;
 
         return this;
       }
@@ -558,13 +558,13 @@ public final class FungusFighterTrainingInfoNotifyOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.FungusFighterTrainingInfoNotifyOuterClass.FungusFighterTrainingInfoNotify buildPartial() {
         emu.grasscutter.net.proto.FungusFighterTrainingInfoNotifyOuterClass.FungusFighterTrainingInfoNotify result = new emu.grasscutter.net.proto.FungusFighterTrainingInfoNotifyOuterClass.FungusFighterTrainingInfoNotify(this);
-        result.mPEELPGPHIJ_ = mPEELPGPHIJ_;
-        result.pJDEJHODAMK_ = pJDEJHODAMK_;
-        result.kPCEBEHOKNO_ = kPCEBEHOKNO_;
-        result.nHGJDJBLEFA_ = nHGJDJBLEFA_;
-        result.nDNFMHHOMCM_ = nDNFMHHOMCM_;
-        result.cJLJCDGDKPD_ = cJLJCDGDKPD_;
+        result.jGFOFOCHKGG_ = jGFOFOCHKGG_;
+        result.oDNFAFPKLKF_ = oDNFAFPKLKF_;
+        result.aAIGFGNIFNF_ = aAIGFGNIFNF_;
+        result.nKDAHKKLFMC_ = nKDAHKKLFMC_;
         result.buffId_ = buffId_;
+        result.fPODCAPPDKP_ = fPODCAPPDKP_;
+        result.hELFHNFBNNE_ = hELFHNFBNNE_;
         onBuilt();
         return result;
       }
@@ -613,26 +613,26 @@ public final class FungusFighterTrainingInfoNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.FungusFighterTrainingInfoNotifyOuterClass.FungusFighterTrainingInfoNotify other) {
         if (other == emu.grasscutter.net.proto.FungusFighterTrainingInfoNotifyOuterClass.FungusFighterTrainingInfoNotify.getDefaultInstance()) return this;
-        if (other.getMPEELPGPHIJ() != 0) {
-          setMPEELPGPHIJ(other.getMPEELPGPHIJ());
+        if (other.getJGFOFOCHKGG() != 0) {
+          setJGFOFOCHKGG(other.getJGFOFOCHKGG());
         }
-        if (other.getPJDEJHODAMK() != 0) {
-          setPJDEJHODAMK(other.getPJDEJHODAMK());
+        if (other.getODNFAFPKLKF() != 0) {
+          setODNFAFPKLKF(other.getODNFAFPKLKF());
         }
-        if (other.getKPCEBEHOKNO() != 0) {
-          setKPCEBEHOKNO(other.getKPCEBEHOKNO());
+        if (other.getAAIGFGNIFNF() != 0) {
+          setAAIGFGNIFNF(other.getAAIGFGNIFNF());
         }
-        if (other.getNHGJDJBLEFA() != 0) {
-          setNHGJDJBLEFA(other.getNHGJDJBLEFA());
-        }
-        if (other.getNDNFMHHOMCM() != 0) {
-          setNDNFMHHOMCM(other.getNDNFMHHOMCM());
-        }
-        if (other.getCJLJCDGDKPD() != 0) {
-          setCJLJCDGDKPD(other.getCJLJCDGDKPD());
+        if (other.getNKDAHKKLFMC() != 0) {
+          setNKDAHKKLFMC(other.getNKDAHKKLFMC());
         }
         if (other.getBuffId() != 0) {
           setBuffId(other.getBuffId());
+        }
+        if (other.getFPODCAPPDKP() != 0) {
+          setFPODCAPPDKP(other.getFPODCAPPDKP());
+        }
+        if (other.getHELFHNFBNNE() != 0) {
+          setHELFHNFBNNE(other.getHELFHNFBNNE());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -663,195 +663,133 @@ public final class FungusFighterTrainingInfoNotifyOuterClass {
         return this;
       }
 
-      private int mPEELPGPHIJ_ ;
+      private int jGFOFOCHKGG_ ;
       /**
-       * <code>uint32 MPEELPGPHIJ = 7;</code>
-       * @return The mPEELPGPHIJ.
+       * <code>uint32 JGFOFOCHKGG = 13;</code>
+       * @return The jGFOFOCHKGG.
        */
       @java.lang.Override
-      public int getMPEELPGPHIJ() {
-        return mPEELPGPHIJ_;
+      public int getJGFOFOCHKGG() {
+        return jGFOFOCHKGG_;
       }
       /**
-       * <code>uint32 MPEELPGPHIJ = 7;</code>
-       * @param value The mPEELPGPHIJ to set.
+       * <code>uint32 JGFOFOCHKGG = 13;</code>
+       * @param value The jGFOFOCHKGG to set.
        * @return This builder for chaining.
        */
-      public Builder setMPEELPGPHIJ(int value) {
+      public Builder setJGFOFOCHKGG(int value) {
         
-        mPEELPGPHIJ_ = value;
+        jGFOFOCHKGG_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 MPEELPGPHIJ = 7;</code>
+       * <code>uint32 JGFOFOCHKGG = 13;</code>
        * @return This builder for chaining.
        */
-      public Builder clearMPEELPGPHIJ() {
+      public Builder clearJGFOFOCHKGG() {
         
-        mPEELPGPHIJ_ = 0;
+        jGFOFOCHKGG_ = 0;
         onChanged();
         return this;
       }
 
-      private int pJDEJHODAMK_ ;
+      private int oDNFAFPKLKF_ ;
       /**
-       * <code>uint32 PJDEJHODAMK = 8;</code>
-       * @return The pJDEJHODAMK.
+       * <code>uint32 ODNFAFPKLKF = 3;</code>
+       * @return The oDNFAFPKLKF.
        */
       @java.lang.Override
-      public int getPJDEJHODAMK() {
-        return pJDEJHODAMK_;
+      public int getODNFAFPKLKF() {
+        return oDNFAFPKLKF_;
       }
       /**
-       * <code>uint32 PJDEJHODAMK = 8;</code>
-       * @param value The pJDEJHODAMK to set.
+       * <code>uint32 ODNFAFPKLKF = 3;</code>
+       * @param value The oDNFAFPKLKF to set.
        * @return This builder for chaining.
        */
-      public Builder setPJDEJHODAMK(int value) {
+      public Builder setODNFAFPKLKF(int value) {
         
-        pJDEJHODAMK_ = value;
+        oDNFAFPKLKF_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 PJDEJHODAMK = 8;</code>
+       * <code>uint32 ODNFAFPKLKF = 3;</code>
        * @return This builder for chaining.
        */
-      public Builder clearPJDEJHODAMK() {
+      public Builder clearODNFAFPKLKF() {
         
-        pJDEJHODAMK_ = 0;
+        oDNFAFPKLKF_ = 0;
         onChanged();
         return this;
       }
 
-      private int kPCEBEHOKNO_ ;
+      private int aAIGFGNIFNF_ ;
       /**
-       * <code>uint32 KPCEBEHOKNO = 1;</code>
-       * @return The kPCEBEHOKNO.
+       * <code>uint32 AAIGFGNIFNF = 12;</code>
+       * @return The aAIGFGNIFNF.
        */
       @java.lang.Override
-      public int getKPCEBEHOKNO() {
-        return kPCEBEHOKNO_;
+      public int getAAIGFGNIFNF() {
+        return aAIGFGNIFNF_;
       }
       /**
-       * <code>uint32 KPCEBEHOKNO = 1;</code>
-       * @param value The kPCEBEHOKNO to set.
+       * <code>uint32 AAIGFGNIFNF = 12;</code>
+       * @param value The aAIGFGNIFNF to set.
        * @return This builder for chaining.
        */
-      public Builder setKPCEBEHOKNO(int value) {
+      public Builder setAAIGFGNIFNF(int value) {
         
-        kPCEBEHOKNO_ = value;
+        aAIGFGNIFNF_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 KPCEBEHOKNO = 1;</code>
+       * <code>uint32 AAIGFGNIFNF = 12;</code>
        * @return This builder for chaining.
        */
-      public Builder clearKPCEBEHOKNO() {
+      public Builder clearAAIGFGNIFNF() {
         
-        kPCEBEHOKNO_ = 0;
+        aAIGFGNIFNF_ = 0;
         onChanged();
         return this;
       }
 
-      private int nHGJDJBLEFA_ ;
+      private int nKDAHKKLFMC_ ;
       /**
-       * <code>uint32 NHGJDJBLEFA = 2;</code>
-       * @return The nHGJDJBLEFA.
+       * <code>uint32 NKDAHKKLFMC = 14;</code>
+       * @return The nKDAHKKLFMC.
        */
       @java.lang.Override
-      public int getNHGJDJBLEFA() {
-        return nHGJDJBLEFA_;
+      public int getNKDAHKKLFMC() {
+        return nKDAHKKLFMC_;
       }
       /**
-       * <code>uint32 NHGJDJBLEFA = 2;</code>
-       * @param value The nHGJDJBLEFA to set.
+       * <code>uint32 NKDAHKKLFMC = 14;</code>
+       * @param value The nKDAHKKLFMC to set.
        * @return This builder for chaining.
        */
-      public Builder setNHGJDJBLEFA(int value) {
+      public Builder setNKDAHKKLFMC(int value) {
         
-        nHGJDJBLEFA_ = value;
+        nKDAHKKLFMC_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 NHGJDJBLEFA = 2;</code>
+       * <code>uint32 NKDAHKKLFMC = 14;</code>
        * @return This builder for chaining.
        */
-      public Builder clearNHGJDJBLEFA() {
+      public Builder clearNKDAHKKLFMC() {
         
-        nHGJDJBLEFA_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int nDNFMHHOMCM_ ;
-      /**
-       * <code>uint32 NDNFMHHOMCM = 15;</code>
-       * @return The nDNFMHHOMCM.
-       */
-      @java.lang.Override
-      public int getNDNFMHHOMCM() {
-        return nDNFMHHOMCM_;
-      }
-      /**
-       * <code>uint32 NDNFMHHOMCM = 15;</code>
-       * @param value The nDNFMHHOMCM to set.
-       * @return This builder for chaining.
-       */
-      public Builder setNDNFMHHOMCM(int value) {
-        
-        nDNFMHHOMCM_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 NDNFMHHOMCM = 15;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearNDNFMHHOMCM() {
-        
-        nDNFMHHOMCM_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int cJLJCDGDKPD_ ;
-      /**
-       * <code>uint32 CJLJCDGDKPD = 14;</code>
-       * @return The cJLJCDGDKPD.
-       */
-      @java.lang.Override
-      public int getCJLJCDGDKPD() {
-        return cJLJCDGDKPD_;
-      }
-      /**
-       * <code>uint32 CJLJCDGDKPD = 14;</code>
-       * @param value The cJLJCDGDKPD to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCJLJCDGDKPD(int value) {
-        
-        cJLJCDGDKPD_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 CJLJCDGDKPD = 14;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCJLJCDGDKPD() {
-        
-        cJLJCDGDKPD_ = 0;
+        nKDAHKKLFMC_ = 0;
         onChanged();
         return this;
       }
 
       private int buffId_ ;
       /**
-       * <code>uint32 buff_id = 4;</code>
+       * <code>uint32 buff_id = 9;</code>
        * @return The buffId.
        */
       @java.lang.Override
@@ -859,7 +797,7 @@ public final class FungusFighterTrainingInfoNotifyOuterClass {
         return buffId_;
       }
       /**
-       * <code>uint32 buff_id = 4;</code>
+       * <code>uint32 buff_id = 9;</code>
        * @param value The buffId to set.
        * @return This builder for chaining.
        */
@@ -870,12 +808,74 @@ public final class FungusFighterTrainingInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 buff_id = 4;</code>
+       * <code>uint32 buff_id = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearBuffId() {
         
         buffId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int fPODCAPPDKP_ ;
+      /**
+       * <code>uint32 FPODCAPPDKP = 6;</code>
+       * @return The fPODCAPPDKP.
+       */
+      @java.lang.Override
+      public int getFPODCAPPDKP() {
+        return fPODCAPPDKP_;
+      }
+      /**
+       * <code>uint32 FPODCAPPDKP = 6;</code>
+       * @param value The fPODCAPPDKP to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFPODCAPPDKP(int value) {
+        
+        fPODCAPPDKP_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 FPODCAPPDKP = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFPODCAPPDKP() {
+        
+        fPODCAPPDKP_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int hELFHNFBNNE_ ;
+      /**
+       * <code>uint32 HELFHNFBNNE = 8;</code>
+       * @return The hELFHNFBNNE.
+       */
+      @java.lang.Override
+      public int getHELFHNFBNNE() {
+        return hELFHNFBNNE_;
+      }
+      /**
+       * <code>uint32 HELFHNFBNNE = 8;</code>
+       * @param value The hELFHNFBNNE to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHELFHNFBNNE(int value) {
+        
+        hELFHNFBNNE_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 HELFHNFBNNE = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearHELFHNFBNNE() {
+        
+        hELFHNFBNNE_ = 0;
         onChanged();
         return this;
       }
@@ -947,11 +947,11 @@ public final class FungusFighterTrainingInfoNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n%FungusFighterTrainingInfoNotify.proto\"" +
-      "\260\001\n\037FungusFighterTrainingInfoNotify\022\023\n\013M" +
-      "PEELPGPHIJ\030\007 \001(\r\022\023\n\013PJDEJHODAMK\030\010 \001(\r\022\023\n" +
-      "\013KPCEBEHOKNO\030\001 \001(\r\022\023\n\013NHGJDJBLEFA\030\002 \001(\r\022" +
-      "\023\n\013NDNFMHHOMCM\030\017 \001(\r\022\023\n\013CJLJCDGDKPD\030\016 \001(" +
-      "\r\022\017\n\007buff_id\030\004 \001(\rB\033\n\031emu.grasscutter.ne" +
+      "\260\001\n\037FungusFighterTrainingInfoNotify\022\023\n\013J" +
+      "GFOFOCHKGG\030\r \001(\r\022\023\n\013ODNFAFPKLKF\030\003 \001(\r\022\023\n" +
+      "\013AAIGFGNIFNF\030\014 \001(\r\022\023\n\013NKDAHKKLFMC\030\016 \001(\r\022" +
+      "\017\n\007buff_id\030\t \001(\r\022\023\n\013FPODCAPPDKP\030\006 \001(\r\022\023\n" +
+      "\013HELFHNFBNNE\030\010 \001(\rB\033\n\031emu.grasscutter.ne" +
       "t.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -963,7 +963,7 @@ public final class FungusFighterTrainingInfoNotifyOuterClass {
     internal_static_FungusFighterTrainingInfoNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_FungusFighterTrainingInfoNotify_descriptor,
-        new java.lang.String[] { "MPEELPGPHIJ", "PJDEJHODAMK", "KPCEBEHOKNO", "NHGJDJBLEFA", "NDNFMHHOMCM", "CJLJCDGDKPD", "BuffId", });
+        new java.lang.String[] { "JGFOFOCHKGG", "ODNFAFPKLKF", "AAIGFGNIFNF", "NKDAHKKLFMC", "BuffId", "FPODCAPPDKP", "HELFHNFBNNE", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

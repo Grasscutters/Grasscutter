@@ -1,69 +1,65 @@
 package emu.grasscutter.scripts;
 
-import emu.grasscutter.Grasscutter;
-import emu.grasscutter.game.dungeons.challenge.enums.ChallengeEventMarkType;
-import emu.grasscutter.game.dungeons.challenge.enums.FatherChallengeProperty;
-import emu.grasscutter.game.props.ElementType;
-import emu.grasscutter.game.props.EntityType;
+import emu.grasscutter.*;
+import emu.grasscutter.config.Configuration;
+import emu.grasscutter.game.dungeons.challenge.enums.*;
+import emu.grasscutter.game.props.*;
 import emu.grasscutter.game.quest.enums.QuestState;
 import emu.grasscutter.scripts.constants.*;
 import emu.grasscutter.scripts.data.SceneMeta;
-import emu.grasscutter.scripts.serializer.LuaSerializer;
-import emu.grasscutter.scripts.serializer.Serializer;
+import emu.grasscutter.scripts.serializer.*;
 import emu.grasscutter.utils.FileUtils;
-import java.io.File;
-import java.io.FileReader;
-import java.lang.ref.SoftReference;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.Arrays;
-import java.util.Map;
-import java.util.Optional;
-import java.util.concurrent.ConcurrentHashMap;
-import javax.script.*;
 import lombok.Getter;
-import org.luaj.vm2.LuaTable;
-import org.luaj.vm2.LuaValue;
+import org.luaj.vm2.*;
 import org.luaj.vm2.lib.OneArgFunction;
 import org.luaj.vm2.lib.jse.CoerceJavaToLua;
-import org.luaj.vm2.script.LuajContext;
+import org.luaj.vm2.script.*;
+
+import javax.script.*;
+import java.io.IOException;
+import java.lang.ref.SoftReference;
+import java.nio.file.Files;
+import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicReference;
 
 public class ScriptLoader {
     private static ScriptEngineManager sm;
-    @Getter private static ScriptEngine engine;
-    private static ScriptEngineFactory factory;
+    @Getter private static LuaScriptEngine engine;
     @Getter private static Serializer serializer;
     @Getter private static ScriptLib scriptLib;
     @Getter private static LuaValue scriptLibLua;
     /** suggest GC to remove it if the memory is less */
+    private static Map<String, SoftReference<String>> scriptSources =
+            new ConcurrentHashMap<>();
     private static Map<String, SoftReference<CompiledScript>> scriptsCache =
             new ConcurrentHashMap<>();
     /** sceneId - SceneMeta */
     private static Map<Integer, SoftReference<SceneMeta>> sceneMetaCache = new ConcurrentHashMap<>();
 
+    private static final AtomicReference<Bindings> currentBindings = new AtomicReference<>(null);
+    private static final AtomicReference<ScriptContext> currentContext = new AtomicReference<>(null);
+
+    /**
+     * Initializes the script engine.
+     */
     public static synchronized void init() throws Exception {
         if (sm != null) {
             throw new Exception("Script loader already initialized");
         }
 
         // Create script engine
-        sm = new ScriptEngineManager();
-        engine = sm.getEngineByName("luaj");
-        factory = getEngine().getFactory();
+        ScriptLoader.sm = new ScriptEngineManager();
+        var engine = ScriptLoader.engine = (LuaScriptEngine) sm.getEngineByName("luaj");
+        ScriptLoader.serializer = new LuaSerializer();
 
-        // Lua stuff
-        serializer = new LuaSerializer();
+        // Set the Lua context.
+        var ctx = new LuajContext(true, false);
+        ctx.setBindings(engine.createBindings(), ScriptContext.ENGINE_SCOPE);
+        engine.setContext(ctx);
 
-        // Set engine to replace require as a temporary fix to missing scripts
-        LuajContext ctx = (LuajContext) engine.getContext();
-        ctx.globals.set(
-                "require",
-                new OneArgFunction() {
-                    @Override
-                    public LuaValue call(LuaValue arg0) {
-                        return LuaValue.ZERO;
-                    }
-                });
+        // Set the 'require' function handler.
+        ctx.globals.set("require", new RequireFunction());
 
         addEnumByIntValue(ctx, EntityType.values(), "EntityType");
         addEnumByIntValue(ctx, QuestState.values(), "QuestState");
@@ -120,42 +116,148 @@ public class ScriptLoader {
         }
     }
 
-    @Deprecated(forRemoval = true)
-    public static CompiledScript getScriptByPath(String path) {
-        var sc = tryGet(scriptsCache.get(path));
-        if (sc.isPresent()) {
-            return sc.get();
+    /**
+     * Performs a smart evaluation. This allows for 'require' to work.
+     *
+     * @param script The script to evaluate.
+     * @param bindings The bindings to use.
+     * @return The result of the evaluation.
+     */
+    public static Object eval(CompiledScript script, Bindings bindings) throws ScriptException {
+        // Set the current bindings.
+        currentBindings.set(bindings);
+        // Evaluate the script.
+        var result = script.eval(bindings);
+        // Clear the current bindings.
+        currentBindings.set(null);
+
+        return result;
+    }
+
+    static final class RequireFunction extends OneArgFunction {
+        @Override
+        public LuaValue call(LuaValue arg) {
+            // Resolve the script path.
+            var scriptName = arg.checkjstring();
+            var scriptPath = "Common/" + scriptName + ".lua";
+
+            // Load & compile the script.
+            var script = ScriptLoader.getScript(scriptPath);
+            if (script == null) {
+                return LuaValue.NONE;
+            }
+
+            // Append the script to the context.
+            try {
+                var bindings = currentBindings.get();
+
+                if (bindings != null) {
+                    ScriptLoader.eval(script, bindings);
+                } else {
+                    script.eval();
+                }
+            } catch (Exception exception) {
+                if (DebugConstants.LOG_MISSING_LUA_SCRIPTS) {
+                    Grasscutter.getLogger()
+                            .error("Loading script {} failed! - {}", scriptPath, exception.getLocalizedMessage());
+                }
+            }
+
+            // TODO: What is the proper return value?
+            return LuaValue.NONE;
+        }
+    }
+
+    /**
+     * Loads the sources of a script.
+     *
+     * @param path The path of the script.
+     * @return The sources of the script.
+     */
+    public static String readScript(String path) {
+        // Check if the path is cached.
+        var cached = ScriptLoader.tryGet(
+            ScriptLoader.scriptSources.get(path));
+        if (cached.isPresent()) {
+            return cached.get();
         }
 
-        // Grasscutter.getLogger().debug("Loading script " + path);
+        // Attempt to load the script.
+        var scriptPath = FileUtils.getScriptPath(path);
+        if (!Files.exists(scriptPath)) return null;
 
-        File file = new File(path);
+        try {
+            var source = Files.readString(scriptPath);
+            ScriptLoader.scriptSources.put(
+                path, new SoftReference<>(source));
 
-        if (!file.exists()) return null;
-
-        try (FileReader fr = new FileReader(file)) {
-            var script = ((Compilable) getEngine()).compile(fr);
-            scriptsCache.put(path, new SoftReference<>(script));
-            return script;
-        } catch (Exception e) {
-            Grasscutter.getLogger().error("Loading script {} failed!", path, e);
+            return source;
+        } catch (IOException exception) {
+            Grasscutter.getLogger()
+                    .error("Loading script {} failed! - {}", path, exception.getLocalizedMessage());
             return null;
         }
     }
 
+    /**
+     * Fetches a script and compiles it, or uses the cached varient.
+     *
+     * @param path The path of the script.
+     * @return The compiled script.
+     */
     public static CompiledScript getScript(String path) {
-        var sc = tryGet(scriptsCache.get(path));
+        // Check if the script is cached.
+        var sc = ScriptLoader.tryGet(
+            ScriptLoader.scriptsCache.get(path));
         if (sc.isPresent()) {
             return sc.get();
         }
 
-        // Grasscutter.getLogger().debug("Loading script " + path);
-        final Path scriptPath = FileUtils.getScriptPath(path);
-        if (!Files.exists(scriptPath)) return null;
-
         try {
-            var script = ((Compilable) getEngine()).compile(Files.newBufferedReader(scriptPath));
-            scriptsCache.put(path, new SoftReference<>(script));
+            CompiledScript script;
+            if (Configuration.FAST_REQUIRE) {
+                // Attempt to load the script.
+                var scriptPath = FileUtils.getScriptPath(path);
+                if (!Files.exists(scriptPath)) return null;
+
+                // Compile the script from the file.
+                var source = Files.newBufferedReader(scriptPath);
+                script = ScriptLoader.getEngine().compile(source);
+            } else {
+                // Load the script sources.
+                var sources = ScriptLoader.readScript(path);
+                if (sources == null) return null;
+
+                // Check to see if the script references other scripts.
+                if (sources.contains("require")) {
+                    var lines = sources.split("\n");
+                    var output = new StringBuilder();
+                    for (var line : lines) {
+                        // Skip non-require lines.
+                        if (!line.startsWith("require")) {
+                            output.append(line).append("\n");
+                            continue;
+                        }
+
+                        // Extract the script name.
+                        var scriptName = line.substring(9, line.length() - 1);
+                        // Resolve the script path.
+                        var scriptPath = "Common/" + scriptName + ".lua";
+                        var scriptSource = ScriptLoader.readScript(scriptPath);
+                        if (scriptSource == null) continue;
+
+                        // Append the script source.
+                        output.append(scriptSource).append("\n");
+                    }
+                    sources = output.toString();
+                }
+
+                // Compile the script & cache it in memory.
+                script = ScriptLoader.getEngine().compile(sources);
+            }
+
+            // Cache the script.
+            ScriptLoader.scriptsCache.put(path, new SoftReference<>(script));
             return script;
         } catch (Exception e) {
             Grasscutter.getLogger()

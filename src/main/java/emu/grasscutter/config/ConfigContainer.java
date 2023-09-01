@@ -29,9 +29,13 @@ public class ConfigContainer {
      * Version  9 - 'limits' was added for handbook requests.
      * Version 10 - 'trialCostumes' was added for enabling costumes
      *              on trial avatars.
+     * Version 11 - 'server.fastRequire' was added for disabling the new
+     *              Lua script require system if performance is a concern.
+     * Version 12 - 'http.startImmediately' was added to control whether the
+     *              HTTP server should start immediately.
      */
     private static int version() {
-        return 10;
+        return 12;
     }
 
     /**
@@ -41,7 +45,7 @@ public class ConfigContainer {
         try { // Check if the server is using a legacy config.
             var configObject = JsonUtils.loadToClass(Grasscutter.configFile.toPath(), JsonObject.class);
             if (!configObject.has("version")) {
-                Grasscutter.getLogger().info("Updating legacy ..");
+                Grasscutter.getLogger().info("Updating legacy config...");
                 Grasscutter.saveConfig(null);
             }
         } catch (Exception ignored) { }
@@ -111,6 +115,12 @@ public class ConfigContainer {
         public ServerRunMode runMode = ServerRunMode.HYBRID;
         public boolean logCommands = false;
 
+        /**
+         * If enabled, the 'require' Lua function will load the script's compiled varient into the context. (faster; doesn't work as well)
+         * If disabled, all 'require' calls will be replaced with the referenced script's source. (slower; works better)
+         */
+        public boolean fastRequire = true;
+
         public HTTP http = new HTTP();
         public Game game = new Game();
 
@@ -134,6 +144,9 @@ public class ConfigContainer {
     /* Server options. */
 
     public static class HTTP {
+        /* This starts the HTTP server before the game server. */
+        public boolean startImmediately = false;
+
         public String bindAddress = "0.0.0.0";
         public int bindPort = 443;
 

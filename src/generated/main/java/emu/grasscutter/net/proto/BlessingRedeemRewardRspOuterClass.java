@@ -19,11 +19,11 @@ public final class BlessingRedeemRewardRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>map&lt;uint32, uint32&gt; pic_num_map = 7;</code>
+     * <code>map&lt;uint32, uint32&gt; pic_num_map = 5;</code>
      */
     int getPicNumMapCount();
     /**
-     * <code>map&lt;uint32, uint32&gt; pic_num_map = 7;</code>
+     * <code>map&lt;uint32, uint32&gt; pic_num_map = 5;</code>
      */
     boolean containsPicNumMap(
         int key);
@@ -34,34 +34,34 @@ public final class BlessingRedeemRewardRspOuterClass {
     java.util.Map<java.lang.Integer, java.lang.Integer>
     getPicNumMap();
     /**
-     * <code>map&lt;uint32, uint32&gt; pic_num_map = 7;</code>
+     * <code>map&lt;uint32, uint32&gt; pic_num_map = 5;</code>
      */
     java.util.Map<java.lang.Integer, java.lang.Integer>
     getPicNumMapMap();
     /**
-     * <code>map&lt;uint32, uint32&gt; pic_num_map = 7;</code>
+     * <code>map&lt;uint32, uint32&gt; pic_num_map = 5;</code>
      */
 
     int getPicNumMapOrDefault(
         int key,
         int defaultValue);
     /**
-     * <code>map&lt;uint32, uint32&gt; pic_num_map = 7;</code>
+     * <code>map&lt;uint32, uint32&gt; pic_num_map = 5;</code>
      */
 
     int getPicNumMapOrThrow(
         int key);
 
     /**
-     * <code>int32 retcode = 10;</code>
+     * <code>int32 retcode = 6;</code>
      * @return The retcode.
      */
     int getRetcode();
   }
   /**
    * <pre>
-   * CmdId: 2133
-   * Obf: KEAKBINOFII
+   * CmdId: 8663
+   * Obf: DBAKMINAGNC
    * </pre>
    *
    * Protobuf type {@code BlessingRedeemRewardRsp}
@@ -109,7 +109,7 @@ public final class BlessingRedeemRewardRspOuterClass {
             case 0:
               done = true;
               break;
-            case 58: {
+            case 42: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 picNumMap_ = com.google.protobuf.MapField.newMapField(
                     PicNumMapDefaultEntryHolder.defaultEntry);
@@ -122,7 +122,7 @@ public final class BlessingRedeemRewardRspOuterClass {
                   picNumMap__.getKey(), picNumMap__.getValue());
               break;
             }
-            case 80: {
+            case 48: {
 
               retcode_ = input.readInt32();
               break;
@@ -156,7 +156,7 @@ public final class BlessingRedeemRewardRspOuterClass {
     protected com.google.protobuf.MapField internalGetMapField(
         int number) {
       switch (number) {
-        case 7:
+        case 5:
           return internalGetPicNumMap();
         default:
           throw new RuntimeException(
@@ -171,7 +171,7 @@ public final class BlessingRedeemRewardRspOuterClass {
               emu.grasscutter.net.proto.BlessingRedeemRewardRspOuterClass.BlessingRedeemRewardRsp.class, emu.grasscutter.net.proto.BlessingRedeemRewardRspOuterClass.BlessingRedeemRewardRsp.Builder.class);
     }
 
-    public static final int PIC_NUM_MAP_FIELD_NUMBER = 7;
+    public static final int PIC_NUM_MAP_FIELD_NUMBER = 5;
     private static final class PicNumMapDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.Integer, java.lang.Integer> defaultEntry =
@@ -198,7 +198,7 @@ public final class BlessingRedeemRewardRspOuterClass {
       return internalGetPicNumMap().getMap().size();
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; pic_num_map = 7;</code>
+     * <code>map&lt;uint32, uint32&gt; pic_num_map = 5;</code>
      */
 
     @java.lang.Override
@@ -216,7 +216,7 @@ public final class BlessingRedeemRewardRspOuterClass {
       return getPicNumMapMap();
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; pic_num_map = 7;</code>
+     * <code>map&lt;uint32, uint32&gt; pic_num_map = 5;</code>
      */
     @java.lang.Override
 
@@ -224,7 +224,7 @@ public final class BlessingRedeemRewardRspOuterClass {
       return internalGetPicNumMap().getMap();
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; pic_num_map = 7;</code>
+     * <code>map&lt;uint32, uint32&gt; pic_num_map = 5;</code>
      */
     @java.lang.Override
 
@@ -237,7 +237,7 @@ public final class BlessingRedeemRewardRspOuterClass {
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; pic_num_map = 7;</code>
+     * <code>map&lt;uint32, uint32&gt; pic_num_map = 5;</code>
      */
     @java.lang.Override
 
@@ -252,10 +252,10 @@ public final class BlessingRedeemRewardRspOuterClass {
       return map.get(key);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 10;
+    public static final int RETCODE_FIELD_NUMBER = 6;
     private int retcode_;
     /**
-     * <code>int32 retcode = 10;</code>
+     * <code>int32 retcode = 6;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -282,9 +282,9 @@ public final class BlessingRedeemRewardRspOuterClass {
           output,
           internalGetPicNumMap(),
           PicNumMapDefaultEntryHolder.defaultEntry,
-          7);
+          5);
       if (retcode_ != 0) {
-        output.writeInt32(10, retcode_);
+        output.writeInt32(6, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -303,11 +303,11 @@ public final class BlessingRedeemRewardRspOuterClass {
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(7, picNumMap__);
+            .computeMessageSize(5, picNumMap__);
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(10, retcode_);
+          .computeInt32Size(6, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -442,8 +442,8 @@ public final class BlessingRedeemRewardRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2133
-     * Obf: KEAKBINOFII
+     * CmdId: 8663
+     * Obf: DBAKMINAGNC
      * </pre>
      *
      * Protobuf type {@code BlessingRedeemRewardRsp}
@@ -461,7 +461,7 @@ public final class BlessingRedeemRewardRspOuterClass {
       protected com.google.protobuf.MapField internalGetMapField(
           int number) {
         switch (number) {
-          case 7:
+          case 5:
             return internalGetPicNumMap();
           default:
             throw new RuntimeException(
@@ -472,7 +472,7 @@ public final class BlessingRedeemRewardRspOuterClass {
       protected com.google.protobuf.MapField internalGetMutableMapField(
           int number) {
         switch (number) {
-          case 7:
+          case 5:
             return internalGetMutablePicNumMap();
           default:
             throw new RuntimeException(
@@ -648,7 +648,7 @@ public final class BlessingRedeemRewardRspOuterClass {
         return internalGetPicNumMap().getMap().size();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; pic_num_map = 7;</code>
+       * <code>map&lt;uint32, uint32&gt; pic_num_map = 5;</code>
        */
 
       @java.lang.Override
@@ -666,7 +666,7 @@ public final class BlessingRedeemRewardRspOuterClass {
         return getPicNumMapMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; pic_num_map = 7;</code>
+       * <code>map&lt;uint32, uint32&gt; pic_num_map = 5;</code>
        */
       @java.lang.Override
 
@@ -674,7 +674,7 @@ public final class BlessingRedeemRewardRspOuterClass {
         return internalGetPicNumMap().getMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; pic_num_map = 7;</code>
+       * <code>map&lt;uint32, uint32&gt; pic_num_map = 5;</code>
        */
       @java.lang.Override
 
@@ -687,7 +687,7 @@ public final class BlessingRedeemRewardRspOuterClass {
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; pic_num_map = 7;</code>
+       * <code>map&lt;uint32, uint32&gt; pic_num_map = 5;</code>
        */
       @java.lang.Override
 
@@ -708,7 +708,7 @@ public final class BlessingRedeemRewardRspOuterClass {
         return this;
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; pic_num_map = 7;</code>
+       * <code>map&lt;uint32, uint32&gt; pic_num_map = 5;</code>
        */
 
       public Builder removePicNumMap(
@@ -727,7 +727,7 @@ public final class BlessingRedeemRewardRspOuterClass {
         return internalGetMutablePicNumMap().getMutableMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; pic_num_map = 7;</code>
+       * <code>map&lt;uint32, uint32&gt; pic_num_map = 5;</code>
        */
       public Builder putPicNumMap(
           int key,
@@ -739,7 +739,7 @@ public final class BlessingRedeemRewardRspOuterClass {
         return this;
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; pic_num_map = 7;</code>
+       * <code>map&lt;uint32, uint32&gt; pic_num_map = 5;</code>
        */
 
       public Builder putAllPicNumMap(
@@ -751,7 +751,7 @@ public final class BlessingRedeemRewardRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 10;</code>
+       * <code>int32 retcode = 6;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -759,7 +759,7 @@ public final class BlessingRedeemRewardRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 10;</code>
+       * <code>int32 retcode = 6;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -770,7 +770,7 @@ public final class BlessingRedeemRewardRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 10;</code>
+       * <code>int32 retcode = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -852,9 +852,9 @@ public final class BlessingRedeemRewardRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\035BlessingRedeemRewardRsp.proto\"\232\001\n\027Bles" +
-      "singRedeemRewardRsp\022<\n\013pic_num_map\030\007 \003(\013" +
+      "singRedeemRewardRsp\022<\n\013pic_num_map\030\005 \003(\013" +
       "2\'.BlessingRedeemRewardRsp.PicNumMapEntr" +
-      "y\022\017\n\007retcode\030\n \001(\005\0320\n\016PicNumMapEntry\022\013\n\003" +
+      "y\022\017\n\007retcode\030\006 \001(\005\0320\n\016PicNumMapEntry\022\013\n\003" +
       "key\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001B\033\n\031emu.gras" +
       "scutter.net.protob\006proto3"
     };

@@ -19,44 +19,44 @@ public final class SpiceActivityFinishMakeSpiceReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool is_success = 3;</code>
-     * @return The isSuccess.
-     */
-    boolean getIsSuccess();
-
-    /**
-     * <code>repeated uint32 left_material_id_list = 7;</code>
+     * <code>repeated uint32 left_material_id_list = 2;</code>
      * @return A list containing the leftMaterialIdList.
      */
     java.util.List<java.lang.Integer> getLeftMaterialIdListList();
     /**
-     * <code>repeated uint32 left_material_id_list = 7;</code>
+     * <code>repeated uint32 left_material_id_list = 2;</code>
      * @return The count of leftMaterialIdList.
      */
     int getLeftMaterialIdListCount();
     /**
-     * <code>repeated uint32 left_material_id_list = 7;</code>
+     * <code>repeated uint32 left_material_id_list = 2;</code>
      * @param index The index of the element to return.
      * @return The leftMaterialIdList at the given index.
      */
     int getLeftMaterialIdList(int index);
 
     /**
-     * <code>uint32 left_turns = 14;</code>
+     * <code>uint32 left_turns = 8;</code>
      * @return The leftTurns.
      */
     int getLeftTurns();
 
     /**
-     * <code>uint32 stage_id = 6;</code>
+     * <code>bool is_success = 12;</code>
+     * @return The isSuccess.
+     */
+    boolean getIsSuccess();
+
+    /**
+     * <code>uint32 stage_id = 4;</code>
      * @return The stageId.
      */
     int getStageId();
   }
   /**
    * <pre>
-   * CmdId: 8660
-   * Obf: KANEKLPBDMO
+   * CmdId: 8503
+   * Obf: LMKBIBBIMME
    * </pre>
    *
    * Protobuf type {@code SpiceActivityFinishMakeSpiceReq}
@@ -105,17 +105,7 @@ public final class SpiceActivityFinishMakeSpiceReqOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
-
-              isSuccess_ = input.readBool();
-              break;
-            }
-            case 48: {
-
-              stageId_ = input.readUInt32();
-              break;
-            }
-            case 56: {
+            case 16: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 leftMaterialIdList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -123,7 +113,7 @@ public final class SpiceActivityFinishMakeSpiceReqOuterClass {
               leftMaterialIdList_.addInt(input.readUInt32());
               break;
             }
-            case 58: {
+            case 18: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -136,9 +126,19 @@ public final class SpiceActivityFinishMakeSpiceReqOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 112: {
+            case 32: {
+
+              stageId_ = input.readUInt32();
+              break;
+            }
+            case 64: {
 
               leftTurns_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+
+              isSuccess_ = input.readBool();
               break;
             }
             default: {
@@ -176,21 +176,10 @@ public final class SpiceActivityFinishMakeSpiceReqOuterClass {
               emu.grasscutter.net.proto.SpiceActivityFinishMakeSpiceReqOuterClass.SpiceActivityFinishMakeSpiceReq.class, emu.grasscutter.net.proto.SpiceActivityFinishMakeSpiceReqOuterClass.SpiceActivityFinishMakeSpiceReq.Builder.class);
     }
 
-    public static final int IS_SUCCESS_FIELD_NUMBER = 3;
-    private boolean isSuccess_;
-    /**
-     * <code>bool is_success = 3;</code>
-     * @return The isSuccess.
-     */
-    @java.lang.Override
-    public boolean getIsSuccess() {
-      return isSuccess_;
-    }
-
-    public static final int LEFT_MATERIAL_ID_LIST_FIELD_NUMBER = 7;
+    public static final int LEFT_MATERIAL_ID_LIST_FIELD_NUMBER = 2;
     private com.google.protobuf.Internal.IntList leftMaterialIdList_;
     /**
-     * <code>repeated uint32 left_material_id_list = 7;</code>
+     * <code>repeated uint32 left_material_id_list = 2;</code>
      * @return A list containing the leftMaterialIdList.
      */
     @java.lang.Override
@@ -199,14 +188,14 @@ public final class SpiceActivityFinishMakeSpiceReqOuterClass {
       return leftMaterialIdList_;
     }
     /**
-     * <code>repeated uint32 left_material_id_list = 7;</code>
+     * <code>repeated uint32 left_material_id_list = 2;</code>
      * @return The count of leftMaterialIdList.
      */
     public int getLeftMaterialIdListCount() {
       return leftMaterialIdList_.size();
     }
     /**
-     * <code>repeated uint32 left_material_id_list = 7;</code>
+     * <code>repeated uint32 left_material_id_list = 2;</code>
      * @param index The index of the element to return.
      * @return The leftMaterialIdList at the given index.
      */
@@ -215,10 +204,10 @@ public final class SpiceActivityFinishMakeSpiceReqOuterClass {
     }
     private int leftMaterialIdListMemoizedSerializedSize = -1;
 
-    public static final int LEFT_TURNS_FIELD_NUMBER = 14;
+    public static final int LEFT_TURNS_FIELD_NUMBER = 8;
     private int leftTurns_;
     /**
-     * <code>uint32 left_turns = 14;</code>
+     * <code>uint32 left_turns = 8;</code>
      * @return The leftTurns.
      */
     @java.lang.Override
@@ -226,10 +215,21 @@ public final class SpiceActivityFinishMakeSpiceReqOuterClass {
       return leftTurns_;
     }
 
-    public static final int STAGE_ID_FIELD_NUMBER = 6;
+    public static final int IS_SUCCESS_FIELD_NUMBER = 12;
+    private boolean isSuccess_;
+    /**
+     * <code>bool is_success = 12;</code>
+     * @return The isSuccess.
+     */
+    @java.lang.Override
+    public boolean getIsSuccess() {
+      return isSuccess_;
+    }
+
+    public static final int STAGE_ID_FIELD_NUMBER = 4;
     private int stageId_;
     /**
-     * <code>uint32 stage_id = 6;</code>
+     * <code>uint32 stage_id = 4;</code>
      * @return The stageId.
      */
     @java.lang.Override
@@ -252,21 +252,21 @@ public final class SpiceActivityFinishMakeSpiceReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (isSuccess_ != false) {
-        output.writeBool(3, isSuccess_);
-      }
-      if (stageId_ != 0) {
-        output.writeUInt32(6, stageId_);
-      }
       if (getLeftMaterialIdListList().size() > 0) {
-        output.writeUInt32NoTag(58);
+        output.writeUInt32NoTag(18);
         output.writeUInt32NoTag(leftMaterialIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < leftMaterialIdList_.size(); i++) {
         output.writeUInt32NoTag(leftMaterialIdList_.getInt(i));
       }
+      if (stageId_ != 0) {
+        output.writeUInt32(4, stageId_);
+      }
       if (leftTurns_ != 0) {
-        output.writeUInt32(14, leftTurns_);
+        output.writeUInt32(8, leftTurns_);
+      }
+      if (isSuccess_ != false) {
+        output.writeBool(12, isSuccess_);
       }
       unknownFields.writeTo(output);
     }
@@ -277,14 +277,6 @@ public final class SpiceActivityFinishMakeSpiceReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (isSuccess_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(3, isSuccess_);
-      }
-      if (stageId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, stageId_);
-      }
       {
         int dataSize = 0;
         for (int i = 0; i < leftMaterialIdList_.size(); i++) {
@@ -299,9 +291,17 @@ public final class SpiceActivityFinishMakeSpiceReqOuterClass {
         }
         leftMaterialIdListMemoizedSerializedSize = dataSize;
       }
+      if (stageId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(4, stageId_);
+      }
       if (leftTurns_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, leftTurns_);
+          .computeUInt32Size(8, leftTurns_);
+      }
+      if (isSuccess_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(12, isSuccess_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -318,12 +318,12 @@ public final class SpiceActivityFinishMakeSpiceReqOuterClass {
       }
       emu.grasscutter.net.proto.SpiceActivityFinishMakeSpiceReqOuterClass.SpiceActivityFinishMakeSpiceReq other = (emu.grasscutter.net.proto.SpiceActivityFinishMakeSpiceReqOuterClass.SpiceActivityFinishMakeSpiceReq) obj;
 
-      if (getIsSuccess()
-          != other.getIsSuccess()) return false;
       if (!getLeftMaterialIdListList()
           .equals(other.getLeftMaterialIdListList())) return false;
       if (getLeftTurns()
           != other.getLeftTurns()) return false;
+      if (getIsSuccess()
+          != other.getIsSuccess()) return false;
       if (getStageId()
           != other.getStageId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -337,15 +337,15 @@ public final class SpiceActivityFinishMakeSpiceReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + IS_SUCCESS_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsSuccess());
       if (getLeftMaterialIdListCount() > 0) {
         hash = (37 * hash) + LEFT_MATERIAL_ID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getLeftMaterialIdListList().hashCode();
       }
       hash = (37 * hash) + LEFT_TURNS_FIELD_NUMBER;
       hash = (53 * hash) + getLeftTurns();
+      hash = (37 * hash) + IS_SUCCESS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsSuccess());
       hash = (37 * hash) + STAGE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getStageId();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -445,8 +445,8 @@ public final class SpiceActivityFinishMakeSpiceReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8660
-     * Obf: KANEKLPBDMO
+     * CmdId: 8503
+     * Obf: LMKBIBBIMME
      * </pre>
      *
      * Protobuf type {@code SpiceActivityFinishMakeSpiceReq}
@@ -486,11 +486,11 @@ public final class SpiceActivityFinishMakeSpiceReqOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        isSuccess_ = false;
-
         leftMaterialIdList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
         leftTurns_ = 0;
+
+        isSuccess_ = false;
 
         stageId_ = 0;
 
@@ -521,13 +521,13 @@ public final class SpiceActivityFinishMakeSpiceReqOuterClass {
       public emu.grasscutter.net.proto.SpiceActivityFinishMakeSpiceReqOuterClass.SpiceActivityFinishMakeSpiceReq buildPartial() {
         emu.grasscutter.net.proto.SpiceActivityFinishMakeSpiceReqOuterClass.SpiceActivityFinishMakeSpiceReq result = new emu.grasscutter.net.proto.SpiceActivityFinishMakeSpiceReqOuterClass.SpiceActivityFinishMakeSpiceReq(this);
         int from_bitField0_ = bitField0_;
-        result.isSuccess_ = isSuccess_;
         if (((bitField0_ & 0x00000001) != 0)) {
           leftMaterialIdList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.leftMaterialIdList_ = leftMaterialIdList_;
         result.leftTurns_ = leftTurns_;
+        result.isSuccess_ = isSuccess_;
         result.stageId_ = stageId_;
         onBuilt();
         return result;
@@ -577,9 +577,6 @@ public final class SpiceActivityFinishMakeSpiceReqOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.SpiceActivityFinishMakeSpiceReqOuterClass.SpiceActivityFinishMakeSpiceReq other) {
         if (other == emu.grasscutter.net.proto.SpiceActivityFinishMakeSpiceReqOuterClass.SpiceActivityFinishMakeSpiceReq.getDefaultInstance()) return this;
-        if (other.getIsSuccess() != false) {
-          setIsSuccess(other.getIsSuccess());
-        }
         if (!other.leftMaterialIdList_.isEmpty()) {
           if (leftMaterialIdList_.isEmpty()) {
             leftMaterialIdList_ = other.leftMaterialIdList_;
@@ -592,6 +589,9 @@ public final class SpiceActivityFinishMakeSpiceReqOuterClass {
         }
         if (other.getLeftTurns() != 0) {
           setLeftTurns(other.getLeftTurns());
+        }
+        if (other.getIsSuccess() != false) {
+          setIsSuccess(other.getIsSuccess());
         }
         if (other.getStageId() != 0) {
           setStageId(other.getStageId());
@@ -626,37 +626,6 @@ public final class SpiceActivityFinishMakeSpiceReqOuterClass {
       }
       private int bitField0_;
 
-      private boolean isSuccess_ ;
-      /**
-       * <code>bool is_success = 3;</code>
-       * @return The isSuccess.
-       */
-      @java.lang.Override
-      public boolean getIsSuccess() {
-        return isSuccess_;
-      }
-      /**
-       * <code>bool is_success = 3;</code>
-       * @param value The isSuccess to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsSuccess(boolean value) {
-        
-        isSuccess_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_success = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsSuccess() {
-        
-        isSuccess_ = false;
-        onChanged();
-        return this;
-      }
-
       private com.google.protobuf.Internal.IntList leftMaterialIdList_ = emptyIntList();
       private void ensureLeftMaterialIdListIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
@@ -665,7 +634,7 @@ public final class SpiceActivityFinishMakeSpiceReqOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 left_material_id_list = 7;</code>
+       * <code>repeated uint32 left_material_id_list = 2;</code>
        * @return A list containing the leftMaterialIdList.
        */
       public java.util.List<java.lang.Integer>
@@ -674,14 +643,14 @@ public final class SpiceActivityFinishMakeSpiceReqOuterClass {
                  java.util.Collections.unmodifiableList(leftMaterialIdList_) : leftMaterialIdList_;
       }
       /**
-       * <code>repeated uint32 left_material_id_list = 7;</code>
+       * <code>repeated uint32 left_material_id_list = 2;</code>
        * @return The count of leftMaterialIdList.
        */
       public int getLeftMaterialIdListCount() {
         return leftMaterialIdList_.size();
       }
       /**
-       * <code>repeated uint32 left_material_id_list = 7;</code>
+       * <code>repeated uint32 left_material_id_list = 2;</code>
        * @param index The index of the element to return.
        * @return The leftMaterialIdList at the given index.
        */
@@ -689,7 +658,7 @@ public final class SpiceActivityFinishMakeSpiceReqOuterClass {
         return leftMaterialIdList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 left_material_id_list = 7;</code>
+       * <code>repeated uint32 left_material_id_list = 2;</code>
        * @param index The index to set the value at.
        * @param value The leftMaterialIdList to set.
        * @return This builder for chaining.
@@ -702,7 +671,7 @@ public final class SpiceActivityFinishMakeSpiceReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 left_material_id_list = 7;</code>
+       * <code>repeated uint32 left_material_id_list = 2;</code>
        * @param value The leftMaterialIdList to add.
        * @return This builder for chaining.
        */
@@ -713,7 +682,7 @@ public final class SpiceActivityFinishMakeSpiceReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 left_material_id_list = 7;</code>
+       * <code>repeated uint32 left_material_id_list = 2;</code>
        * @param values The leftMaterialIdList to add.
        * @return This builder for chaining.
        */
@@ -726,7 +695,7 @@ public final class SpiceActivityFinishMakeSpiceReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 left_material_id_list = 7;</code>
+       * <code>repeated uint32 left_material_id_list = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearLeftMaterialIdList() {
@@ -738,7 +707,7 @@ public final class SpiceActivityFinishMakeSpiceReqOuterClass {
 
       private int leftTurns_ ;
       /**
-       * <code>uint32 left_turns = 14;</code>
+       * <code>uint32 left_turns = 8;</code>
        * @return The leftTurns.
        */
       @java.lang.Override
@@ -746,7 +715,7 @@ public final class SpiceActivityFinishMakeSpiceReqOuterClass {
         return leftTurns_;
       }
       /**
-       * <code>uint32 left_turns = 14;</code>
+       * <code>uint32 left_turns = 8;</code>
        * @param value The leftTurns to set.
        * @return This builder for chaining.
        */
@@ -757,7 +726,7 @@ public final class SpiceActivityFinishMakeSpiceReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 left_turns = 14;</code>
+       * <code>uint32 left_turns = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearLeftTurns() {
@@ -767,9 +736,40 @@ public final class SpiceActivityFinishMakeSpiceReqOuterClass {
         return this;
       }
 
+      private boolean isSuccess_ ;
+      /**
+       * <code>bool is_success = 12;</code>
+       * @return The isSuccess.
+       */
+      @java.lang.Override
+      public boolean getIsSuccess() {
+        return isSuccess_;
+      }
+      /**
+       * <code>bool is_success = 12;</code>
+       * @param value The isSuccess to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsSuccess(boolean value) {
+        
+        isSuccess_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_success = 12;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsSuccess() {
+        
+        isSuccess_ = false;
+        onChanged();
+        return this;
+      }
+
       private int stageId_ ;
       /**
-       * <code>uint32 stage_id = 6;</code>
+       * <code>uint32 stage_id = 4;</code>
        * @return The stageId.
        */
       @java.lang.Override
@@ -777,7 +777,7 @@ public final class SpiceActivityFinishMakeSpiceReqOuterClass {
         return stageId_;
       }
       /**
-       * <code>uint32 stage_id = 6;</code>
+       * <code>uint32 stage_id = 4;</code>
        * @param value The stageId to set.
        * @return This builder for chaining.
        */
@@ -788,7 +788,7 @@ public final class SpiceActivityFinishMakeSpiceReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 stage_id = 6;</code>
+       * <code>uint32 stage_id = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearStageId() {
@@ -865,9 +865,9 @@ public final class SpiceActivityFinishMakeSpiceReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n%SpiceActivityFinishMakeSpiceReq.proto\"" +
-      "z\n\037SpiceActivityFinishMakeSpiceReq\022\022\n\nis" +
-      "_success\030\003 \001(\010\022\035\n\025left_material_id_list\030" +
-      "\007 \003(\r\022\022\n\nleft_turns\030\016 \001(\r\022\020\n\010stage_id\030\006 " +
+      "z\n\037SpiceActivityFinishMakeSpiceReq\022\035\n\025le" +
+      "ft_material_id_list\030\002 \003(\r\022\022\n\nleft_turns\030" +
+      "\010 \001(\r\022\022\n\nis_success\030\014 \001(\010\022\020\n\010stage_id\030\004 " +
       "\001(\rB\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -879,7 +879,7 @@ public final class SpiceActivityFinishMakeSpiceReqOuterClass {
     internal_static_SpiceActivityFinishMakeSpiceReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SpiceActivityFinishMakeSpiceReq_descriptor,
-        new java.lang.String[] { "IsSuccess", "LeftMaterialIdList", "LeftTurns", "StageId", });
+        new java.lang.String[] { "LeftMaterialIdList", "LeftTurns", "IsSuccess", "StageId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

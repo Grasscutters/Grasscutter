@@ -19,21 +19,21 @@ public final class MeetNpcRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 npc_first_met_id = 2;</code>
-     * @return The npcFirstMetId.
-     */
-    int getNpcFirstMetId();
-
-    /**
-     * <code>int32 retcode = 3;</code>
+     * <code>int32 retcode = 7;</code>
      * @return The retcode.
      */
     int getRetcode();
+
+    /**
+     * <code>uint32 npc_first_met_id = 15;</code>
+     * @return The npcFirstMetId.
+     */
+    int getNpcFirstMetId();
   }
   /**
    * <pre>
-   * CmdId: 535
-   * Obf: FOCAKAJLFCM
+   * CmdId: 25074
+   * Obf: LCOFOOPOHGJ
    * </pre>
    *
    * Protobuf type {@code MeetNpcRsp}
@@ -80,14 +80,14 @@ public final class MeetNpcRspOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
-
-              npcFirstMetId_ = input.readUInt32();
-              break;
-            }
-            case 24: {
+            case 56: {
 
               retcode_ = input.readInt32();
+              break;
+            }
+            case 120: {
+
+              npcFirstMetId_ = input.readUInt32();
               break;
             }
             default: {
@@ -122,26 +122,26 @@ public final class MeetNpcRspOuterClass {
               emu.grasscutter.net.proto.MeetNpcRspOuterClass.MeetNpcRsp.class, emu.grasscutter.net.proto.MeetNpcRspOuterClass.MeetNpcRsp.Builder.class);
     }
 
-    public static final int NPC_FIRST_MET_ID_FIELD_NUMBER = 2;
-    private int npcFirstMetId_;
-    /**
-     * <code>uint32 npc_first_met_id = 2;</code>
-     * @return The npcFirstMetId.
-     */
-    @java.lang.Override
-    public int getNpcFirstMetId() {
-      return npcFirstMetId_;
-    }
-
-    public static final int RETCODE_FIELD_NUMBER = 3;
+    public static final int RETCODE_FIELD_NUMBER = 7;
     private int retcode_;
     /**
-     * <code>int32 retcode = 3;</code>
+     * <code>int32 retcode = 7;</code>
      * @return The retcode.
      */
     @java.lang.Override
     public int getRetcode() {
       return retcode_;
+    }
+
+    public static final int NPC_FIRST_MET_ID_FIELD_NUMBER = 15;
+    private int npcFirstMetId_;
+    /**
+     * <code>uint32 npc_first_met_id = 15;</code>
+     * @return The npcFirstMetId.
+     */
+    @java.lang.Override
+    public int getNpcFirstMetId() {
+      return npcFirstMetId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -158,11 +158,11 @@ public final class MeetNpcRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (npcFirstMetId_ != 0) {
-        output.writeUInt32(2, npcFirstMetId_);
-      }
       if (retcode_ != 0) {
-        output.writeInt32(3, retcode_);
+        output.writeInt32(7, retcode_);
+      }
+      if (npcFirstMetId_ != 0) {
+        output.writeUInt32(15, npcFirstMetId_);
       }
       unknownFields.writeTo(output);
     }
@@ -173,13 +173,13 @@ public final class MeetNpcRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (npcFirstMetId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, npcFirstMetId_);
-      }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, retcode_);
+          .computeInt32Size(7, retcode_);
+      }
+      if (npcFirstMetId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(15, npcFirstMetId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -196,10 +196,10 @@ public final class MeetNpcRspOuterClass {
       }
       emu.grasscutter.net.proto.MeetNpcRspOuterClass.MeetNpcRsp other = (emu.grasscutter.net.proto.MeetNpcRspOuterClass.MeetNpcRsp) obj;
 
-      if (getNpcFirstMetId()
-          != other.getNpcFirstMetId()) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
+      if (getNpcFirstMetId()
+          != other.getNpcFirstMetId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -211,10 +211,10 @@ public final class MeetNpcRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + NPC_FIRST_MET_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getNpcFirstMetId();
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
+      hash = (37 * hash) + NPC_FIRST_MET_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getNpcFirstMetId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -312,8 +312,8 @@ public final class MeetNpcRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 535
-     * Obf: FOCAKAJLFCM
+     * CmdId: 25074
+     * Obf: LCOFOOPOHGJ
      * </pre>
      *
      * Protobuf type {@code MeetNpcRsp}
@@ -353,9 +353,9 @@ public final class MeetNpcRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        npcFirstMetId_ = 0;
-
         retcode_ = 0;
+
+        npcFirstMetId_ = 0;
 
         return this;
       }
@@ -383,8 +383,8 @@ public final class MeetNpcRspOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.MeetNpcRspOuterClass.MeetNpcRsp buildPartial() {
         emu.grasscutter.net.proto.MeetNpcRspOuterClass.MeetNpcRsp result = new emu.grasscutter.net.proto.MeetNpcRspOuterClass.MeetNpcRsp(this);
-        result.npcFirstMetId_ = npcFirstMetId_;
         result.retcode_ = retcode_;
+        result.npcFirstMetId_ = npcFirstMetId_;
         onBuilt();
         return result;
       }
@@ -433,11 +433,11 @@ public final class MeetNpcRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.MeetNpcRspOuterClass.MeetNpcRsp other) {
         if (other == emu.grasscutter.net.proto.MeetNpcRspOuterClass.MeetNpcRsp.getDefaultInstance()) return this;
-        if (other.getNpcFirstMetId() != 0) {
-          setNpcFirstMetId(other.getNpcFirstMetId());
-        }
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
+        }
+        if (other.getNpcFirstMetId() != 0) {
+          setNpcFirstMetId(other.getNpcFirstMetId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -468,40 +468,9 @@ public final class MeetNpcRspOuterClass {
         return this;
       }
 
-      private int npcFirstMetId_ ;
-      /**
-       * <code>uint32 npc_first_met_id = 2;</code>
-       * @return The npcFirstMetId.
-       */
-      @java.lang.Override
-      public int getNpcFirstMetId() {
-        return npcFirstMetId_;
-      }
-      /**
-       * <code>uint32 npc_first_met_id = 2;</code>
-       * @param value The npcFirstMetId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setNpcFirstMetId(int value) {
-        
-        npcFirstMetId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 npc_first_met_id = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearNpcFirstMetId() {
-        
-        npcFirstMetId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 3;</code>
+       * <code>int32 retcode = 7;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -509,7 +478,7 @@ public final class MeetNpcRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 3;</code>
+       * <code>int32 retcode = 7;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -520,12 +489,43 @@ public final class MeetNpcRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 3;</code>
+       * <code>int32 retcode = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
         
         retcode_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int npcFirstMetId_ ;
+      /**
+       * <code>uint32 npc_first_met_id = 15;</code>
+       * @return The npcFirstMetId.
+       */
+      @java.lang.Override
+      public int getNpcFirstMetId() {
+        return npcFirstMetId_;
+      }
+      /**
+       * <code>uint32 npc_first_met_id = 15;</code>
+       * @param value The npcFirstMetId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNpcFirstMetId(int value) {
+        
+        npcFirstMetId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 npc_first_met_id = 15;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearNpcFirstMetId() {
+        
+        npcFirstMetId_ = 0;
         onChanged();
         return this;
       }
@@ -596,8 +596,8 @@ public final class MeetNpcRspOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\020MeetNpcRsp.proto\"7\n\nMeetNpcRsp\022\030\n\020npc_" +
-      "first_met_id\030\002 \001(\r\022\017\n\007retcode\030\003 \001(\005B\033\n\031e" +
+      "\n\020MeetNpcRsp.proto\"7\n\nMeetNpcRsp\022\017\n\007retc" +
+      "ode\030\007 \001(\005\022\030\n\020npc_first_met_id\030\017 \001(\rB\033\n\031e" +
       "mu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -609,7 +609,7 @@ public final class MeetNpcRspOuterClass {
     internal_static_MeetNpcRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_MeetNpcRsp_descriptor,
-        new java.lang.String[] { "NpcFirstMetId", "Retcode", });
+        new java.lang.String[] { "Retcode", "NpcFirstMetId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

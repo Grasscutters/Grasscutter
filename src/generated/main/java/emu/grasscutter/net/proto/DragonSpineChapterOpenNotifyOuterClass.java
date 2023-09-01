@@ -19,21 +19,21 @@ public final class DragonSpineChapterOpenNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 schedule_id = 2;</code>
+     * <code>uint32 schedule_id = 9;</code>
      * @return The scheduleId.
      */
     int getScheduleId();
 
     /**
-     * <code>uint32 chapter_id = 7;</code>
+     * <code>uint32 chapter_id = 6;</code>
      * @return The chapterId.
      */
     int getChapterId();
   }
   /**
    * <pre>
-   * CmdId: 2096
-   * Obf: HMNBJEKGGBP
+   * CmdId: 9487
+   * Obf: LOMMGMOLJMM
    * </pre>
    *
    * Protobuf type {@code DragonSpineChapterOpenNotify}
@@ -80,14 +80,14 @@ public final class DragonSpineChapterOpenNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
-
-              scheduleId_ = input.readUInt32();
-              break;
-            }
-            case 56: {
+            case 48: {
 
               chapterId_ = input.readUInt32();
+              break;
+            }
+            case 72: {
+
+              scheduleId_ = input.readUInt32();
               break;
             }
             default: {
@@ -122,10 +122,10 @@ public final class DragonSpineChapterOpenNotifyOuterClass {
               emu.grasscutter.net.proto.DragonSpineChapterOpenNotifyOuterClass.DragonSpineChapterOpenNotify.class, emu.grasscutter.net.proto.DragonSpineChapterOpenNotifyOuterClass.DragonSpineChapterOpenNotify.Builder.class);
     }
 
-    public static final int SCHEDULE_ID_FIELD_NUMBER = 2;
+    public static final int SCHEDULE_ID_FIELD_NUMBER = 9;
     private int scheduleId_;
     /**
-     * <code>uint32 schedule_id = 2;</code>
+     * <code>uint32 schedule_id = 9;</code>
      * @return The scheduleId.
      */
     @java.lang.Override
@@ -133,10 +133,10 @@ public final class DragonSpineChapterOpenNotifyOuterClass {
       return scheduleId_;
     }
 
-    public static final int CHAPTER_ID_FIELD_NUMBER = 7;
+    public static final int CHAPTER_ID_FIELD_NUMBER = 6;
     private int chapterId_;
     /**
-     * <code>uint32 chapter_id = 7;</code>
+     * <code>uint32 chapter_id = 6;</code>
      * @return The chapterId.
      */
     @java.lang.Override
@@ -158,11 +158,11 @@ public final class DragonSpineChapterOpenNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (scheduleId_ != 0) {
-        output.writeUInt32(2, scheduleId_);
-      }
       if (chapterId_ != 0) {
-        output.writeUInt32(7, chapterId_);
+        output.writeUInt32(6, chapterId_);
+      }
+      if (scheduleId_ != 0) {
+        output.writeUInt32(9, scheduleId_);
       }
       unknownFields.writeTo(output);
     }
@@ -173,13 +173,13 @@ public final class DragonSpineChapterOpenNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (scheduleId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, scheduleId_);
-      }
       if (chapterId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, chapterId_);
+          .computeUInt32Size(6, chapterId_);
+      }
+      if (scheduleId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(9, scheduleId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -312,8 +312,8 @@ public final class DragonSpineChapterOpenNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2096
-     * Obf: HMNBJEKGGBP
+     * CmdId: 9487
+     * Obf: LOMMGMOLJMM
      * </pre>
      *
      * Protobuf type {@code DragonSpineChapterOpenNotify}
@@ -470,7 +470,7 @@ public final class DragonSpineChapterOpenNotifyOuterClass {
 
       private int scheduleId_ ;
       /**
-       * <code>uint32 schedule_id = 2;</code>
+       * <code>uint32 schedule_id = 9;</code>
        * @return The scheduleId.
        */
       @java.lang.Override
@@ -478,7 +478,7 @@ public final class DragonSpineChapterOpenNotifyOuterClass {
         return scheduleId_;
       }
       /**
-       * <code>uint32 schedule_id = 2;</code>
+       * <code>uint32 schedule_id = 9;</code>
        * @param value The scheduleId to set.
        * @return This builder for chaining.
        */
@@ -489,7 +489,7 @@ public final class DragonSpineChapterOpenNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 schedule_id = 2;</code>
+       * <code>uint32 schedule_id = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearScheduleId() {
@@ -501,7 +501,7 @@ public final class DragonSpineChapterOpenNotifyOuterClass {
 
       private int chapterId_ ;
       /**
-       * <code>uint32 chapter_id = 7;</code>
+       * <code>uint32 chapter_id = 6;</code>
        * @return The chapterId.
        */
       @java.lang.Override
@@ -509,7 +509,7 @@ public final class DragonSpineChapterOpenNotifyOuterClass {
         return chapterId_;
       }
       /**
-       * <code>uint32 chapter_id = 7;</code>
+       * <code>uint32 chapter_id = 6;</code>
        * @param value The chapterId to set.
        * @return This builder for chaining.
        */
@@ -520,7 +520,7 @@ public final class DragonSpineChapterOpenNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 chapter_id = 7;</code>
+       * <code>uint32 chapter_id = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearChapterId() {
@@ -598,7 +598,7 @@ public final class DragonSpineChapterOpenNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\"DragonSpineChapterOpenNotify.proto\"G\n\034" +
       "DragonSpineChapterOpenNotify\022\023\n\013schedule" +
-      "_id\030\002 \001(\r\022\022\n\nchapter_id\030\007 \001(\rB\033\n\031emu.gra" +
+      "_id\030\t \001(\r\022\022\n\nchapter_id\030\006 \001(\rB\033\n\031emu.gra" +
       "sscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

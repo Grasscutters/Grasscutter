@@ -19,51 +19,51 @@ public final class ElectroherculesBattleSettleNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 BNMHJGCJAPB = 10;</code>
-     * @return The bNMHJGCJAPB.
-     */
-    int getBNMHJGCJAPB();
-
-    /**
-     * <code>uint32 finish_time = 1;</code>
-     * @return The finishTime.
-     */
-    int getFinishTime();
-
-    /**
-     * <code>uint32 gallery_id = 3;</code>
-     * @return The galleryId.
-     */
-    int getGalleryId();
-
-    /**
-     * <code>bool is_new_record = 7;</code>
+     * <code>bool is_new_record = 4;</code>
      * @return The isNewRecord.
      */
     boolean getIsNewRecord();
 
     /**
-     * <code>uint32 stage_id = 14;</code>
+     * <code>uint32 stage_id = 13;</code>
      * @return The stageId.
      */
     int getStageId();
 
     /**
-     * <code>bool is_succ = 11;</code>
+     * <code>bool NJFLJGMFEMK = 6;</code>
+     * @return The nJFLJGMFEMK.
+     */
+    boolean getNJFLJGMFEMK();
+
+    /**
+     * <code>bool is_succ = 5;</code>
      * @return The isSucc.
      */
     boolean getIsSucc();
 
     /**
-     * <code>bool BBEILLFPCOC = 2;</code>
-     * @return The bBEILLFPCOC.
+     * <code>uint32 diffculty = 15;</code>
+     * @return The diffculty.
      */
-    boolean getBBEILLFPCOC();
+    int getDiffculty();
+
+    /**
+     * <code>uint32 finish_time = 11;</code>
+     * @return The finishTime.
+     */
+    int getFinishTime();
+
+    /**
+     * <code>uint32 gallery_id = 14;</code>
+     * @return The galleryId.
+     */
+    int getGalleryId();
   }
   /**
    * <pre>
-   * CmdId: 22701
-   * Obf: KCFNLIHPJBG
+   * CmdId: 6962
+   * Obf: AFKKDAHBDKB
    * </pre>
    *
    * Protobuf type {@code ElectroherculesBattleSettleNotify}
@@ -110,39 +110,39 @@ public final class ElectroherculesBattleSettleNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
-
-              finishTime_ = input.readUInt32();
-              break;
-            }
-            case 16: {
-
-              bBEILLFPCOC_ = input.readBool();
-              break;
-            }
-            case 24: {
-
-              galleryId_ = input.readUInt32();
-              break;
-            }
-            case 56: {
+            case 32: {
 
               isNewRecord_ = input.readBool();
               break;
             }
-            case 80: {
-
-              bNMHJGCJAPB_ = input.readUInt32();
-              break;
-            }
-            case 88: {
+            case 40: {
 
               isSucc_ = input.readBool();
               break;
             }
-            case 112: {
+            case 48: {
+
+              nJFLJGMFEMK_ = input.readBool();
+              break;
+            }
+            case 88: {
+
+              finishTime_ = input.readUInt32();
+              break;
+            }
+            case 104: {
 
               stageId_ = input.readUInt32();
+              break;
+            }
+            case 112: {
+
+              galleryId_ = input.readUInt32();
+              break;
+            }
+            case 120: {
+
+              diffculty_ = input.readUInt32();
               break;
             }
             default: {
@@ -177,43 +177,10 @@ public final class ElectroherculesBattleSettleNotifyOuterClass {
               emu.grasscutter.net.proto.ElectroherculesBattleSettleNotifyOuterClass.ElectroherculesBattleSettleNotify.class, emu.grasscutter.net.proto.ElectroherculesBattleSettleNotifyOuterClass.ElectroherculesBattleSettleNotify.Builder.class);
     }
 
-    public static final int BNMHJGCJAPB_FIELD_NUMBER = 10;
-    private int bNMHJGCJAPB_;
-    /**
-     * <code>uint32 BNMHJGCJAPB = 10;</code>
-     * @return The bNMHJGCJAPB.
-     */
-    @java.lang.Override
-    public int getBNMHJGCJAPB() {
-      return bNMHJGCJAPB_;
-    }
-
-    public static final int FINISH_TIME_FIELD_NUMBER = 1;
-    private int finishTime_;
-    /**
-     * <code>uint32 finish_time = 1;</code>
-     * @return The finishTime.
-     */
-    @java.lang.Override
-    public int getFinishTime() {
-      return finishTime_;
-    }
-
-    public static final int GALLERY_ID_FIELD_NUMBER = 3;
-    private int galleryId_;
-    /**
-     * <code>uint32 gallery_id = 3;</code>
-     * @return The galleryId.
-     */
-    @java.lang.Override
-    public int getGalleryId() {
-      return galleryId_;
-    }
-
-    public static final int IS_NEW_RECORD_FIELD_NUMBER = 7;
+    public static final int IS_NEW_RECORD_FIELD_NUMBER = 4;
     private boolean isNewRecord_;
     /**
-     * <code>bool is_new_record = 7;</code>
+     * <code>bool is_new_record = 4;</code>
      * @return The isNewRecord.
      */
     @java.lang.Override
@@ -221,10 +188,10 @@ public final class ElectroherculesBattleSettleNotifyOuterClass {
       return isNewRecord_;
     }
 
-    public static final int STAGE_ID_FIELD_NUMBER = 14;
+    public static final int STAGE_ID_FIELD_NUMBER = 13;
     private int stageId_;
     /**
-     * <code>uint32 stage_id = 14;</code>
+     * <code>uint32 stage_id = 13;</code>
      * @return The stageId.
      */
     @java.lang.Override
@@ -232,10 +199,21 @@ public final class ElectroherculesBattleSettleNotifyOuterClass {
       return stageId_;
     }
 
-    public static final int IS_SUCC_FIELD_NUMBER = 11;
+    public static final int NJFLJGMFEMK_FIELD_NUMBER = 6;
+    private boolean nJFLJGMFEMK_;
+    /**
+     * <code>bool NJFLJGMFEMK = 6;</code>
+     * @return The nJFLJGMFEMK.
+     */
+    @java.lang.Override
+    public boolean getNJFLJGMFEMK() {
+      return nJFLJGMFEMK_;
+    }
+
+    public static final int IS_SUCC_FIELD_NUMBER = 5;
     private boolean isSucc_;
     /**
-     * <code>bool is_succ = 11;</code>
+     * <code>bool is_succ = 5;</code>
      * @return The isSucc.
      */
     @java.lang.Override
@@ -243,15 +221,37 @@ public final class ElectroherculesBattleSettleNotifyOuterClass {
       return isSucc_;
     }
 
-    public static final int BBEILLFPCOC_FIELD_NUMBER = 2;
-    private boolean bBEILLFPCOC_;
+    public static final int DIFFCULTY_FIELD_NUMBER = 15;
+    private int diffculty_;
     /**
-     * <code>bool BBEILLFPCOC = 2;</code>
-     * @return The bBEILLFPCOC.
+     * <code>uint32 diffculty = 15;</code>
+     * @return The diffculty.
      */
     @java.lang.Override
-    public boolean getBBEILLFPCOC() {
-      return bBEILLFPCOC_;
+    public int getDiffculty() {
+      return diffculty_;
+    }
+
+    public static final int FINISH_TIME_FIELD_NUMBER = 11;
+    private int finishTime_;
+    /**
+     * <code>uint32 finish_time = 11;</code>
+     * @return The finishTime.
+     */
+    @java.lang.Override
+    public int getFinishTime() {
+      return finishTime_;
+    }
+
+    public static final int GALLERY_ID_FIELD_NUMBER = 14;
+    private int galleryId_;
+    /**
+     * <code>uint32 gallery_id = 14;</code>
+     * @return The galleryId.
+     */
+    @java.lang.Override
+    public int getGalleryId() {
+      return galleryId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -268,26 +268,26 @@ public final class ElectroherculesBattleSettleNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (finishTime_ != 0) {
-        output.writeUInt32(1, finishTime_);
-      }
-      if (bBEILLFPCOC_ != false) {
-        output.writeBool(2, bBEILLFPCOC_);
-      }
-      if (galleryId_ != 0) {
-        output.writeUInt32(3, galleryId_);
-      }
       if (isNewRecord_ != false) {
-        output.writeBool(7, isNewRecord_);
-      }
-      if (bNMHJGCJAPB_ != 0) {
-        output.writeUInt32(10, bNMHJGCJAPB_);
+        output.writeBool(4, isNewRecord_);
       }
       if (isSucc_ != false) {
-        output.writeBool(11, isSucc_);
+        output.writeBool(5, isSucc_);
+      }
+      if (nJFLJGMFEMK_ != false) {
+        output.writeBool(6, nJFLJGMFEMK_);
+      }
+      if (finishTime_ != 0) {
+        output.writeUInt32(11, finishTime_);
       }
       if (stageId_ != 0) {
-        output.writeUInt32(14, stageId_);
+        output.writeUInt32(13, stageId_);
+      }
+      if (galleryId_ != 0) {
+        output.writeUInt32(14, galleryId_);
+      }
+      if (diffculty_ != 0) {
+        output.writeUInt32(15, diffculty_);
       }
       unknownFields.writeTo(output);
     }
@@ -298,33 +298,33 @@ public final class ElectroherculesBattleSettleNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (finishTime_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, finishTime_);
-      }
-      if (bBEILLFPCOC_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(2, bBEILLFPCOC_);
-      }
-      if (galleryId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, galleryId_);
-      }
       if (isNewRecord_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(7, isNewRecord_);
-      }
-      if (bNMHJGCJAPB_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, bNMHJGCJAPB_);
+          .computeBoolSize(4, isNewRecord_);
       }
       if (isSucc_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(11, isSucc_);
+          .computeBoolSize(5, isSucc_);
+      }
+      if (nJFLJGMFEMK_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(6, nJFLJGMFEMK_);
+      }
+      if (finishTime_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(11, finishTime_);
       }
       if (stageId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, stageId_);
+          .computeUInt32Size(13, stageId_);
+      }
+      if (galleryId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(14, galleryId_);
+      }
+      if (diffculty_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(15, diffculty_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -341,20 +341,20 @@ public final class ElectroherculesBattleSettleNotifyOuterClass {
       }
       emu.grasscutter.net.proto.ElectroherculesBattleSettleNotifyOuterClass.ElectroherculesBattleSettleNotify other = (emu.grasscutter.net.proto.ElectroherculesBattleSettleNotifyOuterClass.ElectroherculesBattleSettleNotify) obj;
 
-      if (getBNMHJGCJAPB()
-          != other.getBNMHJGCJAPB()) return false;
-      if (getFinishTime()
-          != other.getFinishTime()) return false;
-      if (getGalleryId()
-          != other.getGalleryId()) return false;
       if (getIsNewRecord()
           != other.getIsNewRecord()) return false;
       if (getStageId()
           != other.getStageId()) return false;
+      if (getNJFLJGMFEMK()
+          != other.getNJFLJGMFEMK()) return false;
       if (getIsSucc()
           != other.getIsSucc()) return false;
-      if (getBBEILLFPCOC()
-          != other.getBBEILLFPCOC()) return false;
+      if (getDiffculty()
+          != other.getDiffculty()) return false;
+      if (getFinishTime()
+          != other.getFinishTime()) return false;
+      if (getGalleryId()
+          != other.getGalleryId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -366,23 +366,23 @@ public final class ElectroherculesBattleSettleNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + BNMHJGCJAPB_FIELD_NUMBER;
-      hash = (53 * hash) + getBNMHJGCJAPB();
-      hash = (37 * hash) + FINISH_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + getFinishTime();
-      hash = (37 * hash) + GALLERY_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getGalleryId();
       hash = (37 * hash) + IS_NEW_RECORD_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsNewRecord());
       hash = (37 * hash) + STAGE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getStageId();
+      hash = (37 * hash) + NJFLJGMFEMK_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getNJFLJGMFEMK());
       hash = (37 * hash) + IS_SUCC_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsSucc());
-      hash = (37 * hash) + BBEILLFPCOC_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getBBEILLFPCOC());
+      hash = (37 * hash) + DIFFCULTY_FIELD_NUMBER;
+      hash = (53 * hash) + getDiffculty();
+      hash = (37 * hash) + FINISH_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getFinishTime();
+      hash = (37 * hash) + GALLERY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getGalleryId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -480,8 +480,8 @@ public final class ElectroherculesBattleSettleNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 22701
-     * Obf: KCFNLIHPJBG
+     * CmdId: 6962
+     * Obf: AFKKDAHBDKB
      * </pre>
      *
      * Protobuf type {@code ElectroherculesBattleSettleNotify}
@@ -521,19 +521,19 @@ public final class ElectroherculesBattleSettleNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bNMHJGCJAPB_ = 0;
-
-        finishTime_ = 0;
-
-        galleryId_ = 0;
-
         isNewRecord_ = false;
 
         stageId_ = 0;
 
+        nJFLJGMFEMK_ = false;
+
         isSucc_ = false;
 
-        bBEILLFPCOC_ = false;
+        diffculty_ = 0;
+
+        finishTime_ = 0;
+
+        galleryId_ = 0;
 
         return this;
       }
@@ -561,13 +561,13 @@ public final class ElectroherculesBattleSettleNotifyOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.ElectroherculesBattleSettleNotifyOuterClass.ElectroherculesBattleSettleNotify buildPartial() {
         emu.grasscutter.net.proto.ElectroherculesBattleSettleNotifyOuterClass.ElectroherculesBattleSettleNotify result = new emu.grasscutter.net.proto.ElectroherculesBattleSettleNotifyOuterClass.ElectroherculesBattleSettleNotify(this);
-        result.bNMHJGCJAPB_ = bNMHJGCJAPB_;
-        result.finishTime_ = finishTime_;
-        result.galleryId_ = galleryId_;
         result.isNewRecord_ = isNewRecord_;
         result.stageId_ = stageId_;
+        result.nJFLJGMFEMK_ = nJFLJGMFEMK_;
         result.isSucc_ = isSucc_;
-        result.bBEILLFPCOC_ = bBEILLFPCOC_;
+        result.diffculty_ = diffculty_;
+        result.finishTime_ = finishTime_;
+        result.galleryId_ = galleryId_;
         onBuilt();
         return result;
       }
@@ -616,26 +616,26 @@ public final class ElectroherculesBattleSettleNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.ElectroherculesBattleSettleNotifyOuterClass.ElectroherculesBattleSettleNotify other) {
         if (other == emu.grasscutter.net.proto.ElectroherculesBattleSettleNotifyOuterClass.ElectroherculesBattleSettleNotify.getDefaultInstance()) return this;
-        if (other.getBNMHJGCJAPB() != 0) {
-          setBNMHJGCJAPB(other.getBNMHJGCJAPB());
-        }
-        if (other.getFinishTime() != 0) {
-          setFinishTime(other.getFinishTime());
-        }
-        if (other.getGalleryId() != 0) {
-          setGalleryId(other.getGalleryId());
-        }
         if (other.getIsNewRecord() != false) {
           setIsNewRecord(other.getIsNewRecord());
         }
         if (other.getStageId() != 0) {
           setStageId(other.getStageId());
         }
+        if (other.getNJFLJGMFEMK() != false) {
+          setNJFLJGMFEMK(other.getNJFLJGMFEMK());
+        }
         if (other.getIsSucc() != false) {
           setIsSucc(other.getIsSucc());
         }
-        if (other.getBBEILLFPCOC() != false) {
-          setBBEILLFPCOC(other.getBBEILLFPCOC());
+        if (other.getDiffculty() != 0) {
+          setDiffculty(other.getDiffculty());
+        }
+        if (other.getFinishTime() != 0) {
+          setFinishTime(other.getFinishTime());
+        }
+        if (other.getGalleryId() != 0) {
+          setGalleryId(other.getGalleryId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -666,102 +666,9 @@ public final class ElectroherculesBattleSettleNotifyOuterClass {
         return this;
       }
 
-      private int bNMHJGCJAPB_ ;
-      /**
-       * <code>uint32 BNMHJGCJAPB = 10;</code>
-       * @return The bNMHJGCJAPB.
-       */
-      @java.lang.Override
-      public int getBNMHJGCJAPB() {
-        return bNMHJGCJAPB_;
-      }
-      /**
-       * <code>uint32 BNMHJGCJAPB = 10;</code>
-       * @param value The bNMHJGCJAPB to set.
-       * @return This builder for chaining.
-       */
-      public Builder setBNMHJGCJAPB(int value) {
-        
-        bNMHJGCJAPB_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 BNMHJGCJAPB = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearBNMHJGCJAPB() {
-        
-        bNMHJGCJAPB_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int finishTime_ ;
-      /**
-       * <code>uint32 finish_time = 1;</code>
-       * @return The finishTime.
-       */
-      @java.lang.Override
-      public int getFinishTime() {
-        return finishTime_;
-      }
-      /**
-       * <code>uint32 finish_time = 1;</code>
-       * @param value The finishTime to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFinishTime(int value) {
-        
-        finishTime_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 finish_time = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearFinishTime() {
-        
-        finishTime_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int galleryId_ ;
-      /**
-       * <code>uint32 gallery_id = 3;</code>
-       * @return The galleryId.
-       */
-      @java.lang.Override
-      public int getGalleryId() {
-        return galleryId_;
-      }
-      /**
-       * <code>uint32 gallery_id = 3;</code>
-       * @param value The galleryId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setGalleryId(int value) {
-        
-        galleryId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 gallery_id = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearGalleryId() {
-        
-        galleryId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private boolean isNewRecord_ ;
       /**
-       * <code>bool is_new_record = 7;</code>
+       * <code>bool is_new_record = 4;</code>
        * @return The isNewRecord.
        */
       @java.lang.Override
@@ -769,7 +676,7 @@ public final class ElectroherculesBattleSettleNotifyOuterClass {
         return isNewRecord_;
       }
       /**
-       * <code>bool is_new_record = 7;</code>
+       * <code>bool is_new_record = 4;</code>
        * @param value The isNewRecord to set.
        * @return This builder for chaining.
        */
@@ -780,7 +687,7 @@ public final class ElectroherculesBattleSettleNotifyOuterClass {
         return this;
       }
       /**
-       * <code>bool is_new_record = 7;</code>
+       * <code>bool is_new_record = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsNewRecord() {
@@ -792,7 +699,7 @@ public final class ElectroherculesBattleSettleNotifyOuterClass {
 
       private int stageId_ ;
       /**
-       * <code>uint32 stage_id = 14;</code>
+       * <code>uint32 stage_id = 13;</code>
        * @return The stageId.
        */
       @java.lang.Override
@@ -800,7 +707,7 @@ public final class ElectroherculesBattleSettleNotifyOuterClass {
         return stageId_;
       }
       /**
-       * <code>uint32 stage_id = 14;</code>
+       * <code>uint32 stage_id = 13;</code>
        * @param value The stageId to set.
        * @return This builder for chaining.
        */
@@ -811,7 +718,7 @@ public final class ElectroherculesBattleSettleNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 stage_id = 14;</code>
+       * <code>uint32 stage_id = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearStageId() {
@@ -821,9 +728,40 @@ public final class ElectroherculesBattleSettleNotifyOuterClass {
         return this;
       }
 
+      private boolean nJFLJGMFEMK_ ;
+      /**
+       * <code>bool NJFLJGMFEMK = 6;</code>
+       * @return The nJFLJGMFEMK.
+       */
+      @java.lang.Override
+      public boolean getNJFLJGMFEMK() {
+        return nJFLJGMFEMK_;
+      }
+      /**
+       * <code>bool NJFLJGMFEMK = 6;</code>
+       * @param value The nJFLJGMFEMK to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNJFLJGMFEMK(boolean value) {
+        
+        nJFLJGMFEMK_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool NJFLJGMFEMK = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearNJFLJGMFEMK() {
+        
+        nJFLJGMFEMK_ = false;
+        onChanged();
+        return this;
+      }
+
       private boolean isSucc_ ;
       /**
-       * <code>bool is_succ = 11;</code>
+       * <code>bool is_succ = 5;</code>
        * @return The isSucc.
        */
       @java.lang.Override
@@ -831,7 +769,7 @@ public final class ElectroherculesBattleSettleNotifyOuterClass {
         return isSucc_;
       }
       /**
-       * <code>bool is_succ = 11;</code>
+       * <code>bool is_succ = 5;</code>
        * @param value The isSucc to set.
        * @return This builder for chaining.
        */
@@ -842,7 +780,7 @@ public final class ElectroherculesBattleSettleNotifyOuterClass {
         return this;
       }
       /**
-       * <code>bool is_succ = 11;</code>
+       * <code>bool is_succ = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsSucc() {
@@ -852,33 +790,95 @@ public final class ElectroherculesBattleSettleNotifyOuterClass {
         return this;
       }
 
-      private boolean bBEILLFPCOC_ ;
+      private int diffculty_ ;
       /**
-       * <code>bool BBEILLFPCOC = 2;</code>
-       * @return The bBEILLFPCOC.
+       * <code>uint32 diffculty = 15;</code>
+       * @return The diffculty.
        */
       @java.lang.Override
-      public boolean getBBEILLFPCOC() {
-        return bBEILLFPCOC_;
+      public int getDiffculty() {
+        return diffculty_;
       }
       /**
-       * <code>bool BBEILLFPCOC = 2;</code>
-       * @param value The bBEILLFPCOC to set.
+       * <code>uint32 diffculty = 15;</code>
+       * @param value The diffculty to set.
        * @return This builder for chaining.
        */
-      public Builder setBBEILLFPCOC(boolean value) {
+      public Builder setDiffculty(int value) {
         
-        bBEILLFPCOC_ = value;
+        diffculty_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bool BBEILLFPCOC = 2;</code>
+       * <code>uint32 diffculty = 15;</code>
        * @return This builder for chaining.
        */
-      public Builder clearBBEILLFPCOC() {
+      public Builder clearDiffculty() {
         
-        bBEILLFPCOC_ = false;
+        diffculty_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int finishTime_ ;
+      /**
+       * <code>uint32 finish_time = 11;</code>
+       * @return The finishTime.
+       */
+      @java.lang.Override
+      public int getFinishTime() {
+        return finishTime_;
+      }
+      /**
+       * <code>uint32 finish_time = 11;</code>
+       * @param value The finishTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFinishTime(int value) {
+        
+        finishTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 finish_time = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFinishTime() {
+        
+        finishTime_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int galleryId_ ;
+      /**
+       * <code>uint32 gallery_id = 14;</code>
+       * @return The galleryId.
+       */
+      @java.lang.Override
+      public int getGalleryId() {
+        return galleryId_;
+      }
+      /**
+       * <code>uint32 gallery_id = 14;</code>
+       * @param value The galleryId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGalleryId(int value) {
+        
+        galleryId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 gallery_id = 14;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGalleryId() {
+        
+        galleryId_ = 0;
         onChanged();
         return this;
       }
@@ -950,12 +950,12 @@ public final class ElectroherculesBattleSettleNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\'ElectroherculesBattleSettleNotify.prot" +
-      "o\"\260\001\n!ElectroherculesBattleSettleNotify\022" +
-      "\023\n\013BNMHJGCJAPB\030\n \001(\r\022\023\n\013finish_time\030\001 \001(" +
-      "\r\022\022\n\ngallery_id\030\003 \001(\r\022\025\n\ris_new_record\030\007" +
-      " \001(\010\022\020\n\010stage_id\030\016 \001(\r\022\017\n\007is_succ\030\013 \001(\010\022" +
-      "\023\n\013BBEILLFPCOC\030\002 \001(\010B\033\n\031emu.grasscutter." +
-      "net.protob\006proto3"
+      "o\"\256\001\n!ElectroherculesBattleSettleNotify\022" +
+      "\025\n\ris_new_record\030\004 \001(\010\022\020\n\010stage_id\030\r \001(\r" +
+      "\022\023\n\013NJFLJGMFEMK\030\006 \001(\010\022\017\n\007is_succ\030\005 \001(\010\022\021" +
+      "\n\tdiffculty\030\017 \001(\r\022\023\n\013finish_time\030\013 \001(\r\022\022" +
+      "\n\ngallery_id\030\016 \001(\rB\033\n\031emu.grasscutter.ne" +
+      "t.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -966,7 +966,7 @@ public final class ElectroherculesBattleSettleNotifyOuterClass {
     internal_static_ElectroherculesBattleSettleNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ElectroherculesBattleSettleNotify_descriptor,
-        new java.lang.String[] { "BNMHJGCJAPB", "FinishTime", "GalleryId", "IsNewRecord", "StageId", "IsSucc", "BBEILLFPCOC", });
+        new java.lang.String[] { "IsNewRecord", "StageId", "NJFLJGMFEMK", "IsSucc", "Diffculty", "FinishTime", "GalleryId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

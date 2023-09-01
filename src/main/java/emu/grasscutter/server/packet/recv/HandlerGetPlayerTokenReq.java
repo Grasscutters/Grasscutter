@@ -1,25 +1,22 @@
 package emu.grasscutter.server.packet.recv;
 
-import static emu.grasscutter.config.Configuration.ACCOUNT;
-
-import emu.grasscutter.Grasscutter;
+import emu.grasscutter.*;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.net.packet.Opcodes;
-import emu.grasscutter.net.packet.PacketHandler;
-import emu.grasscutter.net.packet.PacketOpcodes;
+import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.GetPlayerTokenReqOuterClass.GetPlayerTokenReq;
 import emu.grasscutter.server.event.game.PlayerCreationEvent;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.game.GameSession.SessionState;
 import emu.grasscutter.server.packet.send.PacketGetPlayerTokenRsp;
-import emu.grasscutter.utils.Crypto;
-import emu.grasscutter.utils.DispatchUtils;
-import emu.grasscutter.utils.Utils;
+import emu.grasscutter.utils.*;
 import emu.grasscutter.utils.helpers.ByteHelper;
+
+import javax.crypto.Cipher;
 import java.nio.ByteBuffer;
 import java.security.Signature;
-import javax.crypto.Cipher;
+
+import static emu.grasscutter.config.Configuration.ACCOUNT;
 
 @Opcodes(PacketOpcodes.GetPlayerTokenReq)
 public class HandlerGetPlayerTokenReq extends PacketHandler {
@@ -32,9 +29,15 @@ public class HandlerGetPlayerTokenReq extends PacketHandler {
         var account = DispatchUtils.authenticate(accountId, req.getAccountToken());
 
         // Check the account.
-        if (account == null) {
+        if (account == null && !DebugConstants.ACCEPT_CLIENT_TOKEN) {
             session.close();
             return;
+        } else if (account == null && DebugConstants.ACCEPT_CLIENT_TOKEN) {
+            account = DispatchUtils.getAccountById(accountId);
+            if (account == null) {
+                session.close();
+                return;
+            }
         }
 
         // Set account

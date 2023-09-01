@@ -19,21 +19,21 @@ public final class SubmitInferenceWordReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 word_id = 5;</code>
-     * @return The wordId.
-     */
-    int getWordId();
-
-    /**
      * <code>uint32 page_id = 7;</code>
      * @return The pageId.
      */
     int getPageId();
+
+    /**
+     * <code>uint32 word_id = 9;</code>
+     * @return The wordId.
+     */
+    int getWordId();
   }
   /**
    * <pre>
-   * CmdId: 409
-   * Obf: JGOAAAGKOCA
+   * CmdId: 22181
+   * Obf: COAHIBCFPNM
    * </pre>
    *
    * Protobuf type {@code SubmitInferenceWordReq}
@@ -80,14 +80,14 @@ public final class SubmitInferenceWordReqOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
-
-              wordId_ = input.readUInt32();
-              break;
-            }
             case 56: {
 
               pageId_ = input.readUInt32();
+              break;
+            }
+            case 72: {
+
+              wordId_ = input.readUInt32();
               break;
             }
             default: {
@@ -122,17 +122,6 @@ public final class SubmitInferenceWordReqOuterClass {
               emu.grasscutter.net.proto.SubmitInferenceWordReqOuterClass.SubmitInferenceWordReq.class, emu.grasscutter.net.proto.SubmitInferenceWordReqOuterClass.SubmitInferenceWordReq.Builder.class);
     }
 
-    public static final int WORD_ID_FIELD_NUMBER = 5;
-    private int wordId_;
-    /**
-     * <code>uint32 word_id = 5;</code>
-     * @return The wordId.
-     */
-    @java.lang.Override
-    public int getWordId() {
-      return wordId_;
-    }
-
     public static final int PAGE_ID_FIELD_NUMBER = 7;
     private int pageId_;
     /**
@@ -142,6 +131,17 @@ public final class SubmitInferenceWordReqOuterClass {
     @java.lang.Override
     public int getPageId() {
       return pageId_;
+    }
+
+    public static final int WORD_ID_FIELD_NUMBER = 9;
+    private int wordId_;
+    /**
+     * <code>uint32 word_id = 9;</code>
+     * @return The wordId.
+     */
+    @java.lang.Override
+    public int getWordId() {
+      return wordId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -158,11 +158,11 @@ public final class SubmitInferenceWordReqOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (wordId_ != 0) {
-        output.writeUInt32(5, wordId_);
-      }
       if (pageId_ != 0) {
         output.writeUInt32(7, pageId_);
+      }
+      if (wordId_ != 0) {
+        output.writeUInt32(9, wordId_);
       }
       unknownFields.writeTo(output);
     }
@@ -173,13 +173,13 @@ public final class SubmitInferenceWordReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (wordId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, wordId_);
-      }
       if (pageId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(7, pageId_);
+      }
+      if (wordId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(9, wordId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -196,10 +196,10 @@ public final class SubmitInferenceWordReqOuterClass {
       }
       emu.grasscutter.net.proto.SubmitInferenceWordReqOuterClass.SubmitInferenceWordReq other = (emu.grasscutter.net.proto.SubmitInferenceWordReqOuterClass.SubmitInferenceWordReq) obj;
 
-      if (getWordId()
-          != other.getWordId()) return false;
       if (getPageId()
           != other.getPageId()) return false;
+      if (getWordId()
+          != other.getWordId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -211,10 +211,10 @@ public final class SubmitInferenceWordReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + WORD_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getWordId();
       hash = (37 * hash) + PAGE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getPageId();
+      hash = (37 * hash) + WORD_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getWordId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -312,8 +312,8 @@ public final class SubmitInferenceWordReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 409
-     * Obf: JGOAAAGKOCA
+     * CmdId: 22181
+     * Obf: COAHIBCFPNM
      * </pre>
      *
      * Protobuf type {@code SubmitInferenceWordReq}
@@ -353,9 +353,9 @@ public final class SubmitInferenceWordReqOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        wordId_ = 0;
-
         pageId_ = 0;
+
+        wordId_ = 0;
 
         return this;
       }
@@ -383,8 +383,8 @@ public final class SubmitInferenceWordReqOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.SubmitInferenceWordReqOuterClass.SubmitInferenceWordReq buildPartial() {
         emu.grasscutter.net.proto.SubmitInferenceWordReqOuterClass.SubmitInferenceWordReq result = new emu.grasscutter.net.proto.SubmitInferenceWordReqOuterClass.SubmitInferenceWordReq(this);
-        result.wordId_ = wordId_;
         result.pageId_ = pageId_;
+        result.wordId_ = wordId_;
         onBuilt();
         return result;
       }
@@ -433,11 +433,11 @@ public final class SubmitInferenceWordReqOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.SubmitInferenceWordReqOuterClass.SubmitInferenceWordReq other) {
         if (other == emu.grasscutter.net.proto.SubmitInferenceWordReqOuterClass.SubmitInferenceWordReq.getDefaultInstance()) return this;
-        if (other.getWordId() != 0) {
-          setWordId(other.getWordId());
-        }
         if (other.getPageId() != 0) {
           setPageId(other.getPageId());
+        }
+        if (other.getWordId() != 0) {
+          setWordId(other.getWordId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -468,37 +468,6 @@ public final class SubmitInferenceWordReqOuterClass {
         return this;
       }
 
-      private int wordId_ ;
-      /**
-       * <code>uint32 word_id = 5;</code>
-       * @return The wordId.
-       */
-      @java.lang.Override
-      public int getWordId() {
-        return wordId_;
-      }
-      /**
-       * <code>uint32 word_id = 5;</code>
-       * @param value The wordId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setWordId(int value) {
-        
-        wordId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 word_id = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearWordId() {
-        
-        wordId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int pageId_ ;
       /**
        * <code>uint32 page_id = 7;</code>
@@ -526,6 +495,37 @@ public final class SubmitInferenceWordReqOuterClass {
       public Builder clearPageId() {
         
         pageId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int wordId_ ;
+      /**
+       * <code>uint32 word_id = 9;</code>
+       * @return The wordId.
+       */
+      @java.lang.Override
+      public int getWordId() {
+        return wordId_;
+      }
+      /**
+       * <code>uint32 word_id = 9;</code>
+       * @param value The wordId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setWordId(int value) {
+        
+        wordId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 word_id = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearWordId() {
+        
+        wordId_ = 0;
         onChanged();
         return this;
       }
@@ -597,8 +597,8 @@ public final class SubmitInferenceWordReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\034SubmitInferenceWordReq.proto\":\n\026Submit" +
-      "InferenceWordReq\022\017\n\007word_id\030\005 \001(\r\022\017\n\007pag" +
-      "e_id\030\007 \001(\rB\033\n\031emu.grasscutter.net.protob" +
+      "InferenceWordReq\022\017\n\007page_id\030\007 \001(\r\022\017\n\007wor" +
+      "d_id\030\t \001(\rB\033\n\031emu.grasscutter.net.protob" +
       "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -610,7 +610,7 @@ public final class SubmitInferenceWordReqOuterClass {
     internal_static_SubmitInferenceWordReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SubmitInferenceWordReq_descriptor,
-        new java.lang.String[] { "WordId", "PageId", });
+        new java.lang.String[] { "PageId", "WordId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

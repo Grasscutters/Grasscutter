@@ -19,15 +19,15 @@ public final class DungeonCandidateTeamKickRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 13;</code>
+     * <code>int32 retcode = 7;</code>
      * @return The retcode.
      */
     int getRetcode();
   }
   /**
    * <pre>
-   * CmdId: 998
-   * Obf: KGEGDNGJKJM
+   * CmdId: 22454
+   * Obf: OBDCAHNACAB
    * </pre>
    *
    * Protobuf type {@code DungeonCandidateTeamKickRsp}
@@ -74,7 +74,7 @@ public final class DungeonCandidateTeamKickRspOuterClass {
             case 0:
               done = true;
               break;
-            case 104: {
+            case 56: {
 
               retcode_ = input.readInt32();
               break;
@@ -111,10 +111,10 @@ public final class DungeonCandidateTeamKickRspOuterClass {
               emu.grasscutter.net.proto.DungeonCandidateTeamKickRspOuterClass.DungeonCandidateTeamKickRsp.class, emu.grasscutter.net.proto.DungeonCandidateTeamKickRspOuterClass.DungeonCandidateTeamKickRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 13;
+    public static final int RETCODE_FIELD_NUMBER = 7;
     private int retcode_;
     /**
-     * <code>int32 retcode = 13;</code>
+     * <code>int32 retcode = 7;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class DungeonCandidateTeamKickRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (retcode_ != 0) {
-        output.writeInt32(13, retcode_);
+        output.writeInt32(7, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class DungeonCandidateTeamKickRspOuterClass {
       size = 0;
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(13, retcode_);
+          .computeInt32Size(7, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class DungeonCandidateTeamKickRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 998
-     * Obf: KGEGDNGJKJM
+     * CmdId: 22454
+     * Obf: OBDCAHNACAB
      * </pre>
      *
      * Protobuf type {@code DungeonCandidateTeamKickRsp}
@@ -431,7 +431,7 @@ public final class DungeonCandidateTeamKickRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 13;</code>
+       * <code>int32 retcode = 7;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class DungeonCandidateTeamKickRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 13;</code>
+       * <code>int32 retcode = 7;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class DungeonCandidateTeamKickRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 13;</code>
+       * <code>int32 retcode = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -527,7 +527,7 @@ public final class DungeonCandidateTeamKickRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n!DungeonCandidateTeamKickRsp.proto\".\n\033D" +
-      "ungeonCandidateTeamKickRsp\022\017\n\007retcode\030\r " +
+      "ungeonCandidateTeamKickRsp\022\017\n\007retcode\030\007 " +
       "\001(\005B\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

@@ -19,27 +19,27 @@ public final class FungusCultivateRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 cultivate_id = 12;</code>
+     * <code>uint32 cultivate_id = 10;</code>
      * @return The cultivateId.
      */
     int getCultivateId();
 
     /**
-     * <code>bool is_new_record = 15;</code>
+     * <code>bool is_new_record = 11;</code>
      * @return The isNewRecord.
      */
     boolean getIsNewRecord();
 
     /**
-     * <code>int32 retcode = 2;</code>
+     * <code>int32 retcode = 3;</code>
      * @return The retcode.
      */
     int getRetcode();
   }
   /**
    * <pre>
-   * CmdId: 21314
-   * Obf: FEEECBNOJDJ
+   * CmdId: 29789
+   * Obf: PDPGFCCJLNB
    * </pre>
    *
    * Protobuf type {@code FungusCultivateRsp}
@@ -86,17 +86,17 @@ public final class FungusCultivateRspOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
+            case 24: {
 
               retcode_ = input.readInt32();
               break;
             }
-            case 96: {
+            case 80: {
 
               cultivateId_ = input.readUInt32();
               break;
             }
-            case 120: {
+            case 88: {
 
               isNewRecord_ = input.readBool();
               break;
@@ -133,10 +133,10 @@ public final class FungusCultivateRspOuterClass {
               emu.grasscutter.net.proto.FungusCultivateRspOuterClass.FungusCultivateRsp.class, emu.grasscutter.net.proto.FungusCultivateRspOuterClass.FungusCultivateRsp.Builder.class);
     }
 
-    public static final int CULTIVATE_ID_FIELD_NUMBER = 12;
+    public static final int CULTIVATE_ID_FIELD_NUMBER = 10;
     private int cultivateId_;
     /**
-     * <code>uint32 cultivate_id = 12;</code>
+     * <code>uint32 cultivate_id = 10;</code>
      * @return The cultivateId.
      */
     @java.lang.Override
@@ -144,10 +144,10 @@ public final class FungusCultivateRspOuterClass {
       return cultivateId_;
     }
 
-    public static final int IS_NEW_RECORD_FIELD_NUMBER = 15;
+    public static final int IS_NEW_RECORD_FIELD_NUMBER = 11;
     private boolean isNewRecord_;
     /**
-     * <code>bool is_new_record = 15;</code>
+     * <code>bool is_new_record = 11;</code>
      * @return The isNewRecord.
      */
     @java.lang.Override
@@ -155,10 +155,10 @@ public final class FungusCultivateRspOuterClass {
       return isNewRecord_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 2;
+    public static final int RETCODE_FIELD_NUMBER = 3;
     private int retcode_;
     /**
-     * <code>int32 retcode = 2;</code>
+     * <code>int32 retcode = 3;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -181,13 +181,13 @@ public final class FungusCultivateRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (retcode_ != 0) {
-        output.writeInt32(2, retcode_);
+        output.writeInt32(3, retcode_);
       }
       if (cultivateId_ != 0) {
-        output.writeUInt32(12, cultivateId_);
+        output.writeUInt32(10, cultivateId_);
       }
       if (isNewRecord_ != false) {
-        output.writeBool(15, isNewRecord_);
+        output.writeBool(11, isNewRecord_);
       }
       unknownFields.writeTo(output);
     }
@@ -200,15 +200,15 @@ public final class FungusCultivateRspOuterClass {
       size = 0;
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, retcode_);
+          .computeInt32Size(3, retcode_);
       }
       if (cultivateId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, cultivateId_);
+          .computeUInt32Size(10, cultivateId_);
       }
       if (isNewRecord_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(15, isNewRecord_);
+          .computeBoolSize(11, isNewRecord_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -346,8 +346,8 @@ public final class FungusCultivateRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 21314
-     * Obf: FEEECBNOJDJ
+     * CmdId: 29789
+     * Obf: PDPGFCCJLNB
      * </pre>
      *
      * Protobuf type {@code FungusCultivateRsp}
@@ -510,7 +510,7 @@ public final class FungusCultivateRspOuterClass {
 
       private int cultivateId_ ;
       /**
-       * <code>uint32 cultivate_id = 12;</code>
+       * <code>uint32 cultivate_id = 10;</code>
        * @return The cultivateId.
        */
       @java.lang.Override
@@ -518,7 +518,7 @@ public final class FungusCultivateRspOuterClass {
         return cultivateId_;
       }
       /**
-       * <code>uint32 cultivate_id = 12;</code>
+       * <code>uint32 cultivate_id = 10;</code>
        * @param value The cultivateId to set.
        * @return This builder for chaining.
        */
@@ -529,7 +529,7 @@ public final class FungusCultivateRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 cultivate_id = 12;</code>
+       * <code>uint32 cultivate_id = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearCultivateId() {
@@ -541,7 +541,7 @@ public final class FungusCultivateRspOuterClass {
 
       private boolean isNewRecord_ ;
       /**
-       * <code>bool is_new_record = 15;</code>
+       * <code>bool is_new_record = 11;</code>
        * @return The isNewRecord.
        */
       @java.lang.Override
@@ -549,7 +549,7 @@ public final class FungusCultivateRspOuterClass {
         return isNewRecord_;
       }
       /**
-       * <code>bool is_new_record = 15;</code>
+       * <code>bool is_new_record = 11;</code>
        * @param value The isNewRecord to set.
        * @return This builder for chaining.
        */
@@ -560,7 +560,7 @@ public final class FungusCultivateRspOuterClass {
         return this;
       }
       /**
-       * <code>bool is_new_record = 15;</code>
+       * <code>bool is_new_record = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsNewRecord() {
@@ -572,7 +572,7 @@ public final class FungusCultivateRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 2;</code>
+       * <code>int32 retcode = 3;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -580,7 +580,7 @@ public final class FungusCultivateRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 2;</code>
+       * <code>int32 retcode = 3;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -591,7 +591,7 @@ public final class FungusCultivateRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 2;</code>
+       * <code>int32 retcode = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -668,8 +668,8 @@ public final class FungusCultivateRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\030FungusCultivateRsp.proto\"R\n\022FungusCult" +
-      "ivateRsp\022\024\n\014cultivate_id\030\014 \001(\r\022\025\n\ris_new" +
-      "_record\030\017 \001(\010\022\017\n\007retcode\030\002 \001(\005B\033\n\031emu.gr" +
+      "ivateRsp\022\024\n\014cultivate_id\030\n \001(\r\022\025\n\ris_new" +
+      "_record\030\013 \001(\010\022\017\n\007retcode\030\003 \001(\005B\033\n\031emu.gr" +
       "asscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

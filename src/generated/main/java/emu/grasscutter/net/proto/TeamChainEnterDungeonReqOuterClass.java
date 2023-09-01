@@ -19,45 +19,45 @@ public final class TeamChainEnterDungeonReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 difficulty = 6;</code>
-     * @return The difficulty.
-     */
-    int getDifficulty();
-
-    /**
-     * <code>repeated .TeamChainChooseTeamInfo team_info_list = 2;</code>
+     * <code>repeated .TeamChainChooseTeamInfo team_info_list = 6;</code>
      */
     java.util.List<emu.grasscutter.net.proto.TeamChainChooseTeamInfoOuterClass.TeamChainChooseTeamInfo> 
         getTeamInfoListList();
     /**
-     * <code>repeated .TeamChainChooseTeamInfo team_info_list = 2;</code>
+     * <code>repeated .TeamChainChooseTeamInfo team_info_list = 6;</code>
      */
     emu.grasscutter.net.proto.TeamChainChooseTeamInfoOuterClass.TeamChainChooseTeamInfo getTeamInfoList(int index);
     /**
-     * <code>repeated .TeamChainChooseTeamInfo team_info_list = 2;</code>
+     * <code>repeated .TeamChainChooseTeamInfo team_info_list = 6;</code>
      */
     int getTeamInfoListCount();
     /**
-     * <code>repeated .TeamChainChooseTeamInfo team_info_list = 2;</code>
+     * <code>repeated .TeamChainChooseTeamInfo team_info_list = 6;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.TeamChainChooseTeamInfoOuterClass.TeamChainChooseTeamInfoOrBuilder> 
         getTeamInfoListOrBuilderList();
     /**
-     * <code>repeated .TeamChainChooseTeamInfo team_info_list = 2;</code>
+     * <code>repeated .TeamChainChooseTeamInfo team_info_list = 6;</code>
      */
     emu.grasscutter.net.proto.TeamChainChooseTeamInfoOuterClass.TeamChainChooseTeamInfoOrBuilder getTeamInfoListOrBuilder(
         int index);
 
     /**
-     * <code>uint32 stage_id = 4;</code>
+     * <code>uint32 difficulty = 5;</code>
+     * @return The difficulty.
+     */
+    int getDifficulty();
+
+    /**
+     * <code>uint32 stage_id = 7;</code>
      * @return The stageId.
      */
     int getStageId();
   }
   /**
    * <pre>
-   * CmdId: 24706
-   * Obf: NGHJFAKOJFL
+   * CmdId: 6657
+   * Obf: JCEODPFPNHF
    * </pre>
    *
    * Protobuf type {@code TeamChainEnterDungeonReq}
@@ -106,7 +106,12 @@ public final class TeamChainEnterDungeonReqOuterClass {
             case 0:
               done = true;
               break;
-            case 18: {
+            case 40: {
+
+              difficulty_ = input.readUInt32();
+              break;
+            }
+            case 50: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 teamInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.TeamChainChooseTeamInfoOuterClass.TeamChainChooseTeamInfo>();
                 mutable_bitField0_ |= 0x00000001;
@@ -115,14 +120,9 @@ public final class TeamChainEnterDungeonReqOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.TeamChainChooseTeamInfoOuterClass.TeamChainChooseTeamInfo.parser(), extensionRegistry));
               break;
             }
-            case 32: {
+            case 56: {
 
               stageId_ = input.readUInt32();
-              break;
-            }
-            case 48: {
-
-              difficulty_ = input.readUInt32();
               break;
             }
             default: {
@@ -160,28 +160,17 @@ public final class TeamChainEnterDungeonReqOuterClass {
               emu.grasscutter.net.proto.TeamChainEnterDungeonReqOuterClass.TeamChainEnterDungeonReq.class, emu.grasscutter.net.proto.TeamChainEnterDungeonReqOuterClass.TeamChainEnterDungeonReq.Builder.class);
     }
 
-    public static final int DIFFICULTY_FIELD_NUMBER = 6;
-    private int difficulty_;
-    /**
-     * <code>uint32 difficulty = 6;</code>
-     * @return The difficulty.
-     */
-    @java.lang.Override
-    public int getDifficulty() {
-      return difficulty_;
-    }
-
-    public static final int TEAM_INFO_LIST_FIELD_NUMBER = 2;
+    public static final int TEAM_INFO_LIST_FIELD_NUMBER = 6;
     private java.util.List<emu.grasscutter.net.proto.TeamChainChooseTeamInfoOuterClass.TeamChainChooseTeamInfo> teamInfoList_;
     /**
-     * <code>repeated .TeamChainChooseTeamInfo team_info_list = 2;</code>
+     * <code>repeated .TeamChainChooseTeamInfo team_info_list = 6;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.TeamChainChooseTeamInfoOuterClass.TeamChainChooseTeamInfo> getTeamInfoListList() {
       return teamInfoList_;
     }
     /**
-     * <code>repeated .TeamChainChooseTeamInfo team_info_list = 2;</code>
+     * <code>repeated .TeamChainChooseTeamInfo team_info_list = 6;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.TeamChainChooseTeamInfoOuterClass.TeamChainChooseTeamInfoOrBuilder> 
@@ -189,21 +178,21 @@ public final class TeamChainEnterDungeonReqOuterClass {
       return teamInfoList_;
     }
     /**
-     * <code>repeated .TeamChainChooseTeamInfo team_info_list = 2;</code>
+     * <code>repeated .TeamChainChooseTeamInfo team_info_list = 6;</code>
      */
     @java.lang.Override
     public int getTeamInfoListCount() {
       return teamInfoList_.size();
     }
     /**
-     * <code>repeated .TeamChainChooseTeamInfo team_info_list = 2;</code>
+     * <code>repeated .TeamChainChooseTeamInfo team_info_list = 6;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.TeamChainChooseTeamInfoOuterClass.TeamChainChooseTeamInfo getTeamInfoList(int index) {
       return teamInfoList_.get(index);
     }
     /**
-     * <code>repeated .TeamChainChooseTeamInfo team_info_list = 2;</code>
+     * <code>repeated .TeamChainChooseTeamInfo team_info_list = 6;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.TeamChainChooseTeamInfoOuterClass.TeamChainChooseTeamInfoOrBuilder getTeamInfoListOrBuilder(
@@ -211,10 +200,21 @@ public final class TeamChainEnterDungeonReqOuterClass {
       return teamInfoList_.get(index);
     }
 
-    public static final int STAGE_ID_FIELD_NUMBER = 4;
+    public static final int DIFFICULTY_FIELD_NUMBER = 5;
+    private int difficulty_;
+    /**
+     * <code>uint32 difficulty = 5;</code>
+     * @return The difficulty.
+     */
+    @java.lang.Override
+    public int getDifficulty() {
+      return difficulty_;
+    }
+
+    public static final int STAGE_ID_FIELD_NUMBER = 7;
     private int stageId_;
     /**
-     * <code>uint32 stage_id = 4;</code>
+     * <code>uint32 stage_id = 7;</code>
      * @return The stageId.
      */
     @java.lang.Override
@@ -236,14 +236,14 @@ public final class TeamChainEnterDungeonReqOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (difficulty_ != 0) {
+        output.writeUInt32(5, difficulty_);
+      }
       for (int i = 0; i < teamInfoList_.size(); i++) {
-        output.writeMessage(2, teamInfoList_.get(i));
+        output.writeMessage(6, teamInfoList_.get(i));
       }
       if (stageId_ != 0) {
-        output.writeUInt32(4, stageId_);
-      }
-      if (difficulty_ != 0) {
-        output.writeUInt32(6, difficulty_);
+        output.writeUInt32(7, stageId_);
       }
       unknownFields.writeTo(output);
     }
@@ -254,17 +254,17 @@ public final class TeamChainEnterDungeonReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (difficulty_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(5, difficulty_);
+      }
       for (int i = 0; i < teamInfoList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, teamInfoList_.get(i));
+          .computeMessageSize(6, teamInfoList_.get(i));
       }
       if (stageId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, stageId_);
-      }
-      if (difficulty_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, difficulty_);
+          .computeUInt32Size(7, stageId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -281,10 +281,10 @@ public final class TeamChainEnterDungeonReqOuterClass {
       }
       emu.grasscutter.net.proto.TeamChainEnterDungeonReqOuterClass.TeamChainEnterDungeonReq other = (emu.grasscutter.net.proto.TeamChainEnterDungeonReqOuterClass.TeamChainEnterDungeonReq) obj;
 
-      if (getDifficulty()
-          != other.getDifficulty()) return false;
       if (!getTeamInfoListList()
           .equals(other.getTeamInfoListList())) return false;
+      if (getDifficulty()
+          != other.getDifficulty()) return false;
       if (getStageId()
           != other.getStageId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -298,12 +298,12 @@ public final class TeamChainEnterDungeonReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + DIFFICULTY_FIELD_NUMBER;
-      hash = (53 * hash) + getDifficulty();
       if (getTeamInfoListCount() > 0) {
         hash = (37 * hash) + TEAM_INFO_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getTeamInfoListList().hashCode();
       }
+      hash = (37 * hash) + DIFFICULTY_FIELD_NUMBER;
+      hash = (53 * hash) + getDifficulty();
       hash = (37 * hash) + STAGE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getStageId();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -403,8 +403,8 @@ public final class TeamChainEnterDungeonReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 24706
-     * Obf: NGHJFAKOJFL
+     * CmdId: 6657
+     * Obf: JCEODPFPNHF
      * </pre>
      *
      * Protobuf type {@code TeamChainEnterDungeonReq}
@@ -445,14 +445,14 @@ public final class TeamChainEnterDungeonReqOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        difficulty_ = 0;
-
         if (teamInfoListBuilder_ == null) {
           teamInfoList_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           teamInfoListBuilder_.clear();
         }
+        difficulty_ = 0;
+
         stageId_ = 0;
 
         return this;
@@ -482,7 +482,6 @@ public final class TeamChainEnterDungeonReqOuterClass {
       public emu.grasscutter.net.proto.TeamChainEnterDungeonReqOuterClass.TeamChainEnterDungeonReq buildPartial() {
         emu.grasscutter.net.proto.TeamChainEnterDungeonReqOuterClass.TeamChainEnterDungeonReq result = new emu.grasscutter.net.proto.TeamChainEnterDungeonReqOuterClass.TeamChainEnterDungeonReq(this);
         int from_bitField0_ = bitField0_;
-        result.difficulty_ = difficulty_;
         if (teamInfoListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             teamInfoList_ = java.util.Collections.unmodifiableList(teamInfoList_);
@@ -492,6 +491,7 @@ public final class TeamChainEnterDungeonReqOuterClass {
         } else {
           result.teamInfoList_ = teamInfoListBuilder_.build();
         }
+        result.difficulty_ = difficulty_;
         result.stageId_ = stageId_;
         onBuilt();
         return result;
@@ -541,9 +541,6 @@ public final class TeamChainEnterDungeonReqOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.TeamChainEnterDungeonReqOuterClass.TeamChainEnterDungeonReq other) {
         if (other == emu.grasscutter.net.proto.TeamChainEnterDungeonReqOuterClass.TeamChainEnterDungeonReq.getDefaultInstance()) return this;
-        if (other.getDifficulty() != 0) {
-          setDifficulty(other.getDifficulty());
-        }
         if (teamInfoListBuilder_ == null) {
           if (!other.teamInfoList_.isEmpty()) {
             if (teamInfoList_.isEmpty()) {
@@ -569,6 +566,9 @@ public final class TeamChainEnterDungeonReqOuterClass {
               teamInfoListBuilder_.addAllMessages(other.teamInfoList_);
             }
           }
+        }
+        if (other.getDifficulty() != 0) {
+          setDifficulty(other.getDifficulty());
         }
         if (other.getStageId() != 0) {
           setStageId(other.getStageId());
@@ -603,37 +603,6 @@ public final class TeamChainEnterDungeonReqOuterClass {
       }
       private int bitField0_;
 
-      private int difficulty_ ;
-      /**
-       * <code>uint32 difficulty = 6;</code>
-       * @return The difficulty.
-       */
-      @java.lang.Override
-      public int getDifficulty() {
-        return difficulty_;
-      }
-      /**
-       * <code>uint32 difficulty = 6;</code>
-       * @param value The difficulty to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDifficulty(int value) {
-        
-        difficulty_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 difficulty = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDifficulty() {
-        
-        difficulty_ = 0;
-        onChanged();
-        return this;
-      }
-
       private java.util.List<emu.grasscutter.net.proto.TeamChainChooseTeamInfoOuterClass.TeamChainChooseTeamInfo> teamInfoList_ =
         java.util.Collections.emptyList();
       private void ensureTeamInfoListIsMutable() {
@@ -647,7 +616,7 @@ public final class TeamChainEnterDungeonReqOuterClass {
           emu.grasscutter.net.proto.TeamChainChooseTeamInfoOuterClass.TeamChainChooseTeamInfo, emu.grasscutter.net.proto.TeamChainChooseTeamInfoOuterClass.TeamChainChooseTeamInfo.Builder, emu.grasscutter.net.proto.TeamChainChooseTeamInfoOuterClass.TeamChainChooseTeamInfoOrBuilder> teamInfoListBuilder_;
 
       /**
-       * <code>repeated .TeamChainChooseTeamInfo team_info_list = 2;</code>
+       * <code>repeated .TeamChainChooseTeamInfo team_info_list = 6;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.TeamChainChooseTeamInfoOuterClass.TeamChainChooseTeamInfo> getTeamInfoListList() {
         if (teamInfoListBuilder_ == null) {
@@ -657,7 +626,7 @@ public final class TeamChainEnterDungeonReqOuterClass {
         }
       }
       /**
-       * <code>repeated .TeamChainChooseTeamInfo team_info_list = 2;</code>
+       * <code>repeated .TeamChainChooseTeamInfo team_info_list = 6;</code>
        */
       public int getTeamInfoListCount() {
         if (teamInfoListBuilder_ == null) {
@@ -667,7 +636,7 @@ public final class TeamChainEnterDungeonReqOuterClass {
         }
       }
       /**
-       * <code>repeated .TeamChainChooseTeamInfo team_info_list = 2;</code>
+       * <code>repeated .TeamChainChooseTeamInfo team_info_list = 6;</code>
        */
       public emu.grasscutter.net.proto.TeamChainChooseTeamInfoOuterClass.TeamChainChooseTeamInfo getTeamInfoList(int index) {
         if (teamInfoListBuilder_ == null) {
@@ -677,7 +646,7 @@ public final class TeamChainEnterDungeonReqOuterClass {
         }
       }
       /**
-       * <code>repeated .TeamChainChooseTeamInfo team_info_list = 2;</code>
+       * <code>repeated .TeamChainChooseTeamInfo team_info_list = 6;</code>
        */
       public Builder setTeamInfoList(
           int index, emu.grasscutter.net.proto.TeamChainChooseTeamInfoOuterClass.TeamChainChooseTeamInfo value) {
@@ -694,7 +663,7 @@ public final class TeamChainEnterDungeonReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .TeamChainChooseTeamInfo team_info_list = 2;</code>
+       * <code>repeated .TeamChainChooseTeamInfo team_info_list = 6;</code>
        */
       public Builder setTeamInfoList(
           int index, emu.grasscutter.net.proto.TeamChainChooseTeamInfoOuterClass.TeamChainChooseTeamInfo.Builder builderForValue) {
@@ -708,7 +677,7 @@ public final class TeamChainEnterDungeonReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .TeamChainChooseTeamInfo team_info_list = 2;</code>
+       * <code>repeated .TeamChainChooseTeamInfo team_info_list = 6;</code>
        */
       public Builder addTeamInfoList(emu.grasscutter.net.proto.TeamChainChooseTeamInfoOuterClass.TeamChainChooseTeamInfo value) {
         if (teamInfoListBuilder_ == null) {
@@ -724,7 +693,7 @@ public final class TeamChainEnterDungeonReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .TeamChainChooseTeamInfo team_info_list = 2;</code>
+       * <code>repeated .TeamChainChooseTeamInfo team_info_list = 6;</code>
        */
       public Builder addTeamInfoList(
           int index, emu.grasscutter.net.proto.TeamChainChooseTeamInfoOuterClass.TeamChainChooseTeamInfo value) {
@@ -741,7 +710,7 @@ public final class TeamChainEnterDungeonReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .TeamChainChooseTeamInfo team_info_list = 2;</code>
+       * <code>repeated .TeamChainChooseTeamInfo team_info_list = 6;</code>
        */
       public Builder addTeamInfoList(
           emu.grasscutter.net.proto.TeamChainChooseTeamInfoOuterClass.TeamChainChooseTeamInfo.Builder builderForValue) {
@@ -755,7 +724,7 @@ public final class TeamChainEnterDungeonReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .TeamChainChooseTeamInfo team_info_list = 2;</code>
+       * <code>repeated .TeamChainChooseTeamInfo team_info_list = 6;</code>
        */
       public Builder addTeamInfoList(
           int index, emu.grasscutter.net.proto.TeamChainChooseTeamInfoOuterClass.TeamChainChooseTeamInfo.Builder builderForValue) {
@@ -769,7 +738,7 @@ public final class TeamChainEnterDungeonReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .TeamChainChooseTeamInfo team_info_list = 2;</code>
+       * <code>repeated .TeamChainChooseTeamInfo team_info_list = 6;</code>
        */
       public Builder addAllTeamInfoList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.TeamChainChooseTeamInfoOuterClass.TeamChainChooseTeamInfo> values) {
@@ -784,7 +753,7 @@ public final class TeamChainEnterDungeonReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .TeamChainChooseTeamInfo team_info_list = 2;</code>
+       * <code>repeated .TeamChainChooseTeamInfo team_info_list = 6;</code>
        */
       public Builder clearTeamInfoList() {
         if (teamInfoListBuilder_ == null) {
@@ -797,7 +766,7 @@ public final class TeamChainEnterDungeonReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .TeamChainChooseTeamInfo team_info_list = 2;</code>
+       * <code>repeated .TeamChainChooseTeamInfo team_info_list = 6;</code>
        */
       public Builder removeTeamInfoList(int index) {
         if (teamInfoListBuilder_ == null) {
@@ -810,14 +779,14 @@ public final class TeamChainEnterDungeonReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .TeamChainChooseTeamInfo team_info_list = 2;</code>
+       * <code>repeated .TeamChainChooseTeamInfo team_info_list = 6;</code>
        */
       public emu.grasscutter.net.proto.TeamChainChooseTeamInfoOuterClass.TeamChainChooseTeamInfo.Builder getTeamInfoListBuilder(
           int index) {
         return getTeamInfoListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .TeamChainChooseTeamInfo team_info_list = 2;</code>
+       * <code>repeated .TeamChainChooseTeamInfo team_info_list = 6;</code>
        */
       public emu.grasscutter.net.proto.TeamChainChooseTeamInfoOuterClass.TeamChainChooseTeamInfoOrBuilder getTeamInfoListOrBuilder(
           int index) {
@@ -827,7 +796,7 @@ public final class TeamChainEnterDungeonReqOuterClass {
         }
       }
       /**
-       * <code>repeated .TeamChainChooseTeamInfo team_info_list = 2;</code>
+       * <code>repeated .TeamChainChooseTeamInfo team_info_list = 6;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.TeamChainChooseTeamInfoOuterClass.TeamChainChooseTeamInfoOrBuilder> 
            getTeamInfoListOrBuilderList() {
@@ -838,14 +807,14 @@ public final class TeamChainEnterDungeonReqOuterClass {
         }
       }
       /**
-       * <code>repeated .TeamChainChooseTeamInfo team_info_list = 2;</code>
+       * <code>repeated .TeamChainChooseTeamInfo team_info_list = 6;</code>
        */
       public emu.grasscutter.net.proto.TeamChainChooseTeamInfoOuterClass.TeamChainChooseTeamInfo.Builder addTeamInfoListBuilder() {
         return getTeamInfoListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.TeamChainChooseTeamInfoOuterClass.TeamChainChooseTeamInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .TeamChainChooseTeamInfo team_info_list = 2;</code>
+       * <code>repeated .TeamChainChooseTeamInfo team_info_list = 6;</code>
        */
       public emu.grasscutter.net.proto.TeamChainChooseTeamInfoOuterClass.TeamChainChooseTeamInfo.Builder addTeamInfoListBuilder(
           int index) {
@@ -853,7 +822,7 @@ public final class TeamChainEnterDungeonReqOuterClass {
             index, emu.grasscutter.net.proto.TeamChainChooseTeamInfoOuterClass.TeamChainChooseTeamInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .TeamChainChooseTeamInfo team_info_list = 2;</code>
+       * <code>repeated .TeamChainChooseTeamInfo team_info_list = 6;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.TeamChainChooseTeamInfoOuterClass.TeamChainChooseTeamInfo.Builder> 
            getTeamInfoListBuilderList() {
@@ -874,9 +843,40 @@ public final class TeamChainEnterDungeonReqOuterClass {
         return teamInfoListBuilder_;
       }
 
+      private int difficulty_ ;
+      /**
+       * <code>uint32 difficulty = 5;</code>
+       * @return The difficulty.
+       */
+      @java.lang.Override
+      public int getDifficulty() {
+        return difficulty_;
+      }
+      /**
+       * <code>uint32 difficulty = 5;</code>
+       * @param value The difficulty to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDifficulty(int value) {
+        
+        difficulty_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 difficulty = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDifficulty() {
+        
+        difficulty_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int stageId_ ;
       /**
-       * <code>uint32 stage_id = 4;</code>
+       * <code>uint32 stage_id = 7;</code>
        * @return The stageId.
        */
       @java.lang.Override
@@ -884,7 +884,7 @@ public final class TeamChainEnterDungeonReqOuterClass {
         return stageId_;
       }
       /**
-       * <code>uint32 stage_id = 4;</code>
+       * <code>uint32 stage_id = 7;</code>
        * @param value The stageId to set.
        * @return This builder for chaining.
        */
@@ -895,7 +895,7 @@ public final class TeamChainEnterDungeonReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 stage_id = 4;</code>
+       * <code>uint32 stage_id = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearStageId() {
@@ -973,9 +973,9 @@ public final class TeamChainEnterDungeonReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n\036TeamChainEnterDungeonReq.proto\032\035TeamCh" +
       "ainChooseTeamInfo.proto\"r\n\030TeamChainEnte" +
-      "rDungeonReq\022\022\n\ndifficulty\030\006 \001(\r\0220\n\016team_" +
-      "info_list\030\002 \003(\0132\030.TeamChainChooseTeamInf" +
-      "o\022\020\n\010stage_id\030\004 \001(\rB\033\n\031emu.grasscutter.n" +
+      "rDungeonReq\0220\n\016team_info_list\030\006 \003(\0132\030.Te" +
+      "amChainChooseTeamInfo\022\022\n\ndifficulty\030\005 \001(" +
+      "\r\022\020\n\010stage_id\030\007 \001(\rB\033\n\031emu.grasscutter.n" +
       "et.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -988,7 +988,7 @@ public final class TeamChainEnterDungeonReqOuterClass {
     internal_static_TeamChainEnterDungeonReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_TeamChainEnterDungeonReq_descriptor,
-        new java.lang.String[] { "Difficulty", "TeamInfoList", "StageId", });
+        new java.lang.String[] { "TeamInfoList", "Difficulty", "StageId", });
     emu.grasscutter.net.proto.TeamChainChooseTeamInfoOuterClass.getDescriptor();
   }
 

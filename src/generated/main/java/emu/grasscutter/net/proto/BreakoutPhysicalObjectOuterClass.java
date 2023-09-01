@@ -170,7 +170,7 @@ public final class BreakoutPhysicalObjectOuterClass {
   }
   /**
    * <pre>
-   * Obf: LKHNDFCFOPP
+   * Obf: NFMHCAILCIF
    * </pre>
    *
    * Protobuf type {@code BreakoutPhysicalObject}
@@ -963,7 +963,7 @@ public final class BreakoutPhysicalObjectOuterClass {
     }
     /**
      * <pre>
-     * Obf: LKHNDFCFOPP
+     * Obf: NFMHCAILCIF
      * </pre>
      *
      * Protobuf type {@code BreakoutPhysicalObject}

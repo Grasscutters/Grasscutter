@@ -19,67 +19,73 @@ public final class GCGPlayerBriefDataOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string nick_name = 11;</code>
+     * <code>string nick_name = 6;</code>
      * @return The nickName.
      */
     java.lang.String getNickName();
     /**
-     * <code>string nick_name = 11;</code>
+     * <code>string nick_name = 6;</code>
      * @return The bytes for nickName.
      */
     com.google.protobuf.ByteString
         getNickNameBytes();
 
     /**
-     * <code>.ProfilePicture profile_picture = 7;</code>
-     * @return Whether the profilePicture field is set.
+     * <code>string online_id = 8;</code>
+     * @return The onlineId.
      */
-    boolean hasProfilePicture();
+    java.lang.String getOnlineId();
     /**
-     * <code>.ProfilePicture profile_picture = 7;</code>
-     * @return The profilePicture.
+     * <code>string online_id = 8;</code>
+     * @return The bytes for onlineId.
      */
-    emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture getProfilePicture();
-    /**
-     * <code>.ProfilePicture profile_picture = 7;</code>
-     */
-    emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePictureOrBuilder getProfilePictureOrBuilder();
+    com.google.protobuf.ByteString
+        getOnlineIdBytes();
 
     /**
-     * <code>uint32 uid = 10;</code>
+     * <code>uint32 uid = 2;</code>
      * @return The uid.
      */
     int getUid();
 
     /**
-     * <code>repeated uint32 card_id_list = 4;</code>
+     * <code>.ProfilePicture profile_picture = 11;</code>
+     * @return Whether the profilePicture field is set.
+     */
+    boolean hasProfilePicture();
+    /**
+     * <code>.ProfilePicture profile_picture = 11;</code>
+     * @return The profilePicture.
+     */
+    emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture getProfilePicture();
+    /**
+     * <code>.ProfilePicture profile_picture = 11;</code>
+     */
+    emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePictureOrBuilder getProfilePictureOrBuilder();
+
+    /**
+     * <code>repeated uint32 card_id_list = 10;</code>
      * @return A list containing the cardIdList.
      */
     java.util.List<java.lang.Integer> getCardIdListList();
     /**
-     * <code>repeated uint32 card_id_list = 4;</code>
+     * <code>repeated uint32 card_id_list = 10;</code>
      * @return The count of cardIdList.
      */
     int getCardIdListCount();
     /**
-     * <code>repeated uint32 card_id_list = 4;</code>
+     * <code>repeated uint32 card_id_list = 10;</code>
      * @param index The index of the element to return.
      * @return The cardIdList at the given index.
      */
     int getCardIdList(int index);
 
     /**
-     * <code>uint32 controller_id = 13;</code>
-     * @return The controllerId.
-     */
-    int getControllerId();
-
-    /**
-     * <code>map&lt;uint32, uint32&gt; card_face_map = 14;</code>
+     * <code>map&lt;uint32, uint32&gt; card_face_map = 1;</code>
      */
     int getCardFaceMapCount();
     /**
-     * <code>map&lt;uint32, uint32&gt; card_face_map = 14;</code>
+     * <code>map&lt;uint32, uint32&gt; card_face_map = 1;</code>
      */
     boolean containsCardFaceMap(
         int key);
@@ -90,51 +96,45 @@ public final class GCGPlayerBriefDataOuterClass {
     java.util.Map<java.lang.Integer, java.lang.Integer>
     getCardFaceMap();
     /**
-     * <code>map&lt;uint32, uint32&gt; card_face_map = 14;</code>
+     * <code>map&lt;uint32, uint32&gt; card_face_map = 1;</code>
      */
     java.util.Map<java.lang.Integer, java.lang.Integer>
     getCardFaceMapMap();
     /**
-     * <code>map&lt;uint32, uint32&gt; card_face_map = 14;</code>
+     * <code>map&lt;uint32, uint32&gt; card_face_map = 1;</code>
      */
 
     int getCardFaceMapOrDefault(
         int key,
         int defaultValue);
     /**
-     * <code>map&lt;uint32, uint32&gt; card_face_map = 14;</code>
+     * <code>map&lt;uint32, uint32&gt; card_face_map = 1;</code>
      */
 
     int getCardFaceMapOrThrow(
         int key);
 
     /**
-     * <code>string psn_id = 9;</code>
+     * <code>string psn_id = 14;</code>
      * @return The psnId.
      */
     java.lang.String getPsnId();
     /**
-     * <code>string psn_id = 9;</code>
+     * <code>string psn_id = 14;</code>
      * @return The bytes for psnId.
      */
     com.google.protobuf.ByteString
         getPsnIdBytes();
 
     /**
-     * <code>string online_id = 5;</code>
-     * @return The onlineId.
+     * <code>uint32 controller_id = 9;</code>
+     * @return The controllerId.
      */
-    java.lang.String getOnlineId();
-    /**
-     * <code>string online_id = 5;</code>
-     * @return The bytes for onlineId.
-     */
-    com.google.protobuf.ByteString
-        getOnlineIdBytes();
+    int getControllerId();
   }
   /**
    * <pre>
-   * Obf: HPPFPGJGIPI
+   * Obf: BNFKPMOOAEG
    * </pre>
    *
    * Protobuf type {@code GCGPlayerBriefData}
@@ -150,9 +150,9 @@ public final class GCGPlayerBriefDataOuterClass {
     }
     private GCGPlayerBriefData() {
       nickName_ = "";
+      onlineId_ = "";
       cardIdList_ = emptyIntList();
       psnId_ = "";
-      onlineId_ = "";
     }
 
     @java.lang.Override
@@ -186,7 +186,42 @@ public final class GCGPlayerBriefDataOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                cardFaceMap_ = com.google.protobuf.MapField.newMapField(
+                    CardFaceMapDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000002;
+              }
+              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+              cardFaceMap__ = input.readMessage(
+                  CardFaceMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              cardFaceMap_.getMutableMap().put(
+                  cardFaceMap__.getKey(), cardFaceMap__.getValue());
+              break;
+            }
+            case 16: {
+
+              uid_ = input.readUInt32();
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              nickName_ = s;
+              break;
+            }
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              onlineId_ = s;
+              break;
+            }
+            case 72: {
+
+              controllerId_ = input.readUInt32();
+              break;
+            }
+            case 80: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 cardIdList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -194,7 +229,7 @@ public final class GCGPlayerBriefDataOuterClass {
               cardIdList_.addInt(input.readUInt32());
               break;
             }
-            case 34: {
+            case 82: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -207,13 +242,7 @@ public final class GCGPlayerBriefDataOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              onlineId_ = s;
-              break;
-            }
-            case 58: {
+            case 90: {
               emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture.Builder subBuilder = null;
               if (profilePicture_ != null) {
                 subBuilder = profilePicture_.toBuilder();
@@ -226,39 +255,10 @@ public final class GCGPlayerBriefDataOuterClass {
 
               break;
             }
-            case 74: {
+            case 114: {
               java.lang.String s = input.readStringRequireUtf8();
 
               psnId_ = s;
-              break;
-            }
-            case 80: {
-
-              uid_ = input.readUInt32();
-              break;
-            }
-            case 90: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              nickName_ = s;
-              break;
-            }
-            case 104: {
-
-              controllerId_ = input.readUInt32();
-              break;
-            }
-            case 114: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                cardFaceMap_ = com.google.protobuf.MapField.newMapField(
-                    CardFaceMapDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
-              }
-              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-              cardFaceMap__ = input.readMessage(
-                  CardFaceMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              cardFaceMap_.getMutableMap().put(
-                  cardFaceMap__.getKey(), cardFaceMap__.getValue());
               break;
             }
             default: {
@@ -293,7 +293,7 @@ public final class GCGPlayerBriefDataOuterClass {
     protected com.google.protobuf.MapField internalGetMapField(
         int number) {
       switch (number) {
-        case 14:
+        case 1:
           return internalGetCardFaceMap();
         default:
           throw new RuntimeException(
@@ -308,10 +308,10 @@ public final class GCGPlayerBriefDataOuterClass {
               emu.grasscutter.net.proto.GCGPlayerBriefDataOuterClass.GCGPlayerBriefData.class, emu.grasscutter.net.proto.GCGPlayerBriefDataOuterClass.GCGPlayerBriefData.Builder.class);
     }
 
-    public static final int NICK_NAME_FIELD_NUMBER = 11;
+    public static final int NICK_NAME_FIELD_NUMBER = 6;
     private volatile java.lang.Object nickName_;
     /**
-     * <code>string nick_name = 11;</code>
+     * <code>string nick_name = 6;</code>
      * @return The nickName.
      */
     @java.lang.Override
@@ -328,7 +328,7 @@ public final class GCGPlayerBriefDataOuterClass {
       }
     }
     /**
-     * <code>string nick_name = 11;</code>
+     * <code>string nick_name = 6;</code>
      * @return The bytes for nickName.
      */
     @java.lang.Override
@@ -346,36 +346,48 @@ public final class GCGPlayerBriefDataOuterClass {
       }
     }
 
-    public static final int PROFILE_PICTURE_FIELD_NUMBER = 7;
-    private emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture profilePicture_;
+    public static final int ONLINE_ID_FIELD_NUMBER = 8;
+    private volatile java.lang.Object onlineId_;
     /**
-     * <code>.ProfilePicture profile_picture = 7;</code>
-     * @return Whether the profilePicture field is set.
+     * <code>string online_id = 8;</code>
+     * @return The onlineId.
      */
     @java.lang.Override
-    public boolean hasProfilePicture() {
-      return profilePicture_ != null;
+    public java.lang.String getOnlineId() {
+      java.lang.Object ref = onlineId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        onlineId_ = s;
+        return s;
+      }
     }
     /**
-     * <code>.ProfilePicture profile_picture = 7;</code>
-     * @return The profilePicture.
+     * <code>string online_id = 8;</code>
+     * @return The bytes for onlineId.
      */
     @java.lang.Override
-    public emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture getProfilePicture() {
-      return profilePicture_ == null ? emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture.getDefaultInstance() : profilePicture_;
-    }
-    /**
-     * <code>.ProfilePicture profile_picture = 7;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePictureOrBuilder getProfilePictureOrBuilder() {
-      return getProfilePicture();
+    public com.google.protobuf.ByteString
+        getOnlineIdBytes() {
+      java.lang.Object ref = onlineId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        onlineId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
-    public static final int UID_FIELD_NUMBER = 10;
+    public static final int UID_FIELD_NUMBER = 2;
     private int uid_;
     /**
-     * <code>uint32 uid = 10;</code>
+     * <code>uint32 uid = 2;</code>
      * @return The uid.
      */
     @java.lang.Override
@@ -383,10 +395,36 @@ public final class GCGPlayerBriefDataOuterClass {
       return uid_;
     }
 
-    public static final int CARD_ID_LIST_FIELD_NUMBER = 4;
+    public static final int PROFILE_PICTURE_FIELD_NUMBER = 11;
+    private emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture profilePicture_;
+    /**
+     * <code>.ProfilePicture profile_picture = 11;</code>
+     * @return Whether the profilePicture field is set.
+     */
+    @java.lang.Override
+    public boolean hasProfilePicture() {
+      return profilePicture_ != null;
+    }
+    /**
+     * <code>.ProfilePicture profile_picture = 11;</code>
+     * @return The profilePicture.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture getProfilePicture() {
+      return profilePicture_ == null ? emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture.getDefaultInstance() : profilePicture_;
+    }
+    /**
+     * <code>.ProfilePicture profile_picture = 11;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePictureOrBuilder getProfilePictureOrBuilder() {
+      return getProfilePicture();
+    }
+
+    public static final int CARD_ID_LIST_FIELD_NUMBER = 10;
     private com.google.protobuf.Internal.IntList cardIdList_;
     /**
-     * <code>repeated uint32 card_id_list = 4;</code>
+     * <code>repeated uint32 card_id_list = 10;</code>
      * @return A list containing the cardIdList.
      */
     @java.lang.Override
@@ -395,14 +433,14 @@ public final class GCGPlayerBriefDataOuterClass {
       return cardIdList_;
     }
     /**
-     * <code>repeated uint32 card_id_list = 4;</code>
+     * <code>repeated uint32 card_id_list = 10;</code>
      * @return The count of cardIdList.
      */
     public int getCardIdListCount() {
       return cardIdList_.size();
     }
     /**
-     * <code>repeated uint32 card_id_list = 4;</code>
+     * <code>repeated uint32 card_id_list = 10;</code>
      * @param index The index of the element to return.
      * @return The cardIdList at the given index.
      */
@@ -411,18 +449,7 @@ public final class GCGPlayerBriefDataOuterClass {
     }
     private int cardIdListMemoizedSerializedSize = -1;
 
-    public static final int CONTROLLER_ID_FIELD_NUMBER = 13;
-    private int controllerId_;
-    /**
-     * <code>uint32 controller_id = 13;</code>
-     * @return The controllerId.
-     */
-    @java.lang.Override
-    public int getControllerId() {
-      return controllerId_;
-    }
-
-    public static final int CARD_FACE_MAP_FIELD_NUMBER = 14;
+    public static final int CARD_FACE_MAP_FIELD_NUMBER = 1;
     private static final class CardFaceMapDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.Integer, java.lang.Integer> defaultEntry =
@@ -449,7 +476,7 @@ public final class GCGPlayerBriefDataOuterClass {
       return internalGetCardFaceMap().getMap().size();
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; card_face_map = 14;</code>
+     * <code>map&lt;uint32, uint32&gt; card_face_map = 1;</code>
      */
 
     @java.lang.Override
@@ -467,7 +494,7 @@ public final class GCGPlayerBriefDataOuterClass {
       return getCardFaceMapMap();
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; card_face_map = 14;</code>
+     * <code>map&lt;uint32, uint32&gt; card_face_map = 1;</code>
      */
     @java.lang.Override
 
@@ -475,7 +502,7 @@ public final class GCGPlayerBriefDataOuterClass {
       return internalGetCardFaceMap().getMap();
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; card_face_map = 14;</code>
+     * <code>map&lt;uint32, uint32&gt; card_face_map = 1;</code>
      */
     @java.lang.Override
 
@@ -488,7 +515,7 @@ public final class GCGPlayerBriefDataOuterClass {
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; card_face_map = 14;</code>
+     * <code>map&lt;uint32, uint32&gt; card_face_map = 1;</code>
      */
     @java.lang.Override
 
@@ -503,10 +530,10 @@ public final class GCGPlayerBriefDataOuterClass {
       return map.get(key);
     }
 
-    public static final int PSN_ID_FIELD_NUMBER = 9;
+    public static final int PSN_ID_FIELD_NUMBER = 14;
     private volatile java.lang.Object psnId_;
     /**
-     * <code>string psn_id = 9;</code>
+     * <code>string psn_id = 14;</code>
      * @return The psnId.
      */
     @java.lang.Override
@@ -523,7 +550,7 @@ public final class GCGPlayerBriefDataOuterClass {
       }
     }
     /**
-     * <code>string psn_id = 9;</code>
+     * <code>string psn_id = 14;</code>
      * @return The bytes for psnId.
      */
     @java.lang.Override
@@ -541,42 +568,15 @@ public final class GCGPlayerBriefDataOuterClass {
       }
     }
 
-    public static final int ONLINE_ID_FIELD_NUMBER = 5;
-    private volatile java.lang.Object onlineId_;
+    public static final int CONTROLLER_ID_FIELD_NUMBER = 9;
+    private int controllerId_;
     /**
-     * <code>string online_id = 5;</code>
-     * @return The onlineId.
+     * <code>uint32 controller_id = 9;</code>
+     * @return The controllerId.
      */
     @java.lang.Override
-    public java.lang.String getOnlineId() {
-      java.lang.Object ref = onlineId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        onlineId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string online_id = 5;</code>
-     * @return The bytes for onlineId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getOnlineIdBytes() {
-      java.lang.Object ref = onlineId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        onlineId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public int getControllerId() {
+      return controllerId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -594,37 +594,37 @@ public final class GCGPlayerBriefDataOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (getCardIdListList().size() > 0) {
-        output.writeUInt32NoTag(34);
-        output.writeUInt32NoTag(cardIdListMemoizedSerializedSize);
-      }
-      for (int i = 0; i < cardIdList_.size(); i++) {
-        output.writeUInt32NoTag(cardIdList_.getInt(i));
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(onlineId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, onlineId_);
-      }
-      if (profilePicture_ != null) {
-        output.writeMessage(7, getProfilePicture());
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(psnId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, psnId_);
-      }
-      if (uid_ != 0) {
-        output.writeUInt32(10, uid_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nickName_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, nickName_);
-      }
-      if (controllerId_ != 0) {
-        output.writeUInt32(13, controllerId_);
-      }
       com.google.protobuf.GeneratedMessageV3
         .serializeIntegerMapTo(
           output,
           internalGetCardFaceMap(),
           CardFaceMapDefaultEntryHolder.defaultEntry,
-          14);
+          1);
+      if (uid_ != 0) {
+        output.writeUInt32(2, uid_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nickName_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, nickName_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(onlineId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, onlineId_);
+      }
+      if (controllerId_ != 0) {
+        output.writeUInt32(9, controllerId_);
+      }
+      if (getCardIdListList().size() > 0) {
+        output.writeUInt32NoTag(82);
+        output.writeUInt32NoTag(cardIdListMemoizedSerializedSize);
+      }
+      for (int i = 0; i < cardIdList_.size(); i++) {
+        output.writeUInt32NoTag(cardIdList_.getInt(i));
+      }
+      if (profilePicture_ != null) {
+        output.writeMessage(11, getProfilePicture());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(psnId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 14, psnId_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -634,6 +634,30 @@ public final class GCGPlayerBriefDataOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      for (java.util.Map.Entry<java.lang.Integer, java.lang.Integer> entry
+           : internalGetCardFaceMap().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+        cardFaceMap__ = CardFaceMapDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(1, cardFaceMap__);
+      }
+      if (uid_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(2, uid_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nickName_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, nickName_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(onlineId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, onlineId_);
+      }
+      if (controllerId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(9, controllerId_);
+      }
       {
         int dataSize = 0;
         for (int i = 0; i < cardIdList_.size(); i++) {
@@ -648,36 +672,12 @@ public final class GCGPlayerBriefDataOuterClass {
         }
         cardIdListMemoizedSerializedSize = dataSize;
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(onlineId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, onlineId_);
-      }
       if (profilePicture_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, getProfilePicture());
+          .computeMessageSize(11, getProfilePicture());
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(psnId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, psnId_);
-      }
-      if (uid_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, uid_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nickName_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, nickName_);
-      }
-      if (controllerId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, controllerId_);
-      }
-      for (java.util.Map.Entry<java.lang.Integer, java.lang.Integer> entry
-           : internalGetCardFaceMap().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-        cardFaceMap__ = CardFaceMapDefaultEntryHolder.defaultEntry.newBuilderForType()
-            .setKey(entry.getKey())
-            .setValue(entry.getValue())
-            .build();
-        size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(14, cardFaceMap__);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, psnId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -696,23 +696,23 @@ public final class GCGPlayerBriefDataOuterClass {
 
       if (!getNickName()
           .equals(other.getNickName())) return false;
+      if (!getOnlineId()
+          .equals(other.getOnlineId())) return false;
+      if (getUid()
+          != other.getUid()) return false;
       if (hasProfilePicture() != other.hasProfilePicture()) return false;
       if (hasProfilePicture()) {
         if (!getProfilePicture()
             .equals(other.getProfilePicture())) return false;
       }
-      if (getUid()
-          != other.getUid()) return false;
       if (!getCardIdListList()
           .equals(other.getCardIdListList())) return false;
-      if (getControllerId()
-          != other.getControllerId()) return false;
       if (!internalGetCardFaceMap().equals(
           other.internalGetCardFaceMap())) return false;
       if (!getPsnId()
           .equals(other.getPsnId())) return false;
-      if (!getOnlineId()
-          .equals(other.getOnlineId())) return false;
+      if (getControllerId()
+          != other.getControllerId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -726,26 +726,26 @@ public final class GCGPlayerBriefDataOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + NICK_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getNickName().hashCode();
+      hash = (37 * hash) + ONLINE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getOnlineId().hashCode();
+      hash = (37 * hash) + UID_FIELD_NUMBER;
+      hash = (53 * hash) + getUid();
       if (hasProfilePicture()) {
         hash = (37 * hash) + PROFILE_PICTURE_FIELD_NUMBER;
         hash = (53 * hash) + getProfilePicture().hashCode();
       }
-      hash = (37 * hash) + UID_FIELD_NUMBER;
-      hash = (53 * hash) + getUid();
       if (getCardIdListCount() > 0) {
         hash = (37 * hash) + CARD_ID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getCardIdListList().hashCode();
       }
-      hash = (37 * hash) + CONTROLLER_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getControllerId();
       if (!internalGetCardFaceMap().getMap().isEmpty()) {
         hash = (37 * hash) + CARD_FACE_MAP_FIELD_NUMBER;
         hash = (53 * hash) + internalGetCardFaceMap().hashCode();
       }
       hash = (37 * hash) + PSN_ID_FIELD_NUMBER;
       hash = (53 * hash) + getPsnId().hashCode();
-      hash = (37 * hash) + ONLINE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getOnlineId().hashCode();
+      hash = (37 * hash) + CONTROLLER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getControllerId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -843,7 +843,7 @@ public final class GCGPlayerBriefDataOuterClass {
     }
     /**
      * <pre>
-     * Obf: HPPFPGJGIPI
+     * Obf: BNFKPMOOAEG
      * </pre>
      *
      * Protobuf type {@code GCGPlayerBriefData}
@@ -861,7 +861,7 @@ public final class GCGPlayerBriefDataOuterClass {
       protected com.google.protobuf.MapField internalGetMapField(
           int number) {
         switch (number) {
-          case 14:
+          case 1:
             return internalGetCardFaceMap();
           default:
             throw new RuntimeException(
@@ -872,7 +872,7 @@ public final class GCGPlayerBriefDataOuterClass {
       protected com.google.protobuf.MapField internalGetMutableMapField(
           int number) {
         switch (number) {
-          case 14:
+          case 1:
             return internalGetMutableCardFaceMap();
           default:
             throw new RuntimeException(
@@ -907,22 +907,22 @@ public final class GCGPlayerBriefDataOuterClass {
         super.clear();
         nickName_ = "";
 
+        onlineId_ = "";
+
+        uid_ = 0;
+
         if (profilePictureBuilder_ == null) {
           profilePicture_ = null;
         } else {
           profilePicture_ = null;
           profilePictureBuilder_ = null;
         }
-        uid_ = 0;
-
         cardIdList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
-        controllerId_ = 0;
-
         internalGetMutableCardFaceMap().clear();
         psnId_ = "";
 
-        onlineId_ = "";
+        controllerId_ = 0;
 
         return this;
       }
@@ -952,22 +952,22 @@ public final class GCGPlayerBriefDataOuterClass {
         emu.grasscutter.net.proto.GCGPlayerBriefDataOuterClass.GCGPlayerBriefData result = new emu.grasscutter.net.proto.GCGPlayerBriefDataOuterClass.GCGPlayerBriefData(this);
         int from_bitField0_ = bitField0_;
         result.nickName_ = nickName_;
+        result.onlineId_ = onlineId_;
+        result.uid_ = uid_;
         if (profilePictureBuilder_ == null) {
           result.profilePicture_ = profilePicture_;
         } else {
           result.profilePicture_ = profilePictureBuilder_.build();
         }
-        result.uid_ = uid_;
         if (((bitField0_ & 0x00000001) != 0)) {
           cardIdList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.cardIdList_ = cardIdList_;
-        result.controllerId_ = controllerId_;
         result.cardFaceMap_ = internalGetCardFaceMap();
         result.cardFaceMap_.makeImmutable();
         result.psnId_ = psnId_;
-        result.onlineId_ = onlineId_;
+        result.controllerId_ = controllerId_;
         onBuilt();
         return result;
       }
@@ -1020,11 +1020,15 @@ public final class GCGPlayerBriefDataOuterClass {
           nickName_ = other.nickName_;
           onChanged();
         }
-        if (other.hasProfilePicture()) {
-          mergeProfilePicture(other.getProfilePicture());
+        if (!other.getOnlineId().isEmpty()) {
+          onlineId_ = other.onlineId_;
+          onChanged();
         }
         if (other.getUid() != 0) {
           setUid(other.getUid());
+        }
+        if (other.hasProfilePicture()) {
+          mergeProfilePicture(other.getProfilePicture());
         }
         if (!other.cardIdList_.isEmpty()) {
           if (cardIdList_.isEmpty()) {
@@ -1036,18 +1040,14 @@ public final class GCGPlayerBriefDataOuterClass {
           }
           onChanged();
         }
-        if (other.getControllerId() != 0) {
-          setControllerId(other.getControllerId());
-        }
         internalGetMutableCardFaceMap().mergeFrom(
             other.internalGetCardFaceMap());
         if (!other.getPsnId().isEmpty()) {
           psnId_ = other.psnId_;
           onChanged();
         }
-        if (!other.getOnlineId().isEmpty()) {
-          onlineId_ = other.onlineId_;
-          onChanged();
+        if (other.getControllerId() != 0) {
+          setControllerId(other.getControllerId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1081,7 +1081,7 @@ public final class GCGPlayerBriefDataOuterClass {
 
       private java.lang.Object nickName_ = "";
       /**
-       * <code>string nick_name = 11;</code>
+       * <code>string nick_name = 6;</code>
        * @return The nickName.
        */
       public java.lang.String getNickName() {
@@ -1097,7 +1097,7 @@ public final class GCGPlayerBriefDataOuterClass {
         }
       }
       /**
-       * <code>string nick_name = 11;</code>
+       * <code>string nick_name = 6;</code>
        * @return The bytes for nickName.
        */
       public com.google.protobuf.ByteString
@@ -1114,7 +1114,7 @@ public final class GCGPlayerBriefDataOuterClass {
         }
       }
       /**
-       * <code>string nick_name = 11;</code>
+       * <code>string nick_name = 6;</code>
        * @param value The nickName to set.
        * @return This builder for chaining.
        */
@@ -1129,7 +1129,7 @@ public final class GCGPlayerBriefDataOuterClass {
         return this;
       }
       /**
-       * <code>string nick_name = 11;</code>
+       * <code>string nick_name = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearNickName() {
@@ -1139,7 +1139,7 @@ public final class GCGPlayerBriefDataOuterClass {
         return this;
       }
       /**
-       * <code>string nick_name = 11;</code>
+       * <code>string nick_name = 6;</code>
        * @param value The bytes for nickName to set.
        * @return This builder for chaining.
        */
@@ -1155,18 +1155,125 @@ public final class GCGPlayerBriefDataOuterClass {
         return this;
       }
 
+      private java.lang.Object onlineId_ = "";
+      /**
+       * <code>string online_id = 8;</code>
+       * @return The onlineId.
+       */
+      public java.lang.String getOnlineId() {
+        java.lang.Object ref = onlineId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          onlineId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string online_id = 8;</code>
+       * @return The bytes for onlineId.
+       */
+      public com.google.protobuf.ByteString
+          getOnlineIdBytes() {
+        java.lang.Object ref = onlineId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          onlineId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string online_id = 8;</code>
+       * @param value The onlineId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOnlineId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        onlineId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string online_id = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOnlineId() {
+        
+        onlineId_ = getDefaultInstance().getOnlineId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string online_id = 8;</code>
+       * @param value The bytes for onlineId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOnlineIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        onlineId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int uid_ ;
+      /**
+       * <code>uint32 uid = 2;</code>
+       * @return The uid.
+       */
+      @java.lang.Override
+      public int getUid() {
+        return uid_;
+      }
+      /**
+       * <code>uint32 uid = 2;</code>
+       * @param value The uid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUid(int value) {
+        
+        uid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 uid = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUid() {
+        
+        uid_ = 0;
+        onChanged();
+        return this;
+      }
+
       private emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture profilePicture_;
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture, emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture.Builder, emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePictureOrBuilder> profilePictureBuilder_;
       /**
-       * <code>.ProfilePicture profile_picture = 7;</code>
+       * <code>.ProfilePicture profile_picture = 11;</code>
        * @return Whether the profilePicture field is set.
        */
       public boolean hasProfilePicture() {
         return profilePictureBuilder_ != null || profilePicture_ != null;
       }
       /**
-       * <code>.ProfilePicture profile_picture = 7;</code>
+       * <code>.ProfilePicture profile_picture = 11;</code>
        * @return The profilePicture.
        */
       public emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture getProfilePicture() {
@@ -1177,7 +1284,7 @@ public final class GCGPlayerBriefDataOuterClass {
         }
       }
       /**
-       * <code>.ProfilePicture profile_picture = 7;</code>
+       * <code>.ProfilePicture profile_picture = 11;</code>
        */
       public Builder setProfilePicture(emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture value) {
         if (profilePictureBuilder_ == null) {
@@ -1193,7 +1300,7 @@ public final class GCGPlayerBriefDataOuterClass {
         return this;
       }
       /**
-       * <code>.ProfilePicture profile_picture = 7;</code>
+       * <code>.ProfilePicture profile_picture = 11;</code>
        */
       public Builder setProfilePicture(
           emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture.Builder builderForValue) {
@@ -1207,7 +1314,7 @@ public final class GCGPlayerBriefDataOuterClass {
         return this;
       }
       /**
-       * <code>.ProfilePicture profile_picture = 7;</code>
+       * <code>.ProfilePicture profile_picture = 11;</code>
        */
       public Builder mergeProfilePicture(emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture value) {
         if (profilePictureBuilder_ == null) {
@@ -1225,7 +1332,7 @@ public final class GCGPlayerBriefDataOuterClass {
         return this;
       }
       /**
-       * <code>.ProfilePicture profile_picture = 7;</code>
+       * <code>.ProfilePicture profile_picture = 11;</code>
        */
       public Builder clearProfilePicture() {
         if (profilePictureBuilder_ == null) {
@@ -1239,7 +1346,7 @@ public final class GCGPlayerBriefDataOuterClass {
         return this;
       }
       /**
-       * <code>.ProfilePicture profile_picture = 7;</code>
+       * <code>.ProfilePicture profile_picture = 11;</code>
        */
       public emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture.Builder getProfilePictureBuilder() {
         
@@ -1247,7 +1354,7 @@ public final class GCGPlayerBriefDataOuterClass {
         return getProfilePictureFieldBuilder().getBuilder();
       }
       /**
-       * <code>.ProfilePicture profile_picture = 7;</code>
+       * <code>.ProfilePicture profile_picture = 11;</code>
        */
       public emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePictureOrBuilder getProfilePictureOrBuilder() {
         if (profilePictureBuilder_ != null) {
@@ -1258,7 +1365,7 @@ public final class GCGPlayerBriefDataOuterClass {
         }
       }
       /**
-       * <code>.ProfilePicture profile_picture = 7;</code>
+       * <code>.ProfilePicture profile_picture = 11;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture, emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture.Builder, emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePictureOrBuilder> 
@@ -1274,37 +1381,6 @@ public final class GCGPlayerBriefDataOuterClass {
         return profilePictureBuilder_;
       }
 
-      private int uid_ ;
-      /**
-       * <code>uint32 uid = 10;</code>
-       * @return The uid.
-       */
-      @java.lang.Override
-      public int getUid() {
-        return uid_;
-      }
-      /**
-       * <code>uint32 uid = 10;</code>
-       * @param value The uid to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUid(int value) {
-        
-        uid_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 uid = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearUid() {
-        
-        uid_ = 0;
-        onChanged();
-        return this;
-      }
-
       private com.google.protobuf.Internal.IntList cardIdList_ = emptyIntList();
       private void ensureCardIdListIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
@@ -1313,7 +1389,7 @@ public final class GCGPlayerBriefDataOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 card_id_list = 4;</code>
+       * <code>repeated uint32 card_id_list = 10;</code>
        * @return A list containing the cardIdList.
        */
       public java.util.List<java.lang.Integer>
@@ -1322,14 +1398,14 @@ public final class GCGPlayerBriefDataOuterClass {
                  java.util.Collections.unmodifiableList(cardIdList_) : cardIdList_;
       }
       /**
-       * <code>repeated uint32 card_id_list = 4;</code>
+       * <code>repeated uint32 card_id_list = 10;</code>
        * @return The count of cardIdList.
        */
       public int getCardIdListCount() {
         return cardIdList_.size();
       }
       /**
-       * <code>repeated uint32 card_id_list = 4;</code>
+       * <code>repeated uint32 card_id_list = 10;</code>
        * @param index The index of the element to return.
        * @return The cardIdList at the given index.
        */
@@ -1337,7 +1413,7 @@ public final class GCGPlayerBriefDataOuterClass {
         return cardIdList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 card_id_list = 4;</code>
+       * <code>repeated uint32 card_id_list = 10;</code>
        * @param index The index to set the value at.
        * @param value The cardIdList to set.
        * @return This builder for chaining.
@@ -1350,7 +1426,7 @@ public final class GCGPlayerBriefDataOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 card_id_list = 4;</code>
+       * <code>repeated uint32 card_id_list = 10;</code>
        * @param value The cardIdList to add.
        * @return This builder for chaining.
        */
@@ -1361,7 +1437,7 @@ public final class GCGPlayerBriefDataOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 card_id_list = 4;</code>
+       * <code>repeated uint32 card_id_list = 10;</code>
        * @param values The cardIdList to add.
        * @return This builder for chaining.
        */
@@ -1374,43 +1450,12 @@ public final class GCGPlayerBriefDataOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 card_id_list = 4;</code>
+       * <code>repeated uint32 card_id_list = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearCardIdList() {
         cardIdList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-
-      private int controllerId_ ;
-      /**
-       * <code>uint32 controller_id = 13;</code>
-       * @return The controllerId.
-       */
-      @java.lang.Override
-      public int getControllerId() {
-        return controllerId_;
-      }
-      /**
-       * <code>uint32 controller_id = 13;</code>
-       * @param value The controllerId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setControllerId(int value) {
-        
-        controllerId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 controller_id = 13;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearControllerId() {
-        
-        controllerId_ = 0;
         onChanged();
         return this;
       }
@@ -1442,7 +1487,7 @@ public final class GCGPlayerBriefDataOuterClass {
         return internalGetCardFaceMap().getMap().size();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; card_face_map = 14;</code>
+       * <code>map&lt;uint32, uint32&gt; card_face_map = 1;</code>
        */
 
       @java.lang.Override
@@ -1460,7 +1505,7 @@ public final class GCGPlayerBriefDataOuterClass {
         return getCardFaceMapMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; card_face_map = 14;</code>
+       * <code>map&lt;uint32, uint32&gt; card_face_map = 1;</code>
        */
       @java.lang.Override
 
@@ -1468,7 +1513,7 @@ public final class GCGPlayerBriefDataOuterClass {
         return internalGetCardFaceMap().getMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; card_face_map = 14;</code>
+       * <code>map&lt;uint32, uint32&gt; card_face_map = 1;</code>
        */
       @java.lang.Override
 
@@ -1481,7 +1526,7 @@ public final class GCGPlayerBriefDataOuterClass {
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; card_face_map = 14;</code>
+       * <code>map&lt;uint32, uint32&gt; card_face_map = 1;</code>
        */
       @java.lang.Override
 
@@ -1502,7 +1547,7 @@ public final class GCGPlayerBriefDataOuterClass {
         return this;
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; card_face_map = 14;</code>
+       * <code>map&lt;uint32, uint32&gt; card_face_map = 1;</code>
        */
 
       public Builder removeCardFaceMap(
@@ -1521,7 +1566,7 @@ public final class GCGPlayerBriefDataOuterClass {
         return internalGetMutableCardFaceMap().getMutableMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; card_face_map = 14;</code>
+       * <code>map&lt;uint32, uint32&gt; card_face_map = 1;</code>
        */
       public Builder putCardFaceMap(
           int key,
@@ -1533,7 +1578,7 @@ public final class GCGPlayerBriefDataOuterClass {
         return this;
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; card_face_map = 14;</code>
+       * <code>map&lt;uint32, uint32&gt; card_face_map = 1;</code>
        */
 
       public Builder putAllCardFaceMap(
@@ -1545,7 +1590,7 @@ public final class GCGPlayerBriefDataOuterClass {
 
       private java.lang.Object psnId_ = "";
       /**
-       * <code>string psn_id = 9;</code>
+       * <code>string psn_id = 14;</code>
        * @return The psnId.
        */
       public java.lang.String getPsnId() {
@@ -1561,7 +1606,7 @@ public final class GCGPlayerBriefDataOuterClass {
         }
       }
       /**
-       * <code>string psn_id = 9;</code>
+       * <code>string psn_id = 14;</code>
        * @return The bytes for psnId.
        */
       public com.google.protobuf.ByteString
@@ -1578,7 +1623,7 @@ public final class GCGPlayerBriefDataOuterClass {
         }
       }
       /**
-       * <code>string psn_id = 9;</code>
+       * <code>string psn_id = 14;</code>
        * @param value The psnId to set.
        * @return This builder for chaining.
        */
@@ -1593,7 +1638,7 @@ public final class GCGPlayerBriefDataOuterClass {
         return this;
       }
       /**
-       * <code>string psn_id = 9;</code>
+       * <code>string psn_id = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearPsnId() {
@@ -1603,7 +1648,7 @@ public final class GCGPlayerBriefDataOuterClass {
         return this;
       }
       /**
-       * <code>string psn_id = 9;</code>
+       * <code>string psn_id = 14;</code>
        * @param value The bytes for psnId to set.
        * @return This builder for chaining.
        */
@@ -1619,78 +1664,33 @@ public final class GCGPlayerBriefDataOuterClass {
         return this;
       }
 
-      private java.lang.Object onlineId_ = "";
+      private int controllerId_ ;
       /**
-       * <code>string online_id = 5;</code>
-       * @return The onlineId.
+       * <code>uint32 controller_id = 9;</code>
+       * @return The controllerId.
        */
-      public java.lang.String getOnlineId() {
-        java.lang.Object ref = onlineId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          onlineId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override
+      public int getControllerId() {
+        return controllerId_;
       }
       /**
-       * <code>string online_id = 5;</code>
-       * @return The bytes for onlineId.
-       */
-      public com.google.protobuf.ByteString
-          getOnlineIdBytes() {
-        java.lang.Object ref = onlineId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          onlineId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string online_id = 5;</code>
-       * @param value The onlineId to set.
+       * <code>uint32 controller_id = 9;</code>
+       * @param value The controllerId to set.
        * @return This builder for chaining.
        */
-      public Builder setOnlineId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        onlineId_ = value;
+      public Builder setControllerId(int value) {
+        
+        controllerId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string online_id = 5;</code>
+       * <code>uint32 controller_id = 9;</code>
        * @return This builder for chaining.
        */
-      public Builder clearOnlineId() {
+      public Builder clearControllerId() {
         
-        onlineId_ = getDefaultInstance().getOnlineId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string online_id = 5;</code>
-       * @param value The bytes for onlineId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOnlineIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        onlineId_ = value;
+        controllerId_ = 0;
         onChanged();
         return this;
       }
@@ -1768,12 +1768,12 @@ public final class GCGPlayerBriefDataOuterClass {
     java.lang.String[] descriptorData = {
       "\n\030GCGPlayerBriefData.proto\032\024ProfilePictu" +
       "re.proto\"\237\002\n\022GCGPlayerBriefData\022\021\n\tnick_" +
-      "name\030\013 \001(\t\022(\n\017profile_picture\030\007 \001(\0132\017.Pr" +
-      "ofilePicture\022\013\n\003uid\030\n \001(\r\022\024\n\014card_id_lis" +
-      "t\030\004 \003(\r\022\025\n\rcontroller_id\030\r \001(\r\022;\n\rcard_f" +
-      "ace_map\030\016 \003(\0132$.GCGPlayerBriefData.CardF" +
-      "aceMapEntry\022\016\n\006psn_id\030\t \001(\t\022\021\n\tonline_id" +
-      "\030\005 \001(\t\0322\n\020CardFaceMapEntry\022\013\n\003key\030\001 \001(\r\022" +
+      "name\030\006 \001(\t\022\021\n\tonline_id\030\010 \001(\t\022\013\n\003uid\030\002 \001" +
+      "(\r\022(\n\017profile_picture\030\013 \001(\0132\017.ProfilePic" +
+      "ture\022\024\n\014card_id_list\030\n \003(\r\022;\n\rcard_face_" +
+      "map\030\001 \003(\0132$.GCGPlayerBriefData.CardFaceM" +
+      "apEntry\022\016\n\006psn_id\030\016 \001(\t\022\025\n\rcontroller_id" +
+      "\030\t \001(\r\0322\n\020CardFaceMapEntry\022\013\n\003key\030\001 \001(\r\022" +
       "\r\n\005value\030\002 \001(\r:\0028\001B\033\n\031emu.grasscutter.ne" +
       "t.protob\006proto3"
     };
@@ -1787,7 +1787,7 @@ public final class GCGPlayerBriefDataOuterClass {
     internal_static_GCGPlayerBriefData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GCGPlayerBriefData_descriptor,
-        new java.lang.String[] { "NickName", "ProfilePicture", "Uid", "CardIdList", "ControllerId", "CardFaceMap", "PsnId", "OnlineId", });
+        new java.lang.String[] { "NickName", "OnlineId", "Uid", "ProfilePicture", "CardIdList", "CardFaceMap", "PsnId", "ControllerId", });
     internal_static_GCGPlayerBriefData_CardFaceMapEntry_descriptor =
       internal_static_GCGPlayerBriefData_descriptor.getNestedTypes().get(0);
     internal_static_GCGPlayerBriefData_CardFaceMapEntry_fieldAccessorTable = new

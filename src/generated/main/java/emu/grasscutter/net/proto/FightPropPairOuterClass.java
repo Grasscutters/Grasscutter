@@ -32,7 +32,7 @@ public final class FightPropPairOuterClass {
   }
   /**
    * <pre>
-   * Obf: AAIGEAGCKAA
+   * Obf: DKENFABIHAJ
    * </pre>
    *
    * Protobuf type {@code FightPropPair}
@@ -313,7 +313,7 @@ public final class FightPropPairOuterClass {
     }
     /**
      * <pre>
-     * Obf: AAIGEAGCKAA
+     * Obf: DKENFABIHAJ
      * </pre>
      *
      * Protobuf type {@code FightPropPair}

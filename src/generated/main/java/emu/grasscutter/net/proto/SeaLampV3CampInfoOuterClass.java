@@ -19,32 +19,32 @@ public final class SeaLampV3CampInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .SeaLampV3CampStageInfo stage_info_list = 6;</code>
+     * <code>repeated .SeaLampV3CampStageInfo stage_info_list = 1;</code>
      */
     java.util.List<emu.grasscutter.net.proto.SeaLampV3CampStageInfoOuterClass.SeaLampV3CampStageInfo> 
         getStageInfoListList();
     /**
-     * <code>repeated .SeaLampV3CampStageInfo stage_info_list = 6;</code>
+     * <code>repeated .SeaLampV3CampStageInfo stage_info_list = 1;</code>
      */
     emu.grasscutter.net.proto.SeaLampV3CampStageInfoOuterClass.SeaLampV3CampStageInfo getStageInfoList(int index);
     /**
-     * <code>repeated .SeaLampV3CampStageInfo stage_info_list = 6;</code>
+     * <code>repeated .SeaLampV3CampStageInfo stage_info_list = 1;</code>
      */
     int getStageInfoListCount();
     /**
-     * <code>repeated .SeaLampV3CampStageInfo stage_info_list = 6;</code>
+     * <code>repeated .SeaLampV3CampStageInfo stage_info_list = 1;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.SeaLampV3CampStageInfoOuterClass.SeaLampV3CampStageInfoOrBuilder> 
         getStageInfoListOrBuilderList();
     /**
-     * <code>repeated .SeaLampV3CampStageInfo stage_info_list = 6;</code>
+     * <code>repeated .SeaLampV3CampStageInfo stage_info_list = 1;</code>
      */
     emu.grasscutter.net.proto.SeaLampV3CampStageInfoOuterClass.SeaLampV3CampStageInfoOrBuilder getStageInfoListOrBuilder(
         int index);
   }
   /**
    * <pre>
-   * Obf: NAFCFFFCKIL
+   * Obf: ODOLBLNLDPC
    * </pre>
    *
    * Protobuf type {@code SeaLampV3CampInfo}
@@ -93,7 +93,7 @@ public final class SeaLampV3CampInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 50: {
+            case 10: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 stageInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.SeaLampV3CampStageInfoOuterClass.SeaLampV3CampStageInfo>();
                 mutable_bitField0_ |= 0x00000001;
@@ -137,17 +137,17 @@ public final class SeaLampV3CampInfoOuterClass {
               emu.grasscutter.net.proto.SeaLampV3CampInfoOuterClass.SeaLampV3CampInfo.class, emu.grasscutter.net.proto.SeaLampV3CampInfoOuterClass.SeaLampV3CampInfo.Builder.class);
     }
 
-    public static final int STAGE_INFO_LIST_FIELD_NUMBER = 6;
+    public static final int STAGE_INFO_LIST_FIELD_NUMBER = 1;
     private java.util.List<emu.grasscutter.net.proto.SeaLampV3CampStageInfoOuterClass.SeaLampV3CampStageInfo> stageInfoList_;
     /**
-     * <code>repeated .SeaLampV3CampStageInfo stage_info_list = 6;</code>
+     * <code>repeated .SeaLampV3CampStageInfo stage_info_list = 1;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.SeaLampV3CampStageInfoOuterClass.SeaLampV3CampStageInfo> getStageInfoListList() {
       return stageInfoList_;
     }
     /**
-     * <code>repeated .SeaLampV3CampStageInfo stage_info_list = 6;</code>
+     * <code>repeated .SeaLampV3CampStageInfo stage_info_list = 1;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.SeaLampV3CampStageInfoOuterClass.SeaLampV3CampStageInfoOrBuilder> 
@@ -155,21 +155,21 @@ public final class SeaLampV3CampInfoOuterClass {
       return stageInfoList_;
     }
     /**
-     * <code>repeated .SeaLampV3CampStageInfo stage_info_list = 6;</code>
+     * <code>repeated .SeaLampV3CampStageInfo stage_info_list = 1;</code>
      */
     @java.lang.Override
     public int getStageInfoListCount() {
       return stageInfoList_.size();
     }
     /**
-     * <code>repeated .SeaLampV3CampStageInfo stage_info_list = 6;</code>
+     * <code>repeated .SeaLampV3CampStageInfo stage_info_list = 1;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.SeaLampV3CampStageInfoOuterClass.SeaLampV3CampStageInfo getStageInfoList(int index) {
       return stageInfoList_.get(index);
     }
     /**
-     * <code>repeated .SeaLampV3CampStageInfo stage_info_list = 6;</code>
+     * <code>repeated .SeaLampV3CampStageInfo stage_info_list = 1;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.SeaLampV3CampStageInfoOuterClass.SeaLampV3CampStageInfoOrBuilder getStageInfoListOrBuilder(
@@ -192,7 +192,7 @@ public final class SeaLampV3CampInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < stageInfoList_.size(); i++) {
-        output.writeMessage(6, stageInfoList_.get(i));
+        output.writeMessage(1, stageInfoList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -205,7 +205,7 @@ public final class SeaLampV3CampInfoOuterClass {
       size = 0;
       for (int i = 0; i < stageInfoList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, stageInfoList_.get(i));
+          .computeMessageSize(1, stageInfoList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -336,7 +336,7 @@ public final class SeaLampV3CampInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: NAFCFFFCKIL
+     * Obf: ODOLBLNLDPC
      * </pre>
      *
      * Protobuf type {@code SeaLampV3CampInfo}
@@ -536,7 +536,7 @@ public final class SeaLampV3CampInfoOuterClass {
           emu.grasscutter.net.proto.SeaLampV3CampStageInfoOuterClass.SeaLampV3CampStageInfo, emu.grasscutter.net.proto.SeaLampV3CampStageInfoOuterClass.SeaLampV3CampStageInfo.Builder, emu.grasscutter.net.proto.SeaLampV3CampStageInfoOuterClass.SeaLampV3CampStageInfoOrBuilder> stageInfoListBuilder_;
 
       /**
-       * <code>repeated .SeaLampV3CampStageInfo stage_info_list = 6;</code>
+       * <code>repeated .SeaLampV3CampStageInfo stage_info_list = 1;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.SeaLampV3CampStageInfoOuterClass.SeaLampV3CampStageInfo> getStageInfoListList() {
         if (stageInfoListBuilder_ == null) {
@@ -546,7 +546,7 @@ public final class SeaLampV3CampInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .SeaLampV3CampStageInfo stage_info_list = 6;</code>
+       * <code>repeated .SeaLampV3CampStageInfo stage_info_list = 1;</code>
        */
       public int getStageInfoListCount() {
         if (stageInfoListBuilder_ == null) {
@@ -556,7 +556,7 @@ public final class SeaLampV3CampInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .SeaLampV3CampStageInfo stage_info_list = 6;</code>
+       * <code>repeated .SeaLampV3CampStageInfo stage_info_list = 1;</code>
        */
       public emu.grasscutter.net.proto.SeaLampV3CampStageInfoOuterClass.SeaLampV3CampStageInfo getStageInfoList(int index) {
         if (stageInfoListBuilder_ == null) {
@@ -566,7 +566,7 @@ public final class SeaLampV3CampInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .SeaLampV3CampStageInfo stage_info_list = 6;</code>
+       * <code>repeated .SeaLampV3CampStageInfo stage_info_list = 1;</code>
        */
       public Builder setStageInfoList(
           int index, emu.grasscutter.net.proto.SeaLampV3CampStageInfoOuterClass.SeaLampV3CampStageInfo value) {
@@ -583,7 +583,7 @@ public final class SeaLampV3CampInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .SeaLampV3CampStageInfo stage_info_list = 6;</code>
+       * <code>repeated .SeaLampV3CampStageInfo stage_info_list = 1;</code>
        */
       public Builder setStageInfoList(
           int index, emu.grasscutter.net.proto.SeaLampV3CampStageInfoOuterClass.SeaLampV3CampStageInfo.Builder builderForValue) {
@@ -597,7 +597,7 @@ public final class SeaLampV3CampInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .SeaLampV3CampStageInfo stage_info_list = 6;</code>
+       * <code>repeated .SeaLampV3CampStageInfo stage_info_list = 1;</code>
        */
       public Builder addStageInfoList(emu.grasscutter.net.proto.SeaLampV3CampStageInfoOuterClass.SeaLampV3CampStageInfo value) {
         if (stageInfoListBuilder_ == null) {
@@ -613,7 +613,7 @@ public final class SeaLampV3CampInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .SeaLampV3CampStageInfo stage_info_list = 6;</code>
+       * <code>repeated .SeaLampV3CampStageInfo stage_info_list = 1;</code>
        */
       public Builder addStageInfoList(
           int index, emu.grasscutter.net.proto.SeaLampV3CampStageInfoOuterClass.SeaLampV3CampStageInfo value) {
@@ -630,7 +630,7 @@ public final class SeaLampV3CampInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .SeaLampV3CampStageInfo stage_info_list = 6;</code>
+       * <code>repeated .SeaLampV3CampStageInfo stage_info_list = 1;</code>
        */
       public Builder addStageInfoList(
           emu.grasscutter.net.proto.SeaLampV3CampStageInfoOuterClass.SeaLampV3CampStageInfo.Builder builderForValue) {
@@ -644,7 +644,7 @@ public final class SeaLampV3CampInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .SeaLampV3CampStageInfo stage_info_list = 6;</code>
+       * <code>repeated .SeaLampV3CampStageInfo stage_info_list = 1;</code>
        */
       public Builder addStageInfoList(
           int index, emu.grasscutter.net.proto.SeaLampV3CampStageInfoOuterClass.SeaLampV3CampStageInfo.Builder builderForValue) {
@@ -658,7 +658,7 @@ public final class SeaLampV3CampInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .SeaLampV3CampStageInfo stage_info_list = 6;</code>
+       * <code>repeated .SeaLampV3CampStageInfo stage_info_list = 1;</code>
        */
       public Builder addAllStageInfoList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.SeaLampV3CampStageInfoOuterClass.SeaLampV3CampStageInfo> values) {
@@ -673,7 +673,7 @@ public final class SeaLampV3CampInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .SeaLampV3CampStageInfo stage_info_list = 6;</code>
+       * <code>repeated .SeaLampV3CampStageInfo stage_info_list = 1;</code>
        */
       public Builder clearStageInfoList() {
         if (stageInfoListBuilder_ == null) {
@@ -686,7 +686,7 @@ public final class SeaLampV3CampInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .SeaLampV3CampStageInfo stage_info_list = 6;</code>
+       * <code>repeated .SeaLampV3CampStageInfo stage_info_list = 1;</code>
        */
       public Builder removeStageInfoList(int index) {
         if (stageInfoListBuilder_ == null) {
@@ -699,14 +699,14 @@ public final class SeaLampV3CampInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .SeaLampV3CampStageInfo stage_info_list = 6;</code>
+       * <code>repeated .SeaLampV3CampStageInfo stage_info_list = 1;</code>
        */
       public emu.grasscutter.net.proto.SeaLampV3CampStageInfoOuterClass.SeaLampV3CampStageInfo.Builder getStageInfoListBuilder(
           int index) {
         return getStageInfoListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .SeaLampV3CampStageInfo stage_info_list = 6;</code>
+       * <code>repeated .SeaLampV3CampStageInfo stage_info_list = 1;</code>
        */
       public emu.grasscutter.net.proto.SeaLampV3CampStageInfoOuterClass.SeaLampV3CampStageInfoOrBuilder getStageInfoListOrBuilder(
           int index) {
@@ -716,7 +716,7 @@ public final class SeaLampV3CampInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .SeaLampV3CampStageInfo stage_info_list = 6;</code>
+       * <code>repeated .SeaLampV3CampStageInfo stage_info_list = 1;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.SeaLampV3CampStageInfoOuterClass.SeaLampV3CampStageInfoOrBuilder> 
            getStageInfoListOrBuilderList() {
@@ -727,14 +727,14 @@ public final class SeaLampV3CampInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .SeaLampV3CampStageInfo stage_info_list = 6;</code>
+       * <code>repeated .SeaLampV3CampStageInfo stage_info_list = 1;</code>
        */
       public emu.grasscutter.net.proto.SeaLampV3CampStageInfoOuterClass.SeaLampV3CampStageInfo.Builder addStageInfoListBuilder() {
         return getStageInfoListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.SeaLampV3CampStageInfoOuterClass.SeaLampV3CampStageInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .SeaLampV3CampStageInfo stage_info_list = 6;</code>
+       * <code>repeated .SeaLampV3CampStageInfo stage_info_list = 1;</code>
        */
       public emu.grasscutter.net.proto.SeaLampV3CampStageInfoOuterClass.SeaLampV3CampStageInfo.Builder addStageInfoListBuilder(
           int index) {
@@ -742,7 +742,7 @@ public final class SeaLampV3CampInfoOuterClass {
             index, emu.grasscutter.net.proto.SeaLampV3CampStageInfoOuterClass.SeaLampV3CampStageInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .SeaLampV3CampStageInfo stage_info_list = 6;</code>
+       * <code>repeated .SeaLampV3CampStageInfo stage_info_list = 1;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.SeaLampV3CampStageInfoOuterClass.SeaLampV3CampStageInfo.Builder> 
            getStageInfoListBuilderList() {
@@ -831,7 +831,7 @@ public final class SeaLampV3CampInfoOuterClass {
     java.lang.String[] descriptorData = {
       "\n\027SeaLampV3CampInfo.proto\032\034SeaLampV3Camp" +
       "StageInfo.proto\"E\n\021SeaLampV3CampInfo\0220\n\017" +
-      "stage_info_list\030\006 \003(\0132\027.SeaLampV3CampSta" +
+      "stage_info_list\030\001 \003(\0132\027.SeaLampV3CampSta" +
       "geInfoB\033\n\031emu.grasscutter.net.protob\006pro" +
       "to3"
     };

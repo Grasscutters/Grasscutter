@@ -19,39 +19,39 @@ public final class WidgetReportReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool OLMDMFHODCH = 9;</code>
-     * @return The oLMDMFHODCH.
+     * <code>bool IENCBHNGNDM = 2;</code>
+     * @return The iENCBHNGNDM.
      */
-    boolean getOLMDMFHODCH();
+    boolean getIENCBHNGNDM();
 
     /**
-     * <code>bool NJIKGBHPOEC = 15;</code>
-     * @return The nJIKGBHPOEC.
-     */
-    boolean getNJIKGBHPOEC();
-
-    /**
-     * <code>uint32 weather_wizard_shield_value = 1;</code>
-     * @return The weatherWizardShieldValue.
-     */
-    int getWeatherWizardShieldValue();
-
-    /**
-     * <code>uint32 material_id = 13;</code>
+     * <code>uint32 material_id = 11;</code>
      * @return The materialId.
      */
     int getMaterialId();
 
     /**
-     * <code>bool KMHNHCHDJOB = 14;</code>
-     * @return The kMHNHCHDJOB.
+     * <code>uint32 weather_wizard_shield_value = 14;</code>
+     * @return The weatherWizardShieldValue.
      */
-    boolean getKMHNHCHDJOB();
+    int getWeatherWizardShieldValue();
+
+    /**
+     * <code>bool NEIOFMCDAKD = 3;</code>
+     * @return The nEIOFMCDAKD.
+     */
+    boolean getNEIOFMCDAKD();
+
+    /**
+     * <code>bool KPAMJCLNJIF = 5;</code>
+     * @return The kPAMJCLNJIF.
+     */
+    boolean getKPAMJCLNJIF();
   }
   /**
    * <pre>
-   * CmdId: 4251
-   * Obf: BKKIKGIALNK
+   * CmdId: 2271
+   * Obf: HLEILGAJMPD
    * </pre>
    *
    * Protobuf type {@code WidgetReportReq}
@@ -98,29 +98,29 @@ public final class WidgetReportReqOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 16: {
 
-              weatherWizardShieldValue_ = input.readUInt32();
+              iENCBHNGNDM_ = input.readBool();
               break;
             }
-            case 72: {
+            case 24: {
 
-              oLMDMFHODCH_ = input.readBool();
+              nEIOFMCDAKD_ = input.readBool();
               break;
             }
-            case 104: {
+            case 40: {
+
+              kPAMJCLNJIF_ = input.readBool();
+              break;
+            }
+            case 88: {
 
               materialId_ = input.readUInt32();
               break;
             }
             case 112: {
 
-              kMHNHCHDJOB_ = input.readBool();
-              break;
-            }
-            case 120: {
-
-              nJIKGBHPOEC_ = input.readBool();
+              weatherWizardShieldValue_ = input.readUInt32();
               break;
             }
             default: {
@@ -155,43 +155,21 @@ public final class WidgetReportReqOuterClass {
               emu.grasscutter.net.proto.WidgetReportReqOuterClass.WidgetReportReq.class, emu.grasscutter.net.proto.WidgetReportReqOuterClass.WidgetReportReq.Builder.class);
     }
 
-    public static final int OLMDMFHODCH_FIELD_NUMBER = 9;
-    private boolean oLMDMFHODCH_;
+    public static final int IENCBHNGNDM_FIELD_NUMBER = 2;
+    private boolean iENCBHNGNDM_;
     /**
-     * <code>bool OLMDMFHODCH = 9;</code>
-     * @return The oLMDMFHODCH.
+     * <code>bool IENCBHNGNDM = 2;</code>
+     * @return The iENCBHNGNDM.
      */
     @java.lang.Override
-    public boolean getOLMDMFHODCH() {
-      return oLMDMFHODCH_;
+    public boolean getIENCBHNGNDM() {
+      return iENCBHNGNDM_;
     }
 
-    public static final int NJIKGBHPOEC_FIELD_NUMBER = 15;
-    private boolean nJIKGBHPOEC_;
-    /**
-     * <code>bool NJIKGBHPOEC = 15;</code>
-     * @return The nJIKGBHPOEC.
-     */
-    @java.lang.Override
-    public boolean getNJIKGBHPOEC() {
-      return nJIKGBHPOEC_;
-    }
-
-    public static final int WEATHER_WIZARD_SHIELD_VALUE_FIELD_NUMBER = 1;
-    private int weatherWizardShieldValue_;
-    /**
-     * <code>uint32 weather_wizard_shield_value = 1;</code>
-     * @return The weatherWizardShieldValue.
-     */
-    @java.lang.Override
-    public int getWeatherWizardShieldValue() {
-      return weatherWizardShieldValue_;
-    }
-
-    public static final int MATERIAL_ID_FIELD_NUMBER = 13;
+    public static final int MATERIAL_ID_FIELD_NUMBER = 11;
     private int materialId_;
     /**
-     * <code>uint32 material_id = 13;</code>
+     * <code>uint32 material_id = 11;</code>
      * @return The materialId.
      */
     @java.lang.Override
@@ -199,15 +177,37 @@ public final class WidgetReportReqOuterClass {
       return materialId_;
     }
 
-    public static final int KMHNHCHDJOB_FIELD_NUMBER = 14;
-    private boolean kMHNHCHDJOB_;
+    public static final int WEATHER_WIZARD_SHIELD_VALUE_FIELD_NUMBER = 14;
+    private int weatherWizardShieldValue_;
     /**
-     * <code>bool KMHNHCHDJOB = 14;</code>
-     * @return The kMHNHCHDJOB.
+     * <code>uint32 weather_wizard_shield_value = 14;</code>
+     * @return The weatherWizardShieldValue.
      */
     @java.lang.Override
-    public boolean getKMHNHCHDJOB() {
-      return kMHNHCHDJOB_;
+    public int getWeatherWizardShieldValue() {
+      return weatherWizardShieldValue_;
+    }
+
+    public static final int NEIOFMCDAKD_FIELD_NUMBER = 3;
+    private boolean nEIOFMCDAKD_;
+    /**
+     * <code>bool NEIOFMCDAKD = 3;</code>
+     * @return The nEIOFMCDAKD.
+     */
+    @java.lang.Override
+    public boolean getNEIOFMCDAKD() {
+      return nEIOFMCDAKD_;
+    }
+
+    public static final int KPAMJCLNJIF_FIELD_NUMBER = 5;
+    private boolean kPAMJCLNJIF_;
+    /**
+     * <code>bool KPAMJCLNJIF = 5;</code>
+     * @return The kPAMJCLNJIF.
+     */
+    @java.lang.Override
+    public boolean getKPAMJCLNJIF() {
+      return kPAMJCLNJIF_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -224,20 +224,20 @@ public final class WidgetReportReqOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (weatherWizardShieldValue_ != 0) {
-        output.writeUInt32(1, weatherWizardShieldValue_);
+      if (iENCBHNGNDM_ != false) {
+        output.writeBool(2, iENCBHNGNDM_);
       }
-      if (oLMDMFHODCH_ != false) {
-        output.writeBool(9, oLMDMFHODCH_);
+      if (nEIOFMCDAKD_ != false) {
+        output.writeBool(3, nEIOFMCDAKD_);
+      }
+      if (kPAMJCLNJIF_ != false) {
+        output.writeBool(5, kPAMJCLNJIF_);
       }
       if (materialId_ != 0) {
-        output.writeUInt32(13, materialId_);
+        output.writeUInt32(11, materialId_);
       }
-      if (kMHNHCHDJOB_ != false) {
-        output.writeBool(14, kMHNHCHDJOB_);
-      }
-      if (nJIKGBHPOEC_ != false) {
-        output.writeBool(15, nJIKGBHPOEC_);
+      if (weatherWizardShieldValue_ != 0) {
+        output.writeUInt32(14, weatherWizardShieldValue_);
       }
       unknownFields.writeTo(output);
     }
@@ -248,25 +248,25 @@ public final class WidgetReportReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (weatherWizardShieldValue_ != 0) {
+      if (iENCBHNGNDM_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, weatherWizardShieldValue_);
+          .computeBoolSize(2, iENCBHNGNDM_);
       }
-      if (oLMDMFHODCH_ != false) {
+      if (nEIOFMCDAKD_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(9, oLMDMFHODCH_);
+          .computeBoolSize(3, nEIOFMCDAKD_);
+      }
+      if (kPAMJCLNJIF_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(5, kPAMJCLNJIF_);
       }
       if (materialId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, materialId_);
+          .computeUInt32Size(11, materialId_);
       }
-      if (kMHNHCHDJOB_ != false) {
+      if (weatherWizardShieldValue_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(14, kMHNHCHDJOB_);
-      }
-      if (nJIKGBHPOEC_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(15, nJIKGBHPOEC_);
+          .computeUInt32Size(14, weatherWizardShieldValue_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -283,16 +283,16 @@ public final class WidgetReportReqOuterClass {
       }
       emu.grasscutter.net.proto.WidgetReportReqOuterClass.WidgetReportReq other = (emu.grasscutter.net.proto.WidgetReportReqOuterClass.WidgetReportReq) obj;
 
-      if (getOLMDMFHODCH()
-          != other.getOLMDMFHODCH()) return false;
-      if (getNJIKGBHPOEC()
-          != other.getNJIKGBHPOEC()) return false;
-      if (getWeatherWizardShieldValue()
-          != other.getWeatherWizardShieldValue()) return false;
+      if (getIENCBHNGNDM()
+          != other.getIENCBHNGNDM()) return false;
       if (getMaterialId()
           != other.getMaterialId()) return false;
-      if (getKMHNHCHDJOB()
-          != other.getKMHNHCHDJOB()) return false;
+      if (getWeatherWizardShieldValue()
+          != other.getWeatherWizardShieldValue()) return false;
+      if (getNEIOFMCDAKD()
+          != other.getNEIOFMCDAKD()) return false;
+      if (getKPAMJCLNJIF()
+          != other.getKPAMJCLNJIF()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -304,19 +304,19 @@ public final class WidgetReportReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + OLMDMFHODCH_FIELD_NUMBER;
+      hash = (37 * hash) + IENCBHNGNDM_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getOLMDMFHODCH());
-      hash = (37 * hash) + NJIKGBHPOEC_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getNJIKGBHPOEC());
-      hash = (37 * hash) + WEATHER_WIZARD_SHIELD_VALUE_FIELD_NUMBER;
-      hash = (53 * hash) + getWeatherWizardShieldValue();
+          getIENCBHNGNDM());
       hash = (37 * hash) + MATERIAL_ID_FIELD_NUMBER;
       hash = (53 * hash) + getMaterialId();
-      hash = (37 * hash) + KMHNHCHDJOB_FIELD_NUMBER;
+      hash = (37 * hash) + WEATHER_WIZARD_SHIELD_VALUE_FIELD_NUMBER;
+      hash = (53 * hash) + getWeatherWizardShieldValue();
+      hash = (37 * hash) + NEIOFMCDAKD_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getKMHNHCHDJOB());
+          getNEIOFMCDAKD());
+      hash = (37 * hash) + KPAMJCLNJIF_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getKPAMJCLNJIF());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -414,8 +414,8 @@ public final class WidgetReportReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4251
-     * Obf: BKKIKGIALNK
+     * CmdId: 2271
+     * Obf: HLEILGAJMPD
      * </pre>
      *
      * Protobuf type {@code WidgetReportReq}
@@ -455,15 +455,15 @@ public final class WidgetReportReqOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        oLMDMFHODCH_ = false;
-
-        nJIKGBHPOEC_ = false;
-
-        weatherWizardShieldValue_ = 0;
+        iENCBHNGNDM_ = false;
 
         materialId_ = 0;
 
-        kMHNHCHDJOB_ = false;
+        weatherWizardShieldValue_ = 0;
+
+        nEIOFMCDAKD_ = false;
+
+        kPAMJCLNJIF_ = false;
 
         return this;
       }
@@ -491,11 +491,11 @@ public final class WidgetReportReqOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.WidgetReportReqOuterClass.WidgetReportReq buildPartial() {
         emu.grasscutter.net.proto.WidgetReportReqOuterClass.WidgetReportReq result = new emu.grasscutter.net.proto.WidgetReportReqOuterClass.WidgetReportReq(this);
-        result.oLMDMFHODCH_ = oLMDMFHODCH_;
-        result.nJIKGBHPOEC_ = nJIKGBHPOEC_;
-        result.weatherWizardShieldValue_ = weatherWizardShieldValue_;
+        result.iENCBHNGNDM_ = iENCBHNGNDM_;
         result.materialId_ = materialId_;
-        result.kMHNHCHDJOB_ = kMHNHCHDJOB_;
+        result.weatherWizardShieldValue_ = weatherWizardShieldValue_;
+        result.nEIOFMCDAKD_ = nEIOFMCDAKD_;
+        result.kPAMJCLNJIF_ = kPAMJCLNJIF_;
         onBuilt();
         return result;
       }
@@ -544,20 +544,20 @@ public final class WidgetReportReqOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.WidgetReportReqOuterClass.WidgetReportReq other) {
         if (other == emu.grasscutter.net.proto.WidgetReportReqOuterClass.WidgetReportReq.getDefaultInstance()) return this;
-        if (other.getOLMDMFHODCH() != false) {
-          setOLMDMFHODCH(other.getOLMDMFHODCH());
-        }
-        if (other.getNJIKGBHPOEC() != false) {
-          setNJIKGBHPOEC(other.getNJIKGBHPOEC());
-        }
-        if (other.getWeatherWizardShieldValue() != 0) {
-          setWeatherWizardShieldValue(other.getWeatherWizardShieldValue());
+        if (other.getIENCBHNGNDM() != false) {
+          setIENCBHNGNDM(other.getIENCBHNGNDM());
         }
         if (other.getMaterialId() != 0) {
           setMaterialId(other.getMaterialId());
         }
-        if (other.getKMHNHCHDJOB() != false) {
-          setKMHNHCHDJOB(other.getKMHNHCHDJOB());
+        if (other.getWeatherWizardShieldValue() != 0) {
+          setWeatherWizardShieldValue(other.getWeatherWizardShieldValue());
+        }
+        if (other.getNEIOFMCDAKD() != false) {
+          setNEIOFMCDAKD(other.getNEIOFMCDAKD());
+        }
+        if (other.getKPAMJCLNJIF() != false) {
+          setKPAMJCLNJIF(other.getKPAMJCLNJIF());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -588,102 +588,40 @@ public final class WidgetReportReqOuterClass {
         return this;
       }
 
-      private boolean oLMDMFHODCH_ ;
+      private boolean iENCBHNGNDM_ ;
       /**
-       * <code>bool OLMDMFHODCH = 9;</code>
-       * @return The oLMDMFHODCH.
+       * <code>bool IENCBHNGNDM = 2;</code>
+       * @return The iENCBHNGNDM.
        */
       @java.lang.Override
-      public boolean getOLMDMFHODCH() {
-        return oLMDMFHODCH_;
+      public boolean getIENCBHNGNDM() {
+        return iENCBHNGNDM_;
       }
       /**
-       * <code>bool OLMDMFHODCH = 9;</code>
-       * @param value The oLMDMFHODCH to set.
+       * <code>bool IENCBHNGNDM = 2;</code>
+       * @param value The iENCBHNGNDM to set.
        * @return This builder for chaining.
        */
-      public Builder setOLMDMFHODCH(boolean value) {
+      public Builder setIENCBHNGNDM(boolean value) {
         
-        oLMDMFHODCH_ = value;
+        iENCBHNGNDM_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bool OLMDMFHODCH = 9;</code>
+       * <code>bool IENCBHNGNDM = 2;</code>
        * @return This builder for chaining.
        */
-      public Builder clearOLMDMFHODCH() {
+      public Builder clearIENCBHNGNDM() {
         
-        oLMDMFHODCH_ = false;
-        onChanged();
-        return this;
-      }
-
-      private boolean nJIKGBHPOEC_ ;
-      /**
-       * <code>bool NJIKGBHPOEC = 15;</code>
-       * @return The nJIKGBHPOEC.
-       */
-      @java.lang.Override
-      public boolean getNJIKGBHPOEC() {
-        return nJIKGBHPOEC_;
-      }
-      /**
-       * <code>bool NJIKGBHPOEC = 15;</code>
-       * @param value The nJIKGBHPOEC to set.
-       * @return This builder for chaining.
-       */
-      public Builder setNJIKGBHPOEC(boolean value) {
-        
-        nJIKGBHPOEC_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool NJIKGBHPOEC = 15;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearNJIKGBHPOEC() {
-        
-        nJIKGBHPOEC_ = false;
-        onChanged();
-        return this;
-      }
-
-      private int weatherWizardShieldValue_ ;
-      /**
-       * <code>uint32 weather_wizard_shield_value = 1;</code>
-       * @return The weatherWizardShieldValue.
-       */
-      @java.lang.Override
-      public int getWeatherWizardShieldValue() {
-        return weatherWizardShieldValue_;
-      }
-      /**
-       * <code>uint32 weather_wizard_shield_value = 1;</code>
-       * @param value The weatherWizardShieldValue to set.
-       * @return This builder for chaining.
-       */
-      public Builder setWeatherWizardShieldValue(int value) {
-        
-        weatherWizardShieldValue_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 weather_wizard_shield_value = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearWeatherWizardShieldValue() {
-        
-        weatherWizardShieldValue_ = 0;
+        iENCBHNGNDM_ = false;
         onChanged();
         return this;
       }
 
       private int materialId_ ;
       /**
-       * <code>uint32 material_id = 13;</code>
+       * <code>uint32 material_id = 11;</code>
        * @return The materialId.
        */
       @java.lang.Override
@@ -691,7 +629,7 @@ public final class WidgetReportReqOuterClass {
         return materialId_;
       }
       /**
-       * <code>uint32 material_id = 13;</code>
+       * <code>uint32 material_id = 11;</code>
        * @param value The materialId to set.
        * @return This builder for chaining.
        */
@@ -702,7 +640,7 @@ public final class WidgetReportReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 material_id = 13;</code>
+       * <code>uint32 material_id = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearMaterialId() {
@@ -712,33 +650,95 @@ public final class WidgetReportReqOuterClass {
         return this;
       }
 
-      private boolean kMHNHCHDJOB_ ;
+      private int weatherWizardShieldValue_ ;
       /**
-       * <code>bool KMHNHCHDJOB = 14;</code>
-       * @return The kMHNHCHDJOB.
+       * <code>uint32 weather_wizard_shield_value = 14;</code>
+       * @return The weatherWizardShieldValue.
        */
       @java.lang.Override
-      public boolean getKMHNHCHDJOB() {
-        return kMHNHCHDJOB_;
+      public int getWeatherWizardShieldValue() {
+        return weatherWizardShieldValue_;
       }
       /**
-       * <code>bool KMHNHCHDJOB = 14;</code>
-       * @param value The kMHNHCHDJOB to set.
+       * <code>uint32 weather_wizard_shield_value = 14;</code>
+       * @param value The weatherWizardShieldValue to set.
        * @return This builder for chaining.
        */
-      public Builder setKMHNHCHDJOB(boolean value) {
+      public Builder setWeatherWizardShieldValue(int value) {
         
-        kMHNHCHDJOB_ = value;
+        weatherWizardShieldValue_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bool KMHNHCHDJOB = 14;</code>
+       * <code>uint32 weather_wizard_shield_value = 14;</code>
        * @return This builder for chaining.
        */
-      public Builder clearKMHNHCHDJOB() {
+      public Builder clearWeatherWizardShieldValue() {
         
-        kMHNHCHDJOB_ = false;
+        weatherWizardShieldValue_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean nEIOFMCDAKD_ ;
+      /**
+       * <code>bool NEIOFMCDAKD = 3;</code>
+       * @return The nEIOFMCDAKD.
+       */
+      @java.lang.Override
+      public boolean getNEIOFMCDAKD() {
+        return nEIOFMCDAKD_;
+      }
+      /**
+       * <code>bool NEIOFMCDAKD = 3;</code>
+       * @param value The nEIOFMCDAKD to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNEIOFMCDAKD(boolean value) {
+        
+        nEIOFMCDAKD_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool NEIOFMCDAKD = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearNEIOFMCDAKD() {
+        
+        nEIOFMCDAKD_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean kPAMJCLNJIF_ ;
+      /**
+       * <code>bool KPAMJCLNJIF = 5;</code>
+       * @return The kPAMJCLNJIF.
+       */
+      @java.lang.Override
+      public boolean getKPAMJCLNJIF() {
+        return kPAMJCLNJIF_;
+      }
+      /**
+       * <code>bool KPAMJCLNJIF = 5;</code>
+       * @param value The kPAMJCLNJIF to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKPAMJCLNJIF(boolean value) {
+        
+        kPAMJCLNJIF_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool KPAMJCLNJIF = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearKPAMJCLNJIF() {
+        
+        kPAMJCLNJIF_ = false;
         onChanged();
         return this;
       }
@@ -810,9 +810,9 @@ public final class WidgetReportReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\025WidgetReportReq.proto\"\212\001\n\017WidgetReport" +
-      "Req\022\023\n\013OLMDMFHODCH\030\t \001(\010\022\023\n\013NJIKGBHPOEC\030" +
-      "\017 \001(\010\022#\n\033weather_wizard_shield_value\030\001 \001" +
-      "(\r\022\023\n\013material_id\030\r \001(\r\022\023\n\013KMHNHCHDJOB\030\016" +
+      "Req\022\023\n\013IENCBHNGNDM\030\002 \001(\010\022\023\n\013material_id\030" +
+      "\013 \001(\r\022#\n\033weather_wizard_shield_value\030\016 \001" +
+      "(\r\022\023\n\013NEIOFMCDAKD\030\003 \001(\010\022\023\n\013KPAMJCLNJIF\030\005" +
       " \001(\010B\033\n\031emu.grasscutter.net.protob\006proto" +
       "3"
     };
@@ -825,7 +825,7 @@ public final class WidgetReportReqOuterClass {
     internal_static_WidgetReportReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_WidgetReportReq_descriptor,
-        new java.lang.String[] { "OLMDMFHODCH", "NJIKGBHPOEC", "WeatherWizardShieldValue", "MaterialId", "KMHNHCHDJOB", });
+        new java.lang.String[] { "IENCBHNGNDM", "MaterialId", "WeatherWizardShieldValue", "NEIOFMCDAKD", "KPAMJCLNJIF", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -19,10 +19,16 @@ public final class SpiceActivityDetailInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 KIFHDNINMHD = 7;</code>
-     * @return The kIFHDNINMHD.
+     * <code>uint32 PMGNKOHDPJA = 7;</code>
+     * @return The pMGNKOHDPJA.
      */
-    int getKIFHDNINMHD();
+    int getPMGNKOHDPJA();
+
+    /**
+     * <code>uint32 PKFDOLJJNDI = 6;</code>
+     * @return The pKFDOLJJNDI.
+     */
+    int getPKFDOLJJNDI();
 
     /**
      * <code>repeated .SpiceStageData spice_stage_data_list = 8;</code>
@@ -47,16 +53,10 @@ public final class SpiceActivityDetailInfoOuterClass {
      */
     emu.grasscutter.net.proto.SpiceStageDataOuterClass.SpiceStageDataOrBuilder getSpiceStageDataListOrBuilder(
         int index);
-
-    /**
-     * <code>uint32 BDGNIOMACMP = 5;</code>
-     * @return The bDGNIOMACMP.
-     */
-    int getBDGNIOMACMP();
   }
   /**
    * <pre>
-   * Obf: KMDDHMJGLKE
+   * Obf: LGJNDJKCPGP
    * </pre>
    *
    * Protobuf type {@code SpiceActivityDetailInfo}
@@ -105,14 +105,14 @@ public final class SpiceActivityDetailInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
+            case 48: {
 
-              bDGNIOMACMP_ = input.readUInt32();
+              pKFDOLJJNDI_ = input.readUInt32();
               break;
             }
             case 56: {
 
-              kIFHDNINMHD_ = input.readUInt32();
+              pMGNKOHDPJA_ = input.readUInt32();
               break;
             }
             case 66: {
@@ -159,15 +159,26 @@ public final class SpiceActivityDetailInfoOuterClass {
               emu.grasscutter.net.proto.SpiceActivityDetailInfoOuterClass.SpiceActivityDetailInfo.class, emu.grasscutter.net.proto.SpiceActivityDetailInfoOuterClass.SpiceActivityDetailInfo.Builder.class);
     }
 
-    public static final int KIFHDNINMHD_FIELD_NUMBER = 7;
-    private int kIFHDNINMHD_;
+    public static final int PMGNKOHDPJA_FIELD_NUMBER = 7;
+    private int pMGNKOHDPJA_;
     /**
-     * <code>uint32 KIFHDNINMHD = 7;</code>
-     * @return The kIFHDNINMHD.
+     * <code>uint32 PMGNKOHDPJA = 7;</code>
+     * @return The pMGNKOHDPJA.
      */
     @java.lang.Override
-    public int getKIFHDNINMHD() {
-      return kIFHDNINMHD_;
+    public int getPMGNKOHDPJA() {
+      return pMGNKOHDPJA_;
+    }
+
+    public static final int PKFDOLJJNDI_FIELD_NUMBER = 6;
+    private int pKFDOLJJNDI_;
+    /**
+     * <code>uint32 PKFDOLJJNDI = 6;</code>
+     * @return The pKFDOLJJNDI.
+     */
+    @java.lang.Override
+    public int getPKFDOLJJNDI() {
+      return pKFDOLJJNDI_;
     }
 
     public static final int SPICE_STAGE_DATA_LIST_FIELD_NUMBER = 8;
@@ -210,17 +221,6 @@ public final class SpiceActivityDetailInfoOuterClass {
       return spiceStageDataList_.get(index);
     }
 
-    public static final int BDGNIOMACMP_FIELD_NUMBER = 5;
-    private int bDGNIOMACMP_;
-    /**
-     * <code>uint32 BDGNIOMACMP = 5;</code>
-     * @return The bDGNIOMACMP.
-     */
-    @java.lang.Override
-    public int getBDGNIOMACMP() {
-      return bDGNIOMACMP_;
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -235,11 +235,11 @@ public final class SpiceActivityDetailInfoOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (bDGNIOMACMP_ != 0) {
-        output.writeUInt32(5, bDGNIOMACMP_);
+      if (pKFDOLJJNDI_ != 0) {
+        output.writeUInt32(6, pKFDOLJJNDI_);
       }
-      if (kIFHDNINMHD_ != 0) {
-        output.writeUInt32(7, kIFHDNINMHD_);
+      if (pMGNKOHDPJA_ != 0) {
+        output.writeUInt32(7, pMGNKOHDPJA_);
       }
       for (int i = 0; i < spiceStageDataList_.size(); i++) {
         output.writeMessage(8, spiceStageDataList_.get(i));
@@ -253,13 +253,13 @@ public final class SpiceActivityDetailInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (bDGNIOMACMP_ != 0) {
+      if (pKFDOLJJNDI_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, bDGNIOMACMP_);
+          .computeUInt32Size(6, pKFDOLJJNDI_);
       }
-      if (kIFHDNINMHD_ != 0) {
+      if (pMGNKOHDPJA_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, kIFHDNINMHD_);
+          .computeUInt32Size(7, pMGNKOHDPJA_);
       }
       for (int i = 0; i < spiceStageDataList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
@@ -280,12 +280,12 @@ public final class SpiceActivityDetailInfoOuterClass {
       }
       emu.grasscutter.net.proto.SpiceActivityDetailInfoOuterClass.SpiceActivityDetailInfo other = (emu.grasscutter.net.proto.SpiceActivityDetailInfoOuterClass.SpiceActivityDetailInfo) obj;
 
-      if (getKIFHDNINMHD()
-          != other.getKIFHDNINMHD()) return false;
+      if (getPMGNKOHDPJA()
+          != other.getPMGNKOHDPJA()) return false;
+      if (getPKFDOLJJNDI()
+          != other.getPKFDOLJJNDI()) return false;
       if (!getSpiceStageDataListList()
           .equals(other.getSpiceStageDataListList())) return false;
-      if (getBDGNIOMACMP()
-          != other.getBDGNIOMACMP()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -297,14 +297,14 @@ public final class SpiceActivityDetailInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + KIFHDNINMHD_FIELD_NUMBER;
-      hash = (53 * hash) + getKIFHDNINMHD();
+      hash = (37 * hash) + PMGNKOHDPJA_FIELD_NUMBER;
+      hash = (53 * hash) + getPMGNKOHDPJA();
+      hash = (37 * hash) + PKFDOLJJNDI_FIELD_NUMBER;
+      hash = (53 * hash) + getPKFDOLJJNDI();
       if (getSpiceStageDataListCount() > 0) {
         hash = (37 * hash) + SPICE_STAGE_DATA_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getSpiceStageDataListList().hashCode();
       }
-      hash = (37 * hash) + BDGNIOMACMP_FIELD_NUMBER;
-      hash = (53 * hash) + getBDGNIOMACMP();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -402,7 +402,7 @@ public final class SpiceActivityDetailInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: KMDDHMJGLKE
+     * Obf: LGJNDJKCPGP
      * </pre>
      *
      * Protobuf type {@code SpiceActivityDetailInfo}
@@ -443,7 +443,9 @@ public final class SpiceActivityDetailInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        kIFHDNINMHD_ = 0;
+        pMGNKOHDPJA_ = 0;
+
+        pKFDOLJJNDI_ = 0;
 
         if (spiceStageDataListBuilder_ == null) {
           spiceStageDataList_ = java.util.Collections.emptyList();
@@ -451,8 +453,6 @@ public final class SpiceActivityDetailInfoOuterClass {
         } else {
           spiceStageDataListBuilder_.clear();
         }
-        bDGNIOMACMP_ = 0;
-
         return this;
       }
 
@@ -480,7 +480,8 @@ public final class SpiceActivityDetailInfoOuterClass {
       public emu.grasscutter.net.proto.SpiceActivityDetailInfoOuterClass.SpiceActivityDetailInfo buildPartial() {
         emu.grasscutter.net.proto.SpiceActivityDetailInfoOuterClass.SpiceActivityDetailInfo result = new emu.grasscutter.net.proto.SpiceActivityDetailInfoOuterClass.SpiceActivityDetailInfo(this);
         int from_bitField0_ = bitField0_;
-        result.kIFHDNINMHD_ = kIFHDNINMHD_;
+        result.pMGNKOHDPJA_ = pMGNKOHDPJA_;
+        result.pKFDOLJJNDI_ = pKFDOLJJNDI_;
         if (spiceStageDataListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             spiceStageDataList_ = java.util.Collections.unmodifiableList(spiceStageDataList_);
@@ -490,7 +491,6 @@ public final class SpiceActivityDetailInfoOuterClass {
         } else {
           result.spiceStageDataList_ = spiceStageDataListBuilder_.build();
         }
-        result.bDGNIOMACMP_ = bDGNIOMACMP_;
         onBuilt();
         return result;
       }
@@ -539,8 +539,11 @@ public final class SpiceActivityDetailInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.SpiceActivityDetailInfoOuterClass.SpiceActivityDetailInfo other) {
         if (other == emu.grasscutter.net.proto.SpiceActivityDetailInfoOuterClass.SpiceActivityDetailInfo.getDefaultInstance()) return this;
-        if (other.getKIFHDNINMHD() != 0) {
-          setKIFHDNINMHD(other.getKIFHDNINMHD());
+        if (other.getPMGNKOHDPJA() != 0) {
+          setPMGNKOHDPJA(other.getPMGNKOHDPJA());
+        }
+        if (other.getPKFDOLJJNDI() != 0) {
+          setPKFDOLJJNDI(other.getPKFDOLJJNDI());
         }
         if (spiceStageDataListBuilder_ == null) {
           if (!other.spiceStageDataList_.isEmpty()) {
@@ -567,9 +570,6 @@ public final class SpiceActivityDetailInfoOuterClass {
               spiceStageDataListBuilder_.addAllMessages(other.spiceStageDataList_);
             }
           }
-        }
-        if (other.getBDGNIOMACMP() != 0) {
-          setBDGNIOMACMP(other.getBDGNIOMACMP());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -601,33 +601,64 @@ public final class SpiceActivityDetailInfoOuterClass {
       }
       private int bitField0_;
 
-      private int kIFHDNINMHD_ ;
+      private int pMGNKOHDPJA_ ;
       /**
-       * <code>uint32 KIFHDNINMHD = 7;</code>
-       * @return The kIFHDNINMHD.
+       * <code>uint32 PMGNKOHDPJA = 7;</code>
+       * @return The pMGNKOHDPJA.
        */
       @java.lang.Override
-      public int getKIFHDNINMHD() {
-        return kIFHDNINMHD_;
+      public int getPMGNKOHDPJA() {
+        return pMGNKOHDPJA_;
       }
       /**
-       * <code>uint32 KIFHDNINMHD = 7;</code>
-       * @param value The kIFHDNINMHD to set.
+       * <code>uint32 PMGNKOHDPJA = 7;</code>
+       * @param value The pMGNKOHDPJA to set.
        * @return This builder for chaining.
        */
-      public Builder setKIFHDNINMHD(int value) {
+      public Builder setPMGNKOHDPJA(int value) {
         
-        kIFHDNINMHD_ = value;
+        pMGNKOHDPJA_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 KIFHDNINMHD = 7;</code>
+       * <code>uint32 PMGNKOHDPJA = 7;</code>
        * @return This builder for chaining.
        */
-      public Builder clearKIFHDNINMHD() {
+      public Builder clearPMGNKOHDPJA() {
         
-        kIFHDNINMHD_ = 0;
+        pMGNKOHDPJA_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int pKFDOLJJNDI_ ;
+      /**
+       * <code>uint32 PKFDOLJJNDI = 6;</code>
+       * @return The pKFDOLJJNDI.
+       */
+      @java.lang.Override
+      public int getPKFDOLJJNDI() {
+        return pKFDOLJJNDI_;
+      }
+      /**
+       * <code>uint32 PKFDOLJJNDI = 6;</code>
+       * @param value The pKFDOLJJNDI to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPKFDOLJJNDI(int value) {
+        
+        pKFDOLJJNDI_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 PKFDOLJJNDI = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPKFDOLJJNDI() {
+        
+        pKFDOLJJNDI_ = 0;
         onChanged();
         return this;
       }
@@ -871,37 +902,6 @@ public final class SpiceActivityDetailInfoOuterClass {
         }
         return spiceStageDataListBuilder_;
       }
-
-      private int bDGNIOMACMP_ ;
-      /**
-       * <code>uint32 BDGNIOMACMP = 5;</code>
-       * @return The bDGNIOMACMP.
-       */
-      @java.lang.Override
-      public int getBDGNIOMACMP() {
-        return bDGNIOMACMP_;
-      }
-      /**
-       * <code>uint32 BDGNIOMACMP = 5;</code>
-       * @param value The bDGNIOMACMP to set.
-       * @return This builder for chaining.
-       */
-      public Builder setBDGNIOMACMP(int value) {
-        
-        bDGNIOMACMP_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 BDGNIOMACMP = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearBDGNIOMACMP() {
-        
-        bDGNIOMACMP_ = 0;
-        onChanged();
-        return this;
-      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -971,9 +971,9 @@ public final class SpiceActivityDetailInfoOuterClass {
     java.lang.String[] descriptorData = {
       "\n\035SpiceActivityDetailInfo.proto\032\024SpiceSt" +
       "ageData.proto\"s\n\027SpiceActivityDetailInfo" +
-      "\022\023\n\013KIFHDNINMHD\030\007 \001(\r\022.\n\025spice_stage_dat" +
-      "a_list\030\010 \003(\0132\017.SpiceStageData\022\023\n\013BDGNIOM" +
-      "ACMP\030\005 \001(\rB\033\n\031emu.grasscutter.net.protob" +
+      "\022\023\n\013PMGNKOHDPJA\030\007 \001(\r\022\023\n\013PKFDOLJJNDI\030\006 \001" +
+      "(\r\022.\n\025spice_stage_data_list\030\010 \003(\0132\017.Spic" +
+      "eStageDataB\033\n\031emu.grasscutter.net.protob" +
       "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -986,7 +986,7 @@ public final class SpiceActivityDetailInfoOuterClass {
     internal_static_SpiceActivityDetailInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SpiceActivityDetailInfo_descriptor,
-        new java.lang.String[] { "KIFHDNINMHD", "SpiceStageDataList", "BDGNIOMACMP", });
+        new java.lang.String[] { "PMGNKOHDPJA", "PKFDOLJJNDI", "SpiceStageDataList", });
     emu.grasscutter.net.proto.SpiceStageDataOuterClass.getDescriptor();
   }
 

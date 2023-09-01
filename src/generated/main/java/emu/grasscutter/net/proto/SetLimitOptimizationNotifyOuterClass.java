@@ -19,15 +19,15 @@ public final class SetLimitOptimizationNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool is_active = 14;</code>
+     * <code>bool is_active = 5;</code>
      * @return The isActive.
      */
     boolean getIsActive();
   }
   /**
    * <pre>
-   * CmdId: 8557
-   * Obf: IMGHPOJOJGI
+   * CmdId: 3723
+   * Obf: FOIMOOAKPHB
    * </pre>
    *
    * Protobuf type {@code SetLimitOptimizationNotify}
@@ -74,7 +74,7 @@ public final class SetLimitOptimizationNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 112: {
+            case 40: {
 
               isActive_ = input.readBool();
               break;
@@ -111,10 +111,10 @@ public final class SetLimitOptimizationNotifyOuterClass {
               emu.grasscutter.net.proto.SetLimitOptimizationNotifyOuterClass.SetLimitOptimizationNotify.class, emu.grasscutter.net.proto.SetLimitOptimizationNotifyOuterClass.SetLimitOptimizationNotify.Builder.class);
     }
 
-    public static final int IS_ACTIVE_FIELD_NUMBER = 14;
+    public static final int IS_ACTIVE_FIELD_NUMBER = 5;
     private boolean isActive_;
     /**
-     * <code>bool is_active = 14;</code>
+     * <code>bool is_active = 5;</code>
      * @return The isActive.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class SetLimitOptimizationNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (isActive_ != false) {
-        output.writeBool(14, isActive_);
+        output.writeBool(5, isActive_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class SetLimitOptimizationNotifyOuterClass {
       size = 0;
       if (isActive_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(14, isActive_);
+          .computeBoolSize(5, isActive_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -280,8 +280,8 @@ public final class SetLimitOptimizationNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8557
-     * Obf: IMGHPOJOJGI
+     * CmdId: 3723
+     * Obf: FOIMOOAKPHB
      * </pre>
      *
      * Protobuf type {@code SetLimitOptimizationNotify}
@@ -432,7 +432,7 @@ public final class SetLimitOptimizationNotifyOuterClass {
 
       private boolean isActive_ ;
       /**
-       * <code>bool is_active = 14;</code>
+       * <code>bool is_active = 5;</code>
        * @return The isActive.
        */
       @java.lang.Override
@@ -440,7 +440,7 @@ public final class SetLimitOptimizationNotifyOuterClass {
         return isActive_;
       }
       /**
-       * <code>bool is_active = 14;</code>
+       * <code>bool is_active = 5;</code>
        * @param value The isActive to set.
        * @return This builder for chaining.
        */
@@ -451,7 +451,7 @@ public final class SetLimitOptimizationNotifyOuterClass {
         return this;
       }
       /**
-       * <code>bool is_active = 14;</code>
+       * <code>bool is_active = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsActive() {
@@ -528,7 +528,7 @@ public final class SetLimitOptimizationNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n SetLimitOptimizationNotify.proto\"/\n\032Se" +
-      "tLimitOptimizationNotify\022\021\n\tis_active\030\016 " +
+      "tLimitOptimizationNotify\022\021\n\tis_active\030\005 " +
       "\001(\010B\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

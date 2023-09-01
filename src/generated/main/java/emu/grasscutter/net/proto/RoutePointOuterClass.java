@@ -118,7 +118,7 @@ public final class RoutePointOuterClass {
   }
   /**
    * <pre>
-   * Obf: AJPPKICDBMJ
+   * Obf: EDGGMGMHPJB
    * </pre>
    *
    * Protobuf type {@code RoutePoint}
@@ -827,7 +827,7 @@ public final class RoutePointOuterClass {
     }
     /**
      * <pre>
-     * Obf: AJPPKICDBMJ
+     * Obf: EDGGMGMHPJB
      * </pre>
      *
      * Protobuf type {@code RoutePoint}

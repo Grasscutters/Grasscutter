@@ -19,21 +19,21 @@ public final class MiracleRingTakeRewardReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 gadget_id = 4;</code>
+     * <code>uint32 gadget_id = 7;</code>
      * @return The gadgetId.
      */
     int getGadgetId();
 
     /**
-     * <code>uint32 gadget_entity_id = 9;</code>
+     * <code>uint32 gadget_entity_id = 13;</code>
      * @return The gadgetEntityId.
      */
     int getGadgetEntityId();
   }
   /**
    * <pre>
-   * CmdId: 5221
-   * Obf: MLGOLNCNKEN
+   * CmdId: 29462
+   * Obf: PBHJOEGFBLM
    * </pre>
    *
    * Protobuf type {@code MiracleRingTakeRewardReq}
@@ -80,12 +80,12 @@ public final class MiracleRingTakeRewardReqOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
+            case 56: {
 
               gadgetId_ = input.readUInt32();
               break;
             }
-            case 72: {
+            case 104: {
 
               gadgetEntityId_ = input.readUInt32();
               break;
@@ -122,10 +122,10 @@ public final class MiracleRingTakeRewardReqOuterClass {
               emu.grasscutter.net.proto.MiracleRingTakeRewardReqOuterClass.MiracleRingTakeRewardReq.class, emu.grasscutter.net.proto.MiracleRingTakeRewardReqOuterClass.MiracleRingTakeRewardReq.Builder.class);
     }
 
-    public static final int GADGET_ID_FIELD_NUMBER = 4;
+    public static final int GADGET_ID_FIELD_NUMBER = 7;
     private int gadgetId_;
     /**
-     * <code>uint32 gadget_id = 4;</code>
+     * <code>uint32 gadget_id = 7;</code>
      * @return The gadgetId.
      */
     @java.lang.Override
@@ -133,10 +133,10 @@ public final class MiracleRingTakeRewardReqOuterClass {
       return gadgetId_;
     }
 
-    public static final int GADGET_ENTITY_ID_FIELD_NUMBER = 9;
+    public static final int GADGET_ENTITY_ID_FIELD_NUMBER = 13;
     private int gadgetEntityId_;
     /**
-     * <code>uint32 gadget_entity_id = 9;</code>
+     * <code>uint32 gadget_entity_id = 13;</code>
      * @return The gadgetEntityId.
      */
     @java.lang.Override
@@ -159,10 +159,10 @@ public final class MiracleRingTakeRewardReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (gadgetId_ != 0) {
-        output.writeUInt32(4, gadgetId_);
+        output.writeUInt32(7, gadgetId_);
       }
       if (gadgetEntityId_ != 0) {
-        output.writeUInt32(9, gadgetEntityId_);
+        output.writeUInt32(13, gadgetEntityId_);
       }
       unknownFields.writeTo(output);
     }
@@ -175,11 +175,11 @@ public final class MiracleRingTakeRewardReqOuterClass {
       size = 0;
       if (gadgetId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, gadgetId_);
+          .computeUInt32Size(7, gadgetId_);
       }
       if (gadgetEntityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, gadgetEntityId_);
+          .computeUInt32Size(13, gadgetEntityId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -312,8 +312,8 @@ public final class MiracleRingTakeRewardReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 5221
-     * Obf: MLGOLNCNKEN
+     * CmdId: 29462
+     * Obf: PBHJOEGFBLM
      * </pre>
      *
      * Protobuf type {@code MiracleRingTakeRewardReq}
@@ -470,7 +470,7 @@ public final class MiracleRingTakeRewardReqOuterClass {
 
       private int gadgetId_ ;
       /**
-       * <code>uint32 gadget_id = 4;</code>
+       * <code>uint32 gadget_id = 7;</code>
        * @return The gadgetId.
        */
       @java.lang.Override
@@ -478,7 +478,7 @@ public final class MiracleRingTakeRewardReqOuterClass {
         return gadgetId_;
       }
       /**
-       * <code>uint32 gadget_id = 4;</code>
+       * <code>uint32 gadget_id = 7;</code>
        * @param value The gadgetId to set.
        * @return This builder for chaining.
        */
@@ -489,7 +489,7 @@ public final class MiracleRingTakeRewardReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 gadget_id = 4;</code>
+       * <code>uint32 gadget_id = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearGadgetId() {
@@ -501,7 +501,7 @@ public final class MiracleRingTakeRewardReqOuterClass {
 
       private int gadgetEntityId_ ;
       /**
-       * <code>uint32 gadget_entity_id = 9;</code>
+       * <code>uint32 gadget_entity_id = 13;</code>
        * @return The gadgetEntityId.
        */
       @java.lang.Override
@@ -509,7 +509,7 @@ public final class MiracleRingTakeRewardReqOuterClass {
         return gadgetEntityId_;
       }
       /**
-       * <code>uint32 gadget_entity_id = 9;</code>
+       * <code>uint32 gadget_entity_id = 13;</code>
        * @param value The gadgetEntityId to set.
        * @return This builder for chaining.
        */
@@ -520,7 +520,7 @@ public final class MiracleRingTakeRewardReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 gadget_entity_id = 9;</code>
+       * <code>uint32 gadget_entity_id = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearGadgetEntityId() {
@@ -597,8 +597,8 @@ public final class MiracleRingTakeRewardReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\036MiracleRingTakeRewardReq.proto\"G\n\030Mira" +
-      "cleRingTakeRewardReq\022\021\n\tgadget_id\030\004 \001(\r\022" +
-      "\030\n\020gadget_entity_id\030\t \001(\rB\033\n\031emu.grasscu" +
+      "cleRingTakeRewardReq\022\021\n\tgadget_id\030\007 \001(\r\022" +
+      "\030\n\020gadget_entity_id\030\r \001(\rB\033\n\031emu.grasscu" +
       "tter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

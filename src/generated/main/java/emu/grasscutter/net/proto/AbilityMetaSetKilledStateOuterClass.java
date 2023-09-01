@@ -25,10 +25,6 @@ public final class AbilityMetaSetKilledStateOuterClass {
     boolean getKilled();
   }
   /**
-   * <pre>
-   * Handcrafted by Magix!
-   * </pre>
-   *
    * Protobuf type {@code AbilityMetaSetKilledState}
    */
   public static final class AbilityMetaSetKilledState extends
@@ -278,10 +274,6 @@ public final class AbilityMetaSetKilledStateOuterClass {
       return builder;
     }
     /**
-     * <pre>
-     * Handcrafted by Magix!
-     * </pre>
-     *
      * Protobuf type {@code AbilityMetaSetKilledState}
      */
     public static final class Builder extends

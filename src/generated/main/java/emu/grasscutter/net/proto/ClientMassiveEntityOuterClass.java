@@ -85,7 +85,7 @@ public final class ClientMassiveEntityOuterClass {
   }
   /**
    * <pre>
-   * Obf: PGGLLCJFJEP
+   * Obf: LPCNMINODMN
    * </pre>
    *
    * Protobuf type {@code ClientMassiveEntity}
@@ -624,7 +624,7 @@ public final class ClientMassiveEntityOuterClass {
     }
     /**
      * <pre>
-     * Obf: PGGLLCJFJEP
+     * Obf: LPCNMINODMN
      * </pre>
      *
      * Protobuf type {@code ClientMassiveEntity}

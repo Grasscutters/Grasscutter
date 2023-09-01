@@ -1,8 +1,7 @@
 package emu.grasscutter.server.packet.send;
 
 import emu.grasscutter.game.entity.EntityBaseGadget;
-import emu.grasscutter.net.packet.BasePacket;
-import emu.grasscutter.net.packet.PacketOpcodes;
+import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.GadgetInteractRspOuterClass.GadgetInteractRsp;
 import emu.grasscutter.net.proto.InterOpTypeOuterClass.InterOpType;
 import emu.grasscutter.net.proto.InteractTypeOuterClass.InteractType;

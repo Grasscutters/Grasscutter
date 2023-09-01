@@ -20,8 +20,8 @@ public final class ReplayCustomDungeonReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 6222
-   * Obf: FCDFHEOCELK
+   * CmdId: 1660
+   * Obf: HNIAPOCKIMO
    * </pre>
    *
    * Protobuf type {@code ReplayCustomDungeonReq}
@@ -246,8 +246,8 @@ public final class ReplayCustomDungeonReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 6222
-     * Obf: FCDFHEOCELK
+     * CmdId: 1660
+     * Obf: HNIAPOCKIMO
      * </pre>
      *
      * Protobuf type {@code ReplayCustomDungeonReq}

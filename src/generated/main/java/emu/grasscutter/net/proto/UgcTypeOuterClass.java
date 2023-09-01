@@ -16,7 +16,7 @@ public final class UgcTypeOuterClass {
   }
   /**
    * <pre>
-   * Obf: KKNEGGLBKML
+   * Obf: ACCJDILEKGK
    * </pre>
    *
    * Protobuf enum {@code UgcType}

@@ -19,33 +19,33 @@ public final class ExecuteGadgetLuaReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 param2 = 12;</code>
-     * @return The param2.
-     */
-    int getParam2();
-
-    /**
-     * <code>int32 param3 = 15;</code>
-     * @return The param3.
-     */
-    int getParam3();
-
-    /**
      * <code>int32 param1 = 2;</code>
      * @return The param1.
      */
     int getParam1();
 
     /**
-     * <code>uint32 source_entity_id = 3;</code>
+     * <code>int32 param3 = 5;</code>
+     * @return The param3.
+     */
+    int getParam3();
+
+    /**
+     * <code>uint32 source_entity_id = 10;</code>
      * @return The sourceEntityId.
      */
     int getSourceEntityId();
+
+    /**
+     * <code>int32 param2 = 8;</code>
+     * @return The param2.
+     */
+    int getParam2();
   }
   /**
    * <pre>
-   * CmdId: 225
-   * Obf: EPKMBNENCNJ
+   * CmdId: 5288
+   * Obf: BCCHIHOEMNP
    * </pre>
    *
    * Protobuf type {@code ExecuteGadgetLuaReq}
@@ -97,19 +97,19 @@ public final class ExecuteGadgetLuaReqOuterClass {
               param1_ = input.readInt32();
               break;
             }
-            case 24: {
+            case 40: {
 
-              sourceEntityId_ = input.readUInt32();
+              param3_ = input.readInt32();
               break;
             }
-            case 96: {
+            case 64: {
 
               param2_ = input.readInt32();
               break;
             }
-            case 120: {
+            case 80: {
 
-              param3_ = input.readInt32();
+              sourceEntityId_ = input.readUInt32();
               break;
             }
             default: {
@@ -144,28 +144,6 @@ public final class ExecuteGadgetLuaReqOuterClass {
               emu.grasscutter.net.proto.ExecuteGadgetLuaReqOuterClass.ExecuteGadgetLuaReq.class, emu.grasscutter.net.proto.ExecuteGadgetLuaReqOuterClass.ExecuteGadgetLuaReq.Builder.class);
     }
 
-    public static final int PARAM2_FIELD_NUMBER = 12;
-    private int param2_;
-    /**
-     * <code>int32 param2 = 12;</code>
-     * @return The param2.
-     */
-    @java.lang.Override
-    public int getParam2() {
-      return param2_;
-    }
-
-    public static final int PARAM3_FIELD_NUMBER = 15;
-    private int param3_;
-    /**
-     * <code>int32 param3 = 15;</code>
-     * @return The param3.
-     */
-    @java.lang.Override
-    public int getParam3() {
-      return param3_;
-    }
-
     public static final int PARAM1_FIELD_NUMBER = 2;
     private int param1_;
     /**
@@ -177,15 +155,37 @@ public final class ExecuteGadgetLuaReqOuterClass {
       return param1_;
     }
 
-    public static final int SOURCE_ENTITY_ID_FIELD_NUMBER = 3;
+    public static final int PARAM3_FIELD_NUMBER = 5;
+    private int param3_;
+    /**
+     * <code>int32 param3 = 5;</code>
+     * @return The param3.
+     */
+    @java.lang.Override
+    public int getParam3() {
+      return param3_;
+    }
+
+    public static final int SOURCE_ENTITY_ID_FIELD_NUMBER = 10;
     private int sourceEntityId_;
     /**
-     * <code>uint32 source_entity_id = 3;</code>
+     * <code>uint32 source_entity_id = 10;</code>
      * @return The sourceEntityId.
      */
     @java.lang.Override
     public int getSourceEntityId() {
       return sourceEntityId_;
+    }
+
+    public static final int PARAM2_FIELD_NUMBER = 8;
+    private int param2_;
+    /**
+     * <code>int32 param2 = 8;</code>
+     * @return The param2.
+     */
+    @java.lang.Override
+    public int getParam2() {
+      return param2_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -205,14 +205,14 @@ public final class ExecuteGadgetLuaReqOuterClass {
       if (param1_ != 0) {
         output.writeInt32(2, param1_);
       }
-      if (sourceEntityId_ != 0) {
-        output.writeUInt32(3, sourceEntityId_);
+      if (param3_ != 0) {
+        output.writeInt32(5, param3_);
       }
       if (param2_ != 0) {
-        output.writeInt32(12, param2_);
+        output.writeInt32(8, param2_);
       }
-      if (param3_ != 0) {
-        output.writeInt32(15, param3_);
+      if (sourceEntityId_ != 0) {
+        output.writeUInt32(10, sourceEntityId_);
       }
       unknownFields.writeTo(output);
     }
@@ -227,17 +227,17 @@ public final class ExecuteGadgetLuaReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(2, param1_);
       }
-      if (sourceEntityId_ != 0) {
+      if (param3_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, sourceEntityId_);
+          .computeInt32Size(5, param3_);
       }
       if (param2_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(12, param2_);
+          .computeInt32Size(8, param2_);
       }
-      if (param3_ != 0) {
+      if (sourceEntityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(15, param3_);
+          .computeUInt32Size(10, sourceEntityId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -254,14 +254,14 @@ public final class ExecuteGadgetLuaReqOuterClass {
       }
       emu.grasscutter.net.proto.ExecuteGadgetLuaReqOuterClass.ExecuteGadgetLuaReq other = (emu.grasscutter.net.proto.ExecuteGadgetLuaReqOuterClass.ExecuteGadgetLuaReq) obj;
 
-      if (getParam2()
-          != other.getParam2()) return false;
-      if (getParam3()
-          != other.getParam3()) return false;
       if (getParam1()
           != other.getParam1()) return false;
+      if (getParam3()
+          != other.getParam3()) return false;
       if (getSourceEntityId()
           != other.getSourceEntityId()) return false;
+      if (getParam2()
+          != other.getParam2()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -273,14 +273,14 @@ public final class ExecuteGadgetLuaReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + PARAM2_FIELD_NUMBER;
-      hash = (53 * hash) + getParam2();
-      hash = (37 * hash) + PARAM3_FIELD_NUMBER;
-      hash = (53 * hash) + getParam3();
       hash = (37 * hash) + PARAM1_FIELD_NUMBER;
       hash = (53 * hash) + getParam1();
+      hash = (37 * hash) + PARAM3_FIELD_NUMBER;
+      hash = (53 * hash) + getParam3();
       hash = (37 * hash) + SOURCE_ENTITY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSourceEntityId();
+      hash = (37 * hash) + PARAM2_FIELD_NUMBER;
+      hash = (53 * hash) + getParam2();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -378,8 +378,8 @@ public final class ExecuteGadgetLuaReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 225
-     * Obf: EPKMBNENCNJ
+     * CmdId: 5288
+     * Obf: BCCHIHOEMNP
      * </pre>
      *
      * Protobuf type {@code ExecuteGadgetLuaReq}
@@ -419,13 +419,13 @@ public final class ExecuteGadgetLuaReqOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        param2_ = 0;
+        param1_ = 0;
 
         param3_ = 0;
 
-        param1_ = 0;
-
         sourceEntityId_ = 0;
+
+        param2_ = 0;
 
         return this;
       }
@@ -453,10 +453,10 @@ public final class ExecuteGadgetLuaReqOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.ExecuteGadgetLuaReqOuterClass.ExecuteGadgetLuaReq buildPartial() {
         emu.grasscutter.net.proto.ExecuteGadgetLuaReqOuterClass.ExecuteGadgetLuaReq result = new emu.grasscutter.net.proto.ExecuteGadgetLuaReqOuterClass.ExecuteGadgetLuaReq(this);
-        result.param2_ = param2_;
-        result.param3_ = param3_;
         result.param1_ = param1_;
+        result.param3_ = param3_;
         result.sourceEntityId_ = sourceEntityId_;
+        result.param2_ = param2_;
         onBuilt();
         return result;
       }
@@ -505,17 +505,17 @@ public final class ExecuteGadgetLuaReqOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.ExecuteGadgetLuaReqOuterClass.ExecuteGadgetLuaReq other) {
         if (other == emu.grasscutter.net.proto.ExecuteGadgetLuaReqOuterClass.ExecuteGadgetLuaReq.getDefaultInstance()) return this;
-        if (other.getParam2() != 0) {
-          setParam2(other.getParam2());
+        if (other.getParam1() != 0) {
+          setParam1(other.getParam1());
         }
         if (other.getParam3() != 0) {
           setParam3(other.getParam3());
         }
-        if (other.getParam1() != 0) {
-          setParam1(other.getParam1());
-        }
         if (other.getSourceEntityId() != 0) {
           setSourceEntityId(other.getSourceEntityId());
+        }
+        if (other.getParam2() != 0) {
+          setParam2(other.getParam2());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -543,68 +543,6 @@ public final class ExecuteGadgetLuaReqOuterClass {
             mergeFrom(parsedMessage);
           }
         }
-        return this;
-      }
-
-      private int param2_ ;
-      /**
-       * <code>int32 param2 = 12;</code>
-       * @return The param2.
-       */
-      @java.lang.Override
-      public int getParam2() {
-        return param2_;
-      }
-      /**
-       * <code>int32 param2 = 12;</code>
-       * @param value The param2 to set.
-       * @return This builder for chaining.
-       */
-      public Builder setParam2(int value) {
-        
-        param2_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 param2 = 12;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearParam2() {
-        
-        param2_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int param3_ ;
-      /**
-       * <code>int32 param3 = 15;</code>
-       * @return The param3.
-       */
-      @java.lang.Override
-      public int getParam3() {
-        return param3_;
-      }
-      /**
-       * <code>int32 param3 = 15;</code>
-       * @param value The param3 to set.
-       * @return This builder for chaining.
-       */
-      public Builder setParam3(int value) {
-        
-        param3_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 param3 = 15;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearParam3() {
-        
-        param3_ = 0;
-        onChanged();
         return this;
       }
 
@@ -639,9 +577,40 @@ public final class ExecuteGadgetLuaReqOuterClass {
         return this;
       }
 
+      private int param3_ ;
+      /**
+       * <code>int32 param3 = 5;</code>
+       * @return The param3.
+       */
+      @java.lang.Override
+      public int getParam3() {
+        return param3_;
+      }
+      /**
+       * <code>int32 param3 = 5;</code>
+       * @param value The param3 to set.
+       * @return This builder for chaining.
+       */
+      public Builder setParam3(int value) {
+        
+        param3_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 param3 = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearParam3() {
+        
+        param3_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int sourceEntityId_ ;
       /**
-       * <code>uint32 source_entity_id = 3;</code>
+       * <code>uint32 source_entity_id = 10;</code>
        * @return The sourceEntityId.
        */
       @java.lang.Override
@@ -649,7 +618,7 @@ public final class ExecuteGadgetLuaReqOuterClass {
         return sourceEntityId_;
       }
       /**
-       * <code>uint32 source_entity_id = 3;</code>
+       * <code>uint32 source_entity_id = 10;</code>
        * @param value The sourceEntityId to set.
        * @return This builder for chaining.
        */
@@ -660,12 +629,43 @@ public final class ExecuteGadgetLuaReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 source_entity_id = 3;</code>
+       * <code>uint32 source_entity_id = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearSourceEntityId() {
         
         sourceEntityId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int param2_ ;
+      /**
+       * <code>int32 param2 = 8;</code>
+       * @return The param2.
+       */
+      @java.lang.Override
+      public int getParam2() {
+        return param2_;
+      }
+      /**
+       * <code>int32 param2 = 8;</code>
+       * @param value The param2 to set.
+       * @return This builder for chaining.
+       */
+      public Builder setParam2(int value) {
+        
+        param2_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 param2 = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearParam2() {
+        
+        param2_ = 0;
         onChanged();
         return this;
       }
@@ -737,9 +737,9 @@ public final class ExecuteGadgetLuaReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\031ExecuteGadgetLuaReq.proto\"_\n\023ExecuteGa" +
-      "dgetLuaReq\022\016\n\006param2\030\014 \001(\005\022\016\n\006param3\030\017 \001" +
-      "(\005\022\016\n\006param1\030\002 \001(\005\022\030\n\020source_entity_id\030\003" +
-      " \001(\rB\033\n\031emu.grasscutter.net.protob\006proto" +
+      "dgetLuaReq\022\016\n\006param1\030\002 \001(\005\022\016\n\006param3\030\005 \001" +
+      "(\005\022\030\n\020source_entity_id\030\n \001(\r\022\016\n\006param2\030\010" +
+      " \001(\005B\033\n\031emu.grasscutter.net.protob\006proto" +
       "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -751,7 +751,7 @@ public final class ExecuteGadgetLuaReqOuterClass {
     internal_static_ExecuteGadgetLuaReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ExecuteGadgetLuaReq_descriptor,
-        new java.lang.String[] { "Param2", "Param3", "Param1", "SourceEntityId", });
+        new java.lang.String[] { "Param1", "Param3", "SourceEntityId", "Param2", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

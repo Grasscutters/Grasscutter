@@ -19,59 +19,59 @@ public final class CustomDungeonOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.CustomDungeonSetting setting = 6;</code>
+     * <code>.CustomDungeonSetting setting = 14;</code>
      * @return Whether the setting field is set.
      */
     boolean hasSetting();
     /**
-     * <code>.CustomDungeonSetting setting = 6;</code>
+     * <code>.CustomDungeonSetting setting = 14;</code>
      * @return The setting.
      */
     emu.grasscutter.net.proto.CustomDungeonSettingOuterClass.CustomDungeonSetting getSetting();
     /**
-     * <code>.CustomDungeonSetting setting = 6;</code>
+     * <code>.CustomDungeonSetting setting = 14;</code>
      */
     emu.grasscutter.net.proto.CustomDungeonSettingOuterClass.CustomDungeonSettingOrBuilder getSettingOrBuilder();
 
     /**
-     * <code>uint32 dungeon_id = 1;</code>
-     * @return The dungeonId.
+     * <code>repeated .CustomDungeonRoom room_list = 7;</code>
      */
-    int getDungeonId();
+    java.util.List<emu.grasscutter.net.proto.CustomDungeonRoomOuterClass.CustomDungeonRoom> 
+        getRoomListList();
+    /**
+     * <code>repeated .CustomDungeonRoom room_list = 7;</code>
+     */
+    emu.grasscutter.net.proto.CustomDungeonRoomOuterClass.CustomDungeonRoom getRoomList(int index);
+    /**
+     * <code>repeated .CustomDungeonRoom room_list = 7;</code>
+     */
+    int getRoomListCount();
+    /**
+     * <code>repeated .CustomDungeonRoom room_list = 7;</code>
+     */
+    java.util.List<? extends emu.grasscutter.net.proto.CustomDungeonRoomOuterClass.CustomDungeonRoomOrBuilder> 
+        getRoomListOrBuilderList();
+    /**
+     * <code>repeated .CustomDungeonRoom room_list = 7;</code>
+     */
+    emu.grasscutter.net.proto.CustomDungeonRoomOuterClass.CustomDungeonRoomOrBuilder getRoomListOrBuilder(
+        int index);
 
     /**
-     * <code>uint64 dungeon_guid = 10;</code>
+     * <code>uint64 dungeon_guid = 3;</code>
      * @return The dungeonGuid.
      */
     long getDungeonGuid();
 
     /**
-     * <code>repeated .CustomDungeonRoom room_list = 9;</code>
+     * <code>uint32 dungeon_id = 8;</code>
+     * @return The dungeonId.
      */
-    java.util.List<emu.grasscutter.net.proto.CustomDungeonRoomOuterClass.CustomDungeonRoom> 
-        getRoomListList();
-    /**
-     * <code>repeated .CustomDungeonRoom room_list = 9;</code>
-     */
-    emu.grasscutter.net.proto.CustomDungeonRoomOuterClass.CustomDungeonRoom getRoomList(int index);
-    /**
-     * <code>repeated .CustomDungeonRoom room_list = 9;</code>
-     */
-    int getRoomListCount();
-    /**
-     * <code>repeated .CustomDungeonRoom room_list = 9;</code>
-     */
-    java.util.List<? extends emu.grasscutter.net.proto.CustomDungeonRoomOuterClass.CustomDungeonRoomOrBuilder> 
-        getRoomListOrBuilderList();
-    /**
-     * <code>repeated .CustomDungeonRoom room_list = 9;</code>
-     */
-    emu.grasscutter.net.proto.CustomDungeonRoomOuterClass.CustomDungeonRoomOrBuilder getRoomListOrBuilder(
-        int index);
+    int getDungeonId();
   }
   /**
    * <pre>
-   * Obf: CJMOPGOKAOI
+   * Obf: JLKPGHBFPHE
    * </pre>
    *
    * Protobuf type {@code CustomDungeon}
@@ -120,12 +120,26 @@ public final class CustomDungeonOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 24: {
+
+              dungeonGuid_ = input.readUInt64();
+              break;
+            }
+            case 58: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                roomList_ = new java.util.ArrayList<emu.grasscutter.net.proto.CustomDungeonRoomOuterClass.CustomDungeonRoom>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              roomList_.add(
+                  input.readMessage(emu.grasscutter.net.proto.CustomDungeonRoomOuterClass.CustomDungeonRoom.parser(), extensionRegistry));
+              break;
+            }
+            case 64: {
 
               dungeonId_ = input.readUInt32();
               break;
             }
-            case 50: {
+            case 114: {
               emu.grasscutter.net.proto.CustomDungeonSettingOuterClass.CustomDungeonSetting.Builder subBuilder = null;
               if (setting_ != null) {
                 subBuilder = setting_.toBuilder();
@@ -136,20 +150,6 @@ public final class CustomDungeonOuterClass {
                 setting_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-            case 74: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                roomList_ = new java.util.ArrayList<emu.grasscutter.net.proto.CustomDungeonRoomOuterClass.CustomDungeonRoom>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              roomList_.add(
-                  input.readMessage(emu.grasscutter.net.proto.CustomDungeonRoomOuterClass.CustomDungeonRoom.parser(), extensionRegistry));
-              break;
-            }
-            case 80: {
-
-              dungeonGuid_ = input.readUInt64();
               break;
             }
             default: {
@@ -187,10 +187,10 @@ public final class CustomDungeonOuterClass {
               emu.grasscutter.net.proto.CustomDungeonOuterClass.CustomDungeon.class, emu.grasscutter.net.proto.CustomDungeonOuterClass.CustomDungeon.Builder.class);
     }
 
-    public static final int SETTING_FIELD_NUMBER = 6;
+    public static final int SETTING_FIELD_NUMBER = 14;
     private emu.grasscutter.net.proto.CustomDungeonSettingOuterClass.CustomDungeonSetting setting_;
     /**
-     * <code>.CustomDungeonSetting setting = 6;</code>
+     * <code>.CustomDungeonSetting setting = 14;</code>
      * @return Whether the setting field is set.
      */
     @java.lang.Override
@@ -198,7 +198,7 @@ public final class CustomDungeonOuterClass {
       return setting_ != null;
     }
     /**
-     * <code>.CustomDungeonSetting setting = 6;</code>
+     * <code>.CustomDungeonSetting setting = 14;</code>
      * @return The setting.
      */
     @java.lang.Override
@@ -206,46 +206,24 @@ public final class CustomDungeonOuterClass {
       return setting_ == null ? emu.grasscutter.net.proto.CustomDungeonSettingOuterClass.CustomDungeonSetting.getDefaultInstance() : setting_;
     }
     /**
-     * <code>.CustomDungeonSetting setting = 6;</code>
+     * <code>.CustomDungeonSetting setting = 14;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.CustomDungeonSettingOuterClass.CustomDungeonSettingOrBuilder getSettingOrBuilder() {
       return getSetting();
     }
 
-    public static final int DUNGEON_ID_FIELD_NUMBER = 1;
-    private int dungeonId_;
-    /**
-     * <code>uint32 dungeon_id = 1;</code>
-     * @return The dungeonId.
-     */
-    @java.lang.Override
-    public int getDungeonId() {
-      return dungeonId_;
-    }
-
-    public static final int DUNGEON_GUID_FIELD_NUMBER = 10;
-    private long dungeonGuid_;
-    /**
-     * <code>uint64 dungeon_guid = 10;</code>
-     * @return The dungeonGuid.
-     */
-    @java.lang.Override
-    public long getDungeonGuid() {
-      return dungeonGuid_;
-    }
-
-    public static final int ROOM_LIST_FIELD_NUMBER = 9;
+    public static final int ROOM_LIST_FIELD_NUMBER = 7;
     private java.util.List<emu.grasscutter.net.proto.CustomDungeonRoomOuterClass.CustomDungeonRoom> roomList_;
     /**
-     * <code>repeated .CustomDungeonRoom room_list = 9;</code>
+     * <code>repeated .CustomDungeonRoom room_list = 7;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.CustomDungeonRoomOuterClass.CustomDungeonRoom> getRoomListList() {
       return roomList_;
     }
     /**
-     * <code>repeated .CustomDungeonRoom room_list = 9;</code>
+     * <code>repeated .CustomDungeonRoom room_list = 7;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.CustomDungeonRoomOuterClass.CustomDungeonRoomOrBuilder> 
@@ -253,26 +231,48 @@ public final class CustomDungeonOuterClass {
       return roomList_;
     }
     /**
-     * <code>repeated .CustomDungeonRoom room_list = 9;</code>
+     * <code>repeated .CustomDungeonRoom room_list = 7;</code>
      */
     @java.lang.Override
     public int getRoomListCount() {
       return roomList_.size();
     }
     /**
-     * <code>repeated .CustomDungeonRoom room_list = 9;</code>
+     * <code>repeated .CustomDungeonRoom room_list = 7;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.CustomDungeonRoomOuterClass.CustomDungeonRoom getRoomList(int index) {
       return roomList_.get(index);
     }
     /**
-     * <code>repeated .CustomDungeonRoom room_list = 9;</code>
+     * <code>repeated .CustomDungeonRoom room_list = 7;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.CustomDungeonRoomOuterClass.CustomDungeonRoomOrBuilder getRoomListOrBuilder(
         int index) {
       return roomList_.get(index);
+    }
+
+    public static final int DUNGEON_GUID_FIELD_NUMBER = 3;
+    private long dungeonGuid_;
+    /**
+     * <code>uint64 dungeon_guid = 3;</code>
+     * @return The dungeonGuid.
+     */
+    @java.lang.Override
+    public long getDungeonGuid() {
+      return dungeonGuid_;
+    }
+
+    public static final int DUNGEON_ID_FIELD_NUMBER = 8;
+    private int dungeonId_;
+    /**
+     * <code>uint32 dungeon_id = 8;</code>
+     * @return The dungeonId.
+     */
+    @java.lang.Override
+    public int getDungeonId() {
+      return dungeonId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -289,17 +289,17 @@ public final class CustomDungeonOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (dungeonId_ != 0) {
-        output.writeUInt32(1, dungeonId_);
-      }
-      if (setting_ != null) {
-        output.writeMessage(6, getSetting());
+      if (dungeonGuid_ != 0L) {
+        output.writeUInt64(3, dungeonGuid_);
       }
       for (int i = 0; i < roomList_.size(); i++) {
-        output.writeMessage(9, roomList_.get(i));
+        output.writeMessage(7, roomList_.get(i));
       }
-      if (dungeonGuid_ != 0L) {
-        output.writeUInt64(10, dungeonGuid_);
+      if (dungeonId_ != 0) {
+        output.writeUInt32(8, dungeonId_);
+      }
+      if (setting_ != null) {
+        output.writeMessage(14, getSetting());
       }
       unknownFields.writeTo(output);
     }
@@ -310,21 +310,21 @@ public final class CustomDungeonOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (dungeonId_ != 0) {
+      if (dungeonGuid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, dungeonId_);
-      }
-      if (setting_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, getSetting());
+          .computeUInt64Size(3, dungeonGuid_);
       }
       for (int i = 0; i < roomList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, roomList_.get(i));
+          .computeMessageSize(7, roomList_.get(i));
       }
-      if (dungeonGuid_ != 0L) {
+      if (dungeonId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(10, dungeonGuid_);
+          .computeUInt32Size(8, dungeonId_);
+      }
+      if (setting_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(14, getSetting());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -346,12 +346,12 @@ public final class CustomDungeonOuterClass {
         if (!getSetting()
             .equals(other.getSetting())) return false;
       }
-      if (getDungeonId()
-          != other.getDungeonId()) return false;
-      if (getDungeonGuid()
-          != other.getDungeonGuid()) return false;
       if (!getRoomListList()
           .equals(other.getRoomListList())) return false;
+      if (getDungeonGuid()
+          != other.getDungeonGuid()) return false;
+      if (getDungeonId()
+          != other.getDungeonId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -367,15 +367,15 @@ public final class CustomDungeonOuterClass {
         hash = (37 * hash) + SETTING_FIELD_NUMBER;
         hash = (53 * hash) + getSetting().hashCode();
       }
-      hash = (37 * hash) + DUNGEON_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getDungeonId();
-      hash = (37 * hash) + DUNGEON_GUID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getDungeonGuid());
       if (getRoomListCount() > 0) {
         hash = (37 * hash) + ROOM_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getRoomListList().hashCode();
       }
+      hash = (37 * hash) + DUNGEON_GUID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getDungeonGuid());
+      hash = (37 * hash) + DUNGEON_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getDungeonId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -473,7 +473,7 @@ public final class CustomDungeonOuterClass {
     }
     /**
      * <pre>
-     * Obf: CJMOPGOKAOI
+     * Obf: JLKPGHBFPHE
      * </pre>
      *
      * Protobuf type {@code CustomDungeon}
@@ -520,16 +520,16 @@ public final class CustomDungeonOuterClass {
           setting_ = null;
           settingBuilder_ = null;
         }
-        dungeonId_ = 0;
-
-        dungeonGuid_ = 0L;
-
         if (roomListBuilder_ == null) {
           roomList_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           roomListBuilder_.clear();
         }
+        dungeonGuid_ = 0L;
+
+        dungeonId_ = 0;
+
         return this;
       }
 
@@ -562,8 +562,6 @@ public final class CustomDungeonOuterClass {
         } else {
           result.setting_ = settingBuilder_.build();
         }
-        result.dungeonId_ = dungeonId_;
-        result.dungeonGuid_ = dungeonGuid_;
         if (roomListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             roomList_ = java.util.Collections.unmodifiableList(roomList_);
@@ -573,6 +571,8 @@ public final class CustomDungeonOuterClass {
         } else {
           result.roomList_ = roomListBuilder_.build();
         }
+        result.dungeonGuid_ = dungeonGuid_;
+        result.dungeonId_ = dungeonId_;
         onBuilt();
         return result;
       }
@@ -624,12 +624,6 @@ public final class CustomDungeonOuterClass {
         if (other.hasSetting()) {
           mergeSetting(other.getSetting());
         }
-        if (other.getDungeonId() != 0) {
-          setDungeonId(other.getDungeonId());
-        }
-        if (other.getDungeonGuid() != 0L) {
-          setDungeonGuid(other.getDungeonGuid());
-        }
         if (roomListBuilder_ == null) {
           if (!other.roomList_.isEmpty()) {
             if (roomList_.isEmpty()) {
@@ -655,6 +649,12 @@ public final class CustomDungeonOuterClass {
               roomListBuilder_.addAllMessages(other.roomList_);
             }
           }
+        }
+        if (other.getDungeonGuid() != 0L) {
+          setDungeonGuid(other.getDungeonGuid());
+        }
+        if (other.getDungeonId() != 0) {
+          setDungeonId(other.getDungeonId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -690,14 +690,14 @@ public final class CustomDungeonOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.CustomDungeonSettingOuterClass.CustomDungeonSetting, emu.grasscutter.net.proto.CustomDungeonSettingOuterClass.CustomDungeonSetting.Builder, emu.grasscutter.net.proto.CustomDungeonSettingOuterClass.CustomDungeonSettingOrBuilder> settingBuilder_;
       /**
-       * <code>.CustomDungeonSetting setting = 6;</code>
+       * <code>.CustomDungeonSetting setting = 14;</code>
        * @return Whether the setting field is set.
        */
       public boolean hasSetting() {
         return settingBuilder_ != null || setting_ != null;
       }
       /**
-       * <code>.CustomDungeonSetting setting = 6;</code>
+       * <code>.CustomDungeonSetting setting = 14;</code>
        * @return The setting.
        */
       public emu.grasscutter.net.proto.CustomDungeonSettingOuterClass.CustomDungeonSetting getSetting() {
@@ -708,7 +708,7 @@ public final class CustomDungeonOuterClass {
         }
       }
       /**
-       * <code>.CustomDungeonSetting setting = 6;</code>
+       * <code>.CustomDungeonSetting setting = 14;</code>
        */
       public Builder setSetting(emu.grasscutter.net.proto.CustomDungeonSettingOuterClass.CustomDungeonSetting value) {
         if (settingBuilder_ == null) {
@@ -724,7 +724,7 @@ public final class CustomDungeonOuterClass {
         return this;
       }
       /**
-       * <code>.CustomDungeonSetting setting = 6;</code>
+       * <code>.CustomDungeonSetting setting = 14;</code>
        */
       public Builder setSetting(
           emu.grasscutter.net.proto.CustomDungeonSettingOuterClass.CustomDungeonSetting.Builder builderForValue) {
@@ -738,7 +738,7 @@ public final class CustomDungeonOuterClass {
         return this;
       }
       /**
-       * <code>.CustomDungeonSetting setting = 6;</code>
+       * <code>.CustomDungeonSetting setting = 14;</code>
        */
       public Builder mergeSetting(emu.grasscutter.net.proto.CustomDungeonSettingOuterClass.CustomDungeonSetting value) {
         if (settingBuilder_ == null) {
@@ -756,7 +756,7 @@ public final class CustomDungeonOuterClass {
         return this;
       }
       /**
-       * <code>.CustomDungeonSetting setting = 6;</code>
+       * <code>.CustomDungeonSetting setting = 14;</code>
        */
       public Builder clearSetting() {
         if (settingBuilder_ == null) {
@@ -770,7 +770,7 @@ public final class CustomDungeonOuterClass {
         return this;
       }
       /**
-       * <code>.CustomDungeonSetting setting = 6;</code>
+       * <code>.CustomDungeonSetting setting = 14;</code>
        */
       public emu.grasscutter.net.proto.CustomDungeonSettingOuterClass.CustomDungeonSetting.Builder getSettingBuilder() {
         
@@ -778,7 +778,7 @@ public final class CustomDungeonOuterClass {
         return getSettingFieldBuilder().getBuilder();
       }
       /**
-       * <code>.CustomDungeonSetting setting = 6;</code>
+       * <code>.CustomDungeonSetting setting = 14;</code>
        */
       public emu.grasscutter.net.proto.CustomDungeonSettingOuterClass.CustomDungeonSettingOrBuilder getSettingOrBuilder() {
         if (settingBuilder_ != null) {
@@ -789,7 +789,7 @@ public final class CustomDungeonOuterClass {
         }
       }
       /**
-       * <code>.CustomDungeonSetting setting = 6;</code>
+       * <code>.CustomDungeonSetting setting = 14;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.CustomDungeonSettingOuterClass.CustomDungeonSetting, emu.grasscutter.net.proto.CustomDungeonSettingOuterClass.CustomDungeonSetting.Builder, emu.grasscutter.net.proto.CustomDungeonSettingOuterClass.CustomDungeonSettingOrBuilder> 
@@ -805,68 +805,6 @@ public final class CustomDungeonOuterClass {
         return settingBuilder_;
       }
 
-      private int dungeonId_ ;
-      /**
-       * <code>uint32 dungeon_id = 1;</code>
-       * @return The dungeonId.
-       */
-      @java.lang.Override
-      public int getDungeonId() {
-        return dungeonId_;
-      }
-      /**
-       * <code>uint32 dungeon_id = 1;</code>
-       * @param value The dungeonId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDungeonId(int value) {
-        
-        dungeonId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 dungeon_id = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDungeonId() {
-        
-        dungeonId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private long dungeonGuid_ ;
-      /**
-       * <code>uint64 dungeon_guid = 10;</code>
-       * @return The dungeonGuid.
-       */
-      @java.lang.Override
-      public long getDungeonGuid() {
-        return dungeonGuid_;
-      }
-      /**
-       * <code>uint64 dungeon_guid = 10;</code>
-       * @param value The dungeonGuid to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDungeonGuid(long value) {
-        
-        dungeonGuid_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 dungeon_guid = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDungeonGuid() {
-        
-        dungeonGuid_ = 0L;
-        onChanged();
-        return this;
-      }
-
       private java.util.List<emu.grasscutter.net.proto.CustomDungeonRoomOuterClass.CustomDungeonRoom> roomList_ =
         java.util.Collections.emptyList();
       private void ensureRoomListIsMutable() {
@@ -880,7 +818,7 @@ public final class CustomDungeonOuterClass {
           emu.grasscutter.net.proto.CustomDungeonRoomOuterClass.CustomDungeonRoom, emu.grasscutter.net.proto.CustomDungeonRoomOuterClass.CustomDungeonRoom.Builder, emu.grasscutter.net.proto.CustomDungeonRoomOuterClass.CustomDungeonRoomOrBuilder> roomListBuilder_;
 
       /**
-       * <code>repeated .CustomDungeonRoom room_list = 9;</code>
+       * <code>repeated .CustomDungeonRoom room_list = 7;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.CustomDungeonRoomOuterClass.CustomDungeonRoom> getRoomListList() {
         if (roomListBuilder_ == null) {
@@ -890,7 +828,7 @@ public final class CustomDungeonOuterClass {
         }
       }
       /**
-       * <code>repeated .CustomDungeonRoom room_list = 9;</code>
+       * <code>repeated .CustomDungeonRoom room_list = 7;</code>
        */
       public int getRoomListCount() {
         if (roomListBuilder_ == null) {
@@ -900,7 +838,7 @@ public final class CustomDungeonOuterClass {
         }
       }
       /**
-       * <code>repeated .CustomDungeonRoom room_list = 9;</code>
+       * <code>repeated .CustomDungeonRoom room_list = 7;</code>
        */
       public emu.grasscutter.net.proto.CustomDungeonRoomOuterClass.CustomDungeonRoom getRoomList(int index) {
         if (roomListBuilder_ == null) {
@@ -910,7 +848,7 @@ public final class CustomDungeonOuterClass {
         }
       }
       /**
-       * <code>repeated .CustomDungeonRoom room_list = 9;</code>
+       * <code>repeated .CustomDungeonRoom room_list = 7;</code>
        */
       public Builder setRoomList(
           int index, emu.grasscutter.net.proto.CustomDungeonRoomOuterClass.CustomDungeonRoom value) {
@@ -927,7 +865,7 @@ public final class CustomDungeonOuterClass {
         return this;
       }
       /**
-       * <code>repeated .CustomDungeonRoom room_list = 9;</code>
+       * <code>repeated .CustomDungeonRoom room_list = 7;</code>
        */
       public Builder setRoomList(
           int index, emu.grasscutter.net.proto.CustomDungeonRoomOuterClass.CustomDungeonRoom.Builder builderForValue) {
@@ -941,7 +879,7 @@ public final class CustomDungeonOuterClass {
         return this;
       }
       /**
-       * <code>repeated .CustomDungeonRoom room_list = 9;</code>
+       * <code>repeated .CustomDungeonRoom room_list = 7;</code>
        */
       public Builder addRoomList(emu.grasscutter.net.proto.CustomDungeonRoomOuterClass.CustomDungeonRoom value) {
         if (roomListBuilder_ == null) {
@@ -957,7 +895,7 @@ public final class CustomDungeonOuterClass {
         return this;
       }
       /**
-       * <code>repeated .CustomDungeonRoom room_list = 9;</code>
+       * <code>repeated .CustomDungeonRoom room_list = 7;</code>
        */
       public Builder addRoomList(
           int index, emu.grasscutter.net.proto.CustomDungeonRoomOuterClass.CustomDungeonRoom value) {
@@ -974,7 +912,7 @@ public final class CustomDungeonOuterClass {
         return this;
       }
       /**
-       * <code>repeated .CustomDungeonRoom room_list = 9;</code>
+       * <code>repeated .CustomDungeonRoom room_list = 7;</code>
        */
       public Builder addRoomList(
           emu.grasscutter.net.proto.CustomDungeonRoomOuterClass.CustomDungeonRoom.Builder builderForValue) {
@@ -988,7 +926,7 @@ public final class CustomDungeonOuterClass {
         return this;
       }
       /**
-       * <code>repeated .CustomDungeonRoom room_list = 9;</code>
+       * <code>repeated .CustomDungeonRoom room_list = 7;</code>
        */
       public Builder addRoomList(
           int index, emu.grasscutter.net.proto.CustomDungeonRoomOuterClass.CustomDungeonRoom.Builder builderForValue) {
@@ -1002,7 +940,7 @@ public final class CustomDungeonOuterClass {
         return this;
       }
       /**
-       * <code>repeated .CustomDungeonRoom room_list = 9;</code>
+       * <code>repeated .CustomDungeonRoom room_list = 7;</code>
        */
       public Builder addAllRoomList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.CustomDungeonRoomOuterClass.CustomDungeonRoom> values) {
@@ -1017,7 +955,7 @@ public final class CustomDungeonOuterClass {
         return this;
       }
       /**
-       * <code>repeated .CustomDungeonRoom room_list = 9;</code>
+       * <code>repeated .CustomDungeonRoom room_list = 7;</code>
        */
       public Builder clearRoomList() {
         if (roomListBuilder_ == null) {
@@ -1030,7 +968,7 @@ public final class CustomDungeonOuterClass {
         return this;
       }
       /**
-       * <code>repeated .CustomDungeonRoom room_list = 9;</code>
+       * <code>repeated .CustomDungeonRoom room_list = 7;</code>
        */
       public Builder removeRoomList(int index) {
         if (roomListBuilder_ == null) {
@@ -1043,14 +981,14 @@ public final class CustomDungeonOuterClass {
         return this;
       }
       /**
-       * <code>repeated .CustomDungeonRoom room_list = 9;</code>
+       * <code>repeated .CustomDungeonRoom room_list = 7;</code>
        */
       public emu.grasscutter.net.proto.CustomDungeonRoomOuterClass.CustomDungeonRoom.Builder getRoomListBuilder(
           int index) {
         return getRoomListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .CustomDungeonRoom room_list = 9;</code>
+       * <code>repeated .CustomDungeonRoom room_list = 7;</code>
        */
       public emu.grasscutter.net.proto.CustomDungeonRoomOuterClass.CustomDungeonRoomOrBuilder getRoomListOrBuilder(
           int index) {
@@ -1060,7 +998,7 @@ public final class CustomDungeonOuterClass {
         }
       }
       /**
-       * <code>repeated .CustomDungeonRoom room_list = 9;</code>
+       * <code>repeated .CustomDungeonRoom room_list = 7;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.CustomDungeonRoomOuterClass.CustomDungeonRoomOrBuilder> 
            getRoomListOrBuilderList() {
@@ -1071,14 +1009,14 @@ public final class CustomDungeonOuterClass {
         }
       }
       /**
-       * <code>repeated .CustomDungeonRoom room_list = 9;</code>
+       * <code>repeated .CustomDungeonRoom room_list = 7;</code>
        */
       public emu.grasscutter.net.proto.CustomDungeonRoomOuterClass.CustomDungeonRoom.Builder addRoomListBuilder() {
         return getRoomListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.CustomDungeonRoomOuterClass.CustomDungeonRoom.getDefaultInstance());
       }
       /**
-       * <code>repeated .CustomDungeonRoom room_list = 9;</code>
+       * <code>repeated .CustomDungeonRoom room_list = 7;</code>
        */
       public emu.grasscutter.net.proto.CustomDungeonRoomOuterClass.CustomDungeonRoom.Builder addRoomListBuilder(
           int index) {
@@ -1086,7 +1024,7 @@ public final class CustomDungeonOuterClass {
             index, emu.grasscutter.net.proto.CustomDungeonRoomOuterClass.CustomDungeonRoom.getDefaultInstance());
       }
       /**
-       * <code>repeated .CustomDungeonRoom room_list = 9;</code>
+       * <code>repeated .CustomDungeonRoom room_list = 7;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.CustomDungeonRoomOuterClass.CustomDungeonRoom.Builder> 
            getRoomListBuilderList() {
@@ -1105,6 +1043,68 @@ public final class CustomDungeonOuterClass {
           roomList_ = null;
         }
         return roomListBuilder_;
+      }
+
+      private long dungeonGuid_ ;
+      /**
+       * <code>uint64 dungeon_guid = 3;</code>
+       * @return The dungeonGuid.
+       */
+      @java.lang.Override
+      public long getDungeonGuid() {
+        return dungeonGuid_;
+      }
+      /**
+       * <code>uint64 dungeon_guid = 3;</code>
+       * @param value The dungeonGuid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDungeonGuid(long value) {
+        
+        dungeonGuid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 dungeon_guid = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDungeonGuid() {
+        
+        dungeonGuid_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private int dungeonId_ ;
+      /**
+       * <code>uint32 dungeon_id = 8;</code>
+       * @return The dungeonId.
+       */
+      @java.lang.Override
+      public int getDungeonId() {
+        return dungeonId_;
+      }
+      /**
+       * <code>uint32 dungeon_id = 8;</code>
+       * @param value The dungeonId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDungeonId(int value) {
+        
+        dungeonId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 dungeon_id = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDungeonId() {
+        
+        dungeonId_ = 0;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -1175,10 +1175,10 @@ public final class CustomDungeonOuterClass {
     java.lang.String[] descriptorData = {
       "\n\023CustomDungeon.proto\032\032CustomDungeonSett" +
       "ing.proto\032\027CustomDungeonRoom.proto\"\210\001\n\rC" +
-      "ustomDungeon\022&\n\007setting\030\006 \001(\0132\025.CustomDu" +
-      "ngeonSetting\022\022\n\ndungeon_id\030\001 \001(\r\022\024\n\014dung" +
-      "eon_guid\030\n \001(\004\022%\n\troom_list\030\t \003(\0132\022.Cust" +
-      "omDungeonRoomB\033\n\031emu.grasscutter.net.pro" +
+      "ustomDungeon\022&\n\007setting\030\016 \001(\0132\025.CustomDu" +
+      "ngeonSetting\022%\n\troom_list\030\007 \003(\0132\022.Custom" +
+      "DungeonRoom\022\024\n\014dungeon_guid\030\003 \001(\004\022\022\n\ndun" +
+      "geon_id\030\010 \001(\rB\033\n\031emu.grasscutter.net.pro" +
       "tob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -1192,7 +1192,7 @@ public final class CustomDungeonOuterClass {
     internal_static_CustomDungeon_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CustomDungeon_descriptor,
-        new java.lang.String[] { "Setting", "DungeonId", "DungeonGuid", "RoomList", });
+        new java.lang.String[] { "Setting", "RoomList", "DungeonGuid", "DungeonId", });
     emu.grasscutter.net.proto.CustomDungeonSettingOuterClass.getDescriptor();
     emu.grasscutter.net.proto.CustomDungeonRoomOuterClass.getDescriptor();
   }

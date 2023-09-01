@@ -1,10 +1,8 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.net.packet.BasePacket;
-import emu.grasscutter.net.packet.PacketOpcodes;
-import emu.grasscutter.net.proto.ItemParamOuterClass;
-import emu.grasscutter.net.proto.RetcodeOuterClass;
-import emu.grasscutter.net.proto.TakeAchievementRewardRspOuterClass;
+import emu.grasscutter.net.packet.*;
+import emu.grasscutter.net.proto.*;
+
 import java.util.List;
 
 public class PacketTakeAchievementRewardRsp extends BasePacket {

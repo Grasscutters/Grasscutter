@@ -1,8 +1,7 @@
 package emu.grasscutter.game.gacha;
 
 import dev.morphia.annotations.Entity;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
 public class PlayerGachaBannerInfo {

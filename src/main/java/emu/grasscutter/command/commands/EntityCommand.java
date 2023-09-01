@@ -1,23 +1,20 @@
 package emu.grasscutter.command.commands;
 
-import static emu.grasscutter.command.CommandHelpers.*;
-import static emu.grasscutter.utils.lang.Language.translate;
-
-import emu.grasscutter.command.Command;
-import emu.grasscutter.command.CommandHandler;
+import emu.grasscutter.command.*;
 import emu.grasscutter.game.entity.*;
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.game.props.ElementType;
-import emu.grasscutter.game.props.FightProperty;
+import emu.grasscutter.game.props.*;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.server.event.entity.EntityDamageEvent;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import lombok.Setter;
+
+import java.util.*;
 import java.util.function.BiConsumer;
 import java.util.regex.Pattern;
-import lombok.Setter;
+
+import static emu.grasscutter.command.CommandHelpers.*;
+import static emu.grasscutter.utils.lang.Language.translate;
 
 @Command(
         label = "entity",

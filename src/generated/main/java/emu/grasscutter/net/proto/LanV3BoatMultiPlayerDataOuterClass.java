@@ -19,20 +19,20 @@ public final class LanV3BoatMultiPlayerDataOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 HIIPJHPJDCJ = 5;</code>
-     * @return The hIIPJHPJDCJ.
+     * <code>uint32 LJAAMODEICH = 9;</code>
+     * @return The lJAAMODEICH.
      */
-    int getHIIPJHPJDCJ();
+    int getLJAAMODEICH();
 
     /**
-     * <code>uint32 uid = 8;</code>
+     * <code>uint32 uid = 11;</code>
      * @return The uid.
      */
     int getUid();
   }
   /**
    * <pre>
-   * Obf: POGLABOIEHB
+   * Obf: PHGODGJHNLN
    * </pre>
    *
    * Protobuf type {@code LanV3BoatMultiPlayerData}
@@ -79,12 +79,12 @@ public final class LanV3BoatMultiPlayerDataOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
+            case 72: {
 
-              hIIPJHPJDCJ_ = input.readUInt32();
+              lJAAMODEICH_ = input.readUInt32();
               break;
             }
-            case 64: {
+            case 88: {
 
               uid_ = input.readUInt32();
               break;
@@ -121,21 +121,21 @@ public final class LanV3BoatMultiPlayerDataOuterClass {
               emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerData.class, emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerData.Builder.class);
     }
 
-    public static final int HIIPJHPJDCJ_FIELD_NUMBER = 5;
-    private int hIIPJHPJDCJ_;
+    public static final int LJAAMODEICH_FIELD_NUMBER = 9;
+    private int lJAAMODEICH_;
     /**
-     * <code>uint32 HIIPJHPJDCJ = 5;</code>
-     * @return The hIIPJHPJDCJ.
+     * <code>uint32 LJAAMODEICH = 9;</code>
+     * @return The lJAAMODEICH.
      */
     @java.lang.Override
-    public int getHIIPJHPJDCJ() {
-      return hIIPJHPJDCJ_;
+    public int getLJAAMODEICH() {
+      return lJAAMODEICH_;
     }
 
-    public static final int UID_FIELD_NUMBER = 8;
+    public static final int UID_FIELD_NUMBER = 11;
     private int uid_;
     /**
-     * <code>uint32 uid = 8;</code>
+     * <code>uint32 uid = 11;</code>
      * @return The uid.
      */
     @java.lang.Override
@@ -157,11 +157,11 @@ public final class LanV3BoatMultiPlayerDataOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (hIIPJHPJDCJ_ != 0) {
-        output.writeUInt32(5, hIIPJHPJDCJ_);
+      if (lJAAMODEICH_ != 0) {
+        output.writeUInt32(9, lJAAMODEICH_);
       }
       if (uid_ != 0) {
-        output.writeUInt32(8, uid_);
+        output.writeUInt32(11, uid_);
       }
       unknownFields.writeTo(output);
     }
@@ -172,13 +172,13 @@ public final class LanV3BoatMultiPlayerDataOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (hIIPJHPJDCJ_ != 0) {
+      if (lJAAMODEICH_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, hIIPJHPJDCJ_);
+          .computeUInt32Size(9, lJAAMODEICH_);
       }
       if (uid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, uid_);
+          .computeUInt32Size(11, uid_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -195,8 +195,8 @@ public final class LanV3BoatMultiPlayerDataOuterClass {
       }
       emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerData other = (emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerData) obj;
 
-      if (getHIIPJHPJDCJ()
-          != other.getHIIPJHPJDCJ()) return false;
+      if (getLJAAMODEICH()
+          != other.getLJAAMODEICH()) return false;
       if (getUid()
           != other.getUid()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -210,8 +210,8 @@ public final class LanV3BoatMultiPlayerDataOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + HIIPJHPJDCJ_FIELD_NUMBER;
-      hash = (53 * hash) + getHIIPJHPJDCJ();
+      hash = (37 * hash) + LJAAMODEICH_FIELD_NUMBER;
+      hash = (53 * hash) + getLJAAMODEICH();
       hash = (37 * hash) + UID_FIELD_NUMBER;
       hash = (53 * hash) + getUid();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -311,7 +311,7 @@ public final class LanV3BoatMultiPlayerDataOuterClass {
     }
     /**
      * <pre>
-     * Obf: POGLABOIEHB
+     * Obf: PHGODGJHNLN
      * </pre>
      *
      * Protobuf type {@code LanV3BoatMultiPlayerData}
@@ -351,7 +351,7 @@ public final class LanV3BoatMultiPlayerDataOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        hIIPJHPJDCJ_ = 0;
+        lJAAMODEICH_ = 0;
 
         uid_ = 0;
 
@@ -381,7 +381,7 @@ public final class LanV3BoatMultiPlayerDataOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerData buildPartial() {
         emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerData result = new emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerData(this);
-        result.hIIPJHPJDCJ_ = hIIPJHPJDCJ_;
+        result.lJAAMODEICH_ = lJAAMODEICH_;
         result.uid_ = uid_;
         onBuilt();
         return result;
@@ -431,8 +431,8 @@ public final class LanV3BoatMultiPlayerDataOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerData other) {
         if (other == emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerData.getDefaultInstance()) return this;
-        if (other.getHIIPJHPJDCJ() != 0) {
-          setHIIPJHPJDCJ(other.getHIIPJHPJDCJ());
+        if (other.getLJAAMODEICH() != 0) {
+          setLJAAMODEICH(other.getLJAAMODEICH());
         }
         if (other.getUid() != 0) {
           setUid(other.getUid());
@@ -466,40 +466,40 @@ public final class LanV3BoatMultiPlayerDataOuterClass {
         return this;
       }
 
-      private int hIIPJHPJDCJ_ ;
+      private int lJAAMODEICH_ ;
       /**
-       * <code>uint32 HIIPJHPJDCJ = 5;</code>
-       * @return The hIIPJHPJDCJ.
+       * <code>uint32 LJAAMODEICH = 9;</code>
+       * @return The lJAAMODEICH.
        */
       @java.lang.Override
-      public int getHIIPJHPJDCJ() {
-        return hIIPJHPJDCJ_;
+      public int getLJAAMODEICH() {
+        return lJAAMODEICH_;
       }
       /**
-       * <code>uint32 HIIPJHPJDCJ = 5;</code>
-       * @param value The hIIPJHPJDCJ to set.
+       * <code>uint32 LJAAMODEICH = 9;</code>
+       * @param value The lJAAMODEICH to set.
        * @return This builder for chaining.
        */
-      public Builder setHIIPJHPJDCJ(int value) {
+      public Builder setLJAAMODEICH(int value) {
         
-        hIIPJHPJDCJ_ = value;
+        lJAAMODEICH_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 HIIPJHPJDCJ = 5;</code>
+       * <code>uint32 LJAAMODEICH = 9;</code>
        * @return This builder for chaining.
        */
-      public Builder clearHIIPJHPJDCJ() {
+      public Builder clearLJAAMODEICH() {
         
-        hIIPJHPJDCJ_ = 0;
+        lJAAMODEICH_ = 0;
         onChanged();
         return this;
       }
 
       private int uid_ ;
       /**
-       * <code>uint32 uid = 8;</code>
+       * <code>uint32 uid = 11;</code>
        * @return The uid.
        */
       @java.lang.Override
@@ -507,7 +507,7 @@ public final class LanV3BoatMultiPlayerDataOuterClass {
         return uid_;
       }
       /**
-       * <code>uint32 uid = 8;</code>
+       * <code>uint32 uid = 11;</code>
        * @param value The uid to set.
        * @return This builder for chaining.
        */
@@ -518,7 +518,7 @@ public final class LanV3BoatMultiPlayerDataOuterClass {
         return this;
       }
       /**
-       * <code>uint32 uid = 8;</code>
+       * <code>uint32 uid = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearUid() {
@@ -595,8 +595,8 @@ public final class LanV3BoatMultiPlayerDataOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\036LanV3BoatMultiPlayerData.proto\"<\n\030LanV" +
-      "3BoatMultiPlayerData\022\023\n\013HIIPJHPJDCJ\030\005 \001(" +
-      "\r\022\013\n\003uid\030\010 \001(\rB\033\n\031emu.grasscutter.net.pr" +
+      "3BoatMultiPlayerData\022\023\n\013LJAAMODEICH\030\t \001(" +
+      "\r\022\013\n\003uid\030\013 \001(\rB\033\n\031emu.grasscutter.net.pr" +
       "otob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -608,7 +608,7 @@ public final class LanV3BoatMultiPlayerDataOuterClass {
     internal_static_LanV3BoatMultiPlayerData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_LanV3BoatMultiPlayerData_descriptor,
-        new java.lang.String[] { "HIIPJHPJDCJ", "Uid", });
+        new java.lang.String[] { "LJAAMODEICH", "Uid", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

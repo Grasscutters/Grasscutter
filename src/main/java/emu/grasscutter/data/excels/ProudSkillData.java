@@ -1,15 +1,12 @@
 package emu.grasscutter.data.excels;
 
 import dev.morphia.annotations.Transient;
-import emu.grasscutter.data.GameResource;
-import emu.grasscutter.data.ResourceType;
-import emu.grasscutter.data.common.FightPropData;
-import emu.grasscutter.data.common.ItemParamData;
-import it.unimi.dsi.fastutil.objects.Object2FloatMap;
-import it.unimi.dsi.fastutil.objects.Object2FloatOpenHashMap;
-import java.util.ArrayList;
-import java.util.List;
+import emu.grasscutter.data.*;
+import emu.grasscutter.data.common.*;
+import it.unimi.dsi.fastutil.objects.*;
 import lombok.Getter;
+
+import java.util.*;
 
 @ResourceType(name = "ProudSkillExcelConfigData.json")
 public class ProudSkillData extends GameResource {

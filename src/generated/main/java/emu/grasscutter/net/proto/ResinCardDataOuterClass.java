@@ -19,32 +19,32 @@ public final class ResinCardDataOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 config_id = 4;</code>
-     * @return The configId.
-     */
-    int getConfigId();
-
-    /**
-     * <code>uint32 expire_time = 6;</code>
+     * <code>uint32 expire_time = 4;</code>
      * @return The expireTime.
      */
     int getExpireTime();
 
     /**
-     * <code>uint32 GAOEKIGIGBP = 10;</code>
-     * @return The gAOEKIGIGBP.
+     * <code>uint32 last_daily_reward_time = 7;</code>
+     * @return The lastDailyRewardTime.
      */
-    int getGAOEKIGIGBP();
+    int getLastDailyRewardTime();
 
     /**
-     * <code>uint32 remain_reward_days = 7;</code>
+     * <code>uint32 config_id = 6;</code>
+     * @return The configId.
+     */
+    int getConfigId();
+
+    /**
+     * <code>uint32 remain_reward_days = 9;</code>
      * @return The remainRewardDays.
      */
     int getRemainRewardDays();
   }
   /**
    * <pre>
-   * Obf: BHBOJFOBDPL
+   * Obf: MLDLDNBOCAG
    * </pre>
    *
    * Protobuf type {@code ResinCardData}
@@ -93,22 +93,22 @@ public final class ResinCardDataOuterClass {
               break;
             case 32: {
 
-              configId_ = input.readUInt32();
+              expireTime_ = input.readUInt32();
               break;
             }
             case 48: {
 
-              expireTime_ = input.readUInt32();
+              configId_ = input.readUInt32();
               break;
             }
             case 56: {
 
-              remainRewardDays_ = input.readUInt32();
+              lastDailyRewardTime_ = input.readUInt32();
               break;
             }
-            case 80: {
+            case 72: {
 
-              gAOEKIGIGBP_ = input.readUInt32();
+              remainRewardDays_ = input.readUInt32();
               break;
             }
             default: {
@@ -143,21 +143,10 @@ public final class ResinCardDataOuterClass {
               emu.grasscutter.net.proto.ResinCardDataOuterClass.ResinCardData.class, emu.grasscutter.net.proto.ResinCardDataOuterClass.ResinCardData.Builder.class);
     }
 
-    public static final int CONFIG_ID_FIELD_NUMBER = 4;
-    private int configId_;
-    /**
-     * <code>uint32 config_id = 4;</code>
-     * @return The configId.
-     */
-    @java.lang.Override
-    public int getConfigId() {
-      return configId_;
-    }
-
-    public static final int EXPIRE_TIME_FIELD_NUMBER = 6;
+    public static final int EXPIRE_TIME_FIELD_NUMBER = 4;
     private int expireTime_;
     /**
-     * <code>uint32 expire_time = 6;</code>
+     * <code>uint32 expire_time = 4;</code>
      * @return The expireTime.
      */
     @java.lang.Override
@@ -165,21 +154,32 @@ public final class ResinCardDataOuterClass {
       return expireTime_;
     }
 
-    public static final int GAOEKIGIGBP_FIELD_NUMBER = 10;
-    private int gAOEKIGIGBP_;
+    public static final int LAST_DAILY_REWARD_TIME_FIELD_NUMBER = 7;
+    private int lastDailyRewardTime_;
     /**
-     * <code>uint32 GAOEKIGIGBP = 10;</code>
-     * @return The gAOEKIGIGBP.
+     * <code>uint32 last_daily_reward_time = 7;</code>
+     * @return The lastDailyRewardTime.
      */
     @java.lang.Override
-    public int getGAOEKIGIGBP() {
-      return gAOEKIGIGBP_;
+    public int getLastDailyRewardTime() {
+      return lastDailyRewardTime_;
     }
 
-    public static final int REMAIN_REWARD_DAYS_FIELD_NUMBER = 7;
+    public static final int CONFIG_ID_FIELD_NUMBER = 6;
+    private int configId_;
+    /**
+     * <code>uint32 config_id = 6;</code>
+     * @return The configId.
+     */
+    @java.lang.Override
+    public int getConfigId() {
+      return configId_;
+    }
+
+    public static final int REMAIN_REWARD_DAYS_FIELD_NUMBER = 9;
     private int remainRewardDays_;
     /**
-     * <code>uint32 remain_reward_days = 7;</code>
+     * <code>uint32 remain_reward_days = 9;</code>
      * @return The remainRewardDays.
      */
     @java.lang.Override
@@ -201,17 +201,17 @@ public final class ResinCardDataOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (configId_ != 0) {
-        output.writeUInt32(4, configId_);
-      }
       if (expireTime_ != 0) {
-        output.writeUInt32(6, expireTime_);
+        output.writeUInt32(4, expireTime_);
+      }
+      if (configId_ != 0) {
+        output.writeUInt32(6, configId_);
+      }
+      if (lastDailyRewardTime_ != 0) {
+        output.writeUInt32(7, lastDailyRewardTime_);
       }
       if (remainRewardDays_ != 0) {
-        output.writeUInt32(7, remainRewardDays_);
-      }
-      if (gAOEKIGIGBP_ != 0) {
-        output.writeUInt32(10, gAOEKIGIGBP_);
+        output.writeUInt32(9, remainRewardDays_);
       }
       unknownFields.writeTo(output);
     }
@@ -222,21 +222,21 @@ public final class ResinCardDataOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (configId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, configId_);
-      }
       if (expireTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, expireTime_);
+          .computeUInt32Size(4, expireTime_);
+      }
+      if (configId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(6, configId_);
+      }
+      if (lastDailyRewardTime_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(7, lastDailyRewardTime_);
       }
       if (remainRewardDays_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, remainRewardDays_);
-      }
-      if (gAOEKIGIGBP_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, gAOEKIGIGBP_);
+          .computeUInt32Size(9, remainRewardDays_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -253,12 +253,12 @@ public final class ResinCardDataOuterClass {
       }
       emu.grasscutter.net.proto.ResinCardDataOuterClass.ResinCardData other = (emu.grasscutter.net.proto.ResinCardDataOuterClass.ResinCardData) obj;
 
-      if (getConfigId()
-          != other.getConfigId()) return false;
       if (getExpireTime()
           != other.getExpireTime()) return false;
-      if (getGAOEKIGIGBP()
-          != other.getGAOEKIGIGBP()) return false;
+      if (getLastDailyRewardTime()
+          != other.getLastDailyRewardTime()) return false;
+      if (getConfigId()
+          != other.getConfigId()) return false;
       if (getRemainRewardDays()
           != other.getRemainRewardDays()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -272,12 +272,12 @@ public final class ResinCardDataOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + CONFIG_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getConfigId();
       hash = (37 * hash) + EXPIRE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getExpireTime();
-      hash = (37 * hash) + GAOEKIGIGBP_FIELD_NUMBER;
-      hash = (53 * hash) + getGAOEKIGIGBP();
+      hash = (37 * hash) + LAST_DAILY_REWARD_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getLastDailyRewardTime();
+      hash = (37 * hash) + CONFIG_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getConfigId();
       hash = (37 * hash) + REMAIN_REWARD_DAYS_FIELD_NUMBER;
       hash = (53 * hash) + getRemainRewardDays();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -377,7 +377,7 @@ public final class ResinCardDataOuterClass {
     }
     /**
      * <pre>
-     * Obf: BHBOJFOBDPL
+     * Obf: MLDLDNBOCAG
      * </pre>
      *
      * Protobuf type {@code ResinCardData}
@@ -417,11 +417,11 @@ public final class ResinCardDataOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        configId_ = 0;
-
         expireTime_ = 0;
 
-        gAOEKIGIGBP_ = 0;
+        lastDailyRewardTime_ = 0;
+
+        configId_ = 0;
 
         remainRewardDays_ = 0;
 
@@ -451,9 +451,9 @@ public final class ResinCardDataOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.ResinCardDataOuterClass.ResinCardData buildPartial() {
         emu.grasscutter.net.proto.ResinCardDataOuterClass.ResinCardData result = new emu.grasscutter.net.proto.ResinCardDataOuterClass.ResinCardData(this);
-        result.configId_ = configId_;
         result.expireTime_ = expireTime_;
-        result.gAOEKIGIGBP_ = gAOEKIGIGBP_;
+        result.lastDailyRewardTime_ = lastDailyRewardTime_;
+        result.configId_ = configId_;
         result.remainRewardDays_ = remainRewardDays_;
         onBuilt();
         return result;
@@ -503,14 +503,14 @@ public final class ResinCardDataOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.ResinCardDataOuterClass.ResinCardData other) {
         if (other == emu.grasscutter.net.proto.ResinCardDataOuterClass.ResinCardData.getDefaultInstance()) return this;
-        if (other.getConfigId() != 0) {
-          setConfigId(other.getConfigId());
-        }
         if (other.getExpireTime() != 0) {
           setExpireTime(other.getExpireTime());
         }
-        if (other.getGAOEKIGIGBP() != 0) {
-          setGAOEKIGIGBP(other.getGAOEKIGIGBP());
+        if (other.getLastDailyRewardTime() != 0) {
+          setLastDailyRewardTime(other.getLastDailyRewardTime());
+        }
+        if (other.getConfigId() != 0) {
+          setConfigId(other.getConfigId());
         }
         if (other.getRemainRewardDays() != 0) {
           setRemainRewardDays(other.getRemainRewardDays());
@@ -544,40 +544,9 @@ public final class ResinCardDataOuterClass {
         return this;
       }
 
-      private int configId_ ;
-      /**
-       * <code>uint32 config_id = 4;</code>
-       * @return The configId.
-       */
-      @java.lang.Override
-      public int getConfigId() {
-        return configId_;
-      }
-      /**
-       * <code>uint32 config_id = 4;</code>
-       * @param value The configId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setConfigId(int value) {
-        
-        configId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 config_id = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearConfigId() {
-        
-        configId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int expireTime_ ;
       /**
-       * <code>uint32 expire_time = 6;</code>
+       * <code>uint32 expire_time = 4;</code>
        * @return The expireTime.
        */
       @java.lang.Override
@@ -585,7 +554,7 @@ public final class ResinCardDataOuterClass {
         return expireTime_;
       }
       /**
-       * <code>uint32 expire_time = 6;</code>
+       * <code>uint32 expire_time = 4;</code>
        * @param value The expireTime to set.
        * @return This builder for chaining.
        */
@@ -596,7 +565,7 @@ public final class ResinCardDataOuterClass {
         return this;
       }
       /**
-       * <code>uint32 expire_time = 6;</code>
+       * <code>uint32 expire_time = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearExpireTime() {
@@ -606,40 +575,71 @@ public final class ResinCardDataOuterClass {
         return this;
       }
 
-      private int gAOEKIGIGBP_ ;
+      private int lastDailyRewardTime_ ;
       /**
-       * <code>uint32 GAOEKIGIGBP = 10;</code>
-       * @return The gAOEKIGIGBP.
+       * <code>uint32 last_daily_reward_time = 7;</code>
+       * @return The lastDailyRewardTime.
        */
       @java.lang.Override
-      public int getGAOEKIGIGBP() {
-        return gAOEKIGIGBP_;
+      public int getLastDailyRewardTime() {
+        return lastDailyRewardTime_;
       }
       /**
-       * <code>uint32 GAOEKIGIGBP = 10;</code>
-       * @param value The gAOEKIGIGBP to set.
+       * <code>uint32 last_daily_reward_time = 7;</code>
+       * @param value The lastDailyRewardTime to set.
        * @return This builder for chaining.
        */
-      public Builder setGAOEKIGIGBP(int value) {
+      public Builder setLastDailyRewardTime(int value) {
         
-        gAOEKIGIGBP_ = value;
+        lastDailyRewardTime_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 GAOEKIGIGBP = 10;</code>
+       * <code>uint32 last_daily_reward_time = 7;</code>
        * @return This builder for chaining.
        */
-      public Builder clearGAOEKIGIGBP() {
+      public Builder clearLastDailyRewardTime() {
         
-        gAOEKIGIGBP_ = 0;
+        lastDailyRewardTime_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int configId_ ;
+      /**
+       * <code>uint32 config_id = 6;</code>
+       * @return The configId.
+       */
+      @java.lang.Override
+      public int getConfigId() {
+        return configId_;
+      }
+      /**
+       * <code>uint32 config_id = 6;</code>
+       * @param value The configId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConfigId(int value) {
+        
+        configId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 config_id = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearConfigId() {
+        
+        configId_ = 0;
         onChanged();
         return this;
       }
 
       private int remainRewardDays_ ;
       /**
-       * <code>uint32 remain_reward_days = 7;</code>
+       * <code>uint32 remain_reward_days = 9;</code>
        * @return The remainRewardDays.
        */
       @java.lang.Override
@@ -647,7 +647,7 @@ public final class ResinCardDataOuterClass {
         return remainRewardDays_;
       }
       /**
-       * <code>uint32 remain_reward_days = 7;</code>
+       * <code>uint32 remain_reward_days = 9;</code>
        * @param value The remainRewardDays to set.
        * @return This builder for chaining.
        */
@@ -658,7 +658,7 @@ public final class ResinCardDataOuterClass {
         return this;
       }
       /**
-       * <code>uint32 remain_reward_days = 7;</code>
+       * <code>uint32 remain_reward_days = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearRemainRewardDays() {
@@ -734,11 +734,11 @@ public final class ResinCardDataOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\023ResinCardData.proto\"h\n\rResinCardData\022\021" +
-      "\n\tconfig_id\030\004 \001(\r\022\023\n\013expire_time\030\006 \001(\r\022\023" +
-      "\n\013GAOEKIGIGBP\030\n \001(\r\022\032\n\022remain_reward_day" +
-      "s\030\007 \001(\rB\033\n\031emu.grasscutter.net.protob\006pr" +
-      "oto3"
+      "\n\023ResinCardData.proto\"s\n\rResinCardData\022\023" +
+      "\n\013expire_time\030\004 \001(\r\022\036\n\026last_daily_reward" +
+      "_time\030\007 \001(\r\022\021\n\tconfig_id\030\006 \001(\r\022\032\n\022remain" +
+      "_reward_days\030\t \001(\rB\033\n\031emu.grasscutter.ne" +
+      "t.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -749,7 +749,7 @@ public final class ResinCardDataOuterClass {
     internal_static_ResinCardData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ResinCardData_descriptor,
-        new java.lang.String[] { "ConfigId", "ExpireTime", "GAOEKIGIGBP", "RemainRewardDays", });
+        new java.lang.String[] { "ExpireTime", "LastDailyRewardTime", "ConfigId", "RemainRewardDays", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

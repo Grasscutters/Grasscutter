@@ -19,30 +19,30 @@ public final class HomeCreateBlueprintRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.HomeBlueprintSlotInfo slot_info = 15;</code>
+     * <code>.HomeBlueprintSlotInfo slot_info = 4;</code>
      * @return Whether the slotInfo field is set.
      */
     boolean hasSlotInfo();
     /**
-     * <code>.HomeBlueprintSlotInfo slot_info = 15;</code>
+     * <code>.HomeBlueprintSlotInfo slot_info = 4;</code>
      * @return The slotInfo.
      */
     emu.grasscutter.net.proto.HomeBlueprintSlotInfoOuterClass.HomeBlueprintSlotInfo getSlotInfo();
     /**
-     * <code>.HomeBlueprintSlotInfo slot_info = 15;</code>
+     * <code>.HomeBlueprintSlotInfo slot_info = 4;</code>
      */
     emu.grasscutter.net.proto.HomeBlueprintSlotInfoOuterClass.HomeBlueprintSlotInfoOrBuilder getSlotInfoOrBuilder();
 
     /**
-     * <code>int32 retcode = 5;</code>
+     * <code>int32 retcode = 9;</code>
      * @return The retcode.
      */
     int getRetcode();
   }
   /**
    * <pre>
-   * CmdId: 4855
-   * Obf: PGIEJDMDOCG
+   * CmdId: 22980
+   * Obf: GCFFCBBEIJI
    * </pre>
    *
    * Protobuf type {@code HomeCreateBlueprintRsp}
@@ -89,12 +89,7 @@ public final class HomeCreateBlueprintRspOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 122: {
+            case 34: {
               emu.grasscutter.net.proto.HomeBlueprintSlotInfoOuterClass.HomeBlueprintSlotInfo.Builder subBuilder = null;
               if (slotInfo_ != null) {
                 subBuilder = slotInfo_.toBuilder();
@@ -105,6 +100,11 @@ public final class HomeCreateBlueprintRspOuterClass {
                 slotInfo_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 72: {
+
+              retcode_ = input.readInt32();
               break;
             }
             default: {
@@ -139,10 +139,10 @@ public final class HomeCreateBlueprintRspOuterClass {
               emu.grasscutter.net.proto.HomeCreateBlueprintRspOuterClass.HomeCreateBlueprintRsp.class, emu.grasscutter.net.proto.HomeCreateBlueprintRspOuterClass.HomeCreateBlueprintRsp.Builder.class);
     }
 
-    public static final int SLOT_INFO_FIELD_NUMBER = 15;
+    public static final int SLOT_INFO_FIELD_NUMBER = 4;
     private emu.grasscutter.net.proto.HomeBlueprintSlotInfoOuterClass.HomeBlueprintSlotInfo slotInfo_;
     /**
-     * <code>.HomeBlueprintSlotInfo slot_info = 15;</code>
+     * <code>.HomeBlueprintSlotInfo slot_info = 4;</code>
      * @return Whether the slotInfo field is set.
      */
     @java.lang.Override
@@ -150,7 +150,7 @@ public final class HomeCreateBlueprintRspOuterClass {
       return slotInfo_ != null;
     }
     /**
-     * <code>.HomeBlueprintSlotInfo slot_info = 15;</code>
+     * <code>.HomeBlueprintSlotInfo slot_info = 4;</code>
      * @return The slotInfo.
      */
     @java.lang.Override
@@ -158,17 +158,17 @@ public final class HomeCreateBlueprintRspOuterClass {
       return slotInfo_ == null ? emu.grasscutter.net.proto.HomeBlueprintSlotInfoOuterClass.HomeBlueprintSlotInfo.getDefaultInstance() : slotInfo_;
     }
     /**
-     * <code>.HomeBlueprintSlotInfo slot_info = 15;</code>
+     * <code>.HomeBlueprintSlotInfo slot_info = 4;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.HomeBlueprintSlotInfoOuterClass.HomeBlueprintSlotInfoOrBuilder getSlotInfoOrBuilder() {
       return getSlotInfo();
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 5;
+    public static final int RETCODE_FIELD_NUMBER = 9;
     private int retcode_;
     /**
-     * <code>int32 retcode = 5;</code>
+     * <code>int32 retcode = 9;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -190,11 +190,11 @@ public final class HomeCreateBlueprintRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (retcode_ != 0) {
-        output.writeInt32(5, retcode_);
-      }
       if (slotInfo_ != null) {
-        output.writeMessage(15, getSlotInfo());
+        output.writeMessage(4, getSlotInfo());
+      }
+      if (retcode_ != 0) {
+        output.writeInt32(9, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -205,13 +205,13 @@ public final class HomeCreateBlueprintRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (retcode_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(5, retcode_);
-      }
       if (slotInfo_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(15, getSlotInfo());
+          .computeMessageSize(4, getSlotInfo());
+      }
+      if (retcode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(9, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -349,8 +349,8 @@ public final class HomeCreateBlueprintRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4855
-     * Obf: PGIEJDMDOCG
+     * CmdId: 22980
+     * Obf: GCFFCBBEIJI
      * </pre>
      *
      * Protobuf type {@code HomeCreateBlueprintRsp}
@@ -517,14 +517,14 @@ public final class HomeCreateBlueprintRspOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.HomeBlueprintSlotInfoOuterClass.HomeBlueprintSlotInfo, emu.grasscutter.net.proto.HomeBlueprintSlotInfoOuterClass.HomeBlueprintSlotInfo.Builder, emu.grasscutter.net.proto.HomeBlueprintSlotInfoOuterClass.HomeBlueprintSlotInfoOrBuilder> slotInfoBuilder_;
       /**
-       * <code>.HomeBlueprintSlotInfo slot_info = 15;</code>
+       * <code>.HomeBlueprintSlotInfo slot_info = 4;</code>
        * @return Whether the slotInfo field is set.
        */
       public boolean hasSlotInfo() {
         return slotInfoBuilder_ != null || slotInfo_ != null;
       }
       /**
-       * <code>.HomeBlueprintSlotInfo slot_info = 15;</code>
+       * <code>.HomeBlueprintSlotInfo slot_info = 4;</code>
        * @return The slotInfo.
        */
       public emu.grasscutter.net.proto.HomeBlueprintSlotInfoOuterClass.HomeBlueprintSlotInfo getSlotInfo() {
@@ -535,7 +535,7 @@ public final class HomeCreateBlueprintRspOuterClass {
         }
       }
       /**
-       * <code>.HomeBlueprintSlotInfo slot_info = 15;</code>
+       * <code>.HomeBlueprintSlotInfo slot_info = 4;</code>
        */
       public Builder setSlotInfo(emu.grasscutter.net.proto.HomeBlueprintSlotInfoOuterClass.HomeBlueprintSlotInfo value) {
         if (slotInfoBuilder_ == null) {
@@ -551,7 +551,7 @@ public final class HomeCreateBlueprintRspOuterClass {
         return this;
       }
       /**
-       * <code>.HomeBlueprintSlotInfo slot_info = 15;</code>
+       * <code>.HomeBlueprintSlotInfo slot_info = 4;</code>
        */
       public Builder setSlotInfo(
           emu.grasscutter.net.proto.HomeBlueprintSlotInfoOuterClass.HomeBlueprintSlotInfo.Builder builderForValue) {
@@ -565,7 +565,7 @@ public final class HomeCreateBlueprintRspOuterClass {
         return this;
       }
       /**
-       * <code>.HomeBlueprintSlotInfo slot_info = 15;</code>
+       * <code>.HomeBlueprintSlotInfo slot_info = 4;</code>
        */
       public Builder mergeSlotInfo(emu.grasscutter.net.proto.HomeBlueprintSlotInfoOuterClass.HomeBlueprintSlotInfo value) {
         if (slotInfoBuilder_ == null) {
@@ -583,7 +583,7 @@ public final class HomeCreateBlueprintRspOuterClass {
         return this;
       }
       /**
-       * <code>.HomeBlueprintSlotInfo slot_info = 15;</code>
+       * <code>.HomeBlueprintSlotInfo slot_info = 4;</code>
        */
       public Builder clearSlotInfo() {
         if (slotInfoBuilder_ == null) {
@@ -597,7 +597,7 @@ public final class HomeCreateBlueprintRspOuterClass {
         return this;
       }
       /**
-       * <code>.HomeBlueprintSlotInfo slot_info = 15;</code>
+       * <code>.HomeBlueprintSlotInfo slot_info = 4;</code>
        */
       public emu.grasscutter.net.proto.HomeBlueprintSlotInfoOuterClass.HomeBlueprintSlotInfo.Builder getSlotInfoBuilder() {
         
@@ -605,7 +605,7 @@ public final class HomeCreateBlueprintRspOuterClass {
         return getSlotInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.HomeBlueprintSlotInfo slot_info = 15;</code>
+       * <code>.HomeBlueprintSlotInfo slot_info = 4;</code>
        */
       public emu.grasscutter.net.proto.HomeBlueprintSlotInfoOuterClass.HomeBlueprintSlotInfoOrBuilder getSlotInfoOrBuilder() {
         if (slotInfoBuilder_ != null) {
@@ -616,7 +616,7 @@ public final class HomeCreateBlueprintRspOuterClass {
         }
       }
       /**
-       * <code>.HomeBlueprintSlotInfo slot_info = 15;</code>
+       * <code>.HomeBlueprintSlotInfo slot_info = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.HomeBlueprintSlotInfoOuterClass.HomeBlueprintSlotInfo, emu.grasscutter.net.proto.HomeBlueprintSlotInfoOuterClass.HomeBlueprintSlotInfo.Builder, emu.grasscutter.net.proto.HomeBlueprintSlotInfoOuterClass.HomeBlueprintSlotInfoOrBuilder> 
@@ -634,7 +634,7 @@ public final class HomeCreateBlueprintRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 5;</code>
+       * <code>int32 retcode = 9;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -642,7 +642,7 @@ public final class HomeCreateBlueprintRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 5;</code>
+       * <code>int32 retcode = 9;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -653,7 +653,7 @@ public final class HomeCreateBlueprintRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 5;</code>
+       * <code>int32 retcode = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -731,8 +731,8 @@ public final class HomeCreateBlueprintRspOuterClass {
     java.lang.String[] descriptorData = {
       "\n\034HomeCreateBlueprintRsp.proto\032\033HomeBlue" +
       "printSlotInfo.proto\"T\n\026HomeCreateBluepri" +
-      "ntRsp\022)\n\tslot_info\030\017 \001(\0132\026.HomeBlueprint" +
-      "SlotInfo\022\017\n\007retcode\030\005 \001(\005B\033\n\031emu.grasscu" +
+      "ntRsp\022)\n\tslot_info\030\004 \001(\0132\026.HomeBlueprint" +
+      "SlotInfo\022\017\n\007retcode\030\t \001(\005B\033\n\031emu.grasscu" +
       "tter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

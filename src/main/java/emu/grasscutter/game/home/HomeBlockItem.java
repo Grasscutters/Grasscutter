@@ -1,14 +1,13 @@
 package emu.grasscutter.game.home;
 
-import dev.morphia.annotations.Entity;
-import dev.morphia.annotations.Id;
+import dev.morphia.annotations.*;
 import emu.grasscutter.data.binout.HomeworldDefaultSaveData;
 import emu.grasscutter.net.proto.HomeBlockArrangementInfoOuterClass.HomeBlockArrangementInfo;
-import java.util.List;
-import lombok.AccessLevel;
-import lombok.Builder;
-import lombok.Data;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
+
+import java.util.*;
+import java.util.stream.Stream;
 
 @Entity
 @Data
@@ -77,11 +76,35 @@ public class HomeBlockItem {
                         .setIsUnlocked(unlocked)
                         .setComfortValue(calComfort());
 
+        this.reassignIfNull();
+
         this.deployFurnitureList.forEach(f -> proto.addDeployFurniureList(f.toProto()));
         this.persistentFurnitureList.forEach(f -> proto.addPersistentFurnitureList(f.toProto()));
         this.deployAnimalList.forEach(f -> proto.addDeployAnimalList(f.toProto()));
         this.deployNPCList.forEach(f -> proto.addDeployNpcList(f.toProto()));
 
         return proto.build();
+    }
+
+    // TODO add more types (farm field and suite)
+    public List<? extends HomeMarkPointProtoFactory> getMarkPointProtoFactories() {
+        this.reassignIfNull();
+
+        return Stream.of(this.deployFurnitureList, this.persistentFurnitureList, this.deployNPCList).flatMap(Collection::stream).toList();
+    }
+
+    public void reassignIfNull() {
+        if (this.deployFurnitureList == null) {
+            this.deployFurnitureList = List.of();
+        }
+        if (this.persistentFurnitureList == null) {
+            this.persistentFurnitureList = List.of();
+        }
+        if (this.deployAnimalList == null) {
+            this.deployAnimalList = List.of();
+        }
+        if (this.deployNPCList == null) {
+            this.deployNPCList = List.of();
+        }
     }
 }

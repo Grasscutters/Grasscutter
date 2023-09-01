@@ -19,23 +19,23 @@ public final class BreakoutSyncSnapShotOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.BreakoutSnapShot snap_shot = 13;</code>
+     * <code>.BreakoutSnapShot snap_shot = 2;</code>
      * @return Whether the snapShot field is set.
      */
     boolean hasSnapShot();
     /**
-     * <code>.BreakoutSnapShot snap_shot = 13;</code>
+     * <code>.BreakoutSnapShot snap_shot = 2;</code>
      * @return The snapShot.
      */
     emu.grasscutter.net.proto.BreakoutSnapShotOuterClass.BreakoutSnapShot getSnapShot();
     /**
-     * <code>.BreakoutSnapShot snap_shot = 13;</code>
+     * <code>.BreakoutSnapShot snap_shot = 2;</code>
      */
     emu.grasscutter.net.proto.BreakoutSnapShotOuterClass.BreakoutSnapShotOrBuilder getSnapShotOrBuilder();
   }
   /**
    * <pre>
-   * Obf: BLBJLEJIMPL
+   * Obf: GEPMIGKJJLE
    * </pre>
    *
    * Protobuf type {@code BreakoutSyncSnapShot}
@@ -82,7 +82,7 @@ public final class BreakoutSyncSnapShotOuterClass {
             case 0:
               done = true;
               break;
-            case 106: {
+            case 18: {
               emu.grasscutter.net.proto.BreakoutSnapShotOuterClass.BreakoutSnapShot.Builder subBuilder = null;
               if (snapShot_ != null) {
                 subBuilder = snapShot_.toBuilder();
@@ -127,10 +127,10 @@ public final class BreakoutSyncSnapShotOuterClass {
               emu.grasscutter.net.proto.BreakoutSyncSnapShotOuterClass.BreakoutSyncSnapShot.class, emu.grasscutter.net.proto.BreakoutSyncSnapShotOuterClass.BreakoutSyncSnapShot.Builder.class);
     }
 
-    public static final int SNAP_SHOT_FIELD_NUMBER = 13;
+    public static final int SNAP_SHOT_FIELD_NUMBER = 2;
     private emu.grasscutter.net.proto.BreakoutSnapShotOuterClass.BreakoutSnapShot snapShot_;
     /**
-     * <code>.BreakoutSnapShot snap_shot = 13;</code>
+     * <code>.BreakoutSnapShot snap_shot = 2;</code>
      * @return Whether the snapShot field is set.
      */
     @java.lang.Override
@@ -138,7 +138,7 @@ public final class BreakoutSyncSnapShotOuterClass {
       return snapShot_ != null;
     }
     /**
-     * <code>.BreakoutSnapShot snap_shot = 13;</code>
+     * <code>.BreakoutSnapShot snap_shot = 2;</code>
      * @return The snapShot.
      */
     @java.lang.Override
@@ -146,7 +146,7 @@ public final class BreakoutSyncSnapShotOuterClass {
       return snapShot_ == null ? emu.grasscutter.net.proto.BreakoutSnapShotOuterClass.BreakoutSnapShot.getDefaultInstance() : snapShot_;
     }
     /**
-     * <code>.BreakoutSnapShot snap_shot = 13;</code>
+     * <code>.BreakoutSnapShot snap_shot = 2;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.BreakoutSnapShotOuterClass.BreakoutSnapShotOrBuilder getSnapShotOrBuilder() {
@@ -168,7 +168,7 @@ public final class BreakoutSyncSnapShotOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (snapShot_ != null) {
-        output.writeMessage(13, getSnapShot());
+        output.writeMessage(2, getSnapShot());
       }
       unknownFields.writeTo(output);
     }
@@ -181,7 +181,7 @@ public final class BreakoutSyncSnapShotOuterClass {
       size = 0;
       if (snapShot_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(13, getSnapShot());
+          .computeMessageSize(2, getSnapShot());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -315,7 +315,7 @@ public final class BreakoutSyncSnapShotOuterClass {
     }
     /**
      * <pre>
-     * Obf: BLBJLEJIMPL
+     * Obf: GEPMIGKJJLE
      * </pre>
      *
      * Protobuf type {@code BreakoutSyncSnapShot}
@@ -476,14 +476,14 @@ public final class BreakoutSyncSnapShotOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.BreakoutSnapShotOuterClass.BreakoutSnapShot, emu.grasscutter.net.proto.BreakoutSnapShotOuterClass.BreakoutSnapShot.Builder, emu.grasscutter.net.proto.BreakoutSnapShotOuterClass.BreakoutSnapShotOrBuilder> snapShotBuilder_;
       /**
-       * <code>.BreakoutSnapShot snap_shot = 13;</code>
+       * <code>.BreakoutSnapShot snap_shot = 2;</code>
        * @return Whether the snapShot field is set.
        */
       public boolean hasSnapShot() {
         return snapShotBuilder_ != null || snapShot_ != null;
       }
       /**
-       * <code>.BreakoutSnapShot snap_shot = 13;</code>
+       * <code>.BreakoutSnapShot snap_shot = 2;</code>
        * @return The snapShot.
        */
       public emu.grasscutter.net.proto.BreakoutSnapShotOuterClass.BreakoutSnapShot getSnapShot() {
@@ -494,7 +494,7 @@ public final class BreakoutSyncSnapShotOuterClass {
         }
       }
       /**
-       * <code>.BreakoutSnapShot snap_shot = 13;</code>
+       * <code>.BreakoutSnapShot snap_shot = 2;</code>
        */
       public Builder setSnapShot(emu.grasscutter.net.proto.BreakoutSnapShotOuterClass.BreakoutSnapShot value) {
         if (snapShotBuilder_ == null) {
@@ -510,7 +510,7 @@ public final class BreakoutSyncSnapShotOuterClass {
         return this;
       }
       /**
-       * <code>.BreakoutSnapShot snap_shot = 13;</code>
+       * <code>.BreakoutSnapShot snap_shot = 2;</code>
        */
       public Builder setSnapShot(
           emu.grasscutter.net.proto.BreakoutSnapShotOuterClass.BreakoutSnapShot.Builder builderForValue) {
@@ -524,7 +524,7 @@ public final class BreakoutSyncSnapShotOuterClass {
         return this;
       }
       /**
-       * <code>.BreakoutSnapShot snap_shot = 13;</code>
+       * <code>.BreakoutSnapShot snap_shot = 2;</code>
        */
       public Builder mergeSnapShot(emu.grasscutter.net.proto.BreakoutSnapShotOuterClass.BreakoutSnapShot value) {
         if (snapShotBuilder_ == null) {
@@ -542,7 +542,7 @@ public final class BreakoutSyncSnapShotOuterClass {
         return this;
       }
       /**
-       * <code>.BreakoutSnapShot snap_shot = 13;</code>
+       * <code>.BreakoutSnapShot snap_shot = 2;</code>
        */
       public Builder clearSnapShot() {
         if (snapShotBuilder_ == null) {
@@ -556,7 +556,7 @@ public final class BreakoutSyncSnapShotOuterClass {
         return this;
       }
       /**
-       * <code>.BreakoutSnapShot snap_shot = 13;</code>
+       * <code>.BreakoutSnapShot snap_shot = 2;</code>
        */
       public emu.grasscutter.net.proto.BreakoutSnapShotOuterClass.BreakoutSnapShot.Builder getSnapShotBuilder() {
         
@@ -564,7 +564,7 @@ public final class BreakoutSyncSnapShotOuterClass {
         return getSnapShotFieldBuilder().getBuilder();
       }
       /**
-       * <code>.BreakoutSnapShot snap_shot = 13;</code>
+       * <code>.BreakoutSnapShot snap_shot = 2;</code>
        */
       public emu.grasscutter.net.proto.BreakoutSnapShotOuterClass.BreakoutSnapShotOrBuilder getSnapShotOrBuilder() {
         if (snapShotBuilder_ != null) {
@@ -575,7 +575,7 @@ public final class BreakoutSyncSnapShotOuterClass {
         }
       }
       /**
-       * <code>.BreakoutSnapShot snap_shot = 13;</code>
+       * <code>.BreakoutSnapShot snap_shot = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.BreakoutSnapShotOuterClass.BreakoutSnapShot, emu.grasscutter.net.proto.BreakoutSnapShotOuterClass.BreakoutSnapShot.Builder, emu.grasscutter.net.proto.BreakoutSnapShotOuterClass.BreakoutSnapShotOrBuilder> 
@@ -659,7 +659,7 @@ public final class BreakoutSyncSnapShotOuterClass {
     java.lang.String[] descriptorData = {
       "\n\032BreakoutSyncSnapShot.proto\032\026BreakoutSn" +
       "apShot.proto\"<\n\024BreakoutSyncSnapShot\022$\n\t" +
-      "snap_shot\030\r \001(\0132\021.BreakoutSnapShotB\033\n\031em" +
+      "snap_shot\030\002 \001(\0132\021.BreakoutSnapShotB\033\n\031em" +
       "u.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

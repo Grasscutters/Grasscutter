@@ -1,7 +1,7 @@
 package emu.grasscutter.game.ability;
 
 import com.google.protobuf.*;
-import emu.grasscutter.Grasscutter;
+import emu.grasscutter.*;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.binout.*;
 import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierAction;
@@ -18,14 +18,14 @@ import emu.grasscutter.net.proto.AbilityMetaSetKilledStateOuterClass.AbilityMeta
 import emu.grasscutter.net.proto.AbilityScalarTypeOuterClass.AbilityScalarType;
 import emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry;
 import emu.grasscutter.net.proto.ModifierActionOuterClass.ModifierAction;
+import emu.grasscutter.server.event.player.PlayerUseSkillEvent;
 import io.netty.util.concurrent.FastThreadLocalThread;
+import lombok.Getter;
+
 import java.util.HashMap;
 import java.util.concurrent.*;
-import lombok.Getter;
-import org.reflections.Reflections;
 
 public final class AbilityManager extends BasePlayerManager {
-
     private static final HashMap<AbilityModifierAction.Type, AbilityActionHandler> actionHandlers =
             new HashMap<>();
     private static final HashMap<AbilityMixinData.Type, AbilityMixinHandler> mixinHandlers =
@@ -54,8 +54,8 @@ public final class AbilityManager extends BasePlayerManager {
     }
 
     public static void registerHandlers() {
-        Reflections reflections = new Reflections("emu.grasscutter.game.ability.actions");
-        var handlerClassesAction = reflections.getSubTypesOf(AbilityActionHandler.class);
+        var handlerClassesAction = Grasscutter.reflector
+                .getSubTypesOf(AbilityActionHandler.class);
 
         for (var obj : handlerClassesAction) {
             try {
@@ -70,9 +70,8 @@ public final class AbilityManager extends BasePlayerManager {
             }
         }
 
-        reflections = new Reflections("emu.grasscutter.game.ability.mixins");
-        var handlerClassesMixin = reflections.getSubTypesOf(AbilityMixinHandler.class);
-
+        var handlerClassesMixin = Grasscutter.reflector
+                .getSubTypesOf(AbilityMixinHandler.class);
         for (var obj : handlerClassesMixin) {
             try {
                 if (obj.isAnnotationPresent(AbilityAction.class)) {
@@ -91,8 +90,11 @@ public final class AbilityManager extends BasePlayerManager {
             Ability ability, AbilityModifierAction action, ByteString abilityData, GameEntity target) {
         var handler = actionHandlers.get(action.type);
         if (handler == null || ability == null) {
-            Grasscutter.getLogger()
-                    .debug("Could not execute ability action {} at {}", action.type, ability);
+            if (DebugConstants.LOG_MISSING_ABILITY_HANDLERS) {
+                Grasscutter.getLogger()
+                        .debug("Missing ability action handler for {} (invoker: {}).", action.type, ability);
+            }
+
             return;
         }
 
@@ -148,7 +150,7 @@ public final class AbilityManager extends BasePlayerManager {
                             invoke.getArgumentType(),
                             invoke.getArgumentTypeValue(),
                             entity.getId());
-        } else {
+        } else if (DebugConstants.LOG_ABILITIES) {
             Grasscutter.getLogger()
                     .debug(
                             "Invoke type of {} ({}) has no entity. (referring to {})",
@@ -177,7 +179,12 @@ public final class AbilityManager extends BasePlayerManager {
                     .handleModifierDurabilityChange(invoke);
             case ABILITY_INVOKE_ARGUMENT_META_ADD_NEW_ABILITY -> this.handleAddNewAbility(invoke);
             case ABILITY_INVOKE_ARGUMENT_META_SET_KILLED_SETATE -> this.handleKillState(invoke);
-            default -> {}
+            default -> {
+                if (DebugConstants.LOG_MISSING_ABILITIES) {
+                    Grasscutter.getLogger()
+                            .trace("Missing invoke handler for ability {}.", invoke.getArgumentType().name());
+                }
+            }
         }
     }
 
@@ -256,7 +263,8 @@ public final class AbilityManager extends BasePlayerManager {
         }
 
         // Check if the caster matches the player.
-        if (player.getTeamManager().getCurrentAvatarEntity().getId() != casterId) {
+        var currentAvatar = player.getTeamManager().getCurrentAvatarEntity();
+        if (currentAvatar == null || currentAvatar.getId() != casterId) {
             return;
         }
 
@@ -264,6 +272,10 @@ public final class AbilityManager extends BasePlayerManager {
         if (skillData == null) {
             return;
         }
+
+        // Invoke PlayerUseSkillEvent.
+        var event = new PlayerUseSkillEvent(player, skillData, currentAvatar.getAvatar());
+        if (!event.call()) return;
 
         // Check if the skill is an elemental burst.
         if (skillData.getCostElemVal() <= 0) {
@@ -375,7 +387,10 @@ public final class AbilityManager extends BasePlayerManager {
 
         var entity = this.player.getScene().getEntityById(invoke.getEntityId());
         if (entity == null) {
-            Grasscutter.getLogger().debug("Entity not found: {}", invoke.getEntityId());
+            if (DebugConstants.LOG_ABILITIES) {
+                Grasscutter.getLogger().debug("Entity not found: {}", invoke.getEntityId());
+            }
+
             return;
         }
 
@@ -397,11 +412,9 @@ public final class AbilityManager extends BasePlayerManager {
 
             if (instancedAbilityData == null) {
                 // search on entity base id
-                if (entity != null) {
-                    if ((head.getInstancedAbilityId() - 1) < entity.getInstancedAbilities().size()) {
-                        instancedAbility = entity.getInstancedAbilities().get(head.getInstancedAbilityId() - 1);
-                        if (instancedAbility != null) instancedAbilityData = instancedAbility.getData();
-                    }
+                if ((head.getInstancedAbilityId() - 1) < entity.getInstancedAbilities().size()) {
+                    instancedAbility = entity.getInstancedAbilities().get(head.getInstancedAbilityId() - 1);
+                    if (instancedAbility != null) instancedAbilityData = instancedAbility.getData();
                 }
             }
 
@@ -515,27 +528,28 @@ public final class AbilityManager extends BasePlayerManager {
         var entity = this.player.getScene().getEntityById(invoke.getEntityId());
 
         if (entity == null) {
-            Grasscutter.getLogger().trace("Entity not found: {}", invoke.getEntityId());
+            if (DebugConstants.LOG_ABILITIES)
+                Grasscutter.getLogger().debug("Entity not found: {}", invoke.getEntityId());
             return;
         }
 
         var addAbility = AbilityMetaAddAbility.parseFrom(invoke.getAbilityData());
-
         var abilityName = Ability.getAbilityName(addAbility.getAbility().getAbilityName());
-
         var ability = GameData.getAbilityData(abilityName);
         if (ability == null) {
-            Grasscutter.getLogger().trace("Ability not found: {}", abilityName);
+            if (DebugConstants.LOG_MISSING_ABILITIES)
+                Grasscutter.getLogger().debug("Ability not found: {}", abilityName);
             return;
         }
 
         entity.getInstancedAbilities().add(new Ability(ability, entity, player));
-
-        Grasscutter.getLogger()
-                .trace(
-                        "Ability added to entity {} at index {}",
-                        entity.getId(),
-                        entity.getInstancedAbilities().size());
+        if (DebugConstants.LOG_ABILITIES) {
+            Grasscutter.getLogger()
+                    .debug(
+                            "Ability added to entity {} at index {}.",
+                            entity.getId(),
+                            entity.getInstancedAbilities().size());
+        }
     }
 
     private void handleKillState(AbilityInvokeEntry invoke) throws InvalidProtocolBufferException {
@@ -563,7 +577,7 @@ public final class AbilityManager extends BasePlayerManager {
     }
 
     public void addAbilityToEntity(GameEntity entity, AbilityData abilityData) {
-        Ability ability = new Ability(abilityData, entity, this.player);
-        entity.getInstancedAbilities().add(ability); // This are in order
+        var ability = new Ability(abilityData, entity, this.player);
+        entity.getInstancedAbilities().add(ability); // This is in order
     }
 }

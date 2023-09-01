@@ -26,8 +26,8 @@ public final class FishBattleBeginRspOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 5848
-   * Obf: AAGNPOLHKOJ
+   * CmdId: 24515
+   * Obf: AADNJKIAGHE
    * </pre>
    *
    * Protobuf type {@code FishBattleBeginRsp}
@@ -279,8 +279,8 @@ public final class FishBattleBeginRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 5848
-     * Obf: AAGNPOLHKOJ
+     * CmdId: 24515
+     * Obf: AADNJKIAGHE
      * </pre>
      *
      * Protobuf type {@code FishBattleBeginRsp}

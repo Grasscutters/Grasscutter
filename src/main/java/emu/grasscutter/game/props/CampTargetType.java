@@ -1,10 +1,9 @@
 package emu.grasscutter.game.props;
 
 import emu.grasscutter.scripts.constants.IntValueEnum;
-import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
-import java.util.HashMap;
-import java.util.Map;
+import it.unimi.dsi.fastutil.ints.*;
+
+import java.util.*;
 import java.util.stream.Stream;
 
 public enum CampTargetType implements IntValueEnum {

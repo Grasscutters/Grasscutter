@@ -261,7 +261,7 @@ public final class SceneMonsterInfoOuterClass {
   }
   /**
    * <pre>
-   * Obf: PILOPKGAHBK
+   * Obf: JIEPEMAABDK
    * </pre>
    *
    * Protobuf type {@code SceneMonsterInfo}
@@ -1511,7 +1511,7 @@ public final class SceneMonsterInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: PILOPKGAHBK
+     * Obf: JIEPEMAABDK
      * </pre>
      *
      * Protobuf type {@code SceneMonsterInfo}

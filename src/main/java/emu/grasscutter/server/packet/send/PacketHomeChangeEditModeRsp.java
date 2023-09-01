@@ -1,7 +1,6 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.net.packet.BasePacket;
-import emu.grasscutter.net.packet.PacketOpcodes;
+import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.HomeChangeEditModeRspOuterClass;
 
 public class PacketHomeChangeEditModeRsp extends BasePacket {
@@ -14,5 +13,12 @@ public class PacketHomeChangeEditModeRsp extends BasePacket {
         proto.setIsEnterEditMode(enterEditMode);
 
         this.setData(proto);
+    }
+
+    public PacketHomeChangeEditModeRsp(int retcode) {
+        super(PacketOpcodes.HomeChangeEditModeRsp);
+
+        this.setData(HomeChangeEditModeRspOuterClass.HomeChangeEditModeRsp.newBuilder()
+            .setRetcode(retcode));
     }
 }

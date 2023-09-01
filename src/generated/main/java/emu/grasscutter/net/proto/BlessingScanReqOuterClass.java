@@ -19,15 +19,15 @@ public final class BlessingScanReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 entity_id = 6;</code>
+     * <code>uint32 entity_id = 11;</code>
      * @return The entityId.
      */
     int getEntityId();
   }
   /**
    * <pre>
-   * CmdId: 2191
-   * Obf: AKPFMOJGKLM
+   * CmdId: 21594
+   * Obf: EDHNPBHAIPB
    * </pre>
    *
    * Protobuf type {@code BlessingScanReq}
@@ -74,7 +74,7 @@ public final class BlessingScanReqOuterClass {
             case 0:
               done = true;
               break;
-            case 48: {
+            case 88: {
 
               entityId_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class BlessingScanReqOuterClass {
               emu.grasscutter.net.proto.BlessingScanReqOuterClass.BlessingScanReq.class, emu.grasscutter.net.proto.BlessingScanReqOuterClass.BlessingScanReq.Builder.class);
     }
 
-    public static final int ENTITY_ID_FIELD_NUMBER = 6;
+    public static final int ENTITY_ID_FIELD_NUMBER = 11;
     private int entityId_;
     /**
-     * <code>uint32 entity_id = 6;</code>
+     * <code>uint32 entity_id = 11;</code>
      * @return The entityId.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class BlessingScanReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (entityId_ != 0) {
-        output.writeUInt32(6, entityId_);
+        output.writeUInt32(11, entityId_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class BlessingScanReqOuterClass {
       size = 0;
       if (entityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, entityId_);
+          .computeUInt32Size(11, entityId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class BlessingScanReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2191
-     * Obf: AKPFMOJGKLM
+     * CmdId: 21594
+     * Obf: EDHNPBHAIPB
      * </pre>
      *
      * Protobuf type {@code BlessingScanReq}
@@ -431,7 +431,7 @@ public final class BlessingScanReqOuterClass {
 
       private int entityId_ ;
       /**
-       * <code>uint32 entity_id = 6;</code>
+       * <code>uint32 entity_id = 11;</code>
        * @return The entityId.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class BlessingScanReqOuterClass {
         return entityId_;
       }
       /**
-       * <code>uint32 entity_id = 6;</code>
+       * <code>uint32 entity_id = 11;</code>
        * @param value The entityId to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class BlessingScanReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 entity_id = 6;</code>
+       * <code>uint32 entity_id = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
@@ -527,7 +527,7 @@ public final class BlessingScanReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\025BlessingScanReq.proto\"$\n\017BlessingScanR" +
-      "eq\022\021\n\tentity_id\030\006 \001(\rB\033\n\031emu.grasscutter" +
+      "eq\022\021\n\tentity_id\030\013 \001(\rB\033\n\031emu.grasscutter" +
       ".net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

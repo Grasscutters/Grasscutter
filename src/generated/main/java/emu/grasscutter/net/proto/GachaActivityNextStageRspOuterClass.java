@@ -19,21 +19,21 @@ public final class GachaActivityNextStageRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <code>int32 retcode = 11;</code>
+     * @return The retcode.
+     */
+    int getRetcode();
+
+    /**
      * <code>uint32 stage_id = 7;</code>
      * @return The stageId.
      */
     int getStageId();
-
-    /**
-     * <code>int32 retcode = 2;</code>
-     * @return The retcode.
-     */
-    int getRetcode();
   }
   /**
    * <pre>
-   * CmdId: 8132
-   * Obf: MACPFCADDCC
+   * CmdId: 9626
+   * Obf: GIIAEBEDFJB
    * </pre>
    *
    * Protobuf type {@code GachaActivityNextStageRsp}
@@ -80,14 +80,14 @@ public final class GachaActivityNextStageRspOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
             case 56: {
 
               stageId_ = input.readUInt32();
+              break;
+            }
+            case 88: {
+
+              retcode_ = input.readInt32();
               break;
             }
             default: {
@@ -122,6 +122,17 @@ public final class GachaActivityNextStageRspOuterClass {
               emu.grasscutter.net.proto.GachaActivityNextStageRspOuterClass.GachaActivityNextStageRsp.class, emu.grasscutter.net.proto.GachaActivityNextStageRspOuterClass.GachaActivityNextStageRsp.Builder.class);
     }
 
+    public static final int RETCODE_FIELD_NUMBER = 11;
+    private int retcode_;
+    /**
+     * <code>int32 retcode = 11;</code>
+     * @return The retcode.
+     */
+    @java.lang.Override
+    public int getRetcode() {
+      return retcode_;
+    }
+
     public static final int STAGE_ID_FIELD_NUMBER = 7;
     private int stageId_;
     /**
@@ -131,17 +142,6 @@ public final class GachaActivityNextStageRspOuterClass {
     @java.lang.Override
     public int getStageId() {
       return stageId_;
-    }
-
-    public static final int RETCODE_FIELD_NUMBER = 2;
-    private int retcode_;
-    /**
-     * <code>int32 retcode = 2;</code>
-     * @return The retcode.
-     */
-    @java.lang.Override
-    public int getRetcode() {
-      return retcode_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -158,11 +158,11 @@ public final class GachaActivityNextStageRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (retcode_ != 0) {
-        output.writeInt32(2, retcode_);
-      }
       if (stageId_ != 0) {
         output.writeUInt32(7, stageId_);
+      }
+      if (retcode_ != 0) {
+        output.writeInt32(11, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -173,13 +173,13 @@ public final class GachaActivityNextStageRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (retcode_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, retcode_);
-      }
       if (stageId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(7, stageId_);
+      }
+      if (retcode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(11, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -196,10 +196,10 @@ public final class GachaActivityNextStageRspOuterClass {
       }
       emu.grasscutter.net.proto.GachaActivityNextStageRspOuterClass.GachaActivityNextStageRsp other = (emu.grasscutter.net.proto.GachaActivityNextStageRspOuterClass.GachaActivityNextStageRsp) obj;
 
-      if (getStageId()
-          != other.getStageId()) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
+      if (getStageId()
+          != other.getStageId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -211,10 +211,10 @@ public final class GachaActivityNextStageRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + STAGE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getStageId();
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
+      hash = (37 * hash) + STAGE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getStageId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -312,8 +312,8 @@ public final class GachaActivityNextStageRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8132
-     * Obf: MACPFCADDCC
+     * CmdId: 9626
+     * Obf: GIIAEBEDFJB
      * </pre>
      *
      * Protobuf type {@code GachaActivityNextStageRsp}
@@ -353,9 +353,9 @@ public final class GachaActivityNextStageRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        stageId_ = 0;
-
         retcode_ = 0;
+
+        stageId_ = 0;
 
         return this;
       }
@@ -383,8 +383,8 @@ public final class GachaActivityNextStageRspOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.GachaActivityNextStageRspOuterClass.GachaActivityNextStageRsp buildPartial() {
         emu.grasscutter.net.proto.GachaActivityNextStageRspOuterClass.GachaActivityNextStageRsp result = new emu.grasscutter.net.proto.GachaActivityNextStageRspOuterClass.GachaActivityNextStageRsp(this);
-        result.stageId_ = stageId_;
         result.retcode_ = retcode_;
+        result.stageId_ = stageId_;
         onBuilt();
         return result;
       }
@@ -433,11 +433,11 @@ public final class GachaActivityNextStageRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.GachaActivityNextStageRspOuterClass.GachaActivityNextStageRsp other) {
         if (other == emu.grasscutter.net.proto.GachaActivityNextStageRspOuterClass.GachaActivityNextStageRsp.getDefaultInstance()) return this;
-        if (other.getStageId() != 0) {
-          setStageId(other.getStageId());
-        }
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
+        }
+        if (other.getStageId() != 0) {
+          setStageId(other.getStageId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -468,6 +468,37 @@ public final class GachaActivityNextStageRspOuterClass {
         return this;
       }
 
+      private int retcode_ ;
+      /**
+       * <code>int32 retcode = 11;</code>
+       * @return The retcode.
+       */
+      @java.lang.Override
+      public int getRetcode() {
+        return retcode_;
+      }
+      /**
+       * <code>int32 retcode = 11;</code>
+       * @param value The retcode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRetcode(int value) {
+        
+        retcode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 retcode = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRetcode() {
+        
+        retcode_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int stageId_ ;
       /**
        * <code>uint32 stage_id = 7;</code>
@@ -495,37 +526,6 @@ public final class GachaActivityNextStageRspOuterClass {
       public Builder clearStageId() {
         
         stageId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int retcode_ ;
-      /**
-       * <code>int32 retcode = 2;</code>
-       * @return The retcode.
-       */
-      @java.lang.Override
-      public int getRetcode() {
-        return retcode_;
-      }
-      /**
-       * <code>int32 retcode = 2;</code>
-       * @param value The retcode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRetcode(int value) {
-        
-        retcode_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 retcode = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRetcode() {
-        
-        retcode_ = 0;
         onChanged();
         return this;
       }
@@ -597,8 +597,8 @@ public final class GachaActivityNextStageRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\037GachaActivityNextStageRsp.proto\">\n\031Gac" +
-      "haActivityNextStageRsp\022\020\n\010stage_id\030\007 \001(\r" +
-      "\022\017\n\007retcode\030\002 \001(\005B\033\n\031emu.grasscutter.net" +
+      "haActivityNextStageRsp\022\017\n\007retcode\030\013 \001(\005\022" +
+      "\020\n\010stage_id\030\007 \001(\rB\033\n\031emu.grasscutter.net" +
       ".protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -610,7 +610,7 @@ public final class GachaActivityNextStageRspOuterClass {
     internal_static_GachaActivityNextStageRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GachaActivityNextStageRsp_descriptor,
-        new java.lang.String[] { "StageId", "Retcode", });
+        new java.lang.String[] { "Retcode", "StageId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

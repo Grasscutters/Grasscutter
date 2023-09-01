@@ -19,27 +19,27 @@ public final class EnterTrialAvatarActivityDungeonRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 activity_id = 12;</code>
+     * <code>uint32 activity_id = 1;</code>
      * @return The activityId.
      */
     int getActivityId();
 
     /**
-     * <code>int32 retcode = 3;</code>
+     * <code>int32 retcode = 15;</code>
      * @return The retcode.
      */
     int getRetcode();
 
     /**
-     * <code>uint32 trial_avatar_index_id = 8;</code>
+     * <code>uint32 trial_avatar_index_id = 6;</code>
      * @return The trialAvatarIndexId.
      */
     int getTrialAvatarIndexId();
   }
   /**
    * <pre>
-   * CmdId: 2170
-   * Obf: BIPJBPEAGIH
+   * CmdId: 8751
+   * Obf: IKPHDDJIDGO
    * </pre>
    *
    * Protobuf type {@code EnterTrialAvatarActivityDungeonRsp}
@@ -86,19 +86,19 @@ public final class EnterTrialAvatarActivityDungeonRspOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 8: {
 
-              retcode_ = input.readInt32();
+              activityId_ = input.readUInt32();
               break;
             }
-            case 64: {
+            case 48: {
 
               trialAvatarIndexId_ = input.readUInt32();
               break;
             }
-            case 96: {
+            case 120: {
 
-              activityId_ = input.readUInt32();
+              retcode_ = input.readInt32();
               break;
             }
             default: {
@@ -133,10 +133,10 @@ public final class EnterTrialAvatarActivityDungeonRspOuterClass {
               emu.grasscutter.net.proto.EnterTrialAvatarActivityDungeonRspOuterClass.EnterTrialAvatarActivityDungeonRsp.class, emu.grasscutter.net.proto.EnterTrialAvatarActivityDungeonRspOuterClass.EnterTrialAvatarActivityDungeonRsp.Builder.class);
     }
 
-    public static final int ACTIVITY_ID_FIELD_NUMBER = 12;
+    public static final int ACTIVITY_ID_FIELD_NUMBER = 1;
     private int activityId_;
     /**
-     * <code>uint32 activity_id = 12;</code>
+     * <code>uint32 activity_id = 1;</code>
      * @return The activityId.
      */
     @java.lang.Override
@@ -144,10 +144,10 @@ public final class EnterTrialAvatarActivityDungeonRspOuterClass {
       return activityId_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 3;
+    public static final int RETCODE_FIELD_NUMBER = 15;
     private int retcode_;
     /**
-     * <code>int32 retcode = 3;</code>
+     * <code>int32 retcode = 15;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -155,10 +155,10 @@ public final class EnterTrialAvatarActivityDungeonRspOuterClass {
       return retcode_;
     }
 
-    public static final int TRIAL_AVATAR_INDEX_ID_FIELD_NUMBER = 8;
+    public static final int TRIAL_AVATAR_INDEX_ID_FIELD_NUMBER = 6;
     private int trialAvatarIndexId_;
     /**
-     * <code>uint32 trial_avatar_index_id = 8;</code>
+     * <code>uint32 trial_avatar_index_id = 6;</code>
      * @return The trialAvatarIndexId.
      */
     @java.lang.Override
@@ -180,14 +180,14 @@ public final class EnterTrialAvatarActivityDungeonRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (retcode_ != 0) {
-        output.writeInt32(3, retcode_);
+      if (activityId_ != 0) {
+        output.writeUInt32(1, activityId_);
       }
       if (trialAvatarIndexId_ != 0) {
-        output.writeUInt32(8, trialAvatarIndexId_);
+        output.writeUInt32(6, trialAvatarIndexId_);
       }
-      if (activityId_ != 0) {
-        output.writeUInt32(12, activityId_);
+      if (retcode_ != 0) {
+        output.writeInt32(15, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -198,17 +198,17 @@ public final class EnterTrialAvatarActivityDungeonRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (retcode_ != 0) {
+      if (activityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, retcode_);
+          .computeUInt32Size(1, activityId_);
       }
       if (trialAvatarIndexId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, trialAvatarIndexId_);
+          .computeUInt32Size(6, trialAvatarIndexId_);
       }
-      if (activityId_ != 0) {
+      if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, activityId_);
+          .computeInt32Size(15, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -345,8 +345,8 @@ public final class EnterTrialAvatarActivityDungeonRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2170
-     * Obf: BIPJBPEAGIH
+     * CmdId: 8751
+     * Obf: IKPHDDJIDGO
      * </pre>
      *
      * Protobuf type {@code EnterTrialAvatarActivityDungeonRsp}
@@ -509,7 +509,7 @@ public final class EnterTrialAvatarActivityDungeonRspOuterClass {
 
       private int activityId_ ;
       /**
-       * <code>uint32 activity_id = 12;</code>
+       * <code>uint32 activity_id = 1;</code>
        * @return The activityId.
        */
       @java.lang.Override
@@ -517,7 +517,7 @@ public final class EnterTrialAvatarActivityDungeonRspOuterClass {
         return activityId_;
       }
       /**
-       * <code>uint32 activity_id = 12;</code>
+       * <code>uint32 activity_id = 1;</code>
        * @param value The activityId to set.
        * @return This builder for chaining.
        */
@@ -528,7 +528,7 @@ public final class EnterTrialAvatarActivityDungeonRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 activity_id = 12;</code>
+       * <code>uint32 activity_id = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearActivityId() {
@@ -540,7 +540,7 @@ public final class EnterTrialAvatarActivityDungeonRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 3;</code>
+       * <code>int32 retcode = 15;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -548,7 +548,7 @@ public final class EnterTrialAvatarActivityDungeonRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 3;</code>
+       * <code>int32 retcode = 15;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -559,7 +559,7 @@ public final class EnterTrialAvatarActivityDungeonRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 3;</code>
+       * <code>int32 retcode = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -571,7 +571,7 @@ public final class EnterTrialAvatarActivityDungeonRspOuterClass {
 
       private int trialAvatarIndexId_ ;
       /**
-       * <code>uint32 trial_avatar_index_id = 8;</code>
+       * <code>uint32 trial_avatar_index_id = 6;</code>
        * @return The trialAvatarIndexId.
        */
       @java.lang.Override
@@ -579,7 +579,7 @@ public final class EnterTrialAvatarActivityDungeonRspOuterClass {
         return trialAvatarIndexId_;
       }
       /**
-       * <code>uint32 trial_avatar_index_id = 8;</code>
+       * <code>uint32 trial_avatar_index_id = 6;</code>
        * @param value The trialAvatarIndexId to set.
        * @return This builder for chaining.
        */
@@ -590,7 +590,7 @@ public final class EnterTrialAvatarActivityDungeonRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 trial_avatar_index_id = 8;</code>
+       * <code>uint32 trial_avatar_index_id = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearTrialAvatarIndexId() {
@@ -668,8 +668,8 @@ public final class EnterTrialAvatarActivityDungeonRspOuterClass {
     java.lang.String[] descriptorData = {
       "\n(EnterTrialAvatarActivityDungeonRsp.pro" +
       "to\"i\n\"EnterTrialAvatarActivityDungeonRsp" +
-      "\022\023\n\013activity_id\030\014 \001(\r\022\017\n\007retcode\030\003 \001(\005\022\035" +
-      "\n\025trial_avatar_index_id\030\010 \001(\rB\033\n\031emu.gra" +
+      "\022\023\n\013activity_id\030\001 \001(\r\022\017\n\007retcode\030\017 \001(\005\022\035" +
+      "\n\025trial_avatar_index_id\030\006 \001(\rB\033\n\031emu.gra" +
       "sscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

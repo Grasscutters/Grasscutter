@@ -19,38 +19,38 @@ public final class PersistentDungeonSwitchAvatarRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 13;</code>
-     * @return The retcode.
-     */
-    int getRetcode();
-
-    /**
-     * <code>repeated uint64 avatar_team_guid_list = 14;</code>
+     * <code>repeated uint64 avatar_team_guid_list = 7;</code>
      * @return A list containing the avatarTeamGuidList.
      */
     java.util.List<java.lang.Long> getAvatarTeamGuidListList();
     /**
-     * <code>repeated uint64 avatar_team_guid_list = 14;</code>
+     * <code>repeated uint64 avatar_team_guid_list = 7;</code>
      * @return The count of avatarTeamGuidList.
      */
     int getAvatarTeamGuidListCount();
     /**
-     * <code>repeated uint64 avatar_team_guid_list = 14;</code>
+     * <code>repeated uint64 avatar_team_guid_list = 7;</code>
      * @param index The index of the element to return.
      * @return The avatarTeamGuidList at the given index.
      */
     long getAvatarTeamGuidList(int index);
 
     /**
-     * <code>uint64 cur_avatar_guid = 6;</code>
+     * <code>uint64 cur_avatar_guid = 15;</code>
      * @return The curAvatarGuid.
      */
     long getCurAvatarGuid();
+
+    /**
+     * <code>int32 retcode = 13;</code>
+     * @return The retcode.
+     */
+    int getRetcode();
   }
   /**
    * <pre>
-   * CmdId: 1601
-   * Obf: AAFLJLMEIGG
+   * CmdId: 7969
+   * Obf: MJNAFPPOPCC
    * </pre>
    *
    * Protobuf type {@code PersistentDungeonSwitchAvatarRsp}
@@ -99,17 +99,7 @@ public final class PersistentDungeonSwitchAvatarRspOuterClass {
             case 0:
               done = true;
               break;
-            case 48: {
-
-              curAvatarGuid_ = input.readUInt64();
-              break;
-            }
-            case 104: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 112: {
+            case 56: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 avatarTeamGuidList_ = newLongList();
                 mutable_bitField0_ |= 0x00000001;
@@ -117,7 +107,7 @@ public final class PersistentDungeonSwitchAvatarRspOuterClass {
               avatarTeamGuidList_.addLong(input.readUInt64());
               break;
             }
-            case 114: {
+            case 58: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -128,6 +118,16 @@ public final class PersistentDungeonSwitchAvatarRspOuterClass {
                 avatarTeamGuidList_.addLong(input.readUInt64());
               }
               input.popLimit(limit);
+              break;
+            }
+            case 104: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 120: {
+
+              curAvatarGuid_ = input.readUInt64();
               break;
             }
             default: {
@@ -165,6 +165,45 @@ public final class PersistentDungeonSwitchAvatarRspOuterClass {
               emu.grasscutter.net.proto.PersistentDungeonSwitchAvatarRspOuterClass.PersistentDungeonSwitchAvatarRsp.class, emu.grasscutter.net.proto.PersistentDungeonSwitchAvatarRspOuterClass.PersistentDungeonSwitchAvatarRsp.Builder.class);
     }
 
+    public static final int AVATAR_TEAM_GUID_LIST_FIELD_NUMBER = 7;
+    private com.google.protobuf.Internal.LongList avatarTeamGuidList_;
+    /**
+     * <code>repeated uint64 avatar_team_guid_list = 7;</code>
+     * @return A list containing the avatarTeamGuidList.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Long>
+        getAvatarTeamGuidListList() {
+      return avatarTeamGuidList_;
+    }
+    /**
+     * <code>repeated uint64 avatar_team_guid_list = 7;</code>
+     * @return The count of avatarTeamGuidList.
+     */
+    public int getAvatarTeamGuidListCount() {
+      return avatarTeamGuidList_.size();
+    }
+    /**
+     * <code>repeated uint64 avatar_team_guid_list = 7;</code>
+     * @param index The index of the element to return.
+     * @return The avatarTeamGuidList at the given index.
+     */
+    public long getAvatarTeamGuidList(int index) {
+      return avatarTeamGuidList_.getLong(index);
+    }
+    private int avatarTeamGuidListMemoizedSerializedSize = -1;
+
+    public static final int CUR_AVATAR_GUID_FIELD_NUMBER = 15;
+    private long curAvatarGuid_;
+    /**
+     * <code>uint64 cur_avatar_guid = 15;</code>
+     * @return The curAvatarGuid.
+     */
+    @java.lang.Override
+    public long getCurAvatarGuid() {
+      return curAvatarGuid_;
+    }
+
     public static final int RETCODE_FIELD_NUMBER = 13;
     private int retcode_;
     /**
@@ -174,45 +213,6 @@ public final class PersistentDungeonSwitchAvatarRspOuterClass {
     @java.lang.Override
     public int getRetcode() {
       return retcode_;
-    }
-
-    public static final int AVATAR_TEAM_GUID_LIST_FIELD_NUMBER = 14;
-    private com.google.protobuf.Internal.LongList avatarTeamGuidList_;
-    /**
-     * <code>repeated uint64 avatar_team_guid_list = 14;</code>
-     * @return A list containing the avatarTeamGuidList.
-     */
-    @java.lang.Override
-    public java.util.List<java.lang.Long>
-        getAvatarTeamGuidListList() {
-      return avatarTeamGuidList_;
-    }
-    /**
-     * <code>repeated uint64 avatar_team_guid_list = 14;</code>
-     * @return The count of avatarTeamGuidList.
-     */
-    public int getAvatarTeamGuidListCount() {
-      return avatarTeamGuidList_.size();
-    }
-    /**
-     * <code>repeated uint64 avatar_team_guid_list = 14;</code>
-     * @param index The index of the element to return.
-     * @return The avatarTeamGuidList at the given index.
-     */
-    public long getAvatarTeamGuidList(int index) {
-      return avatarTeamGuidList_.getLong(index);
-    }
-    private int avatarTeamGuidListMemoizedSerializedSize = -1;
-
-    public static final int CUR_AVATAR_GUID_FIELD_NUMBER = 6;
-    private long curAvatarGuid_;
-    /**
-     * <code>uint64 cur_avatar_guid = 6;</code>
-     * @return The curAvatarGuid.
-     */
-    @java.lang.Override
-    public long getCurAvatarGuid() {
-      return curAvatarGuid_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -230,18 +230,18 @@ public final class PersistentDungeonSwitchAvatarRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (curAvatarGuid_ != 0L) {
-        output.writeUInt64(6, curAvatarGuid_);
-      }
-      if (retcode_ != 0) {
-        output.writeInt32(13, retcode_);
-      }
       if (getAvatarTeamGuidListList().size() > 0) {
-        output.writeUInt32NoTag(114);
+        output.writeUInt32NoTag(58);
         output.writeUInt32NoTag(avatarTeamGuidListMemoizedSerializedSize);
       }
       for (int i = 0; i < avatarTeamGuidList_.size(); i++) {
         output.writeUInt64NoTag(avatarTeamGuidList_.getLong(i));
+      }
+      if (retcode_ != 0) {
+        output.writeInt32(13, retcode_);
+      }
+      if (curAvatarGuid_ != 0L) {
+        output.writeUInt64(15, curAvatarGuid_);
       }
       unknownFields.writeTo(output);
     }
@@ -252,14 +252,6 @@ public final class PersistentDungeonSwitchAvatarRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (curAvatarGuid_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(6, curAvatarGuid_);
-      }
-      if (retcode_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(13, retcode_);
-      }
       {
         int dataSize = 0;
         for (int i = 0; i < avatarTeamGuidList_.size(); i++) {
@@ -273,6 +265,14 @@ public final class PersistentDungeonSwitchAvatarRspOuterClass {
               .computeInt32SizeNoTag(dataSize);
         }
         avatarTeamGuidListMemoizedSerializedSize = dataSize;
+      }
+      if (retcode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(13, retcode_);
+      }
+      if (curAvatarGuid_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(15, curAvatarGuid_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -289,12 +289,12 @@ public final class PersistentDungeonSwitchAvatarRspOuterClass {
       }
       emu.grasscutter.net.proto.PersistentDungeonSwitchAvatarRspOuterClass.PersistentDungeonSwitchAvatarRsp other = (emu.grasscutter.net.proto.PersistentDungeonSwitchAvatarRspOuterClass.PersistentDungeonSwitchAvatarRsp) obj;
 
-      if (getRetcode()
-          != other.getRetcode()) return false;
       if (!getAvatarTeamGuidListList()
           .equals(other.getAvatarTeamGuidListList())) return false;
       if (getCurAvatarGuid()
           != other.getCurAvatarGuid()) return false;
+      if (getRetcode()
+          != other.getRetcode()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -306,8 +306,6 @@ public final class PersistentDungeonSwitchAvatarRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getRetcode();
       if (getAvatarTeamGuidListCount() > 0) {
         hash = (37 * hash) + AVATAR_TEAM_GUID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getAvatarTeamGuidListList().hashCode();
@@ -315,6 +313,8 @@ public final class PersistentDungeonSwitchAvatarRspOuterClass {
       hash = (37 * hash) + CUR_AVATAR_GUID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getCurAvatarGuid());
+      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
+      hash = (53 * hash) + getRetcode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -412,8 +412,8 @@ public final class PersistentDungeonSwitchAvatarRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 1601
-     * Obf: AAFLJLMEIGG
+     * CmdId: 7969
+     * Obf: MJNAFPPOPCC
      * </pre>
      *
      * Protobuf type {@code PersistentDungeonSwitchAvatarRsp}
@@ -453,11 +453,11 @@ public final class PersistentDungeonSwitchAvatarRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        retcode_ = 0;
-
         avatarTeamGuidList_ = emptyLongList();
         bitField0_ = (bitField0_ & ~0x00000001);
         curAvatarGuid_ = 0L;
+
+        retcode_ = 0;
 
         return this;
       }
@@ -486,13 +486,13 @@ public final class PersistentDungeonSwitchAvatarRspOuterClass {
       public emu.grasscutter.net.proto.PersistentDungeonSwitchAvatarRspOuterClass.PersistentDungeonSwitchAvatarRsp buildPartial() {
         emu.grasscutter.net.proto.PersistentDungeonSwitchAvatarRspOuterClass.PersistentDungeonSwitchAvatarRsp result = new emu.grasscutter.net.proto.PersistentDungeonSwitchAvatarRspOuterClass.PersistentDungeonSwitchAvatarRsp(this);
         int from_bitField0_ = bitField0_;
-        result.retcode_ = retcode_;
         if (((bitField0_ & 0x00000001) != 0)) {
           avatarTeamGuidList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.avatarTeamGuidList_ = avatarTeamGuidList_;
         result.curAvatarGuid_ = curAvatarGuid_;
+        result.retcode_ = retcode_;
         onBuilt();
         return result;
       }
@@ -541,9 +541,6 @@ public final class PersistentDungeonSwitchAvatarRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.PersistentDungeonSwitchAvatarRspOuterClass.PersistentDungeonSwitchAvatarRsp other) {
         if (other == emu.grasscutter.net.proto.PersistentDungeonSwitchAvatarRspOuterClass.PersistentDungeonSwitchAvatarRsp.getDefaultInstance()) return this;
-        if (other.getRetcode() != 0) {
-          setRetcode(other.getRetcode());
-        }
         if (!other.avatarTeamGuidList_.isEmpty()) {
           if (avatarTeamGuidList_.isEmpty()) {
             avatarTeamGuidList_ = other.avatarTeamGuidList_;
@@ -556,6 +553,9 @@ public final class PersistentDungeonSwitchAvatarRspOuterClass {
         }
         if (other.getCurAvatarGuid() != 0L) {
           setCurAvatarGuid(other.getCurAvatarGuid());
+        }
+        if (other.getRetcode() != 0) {
+          setRetcode(other.getRetcode());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -587,6 +587,116 @@ public final class PersistentDungeonSwitchAvatarRspOuterClass {
       }
       private int bitField0_;
 
+      private com.google.protobuf.Internal.LongList avatarTeamGuidList_ = emptyLongList();
+      private void ensureAvatarTeamGuidListIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          avatarTeamGuidList_ = mutableCopy(avatarTeamGuidList_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <code>repeated uint64 avatar_team_guid_list = 7;</code>
+       * @return A list containing the avatarTeamGuidList.
+       */
+      public java.util.List<java.lang.Long>
+          getAvatarTeamGuidListList() {
+        return ((bitField0_ & 0x00000001) != 0) ?
+                 java.util.Collections.unmodifiableList(avatarTeamGuidList_) : avatarTeamGuidList_;
+      }
+      /**
+       * <code>repeated uint64 avatar_team_guid_list = 7;</code>
+       * @return The count of avatarTeamGuidList.
+       */
+      public int getAvatarTeamGuidListCount() {
+        return avatarTeamGuidList_.size();
+      }
+      /**
+       * <code>repeated uint64 avatar_team_guid_list = 7;</code>
+       * @param index The index of the element to return.
+       * @return The avatarTeamGuidList at the given index.
+       */
+      public long getAvatarTeamGuidList(int index) {
+        return avatarTeamGuidList_.getLong(index);
+      }
+      /**
+       * <code>repeated uint64 avatar_team_guid_list = 7;</code>
+       * @param index The index to set the value at.
+       * @param value The avatarTeamGuidList to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAvatarTeamGuidList(
+          int index, long value) {
+        ensureAvatarTeamGuidListIsMutable();
+        avatarTeamGuidList_.setLong(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint64 avatar_team_guid_list = 7;</code>
+       * @param value The avatarTeamGuidList to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAvatarTeamGuidList(long value) {
+        ensureAvatarTeamGuidListIsMutable();
+        avatarTeamGuidList_.addLong(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint64 avatar_team_guid_list = 7;</code>
+       * @param values The avatarTeamGuidList to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllAvatarTeamGuidList(
+          java.lang.Iterable<? extends java.lang.Long> values) {
+        ensureAvatarTeamGuidListIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, avatarTeamGuidList_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint64 avatar_team_guid_list = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAvatarTeamGuidList() {
+        avatarTeamGuidList_ = emptyLongList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      private long curAvatarGuid_ ;
+      /**
+       * <code>uint64 cur_avatar_guid = 15;</code>
+       * @return The curAvatarGuid.
+       */
+      @java.lang.Override
+      public long getCurAvatarGuid() {
+        return curAvatarGuid_;
+      }
+      /**
+       * <code>uint64 cur_avatar_guid = 15;</code>
+       * @param value The curAvatarGuid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCurAvatarGuid(long value) {
+        
+        curAvatarGuid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 cur_avatar_guid = 15;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCurAvatarGuid() {
+        
+        curAvatarGuid_ = 0L;
+        onChanged();
+        return this;
+      }
+
       private int retcode_ ;
       /**
        * <code>int32 retcode = 13;</code>
@@ -614,116 +724,6 @@ public final class PersistentDungeonSwitchAvatarRspOuterClass {
       public Builder clearRetcode() {
         
         retcode_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.Internal.LongList avatarTeamGuidList_ = emptyLongList();
-      private void ensureAvatarTeamGuidListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          avatarTeamGuidList_ = mutableCopy(avatarTeamGuidList_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-      /**
-       * <code>repeated uint64 avatar_team_guid_list = 14;</code>
-       * @return A list containing the avatarTeamGuidList.
-       */
-      public java.util.List<java.lang.Long>
-          getAvatarTeamGuidListList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
-                 java.util.Collections.unmodifiableList(avatarTeamGuidList_) : avatarTeamGuidList_;
-      }
-      /**
-       * <code>repeated uint64 avatar_team_guid_list = 14;</code>
-       * @return The count of avatarTeamGuidList.
-       */
-      public int getAvatarTeamGuidListCount() {
-        return avatarTeamGuidList_.size();
-      }
-      /**
-       * <code>repeated uint64 avatar_team_guid_list = 14;</code>
-       * @param index The index of the element to return.
-       * @return The avatarTeamGuidList at the given index.
-       */
-      public long getAvatarTeamGuidList(int index) {
-        return avatarTeamGuidList_.getLong(index);
-      }
-      /**
-       * <code>repeated uint64 avatar_team_guid_list = 14;</code>
-       * @param index The index to set the value at.
-       * @param value The avatarTeamGuidList to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAvatarTeamGuidList(
-          int index, long value) {
-        ensureAvatarTeamGuidListIsMutable();
-        avatarTeamGuidList_.setLong(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint64 avatar_team_guid_list = 14;</code>
-       * @param value The avatarTeamGuidList to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAvatarTeamGuidList(long value) {
-        ensureAvatarTeamGuidListIsMutable();
-        avatarTeamGuidList_.addLong(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint64 avatar_team_guid_list = 14;</code>
-       * @param values The avatarTeamGuidList to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllAvatarTeamGuidList(
-          java.lang.Iterable<? extends java.lang.Long> values) {
-        ensureAvatarTeamGuidListIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, avatarTeamGuidList_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint64 avatar_team_guid_list = 14;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearAvatarTeamGuidList() {
-        avatarTeamGuidList_ = emptyLongList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-
-      private long curAvatarGuid_ ;
-      /**
-       * <code>uint64 cur_avatar_guid = 6;</code>
-       * @return The curAvatarGuid.
-       */
-      @java.lang.Override
-      public long getCurAvatarGuid() {
-        return curAvatarGuid_;
-      }
-      /**
-       * <code>uint64 cur_avatar_guid = 6;</code>
-       * @param value The curAvatarGuid to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCurAvatarGuid(long value) {
-        
-        curAvatarGuid_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 cur_avatar_guid = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCurAvatarGuid() {
-        
-        curAvatarGuid_ = 0L;
         onChanged();
         return this;
       }
@@ -795,9 +795,9 @@ public final class PersistentDungeonSwitchAvatarRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n&PersistentDungeonSwitchAvatarRsp.proto" +
-      "\"k\n PersistentDungeonSwitchAvatarRsp\022\017\n\007" +
-      "retcode\030\r \001(\005\022\035\n\025avatar_team_guid_list\030\016" +
-      " \003(\004\022\027\n\017cur_avatar_guid\030\006 \001(\004B\033\n\031emu.gra" +
+      "\"k\n PersistentDungeonSwitchAvatarRsp\022\035\n\025" +
+      "avatar_team_guid_list\030\007 \003(\004\022\027\n\017cur_avata" +
+      "r_guid\030\017 \001(\004\022\017\n\007retcode\030\r \001(\005B\033\n\031emu.gra" +
       "sscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -809,7 +809,7 @@ public final class PersistentDungeonSwitchAvatarRspOuterClass {
     internal_static_PersistentDungeonSwitchAvatarRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_PersistentDungeonSwitchAvatarRsp_descriptor,
-        new java.lang.String[] { "Retcode", "AvatarTeamGuidList", "CurAvatarGuid", });
+        new java.lang.String[] { "AvatarTeamGuidList", "CurAvatarGuid", "Retcode", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

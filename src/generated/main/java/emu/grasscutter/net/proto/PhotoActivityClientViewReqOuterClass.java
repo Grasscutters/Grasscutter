@@ -19,15 +19,15 @@ public final class PhotoActivityClientViewReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 pos_id = 9;</code>
+     * <code>uint32 pos_id = 12;</code>
      * @return The posId.
      */
     int getPosId();
   }
   /**
    * <pre>
-   * CmdId: 8632
-   * Obf: HLGDOJBCHEN
+   * CmdId: 21878
+   * Obf: HHJLNGIDODJ
    * </pre>
    *
    * Protobuf type {@code PhotoActivityClientViewReq}
@@ -74,7 +74,7 @@ public final class PhotoActivityClientViewReqOuterClass {
             case 0:
               done = true;
               break;
-            case 72: {
+            case 96: {
 
               posId_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class PhotoActivityClientViewReqOuterClass {
               emu.grasscutter.net.proto.PhotoActivityClientViewReqOuterClass.PhotoActivityClientViewReq.class, emu.grasscutter.net.proto.PhotoActivityClientViewReqOuterClass.PhotoActivityClientViewReq.Builder.class);
     }
 
-    public static final int POS_ID_FIELD_NUMBER = 9;
+    public static final int POS_ID_FIELD_NUMBER = 12;
     private int posId_;
     /**
-     * <code>uint32 pos_id = 9;</code>
+     * <code>uint32 pos_id = 12;</code>
      * @return The posId.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class PhotoActivityClientViewReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (posId_ != 0) {
-        output.writeUInt32(9, posId_);
+        output.writeUInt32(12, posId_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class PhotoActivityClientViewReqOuterClass {
       size = 0;
       if (posId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, posId_);
+          .computeUInt32Size(12, posId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class PhotoActivityClientViewReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8632
-     * Obf: HLGDOJBCHEN
+     * CmdId: 21878
+     * Obf: HHJLNGIDODJ
      * </pre>
      *
      * Protobuf type {@code PhotoActivityClientViewReq}
@@ -431,7 +431,7 @@ public final class PhotoActivityClientViewReqOuterClass {
 
       private int posId_ ;
       /**
-       * <code>uint32 pos_id = 9;</code>
+       * <code>uint32 pos_id = 12;</code>
        * @return The posId.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class PhotoActivityClientViewReqOuterClass {
         return posId_;
       }
       /**
-       * <code>uint32 pos_id = 9;</code>
+       * <code>uint32 pos_id = 12;</code>
        * @param value The posId to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class PhotoActivityClientViewReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 pos_id = 9;</code>
+       * <code>uint32 pos_id = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearPosId() {
@@ -527,7 +527,7 @@ public final class PhotoActivityClientViewReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n PhotoActivityClientViewReq.proto\",\n\032Ph" +
-      "otoActivityClientViewReq\022\016\n\006pos_id\030\t \001(\r" +
+      "otoActivityClientViewReq\022\016\n\006pos_id\030\014 \001(\r" +
       "B\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

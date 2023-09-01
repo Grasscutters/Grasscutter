@@ -19,24 +19,24 @@ public final class ChatChannelInfoNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.ChatChannelInfo channel_info = 5;</code>
+     * <code>.ChatChannelInfo channel_info = 4;</code>
      * @return Whether the channelInfo field is set.
      */
     boolean hasChannelInfo();
     /**
-     * <code>.ChatChannelInfo channel_info = 5;</code>
+     * <code>.ChatChannelInfo channel_info = 4;</code>
      * @return The channelInfo.
      */
     emu.grasscutter.net.proto.ChatChannelInfoOuterClass.ChatChannelInfo getChannelInfo();
     /**
-     * <code>.ChatChannelInfo channel_info = 5;</code>
+     * <code>.ChatChannelInfo channel_info = 4;</code>
      */
     emu.grasscutter.net.proto.ChatChannelInfoOuterClass.ChatChannelInfoOrBuilder getChannelInfoOrBuilder();
   }
   /**
    * <pre>
-   * CmdId: 5044
-   * Obf: GAHFHBNBEHN
+   * CmdId: 5319
+   * Obf: BMILFLEIHON
    * </pre>
    *
    * Protobuf type {@code ChatChannelInfoNotify}
@@ -83,7 +83,7 @@ public final class ChatChannelInfoNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 42: {
+            case 34: {
               emu.grasscutter.net.proto.ChatChannelInfoOuterClass.ChatChannelInfo.Builder subBuilder = null;
               if (channelInfo_ != null) {
                 subBuilder = channelInfo_.toBuilder();
@@ -128,10 +128,10 @@ public final class ChatChannelInfoNotifyOuterClass {
               emu.grasscutter.net.proto.ChatChannelInfoNotifyOuterClass.ChatChannelInfoNotify.class, emu.grasscutter.net.proto.ChatChannelInfoNotifyOuterClass.ChatChannelInfoNotify.Builder.class);
     }
 
-    public static final int CHANNEL_INFO_FIELD_NUMBER = 5;
+    public static final int CHANNEL_INFO_FIELD_NUMBER = 4;
     private emu.grasscutter.net.proto.ChatChannelInfoOuterClass.ChatChannelInfo channelInfo_;
     /**
-     * <code>.ChatChannelInfo channel_info = 5;</code>
+     * <code>.ChatChannelInfo channel_info = 4;</code>
      * @return Whether the channelInfo field is set.
      */
     @java.lang.Override
@@ -139,7 +139,7 @@ public final class ChatChannelInfoNotifyOuterClass {
       return channelInfo_ != null;
     }
     /**
-     * <code>.ChatChannelInfo channel_info = 5;</code>
+     * <code>.ChatChannelInfo channel_info = 4;</code>
      * @return The channelInfo.
      */
     @java.lang.Override
@@ -147,7 +147,7 @@ public final class ChatChannelInfoNotifyOuterClass {
       return channelInfo_ == null ? emu.grasscutter.net.proto.ChatChannelInfoOuterClass.ChatChannelInfo.getDefaultInstance() : channelInfo_;
     }
     /**
-     * <code>.ChatChannelInfo channel_info = 5;</code>
+     * <code>.ChatChannelInfo channel_info = 4;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.ChatChannelInfoOuterClass.ChatChannelInfoOrBuilder getChannelInfoOrBuilder() {
@@ -169,7 +169,7 @@ public final class ChatChannelInfoNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (channelInfo_ != null) {
-        output.writeMessage(5, getChannelInfo());
+        output.writeMessage(4, getChannelInfo());
       }
       unknownFields.writeTo(output);
     }
@@ -182,7 +182,7 @@ public final class ChatChannelInfoNotifyOuterClass {
       size = 0;
       if (channelInfo_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, getChannelInfo());
+          .computeMessageSize(4, getChannelInfo());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -316,8 +316,8 @@ public final class ChatChannelInfoNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 5044
-     * Obf: GAHFHBNBEHN
+     * CmdId: 5319
+     * Obf: BMILFLEIHON
      * </pre>
      *
      * Protobuf type {@code ChatChannelInfoNotify}
@@ -478,14 +478,14 @@ public final class ChatChannelInfoNotifyOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.ChatChannelInfoOuterClass.ChatChannelInfo, emu.grasscutter.net.proto.ChatChannelInfoOuterClass.ChatChannelInfo.Builder, emu.grasscutter.net.proto.ChatChannelInfoOuterClass.ChatChannelInfoOrBuilder> channelInfoBuilder_;
       /**
-       * <code>.ChatChannelInfo channel_info = 5;</code>
+       * <code>.ChatChannelInfo channel_info = 4;</code>
        * @return Whether the channelInfo field is set.
        */
       public boolean hasChannelInfo() {
         return channelInfoBuilder_ != null || channelInfo_ != null;
       }
       /**
-       * <code>.ChatChannelInfo channel_info = 5;</code>
+       * <code>.ChatChannelInfo channel_info = 4;</code>
        * @return The channelInfo.
        */
       public emu.grasscutter.net.proto.ChatChannelInfoOuterClass.ChatChannelInfo getChannelInfo() {
@@ -496,7 +496,7 @@ public final class ChatChannelInfoNotifyOuterClass {
         }
       }
       /**
-       * <code>.ChatChannelInfo channel_info = 5;</code>
+       * <code>.ChatChannelInfo channel_info = 4;</code>
        */
       public Builder setChannelInfo(emu.grasscutter.net.proto.ChatChannelInfoOuterClass.ChatChannelInfo value) {
         if (channelInfoBuilder_ == null) {
@@ -512,7 +512,7 @@ public final class ChatChannelInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.ChatChannelInfo channel_info = 5;</code>
+       * <code>.ChatChannelInfo channel_info = 4;</code>
        */
       public Builder setChannelInfo(
           emu.grasscutter.net.proto.ChatChannelInfoOuterClass.ChatChannelInfo.Builder builderForValue) {
@@ -526,7 +526,7 @@ public final class ChatChannelInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.ChatChannelInfo channel_info = 5;</code>
+       * <code>.ChatChannelInfo channel_info = 4;</code>
        */
       public Builder mergeChannelInfo(emu.grasscutter.net.proto.ChatChannelInfoOuterClass.ChatChannelInfo value) {
         if (channelInfoBuilder_ == null) {
@@ -544,7 +544,7 @@ public final class ChatChannelInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.ChatChannelInfo channel_info = 5;</code>
+       * <code>.ChatChannelInfo channel_info = 4;</code>
        */
       public Builder clearChannelInfo() {
         if (channelInfoBuilder_ == null) {
@@ -558,7 +558,7 @@ public final class ChatChannelInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.ChatChannelInfo channel_info = 5;</code>
+       * <code>.ChatChannelInfo channel_info = 4;</code>
        */
       public emu.grasscutter.net.proto.ChatChannelInfoOuterClass.ChatChannelInfo.Builder getChannelInfoBuilder() {
         
@@ -566,7 +566,7 @@ public final class ChatChannelInfoNotifyOuterClass {
         return getChannelInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.ChatChannelInfo channel_info = 5;</code>
+       * <code>.ChatChannelInfo channel_info = 4;</code>
        */
       public emu.grasscutter.net.proto.ChatChannelInfoOuterClass.ChatChannelInfoOrBuilder getChannelInfoOrBuilder() {
         if (channelInfoBuilder_ != null) {
@@ -577,7 +577,7 @@ public final class ChatChannelInfoNotifyOuterClass {
         }
       }
       /**
-       * <code>.ChatChannelInfo channel_info = 5;</code>
+       * <code>.ChatChannelInfo channel_info = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.ChatChannelInfoOuterClass.ChatChannelInfo, emu.grasscutter.net.proto.ChatChannelInfoOuterClass.ChatChannelInfo.Builder, emu.grasscutter.net.proto.ChatChannelInfoOuterClass.ChatChannelInfoOrBuilder> 
@@ -661,7 +661,7 @@ public final class ChatChannelInfoNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\033ChatChannelInfoNotify.proto\032\025ChatChann" +
       "elInfo.proto\"?\n\025ChatChannelInfoNotify\022&\n" +
-      "\014channel_info\030\005 \001(\0132\020.ChatChannelInfoB\033\n" +
+      "\014channel_info\030\004 \001(\0132\020.ChatChannelInfoB\033\n" +
       "\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

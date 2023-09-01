@@ -19,15 +19,15 @@ public final class MechanicusCloseNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 mechanicus_id = 11;</code>
+     * <code>uint32 mechanicus_id = 3;</code>
      * @return The mechanicusId.
      */
     int getMechanicusId();
   }
   /**
    * <pre>
-   * CmdId: 3948
-   * Obf: NGIPLGINCPF
+   * CmdId: 25277
+   * Obf: GELIIDJKNOL
    * </pre>
    *
    * Protobuf type {@code MechanicusCloseNotify}
@@ -74,7 +74,7 @@ public final class MechanicusCloseNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 88: {
+            case 24: {
 
               mechanicusId_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class MechanicusCloseNotifyOuterClass {
               emu.grasscutter.net.proto.MechanicusCloseNotifyOuterClass.MechanicusCloseNotify.class, emu.grasscutter.net.proto.MechanicusCloseNotifyOuterClass.MechanicusCloseNotify.Builder.class);
     }
 
-    public static final int MECHANICUS_ID_FIELD_NUMBER = 11;
+    public static final int MECHANICUS_ID_FIELD_NUMBER = 3;
     private int mechanicusId_;
     /**
-     * <code>uint32 mechanicus_id = 11;</code>
+     * <code>uint32 mechanicus_id = 3;</code>
      * @return The mechanicusId.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class MechanicusCloseNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (mechanicusId_ != 0) {
-        output.writeUInt32(11, mechanicusId_);
+        output.writeUInt32(3, mechanicusId_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class MechanicusCloseNotifyOuterClass {
       size = 0;
       if (mechanicusId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, mechanicusId_);
+          .computeUInt32Size(3, mechanicusId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class MechanicusCloseNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 3948
-     * Obf: NGIPLGINCPF
+     * CmdId: 25277
+     * Obf: GELIIDJKNOL
      * </pre>
      *
      * Protobuf type {@code MechanicusCloseNotify}
@@ -431,7 +431,7 @@ public final class MechanicusCloseNotifyOuterClass {
 
       private int mechanicusId_ ;
       /**
-       * <code>uint32 mechanicus_id = 11;</code>
+       * <code>uint32 mechanicus_id = 3;</code>
        * @return The mechanicusId.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class MechanicusCloseNotifyOuterClass {
         return mechanicusId_;
       }
       /**
-       * <code>uint32 mechanicus_id = 11;</code>
+       * <code>uint32 mechanicus_id = 3;</code>
        * @param value The mechanicusId to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class MechanicusCloseNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 mechanicus_id = 11;</code>
+       * <code>uint32 mechanicus_id = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearMechanicusId() {
@@ -527,7 +527,7 @@ public final class MechanicusCloseNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\033MechanicusCloseNotify.proto\".\n\025Mechani" +
-      "cusCloseNotify\022\025\n\rmechanicus_id\030\013 \001(\rB\033\n" +
+      "cusCloseNotify\022\025\n\rmechanicus_id\030\003 \001(\rB\033\n" +
       "\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

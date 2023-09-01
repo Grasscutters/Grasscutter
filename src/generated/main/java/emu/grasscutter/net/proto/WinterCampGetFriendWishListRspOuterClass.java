@@ -19,39 +19,39 @@ public final class WinterCampGetFriendWishListRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 10;</code>
-     * @return The retcode.
-     */
-    int getRetcode();
-
-    /**
-     * <code>repeated .WinterCampFriendWishData wish_data_list = 15;</code>
+     * <code>repeated .WinterCampFriendWishData wish_data_list = 9;</code>
      */
     java.util.List<emu.grasscutter.net.proto.WinterCampFriendWishDataOuterClass.WinterCampFriendWishData> 
         getWishDataListList();
     /**
-     * <code>repeated .WinterCampFriendWishData wish_data_list = 15;</code>
+     * <code>repeated .WinterCampFriendWishData wish_data_list = 9;</code>
      */
     emu.grasscutter.net.proto.WinterCampFriendWishDataOuterClass.WinterCampFriendWishData getWishDataList(int index);
     /**
-     * <code>repeated .WinterCampFriendWishData wish_data_list = 15;</code>
+     * <code>repeated .WinterCampFriendWishData wish_data_list = 9;</code>
      */
     int getWishDataListCount();
     /**
-     * <code>repeated .WinterCampFriendWishData wish_data_list = 15;</code>
+     * <code>repeated .WinterCampFriendWishData wish_data_list = 9;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.WinterCampFriendWishDataOuterClass.WinterCampFriendWishDataOrBuilder> 
         getWishDataListOrBuilderList();
     /**
-     * <code>repeated .WinterCampFriendWishData wish_data_list = 15;</code>
+     * <code>repeated .WinterCampFriendWishData wish_data_list = 9;</code>
      */
     emu.grasscutter.net.proto.WinterCampFriendWishDataOuterClass.WinterCampFriendWishDataOrBuilder getWishDataListOrBuilder(
         int index);
+
+    /**
+     * <code>int32 retcode = 3;</code>
+     * @return The retcode.
+     */
+    int getRetcode();
   }
   /**
    * <pre>
-   * CmdId: 8223
-   * Obf: BMEFFPHBKAF
+   * CmdId: 24739
+   * Obf: MGIDKFPJFKK
    * </pre>
    *
    * Protobuf type {@code WinterCampGetFriendWishListRsp}
@@ -100,12 +100,12 @@ public final class WinterCampGetFriendWishListRspOuterClass {
             case 0:
               done = true;
               break;
-            case 80: {
+            case 24: {
 
               retcode_ = input.readInt32();
               break;
             }
-            case 122: {
+            case 74: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 wishDataList_ = new java.util.ArrayList<emu.grasscutter.net.proto.WinterCampFriendWishDataOuterClass.WinterCampFriendWishData>();
                 mutable_bitField0_ |= 0x00000001;
@@ -149,28 +149,17 @@ public final class WinterCampGetFriendWishListRspOuterClass {
               emu.grasscutter.net.proto.WinterCampGetFriendWishListRspOuterClass.WinterCampGetFriendWishListRsp.class, emu.grasscutter.net.proto.WinterCampGetFriendWishListRspOuterClass.WinterCampGetFriendWishListRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 10;
-    private int retcode_;
-    /**
-     * <code>int32 retcode = 10;</code>
-     * @return The retcode.
-     */
-    @java.lang.Override
-    public int getRetcode() {
-      return retcode_;
-    }
-
-    public static final int WISH_DATA_LIST_FIELD_NUMBER = 15;
+    public static final int WISH_DATA_LIST_FIELD_NUMBER = 9;
     private java.util.List<emu.grasscutter.net.proto.WinterCampFriendWishDataOuterClass.WinterCampFriendWishData> wishDataList_;
     /**
-     * <code>repeated .WinterCampFriendWishData wish_data_list = 15;</code>
+     * <code>repeated .WinterCampFriendWishData wish_data_list = 9;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.WinterCampFriendWishDataOuterClass.WinterCampFriendWishData> getWishDataListList() {
       return wishDataList_;
     }
     /**
-     * <code>repeated .WinterCampFriendWishData wish_data_list = 15;</code>
+     * <code>repeated .WinterCampFriendWishData wish_data_list = 9;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.WinterCampFriendWishDataOuterClass.WinterCampFriendWishDataOrBuilder> 
@@ -178,26 +167,37 @@ public final class WinterCampGetFriendWishListRspOuterClass {
       return wishDataList_;
     }
     /**
-     * <code>repeated .WinterCampFriendWishData wish_data_list = 15;</code>
+     * <code>repeated .WinterCampFriendWishData wish_data_list = 9;</code>
      */
     @java.lang.Override
     public int getWishDataListCount() {
       return wishDataList_.size();
     }
     /**
-     * <code>repeated .WinterCampFriendWishData wish_data_list = 15;</code>
+     * <code>repeated .WinterCampFriendWishData wish_data_list = 9;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.WinterCampFriendWishDataOuterClass.WinterCampFriendWishData getWishDataList(int index) {
       return wishDataList_.get(index);
     }
     /**
-     * <code>repeated .WinterCampFriendWishData wish_data_list = 15;</code>
+     * <code>repeated .WinterCampFriendWishData wish_data_list = 9;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.WinterCampFriendWishDataOuterClass.WinterCampFriendWishDataOrBuilder getWishDataListOrBuilder(
         int index) {
       return wishDataList_.get(index);
+    }
+
+    public static final int RETCODE_FIELD_NUMBER = 3;
+    private int retcode_;
+    /**
+     * <code>int32 retcode = 3;</code>
+     * @return The retcode.
+     */
+    @java.lang.Override
+    public int getRetcode() {
+      return retcode_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -215,10 +215,10 @@ public final class WinterCampGetFriendWishListRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (retcode_ != 0) {
-        output.writeInt32(10, retcode_);
+        output.writeInt32(3, retcode_);
       }
       for (int i = 0; i < wishDataList_.size(); i++) {
-        output.writeMessage(15, wishDataList_.get(i));
+        output.writeMessage(9, wishDataList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -231,11 +231,11 @@ public final class WinterCampGetFriendWishListRspOuterClass {
       size = 0;
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(10, retcode_);
+          .computeInt32Size(3, retcode_);
       }
       for (int i = 0; i < wishDataList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(15, wishDataList_.get(i));
+          .computeMessageSize(9, wishDataList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -252,10 +252,10 @@ public final class WinterCampGetFriendWishListRspOuterClass {
       }
       emu.grasscutter.net.proto.WinterCampGetFriendWishListRspOuterClass.WinterCampGetFriendWishListRsp other = (emu.grasscutter.net.proto.WinterCampGetFriendWishListRspOuterClass.WinterCampGetFriendWishListRsp) obj;
 
-      if (getRetcode()
-          != other.getRetcode()) return false;
       if (!getWishDataListList()
           .equals(other.getWishDataListList())) return false;
+      if (getRetcode()
+          != other.getRetcode()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -267,12 +267,12 @@ public final class WinterCampGetFriendWishListRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getRetcode();
       if (getWishDataListCount() > 0) {
         hash = (37 * hash) + WISH_DATA_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getWishDataListList().hashCode();
       }
+      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
+      hash = (53 * hash) + getRetcode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -370,8 +370,8 @@ public final class WinterCampGetFriendWishListRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8223
-     * Obf: BMEFFPHBKAF
+     * CmdId: 24739
+     * Obf: MGIDKFPJFKK
      * </pre>
      *
      * Protobuf type {@code WinterCampGetFriendWishListRsp}
@@ -412,14 +412,14 @@ public final class WinterCampGetFriendWishListRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        retcode_ = 0;
-
         if (wishDataListBuilder_ == null) {
           wishDataList_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           wishDataListBuilder_.clear();
         }
+        retcode_ = 0;
+
         return this;
       }
 
@@ -447,7 +447,6 @@ public final class WinterCampGetFriendWishListRspOuterClass {
       public emu.grasscutter.net.proto.WinterCampGetFriendWishListRspOuterClass.WinterCampGetFriendWishListRsp buildPartial() {
         emu.grasscutter.net.proto.WinterCampGetFriendWishListRspOuterClass.WinterCampGetFriendWishListRsp result = new emu.grasscutter.net.proto.WinterCampGetFriendWishListRspOuterClass.WinterCampGetFriendWishListRsp(this);
         int from_bitField0_ = bitField0_;
-        result.retcode_ = retcode_;
         if (wishDataListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             wishDataList_ = java.util.Collections.unmodifiableList(wishDataList_);
@@ -457,6 +456,7 @@ public final class WinterCampGetFriendWishListRspOuterClass {
         } else {
           result.wishDataList_ = wishDataListBuilder_.build();
         }
+        result.retcode_ = retcode_;
         onBuilt();
         return result;
       }
@@ -505,9 +505,6 @@ public final class WinterCampGetFriendWishListRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.WinterCampGetFriendWishListRspOuterClass.WinterCampGetFriendWishListRsp other) {
         if (other == emu.grasscutter.net.proto.WinterCampGetFriendWishListRspOuterClass.WinterCampGetFriendWishListRsp.getDefaultInstance()) return this;
-        if (other.getRetcode() != 0) {
-          setRetcode(other.getRetcode());
-        }
         if (wishDataListBuilder_ == null) {
           if (!other.wishDataList_.isEmpty()) {
             if (wishDataList_.isEmpty()) {
@@ -533,6 +530,9 @@ public final class WinterCampGetFriendWishListRspOuterClass {
               wishDataListBuilder_.addAllMessages(other.wishDataList_);
             }
           }
+        }
+        if (other.getRetcode() != 0) {
+          setRetcode(other.getRetcode());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -564,37 +564,6 @@ public final class WinterCampGetFriendWishListRspOuterClass {
       }
       private int bitField0_;
 
-      private int retcode_ ;
-      /**
-       * <code>int32 retcode = 10;</code>
-       * @return The retcode.
-       */
-      @java.lang.Override
-      public int getRetcode() {
-        return retcode_;
-      }
-      /**
-       * <code>int32 retcode = 10;</code>
-       * @param value The retcode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRetcode(int value) {
-        
-        retcode_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 retcode = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRetcode() {
-        
-        retcode_ = 0;
-        onChanged();
-        return this;
-      }
-
       private java.util.List<emu.grasscutter.net.proto.WinterCampFriendWishDataOuterClass.WinterCampFriendWishData> wishDataList_ =
         java.util.Collections.emptyList();
       private void ensureWishDataListIsMutable() {
@@ -608,7 +577,7 @@ public final class WinterCampGetFriendWishListRspOuterClass {
           emu.grasscutter.net.proto.WinterCampFriendWishDataOuterClass.WinterCampFriendWishData, emu.grasscutter.net.proto.WinterCampFriendWishDataOuterClass.WinterCampFriendWishData.Builder, emu.grasscutter.net.proto.WinterCampFriendWishDataOuterClass.WinterCampFriendWishDataOrBuilder> wishDataListBuilder_;
 
       /**
-       * <code>repeated .WinterCampFriendWishData wish_data_list = 15;</code>
+       * <code>repeated .WinterCampFriendWishData wish_data_list = 9;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.WinterCampFriendWishDataOuterClass.WinterCampFriendWishData> getWishDataListList() {
         if (wishDataListBuilder_ == null) {
@@ -618,7 +587,7 @@ public final class WinterCampGetFriendWishListRspOuterClass {
         }
       }
       /**
-       * <code>repeated .WinterCampFriendWishData wish_data_list = 15;</code>
+       * <code>repeated .WinterCampFriendWishData wish_data_list = 9;</code>
        */
       public int getWishDataListCount() {
         if (wishDataListBuilder_ == null) {
@@ -628,7 +597,7 @@ public final class WinterCampGetFriendWishListRspOuterClass {
         }
       }
       /**
-       * <code>repeated .WinterCampFriendWishData wish_data_list = 15;</code>
+       * <code>repeated .WinterCampFriendWishData wish_data_list = 9;</code>
        */
       public emu.grasscutter.net.proto.WinterCampFriendWishDataOuterClass.WinterCampFriendWishData getWishDataList(int index) {
         if (wishDataListBuilder_ == null) {
@@ -638,7 +607,7 @@ public final class WinterCampGetFriendWishListRspOuterClass {
         }
       }
       /**
-       * <code>repeated .WinterCampFriendWishData wish_data_list = 15;</code>
+       * <code>repeated .WinterCampFriendWishData wish_data_list = 9;</code>
        */
       public Builder setWishDataList(
           int index, emu.grasscutter.net.proto.WinterCampFriendWishDataOuterClass.WinterCampFriendWishData value) {
@@ -655,7 +624,7 @@ public final class WinterCampGetFriendWishListRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .WinterCampFriendWishData wish_data_list = 15;</code>
+       * <code>repeated .WinterCampFriendWishData wish_data_list = 9;</code>
        */
       public Builder setWishDataList(
           int index, emu.grasscutter.net.proto.WinterCampFriendWishDataOuterClass.WinterCampFriendWishData.Builder builderForValue) {
@@ -669,7 +638,7 @@ public final class WinterCampGetFriendWishListRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .WinterCampFriendWishData wish_data_list = 15;</code>
+       * <code>repeated .WinterCampFriendWishData wish_data_list = 9;</code>
        */
       public Builder addWishDataList(emu.grasscutter.net.proto.WinterCampFriendWishDataOuterClass.WinterCampFriendWishData value) {
         if (wishDataListBuilder_ == null) {
@@ -685,7 +654,7 @@ public final class WinterCampGetFriendWishListRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .WinterCampFriendWishData wish_data_list = 15;</code>
+       * <code>repeated .WinterCampFriendWishData wish_data_list = 9;</code>
        */
       public Builder addWishDataList(
           int index, emu.grasscutter.net.proto.WinterCampFriendWishDataOuterClass.WinterCampFriendWishData value) {
@@ -702,7 +671,7 @@ public final class WinterCampGetFriendWishListRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .WinterCampFriendWishData wish_data_list = 15;</code>
+       * <code>repeated .WinterCampFriendWishData wish_data_list = 9;</code>
        */
       public Builder addWishDataList(
           emu.grasscutter.net.proto.WinterCampFriendWishDataOuterClass.WinterCampFriendWishData.Builder builderForValue) {
@@ -716,7 +685,7 @@ public final class WinterCampGetFriendWishListRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .WinterCampFriendWishData wish_data_list = 15;</code>
+       * <code>repeated .WinterCampFriendWishData wish_data_list = 9;</code>
        */
       public Builder addWishDataList(
           int index, emu.grasscutter.net.proto.WinterCampFriendWishDataOuterClass.WinterCampFriendWishData.Builder builderForValue) {
@@ -730,7 +699,7 @@ public final class WinterCampGetFriendWishListRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .WinterCampFriendWishData wish_data_list = 15;</code>
+       * <code>repeated .WinterCampFriendWishData wish_data_list = 9;</code>
        */
       public Builder addAllWishDataList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.WinterCampFriendWishDataOuterClass.WinterCampFriendWishData> values) {
@@ -745,7 +714,7 @@ public final class WinterCampGetFriendWishListRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .WinterCampFriendWishData wish_data_list = 15;</code>
+       * <code>repeated .WinterCampFriendWishData wish_data_list = 9;</code>
        */
       public Builder clearWishDataList() {
         if (wishDataListBuilder_ == null) {
@@ -758,7 +727,7 @@ public final class WinterCampGetFriendWishListRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .WinterCampFriendWishData wish_data_list = 15;</code>
+       * <code>repeated .WinterCampFriendWishData wish_data_list = 9;</code>
        */
       public Builder removeWishDataList(int index) {
         if (wishDataListBuilder_ == null) {
@@ -771,14 +740,14 @@ public final class WinterCampGetFriendWishListRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .WinterCampFriendWishData wish_data_list = 15;</code>
+       * <code>repeated .WinterCampFriendWishData wish_data_list = 9;</code>
        */
       public emu.grasscutter.net.proto.WinterCampFriendWishDataOuterClass.WinterCampFriendWishData.Builder getWishDataListBuilder(
           int index) {
         return getWishDataListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .WinterCampFriendWishData wish_data_list = 15;</code>
+       * <code>repeated .WinterCampFriendWishData wish_data_list = 9;</code>
        */
       public emu.grasscutter.net.proto.WinterCampFriendWishDataOuterClass.WinterCampFriendWishDataOrBuilder getWishDataListOrBuilder(
           int index) {
@@ -788,7 +757,7 @@ public final class WinterCampGetFriendWishListRspOuterClass {
         }
       }
       /**
-       * <code>repeated .WinterCampFriendWishData wish_data_list = 15;</code>
+       * <code>repeated .WinterCampFriendWishData wish_data_list = 9;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.WinterCampFriendWishDataOuterClass.WinterCampFriendWishDataOrBuilder> 
            getWishDataListOrBuilderList() {
@@ -799,14 +768,14 @@ public final class WinterCampGetFriendWishListRspOuterClass {
         }
       }
       /**
-       * <code>repeated .WinterCampFriendWishData wish_data_list = 15;</code>
+       * <code>repeated .WinterCampFriendWishData wish_data_list = 9;</code>
        */
       public emu.grasscutter.net.proto.WinterCampFriendWishDataOuterClass.WinterCampFriendWishData.Builder addWishDataListBuilder() {
         return getWishDataListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.WinterCampFriendWishDataOuterClass.WinterCampFriendWishData.getDefaultInstance());
       }
       /**
-       * <code>repeated .WinterCampFriendWishData wish_data_list = 15;</code>
+       * <code>repeated .WinterCampFriendWishData wish_data_list = 9;</code>
        */
       public emu.grasscutter.net.proto.WinterCampFriendWishDataOuterClass.WinterCampFriendWishData.Builder addWishDataListBuilder(
           int index) {
@@ -814,7 +783,7 @@ public final class WinterCampGetFriendWishListRspOuterClass {
             index, emu.grasscutter.net.proto.WinterCampFriendWishDataOuterClass.WinterCampFriendWishData.getDefaultInstance());
       }
       /**
-       * <code>repeated .WinterCampFriendWishData wish_data_list = 15;</code>
+       * <code>repeated .WinterCampFriendWishData wish_data_list = 9;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.WinterCampFriendWishDataOuterClass.WinterCampFriendWishData.Builder> 
            getWishDataListBuilderList() {
@@ -833,6 +802,37 @@ public final class WinterCampGetFriendWishListRspOuterClass {
           wishDataList_ = null;
         }
         return wishDataListBuilder_;
+      }
+
+      private int retcode_ ;
+      /**
+       * <code>int32 retcode = 3;</code>
+       * @return The retcode.
+       */
+      @java.lang.Override
+      public int getRetcode() {
+        return retcode_;
+      }
+      /**
+       * <code>int32 retcode = 3;</code>
+       * @param value The retcode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRetcode(int value) {
+        
+        retcode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 retcode = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRetcode() {
+        
+        retcode_ = 0;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -903,9 +903,9 @@ public final class WinterCampGetFriendWishListRspOuterClass {
     java.lang.String[] descriptorData = {
       "\n$WinterCampGetFriendWishListRsp.proto\032\036" +
       "WinterCampFriendWishData.proto\"d\n\036Winter" +
-      "CampGetFriendWishListRsp\022\017\n\007retcode\030\n \001(" +
-      "\005\0221\n\016wish_data_list\030\017 \003(\0132\031.WinterCampFr" +
-      "iendWishDataB\033\n\031emu.grasscutter.net.prot" +
+      "CampGetFriendWishListRsp\0221\n\016wish_data_li" +
+      "st\030\t \003(\0132\031.WinterCampFriendWishData\022\017\n\007r" +
+      "etcode\030\003 \001(\005B\033\n\031emu.grasscutter.net.prot" +
       "ob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -918,7 +918,7 @@ public final class WinterCampGetFriendWishListRspOuterClass {
     internal_static_WinterCampGetFriendWishListRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_WinterCampGetFriendWishListRsp_descriptor,
-        new java.lang.String[] { "Retcode", "WishDataList", });
+        new java.lang.String[] { "WishDataList", "Retcode", });
     emu.grasscutter.net.proto.WinterCampFriendWishDataOuterClass.getDescriptor();
   }
 

@@ -20,8 +20,8 @@ public final class TeamChainTakeCostumeRewardReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 22589
-   * Obf: MLBKBPIDBCF
+   * CmdId: 24365
+   * Obf: CHFPHEEGLHP
    * </pre>
    *
    * Protobuf type {@code TeamChainTakeCostumeRewardReq}
@@ -246,8 +246,8 @@ public final class TeamChainTakeCostumeRewardReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 22589
-     * Obf: MLBKBPIDBCF
+     * CmdId: 24365
+     * Obf: CHFPHEEGLHP
      * </pre>
      *
      * Protobuf type {@code TeamChainTakeCostumeRewardReq}

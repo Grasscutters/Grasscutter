@@ -26,8 +26,8 @@ public final class EndCoinCollectPlaySingleModeRspOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 21649
-   * Obf: FMMLKPHCBJE
+   * CmdId: 24474
+   * Obf: FFAMGAGOFAI
    * </pre>
    *
    * Protobuf type {@code EndCoinCollectPlaySingleModeRsp}
@@ -279,8 +279,8 @@ public final class EndCoinCollectPlaySingleModeRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 21649
-     * Obf: FMMLKPHCBJE
+     * CmdId: 24474
+     * Obf: FFAMGAGOFAI
      * </pre>
      *
      * Protobuf type {@code EndCoinCollectPlaySingleModeRsp}

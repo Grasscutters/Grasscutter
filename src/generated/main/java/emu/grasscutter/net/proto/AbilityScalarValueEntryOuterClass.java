@@ -98,7 +98,7 @@ public final class AbilityScalarValueEntryOuterClass {
   }
   /**
    * <pre>
-   * Obf: ELHFFNHJCPD
+   * Obf: DAEKOPFKPMK
    * </pre>
    *
    * Protobuf type {@code AbilityScalarValueEntry}
@@ -671,7 +671,7 @@ public final class AbilityScalarValueEntryOuterClass {
     }
     /**
      * <pre>
-     * Obf: ELHFFNHJCPD
+     * Obf: DAEKOPFKPMK
      * </pre>
      *
      * Protobuf type {@code AbilityScalarValueEntry}

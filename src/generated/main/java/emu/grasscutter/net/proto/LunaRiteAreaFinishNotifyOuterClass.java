@@ -26,8 +26,8 @@ public final class LunaRiteAreaFinishNotifyOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 8751
-   * Obf: AIIFDHIDFJH
+   * CmdId: 22632
+   * Obf: KPAHHCIABPF
    * </pre>
    *
    * Protobuf type {@code LunaRiteAreaFinishNotify}
@@ -279,8 +279,8 @@ public final class LunaRiteAreaFinishNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8751
-     * Obf: AIIFDHIDFJH
+     * CmdId: 22632
+     * Obf: KPAHHCIABPF
      * </pre>
      *
      * Protobuf type {@code LunaRiteAreaFinishNotify}

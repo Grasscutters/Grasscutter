@@ -19,27 +19,27 @@ public final class PlantFlowerGetSeedInfoRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 6;</code>
+     * <code>uint32 schedule_id = 7;</code>
+     * @return The scheduleId.
+     */
+    int getScheduleId();
+
+    /**
+     * <code>int32 retcode = 10;</code>
      * @return The retcode.
      */
     int getRetcode();
 
     /**
-     * <code>uint32 seed_reward_id = 10;</code>
+     * <code>uint32 seed_reward_id = 13;</code>
      * @return The seedRewardId.
      */
     int getSeedRewardId();
-
-    /**
-     * <code>uint32 schedule_id = 3;</code>
-     * @return The scheduleId.
-     */
-    int getScheduleId();
   }
   /**
    * <pre>
-   * CmdId: 8426
-   * Obf: GECEFGMPFNI
+   * CmdId: 20942
+   * Obf: LKIHGLMBAHD
    * </pre>
    *
    * Protobuf type {@code PlantFlowerGetSeedInfoRsp}
@@ -86,17 +86,17 @@ public final class PlantFlowerGetSeedInfoRspOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 56: {
 
               scheduleId_ = input.readUInt32();
               break;
             }
-            case 48: {
+            case 80: {
 
               retcode_ = input.readInt32();
               break;
             }
-            case 80: {
+            case 104: {
 
               seedRewardId_ = input.readUInt32();
               break;
@@ -133,10 +133,21 @@ public final class PlantFlowerGetSeedInfoRspOuterClass {
               emu.grasscutter.net.proto.PlantFlowerGetSeedInfoRspOuterClass.PlantFlowerGetSeedInfoRsp.class, emu.grasscutter.net.proto.PlantFlowerGetSeedInfoRspOuterClass.PlantFlowerGetSeedInfoRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 6;
+    public static final int SCHEDULE_ID_FIELD_NUMBER = 7;
+    private int scheduleId_;
+    /**
+     * <code>uint32 schedule_id = 7;</code>
+     * @return The scheduleId.
+     */
+    @java.lang.Override
+    public int getScheduleId() {
+      return scheduleId_;
+    }
+
+    public static final int RETCODE_FIELD_NUMBER = 10;
     private int retcode_;
     /**
-     * <code>int32 retcode = 6;</code>
+     * <code>int32 retcode = 10;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -144,26 +155,15 @@ public final class PlantFlowerGetSeedInfoRspOuterClass {
       return retcode_;
     }
 
-    public static final int SEED_REWARD_ID_FIELD_NUMBER = 10;
+    public static final int SEED_REWARD_ID_FIELD_NUMBER = 13;
     private int seedRewardId_;
     /**
-     * <code>uint32 seed_reward_id = 10;</code>
+     * <code>uint32 seed_reward_id = 13;</code>
      * @return The seedRewardId.
      */
     @java.lang.Override
     public int getSeedRewardId() {
       return seedRewardId_;
-    }
-
-    public static final int SCHEDULE_ID_FIELD_NUMBER = 3;
-    private int scheduleId_;
-    /**
-     * <code>uint32 schedule_id = 3;</code>
-     * @return The scheduleId.
-     */
-    @java.lang.Override
-    public int getScheduleId() {
-      return scheduleId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -181,13 +181,13 @@ public final class PlantFlowerGetSeedInfoRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (scheduleId_ != 0) {
-        output.writeUInt32(3, scheduleId_);
+        output.writeUInt32(7, scheduleId_);
       }
       if (retcode_ != 0) {
-        output.writeInt32(6, retcode_);
+        output.writeInt32(10, retcode_);
       }
       if (seedRewardId_ != 0) {
-        output.writeUInt32(10, seedRewardId_);
+        output.writeUInt32(13, seedRewardId_);
       }
       unknownFields.writeTo(output);
     }
@@ -200,15 +200,15 @@ public final class PlantFlowerGetSeedInfoRspOuterClass {
       size = 0;
       if (scheduleId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, scheduleId_);
+          .computeUInt32Size(7, scheduleId_);
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(6, retcode_);
+          .computeInt32Size(10, retcode_);
       }
       if (seedRewardId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, seedRewardId_);
+          .computeUInt32Size(13, seedRewardId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -225,12 +225,12 @@ public final class PlantFlowerGetSeedInfoRspOuterClass {
       }
       emu.grasscutter.net.proto.PlantFlowerGetSeedInfoRspOuterClass.PlantFlowerGetSeedInfoRsp other = (emu.grasscutter.net.proto.PlantFlowerGetSeedInfoRspOuterClass.PlantFlowerGetSeedInfoRsp) obj;
 
+      if (getScheduleId()
+          != other.getScheduleId()) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
       if (getSeedRewardId()
           != other.getSeedRewardId()) return false;
-      if (getScheduleId()
-          != other.getScheduleId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -242,12 +242,12 @@ public final class PlantFlowerGetSeedInfoRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SCHEDULE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getScheduleId();
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
       hash = (37 * hash) + SEED_REWARD_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSeedRewardId();
-      hash = (37 * hash) + SCHEDULE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getScheduleId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -345,8 +345,8 @@ public final class PlantFlowerGetSeedInfoRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8426
-     * Obf: GECEFGMPFNI
+     * CmdId: 20942
+     * Obf: LKIHGLMBAHD
      * </pre>
      *
      * Protobuf type {@code PlantFlowerGetSeedInfoRsp}
@@ -386,11 +386,11 @@ public final class PlantFlowerGetSeedInfoRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        scheduleId_ = 0;
+
         retcode_ = 0;
 
         seedRewardId_ = 0;
-
-        scheduleId_ = 0;
 
         return this;
       }
@@ -418,9 +418,9 @@ public final class PlantFlowerGetSeedInfoRspOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.PlantFlowerGetSeedInfoRspOuterClass.PlantFlowerGetSeedInfoRsp buildPartial() {
         emu.grasscutter.net.proto.PlantFlowerGetSeedInfoRspOuterClass.PlantFlowerGetSeedInfoRsp result = new emu.grasscutter.net.proto.PlantFlowerGetSeedInfoRspOuterClass.PlantFlowerGetSeedInfoRsp(this);
+        result.scheduleId_ = scheduleId_;
         result.retcode_ = retcode_;
         result.seedRewardId_ = seedRewardId_;
-        result.scheduleId_ = scheduleId_;
         onBuilt();
         return result;
       }
@@ -469,14 +469,14 @@ public final class PlantFlowerGetSeedInfoRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.PlantFlowerGetSeedInfoRspOuterClass.PlantFlowerGetSeedInfoRsp other) {
         if (other == emu.grasscutter.net.proto.PlantFlowerGetSeedInfoRspOuterClass.PlantFlowerGetSeedInfoRsp.getDefaultInstance()) return this;
+        if (other.getScheduleId() != 0) {
+          setScheduleId(other.getScheduleId());
+        }
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
         }
         if (other.getSeedRewardId() != 0) {
           setSeedRewardId(other.getSeedRewardId());
-        }
-        if (other.getScheduleId() != 0) {
-          setScheduleId(other.getScheduleId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -507,9 +507,40 @@ public final class PlantFlowerGetSeedInfoRspOuterClass {
         return this;
       }
 
+      private int scheduleId_ ;
+      /**
+       * <code>uint32 schedule_id = 7;</code>
+       * @return The scheduleId.
+       */
+      @java.lang.Override
+      public int getScheduleId() {
+        return scheduleId_;
+      }
+      /**
+       * <code>uint32 schedule_id = 7;</code>
+       * @param value The scheduleId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setScheduleId(int value) {
+        
+        scheduleId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 schedule_id = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearScheduleId() {
+        
+        scheduleId_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 6;</code>
+       * <code>int32 retcode = 10;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -517,7 +548,7 @@ public final class PlantFlowerGetSeedInfoRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 6;</code>
+       * <code>int32 retcode = 10;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -528,7 +559,7 @@ public final class PlantFlowerGetSeedInfoRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 6;</code>
+       * <code>int32 retcode = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -540,7 +571,7 @@ public final class PlantFlowerGetSeedInfoRspOuterClass {
 
       private int seedRewardId_ ;
       /**
-       * <code>uint32 seed_reward_id = 10;</code>
+       * <code>uint32 seed_reward_id = 13;</code>
        * @return The seedRewardId.
        */
       @java.lang.Override
@@ -548,7 +579,7 @@ public final class PlantFlowerGetSeedInfoRspOuterClass {
         return seedRewardId_;
       }
       /**
-       * <code>uint32 seed_reward_id = 10;</code>
+       * <code>uint32 seed_reward_id = 13;</code>
        * @param value The seedRewardId to set.
        * @return This builder for chaining.
        */
@@ -559,43 +590,12 @@ public final class PlantFlowerGetSeedInfoRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 seed_reward_id = 10;</code>
+       * <code>uint32 seed_reward_id = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearSeedRewardId() {
         
         seedRewardId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int scheduleId_ ;
-      /**
-       * <code>uint32 schedule_id = 3;</code>
-       * @return The scheduleId.
-       */
-      @java.lang.Override
-      public int getScheduleId() {
-        return scheduleId_;
-      }
-      /**
-       * <code>uint32 schedule_id = 3;</code>
-       * @param value The scheduleId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setScheduleId(int value) {
-        
-        scheduleId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 schedule_id = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearScheduleId() {
-        
-        scheduleId_ = 0;
         onChanged();
         return this;
       }
@@ -667,8 +667,8 @@ public final class PlantFlowerGetSeedInfoRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\037PlantFlowerGetSeedInfoRsp.proto\"Y\n\031Pla" +
-      "ntFlowerGetSeedInfoRsp\022\017\n\007retcode\030\006 \001(\005\022" +
-      "\026\n\016seed_reward_id\030\n \001(\r\022\023\n\013schedule_id\030\003" +
+      "ntFlowerGetSeedInfoRsp\022\023\n\013schedule_id\030\007 " +
+      "\001(\r\022\017\n\007retcode\030\n \001(\005\022\026\n\016seed_reward_id\030\r" +
       " \001(\rB\033\n\031emu.grasscutter.net.protob\006proto" +
       "3"
     };
@@ -681,7 +681,7 @@ public final class PlantFlowerGetSeedInfoRspOuterClass {
     internal_static_PlantFlowerGetSeedInfoRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_PlantFlowerGetSeedInfoRsp_descriptor,
-        new java.lang.String[] { "Retcode", "SeedRewardId", "ScheduleId", });
+        new java.lang.String[] { "ScheduleId", "Retcode", "SeedRewardId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

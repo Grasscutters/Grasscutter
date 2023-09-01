@@ -16,7 +16,7 @@ public final class RogueCellStateOuterClass {
   }
   /**
    * <pre>
-   * Obf: EBBGLLMHKCK
+   * Obf: JEOOKNEBNDN
    * </pre>
    *
    * Protobuf enum {@code RogueCellState}

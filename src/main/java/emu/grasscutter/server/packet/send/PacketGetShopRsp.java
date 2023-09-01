@@ -2,18 +2,14 @@ package emu.grasscutter.server.packet.send;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.game.shop.ShopInfo;
-import emu.grasscutter.game.shop.ShopLimit;
-import emu.grasscutter.game.shop.ShopSystem;
-import emu.grasscutter.net.packet.BasePacket;
-import emu.grasscutter.net.packet.PacketOpcodes;
-import emu.grasscutter.net.proto.GetShopRspOuterClass;
-import emu.grasscutter.net.proto.ItemParamOuterClass;
+import emu.grasscutter.game.shop.*;
+import emu.grasscutter.net.packet.*;
+import emu.grasscutter.net.proto.*;
 import emu.grasscutter.net.proto.ShopGoodsOuterClass.ShopGoods;
 import emu.grasscutter.net.proto.ShopOuterClass.Shop;
 import emu.grasscutter.utils.Utils;
-import java.util.ArrayList;
-import java.util.List;
+
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class PacketGetShopRsp extends BasePacket {

@@ -19,32 +19,32 @@ public final class SumoDungeonTeamOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .SumoDungeonAvatar dungeon_avatar_list = 1;</code>
+     * <code>repeated .SumoDungeonAvatar dungeon_avatar_list = 7;</code>
      */
     java.util.List<emu.grasscutter.net.proto.SumoDungeonAvatarOuterClass.SumoDungeonAvatar> 
         getDungeonAvatarListList();
     /**
-     * <code>repeated .SumoDungeonAvatar dungeon_avatar_list = 1;</code>
+     * <code>repeated .SumoDungeonAvatar dungeon_avatar_list = 7;</code>
      */
     emu.grasscutter.net.proto.SumoDungeonAvatarOuterClass.SumoDungeonAvatar getDungeonAvatarList(int index);
     /**
-     * <code>repeated .SumoDungeonAvatar dungeon_avatar_list = 1;</code>
+     * <code>repeated .SumoDungeonAvatar dungeon_avatar_list = 7;</code>
      */
     int getDungeonAvatarListCount();
     /**
-     * <code>repeated .SumoDungeonAvatar dungeon_avatar_list = 1;</code>
+     * <code>repeated .SumoDungeonAvatar dungeon_avatar_list = 7;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.SumoDungeonAvatarOuterClass.SumoDungeonAvatarOrBuilder> 
         getDungeonAvatarListOrBuilderList();
     /**
-     * <code>repeated .SumoDungeonAvatar dungeon_avatar_list = 1;</code>
+     * <code>repeated .SumoDungeonAvatar dungeon_avatar_list = 7;</code>
      */
     emu.grasscutter.net.proto.SumoDungeonAvatarOuterClass.SumoDungeonAvatarOrBuilder getDungeonAvatarListOrBuilder(
         int index);
   }
   /**
    * <pre>
-   * Obf: CCPMFPOAEIL
+   * Obf: GLBLNCDGKLJ
    * </pre>
    *
    * Protobuf type {@code SumoDungeonTeam}
@@ -93,7 +93,7 @@ public final class SumoDungeonTeamOuterClass {
             case 0:
               done = true;
               break;
-            case 10: {
+            case 58: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 dungeonAvatarList_ = new java.util.ArrayList<emu.grasscutter.net.proto.SumoDungeonAvatarOuterClass.SumoDungeonAvatar>();
                 mutable_bitField0_ |= 0x00000001;
@@ -137,17 +137,17 @@ public final class SumoDungeonTeamOuterClass {
               emu.grasscutter.net.proto.SumoDungeonTeamOuterClass.SumoDungeonTeam.class, emu.grasscutter.net.proto.SumoDungeonTeamOuterClass.SumoDungeonTeam.Builder.class);
     }
 
-    public static final int DUNGEON_AVATAR_LIST_FIELD_NUMBER = 1;
+    public static final int DUNGEON_AVATAR_LIST_FIELD_NUMBER = 7;
     private java.util.List<emu.grasscutter.net.proto.SumoDungeonAvatarOuterClass.SumoDungeonAvatar> dungeonAvatarList_;
     /**
-     * <code>repeated .SumoDungeonAvatar dungeon_avatar_list = 1;</code>
+     * <code>repeated .SumoDungeonAvatar dungeon_avatar_list = 7;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.SumoDungeonAvatarOuterClass.SumoDungeonAvatar> getDungeonAvatarListList() {
       return dungeonAvatarList_;
     }
     /**
-     * <code>repeated .SumoDungeonAvatar dungeon_avatar_list = 1;</code>
+     * <code>repeated .SumoDungeonAvatar dungeon_avatar_list = 7;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.SumoDungeonAvatarOuterClass.SumoDungeonAvatarOrBuilder> 
@@ -155,21 +155,21 @@ public final class SumoDungeonTeamOuterClass {
       return dungeonAvatarList_;
     }
     /**
-     * <code>repeated .SumoDungeonAvatar dungeon_avatar_list = 1;</code>
+     * <code>repeated .SumoDungeonAvatar dungeon_avatar_list = 7;</code>
      */
     @java.lang.Override
     public int getDungeonAvatarListCount() {
       return dungeonAvatarList_.size();
     }
     /**
-     * <code>repeated .SumoDungeonAvatar dungeon_avatar_list = 1;</code>
+     * <code>repeated .SumoDungeonAvatar dungeon_avatar_list = 7;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.SumoDungeonAvatarOuterClass.SumoDungeonAvatar getDungeonAvatarList(int index) {
       return dungeonAvatarList_.get(index);
     }
     /**
-     * <code>repeated .SumoDungeonAvatar dungeon_avatar_list = 1;</code>
+     * <code>repeated .SumoDungeonAvatar dungeon_avatar_list = 7;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.SumoDungeonAvatarOuterClass.SumoDungeonAvatarOrBuilder getDungeonAvatarListOrBuilder(
@@ -192,7 +192,7 @@ public final class SumoDungeonTeamOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < dungeonAvatarList_.size(); i++) {
-        output.writeMessage(1, dungeonAvatarList_.get(i));
+        output.writeMessage(7, dungeonAvatarList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -205,7 +205,7 @@ public final class SumoDungeonTeamOuterClass {
       size = 0;
       for (int i = 0; i < dungeonAvatarList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, dungeonAvatarList_.get(i));
+          .computeMessageSize(7, dungeonAvatarList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -336,7 +336,7 @@ public final class SumoDungeonTeamOuterClass {
     }
     /**
      * <pre>
-     * Obf: CCPMFPOAEIL
+     * Obf: GLBLNCDGKLJ
      * </pre>
      *
      * Protobuf type {@code SumoDungeonTeam}
@@ -536,7 +536,7 @@ public final class SumoDungeonTeamOuterClass {
           emu.grasscutter.net.proto.SumoDungeonAvatarOuterClass.SumoDungeonAvatar, emu.grasscutter.net.proto.SumoDungeonAvatarOuterClass.SumoDungeonAvatar.Builder, emu.grasscutter.net.proto.SumoDungeonAvatarOuterClass.SumoDungeonAvatarOrBuilder> dungeonAvatarListBuilder_;
 
       /**
-       * <code>repeated .SumoDungeonAvatar dungeon_avatar_list = 1;</code>
+       * <code>repeated .SumoDungeonAvatar dungeon_avatar_list = 7;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.SumoDungeonAvatarOuterClass.SumoDungeonAvatar> getDungeonAvatarListList() {
         if (dungeonAvatarListBuilder_ == null) {
@@ -546,7 +546,7 @@ public final class SumoDungeonTeamOuterClass {
         }
       }
       /**
-       * <code>repeated .SumoDungeonAvatar dungeon_avatar_list = 1;</code>
+       * <code>repeated .SumoDungeonAvatar dungeon_avatar_list = 7;</code>
        */
       public int getDungeonAvatarListCount() {
         if (dungeonAvatarListBuilder_ == null) {
@@ -556,7 +556,7 @@ public final class SumoDungeonTeamOuterClass {
         }
       }
       /**
-       * <code>repeated .SumoDungeonAvatar dungeon_avatar_list = 1;</code>
+       * <code>repeated .SumoDungeonAvatar dungeon_avatar_list = 7;</code>
        */
       public emu.grasscutter.net.proto.SumoDungeonAvatarOuterClass.SumoDungeonAvatar getDungeonAvatarList(int index) {
         if (dungeonAvatarListBuilder_ == null) {
@@ -566,7 +566,7 @@ public final class SumoDungeonTeamOuterClass {
         }
       }
       /**
-       * <code>repeated .SumoDungeonAvatar dungeon_avatar_list = 1;</code>
+       * <code>repeated .SumoDungeonAvatar dungeon_avatar_list = 7;</code>
        */
       public Builder setDungeonAvatarList(
           int index, emu.grasscutter.net.proto.SumoDungeonAvatarOuterClass.SumoDungeonAvatar value) {
@@ -583,7 +583,7 @@ public final class SumoDungeonTeamOuterClass {
         return this;
       }
       /**
-       * <code>repeated .SumoDungeonAvatar dungeon_avatar_list = 1;</code>
+       * <code>repeated .SumoDungeonAvatar dungeon_avatar_list = 7;</code>
        */
       public Builder setDungeonAvatarList(
           int index, emu.grasscutter.net.proto.SumoDungeonAvatarOuterClass.SumoDungeonAvatar.Builder builderForValue) {
@@ -597,7 +597,7 @@ public final class SumoDungeonTeamOuterClass {
         return this;
       }
       /**
-       * <code>repeated .SumoDungeonAvatar dungeon_avatar_list = 1;</code>
+       * <code>repeated .SumoDungeonAvatar dungeon_avatar_list = 7;</code>
        */
       public Builder addDungeonAvatarList(emu.grasscutter.net.proto.SumoDungeonAvatarOuterClass.SumoDungeonAvatar value) {
         if (dungeonAvatarListBuilder_ == null) {
@@ -613,7 +613,7 @@ public final class SumoDungeonTeamOuterClass {
         return this;
       }
       /**
-       * <code>repeated .SumoDungeonAvatar dungeon_avatar_list = 1;</code>
+       * <code>repeated .SumoDungeonAvatar dungeon_avatar_list = 7;</code>
        */
       public Builder addDungeonAvatarList(
           int index, emu.grasscutter.net.proto.SumoDungeonAvatarOuterClass.SumoDungeonAvatar value) {
@@ -630,7 +630,7 @@ public final class SumoDungeonTeamOuterClass {
         return this;
       }
       /**
-       * <code>repeated .SumoDungeonAvatar dungeon_avatar_list = 1;</code>
+       * <code>repeated .SumoDungeonAvatar dungeon_avatar_list = 7;</code>
        */
       public Builder addDungeonAvatarList(
           emu.grasscutter.net.proto.SumoDungeonAvatarOuterClass.SumoDungeonAvatar.Builder builderForValue) {
@@ -644,7 +644,7 @@ public final class SumoDungeonTeamOuterClass {
         return this;
       }
       /**
-       * <code>repeated .SumoDungeonAvatar dungeon_avatar_list = 1;</code>
+       * <code>repeated .SumoDungeonAvatar dungeon_avatar_list = 7;</code>
        */
       public Builder addDungeonAvatarList(
           int index, emu.grasscutter.net.proto.SumoDungeonAvatarOuterClass.SumoDungeonAvatar.Builder builderForValue) {
@@ -658,7 +658,7 @@ public final class SumoDungeonTeamOuterClass {
         return this;
       }
       /**
-       * <code>repeated .SumoDungeonAvatar dungeon_avatar_list = 1;</code>
+       * <code>repeated .SumoDungeonAvatar dungeon_avatar_list = 7;</code>
        */
       public Builder addAllDungeonAvatarList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.SumoDungeonAvatarOuterClass.SumoDungeonAvatar> values) {
@@ -673,7 +673,7 @@ public final class SumoDungeonTeamOuterClass {
         return this;
       }
       /**
-       * <code>repeated .SumoDungeonAvatar dungeon_avatar_list = 1;</code>
+       * <code>repeated .SumoDungeonAvatar dungeon_avatar_list = 7;</code>
        */
       public Builder clearDungeonAvatarList() {
         if (dungeonAvatarListBuilder_ == null) {
@@ -686,7 +686,7 @@ public final class SumoDungeonTeamOuterClass {
         return this;
       }
       /**
-       * <code>repeated .SumoDungeonAvatar dungeon_avatar_list = 1;</code>
+       * <code>repeated .SumoDungeonAvatar dungeon_avatar_list = 7;</code>
        */
       public Builder removeDungeonAvatarList(int index) {
         if (dungeonAvatarListBuilder_ == null) {
@@ -699,14 +699,14 @@ public final class SumoDungeonTeamOuterClass {
         return this;
       }
       /**
-       * <code>repeated .SumoDungeonAvatar dungeon_avatar_list = 1;</code>
+       * <code>repeated .SumoDungeonAvatar dungeon_avatar_list = 7;</code>
        */
       public emu.grasscutter.net.proto.SumoDungeonAvatarOuterClass.SumoDungeonAvatar.Builder getDungeonAvatarListBuilder(
           int index) {
         return getDungeonAvatarListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .SumoDungeonAvatar dungeon_avatar_list = 1;</code>
+       * <code>repeated .SumoDungeonAvatar dungeon_avatar_list = 7;</code>
        */
       public emu.grasscutter.net.proto.SumoDungeonAvatarOuterClass.SumoDungeonAvatarOrBuilder getDungeonAvatarListOrBuilder(
           int index) {
@@ -716,7 +716,7 @@ public final class SumoDungeonTeamOuterClass {
         }
       }
       /**
-       * <code>repeated .SumoDungeonAvatar dungeon_avatar_list = 1;</code>
+       * <code>repeated .SumoDungeonAvatar dungeon_avatar_list = 7;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.SumoDungeonAvatarOuterClass.SumoDungeonAvatarOrBuilder> 
            getDungeonAvatarListOrBuilderList() {
@@ -727,14 +727,14 @@ public final class SumoDungeonTeamOuterClass {
         }
       }
       /**
-       * <code>repeated .SumoDungeonAvatar dungeon_avatar_list = 1;</code>
+       * <code>repeated .SumoDungeonAvatar dungeon_avatar_list = 7;</code>
        */
       public emu.grasscutter.net.proto.SumoDungeonAvatarOuterClass.SumoDungeonAvatar.Builder addDungeonAvatarListBuilder() {
         return getDungeonAvatarListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.SumoDungeonAvatarOuterClass.SumoDungeonAvatar.getDefaultInstance());
       }
       /**
-       * <code>repeated .SumoDungeonAvatar dungeon_avatar_list = 1;</code>
+       * <code>repeated .SumoDungeonAvatar dungeon_avatar_list = 7;</code>
        */
       public emu.grasscutter.net.proto.SumoDungeonAvatarOuterClass.SumoDungeonAvatar.Builder addDungeonAvatarListBuilder(
           int index) {
@@ -742,7 +742,7 @@ public final class SumoDungeonTeamOuterClass {
             index, emu.grasscutter.net.proto.SumoDungeonAvatarOuterClass.SumoDungeonAvatar.getDefaultInstance());
       }
       /**
-       * <code>repeated .SumoDungeonAvatar dungeon_avatar_list = 1;</code>
+       * <code>repeated .SumoDungeonAvatar dungeon_avatar_list = 7;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.SumoDungeonAvatarOuterClass.SumoDungeonAvatar.Builder> 
            getDungeonAvatarListBuilderList() {
@@ -831,7 +831,7 @@ public final class SumoDungeonTeamOuterClass {
     java.lang.String[] descriptorData = {
       "\n\025SumoDungeonTeam.proto\032\027SumoDungeonAvat" +
       "ar.proto\"B\n\017SumoDungeonTeam\022/\n\023dungeon_a" +
-      "vatar_list\030\001 \003(\0132\022.SumoDungeonAvatarB\033\n\031" +
+      "vatar_list\030\007 \003(\0132\022.SumoDungeonAvatarB\033\n\031" +
       "emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

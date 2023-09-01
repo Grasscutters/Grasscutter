@@ -19,20 +19,20 @@ public final class GCGDamageDetailOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 card_guid = 3;</code>
-     * @return The cardGuid.
-     */
-    int getCardGuid();
-
-    /**
-     * <code>uint32 skill_id = 9;</code>
+     * <code>uint32 skill_id = 14;</code>
      * @return The skillId.
      */
     int getSkillId();
+
+    /**
+     * <code>uint32 card_guid = 12;</code>
+     * @return The cardGuid.
+     */
+    int getCardGuid();
   }
   /**
    * <pre>
-   * Obf: CPCANCKIHLI
+   * Obf: NKOFHAJANJI
    * </pre>
    *
    * Protobuf type {@code GCGDamageDetail}
@@ -79,12 +79,12 @@ public final class GCGDamageDetailOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 96: {
 
               cardGuid_ = input.readUInt32();
               break;
             }
-            case 72: {
+            case 112: {
 
               skillId_ = input.readUInt32();
               break;
@@ -121,26 +121,26 @@ public final class GCGDamageDetailOuterClass {
               emu.grasscutter.net.proto.GCGDamageDetailOuterClass.GCGDamageDetail.class, emu.grasscutter.net.proto.GCGDamageDetailOuterClass.GCGDamageDetail.Builder.class);
     }
 
-    public static final int CARD_GUID_FIELD_NUMBER = 3;
-    private int cardGuid_;
-    /**
-     * <code>uint32 card_guid = 3;</code>
-     * @return The cardGuid.
-     */
-    @java.lang.Override
-    public int getCardGuid() {
-      return cardGuid_;
-    }
-
-    public static final int SKILL_ID_FIELD_NUMBER = 9;
+    public static final int SKILL_ID_FIELD_NUMBER = 14;
     private int skillId_;
     /**
-     * <code>uint32 skill_id = 9;</code>
+     * <code>uint32 skill_id = 14;</code>
      * @return The skillId.
      */
     @java.lang.Override
     public int getSkillId() {
       return skillId_;
+    }
+
+    public static final int CARD_GUID_FIELD_NUMBER = 12;
+    private int cardGuid_;
+    /**
+     * <code>uint32 card_guid = 12;</code>
+     * @return The cardGuid.
+     */
+    @java.lang.Override
+    public int getCardGuid() {
+      return cardGuid_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -158,10 +158,10 @@ public final class GCGDamageDetailOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (cardGuid_ != 0) {
-        output.writeUInt32(3, cardGuid_);
+        output.writeUInt32(12, cardGuid_);
       }
       if (skillId_ != 0) {
-        output.writeUInt32(9, skillId_);
+        output.writeUInt32(14, skillId_);
       }
       unknownFields.writeTo(output);
     }
@@ -174,11 +174,11 @@ public final class GCGDamageDetailOuterClass {
       size = 0;
       if (cardGuid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, cardGuid_);
+          .computeUInt32Size(12, cardGuid_);
       }
       if (skillId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, skillId_);
+          .computeUInt32Size(14, skillId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -195,10 +195,10 @@ public final class GCGDamageDetailOuterClass {
       }
       emu.grasscutter.net.proto.GCGDamageDetailOuterClass.GCGDamageDetail other = (emu.grasscutter.net.proto.GCGDamageDetailOuterClass.GCGDamageDetail) obj;
 
-      if (getCardGuid()
-          != other.getCardGuid()) return false;
       if (getSkillId()
           != other.getSkillId()) return false;
+      if (getCardGuid()
+          != other.getCardGuid()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -210,10 +210,10 @@ public final class GCGDamageDetailOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + CARD_GUID_FIELD_NUMBER;
-      hash = (53 * hash) + getCardGuid();
       hash = (37 * hash) + SKILL_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSkillId();
+      hash = (37 * hash) + CARD_GUID_FIELD_NUMBER;
+      hash = (53 * hash) + getCardGuid();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -311,7 +311,7 @@ public final class GCGDamageDetailOuterClass {
     }
     /**
      * <pre>
-     * Obf: CPCANCKIHLI
+     * Obf: NKOFHAJANJI
      * </pre>
      *
      * Protobuf type {@code GCGDamageDetail}
@@ -351,9 +351,9 @@ public final class GCGDamageDetailOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        cardGuid_ = 0;
-
         skillId_ = 0;
+
+        cardGuid_ = 0;
 
         return this;
       }
@@ -381,8 +381,8 @@ public final class GCGDamageDetailOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.GCGDamageDetailOuterClass.GCGDamageDetail buildPartial() {
         emu.grasscutter.net.proto.GCGDamageDetailOuterClass.GCGDamageDetail result = new emu.grasscutter.net.proto.GCGDamageDetailOuterClass.GCGDamageDetail(this);
-        result.cardGuid_ = cardGuid_;
         result.skillId_ = skillId_;
+        result.cardGuid_ = cardGuid_;
         onBuilt();
         return result;
       }
@@ -431,11 +431,11 @@ public final class GCGDamageDetailOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.GCGDamageDetailOuterClass.GCGDamageDetail other) {
         if (other == emu.grasscutter.net.proto.GCGDamageDetailOuterClass.GCGDamageDetail.getDefaultInstance()) return this;
-        if (other.getCardGuid() != 0) {
-          setCardGuid(other.getCardGuid());
-        }
         if (other.getSkillId() != 0) {
           setSkillId(other.getSkillId());
+        }
+        if (other.getCardGuid() != 0) {
+          setCardGuid(other.getCardGuid());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -466,40 +466,9 @@ public final class GCGDamageDetailOuterClass {
         return this;
       }
 
-      private int cardGuid_ ;
-      /**
-       * <code>uint32 card_guid = 3;</code>
-       * @return The cardGuid.
-       */
-      @java.lang.Override
-      public int getCardGuid() {
-        return cardGuid_;
-      }
-      /**
-       * <code>uint32 card_guid = 3;</code>
-       * @param value The cardGuid to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCardGuid(int value) {
-        
-        cardGuid_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 card_guid = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCardGuid() {
-        
-        cardGuid_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int skillId_ ;
       /**
-       * <code>uint32 skill_id = 9;</code>
+       * <code>uint32 skill_id = 14;</code>
        * @return The skillId.
        */
       @java.lang.Override
@@ -507,7 +476,7 @@ public final class GCGDamageDetailOuterClass {
         return skillId_;
       }
       /**
-       * <code>uint32 skill_id = 9;</code>
+       * <code>uint32 skill_id = 14;</code>
        * @param value The skillId to set.
        * @return This builder for chaining.
        */
@@ -518,12 +487,43 @@ public final class GCGDamageDetailOuterClass {
         return this;
       }
       /**
-       * <code>uint32 skill_id = 9;</code>
+       * <code>uint32 skill_id = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearSkillId() {
         
         skillId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int cardGuid_ ;
+      /**
+       * <code>uint32 card_guid = 12;</code>
+       * @return The cardGuid.
+       */
+      @java.lang.Override
+      public int getCardGuid() {
+        return cardGuid_;
+      }
+      /**
+       * <code>uint32 card_guid = 12;</code>
+       * @param value The cardGuid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCardGuid(int value) {
+        
+        cardGuid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 card_guid = 12;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCardGuid() {
+        
+        cardGuid_ = 0;
         onChanged();
         return this;
       }
@@ -595,7 +595,7 @@ public final class GCGDamageDetailOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\025GCGDamageDetail.proto\"6\n\017GCGDamageDeta" +
-      "il\022\021\n\tcard_guid\030\003 \001(\r\022\020\n\010skill_id\030\t \001(\rB" +
+      "il\022\020\n\010skill_id\030\016 \001(\r\022\021\n\tcard_guid\030\014 \001(\rB" +
       "\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -607,7 +607,7 @@ public final class GCGDamageDetailOuterClass {
     internal_static_GCGDamageDetail_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GCGDamageDetail_descriptor,
-        new java.lang.String[] { "CardGuid", "SkillId", });
+        new java.lang.String[] { "SkillId", "CardGuid", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

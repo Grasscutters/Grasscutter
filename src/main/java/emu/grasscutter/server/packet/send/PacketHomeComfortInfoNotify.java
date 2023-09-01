@@ -2,12 +2,10 @@ package emu.grasscutter.server.packet.send;
 
 import emu.grasscutter.game.home.HomeBlockItem;
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.net.packet.BasePacket;
-import emu.grasscutter.net.packet.PacketOpcodes;
-import emu.grasscutter.net.proto.HomeComfortInfoNotifyOuterClass;
-import emu.grasscutter.net.proto.HomeModuleComfortInfoOuterClass;
-import java.util.ArrayList;
-import java.util.List;
+import emu.grasscutter.net.packet.*;
+import emu.grasscutter.net.proto.*;
+
+import java.util.*;
 
 public class PacketHomeComfortInfoNotify extends BasePacket {
 

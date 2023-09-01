@@ -5,9 +5,10 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierAction;
 import emu.grasscutter.game.ability.Ability;
 import emu.grasscutter.game.entity.*;
+import emu.grasscutter.server.packet.send.PacketServerGlobalValueChangeNotify;
 
 @AbilityAction(AbilityModifierAction.Type.SetGlobalValueToOverrideMap)
-public class ActionSetGlobalValueToOverrideMap extends AbilityActionHandler {
+public final class ActionSetGlobalValueToOverrideMap extends AbilityActionHandler {
     @Override
     public boolean execute(
             Ability ability, AbilityModifierAction action, ByteString abilityData, GameEntity target) {
@@ -23,7 +24,7 @@ public class ActionSetGlobalValueToOverrideMap extends AbilityActionHandler {
         var abilityFormula = action.abilityFormula;
 
         if (!entity.getGlobalAbilityValues().containsKey(globalValueKey)) {
-            Grasscutter.getLogger().debug("Action does not contains {} global key", globalValueKey);
+            Grasscutter.getLogger().trace("Action does not contains {} global key", globalValueKey);
             return true;
         }
 
@@ -36,8 +37,13 @@ public class ActionSetGlobalValueToOverrideMap extends AbilityActionHandler {
         ability
                 .getAbilitySpecials()
                 .put(action.overrideMapKey, globalValue.floatValue()); // Override our own.
+        entity.onAbilityValueUpdate();
 
-        // TODO: ChangeServerGlobalValueNotify
+        // Send a value update packet.
+        entity
+                .getScene()
+                .getHost()
+                .sendPacket(new PacketServerGlobalValueChangeNotify(entity, globalValueKey, globalValue));
 
         return true;
     }

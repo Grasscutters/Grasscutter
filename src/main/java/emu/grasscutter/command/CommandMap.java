@@ -1,13 +1,15 @@
 package emu.grasscutter.command;
 
-import static emu.grasscutter.config.Configuration.SERVER;
-
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.server.event.game.ExecuteCommandEvent;
 import it.unimi.dsi.fastutil.objects.*;
-import java.util.*;
 import org.reflections.Reflections;
+
+import java.util.*;
+
+import static emu.grasscutter.config.Configuration.SERVER;
 
 @SuppressWarnings({"UnusedReturnValue", "unused"})
 public final class CommandMap {
@@ -52,7 +54,7 @@ public final class CommandMap {
      * @return Instance chaining.
      */
     public CommandMap registerCommand(String label, CommandHandler command) {
-        Grasscutter.getLogger().debug("Registered command: " + label);
+        Grasscutter.getLogger().trace("Registered command: " + label);
         label = label.toLowerCase();
 
         // Get command data.
@@ -75,7 +77,7 @@ public final class CommandMap {
      * @return Instance chaining.
      */
     public CommandMap unregisterCommand(String label) {
-        Grasscutter.getLogger().debug("Unregistered command: " + label);
+        Grasscutter.getLogger().trace("Un-registered command: " + label);
 
         CommandHandler handler = this.commands.get(label);
         if (handler == null) return this;
@@ -136,7 +138,7 @@ public final class CommandMap {
             String arg = args.get(i);
             if (arg.startsWith("@")) {
                 arg = args.remove(i).substring(1);
-                if (arg.equals("")) {
+                if (arg.isEmpty()) {
                     // This is a special case to target nothing, distinct from failing to assign a target.
                     // This is specifically to allow in-game players to run a command without targeting
                     // themselves or anyone else.
@@ -180,7 +182,7 @@ public final class CommandMap {
     }
 
     private boolean setPlayerTarget(String playerId, Player player, String targetUid) {
-        if (targetUid.equals("")) { // Clears the default targetPlayer.
+        if (targetUid.isEmpty()) { // Clears the default targetPlayer.
             targetPlayerIds.removeInt(playerId);
             CommandHandler.sendTranslatedMessage(player, "commands.execution.clear_target");
             return true;
@@ -217,6 +219,14 @@ public final class CommandMap {
      * @param rawMessage The messaged used to invoke the command.
      */
     public void invoke(Player player, Player targetPlayer, String rawMessage) {
+        // Invoke the ExecuteCommandEvent.
+        var event = new ExecuteCommandEvent(player, targetPlayer, rawMessage);
+        if (!event.call()) return;
+
+        player = event.getSender();
+        targetPlayer = event.getTarget();
+        rawMessage = event.getCommand();
+
         // The console outputs in-game command. [{Account Username} (Player UID: {Player Uid})]
         if (SERVER.logCommands) {
             if (player != null) {
@@ -234,7 +244,7 @@ public final class CommandMap {
         }
 
         rawMessage = rawMessage.trim();
-        if (rawMessage.length() == 0) {
+        if (rawMessage.isEmpty()) {
             CommandHandler.sendTranslatedMessage(player, "commands.generic.not_specified");
             return;
         }
@@ -250,17 +260,16 @@ public final class CommandMap {
             this.setPlayerTarget(playerId, player, label.substring(1));
             return;
         } else if (label.equalsIgnoreCase("target")) { // target [[@]UID]
-            if (args.size() > 0) {
+            if (!args.isEmpty()) {
                 String targetUidStr = args.get(0);
                 if (targetUidStr.startsWith("@")) {
                     targetUidStr = targetUidStr.substring(1);
                 }
                 this.setPlayerTarget(playerId, player, targetUidStr);
-                return;
             } else {
                 this.setPlayerTarget(playerId, player, "");
-                return;
             }
+            return;
         }
 
         // Get command handler.
@@ -275,7 +284,7 @@ public final class CommandMap {
         // Get the command's annotation.
         Command annotation = this.annotations.get(label);
 
-        // Resolve targetPlayer
+        // Resolve 'targetPlayer'.
         try {
             targetPlayer = getTargetPlayer(playerId, player, targetPlayer, args);
         } catch (IllegalArgumentException e) {
@@ -315,11 +324,12 @@ public final class CommandMap {
         }
 
         // Copy player and handler to final properties.
-        final Player targetPlayerF = targetPlayer; // Is there a better way to do this?
-        final CommandHandler handlerF = handler; // Is there a better way to do this?
+        final var playerF = player;
+        final var targetPlayerF = targetPlayer;
+        final var handlerF = handler;
 
         // Invoke execute method for handler.
-        Runnable runnable = () -> handlerF.execute(player, targetPlayerF, args);
+        Runnable runnable = () -> handlerF.execute(playerF, targetPlayerF, args);
         if (annotation.threading()) {
             new Thread(runnable).start();
         } else {

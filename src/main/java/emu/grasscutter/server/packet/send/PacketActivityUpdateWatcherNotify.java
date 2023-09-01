@@ -1,8 +1,7 @@
 package emu.grasscutter.server.packet.send;
 
 import emu.grasscutter.game.activity.PlayerActivityData;
-import emu.grasscutter.net.packet.BasePacket;
-import emu.grasscutter.net.packet.PacketOpcodes;
+import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.ActivityUpdateWatcherNotifyOuterClass;
 
 public class PacketActivityUpdateWatcherNotify extends BasePacket {

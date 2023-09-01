@@ -1,7 +1,6 @@
 package emu.grasscutter.data.binout.config;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.*;
 
 @Data
 @EqualsAndHashCode(callSuper = true)

@@ -19,7 +19,7 @@ public final class AsterProgressDetailInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 count = 12;</code>
+     * <code>uint32 count = 10;</code>
      * @return The count.
      */
     int getCount();
@@ -32,7 +32,7 @@ public final class AsterProgressDetailInfoOuterClass {
   }
   /**
    * <pre>
-   * Obf: MMEFLEOFLND
+   * Obf: LKACKFGKBOC
    * </pre>
    *
    * Protobuf type {@code AsterProgressDetailInfo}
@@ -84,7 +84,7 @@ public final class AsterProgressDetailInfoOuterClass {
               lastAutoAddTime_ = input.readUInt32();
               break;
             }
-            case 96: {
+            case 80: {
 
               count_ = input.readUInt32();
               break;
@@ -121,10 +121,10 @@ public final class AsterProgressDetailInfoOuterClass {
               emu.grasscutter.net.proto.AsterProgressDetailInfoOuterClass.AsterProgressDetailInfo.class, emu.grasscutter.net.proto.AsterProgressDetailInfoOuterClass.AsterProgressDetailInfo.Builder.class);
     }
 
-    public static final int COUNT_FIELD_NUMBER = 12;
+    public static final int COUNT_FIELD_NUMBER = 10;
     private int count_;
     /**
-     * <code>uint32 count = 12;</code>
+     * <code>uint32 count = 10;</code>
      * @return The count.
      */
     @java.lang.Override
@@ -161,7 +161,7 @@ public final class AsterProgressDetailInfoOuterClass {
         output.writeUInt32(1, lastAutoAddTime_);
       }
       if (count_ != 0) {
-        output.writeUInt32(12, count_);
+        output.writeUInt32(10, count_);
       }
       unknownFields.writeTo(output);
     }
@@ -178,7 +178,7 @@ public final class AsterProgressDetailInfoOuterClass {
       }
       if (count_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, count_);
+          .computeUInt32Size(10, count_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -311,7 +311,7 @@ public final class AsterProgressDetailInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: MMEFLEOFLND
+     * Obf: LKACKFGKBOC
      * </pre>
      *
      * Protobuf type {@code AsterProgressDetailInfo}
@@ -468,7 +468,7 @@ public final class AsterProgressDetailInfoOuterClass {
 
       private int count_ ;
       /**
-       * <code>uint32 count = 12;</code>
+       * <code>uint32 count = 10;</code>
        * @return The count.
        */
       @java.lang.Override
@@ -476,7 +476,7 @@ public final class AsterProgressDetailInfoOuterClass {
         return count_;
       }
       /**
-       * <code>uint32 count = 12;</code>
+       * <code>uint32 count = 10;</code>
        * @param value The count to set.
        * @return This builder for chaining.
        */
@@ -487,7 +487,7 @@ public final class AsterProgressDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 count = 12;</code>
+       * <code>uint32 count = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearCount() {
@@ -595,7 +595,7 @@ public final class AsterProgressDetailInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\035AsterProgressDetailInfo.proto\"D\n\027Aster" +
-      "ProgressDetailInfo\022\r\n\005count\030\014 \001(\r\022\032\n\022las" +
+      "ProgressDetailInfo\022\r\n\005count\030\n \001(\r\022\032\n\022las" +
       "t_auto_add_time\030\001 \001(\rB\033\n\031emu.grasscutter" +
       ".net.protob\006proto3"
     };

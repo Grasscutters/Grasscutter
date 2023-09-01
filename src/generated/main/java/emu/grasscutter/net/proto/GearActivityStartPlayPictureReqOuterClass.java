@@ -20,8 +20,8 @@ public final class GearActivityStartPlayPictureReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 23786
-   * Obf: CHLBJMMPOBJ
+   * CmdId: 440
+   * Obf: HLHLMLGPCIE
    * </pre>
    *
    * Protobuf type {@code GearActivityStartPlayPictureReq}
@@ -246,8 +246,8 @@ public final class GearActivityStartPlayPictureReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 23786
-     * Obf: CHLBJMMPOBJ
+     * CmdId: 440
+     * Obf: HLHLMLGPCIE
      * </pre>
      *
      * Protobuf type {@code GearActivityStartPlayPictureReq}

@@ -19,15 +19,15 @@ public final class DungeonRestartResultNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool is_add_accpet = 12;</code>
+     * <code>bool is_add_accpet = 13;</code>
      * @return The isAddAccpet.
      */
     boolean getIsAddAccpet();
   }
   /**
    * <pre>
-   * CmdId: 997
-   * Obf: IHGFCPMNMCC
+   * CmdId: 22679
+   * Obf: BONJMLPEAOA
    * </pre>
    *
    * Protobuf type {@code DungeonRestartResultNotify}
@@ -74,7 +74,7 @@ public final class DungeonRestartResultNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 96: {
+            case 104: {
 
               isAddAccpet_ = input.readBool();
               break;
@@ -111,10 +111,10 @@ public final class DungeonRestartResultNotifyOuterClass {
               emu.grasscutter.net.proto.DungeonRestartResultNotifyOuterClass.DungeonRestartResultNotify.class, emu.grasscutter.net.proto.DungeonRestartResultNotifyOuterClass.DungeonRestartResultNotify.Builder.class);
     }
 
-    public static final int IS_ADD_ACCPET_FIELD_NUMBER = 12;
+    public static final int IS_ADD_ACCPET_FIELD_NUMBER = 13;
     private boolean isAddAccpet_;
     /**
-     * <code>bool is_add_accpet = 12;</code>
+     * <code>bool is_add_accpet = 13;</code>
      * @return The isAddAccpet.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class DungeonRestartResultNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (isAddAccpet_ != false) {
-        output.writeBool(12, isAddAccpet_);
+        output.writeBool(13, isAddAccpet_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class DungeonRestartResultNotifyOuterClass {
       size = 0;
       if (isAddAccpet_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(12, isAddAccpet_);
+          .computeBoolSize(13, isAddAccpet_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -280,8 +280,8 @@ public final class DungeonRestartResultNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 997
-     * Obf: IHGFCPMNMCC
+     * CmdId: 22679
+     * Obf: BONJMLPEAOA
      * </pre>
      *
      * Protobuf type {@code DungeonRestartResultNotify}
@@ -432,7 +432,7 @@ public final class DungeonRestartResultNotifyOuterClass {
 
       private boolean isAddAccpet_ ;
       /**
-       * <code>bool is_add_accpet = 12;</code>
+       * <code>bool is_add_accpet = 13;</code>
        * @return The isAddAccpet.
        */
       @java.lang.Override
@@ -440,7 +440,7 @@ public final class DungeonRestartResultNotifyOuterClass {
         return isAddAccpet_;
       }
       /**
-       * <code>bool is_add_accpet = 12;</code>
+       * <code>bool is_add_accpet = 13;</code>
        * @param value The isAddAccpet to set.
        * @return This builder for chaining.
        */
@@ -451,7 +451,7 @@ public final class DungeonRestartResultNotifyOuterClass {
         return this;
       }
       /**
-       * <code>bool is_add_accpet = 12;</code>
+       * <code>bool is_add_accpet = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsAddAccpet() {
@@ -529,7 +529,7 @@ public final class DungeonRestartResultNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n DungeonRestartResultNotify.proto\"3\n\032Du" +
       "ngeonRestartResultNotify\022\025\n\ris_add_accpe" +
-      "t\030\014 \001(\010B\033\n\031emu.grasscutter.net.protob\006pr" +
+      "t\030\r \001(\010B\033\n\031emu.grasscutter.net.protob\006pr" +
       "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

@@ -19,28 +19,10 @@ public final class RogueDiaryRoomInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .Uint32Pair monster_list = 14;</code>
+     * <code>bool is_boss = 9;</code>
+     * @return The isBoss.
      */
-    java.util.List<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair> 
-        getMonsterListList();
-    /**
-     * <code>repeated .Uint32Pair monster_list = 14;</code>
-     */
-    emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair getMonsterList(int index);
-    /**
-     * <code>repeated .Uint32Pair monster_list = 14;</code>
-     */
-    int getMonsterListCount();
-    /**
-     * <code>repeated .Uint32Pair monster_list = 14;</code>
-     */
-    java.util.List<? extends emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder> 
-        getMonsterListOrBuilderList();
-    /**
-     * <code>repeated .Uint32Pair monster_list = 14;</code>
-     */
-    emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder getMonsterListOrBuilder(
-        int index);
+    boolean getIsBoss();
 
     /**
      * <code>uint32 config_id = 15;</code>
@@ -49,14 +31,32 @@ public final class RogueDiaryRoomInfoOuterClass {
     int getConfigId();
 
     /**
-     * <code>bool is_boss = 1;</code>
-     * @return The isBoss.
+     * <code>repeated .Uint32Pair monster_list = 3;</code>
      */
-    boolean getIsBoss();
+    java.util.List<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair> 
+        getMonsterListList();
+    /**
+     * <code>repeated .Uint32Pair monster_list = 3;</code>
+     */
+    emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair getMonsterList(int index);
+    /**
+     * <code>repeated .Uint32Pair monster_list = 3;</code>
+     */
+    int getMonsterListCount();
+    /**
+     * <code>repeated .Uint32Pair monster_list = 3;</code>
+     */
+    java.util.List<? extends emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder> 
+        getMonsterListOrBuilderList();
+    /**
+     * <code>repeated .Uint32Pair monster_list = 3;</code>
+     */
+    emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder getMonsterListOrBuilder(
+        int index);
   }
   /**
    * <pre>
-   * Obf: AHLFNKPJHEC
+   * Obf: KOLIJBLPOLE
    * </pre>
    *
    * Protobuf type {@code RogueDiaryRoomInfo}
@@ -105,18 +105,18 @@ public final class RogueDiaryRoomInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
-
-              isBoss_ = input.readBool();
-              break;
-            }
-            case 114: {
+            case 26: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 monsterList_ = new java.util.ArrayList<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair>();
                 mutable_bitField0_ |= 0x00000001;
               }
               monsterList_.add(
                   input.readMessage(emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.parser(), extensionRegistry));
+              break;
+            }
+            case 72: {
+
+              isBoss_ = input.readBool();
               break;
             }
             case 120: {
@@ -159,44 +159,15 @@ public final class RogueDiaryRoomInfoOuterClass {
               emu.grasscutter.net.proto.RogueDiaryRoomInfoOuterClass.RogueDiaryRoomInfo.class, emu.grasscutter.net.proto.RogueDiaryRoomInfoOuterClass.RogueDiaryRoomInfo.Builder.class);
     }
 
-    public static final int MONSTER_LIST_FIELD_NUMBER = 14;
-    private java.util.List<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair> monsterList_;
+    public static final int IS_BOSS_FIELD_NUMBER = 9;
+    private boolean isBoss_;
     /**
-     * <code>repeated .Uint32Pair monster_list = 14;</code>
+     * <code>bool is_boss = 9;</code>
+     * @return The isBoss.
      */
     @java.lang.Override
-    public java.util.List<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair> getMonsterListList() {
-      return monsterList_;
-    }
-    /**
-     * <code>repeated .Uint32Pair monster_list = 14;</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder> 
-        getMonsterListOrBuilderList() {
-      return monsterList_;
-    }
-    /**
-     * <code>repeated .Uint32Pair monster_list = 14;</code>
-     */
-    @java.lang.Override
-    public int getMonsterListCount() {
-      return monsterList_.size();
-    }
-    /**
-     * <code>repeated .Uint32Pair monster_list = 14;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair getMonsterList(int index) {
-      return monsterList_.get(index);
-    }
-    /**
-     * <code>repeated .Uint32Pair monster_list = 14;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder getMonsterListOrBuilder(
-        int index) {
-      return monsterList_.get(index);
+    public boolean getIsBoss() {
+      return isBoss_;
     }
 
     public static final int CONFIG_ID_FIELD_NUMBER = 15;
@@ -210,15 +181,44 @@ public final class RogueDiaryRoomInfoOuterClass {
       return configId_;
     }
 
-    public static final int IS_BOSS_FIELD_NUMBER = 1;
-    private boolean isBoss_;
+    public static final int MONSTER_LIST_FIELD_NUMBER = 3;
+    private java.util.List<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair> monsterList_;
     /**
-     * <code>bool is_boss = 1;</code>
-     * @return The isBoss.
+     * <code>repeated .Uint32Pair monster_list = 3;</code>
      */
     @java.lang.Override
-    public boolean getIsBoss() {
-      return isBoss_;
+    public java.util.List<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair> getMonsterListList() {
+      return monsterList_;
+    }
+    /**
+     * <code>repeated .Uint32Pair monster_list = 3;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder> 
+        getMonsterListOrBuilderList() {
+      return monsterList_;
+    }
+    /**
+     * <code>repeated .Uint32Pair monster_list = 3;</code>
+     */
+    @java.lang.Override
+    public int getMonsterListCount() {
+      return monsterList_.size();
+    }
+    /**
+     * <code>repeated .Uint32Pair monster_list = 3;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair getMonsterList(int index) {
+      return monsterList_.get(index);
+    }
+    /**
+     * <code>repeated .Uint32Pair monster_list = 3;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder getMonsterListOrBuilder(
+        int index) {
+      return monsterList_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -235,11 +235,11 @@ public final class RogueDiaryRoomInfoOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (isBoss_ != false) {
-        output.writeBool(1, isBoss_);
-      }
       for (int i = 0; i < monsterList_.size(); i++) {
-        output.writeMessage(14, monsterList_.get(i));
+        output.writeMessage(3, monsterList_.get(i));
+      }
+      if (isBoss_ != false) {
+        output.writeBool(9, isBoss_);
       }
       if (configId_ != 0) {
         output.writeUInt32(15, configId_);
@@ -253,13 +253,13 @@ public final class RogueDiaryRoomInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (isBoss_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(1, isBoss_);
-      }
       for (int i = 0; i < monsterList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(14, monsterList_.get(i));
+          .computeMessageSize(3, monsterList_.get(i));
+      }
+      if (isBoss_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(9, isBoss_);
       }
       if (configId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -280,12 +280,12 @@ public final class RogueDiaryRoomInfoOuterClass {
       }
       emu.grasscutter.net.proto.RogueDiaryRoomInfoOuterClass.RogueDiaryRoomInfo other = (emu.grasscutter.net.proto.RogueDiaryRoomInfoOuterClass.RogueDiaryRoomInfo) obj;
 
-      if (!getMonsterListList()
-          .equals(other.getMonsterListList())) return false;
-      if (getConfigId()
-          != other.getConfigId()) return false;
       if (getIsBoss()
           != other.getIsBoss()) return false;
+      if (getConfigId()
+          != other.getConfigId()) return false;
+      if (!getMonsterListList()
+          .equals(other.getMonsterListList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -297,15 +297,15 @@ public final class RogueDiaryRoomInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + IS_BOSS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsBoss());
+      hash = (37 * hash) + CONFIG_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getConfigId();
       if (getMonsterListCount() > 0) {
         hash = (37 * hash) + MONSTER_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getMonsterListList().hashCode();
       }
-      hash = (37 * hash) + CONFIG_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getConfigId();
-      hash = (37 * hash) + IS_BOSS_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsBoss());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -403,7 +403,7 @@ public final class RogueDiaryRoomInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: AHLFNKPJHEC
+     * Obf: KOLIJBLPOLE
      * </pre>
      *
      * Protobuf type {@code RogueDiaryRoomInfo}
@@ -444,16 +444,16 @@ public final class RogueDiaryRoomInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        isBoss_ = false;
+
+        configId_ = 0;
+
         if (monsterListBuilder_ == null) {
           monsterList_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           monsterListBuilder_.clear();
         }
-        configId_ = 0;
-
-        isBoss_ = false;
-
         return this;
       }
 
@@ -481,6 +481,8 @@ public final class RogueDiaryRoomInfoOuterClass {
       public emu.grasscutter.net.proto.RogueDiaryRoomInfoOuterClass.RogueDiaryRoomInfo buildPartial() {
         emu.grasscutter.net.proto.RogueDiaryRoomInfoOuterClass.RogueDiaryRoomInfo result = new emu.grasscutter.net.proto.RogueDiaryRoomInfoOuterClass.RogueDiaryRoomInfo(this);
         int from_bitField0_ = bitField0_;
+        result.isBoss_ = isBoss_;
+        result.configId_ = configId_;
         if (monsterListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             monsterList_ = java.util.Collections.unmodifiableList(monsterList_);
@@ -490,8 +492,6 @@ public final class RogueDiaryRoomInfoOuterClass {
         } else {
           result.monsterList_ = monsterListBuilder_.build();
         }
-        result.configId_ = configId_;
-        result.isBoss_ = isBoss_;
         onBuilt();
         return result;
       }
@@ -540,6 +540,12 @@ public final class RogueDiaryRoomInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.RogueDiaryRoomInfoOuterClass.RogueDiaryRoomInfo other) {
         if (other == emu.grasscutter.net.proto.RogueDiaryRoomInfoOuterClass.RogueDiaryRoomInfo.getDefaultInstance()) return this;
+        if (other.getIsBoss() != false) {
+          setIsBoss(other.getIsBoss());
+        }
+        if (other.getConfigId() != 0) {
+          setConfigId(other.getConfigId());
+        }
         if (monsterListBuilder_ == null) {
           if (!other.monsterList_.isEmpty()) {
             if (monsterList_.isEmpty()) {
@@ -565,12 +571,6 @@ public final class RogueDiaryRoomInfoOuterClass {
               monsterListBuilder_.addAllMessages(other.monsterList_);
             }
           }
-        }
-        if (other.getConfigId() != 0) {
-          setConfigId(other.getConfigId());
-        }
-        if (other.getIsBoss() != false) {
-          setIsBoss(other.getIsBoss());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -602,244 +602,35 @@ public final class RogueDiaryRoomInfoOuterClass {
       }
       private int bitField0_;
 
-      private java.util.List<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair> monsterList_ =
-        java.util.Collections.emptyList();
-      private void ensureMonsterListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          monsterList_ = new java.util.ArrayList<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair>(monsterList_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder> monsterListBuilder_;
-
+      private boolean isBoss_ ;
       /**
-       * <code>repeated .Uint32Pair monster_list = 14;</code>
+       * <code>bool is_boss = 9;</code>
+       * @return The isBoss.
        */
-      public java.util.List<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair> getMonsterListList() {
-        if (monsterListBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(monsterList_);
-        } else {
-          return monsterListBuilder_.getMessageList();
-        }
+      @java.lang.Override
+      public boolean getIsBoss() {
+        return isBoss_;
       }
       /**
-       * <code>repeated .Uint32Pair monster_list = 14;</code>
+       * <code>bool is_boss = 9;</code>
+       * @param value The isBoss to set.
+       * @return This builder for chaining.
        */
-      public int getMonsterListCount() {
-        if (monsterListBuilder_ == null) {
-          return monsterList_.size();
-        } else {
-          return monsterListBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .Uint32Pair monster_list = 14;</code>
-       */
-      public emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair getMonsterList(int index) {
-        if (monsterListBuilder_ == null) {
-          return monsterList_.get(index);
-        } else {
-          return monsterListBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .Uint32Pair monster_list = 14;</code>
-       */
-      public Builder setMonsterList(
-          int index, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair value) {
-        if (monsterListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureMonsterListIsMutable();
-          monsterList_.set(index, value);
-          onChanged();
-        } else {
-          monsterListBuilder_.setMessage(index, value);
-        }
+      public Builder setIsBoss(boolean value) {
+        
+        isBoss_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>repeated .Uint32Pair monster_list = 14;</code>
+       * <code>bool is_boss = 9;</code>
+       * @return This builder for chaining.
        */
-      public Builder setMonsterList(
-          int index, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder builderForValue) {
-        if (monsterListBuilder_ == null) {
-          ensureMonsterListIsMutable();
-          monsterList_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          monsterListBuilder_.setMessage(index, builderForValue.build());
-        }
+      public Builder clearIsBoss() {
+        
+        isBoss_ = false;
+        onChanged();
         return this;
-      }
-      /**
-       * <code>repeated .Uint32Pair monster_list = 14;</code>
-       */
-      public Builder addMonsterList(emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair value) {
-        if (monsterListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureMonsterListIsMutable();
-          monsterList_.add(value);
-          onChanged();
-        } else {
-          monsterListBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .Uint32Pair monster_list = 14;</code>
-       */
-      public Builder addMonsterList(
-          int index, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair value) {
-        if (monsterListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureMonsterListIsMutable();
-          monsterList_.add(index, value);
-          onChanged();
-        } else {
-          monsterListBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .Uint32Pair monster_list = 14;</code>
-       */
-      public Builder addMonsterList(
-          emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder builderForValue) {
-        if (monsterListBuilder_ == null) {
-          ensureMonsterListIsMutable();
-          monsterList_.add(builderForValue.build());
-          onChanged();
-        } else {
-          monsterListBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .Uint32Pair monster_list = 14;</code>
-       */
-      public Builder addMonsterList(
-          int index, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder builderForValue) {
-        if (monsterListBuilder_ == null) {
-          ensureMonsterListIsMutable();
-          monsterList_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          monsterListBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .Uint32Pair monster_list = 14;</code>
-       */
-      public Builder addAllMonsterList(
-          java.lang.Iterable<? extends emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair> values) {
-        if (monsterListBuilder_ == null) {
-          ensureMonsterListIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, monsterList_);
-          onChanged();
-        } else {
-          monsterListBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .Uint32Pair monster_list = 14;</code>
-       */
-      public Builder clearMonsterList() {
-        if (monsterListBuilder_ == null) {
-          monsterList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-          onChanged();
-        } else {
-          monsterListBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .Uint32Pair monster_list = 14;</code>
-       */
-      public Builder removeMonsterList(int index) {
-        if (monsterListBuilder_ == null) {
-          ensureMonsterListIsMutable();
-          monsterList_.remove(index);
-          onChanged();
-        } else {
-          monsterListBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .Uint32Pair monster_list = 14;</code>
-       */
-      public emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder getMonsterListBuilder(
-          int index) {
-        return getMonsterListFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .Uint32Pair monster_list = 14;</code>
-       */
-      public emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder getMonsterListOrBuilder(
-          int index) {
-        if (monsterListBuilder_ == null) {
-          return monsterList_.get(index);  } else {
-          return monsterListBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .Uint32Pair monster_list = 14;</code>
-       */
-      public java.util.List<? extends emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder> 
-           getMonsterListOrBuilderList() {
-        if (monsterListBuilder_ != null) {
-          return monsterListBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(monsterList_);
-        }
-      }
-      /**
-       * <code>repeated .Uint32Pair monster_list = 14;</code>
-       */
-      public emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder addMonsterListBuilder() {
-        return getMonsterListFieldBuilder().addBuilder(
-            emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .Uint32Pair monster_list = 14;</code>
-       */
-      public emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder addMonsterListBuilder(
-          int index) {
-        return getMonsterListFieldBuilder().addBuilder(
-            index, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .Uint32Pair monster_list = 14;</code>
-       */
-      public java.util.List<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder> 
-           getMonsterListBuilderList() {
-        return getMonsterListFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder> 
-          getMonsterListFieldBuilder() {
-        if (monsterListBuilder_ == null) {
-          monsterListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder>(
-                  monsterList_,
-                  ((bitField0_ & 0x00000001) != 0),
-                  getParentForChildren(),
-                  isClean());
-          monsterList_ = null;
-        }
-        return monsterListBuilder_;
       }
 
       private int configId_ ;
@@ -873,35 +664,244 @@ public final class RogueDiaryRoomInfoOuterClass {
         return this;
       }
 
-      private boolean isBoss_ ;
+      private java.util.List<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair> monsterList_ =
+        java.util.Collections.emptyList();
+      private void ensureMonsterListIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          monsterList_ = new java.util.ArrayList<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair>(monsterList_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder> monsterListBuilder_;
+
       /**
-       * <code>bool is_boss = 1;</code>
-       * @return The isBoss.
+       * <code>repeated .Uint32Pair monster_list = 3;</code>
        */
-      @java.lang.Override
-      public boolean getIsBoss() {
-        return isBoss_;
+      public java.util.List<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair> getMonsterListList() {
+        if (monsterListBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(monsterList_);
+        } else {
+          return monsterListBuilder_.getMessageList();
+        }
       }
       /**
-       * <code>bool is_boss = 1;</code>
-       * @param value The isBoss to set.
-       * @return This builder for chaining.
+       * <code>repeated .Uint32Pair monster_list = 3;</code>
        */
-      public Builder setIsBoss(boolean value) {
-        
-        isBoss_ = value;
-        onChanged();
+      public int getMonsterListCount() {
+        if (monsterListBuilder_ == null) {
+          return monsterList_.size();
+        } else {
+          return monsterListBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .Uint32Pair monster_list = 3;</code>
+       */
+      public emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair getMonsterList(int index) {
+        if (monsterListBuilder_ == null) {
+          return monsterList_.get(index);
+        } else {
+          return monsterListBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .Uint32Pair monster_list = 3;</code>
+       */
+      public Builder setMonsterList(
+          int index, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair value) {
+        if (monsterListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMonsterListIsMutable();
+          monsterList_.set(index, value);
+          onChanged();
+        } else {
+          monsterListBuilder_.setMessage(index, value);
+        }
         return this;
       }
       /**
-       * <code>bool is_boss = 1;</code>
-       * @return This builder for chaining.
+       * <code>repeated .Uint32Pair monster_list = 3;</code>
        */
-      public Builder clearIsBoss() {
-        
-        isBoss_ = false;
-        onChanged();
+      public Builder setMonsterList(
+          int index, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder builderForValue) {
+        if (monsterListBuilder_ == null) {
+          ensureMonsterListIsMutable();
+          monsterList_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          monsterListBuilder_.setMessage(index, builderForValue.build());
+        }
         return this;
+      }
+      /**
+       * <code>repeated .Uint32Pair monster_list = 3;</code>
+       */
+      public Builder addMonsterList(emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair value) {
+        if (monsterListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMonsterListIsMutable();
+          monsterList_.add(value);
+          onChanged();
+        } else {
+          monsterListBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Uint32Pair monster_list = 3;</code>
+       */
+      public Builder addMonsterList(
+          int index, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair value) {
+        if (monsterListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMonsterListIsMutable();
+          monsterList_.add(index, value);
+          onChanged();
+        } else {
+          monsterListBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Uint32Pair monster_list = 3;</code>
+       */
+      public Builder addMonsterList(
+          emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder builderForValue) {
+        if (monsterListBuilder_ == null) {
+          ensureMonsterListIsMutable();
+          monsterList_.add(builderForValue.build());
+          onChanged();
+        } else {
+          monsterListBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Uint32Pair monster_list = 3;</code>
+       */
+      public Builder addMonsterList(
+          int index, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder builderForValue) {
+        if (monsterListBuilder_ == null) {
+          ensureMonsterListIsMutable();
+          monsterList_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          monsterListBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Uint32Pair monster_list = 3;</code>
+       */
+      public Builder addAllMonsterList(
+          java.lang.Iterable<? extends emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair> values) {
+        if (monsterListBuilder_ == null) {
+          ensureMonsterListIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, monsterList_);
+          onChanged();
+        } else {
+          monsterListBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Uint32Pair monster_list = 3;</code>
+       */
+      public Builder clearMonsterList() {
+        if (monsterListBuilder_ == null) {
+          monsterList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          monsterListBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Uint32Pair monster_list = 3;</code>
+       */
+      public Builder removeMonsterList(int index) {
+        if (monsterListBuilder_ == null) {
+          ensureMonsterListIsMutable();
+          monsterList_.remove(index);
+          onChanged();
+        } else {
+          monsterListBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Uint32Pair monster_list = 3;</code>
+       */
+      public emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder getMonsterListBuilder(
+          int index) {
+        return getMonsterListFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .Uint32Pair monster_list = 3;</code>
+       */
+      public emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder getMonsterListOrBuilder(
+          int index) {
+        if (monsterListBuilder_ == null) {
+          return monsterList_.get(index);  } else {
+          return monsterListBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .Uint32Pair monster_list = 3;</code>
+       */
+      public java.util.List<? extends emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder> 
+           getMonsterListOrBuilderList() {
+        if (monsterListBuilder_ != null) {
+          return monsterListBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(monsterList_);
+        }
+      }
+      /**
+       * <code>repeated .Uint32Pair monster_list = 3;</code>
+       */
+      public emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder addMonsterListBuilder() {
+        return getMonsterListFieldBuilder().addBuilder(
+            emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .Uint32Pair monster_list = 3;</code>
+       */
+      public emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder addMonsterListBuilder(
+          int index) {
+        return getMonsterListFieldBuilder().addBuilder(
+            index, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .Uint32Pair monster_list = 3;</code>
+       */
+      public java.util.List<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder> 
+           getMonsterListBuilderList() {
+        return getMonsterListFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder> 
+          getMonsterListFieldBuilder() {
+        if (monsterListBuilder_ == null) {
+          monsterListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder>(
+                  monsterList_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          monsterList_ = null;
+        }
+        return monsterListBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -971,9 +971,9 @@ public final class RogueDiaryRoomInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\030RogueDiaryRoomInfo.proto\032\020Uint32Pair.p" +
-      "roto\"[\n\022RogueDiaryRoomInfo\022!\n\014monster_li" +
-      "st\030\016 \003(\0132\013.Uint32Pair\022\021\n\tconfig_id\030\017 \001(\r" +
-      "\022\017\n\007is_boss\030\001 \001(\010B\033\n\031emu.grasscutter.net" +
+      "roto\"[\n\022RogueDiaryRoomInfo\022\017\n\007is_boss\030\t " +
+      "\001(\010\022\021\n\tconfig_id\030\017 \001(\r\022!\n\014monster_list\030\003" +
+      " \003(\0132\013.Uint32PairB\033\n\031emu.grasscutter.net" +
       ".protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -986,7 +986,7 @@ public final class RogueDiaryRoomInfoOuterClass {
     internal_static_RogueDiaryRoomInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_RogueDiaryRoomInfo_descriptor,
-        new java.lang.String[] { "MonsterList", "ConfigId", "IsBoss", });
+        new java.lang.String[] { "IsBoss", "ConfigId", "MonsterList", });
     emu.grasscutter.net.proto.Uint32PairOuterClass.getDescriptor();
   }
 

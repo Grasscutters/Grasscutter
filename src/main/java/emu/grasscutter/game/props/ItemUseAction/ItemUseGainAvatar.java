@@ -3,6 +3,7 @@ package emu.grasscutter.game.props.ItemUseAction;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.props.ItemUseOp;
 import emu.grasscutter.game.systems.InventorySystem;
+
 import java.util.Optional;
 
 public class ItemUseGainAvatar extends ItemUseInt {

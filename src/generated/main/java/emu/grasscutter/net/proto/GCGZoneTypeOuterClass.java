@@ -16,7 +16,7 @@ public final class GCGZoneTypeOuterClass {
   }
   /**
    * <pre>
-   * Obf: NCIFINONGOL
+   * Obf: BENDDOOFHHP
    * </pre>
    *
    * Protobuf enum {@code GCGZoneType}

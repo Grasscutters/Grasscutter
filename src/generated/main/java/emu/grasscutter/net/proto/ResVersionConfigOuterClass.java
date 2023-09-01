@@ -92,7 +92,7 @@ public final class ResVersionConfigOuterClass {
   }
   /**
    * <pre>
-   * Obf: FJIHAIMDBMB
+   * Obf: DPBFMJOKIMN
    * </pre>
    *
    * Protobuf type {@code ResVersionConfig}
@@ -647,7 +647,7 @@ public final class ResVersionConfigOuterClass {
     }
     /**
      * <pre>
-     * Obf: FJIHAIMDBMB
+     * Obf: DPBFMJOKIMN
      * </pre>
      *
      * Protobuf type {@code ResVersionConfig}

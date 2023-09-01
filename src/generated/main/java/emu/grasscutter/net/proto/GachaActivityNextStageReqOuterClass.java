@@ -20,8 +20,8 @@ public final class GachaActivityNextStageReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 8801
-   * Obf: IDIFCMMPLEO
+   * CmdId: 28908
+   * Obf: PBCEHPMKNBG
    * </pre>
    *
    * Protobuf type {@code GachaActivityNextStageReq}
@@ -246,8 +246,8 @@ public final class GachaActivityNextStageReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8801
-     * Obf: IDIFCMMPLEO
+     * CmdId: 28908
+     * Obf: PBCEHPMKNBG
      * </pre>
      *
      * Protobuf type {@code GachaActivityNextStageReq}

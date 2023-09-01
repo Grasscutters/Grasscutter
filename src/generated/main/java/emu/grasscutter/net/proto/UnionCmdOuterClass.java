@@ -19,20 +19,20 @@ public final class UnionCmdOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 message_id = 1;</code>
-     * @return The messageId.
-     */
-    int getMessageId();
-
-    /**
      * <code>bytes body = 13;</code>
      * @return The body.
      */
     com.google.protobuf.ByteString getBody();
+
+    /**
+     * <code>uint32 message_id = 4;</code>
+     * @return The messageId.
+     */
+    int getMessageId();
   }
   /**
    * <pre>
-   * Obf: AIPCAGJJPKM
+   * Obf: ICNBNJOGGOP
    * </pre>
    *
    * Protobuf type {@code UnionCmd}
@@ -80,7 +80,7 @@ public final class UnionCmdOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 32: {
 
               messageId_ = input.readUInt32();
               break;
@@ -122,17 +122,6 @@ public final class UnionCmdOuterClass {
               emu.grasscutter.net.proto.UnionCmdOuterClass.UnionCmd.class, emu.grasscutter.net.proto.UnionCmdOuterClass.UnionCmd.Builder.class);
     }
 
-    public static final int MESSAGE_ID_FIELD_NUMBER = 1;
-    private int messageId_;
-    /**
-     * <code>uint32 message_id = 1;</code>
-     * @return The messageId.
-     */
-    @java.lang.Override
-    public int getMessageId() {
-      return messageId_;
-    }
-
     public static final int BODY_FIELD_NUMBER = 13;
     private com.google.protobuf.ByteString body_;
     /**
@@ -142,6 +131,17 @@ public final class UnionCmdOuterClass {
     @java.lang.Override
     public com.google.protobuf.ByteString getBody() {
       return body_;
+    }
+
+    public static final int MESSAGE_ID_FIELD_NUMBER = 4;
+    private int messageId_;
+    /**
+     * <code>uint32 message_id = 4;</code>
+     * @return The messageId.
+     */
+    @java.lang.Override
+    public int getMessageId() {
+      return messageId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -159,7 +159,7 @@ public final class UnionCmdOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (messageId_ != 0) {
-        output.writeUInt32(1, messageId_);
+        output.writeUInt32(4, messageId_);
       }
       if (!body_.isEmpty()) {
         output.writeBytes(13, body_);
@@ -175,7 +175,7 @@ public final class UnionCmdOuterClass {
       size = 0;
       if (messageId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, messageId_);
+          .computeUInt32Size(4, messageId_);
       }
       if (!body_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
@@ -196,10 +196,10 @@ public final class UnionCmdOuterClass {
       }
       emu.grasscutter.net.proto.UnionCmdOuterClass.UnionCmd other = (emu.grasscutter.net.proto.UnionCmdOuterClass.UnionCmd) obj;
 
-      if (getMessageId()
-          != other.getMessageId()) return false;
       if (!getBody()
           .equals(other.getBody())) return false;
+      if (getMessageId()
+          != other.getMessageId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -211,10 +211,10 @@ public final class UnionCmdOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + MESSAGE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getMessageId();
       hash = (37 * hash) + BODY_FIELD_NUMBER;
       hash = (53 * hash) + getBody().hashCode();
+      hash = (37 * hash) + MESSAGE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getMessageId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -312,7 +312,7 @@ public final class UnionCmdOuterClass {
     }
     /**
      * <pre>
-     * Obf: AIPCAGJJPKM
+     * Obf: ICNBNJOGGOP
      * </pre>
      *
      * Protobuf type {@code UnionCmd}
@@ -352,9 +352,9 @@ public final class UnionCmdOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        messageId_ = 0;
-
         body_ = com.google.protobuf.ByteString.EMPTY;
+
+        messageId_ = 0;
 
         return this;
       }
@@ -382,8 +382,8 @@ public final class UnionCmdOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.UnionCmdOuterClass.UnionCmd buildPartial() {
         emu.grasscutter.net.proto.UnionCmdOuterClass.UnionCmd result = new emu.grasscutter.net.proto.UnionCmdOuterClass.UnionCmd(this);
-        result.messageId_ = messageId_;
         result.body_ = body_;
+        result.messageId_ = messageId_;
         onBuilt();
         return result;
       }
@@ -432,11 +432,11 @@ public final class UnionCmdOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.UnionCmdOuterClass.UnionCmd other) {
         if (other == emu.grasscutter.net.proto.UnionCmdOuterClass.UnionCmd.getDefaultInstance()) return this;
-        if (other.getMessageId() != 0) {
-          setMessageId(other.getMessageId());
-        }
         if (other.getBody() != com.google.protobuf.ByteString.EMPTY) {
           setBody(other.getBody());
+        }
+        if (other.getMessageId() != 0) {
+          setMessageId(other.getMessageId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -464,37 +464,6 @@ public final class UnionCmdOuterClass {
             mergeFrom(parsedMessage);
           }
         }
-        return this;
-      }
-
-      private int messageId_ ;
-      /**
-       * <code>uint32 message_id = 1;</code>
-       * @return The messageId.
-       */
-      @java.lang.Override
-      public int getMessageId() {
-        return messageId_;
-      }
-      /**
-       * <code>uint32 message_id = 1;</code>
-       * @param value The messageId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMessageId(int value) {
-        
-        messageId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 message_id = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMessageId() {
-        
-        messageId_ = 0;
-        onChanged();
         return this;
       }
 
@@ -528,6 +497,37 @@ public final class UnionCmdOuterClass {
       public Builder clearBody() {
         
         body_ = getDefaultInstance().getBody();
+        onChanged();
+        return this;
+      }
+
+      private int messageId_ ;
+      /**
+       * <code>uint32 message_id = 4;</code>
+       * @return The messageId.
+       */
+      @java.lang.Override
+      public int getMessageId() {
+        return messageId_;
+      }
+      /**
+       * <code>uint32 message_id = 4;</code>
+       * @param value The messageId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMessageId(int value) {
+        
+        messageId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 message_id = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMessageId() {
+        
+        messageId_ = 0;
         onChanged();
         return this;
       }
@@ -598,8 +598,8 @@ public final class UnionCmdOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\016UnionCmd.proto\",\n\010UnionCmd\022\022\n\nmessage_" +
-      "id\030\001 \001(\r\022\014\n\004body\030\r \001(\014B\033\n\031emu.grasscutte" +
+      "\n\016UnionCmd.proto\",\n\010UnionCmd\022\014\n\004body\030\r \001" +
+      "(\014\022\022\n\nmessage_id\030\004 \001(\rB\033\n\031emu.grasscutte" +
       "r.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -611,7 +611,7 @@ public final class UnionCmdOuterClass {
     internal_static_UnionCmd_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_UnionCmd_descriptor,
-        new java.lang.String[] { "MessageId", "Body", });
+        new java.lang.String[] { "Body", "MessageId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

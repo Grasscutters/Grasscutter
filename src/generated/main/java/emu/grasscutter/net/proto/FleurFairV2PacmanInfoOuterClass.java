@@ -19,10 +19,10 @@ public final class FleurFairV2PacmanInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 HPKAAFECFHF = 12;</code>
-     * @return The hPKAAFECFHF.
+     * <code>uint32 AIAIFMJPEBO = 5;</code>
+     * @return The aIAIFMJPEBO.
      */
-    int getHPKAAFECFHF();
+    int getAIAIFMJPEBO();
 
     /**
      * <code>repeated .FleurFairV2StageData stage_data_list = 13;</code>
@@ -50,7 +50,7 @@ public final class FleurFairV2PacmanInfoOuterClass {
   }
   /**
    * <pre>
-   * Obf: MNBNPPENDJF
+   * Obf: JIHOPDGHCJO
    * </pre>
    *
    * Protobuf type {@code FleurFairV2PacmanInfo}
@@ -99,9 +99,9 @@ public final class FleurFairV2PacmanInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 96: {
+            case 40: {
 
-              hPKAAFECFHF_ = input.readUInt32();
+              aIAIFMJPEBO_ = input.readUInt32();
               break;
             }
             case 106: {
@@ -148,15 +148,15 @@ public final class FleurFairV2PacmanInfoOuterClass {
               emu.grasscutter.net.proto.FleurFairV2PacmanInfoOuterClass.FleurFairV2PacmanInfo.class, emu.grasscutter.net.proto.FleurFairV2PacmanInfoOuterClass.FleurFairV2PacmanInfo.Builder.class);
     }
 
-    public static final int HPKAAFECFHF_FIELD_NUMBER = 12;
-    private int hPKAAFECFHF_;
+    public static final int AIAIFMJPEBO_FIELD_NUMBER = 5;
+    private int aIAIFMJPEBO_;
     /**
-     * <code>uint32 HPKAAFECFHF = 12;</code>
-     * @return The hPKAAFECFHF.
+     * <code>uint32 AIAIFMJPEBO = 5;</code>
+     * @return The aIAIFMJPEBO.
      */
     @java.lang.Override
-    public int getHPKAAFECFHF() {
-      return hPKAAFECFHF_;
+    public int getAIAIFMJPEBO() {
+      return aIAIFMJPEBO_;
     }
 
     public static final int STAGE_DATA_LIST_FIELD_NUMBER = 13;
@@ -213,8 +213,8 @@ public final class FleurFairV2PacmanInfoOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (hPKAAFECFHF_ != 0) {
-        output.writeUInt32(12, hPKAAFECFHF_);
+      if (aIAIFMJPEBO_ != 0) {
+        output.writeUInt32(5, aIAIFMJPEBO_);
       }
       for (int i = 0; i < stageDataList_.size(); i++) {
         output.writeMessage(13, stageDataList_.get(i));
@@ -228,9 +228,9 @@ public final class FleurFairV2PacmanInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (hPKAAFECFHF_ != 0) {
+      if (aIAIFMJPEBO_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, hPKAAFECFHF_);
+          .computeUInt32Size(5, aIAIFMJPEBO_);
       }
       for (int i = 0; i < stageDataList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
@@ -251,8 +251,8 @@ public final class FleurFairV2PacmanInfoOuterClass {
       }
       emu.grasscutter.net.proto.FleurFairV2PacmanInfoOuterClass.FleurFairV2PacmanInfo other = (emu.grasscutter.net.proto.FleurFairV2PacmanInfoOuterClass.FleurFairV2PacmanInfo) obj;
 
-      if (getHPKAAFECFHF()
-          != other.getHPKAAFECFHF()) return false;
+      if (getAIAIFMJPEBO()
+          != other.getAIAIFMJPEBO()) return false;
       if (!getStageDataListList()
           .equals(other.getStageDataListList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -266,8 +266,8 @@ public final class FleurFairV2PacmanInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + HPKAAFECFHF_FIELD_NUMBER;
-      hash = (53 * hash) + getHPKAAFECFHF();
+      hash = (37 * hash) + AIAIFMJPEBO_FIELD_NUMBER;
+      hash = (53 * hash) + getAIAIFMJPEBO();
       if (getStageDataListCount() > 0) {
         hash = (37 * hash) + STAGE_DATA_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getStageDataListList().hashCode();
@@ -369,7 +369,7 @@ public final class FleurFairV2PacmanInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: MNBNPPENDJF
+     * Obf: JIHOPDGHCJO
      * </pre>
      *
      * Protobuf type {@code FleurFairV2PacmanInfo}
@@ -410,7 +410,7 @@ public final class FleurFairV2PacmanInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        hPKAAFECFHF_ = 0;
+        aIAIFMJPEBO_ = 0;
 
         if (stageDataListBuilder_ == null) {
           stageDataList_ = java.util.Collections.emptyList();
@@ -445,7 +445,7 @@ public final class FleurFairV2PacmanInfoOuterClass {
       public emu.grasscutter.net.proto.FleurFairV2PacmanInfoOuterClass.FleurFairV2PacmanInfo buildPartial() {
         emu.grasscutter.net.proto.FleurFairV2PacmanInfoOuterClass.FleurFairV2PacmanInfo result = new emu.grasscutter.net.proto.FleurFairV2PacmanInfoOuterClass.FleurFairV2PacmanInfo(this);
         int from_bitField0_ = bitField0_;
-        result.hPKAAFECFHF_ = hPKAAFECFHF_;
+        result.aIAIFMJPEBO_ = aIAIFMJPEBO_;
         if (stageDataListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             stageDataList_ = java.util.Collections.unmodifiableList(stageDataList_);
@@ -503,8 +503,8 @@ public final class FleurFairV2PacmanInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.FleurFairV2PacmanInfoOuterClass.FleurFairV2PacmanInfo other) {
         if (other == emu.grasscutter.net.proto.FleurFairV2PacmanInfoOuterClass.FleurFairV2PacmanInfo.getDefaultInstance()) return this;
-        if (other.getHPKAAFECFHF() != 0) {
-          setHPKAAFECFHF(other.getHPKAAFECFHF());
+        if (other.getAIAIFMJPEBO() != 0) {
+          setAIAIFMJPEBO(other.getAIAIFMJPEBO());
         }
         if (stageDataListBuilder_ == null) {
           if (!other.stageDataList_.isEmpty()) {
@@ -562,33 +562,33 @@ public final class FleurFairV2PacmanInfoOuterClass {
       }
       private int bitField0_;
 
-      private int hPKAAFECFHF_ ;
+      private int aIAIFMJPEBO_ ;
       /**
-       * <code>uint32 HPKAAFECFHF = 12;</code>
-       * @return The hPKAAFECFHF.
+       * <code>uint32 AIAIFMJPEBO = 5;</code>
+       * @return The aIAIFMJPEBO.
        */
       @java.lang.Override
-      public int getHPKAAFECFHF() {
-        return hPKAAFECFHF_;
+      public int getAIAIFMJPEBO() {
+        return aIAIFMJPEBO_;
       }
       /**
-       * <code>uint32 HPKAAFECFHF = 12;</code>
-       * @param value The hPKAAFECFHF to set.
+       * <code>uint32 AIAIFMJPEBO = 5;</code>
+       * @param value The aIAIFMJPEBO to set.
        * @return This builder for chaining.
        */
-      public Builder setHPKAAFECFHF(int value) {
+      public Builder setAIAIFMJPEBO(int value) {
         
-        hPKAAFECFHF_ = value;
+        aIAIFMJPEBO_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 HPKAAFECFHF = 12;</code>
+       * <code>uint32 AIAIFMJPEBO = 5;</code>
        * @return This builder for chaining.
        */
-      public Builder clearHPKAAFECFHF() {
+      public Builder clearAIAIFMJPEBO() {
         
-        hPKAAFECFHF_ = 0;
+        aIAIFMJPEBO_ = 0;
         onChanged();
         return this;
       }
@@ -901,7 +901,7 @@ public final class FleurFairV2PacmanInfoOuterClass {
     java.lang.String[] descriptorData = {
       "\n\033FleurFairV2PacmanInfo.proto\032\032FleurFair" +
       "V2StageData.proto\"\\\n\025FleurFairV2PacmanIn" +
-      "fo\022\023\n\013HPKAAFECFHF\030\014 \001(\r\022.\n\017stage_data_li" +
+      "fo\022\023\n\013AIAIFMJPEBO\030\005 \001(\r\022.\n\017stage_data_li" +
       "st\030\r \003(\0132\025.FleurFairV2StageDataB\033\n\031emu.g" +
       "rasscutter.net.protob\006proto3"
     };
@@ -915,7 +915,7 @@ public final class FleurFairV2PacmanInfoOuterClass {
     internal_static_FleurFairV2PacmanInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_FleurFairV2PacmanInfo_descriptor,
-        new java.lang.String[] { "HPKAAFECFHF", "StageDataList", });
+        new java.lang.String[] { "AIAIFMJPEBO", "StageDataList", });
     emu.grasscutter.net.proto.FleurFairV2StageDataOuterClass.getDescriptor();
   }
 

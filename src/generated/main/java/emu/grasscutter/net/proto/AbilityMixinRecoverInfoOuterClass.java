@@ -19,6 +19,28 @@ public final class AbilityMixinRecoverInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <code>uint32 instanced_ability_id = 1;</code>
+     * @return Whether the instancedAbilityId field is set.
+     */
+    boolean hasInstancedAbilityId();
+    /**
+     * <code>uint32 instanced_ability_id = 1;</code>
+     * @return The instancedAbilityId.
+     */
+    int getInstancedAbilityId();
+
+    /**
+     * <code>uint32 instanced_modifier_id = 2;</code>
+     * @return Whether the instancedModifierId field is set.
+     */
+    boolean hasInstancedModifierId();
+    /**
+     * <code>uint32 instanced_modifier_id = 2;</code>
+     * @return The instancedModifierId.
+     */
+    int getInstancedModifierId();
+
+    /**
      * <code>uint32 local_id = 3;</code>
      * @return The localId.
      */
@@ -86,33 +108,11 @@ public final class AbilityMixinRecoverInfoOuterClass {
      */
     emu.grasscutter.net.proto.BreakoutSnapShotOuterClass.BreakoutSnapShotOrBuilder getBreakoutSnapShotOrBuilder();
 
-    /**
-     * <code>uint32 instanced_ability_id = 1;</code>
-     * @return Whether the instancedAbilityId field is set.
-     */
-    boolean hasInstancedAbilityId();
-    /**
-     * <code>uint32 instanced_ability_id = 1;</code>
-     * @return The instancedAbilityId.
-     */
-    int getInstancedAbilityId();
-
-    /**
-     * <code>uint32 instanced_modifier_id = 2;</code>
-     * @return Whether the instancedModifierId field is set.
-     */
-    boolean hasInstancedModifierId();
-    /**
-     * <code>uint32 instanced_modifier_id = 2;</code>
-     * @return The instancedModifierId.
-     */
-    int getInstancedModifierId();
-
     public emu.grasscutter.net.proto.AbilityMixinRecoverInfoOuterClass.AbilityMixinRecoverInfo.SourceCase getSourceCase();
   }
   /**
    * <pre>
-   * Obf: PEBNHOCGDFE
+   * Obf: NNBAGDGFEKA
    * </pre>
    *
    * Protobuf type {@code AbilityMixinRecoverInfo}
@@ -304,6 +304,48 @@ public final class AbilityMixinRecoverInfoOuterClass {
           sourceCase_);
     }
 
+    public static final int INSTANCED_ABILITY_ID_FIELD_NUMBER = 1;
+    /**
+     * <code>uint32 instanced_ability_id = 1;</code>
+     * @return Whether the instancedAbilityId field is set.
+     */
+    @java.lang.Override
+    public boolean hasInstancedAbilityId() {
+      return sourceCase_ == 1;
+    }
+    /**
+     * <code>uint32 instanced_ability_id = 1;</code>
+     * @return The instancedAbilityId.
+     */
+    @java.lang.Override
+    public int getInstancedAbilityId() {
+      if (sourceCase_ == 1) {
+        return (java.lang.Integer) source_;
+      }
+      return 0;
+    }
+
+    public static final int INSTANCED_MODIFIER_ID_FIELD_NUMBER = 2;
+    /**
+     * <code>uint32 instanced_modifier_id = 2;</code>
+     * @return Whether the instancedModifierId field is set.
+     */
+    @java.lang.Override
+    public boolean hasInstancedModifierId() {
+      return sourceCase_ == 2;
+    }
+    /**
+     * <code>uint32 instanced_modifier_id = 2;</code>
+     * @return The instancedModifierId.
+     */
+    @java.lang.Override
+    public int getInstancedModifierId() {
+      if (sourceCase_ == 2) {
+        return (java.lang.Integer) source_;
+      }
+      return 0;
+    }
+
     public static final int LOCAL_ID_FIELD_NUMBER = 3;
     private int localId_;
     /**
@@ -418,48 +460,6 @@ public final class AbilityMixinRecoverInfoOuterClass {
     @java.lang.Override
     public emu.grasscutter.net.proto.BreakoutSnapShotOuterClass.BreakoutSnapShotOrBuilder getBreakoutSnapShotOrBuilder() {
       return getBreakoutSnapShot();
-    }
-
-    public static final int INSTANCED_ABILITY_ID_FIELD_NUMBER = 1;
-    /**
-     * <code>uint32 instanced_ability_id = 1;</code>
-     * @return Whether the instancedAbilityId field is set.
-     */
-    @java.lang.Override
-    public boolean hasInstancedAbilityId() {
-      return sourceCase_ == 1;
-    }
-    /**
-     * <code>uint32 instanced_ability_id = 1;</code>
-     * @return The instancedAbilityId.
-     */
-    @java.lang.Override
-    public int getInstancedAbilityId() {
-      if (sourceCase_ == 1) {
-        return (java.lang.Integer) source_;
-      }
-      return 0;
-    }
-
-    public static final int INSTANCED_MODIFIER_ID_FIELD_NUMBER = 2;
-    /**
-     * <code>uint32 instanced_modifier_id = 2;</code>
-     * @return Whether the instancedModifierId field is set.
-     */
-    @java.lang.Override
-    public boolean hasInstancedModifierId() {
-      return sourceCase_ == 2;
-    }
-    /**
-     * <code>uint32 instanced_modifier_id = 2;</code>
-     * @return The instancedModifierId.
-     */
-    @java.lang.Override
-    public int getInstancedModifierId() {
-      if (sourceCase_ == 2) {
-        return (java.lang.Integer) source_;
-      }
-      return 0;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -731,7 +731,7 @@ public final class AbilityMixinRecoverInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: PEBNHOCGDFE
+     * Obf: NNBAGDGFEKA
      * </pre>
      *
      * Protobuf type {@code AbilityMixinRecoverInfo}
@@ -819,6 +819,12 @@ public final class AbilityMixinRecoverInfoOuterClass {
       public emu.grasscutter.net.proto.AbilityMixinRecoverInfoOuterClass.AbilityMixinRecoverInfo buildPartial() {
         emu.grasscutter.net.proto.AbilityMixinRecoverInfoOuterClass.AbilityMixinRecoverInfo result = new emu.grasscutter.net.proto.AbilityMixinRecoverInfoOuterClass.AbilityMixinRecoverInfo(this);
         int from_bitField0_ = bitField0_;
+        if (sourceCase_ == 1) {
+          result.source_ = source_;
+        }
+        if (sourceCase_ == 2) {
+          result.source_ = source_;
+        }
         result.localId_ = localId_;
         if (((bitField0_ & 0x00000001) != 0)) {
           dataList_.makeImmutable();
@@ -839,12 +845,6 @@ public final class AbilityMixinRecoverInfoOuterClass {
           result.breakoutSnapShot_ = breakoutSnapShot_;
         } else {
           result.breakoutSnapShot_ = breakoutSnapShotBuilder_.build();
-        }
-        if (sourceCase_ == 1) {
-          result.source_ = source_;
-        }
-        if (sourceCase_ == 2) {
-          result.source_ = source_;
         }
         result.sourceCase_ = sourceCase_;
         onBuilt();
@@ -997,6 +997,88 @@ public final class AbilityMixinRecoverInfoOuterClass {
       }
 
       private int bitField0_;
+
+      /**
+       * <code>uint32 instanced_ability_id = 1;</code>
+       * @return Whether the instancedAbilityId field is set.
+       */
+      public boolean hasInstancedAbilityId() {
+        return sourceCase_ == 1;
+      }
+      /**
+       * <code>uint32 instanced_ability_id = 1;</code>
+       * @return The instancedAbilityId.
+       */
+      public int getInstancedAbilityId() {
+        if (sourceCase_ == 1) {
+          return (java.lang.Integer) source_;
+        }
+        return 0;
+      }
+      /**
+       * <code>uint32 instanced_ability_id = 1;</code>
+       * @param value The instancedAbilityId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInstancedAbilityId(int value) {
+        sourceCase_ = 1;
+        source_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 instanced_ability_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearInstancedAbilityId() {
+        if (sourceCase_ == 1) {
+          sourceCase_ = 0;
+          source_ = null;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       * <code>uint32 instanced_modifier_id = 2;</code>
+       * @return Whether the instancedModifierId field is set.
+       */
+      public boolean hasInstancedModifierId() {
+        return sourceCase_ == 2;
+      }
+      /**
+       * <code>uint32 instanced_modifier_id = 2;</code>
+       * @return The instancedModifierId.
+       */
+      public int getInstancedModifierId() {
+        if (sourceCase_ == 2) {
+          return (java.lang.Integer) source_;
+        }
+        return 0;
+      }
+      /**
+       * <code>uint32 instanced_modifier_id = 2;</code>
+       * @param value The instancedModifierId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInstancedModifierId(int value) {
+        sourceCase_ = 2;
+        source_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 instanced_modifier_id = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearInstancedModifierId() {
+        if (sourceCase_ == 2) {
+          sourceCase_ = 0;
+          source_ = null;
+          onChanged();
+        }
+        return this;
+      }
 
       private int localId_ ;
       /**
@@ -1497,88 +1579,6 @@ public final class AbilityMixinRecoverInfoOuterClass {
         }
         return breakoutSnapShotBuilder_;
       }
-
-      /**
-       * <code>uint32 instanced_ability_id = 1;</code>
-       * @return Whether the instancedAbilityId field is set.
-       */
-      public boolean hasInstancedAbilityId() {
-        return sourceCase_ == 1;
-      }
-      /**
-       * <code>uint32 instanced_ability_id = 1;</code>
-       * @return The instancedAbilityId.
-       */
-      public int getInstancedAbilityId() {
-        if (sourceCase_ == 1) {
-          return (java.lang.Integer) source_;
-        }
-        return 0;
-      }
-      /**
-       * <code>uint32 instanced_ability_id = 1;</code>
-       * @param value The instancedAbilityId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setInstancedAbilityId(int value) {
-        sourceCase_ = 1;
-        source_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 instanced_ability_id = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearInstancedAbilityId() {
-        if (sourceCase_ == 1) {
-          sourceCase_ = 0;
-          source_ = null;
-          onChanged();
-        }
-        return this;
-      }
-
-      /**
-       * <code>uint32 instanced_modifier_id = 2;</code>
-       * @return Whether the instancedModifierId field is set.
-       */
-      public boolean hasInstancedModifierId() {
-        return sourceCase_ == 2;
-      }
-      /**
-       * <code>uint32 instanced_modifier_id = 2;</code>
-       * @return The instancedModifierId.
-       */
-      public int getInstancedModifierId() {
-        if (sourceCase_ == 2) {
-          return (java.lang.Integer) source_;
-        }
-        return 0;
-      }
-      /**
-       * <code>uint32 instanced_modifier_id = 2;</code>
-       * @param value The instancedModifierId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setInstancedModifierId(int value) {
-        sourceCase_ = 2;
-        source_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 instanced_modifier_id = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearInstancedModifierId() {
-        if (sourceCase_ == 2) {
-          sourceCase_ = 0;
-          source_ = null;
-          onChanged();
-        }
-        return this;
-      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1648,13 +1648,13 @@ public final class AbilityMixinRecoverInfoOuterClass {
     java.lang.String[] descriptorData = {
       "\n\035AbilityMixinRecoverInfo.proto\032\031Massive" +
       "PropSyncInfo.proto\032\026BreakoutSnapShot.pro" +
-      "to\"\211\002\n\027AbilityMixinRecoverInfo\022\020\n\010local_" +
-      "id\030\003 \001(\r\022\021\n\tdata_list\030\004 \003(\r\022\036\n\026is_server" +
-      "buff_modifier\030\005 \001(\010\022/\n\021massive_prop_list" +
-      "\030\006 \003(\0132\024.MassivePropSyncInfo\022-\n\022breakout" +
-      "_snap_shot\030\007 \001(\0132\021.BreakoutSnapShot\022\036\n\024i" +
-      "nstanced_ability_id\030\001 \001(\rH\000\022\037\n\025instanced" +
-      "_modifier_id\030\002 \001(\rH\000B\010\n\006SourceB\033\n\031emu.gr" +
+      "to\"\211\002\n\027AbilityMixinRecoverInfo\022\036\n\024instan" +
+      "ced_ability_id\030\001 \001(\rH\000\022\037\n\025instanced_modi" +
+      "fier_id\030\002 \001(\rH\000\022\020\n\010local_id\030\003 \001(\r\022\021\n\tdat" +
+      "a_list\030\004 \003(\r\022\036\n\026is_serverbuff_modifier\030\005" +
+      " \001(\010\022/\n\021massive_prop_list\030\006 \003(\0132\024.Massiv" +
+      "ePropSyncInfo\022-\n\022breakout_snap_shot\030\007 \001(" +
+      "\0132\021.BreakoutSnapShotB\010\n\006SourceB\033\n\031emu.gr" +
       "asscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -1668,7 +1668,7 @@ public final class AbilityMixinRecoverInfoOuterClass {
     internal_static_AbilityMixinRecoverInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_AbilityMixinRecoverInfo_descriptor,
-        new java.lang.String[] { "LocalId", "DataList", "IsServerbuffModifier", "MassivePropList", "BreakoutSnapShot", "InstancedAbilityId", "InstancedModifierId", "Source", });
+        new java.lang.String[] { "InstancedAbilityId", "InstancedModifierId", "LocalId", "DataList", "IsServerbuffModifier", "MassivePropList", "BreakoutSnapShot", "Source", });
     emu.grasscutter.net.proto.MassivePropSyncInfoOuterClass.getDescriptor();
     emu.grasscutter.net.proto.BreakoutSnapShotOuterClass.getDescriptor();
   }

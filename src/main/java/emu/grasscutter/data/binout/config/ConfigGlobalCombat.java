@@ -1,7 +1,8 @@
 package emu.grasscutter.data.binout.config;
 
-import java.util.List;
 import lombok.Data;
+
+import java.util.List;
 
 @Data
 public class ConfigGlobalCombat {

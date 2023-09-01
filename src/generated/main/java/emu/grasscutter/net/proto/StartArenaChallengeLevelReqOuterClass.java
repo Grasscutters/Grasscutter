@@ -19,27 +19,27 @@ public final class StartArenaChallengeLevelReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 PEPMDOACJNL = 3;</code>
-     * @return The pEPMDOACJNL.
+     * <code>uint32 OAHPACPBKJM = 12;</code>
+     * @return The oAHPACPBKJM.
      */
-    int getPEPMDOACJNL();
+    int getOAHPACPBKJM();
 
     /**
-     * <code>uint32 gadget_entity_id = 1;</code>
+     * <code>uint32 gadget_entity_id = 6;</code>
      * @return The gadgetEntityId.
      */
     int getGadgetEntityId();
 
     /**
-     * <code>uint32 DBPEAEAANPG = 4;</code>
-     * @return The dBPEAEAANPG.
+     * <code>uint32 CCKGKFMEKKL = 9;</code>
+     * @return The cCKGKFMEKKL.
      */
-    int getDBPEAEAANPG();
+    int getCCKGKFMEKKL();
   }
   /**
    * <pre>
-   * CmdId: 2173
-   * Obf: IGLPNGCGAHF
+   * CmdId: 7114
+   * Obf: PMNJLIJOOBF
    * </pre>
    *
    * Protobuf type {@code StartArenaChallengeLevelReq}
@@ -86,19 +86,19 @@ public final class StartArenaChallengeLevelReqOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 48: {
 
               gadgetEntityId_ = input.readUInt32();
               break;
             }
-            case 24: {
+            case 72: {
 
-              pEPMDOACJNL_ = input.readUInt32();
+              cCKGKFMEKKL_ = input.readUInt32();
               break;
             }
-            case 32: {
+            case 96: {
 
-              dBPEAEAANPG_ = input.readUInt32();
+              oAHPACPBKJM_ = input.readUInt32();
               break;
             }
             default: {
@@ -133,21 +133,21 @@ public final class StartArenaChallengeLevelReqOuterClass {
               emu.grasscutter.net.proto.StartArenaChallengeLevelReqOuterClass.StartArenaChallengeLevelReq.class, emu.grasscutter.net.proto.StartArenaChallengeLevelReqOuterClass.StartArenaChallengeLevelReq.Builder.class);
     }
 
-    public static final int PEPMDOACJNL_FIELD_NUMBER = 3;
-    private int pEPMDOACJNL_;
+    public static final int OAHPACPBKJM_FIELD_NUMBER = 12;
+    private int oAHPACPBKJM_;
     /**
-     * <code>uint32 PEPMDOACJNL = 3;</code>
-     * @return The pEPMDOACJNL.
+     * <code>uint32 OAHPACPBKJM = 12;</code>
+     * @return The oAHPACPBKJM.
      */
     @java.lang.Override
-    public int getPEPMDOACJNL() {
-      return pEPMDOACJNL_;
+    public int getOAHPACPBKJM() {
+      return oAHPACPBKJM_;
     }
 
-    public static final int GADGET_ENTITY_ID_FIELD_NUMBER = 1;
+    public static final int GADGET_ENTITY_ID_FIELD_NUMBER = 6;
     private int gadgetEntityId_;
     /**
-     * <code>uint32 gadget_entity_id = 1;</code>
+     * <code>uint32 gadget_entity_id = 6;</code>
      * @return The gadgetEntityId.
      */
     @java.lang.Override
@@ -155,15 +155,15 @@ public final class StartArenaChallengeLevelReqOuterClass {
       return gadgetEntityId_;
     }
 
-    public static final int DBPEAEAANPG_FIELD_NUMBER = 4;
-    private int dBPEAEAANPG_;
+    public static final int CCKGKFMEKKL_FIELD_NUMBER = 9;
+    private int cCKGKFMEKKL_;
     /**
-     * <code>uint32 DBPEAEAANPG = 4;</code>
-     * @return The dBPEAEAANPG.
+     * <code>uint32 CCKGKFMEKKL = 9;</code>
+     * @return The cCKGKFMEKKL.
      */
     @java.lang.Override
-    public int getDBPEAEAANPG() {
-      return dBPEAEAANPG_;
+    public int getCCKGKFMEKKL() {
+      return cCKGKFMEKKL_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -181,13 +181,13 @@ public final class StartArenaChallengeLevelReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (gadgetEntityId_ != 0) {
-        output.writeUInt32(1, gadgetEntityId_);
+        output.writeUInt32(6, gadgetEntityId_);
       }
-      if (pEPMDOACJNL_ != 0) {
-        output.writeUInt32(3, pEPMDOACJNL_);
+      if (cCKGKFMEKKL_ != 0) {
+        output.writeUInt32(9, cCKGKFMEKKL_);
       }
-      if (dBPEAEAANPG_ != 0) {
-        output.writeUInt32(4, dBPEAEAANPG_);
+      if (oAHPACPBKJM_ != 0) {
+        output.writeUInt32(12, oAHPACPBKJM_);
       }
       unknownFields.writeTo(output);
     }
@@ -200,15 +200,15 @@ public final class StartArenaChallengeLevelReqOuterClass {
       size = 0;
       if (gadgetEntityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, gadgetEntityId_);
+          .computeUInt32Size(6, gadgetEntityId_);
       }
-      if (pEPMDOACJNL_ != 0) {
+      if (cCKGKFMEKKL_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, pEPMDOACJNL_);
+          .computeUInt32Size(9, cCKGKFMEKKL_);
       }
-      if (dBPEAEAANPG_ != 0) {
+      if (oAHPACPBKJM_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, dBPEAEAANPG_);
+          .computeUInt32Size(12, oAHPACPBKJM_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -225,12 +225,12 @@ public final class StartArenaChallengeLevelReqOuterClass {
       }
       emu.grasscutter.net.proto.StartArenaChallengeLevelReqOuterClass.StartArenaChallengeLevelReq other = (emu.grasscutter.net.proto.StartArenaChallengeLevelReqOuterClass.StartArenaChallengeLevelReq) obj;
 
-      if (getPEPMDOACJNL()
-          != other.getPEPMDOACJNL()) return false;
+      if (getOAHPACPBKJM()
+          != other.getOAHPACPBKJM()) return false;
       if (getGadgetEntityId()
           != other.getGadgetEntityId()) return false;
-      if (getDBPEAEAANPG()
-          != other.getDBPEAEAANPG()) return false;
+      if (getCCKGKFMEKKL()
+          != other.getCCKGKFMEKKL()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -242,12 +242,12 @@ public final class StartArenaChallengeLevelReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + PEPMDOACJNL_FIELD_NUMBER;
-      hash = (53 * hash) + getPEPMDOACJNL();
+      hash = (37 * hash) + OAHPACPBKJM_FIELD_NUMBER;
+      hash = (53 * hash) + getOAHPACPBKJM();
       hash = (37 * hash) + GADGET_ENTITY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getGadgetEntityId();
-      hash = (37 * hash) + DBPEAEAANPG_FIELD_NUMBER;
-      hash = (53 * hash) + getDBPEAEAANPG();
+      hash = (37 * hash) + CCKGKFMEKKL_FIELD_NUMBER;
+      hash = (53 * hash) + getCCKGKFMEKKL();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -345,8 +345,8 @@ public final class StartArenaChallengeLevelReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2173
-     * Obf: IGLPNGCGAHF
+     * CmdId: 7114
+     * Obf: PMNJLIJOOBF
      * </pre>
      *
      * Protobuf type {@code StartArenaChallengeLevelReq}
@@ -386,11 +386,11 @@ public final class StartArenaChallengeLevelReqOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        pEPMDOACJNL_ = 0;
+        oAHPACPBKJM_ = 0;
 
         gadgetEntityId_ = 0;
 
-        dBPEAEAANPG_ = 0;
+        cCKGKFMEKKL_ = 0;
 
         return this;
       }
@@ -418,9 +418,9 @@ public final class StartArenaChallengeLevelReqOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.StartArenaChallengeLevelReqOuterClass.StartArenaChallengeLevelReq buildPartial() {
         emu.grasscutter.net.proto.StartArenaChallengeLevelReqOuterClass.StartArenaChallengeLevelReq result = new emu.grasscutter.net.proto.StartArenaChallengeLevelReqOuterClass.StartArenaChallengeLevelReq(this);
-        result.pEPMDOACJNL_ = pEPMDOACJNL_;
+        result.oAHPACPBKJM_ = oAHPACPBKJM_;
         result.gadgetEntityId_ = gadgetEntityId_;
-        result.dBPEAEAANPG_ = dBPEAEAANPG_;
+        result.cCKGKFMEKKL_ = cCKGKFMEKKL_;
         onBuilt();
         return result;
       }
@@ -469,14 +469,14 @@ public final class StartArenaChallengeLevelReqOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.StartArenaChallengeLevelReqOuterClass.StartArenaChallengeLevelReq other) {
         if (other == emu.grasscutter.net.proto.StartArenaChallengeLevelReqOuterClass.StartArenaChallengeLevelReq.getDefaultInstance()) return this;
-        if (other.getPEPMDOACJNL() != 0) {
-          setPEPMDOACJNL(other.getPEPMDOACJNL());
+        if (other.getOAHPACPBKJM() != 0) {
+          setOAHPACPBKJM(other.getOAHPACPBKJM());
         }
         if (other.getGadgetEntityId() != 0) {
           setGadgetEntityId(other.getGadgetEntityId());
         }
-        if (other.getDBPEAEAANPG() != 0) {
-          setDBPEAEAANPG(other.getDBPEAEAANPG());
+        if (other.getCCKGKFMEKKL() != 0) {
+          setCCKGKFMEKKL(other.getCCKGKFMEKKL());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -507,40 +507,40 @@ public final class StartArenaChallengeLevelReqOuterClass {
         return this;
       }
 
-      private int pEPMDOACJNL_ ;
+      private int oAHPACPBKJM_ ;
       /**
-       * <code>uint32 PEPMDOACJNL = 3;</code>
-       * @return The pEPMDOACJNL.
+       * <code>uint32 OAHPACPBKJM = 12;</code>
+       * @return The oAHPACPBKJM.
        */
       @java.lang.Override
-      public int getPEPMDOACJNL() {
-        return pEPMDOACJNL_;
+      public int getOAHPACPBKJM() {
+        return oAHPACPBKJM_;
       }
       /**
-       * <code>uint32 PEPMDOACJNL = 3;</code>
-       * @param value The pEPMDOACJNL to set.
+       * <code>uint32 OAHPACPBKJM = 12;</code>
+       * @param value The oAHPACPBKJM to set.
        * @return This builder for chaining.
        */
-      public Builder setPEPMDOACJNL(int value) {
+      public Builder setOAHPACPBKJM(int value) {
         
-        pEPMDOACJNL_ = value;
+        oAHPACPBKJM_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 PEPMDOACJNL = 3;</code>
+       * <code>uint32 OAHPACPBKJM = 12;</code>
        * @return This builder for chaining.
        */
-      public Builder clearPEPMDOACJNL() {
+      public Builder clearOAHPACPBKJM() {
         
-        pEPMDOACJNL_ = 0;
+        oAHPACPBKJM_ = 0;
         onChanged();
         return this;
       }
 
       private int gadgetEntityId_ ;
       /**
-       * <code>uint32 gadget_entity_id = 1;</code>
+       * <code>uint32 gadget_entity_id = 6;</code>
        * @return The gadgetEntityId.
        */
       @java.lang.Override
@@ -548,7 +548,7 @@ public final class StartArenaChallengeLevelReqOuterClass {
         return gadgetEntityId_;
       }
       /**
-       * <code>uint32 gadget_entity_id = 1;</code>
+       * <code>uint32 gadget_entity_id = 6;</code>
        * @param value The gadgetEntityId to set.
        * @return This builder for chaining.
        */
@@ -559,7 +559,7 @@ public final class StartArenaChallengeLevelReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 gadget_entity_id = 1;</code>
+       * <code>uint32 gadget_entity_id = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearGadgetEntityId() {
@@ -569,33 +569,33 @@ public final class StartArenaChallengeLevelReqOuterClass {
         return this;
       }
 
-      private int dBPEAEAANPG_ ;
+      private int cCKGKFMEKKL_ ;
       /**
-       * <code>uint32 DBPEAEAANPG = 4;</code>
-       * @return The dBPEAEAANPG.
+       * <code>uint32 CCKGKFMEKKL = 9;</code>
+       * @return The cCKGKFMEKKL.
        */
       @java.lang.Override
-      public int getDBPEAEAANPG() {
-        return dBPEAEAANPG_;
+      public int getCCKGKFMEKKL() {
+        return cCKGKFMEKKL_;
       }
       /**
-       * <code>uint32 DBPEAEAANPG = 4;</code>
-       * @param value The dBPEAEAANPG to set.
+       * <code>uint32 CCKGKFMEKKL = 9;</code>
+       * @param value The cCKGKFMEKKL to set.
        * @return This builder for chaining.
        */
-      public Builder setDBPEAEAANPG(int value) {
+      public Builder setCCKGKFMEKKL(int value) {
         
-        dBPEAEAANPG_ = value;
+        cCKGKFMEKKL_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 DBPEAEAANPG = 4;</code>
+       * <code>uint32 CCKGKFMEKKL = 9;</code>
        * @return This builder for chaining.
        */
-      public Builder clearDBPEAEAANPG() {
+      public Builder clearCCKGKFMEKKL() {
         
-        dBPEAEAANPG_ = 0;
+        cCKGKFMEKKL_ = 0;
         onChanged();
         return this;
       }
@@ -667,9 +667,9 @@ public final class StartArenaChallengeLevelReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n!StartArenaChallengeLevelReq.proto\"a\n\033S" +
-      "tartArenaChallengeLevelReq\022\023\n\013PEPMDOACJN" +
-      "L\030\003 \001(\r\022\030\n\020gadget_entity_id\030\001 \001(\r\022\023\n\013DBP" +
-      "EAEAANPG\030\004 \001(\rB\033\n\031emu.grasscutter.net.pr" +
+      "tartArenaChallengeLevelReq\022\023\n\013OAHPACPBKJ" +
+      "M\030\014 \001(\r\022\030\n\020gadget_entity_id\030\006 \001(\r\022\023\n\013CCK" +
+      "GKFMEKKL\030\t \001(\rB\033\n\031emu.grasscutter.net.pr" +
       "otob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -681,7 +681,7 @@ public final class StartArenaChallengeLevelReqOuterClass {
     internal_static_StartArenaChallengeLevelReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_StartArenaChallengeLevelReq_descriptor,
-        new java.lang.String[] { "PEPMDOACJNL", "GadgetEntityId", "DBPEAEAANPG", });
+        new java.lang.String[] { "OAHPACPBKJM", "GadgetEntityId", "CCKGKFMEKKL", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

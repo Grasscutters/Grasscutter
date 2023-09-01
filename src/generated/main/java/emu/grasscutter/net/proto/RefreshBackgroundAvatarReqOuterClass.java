@@ -20,8 +20,8 @@ public final class RefreshBackgroundAvatarReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 1738
-   * Obf: OFIIOCFBPPC
+   * CmdId: 29491
+   * Obf: ONGNABLDIOE
    * </pre>
    *
    * Protobuf type {@code RefreshBackgroundAvatarReq}
@@ -246,8 +246,8 @@ public final class RefreshBackgroundAvatarReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 1738
-     * Obf: OFIIOCFBPPC
+     * CmdId: 29491
+     * Obf: ONGNABLDIOE
      * </pre>
      *
      * Protobuf type {@code RefreshBackgroundAvatarReq}

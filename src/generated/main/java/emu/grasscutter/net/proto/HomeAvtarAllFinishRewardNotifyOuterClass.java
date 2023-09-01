@@ -19,17 +19,17 @@ public final class HomeAvtarAllFinishRewardNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 event_id_list = 13;</code>
+     * <code>repeated uint32 event_id_list = 12;</code>
      * @return A list containing the eventIdList.
      */
     java.util.List<java.lang.Integer> getEventIdListList();
     /**
-     * <code>repeated uint32 event_id_list = 13;</code>
+     * <code>repeated uint32 event_id_list = 12;</code>
      * @return The count of eventIdList.
      */
     int getEventIdListCount();
     /**
-     * <code>repeated uint32 event_id_list = 13;</code>
+     * <code>repeated uint32 event_id_list = 12;</code>
      * @param index The index of the element to return.
      * @return The eventIdList at the given index.
      */
@@ -37,8 +37,8 @@ public final class HomeAvtarAllFinishRewardNotifyOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 4885
-   * Obf: OKJCAMICNIL
+   * CmdId: 9713
+   * Obf: LPNNHLDIFJN
    * </pre>
    *
    * Protobuf type {@code HomeAvtarAllFinishRewardNotify}
@@ -87,7 +87,7 @@ public final class HomeAvtarAllFinishRewardNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 104: {
+            case 96: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 eventIdList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -95,7 +95,7 @@ public final class HomeAvtarAllFinishRewardNotifyOuterClass {
               eventIdList_.addInt(input.readUInt32());
               break;
             }
-            case 106: {
+            case 98: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -143,10 +143,10 @@ public final class HomeAvtarAllFinishRewardNotifyOuterClass {
               emu.grasscutter.net.proto.HomeAvtarAllFinishRewardNotifyOuterClass.HomeAvtarAllFinishRewardNotify.class, emu.grasscutter.net.proto.HomeAvtarAllFinishRewardNotifyOuterClass.HomeAvtarAllFinishRewardNotify.Builder.class);
     }
 
-    public static final int EVENT_ID_LIST_FIELD_NUMBER = 13;
+    public static final int EVENT_ID_LIST_FIELD_NUMBER = 12;
     private com.google.protobuf.Internal.IntList eventIdList_;
     /**
-     * <code>repeated uint32 event_id_list = 13;</code>
+     * <code>repeated uint32 event_id_list = 12;</code>
      * @return A list containing the eventIdList.
      */
     @java.lang.Override
@@ -155,14 +155,14 @@ public final class HomeAvtarAllFinishRewardNotifyOuterClass {
       return eventIdList_;
     }
     /**
-     * <code>repeated uint32 event_id_list = 13;</code>
+     * <code>repeated uint32 event_id_list = 12;</code>
      * @return The count of eventIdList.
      */
     public int getEventIdListCount() {
       return eventIdList_.size();
     }
     /**
-     * <code>repeated uint32 event_id_list = 13;</code>
+     * <code>repeated uint32 event_id_list = 12;</code>
      * @param index The index of the element to return.
      * @return The eventIdList at the given index.
      */
@@ -187,7 +187,7 @@ public final class HomeAvtarAllFinishRewardNotifyOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (getEventIdListList().size() > 0) {
-        output.writeUInt32NoTag(106);
+        output.writeUInt32NoTag(98);
         output.writeUInt32NoTag(eventIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < eventIdList_.size(); i++) {
@@ -345,8 +345,8 @@ public final class HomeAvtarAllFinishRewardNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4885
-     * Obf: OKJCAMICNIL
+     * CmdId: 9713
+     * Obf: LPNNHLDIFJN
      * </pre>
      *
      * Protobuf type {@code HomeAvtarAllFinishRewardNotify}
@@ -516,7 +516,7 @@ public final class HomeAvtarAllFinishRewardNotifyOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 event_id_list = 13;</code>
+       * <code>repeated uint32 event_id_list = 12;</code>
        * @return A list containing the eventIdList.
        */
       public java.util.List<java.lang.Integer>
@@ -525,14 +525,14 @@ public final class HomeAvtarAllFinishRewardNotifyOuterClass {
                  java.util.Collections.unmodifiableList(eventIdList_) : eventIdList_;
       }
       /**
-       * <code>repeated uint32 event_id_list = 13;</code>
+       * <code>repeated uint32 event_id_list = 12;</code>
        * @return The count of eventIdList.
        */
       public int getEventIdListCount() {
         return eventIdList_.size();
       }
       /**
-       * <code>repeated uint32 event_id_list = 13;</code>
+       * <code>repeated uint32 event_id_list = 12;</code>
        * @param index The index of the element to return.
        * @return The eventIdList at the given index.
        */
@@ -540,7 +540,7 @@ public final class HomeAvtarAllFinishRewardNotifyOuterClass {
         return eventIdList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 event_id_list = 13;</code>
+       * <code>repeated uint32 event_id_list = 12;</code>
        * @param index The index to set the value at.
        * @param value The eventIdList to set.
        * @return This builder for chaining.
@@ -553,7 +553,7 @@ public final class HomeAvtarAllFinishRewardNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 event_id_list = 13;</code>
+       * <code>repeated uint32 event_id_list = 12;</code>
        * @param value The eventIdList to add.
        * @return This builder for chaining.
        */
@@ -564,7 +564,7 @@ public final class HomeAvtarAllFinishRewardNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 event_id_list = 13;</code>
+       * <code>repeated uint32 event_id_list = 12;</code>
        * @param values The eventIdList to add.
        * @return This builder for chaining.
        */
@@ -577,7 +577,7 @@ public final class HomeAvtarAllFinishRewardNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 event_id_list = 13;</code>
+       * <code>repeated uint32 event_id_list = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearEventIdList() {
@@ -655,7 +655,7 @@ public final class HomeAvtarAllFinishRewardNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n$HomeAvtarAllFinishRewardNotify.proto\"7" +
       "\n\036HomeAvtarAllFinishRewardNotify\022\025\n\reven" +
-      "t_id_list\030\r \003(\rB\033\n\031emu.grasscutter.net.p" +
+      "t_id_list\030\014 \003(\rB\033\n\031emu.grasscutter.net.p" +
       "rotob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

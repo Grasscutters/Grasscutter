@@ -1,6 +1,7 @@
 package emu.grasscutter.game.combine;
 
 import emu.grasscutter.data.common.ItemParamData;
+
 import java.util.List;
 
 public class CombineResult {

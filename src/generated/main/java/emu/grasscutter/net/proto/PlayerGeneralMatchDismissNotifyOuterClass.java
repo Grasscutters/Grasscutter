@@ -19,43 +19,43 @@ public final class PlayerGeneralMatchDismissNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 uid_list = 14;</code>
+     * <code>repeated uint32 uid_list = 5;</code>
      * @return A list containing the uidList.
      */
     java.util.List<java.lang.Integer> getUidListList();
     /**
-     * <code>repeated uint32 uid_list = 14;</code>
+     * <code>repeated uint32 uid_list = 5;</code>
      * @return The count of uidList.
      */
     int getUidListCount();
     /**
-     * <code>repeated uint32 uid_list = 14;</code>
+     * <code>repeated uint32 uid_list = 5;</code>
      * @param index The index of the element to return.
      * @return The uidList at the given index.
      */
     int getUidList(int index);
 
     /**
-     * <code>.MatchReason reason = 4;</code>
+     * <code>.MatchReason reason = 8;</code>
      * @return The enum numeric value on the wire for reason.
      */
     int getReasonValue();
     /**
-     * <code>.MatchReason reason = 4;</code>
+     * <code>.MatchReason reason = 8;</code>
      * @return The reason.
      */
     emu.grasscutter.net.proto.MatchReasonOuterClass.MatchReason getReason();
 
     /**
-     * <code>uint32 match_id = 15;</code>
+     * <code>uint32 match_id = 2;</code>
      * @return The matchId.
      */
     int getMatchId();
   }
   /**
    * <pre>
-   * CmdId: 4151
-   * Obf: ALIFIGEGJLI
+   * CmdId: 2964
+   * Obf: NCIKOCGPPHC
    * </pre>
    *
    * Protobuf type {@code PlayerGeneralMatchDismissNotify}
@@ -105,13 +105,12 @@ public final class PlayerGeneralMatchDismissNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
-              int rawValue = input.readEnum();
+            case 16: {
 
-              reason_ = rawValue;
+              matchId_ = input.readUInt32();
               break;
             }
-            case 112: {
+            case 40: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 uidList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -119,7 +118,7 @@ public final class PlayerGeneralMatchDismissNotifyOuterClass {
               uidList_.addInt(input.readUInt32());
               break;
             }
-            case 114: {
+            case 42: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -132,9 +131,10 @@ public final class PlayerGeneralMatchDismissNotifyOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 120: {
+            case 64: {
+              int rawValue = input.readEnum();
 
-              matchId_ = input.readUInt32();
+              reason_ = rawValue;
               break;
             }
             default: {
@@ -172,10 +172,10 @@ public final class PlayerGeneralMatchDismissNotifyOuterClass {
               emu.grasscutter.net.proto.PlayerGeneralMatchDismissNotifyOuterClass.PlayerGeneralMatchDismissNotify.class, emu.grasscutter.net.proto.PlayerGeneralMatchDismissNotifyOuterClass.PlayerGeneralMatchDismissNotify.Builder.class);
     }
 
-    public static final int UID_LIST_FIELD_NUMBER = 14;
+    public static final int UID_LIST_FIELD_NUMBER = 5;
     private com.google.protobuf.Internal.IntList uidList_;
     /**
-     * <code>repeated uint32 uid_list = 14;</code>
+     * <code>repeated uint32 uid_list = 5;</code>
      * @return A list containing the uidList.
      */
     @java.lang.Override
@@ -184,14 +184,14 @@ public final class PlayerGeneralMatchDismissNotifyOuterClass {
       return uidList_;
     }
     /**
-     * <code>repeated uint32 uid_list = 14;</code>
+     * <code>repeated uint32 uid_list = 5;</code>
      * @return The count of uidList.
      */
     public int getUidListCount() {
       return uidList_.size();
     }
     /**
-     * <code>repeated uint32 uid_list = 14;</code>
+     * <code>repeated uint32 uid_list = 5;</code>
      * @param index The index of the element to return.
      * @return The uidList at the given index.
      */
@@ -200,17 +200,17 @@ public final class PlayerGeneralMatchDismissNotifyOuterClass {
     }
     private int uidListMemoizedSerializedSize = -1;
 
-    public static final int REASON_FIELD_NUMBER = 4;
+    public static final int REASON_FIELD_NUMBER = 8;
     private int reason_;
     /**
-     * <code>.MatchReason reason = 4;</code>
+     * <code>.MatchReason reason = 8;</code>
      * @return The enum numeric value on the wire for reason.
      */
     @java.lang.Override public int getReasonValue() {
       return reason_;
     }
     /**
-     * <code>.MatchReason reason = 4;</code>
+     * <code>.MatchReason reason = 8;</code>
      * @return The reason.
      */
     @java.lang.Override public emu.grasscutter.net.proto.MatchReasonOuterClass.MatchReason getReason() {
@@ -219,10 +219,10 @@ public final class PlayerGeneralMatchDismissNotifyOuterClass {
       return result == null ? emu.grasscutter.net.proto.MatchReasonOuterClass.MatchReason.UNRECOGNIZED : result;
     }
 
-    public static final int MATCH_ID_FIELD_NUMBER = 15;
+    public static final int MATCH_ID_FIELD_NUMBER = 2;
     private int matchId_;
     /**
-     * <code>uint32 match_id = 15;</code>
+     * <code>uint32 match_id = 2;</code>
      * @return The matchId.
      */
     @java.lang.Override
@@ -245,18 +245,18 @@ public final class PlayerGeneralMatchDismissNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (reason_ != emu.grasscutter.net.proto.MatchReasonOuterClass.MatchReason.MATCH_NONE.getNumber()) {
-        output.writeEnum(4, reason_);
+      if (matchId_ != 0) {
+        output.writeUInt32(2, matchId_);
       }
       if (getUidListList().size() > 0) {
-        output.writeUInt32NoTag(114);
+        output.writeUInt32NoTag(42);
         output.writeUInt32NoTag(uidListMemoizedSerializedSize);
       }
       for (int i = 0; i < uidList_.size(); i++) {
         output.writeUInt32NoTag(uidList_.getInt(i));
       }
-      if (matchId_ != 0) {
-        output.writeUInt32(15, matchId_);
+      if (reason_ != emu.grasscutter.net.proto.MatchReasonOuterClass.MatchReason.MATCH_NONE.getNumber()) {
+        output.writeEnum(8, reason_);
       }
       unknownFields.writeTo(output);
     }
@@ -267,9 +267,9 @@ public final class PlayerGeneralMatchDismissNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (reason_ != emu.grasscutter.net.proto.MatchReasonOuterClass.MatchReason.MATCH_NONE.getNumber()) {
+      if (matchId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(4, reason_);
+          .computeUInt32Size(2, matchId_);
       }
       {
         int dataSize = 0;
@@ -285,9 +285,9 @@ public final class PlayerGeneralMatchDismissNotifyOuterClass {
         }
         uidListMemoizedSerializedSize = dataSize;
       }
-      if (matchId_ != 0) {
+      if (reason_ != emu.grasscutter.net.proto.MatchReasonOuterClass.MatchReason.MATCH_NONE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, matchId_);
+          .computeEnumSize(8, reason_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -425,8 +425,8 @@ public final class PlayerGeneralMatchDismissNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4151
-     * Obf: ALIFIGEGJLI
+     * CmdId: 2964
+     * Obf: NCIKOCGPPHC
      * </pre>
      *
      * Protobuf type {@code PlayerGeneralMatchDismissNotify}
@@ -608,7 +608,7 @@ public final class PlayerGeneralMatchDismissNotifyOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 uid_list = 14;</code>
+       * <code>repeated uint32 uid_list = 5;</code>
        * @return A list containing the uidList.
        */
       public java.util.List<java.lang.Integer>
@@ -617,14 +617,14 @@ public final class PlayerGeneralMatchDismissNotifyOuterClass {
                  java.util.Collections.unmodifiableList(uidList_) : uidList_;
       }
       /**
-       * <code>repeated uint32 uid_list = 14;</code>
+       * <code>repeated uint32 uid_list = 5;</code>
        * @return The count of uidList.
        */
       public int getUidListCount() {
         return uidList_.size();
       }
       /**
-       * <code>repeated uint32 uid_list = 14;</code>
+       * <code>repeated uint32 uid_list = 5;</code>
        * @param index The index of the element to return.
        * @return The uidList at the given index.
        */
@@ -632,7 +632,7 @@ public final class PlayerGeneralMatchDismissNotifyOuterClass {
         return uidList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 uid_list = 14;</code>
+       * <code>repeated uint32 uid_list = 5;</code>
        * @param index The index to set the value at.
        * @param value The uidList to set.
        * @return This builder for chaining.
@@ -645,7 +645,7 @@ public final class PlayerGeneralMatchDismissNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 uid_list = 14;</code>
+       * <code>repeated uint32 uid_list = 5;</code>
        * @param value The uidList to add.
        * @return This builder for chaining.
        */
@@ -656,7 +656,7 @@ public final class PlayerGeneralMatchDismissNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 uid_list = 14;</code>
+       * <code>repeated uint32 uid_list = 5;</code>
        * @param values The uidList to add.
        * @return This builder for chaining.
        */
@@ -669,7 +669,7 @@ public final class PlayerGeneralMatchDismissNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 uid_list = 14;</code>
+       * <code>repeated uint32 uid_list = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearUidList() {
@@ -681,14 +681,14 @@ public final class PlayerGeneralMatchDismissNotifyOuterClass {
 
       private int reason_ = 0;
       /**
-       * <code>.MatchReason reason = 4;</code>
+       * <code>.MatchReason reason = 8;</code>
        * @return The enum numeric value on the wire for reason.
        */
       @java.lang.Override public int getReasonValue() {
         return reason_;
       }
       /**
-       * <code>.MatchReason reason = 4;</code>
+       * <code>.MatchReason reason = 8;</code>
        * @param value The enum numeric value on the wire for reason to set.
        * @return This builder for chaining.
        */
@@ -699,7 +699,7 @@ public final class PlayerGeneralMatchDismissNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.MatchReason reason = 4;</code>
+       * <code>.MatchReason reason = 8;</code>
        * @return The reason.
        */
       @java.lang.Override
@@ -709,7 +709,7 @@ public final class PlayerGeneralMatchDismissNotifyOuterClass {
         return result == null ? emu.grasscutter.net.proto.MatchReasonOuterClass.MatchReason.UNRECOGNIZED : result;
       }
       /**
-       * <code>.MatchReason reason = 4;</code>
+       * <code>.MatchReason reason = 8;</code>
        * @param value The reason to set.
        * @return This builder for chaining.
        */
@@ -723,7 +723,7 @@ public final class PlayerGeneralMatchDismissNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.MatchReason reason = 4;</code>
+       * <code>.MatchReason reason = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearReason() {
@@ -735,7 +735,7 @@ public final class PlayerGeneralMatchDismissNotifyOuterClass {
 
       private int matchId_ ;
       /**
-       * <code>uint32 match_id = 15;</code>
+       * <code>uint32 match_id = 2;</code>
        * @return The matchId.
        */
       @java.lang.Override
@@ -743,7 +743,7 @@ public final class PlayerGeneralMatchDismissNotifyOuterClass {
         return matchId_;
       }
       /**
-       * <code>uint32 match_id = 15;</code>
+       * <code>uint32 match_id = 2;</code>
        * @param value The matchId to set.
        * @return This builder for chaining.
        */
@@ -754,7 +754,7 @@ public final class PlayerGeneralMatchDismissNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 match_id = 15;</code>
+       * <code>uint32 match_id = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearMatchId() {
@@ -832,8 +832,8 @@ public final class PlayerGeneralMatchDismissNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n%PlayerGeneralMatchDismissNotify.proto\032" +
       "\021MatchReason.proto\"c\n\037PlayerGeneralMatch" +
-      "DismissNotify\022\020\n\010uid_list\030\016 \003(\r\022\034\n\006reaso" +
-      "n\030\004 \001(\0162\014.MatchReason\022\020\n\010match_id\030\017 \001(\rB" +
+      "DismissNotify\022\020\n\010uid_list\030\005 \003(\r\022\034\n\006reaso" +
+      "n\030\010 \001(\0162\014.MatchReason\022\020\n\010match_id\030\002 \001(\rB" +
       "\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

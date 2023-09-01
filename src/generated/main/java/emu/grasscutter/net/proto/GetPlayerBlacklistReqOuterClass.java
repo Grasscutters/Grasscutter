@@ -20,8 +20,8 @@ public final class GetPlayerBlacklistReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 4093
-   * Obf: FHHCIEMALEB
+   * CmdId: 25338
+   * Obf: BGDKEKKBHDA
    * </pre>
    *
    * Protobuf type {@code GetPlayerBlacklistReq}
@@ -246,8 +246,8 @@ public final class GetPlayerBlacklistReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4093
-     * Obf: FHHCIEMALEB
+     * CmdId: 25338
+     * Obf: BGDKEKKBHDA
      * </pre>
      *
      * Protobuf type {@code GetPlayerBlacklistReq}

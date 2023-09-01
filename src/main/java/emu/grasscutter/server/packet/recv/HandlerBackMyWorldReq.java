@@ -1,10 +1,7 @@
 package emu.grasscutter.server.packet.recv;
 
-import emu.grasscutter.game.world.Scene;
-import emu.grasscutter.net.packet.Opcodes;
-import emu.grasscutter.net.packet.PacketHandler;
-import emu.grasscutter.net.packet.PacketOpcodes;
-import emu.grasscutter.server.event.player.PlayerTeleportEvent.TeleportType;
+import emu.grasscutter.net.packet.*;
+import emu.grasscutter.net.proto.RetcodeOuterClass;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketBackMyWorldRsp;
 
@@ -13,23 +10,15 @@ public class HandlerBackMyWorldReq extends PacketHandler {
 
     @Override
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
-        Scene scene = session.getPlayer().getScene();
-        int prevScene = scene.getPrevScene();
+        int prevScene = session.getPlayer().getPrevScene();
 
         // Sanity check for switching between teapot realms
         if (prevScene >= 2000 && prevScene <= 2400) {
             prevScene = 3;
         }
 
-        session
-                .getPlayer()
-                .getWorld()
-                .transferPlayerToScene(
-                        session.getPlayer(),
-                        prevScene,
-                        TeleportType.WAYPOINT,
-                        session.getPlayer().getPrevPos());
+        boolean result = session.getServer().getHomeWorldMPSystem().leaveCoop(session.getPlayer(), prevScene);
 
-        session.send(new PacketBackMyWorldRsp());
+        session.send(new PacketBackMyWorldRsp(result ? 0 : RetcodeOuterClass.Retcode.RET_FAIL_VALUE));
     }
 }

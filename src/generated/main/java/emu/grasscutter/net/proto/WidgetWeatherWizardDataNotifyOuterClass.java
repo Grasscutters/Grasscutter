@@ -19,15 +19,15 @@ public final class WidgetWeatherWizardDataNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 shield_value = 15;</code>
+     * <code>uint32 shield_value = 14;</code>
      * @return The shieldValue.
      */
     int getShieldValue();
   }
   /**
    * <pre>
-   * CmdId: 6051
-   * Obf: IKMBFMLNKGD
+   * CmdId: 24231
+   * Obf: MHPMDPBILNB
    * </pre>
    *
    * Protobuf type {@code WidgetWeatherWizardDataNotify}
@@ -74,7 +74,7 @@ public final class WidgetWeatherWizardDataNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 120: {
+            case 112: {
 
               shieldValue_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class WidgetWeatherWizardDataNotifyOuterClass {
               emu.grasscutter.net.proto.WidgetWeatherWizardDataNotifyOuterClass.WidgetWeatherWizardDataNotify.class, emu.grasscutter.net.proto.WidgetWeatherWizardDataNotifyOuterClass.WidgetWeatherWizardDataNotify.Builder.class);
     }
 
-    public static final int SHIELD_VALUE_FIELD_NUMBER = 15;
+    public static final int SHIELD_VALUE_FIELD_NUMBER = 14;
     private int shieldValue_;
     /**
-     * <code>uint32 shield_value = 15;</code>
+     * <code>uint32 shield_value = 14;</code>
      * @return The shieldValue.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class WidgetWeatherWizardDataNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (shieldValue_ != 0) {
-        output.writeUInt32(15, shieldValue_);
+        output.writeUInt32(14, shieldValue_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class WidgetWeatherWizardDataNotifyOuterClass {
       size = 0;
       if (shieldValue_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, shieldValue_);
+          .computeUInt32Size(14, shieldValue_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class WidgetWeatherWizardDataNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 6051
-     * Obf: IKMBFMLNKGD
+     * CmdId: 24231
+     * Obf: MHPMDPBILNB
      * </pre>
      *
      * Protobuf type {@code WidgetWeatherWizardDataNotify}
@@ -431,7 +431,7 @@ public final class WidgetWeatherWizardDataNotifyOuterClass {
 
       private int shieldValue_ ;
       /**
-       * <code>uint32 shield_value = 15;</code>
+       * <code>uint32 shield_value = 14;</code>
        * @return The shieldValue.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class WidgetWeatherWizardDataNotifyOuterClass {
         return shieldValue_;
       }
       /**
-       * <code>uint32 shield_value = 15;</code>
+       * <code>uint32 shield_value = 14;</code>
        * @param value The shieldValue to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class WidgetWeatherWizardDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 shield_value = 15;</code>
+       * <code>uint32 shield_value = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearShieldValue() {
@@ -528,7 +528,7 @@ public final class WidgetWeatherWizardDataNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n#WidgetWeatherWizardDataNotify.proto\"5\n" +
       "\035WidgetWeatherWizardDataNotify\022\024\n\014shield" +
-      "_value\030\017 \001(\rB\033\n\031emu.grasscutter.net.prot" +
+      "_value\030\016 \001(\rB\033\n\031emu.grasscutter.net.prot" +
       "ob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

@@ -1,16 +1,14 @@
 package emu.grasscutter.game.player;
 
-import dev.morphia.annotations.Entity;
-import dev.morphia.annotations.Transient;
+import dev.morphia.annotations.*;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.codex.CodexAnimalData;
-import emu.grasscutter.game.entity.EntityMonster;
-import emu.grasscutter.game.entity.GameEntity;
+import emu.grasscutter.game.entity.*;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.server.packet.send.PacketCodexDataUpdateNotify;
+import lombok.*;
+
 import java.util.*;
-import lombok.Getter;
-import lombok.val;
 
 @Entity
 public class PlayerCodex {

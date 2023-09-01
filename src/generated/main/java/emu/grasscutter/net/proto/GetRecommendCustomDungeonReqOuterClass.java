@@ -19,15 +19,15 @@ public final class GetRecommendCustomDungeonReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool is_refresh = 11;</code>
+     * <code>bool is_refresh = 15;</code>
      * @return The isRefresh.
      */
     boolean getIsRefresh();
   }
   /**
    * <pre>
-   * CmdId: 6243
-   * Obf: MCHCLOLILJM
+   * CmdId: 23034
+   * Obf: KELIAHMCEEB
    * </pre>
    *
    * Protobuf type {@code GetRecommendCustomDungeonReq}
@@ -74,7 +74,7 @@ public final class GetRecommendCustomDungeonReqOuterClass {
             case 0:
               done = true;
               break;
-            case 88: {
+            case 120: {
 
               isRefresh_ = input.readBool();
               break;
@@ -111,10 +111,10 @@ public final class GetRecommendCustomDungeonReqOuterClass {
               emu.grasscutter.net.proto.GetRecommendCustomDungeonReqOuterClass.GetRecommendCustomDungeonReq.class, emu.grasscutter.net.proto.GetRecommendCustomDungeonReqOuterClass.GetRecommendCustomDungeonReq.Builder.class);
     }
 
-    public static final int IS_REFRESH_FIELD_NUMBER = 11;
+    public static final int IS_REFRESH_FIELD_NUMBER = 15;
     private boolean isRefresh_;
     /**
-     * <code>bool is_refresh = 11;</code>
+     * <code>bool is_refresh = 15;</code>
      * @return The isRefresh.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class GetRecommendCustomDungeonReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (isRefresh_ != false) {
-        output.writeBool(11, isRefresh_);
+        output.writeBool(15, isRefresh_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class GetRecommendCustomDungeonReqOuterClass {
       size = 0;
       if (isRefresh_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(11, isRefresh_);
+          .computeBoolSize(15, isRefresh_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -280,8 +280,8 @@ public final class GetRecommendCustomDungeonReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 6243
-     * Obf: MCHCLOLILJM
+     * CmdId: 23034
+     * Obf: KELIAHMCEEB
      * </pre>
      *
      * Protobuf type {@code GetRecommendCustomDungeonReq}
@@ -432,7 +432,7 @@ public final class GetRecommendCustomDungeonReqOuterClass {
 
       private boolean isRefresh_ ;
       /**
-       * <code>bool is_refresh = 11;</code>
+       * <code>bool is_refresh = 15;</code>
        * @return The isRefresh.
        */
       @java.lang.Override
@@ -440,7 +440,7 @@ public final class GetRecommendCustomDungeonReqOuterClass {
         return isRefresh_;
       }
       /**
-       * <code>bool is_refresh = 11;</code>
+       * <code>bool is_refresh = 15;</code>
        * @param value The isRefresh to set.
        * @return This builder for chaining.
        */
@@ -451,7 +451,7 @@ public final class GetRecommendCustomDungeonReqOuterClass {
         return this;
       }
       /**
-       * <code>bool is_refresh = 11;</code>
+       * <code>bool is_refresh = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsRefresh() {
@@ -529,7 +529,7 @@ public final class GetRecommendCustomDungeonReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n\"GetRecommendCustomDungeonReq.proto\"2\n\034" +
       "GetRecommendCustomDungeonReq\022\022\n\nis_refre" +
-      "sh\030\013 \001(\010B\033\n\031emu.grasscutter.net.protob\006p" +
+      "sh\030\017 \001(\010B\033\n\031emu.grasscutter.net.protob\006p" +
       "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

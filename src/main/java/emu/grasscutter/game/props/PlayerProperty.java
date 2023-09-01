@@ -1,9 +1,9 @@
 package emu.grasscutter.game.props;
 
-import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
-import java.util.stream.Stream;
+import it.unimi.dsi.fastutil.ints.*;
 import lombok.Getter;
+
+import java.util.stream.Stream;
 
 public enum PlayerProperty {
     PROP_NONE(0),
@@ -60,7 +60,12 @@ public enum PlayerProperty {
     PROP_IS_AUTO_UNLOCK_SPECIFIC_EQUIP(10044), // New; unknown/un-used.
     PROP_PLAYER_GCG_COIN(10045), // New; unknown/un-used.
     PROP_PLAYER_WAIT_SUB_GCG_COIN(10046), // New; unknown/un-used.
-    PROP_PLAYER_ONLINE_TIME(10047); // New; unknown/un-used.
+    PROP_PLAYER_ONLINE_TIME(10047), // New; unknown/un-used.
+    PROP_PLAYER_CAN_DIVE(10048, 0, 1), // Can the player dive? [0, 1]
+    PROP_DIVE_MAX_STAMINA(
+            10049, 0, 10000), // The maximum stamina of the player when diving. [0, 10000]
+    PROP_DIVE_CUR_STAMINA(
+            10050, 0, 10000); // The current stamina of the player when diving. [0, 10000]
 
     private static final int inf = Integer.MAX_VALUE; // Maybe this should be something else?
     private static final Int2ObjectMap<PlayerProperty> map = new Int2ObjectOpenHashMap<>();

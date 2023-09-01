@@ -1,18 +1,13 @@
 package emu.grasscutter.game.gacha;
 
-import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
-
 import com.sun.nio.file.SensitivityWatchEventModifier;
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.data.DataLoader;
-import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.*;
 import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.gacha.GachaBanner.BannerType;
-import emu.grasscutter.game.inventory.GameItem;
-import emu.grasscutter.game.inventory.Inventory;
-import emu.grasscutter.game.inventory.ItemType;
+import emu.grasscutter.game.inventory.*;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.WatcherTriggerType;
 import emu.grasscutter.game.systems.InventorySystem;
@@ -21,21 +16,18 @@ import emu.grasscutter.net.proto.GachaTransferItemOuterClass.GachaTransferItem;
 import emu.grasscutter.net.proto.GetGachaInfoRspOuterClass.GetGachaInfoRsp;
 import emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam;
 import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
-import emu.grasscutter.server.game.BaseGameSystem;
-import emu.grasscutter.server.game.GameServer;
-import emu.grasscutter.server.game.GameServerTickEvent;
+import emu.grasscutter.server.event.player.PlayerWishEvent;
+import emu.grasscutter.server.game.*;
 import emu.grasscutter.server.packet.send.PacketDoGachaRsp;
-import emu.grasscutter.utils.FileUtils;
-import emu.grasscutter.utils.Utils;
-import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
-import it.unimi.dsi.fastutil.ints.IntArrayList;
-import it.unimi.dsi.fastutil.ints.IntList;
-import java.nio.file.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.ThreadLocalRandom;
+import emu.grasscutter.utils.*;
+import it.unimi.dsi.fastutil.ints.*;
 import org.greenrobot.eventbus.Subscribe;
+
+import java.nio.file.*;
+import java.util.*;
+import java.util.concurrent.ThreadLocalRandom;
+
+import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
 
 public class GachaSystem extends BaseGameSystem {
     private static final int starglitterId = 221;
@@ -67,9 +59,9 @@ public class GachaSystem extends BaseGameSystem {
         int autoScheduleId = 1000;
         int autoSortId = 9000;
         try {
-            List<GachaBanner> banners = DataLoader.loadTableToList("Banners", GachaBanner.class);
-            if (banners.size() > 0) {
-                for (GachaBanner banner : banners) {
+            var banners = DataLoader.loadTableToList("Banners", GachaBanner.class);
+            if (!banners.isEmpty()) {
+                for (var banner : banners) {
                     banner.onLoad();
                     if (banner.isDeprecated()) {
                         Grasscutter.getLogger()
@@ -265,6 +257,28 @@ public class GachaSystem extends BaseGameSystem {
 
         // Check against total limit
         PlayerGachaBannerInfo gachaInfo = player.getGachaInfo().getBannerInfo(banner);
+        // Call pre-PlayerWishEvent.
+        var event =
+                new PlayerWishEvent(
+                        player,
+                        banner,
+                        times,
+                        new PlayerWishEvent.Pity(
+                                gachaInfo.getPity5(),
+                                gachaInfo.getPity4(),
+                                gachaInfo.getFailedFeaturedItemPulls(4) > 0,
+                                banner.hasEpitomized()
+                                        ? gachaInfo.getFailedChosenItemPulls() >= 2
+                                        : gachaInfo.getFailedFeaturedItemPulls(5) > 0));
+        if (!event.call()) {
+            player.sendPacket(new PacketDoGachaRsp(Retcode.RET_SVR_ERROR));
+            return;
+        }
+
+        // Set properties.
+        banner = event.getBanner();
+        times = event.getWishCount();
+
         int gachaTimesLimit = banner.getGachaTimesLimit();
         if (gachaTimesLimit != Integer.MAX_VALUE
                 && (gachaInfo.getTotalPulls() + times) > gachaTimesLimit) {
@@ -294,6 +308,7 @@ public class GachaSystem extends BaseGameSystem {
             pools.fallbackItems5Pool2 = removeC6FromPool(pools.fallbackItems5Pool2, player);
         }
 
+        var items = new ArrayList<PlayerWishEvent.WishCompute>();
         for (int i = 0; i < times; i++) {
             // Roll
             int itemId = doPull(banner, gachaInfo, pools);
@@ -352,20 +367,37 @@ public class GachaSystem extends BaseGameSystem {
 
             // Create item
             GameItem item = new GameItem(itemData);
-            gachaItem.setGachaItem(item.toItemParam());
-            inventory.addItem(item);
+            items.add(
+                    new PlayerWishEvent.WishCompute(
+                            item, gachaItem, addStardust, addStarglitter, isTransferItem));
+        }
 
-            stardust += addStardust;
-            starglitter += addStarglitter;
+        // Call post-PlayerWishEvent.
+        event.finish(items.stream().map(PlayerWishEvent.WishCompute::getItem).toList());
 
-            if (addStardust > 0) {
+        var eventItems = event.getReceivedItems();
+        for (var i = 0; i < items.size(); i++) {
+            var compute = items.get(i);
+            var gameItem = eventItems.get(i);
+            var gachaItem = compute.getGacha();
+
+            gachaItem.setGachaItem(gameItem.toItemParam());
+            inventory.addItem(gameItem);
+
+            stardust += compute.getAddStardust();
+            starglitter += compute.getAddStarglitter();
+
+            if (compute.getAddStardust() > 0) {
                 gachaItem.addTokenItemList(
-                        ItemParam.newBuilder().setItemId(stardustId).setCount(addStardust));
+                        ItemParam.newBuilder().setItemId(stardustId).setCount(compute.getAddStardust()));
             }
-            if (addStarglitter > 0) {
+            if (compute.getAddStarglitter() > 0) {
                 ItemParam starglitterParam =
-                        ItemParam.newBuilder().setItemId(starglitterId).setCount(addStarglitter).build();
-                if (isTransferItem) {
+                        ItemParam.newBuilder()
+                                .setItemId(starglitterId)
+                                .setCount(compute.getAddStarglitter())
+                                .build();
+                if (compute.isTransferItem()) {
                     gachaItem.addTransferItems(GachaTransferItem.newBuilder().setItem(starglitterParam));
                 }
                 gachaItem.addTokenItemList(starglitterParam);

@@ -19,32 +19,32 @@ public final class MultistageSettleWatcherInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool is_inverse = 11;</code>
-     * @return The isInverse.
-     */
-    boolean getIsInverse();
-
-    /**
-     * <code>uint32 watcher_id = 10;</code>
-     * @return The watcherId.
-     */
-    int getWatcherId();
-
-    /**
-     * <code>uint32 cur_progress = 13;</code>
+     * <code>uint32 cur_progress = 3;</code>
      * @return The curProgress.
      */
     int getCurProgress();
 
     /**
-     * <code>uint32 total_progress = 12;</code>
+     * <code>bool is_inverse = 9;</code>
+     * @return The isInverse.
+     */
+    boolean getIsInverse();
+
+    /**
+     * <code>uint32 watcher_id = 1;</code>
+     * @return The watcherId.
+     */
+    int getWatcherId();
+
+    /**
+     * <code>uint32 total_progress = 15;</code>
      * @return The totalProgress.
      */
     int getTotalProgress();
   }
   /**
    * <pre>
-   * Obf: IANDPKNDOJC
+   * Obf: HOADPAJOKGE
    * </pre>
    *
    * Protobuf type {@code MultistageSettleWatcherInfo}
@@ -91,24 +91,24 @@ public final class MultistageSettleWatcherInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 80: {
+            case 8: {
 
               watcherId_ = input.readUInt32();
               break;
             }
-            case 88: {
+            case 24: {
+
+              curProgress_ = input.readUInt32();
+              break;
+            }
+            case 72: {
 
               isInverse_ = input.readBool();
               break;
             }
-            case 96: {
+            case 120: {
 
               totalProgress_ = input.readUInt32();
-              break;
-            }
-            case 104: {
-
-              curProgress_ = input.readUInt32();
               break;
             }
             default: {
@@ -143,32 +143,10 @@ public final class MultistageSettleWatcherInfoOuterClass {
               emu.grasscutter.net.proto.MultistageSettleWatcherInfoOuterClass.MultistageSettleWatcherInfo.class, emu.grasscutter.net.proto.MultistageSettleWatcherInfoOuterClass.MultistageSettleWatcherInfo.Builder.class);
     }
 
-    public static final int IS_INVERSE_FIELD_NUMBER = 11;
-    private boolean isInverse_;
-    /**
-     * <code>bool is_inverse = 11;</code>
-     * @return The isInverse.
-     */
-    @java.lang.Override
-    public boolean getIsInverse() {
-      return isInverse_;
-    }
-
-    public static final int WATCHER_ID_FIELD_NUMBER = 10;
-    private int watcherId_;
-    /**
-     * <code>uint32 watcher_id = 10;</code>
-     * @return The watcherId.
-     */
-    @java.lang.Override
-    public int getWatcherId() {
-      return watcherId_;
-    }
-
-    public static final int CUR_PROGRESS_FIELD_NUMBER = 13;
+    public static final int CUR_PROGRESS_FIELD_NUMBER = 3;
     private int curProgress_;
     /**
-     * <code>uint32 cur_progress = 13;</code>
+     * <code>uint32 cur_progress = 3;</code>
      * @return The curProgress.
      */
     @java.lang.Override
@@ -176,10 +154,32 @@ public final class MultistageSettleWatcherInfoOuterClass {
       return curProgress_;
     }
 
-    public static final int TOTAL_PROGRESS_FIELD_NUMBER = 12;
+    public static final int IS_INVERSE_FIELD_NUMBER = 9;
+    private boolean isInverse_;
+    /**
+     * <code>bool is_inverse = 9;</code>
+     * @return The isInverse.
+     */
+    @java.lang.Override
+    public boolean getIsInverse() {
+      return isInverse_;
+    }
+
+    public static final int WATCHER_ID_FIELD_NUMBER = 1;
+    private int watcherId_;
+    /**
+     * <code>uint32 watcher_id = 1;</code>
+     * @return The watcherId.
+     */
+    @java.lang.Override
+    public int getWatcherId() {
+      return watcherId_;
+    }
+
+    public static final int TOTAL_PROGRESS_FIELD_NUMBER = 15;
     private int totalProgress_;
     /**
-     * <code>uint32 total_progress = 12;</code>
+     * <code>uint32 total_progress = 15;</code>
      * @return The totalProgress.
      */
     @java.lang.Override
@@ -202,16 +202,16 @@ public final class MultistageSettleWatcherInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (watcherId_ != 0) {
-        output.writeUInt32(10, watcherId_);
-      }
-      if (isInverse_ != false) {
-        output.writeBool(11, isInverse_);
-      }
-      if (totalProgress_ != 0) {
-        output.writeUInt32(12, totalProgress_);
+        output.writeUInt32(1, watcherId_);
       }
       if (curProgress_ != 0) {
-        output.writeUInt32(13, curProgress_);
+        output.writeUInt32(3, curProgress_);
+      }
+      if (isInverse_ != false) {
+        output.writeBool(9, isInverse_);
+      }
+      if (totalProgress_ != 0) {
+        output.writeUInt32(15, totalProgress_);
       }
       unknownFields.writeTo(output);
     }
@@ -224,19 +224,19 @@ public final class MultistageSettleWatcherInfoOuterClass {
       size = 0;
       if (watcherId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, watcherId_);
-      }
-      if (isInverse_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(11, isInverse_);
-      }
-      if (totalProgress_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, totalProgress_);
+          .computeUInt32Size(1, watcherId_);
       }
       if (curProgress_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, curProgress_);
+          .computeUInt32Size(3, curProgress_);
+      }
+      if (isInverse_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(9, isInverse_);
+      }
+      if (totalProgress_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(15, totalProgress_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -253,12 +253,12 @@ public final class MultistageSettleWatcherInfoOuterClass {
       }
       emu.grasscutter.net.proto.MultistageSettleWatcherInfoOuterClass.MultistageSettleWatcherInfo other = (emu.grasscutter.net.proto.MultistageSettleWatcherInfoOuterClass.MultistageSettleWatcherInfo) obj;
 
+      if (getCurProgress()
+          != other.getCurProgress()) return false;
       if (getIsInverse()
           != other.getIsInverse()) return false;
       if (getWatcherId()
           != other.getWatcherId()) return false;
-      if (getCurProgress()
-          != other.getCurProgress()) return false;
       if (getTotalProgress()
           != other.getTotalProgress()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -272,13 +272,13 @@ public final class MultistageSettleWatcherInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + CUR_PROGRESS_FIELD_NUMBER;
+      hash = (53 * hash) + getCurProgress();
       hash = (37 * hash) + IS_INVERSE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsInverse());
       hash = (37 * hash) + WATCHER_ID_FIELD_NUMBER;
       hash = (53 * hash) + getWatcherId();
-      hash = (37 * hash) + CUR_PROGRESS_FIELD_NUMBER;
-      hash = (53 * hash) + getCurProgress();
       hash = (37 * hash) + TOTAL_PROGRESS_FIELD_NUMBER;
       hash = (53 * hash) + getTotalProgress();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -378,7 +378,7 @@ public final class MultistageSettleWatcherInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: IANDPKNDOJC
+     * Obf: HOADPAJOKGE
      * </pre>
      *
      * Protobuf type {@code MultistageSettleWatcherInfo}
@@ -418,11 +418,11 @@ public final class MultistageSettleWatcherInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        curProgress_ = 0;
+
         isInverse_ = false;
 
         watcherId_ = 0;
-
-        curProgress_ = 0;
 
         totalProgress_ = 0;
 
@@ -452,9 +452,9 @@ public final class MultistageSettleWatcherInfoOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.MultistageSettleWatcherInfoOuterClass.MultistageSettleWatcherInfo buildPartial() {
         emu.grasscutter.net.proto.MultistageSettleWatcherInfoOuterClass.MultistageSettleWatcherInfo result = new emu.grasscutter.net.proto.MultistageSettleWatcherInfoOuterClass.MultistageSettleWatcherInfo(this);
+        result.curProgress_ = curProgress_;
         result.isInverse_ = isInverse_;
         result.watcherId_ = watcherId_;
-        result.curProgress_ = curProgress_;
         result.totalProgress_ = totalProgress_;
         onBuilt();
         return result;
@@ -504,14 +504,14 @@ public final class MultistageSettleWatcherInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.MultistageSettleWatcherInfoOuterClass.MultistageSettleWatcherInfo other) {
         if (other == emu.grasscutter.net.proto.MultistageSettleWatcherInfoOuterClass.MultistageSettleWatcherInfo.getDefaultInstance()) return this;
+        if (other.getCurProgress() != 0) {
+          setCurProgress(other.getCurProgress());
+        }
         if (other.getIsInverse() != false) {
           setIsInverse(other.getIsInverse());
         }
         if (other.getWatcherId() != 0) {
           setWatcherId(other.getWatcherId());
-        }
-        if (other.getCurProgress() != 0) {
-          setCurProgress(other.getCurProgress());
         }
         if (other.getTotalProgress() != 0) {
           setTotalProgress(other.getTotalProgress());
@@ -545,9 +545,40 @@ public final class MultistageSettleWatcherInfoOuterClass {
         return this;
       }
 
+      private int curProgress_ ;
+      /**
+       * <code>uint32 cur_progress = 3;</code>
+       * @return The curProgress.
+       */
+      @java.lang.Override
+      public int getCurProgress() {
+        return curProgress_;
+      }
+      /**
+       * <code>uint32 cur_progress = 3;</code>
+       * @param value The curProgress to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCurProgress(int value) {
+        
+        curProgress_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 cur_progress = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCurProgress() {
+        
+        curProgress_ = 0;
+        onChanged();
+        return this;
+      }
+
       private boolean isInverse_ ;
       /**
-       * <code>bool is_inverse = 11;</code>
+       * <code>bool is_inverse = 9;</code>
        * @return The isInverse.
        */
       @java.lang.Override
@@ -555,7 +586,7 @@ public final class MultistageSettleWatcherInfoOuterClass {
         return isInverse_;
       }
       /**
-       * <code>bool is_inverse = 11;</code>
+       * <code>bool is_inverse = 9;</code>
        * @param value The isInverse to set.
        * @return This builder for chaining.
        */
@@ -566,7 +597,7 @@ public final class MultistageSettleWatcherInfoOuterClass {
         return this;
       }
       /**
-       * <code>bool is_inverse = 11;</code>
+       * <code>bool is_inverse = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsInverse() {
@@ -578,7 +609,7 @@ public final class MultistageSettleWatcherInfoOuterClass {
 
       private int watcherId_ ;
       /**
-       * <code>uint32 watcher_id = 10;</code>
+       * <code>uint32 watcher_id = 1;</code>
        * @return The watcherId.
        */
       @java.lang.Override
@@ -586,7 +617,7 @@ public final class MultistageSettleWatcherInfoOuterClass {
         return watcherId_;
       }
       /**
-       * <code>uint32 watcher_id = 10;</code>
+       * <code>uint32 watcher_id = 1;</code>
        * @param value The watcherId to set.
        * @return This builder for chaining.
        */
@@ -597,7 +628,7 @@ public final class MultistageSettleWatcherInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 watcher_id = 10;</code>
+       * <code>uint32 watcher_id = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearWatcherId() {
@@ -607,40 +638,9 @@ public final class MultistageSettleWatcherInfoOuterClass {
         return this;
       }
 
-      private int curProgress_ ;
-      /**
-       * <code>uint32 cur_progress = 13;</code>
-       * @return The curProgress.
-       */
-      @java.lang.Override
-      public int getCurProgress() {
-        return curProgress_;
-      }
-      /**
-       * <code>uint32 cur_progress = 13;</code>
-       * @param value The curProgress to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCurProgress(int value) {
-        
-        curProgress_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 cur_progress = 13;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCurProgress() {
-        
-        curProgress_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int totalProgress_ ;
       /**
-       * <code>uint32 total_progress = 12;</code>
+       * <code>uint32 total_progress = 15;</code>
        * @return The totalProgress.
        */
       @java.lang.Override
@@ -648,7 +648,7 @@ public final class MultistageSettleWatcherInfoOuterClass {
         return totalProgress_;
       }
       /**
-       * <code>uint32 total_progress = 12;</code>
+       * <code>uint32 total_progress = 15;</code>
        * @param value The totalProgress to set.
        * @return This builder for chaining.
        */
@@ -659,7 +659,7 @@ public final class MultistageSettleWatcherInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 total_progress = 12;</code>
+       * <code>uint32 total_progress = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearTotalProgress() {
@@ -736,9 +736,9 @@ public final class MultistageSettleWatcherInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n!MultistageSettleWatcherInfo.proto\"s\n\033M" +
-      "ultistageSettleWatcherInfo\022\022\n\nis_inverse" +
-      "\030\013 \001(\010\022\022\n\nwatcher_id\030\n \001(\r\022\024\n\014cur_progre" +
-      "ss\030\r \001(\r\022\026\n\016total_progress\030\014 \001(\rB\033\n\031emu." +
+      "ultistageSettleWatcherInfo\022\024\n\014cur_progre" +
+      "ss\030\003 \001(\r\022\022\n\nis_inverse\030\t \001(\010\022\022\n\nwatcher_" +
+      "id\030\001 \001(\r\022\026\n\016total_progress\030\017 \001(\rB\033\n\031emu." +
       "grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -750,7 +750,7 @@ public final class MultistageSettleWatcherInfoOuterClass {
     internal_static_MultistageSettleWatcherInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_MultistageSettleWatcherInfo_descriptor,
-        new java.lang.String[] { "IsInverse", "WatcherId", "CurProgress", "TotalProgress", });
+        new java.lang.String[] { "CurProgress", "IsInverse", "WatcherId", "TotalProgress", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

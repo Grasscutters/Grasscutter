@@ -309,7 +309,7 @@ public final class SceneAvatarInfoOuterClass {
   }
   /**
    * <pre>
-   * Obf: IPPGFCBJAGI
+   * Obf: JGKPGDAONID
    * </pre>
    *
    * Protobuf type {@code SceneAvatarInfo}
@@ -1670,7 +1670,7 @@ public final class SceneAvatarInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: IPPGFCBJAGI
+     * Obf: JGKPGDAONID
      * </pre>
      *
      * Protobuf type {@code SceneAvatarInfo}

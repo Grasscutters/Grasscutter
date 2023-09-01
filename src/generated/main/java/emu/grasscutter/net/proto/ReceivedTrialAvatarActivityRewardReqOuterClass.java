@@ -26,8 +26,8 @@ public final class ReceivedTrialAvatarActivityRewardReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 2068
-   * Obf: KKODGFOHEBE
+   * CmdId: 8615
+   * Obf: DGNFHHHNOAJ
    * </pre>
    *
    * Protobuf type {@code ReceivedTrialAvatarActivityRewardReq}
@@ -279,8 +279,8 @@ public final class ReceivedTrialAvatarActivityRewardReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2068
-     * Obf: KKODGFOHEBE
+     * CmdId: 8615
+     * Obf: DGNFHHHNOAJ
      * </pre>
      *
      * Protobuf type {@code ReceivedTrialAvatarActivityRewardReq}

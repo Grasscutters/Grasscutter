@@ -19,26 +19,26 @@ public final class SumoDungeonAvatarOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint64 avatar_guid = 2;</code>
+     * <code>bool is_avlive = 4;</code>
+     * @return The isAvlive.
+     */
+    boolean getIsAvlive();
+
+    /**
+     * <code>uint64 avatar_guid = 10;</code>
      * @return The avatarGuid.
      */
     long getAvatarGuid();
 
     /**
-     * <code>bool is_trial = 4;</code>
+     * <code>bool is_trial = 6;</code>
      * @return The isTrial.
      */
     boolean getIsTrial();
-
-    /**
-     * <code>bool is_avlive = 1;</code>
-     * @return The isAvlive.
-     */
-    boolean getIsAvlive();
   }
   /**
    * <pre>
-   * Obf: DDJOHGFNFKB
+   * Obf: ADALLMGGAPN
    * </pre>
    *
    * Protobuf type {@code SumoDungeonAvatar}
@@ -85,19 +85,19 @@ public final class SumoDungeonAvatarOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 32: {
 
               isAvlive_ = input.readBool();
               break;
             }
-            case 16: {
-
-              avatarGuid_ = input.readUInt64();
-              break;
-            }
-            case 32: {
+            case 48: {
 
               isTrial_ = input.readBool();
+              break;
+            }
+            case 80: {
+
+              avatarGuid_ = input.readUInt64();
               break;
             }
             default: {
@@ -132,10 +132,21 @@ public final class SumoDungeonAvatarOuterClass {
               emu.grasscutter.net.proto.SumoDungeonAvatarOuterClass.SumoDungeonAvatar.class, emu.grasscutter.net.proto.SumoDungeonAvatarOuterClass.SumoDungeonAvatar.Builder.class);
     }
 
-    public static final int AVATAR_GUID_FIELD_NUMBER = 2;
+    public static final int IS_AVLIVE_FIELD_NUMBER = 4;
+    private boolean isAvlive_;
+    /**
+     * <code>bool is_avlive = 4;</code>
+     * @return The isAvlive.
+     */
+    @java.lang.Override
+    public boolean getIsAvlive() {
+      return isAvlive_;
+    }
+
+    public static final int AVATAR_GUID_FIELD_NUMBER = 10;
     private long avatarGuid_;
     /**
-     * <code>uint64 avatar_guid = 2;</code>
+     * <code>uint64 avatar_guid = 10;</code>
      * @return The avatarGuid.
      */
     @java.lang.Override
@@ -143,26 +154,15 @@ public final class SumoDungeonAvatarOuterClass {
       return avatarGuid_;
     }
 
-    public static final int IS_TRIAL_FIELD_NUMBER = 4;
+    public static final int IS_TRIAL_FIELD_NUMBER = 6;
     private boolean isTrial_;
     /**
-     * <code>bool is_trial = 4;</code>
+     * <code>bool is_trial = 6;</code>
      * @return The isTrial.
      */
     @java.lang.Override
     public boolean getIsTrial() {
       return isTrial_;
-    }
-
-    public static final int IS_AVLIVE_FIELD_NUMBER = 1;
-    private boolean isAvlive_;
-    /**
-     * <code>bool is_avlive = 1;</code>
-     * @return The isAvlive.
-     */
-    @java.lang.Override
-    public boolean getIsAvlive() {
-      return isAvlive_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -180,13 +180,13 @@ public final class SumoDungeonAvatarOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (isAvlive_ != false) {
-        output.writeBool(1, isAvlive_);
-      }
-      if (avatarGuid_ != 0L) {
-        output.writeUInt64(2, avatarGuid_);
+        output.writeBool(4, isAvlive_);
       }
       if (isTrial_ != false) {
-        output.writeBool(4, isTrial_);
+        output.writeBool(6, isTrial_);
+      }
+      if (avatarGuid_ != 0L) {
+        output.writeUInt64(10, avatarGuid_);
       }
       unknownFields.writeTo(output);
     }
@@ -199,15 +199,15 @@ public final class SumoDungeonAvatarOuterClass {
       size = 0;
       if (isAvlive_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(1, isAvlive_);
-      }
-      if (avatarGuid_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(2, avatarGuid_);
+          .computeBoolSize(4, isAvlive_);
       }
       if (isTrial_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(4, isTrial_);
+          .computeBoolSize(6, isTrial_);
+      }
+      if (avatarGuid_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(10, avatarGuid_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -224,12 +224,12 @@ public final class SumoDungeonAvatarOuterClass {
       }
       emu.grasscutter.net.proto.SumoDungeonAvatarOuterClass.SumoDungeonAvatar other = (emu.grasscutter.net.proto.SumoDungeonAvatarOuterClass.SumoDungeonAvatar) obj;
 
+      if (getIsAvlive()
+          != other.getIsAvlive()) return false;
       if (getAvatarGuid()
           != other.getAvatarGuid()) return false;
       if (getIsTrial()
           != other.getIsTrial()) return false;
-      if (getIsAvlive()
-          != other.getIsAvlive()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -241,15 +241,15 @@ public final class SumoDungeonAvatarOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + IS_AVLIVE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsAvlive());
       hash = (37 * hash) + AVATAR_GUID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getAvatarGuid());
       hash = (37 * hash) + IS_TRIAL_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsTrial());
-      hash = (37 * hash) + IS_AVLIVE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsAvlive());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -347,7 +347,7 @@ public final class SumoDungeonAvatarOuterClass {
     }
     /**
      * <pre>
-     * Obf: DDJOHGFNFKB
+     * Obf: ADALLMGGAPN
      * </pre>
      *
      * Protobuf type {@code SumoDungeonAvatar}
@@ -387,11 +387,11 @@ public final class SumoDungeonAvatarOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        isAvlive_ = false;
+
         avatarGuid_ = 0L;
 
         isTrial_ = false;
-
-        isAvlive_ = false;
 
         return this;
       }
@@ -419,9 +419,9 @@ public final class SumoDungeonAvatarOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.SumoDungeonAvatarOuterClass.SumoDungeonAvatar buildPartial() {
         emu.grasscutter.net.proto.SumoDungeonAvatarOuterClass.SumoDungeonAvatar result = new emu.grasscutter.net.proto.SumoDungeonAvatarOuterClass.SumoDungeonAvatar(this);
+        result.isAvlive_ = isAvlive_;
         result.avatarGuid_ = avatarGuid_;
         result.isTrial_ = isTrial_;
-        result.isAvlive_ = isAvlive_;
         onBuilt();
         return result;
       }
@@ -470,14 +470,14 @@ public final class SumoDungeonAvatarOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.SumoDungeonAvatarOuterClass.SumoDungeonAvatar other) {
         if (other == emu.grasscutter.net.proto.SumoDungeonAvatarOuterClass.SumoDungeonAvatar.getDefaultInstance()) return this;
+        if (other.getIsAvlive() != false) {
+          setIsAvlive(other.getIsAvlive());
+        }
         if (other.getAvatarGuid() != 0L) {
           setAvatarGuid(other.getAvatarGuid());
         }
         if (other.getIsTrial() != false) {
           setIsTrial(other.getIsTrial());
-        }
-        if (other.getIsAvlive() != false) {
-          setIsAvlive(other.getIsAvlive());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -508,9 +508,40 @@ public final class SumoDungeonAvatarOuterClass {
         return this;
       }
 
+      private boolean isAvlive_ ;
+      /**
+       * <code>bool is_avlive = 4;</code>
+       * @return The isAvlive.
+       */
+      @java.lang.Override
+      public boolean getIsAvlive() {
+        return isAvlive_;
+      }
+      /**
+       * <code>bool is_avlive = 4;</code>
+       * @param value The isAvlive to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsAvlive(boolean value) {
+        
+        isAvlive_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_avlive = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsAvlive() {
+        
+        isAvlive_ = false;
+        onChanged();
+        return this;
+      }
+
       private long avatarGuid_ ;
       /**
-       * <code>uint64 avatar_guid = 2;</code>
+       * <code>uint64 avatar_guid = 10;</code>
        * @return The avatarGuid.
        */
       @java.lang.Override
@@ -518,7 +549,7 @@ public final class SumoDungeonAvatarOuterClass {
         return avatarGuid_;
       }
       /**
-       * <code>uint64 avatar_guid = 2;</code>
+       * <code>uint64 avatar_guid = 10;</code>
        * @param value The avatarGuid to set.
        * @return This builder for chaining.
        */
@@ -529,7 +560,7 @@ public final class SumoDungeonAvatarOuterClass {
         return this;
       }
       /**
-       * <code>uint64 avatar_guid = 2;</code>
+       * <code>uint64 avatar_guid = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearAvatarGuid() {
@@ -541,7 +572,7 @@ public final class SumoDungeonAvatarOuterClass {
 
       private boolean isTrial_ ;
       /**
-       * <code>bool is_trial = 4;</code>
+       * <code>bool is_trial = 6;</code>
        * @return The isTrial.
        */
       @java.lang.Override
@@ -549,7 +580,7 @@ public final class SumoDungeonAvatarOuterClass {
         return isTrial_;
       }
       /**
-       * <code>bool is_trial = 4;</code>
+       * <code>bool is_trial = 6;</code>
        * @param value The isTrial to set.
        * @return This builder for chaining.
        */
@@ -560,43 +591,12 @@ public final class SumoDungeonAvatarOuterClass {
         return this;
       }
       /**
-       * <code>bool is_trial = 4;</code>
+       * <code>bool is_trial = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsTrial() {
         
         isTrial_ = false;
-        onChanged();
-        return this;
-      }
-
-      private boolean isAvlive_ ;
-      /**
-       * <code>bool is_avlive = 1;</code>
-       * @return The isAvlive.
-       */
-      @java.lang.Override
-      public boolean getIsAvlive() {
-        return isAvlive_;
-      }
-      /**
-       * <code>bool is_avlive = 1;</code>
-       * @param value The isAvlive to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsAvlive(boolean value) {
-        
-        isAvlive_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_avlive = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsAvlive() {
-        
-        isAvlive_ = false;
         onChanged();
         return this;
       }
@@ -668,8 +668,8 @@ public final class SumoDungeonAvatarOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\027SumoDungeonAvatar.proto\"M\n\021SumoDungeon" +
-      "Avatar\022\023\n\013avatar_guid\030\002 \001(\004\022\020\n\010is_trial\030" +
-      "\004 \001(\010\022\021\n\tis_avlive\030\001 \001(\010B\033\n\031emu.grasscut" +
+      "Avatar\022\021\n\tis_avlive\030\004 \001(\010\022\023\n\013avatar_guid" +
+      "\030\n \001(\004\022\020\n\010is_trial\030\006 \001(\010B\033\n\031emu.grasscut" +
       "ter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -681,7 +681,7 @@ public final class SumoDungeonAvatarOuterClass {
     internal_static_SumoDungeonAvatar_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SumoDungeonAvatar_descriptor,
-        new java.lang.String[] { "AvatarGuid", "IsTrial", "IsAvlive", });
+        new java.lang.String[] { "IsAvlive", "AvatarGuid", "IsTrial", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

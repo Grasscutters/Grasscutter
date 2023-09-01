@@ -16,7 +16,7 @@ public final class MapMarkTipsTypeOuterClass {
   }
   /**
    * <pre>
-   * Obf: LAACCPKHDCM
+   * Obf: EEDDJAMKPAE
    * </pre>
    *
    * Protobuf enum {@code MapMarkTipsType}

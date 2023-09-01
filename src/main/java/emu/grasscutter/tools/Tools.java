@@ -1,39 +1,29 @@
 package emu.grasscutter.tools;
 
-import static emu.grasscutter.utils.FileUtils.getResourcePath;
-import static emu.grasscutter.utils.lang.Language.getTextMapKey;
-
-import emu.grasscutter.GameConstants;
-import emu.grasscutter.Grasscutter;
-import emu.grasscutter.command.CommandHandler;
-import emu.grasscutter.command.CommandMap;
-import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.ResourceLoader;
+import emu.grasscutter.*;
+import emu.grasscutter.command.*;
+import emu.grasscutter.data.*;
 import emu.grasscutter.data.common.ItemUseData;
-import emu.grasscutter.data.excels.HomeWorldBgmData;
-import emu.grasscutter.data.excels.ItemData;
+import emu.grasscutter.data.excels.*;
 import emu.grasscutter.data.excels.achievement.AchievementData;
 import emu.grasscutter.data.excels.avatar.AvatarData;
-import emu.grasscutter.utils.FileUtils;
-import emu.grasscutter.utils.JsonUtils;
+import emu.grasscutter.utils.*;
 import emu.grasscutter.utils.lang.Language;
 import emu.grasscutter.utils.lang.Language.TextStrings;
-import it.unimi.dsi.fastutil.ints.Int2IntRBTreeMap;
-import it.unimi.dsi.fastutil.ints.Int2ObjectRBTreeMap;
+import it.unimi.dsi.fastutil.ints.*;
+import lombok.*;
+
 import java.io.*;
 import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
+import java.nio.file.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.function.Function;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
-import java.util.stream.LongStream;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.val;
+import java.util.stream.*;
+
+import static emu.grasscutter.utils.FileUtils.getResourcePath;
+import static emu.grasscutter.utils.lang.Language.getTextMapKey;
 
 public final class Tools {
     /**
@@ -432,6 +422,7 @@ public final class Tools {
                                     case "ver" -> resourceInfo.version(value);
                                     case "patches" -> resourceInfo.patches(value);
                                     case "scripts" -> resourceInfo.scripts(ScriptsType.valueOf(value.toUpperCase()));
+                                    case "hasnolocals" -> resourceInfo.hasNoLocals(Boolean.parseBoolean(value));
                                     case "hasserverres" -> resourceInfo.hasServerResources(
                                             Boolean.parseBoolean(value));
                                     case "hasscenescriptdata" -> resourceInfo.hasSceneScriptData(
@@ -441,7 +432,7 @@ public final class Tools {
 
             return resourceInfo.build();
         } catch (Exception ignored) {
-            return new ResourceInfo(null, null, null, ScriptsType.UNKNOWN, false, false);
+            return new ResourceInfo(null, null, null, ScriptsType.UNKNOWN, false, false, false);
         }
     }
 
@@ -452,6 +443,7 @@ public final class Tools {
         private final String version;
         private final String patches;
         private final ScriptsType scripts;
+        private final boolean hasNoLocals;
         private final boolean hasServerResources;
         private final boolean hasSceneScriptData;
 

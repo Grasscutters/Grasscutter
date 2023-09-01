@@ -19,14 +19,14 @@ public final class SceneGalleryCrystalLinkInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 score = 15;</code>
+     * <code>uint32 score = 12;</code>
      * @return The score.
      */
     int getScore();
   }
   /**
    * <pre>
-   * Obf: OPKHPMPOMFE
+   * Obf: PFFJBPGKHMG
    * </pre>
    *
    * Protobuf type {@code SceneGalleryCrystalLinkInfo}
@@ -73,7 +73,7 @@ public final class SceneGalleryCrystalLinkInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 120: {
+            case 96: {
 
               score_ = input.readUInt32();
               break;
@@ -110,10 +110,10 @@ public final class SceneGalleryCrystalLinkInfoOuterClass {
               emu.grasscutter.net.proto.SceneGalleryCrystalLinkInfoOuterClass.SceneGalleryCrystalLinkInfo.class, emu.grasscutter.net.proto.SceneGalleryCrystalLinkInfoOuterClass.SceneGalleryCrystalLinkInfo.Builder.class);
     }
 
-    public static final int SCORE_FIELD_NUMBER = 15;
+    public static final int SCORE_FIELD_NUMBER = 12;
     private int score_;
     /**
-     * <code>uint32 score = 15;</code>
+     * <code>uint32 score = 12;</code>
      * @return The score.
      */
     @java.lang.Override
@@ -136,7 +136,7 @@ public final class SceneGalleryCrystalLinkInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (score_ != 0) {
-        output.writeUInt32(15, score_);
+        output.writeUInt32(12, score_);
       }
       unknownFields.writeTo(output);
     }
@@ -149,7 +149,7 @@ public final class SceneGalleryCrystalLinkInfoOuterClass {
       size = 0;
       if (score_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, score_);
+          .computeUInt32Size(12, score_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -278,7 +278,7 @@ public final class SceneGalleryCrystalLinkInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: OPKHPMPOMFE
+     * Obf: PFFJBPGKHMG
      * </pre>
      *
      * Protobuf type {@code SceneGalleryCrystalLinkInfo}
@@ -429,7 +429,7 @@ public final class SceneGalleryCrystalLinkInfoOuterClass {
 
       private int score_ ;
       /**
-       * <code>uint32 score = 15;</code>
+       * <code>uint32 score = 12;</code>
        * @return The score.
        */
       @java.lang.Override
@@ -437,7 +437,7 @@ public final class SceneGalleryCrystalLinkInfoOuterClass {
         return score_;
       }
       /**
-       * <code>uint32 score = 15;</code>
+       * <code>uint32 score = 12;</code>
        * @param value The score to set.
        * @return This builder for chaining.
        */
@@ -448,7 +448,7 @@ public final class SceneGalleryCrystalLinkInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 score = 15;</code>
+       * <code>uint32 score = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearScore() {
@@ -525,7 +525,7 @@ public final class SceneGalleryCrystalLinkInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n!SceneGalleryCrystalLinkInfo.proto\",\n\033S" +
-      "ceneGalleryCrystalLinkInfo\022\r\n\005score\030\017 \001(" +
+      "ceneGalleryCrystalLinkInfo\022\r\n\005score\030\014 \001(" +
       "\rB\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

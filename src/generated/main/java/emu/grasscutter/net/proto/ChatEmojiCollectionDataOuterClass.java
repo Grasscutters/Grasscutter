@@ -37,7 +37,7 @@ public final class ChatEmojiCollectionDataOuterClass {
   }
   /**
    * <pre>
-   * Obf: JFCBGLDLECB
+   * Obf: GFDAHNLKKNG
    * </pre>
    *
    * Protobuf type {@code ChatEmojiCollectionData}
@@ -344,7 +344,7 @@ public final class ChatEmojiCollectionDataOuterClass {
     }
     /**
      * <pre>
-     * Obf: JFCBGLDLECB
+     * Obf: GFDAHNLKKNG
      * </pre>
      *
      * Protobuf type {@code ChatEmojiCollectionData}

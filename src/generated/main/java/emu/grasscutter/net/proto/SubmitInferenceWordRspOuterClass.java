@@ -19,33 +19,33 @@ public final class SubmitInferenceWordRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 word_id = 5;</code>
-     * @return The wordId.
+     * <code>int32 retcode = 2;</code>
+     * @return The retcode.
      */
-    int getWordId();
+    int getRetcode();
 
     /**
-     * <code>uint32 conclusion_id = 3;</code>
+     * <code>uint32 conclusion_id = 15;</code>
      * @return The conclusionId.
      */
     int getConclusionId();
 
     /**
-     * <code>uint32 page_id = 1;</code>
+     * <code>uint32 page_id = 11;</code>
      * @return The pageId.
      */
     int getPageId();
 
     /**
-     * <code>int32 retcode = 10;</code>
-     * @return The retcode.
+     * <code>uint32 word_id = 8;</code>
+     * @return The wordId.
      */
-    int getRetcode();
+    int getWordId();
   }
   /**
    * <pre>
-   * CmdId: 474
-   * Obf: LMDBDNCJCIG
+   * CmdId: 3679
+   * Obf: OKILIGKEGJM
    * </pre>
    *
    * Protobuf type {@code SubmitInferenceWordRsp}
@@ -92,24 +92,24 @@ public final class SubmitInferenceWordRspOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 16: {
 
-              pageId_ = input.readUInt32();
+              retcode_ = input.readInt32();
               break;
             }
-            case 24: {
-
-              conclusionId_ = input.readUInt32();
-              break;
-            }
-            case 40: {
+            case 64: {
 
               wordId_ = input.readUInt32();
               break;
             }
-            case 80: {
+            case 88: {
 
-              retcode_ = input.readInt32();
+              pageId_ = input.readUInt32();
+              break;
+            }
+            case 120: {
+
+              conclusionId_ = input.readUInt32();
               break;
             }
             default: {
@@ -144,21 +144,21 @@ public final class SubmitInferenceWordRspOuterClass {
               emu.grasscutter.net.proto.SubmitInferenceWordRspOuterClass.SubmitInferenceWordRsp.class, emu.grasscutter.net.proto.SubmitInferenceWordRspOuterClass.SubmitInferenceWordRsp.Builder.class);
     }
 
-    public static final int WORD_ID_FIELD_NUMBER = 5;
-    private int wordId_;
+    public static final int RETCODE_FIELD_NUMBER = 2;
+    private int retcode_;
     /**
-     * <code>uint32 word_id = 5;</code>
-     * @return The wordId.
+     * <code>int32 retcode = 2;</code>
+     * @return The retcode.
      */
     @java.lang.Override
-    public int getWordId() {
-      return wordId_;
+    public int getRetcode() {
+      return retcode_;
     }
 
-    public static final int CONCLUSION_ID_FIELD_NUMBER = 3;
+    public static final int CONCLUSION_ID_FIELD_NUMBER = 15;
     private int conclusionId_;
     /**
-     * <code>uint32 conclusion_id = 3;</code>
+     * <code>uint32 conclusion_id = 15;</code>
      * @return The conclusionId.
      */
     @java.lang.Override
@@ -166,10 +166,10 @@ public final class SubmitInferenceWordRspOuterClass {
       return conclusionId_;
     }
 
-    public static final int PAGE_ID_FIELD_NUMBER = 1;
+    public static final int PAGE_ID_FIELD_NUMBER = 11;
     private int pageId_;
     /**
-     * <code>uint32 page_id = 1;</code>
+     * <code>uint32 page_id = 11;</code>
      * @return The pageId.
      */
     @java.lang.Override
@@ -177,15 +177,15 @@ public final class SubmitInferenceWordRspOuterClass {
       return pageId_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 10;
-    private int retcode_;
+    public static final int WORD_ID_FIELD_NUMBER = 8;
+    private int wordId_;
     /**
-     * <code>int32 retcode = 10;</code>
-     * @return The retcode.
+     * <code>uint32 word_id = 8;</code>
+     * @return The wordId.
      */
     @java.lang.Override
-    public int getRetcode() {
-      return retcode_;
+    public int getWordId() {
+      return wordId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -202,17 +202,17 @@ public final class SubmitInferenceWordRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (pageId_ != 0) {
-        output.writeUInt32(1, pageId_);
-      }
-      if (conclusionId_ != 0) {
-        output.writeUInt32(3, conclusionId_);
+      if (retcode_ != 0) {
+        output.writeInt32(2, retcode_);
       }
       if (wordId_ != 0) {
-        output.writeUInt32(5, wordId_);
+        output.writeUInt32(8, wordId_);
       }
-      if (retcode_ != 0) {
-        output.writeInt32(10, retcode_);
+      if (pageId_ != 0) {
+        output.writeUInt32(11, pageId_);
+      }
+      if (conclusionId_ != 0) {
+        output.writeUInt32(15, conclusionId_);
       }
       unknownFields.writeTo(output);
     }
@@ -223,21 +223,21 @@ public final class SubmitInferenceWordRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (pageId_ != 0) {
+      if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, pageId_);
-      }
-      if (conclusionId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, conclusionId_);
+          .computeInt32Size(2, retcode_);
       }
       if (wordId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, wordId_);
+          .computeUInt32Size(8, wordId_);
       }
-      if (retcode_ != 0) {
+      if (pageId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(10, retcode_);
+          .computeUInt32Size(11, pageId_);
+      }
+      if (conclusionId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(15, conclusionId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -254,14 +254,14 @@ public final class SubmitInferenceWordRspOuterClass {
       }
       emu.grasscutter.net.proto.SubmitInferenceWordRspOuterClass.SubmitInferenceWordRsp other = (emu.grasscutter.net.proto.SubmitInferenceWordRspOuterClass.SubmitInferenceWordRsp) obj;
 
-      if (getWordId()
-          != other.getWordId()) return false;
+      if (getRetcode()
+          != other.getRetcode()) return false;
       if (getConclusionId()
           != other.getConclusionId()) return false;
       if (getPageId()
           != other.getPageId()) return false;
-      if (getRetcode()
-          != other.getRetcode()) return false;
+      if (getWordId()
+          != other.getWordId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -273,14 +273,14 @@ public final class SubmitInferenceWordRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + WORD_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getWordId();
+      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
+      hash = (53 * hash) + getRetcode();
       hash = (37 * hash) + CONCLUSION_ID_FIELD_NUMBER;
       hash = (53 * hash) + getConclusionId();
       hash = (37 * hash) + PAGE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getPageId();
-      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getRetcode();
+      hash = (37 * hash) + WORD_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getWordId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -378,8 +378,8 @@ public final class SubmitInferenceWordRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 474
-     * Obf: LMDBDNCJCIG
+     * CmdId: 3679
+     * Obf: OKILIGKEGJM
      * </pre>
      *
      * Protobuf type {@code SubmitInferenceWordRsp}
@@ -419,13 +419,13 @@ public final class SubmitInferenceWordRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        wordId_ = 0;
+        retcode_ = 0;
 
         conclusionId_ = 0;
 
         pageId_ = 0;
 
-        retcode_ = 0;
+        wordId_ = 0;
 
         return this;
       }
@@ -453,10 +453,10 @@ public final class SubmitInferenceWordRspOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.SubmitInferenceWordRspOuterClass.SubmitInferenceWordRsp buildPartial() {
         emu.grasscutter.net.proto.SubmitInferenceWordRspOuterClass.SubmitInferenceWordRsp result = new emu.grasscutter.net.proto.SubmitInferenceWordRspOuterClass.SubmitInferenceWordRsp(this);
-        result.wordId_ = wordId_;
+        result.retcode_ = retcode_;
         result.conclusionId_ = conclusionId_;
         result.pageId_ = pageId_;
-        result.retcode_ = retcode_;
+        result.wordId_ = wordId_;
         onBuilt();
         return result;
       }
@@ -505,8 +505,8 @@ public final class SubmitInferenceWordRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.SubmitInferenceWordRspOuterClass.SubmitInferenceWordRsp other) {
         if (other == emu.grasscutter.net.proto.SubmitInferenceWordRspOuterClass.SubmitInferenceWordRsp.getDefaultInstance()) return this;
-        if (other.getWordId() != 0) {
-          setWordId(other.getWordId());
+        if (other.getRetcode() != 0) {
+          setRetcode(other.getRetcode());
         }
         if (other.getConclusionId() != 0) {
           setConclusionId(other.getConclusionId());
@@ -514,8 +514,8 @@ public final class SubmitInferenceWordRspOuterClass {
         if (other.getPageId() != 0) {
           setPageId(other.getPageId());
         }
-        if (other.getRetcode() != 0) {
-          setRetcode(other.getRetcode());
+        if (other.getWordId() != 0) {
+          setWordId(other.getWordId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -546,40 +546,40 @@ public final class SubmitInferenceWordRspOuterClass {
         return this;
       }
 
-      private int wordId_ ;
+      private int retcode_ ;
       /**
-       * <code>uint32 word_id = 5;</code>
-       * @return The wordId.
+       * <code>int32 retcode = 2;</code>
+       * @return The retcode.
        */
       @java.lang.Override
-      public int getWordId() {
-        return wordId_;
+      public int getRetcode() {
+        return retcode_;
       }
       /**
-       * <code>uint32 word_id = 5;</code>
-       * @param value The wordId to set.
+       * <code>int32 retcode = 2;</code>
+       * @param value The retcode to set.
        * @return This builder for chaining.
        */
-      public Builder setWordId(int value) {
+      public Builder setRetcode(int value) {
         
-        wordId_ = value;
+        retcode_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 word_id = 5;</code>
+       * <code>int32 retcode = 2;</code>
        * @return This builder for chaining.
        */
-      public Builder clearWordId() {
+      public Builder clearRetcode() {
         
-        wordId_ = 0;
+        retcode_ = 0;
         onChanged();
         return this;
       }
 
       private int conclusionId_ ;
       /**
-       * <code>uint32 conclusion_id = 3;</code>
+       * <code>uint32 conclusion_id = 15;</code>
        * @return The conclusionId.
        */
       @java.lang.Override
@@ -587,7 +587,7 @@ public final class SubmitInferenceWordRspOuterClass {
         return conclusionId_;
       }
       /**
-       * <code>uint32 conclusion_id = 3;</code>
+       * <code>uint32 conclusion_id = 15;</code>
        * @param value The conclusionId to set.
        * @return This builder for chaining.
        */
@@ -598,7 +598,7 @@ public final class SubmitInferenceWordRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 conclusion_id = 3;</code>
+       * <code>uint32 conclusion_id = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearConclusionId() {
@@ -610,7 +610,7 @@ public final class SubmitInferenceWordRspOuterClass {
 
       private int pageId_ ;
       /**
-       * <code>uint32 page_id = 1;</code>
+       * <code>uint32 page_id = 11;</code>
        * @return The pageId.
        */
       @java.lang.Override
@@ -618,7 +618,7 @@ public final class SubmitInferenceWordRspOuterClass {
         return pageId_;
       }
       /**
-       * <code>uint32 page_id = 1;</code>
+       * <code>uint32 page_id = 11;</code>
        * @param value The pageId to set.
        * @return This builder for chaining.
        */
@@ -629,7 +629,7 @@ public final class SubmitInferenceWordRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 page_id = 1;</code>
+       * <code>uint32 page_id = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearPageId() {
@@ -639,33 +639,33 @@ public final class SubmitInferenceWordRspOuterClass {
         return this;
       }
 
-      private int retcode_ ;
+      private int wordId_ ;
       /**
-       * <code>int32 retcode = 10;</code>
-       * @return The retcode.
+       * <code>uint32 word_id = 8;</code>
+       * @return The wordId.
        */
       @java.lang.Override
-      public int getRetcode() {
-        return retcode_;
+      public int getWordId() {
+        return wordId_;
       }
       /**
-       * <code>int32 retcode = 10;</code>
-       * @param value The retcode to set.
+       * <code>uint32 word_id = 8;</code>
+       * @param value The wordId to set.
        * @return This builder for chaining.
        */
-      public Builder setRetcode(int value) {
+      public Builder setWordId(int value) {
         
-        retcode_ = value;
+        wordId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 retcode = 10;</code>
+       * <code>uint32 word_id = 8;</code>
        * @return This builder for chaining.
        */
-      public Builder clearRetcode() {
+      public Builder clearWordId() {
         
-        retcode_ = 0;
+        wordId_ = 0;
         onChanged();
         return this;
       }
@@ -737,9 +737,9 @@ public final class SubmitInferenceWordRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\034SubmitInferenceWordRsp.proto\"b\n\026Submit" +
-      "InferenceWordRsp\022\017\n\007word_id\030\005 \001(\r\022\025\n\rcon" +
-      "clusion_id\030\003 \001(\r\022\017\n\007page_id\030\001 \001(\r\022\017\n\007ret" +
-      "code\030\n \001(\005B\033\n\031emu.grasscutter.net.protob" +
+      "InferenceWordRsp\022\017\n\007retcode\030\002 \001(\005\022\025\n\rcon" +
+      "clusion_id\030\017 \001(\r\022\017\n\007page_id\030\013 \001(\r\022\017\n\007wor" +
+      "d_id\030\010 \001(\rB\033\n\031emu.grasscutter.net.protob" +
       "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -751,7 +751,7 @@ public final class SubmitInferenceWordRspOuterClass {
     internal_static_SubmitInferenceWordRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SubmitInferenceWordRsp_descriptor,
-        new java.lang.String[] { "WordId", "ConclusionId", "PageId", "Retcode", });
+        new java.lang.String[] { "Retcode", "ConclusionId", "PageId", "WordId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -19,15 +19,15 @@ public final class FungusFighterRestartTraningDungeonRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 4;</code>
+     * <code>int32 retcode = 10;</code>
      * @return The retcode.
      */
     int getRetcode();
   }
   /**
    * <pre>
-   * CmdId: 21623
-   * Obf: ACPEMIFBNNB
+   * CmdId: 5843
+   * Obf: GIFEBICDBCF
    * </pre>
    *
    * Protobuf type {@code FungusFighterRestartTraningDungeonRsp}
@@ -74,7 +74,7 @@ public final class FungusFighterRestartTraningDungeonRspOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
+            case 80: {
 
               retcode_ = input.readInt32();
               break;
@@ -111,10 +111,10 @@ public final class FungusFighterRestartTraningDungeonRspOuterClass {
               emu.grasscutter.net.proto.FungusFighterRestartTraningDungeonRspOuterClass.FungusFighterRestartTraningDungeonRsp.class, emu.grasscutter.net.proto.FungusFighterRestartTraningDungeonRspOuterClass.FungusFighterRestartTraningDungeonRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 4;
+    public static final int RETCODE_FIELD_NUMBER = 10;
     private int retcode_;
     /**
-     * <code>int32 retcode = 4;</code>
+     * <code>int32 retcode = 10;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class FungusFighterRestartTraningDungeonRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (retcode_ != 0) {
-        output.writeInt32(4, retcode_);
+        output.writeInt32(10, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class FungusFighterRestartTraningDungeonRspOuterClass {
       size = 0;
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(4, retcode_);
+          .computeInt32Size(10, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class FungusFighterRestartTraningDungeonRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 21623
-     * Obf: ACPEMIFBNNB
+     * CmdId: 5843
+     * Obf: GIFEBICDBCF
      * </pre>
      *
      * Protobuf type {@code FungusFighterRestartTraningDungeonRsp}
@@ -431,7 +431,7 @@ public final class FungusFighterRestartTraningDungeonRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 4;</code>
+       * <code>int32 retcode = 10;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class FungusFighterRestartTraningDungeonRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 4;</code>
+       * <code>int32 retcode = 10;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class FungusFighterRestartTraningDungeonRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 4;</code>
+       * <code>int32 retcode = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -528,7 +528,7 @@ public final class FungusFighterRestartTraningDungeonRspOuterClass {
     java.lang.String[] descriptorData = {
       "\n+FungusFighterRestartTraningDungeonRsp." +
       "proto\"8\n%FungusFighterRestartTraningDung" +
-      "eonRsp\022\017\n\007retcode\030\004 \001(\005B\033\n\031emu.grasscutt" +
+      "eonRsp\022\017\n\007retcode\030\n \001(\005B\033\n\031emu.grasscutt" +
       "er.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

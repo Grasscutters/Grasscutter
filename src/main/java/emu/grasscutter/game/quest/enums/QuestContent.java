@@ -1,9 +1,8 @@
 package emu.grasscutter.game.quest.enums;
 
-import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
-import java.util.HashMap;
-import java.util.Map;
+import it.unimi.dsi.fastutil.ints.*;
+
+import java.util.*;
 import java.util.stream.Stream;
 
 public enum QuestContent implements QuestTrigger {
@@ -34,7 +33,7 @@ public enum QuestContent implements QuestTrigger {
     QUEST_CONTENT_ADD_QUEST_PROGRESS(24),
     QUEST_CONTENT_INTERACT_GADGET(25),
     QUEST_CONTENT_DAILY_TASK_COMP_FINISH(26), // missing, currently unused
-    QUEST_CONTENT_FINISH_ITEM_GIVING(27), // missing, finish
+    QUEST_CONTENT_FINISH_ITEM_GIVING(27),
     QUEST_CONTENT_SKILL(107),
     QUEST_CONTENT_CITY_LEVEL_UP(109), // missing, finish
     QUEST_CONTENT_PATTERN_GROUP_CLEAR_MONSTER(110), // missing, finish, for random quests
@@ -51,9 +50,9 @@ public enum QuestContent implements QuestTrigger {
     QUEST_CONTENT_QUEST_VAR_LESS(121),
     QUEST_CONTENT_OBTAIN_VARIOUS_ITEM(122), // missing, finish
     QUEST_CONTENT_FINISH_TOWER_LEVEL(123), // missing, currently unused
-    QUEST_CONTENT_BARGAIN_SUCC(124), // missing, finish
-    QUEST_CONTENT_BARGAIN_FAIL(125), // missing, fail
-    QUEST_CONTENT_ITEM_LESS_THAN_BARGAIN(126), // missing, fail
+    QUEST_CONTENT_BARGAIN_SUCC(124),
+    QUEST_CONTENT_BARGAIN_FAIL(125),
+    QUEST_CONTENT_ITEM_LESS_THAN_BARGAIN(126),
     QUEST_CONTENT_ACTIVITY_TRIGGER_FAILED(127), // missing, fail
     QUEST_CONTENT_MAIN_COOP_ENTER_SAVE_POINT(128), // missing, finish
     QUEST_CONTENT_ANY_MANUAL_TRANSPORT(129),

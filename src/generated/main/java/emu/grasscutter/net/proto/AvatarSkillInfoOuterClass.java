@@ -49,7 +49,7 @@ public final class AvatarSkillInfoOuterClass {
   }
   /**
    * <pre>
-   * Obf: LJGFAMEDAGO
+   * Obf: FKBNODHMBMG
    * </pre>
    *
    * Protobuf type {@code AvatarSkillInfo}
@@ -410,7 +410,7 @@ public final class AvatarSkillInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: LJGFAMEDAGO
+     * Obf: FKBNODHMBMG
      * </pre>
      *
      * Protobuf type {@code AvatarSkillInfo}

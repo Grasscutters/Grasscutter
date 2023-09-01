@@ -19,21 +19,21 @@ public final class GCGInviteBattleNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 confirm_end_time = 14;</code>
+     * <code>uint32 GCKJBMKBJEF = 5;</code>
+     * @return The gCKJBMKBJEF.
+     */
+    int getGCKJBMKBJEF();
+
+    /**
+     * <code>uint32 confirm_end_time = 1;</code>
      * @return The confirmEndTime.
      */
     int getConfirmEndTime();
-
-    /**
-     * <code>uint32 OANEDGGOLIL = 9;</code>
-     * @return The oANEDGGOLIL.
-     */
-    int getOANEDGGOLIL();
   }
   /**
    * <pre>
-   * CmdId: 7803
-   * Obf: FDJHIDDJHEO
+   * CmdId: 9258
+   * Obf: NLKPMJMGJHG
    * </pre>
    *
    * Protobuf type {@code GCGInviteBattleNotify}
@@ -80,14 +80,14 @@ public final class GCGInviteBattleNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 72: {
-
-              oANEDGGOLIL_ = input.readUInt32();
-              break;
-            }
-            case 112: {
+            case 8: {
 
               confirmEndTime_ = input.readUInt32();
+              break;
+            }
+            case 40: {
+
+              gCKJBMKBJEF_ = input.readUInt32();
               break;
             }
             default: {
@@ -122,26 +122,26 @@ public final class GCGInviteBattleNotifyOuterClass {
               emu.grasscutter.net.proto.GCGInviteBattleNotifyOuterClass.GCGInviteBattleNotify.class, emu.grasscutter.net.proto.GCGInviteBattleNotifyOuterClass.GCGInviteBattleNotify.Builder.class);
     }
 
-    public static final int CONFIRM_END_TIME_FIELD_NUMBER = 14;
+    public static final int GCKJBMKBJEF_FIELD_NUMBER = 5;
+    private int gCKJBMKBJEF_;
+    /**
+     * <code>uint32 GCKJBMKBJEF = 5;</code>
+     * @return The gCKJBMKBJEF.
+     */
+    @java.lang.Override
+    public int getGCKJBMKBJEF() {
+      return gCKJBMKBJEF_;
+    }
+
+    public static final int CONFIRM_END_TIME_FIELD_NUMBER = 1;
     private int confirmEndTime_;
     /**
-     * <code>uint32 confirm_end_time = 14;</code>
+     * <code>uint32 confirm_end_time = 1;</code>
      * @return The confirmEndTime.
      */
     @java.lang.Override
     public int getConfirmEndTime() {
       return confirmEndTime_;
-    }
-
-    public static final int OANEDGGOLIL_FIELD_NUMBER = 9;
-    private int oANEDGGOLIL_;
-    /**
-     * <code>uint32 OANEDGGOLIL = 9;</code>
-     * @return The oANEDGGOLIL.
-     */
-    @java.lang.Override
-    public int getOANEDGGOLIL() {
-      return oANEDGGOLIL_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -158,11 +158,11 @@ public final class GCGInviteBattleNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (oANEDGGOLIL_ != 0) {
-        output.writeUInt32(9, oANEDGGOLIL_);
-      }
       if (confirmEndTime_ != 0) {
-        output.writeUInt32(14, confirmEndTime_);
+        output.writeUInt32(1, confirmEndTime_);
+      }
+      if (gCKJBMKBJEF_ != 0) {
+        output.writeUInt32(5, gCKJBMKBJEF_);
       }
       unknownFields.writeTo(output);
     }
@@ -173,13 +173,13 @@ public final class GCGInviteBattleNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (oANEDGGOLIL_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, oANEDGGOLIL_);
-      }
       if (confirmEndTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, confirmEndTime_);
+          .computeUInt32Size(1, confirmEndTime_);
+      }
+      if (gCKJBMKBJEF_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(5, gCKJBMKBJEF_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -196,10 +196,10 @@ public final class GCGInviteBattleNotifyOuterClass {
       }
       emu.grasscutter.net.proto.GCGInviteBattleNotifyOuterClass.GCGInviteBattleNotify other = (emu.grasscutter.net.proto.GCGInviteBattleNotifyOuterClass.GCGInviteBattleNotify) obj;
 
+      if (getGCKJBMKBJEF()
+          != other.getGCKJBMKBJEF()) return false;
       if (getConfirmEndTime()
           != other.getConfirmEndTime()) return false;
-      if (getOANEDGGOLIL()
-          != other.getOANEDGGOLIL()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -211,10 +211,10 @@ public final class GCGInviteBattleNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + GCKJBMKBJEF_FIELD_NUMBER;
+      hash = (53 * hash) + getGCKJBMKBJEF();
       hash = (37 * hash) + CONFIRM_END_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getConfirmEndTime();
-      hash = (37 * hash) + OANEDGGOLIL_FIELD_NUMBER;
-      hash = (53 * hash) + getOANEDGGOLIL();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -312,8 +312,8 @@ public final class GCGInviteBattleNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 7803
-     * Obf: FDJHIDDJHEO
+     * CmdId: 9258
+     * Obf: NLKPMJMGJHG
      * </pre>
      *
      * Protobuf type {@code GCGInviteBattleNotify}
@@ -353,9 +353,9 @@ public final class GCGInviteBattleNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        confirmEndTime_ = 0;
+        gCKJBMKBJEF_ = 0;
 
-        oANEDGGOLIL_ = 0;
+        confirmEndTime_ = 0;
 
         return this;
       }
@@ -383,8 +383,8 @@ public final class GCGInviteBattleNotifyOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.GCGInviteBattleNotifyOuterClass.GCGInviteBattleNotify buildPartial() {
         emu.grasscutter.net.proto.GCGInviteBattleNotifyOuterClass.GCGInviteBattleNotify result = new emu.grasscutter.net.proto.GCGInviteBattleNotifyOuterClass.GCGInviteBattleNotify(this);
+        result.gCKJBMKBJEF_ = gCKJBMKBJEF_;
         result.confirmEndTime_ = confirmEndTime_;
-        result.oANEDGGOLIL_ = oANEDGGOLIL_;
         onBuilt();
         return result;
       }
@@ -433,11 +433,11 @@ public final class GCGInviteBattleNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.GCGInviteBattleNotifyOuterClass.GCGInviteBattleNotify other) {
         if (other == emu.grasscutter.net.proto.GCGInviteBattleNotifyOuterClass.GCGInviteBattleNotify.getDefaultInstance()) return this;
+        if (other.getGCKJBMKBJEF() != 0) {
+          setGCKJBMKBJEF(other.getGCKJBMKBJEF());
+        }
         if (other.getConfirmEndTime() != 0) {
           setConfirmEndTime(other.getConfirmEndTime());
-        }
-        if (other.getOANEDGGOLIL() != 0) {
-          setOANEDGGOLIL(other.getOANEDGGOLIL());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -468,9 +468,40 @@ public final class GCGInviteBattleNotifyOuterClass {
         return this;
       }
 
+      private int gCKJBMKBJEF_ ;
+      /**
+       * <code>uint32 GCKJBMKBJEF = 5;</code>
+       * @return The gCKJBMKBJEF.
+       */
+      @java.lang.Override
+      public int getGCKJBMKBJEF() {
+        return gCKJBMKBJEF_;
+      }
+      /**
+       * <code>uint32 GCKJBMKBJEF = 5;</code>
+       * @param value The gCKJBMKBJEF to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGCKJBMKBJEF(int value) {
+        
+        gCKJBMKBJEF_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 GCKJBMKBJEF = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGCKJBMKBJEF() {
+        
+        gCKJBMKBJEF_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int confirmEndTime_ ;
       /**
-       * <code>uint32 confirm_end_time = 14;</code>
+       * <code>uint32 confirm_end_time = 1;</code>
        * @return The confirmEndTime.
        */
       @java.lang.Override
@@ -478,7 +509,7 @@ public final class GCGInviteBattleNotifyOuterClass {
         return confirmEndTime_;
       }
       /**
-       * <code>uint32 confirm_end_time = 14;</code>
+       * <code>uint32 confirm_end_time = 1;</code>
        * @param value The confirmEndTime to set.
        * @return This builder for chaining.
        */
@@ -489,43 +520,12 @@ public final class GCGInviteBattleNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 confirm_end_time = 14;</code>
+       * <code>uint32 confirm_end_time = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearConfirmEndTime() {
         
         confirmEndTime_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int oANEDGGOLIL_ ;
-      /**
-       * <code>uint32 OANEDGGOLIL = 9;</code>
-       * @return The oANEDGGOLIL.
-       */
-      @java.lang.Override
-      public int getOANEDGGOLIL() {
-        return oANEDGGOLIL_;
-      }
-      /**
-       * <code>uint32 OANEDGGOLIL = 9;</code>
-       * @param value The oANEDGGOLIL to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOANEDGGOLIL(int value) {
-        
-        oANEDGGOLIL_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 OANEDGGOLIL = 9;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearOANEDGGOLIL() {
-        
-        oANEDGGOLIL_ = 0;
         onChanged();
         return this;
       }
@@ -597,8 +597,8 @@ public final class GCGInviteBattleNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\033GCGInviteBattleNotify.proto\"F\n\025GCGInvi" +
-      "teBattleNotify\022\030\n\020confirm_end_time\030\016 \001(\r" +
-      "\022\023\n\013OANEDGGOLIL\030\t \001(\rB\033\n\031emu.grasscutter" +
+      "teBattleNotify\022\023\n\013GCKJBMKBJEF\030\005 \001(\r\022\030\n\020c" +
+      "onfirm_end_time\030\001 \001(\rB\033\n\031emu.grasscutter" +
       ".net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -610,7 +610,7 @@ public final class GCGInviteBattleNotifyOuterClass {
     internal_static_GCGInviteBattleNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GCGInviteBattleNotify_descriptor,
-        new java.lang.String[] { "ConfirmEndTime", "OANEDGGOLIL", });
+        new java.lang.String[] { "GCKJBMKBJEF", "ConfirmEndTime", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

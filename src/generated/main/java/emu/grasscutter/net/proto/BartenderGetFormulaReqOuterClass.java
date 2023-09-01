@@ -19,39 +19,39 @@ public final class BartenderGetFormulaReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .ItemParam item_list = 15;</code>
+     * <code>repeated .ItemParam item_list = 10;</code>
      */
     java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> 
         getItemListList();
     /**
-     * <code>repeated .ItemParam item_list = 15;</code>
+     * <code>repeated .ItemParam item_list = 10;</code>
      */
     emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam getItemList(int index);
     /**
-     * <code>repeated .ItemParam item_list = 15;</code>
+     * <code>repeated .ItemParam item_list = 10;</code>
      */
     int getItemListCount();
     /**
-     * <code>repeated .ItemParam item_list = 15;</code>
+     * <code>repeated .ItemParam item_list = 10;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> 
         getItemListOrBuilderList();
     /**
-     * <code>repeated .ItemParam item_list = 15;</code>
+     * <code>repeated .ItemParam item_list = 10;</code>
      */
     emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder getItemListOrBuilder(
         int index);
 
     /**
-     * <code>uint32 quest_id = 3;</code>
+     * <code>uint32 quest_id = 14;</code>
      * @return The questId.
      */
     int getQuestId();
   }
   /**
    * <pre>
-   * CmdId: 8318
-   * Obf: MEMOMGOBBKN
+   * CmdId: 5932
+   * Obf: KGDPCLMNDAH
    * </pre>
    *
    * Protobuf type {@code BartenderGetFormulaReq}
@@ -100,18 +100,18 @@ public final class BartenderGetFormulaReqOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
-
-              questId_ = input.readUInt32();
-              break;
-            }
-            case 122: {
+            case 82: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 itemList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam>();
                 mutable_bitField0_ |= 0x00000001;
               }
               itemList_.add(
                   input.readMessage(emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
+              break;
+            }
+            case 112: {
+
+              questId_ = input.readUInt32();
               break;
             }
             default: {
@@ -149,17 +149,17 @@ public final class BartenderGetFormulaReqOuterClass {
               emu.grasscutter.net.proto.BartenderGetFormulaReqOuterClass.BartenderGetFormulaReq.class, emu.grasscutter.net.proto.BartenderGetFormulaReqOuterClass.BartenderGetFormulaReq.Builder.class);
     }
 
-    public static final int ITEM_LIST_FIELD_NUMBER = 15;
+    public static final int ITEM_LIST_FIELD_NUMBER = 10;
     private java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> itemList_;
     /**
-     * <code>repeated .ItemParam item_list = 15;</code>
+     * <code>repeated .ItemParam item_list = 10;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> getItemListList() {
       return itemList_;
     }
     /**
-     * <code>repeated .ItemParam item_list = 15;</code>
+     * <code>repeated .ItemParam item_list = 10;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> 
@@ -167,21 +167,21 @@ public final class BartenderGetFormulaReqOuterClass {
       return itemList_;
     }
     /**
-     * <code>repeated .ItemParam item_list = 15;</code>
+     * <code>repeated .ItemParam item_list = 10;</code>
      */
     @java.lang.Override
     public int getItemListCount() {
       return itemList_.size();
     }
     /**
-     * <code>repeated .ItemParam item_list = 15;</code>
+     * <code>repeated .ItemParam item_list = 10;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam getItemList(int index) {
       return itemList_.get(index);
     }
     /**
-     * <code>repeated .ItemParam item_list = 15;</code>
+     * <code>repeated .ItemParam item_list = 10;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder getItemListOrBuilder(
@@ -189,10 +189,10 @@ public final class BartenderGetFormulaReqOuterClass {
       return itemList_.get(index);
     }
 
-    public static final int QUEST_ID_FIELD_NUMBER = 3;
+    public static final int QUEST_ID_FIELD_NUMBER = 14;
     private int questId_;
     /**
-     * <code>uint32 quest_id = 3;</code>
+     * <code>uint32 quest_id = 14;</code>
      * @return The questId.
      */
     @java.lang.Override
@@ -214,11 +214,11 @@ public final class BartenderGetFormulaReqOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (questId_ != 0) {
-        output.writeUInt32(3, questId_);
-      }
       for (int i = 0; i < itemList_.size(); i++) {
-        output.writeMessage(15, itemList_.get(i));
+        output.writeMessage(10, itemList_.get(i));
+      }
+      if (questId_ != 0) {
+        output.writeUInt32(14, questId_);
       }
       unknownFields.writeTo(output);
     }
@@ -229,13 +229,13 @@ public final class BartenderGetFormulaReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (questId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, questId_);
-      }
       for (int i = 0; i < itemList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(15, itemList_.get(i));
+          .computeMessageSize(10, itemList_.get(i));
+      }
+      if (questId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(14, questId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -370,8 +370,8 @@ public final class BartenderGetFormulaReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8318
-     * Obf: MEMOMGOBBKN
+     * CmdId: 5932
+     * Obf: KGDPCLMNDAH
      * </pre>
      *
      * Protobuf type {@code BartenderGetFormulaReq}
@@ -577,7 +577,7 @@ public final class BartenderGetFormulaReqOuterClass {
           emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> itemListBuilder_;
 
       /**
-       * <code>repeated .ItemParam item_list = 15;</code>
+       * <code>repeated .ItemParam item_list = 10;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> getItemListList() {
         if (itemListBuilder_ == null) {
@@ -587,7 +587,7 @@ public final class BartenderGetFormulaReqOuterClass {
         }
       }
       /**
-       * <code>repeated .ItemParam item_list = 15;</code>
+       * <code>repeated .ItemParam item_list = 10;</code>
        */
       public int getItemListCount() {
         if (itemListBuilder_ == null) {
@@ -597,7 +597,7 @@ public final class BartenderGetFormulaReqOuterClass {
         }
       }
       /**
-       * <code>repeated .ItemParam item_list = 15;</code>
+       * <code>repeated .ItemParam item_list = 10;</code>
        */
       public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam getItemList(int index) {
         if (itemListBuilder_ == null) {
@@ -607,7 +607,7 @@ public final class BartenderGetFormulaReqOuterClass {
         }
       }
       /**
-       * <code>repeated .ItemParam item_list = 15;</code>
+       * <code>repeated .ItemParam item_list = 10;</code>
        */
       public Builder setItemList(
           int index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam value) {
@@ -624,7 +624,7 @@ public final class BartenderGetFormulaReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 15;</code>
+       * <code>repeated .ItemParam item_list = 10;</code>
        */
       public Builder setItemList(
           int index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder builderForValue) {
@@ -638,7 +638,7 @@ public final class BartenderGetFormulaReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 15;</code>
+       * <code>repeated .ItemParam item_list = 10;</code>
        */
       public Builder addItemList(emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam value) {
         if (itemListBuilder_ == null) {
@@ -654,7 +654,7 @@ public final class BartenderGetFormulaReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 15;</code>
+       * <code>repeated .ItemParam item_list = 10;</code>
        */
       public Builder addItemList(
           int index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam value) {
@@ -671,7 +671,7 @@ public final class BartenderGetFormulaReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 15;</code>
+       * <code>repeated .ItemParam item_list = 10;</code>
        */
       public Builder addItemList(
           emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder builderForValue) {
@@ -685,7 +685,7 @@ public final class BartenderGetFormulaReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 15;</code>
+       * <code>repeated .ItemParam item_list = 10;</code>
        */
       public Builder addItemList(
           int index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder builderForValue) {
@@ -699,7 +699,7 @@ public final class BartenderGetFormulaReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 15;</code>
+       * <code>repeated .ItemParam item_list = 10;</code>
        */
       public Builder addAllItemList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> values) {
@@ -714,7 +714,7 @@ public final class BartenderGetFormulaReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 15;</code>
+       * <code>repeated .ItemParam item_list = 10;</code>
        */
       public Builder clearItemList() {
         if (itemListBuilder_ == null) {
@@ -727,7 +727,7 @@ public final class BartenderGetFormulaReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 15;</code>
+       * <code>repeated .ItemParam item_list = 10;</code>
        */
       public Builder removeItemList(int index) {
         if (itemListBuilder_ == null) {
@@ -740,14 +740,14 @@ public final class BartenderGetFormulaReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 15;</code>
+       * <code>repeated .ItemParam item_list = 10;</code>
        */
       public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder getItemListBuilder(
           int index) {
         return getItemListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .ItemParam item_list = 15;</code>
+       * <code>repeated .ItemParam item_list = 10;</code>
        */
       public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder getItemListOrBuilder(
           int index) {
@@ -757,7 +757,7 @@ public final class BartenderGetFormulaReqOuterClass {
         }
       }
       /**
-       * <code>repeated .ItemParam item_list = 15;</code>
+       * <code>repeated .ItemParam item_list = 10;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> 
            getItemListOrBuilderList() {
@@ -768,14 +768,14 @@ public final class BartenderGetFormulaReqOuterClass {
         }
       }
       /**
-       * <code>repeated .ItemParam item_list = 15;</code>
+       * <code>repeated .ItemParam item_list = 10;</code>
        */
       public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder addItemListBuilder() {
         return getItemListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.getDefaultInstance());
       }
       /**
-       * <code>repeated .ItemParam item_list = 15;</code>
+       * <code>repeated .ItemParam item_list = 10;</code>
        */
       public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder addItemListBuilder(
           int index) {
@@ -783,7 +783,7 @@ public final class BartenderGetFormulaReqOuterClass {
             index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.getDefaultInstance());
       }
       /**
-       * <code>repeated .ItemParam item_list = 15;</code>
+       * <code>repeated .ItemParam item_list = 10;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder> 
            getItemListBuilderList() {
@@ -806,7 +806,7 @@ public final class BartenderGetFormulaReqOuterClass {
 
       private int questId_ ;
       /**
-       * <code>uint32 quest_id = 3;</code>
+       * <code>uint32 quest_id = 14;</code>
        * @return The questId.
        */
       @java.lang.Override
@@ -814,7 +814,7 @@ public final class BartenderGetFormulaReqOuterClass {
         return questId_;
       }
       /**
-       * <code>uint32 quest_id = 3;</code>
+       * <code>uint32 quest_id = 14;</code>
        * @param value The questId to set.
        * @return This builder for chaining.
        */
@@ -825,7 +825,7 @@ public final class BartenderGetFormulaReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 quest_id = 3;</code>
+       * <code>uint32 quest_id = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearQuestId() {
@@ -903,7 +903,7 @@ public final class BartenderGetFormulaReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n\034BartenderGetFormulaReq.proto\032\017ItemPara" +
       "m.proto\"I\n\026BartenderGetFormulaReq\022\035\n\tite" +
-      "m_list\030\017 \003(\0132\n.ItemParam\022\020\n\010quest_id\030\003 \001" +
+      "m_list\030\n \003(\0132\n.ItemParam\022\020\n\010quest_id\030\016 \001" +
       "(\rB\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

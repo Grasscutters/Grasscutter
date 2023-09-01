@@ -26,8 +26,8 @@ public final class SpringUseReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 1799
-   * Obf: MLEGBAIPGGO
+   * CmdId: 9537
+   * Obf: LNJBPIEBBFJ
    * </pre>
    *
    * Protobuf type {@code SpringUseReq}
@@ -280,8 +280,8 @@ public final class SpringUseReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 1799
-     * Obf: MLEGBAIPGGO
+     * CmdId: 9537
+     * Obf: LNJBPIEBBFJ
      * </pre>
      *
      * Protobuf type {@code SpringUseReq}

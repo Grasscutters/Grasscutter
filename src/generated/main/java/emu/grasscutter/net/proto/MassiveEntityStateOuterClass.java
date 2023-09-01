@@ -38,7 +38,7 @@ public final class MassiveEntityStateOuterClass {
   }
   /**
    * <pre>
-   * Obf: HCLMJGMOBCC
+   * Obf: JAPAIAMBMFF
    * </pre>
    *
    * Protobuf type {@code MassiveEntityState}
@@ -345,7 +345,7 @@ public final class MassiveEntityStateOuterClass {
     }
     /**
      * <pre>
-     * Obf: HCLMJGMOBCC
+     * Obf: JAPAIAMBMFF
      * </pre>
      *
      * Protobuf type {@code MassiveEntityState}

@@ -3,34 +3,26 @@ package emu.grasscutter.game.dungeons;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.common.ItemParamData;
-import emu.grasscutter.data.excels.dungeon.DungeonData;
-import emu.grasscutter.data.excels.dungeon.DungeonPassConfigData;
+import emu.grasscutter.data.excels.dungeon.*;
 import emu.grasscutter.game.activity.trialavatar.TrialAvatarActivityHandler;
 import emu.grasscutter.game.dungeons.dungeon_results.BaseDungeonResult;
 import emu.grasscutter.game.dungeons.enums.DungeonPassConditionType;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.game.props.ActionReason;
-import emu.grasscutter.game.props.ActivityType;
-import emu.grasscutter.game.props.WatcherTriggerType;
-import emu.grasscutter.game.quest.enums.LogicType;
-import emu.grasscutter.game.quest.enums.QuestContent;
-import emu.grasscutter.game.world.Position;
-import emu.grasscutter.game.world.Scene;
+import emu.grasscutter.game.props.*;
+import emu.grasscutter.game.quest.enums.*;
+import emu.grasscutter.game.world.*;
 import emu.grasscutter.scripts.constants.EventType;
 import emu.grasscutter.scripts.data.ScriptArgs;
-import emu.grasscutter.server.packet.send.PacketDungeonWayPointNotify;
-import emu.grasscutter.server.packet.send.PacketGadgetAutoPickDropInfoNotify;
+import emu.grasscutter.server.event.player.PlayerFinishDungeonEvent;
+import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.Utils;
-import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
-import it.unimi.dsi.fastutil.ints.IntSet;
-import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
+import it.unimi.dsi.fastutil.ints.*;
+import lombok.*;
+
 import javax.annotation.Nullable;
-import lombok.Getter;
-import lombok.NonNull;
-import lombok.val;
+import java.util.*;
+import java.util.stream.*;
 
 /**
  * TODO handle time limits TODO handle respawn points TODO handle team wipes and respawns TODO check
@@ -288,6 +280,9 @@ public final class DungeonManager {
     public void finishDungeon() {
         this.notifyEndDungeon(true);
         this.endDungeon(BaseDungeonResult.DungeonEndReason.COMPLETED);
+
+        // Call PlayerFinishDungeonEvent.
+        new PlayerFinishDungeonEvent(this.getScene().getPlayers(), this.getScene(), this).call();
     }
 
     public void quitDungeon() {

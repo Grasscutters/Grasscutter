@@ -1,7 +1,6 @@
 package emu.grasscutter.utils.objects;
 
-import java.util.NavigableMap;
-import java.util.TreeMap;
+import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class WeightedList<E> {

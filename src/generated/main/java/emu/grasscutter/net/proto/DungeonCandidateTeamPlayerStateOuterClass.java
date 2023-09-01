@@ -16,7 +16,7 @@ public final class DungeonCandidateTeamPlayerStateOuterClass {
   }
   /**
    * <pre>
-   * Obf: HHJFBBFKPIE
+   * Obf: KMBKLPECAEO
    * </pre>
    *
    * Protobuf enum {@code DungeonCandidateTeamPlayerState}

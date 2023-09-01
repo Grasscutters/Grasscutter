@@ -19,15 +19,15 @@ public final class SummerTimeV2RestartBoatGalleryReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 gallery_id = 3;</code>
+     * <code>uint32 gallery_id = 2;</code>
      * @return The galleryId.
      */
     int getGalleryId();
   }
   /**
    * <pre>
-   * CmdId: 8342
-   * Obf: GFHIFPKGPEH
+   * CmdId: 164
+   * Obf: BPKBGGEAOLM
    * </pre>
    *
    * Protobuf type {@code SummerTimeV2RestartBoatGalleryReq}
@@ -74,7 +74,7 @@ public final class SummerTimeV2RestartBoatGalleryReqOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 16: {
 
               galleryId_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class SummerTimeV2RestartBoatGalleryReqOuterClass {
               emu.grasscutter.net.proto.SummerTimeV2RestartBoatGalleryReqOuterClass.SummerTimeV2RestartBoatGalleryReq.class, emu.grasscutter.net.proto.SummerTimeV2RestartBoatGalleryReqOuterClass.SummerTimeV2RestartBoatGalleryReq.Builder.class);
     }
 
-    public static final int GALLERY_ID_FIELD_NUMBER = 3;
+    public static final int GALLERY_ID_FIELD_NUMBER = 2;
     private int galleryId_;
     /**
-     * <code>uint32 gallery_id = 3;</code>
+     * <code>uint32 gallery_id = 2;</code>
      * @return The galleryId.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class SummerTimeV2RestartBoatGalleryReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (galleryId_ != 0) {
-        output.writeUInt32(3, galleryId_);
+        output.writeUInt32(2, galleryId_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class SummerTimeV2RestartBoatGalleryReqOuterClass {
       size = 0;
       if (galleryId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, galleryId_);
+          .computeUInt32Size(2, galleryId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class SummerTimeV2RestartBoatGalleryReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8342
-     * Obf: GFHIFPKGPEH
+     * CmdId: 164
+     * Obf: BPKBGGEAOLM
      * </pre>
      *
      * Protobuf type {@code SummerTimeV2RestartBoatGalleryReq}
@@ -431,7 +431,7 @@ public final class SummerTimeV2RestartBoatGalleryReqOuterClass {
 
       private int galleryId_ ;
       /**
-       * <code>uint32 gallery_id = 3;</code>
+       * <code>uint32 gallery_id = 2;</code>
        * @return The galleryId.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class SummerTimeV2RestartBoatGalleryReqOuterClass {
         return galleryId_;
       }
       /**
-       * <code>uint32 gallery_id = 3;</code>
+       * <code>uint32 gallery_id = 2;</code>
        * @param value The galleryId to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class SummerTimeV2RestartBoatGalleryReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 gallery_id = 3;</code>
+       * <code>uint32 gallery_id = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearGalleryId() {
@@ -528,7 +528,7 @@ public final class SummerTimeV2RestartBoatGalleryReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n\'SummerTimeV2RestartBoatGalleryReq.prot" +
       "o\"7\n!SummerTimeV2RestartBoatGalleryReq\022\022" +
-      "\n\ngallery_id\030\003 \001(\rB\033\n\031emu.grasscutter.ne" +
+      "\n\ngallery_id\030\002 \001(\rB\033\n\031emu.grasscutter.ne" +
       "t.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

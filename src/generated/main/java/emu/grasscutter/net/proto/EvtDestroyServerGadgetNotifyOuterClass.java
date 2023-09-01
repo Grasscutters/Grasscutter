@@ -19,15 +19,15 @@ public final class EvtDestroyServerGadgetNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 entity_id = 2;</code>
+     * <code>uint32 entity_id = 7;</code>
      * @return The entityId.
      */
     int getEntityId();
   }
   /**
    * <pre>
-   * CmdId: 317
-   * Obf: HNCKICFGIFN
+   * CmdId: 23600
+   * Obf: OGEONEOAOEN
    * </pre>
    *
    * Protobuf type {@code EvtDestroyServerGadgetNotify}
@@ -74,7 +74,7 @@ public final class EvtDestroyServerGadgetNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
+            case 56: {
 
               entityId_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class EvtDestroyServerGadgetNotifyOuterClass {
               emu.grasscutter.net.proto.EvtDestroyServerGadgetNotifyOuterClass.EvtDestroyServerGadgetNotify.class, emu.grasscutter.net.proto.EvtDestroyServerGadgetNotifyOuterClass.EvtDestroyServerGadgetNotify.Builder.class);
     }
 
-    public static final int ENTITY_ID_FIELD_NUMBER = 2;
+    public static final int ENTITY_ID_FIELD_NUMBER = 7;
     private int entityId_;
     /**
-     * <code>uint32 entity_id = 2;</code>
+     * <code>uint32 entity_id = 7;</code>
      * @return The entityId.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class EvtDestroyServerGadgetNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (entityId_ != 0) {
-        output.writeUInt32(2, entityId_);
+        output.writeUInt32(7, entityId_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class EvtDestroyServerGadgetNotifyOuterClass {
       size = 0;
       if (entityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, entityId_);
+          .computeUInt32Size(7, entityId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class EvtDestroyServerGadgetNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 317
-     * Obf: HNCKICFGIFN
+     * CmdId: 23600
+     * Obf: OGEONEOAOEN
      * </pre>
      *
      * Protobuf type {@code EvtDestroyServerGadgetNotify}
@@ -431,7 +431,7 @@ public final class EvtDestroyServerGadgetNotifyOuterClass {
 
       private int entityId_ ;
       /**
-       * <code>uint32 entity_id = 2;</code>
+       * <code>uint32 entity_id = 7;</code>
        * @return The entityId.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class EvtDestroyServerGadgetNotifyOuterClass {
         return entityId_;
       }
       /**
-       * <code>uint32 entity_id = 2;</code>
+       * <code>uint32 entity_id = 7;</code>
        * @param value The entityId to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class EvtDestroyServerGadgetNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 entity_id = 2;</code>
+       * <code>uint32 entity_id = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
@@ -528,7 +528,7 @@ public final class EvtDestroyServerGadgetNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\"EvtDestroyServerGadgetNotify.proto\"1\n\034" +
       "EvtDestroyServerGadgetNotify\022\021\n\tentity_i" +
-      "d\030\002 \001(\rB\033\n\031emu.grasscutter.net.protob\006pr" +
+      "d\030\007 \001(\rB\033\n\031emu.grasscutter.net.protob\006pr" +
       "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

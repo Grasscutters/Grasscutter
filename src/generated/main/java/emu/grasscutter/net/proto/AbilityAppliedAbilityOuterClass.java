@@ -80,7 +80,7 @@ public final class AbilityAppliedAbilityOuterClass {
   }
   /**
    * <pre>
-   * Obf: GBOIHEDHOGC
+   * Obf: NKCDMLBKHGI
    * </pre>
    *
    * Protobuf type {@code AbilityAppliedAbility}
@@ -509,7 +509,7 @@ public final class AbilityAppliedAbilityOuterClass {
     }
     /**
      * <pre>
-     * Obf: GBOIHEDHOGC
+     * Obf: NKCDMLBKHGI
      * </pre>
      *
      * Protobuf type {@code AbilityAppliedAbility}

@@ -26,8 +26,8 @@ public final class SetIsAutoUnlockSpecificEquipReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 679
-   * Obf: JKJNKFEBOEE
+   * CmdId: 24611
+   * Obf: KLNPILMDDEE
    * </pre>
    *
    * Protobuf type {@code SetIsAutoUnlockSpecificEquipReq}
@@ -280,8 +280,8 @@ public final class SetIsAutoUnlockSpecificEquipReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 679
-     * Obf: JKJNKFEBOEE
+     * CmdId: 24611
+     * Obf: KLNPILMDDEE
      * </pre>
      *
      * Protobuf type {@code SetIsAutoUnlockSpecificEquipReq}

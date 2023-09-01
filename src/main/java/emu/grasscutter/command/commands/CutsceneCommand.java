@@ -1,11 +1,11 @@
 package emu.grasscutter.command.commands;
 
-import emu.grasscutter.command.Command;
-import emu.grasscutter.command.CommandHandler;
+import emu.grasscutter.command.*;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.packet.send.PacketCutsceneBeginNotify;
-import java.util.List;
 import lombok.val;
+
+import java.util.List;
 
 @Command(
         label = "cutscene",

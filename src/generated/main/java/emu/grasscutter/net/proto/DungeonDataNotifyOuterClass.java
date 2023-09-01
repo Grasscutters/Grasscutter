@@ -19,11 +19,11 @@ public final class DungeonDataNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>map&lt;uint32, uint32&gt; dungeon_data_map = 4;</code>
+     * <code>map&lt;uint32, uint32&gt; dungeon_data_map = 13;</code>
      */
     int getDungeonDataMapCount();
     /**
-     * <code>map&lt;uint32, uint32&gt; dungeon_data_map = 4;</code>
+     * <code>map&lt;uint32, uint32&gt; dungeon_data_map = 13;</code>
      */
     boolean containsDungeonDataMap(
         int key);
@@ -34,19 +34,19 @@ public final class DungeonDataNotifyOuterClass {
     java.util.Map<java.lang.Integer, java.lang.Integer>
     getDungeonDataMap();
     /**
-     * <code>map&lt;uint32, uint32&gt; dungeon_data_map = 4;</code>
+     * <code>map&lt;uint32, uint32&gt; dungeon_data_map = 13;</code>
      */
     java.util.Map<java.lang.Integer, java.lang.Integer>
     getDungeonDataMapMap();
     /**
-     * <code>map&lt;uint32, uint32&gt; dungeon_data_map = 4;</code>
+     * <code>map&lt;uint32, uint32&gt; dungeon_data_map = 13;</code>
      */
 
     int getDungeonDataMapOrDefault(
         int key,
         int defaultValue);
     /**
-     * <code>map&lt;uint32, uint32&gt; dungeon_data_map = 4;</code>
+     * <code>map&lt;uint32, uint32&gt; dungeon_data_map = 13;</code>
      */
 
     int getDungeonDataMapOrThrow(
@@ -54,8 +54,8 @@ public final class DungeonDataNotifyOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 928
-   * Obf: MNNIMBPFDDM
+   * CmdId: 7011
+   * Obf: HCHCACOAIHC
    * </pre>
    *
    * Protobuf type {@code DungeonDataNotify}
@@ -103,7 +103,7 @@ public final class DungeonDataNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 34: {
+            case 106: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 dungeonDataMap_ = com.google.protobuf.MapField.newMapField(
                     DungeonDataMapDefaultEntryHolder.defaultEntry);
@@ -145,7 +145,7 @@ public final class DungeonDataNotifyOuterClass {
     protected com.google.protobuf.MapField internalGetMapField(
         int number) {
       switch (number) {
-        case 4:
+        case 13:
           return internalGetDungeonDataMap();
         default:
           throw new RuntimeException(
@@ -160,7 +160,7 @@ public final class DungeonDataNotifyOuterClass {
               emu.grasscutter.net.proto.DungeonDataNotifyOuterClass.DungeonDataNotify.class, emu.grasscutter.net.proto.DungeonDataNotifyOuterClass.DungeonDataNotify.Builder.class);
     }
 
-    public static final int DUNGEON_DATA_MAP_FIELD_NUMBER = 4;
+    public static final int DUNGEON_DATA_MAP_FIELD_NUMBER = 13;
     private static final class DungeonDataMapDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.Integer, java.lang.Integer> defaultEntry =
@@ -187,7 +187,7 @@ public final class DungeonDataNotifyOuterClass {
       return internalGetDungeonDataMap().getMap().size();
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; dungeon_data_map = 4;</code>
+     * <code>map&lt;uint32, uint32&gt; dungeon_data_map = 13;</code>
      */
 
     @java.lang.Override
@@ -205,7 +205,7 @@ public final class DungeonDataNotifyOuterClass {
       return getDungeonDataMapMap();
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; dungeon_data_map = 4;</code>
+     * <code>map&lt;uint32, uint32&gt; dungeon_data_map = 13;</code>
      */
     @java.lang.Override
 
@@ -213,7 +213,7 @@ public final class DungeonDataNotifyOuterClass {
       return internalGetDungeonDataMap().getMap();
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; dungeon_data_map = 4;</code>
+     * <code>map&lt;uint32, uint32&gt; dungeon_data_map = 13;</code>
      */
     @java.lang.Override
 
@@ -226,7 +226,7 @@ public final class DungeonDataNotifyOuterClass {
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; dungeon_data_map = 4;</code>
+     * <code>map&lt;uint32, uint32&gt; dungeon_data_map = 13;</code>
      */
     @java.lang.Override
 
@@ -260,7 +260,7 @@ public final class DungeonDataNotifyOuterClass {
           output,
           internalGetDungeonDataMap(),
           DungeonDataMapDefaultEntryHolder.defaultEntry,
-          4);
+          13);
       unknownFields.writeTo(output);
     }
 
@@ -278,7 +278,7 @@ public final class DungeonDataNotifyOuterClass {
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(4, dungeonDataMap__);
+            .computeMessageSize(13, dungeonDataMap__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -409,8 +409,8 @@ public final class DungeonDataNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 928
-     * Obf: MNNIMBPFDDM
+     * CmdId: 7011
+     * Obf: HCHCACOAIHC
      * </pre>
      *
      * Protobuf type {@code DungeonDataNotify}
@@ -428,7 +428,7 @@ public final class DungeonDataNotifyOuterClass {
       protected com.google.protobuf.MapField internalGetMapField(
           int number) {
         switch (number) {
-          case 4:
+          case 13:
             return internalGetDungeonDataMap();
           default:
             throw new RuntimeException(
@@ -439,7 +439,7 @@ public final class DungeonDataNotifyOuterClass {
       protected com.google.protobuf.MapField internalGetMutableMapField(
           int number) {
         switch (number) {
-          case 4:
+          case 13:
             return internalGetMutableDungeonDataMap();
           default:
             throw new RuntimeException(
@@ -609,7 +609,7 @@ public final class DungeonDataNotifyOuterClass {
         return internalGetDungeonDataMap().getMap().size();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; dungeon_data_map = 4;</code>
+       * <code>map&lt;uint32, uint32&gt; dungeon_data_map = 13;</code>
        */
 
       @java.lang.Override
@@ -627,7 +627,7 @@ public final class DungeonDataNotifyOuterClass {
         return getDungeonDataMapMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; dungeon_data_map = 4;</code>
+       * <code>map&lt;uint32, uint32&gt; dungeon_data_map = 13;</code>
        */
       @java.lang.Override
 
@@ -635,7 +635,7 @@ public final class DungeonDataNotifyOuterClass {
         return internalGetDungeonDataMap().getMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; dungeon_data_map = 4;</code>
+       * <code>map&lt;uint32, uint32&gt; dungeon_data_map = 13;</code>
        */
       @java.lang.Override
 
@@ -648,7 +648,7 @@ public final class DungeonDataNotifyOuterClass {
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; dungeon_data_map = 4;</code>
+       * <code>map&lt;uint32, uint32&gt; dungeon_data_map = 13;</code>
        */
       @java.lang.Override
 
@@ -669,7 +669,7 @@ public final class DungeonDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; dungeon_data_map = 4;</code>
+       * <code>map&lt;uint32, uint32&gt; dungeon_data_map = 13;</code>
        */
 
       public Builder removeDungeonDataMap(
@@ -688,7 +688,7 @@ public final class DungeonDataNotifyOuterClass {
         return internalGetMutableDungeonDataMap().getMutableMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; dungeon_data_map = 4;</code>
+       * <code>map&lt;uint32, uint32&gt; dungeon_data_map = 13;</code>
        */
       public Builder putDungeonDataMap(
           int key,
@@ -700,7 +700,7 @@ public final class DungeonDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; dungeon_data_map = 4;</code>
+       * <code>map&lt;uint32, uint32&gt; dungeon_data_map = 13;</code>
        */
 
       public Builder putAllDungeonDataMap(
@@ -782,7 +782,7 @@ public final class DungeonDataNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\027DungeonDataNotify.proto\"\214\001\n\021DungeonDat" +
-      "aNotify\022@\n\020dungeon_data_map\030\004 \003(\0132&.Dung" +
+      "aNotify\022@\n\020dungeon_data_map\030\r \003(\0132&.Dung" +
       "eonDataNotify.DungeonDataMapEntry\0325\n\023Dun" +
       "geonDataMapEntry\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002" +
       " \001(\r:\0028\001B\033\n\031emu.grasscutter.net.protob\006p" +

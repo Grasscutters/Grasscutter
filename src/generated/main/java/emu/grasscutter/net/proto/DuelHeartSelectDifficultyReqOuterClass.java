@@ -19,15 +19,15 @@ public final class DuelHeartSelectDifficultyReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 difficulty = 5;</code>
+     * <code>uint32 difficulty = 9;</code>
      * @return The difficulty.
      */
     int getDifficulty();
   }
   /**
    * <pre>
-   * CmdId: 22648
-   * Obf: LIPGHOICFGO
+   * CmdId: 29156
+   * Obf: DFMIEJLIKMK
    * </pre>
    *
    * Protobuf type {@code DuelHeartSelectDifficultyReq}
@@ -74,7 +74,7 @@ public final class DuelHeartSelectDifficultyReqOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
+            case 72: {
 
               difficulty_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class DuelHeartSelectDifficultyReqOuterClass {
               emu.grasscutter.net.proto.DuelHeartSelectDifficultyReqOuterClass.DuelHeartSelectDifficultyReq.class, emu.grasscutter.net.proto.DuelHeartSelectDifficultyReqOuterClass.DuelHeartSelectDifficultyReq.Builder.class);
     }
 
-    public static final int DIFFICULTY_FIELD_NUMBER = 5;
+    public static final int DIFFICULTY_FIELD_NUMBER = 9;
     private int difficulty_;
     /**
-     * <code>uint32 difficulty = 5;</code>
+     * <code>uint32 difficulty = 9;</code>
      * @return The difficulty.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class DuelHeartSelectDifficultyReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (difficulty_ != 0) {
-        output.writeUInt32(5, difficulty_);
+        output.writeUInt32(9, difficulty_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class DuelHeartSelectDifficultyReqOuterClass {
       size = 0;
       if (difficulty_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, difficulty_);
+          .computeUInt32Size(9, difficulty_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class DuelHeartSelectDifficultyReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 22648
-     * Obf: LIPGHOICFGO
+     * CmdId: 29156
+     * Obf: DFMIEJLIKMK
      * </pre>
      *
      * Protobuf type {@code DuelHeartSelectDifficultyReq}
@@ -431,7 +431,7 @@ public final class DuelHeartSelectDifficultyReqOuterClass {
 
       private int difficulty_ ;
       /**
-       * <code>uint32 difficulty = 5;</code>
+       * <code>uint32 difficulty = 9;</code>
        * @return The difficulty.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class DuelHeartSelectDifficultyReqOuterClass {
         return difficulty_;
       }
       /**
-       * <code>uint32 difficulty = 5;</code>
+       * <code>uint32 difficulty = 9;</code>
        * @param value The difficulty to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class DuelHeartSelectDifficultyReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 difficulty = 5;</code>
+       * <code>uint32 difficulty = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearDifficulty() {
@@ -528,7 +528,7 @@ public final class DuelHeartSelectDifficultyReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n\"DuelHeartSelectDifficultyReq.proto\"2\n\034" +
       "DuelHeartSelectDifficultyReq\022\022\n\ndifficul" +
-      "ty\030\005 \001(\rB\033\n\031emu.grasscutter.net.protob\006p" +
+      "ty\030\t \001(\rB\033\n\031emu.grasscutter.net.protob\006p" +
       "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

@@ -19,39 +19,39 @@ public final class GmTalkRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string retmsg = 11;</code>
-     * @return The retmsg.
-     */
-    java.lang.String getRetmsg();
-    /**
-     * <code>string retmsg = 11;</code>
-     * @return The bytes for retmsg.
-     */
-    com.google.protobuf.ByteString
-        getRetmsgBytes();
-
-    /**
-     * <code>int32 retcode = 10;</code>
+     * <code>int32 retcode = 3;</code>
      * @return The retcode.
      */
     int getRetcode();
 
     /**
-     * <code>string msg = 15;</code>
+     * <code>string msg = 7;</code>
      * @return The msg.
      */
     java.lang.String getMsg();
     /**
-     * <code>string msg = 15;</code>
+     * <code>string msg = 7;</code>
      * @return The bytes for msg.
      */
     com.google.protobuf.ByteString
         getMsgBytes();
+
+    /**
+     * <code>string retmsg = 5;</code>
+     * @return The retmsg.
+     */
+    java.lang.String getRetmsg();
+    /**
+     * <code>string retmsg = 5;</code>
+     * @return The bytes for retmsg.
+     */
+    com.google.protobuf.ByteString
+        getRetmsgBytes();
   }
   /**
    * <pre>
-   * CmdId: 2
-   * Obf: CPIFOBKLKCI
+   * CmdId: 3923
+   * Obf: AEABDALLNNB
    * </pre>
    *
    * Protobuf type {@code GmTalkRsp}
@@ -66,8 +66,8 @@ public final class GmTalkRspOuterClass {
       super(builder);
     }
     private GmTalkRsp() {
-      retmsg_ = "";
       msg_ = "";
+      retmsg_ = "";
     }
 
     @java.lang.Override
@@ -100,18 +100,18 @@ public final class GmTalkRspOuterClass {
             case 0:
               done = true;
               break;
-            case 80: {
+            case 24: {
 
               retcode_ = input.readInt32();
               break;
             }
-            case 90: {
+            case 42: {
               java.lang.String s = input.readStringRequireUtf8();
 
               retmsg_ = s;
               break;
             }
-            case 122: {
+            case 58: {
               java.lang.String s = input.readStringRequireUtf8();
 
               msg_ = s;
@@ -149,48 +149,10 @@ public final class GmTalkRspOuterClass {
               emu.grasscutter.net.proto.GmTalkRspOuterClass.GmTalkRsp.class, emu.grasscutter.net.proto.GmTalkRspOuterClass.GmTalkRsp.Builder.class);
     }
 
-    public static final int RETMSG_FIELD_NUMBER = 11;
-    private volatile java.lang.Object retmsg_;
-    /**
-     * <code>string retmsg = 11;</code>
-     * @return The retmsg.
-     */
-    @java.lang.Override
-    public java.lang.String getRetmsg() {
-      java.lang.Object ref = retmsg_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        retmsg_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string retmsg = 11;</code>
-     * @return The bytes for retmsg.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getRetmsgBytes() {
-      java.lang.Object ref = retmsg_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        retmsg_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int RETCODE_FIELD_NUMBER = 10;
+    public static final int RETCODE_FIELD_NUMBER = 3;
     private int retcode_;
     /**
-     * <code>int32 retcode = 10;</code>
+     * <code>int32 retcode = 3;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -198,10 +160,10 @@ public final class GmTalkRspOuterClass {
       return retcode_;
     }
 
-    public static final int MSG_FIELD_NUMBER = 15;
+    public static final int MSG_FIELD_NUMBER = 7;
     private volatile java.lang.Object msg_;
     /**
-     * <code>string msg = 15;</code>
+     * <code>string msg = 7;</code>
      * @return The msg.
      */
     @java.lang.Override
@@ -218,7 +180,7 @@ public final class GmTalkRspOuterClass {
       }
     }
     /**
-     * <code>string msg = 15;</code>
+     * <code>string msg = 7;</code>
      * @return The bytes for msg.
      */
     @java.lang.Override
@@ -230,6 +192,44 @@ public final class GmTalkRspOuterClass {
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         msg_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int RETMSG_FIELD_NUMBER = 5;
+    private volatile java.lang.Object retmsg_;
+    /**
+     * <code>string retmsg = 5;</code>
+     * @return The retmsg.
+     */
+    @java.lang.Override
+    public java.lang.String getRetmsg() {
+      java.lang.Object ref = retmsg_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        retmsg_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string retmsg = 5;</code>
+     * @return The bytes for retmsg.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getRetmsgBytes() {
+      java.lang.Object ref = retmsg_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        retmsg_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -251,13 +251,13 @@ public final class GmTalkRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (retcode_ != 0) {
-        output.writeInt32(10, retcode_);
+        output.writeInt32(3, retcode_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(retmsg_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, retmsg_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, retmsg_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(msg_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 15, msg_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, msg_);
       }
       unknownFields.writeTo(output);
     }
@@ -270,13 +270,13 @@ public final class GmTalkRspOuterClass {
       size = 0;
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(10, retcode_);
+          .computeInt32Size(3, retcode_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(retmsg_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, retmsg_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, retmsg_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(msg_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, msg_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, msg_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -293,12 +293,12 @@ public final class GmTalkRspOuterClass {
       }
       emu.grasscutter.net.proto.GmTalkRspOuterClass.GmTalkRsp other = (emu.grasscutter.net.proto.GmTalkRspOuterClass.GmTalkRsp) obj;
 
-      if (!getRetmsg()
-          .equals(other.getRetmsg())) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
       if (!getMsg()
           .equals(other.getMsg())) return false;
+      if (!getRetmsg()
+          .equals(other.getRetmsg())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -310,12 +310,12 @@ public final class GmTalkRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + RETMSG_FIELD_NUMBER;
-      hash = (53 * hash) + getRetmsg().hashCode();
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
       hash = (37 * hash) + MSG_FIELD_NUMBER;
       hash = (53 * hash) + getMsg().hashCode();
+      hash = (37 * hash) + RETMSG_FIELD_NUMBER;
+      hash = (53 * hash) + getRetmsg().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -413,8 +413,8 @@ public final class GmTalkRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2
-     * Obf: CPIFOBKLKCI
+     * CmdId: 3923
+     * Obf: AEABDALLNNB
      * </pre>
      *
      * Protobuf type {@code GmTalkRsp}
@@ -454,11 +454,11 @@ public final class GmTalkRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        retmsg_ = "";
-
         retcode_ = 0;
 
         msg_ = "";
+
+        retmsg_ = "";
 
         return this;
       }
@@ -486,9 +486,9 @@ public final class GmTalkRspOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.GmTalkRspOuterClass.GmTalkRsp buildPartial() {
         emu.grasscutter.net.proto.GmTalkRspOuterClass.GmTalkRsp result = new emu.grasscutter.net.proto.GmTalkRspOuterClass.GmTalkRsp(this);
-        result.retmsg_ = retmsg_;
         result.retcode_ = retcode_;
         result.msg_ = msg_;
+        result.retmsg_ = retmsg_;
         onBuilt();
         return result;
       }
@@ -537,15 +537,15 @@ public final class GmTalkRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.GmTalkRspOuterClass.GmTalkRsp other) {
         if (other == emu.grasscutter.net.proto.GmTalkRspOuterClass.GmTalkRsp.getDefaultInstance()) return this;
-        if (!other.getRetmsg().isEmpty()) {
-          retmsg_ = other.retmsg_;
-          onChanged();
-        }
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
         }
         if (!other.getMsg().isEmpty()) {
           msg_ = other.msg_;
+          onChanged();
+        }
+        if (!other.getRetmsg().isEmpty()) {
+          retmsg_ = other.retmsg_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -577,85 +577,9 @@ public final class GmTalkRspOuterClass {
         return this;
       }
 
-      private java.lang.Object retmsg_ = "";
-      /**
-       * <code>string retmsg = 11;</code>
-       * @return The retmsg.
-       */
-      public java.lang.String getRetmsg() {
-        java.lang.Object ref = retmsg_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          retmsg_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string retmsg = 11;</code>
-       * @return The bytes for retmsg.
-       */
-      public com.google.protobuf.ByteString
-          getRetmsgBytes() {
-        java.lang.Object ref = retmsg_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          retmsg_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string retmsg = 11;</code>
-       * @param value The retmsg to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRetmsg(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        retmsg_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string retmsg = 11;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRetmsg() {
-        
-        retmsg_ = getDefaultInstance().getRetmsg();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string retmsg = 11;</code>
-       * @param value The bytes for retmsg to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRetmsgBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        retmsg_ = value;
-        onChanged();
-        return this;
-      }
-
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 10;</code>
+       * <code>int32 retcode = 3;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -663,7 +587,7 @@ public final class GmTalkRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 10;</code>
+       * <code>int32 retcode = 3;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -674,7 +598,7 @@ public final class GmTalkRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 10;</code>
+       * <code>int32 retcode = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -686,7 +610,7 @@ public final class GmTalkRspOuterClass {
 
       private java.lang.Object msg_ = "";
       /**
-       * <code>string msg = 15;</code>
+       * <code>string msg = 7;</code>
        * @return The msg.
        */
       public java.lang.String getMsg() {
@@ -702,7 +626,7 @@ public final class GmTalkRspOuterClass {
         }
       }
       /**
-       * <code>string msg = 15;</code>
+       * <code>string msg = 7;</code>
        * @return The bytes for msg.
        */
       public com.google.protobuf.ByteString
@@ -719,7 +643,7 @@ public final class GmTalkRspOuterClass {
         }
       }
       /**
-       * <code>string msg = 15;</code>
+       * <code>string msg = 7;</code>
        * @param value The msg to set.
        * @return This builder for chaining.
        */
@@ -734,7 +658,7 @@ public final class GmTalkRspOuterClass {
         return this;
       }
       /**
-       * <code>string msg = 15;</code>
+       * <code>string msg = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearMsg() {
@@ -744,7 +668,7 @@ public final class GmTalkRspOuterClass {
         return this;
       }
       /**
-       * <code>string msg = 15;</code>
+       * <code>string msg = 7;</code>
        * @param value The bytes for msg to set.
        * @return This builder for chaining.
        */
@@ -756,6 +680,82 @@ public final class GmTalkRspOuterClass {
   checkByteStringIsUtf8(value);
         
         msg_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object retmsg_ = "";
+      /**
+       * <code>string retmsg = 5;</code>
+       * @return The retmsg.
+       */
+      public java.lang.String getRetmsg() {
+        java.lang.Object ref = retmsg_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          retmsg_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string retmsg = 5;</code>
+       * @return The bytes for retmsg.
+       */
+      public com.google.protobuf.ByteString
+          getRetmsgBytes() {
+        java.lang.Object ref = retmsg_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          retmsg_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string retmsg = 5;</code>
+       * @param value The retmsg to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRetmsg(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        retmsg_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string retmsg = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRetmsg() {
+        
+        retmsg_ = getDefaultInstance().getRetmsg();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string retmsg = 5;</code>
+       * @param value The bytes for retmsg to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRetmsgBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        retmsg_ = value;
         onChanged();
         return this;
       }
@@ -826,8 +826,8 @@ public final class GmTalkRspOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\017GmTalkRsp.proto\"9\n\tGmTalkRsp\022\016\n\006retmsg" +
-      "\030\013 \001(\t\022\017\n\007retcode\030\n \001(\005\022\013\n\003msg\030\017 \001(\tB\033\n\031" +
+      "\n\017GmTalkRsp.proto\"9\n\tGmTalkRsp\022\017\n\007retcod" +
+      "e\030\003 \001(\005\022\013\n\003msg\030\007 \001(\t\022\016\n\006retmsg\030\005 \001(\tB\033\n\031" +
       "emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -839,7 +839,7 @@ public final class GmTalkRspOuterClass {
     internal_static_GmTalkRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GmTalkRsp_descriptor,
-        new java.lang.String[] { "Retmsg", "Retcode", "Msg", });
+        new java.lang.String[] { "Retcode", "Msg", "Retmsg", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

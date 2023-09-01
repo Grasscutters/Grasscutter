@@ -19,33 +19,33 @@ public final class PlayerOfferingDataNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .PlayerOfferingData offering_data_list = 6;</code>
+     * <code>repeated .PlayerOfferingData offering_data_list = 8;</code>
      */
     java.util.List<emu.grasscutter.net.proto.PlayerOfferingDataOuterClass.PlayerOfferingData> 
         getOfferingDataListList();
     /**
-     * <code>repeated .PlayerOfferingData offering_data_list = 6;</code>
+     * <code>repeated .PlayerOfferingData offering_data_list = 8;</code>
      */
     emu.grasscutter.net.proto.PlayerOfferingDataOuterClass.PlayerOfferingData getOfferingDataList(int index);
     /**
-     * <code>repeated .PlayerOfferingData offering_data_list = 6;</code>
+     * <code>repeated .PlayerOfferingData offering_data_list = 8;</code>
      */
     int getOfferingDataListCount();
     /**
-     * <code>repeated .PlayerOfferingData offering_data_list = 6;</code>
+     * <code>repeated .PlayerOfferingData offering_data_list = 8;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.PlayerOfferingDataOuterClass.PlayerOfferingDataOrBuilder> 
         getOfferingDataListOrBuilderList();
     /**
-     * <code>repeated .PlayerOfferingData offering_data_list = 6;</code>
+     * <code>repeated .PlayerOfferingData offering_data_list = 8;</code>
      */
     emu.grasscutter.net.proto.PlayerOfferingDataOuterClass.PlayerOfferingDataOrBuilder getOfferingDataListOrBuilder(
         int index);
   }
   /**
    * <pre>
-   * CmdId: 2924
-   * Obf: BBCCEKEIOBC
+   * CmdId: 22150
+   * Obf: HFCNBEGEAPB
    * </pre>
    *
    * Protobuf type {@code PlayerOfferingDataNotify}
@@ -94,7 +94,7 @@ public final class PlayerOfferingDataNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 50: {
+            case 66: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 offeringDataList_ = new java.util.ArrayList<emu.grasscutter.net.proto.PlayerOfferingDataOuterClass.PlayerOfferingData>();
                 mutable_bitField0_ |= 0x00000001;
@@ -138,17 +138,17 @@ public final class PlayerOfferingDataNotifyOuterClass {
               emu.grasscutter.net.proto.PlayerOfferingDataNotifyOuterClass.PlayerOfferingDataNotify.class, emu.grasscutter.net.proto.PlayerOfferingDataNotifyOuterClass.PlayerOfferingDataNotify.Builder.class);
     }
 
-    public static final int OFFERING_DATA_LIST_FIELD_NUMBER = 6;
+    public static final int OFFERING_DATA_LIST_FIELD_NUMBER = 8;
     private java.util.List<emu.grasscutter.net.proto.PlayerOfferingDataOuterClass.PlayerOfferingData> offeringDataList_;
     /**
-     * <code>repeated .PlayerOfferingData offering_data_list = 6;</code>
+     * <code>repeated .PlayerOfferingData offering_data_list = 8;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.PlayerOfferingDataOuterClass.PlayerOfferingData> getOfferingDataListList() {
       return offeringDataList_;
     }
     /**
-     * <code>repeated .PlayerOfferingData offering_data_list = 6;</code>
+     * <code>repeated .PlayerOfferingData offering_data_list = 8;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.PlayerOfferingDataOuterClass.PlayerOfferingDataOrBuilder> 
@@ -156,21 +156,21 @@ public final class PlayerOfferingDataNotifyOuterClass {
       return offeringDataList_;
     }
     /**
-     * <code>repeated .PlayerOfferingData offering_data_list = 6;</code>
+     * <code>repeated .PlayerOfferingData offering_data_list = 8;</code>
      */
     @java.lang.Override
     public int getOfferingDataListCount() {
       return offeringDataList_.size();
     }
     /**
-     * <code>repeated .PlayerOfferingData offering_data_list = 6;</code>
+     * <code>repeated .PlayerOfferingData offering_data_list = 8;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.PlayerOfferingDataOuterClass.PlayerOfferingData getOfferingDataList(int index) {
       return offeringDataList_.get(index);
     }
     /**
-     * <code>repeated .PlayerOfferingData offering_data_list = 6;</code>
+     * <code>repeated .PlayerOfferingData offering_data_list = 8;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.PlayerOfferingDataOuterClass.PlayerOfferingDataOrBuilder getOfferingDataListOrBuilder(
@@ -193,7 +193,7 @@ public final class PlayerOfferingDataNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < offeringDataList_.size(); i++) {
-        output.writeMessage(6, offeringDataList_.get(i));
+        output.writeMessage(8, offeringDataList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -206,7 +206,7 @@ public final class PlayerOfferingDataNotifyOuterClass {
       size = 0;
       for (int i = 0; i < offeringDataList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, offeringDataList_.get(i));
+          .computeMessageSize(8, offeringDataList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -337,8 +337,8 @@ public final class PlayerOfferingDataNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2924
-     * Obf: BBCCEKEIOBC
+     * CmdId: 22150
+     * Obf: HFCNBEGEAPB
      * </pre>
      *
      * Protobuf type {@code PlayerOfferingDataNotify}
@@ -538,7 +538,7 @@ public final class PlayerOfferingDataNotifyOuterClass {
           emu.grasscutter.net.proto.PlayerOfferingDataOuterClass.PlayerOfferingData, emu.grasscutter.net.proto.PlayerOfferingDataOuterClass.PlayerOfferingData.Builder, emu.grasscutter.net.proto.PlayerOfferingDataOuterClass.PlayerOfferingDataOrBuilder> offeringDataListBuilder_;
 
       /**
-       * <code>repeated .PlayerOfferingData offering_data_list = 6;</code>
+       * <code>repeated .PlayerOfferingData offering_data_list = 8;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.PlayerOfferingDataOuterClass.PlayerOfferingData> getOfferingDataListList() {
         if (offeringDataListBuilder_ == null) {
@@ -548,7 +548,7 @@ public final class PlayerOfferingDataNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .PlayerOfferingData offering_data_list = 6;</code>
+       * <code>repeated .PlayerOfferingData offering_data_list = 8;</code>
        */
       public int getOfferingDataListCount() {
         if (offeringDataListBuilder_ == null) {
@@ -558,7 +558,7 @@ public final class PlayerOfferingDataNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .PlayerOfferingData offering_data_list = 6;</code>
+       * <code>repeated .PlayerOfferingData offering_data_list = 8;</code>
        */
       public emu.grasscutter.net.proto.PlayerOfferingDataOuterClass.PlayerOfferingData getOfferingDataList(int index) {
         if (offeringDataListBuilder_ == null) {
@@ -568,7 +568,7 @@ public final class PlayerOfferingDataNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .PlayerOfferingData offering_data_list = 6;</code>
+       * <code>repeated .PlayerOfferingData offering_data_list = 8;</code>
        */
       public Builder setOfferingDataList(
           int index, emu.grasscutter.net.proto.PlayerOfferingDataOuterClass.PlayerOfferingData value) {
@@ -585,7 +585,7 @@ public final class PlayerOfferingDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PlayerOfferingData offering_data_list = 6;</code>
+       * <code>repeated .PlayerOfferingData offering_data_list = 8;</code>
        */
       public Builder setOfferingDataList(
           int index, emu.grasscutter.net.proto.PlayerOfferingDataOuterClass.PlayerOfferingData.Builder builderForValue) {
@@ -599,7 +599,7 @@ public final class PlayerOfferingDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PlayerOfferingData offering_data_list = 6;</code>
+       * <code>repeated .PlayerOfferingData offering_data_list = 8;</code>
        */
       public Builder addOfferingDataList(emu.grasscutter.net.proto.PlayerOfferingDataOuterClass.PlayerOfferingData value) {
         if (offeringDataListBuilder_ == null) {
@@ -615,7 +615,7 @@ public final class PlayerOfferingDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PlayerOfferingData offering_data_list = 6;</code>
+       * <code>repeated .PlayerOfferingData offering_data_list = 8;</code>
        */
       public Builder addOfferingDataList(
           int index, emu.grasscutter.net.proto.PlayerOfferingDataOuterClass.PlayerOfferingData value) {
@@ -632,7 +632,7 @@ public final class PlayerOfferingDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PlayerOfferingData offering_data_list = 6;</code>
+       * <code>repeated .PlayerOfferingData offering_data_list = 8;</code>
        */
       public Builder addOfferingDataList(
           emu.grasscutter.net.proto.PlayerOfferingDataOuterClass.PlayerOfferingData.Builder builderForValue) {
@@ -646,7 +646,7 @@ public final class PlayerOfferingDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PlayerOfferingData offering_data_list = 6;</code>
+       * <code>repeated .PlayerOfferingData offering_data_list = 8;</code>
        */
       public Builder addOfferingDataList(
           int index, emu.grasscutter.net.proto.PlayerOfferingDataOuterClass.PlayerOfferingData.Builder builderForValue) {
@@ -660,7 +660,7 @@ public final class PlayerOfferingDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PlayerOfferingData offering_data_list = 6;</code>
+       * <code>repeated .PlayerOfferingData offering_data_list = 8;</code>
        */
       public Builder addAllOfferingDataList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.PlayerOfferingDataOuterClass.PlayerOfferingData> values) {
@@ -675,7 +675,7 @@ public final class PlayerOfferingDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PlayerOfferingData offering_data_list = 6;</code>
+       * <code>repeated .PlayerOfferingData offering_data_list = 8;</code>
        */
       public Builder clearOfferingDataList() {
         if (offeringDataListBuilder_ == null) {
@@ -688,7 +688,7 @@ public final class PlayerOfferingDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PlayerOfferingData offering_data_list = 6;</code>
+       * <code>repeated .PlayerOfferingData offering_data_list = 8;</code>
        */
       public Builder removeOfferingDataList(int index) {
         if (offeringDataListBuilder_ == null) {
@@ -701,14 +701,14 @@ public final class PlayerOfferingDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PlayerOfferingData offering_data_list = 6;</code>
+       * <code>repeated .PlayerOfferingData offering_data_list = 8;</code>
        */
       public emu.grasscutter.net.proto.PlayerOfferingDataOuterClass.PlayerOfferingData.Builder getOfferingDataListBuilder(
           int index) {
         return getOfferingDataListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .PlayerOfferingData offering_data_list = 6;</code>
+       * <code>repeated .PlayerOfferingData offering_data_list = 8;</code>
        */
       public emu.grasscutter.net.proto.PlayerOfferingDataOuterClass.PlayerOfferingDataOrBuilder getOfferingDataListOrBuilder(
           int index) {
@@ -718,7 +718,7 @@ public final class PlayerOfferingDataNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .PlayerOfferingData offering_data_list = 6;</code>
+       * <code>repeated .PlayerOfferingData offering_data_list = 8;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.PlayerOfferingDataOuterClass.PlayerOfferingDataOrBuilder> 
            getOfferingDataListOrBuilderList() {
@@ -729,14 +729,14 @@ public final class PlayerOfferingDataNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .PlayerOfferingData offering_data_list = 6;</code>
+       * <code>repeated .PlayerOfferingData offering_data_list = 8;</code>
        */
       public emu.grasscutter.net.proto.PlayerOfferingDataOuterClass.PlayerOfferingData.Builder addOfferingDataListBuilder() {
         return getOfferingDataListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.PlayerOfferingDataOuterClass.PlayerOfferingData.getDefaultInstance());
       }
       /**
-       * <code>repeated .PlayerOfferingData offering_data_list = 6;</code>
+       * <code>repeated .PlayerOfferingData offering_data_list = 8;</code>
        */
       public emu.grasscutter.net.proto.PlayerOfferingDataOuterClass.PlayerOfferingData.Builder addOfferingDataListBuilder(
           int index) {
@@ -744,7 +744,7 @@ public final class PlayerOfferingDataNotifyOuterClass {
             index, emu.grasscutter.net.proto.PlayerOfferingDataOuterClass.PlayerOfferingData.getDefaultInstance());
       }
       /**
-       * <code>repeated .PlayerOfferingData offering_data_list = 6;</code>
+       * <code>repeated .PlayerOfferingData offering_data_list = 8;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.PlayerOfferingDataOuterClass.PlayerOfferingData.Builder> 
            getOfferingDataListBuilderList() {
@@ -833,7 +833,7 @@ public final class PlayerOfferingDataNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\036PlayerOfferingDataNotify.proto\032\030Player" +
       "OfferingData.proto\"K\n\030PlayerOfferingData" +
-      "Notify\022/\n\022offering_data_list\030\006 \003(\0132\023.Pla" +
+      "Notify\022/\n\022offering_data_list\030\010 \003(\0132\023.Pla" +
       "yerOfferingDataB\033\n\031emu.grasscutter.net.p" +
       "rotob\006proto3"
     };

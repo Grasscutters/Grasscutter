@@ -1,21 +1,14 @@
 package emu.grasscutter.data.excels.avatar;
 
-import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.GameResource;
-import emu.grasscutter.data.ResourceType;
+import emu.grasscutter.data.*;
 import emu.grasscutter.data.ResourceType.LoadPriority;
-import emu.grasscutter.data.binout.AbilityEmbryoEntry;
 import emu.grasscutter.data.common.PropGrowCurve;
-import emu.grasscutter.game.props.FightProperty;
-import emu.grasscutter.game.props.WeaponType;
+import emu.grasscutter.game.props.*;
 import emu.grasscutter.utils.Utils;
-import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import it.unimi.dsi.fastutil.ints.IntArrayList;
-import it.unimi.dsi.fastutil.ints.IntList;
+import it.unimi.dsi.fastutil.ints.*;
 import lombok.Getter;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 @ResourceType(name = "AvatarExcelConfigData.json", loadPriority = LoadPriority.LOW)
 public class AvatarData extends GameResource {

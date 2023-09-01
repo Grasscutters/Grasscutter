@@ -1,8 +1,8 @@
 package emu.grasscutter.game.tower;
 
 import dev.morphia.annotations.Entity;
-import java.util.HashMap;
-import java.util.Map;
+
+import java.util.*;
 
 @Entity
 public class TowerLevelRecord {

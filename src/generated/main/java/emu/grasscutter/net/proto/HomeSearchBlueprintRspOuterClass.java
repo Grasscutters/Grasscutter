@@ -25,24 +25,24 @@ public final class HomeSearchBlueprintRspOuterClass {
     int getRetcode();
 
     /**
-     * <code>.HomeBlueprintSearchInfo search_info = 4;</code>
+     * <code>.HomeBlueprintSearchInfo search_info = 15;</code>
      * @return Whether the searchInfo field is set.
      */
     boolean hasSearchInfo();
     /**
-     * <code>.HomeBlueprintSearchInfo search_info = 4;</code>
+     * <code>.HomeBlueprintSearchInfo search_info = 15;</code>
      * @return The searchInfo.
      */
     emu.grasscutter.net.proto.HomeBlueprintSearchInfoOuterClass.HomeBlueprintSearchInfo getSearchInfo();
     /**
-     * <code>.HomeBlueprintSearchInfo search_info = 4;</code>
+     * <code>.HomeBlueprintSearchInfo search_info = 15;</code>
      */
     emu.grasscutter.net.proto.HomeBlueprintSearchInfoOuterClass.HomeBlueprintSearchInfoOrBuilder getSearchInfoOrBuilder();
   }
   /**
    * <pre>
-   * CmdId: 4815
-   * Obf: PPDOGEBJJHE
+   * CmdId: 9491
+   * Obf: OJELACOLJHG
    * </pre>
    *
    * Protobuf type {@code HomeSearchBlueprintRsp}
@@ -89,7 +89,12 @@ public final class HomeSearchBlueprintRspOuterClass {
             case 0:
               done = true;
               break;
-            case 34: {
+            case 72: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 122: {
               emu.grasscutter.net.proto.HomeBlueprintSearchInfoOuterClass.HomeBlueprintSearchInfo.Builder subBuilder = null;
               if (searchInfo_ != null) {
                 subBuilder = searchInfo_.toBuilder();
@@ -100,11 +105,6 @@ public final class HomeSearchBlueprintRspOuterClass {
                 searchInfo_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-            case 72: {
-
-              retcode_ = input.readInt32();
               break;
             }
             default: {
@@ -150,10 +150,10 @@ public final class HomeSearchBlueprintRspOuterClass {
       return retcode_;
     }
 
-    public static final int SEARCH_INFO_FIELD_NUMBER = 4;
+    public static final int SEARCH_INFO_FIELD_NUMBER = 15;
     private emu.grasscutter.net.proto.HomeBlueprintSearchInfoOuterClass.HomeBlueprintSearchInfo searchInfo_;
     /**
-     * <code>.HomeBlueprintSearchInfo search_info = 4;</code>
+     * <code>.HomeBlueprintSearchInfo search_info = 15;</code>
      * @return Whether the searchInfo field is set.
      */
     @java.lang.Override
@@ -161,7 +161,7 @@ public final class HomeSearchBlueprintRspOuterClass {
       return searchInfo_ != null;
     }
     /**
-     * <code>.HomeBlueprintSearchInfo search_info = 4;</code>
+     * <code>.HomeBlueprintSearchInfo search_info = 15;</code>
      * @return The searchInfo.
      */
     @java.lang.Override
@@ -169,7 +169,7 @@ public final class HomeSearchBlueprintRspOuterClass {
       return searchInfo_ == null ? emu.grasscutter.net.proto.HomeBlueprintSearchInfoOuterClass.HomeBlueprintSearchInfo.getDefaultInstance() : searchInfo_;
     }
     /**
-     * <code>.HomeBlueprintSearchInfo search_info = 4;</code>
+     * <code>.HomeBlueprintSearchInfo search_info = 15;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.HomeBlueprintSearchInfoOuterClass.HomeBlueprintSearchInfoOrBuilder getSearchInfoOrBuilder() {
@@ -190,11 +190,11 @@ public final class HomeSearchBlueprintRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (searchInfo_ != null) {
-        output.writeMessage(4, getSearchInfo());
-      }
       if (retcode_ != 0) {
         output.writeInt32(9, retcode_);
+      }
+      if (searchInfo_ != null) {
+        output.writeMessage(15, getSearchInfo());
       }
       unknownFields.writeTo(output);
     }
@@ -205,13 +205,13 @@ public final class HomeSearchBlueprintRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (searchInfo_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, getSearchInfo());
-      }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(9, retcode_);
+      }
+      if (searchInfo_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(15, getSearchInfo());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -349,8 +349,8 @@ public final class HomeSearchBlueprintRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4815
-     * Obf: PPDOGEBJJHE
+     * CmdId: 9491
+     * Obf: OJELACOLJHG
      * </pre>
      *
      * Protobuf type {@code HomeSearchBlueprintRsp}
@@ -548,14 +548,14 @@ public final class HomeSearchBlueprintRspOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.HomeBlueprintSearchInfoOuterClass.HomeBlueprintSearchInfo, emu.grasscutter.net.proto.HomeBlueprintSearchInfoOuterClass.HomeBlueprintSearchInfo.Builder, emu.grasscutter.net.proto.HomeBlueprintSearchInfoOuterClass.HomeBlueprintSearchInfoOrBuilder> searchInfoBuilder_;
       /**
-       * <code>.HomeBlueprintSearchInfo search_info = 4;</code>
+       * <code>.HomeBlueprintSearchInfo search_info = 15;</code>
        * @return Whether the searchInfo field is set.
        */
       public boolean hasSearchInfo() {
         return searchInfoBuilder_ != null || searchInfo_ != null;
       }
       /**
-       * <code>.HomeBlueprintSearchInfo search_info = 4;</code>
+       * <code>.HomeBlueprintSearchInfo search_info = 15;</code>
        * @return The searchInfo.
        */
       public emu.grasscutter.net.proto.HomeBlueprintSearchInfoOuterClass.HomeBlueprintSearchInfo getSearchInfo() {
@@ -566,7 +566,7 @@ public final class HomeSearchBlueprintRspOuterClass {
         }
       }
       /**
-       * <code>.HomeBlueprintSearchInfo search_info = 4;</code>
+       * <code>.HomeBlueprintSearchInfo search_info = 15;</code>
        */
       public Builder setSearchInfo(emu.grasscutter.net.proto.HomeBlueprintSearchInfoOuterClass.HomeBlueprintSearchInfo value) {
         if (searchInfoBuilder_ == null) {
@@ -582,7 +582,7 @@ public final class HomeSearchBlueprintRspOuterClass {
         return this;
       }
       /**
-       * <code>.HomeBlueprintSearchInfo search_info = 4;</code>
+       * <code>.HomeBlueprintSearchInfo search_info = 15;</code>
        */
       public Builder setSearchInfo(
           emu.grasscutter.net.proto.HomeBlueprintSearchInfoOuterClass.HomeBlueprintSearchInfo.Builder builderForValue) {
@@ -596,7 +596,7 @@ public final class HomeSearchBlueprintRspOuterClass {
         return this;
       }
       /**
-       * <code>.HomeBlueprintSearchInfo search_info = 4;</code>
+       * <code>.HomeBlueprintSearchInfo search_info = 15;</code>
        */
       public Builder mergeSearchInfo(emu.grasscutter.net.proto.HomeBlueprintSearchInfoOuterClass.HomeBlueprintSearchInfo value) {
         if (searchInfoBuilder_ == null) {
@@ -614,7 +614,7 @@ public final class HomeSearchBlueprintRspOuterClass {
         return this;
       }
       /**
-       * <code>.HomeBlueprintSearchInfo search_info = 4;</code>
+       * <code>.HomeBlueprintSearchInfo search_info = 15;</code>
        */
       public Builder clearSearchInfo() {
         if (searchInfoBuilder_ == null) {
@@ -628,7 +628,7 @@ public final class HomeSearchBlueprintRspOuterClass {
         return this;
       }
       /**
-       * <code>.HomeBlueprintSearchInfo search_info = 4;</code>
+       * <code>.HomeBlueprintSearchInfo search_info = 15;</code>
        */
       public emu.grasscutter.net.proto.HomeBlueprintSearchInfoOuterClass.HomeBlueprintSearchInfo.Builder getSearchInfoBuilder() {
         
@@ -636,7 +636,7 @@ public final class HomeSearchBlueprintRspOuterClass {
         return getSearchInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.HomeBlueprintSearchInfo search_info = 4;</code>
+       * <code>.HomeBlueprintSearchInfo search_info = 15;</code>
        */
       public emu.grasscutter.net.proto.HomeBlueprintSearchInfoOuterClass.HomeBlueprintSearchInfoOrBuilder getSearchInfoOrBuilder() {
         if (searchInfoBuilder_ != null) {
@@ -647,7 +647,7 @@ public final class HomeSearchBlueprintRspOuterClass {
         }
       }
       /**
-       * <code>.HomeBlueprintSearchInfo search_info = 4;</code>
+       * <code>.HomeBlueprintSearchInfo search_info = 15;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.HomeBlueprintSearchInfoOuterClass.HomeBlueprintSearchInfo, emu.grasscutter.net.proto.HomeBlueprintSearchInfoOuterClass.HomeBlueprintSearchInfo.Builder, emu.grasscutter.net.proto.HomeBlueprintSearchInfoOuterClass.HomeBlueprintSearchInfoOrBuilder> 
@@ -732,7 +732,7 @@ public final class HomeSearchBlueprintRspOuterClass {
       "\n\034HomeSearchBlueprintRsp.proto\032\035HomeBlue" +
       "printSearchInfo.proto\"X\n\026HomeSearchBluep" +
       "rintRsp\022\017\n\007retcode\030\t \001(\005\022-\n\013search_info\030" +
-      "\004 \001(\0132\030.HomeBlueprintSearchInfoB\033\n\031emu.g" +
+      "\017 \001(\0132\030.HomeBlueprintSearchInfoB\033\n\031emu.g" +
       "rasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

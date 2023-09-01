@@ -19,17 +19,17 @@ public final class GCGWorldChallengeUnlockNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 unlock_id_list = 13;</code>
+     * <code>repeated uint32 unlock_id_list = 7;</code>
      * @return A list containing the unlockIdList.
      */
     java.util.List<java.lang.Integer> getUnlockIdListList();
     /**
-     * <code>repeated uint32 unlock_id_list = 13;</code>
+     * <code>repeated uint32 unlock_id_list = 7;</code>
      * @return The count of unlockIdList.
      */
     int getUnlockIdListCount();
     /**
-     * <code>repeated uint32 unlock_id_list = 13;</code>
+     * <code>repeated uint32 unlock_id_list = 7;</code>
      * @param index The index of the element to return.
      * @return The unlockIdList at the given index.
      */
@@ -37,8 +37,8 @@ public final class GCGWorldChallengeUnlockNotifyOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 7184
-   * Obf: JCGFAKDDGJK
+   * CmdId: 21565
+   * Obf: MHHDHGFMPAD
    * </pre>
    *
    * Protobuf type {@code GCGWorldChallengeUnlockNotify}
@@ -87,7 +87,7 @@ public final class GCGWorldChallengeUnlockNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 104: {
+            case 56: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 unlockIdList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -95,7 +95,7 @@ public final class GCGWorldChallengeUnlockNotifyOuterClass {
               unlockIdList_.addInt(input.readUInt32());
               break;
             }
-            case 106: {
+            case 58: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -143,10 +143,10 @@ public final class GCGWorldChallengeUnlockNotifyOuterClass {
               emu.grasscutter.net.proto.GCGWorldChallengeUnlockNotifyOuterClass.GCGWorldChallengeUnlockNotify.class, emu.grasscutter.net.proto.GCGWorldChallengeUnlockNotifyOuterClass.GCGWorldChallengeUnlockNotify.Builder.class);
     }
 
-    public static final int UNLOCK_ID_LIST_FIELD_NUMBER = 13;
+    public static final int UNLOCK_ID_LIST_FIELD_NUMBER = 7;
     private com.google.protobuf.Internal.IntList unlockIdList_;
     /**
-     * <code>repeated uint32 unlock_id_list = 13;</code>
+     * <code>repeated uint32 unlock_id_list = 7;</code>
      * @return A list containing the unlockIdList.
      */
     @java.lang.Override
@@ -155,14 +155,14 @@ public final class GCGWorldChallengeUnlockNotifyOuterClass {
       return unlockIdList_;
     }
     /**
-     * <code>repeated uint32 unlock_id_list = 13;</code>
+     * <code>repeated uint32 unlock_id_list = 7;</code>
      * @return The count of unlockIdList.
      */
     public int getUnlockIdListCount() {
       return unlockIdList_.size();
     }
     /**
-     * <code>repeated uint32 unlock_id_list = 13;</code>
+     * <code>repeated uint32 unlock_id_list = 7;</code>
      * @param index The index of the element to return.
      * @return The unlockIdList at the given index.
      */
@@ -187,7 +187,7 @@ public final class GCGWorldChallengeUnlockNotifyOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (getUnlockIdListList().size() > 0) {
-        output.writeUInt32NoTag(106);
+        output.writeUInt32NoTag(58);
         output.writeUInt32NoTag(unlockIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < unlockIdList_.size(); i++) {
@@ -345,8 +345,8 @@ public final class GCGWorldChallengeUnlockNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 7184
-     * Obf: JCGFAKDDGJK
+     * CmdId: 21565
+     * Obf: MHHDHGFMPAD
      * </pre>
      *
      * Protobuf type {@code GCGWorldChallengeUnlockNotify}
@@ -516,7 +516,7 @@ public final class GCGWorldChallengeUnlockNotifyOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 unlock_id_list = 13;</code>
+       * <code>repeated uint32 unlock_id_list = 7;</code>
        * @return A list containing the unlockIdList.
        */
       public java.util.List<java.lang.Integer>
@@ -525,14 +525,14 @@ public final class GCGWorldChallengeUnlockNotifyOuterClass {
                  java.util.Collections.unmodifiableList(unlockIdList_) : unlockIdList_;
       }
       /**
-       * <code>repeated uint32 unlock_id_list = 13;</code>
+       * <code>repeated uint32 unlock_id_list = 7;</code>
        * @return The count of unlockIdList.
        */
       public int getUnlockIdListCount() {
         return unlockIdList_.size();
       }
       /**
-       * <code>repeated uint32 unlock_id_list = 13;</code>
+       * <code>repeated uint32 unlock_id_list = 7;</code>
        * @param index The index of the element to return.
        * @return The unlockIdList at the given index.
        */
@@ -540,7 +540,7 @@ public final class GCGWorldChallengeUnlockNotifyOuterClass {
         return unlockIdList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 unlock_id_list = 13;</code>
+       * <code>repeated uint32 unlock_id_list = 7;</code>
        * @param index The index to set the value at.
        * @param value The unlockIdList to set.
        * @return This builder for chaining.
@@ -553,7 +553,7 @@ public final class GCGWorldChallengeUnlockNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 unlock_id_list = 13;</code>
+       * <code>repeated uint32 unlock_id_list = 7;</code>
        * @param value The unlockIdList to add.
        * @return This builder for chaining.
        */
@@ -564,7 +564,7 @@ public final class GCGWorldChallengeUnlockNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 unlock_id_list = 13;</code>
+       * <code>repeated uint32 unlock_id_list = 7;</code>
        * @param values The unlockIdList to add.
        * @return This builder for chaining.
        */
@@ -577,7 +577,7 @@ public final class GCGWorldChallengeUnlockNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 unlock_id_list = 13;</code>
+       * <code>repeated uint32 unlock_id_list = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearUnlockIdList() {
@@ -655,7 +655,7 @@ public final class GCGWorldChallengeUnlockNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n#GCGWorldChallengeUnlockNotify.proto\"7\n" +
       "\035GCGWorldChallengeUnlockNotify\022\026\n\016unlock" +
-      "_id_list\030\r \003(\rB\033\n\031emu.grasscutter.net.pr" +
+      "_id_list\030\007 \003(\rB\033\n\031emu.grasscutter.net.pr" +
       "otob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

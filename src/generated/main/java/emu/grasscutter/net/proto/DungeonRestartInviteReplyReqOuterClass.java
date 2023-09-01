@@ -19,15 +19,15 @@ public final class DungeonRestartInviteReplyReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool is_accept = 7;</code>
+     * <code>bool is_accept = 6;</code>
      * @return The isAccept.
      */
     boolean getIsAccept();
   }
   /**
    * <pre>
-   * CmdId: 909
-   * Obf: BMBNGNIGPKH
+   * CmdId: 4804
+   * Obf: JPOPCNNCHHK
    * </pre>
    *
    * Protobuf type {@code DungeonRestartInviteReplyReq}
@@ -74,7 +74,7 @@ public final class DungeonRestartInviteReplyReqOuterClass {
             case 0:
               done = true;
               break;
-            case 56: {
+            case 48: {
 
               isAccept_ = input.readBool();
               break;
@@ -111,10 +111,10 @@ public final class DungeonRestartInviteReplyReqOuterClass {
               emu.grasscutter.net.proto.DungeonRestartInviteReplyReqOuterClass.DungeonRestartInviteReplyReq.class, emu.grasscutter.net.proto.DungeonRestartInviteReplyReqOuterClass.DungeonRestartInviteReplyReq.Builder.class);
     }
 
-    public static final int IS_ACCEPT_FIELD_NUMBER = 7;
+    public static final int IS_ACCEPT_FIELD_NUMBER = 6;
     private boolean isAccept_;
     /**
-     * <code>bool is_accept = 7;</code>
+     * <code>bool is_accept = 6;</code>
      * @return The isAccept.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class DungeonRestartInviteReplyReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (isAccept_ != false) {
-        output.writeBool(7, isAccept_);
+        output.writeBool(6, isAccept_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class DungeonRestartInviteReplyReqOuterClass {
       size = 0;
       if (isAccept_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(7, isAccept_);
+          .computeBoolSize(6, isAccept_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -280,8 +280,8 @@ public final class DungeonRestartInviteReplyReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 909
-     * Obf: BMBNGNIGPKH
+     * CmdId: 4804
+     * Obf: JPOPCNNCHHK
      * </pre>
      *
      * Protobuf type {@code DungeonRestartInviteReplyReq}
@@ -432,7 +432,7 @@ public final class DungeonRestartInviteReplyReqOuterClass {
 
       private boolean isAccept_ ;
       /**
-       * <code>bool is_accept = 7;</code>
+       * <code>bool is_accept = 6;</code>
        * @return The isAccept.
        */
       @java.lang.Override
@@ -440,7 +440,7 @@ public final class DungeonRestartInviteReplyReqOuterClass {
         return isAccept_;
       }
       /**
-       * <code>bool is_accept = 7;</code>
+       * <code>bool is_accept = 6;</code>
        * @param value The isAccept to set.
        * @return This builder for chaining.
        */
@@ -451,7 +451,7 @@ public final class DungeonRestartInviteReplyReqOuterClass {
         return this;
       }
       /**
-       * <code>bool is_accept = 7;</code>
+       * <code>bool is_accept = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsAccept() {
@@ -529,7 +529,7 @@ public final class DungeonRestartInviteReplyReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n\"DungeonRestartInviteReplyReq.proto\"1\n\034" +
       "DungeonRestartInviteReplyReq\022\021\n\tis_accep" +
-      "t\030\007 \001(\010B\033\n\031emu.grasscutter.net.protob\006pr" +
+      "t\030\006 \001(\010B\033\n\031emu.grasscutter.net.protob\006pr" +
       "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

@@ -137,7 +137,7 @@ public final class MailDataOuterClass {
   }
   /**
    * <pre>
-   * Obf: OAGKLHBIAAF
+   * Obf: NGGHHPIHNPM
    * </pre>
    *
    * Protobuf type {@code MailData}
@@ -776,7 +776,7 @@ public final class MailDataOuterClass {
     }
     /**
      * <pre>
-     * Obf: OAGKLHBIAAF
+     * Obf: NGGHHPIHNPM
      * </pre>
      *
      * Protobuf type {@code MailData}

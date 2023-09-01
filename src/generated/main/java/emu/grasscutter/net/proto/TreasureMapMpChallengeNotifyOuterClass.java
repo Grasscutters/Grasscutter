@@ -20,8 +20,8 @@ public final class TreasureMapMpChallengeNotifyOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 2122
-   * Obf: MAEKFNGEHPD
+   * CmdId: 8790
+   * Obf: OKLHGHMKKHI
    * </pre>
    *
    * Protobuf type {@code TreasureMapMpChallengeNotify}
@@ -246,8 +246,8 @@ public final class TreasureMapMpChallengeNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2122
-     * Obf: MAEKFNGEHPD
+     * CmdId: 8790
+     * Obf: OKLHGHMKKHI
      * </pre>
      *
      * Protobuf type {@code TreasureMapMpChallengeNotify}

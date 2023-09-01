@@ -19,15 +19,15 @@ public final class WinterCampTakeExploreRewardReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 id = 5;</code>
+     * <code>uint32 id = 3;</code>
      * @return The id.
      */
     int getId();
   }
   /**
    * <pre>
-   * CmdId: 8890
-   * Obf: HAFGLPPKHDP
+   * CmdId: 20823
+   * Obf: IJHLBFKIACH
    * </pre>
    *
    * Protobuf type {@code WinterCampTakeExploreRewardReq}
@@ -74,7 +74,7 @@ public final class WinterCampTakeExploreRewardReqOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
+            case 24: {
 
               id_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class WinterCampTakeExploreRewardReqOuterClass {
               emu.grasscutter.net.proto.WinterCampTakeExploreRewardReqOuterClass.WinterCampTakeExploreRewardReq.class, emu.grasscutter.net.proto.WinterCampTakeExploreRewardReqOuterClass.WinterCampTakeExploreRewardReq.Builder.class);
     }
 
-    public static final int ID_FIELD_NUMBER = 5;
+    public static final int ID_FIELD_NUMBER = 3;
     private int id_;
     /**
-     * <code>uint32 id = 5;</code>
+     * <code>uint32 id = 3;</code>
      * @return The id.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class WinterCampTakeExploreRewardReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (id_ != 0) {
-        output.writeUInt32(5, id_);
+        output.writeUInt32(3, id_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class WinterCampTakeExploreRewardReqOuterClass {
       size = 0;
       if (id_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, id_);
+          .computeUInt32Size(3, id_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class WinterCampTakeExploreRewardReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8890
-     * Obf: HAFGLPPKHDP
+     * CmdId: 20823
+     * Obf: IJHLBFKIACH
      * </pre>
      *
      * Protobuf type {@code WinterCampTakeExploreRewardReq}
@@ -431,7 +431,7 @@ public final class WinterCampTakeExploreRewardReqOuterClass {
 
       private int id_ ;
       /**
-       * <code>uint32 id = 5;</code>
+       * <code>uint32 id = 3;</code>
        * @return The id.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class WinterCampTakeExploreRewardReqOuterClass {
         return id_;
       }
       /**
-       * <code>uint32 id = 5;</code>
+       * <code>uint32 id = 3;</code>
        * @param value The id to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class WinterCampTakeExploreRewardReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 id = 5;</code>
+       * <code>uint32 id = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearId() {
@@ -527,7 +527,7 @@ public final class WinterCampTakeExploreRewardReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n$WinterCampTakeExploreRewardReq.proto\"," +
-      "\n\036WinterCampTakeExploreRewardReq\022\n\n\002id\030\005" +
+      "\n\036WinterCampTakeExploreRewardReq\022\n\n\002id\030\003" +
       " \001(\rB\033\n\031emu.grasscutter.net.protob\006proto" +
       "3"
     };

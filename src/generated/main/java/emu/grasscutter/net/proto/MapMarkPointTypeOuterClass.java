@@ -16,7 +16,7 @@ public final class MapMarkPointTypeOuterClass {
   }
   /**
    * <pre>
-   * Obf: DBNNAIEGABK
+   * Obf: BPDPOCMBCLI
    * </pre>
    *
    * Protobuf enum {@code MapMarkPointType}

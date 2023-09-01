@@ -19,77 +19,77 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 MDKJMHIIMKE = 7;</code>
-     * @return The mDKJMHIIMKE.
-     */
-    int getMDKJMHIIMKE();
-
-    /**
-     * <code>uint32 JDEMIFFOFCA = 1;</code>
-     * @return The jDEMIFFOFCA.
-     */
-    int getJDEMIFFOFCA();
-
-    /**
-     * <code>bool is_new_record = 10;</code>
+     * <code>bool is_new_record = 14;</code>
      * @return The isNewRecord.
      */
     boolean getIsNewRecord();
 
     /**
-     * <code>uint32 stage_id = 4;</code>
-     * @return The stageId.
-     */
-    int getStageId();
-
-    /**
-     * <code>bool has_new_watcher = 8;</code>
+     * <code>bool has_new_watcher = 10;</code>
      * @return The hasNewWatcher.
      */
     boolean getHasNewWatcher();
 
     /**
-     * <code>.VintageHuntingFirstStageSettleInfo first_stage_info = 2;</code>
+     * <code>uint32 stage_id = 7;</code>
+     * @return The stageId.
+     */
+    int getStageId();
+
+    /**
+     * <code>uint32 IIIGIBNKMJH = 5;</code>
+     * @return The iIIGIBNKMJH.
+     */
+    int getIIIGIBNKMJH();
+
+    /**
+     * <code>uint32 IBPJMGKABFO = 6;</code>
+     * @return The iBPJMGKABFO.
+     */
+    int getIBPJMGKABFO();
+
+    /**
+     * <code>.VintageHuntingFirstStageSettleInfo first_stage_info = 3;</code>
      * @return Whether the firstStageInfo field is set.
      */
     boolean hasFirstStageInfo();
     /**
-     * <code>.VintageHuntingFirstStageSettleInfo first_stage_info = 2;</code>
+     * <code>.VintageHuntingFirstStageSettleInfo first_stage_info = 3;</code>
      * @return The firstStageInfo.
      */
     emu.grasscutter.net.proto.VintageHuntingFirstStageSettleInfoOuterClass.VintageHuntingFirstStageSettleInfo getFirstStageInfo();
     /**
-     * <code>.VintageHuntingFirstStageSettleInfo first_stage_info = 2;</code>
+     * <code>.VintageHuntingFirstStageSettleInfo first_stage_info = 3;</code>
      */
     emu.grasscutter.net.proto.VintageHuntingFirstStageSettleInfoOuterClass.VintageHuntingFirstStageSettleInfoOrBuilder getFirstStageInfoOrBuilder();
 
     /**
-     * <code>.VintageHuntingSecondStageSettleInfo second_stage_info = 3;</code>
+     * <code>.VintageHuntingSecondStageSettleInfo second_stage_info = 12;</code>
      * @return Whether the secondStageInfo field is set.
      */
     boolean hasSecondStageInfo();
     /**
-     * <code>.VintageHuntingSecondStageSettleInfo second_stage_info = 3;</code>
+     * <code>.VintageHuntingSecondStageSettleInfo second_stage_info = 12;</code>
      * @return The secondStageInfo.
      */
     emu.grasscutter.net.proto.VintageHuntingSecondStageSettleInfoOuterClass.VintageHuntingSecondStageSettleInfo getSecondStageInfo();
     /**
-     * <code>.VintageHuntingSecondStageSettleInfo second_stage_info = 3;</code>
+     * <code>.VintageHuntingSecondStageSettleInfo second_stage_info = 12;</code>
      */
     emu.grasscutter.net.proto.VintageHuntingSecondStageSettleInfoOuterClass.VintageHuntingSecondStageSettleInfoOrBuilder getSecondStageInfoOrBuilder();
 
     /**
-     * <code>.VintageHuntingThirdStageSettleInfo third_stage_info = 12;</code>
+     * <code>.VintageHuntingThirdStageSettleInfo third_stage_info = 11;</code>
      * @return Whether the thirdStageInfo field is set.
      */
     boolean hasThirdStageInfo();
     /**
-     * <code>.VintageHuntingThirdStageSettleInfo third_stage_info = 12;</code>
+     * <code>.VintageHuntingThirdStageSettleInfo third_stage_info = 11;</code>
      * @return The thirdStageInfo.
      */
     emu.grasscutter.net.proto.VintageHuntingThirdStageSettleInfoOuterClass.VintageHuntingThirdStageSettleInfo getThirdStageInfo();
     /**
-     * <code>.VintageHuntingThirdStageSettleInfo third_stage_info = 12;</code>
+     * <code>.VintageHuntingThirdStageSettleInfo third_stage_info = 11;</code>
      */
     emu.grasscutter.net.proto.VintageHuntingThirdStageSettleInfoOuterClass.VintageHuntingThirdStageSettleInfoOrBuilder getThirdStageInfoOrBuilder();
 
@@ -97,8 +97,8 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 24282
-   * Obf: PJLPILDHFJO
+   * CmdId: 5258
+   * Obf: KFBFKDKFKLJ
    * </pre>
    *
    * Protobuf type {@code SceneGalleryVintageHuntingSettleNotify}
@@ -145,14 +145,9 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
-
-              jDEMIFFOFCA_ = input.readUInt32();
-              break;
-            }
-            case 18: {
+            case 26: {
               emu.grasscutter.net.proto.VintageHuntingFirstStageSettleInfoOuterClass.VintageHuntingFirstStageSettleInfo.Builder subBuilder = null;
-              if (infoCase_ == 2) {
+              if (infoCase_ == 3) {
                 subBuilder = ((emu.grasscutter.net.proto.VintageHuntingFirstStageSettleInfoOuterClass.VintageHuntingFirstStageSettleInfo) info_).toBuilder();
               }
               info_ =
@@ -161,46 +156,32 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
                 subBuilder.mergeFrom((emu.grasscutter.net.proto.VintageHuntingFirstStageSettleInfoOuterClass.VintageHuntingFirstStageSettleInfo) info_);
                 info_ = subBuilder.buildPartial();
               }
-              infoCase_ = 2;
-              break;
-            }
-            case 26: {
-              emu.grasscutter.net.proto.VintageHuntingSecondStageSettleInfoOuterClass.VintageHuntingSecondStageSettleInfo.Builder subBuilder = null;
-              if (infoCase_ == 3) {
-                subBuilder = ((emu.grasscutter.net.proto.VintageHuntingSecondStageSettleInfoOuterClass.VintageHuntingSecondStageSettleInfo) info_).toBuilder();
-              }
-              info_ =
-                  input.readMessage(emu.grasscutter.net.proto.VintageHuntingSecondStageSettleInfoOuterClass.VintageHuntingSecondStageSettleInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.grasscutter.net.proto.VintageHuntingSecondStageSettleInfoOuterClass.VintageHuntingSecondStageSettleInfo) info_);
-                info_ = subBuilder.buildPartial();
-              }
               infoCase_ = 3;
               break;
             }
-            case 32: {
+            case 40: {
 
-              stageId_ = input.readUInt32();
+              iIIGIBNKMJH_ = input.readUInt32();
+              break;
+            }
+            case 48: {
+
+              iBPJMGKABFO_ = input.readUInt32();
               break;
             }
             case 56: {
 
-              mDKJMHIIMKE_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-
-              hasNewWatcher_ = input.readBool();
+              stageId_ = input.readUInt32();
               break;
             }
             case 80: {
 
-              isNewRecord_ = input.readBool();
+              hasNewWatcher_ = input.readBool();
               break;
             }
-            case 98: {
+            case 90: {
               emu.grasscutter.net.proto.VintageHuntingThirdStageSettleInfoOuterClass.VintageHuntingThirdStageSettleInfo.Builder subBuilder = null;
-              if (infoCase_ == 12) {
+              if (infoCase_ == 11) {
                 subBuilder = ((emu.grasscutter.net.proto.VintageHuntingThirdStageSettleInfoOuterClass.VintageHuntingThirdStageSettleInfo) info_).toBuilder();
               }
               info_ =
@@ -209,7 +190,26 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
                 subBuilder.mergeFrom((emu.grasscutter.net.proto.VintageHuntingThirdStageSettleInfoOuterClass.VintageHuntingThirdStageSettleInfo) info_);
                 info_ = subBuilder.buildPartial();
               }
+              infoCase_ = 11;
+              break;
+            }
+            case 98: {
+              emu.grasscutter.net.proto.VintageHuntingSecondStageSettleInfoOuterClass.VintageHuntingSecondStageSettleInfo.Builder subBuilder = null;
+              if (infoCase_ == 12) {
+                subBuilder = ((emu.grasscutter.net.proto.VintageHuntingSecondStageSettleInfoOuterClass.VintageHuntingSecondStageSettleInfo) info_).toBuilder();
+              }
+              info_ =
+                  input.readMessage(emu.grasscutter.net.proto.VintageHuntingSecondStageSettleInfoOuterClass.VintageHuntingSecondStageSettleInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.grasscutter.net.proto.VintageHuntingSecondStageSettleInfoOuterClass.VintageHuntingSecondStageSettleInfo) info_);
+                info_ = subBuilder.buildPartial();
+              }
               infoCase_ = 12;
+              break;
+            }
+            case 112: {
+
+              isNewRecord_ = input.readBool();
               break;
             }
             default: {
@@ -249,9 +249,9 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
     public enum InfoCase
         implements com.google.protobuf.Internal.EnumLite,
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
-      FIRST_STAGE_INFO(2),
-      SECOND_STAGE_INFO(3),
-      THIRD_STAGE_INFO(12),
+      FIRST_STAGE_INFO(3),
+      SECOND_STAGE_INFO(12),
+      THIRD_STAGE_INFO(11),
       INFO_NOT_SET(0);
       private final int value;
       private InfoCase(int value) {
@@ -269,9 +269,9 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
 
       public static InfoCase forNumber(int value) {
         switch (value) {
-          case 2: return FIRST_STAGE_INFO;
-          case 3: return SECOND_STAGE_INFO;
-          case 12: return THIRD_STAGE_INFO;
+          case 3: return FIRST_STAGE_INFO;
+          case 12: return SECOND_STAGE_INFO;
+          case 11: return THIRD_STAGE_INFO;
           case 0: return INFO_NOT_SET;
           default: return null;
         }
@@ -287,32 +287,10 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
           infoCase_);
     }
 
-    public static final int MDKJMHIIMKE_FIELD_NUMBER = 7;
-    private int mDKJMHIIMKE_;
-    /**
-     * <code>uint32 MDKJMHIIMKE = 7;</code>
-     * @return The mDKJMHIIMKE.
-     */
-    @java.lang.Override
-    public int getMDKJMHIIMKE() {
-      return mDKJMHIIMKE_;
-    }
-
-    public static final int JDEMIFFOFCA_FIELD_NUMBER = 1;
-    private int jDEMIFFOFCA_;
-    /**
-     * <code>uint32 JDEMIFFOFCA = 1;</code>
-     * @return The jDEMIFFOFCA.
-     */
-    @java.lang.Override
-    public int getJDEMIFFOFCA() {
-      return jDEMIFFOFCA_;
-    }
-
-    public static final int IS_NEW_RECORD_FIELD_NUMBER = 10;
+    public static final int IS_NEW_RECORD_FIELD_NUMBER = 14;
     private boolean isNewRecord_;
     /**
-     * <code>bool is_new_record = 10;</code>
+     * <code>bool is_new_record = 14;</code>
      * @return The isNewRecord.
      */
     @java.lang.Override
@@ -320,21 +298,10 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
       return isNewRecord_;
     }
 
-    public static final int STAGE_ID_FIELD_NUMBER = 4;
-    private int stageId_;
-    /**
-     * <code>uint32 stage_id = 4;</code>
-     * @return The stageId.
-     */
-    @java.lang.Override
-    public int getStageId() {
-      return stageId_;
-    }
-
-    public static final int HAS_NEW_WATCHER_FIELD_NUMBER = 8;
+    public static final int HAS_NEW_WATCHER_FIELD_NUMBER = 10;
     private boolean hasNewWatcher_;
     /**
-     * <code>bool has_new_watcher = 8;</code>
+     * <code>bool has_new_watcher = 10;</code>
      * @return The hasNewWatcher.
      */
     @java.lang.Override
@@ -342,94 +309,127 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
       return hasNewWatcher_;
     }
 
-    public static final int FIRST_STAGE_INFO_FIELD_NUMBER = 2;
+    public static final int STAGE_ID_FIELD_NUMBER = 7;
+    private int stageId_;
     /**
-     * <code>.VintageHuntingFirstStageSettleInfo first_stage_info = 2;</code>
+     * <code>uint32 stage_id = 7;</code>
+     * @return The stageId.
+     */
+    @java.lang.Override
+    public int getStageId() {
+      return stageId_;
+    }
+
+    public static final int IIIGIBNKMJH_FIELD_NUMBER = 5;
+    private int iIIGIBNKMJH_;
+    /**
+     * <code>uint32 IIIGIBNKMJH = 5;</code>
+     * @return The iIIGIBNKMJH.
+     */
+    @java.lang.Override
+    public int getIIIGIBNKMJH() {
+      return iIIGIBNKMJH_;
+    }
+
+    public static final int IBPJMGKABFO_FIELD_NUMBER = 6;
+    private int iBPJMGKABFO_;
+    /**
+     * <code>uint32 IBPJMGKABFO = 6;</code>
+     * @return The iBPJMGKABFO.
+     */
+    @java.lang.Override
+    public int getIBPJMGKABFO() {
+      return iBPJMGKABFO_;
+    }
+
+    public static final int FIRST_STAGE_INFO_FIELD_NUMBER = 3;
+    /**
+     * <code>.VintageHuntingFirstStageSettleInfo first_stage_info = 3;</code>
      * @return Whether the firstStageInfo field is set.
      */
     @java.lang.Override
     public boolean hasFirstStageInfo() {
-      return infoCase_ == 2;
+      return infoCase_ == 3;
     }
     /**
-     * <code>.VintageHuntingFirstStageSettleInfo first_stage_info = 2;</code>
+     * <code>.VintageHuntingFirstStageSettleInfo first_stage_info = 3;</code>
      * @return The firstStageInfo.
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.VintageHuntingFirstStageSettleInfoOuterClass.VintageHuntingFirstStageSettleInfo getFirstStageInfo() {
-      if (infoCase_ == 2) {
+      if (infoCase_ == 3) {
          return (emu.grasscutter.net.proto.VintageHuntingFirstStageSettleInfoOuterClass.VintageHuntingFirstStageSettleInfo) info_;
       }
       return emu.grasscutter.net.proto.VintageHuntingFirstStageSettleInfoOuterClass.VintageHuntingFirstStageSettleInfo.getDefaultInstance();
     }
     /**
-     * <code>.VintageHuntingFirstStageSettleInfo first_stage_info = 2;</code>
+     * <code>.VintageHuntingFirstStageSettleInfo first_stage_info = 3;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.VintageHuntingFirstStageSettleInfoOuterClass.VintageHuntingFirstStageSettleInfoOrBuilder getFirstStageInfoOrBuilder() {
-      if (infoCase_ == 2) {
+      if (infoCase_ == 3) {
          return (emu.grasscutter.net.proto.VintageHuntingFirstStageSettleInfoOuterClass.VintageHuntingFirstStageSettleInfo) info_;
       }
       return emu.grasscutter.net.proto.VintageHuntingFirstStageSettleInfoOuterClass.VintageHuntingFirstStageSettleInfo.getDefaultInstance();
     }
 
-    public static final int SECOND_STAGE_INFO_FIELD_NUMBER = 3;
+    public static final int SECOND_STAGE_INFO_FIELD_NUMBER = 12;
     /**
-     * <code>.VintageHuntingSecondStageSettleInfo second_stage_info = 3;</code>
+     * <code>.VintageHuntingSecondStageSettleInfo second_stage_info = 12;</code>
      * @return Whether the secondStageInfo field is set.
      */
     @java.lang.Override
     public boolean hasSecondStageInfo() {
-      return infoCase_ == 3;
+      return infoCase_ == 12;
     }
     /**
-     * <code>.VintageHuntingSecondStageSettleInfo second_stage_info = 3;</code>
+     * <code>.VintageHuntingSecondStageSettleInfo second_stage_info = 12;</code>
      * @return The secondStageInfo.
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.VintageHuntingSecondStageSettleInfoOuterClass.VintageHuntingSecondStageSettleInfo getSecondStageInfo() {
-      if (infoCase_ == 3) {
+      if (infoCase_ == 12) {
          return (emu.grasscutter.net.proto.VintageHuntingSecondStageSettleInfoOuterClass.VintageHuntingSecondStageSettleInfo) info_;
       }
       return emu.grasscutter.net.proto.VintageHuntingSecondStageSettleInfoOuterClass.VintageHuntingSecondStageSettleInfo.getDefaultInstance();
     }
     /**
-     * <code>.VintageHuntingSecondStageSettleInfo second_stage_info = 3;</code>
+     * <code>.VintageHuntingSecondStageSettleInfo second_stage_info = 12;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.VintageHuntingSecondStageSettleInfoOuterClass.VintageHuntingSecondStageSettleInfoOrBuilder getSecondStageInfoOrBuilder() {
-      if (infoCase_ == 3) {
+      if (infoCase_ == 12) {
          return (emu.grasscutter.net.proto.VintageHuntingSecondStageSettleInfoOuterClass.VintageHuntingSecondStageSettleInfo) info_;
       }
       return emu.grasscutter.net.proto.VintageHuntingSecondStageSettleInfoOuterClass.VintageHuntingSecondStageSettleInfo.getDefaultInstance();
     }
 
-    public static final int THIRD_STAGE_INFO_FIELD_NUMBER = 12;
+    public static final int THIRD_STAGE_INFO_FIELD_NUMBER = 11;
     /**
-     * <code>.VintageHuntingThirdStageSettleInfo third_stage_info = 12;</code>
+     * <code>.VintageHuntingThirdStageSettleInfo third_stage_info = 11;</code>
      * @return Whether the thirdStageInfo field is set.
      */
     @java.lang.Override
     public boolean hasThirdStageInfo() {
-      return infoCase_ == 12;
+      return infoCase_ == 11;
     }
     /**
-     * <code>.VintageHuntingThirdStageSettleInfo third_stage_info = 12;</code>
+     * <code>.VintageHuntingThirdStageSettleInfo third_stage_info = 11;</code>
      * @return The thirdStageInfo.
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.VintageHuntingThirdStageSettleInfoOuterClass.VintageHuntingThirdStageSettleInfo getThirdStageInfo() {
-      if (infoCase_ == 12) {
+      if (infoCase_ == 11) {
          return (emu.grasscutter.net.proto.VintageHuntingThirdStageSettleInfoOuterClass.VintageHuntingThirdStageSettleInfo) info_;
       }
       return emu.grasscutter.net.proto.VintageHuntingThirdStageSettleInfoOuterClass.VintageHuntingThirdStageSettleInfo.getDefaultInstance();
     }
     /**
-     * <code>.VintageHuntingThirdStageSettleInfo third_stage_info = 12;</code>
+     * <code>.VintageHuntingThirdStageSettleInfo third_stage_info = 11;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.VintageHuntingThirdStageSettleInfoOuterClass.VintageHuntingThirdStageSettleInfoOrBuilder getThirdStageInfoOrBuilder() {
-      if (infoCase_ == 12) {
+      if (infoCase_ == 11) {
          return (emu.grasscutter.net.proto.VintageHuntingThirdStageSettleInfoOuterClass.VintageHuntingThirdStageSettleInfo) info_;
       }
       return emu.grasscutter.net.proto.VintageHuntingThirdStageSettleInfoOuterClass.VintageHuntingThirdStageSettleInfo.getDefaultInstance();
@@ -449,29 +449,29 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (jDEMIFFOFCA_ != 0) {
-        output.writeUInt32(1, jDEMIFFOFCA_);
-      }
-      if (infoCase_ == 2) {
-        output.writeMessage(2, (emu.grasscutter.net.proto.VintageHuntingFirstStageSettleInfoOuterClass.VintageHuntingFirstStageSettleInfo) info_);
-      }
       if (infoCase_ == 3) {
-        output.writeMessage(3, (emu.grasscutter.net.proto.VintageHuntingSecondStageSettleInfoOuterClass.VintageHuntingSecondStageSettleInfo) info_);
+        output.writeMessage(3, (emu.grasscutter.net.proto.VintageHuntingFirstStageSettleInfoOuterClass.VintageHuntingFirstStageSettleInfo) info_);
+      }
+      if (iIIGIBNKMJH_ != 0) {
+        output.writeUInt32(5, iIIGIBNKMJH_);
+      }
+      if (iBPJMGKABFO_ != 0) {
+        output.writeUInt32(6, iBPJMGKABFO_);
       }
       if (stageId_ != 0) {
-        output.writeUInt32(4, stageId_);
-      }
-      if (mDKJMHIIMKE_ != 0) {
-        output.writeUInt32(7, mDKJMHIIMKE_);
+        output.writeUInt32(7, stageId_);
       }
       if (hasNewWatcher_ != false) {
-        output.writeBool(8, hasNewWatcher_);
+        output.writeBool(10, hasNewWatcher_);
       }
-      if (isNewRecord_ != false) {
-        output.writeBool(10, isNewRecord_);
+      if (infoCase_ == 11) {
+        output.writeMessage(11, (emu.grasscutter.net.proto.VintageHuntingThirdStageSettleInfoOuterClass.VintageHuntingThirdStageSettleInfo) info_);
       }
       if (infoCase_ == 12) {
-        output.writeMessage(12, (emu.grasscutter.net.proto.VintageHuntingThirdStageSettleInfoOuterClass.VintageHuntingThirdStageSettleInfo) info_);
+        output.writeMessage(12, (emu.grasscutter.net.proto.VintageHuntingSecondStageSettleInfoOuterClass.VintageHuntingSecondStageSettleInfo) info_);
+      }
+      if (isNewRecord_ != false) {
+        output.writeBool(14, isNewRecord_);
       }
       unknownFields.writeTo(output);
     }
@@ -482,37 +482,37 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (jDEMIFFOFCA_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, jDEMIFFOFCA_);
-      }
-      if (infoCase_ == 2) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, (emu.grasscutter.net.proto.VintageHuntingFirstStageSettleInfoOuterClass.VintageHuntingFirstStageSettleInfo) info_);
-      }
       if (infoCase_ == 3) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, (emu.grasscutter.net.proto.VintageHuntingSecondStageSettleInfoOuterClass.VintageHuntingSecondStageSettleInfo) info_);
+          .computeMessageSize(3, (emu.grasscutter.net.proto.VintageHuntingFirstStageSettleInfoOuterClass.VintageHuntingFirstStageSettleInfo) info_);
+      }
+      if (iIIGIBNKMJH_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(5, iIIGIBNKMJH_);
+      }
+      if (iBPJMGKABFO_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(6, iBPJMGKABFO_);
       }
       if (stageId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, stageId_);
-      }
-      if (mDKJMHIIMKE_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, mDKJMHIIMKE_);
+          .computeUInt32Size(7, stageId_);
       }
       if (hasNewWatcher_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(8, hasNewWatcher_);
+          .computeBoolSize(10, hasNewWatcher_);
       }
-      if (isNewRecord_ != false) {
+      if (infoCase_ == 11) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(10, isNewRecord_);
+          .computeMessageSize(11, (emu.grasscutter.net.proto.VintageHuntingThirdStageSettleInfoOuterClass.VintageHuntingThirdStageSettleInfo) info_);
       }
       if (infoCase_ == 12) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(12, (emu.grasscutter.net.proto.VintageHuntingThirdStageSettleInfoOuterClass.VintageHuntingThirdStageSettleInfo) info_);
+          .computeMessageSize(12, (emu.grasscutter.net.proto.VintageHuntingSecondStageSettleInfoOuterClass.VintageHuntingSecondStageSettleInfo) info_);
+      }
+      if (isNewRecord_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(14, isNewRecord_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -529,27 +529,27 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
       }
       emu.grasscutter.net.proto.SceneGalleryVintageHuntingSettleNotifyOuterClass.SceneGalleryVintageHuntingSettleNotify other = (emu.grasscutter.net.proto.SceneGalleryVintageHuntingSettleNotifyOuterClass.SceneGalleryVintageHuntingSettleNotify) obj;
 
-      if (getMDKJMHIIMKE()
-          != other.getMDKJMHIIMKE()) return false;
-      if (getJDEMIFFOFCA()
-          != other.getJDEMIFFOFCA()) return false;
       if (getIsNewRecord()
           != other.getIsNewRecord()) return false;
-      if (getStageId()
-          != other.getStageId()) return false;
       if (getHasNewWatcher()
           != other.getHasNewWatcher()) return false;
+      if (getStageId()
+          != other.getStageId()) return false;
+      if (getIIIGIBNKMJH()
+          != other.getIIIGIBNKMJH()) return false;
+      if (getIBPJMGKABFO()
+          != other.getIBPJMGKABFO()) return false;
       if (!getInfoCase().equals(other.getInfoCase())) return false;
       switch (infoCase_) {
-        case 2:
+        case 3:
           if (!getFirstStageInfo()
               .equals(other.getFirstStageInfo())) return false;
           break;
-        case 3:
+        case 12:
           if (!getSecondStageInfo()
               .equals(other.getSecondStageInfo())) return false;
           break;
-        case 12:
+        case 11:
           if (!getThirdStageInfo()
               .equals(other.getThirdStageInfo())) return false;
           break;
@@ -567,28 +567,28 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + MDKJMHIIMKE_FIELD_NUMBER;
-      hash = (53 * hash) + getMDKJMHIIMKE();
-      hash = (37 * hash) + JDEMIFFOFCA_FIELD_NUMBER;
-      hash = (53 * hash) + getJDEMIFFOFCA();
       hash = (37 * hash) + IS_NEW_RECORD_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsNewRecord());
-      hash = (37 * hash) + STAGE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getStageId();
       hash = (37 * hash) + HAS_NEW_WATCHER_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getHasNewWatcher());
+      hash = (37 * hash) + STAGE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getStageId();
+      hash = (37 * hash) + IIIGIBNKMJH_FIELD_NUMBER;
+      hash = (53 * hash) + getIIIGIBNKMJH();
+      hash = (37 * hash) + IBPJMGKABFO_FIELD_NUMBER;
+      hash = (53 * hash) + getIBPJMGKABFO();
       switch (infoCase_) {
-        case 2:
+        case 3:
           hash = (37 * hash) + FIRST_STAGE_INFO_FIELD_NUMBER;
           hash = (53 * hash) + getFirstStageInfo().hashCode();
           break;
-        case 3:
+        case 12:
           hash = (37 * hash) + SECOND_STAGE_INFO_FIELD_NUMBER;
           hash = (53 * hash) + getSecondStageInfo().hashCode();
           break;
-        case 12:
+        case 11:
           hash = (37 * hash) + THIRD_STAGE_INFO_FIELD_NUMBER;
           hash = (53 * hash) + getThirdStageInfo().hashCode();
           break;
@@ -692,8 +692,8 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 24282
-     * Obf: PJLPILDHFJO
+     * CmdId: 5258
+     * Obf: KFBFKDKFKLJ
      * </pre>
      *
      * Protobuf type {@code SceneGalleryVintageHuntingSettleNotify}
@@ -733,15 +733,15 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        mDKJMHIIMKE_ = 0;
-
-        jDEMIFFOFCA_ = 0;
-
         isNewRecord_ = false;
+
+        hasNewWatcher_ = false;
 
         stageId_ = 0;
 
-        hasNewWatcher_ = false;
+        iIIGIBNKMJH_ = 0;
+
+        iBPJMGKABFO_ = 0;
 
         infoCase_ = 0;
         info_ = null;
@@ -771,26 +771,26 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.SceneGalleryVintageHuntingSettleNotifyOuterClass.SceneGalleryVintageHuntingSettleNotify buildPartial() {
         emu.grasscutter.net.proto.SceneGalleryVintageHuntingSettleNotifyOuterClass.SceneGalleryVintageHuntingSettleNotify result = new emu.grasscutter.net.proto.SceneGalleryVintageHuntingSettleNotifyOuterClass.SceneGalleryVintageHuntingSettleNotify(this);
-        result.mDKJMHIIMKE_ = mDKJMHIIMKE_;
-        result.jDEMIFFOFCA_ = jDEMIFFOFCA_;
         result.isNewRecord_ = isNewRecord_;
-        result.stageId_ = stageId_;
         result.hasNewWatcher_ = hasNewWatcher_;
-        if (infoCase_ == 2) {
+        result.stageId_ = stageId_;
+        result.iIIGIBNKMJH_ = iIIGIBNKMJH_;
+        result.iBPJMGKABFO_ = iBPJMGKABFO_;
+        if (infoCase_ == 3) {
           if (firstStageInfoBuilder_ == null) {
             result.info_ = info_;
           } else {
             result.info_ = firstStageInfoBuilder_.build();
           }
         }
-        if (infoCase_ == 3) {
+        if (infoCase_ == 12) {
           if (secondStageInfoBuilder_ == null) {
             result.info_ = info_;
           } else {
             result.info_ = secondStageInfoBuilder_.build();
           }
         }
-        if (infoCase_ == 12) {
+        if (infoCase_ == 11) {
           if (thirdStageInfoBuilder_ == null) {
             result.info_ = info_;
           } else {
@@ -846,20 +846,20 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.SceneGalleryVintageHuntingSettleNotifyOuterClass.SceneGalleryVintageHuntingSettleNotify other) {
         if (other == emu.grasscutter.net.proto.SceneGalleryVintageHuntingSettleNotifyOuterClass.SceneGalleryVintageHuntingSettleNotify.getDefaultInstance()) return this;
-        if (other.getMDKJMHIIMKE() != 0) {
-          setMDKJMHIIMKE(other.getMDKJMHIIMKE());
-        }
-        if (other.getJDEMIFFOFCA() != 0) {
-          setJDEMIFFOFCA(other.getJDEMIFFOFCA());
-        }
         if (other.getIsNewRecord() != false) {
           setIsNewRecord(other.getIsNewRecord());
+        }
+        if (other.getHasNewWatcher() != false) {
+          setHasNewWatcher(other.getHasNewWatcher());
         }
         if (other.getStageId() != 0) {
           setStageId(other.getStageId());
         }
-        if (other.getHasNewWatcher() != false) {
-          setHasNewWatcher(other.getHasNewWatcher());
+        if (other.getIIIGIBNKMJH() != 0) {
+          setIIIGIBNKMJH(other.getIIIGIBNKMJH());
+        }
+        if (other.getIBPJMGKABFO() != 0) {
+          setIBPJMGKABFO(other.getIBPJMGKABFO());
         }
         switch (other.getInfoCase()) {
           case FIRST_STAGE_INFO: {
@@ -922,71 +922,9 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
       }
 
 
-      private int mDKJMHIIMKE_ ;
-      /**
-       * <code>uint32 MDKJMHIIMKE = 7;</code>
-       * @return The mDKJMHIIMKE.
-       */
-      @java.lang.Override
-      public int getMDKJMHIIMKE() {
-        return mDKJMHIIMKE_;
-      }
-      /**
-       * <code>uint32 MDKJMHIIMKE = 7;</code>
-       * @param value The mDKJMHIIMKE to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMDKJMHIIMKE(int value) {
-        
-        mDKJMHIIMKE_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 MDKJMHIIMKE = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMDKJMHIIMKE() {
-        
-        mDKJMHIIMKE_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int jDEMIFFOFCA_ ;
-      /**
-       * <code>uint32 JDEMIFFOFCA = 1;</code>
-       * @return The jDEMIFFOFCA.
-       */
-      @java.lang.Override
-      public int getJDEMIFFOFCA() {
-        return jDEMIFFOFCA_;
-      }
-      /**
-       * <code>uint32 JDEMIFFOFCA = 1;</code>
-       * @param value The jDEMIFFOFCA to set.
-       * @return This builder for chaining.
-       */
-      public Builder setJDEMIFFOFCA(int value) {
-        
-        jDEMIFFOFCA_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 JDEMIFFOFCA = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearJDEMIFFOFCA() {
-        
-        jDEMIFFOFCA_ = 0;
-        onChanged();
-        return this;
-      }
-
       private boolean isNewRecord_ ;
       /**
-       * <code>bool is_new_record = 10;</code>
+       * <code>bool is_new_record = 14;</code>
        * @return The isNewRecord.
        */
       @java.lang.Override
@@ -994,7 +932,7 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
         return isNewRecord_;
       }
       /**
-       * <code>bool is_new_record = 10;</code>
+       * <code>bool is_new_record = 14;</code>
        * @param value The isNewRecord to set.
        * @return This builder for chaining.
        */
@@ -1005,7 +943,7 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
         return this;
       }
       /**
-       * <code>bool is_new_record = 10;</code>
+       * <code>bool is_new_record = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsNewRecord() {
@@ -1015,40 +953,9 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
         return this;
       }
 
-      private int stageId_ ;
-      /**
-       * <code>uint32 stage_id = 4;</code>
-       * @return The stageId.
-       */
-      @java.lang.Override
-      public int getStageId() {
-        return stageId_;
-      }
-      /**
-       * <code>uint32 stage_id = 4;</code>
-       * @param value The stageId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStageId(int value) {
-        
-        stageId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 stage_id = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearStageId() {
-        
-        stageId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private boolean hasNewWatcher_ ;
       /**
-       * <code>bool has_new_watcher = 8;</code>
+       * <code>bool has_new_watcher = 10;</code>
        * @return The hasNewWatcher.
        */
       @java.lang.Override
@@ -1056,7 +963,7 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
         return hasNewWatcher_;
       }
       /**
-       * <code>bool has_new_watcher = 8;</code>
+       * <code>bool has_new_watcher = 10;</code>
        * @param value The hasNewWatcher to set.
        * @return This builder for chaining.
        */
@@ -1067,7 +974,7 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
         return this;
       }
       /**
-       * <code>bool has_new_watcher = 8;</code>
+       * <code>bool has_new_watcher = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearHasNewWatcher() {
@@ -1077,36 +984,129 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
         return this;
       }
 
+      private int stageId_ ;
+      /**
+       * <code>uint32 stage_id = 7;</code>
+       * @return The stageId.
+       */
+      @java.lang.Override
+      public int getStageId() {
+        return stageId_;
+      }
+      /**
+       * <code>uint32 stage_id = 7;</code>
+       * @param value The stageId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStageId(int value) {
+        
+        stageId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 stage_id = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStageId() {
+        
+        stageId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int iIIGIBNKMJH_ ;
+      /**
+       * <code>uint32 IIIGIBNKMJH = 5;</code>
+       * @return The iIIGIBNKMJH.
+       */
+      @java.lang.Override
+      public int getIIIGIBNKMJH() {
+        return iIIGIBNKMJH_;
+      }
+      /**
+       * <code>uint32 IIIGIBNKMJH = 5;</code>
+       * @param value The iIIGIBNKMJH to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIIIGIBNKMJH(int value) {
+        
+        iIIGIBNKMJH_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 IIIGIBNKMJH = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIIIGIBNKMJH() {
+        
+        iIIGIBNKMJH_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int iBPJMGKABFO_ ;
+      /**
+       * <code>uint32 IBPJMGKABFO = 6;</code>
+       * @return The iBPJMGKABFO.
+       */
+      @java.lang.Override
+      public int getIBPJMGKABFO() {
+        return iBPJMGKABFO_;
+      }
+      /**
+       * <code>uint32 IBPJMGKABFO = 6;</code>
+       * @param value The iBPJMGKABFO to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIBPJMGKABFO(int value) {
+        
+        iBPJMGKABFO_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 IBPJMGKABFO = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIBPJMGKABFO() {
+        
+        iBPJMGKABFO_ = 0;
+        onChanged();
+        return this;
+      }
+
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.VintageHuntingFirstStageSettleInfoOuterClass.VintageHuntingFirstStageSettleInfo, emu.grasscutter.net.proto.VintageHuntingFirstStageSettleInfoOuterClass.VintageHuntingFirstStageSettleInfo.Builder, emu.grasscutter.net.proto.VintageHuntingFirstStageSettleInfoOuterClass.VintageHuntingFirstStageSettleInfoOrBuilder> firstStageInfoBuilder_;
       /**
-       * <code>.VintageHuntingFirstStageSettleInfo first_stage_info = 2;</code>
+       * <code>.VintageHuntingFirstStageSettleInfo first_stage_info = 3;</code>
        * @return Whether the firstStageInfo field is set.
        */
       @java.lang.Override
       public boolean hasFirstStageInfo() {
-        return infoCase_ == 2;
+        return infoCase_ == 3;
       }
       /**
-       * <code>.VintageHuntingFirstStageSettleInfo first_stage_info = 2;</code>
+       * <code>.VintageHuntingFirstStageSettleInfo first_stage_info = 3;</code>
        * @return The firstStageInfo.
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.VintageHuntingFirstStageSettleInfoOuterClass.VintageHuntingFirstStageSettleInfo getFirstStageInfo() {
         if (firstStageInfoBuilder_ == null) {
-          if (infoCase_ == 2) {
+          if (infoCase_ == 3) {
             return (emu.grasscutter.net.proto.VintageHuntingFirstStageSettleInfoOuterClass.VintageHuntingFirstStageSettleInfo) info_;
           }
           return emu.grasscutter.net.proto.VintageHuntingFirstStageSettleInfoOuterClass.VintageHuntingFirstStageSettleInfo.getDefaultInstance();
         } else {
-          if (infoCase_ == 2) {
+          if (infoCase_ == 3) {
             return firstStageInfoBuilder_.getMessage();
           }
           return emu.grasscutter.net.proto.VintageHuntingFirstStageSettleInfoOuterClass.VintageHuntingFirstStageSettleInfo.getDefaultInstance();
         }
       }
       /**
-       * <code>.VintageHuntingFirstStageSettleInfo first_stage_info = 2;</code>
+       * <code>.VintageHuntingFirstStageSettleInfo first_stage_info = 3;</code>
        */
       public Builder setFirstStageInfo(emu.grasscutter.net.proto.VintageHuntingFirstStageSettleInfoOuterClass.VintageHuntingFirstStageSettleInfo value) {
         if (firstStageInfoBuilder_ == null) {
@@ -1118,11 +1118,11 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
         } else {
           firstStageInfoBuilder_.setMessage(value);
         }
-        infoCase_ = 2;
+        infoCase_ = 3;
         return this;
       }
       /**
-       * <code>.VintageHuntingFirstStageSettleInfo first_stage_info = 2;</code>
+       * <code>.VintageHuntingFirstStageSettleInfo first_stage_info = 3;</code>
        */
       public Builder setFirstStageInfo(
           emu.grasscutter.net.proto.VintageHuntingFirstStageSettleInfoOuterClass.VintageHuntingFirstStageSettleInfo.Builder builderForValue) {
@@ -1132,15 +1132,15 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
         } else {
           firstStageInfoBuilder_.setMessage(builderForValue.build());
         }
-        infoCase_ = 2;
+        infoCase_ = 3;
         return this;
       }
       /**
-       * <code>.VintageHuntingFirstStageSettleInfo first_stage_info = 2;</code>
+       * <code>.VintageHuntingFirstStageSettleInfo first_stage_info = 3;</code>
        */
       public Builder mergeFirstStageInfo(emu.grasscutter.net.proto.VintageHuntingFirstStageSettleInfoOuterClass.VintageHuntingFirstStageSettleInfo value) {
         if (firstStageInfoBuilder_ == null) {
-          if (infoCase_ == 2 &&
+          if (infoCase_ == 3 &&
               info_ != emu.grasscutter.net.proto.VintageHuntingFirstStageSettleInfoOuterClass.VintageHuntingFirstStageSettleInfo.getDefaultInstance()) {
             info_ = emu.grasscutter.net.proto.VintageHuntingFirstStageSettleInfoOuterClass.VintageHuntingFirstStageSettleInfo.newBuilder((emu.grasscutter.net.proto.VintageHuntingFirstStageSettleInfoOuterClass.VintageHuntingFirstStageSettleInfo) info_)
                 .mergeFrom(value).buildPartial();
@@ -1149,26 +1149,26 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
           }
           onChanged();
         } else {
-          if (infoCase_ == 2) {
+          if (infoCase_ == 3) {
             firstStageInfoBuilder_.mergeFrom(value);
           }
           firstStageInfoBuilder_.setMessage(value);
         }
-        infoCase_ = 2;
+        infoCase_ = 3;
         return this;
       }
       /**
-       * <code>.VintageHuntingFirstStageSettleInfo first_stage_info = 2;</code>
+       * <code>.VintageHuntingFirstStageSettleInfo first_stage_info = 3;</code>
        */
       public Builder clearFirstStageInfo() {
         if (firstStageInfoBuilder_ == null) {
-          if (infoCase_ == 2) {
+          if (infoCase_ == 3) {
             infoCase_ = 0;
             info_ = null;
             onChanged();
           }
         } else {
-          if (infoCase_ == 2) {
+          if (infoCase_ == 3) {
             infoCase_ = 0;
             info_ = null;
           }
@@ -1177,33 +1177,33 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.VintageHuntingFirstStageSettleInfo first_stage_info = 2;</code>
+       * <code>.VintageHuntingFirstStageSettleInfo first_stage_info = 3;</code>
        */
       public emu.grasscutter.net.proto.VintageHuntingFirstStageSettleInfoOuterClass.VintageHuntingFirstStageSettleInfo.Builder getFirstStageInfoBuilder() {
         return getFirstStageInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.VintageHuntingFirstStageSettleInfo first_stage_info = 2;</code>
+       * <code>.VintageHuntingFirstStageSettleInfo first_stage_info = 3;</code>
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.VintageHuntingFirstStageSettleInfoOuterClass.VintageHuntingFirstStageSettleInfoOrBuilder getFirstStageInfoOrBuilder() {
-        if ((infoCase_ == 2) && (firstStageInfoBuilder_ != null)) {
+        if ((infoCase_ == 3) && (firstStageInfoBuilder_ != null)) {
           return firstStageInfoBuilder_.getMessageOrBuilder();
         } else {
-          if (infoCase_ == 2) {
+          if (infoCase_ == 3) {
             return (emu.grasscutter.net.proto.VintageHuntingFirstStageSettleInfoOuterClass.VintageHuntingFirstStageSettleInfo) info_;
           }
           return emu.grasscutter.net.proto.VintageHuntingFirstStageSettleInfoOuterClass.VintageHuntingFirstStageSettleInfo.getDefaultInstance();
         }
       }
       /**
-       * <code>.VintageHuntingFirstStageSettleInfo first_stage_info = 2;</code>
+       * <code>.VintageHuntingFirstStageSettleInfo first_stage_info = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.VintageHuntingFirstStageSettleInfoOuterClass.VintageHuntingFirstStageSettleInfo, emu.grasscutter.net.proto.VintageHuntingFirstStageSettleInfoOuterClass.VintageHuntingFirstStageSettleInfo.Builder, emu.grasscutter.net.proto.VintageHuntingFirstStageSettleInfoOuterClass.VintageHuntingFirstStageSettleInfoOrBuilder> 
           getFirstStageInfoFieldBuilder() {
         if (firstStageInfoBuilder_ == null) {
-          if (!(infoCase_ == 2)) {
+          if (!(infoCase_ == 3)) {
             info_ = emu.grasscutter.net.proto.VintageHuntingFirstStageSettleInfoOuterClass.VintageHuntingFirstStageSettleInfo.getDefaultInstance();
           }
           firstStageInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -1213,7 +1213,7 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
                   isClean());
           info_ = null;
         }
-        infoCase_ = 2;
+        infoCase_ = 3;
         onChanged();;
         return firstStageInfoBuilder_;
       }
@@ -1221,33 +1221,33 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.VintageHuntingSecondStageSettleInfoOuterClass.VintageHuntingSecondStageSettleInfo, emu.grasscutter.net.proto.VintageHuntingSecondStageSettleInfoOuterClass.VintageHuntingSecondStageSettleInfo.Builder, emu.grasscutter.net.proto.VintageHuntingSecondStageSettleInfoOuterClass.VintageHuntingSecondStageSettleInfoOrBuilder> secondStageInfoBuilder_;
       /**
-       * <code>.VintageHuntingSecondStageSettleInfo second_stage_info = 3;</code>
+       * <code>.VintageHuntingSecondStageSettleInfo second_stage_info = 12;</code>
        * @return Whether the secondStageInfo field is set.
        */
       @java.lang.Override
       public boolean hasSecondStageInfo() {
-        return infoCase_ == 3;
+        return infoCase_ == 12;
       }
       /**
-       * <code>.VintageHuntingSecondStageSettleInfo second_stage_info = 3;</code>
+       * <code>.VintageHuntingSecondStageSettleInfo second_stage_info = 12;</code>
        * @return The secondStageInfo.
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.VintageHuntingSecondStageSettleInfoOuterClass.VintageHuntingSecondStageSettleInfo getSecondStageInfo() {
         if (secondStageInfoBuilder_ == null) {
-          if (infoCase_ == 3) {
+          if (infoCase_ == 12) {
             return (emu.grasscutter.net.proto.VintageHuntingSecondStageSettleInfoOuterClass.VintageHuntingSecondStageSettleInfo) info_;
           }
           return emu.grasscutter.net.proto.VintageHuntingSecondStageSettleInfoOuterClass.VintageHuntingSecondStageSettleInfo.getDefaultInstance();
         } else {
-          if (infoCase_ == 3) {
+          if (infoCase_ == 12) {
             return secondStageInfoBuilder_.getMessage();
           }
           return emu.grasscutter.net.proto.VintageHuntingSecondStageSettleInfoOuterClass.VintageHuntingSecondStageSettleInfo.getDefaultInstance();
         }
       }
       /**
-       * <code>.VintageHuntingSecondStageSettleInfo second_stage_info = 3;</code>
+       * <code>.VintageHuntingSecondStageSettleInfo second_stage_info = 12;</code>
        */
       public Builder setSecondStageInfo(emu.grasscutter.net.proto.VintageHuntingSecondStageSettleInfoOuterClass.VintageHuntingSecondStageSettleInfo value) {
         if (secondStageInfoBuilder_ == null) {
@@ -1259,11 +1259,11 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
         } else {
           secondStageInfoBuilder_.setMessage(value);
         }
-        infoCase_ = 3;
+        infoCase_ = 12;
         return this;
       }
       /**
-       * <code>.VintageHuntingSecondStageSettleInfo second_stage_info = 3;</code>
+       * <code>.VintageHuntingSecondStageSettleInfo second_stage_info = 12;</code>
        */
       public Builder setSecondStageInfo(
           emu.grasscutter.net.proto.VintageHuntingSecondStageSettleInfoOuterClass.VintageHuntingSecondStageSettleInfo.Builder builderForValue) {
@@ -1273,15 +1273,15 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
         } else {
           secondStageInfoBuilder_.setMessage(builderForValue.build());
         }
-        infoCase_ = 3;
+        infoCase_ = 12;
         return this;
       }
       /**
-       * <code>.VintageHuntingSecondStageSettleInfo second_stage_info = 3;</code>
+       * <code>.VintageHuntingSecondStageSettleInfo second_stage_info = 12;</code>
        */
       public Builder mergeSecondStageInfo(emu.grasscutter.net.proto.VintageHuntingSecondStageSettleInfoOuterClass.VintageHuntingSecondStageSettleInfo value) {
         if (secondStageInfoBuilder_ == null) {
-          if (infoCase_ == 3 &&
+          if (infoCase_ == 12 &&
               info_ != emu.grasscutter.net.proto.VintageHuntingSecondStageSettleInfoOuterClass.VintageHuntingSecondStageSettleInfo.getDefaultInstance()) {
             info_ = emu.grasscutter.net.proto.VintageHuntingSecondStageSettleInfoOuterClass.VintageHuntingSecondStageSettleInfo.newBuilder((emu.grasscutter.net.proto.VintageHuntingSecondStageSettleInfoOuterClass.VintageHuntingSecondStageSettleInfo) info_)
                 .mergeFrom(value).buildPartial();
@@ -1290,26 +1290,26 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
           }
           onChanged();
         } else {
-          if (infoCase_ == 3) {
+          if (infoCase_ == 12) {
             secondStageInfoBuilder_.mergeFrom(value);
           }
           secondStageInfoBuilder_.setMessage(value);
         }
-        infoCase_ = 3;
+        infoCase_ = 12;
         return this;
       }
       /**
-       * <code>.VintageHuntingSecondStageSettleInfo second_stage_info = 3;</code>
+       * <code>.VintageHuntingSecondStageSettleInfo second_stage_info = 12;</code>
        */
       public Builder clearSecondStageInfo() {
         if (secondStageInfoBuilder_ == null) {
-          if (infoCase_ == 3) {
+          if (infoCase_ == 12) {
             infoCase_ = 0;
             info_ = null;
             onChanged();
           }
         } else {
-          if (infoCase_ == 3) {
+          if (infoCase_ == 12) {
             infoCase_ = 0;
             info_ = null;
           }
@@ -1318,33 +1318,33 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.VintageHuntingSecondStageSettleInfo second_stage_info = 3;</code>
+       * <code>.VintageHuntingSecondStageSettleInfo second_stage_info = 12;</code>
        */
       public emu.grasscutter.net.proto.VintageHuntingSecondStageSettleInfoOuterClass.VintageHuntingSecondStageSettleInfo.Builder getSecondStageInfoBuilder() {
         return getSecondStageInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.VintageHuntingSecondStageSettleInfo second_stage_info = 3;</code>
+       * <code>.VintageHuntingSecondStageSettleInfo second_stage_info = 12;</code>
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.VintageHuntingSecondStageSettleInfoOuterClass.VintageHuntingSecondStageSettleInfoOrBuilder getSecondStageInfoOrBuilder() {
-        if ((infoCase_ == 3) && (secondStageInfoBuilder_ != null)) {
+        if ((infoCase_ == 12) && (secondStageInfoBuilder_ != null)) {
           return secondStageInfoBuilder_.getMessageOrBuilder();
         } else {
-          if (infoCase_ == 3) {
+          if (infoCase_ == 12) {
             return (emu.grasscutter.net.proto.VintageHuntingSecondStageSettleInfoOuterClass.VintageHuntingSecondStageSettleInfo) info_;
           }
           return emu.grasscutter.net.proto.VintageHuntingSecondStageSettleInfoOuterClass.VintageHuntingSecondStageSettleInfo.getDefaultInstance();
         }
       }
       /**
-       * <code>.VintageHuntingSecondStageSettleInfo second_stage_info = 3;</code>
+       * <code>.VintageHuntingSecondStageSettleInfo second_stage_info = 12;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.VintageHuntingSecondStageSettleInfoOuterClass.VintageHuntingSecondStageSettleInfo, emu.grasscutter.net.proto.VintageHuntingSecondStageSettleInfoOuterClass.VintageHuntingSecondStageSettleInfo.Builder, emu.grasscutter.net.proto.VintageHuntingSecondStageSettleInfoOuterClass.VintageHuntingSecondStageSettleInfoOrBuilder> 
           getSecondStageInfoFieldBuilder() {
         if (secondStageInfoBuilder_ == null) {
-          if (!(infoCase_ == 3)) {
+          if (!(infoCase_ == 12)) {
             info_ = emu.grasscutter.net.proto.VintageHuntingSecondStageSettleInfoOuterClass.VintageHuntingSecondStageSettleInfo.getDefaultInstance();
           }
           secondStageInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -1354,7 +1354,7 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
                   isClean());
           info_ = null;
         }
-        infoCase_ = 3;
+        infoCase_ = 12;
         onChanged();;
         return secondStageInfoBuilder_;
       }
@@ -1362,33 +1362,33 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.VintageHuntingThirdStageSettleInfoOuterClass.VintageHuntingThirdStageSettleInfo, emu.grasscutter.net.proto.VintageHuntingThirdStageSettleInfoOuterClass.VintageHuntingThirdStageSettleInfo.Builder, emu.grasscutter.net.proto.VintageHuntingThirdStageSettleInfoOuterClass.VintageHuntingThirdStageSettleInfoOrBuilder> thirdStageInfoBuilder_;
       /**
-       * <code>.VintageHuntingThirdStageSettleInfo third_stage_info = 12;</code>
+       * <code>.VintageHuntingThirdStageSettleInfo third_stage_info = 11;</code>
        * @return Whether the thirdStageInfo field is set.
        */
       @java.lang.Override
       public boolean hasThirdStageInfo() {
-        return infoCase_ == 12;
+        return infoCase_ == 11;
       }
       /**
-       * <code>.VintageHuntingThirdStageSettleInfo third_stage_info = 12;</code>
+       * <code>.VintageHuntingThirdStageSettleInfo third_stage_info = 11;</code>
        * @return The thirdStageInfo.
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.VintageHuntingThirdStageSettleInfoOuterClass.VintageHuntingThirdStageSettleInfo getThirdStageInfo() {
         if (thirdStageInfoBuilder_ == null) {
-          if (infoCase_ == 12) {
+          if (infoCase_ == 11) {
             return (emu.grasscutter.net.proto.VintageHuntingThirdStageSettleInfoOuterClass.VintageHuntingThirdStageSettleInfo) info_;
           }
           return emu.grasscutter.net.proto.VintageHuntingThirdStageSettleInfoOuterClass.VintageHuntingThirdStageSettleInfo.getDefaultInstance();
         } else {
-          if (infoCase_ == 12) {
+          if (infoCase_ == 11) {
             return thirdStageInfoBuilder_.getMessage();
           }
           return emu.grasscutter.net.proto.VintageHuntingThirdStageSettleInfoOuterClass.VintageHuntingThirdStageSettleInfo.getDefaultInstance();
         }
       }
       /**
-       * <code>.VintageHuntingThirdStageSettleInfo third_stage_info = 12;</code>
+       * <code>.VintageHuntingThirdStageSettleInfo third_stage_info = 11;</code>
        */
       public Builder setThirdStageInfo(emu.grasscutter.net.proto.VintageHuntingThirdStageSettleInfoOuterClass.VintageHuntingThirdStageSettleInfo value) {
         if (thirdStageInfoBuilder_ == null) {
@@ -1400,11 +1400,11 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
         } else {
           thirdStageInfoBuilder_.setMessage(value);
         }
-        infoCase_ = 12;
+        infoCase_ = 11;
         return this;
       }
       /**
-       * <code>.VintageHuntingThirdStageSettleInfo third_stage_info = 12;</code>
+       * <code>.VintageHuntingThirdStageSettleInfo third_stage_info = 11;</code>
        */
       public Builder setThirdStageInfo(
           emu.grasscutter.net.proto.VintageHuntingThirdStageSettleInfoOuterClass.VintageHuntingThirdStageSettleInfo.Builder builderForValue) {
@@ -1414,15 +1414,15 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
         } else {
           thirdStageInfoBuilder_.setMessage(builderForValue.build());
         }
-        infoCase_ = 12;
+        infoCase_ = 11;
         return this;
       }
       /**
-       * <code>.VintageHuntingThirdStageSettleInfo third_stage_info = 12;</code>
+       * <code>.VintageHuntingThirdStageSettleInfo third_stage_info = 11;</code>
        */
       public Builder mergeThirdStageInfo(emu.grasscutter.net.proto.VintageHuntingThirdStageSettleInfoOuterClass.VintageHuntingThirdStageSettleInfo value) {
         if (thirdStageInfoBuilder_ == null) {
-          if (infoCase_ == 12 &&
+          if (infoCase_ == 11 &&
               info_ != emu.grasscutter.net.proto.VintageHuntingThirdStageSettleInfoOuterClass.VintageHuntingThirdStageSettleInfo.getDefaultInstance()) {
             info_ = emu.grasscutter.net.proto.VintageHuntingThirdStageSettleInfoOuterClass.VintageHuntingThirdStageSettleInfo.newBuilder((emu.grasscutter.net.proto.VintageHuntingThirdStageSettleInfoOuterClass.VintageHuntingThirdStageSettleInfo) info_)
                 .mergeFrom(value).buildPartial();
@@ -1431,26 +1431,26 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
           }
           onChanged();
         } else {
-          if (infoCase_ == 12) {
+          if (infoCase_ == 11) {
             thirdStageInfoBuilder_.mergeFrom(value);
           }
           thirdStageInfoBuilder_.setMessage(value);
         }
-        infoCase_ = 12;
+        infoCase_ = 11;
         return this;
       }
       /**
-       * <code>.VintageHuntingThirdStageSettleInfo third_stage_info = 12;</code>
+       * <code>.VintageHuntingThirdStageSettleInfo third_stage_info = 11;</code>
        */
       public Builder clearThirdStageInfo() {
         if (thirdStageInfoBuilder_ == null) {
-          if (infoCase_ == 12) {
+          if (infoCase_ == 11) {
             infoCase_ = 0;
             info_ = null;
             onChanged();
           }
         } else {
-          if (infoCase_ == 12) {
+          if (infoCase_ == 11) {
             infoCase_ = 0;
             info_ = null;
           }
@@ -1459,33 +1459,33 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.VintageHuntingThirdStageSettleInfo third_stage_info = 12;</code>
+       * <code>.VintageHuntingThirdStageSettleInfo third_stage_info = 11;</code>
        */
       public emu.grasscutter.net.proto.VintageHuntingThirdStageSettleInfoOuterClass.VintageHuntingThirdStageSettleInfo.Builder getThirdStageInfoBuilder() {
         return getThirdStageInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.VintageHuntingThirdStageSettleInfo third_stage_info = 12;</code>
+       * <code>.VintageHuntingThirdStageSettleInfo third_stage_info = 11;</code>
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.VintageHuntingThirdStageSettleInfoOuterClass.VintageHuntingThirdStageSettleInfoOrBuilder getThirdStageInfoOrBuilder() {
-        if ((infoCase_ == 12) && (thirdStageInfoBuilder_ != null)) {
+        if ((infoCase_ == 11) && (thirdStageInfoBuilder_ != null)) {
           return thirdStageInfoBuilder_.getMessageOrBuilder();
         } else {
-          if (infoCase_ == 12) {
+          if (infoCase_ == 11) {
             return (emu.grasscutter.net.proto.VintageHuntingThirdStageSettleInfoOuterClass.VintageHuntingThirdStageSettleInfo) info_;
           }
           return emu.grasscutter.net.proto.VintageHuntingThirdStageSettleInfoOuterClass.VintageHuntingThirdStageSettleInfo.getDefaultInstance();
         }
       }
       /**
-       * <code>.VintageHuntingThirdStageSettleInfo third_stage_info = 12;</code>
+       * <code>.VintageHuntingThirdStageSettleInfo third_stage_info = 11;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.VintageHuntingThirdStageSettleInfoOuterClass.VintageHuntingThirdStageSettleInfo, emu.grasscutter.net.proto.VintageHuntingThirdStageSettleInfoOuterClass.VintageHuntingThirdStageSettleInfo.Builder, emu.grasscutter.net.proto.VintageHuntingThirdStageSettleInfoOuterClass.VintageHuntingThirdStageSettleInfoOrBuilder> 
           getThirdStageInfoFieldBuilder() {
         if (thirdStageInfoBuilder_ == null) {
-          if (!(infoCase_ == 12)) {
+          if (!(infoCase_ == 11)) {
             info_ = emu.grasscutter.net.proto.VintageHuntingThirdStageSettleInfoOuterClass.VintageHuntingThirdStageSettleInfo.getDefaultInstance();
           }
           thirdStageInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -1495,7 +1495,7 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
                   isClean());
           info_ = null;
         }
-        infoCase_ = 12;
+        infoCase_ = 11;
         onChanged();;
         return thirdStageInfoBuilder_;
       }
@@ -1571,13 +1571,13 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
       "fo.proto\032)VintageHuntingSecondStageSettl" +
       "eInfo.proto\032(VintageHuntingThirdStageSet" +
       "tleInfo.proto\"\341\002\n&SceneGalleryVintageHun" +
-      "tingSettleNotify\022\023\n\013MDKJMHIIMKE\030\007 \001(\r\022\023\n" +
-      "\013JDEMIFFOFCA\030\001 \001(\r\022\025\n\ris_new_record\030\n \001(" +
-      "\010\022\020\n\010stage_id\030\004 \001(\r\022\027\n\017has_new_watcher\030\010" +
-      " \001(\010\022?\n\020first_stage_info\030\002 \001(\0132#.Vintage" +
+      "tingSettleNotify\022\025\n\ris_new_record\030\016 \001(\010\022" +
+      "\027\n\017has_new_watcher\030\n \001(\010\022\020\n\010stage_id\030\007 \001" +
+      "(\r\022\023\n\013IIIGIBNKMJH\030\005 \001(\r\022\023\n\013IBPJMGKABFO\030\006" +
+      " \001(\r\022?\n\020first_stage_info\030\003 \001(\0132#.Vintage" +
       "HuntingFirstStageSettleInfoH\000\022A\n\021second_" +
-      "stage_info\030\003 \001(\0132$.VintageHuntingSecondS" +
-      "tageSettleInfoH\000\022?\n\020third_stage_info\030\014 \001" +
+      "stage_info\030\014 \001(\0132$.VintageHuntingSecondS" +
+      "tageSettleInfoH\000\022?\n\020third_stage_info\030\013 \001" +
       "(\0132#.VintageHuntingThirdStageSettleInfoH" +
       "\000B\006\n\004infoB\033\n\031emu.grasscutter.net.protob\006" +
       "proto3"
@@ -1594,7 +1594,7 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
     internal_static_SceneGalleryVintageHuntingSettleNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SceneGalleryVintageHuntingSettleNotify_descriptor,
-        new java.lang.String[] { "MDKJMHIIMKE", "JDEMIFFOFCA", "IsNewRecord", "StageId", "HasNewWatcher", "FirstStageInfo", "SecondStageInfo", "ThirdStageInfo", "Info", });
+        new java.lang.String[] { "IsNewRecord", "HasNewWatcher", "StageId", "IIIGIBNKMJH", "IBPJMGKABFO", "FirstStageInfo", "SecondStageInfo", "ThirdStageInfo", "Info", });
     emu.grasscutter.net.proto.VintageHuntingFirstStageSettleInfoOuterClass.getDescriptor();
     emu.grasscutter.net.proto.VintageHuntingSecondStageSettleInfoOuterClass.getDescriptor();
     emu.grasscutter.net.proto.VintageHuntingThirdStageSettleInfoOuterClass.getDescriptor();

@@ -19,63 +19,63 @@ public final class PathfindingEnterSceneReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <code>bool is_editor = 3;</code>
+     * @return The isEditor.
+     */
+    boolean getIsEditor();
+
+    /**
      * <code>uint32 version = 4;</code>
      * @return The version.
      */
     int getVersion();
 
     /**
-     * <code>uint32 scene_id = 12;</code>
-     * @return The sceneId.
+     * <code>uint32 KJJLLFIJKNA = 2;</code>
+     * @return The kJJLLFIJKNA.
      */
-    int getSceneId();
+    int getKJJLLFIJKNA();
 
     /**
-     * <code>repeated .ObstacleInfo obstacles = 7;</code>
+     * <code>repeated .ObstacleInfo obstacles = 10;</code>
      */
     java.util.List<emu.grasscutter.net.proto.ObstacleInfoOuterClass.ObstacleInfo> 
         getObstaclesList();
     /**
-     * <code>repeated .ObstacleInfo obstacles = 7;</code>
+     * <code>repeated .ObstacleInfo obstacles = 10;</code>
      */
     emu.grasscutter.net.proto.ObstacleInfoOuterClass.ObstacleInfo getObstacles(int index);
     /**
-     * <code>repeated .ObstacleInfo obstacles = 7;</code>
+     * <code>repeated .ObstacleInfo obstacles = 10;</code>
      */
     int getObstaclesCount();
     /**
-     * <code>repeated .ObstacleInfo obstacles = 7;</code>
+     * <code>repeated .ObstacleInfo obstacles = 10;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.ObstacleInfoOuterClass.ObstacleInfoOrBuilder> 
         getObstaclesOrBuilderList();
     /**
-     * <code>repeated .ObstacleInfo obstacles = 7;</code>
+     * <code>repeated .ObstacleInfo obstacles = 10;</code>
      */
     emu.grasscutter.net.proto.ObstacleInfoOuterClass.ObstacleInfoOrBuilder getObstaclesOrBuilder(
         int index);
 
     /**
-     * <code>uint32 MPIPHNNEMBK = 3;</code>
-     * @return The mPIPHNNEMBK.
+     * <code>uint32 GKFDHIPOHOE = 5;</code>
+     * @return The gKFDHIPOHOE.
      */
-    int getMPIPHNNEMBK();
+    int getGKFDHIPOHOE();
 
     /**
-     * <code>bool is_editor = 14;</code>
-     * @return The isEditor.
+     * <code>uint32 scene_id = 15;</code>
+     * @return The sceneId.
      */
-    boolean getIsEditor();
-
-    /**
-     * <code>uint32 JAAGGFLGGGL = 11;</code>
-     * @return The jAAGGFLGGGL.
-     */
-    int getJAAGGFLGGGL();
+    int getSceneId();
   }
   /**
    * <pre>
-   * CmdId: 2355
-   * Obf: DABOPANJCMH
+   * CmdId: 2347
+   * Obf: FPAOCKHOFJL
    * </pre>
    *
    * Protobuf type {@code PathfindingEnterSceneReq}
@@ -124,9 +124,14 @@ public final class PathfindingEnterSceneReqOuterClass {
             case 0:
               done = true;
               break;
+            case 16: {
+
+              kJJLLFIJKNA_ = input.readUInt32();
+              break;
+            }
             case 24: {
 
-              mPIPHNNEMBK_ = input.readUInt32();
+              isEditor_ = input.readBool();
               break;
             }
             case 32: {
@@ -134,7 +139,12 @@ public final class PathfindingEnterSceneReqOuterClass {
               version_ = input.readUInt32();
               break;
             }
-            case 58: {
+            case 40: {
+
+              gKFDHIPOHOE_ = input.readUInt32();
+              break;
+            }
+            case 82: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 obstacles_ = new java.util.ArrayList<emu.grasscutter.net.proto.ObstacleInfoOuterClass.ObstacleInfo>();
                 mutable_bitField0_ |= 0x00000001;
@@ -143,19 +153,9 @@ public final class PathfindingEnterSceneReqOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.ObstacleInfoOuterClass.ObstacleInfo.parser(), extensionRegistry));
               break;
             }
-            case 88: {
-
-              jAAGGFLGGGL_ = input.readUInt32();
-              break;
-            }
-            case 96: {
+            case 120: {
 
               sceneId_ = input.readUInt32();
-              break;
-            }
-            case 112: {
-
-              isEditor_ = input.readBool();
               break;
             }
             default: {
@@ -193,6 +193,17 @@ public final class PathfindingEnterSceneReqOuterClass {
               emu.grasscutter.net.proto.PathfindingEnterSceneReqOuterClass.PathfindingEnterSceneReq.class, emu.grasscutter.net.proto.PathfindingEnterSceneReqOuterClass.PathfindingEnterSceneReq.Builder.class);
     }
 
+    public static final int IS_EDITOR_FIELD_NUMBER = 3;
+    private boolean isEditor_;
+    /**
+     * <code>bool is_editor = 3;</code>
+     * @return The isEditor.
+     */
+    @java.lang.Override
+    public boolean getIsEditor() {
+      return isEditor_;
+    }
+
     public static final int VERSION_FIELD_NUMBER = 4;
     private int version_;
     /**
@@ -204,28 +215,28 @@ public final class PathfindingEnterSceneReqOuterClass {
       return version_;
     }
 
-    public static final int SCENE_ID_FIELD_NUMBER = 12;
-    private int sceneId_;
+    public static final int KJJLLFIJKNA_FIELD_NUMBER = 2;
+    private int kJJLLFIJKNA_;
     /**
-     * <code>uint32 scene_id = 12;</code>
-     * @return The sceneId.
+     * <code>uint32 KJJLLFIJKNA = 2;</code>
+     * @return The kJJLLFIJKNA.
      */
     @java.lang.Override
-    public int getSceneId() {
-      return sceneId_;
+    public int getKJJLLFIJKNA() {
+      return kJJLLFIJKNA_;
     }
 
-    public static final int OBSTACLES_FIELD_NUMBER = 7;
+    public static final int OBSTACLES_FIELD_NUMBER = 10;
     private java.util.List<emu.grasscutter.net.proto.ObstacleInfoOuterClass.ObstacleInfo> obstacles_;
     /**
-     * <code>repeated .ObstacleInfo obstacles = 7;</code>
+     * <code>repeated .ObstacleInfo obstacles = 10;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.ObstacleInfoOuterClass.ObstacleInfo> getObstaclesList() {
       return obstacles_;
     }
     /**
-     * <code>repeated .ObstacleInfo obstacles = 7;</code>
+     * <code>repeated .ObstacleInfo obstacles = 10;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.ObstacleInfoOuterClass.ObstacleInfoOrBuilder> 
@@ -233,21 +244,21 @@ public final class PathfindingEnterSceneReqOuterClass {
       return obstacles_;
     }
     /**
-     * <code>repeated .ObstacleInfo obstacles = 7;</code>
+     * <code>repeated .ObstacleInfo obstacles = 10;</code>
      */
     @java.lang.Override
     public int getObstaclesCount() {
       return obstacles_.size();
     }
     /**
-     * <code>repeated .ObstacleInfo obstacles = 7;</code>
+     * <code>repeated .ObstacleInfo obstacles = 10;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.ObstacleInfoOuterClass.ObstacleInfo getObstacles(int index) {
       return obstacles_.get(index);
     }
     /**
-     * <code>repeated .ObstacleInfo obstacles = 7;</code>
+     * <code>repeated .ObstacleInfo obstacles = 10;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.ObstacleInfoOuterClass.ObstacleInfoOrBuilder getObstaclesOrBuilder(
@@ -255,37 +266,26 @@ public final class PathfindingEnterSceneReqOuterClass {
       return obstacles_.get(index);
     }
 
-    public static final int MPIPHNNEMBK_FIELD_NUMBER = 3;
-    private int mPIPHNNEMBK_;
+    public static final int GKFDHIPOHOE_FIELD_NUMBER = 5;
+    private int gKFDHIPOHOE_;
     /**
-     * <code>uint32 MPIPHNNEMBK = 3;</code>
-     * @return The mPIPHNNEMBK.
+     * <code>uint32 GKFDHIPOHOE = 5;</code>
+     * @return The gKFDHIPOHOE.
      */
     @java.lang.Override
-    public int getMPIPHNNEMBK() {
-      return mPIPHNNEMBK_;
+    public int getGKFDHIPOHOE() {
+      return gKFDHIPOHOE_;
     }
 
-    public static final int IS_EDITOR_FIELD_NUMBER = 14;
-    private boolean isEditor_;
+    public static final int SCENE_ID_FIELD_NUMBER = 15;
+    private int sceneId_;
     /**
-     * <code>bool is_editor = 14;</code>
-     * @return The isEditor.
+     * <code>uint32 scene_id = 15;</code>
+     * @return The sceneId.
      */
     @java.lang.Override
-    public boolean getIsEditor() {
-      return isEditor_;
-    }
-
-    public static final int JAAGGFLGGGL_FIELD_NUMBER = 11;
-    private int jAAGGFLGGGL_;
-    /**
-     * <code>uint32 JAAGGFLGGGL = 11;</code>
-     * @return The jAAGGFLGGGL.
-     */
-    @java.lang.Override
-    public int getJAAGGFLGGGL() {
-      return jAAGGFLGGGL_;
+    public int getSceneId() {
+      return sceneId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -302,23 +302,23 @@ public final class PathfindingEnterSceneReqOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (mPIPHNNEMBK_ != 0) {
-        output.writeUInt32(3, mPIPHNNEMBK_);
+      if (kJJLLFIJKNA_ != 0) {
+        output.writeUInt32(2, kJJLLFIJKNA_);
+      }
+      if (isEditor_ != false) {
+        output.writeBool(3, isEditor_);
       }
       if (version_ != 0) {
         output.writeUInt32(4, version_);
       }
-      for (int i = 0; i < obstacles_.size(); i++) {
-        output.writeMessage(7, obstacles_.get(i));
+      if (gKFDHIPOHOE_ != 0) {
+        output.writeUInt32(5, gKFDHIPOHOE_);
       }
-      if (jAAGGFLGGGL_ != 0) {
-        output.writeUInt32(11, jAAGGFLGGGL_);
+      for (int i = 0; i < obstacles_.size(); i++) {
+        output.writeMessage(10, obstacles_.get(i));
       }
       if (sceneId_ != 0) {
-        output.writeUInt32(12, sceneId_);
-      }
-      if (isEditor_ != false) {
-        output.writeBool(14, isEditor_);
+        output.writeUInt32(15, sceneId_);
       }
       unknownFields.writeTo(output);
     }
@@ -329,29 +329,29 @@ public final class PathfindingEnterSceneReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (mPIPHNNEMBK_ != 0) {
+      if (kJJLLFIJKNA_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, mPIPHNNEMBK_);
+          .computeUInt32Size(2, kJJLLFIJKNA_);
+      }
+      if (isEditor_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(3, isEditor_);
       }
       if (version_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(4, version_);
       }
+      if (gKFDHIPOHOE_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(5, gKFDHIPOHOE_);
+      }
       for (int i = 0; i < obstacles_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, obstacles_.get(i));
-      }
-      if (jAAGGFLGGGL_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, jAAGGFLGGGL_);
+          .computeMessageSize(10, obstacles_.get(i));
       }
       if (sceneId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, sceneId_);
-      }
-      if (isEditor_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(14, isEditor_);
+          .computeUInt32Size(15, sceneId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -368,18 +368,18 @@ public final class PathfindingEnterSceneReqOuterClass {
       }
       emu.grasscutter.net.proto.PathfindingEnterSceneReqOuterClass.PathfindingEnterSceneReq other = (emu.grasscutter.net.proto.PathfindingEnterSceneReqOuterClass.PathfindingEnterSceneReq) obj;
 
-      if (getVersion()
-          != other.getVersion()) return false;
-      if (getSceneId()
-          != other.getSceneId()) return false;
-      if (!getObstaclesList()
-          .equals(other.getObstaclesList())) return false;
-      if (getMPIPHNNEMBK()
-          != other.getMPIPHNNEMBK()) return false;
       if (getIsEditor()
           != other.getIsEditor()) return false;
-      if (getJAAGGFLGGGL()
-          != other.getJAAGGFLGGGL()) return false;
+      if (getVersion()
+          != other.getVersion()) return false;
+      if (getKJJLLFIJKNA()
+          != other.getKJJLLFIJKNA()) return false;
+      if (!getObstaclesList()
+          .equals(other.getObstaclesList())) return false;
+      if (getGKFDHIPOHOE()
+          != other.getGKFDHIPOHOE()) return false;
+      if (getSceneId()
+          != other.getSceneId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -391,21 +391,21 @@ public final class PathfindingEnterSceneReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + IS_EDITOR_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsEditor());
       hash = (37 * hash) + VERSION_FIELD_NUMBER;
       hash = (53 * hash) + getVersion();
-      hash = (37 * hash) + SCENE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getSceneId();
+      hash = (37 * hash) + KJJLLFIJKNA_FIELD_NUMBER;
+      hash = (53 * hash) + getKJJLLFIJKNA();
       if (getObstaclesCount() > 0) {
         hash = (37 * hash) + OBSTACLES_FIELD_NUMBER;
         hash = (53 * hash) + getObstaclesList().hashCode();
       }
-      hash = (37 * hash) + MPIPHNNEMBK_FIELD_NUMBER;
-      hash = (53 * hash) + getMPIPHNNEMBK();
-      hash = (37 * hash) + IS_EDITOR_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsEditor());
-      hash = (37 * hash) + JAAGGFLGGGL_FIELD_NUMBER;
-      hash = (53 * hash) + getJAAGGFLGGGL();
+      hash = (37 * hash) + GKFDHIPOHOE_FIELD_NUMBER;
+      hash = (53 * hash) + getGKFDHIPOHOE();
+      hash = (37 * hash) + SCENE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSceneId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -503,8 +503,8 @@ public final class PathfindingEnterSceneReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2355
-     * Obf: DABOPANJCMH
+     * CmdId: 2347
+     * Obf: FPAOCKHOFJL
      * </pre>
      *
      * Protobuf type {@code PathfindingEnterSceneReq}
@@ -545,9 +545,11 @@ public final class PathfindingEnterSceneReqOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        isEditor_ = false;
+
         version_ = 0;
 
-        sceneId_ = 0;
+        kJJLLFIJKNA_ = 0;
 
         if (obstaclesBuilder_ == null) {
           obstacles_ = java.util.Collections.emptyList();
@@ -555,11 +557,9 @@ public final class PathfindingEnterSceneReqOuterClass {
         } else {
           obstaclesBuilder_.clear();
         }
-        mPIPHNNEMBK_ = 0;
+        gKFDHIPOHOE_ = 0;
 
-        isEditor_ = false;
-
-        jAAGGFLGGGL_ = 0;
+        sceneId_ = 0;
 
         return this;
       }
@@ -588,8 +588,9 @@ public final class PathfindingEnterSceneReqOuterClass {
       public emu.grasscutter.net.proto.PathfindingEnterSceneReqOuterClass.PathfindingEnterSceneReq buildPartial() {
         emu.grasscutter.net.proto.PathfindingEnterSceneReqOuterClass.PathfindingEnterSceneReq result = new emu.grasscutter.net.proto.PathfindingEnterSceneReqOuterClass.PathfindingEnterSceneReq(this);
         int from_bitField0_ = bitField0_;
+        result.isEditor_ = isEditor_;
         result.version_ = version_;
-        result.sceneId_ = sceneId_;
+        result.kJJLLFIJKNA_ = kJJLLFIJKNA_;
         if (obstaclesBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             obstacles_ = java.util.Collections.unmodifiableList(obstacles_);
@@ -599,9 +600,8 @@ public final class PathfindingEnterSceneReqOuterClass {
         } else {
           result.obstacles_ = obstaclesBuilder_.build();
         }
-        result.mPIPHNNEMBK_ = mPIPHNNEMBK_;
-        result.isEditor_ = isEditor_;
-        result.jAAGGFLGGGL_ = jAAGGFLGGGL_;
+        result.gKFDHIPOHOE_ = gKFDHIPOHOE_;
+        result.sceneId_ = sceneId_;
         onBuilt();
         return result;
       }
@@ -650,11 +650,14 @@ public final class PathfindingEnterSceneReqOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.PathfindingEnterSceneReqOuterClass.PathfindingEnterSceneReq other) {
         if (other == emu.grasscutter.net.proto.PathfindingEnterSceneReqOuterClass.PathfindingEnterSceneReq.getDefaultInstance()) return this;
+        if (other.getIsEditor() != false) {
+          setIsEditor(other.getIsEditor());
+        }
         if (other.getVersion() != 0) {
           setVersion(other.getVersion());
         }
-        if (other.getSceneId() != 0) {
-          setSceneId(other.getSceneId());
+        if (other.getKJJLLFIJKNA() != 0) {
+          setKJJLLFIJKNA(other.getKJJLLFIJKNA());
         }
         if (obstaclesBuilder_ == null) {
           if (!other.obstacles_.isEmpty()) {
@@ -682,14 +685,11 @@ public final class PathfindingEnterSceneReqOuterClass {
             }
           }
         }
-        if (other.getMPIPHNNEMBK() != 0) {
-          setMPIPHNNEMBK(other.getMPIPHNNEMBK());
+        if (other.getGKFDHIPOHOE() != 0) {
+          setGKFDHIPOHOE(other.getGKFDHIPOHOE());
         }
-        if (other.getIsEditor() != false) {
-          setIsEditor(other.getIsEditor());
-        }
-        if (other.getJAAGGFLGGGL() != 0) {
-          setJAAGGFLGGGL(other.getJAAGGFLGGGL());
+        if (other.getSceneId() != 0) {
+          setSceneId(other.getSceneId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -720,6 +720,37 @@ public final class PathfindingEnterSceneReqOuterClass {
         return this;
       }
       private int bitField0_;
+
+      private boolean isEditor_ ;
+      /**
+       * <code>bool is_editor = 3;</code>
+       * @return The isEditor.
+       */
+      @java.lang.Override
+      public boolean getIsEditor() {
+        return isEditor_;
+      }
+      /**
+       * <code>bool is_editor = 3;</code>
+       * @param value The isEditor to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsEditor(boolean value) {
+        
+        isEditor_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_editor = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsEditor() {
+        
+        isEditor_ = false;
+        onChanged();
+        return this;
+      }
 
       private int version_ ;
       /**
@@ -752,33 +783,33 @@ public final class PathfindingEnterSceneReqOuterClass {
         return this;
       }
 
-      private int sceneId_ ;
+      private int kJJLLFIJKNA_ ;
       /**
-       * <code>uint32 scene_id = 12;</code>
-       * @return The sceneId.
+       * <code>uint32 KJJLLFIJKNA = 2;</code>
+       * @return The kJJLLFIJKNA.
        */
       @java.lang.Override
-      public int getSceneId() {
-        return sceneId_;
+      public int getKJJLLFIJKNA() {
+        return kJJLLFIJKNA_;
       }
       /**
-       * <code>uint32 scene_id = 12;</code>
-       * @param value The sceneId to set.
+       * <code>uint32 KJJLLFIJKNA = 2;</code>
+       * @param value The kJJLLFIJKNA to set.
        * @return This builder for chaining.
        */
-      public Builder setSceneId(int value) {
+      public Builder setKJJLLFIJKNA(int value) {
         
-        sceneId_ = value;
+        kJJLLFIJKNA_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 scene_id = 12;</code>
+       * <code>uint32 KJJLLFIJKNA = 2;</code>
        * @return This builder for chaining.
        */
-      public Builder clearSceneId() {
+      public Builder clearKJJLLFIJKNA() {
         
-        sceneId_ = 0;
+        kJJLLFIJKNA_ = 0;
         onChanged();
         return this;
       }
@@ -796,7 +827,7 @@ public final class PathfindingEnterSceneReqOuterClass {
           emu.grasscutter.net.proto.ObstacleInfoOuterClass.ObstacleInfo, emu.grasscutter.net.proto.ObstacleInfoOuterClass.ObstacleInfo.Builder, emu.grasscutter.net.proto.ObstacleInfoOuterClass.ObstacleInfoOrBuilder> obstaclesBuilder_;
 
       /**
-       * <code>repeated .ObstacleInfo obstacles = 7;</code>
+       * <code>repeated .ObstacleInfo obstacles = 10;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.ObstacleInfoOuterClass.ObstacleInfo> getObstaclesList() {
         if (obstaclesBuilder_ == null) {
@@ -806,7 +837,7 @@ public final class PathfindingEnterSceneReqOuterClass {
         }
       }
       /**
-       * <code>repeated .ObstacleInfo obstacles = 7;</code>
+       * <code>repeated .ObstacleInfo obstacles = 10;</code>
        */
       public int getObstaclesCount() {
         if (obstaclesBuilder_ == null) {
@@ -816,7 +847,7 @@ public final class PathfindingEnterSceneReqOuterClass {
         }
       }
       /**
-       * <code>repeated .ObstacleInfo obstacles = 7;</code>
+       * <code>repeated .ObstacleInfo obstacles = 10;</code>
        */
       public emu.grasscutter.net.proto.ObstacleInfoOuterClass.ObstacleInfo getObstacles(int index) {
         if (obstaclesBuilder_ == null) {
@@ -826,7 +857,7 @@ public final class PathfindingEnterSceneReqOuterClass {
         }
       }
       /**
-       * <code>repeated .ObstacleInfo obstacles = 7;</code>
+       * <code>repeated .ObstacleInfo obstacles = 10;</code>
        */
       public Builder setObstacles(
           int index, emu.grasscutter.net.proto.ObstacleInfoOuterClass.ObstacleInfo value) {
@@ -843,7 +874,7 @@ public final class PathfindingEnterSceneReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ObstacleInfo obstacles = 7;</code>
+       * <code>repeated .ObstacleInfo obstacles = 10;</code>
        */
       public Builder setObstacles(
           int index, emu.grasscutter.net.proto.ObstacleInfoOuterClass.ObstacleInfo.Builder builderForValue) {
@@ -857,7 +888,7 @@ public final class PathfindingEnterSceneReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ObstacleInfo obstacles = 7;</code>
+       * <code>repeated .ObstacleInfo obstacles = 10;</code>
        */
       public Builder addObstacles(emu.grasscutter.net.proto.ObstacleInfoOuterClass.ObstacleInfo value) {
         if (obstaclesBuilder_ == null) {
@@ -873,7 +904,7 @@ public final class PathfindingEnterSceneReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ObstacleInfo obstacles = 7;</code>
+       * <code>repeated .ObstacleInfo obstacles = 10;</code>
        */
       public Builder addObstacles(
           int index, emu.grasscutter.net.proto.ObstacleInfoOuterClass.ObstacleInfo value) {
@@ -890,7 +921,7 @@ public final class PathfindingEnterSceneReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ObstacleInfo obstacles = 7;</code>
+       * <code>repeated .ObstacleInfo obstacles = 10;</code>
        */
       public Builder addObstacles(
           emu.grasscutter.net.proto.ObstacleInfoOuterClass.ObstacleInfo.Builder builderForValue) {
@@ -904,7 +935,7 @@ public final class PathfindingEnterSceneReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ObstacleInfo obstacles = 7;</code>
+       * <code>repeated .ObstacleInfo obstacles = 10;</code>
        */
       public Builder addObstacles(
           int index, emu.grasscutter.net.proto.ObstacleInfoOuterClass.ObstacleInfo.Builder builderForValue) {
@@ -918,7 +949,7 @@ public final class PathfindingEnterSceneReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ObstacleInfo obstacles = 7;</code>
+       * <code>repeated .ObstacleInfo obstacles = 10;</code>
        */
       public Builder addAllObstacles(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.ObstacleInfoOuterClass.ObstacleInfo> values) {
@@ -933,7 +964,7 @@ public final class PathfindingEnterSceneReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ObstacleInfo obstacles = 7;</code>
+       * <code>repeated .ObstacleInfo obstacles = 10;</code>
        */
       public Builder clearObstacles() {
         if (obstaclesBuilder_ == null) {
@@ -946,7 +977,7 @@ public final class PathfindingEnterSceneReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ObstacleInfo obstacles = 7;</code>
+       * <code>repeated .ObstacleInfo obstacles = 10;</code>
        */
       public Builder removeObstacles(int index) {
         if (obstaclesBuilder_ == null) {
@@ -959,14 +990,14 @@ public final class PathfindingEnterSceneReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ObstacleInfo obstacles = 7;</code>
+       * <code>repeated .ObstacleInfo obstacles = 10;</code>
        */
       public emu.grasscutter.net.proto.ObstacleInfoOuterClass.ObstacleInfo.Builder getObstaclesBuilder(
           int index) {
         return getObstaclesFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .ObstacleInfo obstacles = 7;</code>
+       * <code>repeated .ObstacleInfo obstacles = 10;</code>
        */
       public emu.grasscutter.net.proto.ObstacleInfoOuterClass.ObstacleInfoOrBuilder getObstaclesOrBuilder(
           int index) {
@@ -976,7 +1007,7 @@ public final class PathfindingEnterSceneReqOuterClass {
         }
       }
       /**
-       * <code>repeated .ObstacleInfo obstacles = 7;</code>
+       * <code>repeated .ObstacleInfo obstacles = 10;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.ObstacleInfoOuterClass.ObstacleInfoOrBuilder> 
            getObstaclesOrBuilderList() {
@@ -987,14 +1018,14 @@ public final class PathfindingEnterSceneReqOuterClass {
         }
       }
       /**
-       * <code>repeated .ObstacleInfo obstacles = 7;</code>
+       * <code>repeated .ObstacleInfo obstacles = 10;</code>
        */
       public emu.grasscutter.net.proto.ObstacleInfoOuterClass.ObstacleInfo.Builder addObstaclesBuilder() {
         return getObstaclesFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.ObstacleInfoOuterClass.ObstacleInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .ObstacleInfo obstacles = 7;</code>
+       * <code>repeated .ObstacleInfo obstacles = 10;</code>
        */
       public emu.grasscutter.net.proto.ObstacleInfoOuterClass.ObstacleInfo.Builder addObstaclesBuilder(
           int index) {
@@ -1002,7 +1033,7 @@ public final class PathfindingEnterSceneReqOuterClass {
             index, emu.grasscutter.net.proto.ObstacleInfoOuterClass.ObstacleInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .ObstacleInfo obstacles = 7;</code>
+       * <code>repeated .ObstacleInfo obstacles = 10;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.ObstacleInfoOuterClass.ObstacleInfo.Builder> 
            getObstaclesBuilderList() {
@@ -1023,95 +1054,64 @@ public final class PathfindingEnterSceneReqOuterClass {
         return obstaclesBuilder_;
       }
 
-      private int mPIPHNNEMBK_ ;
+      private int gKFDHIPOHOE_ ;
       /**
-       * <code>uint32 MPIPHNNEMBK = 3;</code>
-       * @return The mPIPHNNEMBK.
+       * <code>uint32 GKFDHIPOHOE = 5;</code>
+       * @return The gKFDHIPOHOE.
        */
       @java.lang.Override
-      public int getMPIPHNNEMBK() {
-        return mPIPHNNEMBK_;
+      public int getGKFDHIPOHOE() {
+        return gKFDHIPOHOE_;
       }
       /**
-       * <code>uint32 MPIPHNNEMBK = 3;</code>
-       * @param value The mPIPHNNEMBK to set.
+       * <code>uint32 GKFDHIPOHOE = 5;</code>
+       * @param value The gKFDHIPOHOE to set.
        * @return This builder for chaining.
        */
-      public Builder setMPIPHNNEMBK(int value) {
+      public Builder setGKFDHIPOHOE(int value) {
         
-        mPIPHNNEMBK_ = value;
+        gKFDHIPOHOE_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 MPIPHNNEMBK = 3;</code>
+       * <code>uint32 GKFDHIPOHOE = 5;</code>
        * @return This builder for chaining.
        */
-      public Builder clearMPIPHNNEMBK() {
+      public Builder clearGKFDHIPOHOE() {
         
-        mPIPHNNEMBK_ = 0;
+        gKFDHIPOHOE_ = 0;
         onChanged();
         return this;
       }
 
-      private boolean isEditor_ ;
+      private int sceneId_ ;
       /**
-       * <code>bool is_editor = 14;</code>
-       * @return The isEditor.
+       * <code>uint32 scene_id = 15;</code>
+       * @return The sceneId.
        */
       @java.lang.Override
-      public boolean getIsEditor() {
-        return isEditor_;
+      public int getSceneId() {
+        return sceneId_;
       }
       /**
-       * <code>bool is_editor = 14;</code>
-       * @param value The isEditor to set.
+       * <code>uint32 scene_id = 15;</code>
+       * @param value The sceneId to set.
        * @return This builder for chaining.
        */
-      public Builder setIsEditor(boolean value) {
+      public Builder setSceneId(int value) {
         
-        isEditor_ = value;
+        sceneId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bool is_editor = 14;</code>
+       * <code>uint32 scene_id = 15;</code>
        * @return This builder for chaining.
        */
-      public Builder clearIsEditor() {
+      public Builder clearSceneId() {
         
-        isEditor_ = false;
-        onChanged();
-        return this;
-      }
-
-      private int jAAGGFLGGGL_ ;
-      /**
-       * <code>uint32 JAAGGFLGGGL = 11;</code>
-       * @return The jAAGGFLGGGL.
-       */
-      @java.lang.Override
-      public int getJAAGGFLGGGL() {
-        return jAAGGFLGGGL_;
-      }
-      /**
-       * <code>uint32 JAAGGFLGGGL = 11;</code>
-       * @param value The jAAGGFLGGGL to set.
-       * @return This builder for chaining.
-       */
-      public Builder setJAAGGFLGGGL(int value) {
-        
-        jAAGGFLGGGL_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 JAAGGFLGGGL = 11;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearJAAGGFLGGGL() {
-        
-        jAAGGFLGGGL_ = 0;
+        sceneId_ = 0;
         onChanged();
         return this;
       }
@@ -1184,10 +1184,10 @@ public final class PathfindingEnterSceneReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n\036PathfindingEnterSceneReq.proto\032\022Obstac" +
       "leInfo.proto\"\234\001\n\030PathfindingEnterSceneRe" +
-      "q\022\017\n\007version\030\004 \001(\r\022\020\n\010scene_id\030\014 \001(\r\022 \n\t" +
-      "obstacles\030\007 \003(\0132\r.ObstacleInfo\022\023\n\013MPIPHN" +
-      "NEMBK\030\003 \001(\r\022\021\n\tis_editor\030\016 \001(\010\022\023\n\013JAAGGF" +
-      "LGGGL\030\013 \001(\rB\033\n\031emu.grasscutter.net.proto" +
+      "q\022\021\n\tis_editor\030\003 \001(\010\022\017\n\007version\030\004 \001(\r\022\023\n" +
+      "\013KJJLLFIJKNA\030\002 \001(\r\022 \n\tobstacles\030\n \003(\0132\r." +
+      "ObstacleInfo\022\023\n\013GKFDHIPOHOE\030\005 \001(\r\022\020\n\010sce" +
+      "ne_id\030\017 \001(\rB\033\n\031emu.grasscutter.net.proto" +
       "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -1200,7 +1200,7 @@ public final class PathfindingEnterSceneReqOuterClass {
     internal_static_PathfindingEnterSceneReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_PathfindingEnterSceneReq_descriptor,
-        new java.lang.String[] { "Version", "SceneId", "Obstacles", "MPIPHNNEMBK", "IsEditor", "JAAGGFLGGGL", });
+        new java.lang.String[] { "IsEditor", "Version", "KJJLLFIJKNA", "Obstacles", "GKFDHIPOHOE", "SceneId", });
     emu.grasscutter.net.proto.ObstacleInfoOuterClass.getDescriptor();
   }
 

@@ -19,15 +19,15 @@ public final class PlayerSetOnlyMPWithPSPlayerReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool is_only = 10;</code>
+     * <code>bool is_only = 11;</code>
      * @return The isOnly.
      */
     boolean getIsOnly();
   }
   /**
    * <pre>
-   * CmdId: 1803
-   * Obf: KCJCIPDIJBO
+   * CmdId: 5396
+   * Obf: ICJLLDFGDNB
    * </pre>
    *
    * Protobuf type {@code PlayerSetOnlyMPWithPSPlayerReq}
@@ -74,7 +74,7 @@ public final class PlayerSetOnlyMPWithPSPlayerReqOuterClass {
             case 0:
               done = true;
               break;
-            case 80: {
+            case 88: {
 
               isOnly_ = input.readBool();
               break;
@@ -111,10 +111,10 @@ public final class PlayerSetOnlyMPWithPSPlayerReqOuterClass {
               emu.grasscutter.net.proto.PlayerSetOnlyMPWithPSPlayerReqOuterClass.PlayerSetOnlyMPWithPSPlayerReq.class, emu.grasscutter.net.proto.PlayerSetOnlyMPWithPSPlayerReqOuterClass.PlayerSetOnlyMPWithPSPlayerReq.Builder.class);
     }
 
-    public static final int IS_ONLY_FIELD_NUMBER = 10;
+    public static final int IS_ONLY_FIELD_NUMBER = 11;
     private boolean isOnly_;
     /**
-     * <code>bool is_only = 10;</code>
+     * <code>bool is_only = 11;</code>
      * @return The isOnly.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class PlayerSetOnlyMPWithPSPlayerReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (isOnly_ != false) {
-        output.writeBool(10, isOnly_);
+        output.writeBool(11, isOnly_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class PlayerSetOnlyMPWithPSPlayerReqOuterClass {
       size = 0;
       if (isOnly_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(10, isOnly_);
+          .computeBoolSize(11, isOnly_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -280,8 +280,8 @@ public final class PlayerSetOnlyMPWithPSPlayerReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 1803
-     * Obf: KCJCIPDIJBO
+     * CmdId: 5396
+     * Obf: ICJLLDFGDNB
      * </pre>
      *
      * Protobuf type {@code PlayerSetOnlyMPWithPSPlayerReq}
@@ -432,7 +432,7 @@ public final class PlayerSetOnlyMPWithPSPlayerReqOuterClass {
 
       private boolean isOnly_ ;
       /**
-       * <code>bool is_only = 10;</code>
+       * <code>bool is_only = 11;</code>
        * @return The isOnly.
        */
       @java.lang.Override
@@ -440,7 +440,7 @@ public final class PlayerSetOnlyMPWithPSPlayerReqOuterClass {
         return isOnly_;
       }
       /**
-       * <code>bool is_only = 10;</code>
+       * <code>bool is_only = 11;</code>
        * @param value The isOnly to set.
        * @return This builder for chaining.
        */
@@ -451,7 +451,7 @@ public final class PlayerSetOnlyMPWithPSPlayerReqOuterClass {
         return this;
       }
       /**
-       * <code>bool is_only = 10;</code>
+       * <code>bool is_only = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsOnly() {
@@ -529,7 +529,7 @@ public final class PlayerSetOnlyMPWithPSPlayerReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n$PlayerSetOnlyMPWithPSPlayerReq.proto\"1" +
       "\n\036PlayerSetOnlyMPWithPSPlayerReq\022\017\n\007is_o" +
-      "nly\030\n \001(\010B\033\n\031emu.grasscutter.net.protob\006" +
+      "nly\030\013 \001(\010B\033\n\031emu.grasscutter.net.protob\006" +
       "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

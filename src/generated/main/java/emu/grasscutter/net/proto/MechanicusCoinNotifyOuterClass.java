@@ -19,21 +19,21 @@ public final class MechanicusCoinNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 mechanicus_id = 10;</code>
-     * @return The mechanicusId.
-     */
-    int getMechanicusId();
-
-    /**
-     * <code>uint32 coin = 14;</code>
+     * <code>uint32 coin = 4;</code>
      * @return The coin.
      */
     int getCoin();
+
+    /**
+     * <code>uint32 mechanicus_id = 12;</code>
+     * @return The mechanicusId.
+     */
+    int getMechanicusId();
   }
   /**
    * <pre>
-   * CmdId: 3972
-   * Obf: ADMIDFBBDJF
+   * CmdId: 6477
+   * Obf: ADOHDEMJCMJ
    * </pre>
    *
    * Protobuf type {@code MechanicusCoinNotify}
@@ -80,14 +80,14 @@ public final class MechanicusCoinNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 80: {
-
-              mechanicusId_ = input.readUInt32();
-              break;
-            }
-            case 112: {
+            case 32: {
 
               coin_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+
+              mechanicusId_ = input.readUInt32();
               break;
             }
             default: {
@@ -122,26 +122,26 @@ public final class MechanicusCoinNotifyOuterClass {
               emu.grasscutter.net.proto.MechanicusCoinNotifyOuterClass.MechanicusCoinNotify.class, emu.grasscutter.net.proto.MechanicusCoinNotifyOuterClass.MechanicusCoinNotify.Builder.class);
     }
 
-    public static final int MECHANICUS_ID_FIELD_NUMBER = 10;
-    private int mechanicusId_;
-    /**
-     * <code>uint32 mechanicus_id = 10;</code>
-     * @return The mechanicusId.
-     */
-    @java.lang.Override
-    public int getMechanicusId() {
-      return mechanicusId_;
-    }
-
-    public static final int COIN_FIELD_NUMBER = 14;
+    public static final int COIN_FIELD_NUMBER = 4;
     private int coin_;
     /**
-     * <code>uint32 coin = 14;</code>
+     * <code>uint32 coin = 4;</code>
      * @return The coin.
      */
     @java.lang.Override
     public int getCoin() {
       return coin_;
+    }
+
+    public static final int MECHANICUS_ID_FIELD_NUMBER = 12;
+    private int mechanicusId_;
+    /**
+     * <code>uint32 mechanicus_id = 12;</code>
+     * @return The mechanicusId.
+     */
+    @java.lang.Override
+    public int getMechanicusId() {
+      return mechanicusId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -158,11 +158,11 @@ public final class MechanicusCoinNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (mechanicusId_ != 0) {
-        output.writeUInt32(10, mechanicusId_);
-      }
       if (coin_ != 0) {
-        output.writeUInt32(14, coin_);
+        output.writeUInt32(4, coin_);
+      }
+      if (mechanicusId_ != 0) {
+        output.writeUInt32(12, mechanicusId_);
       }
       unknownFields.writeTo(output);
     }
@@ -173,13 +173,13 @@ public final class MechanicusCoinNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (mechanicusId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, mechanicusId_);
-      }
       if (coin_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, coin_);
+          .computeUInt32Size(4, coin_);
+      }
+      if (mechanicusId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(12, mechanicusId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -196,10 +196,10 @@ public final class MechanicusCoinNotifyOuterClass {
       }
       emu.grasscutter.net.proto.MechanicusCoinNotifyOuterClass.MechanicusCoinNotify other = (emu.grasscutter.net.proto.MechanicusCoinNotifyOuterClass.MechanicusCoinNotify) obj;
 
-      if (getMechanicusId()
-          != other.getMechanicusId()) return false;
       if (getCoin()
           != other.getCoin()) return false;
+      if (getMechanicusId()
+          != other.getMechanicusId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -211,10 +211,10 @@ public final class MechanicusCoinNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + MECHANICUS_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getMechanicusId();
       hash = (37 * hash) + COIN_FIELD_NUMBER;
       hash = (53 * hash) + getCoin();
+      hash = (37 * hash) + MECHANICUS_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getMechanicusId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -312,8 +312,8 @@ public final class MechanicusCoinNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 3972
-     * Obf: ADMIDFBBDJF
+     * CmdId: 6477
+     * Obf: ADOHDEMJCMJ
      * </pre>
      *
      * Protobuf type {@code MechanicusCoinNotify}
@@ -353,9 +353,9 @@ public final class MechanicusCoinNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        mechanicusId_ = 0;
-
         coin_ = 0;
+
+        mechanicusId_ = 0;
 
         return this;
       }
@@ -383,8 +383,8 @@ public final class MechanicusCoinNotifyOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.MechanicusCoinNotifyOuterClass.MechanicusCoinNotify buildPartial() {
         emu.grasscutter.net.proto.MechanicusCoinNotifyOuterClass.MechanicusCoinNotify result = new emu.grasscutter.net.proto.MechanicusCoinNotifyOuterClass.MechanicusCoinNotify(this);
-        result.mechanicusId_ = mechanicusId_;
         result.coin_ = coin_;
+        result.mechanicusId_ = mechanicusId_;
         onBuilt();
         return result;
       }
@@ -433,11 +433,11 @@ public final class MechanicusCoinNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.MechanicusCoinNotifyOuterClass.MechanicusCoinNotify other) {
         if (other == emu.grasscutter.net.proto.MechanicusCoinNotifyOuterClass.MechanicusCoinNotify.getDefaultInstance()) return this;
-        if (other.getMechanicusId() != 0) {
-          setMechanicusId(other.getMechanicusId());
-        }
         if (other.getCoin() != 0) {
           setCoin(other.getCoin());
+        }
+        if (other.getMechanicusId() != 0) {
+          setMechanicusId(other.getMechanicusId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -468,40 +468,9 @@ public final class MechanicusCoinNotifyOuterClass {
         return this;
       }
 
-      private int mechanicusId_ ;
-      /**
-       * <code>uint32 mechanicus_id = 10;</code>
-       * @return The mechanicusId.
-       */
-      @java.lang.Override
-      public int getMechanicusId() {
-        return mechanicusId_;
-      }
-      /**
-       * <code>uint32 mechanicus_id = 10;</code>
-       * @param value The mechanicusId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMechanicusId(int value) {
-        
-        mechanicusId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 mechanicus_id = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMechanicusId() {
-        
-        mechanicusId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int coin_ ;
       /**
-       * <code>uint32 coin = 14;</code>
+       * <code>uint32 coin = 4;</code>
        * @return The coin.
        */
       @java.lang.Override
@@ -509,7 +478,7 @@ public final class MechanicusCoinNotifyOuterClass {
         return coin_;
       }
       /**
-       * <code>uint32 coin = 14;</code>
+       * <code>uint32 coin = 4;</code>
        * @param value The coin to set.
        * @return This builder for chaining.
        */
@@ -520,12 +489,43 @@ public final class MechanicusCoinNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 coin = 14;</code>
+       * <code>uint32 coin = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearCoin() {
         
         coin_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int mechanicusId_ ;
+      /**
+       * <code>uint32 mechanicus_id = 12;</code>
+       * @return The mechanicusId.
+       */
+      @java.lang.Override
+      public int getMechanicusId() {
+        return mechanicusId_;
+      }
+      /**
+       * <code>uint32 mechanicus_id = 12;</code>
+       * @param value The mechanicusId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMechanicusId(int value) {
+        
+        mechanicusId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 mechanicus_id = 12;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMechanicusId() {
+        
+        mechanicusId_ = 0;
         onChanged();
         return this;
       }
@@ -597,8 +597,8 @@ public final class MechanicusCoinNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\032MechanicusCoinNotify.proto\";\n\024Mechanic" +
-      "usCoinNotify\022\025\n\rmechanicus_id\030\n \001(\r\022\014\n\004c" +
-      "oin\030\016 \001(\rB\033\n\031emu.grasscutter.net.protob\006" +
+      "usCoinNotify\022\014\n\004coin\030\004 \001(\r\022\025\n\rmechanicus" +
+      "_id\030\014 \001(\rB\033\n\031emu.grasscutter.net.protob\006" +
       "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -610,7 +610,7 @@ public final class MechanicusCoinNotifyOuterClass {
     internal_static_MechanicusCoinNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_MechanicusCoinNotify_descriptor,
-        new java.lang.String[] { "MechanicusId", "Coin", });
+        new java.lang.String[] { "Coin", "MechanicusId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

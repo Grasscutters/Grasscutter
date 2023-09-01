@@ -26,7 +26,7 @@ public final class WeatherInfoOuterClass {
   }
   /**
    * <pre>
-   * Obf: BMHFKGLDMII
+   * Obf: OGJENPCDJEN
    * </pre>
    *
    * Protobuf type {@code WeatherInfo}
@@ -278,7 +278,7 @@ public final class WeatherInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: BMHFKGLDMII
+     * Obf: OGJENPCDJEN
      * </pre>
      *
      * Protobuf type {@code WeatherInfo}

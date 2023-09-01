@@ -1,20 +1,15 @@
 package emu.grasscutter.utils;
 
 import emu.grasscutter.Grasscutter;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
+import lombok.val;
+
+import java.io.*;
 import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.FileSystem;
-import java.nio.file.FileSystems;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-import lombok.val;
+import java.nio.file.*;
+import java.util.*;
+import java.util.stream.*;
 
 public final class FileUtils {
     private static final Path DATA_DEFAULT_PATH;

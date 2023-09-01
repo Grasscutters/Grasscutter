@@ -19,15 +19,15 @@ public final class LunaRiteGroupBundleRegisterNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 group_link_bundle_id = 5;</code>
+     * <code>uint32 group_link_bundle_id = 6;</code>
      * @return The groupLinkBundleId.
      */
     int getGroupLinkBundleId();
   }
   /**
    * <pre>
-   * CmdId: 8352
-   * Obf: NFFHIKAAEDK
+   * CmdId: 5030
+   * Obf: JBHLFLGEDEO
    * </pre>
    *
    * Protobuf type {@code LunaRiteGroupBundleRegisterNotify}
@@ -74,7 +74,7 @@ public final class LunaRiteGroupBundleRegisterNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
+            case 48: {
 
               groupLinkBundleId_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class LunaRiteGroupBundleRegisterNotifyOuterClass {
               emu.grasscutter.net.proto.LunaRiteGroupBundleRegisterNotifyOuterClass.LunaRiteGroupBundleRegisterNotify.class, emu.grasscutter.net.proto.LunaRiteGroupBundleRegisterNotifyOuterClass.LunaRiteGroupBundleRegisterNotify.Builder.class);
     }
 
-    public static final int GROUP_LINK_BUNDLE_ID_FIELD_NUMBER = 5;
+    public static final int GROUP_LINK_BUNDLE_ID_FIELD_NUMBER = 6;
     private int groupLinkBundleId_;
     /**
-     * <code>uint32 group_link_bundle_id = 5;</code>
+     * <code>uint32 group_link_bundle_id = 6;</code>
      * @return The groupLinkBundleId.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class LunaRiteGroupBundleRegisterNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (groupLinkBundleId_ != 0) {
-        output.writeUInt32(5, groupLinkBundleId_);
+        output.writeUInt32(6, groupLinkBundleId_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class LunaRiteGroupBundleRegisterNotifyOuterClass {
       size = 0;
       if (groupLinkBundleId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, groupLinkBundleId_);
+          .computeUInt32Size(6, groupLinkBundleId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class LunaRiteGroupBundleRegisterNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8352
-     * Obf: NFFHIKAAEDK
+     * CmdId: 5030
+     * Obf: JBHLFLGEDEO
      * </pre>
      *
      * Protobuf type {@code LunaRiteGroupBundleRegisterNotify}
@@ -431,7 +431,7 @@ public final class LunaRiteGroupBundleRegisterNotifyOuterClass {
 
       private int groupLinkBundleId_ ;
       /**
-       * <code>uint32 group_link_bundle_id = 5;</code>
+       * <code>uint32 group_link_bundle_id = 6;</code>
        * @return The groupLinkBundleId.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class LunaRiteGroupBundleRegisterNotifyOuterClass {
         return groupLinkBundleId_;
       }
       /**
-       * <code>uint32 group_link_bundle_id = 5;</code>
+       * <code>uint32 group_link_bundle_id = 6;</code>
        * @param value The groupLinkBundleId to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class LunaRiteGroupBundleRegisterNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 group_link_bundle_id = 5;</code>
+       * <code>uint32 group_link_bundle_id = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearGroupLinkBundleId() {
@@ -528,7 +528,7 @@ public final class LunaRiteGroupBundleRegisterNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\'LunaRiteGroupBundleRegisterNotify.prot" +
       "o\"A\n!LunaRiteGroupBundleRegisterNotify\022\034" +
-      "\n\024group_link_bundle_id\030\005 \001(\rB\033\n\031emu.gras" +
+      "\n\024group_link_bundle_id\030\006 \001(\rB\033\n\031emu.gras" +
       "scutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

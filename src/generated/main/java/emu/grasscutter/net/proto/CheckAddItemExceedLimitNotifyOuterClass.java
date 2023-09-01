@@ -19,66 +19,66 @@ public final class CheckAddItemExceedLimitNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.CheckAddItemExceedLimitNotify.ItemExceedLimitMsgType msg_type = 10;</code>
-     * @return The enum numeric value on the wire for msgType.
+     * <code>repeated uint32 JJHKBJLIPNA = 11;</code>
+     * @return A list containing the jJHKBJLIPNA.
      */
-    int getMsgTypeValue();
+    java.util.List<java.lang.Integer> getJJHKBJLIPNAList();
     /**
-     * <code>.CheckAddItemExceedLimitNotify.ItemExceedLimitMsgType msg_type = 10;</code>
-     * @return The msgType.
+     * <code>repeated uint32 JJHKBJLIPNA = 11;</code>
+     * @return The count of jJHKBJLIPNA.
      */
-    emu.grasscutter.net.proto.CheckAddItemExceedLimitNotifyOuterClass.CheckAddItemExceedLimitNotify.ItemExceedLimitMsgType getMsgType();
-
+    int getJJHKBJLIPNACount();
     /**
-     * <code>repeated uint32 JIDEBPPDFAP = 14;</code>
-     * @return A list containing the jIDEBPPDFAP.
-     */
-    java.util.List<java.lang.Integer> getJIDEBPPDFAPList();
-    /**
-     * <code>repeated uint32 JIDEBPPDFAP = 14;</code>
-     * @return The count of jIDEBPPDFAP.
-     */
-    int getJIDEBPPDFAPCount();
-    /**
-     * <code>repeated uint32 JIDEBPPDFAP = 14;</code>
+     * <code>repeated uint32 JJHKBJLIPNA = 11;</code>
      * @param index The index of the element to return.
-     * @return The jIDEBPPDFAP at the given index.
+     * @return The jJHKBJLIPNA at the given index.
      */
-    int getJIDEBPPDFAP(int index);
+    int getJJHKBJLIPNA(int index);
 
     /**
-     * <code>repeated uint32 GGJOANDELMJ = 8;</code>
-     * @return A list containing the gGJOANDELMJ.
-     */
-    java.util.List<java.lang.Integer> getGGJOANDELMJList();
-    /**
-     * <code>repeated uint32 GGJOANDELMJ = 8;</code>
-     * @return The count of gGJOANDELMJ.
-     */
-    int getGGJOANDELMJCount();
-    /**
-     * <code>repeated uint32 GGJOANDELMJ = 8;</code>
-     * @param index The index of the element to return.
-     * @return The gGJOANDELMJ at the given index.
-     */
-    int getGGJOANDELMJ(int index);
-
-    /**
-     * <code>bool is_drop = 2;</code>
+     * <code>bool is_drop = 12;</code>
      * @return The isDrop.
      */
     boolean getIsDrop();
 
     /**
-     * <code>uint32 reason = 4;</code>
+     * <code>.CheckAddItemExceedLimitNotify.ItemExceedLimitMsgType msg_type = 1;</code>
+     * @return The enum numeric value on the wire for msgType.
+     */
+    int getMsgTypeValue();
+    /**
+     * <code>.CheckAddItemExceedLimitNotify.ItemExceedLimitMsgType msg_type = 1;</code>
+     * @return The msgType.
+     */
+    emu.grasscutter.net.proto.CheckAddItemExceedLimitNotifyOuterClass.CheckAddItemExceedLimitNotify.ItemExceedLimitMsgType getMsgType();
+
+    /**
+     * <code>repeated uint32 OPFPLNLHLMA = 13;</code>
+     * @return A list containing the oPFPLNLHLMA.
+     */
+    java.util.List<java.lang.Integer> getOPFPLNLHLMAList();
+    /**
+     * <code>repeated uint32 OPFPLNLHLMA = 13;</code>
+     * @return The count of oPFPLNLHLMA.
+     */
+    int getOPFPLNLHLMACount();
+    /**
+     * <code>repeated uint32 OPFPLNLHLMA = 13;</code>
+     * @param index The index of the element to return.
+     * @return The oPFPLNLHLMA at the given index.
+     */
+    int getOPFPLNLHLMA(int index);
+
+    /**
+     * <code>uint32 reason = 3;</code>
      * @return The reason.
      */
     int getReason();
   }
   /**
    * <pre>
-   * CmdId: 644
-   * Obf: OCFAOEJLBJE
+   * CmdId: 24230
+   * Obf: CMDADENCFDH
    * </pre>
    *
    * Protobuf type {@code CheckAddItemExceedLimitNotify}
@@ -93,9 +93,9 @@ public final class CheckAddItemExceedLimitNotifyOuterClass {
       super(builder);
     }
     private CheckAddItemExceedLimitNotify() {
+      jJHKBJLIPNA_ = emptyIntList();
       msgType_ = 0;
-      jIDEBPPDFAP_ = emptyIntList();
-      gGJOANDELMJ_ = emptyIntList();
+      oPFPLNLHLMA_ = emptyIntList();
     }
 
     @java.lang.Override
@@ -129,60 +129,60 @@ public final class CheckAddItemExceedLimitNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
-
-              isDrop_ = input.readBool();
-              break;
-            }
-            case 32: {
-
-              reason_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                gGJOANDELMJ_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              gGJOANDELMJ_.addInt(input.readUInt32());
-              break;
-            }
-            case 66: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
-                gGJOANDELMJ_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                gGJOANDELMJ_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 80: {
+            case 8: {
               int rawValue = input.readEnum();
 
               msgType_ = rawValue;
               break;
             }
-            case 112: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                jIDEBPPDFAP_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              jIDEBPPDFAP_.addInt(input.readUInt32());
+            case 24: {
+
+              reason_ = input.readUInt32();
               break;
             }
-            case 114: {
+            case 88: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                jJHKBJLIPNA_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              jJHKBJLIPNA_.addInt(input.readUInt32());
+              break;
+            }
+            case 90: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                jIDEBPPDFAP_ = newIntList();
+                jJHKBJLIPNA_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
               }
               while (input.getBytesUntilLimit() > 0) {
-                jIDEBPPDFAP_.addInt(input.readUInt32());
+                jJHKBJLIPNA_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 96: {
+
+              isDrop_ = input.readBool();
+              break;
+            }
+            case 104: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                oPFPLNLHLMA_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              oPFPLNLHLMA_.addInt(input.readUInt32());
+              break;
+            }
+            case 106: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+                oPFPLNLHLMA_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                oPFPLNLHLMA_.addInt(input.readUInt32());
               }
               input.popLimit(limit);
               break;
@@ -202,11 +202,11 @@ public final class CheckAddItemExceedLimitNotifyOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          gGJOANDELMJ_.makeImmutable(); // C
-        }
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          jIDEBPPDFAP_.makeImmutable(); // C
+          jJHKBJLIPNA_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          oPFPLNLHLMA_.makeImmutable(); // C
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -227,7 +227,7 @@ public final class CheckAddItemExceedLimitNotifyOuterClass {
 
     /**
      * <pre>
-     * Obf: HALLOHEANIB
+     * Obf: EGOCMMFICCC
      * </pre>
      *
      * Protobuf enum {@code CheckAddItemExceedLimitNotify.ItemExceedLimitMsgType}
@@ -355,17 +355,56 @@ public final class CheckAddItemExceedLimitNotifyOuterClass {
       // @@protoc_insertion_point(enum_scope:CheckAddItemExceedLimitNotify.ItemExceedLimitMsgType)
     }
 
-    public static final int MSG_TYPE_FIELD_NUMBER = 10;
+    public static final int JJHKBJLIPNA_FIELD_NUMBER = 11;
+    private com.google.protobuf.Internal.IntList jJHKBJLIPNA_;
+    /**
+     * <code>repeated uint32 JJHKBJLIPNA = 11;</code>
+     * @return A list containing the jJHKBJLIPNA.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Integer>
+        getJJHKBJLIPNAList() {
+      return jJHKBJLIPNA_;
+    }
+    /**
+     * <code>repeated uint32 JJHKBJLIPNA = 11;</code>
+     * @return The count of jJHKBJLIPNA.
+     */
+    public int getJJHKBJLIPNACount() {
+      return jJHKBJLIPNA_.size();
+    }
+    /**
+     * <code>repeated uint32 JJHKBJLIPNA = 11;</code>
+     * @param index The index of the element to return.
+     * @return The jJHKBJLIPNA at the given index.
+     */
+    public int getJJHKBJLIPNA(int index) {
+      return jJHKBJLIPNA_.getInt(index);
+    }
+    private int jJHKBJLIPNAMemoizedSerializedSize = -1;
+
+    public static final int IS_DROP_FIELD_NUMBER = 12;
+    private boolean isDrop_;
+    /**
+     * <code>bool is_drop = 12;</code>
+     * @return The isDrop.
+     */
+    @java.lang.Override
+    public boolean getIsDrop() {
+      return isDrop_;
+    }
+
+    public static final int MSG_TYPE_FIELD_NUMBER = 1;
     private int msgType_;
     /**
-     * <code>.CheckAddItemExceedLimitNotify.ItemExceedLimitMsgType msg_type = 10;</code>
+     * <code>.CheckAddItemExceedLimitNotify.ItemExceedLimitMsgType msg_type = 1;</code>
      * @return The enum numeric value on the wire for msgType.
      */
     @java.lang.Override public int getMsgTypeValue() {
       return msgType_;
     }
     /**
-     * <code>.CheckAddItemExceedLimitNotify.ItemExceedLimitMsgType msg_type = 10;</code>
+     * <code>.CheckAddItemExceedLimitNotify.ItemExceedLimitMsgType msg_type = 1;</code>
      * @return The msgType.
      */
     @java.lang.Override public emu.grasscutter.net.proto.CheckAddItemExceedLimitNotifyOuterClass.CheckAddItemExceedLimitNotify.ItemExceedLimitMsgType getMsgType() {
@@ -374,77 +413,38 @@ public final class CheckAddItemExceedLimitNotifyOuterClass {
       return result == null ? emu.grasscutter.net.proto.CheckAddItemExceedLimitNotifyOuterClass.CheckAddItemExceedLimitNotify.ItemExceedLimitMsgType.UNRECOGNIZED : result;
     }
 
-    public static final int JIDEBPPDFAP_FIELD_NUMBER = 14;
-    private com.google.protobuf.Internal.IntList jIDEBPPDFAP_;
+    public static final int OPFPLNLHLMA_FIELD_NUMBER = 13;
+    private com.google.protobuf.Internal.IntList oPFPLNLHLMA_;
     /**
-     * <code>repeated uint32 JIDEBPPDFAP = 14;</code>
-     * @return A list containing the jIDEBPPDFAP.
+     * <code>repeated uint32 OPFPLNLHLMA = 13;</code>
+     * @return A list containing the oPFPLNLHLMA.
      */
     @java.lang.Override
     public java.util.List<java.lang.Integer>
-        getJIDEBPPDFAPList() {
-      return jIDEBPPDFAP_;
+        getOPFPLNLHLMAList() {
+      return oPFPLNLHLMA_;
     }
     /**
-     * <code>repeated uint32 JIDEBPPDFAP = 14;</code>
-     * @return The count of jIDEBPPDFAP.
+     * <code>repeated uint32 OPFPLNLHLMA = 13;</code>
+     * @return The count of oPFPLNLHLMA.
      */
-    public int getJIDEBPPDFAPCount() {
-      return jIDEBPPDFAP_.size();
+    public int getOPFPLNLHLMACount() {
+      return oPFPLNLHLMA_.size();
     }
     /**
-     * <code>repeated uint32 JIDEBPPDFAP = 14;</code>
+     * <code>repeated uint32 OPFPLNLHLMA = 13;</code>
      * @param index The index of the element to return.
-     * @return The jIDEBPPDFAP at the given index.
+     * @return The oPFPLNLHLMA at the given index.
      */
-    public int getJIDEBPPDFAP(int index) {
-      return jIDEBPPDFAP_.getInt(index);
+    public int getOPFPLNLHLMA(int index) {
+      return oPFPLNLHLMA_.getInt(index);
     }
-    private int jIDEBPPDFAPMemoizedSerializedSize = -1;
+    private int oPFPLNLHLMAMemoizedSerializedSize = -1;
 
-    public static final int GGJOANDELMJ_FIELD_NUMBER = 8;
-    private com.google.protobuf.Internal.IntList gGJOANDELMJ_;
-    /**
-     * <code>repeated uint32 GGJOANDELMJ = 8;</code>
-     * @return A list containing the gGJOANDELMJ.
-     */
-    @java.lang.Override
-    public java.util.List<java.lang.Integer>
-        getGGJOANDELMJList() {
-      return gGJOANDELMJ_;
-    }
-    /**
-     * <code>repeated uint32 GGJOANDELMJ = 8;</code>
-     * @return The count of gGJOANDELMJ.
-     */
-    public int getGGJOANDELMJCount() {
-      return gGJOANDELMJ_.size();
-    }
-    /**
-     * <code>repeated uint32 GGJOANDELMJ = 8;</code>
-     * @param index The index of the element to return.
-     * @return The gGJOANDELMJ at the given index.
-     */
-    public int getGGJOANDELMJ(int index) {
-      return gGJOANDELMJ_.getInt(index);
-    }
-    private int gGJOANDELMJMemoizedSerializedSize = -1;
-
-    public static final int IS_DROP_FIELD_NUMBER = 2;
-    private boolean isDrop_;
-    /**
-     * <code>bool is_drop = 2;</code>
-     * @return The isDrop.
-     */
-    @java.lang.Override
-    public boolean getIsDrop() {
-      return isDrop_;
-    }
-
-    public static final int REASON_FIELD_NUMBER = 4;
+    public static final int REASON_FIELD_NUMBER = 3;
     private int reason_;
     /**
-     * <code>uint32 reason = 4;</code>
+     * <code>uint32 reason = 3;</code>
      * @return The reason.
      */
     @java.lang.Override
@@ -467,28 +467,28 @@ public final class CheckAddItemExceedLimitNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (isDrop_ != false) {
-        output.writeBool(2, isDrop_);
+      if (msgType_ != emu.grasscutter.net.proto.CheckAddItemExceedLimitNotifyOuterClass.CheckAddItemExceedLimitNotify.ItemExceedLimitMsgType.ITEM_EXCEED_LIMIT_MSG_DEFAULT.getNumber()) {
+        output.writeEnum(1, msgType_);
       }
       if (reason_ != 0) {
-        output.writeUInt32(4, reason_);
+        output.writeUInt32(3, reason_);
       }
-      if (getGGJOANDELMJList().size() > 0) {
-        output.writeUInt32NoTag(66);
-        output.writeUInt32NoTag(gGJOANDELMJMemoizedSerializedSize);
+      if (getJJHKBJLIPNAList().size() > 0) {
+        output.writeUInt32NoTag(90);
+        output.writeUInt32NoTag(jJHKBJLIPNAMemoizedSerializedSize);
       }
-      for (int i = 0; i < gGJOANDELMJ_.size(); i++) {
-        output.writeUInt32NoTag(gGJOANDELMJ_.getInt(i));
+      for (int i = 0; i < jJHKBJLIPNA_.size(); i++) {
+        output.writeUInt32NoTag(jJHKBJLIPNA_.getInt(i));
       }
-      if (msgType_ != emu.grasscutter.net.proto.CheckAddItemExceedLimitNotifyOuterClass.CheckAddItemExceedLimitNotify.ItemExceedLimitMsgType.ITEM_EXCEED_LIMIT_MSG_DEFAULT.getNumber()) {
-        output.writeEnum(10, msgType_);
+      if (isDrop_ != false) {
+        output.writeBool(12, isDrop_);
       }
-      if (getJIDEBPPDFAPList().size() > 0) {
-        output.writeUInt32NoTag(114);
-        output.writeUInt32NoTag(jIDEBPPDFAPMemoizedSerializedSize);
+      if (getOPFPLNLHLMAList().size() > 0) {
+        output.writeUInt32NoTag(106);
+        output.writeUInt32NoTag(oPFPLNLHLMAMemoizedSerializedSize);
       }
-      for (int i = 0; i < jIDEBPPDFAP_.size(); i++) {
-        output.writeUInt32NoTag(jIDEBPPDFAP_.getInt(i));
+      for (int i = 0; i < oPFPLNLHLMA_.size(); i++) {
+        output.writeUInt32NoTag(oPFPLNLHLMA_.getInt(i));
       }
       unknownFields.writeTo(output);
     }
@@ -499,45 +499,45 @@ public final class CheckAddItemExceedLimitNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (isDrop_ != false) {
+      if (msgType_ != emu.grasscutter.net.proto.CheckAddItemExceedLimitNotifyOuterClass.CheckAddItemExceedLimitNotify.ItemExceedLimitMsgType.ITEM_EXCEED_LIMIT_MSG_DEFAULT.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(2, isDrop_);
+          .computeEnumSize(1, msgType_);
       }
       if (reason_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, reason_);
+          .computeUInt32Size(3, reason_);
       }
       {
         int dataSize = 0;
-        for (int i = 0; i < gGJOANDELMJ_.size(); i++) {
+        for (int i = 0; i < jJHKBJLIPNA_.size(); i++) {
           dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(gGJOANDELMJ_.getInt(i));
+            .computeUInt32SizeNoTag(jJHKBJLIPNA_.getInt(i));
         }
         size += dataSize;
-        if (!getGGJOANDELMJList().isEmpty()) {
+        if (!getJJHKBJLIPNAList().isEmpty()) {
           size += 1;
           size += com.google.protobuf.CodedOutputStream
               .computeInt32SizeNoTag(dataSize);
         }
-        gGJOANDELMJMemoizedSerializedSize = dataSize;
+        jJHKBJLIPNAMemoizedSerializedSize = dataSize;
       }
-      if (msgType_ != emu.grasscutter.net.proto.CheckAddItemExceedLimitNotifyOuterClass.CheckAddItemExceedLimitNotify.ItemExceedLimitMsgType.ITEM_EXCEED_LIMIT_MSG_DEFAULT.getNumber()) {
+      if (isDrop_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(10, msgType_);
+          .computeBoolSize(12, isDrop_);
       }
       {
         int dataSize = 0;
-        for (int i = 0; i < jIDEBPPDFAP_.size(); i++) {
+        for (int i = 0; i < oPFPLNLHLMA_.size(); i++) {
           dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(jIDEBPPDFAP_.getInt(i));
+            .computeUInt32SizeNoTag(oPFPLNLHLMA_.getInt(i));
         }
         size += dataSize;
-        if (!getJIDEBPPDFAPList().isEmpty()) {
+        if (!getOPFPLNLHLMAList().isEmpty()) {
           size += 1;
           size += com.google.protobuf.CodedOutputStream
               .computeInt32SizeNoTag(dataSize);
         }
-        jIDEBPPDFAPMemoizedSerializedSize = dataSize;
+        oPFPLNLHLMAMemoizedSerializedSize = dataSize;
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -554,13 +554,13 @@ public final class CheckAddItemExceedLimitNotifyOuterClass {
       }
       emu.grasscutter.net.proto.CheckAddItemExceedLimitNotifyOuterClass.CheckAddItemExceedLimitNotify other = (emu.grasscutter.net.proto.CheckAddItemExceedLimitNotifyOuterClass.CheckAddItemExceedLimitNotify) obj;
 
-      if (msgType_ != other.msgType_) return false;
-      if (!getJIDEBPPDFAPList()
-          .equals(other.getJIDEBPPDFAPList())) return false;
-      if (!getGGJOANDELMJList()
-          .equals(other.getGGJOANDELMJList())) return false;
+      if (!getJJHKBJLIPNAList()
+          .equals(other.getJJHKBJLIPNAList())) return false;
       if (getIsDrop()
           != other.getIsDrop()) return false;
+      if (msgType_ != other.msgType_) return false;
+      if (!getOPFPLNLHLMAList()
+          .equals(other.getOPFPLNLHLMAList())) return false;
       if (getReason()
           != other.getReason()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -574,19 +574,19 @@ public final class CheckAddItemExceedLimitNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + MSG_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + msgType_;
-      if (getJIDEBPPDFAPCount() > 0) {
-        hash = (37 * hash) + JIDEBPPDFAP_FIELD_NUMBER;
-        hash = (53 * hash) + getJIDEBPPDFAPList().hashCode();
-      }
-      if (getGGJOANDELMJCount() > 0) {
-        hash = (37 * hash) + GGJOANDELMJ_FIELD_NUMBER;
-        hash = (53 * hash) + getGGJOANDELMJList().hashCode();
+      if (getJJHKBJLIPNACount() > 0) {
+        hash = (37 * hash) + JJHKBJLIPNA_FIELD_NUMBER;
+        hash = (53 * hash) + getJJHKBJLIPNAList().hashCode();
       }
       hash = (37 * hash) + IS_DROP_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsDrop());
+      hash = (37 * hash) + MSG_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + msgType_;
+      if (getOPFPLNLHLMACount() > 0) {
+        hash = (37 * hash) + OPFPLNLHLMA_FIELD_NUMBER;
+        hash = (53 * hash) + getOPFPLNLHLMAList().hashCode();
+      }
       hash = (37 * hash) + REASON_FIELD_NUMBER;
       hash = (53 * hash) + getReason();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -686,8 +686,8 @@ public final class CheckAddItemExceedLimitNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 644
-     * Obf: OCFAOEJLBJE
+     * CmdId: 24230
+     * Obf: CMDADENCFDH
      * </pre>
      *
      * Protobuf type {@code CheckAddItemExceedLimitNotify}
@@ -727,14 +727,14 @@ public final class CheckAddItemExceedLimitNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        msgType_ = 0;
-
-        jIDEBPPDFAP_ = emptyIntList();
+        jJHKBJLIPNA_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
-        gGJOANDELMJ_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
         isDrop_ = false;
 
+        msgType_ = 0;
+
+        oPFPLNLHLMA_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
         reason_ = 0;
 
         return this;
@@ -764,18 +764,18 @@ public final class CheckAddItemExceedLimitNotifyOuterClass {
       public emu.grasscutter.net.proto.CheckAddItemExceedLimitNotifyOuterClass.CheckAddItemExceedLimitNotify buildPartial() {
         emu.grasscutter.net.proto.CheckAddItemExceedLimitNotifyOuterClass.CheckAddItemExceedLimitNotify result = new emu.grasscutter.net.proto.CheckAddItemExceedLimitNotifyOuterClass.CheckAddItemExceedLimitNotify(this);
         int from_bitField0_ = bitField0_;
-        result.msgType_ = msgType_;
         if (((bitField0_ & 0x00000001) != 0)) {
-          jIDEBPPDFAP_.makeImmutable();
+          jJHKBJLIPNA_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
-        result.jIDEBPPDFAP_ = jIDEBPPDFAP_;
+        result.jJHKBJLIPNA_ = jJHKBJLIPNA_;
+        result.isDrop_ = isDrop_;
+        result.msgType_ = msgType_;
         if (((bitField0_ & 0x00000002) != 0)) {
-          gGJOANDELMJ_.makeImmutable();
+          oPFPLNLHLMA_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000002);
         }
-        result.gGJOANDELMJ_ = gGJOANDELMJ_;
-        result.isDrop_ = isDrop_;
+        result.oPFPLNLHLMA_ = oPFPLNLHLMA_;
         result.reason_ = reason_;
         onBuilt();
         return result;
@@ -825,31 +825,31 @@ public final class CheckAddItemExceedLimitNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.CheckAddItemExceedLimitNotifyOuterClass.CheckAddItemExceedLimitNotify other) {
         if (other == emu.grasscutter.net.proto.CheckAddItemExceedLimitNotifyOuterClass.CheckAddItemExceedLimitNotify.getDefaultInstance()) return this;
-        if (other.msgType_ != 0) {
-          setMsgTypeValue(other.getMsgTypeValue());
-        }
-        if (!other.jIDEBPPDFAP_.isEmpty()) {
-          if (jIDEBPPDFAP_.isEmpty()) {
-            jIDEBPPDFAP_ = other.jIDEBPPDFAP_;
+        if (!other.jJHKBJLIPNA_.isEmpty()) {
+          if (jJHKBJLIPNA_.isEmpty()) {
+            jJHKBJLIPNA_ = other.jJHKBJLIPNA_;
             bitField0_ = (bitField0_ & ~0x00000001);
           } else {
-            ensureJIDEBPPDFAPIsMutable();
-            jIDEBPPDFAP_.addAll(other.jIDEBPPDFAP_);
-          }
-          onChanged();
-        }
-        if (!other.gGJOANDELMJ_.isEmpty()) {
-          if (gGJOANDELMJ_.isEmpty()) {
-            gGJOANDELMJ_ = other.gGJOANDELMJ_;
-            bitField0_ = (bitField0_ & ~0x00000002);
-          } else {
-            ensureGGJOANDELMJIsMutable();
-            gGJOANDELMJ_.addAll(other.gGJOANDELMJ_);
+            ensureJJHKBJLIPNAIsMutable();
+            jJHKBJLIPNA_.addAll(other.jJHKBJLIPNA_);
           }
           onChanged();
         }
         if (other.getIsDrop() != false) {
           setIsDrop(other.getIsDrop());
+        }
+        if (other.msgType_ != 0) {
+          setMsgTypeValue(other.getMsgTypeValue());
+        }
+        if (!other.oPFPLNLHLMA_.isEmpty()) {
+          if (oPFPLNLHLMA_.isEmpty()) {
+            oPFPLNLHLMA_ = other.oPFPLNLHLMA_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureOPFPLNLHLMAIsMutable();
+            oPFPLNLHLMA_.addAll(other.oPFPLNLHLMA_);
+          }
+          onChanged();
         }
         if (other.getReason() != 0) {
           setReason(other.getReason());
@@ -884,16 +884,126 @@ public final class CheckAddItemExceedLimitNotifyOuterClass {
       }
       private int bitField0_;
 
+      private com.google.protobuf.Internal.IntList jJHKBJLIPNA_ = emptyIntList();
+      private void ensureJJHKBJLIPNAIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          jJHKBJLIPNA_ = mutableCopy(jJHKBJLIPNA_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <code>repeated uint32 JJHKBJLIPNA = 11;</code>
+       * @return A list containing the jJHKBJLIPNA.
+       */
+      public java.util.List<java.lang.Integer>
+          getJJHKBJLIPNAList() {
+        return ((bitField0_ & 0x00000001) != 0) ?
+                 java.util.Collections.unmodifiableList(jJHKBJLIPNA_) : jJHKBJLIPNA_;
+      }
+      /**
+       * <code>repeated uint32 JJHKBJLIPNA = 11;</code>
+       * @return The count of jJHKBJLIPNA.
+       */
+      public int getJJHKBJLIPNACount() {
+        return jJHKBJLIPNA_.size();
+      }
+      /**
+       * <code>repeated uint32 JJHKBJLIPNA = 11;</code>
+       * @param index The index of the element to return.
+       * @return The jJHKBJLIPNA at the given index.
+       */
+      public int getJJHKBJLIPNA(int index) {
+        return jJHKBJLIPNA_.getInt(index);
+      }
+      /**
+       * <code>repeated uint32 JJHKBJLIPNA = 11;</code>
+       * @param index The index to set the value at.
+       * @param value The jJHKBJLIPNA to set.
+       * @return This builder for chaining.
+       */
+      public Builder setJJHKBJLIPNA(
+          int index, int value) {
+        ensureJJHKBJLIPNAIsMutable();
+        jJHKBJLIPNA_.setInt(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 JJHKBJLIPNA = 11;</code>
+       * @param value The jJHKBJLIPNA to add.
+       * @return This builder for chaining.
+       */
+      public Builder addJJHKBJLIPNA(int value) {
+        ensureJJHKBJLIPNAIsMutable();
+        jJHKBJLIPNA_.addInt(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 JJHKBJLIPNA = 11;</code>
+       * @param values The jJHKBJLIPNA to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllJJHKBJLIPNA(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureJJHKBJLIPNAIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, jJHKBJLIPNA_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 JJHKBJLIPNA = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearJJHKBJLIPNA() {
+        jJHKBJLIPNA_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      private boolean isDrop_ ;
+      /**
+       * <code>bool is_drop = 12;</code>
+       * @return The isDrop.
+       */
+      @java.lang.Override
+      public boolean getIsDrop() {
+        return isDrop_;
+      }
+      /**
+       * <code>bool is_drop = 12;</code>
+       * @param value The isDrop to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsDrop(boolean value) {
+        
+        isDrop_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_drop = 12;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsDrop() {
+        
+        isDrop_ = false;
+        onChanged();
+        return this;
+      }
+
       private int msgType_ = 0;
       /**
-       * <code>.CheckAddItemExceedLimitNotify.ItemExceedLimitMsgType msg_type = 10;</code>
+       * <code>.CheckAddItemExceedLimitNotify.ItemExceedLimitMsgType msg_type = 1;</code>
        * @return The enum numeric value on the wire for msgType.
        */
       @java.lang.Override public int getMsgTypeValue() {
         return msgType_;
       }
       /**
-       * <code>.CheckAddItemExceedLimitNotify.ItemExceedLimitMsgType msg_type = 10;</code>
+       * <code>.CheckAddItemExceedLimitNotify.ItemExceedLimitMsgType msg_type = 1;</code>
        * @param value The enum numeric value on the wire for msgType to set.
        * @return This builder for chaining.
        */
@@ -904,7 +1014,7 @@ public final class CheckAddItemExceedLimitNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.CheckAddItemExceedLimitNotify.ItemExceedLimitMsgType msg_type = 10;</code>
+       * <code>.CheckAddItemExceedLimitNotify.ItemExceedLimitMsgType msg_type = 1;</code>
        * @return The msgType.
        */
       @java.lang.Override
@@ -914,7 +1024,7 @@ public final class CheckAddItemExceedLimitNotifyOuterClass {
         return result == null ? emu.grasscutter.net.proto.CheckAddItemExceedLimitNotifyOuterClass.CheckAddItemExceedLimitNotify.ItemExceedLimitMsgType.UNRECOGNIZED : result;
       }
       /**
-       * <code>.CheckAddItemExceedLimitNotify.ItemExceedLimitMsgType msg_type = 10;</code>
+       * <code>.CheckAddItemExceedLimitNotify.ItemExceedLimitMsgType msg_type = 1;</code>
        * @param value The msgType to set.
        * @return This builder for chaining.
        */
@@ -928,7 +1038,7 @@ public final class CheckAddItemExceedLimitNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.CheckAddItemExceedLimitNotify.ItemExceedLimitMsgType msg_type = 10;</code>
+       * <code>.CheckAddItemExceedLimitNotify.ItemExceedLimitMsgType msg_type = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearMsgType() {
@@ -938,198 +1048,88 @@ public final class CheckAddItemExceedLimitNotifyOuterClass {
         return this;
       }
 
-      private com.google.protobuf.Internal.IntList jIDEBPPDFAP_ = emptyIntList();
-      private void ensureJIDEBPPDFAPIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          jIDEBPPDFAP_ = mutableCopy(jIDEBPPDFAP_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-      /**
-       * <code>repeated uint32 JIDEBPPDFAP = 14;</code>
-       * @return A list containing the jIDEBPPDFAP.
-       */
-      public java.util.List<java.lang.Integer>
-          getJIDEBPPDFAPList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
-                 java.util.Collections.unmodifiableList(jIDEBPPDFAP_) : jIDEBPPDFAP_;
-      }
-      /**
-       * <code>repeated uint32 JIDEBPPDFAP = 14;</code>
-       * @return The count of jIDEBPPDFAP.
-       */
-      public int getJIDEBPPDFAPCount() {
-        return jIDEBPPDFAP_.size();
-      }
-      /**
-       * <code>repeated uint32 JIDEBPPDFAP = 14;</code>
-       * @param index The index of the element to return.
-       * @return The jIDEBPPDFAP at the given index.
-       */
-      public int getJIDEBPPDFAP(int index) {
-        return jIDEBPPDFAP_.getInt(index);
-      }
-      /**
-       * <code>repeated uint32 JIDEBPPDFAP = 14;</code>
-       * @param index The index to set the value at.
-       * @param value The jIDEBPPDFAP to set.
-       * @return This builder for chaining.
-       */
-      public Builder setJIDEBPPDFAP(
-          int index, int value) {
-        ensureJIDEBPPDFAPIsMutable();
-        jIDEBPPDFAP_.setInt(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 JIDEBPPDFAP = 14;</code>
-       * @param value The jIDEBPPDFAP to add.
-       * @return This builder for chaining.
-       */
-      public Builder addJIDEBPPDFAP(int value) {
-        ensureJIDEBPPDFAPIsMutable();
-        jIDEBPPDFAP_.addInt(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 JIDEBPPDFAP = 14;</code>
-       * @param values The jIDEBPPDFAP to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllJIDEBPPDFAP(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureJIDEBPPDFAPIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, jIDEBPPDFAP_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 JIDEBPPDFAP = 14;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearJIDEBPPDFAP() {
-        jIDEBPPDFAP_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.Internal.IntList gGJOANDELMJ_ = emptyIntList();
-      private void ensureGGJOANDELMJIsMutable() {
+      private com.google.protobuf.Internal.IntList oPFPLNLHLMA_ = emptyIntList();
+      private void ensureOPFPLNLHLMAIsMutable() {
         if (!((bitField0_ & 0x00000002) != 0)) {
-          gGJOANDELMJ_ = mutableCopy(gGJOANDELMJ_);
+          oPFPLNLHLMA_ = mutableCopy(oPFPLNLHLMA_);
           bitField0_ |= 0x00000002;
          }
       }
       /**
-       * <code>repeated uint32 GGJOANDELMJ = 8;</code>
-       * @return A list containing the gGJOANDELMJ.
+       * <code>repeated uint32 OPFPLNLHLMA = 13;</code>
+       * @return A list containing the oPFPLNLHLMA.
        */
       public java.util.List<java.lang.Integer>
-          getGGJOANDELMJList() {
+          getOPFPLNLHLMAList() {
         return ((bitField0_ & 0x00000002) != 0) ?
-                 java.util.Collections.unmodifiableList(gGJOANDELMJ_) : gGJOANDELMJ_;
+                 java.util.Collections.unmodifiableList(oPFPLNLHLMA_) : oPFPLNLHLMA_;
       }
       /**
-       * <code>repeated uint32 GGJOANDELMJ = 8;</code>
-       * @return The count of gGJOANDELMJ.
+       * <code>repeated uint32 OPFPLNLHLMA = 13;</code>
+       * @return The count of oPFPLNLHLMA.
        */
-      public int getGGJOANDELMJCount() {
-        return gGJOANDELMJ_.size();
+      public int getOPFPLNLHLMACount() {
+        return oPFPLNLHLMA_.size();
       }
       /**
-       * <code>repeated uint32 GGJOANDELMJ = 8;</code>
+       * <code>repeated uint32 OPFPLNLHLMA = 13;</code>
        * @param index The index of the element to return.
-       * @return The gGJOANDELMJ at the given index.
+       * @return The oPFPLNLHLMA at the given index.
        */
-      public int getGGJOANDELMJ(int index) {
-        return gGJOANDELMJ_.getInt(index);
+      public int getOPFPLNLHLMA(int index) {
+        return oPFPLNLHLMA_.getInt(index);
       }
       /**
-       * <code>repeated uint32 GGJOANDELMJ = 8;</code>
+       * <code>repeated uint32 OPFPLNLHLMA = 13;</code>
        * @param index The index to set the value at.
-       * @param value The gGJOANDELMJ to set.
+       * @param value The oPFPLNLHLMA to set.
        * @return This builder for chaining.
        */
-      public Builder setGGJOANDELMJ(
+      public Builder setOPFPLNLHLMA(
           int index, int value) {
-        ensureGGJOANDELMJIsMutable();
-        gGJOANDELMJ_.setInt(index, value);
+        ensureOPFPLNLHLMAIsMutable();
+        oPFPLNLHLMA_.setInt(index, value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 GGJOANDELMJ = 8;</code>
-       * @param value The gGJOANDELMJ to add.
+       * <code>repeated uint32 OPFPLNLHLMA = 13;</code>
+       * @param value The oPFPLNLHLMA to add.
        * @return This builder for chaining.
        */
-      public Builder addGGJOANDELMJ(int value) {
-        ensureGGJOANDELMJIsMutable();
-        gGJOANDELMJ_.addInt(value);
+      public Builder addOPFPLNLHLMA(int value) {
+        ensureOPFPLNLHLMAIsMutable();
+        oPFPLNLHLMA_.addInt(value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 GGJOANDELMJ = 8;</code>
-       * @param values The gGJOANDELMJ to add.
+       * <code>repeated uint32 OPFPLNLHLMA = 13;</code>
+       * @param values The oPFPLNLHLMA to add.
        * @return This builder for chaining.
        */
-      public Builder addAllGGJOANDELMJ(
+      public Builder addAllOPFPLNLHLMA(
           java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureGGJOANDELMJIsMutable();
+        ensureOPFPLNLHLMAIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, gGJOANDELMJ_);
+            values, oPFPLNLHLMA_);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 GGJOANDELMJ = 8;</code>
+       * <code>repeated uint32 OPFPLNLHLMA = 13;</code>
        * @return This builder for chaining.
        */
-      public Builder clearGGJOANDELMJ() {
-        gGJOANDELMJ_ = emptyIntList();
+      public Builder clearOPFPLNLHLMA() {
+        oPFPLNLHLMA_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000002);
-        onChanged();
-        return this;
-      }
-
-      private boolean isDrop_ ;
-      /**
-       * <code>bool is_drop = 2;</code>
-       * @return The isDrop.
-       */
-      @java.lang.Override
-      public boolean getIsDrop() {
-        return isDrop_;
-      }
-      /**
-       * <code>bool is_drop = 2;</code>
-       * @param value The isDrop to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsDrop(boolean value) {
-        
-        isDrop_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_drop = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsDrop() {
-        
-        isDrop_ = false;
         onChanged();
         return this;
       }
 
       private int reason_ ;
       /**
-       * <code>uint32 reason = 4;</code>
+       * <code>uint32 reason = 3;</code>
        * @return The reason.
        */
       @java.lang.Override
@@ -1137,7 +1137,7 @@ public final class CheckAddItemExceedLimitNotifyOuterClass {
         return reason_;
       }
       /**
-       * <code>uint32 reason = 4;</code>
+       * <code>uint32 reason = 3;</code>
        * @param value The reason to set.
        * @return This builder for chaining.
        */
@@ -1148,7 +1148,7 @@ public final class CheckAddItemExceedLimitNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 reason = 4;</code>
+       * <code>uint32 reason = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearReason() {
@@ -1225,11 +1225,11 @@ public final class CheckAddItemExceedLimitNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n#CheckAddItemExceedLimitNotify.proto\"\336\002" +
-      "\n\035CheckAddItemExceedLimitNotify\022G\n\010msg_t" +
-      "ype\030\n \001(\01625.CheckAddItemExceedLimitNotif" +
-      "y.ItemExceedLimitMsgType\022\023\n\013JIDEBPPDFAP\030" +
-      "\016 \003(\r\022\023\n\013GGJOANDELMJ\030\010 \003(\r\022\017\n\007is_drop\030\002 " +
-      "\001(\010\022\016\n\006reason\030\004 \001(\r\"\250\001\n\026ItemExceedLimitM" +
+      "\n\035CheckAddItemExceedLimitNotify\022\023\n\013JJHKB" +
+      "JLIPNA\030\013 \003(\r\022\017\n\007is_drop\030\014 \001(\010\022G\n\010msg_typ" +
+      "e\030\001 \001(\01625.CheckAddItemExceedLimitNotify." +
+      "ItemExceedLimitMsgType\022\023\n\013OPFPLNLHLMA\030\r " +
+      "\003(\r\022\016\n\006reason\030\003 \001(\r\"\250\001\n\026ItemExceedLimitM" +
       "sgType\022!\n\035ITEM_EXCEED_LIMIT_MSG_DEFAULT\020" +
       "\000\022\036\n\032ITEM_EXCEED_LIMIT_MSG_TEXT\020\001\022 \n\034ITE" +
       "M_EXCEED_LIMIT_MSG_DIALOG\020\002\022)\n%ITEM_EXCE" +
@@ -1245,7 +1245,7 @@ public final class CheckAddItemExceedLimitNotifyOuterClass {
     internal_static_CheckAddItemExceedLimitNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CheckAddItemExceedLimitNotify_descriptor,
-        new java.lang.String[] { "MsgType", "JIDEBPPDFAP", "GGJOANDELMJ", "IsDrop", "Reason", });
+        new java.lang.String[] { "JJHKBJLIPNA", "IsDrop", "MsgType", "OPFPLNLHLMA", "Reason", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

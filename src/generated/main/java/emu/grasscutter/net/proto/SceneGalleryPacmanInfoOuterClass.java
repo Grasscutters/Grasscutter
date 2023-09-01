@@ -19,32 +19,32 @@ public final class SceneGalleryPacmanInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 start_time = 2;</code>
+     * <code>uint32 start_time = 3;</code>
      * @return The startTime.
      */
     int getStartTime();
 
     /**
-     * <code>uint32 cur_score = 11;</code>
+     * <code>uint32 NHFGIBDCPGC = 11;</code>
+     * @return The nHFGIBDCPGC.
+     */
+    int getNHFGIBDCPGC();
+
+    /**
+     * <code>uint32 cur_score = 15;</code>
      * @return The curScore.
      */
     int getCurScore();
 
     /**
-     * <code>uint32 CGLDHPKMAGO = 8;</code>
-     * @return The cGLDHPKMAGO.
+     * <code>uint32 GIMCFEIADKI = 14;</code>
+     * @return The gIMCFEIADKI.
      */
-    int getCGLDHPKMAGO();
-
-    /**
-     * <code>uint32 AFJNAIOEMJG = 15;</code>
-     * @return The aFJNAIOEMJG.
-     */
-    int getAFJNAIOEMJG();
+    int getGIMCFEIADKI();
   }
   /**
    * <pre>
-   * Obf: DOFBIHDDOHI
+   * Obf: JNDKJNKIOLA
    * </pre>
    *
    * Protobuf type {@code SceneGalleryPacmanInfo}
@@ -91,24 +91,24 @@ public final class SceneGalleryPacmanInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
+            case 24: {
 
               startTime_ = input.readUInt32();
               break;
             }
-            case 64: {
-
-              cGLDHPKMAGO_ = input.readUInt32();
-              break;
-            }
             case 88: {
 
-              curScore_ = input.readUInt32();
+              nHFGIBDCPGC_ = input.readUInt32();
+              break;
+            }
+            case 112: {
+
+              gIMCFEIADKI_ = input.readUInt32();
               break;
             }
             case 120: {
 
-              aFJNAIOEMJG_ = input.readUInt32();
+              curScore_ = input.readUInt32();
               break;
             }
             default: {
@@ -143,10 +143,10 @@ public final class SceneGalleryPacmanInfoOuterClass {
               emu.grasscutter.net.proto.SceneGalleryPacmanInfoOuterClass.SceneGalleryPacmanInfo.class, emu.grasscutter.net.proto.SceneGalleryPacmanInfoOuterClass.SceneGalleryPacmanInfo.Builder.class);
     }
 
-    public static final int START_TIME_FIELD_NUMBER = 2;
+    public static final int START_TIME_FIELD_NUMBER = 3;
     private int startTime_;
     /**
-     * <code>uint32 start_time = 2;</code>
+     * <code>uint32 start_time = 3;</code>
      * @return The startTime.
      */
     @java.lang.Override
@@ -154,10 +154,21 @@ public final class SceneGalleryPacmanInfoOuterClass {
       return startTime_;
     }
 
-    public static final int CUR_SCORE_FIELD_NUMBER = 11;
+    public static final int NHFGIBDCPGC_FIELD_NUMBER = 11;
+    private int nHFGIBDCPGC_;
+    /**
+     * <code>uint32 NHFGIBDCPGC = 11;</code>
+     * @return The nHFGIBDCPGC.
+     */
+    @java.lang.Override
+    public int getNHFGIBDCPGC() {
+      return nHFGIBDCPGC_;
+    }
+
+    public static final int CUR_SCORE_FIELD_NUMBER = 15;
     private int curScore_;
     /**
-     * <code>uint32 cur_score = 11;</code>
+     * <code>uint32 cur_score = 15;</code>
      * @return The curScore.
      */
     @java.lang.Override
@@ -165,26 +176,15 @@ public final class SceneGalleryPacmanInfoOuterClass {
       return curScore_;
     }
 
-    public static final int CGLDHPKMAGO_FIELD_NUMBER = 8;
-    private int cGLDHPKMAGO_;
+    public static final int GIMCFEIADKI_FIELD_NUMBER = 14;
+    private int gIMCFEIADKI_;
     /**
-     * <code>uint32 CGLDHPKMAGO = 8;</code>
-     * @return The cGLDHPKMAGO.
+     * <code>uint32 GIMCFEIADKI = 14;</code>
+     * @return The gIMCFEIADKI.
      */
     @java.lang.Override
-    public int getCGLDHPKMAGO() {
-      return cGLDHPKMAGO_;
-    }
-
-    public static final int AFJNAIOEMJG_FIELD_NUMBER = 15;
-    private int aFJNAIOEMJG_;
-    /**
-     * <code>uint32 AFJNAIOEMJG = 15;</code>
-     * @return The aFJNAIOEMJG.
-     */
-    @java.lang.Override
-    public int getAFJNAIOEMJG() {
-      return aFJNAIOEMJG_;
+    public int getGIMCFEIADKI() {
+      return gIMCFEIADKI_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -202,16 +202,16 @@ public final class SceneGalleryPacmanInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (startTime_ != 0) {
-        output.writeUInt32(2, startTime_);
+        output.writeUInt32(3, startTime_);
       }
-      if (cGLDHPKMAGO_ != 0) {
-        output.writeUInt32(8, cGLDHPKMAGO_);
+      if (nHFGIBDCPGC_ != 0) {
+        output.writeUInt32(11, nHFGIBDCPGC_);
+      }
+      if (gIMCFEIADKI_ != 0) {
+        output.writeUInt32(14, gIMCFEIADKI_);
       }
       if (curScore_ != 0) {
-        output.writeUInt32(11, curScore_);
-      }
-      if (aFJNAIOEMJG_ != 0) {
-        output.writeUInt32(15, aFJNAIOEMJG_);
+        output.writeUInt32(15, curScore_);
       }
       unknownFields.writeTo(output);
     }
@@ -224,19 +224,19 @@ public final class SceneGalleryPacmanInfoOuterClass {
       size = 0;
       if (startTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, startTime_);
+          .computeUInt32Size(3, startTime_);
       }
-      if (cGLDHPKMAGO_ != 0) {
+      if (nHFGIBDCPGC_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, cGLDHPKMAGO_);
+          .computeUInt32Size(11, nHFGIBDCPGC_);
+      }
+      if (gIMCFEIADKI_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(14, gIMCFEIADKI_);
       }
       if (curScore_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, curScore_);
-      }
-      if (aFJNAIOEMJG_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, aFJNAIOEMJG_);
+          .computeUInt32Size(15, curScore_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -255,12 +255,12 @@ public final class SceneGalleryPacmanInfoOuterClass {
 
       if (getStartTime()
           != other.getStartTime()) return false;
+      if (getNHFGIBDCPGC()
+          != other.getNHFGIBDCPGC()) return false;
       if (getCurScore()
           != other.getCurScore()) return false;
-      if (getCGLDHPKMAGO()
-          != other.getCGLDHPKMAGO()) return false;
-      if (getAFJNAIOEMJG()
-          != other.getAFJNAIOEMJG()) return false;
+      if (getGIMCFEIADKI()
+          != other.getGIMCFEIADKI()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -274,12 +274,12 @@ public final class SceneGalleryPacmanInfoOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + START_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getStartTime();
+      hash = (37 * hash) + NHFGIBDCPGC_FIELD_NUMBER;
+      hash = (53 * hash) + getNHFGIBDCPGC();
       hash = (37 * hash) + CUR_SCORE_FIELD_NUMBER;
       hash = (53 * hash) + getCurScore();
-      hash = (37 * hash) + CGLDHPKMAGO_FIELD_NUMBER;
-      hash = (53 * hash) + getCGLDHPKMAGO();
-      hash = (37 * hash) + AFJNAIOEMJG_FIELD_NUMBER;
-      hash = (53 * hash) + getAFJNAIOEMJG();
+      hash = (37 * hash) + GIMCFEIADKI_FIELD_NUMBER;
+      hash = (53 * hash) + getGIMCFEIADKI();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -377,7 +377,7 @@ public final class SceneGalleryPacmanInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: DOFBIHDDOHI
+     * Obf: JNDKJNKIOLA
      * </pre>
      *
      * Protobuf type {@code SceneGalleryPacmanInfo}
@@ -419,11 +419,11 @@ public final class SceneGalleryPacmanInfoOuterClass {
         super.clear();
         startTime_ = 0;
 
+        nHFGIBDCPGC_ = 0;
+
         curScore_ = 0;
 
-        cGLDHPKMAGO_ = 0;
-
-        aFJNAIOEMJG_ = 0;
+        gIMCFEIADKI_ = 0;
 
         return this;
       }
@@ -452,9 +452,9 @@ public final class SceneGalleryPacmanInfoOuterClass {
       public emu.grasscutter.net.proto.SceneGalleryPacmanInfoOuterClass.SceneGalleryPacmanInfo buildPartial() {
         emu.grasscutter.net.proto.SceneGalleryPacmanInfoOuterClass.SceneGalleryPacmanInfo result = new emu.grasscutter.net.proto.SceneGalleryPacmanInfoOuterClass.SceneGalleryPacmanInfo(this);
         result.startTime_ = startTime_;
+        result.nHFGIBDCPGC_ = nHFGIBDCPGC_;
         result.curScore_ = curScore_;
-        result.cGLDHPKMAGO_ = cGLDHPKMAGO_;
-        result.aFJNAIOEMJG_ = aFJNAIOEMJG_;
+        result.gIMCFEIADKI_ = gIMCFEIADKI_;
         onBuilt();
         return result;
       }
@@ -506,14 +506,14 @@ public final class SceneGalleryPacmanInfoOuterClass {
         if (other.getStartTime() != 0) {
           setStartTime(other.getStartTime());
         }
+        if (other.getNHFGIBDCPGC() != 0) {
+          setNHFGIBDCPGC(other.getNHFGIBDCPGC());
+        }
         if (other.getCurScore() != 0) {
           setCurScore(other.getCurScore());
         }
-        if (other.getCGLDHPKMAGO() != 0) {
-          setCGLDHPKMAGO(other.getCGLDHPKMAGO());
-        }
-        if (other.getAFJNAIOEMJG() != 0) {
-          setAFJNAIOEMJG(other.getAFJNAIOEMJG());
+        if (other.getGIMCFEIADKI() != 0) {
+          setGIMCFEIADKI(other.getGIMCFEIADKI());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -546,7 +546,7 @@ public final class SceneGalleryPacmanInfoOuterClass {
 
       private int startTime_ ;
       /**
-       * <code>uint32 start_time = 2;</code>
+       * <code>uint32 start_time = 3;</code>
        * @return The startTime.
        */
       @java.lang.Override
@@ -554,7 +554,7 @@ public final class SceneGalleryPacmanInfoOuterClass {
         return startTime_;
       }
       /**
-       * <code>uint32 start_time = 2;</code>
+       * <code>uint32 start_time = 3;</code>
        * @param value The startTime to set.
        * @return This builder for chaining.
        */
@@ -565,7 +565,7 @@ public final class SceneGalleryPacmanInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 start_time = 2;</code>
+       * <code>uint32 start_time = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearStartTime() {
@@ -575,9 +575,40 @@ public final class SceneGalleryPacmanInfoOuterClass {
         return this;
       }
 
+      private int nHFGIBDCPGC_ ;
+      /**
+       * <code>uint32 NHFGIBDCPGC = 11;</code>
+       * @return The nHFGIBDCPGC.
+       */
+      @java.lang.Override
+      public int getNHFGIBDCPGC() {
+        return nHFGIBDCPGC_;
+      }
+      /**
+       * <code>uint32 NHFGIBDCPGC = 11;</code>
+       * @param value The nHFGIBDCPGC to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNHFGIBDCPGC(int value) {
+        
+        nHFGIBDCPGC_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 NHFGIBDCPGC = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearNHFGIBDCPGC() {
+        
+        nHFGIBDCPGC_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int curScore_ ;
       /**
-       * <code>uint32 cur_score = 11;</code>
+       * <code>uint32 cur_score = 15;</code>
        * @return The curScore.
        */
       @java.lang.Override
@@ -585,7 +616,7 @@ public final class SceneGalleryPacmanInfoOuterClass {
         return curScore_;
       }
       /**
-       * <code>uint32 cur_score = 11;</code>
+       * <code>uint32 cur_score = 15;</code>
        * @param value The curScore to set.
        * @return This builder for chaining.
        */
@@ -596,7 +627,7 @@ public final class SceneGalleryPacmanInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 cur_score = 11;</code>
+       * <code>uint32 cur_score = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearCurScore() {
@@ -606,64 +637,33 @@ public final class SceneGalleryPacmanInfoOuterClass {
         return this;
       }
 
-      private int cGLDHPKMAGO_ ;
+      private int gIMCFEIADKI_ ;
       /**
-       * <code>uint32 CGLDHPKMAGO = 8;</code>
-       * @return The cGLDHPKMAGO.
+       * <code>uint32 GIMCFEIADKI = 14;</code>
+       * @return The gIMCFEIADKI.
        */
       @java.lang.Override
-      public int getCGLDHPKMAGO() {
-        return cGLDHPKMAGO_;
+      public int getGIMCFEIADKI() {
+        return gIMCFEIADKI_;
       }
       /**
-       * <code>uint32 CGLDHPKMAGO = 8;</code>
-       * @param value The cGLDHPKMAGO to set.
+       * <code>uint32 GIMCFEIADKI = 14;</code>
+       * @param value The gIMCFEIADKI to set.
        * @return This builder for chaining.
        */
-      public Builder setCGLDHPKMAGO(int value) {
+      public Builder setGIMCFEIADKI(int value) {
         
-        cGLDHPKMAGO_ = value;
+        gIMCFEIADKI_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 CGLDHPKMAGO = 8;</code>
+       * <code>uint32 GIMCFEIADKI = 14;</code>
        * @return This builder for chaining.
        */
-      public Builder clearCGLDHPKMAGO() {
+      public Builder clearGIMCFEIADKI() {
         
-        cGLDHPKMAGO_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int aFJNAIOEMJG_ ;
-      /**
-       * <code>uint32 AFJNAIOEMJG = 15;</code>
-       * @return The aFJNAIOEMJG.
-       */
-      @java.lang.Override
-      public int getAFJNAIOEMJG() {
-        return aFJNAIOEMJG_;
-      }
-      /**
-       * <code>uint32 AFJNAIOEMJG = 15;</code>
-       * @param value The aFJNAIOEMJG to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAFJNAIOEMJG(int value) {
-        
-        aFJNAIOEMJG_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 AFJNAIOEMJG = 15;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearAFJNAIOEMJG() {
-        
-        aFJNAIOEMJG_ = 0;
+        gIMCFEIADKI_ = 0;
         onChanged();
         return this;
       }
@@ -735,9 +735,9 @@ public final class SceneGalleryPacmanInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\034SceneGalleryPacmanInfo.proto\"i\n\026SceneG" +
-      "alleryPacmanInfo\022\022\n\nstart_time\030\002 \001(\r\022\021\n\t" +
-      "cur_score\030\013 \001(\r\022\023\n\013CGLDHPKMAGO\030\010 \001(\r\022\023\n\013" +
-      "AFJNAIOEMJG\030\017 \001(\rB\033\n\031emu.grasscutter.net" +
+      "alleryPacmanInfo\022\022\n\nstart_time\030\003 \001(\r\022\023\n\013" +
+      "NHFGIBDCPGC\030\013 \001(\r\022\021\n\tcur_score\030\017 \001(\r\022\023\n\013" +
+      "GIMCFEIADKI\030\016 \001(\rB\033\n\031emu.grasscutter.net" +
       ".protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -749,7 +749,7 @@ public final class SceneGalleryPacmanInfoOuterClass {
     internal_static_SceneGalleryPacmanInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SceneGalleryPacmanInfo_descriptor,
-        new java.lang.String[] { "StartTime", "CurScore", "CGLDHPKMAGO", "AFJNAIOEMJG", });
+        new java.lang.String[] { "StartTime", "NHFGIBDCPGC", "CurScore", "GIMCFEIADKI", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
