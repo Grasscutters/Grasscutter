@@ -9,13 +9,12 @@ import emu.grasscutter.game.entity.EntityHomeAnimal;
 import emu.grasscutter.game.world.Position;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.net.proto.HomeSceneArrangementInfoOuterClass.HomeSceneArrangementInfo;
-
-import javax.annotation.Nullable;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.Collectors;
+import javax.annotation.Nullable;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
@@ -84,17 +83,16 @@ public class HomeSceneItem {
         return mainHouse == null || mainHouse.getAsItem() == null;
     }
 
-    @Nullable
-    public Position getTeleportPointPos(int guid) {
+    @Nullable public Position getTeleportPointPos(int guid) {
         var pos = new AtomicReference<Position>();
 
         this.getBlockItems().values().stream()
-            .map(HomeBlockItem::getDeployFurnitureList)
-            .flatMap(Collection::stream)
-            .filter(homeFurnitureItem -> homeFurnitureItem.getGuid() == guid)
-            .map(HomeFurnitureItem::getSpawnPos)
-            .findFirst()
-            .ifPresent(pos::set);
+                .map(HomeBlockItem::getDeployFurnitureList)
+                .flatMap(Collection::stream)
+                .filter(homeFurnitureItem -> homeFurnitureItem.getGuid() == guid)
+                .map(HomeFurnitureItem::getSpawnPos)
+                .findFirst()
+                .ifPresent(pos::set);
 
         return pos.get();
     }
