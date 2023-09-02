@@ -62,7 +62,11 @@ public class HomeSceneItem {
         this.bornRot = new Position(arrangementInfo.getBornRot());
         this.djinnPos = new Position(arrangementInfo.getDjinnPos());
         this.homeBgmId = arrangementInfo.getBgmId();
-        this.mainHouse = HomeFurnitureItem.parseFrom(arrangementInfo.getMainHouse());
+
+        if (!this.isRoom() && arrangementInfo.hasMainHouse()) {
+            this.mainHouse = HomeFurnitureItem.parseFrom(arrangementInfo.getMainHouse());
+        }
+
         this.tmpVersion = arrangementInfo.getTmpVersion();
     }
 

@@ -65,7 +65,7 @@ public class HomeFurnitureItem implements HomeMarkPointProtoFactory {
     }
 
     public ItemData getAsItem() {
-        return GameData.getItemDataMap().get(this.furnitureId);
+        return this.furnitureId == 0 ? null : GameData.getItemDataMap().get(this.furnitureId);
     }
 
     public int getComfort() {

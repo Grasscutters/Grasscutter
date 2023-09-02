@@ -1,10 +1,12 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.game.home.*;
+import emu.grasscutter.game.home.HomeBlockItem;
+import emu.grasscutter.game.home.HomeMarkPointProtoFactory;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.*;
 import java.util.Collection;
+import java.util.Set;
 
 public class PacketHomeMarkPointNotify extends BasePacket {
 
@@ -20,38 +22,40 @@ public class PacketHomeMarkPointNotify extends BasePacket {
             return;
         }
 
-        for (var moduleId : owner.getRealmList()) {
-            var homeScene = home.getHomeSceneItem(moduleId + 2000);
+        // send current home mark points.
+        var moduleId = owner.getCurrentRealmId();
+        var homeScene = home.getHomeSceneItem(moduleId + 2000);
+        var mainHouse = home.getMainHouseItem(moduleId + 2000);
 
-            var markPointData =
-                    HomeMarkPointSceneDataOuterClass.HomeMarkPointSceneData.newBuilder()
-                            .setModuleId(moduleId)
-                            .setSceneId(moduleId + 2000)
-                            .setSafePointPos(
-                                    homeScene.isRoom()
-                                            ? VectorOuterClass.Vector.newBuilder().build()
-                                            : world
-                                                    .getSceneById(moduleId + 2000)
-                                                    .getScriptManager()
-                                                    .getConfig()
-                                                    .born_pos
-                                                    .toProto())
-                            .setTeapotSpiritPos(
-                                    homeScene.isRoom()
-                                            ? VectorOuterClass.Vector.newBuilder().build()
-                                            : homeScene.getDjinnPos().toProto());
+        Set.of(homeScene, mainHouse)
+                .forEach(
+                        homeSceneItem -> {
+                            var markPointData =
+                                    HomeMarkPointSceneDataOuterClass.HomeMarkPointSceneData.newBuilder()
+                                            .setModuleId(moduleId)
+                                            .setSceneId(homeSceneItem.getSceneId());
 
-            var marks =
-                    homeScene.getBlockItems().values().stream()
-                            .map(HomeBlockItem::getMarkPointProtoFactories)
-                            .flatMap(Collection::stream)
-                            .filter(HomeMarkPointProtoFactory::isProtoConvertible)
-                            .map(HomeMarkPointProtoFactory::toMarkPointProto)
-                            .toList();
+                            if (!homeSceneItem.isRoom()) {
+                                var config = world.getSceneById(moduleId + 2000).getScriptManager().getConfig();
+                                markPointData
+                                        .setSafePointPos(
+                                                config == null
+                                                        ? homeSceneItem.getBornPos().toProto()
+                                                        : config.born_pos.toProto())
+                                        .setTeapotSpiritPos(homeSceneItem.getDjinnPos().toProto());
+                            }
 
-            markPointData.addAllFurnitureList(marks);
-            proto.addMarkPointDataList(markPointData);
-        }
+                            var marks =
+                                    homeSceneItem.getBlockItems().values().stream()
+                                            .map(HomeBlockItem::getMarkPointProtoFactories)
+                                            .flatMap(Collection::stream)
+                                            .filter(HomeMarkPointProtoFactory::isProtoConvertible)
+                                            .map(HomeMarkPointProtoFactory::toMarkPointProto)
+                                            .toList();
+
+                            markPointData.addAllFurnitureList(marks);
+                            proto.addMarkPointDataList(markPointData);
+                        });
 
         this.setData(proto);
     }

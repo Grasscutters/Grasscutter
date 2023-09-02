@@ -1,6 +1,8 @@
 package emu.grasscutter.server.packet.recv;
 
-import emu.grasscutter.net.packet.*;
+import emu.grasscutter.net.packet.Opcodes;
+import emu.grasscutter.net.packet.PacketHandler;
+import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.HomeSceneJumpReqOuterClass;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketHomeSceneJumpRsp;
@@ -22,7 +24,7 @@ public class HandlerHomeSceneJumpReq extends PacketHandler {
         var scene =
                 world.getSceneById(req.getIsEnterRoomScene() ? homeScene.getRoomSceneId() : realmId);
         var pos = scene.getScriptManager().getConfig().born_pos;
-        var rot = home.getSceneMap().get(scene.getId()).getBornRot();
+        var rot = home.getHomeSceneItem(scene.getId()).getBornRot();
 
         // Make player face correct direction when entering or exiting
         session.getPlayer().getRotation().set(rot);

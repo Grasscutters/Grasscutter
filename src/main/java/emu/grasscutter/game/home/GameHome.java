@@ -51,6 +51,7 @@ public class GameHome {
     int storedFetterExp;
     List<FurnitureMakeSlotItem> furnitureMakeSlotItemList;
     ConcurrentHashMap<Integer, HomeSceneItem> sceneMap;
+    ConcurrentHashMap<Integer, HomeSceneItem> mainHouseMap;
     Set<Integer> unlockedHomeBgmList;
     int enterHomeOption;
     Map<Integer, Set<Integer>> finishedTalkIdMap;
@@ -60,6 +61,9 @@ public class GameHome {
         if (home == null) {
             home = GameHome.create(uid);
         }
+
+        home.fixMainHouseIfOld();
+
         return home;
     }
 
@@ -72,9 +76,25 @@ public class GameHome {
                 .ownerUid(uid)
                 .level(1)
                 .sceneMap(new ConcurrentHashMap<>())
+                .mainHouseMap(new ConcurrentHashMap<>())
                 .unlockedHomeBgmList(new HashSet<>())
                 .finishedTalkIdMap(new HashMap<>())
                 .build();
+    }
+
+    // Data fixer.
+    private void fixMainHouseIfOld() {
+        if (this.getMainHouseMap() == null) {
+            Grasscutter.getLogger()
+                    .debug(
+                            "Player {}'s main house will be deleted due to GC update! (ps. sorry XD)",
+                            this.getPlayer().getUid());
+            this.mainHouseMap = new ConcurrentHashMap<>(); // assign.
+        }
+
+        this.getSceneMap().values().removeIf(homeSceneItem -> homeSceneItem.getSceneId() > 2200);
+
+        this.save();
     }
 
     public void save() {
@@ -82,6 +102,10 @@ public class GameHome {
     }
 
     public HomeSceneItem getHomeSceneItem(int sceneId) {
+        if (sceneId >= 2200) {
+            return this.getMainHouseItem(this.getPlayer().getCurrentRealmId() + 2000);
+        }
+
         return sceneMap.computeIfAbsent(
                 sceneId,
                 e -> {
@@ -98,8 +122,37 @@ public class GameHome {
                 });
     }
 
+    public HomeSceneItem getMainHouseItem(int outdoorSceneId) {
+        return this.getMainHouseMap()
+                .computeIfAbsent(
+                        outdoorSceneId,
+                        integer -> {
+                            var curHomeSceneItem = this.getHomeSceneItem(outdoorSceneId);
+                            var roomSceneId = curHomeSceneItem.getRoomSceneId();
+                            var defaultItem = GameData.getHomeworldDefaultSaveData().get(roomSceneId);
+                            if (defaultItem == null) {
+                                Grasscutter.getLogger().info("defaultItem == null! returns Liyue style house.");
+                                return HomeSceneItem.parseFrom(
+                                        GameData.getHomeworldDefaultSaveData().get(2202), 2202); // Liyue style
+                            }
+
+                            Grasscutter.getLogger()
+                                    .info(
+                                            "Set player {} main house {} to initial setting", this.ownerUid, roomSceneId);
+                            return HomeSceneItem.parseFrom(defaultItem, roomSceneId);
+                        });
+    }
+
+    public void onMainHouseChanged() {
+        Grasscutter.getLogger().debug("main house changed!");
+        var outdoor = this.getPlayer().getCurrentRealmId() + 2000;
+        this.getMainHouseMap().remove(outdoor); // delete main house in current scene.
+        this.getMainHouseItem(outdoor); // put new main house with default arrangement.
+        this.save();
+    }
+
     public void onOwnerLogin(Player player) {
-        if (this.player == null) this.player = player;
+        this.player = player; // update player pointer. (prevent offline player from sending packet)
         player.getSession().send(new PacketHomeBasicInfoNotify(player, false));
         player.getSession().send(new PacketPlayerHomeCompInfoNotify(player));
         player.getSession().send(new PacketHomeComfortInfoNotify(player));
@@ -273,10 +326,10 @@ public class GameHome {
                         });
 
         // Check as realm 5 inside is not in defaults and will be null
-        if (Objects.nonNull(sceneMap.get(player.getCurrentRealmId() + 2200))) {
+        if (Objects.nonNull(mainHouseMap.get(player.getCurrentRealmId() + 2000))) {
             // Indoors avatars
-            sceneMap
-                    .get(player.getCurrentRealmId() + 2200)
+            mainHouseMap
+                    .get(player.getCurrentRealmId() + 2000)
                     .getBlockItems()
                     .forEach(
                             (i, e) -> {

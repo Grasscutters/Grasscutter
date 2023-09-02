@@ -20,6 +20,12 @@ public class HandlerHomeChangeModuleReq extends PacketHandler {
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
         HomeChangeModuleReqOuterClass.HomeChangeModuleReq req =
                 HomeChangeModuleReqOuterClass.HomeChangeModuleReq.parseFrom(payload);
+
+        if (!session.getPlayer().getCurHomeWorld().getGuests().isEmpty()) {
+            session.send(new PacketHomeChangeModuleRsp());
+            return;
+        }
+
         session.getPlayer().setCurrentRealmId(req.getTargetModuleId());
         session.send(new PacketHomeAvatarTalkFinishInfoNotify(session.getPlayer()));
         session.send(new PacketHomeChangeModuleRsp(req.getTargetModuleId()));
