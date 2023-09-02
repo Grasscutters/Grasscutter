@@ -2,11 +2,18 @@ package emu.grasscutter.game.home;
 
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.EnterReason;
-import emu.grasscutter.game.world.*;
+import emu.grasscutter.game.world.Position;
+import emu.grasscutter.game.world.World;
 import emu.grasscutter.game.world.data.TeleportProperties;
-import emu.grasscutter.net.proto.*;
-import emu.grasscutter.server.event.player.*;
-import emu.grasscutter.server.game.*;
+import emu.grasscutter.net.proto.EnterTypeOuterClass;
+import emu.grasscutter.net.proto.OtherPlayerEnterHomeNotifyOuterClass;
+import emu.grasscutter.net.proto.PlayerApplyEnterHomeResultNotifyOuterClass;
+import emu.grasscutter.net.proto.RetcodeOuterClass;
+import emu.grasscutter.server.event.player.PlayerEnterHomeEvent;
+import emu.grasscutter.server.event.player.PlayerLeaveHomeEvent;
+import emu.grasscutter.server.event.player.PlayerTeleportEvent;
+import emu.grasscutter.server.game.BaseGameSystem;
+import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.packet.send.*;
 
 public class HomeWorldMPSystem extends BaseGameSystem {
@@ -98,10 +105,10 @@ public class HomeWorldMPSystem extends BaseGameSystem {
             return;
         }
 
-        this.enterHome(requester, owner);
+        this.enterHome(requester, owner, 0, false);
     }
 
-    public void enterHome(Player requester, Player owner) {
+    public void enterHome(Player requester, Player owner, int teleportPoint, boolean toSafe) {
         if (requester.getWorld().isMultiplayer()) {
             return;
         }
@@ -134,9 +141,16 @@ public class HomeWorldMPSystem extends BaseGameSystem {
         }
 
         int realmId = 2000 + owner.getCurrentRealmId();
-        targetHome.getHomeSceneItem(realmId);
+        var item = targetHome.getHomeSceneItem(realmId);
         targetHome.save();
-        var pos = world.getSceneById(realmId).getScriptManager().getConfig().born_pos;
+        var pos = toSafe ? world.getSceneById(realmId).getScriptManager().getConfig().born_pos : item.getBornPos();
+
+        if (teleportPoint != 0) {
+            var target = item.getTeleportPointPos(teleportPoint);
+            if (target != null) {
+                pos = target;
+            }
+        }
 
         requester.getPrevPosForHome().set(requester.getPosition());
         requester.setCurHomeWorld(world);
@@ -188,21 +202,12 @@ public class HomeWorldMPSystem extends BaseGameSystem {
         player.getPosition().set(pos);
         var world = new World(player);
         world.addPlayer(player, prevScene);
-        player
-                .getCurHomeWorld()
-                .sendPacketToHostIfOnline(
-                        new PacketOtherPlayerEnterOrLeaveHomeNotify(
-                                player,
-                                OtherPlayerEnterHomeNotifyOuterClass.OtherPlayerEnterHomeNotify.Reason.LEAVE));
-        player.setCurHomeWorld(this.server.getHomeWorldOrCreate(player));
+        player.getCurHomeWorld().sendPacketToHostIfOnline(new PacketOtherPlayerEnterOrLeaveHomeNotify(player, OtherPlayerEnterHomeNotifyOuterClass.OtherPlayerEnterHomeNotify.Reason.LEAVE));
+        var myHome = this.server.getHomeWorldOrCreate(player);
+        player.setCurHomeWorld(myHome);
+        myHome.getHome().onOwnerLogin(player);
 
-        player.sendPacket(
-                new PacketPlayerEnterSceneNotify(
-                        player,
-                        EnterTypeOuterClass.EnterType.ENTER_TYPE_BACK,
-                        EnterReason.TeamBack,
-                        prevScene,
-                        pos));
+        player.sendPacket(new PacketPlayerEnterSceneNotify(player, EnterTypeOuterClass.EnterType.ENTER_TYPE_BACK, EnterReason.TeamBack, prevScene, pos));
 
         return true;
     }
@@ -234,13 +239,10 @@ public class HomeWorldMPSystem extends BaseGameSystem {
         victim.getPosition().set(victim.getPrevPosForHome());
         var world = new World(victim);
         world.addPlayer(victim, 3);
-        victim
-                .getCurHomeWorld()
-                .sendPacketToHostIfOnline(
-                        new PacketOtherPlayerEnterOrLeaveHomeNotify(
-                                victim,
-                                OtherPlayerEnterHomeNotifyOuterClass.OtherPlayerEnterHomeNotify.Reason.LEAVE));
-        victim.setCurHomeWorld(this.server.getHomeWorldOrCreate(victim));
+        victim.getCurHomeWorld().sendPacketToHostIfOnline(new PacketOtherPlayerEnterOrLeaveHomeNotify(victim, OtherPlayerEnterHomeNotifyOuterClass.OtherPlayerEnterHomeNotify.Reason.LEAVE));
+        var myHome = this.server.getHomeWorldOrCreate(victim);
+        victim.setCurHomeWorld(myHome);
+        myHome.getHome().onOwnerLogin(victim);
 
         victim.sendPacket(
                 new PacketPlayerEnterSceneNotify(
