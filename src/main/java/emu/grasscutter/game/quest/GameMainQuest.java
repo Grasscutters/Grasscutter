@@ -16,11 +16,10 @@ import emu.grasscutter.net.proto.ChildQuestOuterClass.ChildQuest;
 import emu.grasscutter.net.proto.ParentQuestOuterClass.ParentQuest;
 import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.*;
-import lombok.*;
-import org.bson.types.ObjectId;
-
 import java.util.*;
 import java.util.stream.Collectors;
+import lombok.*;
+import org.bson.types.ObjectId;
 
 @Entity(value = "quests", useDiscriminator = false)
 public class GameMainQuest {
@@ -329,11 +328,12 @@ public class GameMainQuest {
     }
 
     /**
-     * Checks if the quest has a teleport position. Returns true if it does and adds the target position
-     * and rotation to the list.
+     * Checks if the quest has a teleport position. Returns true if it does and adds the target
+     * position and rotation to the list.
      *
      * @param subId The sub-quest ID.
-     * @param posAndRot A list which will contain the position and rotation if the quest has a teleport.
+     * @param posAndRot A list which will contain the position and rotation if the quest has a
+     *     teleport.
      * @return True if the quest has a teleport position. False otherwise.
      */
     public boolean hasTeleportPosition(int subId, List<Position> posAndRot) {

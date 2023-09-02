@@ -1,18 +1,17 @@
 package emu.grasscutter.plugin;
 
+import static emu.grasscutter.utils.lang.Language.translate;
+
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.server.event.*;
 import emu.grasscutter.utils.*;
-import lombok.*;
-
-import javax.annotation.Nullable;
 import java.io.*;
 import java.lang.reflect.Method;
 import java.net.*;
 import java.util.*;
 import java.util.jar.*;
-
-import static emu.grasscutter.utils.lang.Language.translate;
+import javax.annotation.Nullable;
+import lombok.*;
 
 /** Manages the server's plugins and the event system. */
 public final class PluginManager {
