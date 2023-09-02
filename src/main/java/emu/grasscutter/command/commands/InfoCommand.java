@@ -50,8 +50,8 @@ public final class InfoCommand implements CommandHandler {
             Player Count: %d
             Questing Enabled: %s
             Scripts Enabled: %s
-            Operating System: %s
             Using Fast Require: %s
+            Operating System: %s
             Resource Information: %s
 
             discord.gg/T5vZU6UyeG"""
