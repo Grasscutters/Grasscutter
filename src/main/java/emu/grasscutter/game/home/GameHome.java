@@ -12,7 +12,6 @@ import emu.grasscutter.game.props.SceneType;
 import emu.grasscutter.net.proto.HomeAvatarTalkFinishInfoOuterClass;
 import emu.grasscutter.server.packet.send.*;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-
 import java.time.ZonedDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
@@ -70,12 +69,12 @@ public class GameHome {
 
     public static GameHome create(Integer uid) {
         return GameHome.of()
-            .ownerUid(uid)
-            .level(1)
-            .sceneMap(new ConcurrentHashMap<>())
-            .unlockedHomeBgmList(new HashSet<>())
-            .finishedTalkIdMap(new HashMap<>())
-            .build();
+                .ownerUid(uid)
+                .level(1)
+                .sceneMap(new ConcurrentHashMap<>())
+                .unlockedHomeBgmList(new HashSet<>())
+                .finishedTalkIdMap(new HashMap<>())
+                .build();
     }
 
     public void save() {
@@ -157,17 +156,21 @@ public class GameHome {
         return this.finishedTalkIdMap.get(avatarId);
     }
 
-    public List<HomeAvatarTalkFinishInfoOuterClass.HomeAvatarTalkFinishInfo> toAvatarTalkFinishInfoProto() {
+    public List<HomeAvatarTalkFinishInfoOuterClass.HomeAvatarTalkFinishInfo>
+            toAvatarTalkFinishInfoProto() {
         if (this.finishedTalkIdMap == null) {
             this.finishedTalkIdMap = new HashMap<>();
         }
 
-        return this.finishedTalkIdMap.entrySet().stream().map(e -> {
-            return HomeAvatarTalkFinishInfoOuterClass.HomeAvatarTalkFinishInfo.newBuilder()
-                .setAvatarId(e.getKey())
-                .addAllFinishTalkIdList(e.getValue())
-                .build();
-        }).toList();
+        return this.finishedTalkIdMap.entrySet().stream()
+                .map(
+                        e -> {
+                            return HomeAvatarTalkFinishInfoOuterClass.HomeAvatarTalkFinishInfo.newBuilder()
+                                    .setAvatarId(e.getKey())
+                                    .addAllFinishTalkIdList(e.getValue())
+                                    .build();
+                        })
+                .toList();
     }
 
     public boolean addUnlockedHomeBgm(int homeBgmId) {

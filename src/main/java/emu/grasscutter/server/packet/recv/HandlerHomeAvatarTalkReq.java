@@ -13,7 +13,12 @@ public class HandlerHomeAvatarTalkReq extends PacketHandler {
     @Override
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
         var req = HomeAvatarTalkReqOuterClass.HomeAvatarTalkReq.parseFrom(payload);
-        var talkIdSet = session.getPlayer().getCurHomeWorld().getHome().onTalkedWithAvatar(req.getAvatarId(), req.getTalkId());
+        var talkIdSet =
+                session
+                        .getPlayer()
+                        .getCurHomeWorld()
+                        .getHome()
+                        .onTalkedWithAvatar(req.getAvatarId(), req.getTalkId());
         session.send(new PacketHomeAvatarTalkFinishInfoNotify(session.getPlayer()));
         session.send(new PacketHomeAvatarTalkRsp(req.getAvatarId(), talkIdSet));
     }

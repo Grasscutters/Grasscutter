@@ -9,7 +9,8 @@ public class PacketHomeAvatarTalkFinishInfoNotify extends BasePacket {
     public PacketHomeAvatarTalkFinishInfoNotify(Player homeOwner) {
         super(PacketOpcodes.HomeAvatarTalkFinishInfoNotify);
 
-        this.setData(HomeAvatarTalkFinishInfoNotifyOuterClass.HomeAvatarTalkFinishInfoNotify.newBuilder()
-            .addAllAvatarTalkInfoList(homeOwner.getHome().toAvatarTalkFinishInfoProto()));
+        this.setData(
+                HomeAvatarTalkFinishInfoNotifyOuterClass.HomeAvatarTalkFinishInfoNotify.newBuilder()
+                        .addAllAvatarTalkInfoList(homeOwner.getHome().toAvatarTalkFinishInfoProto()));
     }
 }
