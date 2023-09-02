@@ -2,9 +2,8 @@ package emu.grasscutter.data.excels.dungeon;
 
 import emu.grasscutter.data.*;
 import it.unimi.dsi.fastutil.ints.*;
-import lombok.Getter;
-
 import java.util.Calendar;
+import lombok.Getter;
 
 @ResourceType(name = "DailyDungeonConfigData.json")
 public class DailyDungeonData extends GameResource {

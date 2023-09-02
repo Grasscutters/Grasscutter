@@ -3,14 +3,13 @@ package emu.grasscutter.scripts.serializer;
 import com.esotericsoftware.reflectasm.*;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.scripts.ScriptUtils;
+import java.lang.reflect.*;
+import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 import org.jetbrains.annotations.Nullable;
 import org.luaj.vm2.*;
-
-import java.lang.reflect.*;
-import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
 
 public class LuaSerializer implements Serializer {
 

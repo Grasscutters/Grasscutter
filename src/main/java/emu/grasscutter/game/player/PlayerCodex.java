@@ -6,9 +6,8 @@ import emu.grasscutter.data.excels.codex.CodexAnimalData;
 import emu.grasscutter.game.entity.*;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.server.packet.send.PacketCodexDataUpdateNotify;
-import lombok.*;
-
 import java.util.*;
+import lombok.*;
 
 @Entity
 public class PlayerCodex {

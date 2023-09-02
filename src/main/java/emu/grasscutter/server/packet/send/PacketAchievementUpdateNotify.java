@@ -3,7 +3,6 @@ package emu.grasscutter.server.packet.send;
 import emu.grasscutter.game.achievement.Achievement;
 import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.AchievementUpdateNotifyOuterClass;
-
 import java.util.List;
 
 public class PacketAchievementUpdateNotify extends BasePacket {

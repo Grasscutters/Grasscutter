@@ -6,7 +6,6 @@ import emu.grasscutter.game.entity.EntityItem;
 import emu.grasscutter.game.player.*;
 import emu.grasscutter.game.world.*;
 import emu.grasscutter.net.proto.*;
-
 import java.util.*;
 
 public class DeforestationManager extends BasePlayerManager {

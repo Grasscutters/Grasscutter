@@ -4,7 +4,6 @@ import emu.grasscutter.data.binout.SceneNpcBornEntry;
 import emu.grasscutter.game.quest.QuestGroupSuite;
 import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.GroupSuiteNotifyOuterClass;
-
 import java.util.*;
 
 public class PacketGroupSuiteNotify extends BasePacket {

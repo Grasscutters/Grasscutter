@@ -8,7 +8,6 @@ import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.GetHomeLevelUpRewardReqOuterClass.GetHomeLevelUpRewardReq;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketGetHomeLevelUpRewardRsp;
-
 import java.util.*;
 
 @Opcodes(PacketOpcodes.GetHomeLevelUpRewardReq)

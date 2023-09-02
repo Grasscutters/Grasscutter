@@ -4,7 +4,6 @@ import emu.grasscutter.game.quest.BargainRecord;
 import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.GetAllActivatedBargainDataRspOuterClass.GetAllActivatedBargainDataRsp;
 import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
-
 import java.util.Collection;
 
 public final class PacketGetAllActivatedBargainDataRsp extends BasePacket {

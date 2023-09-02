@@ -21,10 +21,9 @@ import emu.grasscutter.net.proto.SceneReliquaryInfoOuterClass.SceneReliquaryInfo
 import emu.grasscutter.net.proto.SceneWeaponInfoOuterClass.SceneWeaponInfo;
 import emu.grasscutter.net.proto.WeaponOuterClass.Weapon;
 import emu.grasscutter.utils.objects.WeightedList;
+import java.util.*;
 import lombok.*;
 import org.bson.types.ObjectId;
-
-import java.util.*;
 
 @Entity(value = "items", useDiscriminator = false)
 public class GameItem {

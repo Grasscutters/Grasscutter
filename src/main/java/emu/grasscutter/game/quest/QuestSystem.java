@@ -26,12 +26,9 @@ public final class QuestSystem extends BaseGameSystem {
     }
 
     public void registerHandlers() {
-        this.registerHandlers(
-                this.condHandlers, BaseCondition.class);
-        this.registerHandlers(
-                this.contHandlers, BaseContent.class);
-        this.registerHandlers(
-                this.execHandlers, QuestExecHandler.class);
+        this.registerHandlers(this.condHandlers, BaseCondition.class);
+        this.registerHandlers(this.contHandlers, BaseContent.class);
+        this.registerHandlers(this.execHandlers, QuestExecHandler.class);
     }
 
     public <T> void registerHandlers(Int2ObjectMap<T> map, Class<T> clazz) {
@@ -43,7 +40,8 @@ public final class QuestSystem extends BaseGameSystem {
 
     public <T> void registerHandler(Int2ObjectMap<T> map, Class<? extends T> handlerClass) {
         try {
-            int value; if (handlerClass.isAnnotationPresent(QuestValueExec.class)) {
+            int value;
+            if (handlerClass.isAnnotationPresent(QuestValueExec.class)) {
                 QuestValueExec opcode = handlerClass.getAnnotation(QuestValueExec.class);
                 value = opcode.value().getValue();
             } else if (handlerClass.isAnnotationPresent(QuestValueContent.class)) {
@@ -62,7 +60,8 @@ public final class QuestSystem extends BaseGameSystem {
 
             map.put(value, handlerClass.getDeclaredConstructor().newInstance());
         } catch (Exception e) {
-            Grasscutter.getLogger().warn("Unable to register handler {}.", handlerClass.getSimpleName(), e);
+            Grasscutter.getLogger()
+                    .warn("Unable to register handler {}.", handlerClass.getSimpleName(), e);
         }
     }
 

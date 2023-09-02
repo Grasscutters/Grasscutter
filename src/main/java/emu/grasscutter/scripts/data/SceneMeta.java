@@ -4,11 +4,10 @@ import com.github.davidmoten.rtreemulti.RTree;
 import com.github.davidmoten.rtreemulti.geometry.Geometry;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.scripts.*;
-import lombok.*;
-
-import javax.script.*;
 import java.util.*;
 import java.util.stream.Collectors;
+import javax.script.*;
+import lombok.*;
 
 @ToString
 @Setter

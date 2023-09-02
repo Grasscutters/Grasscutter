@@ -2,10 +2,9 @@ package emu.grasscutter.game.world;
 
 import com.github.davidmoten.rtreemulti.geometry.Point;
 import dev.morphia.annotations.Entity;
-import lombok.*;
-
 import java.io.*;
 import java.util.List;
+import lombok.*;
 
 @Entity
 public final class GridPosition implements Serializable {

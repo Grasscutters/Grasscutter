@@ -2,7 +2,6 @@ package emu.grasscutter.scripts;
 
 import com.github.davidmoten.rtreemulti.*;
 import com.github.davidmoten.rtreemulti.geometry.*;
-
 import java.util.*;
 import java.util.function.Function;
 

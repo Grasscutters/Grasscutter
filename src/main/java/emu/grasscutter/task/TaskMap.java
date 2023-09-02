@@ -1,11 +1,10 @@
 package emu.grasscutter.task;
 
 import emu.grasscutter.Grasscutter;
+import java.util.*;
 import org.quartz.*;
 import org.quartz.impl.StdSchedulerFactory;
 import org.reflections.Reflections;
-
-import java.util.*;
 
 @SuppressWarnings({"UnusedReturnValue", "unused"})
 public final class TaskMap {

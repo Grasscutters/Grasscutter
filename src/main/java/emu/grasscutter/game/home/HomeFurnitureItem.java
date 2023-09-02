@@ -5,16 +5,13 @@ import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.binout.HomeworldDefaultSaveData;
 import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.game.world.Position;
-import emu.grasscutter.net.proto.HomeFurnitureDataOuterClass;
-import emu.grasscutter.net.proto.HomeMarkPointFurnitureDataOuterClass;
-import lombok.AccessLevel;
-import lombok.Builder;
-import lombok.Data;
-import lombok.experimental.FieldDefaults;
-import org.jetbrains.annotations.Nullable;
 
+import emu.grasscutter.net.proto.*;
 import java.util.Set;
 import java.util.stream.Collectors;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
+import org.jetbrains.annotations.Nullable;
 
 @Entity
 @Data
@@ -23,11 +20,11 @@ import java.util.stream.Collectors;
 public class HomeFurnitureItem implements HomeMarkPointProtoFactory {
     public static final int PAIMON_FURNITURE_ID = 368134;
     public static final int TELEPORT_FURNITURE_ID = 373501;
-    public static final Set<Integer> APARTMENT_FURNITURE_ID_SET = GameData.getItemDataMap().values()
-        .stream()
-        .filter(itemData -> itemData.getSpecialFurnitureType() == SpecialFurnitureType.Apartment)
-        .map(ItemData::getId)
-        .collect(Collectors.toUnmodifiableSet());
+    public static final Set<Integer> APARTMENT_FURNITURE_ID_SET =
+            GameData.getItemDataMap().values().stream()
+                    .filter(itemData -> itemData.getSpecialFurnitureType() == SpecialFurnitureType.Apartment)
+                    .map(ItemData::getId)
+                    .collect(Collectors.toUnmodifiableSet());
 
     int furnitureId;
     int guid;
@@ -81,8 +78,7 @@ public class HomeFurnitureItem implements HomeMarkPointProtoFactory {
         return item.getComfort();
     }
 
-    @Nullable
-    @Override
+    @Nullable @Override
     public HomeMarkPointFurnitureDataOuterClass.HomeMarkPointFurnitureData toMarkPointProto() {
         var type = this.adjustByFurnitureId();
         if (type == SpecialFurnitureType.NOT_SPECIAL) {
@@ -90,11 +86,11 @@ public class HomeFurnitureItem implements HomeMarkPointProtoFactory {
         }
 
         return HomeMarkPointFurnitureDataOuterClass.HomeMarkPointFurnitureData.newBuilder()
-            .setFurnitureId(this.furnitureId)
-            .setFurnitureType(type.getValue())
-            .setPos(this.spawnPos.toProto())
-            .setGuid(this.guid)
-            .build();
+                .setFurnitureId(this.furnitureId)
+                .setFurnitureType(type.getValue())
+                .setPos(this.spawnPos.toProto())
+                .setGuid(this.guid)
+                .build();
     }
 
     @Override
@@ -102,7 +98,9 @@ public class HomeFurnitureItem implements HomeMarkPointProtoFactory {
         return switch (this.furnitureId) {
             case PAIMON_FURNITURE_ID -> SpecialFurnitureType.Paimon;
             case TELEPORT_FURNITURE_ID -> SpecialFurnitureType.TeleportPoint;
-            default -> APARTMENT_FURNITURE_ID_SET.contains(this.furnitureId) ? SpecialFurnitureType.Apartment : SpecialFurnitureType.NOT_SPECIAL;
+            default -> APARTMENT_FURNITURE_ID_SET.contains(this.furnitureId)
+                    ? SpecialFurnitureType.Apartment
+                    : SpecialFurnitureType.NOT_SPECIAL;
         };
     }
 }

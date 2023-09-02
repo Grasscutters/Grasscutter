@@ -8,7 +8,6 @@ import emu.grasscutter.net.proto.*;
 import emu.grasscutter.net.proto.ShopGoodsOuterClass.ShopGoods;
 import emu.grasscutter.net.proto.ShopOuterClass.Shop;
 import emu.grasscutter.utils.Utils;
-
 import java.util.*;
 import java.util.stream.Collectors;
 

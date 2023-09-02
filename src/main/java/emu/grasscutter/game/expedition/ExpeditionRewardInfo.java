@@ -1,8 +1,7 @@
 package emu.grasscutter.game.expedition;
 
-import lombok.Getter;
-
 import java.util.List;
+import lombok.Getter;
 
 public class ExpeditionRewardInfo {
     @Getter private int expId;

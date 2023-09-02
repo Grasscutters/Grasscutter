@@ -3,9 +3,8 @@ package emu.grasscutter.game.entity.gadget.platform;
 import emu.grasscutter.game.world.Position;
 import emu.grasscutter.net.proto.*;
 import emu.grasscutter.scripts.data.SceneGadget;
-import lombok.*;
-
 import java.util.*;
+import lombok.*;
 
 public class ConfigRoute extends BaseRoute {
 

@@ -1,8 +1,8 @@
 package emu.grasscutter.game.quest.conditions;
 
-import emu.grasscutter.game.quest.QuestValueCond;
-
 import static emu.grasscutter.game.quest.enums.QuestCond.QUEST_COND_QUEST_VAR_GREATER;
+
+import emu.grasscutter.game.quest.QuestValueCond;
 
 @QuestValueCond(QUEST_COND_QUEST_VAR_GREATER)
 public class ConditionQuestVarGreater extends BaseConditionQuestVar {

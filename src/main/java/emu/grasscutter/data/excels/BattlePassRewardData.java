@@ -1,9 +1,8 @@
 package emu.grasscutter.data.excels;
 
 import emu.grasscutter.data.*;
-import lombok.Getter;
-
 import java.util.List;
+import lombok.Getter;
 
 @ResourceType(name = "BattlePassRewardExcelConfigData.json")
 @Getter

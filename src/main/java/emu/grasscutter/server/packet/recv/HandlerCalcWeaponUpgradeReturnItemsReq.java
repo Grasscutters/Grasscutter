@@ -5,7 +5,6 @@ import emu.grasscutter.net.proto.CalcWeaponUpgradeReturnItemsReqOuterClass.CalcW
 import emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketCalcWeaponUpgradeReturnItemsRsp;
-
 import java.util.List;
 
 @Opcodes(PacketOpcodes.CalcWeaponUpgradeReturnItemsReq)

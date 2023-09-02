@@ -1,7 +1,6 @@
 package emu.grasscutter.game.player;
 
 import dev.morphia.annotations.Entity;
-
 import java.util.*;
 
 @Entity(useDiscriminator = false)

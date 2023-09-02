@@ -1,14 +1,13 @@
 package emu.grasscutter.command.commands;
 
+import static emu.grasscutter.utils.lang.Language.translate;
+
 import emu.grasscutter.command.*;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.packet.send.PacketAvatarFetterDataNotify;
-
 import java.util.List;
-
-import static emu.grasscutter.utils.lang.Language.translate;
 
 @Command(
         label = "setFetterLevel",

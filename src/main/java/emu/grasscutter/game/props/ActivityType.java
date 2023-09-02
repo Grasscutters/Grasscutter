@@ -1,10 +1,9 @@
 package emu.grasscutter.game.props;
 
 import it.unimi.dsi.fastutil.ints.*;
-import lombok.*;
-
 import java.util.*;
 import java.util.stream.Stream;
+import lombok.*;
 
 @Getter
 @AllArgsConstructor

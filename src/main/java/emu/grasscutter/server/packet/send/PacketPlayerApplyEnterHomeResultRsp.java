@@ -7,8 +7,9 @@ public class PacketPlayerApplyEnterHomeResultRsp extends BasePacket {
     public PacketPlayerApplyEnterHomeResultRsp(int uid, boolean agreed) {
         super(PacketOpcodes.PlayerApplyEnterHomeResultRsp);
 
-        this.setData(PlayerApplyEnterHomeResultRspOuterClass.PlayerApplyEnterHomeResultRsp.newBuilder()
-            .setApplyUid(uid)
-            .setIsAgreed(agreed));
+        this.setData(
+                PlayerApplyEnterHomeResultRspOuterClass.PlayerApplyEnterHomeResultRsp.newBuilder()
+                        .setApplyUid(uid)
+                        .setIsAgreed(agreed));
     }
 }

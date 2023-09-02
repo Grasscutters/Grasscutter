@@ -2,9 +2,8 @@ package emu.grasscutter.data.excels.trial;
 
 import emu.grasscutter.data.*;
 import emu.grasscutter.data.common.BaseTrialActivityData;
-import lombok.*;
-
 import java.util.List;
+import lombok.*;
 
 @ResourceType(name = "TrialAvatarActivityExcelConfigData.json")
 @EqualsAndHashCode(callSuper = false)

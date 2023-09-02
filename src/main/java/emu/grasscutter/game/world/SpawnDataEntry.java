@@ -1,9 +1,8 @@
 package emu.grasscutter.game.world;
 
 import emu.grasscutter.data.GameDepot;
-import lombok.*;
-
 import java.util.*;
+import lombok.*;
 
 public class SpawnDataEntry {
     @Getter @Setter private transient SpawnGroupEntry group;

@@ -3,8 +3,12 @@ package emu.grasscutter.game.home;
 import dev.morphia.annotations.Entity;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.game.world.Position;
-import emu.grasscutter.net.proto.*;
-import lombok.*;
+import emu.grasscutter.net.proto.HomeMarkPointFurnitureDataOuterClass;
+import emu.grasscutter.net.proto.HomeMarkPointNPCDataOuterClass;
+import emu.grasscutter.net.proto.HomeNpcDataOuterClass;
+import lombok.AccessLevel;
+import lombok.Builder;
+import lombok.Data;
 import lombok.experimental.FieldDefaults;
 import org.jetbrains.annotations.Nullable;
 
@@ -21,20 +25,19 @@ public class HomeNPCItem implements HomeMarkPointProtoFactory {
 
     public static HomeNPCItem parseFrom(HomeNpcDataOuterClass.HomeNpcData homeNpcData) {
         return HomeNPCItem.of()
-            .avatarId(homeNpcData.getAvatarId())
-            .spawnPos(new Position(homeNpcData.getSpawnPos()))
-            .spawnRot(new Position(homeNpcData.getSpawnRot()))
-            .costumeId(homeNpcData.getCostumeId())
-            .build();
+                .avatarId(homeNpcData.getAvatarId())
+                .spawnPos(new Position(homeNpcData.getSpawnPos()))
+                .spawnRot(new Position(homeNpcData.getSpawnRot()))
+                .build();
     }
 
     public HomeNpcDataOuterClass.HomeNpcData toProto() {
         return HomeNpcDataOuterClass.HomeNpcData.newBuilder()
-            .setAvatarId(avatarId)
-            .setSpawnPos(spawnPos.toProto())
-            .setSpawnRot(spawnRot.toProto())
-            .setCostumeId(costumeId)
-            .build();
+                .setAvatarId(avatarId)
+                .setSpawnPos(spawnPos.toProto())
+                .setSpawnRot(spawnRot.toProto())
+                .setCostumeId(costumeId)
+                .build();
     }
 
     public int getFurnitureId() {
@@ -46,18 +49,18 @@ public class HomeNPCItem implements HomeMarkPointProtoFactory {
         return this.furnitureId;
     }
 
-    @Nullable
-    @Override
+    @Nullable @Override
     public HomeMarkPointFurnitureDataOuterClass.HomeMarkPointFurnitureData toMarkPointProto() {
         return HomeMarkPointFurnitureDataOuterClass.HomeMarkPointFurnitureData.newBuilder()
-            .setFurnitureId(this.getFurnitureId())
-            .setFurnitureType(this.getType().getValue())
-            .setPos(this.spawnPos.toProto())
-            .setNpcData(HomeMarkPointNPCDataOuterClass.HomeMarkPointNPCData.newBuilder()
-                .setAvatarId(this.avatarId)
-                .setCostumeId(this.costumeId)
-                .build())
-            .build();
+                .setFurnitureId(this.getFurnitureId())
+                .setFurnitureType(this.getType().getValue())
+                .setPos(this.spawnPos.toProto())
+                .setNpcData(
+                        HomeMarkPointNPCDataOuterClass.HomeMarkPointNPCData.newBuilder()
+                                .setAvatarId(this.avatarId)
+                                .setCostumeId(this.costumeId)
+                                .build())
+                .build();
     }
 
     @Override

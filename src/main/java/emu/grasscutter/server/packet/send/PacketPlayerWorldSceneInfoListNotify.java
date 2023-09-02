@@ -6,7 +6,6 @@ import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.MapLayerInfoOuterClass;
 import emu.grasscutter.net.proto.PlayerWorldSceneInfoListNotifyOuterClass.PlayerWorldSceneInfoListNotify;
 import emu.grasscutter.net.proto.PlayerWorldSceneInfoOuterClass.PlayerWorldSceneInfo;
-
 import java.util.stream.IntStream;
 
 public class PacketPlayerWorldSceneInfoListNotify extends BasePacket {

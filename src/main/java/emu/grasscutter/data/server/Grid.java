@@ -5,7 +5,6 @@ import com.github.davidmoten.rtreemulti.geometry.Geometry;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.world.*;
 import emu.grasscutter.scripts.SceneIndexManager;
-
 import java.util.*;
 
 public class Grid {

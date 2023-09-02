@@ -1,5 +1,9 @@
 package emu.grasscutter.command.commands;
 
+import static emu.grasscutter.command.CommandHelpers.*;
+import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
+import static emu.grasscutter.utils.lang.Language.translate;
+
 import emu.grasscutter.command.*;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.*;
@@ -8,15 +12,10 @@ import emu.grasscutter.game.entity.*;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.*;
 import emu.grasscutter.game.world.*;
-import lombok.Setter;
-
 import java.util.*;
 import java.util.function.BiConsumer;
 import java.util.regex.Pattern;
-
-import static emu.grasscutter.command.CommandHelpers.*;
-import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
-import static emu.grasscutter.utils.lang.Language.translate;
+import lombok.Setter;
 
 @Command(
         label = "spawn",

@@ -4,7 +4,6 @@ import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.SceneAudioNotifyOuterClass.SceneAudioNotify;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketSceneAudioNotify;
-
 import java.util.List;
 
 @Opcodes(PacketOpcodes.SceneAudioNotify)

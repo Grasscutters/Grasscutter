@@ -1,5 +1,8 @@
 package emu.grasscutter.command.commands;
 
+import static emu.grasscutter.GameConstants.*;
+import static emu.grasscutter.command.CommandHelpers.*;
+
 import emu.grasscutter.command.*;
 import emu.grasscutter.data.*;
 import emu.grasscutter.data.excels.ItemData;
@@ -9,14 +12,10 @@ import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.inventory.*;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.*;
-import lombok.Setter;
-
 import java.util.*;
 import java.util.function.BiConsumer;
 import java.util.regex.Pattern;
-
-import static emu.grasscutter.GameConstants.*;
-import static emu.grasscutter.command.CommandHelpers.*;
+import lombok.Setter;
 
 @Command(
         label = "give",

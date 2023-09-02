@@ -3,7 +3,6 @@ package emu.grasscutter.server.packet.send;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.ReliquaryUpgradeRspOuterClass.ReliquaryUpgradeRsp;
-
 import java.util.List;
 
 public class PacketReliquaryUpgradeRsp extends BasePacket {

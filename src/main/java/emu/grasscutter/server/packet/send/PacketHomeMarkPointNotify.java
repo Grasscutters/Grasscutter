@@ -3,11 +3,9 @@ package emu.grasscutter.server.packet.send;
 import emu.grasscutter.game.home.HomeBlockItem;
 import emu.grasscutter.game.home.HomeMarkPointProtoFactory;
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.net.packet.BasePacket;
-import emu.grasscutter.net.packet.PacketOpcodes;
-import emu.grasscutter.net.proto.HomeMarkPointNotifyOuterClass;
-import emu.grasscutter.net.proto.HomeMarkPointSceneDataOuterClass;
 
+import emu.grasscutter.net.packet.*;
+import emu.grasscutter.net.proto.*;
 import java.util.Collection;
 import java.util.Set;
 
