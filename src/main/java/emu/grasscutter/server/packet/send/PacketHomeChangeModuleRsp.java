@@ -22,7 +22,8 @@ public class PacketHomeChangeModuleRsp extends BasePacket {
     public PacketHomeChangeModuleRsp() {
         super(PacketOpcodes.HomeChangeModuleRsp);
 
-        this.setData(HomeChangeModuleRspOuterClass.HomeChangeModuleRsp.newBuilder()
-            .setRetcode(RetcodeOuterClass.Retcode.RET_HOME_HAS_GUEST_VALUE));
+        this.setData(
+                HomeChangeModuleRspOuterClass.HomeChangeModuleRsp.newBuilder()
+                        .setRetcode(RetcodeOuterClass.Retcode.RET_HOME_HAS_GUEST_VALUE));
     }
 }

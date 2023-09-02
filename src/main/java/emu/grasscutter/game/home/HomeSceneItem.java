@@ -9,7 +9,6 @@ import emu.grasscutter.game.entity.EntityHomeAnimal;
 import emu.grasscutter.game.world.Position;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.net.proto.HomeSceneArrangementInfoOuterClass.HomeSceneArrangementInfo;
-
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;

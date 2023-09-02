@@ -8,7 +8,6 @@ import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.HomeChangeModuleReqOuterClass;
 import emu.grasscutter.server.event.player.PlayerTeleportEvent.TeleportType;
 import emu.grasscutter.server.game.GameSession;
-
 import emu.grasscutter.server.packet.send.PacketHomeAvatarTalkFinishInfoNotify;
 import emu.grasscutter.server.packet.send.PacketHomeChangeModuleRsp;
 import emu.grasscutter.server.packet.send.PacketHomeComfortInfoNotify;
