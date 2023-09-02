@@ -9,8 +9,10 @@ import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.SceneType;
+import emu.grasscutter.net.proto.HomeAvatarTalkFinishInfoOuterClass;
 import emu.grasscutter.server.packet.send.*;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+
 import java.time.ZonedDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
@@ -52,6 +54,7 @@ public class GameHome {
     ConcurrentHashMap<Integer, HomeSceneItem> sceneMap;
     Set<Integer> unlockedHomeBgmList;
     int enterHomeOption;
+    Map<Integer, Set<Integer>> finishedTalkIdMap;
 
     public static GameHome getByUid(Integer uid) {
         var home = DatabaseHelper.getHomeByUid(uid);
@@ -67,11 +70,12 @@ public class GameHome {
 
     public static GameHome create(Integer uid) {
         return GameHome.of()
-                .ownerUid(uid)
-                .level(1)
-                .sceneMap(new ConcurrentHashMap<>())
-                .unlockedHomeBgmList(new HashSet<>())
-                .build();
+            .ownerUid(uid)
+            .level(1)
+            .sceneMap(new ConcurrentHashMap<>())
+            .unlockedHomeBgmList(new HashSet<>())
+            .finishedTalkIdMap(new HashMap<>())
+            .build();
     }
 
     public void save() {
@@ -102,6 +106,7 @@ public class GameHome {
         player.getSession().send(new PacketHomeComfortInfoNotify(player));
         player.getSession().send(new PacketFurnitureCurModuleArrangeCountNotify());
         player.getSession().send(new PacketHomeMarkPointNotify(player));
+        player.getSession().send(new PacketHomeAvatarTalkFinishInfoNotify(player));
         player.getSession().send(new PacketHomeAllUnlockedBgmIdListNotify(player));
         checkAccumulatedResources(player);
         player.getSession().send(new PacketHomeResourceNotify(player));
@@ -139,6 +144,30 @@ public class GameHome {
 
     public HomeWorldLevelData getLevelData() {
         return GameData.getHomeWorldLevelDataMap().get(level);
+    }
+
+    public Set<Integer> onTalkedWithAvatar(int avatarId, int talkId) {
+        if (this.finishedTalkIdMap == null) {
+            this.finishedTalkIdMap = new HashMap<>();
+        }
+
+        this.finishedTalkIdMap.computeIfAbsent(avatarId, HashSet::new).add(talkId);
+        this.save();
+
+        return this.finishedTalkIdMap.get(avatarId);
+    }
+
+    public List<HomeAvatarTalkFinishInfoOuterClass.HomeAvatarTalkFinishInfo> toAvatarTalkFinishInfoProto() {
+        if (this.finishedTalkIdMap == null) {
+            this.finishedTalkIdMap = new HashMap<>();
+        }
+
+        return this.finishedTalkIdMap.entrySet().stream().map(e -> {
+            return HomeAvatarTalkFinishInfoOuterClass.HomeAvatarTalkFinishInfo.newBuilder()
+                .setAvatarId(e.getKey())
+                .addAllFinishTalkIdList(e.getValue())
+                .build();
+        }).toList();
     }
 
     public boolean addUnlockedHomeBgm(int homeBgmId) {
