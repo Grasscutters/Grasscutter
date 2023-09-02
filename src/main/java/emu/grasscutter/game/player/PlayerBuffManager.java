@@ -9,9 +9,8 @@ import emu.grasscutter.net.proto.ServerBuffChangeNotifyOuterClass.ServerBuffChan
 import emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff;
 import emu.grasscutter.server.packet.send.PacketServerBuffChangeNotify;
 import it.unimi.dsi.fastutil.ints.*;
-import lombok.Getter;
-
 import java.util.*;
+import lombok.Getter;
 
 public final class PlayerBuffManager extends BasePlayerManager {
     private final List<PlayerBuff> pendingBuffs;

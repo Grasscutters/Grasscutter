@@ -4,7 +4,6 @@ import emu.grasscutter.data.excels.quest.QuestData.QuestExecParam;
 import emu.grasscutter.game.quest.*;
 import emu.grasscutter.game.quest.enums.QuestExec;
 import emu.grasscutter.game.quest.handlers.QuestExecHandler;
-
 import java.util.Objects;
 
 @QuestValueExec(QuestExec.QUEST_EXEC_SET_IS_GAME_TIME_LOCKED)

@@ -9,6 +9,13 @@ import emu.grasscutter.server.packet.send.PacketMassiveEntityElementOpBatchNotif
 public class HandlerMassiveEntityElementOpBatchNotify extends PacketHandler {
     @Override
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
-        session.getPlayer().getScene().broadcastPacketToOthers(session.getPlayer(), new PacketMassiveEntityElementOpBatchNotify(MassiveEntityElementOpBatchNotifyOuterClass.MassiveEntityElementOpBatchNotify.parseFrom(payload)));
+        session
+                .getPlayer()
+                .getScene()
+                .broadcastPacketToOthers(
+                        session.getPlayer(),
+                        new PacketMassiveEntityElementOpBatchNotify(
+                                MassiveEntityElementOpBatchNotifyOuterClass.MassiveEntityElementOpBatchNotify
+                                        .parseFrom(payload)));
     }
 }

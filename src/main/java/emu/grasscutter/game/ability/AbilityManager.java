@@ -20,10 +20,9 @@ import emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalar
 import emu.grasscutter.net.proto.ModifierActionOuterClass.ModifierAction;
 import emu.grasscutter.server.event.player.PlayerUseSkillEvent;
 import io.netty.util.concurrent.FastThreadLocalThread;
-import lombok.Getter;
-
 import java.util.HashMap;
 import java.util.concurrent.*;
+import lombok.Getter;
 
 public final class AbilityManager extends BasePlayerManager {
     private static final HashMap<AbilityModifierAction.Type, AbilityActionHandler> actionHandlers =
@@ -54,8 +53,7 @@ public final class AbilityManager extends BasePlayerManager {
     }
 
     public static void registerHandlers() {
-        var handlerClassesAction = Grasscutter.reflector
-                .getSubTypesOf(AbilityActionHandler.class);
+        var handlerClassesAction = Grasscutter.reflector.getSubTypesOf(AbilityActionHandler.class);
 
         for (var obj : handlerClassesAction) {
             try {
@@ -70,8 +68,7 @@ public final class AbilityManager extends BasePlayerManager {
             }
         }
 
-        var handlerClassesMixin = Grasscutter.reflector
-                .getSubTypesOf(AbilityMixinHandler.class);
+        var handlerClassesMixin = Grasscutter.reflector.getSubTypesOf(AbilityMixinHandler.class);
         for (var obj : handlerClassesMixin) {
             try {
                 if (obj.isAnnotationPresent(AbilityAction.class)) {

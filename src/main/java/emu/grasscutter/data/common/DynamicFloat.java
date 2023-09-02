@@ -4,9 +4,8 @@ import emu.grasscutter.data.excels.ProudSkillData;
 import emu.grasscutter.game.ability.Ability;
 import it.unimi.dsi.fastutil.floats.FloatArrayList;
 import it.unimi.dsi.fastutil.objects.*;
-import lombok.*;
-
 import java.util.*;
+import lombok.*;
 
 @Getter
 public class DynamicFloat {

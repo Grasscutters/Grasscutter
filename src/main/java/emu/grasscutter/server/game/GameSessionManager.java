@@ -4,11 +4,10 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.utils.Utils;
 import io.netty.buffer.*;
 import io.netty.channel.DefaultEventLoop;
-import kcp.highway.*;
-import lombok.Getter;
-
 import java.net.InetSocketAddress;
 import java.util.concurrent.ConcurrentHashMap;
+import kcp.highway.*;
+import lombok.Getter;
 
 public class GameSessionManager {
     @Getter private static final DefaultEventLoop logicThread = new DefaultEventLoop();

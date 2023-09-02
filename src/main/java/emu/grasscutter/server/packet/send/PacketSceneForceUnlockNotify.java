@@ -2,9 +2,8 @@ package emu.grasscutter.server.packet.send;
 
 import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.SceneForceUnlockNotifyOuterClass.SceneForceUnlockNotify;
-import lombok.val;
-
 import java.util.Collection;
+import lombok.val;
 
 public class PacketSceneForceUnlockNotify extends BasePacket {
     public PacketSceneForceUnlockNotify(Collection<Integer> unlocked, boolean isAdd) {

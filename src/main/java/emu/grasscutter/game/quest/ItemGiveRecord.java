@@ -4,9 +4,8 @@ import dev.morphia.annotations.Entity;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.giving.GivingData.GiveMethod;
 import emu.grasscutter.net.proto.GivingRecordOuterClass.GivingRecord;
-import lombok.*;
-
 import java.util.*;
+import lombok.*;
 
 @Data
 @Entity

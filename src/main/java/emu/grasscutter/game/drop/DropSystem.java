@@ -12,7 +12,6 @@ import emu.grasscutter.scripts.data.SceneMonster;
 import emu.grasscutter.server.game.*;
 import emu.grasscutter.server.packet.send.*;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-
 import java.util.*;
 
 public final class DropSystem extends BaseGameSystem {

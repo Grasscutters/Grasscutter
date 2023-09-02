@@ -5,11 +5,10 @@ import com.github.davidmoten.rtreemulti.geometry.*;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.world.Position;
 import emu.grasscutter.scripts.*;
-import lombok.*;
-
-import javax.script.*;
 import java.util.Map;
 import java.util.stream.Collectors;
+import javax.script.*;
+import lombok.*;
 
 @ToString
 @Setter

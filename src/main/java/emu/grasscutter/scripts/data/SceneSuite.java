@@ -1,8 +1,7 @@
 package emu.grasscutter.scripts.data;
 
-import lombok.*;
-
 import java.util.*;
+import lombok.*;
 
 @ToString
 @Setter

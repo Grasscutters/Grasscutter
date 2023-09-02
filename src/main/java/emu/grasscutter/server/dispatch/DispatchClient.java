@@ -1,5 +1,7 @@
 package emu.grasscutter.server.dispatch;
 
+import static emu.grasscutter.config.Configuration.DISPATCH_INFO;
+
 import com.google.gson.*;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.database.DatabaseHelper;
@@ -8,19 +10,16 @@ import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.http.handlers.GachaHandler;
 import emu.grasscutter.utils.*;
 import emu.grasscutter.utils.objects.HandbookBody;
-import lombok.Getter;
-import org.java_websocket.WebSocket;
-import org.java_websocket.client.WebSocketClient;
-import org.java_websocket.handshake.ServerHandshake;
-import org.slf4j.Logger;
-
 import java.net.*;
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.function.*;
-
-import static emu.grasscutter.config.Configuration.DISPATCH_INFO;
+import lombok.Getter;
+import org.java_websocket.WebSocket;
+import org.java_websocket.client.WebSocketClient;
+import org.java_websocket.handshake.ServerHandshake;
+import org.slf4j.Logger;
 
 public final class DispatchClient extends WebSocketClient implements IDispatcher {
     @Getter private final Logger logger = Grasscutter.getLogger();

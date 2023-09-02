@@ -3,7 +3,6 @@ package emu.grasscutter.server.packet.send;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.MarkNewNotifyOuterClass.MarkNewNotify;
-
 import java.util.ArrayList;
 
 public class PacketMarkNewNotify extends BasePacket {

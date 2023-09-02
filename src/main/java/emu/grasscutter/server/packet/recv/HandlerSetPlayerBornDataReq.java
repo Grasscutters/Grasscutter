@@ -1,5 +1,7 @@
 package emu.grasscutter.server.packet.recv;
 
+import static emu.grasscutter.config.Configuration.*;
+
 import emu.grasscutter.*;
 import emu.grasscutter.command.commands.SendMailCommand.MailBuilder;
 import emu.grasscutter.data.GameData;
@@ -9,10 +11,7 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.SetPlayerBornDataReqOuterClass.SetPlayerBornDataReq;
 import emu.grasscutter.server.game.GameSession;
-
 import java.util.Arrays;
-
-import static emu.grasscutter.config.Configuration.*;
 
 @Opcodes(PacketOpcodes.SetPlayerBornDataReq)
 public class HandlerSetPlayerBornDataReq extends PacketHandler {

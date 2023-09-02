@@ -17,7 +17,8 @@ public class HandlerBackMyWorldReq extends PacketHandler {
             prevScene = 3;
         }
 
-        boolean result = session.getServer().getHomeWorldMPSystem().leaveCoop(session.getPlayer(), prevScene);
+        boolean result =
+                session.getServer().getHomeWorldMPSystem().leaveCoop(session.getPlayer(), prevScene);
 
         session.send(new PacketBackMyWorldRsp(result ? 0 : RetcodeOuterClass.Retcode.RET_FAIL_VALUE));
     }

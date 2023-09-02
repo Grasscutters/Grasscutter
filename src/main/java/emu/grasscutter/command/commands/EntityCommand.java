@@ -1,5 +1,8 @@
 package emu.grasscutter.command.commands;
 
+import static emu.grasscutter.command.CommandHelpers.*;
+import static emu.grasscutter.utils.lang.Language.translate;
+
 import emu.grasscutter.command.*;
 import emu.grasscutter.game.entity.*;
 import emu.grasscutter.game.player.Player;
@@ -7,14 +10,10 @@ import emu.grasscutter.game.props.*;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.server.event.entity.EntityDamageEvent;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
-import lombok.Setter;
-
 import java.util.*;
 import java.util.function.BiConsumer;
 import java.util.regex.Pattern;
-
-import static emu.grasscutter.command.CommandHelpers.*;
-import static emu.grasscutter.utils.lang.Language.translate;
+import lombok.Setter;
 
 @Command(
         label = "entity",

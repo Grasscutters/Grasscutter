@@ -1,15 +1,14 @@
 package emu.grasscutter.utils;
 
 import emu.grasscutter.Grasscutter;
-import lombok.val;
-
 import java.io.*;
 import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
-import java.nio.file.FileSystem;
 import java.nio.file.*;
+import java.nio.file.FileSystem;
 import java.util.*;
 import java.util.stream.*;
+import lombok.val;
 
 public final class FileUtils {
     private static final Path DATA_DEFAULT_PATH;

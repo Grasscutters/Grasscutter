@@ -14,7 +14,6 @@ import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
 import emu.grasscutter.net.proto.TakeCompoundOutputReqOuterClass.TakeCompoundOutputReq;
 import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.Utils;
-
 import java.util.*;
 
 public class CookingCompoundManager extends BasePlayerManager {

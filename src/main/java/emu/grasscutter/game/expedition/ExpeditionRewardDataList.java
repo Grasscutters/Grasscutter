@@ -1,9 +1,8 @@
 package emu.grasscutter.game.expedition;
 
 import emu.grasscutter.game.inventory.GameItem;
-import lombok.Getter;
-
 import java.util.*;
+import lombok.Getter;
 
 public class ExpeditionRewardDataList {
     @Getter private int hourTime;

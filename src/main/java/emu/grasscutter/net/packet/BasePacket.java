@@ -3,7 +3,6 @@ package emu.grasscutter.net.packet;
 import com.google.protobuf.GeneratedMessageV3;
 import emu.grasscutter.net.proto.PacketHeadOuterClass.PacketHead;
 import emu.grasscutter.utils.Crypto;
-
 import java.io.*;
 
 public class BasePacket {

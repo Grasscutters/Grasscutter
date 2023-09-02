@@ -2,7 +2,6 @@ package emu.grasscutter.server.packet.send;
 
 import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.GetShopmallDataRspOuterClass.GetShopmallDataRsp;
-
 import java.util.List;
 
 public class PacketGetShopmallDataRsp extends BasePacket {

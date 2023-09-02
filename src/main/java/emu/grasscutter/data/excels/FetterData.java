@@ -3,7 +3,6 @@ package emu.grasscutter.data.excels;
 import emu.grasscutter.data.*;
 import emu.grasscutter.data.ResourceType.LoadPriority;
 import emu.grasscutter.data.common.OpenCondData;
-
 import java.util.List;
 
 @ResourceType(

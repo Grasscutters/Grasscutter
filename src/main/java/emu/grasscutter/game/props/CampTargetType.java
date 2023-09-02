@@ -2,7 +2,6 @@ package emu.grasscutter.game.props;
 
 import emu.grasscutter.scripts.constants.IntValueEnum;
 import it.unimi.dsi.fastutil.ints.*;
-
 import java.util.*;
 import java.util.stream.Stream;
 

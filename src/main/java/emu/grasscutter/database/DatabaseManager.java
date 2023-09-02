@@ -1,5 +1,7 @@
 package emu.grasscutter.database;
 
+import static emu.grasscutter.config.Configuration.DATABASE;
+
 import com.mongodb.MongoCommandException;
 import com.mongodb.client.*;
 import dev.morphia.*;
@@ -9,8 +11,6 @@ import dev.morphia.query.experimental.filters.Filters;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.Grasscutter.ServerRunMode;
 import emu.grasscutter.game.Account;
-
-import static emu.grasscutter.config.Configuration.DATABASE;
 
 public final class DatabaseManager {
     private static Datastore gameDatastore;
@@ -43,14 +43,13 @@ public final class DatabaseManager {
 
         // Map classes.
         var entities =
-                Grasscutter.reflector
-                        .getTypesAnnotatedWith(Entity.class).stream()
-                                .filter(
-                                        cls -> {
-                                            Entity e = cls.getAnnotation(Entity.class);
-                                            return e != null && !e.value().equals(Mapper.IGNORED_FIELDNAME);
-                                        })
-                                .toArray(Class<?>[]::new);
+                Grasscutter.reflector.getTypesAnnotatedWith(Entity.class).stream()
+                        .filter(
+                                cls -> {
+                                    Entity e = cls.getAnnotation(Entity.class);
+                                    return e != null && !e.value().equals(Mapper.IGNORED_FIELDNAME);
+                                })
+                        .toArray(Class<?>[]::new);
 
         gameDatastore.getMapper().map(entities);
 

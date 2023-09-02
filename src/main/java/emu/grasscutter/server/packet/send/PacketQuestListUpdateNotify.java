@@ -3,7 +3,6 @@ package emu.grasscutter.server.packet.send;
 import emu.grasscutter.game.quest.GameQuest;
 import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.QuestListUpdateNotifyOuterClass.QuestListUpdateNotify;
-
 import java.util.List;
 
 public class PacketQuestListUpdateNotify extends BasePacket {

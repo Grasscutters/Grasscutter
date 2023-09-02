@@ -5,7 +5,6 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.CodexDataFullNotifyOuterClass.CodexDataFullNotify;
 import emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData;
-
 import java.util.Collections;
 
 public class PacketCodexDataFullNotify extends BasePacket {

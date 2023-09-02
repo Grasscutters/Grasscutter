@@ -1,10 +1,10 @@
 package emu.grasscutter.game.quest.content;
 
+import static emu.grasscutter.game.quest.enums.QuestContent.QUEST_CONTENT_OBTAIN_ITEM;
+
 import emu.grasscutter.data.excels.quest.QuestData;
 import emu.grasscutter.game.quest.*;
 import lombok.val;
-
-import static emu.grasscutter.game.quest.enums.QuestContent.QUEST_CONTENT_OBTAIN_ITEM;
 
 @QuestValueContent(QUEST_CONTENT_OBTAIN_ITEM)
 public class ContentObtainItem extends BaseContent {

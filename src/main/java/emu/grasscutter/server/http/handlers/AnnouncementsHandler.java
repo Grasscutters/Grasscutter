@@ -1,5 +1,7 @@
 package emu.grasscutter.server.http.handlers;
 
+import static emu.grasscutter.config.Configuration.*;
+
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.DataLoader;
 import emu.grasscutter.server.http.Router;
@@ -7,11 +9,8 @@ import emu.grasscutter.server.http.objects.HttpJsonResponse;
 import emu.grasscutter.utils.FileUtils;
 import io.javalin.Javalin;
 import io.javalin.http.*;
-
 import java.io.*;
 import java.util.*;
-
-import static emu.grasscutter.config.Configuration.*;
 
 /** Handles requests related to the announcements page. */
 public final class AnnouncementsHandler implements Router {

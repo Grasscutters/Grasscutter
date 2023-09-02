@@ -5,7 +5,6 @@ import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption;
 import emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam;
 import emu.grasscutter.net.proto.TakeBattlePassRewardRspOuterClass.TakeBattlePassRewardRsp;
-
 import java.util.List;
 
 public class PacketTakeBattlePassRewardRsp extends BasePacket {

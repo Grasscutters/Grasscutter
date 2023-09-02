@@ -5,9 +5,8 @@ import emu.grasscutter.data.excels.RewardPreviewData;
 import emu.grasscutter.game.dungeons.enums.*;
 import emu.grasscutter.game.world.Position;
 import emu.grasscutter.scripts.data.SceneMeta;
-import lombok.Getter;
-
 import java.util.List;
+import lombok.Getter;
 
 @ResourceType(name = "DungeonExcelConfigData.json")
 public class DungeonData extends GameResource {

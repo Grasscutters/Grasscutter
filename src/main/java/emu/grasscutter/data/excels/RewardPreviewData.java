@@ -3,9 +3,8 @@ package emu.grasscutter.data.excels;
 import emu.grasscutter.data.*;
 import emu.grasscutter.data.ResourceType.LoadPriority;
 import emu.grasscutter.data.common.*;
-import lombok.Getter;
-
 import java.util.Arrays;
+import lombok.Getter;
 
 @ResourceType(name = "RewardPreviewExcelConfigData.json", loadPriority = LoadPriority.HIGH)
 public class RewardPreviewData extends GameResource {

@@ -3,9 +3,8 @@ package emu.grasscutter.game.ability;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.binout.AbilityMixinData;
 import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierAction;
-import lombok.AllArgsConstructor;
-
 import java.util.Map;
+import lombok.AllArgsConstructor;
 
 @SuppressWarnings("ALL")
 public class AbilityLocalIdGenerator {

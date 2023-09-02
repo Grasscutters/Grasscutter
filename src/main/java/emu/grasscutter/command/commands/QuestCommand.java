@@ -1,14 +1,13 @@
 package emu.grasscutter.command.commands;
 
+import static emu.grasscutter.utils.lang.Language.translate;
+
 import emu.grasscutter.command.*;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.quest.GameQuest;
 import emu.grasscutter.game.quest.enums.*;
-
 import java.util.*;
 import java.util.stream.Collectors;
-
-import static emu.grasscutter.utils.lang.Language.translate;
 
 @Command(
         label = "quest",

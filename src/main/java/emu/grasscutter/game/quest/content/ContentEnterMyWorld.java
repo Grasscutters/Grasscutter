@@ -1,9 +1,9 @@
 package emu.grasscutter.game.quest.content;
 
+import static emu.grasscutter.game.quest.enums.QuestContent.QUEST_CONTENT_ENTER_MY_WORLD;
+
 import emu.grasscutter.data.excels.quest.QuestData;
 import emu.grasscutter.game.quest.*;
-
-import static emu.grasscutter.game.quest.enums.QuestContent.QUEST_CONTENT_ENTER_MY_WORLD;
 
 @QuestValueContent(QUEST_CONTENT_ENTER_MY_WORLD)
 public class ContentEnterMyWorld extends BaseContent {

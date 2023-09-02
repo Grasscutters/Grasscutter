@@ -7,7 +7,6 @@ import emu.grasscutter.game.props.*;
 import emu.grasscutter.server.event.player.PlayerFinishBattlePassMission;
 import emu.grasscutter.server.game.*;
 import emu.grasscutter.server.packet.send.PacketBattlePassMissionUpdateNotify;
-
 import java.util.*;
 
 public class BattlePassSystem extends BaseGameSystem {

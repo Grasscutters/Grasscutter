@@ -3,10 +3,9 @@ package emu.grasscutter.server.event.dispatch;
 import com.google.gson.*;
 import emu.grasscutter.server.dispatch.IDispatcher;
 import emu.grasscutter.server.event.Event;
+import java.util.Base64;
 import lombok.*;
 import org.java_websocket.WebSocket;
-
-import java.util.Base64;
 
 @Getter
 @RequiredArgsConstructor

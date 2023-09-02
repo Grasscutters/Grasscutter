@@ -2,9 +2,8 @@ package emu.grasscutter.server.packet.send;
 
 import emu.grasscutter.game.world.Position;
 import emu.grasscutter.net.packet.*;
-import lombok.*;
-
 import java.util.*;
+import lombok.*;
 
 public final class PacketBeginCameraSceneLookNotify extends BasePacket {
 

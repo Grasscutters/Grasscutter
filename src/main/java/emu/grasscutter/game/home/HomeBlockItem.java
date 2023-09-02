@@ -3,11 +3,10 @@ package emu.grasscutter.game.home;
 import dev.morphia.annotations.*;
 import emu.grasscutter.data.binout.HomeworldDefaultSaveData;
 import emu.grasscutter.net.proto.HomeBlockArrangementInfoOuterClass.HomeBlockArrangementInfo;
-import lombok.*;
-import lombok.experimental.FieldDefaults;
-
 import java.util.*;
 import java.util.stream.Stream;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
 
 @Entity
 @Data
@@ -90,7 +89,9 @@ public class HomeBlockItem {
     public List<? extends HomeMarkPointProtoFactory> getMarkPointProtoFactories() {
         this.reassignIfNull();
 
-        return Stream.of(this.deployFurnitureList, this.persistentFurnitureList, this.deployNPCList).flatMap(Collection::stream).toList();
+        return Stream.of(this.deployFurnitureList, this.persistentFurnitureList, this.deployNPCList)
+                .flatMap(Collection::stream)
+                .toList();
     }
 
     public void reassignIfNull() {

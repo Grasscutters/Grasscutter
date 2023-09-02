@@ -20,9 +20,7 @@ public class PacketTryEnterHomeRsp extends BasePacket {
         super(PacketOpcodes.TryEnterHomeRsp);
 
         TryEnterHomeRspOuterClass.TryEnterHomeRsp proto =
-                TryEnterHomeRspOuterClass.TryEnterHomeRsp.newBuilder()
-                        .setTargetUid(uid)
-                        .build();
+                TryEnterHomeRspOuterClass.TryEnterHomeRsp.newBuilder().setTargetUid(uid).build();
 
         this.setData(proto);
     }

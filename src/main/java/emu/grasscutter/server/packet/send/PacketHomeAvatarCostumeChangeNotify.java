@@ -8,8 +8,9 @@ public class PacketHomeAvatarCostumeChangeNotify extends BasePacket {
     public PacketHomeAvatarCostumeChangeNotify(int avatarId, int costumeId) {
         super(PacketOpcodes.HomeAvatarCostumeChangeNotify);
 
-        this.setData(HomeAvatarCostumeChangeNotifyOuterClass.HomeAvatarCostumeChangeNotify.newBuilder()
-            .setAvatarId(avatarId)
-            .setCostumeId(costumeId));
+        this.setData(
+                HomeAvatarCostumeChangeNotifyOuterClass.HomeAvatarCostumeChangeNotify.newBuilder()
+                        .setAvatarId(avatarId)
+                        .setCostumeId(costumeId));
     }
 }

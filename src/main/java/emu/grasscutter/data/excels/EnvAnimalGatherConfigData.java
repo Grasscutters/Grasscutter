@@ -2,7 +2,6 @@ package emu.grasscutter.data.excels;
 
 import emu.grasscutter.data.*;
 import emu.grasscutter.data.common.ItemParamData;
-
 import java.util.List;
 
 @ResourceType(

@@ -25,19 +25,19 @@ public class HomeNPCItem implements HomeMarkPointProtoFactory {
 
     public static HomeNPCItem parseFrom(HomeNpcDataOuterClass.HomeNpcData homeNpcData) {
         return HomeNPCItem.of()
-            .avatarId(homeNpcData.getAvatarId())
-            .spawnPos(new Position(homeNpcData.getSpawnPos()))
-            .spawnRot(new Position(homeNpcData.getSpawnRot()))
-            .build();
+                .avatarId(homeNpcData.getAvatarId())
+                .spawnPos(new Position(homeNpcData.getSpawnPos()))
+                .spawnRot(new Position(homeNpcData.getSpawnRot()))
+                .build();
     }
 
     public HomeNpcDataOuterClass.HomeNpcData toProto() {
         return HomeNpcDataOuterClass.HomeNpcData.newBuilder()
-            .setAvatarId(avatarId)
-            .setSpawnPos(spawnPos.toProto())
-            .setSpawnRot(spawnRot.toProto())
-            .setCostumeId(costumeId)
-            .build();
+                .setAvatarId(avatarId)
+                .setSpawnPos(spawnPos.toProto())
+                .setSpawnRot(spawnRot.toProto())
+                .setCostumeId(costumeId)
+                .build();
     }
 
     public int getFurnitureId() {
@@ -49,18 +49,18 @@ public class HomeNPCItem implements HomeMarkPointProtoFactory {
         return this.furnitureId;
     }
 
-    @Nullable
-    @Override
+    @Nullable @Override
     public HomeMarkPointFurnitureDataOuterClass.HomeMarkPointFurnitureData toMarkPointProto() {
         return HomeMarkPointFurnitureDataOuterClass.HomeMarkPointFurnitureData.newBuilder()
-            .setFurnitureId(this.getFurnitureId())
-            .setFurnitureType(this.getType().getValue())
-            .setPos(this.spawnPos.toProto())
-            .setNpcData(HomeMarkPointNPCDataOuterClass.HomeMarkPointNPCData.newBuilder()
-                .setAvatarId(this.avatarId)
-                .setCostumeId(this.costumeId)
-                .build())
-            .build();
+                .setFurnitureId(this.getFurnitureId())
+                .setFurnitureType(this.getType().getValue())
+                .setPos(this.spawnPos.toProto())
+                .setNpcData(
+                        HomeMarkPointNPCDataOuterClass.HomeMarkPointNPCData.newBuilder()
+                                .setAvatarId(this.avatarId)
+                                .setCostumeId(this.costumeId)
+                                .build())
+                .build();
     }
 
     @Override

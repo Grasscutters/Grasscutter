@@ -9,7 +9,6 @@ import emu.grasscutter.net.proto.BuyGoodsReqOuterClass;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketBuyGoodsRsp;
 import emu.grasscutter.utils.Utils;
-
 import java.util.*;
 import java.util.stream.Stream;
 

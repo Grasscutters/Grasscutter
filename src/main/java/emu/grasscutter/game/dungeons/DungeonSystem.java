@@ -12,9 +12,8 @@ import emu.grasscutter.net.packet.*;
 import emu.grasscutter.server.game.*;
 import emu.grasscutter.server.packet.send.PacketDungeonEntryInfoRsp;
 import it.unimi.dsi.fastutil.ints.*;
-import lombok.val;
-
 import java.util.List;
+import lombok.val;
 
 public final class DungeonSystem extends BaseGameSystem {
     private static final BasicDungeonSettleListener basicDungeonSettleObserver =
@@ -29,9 +28,7 @@ public final class DungeonSystem extends BaseGameSystem {
     }
 
     public void registerHandlers() {
-        this.registerHandlers(
-                this.passCondHandlers,
-                DungeonBaseHandler.class);
+        this.registerHandlers(this.passCondHandlers, DungeonBaseHandler.class);
     }
 
     public <T> void registerHandlers(Int2ObjectMap<T> map, Class<T> clazz) {
