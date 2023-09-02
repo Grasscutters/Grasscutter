@@ -9,19 +9,18 @@ import emu.grasscutter.scripts.constants.*;
 import emu.grasscutter.scripts.data.SceneMeta;
 import emu.grasscutter.scripts.serializer.*;
 import emu.grasscutter.utils.FileUtils;
-import lombok.Getter;
-import org.luaj.vm2.*;
-import org.luaj.vm2.lib.OneArgFunction;
-import org.luaj.vm2.lib.jse.CoerceJavaToLua;
-import org.luaj.vm2.script.*;
-
-import javax.script.*;
 import java.io.IOException;
 import java.lang.ref.SoftReference;
 import java.nio.file.Files;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.script.*;
+import lombok.Getter;
+import org.luaj.vm2.*;
+import org.luaj.vm2.lib.OneArgFunction;
+import org.luaj.vm2.lib.jse.CoerceJavaToLua;
+import org.luaj.vm2.script.*;
 
 public class ScriptLoader {
     private static ScriptEngineManager sm;
@@ -30,8 +29,8 @@ public class ScriptLoader {
     @Getter private static ScriptLib scriptLib;
     @Getter private static LuaValue scriptLibLua;
     /** suggest GC to remove it if the memory is less */
-    private static Map<String, SoftReference<String>> scriptSources =
-            new ConcurrentHashMap<>();
+    private static Map<String, SoftReference<String>> scriptSources = new ConcurrentHashMap<>();
+
     private static Map<String, SoftReference<CompiledScript>> scriptsCache =
             new ConcurrentHashMap<>();
     /** sceneId - SceneMeta */
@@ -40,9 +39,7 @@ public class ScriptLoader {
     private static final AtomicReference<Bindings> currentBindings = new AtomicReference<>(null);
     private static final AtomicReference<ScriptContext> currentContext = new AtomicReference<>(null);
 
-    /**
-     * Initializes the script engine.
-     */
+    /** Initializes the script engine. */
     public static synchronized void init() throws Exception {
         if (sm != null) {
             throw new Exception("Script loader already initialized");
@@ -176,8 +173,7 @@ public class ScriptLoader {
      */
     public static String readScript(String path) {
         // Check if the path is cached.
-        var cached = ScriptLoader.tryGet(
-            ScriptLoader.scriptSources.get(path));
+        var cached = ScriptLoader.tryGet(ScriptLoader.scriptSources.get(path));
         if (cached.isPresent()) {
             return cached.get();
         }
@@ -188,8 +184,7 @@ public class ScriptLoader {
 
         try {
             var source = Files.readString(scriptPath);
-            ScriptLoader.scriptSources.put(
-                path, new SoftReference<>(source));
+            ScriptLoader.scriptSources.put(path, new SoftReference<>(source));
 
             return source;
         } catch (IOException exception) {
@@ -207,8 +202,7 @@ public class ScriptLoader {
      */
     public static CompiledScript getScript(String path) {
         // Check if the script is cached.
-        var sc = ScriptLoader.tryGet(
-            ScriptLoader.scriptsCache.get(path));
+        var sc = ScriptLoader.tryGet(ScriptLoader.scriptsCache.get(path));
         if (sc.isPresent()) {
             return sc.get();
         }

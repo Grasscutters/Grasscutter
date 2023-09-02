@@ -1,10 +1,10 @@
 package emu.grasscutter.game.quest.content;
 
+import static emu.grasscutter.game.quest.enums.QuestContent.QUEST_CONTENT_TRIGGER_FIRE;
+
 import emu.grasscutter.data.excels.quest.QuestData;
 import emu.grasscutter.game.quest.*;
 import lombok.val;
-
-import static emu.grasscutter.game.quest.enums.QuestContent.QUEST_CONTENT_TRIGGER_FIRE;
 
 @QuestValueContent(QUEST_CONTENT_TRIGGER_FIRE)
 public class ContentTriggerFire extends BaseContent {

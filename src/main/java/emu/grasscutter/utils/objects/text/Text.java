@@ -1,8 +1,7 @@
 package emu.grasscutter.utils.objects.text;
 
-import lombok.*;
-
 import java.awt.*;
+import lombok.*;
 
 /* An instance of text. */
 public final class Text {

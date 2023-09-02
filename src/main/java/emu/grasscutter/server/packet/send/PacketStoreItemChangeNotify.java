@@ -4,7 +4,6 @@ import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.StoreItemChangeNotifyOuterClass.StoreItemChangeNotify;
 import emu.grasscutter.net.proto.StoreTypeOuterClass.StoreType;
-
 import java.util.Collection;
 
 public class PacketStoreItemChangeNotify extends BasePacket {

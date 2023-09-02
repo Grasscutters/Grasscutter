@@ -7,7 +7,6 @@ import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.server.packet.send.PacketGadgetAutoPickDropInfoNotify;
-
 import java.util.*;
 
 public class BossChestInteractHandler implements ChestInteractHandler {

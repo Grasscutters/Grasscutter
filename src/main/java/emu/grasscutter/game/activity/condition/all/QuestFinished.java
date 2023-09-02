@@ -1,11 +1,11 @@
 package emu.grasscutter.game.activity.condition.all;
 
+import static emu.grasscutter.game.activity.condition.ActivityConditions.NEW_ACTIVITY_COND_QUEST_FINISH;
+
 import emu.grasscutter.game.activity.*;
 import emu.grasscutter.game.activity.condition.*;
 import emu.grasscutter.game.quest.GameQuest;
 import emu.grasscutter.game.quest.enums.QuestState;
-
-import static emu.grasscutter.game.activity.condition.ActivityConditions.NEW_ACTIVITY_COND_QUEST_FINISH;
 
 @ActivityCondition(NEW_ACTIVITY_COND_QUEST_FINISH)
 public class QuestFinished extends ActivityConditionBaseHandler {

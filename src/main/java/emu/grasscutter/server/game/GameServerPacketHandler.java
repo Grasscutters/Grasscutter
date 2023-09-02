@@ -1,13 +1,13 @@
 package emu.grasscutter.server.game;
 
+import static emu.grasscutter.config.Configuration.GAME_INFO;
+
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.Grasscutter.ServerDebugMode;
 import emu.grasscutter.net.packet.*;
 import emu.grasscutter.server.event.game.ReceivePacketEvent;
 import emu.grasscutter.server.game.GameSession.SessionState;
 import it.unimi.dsi.fastutil.ints.*;
-
-import static emu.grasscutter.config.Configuration.GAME_INFO;
 
 public final class GameServerPacketHandler {
     private final Int2ObjectMap<PacketHandler> handlers;
@@ -28,7 +28,8 @@ public final class GameServerPacketHandler {
             var packetHandler = handlerClass.getDeclaredConstructor().newInstance();
             this.handlers.put(opcode.value(), packetHandler);
         } catch (Exception e) {
-            Grasscutter.getLogger().warn("Unable to register handler {}.", handlerClass.getSimpleName(), e);
+            Grasscutter.getLogger()
+                    .warn("Unable to register handler {}.", handlerClass.getSimpleName(), e);
         }
     }
 

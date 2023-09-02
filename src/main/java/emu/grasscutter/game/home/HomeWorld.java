@@ -7,13 +7,11 @@ import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.proto.ChatInfoOuterClass;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.packet.send.*;
+import java.util.List;
 import lombok.Getter;
 
-import java.util.List;
-
 public class HomeWorld extends World {
-    @Getter
-    private final GameHome home;
+    @Getter private final GameHome home;
 
     public HomeWorld(GameServer server, Player owner) {
         super(server, owner);
@@ -51,21 +49,23 @@ public class HomeWorld extends World {
         // Copy main team to multiplayer team
         if (this.isMultiplayer()) {
             player
-                .getTeamManager()
-                .getMpTeam()
-                .copyFrom(
-                    player.getTeamManager().getCurrentSinglePlayerTeamInfo(),
-                    player.getTeamManager().getMaxTeamSize());
+                    .getTeamManager()
+                    .getMpTeam()
+                    .copyFrom(
+                            player.getTeamManager().getCurrentSinglePlayerTeamInfo(),
+                            player.getTeamManager().getMaxTeamSize());
             player.getTeamManager().setCurrentCharacterIndex(0);
 
             if (!player.equals(this.getHost())) {
                 this.broadcastPacket(
-                    new PacketPlayerChatNotify(
-                        player,
-                        0,
-                        ChatInfoOuterClass.ChatInfo.SystemHint.newBuilder()
-                            .setType(ChatInfoOuterClass.ChatInfo.SystemHintType.SYSTEM_HINT_TYPE_CHAT_ENTER_WORLD.getNumber())
-                            .build()));
+                        new PacketPlayerChatNotify(
+                                player,
+                                0,
+                                ChatInfoOuterClass.ChatInfo.SystemHint.newBuilder()
+                                        .setType(
+                                                ChatInfoOuterClass.ChatInfo.SystemHintType.SYSTEM_HINT_TYPE_CHAT_ENTER_WORLD
+                                                        .getNumber())
+                                        .build()));
             }
         }
 
@@ -83,15 +83,15 @@ public class HomeWorld extends World {
     public synchronized void removePlayer(Player player) {
         // Remove team entities
         this.broadcastPacket(
-            new PacketDelTeamEntityNotify(
-                player.getSceneId(),
-                this.getPlayers().stream()
-                    .map(
-                        p ->
-                            p.getTeamManager().getEntity() == null
-                                ? 0
-                                : p.getTeamManager().getEntity().getId())
-                    .toList()));
+                new PacketDelTeamEntityNotify(
+                        player.getSceneId(),
+                        this.getPlayers().stream()
+                                .map(
+                                        p ->
+                                                p.getTeamManager().getEntity() == null
+                                                        ? 0
+                                                        : p.getTeamManager().getEntity().getId())
+                                .toList()));
 
         // Deregister
         this.getPlayers().remove(player);
@@ -107,12 +107,14 @@ public class HomeWorld extends World {
         }
 
         this.broadcastPacket(
-            new PacketPlayerChatNotify(
-                player,
-                0,
-                ChatInfoOuterClass.ChatInfo.SystemHint.newBuilder()
-                    .setType(ChatInfoOuterClass.ChatInfo.SystemHintType.SYSTEM_HINT_TYPE_CHAT_LEAVE_WORLD.getNumber())
-                    .build()));
+                new PacketPlayerChatNotify(
+                        player,
+                        0,
+                        ChatInfoOuterClass.ChatInfo.SystemHint.newBuilder()
+                                .setType(
+                                        ChatInfoOuterClass.ChatInfo.SystemHintType.SYSTEM_HINT_TYPE_CHAT_LEAVE_WORLD
+                                                .getNumber())
+                                .build()));
     }
 
     @Override

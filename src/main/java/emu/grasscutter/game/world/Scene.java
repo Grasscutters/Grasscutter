@@ -23,8 +23,8 @@ import emu.grasscutter.game.props.*;
 import emu.grasscutter.game.quest.QuestGroupSuite;
 import emu.grasscutter.game.world.data.TeleportProperties;
 import emu.grasscutter.net.packet.BasePacket;
-import emu.grasscutter.net.proto.AttackResultOuterClass.AttackResult;
 import emu.grasscutter.net.proto.*;
+import emu.grasscutter.net.proto.AttackResultOuterClass.AttackResult;
 import emu.grasscutter.net.proto.VisionTypeOuterClass.VisionType;
 import emu.grasscutter.scripts.*;
 import emu.grasscutter.scripts.constants.EventType;
@@ -35,12 +35,11 @@ import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.server.scheduler.ServerTaskScheduler;
 import emu.grasscutter.utils.objects.KahnsSort;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import lombok.*;
-
-import javax.annotation.Nullable;
 import java.util.*;
 import java.util.concurrent.*;
 import java.util.stream.Collectors;
+import javax.annotation.Nullable;
+import lombok.*;
 
 public final class Scene {
     @Getter private final World world;
@@ -262,10 +261,10 @@ public final class Scene {
 
         // Remove player widget gadgets
         this.getEntities().values().stream()
-            .filter(gameEntity -> gameEntity instanceof EntityVehicle)
-            .map(gameEntity -> (EntityVehicle) gameEntity)
-            .filter(entityVehicle -> entityVehicle.getOwner().equals(player))
-            .forEach(entityVehicle -> this.removeEntity(entityVehicle, VisionType.VISION_TYPE_REMOVE));
+                .filter(gameEntity -> gameEntity instanceof EntityVehicle)
+                .map(gameEntity -> (EntityVehicle) gameEntity)
+                .filter(entityVehicle -> entityVehicle.getOwner().equals(player))
+                .forEach(entityVehicle -> this.removeEntity(entityVehicle, VisionType.VISION_TYPE_REMOVE));
 
         // Deregister scene if not in use
         if (this.getPlayerCount() <= 0 && !this.dontDestroyWhenEmpty) {

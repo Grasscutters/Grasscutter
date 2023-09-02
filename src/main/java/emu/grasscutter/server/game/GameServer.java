@@ -1,5 +1,8 @@
 package emu.grasscutter.server.game;
 
+import static emu.grasscutter.config.Configuration.*;
+import static emu.grasscutter.utils.lang.Language.translate;
+
 import emu.grasscutter.*;
 import emu.grasscutter.Grasscutter.ServerRunMode;
 import emu.grasscutter.database.DatabaseHelper;
@@ -32,17 +35,13 @@ import emu.grasscutter.server.scheduler.ServerTaskScheduler;
 import emu.grasscutter.task.TaskMap;
 import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.*;
-import kcp.highway.*;
-import lombok.*;
-import org.jetbrains.annotations.*;
-
 import java.net.*;
 import java.time.*;
 import java.util.*;
 import java.util.concurrent.*;
-
-import static emu.grasscutter.config.Configuration.*;
-import static emu.grasscutter.utils.lang.Language.translate;
+import kcp.highway.*;
+import lombok.*;
+import org.jetbrains.annotations.*;
 
 @Getter
 public final class GameServer extends KcpServer implements Iterable<Player> {
@@ -207,13 +206,11 @@ public final class GameServer extends KcpServer implements Iterable<Player> {
         getPlayers().put(player.getUid(), player);
     }
 
-    @Nullable
-    public Player getPlayerByUid(int id) {
+    @Nullable public Player getPlayerByUid(int id) {
         return this.getPlayerByUid(id, false);
     }
 
-    @Nullable
-    public Player getPlayerByUid(int id, boolean allowOfflinePlayers) {
+    @Nullable public Player getPlayerByUid(int id, boolean allowOfflinePlayers) {
         // Console check
         if (id == GameConstants.SERVER_CONSOLE_UID) {
             return null;
@@ -312,7 +309,8 @@ public final class GameServer extends KcpServer implements Iterable<Player> {
     }
 
     public HomeWorld getHomeWorldOrCreate(Player owner) {
-        return this.getHomeWorlds().computeIfAbsent(owner.getUid(), (uid) -> new HomeWorld(this, owner));
+        return this.getHomeWorlds()
+                .computeIfAbsent(owner.getUid(), (uid) -> new HomeWorld(this, owner));
     }
 
     public void start() {

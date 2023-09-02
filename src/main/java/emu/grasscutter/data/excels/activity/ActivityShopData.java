@@ -2,9 +2,8 @@ package emu.grasscutter.data.excels.activity;
 
 import emu.grasscutter.data.*;
 import emu.grasscutter.game.shop.ShopType;
-import lombok.Getter;
-
 import java.util.List;
+import lombok.Getter;
 
 @ResourceType(name = "ActivityShopOverallExcelConfigData.json")
 public class ActivityShopData extends GameResource {

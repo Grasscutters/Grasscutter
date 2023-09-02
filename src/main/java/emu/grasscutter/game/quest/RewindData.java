@@ -1,8 +1,7 @@
 package emu.grasscutter.game.quest;
 
-import lombok.*;
-
 import java.util.List;
+import lombok.*;
 
 @Data
 public class RewindData {

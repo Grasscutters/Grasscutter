@@ -11,24 +11,19 @@ import org.bson.types.ObjectId;
 
 @Entity(value = "friendships", useDiscriminator = false)
 public class Friendship {
-    @Id
-    private ObjectId id;
+    @Id private ObjectId id;
 
-    @Transient
-    private Player owner;
+    @Transient private Player owner;
 
-    @Indexed
-    private int ownerId;
-    @Indexed
-    private int friendId;
+    @Indexed private int ownerId;
+    @Indexed private int friendId;
     private boolean isFriend;
     private int askerId;
 
     private PlayerProfile profile;
 
     @Deprecated // Morphia use only
-    public Friendship() {
-    }
+    public Friendship() {}
 
     public Friendship(Player owner, Player friend, Player asker) {
         this.setOwner(owner);
@@ -95,25 +90,25 @@ public class Friendship {
         var player = this.getFriendProfile().getPlayer(); // get latest player and sync.
 
         return FriendBrief.newBuilder()
-            .setUid(getFriendProfile().getUid())
-            .setNickname(getFriendProfile().getName())
-            .setLevel(getFriendProfile().getPlayerLevel())
-            .setProfilePicture(
-                ProfilePicture.newBuilder().setAvatarId(getFriendProfile().getAvatarId()))
-            .setWorldLevel(getFriendProfile().getWorldLevel())
-            .setSignature(getFriendProfile().getSignature())
-            .setOnlineState(
-                player != null && player.isOnline()
-                    ? FriendOnlineState.FRIEND_ONLINE_STATE_ONLINE
-                    : FriendOnlineState.FRIEND_ONLINE_STATE_DISCONNECT)
-            .setIsMpModeAvailable(true)
-            .setLastActiveTime(getFriendProfile().getLastActiveTime())
-            .setNameCardId(getFriendProfile().getNameCard())
-            .setParam(getFriendProfile().getDaysSinceLogin())
-            .setIsGameSource(true)
-            .setPlatformType(PlatformTypeOuterClass.PlatformType.PLATFORM_TYPE_PC)
-            .setIsInDuel(getFriendProfile().isInDuel())
-            .setIsDuelObservable(getFriendProfile().isDuelObservable())
-            .build();
+                .setUid(getFriendProfile().getUid())
+                .setNickname(getFriendProfile().getName())
+                .setLevel(getFriendProfile().getPlayerLevel())
+                .setProfilePicture(
+                        ProfilePicture.newBuilder().setAvatarId(getFriendProfile().getAvatarId()))
+                .setWorldLevel(getFriendProfile().getWorldLevel())
+                .setSignature(getFriendProfile().getSignature())
+                .setOnlineState(
+                        player != null && player.isOnline()
+                                ? FriendOnlineState.FRIEND_ONLINE_STATE_ONLINE
+                                : FriendOnlineState.FRIEND_ONLINE_STATE_DISCONNECT)
+                .setIsMpModeAvailable(true)
+                .setLastActiveTime(getFriendProfile().getLastActiveTime())
+                .setNameCardId(getFriendProfile().getNameCard())
+                .setParam(getFriendProfile().getDaysSinceLogin())
+                .setIsGameSource(true)
+                .setPlatformType(PlatformTypeOuterClass.PlatformType.PLATFORM_TYPE_PC)
+                .setIsInDuel(getFriendProfile().isInDuel())
+                .setIsDuelObservable(getFriendProfile().isDuelObservable())
+                .build();
     }
 }

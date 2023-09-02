@@ -1,14 +1,13 @@
 package emu.grasscutter.game.dungeons.challenge.factory;
 
+import static emu.grasscutter.game.dungeons.challenge.enums.ChallengeType.CHALLENGE_TRIGGER_IN_TIME;
+
 import emu.grasscutter.game.dungeons.challenge.WorldChallenge;
 import emu.grasscutter.game.dungeons.challenge.enums.ChallengeType;
 import emu.grasscutter.game.dungeons.challenge.trigger.*;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.scripts.data.SceneGroup;
-
 import java.util.List;
-
-import static emu.grasscutter.game.dungeons.challenge.enums.ChallengeType.CHALLENGE_TRIGGER_IN_TIME;
 
 public class TriggerInTimeChallengeFactoryHandler implements ChallengeFactoryHandler {
     @Override

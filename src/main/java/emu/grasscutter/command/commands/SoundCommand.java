@@ -1,14 +1,13 @@
 package emu.grasscutter.command.commands;
 
+import static emu.grasscutter.utils.lang.Language.translate;
+
 import emu.grasscutter.command.*;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.world.Position;
 import emu.grasscutter.server.packet.send.PacketScenePlayerSoundNotify;
-import lombok.val;
-
 import java.util.List;
-
-import static emu.grasscutter.utils.lang.Language.translate;
+import lombok.val;
 
 @Command(
         label = "sound",

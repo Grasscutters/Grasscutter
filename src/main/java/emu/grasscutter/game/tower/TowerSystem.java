@@ -4,7 +4,6 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.*;
 import emu.grasscutter.data.excels.tower.TowerScheduleData;
 import emu.grasscutter.server.game.*;
-
 import java.util.*;
 
 public class TowerSystem extends BaseGameSystem {

@@ -7,7 +7,6 @@ import emu.grasscutter.net.proto.ChangeEnergyReasonOuterClass.ChangeEnergyReason
 import emu.grasscutter.net.proto.ChangeHpReasonOuterClass.ChangeHpReason;
 import emu.grasscutter.net.proto.EntityFightPropChangeReasonNotifyOuterClass.EntityFightPropChangeReasonNotify;
 import emu.grasscutter.net.proto.PropChangeReasonOuterClass.PropChangeReason;
-
 import java.util.List;
 
 public class PacketEntityFightPropChangeReasonNotify extends BasePacket {

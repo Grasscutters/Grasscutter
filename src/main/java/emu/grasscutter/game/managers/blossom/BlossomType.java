@@ -2,9 +2,8 @@ package emu.grasscutter.game.managers.blossom;
 
 import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.*;
-import lombok.Getter;
-
 import java.util.stream.*;
+import lombok.Getter;
 
 public enum BlossomType {
     GOLD(70360056, 101001001, 1),

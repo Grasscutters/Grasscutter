@@ -4,7 +4,6 @@ import emu.grasscutter.data.excels.quest.QuestData;
 import emu.grasscutter.game.quest.*;
 import emu.grasscutter.game.quest.enums.QuestExec;
 import emu.grasscutter.game.quest.handlers.QuestExecHandler;
-
 import java.util.Arrays;
 
 @QuestValueExec(QuestExec.QUEST_EXEC_SET_OPEN_STATE)

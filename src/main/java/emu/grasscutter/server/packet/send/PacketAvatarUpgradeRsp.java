@@ -3,7 +3,6 @@ package emu.grasscutter.server.packet.send;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.AvatarUpgradeRspOuterClass.AvatarUpgradeRsp;
-
 import java.util.Map;
 
 public class PacketAvatarUpgradeRsp extends BasePacket {

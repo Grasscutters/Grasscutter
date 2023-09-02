@@ -8,9 +8,10 @@ public class PacketPlayerPreEnterMpNotify extends BasePacket {
     public PacketPlayerPreEnterMpNotify(Player player) {
         super(PacketOpcodes.PlayerPreEnterMpNotify);
 
-        this.setData(PlayerPreEnterMpNotifyOuterClass.PlayerPreEnterMpNotify.newBuilder()
-            .setUid(player.getUid())
-            .setNickname(player.getNickname())
-            .setState(PlayerPreEnterMpNotifyOuterClass.PlayerPreEnterMpNotify.State.START));
+        this.setData(
+                PlayerPreEnterMpNotifyOuterClass.PlayerPreEnterMpNotify.newBuilder()
+                        .setUid(player.getUid())
+                        .setNickname(player.getNickname())
+                        .setState(PlayerPreEnterMpNotifyOuterClass.PlayerPreEnterMpNotify.State.START));
     }
 }

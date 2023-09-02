@@ -1,10 +1,9 @@
 package emu.grasscutter.game.world;
 
 import emu.grasscutter.game.inventory.ItemDef;
+import java.util.List;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
-
-import java.util.List;
 
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)

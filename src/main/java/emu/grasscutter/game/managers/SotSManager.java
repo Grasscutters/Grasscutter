@@ -13,7 +13,6 @@ import emu.grasscutter.net.proto.ChangeHpReasonOuterClass.ChangeHpReason;
 import emu.grasscutter.net.proto.PropChangeReasonOuterClass.PropChangeReason;
 import emu.grasscutter.server.event.player.PlayerLevelStatueEvent;
 import emu.grasscutter.server.packet.send.*;
-
 import java.util.*;
 
 // Statue of the Seven Manager

@@ -5,7 +5,6 @@ import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.ScenePlayerSoundNotifyOuterClass.ScenePlayerSoundNotify;
 import emu.grasscutter.net.proto.ScenePlayerSoundNotifyOuterClass.ScenePlayerSoundNotify.PlaySoundType;
 import emu.grasscutter.net.proto.VectorOuterClass.Vector;
-
 import java.util.Objects;
 
 public class PacketScenePlayerSoundNotify extends BasePacket {

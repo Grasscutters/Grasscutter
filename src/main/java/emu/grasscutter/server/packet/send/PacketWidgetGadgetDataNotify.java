@@ -2,7 +2,6 @@ package emu.grasscutter.server.packet.send;
 
 import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.*;
-
 import java.io.IOException;
 import java.util.List;
 

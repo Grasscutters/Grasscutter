@@ -9,10 +9,9 @@ import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.scripts.constants.EventType;
 import emu.grasscutter.scripts.data.*;
 import emu.grasscutter.server.packet.send.*;
-import lombok.*;
-
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
+import lombok.*;
 
 @Getter
 @Setter

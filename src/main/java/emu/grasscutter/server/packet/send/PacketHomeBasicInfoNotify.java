@@ -20,16 +20,16 @@ public class PacketHomeBasicInfoNotify extends BasePacket {
         var homeScene = home.getHomeSceneItem(sceneId);
 
         proto.setBasicInfo(
-            HomeBasicInfoOuterClass.HomeBasicInfo.newBuilder()
-                .setCurModuleId(owner.getCurrentRealmId())
-                .setCurRoomSceneId(homeScene.getRoomSceneId())
-                .setIsInEditMode(editMode)
-                .setHomeOwnerUid(owner.getUid())
-                .setExp(home.getExp())
-                .setLevel(home.getLevel())
-                .setOwnerNickName(owner.getNickname())
-                // TODO limit shop
-                .build());
+                HomeBasicInfoOuterClass.HomeBasicInfo.newBuilder()
+                        .setCurModuleId(owner.getCurrentRealmId())
+                        .setCurRoomSceneId(homeScene.getRoomSceneId())
+                        .setIsInEditMode(editMode)
+                        .setHomeOwnerUid(owner.getUid())
+                        .setExp(home.getExp())
+                        .setLevel(home.getLevel())
+                        .setOwnerNickName(owner.getNickname())
+                        // TODO limit shop
+                        .build());
 
         this.setData(proto);
     }

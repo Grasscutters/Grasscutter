@@ -3,11 +3,10 @@ package emu.grasscutter.game.activity.musicgame;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.MusicGameBasicData;
 import emu.grasscutter.net.proto.*;
-import lombok.*;
-import lombok.experimental.FieldDefaults;
-
 import java.util.*;
 import java.util.stream.Collectors;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
 
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)

@@ -1,10 +1,9 @@
 package emu.grasscutter.game.quest.enums;
 
 import emu.grasscutter.Grasscutter;
-import org.jetbrains.annotations.NotNull;
-
 import java.util.*;
 import java.util.function.BooleanSupplier;
+import org.jetbrains.annotations.NotNull;
 
 public enum LogicType {
     LOGIC_NONE(0),

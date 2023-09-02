@@ -7,7 +7,8 @@ public class PacketHomeSaveArrangementNoChangeRsp extends BasePacket {
     public PacketHomeSaveArrangementNoChangeRsp(int sceneId) {
         super(PacketOpcodes.HomeSaveArrangementNoChangeRsp);
 
-        this.setData(HomeSaveArrangementNoChangeRspOuterClass.HomeSaveArrangementNoChangeRsp.newBuilder()
-            .setSceneId(sceneId));
+        this.setData(
+                HomeSaveArrangementNoChangeRspOuterClass.HomeSaveArrangementNoChangeRsp.newBuilder()
+                        .setSceneId(sceneId));
     }
 }

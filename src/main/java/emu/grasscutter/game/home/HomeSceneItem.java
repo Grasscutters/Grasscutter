@@ -5,11 +5,10 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.binout.HomeworldDefaultSaveData;
 import emu.grasscutter.game.world.Position;
 import emu.grasscutter.net.proto.HomeSceneArrangementInfoOuterClass.HomeSceneArrangementInfo;
-import lombok.*;
-import lombok.experimental.FieldDefaults;
-
 import java.util.Map;
 import java.util.stream.Collectors;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
 
 @Entity
 @Data

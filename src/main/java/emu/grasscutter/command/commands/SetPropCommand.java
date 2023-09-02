@@ -6,7 +6,6 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.game.tower.TowerLevelRecord;
 import emu.grasscutter.server.packet.send.*;
-
 import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.stream.IntStream;

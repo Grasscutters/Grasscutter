@@ -4,7 +4,6 @@ import emu.grasscutter.data.GameData;
 import emu.grasscutter.game.quest.*;
 import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.PersonalLineAllDataRspOuterClass;
-
 import java.util.*;
 import java.util.stream.Collectors;
 

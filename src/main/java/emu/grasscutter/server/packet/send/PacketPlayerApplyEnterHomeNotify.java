@@ -8,7 +8,8 @@ public class PacketPlayerApplyEnterHomeNotify extends BasePacket {
     public PacketPlayerApplyEnterHomeNotify(Player requester) {
         super(PacketOpcodes.PlayerApplyEnterHomeNotify);
 
-        this.setData(PlayerApplyEnterHomeNotifyOuterClass.PlayerApplyEnterHomeNotify.newBuilder()
-            .setSrcPlayerInfo(requester.getOnlinePlayerInfo()));
+        this.setData(
+                PlayerApplyEnterHomeNotifyOuterClass.PlayerApplyEnterHomeNotify.newBuilder()
+                        .setSrcPlayerInfo(requester.getOnlinePlayerInfo()));
     }
 }

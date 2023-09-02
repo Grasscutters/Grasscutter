@@ -1,12 +1,12 @@
 package emu.grasscutter.game.quest.conditions;
 
+import static emu.grasscutter.game.quest.enums.QuestCond.QUEST_COND_QUEST_GLOBAL_VAR_GREATER;
+
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.excels.quest.QuestData;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.quest.QuestValueCond;
 import lombok.val;
-
-import static emu.grasscutter.game.quest.enums.QuestCond.QUEST_COND_QUEST_GLOBAL_VAR_GREATER;
 
 @QuestValueCond(QUEST_COND_QUEST_GLOBAL_VAR_GREATER)
 public class ConditionQuestGlobalVarGreater extends BaseCondition {

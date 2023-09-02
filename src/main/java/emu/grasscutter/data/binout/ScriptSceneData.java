@@ -1,9 +1,8 @@
 package emu.grasscutter.data.binout;
 
 import com.google.gson.annotations.SerializedName;
-import lombok.Data;
-
 import java.util.*;
+import lombok.Data;
 
 @Data
 public class ScriptSceneData {

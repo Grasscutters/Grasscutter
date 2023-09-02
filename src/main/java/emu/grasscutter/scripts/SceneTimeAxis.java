@@ -2,9 +2,8 @@ package emu.grasscutter.scripts;
 
 import emu.grasscutter.scripts.constants.EventType;
 import emu.grasscutter.scripts.data.ScriptArgs;
-import lombok.*;
-
 import java.util.*;
+import lombok.*;
 
 @Getter
 @RequiredArgsConstructor

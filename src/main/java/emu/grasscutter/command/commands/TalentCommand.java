@@ -6,7 +6,6 @@ import emu.grasscutter.data.excels.avatar.AvatarSkillDepotData;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.utils.lang.Language;
-
 import java.util.List;
 
 @Command(

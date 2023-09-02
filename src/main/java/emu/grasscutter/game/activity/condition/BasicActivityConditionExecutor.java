@@ -6,7 +6,6 @@ import emu.grasscutter.game.activity.*;
 import emu.grasscutter.game.activity.condition.all.UnknownActivityConditionHandler;
 import emu.grasscutter.game.quest.enums.LogicType;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-
 import java.util.*;
 import java.util.function.BooleanSupplier;
 import java.util.stream.Collectors;

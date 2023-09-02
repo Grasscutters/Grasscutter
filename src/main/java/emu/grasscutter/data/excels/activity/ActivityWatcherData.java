@@ -2,10 +2,9 @@ package emu.grasscutter.data.excels.activity;
 
 import emu.grasscutter.data.*;
 import emu.grasscutter.game.props.WatcherTriggerType;
+import java.util.List;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
-
-import java.util.List;
 
 @ResourceType(
         name = "NewActivityWatcherConfigData.json",

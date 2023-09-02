@@ -6,11 +6,10 @@ import emu.grasscutter.data.*;
 import emu.grasscutter.data.binout.MainQuestData;
 import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.game.quest.enums.*;
+import java.util.*;
+import javax.annotation.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
-
-import javax.annotation.*;
-import java.util.*;
 
 @ResourceType(name = "QuestExcelConfigData.json")
 @Getter

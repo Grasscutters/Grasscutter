@@ -4,7 +4,6 @@ import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.ActivityTakeWatcherRewardReqOuterClass;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketActivityTakeWatcherRewardRsp;
-
 import java.util.Optional;
 
 @Opcodes(PacketOpcodes.ActivityTakeWatcherRewardReq)

@@ -4,7 +4,6 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.DataLoader;
 import emu.grasscutter.server.game.*;
 import it.unimi.dsi.fastutil.ints.*;
-
 import java.util.List;
 
 public class ExpeditionSystem extends BaseGameSystem {

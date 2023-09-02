@@ -4,7 +4,6 @@ import emu.grasscutter.command.*;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.game.GameSession;
-
 import java.util.List;
 
 @Command(

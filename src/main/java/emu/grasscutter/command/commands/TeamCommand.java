@@ -1,12 +1,11 @@
 package emu.grasscutter.command.commands;
 
+import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
+
 import emu.grasscutter.command.*;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.packet.send.PacketChangeMpTeamAvatarRsp;
-
 import java.util.*;
-
-import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
 
 @Command(
         label = "team",
