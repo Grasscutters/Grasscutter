@@ -83,7 +83,7 @@ public class GameHome {
     // Data fixer.
     private void fixMainHouseIfOld() {
         if (this.getMainHouseMap() == null) {
-            Grasscutter.getLogger().info("player {} main house will be deleted due to GC update! sorry XD", this.getPlayer().getUid());
+            Grasscutter.getLogger().debug("Player {}'s main house will be deleted due to GC update! (ps. sorry XD)", this.getPlayer().getUid());
             this.mainHouseMap = new ConcurrentHashMap<>(); // assign.
         }
 
