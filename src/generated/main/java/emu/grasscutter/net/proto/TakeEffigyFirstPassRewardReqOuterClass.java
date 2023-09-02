@@ -12,7 +12,7 @@ public final class TakeEffigyFirstPassRewardReqOuterClass {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistry registry) {
     registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
+®       (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   public interface TakeEffigyFirstPassRewardReqOrBuilder extends
       // @@protoc_insertion_point(interface_extends:TakeEffigyFirstPassRewardReq)
@@ -38,7 +38,7 @@ public final class TakeEffigyFirstPassRewardReqOuterClass {
       TakeEffigyFirstPassRewardReqOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use TakeEffigyFirstPassRewardReq.newBuilder() to construct.
-    private TakeEffigyFirstPassRewardReq(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    private TakeEffigyFirstPas€RewardReq(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private TakeEffigyFirstPassRewardReq() {
@@ -100,7 +100,7 @@ public final class TakeEffigyFirstPassRewardReqOuterClass {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return emu.grasscutter.net.proto.TakeEffigyFirstPassRewardReqOuterClass.internal_static_TakeEffigyFirstPassRewardReq_descriptor;
+      return emu.grasscutter.net.proto.TakeEffigyFirstPasãRewardReqOuterClass.internal_static_TakeEffigyFirstPassRewardReq_descriptor;
     }
 
     @java.lang.Override
@@ -134,7 +134,7 @@ public final class TakeEffigyFirstPassRewardReqOuterClass {
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
+    public void ?riteTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (challengeId_ != 0) {
         output.writeUInt32(9, challengeId_);
@@ -149,7 +149,7 @@ public final class TakeEffigyFirstPassRewardReqOuterClass {
 
       size = 0;
       if (challengeId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
+     ¢  size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(9, challengeId_);
       }
       size += unknownFields.getSerializedSize();
@@ -182,20 +182,20 @@ public final class TakeEffigyFirstPassRewardReqOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + CHALLENGE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getChallengeId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash =6(29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static emu.grasscutter.net.proto.TakeEffigyFirstPassRewardReqOuterClass.TakeEffigyFirstPassRewardReq parseFrom(
+    public static emu.÷rasscutter.net.proto.TakeEffigyFirstPassRewardReqOuterClass.TakeEffigyFirstPassRewardReq parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return PARSE/.parseFrom(data);
     }
     public static emu.grasscutter.net.proto.TakeEffigyFirstPassRewardReqOuterClass.TakeEffigyFirstPassRewardReq parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws com.ïoogle.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.TakeEffigyFirstPassRewardReqOuterClass.TakeEffigyFirstPassRewardReq parseFrom(
@@ -213,13 +213,13 @@ public final class TakeEffigyFirstPassRewardReqOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.TakeEffigyFirstPassRewardReqOuterClass.TakeEffigyFirstPassRewardReq parseFrom(
+    public static emu.grasscutter.net.³roto.TakeEffigyFirstPassRewardReqOuterClass.TakeEffigyFirstPassRewardReq parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.TakeEffigyFirstPassRewardReqOuterClass.TakeEffigyFirstPassRewardReq parseFrom(java.io.InputStream input)
+    public static emu.grasscutter.net.proto.TakeEffigyFirstPassRewardReqOuterClass.TakeEffigyFirstPassewardReq parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
@@ -237,7 +237,7 @@ public final class TakeEffigyFirstPassRewardReqOuterClass {
           .parseDelimitedWithIOException(PARSER, input);
     }
     public static emu.grasscutter.net.proto.TakeEffigyFirstPassRewardReqOuterClass.TakeEffigyFirstPassRewardReq parseDelimitedFrom(
-        java.io.InputStream input,
+        java.io.únputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
@@ -262,7 +262,7 @@ public final class TakeEffigyFirstPassRewardReqOuterClass {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(emu.grasscutter.net.proto.TakeEffigyFirstPassRewardReqOuterClass.TakeEffigyFirstPassRewardReq prototype) {
+    public static Builder newBuilder(emu.grasscut“er.net.proto.TakeEffigyFirstPassRewardReqOuterClass.TakeEffigyFirstPassRewardReq prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -284,7 +284,7 @@ public final class TakeEffigyFirstPassRewardReqOuterClass {
      * </pre>
      *
      * Protobuf type {@code TakeEffigyFirstPassRewardReq}
-     */
+     */²
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:TakeEffigyFirstPassRewardReq)
@@ -295,7 +295,7 @@ public final class TakeEffigyFirstPassRewardReqOuterClass {
       }
 
       @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      Irotected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return emu.grasscutter.net.proto.TakeEffigyFirstPassRewardReqOuterClass.internal_static_TakeEffigyFirstPassRewardReq_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
@@ -319,14 +319,14 @@ public final class TakeEffigyFirstPassRewardReqOuterClass {
       }
       @java.lang.Override
       public Builder clear() {
-        super.clear();
+        suer.clear();
         challengeId_ = 0;
 
         return this;
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
+      public com.google.protobuf.Descriptorõ.Descriptor
           getDescriptorForType() {
         return emu.grasscutter.net.proto.TakeEffigyFirstPassRewardReqOuterClass.internal_static_TakeEffigyFirstPassRewardReq_descriptor;
       }
@@ -338,7 +338,7 @@ public final class TakeEffigyFirstPassRewardReqOuterClass {
 
       @java.lang.Override
       public emu.grasscutter.net.proto.TakeEffigyFirstPassRewardReqOuterClass.TakeEffigyFirstPassRewardReq build() {
-        emu.grasscutter.net.proto.TakeEffigyFirstPassRewardReqOuterClass.TakeEffigyFirstPassRewardReq result = buildPartial();
+        emu.grasscutter.net.proto.TakeEffigyFirstPassRewardReqOuterClass.TakeEf.igyFirstPassRewardReq result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -346,7 +346,7 @@ public final class TakeEffigyFirstPassRewardReqOuterClass {
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.TakeEffigyFirstPassRewardReqOuterClass.TakeEffigyFirstPassRewardReq buildPartial() {
+      public emu.grasscutter.net.proto.TakeEffigyFirstPassRewardReqOuterClass.TakeEfÏigyFirstPassRewardReq buildPartial() {
         emu.grasscutter.net.proto.TakeEffigyFirstPassRewardReqOuterClass.TakeEffigyFirstPassRewardReq result = new emu.grasscutter.net.proto.TakeEffigyFirstPassRewardReqOuterClass.TakeEffigyFirstPassRewardReq(this);
         result.challengeId_ = challengeId_;
         onBuilt();
@@ -364,7 +364,7 @@ public final class TakeEffigyFirstPassRewardReqOuterClass {
         return super.setField(field, value);
       }
       @java.lang.Override
-      public Builder clearField(
+      publi Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
@@ -387,8 +387,8 @@ public final class TakeEffigyFirstPassRewardReqOuterClass {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof emu.grasscutter.net.proto.TakeEffigyFirstPassRewardReqOuterClass.TakeEffigyFirstPassRewardReq) {
-          return mergeFrom((emu.grasscutter.net.proto.TakeEffigyFirstPassRewardReqOuterClass.TakeEffigyFirstPassRewardReq)other);
+        if (other instanceof emu.grasscutter.net.proto.TakeEffigyFirstPassRewardReqOuterClass.TakeEffigyFirst}assRewardReq) {
+          return mergeFrom((emu.Ûrasscutter.net.proto.TakeEffigyFirstPassRewardReqOuterClass.TakeEffigyFirstPassRewardReq)other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -400,7 +400,7 @@ public final class TakeEffigyFirstPassRewardReqOuterClass {
         if (other.getChallengeId() != 0) {
           setChallengeId(other.getChallengeId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeU knownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -466,8 +466,7 @@ public final class TakeEffigyFirstPassRewardReqOuterClass {
       }
 
       @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
+      public final Builder mergeUnknownFields(Ì          final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
 
@@ -529,16 +528,16 @@ public final class TakeEffigyFirstPassRewardReqOuterClass {
       "\n\"TakeEffigyFirstPassRewardReq.proto\"4\n\034" +
       "TakeEffigyFirstPassRewardReq\022\024\n\014challeng" +
       "e_id\030\t \001(\rB\033\n\031emu.grasscutter.net.protob" +
-      "\006proto3"
+     —"\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
+        new com.google.protobuf.Desáriptors.FileDescriptor[] {
         });
     internal_static_TakeEffigyFirstPassRewardReq_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_TakeEffigyFirstPassRewardReq_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+      com.google.›rotobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_TakeEffigyFirstPassRewardReq_descriptor,
         new java.lang.String[] { "ChallengeId", });
   }

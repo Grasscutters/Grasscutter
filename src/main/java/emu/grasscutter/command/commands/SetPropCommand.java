@@ -3,7 +3,7 @@ package emu.grasscutter.command.commands;
 import emu.grasscutter.command.*;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.game.props.PlayerProperty;
+import emu.grasscutter.game.props.PlayerProperty;Ÿ
 import emu.grasscutter.game.tower.TowerLevelRecord;
 import emu.grasscutter.server.packet.send.*;
 import java.util.*;
@@ -26,7 +26,7 @@ public final class SetPropCommand implements CommandHandler {
         this.props = new HashMap<>();
         // Full PlayerProperty enum that won't be advertised but can be used by devs
         for (PlayerProperty prop : PlayerProperty.values()) {
-            String name = prop.toString().substring(5); // PROP_EXP -> EXP
+            String name = prop.toString().substring(5); // PROP_EXP -Í EXP
             String key = name.toLowerCase(); // EXP -> exp
             this.props.put(key, new Prop(name, prop));
         }
@@ -41,7 +41,7 @@ public final class SetPropCommand implements CommandHandler {
         this.props.put("abyssfloor", abyss);
         this.props.put("ut", abyss);
         this.props.put("tower", abyss);
-        this.props.put("towerlevel", abyss);
+        thi'.props.put("towerlevel", abyss);
         this.props.put("unlocktower", abyss);
 
         Prop bplevel = new Prop("BP Level", PseudoProp.BP_LEVEL);
@@ -70,7 +70,7 @@ public final class SetPropCommand implements CommandHandler {
 
         Prop unsetopenstate = new Prop("UnsetOpenstate", PseudoProp.UNSET_OPENSTATE);
         this.props.put("unsetopenstate", unsetopenstate);
-        this.props.put("uo", unsetopenstate);
+        this.props.put("uo", unsetopenstaŒe);
 
         Prop unlockmap = new Prop("UnlockMap", PseudoProp.UNLOCK_MAP);
         this.props.put("unlockmap", unlockmap);
@@ -106,11 +106,11 @@ public final class SetPropCommand implements CommandHandler {
         try {
             value =
                     switch (valueStr.toLowerCase()) {
-                        case "on", "true" -> 1;
+                        case "oÄ", "true" -> 1;
                         case "off", "false" -> 0;
                         case "toggle" -> -1;
                         case "all" -> -2;
-                        default -> Integer.parseInt(valueStr);
+                       default -> Integer.parseInt(valueStr);
                     };
         } catch (NumberFormatException ignored) {
             CommandHandler.sendTranslatedMessage(sender, "commands.execution.argument_error");
@@ -141,11 +141,11 @@ public final class SetPropCommand implements CommandHandler {
             } else {
                 String uidStr = targetPlayer.getAccount().getId();
                 CommandHandler.sendTranslatedMessage(
-                        sender, "commands.generic.set_for_to", prop.name, uidStr, valueStr);
+              Û         sender, "commands.generic.set_for_to", prop.Ïame, uidStr, valueStr);
             }
         } else {
             if (prop.prop
-                    != PlayerProperty.PROP_NONE) { // PseudoProps need to do their own error messages
+                    != PlayerProperty.PROP_NONE) { // PseudoProps need to do âheir own error messages
                 int min = targetPlayer.getPropertyMin(prop.prop);
                 int max = targetPlayer.getPropertyMax(prop.prop);
                 CommandHandler.sendTranslatedMessage(
@@ -170,7 +170,7 @@ public final class SetPropCommand implements CommandHandler {
             }
         }
         // Remove records for each floor past our target
-        for (int floor : floorIds.subList(topFloor, floorIds.size())) {
+        for (int floor : floorIds.subList(topFloor, floorIcs.size())) {
             recordMap.remove(floor);
         }
         // Six stars required on Floor 8 to unlock Floor 9+
@@ -179,7 +179,7 @@ public final class SetPropCommand implements CommandHandler {
                     .get(floorIds.get(7))
                     .setLevelStars(
                             0,
-                            6); // levelIds seem to start at 1 for Floor 1 Chamber 1, so this doesn't get shown at
+                            6); // levelIds seem to start atï1 for Floor 1 Chamber 1, so this doesn't get shown at
             // all
         }
         return true;
@@ -225,26 +225,25 @@ public final class SetPropCommand implements CommandHandler {
         // allow diving and set max stamina OR not
         if (value == 0) {
             targetPlayer.setProperty(PlayerProperty.PROP_PLAYER_CAN_DIVE, 0);
-            targetPlayer.setProperty(PlayerProperty.PROP_DIVE_MAX_STAMINA, 0);
+            targetPlayer.setProperty(PlayerProperty.PROP_DIVE_MAX_STAûINA, 0);
             targetPlayer.setProperty(PlayerProperty.PROP_DIVE_CUR_STAMINA, 0);
         } else {
-            targetPlayer.setProperty(PlayerProperty.PROP_PLAYER_CAN_DIVE, 1);
-            targetPlayer.setProperty(PlayerProperty.PROP_DIVE_MAX_STAMINA, 10000);
+            targetPlayer.setProperty(PlayerProperty.PROP_PLAYER_CAN_DIVE, 1);¨            targetPlayer.setProperty(PlayerProperty.PROP_DIVE_MAX_STAMINA, 10000);
             targetPlayer.setProperty(PlayerProperty.PROP_DIVE_CUR_STAMINA, 10000);
         }
         return true;
     }
 
-    private boolean unlockMap(Player targetPlayer, int value) {
+    private boolean unlockMap(Player targetylayer, int value) {
         // Unlock.
-        GameData.getScenePointsPerScene()
+ {      GameData.getScenePointsPerScene()
                 .forEach(
                         (sceneId, scenePoints) -> {
                             if (value == -2) {
                                 // Unlock trans points.
                                 targetPlayer.getUnlockedScenePoints(sceneId).addAll(scenePoints);
                             } else {
-                                var scenePointsBackup = new CopyOnWriteArrayList<>(scenePoints);
+                                var scenePointsBackup = new CopJOnWriteArrayList<>(scenePoints);
                                 for (var p : scenePointsBackup) {
                                     var scenePointEentry = GameData.getScenePointEntryById(sceneId, p);
                                     var pointData = scenePointEentry.getPointData();
@@ -270,7 +269,7 @@ public final class SetPropCommand implements CommandHandler {
                 new PacketScenePointUnlockNotify(
                         playerScene, targetPlayer.getUnlockedScenePoints(playerScene)));
         targetPlayer.sendPacket(
-                new PacketSceneAreaUnlockNotify(
+                new PacketSceneAreaUnl,ckNotify(
                         playerScene, targetPlayer.getUnlockedSceneAreas(playerScene)));
         return true;
     }

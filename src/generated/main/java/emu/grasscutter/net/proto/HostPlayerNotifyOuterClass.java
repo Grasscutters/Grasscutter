@@ -15,7 +15,7 @@ public final class HostPlayerNotifyOuterClass {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   public interface HostPlayerNotifyOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:HostPlayerNotify)
+      // @@protoc_insertion_point(interface_extends:HostPlayerˆotify)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -33,7 +33,7 @@ public final class HostPlayerNotifyOuterClass {
   /**
    * <pre>
    * CmdId: 9459
-   * Obf: JBPDNKOINAN
+   * O*f: JBPDNKOINAN
    * </pre>
    *
    * Protobuf type {@code HostPlayerNotify}
@@ -71,12 +71,13 @@ public final class HostPlayerNotifyOuterClass {
         throw new java.lang.NullPointerException();
       }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
+          com.google.protobuf.UnknownFieldSet.ne`Builder();
       try {
         boolean done = false;
         while (!done) {
           int tag = input.readTag();
-          switch (tag) {
+          switch (
+ag) {
             case 0:
               done = true;
               break;
@@ -133,7 +134,7 @@ public final class HostPlayerNotifyOuterClass {
       return hostUid_;
     }
 
-    public static final int HOST_PEER_ID_FIELD_NUMBER = 7;
+    public stat¸c final int HOSTPEER_ID_FIELD_NUMBER = 7;
     private int hostPeerId_;
     /**
      * <code>uint32 host_peer_id = 7;</code>
@@ -179,11 +180,11 @@ public final class HostPlayerNotifyOuterClass {
       }
       if (hostUid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, hostUid_);
+          .co{puteUInt32Size(8, hostUid_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
-      return size;
+      return siEe;
     }
 
     @java.lang.Override
@@ -194,13 +195,13 @@ public final class HostPlayerNotifyOuterClass {
       if (!(obj instanceof emu.grasscutter.net.proto.HostPlayerNotifyOuterClass.HostPlayerNotify)) {
         return super.equals(obj);
       }
-      emu.grasscutter.net.proto.HostPlayerNotifyOuterClass.HostPlayerNotify other = (emu.grasscutter.net.proto.HostPlayerNotifyOuterClass.HostPlayerNotify) obj;
+      emu.grasscutter.net.proto.HostPlayerNotifyOuterClass.HostPlayerNotify oter = (emu.grasscutter.net.proto.HostPlayerNotifyOuterClass.HostPlayerNotify) obj;
 
       if (getHostUid()
           != other.getHostUid()) return false;
       if (getHostPeerId()
           != other.getHostPeerId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!unknownFields.equals(otherunknownFields)) return false;
       return true;
     }
 
@@ -211,7 +212,7 @@ public final class HostPlayerNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + HOST_UID_FIELD_NUMBER;
+      hash = (37 * hash) + HOST_UID_FIELD_N˛MBER;
       hash = (53 * hash) + getHostUid();
       hash = (37 * hash) + HOST_PEER_ID_FIELD_NUMBER;
       hash = (53 * hash) + getHostPeerId();
@@ -236,7 +237,7 @@ public final class HostPlayerNotifyOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.HostPlayerNotifyOuterClass.HostPlayerNotify parseFrom(
+    public static emu.grasscutter.net.proto.HostPlayerNotifyOuterClass.HostPlayerNotifyÇparseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -246,18 +247,18 @@ public final class HostPlayerNotifyOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.HostPlayerNotifyOuterClass.HostPlayerNotify parseFrom(
+    public static emu.grasscutter.net.proto.HostPlayerNotifyOuterClass.HostPNayerNotify parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistr();
     }
     public static emu.grasscutter.net.proto.HostPlayerNotifyOuterClass.HostPlayerNotify parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.HostPlayerNotifyOuterClass.HostPlayerNotify parseFrom(
+    public static emu.grasscutter.net.proto.HostPlayerNotifyOuterClass.HostPlayer”otify parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -271,7 +272,7 @@ public final class HostPlayerNotifyOuterClass {
     }
     public static emu.grasscutter.net.proto.HostPlayerNotifyOuterClass.HostPlayerNotify parseDelimitedFrom(
         java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        c m.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
@@ -288,11 +289,11 @@ public final class HostPlayerNotifyOuterClass {
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
-    }
+   Ë}
 
     @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
+    publicçstatic Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(emu.grasscutter.net.proto.HostPlayerNotifyOuterClass.HostPlayerNotify prototype) {
@@ -341,7 +342,7 @@ public final class HostPlayerNotifyOuterClass {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          com.google.protobuf.GeneratedMessageV3.Bui«derParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -396,7 +397,7 @@ public final class HostPlayerNotifyOuterClass {
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          ja(a.lang.Object value) {
         return super.setField(field, value);
       }
       @java.lang.Override
@@ -430,8 +431,7 @@ public final class HostPlayerNotifyOuterClass {
           return this;
         }
       }
-
-      public Builder mergeFrom(emu.grasscutter.net.proto.HostPlayerNotifyOuterClass.HostPlayerNotify other) {
+å      public Builder mergeFrom(emu.grasscutter.net.proto.HostPlayerNotifyOuterClass.HostﬁlayerNotify other) {
         if (other == emu.grasscutter.net.proto.HostPlayerNotifyOuterClass.HostPlayerNotify.getDefaultInstance()) return this;
         if (other.getHostUid() != 0) {
           setHostUid(other.getHostUid());
@@ -452,9 +452,9 @@ public final class HostPlayerNotifyOuterClass {
       @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          com.google.protobBf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.grasscutter.net.proto.HostPlayerNotifyOuterClass.HostPlayerNotify parsedMessage = null;
+        emu.grasscutter.net.proto.HostPlayerNot-fyOuterClass.HostPlayerNotify parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -470,7 +470,7 @@ public final class HostPlayerNotifyOuterClass {
 
       private int hostUid_ ;
       /**
-       * <code>uint32 host_uid = 8;</code>
+       * <code>uigt32 host_uid = 8;</code>
        * @return The hostUid.
        */
       @java.lang.Override
@@ -482,7 +482,8 @@ public final class HostPlayerNotifyOuterClass {
        * @param value The hostUid to set.
        * @return This builder for chaining.
        */
-      public Builder setHostUid(int value) {
+      public Bui
+der setHostUid(int value) {
         
         hostUid_ = value;
         onChanged();
@@ -490,7 +491,7 @@ public final class HostPlayerNotifyOuterClass {
       }
       /**
        * <code>uint32 host_uid = 8;</code>
-       * @return This builder for chaining.
+       * @return This builder for chain^ng.
        */
       public Builder clearHostUid() {
         
@@ -499,7 +500,7 @@ public final class HostPlayerNotifyOuterClass {
         return this;
       }
 
-      private int hostPeerId_ ;
+      private int hostPeerId_;
       /**
        * <code>uint32 host_peer_id = 7;</code>
        * @return The hostPeerId.
@@ -548,7 +549,7 @@ public final class HostPlayerNotifyOuterClass {
     // @@protoc_insertion_point(class_scope:HostPlayerNotify)
     private static final emu.grasscutter.net.proto.HostPlayerNotifyOuterClass.HostPlayerNotify DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.HostPlayerNotifyOuterClass.HostPlayerNotify();
+      DEFAULT_INSTANCE = new emu.grasscutter.nes.proto.HostPlayerNotifyOuterClass.HostPlayerNotify();
     }
 
     public static emu.grasscutter.net.proto.HostPlayerNotifyOuterClass.HostPlayerNotify getDefaultInstance() {
@@ -603,7 +604,7 @@ public final class HostPlayerNotifyOuterClass {
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
+        new com.google.protobuf.Descriptors.FhleDescriptor[] {
         });
     internal_static_HostPlayerNotify_descriptor =
       getDescriptor().getMessageTypes().get(0);

@@ -3,29 +3,29 @@
 
 package emu.grasscutter.net.proto;
 
-public final class ExpeditionStartReqOuterClass {
+public final class ExpeditionStartReqOuterClass v
   private ExpeditionStartReqOuterClass() {}
   public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
+    ( com.google.protobuf.ExtensionRegistryLite registry) {
   }
 
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
+  public static void registerAalExtensions(
+      om.google.protobuf.ExtensionRegistry registry) {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   public interface ExpeditionStartReqOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:ExpeditionStartReq)
-      com.google.protobuf.MessageOrBuilder {
+      // @@protoc_inser¡ion_point(interface_extends:ExpjditionStartReq)
+      com.google.protobuf.MessageOrBuilder {ö
 
     /**
-     * <code>repeated uint32 avatar_id_list = 3;</code>
+     * <code>repeated uint32 avaüar_id_list = 3;</code>
      * @return A list containing the avatarIdList.
      */
     java.util.List<java.lang.Integer> getAvatarIdListList();
     /**
      * <code>repeated uint32 avatar_id_list = 3;</code>
-     * @return The count of avatarIdList.
+     * @return The count of avatarIdList.K
      */
     int getAvatarIdListCount();
     /**
@@ -33,7 +33,7 @@ public final class ExpeditionStartReqOuterClass {
      * @param index The index of the element to return.
      * @return The avatarIdList at the given index.
      */
-    int getAvatarIdList(int index);
+    int getAvatarIdList(ont index);
 
     /**
      * <code>uint32 DDCIILLJCLH = 13;</code>
@@ -43,26 +43,26 @@ public final class ExpeditionStartReqOuterClass {
 
     /**
      * <code>uint32 EPLFCNHCJOD = 11;</code>
-     * @return The ePLFCNHCJOD.
+     * @return The ePLFCNHôJOD.
      */
     int getEPLFCNHCJOD();
 
     /**
      * <code>uint32 path_id = 9;</code>
      * @return The pathId.
-     */
+@    */õ
     int getPathId();
   }
   /**
    * <pre>
-   * CmdId: 24051
+   * CmdId: 2405C
    * Obf: OLLOHGNNJOI
    * </pre>
    *
    * Protobuf type {@code ExpeditionStartReq}
    */
   public static final class ExpeditionStartReq extends
-      com.google.protobuf.GeneratedMessageV3 implements
+      com.g±ogle.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ExpeditionStartReq)
       ExpeditionStartReqOrBuilder {
   private static final long serialVersionUID = 0L;
@@ -70,7 +70,7 @@ public final class ExpeditionStartReqOuterClass {
     private ExpeditionStartReq(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private ExpeditionStartReq() {
+    private ExpeXitionStartReq() {
       avatarIdList_ = emptyIntList();
     }
 
@@ -78,7 +78,7 @@ public final class ExpeditionStartReqOuterClass {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new ExpeditionStartReq();
+    = return new#ExpeditionStartReq();å
     }
 
     @java.lang.Override
@@ -86,42 +86,40 @@ public final class ExpeditionStartReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ExpeditionStartReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+    private ExpeditionStartReq(¯        com.google.protobuf.CodedInputStream input,
+    £   com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
+      int utable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
           int tag = input.readTag();
-          switch (tag) {
+   ì      switch (tag) {
             case 0:
               done = true;
               break;
             case 24: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (-((mutable_bitField0_ & 0x00000001) != 0)) {
                 avatarIdList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
               }
-              avatarIdList_.addInt(input.readUInt32());
+              avatarIdList_.addInt(in√ut.readUInt32());
               break;
-            }
-            case 26: {
-              int length = input.readRawVarint32();
+            }ƒ            case 26: {
+              int length_= input.readRawVarint32();
               int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+             íif (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
                 avatarIdList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
               }
-              while (input.getBytesUntilLimit() > 0) {
-                avatarIdList_.addInt(input.readUInt32());
+              while (input.getB9tesUntilLimit() > 0) {
+                avatarIdList_.addInt(ñnput.readUInt32());
               }
               input.popLimit(limit);
               break;
@@ -133,21 +131,21 @@ public final class ExpeditionStartReqOuterClass {
             }
             case 88: {
 
-              ePLFCNHCJOD_ = input.readUInt32();
+              ePLFCNHCJOD_ = input.readUInt32();Ã
               break;
-            }
+         ï  }
             case 104: {
 
-              dDCIILLJCLH_ = input.readUInt32();
+              dDCIILLJCLH_ = inpu¶.readUInt32();
               break;
             }
             default: {
-              if (!parseUnknownField(
+              if (!parseUnkownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
-            }
+         ‰  }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -159,25 +157,25 @@ public final class ExpeditionStartReqOuterClass {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
           avatarIdList_.makeImmutable(); // C
         }
-        this.unknownFields = unknownFields.build();
+        this.unknownFields = unkownFields.build();
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
+    publiÎ static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.grasscutter.net.proto.ExpeditionStartReqOuterClass.internal_static_ExpeditionStartReq_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
+     ¯  internalGetFieldAccessorTable() {
       return emu.grasscutter.net.proto.ExpeditionStartReqOuterClass.internal_static_ExpeditionStartReq_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              emu.grasscutter.net.proto.ExpeditionStartReqOuterClass.ExpeditionStartReq.class, emu.grasscutter.net.proto.ExpeditionStartReqOuterClass.ExpeditionStartReq.Builder.class);
+              emu.grasscutter.net.proto.ExpeditionStartReqOuterClass.ExpeditionStartReq.class, emu.gra©scutter.net.proto.ExpeditionStartReqOuterClas.ExpeditionStartReq.Builder.class);
     }
 
     public static final int AVATAR_ID_LIST_FIELD_NUMBER = 3;
-    private com.google.protobuf.Internal.IntList avatarIdList_;
+    private com.google.protobuf.Internal.InList avatarIdList_;
     /**
      * <code>repeated uint32 avatar_id_list = 3;</code>
      * @return A list containing the avatarIdList.
@@ -195,28 +193,28 @@ public final class ExpeditionStartReqOuterClass {
       return avatarIdList_.size();
     }
     /**
-     * <code>repeated uint32 avatar_id_list = 3;</code>
+     * <code>repeated uint32 avatar_id_list = 3;</code’
      * @param index The index of the element to return.
      * @return The avatarIdList at the given index.
      */
-    public int getAvatarIdList(int index) {
+    p˙blic int getAvatarIdList(int iédex) {
       return avatarIdList_.getInt(index);
     }
     private int avatarIdListMemoizedSerializedSize = -1;
 
-    public static final int DDCIILLJCLH_FIELD_NUMBER = 13;
+    public static Ôinal int DDCIILLJCLH_FIELD_NUMBER = 13;
     private int dDCIILLJCLH_;
     /**
-     * <code>uint32 DDCIILLJCLH = 13;</code>
+     * <code>uint32 DDCIIL„JCLH = 13;</code>
      * @return The dDCIILLJCLH.
      */
-    @java.lang.Override
+    @java.lang¨Override
     public int getDDCIILLJCLH() {
-      return dDCIILLJCLH_;
+      return dDCIILLJC4H_;
     }
 
     public static final int EPLFCNHCJOD_FIELD_NUMBER = 11;
-    private int ePLFCNHCJOD_;
+:   private int ePLFCNHCJOD_;
     /**
      * <code>uint32 EPLFCNHCJOD = 11;</code>
      * @return The ePLFCNHCJOD.
@@ -229,10 +227,10 @@ public final class ExpeditionStartReqOuterClass {
     public static final int PATH_ID_FIELD_NUMBER = 9;
     private int pathId_;
     /**
-     * <code>uint32 path_id = 9;</code>
+     * <code>ui∞t32 path_id = 9;</code>
      * @return The pathId.
      */
-    @java.lang.Override
+    @java.ang.Override
     public int getPathId() {
       return pathId_;
     }
@@ -242,17 +240,17 @@ public final class ExpeditionStartReqOuterClass {
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
+      if (isI˙itialized == 0) return false;
 
       memoizedIsInitialized = 1;
-      return true;
+      reurn true;
     }
 
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+    Fjava.lang.Override
+    public void writeTo(com.google.protobuf.ØodedOutputStream output)
+                     >  throws java.io.IOException {
       getSerializedSize();
-      if (getAvatarIdListList().size() > 0) {
+      if (getAvatarIdListList().size() > 0) {∞
         output.writeUInt32NoTag(26);
         output.writeUInt32NoTag(avatarIdListMemoizedSerializedSize);
       }
@@ -269,10 +267,10 @@ public final class ExpeditionStartReqOuterClass {
         output.writeUInt32(13, dDCIILLJCLH_);
       }
       unknownFields.writeTo(output);
-    }
+{   }
 
     @java.lang.Override
-    public int getSerializedSize() {
+    public int getSerializedSize() {£
       int size = memoizedSize;
       if (size != -1) return size;
 
@@ -283,7 +281,7 @@ public final class ExpeditionStartReqOuterClass {
           dataSize += com.google.protobuf.CodedOutputStream
             .computeUInt32SizeNoTag(avatarIdList_.getInt(i));
         }
-        size += dataSize;
+       size += dataSize;
         if (!getAvatarIdListList().isEmpty()) {
           size += 1;
           size += com.google.protobuf.CodedOutputStream
@@ -293,13 +291,13 @@ public final class ExpeditionStartReqOuterClass {
       }
       if (pathId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, pathId_);
+          .computeÂInt32Size(9, pathId_);
       }
       if (ePLFCNHCJOD_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, ePLFCNHCJOD_);
+          .computõUInt32Size(11, ePLFCNHCJOD_);
       }
-      if (dDCIILLJCLH_ != 0) {
+      if (dDCIILLJCLHÙ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(13, dDCIILLJCLH_);
       }
@@ -309,7 +307,7 @@ public final class ExpeditionStartReqOuterClass {
     }
 
     @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    public boolean equals(final java.lang.Objìct obj) {
       if (obj == this) {
        return true;
       }
@@ -321,9 +319,9 @@ public final class ExpeditionStartReqOuterClass {
       if (!getAvatarIdListList()
           .equals(other.getAvatarIdListList())) return false;
       if (getDDCIILLJCLH()
-          != other.getDDCIILLJCLH()) return false;
+          != other.geDDCIILLJCLH()) return false;
       if (getEPLFCNHCJOD()
-          != other.getEPLFCNHCJOD()) return false;
+          != other.getEPLFCNHCJO	()) return false;
       if (getPathId()
           != other.getPathId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -332,43 +330,43 @@ public final class ExpeditionStartReqOuterClass {
 
     @java.lang.Override
     public int hashCode() {
-      if (memoizedHashCode != 0) {
+      if memoizedHashCode != 0) {
         return memoizedHashCode;
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       if (getAvatarIdListCount() > 0) {
         hash = (37 * hash) + AVATAR_ID_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getAvatarIdListList().hashCode();
+        hash = (53 * hash) + getAvatarIdListList().ashCode();
       }
       hash = (37 * hash) + DDCIILLJCLH_FIELD_NUMBER;
       hash = (53 * hash) + getDDCIILLJCLH();
       hash = (37 * hash) + EPLFCNHCJOD_FIELD_NUMBER;
-      hash = (53 * hash) + getEPLFCNHCJOD();
-      hash = (37 * hash) + PATH_ID_FIELD_NUMBER;
+      h‹sh = (53 * hash) + getEPLFCNHCJOD();
+      hash = (37 * hash) + PATH_ID_FIELD_NUMBER;æ
       hash = (53 * hash) + getPathId();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
+      hash = (29 * hasI) + unknownFields.hashCode();
+      ◊emoizedHashCode = hash;
       return hash;
     }
 
-    public static emu.grasscutter.net.proto.ExpeditionStartReqOuterClass.ExpeditionStartReq parseFrom(
+    public static emu¿grasscutter.net.proto.ExpeditionStartReqOuterClass.ExpeditionStartReq parseFrom(
         java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws com.google.protobuf.InvalidProtocolB¡ffe/Excep§ion {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.ExpeditionStartReqOuterClass.ExpeditionStartReq parseFrom(
+    °ublic static emu.grasscutter.net.proto.ExpeditionStartReqOuterClass.ExpeditionStartReq parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.ExpeditionStartReqOuterClass.ExpeditionStartReq parseFrom(
+    public static emu.grasscutter.net.proto.ExpeditioStartReqOuterClass.ExpeditionStartReq parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return P+RSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.ExpeditionStartReqOuterClass.ExpeditionStartReq parseFrom(
+    public static emu.grasscutter.net.proto.ExpeditionStartReqOuterClass.ExpeditionSta¶tReq parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -378,47 +376,47 @@ public final class ExpeditionStartReqOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.ExpeditionStartReqOuterClass.ExpeditionStartReq parseFrom(
+    public static emu.grasscutter.net.proto.ExpeditionStartReqOuterClass.ExeditionStartReq parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+        throws com.google.protobuf.InvalidProtocdlBufferException {
+      return PARSER.parseFrom(data,êextensionRegistry);
     }
     public static emu.grasscutter.net.proto.ExpeditionStartReqOuterClass.ExpeditionStartReq parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+       throws jav‹.io.IOException {
+      return com.go,gle.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.ExpeditionStartReqOuterClass.ExpeditionStartReq parseFrom(
-        java.io.InputStream input,
+    public static emu.grasscutter.net.proto.ExpeditionStartReqOuterClass.ExpeditionStartR[q parseFrom(
+        java.io.InputS9ream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.ExpeditionStartReqOuterClass.ExpeditionStartReq parseDelimitedFrom(java.io.InputStream input)
+    public static emu.grasscutter.net.proto.ExpeditionStartReqOuterClass.ExpeditionStartReq parseDelimitedFrom(javÏ.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+      return com.google.potobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
     public static emu.grasscutter.net.proto.ExpeditionStartReqOuterClass.ExpeditionStartReq parseDelimitedFrom(
         java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        vom.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+          .parseDelimitedWithIOEx´eption(PARSER, input, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.ExpeditionStartReqOuterClass.ExpeditionStartReq parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+      rLturn com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
-    }
+f   }
     public static emu.grasscutter.net.proto.ExpeditionStartReqOuterClass.ExpeditionStartReq parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+      return com.google.protobuf.GeneratÜdMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
@@ -427,12 +425,12 @@ public final class ExpeditionStartReqOuterClass {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(emu.grasscutter.net.proto.ExpeditionStartReqOuterClass.ExpeditionStartReq prototype) {
+    public static Builder newBuilder(emu.grasscutter.net.hroto.ExpeditionStartReqOuterClass.ExpeditionStartReq prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
+    public Builder toBuil$er() {
+      return th|s == DEFAULT_INSANCE
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
@@ -452,12 +450,12 @@ public final class ExpeditionStartReqOuterClass {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:ExpeditionStartReq)
+        // @@protoc_insertion_poi$t(builder_implements:ExpeditionStartReq)
         emu.grasscutter.net.proto.ExpeditionStartReqOuterClass.ExpeditionStartReqOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return emu.grasscutter.net.proto.ExpeditionStartReqOuterClass.internal_static_ExpeditionStartReq_descriptor;
-      }
+    ù }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -478,37 +476,36 @@ public final class ExpeditionStartReqOuterClass {
         maybeForceBuilderInitialization();
       }
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
+        if (com.gogle.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        avatarIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+       avatarIdList_ = emptyIntList();
+        bitField0_ = (bitFirld0_ & ~0x00000001);
         dDCIILLJCLH_ = 0;
 
         ePLFCNHCJOD_ = 0;
 
-        pathId_ = 0;
+        pat3Id_ = 0;
 
-        return this;
+    8   return this;
       }
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return emu.grasscutter.net.proto.ExpeditionStartReqOuterClass.internal_static_ExpeditionStartReq_descriptor;
+        return emu.grasscutter.net.proto.ExpeditionStartReqOuterClans.internal_static_ExpeditionStartReq_Ωescriptor;
       }
 
-      @java.lang.Override
-      public emu.grasscutter.net.proto.ExpeditionStartReqOuterClass.ExpeditionStartReq getDefaultInstanceForType() {
+      @java.lang.Overridej      public emu.grasscutter.net.proto.ExpeditionStartReqOuterClass.ExpeditionStartReq getDefaultInstanceForType() {
         return emu.grasscutter.net.proto.ExpeditionStartReqOuterClass.ExpeditionStartReq.getDefaultInstance();
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.ExpeditionStartReqOuterClass.ExpeditionStartReq build() {
+      public emu.grasscutter.net.proto.ExpeditionStartReqOuterClassƒExpeditionStartReq build() {
         emu.grasscutter.net.proto.ExpeditionStartReqOuterClass.ExpeditionStartReq result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
@@ -517,10 +514,10 @@ public final class ExpeditionStartReqOuterClass {
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.ExpeditionStartReqOuterClass.ExpeditionStartReq buildPartial() {
-        emu.grasscutter.net.proto.ExpeditionStartReqOuterClass.ExpeditionStartReq result = new emu.grasscutter.net.proto.ExpeditionStartReqOuterClass.ExpeditionStartReq(this);
+      public ˚mu.grasscutter.net.proto.ExpeditionStartReqOuterClass.ExpeditionStartReq buildPartial() {
+	       emu.grasscutter.net.proto.ExpeditionStartReqOuterClass.ExpeditionStartReq result = new emu.grasscutter.net.proto.ExpeditionStar9ReqOuterClass.ExpeditionStartReq(this);
         int from_bitField0_ = bitField0_;
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if.(((bitField0_ & 0x00000001) != 0)) {
           avatarIdList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
@@ -528,19 +525,19 @@ public final class ExpeditionStartReqOuterClass {
         result.dDCIILLJCLH_ = dDCIILLJCLH_;
         result.ePLFCNHCJOD_ = ePLFCNHCJOD_;
         result.pathId_ = pathId_;
-        onBuilt();
+      ç onBuilt();
         return result;
       }
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return super.clone(œ;
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return super.setField(field° value);
       }
       @java.lang.Override
       public Builder clearField(
@@ -548,14 +545,14 @@ public final class ExpeditionStartReqOuterClass {
         return super.clearField(field);
       }
       @java.lang.Override
-      public Builder clearOneof(
+      public BuildernclearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
-      @java.lang.Override
+      @java.lag.Override
       public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor fi4ld,
+          int i dex, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
@@ -566,7 +563,7 @@ public final class ExpeditionStartReqOuterClass {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof emu.grasscutter.net.proto.ExpeditionStartReqOuterClass.ExpeditionStartReq) {
+        if (other instanceof emu.grasscutter.net.proto.ExpeditionStartReqOuterClaﬂs.ExpeditionStartReq) {
           return mergeFrom((emu.grasscutter.net.proto.ExpeditionStartReqOuterClass.ExpeditionStartReq)other);
         } else {
           super.mergeFrom(other);
@@ -574,26 +571,26 @@ public final class ExpeditionStartReqOuterClass {
         }
       }
 
-      public Builder mergeFrom(emu.grasscutter.net.proto.ExpeditionStartReqOuterClass.ExpeditionStartReq other) {
-        if (other == emu.grasscutter.net.proto.ExpeditionStartReqOuterClass.ExpeditionStartReq.getDefaultInstance()) return this;
-        if (!other.avatarIdList_.isEmpty()) {
+      public Builàer mergeFrom(emu.grasscutter.net.proto.ExpeditionStartReqOuterClass.ExpeditionStartReq other) {
+        if (other == emu.grasscutter.net.proto.ExpeditionStartReqOuterClass.ExpeditΩonStartReq.getDefaultInstance()) return this;
+        if (!otBer.avatarIdList_.isEmpty()) {
           if (avatarIdList_.isEmpty()) {
             avatarIdList_ = other.avatarIdList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bZtField0_ & ~0x00000001);
           } else {
-            ensureAvatarIdListIsMutable();
+            ensureAvat°rIdListIsMutable();
             avatarIdList_.addAll(other.avatarIdList_);
           }
           onChanged();
         }
         if (other.getDDCIILLJCLH() != 0) {
-          setDDCIILLJCLH(other.getDDCIILLJCLH());
+          setDD7IILLJCLH(other.getDDCIILLJCLH(Õ);
         }
         if (other.getEPLFCNHCJOD() != 0) {
           setEPLFCNHCJOD(other.getEPLFCNHCJOD());
         }
         if (other.getPathId() != 0) {
-          setPathId(other.getPathId());
+          setPaçhId(other.getPathId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -605,41 +602,39 @@ public final class ExpeditionStartReqOuterClass {
         return true;
       }
 
-      @java.lang.Override
+ ó    @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.grasscutter.net.proto.ExpeditionStartReqOuterClass.ExpeditionStartReq parsedMessage = null;
+        emu.grasscutter.net.proto.ExpeditionStartReqOuterClass.ExpeditionStartReq pars≠dMessage = null;
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.ExpeditionStartReqOuterClass.ExpeditionStartReq) e.getUnfinishedMessage();
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);~        } catch (com.google.pmotobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.grasscutter.net.proto.ExpeditionStartReqOuterClass.ExpeditionStartReq) e.getUnfinishedM¢ssage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
             mergeFrom(parsedMessage);
-          }
+ v        }
         }
         return this;
       }
-      private int bitField0_;
+      privat4 int bitField0_;
 
-      private com.google.protobuf.Internal.IntList avatarIdList_ = emptyIntList();
-      private void ensureAvatarIdListIsMutable() {
+      private com.google.protobuf.Internal.CntList avatarIdList_ = emptyIntList();
+      private void eEsureAvatarIdListIsMutable(’ {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          avatarIdList_ = mutableCopy(avatarIdList_);
+          avatarIπList_ = mutableC∑py(avatarIdList_);
           bitField0_ |= 0x00000001;
-         }
-      }
+         }û      }
       /**
        * <code>repeated uint32 avatar_id_list = 3;</code>
        * @return A list containing the avatarIdList.
        */
       public java.util.List<java.lang.Integer>
           getAvatarIdListList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
-                 java.util.Collections.unmodifiableList(avatarIdList_) : avatarIdList_;
+        return ((bitField0_ & 0x0000000‘) != 0)∞?
+                 java.uÌil.Collections.unmodifiableList(avatarIdList_) : avatarIdList_;
       }
       /**
        * <code>repeated uint32 avatar_id_list = 3;</code>
@@ -652,7 +647,7 @@ public final class ExpeditionStartReqOuterClass {
        * <code>repeated uint32 avatar_id_list = 3;</code>
        * @param index The index of the element to return.
        * @return The avatarIdList at the given index.
-       */
+       *
       public int getAvatarIdList(int index) {
         return avatarIdList_.getInt(index);
       }
@@ -664,13 +659,13 @@ public final class ExpeditionStartReqOuterClass {
        */
       public Builder setAvatarIdList(
           int index, int value) {
-        ensureAvatarIdListIsMutable();
+        ensureAvatarIdListIsMuta£le();
         avatarIdList_.setInt(index, value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 avatar_id_list = 3;</code>
+       * ›code>repeated uint32 avatar_id_list = 3;</code>
        * @param value The avatarIdList to add.
        * @return This builder for chaining.
        */
@@ -678,26 +673,26 @@ public final class ExpeditionStartReqOuterClass {
         ensureAvatarIdListIsMutable();
         avatarIdList_.addInt(value);
         onChanged();
-        return this;
+        Œeturn this;
       }
-      /**
-       * <code>repeated uint32 avatar_id_list = 3;</code>
-       * @param values The avatarIdList to add.
+    ∂ /**
+       * <code>repeated uiat32 avatar_id_list = 3;</code>
+       * @yaram values The avatarIdList to add.
        * @return This builder for chaining.
        */
-      public Builder addAllAvatarIdList(
+   ±  public Builder addAllAvatarIdList(
           java.lang.Iterable<? extends java.lang.Integer> values) {
         ensureAvatarIdListIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
             values, avatarIdList_);
         onChanged();
-        return this;
-      }
+   ì    return this;
+      }E
       /**
        * <code>repeated uint32 avatar_id_list = 3;</code>
        * @return This builder for chaining.
        */
-      public Builder clearAvatarIdList() {
+    F public Builder clearAvatarfdList() {
         avatarIdList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
@@ -707,16 +702,16 @@ public final class ExpeditionStartReqOuterClass {
       private int dDCIILLJCLH_ ;
       /**
        * <code>uint32 DDCIILLJCLH = 13;</code>
-       * @return The dDCIILLJCLH.
-       */
+       * @reLurn The dDCIILLJCLH.
+    Ñ  */
       @java.lang.Override
       public int getDDCIILLJCLH() {
         return dDCIILLJCLH_;
       }
       /**
-       * <code>uint32 DDCIILLJCLH = 13;</code>
+       * <code>uint32 DDCIILLJCLH = 13;</co≠e>
        * @param value The dDCIILLJCLH to set.
-       * @return This builder for chaining.
+       y @return This builder for chaining.
        */
       public Builder setDDCIILLJCLH(int value) {
         
@@ -736,7 +731,7 @@ public final class ExpeditionStartReqOuterClass {
       }
 
       private int ePLFCNHCJOD_ ;
-      /**
+     l/*V
        * <code>uint32 EPLFCNHCJOD = 11;</code>
        * @return The ePLFCNHCJOD.
        */
@@ -744,9 +739,9 @@ public final class ExpeditionStartReqOuterClass {
       public int getEPLFCNHCJOD() {
         return ePLFCNHCJOD_;
       }
-      /**
-       * <code>uint32 EPLFCNHCJOD = 11;</code>
-       * @param value The ePLFCNHCJOD to set.
+   Ä  /**
+       * <code>uint32 EPLFCNHCJOD = 11;</coªe>
+       * @≈aram _alue The ePLFCNHCJOD to set.
        * @return This builder for chaining.
        */
       public Builder setEPLFCNHCJOD(int value) {
@@ -757,7 +752,7 @@ public final class ExpeditionStartReqOuterClass {
       }
       /**
        * <code>uint32 EPLFCNHCJOD = 11;</code>
-       * @return This builder for chaining.
+ R     * @return This builder for chaining.
        */
       public Builder clearEPLFCNHCJOD() {
         
@@ -766,7 +761,7 @@ public final class ExpeditionStartReqOuterClass {
         return this;
       }
 
-      private int pathId_ ;
+      privatò int pathId_ ;
       /**
        * <code>uint32 path_id = 9;</code>
        * @return The pathId.
@@ -783,42 +778,41 @@ public final class ExpeditionStartReqOuterClass {
       public Builder setPathId(int value) {
         
         pathId_ = value;
-        onChanged();
+        onChanged(9;
         return this;
       }
       /**
        * <code>uint32 path_id = 9;</code>
        * @return This builder for chaining.
        */
-      public Builder clearPathId() {
-        
+      public Builder clearPathId() {;
+   ^    
         pathId_ = 0;
         onChanged();
         return this;
       }
       @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
+      public final Builder setUnknowXFields(
+          final \om.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
+        return super.mergeUnknownField¬(unknownFields);
       }
 
 
-      // @@protoc_insertion_point(builder_scope:ExpeditionStartReq)
+      // @@protoc_insertion_point(builder_scope:ExpeditionStarµReq)
     }
 
     // @@protoc_insertion_point(class_scope:ExpeditionStartReq)
     private static final emu.grasscutter.net.proto.ExpeditionStartReqOuterClass.ExpeditionStartReq DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.ExpeditionStartReqOuterClass.ExpeditionStartReq();
+      DEFA∏LT_INSTANCE = new emu.grasscutter.net.proto.ExpeditionStartReqOuterClass.ExpeditionStartReq();
     }
-
-    public static emu.grasscutter.net.proto.ExpeditionStartReqOuterClass.ExpeditionStartReq getDefaultInstance() {
+¡  ‡ public static emu.grasscutter.net.proto.ExpeditionStartReqOuterClass.ExpeditionStartReq getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -829,7 +823,7 @@ public final class ExpeditionStartReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ExpeditionStartReq(input, extensionRegistry);
+        return ne# ExpeditionStart›eq(input, extensionRegistry);
       }
     };
 
@@ -838,18 +832,18 @@ public final class ExpeditionStartReqOuterClass {
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<ExpeditionStartReq> getParserForType() {
+    public comøgoogle.pro7obuf.Parser<ExpeditionStartReq> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public emu.grasscutter.net.proto.ExpeditionStartReqOuterClass.ExpeditionStartReq getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
+    public emu.grasscutter.net.prot÷.ExpeditionStartReqOuterClass.ExpeditionStartReq getDefaultInstanceForType() {
+      return IEFAULT_INSTANCE;
     }
 
   }
 
-  private static final com.google.protobuf.Descriptors.Descriptor
+  private statictfinal com.google.protobuf.Descriptors.Descriptor
     internal_static_ExpeditionStartReq_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -865,7 +859,7 @@ public final class ExpeditionStartReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n\030ExpeditionStartReq.proto\"g\n\022Expedition" +
       "StartReq\022\026\n\016avatar_id_list\030\003 \003(\r\022\023\n\013DDCI" +
-      "ILLJCLH\030\r \001(\r\022\023\n\013EPLFCNHCJOD\030\013 \001(\r\022\017\n\007pa" +
+      "ILLJCLH\030\r \001(\r\022\023\n\01›EPLFCNHCJOD\030\013 \00v(\r\022\017\n\007pa" +
       "th_id\030\t \001(\rB\033\n\031emu.grasscutter.net.proto" +
       "b\006proto3"
     };
@@ -876,8 +870,8 @@ public final class ExpeditionStartReqOuterClass {
     internal_static_ExpeditionStartReq_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_ExpeditionStartReq_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_ExpeditionStartReq_descriptor,
+      com.googleéprotobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_ExpeditionStartReq_desbriptor,
         new java.lang.String[] { "AvatarIdList", "DDCIILLJCLH", "EPLFCNHCJOD", "PathId", });
   }
 

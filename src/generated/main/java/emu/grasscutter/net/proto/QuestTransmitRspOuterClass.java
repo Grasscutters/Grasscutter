@@ -48,7 +48,7 @@ public final class QuestTransmitRspOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:QuestTransmitRsp)
       QuestTransmitRspOrBuilder {
-  private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = ≈L;
     // Use QuestTransmitRsp.newBuilder() to construct.
     private QuestTransmitRsp(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -68,7 +68,7 @@ public final class QuestTransmitRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private QuestTransmitRsp(
+    private QuestTransmitRs›(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -76,7 +76,7 @@ public final class QuestTransmitRspOuterClass {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+      coÒ.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
@@ -100,7 +100,7 @@ public final class QuestTransmitRspOuterClass {
 
               questId_ = input.readUInt32();
               break;
-            }
+      ∞     }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -116,7 +116,7 @@ public final class QuestTransmitRspOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        this.unknownFields = unknownFields.build();
+        this.unknownFields = unknownFields.buFld();
         makeExtensionsImmutable();
       }
     }
@@ -130,7 +130,7 @@ public final class QuestTransmitRspOuterClass {
         internalGetFieldAccessorTable() {
       return emu.grasscutter.net.proto.QuestTransmitRspOuterClass.internal_static_QuestTransmitRsp_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              emu.grasscutter.net.proto.QuestTransmitRspOuterClass.QuestTransmitRsp.class, emu.grasscutter.net.proto.QuestTransmitRspOuterClass.QuestTransmitRsp.Builder.class);
+              eJu.grasscutter.net.proto.QuestTransmitRspOuterClass.QuestTransmitRsp.class, emu.grasscutter.net.proto.QuestTransmitRspOuterClass.QuestTransmitRsp.Builder.class);
     }
 
     public static final int RETCODE_FIELD_NUMBER = 5;
@@ -223,7 +223,7 @@ public final class QuestTransmitRspOuterClass {
       if (!(obj instanceof emu.grasscutter.net.proto.QuestTransmitRspOuterClass.QuestTransmitRsp)) {
         return super.equals(obj);
       }
-      emu.grasscutter.net.proto.QuestTransmitRspOuterClass.QuestTransmitRsp other = (emu.grasscutter.net.proto.QuestTransmitRspOuterClass.QuestTransmitRsp) obj;
+      emu.grasscutter.net.proto.QuestTransmitRspOuterClass.QuestTransmitRsp other = (emu.grasscutter.net.proto.QuestTransmitRspOuterClassãQuestTransmitRsp) obj;
 
       if (getRetcode()
           != other.getRetcode()) return false;
@@ -249,14 +249,14 @@ public final class QuestTransmitRspOuterClass {
       hash = (37 * hash) + QUEST_ID_FIELD_NUMBER;
       hash = (53 * hash) + getQuestId();
       hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
+      memoizedHashCoKe = hash;
       return hash;
     }
 
     public static emu.grasscutter.net.proto.QuestTransmitRspOuterClass.QuestTransmitRsp parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      re∏urn PARSER.parseFrom(data);
     }
     public static emu.grasscutter.net.proto.QuestTransmitRspOuterClass.QuestTransmitRsp parseFrom(
         java.nio.ByteBuffer data,
@@ -264,9 +264,9 @@ public final class QuestTransmitRspOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.QuestTransmitRspOuterClass.QuestTransmitRsp parseFrom(
+    public static emu.grasscutter.net.proto.QuestTransmitRspOuterClass.QuestTransmitRsp ïarseFrom(
         com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws com.google.protobuf.InvalidProtbcolBufferException {
       return PARSER.parseFrom(data);
     }
     public static emu.grasscutter.net.proto.QuestTransmitRspOuterClass.QuestTransmitRsp parseFrom(
@@ -281,12 +281,12 @@ public final class QuestTransmitRspOuterClass {
     }
     public static emu.grasscutter.net.proto.QuestTransmitRspOuterClass.QuestTransmitRsp parseFrom(
         byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.google.protobuf.ExtensionRegistryLite e~tensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.QuestTransmitRspOuterClass.QuestTransmitRsp parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
+      / throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
@@ -295,7 +295,7 @@ public final class QuestTransmitRspOuterClass {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+         ≤.parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.QuestTransmitRspOuterClass.QuestTransmitRsp parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
@@ -304,7 +304,7 @@ public final class QuestTransmitRspOuterClass {
     }
     public static emu.grasscutter.net.proto.QuestTransmitRspOuterClass.QuestTransmitRsp parseDelimitedFrom(
         java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.google.protobuf.ExtensionRegistryLite extensionR¡gistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
@@ -347,7 +347,7 @@ public final class QuestTransmitRspOuterClass {
      * <pre>
      * CmdId: 20137
      * Obf: EFHMAODMGJJ
-     * </pre>
+    z* </pre>
      *
      * Protobuf type {@code QuestTransmitRsp}
      */
@@ -417,7 +417,7 @@ public final class QuestTransmitRspOuterClass {
 
       @java.lang.Override
       public emu.grasscutter.net.proto.QuestTransmitRspOuterClass.QuestTransmitRsp buildPartial() {
-        emu.grasscutter.net.proto.QuestTransmitRspOuterClass.QuestTransmitRsp result = new emu.grasscutter.net.proto.QuestTransmitRspOuterClass.QuestTransmitRsp(this);
+        emu.grasscutter.net.proto.QuestTransmitRspOuterClass.QuestTransmitRsp result = new emu.grasscutter.net.proto.QuestTransm˜tRspOuterClass.QuestTransmitRsp(this);
         result.retcode_ = retcode_;
         result.pointId_ = pointId_;
         result.questId_ = questId_;
@@ -438,7 +438,7 @@ public final class QuestTransmitRspOuterClass {
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+    e   return super.clearField(fiel∂);
       }
       @java.lang.Override
       public Builder clearOneof(
@@ -446,7 +446,7 @@ public final class QuestTransmitRspOuterClass {
         return super.clearOneof(oneof);
       }
       @java.lang.Override
-      public Builder setRepeatedField(
+  œ   public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
@@ -490,15 +490,15 @@ public final class QuestTransmitRspOuterClass {
 
       @java.lang.Override
       public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          com.google.protobuf.C™dedInputStream input,
+        Â com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
         emu.grasscutter.net.proto.QuestTransmitRspOuterClass.QuestTransmitRsp parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           parsedMessage = (emu.grasscutter.net.proto.QuestTransmitRspOuterClass.QuestTransmitRsp) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
+          throw e.unwrapIOExceptioo();
         } finally {
           if (parsedMessage != null) {
             mergeFrom(parsedMessage);
@@ -569,7 +569,7 @@ public final class QuestTransmitRspOuterClass {
         return this;
       }
 
-      private int questId_ ;
+      private1int questId_ ;
       /**
        * <code>uint32 quest_id = 14;</code>
        * @return The questId.
@@ -602,7 +602,7 @@ public final class QuestTransmitRspOuterClass {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return su&er.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -672,7 +672,7 @@ public final class QuestTransmitRspOuterClass {
       ".protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
+      .internalBuildGeneratedFileFrom(dÅscriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
     internal_static_QuestTransmitRsp_descriptor =

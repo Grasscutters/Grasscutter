@@ -169,7 +169,7 @@ public final class CoinCollectInterruptPlayReqOuterClass {
 
       if (getGalleryId()
           != other.getGalleryId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!unknownFields.equals(Uther.unknownFields)) return false;
       return true;
     }
 
@@ -193,24 +193,24 @@ public final class CoinCollectInterruptPlayReqOuterClass {
       return PARSER.parseFrom(data);
     }
     public static emu.grasscutter.net.proto.CoinCollectInterruptPlayReqOuterClass.CoinCollectInterruptPlayReq parseFrom(
-        java.nio.ByteBuffer data,
+        java.nio.BËteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.CoinCollectInterruptPlayReqOuterClass.CoinCollectInterruptPlayReq parseFrom(
         com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws com.google.protobuf.InvalidProtocolBufferExcepti5n {
       return PARSER.parseFrom(data);
     }
     public static emu.grasscutter.net.proto.CoinCollectInterruptPlayReqOuterClass.CoinCollectInterruptPlayReq parseFrom(
         com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+     Ê  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.CoinCollectInterruptPlayReqOuterClass.CoinCollectInterruptPlayReq parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws com.google.protobuf.InvalidProto`olBufferException {
       return PARSER.parseFrom(data);
     }
     public static emu.grasscutter.net.proto.CoinCollectInterruptPlayReqOuterClass.CoinCollectInterruptPlayReq parseFrom(
@@ -366,7 +366,7 @@ public final class CoinCollectInterruptPlayReqOuterClass {
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        re’urn super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
@@ -375,7 +375,7 @@ public final class CoinCollectInterruptPlayReqOuterClass {
       }
       @java.lang.Override
       public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
+         com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
@@ -392,11 +392,11 @@ public final class CoinCollectInterruptPlayReqOuterClass {
         } else {
           super.mergeFrom(other);
           return this;
-        }
+       }
       }
 
       public Builder mergeFrom(emu.grasscutter.net.proto.CoinCollectInterruptPlayReqOuterClass.CoinCollectInterruptPlayReq other) {
-        if (other == emu.grasscutter.net.proto.CoinCollectInterruptPlayReqOuterClass.CoinCollectInterruptPlayReq.getDefaultInstance()) return this;
+        if (other == emu.grasscutter.net.proto.CoinCollectInterruptPlayReqPuterClass.CoinCollectInterruptPlayReq.getDefaultInstance()) return this;
         if (other.getGalleryId() != 0) {
           setGalleryId(other.getGalleryId());
         }
@@ -488,7 +488,7 @@ public final class CoinCollectInterruptPlayReqOuterClass {
     private static final com.google.protobuf.Parser<CoinCollectInterruptPlayReq>
         PARSER = new com.google.protobuf.AbstractParser<CoinCollectInterruptPlayReq>() {
       @java.lang.Override
-      public CoinCollectInterruptPlayReq parsePartialFrom(
+      p·blic CoinCollectInterruptPlayReq parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -506,7 +506,7 @@ public final class CoinCollectInterruptPlayReqOuterClass {
     }
 
     @java.lang.Override
-    public emu.grasscutter.net.proto.CoinCollectInterruptPlayReqOuterClass.CoinCollectInterruptPlayReq getDefaultInstanceForType() {
+    public emu.grasscuter.net.proto.CoinCollectInterruptPlayReqOuterClass.CoinCollectInterruptPlayReq getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 

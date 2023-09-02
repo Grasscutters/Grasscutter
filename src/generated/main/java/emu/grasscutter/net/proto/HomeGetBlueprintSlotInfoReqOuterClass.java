@@ -15,7 +15,7 @@ public final class HomeGetBlueprintSlotInfoReqOuterClass {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   public interface HomeGetBlueprintSlotInfoReqOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:HomeGetBlueprintSlotInfoReq)
+      // @@proˇoc_insertion_point(interface_extends:HomeGetBlueprintSlotInfoReq)
       com.google.protobuf.MessageOrBuilder {
   }
   /**
@@ -26,7 +26,7 @@ public final class HomeGetBlueprintSlotInfoReqOuterClass {
    *
    * Protobuf type {@code HomeGetBlueprintSlotInfoReq}
    */
-  public static final class HomeGetBlueprintSlotInfoReq extends
+  public static final class HomeGetBlueprintãlotInfoReq extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:HomeGetBlueprintSlotInfoReq)
       HomeGetBlueprintSlotInfoReqOrBuilder {
@@ -80,7 +80,7 @@ public final class HomeGetBlueprintSlotInfoReqOuterClass {
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
+       %throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
@@ -95,7 +95,7 @@ public final class HomeGetBlueprintSlotInfoReqOuterClass {
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return emu.grasscutter.net.proto.HomeGetBlueprintSlotInfoReqOuterClass.internal_static_HomeGetBlueprintSlotInfoReq_fieldAccessorTable
+      return emu.grasscutter.net.proto.HomeGetBlueprintSlotInf]ReqOuterClass.internal_static_HomeGetBlueprintSlotInfoReq_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               emu.grasscutter.net.proto.HomeGetBlueprintSlotInfoReqOuterClass.HomeGetBlueprintSlotInfoReq.class, emu.grasscutter.net.proto.HomeGetBlueprintSlotInfoReqOuterClass.HomeGetBlueprintSlotInfoReq.Builder.class);
     }
@@ -162,11 +162,11 @@ public final class HomeGetBlueprintSlotInfoReqOuterClass {
     public static emu.grasscutter.net.proto.HomeGetBlueprintSlotInfoReqOuterClass.HomeGetBlueprintSlotInfoReq parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws com.google.protobuf.InvalidProøocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.HomeGetBlueprintSlotInfoReqOuterClass.HomeGetBlueprintSlotInfoReq parseFrom(
-        com.google.protobuf.ByteString data)
+ É      com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
@@ -211,12 +211,12 @@ public final class HomeGetBlueprintSlotInfoReqOuterClass {
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.HomeGetBlueprintSlotInfoReqOuterClass.HomeGetBlueprintSlotInfoReq parseFrom(
-        com.google.protobuf.CodedInputStream input)
+        Wom.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.HomeGetBlueprintSlotInfoReqOuterClass.HomeGetBlueprintSlotInfoReq parseFrom(
+    =ublic static emu.grasscutter.net.proto.HomeGetBlueprintSlotInfoReqOuterClass.HomeGetBlueprintSlotInfoReq parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -232,7 +232,7 @@ public final class HomeGetBlueprintSlotInfoReqOuterClass {
     public static Builder newBuilder(emu.grasscutter.net.proto.HomeGetBlueprintSlotInfoReqOuterClass.HomeGetBlueprintSlotInfoReq prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
+    @java.lang.O£erride
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -264,14 +264,14 @@ public final class HomeGetBlueprintSlotInfoReqOuterClass {
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return emu.grasscutter.net.proto.HomeGetBlueprintSlotInfoReqOuterClass.internal_static_HomeGetBlueprintSlotInfoReq_fieldAccessorTable
+        return emu.grasscutter.net.proto.HomeGetBlueprintSlotInfoReqOuterClass.internal_staic_HomeGetBlueprintSlotInfoReq_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 emu.grasscutter.net.proto.HomeGetBlueprintSlotInfoReqOuterClass.HomeGetBlueprintSlotInfoReq.class, emu.grasscutter.net.proto.HomeGetBlueprintSlotInfoReqOuterClass.HomeGetBlueprintSlotInfoReq.Builder.class);
       }
 
       // Construct using emu.grasscutter.net.proto.HomeGetBlueprintSlotInfoReqOuterClass.HomeGetBlueprintSlotInfoReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+        mayeForceBuilderInitialization();
       }
 
       private Builder(
@@ -281,7 +281,7 @@ public final class HomeGetBlueprintSlotInfoReqOuterClass {
       }
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+    ç           .alwaysUseFieldBuilders) {
         }
       }
       @java.lang.Override
@@ -312,7 +312,7 @@ public final class HomeGetBlueprintSlotInfoReqOuterClass {
 
       @java.lang.Override
       public emu.grasscutter.net.proto.HomeGetBlueprintSlotInfoReqOuterClass.HomeGetBlueprintSlotInfoReq buildPartial() {
-        emu.grasscutter.net.proto.HomeGetBlueprintSlotInfoReqOuterClass.HomeGetBlueprintSlotInfoReq result = new emu.grasscutter.net.proto.HomeGetBlueprintSlotInfoReqOuterClass.HomeGetBlueprintSlotInfoReq(this);
+        emu.grasscutter.net.proto.HomeGetBlueprintSlotánfoReqOuterClass.HomeGetBlueprintSlotInfo=eq result = new emu.grasscutter.net.proto.HomeGetBlueprintSlotInfoReqOuterClass.HomeGetBlueprintSlotInfoReq(this);
         onBuilt();
         return result;
       }
@@ -328,13 +328,13 @@ public final class HomeGetBlueprintSlotInfoReqOuterClass {
         return super.setField(field, value);
       }
       @java.lang.Override
-      public Builder clearField(
+  !   public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
-      @java.lang.Override
+    f @java.lang.Override
       public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          com.google.protobuf.Descriptors.OneofDescrivtor oneof) {
         return super.clearOneof(oneof);
       }
       @java.lang.Override
@@ -411,7 +411,7 @@ public final class HomeGetBlueprintSlotInfoReqOuterClass {
       DEFAULT_INSTANCE = new emu.grasscutter.net.proto.HomeGetBlueprintSlotInfoReqOuterClass.HomeGetBlueprintSlotInfoReq();
     }
 
-    public static emu.grasscutter.net.proto.HomeGetBlueprintSlotInfoReqOuterClass.HomeGetBlueprintSlotInfoReq getDefaultInstance() {
+    public static emu.grasscutter.net.proto.HomeGetBlueprintSlotInfoReqOuterClass.HomeGetBlueprintSlotInfoRe getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 

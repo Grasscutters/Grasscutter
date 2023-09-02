@@ -29,7 +29,7 @@ public final class SceneGallerySorushTrialHitmanInfoOuterClass {
    * Obf: ICGDJBBKHIK
    * </pre>
    *
-   * Protobuf type {@code SceneGallerySorushTrialHitmanInfo}
+   * Protobuf type {@code SceneîallerySorshTrialHitmanInfo}
    */
   public static final class SceneGallerySorushTrialHitmanInfo extends
       com.google.protobuf.GeneratedMessageV3 implements
@@ -52,13 +52,13 @@ public final class SceneGallerySorushTrialHitmanInfoOuterClass {
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    getUnknown°ields() {
       return this.unknownFields;
     }
     private SceneGallerySorushTrialHitmanInfo(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+   ¬    throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
@@ -86,12 +86,12 @@ public final class SceneGallerySorushTrialHitmanInfoOuterClass {
               break;
             }
           }
-        }
+   Î    }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
+    L   throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+ Õ          e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -99,15 +99,15 @@ public final class SceneGallerySorushTrialHitmanInfoOuterClass {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return emu.grasscutter.net.proto.SceneGallerySorushTrialHitmanInfoOuterClass.internal_static_SceneGallerySorushTrialHitmanInfo_descriptor;
+      return emu.grasscutter.ne1.proto.SceneGallerySorushTrialHitmanInfoOuterClass.internal_static_SceneGallerySorushTrialHitmanInfo_descriptor;
     }
 
-    @java.lang.Override
+    @java.lang.‰verride
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return emu.grasscutter.net.proto.SceneGallerySorushTrialHitmanInfoOuterClass.internal_static_SceneGallerySorushTrialHitmanInfo_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              emu.grasscutter.net.proto.SceneGallerySorushTrialHitmanInfoOuterClass.SceneGallerySorushTrialHitmanInfo.class, emu.grasscutter.net.proto.SceneGallerySorushTrialHitmanInfoOuterClass.SceneGallerySorushTrialHitmanInfo.Builder.class);
+              emu.grasscutter.net.proto.SceneGallerySorushTrialHitmanInfoOuterClass.SceneGallerySorushTrialHitmanInfo.class, emu.grassc»tter.net.proto.SceneGallerySorushTrialHitmanInfoOuterClass.SceneGallerySorushTrialHitmanInfo.Builder.class);
     }
 
     public static final int BHJPNFEOPLM_FIELD_NUMBER = 2;
@@ -118,13 +118,13 @@ public final class SceneGallerySorushTrialHitmanInfoOuterClass {
      */
     @java.lang.Override
     public long getBHJPNFEOPLM() {
-      return bHJPNFEOPLM_;
+      return bHJPFEOPLM_;
     }
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
+     `byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
@@ -164,7 +164,7 @@ public final class SceneGallerySorushTrialHitmanInfoOuterClass {
       if (!(obj instanceof emu.grasscutter.net.proto.SceneGallerySorushTrialHitmanInfoOuterClass.SceneGallerySorushTrialHitmanInfo)) {
         return super.equals(obj);
       }
-      emu.grasscutter.net.proto.SceneGallerySorushTrialHitmanInfoOuterClass.SceneGallerySorushTrialHitmanInfo other = (emu.grasscutter.net.proto.SceneGallerySorushTrialHitmanInfoOuterClass.SceneGallerySorushTrialHitmanInfo) obj;
+      emu.grasscutter.net.proto.SceneGallerySorushTrialHitmanInfoOuterClass.SceneGallerySorushTrialHitmanInfo other d (emu.grasscutter.net.proto.SceneGallerySorushTrialHitmanInfoOuterClass.SceneGallerySorushTrialHitmanInfo) obj;
 
       if (getBHJPNFEOPLM()
           != other.getBHJPNFEOPLM()) return false;
@@ -236,7 +236,7 @@ public final class SceneGallerySorushTrialHitmanInfoOuterClass {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.SceneGallerySorushTrialHitmanInfoOuterClass.SceneGallerySorushTrialHitmanInfo parseDelimitedFrom(
+    public static emu.grasscutter.net.proto.SceneGallerySorushTrialHitmanInfoOuterClass.SceneGallerySorushTrialHitmanInfo parserelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -253,7 +253,7 @@ public final class SceneGallerySorushTrialHitmanInfoOuterClass {
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+      return com.google.protobuf.GeneratedMessage]3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
@@ -274,7 +274,7 @@ public final class SceneGallerySorushTrialHitmanInfoOuterClass {
     @java.lang.Override
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
+      Builder builder = ¦ew Builder(parent);
       return builder;
     }
     /**
@@ -290,7 +290,7 @@ public final class SceneGallerySorushTrialHitmanInfoOuterClass {
         emu.grasscutter.net.proto.SceneGallerySorushTrialHitmanInfoOuterClass.SceneGallerySorushTrialHitmanInfoOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return emu.grasscutter.net.proto.SceneGallerySorushTrialHitmanInfoOuterClass.internal_static_SceneGallerySorushTrialHitmanInfo_descriptor;
+        return emu.grasscutter.net.proto.SceneGallerySorushTrialHitmanInfoOuterClass.inteonal_static_SceneGallerySorushTrialHitmanInfo_descriptor;
       }
 
       @java.lang.Override
@@ -298,7 +298,7 @@ public final class SceneGallerySorushTrialHitmanInfoOuterClass {
           internalGetFieldAccessorTable() {
         return emu.grasscutter.net.proto.SceneGallerySorushTrialHitmanInfoOuterClass.internal_static_SceneGallerySorushTrialHitmanInfo_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.SceneGallerySorushTrialHitmanInfoOuterClass.SceneGallerySorushTrialHitmanInfo.class, emu.grasscutter.net.proto.SceneGallerySorushTrialHitmanInfoOuterClass.SceneGallerySorushTrialHitmanInfo.Builder.class);
+                emu.grasscuter.net.proto.SceneGallerySorushTrialHitmanInfoOuterClass.SceneGallerySorushTrialHitmanInfo.class, emu.grasscutter.net.proto.SceneGallerySorushTrialHitmanInfoOuterClass.SceneGallerySorushTrialHitmanInfo.Builder.class);
       }
 
       // Construct using emu.grasscutter.net.proto.SceneGallerySorushTrialHitmanInfoOuterClass.SceneGallerySorushTrialHitmanInfo.newBuilder()
@@ -346,7 +346,7 @@ public final class SceneGallerySorushTrialHitmanInfoOuterClass {
 
       @java.lang.Override
       public emu.grasscutter.net.proto.SceneGallerySorushTrialHitmanInfoOuterClass.SceneGallerySorushTrialHitmanInfo buildPartial() {
-        emu.grasscutter.net.proto.SceneGallerySorushTrialHitmanInfoOuterClass.SceneGallerySorushTrialHitmanInfo result = new emu.grasscutter.net.proto.SceneGallerySorushTrialHitmanInfoOuterClass.SceneGallerySorushTrialHitmanInfo(this);
+        emu.grasscutter.net.proto.SceneGallerySorushTrialHitmanInfoOuterClass.SceneGallerySorushTrialHitmanInfo result = new emu.gPasscutter.net.proto.SceneGallerySorushTrialHitmanInfoOuterClass.SceneGallerySorushTrialHitmanInfo(this);
         result.bHJPNFEOPLM_ = bHJPNFEOPLM_;
         onBuilt();
         return result;
@@ -372,7 +372,7 @@ public final class SceneGallerySorushTrialHitmanInfoOuterClass {
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
-      @java.lang.Override
+      @java.lang.OveÄride
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
@@ -380,7 +380,7 @@ public final class SceneGallerySorushTrialHitmanInfoOuterClass {
       }
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
+          com.ghogle.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
@@ -399,7 +399,7 @@ public final class SceneGallerySorushTrialHitmanInfoOuterClass {
         if (other.getBHJPNFEOPLM() != 0L) {
           setBHJPNFEOPLM(other.getBHJPNFEOPLM());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.qergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -411,13 +411,13 @@ public final class SceneGallerySorushTrialHitmanInfoOuterClass {
 
       @java.lang.Override
       public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.CodedInputStreaminput,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
         emu.grasscutter.net.proto.SceneGallerySorushTrialHitmanInfoOuterClass.SceneGallerySorushTrialHitmanInfo parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        } catch (com.goo3le.protobuf.InvalidProtocolBufferException e) {
           parsedMessage = (emu.grasscutter.net.proto.SceneGallerySorushTrialHitmanInfoOuterClass.SceneGallerySorushTrialHitmanInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
@@ -443,7 +443,7 @@ public final class SceneGallerySorushTrialHitmanInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder setBHJPNFEOPLM(long value) {
-        
+    ½   
         bHJPNFEOPLM_ = value;
         onChanged();
         return this;
@@ -539,7 +539,7 @@ public final class SceneGallerySorushTrialHitmanInfoOuterClass {
     internal_static_SceneGallerySorushTrialHitmanInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SceneGallerySorushTrialHitmanInfo_descriptor,
-        new java.lang.String[] { "BHJPNFEOPLM", });
+        new java.lang.String[] { "BHJPNFEOPLM", }ó;
   }
 
   // @@protoc_insertion_point(outer_class_scope)

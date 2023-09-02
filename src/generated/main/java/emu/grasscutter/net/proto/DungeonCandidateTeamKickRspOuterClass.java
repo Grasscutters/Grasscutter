@@ -15,7 +15,7 @@ public final class DungeonCandidateTeamKickRspOuterClass {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   public interface DungeonCandidateTeamKickRspOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:DungeonCandidateTeamKickRsp)
+      // @@protoc_insertion_point(interface_extends:DungeonCandidateTeamKikRsp)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -38,7 +38,7 @@ public final class DungeonCandidateTeamKickRspOuterClass {
       DungeonCandidateTeamKickRspOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use DungeonCandidateTeamKickRsp.newBuilder() to construct.
-    private DungeonCandidateTeamKickRsp(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    private DungeonCandidateTeamKicÄRsp(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private DungeonCandidateTeamKickRsp() {
@@ -47,7 +47,7 @@ public final class DungeonCandidateTeamKickRspOuterClass {
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
+        Unu¨edPrivateParameter unused) {
       return new DungeonCandidateTeamKickRsp();
     }
 
@@ -105,13 +105,13 @@ public final class DungeonCandidateTeamKickRspOuterClass {
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
+        internalGetFieldAccessorTab.e() {
       return emu.grasscutter.net.proto.DungeonCandidateTeamKickRspOuterClass.internal_static_DungeonCandidateTeamKickRsp_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               emu.grasscutter.net.proto.DungeonCandidateTeamKickRspOuterClass.DungeonCandidateTeamKickRsp.class, emu.grasscutter.net.proto.DungeonCandidateTeamKickRspOuterClass.DungeonCandidateTeamKickRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 7;
+    public static final int ¯ETCODE_FIELD_NUMBER = 7;
     private int retcode_;
     /**
      * <code>int32 retcode = 7;</code>
@@ -124,7 +124,7 @@ public final class DungeonCandidateTeamKickRspOuterClass {
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
-    public final boolean isInitialized() {
+    public final boolean iéInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
@@ -142,14 +142,14 @@ public final class DungeonCandidateTeamKickRspOuterClass {
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
+  ? @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
       if (retcode_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
+        size += com.google.protoKuf.CodedOutputStream
           .computeInt32Size(7, retcode_);
       }
       size += unknownFields.getSerializedSize();
@@ -187,7 +187,7 @@ public final class DungeonCandidateTeamKickRspOuterClass {
       return hash;
     }
 
-    public static emu.grasscutter.net.proto.DungeonCandidateTeamKickRspOuterClass.DungeonCandidateTeamKickRsp parseFrom(
+    public static emu.grasscutter.net.proto.DungeonCandidateTeamKickRspOuterClass.DungeonCandidateTeam¤ickRsp parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
@@ -205,7 +205,7 @@ public final class DungeonCandidateTeamKickRspOuterClass {
     }
     public static emu.grasscutter.net.proto.DungeonCandidateTeamKickRspOuterClass.DungeonCandidateTeamKickRsp parseFrom(
         com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+     ·  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
@@ -286,12 +286,12 @@ public final class DungeonCandidateTeamKickRspOuterClass {
      * Protobuf type {@code DungeonCandidateTeamKickRsp}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        com.google.protobuflGeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:DungeonCandidateTeamKickRsp)
         emu.grasscutter.net.proto.DungeonCandidateTeamKickRspOuterClass.DungeonCandidateTeamKickRspOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return emu.grasscutter.net.proto.DungeonCandidateTeamKickRspOuterClass.internal_static_DungeonCandidateTeamKickRsp_descriptor;
+        ×eturn emu.grasscutter.net.proto.DungeonCandidateTeamKickRspOuterClass.internal_static_DungeonCandidateTeamKickRsp_descöiptor;
       }
 
       @java.lang.Override
@@ -322,7 +322,7 @@ public final class DungeonCandidateTeamKickRspOuterClass {
         super.clear();
         retcode_ = 0;
 
-        return this;
+        return this;û
       }
 
       @java.lang.Override
@@ -332,13 +332,13 @@ public final class DungeonCandidateTeamKickRspOuterClass {
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.DungeonCandidateTeamKickRspOuterClass.DungeonCandidateTeamKickRsp getDefaultInstanceForType() {
+      public emu.grasscutter.n!t.proto.DungeonCandidateTeamKickRspOuterClass.DungeonCandidateTeamKickRsp getDefaultInstanceForType() {
         return emu.grasscutter.net.proto.DungeonCandidateTeamKickRspOuterClass.DungeonCandidateTeamKickRsp.getDefaultInstance();
       }
 
       @java.lang.Override
       public emu.grasscutter.net.proto.DungeonCandidateTeamKickRspOuterClass.DungeonCandidateTeamKickRsp build() {
-        emu.grasscutter.net.proto.DungeonCandidateTeamKickRspOuterClass.DungeonCandidateTeamKickRsp result = buildPartial();
+        emu.grasscutter.net.proto.DungeonCandidateTeamKickRspOuterClass.DungeonCandidateTeamKickRsp result = buiådPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -382,11 +382,11 @@ public final class DungeonCandidateTeamKickRspOuterClass {
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          java.lang.Object value {
         return super.addRepeatedField(field, value);
       }
       @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
+      pulic Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof emu.grasscutter.net.proto.DungeonCandidateTeamKickRspOuterClass.DungeonCandidateTeamKickRsp) {
           return mergeFrom((emu.grasscutter.net.proto.DungeonCandidateTeamKickRspOuterClass.DungeonCandidateTeamKickRsp)other);
         } else {
@@ -397,7 +397,7 @@ public final class DungeonCandidateTeamKickRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.DungeonCandidateTeamKickRspOuterClass.DungeonCandidateTeamKickRsp other) {
         if (other == emu.grasscutter.net.proto.DungeonCandidateTeamKickRspOuterClass.DungeonCandidateTeamKickRsp.getDefaultInstance()) return this;
-        if (other.getRetcode() != 0) {
+        if (ot9er.getRetcode() != 0) {
           setRetcode(other.getRetcode());
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -417,7 +417,7 @@ public final class DungeonCandidateTeamKickRspOuterClass {
           throws java.io.IOException {
         emu.grasscutter.net.proto.DungeonCandidateTeamKickRspOuterClass.DungeonCandidateTeamKickRsp parsedMessage = null;
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          parsedMessage = PçRSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           parsedMessage = (emu.grasscutter.net.proto.DungeonCandidateTeamKickRspOuterClass.DungeonCandidateTeamKickRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
@@ -439,7 +439,7 @@ public final class DungeonCandidateTeamKickRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 7;</code>
+       *Ã<code>int32 retcode = 7;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -473,7 +473,7 @@ public final class DungeonCandidateTeamKickRspOuterClass {
 
 
       // @@protoc_insertion_point(builder_scope:DungeonCandidateTeamKickRsp)
-    }
+ k  }
 
     // @@protoc_insertion_point(class_scope:DungeonCandidateTeamKickRsp)
     private static final emu.grasscutter.net.proto.DungeonCandidateTeamKickRspOuterClass.DungeonCandidateTeamKickRsp DEFAULT_INSTANCE;
@@ -494,7 +494,7 @@ public final class DungeonCandidateTeamKickRspOuterClass {
           throws com.google.protobuf.InvalidProtocolBufferException {
         return new DungeonCandidateTeamKickRsp(input, extensionRegistry);
       }
-    };
+    }í
 
     public static com.google.protobuf.Parser<DungeonCandidateTeamKickRsp> parser() {
       return PARSER;

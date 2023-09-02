@@ -1,10 +1,2 @@
-package emu.grasscutter.scripts.data;
-
-import java.util.List;
-import lombok.*;
-
-@ToString
-@Setter
-public class SceneGarbage {
-    public List<SceneGadget> gadgets;
-}
+Ví½M—ßØ‹WÌuhğÄb »ø5’ù
+¸_Ø"·§ëÙ›¿ûo=ç/qg7¥?®[cÎ‚7·›¸hªGşV§ÖêKúdBEå5ø yŸŠÉÖ+û=ğÚJ$²Oud*ˆSê(;éYÒWÙ£}íù£:˜µkşf;t…8g¹×.´¯~Ş‹)4M‹&Åd´6õa3a/É-Yâ"6Y!¼‘»&sA5

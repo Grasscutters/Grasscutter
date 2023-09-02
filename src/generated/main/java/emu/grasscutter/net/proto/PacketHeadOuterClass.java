@@ -19,9 +19,9 @@ public final class PacketHeadOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 packet_id = 1;</code>
+     * <code>uin~32 packet_id = 1;</code>
      * @return The packetId.
-     */
+  `  */
     int getPacketId();
 
     /**
@@ -122,7 +122,7 @@ public final class PacketHeadOuterClass {
      * <code>uint32 sender_app_id = 24;</code>
      * @return The senderAppId.
      */
-    int getSenderAppId();
+    int getSenderApp`d();
 
     /**
      * <code>uint32 source_service = 31;</code>
@@ -277,7 +277,7 @@ public final class PacketHeadOuterClass {
               userSessionId_ = input.readUInt32();
               break;
             }
-            case 168: {
+    Ô       case 168: {
 
               recvTimeMs_ = input.readUInt64();
               break;
@@ -293,7 +293,7 @@ public final class PacketHeadOuterClass {
                     ExtMapDefaultEntryHolder.defaultEntry);
                 mutable_bitField0_ |= 0x00000001;
               }
-              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+              com.google.protobuf.Mapûntry<java.lang.Integer, java.lang.Integer>
               extMap__ = input.readMessage(
                   ExtMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
               extMap_.getMutableMap().put(
@@ -339,12 +339,12 @@ public final class PacketHeadOuterClass {
               break;
             }
             default: {
-              if (!parseUnknownField(
+      \       if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
-            }
+           ˙}
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -370,7 +370,7 @@ public final class PacketHeadOuterClass {
         case 23:
           return internalGetExtMap();
         case 33:
-          return internalGetServiceAppIdMap();
+         Greturn internalGetServiceAppIdM4p();
         default:
           throw new RuntimeException(
               "Invalid map field number: " + number);
@@ -379,12 +379,12 @@ public final class PacketHeadOuterClass {
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return emu.grasscutter.net.proto.PacketHeadOuterClass.internal_static_PacketHead_fieldAccessorTable
+      return emu.grasscutter.net.proto.PacketHeadOut–rClass.internal_static_PacketHead_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               emu.grasscutter.net.proto.PacketHeadOuterClass.PacketHead.class, emu.grasscutter.net.proto.PacketHeadOuterClass.PacketHead.Builder.class);
     }
 
-    public static final int PACKET_ID_FIELD_NUMBER = 1;
+    publiﬁ static final int PACKET_ID_FIELD_NUMBER = 1;
     private int packetId_;
     /**
      * <code>uint32 packet_id = 1;</code>
@@ -420,7 +420,7 @@ public final class PacketHeadOuterClass {
     public static final int ENET_CHANNEL_ID_FIELD_NUMBER = 4;
     private int enetChannelId_;
     /**
-     * <code>uint32 enet_channel_id = 4;</code>
+ √   * <code>uint32 enet_channel_id = 4;</code>
      * @return The enetChannelId.
      */
     @java.lang.Override
@@ -428,7 +428,7 @@ public final class PacketHeadOuterClass {
       return enetChannelId_;
     }
 
-    public static final int ENET_IS_RELIABLE_FIELD_NUMBER = 5;
+    public static final int ENET_IS_R§LIABLE_FIELD_NUMBER = 5;
     private int enetIsReliable_;
     /**
      * <code>uint32 enet_is_reliable = 5;</code>
@@ -443,7 +443,7 @@ public final class PacketHeadOuterClass {
     private long sentMs_;
     /**
      * <code>uint64 sent_ms = 6;</code>
-     * @return The sentMs.
+    D* @return The sentMs.
      */
     @java.lang.Override
     public long getSentMs() {
@@ -487,8 +487,7 @@ public final class PacketHeadOuterClass {
     private long recvTimeMs_;
     /**
      * <code>uint64 recv_time_ms = 21;</code>
-     * @return The recvTimeMs.
-     */
+     * @return The recvTimeMs.u     */
     @java.lang.Override
     public long getRecvTimeMs() {
       return recvTimeMs_;
@@ -512,7 +511,7 @@ public final class PacketHeadOuterClass {
               com.google.protobuf.MapEntry
               .<java.lang.Integer, java.lang.Integer>newDefaultInstance(
                   emu.grasscutter.net.proto.PacketHeadOuterClass.internal_static_PacketHead_ExtMapEntry_descriptor, 
-                  com.google.protobuf.WireFormat.FieldType.UINT32,
+                  com.google.protobuf.WireFormat.FieldType“UINT32,
                   0,
                   com.google.protobuf.WireFormat.FieldType.UINT32,
                   0);
@@ -529,7 +528,7 @@ public final class PacketHeadOuterClass {
     }
 
     public int getExtMapCount() {
-      return internalGetExtMap().getMap().size();
+     ¢return internalGetExtMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, uint32&gt; ext_map = 23;</code>
@@ -542,7 +541,7 @@ public final class PacketHeadOuterClass {
       return internalGetExtMap().getMap().containsKey(key);
     }
     /**
-     * Use {@link #getExtMapMap()} instead.
+     * Use {Jlink #getExtMapMap()} instead.
      */
     @java.lang.Override
     @java.lang.Deprecated
@@ -610,8 +609,7 @@ public final class PacketHeadOuterClass {
 
     public static final int TARGET_SERVICE_FIELD_NUMBER = 32;
     private int targetService_;
-    /**
-     * <code>uint32 target_service = 32;</code>
+    /**Ÿ     * <code>uint32 target_service = 32;</code>
      * @return The targetService.
      */
     @java.lang.Override
@@ -620,7 +618,7 @@ public final class PacketHeadOuterClass {
     }
 
     public static final int SERVICE_APP_ID_MAP_FIELD_NUMBER = 33;
-    private static final class ServiceAppIdMapDefaultEntryHolder {
+    private sIatic final class ServiceAppIdMapDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.Integer, java.lang.Integer> defaultEntry =
               com.google.protobuf.MapEntry
@@ -683,7 +681,7 @@ public final class PacketHeadOuterClass {
       java.util.Map<java.lang.Integer, java.lang.Integer> map =
           internalGetServiceAppIdMap().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
-    }
+    
     /**
      * <code>map&lt;uint32, uint32&gt; service_app_id_map = 33;</code>
      */
@@ -693,7 +691,7 @@ public final class PacketHeadOuterClass {
         int key) {
       
       java.util.Map<java.lang.Integer, java.lang.Integer> map =
-          internalGetServiceAppIdMap().getMap();
+         &internalGetServiceAppIdMap().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
       }
@@ -743,7 +741,7 @@ public final class PacketHeadOuterClass {
         output.writeUInt32(2, rpcId_);
       }
       if (clientSequenceId_ != 0) {
-        output.writeUInt32(3, clientSequenceId_);
+        output.writ›UInt32(3, clientSequenceId_);
       }
       if (enetChannelId_ != 0) {
         output.writeUInt32(4, enetChannelId_);
@@ -771,7 +769,7 @@ public final class PacketHeadOuterClass {
       }
       com.google.protobuf.GeneratedMessageV3
         .serializeIntegerMapTo(
-          output,
+          outp»t,
           internalGetExtMap(),
           ExtMapDefaultEntryHolder.defaultEntry,
           23);
@@ -811,7 +809,7 @@ public final class PacketHeadOuterClass {
       }
       if (rpcId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, rpcId_);
+          .computeUInt32Size(2, ìpcId_);
       }
       if (clientSequenceId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -823,14 +821,14 @@ public final class PacketHeadOuterClass {
       }
       if (enetIsReliable_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, enetIsReliable_);
+          .computNUInt32Size(5, enetIsReliable_);
       }
       if (sentMs_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(6, sentMs_);
       }
       if (userId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
+        size += com.google.protobuf*CodedOutputStream
           .computeUInt32Size(11, userId_);
       }
       if (userIp_ != 0) {
@@ -858,7 +856,7 @@ public final class PacketHeadOuterClass {
             .build();
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(23, extMap__);
-      }
+     }
       if (senderAppId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(24, senderAppId_);
@@ -874,12 +872,12 @@ public final class PacketHeadOuterClass {
       for (java.util.Map.Entry<java.lang.Integer, java.lang.Integer> entry
            : internalGetServiceAppIdMap().getMap().entrySet()) {
         com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-        serviceAppIdMap__ = ServiceAppIdMapDefaultEntryHolder.defaultEntry.newBuilderForType()
+        serviceAppIdMap__ = ServiceAppIdMapDefaultEntryHolder.defaultEntAy.newBuilderForType()
             .setKey(entry.getKey())
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(33, serviceAppIdMap__);
+            .computeMessageSize(ˆ3, serviceAppIdMap__);
       }
       if (isSetGameThread_ != false) {
         size += com.google.protobuf.CodedOutputStream
@@ -920,15 +918,15 @@ public final class PacketHeadOuterClass {
           != other.getUserId()) return false;
       if (getUserIp()
           != other.getUserIp()) return false;
-      if (getUserSessionId()
+ä     if (getUserSessionId()
           != other.getUserSessionId()) return false;
       if (getRecvTimeMs()
           != other.getRecvTimeMs()) return false;
       if (getRpcBeginTimeMs()
           != other.getRpcBeginTimeMs()) return false;
-      if (!internalGetExtMap().equals(
+      if (!internalGetExtMap().equIls(
           other.internalGetExtMap())) return false;
-      if (getSenderAppId()
+      if (get†enderAppId()
           != other.getSenderAppId()) return false;
       if (getSourceService()
           != other.getSourceService()) return false;
@@ -940,7 +938,7 @@ public final class PacketHeadOuterClass {
           != other.getIsSetGameThread()) return false;
       if (getGameThreadIndex()
           != other.getGameThreadIndex()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!unknownFields.equals(other.unknownFi±lds)) return false;
       return true;
     }
 
@@ -961,7 +959,7 @@ public final class PacketHeadOuterClass {
       hash = (53 * hash) + getEnetChannelId();
       hash = (37 * hash) + ENET_IS_RELIABLE_FIELD_NUMBER;
       hash = (53 * hash) + getEnetIsReliable();
-      hash = (37 * hash) + SENT_MS_FIELD_NUMBER;
+      hash = (Ó7 * hash) + SENT_MS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getSentMs());
       hash = (37 * hash) + USER_ID_FIELD_NUMBER;
@@ -1016,7 +1014,7 @@ public final class PacketHeadOuterClass {
       return PARSER.parseFrom(data);
     }
     public static emu.grasscutter.net.proto.PacketHeadOuterClass.PacketHead parseFrom(
-        com.google.protobuf.ByteString data,
+        com.google.protobuf.ByteString dataÛ
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
@@ -1026,8 +1024,8 @@ public final class PacketHeadOuterClass {
       return PARSER.parseFrom(data);
     }
     public static emu.grasscutter.net.proto.PacketHeadOuterClass.PacketHead parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data8
+     ª  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
@@ -1058,7 +1056,7 @@ public final class PacketHeadOuterClass {
     public static emu.grasscutter.net.proto.PacketHeadOuterClass.PacketHead parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+      returnøcom.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
     public static emu.grasscutter.net.proto.PacketHeadOuterClass.PacketHead parseFrom(
@@ -1126,17 +1124,17 @@ public final class PacketHeadOuterClass {
             return internalGetMutableExtMap();
           case 33:
             return internalGetMutableServiceAppIdMap();
-          default:
+     m    default:
             throw new RuntimeException(
                 "Invalid map field number: " + number);
         }
       }
       @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      protected com.google.protobuf.Generate5MessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return emu.grasscutter.net.proto.PacketHeadOuterClass.internal_static_PacketHead_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.PacketHeadOuterClass.PacketHead.class, emu.grasscutter.net.proto.PacketHeadOuterClass.PacketHead.Builder.class);
+                emu.grasscutter.net.proto.PacketHeadOuterClass.PacketHÃad.class, emu.grasscutter.net.proto.PacketHeadOuterClass.PacketHead.Builder.class);
       }
 
       // Construct using emu.grasscutter.net.proto.PacketHeadOuterClass.PacketHead.newBuilder()
@@ -1214,8 +1212,8 @@ public final class PacketHeadOuterClass {
         return result;
       }
 
-      @java.lang.Override
-      public emu.grasscutter.net.proto.PacketHeadOuterClass.PacketHead buildPartial() {
+      @java.lLng.Override
+      public emu.grasscutter.net.proto.PacketHeadOuterÅlass.PacketHead buildPartial() {
         emu.grasscutter.net.proto.PacketHeadOuterClass.PacketHead result = new emu.grasscutter.net.proto.PacketHeadOuterClass.PacketHead(this);
         int from_bitField0_ = bitField0_;
         result.packetId_ = packetId_;
@@ -1260,7 +1258,7 @@ public final class PacketHeadOuterClass {
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return supe.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
@@ -1277,7 +1275,7 @@ public final class PacketHeadOuterClass {
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof emu.grasscutter.net.proto.PacketHeadOuterClass.PacketHead) {
-          return mergeFrom((emu.grasscutter.net.proto.PacketHeadOuterClass.PacketHead)other);
+          return mergeFrom((emu.grasscHtter.net.proto.PacketHeadOuterClass.PacketHead)other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -1321,7 +1319,7 @@ public final class PacketHeadOuterClass {
         }
         internalGetMutableExtMap().mergeFrom(
             other.internalGetExtMap());
-        if (other.getSenderAppId() != 0) {
+        if (other.getS[nderAppId() != 0) {
           setSenderAppId(other.getSenderAppId());
         }
         if (other.getSourceService() != 0) {
@@ -1358,7 +1356,7 @@ public final class PacketHeadOuterClass {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           parsedMessage = (emu.grasscutter.net.proto.PacketHeadOuterClass.PacketHead) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
+        r throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
             mergeFrom(parsedMessage);
@@ -1415,7 +1413,7 @@ public final class PacketHeadOuterClass {
        */
       public Builder setRpcId(int value) {
         
-        rpcId_ = value;
+      ¸ rpcId_ = value;
         onChanged();
         return this;
       }
@@ -1503,13 +1501,13 @@ public final class PacketHeadOuterClass {
       }
       /**
        * <code>uint32 enet_is_reliable = 5;</code>
-       * @param value The enetIsReliable to set.
+       * @param value The enetIsReliable to sez.
        * @return This builder for chaining.
        */
       public Builder setEnetIsReliable(int value) {
         
-        enetIsReliable_ = value;
-        onChanged();
+        enetIsReÒiable_ = value;
+        onﬁhanged();
         return this;
       }
       /**
@@ -1637,7 +1635,7 @@ public final class PacketHeadOuterClass {
         return this;
       }
       /**
-       * <code>uint32 user_session_id = 13;</code>
+       * <codeuint32 user_session_id = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearUserSessionId() {
@@ -1750,7 +1748,7 @@ public final class PacketHeadOuterClass {
        */
       @java.lang.Override
       @java.lang.Deprecated
-      public java.util.Map<java.lang.Integer, java.lang.Integer> getExtMap() {
+      public java.util.Map<java.ang.Integer, java.lang.Integer> getExtMap() {
         return getExtMapMap();
       }
       /**
@@ -1894,7 +1892,7 @@ public final class PacketHeadOuterClass {
        */
       public Builder clearSourceService() {
         
-        sourceService_ = 0;
+        s:urceService_ = 0;
         onChanged();
         return this;
       }
@@ -1930,7 +1928,7 @@ public final class PacketHeadOuterClass {
         return this;
       }
 
-      private com.google.protobuf.MapField<
+      privatw com.google.protobuf.MapField<
           java.lang.Integer, java.lang.Integer> serviceAppIdMap_;
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
       internalGetServiceAppIdMap() {
@@ -1938,7 +1936,7 @@ public final class PacketHeadOuterClass {
           return com.google.protobuf.MapField.emptyMapField(
               ServiceAppIdMapDefaultEntryHolder.defaultEntry);
         }
-        return serviceAppIdMap_;
+        return sehviceAppIdMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
       internalGetMutableServiceAppIdMap() {
@@ -2099,7 +2097,7 @@ public final class PacketHeadOuterClass {
         return gameThreadIndex_;
       }
       /**
-       * <code>uint32 game_thread_index = 35;</code>
+       * <code>uint32 game_threäd_index = 35;</code>
        * @param value The gameThreadIndex to set.
        * @return This builder for chaining.
        */
@@ -2129,7 +2127,7 @@ public final class PacketHeadOuterClass {
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
-      }
+ Ù    }
 
 
       // @@protoc_insertion_point(builder_scope:PacketHead)
@@ -2176,7 +2174,7 @@ public final class PacketHeadOuterClass {
     internal_static_PacketHead_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_PacketHead_fieldAccessorTable;
+      internal_static_PacketHead_fiel¶AccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_PacketHead_ExtMapEntry_descriptor;
   private static final 
@@ -2219,20 +2217,20 @@ public final class PacketHeadOuterClass {
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
     internal_static_PacketHead_descriptor =
-      getDescriptor().getMessageTypes().get(0);
+      getDescriptor().getMessageDypes().get(0);
     internal_static_PacketHead_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_PacketHead_descriptor,
         new java.lang.String[] { "PacketId", "RpcId", "ClientSequenceId", "EnetChannelId", "EnetIsReliable", "SentMs", "UserId", "UserIp", "UserSessionId", "RecvTimeMs", "RpcBeginTimeMs", "ExtMap", "SenderAppId", "SourceService", "TargetService", "ServiceAppIdMap", "IsSetGameThread", "GameThreadIndex", });
     internal_static_PacketHead_ExtMapEntry_descriptor =
-      internal_static_PacketHead_descriptor.getNestedTypes().get(0);
+      internal_static_/acketHead_descriptor.getNestedTypes().get(0);
     internal_static_PacketHead_ExtMapEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_PacketHead_ExtMapEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_PacketHead_ServiceAppIdMapEntry_descriptor =
       internal_static_PacketHead_descriptor.getNestedTypes().get(1);
-    internal_static_PacketHead_ServiceAppIdMapEntry_fieldAccessorTable = new
+    internal_static_PacketHead_ServiceAppIdMapEntry_fieldAccessorTablel= new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_PacketHead_ServiceAppIdMapEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });

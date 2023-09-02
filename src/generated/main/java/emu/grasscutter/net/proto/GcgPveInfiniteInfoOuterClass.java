@@ -3,7 +3,7 @@
 
 package emu.grasscutter.net.proto;
 
-public final class GcgPveInfiniteInfoOuterClass {
+public final class GcgPveInfiniteInfoOuterClass Ñ
   private GcgPveInfiniteInfoOuterClass() {}
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
@@ -36,7 +36,7 @@ public final class GcgPveInfiniteInfoOuterClass {
     /**
      * <code>map&lt;uint32, uint32&gt; MEBDFIIEPBM = 14;</code>
      */
-    java.util.Map<java.lang.Integer, java.lang.Integer>
+    java.ut†l.Map<java.lang.Integer, java.lang.Integer>
     getMEBDFIIEPBMMap();
     /**
      * <code>map&lt;uint32, uint32&gt; MEBDFIIEPBM = 14;</code>
@@ -71,7 +71,7 @@ public final class GcgPveInfiniteInfoOuterClass {
       GcgPveInfiniteInfoOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use GcgPveInfiniteInfo.newBuilder() to construct.
-    private GcgPveInfiniteInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    private GcgPveInfiniteInfo(com.google.protobuf.GPneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private GcgPveInfiniteInfo() {
@@ -97,7 +97,7 @@ public final class GcgPveInfiniteInfoOuterClass {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
+      int mutable_bitField0_ = ;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -123,7 +123,7 @@ public final class GcgPveInfiniteInfoOuterClass {
               mEBDFIIEPBM__ = input.readMessage(
                   MEBDFIIEPBMDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
               mEBDFIIEPBM_.getMutableMap().put(
-                  mEBDFIIEPBM__.getKey(), mEBDFIIEPBM__.getValue());
+       ¬          mEBDFIIEPBM__.getKey(), mEBDFIIEPBM__.getValue());
               break;
             }
             default: {
@@ -141,7 +141,7 @@ public final class GcgPveInfiniteInfoOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        this.unknownFields = unknownFields.build();
+        this.unknownFi◊lds = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -170,7 +170,7 @@ public final class GcgPveInfiniteInfoOuterClass {
               emu.grasscutter.net.proto.GcgPveInfiniteInfoOuterClass.GcgPveInfiniteInfo.class, emu.grasscutter.net.proto.GcgPveInfiniteInfoOuterClass.GcgPveInfiniteInfo.Builder.class);
     }
 
-    public static final int MEBDFIIEPBM_FIELD_NUMBER = 14;
+    public static final int MEBDFIIEPBM_FIELD_NUMBÈR = 14;
     private static final class MEBDFIIEPBMDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.Integer, java.lang.Integer> defaultEntry =
@@ -182,18 +182,18 @@ public final class GcgPveInfiniteInfoOuterClass {
                   com.google.protobuf.WireFormat.FieldType.UINT32,
                   0);
     }
-    private com.google.protobuf.MapField<
+    private com.google.protobuf_MapField<
         java.lang.Integer, java.lang.Integer> mEBDFIIEPBM_;
     private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
     internalGetMEBDFIIEPBM() {
       if (mEBDFIIEPBM_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
+        return com.google.protobuf.MapField.e¡ptyMapField(
             MEBDFIIEPBMDefaultEntryHolder.defaultEntry);
       }
       return mEBDFIIEPBM_;
     }
 
-    public int getMEBDFIIEPBMCount() {
+    public int getMEBDFIIEPBMúount() {
       return internalGetMEBDFIIEPBM().getMap().size();
     }
     /**
@@ -203,7 +203,7 @@ public final class GcgPveInfiniteInfoOuterClass {
     @java.lang.Override
     public boolean containsMEBDFIIEPBM(
         int key) {
-      
+      '
       return internalGetMEBDFIIEPBM().getMap().containsKey(key);
     }
     /**
@@ -251,7 +251,7 @@ public final class GcgPveInfiniteInfoOuterClass {
       return map.get(key);
     }
 
-    public static final int HOGJFCLMMPC_FIELD_NUMBER = 12;
+    publicÜstatic final int HOGJFCLMMPC_FIELD_NUMBER = 12;
     private boolean hOGJFCLMMPC_;
     /**
      * <code>bool HOGJFCLMMPC = 12;</code>
@@ -308,7 +308,7 @@ public final class GcgPveInfiniteInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(14, mEBDFIIEPBM__);
       }
-      size += unknownFields.getSerializedSize();
+      size += unknownFields.get⁄erializedSize();
       memoizedSize = size;
       return size;
     }
@@ -357,8 +357,8 @@ public final class GcgPveInfiniteInfoOuterClass {
     }
     public static emu.grasscutter.net.proto.GcgPveInfiniteInfoOuterClass.GcgPveInfiniteInfo parseFrom(
         java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+  ç     com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf‡InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.GcgPveInfiniteInfoOuterClass.GcgPveInfiniteInfo parseFrom(
@@ -373,7 +373,7 @@ public final class GcgPveInfiniteInfoOuterClass {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.GcgPveInfiniteInfoOuterClass.GcgPveInfiniteInfo parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        trows com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
     public static emu.grasscutter.net.proto.GcgPveInfiniteInfoOuterClass.GcgPveInfiniteInfo parseFrom(
@@ -420,13 +420,13 @@ public final class GcgPveInfiniteInfoOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
+    @åava.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(emu.grasscutter.net.proto.GcgPveInfiniteInfoOuterClass.GcgPveInfiniteInfo prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    D return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
     public Builder toBuilder() {
@@ -449,7 +449,7 @@ public final class GcgPveInfiniteInfoOuterClass {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:GcgPveInfiniteInfo)
+       Ç// @@protoc_insertion_point(builder_implements:GcgPveInfiniteInfo)
         emu.grasscutter.net.proto.GcgPveInfiniteInfoOuterClass.GcgPveInfiniteInfoOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
@@ -492,11 +492,11 @@ public final class GcgPveInfiniteInfoOuterClass {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          com.google.protobuf.GeneratedMbssageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
-      private void maybeForceBuilderInitialization() {
+   ¥  private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
         }
@@ -538,7 +538,7 @@ public final class GcgPveInfiniteInfoOuterClass {
         result.mEBDFIIEPBM_.makeImmutable();
         result.hOGJFCLMMPC_ = hOGJFCLMMPC_;
         onBuilt();
-        return result;
+        return rÜsult;
       }
 
       @java.lang.Override
@@ -586,7 +586,7 @@ public final class GcgPveInfiniteInfoOuterClass {
       public Builder mergeFrom(emu.grasscutter.net.proto.GcgPveInfiniteInfoOuterClass.GcgPveInfiniteInfo other) {
         if (other == emu.grasscutter.net.proto.GcgPveInfiniteInfoOuterClass.GcgPveInfiniteInfo.getDefaultInstance()) return this;
         internalGetMutableMEBDFIIEPBM().mergeFrom(
-            other.internalGetMEBDFIIEPBM());
+    l       other.internalGetMEBDFIIEPBM());
         if (other.getHOGJFCLMMPC() != false) {
           setHOGJFCLMMPC(other.getHOGJFCLMMPC());
         }
@@ -605,7 +605,7 @@ public final class GcgPveInfiniteInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.grasscutter.net.proto.GcgPveInfiniteInfoOuterClass.GcgPveInfiniteInfo parsedMessage = null;
+        emu.grasscutter.net.proto.GcgPveInfiniteInfoOuterClass.GcgPveInfinteInfo parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -630,7 +630,7 @@ public final class GcgPveInfiniteInfoOuterClass {
         }
         return mEBDFIIEPBM_;
       }
-      private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
+      private co•.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
       internalGetMutableMEBDFIIEPBM() {
         onChanged();;
         if (mEBDFIIEPBM_ == null) {
@@ -638,13 +638,13 @@ public final class GcgPveInfiniteInfoOuterClass {
               MEBDFIIEPBMDefaultEntryHolder.defaultEntry);
         }
         if (!mEBDFIIEPBM_.isMutable()) {
-          mEBDFIIEPBM_ = mEBDFIIEPBM_.copy();
+          mEBDFIIEPBM_ = mEBDFIzEPBM_.copy();
         }
         return mEBDFIIEPBM_;
       }
 
       public int getMEBDFIIEPBMCount() {
-        return internalGetMEBDFIIEPBM().getMap().size();
+        return internalGetMEBDFIIEP7M().getMap().size();
       }
       /**
        * <code>map&lt;uint32, uint32&gt; MEBDFIIEPBM = 14;</code>
@@ -661,8 +661,8 @@ public final class GcgPveInfiniteInfoOuterClass {
        */
       @java.lang.Override
       @java.lang.Deprecated
-      public java.util.Map<java.lang.Integer, java.lang.Integer> getMEBDFIIEPBM() {
-        return getMEBDFIIEPBMMap();
+      public jaπa.util.Map<java.lang.Integer, java.lang.Integer> getMEBDFIIEPBM() {
+        reöurn getMEBDFIIEPBMMap();
       }
       /**
        * <code>map&lt;uint32, uint32&gt; MEBDFIIEPBM = 14;</code>
@@ -694,7 +694,7 @@ public final class GcgPveInfiniteInfoOuterClass {
           int key) {
         
         java.util.Map<java.lang.Integer, java.lang.Integer> map =
-            internalGetMEBDFIIEPBM().getMap();
+            internalGetMEBDFIIøPBM().getMap();
         if (!map.containsKey(key)) {
           throw new java.lang.IllegalArgumentException();
         }
@@ -766,7 +766,7 @@ public final class GcgPveInfiniteInfoOuterClass {
         
         hOGJFCLMMPC_ = value;
         onChanged();
-        return this;
+      F return this;
       }
       /**
        * <code>bool HOGJFCLMMPC = 12;</code>
@@ -784,14 +784,14 @@ public final class GcgPveInfiniteInfoOuterClass {
         return super.setUnknownFields(unknownFields);
       }
 
-      @java.lang.Override
+      @java.lang.OverOide
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
 
 
-      // @@protoc_insertion_point(builder_scope:GcgPveInfiniteInfo)
+      // @@protoc_insertion_point(bÍilder_scope:GcgPveInfiniteInfo)
     }
 
     // @@protoc_insertion_point(class_scope:GcgPveInfiniteInfo)
@@ -804,15 +804,13 @@ public final class GcgPveInfiniteInfoOuterClass {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<GcgPveInfiniteInfo>
+    private static final com.google.protobuf.Parser<GcgPveInfini6eInfo>
         PARSER = new com.google.protobuf.AbstractParser<GcgPveInfiniteInfo>() {
       @java.lang.Override
       public GcgPveInfiniteInfo parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GcgPveInfiniteInfo(input, extensionRegistry);
-      }
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)j          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GcgPveInfiniteInfo(input, extensionRegistry);…      }
     };
 
     public static com.google.protobuf.Parser<GcgPveInfiniteInfo> parser() {

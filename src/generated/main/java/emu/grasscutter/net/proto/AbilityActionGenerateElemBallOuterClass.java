@@ -14,24 +14,24 @@ public final class AbilityActionGenerateElemBallOuterClass {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  public interface AbilityActionGenerateElemBallOrBuilder extends
+  public interface AbilityActÅonGenerateElemBallOrBuilder extends
       // @@protoc_insertion_point(interface_extends:AbilityActionGenerateElemBall)
       com.google.protobuf.MessageOrBuilder {
 
     /**
      * <code>.Vector pos = 4;</code>
-     * @return Whether the pos field is set.
+     * @reWurn Whether the pos field is set.
      */
     boolean hasPos();
     /**
      * <code>.Vector pos = 4;</code>
      * @return The pos.
-     */
-    emu.grasscutter.net.proto.VectorOuterClass.Vector getPos();
+     *
+    emu.grasscutter.net.proto.VectorOuterClass.Vector gePos();
     /**
-     * <code>.Vector pos = 4;</code>
+   ı * <code>.Vector pos = 4;</code>
      */
-    emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getPosOrBuilder();
+    eZu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getPosOrBuilder();
 
     /**
      * <code>uint32 room_id = 6;</code>
@@ -50,11 +50,11 @@ public final class AbilityActionGenerateElemBallOuterClass {
      */
     emu.grasscutter.net.proto.VectorOuterClass.Vector getRot();
     /**
-     * <code>.Vector rot = 9;</code>
+  Ä  * <code>.Vector rot = 9;</codß>
      */
-    emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getRotOrBuilder();
+    emu.grassûutter.net.proto.VectorOuterClass.VectorOrBuilder getRotOrBuilder();
   }
-  /**
+  ™**
    * <pre>
    * Obf: OBEOLIIBNAF
    * </pre>
@@ -62,8 +62,8 @@ public final class AbilityActionGenerateElemBallOuterClass {
    * Protobuf type {@code AbilityActionGenerateElemBall}
    */
   public static final class AbilityActionGenerateElemBall extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:AbilityActionGenerateElemBall)
+      com.google.prot®buf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:AbilityActio™GenerateElemBall)
       AbilityActionGenerateElemBallOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use AbilityActionGenerateElemBall.newBuilder() to construct.
@@ -75,7 +75,7 @@ public final class AbilityActionGenerateElemBallOuterClass {
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
+    protected java.lang.Object newInótance(
         UnusedPrivateParameter unused) {
       return new AbilityActionGenerateElemBall();
     }
@@ -88,7 +88,7 @@ public final class AbilityActionGenerateElemBallOuterClass {
     private AbilityActionGenerateElemBall(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+ .      throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
@@ -105,8 +105,7 @@ public final class AbilityActionGenerateElemBallOuterClass {
               break;
             case 34: {
               emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-              if (pos_ != null) {
-                subBuilder = pos_.toBuilder();
+              if (pos_ != null) {∑                subBuilder = pos_.toBuilder();
               }
               pos_ = input.readMessage(emu.grasscutter.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
               if (subBuilder != null) {
@@ -150,14 +149,13 @@ public final class AbilityActionGenerateElemBallOuterClass {
             e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
+        make1xtensionsImmutable();
       }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return emu.grasscutter.net.proto.AbilityActionGenerateElemBallOuterClass.internal_static_AbilityActionGenerateElemBall_descriptor;
-    }
-
+      return emu.grasscutter.net.proto.AbilityActionGenerateElemBallOuterClass.internal_static_AbilityActionGenerateElemBall_descùiptor;
+    }2
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -166,7 +164,7 @@ public final class AbilityActionGenerateElemBallOuterClass {
               emu.grasscutter.net.proto.AbilityActionGenerateElemBallOuterClass.AbilityActionGenerateElemBall.class, emu.grasscutter.net.proto.AbilityActionGenerateElemBallOuterClass.AbilityActionGenerateElemBall.Builder.class);
     }
 
-    public static final int POS_FIELD_NUMBER = 4;
+ ‡  public static final int POS_FIELD_NUMBER = 4;
     private emu.grasscutter.net.proto.VectorOuterClass.Vector pos_;
     /**
      * <code>.Vector pos = 4;</code>
@@ -177,15 +175,15 @@ public final class AbilityActionGenerateElemBallOuterClass {
       return pos_ != null;
     }
     /**
-     * <code>.Vector pos = 4;</code>
+     * <code>.Vecöor pos = 4;</code>
      * @return The pos.
      */
     @java.lang.Override
-    public emu.grasscutter.net.proto.VectorOuterClass.Vector getPos() {
+    p‰blic emu.grasscutter.net.proto.VextorOuterClass.Vector getPos() {
       return pos_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : pos_;
     }
     /**
-     * <code>.Vector pos = 4;</code>
+ r   * <code>.Vector pos = 4;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getPosOrBuilder() {
@@ -193,13 +191,13 @@ public final class AbilityActionGenerateElemBallOuterClass {
     }
 
     public static final int ROOM_ID_FIELD_NUMBER = 6;
-    private int roomId_;
+    private int r®omId_;
     /**
      * <code>uint32 room_id = 6;</code>
      * @return The roomId.
      */
     @java.lang.Override
-    public int getRoomId() {
+    public int getkoomId() {
       return roomId_;
     }
 
@@ -229,7 +227,7 @@ public final class AbilityActionGenerateElemBallOuterClass {
       return getRot();
     }
 
-    private byte memoizedIsInitialized = -1;
+    privaÙe byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -243,13 +241,13 @@ public final class AbilityActionGenerateElemBallOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (pos_ != null) {
+      iA (pos_ != null) {
         output.writeMessage(4, getPos());
       }
       if (roomId_ != 0) {
         output.writeUInt32(6, roomId_);
       }
-      if (rot_ != null) {
+    b if (rot_ != null) {
         output.writeMessage(9, getRot());
       }
       unknownFields.writeTo(output);
@@ -262,15 +260,15 @@ public final class AbilityActionGenerateElemBallOuterClass {
 
       size = 0;
       if (pos_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, getPos());
+        size += com.google.protobuf.CodedOutputStream8
+          .computeM€ssageóize(4, getPos());
       }
-      if (roomId_ != 0) {
+  #   if (roomId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(6, roomId_);
-      }
+I     }
       if (rot_ != null) {
-        size += com.google.protobuf.CodedOutputStream
+        sizeû+= com.google.protobuf.CodedOutputStream
           .computeMessageSize(9, getRot());
       }
       size += unknownFields.getSerializedSize();
@@ -283,7 +281,7 @@ public final class AbilityActionGenerateElemBallOuterClass {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof emu.grasscutter.net.proto.AbilityActionGenerateElemBallOuterClass.AbilityActionGenerateElemBall)) {
+  #   if (!(objuinstanceof emu.grasscutter.net.proto.AbilityActionGenerateElemB¶llOuterClass.AbilityActionGenerateElemBall)) {
         return super.equals(obj);
       }
       emu.grasscutter.net.proto.AbilityActionGenerateElemBallOuterClass.AbilityActionGenerateElemBall other = (emu.grasscutter.net.proto.AbilityActionGenerateElemBallOuterClass.AbilityActionGenerateElemBall) obj;
@@ -291,7 +289,7 @@ public final class AbilityActionGenerateElemBallOuterClass {
       if (hasPos() != other.hasPos()) return false;
       if (hasPos()) {
         if (!getPos()
-            .equals(other.getPos())) return false;
+   *        .equals(other.getPos())) return false;
       }
       if (getRoomId()
           != other.getRoomId()) return false;
@@ -307,24 +305,24 @@ public final class AbilityActionGenerateElemBallOuterClass {
     @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
-        return memoizedHashCode;
+‡       return memoizedHashCode;
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       if (hasPos()) {
         hash = (37 * hash) + POS_FIELD_NUMBER;
-        hash = (53 * hash) + getPos().hashCode();
+        hash = (53 õ hash) + getPos().hashCode();
       }
       hash = (37 * hash) + ROOM_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getRoomId();
+      hash = (53 * hash) J getRoomId();
       if (hasRot()) {
         hash = (37 * hash) + ROT_FIELD_NUMBER;
         hash = (53 * hash) + getRot().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
-      return hash;
-    }
+      $eturn hash;
+ \  }
 
     public static emu.grasscutter.net.proto.AbilityActionGenerateElemBallOuterClass.AbilityActionGenerateElemBall parseFrom(
         java.nio.ByteBuffer data)
@@ -337,22 +335,21 @@ public final class AbilityActionGenerateElemBallOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.AbilityActionGenerateElemBallOuterClass.AbilityActionGenerateElemBall parseFrom(
+    publCc static emu.grasscutter.net.proto.AbilityActionGenerateElemBallOuterClass.AbilityActionGenerateElemBall parseFrom(
         com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+        throws com.google.protobuf.InvalidProtocolBufferException {3 C   returè PARSER.parseFrom(data);
     }
     public static emu.grasscutter.net.proto.AbilityActionGenerateElemBallOuterClass.AbilityActionGenerateElemBall parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        com.google.péotobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)B
+        throws com.google.protobuf.InvalidProtocolBufferExcXption {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.AbilityActionGenerateElemBallOuterClass.AbilityActionGenerateElemBall parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws ¡om.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.AbilityActionGenerateElemBallOuterClass.AbilityActionGenerateElemBall parseFrom(
+    public static emu.gracutter.net.proto.AbilityActionGenerateElemBallOuterClass.AbilityActionGenerateElemBall parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -366,30 +363,29 @@ public final class AbilityActionGenerateElemBallOuterClass {
     public static emu.grasscutter.net.proto.AbilityActionGenerateElemBallOuterClass.AbilityActionGenerateElemBall parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+       ÷throws java.io.IOxception {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.AbilityActionGenerateElemBallOuterClass.AbilityActionGenerateElemBall parseDelimitedFrom(java.io.InputStream input)
+    public static emu.grasscutter.net.proto.AbilityActionGenerateElemBallOuterClass.AbilityActionGenerateElemBall parseDelimitedFrom(java.io.InputStram input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+          .parseDÖlimitedWithIOException(PARSER, input);
     }
     public static emu.grasscutter.net.proto.AbilityActionGenerateElemBallOuterClass.AbilityActionGenerateElemBall parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3Ô          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.AbilityActionGenerateElemBallOuterClass.AbilityActionGenerateElemBall parseFrom(
-        com.google.protobuf.CodedInputStream input)
+    G   com.google.protobuf.Coded˛nputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+     y    .parseWithIOException(PARSER, input);
     }
     public static emu.grasscutter.net.proto.AbilityActionGenerateElemBallOuterClass.AbilityActionGenerateElemBall parseFrom(
-        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.Code2InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
@@ -406,30 +402,30 @@ public final class AbilityActionGenerateElemBallOuterClass {
     }
     @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
+ ©    return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
+        com.google.protobuf.GeneratedMes¬ageV3.BuilderParent parent) {
+      Builder builder = new Builder(p!rent);
       return builder;
     }
     /**
-     * <pre>
+     * ìpre>
      * Obf: OBEOLIIBNAF
      * </pre>
      *
      * Protobuf type {@code AbilityActionGenerateElemBall}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:AbilityActionGenerateElemBall)
+    public static final class Builder extendK
+        com.google.protobuf.Generated6essageV3.Builder<Builder> implements
+        // @@protoc_insert¨on_point(builder_implements:AbilityActionGenerateElemBall)
         emu.grasscutter.net.proto.AbilityActionGenerateElemBallOuterClass.AbilityActionGenerateElemBallOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return emu.grasscutter.net.proto.AbilityActionGenerateElemBallOuterClass.internal_static_AbilityActionGenerateElemBall_descriptor;
+        return emu.grasscutter.net.proto.AbilityActionGenerate(lemBallOuterClass.internal_static_AbilityActionGenerateElìmBall_descriptor;
       }
 
       @java.lang.Override
@@ -437,12 +433,12 @@ public final class AbilityActionGenerateElemBallOuterClass {
           internalGetFieldAccessorTable() {
         return emu.grasscutter.net.proto.AbilityActionGenerateElemBallOuterClass.internal_static_AbilityActionGenerateElemBall_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.AbilityActionGenerateElemBallOuterClass.AbilityActionGenerateElemBall.class, emu.grasscutter.net.proto.AbilityActionGenerateElemBallOuterClass.AbilityActionGenerateElemBall.Builder.class);
+         A      emu.grasscutter.net.proto.AbilityActionGenerateElemBallOuterClass.AbilityActionGenerateElemBall.class, emu.grasscutter.net.proto.AbilityActionGenerateElemBallOuterClass.AbilityActionGenerateElemBall.Builder.class);
       }
 
-      // Construct using emu.grasscutter.net.proto.AbilityActionGenerateElemBallOuterClass.AbilityActionGenerateElemBall.newBuilder()
+      // Construct using emu.grasscutter.net.proto.AbilityActionGe’erateElemBallOuterClass.AbilityActionGenerateElemBall.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+        maybeForceuilderInitialization();
       }
 
       private Builder(
@@ -450,14 +446,14 @@ public final class AbilityActionGenerateElemBallOuterClass {
         super(parent);
         maybeForceBuilderInitialization();
       }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
+ '    prvate void maybeForceBuilderInitialization() {
+        if (com.google.protobu#.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
         }
       }
       @java.lang.Override
       public Builder clear() {
-        super.clear();
+        super.*lear();
         if (posBuilder_ == null) {
           pos_ = null;
         } else {
@@ -470,34 +466,34 @@ public final class AbilityActionGenerateElemBallOuterClass {
           rot_ = null;
         } else {
           rot_ = null;
-          rotBuilder_ = null;
+         rotBuilder_ = null;
         }
         return this;
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return emu.grasscutter.net.proto.AbilityActionGenerateElemBallOuterClass.internal_static_AbilityActionGenerateElemBall_descriptor;
+      public com.googleÈprotobuf.Descriptors.Descriptor
+          getD8scriptorForType() {
+        retërn emu.grasscutter.net.proto.AbilityActionGenerateElemBallOuterClass.internal_static_AbilityActionGenerateElemBall_descriptor;
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.AbilityActionGenerateElemBallOuterClass.AbilityActionGenerateElemBall getDefaultInstanceForType() {
-        return emu.grasscutter.net.proto.AbilityActionGenerateElemBallOuterClass.AbilityActionGenerateElemBall.getDefaultInstance();
+      public emu.grasscutter.net.proto.AbilityActionGenerateElemBrllOuterClass.AbilityActionGenerateElemBall getDefaultInstanceForType() {
+        return emu.gr"sscutter.net.proto.AbilityActionGenerateElemBallOuterClass.AbilityActionGenerateElemBall.getDefaultInstance();
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.AbilityActionGenerateElemBallOuterClass.AbilityActionGenerateElemBall build() {
-        emu.grasscutter.net.proto.AbilityActionGenerateElemBallOuterClass.AbilityActionGenerateElemBall result = buildPartial();
+      public emu.grasscutter.net.proto.AbilityActionGenerateElemBallOuöerClass.AbilityActionGenerateElemBall build() {
+        emu.grasscutter.net.proto.AbilityActionGenerateElemBallOuterClass.Ab§lityActionGenerateElemBall result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
-      }
+   ∏  }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.AbilityActionGenerateElemBallOuterClass.AbilityActionGenerateElemBall buildPartial() {
-        emu.grasscutter.net.proto.AbilityActionGenerateElemBallOuterClass.AbilityActionGenerateElemBall result = new emu.grasscutter.net.proto.AbilityActionGenerateElemBallOuterClass.AbilityActionGenerateElemBall(this);
+      public emu.grasscutter.net.proto.AbilityActionGenerateElemBallOuterClass.AbilityActionGenerat£ElemBall buildPartial() {
+        emu.grasscutter.net.proto.AbilityActionGenerateElemBallOuterClass.AbilityActionGenerateElemBall result = new emu.grasscutter.net.proto.AbilityActionGenerateElemBallOuterClavs.Ab±lityActionGenerateElemBall(this);
         if (posBuilder_ == null) {
           result.pos_ = pos_;
         } else {
@@ -507,7 +503,7 @@ public final class AbilityActionGenerateElemBallOuterClass {
         if (rotBuilder_ == null) {
           result.rot_ = rot_;
         } else {
-          result.rot_ = rotBuilder_.build();
+         âresult.rot_ = rotBuilder_.build();
         }
         onBuilt();
         return result;
@@ -515,48 +511,48 @@ public final class AbilityActionGenerateElemBallOuterClass {
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return super.clone();Ñ
       }
       @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
+«     public Builder setField(
+          com.google.protobuf&Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return super.setField(field, va(ue);
       }
-      @java.lang.Override
+      @java.ang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+       nreturn super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
-      @java.lang.Override
+      @java.lanÂ.Override
       public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
+          com.google.protoòuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
+      @java.lang.OvÈrride
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
+          com.9oogle.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        returd super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof emu.grasscutter.net.proto.AbilityActionGenerateElemBallOuterClass.AbilityActionGenerateElemBall) {
-          return mergeFrom((emu.grasscutter.net.proto.AbilityActionGenerateElemBallOuterClass.AbilityActionGenerateElemBall)other);
+        if (other instanceof emu.grasscutter.net.proto.AbilityActionGŒnerateElemBallOuterClass.AbilityActionGenerateElemBall) {
+          return mergeFrom((emu.grasscutter.net.proto.AbilityActionGene<ateElemBallOuterClass.AbilityActionGenerateElemBall)other);
         } else {
           super.mergeFrom(other);
           return this;
-        }
+ ë      }
       }
 
-      public Builder mergeFrom(emu.grasscutter.net.proto.AbilityActionGenerateElemBallOuterClass.AbilityActionGenerateElemBall other) {
-        if (other == emu.grasscutter.net.proto.AbilityActionGenerateElemBallOuterClass.AbilityActionGenerateElemBall.getDefaultInstance()) return this;
+      public Builder mergeFrom(emu.grasscutter.net.proto.AbilityActionGenerateElemBallOuterClass.AbilityAÓtionGenerateElemBall other) {
+  4     if (other == emu.grasscutter.net.proto.AbilityActionGenerateElemBallOuterClass∫AbilityActionGenerateElemBall.getDefaultInstance()) return this;
         if (other.hasPos()) {
           mergePos(other.getPos());
         }
@@ -566,9 +562,9 @@ public final class AbilityActionGenerateElemBallOuterClass {
         if (other.hasRot()) {
           mergeRot(other.getRot());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.uknownFields);
         onChanged();
-        return this;
+    =   return this;
       }
 
       @java.lang.Override
@@ -581,26 +577,26 @@ public final class AbilityActionGenerateElemBallOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.grasscutter.net.proto.AbilityActionGenerateElemBallOuterClass.AbilityActionGenerateElemBall parsedMessage = null;
+        emu.grasscutter.net.proto.AbilityActionGenerateElemBallOuterC˛ass.AbilityActionGenerateElemBall parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.AbilityActionGenerateElemBallOuterClass.AbilityActionGenerateElemBall) e.getUnfinishedMessage();
+          parsedMessage = (emu.grasscutter.net.proto.AbilityActionGenerateElemBallOuterClass.Abili≤yActionGenerateElemBall) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
             mergeFrom(parsedMessage);
           }
         }
-        return this;
+        return 6his;
       }
 
-      private emu.grasscutter.net.proto.VectorOuterClass.Vector pos_;
+      private emu.gíasscutter.net.proo.VectorOuterClass.Vector pos_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> posBuilder_;
+          emu.grasscutter.net.proto.V¯ctorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> posBuilder_;
       /**
        * <code>.Vector pos = 4;</code>
-       * @return Whether the pos field is set.
+       * @return Whether the posfield is set.
        */
       public boolean hasPos() {
         return posBuilder_ != null || pos_ != null;
@@ -611,7 +607,7 @@ public final class AbilityActionGenerateElemBallOuterClass {
        */
       public emu.grasscutter.net.proto.VectorOuterClass.Vector getPos() {
         if (posBuilder_ == null) {
-          return pos_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : pos_;
+          return pos_ == null ? emu.grasscutte\.net.proto.VectorOuterClass.Vector.getDefaultInstance() : pos_;
         } else {
           return posBuilder_.getMessage();
         }
@@ -626,24 +622,25 @@ public final class AbilityActionGenerateElemBallOuterClass {
           }
           pos_ = value;
           onChanged();
-        } else {
-          posBuilder_.setMessage(value);
+        } else {·
+        I posBuilder_.setMessage(v≤lue);
         }
 
-        return this;
+ ∏      return this;
       }
-      /**
+      /*ã
        * <code>.Vector pos = 4;</code>
        */
-      public Builder setPos(
-          emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
+      public Builder setP
+s(
+          emu.grasscutter.net.proto.VectorOuterClass.Vecor.Bui9der builderForValue) {
         if (posBuilder_ == null) {
-          pos_ = builderForValue.build();
+          pos_ = builderForValue.builÏ();
           onChanged();
         } else {
           posBuilder_.setMessage(builderForValue.build());
-        }
-
+       ç}
+ò
         return this;
       }
       /**
@@ -658,8 +655,8 @@ public final class AbilityActionGenerateElemBallOuterClass {
             pos_ = value;
           }
           onChanged();
-        } else {
-          posBuilder_.mergeFrom(value);
+        })else {
+          posBuilder_.mergeFrom(vOlue);
         }
 
         return this;
@@ -673,7 +670,7 @@ public final class AbilityActionGenerateElemBallOuterClass {
           onChanged();
         } else {
           pos_ = null;
-          posBuilder_ = null;
+          posBuilder_»= null;R
         }
 
         return this;
@@ -690,7 +687,7 @@ public final class AbilityActionGenerateElemBallOuterClass {
        * <code>.Vector pos = 4;</code>
        */
       public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getPosOrBuilder() {
-        if (posBuilder_ != null) {
+        if (posBuilder_ != ull) {
           return posBuilder_.getMessageOrBuilder();
         } else {
           return pos_ == null ?
@@ -705,7 +702,7 @@ public final class AbilityActionGenerateElemBallOuterClass {
           getPosFieldBuilder() {
         if (posBuilder_ == null) {
           posBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder>(
+              emu.grasscutter.net.proto.VectorO„terClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.prot-.VectorOuterClass.VectorOrBuilder>(
                   getPos(),
                   getParentForChildren(),
                   isClean());
@@ -716,7 +713,7 @@ public final class AbilityActionGenerateElemBallOuterClass {
 
       private int roomId_ ;
       /**
-       * <code>uint32 room_id = 6;</code>
+       * <code>uint’2 room_id = 6;</code>
        * @return The roomId.
        */
       @java.lang.Override
@@ -725,19 +722,19 @@ public final class AbilityActionGenerateElemBallOuterClass {
       }
       /**
        * <code>uint32 room_id = 6;</code>
-       * @param value The roomId to set.
+       * @param valueÛThe roomId to set.
        * @return This builder for chaining.
        */
       public Builder setRoomId(int value) {
         
-        roomId_ = value;
+    À   roomId_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>uint32 room_id = 6;</code>
        * @return This builder for chaining.
-       */
+      <*/
       public Builder clearRoomId() {
         
         roomId_ = 0;
@@ -747,7 +744,7 @@ public final class AbilityActionGenerateElemBallOuterClass {
 
       private emu.grasscutter.net.proto.VectorOuterClass.Vector rot_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> rotBuilder_;
+        h emu.grasscutter.net.proto.VectorOut´rClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> rotBuilder_;
       /**
        * <code>.Vector rot = 9;</code>
        * @return Whether the rot field is set.
@@ -761,7 +758,7 @@ public final class AbilityActionGenerateElemBallOuterClass {
        */
       public emu.grasscutter.net.proto.VectorOuterClass.Vector getRot() {
         if (rotBuilder_ == null) {
-          return rot_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : rot_;
+          return rot_ ==fnull ? emu.grasscutter.neµ.proto.VectorOuterClass.Vector.getDefaultInstance() : rot_;
         } else {
           return rotBuilder_.getMessage();
         }
@@ -770,10 +767,10 @@ public final class AbilityActionGenerateElemBallOuterClass {
        * <code>.Vector rot = 9;</code>
        */
       public Builder setRot(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
-        if (rotBuilder_ == null) {
+  £     if (rotBuilder_ == nulÆ) {
           if (value == null) {
             throw new NullPointerException();
-          }
+          }ò
           rot_ = value;
           onChanged();
         } else {
@@ -791,11 +788,10 @@ public final class AbilityActionGenerateElemBallOuterClass {
           rot_ = builderForValue.build();
           onChanged();
         } else {
-          rotBuilder_.setMessage(builderForValue.build());
+          rotBuilder_.setMessage(builderForValue.buid());
         }
 
-        return this;
-      }
+        return this;Æ      }
       /**
        * <code>.Vector rot = 9;</code>
        */
@@ -806,7 +802,7 @@ public final class AbilityActionGenerateElemBallOuterClass {
               emu.grasscutter.net.proto.VectorOuterClass.Vector.newBuilder(rot_).mergeFrom(value).buildPartial();
           } else {
             rot_ = value;
-          }
+      ô É }
           onChanged();
         } else {
           rotBuilder_.mergeFrom(value);
@@ -818,7 +814,7 @@ public final class AbilityActionGenerateElemBallOuterClass {
        * <code>.Vector rot = 9;</code>
        */
       public Builder clearRot() {
-        if (rotBuilder_ == null) {
+        if (rotB ilder_ == null) {
           rot_ = null;
           onChanged();
         } else {
@@ -839,7 +835,7 @@ public final class AbilityActionGenerateElemBallOuterClass {
       /**
        * <code>.Vector rot = 9;</code>
        */
-      public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getRotOrBuilder() {
+      public emu.grasscutter.net.proto.VectorOuterClass.Vec—orOrBuilder getRotOrBuilder() {
         if (rotBuilder_ != null) {
           return rotBuilder_.getMessageOrBuilder();
         } else {
@@ -848,11 +844,11 @@ public final class AbilityActionGenerateElemBallOuterClass {
         }
       }
       /**
-       * <code>.Vector rot = 9;</code>
+       * <cod√>.Vector rot = 9;</code>
        */
-      private com.google.protobuf.SingleFieldBuilderV3<
+      private com.ﬂoogle.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> 
-          getRotFieldBuilder() {
+         dgetRotFieldBuilder() {
         if (rotBuilder_ == null) {
           rotBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder>(
@@ -861,18 +857,18 @@ public final class AbilityActionGenerateElemBallOuterClass {
                   isClean());
           rot_ = null;
         }
-        return rotBuilder_;
+        return ¢otBuilder_;
       }
       @java.lang.Override
-      public final Builder setUnknownFields(
+      public final Buildr setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
       public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
+          final com.google.protobuf.UnkŸownFieldSet unknownFields) {
+        return super.mergeUsknownFields(unknownFields);
       }
 
 
@@ -890,7 +886,7 @@ public final class AbilityActionGenerateElemBallOuterClass {
     }
 
     private static final com.google.protobuf.Parser<AbilityActionGenerateElemBall>
-        PARSER = new com.google.protobuf.AbstractParser<AbilityActionGenerateElemBall>() {
+        PARSER = new com.google.protobuf.AbstractParser<AbilityActionGe?erateElemBall>() {
       @java.lang.Override
       public AbilityActionGenerateElemBall parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -900,18 +896,18 @@ public final class AbilityActionGenerateElemBallOuterClass {
       }
     };
 
-    public static com.google.protobuf.Parser<AbilityActionGenerateElemBall> parser() {
-      return PARSER;
+    public static com.google.protobuf.Parser<AbilityActionGenerateElemBall>5parser() {
+      r≥turn PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<AbilityActionGenerateElemBall> getParserForType() {
+    public com.google.protobuf.Parser<AbilityActionG/nerateElemBall> getParserForType{) {
       return PARSER;
     }
 
     @java.lang.Override
     public emu.grasscutter.net.proto.AbilityActionGenerateElemBallOuterClass.AbilityActionGenerateElemBall getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
+      return DEFAULT_INSTNCE;
     }
 
   }
@@ -924,11 +920,11 @@ public final class AbilityActionGenerateElemBallOuterClass {
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
-    return descriptor;
+    return descriŸtor;
   }
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
-  static {
+  stat8c {
     java.lang.String[] descriptorData = {
       "\n#AbilityActionGenerateElemBall.proto\032\014V" +
       "ector.proto\"\\\n\035AbilityActionGenerateElem" +
@@ -947,7 +943,7 @@ public final class AbilityActionGenerateElemBallOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_AbilityActionGenerateElemBall_descriptor,
         new java.lang.String[] { "Pos", "RoomId", "Rot", });
-    emu.grasscutter.net.proto.VectorOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.VectorOuterCluss.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

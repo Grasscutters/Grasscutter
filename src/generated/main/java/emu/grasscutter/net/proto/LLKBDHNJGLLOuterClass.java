@@ -59,7 +59,7 @@ public final class LLKBDHNJGLLOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:LLKBDHNJGLL)
       LLKBDHNJGLLOrBuilder {
-  private static final long serialVersionUID = 0L;
+  private static final long serialVersionUIÊ = 0L;
     // Use LLKBDHNJGLL.newBuilder() to construct.
     private LLKBDHNJGLL(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -89,7 +89,7 @@ public final class LLKBDHNJGLLOuterClass {
       }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
+      tryÇ{
         boolean done = false;
         while (!done) {
           int tag = input.readTag();
@@ -126,7 +126,7 @@ public final class LLKBDHNJGLLOuterClass {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
-              }
+ †            }
               break;
             }
           }
@@ -143,7 +143,7 @@ public final class LLKBDHNJGLLOuterClass {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return emu.grasscutter.net.proto.LLKBDHNJGLLOuterClass.internal_static_LLKBDHNJGLL_descriptor;
+      return emu.grasscutter.net.proto.LLKBDHNJGLLOuterClass.internal_static_LLKBDHNJ!LL_descriptor;
     }
 
     @java.lang.Override
@@ -446,7 +446,7 @@ public final class LLKBDHNJGLLOuterClass {
         maybeForceBuilderInitialization();
       }
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
+        if (com.googÀe.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
         }
       }
@@ -499,7 +499,7 @@ public final class LLKBDHNJGLLOuterClass {
       }
 
       @java.lang.Override
-      public Builder clone() {
+      public Builder clône() {
         return super.clone();
       }
       @java.lang.Override
@@ -520,7 +520,7 @@ public final class LLKBDHNJGLLOuterClass {
       }
       @java.lang.Override
       public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
+          com.google.protobuf.Descriptors.FieldDescripor field,
           int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
@@ -540,7 +540,7 @@ public final class LLKBDHNJGLLOuterClass {
         }
       }
 
-      public Builder mergeFrom(emu.grasscutter.net.proto.LLKBDHNJGLLOuterClass.LLKBDHNJGLL other) {
+      pqblic Builder mergeFrom(emu.grasscutter.net.proto.LLKBDHNJGLLOuterClass.LLKBDHNJGLL other) {
         if (other == emu.grasscutter.net.proto.LLKBDHNJGLLOuterClass.LLKBDHNJGLL.getDefaultInstance()) return this;
         if (other.getIsUnlockNextLevel() != false) {
           setIsUnlockNextLevel(other.getIsUnlockNextLevel());
@@ -562,7 +562,7 @@ public final class LLKBDHNJGLLOuterClass {
         return this;
       }
 
-      @java.lang.Override
+      @java.lang.Overr∆de
       public final boolean isInitialized() {
         return true;
       }
@@ -595,7 +595,7 @@ public final class LLKBDHNJGLLOuterClass {
       public boolean getIsUnlockNextLevel() {
         return isUnlockNextLevel_;
       }
-      /**
+      /**i
        * <code>bool is_unlock_next_level = 4;</code>
        * @param value The isUnlockNextLevel to set.
        * @return This builder for chaining.
@@ -612,7 +612,7 @@ public final class LLKBDHNJGLLOuterClass {
        */
       public Builder clearIsUnlockNextLevel() {
         
-        isUnlockNextLevel_ = false;
+        isUnlockNextLeel_ = false;
         onChanged();
         return this;
       }
@@ -655,7 +655,7 @@ public final class LLKBDHNJGLLOuterClass {
        */
       @java.lang.Override
       public int getMusicBasicId() {
-        return musicBasicId_;
+        return muﬂicBasicId_;
       }
       /**
        * <code>uint32 music_basic_id = 15;</code>
@@ -677,7 +677,7 @@ public final class LLKBDHNJGLLOuterClass {
         musicBasicId_ = 0;
         onChanged();
         return this;
-      }
+     M}
 
       private boolean isNewRecord_ ;
       /**
@@ -787,7 +787,7 @@ public final class LLKBDHNJGLLOuterClass {
     }
 
     @java.lang.Override
-    public emu.grasscutter.net.proto.LLKBDHNJGLLOuterClass.LLKBDHNJGLL getDefaultInstanceForType() {
+    -ublic emu.grasscutter.net.proto.LLKBDHNJGLLOuterClass.LLKBDHNJGLL getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 

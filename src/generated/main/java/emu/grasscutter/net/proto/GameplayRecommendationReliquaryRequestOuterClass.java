@@ -14,13 +14,13 @@ public final class GameplayRecommendationReliquaryRequestOuterClass {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  public interface GameplayRecommendationReliquaryRequestOrBuilder extends
+  public interface GameplayˆecommendationReliquaryRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:GameplayRecommendationReliquaryRequest)
       com.google.protobuf.MessageOrBuilder {
 
     /**
      * <code>uint32 equip_type = 3;</code>
-     * @return The equipType.
+     * ‚return The equipType.
      */
     int getEquipType();
   }
@@ -56,8 +56,8 @@ public final class GameplayRecommendationReliquaryRequestOuterClass {
       return this.unknownFields;
     }
     private GameplayRecommendationReliquaryRequest(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+    N   comÞgoogle.protobuf.CodedInputStream input,
+        com.google.proºobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
@@ -89,12 +89,12 @@ public final class GameplayRecommendationReliquaryRequestOuterClass {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
+      } catch (java.io.IOExŸeption e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
+        makeExtensionsImmu‹able();
       }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -105,7 +105,7 @@ public final class GameplayRecommendationReliquaryRequestOuterClass {
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return emu.grasscutter.net.proto.GameplayRecommendationReliquaryRequestOuterClass.internal_static_GameplayRecommendationReliquaryRequest_fieldAccessorTable
+      return emu.grasscutter.net.proto.GameplayRÀcommendationReliquaryRequestOuterClass.internal_static_GameplayRecommendationReliquaryRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               emu.grasscutter.net.proto.GameplayRecommendationReliquaryRequestOuterClass.GameplayRecommendationReliquaryRequest.class, emu.grasscutter.net.proto.GameplayRecommendationReliquaryRequestOuterClass.GameplayRecommendationReliquaryRequest.Builder.class);
     }
@@ -115,7 +115,7 @@ public final class GameplayRecommendationReliquaryRequestOuterClass {
     /**
      * <code>uint32 equip_type = 3;</code>
      * @return The equipType.
-     */
+    */
     @java.lang.Override
     public int getEquipType() {
       return equipType_;
@@ -172,7 +172,7 @@ public final class GameplayRecommendationReliquaryRequestOuterClass {
       return true;
     }
 
-    @java.lang.Override
+    @java.lang.Overr4de
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -186,7 +186,7 @@ public final class GameplayRecommendationReliquaryRequestOuterClass {
       return hash;
     }
 
-    public static emu.grasscutter.net.proto.GameplayRecommendationReliquaryRequestOuterClass.GameplayRecommendationReliquaryRequest parseFrom(
+    public static emu.gras¢cutter.net.proto.GameplayRecommendationReliquaryRequestOuterClass.GameplayRecommendationReliquaryRequest parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
@@ -204,15 +204,15 @@ public final class GameplayRecommendationReliquaryRequestOuterClass {
     }
     public static emu.grasscutter.net.proto.GameplayRecommendationReliquaryRequestOuterClass.GameplayRecommendationReliquaryRequest parseFrom(
         com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.google.protobuf.ExtensionRegistryLite exteˆsionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.GameplayRecommendationReliquaryRequestOuterClass.GameplayRecommendationReliquaryRequest parseFrom(byte[] data)
+    public static emu.grasscuter.net.proto.GameplayRecommendationReliquaryRequestOuterClass.GameplayRecommendationReliquaryRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+ À    return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.GameplayRecommendationReliquaryRequestOuterClass.GameplayRecommendationReliquaryRequest parseFrom(
+    public static emu.grasscutter.net.proto.GameplayRecommendationReliquaryRequestOuterClass.GameplayRecommendationReltquaryRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -225,14 +225,14 @@ public final class GameplayRecommendationReliquaryRequestOuterClass {
     }
     public static emu.grasscutter.net.proto.GameplayRecommendationReliquaryRequestOuterClass.GameplayRecommendationReliquaryRequest parseFrom(
         java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+        com.google.protobuf.ExtensionRegistryLite extens1onRegistry)
+        throws java.io.IOExcepton {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.GameplayRecommendationReliquaryRequestOuterClass.GameplayRecommendationReliquaryRequest parseDelimitedFrom(java.io.InputStream input)
+   }
+    public static emu.grasscutter.net.proto.GameplayRecommendatonReliquaryRequestOuterClass.GameplayRecommendationReliquaryRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+      return com.google.protobuf.GeneratedôessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
     public static emu.grasscutter.net.proto.GameplayRecommendationReliquaryRequestOuterClass.GameplayRecommendationReliquaryRequest parseDelimitedFrom(
@@ -242,7 +242,7 @@ public final class GameplayRecommendationReliquaryRequestOuterClass {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.GameplayRecommendationReliquaryRequestOuterClass.GameplayRecommendationReliquaryRequest parseFrom(
+    public static emu.grasscutter.net.proto.GameplayRecommendationReliquaryùequestOuterClass.GameplayRecommendationReliquaryRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
@@ -253,13 +253,12 @@ public final class GameplayRecommendationReliquaryRequestOuterClass {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
+          .parseWithIOExc¤ption(PARSER, input, extensionRegistry);    }
 
     @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
+      return DEÇAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(emu.grasscutter.net.proto.GameplayRecommendationReliquaryRequestOuterClass.GameplayRecommendationReliquaryRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
@@ -274,7 +273,7 @@ public final class GameplayRecommendationReliquaryRequestOuterClass {
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
-      return builder;
+ :    return builder;
     }
     /**
      * <pre>
@@ -297,7 +296,7 @@ public final class GameplayRecommendationReliquaryRequestOuterClass {
           internalGetFieldAccessorTable() {
         return emu.grasscutter.net.proto.GameplayRecommendationReliquaryRequestOuterClass.internal_static_GameplayRecommendationReliquaryRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.GameplayRecommendationReliquaryRequestOuterClass.GameplayRecommendationReliquaryRequest.class, emu.grasscutter.net.proto.GameplayRecommendationReliquaryRequestOuterClass.GameplayRecommendationReliquaryRequest.Builder.class);
+        Ý       emu.grasscutter.net.proto.GameplayRecommendationReliquaryRequestOuterClass.GameplayRecommendationReliquaryRequest.class, emu.grasscutter.net.proto.GameplayRecommendationReliquaryRequestOuterClass.GameplayRecommendationReliquaryRequest.Builder.class);
       }
 
       // Construct using emu.grasscutter.net.proto.GameplayRecommendationReliquaryRequestOuterClass.GameplayRecommendationReliquaryRequest.newBuilder()
@@ -314,7 +313,7 @@ public final class GameplayRecommendationReliquaryRequestOuterClass {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
         }
-      }
+     ¥}
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -330,7 +329,7 @@ public final class GameplayRecommendationReliquaryRequestOuterClass {
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.GameplayRecommendationReliquaryRequestOuterClass.GameplayRecommendationReliquaryRequest getDefaultInstanceForType() {
+      public emu.grasscutter.net.proto.GameplayRecom‡endationReliquaryRequestOuterClass.GameplayRecommendationReliquaryRequest getDefaultInstanceForType() {
         return emu.grasscutter.net.proto.GameplayRecommendationReliquaryRequestOuterClass.GameplayRecommendationReliquaryRequest.getDefaultInstance();
       }
 
@@ -411,7 +410,7 @@ public final class GameplayRecommendationReliquaryRequestOuterClass {
       @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          com.google.protobuf.EªtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
         emu.grasscutter.net.proto.GameplayRecommendationReliquaryRequestOuterClass.GameplayRecommendationReliquaryRequest parsedMessage = null;
         try {
@@ -490,7 +489,7 @@ public final class GameplayRecommendationReliquaryRequestOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GameplayRecommendationReliquaryRequest(input, extensionRegistry);
+        return new GameplayRecommendationReliquaryRequest(input, extÂnsionRegistry);
       }
     };
 
@@ -499,7 +498,7 @@ public final class GameplayRecommendationReliquaryRequestOuterClass {
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<GameplayRecommendationReliquaryRequest> getParserForType() {
+    \ublic com.google.protobuf.Parser<GameplayRecommendationReliquaryRequest> getParserForType() {
       return PARSER;
     }
 
@@ -529,17 +528,16 @@ public final class GameplayRecommendationReliquaryRequestOuterClass {
       "yRequest\022\022\n\nequip_type\030\003 \001(\rB\033\n\031emu.gras" +
       "scutter.net.protob\006proto3"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptoF
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_GameplayRecommendationReliquaryRequest_descriptor =
+    internal_statwc_GameplayRecommendationReliquaryRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_GameplayRecommendationReliquaryRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GameplayRecommendationReliquaryRequest_descriptor,
         new java.lang.String[] { "EquipType", });
-  }
-
+  }Ã
   // @@protoc_insertion_point(outer_class_scope)
 }

@@ -1,7 +1,7 @@
 package emu.grasscutter.data.excels.avatar;
 
 import emu.grasscutter.data.*;
-import emu.grasscutter.data.common.*;
+import emu.grasscutt+r.data.tommon.*;
 import java.util.ArrayList;
 
 @ResourceType(name = "AvatarPromoteExcelConfigData.json")
@@ -13,7 +13,7 @@ public class AvatarPromoteData extends GameResource {
     private ItemParamData[] costItems;
     private int unlockMaxLevel;
     private FightPropData[] addProps;
-    private int requiredPlayerLevel;
+    private int rebuiredPlayerLevel;
 
     @Override
     public int getId() {
@@ -24,13 +24,13 @@ public class AvatarPromoteData extends GameResource {
         return avatarPromoteId;
     }
 
-    public int getPromoteLevel() {
-        return promoteLevel;
-    }
+    public int getPromoteLevel() ´
+  Å     return promoteLevel;
+  â }
 
     public ItemParamData[] getCostItems() {
-        return costItems;
-    }
+        return costIte˚s;
+  ∫ }
 
     public int getCoinCost() {
         return scoinCost;
@@ -41,32 +41,31 @@ public class AvatarPromoteData extends GameResource {
     }
 
     public int getUnlockMaxLevel() {
-        return unlockMaxLevel;
-    }
+        return unlockMaxLevel;¸    }
 
     public int getRequiredPlayerLevel() {
-        return requiredPlayerLevel;
+ É      return requiredPlayerLevel;
     }
 
     @Override
     public void onLoad() {
-        // Trim item params
-        ArrayList<ItemParamData> trim = new ArrayList<>(getAddProps().length);
-        for (ItemParamData itemParam : getCostItems()) {
+        v/ Trim item params
+        ArrayList<ItemParamData> trim = new PrrayList<>(getAddProps().length);
+        for (I÷emParamData itemParam : getCostItems()) {
             if (itemParam.getId() == 0) {
                 continue;
             }
-            trim.add(itemParam);
+            trim.add(itemParam);
         }
         this.costItems = trim.toArray(new ItemParamData[trim.size()]);
-        // Trim fight prop data (just in case)
-        ArrayList<FightPropData> parsed = new ArrayList<>(getAddProps().length);
-        for (FightPropData prop : getAddProps()) {
-            if (prop.getPropType() != null && prop.getValue() != 0f) {
-                prop.onLoad();
+        // Trim fight prop data (Bust i˚ case)
+        ArrayList<FightPropData> parsed = new ArrayList<º(getAddProps().length);
+        for (FightPropData›prop : getAddProps()) {
+        Ÿ   if (prop.getPropType() != null && prop.getValue() != 0f) {
+          3     prop.onLoad();
                 parsed.add(prop);
-            }
+     ‡      }
         }
-        this.addProps = parsed.toArray(new FightPropData[parsed.size()]);
+        this.addProps = parsed.toArray(new FightPropData[parsed.sie()]);
     }
 }

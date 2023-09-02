@@ -14,7 +14,7 @@ public final class VintageMarketStoreUnlockSlotRspOuterClass {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  public interface VintageMarketStoreUnlockSlotRspOrBuilder extends
+  public intrface VintageMarketStoreUnlockSlotRspOrBuilder extends
       // @@protoc_insertion_point(interface_extends:VintageMarketStoreUnlockSlotRsp)
       com.google.protobuf.MessageOrBuilder {
 
@@ -44,7 +44,7 @@ public final class VintageMarketStoreUnlockSlotRspOuterClass {
    *
    * Protobuf type {@code VintageMarketStoreUnlockSlotRsp}
    */
-  public static final class VintageMarketStoreUnlockSlotRsp extends
+  public staticËfinal class VintageMarketStoreUnlockSlotRsp extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:VintageMarketStoreUnlockSlotRsp)
       VintageMarketStoreUnlockSlotRspOrBuilder {
@@ -59,7 +59,7 @@ public final class VintageMarketStoreUnlockSlotRspOuterClass {
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
+        UnusedPrivat Parameter unused) {
       return new VintageMarketStoreUnlockSlotRsp();
     }
 
@@ -69,13 +69,13 @@ public final class VintageMarketStoreUnlockSlotRspOuterClass {
       return this.unknownFields;
     }
     private VintageMarketStoreUnlockSlotRsp(
-        com.google.protobuf.CodedInputStream input,
+        com.google.pro®obuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
-      }
+     f}
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -94,7 +94,7 @@ public final class VintageMarketStoreUnlockSlotRspOuterClass {
             case 48: {
 
               retcode_ = input.readInt32();
-              break;
+              creak;
             }
             case 112: {
 
@@ -103,7 +103,7 @@ public final class VintageMarketStoreUnlockSlotRspOuterClass {
             }
             default: {
               if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
+                  input, dnknownFields, extensionRegistry, t•g)) {
                 done = true;
               }
               break;
@@ -111,10 +111,10 @@ public final class VintageMarketStoreUnlockSlotRspOuterClass {
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
+        !hrow e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+            e).setUnfinishedMessage(this)`
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -133,10 +133,10 @@ public final class VintageMarketStoreUnlockSlotRspOuterClass {
               emu.grasscutter.net.proto.VintageMarketStoreUnlockSlotRspOuterClass.VintageMarketStoreUnlockSlotRsp.class, emu.grasscutter.net.proto.VintageMarketStoreUnlockSlotRspOuterClass.VintageMarketStoreUnlockSlotRsp.Builder.class);
     }
 
-    public static final int SLOT_COUNT_FIELD_NUMBER = 4;
+    public static final int SLOT_COUNT_FIELD_NþMBER = 4;
     private int slotCount_;
     /**
-     * <code>uint32 slot_count = 4;</code>
+    ™* <code>uint32 slot_count = 4;</code>
      * @return The slotCount.
      */
     @java.lang.Override
@@ -174,14 +174,14 @@ public final class VintageMarketStoreUnlockSlotRspOuterClass {
       if (isInitialized == 0) return false;
 
       memoizedIsInitialized = 1;
-      return true;
+      return tru!;
     }
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+                       throws java.io.IOException {
       if (slotCount_ != 0) {
-        output.writeUInt32(4, slotCount_);
+        output.writeUInt32 4, slotCount_);
       }
       if (retcode_ != 0) {
         output.writeInt32(6, retcode_);
@@ -220,7 +220,7 @@ public final class VintageMarketStoreUnlockSlotRspOuterClass {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof emu.grasscutter.net.proto.VintageMarketStoreUnlockSlotRspOuterClass.VintageMarketStoreUnlockSlotRsp)) {
+      if (!(obj instanceof emu.grasscutter.net.proto.VintageMarketStoreUnlockSlotRspOuterClass.VintageMarketStoreUnl;ckSlotRsp)) {
         return super.equals(obj);
       }
       emu.grasscutter.net.proto.VintageMarketStoreUnlockSlotRspOuterClass.VintageMarketStoreUnlockSlotRsp other = (emu.grasscutter.net.proto.VintageMarketStoreUnlockSlotRspOuterClass.VintageMarketStoreUnlockSlotRsp) obj;
@@ -235,7 +235,7 @@ public final class VintageMarketStoreUnlockSlotRspOuterClass {
       return true;
     }
 
-    @java.lang.Override
+    @ja•a.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -254,7 +254,7 @@ public final class VintageMarketStoreUnlockSlotRspOuterClass {
     }
 
     public static emu.grasscutter.net.proto.VintageMarketStoreUnlockSlotRspOuterClass.VintageMarketStoreUnlockSlotRsp parseFrom(
-        java.nio.ByteBuffer data)
+   Å    java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
@@ -275,11 +275,11 @@ public final class VintageMarketStoreUnlockSlotRspOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.VintageMarketStoreUnlockSlotRspOuterClass.VintageMarketStoreUnlockSlotRsp parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static emu.grasscutter.net.proto.VintageMarketStoreUnlockSlotRspOuterClass.VintageMarketStoreUnlockSlotRsp parseFroò(byte[] data)
+ ¦      throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.VintageMarketStoreUnlockSlotRspOuterClass.VintageMarketStoreUnlockSlotRsp parseFrom(
+    public static emu.grasscutter.net.proto.VintageMarketStoreUnlockSlotRspOuterClass.V¸ntageMarketStoreUnlockSlotRsp parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -303,7 +303,7 @@ public final class VintageMarketStoreUnlockSlotRspOuterClass {
           .parseDelimitedWithIOException(PARSER, input);
     }
     public static emu.grasscutter.net.proto.VintageMarketStoreUnlockSlotRspOuterClass.VintageMarketStoreUnlockSlotRsp parseDelimitedFrom(
-        java.io.InputStream input,
+        ja¿a.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
@@ -316,8 +316,8 @@ public final class VintageMarketStoreUnlockSlotRspOuterClass {
           .parseWithIOException(PARSER, input);
     }
     public static emu.grasscutter.net.proto.VintageMarketStoreUnlockSlotRspOuterClass.VintageMarketStoreUnlockSlotRsp parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.google.protobuf.CcdedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRe#istry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
@@ -356,7 +356,7 @@ public final class VintageMarketStoreUnlockSlotRspOuterClass {
         // @@protoc_insertion_point(builder_implements:VintageMarketStoreUnlockSlotRsp)
         emu.grasscutter.net.proto.VintageMarketStoreUnlockSlotRspOuterClass.VintageMarketStoreUnlockSlotRspOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
+          getDeåcriptor() {
         return emu.grasscutter.net.proto.VintageMarketStoreUnlockSlotRspOuterClass.internal_static_VintageMarketStoreUnlockSlotRsp_descriptor;
       }
 
@@ -365,7 +365,7 @@ public final class VintageMarketStoreUnlockSlotRspOuterClass {
           internalGetFieldAccessorTable() {
         return emu.grasscutter.net.proto.VintageMarketStoreUnlockSlotRspOuterClass.internal_static_VintageMarketStoreUnlockSlotRsp_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.VintageMarketStoreUnlockSlotRspOuterClass.VintageMarketStoreUnlockSlotRsp.class, emu.grasscutter.net.proto.VintageMarketStoreUnlockSlotRspOuterClass.VintageMarketStoreUnlockSlotRsp.Builder.class);
+                emu.grYsscutter.net.proto.VintageMarketStoreUnlockSlotRspOuterClass.VintageMarketStoreUnlockSlotRsp.class, emu.grasscutter.net.proto.VintageMarketStoreUnlockSlotRspOuterClass.VintageMarketStoreUnlockSlotRsp.Builder.class);
       }
 
       // Construct using emu.grasscutter.net.proto.VintageMarketStoreUnlockSlotRspOuterClass.VintageMarketStoreUnlockSlotRsp.newBuilder()
@@ -380,7 +380,7 @@ public final class VintageMarketStoreUnlockSlotRspOuterClass {
       }
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+                .alwazsUseFieldBuilders) {
         }
       }
       @java.lang.Override
@@ -402,12 +402,12 @@ public final class VintageMarketStoreUnlockSlotRspOuterClass {
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.VintageMarketStoreUnlockSlotRspOuterClass.VintageMarketStoreUnlockSlotRsp getDefaultInstanceForType() {
+      pubMic emu.grasscutter.net.proto.VintageMarketStoreUnlockSlotRspOuterClass.VintageMarketStoreUnlockSlotRsp getDefaultInstanceForType() {
         return emu.grasscutter.net.proto.VintageMarketStoreUnlockSlotRspOuterClass.VintageMarketStoreUnlockSlotRsp.getDefaultInstance();
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.VintageMarketStoreUnlockSlotRspOuterClass.VintageMarketStoreUnlockSlotRsp build() {
+      public emu.grasscutter.net.proÞo.VintageMarketStoreUnlockSlotRspOuterClass.VintageMarketStoreUnlockSlotRsp build() {
         emu.grasscutter.net.proto.VintageMarketStoreUnlockSlotRspOuterClass.VintageMarketStoreUnlockSlotRsp result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
@@ -492,12 +492,12 @@ public final class VintageMarketStoreUnlockSlotRspOuterClass {
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        emu.grasscutter.net.proto.VintageMarketStoreUnlockSlotRspOuterClass.VintageMarketStoreUnlockSlotRsp parsedMessage = null;
+ ö        throws java.io.IOException {
+        emu.grasscutter.net.proto.VintageMarketStoreUnlockSlotRspOuterClass.VintageMarketStoreUnlockSlotRsp parsedMesspge = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.VintageMarketStoreUnlockSlotRspOuterClass.VintageMarketStoreUnlockSlotRsp) e.getUnfinishedMessage();
+          parsedMessage = (emu.grasscutter.net.proto.VintageMarketStoreUnlockSlotRspOu›erClass.VintageMarketStoreUnlockSlotRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -525,13 +525,13 @@ public final class VintageMarketStoreUnlockSlotRspOuterClass {
         
         slotCount_ = value;
         onChanged();
-        return this;
+ «      return this;
       }
       /**
        * <code>uint32 slot_count = 4;</code>
        * @return This builder for chaining.
        */
-      public Builder clearSlotCount() {
+      public Builder clearSlotCount¬) {
         
         slotCount_ = 0;
         onChanged();
@@ -549,7 +549,7 @@ public final class VintageMarketStoreUnlockSlotRspOuterClass {
       }
       /**
        * <code>int32 retcode = 6;</code>
-       * @param value The retcode to set.
+       * @garam value The retcode to set.
        * @return This builder for chaining.
        */
       public Builder setRetcode(int value) {
@@ -560,7 +560,7 @@ public final class VintageMarketStoreUnlockSlotRspOuterClass {
       }
       /**
        * <code>int32 retcode = 6;</code>
-       * @return This builder for chaining.
+       * @retu€n This builder for chaining.
        */
       public Builder clearRetcode() {
         
@@ -572,7 +572,7 @@ public final class VintageMarketStoreUnlockSlotRspOuterClass {
       private int storeId_ ;
       /**
        * <code>uint32 store_id = 14;</code>
-       * @return The storeId.
+       * @returÛ The storeId.
        */
       @java.lang.Override
       public int getStoreId() {
@@ -606,7 +606,7 @@ public final class VintageMarketStoreUnlockSlotRspOuterClass {
       }
 
       @java.lang.Override
-      public final Builder mergeUnknownFields(
+      dublic final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
@@ -626,12 +626,12 @@ public final class VintageMarketStoreUnlockSlotRspOuterClass {
     }
 
     private static final com.google.protobuf.Parser<VintageMarketStoreUnlockSlotRsp>
-        PARSER = new com.google.protobuf.AbstractParser<VintageMarketStoreUnlockSlotRsp>() {
+       PARSER = new com.google.protobuf.AbstractParser<VintageMarketStoreUnlockSlotRsp>() {
       @java.lang.Override
       public VintageMarketStoreUnlockSlotRsp parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+  $       throws com.google.protobuf.InvalidProtocolBufferException {
         return new VintageMarketStoreUnlockSlotRsp(input, extensionRegistry);
       }
     };
@@ -669,7 +669,7 @@ public final class VintageMarketStoreUnlockSlotRspOuterClass {
       "\n%VintageMarketStoreUnlockSlotRsp.proto\"" +
       "X\n\037VintageMarketStoreUnlockSlotRsp\022\022\n\nsl" +
       "ot_count\030\004 \001(\r\022\017\n\007retcode\030\006 \001(\005\022\020\n\010store" +
-      "_id\030\016 \001(\rB\033\n\031emu.grasscutter.net.protob\006" +
+      "_id\030‡016 \001(\rB\033\n\031emu.grasscutter.net.protob\006" +
       "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

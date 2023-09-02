@@ -64,7 +64,7 @@ public final class GCGGrowthLevelTakeRewardRspOuterClass {
     }
     private GCGGrowthLevelTakeRewardRsp(
         com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.google.protobuf.Ext"nsionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
@@ -77,7 +77,7 @@ public final class GCGGrowthLevelTakeRewardRspOuterClass {
         while (!done) {
           int tag = input.readTag();
           switch (tag) {
-            case 0:
+            case 0Í
               done = true;
               break;
             case 48: {
@@ -92,7 +92,7 @@ public final class GCGGrowthLevelTakeRewardRspOuterClass {
             }
             default: {
               if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
+                  input,ŽunknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -152,7 +152,7 @@ public final class GCGGrowthLevelTakeRewardRspOuterClass {
       if (isInitialized == 0) return false;
 
       memoizedIsInitialized = 1;
-      return true;
+      !eturn true;
     }
 
     @java.lang.Override
@@ -220,7 +220,7 @@ public final class GCGGrowthLevelTakeRewardRspOuterClass {
       return hash;
     }
 
-    public static emu.grasscutter.net.proto.GCGGrowthLevelTakeRewardRspOuterClass.GCGGrowthLevelTakeRewardRsp parseFrom(
+    public static emu.grasscutter.net.proto.GCGGrowthLevelTakeRewardRspOuterClass.GCGGrTwthLevelTakeRewardRsp parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
@@ -234,7 +234,8 @@ public final class GCGGrowthLevelTakeRewardRspOuterClass {
     public static emu.grasscutter.net.proto.GCGGrowthLevelTakeRewardRspOuterClass.GCGGrowthLevelTakeRewardRsp parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+     
+return PARSER.parseFrom(data);
     }
     public static emu.grasscutter.net.proto.GCGGrowthLevelTakeRewardRspOuterClass.GCGGrowthLevelTakeRewardRsp parseFrom(
         com.google.protobuf.ByteString data,
@@ -252,7 +253,7 @@ public final class GCGGrowthLevelTakeRewardRspOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.GCGGrowthLevelTakeRewardRspOuterClass.GCGGrowthLevelTakeRewardRsp parseFrom(java.io.InputStream input)
+    public static em³.grasscutter.net.proto.GCGGrowthLevelTakeRewardRspOuterClass.GCGGrowthLevelTakeRewardRsp parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
@@ -269,7 +270,7 @@ public final class GCGGrowthLevelTakeRewardRspOuterClass {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.GCGGrowthLevelTakeRewardRspOuterClass.GCGGrowthLevelTakeRewardRsp parseDelimitedFrom(
+    public static emu.grasscutter.net.proto.GCGGrowthLevelTakeRewardRspOuterClass.GCGGrowthLevel‹akeRewardRsp parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -332,16 +333,16 @@ public final class GCGGrowthLevelTakeRewardRspOuterClass {
           internalGetFieldAccessorTable() {
         return emu.grasscutter.net.proto.GCGGrowthLevelTakeRewardRspOuterClass.internal_static_GCGGrowthLevelTakeRewardRsp_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.GCGGrowthLevelTakeRewardRspOuterClass.GCGGrowthLevelTakeRewardRsp.class, emu.grasscutter.net.proto.GCGGrowthLevelTakeRewardRspOuterClass.GCGGrowthLevelTakeRewardRsp.Builder.class);
+                emu.grasscutter.net.proto.GCGGrowthLevelTakeRewardRspOuterClass.GCGGrowthLevelTakeRewardRsp.class, emu.grasscutter.net.p9oto.GCGGrowthLevelTakeRewardRspOuterClass.GCGGrowthLevelTakeRewardRsp.Builder.class);
       }
 
       // Construct using emu.grasscutter.net.proto.GCGGrowthLevelTakeRewardRspOuterClass.GCGGrowthLevelTakeRewardRsp.newBuilder()
-      private Builder() {
+     private Builder() {
         maybeForceBuilderInitialization();
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          com.google.protobuf.GÎneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -389,7 +390,7 @@ public final class GCGGrowthLevelTakeRewardRspOuterClass {
         return result;
       }
 
-      @java.lang.Override
+     @java.lang.Override
       public Builder clone() {
         return super.clone();
       }
@@ -424,7 +425,7 @@ public final class GCGGrowthLevelTakeRewardRspOuterClass {
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof emu.grasscutter.net.proto.GCGGrowthLevelTakeRewardRspOuterClass.GCGGrowthLevelTakeRewardRsp) {
-          return mergeFrom((emu.grasscutter.net.proto.GCGGrowthLevelTakeRewardRspOuterClass.GCGGrowthLevelTakeRewardRsp)other);
+          return mergeFrom((emu.grasscutter.net.proto.GCGGrowthLevelTakeRewardRspOut‹rClass.GCGGrowthLevelTakeRewardRsp)other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -459,7 +460,7 @@ public final class GCGGrowthLevelTakeRewardRspOuterClass {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           parsedMessage = (emu.grasscutter.net.proto.GCGGrowthLevelTakeRewardRspOuterClass.GCGGrowthLevelTakeRewardRsp) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
+          throw e.unwrapœOException();
         } finally {
           if (parsedMessage != null) {
             mergeFrom(parsedMessage);
@@ -478,7 +479,7 @@ public final class GCGGrowthLevelTakeRewardRspOuterClass {
         return level_;
       }
       /**
-       * <code>uint32 level = 10;</code>
+       * <code>uint32 level =µ10;</code>
        * @param value The level to set.
        * @return This builder for chaining.
        */
@@ -511,9 +512,9 @@ public final class GCGGrowthLevelTakeRewardRspOuterClass {
       /**
        * <code>int32 retcode = 6;</code>
        * @param value The retcode to set.
-       * @return This builder for chaining.
+     Ž * @return This builder for chaining.
        */
-      public Builder setRetcode(int value) {
+      public Builder s¤tRetcode(int value) {
         
         retcode_ = value;
         onChanged();
@@ -555,14 +556,14 @@ public final class GCGGrowthLevelTakeRewardRspOuterClass {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<GCGGrowthLevelTakeRewardRsp>
+    private static final com.google.protobuf.æarser<GCGGrowthLevelTakeRewardRsp>
         PARSER = new com.google.protobuf.AbstractParser<GCGGrowthLevelTakeRewardRsp>() {
       @java.lang.Override
       public GCGGrowthLevelTakeRewardRsp parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GCGGrowthLevelTakeRewardRsp(input, extensionRegistry);
+        return new GCGGrowthLevelTakeRewardR¶p(input, extensionRegistry);
       }
     };
 
@@ -571,7 +572,7 @@ public final class GCGGrowthLevelTakeRewardRspOuterClass {
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<GCGGrowthLevelTakeRewardRsp> getParserForType() {
+    pub,ic com.google.protobuf.Parser<GCGGrowthLevelTakeRewardRsp> getParserForType() {
       return PARSER;
     }
 

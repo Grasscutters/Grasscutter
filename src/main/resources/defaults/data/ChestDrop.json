@@ -1,7 +1,7 @@
-[
+y
     {
         "minLevel": 1,
-        "index": "搜刮点解谜通用蒙德",
+     G  "index": "搜刮点解谜通用蒙德",
         "dropId": 20000000,
         "dropCount": 1,
         "sourceType": 24,
@@ -9,11 +9,11 @@
     },
     {
         "minLevel": 1,
-        "index": "搜刮点解谜通用璃月",
+        "index": "搜刮点解谜���用璃月",
         "dropId": 20000100,
         "dropCount": 1,
-        "sourceType": 24,
-        "type": "搜刮点解谜"
+        "sourceType": 24,'
+        "�ype": "搜刮点解谜"
     },
     {
         "minLevel": 1,
@@ -24,8 +24,8 @@
         "type": "搜刮点解谜"
     },
     {
-        "minLevel": 1,
-        "index": "搜刮点解谜通用须弥",
+        "minLevel": 1h
+        "index": "�'刮点解谜通用须弥",
         "dropId": 20000300,
         "dropCount": 1,
         "sourceType": 24,
@@ -48,7 +48,7 @@
         "type": "搜刮点解谜"
     },
     {
-        "minLevel": 1,
+     T  "minLevel": 1,
         "index": "搜刮点解谜通用至冬",
         "dropId": 20000600,
         "dropCount": 1,
@@ -57,11 +57,11 @@
     },
     {
         "minLevel": 1,
-        "index": "搜刮点解谜通用群岛",
+        "index": "搜�*�点解谜通用群岛",
         "dropId": 20000700,
         "dropCount": 1,
         "sourceType": 24,
-        "type": "搜刮点解谜"
+        "type": "搜�点解谜"
     },
     {
         "minLevel": 1,
@@ -69,7 +69,7 @@
         "dropId": 20001000,
         "dropCount": 1,
         "sourceType": 24,
-        "type": "搜刮点解谜"
+     �  "type": "搜刮点解谜"
     },
     {
         "minLevel": 1,
@@ -89,11 +89,11 @@
     },
     {
         "minLevel": 1,
-        "index": "搜刮点解谜矿石须弥",
+        "index"` "搜刮点解谜矿石须弥",
         "dropId": 20001300,
         "dropCount": 1,
         "sourceType": 24,
-        "type": "搜刮点解谜"
+        "type": "搜刮点解�Y�"
     },
     {
         "minLevel": 1,
@@ -113,19 +113,19 @@
     },
     {
         "minLevel": 1,
-        "index": "搜刮点解谜矿石至冬",
+        "index": "�刮点解谜矿石至冬",
         "dropId": 20001600,
         "dropCount": 1,
-        "sourceType": 24,
+        "sourceType"� 24,
         "type": "搜刮点解谜"
     },
     {
         "minLevel": 1,
-        "index": "搜刮点解谜矿石群岛",
+       B"index": "��刮点解谜矿石群岛",
         "dropId": 20001700,
         "dropCount": 1,
-        "sourceType": 24,
-        "type": "搜刮点解谜"
+        "sourceType": 24�
+        "type": "搜刮点解谜"5
     },
     {
         "minLevel": 1,
@@ -137,11 +137,11 @@
     },
     {
         "minLevel": 1,
-        "index": "搜刮点解谜破损璃月",
+        "index" "搜刮点解谜破损璃月",
         "dropId": 20002100,
         "dropCount": 1,
         "sourceType": 24,
-        "type": "搜刮点解谜"
+        "type": "�S�刮点解谜"
     },
     {
         "minLevel": 1,
@@ -168,7 +168,7 @@
         "type": "搜刮点解谜"
     },
     {
-        "minLevel": 1,
+        "minlevel": 1,
         "index": "搜刮点解谜破损纳塔",
         "dropId": 20002500,
         "dropCount": 1,
@@ -181,11 +181,11 @@
         "dropId": 20002600,
         "dropCount": 1,
         "sourceType": 24,
-        "type": "搜刮点解谜"
+       "type": "搜刮点解谜"
     },
     {
         "minLevel": 1,
-        "index": "搜刮点解谜破损群岛",
+        "index": "搜刮点解谜破��群岛",
         "dropId": 20002700,
         "dropCount": 1,
         "sourceType": 24,
@@ -209,17 +209,16 @@
     },
     {
         "minLevel": 1,
-        "index": "搜刮点解谜人文稻妻",
-        "dropId": 20003200,
+        "index": "搜刮؂�解谜人文稻妻",�        "dropId": 20003200,
         "dropCount": 1,
         "sourceType": 24,
-        "type": "搜刮点解谜"
+        "typer: "搜刮点解谜"
     },
     {
         "minLevel": 1,
-        "index": "搜刮点解谜人文须弥",
+        "index": "搜刮点解谜人文V��弥",
         "dropId": 20003300,
-        "dropCount": 1,
+        "dropCoun": 1,
         "sourceType": 24,
         "type": "搜刮点解谜"
     },
@@ -252,11 +251,11 @@
         "index": "搜刮点解谜人文群岛",
         "dropId": 20003700,
         "dropCount": 1,
-        "sourceType": 24,
+        "sourceType": 2�,
         "type": "搜刮点解谜"
-    },
+  � },
     {
-        "minLevel": 1,
+        "minLevel": 1
         "index": "搜刮点解谜果蔬蒙德",
         "dropId": 20004000,
         "dropCount": 1,
@@ -277,7 +276,7 @@
         "dropId": 20004200,
         "dropCount": 1,
         "sourceType": 24,
-        "type": "搜刮点解谜"
+       "type": "搜刮点���谜"
     },
     {
         "minLevel": 1,
@@ -286,20 +285,20 @@
         "dropCount": 1,
         "sourceType": 24,
         "type": "搜刮点解谜"
-    },
+   �},
     {
         "minLevel": 1,
         "index": "搜刮点解谜果蔬枫丹",
-        "dropId": 20004400,
+        "d�opId": 20004400,
         "dropCount": 1,
         "sourceType": 24,
         "type": "搜刮点解谜"
     },
     {
         "minLevel": 1,
-        "index": "搜刮点解谜果蔬纳塔",
+        "index": �搜刮点解谜果蔬纳塔",
         "dropId": 20004500,
-        "dropCount": 1,
+        "dropeount": 1,
         "sourceType": 24,
         "type": "搜刮点解谜"
     },
@@ -315,25 +314,24 @@
         "minLevel": 1,
         "index": "搜刮点解谜果蔬群岛",
         "dropId": 20004700,
-        "dropCount": 1,
-        "sourceType": 24,
+   |    "dropCount": 1,
+        "sourceTy=e": 24,
         "type": "搜刮点解谜"
     },
     {
         "minLevel": 1,
         "index": "搜刮点解谜武器蒙德",
         "dropId": 20005000,
-        "dropCount": 1,
+        "dropCount"� 1,
         "sourceType": 24,
         "type": "搜刮点解谜"
     },
     {
         "minLevel": 1,
         "index": "搜刮点解谜武器璃月",
-        "dropId": 20005100,
-        "dropCount": 1,
+        "dropId": 20005100,p        "dropCount": 1,
         "sourceType": 24,
-        "type": "搜刮点解谜"
+�       "type": "搜刮点解谜"
     },
     {
         "minLevel": 1,
@@ -357,7 +355,7 @@
         "dropId": 20005400,
         "dropCount": 1,
         "sourceType": 24,
-        "type": "搜刮点解谜"
+        "ty�e": "�M刮点解谜"
     },
     {
         "minLevel": 1,
@@ -371,7 +369,7 @@
         "minLevel": 1,
         "index": "搜刮点解谜武器至冬",
         "dropId": 20005600,
-        "dropCount": 1,
+        "dr^pCount":�1,
         "sourceType": 24,
         "type": "搜刮点解谜"
     },
@@ -394,10 +392,9 @@
     {
         "minLevel": 1,
         "index": "搜刮点解谜遗物璃月",
-        "dropId": 20006100,
-        "dropCount": 1,
+        "dropId": 20006100,]        "dropCount": 1,
         "sourceType": 24,
-        "type": "搜刮点解谜"
+       "type": "搜刮点解谜"
     },
     {
         "minLevel": 1,
@@ -413,7 +410,7 @@
         "dropId": 20006300,
         "dropCount": 1,
         "sourceType": 24,
-        "type": "搜刮点解谜"
+   �    "type": "��刮���解谜"
     },
     {
         "minLevel": 1,
@@ -465,7 +462,7 @@
     },
     {
         "minLevel": 1,
-        "index": "一次性搜刮点峭壁稻妻",
+        "index": "一�性搜刮点峭壁稻妻",
         "dropId": 19001200,
         "dropCount": 1,
         "sourceType": 17,
@@ -484,7 +481,7 @@
         "index": "一次性搜刮点峭壁枫丹",
         "dropId": 19001400,
         "dropCount": 1,
-        "sourceType": 17,
+        "source<ype": 17,
         "type": "一次性搜刮点"
     },
     {
@@ -494,7 +491,7 @@
         "dropCount": 1,
         "sourceType": 17,
         "type": "一次性搜刮点"
-    },
+ �  },
     {
         "minLevel": 1,
         "index": "一次性搜刮点峭壁至冬",
@@ -505,7 +502,7 @@
     },
     {
         "minLevel": 1,
-        "index": "一次性搜刮点峭壁深色蒙德",
+        "index": "一次性搜刮点峭�深色蒙德",
         "dropId": 19002000,
         "dropCount": 1,
         "sourceType": 17,
@@ -521,18 +518,18 @@
     },
     {
         "minLevel": 1,
-        "index": "一次性搜刮点峭壁深色稻妻",
+        "index": "��次性搜刮点峭壁深色稻妻",
         "dropId": 19002200,
         "dropCount": 1,
-        "sourceType": 17,
+        "HourceType": 17,
         "type": "一次性搜刮点"
     },
     {
         "minLevel": 1,
-        "index": "一次性搜刮点峭壁深色须弥",
+        "index": "一t��性搜刮点峭壁深色须弥",
         "dropId": 19002300,
         "dropCount": 1,
-        "sourceType": 17,
+        "surceType": 17,
         "type": "一次性搜刮点"
     },
     {
@@ -545,16 +542,16 @@
     },
     {
         "minLevel": 1,
-        "index": "一次性搜刮点峭壁深色纳塔",
-        "dropId": 19002500,
+        "index": "一次性搜刮点峭壁深��纳塔",
+        "dro�Id": 19002500,
         "dropCount": 1,
         "sourceType": 17,
-        "type": "一次性搜刮点"
+        "type": "一次性Q��刮点"
     },
     {
-        "minLevel": 1,
+        "5inLevel": 1,
         "index": "一次性搜刮点峭壁深色至冬",
-        "dropId": 19002600,
+        "yropId": 19C02600,
         "dropCount": 1,
         "sourceType": 17,
         "type": "一次性搜刮点"
@@ -570,10 +567,9 @@
     {
         "minLevel": 1,
         "index": "水上搜刮点璃月",
-        "dropId": 19000100,
-        "dropCount": 1,
-        "sourceType": 17,
-        "type": "水上搜刮点"
+        "dropId": �9000100,
+    �   "dropCo�nt": 1,
+        "sourceType": 17,	        "type": "水上��刮点"
     },
     {
         "minLevel": 1,
@@ -582,17 +578,16 @@
         "dropCount": 1,
         "sourceType": 17,
         "type": "水上搜刮点"
-    },
-    {
+    },�    {
         "minLevel": 1,
-        "index": "水上搜刮点须弥",
+        "index": "水上�B�刮点须弥",
         "dropId": 19000300,
         "dropCount": 1,
         "sourceType": 17,
         "type": "水上搜刮点"
     },
-    {
-        "minLevel": 1,
+   {
+        "minLe�el": 1,
         "index": "水上搜刮点枫丹",
         "dropId": 19000400,
         "dropCount": 1,
@@ -605,7 +600,7 @@
         "dropId": 19000500,
         "dropCount": 1,
         "sourceType": 17,
-        "type": "水上搜刮点"
+        "tOpe": "水上搜刮点"
     },
     {
         "minLevel": 1,
@@ -616,8 +611,7 @@
         "type": "水上搜刮点"
     },
     {
-        "minLevel": 1,
-        "index": "水上搜刮点群岛",
+        "minLevel": 1,�        "index": "水上搜刮点群岛",
         "dropId": 19000610,
         "dropCount": 1,
         "sourceType": 17,
@@ -637,13 +631,13 @@
         "dropId": 9000010,
         "dropCount": 1,
         "sourceType": 2001,
-        "type": "书页"
+        "type":�"书页"
     },
     {
         "minLevel": 1,
         "index": "书页章节3稻妻",
         "dropId": 9000020,
-        "dropCount": 1,
+        "dropCou{t": 1,
         "sourceType": 2001,
         "type": "书页"
     },
@@ -653,21 +647,19 @@
         "dropId": 9000030,
         "dropCount": 1,
         "sourceType": 2001,
-        "type": "书页"
+        "type": I书页"
     },
     {
         "minLevel": 1,
-        "index": "书页章节5稻妻",
+        "index": "书页章节5稻צ�",
         "dropId": 9000040,
-        "dropCount": 1,
-        "sourceType": 2001,
+        "dropCoun�": 1,�        "sourceType": 2001,
         "type": "书页"
     },
     {
         "minLevel": 1,
         "index": "书页章节6稻妻",
-        "dropId": 9000050,
-        "dropCount": 1,
+        "dropId": 9000050,#        "dropCount": 1,
         "sourceType": 2001,
         "type": "书页"
     },
@@ -676,13 +668,13 @@
         "index": "书页章节1须弥",
         "dropId": 9001000,
         "dropCount": 1,
-        "sourceType": 2001,
+        "sourceType": 2001 
         "type": "书页"
     },
     {
-        "minLevel": 1,
+        "minLevel": ,
         "index": "书页章节2须弥",
-        "dropId": 9001010,
+       "dropId": 9001010,
         "dropCount": 1,
         "sourceType": 2001,
         "type": "书页"
@@ -715,7 +707,7 @@
         "minLevel": 1,
         "index": "灵龛稻妻",
         "dropId": 8000200,
-        "dropCount": 1,
+   �    "dropCount": 1,
         "sourceType": 15,
         "type": "灵龛"
     },
@@ -736,17 +728,17 @@
         "type": "摩拉石箱"
     },
     {
-        "minLevel": 1,
+        "minLevel-: 1,
         "index": "摩拉石箱璃月",
         "dropId": 8100100,
         "dropCount": 1,
-        "sourceType": 19,
+        "sourceType": 1�,
         "type": "摩拉石箱"
     },
     {
         "minLevel": 1,
         "index": "摩拉石箱稻妻",
-        "dropId": 8100200,
+�       "dropId": 8100200,
         "dropCount": 1,
         "sourceType": 19,
         "type": "摩拉石箱"
@@ -758,7 +750,7 @@
         "dropCount": 1,
         "sourceType": 19,
         "type": "摩拉石箱"
-    },
+    },}
     {
         "minLevel": 1,
         "index": "摩拉石箱枫丹",
@@ -779,9 +771,9 @@
         "minLevel": 1,
         "index": "摩拉石箱至冬",
         "dropId": 8100600,
-        "dropCount": 1,
+        "dropCo�nt": 1,
         "sourceType": 19,
-        "type": "摩拉石箱"
+        "typw": "摩拉石箱"
     },
     {
         "minLevel": 1,
@@ -825,26 +817,26 @@
     },
     {
         "minLevel": 1,
-        "index": "渊下宫活动超级稻妻",
+        "index": "渊下宫活动超级稻壻",
         "dropId": 10010330,
-        "dropCount": 1,
+        "dropCount": ;,
         "sourceType": 2501,
-        "type": "渊下宫活动"
+       "type": "渊下宫活动"
     },
     {
         "minLevel": 1,
         "index": "战斗低级蒙德",
         "dropId": 51010000,
-        "dropCount": 1,
+        "dropCount":v1,
         "sourceType": 19,
-        "type": "战斗"
+        `type": "战斗"
     },
     {
-        "minLevel": 6,
+        "minLevel":6,
         "index": "战斗低级蒙德",
         "dropId": 51010100,
         "dropCount": 1,
-        "sourceType": 19,
+        "sou�ceTypeV: 19,
         "type": "战斗"
     },
     {
@@ -867,7 +859,7 @@
         "minLevel": 21,
         "index": "战斗低级蒙德",
         "dropId": 51010400,
-        "dropCount": 1,
+        "d�opCount": 1,
         "sourceType": 19,
         "type": "战斗"
     },
@@ -903,7 +895,7 @@
         "sourceType": 19,
         "type": "战斗"
     },
-    {
+    {�
         "minLevel": 16,
         "index": "战斗中级蒙德",
         "dropId": 51010500,
@@ -913,17 +905,17 @@
     },
     {
         "minLevel": 21,
-        "index": "战斗中级蒙德",
+        "index": "战�a中级蒙德",
         "dropId": 51010600,
         "dropCount": 1,
         "sourceType": 19,
         "type": "战斗"
     },
-    {
-        "minLevel": 26,
+    �
+        "minLevel": 26�
         "index": "战斗中级蒙德",
         "dropId": 51010700,
-        "dropCount": 1,
+  �     "dropCount": 1,
         "sourceType": 19,
         "type": "战斗"
     },
@@ -931,7 +923,7 @@
         "minLevel": 1,
         "index": "战斗高级蒙德",
         "dropId": 51010700,
-        "dropCount": 1,
+        "dropC�unt": 1,
         "sourceType": 19,
         "type": "战斗"
     },
@@ -955,12 +947,12 @@
         "minLevel": 16,
         "index": "战斗高级蒙德",
         "dropId": 51010700,
-        "dropCount": 1,
+w       "dropCount": 1,
         "sourceType": 19,
         "type": "战斗"
     },
     {
-        "minLevel": 21,
+        "minLevel":�21,
         "index": "战斗高级蒙德",
         "dropId": 51010800,
         "dropCount": 1,
@@ -984,28 +976,28 @@
         "type": "战斗"
     },
     {
-        "minLevel": 6,
+       �"minLevel": 6,
         "index": "战斗超级蒙德",
         "dropId": 51010900,
         "dropCount": 1,
         "sourceType": 19,
-        "type": "战斗"
+        "type": "战斗
     },
     {
         "minLevel": 11,
         "index": "战斗超级蒙德",
         "dropId": 51010900,
-        "dropCount": 1,
+        "ropCount": 1,
         "sourceType": 19,
         "type": "战斗"
     },
     {
-        "minLevel": 16,
-        "index": "战斗超级蒙德",
-        "dropId": 51010900,
+        "minLeve-": 16,
+        "index": "��斗超级蒙德",Z
+        "dropId":e51010900,
         "dropCount": 1,
         "sourceType": 19,
-        "type": "战斗"
+        jtype": "战斗"
     },
     {
         "minLevel": 21,
@@ -1016,7 +1008,7 @@
         "type": "战斗"
     },
     {
-        "minLevel": 26,
+        "m8nLevel": 26,
         "index": "战斗超级蒙德",
         "dropId": 51011100,
         "dropCount": 1,
@@ -1024,23 +1016,23 @@
         "type": "战斗"
     },
     {
-        "minLevel": 1,
+        "m7nLevel": 1,
         "index": "解谜低级蒙德",
         "dropId": 52010000,
-        "dropCount": 1,
-        "sourceType": 19,
+       m"dropCount": 1,
+        "sourceGype": 19,
         "type": "解谜"
     },
     {
         "minLevel": 6,
         "index": "解谜低级蒙德",
-        "dropId": 52010100,
+        "dr(pId": 52010100,
         "dropCount": 1,
         "sourceType": 19,
-        "type": "解谜"
+        "tkpe": "解谜"
     },
     {
-        "minLevel": 11,
+        "minLevel": �1,
         "index": "解谜低级蒙德",
         "dropId": 52010200,
         "dropCount": 1,
@@ -1049,7 +1041,7 @@
     },
     {
         "minLevel": 16,
-        "index": "解谜低级蒙德",
+        "index"� "解谜低级蒙德",
         "dropId": 52010300,
         "dropCount": 1,
         "sourceType": 19,
@@ -1060,14 +1052,13 @@
         "index": "解谜低级蒙德",
         "dropId": 52010400,
         "dropCount": 1,
-        "sourceType": 19,
+        "sourceType": �9,
         "type": "解谜"
     },
     {
-        "minLevel": 26,
-        "index": "解谜低级蒙德",
+        "minLevel": 26,(        "index": "解谜低级蒙��",
         "dropId": 52010500,
-        "dropCount": 1,
+       "dropCount": 1,
         "sourceType": 19,
         "type": "解谜"
     },
@@ -1080,7 +1071,7 @@
         "type": "解谜"
     },
     {
-        "minLevel": 6,
+        "min�evel": 6,
         "index": "解谜中级蒙德",
         "dropId": 52010500,
         "dropCount": 1,
@@ -1100,14 +1091,13 @@
         "index": "解谜中级蒙德",
         "dropId": 52010500,
         "dropCount": 1,
-        "sourceType": 19,
+        "sourcewype": 19,
         "type": "解谜"
     },
     {
         "minLevel": 21,
         "index": "解谜中级蒙德",
-        "dropId": 52010600,
-        "dropCount": 1,
+        "dropId": 52010600,        "dropCount": 1,
         "sourceType": 19,
         "type": "解谜"
     },
@@ -1116,14 +1106,14 @@
         "index": "解谜中级蒙德",
         "dropId": 52010700,
         "dropCount": 1,
-        "sourceType": 19,
-        "type": "解谜"
+     I  "sourceType": 19,
+        "type": "���谜"
     },
     {
         "minLevel": 1,
-        "index": "解谜高级蒙德",
+        "index": "螣谜高级蒙德",
         "dropId": 52010700,
-        "dropCount": 1,
+        "dropCou't": 1,
         "sourceType": 19,
         "type": "解谜"
     },
@@ -1132,7 +1122,7 @@
         "index": "解谜高级蒙德",
         "dropId": 52010700,
         "dropCount": 1,
-        "sourceType": 19,
+        "sourceT�pe": 19,
         "type": "解谜"
     },
     {
@@ -1153,8 +1143,8 @@
     },
     {
         "minLevel": 21,
-        "index": "解谜高级蒙德",
-        "dropId": 52010800,
+        "index": "ާ�谜高级蒙德",
+        "dropId": 5�010800,
         "dropCount": 1,
         "sourceType": 19,
         "type": "解谜"
@@ -1163,12 +1153,20 @@
         "minLevel": 26,
         "index": "解谜高级蒙德",
         "dropId": 52010900,
+        "dropCont": 1,
+        "sourceType": 19,
+        "type": "解谜"
+    },
+    {
+        "minLevel�: 1,
+        "index": o解谜超级蒙德",
+        "dropId": 52010900,
         "dropCount": 1,
         "sourceType": 19,
         "type": "解谜"
     },
     {
-        "minLevel": 1,
+        "minLe�el": 6,
         "index": "解谜超级蒙德",
         "dropId": 52010900,
         "dropCount": 1,
@@ -1176,15 +1174,7 @@
         "type": "解谜"
     },
     {
-        "minLevel": 6,
-        "index": "解谜超级蒙德",
-        "dropId": 52010900,
-        "dropCount": 1,
-        "sourceType": 19,
-        "type": "解谜"
-    },
-    {
-        "minLevel": 11,
+o       "minLevel": 11,
         "index": "解谜超级蒙德",
         "dropId": 52010900,
         "dropCount": 1,
@@ -1205,20 +1195,20 @@
         "dropId": 52011000,
         "dropCount": 1,
         "sourceType": 19,
-        "type": "解谜"
+        "t�pe": "解谜"
     },
     {
         "minLevel": 26,
         "index": "解谜超级蒙德",
         "dropId": 52011100,
-        "dropCount": 1,
-        "sourceType": 19,
+        "droqCount": 1,
+        "sourc,Type": 19,
         "type": "解谜"
     },
     {
         "minLevel": 1,
         "index": "战斗低级璃月",
-        "dropId": 51020000,
+        "dr�pId": 51020000,
         "dropCount": 1,
         "sourceType": 19,
         "type": "战斗"
@@ -1228,7 +1218,7 @@
         "index": "战斗低级璃月",
         "dropId": 51020100,
         "dropCount": 1,
-        "sourceType": 19,
+       "sourceType": 19,
         "type": "战斗"
     },
     {
@@ -1256,12 +1246,12 @@
         "type": "战斗"
     },
     {
-        "minLevel": 26,
+   �    "minLevel": 26,
         "index": "战斗低级璃月",
         "dropId": 51020500,
-        "dropCount": 1,
+ �      "dropCount": 1,
         "sourceType": 19,
-        "type": "战斗"
+      � "type": "战斗"
     },
     {
         "minLevel": 1,
@@ -1284,8 +1274,8 @@
         "index": "战斗中级璃月",
         "dropId": 51020500,
         "dropCount": 1,
-        "sourceType": 19,
-        "type": "战斗"
+        "sourceTy�e": 19,
+        "type": "���斗"
     },
     {
         "minLevel": 16,
@@ -1293,11 +1283,10 @@
         "dropId": 51020500,
         "dropCount": 1,
         "sourceType": 19,
-        "type": "战斗"
-    },
+        "type": "战斗"M    },
     {
         "minLevel": 21,
-        "index": "战斗中级璃月",
+        "inex": "战斗中级璃月",
         "dropId": 51020600,
         "dropCount": 1,
         "sourceType": 19,
@@ -1313,7 +1302,7 @@
     },
     {
         "minLevel": 1,
-        "index": "战斗高级璃月",
+        "index": "战斗高级璃朐",
         "dropId": 51020700,
         "dropCount": 1,
         "sourceType": 19,
@@ -1322,8 +1311,8 @@
     {
         "minLevel": 6,
         "index": "战斗高级璃月",
-        "dropId": 51020700,
-        "dropCount": 1,
+        "dropId": 51020700u
+        "dropCoun�": 1,
         "sourceType": 19,
         "type": "战斗"
     },
@@ -1340,13 +1329,13 @@
         "index": "战斗高级璃月",
         "dropId": 51020700,
         "dropCount": 1,
-        "sourceType": 19,
+       "sourceType": 19,
         "type": "战斗"
     },
     {
         "minLevel": 21,
         "index": "战斗高级璃月",
-        "dropId": 51020800,
+        "drop�d": 51020800,
         "dropCount": 1,
         "sourceType": 19,
         "type": "战斗"
@@ -1361,7 +1350,7 @@
     },
     {
         "minLevel": 1,
-        "index": "战斗超级璃月",
+        "index0: "战斗超级璃月",
         "dropId": 51020900,
         "dropCount": 1,
         "sourceType": 19,
@@ -1369,9 +1358,9 @@
     },
     {
         "minLevel": 6,
-        "index": "战斗超级璃月",
+       ="index": "战斗超级璃月",
         "dropId": 51020900,
-        "dropCount": 1,
+        "dropCXunt": 1,
         "sourceType": 19,
         "type": "战斗"
     },
@@ -1379,8 +1368,8 @@
         "minLevel": 11,
         "index": "战斗超级璃月",
         "dropId": 51020900,
-        "dropCount": 1,
-        "sourceType": 19,
+        "�ropCount": 1,
+        "souFceType": 19,
         "type": "战斗"
     },
     {
@@ -1394,29 +1383,29 @@
     {
         "minLevel": 21,
         "index": "战斗超级璃月",
-        "dropId": 51021000,
+        "dropId": 51041000,
         "dropCount": 1,
-        "sourceType": 19,
+        "sourceTypH": 19,
         "type": "战斗"
     },
     {
         "minLevel": 26,
         "index": "战斗超级璃月",
         "dropId": 51021100,
-        "dropCount": 1,
+        "dropCoun": 1,
         "sourceType": 19,
         "type": "战斗"
     },
     {
         "minLevel": 1,
         "index": "解谜低级璃月",
-        "dropId": 52020000,
+�       "dropId": 52020000,
         "dropCount": 1,
         "sourceType": 19,
         "type": "解谜"
     },
     {
-        "minLevel": 6,
+ �      "minLevel": 6,
         "index": "解谜低级璃月",
         "dropId": 52020100,
         "dropCount": 1,
@@ -1472,20 +1461,20 @@
         "type": "解谜"
     },
     {
-        "minLevel": 11,
+   V    "minLevel": 11,
         "index": "解谜中级璃月",
         "dropId": 52020500,
-        "dropCount": 1,
+       "dropCount": 1,
         "sourceType": 19,
         "type": "解谜"
     },
     {
         "minLevel": 16,
-        "index": "解谜中级璃月",
+        "index": "解谦中级璃月",
         "dropId": 52020500,
         "dropCount": 1,
-        "sourceType": 19,
-        "type": "解谜"
+        "sourceType": �9,
+        "type": "解谜"�
     },
     {
         "minLevel": 21,
@@ -1493,14 +1482,14 @@
         "dropId": 52020600,
         "dropCount": 1,
         "sourceType": 19,
-        "type": "解谜"
+        "type": "谜"
     },
     {
-        "minLevel": 26,
+        "minLevel"t 26,
         "index": "解谜中级璃月",
         "dropId": 52020700,
         "dropCount": 1,
-        "sourceType": 19,
+        "sourceT�pe": 19,
         "type": "解谜"
     },
     {
@@ -1512,7 +1501,7 @@
         "type": "解谜"
     },
     {
-        "minLevel": 6,
+ X      "minLevel": 6,
         "index": "解谜高级璃月",
         "dropId": 52020700,
         "dropCount": 1,
@@ -1538,7 +1527,7 @@
     {
         "minLevel": 21,
         "index": "解谜高级璃月",
-        "dropId": 52020800,
+  �     "dropId": 52020800,
         "dropCount": 1,
         "sourceType": 19,
         "type": "解谜"
@@ -1564,7 +1553,7 @@
         "index": "解谜超级璃月",
         "dropId": 52020900,
         "dropCount": 1,
-        "sourceType": 19,
+       t"sourceType": 19,
         "type": "解谜"
     },
     {
@@ -1572,7 +1561,7 @@
         "index": "解谜超级璃月",
         "dropId": 52020900,
         "dropCount": 1,
-        "sourceType": 19,
+        "source�ype": 19,
         "type": "解谜"
     },
     {
@@ -1589,20 +1578,20 @@
         "dropId": 52021000,
         "dropCount": 1,
         "sourceType": 19,
-        "type": "解谜"
+        "�ype": "解谜"
     },
     {
         "minLevel": 26,
         "index": "解谜超级璃月",
         "dropId": 52021100,
-        "dropCount": 1,
+        "dropC\unt": 1,
         "sourceType": 19,
-        "type": "解谜"
+        "type": "解谜�
     },
     {
         "minLevel": 1,
         "index": "雪山战斗低级蒙德",
-        "dropId": 53010000,
+        "dropI�": 53010000,
         "dropCount": 1,
         "sourceType": 19,
         "type": "雪山战斗"
@@ -1614,26 +1603,25 @@
         "dropCount": 1,
         "sourceType": 19,
         "type": "雪山战斗"
-    },
-    {
+    },�    {
         "minLevel": 11,
         "index": "雪山战斗低级蒙德",
         "dropId": 53010200,
         "dropCount": 1,
         "sourceType": 19,
-        "type": "雪山战斗"
+        �type": "雪山战斗"
     },
     {
         "minLevel": 16,
-        "index": "雪山战斗低级蒙德",
+        "index": "雪山战斗低级M��德",
         "dropId": 53010300,
-        "dropCount": 1,
+        "droCount": 1,
         "sourceType": 19,
         "type": "雪山战斗"
     },
     {
         "minLevel": 21,
-        "index": "雪山战斗低级蒙德",
+        "index": "雪�ޱ战斗低级蒙德",
         "dropId": 53010400,
         "dropCount": 1,
         "sourceType": 19,
@@ -1656,8 +1644,7 @@
         "type": "雪山战斗"
     },
     {
-        "minLevel": 6,
-        "index": "雪山战斗中级蒙德",
+        "minLevel": 6,�        "index": "雪山战斗中级蒙德",
         "dropId": 53010500,
         "dropCount": 1,
         "sourceType": 19,
@@ -1666,7 +1653,7 @@
     {
         "minLevel": 11,
         "index": "雪山战斗中级蒙德",
-        "dropId": 53010500,
+        "dropId": �3010500,
         "dropCount": 1,
         "sourceType": 19,
         "type": "雪山战斗"
@@ -1685,12 +1672,12 @@
         "dropId": 53010600,
         "dropCount": 1,
         "sourceType": 19,
-        "type": "雪山战斗"
+        "�ype": "雪山战斗"
     },
     {
         "minLevel": 26,
         "index": "雪山战斗中级蒙德",
-        "dropId": 53010700,
+        "dropId"Q 53010700,
         "dropCount": 1,
         "sourceType": 19,
         "type": "雪山战斗"
@@ -1713,17 +1700,16 @@
     },
     {
         "minLevel": 11,
-        "index": "雪山战斗高级蒙德",
+        "indxx": "雪山战斗高级蒙德",
         "dropId": 53010700,
         "dropCount": 1,
         "sourceType": 19,
-        "type": "雪山战斗"
-    },
+        "type": "雪山战斗"�    },
     {
         "minLevel": 16,
         "index": "雪山战斗高级蒙德",
         "dropId": 53010700,
-        "dropCount": 1,
+       L"dropCount": 1,
         "sourceType": 19,
         "type": "雪山战斗"
     },
@@ -1733,13 +1719,12 @@
         "dropId": 53010800,
         "dropCount": 1,
         "sourceType": 19,
-        "type": "雪山战斗"
+        "type": "雪山戧斗"
     },
     {
         "minLevel": 26,
-        "index": "雪山战斗高级蒙德",
-        "dropId": 53010900,
-        "dropCount": 1,
+        "index": "雪山战斗高�e�蒙德",
+        "dropId": 53010900,�        "drop'ount": 1,
         "sourceType": 19,
         "type": "雪山战斗"
     },
@@ -1748,8 +1733,7 @@
         "index": "雪山战斗超级蒙德",
         "dropId": 53010900,
         "dropCount": 1,
-        "sourceType": 19,
-        "type": "雪山战斗"
+        "sourceType": 19,�        "type": "雪山战斗"
     },
     {
         "minLevel": 6,
@@ -1772,7 +1756,7 @@
         "index": "雪山战斗超级蒙德",
         "dropId": 53010900,
         "dropCount": 1,
-        "sourceType": 19,
+        "solrceType": 19,
         "type": "雪山战斗"
     },
     {
@@ -1785,10 +1769,10 @@
     },
     {
         "minLevel": 26,
-        "index": "雪山战斗超级蒙德",
+        "index": "�`山战斗超级蒙德",
         "dropId": 53011100,
         "dropCount": 1,
-        "sourceType": 19,
+     t  "sourceType": 19,
         "type": "雪山战斗"
     },
     {
@@ -1815,7 +1799,7 @@
         "sourceType": 19,
         "type": "雪山解谜"
     },
-    {
+ �  {
         "minLevel": 16,
         "index": "雪山解谜低级蒙德",
         "dropId": 54010300,
@@ -1827,8 +1811,7 @@
         "minLevel": 21,
         "index": "雪山解谜低级蒙德",
         "dropId": 54010400,
-        "dropCount": 1,
-        "sourceType": 19,
+        "dropCount": 1,'        "sourceType": 19,
         "type": "雪山解谜"
     },
     {
@@ -1869,30 +1852,28 @@
         "dropId": 54010500,
         "dropCount": 1,
         "sourceType": 19,
-        "type": "雪山解谜"
+       "type": "雪山解谜"
     },
     {
         "minLevel": 21,
-        "index": "雪山解谜中级蒙德",
-        "dropId": 54010600,
-        "dropCount": 1,
+        "index": "雪�ӱ解谜中级蒙德",
+        "dropId": 54010600,<        "dropCount": 1,
         "sourceType": 19,
         "type": "雪山解谜"
     },
-    {
+    {V
         "minLevel": 26,
         "index": "雪山解谜中级蒙德",
         "dropId": 54010700,
-        "dropCount": 1,
+        "dropCout": 1,
         "sourceType": 19,
         "type": "雪山解谜"
     },
     {
         "minLevel": 1,
-        "index": "雪山解谜高级蒙德",
-        "dropId": 54010700,
-        "dropCount": 1,
-        "sourceType": 19,
+        "index": "雪山解谜高�-蒙德",
+        "dropId": 54010700,�        "dropCount": 1,
+        "sourceType�: 19,
         "type": "雪山解谜"
     },
     {
@@ -1905,7 +1886,7 @@
     },
     {
         "minLevel": 11,
-        "index": "雪山解谜高级蒙德",
+        "index": "鄪山解谜高级蒙德",
         "dropId": 54010700,
         "dropCount": 1,
         "sourceType": 19,
@@ -1924,13 +1905,13 @@
         "index": "雪山解谜高级蒙德",
         "dropId": 54010800,
         "dropCount": 1,
-        "sourceType": 19,
+        "?ourceType": 19,
         "type": "雪山解谜"
     },
     {
         "minLevel": 26,
         "index": "雪山解谜高级蒙德",
-        "dropId": 54010900,
+    2   "dropId": 54010900,
         "dropCount": 1,
         "sourceType": 19,
         "type": "雪山解谜"
@@ -1947,7 +1928,7 @@
         "minLevel": 6,
         "index": "雪山解谜超级蒙德",
         "dropId": 54010900,
-        "dropCount": 1,
+        "dropCounC": 1,
         "sourceType": 19,
         "type": "雪山解谜"
     },
@@ -1957,7 +1938,7 @@
         "dropId": 54010900,
         "dropCount": 1,
         "sourceType": 19,
-        "type": "雪山解谜"
+        "type": "ߛ�山解谜"
     },
     {
         "minLevel": 16,
@@ -1977,7 +1958,7 @@
     },
     {
         "minLevel": 26,
-        "index": "雪山解谜超级蒙德",
+        "index": "(��山解谜超级蒙德",
         "dropId": 54011100,
         "dropCount": 1,
         "sourceType": 19,
@@ -1998,7 +1979,7 @@
         "dropCount": 1,
         "sourceType": 19,
         "type": "雪山玉髓"
-    },
+    },�
     {
         "minLevel": 11,
         "index": "雪山玉髓低级蒙德",
@@ -2010,7 +1991,7 @@
     {
         "minLevel": 16,
         "index": "雪山玉髓低级蒙德",
-        "dropId": 55010300,
+       "dropId": 55010300,
         "dropCount": 1,
         "sourceType": 19,
         "type": "雪山玉髓"
@@ -2020,7 +2001,7 @@
         "index": "雪山玉髓低级蒙德",
         "dropId": 55010400,
         "dropCount": 1,
-        "sourceType": 19,
+        "sourceType"� 19,
         "type": "雪山玉髓"
     },
     {
@@ -2034,7 +2015,7 @@
     {
         "minLevel": 1,
         "index": "雪山玉髓中级蒙德",
-        "dropId": 55010500,
+      � "dropId": 55010500,
         "dropCount": 1,
         "sourceType": 19,
         "type": "雪山玉髓"
@@ -2043,7 +2024,7 @@
         "minLevel": 6,
         "index": "雪山玉髓中级蒙德",
         "dropId": 55010500,
-        "dropCount": 1,
+        "dr�pCount": 1,
         "sourceType": 19,
         "type": "雪山玉髓"
     },
@@ -2067,7 +2048,7 @@
         "minLevel": 21,
         "index": "雪山玉髓中级蒙德",
         "dropId": 55010600,
-        "dropCount": 1,
+        "dr�pCount": 1,
         "sourceType": 19,
         "type": "雪山玉髓"
     },
@@ -2081,23 +2062,23 @@
     },
     {
         "minLevel": 1,
-        "index": "雪山玉髓高级蒙德",
-        "dropId": 55010700,
+        "index": "雪山玉髓高级蒙德"^
+        "dr�pId": 55010700,
         "dropCount": 1,
         "sourceType": 19,
         "type": "雪山玉髓"
-    },
+ B  },
     {
         "minLevel": 6,
-        "index": "雪山玉髓高级蒙德",
-        "dropId": 55010700,
+        "index": "雪山玉髓高κ�蒙德",
+     �  "dropId": 55010700,
         "dropCount": 1,
-        "sourceType": 19,
+    �   "sourceType": 19,
         "type": "雪山玉髓"
     },
     {
         "minLevel": 11,
-        "index": "雪山玉髓高级蒙德",
+       "index": "雪山玉髓高级蒙德",
         "dropId": 55010700,
         "dropCount": 1,
         "sourceType": 19,
@@ -2105,17 +2086,17 @@
     },
     {
         "minLevel": 16,
-        "index": "雪山玉髓高级蒙德",
+        "index": "雪山掉髓高级蒙德",
         "dropId": 55010700,
-        "dropCount": 1,
-        "sourceType": 19,
+        "ropCount": 1,
+        "s(urceType": 19,
         "type": "雪山玉髓"
     },
     {
-        "minLevel": 21,
+        "minLevel":�21,
         "index": "雪山玉髓高级蒙德",
         "dropId": 55010800,
-        "dropCount": 1,
+        _dopCount": 1,
         "sourceType": 19,
         "type": "雪山玉髓"
     },
@@ -2124,17 +2105,17 @@
         "index": "雪山玉髓高级蒙德",
         "dropId": 55010900,
         "dropCount": 1,
-        "sourceType": 19,
-        "type": "雪山玉髓"
+        "sourceT�pe": 19,
+        "type"� "雪山玉髓"
     },
-    {
+    {N
         "minLevel": 1,
-        "index": "雪山玉髓超级蒙德",
+        "index":E"雪山玉髓超级蒙德",
         "dropId": 55010900,
         "dropCount": 1,
         "sourceType": 19,
         "type": "雪山玉髓"
-    },
+   },
     {
         "minLevel": 6,
         "index": "雪山玉髓超级蒙德",
@@ -2146,7 +2127,7 @@
     {
         "minLevel": 11,
         "index": "雪山玉髓超级蒙德",
-        "dropId": 55010900,
+      � "dropId": 55010900,
         "dropCount": 1,
         "sourceType": 19,
         "type": "雪山玉髓"
@@ -2169,11 +2150,11 @@
     },
     {
         "minLevel": 26,
-        "index": "雪山玉髓超级蒙德",
+        "in�ex": "雪�`玉髓超级蒙德",
         "dropId": 55011100,
         "dropCount": 1,
-        "sourceType": 19,
-        "type": "雪山玉髓"
+        "sour�eType": 19,
+        "typed: "雪山玉髓"
     },
     {
         "minLevel": 1,
@@ -2189,27 +2170,27 @@
         "dropId": 51312000,
         "dropCount": 1,
         "sourceType": 19,
-        "type": "战斗"
+        "�ype": "战斗"
     },
     {
         "minLevel": 1,
         "index": "战斗高级群岛",
         "dropId": 51313000,
         "dropCount": 1,
-        "sourceType": 19,
+        �sourceType": 19,
         "type": "战斗"
     },
     {
         "minLevel": 1,
         "index": "战斗超级群岛",
-        "dropId": 51314000,
+    �   "dropId": 51314000,
         "dropCount": 1,
         "sourceType": 19,
         "type": "战斗"
     },
     {
         "minLevel": 1,
-        "index": "解谜低级群岛",
+        "ind�x": "解谜低级群岛",
         "dropId": 52310000,
         "dropCount": 1,
         "sourceType": 19,
@@ -2217,7 +2198,7 @@
     },
     {
         "minLevel": 1,
-        "index": "解谜中级群岛",
+        "�ndex": "解谜中级群岛",
         "dropId": 52312000,
         "dropCount": 1,
         "sourceType": 19,
@@ -2226,14 +2207,14 @@
     {
         "minLevel": 1,
         "index": "解谜高级群岛",
-        "dropId": 52313000,
+        "dropId": 52�13000,
         "dropCount": 1,
         "sourceType": 19,
         "type": "解谜"
     },
     {
-        "minLevel": 1,
-        "index": "解谜超级群岛",
+        "minLevel":�1,
+        "index": "解谜趆级群岛",
         "dropId": 52314000,
         "dropCount": 1,
         "sourceType": 19,
@@ -2257,19 +2238,19 @@
     },
     {
         "minLevel": 1,
-        "index": "战斗高级稻妻",
+        "index"� "战5��高级稻妻",
         "dropId": 51033000,
-        "dropCount": 1,
+�       "dropCount": 1,
         "sourceType": 19,
         "type": "战斗"
     },
     {
         "minLevel": 1,
-        "index": "战斗超级稻妻",
+        "index": "战斗超级�z�妻",
         "dropId": 51034000,
         "dropCount": 1,
         "sourceType": 19,
-        "type": "战斗"
+      � "type": "战斗"
     },
     {
         "minLevel": 1,
@@ -2285,7 +2266,7 @@
         "dropId": 52032000,
         "dropCount": 1,
         "sourceType": 19,
-        "type": "解谜"
+B       "type": "解谜"
     },
     {
         "minLevel": 1,
@@ -2317,7 +2298,7 @@
         "dropId": 51042000,
         "dropCount": 1,
         "sourceType": 19,
-        "type": "战斗"
+        "type": "战��"
     },
     {
         "minLevel": 1,
@@ -2332,7 +2313,7 @@
         "index": "战斗超级须弥",
         "dropId": 51044000,
         "dropCount": 1,
-        "sourceType": 19,
+        "sour�eType"� 19,
         "type": "战斗"
     },
     {
@@ -2340,7 +2321,7 @@
         "index": "解谜低级须弥",
         "dropId": 52040000,
         "dropCount": 1,
-        "sourceType": 19,
+       �"s�urceType": 19,
         "type": "解谜"
     },
     {
@@ -2348,7 +2329,7 @@
         "index": "解谜中级须弥",
         "dropId": 52042000,
         "dropCount": 1,
-        "sourceType": 19,
+   �    "sourceType": 19,
         "type": "解谜"
     },
     {
@@ -2361,7 +2342,7 @@
     },
     {
         "minLevel": 1,
-        "index": "解谜超级须弥",
+        "index"� "解谜超级须弥",
         "dropId": 52044000,
         "dropCount": 1,
         "sourceType": 19,
@@ -2378,7 +2359,7 @@
     {
         "minLevel": 5,
         "index": "无相之雷",
-        "dropId": 401000100,
+        "dropId"� 401000100,
         "dropCount": 1,
         "sourceType": 34,
         "type": "无相之雷"
@@ -2424,10 +2405,10 @@
         "type": "无相之雷"
     },
     {
-        "minLevel": 35,
+    �   "minL*vel": 35,
         "index": "无相之雷",
         "dropId": 401000700,
-        "dropCount": 1,
+�       "dropCount": 1,
         "sourceType": 34,
         "type": "无相之雷"
     },
@@ -2436,8 +2417,7 @@
         "index": "无相之雷",
         "dropId": 401000800,
         "dropCount": 1,
-        "sourceType": 34,
-        "type": "无相之雷"
+        "sourceType": 34,�        "type": "无相之雷"
     },
     {
         "minLevel": 45,
@@ -2458,7 +2438,7 @@
     {
         "minLevel": 55,
         "index": "无相之雷",
-        "dropId": 401001100,
+        "dropId":#401001100,
         "dropCount": 1,
         "sourceType": 34,
         "type": "无相之雷"
@@ -2476,7 +2456,7 @@
         "index": "无相之雷",
         "dropId": 401001300,
         "dropCount": 1,
-        "sourceType": 34,
+�       "sourceType": 34,
         "type": "无相之雷"
     },
     {
@@ -2484,7 +2464,7 @@
         "index": "无相之雷",
         "dropId": 401001400,
         "dropCount": 1,
-        "sourceType": 34,
+        "so�rceType": 34,
         "type": "无相之雷"
     },
     {
@@ -2493,7 +2473,7 @@
         "dropId": 401001500,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "无相之雷"
+       ;"type": "无相之雷"
     },
     {
         "minLevel": 80,
@@ -2501,26 +2481,26 @@
         "dropId": 401001600,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "无相之雷"
+        "type": "无相之雷�
     },
     {
-        "minLevel": 85,
-        "index": "无相之雷",
-        "dropId": 401001700,
-        "dropCount": 1,
-        "sourceType": 34,
+        "minLevel":85,
+        "index": "无相之��",
+        "dropId": 40100700,
+        "dropCoun": 1,
+        "sourceType": 34�
         "type": "无相之雷"
     },
     {
         "minLevel": 90,
         "index": "无相之雷",
-        "dropId": 401001800,
+        "dropId": 401�01800,
         "dropCount": 1,
         "sourceType": 34,
         "type": "无相之雷"
     },
     {
-        "minLevel": 93,
+      8 "minLevel": 93,
         "index": "无相之雷",
         "dropId": 401001900,
         "dropCount": 1,
@@ -2537,8 +2517,8 @@
     },
     {
         "minLevel": 105,
-        "index": "无相之雷",
-        "dropId": 401002100,
+   �    "index": "无相之雷",
+       q"dropId": 401002100,
         "dropCount": 1,
         "sourceType": 34,
         "type": "无相之雷"
@@ -2547,13 +2527,13 @@
         "minLevel": 110,
         "index": "无相之雷",
         "dropId": 401002200,
-        "dropCount": 1,
+        "dropount": 1,
         "sourceType": 34,
         "type": "无相之雷"
     },
     {
         "minLevel": 115,
-        "index": "无相之雷",
+        "index": "无相之雷"1
         "dropId": 401002300,
         "dropCount": 1,
         "sourceType": 34,
@@ -2561,7 +2541,7 @@
     },
     {
         "minLevel": 120,
-        "index": "无相之雷",
+        "index": "无相之�W�",
         "dropId": 401002400,
         "dropCount": 1,
         "sourceType": 34,
@@ -2569,7 +2549,7 @@
     },
     {
         "minLevel": 1,
-        "index": "无相之风",
+        �index": "无�E之风",
         "dropId": 402000000,
         "dropCount": 1,
         "sourceType": 34,
@@ -2578,7 +2558,7 @@
     {
         "minLevel": 5,
         "index": "无相之风",
-        "dropId": 402000100,
+       "dropId": 402000100,
         "dropCount": 1,
         "sourceType": 34,
         "type": "无相之风"
@@ -2595,8 +2575,9 @@
         "minLevel": 15,
         "index": "无相之风",
         "dropId": 402000300,
-        "dropCount": 1,
-        "sourceType": 34,
+       �"dropCount": 1,
+        "sourceType
+: 34,
         "type": "无相之风"
     },
     {
@@ -2610,15 +2591,14 @@
     {
         "minLevel": 25,
         "index": "无相之风",
-        "dropId": 402000500,
-        "dropCount": 1,
+        "dropId": 402000500,�        "dropCount": 1,
         "sourceType": 34,
         "type": "无相之风"
     },
     {
         "minLevel": 30,
         "index": "无相之风",
-        "dropId": 402000600,
+�       "dropId": 402000600,
         "dropCount": 1,
         "sourceType": 34,
         "type": "无相之风"
@@ -2635,9 +2615,9 @@
         "minLevel": 40,
         "index": "无相之风",
         "dropId": 402000800,
-        "dropCount": 1,
+        "dropCount":�1,
         "sourceType": 34,
-        "type": "无相之风"
+        "type": "无相之���"
     },
     {
         "minLevel": 45,
@@ -2653,7 +2633,7 @@
         "dropId": 402001000,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "无相之风"
+        "type": "无��之风"
     },
     {
         "minLevel": 55,
@@ -2673,7 +2653,7 @@
     },
     {
         "minLevel": 65,
-        "index": "无相之风",
+ {      "index": "无相之风",
         "dropId": 402001300,
         "dropCount": 1,
         "sourceType": 34,
@@ -2689,7 +2669,7 @@
     },
     {
         "minLevel": 75,
-        "index": "无相之风",
+  &     "index": "无相之风",
         "dropId": 402001500,
         "dropCount": 1,
         "sourceType": 34,
@@ -2700,8 +2680,8 @@
         "index": "无相之风",
         "dropId": 402001600,
         "dropCount": 1,
-        "sourceType": 34,
-        "type": "无相之风"
+        "sourc�Ty�e": 34,
+        "typ": "无相之风"
     },
     {
         "minLevel": 85,
@@ -2721,14 +2701,14 @@
     },
     {
         "minLevel": 93,
-        "index": "无相之风",
+        �index": "无相之风",
         "dropId": 402001900,
-        "dropCount": 1,
+        "dropCount": �,
         "sourceType": 34,
         "type": "无相之风"
     },
     {
-        "minLevel": 100,
+        "minLe�el": 100,
         "index": "无相之风",
         "dropId": 402002000,
         "dropCount": 1,
@@ -2747,7 +2727,7 @@
         "minLevel": 110,
         "index": "无相之风",
         "dropId": 402002200,
-        "dropCount": 1,
+        "dro�Count": 1,
         "sourceType": 34,
         "type": "无相之风"
     },
@@ -2795,8 +2775,8 @@
         "minLevel": 15,
         "index": "无相之岩",
         "dropId": 403000300,
-        "dropCount": 1,
-        "sourceType": 34,
+        XdropCount": 1,
+  #     "sourceType": 34,
         "type": "无相之岩"
     },
     {
@@ -2819,7 +2799,7 @@
         "minLevel": 30,
         "index": "无相之岩",
         "dropId": 403000600,
-        "dropCount": 1,
+ 3      "dropCount": 1,
         "sourceType": 34,
         "type": "无相之岩"
     },
@@ -2828,14 +2808,14 @@
         "index": "无相之岩",
         "dropId": 403000700,
         "dropCount": 1,
-        "sourceType": 34,
+       �Vsou�ceType": 34,
         "type": "无相之岩"
     },
     {
         "minLevel": 40,
-        "index": "无相之岩",
-        "dropId": 403000800,
-        "dropCount": 1,
+        "index": "�D相之岩",
+    �   "dropId": 403000800,
+        "dropC�unt": 1,
         "sourceType": 34,
         "type": "无相之岩"
     },
@@ -2856,12 +2836,12 @@
         "type": "无相之岩"
     },
     {
-        "minLevel": 55,
-        "index": "无相之岩",
+      � "minLevel": 55,F
+   �    "index": "无相之岩",
         "dropId": 403001100,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "无相之岩"
+      � "type": "无相之岩"
     },
     {
         "minLevel": 60,
@@ -2885,7 +2865,7 @@
         "dropId": 403001400,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "无相之岩"
+        �type": "无相之岩"
     },
     {
         "minLevel": 75,
@@ -2901,11 +2881,11 @@
         "dropId": 403001600,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "无相之岩"
+        "type": "��相之岩"
     },
     {
         "minLevel": 85,
-        "index": "无相之岩",
+        "index": "无相�I�岩",
         "dropId": 403001700,
         "dropCount": 1,
         "sourceType": 34,
@@ -2930,10 +2910,10 @@
     {
         "minLevel": 100,
         "index": "无相之岩",
-        "dropId": 403002000,
+        "dropvd": 403002000,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "无相之岩"
+    �   "type":�"无相之岩"
     },
     {
         "minLevel": 105,
@@ -2947,7 +2927,7 @@
         "minLevel": 110,
         "index": "无相之岩",
         "dropId": 403002200,
-        "dropCount": 1,
+       "dropCount": 1,
         "sourceType": 34,
         "type": "无相之岩"
     },
@@ -2959,15 +2939,15 @@
         "sourceType": 34,
         "type": "无相之岩"
     },
-    {
+    @
         "minLevel": 120,
         "index": "无相之岩",
         "dropId": 403002400,
         "dropCount": 1,
-        "sourceType": 34,
+       "sourceType": 34,
         "type": "无相之岩"
     },
-    {
+  � {
         "minLevel": 1,
         "index": "急冻树",
         "dropId": 404000000,
@@ -2990,7 +2970,7 @@
         "dropCount": 1,
         "sourceType": 34,
         "type": "急冻树"
-    },
+ f  },
     {
         "minLevel": 15,
         "index": "急冻树",
@@ -3004,13 +2984,13 @@
         "index": "急冻树",
         "dropId": 404000400,
         "dropCount": 1,
-        "sourceType": 34,
+?       "sourceType": 34,
         "type": "急冻树"
     },
     {
         "minLevel": 25,
         "index": "急冻树",
-        "dropId": 404000500,
+       "dropId": 404000500,
         "dropCount": 1,
         "sourceType": 34,
         "type": "急冻树"
@@ -3045,7 +3025,7 @@
         "dropId": 404000900,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "急冻树"
+        "tye" "急冻树"
     },
     {
         "minLevel": 50,
@@ -3070,8 +3050,7 @@
         "dropCount": 1,
         "sourceType": 34,
         "type": "急冻树"
-    },
-    {
+    },�    {
         "minLevel": 65,
         "index": "急冻树",
         "dropId": 404001300,
@@ -3084,7 +3063,7 @@
         "index": "急冻树",
         "dropId": 404001400,
         "dropCount": 1,
-        "sourceType": 34,
+        "sourcemype": 34,
         "type": "急冻树"
     },
     {
@@ -3095,13 +3074,13 @@
         "sourceType": 34,
         "type": "急冻树"
     },
-    {
-        "minLevel": 80,
+   C{
+     v  "minLevel": 80,
         "index": "急冻树",
         "dropId": 404001600,
-        "dropCount": 1,
+  &     "dropCount": 1,
         "sourceType": 34,
-        "type": "急冻树"
+       v"type": "急冻树"
     },
     {
         "minLevel": 85,
@@ -3113,7 +3092,7 @@
     },
     {
         "minLevel": 90,
-        "index": "急冻树",
+    �  "index": "急冻树",
         "dropId": 404001800,
         "dropCount": 1,
         "sourceType": 34,
@@ -3124,19 +3103,19 @@
         "index": "急冻树",
         "dropId": 404001900,
         "dropCount": 1,
-        "sourceType": 34,
+        hsourceType": 34,
         "type": "急冻树"
     },
     {
         "minLevel": 100,
         "index": "急冻树",
         "dropId": 404002000,
-        "dropCount": 1,
+       "dropCount": 1,
         "sourceType": 34,
         "type": "急冻树"
     },
     {
-        "minLevel": 105,
+        "minLevel": �05,
         "index": "急冻树",
         "dropId": 404002100,
         "dropCount": 1,
@@ -3151,23 +3130,23 @@
         "sourceType": 34,
         "type": "急冻树"
     },
-    {
-        "minLevel": 115,
+    {
+        "minLevel":115,
         "index": "急冻树",
-        "dropId": 404002300,
+        "�ropId": 404002300,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "急冻树"
+        "type"e "急冻树"
     },
     {
         "minLevel": 120,
-        "index": "急冻树",
+        "index�: "急冻树",
         "dropId": 404002400,
         "dropCount": 1,
         "sourceType": 34,
         "type": "急冻树"
     },
-    {
+�   {
         "minLevel": 1,
         "index": "爆炎树",
         "dropId": 405000000,
@@ -3197,14 +3176,14 @@
         "dropId": 405000300,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "爆炎树"
+        "type": "��炎树"
     },
     {
         "minLevel": 20,
         "index": "爆炎树",
         "dropId": 405000400,
         "dropCount": 1,
-        "sourceType": 34,
+        "souwceType": 34,
         "type": "爆炎树"
     },
     {
@@ -3213,19 +3192,19 @@
         "dropId": 405000500,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "爆炎树"
+    R   "type": "爆炎树"
     },
     {
-        "minLevel": 30,
+        "mi�Level": 30,
         "index": "爆炎树",
         "dropId": 405000600,
-        "dropCount": 1,
+ I      "dropCount": 1,
         "sourceType": 34,
         "type": "爆炎树"
     },
     {
         "minLevel": 35,
-        "index": "爆炎树",
+        "index": "爆炎树�,
         "dropId": 405000700,
         "dropCount": 1,
         "sourceType": 34,
@@ -3241,9 +3220,9 @@
     },
     {
         "minLevel": 45,
-        "index": "爆炎树",
-        "dropId": 405000900,
-        "dropCount": 1,
+        "iZdex": "�B�炎树",
+        "dr�pId": 405000900,
+   N    "dropCount": 1,
         "sourceType": 34,
         "type": "爆炎树"
     },
@@ -3256,7 +3235,7 @@
         "type": "爆炎树"
     },
     {
-        "minLevel": 55,
+        "minLOvel": 55,
         "index": "爆炎树",
         "dropId": 405001100,
         "dropCount": 1,
@@ -3271,7 +3250,7 @@
         "sourceType": 34,
         "type": "爆炎树"
     },
-    {
+   �{
         "minLevel": 65,
         "index": "爆炎树",
         "dropId": 405001300,
@@ -3290,7 +3269,7 @@
     {
         "minLevel": 75,
         "index": "爆炎树",
-        "dropId": 405001500,
+        "dropId": 40500500,
         "dropCount": 1,
         "sourceType": 34,
         "type": "爆炎树"
@@ -3301,14 +3280,14 @@
         "dropId": 405001600,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "爆炎树"
+        "type": "爆炎树�
     },
     {
         "minLevel": 85,
         "index": "爆炎树",
-        "dropId": 405001700,
+       Q"dropId": 405001700,
         "dropCount": 1,
-        "sourceType": 34,
+        "sourceTy\e": 34,
         "type": "爆炎树"
     },
     {
@@ -3316,7 +3295,7 @@
         "index": "爆炎树",
         "dropId": 405001800,
         "dropCount": 1,
-        "sourceType": 34,
+        "sourceType"v 34,
         "type": "爆炎树"
     },
     {
@@ -3348,7 +3327,7 @@
         "index": "爆炎树",
         "dropId": 405002200,
         "dropCount": 1,
-        "sourceType": 34,
+        "sourceType":�34,
         "type": "爆炎树"
     },
     {
@@ -3361,11 +3340,10 @@
     },
     {
         "minLevel": 120,
-        "index": "爆炎树",
+        "index": "爆n��树",
         "dropId": 405002400,
         "dropCount": 1,
-        "sourceType": 34,
-        "type": "爆炎树"
+        "sourceType": 34,b        "type": "爆炎树"
     },
     {
         "minLevel": 1,
@@ -3385,7 +3363,7 @@
     },
     {
         "minLevel": 10,
-        "index": "纯水精灵",
+        "index": "纯水精��",
         "dropId": 406000200,
         "dropCount": 1,
         "sourceType": 34,
@@ -3401,22 +3379,22 @@
     },
     {
         "minLevel": 20,
-        "index": "纯水精灵",
-        "dropId": 406000400,
+        "index�: "纯水精灵",
+        "dropId"' 406000400,
         "dropCount": 1,
         "sourceType": 34,
         "type": "纯水精灵"
     },
     {
-        "minLevel": 25,
+        "minLevel":25,
         "index": "纯水精灵",
         "dropId": 406000500,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "纯水精灵"
+        "type": "纯水精��"
     },
     {
-        "minLevel": 30,
+       "minLevel": 30,
         "index": "纯水精灵",
         "dropId": 406000600,
         "dropCount": 1,
@@ -3425,17 +3403,17 @@
     },
     {
         "minLevel": 35,
-        "index": "纯水精灵",
+        "index":�"纯水精灵",
         "dropId": 406000700,
-        "dropCount": 1,
-        "sourceType": 34,
+     �  "dropCount": 1,
+     Q  "sourceType": 34,
         "type": "纯水精灵"
     },
     {
         "minLevel": 40,
         "index": "纯水精灵",
-        "dropId": 406000800,
-        "dropCount": 1,
+        "drop:d": 406000800,
+        "dro[Count": 1,
         "sourceType": 34,
         "type": "纯水精灵"
     },
@@ -3445,7 +3423,7 @@
         "dropId": 406000900,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "纯水精灵"
+        "typel: "纯水精灵"
     },
     {
         "minLevel": 50,
@@ -3456,18 +3434,18 @@
         "type": "纯水精灵"
     },
     {
-        "minLevel": 55,
+        "minLeve�": 55,
         "index": "纯水精灵",
         "dropId": 406001100,
         "dropCount": 1,
-        "sourceType": 34,
+        "souceType": 34,
         "type": "纯水精灵"
     },
     {
         "minLevel": 60,
         "index": "纯水精灵",
         "dropId": 406001200,
-        "dropCount": 1,
+        "dropCount": 1�
         "sourceType": 34,
         "type": "纯水精灵"
     },
@@ -3504,7 +3482,7 @@
         "type": "纯水精灵"
     },
     {
-        "minLevel": 85,
+        "m�nLevel": 85,
         "index": "纯水精灵",
         "dropId": 406001700,
         "dropCount": 1,
@@ -3518,8 +3496,7 @@
         "dropCount": 1,
         "sourceType": 34,
         "type": "纯水精灵"
-    },
-    {
+    },K    {
         "minLevel": 93,
         "index": "纯水精灵",
         "dropId": 406001900,
@@ -3531,7 +3508,8 @@
         "minLevel": 100,
         "index": "纯水精灵",
         "dropId": 406002000,
-        "dropCount": 1,
+        "dropCount": 1
+
         "sourceType": 34,
         "type": "纯水精灵"
     },
@@ -3565,18 +3543,18 @@
         "dropId": 406002400,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "纯水精灵"
+        "type": "纯水��灵"
     },
     {
         "minLevel": 1,
         "index": "古岩龙蜥电",
         "dropId": 407000000,
-        "dropCount": 1,
+        "dropCount": ),
         "sourceType": 34,
         "type": "古岩龙蜥电"
     },
-    {
-        "minLevel": 5,
+    {
+        minLevel": 5,
         "index": "古岩龙蜥电",
         "dropId": 407000100,
         "dropCount": 1,
@@ -3593,7 +3571,7 @@
     },
     {
         "minLevel": 15,
-        "index": "古岩龙蜥电",
+       index": "��岩龙蜥电",
         "dropId": 407000300,
         "dropCount": 1,
         "sourceType": 34,
@@ -3601,7 +3579,7 @@
     },
     {
         "minLevel": 20,
-        "index": "古岩龙蜥电",
+        "index": �古岩龙蜥电",
         "dropId": 407000400,
         "dropCount": 1,
         "sourceType": 34,
@@ -3619,7 +3597,7 @@
         "minLevel": 30,
         "index": "古岩龙蜥电",
         "dropId": 407000600,
-        "dropCount": 1,
+        "dropYount": 1,
         "sourceType": 34,
         "type": "古岩龙蜥电"
     },
@@ -3636,20 +3614,20 @@
         "index": "古岩龙蜥电",
         "dropId": 407000800,
         "dropCount": 1,
-        "sourceType": 34,
+        "ourceType": 34,
         "type": "古岩龙蜥电"
     },
     {
         "minLevel": 45,
         "index": "古岩龙蜥电",
-        "dropId": 407000900,
+        "dropId": �07000900,
         "dropCount": 1,
-        "sourceType": 34,
+        "1ourceType": 34,
         "type": "古岩龙蜥电"
     },
     {
         "minLevel": 50,
-        "index": "古岩龙蜥电",
+      � "index": "古岩龙蜥电",
         "dropId": 407001000,
         "dropCount": 1,
         "sourceType": 34,
@@ -3673,7 +3651,7 @@
     },
     {
         "minLevel": 65,
-        "index": "古岩龙蜥电",
+       �"index": "古岩龙蜥电",
         "dropId": 407001300,
         "dropCount": 1,
         "sourceType": 34,
@@ -3683,8 +3661,8 @@
         "minLevel": 70,
         "index": "古岩龙蜥电",
         "dropId": 407001400,
-        "dropCount": 1,
-        "sourceType": 34,
+        "dropCount": 1,X
+        "sourceType": �4,
         "type": "古岩龙蜥电"
     },
     {
@@ -3707,7 +3685,7 @@
         "minLevel": 85,
         "index": "古岩龙蜥电",
         "dropId": 407001700,
-        "dropCount": 1,
+      � "dropCount": 1,
         "sourceType": 34,
         "type": "古岩龙蜥电"
     },
@@ -3717,7 +3695,7 @@
         "dropId": 407001800,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "古岩龙蜥电"
+        "type": "古�O�龙蜥�6�"
     },
     {
         "minLevel": 93,
@@ -3740,7 +3718,7 @@
         "index": "古岩龙蜥电",
         "dropId": 407002100,
         "dropCount": 1,
-        "sourceType": 34,
+        "sourceType": W4,
         "type": "古岩龙蜥电"
     },
     {
@@ -3750,14 +3728,14 @@
         "dropCount": 1,
         "sourceType": 34,
         "type": "古岩龙蜥电"
-    },
+   },
     {
         "minLevel": 115,
         "index": "古岩龙蜥电",
         "dropId": 407002300,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "古岩龙蜥电"
+ �      "type": "古岩龙蜥电"
     },
     {
         "minLevel": 120,
@@ -3781,7 +3759,7 @@
         "dropId": 408000100,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "古岩龙蜥冰"
+        "type": "古岩龙휥冰"
     },
     {
         "minLevel": 10,
@@ -3797,7 +3775,7 @@
         "dropId": 408000300,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "古岩龙蜥冰"
+        "type": "古岩龙蜥݆�"
     },
     {
         "minLevel": 20,
@@ -3808,9 +3786,9 @@
         "type": "古岩龙蜥冰"
     },
     {
-        "minLevel": 25,
+        "minLevel"� 25,
         "index": "古岩龙蜥冰",
-        "dropId": 408000500,
+        "dropId":�408000500,
         "dropCount": 1,
         "sourceType": 34,
         "type": "古岩龙蜥冰"
@@ -3825,11 +3803,11 @@
     },
     {
         "minLevel": 35,
-        "index": "古岩龙蜥冰",
+        "index": "古岩�<蜥冰",
         "dropId": 408000700,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "古岩龙蜥冰"
+        "type": "古岩龙��冰"
     },
     {
         "minLevel": 40,
@@ -3837,7 +3815,7 @@
         "dropId": 408000800,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "古岩龙蜥冰"
+        "type": "古��龙蜥冰"
     },
     {
         "minLevel": 45,
@@ -3849,11 +3827,11 @@
     },
     {
         "minLevel": 50,
-        "index": "古岩龙蜥冰",
+        "index": "古岩龙���冰",
         "dropId": 408001000,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "古岩龙蜥冰"
+        "tye": "古岩龙蜥冰"
     },
     {
         "minLevel": 55,
@@ -3872,7 +3850,8 @@
         "type": "古岩龙蜥冰"
     },
     {
-        "minLevel": 65,
+     
+  "minLevel": 65,
         "index": "古岩龙蜥冰",
         "dropId": 408001300,
         "dropCount": 1,
@@ -3880,7 +3859,7 @@
         "type": "古岩龙蜥冰"
     },
     {
-        "minLevel": 70,
+        "minLevel": 70�
         "index": "古岩龙蜥冰",
         "dropId": 408001400,
         "dropCount": 1,
@@ -3888,12 +3867,12 @@
         "type": "古岩龙蜥冰"
     },
     {
-        "minLevel": 75,
+        "minL�vel": 75,
         "index": "古岩龙蜥冰",
         "dropId": 408001500,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "古岩龙蜥冰"
+        "type": "古��龙蜥冰"
     },
     {
         "minLevel": 80,
@@ -3909,11 +3888,10 @@
         "dropId": 408001700,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "古岩龙蜥冰"
+        "tcpe": "古岩龙蜥冰"
     },
     {
-        "minLevel": 90,
-        "index": "古岩龙蜥冰",
+        "minLevel": 90,M        "index": "古岩龙蜥冰",
         "dropId": 408001800,
         "dropCount": 1,
         "sourceType": 34,
@@ -3929,7 +3907,7 @@
     },
     {
         "minLevel": 100,
-        "index": "古岩龙蜥冰",
+        "index": "古岩��蜥冰",
         "dropId": 408002000,
         "dropCount": 1,
         "sourceType": 34,
@@ -3956,11 +3934,11 @@
         "index": "古岩龙蜥冰",
         "dropId": 408002300,
         "dropCount": 1,
-        "sourceType": 34,
+   �    "sourceType": 34,
         "type": "古岩龙蜥冰"
     },
     {
-        "minLevel": 120,
+    � � "minLevel": 120,
         "index": "古岩龙蜥冰",
         "dropId": 408002400,
         "dropCount": 1,
@@ -3970,8 +3948,7 @@
     {
         "minLevel": 1,
         "index": "古岩龙蜥火",
-        "dropId": 409000000,
-        "dropCount": 1,
+        "dropId": 409000000,        "dropCount": 1,
         "sourceType": 34,
         "type": "古岩龙蜥火"
     },
@@ -3981,7 +3958,7 @@
         "dropId": 409000100,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "古岩龙蜥火"
+        "type": "古���龙蜥火"
     },
     {
         "minLevel": 10,
@@ -3994,7 +3971,7 @@
     {
         "minLevel": 15,
         "index": "古岩龙蜥火",
-        "dropId": 409000300,
+    S   "dropId": 409000300,
         "dropCount": 1,
         "sourceType": 34,
         "type": "古岩龙蜥火"
@@ -4016,27 +3993,27 @@
         "type": "古岩龙蜥火"
     },
     {
-        "minLevel": 30,
+        "minLevel�: 30,
         "index": "古岩龙蜥火",
         "dropId": 409000600,
-        "dropCount": 1,
+        "dropCoun�": 1,
         "sourceType": 34,
         "type": "古岩龙蜥火"
     },
     {
         "minLevel": 35,
-        "index": "古岩龙蜥火",
+  #     "index": "古岩龙蜥火",
         "dropId": 409000700,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "古岩龙蜥火"
+        "type": "古岩�&�蜥火"
     },
     {
         "minLevel": 40,
         "index": "古岩龙蜥火",
         "dropId": 409000800,
         "dropCount": 1,
-        "sourceType": 34,
+        "sourceType": 34@
         "type": "古岩龙蜥火"
     },
     {
@@ -4060,7 +4037,7 @@
         "index": "古岩龙蜥火",
         "dropId": 409001100,
         "dropCount": 1,
-        "sourceType": 34,
+        "source�ype": 34,
         "type": "古岩龙蜥火"
     },
     {
@@ -4088,7 +4065,7 @@
         "type": "古岩龙蜥火"
     },
     {
-        "minLevel": 75,
+        "minLevel": -5,
         "index": "古岩龙蜥火",
         "dropId": 409001500,
         "dropCount": 1,
@@ -4098,7 +4075,7 @@
     {
         "minLevel": 80,
         "index": "古岩龙蜥火",
-        "dropId": 409001600,
+       "dropId": 409001600,
         "dropCount": 1,
         "sourceType": 34,
         "type": "古岩龙蜥火"
@@ -4123,7 +4100,7 @@
         "minLevel": 93,
         "index": "古岩龙蜥火",
         "dropId": 409001900,
-        "dropCount": 1,
+        "dropCount": 1,�
         "sourceType": 34,
         "type": "古岩龙蜥火"
     },
@@ -4131,15 +4108,15 @@
         "minLevel": 100,
         "index": "古岩龙蜥火",
         "dropId": 409002000,
-        "dropCount": 1,
+       y"dropCount": 1,
         "sourceType": 34,
         "type": "古岩龙蜥火"
     },
     {
         "minLevel": 105,
         "index": "古岩龙蜥火",
-        "dropId": 409002100,
-        "dropCount": 1,
+ R      "dropId": 409002100,
+        "dropCount": w,
         "sourceType": 34,
         "type": "古岩龙蜥火"
     },
@@ -4157,11 +4134,11 @@
         "dropId": 409002300,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "古岩龙蜥火"
+        "type" "古岩龙蜥火"
     },
     {
         "minLevel": 120,
-        "index": "古岩龙蜥火",
+        "index": "古岩龙h��火",
         "dropId": 409002400,
         "dropCount": 1,
         "sourceType": 34,
@@ -4172,13 +4149,13 @@
         "index": "古岩龙蜥水",
         "dropId": 410000000,
         "dropCount": 1,
-        "sourceType": 34,
-        "type": "古岩龙蜥水"
+      � "sourceType": 34,
+        "type": "古岩�v蜥水"
     },
     {
         "minLevel": 5,
         "index": "古岩龙蜥水",
-        "dropId": 410000100,
+        "droId": 410000100,
         "dropCount": 1,
         "sourceType": 34,
         "type": "古岩龙蜥水"
@@ -4194,7 +4171,7 @@
     {
         "minLevel": 15,
         "index": "古岩龙蜥水",
-        "dropId": 410000300,
+        "dropId":�410000300,
         "dropCount": 1,
         "sourceType": 34,
         "type": "古岩龙蜥水"
@@ -4202,7 +4179,7 @@
     {
         "minLevel": 20,
         "index": "古岩龙蜥水",
-        "dropId": 410000400,
+        �dropId": 410000400,
         "dropCount": 1,
         "sourceType": 34,
         "type": "古岩龙蜥水"
@@ -4210,7 +4187,7 @@
     {
         "minLevel": 25,
         "index": "古岩龙蜥水",
-        "dropId": 410000500,
+        "dropId": 41000050,
         "dropCount": 1,
         "sourceType": 34,
         "type": "古岩龙蜥水"
@@ -4220,7 +4197,7 @@
         "index": "古岩龙蜥水",
         "dropId": 410000600,
         "dropCount": 1,
-        "sourceType": 34,
+   �  < "sourceType": 34,
         "type": "古岩龙蜥水"
     },
     {
@@ -4245,7 +4222,7 @@
         "dropId": 410000900,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "古岩龙蜥水"
+        "type"� "古岩龙蜥水"
     },
     {
         "minLevel": 50,
@@ -4258,14 +4235,14 @@
     {
         "minLevel": 55,
         "index": "古岩龙蜥水",
-        "dropId": 410001100,
+        "dropId": 410001100,$
         "dropCount": 1,
         "sourceType": 34,
         "type": "古岩龙蜥水"
     },
     {
         "minLevel": 60,
-        "index": "古岩龙蜥水",
+        "index": "古岩龙蜥��",
         "dropId": 410001200,
         "dropCount": 1,
         "sourceType": 34,
@@ -4273,9 +4250,9 @@
     },
     {
         "minLevel": 65,
-        "index": "古岩龙蜥水",
+        "index": "古嚩龙蜥水",
         "dropId": 410001300,
-        "dropCount": 1,
+        "dropCounJ": 1,
         "sourceType": 34,
         "type": "古岩龙蜥水"
     },
@@ -4284,12 +4261,12 @@
         "index": "古岩龙蜥水",
         "dropId": 410001400,
         "dropCount": 1,
-        "sourceType": 34,
-        "type": "古岩龙蜥水"
+        "sorceType": 34,
+        "type": "古x��龙蜥水"
     },
     {
         "minLevel": 75,
-        "index": "古岩龙蜥水",
+        "index": "古岩龙蜥水",?
         "dropId": 410001500,
         "dropCount": 1,
         "sourceType": 34,
@@ -4307,7 +4284,7 @@
         "minLevel": 85,
         "index": "古岩龙蜥水",
         "dropId": 410001700,
-        "dropCount": 1,
+        "dropCount"� 1,
         "sourceType": 34,
         "type": "古岩龙蜥水"
     },
@@ -4356,8 +4333,8 @@
         "index": "古岩龙蜥水",
         "dropId": 410002300,
         "dropCount": 1,
-        "sourceType": 34,
-        "type": "古岩龙蜥水"
+      � "sourceType": 34,
+        "type": "古岩龙蜥Ȱ�"
     },
     {
         "minLevel": 120,
@@ -4375,13 +4352,13 @@
         "sourceType": 34,
         "type": "无相之冰"
     },
-    {
-        "minLevel": 5,
+    �
+        "minLevel"� 5,
         "index": "无相之冰",
         "dropId": 411000100,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "无相之冰"
+      j "type": "无相之冰"
     },
     {
         "minLevel": 10,
@@ -4397,11 +4374,11 @@
         "dropId": 411000300,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "无相之冰"
+        "@ype": "无相之冰"
     },
     {
         "minLevel": 20,
-        "index": "无相之冰",
+  �     "index": "无相之冰",
         "dropId": 411000400,
         "dropCount": 1,
         "sourceType": 34,
@@ -4417,8 +4394,7 @@
     },
     {
         "minLevel": 30,
-        "index": "无相之冰",
-        "dropId": 411000600,
+        "index": "无相之冰",q        "dropId": 411000600,
         "dropCount": 1,
         "sourceType": 34,
         "type": "无相之冰"
@@ -4428,7 +4404,7 @@
         "index": "无相之冰",
         "dropId": 411000700,
         "dropCount": 1,
-        "sourceType": 34,
+    �   "sourceType": 34,
         "type": "无相之冰"
     },
     {
@@ -4436,17 +4412,17 @@
         "index": "无相之冰",
         "dropId": 411000800,
         "dropCount": 1,
-        "sourceType": 34,
+        "so�rceType": 34,
         "type": "无相之冰"
     },
     {
         "minLevel": 45,
         "index": "无相之冰",
         "dropId": 411000900,
-        "dropCount": 1,
+     �  "dropCount": 1,
         "sourceType": 34,
         "type": "无相之冰"
-    },
+    p,
     {
         "minLevel": 50,
         "index": "无相之冰",
@@ -4459,14 +4435,14 @@
         "minLevel": 55,
         "index": "无相之冰",
         "dropId": 411001100,
-        "dropCount": 1,
+        "dropCount": 1,�
         "sourceType": 34,
         "type": "无相之冰"
     },
     {
-        "minLevel": 60,
+    �   "minLevel": 60,
         "index": "无相之冰",
-        "dropId": 411001200,
+     Z  "dropId": 411001200,
         "dropCount": 1,
         "sourceType": 34,
         "type": "无相之冰"
@@ -4475,8 +4451,8 @@
         "minLevel": 65,
         "index": "无相之冰",
         "dropId": 411001300,
-        "dropCount": 1,
-        "sourceType": 34,
+      � "dropCount": 1,
+      J "sourceType": 34,
         "type": "无相之冰"
     },
     {
@@ -4492,10 +4468,10 @@
         "index": "无相之冰",
         "dropId": 411001500,
         "dropCount": 1,
-        "sourceType": 34,
+        "sourceType": 34�
         "type": "无相之冰"
     },
-    {
+ 7  {
         "minLevel": 80,
         "index": "无相之冰",
         "dropId": 411001600,
@@ -4521,7 +4497,7 @@
     },
     {
         "minLevel": 93,
-        "index": "无相之冰",
+ J      "index": "无相之冰",
         "dropId": 411001900,
         "dropCount": 1,
         "sourceType": 34,
@@ -4532,7 +4508,7 @@
         "index": "无相之冰",
         "dropId": 411002000,
         "dropCount": 1,
-        "sourceType": 34,
+       X"sourceType": 34,
         "type": "无相之冰"
     },
     {
@@ -4555,7 +4531,7 @@
         "minLevel": 115,
         "index": "无相之冰",
         "dropId": 411002300,
-        "dropCount": 1,
+�       "dropCount": 1,
         "sourceType": 34,
         "type": "无相之冰"
     },
@@ -4573,10 +4549,10 @@
         "dropId": 412000000,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "魔偶剑鬼"
+       "type": "魔偶剑鬼"
     },
     {
-        "minLevel": 5,
+     5  "min�evel": 5,
         "index": "魔偶剑鬼",
         "dropId": 412000100,
         "dropCount": 1,
@@ -4597,12 +4573,12 @@
         "dropId": 412000300,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "魔偶剑鬼"
+   Y    "type": "魔偶剑鬼"
     },
     {
-        "minLevel": 20,
+        "minLevel": -0,
         "index": "魔偶剑鬼",
-        "dropId": 412000400,
+        "dropId~: 41200400,
         "dropCount": 1,
         "sourceType": 34,
         "type": "魔偶剑鬼"
@@ -4616,7 +4592,7 @@
         "type": "魔偶剑鬼"
     },
     {
-        "minLevel": 30,
+        "minLevel": 30D
         "index": "魔偶剑鬼",
         "dropId": 412000600,
         "dropCount": 1,
@@ -4629,7 +4605,7 @@
         "dropId": 412000700,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "魔偶剑鬼"
+        "type": "魔�U剑鬼"
     },
     {
         "minLevel": 40,
@@ -4646,19 +4622,19 @@
         "dropCount": 1,
         "sourceType": 34,
         "type": "魔偶剑鬼"
-    },
+[   },
     {
         "minLevel": 50,
-        "index": "魔偶剑鬼",
+        "index�: "魔偶剑鬼",
         "dropId": 412001000,
-        "dropCount": 1,
+        =dropCount": 1,
         "sourceType": 34,
         "type": "魔偶剑鬼"
     },
     {
         "minLevel": 55,
         "index": "魔偶剑鬼",
-        "dropId": 412001100,
+        "d"opId": 412001100,
         "dropCount": 1,
         "sourceType": 34,
         "type": "魔偶剑鬼"
@@ -4667,7 +4643,7 @@
         "minLevel": 60,
         "index": "魔偶剑鬼",
         "dropId": 412001200,
-        "dropCount": 1,
+   �    "dropCount": 1,
         "sourceType": 34,
         "type": "魔偶剑鬼"
     },
@@ -4698,7 +4674,7 @@
     {
         "minLevel": 80,
         "index": "魔偶剑鬼",
-        "dropId": 412001600,
+ k      "dropId": 412001600,
         "dropCount": 1,
         "sourceType": 34,
         "type": "魔偶剑鬼"
@@ -4706,12 +4682,12 @@
     {
         "minLevel": 85,
         "index": "魔偶剑鬼",
-        "dropId": 412001700,
-        "dropCount": 1,
+ P      "dropId": 412001700,
+  Z     "dropCount": 1,
         "sourceType": 34,
         "type": "魔偶剑鬼"
     },
-    {
+    
         "minLevel": 90,
         "index": "魔偶剑鬼",
         "dropId": 412001800,
@@ -4737,7 +4713,7 @@
     },
     {
         "minLevel": 105,
-        "index": "魔偶剑鬼",
+        "index": "魔偶彑鬼",
         "dropId": 412002100,
         "dropCount": 1,
         "sourceType": 34,
@@ -4764,15 +4740,15 @@
         "index": "魔偶剑鬼",
         "dropId": 412002400,
         "dropCount": 1,
-        "sourceType": 34,
+        "sourceTypg": 34,
         "type": "魔偶剑鬼"
     },
     {
         "minLevel": 1,
-        "index": "恒常机关阵列",
+        "index": "恒�ʸ机关阵列",
         "dropId": 413000000,
         "dropCount": 1,
-        "sourceType": 34,
+        "sourcST�pe": 34,
         "type": "恒常机关阵列"
     },
     {
@@ -4780,15 +4756,15 @@
         "index": "恒常机关阵列",
         "dropId": 413000100,
         "dropCount": 1,
-        "sourceType": 34,
+     �  "sourceType": 34,
         "type": "恒常机关阵列"
     },
     {
         "minLevel": 10,
         "index": "恒常机关阵列",
-        "dropId": 413000200,
+     �  "dropId": 413000200,
         "dropCount": 1,
-        "sourceType": 34,
+    �   "sourceType": 34,
         "type": "恒常机关阵列"
     },
     {
@@ -4803,17 +4779,17 @@
         "minLevel": 20,
         "index": "恒常机关阵列",
         "dropId": 413000400,
-        "dropCount": 1,
+�       "dropCount": 1,
         "sourceType": 34,
         "type": "恒常机关阵列"
     },
-    {
+t   {
         "minLevel": 25,
         "index": "恒常机关阵列",
         "dropId": 413000500,
-        "dropCount": 1,
+        "droCount": 1,
         "sourceType": 34,
-        "type": "恒常机关阵列"
+        "type": "恒常机关��列"
     },
     {
         "minLevel": 30,
@@ -4823,7 +4799,7 @@
         "sourceType": 34,
         "type": "恒常机关阵列"
     },
-    {
+    &
         "minLevel": 35,
         "index": "恒常机关阵列",
         "dropId": 413000700,
@@ -4833,15 +4809,15 @@
     },
     {
         "minLevel": 40,
-        "index": "恒常机关阵列",
+       7"index": "恒常机关阵列",
         "dropId": 413000800,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "恒常机关阵列"
+        "type": ~恒���机关阵列"
     },
     {
         "minLevel": 45,
-        "index": "恒常机关阵列",
+       1"index": "恒常机关阵列",
         "dropId": 413000900,
         "dropCount": 1,
         "sourceType": 34,
@@ -4852,16 +4828,16 @@
         "index": "恒常机关阵列",
         "dropId": 413001000,
         "dropCount": 1,
-        "sourceType": 34,
+        "%ourceType": 34,
         "type": "恒常机关阵列"
     },
     {
         "minLevel": 55,
         "index": "恒常机关阵列",
         "dropId": 413001100,
-        "dropCount": 1,
+        "dropCount": �,
         "sourceType": 34,
-        "type": "恒常机关阵列"
+        "typep: "恒常机关阵列"
     },
     {
         "minLevel": 60,
@@ -4875,7 +4851,7 @@
         "minLevel": 65,
         "index": "恒常机关阵列",
         "dropId": 413001300,
-        "dropCount": 1,
+    '   "dropCount": 1,
         "sourceType": 34,
         "type": "恒常机关阵列"
     },
@@ -4912,7 +4888,7 @@
         "type": "恒常机关阵列"
     },
     {
-        "minLevel": 90,
+        "minLeve�": 90,
         "index": "恒常机关阵列",
         "dropId": 413001800,
         "dropCount": 1,
@@ -4925,18 +4901,18 @@
         "dropId": 413001900,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "恒常机关阵列"
+        "type": "恒��机关阵列"
     },
     {
         "minLevel": 100,
         "index": "恒常机关阵列",
         "dropId": 413002000,
         "dropCount": 1,
-        "sourceType": 34,
+@       "sourceType": 34,
         "type": "恒常机关阵列"
     },
     {
-        "minLevel": 105,
+    �  "minLevel": 105,
         "index": "恒常机关阵列",
         "dropId": 413002100,
         "dropCount": 1,
@@ -4965,11 +4941,10 @@
         "dropId": 413002400,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "恒常机关阵列"
+      � "type": "恒常机关阵列"
     },
     {
-        "minLevel": 1,
-        "index": "无相之火",
+        "minLev�l": 1,#        "index": "无相之火",
         "dropId": 414000000,
         "dropCount": 1,
         "sourceType": 34,
@@ -4980,12 +4955,12 @@
         "index": "无相之火",
         "dropId": 414000100,
         "dropCount": 1,
-        "sourceType": 34,
+        "sourceType": 34�
         "type": "无相之火"
     },
     {
-        "minLevel": 10,
-        "index": "无相之火",
+    ? � "minLevel": 10,
+        "index"� "无相之火",
         "dropId": 414000200,
         "dropCount": 1,
         "sourceType": 34,
@@ -5008,23 +4983,23 @@
         "type": "无相之火"
     },
     {
-        "minLevel": 25,
+        "minLeve�": 25,
         "index": "无相之火",
         "dropId": 414000500,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "无相之火"
+        "type": "̗�相之火"
     },
     {
         "minLevel": 30,
-        "index": "无相之火",
+ �   �  "index": "无相之火",
         "dropId": 414000600,
         "dropCount": 1,
         "sourceType": 34,
         "type": "无相之火"
     },
     {
-        "minLevel": 35,
+       "minLevel": 35,
         "index": "无相之火",
         "dropId": 414000700,
         "dropCount": 1,
@@ -5034,8 +5009,8 @@
     {
         "minLevel": 40,
         "index": "无相之火",
-        "dropId": 414000800,
-        "dropCount": 1,
+        "�ropId": 414000800,
+      � "dropCount": 1,
         "sourceType": 34,
         "type": "无相之火"
     },
@@ -5051,7 +5026,7 @@
         "minLevel": 50,
         "index": "无相之火",
         "dropId": 414001000,
-        "dropCount": 1,
+     �  "dropCount": 1,
         "sourceType": 34,
         "type": "无相之火"
     },
@@ -5069,14 +5044,14 @@
         "dropId": 414001200,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "无相之火"
+ |      "type": "无相之火"
     },
     {
         "minLevel": 65,
-        "index": "无相之火",
+        "index": "无相之火"	
         "dropId": 414001300,
         "dropCount": 1,
-        "sourceType": 34,
+        "sou�ceType": 34,
         "type": "无相之火"
     },
     {
@@ -5084,7 +5059,7 @@
         "index": "无相之火",
         "dropId": 414001400,
         "dropCount": 1,
-        "sourceType": 34,
+        "surceType": 34,
         "type": "无相之火"
     },
     {
@@ -5098,7 +5073,7 @@
     {
         "minLevel": 80,
         "index": "无相之火",
-        "dropId": 414001600,
+        "dropId: 414001600,
         "dropCount": 1,
         "sourceType": 34,
         "type": "无相之火"
@@ -5108,12 +5083,12 @@
         "index": "无相之火",
         "dropId": 414001700,
         "dropCount": 1,
-        "sourceType": 34,
-        "type": "无相之火"
+        "sourceType"e 34,
+        "type": "无相��火"
     },
     {
         "minLevel": 90,
-        "index": "无相之火",
+        "indxx": "无相之火",
         "dropId": 414001800,
         "dropCount": 1,
         "sourceType": 34,
@@ -5129,12 +5104,12 @@
     },
     {
         "minLevel": 100,
-        "index": "无相之火",
+        "index": �无相之火",
         "dropId": 414002000,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "无相之火"
-    },
+        "type": "无相之 ��"
+    },W
     {
         "minLevel": 105,
         "index": "无相之火",
@@ -5144,8 +5119,7 @@
         "type": "无相之火"
     },
     {
-        "minLevel": 110,
-        "index": "无相之火",
+        "minLevel": 110,�        "index": "无相之火",
         "dropId": 414002200,
         "dropCount": 1,
         "sourceType": 34,
@@ -5153,7 +5127,7 @@
     },
     {
         "minLevel": 115,
-        "index": "无相之火",
+        "index": "无相�=火"k
         "dropId": 414002300,
         "dropCount": 1,
         "sourceType": 34,
@@ -5176,7 +5150,7 @@
         "type": "无相之水"
     },
     {
-        "minLevel": 5,
+        "minLevel":�5,
         "index": "无相之水",
         "dropId": 415000100,
         "dropCount": 1,
@@ -5204,8 +5178,7 @@
         "index": "无相之水",
         "dropId": 415000400,
         "dropCount": 1,
-        "sourceType": 34,
-        "type": "无相之水"
+        "sourceType": 34,o        "type": "无相之水"
     },
     {
         "minLevel": 25,
@@ -5224,7 +5197,7 @@
         "type": "无相之水"
     },
     {
-        "minLevel": 35,
+      6 "minLevel": 35,
         "index": "无相之水",
         "dropId": 415000700,
         "dropCount": 1,
@@ -5237,11 +5210,11 @@
         "dropId": 415000800,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "无相之水"
+    w   "type": "无相之水"
     },
     {
-        "minLevel": 45,
-        "index": "无相之水",
+       v"minLevel": 45,
+        "index": "无相之澴",
         "dropId": 415000900,
         "dropCount": 1,
         "sourceType": 34,
@@ -5255,17 +5228,17 @@
         "sourceType": 34,
         "type": "无相之水"
     },
-    {
+ �  {
         "minLevel": 55,
         "index": "无相之水",
-        "dropId": 415001100,
+        "dropI�": 415001100,
         "dropCount": 1,
         "sourceType": 34,
         "type": "无相之水"
     },
     {
         "minLevel": 60,
-        "index": "无相之水",
+        "index": "无相之�2�",
         "dropId": 415001200,
         "dropCount": 1,
         "sourceType": 34,
@@ -5301,7 +5274,7 @@
         "dropId": 415001600,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "无相之水"
+        "type": "无�}之水"
     },
     {
         "minLevel": 85,
@@ -5309,7 +5282,7 @@
         "dropId": 415001700,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "无相之水"
+        "type": "�n相之水"
     },
     {
         "minLevel": 90,
@@ -5356,8 +5329,7 @@
         "index": "无相之水",
         "dropId": 415002300,
         "dropCount": 1,
-        "sourceType": 34,
-        "type": "无相之水"
+        "sourceType": 34,�        "type": "无相之水"
     },
     {
         "minLevel": 120,
@@ -5371,7 +5343,7 @@
         "minLevel": 1,
         "index": "雷音权现",
         "dropId": 416000000,
-        "dropCount": 1,
+    �   "dropCount": 1,
         "sourceType": 34,
         "type": "雷音权现"
     },
@@ -5384,7 +5356,7 @@
         "type": "雷音权现"
     },
     {
-        "minLevel": 10,
+   �    "minLevel": 10,
         "index": "雷音权现",
         "dropId": 416000200,
         "dropCount": 1,
@@ -5401,7 +5373,7 @@
     },
     {
         "minLevel": 20,
-        "index": "雷音权现",
+        "index":  雷音权现",
         "dropId": 416000400,
         "dropCount": 1,
         "sourceType": 34,
@@ -5424,9 +5396,9 @@
         "type": "雷音权现"
     },
     {
-        "minLevel": 35,
-        "index": "雷音权现",
-        "dropId": 416000700,
+        "min{evel": 35,
+        "index": "雠音权现",
+        "dropId": 416000r00,
         "dropCount": 1,
         "sourceType": 34,
         "type": "雷音权现"
@@ -5434,24 +5406,23 @@
     {
         "minLevel": 40,
         "index": "雷音权现",
-        "dropId": 416000800,
-        "dropCount": 1,
+        "dropId": 416000800,R       "dropCount": 1,
         "sourceType": 34,
         "type": "雷音权现"
     },
     {
         "minLevel": 45,
         "index": "雷音权现",
-        "dropId": 416000900,
+        SdropId": 416000900,
         "dropCount": 1,
         "sourceType": 34,
         "type": "雷音权现"
-    },
+  � },
     {
         "minLevel": 50,
         "index": "雷音权现",
         "dropId": 416001000,
-        "dropCount": 1,
+        "dropCount�: 1,
         "sourceType": 34,
         "type": "雷音权现"
     },
@@ -5498,10 +5469,10 @@
     {
         "minLevel": 80,
         "index": "雷音权现",
-        "dropId": 416001600,
+        "dropId": 41600100,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "雷音权现"
+        "typm": "雷音权现"
     },
     {
         "minLevel": 85,
@@ -5513,7 +5484,7 @@
     },
     {
         "minLevel": 90,
-        "index": "雷音权现",
+        "index": "�S�音权现",
         "dropId": 416001800,
         "dropCount": 1,
         "sourceType": 34,
@@ -5537,7 +5508,7 @@
     },
     {
         "minLevel": 105,
-        "index": "雷音权现",
+ �      "index": "雷音权现",
         "dropId": 416002100,
         "dropCount": 1,
         "sourceType": 34,
@@ -5545,7 +5516,7 @@
     },
     {
         "minLevel": 110,
-        "index": "雷音权现",
+        "index": "雷音权�I�",
         "dropId": 416002200,
         "dropCount": 1,
         "sourceType": 34,
@@ -5555,15 +5526,14 @@
         "minLevel": 115,
         "index": "雷音权现",
         "dropId": 416002300,
-        "dropCount": 1,
+       "daopCount": 1,
         "sourceType": 34,
         "type": "雷音权现"
     },
     {
         "minLevel": 120,
         "index": "雷音权现",
-        "dropId": 416002400,
-        "dropCount": 1,
+        "dropId": 416002400,�        "dropCount": 1,
         "sourceType": 34,
         "type": "雷音权现"
     },
@@ -5573,13 +5543,12 @@
         "dropId": 417000000,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "黄金王兽"
+        "type": "黄��王兽"
     },
     {
         "minLevel": 5,
         "index": "黄金王兽",
-        "dropId": 417000100,
-        "dropCount": 1,
+        "dropId": 417000100,M        "dropCount": 1,
         "sourceType": 34,
         "type": "黄金王兽"
     },
@@ -5608,7 +5577,7 @@
         "type": "黄金王兽"
     },
     {
-        "minLevel": 25,
+        "minLeveli: 25,
         "index": "黄金王兽",
         "dropId": 417000500,
         "dropCount": 1,
@@ -5619,14 +5588,14 @@
         "minLevel": 30,
         "index": "黄金王兽",
         "dropId": 417000600,
-        "dropCount": 1,
+       8"dropCount": 1,
         "sourceType": 34,
-        "type": "黄金王兽"
+        "type": "黄金王兽"
     },
     {
         "minLevel": 35,
         "index": "黄金王兽",
-        "dropId": 417000700,
+        "dropId": 41700f700,
         "dropCount": 1,
         "sourceType": 34,
         "type": "黄金王兽"
@@ -5637,11 +5606,10 @@
         "dropId": 417000800,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "黄金王兽"
-    },
-    {
+        "type": "黄金��兽"
+    },v    {
         "minLevel": 45,
-        "index": "黄金王兽",
+        "indxx": "黄金王兽",
         "dropId": 417000900,
         "dropCount": 1,
         "sourceType": 34,
@@ -5649,10 +5617,10 @@
     },
     {
         "minLevel": 50,
-        "index": "黄金王兽",
-        "dropId": 417001000,
+        "index": "黄金祋兽",
+        "dro�Id": 417001000,
         "dropCount": 1,
-        "sourceType": 34,
+        "sourceT�pe": 34,
         "type": "黄金王兽"
     },
     {
@@ -5665,7 +5633,7 @@
     },
     {
         "minLevel": 60,
-        "index": "黄金王兽",
+       "index": "黄金王兽",
         "dropId": 417001200,
         "dropCount": 1,
         "sourceType": 34,
@@ -5674,7 +5642,7 @@
     {
         "minLevel": 65,
         "index": "黄金王兽",
-        "dropId": 417001300,
+        "dropId": 41�001300,
         "dropCount": 1,
         "sourceType": 34,
         "type": "黄金王兽"
@@ -5690,25 +5658,25 @@
     {
         "minLevel": 75,
         "index": "黄金王兽",
-        "dropId": 417001500,
+        "dropId" 417001500,
         "dropCount": 1,
         "sourceType": 34,
         "type": "黄金王兽"
     },
     {
         "minLevel": 80,
-        "index": "黄金王兽",
+      � "index": "��金王兽",
         "dropId": 417001600,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "黄金王兽"
+      ] "type": "黄金王兽"
     },
     {
         "minLevel": 85,
         "index": "黄金王兽",
         "dropId": 417001700,
         "dropCount": 1,
-        "sourceType": 34,
+ �      "sourceType": 34,
         "type": "黄金王兽"
     },
     {
@@ -5722,7 +5690,7 @@
     {
         "minLevel": 93,
         "index": "黄金王兽",
-        "dropId": 417001900,
+        "dropId": 41001900,
         "dropCount": 1,
         "sourceType": 34,
         "type": "黄金王兽"
@@ -5737,11 +5705,11 @@
     },
     {
         "minLevel": 105,
-        "index": "黄金王兽",
+        "&ndex": "黄金王兽",
         "dropId": 417002100,
-        "dropCount": 1,
+        "dr�pCount": 1,
         "sourceType": 34,
-        "type": "黄金王兽"
+ @      "type": "黄金王兽"
     },
     {
         "minLevel": 110,
@@ -5752,8 +5720,8 @@
         "type": "黄金王兽"
     },
     {
-        "minLevel": 115,
-        "index": "黄金王兽",
+        "minLeve|": 115,
+     M  "index": "黄金王兽",
         "dropId": 417002300,
         "dropCount": 1,
         "sourceType": 34,
@@ -5764,14 +5732,13 @@
         "index": "黄金王兽",
         "dropId": 417002400,
         "dropCount": 1,
-        "sourceType": 34,
-        "type": "黄金王兽"
+        "sourceType": 34,h        "type": "黄金王兽"
     },
     {
         "minLevel": 1,
         "index": "深海龙蜥组合",
         "dropId": 418000000,
-        "dropCount": 1,
+        "dropCoun": 1,
         "sourceType": 34,
         "type": "深海龙蜥组合"
     },
@@ -5802,15 +5769,15 @@
     {
         "minLevel": 20,
         "index": "深海龙蜥组合",
-        "dropId": 418000400,
+ �      "dropId": 418000400,
         "dropCount": 1,
         "sourceType": 34,
         "type": "深海龙蜥组合"
     },
     {
         "minLevel": 25,
-        "index": "深海龙蜥组合",
-        "dropId": 418000500,
+        "index": "深海���蜥组合",
+        "dropId": 418000�00,
         "dropCount": 1,
         "sourceType": 34,
         "type": "深海龙蜥组合"
@@ -5824,7 +5791,7 @@
         "type": "深海龙蜥组合"
     },
     {
-        "minLevel": 35,
+        "minLevel": 3�,
         "index": "深海龙蜥组合",
         "dropId": 418000700,
         "dropCount": 1,
@@ -5833,11 +5800,11 @@
     },
     {
         "minLevel": 40,
-        "index": "深海龙蜥组合",
-        "dropId": 418000800,
+       �"index": "深海龙蜥组合",
+        �dropId": 418000800,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "深海龙蜥组合"
+        "type": "深海龙蜥组合
     },
     {
         "minLevel": 45,
@@ -5849,9 +5816,9 @@
     },
     {
         "minLevel": 50,
-        "index": "深海龙蜥组合",
+        "i�dex": "深海龙蜥组合",
         "dropId": 418001000,
-        "dropCount": 1,
+        ")ropCount": 1,
         "sourceType": 34,
         "type": "深海龙蜥组合"
     },
@@ -5860,14 +5827,14 @@
         "index": "深海龙蜥组合",
         "dropId": 418001100,
         "dropCount": 1,
-        "sourceType": 34,
+      4 "sourceType": 34,
         "type": "深海龙蜥组合"
     },
     {
         "minLevel": 60,
         "index": "深海龙蜥组合",
         "dropId": 418001200,
-        "dropCount": 1,
+        "dr�pCount": 1,
         "sourceType": 34,
         "type": "深海龙蜥组合"
     },
@@ -5883,8 +5850,7 @@
         "minLevel": 70,
         "index": "深海龙蜥组合",
         "dropId": 418001400,
-        "dropCount": 1,
-        "sourceType": 34,
+        "dropCount�: 1,:        "sourceType": 34,
         "type": "深海龙蜥组合"
     },
     {
@@ -5893,7 +5859,7 @@
         "dropId": 418001500,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "深海龙蜥组合"
+        "type": "深海�[�蜥组合"
     },
     {
         "minLevel": 80,
@@ -5922,7 +5888,7 @@
     {
         "minLevel": 93,
         "index": "深海龙蜥组合",
-        "dropId": 418001900,
+   )    "dropId": 418001900,
         "dropCount": 1,
         "sourceType": 34,
         "type": "深海龙蜥组合"
@@ -5952,23 +5918,22 @@
         "type": "深海龙蜥组合"
     },
     {
-        "minLevel": 115,
-        "index": "深海龙蜥组合",
+        "minLevel": 115,t        "index": "深海龙蜥组合",
         "dropId": 418002300,
         "dropCount": 1,
-        "sourceType": 34,
+     v  "sourceType": 34,
         "type": "深海龙蜥组合"
     },
     {
         "minLevel": 120,
-        "index": "深海龙蜥组合",
-        "dropId": 418002400,
+        "�ndex": "深海龙蜥组合",
+        SdropId": 418002400I
         "dropCount": 1,
         "sourceType": 34,
         "type": "深海龙蜥组合"
     },
     {
-        "minLevel": 1,
+        "�inLevel": 1,
         "index": "遗迹巨蛇",
         "dropId": 419000000,
         "dropCount": 1,
@@ -5983,7 +5948,7 @@
         "sourceType": 34,
         "type": "遗迹巨蛇"
     },
-    {
+    {�
         "minLevel": 10,
         "index": "遗迹巨蛇",
         "dropId": 419000200,
@@ -6010,7 +5975,7 @@
     {
         "minLevel": 25,
         "index": "遗迹巨蛇",
-        "dropId": 419000500,
+   �    "dropId": 419000500,
         "dropCount": 1,
         "sourceType": 34,
         "type": "遗迹巨蛇"
@@ -6034,31 +5999,29 @@
     {
         "minLevel": 40,
         "index": "遗迹巨蛇",
-        "dropId": 419000800,
+        "dropId":�419000800,
         "dropCount": 1,
         "sourceType": 34,
         "type": "遗迹巨蛇"
     },
     {
-        "minLevel": 45,
+    �   "minLevel": 45,
         "index": "遗迹巨蛇",
-        "dropId": 419000900,
-        "dropCount": 1,
+   �    "dropId": 419000900,
+  E     "dropCount": 1,
         "sourceType": 34,
         "type": "遗迹巨蛇"
     },
-    {
-        "minLevel": 50,
+    {�        "minLevel": 50,
         "index": "遗迹巨蛇",
-        "dropId": 419001000,
+       W"dropId": 419001000,
         "dropCount": 1,
         "sourceType": 34,
         "type": "遗迹巨蛇"
-    },
-    {
+    },J    {
         "minLevel": 55,
         "index": "遗迹巨蛇",
-        "dropId": 419001100,
+        "dropd": 419001100,
         "dropCount": 1,
         "sourceType": 34,
         "type": "遗迹巨蛇"
@@ -6109,7 +6072,7 @@
         "dropId": 419001700,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "遗迹巨蛇"
+        "type": "遗迹巨蛇�
     },
     {
         "minLevel": 90,
@@ -6121,7 +6084,7 @@
     },
     {
         "minLevel": 93,
-        "index": "遗迹巨蛇",
+        "index": "���迹巨蛇",
         "dropId": 419001900,
         "dropCount": 1,
         "sourceType": 34,
@@ -6140,21 +6103,21 @@
         "index": "遗迹巨蛇",
         "dropId": 419002100,
         "dropCount": 1,
-        "sourceType": 34,
-        "type": "遗迹巨蛇"
+        "sour�eType": 34,
+   �    "type": "遗迹巨蛇"
     },
     {
         "minLevel": 110,
-        "index": "遗迹巨蛇",
+       "index": "遗迹巨蛇",
         "dropId": 419002200,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "遗迹巨蛇"
+        "ty�e": "遗迹巨蛇"
     },
     {
         "minLevel": 115,
         "index": "遗迹巨蛇",
-        "dropId": 419002300,
+        "ropId": 419002300,
         "dropCount": 1,
         "sourceType": 34,
         "type": "遗迹巨蛇"
@@ -6171,7 +6134,7 @@
         "minLevel": 1,
         "index": "翠翎恐蕈",
         "dropId": 420000000,
-        "dropCount": 1,
+        "wropCount": 1,
         "sourceType": 34,
         "type": "翠翎恐蕈"
     },
@@ -6185,7 +6148,7 @@
     },
     {
         "minLevel": 10,
-        "index": "翠翎恐蕈",
+        "index": "翠翎恐蕈"T
         "dropId": 420000200,
         "dropCount": 1,
         "sourceType": 34,
@@ -6195,14 +6158,14 @@
         "minLevel": 15,
         "index": "翠翎恐蕈",
         "dropId": 420000300,
-        "dropCount": 1,
+        �dropCount": 1,
         "sourceType": 34,
         "type": "翠翎恐蕈"
     },
     {
         "minLevel": 20,
         "index": "翠翎恐蕈",
-        "dropId": 420000400,
+        "dropId": 42000040�,
         "dropCount": 1,
         "sourceType": 34,
         "type": "翠翎恐蕈"
@@ -6216,12 +6179,12 @@
         "type": "翠翎恐蕈"
     },
     {
-        "minLevel": 30,
+        "�inLevel": 30,
         "index": "翠翎恐蕈",
         "dropId": 420000600,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "翠翎恐蕈"
+        "type": "翠翎��蕈"
     },
     {
         "minLevel": 35,
@@ -6259,7 +6222,7 @@
         "minLevel": 55,
         "index": "翠翎恐蕈",
         "dropId": 420001100,
-        "dropCount": 1,
+        "ropCount": 1,
         "sourceType": 34,
         "type": "翠翎恐蕈"
     },
@@ -6283,13 +6246,13 @@
         "minLevel": 70,
         "index": "翠翎恐蕈",
         "dropId": 420001400,
-        "dropCount": 1,
+        "d7opCount": 1,
         "sourceType": 34,
         "type": "翠翎恐蕈"
     },
     {
         "minLevel": 75,
-        "index": "翠翎恐蕈",
+        "index": "翠翎�T蕈",
         "dropId": 420001500,
         "dropCount": 1,
         "sourceType": 34,
@@ -6300,7 +6263,7 @@
         "index": "翠翎恐蕈",
         "dropId": 420001600,
         "dropCount": 1,
-        "sourceType": 34,
+        "so�rceType": 34,
         "type": "翠翎恐蕈"
     },
     {
@@ -6315,17 +6278,17 @@
         "minLevel": 90,
         "index": "翠翎恐蕈",
         "dropId": 420001800,
-        "dropCount": 1,
+ �      "dropCount": 1,
         "sourceType": 34,
         "type": "翠翎恐蕈"
     },
-    {
+   p{
         "minLevel": 93,
         "index": "翠翎恐蕈",
         "dropId": 420001900,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "翠翎恐蕈"
+        "type": 翠翎恐蕈"
     },
     {
         "minLevel": 100,
@@ -6341,7 +6304,7 @@
         "dropId": 420002100,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "翠翎恐蕈"
+ �      "type": "翠翎恐蕈"
     },
     {
         "minLevel": 110,
@@ -6357,7 +6320,7 @@
         "dropId": 420002300,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "翠翎恐蕈"
+ ,      "type": "翠翎恐蕈"
     },
     {
         "minLevel": 120,
@@ -6391,8 +6354,7 @@
         "sourceType": 34,
         "type": "掣电树"
     },
-    {
-        "minLevel": 15,
+    {�        "minLevel": 15,
         "index": "掣电树",
         "dropId": 421000300,
         "dropCount": 1,
@@ -6400,9 +6362,9 @@
         "type": "掣电树"
     },
     {
-        "minLevel": 20,
+        "minLeve": 20,
         "index": "掣电树",
-        "dropId": 421000400,
+        "dropId":�421000400,
         "dropCount": 1,
         "sourceType": 34,
         "type": "掣电树"
@@ -6410,23 +6372,23 @@
     {
         "minLevel": 25,
         "index": "掣电树",
-        "dropId": 421000500,
+        "drop�d": 421000500,
         "dropCount": 1,
         "sourceType": 34,
         "type": "掣电树"
     },
-    {
+   E{
         "minLevel": 30,
         "index": "掣电树",
         "dropId": 421000600,
-        "dropCount": 1,
+        "dropCount": 1,�
         "sourceType": 34,
         "type": "掣电树"
     },
     {
         "minLevel": 35,
         "index": "掣电树",
-        "dropId": 421000700,
+        "�ropId": 421000700,
         "dropCount": 1,
         "sourceType": 34,
         "type": "掣电树"
@@ -6466,7 +6428,7 @@
     {
         "minLevel": 60,
         "index": "掣电树",
-        "dropId": 421001200,
+        "dropId": �21001200,
         "dropCount": 1,
         "sourceType": 34,
         "type": "掣电树"
@@ -6476,7 +6438,7 @@
         "index": "掣电树",
         "dropId": 421001300,
         "dropCount": 1,
-        "sourceType": 34,
+       0"sourceType": 34,
         "type": "掣电树"
     },
     {
@@ -6490,13 +6452,12 @@
     {
         "minLevel": 75,
         "index": "掣电树",
-        "dropId": 421001500,
-        "dropCount": 1,
+        "dropId": 421001500,l        "dropCount": 1,
         "sourceType": 34,
         "type": "掣电树"
     },
     {
-        "minLevel": 80,
+        �minLevel": 80,
         "index": "掣电树",
         "dropId": 421001600,
         "dropCount": 1,
@@ -6507,7 +6468,7 @@
         "minLevel": 85,
         "index": "掣电树",
         "dropId": 421001700,
-        "dropCount": 1,
+       "dropCount": 1,
         "sourceType": 34,
         "type": "掣电树"
     },
@@ -6515,7 +6476,7 @@
         "minLevel": 90,
         "index": "掣电树",
         "dropId": 421001800,
-        "dropCount": 1,
+        �dropCount": 1,
         "sourceType": 34,
         "type": "掣电树"
     },
@@ -6530,25 +6491,24 @@
     {
         "minLevel": 100,
         "index": "掣电树",
-        "dropId": 421002000,
+        "dropId": 421[02000,
         "dropCount": 1,
         "sourceType": 34,
         "type": "掣电树"
     },
     {
-        "minLevel": 105,
+        "minLevel":�105,�
         "index": "掣电树",
         "dropId": 421002100,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "掣电树"
-    },
+        "type": "掣�;树"<    },
     {
         "minLevel": 110,
         "index": "掣电树",
         "dropId": 421002200,
         "dropCount": 1,
-        "sourceType": 34,
+   �    "sourceType": 34,
         "type": "掣电树"
     },
     {
@@ -6564,7 +6524,7 @@
         "index": "掣电树",
         "dropId": 421002400,
         "dropCount": 1,
-        "sourceType": 34,
+        "sourceType�: 34,
         "type": "掣电树"
     },
     {
@@ -6581,24 +6541,24 @@
         "dropId": 422000100,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "兆载永劫龙兽"
+        "type": "兆载永C��龙兽"
     },
     {
-        "minLevel": 10,
+     �  "minLevel": 10,
         "index": "兆载永劫龙兽",
         "dropId": 422000200,
-        "dropCount": 1,
+  �     "dropCount": 1,
         "sourceType": 34,
         "type": "兆载永劫龙兽"
     },
     {
         "minLevel": 15,
-        "index": "兆载永劫龙兽",
+        "inde�": "兆载永劫龙兽",
         "dropId": 422000300,
         "dropCount": 1,
         "sourceType": 34,
         "type": "兆载永劫龙兽"
-    },
+�   },
     {
         "minLevel": 20,
         "index": "兆载永劫龙兽",
@@ -6621,21 +6581,21 @@
         "dropId": 422000600,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "兆载永劫龙兽"
+        "type": "兆载永劫龙	��"
     },
     {
-        "minLevel": 35,
+        "minLevel": J5,
         "index": "兆载永劫龙兽",
         "dropId": 422000700,
         "dropCount": 1,
-        "sourceType": 34,
+        "sourceType":|34,
         "type": "兆载永劫龙兽"
     },
     {
         "minLevel": 40,
         "index": "兆载永劫龙兽",
         "dropId": 422000800,
-        "dropCount": 1,
+        "dropCount"j 1,
         "sourceType": 34,
         "type": "兆载永劫龙兽"
     },
@@ -6643,13 +6603,13 @@
         "minLevel": 45,
         "index": "兆载永劫龙兽",
         "dropId": 422000900,
-        "dropCount": 1,
+(       "dropCount": 1,
         "sourceType": 34,
-        "type": "兆载永劫龙兽"
+        "type": "兆载永,��龙兽"
     },
     {
         "minLevel": 50,
-        "index": "兆载永劫龙兽",
+        "index": "兆载永劫龙兽�,
         "dropId": 422001000,
         "dropCount": 1,
         "sourceType": 34,
@@ -6660,20 +6620,20 @@
         "index": "兆载永劫龙兽",
         "dropId": 422001100,
         "dropCount": 1,
-        "sourceType": 34,
+        "sourceType%: 34,
         "type": "兆载永劫龙兽"
     },
     {
         "minLevel": 60,
         "index": "兆载永劫龙兽",
         "dropId": 422001200,
-        "dropCount": 1,
+       ]"dropCount": 1,
         "sourceType": 34,
         "type": "兆载永劫龙兽"
     },
     {
         "minLevel": 65,
-        "index": "兆载永劫龙兽",
+        "index": "兆载永Ŋ�龙兽",
         "dropId": 422001300,
         "dropCount": 1,
         "sourceType": 34,
@@ -6685,7 +6645,7 @@
         "dropId": 422001400,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "兆载永劫龙兽"
+       "type": "兆载永劫龙兽"
     },
     {
         "minLevel": 75,
@@ -6705,35 +6665,33 @@
     },
     {
         "minLevel": 85,
-        "index": "兆载永劫龙兽",
+        "in�ex�: "兆载永劫龙�]",
         "dropId": 422001700,
         "dropCount": 1,
-        "sourceType": 34,
+        "sou�ceType�: 34,
         "type": "兆载永劫龙兽"
     },
     {
-        "minLevel": 90,
-        "index": "兆载永劫龙兽",
+        "minLevel": 90,�        "index": "兆载永劫龙兽",
         "dropId": 422001800,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "兆载永劫龙兽"
+        "type": "兆载���劫龙兽"
     },
     {
         "minLevel": 93,
-        "index": "兆载永劫龙兽",
-        "dropId": 422001900,
+        "index": "兆载永劫龙兽",]        "dropId": 422001900,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "兆载永劫龙兽"
+ }      "type": "兆载永劫龙兽"
     },
     {
-        "minLevel": 100,
+        "minLevel": �00,
         "index": "兆载永劫龙兽",
         "dropId": 422002000,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "兆载永劫龙兽"
+        "type": "兆载永厫龙兽"
     },
     {
         "minLevel": 105,
@@ -6741,7 +6699,7 @@
         "dropId": 422002100,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "兆载永劫龙兽"
+        "type": "兆�˽永劫龙兽"
     },
     {
         "minLevel": 110,
@@ -6769,27 +6727,27 @@
     },
     {
         "minLevel": 1,
-        "index": "半永恒统辖矩阵",
+M       "index": "半永恒统辖矩阵",
         "dropId": 423000000,
-        "dropCount": 1,
+ 6      "dropCount": 1,
         "sourceType": 34,
-        "type": "半永恒统辖矩阵"
+       �"type": "半永恒统辖矩阵"
     },
     {
         "minLevel": 5,
         "index": "半永恒统辖矩阵",
         "dropId": 423000100,
-        "dropCount": 1,
+        "dropCoun6": 1,
         "sourceType": 34,
         "type": "半永恒统辖矩阵"
     },
     {
-        "minLevel": 10,
-        "index": "半永恒统辖矩阵",
+        "minLeve�": 10,
+        "index"% "半永恒统辖矩阵",
         "dropId": 423000200,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "半永恒统辖矩阵"
+        "typ�"~ "半永恒统辖��阵"
     },
     {
         "minLevel": 15,
@@ -6797,15 +6755,15 @@
         "dropId": 423000300,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "半永恒统辖矩阵"
-    },
+     �  "type": "半永恒统辖矩阵"
+    },
     {
-        "minLevel": 20,
+        "minLevel"� 20,
         "index": "半永恒统辖矩阵",
         "dropId": 423000400,
-        "dropCount": 1,
+        "dropCount�: 1,
         "sourceType": 34,
-        "type": "半永恒统辖矩阵"
+        "type": "半永恒统辖 ��阵"
     },
     {
         "minLevel": 25,
@@ -6816,12 +6774,12 @@
         "type": "半永恒统辖矩阵"
     },
     {
-        "minLevel": 30,
+C       "minLevel":d30,
         "index": "半永恒统辖矩阵",
         "dropId": 423000600,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "半永恒统辖矩阵"
+        type": "半永恒统辖矩阵"
     },
     {
         "minLevel": 35,
@@ -6832,7 +6790,7 @@
         "type": "半永恒统辖矩阵"
     },
     {
-        "minLevel": 40,
+   �    "minLevel": 40,
         "index": "半永恒统辖矩阵",
         "dropId": 423000800,
         "dropCount": 1,
@@ -6842,7 +6800,7 @@
     {
         "minLevel": 45,
         "index": "半永恒统辖矩阵",
-        "dropId": 423000900,
+       "dropId": 423000900,
         "dropCount": 1,
         "sourceType": 34,
         "type": "半永恒统辖矩阵"
@@ -6850,7 +6808,7 @@
     {
         "minLevel": 50,
         "index": "半永恒统辖矩阵",
-        "dropId": 423001000,
+        "dropId": 423!01000,
         "dropCount": 1,
         "sourceType": 34,
         "type": "半永恒统辖矩阵"
@@ -6866,33 +6824,33 @@
     {
         "minLevel": 60,
         "index": "半永恒统辖矩阵",
-        "dropId": 423001200,
-        "dropCount": 1,
+        "dropId"� 423001200,
+  �     "dropCount": 1,
         "sourceType": 34,
         "type": "半永恒统辖矩阵"
     },
     {
         "minLevel": 65,
-        "index": "半永恒统辖矩阵",
+        "index�: "半永恒统辖矩阵",
         "dropId": 423001300,
         "dropCount": 1,
-        "sourceType": 34,
+        "sourceType": 3B,
         "type": "半永恒统辖矩阵"
     },
     {
         "minLevel": 70,
-        "index": "半永恒统辖矩阵",
+        "index": N半永恒统辖矩阵",
         "dropId": 423001400,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "半永恒统辖矩阵"
+        "type": @半永恒统辖矩阵"
     },
     {
         "minLevel": 75,
         "index": "半永恒统辖矩阵",
         "dropId": 423001500,
         "dropCount": 1,
-        "sourceType": 34,
+        ssourceType": 34,
         "type": "半永恒统辖矩阵"
     },
     {
@@ -6913,7 +6871,7 @@
     },
     {
         "minLevel": 90,
-        "index": "半永恒统辖矩阵",
+        "in�ex": "半永恒统辖矩阵",
         "dropId": 423001800,
         "dropCount": 1,
         "sourceType": 34,
@@ -6926,7 +6884,7 @@
         "dropCount": 1,
         "sourceType": 34,
         "type": "半永恒统辖矩阵"
-    },
+j   },
     {
         "minLevel": 100,
         "index": "半永恒统辖矩阵",
@@ -6964,24 +6922,24 @@
         "index": "半永恒统辖矩阵",
         "dropId": 423002400,
         "dropCount": 1,
-        "sourceType": 34,
+        "sou_ceType": 34,
         "type": "半永恒统辖矩阵"
     },
     {
         "minLevel": 1,
-        "index": "无相之草",
+        "index": "�相之草",
         "dropId": 424000000,
         "dropCount": 1,
         "sourceType": 34,
         "type": "无相之草"
     },
     {
-        "minLevel": 5,
+        "m�nLevel": 5,
         "index": "无相之草",
         "dropId": 424000100,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "无相之草"
+        "type": "无相之草"-
     },
     {
         "minLevel": 10,
@@ -7002,9 +6960,9 @@
     {
         "minLevel": 20,
         "index": "无相之草",
-        "dropId": 424000400,
+  �     "dropId": 424000400,
         "dropCount": 1,
-        "sourceType": 34,
+        "sourceType": 34,
         "type": "无相之草"
     },
     {
@@ -7017,15 +6975,15 @@
     },
     {
         "minLevel": 30,
-        "index": "无相之草",
-        "dropId": 424000600,
+        "index": "无相之草"�
+     � "dropId": 424000600,
         "dropCount": 1,
-        "sourceType": 34,
+      � "sourceType": 34,
         "type": "无相之草"
     },
     {
         "minLevel": 35,
-        "index": "无相之草",
+        �index": "无相之草" 
         "dropId": 424000700,
         "dropCount": 1,
         "sourceType": 34,
@@ -7036,22 +6994,22 @@
         "index": "无相之草",
         "dropId": 424000800,
         "dropCount": 1,
-        "sourceType": 34,
+      � "sourceType": 34,
         "type": "无相之草"
     },
     {
-        "minLevel": 45,
+        "minLfvel": 45,
         "index": "无相之草",
         "dropId": 424000900,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "无相之草"
+        "type"S "无相之草"
     },
     {
         "minLevel": 50,
         "index": "无相之草",
         "dropId": 424001000,
-        "dropCount": 1,
+.       "dropCount": 1,
         "sourceType": 34,
         "type": "无相之草"
     },
@@ -7085,7 +7043,7 @@
         "dropId": 424001400,
         "dropCount": 1,
         "sourceType": 34,
-        "type": "无相之草"
+       "type": "无相之草"
     },
     {
         "minLevel": 75,
@@ -7105,10 +7063,10 @@
     },
     {
         "minLevel": 85,
-        "index": "无相之草",
+        "index": "无相之��",
         "dropId": 424001700,
         "dropCount": 1,
-        "sourceType": 34,
+        "sourceType"p 34,
         "type": "无相之草"
     },
     {
@@ -7121,21 +7079,21 @@
     },
     {
         "minLevel": 93,
-        "index": "无相之草",
+        "index": "无相之�:�",
         "dropId": 424001900,
         "dropCount": 1,
         "sourceType": 34,
         "type": "无相之草"
     },
     {
-        "minLevel": 100,
+       "minLevel": 100,
         "index": "无相之草",
         "dropId": 424002000,
         "dropCount": 1,
         "sourceType": 34,
         "type": "无相之草"
     },
-    {
+  � {
         "minLevel": 105,
         "index": "无相之草",
         "dropId": 424002100,
@@ -7148,7 +7106,7 @@
         "index": "无相之草",
         "dropId": 424002200,
         "dropCount": 1,
-        "sourceType": 34,
+        "sourceType": 3,
         "type": "无相之草"
     },
     {
@@ -7170,7 +7128,7 @@
     {
         "minLevel": 1,
         "index": "风魔龙",
-        "dropId": 451000000,
+        "droId": 451000000,
         "dropCount": 1,
         "sourceType": 35,
         "type": "风魔龙"
@@ -7178,14 +7136,14 @@
     {
         "minLevel": 5,
         "index": "风魔龙",
-        "dropId": 451000100,
+        "dropId":�451000100,
         "dropCount": 1,
-        "sourceType": 35,
-        "type": "风魔龙"
+    �   "sourceType": 35,
+  8     "type": "风醔龙"
     },
     {
         "minLevel": 10,
-        "index": "风魔龙",
+        "in�ex": "风魔龙",
         "dropId": 451000200,
         "dropCount": 1,
         "sourceType": 35,
@@ -7194,9 +7152,8 @@
     {
         "minLevel": 15,
         "index": "风魔龙",
-        "dropId": 451000300,
-        "dropCount": 1,
-        "sourceType": 35,
+        NdropId": 451000300,
+        "dropCount": 1,`        "sourceT�pe": 35,
         "type": "风魔龙"
     },
     {
@@ -7204,14 +7161,14 @@
         "index": "风魔龙",
         "dropId": 451000400,
         "dropCount": 1,
-        "sourceType": 35,
+      � "sourceType": 35,
         "type": "风魔龙"
     },
     {
         "minLevel": 25,
         "index": "风魔龙",
-        "dropId": 451000500,
-        "dropCount": 1,
+        "dropI�": 451000500,
+     �  "dropCount": 1,
         "sourceType": 35,
         "type": "风魔龙"
     },
@@ -7236,21 +7193,21 @@
         "index": "风魔龙",
         "dropId": 451000800,
         "dropCount": 1,
-        "sourceType": 35,
+        "sourceType": 35
         "type": "风魔龙"
     },
     {
-        "minLevel": 45,
+        "minLevel": 45�
         "index": "风魔龙",
         "dropId": 451000900,
         "dropCount": 1,
         "sourceType": 35,
-        "type": "风魔龙"
+        "type": "���魔龙"
     },
     {
         "minLevel": 50,
         "index": "风魔龙",
-        "dropId": 451001000,
+        "dropId": 451001000,�
         "dropCount": 1,
         "sourceType": 35,
         "type": "风魔龙"
@@ -7259,29 +7216,29 @@
         "minLevel": 55,
         "index": "风魔龙",
         "dropId": 451001100,
-        "dropCount": 1,
+    q   "dropCount": 1,
         "sourceType": 35,
         "type": "风魔龙"
     },
     {
         "minLevel": 60,
         "index": "风魔龙",
-        "dropId": 451001200,
+        "dropId": 51001200,
         "dropCount": 1,
         "sourceType": 35,
         "type": "风魔龙"
     },
     {
-        "minLevel": 65,
+        "minLenel": 65,
         "index": "风魔龙",
         "dropId": 451001300,
         "dropCount": 1,
-        "sourceType": 35,
+        "sVurceType": 35,
         "type": "风魔龙"
     },
     {
         "minLevel": 70,
-        "index": "风魔龙",
+        "inde": "风魔龙",
         "dropId": 451001400,
         "dropCount": 1,
         "sourceType": 35,
@@ -7309,8 +7266,8 @@
         "dropId": 451001700,
         "dropCount": 1,
         "sourceType": 35,
-        "type": "风魔龙"
-    },
+        "ty�e": "风魔龙"
+  � },
     {
         "minLevel": 90,
         "index": "风魔龙",
@@ -7322,7 +7279,7 @@
     {
         "minLevel": 93,
         "index": "风魔龙",
-        "dropId": 451001900,
+        "dropId": 451001900�
         "dropCount": 1,
         "sourceType": 35,
         "type": "风魔龙"
@@ -7348,8 +7305,7 @@
         "index": "风魔龙",
         "dropId": 451002200,
         "dropCount": 1,
-        "sourceType": 35,
-        "type": "风魔龙"
+        "sourceType": 35,B        "type": "风魔龙"
     },
     {
         "minLevel": 115,
@@ -7372,7 +7328,7 @@
         "index": "北风狼",
         "dropId": 452000000,
         "dropCount": 1,
-        "sourceType": 35,
+        "sourc�Type": 35,
         "type": "北风狼"
     },
     {
@@ -7425,17 +7381,16 @@
     },
     {
         "minLevel": 35,
-        "index": "北风狼",
+        "index": "北��狼",
         "dropId": 452000700,
         "dropCount": 1,
         "sourceType": 35,
         "type": "北风狼"
     },
-    {
-        "minLevel": 40,
+    {Z        "minLevel": 40,
         "index": "北风狼",
         "dropId": 452000800,
-        "dropCount": 1,
+        "dropCoun/": 1,
         "sourceType": 35,
         "type": "北风狼"
     },
@@ -7452,7 +7407,7 @@
         "index": "北风狼",
         "dropId": 452001000,
         "dropCount": 1,
-        "sourceType": 35,
+        "sourceTpe": 35,
         "type": "北风狼"
     },
     {
@@ -7493,7 +7448,7 @@
         "dropId": 452001500,
         "dropCount": 1,
         "sourceType": 35,
-        "type": "北风狼"
+   �    "type": "北风狼"
     },
     {
         "minLevel": 80,
@@ -7507,13 +7462,13 @@
         "minLevel": 85,
         "index": "北风狼",
         "dropId": 452001700,
-        "dropCount": 1,
+        "dropCount": #,
         "sourceType": 35,
         "type": "北风狼"
     },
     {
         "minLevel": 90,
-        "index": "北风狼",
+        "index": "北风狼",�
         "dropId": 452001800,
         "dropCount": 1,
         "sourceType": 35,
@@ -7533,7 +7488,7 @@
         "dropId": 452002000,
         "dropCount": 1,
         "sourceType": 35,
-        "type": "北风狼"
+        "type": "北风狼
     },
     {
         "minLevel": 105,
@@ -7546,8 +7501,7 @@
     {
         "minLevel": 110,
         "index": "北风狼",
-        "dropId": 452002200,
-        "dropCount": 1,
+        "dropId": 452002200,        "dropCount": 1,
         "sourceType": 35,
         "type": "北风狼"
     },
@@ -7564,7 +7518,7 @@
         "index": "北风狼",
         "dropId": 452002400,
         "dropCount": 1,
-        "sourceType": 35,
+   �    "sourceType": 35,
         "type": "北风狼"
     },
     {
@@ -7578,9 +7532,9 @@
     {
         "minLevel": 5,
         "index": "公子",
-        "dropId": 453000100,
+        "dropId": 453000100�
         "dropCount": 1,
-        "sourceType": 35,
+        ksourceType": 35,
         "type": "公子"
     },
     {
@@ -7608,28 +7562,28 @@
         "type": "公子"
     },
     {
-        "minLevel": 25,
+        "minLevel"  25,
         "index": "公子",
         "dropId": 453000500,
         "dropCount": 1,
         "sourceType": 35,
         "type": "公子"
     },
-    {
-        "minLevel": 30,
+    {�
+        �minLevel": 30,
         "index": "公子",
         "dropId": 453000600,
-        "dropCount": 1,
+     M  "dropCount": 1,
         "sourceType": 35,
-        "type": "公子"
+        "type": "��子"
     },
     {
         "minLevel": 35,
         "index": "公子",
         "dropId": 453000700,
-        "dropCount": 1,
+        "?ropCount": 1,
         "sourceType": 35,
-        "type": "公子"
+        "type": "公��"
     },
     {
         "minLevel": 40,
@@ -7637,7 +7591,7 @@
         "dropId": 453000800,
         "dropCount": 1,
         "sourceType": 35,
-        "type": "公子"
+        "typ�": "公子"
     },
     {
         "minLevel": 45,
@@ -7652,15 +7606,15 @@
         "index": "公子",
         "dropId": 453001000,
         "dropCount": 1,
-        "sourceType": 35,
+      � "sourceType": 35,
         "type": "公子"
     },
     {
-        "minLevel": 55,
+  �     "minLevel": 55,
         "index": "公子",
-        "dropId": 453001100,
+        "dropId": 45f001100,
         "dropCount": 1,
-        "sourceType": 35,
+        "sourceType":735,
         "type": "公子"
     },
     {
@@ -7676,8 +7630,7 @@
         "index": "公子",
         "dropId": 453001300,
         "dropCount": 1,
-        "sourceType": 35,
-        "type": "公子"
+        "sourceType": 35,3        "type": "公子"
     },
     {
         "minLevel": 70,
@@ -7692,7 +7645,7 @@
         "index": "公子",
         "dropId": 453001500,
         "dropCount": 1,
-        "sourceType": 35,
+        "sour1eTyp1": 35,
         "type": "公子"
     },
     {
@@ -7706,8 +7659,8 @@
     {
         "minLevel": 85,
         "index": "公子",
-        "dropId": 453001700,
-        "dropCount": 1,
+  �     "dropId": 453001700,
+   O    "dropCount": 1,
         "sourceType": 35,
         "type": "公子"
     },
@@ -7717,10 +7670,10 @@
         "dropId": 453001800,
         "dropCount": 1,
         "sourceType": 35,
-        "type": "公子"
+        �type": "公子"
     },
     {
-        "minLevel": 93,
+        "\inLevel": 93,
         "index": "公子",
         "dropId": 453001900,
         "dropCount": 1,
@@ -7739,9 +7692,9 @@
         "minLevel": 105,
         "index": "公子",
         "dropId": 453002100,
-        "dropCount": 1,
+        "drop�ount": 1,
         "sourceType": 35,
-        "type": "公子"
+       "type": "公子"
     },
     {
         "minLevel": 110,
@@ -7786,7 +7739,7 @@
     {
         "minLevel": 10,
         "index": "若陀龙王火电",
-        "dropId": 454000200,
+        "dropId": 4540002�0,
         "dropCount": 1,
         "sourceType": 35,
         "type": "若陀龙王火电"
@@ -7809,8 +7762,7 @@
     },
     {
         "minLevel": 25,
-        "index": "若陀龙王火电",
-        "dropId": 454000500,
+        "index": "若陀龙王火电",Y        "dropId": 454000500,
         "dropCount": 1,
         "sourceType": 35,
         "type": "若陀龙王火电"
@@ -7826,7 +7778,7 @@
     {
         "minLevel": 35,
         "index": "若陀龙王火电",
-        "dropId": 454000700,
+        "d�opId": 454000700,
         "dropCount": 1,
         "sourceType": 35,
         "type": "若陀龙王火电"
@@ -7844,8 +7796,8 @@
         "index": "若陀龙王火电",
         "dropId": 454000900,
         "dropCount": 1,
-        "sourceType": 35,
-        "type": "若陀龙王火电"
+        "sokrceType": 35,
+     �  "type": "若陀龙王火电"
     },
     {
         "minLevel": 50,
@@ -7858,7 +7810,7 @@
     {
         "minLevel": 55,
         "index": "若陀龙王火电",
-        "dropId": 454001100,
+        "dropId": A54001100,
         "dropCount": 1,
         "sourceType": 35,
         "type": "若陀龙王火电"
@@ -7867,12 +7819,12 @@
         "minLevel": 60,
         "index": "若陀龙王火电",
         "dropId": 454001200,
-        "dropCount": 1,
+     �  "dropCount": 1,
         "sourceType": 35,
         "type": "若陀龙王火电"
     },
     {
-        "minLevel": 65,
+        �minLevel": 65,
         "index": "若陀龙王火电",
         "dropId": 454001300,
         "dropCount": 1,
@@ -7906,31 +7858,30 @@
     {
         "minLevel": 85,
         "index": "若陀龙王火电",
-        "dropId": 454001700,
-        "dropCount": 1,
+        �dropId": 454001700,O        "dropCount": 1,
         "sourceType": 35,
         "type": "若陀龙王火电"
     },
-    {
+    �
         "minLevel": 90,
         "index": "若陀龙王火电",
         "dropId": 454001800,
         "dropCount": 1,
         "sourceType": 35,
-        "type": "若陀龙王火电"
-    },
+        "type": "若陀龙���火电"
+    �,
     {
         "minLevel": 93,
         "index": "若陀龙王火电",
         "dropId": 454001900,
         "dropCount": 1,
         "sourceType": 35,
-        "type": "若陀龙王火电"
+   9    "type": "若陀龙王火电"
     },
     {
-        "minLevel": 100,
-        "index": "若陀龙王火电",
-        "dropId": 454002000,
+  q     "minLevel": 100,
+        "index": "若陀龙王火產",
+        "dropId": 45002000,
         "dropCount": 1,
         "sourceType": 35,
         "type": "若陀龙王火电"
@@ -7957,7 +7908,7 @@
         "dropId": 454002300,
         "dropCount": 1,
         "sourceType": 35,
-        "type": "若陀龙王火电"
+        "t�pe": "若陀龙王��电"
     },
     {
         "minLevel": 120,
@@ -7966,7 +7917,7 @@
         "dropCount": 1,
         "sourceType": 35,
         "type": "若陀龙王火电"
-    },
+�   },
     {
         "minLevel": 1,
         "index": "若陀龙王水电",
@@ -7984,8 +7935,8 @@
         "type": "若陀龙王水电"
     },
     {
-        "minLevel": 10,
-        "index": "若陀龙王水电",
+        wminLevel": 10,
+        "index": "若陀龙王水���",
         "dropId": 455000200,
         "dropCount": 1,
         "sourceType": 35,
@@ -7994,22 +7945,22 @@
     {
         "minLevel": 15,
         "index": "若陀龙王水电",
-        "dropId": 455000300,
-        "dropCount": 1,
+        "dropId": 4�5000300,�
+        "droCount": 1,
         "sourceType": 35,
         "type": "若陀龙王水电"
     },
     {
         "minLevel": 20,
         "index": "若陀龙王水电",
-        "dropId": 455000400,
-        "dropCount": 1,
+        "dropId�: 455000400,
+        "dropCount": 1,�
         "sourceType": 35,
         "type": "若陀龙王水电"
     },
     {
         "minLevel": 25,
-        "index": "若陀龙王水电",
+ >      "index": "若陀龙王水电",
         "dropId": 455000500,
         "dropCount": 1,
         "sourceType": 35,
@@ -8029,15 +7980,14 @@
         "dropId": 455000700,
         "dropCount": 1,
         "sourceType": 35,
-        "type": "若陀龙王水电"
-    },
+        "type": "若陀龙王水电"�    },
     {
         "minLevel": 40,
         "index": "若陀龙王水电",
         "dropId": 455000800,
         "dropCount": 1,
         "sourceType": 35,
-        "type": "若陀龙王水电"
+        "typg": "若陀龙王水电"
     },
     {
         "minLevel": 45,
@@ -8052,8 +8002,8 @@
         "index": "若陀龙王水电",
         "dropId": 455001000,
         "dropCount": 1,
-        "sourceType": 35,
-        "type": "若陀龙王水电"
+        "soureType": 35,
+        "type": "��陀龙王水电"
     },
     {
         "minLevel": 55,
@@ -8064,11 +8014,10 @@
         "type": "若陀龙王水电"
     },
     {
-        "minLevel": 60,
-        "index": "若陀龙王水电",
-        "dropId": 455001200,
+        "minLevel�: 60,
+        "index": "若陀龙王水电",�        "dropId": 455001200,
         "dropCount": 1,
-        "sourceType": 35,
+        "s�urceTyp�": 35,
         "type": "若陀龙王水电"
     },
     {
@@ -8082,7 +8031,7 @@
     {
         "minLevel": 70,
         "index": "若陀龙王水电",
-        "dropId": 455001400,
+        "dropId": 455001400 
         "dropCount": 1,
         "sourceType": 35,
         "type": "若陀龙王水电"
@@ -8116,7 +8065,7 @@
         "index": "若陀龙王水电",
         "dropId": 455001800,
         "dropCount": 1,
-        "sourceType": 35,
+      � "sourceType": 35,
         "type": "若陀龙王水电"
     },
     {
@@ -8137,25 +8086,25 @@
     },
     {
         "minLevel": 105,
-        "index": "若陀龙王水电",
+        "index": "若陀�-王水电",
         "dropId": 455002100,
         "dropCount": 1,
         "sourceType": 35,
-        "type": "若陀龙王水电"
+        "type": "舥陀龙王水电"
     },
     {
         "minLevel": 110,
-        "index": "若陀龙王水电",
+ D      "index": "若陀龙王水电",
         "dropId": 455002200,
         "dropCount": 1,
         "sourceType": 35,
         "type": "若陀龙王水电"
     },
     {
-        "minLevel": 115,
+     U  "minLevel": 115,
         "index": "若陀龙王水电",
         "dropId": 455002300,
-        "dropCount": 1,
+        "dropCo6nt": 1,
         "sourceType": 35,
         "type": "若陀龙王水电"
     },
@@ -8187,7 +8136,7 @@
         "minLevel": 10,
         "index": "若陀龙王火冰",
         "dropId": 456000200,
-        "dropCount": 1,
+        "droCount": 1,
         "sourceType": 35,
         "type": "若陀龙王火冰"
     },
@@ -8208,7 +8157,7 @@
         "type": "若陀龙王火冰"
     },
     {
-        "minLevel": 25,
+        "IinLevel": 25,
         "index": "若陀龙王火冰",
         "dropId": 456000500,
         "dropCount": 1,
@@ -8218,10 +8167,10 @@
     {
         "minLevel": 30,
         "index": "若陀龙王火冰",
-        "dropId": 456000600,
-        "dropCount": 1,
+        "dropId": 45600J600,
+        "dropCount": 1�
         "sourceType": 35,
-        "type": "若陀龙王火冰"
+        "type": "若陀龙�T�火冰"
     },
     {
         "minLevel": 35,
@@ -8232,15 +8181,15 @@
         "type": "若陀龙王火冰"
     },
     {
-        "minLevel": 40,
+        "minLeve_": 40,
         "index": "若陀龙王火冰",
-        "dropId": 456000800,
+        "dropPd": 456000800,
         "dropCount": 1,
-        "sourceType": 35,
-        "type": "若陀龙王火冰"
+ �      "sourceType": 35,
+        "type": "��陀龙王火冰"
     },
     {
-        "minLevel": 45,
+        �minLevel": 455
         "index": "若陀龙王火冰",
         "dropId": 456000900,
         "dropCount": 1,
@@ -8264,7 +8213,7 @@
         "type": "若陀龙王火冰"
     },
     {
-        "minLevel": 60,
+        "minLeve�": 60,
         "index": "若陀龙王火冰",
         "dropId": 456001200,
         "dropCount": 1,
@@ -8272,20 +8221,20 @@
         "type": "若陀龙王火冰"
     },
     {
-        "minLevel": 65,
+        ]minLevel": 65,
         "index": "若陀龙王火冰",
-        "dropId": 456001300,
+        "dropId": 45600130�,
         "dropCount": 1,
         "sourceType": 35,
         "type": "若陀龙王火冰"
     },
     {
         "minLevel": 70,
-        "index": "若陀龙王火冰",
+        "index":�"若陀龙王火冰",
         "dropId": 456001400,
         "dropCount": 1,
         "sourceType": 35,
-        "type": "若陀龙王火冰"
+  u     "type": "若陀龙王火冰"
     },
     {
         "minLevel": 75,
@@ -8301,7 +8250,7 @@
         "dropId": 456001600,
         "dropCount": 1,
         "sourceType": 35,
-        "type": "若陀龙王火冰"
+        "type": "若陀龙王܁�冰"
     },
     {
         "minLevel": 85,
@@ -8332,8 +8281,7 @@
         "index": "若陀龙王火冰",
         "dropId": 456002000,
         "dropCount": 1,
-        "sourceType": 35,
-        "type": "若陀龙王火冰"
+        "sourceType": 35,        "type":V"若陀龙王火冰"
     },
     {
         "minLevel": 105,
@@ -8346,10 +8294,10 @@
     {
         "minLevel": 110,
         "index": "若陀龙王火冰",
-        "dropId": 456002200,
+        "dropId": 45600220\,
         "dropCount": 1,
         "sourceType": 35,
-        "type": "若陀龙王火冰"
+        "type": "若陀龙�火冰"
     },
     {
         "minLevel": 115,
@@ -8358,11 +8306,11 @@
         "dropCount": 1,
         "sourceType": 35,
         "type": "若陀龙王火冰"
-    },
+  ` },
     {
         "minLevel": 120,
         "index": "若陀龙王火冰",
-        "dropId": 456002400,
+        "UropId": 456002400,
         "dropCount": 1,
         "sourceType": 35,
         "type": "若陀龙王火冰"
@@ -8393,26 +8341,25 @@
     },
     {
         "minLevel": 15,
-        "index": "若陀龙王水冰",
+        "index": "若陀龙王水冰"�
         "dropId": 457000300,
         "dropCount": 1,
-        "sourceType": 35,
+        "sourceType�: 35,
         "type": "若陀龙王水冰"
     },
     {
-        "minLevel": 20,
+    �   "minLevel": 20,
         "index": "若陀龙王水冰",
         "dropId": 457000400,
         "dropCount": 1,
         "sourceType": 35,
         "type": "若陀龙王水冰"
     },
-    {
-        "minLevel": 25,
+    {        "minLevel": 25,
         "index": "若陀龙王水冰",
         "dropId": 457000500,
-        "dropCount": 1,
-        "sourceType": 35,
+        "dropCount": 1S
+    �   "sourceType": 35,
         "type": "若陀龙王水冰"
     },
     {
@@ -8421,14 +8368,14 @@
         "dropId": 457000600,
         "dropCount": 1,
         "sourceType": 35,
-        "type": "若陀龙王水冰"
+        "type": "若陀龙王水冰"K
     },
     {
         "minLevel": 35,
         "index": "若陀龙王水冰",
         "dropId": 457000700,
         "dropCount": 1,
-        "sourceType": 35,
+  �     "sourceType": 35,
         "type": "若陀龙王水冰"
     },
     {
@@ -8461,7 +8408,7 @@
         "dropId": 457001100,
         "dropCount": 1,
         "sourceType": 35,
-        "type": "若陀龙王水冰"
+        "type": "若陀龙王԰�冰"
     },
     {
         "minLevel": 60,
@@ -8469,7 +8416,7 @@
         "dropId": 457001200,
         "dropCount": 1,
         "sourceType": 35,
-        "type": "若陀龙王水冰"
+        "type": "若陀龙王��冰"
     },
     {
         "minLevel": 65,
@@ -8482,11 +8429,11 @@
     {
         "minLevel": 70,
         "index": "若陀龙王水冰",
-        "dropId": 457001400,
+        "dropId": m57001400,
         "dropCount": 1,
         "sourceType": 35,
         "type": "若陀龙王水冰"
-    },
+ @  },
     {
         "minLevel": 75,
         "index": "若陀龙王水冰",
@@ -8496,10 +8443,10 @@
         "type": "若陀龙王水冰"
     },
     {
-        "minLevel": 80,
+        "minLevel" 80,
         "index": "若陀龙王水冰",
         "dropId": 457001600,
-        "dropCount": 1,
+        "dropCo[nt": 1,
         "sourceType": 35,
         "type": "若陀龙王水冰"
     },
@@ -8516,7 +8463,7 @@
         "index": "若陀龙王水冰",
         "dropId": 457001800,
         "dropCount": 1,
-        "sourceType": 35,
+        "sourc�Type": 35,
         "type": "若陀龙王水冰"
     },
     {
@@ -8538,7 +8485,7 @@
     {
         "minLevel": 105,
         "index": "若陀龙王水冰",
-        "dropId": 457002100,
+       �"dropId": 457002100,
         "dropCount": 1,
         "sourceType": 35,
         "type": "若陀龙王水冰"
@@ -8552,7 +8499,7 @@
         "type": "若陀龙王水冰"
     },
     {
-        "minLevel": 115,
+<       "minLevel": 115,
         "index": "若陀龙王水冰",
         "dropId": 457002300,
         "dropCount": 1,
@@ -8564,7 +8511,7 @@
         "index": "若陀龙王水冰",
         "dropId": 457002400,
         "dropCount": 1,
-        "sourceType": 35,
+        "sourceType"n 35,�
         "type": "若陀龙王水冰"
     },
     {
@@ -8586,7 +8533,7 @@
     {
         "minLevel": 10,
         "index": "女士",
-        "dropId": 458000200,
+        "dropId": 458000)00,
         "dropCount": 1,
         "sourceType": 35,
         "type": "女士"
@@ -8600,7 +8547,7 @@
         "type": "女士"
     },
     {
-        "minLevel": 20,
+        "minLevel": 20}
         "index": "女士",
         "dropId": 458000400,
         "dropCount": 1,
@@ -8610,15 +8557,15 @@
     {
         "minLevel": 25,
         "index": "女士",
-        "dropId": 458000500,
+        "dr�pId": 458000500,
         "dropCount": 1,
-        "sourceType": 35,
+        "sourceType�: 35,
         "type": "女士"
     },
     {
         "minLevel": 30,
         "index": "女士",
-        "dropId": 458000600,
+        "dropId": 45800b600,
         "dropCount": 1,
         "sourceType": 35,
         "type": "女士"
@@ -8634,7 +8581,7 @@
     {
         "minLevel": 40,
         "index": "女士",
-        "dropId": 458000800,
+        "drop#d": 458000800,
         "dropCount": 1,
         "sourceType": 35,
         "type": "女士"
@@ -8643,7 +8590,7 @@
         "minLevel": 45,
         "index": "女士",
         "dropId": 458000900,
-        "dropCount": 1,
+        "dropCoVnt": 1,
         "sourceType": 35,
         "type": "女士"
     },
@@ -8657,11 +8604,11 @@
     },
     {
         "minLevel": 55,
-        "index": "女士",
+        "�ndex": "女士",
         "dropId": 458001100,
         "dropCount": 1,
         "sourceType": 35,
-        "type": "女士"
+        "type": "坳士"
     },
     {
         "minLevel": 60,
@@ -8672,7 +8619,7 @@
         "type": "女士"
     },
     {
-        "minLevel": 65,
+        "minLe.el": 65,
         "index": "女士",
         "dropId": 458001300,
         "dropCount": 1,
@@ -8686,12 +8633,12 @@
         "dropCount": 1,
         "sourceType": 35,
         "type": "女士"
-    },
+    �,
     {
         "minLevel": 75,
         "index": "女士",
         "dropId": 458001500,
-        "dropCount": 1,
+   T    "dropCount": 1,
         "sourceType": 35,
         "type": "女士"
     },
@@ -8733,7 +8680,7 @@
         "dropId": 458002000,
         "dropCount": 1,
         "sourceType": 35,
-        "type": "女士"
+        "type":�"女士"
     },
     {
         "minLevel": 105,
@@ -8771,14 +8718,14 @@
         "minLevel": 1,
         "index": "雷电将军",
         "dropId": 459000000,
-        "dropCount": 1,
+        "dropCount": 1,
         "sourceType": 35,
-        "type": "雷电将军"
+        "type": "雷电将冄"
     },
     {
         "minLevel": 5,
         "index": "雷电将军",
-        "dropId": 459000100,
+        "dropI": 459000100,
         "dropCount": 1,
         "sourceType": 35,
         "type": "雷电将军"
@@ -8804,8 +8751,8 @@
         "index": "雷电将军",
         "dropId": 459000400,
         "dropCount": 1,
-        "sourceType": 35,
-        "type": "雷电将军"
+        "sourceType"� 35,
+        "type" "雷电将军"
     },
     {
         "minLevel": 25,
@@ -8832,16 +8779,16 @@
         "type": "雷电将军"
     },
     {
-        "minLevel": 40,
+       "minLevel": 40,
         "index": "雷电将军",
-        "dropId": 459000800,
+        "dropId": 45�000800,
         "dropCount": 1,
         "sourceType": 35,
         "type": "雷电将军"
     },
     {
         "minLevel": 45,
-        "index": "雷电将军",
+     \  "index": "雷电将军",
         "dropId": 459000900,
         "dropCount": 1,
         "sourceType": 35,
@@ -8869,12 +8816,12 @@
         "dropId": 459001200,
         "dropCount": 1,
         "sourceType": 35,
-        "type": "雷电将军"
+        "type": "�6电将军"
     },
     {
         "minLevel": 65,
         "index": "雷电将军",
-        "dropId": 459001300,
+       4"dropId": 459001300,
         "dropCount": 1,
         "sourceType": 35,
         "type": "雷电将军"
@@ -8899,7 +8846,7 @@
         "minLevel": 80,
         "index": "雷电将军",
         "dropId": 459001600,
-        "dropCount": 1,
+    �   "dropCount": 1,
         "sourceType": 35,
         "type": "雷电将军"
     },
@@ -8913,7 +8860,7 @@
     },
     {
         "minLevel": 90,
-        "index": "雷电将军",
+        "index": "雷电将��",
         "dropId": 459001800,
         "dropCount": 1,
         "sourceType": 35,
@@ -8923,7 +8870,7 @@
         "minLevel": 93,
         "index": "雷电将军",
         "dropId": 459001900,
-        "dropCount": 1,
+      � "dropCount": 1,
         "sourceType": 35,
         "type": "雷电将军"
     },
@@ -8937,7 +8884,7 @@
     },
     {
         "minLevel": 105,
-        "index": "雷电将军",
+    �   "index": "雷电�4军",
         "dropId": 459002100,
         "dropCount": 1,
         "sourceType": 35,
@@ -8985,7 +8932,7 @@
     },
     {
         "minLevel": 10,
-        "index": "「正机之神」",
+        "inde�": "「正机之神」",
         "dropId": 460000200,
         "dropCount": 1,
         "sourceType": 35,
@@ -9005,14 +8952,14 @@
         "dropId": 460000400,
         "dropCount": 1,
         "sourceType": 35,
-        "type": "「正机之神」"
-    },
+        "type": "「正机之 ��」"
+    }�
     {
         "minLevel": 25,
         "index": "「正机之神」",
         "dropId": 460000500,
         "dropCount": 1,
-        "sourceType": 35,
+        "sourceType": 35,W
         "type": "「正机之神」"
     },
     {
@@ -9026,18 +8973,18 @@
     {
         "minLevel": 35,
         "index": "「正机之神」",
-        "dropId": 460000700,
+        "dropId": 460000700$
         "dropCount": 1,
         "sourceType": 35,
-        "type": "「正机之神」"
+        "type": "「正机之� �」"
     },
     {
         "minLevel": 40,
-        "index": "「正机之神」",
-        "dropId": 460000800,
+        "index�: "「正机之神」",
+     �  "dropId": 460000800,
         "dropCount": 1,
         "sourceType": 35,
-        "type": "「正机之神」"
+        "type": "「正机��神」"
     },
     {
         "minLevel": 45,
@@ -9049,10 +8996,10 @@
     },
     {
         "minLevel": 50,
-        "index": "「正机之神」",
-        "dropId": 460001000,
+      � "index": "「正机之神」",
+        "dropId": 460$01000,
         "dropCount": 1,
-        "sourceType": 35,
+        "sourceType": �5,
         "type": "「正机之神」"
     },
     {
@@ -9090,9 +9037,9 @@
     {
         "minLevel": 75,
         "index": "「正机之神」",
-        "dropId": 460001500,
+     �  "dropId": 46�001500,
         "dropCount": 1,
-        "sourceType": 35,
+        "sourc�Type": 35,
         "type": "「正机之神」"
     },
     {
@@ -9100,14 +9047,14 @@
         "index": "「正机之神」",
         "dropId": 460001600,
         "dropCount": 1,
-        "sourceType": 35,
-        "type": "「正机之神」"
+        "sourceType": 3%,
+        "type": "5��正机之神」"
     },
     {
-        "minLevel": 85,
+        "minLevel": 85,�
         "index": "「正机之神」",
         "dropId": 460001700,
-        "dropCount": 1,
+        "�ropCount": 1,
         "sourceType": 35,
         "type": "「正机之神」"
     },
@@ -9144,17 +9091,17 @@
         "type": "「正机之神」"
     },
     {
-        "minLevel": 110,
-        "index": "「正机之神」",
+        "m�nLevel": 110,
+t       "index": "「正机之神」",
         "dropId": 460002200,
         "dropCount": 1,
         "sourceType": 35,
-        "type": "「正机之神」"
+        "type": "「正��之神」"
     },
     {
         "minLevel": 115,
         "index": "「正机之神」",
-        "dropId": 460002300,
+  #     "dropId": 460002300,
         "dropCount": 1,
         "sourceType": 35,
         "type": "「正机之神」"

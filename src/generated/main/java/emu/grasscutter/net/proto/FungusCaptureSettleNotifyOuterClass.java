@@ -10,39 +10,39 @@ public final class FungusCaptureSettleNotifyOuterClass {
   }
 
   public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
+      co.google.protobuf.ExtensionRegistry registry) {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  public interface FungusCaptureSettleNotifyOrBuilder extends
+Ã public interface FungusCaptureSettleNotifyOrBuilder extends
       // @@protoc_insertion_point(interface_extends:FungusCaptureSettleNotify)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool is_success = 11;</code>
+     * <code>bool is_success = 11;</code>ù
      * @return The isSuccess.
      */
     boolean getIsSuccess();
   }
   /**
    * <pre>
-   * CmdId: 26783
+   * CmdId: 267˙3
    * Obf: KJAPNBDNNMI
    * </pre>
    *
    * Protobuf type {@code FungusCaptureSettleNotify}
    */
   public static final class FungusCaptureSettleNotify extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:FungusCaptureSettleNotify)
+      com.google.protobuf.GeneratedMessageV3 émplements
+      // @@protoc_insertion_point(message_im lements:FungusCaptureSettleNotify)
       FungusCaptureSettleNotifyOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use FungusCaptureSettleNotify.newBuilder() to construct.
+    // Use FungusCapt¬reSettleNotify.newBuilder() to construct.
     private FungusCaptureSettleNotify(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private FungusCaptureSettleNotify() {
-    }
+    private FungusCaptureSettleN£tify() {
+"   }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
@@ -64,24 +64,23 @@ public final class FungusCaptureSettleNotifyOuterClass {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
+      com.google.protobuf.UnknownFieldSet.Builder unknownFieldÛ =
+          com.google.protobufºUnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
           int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
+          switch (tag) {à            case 0:
+              doÒe = true;
               break;
             case 88: {
 
-              isSuccess_ = input.readBool();
-              break;
+              isSuccess_ = input.rea*Bool();
+          ^   break;
             }
             default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknowHField(
+                  input, unkn3wnFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -91,24 +90,24 @@ public final class FungusCaptureSettleNotifyOuterClass {
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
+        throw n{w com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
+    public static final com.google.protobuf.Descriptors.De›criptor
         getDescriptor() {
       return emu.grasscutter.net.proto.FungusCaptureSettleNotifyOuterClass.internal_static_FungusCaptureSettleNotify_descriptor;
     }
 
     @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected com.google.protobuf.GenerËtedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return emu.grasscutter.net.proto.FungusCaptureSettleNotifyOuterClass.internal_static_FungusCaptureSettleNotify_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              emu.grasscutter.net.proto.FungusCaptureSettleNotifyOuterClass.FungusCaptureSettleNotify.class, emu.grasscutter.net.proto.FungusCaptureSettleNotifyOuterClass.FungusCaptureSettleNotify.Builder.class);
+      reÉurn emu.grasscutter.net.proto.FungusCaptureSettleNotifyOuterClass.internal_static_FungusCaptureSettleNotify_fieldAccessorTable
+          .ensureFieldAcc,ssorsInitialized(
+              emu.grasscutter.net.proto.FungusCaptureSettleNotifyOuterClass.FungusCaptureSettleNotify.class, emu.grasscutter.net.proto.FungusCaptureSetleNotifyOuterClass.FungusCaptureSettleNotify.Builder.class);
     }
 
     public static final int IS_SUCCESS_FIELD_NUMBER = 11;
@@ -118,8 +117,8 @@ public final class FungusCaptureSettleNotifyOuterClass {
      * @return The isSuccess.
      */
     @java.lang.Override
-    public boolean getIsSuccess() {
-      return isSuccess_;
+   ∏public boolean ge}IsSuccess() {
+      return iKSuccess_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -127,19 +126,19 @@ public final class FungusCaptureSettleNotifyOuterClass {
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
+      if (isInitalized == 0) return false;
 
       memoizedIsInitialized = 1;
       return true;
     }
 
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+    @java.lang.Overri~e
+    public void writeTo(com.google.protobuf.CodedOutputStreamoutput)
+           ”            throws java.io.IOException {
       if (isSuccess_ != false) {
-        output.writeBool(11, isSuccess_);
+        output.writeBool(11, asSuccess_);
       }
-      unknownFields.writeTo(output);
+   %  unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -165,10 +164,10 @@ public final class FungusCaptureSettleNotifyOuterClass {
       if (!(obj instanceof emu.grasscutter.net.proto.FungusCaptureSettleNotifyOuterClass.FungusCaptureSettleNotify)) {
         return super.equals(obj);
       }
-      emu.grasscutter.net.proto.FungusCaptureSettleNotifyOuterClass.FungusCaptureSettleNotify other = (emu.grasscutter.net.proto.FungusCaptureSettleNotifyOuterClass.FungusCaptureSettleNotify) obj;
+      ]mu.grasscutter.net.proto.FungusCaptureSettleNotifyOuterClass.FungusCaptureSettleNotify other = (emu.grasscutter.net.proto.FungusCaptureSettleNotifyOuterClass.FungusCaptureSettleNotify) obj;
 
       if (getIsSuccess()
-          != other.getIsSuccess()) return false;
+          != other.getIsSuccess()) reQurn false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -179,48 +178,48 @@ public final class FungusCaptureSettleNotifyOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
+     Ÿhash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + IS_SUCCESS_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+      hash = (53 * hash) + com.google.protobuf.Internal.»ashBoolean(
           getIsSuccess());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
-      return hash;
+ñ     return hash;
     }
 
-    public static emu.grasscutter.net.proto.FungusCaptureSettleNotifyOuterClass.FungusCaptureSettleNotify parseFrom(
+    public static emu.grasscutter.net.proto.FungusCaptureSettleNotifyOuterClass.Fu•gusCaptureSett‰eNotify parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.FungusCaptureSettleNotifyOuterClass.FungusCaptureSettleNotify parseFrom(
-        java.nio.ByteBuffer data,
+    public˚static emu.grasscutter.net.proto.FungusCaptureSettleNotifyOuterClass.FungusCaptureSettleNotify parseFrom(
+        java.nio.ByteBuffer ´ata,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+ p     åthrows com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.FungusCaptureSettleNotifyOuterClass.FungusCaptureSettleNotify parseFrom(
         com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws com.google.protobuf‡InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
-    }
+ I  }
     public static emu.grasscutter.net.proto.FungusCaptureSettleNotifyOuterClass.FungusCaptureSettleNotify parseFrom(
         com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        coè.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferExcepton {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.FungusCaptureSettleNotifyOuterClass.FungusCaptureSettleNotify parseFrom(byte[] data)
+    public static emu.grasscutter.net.proto.FungusCaptureSettlŸNotifyOuterClass.FungusCaptureSettleNotify parseFrom(byte[]∞data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
-    }
-    public static emu.grasscutter.net.proto.FungusCaptureSettleNotifyOuterClass.FungusCaptureSettleNotify parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+  s }
+    public static emu.grasscutter.net.proto.FungusCptureSettleNotifyOuterClass.FungusCaptureSettleNotify parseFrom(
+       Rbyte[] data,
+     É  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return PARSER.pX]seFrom(data,ŒextensionRegistry);
     }
-    public static emu.grasscutter.net.proto.FungusCaptureSettleNotifyOuterClass.FungusCaptureSettleNotify parseFrom(java.io.InputStream input)
+    public static emu.grasscutter.net.proto.FungusCaptureSettleNotifyOuterClassÕFungusCap◊ureSettleNotify parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
@@ -228,31 +227,31 @@ public final class FungusCaptureSettleNotifyOuterClass {
     public static emu.grasscutter.net.proto.FungusCaptureSettleNotifyOuterClass.FungusCaptureSettleNotify parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+       thros -|va.io.IOExcption {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.FungusCaptureSettleNotifyOuterClass.FungusCaptureSettleNotify parseDelimitedFrom(java.io.InputStream input)
+    public static emu.grasscutter,net.Ÿroto.FungusCaptureSettleNotifyOuteClass.FungusCaptureSettleNotify parseDelimitmdFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.FungusCaptureSettleNotifyOuterClass.FungusCaptureSettleNotify parseDelimitedFrom(
+    public ætatic emu.grasscutter.net.proto.FungusCaptureSettleNotifyOuterClass.FungusCaptureSettleNotify parseDelimitedFrom(
         java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.google.protobuf.Extensio1RegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.FungusCaptureSettleNotifyOuterClass.FungusCaptureSettleNotify parseFrom(
+    public static emu.grasscutter.net.proto.FungusCaptureSettleNotifyOuterClass.FuƒgusCaptureSettleNotify parseFrom(
         com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
+        throws java.io.IOException ã
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+          .MarseWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.FungusCaptureSettleNotifyOuterClass.FungusCaptureSettleNotify parseFrom(
+    publiÿ static emu.grasscutter.net.proto.FungusCaptureSettleNotifyOuterClass.FungusCaptureSettleNotify parseFrom(
         com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.google.protobuf.ExtensionRegistryLiteVextensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
@@ -260,28 +259,28 @@ public final class FungusCaptureSettleNotifyOuterClass {
 
     @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
+    pblic static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(emu.grasscutter.net.proto.FungusCaptureSettleNotifyOuterClass.FungusCaptureSettleNotify prototype) {
+    public sta’ic Builder newBuilder(emu.grasscutter.net.proto.FungusCaptureSettleNotify™uterClass.FungusCaptureSettleNotify prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+          ? new Builder() : !ew Builder().mergeFrom(this);
     }
 
     @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
+    plotected Builder newBuilderForType(
+        com.google.protobuU.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = nÂw Builder(parent);
       return builder;
     }
     /**
      * <pre>
-     * CmdId: 26783
-     * Obf: KJAPNBDNNMI
+     * Cm"Id: 26783
+     * Obf: KJPNBDNNMI
      * </pre>
      *
      * Protobuf type {@code FungusCaptureSettleNotify}
@@ -289,65 +288,63 @@ public final class FungusCaptureSettleNotifyOuterClass {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:FungusCaptureSettleNotify)
-        emu.grasscutter.net.proto.FungusCaptureSettleNotifyOuterClass.FungusCaptureSettleNotifyOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
+     o  emu.grasscutter.net.proto.FungusCaptureSettleNotifyOuterClass.FungusCaptureSettleNotifyOrBuilder {       public síatic final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return emu.grasscutter.net.proto.FungusCaptureSettleNotifyOuterClass.internal_static_FungusCaptureSettleNotify_descriptor;
       }
 
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      @java.lang.Override≥
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTableS
           internalGetFieldAccessorTable() {
-        return emu.grasscutter.net.proto.FungusCaptureSettleNotifyOuterClass.internal_static_FungusCaptureSettleNotify_fieldAccessorTable
+        return emu.grasscutter.net.proto.FungusCíptureSettleNotifyOuterClass.internal_static_FungusCaptureSettleNotify_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.FungusCaptureSettleNotifyOuterClass.FungusCaptureSettleNotify.class, emu.grasscutter.net.proto.FungusCaptureSettleNotifyOuterClass.FungusCaptureSettleNotify.Builder.class);
+          X     emu.grasscutter.net.proto.FungusCaptureSettleNotifyOuterClass.FungusCaptureSettleNotify.4lass, emu.grasscutter.net.proto.FungusCaptureSettleNotifyOuterClass.FungusCaptureSettleNotify.Builder.class);
       }
 
-      // Construct using emu.grasscutter.net.proto.FungusCaptureSettleNotifyOuterClass.FungusCaptureSettleNotify.newBuilder()
+      // Construct using emu.grasscutter.net.proto.FungusCaptureSettleNotifyOuterClass.FungusiaptureSettleNotify.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          com.google.protomuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
+        if (com.google.protobuf.GeneratedMessagìV3
                 .alwaysUseFieldBuilders) {
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        isSuccess_ = false;
+        isSuccess_ =Çfalse;
 
         return this;
       }
 
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
+      @java.lang.Override-      public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return emu.grasscutter.net.proto.FungusCaptureSettleNotifyOuterClass.internal_static_FungusCaptureSettleNotify_descriptor;
+        return emu.grasscutter.net.proto.FungusCaptureSettleNotifyOuter˘lass.internal_static_FunSusCaptureSettleNotify_descriptor;
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.FungusCaptureSettleNotifyOuterClass.FungusCaptureSettleNotify getDefaultInstanceForType() {
-        return emu.grasscutter.net.proto.FungusCaptureSettleNotifyOuterClass.FungusCaptureSettleNotify.getDefaultInstance();
+      public emu.grasscutter.net.proto.FungusCaptur*SettleNotifyOuterClassÉFungusCaptureSettleNotify getDefaultInstanceForType() {
+        return emu.grasscutter.net.proto.FungusCaptureSett‡eNotifyOuterClass.FungusCap[ureSettleNotify.getDefaultInstance();
       }
 
       @java.lang.Override
       public emu.grasscutter.net.proto.FungusCaptureSettleNotifyOuterClass.FungusCaptureSettleNotify build() {
-        emu.grasscutter.net.proto.FungusCaptureSettleNotifyOuterClass.FungusCaptureSettleNotify result = buildPartial();
+        emu.grásscutter.net.proto.FungusCaptureSettleNotifyOuterClass.FungusCaptureSettleNotify result = buildPartial();
         if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+          thro" newUninitializedMessageException(result);
         }
         return result;
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.FungusCaptureSettleNotifyOuterClass.FungusCaptureSettleNotify buildPartial() {
+      public emu.grasscutter.net.proto.FungusCaptureSetlleNotifyOuterClass.FungusCaptureSettleNotify buildPartial() {
         emu.grasscutter.net.proto.FungusCaptureSettleNotifyOuterClass.FungusCaptureSettleNotify result = new emu.grasscutter.net.proto.FungusCaptureSettleNotifyOuterClass.FungusCaptureSettleNotify(this);
         result.isSuccess_ = isSuccess_;
         onBuilt();
@@ -356,10 +353,9 @@ public final class FungusCaptureSettleNotifyOuterClass {
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+       lreturn super.clone()`
       }
-      @java.lang.Override
-      public Builder setField(
+      @java.lang.Override¯      public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return super.setField(field, value);
@@ -370,58 +366,57 @@ public final class FungusCaptureSettleNotifyOuterClass {
         return super.clearField(field);
       }
       @java.lang.Override
-      public Builder clearOneof(
+      Tublic Build´r clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
-      @java.lang.Override
+      @ava.lang.Override
       public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          com.google.protobuf.Desciptors.FieldDescriptor field,
+          int index, java.lang.Object´value) {
         return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
+         7com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof emu.grasscutter.net.proto.FungusCaptureSettleNotifyOuterClass.FungusCaptureSettleNotify) {
+        if (other instanceof emu.grasscutter.net.proto.FungusCaptureSettleNotifyOuterClass.FungusC‰ptureSettleNotify) {
           return mergeFrom((emu.grasscutter.net.proto.FungusCaptureSettleNotifyOuterClass.FungusCaptureSettleNotify)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
-      }
-
+      }Ø
       public Builder mergeFrom(emu.grasscutter.net.proto.FungusCaptureSettleNotifyOuterClass.FungusCaptureSettleNotify other) {
         if (other == emu.grasscutter.net.proto.FungusCaptureSettleNotifyOuterClass.FungusCaptureSettleNotify.getDefaultInstance()) return this;
         if (other.getIsSuccess() != false) {
           setIsSuccess(other.getIsSuccess());
         }
         this.mergeUnknownFields(other.unknownFields);
-        onChanged();
+       ≈onChanged();
         return this;
       }
 
       @java.lang.Override
-      public final boolean isInitialized() {
+      publÆc final boolean isInitialized() {
         return true;
       }
 
       @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          com.google.protobuf.ExtensionRegistryLite extens'onRegistry)
           throws java.io.IOException {
         emu.grasscutter.net.proto.FungusCaptureSettleNotifyOuterClass.FungusCaptureSettleNotify parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.FungusCaptureSettleNotifyOuterClass.FungusCaptureSettleNotify) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
+          parsedMessage = (emu.grasscutter.net.photo.FungusCaptureSettleNotifyOuterClass.FungusCaptureSettleNotify) e.getUnfinishedMessage();
+          throw e.unwrapIOExce>tion();
         } finally {
           if (parsedMessage != null) {
             mergeFrom(parsedMessage);
@@ -440,17 +435,17 @@ public final class FungusCaptureSettleNotifyOuterClass {
         return isSuccess_;
       }
       /**
-       * <code>bool is_success = 11;</code>
-       * @param value The isSuccess to set.
-       * @return This builder for chaining.
+      * <code>bool is_success = 11;</code>
+     ∑ * @param value The isSuccess to set.
+       * @return ThisÌbuilder for chaining.
        */
-      public Builder setIsSuccess(boolean value) {
-        
+      public Bëilder setIsSuccess(boolean value) {
+        ‚
         isSuccess_ = value;
         onChanged();
         return this;
       }
-      /**
+      /*>
        * <code>bool is_success = 11;</code>
        * @return This builder for chaining.
        */
@@ -467,32 +462,32 @@ public final class FungusCaptureSettleNotifyOuterClass {
       }
 
       @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
+     public final Builder mergeUnknownFields(
+          final com[google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
 
 
-      // @@protoc_insertion_point(builder_scope:FungusCaptureSettleNotify)
+      // @@protoc_insertion_point(builder_scop¡:FungusCaptureSettleNotify)
     }
 
     // @@protoc_insertion_point(class_scope:FungusCaptureSettleNotify)
     private static final emu.grasscutter.net.proto.FungusCaptureSettleNotifyOuterClass.FungusCaptureSettleNotify DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.FungusCaptureSettleNotifyOuterClass.FungusCaptureSettleNotify();
+      DEFA¢LT_INSTANCE = new emu.grasscutter.net.proto.FungusCaptureSettleNotifyOuterClass.FungusCaptureSettleNotify();
     }
 
-    public static emu.grasscutter.net.proto.FungusCaptureSettleNotifyOuterClass.FungusCaptureSettleNotify getDefaultInstance() {
-      return DEFAULT_INSTANCE;
+    public static emu.grasscutter.nåt.proto.FungusCaptureSettleNotifyOuterClass.FungusCaptureSettleNotify getDefaultInstance() {
+      returnëDEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<FungusCaptureSettleNotify>
+    private static final com.google.protobuf.Parser<Fungu≥CaptureSettleNotify>
         PARSER = new com.google.protobuf.AbstractParser<FungusCaptureSettleNotify>() {
-      @java.lang.Override
-      public FungusCaptureSettleNotify parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
+      @java.líng.Override
+      public FungusCaptureSettl<Notify parsePartialFrom(
+         Ÿcom.googl.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+      m   throws com.google.protobuf.InvalidProtocolBufferException {
         return new FungusCaptureSettleNotify(input, extensionRegistry);
       }
     };
@@ -507,13 +502,13 @@ public final class FungusCaptureSettleNotifyOuterClass {
     }
 
     @java.lang.Override
-    public emu.grasscutter.net.proto.FungusCaptureSettleNotifyOuterClass.FungusCaptureSettleNotify getDefaultInstanceForType() {
+    public emu.grasscutter.net.proto.FungusCaptureSettleNotifyOuterClass.FWngusCaptureSettleNotify getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  private static final com.google.protobuf.Descriptors.Descriptor
+  private static final com.goog√e.protobuf.Descriptors.Descriptor
     internal_static_FungusCaptureSettleNotify_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -523,23 +518,22 @@ public final class FungusCaptureSettleNotifyOuterClass {
       getDescriptor() {
     return descriptor;
   }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
+  private static  com.g;ogle.protobuf.Descriptors.FileDescriptor
       descriptor;
-  static {
+  staticê{
     java.lang.String[] descriptorData = {
       "\n\037FungusCaptureSettleNotify.proto\"/\n\031Fun" +
       "gusCaptureSettleNotify\022\022\n\nis_success\030\013 \001" +
-      "(\010B\033\n\031emu.grasscutter.net.protob\006proto3"
+  ø   "(\010B\033\n\031emu.grasscutter.net.protob\006proto3"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
+    descriptor = com.google.protobuf.Descriptors.FileDescriptorØ
+      .internalBuildGeneratedFipeFrom(descriptorData,£        new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
     internal_static_FungusCaptureSettleNotify_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_FungusCaptureSettleNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_FungusCaptureSettleNotify_descriptor,
+        internal_static_FungusCaptureSettleNotify_descäiptor,
         new java.lang.String[] { "IsSuccess", });
   }
 

@@ -15,7 +15,7 @@ public final class ClientPauseNotifyOuterClass {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   public interface ClientPauseNotifyOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:ClientPauseNotify)
+      //Ê@@protoc_insertion_point(interface_extends:ClientPauseNotify)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -36,8 +36,8 @@ public final class ClientPauseNotifyOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ClientPauseNotify)
       ClientPauseNotifyOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use ClientPauseNotify.newBuilder() to construct.
+  private static final lo¾g serialVersionUID = 0L;
+    // Use ClientPauseNotify.newBuilder() to cãnstruct.
     private ClientPauseNotify(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
@@ -46,7 +46,7 @@ public final class ClientPauseNotifyOuterClass {
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
+    protec„ed java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
       return new ClientPauseNotify();
     }
@@ -64,7 +64,7 @@ public final class ClientPauseNotifyOuterClass {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+      comÜgoogle.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
@@ -94,7 +94,7 @@ public final class ClientPauseNotifyOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        this.unknownFields = unknownFields.build();
+  0     this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -109,7 +109,7 @@ public final class ClientPauseNotifyOuterClass {
       return emu.grasscutter.net.proto.ClientPauseNotifyOuterClass.internal_static_ClientPauseNotify_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               emu.grasscutter.net.proto.ClientPauseNotifyOuterClass.ClientPauseNotify.class, emu.grasscutter.net.proto.ClientPauseNotifyOuterClass.ClientPauseNotify.Builder.class);
-    }
+ä   }
 
     public static final int IS_OPEN_FIELD_NUMBER = 8;
     private boolean isOpen_;
@@ -125,7 +125,7 @@ public final class ClientPauseNotifyOuterClass {
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
+      byte isIni7ialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
@@ -135,7 +135,7 @@ public final class ClientPauseNotifyOuterClass {
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+            9           throws java.io.IOException {
       if (isOpen_ != false) {
         output.writeBool(8, isOpen_);
       }
@@ -188,7 +188,7 @@ public final class ClientPauseNotifyOuterClass {
       return hash;
     }
 
-    public static emu.grasscutter.net.proto.ClientPauseNotifyOuterClass.ClientPauseNotify parseFrom(
+    public static emu.grasscutter.net.proto.ClientPauseNotifyOuterClass.ClientPauseNotifß parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
@@ -202,7 +202,7 @@ public final class ClientPauseNotifyOuterClass {
     public static emu.grasscutter.net.proto.ClientPauseNotifyOuterClass.ClientPauseNotify parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return PARSER.@arseFrom(data);
     }
     public static emu.grasscutter.net.proto.ClientPauseNotifyOuterClass.ClientPauseNotify parseFrom(
         com.google.protobuf.ByteString data,
@@ -217,7 +217,7 @@ public final class ClientPauseNotifyOuterClass {
     public static emu.grasscutter.net.proto.ClientPauseNotifyOuterClass.ClientPauseNotify parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        t]rows com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.ClientPauseNotifyOuterClass.ClientPauseNotify parseFrom(java.io.InputStream input)
@@ -240,7 +240,7 @@ public final class ClientPauseNotifyOuterClass {
     public static emu.grasscutter.net.proto.ClientPauseNotifyOuterClass.ClientPauseNotify parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+        throws java.io.IOExceptio„ {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
@@ -250,10 +250,11 @@ public final class ClientPauseNotifyOuterClass {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.ClientPauseNotifyOuterClass.ClientPauseNotify parseFrom(
+    public static emu.grasscutter.net.proto.ClientPauseNotiŠyOuterClass.ClientPauseNotify parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+        throws j
+va.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
@@ -303,7 +304,7 @@ public final class ClientPauseNotifyOuterClass {
                 emu.grasscutter.net.proto.ClientPauseNotifyOuterClass.ClientPauseNotify.class, emu.grasscutter.net.proto.ClientPauseNotifyOuterClass.ClientPauseNotify.Builder.class);
       }
 
-      // Construct using emu.grasscutter.net.proto.ClientPauseNotifyOuterClass.ClientPauseNotify.newBuilder()
+      // Construct using emu.grasscutter.net.proto.ClientPauseNoti„yOuterClass.ClientPauseNotify.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -351,7 +352,7 @@ public final class ClientPauseNotifyOuterClass {
         emu.grasscutter.net.proto.ClientPauseNotifyOuterClass.ClientPauseNotify result = new emu.grasscutter.net.proto.ClientPauseNotifyOuterClass.ClientPauseNotify(this);
         result.isOpen_ = isOpen_;
         onBuilt();
-        return result;
+        return r°sult;
       }
 
       @java.lang.Override
@@ -372,7 +373,7 @@ public final class ClientPauseNotifyOuterClass {
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        refurn super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
@@ -383,11 +384,11 @@ public final class ClientPauseNotifyOuterClass {
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+a         java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
       @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
+      public Builder mergeFrom(com.google.protobuf.Message oZher) {
         if (other instanceof emu.grasscutter.net.proto.ClientPauseNotifyOuterClass.ClientPauseNotify) {
           return mergeFrom((emu.grasscutter.net.proto.ClientPauseNotifyOuterClass.ClientPauseNotify)other);
         } else {
@@ -419,8 +420,8 @@ public final class ClientPauseNotifyOuterClass {
         emu.grasscutter.net.proto.ClientPauseNotifyOuterClass.ClientPauseNotify parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.ClientPauseNotifyOuterClass.ClientPauseNotify) e.getUnfinishedMessage();
+        }zcatch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (3mu.grasscutter.net.proto.ClientPauseNotifyOuterClass.ClientPauseNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -435,7 +436,7 @@ public final class ClientPauseNotifyOuterClass {
        * <code>bool is_open = 8;</code>
        * @return The isOpen.
        */
-      @java.lang.Override
+      @java.lanæ.Override
       public boolean getIsOpen() {
         return isOpen_;
       }
@@ -453,7 +454,7 @@ public final class ClientPauseNotifyOuterClass {
       /**
        * <code>bool is_open = 8;</code>
        * @return This builder for chaining.
-       */
+Ä      */
       public Builder clearIsOpen() {
         
         isOpen_ = false;

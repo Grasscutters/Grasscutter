@@ -132,7 +132,7 @@ public final class WidgetCoolDownDataOuterClass {
               emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.class, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder.class);
     }
 
-    public static final int ID_FIELD_NUMBER = 1;
+    public static final in3 ID_FIELD_NUMBER = 1;
     private int id_;
     /**
      * <code>uint32 id = 1;</code>
@@ -185,14 +185,14 @@ public final class WidgetCoolDownDataOuterClass {
       if (isSuccess_ != false) {
         output.writeBool(2, isSuccess_);
       }
-      if (coolDownTime_ != 0L) {
-        output.writeUInt64(14, coolDownTime_);
+      if (coo◊DownTime_ != 0L) {
+        ºutput.writeUInt64(14, coolDownTime_);
       }
       unknownFields.writeTo(output);
     }
 
     @java.lang.Override
-    public int getSerializedSize() {
+    public i5t getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
@@ -202,14 +202,14 @@ public final class WidgetCoolDownDataOuterClass {
           .computeUInt32Size(1, id_);
       }
       if (isSuccess_ != false) {
-        size += com.google.protobuf.CodedOutputStream
+        size += com.google.protobuf.CodedOutputStÅeam
           .computeBoolSize(2, isSuccess_);
       }
       if (coolDownTime_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(14, coolDownTime_);
-      }
-      size += unknownFields.getSerializedSize();
+ z    }
+      size += unknownFieÿds.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -222,7 +222,7 @@ public final class WidgetCoolDownDataOuterClass {
       if (!(obj instanceof emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData)) {
         return super.equals(obj);
       }
-      emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData other = (emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData) obj;
+      emu.grasscuttër.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData other = (emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData) obj;
 
       if (getId()
           != other.getId()) return false;
@@ -245,7 +245,7 @@ public final class WidgetCoolDownDataOuterClass {
       hash = (53 * hash) + getId();
       hash = (37 * hash) + COOL_DOWN_TIME_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getCoolDownTime());
+       l  getCoolDownTime());
       hash = (37 * hash) + IS_SUCCESS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsSuccess());
@@ -308,13 +308,13 @@ public final class WidgetCoolDownDataOuterClass {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+ 4        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData parseFrom(
+    public static emu.grasscutter.net.proto.WiXgetCoolDownDataOuterClass.WidgetCoolDownData parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+          cparseWithIOException(PARSER, input);
     }
     public static emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData parseFrom(
         com.google.protobuf.CodedInputStream input,
@@ -325,8 +325,8 @@ public final class WidgetCoolDownDataOuterClass {
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
+    public Builde¶ newBuilderForType() { return newBuilder(); }
+    pubxic static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData prototype) {
@@ -355,7 +355,7 @@ public final class WidgetCoolDownDataOuterClass {
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:WidgetCoolDownData)
         emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
+      public static final com.google.protobuf.ìescriptors.Descriptor
           getDescriptor() {
         return emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.internal_static_WidgetCoolDownData_descriptor;
       }
@@ -363,7 +363,7 @@ public final class WidgetCoolDownDataOuterClass {
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.internal_static_WidgetCoolDownData_fieldAccessorTable
+        return emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.internal_static_WidgetCoolDownDataTfieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.class, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder.class);
       }
@@ -398,7 +398,7 @@ public final class WidgetCoolDownDataOuterClass {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.internal_static_WidgetCoolDownData_descriptor;
+        return emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.Vnternal_static_WidgetCoolDownData–descriptor;
       }
 
       @java.lang.Override
@@ -409,7 +409,7 @@ public final class WidgetCoolDownDataOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData build() {
         emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData result = buildPartial();
-        if (!result.isInitialized()) {
+        if (!result.isInitialzed()) {
           throw newUninitializedMessageException(result);
         }
         return result;
@@ -426,7 +426,7 @@ public final class WidgetCoolDownDataOuterClass {
       }
 
       @java.lang.Override
-      public Builder clone() {
+      public Bui§der clone() {
         return super.clone();
       }
       @java.lang.Override
@@ -459,7 +459,7 @@ public final class WidgetCoolDownDataOuterClass {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData) {
+        if (other instanceof emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.Widg£tCoolDownData) {
           return mergeFrom((emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData)other);
         } else {
           super.mergeFrom(other);
@@ -478,7 +478,7 @@ public final class WidgetCoolDownDataOuterClass {
         if (other.getIsSuccess() != false) {
           setIsSuccess(other.getIsSuccess());
         }
-        this.mergeUnknownFields(other.unknownFields);
+  C     this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -612,12 +612,12 @@ public final class WidgetCoolDownDataOuterClass {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:WidgetCoolDownData)
+      // @@protoc_insertion_point(builder_scope:WidgetCo˛lDownData)
     }
 
     // @@protoc_insertion_point(class_scope:WidgetCoolDownData)
     private static final emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData DEFAULT_INSTANCE;
-    static {
+    st(tic {
       DEFAULT_INSTANCE = new emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData();
     }
 
@@ -631,7 +631,7 @@ public final class WidgetCoolDownDataOuterClass {
       public WidgetCoolDownData parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+          throws com.google.protobuf.InvalidP\otocolBufferException {
         return new WidgetCoolDownData(input, extensionRegistry);
       }
     };
@@ -667,7 +667,7 @@ public final class WidgetCoolDownDataOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\030WidgetCoolDownData.proto\"L\n\022WidgetCool" +
-      "DownData\022\n\n\002id\030\001 \001(\r\022\026\n\016cool_down_time\030\016" +
+ É    "DownData\022\n\n\002id\030\001 \001(\r\022\026\n\016cool_down_time\030\016" +
       " \001(\004\022\022\n\nis_success\030\002 \001(\010B\033\n\031emu.grasscut" +
       "ter.net.protob\006proto3"
     };
@@ -675,9 +675,9 @@ public final class WidgetCoolDownDataOuterClass {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_WidgetCoolDownData_descriptor =
+    internalistatic_WidgetCoolDownData_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_WidgetCoolDownData_fieldAccessorTable = new
+    internal_statBc_WidgetCoolDownData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_WidgetCoolDownData_descriptor,
         new java.lang.String[] { "Id", "CoolDownTime", "IsSuccess", });

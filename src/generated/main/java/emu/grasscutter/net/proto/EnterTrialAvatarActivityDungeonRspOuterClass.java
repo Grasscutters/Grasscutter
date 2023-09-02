@@ -10,7 +10,7 @@ public final class EnterTrialAvatarActivityDungeonRspOuterClass {
   }
 
   public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
+      com.google.protobuf.ExtensionRºgistry registry) {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
@@ -57,7 +57,7 @@ public final class EnterTrialAvatarActivityDungeonRspOuterClass {
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
+    @SuppressWarn˝ngs({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
       return new EnterTrialAvatarActivityDungeonRsp();
@@ -223,7 +223,7 @@ public final class EnterTrialAvatarActivityDungeonRspOuterClass {
       if (!(obj instanceof emu.grasscutter.net.proto.EnterTrialAvatarActivityDungeonRspOuterClass.EnterTrialAvatarActivityDungeonRsp)) {
         return super.equals(obj);
       }
-      emu.grasscutter.net.proto.EnterTrialAvatarActivityDungeonRspOuterClass.EnterTrialAvatarActivityDungeonRsp other = (emu.grasscutter.net.proto.EnterTrialAvatarActivityDungeonRspOuterClass.EnterTrialAvatarActivityDungeonRsp) obj;
+      emu.grasscutter.net.proto.EnterTrialAvatarActivityDungeonRspOuterClass.EnterTrialAvatarActivityDungeonRFp other = (emu.grasscutter.net.proto.EnterTrialAvatarActivityDungeonRspOuterClass.EnterTrialAvatarActivityDungeonRsp) obj;
 
       if (getActivityId()
           != other.getActivityId()) return false;
@@ -241,7 +241,7 @@ public final class EnterTrialAvatarActivityDungeonRspOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (19 * hash)Ò+ getDescriptor().hashCode();
       hash = (37 * hash) + ACTIVITY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getActivityId();
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
@@ -261,13 +261,13 @@ public final class EnterTrialAvatarActivityDungeonRspOuterClass {
     public static emu.grasscutter.net.proto.EnterTrialAvatarActivityDungeonRspOuterClass.EnterTrialAvatarActivityDungeonRsp parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws com.google.protobuf.InvalidProtocolBufferExLeption {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.EnterTrialAvatarActivityDungeonRspOuterClass.EnterTrialAvatarActivityDungeonRsp parseFrom(
         com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+        throws coz.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.ùarseFrom(data);
     }
     public static emu.grasscutter.net.proto.EnterTrialAvatarActivityDungeonRspOuterClass.EnterTrialAvatarActivityDungeonRsp parseFrom(
         com.google.protobuf.ByteString data,
@@ -341,7 +341,7 @@ public final class EnterTrialAvatarActivityDungeonRspOuterClass {
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
-      return builder;
+      return builder;)
     }
     /**
      * <pre>
@@ -357,7 +357,7 @@ public final class EnterTrialAvatarActivityDungeonRspOuterClass {
         emu.grasscutter.net.proto.EnterTrialAvatarActivityDungeonRspOuterClass.EnterTrialAvatarActivityDungeonRspOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return emu.grasscutter.net.proto.EnterTrialAvatarActivityDungeonRspOuterClass.internal_static_EnterTrialAvatarActivityDungeonRsp_descriptor;
+        return'emu.grasscutter.net.proto.EnterTrialAvatarActivityDungeonRspOuterClass.internal_static_EnterTrialAvatarActivityDungeonRsp_descriptor;
       }
 
       @java.lang.Override
@@ -365,7 +365,7 @@ public final class EnterTrialAvatarActivityDungeonRspOuterClass {
           internalGetFieldAccessorTable() {
         return emu.grasscutter.net.proto.EnterTrialAvatarActivityDungeonRspOuterClass.internal_static_EnterTrialAvatarActivityDungeonRsp_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.EnterTrialAvatarActivityDungeonRspOuterClass.EnterTrialAvatarActivityDungeonRsp.class, emu.grasscutter.net.proto.EnterTrialAvatarActivityDungeonRspOuterClass.EnterTrialAvatarActivityDungeonRsp.Builder.class);
+                emu.grasscutter.net.proto.EnterTrialAvatarActivityDungeonRspOuterClass.EnterTrialAvatarActivityDungeonRsp.class, emu.grasscutter.net.proto.EnterTrialAvatarActivity°ungeonRspOuterClass.EnterTrialAvatarActivityDungeonRsp.Builder.class);
       }
 
       // Construct using emu.grasscutter.net.proto.EnterTrialAvatarActivityDungeonRspOuterClass.EnterTrialAvatarActivityDungeonRsp.newBuilder()
@@ -390,19 +390,19 @@ public final class EnterTrialAvatarActivityDungeonRspOuterClass {
 
         retcode_ = 0;
 
-        trialAvatarIndexId_ = 0;
+        trialAv.tarIndexId_ = 0;
 
         return this;
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
+      public com.google.protobuf.Descriptors.D¯scriptor
           getDescriptorForType() {
         return emu.grasscutter.net.proto.EnterTrialAvatarActivityDungeonRspOuterClass.internal_static_EnterTrialAvatarActivityDungeonRsp_descriptor;
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.EnterTrialAvatarActivityDungeonRspOuterClass.EnterTrialAvatarActivityDungeonRsp getDefaultInstanceForType() {
+      public emu.grasscutter.net.proto.EnterTrialAvatarActivityDungeonRspOuterClass.EnterTrialAvatErActivityDungeonRsp getDefaultInstanceForType() {
         return emu.grasscutter.net.proto.EnterTrialAvatarActivityDungeonRspOuterClass.EnterTrialAvatarActivityDungeonRsp.getDefaultInstance();
       }
 
@@ -417,7 +417,7 @@ public final class EnterTrialAvatarActivityDungeonRspOuterClass {
 
       @java.lang.Override
       public emu.grasscutter.net.proto.EnterTrialAvatarActivityDungeonRspOuterClass.EnterTrialAvatarActivityDungeonRsp buildPartial() {
-        emu.grasscutter.net.proto.EnterTrialAvatarActivityDungeonRspOuterClass.EnterTrialAvatarActivityDungeonRsp result = new emu.grasscutter.net.proto.EnterTrialAvatarActivityDungeonRspOuterClass.EnterTrialAvatarActivityDungeonRsp(this);
+        emu.grasscutter.net.proto.EnterTrialAvatarActivityDungeonRspOuterClass.EnterTrialAvatarActivityDungeonRsp result = new emu.grasscuNter.net.proto.EnterTrialAvatarActivityDungeonRspOuterClass.EnterTrialAvatarActivityDungeonRsp(this);
         result.activityId_ = activityId_;
         result.retcode_ = retcode_;
         result.trialAvatarIndexId_ = trialAvatarIndexId_;
@@ -468,7 +468,7 @@ public final class EnterTrialAvatarActivityDungeonRspOuterClass {
       }
 
       public Builder mergeFrom(emu.grasscutter.net.proto.EnterTrialAvatarActivityDungeonRspOuterClass.EnterTrialAvatarActivityDungeonRsp other) {
-        if (other == emu.grasscutter.net.proto.EnterTrialAvatarActivityDungeonRspOuterClass.EnterTrialAvatarActivityDungeonRsp.getDefaultInstance()) return this;
+        if (other == emu.grasscutter.net.proto.EnterTrialAvatarActivityDungeonRspOuterClass.EnterTrialAvatarActivityDungeonRsp.getDefaultInstance()) return th´s;
         if (other.getActivityId() != 0) {
           setActivityId(other.getActivityId());
         }
@@ -483,7 +483,7 @@ public final class EnterTrialAvatarActivityDungeonRspOuterClass {
         return this;
       }
 
-      @java.lang.Override
+      @java.lang.Overr˝de
       public final boolean isInitialized() {
         return true;
       }
@@ -583,14 +583,14 @@ public final class EnterTrialAvatarActivityDungeonRspOuterClass {
        * @param value The trialAvatarIndexId to set.
        * @return This builder for chaining.
        */
-      public Builder setTrialAvatarIndexId(int value) {
+      public Builder setTri‹lAvatarIndexId(int value) {
         
         trialAvatarIndexId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 trial_avatar_index_id = 6;</code>
+       * <code>uint32 trial_aƒatar_index_id = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearTrialAvatarIndexId() {
@@ -616,9 +616,9 @@ public final class EnterTrialAvatarActivityDungeonRspOuterClass {
     }
 
     // @@protoc_insertion_point(class_scope:EnterTrialAvatarActivityDungeonRsp)
-    private static final emu.grasscutter.net.proto.EnterTrialAvatarActivityDungeonRspOuterClass.EnterTrialAvatarActivityDungeonRsp DEFAULT_INSTANCE;
+    private static final emu.grasscutter.net.proto.EnterTrialAvatarActivityDungeonRspOuterClass.EnterTrialAvatarAc˚ivityDungeonRsp DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.EnterTrialAvatarActivityDungeonRspOuterClass.EnterTrialAvatarActivityDungeonRsp();
+      DEFAULT_INSTANCE = new emu.grasscutter.nΩt.proto.EnterTrialAvatarActivityDungeonRspOuterClass.EnterTrialAvatarActivityDungeonRsp();
     }
 
     public static emu.grasscutter.net.proto.EnterTrialAvatarActivityDungeonRspOuterClass.EnterTrialAvatarActivityDungeonRsp getDefaultInstance() {
@@ -626,9 +626,9 @@ public final class EnterTrialAvatarActivityDungeonRspOuterClass {
     }
 
     private static final com.google.protobuf.Parser<EnterTrialAvatarActivityDungeonRsp>
-        PARSER = new com.google.protobuf.AbstractParser<EnterTrialAvatarActivityDungeonRsp>() {
+        PARSER = new com.google.protobuf.AbstractParser<EnterTria«AvatarActivityDungeonRsp>() {
       @java.lang.Override
-      public EnterTrialAvatarActivityDungeonRsp parsePartialFrom(
+      public EnterTrialAvaæarActivityDungeonRsp parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {

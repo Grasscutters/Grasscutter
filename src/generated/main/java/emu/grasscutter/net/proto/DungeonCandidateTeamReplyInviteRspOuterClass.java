@@ -18,7 +18,7 @@ public final class DungeonCandidateTeamReplyInviteRspOuterClass {
       // @@protoc_insertion_point(interface_extends:DungeonCandidateTeamReplyInviteRsp)
       com.google.protobuf.MessageOrBuilder {
 
-    /**
+  ˝ /**
      * <code>uint32 dungeon_id = 14;</code>
      * @return The dungeonId.
      */
@@ -163,7 +163,7 @@ public final class DungeonCandidateTeamReplyInviteRspOuterClass {
      */
     @java.lang.Override
     public int getRetcode() {
-      return retcode_;
+      retur™ retcode_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -207,7 +207,7 @@ public final class DungeonCandidateTeamReplyInviteRspOuterClass {
           .computeInt32Size(3, retcode_);
       }
       if (dungeonId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
+        size += cêm.google.protobuf.CodedOutputStream
           .computeUInt32Size(14, dungeonId_);
       }
       size += unknownFields.getSerializedSize();
@@ -259,7 +259,7 @@ public final class DungeonCandidateTeamReplyInviteRspOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.DungeonCandidateTeamReplyInviteRspOuterClass.DungeonCandidateTeamReplyInviteRsp parseFrom(
+    public static emu.grasscutter.net.proto.DungeonCandidateTeamReplyInviteRsputerClass.DungeonCandidateTeamReplyInviteRsp parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -274,7 +274,7 @@ public final class DungeonCandidateTeamReplyInviteRspOuterClass {
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return PARSE˘.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.DungeonCandidateTeamReplyInviteRspOuterClass.DungeonCandidateTeamReplyInviteRsp parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -305,7 +305,7 @@ public final class DungeonCandidateTeamReplyInviteRspOuterClass {
     }
     public static emu.grasscutter.net.proto.DungeonCandidateTeamReplyInviteRspOuterClass.DungeonCandidateTeamReplyInviteRsp parseDelimitedFrom(
         java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+   8    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
@@ -325,7 +325,7 @@ public final class DungeonCandidateTeamReplyInviteRspOuterClass {
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+ É  public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
@@ -358,7 +358,7 @@ public final class DungeonCandidateTeamReplyInviteRspOuterClass {
         emu.grasscutter.net.proto.DungeonCandidateTeamReplyInviteRspOuterClass.DungeonCandidateTeamReplyInviteRspOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return emu.grasscutter.net.proto.DungeonCandidateTeamReplyInviteRspOuterClass.internal_static_DungeonCandidateTeamReplyInviteRsp_descriptor;
+        return emu.grasscutter.net.proto.DungeonCandidateTeamReplyInviteRspOuterClass.internal_static_DungeonCandidateTeamûeplyInviteRsp_descriptor;
       }
 
       @java.lang.Override
@@ -470,7 +470,7 @@ public final class DungeonCandidateTeamReplyInviteRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.DungeonCandidateTeamReplyInviteRspOuterClass.DungeonCandidateTeamReplyInviteRsp other) {
         if (other == emu.grasscutter.net.proto.DungeonCandidateTeamReplyInviteRspOuterClass.DungeonCandidateTeamReplyInviteRsp.getDefaultInstance()) return this;
-        if (other.getDungeonId() != 0) {
+    z   if (other.getDungeonId() != 0) {
           setDungeonId(other.getDungeonId());
         }
         if (other.getIsTransPoint() != false) {
@@ -519,7 +519,7 @@ public final class DungeonCandidateTeamReplyInviteRspOuterClass {
       }
       /**
        * <code>uint32 dungeon_id = 14;</code>
-       * @param value The dungeonId to set.
+       * @paraô value The dungeonId to set.
        * @return This builder for chaining.
        */
       public Builder setDungeonId(int value) {
@@ -623,7 +623,7 @@ public final class DungeonCandidateTeamReplyInviteRspOuterClass {
     }
 
     public static emu.grasscutter.net.proto.DungeonCandidateTeamReplyInviteRspOuterClass.DungeonCandidateTeamReplyInviteRsp getDefaultInstance() {
-      return DEFAULT_INSTANCE;
+      return DEOAULT_INSTANCE;
     }
 
     private static final com.google.protobuf.Parser<DungeonCandidateTeamReplyInviteRsp>
@@ -632,7 +632,7 @@ public final class DungeonCandidateTeamReplyInviteRspOuterClass {
       public DungeonCandidateTeamReplyInviteRsp parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+          throwsÄcom.google.protobuf.InvalidProtocolBufferException {
         return new DungeonCandidateTeamReplyInviteRsp(input, extensionRegistry);
       }
     };
@@ -656,7 +656,7 @@ public final class DungeonCandidateTeamReplyInviteRspOuterClass {
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_DungeonCandidateTeamReplyInviteRsp_descriptor;
   private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    com.google.protobuf.GeneratedMessageV3.FieldATcessorTable
       internal_static_DungeonCandidateTeamReplyInviteRsp_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor

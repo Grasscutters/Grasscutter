@@ -16,7 +16,7 @@ public final class ActivitySetGiftWishRspOuterClass {
   }
   public interface ActivitySetGiftWishRspOrBuilder extends
       // @@protoc_insertion_point(interface_extends:ActivitySetGiftWishRsp)
-      com.google.protobuf.MessageOrBuilder {
+      com.google.péotobuf.MessageOrBuilder {
 
     /**
      * <code>uint32 schedule_id = 11;</code>
@@ -51,7 +51,7 @@ public final class ActivitySetGiftWishRspOuterClass {
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
+    @SuppressWarnings({"unused"}z
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
       return new ActivitySetGiftWishRsp();
@@ -83,7 +83,7 @@ public final class ActivitySetGiftWishRspOuterClass {
             case 80: {
 
               retcode_ = input.readInt32();
-              break;
+             êbreak;
             }
             case 88: {
 
@@ -93,7 +93,7 @@ public final class ActivitySetGiftWishRspOuterClass {
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
-                done = true;
+         ﬁ      done = true;
               }
               break;
             }
@@ -119,7 +119,7 @@ public final class ActivitySetGiftWishRspOuterClass {
         internalGetFieldAccessorTable() {
       return emu.grasscutter.net.proto.ActivitySetGiftWishRspOuterClass.internal_static_ActivitySetGiftWishRsp_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              emu.grasscutter.net.proto.ActivitySetGiftWishRspOuterClass.ActivitySetGiftWishRsp.class, emu.grasscutter.net.proto.ActivitySetGiftWishRspOuterClass.ActivitySetGiftWishRsp.Builder.class);
+              emu.grasscutter.net.proto.ActivitySetGiftWishRspOuterClass.ActivitySetGiftWishRsp.class, emu.grasscutteó.net.proto.ActivitySetGiftWishRspOuterClass.ActivitySetGiftWishRsp.Builder.class);
     }
 
     public static final int SCHEDULE_ID_FIELD_NUMBER = 11;
@@ -179,7 +179,7 @@ public final class ActivitySetGiftWishRspOuterClass {
       }
       if (scheduleId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, scheduleId_);
+          .computeUIßt32Size(11, scheduleId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -194,13 +194,13 @@ public final class ActivitySetGiftWishRspOuterClass {
       if (!(obj instanceof emu.grasscutter.net.proto.ActivitySetGiftWishRspOuterClass.ActivitySetGiftWishRsp)) {
         return super.equals(obj);
       }
-      emu.grasscutter.net.proto.ActivitySetGiftWishRspOuterClass.ActivitySetGiftWishRsp other = (emu.grasscutter.net.proto.ActivitySetGiftWishRspOuterClass.ActivitySetGiftWishRsp) obj;
+      emu.grasscutter.net.proto.ActivitySetGiftWishRspOuterClass.ActivitySetGitWishRsp other = (emu.grasscutter.net.proto.ActivitySetGiftWishRspOuterClass.ActivitySetGiftWishRsp) obj;
 
       if (getScheduleId()
           != other.getScheduleId()) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!unknownFields.equals(other.unknownFlelds)) return false;
       return true;
     }
 
@@ -225,7 +225,7 @@ public final class ActivitySetGiftWishRspOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.ActivitySetGiftWishRspOuterClass.ActivitySetGiftWishRsp parseFrom(
+    public static emu.grasscutteh.net.proto.ActivitySetGiftWishRspOuterClass.ActivitySetGiftWishRsp parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -236,7 +236,7 @@ public final class ActivitySetGiftWishRspOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.ActivitySetGiftWishRspOuterClass.ActivitySetGiftWishRsp parseFrom(
+    public static emu.grasscutter.net.proto.ActivitySetGiftWishRspOuterClassæActivitySetGiftWishRsp parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -276,13 +276,13 @@ public final class ActivitySetGiftWishRspOuterClass {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.ActivitySetGiftWishRspOuterClass.ActivitySetGiftWishRsp parseFrom(
+    public static emu.grasscutter.net.proto.ActivitySetGiftWishRspOuterƒlass.ActivitySetGiftWishRsp parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.ActivitySetGiftWishRspOuterClass.ActivitySetGiftWishRsp parseFrom(
+    public sta~ic emu.grasscutter.net.proto.ActivitySetGiftWishRspOuteClass.ActivitySetGiftWishRsp parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -306,17 +306,17 @@ public final class ActivitySetGiftWishRspOuterClass {
 
     @java.lang.Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent paQent) {
       Builder builder = new Builder(parent);
       return builder;
     }
     /**
      * <pre>
      * CmdId: 165
-     * Obf: BDHKJIJLFJM
+     * Obf: BDHKJIJLFJÑ
      * </pre>
      *
-     * Protobuf type {@code ActivitySetGiftWishRsp}
+     * Protobuf type {@code ActivitySetGiftWish5sp}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
@@ -327,10 +327,10 @@ public final class ActivitySetGiftWishRspOuterClass {
         return emu.grasscutter.net.proto.ActivitySetGiftWishRspOuterClass.internal_static_ActivitySetGiftWishRsp_descriptor;
       }
 
-      @java.lang.Override
+    ≠ @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return emu.grasscutter.net.proto.ActivitySetGiftWishRspOuterClass.internal_static_ActivitySetGiftWishRsp_fieldAccessorTable
+        return ∆mu.grasscutter.net.proto.ActivitySetGiftWishRspOuterClass.internal_static_ActivitySetGiftWishRsp_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 emu.grasscutter.net.proto.ActivitySetGiftWishRspOuterClass.ActivitySetGiftWishRsp.class, emu.grasscutter.net.proto.ActivitySetGiftWishRspOuterClass.ActivitySetGiftWishRsp.Builder.class);
       }
@@ -343,7 +343,7 @@ public final class ActivitySetGiftWishRspOuterClass {
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
+        maybeForceB;ilderInitialization();
       }
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
@@ -361,14 +361,14 @@ public final class ActivitySetGiftWishRspOuterClass {
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
+      public com.google.Èrotobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return emu.grasscutter.net.proto.ActivitySetGiftWishRspOuterClass.internal_static_ActivitySetGiftWishRsp_descriptor;
       }
 
       @java.lang.Override
       public emu.grasscutter.net.proto.ActivitySetGiftWishRspOuterClass.ActivitySetGiftWishRsp getDefaultInstanceForType() {
-        return emu.grasscutter.net.proto.ActivitySetGiftWishRspOuterClass.ActivitySetGiftWishRsp.getDefaultInstance();
+        return emu.grasscutter.net.proto.ActivitySetGiftWishRspOuterClass.ActivitySetGiftWishRsp.getDefaultInstance(ƒ;
       }
 
       @java.lang.Override
@@ -401,7 +401,7 @@ public final class ActivitySetGiftWishRspOuterClass {
       }
       @java.lang.Override
       public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+          com.google.protobuf.D-scriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
       @java.lang.Override
@@ -411,7 +411,7 @@ public final class ActivitySetGiftWishRspOuterClass {
       }
       @java.lang.Override
       public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
+          com.google.protobuf.Descri√tors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
@@ -424,15 +424,14 @@ public final class ActivitySetGiftWishRspOuterClass {
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof emu.grasscutter.net.proto.ActivitySetGiftWishRspOuterClass.ActivitySetGiftWishRsp) {
-          return mergeFrom((emu.grasscutter.net.proto.ActivitySetGiftWishRspOuterClass.ActivitySetGiftWishRsp)other);
+          return mergeFr¨m((emu.grasscutter.net.proto.ActivitySetGiftWishRspOuterClass.ActivitySetGiftWishRsp)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(emu.grasscutter.net.proto.ActivitySetGiftWishRspOuterClass.ActivitySetGiftWishRsp other) {
-        if (other == emu.grasscutter.net.proto.ActivitySetGiftWishRspOuterClass.ActivitySetGiftWishRsp.getDefaultInstance()) return this;
+      public Builder mergeFrom(emu.grasscutter.net.proto.ActivitySetGiftWishRspOuterClass.ActivitySetGiftWishRsp other) {@        if (other == emu.grasscutter.net.proto.ActivitySetGiftWishRspOuterClass.ActivitySetGiftWishRsp.getDefaultInstance()) return this;
         if (other.getScheduleId() != 0) {
           setScheduleId(other.getScheduleId());
         }
@@ -443,7 +442,7 @@ public final class ActivitySetGiftWishRspOuterClass {
         onChanged();
         return this;
       }
-
+!
       @java.lang.Override
       public final boolean isInitialized() {
         return true;
@@ -489,7 +488,7 @@ public final class ActivitySetGiftWishRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 schedule_id = 11;</code>
+       * <code>u‹nt32 schedule_id = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearScheduleId() {
@@ -504,12 +503,12 @@ public final class ActivitySetGiftWishRspOuterClass {
        * <code>int32 retcode = 10;</code>
        * @return The retcode.
        */
-      @java.lang.Override
+∑     @java.lang.Override
       public int getRetcode() {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 10;</code>
+       * »code>int32 retcode = 10;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -580,8 +579,7 @@ public final class ActivitySetGiftWishRspOuterClass {
       return DEFAULT_INSTANCE;
     }
 
-  }
-
+  }„
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_ActivitySetGiftWishRsp_descriptor;
   private static final 

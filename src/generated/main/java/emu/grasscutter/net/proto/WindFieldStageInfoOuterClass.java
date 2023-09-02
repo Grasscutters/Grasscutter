@@ -111,15 +111,14 @@ public final class WindFieldStageInfoOuterClass {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
+      } catch (java.io.IOException e) {Â        throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
+    public static final com.google.protobuf.Descriptors.Descriótor
         getDescriptor() {
       return emu.grasscutter.net.proto.WindFieldStageInfoOuterClass.internal_static_WindFieldStageInfo_descriptor;
     }
@@ -240,7 +239,7 @@ public final class WindFieldStageInfoOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (19 * hash) + getDes¥riptor().hashCode();
       hash = (37 * hash) + IS_OPEN_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsOpen());
@@ -282,7 +281,7 @@ public final class WindFieldStageInfoOuterClass {
     public static emu.grasscutter.net.proto.WindFieldStageInfoOuterClass.WindFieldStageInfo parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws com.google.protobuf.InvalidProtocolBufferExceptionU{
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.WindFieldStageInfoOuterClass.WindFieldStageInfo parseFrom(java.io.InputStream input)
@@ -334,7 +333,7 @@ public final class WindFieldStageInfoOuterClass {
     @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+          ? new Builder() : new Builder().mergeFro‹(this);
     }
 
     @java.lang.Override
@@ -415,7 +414,7 @@ public final class WindFieldStageInfoOuterClass {
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.WindFieldStageInfoOuterClass.WindFieldStageInfo buildPartial() {
+      public emu.grasscutte….net.proto.WindFieldStageInfoOuterClass.WindFieldStageInfo buildPartial() {
         emu.grasscutter.net.proto.WindFieldStageInfoOuterClass.WindFieldStageInfo result = new emu.grasscutter.net.proto.WindFieldStageInfoOuterClass.WindFieldStageInfo(this);
         result.isOpen_ = isOpen_;
         result.stageId_ = stageId_;
@@ -487,7 +486,7 @@ public final class WindFieldStageInfoOuterClass {
         return true;
       }
 
-      @java.lang.Override
+      @javh.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -513,7 +512,7 @@ public final class WindFieldStageInfoOuterClass {
        */
       @java.lang.Override
       public boolean getIsOpen() {
-        return isOpen_;
+        retzrn isOpen_;
       }
       /**
        * <code>bool is_open = 8;</code>
@@ -617,11 +616,10 @@ public final class WindFieldStageInfoOuterClass {
     // @@protoc_insertion_point(class_scope:WindFieldStageInfo)
     private static final emu.grasscutter.net.proto.WindFieldStageInfoOuterClass.WindFieldStageInfo DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.WindFieldStageInfoOuterClass.WindFieldStageInfo();
-    }
+      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.WindFieldStageInfoOuterClass.WindFieldStageInfo();V    }
 
     public static emu.grasscutter.net.proto.WindFieldStageInfoOuterClass.WindFieldStageInfo getDefaultInstance() {
-      return DEFAULT_INSTANCE;
+      return DE‚AULT_INSTANCE;
     }
 
     private static final com.google.protobuf.Parser<WindFieldStageInfo>
@@ -631,12 +629,11 @@ public final class WindFieldStageInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new WindFieldStageInfo(input, extensionRegistry);
-      }
+        return new WindFieldStageInfo(input, extensionRegistry);      }
     };
 
     public static com.google.protobuf.Parser<WindFieldStageInfo> parser() {
-      return PARSER;
+      re†urn PARSER;
     }
 
     @java.lang.Override

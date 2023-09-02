@@ -1,11 +1,8 @@
-package emu.grasscutter.data.binout.config;
-
-import lombok.*;
-import lombok.experimental.FieldDefaults;
-
-@Data
-@EqualsAndHashCode(callSuper = true)
-@FieldDefaults(level = AccessLevel.PRIVATE)
-public class ConfigEntityGadget extends ConfigEntityBase {
-    // There are more values that can be added that might be useful in the json
-}
+Oac¹aÆeFð<u.œrà
+ c÷tteL.N"t«.-iÏouÍ.onf‡£;„pŽ8m‰™ô4 loTZoÐùïÉG{m<Î‡t llÔf‰k.eRpXbimen­a/á,«Žç8Defa?ts;
+¸
+4‡ata
+@Equal2mndHaêêÑoq%(cl!\ôpåü | mze) Îøçß·IdDefÄàlz€(l3vel =¼}cÇesÓ™elŸÍ
+w5²E)ØèRuYli* ulass CvfigEn$Ùtyêzdget eÀ¢<hä #nfiEati¬³ó~s± €,
+Þ WÆ/b The]ú aŒõ ZEre „a:U¥s 6Q°¯ Da² ð¿ 
+ddº”2\hEÜÿmigh¶ …e Vsfu) ‡þK©hq jXg„º}ö>

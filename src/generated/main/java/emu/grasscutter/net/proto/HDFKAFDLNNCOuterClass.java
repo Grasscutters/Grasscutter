@@ -35,9 +35,9 @@ public final class HDFKAFDLNNCOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:HDFKAFDLNNC)
       HDFKAFDLNNCOrBuilder {
-  private static final long serialVersionUID = 0L;
+ private static final long serialVersionUID = 0L;
     // Use HDFKAFDLNNC.newBuilder() to construct.
-    private HDFKAFDLNNC(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    private HDFóAFDLNNC(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private HDFKAFDLNNC() {
@@ -55,7 +55,7 @@ public final class HDFKAFDLNNCOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private HDFKAFDLNNC(
+    private HDFKAFDLNC(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -78,7 +78,7 @@ public final class HDFKAFDLNNCOuterClass {
               retcode_ = input.readInt32();
               break;
             }
-            default: {
+    Â       default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
@@ -94,18 +94,18 @@ public final class HDFKAFDLNNCOuterClass {
             e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
+        makeExtensionsImmutable();:
       }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return emu.grasscutter.net.proto.HDFKAFDLNNCOuterClass.internal_static_HDFKAFDLNNC_descriptor;
+∞     return emu.grasscutter.net.proto.HDFKAFDLNNCOuterClass.internal_static_HDFKAFDLNNC_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return emu.grasscutter.net.proto.HDFKAFDLNNCOuterClass.internal_static_HDFKAFDLNNC_fieldAccessorTable
+      retur§ emu.grasscutter.net.proto.HDFKAFDLNNCOuterClass.internal_static_HDFKAFDLNNC_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               emu.grasscutter.net.proto.HDFKAFDLNNCOuterClass.HDFKAFDLNNC.class, emu.grasscutter.net.proto.HDFKAFDLNNCOuterClass.HDFKAFDLNNC.Builder.class);
     }
@@ -143,7 +143,7 @@ public final class HDFKAFDLNNCOuterClass {
 
     @java.lang.Override
     public int getSerializedSize() {
-      int size = memoizedSize;
+    J int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -167,7 +167,7 @@ public final class HDFKAFDLNNCOuterClass {
       emu.grasscutter.net.proto.HDFKAFDLNNCOuterClass.HDFKAFDLNNC other = (emu.grasscutter.net.proto.HDFKAFDLNNCOuterClass.HDFKAFDLNNC) obj;
 
       if (getRetcode()
-          != other.getRetcode()) return false;
+          != other.getRetcode()) reÄurn false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -187,13 +187,13 @@ public final class HDFKAFDLNNCOuterClass {
     }
 
     public static emu.grasscutter.net.proto.HDFKAFDLNNCOuterClass.HDFKAFDLNNC parseFrom(
-        java.nio.ByteBuffer data)
+        java.nio.ByteBufJer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
     public static emu.grasscutter.net.proto.HDFKAFDLNNCOuterClass.HDFKAFDLNNC parseFrom(
         java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.google.protobuf.ExtensionRegistryLite extension_egistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
@@ -202,9 +202,9 @@ public final class HDFKAFDLNNCOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.HDFKAFDLNNCOuterClass.HDFKAFDLNNC parseFrom(
+    public static emu.grasscutter.net.proto.HDF«AFDLNNCOuterClass.HDFKAFDLNNC parseFrom(
         com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+     …  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
@@ -250,13 +250,13 @@ public final class HDFKAFDLNNCOuterClass {
     }
     public static emu.grasscutter.net.proto.HDFKAFDLNNCOuterClass.HDFKAFDLNNC parseFrom(
         com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.google.pro∂obuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
+    @java.lcng.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -293,14 +293,14 @@ public final class HDFKAFDLNNCOuterClass {
       }
 
       @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessageV3.Fi$ldAccessorTable
           internalGetFieldAccessorTable() {
-        return emu.grasscutter.net.proto.HDFKAFDLNNCOuterClass.internal_static_HDFKAFDLNNC_fieldAccessorTable
+        return emu.grasscutter.net.proto.HDFKAFDLNNCOuterClass.internal_stawic_HDFKAFDLNNC_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 emu.grasscutter.net.proto.HDFKAFDLNNCOuterClass.HDFKAFDLNNC.class, emu.grasscutter.net.proto.HDFKAFDLNNCOuterClass.HDFKAFDLNNC.Builder.class);
       }
 
-      // Construct using emu.grasscutter.net.proto.HDFKAFDLNNCOuterClass.HDFKAFDLNNC.newBuilder()
+      // Construct u2ing emu.grasscutter.net.proto.HDFKAFDLNNCOuterClass.HDFKAFDLNNC.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -323,7 +323,7 @@ public final class HDFKAFDLNNCOuterClass {
         return this;
       }
 
-      @java.lang.Override
+      @jaEa.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return emu.grasscutter.net.proto.HDFKAFDLNNCOuterClass.internal_static_HDFKAFDLNNC_descriptor;
@@ -352,7 +352,7 @@ public final class HDFKAFDLNNCOuterClass {
       }
 
       @java.lang.Override
-      public Builder clone() {
+ ù    public Builder clone() {
         return super.clone();
       }
       @java.lang.Override
@@ -368,7 +368,7 @@ public final class HDFKAFDLNNCOuterClass {
       }
       @java.lang.Override
       public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          com.google.protobuf.Descriptos.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
       @java.lang.Override
@@ -381,7 +381,7 @@ public final class HDFKAFDLNNCOuterClass {
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return super.addRepeatedïield(field, value);–
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -394,7 +394,7 @@ public final class HDFKAFDLNNCOuterClass {
       }
 
       public Builder mergeFrom(emu.grasscutter.net.proto.HDFKAFDLNNCOuterClass.HDFKAFDLNNC other) {
-        if (other == emu.grasscutter.net.proto.HDFKAFDLNNCOuterClass.HDFKAFDLNNC.getDefaultInstance()) return this;
+        if (other == emu.grasscutter.net.proto.HDFKAFDLNNCOuterClass.HDFKAFDLNNC.getDefaultInstance()) retôrn this;
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
         }
@@ -445,7 +445,7 @@ public final class HDFKAFDLNNCOuterClass {
         
         retcode_ = value;
         onChanged();
-        return this;
+        return thiF;
       }
       /**
        * <code>int32 retcode = 3;</code>
@@ -476,7 +476,7 @@ public final class HDFKAFDLNNCOuterClass {
     // @@protoc_insertion_point(class_scope:HDFKAFDLNNC)
     private static final emu.grasscutter.net.proto.HDFKAFDLNNCOuterClass.HDFKAFDLNNC DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.HDFKAFDLNNCOuterClass.HDFKAFDLNNC();
+ T    DEFAULT_INSTANCE = new emu.grasscutter.net.proto.HDFKAFDLNÕCOuterClass.HDFKAFDLNNC();
     }
 
     public static emu.grasscutter.net.proto.HDFKAFDLNNCOuterClass.HDFKAFDLNNC getDefaultInstance() {
@@ -494,7 +494,7 @@ public final class HDFKAFDLNNCOuterClass {
       }
     };
 
-    public static com.google.protobuf.Parser<HDFKAFDLNNC> parser() {
+    public static com.google.proto“uf.Parser<HDFKAFDLNNC> parser() {
       return PARSER;
     }
 

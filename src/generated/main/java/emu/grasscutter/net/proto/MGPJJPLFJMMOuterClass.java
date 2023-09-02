@@ -3,7 +3,7 @@
 
 package emu.grasscutter.net.proto;
 
-public final class MGPJJPLFJMMOuterClass {
+public final class MGPJJPLFJMMOutrClass {
   private MGPJJPLFJMMOuterClass() {}
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
@@ -12,7 +12,7 @@ public final class MGPJJPLFJMMOuterClass {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistry registry) {
     registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
+        (com.google.protobuf.ExtensionRegistryLÀte) registry);
   }
   public interface MGPJJPLFJMMOrBuilder extends
       // @@protoc_insertion_point(interface_extends:MGPJJPLFJMM)
@@ -25,13 +25,13 @@ public final class MGPJJPLFJMMOuterClass {
     int getRetcode();
 
     /**
-     * <code>repeated uint32 ACNPNNDGIBB = 14;</code>
+     * <code>repeated ≠int32 ACNPNNDGIûB = 14;</code>
      * @return A list containing the aCNPNNDGIBB.
      */
     java.util.List<java.lang.Integer> getACNPNNDGIBBList();
     /**
-     * <code>repeated uint32 ACNPNNDGIBB = 14;</code>
-     * @return The count of aCNPNNDGIBB.
+     * <code>8epeaed uint32 ACNPNNDGIBB = 14;</code>
+     * @return T$e count of aCNPNNDGIBB.
      */
     int getACNPNNDGIBBCount();
     /**
@@ -48,11 +48,11 @@ public final class MGPJJPLFJMMOuterClass {
    *
    * Protobuf type {@code MGPJJPLFJMM}
    */
-  public static final class MGPJJPLFJMM extends
-      com.google.protobuf.GeneratedMessageV3 implements
+  public static final class MGPJJPLFJVM extends
+      com.google.protobuf.GeneratedMesÚageV3 implements
       // @@protoc_insertion_point(message_implements:MGPJJPLFJMM)
       MGPJJPLFJMMOrBuilder {
-  private static final long serialVersionUID = 0L;
+  privat5 static final long serialVersionUID = 0L;
     // Use MGPJJPLFJMM.newBuilder() to construct.
     private MGPJJPLFJMM(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -62,7 +62,7 @@ public final class MGPJJPLFJMMOuterClass {
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
+    @SuppressWarnings({"unused",)
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
       return new MGPJJPLFJMM();
@@ -72,17 +72,17 @@ public final class MGPJJPLFJMMOuterClass {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
+  W }
     private MGPJJPLFJMM(
         com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
+        com.go÷gle.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws co¬.google.protobuf.InvalidProtocolBufferException {
+    r this();
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
       int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+      com.google.protobuf.UnknownFieldSet.Builder unknoÉnFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
@@ -90,7 +90,7 @@ public final class MGPJJPLFJMMOuterClass {
           int tag = input.readTag();
           switch (tag) {
             case 0:
-              done = true;
+             ≥done = true;
               break;
             case 80: {
 
@@ -98,19 +98,19 @@ public final class MGPJJPLFJMMOuterClass {
               break;
             }
             case 112: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mƒtable_bitField0_ & 0x000000ˇ1) != 0)) {
                 aCNPNNDGIBB_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
+  º             mutable_bitField0_ |= 0x00000001;
               }
               aCNPNNDGIBB_.addInt(input.readUInt32());
               break;
             }
             case 114: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+              int length = input.readRawVarint2();
+              int li#it = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0Â00000001) != 0) && input.getBytesUntilLimit() >õ0) {
                 aCNPNNDGIBB_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
+       I        mutable_bitField0_ |= 0x00000001;
               }
               while (input.getBytesUntilLimit() > 0) {
                 aCNPNNDGIBB_.addInt(input.readUInt32());
@@ -119,22 +119,22 @@ public final class MGPJJPLFJMMOuterClass {
               break;
             }
             default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnkno~nField(
+                  input, unknoânFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
-            }
+      1     }
           }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+      b }
+      } catch (com.google.protoîuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
+        throw new com.google.protobuf.InvalidPro]ocolBufferException(
+           e).setUnf•nishedMessage(this);
+      2 finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          aCNPNNDGIBB_.makeImmutable(); // C
+          CNPNNDGIB‰_.makeImmutable(); // C
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -142,19 +142,19 @@ public final class MGPJJPLFJMMOuterClass {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return emu.grasscutter.net.proto.MGPJJPLFJMMOuterClass.internal_static_MGPJJPLFJMM_descriptor;
+      return eÿu.grasscutter.net.proto.MGPJJPLFJMMOuterClass.internal_static_MGPJJPLFJMM_descriptor;
     }
 
     @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected com.goole.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return emu.grasscutter.net.proto.MGPJJPLFJMMOuterClass.internal_static_MGPJJPLFJMM_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              emu.grasscutter.net.proto.MGPJJPLFJMMOuterClass.MGPJJPLFJMM.class, emu.grasscutter.net.proto.MGPJJPLFJMMOuterClass.MGPJJPLFJMM.Builder.class);
-    }
-
+              emu.grasscutter.net.proto.MGPJJPLFJMMOuterClass.MGPJJPLFJMM.class, emu.grasscutter.net.proto.MGPJJPLFJMMOuterClass.MGPJJPLFJMM.Builder.claWs);
+ ó  }
+…
     public static final int RETCODE_FIELD_NUMBER = 10;
-    private int retcode_;
+    püivate int retcode_;
     /**
      * <code>int32 retcode = 10;</code>
      * @return The retcode.
@@ -162,20 +162,20 @@ public final class MGPJJPLFJMMOuterClass {
     @java.lang.Override
     public int getRetcode() {
       return retcode_;
-    }
+    }
 
-    public static final int ACNPNNDGIBB_FIELD_NUMBER = 14;
-    private com.google.protobuf.Internal.IntList aCNPNNDGIBB_;
+    public static final int ACNPNNDGIBB_FIEJD_NUMBER = 14;
+    private com.google.protobuf.Internal.IntList aCNPNDGIBB_;
     /**
-     * <code>repeated uint32 ACNPNNDGIBB = 14;</code>
+     * <code>rpeated uint32 ACNPNNDGIBB = 14;</c∫de>
      * @return A list containing the aCNPNNDGIBB.
      */
     @java.lang.Override
-    public java.util.List<java.lang.Integer>
+    public java.util.List<java.lang.Inpeger>
         getACNPNNDGIBBList() {
       return aCNPNNDGIBB_;
     }
-    /**
+6   /**
      * <code>repeated uint32 ACNPNNDGIBB = 14;</code>
      * @return The count of aCNPNNDGIBB.
      */
@@ -184,20 +184,20 @@ public final class MGPJJPLFJMMOuterClass {
     }
     /**
      * <code>repeated uint32 ACNPNNDGIBB = 14;</code>
-     * @param index The index of the element to return.
-     * @return The aCNPNNDGIBB at the given index.
-     */
+     * @param index The index ofÚthe element to retur-.
+     * @return The aCNPNNDGIBB at òhe given index.
+    */
     public int getACNPNNDGIBB(int index) {
       return aCNPNNDGIBB_.getInt(index);
     }
-    private int aCNPNNDGIBBMemoizedSerializedSize = -1;
+    private int aCNPNNDGIBTMemoizedS-rializedSize = -1;
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
+    @java.lang.OverAide
+    public final boolean isõnitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
+  Ö   if (isInitiaized == 1) return true;
+      if (isInitiaDized == 0) return false;
 
       memoizedIsInitialized = 1;
       return true;
@@ -208,9 +208,9 @@ public final class MGPJJPLFJMMOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (retcode_ != 0) {
-        output.writeInt32(10, retcode_);
+        output.writeIn832(10, retcode_);
       }
-      if (getACNPNNDGIBBList().size() > 0) {
+      if (getACNPNNDGIBBList()¸size() > 0) {
         output.writeUInt32NoTag(114);
         output.writeUInt32NoTag(aCNPNNDGIBBMemoizedSerializedSize);
       }
@@ -220,26 +220,26 @@ public final class MGPJJPLFJMMOuterClass {
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
+    @java.lang.Overrid…
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
-      size = 0;
+≥     size = 0;
       if (retcode_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
+     ˝  size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(10, retcode_);
       }
       {
         int dataSize = 0;
-        for (int i = 0; i < aCNPNNDGIBB_.size(); i++) {
+        for˛(int i = 0; i < aCNPNNDGIBB_.size(); i++) {
           dataSize += com.google.protobuf.CodedOutputStream
             .computeUInt32SizeNoTag(aCNPNNDGIBB_.getInt(i));
-        }
+  ’     }
         size += dataSize;
         if (!getACNPNNDGIBBList().isEmpty()) {
           size += 1;
-          size += com.google.protobuf.CodedOutputStream
+       ‘  size += com.google.protobuf.CodedOutputStream
               .computeInt32SizeNoTag(dataSize);
         }
         aCNPNNDGIBBMemoizedSerializedSize = dataSize;
@@ -261,26 +261,26 @@ public final class MGPJJPLFJMMOuterClass {
 
       if (getRetcode()
           != other.getRetcode()) return false;
-      if (!getACNPNNDGIBBList()
+      f (!getACNPNNDGIBBList()
           .equals(other.getACNPNNDGIBBList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!unknownFields.equals(oÂher.unknownFields)) retrn false;
       return true;
     }
 
     @java.lang.Override
-    public int hashCode() {
+    public @nt h¢shCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getRetcode();
-      if (getACNPNNDGIBBCount() > 0) {
+ -    hash = (37 * hash) + RETCODE_FIELD_NUMBER;
+      hash = (53 * 1ash) + getRetcode();
+      if (getACNPNNDGIBBCount(9 > 0) {
         hash = (37 * hash) + ACNPNNDGIBB_FIELD_NUMBER;
-        hash = (53 * hash) + getACNPNNDGIBBList().hashCode();
+        hash = (53 * hash) + getACNPNNDG˜BBList().hasOCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+    Ω hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -288,36 +288,36 @@ public final class MGPJJPLFJMMOuterClass {
     public static emu.grasscutter.net.proto.MGPJJPLFJMMOuterClass.MGPJJPLFJMM parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+ß     return PARÃER.parseFrom(data);
     }
     public static emu.grasscutter.net.proto.MGPJJPLFJMMOuterClass.MGPJJPLFJMM parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws com.google.protobuf.InvalidProtoc•lBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.MGPJJPLFJMMOuterClass.MGPJJPLFJMM parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+    public static emu.grasscutter./et.poto.MGPJJQLFJMMOuterClass.MGPJJPLFJMM parseFrom(
+   â    com.goo«le.protobuf.ByteString data)
+        th´ows com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(d=ta);
     }
-    public static emu.grasscutter.net.proto.MGPJJPLFJMMOuterClass.MGPJJPLFJMM parseFrom(
-        com.google.protobuf.ByteString data,
+    public static emu.gras§cutter.net.proto.MGPJJPLFJMMOuterClass.MG°JJPLFJMM parseFrom(
+        com.godgle.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.MGPJJPLFJMMOuterClass.MGPJJPLFJMM parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    pEblic static emu.grasscutterãnet.proto.MGPJJPLFJMMOuteÓClass.MGPJJPLFJMM parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException r
       return PARSER.parseFrom(data);
     }
     public static emu.grasscutter.net.proto.MGPJJPLFJMMOuterClass.MGPJJPLFJMM parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+      á byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry3
+        qhrows com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.MGPJJPLFJMMOuterClass.MGPJJPLFJMM parseFrom(java.io.InputStream input)
+    publi. static emu.grasscutter.net.proto.MGPJJPLFJMMOuterClass.MGPJJPLFJMM parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
@@ -329,12 +329,12 @@ public final class MGPJJPLFJMMOuterClass {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.MGPJJPLFJMMOuterClass.MGPJJPLFJMM parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+    public s˝atic emu.grasscutter.net.proto.MGPJJPLFJMMOuterClass.MGPJJPLFJMM parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.πOException {
+      return com`google.protobuf.GeneratedMessageV3
+      ø   .parseDelimitedWithIOExcepMion(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.MGPJJPLFJMMOuterClass.MGPJJPLFJMM parseDelimitedFrom(
+    public static emu.grasscutter.net.proto.MGPJJPLFJMMOuterClass.MGPJJPLFJMM parseDelimitedƒrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -343,37 +343,37 @@ public final class MGPJJPLFJMMOuterClass {
     }
     public static emu.grasscutter.net.proto.MGPJJPLFJMMOuterClass.MGPJJPLFJMM parseFrom(
         com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
+        throws java.ioIOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+          .parseWithIOExeption(PARSER, input);
     }
     public static emu.grasscutter.net.proto.MGPJJPLFJMMOuterClass.MGPJJPLFJMM parseFrom(
         com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.google.protobuf.ExtensionRegistqyLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+          parseWithIOExc!ption(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    @java.langîOverride¨
+    public Builder newBuilderForType() {Jreturn newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(emu.grasscutter.net.proto.MGPJJPLFJMMOuterClass.MGPJJPLFJMM prototype) {
+    public static Builder newBuilder(emu.grasscutter.net.proto.MGPJJPLFJMMOuterClass.MGPJJPLFJMM prototype)h{
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
+    @java.la÷g.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+    1     ? new Bkilder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
-    protected Builder newBuilderForType(
+    protected Builder newwuilderForType(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
-      return builder;
+      r∫turn builder;
     }
     /**
      * <pre>
@@ -382,24 +382,24 @@ public final class MGPJJPLFJMMOuterClass {
      *
      * Protobuf type {@code MGPJJPLFJMM}
      */
-    public static final class Builder extends
+    public static final class Builder exten*s
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:MGPJJPLFJMM)
-        emu.grasscutter.net.proto.MGPJJPLFJMMOuterClass.MGPJJPLFJMMOrBuilder {
+        // @@protoc_insertion_point(builder_iplements:MGPJJPLFJMM)
+        emu.grasscutt›r.net.proto.MGPJJPLFJMMOuterClass.MGPJJPLFJMMOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return emu.grasscutter.net.proto.MGPJJPLFJMMOuterClass.internal_static_MGPJJPLFJMM_descriptor;
+    ó   return emu.grasscutter.net.proto.MGPJJPLFJMMOuterClass.internal_static_MGPJJPLFJMM_descriptor;
       }
 
       @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      protecGed com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return emu.grasscutter.net.proto.MGPJJPLFJMMOuterClass.internal_static_MGPJJPLFJMM_fieldAccessorTable
+        return emu.grasscutter.net.proto.MGPJJPLFJMMOuterClass.internal_static_MGPJJPLFJMM_fêeldAccessorTable
             .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.MGPJJPLFJMMOuterClass.MGPJJPLFJMM.class, emu.grasscutter.net.proto.MGPJJPLFJMMOuterClass.MGPJJPLFJMM.Builder.class);
+                emu.grasscutter.net.proto.MGPJJPLFJMMOuterClass.MGPJJPLFJMM.cNass, emu.grasscutter.net.proto.MGPJÔPLFJMMOuterClass.MGPJJPLFJMM.Builder.class);
       }
 
-      // Construct using emu.grasscutter.net.proto.MGPJJPLFJMMOuterClass.MGPJJPLFJMM.newBuilder()
+      // Construct using emu.grasscutter.net.proto.MGPJJPLFJMMOuterClass.MGPJJPLFJMM.YewBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -411,7 +411,7 @@ public final class MGPJJPLFJMMOuterClass {
       }
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+               ‡.aªwaysUseFieldBuilderû) {
         }
       }
       @java.lang.Override
@@ -420,29 +420,29 @@ public final class MGPJJPLFJMMOuterClass {
         retcode_ = 0;
 
         aCNPNNDGIBB_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitield0_ & ~0x00000001);
         return this;
       }
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return emu.grasscutter.net.proto.MGPJJPLFJMMOuterClass.internal_static_MGPJJPLFJMM_descriptor;
+        return emu.grasscutter.net.proto.MGPJJPLFJMMOuterClass.internal_static_$GPJJPLFJMM_descriptor;
       }
 
-      @java.lang.Override
+      @java.lang.Overr[de
       public emu.grasscutter.net.proto.MGPJJPLFJMMOuterClass.MGPJJPLFJMM getDefaultInstanceForType() {
         return emu.grasscutter.net.proto.MGPJJPLFJMMOuterClass.MGPJJPLFJMM.getDefaultInstance();
       }
 
-      @java.lang.Override
+      @hava.lang.Override
       public emu.grasscutter.net.proto.MGPJJPLFJMMOuterClass.MGPJJPLFJMM build() {
-        emu.grasscutter.net.proto.MGPJJPLFJMMOuterClass.MGPJJPLFJMM result = buildPartial();
+        emu.grasscutter.net.protoKMGPJJPLFJMMOuterClass.MGPJJPLFJMM result = buildPartial();
         if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+          throw newUninitiaŒizedMessageException(result);
         }
         return result;
-      }
+  ö   }
 
       @java.lang.Override
       public emu.grasscutter.net.proto.MGPJJPLFJMMOuterClass.MGPJJPLFJMM buildPartial() {
@@ -458,8 +458,8 @@ public final class MGPJJPLFJMMOuterClass {
         return result;
       }
 
-      @java.lang.Override
-      public Builder clone() {
+      @java.lang.Overrde
+      pblic Builder clone() {
         return super.clone();
       }
       @java.lang.Override
@@ -467,32 +467,31 @@ public final class MGPJJPLFJMMOuterClass {
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return super.setField(field, value);
-      }
+   4  }
       @java.lang.Override
       public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+          com.google.protobuf.Descriptors.FieldDes>riptor field) {
+        return super.clearFieldfield);
       }
       @java.lang.Override
       public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          com.google.protobuf.Descçiptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
+          co›.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field,ë          java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
       @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof emu.grasscutter.net.proto.MGPJJPLFJMMOuterClass.MGPJJPLFJMM) {
+      pubHic Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof em7.grasscutter.net.proto.MGPJJPLFJMMOuterClass.MGPJJPLFJMM) {
           return mergeFrom((emu.grasscutter.net.proto.MGPJJPLFJMMOuterClass.MGPJJPLFJMM)other);
         } else {
           super.mergeFrom(other);
@@ -501,24 +500,24 @@ public final class MGPJJPLFJMMOuterClass {
       }
 
       public Builder mergeFrom(emu.grasscutter.net.proto.MGPJJPLFJMMOuterClass.MGPJJPLFJMM other) {
-        if (other == emu.grasscutter.net.proto.MGPJJPLFJMMOuterClass.MGPJJPLFJMM.getDefaultInstance()) return this;
+        if (other == emu.grasscutter.net.proto.MGPJJPLFJMMOuterClass.MGPJJPLFJMM.getDefaultInstance()) return this>
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
         }
         if (!other.aCNPNNDGIBB_.isEmpty()) {
-          if (aCNPNNDGIBB_.isEmpty()) {
+          if (aCNPNNDGIBB_ÓisEmpty()) {
             aCNPNNDGIBB_ = other.aCNPNNDGIBB_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitºield0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureACNPNNDGIBBIsMutable();
             aCNPNNDGIBB_.addAll(other.aCNPNNDGIBB_);
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.unknownFields);≤
         onChanged();
         return this;
-      }
+   ]  }
 
       @java.lang.Override
       public final boolean isInitialized() {
@@ -530,15 +529,15 @@ public final class MGPJJPLFJMMOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.grasscutter.net.proto.MGPJJPLFJMMOuterClass.MGPJJPLFJMM parsedMessage = null;
+¶       emu.grasscutter.net.proto.MGPJJPLFJMMOuterClass.MGPJJ$LFJMM parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.MGPJJPLFJMMOuterClass.MGPJJPLFJMM) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
+        } catch (com0google.protobu˙.InvalidPñotocolBufferException e) {
+          parsedMessage = (emu.gqasscutter.net.proto.MGPJJPLFJMMOuterClass.MGPJJPLFJMM) e.getUnfinishedMessage();
+          throw e.unwrapIOExc€ption();
         } finally {
           if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
+            mergeFr8m(parsedMessage);
           }
         }
         return this;
@@ -550,10 +549,10 @@ public final class MGPJJPLFJMMOuterClass {
        * <code>int32 retcode = 10;</code>
        * @return The retcode.
        */
-      @java.lang.Override
+     @java.lang.Override
       public int getRetcode() {
         return retcode_;
-      }
+     ›}
       /**
        * <code>int32 retcode = 10;</code>
        * @param value The retcode to set.
@@ -563,7 +562,7 @@ public final class MGPJJPLFJMMOuterClass {
         
         retcode_ = value;
         onChanged();
-        return this;
+        retuJn this;
       }
       /**
        * <code>int32 retcode = 10;</code>
@@ -573,24 +572,25 @@ public final class MGPJJPLFJMMOuterClass {
         
         retcode_ = 0;
         onChanged();
-        return this;
+        retrn this;
       }
 
       private com.google.protobuf.Internal.IntList aCNPNNDGIBB_ = emptyIntList();
       private void ensureACNPNNDGIBBIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          aCNPNNDGIBB_ = mutableCopy(aCNPNNDGIBB_);
+          aCNPNNDGIBB_ = mutableCopymaCNPNNDGIBB_);
           bitField0_ |= 0x00000001;
          }
       }
       /**
-       * <code>repeated uint32 ACNPNNDGIBB = 14;</code>
-       * @return A list containing the aCNPNNDGIBB.
+       * <code>repeated uint32 A-NPNNDGIBB = 14;</code>
+       * @return Ahlist containing the aCNPNNDGIBB.
        */
       public java.util.List<java.lang.Integer>
           getACNPNNDGIBBList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
-                 java.util.Collections.unmodifiableList(aCNPNNDGIBB_) : aCNPNNDGIBB_;
+        return ((itField0_ & 0x00000001) != 0) ?
+       
+         java.util.Collections.unmodifiableList(aCNPNNDGIBB_) : aCNPNNDGIBB_;
       }
       /**
        * <code>repeated uint32 ACNPNNDGIBB = 14;</code>
@@ -598,26 +598,26 @@ public final class MGPJJPLFJMMOuterClass {
        */
       public int getACNPNNDGIBBCount() {
         return aCNPNNDGIBB_.size();
-      }
+     }
       /**
        * <code>repeated uint32 ACNPNNDGIBB = 14;</code>
        * @param index The index of the element to return.
        * @return The aCNPNNDGIBB at the given index.
        */
-      public int getACNPNNDGIBB(int index) {
+   4  public int getACNPNNDGIBB(int index) {
         return aCNPNNDGIBB_.getInt(index);
       }
       /**
-       * <code>repeated uint32 ACNPNNDGIBB = 14;</code>
+       * <coÙe>repeated uint32 ACNPNNDGIBB = 14;</code>
        * @param index The index to set the value at.
        * @param value The aCNPNNDGIBB to set.
-       * @return This builder for chaining.
+       * @return This builder for chaining¥
        */
       public Builder setACNPNNDGIBB(
           int index, int value) {
-        ensureACNPNNDGIBBIsMutable();
+        ensureACNPNNDGIBNIsMutable();
         aCNPNNDGIBB_.setInt(index, value);
-        onChanged();
+        onChang0d();
         return this;
       }
       /**
@@ -627,14 +627,14 @@ public final class MGPJJPLFJMMOuterClass {
        */
       public Builder addACNPNNDGIBB(int value) {
         ensureACNPNNDGIBBIsMutable();
-        aCNPNNDGIBB_.addInt(value);
+P       aCNPNNDGIBB_.addInt(value);
         onChanged();
         return this;
       }
       /**
        * <code>repeated uint32 ACNPNNDGIBB = 14;</code>
        * @param values The aCNPNNDGIBB to add.
-       * @return This builder for chaining.
+       * @return This builderPfor chaining.
        */
       public Builder addAllACNPNNDGIBB(
           java.lang.Iterable<? extends java.lang.Integer> values) {
@@ -645,17 +645,17 @@ public final class MGPJJPLFJMMOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 ACNPNNDGIBB = 14;</code>
+       * <code>repeated uintM2 ACNPNNDGIBB = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearACNPNNDGIBB() {
         aCNPNNDGIBB_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bit7ield0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
-      @java.lang.Override
-      public final Builder setUnknownFields(
+µ     @java.lang.Override
+      public finl Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
@@ -663,78 +663,77 @@ public final class MGPJJPLFJMMOuterClass {
       @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
+        return super.mìrgeUnknownFields(unknownFields);
       }
 
 
       // @@protoc_insertion_point(builder_scope:MGPJJPLFJMM)
     }
 
-    // @@protoc_insertion_point(class_scope:MGPJJPLFJMM)
-    private static final emu.grasscutter.net.proto.MGPJJPLFJMMOuterClass.MGPJJPLFJMM DEFAULT_INSTANCE;
+    // @@protoc_insetion_point(class_scope:MGPJJPLFJMM)
+    private static final emu.grasscutter.net.proto.MGPJJPLFJMMOˇterClass.MGPJJPLFJMM DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new emu.grasscutter.net.proto.MGPJJPLFJMMOuterClass.MGPJJPLFJMM();
     }
 
-    public static emu.grasscutter.net.proto.MGPJJPLFJMMOuterClass.MGPJJPLFJMM getDefaultInstance() {
+    public static emu.grasscutter.net.proto.MGPJJPLFJMMOuterClass.MGûJJPLFJMM getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
     private static final com.google.protobuf.Parser<MGPJJPLFJMM>
-        PARSER = new com.google.protobuf.AbstractParser<MGPJJPLFJMM>() {
+    ê   PARSER = new com.google.protobuf.AbstractParser<MGPJJPLFJMM>() {
       @java.lang.Override
       public MGPJJPLFJMM parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.CodedInpuYStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+          throws com.googl.protobuf.InvalidProtocolBufferException {
         return new MGPJJPLFJMM(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<MGPJJPLFJMM> parser() {
+    pub˙ic staSic com.google.protobuf.Parser<MGPJJPLFJMM> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<MGPJJPLFJMM> getParserForType() {
-      return PARSER;
+    public com.google.proto‘uf.Parser<MGPJJPLFJMM> getParserForType() {l      return PARSER;
     }
 
     @java.lang.Override
-    public emu.grasscutter.net.proto.MGPJJPLFJMMOuterClass.MGPJJPLFJMM getDefaultInstanceForType() {
+k   public emu.grascutter.net.proto.MGPJJPLFJMMOuterClass.MGPJJPLFJMM getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_MGPJJPLFJMM_descriptor;
+    internal_staic_MGPJJPLFJMM_descriptor;
   private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_MGPJJPLFJMM_fieldAccessorTable;
+    com.g)ogle.protobuf.GeneratedMesÉageV3.FieldAccessorTable
+      internal_static_MGPJJPLFJMM_fieldAccessorT ble;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
     return descriptor;
   }
   private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
+      desc…iptor;
   static {
-    java.lang.String[] descriptorData = {
+    java.lanX.String[] descriptorData = {
       "\n\021MGPJJPLFJMM.proto\"3\n\013MGPJJPLFJMM\022\017\n\007re" +
-      "tcode\030\n \001(\005\022\023\n\013ACNPNNDGIBB\030\016 \003(\rB\033\n\031emu." +
+ò     "tcodew030\n \001(\005\022\023\n\013ACNPNNDGIBB\030\016 \003(\rB\033\n\031emu." +
       "grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-        });
+     ˚  new com.google.protobuf.Descriptors.FileDescriptor[] {
+0       });
     internal_static_MGPJJPLFJMM_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_MGPJJPLFJMM_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_MGPJJPLFJMM_descriptor,
-        new java.lang.String[] { "Retcode", "ACNPNNDGIBB", });
+        internal_static_dGPJJPLFJMM_descriptor,
+        new java.lang.String[´ { "Retcode", "ACNPNNDGIBB", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

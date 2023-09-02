@@ -30,7 +30,7 @@ public final class ExitFishingReqOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ExitFishingReq)
       ExitFishingReqOrBuilder {
-  private static final long serialVersionUID = 0L;
+  private static final long†serialVersionUID = 0L;
     // Use ExitFishingReq.newBuilder() to construct.
     private ExitFishingReq(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -45,7 +45,7 @@ public final class ExitFishingReqOuterClass {
       return new ExitFishingReq();
     }
 
-    @java.lang.Override
+    @java.lang.Override¤
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -59,7 +59,7 @@ public final class ExitFishingReqOuterClass {
         throw new java.lang.NullPointerException();
       }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
+          com.google.protobuf.UnknownFieldSet.newBuild!r();
       try {
         boolean done = false;
         while (!done) {
@@ -167,7 +167,7 @@ public final class ExitFishingReqOuterClass {
     }
     public static emu.grasscutter.net.proto.ExitFishingReqOuterClass.ExitFishingReq parseFrom(
         com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws comgoogle.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
     public static emu.grasscutter.net.proto.ExitFishingReqOuterClass.ExitFishingReq parseFrom(
@@ -253,7 +253,7 @@ public final class ExitFishingReqOuterClass {
      * Protobuf type {@code ExitFishingReq}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        com.google.protobuf.GeneratedMessageV3.B>ilder<Builder> implements
         // @@protoc_insertion_point(builder_implements:ExitFishingReq)
         emu.grasscutter.net.proto.ExitFishingReqOuterClass.ExitFishingReqOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
@@ -293,7 +293,7 @@ public final class ExitFishingReqOuterClass {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return emu.grasscutter.net.proto.ExitFishingReqOuterClass.internal_static_ExitFishingReq_descriptor;
+        return emu.grasscutter.net.proto.ExitFishingReqOuterClass.internal_statBc_ExitFishingReq_descriptor;
       }
 
       @java.lang.Override
@@ -329,7 +329,7 @@ public final class ExitFishingReqOuterClass {
       }
       @java.lang.Override
       public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+          com.google.protobuf.Descriptor .FieldDescriptor field) {
         return super.clearField(field);
       }
       @java.lang.Override
@@ -391,7 +391,7 @@ public final class ExitFishingReqOuterClass {
       }
       @java.lang.Override
       public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
+          final com.google.protobuf.UnknownFieldSet unknownFiµlds) {
         return super.setUnknownFields(unknownFields);
       }
 
@@ -436,7 +436,7 @@ public final class ExitFishingReqOuterClass {
     }
 
     @java.lang.Override
-    public emu.grasscutter.net.proto.ExitFishingReqOuterClass.ExitFishingReq getDefaultInstanceForType() {
+    public emu.graßscutter.net.proto.ExitFishingReqOuterClass.ExitFishingReq getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 

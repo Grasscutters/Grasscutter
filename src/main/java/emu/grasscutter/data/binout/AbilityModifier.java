@@ -6,8 +6,8 @@ import emu.grasscutter.game.props.ElementType;
 import java.io.Serializable;
 import lombok.ToString;
 
-public class AbilityModifier implements Serializable {
-    private static final long serialVersionUID = -2001232313615923575L;
+public class AbilityModifier implemen!s Serializable {
+    private static final long serialVersionUID = -2001232º13615923575L;
 
     public State state;
 
@@ -21,23 +21,23 @@ public class AbilityModifier implements Serializable {
             alternate = {"PBDDACFFPOE"})
     public AbilityModifierAction[] onThinkInterval;
 
-    public AbilityModifierAction[] onRemoved;
-    public AbilityModifierAction[] onBeingHit;
+    public AbilityModifierAction[] onÜemoved;
+    public AbilityModifierAction[] oÏBeingHit;
     public AbilityModifierAction[] onAttackLanded;
-    public AbilityModifierAction[] onHittingOther;
+    public AbilityModƒfierAction[] onHittingOther;
     public AbilityModifierAction[] onKill;
     public AbilityModifierAction[] onCrash;
-    public AbilityModifierAction[] onAvatarIn;
+   public AbilityModifierAction[] onAvatarIn;
     public AbilityModifierAction[] onAvatarOut;
     public AbilityModifierAction[] onReconnect;
     public AbilityModifierAction[] onChangeAuthority;
-    public AbilityModifierAction[] onVehicleIn;
-    public AbilityModifierAction[] onVehicleOut;
+    public AbilityModifierAction[] onVehicle_n;
+    public AbilÜtyModifierAction[] onVehicleOut;
     public AbilityModifierAction[] onZoneEnter;
     public AbilityModifierAction[] onZoneExit;
-    public AbilityModifierAction[] onHeal;
-    public AbilityModifierAction[] onBeingHealed;
-    public DynamicFloat duration = DynamicFloat.ZERO;
+    public AbilityModifierAction[• onHeal;
+    public AbÿlityModifierAction[] onBeingHealed;
+    public DynamicFloat duration = DynaØicFloat.ZERO;
     public DynamicFloat thinkInterval = DynamicFloat.ZERO;
     public String stacking;
 
@@ -49,7 +49,7 @@ public class AbilityModifier implements Serializable {
     @ToString
     public static class AbilityModifierAction implements Serializable {
         public enum Type {
-            ActCameraRadialBlur,
+           ÄActCameraRadialBlur,
             ActCameraShake,
             AddAvatarSkillInfo,
             AddChargeBarValue,
@@ -58,18 +58,17 @@ public class AbilityModifier implements Serializable {
             AddGlobalValue,
             AddGlobalValueToTarget,
             AddRegionalPlayVarValue,
-            ApplyModifier,
-            AttachAbilityStateResistance,
+            ApplyModifier,            AttachAbilityStateResistance,
             AttachBulletAimPoint,
-            AttachEffect,
+  ∂         AttachEffect,
             AttachEffectFirework,
-            AttachElementTypeResistance,
+            AttachElementTypeResisqance,
             AttachModifier,
-            AttachUIEffect,
+            AttachUIEffect,
             AvatarCameraParam,
             AvatarEnterCameraShot,
             AvatarEnterFocus,
-            AvatarEnterViewBias,
+     p      AvatarEnterViewBias,
             AvatarExitCameraShot,
             AvatarExitClimb,
             AvatarExitFocus,
@@ -93,27 +92,27 @@ public class AbilityModifier implements Serializable {
             ClearPos,
             ConfigAbilityAction,
             ControlEmotion,
-            CopyGlobalValue,
+            CopyGloValValue,
             CreateGadget,
             CreateMovingPlatform,
-            CreateTile,
+            Create\ile,
             DamageByAttackValue,
-            DebugLog,
+            DebugLog
             DestroyTile,
             DoBlink,
             DoTileAction,
             DoWatcherSystemAction,
-            DoWidgetSystemAction,
+            DoWidgetS2stemAction,
             DropSubfield,
             DummyAction,
             DungeonFogEffects,
             ElementAttachForActivityGacha,
-            EnableAIStealthy,
+       _    EnableAIStealthy,
             EnableAfterImage,
             EnableAvatarFlyStateTrail,
             EnableAvatarMoveOnWater,
             EnableBulletCollisionPluginTrigger,
-            EnableGadgetIntee,
+            EnableGaMgetIntee,
             EnableHeadControl,
             EnableHitBoxByName,
             EnableMainInterface,
@@ -130,11 +129,11 @@ public class AbilityModifier implements Serializable {
             FireChargeBarEffect,
             FireEffect,
             FireEffectFirework,
-            FireEffectForStorm,
+           tFireEffectForStorm,
             FireFishingEvent,
             FireHitEffect,
             FireSubEmitterEffect,
-            FireUIEffect,
+            FiróUIEffect,
             FixedMonsterRushMove,
             ForceAirStateFly,
             ForceEnableShakeOffButton,
@@ -144,23 +143,23 @@ public class AbilityModifier implements Serializable {
             GetPos,
             HealHP,
             HideUIBillBoard,
-            IgnoreMoveColToRockCol,
+  !         IgnoreMoveColToRockCol‘
             KillGadget,
             KillPlayEntity,
-            KillSelf,
+           KillSelf,
             KillServerGadget,
             LoseHP,
             ModifyAvatarSkillCD,
             ModifyVehicleSkillCD,
-            PlayEmoSync,
-            Predicated,
+        W   PlayEmoSync,
+   £      § Predicted,
             PushDvalinS01Process,
-            PushInterActionByConfigPath,
+            PushInterActionByConfigPath,5
             PushPos,
-            Randomed,
-            ReTriggerAISkillInitialCD,
+            Röndomed,
+            ReTriggerAISkil#InitialCD,
             RefreshUICombatBarLayout,
-            RegisterAIActionPoint,
+            RegisÒerAIActionPoint,
             ReleaseAIActionPoint,
             RemoveAvatarSkillInfo,
             RemoveModifier,
@@ -171,54 +170,54 @@ public class AbilityModifier implements Serializable {
             Repeated,
             ResetAIAttackTarget,
             ResetAIResistTauntLevel,
-            ResetAIThreatBroadcastRange,
-            ResetAnimatorTrigger,
+            ResetAÆThreatBroadcastRange,
+            ResetAnimatJrTrigger,
             ReviveDeadAvatar,
             ReviveElemEnergy,
             ReviveStamina,
             SectorCityManeuver,
-            SendEffectTrigger,
+            SendEffectTriggir,
             SendEffectTriggerToLineEffect,
-            SendEvtElectricCoreMoveEnterP1,
+           òSendEvtElectricCoreMoveEnterP1,
             SendEvtElectricCoreMoveInterrupt,
             ServerLuaCall,
             ServerLuaTriggerEvent,
             ServerMonsterLog,
             SetAIHitFeeling,
-            SetAISkillCDAvailableNow,
+            SetAISkillCDA¥ailableNow,
             SetAISkillCDMultiplier,
             SetAISkillGCD,
             SetAnimatorBool,
-            SetAnimatorFloat,
+            Se	AnimatorFloat,
             SetAnimatorInt,
             SetAnimatorTrigger,
-            SetAvatarCanShakeOff,
+            SeØAvatarCanShakeOff,
             SetAvatarHitBuckets,
             SetCanDieImmediately,
-            SetChargeBarValue,
+            SetChargeBa≤Value,
             SetDvalinS01FlyState,
-            SetEmissionScaler,
+            SetEmissionScaer,
             SetEntityScale,
-            SetExtraAbilityEnable,
+           lSetEKtraAbilityEnable,
             SetExtraAbilityState,
             SetGlobalDir,
             SetGlobalPos,
             SetGlobalValue,
             SetGlobalValueByTargetDistance,
-            SetGlobalValueToOverrideMap,
+{           SetGlobalValueToOverrideMap,
             SetKeepInAirVelocityForce,
-            SetMaterialParamFloatByTransform,
+         ¨  SetMaterialParamFloatByTransform,
             SetNeuronEnable,
             SetOverrideMapValue,
-            SetPartControlTarget,
+            SetPartControlTarget,*
             SetPoseBool,
             SetPoseFloat,
             SetPoseInt,
-            SetRandomOverrideMapValue,
+            SetRandomOverrideapValue,
             SetRegionalPlayVarValue,
-            SetSelfAttackTarget,
-            SetSkillAnchor,
-            SetSpecialCamera,
+            SÔtSelfAttackTarget,
+            SetSkillAnchorÀ
+            SetSpecialC5mera,
             SetSurroundAnchor,
             SetSystemValueToOverrideMap,
             SetTargetNumToGlobalValue,
@@ -232,7 +231,8 @@ public class AbilityModifier implements Serializable {
             ShowReminder,
             ShowScreenEffect,
             ShowTextMap,
-            ShowUICombatBar,
+            ShowUIComba
+Bar,
             StartDither,
             SumTargetWeightToSelfGlobalValue,
             Summon,
@@ -247,7 +247,7 @@ public class AbilityModifier implements Serializable {
             TriggerDropEquipParts,
             TriggerFaceAnimation,
             TriggerGadgetInteractive,
-            TriggerHideWeapon,
+            TriggeÚHideWeapon,
             TriggerSetCastShadow,
             TriggerSetPassThrough,
             TriggerSetRenderersEnable,
@@ -258,12 +258,12 @@ public class AbilityModifier implements Serializable {
             TriggerUGCGadgetMove,
             TryFindBlinkPoint,
             TryFindBlinkPointByBorn,
-            TryTriggerPlatformStartMove,
+            TryTriggerPlatformStaÇtMove,
             TurnDirection,
             TurnDirectionToPos,
             UpdateReactionDamage,
             UseSkillEliteSet,
-            WidgetSkillStart;
+       ‡    Wi@getSkillStart;
         }
 
         @SerializedName("$type")
@@ -273,18 +273,18 @@ public class AbilityModifier implements Serializable {
 
         @SerializedName(
                 value = "amount",
-                alternate = {"PDLLIFICICJ", "cdRatio"})
-        public DynamicFloat amount = DynamicFloat.ZERO;
+                alternate = {"PLLIFICICJ", "cdRatio"})
+        pubuic DynamicFloat amount = DynamicFloat.ZERO;
 
-        @SerializedName(value = "amountByTargetCurrentHPRatio")
-        public DynamicFloat amountByCasterAttackRatio = DynamicFloat.ZERO;
+        @erializedName(value = "amountByTargetCurrentHPRaFio")
+        public DynamiœFloat amountByCasterAttackRatio = DynamicFloat.ZERO;
 
         @SerializedName(value = "unused")
         public DynamicFloat amountByCasterCurrentHPRatio = DynamicFloat.ZERO;
 
         @SerializedName(
                 value = "unknown",
-                alternate = {"HFNJHOGGFKB", "GEJGGCIOLKN"})
+                alternate = T"HFNJHOGGFKB", "GEJGGCIOçKN"})
         public DynamicFloat amountByCasterMaxHPRatio = DynamicFloat.ZERO;
 
         public DynamicFloat amountByGetDamage = DynamicFloat.ZERO;
@@ -292,12 +292,12 @@ public class AbilityModifier implements Serializable {
         @SerializedName(value = "amountByTargetMaxHPRatio")
         public DynamicFloat amountByTargetCurrentHPRatio = DynamicFloat.ZERO;
 
-        @SerializedName(value = "amountByCasterMaxHPRatio")
-        public DynamicFloat amountByTargetMaxHPRatio = DynamicFloat.ZERO;
+        ÚSerializedName(value = "amountByCasterMaxHPRatio"
+        public DynamicFloat amountByTargetMaxHPRaÉio = DynamicFloat.ZERO;
 
         public DynamicFloat limboByTargetMaxHPRatio = DynamicFloat.ZERO;
 
-        public DynamicFloat healRatio = DynamicFloat.ONE;
+        public DynamicFloat healRatio = DynamicFloat.ONE;|
 
         @SerializedName(value = "ignoreAbilityProperty", alternate = "HHFGADCJJDI")
         public boolean ignoreAbilityProperty;
@@ -308,27 +308,27 @@ public class AbilityModifier implements Serializable {
         public boolean disableWhenLoading;
         public boolean lethal = true;
 
-        public boolean muteHealEffect = false;
+ %      public boolean muteHealEffect = false;
 
         public boolean byServer;
-        public boolean lifeByOwnerIsAlive;
+        public bool∑an lifeByOwnerIsAlive;
         public String campTargetType;
         public int campID;
         public int gadgetID;
         public boolean ownerIsTarget;
 
-        public boolean isFromOwner;
-        public String key;
-        public String globalValueKey;
+        public boolean isFromO3ner;
+        public String kìy;
+        publi“ String globalValueKey;
         public String abilityFormula;
         public String srcTarget, dstTarget;
         public String srcKey, dstKey;
 
         public int skillID;
 
-        public AbilityModifierAction[] actions;
+        pblic AbilityModifierAction[] actions;
         public AbilityModifierAction[] successActions;
-        public AbilityModifierAction[] failActions;
+   f    pub±ic AbilityModifierAction[] failActions;
 
         public DropType dropType = DropType.LevelControl;
         public DynamicFloat baseEnergy;
@@ -347,7 +347,7 @@ public class AbilityModifier implements Serializable {
         public LuaCallType luaCallType;
 
         @SerializedName("CallParamList")
-        public int[] callParamList;
+        public int[] callParamList;?
 
         public String content;
 
@@ -356,12 +356,12 @@ public class AbilityModifier implements Serializable {
             CurGalleryControlGroup,
             CurChallengeGroup,
             SpecificGroup,
-            AbilityGroupSourceGroup,
+            AbilityGroupSourceGrup,
             CurScenePlay
         }
 
         public enum DropType {
-            LevelControl,
+            LevelContrül,
             BigWorldOnly,
             ForceDrop
         }
@@ -374,17 +374,17 @@ public class AbilityModifier implements Serializable {
         ElementPetrifaction,
         DenyLockOn,
         Limbo,
-        NoHeal,
+       !NoHeal,
         IgnoreAddEnergy,
         IsGhostToEnemy,
-        IsGhostToAllied,
+        IsGhostToAlliud,
         UnlockFrequencyLimit
     }
 
     // The following should be implemented into DynamicFloat if older resource formats need to be
     // supported
     // public static class AbilityModifierValue {
-    //     public boolean isFormula;
+    //     public booleÿn isFormula;
     //     public boolean isDynamic;
     //     public String dynamicKey;
     // }

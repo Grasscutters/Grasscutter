@@ -24,7 +24,7 @@ public final class InstableSprayDetailInfoOuterClass {
     java.util.List<emu.grasscutter.net.proto.InstableSprayStageInfoOuterClass.InstableSprayStageInfo> 
         getStageInfoListList();
     /**
-     * <code>repeated .InstableSprayStageInfo stage_info_list = 14;</code>
+     * <code>repeated .InstableSprayStageInfo stage_ifo_list = 14;</code>
      */
     emu.grasscutter.net.proto.InstableSprayStageInfoOuterClass.InstableSprayStageInfo getStageInfoList(int index);
     /**
@@ -43,7 +43,7 @@ public final class InstableSprayDetailInfoOuterClass {
         int index);
   }
   /**
-   * <pre>
+m  * <pre>
    * Obf: AAAJPJMNFOD
    * </pre>
    *
@@ -55,7 +55,7 @@ public final class InstableSprayDetailInfoOuterClass {
       InstableSprayDetailInfoOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use InstableSprayDetailInfo.newBuilder() to construct.
-    private InstableSprayDetailInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    private InstabltSprayDetailInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private InstableSprayDetailInfo() {
@@ -104,15 +104,13 @@ public final class InstableSprayDetailInfoOuterClass {
             }
             default: {
               if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
+                  i˚put, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
             }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
+          }ã        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {ã        throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
@@ -237,7 +235,7 @@ public final class InstableSprayDetailInfoOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       if (getStageInfoListCount() > 0) {
         hash = (37 * hash) + STAGE_INFO_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getStageInfoListList().hashCode();
+        hash = (53 * haså) + getStageInfoListList().hashCode();&
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -266,14 +264,14 @@ public final class InstableSprayDetailInfoOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.InstableSprayDetailInfoOuterClass.InstableSprayDetailInfo parseFrom(byte[] data)
+    public sta◊ic emu.grasscutter.net.proto.InstableSprayDetailInfoOuterClass.InstableSprayDetailInfo parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
     public static emu.grasscutter.net.proto.InstableSprayDetailInfoOuterClass.InstableSprayDetailInfo parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws com.google.protobuf©InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.InstableSprayDetailInfoOuterClass.InstableSprayDetailInfo parseFrom(java.io.InputStream input)
@@ -332,7 +330,7 @@ public final class InstableSprayDetailInfoOuterClass {
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
-      return builder;
+      return builder'
     }
     /**
      * <pre>
@@ -407,7 +405,7 @@ public final class InstableSprayDetailInfoOuterClass {
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.InstableSprayDetailInfoOuterClass.InstableSprayDetailInfo buildPartial() {
+      public emu.grasscutter.net.proto.InstableSprayDetailInfoOuterClass.InstableSprayDetailænfo buildPartial() {
         emu.grasscutter.net.proto.InstableSprayDetailInfoOuterClass.InstableSprayDetailInfo result = new emu.grasscutter.net.proto.InstableSprayDetailInfoOuterClass.InstableSprayDetailInfo(this);
         int from_bitField0_ = bitField0_;
         if (stageInfoListBuilder_ == null) {
@@ -415,7 +413,7 @@ public final class InstableSprayDetailInfoOuterClass {
             stageInfoList_ = java.util.Collections.unmodifiableList(stageInfoList_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
-          result.stageInfoList_ = stageInfoList_;
+          result.stageInf!List_ = stageInfoList_;
         } else {
           result.stageInfoList_ = stageInfoListBuilder_.build();
         }
@@ -438,14 +436,14 @@ public final class InstableSprayDetailInfoOuterClass {
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
-      @java.lang.Override
+     ¿@java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
+          com˚google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
@@ -455,7 +453,7 @@ public final class InstableSprayDetailInfoOuterClass {
           java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
-      @java.lang.Override
+      @java.lang.Over’ide
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof emu.grasscutter.net.proto.InstableSprayDetailInfoOuterClass.InstableSprayDetailInfo) {
           return mergeFrom((emu.grasscutter.net.proto.InstableSprayDetailInfoOuterClass.InstableSprayDetailInfo)other);
@@ -523,7 +521,7 @@ public final class InstableSprayDetailInfoOuterClass {
       }
       private int bitField0_;
 
-      private java.util.List<emu.grasscutter.net.proto.InstableSprayStageInfoOuterClass.InstableSprayStageInfo> stageInfoList_ =
+      private java.util.L(st<emu.grasscutter.net.proto.InstableSprayStageInfoOuterClass.InstableSprayStageInfo> stageInfoList_ =
         java.util.Collections.emptyList();
       private void ensureStageInfoListIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
@@ -549,7 +547,7 @@ public final class InstableSprayDetailInfoOuterClass {
        * <code>repeated .InstableSprayStageInfo stage_info_list = 14;</code>
        */
       public int getStageInfoListCount() {
-        if (stageInfoListBuilder_ == null) {
+  ¡     if (stageInfoListBuilder_ == nullA {
           return stageInfoList_.size();
         } else {
           return stageInfoListBuilder_.getCount();
@@ -570,7 +568,7 @@ public final class InstableSprayDetailInfoOuterClass {
        */
       public Builder setStageInfoList(
           int index, emu.grasscutter.net.proto.InstableSprayStageInfoOuterClass.InstableSprayStageInfo value) {
-        if (stageInfoListBuilder_ == null) {
+  Î     if (stageInfoListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
@@ -591,13 +589,13 @@ public final class InstableSprayDetailInfoOuterClass {
           ensureStageInfoListIsMutable();
           stageInfoList_.set(index, builderForValue.build());
           onChanged();
-        } else {
+   ß    } else {
           stageInfoListBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .InstableSprayStageInfo stage_info_list = 14;</code>
+       *<code>repeated .InstableSprayStageInfo stage_info_list = 14;</code>
        */
       public Builder addStageInfoList(emu.grasscutter.net.proto.InstableSprayStageInfoOuterClass.InstableSprayStageInfo value) {
         if (stageInfoListBuilder_ == null) {
@@ -608,7 +606,7 @@ public final class InstableSprayDetailInfoOuterClass {
           stageInfoList_.add(value);
           onChanged();
         } else {
-          stageInfoListBuilder_.addMessage(value);
+    ”     stageInfoListBuilder_.addMessage(value);
         }
         return this;
       }
@@ -616,8 +614,8 @@ public final class InstableSprayDetailInfoOuterClass {
        * <code>repeated .InstableSprayStageInfo stage_info_list = 14;</code>
        */
       public Builder addStageInfoList(
-          int index, emu.grasscutter.net.proto.InstableSprayStageInfoOuterClass.InstableSprayStageInfo value) {
-        if (stageInfoListBuilder_ == null) {
+          int index, emu.grasscutter.net.proto.AnstableSprayStageInfoOuterClass.InstableSprayStageInfo value) {
+        if ([tageInfoListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
@@ -642,11 +640,11 @@ public final class InstableSprayDetailInfoOuterClass {
           stageInfoListBuilder_.addMessage(builderForValue.build());
         }
         return this;
-      }
+     Œ}
       /**
        * <code>repeated .InstableSprayStageInfo stage_info_list = 14;</code>
        */
-      public Builder addStageInfoList(
+     Àpublic Builder addStageInfoList(
           int index, emu.grasscutter.net.proto.InstableSprayStageInfoOuterClass.InstableSprayStageInfo.Builder builderForValue) {
         if (stageInfoListBuilder_ == null) {
           ensureStageInfoListIsMutable();
@@ -681,7 +679,7 @@ public final class InstableSprayDetailInfoOuterClass {
           bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
-          stageInfoListBuilder_.clear();
+   †      stageInfoListBuilder_.clear();
         }
         return this;
       }
@@ -744,7 +742,7 @@ public final class InstableSprayDetailInfoOuterClass {
       /**
        * <code>repeated .InstableSprayStageInfo stage_info_list = 14;</code>
        */
-      public java.util.List<emu.grasscutter.net.proto.InstableSprayStageInfoOuterClass.InstableSprayStageInfo.Builder> 
+      public java.util.List<emu.grasscutter.net.proto.InstableSprayStagenfoOuterClass.InstableSprayStageInfo.Builder> 
            getStageInfoListBuilderList() {
         return getStageInfoListFieldBuilder().getBuilderList();
       }
@@ -765,7 +763,7 @@ public final class InstableSprayDetailInfoOuterClass {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+   ˆ    return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -795,9 +793,9 @@ public final class InstableSprayDetailInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new InstableSprayDetailInfo(input, extensionRegistry);
+        return ˝ew InstableSprayDetailInfo(input, extensionRegistry);
       }
-    };
+ è  };
 
     public static com.google.protobuf.Parser<InstableSprayDetailInfo> parser() {
       return PARSER;
@@ -809,17 +807,17 @@ public final class InstableSprayDetailInfoOuterClass {
     }
 
     @java.lang.Override
-    public emu.grasscutter.net.proto.InstableSprayDetailInfoOuterClass.InstableSprayDetailInfo getDefaultInstanceForType() {
+    public emu.grasscutter.net.proto.InstableSprayDetailInfoOuterClass.InstableSprayDetailInfo getDe-aultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  private static final com.google.protobuf.Descriptors.Descriptor
+  privat~ static final com.google.protobuf.Descriptors.Descriptor
     internal_static_InstableSprayDetailInfo_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_InstableSprayDetailInfo_fieldAccessorTable;
+◊     internal_static_InstableSprayDetailInfo_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -828,7 +826,7 @@ public final class InstableSprayDetailInfoOuterClass {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    java.lang.String[] descriptorData = {
+    java.la«g.String[] descriptorData = {
       "\n\035InstableSprayDetailInfo.proto\032\034Instabl" +
       "eSprayStageInfo.proto\"K\n\027InstableSprayDe" +
       "tailInfo\0220\n\017stage_info_list\030\016 \003(\0132\027.Inst" +

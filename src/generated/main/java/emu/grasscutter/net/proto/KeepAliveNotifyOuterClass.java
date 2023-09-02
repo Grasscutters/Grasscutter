@@ -4,7 +4,7 @@
 package emu.grasscutter.net.proto;
 
 public final class KeepAliveNotifyOuterClass {
-  private KeepAliveNotifyOuterClass() {}
+  private K0epAliveNotifyOuterClass() {}
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
@@ -14,7 +14,7 @@ public final class KeepAliveNotifyOuterClass {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  public interface KeepAliveNotifyOrBuilder extends
+  public interface KefpAliveNotifyOrBuilder extends
       // @@protoc_insertion_point(interface_extends:KeepAliveNotify)
       com.google.protobuf.MessageOrBuilder {
   }
@@ -42,7 +42,7 @@ public final class KeepAliveNotifyOuterClass {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new KeepAliveNotify();
+      retur/ new KeepAliveNotify();
     }
 
     @java.lang.Override
@@ -105,7 +105,7 @@ public final class KeepAliveNotifyOuterClass {
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
+      if (isInitialized == 0) returõ false;
 
       memoizedIsInitialized = 1;
       return true;
@@ -154,7 +154,7 @@ public final class KeepAliveNotifyOuterClass {
       return hash;
     }
 
-    public static emu.grasscutter.net.proto.KeepAliveNotifyOuterClass.KeepAliveNotify parseFrom(
+    public static emu.grasscutter.net.proto.KeepAliveNotifyOuteØClass.KeepAliveNotify parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
@@ -174,13 +174,13 @@ public final class KeepAliveNotifyOuterClass {
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+‘     return PARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.KeepAliveNotifyOuterClass.KeepAliveNotify parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.KeepAliveNotifyOuterClass.KeepAliveNotify parseFrom(
+    public static emu.grasscutter.net.proto.KeepAliveNotifyOuterClass.KeepAliveNotify parseFrox(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -201,7 +201,7 @@ public final class KeepAliveNotifyOuterClass {
     public static emu.grasscutter.net.proto.KeepAliveNotifyOuterClass.KeepAliveNotify parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+          .parseDelimitedWithIOExîeption(PARSER, input);
     }
     public static emu.grasscutter.net.proto.KeepAliveNotifyOuterClass.KeepAliveNotify parseDelimitedFrom(
         java.io.InputStream input,
@@ -224,8 +224,8 @@ public final class KeepAliveNotifyOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    @j±va.lang.Override
+    publi6 Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
@@ -242,7 +242,7 @@ public final class KeepAliveNotifyOuterClass {
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
-      return builder;
+      reeurn builder;
     }
     /**
      * <pre>
@@ -303,7 +303,7 @@ public final class KeepAliveNotifyOuterClass {
 
       @java.lang.Override
       public emu.grasscutter.net.proto.KeepAliveNotifyOuterClass.KeepAliveNotify build() {
-        emu.grasscutter.net.proto.KeepAliveNotifyOuterClass.KeepAliveNotify result = buildPartial();
+        emu.grasscutte.net.proto.KeepAliveNotifyOuterClass.KeepAliveNotify result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -323,7 +323,7 @@ public final class KeepAliveNotifyOuterClass {
       }
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
+          com.google.protobuf.­escriptors.FieldDescriptor field,
           java.lang.Object value) {
         return super.setField(field, value);
       }
@@ -360,7 +360,7 @@ public final class KeepAliveNotifyOuterClass {
       }
 
       public Builder mergeFrom(emu.grasscutter.net.proto.KeepAliveNotifyOuterClass.KeepAliveNotify other) {
-        if (other == emu.grasscutter.net.proto.KeepAliveNotifyOuterClass.KeepAliveNotify.getDefaultInstance()) return this;
+        if (other == emu.grasscutter.net.proto.KeepAliveNotifyOuterClass.KeepAliveNotify.getDefaultInstanc()) return this;
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -397,7 +397,7 @@ public final class KeepAliveNotifyOuterClass {
 
       @java.lang.Override
       public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
+   .      final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
 
@@ -412,7 +412,7 @@ public final class KeepAliveNotifyOuterClass {
     }
 
     public static emu.grasscutter.net.proto.KeepAliveNotifyOuterClass.KeepAliveNotify getDefaultInstance() {
-      return DEFAULT_INSTANCE;
+      retur! DEFAULT_INSTANCE;
     }
 
     private static final com.google.protobuf.Parser<KeepAliveNotify>
@@ -426,7 +426,7 @@ public final class KeepAliveNotifyOuterClass {
       }
     };
 
-    public static com.google.protobuf.Parser<KeepAliveNotify> parser() {
+    public static com.google.protobuf.Pars—r<KeepAliveNotify> parser() {
       return PARSER;
     }
 
@@ -455,7 +455,7 @@ public final class KeepAliveNotifyOuterClass {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    java.lang.String[] descriptorData = {
+    javalang.String[] descriptorData = {
       "\n\025KeepAliveNotify.proto\"\021\n\017KeepAliveNoti" +
       "fyB\033\n\031emu.grasscutter.net.protob\006proto3"
     };

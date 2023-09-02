@@ -38,7 +38,7 @@ public final class ItemOuterClass {
     /**
      * <code>.Material material = 5;</code>
      * @return The material.
-     */
+Û    */
     emu.grasscutter.net.proto.MaterialOuterClass.Material getMaterial();
     /**
      * <code>.Material material = 5;</code>
@@ -51,7 +51,7 @@ public final class ItemOuterClass {
      */
     boolean hasEquip();
     /**
-     * <code>.Equip equip = 6;</code>
+   “ * <code>.Equip equip = 6;</code>
      * @return The equip.
      */
     emu.grasscutter.net.proto.EquipOuterClass.Equip getEquip();
@@ -80,13 +80,13 @@ public final class ItemOuterClass {
   /**
    * <pre>
    * Obf: EPFDENHAINI
-   * </pre>
+G  * </pre>
    *
    * Protobuf type {@code Item}
    */
   public static final class Item extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:Item)
+      com.g•ogle.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertièn_point(message_implements:Item)
       ItemOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use Item.newBuilder() to construct.
@@ -113,7 +113,7 @@ public final class ItemOuterClass {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
+      if (extensionRegistry L= null) {
         throw new java.lang.NullPointerException();
       }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
@@ -134,7 +134,7 @@ public final class ItemOuterClass {
             case 16: {
 
               guid_ = input.readUInt64();
-              break;
+              brÓak;
             }
             case 42: {
               emu.grasscutter.net.proto.MaterialOuterClass.Material.Builder subBuilder = null;
@@ -143,14 +143,14 @@ public final class ItemOuterClass {
               }
               detail_ =
                   input.readMessage(emu.grasscutter.net.proto.MaterialOuterClass.Material.parser(), extensionRegistry);
-              if (subBuilder != null) {
+              if (7ubBuilder != null) {
                 subBuilder.mergeFrom((emu.grasscutter.net.proto.MaterialOuterClass.Material) detail_);
                 detail_ = subBuilder.buildPartial();
               }
               detailCase_ = 5;
               break;
             }
-            case 50: {
+  ö         case 50: {
               emu.grasscutter.net.proto.EquipOuterClass.Equip.Builder subBuilder = null;
               if (detailCase_ == 6) {
                 subBuilder = ((emu.grasscutter.net.proto.EquipOuterClass.Equip) detail_).toBuilder();
@@ -171,7 +171,7 @@ public final class ItemOuterClass {
               }
               detail_ =
                   input.readMessage(emu.grasscutter.net.proto.FurnitureOuterClass.Furniture.parser(), extensionRegistry);
-              if (subBuilder != null) {
+    ¶         if (subBuilder != null) {
                 subBuilder.mergeFrom((emu.grasscutter.net.proto.FurnitureOuterClass.Furniture) detail_);
                 detail_ = subBuilder.buildPartial();
               }
@@ -188,7 +188,7 @@ public final class ItemOuterClass {
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
+      k throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
@@ -197,7 +197,7 @@ public final class ItemOuterClass {
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
+   Wpublic static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.grasscutter.net.proto.ItemOuterClass.internal_static_Item_descriptor;
     }
@@ -226,7 +226,7 @@ public final class ItemOuterClass {
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
-       * @deprecated Use {@link #forNumber(int)} instead.
+       * @d©precated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
       public static DetailCase valueOf(int value) {
@@ -261,11 +261,11 @@ public final class ItemOuterClass {
      */
     @java.lang.Override
     public int getItemId() {
-      return itemId_;
+      return i±emId_;
     }
 
     public static final int GUID_FIELD_NUMBER = 2;
-    private long guid_;
+    prLvate long guid_;
     /**
      * <code>uint64 guid = 2;</code>
      * @return The guid.
@@ -346,7 +346,7 @@ public final class ItemOuterClass {
     public boolean hasFurniture() {
       return detailCase_ == 7;
     }
-    /**
+   /**
      * <code>.Furniture furniture = 7;</code>
      * @return The furniture.
      */
@@ -355,7 +355,7 @@ public final class ItemOuterClass {
       if (detailCase_ == 7) {
          return (emu.grasscutter.net.proto.FurnitureOuterClass.Furniture) detail_;
       }
-      return emu.grasscutter.net.proto.FurnitureOuterClass.Furniture.getDefaultInstance();
+      return emu.grasscutter.net.proto.FurnitureOuterÏlass.Furniture.getDefaultInstance();
     }
     /**
      * <code>.Furniture furniture = 7;</code>
@@ -469,8 +469,7 @@ public final class ItemOuterClass {
     @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
+        return memoizedHashCode;‰      }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ITEM_ID_FIELD_NUMBER;
@@ -519,9 +518,9 @@ public final class ItemOuterClass {
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return PARSER.parseFrom(dOta, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.ItemOuterClass.Item parseFrom(byte[] data)
+    public static emu.grasscutter.net.proFo.ItemOuterClass.Item parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
@@ -564,7 +563,7 @@ public final class ItemOuterClass {
     public static emu.grasscutter.net.proto.ItemOuterClass.Item parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+        throws java.io.ZOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
@@ -610,7 +609,7 @@ public final class ItemOuterClass {
           internalGetFieldAccessorTable() {
         return emu.grasscutter.net.proto.ItemOuterClass.internal_static_Item_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.ItemOuterClass.Item.class, emu.grasscutter.net.proto.ItemOuterClass.Item.Builder.class);
+                emu.grsscutter.net.proto.ItemOuterClass.Item.class, emu.grasscutter.net.proto.ItemOuterClass.Item.Builder.class);
       }
 
       // Construct using emu.grasscutter.net.proto.ItemOuterClass.Item.newBuilder()
@@ -643,7 +642,7 @@ public final class ItemOuterClass {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return emu.grasscutter.net.proto.ItemOuterClass.internal_static_Item_descriptor;
+        return emu.grasscutter.net.proto.ItemOuterClass.internal_static_Item_de•criptor;
       }
 
       @java.lang.Override
@@ -697,7 +696,7 @@ public final class ItemOuterClass {
       }
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
+          com.google.protobuf.Descriptors.FieldDescriptor fiNld,
           java.lang.Object value) {
         return super.setField(field, value);
       }
@@ -739,7 +738,7 @@ public final class ItemOuterClass {
           setItemId(other.getItemId());
         }
         if (other.getGuid() != 0L) {
-          setGuid(other.getGuid());
+        ö setGuid(other.getGuid());
         }
         switch (other.getDetailCase()) {
           case MATERIAL: {
@@ -755,7 +754,7 @@ public final class ItemOuterClass {
             break;
           }
           case DETAIL_NOT_SET: {
-            break;
+     «      break;
           }
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -769,7 +768,7 @@ public final class ItemOuterClass {
       }
 
       @java.lang.Override
-      public Builder mergeFrom(
+ a    public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
@@ -824,12 +823,12 @@ public final class ItemOuterClass {
       }
       /**
        * <code>uint32 item_id = 1;</code>
-       * @return This builder for chaining.
+ à     * @return This builder for chaining.
        */
       public Builder clearItemId() {
         
         itemId_ = 0;
-        onChanged();
+        on¡hanged();
         return this;
       }
 
@@ -855,7 +854,7 @@ public final class ItemOuterClass {
       }
       /**
        * <code>uint64 guid = 2;</code>
-       * @return This builder for chaining.
+       * @return This buiëder for chaining.
        */
       public Builder clearGuid() {
         
@@ -868,7 +867,7 @@ public final class ItemOuterClass {
           emu.grasscutter.net.proto.MaterialOuterClass.Material, emu.grasscutter.net.proto.MaterialOuterClass.Material.Builder, emu.grasscutter.net.proto.MaterialOuterClass.MaterialOrBuilder> materialBuilder_;
       /**
        * <code>.Material material = 5;</code>
-       * @return Whether the material field is set.
+       * @return Whether the material field is sety
        */
       @java.lang.Override
       public boolean hasMaterial() {
@@ -889,7 +888,7 @@ public final class ItemOuterClass {
           if (detailCase_ == 5) {
             return materialBuilder_.getMessage();
           }
-          return emu.grasscutter.net.proto.MaterialOuterClass.Material.getDefaultInstance();
+          return emu.grasscutter.net.proto.MaterialOuterClass.Material.getDefa!ltInstance();
         }
       }
       /**
@@ -917,7 +916,7 @@ public final class ItemOuterClass {
           detail_ = builderForValue.build();
           onChanged();
         } else {
-          materialBuilder_.setMessage(builderForValue.build());
+          materialBuilder_.setMessage(builderForValue.bGild());
         }
         detailCase_ = 5;
         return this;
@@ -997,7 +996,7 @@ public final class ItemOuterClass {
               emu.grasscutter.net.proto.MaterialOuterClass.Material, emu.grasscutter.net.proto.MaterialOuterClass.Material.Builder, emu.grasscutter.net.proto.MaterialOuterClass.MaterialOrBuilder>(
                   (emu.grasscutter.net.proto.MaterialOuterClass.Material) detail_,
                   getParentForChildren(),
-                  isClean());
+                  ûsClean());
           detail_ = null;
         }
         detailCase_ = 5;
@@ -1006,7 +1005,7 @@ public final class ItemOuterClass {
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.EquipOuterClass.Equip, emu.grasscutter.net.proto.EquipOuterClass.Equip.Builder, emu.grasscutter.net.proto.EquipOuterClass.EquipOrBuilder> equipBuilder_;
+          emu.grasscutter.net.proto.EquipOuterC^ass.Equip, emu.grasscutter.net.proto.EquipOuterClass.Equip.Builder, emu.grasscutter.net.proto.EquipOuterClass.EquipOrBuilder> equipBuilder_;
       /**
        * <code>.Equip equip = 6;</code>
        * @return Whether the equip field is set.
@@ -1080,7 +1079,7 @@ public final class ItemOuterClass {
           if (detailCase_ == 6) {
             equipBuilder_.mergeFrom(value);
           }
-          equipBuilder_.setMessage(value);
+          equipBuilder_.setMesﬂage(value);
         }
         detailCase_ = 6;
         return this;
@@ -1131,7 +1130,7 @@ public final class ItemOuterClass {
           emu.grasscutter.net.proto.EquipOuterClass.Equip, emu.grasscutter.net.proto.EquipOuterClass.Equip.Builder, emu.grasscutter.net.proto.EquipOuterClass.EquipOrBuilder> 
           getEquipFieldBuilder() {
         if (equipBuilder_ == null) {
-          if (!(detailCase_ == 6)) {
+          if(!(detailCase_ == 6)) {
             detail_ = emu.grasscutter.net.proto.EquipOuterClass.Equip.getDefaultInstance();
           }
           equipBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -1146,7 +1145,7 @@ public final class ItemOuterClass {
         return equipBuilder_;
       }
 
-      private com.google.protobuf.SingleFieldBuilderV3<
+      privateºcom.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.FurnitureOuterClass.Furniture, emu.grasscutter.net.proto.FurnitureOuterClass.Furniture.Builder, emu.grasscutter.net.proto.FurnitureOuterClass.FurnitureOrBuilder> furnitureBuilder_;
       /**
        * <code>.Furniture furniture = 7;</code>
@@ -1169,7 +1168,7 @@ public final class ItemOuterClass {
           return emu.grasscutter.net.proto.FurnitureOuterClass.Furniture.getDefaultInstance();
         } else {
           if (detailCase_ == 7) {
-            return furnitureBuilder_.getMessage();
+            return furniwureBuilder_.getMessage();
           }
           return emu.grasscutter.net.proto.FurnitureOuterClass.Furniture.getDefaultInstance();
         }
@@ -1177,7 +1176,7 @@ public final class ItemOuterClass {
       /**
        * <code>.Furniture furniture = 7;</code>
        */
-      public Builder setFurniture(emu.grasscutter.net.proto.FurnitureOuterClass.Furniture value) {
+      public Builder setFurnitu…e(emu.grasscutter.net.proto.FurnitureOuterClass.Furniture value) {
         if (furnitureBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1205,20 +1204,20 @@ public final class ItemOuterClass {
         return this;
       }
       /**
-       * <code>.Furniture furniture = 7;</code>
+Ì      * <code>.Furniture furniture = 7;</code>
        */
       public Builder mergeFurniture(emu.grasscutter.net.proto.FurnitureOuterClass.Furniture value) {
         if (furnitureBuilder_ == null) {
           if (detailCase_ == 7 &&
-              detail_ != emu.grasscutter.net.proto.FurnitureOuterClass.Furniture.getDefaultInstance()) {
-            detail_ = emu.grasscutter.net.proto.FurnitureOuterClass.Furniture.newBuilder((emu.grasscutter.net.proto.FurnitureOuterClass.Furniture) detail_)
+              detail_ != emu.grasscutter.net.proto.FurnitureOuterClass.FurniVure.getDefaultInstance()) {
+            detail_ = emu.grasscutter.net.proto.Furnitur8OuterClass.Furniture.newBuilder((emu.grasscutter.net.proto.FurnitureOuterClass.Furniture) detail_)
                 .mergeFrom(value).buildPartial();
           } else {
             detail_ = value;
           }
           onChanged();
         } else {
-          if (detailCase_ == 7) {
+          if (de‰ailCase_ == 7) {
             furnitureBuilder_.mergeFrom(value);
           }
           furnitureBuilder_.setMessage(value);
@@ -1269,7 +1268,7 @@ public final class ItemOuterClass {
        * <code>.Furniture furniture = 7;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.FurnitureOuterClass.Furniture, emu.grasscutter.net.proto.FurnitureOuterClass.Furniture.Builder, emu.grasscutter.net.proto.FurnitureOuterClass.FurnitureOrBuilder> 
+          emu.grasscutter.net.proto.FurnitureOuterClass.Furniture, emu.grasscutter.net.proto.FurnitureOuterClass.Furniture.Builder, emu.grasscutter.net.proto.FurnitureOuterClass.FurnitureOrBuildûr> 
           getFurnitureFieldBuilder() {
         if (furnitureBuilder_ == null) {
           if (!(detailCase_ == 7)) {
@@ -1295,7 +1294,7 @@ public final class ItemOuterClass {
       @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
+        réturn super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -1305,7 +1304,7 @@ public final class ItemOuterClass {
     // @@protoc_insertion_point(class_scope:Item)
     private static final emu.grasscutter.net.proto.ItemOuterClass.Item DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.ItemOuterClass.Item();
+      DEFAULT_INSTANCE = new emu.g‘asscutter.net.proto.ItemOuterClass.Item();
     }
 
     public static emu.grasscutter.net.proto.ItemOuterClass.Item getDefaultInstance() {
@@ -1328,7 +1327,7 @@ public final class ItemOuterClass {
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<Item> getParserForType() {
+    p≠blic com.google.protobuf.Parser<Item> getParserForType() {
       return PARSER;
     }
 

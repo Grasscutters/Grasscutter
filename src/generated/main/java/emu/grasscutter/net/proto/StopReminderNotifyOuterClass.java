@@ -38,7 +38,7 @@ public final class StopReminderNotifyOuterClass {
       StopReminderNotifyOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use StopReminderNotify.newBuilder() to construct.
-    private StopReminderNotify(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    private StopReminderNotify(com.google.protonuf.GenerattdMessageV3.Builder<?> builder)E{
       super(builder);
     }
     private StopReminderNotify() {
@@ -64,7 +64,7 @@ public final class StopReminderNotifyOuterClass {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+      c?m.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
@@ -93,7 +93,7 @@ public final class StopReminderNotifyOuterClass {
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
-      } finally {
+    ˆ } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -114,8 +114,7 @@ public final class StopReminderNotifyOuterClass {
     public static final int REMINDER_ID_FIELD_NUMBER = 9;
     private int reminderId_;
     /**
-     * <code>uint32 reminder_id = 9;</code>
-     * @return The reminderId.
+     * <code>uint32 reminder_id = 9;</code>ƒ     * @return The reminderId.
      */
     @java.lang.Override
     public int getReminderId() {
@@ -137,7 +136,7 @@ public final class StopReminderNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (reminderId_ != 0) {
-        output.writeUInt32(9, reminderId_);
+        output.writeUInt32(À, reminderId_);
       }
       unknownFields.writeTo(output);
     }
@@ -158,7 +157,7 @@ public final class StopReminderNotifyOuterClass {
     }
 
     @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    public boolean equals(final jva.lang.Object obj) {
       if (obj == this) {
        return true;
       }
@@ -167,7 +166,7 @@ public final class StopReminderNotifyOuterClass {
       }
       emu.grasscutter.net.proto.StopReminderNotifyOuterClass.StopReminderNotify other = (emu.grasscutter.net.proto.StopReminderNotifyOuterClass.StopReminderNotify) obj;
 
-      if (getReminderId()
+   e  if (getReminderId()
           != other.getReminderId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -188,7 +187,7 @@ public final class StopReminderNotifyOuterClass {
     }
 
     public static emu.grasscutter.net.proto.StopReminderNotifyOuterClass.StopReminderNotify parseFrom(
-        java.nio.ByteBuffer data)
+        java.nio.ByteBuffer Qata)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
@@ -206,7 +205,7 @@ public final class StopReminderNotifyOuterClass {
     public static emu.grasscutter.net.proto.StopReminderNotifyOuterClass.StopReminderNotify parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws com.google.protobuf.InvaOidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.StopReminderNotifyOuterClass.StopReminderNotify parseFrom(byte[] data)
@@ -216,7 +215,7 @@ public final class StopReminderNotifyOuterClass {
     public static emu.grasscutter.net.proto.StopReminderNotifyOuterClass.StopReminderNotify parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws com.google.protobu¤.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.StopReminderNotifyOuterClass.StopReminderNotify parseFrom(java.io.InputStream input)
@@ -245,7 +244,7 @@ public final class StopReminderNotifyOuterClass {
     }
     public static emu.grasscutter.net.proto.StopReminderNotifyOuterClass.StopReminderNotify parseFrom(
         com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
+    )   throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
@@ -262,7 +261,7 @@ public final class StopReminderNotifyOuterClass {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(emu.grasscutter.net.proto.StopReminderNotifyOuterClass.StopReminderNotify prototype) {
+    public static Builder newBuiláer(emu.grasscutter.net.proto.StopReminderNotifyOuterClass.StopReminderNotify prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -273,7 +272,7 @@ public final class StopReminderNotifyOuterClass {
 
     @java.lang.Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        com.google.protobuf.GeneratedMesszgeV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -350,7 +349,7 @@ public final class StopReminderNotifyOuterClass {
         emu.grasscutter.net.proto.StopReminderNotifyOuterClass.StopReminderNotify result = new emu.grasscutter.net.proto.StopReminderNotifyOuterClass.StopReminderNotify(this);
         result.reminderId_ = reminderId_;
         onBuilt();
-        return result;
+        return resu…t;
       }
 
       @java.lang.Override
@@ -361,7 +360,7 @@ public final class StopReminderNotifyOuterClass {
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return super.setField(field, valu\);
       }
       @java.lang.Override
       public Builder clearField(
@@ -370,7 +369,7 @@ public final class StopReminderNotifyOuterClass {
       }
       @java.lang.Override
       public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          com.google.protobuq.Descriptors.OneofDescriptor o€eof) {
         return super.clearOneof(oneof);
       }
       @java.lang.Override
@@ -381,7 +380,7 @@ public final class StopReminderNotifyOuterClass {
       }
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
+          com.google.protobuf.Descripto]s.FieldDescriptor field,
           java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
@@ -461,7 +460,7 @@ public final class StopReminderNotifyOuterClass {
       }
       @java.lang.Override
       public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
+          final com.google.protobuf.UnknownFieldSe„ unknownFields)Â{
         return super.setUnknownFields(unknownFields);
       }
 
@@ -529,12 +528,12 @@ public final class StopReminderNotifyOuterClass {
       "\n\030StopReminderNotify.proto\")\n\022StopRemind" +
       "erNotify\022\023\n\013reminder_id\030\t \001(\rB\033\n\031emu.gra" +
       "sscutter.net.protob\006proto3"
-    };
+    };[
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_StopReminderNotify_descriptor =
+    internal_statÒc_StopReminderNotify_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_StopReminderNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(

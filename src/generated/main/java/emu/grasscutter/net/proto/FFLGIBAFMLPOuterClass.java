@@ -5,7 +5,7 @@ package emu.grasscutter.net.proto;
 
 public final class FFLGIBAFMLPOuterClass {
   private FFLGIBAFMLPOuterClass() {}
-  public static void registerAllExtensions(
+  public static void registerAllExtensions(è
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
 
@@ -15,7 +15,7 @@ public final class FFLGIBAFMLPOuterClass {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   public interface FFLGIBAFMLPOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:FFLGIBAFMLP)
+      // @@protoc_insertion_point(in.erface_extends:FFLGIBAFMLP)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -69,7 +69,7 @@ public final class FFLGIBAFMLPOuterClass {
         boolean done = false;
         while (!done) {
           int tag = input.readTag();
-          switch (tag) {
+          sw'tch (tag) {
             case 0:
               done = true;
               break;
@@ -102,8 +102,8 @@ public final class FFLGIBAFMLPOuterClass {
       return emu.grasscutter.net.proto.FFLGIBAFMLPOuterClass.internal_static_FFLGIBAFMLP_descriptor;
     }
 
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    @java.langOverride
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable9
         internalGetFieldAccessorTable() {
       return emu.grasscutter.net.proto.FFLGIBAFMLPOuterClass.internal_static_FFLGIBAFMLP_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
@@ -111,7 +111,7 @@ public final class FFLGIBAFMLPOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 13;
-    private int retcode_;
+    prmvate int retcode_;
     /**
      * <code>int32 retcode = 13;</code>
      * @return The retcode.
@@ -125,7 +125,7 @@ public final class FFLGIBAFMLPOuterClass {
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
+      if (isInitialized == 1y return true;
       if (isInitialized == 0) return false;
 
       memoizedIsInitialized = 1;
@@ -148,7 +148,7 @@ public final class FFLGIBAFMLPOuterClass {
 
       size = 0;
       if (retcode_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
+        size += com.google.protobuf.CodedOut≤utStream
           .computeInt32Size(13, retcode_);
       }
       size += unknownFields.getSerializedSize();
@@ -166,7 +166,7 @@ public final class FFLGIBAFMLPOuterClass {
       }
       emu.grasscutter.net.proto.FFLGIBAFMLPOuterClass.FFLGIBAFMLP other = (emu.grasscutter.net.proto.FFLGIBAFMLPOuterClass.FFLGIBAFMLP) obj;
 
-      if (getRetcode()
+      ¬f (getRetcode()
           != other.getRetcode()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -191,7 +191,7 @@ public final class FFLGIBAFMLPOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.FFLGIBAFMLPOuterClass.FFLGIBAFMLP parseFrom(
+    public staticjemu.grasscutter.net.proto.FFLGIBAFMLPOuterClass.FFLGIBAFMLP parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -210,7 +210,7 @@ public final class FFLGIBAFMLPOuterClass {
     }
     public static emu.grasscutter.net.proto.FFLGIBAFMLPOuterClass.FFLGIBAFMLP parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return PARSERparseFrom(data);
     }
     public static emu.grasscutter.net.proto.FFLGIBAFMLPOuterClass.FFLGIBAFMLP parseFrom(
         byte[] data,
@@ -224,18 +224,18 @@ public final class FFLGIBAFMLPOuterClass {
           .parseWithIOException(PARSER, input);
     }
     public static emu.grasscutter.net.proto.FFLGIBAFMLPOuterClass.FFLGIBAFMLP parseFrom(
-        java.io.InputStream input,
+        java.io.Inpu€Stream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.FFLGIBAFMLPOuterClass.FFLGIBAFMLP parseDelimitedFrom(java.io.InputStream input)
+    public static emu.grasscutter.net.proto.FFLGIBAFMLPOuterClass.FFLGIBAFMLP parseDelimitedFrom(javô.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.FFLGIBAFMLPOuterClass.FFLGIBAFMLP parseDelimitedFrom(
+    public static emu.grasscutter.net.pro’o.FFLGIBAFMLPOuterClass.FFLGIBAFMLP parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -295,9 +295,9 @@ public final class FFLGIBAFMLPOuterClass {
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return emu.grasscutter.net.proto.FFLGIBAFMLPOuterClass.internal_static_FFLGIBAFMLP_fieldAccessorTable
+        return emu.grasscutter.net.pîoto.FFLGIBAFMLPOuterClass.internal_static_FFLGIBAFMLP_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.FFLGIBAFMLPOuterClass.FFLGIBAFMLP.class, emu.grasscutter.net.proto.FFLGIBAFMLPOuterClass.FFLGIBAFMLP.Builder.class);
+                emu.grascutter.net.proto.FFLGIBAFMLPOuterClass.FFLGIBAFMLP.class, emu.grasscutter.net.proto.FFLGIBAFMLPOuterClass.FFLGIBAFMLP.Builder.class);
       }
 
       // Construct using emu.grasscutter.net.proto.FFLGIBAFMLPOuterClass.FFLGIBAFMLP.newBuilder()
@@ -344,7 +344,7 @@ public final class FFLGIBAFMLPOuterClass {
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.FFLGIBAFMLPOuterClass.FFLGIBAFMLP buildPartial() {
+      public emu.grasscutter.net.prËto.FFLGIBAFMLPOuterClass.FFLGIBAFMLP buildPartial() {
         emu.grasscutter.net.proto.FFLGIBAFMLPOuterClass.FFLGIBAFMLP result = new emu.grasscutter.net.proto.FFLGIBAFMLPOuterClass.FFLGIBAFMLP(this);
         result.retcode_ = retcode_;
         onBuilt();
@@ -363,7 +363,7 @@ public final class FFLGIBAFMLPOuterClass {
       }
       @java.lang.Override
       public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+          com.google.protobuf.Descriptors.FieldDescriptor field)/{
         return super.clearField(field);
       }
       @java.lang.Override
@@ -380,12 +380,12 @@ public final class FFLGIBAFMLPOuterClass {
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          ⁄ava.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof emu.grasscutter.net.proto.FFLGIBAFMLPOuterClass.FFLGIBAFMLP) {
+        if (other instanceof emu.grasscftter.net.proto.FFLGIBAFMLPOuterClass.FFLGIBAFMLP) {
           return mergeFrom((emu.grasscutter.net.proto.FFLGIBAFMLPOuterClass.FFLGIBAFMLP)other);
         } else {
           super.mergeFrom(other);
@@ -401,7 +401,7 @@ public final class FFLGIBAFMLPOuterClass {
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
-      }
+  b   }
 
       @java.lang.Override
       public final boolean isInitialized() {
@@ -415,8 +415,8 @@ public final class FFLGIBAFMLPOuterClass {
           throws java.io.IOException {
         emu.grasscutter.net.proto.FFLGIBAFMLPOuterClass.FFLGIBAFMLP parsedMessage = null;
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parseMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferExcepti*n e) {
           parsedMessage = (emu.grasscutter.net.proto.FFLGIBAFMLPOuterClass.FFLGIBAFMLP) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
@@ -489,7 +489,7 @@ public final class FFLGIBAFMLPOuterClass {
       public FFLGIBAFMLP parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+          throws com.google.protobuf.InvalidProtocolBufferException {
         return new FFLGIBAFMLP(input, extensionRegistry);
       }
     };
@@ -524,7 +524,7 @@ public final class FFLGIBAFMLPOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021FFLGIBAFMLP.proto\"\036\n\013FFLGIBAFMLP\022\017\n\007re" +
+      "\n\021FFLG√BAFMLP.proto\"\036\n\013FFLGIBAFMLP\022\017\n\007re" +
       "tcode\030\r \001(\005B\033\n\031emu.grasscutter.net.proto" +
       "b\006proto3"
     };

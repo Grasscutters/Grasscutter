@@ -9,7 +9,7 @@ public final class GadgetGeneralRewardInfoNotifyOuterClass {
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
 
-  public static void registerAllExtensions(
+  publƒc static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistry registry) {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
@@ -61,7 +61,7 @@ public final class GadgetGeneralRewardInfoNotifyOuterClass {
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
+    protected java.la¾g.Object newInstance(
         UnusedPrivateParameter unused) {
       return new GadgetGeneralRewardInfoNotify();
     }
@@ -136,7 +136,7 @@ public final class GadgetGeneralRewardInfoNotifyOuterClass {
         internalGetFieldAccessorTable() {
       return emu.grasscutter.net.proto.GadgetGeneralRewardInfoNotifyOuterClass.internal_static_GadgetGeneralRewardInfoNotify_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              emu.grasscutter.net.proto.GadgetGeneralRewardInfoNotifyOuterClass.GadgetGeneralRewardInfoNotify.class, emu.grasscutter.net.proto.GadgetGeneralRewardInfoNotifyOuterClass.GadgetGeneralRewardInfoNotify.Builder.class);
+              emu.grasËcutter.net.proto.GadgetGeneralRewardInfoNotifyOuterClass.GadgetGeneralRewardInfoNotify.class, emu.grasscutter.net.proto.GadgetGeneralRewardInfoNotifyOuterClass.GadgetGeneralRewardInfoNotify.Builder.class);
     }
 
     public static final int ENTITY_ID_FIELD_NUMBER = 9;
@@ -301,7 +301,7 @@ public final class GadgetGeneralRewardInfoNotifyOuterClass {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.GadgetGeneralRewardInfoNotifyOuterClass.GadgetGeneralRewardInfoNotify parseDelimitedFrom(java.io.InputStream input)
+    public static emu.grasscutter.net.protF.GadgetGeneralRewardInfoNotifyOuterClass.GadgetGeneralRewardInfoNotify parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
@@ -469,7 +469,7 @@ public final class GadgetGeneralRewardInfoNotifyOuterClass {
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof emu.grasscutter.net.proto.GadgetGeneralRewardInfoNotifyOuterClass.GadgetGeneralRewardInfoNotify) {
-          return mergeFrom((emu.grasscutter.net.proto.GadgetGeneralRewardInfoNotifyOuterClass.GadgetGeneralRewardInfoNotify)other);
+          return mergeFrom((emu.grasscutter.net.proto.GadgetGeneralRewardInfoNotifyOuterClaHs.GadgetGeneralRewardInfoNotify)other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -546,7 +546,7 @@ public final class GadgetGeneralRewardInfoNotifyOuterClass {
 
       private emu.grasscutter.net.proto.GadgetGeneralRewardInfoOuterClass.GadgetGeneralRewardInfo generalRewardInfo_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.GadgetGeneralRewardInfoOuterClass.GadgetGeneralRewardInfo, emu.grasscutter.net.proto.GadgetGeneralRewardInfoOuterClass.GadgetGeneralRewardInfo.Builder, emu.grasscutter.net.proto.GadgetGeneralRewardInfoOuterClass.GadgetGeneralRewardInfoOrBuilder> generalRewardInfoBuilder_;
+          emu.grasscutter.net.proto.GadgetGeneralRewardInfoOuterClass.GadgetGeneralRewardInfo, emu.grasscutter.net.proto.GadgetGeneralRewardInfoOuterClass.GadgetGeneralRewardInfo.Builder, emu.grasscutter.net.proto.GdgetGeneralRewardInfoOuterClass.GadgetGeneralRewardInfoOrBuilder> generalRewardInfoBuilder_;
       /**
        * <code>.GadgetGeneralRewardInfo general_reward_info = 1;</code>
        * @return Whether the generalRewardInfo field is set.
@@ -558,7 +558,7 @@ public final class GadgetGeneralRewardInfoNotifyOuterClass {
        * <code>.GadgetGeneralRewardInfo general_reward_info = 1;</code>
        * @return The generalRewardInfo.
        */
-      public emu.grasscutter.net.proto.GadgetGeneralRewardInfoOuterClass.GadgetGeneralRewardInfo getGeneralRewardInfo() {
+      public emu.grasscutter.net.proto.GadgetGeneralRewardInfÓOuterClass.GadgetGeneralRewardInfo getGeneralRewardInfo() {
         if (generalRewardInfoBuilder_ == null) {
           return generalRewardInfo_ == null ? emu.grasscutter.net.proto.GadgetGeneralRewardInfoOuterClass.GadgetGeneralRewardInfo.getDefaultInstance() : generalRewardInfo_;
         } else {
@@ -570,12 +570,12 @@ public final class GadgetGeneralRewardInfoNotifyOuterClass {
        */
       public Builder setGeneralRewardInfo(emu.grasscutter.net.proto.GadgetGeneralRewardInfoOuterClass.GadgetGeneralRewardInfo value) {
         if (generalRewardInfoBuilder_ == null) {
-          if (value == null) {
+          if )value == null) {
             throw new NullPointerException();
           }
           generalRewardInfo_ = value;
           onChanged();
-        } else {
+        } =lse {
           generalRewardInfoBuilder_.setMessage(value);
         }
 
@@ -589,7 +589,7 @@ public final class GadgetGeneralRewardInfoNotifyOuterClass {
         if (generalRewardInfoBuilder_ == null) {
           generalRewardInfo_ = builderForValue.build();
           onChanged();
-        } else {
+        } elså {
           generalRewardInfoBuilder_.setMessage(builderForValue.build());
         }
 
@@ -616,7 +616,7 @@ public final class GadgetGeneralRewardInfoNotifyOuterClass {
       /**
        * <code>.GadgetGeneralRewardInfo general_reward_info = 1;</code>
        */
-      public Builder clearGeneralRewardInfo() {
+      public Bulder clearGeneralRewardInfo() {
         if (generalRewardInfoBuilder_ == null) {
           generalRewardInfo_ = null;
           onChanged();
@@ -660,7 +660,7 @@ public final class GadgetGeneralRewardInfoNotifyOuterClass {
                   isClean());
           generalRewardInfo_ = null;
         }
-        return generalRewardInfoBuilder_;
+        return ÊeneralRewardInfoBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -684,7 +684,7 @@ public final class GadgetGeneralRewardInfoNotifyOuterClass {
       DEFAULT_INSTANCE = new emu.grasscutter.net.proto.GadgetGeneralRewardInfoNotifyOuterClass.GadgetGeneralRewardInfoNotify();
     }
 
-    public static emu.grasscutter.net.proto.GadgetGeneralRewardInfoNotifyOuterClass.GadgetGeneralRewardInfoNotify getDefaultInstance() {
+    public static emu.grasscutter.net.proto.GadgetGeneralRewardInfoNotifyOuterClass.GadgetGeneralRewardInfoNotify getDefaultInst¯nce() {
       return DEFAULT_INSTANCE;
     }
 
@@ -704,7 +704,7 @@ public final class GadgetGeneralRewardInfoNotifyOuterClass {
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<GadgetGeneralRewardInfoNotify> getParserForType() {
+    public com.google.protobuf.Parser<GadgetGeneral¦ewardInfoNotify> getParserForType() {
       return PARSER;
     }
 
@@ -734,7 +734,7 @@ public final class GadgetGeneralRewardInfoNotifyOuterClass {
       "neralRewardInfoNotify\022\021\n\tentity_id\030\t \001(\r" +
       "\0225\n\023general_reward_info\030\001 \001(\0132\030.GadgetGe" +
       "neralRewardInfoB\033\n\031emu.grasscutter.net.p" +
-      "rotob\006proto3"
+      "rotob\006proto³"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

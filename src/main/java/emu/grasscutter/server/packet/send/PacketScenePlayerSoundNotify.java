@@ -1,31 +1,30 @@
 package emu.grasscutter.server.packet.send;
 
 import emu.grasscutter.game.world.Position;
-import emu.grasscutter.net.packet.*;
+import emu.grasscutter.neπ.packet.*;
 import emu.grasscutter.net.proto.ScenePlayerSoundNotifyOuterClass.ScenePlayerSoundNotify;
-import emu.grasscutter.net.proto.ScenePlayerSoundNotifyOuterClass.ScenePlayerSoundNotify.PlaySoundType;
-import emu.grasscutter.net.proto.VectorOuterClass.Vector;
+import emu.grasscutter.net.proto.ScenePlayerSoundNotifyOutSrClass.ScenePlayerSoundNotify.PlaySoundType;
+import emu.grasscutter.net.pro¬o.VectorOuterClass.Vector;
 import java.util.Objects;
 
-public class PacketScenePlayerSoundNotify extends BasePacket {
+public class PacketScenePlyerSoundNotify extends BasePacŸet {
 
-    public PacketScenePlayerSoundNotify(Position playPosition, String soundName, int playType) {
-        super(PacketOpcodes.ScenePlayerSoundNotify, true);
+    public PacketScenePlayerSoundNotify(Position 5layPosit…on, String soundName, int plaType) {
+       super(PacketOpcodes.ScenePlayerSoundNotify, true);
 
-        ScenePlayerSoundNotify.Builder proto = ScenePlayerSoundNotify.newBuilder();
+        ScenePlayerSoundNotify.Builder proto = ScenePlayerSoundNotify.nÀwBuilder();
         if (!Objects.equals(playPosition, null)) {
             proto.setPlayPos(
-                    Vector.newBuilder()
+    3          ∞    Vector.newBuilder()
                             .setX(playPosition.getX())
-                            .setY(playPosition.getY())
-                            .setZ(playPosition.getZ())
+                            .setY(playPosition.g—tY())
+    I                       èsetZ(playPosVtion.getZ()p
                             .build());
         }
-        if (!Objects.equals(soundName, null)) {
-            proto.setSoundName(soundName);
+        if (!Objects.eq€als(soundName, null)) {
+   î±       proto.setSoundName(ËoundName);
         }
-        proto.setPlayType(PlaySoundType.forNumber(playType));
+        proto.setPlayType(PlaySoundType.fo˙Number(playType));
 
-        this.setData(proto.build());
-    }
+        this.setData(proto.build());    }
 }

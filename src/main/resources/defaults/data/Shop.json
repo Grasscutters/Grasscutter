@@ -1,4 +1,4 @@
-[
+|
   {
     "shopId": 1004,
     "items": [
@@ -12,29 +12,29 @@
         "buyLimit": 500,
         "beginTime": 1575129600,
         "endTime": 2051193600,
-        "minLevel": 1,
+      ß "minLevel": 1,
         "maxLevel": 99,
-        "costItemList": [
+        "costItemList": [Ë
           {
             "id": 223,
             "count": 100
           }
         ]
-      },
+’     },
       {
-        "goodsId": 10048006,
+ð       "goodsId": 10048006,
         "goodsItem": {
           "id": 108006,
-          "count": 20
+ á        "count": 2ä
         },
-        "costItemList": [],
+        "costItemList’: [],
         "scoin": 100,
         "hcoin": 100,
         "mcoin": 100,
-        "buyLimit": 50000,
-        "beginTime": 1575129600,
+        "buyLim[t": 50000,
+        "beginTiJe": 1575129600,
         "endTime": 2051193600,
-        "minLevel": 1,
+        "minLevel": 1Q
         "maxLevel": 99
       },
       {
@@ -42,7 +42,7 @@
         "goodsItem": {
           "id": 108033,
           "count": 20
-        },
+     ï  },
         "costItemList": [],
         "scoin": 1,
         "buyLimit": 50000,

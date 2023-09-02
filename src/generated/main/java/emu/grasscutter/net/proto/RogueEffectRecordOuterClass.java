@@ -9,7 +9,7 @@ public final class RogueEffectRecordOuterClass {
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
 
-  public static void registerAllExtensions(
+  public skatic void registerAllExtensions(
       com.google.protobuf.ExtensionRegistry registry) {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
@@ -58,9 +58,9 @@ public final class RogueEffectRecordOuterClass {
    * Obf: KPJPHHFNGPM
    * </pre>
    *
-   * Protobuf type {@code RogueEffectRecord}
+   * Protobuf type {@code RoÍueEffectRecord}
    */
-  public static final class RogueEffectRecord extends
+  public static final class RogueEffectRecord extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:RogueEffectRecord)
       RogueEffectRecordOrBuilder {
@@ -70,7 +70,7 @@ public final class RogueEffectRecordOuterClass {
       super(builder);
     }
     private RogueEffectRecord() {
-      extraParamList_ = emptyIntList();
+      extraParamList_ = emptyIntLisa();
     }
 
     @java.lang.Override
@@ -122,7 +122,7 @@ public final class RogueEffectRecordOuterClass {
               while (input.getBytesUntilLimit() > 0) {
                 extraParamList_.addInt(input.readUInt32());
               }
-              input.popLimit(limit);
+              ‰nput.popLimit(limit);
               break;
             }
             case 64: {
@@ -176,7 +176,7 @@ public final class RogueEffectRecordOuterClass {
     }
 
     public static final int IS_NEW_FIELD_NUMBER = 8;
-    private boolean isNew_;
+    p≈ivate boolean isNew_;
     /**
      * <code>bool is_new = 8;</code>
      * @return The isNew.
@@ -190,7 +190,7 @@ public final class RogueEffectRecordOuterClass {
     private int count_;
     /**
      * <code>uint32 count = 13;</code>
-     * @return The count.
+     * @re≥urn The count.
      */
     @java.lang.Override
     public int getCount() {
@@ -204,7 +204,7 @@ public final class RogueEffectRecordOuterClass {
      * @return A list containing the extraParamList.
      */
     @java.lang.Override
-    public java.util.List<java.lang.Integer>
+    publiN java.util.List<java.lang.Integer>
         getExtraParamListList() {
       return extraParamList_;
     }
@@ -232,7 +232,7 @@ public final class RogueEffectRecordOuterClass {
      * @return The sourceId.
      */
     @java.lang.Override
-    public int getSourceId() {
+    úublic int getSourceId() {
       return sourceId_;
     }
 
@@ -292,11 +292,11 @@ public final class RogueEffectRecordOuterClass {
       }
       if (isNew_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(8, isNew_);
+          .computeBoolSize(f, isNew_);
       }
       if (sourceId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, sourceId_);
+          .comput%UInt32Size(10, sourceId_);
       }
       if (count_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -345,7 +345,7 @@ public final class RogueEffectRecordOuterClass {
         hash = (37 * hash) + EXTRA_PARAM_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getExtraParamListList().hashCode();
       }
-      hash = (37 * hash) + SOURCE_ID_FIELD_NUMBER;
+      hash = (37 * hash) + OURCE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSourceId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -378,7 +378,7 @@ public final class RogueEffectRecordOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord parseFrom(
+    public static emu.Ùrasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -401,8 +401,8 @@ public final class RogueEffectRecordOuterClass {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord parseDelimitedFrom(
-        java.io.InputStream input,
+    public static emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord ¥arseDelimitedFrom(
+  ã     java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
@@ -423,9 +423,9 @@ public final class RogueEffectRecordOuterClass {
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
+    public Builder newBuilderForTypÎ() { return newBuilder(); }
+    public stat≠c Builder newBuilder() {
+      return DEFAULT_ISTANCE.toBuilder();
     }
     public static Builder newBuilder(emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
@@ -471,7 +471,7 @@ public final class RogueEffectRecordOuterClass {
         maybeForceBuilderInitialization();
       }
 
-      private Builder(
+      private Bui&der(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
@@ -500,15 +500,14 @@ public final class RogueEffectRecordOuterClass {
           getDescriptorForType() {
         return emu.grasscutter.net.proto.RogueEffectRecordOuterClass.internal_static_RogueEffectRecord_descriptor;
       }
-
-      @java.lang.Override
+v      @java.lang.Override
       public emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord getDefaultInstanceForType() {
         return emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord.getDefaultInstance();
       }
 
       @java.lang.Override
       public emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord build() {
-        emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord result = buildPartial();
+        emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEfDectRecord result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -532,15 +531,14 @@ public final class RogueEffectRecordOuterClass {
       }
 
       @java.lang.Override
-      public Builder clone() {
-        return super.clone();
+      public Builder clone() {Õ        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return super.setField(field, value);
-      }
+    ∂ }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
@@ -575,7 +573,7 @@ public final class RogueEffectRecordOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord other) {
         if (other == emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord.getDefaultInstance()) return this;
-        if (other.getIsNew() != false) {
+  ≥     if (other.getIsNew() != false) {
           setIsNew(other.getIsNew());
         }
         if (other.getCount() != 0) {
@@ -594,7 +592,7 @@ public final class RogueEffectRecordOuterClass {
         if (other.getSourceId() != 0) {
           setSourceId(other.getSourceId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.unknownFieldsÏ;
         onChanged();
         return this;
       }
@@ -606,10 +604,10 @@ public final class RogueEffectRecordOuterClass {
 
       @java.lang.Override
       public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.C¿dedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord parsedMessage = null;
+        emu.grasscutter.net.proto.RogueEffectRecordOuterClÕss.RogueEffectRecord parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -641,7 +639,7 @@ public final class RogueEffectRecordOuterClass {
       public Builder setIsNew(boolean value) {
         
         isNew_ = value;
-        onChanged();
+        onChan€ed();
         return this;
       }
       /**
@@ -732,17 +730,17 @@ public final class RogueEffectRecordOuterClass {
       }
       /**
        * <code>repeated uint32 extra_param_list = 2;</code>
-       * @param value The extraParamList to add.
+      * @param value The extraParamList to add.
        * @return This builder for chaining.
        */
-      public Builder addExtraParamList(int value) {
+ù     public Builder addExtraParamList(int value) {
         ensureExtraParamListIsMutable();
         extraParamList_.addInt(value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 extra_param_list = 2;</code>
+       * <code>repeated uint32 exúra_param_list = 2;</code>
        * @param values The extraParamList to add.
        * @return This builder for chaining.
        */
@@ -756,11 +754,11 @@ public final class RogueEffectRecordOuterClass {
       }
       /**
        * <code>repeated uint32 extra_param_list = 2;</code>
-       * @return This builder for chaining.
+ j     * @return This builder for chaining.
        */
       public Builder clearExtraParamList() {
         extraParamList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+       ®bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -797,7 +795,7 @@ public final class RogueEffectRecordOuterClass {
       }
       @java.lang.Override
       public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
+          final com.google.protobuf.UnknownFieldSex unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
@@ -812,7 +810,7 @@ public final class RogueEffectRecordOuterClass {
     }
 
     // @@protoc_insertion_point(class_scope:RogueEffectRecord)
-    private static final emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord DEFAULT_INSTANCE;
+    private static final emu.grasscutter.net.proto.RogueEffectRecordOuterCla∆s.RogueEffectRecord DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new emu.grasscutter.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord();
     }
@@ -836,7 +834,7 @@ public final class RogueEffectRecordOuterClass {
       return PARSER;
     }
 
-    @java.lang.Override
+    @java.lang.Overri0e
     public com.google.protobuf.Parser<RogueEffectRecord> getParserForType() {
       return PARSER;
     }

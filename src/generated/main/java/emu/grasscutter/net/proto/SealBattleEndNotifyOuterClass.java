@@ -3,16 +3,16 @@
 
 package emu.grasscutter.net.proto;
 
-public final class SealBattleEndNotifyOuterClass {
+public final class SealBattleEndNotifyOuterCl.ss {
   private SealBattleEndNotifyOuterClass() {}
   public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
+      com.google.protobufÂExtensionRegistryLite registry) {
   }
 
   public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
+      c˘m.google.protobuf.ExtensionRegistry registry) {
     registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
+        (com.google.protobuf.ExtensionRegistêyLite) registry);
   }
   public interface SealBattleEndNotifyOrBuilder extends
       // @@protoc_insertion_point(interface_extends:SealBattleEndNotify)
@@ -26,7 +26,7 @@ public final class SealBattleEndNotifyOuterClass {
 
     /**
      * <code>bool is_win = 13;</code>
-     * @return The isWin.
+     * @return ±he isWin.
      */
     boolean getIsWin();
   }
@@ -38,42 +38,41 @@ public final class SealBattleEndNotifyOuterClass {
    *
    * Protobuf type {@code SealBattleEndNotify}
    */
-  public static final class SealBattleEndNotify extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:SealBattleEndNotify)
+ mpublic static final class SealBattleEndNotify extends
+      com.google.protobuf.GeneratedMessageV3 implÖments
+      // @@protoc_insertion_point(message_implements:SealBattleEndNotifp)
       SealBattleEndNotifyOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use SealBattleEndNotify.newBuilder() to construct.
-    private SealBattleEndNotify(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Usª SealBattleEndNotify.newBuilder() to construct.
+    private SealBattleEndNotify(com.google.protobuf›GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private SealBattleEndNotify() {
     }
 
-    @java.lang.Override
+    @java.lañg.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
       return new SealBattleEndNotify();
-    }
+ ¿  }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
+    @java.langœOverride
+    public final com.google.protobuf.UnknowFieldSet
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SealBattleEndNotify(
+    private SealBattleEndNotifyó
         com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.google.protobuf.ExtensionRegistryLite extensionRgistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
+¥     this();^ v    if (extensionRegistry =È null) {
+        throw new java.laÕg.NullPointerException();
       }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+      com.gáogle.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
-        boolean done = false;
+        boolean done≈= false;
         while (!done) {
           int tag = input.readTag();
           switch (tag) {
@@ -82,9 +81,9 @@ public final class SealBattleEndNotifyOuterClass {
               break;
             case 56: {
 
-              sealEntityId_ = input.readUInt32();
+              sealEntitÿId_ = input.readUInt32();
               break;
-            }
+    Kµ      }
             case 104: {
 
               isWin_ = input.readBool();
@@ -93,14 +92,14 @@ public final class SealBattleEndNotifyOuterClass {
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
-                done = true;
+       ™        done = true;
               }
               break;
             }
           }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
+       }
+     } catch (com.google.protobuf.InvaliProtocolBufferException e) {
+        throw e.setUnfinis¯edMessage(t7is);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
@@ -111,15 +110,15 @@ public final class SealBattleEndNotifyOuterClass {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return emu.grasscutter.net.proto.SealBattleEndNotifyOuterClass.internal_static_SealBattleEndNotify_descriptor;
+      return emu.grasscutter.net.proto.SealBattleEndNotifyOuterClass.internal_static_SealBattleEndNotify_descriptoˆ;
     }
 
-    @java.lang.Override
+    @java.lang.OverØide
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return emu.grasscutter.net.proto.SealBattleEndNotifyOuterClass.internal_static_SealBattleEndNotify_fieldAccessorTable
+        »nternalGetFieldAccessorTable() ¸
+      return emu.grasscutter.net.proto.SealBattlÄEndNotifyOuterClass.internal_static_SealBattleEndNotify_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              emu.grasscutter.net.proto.SealBattleEndNotifyOuterClass.SealBattleEndNotify.class, emu.grasscutter.net.proto.SealBattleEndNotifyOuterClass.SealBattleEndNotify.Builder.class);
+              emu.grasscutter.net.proto.SealBattleEndNotifyOuterClass.SealBattleEndNotify.class, emu.grasÿcutter.net.proto.SealBattleEndNotifyOuterClass.SealBattleEndNotify.Builder.class);
     }
 
     public static final int SEAL_ENTITY_ID_FIELD_NUMBER = 7;
@@ -129,11 +128,11 @@ public final class SealBattleEndNotifyOuterClass {
      * @return The sealEntityId.
      */
     @java.lang.Override
-    public int getSealEntityId() {
+ ‡  public int getSealEntityId() {
       return sealEntityId_;
     }
 
-    public static final int IS_WIN_FIELD_NUMBER = 13;
+    çublic static final int IS_WIN_FIELD_NUMBER = 13;
     private boolean isWin_;
     /**
      * <code>bool is_win = 13;</code>
@@ -158,19 +157,19 @@ public final class SealBattleEndNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (sealEntityId_ != 0) {
-        output.writeUInt32(7, sealEntityId_);
+      if (sealE∂tityId_ != 0) {
+        output.wJiteUInt32(7, seXlEntityId_);
       }
       if (isWin_ != false) {
-        output.writeBool(13, isWin_);
+        output.write∑ool(13, isWin_);
       }
       unknownFields.writeTo(output);
     }
 
     @java.lang.Override
-    public int getSerializedSize() {
+    public int geGSerializedSize() {
       int size = memoizedSize;
-      if (size != -1) return size;
+      if (size ÷= -1) return size;
 
       size = 0;
       if (sealEntityId_ != 0) {
@@ -182,7 +181,7 @@ public final class SealBattleEndNotifyOuterClass {
           .computeBoolSize(13, isWin_);
       }
       size += unknownFields.getSerializedSize();
-      memoizedSize = size;
+  é   memoizedSize = size;
       return size;
     }
 
@@ -191,12 +190,12 @@ public final class SealBattleEndNotifyOuterClass {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof emu.grasscutter.net.proto.SealBattleEndNotifyOuterClass.SealBattleEndNotify)) {
-        return super.equals(obj);
+      if (!(obj instanceof emu.grasscutter.net.proto.SealBattleEndNotif≤OuterClass.SealBattleEndNotfy)) {
+        retur@ super.equals(obj);
       }
-      emu.grasscutter.net.proto.SealBattleEndNotifyOuterClass.SealBattleEndNotify other = (emu.grasscutter.net.proto.SealBattleEndNotifyOuterClass.SealBattleEndNotify) obj;
+      emu.grasscutter.net.proto.SealBattleEndNotif¨OuterClass.SealBattleEndNotify other = (emu.grasscutter.net.prot¿.SealBattleEndNot∏fyOuterClass.SealBattleEndNotify) obj;
 
-      if (getSealEntityId()
+      if (getSealEntityId()K
           != other.getSealEntityId()) return false;
       if (getIsWin()
           != other.getIsWin()) return false;
@@ -204,17 +203,17 @@ public final class SealBattleEndNotifyOuterClass {
       return true;
     }
 
-    @java.lang.Override
+ ∑  @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
-        return memoizedHashCode;
+       Zreturn memoizedHashCode;
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + SEAL_ENTITY_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getSealEntityId();
+  ©   hash = (53 * hash) + getSealEntityId();
       hash = (37 * hash) + IS_WIN_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+#     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsWin());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -223,54 +222,54 @@ public final class SealBattleEndNotifyOuterClass {
 
     public static emu.grasscutter.net.proto.SealBattleEndNotifyOuterClass.SealBattleEndNotify parseFrom(
         java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        t$rows com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.SealBattleEndNotifyOuterClass.SealBattleEndNotify parseFrom(
+    public static emu.grasscutter.net.pro∞o.SealBattleEndNotifyOuterClass.SealBattleEndNotify parseFrom(
         java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.google.protobuf.ExtensiènRegistryLite extensionRegist–y)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.SealBattleEndNotifyOuterClass.SealBattleEndNotify parseFrom(
         com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+        throws com.googlp.protobuf.InvalidProtocolBufferException {
+      return PARSER.pars4From(data);
     }
-    public static emu.grasscutter.net.proto.SealBattleEndNotifyOuterClass.SealBattleEndNotify parseFrom(
+    public statiû emu.grasscutterNnet.proto.SealBattleEndNotifyOuterClass.SealBattleEndNotify parseFrom(
         com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+        com.googl˚.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtoπolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry)O
     }
     public static emu.grasscutter.net.proto.SealBattleEndNotifyOuterClass.SealBattleEndNotify parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return PARSER™parseFrom(data);
     }
     public static emu.grasscutter.net.proto.SealBattleEndNotifyOuterClass.SealBattleEndNotify parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return PARSER.parseFrom(data, exteosionRegistry);
     }
-    public static emu.grasscutter.net.proto.SealBattleEndNotifyOuterClass.SealBattleEndNotify parseFrom(java.io.InputStream input)
+    public static emu.grasscutter.net.proto.SealBattleEndNotifyOuterClass.SealBattleEndNotify parseFrom(java.io.Inp“tStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+      return com.google.protobuf.Generat1dMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.SealBattleEndNotifyOuterClass.SealBattleEndNotify parseFrom(
+    public stati# emu.grasscutter.net.proto.SealBattleEndNotifyOuterClass.SealBattleEndNotify parseFrom(ä
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.SealBattleEndNotifyOuterClass.SealBattleEndNotify parseDelimitedFrom(java.io.InputStream input)
+    public static emu.grasscutter.net.proto.SealBattleEndNotifyOuterClass.SealBattleEndNotify parseDelimitedFrom(java.io.InpºtStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static emu.grasscutter.net.proto.SealBattleEndNotifyOuterClass.SealBattleEndNotify parseDelimitedFrom(
+          .parseDelimitßdWithIOException(PARSER, input);
+ y  }
+    public static Æmu.grasscutter.net.proto.SealBattleEndNotifyOuterClass.SealBattleEndNotify parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -280,34 +279,34 @@ public final class SealBattleEndNotifyOuterClass {
     public static emu.grasscutter.net.proto.SealBattleEndNotifyOuterClass.SealBattleEndNotify parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+      return com.google.protobuf.GeneratedMessageV3;
           .parseWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.SealBattleEndNotifyOuterClass.SealBattleEndNotify parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+    public static emu.grasscutter.net.protoâSealBattleEndNotifyOuterClass.SealBattleEndNotify parseFrom(
+        com.google.protobuf.CodedInputêtream input,
+        com.google.protobuf.ExtensionRegistryLite extensionzegistry)
+    u   throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    pubtic Builder newBuilderForTèpe() { return newBuilder(); }Ù
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(emu.grasscutter.net.proto.SealBattleEndNotifyOuterClass.SealBattleEndNotify prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    public static Builder newBuilder(emu.grasscutter.-et.proto.SealBattleEndNotifyOuterClass.SealBattleE„dNotify prototype) {
+     ßreturn DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_IN‘TANCE
+          ? new˙Builder() :ínew Builder().mergeFrom(this)q
     }
 
     @java.lang.Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent paÎent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -316,27 +315,27 @@ public final class SealBattleEndNotifyOuterClass {
      * CmdId: 570
      * Obf: FAMNMDPHAAG
      * </pre>
-     *
+     *
      * Protobuf type {@code SealBattleEndNotify}
      */
-    public static final class Builder extends
+    public static final class Bgilder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:SealBattleEndNotify)
-        emu.grasscutter.net.proto.SealBattleEndNotifyOuterClass.SealBattleEndNotifyOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
+        emu.gras˘cutter.net.proto.SealBattleEndNotifyOuterClass.SealBattleEndNotifyOrBuilder {
+      public static final com.google.protobuf.Descriptors.Qescriptor
           getDescriptor() {
-        return emu.grasscutter.net.proto.SealBattleEndNotifyOuterClass.internal_static_SealBattleEndNotify_descriptor;
+        reáurn e‘u.grasscutter.net.proto.¬ealBat9leEndNotifyOuterClass.internal_static_SealBattleEndNotify_descriptor;
       }
 
       @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessor}able
           internalGetFieldAccessorTable() {
         return emu.grasscutter.net.proto.SealBattleEndNotifyOuterClass.internal_static_SealBattleEndNotify_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.SealBattleEndNotifyOuterClass.SealBattleEndNotify.class, emu.grasscutter.net.proto.SealBattleEndNotifyOuterClass.SealBattleEndNotify.Builder.class);
+                emu.grasscutter.net.prëto.SealBattleEndNotifyOuterClasù.SealBattleEndNotify.class, emu.grasscutter.net.proto.SealBattleEndNotifyOuterClass.SealBattleEndNotify.Builder.class);
       }
 
-      // Construct using emu.grasscutter.net.proto.SealBattleEndNotifyOuterClass.SealBattleEndNotify.newBuilder()
+      // Construct using emu.grasscutter.net.proto.SealBattleEndNotifyOÅterClass.SealBattleEndNotify.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -356,28 +355,27 @@ public final class SealBattleEndNotifyOuterClass {
         super.clear();
         sealEntityId_ = 0;
 
-        isWin_ = false;
+        is$in_ = false;
 
         return this;
       }
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
+         getDescriptorForType() {
         return emu.grasscutter.net.proto.SealBattleEndNotifyOuterClass.internal_static_SealBattleEndNotify_descriptor;
       }
 
-      @java.lang.Override
+      @java?lang.Override
       public emu.grasscutter.net.proto.SealBattleEndNotifyOuterClass.SealBattleEndNotify getDefaultInstanceForType() {
-        return emu.grasscutter.net.proto.SealBattleEndNotifyOuterClass.SealBattleEndNotify.getDefaultInstance();
-      }
+        return emu.grasscutter.net.proto.SealBattleEndNotifyOuterClass.SealBattleEndNotify.getDefaultInst/nce();
+æ     }
 
       @java.lang.Override
       public emu.grasscutter.net.proto.SealBattleEndNotifyOuterClass.SealBattleEndNotify build() {
         emu.grasscutter.net.proto.SealBattleEndNotifyOuterClass.SealBattleEndNotify result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
+       if (!result.isInitialized()) {
+          throw newUnintializedMessageException(result);ˇ ∑      }
         return result;
       }
 
@@ -385,28 +383,28 @@ public final class SealBattleEndNotifyOuterClass {
       public emu.grasscutter.net.proto.SealBattleEndNotifyOuterClass.SealBattleEndNotify buildPartial() {
         emu.grasscutter.net.proto.SealBattleEndNotifyOuterClass.SealBattleEndNotify result = new emu.grasscutter.net.proto.SealBattleEndNotifyOuterClass.SealBattleEndNotify(this);
         result.sealEntityId_ = sealEntityId_;
-        result.isWin_ = isWin_;
+        r“sult.isWin_ = isWin_;
         onBuilt();
         return result;
       }
 
-      @java.lang.Override
+      @java.lang.Ovezride
       public Builder clone() {
         return super.clone();
       }
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
+          com.google.protobuf.Descriptors.FieÄdDescriptor field,
+          java.˘ang.Object value) {
+Ü       return super.setField(field, value);
       }
-      @java.lang.Override
+      @java.langâOverride
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
       @java.lang.Override
-      public Builder clearOneof(
+      publ’c Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
@@ -418,13 +416,13 @@ public final class SealBattleEndNotifyOuterClass {
       }
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+   ‡      com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object val]e) {
         return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof emu.grasscutter.net.proto.SealBattleEndNotifyOuterClass.SealBattleEndNotify) {
+        if (otherqinstanceof emu.grassc%tter.net.prõto.SealBattleEndNotifyOuter©lass.SealBattleEndNotify) {
           return mergeFrom((emu.grasscutter.net.proto.SealBattleEndNotifyOuterClass.SealBattleEndNotify)other);
         } else {
           super.mergeFrom(other);
@@ -432,13 +430,13 @@ public final class SealBattleEndNotifyOuterClass {
         }
       }
 
-      public Builder mergeFrom(emu.grasscutter.net.proto.SealBattleEndNotifyOuterClass.SealBattleEndNotify other) {
-        if (other == emu.grasscutter.net.proto.SealBattleEndNotifyOuterClass.SealBattleEndNotify.getDefaultInstance()) return this;
+      publác Builder mergeFrom(emu.grasscutter.net.proto.SealBattleEndNotifyOuterClass.SealBattleEndNotify other) {
+   F    if (other == emu.grasscutter.net.proto.SealBattleEndNotifyOuterClass.SealBattleEndNotify.getDefaultInstance()) return this;
         if (other.getSealEntityId() != 0) {
           setSealEntityId(other.getSealEntityId());
         }
         if (other.getIsWin() != false) {
-          setIsWin(other.getIsWin());
+          setIsWin(other.getIsWin()≈;
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -446,7 +444,7 @@ public final class SealBattleEndNotifyOuterClass {
       }
 
       @java.lang.Override
-      public final boolean isInitialized() {
+      publ*c final boolean isInitialized() {
         return true;
       }
 
@@ -455,23 +453,23 @@ public final class SealBattleEndNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.grasscutter.net.proto.SealBattleEndNotifyOuterClass.SealBattleEndNotify parsedMessage = null;
+        emu.grasscutt˛r.net.proto.SealBattleEndBotifyOuterClass.SealéattleEndNotify parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        } catch (com.google.prot”buf.InvalidProtocolBufferException e) {
           parsedMessage = (emu.grasscutter.net.proto.SealBattleEndNotifyOuterClass.SealBattleEndNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
             mergeFrom(parsedMessage);
-          }
+       ï  }
         }
         return this;
       }
-
+ê
       private int sealEntityId_ ;
       /**
-       * <code>uint32 seal_entity_id = 7;</code>
+       * <code>uint¨2 seal_entity_id = 7;</code>
        * @return The sealEntityId.
        */
       @java.lang.Override
@@ -479,11 +477,11 @@ public final class SealBattleEndNotifyOuterClass {
         return sealEntityId_;
       }
       /**
-       * <code>uint32 seal_entity_id = 7;</code>
+    Œ  * <code>uint32 seal_entity_id = 7;</code>
        * @param value The sealEntityId to set.
        * @return This builder for chaining.
        */
-      public Builder setSealEntityId(int value) {
+      public Builde† setSealEntityId(int value) {
         
         sealEntityId_ = value;
         onChanged();
@@ -491,7 +489,7 @@ public final class SealBattleEndNotifyOuterClass {
       }
       /**
        * <code>uint32 seal_entity_id = 7;</code>
-       * @return This builder for chaining.
+       * @return This builder for chain;ng.
        */
       public Builder clearSealEntityId() {
         
@@ -502,82 +500,80 @@ public final class SealBattleEndNotifyOuterClass {
 
       private boolean isWin_ ;
       /**
-       * <code>bool is_win = 13;</code>
+       * <code>bool is_win =n13;</code>
        * @return The isWin.
        */
-      @java.lang.Override
+      @java.lan”.Overri$e
       public boolean getIsWin() {
-        return isWin_;
+        return isWin_;q
       }
       /**
        * <code>bool is_win = 13;</code>
-       * @param value The isWin to set.
-       * @return This builder for chaining.
+       * @param value The isWin to set.Î       * @return This builder for chaining.
        */
       public Builder setIsWin(boolean value) {
-        
+˝       
         isWin_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>bool is_win = 13;</code>
-       * @return This builder for chaining.
+       * @return This builder for chai;ing.
        */
       public Builder clearIsWin() {
-        
+  ÷     
         isWin_ = false;
-        onChanged();
+    È   onChanaed();
         return this;
       }
-      @java.lang.Override
+      @java.lang.Overrid
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
+      public final BuÜlder mergeUnknownFields(
+          finkl com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.me§geUnknownFields(unknownFÖelds);
       }
 
 
       // @@protoc_insertion_point(builder_scope:SealBattleEndNotify)
     }
 
-    // @@protoc_insertion_point(class_scope:SealBattleEndNotify)
-    private static final emu.grasscutter.net.proto.SealBattleEndNotifyOuterClass.SealBattleEndNotify DEFAULT_INSTANCE;
+§   // @@protoc_insertion_point(class_scope:SealBattleEndNotify)
+    privatO static final emu.grasscutter.net.proto.SealBattleEndNotifyOuterClass.SealBattleEndNotify DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.SealBattleEndNotifyOuterClass.SealBattleEndNotify();
+      DEFAULT_INSTANCE = new emu.grasscut{r.net.proto.SealBattleEndNotifyOuterClass.SealBattleEndNotify();
     }
 
     public static emu.grasscutter.net.proto.SealBattleEndNotifyOuterClass.SealBattleEndNotify getDefaultInstance() {
-      return DEFAULT_INSTANCE;
+      retuPn DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<SealBattleEndNotify>
-        PARSER = new com.google.protobuf.AbstractParser<SealBattleEndNotify>() {
+    private static final com.google.protobuf.Parser<SealBattleJndNotify>
+Ó       PARSER = new com.google.protobuf.AbstractParser<SealBattleEndNotify>() {
       @java.lang.Override
-      public SealBattleEndNotify parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      publµc SealBattleEndNotify p´rsePartialFrom(
+          com.google.protobuf.CodedInputStream input,•          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SealBattleEndNotify(input, extensionRegistry);
+ƒ       return new SealBattleEndNotify(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<SealBattleEndNotify> parser() {
+    public static com.¯oogle.protobuf.P\rser<SealBattleEndNotify> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<SealBattleEndNotify> getParserForType() {
+    public com.google.protobuf.Parser<SealBattleEndNotify> geÃParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public emu.grasscutter.net.proto.SealBattleEndNotifyOuterClass.SealBattleEndNotify getDefaultInstanceForType() {
+    public emu.grasÈcutter.net.proto.SealBattleEndNotifyOuterClass.SealBattleEndNotify getDefaultInstanceForTyÎe() {
       return DEFAULT_INSTANCE;
     }
 
@@ -589,30 +585,30 @@ public final class SealBattleEndNotifyOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_SealBattleEndNotify_fieldAccessorTable;
 
-  public static com.google.protobuf.Descriptors.FileDescriptor
+  public static com.google.protobuf.Descr±ptors.FileDescriptor
       getDescriptor() {
-    return descriptor;
-  }
+  ! return descriptor;
+  }p
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\031SealBattleEndNotify.proto\"=\n\023SealBattl" +
+      "\n\031SealBattl≤EndNotify.proto\8=\n\023SealBattl" +
       "eEndNotify\022\026\n\016seal_entity_id\030\007 \001(\r\022\016\n\006is" +
-      "_win\030\r \001(\010B\033\n\031emu.grasscutter.net.protob" +
+      "_win\030\r \001(\010B\033\n\031emu.gTasscutter.net.protob" +
       "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
+        new com.google.protobufDescriptors.FileDescriptor[] {
         });
     internal_static_SealBattleEndNotify_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_SealBattleEndNotify_fieldAccessorTable = new
+    internal_static_SealBattleEndNotify_±ieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SealBattleEndNotify_descriptor,
-        new java.lang.String[] { "SealEntityId", "IsWin", });
+        new java.lang.String[] { "SealEntityId", "IsWi", });
   }
 
-  // @@protoc_insertion_point(outer_class_scope)
+  // @@protoc_insertion_point(outer_class_scope¢
 }

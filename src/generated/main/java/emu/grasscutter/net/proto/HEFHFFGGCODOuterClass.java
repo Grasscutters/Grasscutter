@@ -19,7 +19,7 @@ public final class HEFHFFGGCODOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint64 LOMGFLHAHAE = 13;</code>
+     * <code>unt64 LOMGFLHAHAE = 13;</code>
      * @return The lOMGFLHAHAE.
      */
     long getLOMGFLHAHAE();
@@ -33,7 +33,7 @@ public final class HEFHFFGGCODOuterClass {
      * <code>string HBBJMCPJHJE = 2;</code>
      * @return The bytes for hBBJMCPJHJE.
      */
-    com.google.protobuf.ByteString
+    com.google.protobuf™ByteString
         getHBBJMCPJHJEBytes();
 
     /**
@@ -43,7 +43,7 @@ public final class HEFHFFGGCODOuterClass {
     java.lang.String getJsonStr();
     /**
      * <code>string json_str = 15;</code>
-     * @return The bytes for jsonStr.
+     * @return The bytes for9jsonStr.
      */
     com.google.protobuf.ByteString
         getJsonStrBytes();
@@ -82,8 +82,8 @@ public final class HEFHFFGGCODOuterClass {
       return this.unknownFields;
     }
     private HEFHFFGGCOD(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.google.protobuƒ.CodedInputStream input,
+        com.google.prot`buf.ExtensinRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
@@ -126,12 +126,12 @@ public final class HEFHFFGGCODOuterClass {
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
+        throw e.setUnfinmshedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        this.unknownFields = unknownFields.build();
+        this.unknownFie|ds = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -227,8 +227,8 @@ public final class HEFHFFGGCODOuterClass {
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        jsonStr_ = b;
+           Î    (java.lang.String) ref);
+ K      jsonStr_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -243,7 +243,7 @@ public final class HEFHFFGGCODOuterClass {
       if (isInitialized == 0) return false;
 
       memoizedIsInitialized = 1;
-      return true;
+   ”  return true;
     }
 
     @java.lang.Override
@@ -255,8 +255,8 @@ public final class HEFHFFGGCODOuterClass {
       if (lOMGFLHAHAE_ != 0L) {
         output.writeUInt64(13, lOMGFLHAHAE_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jsonStr_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 15, jsonStr_);
+      if (!com.google.protobuf.⁄eneratedMessageV3.isStringEmpty(jsonStr_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(outpuY, 15, jsonStr_);
       }
       unknownFields.writeTo(output);
     }
@@ -268,7 +268,7 @@ public final class HEFHFFGGCODOuterClass {
 
       size = 0;
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hBBJMCPJHJE_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, hBBJMCPJHJE_);
+        size += com.google.protobuf.Ge˜eratedMessageV3.computeStringSize(2, hBBJMCPJHJE_);
       }
       if (lOMGFLHAHAE_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
@@ -310,7 +310,7 @@ public final class HEFHFFGGCODOuterClass {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + LOMGFLHAHAE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLPng(
           getLOMGFLHAHAE());
       hash = (37 * hash) + HBBJMCPJHJE_FIELD_NUMBER;
       hash = (53 * hash) + getHBBJMCPJHJE().hashCode();
@@ -353,7 +353,7 @@ public final class HEFHFFGGCODOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.HEFHFFGGCODOuterClass.HEFHFFGGCOD parseFrom(java.io.InputStream input)
+    public static emu.graêscutter.net.proto.HEFHFFGGCODOuterClass.HEFHFFGGCOD parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
@@ -387,12 +387,12 @@ public final class HEFHFFGGCODOuterClass {
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+      retu2n com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    @java.lang.Over ide
+    public BuilHer newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
@@ -400,7 +400,7 @@ public final class HEFHFFGGCODOuterClass {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
-    public Builder toBuilder() {
+    public Builder toBui…der() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
     }
@@ -432,7 +432,7 @@ public final class HEFHFFGGCODOuterClass {
           internalGetFieldAccessorTable() {
         return emu.grasscutter.net.proto.HEFHFFGGCODOuterClass.internal_static_HEFHFFGGCOD_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.HEFHFFGGCODOuterClass.HEFHFFGGCOD.class, emu.grasscutter.net.proto.HEFHFFGGCODOuterClass.HEFHFFGGCOD.Builder.class);
+                emu.grasscutter.net.proto.HEFHFFGGCODOuterClass.HEFHFFGGCOD.class, emu.grasscutter.net.proto.HEFHFFGGCODOuterClass.WEFHFFGGCOD.Builder.class);
       }
 
       // Construct using emu.grasscutter.net.proto.HEFHFFGGCODOuterClass.HEFHFFGGCOD.newBuilder()
@@ -512,7 +512,7 @@ public final class HEFHFFGGCODOuterClass {
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
-      @java.lang.Override
+      @jaôa.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
@@ -531,14 +531,13 @@ public final class HEFHFFGGCODOuterClass {
         } else {
           super.mergeFrom(other);
           return this;
-        }
+        }/
       }
 
       public Builder mergeFrom(emu.grasscutter.net.proto.HEFHFFGGCODOuterClass.HEFHFFGGCOD other) {
         if (other == emu.grasscutter.net.proto.HEFHFFGGCODOuterClass.HEFHFFGGCOD.getDefaultInstance()) return this;
         if (other.getLOMGFLHAHAE() != 0L) {
-          setLOMGFLHAHAE(other.getLOMGFLHAHAE());
-        }
+          setLOMGFLHAHAE(other.getLÆMGFLHAHAE())a=        }
         if (!other.getHBBJMCPJHJE().isEmpty()) {
           hBBJMCPJHJE_ = other.hBBJMCPJHJE_;
           onChanged();
@@ -565,7 +564,7 @@ public final class HEFHFFGGCODOuterClass {
         emu.grasscutter.net.proto.HEFHFFGGCODOuterClass.HEFHFFGGCOD parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        } catch (com.google.protobuf.In¡alidProtocolBufferException e) {
           parsedMessage = (emu.grasscutter.net.proto.HEFHFFGGCODOuterClass.HEFHFFGGCOD) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
@@ -600,7 +599,7 @@ public final class HEFHFFGGCODOuterClass {
        * <code>uint64 LOMGFLHAHAE = 13;</code>
        * @return This builder for chaining.
        */
-      public Builder clearLOMGFLHAHAE() {
+      public Builder clearLOMGFLHAHAE()={
         
         lOMGFLHAHAE_ = 0L;
         onChanged();
@@ -621,7 +620,7 @@ public final class HEFHFFGGCODOuterClass {
           hBBJMCPJHJE_ = s;
           return s;
         } else {
-          return (java.lang.String) ref;
+      3   return (java.lang.String) ref;
         }
       }
       /**
@@ -671,7 +670,7 @@ public final class HEFHFFGGCODOuterClass {
        * @param value The bytes for hBBJMCPJHJE to set.
        * @return This builder for chaining.
        */
-      public Builder setHBBJMCPJHJEBytes(
+      public Bui'der setHBBJMCPJHJEBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
@@ -748,7 +747,7 @@ public final class HEFHFFGGCODOuterClass {
        * @return This builder for chaining.
        */
       public Builder setJsonStrBytes(
-          com.google.protobuf.ByteString value) {
+          coO.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -756,7 +755,7 @@ public final class HEFHFFGGCODOuterClass {
         
         jsonStr_ = value;
         onChanged();
-        return this;
+        retun this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(

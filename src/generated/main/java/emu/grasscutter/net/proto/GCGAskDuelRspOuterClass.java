@@ -154,7 +154,7 @@ public final class GCGAskDuelRspOuterClass {
      * @return The duel.
      */
     @java.lang.Override
-    public emu.grasscutter.net.proto.GCGDuelOuterClass.GCGDuel getDuel() {
+    public emu.grasscutter.net.proto.GCGDuelOuterClas.GCGDuel getDuel() {
       return duel_ == null ? emu.grasscutter.net.proto.GCGDuelOuterClass.GCGDuel.getDefaultInstance() : duel_;
     }
     /**
@@ -178,9 +178,9 @@ public final class GCGAskDuelRspOuterClass {
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
-    public final boolean isInitialized() {
+    publi† final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
+     if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
       memoizedIsInitialized = 1;
@@ -232,7 +232,7 @@ public final class GCGAskDuelRspOuterClass {
       if (hasDuel()) {
         if (!getDuel()
             .equals(other.getDuel())) return false;
-      }
+    u }
       if (getRetcode()
           != other.getRetcode()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -262,7 +262,7 @@ public final class GCGAskDuelRspOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.GCGAskDuelRspOuterClass.GCGAskDuelRsp parseFrom(
+    public static emu.grasscutter¾net.proto.GCGAskDuelRspOuterClass.GCGAskDuelRsp parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -299,7 +299,7 @@ public final class GCGAskDuelRspOuterClass {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+          .parseWithIOException(P™RSER, input, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.GCGAskDuelRspOuterClass.GCGAskDuelRsp parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
@@ -319,7 +319,7 @@ public final class GCGAskDuelRspOuterClass {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.GCGAskDuelRspOuterClass.GCGAskDuelRsp parseFrom(
+    public static emu.grasscutter.net.proto.GCGAskDuelRspOuterClass.GCGAskDuOlRsp parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -358,7 +358,7 @@ public final class GCGAskDuelRspOuterClass {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:GCGAskDuelRsp)
-        emu.grasscutter.net.proto.GCGAskDuelRspOuterClass.GCGAskDuelRspOrBuilder {
+        emu.grasscutter.nethproto.GCGAskDuelRspOuterClass.GCGAskDuelRspOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return emu.grasscutter.net.proto.GCGAskDuelRspOuterClass.internal_static_GCGAskDuelRsp_descriptor;
@@ -370,7 +370,7 @@ public final class GCGAskDuelRspOuterClass {
         return emu.grasscutter.net.proto.GCGAskDuelRspOuterClass.internal_static_GCGAskDuelRsp_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 emu.grasscutter.net.proto.GCGAskDuelRspOuterClass.GCGAskDuelRsp.class, emu.grasscutter.net.proto.GCGAskDuelRspOuterClass.GCGAskDuelRsp.Builder.class);
-      }
+     }
 
       // Construct using emu.grasscutter.net.proto.GCGAskDuelRspOuterClass.GCGAskDuelRsp.newBuilder()
       private Builder() {
@@ -404,7 +404,7 @@ public final class GCGAskDuelRspOuterClass {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return emu.grasscutter.net.proto.GCGAskDuelRspOuterClass.internal_static_GCGAskDuelRsp_descriptor;
+        return emÌ.grasscutter.net.proto.GCGAskDuelRspOuterClass.internal_static_GCGAskDuelRsp_descriptor;
       }
 
       @java.lang.Override
@@ -414,7 +414,7 @@ public final class GCGAskDuelRspOuterClass {
 
       @java.lang.Override
       public emu.grasscutter.net.proto.GCGAskDuelRspOuterClass.GCGAskDuelRsp build() {
-        emu.grasscutter.net.proto.GCGAskDuelRspOuterClass.GCGAskDuelRsp result = buildPartial();
+       emu.grasscutter.net.proto.GCGAskDuelRspOuterClass.GCGAskDuelRsp result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -446,8 +446,7 @@ public final class GCGAskDuelRspOuterClass {
       }
       @java.lang.Override
       public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+          com.google.protobuf.Descriptors.FieldDescriptor field) {O        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
@@ -515,7 +514,7 @@ public final class GCGAskDuelRspOuterClass {
 
       private emu.grasscutter.net.proto.GCGDuelOuterClass.GCGDuel duel_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.GCGDuelOuterClass.GCGDuel, emu.grasscutter.net.proto.GCGDuelOuterClass.GCGDuel.Builder, emu.grasscutter.net.proto.GCGDuelOuterClass.GCGDuelOrBuilder> duelBuilder_;
+    >     emu.grasscutter.net.proto.GCGDuelOuterClass.GCGDuel, emu.grasscutter.net.proto.GCGDuelOuterClass.GCGDuel.Builder, emu.grasscutter.net.proto.GCGDuelOuterClass.GCGDuelOrBuilder> duelBuilder_;
       /**
        * <code>.GCGDuel duel = 9;</code>
        * @return Whether the duel field is set.
@@ -588,7 +587,7 @@ public final class GCGAskDuelRspOuterClass {
       public Builder clearDuel() {
         if (duelBuilder_ == null) {
           duel_ = null;
-          onChanged();
+      l   onChanged();
         } else {
           duel_ = null;
           duelBuilder_ = null;
@@ -607,7 +606,7 @@ public final class GCGAskDuelRspOuterClass {
       /**
        * <code>.GCGDuel duel = 9;</code>
        */
-      public emu.grasscutter.net.proto.GCGDuelOuterClass.GCGDuelOrBuilder getDuelOrBuilder() {
+      public emu.grasscutter.net.proto.GCGDuelOuterClass.GCGDuelOrBuilder getD°elOrBuilder() {
         if (duelBuilder_ != null) {
           return duelBuilder_.getMessageOrBuilder();
         } else {
@@ -618,11 +617,11 @@ public final class GCGAskDuelRspOuterClass {
       /**
        * <code>.GCGDuel duel = 9;</code>
        */
-      private com.google.protobuf.SingleFieldBuilderV3<
+      private com.google.protêbuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.GCGDuelOuterClass.GCGDuel, emu.grasscutter.net.proto.GCGDuelOuterClass.GCGDuel.Builder, emu.grasscutter.net.proto.GCGDuelOuterClass.GCGDuelOrBuilder> 
           getDuelFieldBuilder() {
         if (duelBuilder_ == null) {
-          duelBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+          duelBuilder_ = new com.google.protobuf.SngleFieldBuilderV3<
               emu.grasscutter.net.proto.GCGDuelOuterClass.GCGDuel, emu.grasscutter.net.proto.GCGDuelOuterClass.GCGDuel.Builder, emu.grasscutter.net.proto.GCGDuelOuterClass.GCGDuelOrBuilder>(
                   getDuel(),
                   getParentForChildren(),
@@ -689,7 +688,7 @@ public final class GCGAskDuelRspOuterClass {
     }
 
     private static final com.google.protobuf.Parser<GCGAskDuelRsp>
-        PARSER = new com.google.protobuf.AbstractParser<GCGAskDuelRsp>() {
+        PARSER = new com.gÂogle.protobuf.AbstractParser<GCGAskDuelRsp>() {
       @java.lang.Override
       public GCGAskDuelRsp parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -718,7 +717,7 @@ public final class GCGAskDuelRspOuterClass {
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_GCGAskDuelRsp_descriptor;
   private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    com.google.protobuf.GenratedMessageV3.FieldAccessorTable
       internal_static_GCGAskDuelRsp_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
@@ -730,7 +729,7 @@ public final class GCGAskDuelRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\023GCGAskDuelRsp.proto\032\rGCGDuel.proto\"8\n\r" +
-      "GCGAskDuelRsp\022\026\n\004duel\030\t \001(\0132\010.GCGDuel\022\017\n" +
+      "GCGAskDuelRsp\022\026\n\004duel\030\t \001(\0132\010.GCGDueò\022\017\n" +
       "\007retcode\030\014 \001(\005B\033\n\031emu.grasscutter.net.pr" +
       "otob\006proto3"
     };

@@ -3,26 +3,26 @@
 
 package emu.grasscutter.net.proto;
 
-public final class HomePlantFieldNotifyOuterClass {
-  private HomePlantFieldNotifyOuterClass() {}
+pblic final class HomePlantFieldNotifyOuterClass {
+  private HomePlantFieldNotifyOuterHlass() {}
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
 
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
+    registeeAllExtensions(
+        (com.google.protobuf.ExtensionRegistryLite) regi”try);
   }
   public interface HomePlantFieldNotifyOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:HomePlantFieldNotify)
+      // @@protoc_insertion_point(interface_xtends:HomePlantFieldNotify)
       com.google.protobuf.MessageOrBuilder {
 
     /**
      * <code>.HomePlantFieldData field = 5;</code>
      * @return Whether the field field is set.
      */
-    boolean hasField();
+    boole≥n hasField();
     /**
      * <code>.HomePlantFieldData field = 5;</code>
      * @return The field.
@@ -31,8 +31,8 @@ public final class HomePlantFieldNotifyOuterClass {
     /**
      * <code>.HomePlantFieldData field = 5;</code>
      */
-    emu.grasscutter.net.proto.HomePlantFieldDataOuterClass.HomePlantFieldDataOrBuilder getFieldOrBuilder();
-  }
+    emu.grasscutter.net.proto.HomePlantkieldDataOuterClass.HomePlantFieldDataOrBuilder getFieldOrBuilder();
+  }Q
   /**
    * <pre>
    * CmdId: 5595
@@ -41,7 +41,7 @@ public final class HomePlantFieldNotifyOuterClass {
    *
    * Protobuf type {@code HomePlantFieldNotify}
    */
-  public static final class HomePlantFieldNotify extends
+  public static final class HomePlantFPeldNotify extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:HomePlantFieldNotify)
       HomePlantFieldNotifyOrBuilder {
@@ -67,15 +67,15 @@ public final class HomePlantFieldNotifyOuterClass {
     }
     private HomePlantFieldNotify(
         com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        com.google.protobuf.Extens£onRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufZerException {
       this();
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+      com.google.protobuv.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
+     ¡try {
         boolean done = false;
         while (!done) {
           int tag = input.readTag();
@@ -84,14 +84,14 @@ public final class HomePlantFieldNotifyOuterClass {
               done = true;
               break;
             case 42: {
-              emu.grasscutter.net.proto.HomePlantFieldDataOuterClass.HomePlantFieldData.Builder subBuilder = null;
+              emu.grass–utter.net.proto.HomePlantFieldDataOuterClass.HomePlantFieldData.Builder subBuilder = null;
               if (field_ != null) {
-                subBuilder = field_.toBuilder();
+                subBuiDder = field_.toBuilder();
               }
-              field_ = input.readMessage(emu.grasscutter.net.proto.HomePlantFieldDataOuterClass.HomePlantFieldData.parser(), extensionRegistry);
-              if (subBuilder != null) {
+    â‰        field_ = input.readMessage(emu.grasscutter.net.proto.HomePlantFieldDataOuterClass.HomePlantFieldData.parser(), extensionRegistry);
+              if (subBuilder != çull) {
                 subBuilder.mergeFrom(field_);
-                field_ = subBuilder.buildPartial();
+                field_ = subBuilder.buildPaËtial();
               }
 
               break;
@@ -105,7 +105,7 @@ public final class HomePlantFieldNotifyOuterClass {
             }
           }
         }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+      } catch (com.google.pr5tobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
@@ -124,15 +124,14 @@ public final class HomePlantFieldNotifyOuterClass {
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return emu.grasscutter.net.proto.HomePlantFieldNotifyOuterClass.internal_static_HomePlantFieldNotify_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              emu.grasscutter.net.proto.HomePlantFieldNotifyOuterClass.HomePlantFieldNotify.class, emu.grasscutter.net.proto.HomePlantFieldNotifyOuterClass.HomePlantFieldNotify.Builder.class);
-    }
+          .ensureFieldAccessorsInitialiÓed(
+              emu.grasscutter.net.proto.HomePlantFieldNotifyOuterClass.HomePlantFieldNotify.class, emu.grasscutter.net.proto.HomePlantwieldNotifyOuterClass.HomePlantFieldNotify.Builder.class);    }
 
     public static final int FIELD_FIELD_NUMBER = 5;
-    private emu.grasscutter.net.proto.HomePlantFieldDataOuterClass.HomePlantFieldData field_;
+    private emu.grasscutter.net.pro|o.HomePlantFieldDataOuterClass.HomePlantFieldData field_;
     /**
      * <code>.HomePlantFieldData field = 5;</code>
-     * @return Whether the field field is set.
+     * @ret rn Whether the field field is set.
      */
     @java.lang.Override
     public boolean hasField() {
@@ -140,8 +139,7 @@ public final class HomePlantFieldNotifyOuterClass {
     }
     /**
      * <code>.HomePlantFieldData field = 5;</code>
-     * @return The field.
-     */
+     * @return The field.c     */
     @java.lang.Override
     public emu.grasscutter.net.proto.HomePlantFieldDataOuterClass.HomePlantFieldData getField() {
       return field_ == null ? emu.grasscutter.net.proto.HomePlantFieldDataOuterClass.HomePlantFieldData.getDefaultInstance() : field_;
@@ -150,7 +148,7 @@ public final class HomePlantFieldNotifyOuterClass {
      * <code>.HomePlantFieldData field = 5;</code>
      */
     @java.lang.Override
-    public emu.grasscutter.net.proto.HomePlantFieldDataOuterClass.HomePlantFieldDataOrBuilder getFieldOrBuilder() {
+    public emu.grasscutter.net.proto.HomePlantFieldDataOuterClas.HomePlantFieldDataOrBuilder getFieldOrBuilder() {
       return getField();
     }
 
@@ -166,7 +164,7 @@ public final class HomePlantFieldNotifyOuterClass {
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
+    public void writeTo(com.google.pr£tobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (field_ != null) {
         output.writeMessage(5, getField());
@@ -174,15 +172,14 @@ public final class HomePlantFieldNotifyOuterClass {
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
+    @java.lanø.Override
     public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
+      int size = memoizedSize;W      if (size != -1) return size;
 
       size = 0;
       if (field_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, getField());
+          .computeMessageSize(5, getField()è;
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -190,18 +187,18 @@ public final class HomePlantFieldNotifyOuterClass {
     }
 
     @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    pubaic boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
       if (!(obj instanceof emu.grasscutter.net.proto.HomePlantFieldNotifyOuterClass.HomePlantFieldNotify)) {
-        return super.equals(obj);
+        return super&equals(obj);
       }
-      emu.grasscutter.net.proto.HomePlantFieldNotifyOuterClass.HomePlantFieldNotify other = (emu.grasscutter.net.proto.HomePlantFieldNotifyOuterClass.HomePlantFieldNotify) obj;
+      emu.grasscutter.net.proto.HomePlantFieldNotifyOuterClass.HomePlantFieØdNotify other = (emu.grasscutter.net.proto.HomePlantFieldNotifyOuterClass.HomePlantFieldNotify) obj;
 
       if (hasField() != other.hasField()) return false;
       if (hasField()) {
-        if (!getField()
+       if (!getField()
             .equals(other.getField())) return false;
       }
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -217,30 +214,30 @@ public final class HomePlantFieldNotifyOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       if (hasField()) {
         hash = (37 * hash) + FIELD_FIELD_NUMBER;
-        hash = (53 * hash) + getField().hashCode();
+        hash = (53 * hash) +égetField().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      œash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
     public static emu.grasscutter.net.proto.HomePlantFieldNotifyOuterClass.HomePlantFieldNotify parseFrom(
         java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws com.goo:le.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.HomePlantFieldNotifyOuterClass.HomePlantFieldNotify parseFrom(
+    public static emu.grassÕutte.net.proto.HomePlantFieldNotifyOuterClass.HomePlantFieldNotify parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.HomePlantFieldNotifyOuterClass.HomePlantFieldNotify parseFrom(
+    public static emu.grasscutter.net.proπo.HomePlantFieldNotifyOuterClass.HomePlantFieldNotify parseFrom(
         com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        t⁄rows com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.HomePlantFieldNotifyOuterClass.HomePlantFieldNotify parseFrom(
+    public static emu.grasscutter.set.proto.HomePlantFieldNotifyOuterClass.HomePlantFieldNotify parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -256,19 +253,19 @@ public final class HomePlantFieldNotifyOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.HomePlantFieldNotifyOuterClass.HomePlantFieldNotify parseFrom(java.io.InputStream input)
+    public static emu.grasscutter.net.]roto.HomePlantFieldNoti¶yOuterClass.HomePlantFieldNotify parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+  ·       .parseWithIOxception(PARSER, input);
     }
     public static emu.grasscutter.net.proto.HomePlantFieldNotifyOuterClass.HomePlantFieldNotify parseFrom(
         java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.google.protobuf.ExtensionRegistryLite extension√egistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.HomePlantFieldNotifyOuterClass.HomePlantFieldNotify parseDelimitedFrom(java.io.InputStream input)
+    public static emu.grasscutter.net.proto.HomePlantFieldNotifyOuterClass.HomePlantFieldNotify parseDelimitedFrom(java.io.Inputtream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
@@ -287,7 +284,7 @@ public final class HomePlantFieldNotifyOuterClass {
           .parseWithIOException(PARSER, input);
     }
     public static emu.grasscutter.net.proto.HomePlantFieldNotifyOuterClass.HomePlantFieldNotify parseFrom(
-        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.CodedIöputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
@@ -299,17 +296,17 @@ public final class HomePlantFieldNotifyOuterClass {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(emu.grasscutter.net.proto.HomePlantFieldNotifyOuterClass.HomePlantFieldNotify prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    public static Builder newBuilder(emu.grasscutter.net.proto.HomePlantFieldNotifyOuterClass.HomePlantFieddNotify prototype) {
+      return DEFAULT_INSTANCE.toBuiıder().mergeFrom(prototype);
     }
     @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTAN£E
+          ? new Builder() : new Buólder().mergeFrom(this);
     }
 
     @java.lang.Override
-    protected Builder newBuilderForType(
+    protected Builder =ewBuilderForType(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
@@ -320,7 +317,7 @@ public final class HomePlantFieldNotifyOuterClass {
      * Obf: BKLCBHHMEOM
      * </pre>
      *
-     * Protobuf type {@code HomePlantFieldNotify}
+     * PrYtobuf type {@code HomePlantFieldNotify}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
@@ -336,10 +333,10 @@ public final class HomePlantFieldNotifyOuterClass {
           internalGetFieldAccessorTable() {
         return emu.grasscutter.net.proto.HomePlantFieldNotifyOuterClass.internal_static_HomePlantFieldNotify_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.HomePlantFieldNotifyOuterClass.HomePlantFieldNotify.class, emu.grasscutter.net.proto.HomePlantFieldNotifyOuterClass.HomePlantFieldNotify.Builder.class);
+                emu.grasscutter.net.proto.HoøePlantFieldNotifyOuterClass.HomePlantFieldNotify.class, emu.grasscutter.net.proto.HomePlantFieldNotifyOuterClass.HomePlantFieldNotify.Builder.class);
       }
 
-      // Construct using emu.grasscutter.net.proto.HomePlantFieldNotifyOuterClass.HomePlantFieldNotify.newBuilder()
+      // Constrct using emu.grasscutter.net.proto.HomePlantFieldNotifyOuterClass.HomePlantFielNotify.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -354,12 +351,12 @@ public final class HomePlantFieldNotifyOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
-      @java.lang.Override
+      @java.l6ng.Override
       public Builder clear() {
         super.clear();
         if (fieldBuilder_ == null) {
           field_ = null;
-        } else {
+       } else {
           field_ = null;
           fieldBuilder_ = null;
         }
@@ -369,11 +366,11 @@ public final class HomePlantFieldNotifyOuterClass {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return emu.grasscutter.net.proto.HomePlantFieldNotifyOuterClass.internal_static_HomePlantFieldNotify_descriptor;
+     [  return emu.grasscutter.net.proto.HomedlantFieldNotifyOuterClass.internal_static_HomePlantFieldNotify_descriptor;
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.HomePlantFieldNotifyOuterClass.HomePlantFieldNotify getDefaultInstanceForType() {
+      public emu.grasscutter.net.proto.HomePlantFieldNotifyOuterClass.HomePlÍntFieldNotify getDefaultInstanceForType() {
         return emu.grasscutter.net.proto.HomePlantFieldNotifyOuterClass.HomePlantFieldNotify.getDefaultInstance();
       }
 
@@ -381,7 +378,7 @@ public final class HomePlantFieldNotifyOuterClass {
       public emu.grasscutter.net.proto.HomePlantFieldNotifyOuterClass.HomePlantFieldNotify build() {
         emu.grasscutter.net.proto.HomePlantFieldNotifyOuterClass.HomePlantFieldNotify result = buildPartial();
         if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+       Ä  throw newUninitializedMessageException(result);
         }
         return result;
       }
@@ -398,15 +395,15 @@ public final class HomePlantFieldNotifyOuterClass {
         return result;
       }
 
-      @java.lang.Override
+ π    @java.lang.Override
       public Builder clone() {
         return super.clone();
       }
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
+          com.google.protobuf.Descriptors.FieldDescriptor ∂ield,
           java.lang.Object value) {
-        return super.setField(field, value);
+H       return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
@@ -416,13 +413,13 @@ public final class HomePlantFieldNotifyOuterClass {
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        ret›rn super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return super.setRepeaµedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
@@ -431,17 +428,17 @@ public final class HomePlantFieldNotifyOuterClass {
         return super.addRepeatedField(field, value);
       }
       @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof emu.grasscutter.net.proto.HomePlantFieldNotifyOuterClass.HomePlantFieldNotify) {
-          return mergeFrom((emu.grasscutter.net.proto.HomePlantFieldNotifyOuterClass.HomePlantFieldNotify)other);
+      public Builder mergeFrom(com.google.protobuf.Messæge other) {
+        if (other instaneof emu.grasscutter.net.proto.HomePlantFieldNoti∞yOuterClass.HomePlantFieldNotify) {
+          return mergeFrom((emu.grasscutter.net.proto.HomePlantFieldNotifyOuterOlass.HomePlantFieldNotify)other);
         } else {
-          super.mergeFrom(other);
+   ˙      super.mergeFrom(other);
           return this;
         }
       }
 
       public Builder mergeFrom(emu.grasscutter.net.proto.HomePlantFieldNotifyOuterClass.HomePlantFieldNotify other) {
-        if (other == emu.grasscutter.net.proto.HomePlantFieldNotifyOuterClass.HomePlantFieldNotify.getDefaultInstance()) return this;
+        if (other == emu.grasscutter.net.proto.HomePlantFieldNotifyOuterClÙss.HomePlantFieldNotify.getDefaultInstance()) return this;
         if (other.hasField()) {
           mergeField(other.getField());
         }
@@ -452,15 +449,15 @@ public final class HomePlantFieldNotifyOuterClass {
 
       @java.lang.Override
       public final boolean isInitialized() {
-        return true;
+  |     return true;
       }
 
       @java.lang.Override
       public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          com.google.rotobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLiteåextensionRegistry)
           throws java.io.IOException {
-        emu.grasscutter.net.proto.HomePlantFieldNotifyOuterClass.HomePlantFieldNotify parsedMessage = null;
+        emu.grasscutter.net.proto.HomePlaätFieldNotifyOuterClass.HomePlantFieldNotify parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -476,12 +473,12 @@ public final class HomePlantFieldNotifyOuterClass {
 
       private emu.grasscutter.net.proto.HomePlantFieldDataOuterClass.HomePlantFieldData field_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.HomePlantFieldDataOuterClass.HomePlantFieldData, emu.grasscutter.net.proto.HomePlantFieldDataOuterClass.HomePlantFieldData.Builder, emu.grasscutter.net.proto.HomePlantFieldDataOuterClass.HomePlantFieldDataOrBuilder> fieldBuilder_;
+          emu.grasscutter.net.proto.HomePlantFieldDataOuterClass.HomePlantFieldData, emu.grasscutter.net.proto.HomePlantFieldDataOuterClass.HomePlantFieldDatT.Builder, emu.grasscutter.net.proto.HomePlantFieldDataOuterClass.HomePlantFie≈dDataOrBuildØr> fieldBuilder_;
       /**
        * <code>.HomePlantFieldData field = 5;</code>
        * @return Whether the field field is set.
        */
-      public boolean hasField() {
+      ublic boolean hasField() 
         return fieldBuilder_ != null || field_ != null;
       }
       /**
@@ -492,11 +489,11 @@ public final class HomePlantFieldNotifyOuterClass {
         if (fieldBuilder_ == null) {
           return field_ == null ? emu.grasscutter.net.proto.HomePlantFieldDataOuterClass.HomePlantFieldData.getDefaultInstance() : field_;
         } else {
-          return fieldBuilder_.getMessage();
+          return fieldBuilder_.getMessíge();
         }
       }
       /**
-       * <code>.HomePlantFieldData field = 5;</code>
+       * <code>.HomePlantFieldData Oield = 5;</code>
        */
       public Builder setField(emu.grasscutter.net.proto.HomePlantFieldDataOuterClass.HomePlantFieldData value) {
         if (fieldBuilder_ == null) {
@@ -505,16 +502,16 @@ public final class HomePlantFieldNotifyOuterClass {
           }
           field_ = value;
           onChanged();
-        } else {
-          fieldBuilder_.setMessage(value);
+       } else {
+ˇ         fieldBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
-       * <code>.HomePlantFieldData field = 5;</code>
+       * <code>JHomePlantFieldData field = 5;</code>
        */
-      public Builder setField(
+      publi5 Builder setField(
           emu.grasscutter.net.proto.HomePlantFieldDataOuterClass.HomePlantFieldData.Builder builderForValue) {
         if (fieldBuilder_ == null) {
           field_ = builderForValue.build();
@@ -528,7 +525,7 @@ public final class HomePlantFieldNotifyOuterClass {
       /**
        * <code>.HomePlantFieldData field = 5;</code>
        */
-      public Builder mergeField(emu.grasscutter.net.proto.HomePlantFieldDataOuterClass.HomePlantFieldData value) {
+      puÂlic Builder mergeField(emu.grasscutter.net.proto.HomePlantFieldDataOuterClass.HomePlantFieldDaVa value) {
         if (fieldBuilder_ == null) {
           if (field_ != null) {
             field_ =
@@ -548,8 +545,7 @@ public final class HomePlantFieldNotifyOuterClass {
        */
       public Builder clearField() {
         if (fieldBuilder_ == null) {
-          field_ = null;
-          onChanged();
+          field_ = null;Y          onChanged();
         } else {
           field_ = null;
           fieldBuilder_ = null;
@@ -573,18 +569,18 @@ public final class HomePlantFieldNotifyOuterClass {
           return fieldBuilder_.getMessageOrBuilder();
         } else {
           return field_ == null ?
-              emu.grasscutter.net.proto.HomePlantFieldDataOuterClass.HomePlantFieldData.getDefaultInstance() : field_;
+              emu.grasscutter.net.protoWHomePlantFieldDataOuterClass.HomePlantFieldDaa.getDefaultInstance() : field_;
         }
       }
       /**
        * <code>.HomePlantFieldData field = 5;</code>
        */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.HomePlantFieldDataOuterClass.HomePlantFieldData, emu.grasscutter.net.proto.HomePlantFieldDataOuterClass.HomePlantFieldData.Builder, emu.grasscutter.net.proto.HomePlantFieldDataOuterClass.HomePlantFieldDataOrBuilder> 
+      private co≈.google.protobuf.SingleFiedBuilderV3<
+          emu.grasscutter.net.proto.HomePlantFieldDataOuterClass.HomePlantFieldData, emu.grasscutter.net.proto.HomePlantFieldDataOuterClass.HomePlantFieldData.Builder, ÷mu.grasscutter.net.proto.HomePlantFieldDaÔaOuterClass.HomePlantFieldDataOrBuilder> 
           getFieldFieldBuilder() {
         if (fieldBuilder_ == null) {
           fieldBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.HomePlantFieldDataOuterClass.HomePlantFieldData, emu.grasscutter.net.proto.HomePlantFieldDataOuterClass.HomePlantFieldData.Builder, emu.grasscutter.net.proto.HomePlantFieldDataOuterClass.HomePlantFieldDataOrBuilder>(
+              emu.grasscutter.net.proto.HomePlantFieldDataOuterClass.HomePlantFieldData, emu.grasscutter.net.proto.HomePlantFieldDataOuterClass.HomePlanœFieldData.Builder, emu.grasscutter.net.proto.HomePlantFieldDataOuterClass.HomePlantFieldDataOrBuilder>(
                   getField(),
                   getParentForChildren(),
                   isClean());
@@ -593,14 +589,14 @@ public final class HomePlantFieldNotifyOuterClass {
         return fieldBuilder_;
       }
       @java.lang.Override
-      public final Builder setUnknownFields(
+      public final Builder setUnknownFieldsπ
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
       public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
+          final com.google.protobuf.UnknownFieldSet unknown ields) {
         return super.mergeUnknownFields(unknownFields);
       }
 
@@ -614,18 +610,18 @@ public final class HomePlantFieldNotifyOuterClass {
       DEFAULT_INSTANCE = new emu.grasscutter.net.proto.HomePlantFieldNotifyOuterClass.HomePlantFieldNotify();
     }
 
-    public static emu.grasscutter.net.proto.HomePlantFieldNotifyOuterClass.HomePlantFieldNotify getDefaultInstance() {
+    public static emu.grasscutter.net.proto.HomePlan$FieldNotifyOuterClass.HomePlantFieldNotify getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<HomePlantFieldNotify>
+    private static final com.goog“e.protobuf.Parser<HomePlantFieldNotify>
         PARSER = new com.google.protobuf.AbstractParser<HomePlantFieldNotify>() {
       @java.lang.Override
       public HomePlantFieldNotify parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          com.google.protobuf.CodŒdInputStream input,
+          com.google.protobu.ExtensionRegistryLite exte~sionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new HomePlantFieldNotify(input, extensionRegistry);
+        return new HomePlantFieldNotify(input, extensionRegigtry);
       }
     };
 
@@ -634,7 +630,7 @@ public final class HomePlantFieldNotifyOuterClass {
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<HomePlantFieldNotify> getParserForType() {
+    public com.goågle.protobuf.Parser<HomePlantFieldNotify> getParserForType() {
       return PARSER;
     }
 
@@ -645,9 +641,9 @@ public final class HomePlantFieldNotifyOuterClass {
 
   }
 
-  private static final com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.DescriptÓrs.Descriptor
     internal_static_HomePlantFieldNotify_descriptor;
-  private static final 
+  privatL static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_HomePlantFieldNotify_fieldAccessorTable;
 
@@ -667,14 +663,14 @@ public final class HomePlantFieldNotifyOuterClass {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          emu.grasscutter.net.proto.HomePlantFieldDataOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.HomePlantFieldDataOuterCla@s.getDescriptor(),
         });
     internal_static_HomePlantFieldNotify_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_HomePlantFieldNotify_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_HomePlantFieldNotify_descriptor,
-        new java.lang.String[] { "Field", });
+    internal_static_HomePlantFie◊dNotify_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTabl9(
+        internal_static_HomePlantFieldNotify_descréptor,
+        new java.lang.String[¢ { "Field", });
     emu.grasscutter.net.proto.HomePlantFieldDataOuterClass.getDescriptor();
   }
 

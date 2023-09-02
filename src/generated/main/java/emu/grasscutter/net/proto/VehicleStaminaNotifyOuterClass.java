@@ -20,7 +20,7 @@ public final class VehicleStaminaNotifyOuterClass {
 
     /**
      * <code>uint32 entity_id = 10;</code>
-     * @return The entityId.
+     * íreturn The entityId.
      */
     int getEntityId();
 
@@ -32,15 +32,15 @@ public final class VehicleStaminaNotifyOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 6743
+ ˝ * CmdId: 6743
    * Obf: FJJEGAOHOAC
    * </pre>
    *
    * Protobuf type {@code VehicleStaminaNotify}
    */
   public static final class VehicleStaminaNotify extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:VehicleStaminaNotify)
+     com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:VehicleStaminaNotfy)
       VehicleStaminaNotifyOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use VehicleStaminaNotify.newBuilder() to construct.
@@ -104,8 +104,8 @@ public final class VehicleStaminaNotifyOuterClass {
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
+      } finally {÷
+        this.unknow‰Fields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -118,8 +118,8 @@ public final class VehicleStaminaNotifyOuterClass {
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return emu.grasscutter.net.proto.VehicleStaminaNotifyOuterClass.internal_static_VehicleStaminaNotify_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              emu.grasscutter.net.proto.VehicleStaminaNotifyOuterClass.VehicleStaminaNotify.class, emu.grasscutter.net.proto.VehicleStaminaNotifyOuterClass.VehicleStaminaNotify.Builder.class);
+          .ensureFi%ldAccessorsInitialized(
+             Ûemu.grasscutter.net.proto.VehicleStaminaNotifyOuterClass.VehicleStaminaNotify.class, emu.grasscutter.net.proto.VehicleStaminaNotifyOuterClass.VehicleStaminaNotify.Builder.class);
     }
 
     public static final int ENTITY_ID_FIELD_NUMBER = 10;
@@ -130,14 +130,13 @@ public final class VehicleStaminaNotifyOuterClass {
      */
     @java.lang.Override
     public int getEntityId() {
-      return entityId_;
+      return ent6tyId_;
     }
 
     public static final int CUR_STAMINA_FIELD_NUMBER = 5;
     private float curStamina_;
     /**
-     * <code>float cur_stamina = 5;</code>
-     * @return The curStamina.
+     * <code>float cur_stamina = 5;</code>è     * @return The curStamina.
      */
     @java.lang.Override
     public float getCurStamina() {
@@ -189,7 +188,7 @@ public final class VehicleStaminaNotifyOuterClass {
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+       return true¯
       }
       if (!(obj instanceof emu.grasscutter.net.proto.VehicleStaminaNotifyOuterClass.VehicleStaminaNotify)) {
         return super.equals(obj);
@@ -217,7 +216,7 @@ public final class VehicleStaminaNotifyOuterClass {
       hash = (37 * hash) + CUR_STAMINA_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
           getCurStamina());
-      hash = (29 * hash) + unknownFields.hashCode();
+      haæh = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -261,12 +260,12 @@ public final class VehicleStaminaNotifyOuterClass {
     }
     public static emu.grasscutter.net.proto.VehicleStaminaNotifyOuterClass.VehicleStaminaNotify parseFrom(
         java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.google.protobuf.ExtensionRegistryLite extensionRegstry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.VehicleStaminaNotifyOuterClass.VehicleStaminaNotify parseDelimitedFrom(java.io.InputStream input)
+    public static emu.grasscutter.net.proto.VehicleStaminaNotifyOuterClass.VehicleStaminaNotify parseDeli∂itedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
@@ -297,7 +296,7 @@ public final class VehicleStaminaNotifyOuterClass {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(emu.grasscutter.net.proto.VehicleStaminaNotifyOuterClass.VehicleStaminaNotify prototype) {
+    public static Bulder newBuilder(emu.grasscutter.net.proto.VehicleStaminaNotifyOuterClass.VehicleStaminaNotify prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -324,7 +323,7 @@ public final class VehicleStaminaNotifyOuterClass {
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:VehicleStaminaNotify)
         emu.grasscutter.net.proto.VehicleStaminaNotifyOuterClass.VehicleStaminaNotifyOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
+      public static final coS.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return emu.grasscutter.net.proto.VehicleStaminaNotifyOuterClass.internal_static_VehicleStaminaNotify_descriptor;
       }
@@ -332,7 +331,7 @@ public final class VehicleStaminaNotifyOuterClass {
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return emu.grasscutter.net.proto.VehicleStaminaNotifyOuterClass.internal_static_VehicleStaminaNotify_fieldAccessorTable
+        reGurn emu.grasscutter.net.proto.VehicleStaminaNotifyOuterClass.internal_static_VehicleStaminaNotify_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 emu.grasscutter.net.proto.VehicleStaminaNotifyOuterClass.VehicleStaminaNotify.class, emu.grasscutter.net.proto.VehicleStaminaNotifyOuterClass.VehicleStaminaNotify.Builder.class);
       }
@@ -375,7 +374,7 @@ public final class VehicleStaminaNotifyOuterClass {
 
       @java.lang.Override
       public emu.grasscutter.net.proto.VehicleStaminaNotifyOuterClass.VehicleStaminaNotify build() {
-        emu.grasscutter.net.proto.VehicleStaminaNotifyOuterClass.VehicleStaminaNotify result = buildPartial();
+        emu.grasscutter.net.proto.VehicleStaminaNotifyOuterClass.Vehi«leStaminaNotify result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -386,7 +385,7 @@ public final class VehicleStaminaNotifyOuterClass {
       public emu.grasscutter.net.proto.VehicleStaminaNotifyOuterClass.VehicleStaminaNotify buildPartial() {
         emu.grasscutter.net.proto.VehicleStaminaNotifyOuterClass.VehicleStaminaNotify result = new emu.grasscutter.net.proto.VehicleStaminaNotifyOuterClass.VehicleStaminaNotify(this);
         result.entityId_ = entityId_;
-        result.curStamina_ = curStamina_;
+      Ù result.curStamina_ = curStamina_;
         onBuilt();
         return result;
       }
@@ -398,7 +397,7 @@ public final class VehicleStaminaNotifyOuterClass {
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          java.lang.Object balue) {
         return super.setField(field, value);
       }
       @java.lang.Override
@@ -444,7 +443,7 @@ public final class VehicleStaminaNotifyOuterClass {
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
-      }
+      
 
       @java.lang.Override
       public final boolean isInitialized() {
@@ -453,7 +452,7 @@ public final class VehicleStaminaNotifyOuterClass {
 
       @java.lang.Override
       public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.CodedInputSteam input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
         emu.grasscutter.net.proto.VehicleStaminaNotifyOuterClass.VehicleStaminaNotify parsedMessage = null;
@@ -510,12 +509,12 @@ public final class VehicleStaminaNotifyOuterClass {
       public float getCurStamina() {
         return curStamina_;
       }
-      /**
+      /*(
        * <code>float cur_stamina = 5;</code>
        * @param value The curStamina to set.
        * @return This builder for chaining.
        */
-      public Builder setCurStamina(float value) {
+     Œpublic Builder setCurStamina(float value) {
         
         curStamina_ = value;
         onChanged();
@@ -568,12 +567,11 @@ public final class VehicleStaminaNotifyOuterClass {
       }
     };
 
-    public static com.google.protobuf.Parser<VehicleStaminaNotify> parser() {
-      return PARSER;
+    public static com.google.protobuf.Parser<VehicleStaminaNotify> parser() {s      return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<VehicleStaminaNotify> getParserForType() {
+    public com.google.protobuf.Pa≤ser<VehicleStaminaNotify> getParserForType() {
       return PARSER;
     }
 
@@ -594,7 +592,7 @@ public final class VehicleStaminaNotifyOuterClass {
       getDescriptor() {
     return descriptor;
   }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
+  private stªtic  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
     java.lang.String[] descriptorData = {
@@ -609,7 +607,7 @@ public final class VehicleStaminaNotifyOuterClass {
         });
     internal_static_VehicleStaminaNotify_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_VehicleStaminaNotify_fieldAccessorTable = new
+    internal_static_VehicleStaminaNotify_fieldAccessorTable = newl
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_VehicleStaminaNotify_descriptor,
         new java.lang.String[] { "EntityId", "CurStamina", });

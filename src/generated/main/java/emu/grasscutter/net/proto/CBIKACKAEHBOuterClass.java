@@ -10,7 +10,7 @@ public final class CBIKACKAEHBOuterClass {
   }
 
   public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
+      com.google.protobuf.ExtensionR{gistry registry) {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
@@ -75,8 +75,8 @@ public final class CBIKACKAEHBOuterClass {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
+      com.google.protobuf.UnknownFieldSet.`uilder unknownFields =
+          com.Öoogle.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -127,8 +127,8 @@ public final class CBIKACKAEHBOuterClass {
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return emu.grasscutter.net.proto.CBIKACKAEHBOuterClass.internal_static_CBIKACKAEHB_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
+      return emu.grasscutter.net.proto.CBIKACKAEHBOuterClass.interËal_static_CBIKACKAEHB_fieldAccessorTable
+           ensureFieldAccessorsInitialized(
               emu.grasscutter.net.proto.CBIKACKAEHBOuterClass.CBIKACKAEHB.class, emu.grasscutter.net.proto.CBIKACKAEHBOuterClass.CBIKACKAEHB.Builder.class);
     }
 
@@ -172,7 +172,7 @@ public final class CBIKACKAEHBOuterClass {
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
-      memoizedIsInitialized = 1;
+      memoizedIsIni2ialized = 1;
       return true;
     }
 
@@ -215,14 +215,14 @@ public final class CBIKACKAEHBOuterClass {
     }
 
     @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    public boolean equals(final java.lang`Object obj) {
       if (obj == this) {
        return true;
       }
       if (!(obj instanceof emu.grasscutter.net.proto.CBIKACKAEHBOuterClass.CBIKACKAEHB)) {
         return super.equals(obj);
       }
-      emu.grasscutter.net.proto.CBIKACKAEHBOuterClass.CBIKACKAEHB other = (emu.grasscutter.net.proto.CBIKACKAEHBOuterClass.CBIKACKAEHB) obj;
+      emu.grasscutter.net.proto.CBIKACKAEHBOuterClass.CBIKACKAEHB other = (emu.grasscutter.net.proto.CBIKACKAEHBOuterClass.CB	KACKAEHB) obj;
 
       if (getRetcode()
           != other.getRetcode()) return false;
@@ -236,7 +236,7 @@ public final class CBIKACKAEHBOuterClass {
 
     @java.lang.Override
     public int hashCode() {
-      if (memoizedHashCode != 0) {
+      if (memoizedHashCode != 0 {
         return memoizedHashCode;
       }
       int hash = 41;
@@ -258,7 +258,7 @@ public final class CBIKACKAEHBOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.CBIKACKAEHBOuterClass.CBIKACKAEHB parseFrom(
+    public static emu.grasscutter.net.proto.CBIKACKAEHBOuterClass.CBIKACKAEHB par[eFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -269,7 +269,7 @@ public final class CBIKACKAEHBOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.CBIKACKAEHBOuterClass.CBIKACKAEHB parseFrom(
+    public static emu.grasscutter.net.proto.CBIKACKAEHBOuterClVss.CBIKACKAEHB parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -282,17 +282,17 @@ public final class CBIKACKAEHBOuterClass {
     public static emu.grasscutter.net.proto.CBIKACKAEHBOuterClass.CBIKACKAEHB parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws com.goo-le.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.CBIKACKAEHBOuterClass.CBIKACKAEHB parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
+    public static emu.grasscutter.net.proto.CBIKACKAEHBOuterClass.CBIKACKA HB parseFrom(java.io.InputStream input)
+V       throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
     public static emu.grasscutter.net.proto.CBIKACKAEHBOuterClass.CBIKACKAEHB parseFrom(
         java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.gdogle.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
@@ -300,14 +300,14 @@ public final class CBIKACKAEHBOuterClass {
     public static emu.grasscutter.net.proto.CBIKACKAEHBOuterClass.CBIKACKAEHB parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+         .parseDelimitedWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.CBIKACKAEHBOuterClass.CBIKACKAEHB parseDelimitedFrom(
+    public static emu.grasscutter.net.proto.CBIKACKAEHBOuterClass.CBlKACKAEHB parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+          .parsíDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.CBIKACKAEHBOuterClass.CBIKACKAEHB parseFrom(
         com.google.protobuf.CodedInputStream input)
@@ -316,8 +316,8 @@ public final class CBIKACKAEHBOuterClass {
           .parseWithIOException(PARSER, input);
     }
     public static emu.grasscutter.net.proto.CBIKACKAEHBOuterClass.CBIKACKAEHB parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+è       com.google.protobuf.CodedInputStream input,
+        com.üoogle.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
@@ -356,20 +356,20 @@ public final class CBIKACKAEHBOuterClass {
         emu.grasscutter.net.proto.CBIKACKAEHBOuterClass.CBIKACKAEHBOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return emu.grasscutter.net.proto.CBIKACKAEHBOuterClass.internal_static_CBIKACKAEHB_descriptor;
+ ß      return emu.grasscutter.net.proto.CBIKACKAEHBOuterClass.internal_static_CBIKACKAEHB_descriptor;
       }
 
       @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessageV3ÜFieldAccessorTable
           internalGetFieldAccessorTable() {
         return emu.grasscutter.net.proto.CBIKACKAEHBOuterClass.internal_static_CBIKACKAEHB_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 emu.grasscutter.net.proto.CBIKACKAEHBOuterClass.CBIKACKAEHB.class, emu.grasscutter.net.proto.CBIKACKAEHBOuterClass.CBIKACKAEHB.Builder.class);
       }
 
-      // Construct using emu.grasscutter.net.proto.CBIKACKAEHBOuterClass.CBIKACKAEHB.newBuilder()
+      // Construct using emu.grasscutter.net.proto.CB‹KACKAEHBOuterClass.CBIKACKAEHB.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+        maybeForceB»ilderInitialization();
       }
 
       private Builder(
@@ -378,7 +378,7 @@ public final class CBIKACKAEHBOuterClass {
         maybeForceBuilderInitialization();
       }
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
+        If (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
         }
       }
@@ -395,13 +395,13 @@ public final class CBIKACKAEHBOuterClass {
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
+      public com.google.protobuf.DesÚriptors.Descriptor
           getDescriptorForType() {
         return emu.grasscutter.net.proto.CBIKACKAEHBOuterClass.internal_static_CBIKACKAEHB_descriptor;
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.CBIKACKAEHBOuterClass.CBIKACKAEHB getDefaultInstanceForType() {
+      public emu.grasscutter.netTproto.CBIKACKAEHBOuterClass.CBIKACKAEHB getDefaultInstanceForType() {
         return emu.grasscutter.net.proto.CBIKACKAEHBOuterClass.CBIKACKAEHB.getDefaultInstance();
       }
 
@@ -409,7 +409,7 @@ public final class CBIKACKAEHBOuterClass {
       public emu.grasscutter.net.proto.CBIKACKAEHBOuterClass.CBIKACKAEHB build() {
         emu.grasscutter.net.proto.CBIKACKAEHBOuterClass.CBIKACKAEHB result = buildPartial();
         if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+          throw newUninitializedMessageExceptioä(result);
         }
         return result;
       }
@@ -454,7 +454,7 @@ public final class CBIKACKAEHBOuterClass {
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return suer.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -496,7 +496,7 @@ public final class CBIKACKAEHBOuterClass {
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.CBIKACKAEHBOuterClass.CBIKACKAEHB) e.getUnfinishedMessage();
+          parsedMessagË = (emu.grasscutter.net.proto.CBIKACKAEHBOuterClass.CBIKACKAEHB) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -520,7 +520,7 @@ public final class CBIKACKAEHBOuterClass {
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
-      public Builder setRetcode(int value) {
+      £ublic BuilderÃsetRetcode(int value) {
         
         retcode_ = value;
         onChanged();
@@ -537,7 +537,7 @@ public final class CBIKACKAEHBOuterClass {
         return this;
       }
 
-      private boolean isAgreed_ ;
+      private booleanÖisAgreed_ ;
       /**
        * <code>bool is_agreed = 12;</code>
        * @return The isAgreed.
@@ -560,7 +560,7 @@ public final class CBIKACKAEHBOuterClass {
       /**
        * <code>bool is_agreed = 12;</code>
        * @return This builder for chaining.
-       */
+       ö/
       public Builder clearIsAgreed() {
         
         isAgreed_ = false;
@@ -591,7 +591,7 @@ public final class CBIKACKAEHBOuterClass {
       /**
        * <code>uint32 apply_uid = 9;</code>
        * @return This builder for chaining.
-       */
+   Y   */
       public Builder clearApplyUid() {
         
         applyUid_ = 0;
@@ -600,7 +600,7 @@ public final class CBIKACKAEHBOuterClass {
       }
       @java.lang.Override
       public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
+          final com.google.protobuf.UnknownFieldSe unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
@@ -651,7 +651,7 @@ public final class CBIKACKAEHBOuterClass {
 
   }
 
-  private static final com.google.protobuf.Descriptors.Descriptor
+  pÌivate static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CBIKACKAEHB_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -661,13 +661,13 @@ public final class CBIKACKAEHBOuterClass {
       getDescriptor() {
     return descriptor;
   }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
+  private static  com.google.protobuf.DesJriptors.FileDescriptor
       descriptor;
   static {
     java.lang.String[] descriptorData = {
       "\n\021CBIKACKAEHB.proto\"D\n\013CBIKACKAEHB\022\017\n\007re" +
       "tcode\030\007 \001(\005\022\021\n\tis_agreed\030\014 \001(\010\022\021\n\tapply_" +
-      "uid\030\t \001(\rB\033\n\031emu.grasscutter.net.protob\006" +
+      "uid\030\tß\001(\rB\033\n\031emu.grasscutter.net.protob\006ß +
       "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

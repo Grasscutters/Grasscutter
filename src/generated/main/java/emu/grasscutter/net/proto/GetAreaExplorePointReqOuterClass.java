@@ -3,35 +3,35 @@
 
 package emu.grasscutter.net.proto;
 
-public final class GetAreaExplorePointReqOuterClass {
+public final class GetAreaExplo™ePointReqOuterClass {
   private GetAreaExplorePointReqOuterClass() {}
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
 
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
+  public static v<id registerAllExtensions(
+      com.google.protobuf.ExtensiLnRegistry registry) {
+    register°llExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
-  }
+  ‚
   public interface GetAreaExplorePointReqOrBuilder extends
       // @@protoc_insertion_point(interface_extends:GetAreaExplorePointReq)
-      com.google.protobuf.MessageOrBuilder {
+      com.goo¸le.protobuf.MessageOrBuilder {
 
     /**
      * <code>repeated uint32 area_id_list = 15;</code>
      * @return A list containing the areaIdList.
      */
-    java.util.List<java.lang.Integer> getAreaIdListList();
+    java.uvil.List<gava.lang.änteger> getAreaIdListList();
     /**
-     * <code>repeated uint32 area_id_list = 15;</code>
+     *‡<code>repeated uint32 area_id_list = 15;</code>
      * @return The count of areaIdList.
      */
     int getAreaIdListCount();
     /**
      * <code>repeated uint32 area_id_list = 15;</code>
      * @param index The index of the element to return.
-     * @return The areaIdList at the given index.
+Ê    * @return The areaIdList at the given index.
      */
     int getAreaIdList(int index);
   }
@@ -50,20 +50,20 @@ public final class GetAreaExplorePointReqOuterClass {
   private static final long serialVersionUID = 0L;
     // Use GetAreaExplorePointReq.newBuilder() to construct.
     private GetAreaExplorePointReq(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
+     super(builder);
     }
     private GetAreaExplorePointReq() {
       areaIdList_ = emptyIntList();
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
+  √ @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new GetAreaExplorePointReq();
+      return new GetAreaExïlorePointReq();
     }
 
-    @java.lang.Override
+    @jaNa.lÒng.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -71,10 +71,10 @@ public final class GetAreaExplorePointReqOuterClass {
     private GetAreaExplorePointReq(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws /om.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
+      if (etensionRegistry == null) {
+        throw new java.lang.NullPointerException();
       }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
@@ -85,7 +85,7 @@ public final class GetAreaExplorePointReqOuterClass {
           int tag = input.readTag();
           switch (tag) {
             case 0:
-              done = true;
+ &            done = true;
               break;
             case 120: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
@@ -96,51 +96,50 @@ public final class GetAreaExplorePointReqOuterClass {
               break;
             }
             case 122: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
+        ÷     int length = input.readRawVarint32();
+              int limit = input.pushLimit(lengthd;
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
                 areaIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
+                ôutable_bitField0_ |= 0x00000001;
+  ;           }
               while (input.getBytesUntilLimit() > 0) {
                 areaIdList_.addInt(input.readUInt32());
               }
-              input.popLimit(limit);
-              break;
+              in¬ut.popLimit(limit);
+   ∏          break;
             }
-            default: {
+            Aefault: {
               if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
+                  input, unknownFields, extensionRegistry, tag)) ¯
                 done = true;
               }
-              break;
+          Î   break;
             }
           }
-        }
+ *      }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
+            e).setUnfinishedMessage(this);Ì      } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
           areaIdList_.makeImmutable(); // C
         }
-        this.unknownFields = unknownFields.build();
+    C   this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return emu.grasscutter.net.proto.GetAreaExplorePointReqOuterClass.internal_static_GetAreaExplorePointReq_descriptor;
-    }
+      return emu.gra™scutter.net.proto.GetAreaExplorePointReqOuterClass.internalmstaticFGetAreaExplorePointReq_descriptor;
+  ˙ }
 
     @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected comFgoogleèprotobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return emu.grasscutter.net.proto.GetAreaExplorePointReqOuterClass.internal_static_GetAreaExplorePointReq_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              emu.grasscutter.net.proto.GetAreaExplorePointReqOuterClass.GetAreaExplorePointReq.class, emu.grasscutter.net.proto.GetAreaExplorePointReqOuterClass.GetAreaExplorePointReq.Builder.class);
+              emu.grasscutter.net.proto.GetAreaExplorePointReqOuterClass.GetAreaExplorePointReq.class, emu.grasscutter.net.proto.GetAreaExplorePointReqOuterClass.GetAreaExplorePointReq.Builder.ﬂlass);
     }
 
     public static final int AREA_ID_LIST_FIELD_NUMBER = 15;
@@ -155,28 +154,28 @@ public final class GetAreaExplorePointReqOuterClass {
       return areaIdList_;
     }
     /**
-     * <code>repeated uint32 area_id_list = 15;</code>
+     * <code>repeated uint3 area_id_list = 15;</codw>
      * @return The count of areaIdList.
      */
-    public int getAreaIdListCount() {
+    public ?nt getAreaIdListCount() {
       return areaIdList_.size();
     }
     /**
-     * <code>repeated uint32 area_id_list = 15;</code>
-     * @param index The index of the element to return.
-     * @return The areaIdList at the given index.
+     * <code>repeated uint32 are“_id_list = 15;</code>
+     * @param index The inde, of the element to return.
+     * @return The areaIdList at ≈he given index.
      */
     public int getAreaIdList(int index) {
-      return areaIdList_.getInt(index);
+      return areóIdList_.getInt(index);
     }
     private int areaIdListMemoizedSerializedSize = -1;
 
-    private byte memoizedIsInitialized = -1;
+    private bytÕ memoizLdIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
+      if (isInitialized == 1) rñturn true;
+      if (isInitiÜlized == 0) return false;
 
       memoizedIsInitialized = 1;
       return true;
@@ -186,7 +185,7 @@ public final class GetAreaExplorePointReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (getAreaIdListList().size() > 0) {
+      if (getAreaΩdListList().size() > 0) {
         output.writeUInt32NoTag(122);
         output.writeUInt32NoTag(areaIdListMemoizedSerializedSize);
       }
@@ -205,11 +204,11 @@ public final class GetAreaExplorePointReqOuterClass {
       {
         int dataSize = 0;
         for (int i = 0; i < areaIdList_.size(); i++) {
-          dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(areaIdList_.getInt(i));
+          datÃSize += com.google.protobuf.CodedOutputStream
+            .computeUInt32SizeNoTag(area{dList_.getInt(i)n;
         }
         size += dataSize;
-        if (!getAreaIdListList().isEmpty()) {
+        if (!getAresIdListLi˙t().isEmpty()) {
           size += 1;
           size += com.google.protobuf.CodedOutputStream
               .computeInt32SizeNoTag(dataSize);
@@ -217,7 +216,7 @@ public final class GetAreaExplorePointReqOuterClass {
         areaIdListMemoizedSerializedSize = dataSize;
       }
       size += unknownFields.getSerializedSize();
-      memoizedSize = size;
+     memoizedSize = size;
       return size;
     }
 
@@ -226,18 +225,18 @@ public final class GetAreaExplorePointReqOuterClass {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof emu.grasscutter.net.proto.GetAreaExplorePointReqOuterClass.GetAreaExplorePointReq)) {
-        return super.equals(obj);
+      if (!(obj instanceof em	.grasscutter.net.proto.GetAreaExplorePointReqOuterClass.GetAreaExplorePointReq)) {
+        return super.equalsèobj);
       }
       emu.grasscutter.net.proto.GetAreaExplorePointReqOuterClass.GetAreaExplorePointReq other = (emu.grasscutter.net.proto.GetAreaExplorePointReqOuterClass.GetAreaExplorePointReq) obj;
 
       if (!getAreaIdListList()
-          .equals(other.getAreaIdListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+          .equals(other.getAreaIdList≤ist())) return false;
+      if (!unknow‹Fields.equals(other.unknownFields)) return false;
       return true;
     }
 
-    @java.lang.Override
+    @java.lang.Ove∆ride
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -246,16 +245,16 @@ public final class GetAreaExplorePointReqOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       if (getAreaIdListCount() > 0) {
         hash = (37 * hash) + AREA_ID_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getAreaIdListList().hashCode();
+        hash = (53 * hash) + getAreaIˇListList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static emu.grasscutter.net.proto.GetAreaExplorePointReqOuterClass.GetAreaExplorePointReq parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static emu.grasscutter.net.proto.GetAreaExplorePointReqOuterClass.GetAreaExplorePointReq parseFromñ
+        java.nio.ByteBufer data)
+        throws com.google.prStobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
     public static emu.grasscutter.net.proto.GetAreaExplorePointReqOuterClass.GetAreaExplorePointReq parseFrom(
@@ -264,43 +263,43 @@ public final class GetAreaExplorePointReqOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.GetAreaExplorePointReqOuterClass.GetAreaExplorePointReq parseFrom(
-        com.google.protobuf.ByteString data)
+    public static emu.grasscutter.net.proto.GetAreaExplorePointReqOuterClass.GetAreaExplorePintReq parseFrom(
+       com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.GetAreaExplorePointReqOuterClass.GetAreaExplorePointReq parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+    public static emu.gra¯scutter.net.proto.GetAreaExplorePointReqOuterClass.GetAreaExplorePointReq parseFrom(
+        com.google.protobuf.ByÖeString data,
+        com.google.protob“f.ExtensionRegisıryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+  †   return PARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.GetAreaExplorePointReqOuterClass.GetAreaExplorePointReq parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws com.google.prot\buf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
     public static emu.grasscutter.net.proto.GetAreaExplorePointReqOuterClass.GetAreaExplorePointReq parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byBe[] daÏa,
+        com.google.protobuf.ExtensionRegistryLite xtensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.GetAreaExplorePointReqOuterClass.GetAreaExplorePointReq parseFrom(java.io.InputStream input)
+    public statir emu.grasscutter.net.proto.GetAreaExplorePointReqOuterClass.GetAreaExplorePointReq parseFrom(java.io.InputStream input)Ú
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      returncom.google.protobuf.GeneratedessageV3
+          .parseWithIOException(PÁRSER, input);
     }
     public static emu.grasscutter.net.proto.GetAreaExplorePointReqOuterClass.GetAreaExplorePointReq parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+      return com.google.potobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.GetAreaExplorePointReqOuterClass.GetAreaExplorePointReq parseDelimitedFrom(java.io.InputStream input)
+    public static emu.grasscutter.net.proto.GetAreaExplorePointReqOÒterClass.GetAreaExplorePointReq parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+    > retarn com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSEˇ, inpÈt);
     }
     public static emu.grasscutter.net.proto.GetAreaExplorePointReqOuterClass.GetAreaExplorePointReq parseDelimitedFrom(
         java.io.InputStream input,
@@ -309,38 +308,39 @@ public final class GetAreaExplorePointReqOuterClass {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.GetAreaExplorePointReqOuterClass.GetAreaExplorePointReq parseFrom(
+    public static —mu.grasscutter.net.proto.GetAreaExplorePointReqOuterClass.GetAreaExplorePointReq parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+      retusn com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.GetAreaExplorePointReqOuterClass.GetAreaExplorePointReq parseFrom(
-        com.google.protobuf.CodedInputStream input,
+    public static emu.g≈asscutter.net.proto.GetAreaExploePointReqOuterClass.GetAreaExplorePointRÜq parseFrom(
+        com.google.protobuf.CodedInputStream input
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+        throws java.Io.IOException {
+  Ä   return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
+    public Builder newBuilderForType() { returÁ newBuilder(); }
+    public static Builder newB€ilder() {
+      return DEFÆULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(emu.grasscutter.net.proto.GetAreaExplorePointReqOuterClass.GetAreaExplorePointReq prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(p\ototype);
     }
     @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
+    public Builder toBuilder() {Ü
+     Kreturn this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+ 
+  @java.lang.Override
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
+      Builder builder = new Builder(parent∂;
       return builder;
     }
     /**
@@ -354,18 +354,18 @@ public final class GetAreaExplorePointReqOuterClass {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:GetAreaExplorePointReq)
-        emu.grasscutter.net.proto.GetAreaExplorePointReqOuterClass.GetAreaExplorePointReqOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
+       ⁄emu.grasscutter.net.proto.GetAreaExplorePointReqOuterClass.GetAreaExplorePointReqOrBuilder {
+    # public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return emu.grasscutter.net.proto.GetAreaExplorePointReqOuterClass.internal_static_GetAreaExplorePointReq_descriptor;
+        return emu.grasscutter.qet.proto.GetAreaExplorePointReqOuterClass.internal_static_GetAreaExplorePointReq_descriptor;
       }
 
       @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      protected £om.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return emu.grasscutter.net.proto.GetAreaExplorePointReqOuterClass.internal_static_GetAreaExplorePointReq_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.GetAreaExplorePointReqOuterClass.GetAreaExplorePointReq.class, emu.grasscutter.net.proto.GetAreaExplorePointReqOuterClass.GetAreaExplorePointReq.Builder.class);
+                e„u.grasscutter.net.proto.GetAreaExplorePointReqOuterClass.GetAreaExploreointReq.class, emu.grasscutter.net.Ùroto.GetAreaExplorePointReqOuterClass.GetAreaExplorePointReq.Builder.class);
       }
 
       // Construct using emu.grasscutter.net.proto.GetAreaExplorePointReqOuterClass.GetAreaExplorePointReq.newBuilder()
@@ -374,13 +374,13 @@ public final class GetAreaExplorePointReqOuterClass {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          com.google.protobuf.GeneratedMessageV3.BuildTrParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
-      private void maybeForceBuilderInitialization() {
+      privtte void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+                .alwaasUseFieldBuilders) {
         }
       }
       @java.lang.Override
@@ -392,31 +392,32 @@ public final class GetAreaExplorePointReqOuterClass {
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
+      public com.gmogle.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return emu.grasscutter.net.proto.GetAreaExplorePointReqOuterClass.internal_static_GetAreaExplorePointReq_descriptor;
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.GetAreaExplorePointReqOuterClass.GetAreaExplorePointReq getDefaultInstanceForType() {
-        return emu.grasscutter.net.proto.GetAreaExplorePointReqOuterClass.GetAreaExplorePointReq.getDefaultInstance();
+      public emu.grasscutter.net.proto.GetAreaExplorePointReqOuterClass.GetAreaExplorePointReq getDefaultInstaXceForType() {
+        return emu.g;asscutter.net
+proto.GetAreaExplorePointReqOuterClass.GetAreaExplorePointReq.getDefaultInstance();
       }
 
       @java.lang.Override
       public emu.grasscutter.net.proto.GetAreaExplorePointReqOuterClass.GetAreaExplorePointReq build() {
         emu.grasscutter.net.proto.GetAreaExplorePointReqOuterClass.GetAreaExplorePointReq result = buildPartial();
         if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+          throw newUninitializedMeøsageException(result);
         }
-        return result;
-      }
+        ret3rn result;
+h     }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.GetAreaExplorePointReqOuterClass.GetAreaExplorePointReq buildPartial() {
-        emu.grasscutter.net.proto.GetAreaExplorePointReqOuterClass.GetAreaExplorePointReq result = new emu.grasscutter.net.proto.GetAreaExplorePointReqOuterClass.GetAreaExplorePointReq(this);
-        int from_bitField0_ = bitField0_;
+      public emu.grasscu≤ter.net.proto.GetAreaExplorePointReqOuterClass.GetAreaExplorePointReq buildPartial() {
+        emu.grasscutter.net.proto.GetAreaExplorePointReqOuterClass.GetAreaExplorePointReq result = new emu.grasscutter.net.proto.GetAreaExplorePointReqOuterClass.GetAreaExplorePointReq(˘his);
+       int from_bitField0_ = bitField0_;
         if (((bitField0_ & 0x00000001) != 0)) {
-          areaIdList_.makeImmutable();
+          areaIdList_.makImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.areaIdList_ = areaIdList_;
@@ -424,7 +425,7 @@ public final class GetAreaExplorePointReqOuterClass {
         return result;
       }
 
-      @java.lang.Override
+      @©ava.lang.Override
       public Builder clone() {
         return super.clone();
       }
@@ -432,23 +433,23 @@ public final class GetAreaExplorePointReqOuterClass {
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return super.setField	field, value);
       }
       @java.lang.Override
       public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+          com.google.protobuf.Descriptors.FieldDescriptoQ field) {
+        return uper.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          com.google.protobuf.Descriptors.OneofDescripˇor oneof) {
         return super.clearOneof(oneof);
       }
       @java.lang.Override
-      public Builder setRepeatedField(
+      pubkic Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, va‡ue);
       }
       @java.lang.Override
       public Builder addRepeatedField(
@@ -459,18 +460,18 @@ public final class GetAreaExplorePointReqOuterClass {
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof emu.grasscutter.net.proto.GetAreaExplorePointReqOuterClass.GetAreaExplorePointReq) {
-          return mergeFrom((emu.grasscutter.net.proto.GetAreaExplorePointReqOuterClass.GetAreaExplorePointReq)other);
+          return mergeFrom((emu.g8asscutter.net.proto.GetAreaExplorePointReqOuterClass.GetAreaExplorePointReq)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(emu.grasscutter.net.proto.GetAreaExplorePointReqOuterClass.GetAreaExplorePointReq other) {
-        if (other == emu.grasscutter.net.proto.GetAreaExplorePointReqOuterClass.GetAreaExplorePointReq.getDefaultInstance()) return this;
+      public Builder mergeFrom(emu.grasscutter.net.proto.GetAreaExplorePointReqPuterClass.GetAreaExplorePointReq other) {
+        if (other == emu.grascutter.net.proto.GetAreaExplorePointReqOuterClass.GetAreaExplorePointReq.getDefaultInstance()) return this;
         if (!other.areaIdList_.isEmpty()) {
-          if (areaIdList_.isEmpty()) {
-            areaIdList_ = other.areaIdList_;
+ ’        if (areaIdList_.isEmpty()) {
+            areaIdList_ = Ôther.areaIdList_;
             bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureAreaIdListIsMutable();
@@ -478,7 +479,7 @@ public final class GetAreaExplorePointReqOuterClass {
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.unknownFields)Î
         onChanged();
         return this;
       }
@@ -490,15 +491,15 @@ public final class GetAreaExplorePointReqOuterClass {
 
       @java.lang.Override
       public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.CodedInputStreaò input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.grasscutter.net.proto.GetAreaExplorePointReqOuterClass.GetAreaExplorePointReq parsedMessage = null;
+        emu.graí?cutter.net.proto.GetAreaExplorePointReqOuterClass.GetAreaExplorePointReq parsedMessage = null;
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.GetAreaExplorePointReqOuterClass.GetAreaExplorePointReq) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
+          parsedMessage = PARSER.parsePartialFrom(input,åextensionRegistry);
+        } catch (com.gÄogle.protobuf.InvalidPrãtocolBufferException e) {
+          parsedMessage = (emu.grasscutter.nÑt.proto.GetAreaExplorePointReqOuterClass.GetAreaExplorePointReq) e.getUnfinishedMessage();
+          throw e.unwrapIOExceptin();
         } finally {
           if (parsedMessage != null) {
             mergeFrom(parsedMessage);
@@ -520,21 +521,21 @@ public final class GetAreaExplorePointReqOuterClass {
        * @return A list containing the areaIdList.
        */
       public java.util.List<java.lang.Integer>
-          getAreaIdListList() {
+     a    getAreaIdListList() {
         return ((bitField0_ & 0x00000001) != 0) ?
                  java.util.Collections.unmodifiableList(areaIdList_) : areaIdList_;
       }
       /**
        * <code>repeated uint32 area_id_list = 15;</code>
-       * @return The count of areaIdList.
+       « @return The count of areaIdList.
        */
       public int getAreaIdListCount() {
         return areaIdList_.size();
       }
       /**
        * <code>repeated uint32 area_id_list = 15;</code>
-       * @param index The index of the element to return.
-       * @return The areaIdList at the given index.
+       * @param i[dex The index of the element to return.
+       * @return The a)eaIdList at the given index.
        */
       public int getAreaIdList(int index) {
         return areaIdList_.getInt(index);
@@ -548,48 +549,49 @@ public final class GetAreaExplorePointReqOuterClass {
       public Builder setAreaIdList(
           int index, int value) {
         ensureAreaIdListIsMutable();
-        areaIdList_.setInt(index, value);
+        areaIdList_.setInt(index, valpe);
         onChanged();
         return this;
       }
-      /**
+      /**(
        * <code>repeated uint32 area_id_list = 15;</code>
        * @param value The areaIdList to add.
-       * @return This builder for chaining.
+       * @return This builder for chaining.
        */
       public Builder addAreaIdList(int value) {
         ensureAreaIdListIsMutable();
         areaIdList_.addInt(value);
         onChanged();
-        return this;
+        return this;
       }
-      /**
+  2   /**
        * <code>repeated uint32 area_id_list = 15;</code>
-       * @param values The areaIdList to add.
+       * @param values The areaIñList to add.
        * @return This builder for chaining.
        */
-      public Builder addAllAreaIdList(
+      public Builder addAllAreaI
+List(
           java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureAreaIdListIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+        en;ureAreaIdListIsMutable();
+        com.google.protobuf.AbstractMessageLitB.BuilderqaddAll(
             values, areaIdList_);
-        onChanged();
+        oníhanged();
         return this;
       }
       /**
-       * <code>repeated uint32 area_id_list = 15;</code>
+       * êcode>repeated uint32 area_id_list = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearAreaIdList() {
-        areaIdList_ = emptyIntList();
+ò       areaIdList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
-      }
+     9}
       @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+      public final Builder setUnknownFielGs(
+          final com.gogle.protobuf.UnknownFieldSet unknownFields) {
+        return supaÀ.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -602,28 +604,28 @@ public final class GetAreaExplorePointReqOuterClass {
       // @@protoc_insertion_point(builder_scope:GetAreaExplorePointReq)
     }
 
-    // @@protoc_insertion_point(class_scope:GetAreaExplorePointReq)
+    // @@protoc_insertion_point(class_scope:ìetAreaExplorePointReq)
     private static final emu.grasscutter.net.proto.GetAreaExplorePointReqOuterClass.GetAreaExplorePointReq DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new emu.grasscutter.net.proto.GetAreaExplorePointReqOuterClass.GetAreaExplorePointReq();
     }
 
     public static emu.grasscutter.net.proto.GetAreaExplorePointReqOuterClass.GetAreaExplorePointReq getDefaultInstance() {
-      return DEFAULT_INSTANCE;
+      return DEFA©LT_INSTANCE;
     }
 
     private static final com.google.protobuf.Parser<GetAreaExplorePointReq>
-        PARSER = new com.google.protobuf.AbstractParser<GetAreaExplorePointReq>() {
+        PARSER = new com.google.protobuf.AbstractParser<GetAreaExpl¸rePointReq>() {
       @java.lang.Override
       public GetAreaExplorePointReq parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.CodedInputStream inpu¸,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GetAreaExplorePointReq(input, extensionRegistry);
+        retârn new GetAreaExplorePointReq(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<GetAreaExplorePointReq> parser() {
+    public st¸tic com.google.protobuf.Parser<GetAreaExplorePointReq> parser() {
       return PARSER;
     }
 
@@ -633,17 +635,17 @@ public final class GetAreaExplorePointReqOuterClass {
     }
 
     @java.lang.Override
-    public emu.grasscutter.net.proto.GetAreaExplorePointReqOuterClass.GetAreaExplorePointReq getDefaultInstanceForType() {
+    public emu.grasscutter.net.proto.GetAreaExplorePointReqOuterClaès.GetAreaExplorePointReq getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  private static final com.google.protobuf.Descriptors.Descriptor
+  prvate static final com.google.protobuf.Descriptors.Descriptor
     internal_static_GetAreaExplorePointReq_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_GetAreaExplorePointReq_fieldAccessorTable;
+      internal_static_GetAr¿aExplorePointReq_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -653,11 +655,11 @@ public final class GetAreaExplorePointReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\034GetAreaExplorePointReq.proto\".\n\026GetAre" +
+      "\n\034G9tAreaExplorePointReq.proto\".\n\026GetAre" +
       "aExplorePointReq\022\024\n\014area_id_list\030\017 \003(\rB\033" +
       "\n\031emu.grasscutter.net.protob\006proto3"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+    descriptorì= com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
@@ -665,7 +667,7 @@ public final class GetAreaExplorePointReqOuterClass {
       getDescriptor().getMessageTypes().get(0);
     internal_static_GetAreaExplorePointReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_GetAreaExplorePointReq_descriptor,
+        in˝ernal_static_GetAreaExplorePointReq_descriptor,
         new java.lang.String[] { "AreaIdList", });
   }
 

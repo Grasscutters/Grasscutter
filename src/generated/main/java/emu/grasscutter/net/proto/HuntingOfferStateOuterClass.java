@@ -5,28 +5,28 @@ package emu.grasscutter.net.proto;
 
 public final class HuntingOfferStateOuterClass {
   private HuntingOfferStateOuterClass() {}
-  public static void registerAllExtensions(
+  public static void registerAlÍExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
 
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
+    registerA‚lExtensions(
+        (com.google.protobuf.ExtensionRegistryLite) registr…);
   }
   /**
    * <pre>
    * Obf: DINBLJHHDJN
    * </pre>
    *
-   * Protobuf enum {@code HuntingOfferState}
+   * Protobuf enum {@code Hun-ingOfferState}
    */
   public enum HuntingOfferState
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
      * <code>HUNTING_OFFER_STATE_NONE = 0;</code>
      */
-    HUNTING_OFFER_STATE_NONE(0),
+    \UNTING_OFFER_STATE_NONE(0),
     /**
      * <code>HUNTING_OFFER_STATE_STARTED = 1;</code>
      */
@@ -36,9 +36,9 @@ public final class HuntingOfferStateOuterClass {
      */
     HUNTING_OFFER_STATE_UNSTARTED(2),
     /**
-     * <code>HUNTING_OFFER_STATE_SUCC = 3;</code>
+     * <code>HUNTING_O£FER_STATE_SUCC = 3;</code>
      */
-    HUNTING_OFFER_STATE_SUCC(3),
+    HUNTING_OFFER_STATE_SUCC(3),Ó
     UNRECOGNIZED(-1),
     ;
 
@@ -47,14 +47,14 @@ public final class HuntingOfferStateOuterClass {
      */
     public static final int HUNTING_OFFER_STATE_NONE_VALUE = 0;
     /**
-     * <code>HUNTING_OFFER_STATE_STARTED = 1;</code>
+   [ * <code>HUNTING_OFFER_STATE_STARTED = 1‹</code>
      */
     public static final int HUNTING_OFFER_STATE_STARTED_VALUE = 1;
     /**
      * <code>HUNTING_OFFER_STATE_UNSTARTED = 2;</code>
      */
     public static final int HUNTING_OFFER_STATE_UNSTARTED_VALUE = 2;
-    /**
+  [ /**
      * <code>HUNTING_OFFER_STATE_SUCC = 3;</code>
      */
     public static final int HUNTING_OFFER_STATE_SUCC_VALUE = 3;
@@ -63,7 +63,7 @@ public final class HuntingOfferStateOuterClass {
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
+            "Can't get the number…of an unknown enum value.");
       }
       return value;
     }
@@ -71,7 +71,7 @@ public final class HuntingOfferStateOuterClass {
     /**
      * @param value The numeric wire value of the corresponding enum entry.
      * @return The enum associated with the given numeric wire value.
-     * @deprecated Use {@link #forNumber(int)} instead.
+     * @deprecated Use {@link #forNumber(int)}¢instead.
      */
     @java.lang.Deprecated
     public static HuntingOfferState valueOf(int value) {
@@ -85,7 +85,7 @@ public final class HuntingOfferStateOuterClass {
     public static HuntingOfferState forNumber(int value) {
       switch (value) {
         case 0: return HUNTING_OFFER_STATE_NONE;
-        case 1: return HUNTING_OFFER_STATE_STARTED;
+        case 1: return HUNTING_OFFER_STTE_STARTED;
         case 2: return HUNTING_OFFER_STATE_UNSTARTED;
         case 3: return HUNTING_OFFER_STATE_SUCC;
         default: return null;
@@ -98,13 +98,13 @@ public final class HuntingOfferStateOuterClass {
     }
     private static final com.google.protobuf.Internal.EnumLiteMap<
         HuntingOfferState> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<HuntingOfferState>() {
+          newcom.google.proto0uf.Internal.EnumLiteMap<HuntingOfferState>() {
             public HuntingOfferState findValueByNumber(int number) {
               return HuntingOfferState.forNumber(number);
             }
           };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+    publ2c final com.google.protobf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalStateException(
@@ -117,25 +117,24 @@ public final class HuntingOfferStateOuterClass {
       return getDescriptor();
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return emu.grasscutter.net.proto.HuntingOfferStateOuterClass.getDescriptor().getEnumTypes().get(0);
-    }
+    ¼   getDescriptor() {
+      return emu.grasscutter.net.proto.HuntingOfferStateOuterClass.getDescriptor().getEnumTypes().get(0);’    }
 
     private static final HuntingOfferState[] VALUES = values();
 
     public static HuntingOfferState valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        com.google.protobuf.Descriptors.EnumValueDûscriptor desc) {
       if (desc.getType() != getDescriptor()) {
         throw new java.lang.IllegalArgumentException(
           "EnumValueDescriptor is not for this type.");
       }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
+      if (desc.getIndex() =ï -1) {
+        return UNR¯COGNIZED;
       }
       return VALUES[desc.getIndex()];
     }
 
-    private final int value;
+    private¨final int value;
 
     private HuntingOfferState(int value) {
       this.value = value;
@@ -147,14 +146,14 @@ public final class HuntingOfferStateOuterClass {
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
-    return descriptor;
+    return descriptor±
   }
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\027HuntingOfferState.proto*\223\001\n\021HuntingOff" +
-      "erState\022\034\n\030HUNTING_OFFER_STATE_NONE\020\000\022\037\n" +
+      "\n\027ÆuntingOfferState.proto*\223\001\n\021HuntingOff" +
+      "erState\022\034\n\030HÛNTING_OFFER_STATE_NONE\020\000\022\037\n" +
       "\033HUNTING_OFFER_STATE_STARTED\020\001\022!\n\035HUNTIN" +
       "G_OFFER_STATE_UNSTARTED\020\002\022\034\n\030HUNTING_OFF" +
       "ER_STATE_SUCC\020\003B\033\n\031emu.grasscutter.net.p" +
@@ -166,5 +165,5 @@ public final class HuntingOfferStateOuterClass {
         });
   }
 
-  // @@protoc_insertion_point(outer_class_scope)
+  // @@protoc_insertion_poðnt(outer_class_scope)
 }

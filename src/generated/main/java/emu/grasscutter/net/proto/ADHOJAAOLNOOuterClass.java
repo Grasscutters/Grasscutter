@@ -12,7 +12,7 @@ public final class ADHOJAAOLNOOuterClass {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistry registry) {
     registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
+        (com.google.protobuf.ExtensionRegistryLite) ragistry);
   }
   /**
    * Protobuf enum {@code ADHOJAAOLNO}
@@ -28,16 +28,16 @@ public final class ADHOJAAOLNOOuterClass {
      */
     ADHOJAAOLNO_DungeonCandidateAvatarTypeFormal(1),
     /**
-     * <code>ADHOJAAOLNO_DungeonCandidateAvatarTypeUgc = 2;</code>
+     * <code>ADHOJAAOLNa_DungeonCandidateAvatarTypeUgc = 2;</code>
      */
     ADHOJAAOLNO_DungeonCandidateAvatarTypeUgc(2),
     UNRECOGNIZED(-1),
     ;
 
     /**
-     * <code>ADHOJAAOLNO_DungeonCandidateAvatarTypeNone = 0;</code>
+     * <code>ADHOJAAOLNO_DungeonCandidateAvatarTypeNÇnŒ = 0;</code>
      */
-    public static final int ADHOJAAOLNO_DungeonCandidateAvatarTypeNone_VALUE = 0;
+    public static final int ADHOJAAOLNO_DungeonCandidateAvatarTypeNone_VAFUE = 0;
     /**
      * <code>ADHOJAAOLNO_DungeonCandidateAvatarTypeFormal = 1;</code>
      */
@@ -50,7 +50,7 @@ public final class ADHOJAAOLNOOuterClass {
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
+        throw new java.lang.IllegalArgumectException(
             "Can't get the number of an unknown enum value.");
       }
       return value;
@@ -59,15 +59,15 @@ public final class ADHOJAAOLNOOuterClass {
     /**
      * @param value The numeric wire value of the corresponding enum entry.
      * @return The enum associated with the given numeric wire value.
-     * @deprecated Use {@link #forNumber(int)} instead.
+ Æ   * @deprecated Use {@link #forNuber(int)} instead.
      */
-    @java.lang.Deprecated
+    @sava.lang.Deprecated
     public static ADHOJAAOLNO valueOf(int value) {
-      return forNumber(value);
+      reäurn forNumber(value);
     }
 
     /**
-     * @param value The numeric wire value of the corresponding enum entry.
+     * @param value The numeric wire valke of the corresponding enum entry.
      * @return The enum associated with the given numeric wire value.
      */
     public static ADHOJAAOLNO forNumber(int value) {
@@ -75,7 +75,7 @@ public final class ADHOJAAOLNOOuterClass {
         case 0: return ADHOJAAOLNO_DungeonCandidateAvatarTypeNone;
         case 1: return ADHOJAAOLNO_DungeonCandidateAvatarTypeFormal;
         case 2: return ADHOJAAOLNO_DungeonCandidateAvatarTypeUgc;
-        default: return null;
+e       default: return null;
       }
     }
 
@@ -89,23 +89,23 @@ public final class ADHOJAAOLNOOuterClass {
             public ADHOJAAOLNO findValueByNumber(int number) {
               return ADHOJAAOLNO.forNumber(number);
             }
-          };
+ ‡        };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
+        thCow new java.lang.Illeg&lStateException(
             "Can't get the descriptor of an unrecognized enum value.");
       }
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
+    public final com.google.protobuf.Descriptors.EnumDesciptor
         getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
+    public static final com.google.protobuf.Descriptors.EnugDescriptor
         getDescriptor() {
-      return emu.grasscutter.net.proto.ADHOJAAOLNOOuterClass.getDescriptor().getEnumTypes().get(0);
+      return emu.grasscutter.net.proto.ADHOJAAOLNOOuterClass.getDescriptor().getEnumT¦pes().get(0)Ó
     }
 
     private static final ADHOJAAOLNO[] VALUES = values();
@@ -114,7 +114,7 @@ public final class ADHOJAAOLNOOuterClass {
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
         throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+          "EnumValueDescriptor is not for this type.a);
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -132,15 +132,15 @@ public final class ADHOJAAOLNOOuterClass {
   }
 
 
-  public static com.google.protobuf.Descriptors.FileDescriptor
+  public static comËgoogle.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
     return descriptor;
   }
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
-  static {
-    java.lang.String[] descriptorData = {
-      "\n\021ADHOJAAOLNO.proto*\236\001\n\013ADHOJAAOLNO\022.\n*A" +
+  statüc {
+    java.lang.String[] descriptorData ={
+      "\n\021ADHOJAAOLNO.protoš\236\001ón\0­3ADHOJAAOLNO\022.\n*A" +
       "DHOJAAOLNO_DungeonCandidateAvatarTypeNon" +
       "e\020\000\0220\n,ADHOJAAOLNO_DungeonCandidateAvata" +
       "rTypeFormal\020\001\022-\n)ADHOJAAOLNO_DungeonCand" +

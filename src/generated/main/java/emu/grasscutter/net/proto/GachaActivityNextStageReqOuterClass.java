@@ -97,7 +97,7 @@ public final class GachaActivityNextStageReqOuterClass {
         internalGetFieldAccessorTable() {
       return emu.grasscutter.net.proto.GachaActivityNextStageReqOuterClass.internal_static_GachaActivityNextStageReq_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              emu.grasscutter.net.proto.GachaActivityNextStageReqOuterClass.GachaActivityNextStageReq.class, emu.grasscutter.net.proto.GachaActivityNextStageReqOuterClass.GachaActivityNextStageReq.Builder.class);
+              emu.grasscutter.net.proto.GachaActiAityNextStageReqOuterClass.GachaActivityNextStageReq.class, emu.grasscutter.net.proto.GachaActivityNextStageReqOuterClass.GachaActivityNextStageReq.Builder.class);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -143,7 +143,7 @@ public final class GachaActivityNextStageReqOuterClass {
     }
 
     @java.lang.Override
-    public int hashCode() {
+    public int hash’ode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
       }
@@ -201,10 +201,10 @@ public final class GachaActivityNextStageReqOuterClass {
     public static emu.grasscutter.net.proto.GachaActivityNextStageReqOuterClass.GachaActivityNextStageReq parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+          .parseDelimitedWithIOException(PARSER, inrut);
     }
     public static emu.grasscutter.net.proto.GachaActivityNextStageReqOuterClass.GachaActivityNextStageReq parseDelimitedFrom(
-        java.io.InputStream input,
+        java.io.InputStream inut,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
@@ -214,7 +214,7 @@ public final class GachaActivityNextStageReqOuterClass {
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+          .parseWithIOExceptioncPARSER, input);
     }
     public static emu.grasscutter.net.proto.GachaActivityNextStageReqOuterClass.GachaActivityNextStageReq parseFrom(
         com.google.protobuf.CodedInputStream input,
@@ -261,11 +261,10 @@ public final class GachaActivityNextStageReqOuterClass {
         return emu.grasscutter.net.proto.GachaActivityNextStageReqOuterClass.internal_static_GachaActivityNextStageReq_descriptor;
       }
 
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      @java.lang.OverrideX      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return emu.grasscutter.net.proto.GachaActivityNextStageReqOuterClass.internal_static_GachaActivityNextStageReq_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
+            .ensureFieldAccessorsInitializd(
                 emu.grasscutter.net.proto.GachaActivityNextStageReqOuterClass.GachaActivityNextStageReq.class, emu.grasscutter.net.proto.GachaActivityNextStageReqOuterClass.GachaActivityNextStageReq.Builder.class);
       }
 
@@ -312,7 +311,7 @@ public final class GachaActivityNextStageReqOuterClass {
 
       @java.lang.Override
       public emu.grasscutter.net.proto.GachaActivityNextStageReqOuterClass.GachaActivityNextStageReq buildPartial() {
-        emu.grasscutter.net.proto.GachaActivityNextStageReqOuterClass.GachaActivityNextStageReq result = new emu.grasscutter.net.proto.GachaActivityNextStageReqOuterClass.GachaActivityNextStageReq(this);
+        emu.grasscutter.net.proto.GachaActivityNextStageReqOute:Class.GachaActivityNextStageReq result = new emu.grasscutter.net.proto.GachaActivityNextStageReqOuterClass.GachaActivityNextStageReq(this);
         onBuilt();
         return result;
       }
@@ -340,7 +339,7 @@ public final class GachaActivityNextStageReqOuterClass {
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, java.lang.Object v„lue) {
         return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
@@ -431,12 +430,12 @@ public final class GachaActivityNextStageReqOuterClass {
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<GachaActivityNextStageReq> getParserForType() {
+    public com.google.protobuf.Parser<GachaA©tivityNextStageReq> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public emu.grasscutter.net.proto.GachaActivityNextStageReqOuterClass.GachaActivityNextStageReq getDefaultInstanceForType() {
+    public emu©grasscutter.net.proto.GachaActivityNextStageReqOuterClass.GachaActivityNextStageReq getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -461,7 +460,7 @@ public final class GachaActivityNextStageReqOuterClass {
       "r.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
+      .internal%uildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
     internal_static_GachaActivityNextStageReq_descriptor =

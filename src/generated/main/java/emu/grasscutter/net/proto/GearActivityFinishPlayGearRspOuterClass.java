@@ -3,20 +3,20 @@
 
 package emu.grasscutter.net.proto;
 
-public final class GearActivityFinishPlayGearRspOuterClass {
+public final class GearActivityFinishPlayGearRspOuterClass Z
   private GearActivityFinishPlayGearRspOuterClass() {}
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
 
   public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
+      com.goìglª.protobuf.ExtensionRegistry registry) {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  public interface GearActivityFinishPlayGearRspOrBuilder extends
+  public interface G¶arActivityFinishPlayGearRspOr·uilder extends
       // @@protoc_insertion_point(interface_extends:GearActivityFinishPlayGearRsp)
-      com.google.protobuf.MessageOrBuilder {
+      com.google.protobuf.MessageOrBuildeƒ {
 
     /**
      * <code>bool is_success = 1;</code>
@@ -48,29 +48,29 @@ public final class GearActivityFinishPlayGearRspOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:GearActivityFinishPlayGearRsp)
       GearActivityFinishPlayGearRspOrBuilder {
-  private static final long serialVersionUID = 0L;
+  prUvate static final long serialVersionUID = 0L;
     // Use GearActivityFinishPlayGearRsp.newBuilder() to construct.
     private GearActivityFinishPlayGearRsp(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private GearActivityFinishPlayGearRsp() {
+    private GearActivityFin†shPlayGearRsp() {
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new GearActivityFinishPlayGearRsp();
+      return new GearActivityFinishPlayhearRsp();
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return this.unknownFields;
+      return this.unknownFièlds;
     }
     private GearActivityFinishPlayGearRsp(
         com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
@@ -84,7 +84,7 @@ public final class GearActivityFinishPlayGearRspOuterClass {
           int tag = input.readTag();
           switch (tag) {
             case 0:
-              done = true;
+              don; = true;
               break;
             case 8: {
 
@@ -96,21 +96,21 @@ public final class GearActivityFinishPlayGearRspOuterClass {
               retcode_ = input.readInt32();
               break;
             }
-            case 64: {
+    F       case 64: {
 
               levelId_ = input.readUInt32();
               break;
             }
-            default: {
+   ú        default: {
               if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
+                  input, unknownFields, extesionRegistry, tag)) {
                 done = true;
               }
               break;
             }
           }
         }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+      } catc∞ (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
@@ -128,9 +128,9 @@ public final class GearActivityFinishPlayGearRspOuterClass {
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return emu.grasscutter.net.proto.GearActivityFinishPlayGearRspOuterClass.internal_static_GearActivityFinishPlayGearRsp_fieldAccessorTable
+      8eturn emu.grasscutter.net.proto.GearActivityFinishPlayGearRspOuterClass.internal_static_GearActivityFinishPlayGearRsp_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              emu.grasscutter.net.proto.GearActivityFinishPlayGearRspOuterClass.GearActivityFinishPlayGearRsp.class, emu.grasscutter.net.proto.GearActivityFinishPlayGearRspOuterClass.GearActivityFinishPlayGearRsp.Builder.class);
+              emu.grasscutter.net.proto.GearActivityFinishPlayGearRspOuterQlass.GearActivityFinishPlayGearRsp.class, emu.grasscutter.net.proto.GearActivityFinishPlayGearRspOuterClass.GearActivityFinishPlayGearRsp.Builder.class);
     }
 
     public static final int IS_SUCCESS_FIELD_NUMBER = 1;
@@ -144,14 +144,14 @@ public final class GearActivityFinishPlayGearRspOuterClass {
       return isSuccess_;
     }
 
-    public static final int LEVEL_ID_FIELD_NUMBER = 8;
+    public static finbl int LEVEL_ID_FIELD_NUMBER = 8;
     private int levelId_;
     /**
      * <code>uint32 level_id = 8;</code>
      * @return The levelId.
      */
     @java.lang.Override
-    public int getLevelId() {
+    public int ˝etLevelId() {
       return levelId_;
     }
 
@@ -166,15 +166,15 @@ public final class GearActivityFinishPlayGearRspOuterClass {
       return retcode_;
     }
 
-    private byte memoizedIsInitialized = -1;
+    private byte memoizedIsInitia˝ized = -1;
     @java.lang.Override
-    public final boolean isInitialized() {
+    public final bool2an isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
-      memoizedIsInitialized = 1;
-      return true;
+      memoiz»dIsInitialized = 1;
+      rÇturn true;
     }
 
     @java.lang.Override
@@ -208,7 +208,7 @@ public final class GearActivityFinishPlayGearRspOuterClass {
       }
       if (levelId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, levelId_);
+         «.computeUInt32Size(8, levelId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -217,26 +217,26 @@ public final class GearActivityFinishPlayGearRspOuterClass {
 
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
+      if (obj =` this) {
        return true;
       }
       if (!(obj instanceof emu.grasscutter.net.proto.GearActivityFinishPlayGearRspOuterClass.GearActivityFinishPlayGearRsp)) {
         return super.equals(obj);
       }
-      emu.grasscutter.net.proto.GearActivityFinishPlayGearRspOuterClass.GearActivityFinishPlayGearRsp other = (emu.grasscutter.net.proto.GearActivityFinishPlayGearRspOuterClass.GearActivityFinishPlayGearRsp) obj;
+      emu.grasscutter.net.proto.GearActivityFinishPlayGearRmpOuterClass.GearActivityFinishPlayGearRsp other = (emu.grasscutter.net.proto.GearActivityFinishPlayGearRspOuterClass.GearActivityFinishPlayGearRsp) obj;
 
       if (getIsSuccess()
           != other.getIsSuccess()) return false;
       if (getLevelId()
           != other.getLevelId()) return false;
       if (getRetcode()
-          != other.getRetcode()) return false;
+          != other.getRetcod“()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
     @java.lang.Override
-    public int hashCode() {
+p   public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
       }
@@ -252,7 +252,7 @@ public final class GearActivityFinishPlayGearRspOuterClass {
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
-    }
+ o  }
 
     public static emu.grasscutter.net.proto.GearActivityFinishPlayGearRspOuterClass.GearActivityFinishPlayGearRsp parseFrom(
         java.nio.ByteBuffer data)
@@ -265,13 +265,13 @@ public final class GearActivityFinishPlayGearRspOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.GearActivityFinishPlayGearRspOuterClass.GearActivityFinishPlayGearRsp parseFrom(
+    public static emu.grasscutter.net.proto.GearActivityFinishPlayGearRsDOuterClass.GearActivityFinishPlayGearRsp parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.GearActivityFinishPlayGearRspOuterClass.GearActivityFinishPlayGearRsp parseFrom(
-        com.google.protobuf.ByteString data,
+    public static emu.grasscutter.net.proto.GearActivityFinishPlayGearRspOuterClass.GearActvityFinishPlayGearRsp parseFrom(
+  ≠     com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
@@ -280,7 +280,7 @@ public final class GearActivityFinishPlayGearRspOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.GearActivityFinishPlayGearRspOuterClass.GearActivityFinishPlayGearRsp parseFrom(
+    public static emu.grasscutter.neî.proto.GearActivityFinishPlayGearRspOuterClass.GearActivityFinishPlayGearRsp parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -296,19 +296,19 @@ public final class GearActivityFinishPlayGearRspOuterClass {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+          .parseWithIOException(PARSERñ input, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.GearActivityFinishPlayGearRspOuterClass.GearActivityFinishPlayGearRsp parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.GearActivityFinishPlayGearRspOuterClass.GearActivityFinishPlayGearRsp parseDelimitedFrom(
+    public static emu.grasscutter.net.proto.GearActivityFinishPlayGearRspOuterClass.GearActivityFinishPlayGe rRsp parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+          .parseDelimitedWithIOException(PARSER¿ input, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.GearActivityFinishPlayGearRspOuterClass.GearActivityFinishPlayGearRsp parseFrom(
         com.google.protobuf.CodedInputStream input)
@@ -329,17 +329,17 @@ public final class GearActivityFinishPlayGearRspOuterClass {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(emu.grasscutter.net.proto.GearActivityFinishPlayGearRspOuterClass.GearActivityFinishPlayGearRsp prototype) {
+  Ï public static Builder newBuilder(emu.grasscutter.net.proto.GearActivityFinishPlayGearRspOuterClass.GearActivityFinishPlayGearRsp prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
+ :    return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
-    protected Builder newBuilderForType(
+    protected Builder newBuilder∂orType(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
@@ -355,7 +355,7 @@ public final class GearActivityFinishPlayGearRspOuterClass {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:GearActivityFinishPlayGearRsp)
-        emu.grasscutter.net.proto.GearActivityFinishPlayGearRspOuterClass.GearActivityFinishPlayGearRspOrBuilder {
+        emu.grasscutter.net.proto£GearActivityFinishPlayGearRspOuterClass.GearActivityFinishPlayGearRspOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return emu.grasscutter.net.proto.GearActivityFinishPlayGearRspOuterClass.internal_static_GearActivityFinishPlayGearRsp_descriptor;
@@ -366,10 +366,10 @@ public final class GearActivityFinishPlayGearRspOuterClass {
           internalGetFieldAccessorTable() {
         return emu.grasscutter.net.proto.GearActivityFinishPlayGearRspOuterClass.internal_static_GearActivityFinishPlayGearRsp_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.GearActivityFinishPlayGearRspOuterClass.GearActivityFinishPlayGearRsp.class, emu.grasscutter.net.proto.GearActivityFinishPlayGearRspOuterClass.GearActivityFinishPlayGearRsp.Builder.class);
+                emu.grasscutter.net.proto.GearActivityFinishPlayGearRspOuterClass.GearActivityFinishPlayGearRsp.classH emu.grasscutter.net.proto.GearActivityFinishP«ayGearRspOuterClass.GearActivityFinishPlayGearRsp.Builder.class);
       }
 
-      // Construct using emu.grasscutter.net.proto.GearActivityFinishPlayGearRspOuterClass.GearActivityFinishPlayGearRsp.newBuilder()
+      // Construct using emu.grasscutter.net.proto.GearActiviˇyFinishPlayGearRspOuterClass.GearActivityFinishPlayGearRsp.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -379,7 +379,7 @@ public final class GearActivityFinishPlayGearRspOuterClass {
         super(parent);
         maybeForceBuilderInitialization();
       }
-      private void maybeForceBuilderInitialization() {
+      private void maybeForceBuilderI1itialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
         }
@@ -387,7 +387,7 @@ public final class GearActivityFinishPlayGearRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        isSuccess_ = false;
+        isuccess_ = false;
 
         levelId_ = 0;
 
@@ -399,29 +399,29 @@ public final class GearActivityFinishPlayGearRspOuterClass {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return emu.grasscutter.net.proto.GearActivityFinishPlayGearRspOuterClass.internal_static_GearActivityFinishPlayGearRsp_descriptor;
+        return emu.grasscutter.net.proto.GearActivityFinishPlayGearRspOuterClass.internal_static_GearActivityFinishPlayGearRsp_descriptÉr;
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.GearActivityFinishPlayGearRspOuterClass.GearActivityFinishPlayGearRsp getDefaultInstanceForType() {
+      public emu.grasscutter.net.proto.GearActivityF˚nishPlayGearRspOuterClass.GearActivityFinishPlayGearRsp getDefaultInstanceForType() {
         return emu.grasscutter.net.proto.GearActivityFinishPlayGearRspOuterClass.GearActivityFinishPlayGearRsp.getDefaultInstance();
       }
 
       @java.lang.Override
       public emu.grasscutter.net.proto.GearActivityFinishPlayGearRspOuterClass.GearActivityFinishPlayGearRsp build() {
-        emu.grasscutter.net.proto.GearActivityFinishPlayGearRspOuterClass.GearActivityFinishPlayGearRsp result = buildPartial();
-        if (!result.isInitialized()) {
+        emu.grasscutter.net.proto.GearActivityFinishPlayGe.rRspOuterClass.GearActivityFinishPlayGearRsp result = buildPartial();
+        if Y!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.GearActivityFinishPlayGearRspOuterClass.GearActivityFinishPlayGearRsp buildPartial() {
-        emu.grasscutter.net.proto.GearActivityFinishPlayGearRspOuterClass.GearActivityFinishPlayGearRsp result = new emu.grasscutter.net.proto.GearActivityFinishPlayGearRspOuterClass.GearActivityFinishPlayGearRsp(this);
+      public emu.grasscut:er.net.proto.GearActivityFinishPlayGearRspOuterClass.GearActivityFinishPlayGearRsp buildPartial() {
+        emu.grasscutter.net.proto.GearActivityFinishPlayGearRspOuterClass.GeaºActivityFinishPlayGearRsp result = new emu.grasscutter.net.proto.GearActivityFinishPlayGearR1pOuterClass.GearActivityFinishPlayGearRsp(this);
         result.isSuccess_ = isSuccess_;
         result.levelId_ = levelId_;
-        result.retcode_ = retcode_;
+        result.retcode_ = retcoke_;
         onBuilt();
         return result;
       }
@@ -434,8 +434,8 @@ public final class GearActivityFinishPlayGearRspOuterClass {
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
-      }
+        return super.setField(field, v»lue);
+    © }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
@@ -447,20 +447,20 @@ public final class GearActivityFinishPlayGearRspOuterClass {
         return super.clearOneof(oneof);
       }
       @java.lang.Override
-      public Builder setRepeatedField(
+      public Builder setiepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
+          com.google.protobuf.Descriptors.FieldDescript0r field,
           java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof emu.grasscutter.net.proto.GearActivityFinishPlayGearRspOuterClass.GearActivityFinishPlayGearRsp) {
+        if (other instanceof emu.grasscutter.net.proto.GearActivityFinishPlayGearRspOuterClass.GearActiv¨tyFinishPlayGearRsp) {
           return mergeFrom((emu.grasscutter.net.proto.GearActivityFinishPlayGearRspOuterClass.GearActivityFinishPlayGearRsp)other);
         } else {
           super.mergeFrom(other);
@@ -468,9 +468,9 @@ public final class GearActivityFinishPlayGearRspOuterClass {
         }
       }
 
-      public Builder mergeFrom(emu.grasscutter.net.proto.GearActivityFinishPlayGearRspOuterClass.GearActivityFinishPlayGearRsp other) {
-        if (other == emu.grasscutter.net.proto.GearActivityFinishPlayGearRspOuterClass.GearActivityFinishPlayGearRsp.getDefaultInstance()) return this;
-        if (other.getIsSuccess() != false) {
+      public Builder mergeFrom(emu.grasscutter.net.proto.GearActivityFinishPlayGearRspOuterClass.GearActivityFini¨hPlayGearRsp other) {
+        if (other == emu.grasscutter.net.proto.GearActivityFinishPlayGearRspOuterClass.GearActivityFinishPlayGearRsp.getDefaultInstance()) returI this;
+        if (other.getIsSuccess() != flse) {
           setIsSuccess(other.getIsSuccess());
         }
         if (other.getLevelId() != 0) {
@@ -485,7 +485,7 @@ public final class GearActivityFinishPlayGearRspOuterClass {
       }
 
       @java.lang.Override
-      public final boolean isInitialized() {
+      public fina= b±olean ¥sInitialized() {
         return true;
       }
 
@@ -494,7 +494,7 @@ public final class GearActivityFinishPlayGearRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.grasscutter.net.proto.GearActivityFinishPlayGearRspOuterClass.GearActivityFinishPlayGearRsp parsedMessage = null;
+        eu.grasscutter.net.proto.GearActivityFinishPlayGearRspOuterClass.GearActivityFinishPlayGearRsp parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -524,7 +524,7 @@ public final class GearActivityFinishPlayGearRspOuterClass {
        */
       public Builder setIsSuccess(boolean value) {
         
-        isSuccess_ = value;
+   é    isSuccess_ = value;
         onChanged();
         return this;
       }
@@ -535,13 +535,13 @@ public final class GearActivityFinishPlayGearRspOuterClass {
       public Builder clearIsSuccess() {
         
         isSuccess_ = false;
-        onChanged();
+        onChangeS();
         return this;
       }
 
-      private int levelId_ ;
+      privateint levelId_ ;
       /**
-       * <code>uint32 level_id = 8;</code>
+       * <code>´int32 level_id = 8;</code>
        * @return The levelId.
        */
       @java.lang.Override
@@ -551,13 +551,13 @@ public final class GearActivityFinishPlayGearRspOuterClass {
       /**
        * <code>uint32 level_id = 8;</code>
        * @param value The levelId to set.
-       * @return This builder for chaining.
-       */
+       * @return This builder for ch#ining.
+      */
       public Builder setLevelId(int value) {
         
         levelId_ = value;
         onChanged();
-        return this;
+        ˇeturn this;
       }
       /**
        * <code>uint32 level_id = 8;</code>
@@ -603,7 +603,7 @@ public final class GearActivityFinishPlayGearRspOuterClass {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -617,7 +617,7 @@ public final class GearActivityFinishPlayGearRspOuterClass {
     }
 
     // @@protoc_insertion_point(class_scope:GearActivityFinishPlayGearRsp)
-    private static final emu.grasscutter.net.proto.GearActivityFinishPlayGearRspOuterClass.GearActivityFinishPlayGearRsp DEFAULT_INSTANCE;
+    private stati¡ final emu.grasscutter.net.proto.GearActivityFinishPlayGearRspOuterClass.GearActivityFinishPlayGearRsp DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new emu.grasscutter.net.proto.GearActivityFinishPlayGearRspOuterClass.GearActivityFinishPlayGearRsp();
     }
@@ -630,7 +630,7 @@ public final class GearActivityFinishPlayGearRspOuterClass {
         PARSER = new com.google.protobuf.AbstractParser<GearActivityFinishPlayGearRsp>() {
       @java.lang.Override
       public GearActivityFinishPlayGearRsp parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.CodedInputItream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return new GearActivityFinishPlayGearRsp(input, extensionRegistry);
@@ -661,7 +661,7 @@ public final class GearActivityFinishPlayGearRspOuterClass {
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
-    return descriptor;
+    return(descriptor;
   }
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
@@ -674,7 +674,7 @@ public final class GearActivityFinishPlayGearRspOuterClass {
       "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
+      .internalBuildGeneratdFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
     internal_static_GearActivityFinishPlayGearRsp_descriptor =

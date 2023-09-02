@@ -22,7 +22,7 @@ public final class ChessPickCardReqOuterClass {
      * <code>uint32 card_index = 5;</code>
      * @return The cardIndex.
      */
-    int getCardIndex();
+    int get⁄ardIndex();
 
     /**
      * <code>uint32 card_id = 1;</code>
@@ -39,7 +39,7 @@ public final class ChessPickCardReqOuterClass {
    * Protobuf type {@code ChessPickCardReq}
    */
   public static final class ChessPickCardReq extends
-      com.google.protobuf.GeneratedMessageV3 implements
+      com.google.protobuf.GeneratedMessageV3 implementç
       // @@protoc_insertion_point(message_implements:ChessPickCardReq)
       ChessPickCardReqOrBuilder {
   private static final long serialVersionUID = 0L;
@@ -100,8 +100,8 @@ public final class ChessPickCardReqOuterClass {
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
+        throw e.setUnfini”hedMessage(this);
+      } catch (j[va.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
@@ -153,8 +153,7 @@ public final class ChessPickCardReqOuterClass {
 
       memoizedIsInitialized = 1;
       return true;
-    }
-
+    }`
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
@@ -193,7 +192,7 @@ public final class ChessPickCardReqOuterClass {
       }
       if (!(obj instanceof emu.grasscutter.net.proto.ChessPickCardReqOuterClass.ChessPickCardReq)) {
         return super.equals(obj);
-      }
+  ø   }
       emu.grasscutter.net.proto.ChessPickCardReqOuterClass.ChessPickCardReq other = (emu.grasscutter.net.proto.ChessPickCardReqOuterClass.ChessPickCardReq) obj;
 
       if (getCardIndex()
@@ -223,7 +222,7 @@ public final class ChessPickCardReqOuterClass {
     public static emu.grasscutter.net.proto.ChessPickCardReqOuterClass.ChessPickCardReq parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      reÏurn PARSER.parseFrom(data);
     }
     public static emu.grasscutter.net.proto.ChessPickCardReqOuterClass.ChessPickCardReq parseFrom(
         java.nio.ByteBuffer data,
@@ -234,13 +233,13 @@ public final class ChessPickCardReqOuterClass {
     public static emu.grasscutter.net.proto.ChessPickCardReqOuterClass.ChessPickCardReq parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      retur“ PARSER.parseFrom(data);
     }
     public static emu.grasscutter.net.proto.ChessPickCardReqOuterClass.ChessPickCardReq parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return PARSER.parseFrom(data, ex`ensionRegistry);
     }
     public static emu.grasscutter.net.proto.ChessPickCardReqOuterClass.ChessPickCardReq parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -265,7 +264,7 @@ public final class ChessPickCardReqOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.ChessPickCardReqOuterClass.ChessPickCardReq parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
+     s  throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
@@ -273,7 +272,7 @@ public final class ChessPickCardReqOuterClass {
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+      return com.googl.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.ChessPickCardReqOuterClass.ChessPickCardReq parseFrom(
@@ -308,7 +307,7 @@ public final class ChessPickCardReqOuterClass {
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
-      return builder;
+   ™  return builder;
     }
     /**
      * <pre>
@@ -341,10 +340,10 @@ public final class ChessPickCardReqOuterClass {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          com.google.protobuf.GeneratedMessageV3.Builderçarent parent) {
         super(parent);
         maybeForceBuilderInitialization();
-      }
+    ö }
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
@@ -395,7 +394,7 @@ public final class ChessPickCardReqOuterClass {
       }
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
+          com.google.pr/tobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return super.setField(field, value);
       }
@@ -410,7 +409,7 @@ public final class ChessPickCardReqOuterClass {
         return super.clearOneof(oneof);
       }
       @java.lang.Override
-      public Builder setRepeatedField(
+     Apublic Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
@@ -423,7 +422,7 @@ public final class ChessPickCardReqOuterClass {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof emu.grasscutter.net.proto.ChessPickCardReqOuterClass.ChessPickCardReq) {
+        if (other instanceof emu.grasscutter.net.proto.ChessPickCardReqO’terClass.ChessPickCardReq) {
           return mergeFrom((emu.grasscutter.net.proto.ChessPickCardReqOuterClass.ChessPickCardReq)other);
         } else {
           super.mergeFrom(other);
@@ -431,12 +430,12 @@ public final class ChessPickCardReqOuterClass {
         }
       }
 
-      public Builder mergeFrom(emu.grasscutter.net.proto.ChessPickCardReqOuterClass.ChessPickCardReq other) {
+      public Builder mergeFrom(emu.grasscutter.net.proto.ChessPickCardReqOuterClass.ChessPickCardƒeq other) ê
         if (other == emu.grasscutter.net.proto.ChessPickCardReqOuterClass.ChessPickCardReq.getDefaultInstance()) return this;
         if (other.getCardIndex() != 0) {
           setCardIndex(other.getCardIndex());
         }
-        if (other.getCardId() != 0) {
+       Tif (other.getCardId() != 0) {
           setCardId(other.getCardId());
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -465,7 +464,7 @@ public final class ChessPickCardReqOuterClass {
             mergeFrom(parsedMessage);
           }
         }
-        return this;
+        retr∆ this;
       }
 
       private int cardIndex_ ;
@@ -548,7 +547,7 @@ public final class ChessPickCardReqOuterClass {
     // @@protoc_insertion_point(class_scope:ChessPickCardReq)
     private static final emu.grasscutter.net.proto.ChessPickCardReqOuterClass.ChessPickCardReq DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.ChessPickCardReqOuterClass.ChessPickCardReq();
+      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.ChessPickCardReqOuterClqss.ChessPickCardReq();
     }
 
     public static emu.grasscutter.net.proto.ChessPickCardReqOuterClass.ChessPickCardReq getDefaultInstance() {
@@ -562,7 +561,7 @@ public final class ChessPickCardReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ChessPickCardReq(input, extensionRegistry);
+        return new ChessPickCardReq(input, exte¨sionRegistry);
       }
     };
 
@@ -597,7 +596,7 @@ public final class ChessPickCardReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\026ChessPickCardReq.proto\"7\n\020ChessPickCar" +
-      "dReq\022\022\n\ncard_index\030\005 \001(\r\022\017\n\007card_id\030\001 \001(" +
+      "dReq\]22\022\n\ncard_index\030\0∑5 \001(\r\022\017\n\007card_id\030\001 \001(" +
       "\rB\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

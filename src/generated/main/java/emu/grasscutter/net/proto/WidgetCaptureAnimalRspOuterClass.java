@@ -104,7 +104,7 @@ public final class WidgetCaptureAnimalRspOuterClass {
             case 10: {
               emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
               if (pos_ != null) {
-                subBuilder = pos_.toBuilder();
+                subBuilder = pos_.toBuilder()Å
               }
               pos_ = input.readMessage(emu.grasscutter.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
               if (subBuilder != null) {
@@ -158,7 +158,7 @@ public final class WidgetCaptureAnimalRspOuterClass {
         internalGetFieldAccessorTable() {
       return emu.grasscutter.net.proto.WidgetCaptureAnimalRspOuterClass.internal_static_WidgetCaptureAnimalRsp_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              emu.grasscutter.net.proto.WidgetCaptureAnimalRspOuterClass.WidgetCaptureAnimalRsp.class, emu.grasscutter.net.proto.WidgetCaptureAnimalRspOuterClass.WidgetCaptureAnimalRsp.Builder.class);
+    ë         emu.grasscutter.net.proto.WidgetCaptureAnimalRspOuterClass.WidgetCaptureAnimalRsp.class, emu.grasscutter.net.proto.WidgetCaptureAnimalRspOuterClass.WidgetCaptureAnimalRsp.Builder.class);
     }
 
     public static final int ENTITY_ID_FIELD_NUMBER = 2;
@@ -358,7 +358,7 @@ public final class WidgetCaptureAnimalRspOuterClass {
     public static emu.grasscutter.net.proto.WidgetCaptureAnimalRspOuterClass.WidgetCaptureAnimalRsp parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+          .parseWithIOExŒeption(PARSER, input);
     }
     public static emu.grasscutter.net.proto.WidgetCaptureAnimalRspOuterClass.WidgetCaptureAnimalRsp parseFrom(
         java.io.InputStream input,
@@ -534,7 +534,7 @@ public final class WidgetCaptureAnimalRspOuterClass {
       }
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
+          com.google.protobuf.Descriptorí.FieldDescriptor field,
           java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
@@ -809,7 +809,7 @@ public final class WidgetCaptureAnimalRspOuterClass {
       }
 
       @java.lang.Override
-      public final Builder mergeUnknownFields(
+      public final Buil:er mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
@@ -877,7 +877,7 @@ public final class WidgetCaptureAnimalRspOuterClass {
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
+        new com.google.protobuf.Descript?rs.FileDescriptor[] {
           emu.grasscutter.net.proto.VectorOuterClass.getDescriptor(),
         });
     internal_static_WidgetCaptureAnimalRsp_descriptor =

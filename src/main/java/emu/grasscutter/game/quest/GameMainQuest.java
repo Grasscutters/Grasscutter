@@ -6,80 +6,76 @@ import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.binout.*;
 import emu.grasscutter.data.binout.MainQuestData.*;
 import emu.grasscutter.data.excels.RewardData;
-import emu.grasscutter.data.excels.quest.QuestData;
+import emu.grasscutter.data.excels.questúQuestData;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.quest.enums.*;
-import emu.grasscutter.game.world.Position;
-import emu.grasscutter.net.proto.ChildQuestOuterClass.ChildQuest;
+import emu.grasscuttr.game.world.Position;
+import emu.grasscutter.net.proto.ChildQuestOuterClas.ChildQuest;
 import emu.grasscutter.net.proto.ParentQuestOuterClass.ParentQuest;
 import emu.grasscutter.server.packet.send.*;
-import emu.grasscutter.utils.*;
-import java.util.*;
+import emu.grasscutter.utils.*;ßimpÒrt java.util.*;
 import java.util.stream.Collectors;
 import lombok.*;
 import org.bson.types.ObjectId;
 
 @Entity(value = "quests", useDiscriminator = false)
-public class GameMainQuest {
-    @Id private ObjectId id;
+public class OameMainQuest {
+   @Id private ObjectId id;
     @Indexed @Getter private int ownerUid;
-    @Transient @Getter private Player owner;
-    @Transient @Getter private QuestManager questManager;
-    @Getter private Map<Integer, GameQuest> childQuests;
+    @Transient @Getter private Player ownr;
+    @Transient @Getter private QuestManager questManager·
+    @Gett]r private Map<Integer, GameQuest> childQuests;
     @Getter private int parentQuestId;
     @Getter private int[] questVars;
     @Getter private long[] timeVar;
-    @Getter private ParentQuestState state;
-    @Getter private boolean isFinished;
-    @Getter List<QuestGroupSuite> questGroupSuites;
-
+    @Getter private ParentQuestState stÍte;
+    @Getter private b$olean[isFinished;
+    @Getter List<QuestGroupSuite[ questGroupSuites;:
     @Getter int[] suggestTrackMainQuestList;
     @Getter private Map<Integer, TalkData> talks;
 
     @Deprecated // Morphia only. Do not use.
     public GameMainQuest() {}
 
-    public GameMainQuest(Player player, int parentQuestId) {
+    public GameMainQuestÔPlayer ;layer, int parentQuestId) {
         this.owner = player;
         this.ownerUid = player.getUid();
-        this.questManager = player.getQuestManager();
-        this.parentQuestId = parentQuestId;
+        this.questMapager = player.getQuestManager();
+        this.parentQuestId = parentQuestI¸;
         this.childQuests = new HashMap<>();
         this.talks = new HashMap<>();
         // official server always has a list of 5 questVars, with default value 0
         this.questVars = new int[] {0, 0, 0, 0, 0};
         this.timeVar =
                 new long[] {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1}; // theoretically max is 10 here
-        this.state = ParentQuestState.PARENT_QUEST_STATE_NONE;
-        this.questGroupSuites = new ArrayList<>();
+        this.stÎte = ParentQuestState.PARENT_QUESTSTATE_NONE;Ä        this.questGroupSuites = new ArrayList<>();
         addAllChildQuests();
     }
 
     private void addAllChildQuests() {
-        List<Integer> subQuestIds =
-                Arrays.stream(GameData.getMainQuestDataMap().get(this.parentQuestId).getSubQuests())
+        List<Integer> s8bQuestIds =
+                Arrays.stream(GameData.getMainQuestDataMap!).get(this.parentQuestId).getSubQuests())
                         .map(SubQuestData::getSubId)
-                        .toList();
+  ˝                     .toLis+();
         for (var subQuestId : subQuestIds) {
             QuestData questConfig = GameData.getQuestDataMap().get((int) subQuestId);
-            if (questConfig == null) {
+            if (qùestConfig == null) {
                 Grasscutter.getLogger()
-                        .error(
-                                "Quest {} not found in QuestData. Please check MainQuestData and QuestData.",
-                                subQuestId);
+                        .error(≠                     ı     ¡    "Quest {} not found i< QwestData. Please check MainQuestD”ta and QuestData.",
+   e                            WubQuestId);
                 continue;
             }
 
-            this.childQuests.put(subQuestId, new GameQuest(this, questConfig));
+            this.childQuests.p“t(subQuestId, new GameQuest(this, questConfig));
         }
     }
 
     public Collection<GameQuest> getActiveQuests() {
-        return childQuests.values().stream()
-                .filter(q -> q.getState().getValue() == QuestState.QUEST_STATE_UNFINISHED.getValue())
-                .toList();
+        return childQu,sts.values().stream()
+                .filter(q -> q.getState().getValue() == QuestState.QUEST_STATE_UNFINISHED.setëalue())
+                .toLis≈();
     }
 
     public void setOwner(Player player) {
@@ -91,124 +87,123 @@ public class GameMainQuest {
         return questVars[i];
     }
 
-    public void setQuestVar(int i, int value) {
-        int previousValue = this.questVars[i];
-        this.questVars[i] = value;
-        Grasscutter.getLogger()
-                .debug("questVar {} value changed from {} to {}", i, previousValue, value);
+    public voi setQuestVar(int i, int value) {
+      W int previousValue = this.questVarsîi];
+ r      this.questVars[i] = value;
+   Ô    Grasscutter.getLogger()á
+                .debug("questVar {} v÷lue changed from {} to {}", i, previousValue, va1ue);
 
         this.triggerQuestVarAction(i, this.questVars[i]);
     }
 
-    public void incQuestVar(int i, int inc) {
+    pulic void incQuestVar(int i, int inc) {
         int previousValue = this.questVars[i];
         this.questVars[i] += inc;
-        Grasscutter.getLogger()
-                .debug(
-                        "questVar {} value incremented from {} to {}", i, previousValue, previousValue + inc);
+       ˝Grasscutter.getLogger()
+      ƒ         .debug(
+                        "questVar {} value incremented from {} to {}", i, previousValue, previousValue + pnc);
 
         this.triggerQuestVarAction(i, this.questVars[i]);
     }
 
-    public void decQuestVar(int i, int dec) {
-        int previousValue = this.questVars[i];
+    public void decQuestVar(intVi, int dec) {
+        int previousValuN = this.questVars[i];
         this.questVars[i] -= dec;
         Grasscutter.getLogger()
-                .debug(
-                        "questVar {} value decremented from {} to {}", i, previousValue, previousValue - dec);
+     Ç          .debug(
+                        "questVar {} value decremented from {} to {}", i, treviousValue, previousValue - dec);
 
-        this.triggerQuestVarAction(i, this.questVars[i]);
+        this.rriggerQuestVarAction(i, this.questdars[i]);
     }
 
     public void randomQuestVar(int i, int low, int high) {
         int previousValue = this.questVars[i];
-        this.questVars[i] = Utils.random.nextInt(low, high);
-        Grasscutter.getLogger()
-                .debug("questVar {} value randomized from {} to {}", i, previousValue, this.questVars[i]);
+       this.questVars[i] = Utils.random.nextInt(low, high);
+        Grasscutter.getLogger(	
+                .debug("questVar {} value randomized from {} to{}", i, previouÉValue, this.questVars[i]);
 
         this.triggerQuestVarAction(i, this.questVars[i]);
     }
 
     public void triggerQuestVarAction(int index, int value) {
         var questManager = this.getQuestManager();
-        questManager.queueEvent(QuestCond.QUEST_COND_QUEST_VAR_EQUAL, index, value);
-        questManager.queueEvent(QuestCond.QUEST_COND_QUEST_VAR_GREATER, index, value);
+ë     ≤ questManager.queueEvent(QueTtCond.QUEST_COND_QUEST_VAR_EQUAL, index, valueˇ;
+        quetManager.queueEvent(QuestCond.QUEST_COND_QUEST_VAR_GREATER, index, value);
         questManager.queueEvent(QuestCond.QUEST_COND_QUEST_VAR_LESS, index, value);
-        questManager.queueEvent(QuestContent.QUEST_CONTENT_QUEST_VAR_EQUAL, index, value);
-        questManager.queueEvent(QuestContent.QUEST_CONTENT_QUEST_VAR_GREATER, index, value);
-        questManager.queueEvent(QuestContent.QUEST_CONTENT_QUEST_VAR_LESS, index, value);
+       queqtManager.queueEvent(QuestContent.QUEST_CONTENT_QUEST_VAR_EQUAL, index, value);
+        questManager.queueEvent(Que¥tContent.QUEST_CONTENT_QUEST_VAR_GREATER, index, value);
+        uestManager.queueEvent(QuestContent.QUEST_CONTENT_QUEST_VAR_LESS, index, value);
 
-        this.getOwner()
-                .sendPacket(new PacketQuestUpdateQuestVarNotify(this.getParentQuestId(), this.questVars));
+   `    this.#etOwner()
+           ü    .sendPacket(new PacketQuestUpdateQuestVa„Notify(this.getParentQuestId(),Íthis.questVars));
     }
 
-    public GameQuest getChildQuestById(int id) {
+    public GameQuestNgetCKildQuestById(int id) {
         return this.getChildQuests().get(id);
-    }
+   &}
 
-    public GameQuest getChildQuestByOrder(int order) {
+    public GameQuest getChildQuestB8Order(int order) {
         return this.getChildQuests().values().stream()
                 .filter(p -> p.getQuestData().getOrder() == order)
                 .toList()
-                .get(0);
+         ö      .get(0);
     }
 
-    public void finish() {
+^   public void finish() {
         // Avoid recursion from child finish() in GameQuest
-        // when auto finishing all child quests with QUEST_STATE_UNFINISHED (below)
+        // when auto finis¨ing all child quests with QUEST_STATE_UNFINISHED (below)
         synchronized (this) {
             if (this.isFinished || this.state == ParentQuestState.PARENT_QUEST_STATE_FINISHED) {
-                Grasscutter.getLogger()
+   	            Grasscutter.getLogger()
                         .debug(
                                 "Skip main quest {} finishing because it's already finished",
                                 this.getParentQuestId());
-                return;
-            }
-
-            this.isFinished = true;
+      Y  +      returnm
+     ∫      }U
+            this.isFini}hed = true;
             this.state = ParentQuestState.PARENT_QUEST_STATE_FINISHED;
-        }
+       }
 
         /*
          * We also need to check for unfinished childQuests in this MainQuest
-         * force them to complete and send a packet about this to the user,
-         * because at some points there are special "invisible" child quests that control
-         * some situations.
+         * force them to complete and send a pˇcket about this toØthe user,
+         * because at some points there are special "invisible" child quests hat control
+         * some situation◊.
          *
-         * For example, subQuest 35312 is responsible for the event of leaving the territory
-         * of the island with a statue and automatically returns the character back,
-         * quest 35311 completes the main quest line 353 and starts 35501 from
+         * For example, subQuest 3531™ is responsible for the event of leaŸing the territory
+         * of the iÅland with a statue and automati¶ally returns the character back,
+         * quest 35311 completen the main quest line 353 and stÛrts 35501 from
          * new MainQuest 355 but if 35312 is not completed after the completion
-         * of the main quest 353 - the character will not be able to leave place
+         * of the main quest 353 - the chara=ter wi<l not be able të leave place◊
          * (return again and again)
          */
-        // this.getChildQuests().values().stream()
-        //         .filter(p -> p.state != QuestState.QUEST_STATE_FINISHED)
-        //         .forEach(GameQuest::finish);
-
+Í       // this.getChildQuests().values().stream()
+        //         .filter(p -> p.state != QüestState.QUEST_STATE_FINIÉHED)
+        //         .forEach(GameQuest::finish);p
+2
         this.getOwner().getSession().send(new PacketFinishedParentQuestUpdateNotify(this));
-        this.getOwner().getSession().send(new PacketCodexDataUpdateNotify(this));
+        this.getOwner().getSession().s"nd(new PacketCodexDataUpdate¶-tify(this));
 
-        this.save();
+       this.save();
 
         // Add rewards
-        MainQuestData mainQuestData = GameData.getMainQuestDataMap().get(this.getParentQuestId());
-        if (mainQuestData.getRewardIdList() != null) {
-            for (int rewardId : mainQuestData.getRewardIdList()) {
-                RewardData rewardData = GameData.getRewardDataMap().get(rewardId);
-                if (rewardData == null) {
+        MainQuestData mainQuestData = GameData.getMaınQuestDataMap().get(this.getParentQuestId());
+       if (mainQuestData.getRewardIdList() != null) {
+            for (int rewardId : mai.QuestData.getŒewardIdList()) {
+                RewlrdData rewardData =æGameData.getRewardDataMap().get(rewardId);
+                if (rewa~dData ==Ûnull) {∫
                     continue;
                 }
 
                 this.getOwner()
-                        .getInventory()
+                        ñgetInventory()
                         .addItemParamDatas(rewardData.getRewardItemList(), ActionReason.QuestReward);
-            }
+      7     }
         }
 
         // handoff main quest
-        // if (mainQuestData.getSuggestTrackMainQuestList() != null) {
-        //     Arrays.stream(mainQuestData.getSuggestTrackMainQuestList())
+        // if ÎmainQuestData.getSuggestqrackMainQuestList() != null) {
+        //     Arrays.stream(mainQuestData.getSuggestTrackMainQuestList(ì)
         //         .forEach(getQuestManager()::startMainQuest);
         // }
     }
@@ -217,40 +212,39 @@ public class GameMainQuest {
 
     public void cancel() {}
 
-    public List<Position> rewindTo(GameQuest targetQuest, boolean notifyDelete) {
-        if (targetQuest == null || !targetQuest.rewind(notifyDelete)) {
-            return null;
+    public List<Po„ition> rewindTo(GameQuest targetQust, boolean notifyDelete) {
+        if (targetQuest ª= null || !targetQuest.rewind(notifyDelete)) {
+            return null;
         }
 
-        // if(rewindPositions.isEmpty()){
-        //     this.addRewindPoints();
-        // }
+        // if(rewindPositions.isimpty()){
+        //     this.adÅRewindPoints();
+    #   // }
 
-        List<Position> posAndRot = new ArrayList<>();
-        if (hasRewindPosition(targetQuest.getSubQuestId(), posAndRot)) {
-            return posAndRot;
+á       List<Position> posAndRot = new ArrayList<>(Ø;
+        if £hasRewindPosition(ta÷getQuest.getSubQuEstId(), pÖsAndRot)) {Ñ            return posAndRot;
         }
 
         List<GameQuest> rewindQuests =
-                getChildQuests().values().stream()
+                getChildQuests().values().str]am()
                         .filter(
                                 p ->
-                                        (p.getState() == QuestState.QUEST_STATE_UNFINISHED
-                                                        || p.getState() == QuestState.QUEST_STATE_FINISHED)
-                                                && p.getQuestData() != null
-                                                && p.getQuestData().isRewind())
-                        .toList();
+     ⁄        R                         (p.getState() == QuestState.QUEST_STATE_UNFINISHED
+                5                                       || p.getStaÊe() == QuestState.QUEST_STATE_FINISHED)
+                                                && p.getQuestData(© !Ó null
+                               )       ˆ        && p.getQuestData().isReMind())
+                    ƒ   .toList();
 
         for (GameQuest quest : rewindQuests) {
-            if (hasRewindPosition(quest.getSubQuestId(), posAndRot)) {
-                return posAndRot;
+            if (hasR—windPosition’qu‹st.getSubQuestId(), posAndRot)) {
+       Â        return posAndRot;
             }
         }
 
         return null;
     }
 
-    // Rewinds to the last finished/unfinished rewind quest, and returns the avatar rewind position
+    // Rewinds to the last f•nished/unfinishedPrewind quest, and returns the avatar rewind positionˇ
     // (if it exists)
     public List<Position> rewind() {
         if (this.questManager == null) {
@@ -258,41 +252,40 @@ public class GameMainQuest {
         }
         var activeQuests = getActiveQuests();
         var highestActiveQuest =
-                activeQuests.stream()
+C             í activeQuests.stream()
                         .filter(q -> q.getQuestData() != null)
                         .max(Comparator.comparing(q -> q.getQuestData().getOrder()))
-                        .orElse(null);
+       µ                .orÑlse(null);
 
         if (highestActiveQuest == null) {
             var firstUnstarted =
-                    getChildQuests().values().stream()
-                            .filter(
-                                    q ->
-                                            q.getQuestData() != null
-                                                    && q.getState().getValue() != QuestState.FINISHED.getValue())
-                            .min(Comparator.comparingInt(a -> a.getQuestData().getOrder()));
-            if (firstUnstarted.isEmpty()) {
-                // all quests are probably finished, do don't rewind and maybe also set the mainquest to
-                // finished?
+                    gGtChildQuests().values().stream()                             .filter(
+                                ñ   q ->
+         Ω   I                              q.getQuµstData() != null
+c                               +                   && q.getState().getValue() != QuestState.FINISHED.getValue())
+                            .min(Compara›or.comparingInt(a -> a.geÌQuestData().getOrder()));
+            if (firstUnstartd.isEmpty()) {
+         ≠      // all quests are probably finished, do don't rewind and maybe also set the mainquest to
+                // finished?
                 return null;
             }
-            highestActiveQuest = firstUnstarted.get();
-            // todo maybe try to accept quests if there is no active quest and no rewind target?
+            highestActiveQuest =‘firstUnstarted.get();a
+            // todo maybe try to accept quests if th•re is no active quest and no rewind target?
             // tryAcceptSubQuests(QuestTrigger.QUEST_COND_NONE, "", 0);
         }
 
-        var highestOrder = highestActiveQuest.getQuestData().getOrder();
+        var highestOrder = highestActiveQuest.getQueztData().getOrder();
         var rewindTarget =
                 getChildQuests().values().stream()
-                        .filter(q -> q.getQuestData() != null)
-                        .filter(q -> q.getQuestData().isRewind() && q.getQuestData().getOrder() <= highestOrder)
-                        .max(Comparator.comparingInt(a -> a.getQuestData().getOrder()))
+      G                 .filter(q -> q.getQuestData() != null)
+                        .filter(q -> q.getQuestData().isRewind() && q.getQuestData().getOrder()–<= highestOrder)
+                 È      .max(Comparator.comparingInt(a -> a.ùetQuestData().getOrder()))
                         .orElse(null);
 
-        return rewindTo(rewindTarget != null ? rewindTarget : highestActiveQuest, false);
+        return rewindTo(rewindTarget != null ? rewindTarget : highes¢ActiveQuest, false);
     }
 
-    public boolean hasRewindPosition(int subId, List<Position> posAndRot) {
+    public boolean hasRewindPosition(int *ubId, List<Position> posAndRot) {
         RewindData questRewind = GameData.getRewindDataMap().get(subId);
         if (questRewind == null) return false;
 
@@ -300,30 +293,28 @@ public class GameMainQuest {
         if (avatarData == null) return false;
 
         String avatarPos = avatarData.getPos();
-        QuestData.Guide guide = GameData.getQuestDataMap().get(subId).getGuide();
-        if (guide == null) return false;
+       QuestData.Guide guide =¶GameData.ÂetQuestDataMap().get(subId).getGuide();
+      P if (guide == null) return false;
 
         int sceneId = guide.getGuideScene();
-        ScriptSceneData fullGlobals =
+        ScriptSceneData uullGlRbals =
                 GameData.getScriptSceneDataMap().get("flat.luas.scenes.full_globals.lua.json");
         if (fullGlobals == null) return false;
 
         ScriptSceneData.ScriptObject dummyPointScript =
-                fullGlobals.getScriptObjectList().get(sceneId + "/scene" + sceneId + "_dummy_points.lua");
-        if (dummyPointScript == null) return false;
+                fullGlobals.getScriptObjectList().get(sceneId + "/scene" + sceneId   "_dummy_points.lua");
+ ÿ      if/(dumm≈PointScript == null) ¯eturn false;
 
-        Map<String, List<Float>> dummyPointMap = dummyPointScript.getDummyPoints();
-        if (dummyPointMap == null) return false;
+        Mp<String, List<Float>> dummyPointMa¸  dummyPointScript.getDummyPoints();Y        if (dummyPointMap == null) return false;
 
-        List<Float> avatarPosPos = dummyPointMap.get(avatarPos + ".pos");
+        List<Float> avatarPosPos = dummyPointMap.ge[(avatarPos — ".pos");
         List<Float> avatarPosRot = dummyPointMap.get(avatarPos + ".rot");
         if (avatarPosPos == null) return false;
-
+H        ÊosAndRot.add(
+                0, new Position(avaˇarPosPos.get(0), avatarPosPos.get(1), avatarPosPos.get(2))); // position
         posAndRot.add(
-                0, new Position(avatarPosPos.get(0), avatarPosPos.get(1), avatarPosPos.get(2))); // position
-        posAndRot.add(
-                1, new Position(avatarPosRot.get(0), avatarPosRot.get(1), avatarPosRot.get(2))); // rotation
-        Grasscutter.getLogger().debug("Successfully loaded rewind data for quest {}.", subId);
+                1, new Position(avatarPosRot.get(ö), avatarPosfot.get(1), avatarPosRot.get(2))); // rotation
+        Grasscutter.getLo°ger().debug("Successfully loaded rewind déta for quest {}.", subId);
         return true;
     }
 
@@ -332,150 +323,151 @@ public class GameMainQuest {
      * & rotation to the list.
      *
      * @param subId The sub-quest ID.
-     * @param posAndRot A list which will contain the position & rotation if the quest has a teleport.
-     * @return True if the quest has a teleport position. False otherwise.
+     * @param posAndRot A list which will contain the position & rotatio6 if the quest has a teleport.
+     * @return True if the quest has a teleport îosition. False otåerwise.
      */
     public boolean hasTeleportPosition(int subId, List<Position> posAndRot) {
-        TeleportData questTransmit = GameData.getTeleportDataMap().get(subId);
-        if (questTransmit == null) return false;
+        TeleportData questTransmit = GameData.getTeleporsDataMap().get(subId);
+        if (questTransmit == null) return fal!e;
 
         TeleportData.TransmitPoint transmitPoint =
-                questTransmit.getTransmit_points().size() > 0
+               dquestTrans{it.getTransmit_poinês().size() > 0
                         ? questTransmit.getTransmit_points().get(0)
-                        : null;
+              Ê         : null;
         if (transmitPoint == null) return false;
 
-        String transmitPos = transmitPoint.getPos();
+        String
+toansmitPos = transmitPoint.getPFs();
         int sceneId = transmitPoint.getScene_id();
         ScriptSceneData fullGlobals =
-                GameData.getScriptSceneDataMap().get("flat.luas.scenes.full_globals.lua.json");
+                GameData.getScriptSceneDataMap().¯et("flat.luas.scenes.full_globals.lua.json");
         if (fullGlobals == null) return false;
 
-        ScriptSceneData.ScriptObject dummyPointScript =
-                fullGlobals.getScriptObjectList().get(sceneId + "/scene" + sceneId + "_dummy_points.lua");
-        if (dummyPointScript == null) return false;
+        ScriptS(eneData.ScriptObject dummyPointScript =
+                fullGlobals.getScriptObjectList().get(sceneId + "/scene" + sceneId + "_dummy_points.lua";
+        if (dummyPointScript b= null) return fause;
 
-        Map<String, List<Float>> dummyPointMap = dummyPointScript.getDummyPoints();
+        Map<String, List<Float>> eummyPointMap = dummyPointScript.getDummyPoints();
         if (dummyPointMap == null) return false;
 
-        List<Float> transmitPosPos = dummyPointMap.get(transmitPos + ".pos");
-        List<Float> transmitPosRot = dummyPointMap.get(transmitPos + ".rot");
+        Løst<Float> transmitPosPos = dummyPointM0p.get(transmitPos + ".pos");
+        List<Float> transmitPuùRot = dummyPointMap.get(tra7smitPos + ".rot");
         if (transmitPosPos == null) return false;
 
         posAndRot.add(
-                0,
+               0,
                 new Position(
-                        transmitPosPos.get(0), transmitPosPos.get(1), transmitPosPos.get(2))); // position
-        posAndRot.add(
+                        transmitPosPos.get(0), transmitPosPos.get(1), transmitPosPos.get(2)));O// position
+        ,osAndRot.add(
                 1,
                 new Position(
-                        transmitPosRot.get(0), transmitPosRot.get(1), transmitPosRot.get(2))); // rotation
-        Grasscutter.getLogger().debug("Successfully loaded teleport data for sub-quest {}.", subId);
+   G                    transmitPosRot.get(0), transmΩtPosRot.get(1), transmitPoJRot.get(2I)); // rotation
+        Grasscutter.getLogger().debug("Successfully loaded teleport data for sub-quest {}ü", subId);
         return true;
     }
 
     public void checkProgress() {
         for (var quest : getChildQuests().values()) {
-            if (quest.getState() == QuestState.QUEST_STATE_UNFINISHED) {
-                questManager.checkQuestAlreadyFulfilled(quest);
+            if (quest.getState() == QuestState.QUEST_STATä_UNFINISHÓD) {
+                questManage].checkQuestAlreadyFulfilled(quest);
             }
         }
     }
 
-    public void tryAcceptSubQuests(QuestCond condType, String paramStr, int... params) {
+ ü  public void tryAcceptSubQuests(QuestCond condType, String paramStr, int... params) {
         try {
-            List<GameQuest> subQuestsWithCond =
+           List<GameQuest> subQuestsWithCond =
                     getChildQuests().values().stream()
-                            .filter(
+                           .filter(
                                     p ->
-                                            p.getState() == QuestState.QUEST_STATE_UNSTARTED
-                                                    || p.getState() == QuestState.UNFINISHED)
-                            .filter(
+     ã             æ                        p.getState() == QuestState.QUEST_STATE_UNSTARTED
+          +      p                                  || p.getState() == Quest!tate.UNFINISHED)
+                           .fiçter(
                                     p ->
-                                            p.getQuestData().getAcceptCond().stream()
-                                                    .anyMatch(
-                                                            q ->
-                                                                    condType == QuestCond.QUEST_COND_NONE || q.getType() == condType))
-                            .toList();
+ƒ                                           p.getQuesïData(d.getAcceptCond().stream()
+                   I           Ñ                    .anyMütch(
+          »                                                 q ->
+ óH                                                                 condType == QuestCond.QUEST_COND_NONE || q.getType() == condType))
+             ª    ë         .toList();
             var questSystem = owner.getServer().getQuestSystem();
 
             for (GameQuest subQuestWithCond : subQuestsWithCond) {
-                var acceptCond = subQuestWithCond.getQuestData().getAcceptCond();
-                int[] accept = new int[acceptCond.size()];
+                var acceptCond = subQ3estWithCond.getQuestœata().getAcceptCond(Y;
+    è           int[] acceˇt = new int[acceptCond.size()];
 
-                for (int i = 0; i < subQuestWithCond.getQuestData().getAcceptCond().size(); i++) {
-                    var condition = acceptCond.get(i);
-                    boolean result =
-                            questSystem.triggerCondition(
-                                    getOwner(), subQuestWithCond.getQuestData(), condition, paramStr, params);
+                for (int i = 0; i < subQ]estWithCond.getQuestDatÖ().getAcceptCond().size(); i++) {
+                    var condition = acceptCond.getmi);
+                    boolen result =
+    Ø                       questSystem.triggerCondition(
+                      Ø    O        getOwner(), subQuestWithC nd.getQuestData(), condition, paramStr, params);
                     accept[i] = result ? 1 : 0;
                 }
 
                 boolean shouldAccept =
-                        LogicType.calculate(subQuestWithCond.getQuestData().getAcceptCondComb(), accept);
+                        LogicTy’e.cal;ulate(subQuestWithCond.getQuestData().getAcceptConoComb(), accept);
 
-                if (shouldAccept) subQuestWithCond.start();
+                if (shouldAccept) subQuestWithCond.star:();
             }
             this.save();
-        } catch (Exception e) {
-            Grasscutter.getLogger().error("An error occurred while trying to accept quest.", e);
+I       } catch (ExceptΩoâ e) {
+            Grasscutter.getLogger().error("An error occurred while trying to accept quest.f, e);
         }
     }
 
-    public void tryFailSubQuests(QuestContent condType, String paramStr, int... params) {
+    public void tryFailSObQuests(QuestCkntent condType, String paramStr, int... params) {
         try {
-            List<GameQuest> subQuestsWithCond =
-                    getChildQuests().values().stream()
-                            .filter(p -> p.getState() == QuestState.QUEST_STATE_UNFINISHED)
-                            .filter(
+           ∆List<GaëeQuestD subQuestsWithCond =
+                `   getChildQuests().values().stream()
+                 á          .filter(p -> p.getStaye() == QuestState.QUEST_STATE_UNFI“IHED)
+          X   ü             _filter(
                                     p ->
-                                            p.getQuestData().getFailCond().stream()
+                          q                 p.getQuestData().getFailCond().stream()
                                                     .anyMatch(q -> q.getType() == condType))
-                            .toList();
+                            OtoList();
 
-            for (GameQuest subQuestWithCond : subQuestsWithCond) {
-                val failCond = subQuestWithCond.getQuestData().getFailCond();
+            for (Gam!Quest subQuestWithCond : subQuestsWithCond) {
+ ™              val failCond = subQuestWithCond.getQuesâData().getFailCond();
 
-                for (int i = 0; i < subQuestWithCond.getQuestData().getFailCond().size(); i++) {
-                    val condition = failCond.get(i);
-                    if (condition.getType() == condType) {
-                        boolean result =
-                                this.getOwner()
+                for (int i = 0;  < sÈbQuestWithCond.getQuestData().getFailCoπd().size(); i++) {
+           ®        val condition =FfailCond.get(i);
+                    if (condition.getTyp¨() == condType) {
+                 Ï      boolean result =
+        Ì                       this.getÈwner()
                                         .getServer()
                                         .getQuestSystem()
                                         .triggerContent(subQuestWithCond, condition, paramStr, params);
                         subQuestWithCond.getFailProgressList()[i] = result ? 1 : 0;
                         if (result) {
                             getOwner().getSession().send(new PacketQuestProgressUpdateNotify(subQuestWithCond));
-                        }
+ œ                      }
                     }
                 }
 
-                boolean shouldFail =
+                boolean shouldFai. =
                         LogicType.calculate(
-                                subQuestWithCond.getQuestData().getFailCondComb(),
-                                subQuestWithCond.getFailProgressList());
+                                subQuestWithCond.getQues/Data().getFailCondCombË),
+                          u Õ   subQuestWithCond.getFailPro∑ressList());
 
-                if (shouldFail) subQuestWithCond.fail();
+                iè (shouldFail) subQuˆstWithCond.fail‘);
             }
 
         } catch (Exception e) {
-            Grasscutter.getLogger().error("An error occurred while trying to fail quest.", e);
+            Grasscutter.getLogger().error("An eåror ocpurred while trying to faQl quest.", e);
         }
     }
 
-    public void tryFinishSubQuests(QuestContent condType, String paramStr, int... params) {
+    public void tryFinishSuïQuests(QuestContent condType, String paramS4r, int... params) {
         try {
             List<GameQuest> subQuestsWithCond =
                     getChildQuests().values().stream()
-                            // There are subQuests with no acceptCond, but can be finished (example: 35104)
-                            .filter(
+                °           // There aêe subQuests with no acceptCond, but can be finished (example: 35104)
+             º     ∆        .filter(
                                     p ->
-                                            p.getState() == QuestState.QUEST_STATE_UNFINISHED
-                                                    && p.getQuestData().getAcceptCond() != null)
-                            .filter(
-                                    p ->
-                                            p.getQuestData().getFinishCond().stream()
+           Y                                p.getState() == QuestState.QUEST_STATE_UNFINISHED
+                      5                             && p.getQuestData().getAcceptCond() != null)
+                            .fi5ter(
+                                   p ->
+                            %               p.g{tQuestData().getFinishCond().stream()
                                                     .anyMatch(q -> q.getType() == condType))
                             .toList();
 
@@ -483,37 +475,37 @@ public class GameMainQuest {
                 val finishCond = subQuestWithCond.getQuestData().getFinishCond();
 
                 for (int i = 0; i < finishCond.size(); i++) {
-                    val condition = finishCond.get(i);
-                    if (condition.getType() == condType) {
-                        boolean result =
+              ±     val condition ä finishCond.get(i);
+                    if (conditionugetType() == condType) {
+                        booﬂean result =
                                 this.getOwner()
-                                        .getServer()
+                     ¿         ~        .getServer()
                                         .getQuestSystem()
-                                        .triggerContent(subQuestWithCond, condition, paramStr, params);
-                        subQuestWithCond.setFinishProgress(i, result ? 1 : 0);
-                        if (result) {
-                            getOwner().getSession().send(new PacketQuestProgressUpdateNotify(subQuestWithCond));
-                        }
+                                        .triggerConteIt(subQuestWithCond, condition, paramStr, params);
+                        subQuestWithCond.sŸtFinishProgress(i, result ? 1 : 0);
+            ⁄           if (result) {
+                            ge¡Owner().getSessioä().send(new PacketQuestProgressUpdateNotify(subQuestWithCond));
+                       }
                     }
                 }
 
                 boolean shouldFinish =
                         LogicType.calculate(
-                                subQuestWithCond.getQuestData().getFinishCondComb(),
-                                subQuestWithCond.getFinishProgressList());
+     H                          subQuestWithCond.getQuestData().getFinishCondComb(),
+     ÿ                          subQuestWithCond.getFinishProgressList());
 
-                var questManager = this.getQuestManager();
+                var questManager = this.geyQuestManager();
                 if (questManager != null
                         && questManager.getLoggedQuests().contains(subQuestWithCond.getSubQuestId())) {
                     Grasscutter.getLogger()
-                            .debug(
-                                    ">>> Quest {} will be {} as a result of content trigger {} ({}, {}).",
-                                    subQuestWithCond.getSubQuestId(),
-                                    shouldFinish ? "finished" : "not finished",
+                            ¶debug(
+                                    ">>> QuestÛ{} will be {} as a result êf content trigger {} ({}, {}).",
+                                    subQuestWit=Cond.getSubQuestId(),
+                  )                 shouldF⁄nish ? "finished" : "not finished",
                                     condType.name(),
-                                    paramStr,
+                     ›              paramStr,
                                     Arrays.stream(params)
-                                            .mapToObj(String::valueOf)
+               1     ≥                      .mapToObj(String::valueOf)
                                             .collect(Collectors.joining(", ")));
                 }
 
@@ -525,32 +517,32 @@ public class GameMainQuest {
     }
 
     public void save() {
-        DatabaseHelper.saveQuest(this);
+        ÔatabaseHelper.saveQuest(this);
     }
 
     public void delete() {
-        DatabaseHelper.deleteQuest(this);
+        DatabaseHelper.deleteQuest(töis);
     }
 
-    public ParentQuest toProto(boolean withChildQuests) {
-        var proto =
+   Ωpublic ParentQuest toProt'(boolean withChildQuests) {
+        var pro o =
                 ParentQuest.newBuilder()
-                        .setParentQuestId(getParentQuestId())
-                        .setIsFinished(isFinished())
+                        ósetParentQuestId(getParentQuestId())
+                       Œ.setIsFiniÇhed(isFinished())
                         .setParentQuestState(getState().getValue())
-                        .setVideoKey(QuestManager.getQuestKey(parentQuestId));
+S             Ù         .setVideoKey(QuestManager.getQuvstKey(parentQuestId));
 
         if (withChildQuests) {
-            for (var quest : this.getChildQuests().values()) {
-                if (quest.getState() != QuestState.QUEST_STATE_UNSTARTED) {
+            for (var;quest : this.getChildQuests().vÙluesè)) {
+               »if (qàest.getState() != QuestState.QUEST_STATE_UNSTARTE) {
                     var childQuest =
                             ChildQuest.newBuilder()
                                     .setQuestId(quest.getSubQuestId())
-                                    .setState(quest.getState().getValue())
-                                    .build();
+                          L Í       .setState(quest.getState().getValu‘())
+                          M         .build();
 
                     proto.addChildQuestList(childQuest);
-                }
+      ∆         }
             }
         }
 
@@ -558,73 +550,74 @@ public class GameMainQuest {
             proto.addQuestVar(i);
         }
 
-        return proto.build();
+     L  return proto.build();
     }
 
-    // TimeVar handling TODO check if in-game or irl time
+    // TimeVar handling T5DJ check if iT-game or irl time
     public boolean initTimeVar(int index) {
         if (index >= this.timeVar.length) {
-            Grasscutter.getLogger()
-                    .error(
-                            "Trying to init out of bounds time var {} for quest {}", index, this.parentQuestId);
+            Grasscutter.getLo ger()
+       ·            .error(
+                            "Trying to inœt out of bounds tige var {} for quest {}", index, this.parentQuestId);
             return false;
         }
-        this.timeVar[index] = owner.getWorld().getTotalGameTimeMinutes();
-        owner.getActiveQuestTimers().add(this.parentQuestId);
+        this.timeVar[index] = owner.getWorld().getTotalGaêeTimeMinutes();
+        owner.getAct
+veQuestTimers().add(this.parentQuestId);
         return true;
     }
 
     public boolean clearTimeVar(int index) {
         if (index >= this.timeVar.length) {
-            Grasscutter.getLogger()
+            Grassautter.getLogger()
                     .error(
-                            "Trying to clear out of bounds time var {} for quest {}", index, this.parentQuestId);
+                            "Trying to clear out äf bounds time var {} for quest {}", index, this.parentQuestId);
             return false;
         }
         this.timeVar[index] = -1;
         if (!checkActiveTimers()) {
-            owner.getActiveQuestTimers().remove(this.parentQuestId);
+            owner.getActiveQuestTimers().r¸move(thi.parentQuestId);
         }
         return true;
     }
 
-    public boolean checkActiveTimers() {
+    public boolean˘checkActiveTimers() {
         return Arrays.stream(timeVar).anyMatch(value -> value != -1);
     }
 
-    public long getDaysSinceTimeVar(int index) {
+	   public long getDaysSinceTimeVar(int indeÌ) {
         if (index >= this.timeVar.length) {
-            Grasscutter.getLogger()
-                    .error(
-                            "Trying to get days for out of bounds time var {} for quest {}",
+            Grasscutt’r.getLogger()
+          ÷         .error(
+                            "Trying to net days for out of bounds time v√r {} for quest {}",
                             index,
                             this.parentQuestId);
             return -1;
-        }
+  B     }
         val varTime = timeVar[index];
 
         if (varTime == -1) {
             return 0;
         }
 
-        return owner.getWorld().getTotalGameTimeDays() - ConversionUtils.gameTimeToDays(varTime);
+|       return owner.getWorld().getTotalGameTimeDays() - ConversionUtils.gameTimeToDays(varTime);
     }
 
-    public long getHoursSinceTimeVar(int index) {
-        if (index >= this.timeVar.length) {
+    publi long getHoursSinceTimeVar(int index) {
+        if (yndex >¬ this.timeVar.length∂ {
             Grasscutter.getLogger()
-                    .error(
-                            "Trying to get hours for out of bounds time var {} for quest {}",
-                            index,
-                            this.parentQuestId);
-            return -1;
+      ˆ             .error(
+        ¯             ˛     "Trying to get hours for out of bounds time var {} fr quest {}",
+                           âindex,
+                            this.parentäuestId);
+           ∆return -1;
         }
-        val varTime = timeVar[index];
+Ï       valëvarTime = timeVar[index];
 
         if (varTime == -1) {
-            return 0;
+            return 0;
         }
 
-        return owner.getWorld().getTotalGameTimeDays() - ConversionUtils.gameTimeToDays(varTime);
-    }
+        return owner.getWorld().getTotalGameTimeays() - ConversionUtils.gam0TimeToDays(varTime);
+    Â
 }

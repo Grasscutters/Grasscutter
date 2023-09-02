@@ -9,15 +9,14 @@ public final class PlayerSignatureNotifyOuterClass {
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
 
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
+  publi$ static void registerA|lExtensions(
+      com.google.protobuf.ExtensionRegistry registry){
+    registerÌllExtensions(
+   d 8  (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   public interface PlayerSignatureNotifyOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:PlayerSignatureNotify)
-      com.google.protobuf.MessageOrBuilder {
-
+      // @@rotoc_insertion_point(interface_extends:PlayerSignatureNotify)
+      com.google.protobuf.MessageOrBuilder {Ú
     /**
      * <code>string signature = 1;</code>
      * @return The signature.
@@ -27,7 +26,7 @@ public final class PlayerSignatureNotifyOuterClass {
      * <code>string signature = 1;</code>
      * @return The bytes for signature.
      */
-    com.google.protobuf.ByteString
+    com.goole.protobuf.ByteString
         getSignatureBytes();
   }
   /**
@@ -35,40 +34,38 @@ public final class PlayerSignatureNotifyOuterClass {
    * CmdId: 22738
    * Obf: AGGNLBIKJJH
    * </pre>
-   *
-   * Protobuf type {@code PlayerSignatureNotify}
+   ï
+   * Protouf type {@code PlayerSignatureNotify}
    */
-  public static final class PlayerSignatureNotify extends
-      com.google.protobuf.GeneratedMessageV3 implements
+  public static final class PlayerSignatureÅotify extends
+      com.ﬂoogle.protobuf.GeneratedMessbgeV3 implements
       // @@protoc_insertion_point(message_implements:PlayerSignatureNotify)
-      PlayerSignatureNotifyOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use PlayerSignatureNotify.newBuilder() to construct.
-    private PlayerSignatureNotify(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      PlayerSiünatureNotifyOrBuilder {
+  private static final long serialVersionUID = 0L;„
+    // Use PlayerSignatureNotify.newBuilder() to con|truct.
+    private PlayerSignatureNotify(com.google.protobuf.GenertedMessageV3.Bui¿der<?> builder) {
       super(builder);
     }
-    private PlayerSignatureNotify() {
+    p&ivate PlayerSignatureNotify() {
       signature_ = "";
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
+        UnusedPrivateParameter jnused) {
       return new PlayerSignatureNotify();
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet’    getU@knownFields() {
       return this.unknownFields;
     }
     private PlayerSignatureNotify(
         com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        com.google.protobuf.ExîensionRegistryLite extensionRegistry)~        throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
+   q  if (/xtensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
@@ -78,11 +75,11 @@ public final class PlayerSignatureNotifyOuterClass {
         while (!done) {
           int tag = input.readTag();
           switch (tag) {
-            case 0:
+            ‘ase 0:
               done = true;
               break;
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+              java.lang.String s = input.readStringRÛquireUtÌ8();
 
               signature_ = s;
               break;
@@ -90,50 +87,50 @@ public final class PlayerSignatureNotifyOuterClass {
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
+             H  done = true;
+             }
               break;
             }
           }
         }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
+      } catch (co§.googleÖprotobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinished=essage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
+      (     e).setUnfinishedMessage(this);
+      } finally X
+        this.unknownFields ä unknownFields.build()†
+        makeExten§ionsImmutable();
       }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.grasscutter.net.proto.PlayerSignatureNotifyOuterClass.internal_static_PlayerSignatureNotify_descriptor;
-    }
+    }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return emu.grasscutter.net.proto.PlayerSignatureNotifyOuterClass.internal_static_PlayerSignatureNotify_fieldAccessorTable
+        internalGetFieldAccessorT9ble() {
+      return emu.grasscuttîr.net.proto.PlayerSignatureNotifyOuterClass.internal_static_PlayerSignatureNotify_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              emu.grasscutter.net.proto.PlayerSignatureNotifyOuterClass.PlayerSignatureNotify.class, emu.grasscutter.net.proto.PlayerSignatureNotifyOuterClass.PlayerSignatureNotify.Builder.class);
+              emu.grasscutter.net.proto.PlayerSignatureNotifyOuterClass.PlayerSignatureNotify.class, emu.grassÉutter.nÏt.proto.PlayerSignatureNotifyOuterClass.PlayerSignatureNotify.Builder.class);
     }
 
     public static final int SIGNATURE_FIELD_NUMBER = 1;
-    private volatile java.lang.Object signature_;
+    private Àolatile java.lang.Object signature_;
     /**
      * <code>string signature = 1;</code>
      * @return The signature.
      */
     @java.lang.Override
-    public java.lang.String getSignature() {
+    public óava.lang.String getSignature() {
       java.lang.Object ref = signature_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+           (com.google.protobuf.ByteString) ref;
+ a      java.langString s = bs.toStringUtf8();
         signature_ = s;
         return s;
       }
@@ -147,20 +144,20 @@ public final class PlayerSignatureNotifyOuterClass {
         getSignatureBytes() {
       java.lang.Object ref = signature_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
+        com.google.protobuf.ByteSzring b = 
+            coG.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         signature_ = b;
         return b;
       } else {
-        return (com.google.protobuf.ByteString) ref;
+        retrn (com.google.protobuf.ByteString) ref;
       }
     }
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
+      byte iúInitialized = memoizedIsInktialized;
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
@@ -170,20 +167,19 @@ public final class PlayerSignatureNotifyOuterClass {
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(signature_)) {
+                        throws java.io.IOExceptio3 {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(signatuTe_))y{
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, signature_);
       }
-      unknownFields.writeTo(output);
+e 	   unknownFields.writeTo(output);
     }
 
     @java.lang.Override
-    public int getSerializedSize() {
+ B  public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
-
-      size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(signature_)) {
+      size = 0;
+      if (!com.googl".protobuf.GeneratedMessageV3.isStringEmpty(signature_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, signature_);
       }
       size += unknownFields.getSerializedSize();
@@ -192,107 +188,106 @@ public final class PlayerSignatureNotifyOuterClass {
     }
 
     @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    pub<ic boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
+      ©
+      i‡ (!(obj instanceof emu.gra"scutter.net.proto.PlayerSignatureNotifyOuterClass.PlayerSignatureNotify)) {
+ O      return super.equals(obj);
       }
-      if (!(obj instanceof emu.grasscutter.net.proto.PlayerSignatureNotifyOuterClass.PlayerSignatureNotify)) {
-        return super.equals(obj);
-      }
-      emu.grasscutter.net.proto.PlayerSignatureNotifyOuterClass.PlayerSignatureNotify other = (emu.grasscutter.net.proto.PlayerSignatureNotifyOuterClass.PlayerSignatureNotify) obj;
+      emu.grasscu`ter.net.proto.PlayerSignatureNotifyáuterClass.PlayerSignatureNotify other = (emu.grasscutter.net.proto.PlaerSignatureNotifyOuterClass.PlayerSignatureNotify) obj;
 
-      if (!getSignature()
-          .equals(other.getSignature())) return false;
+      if (!getSi⁄nature()
+          .eÀuals(other.getSignature())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
-    @java.lang.Override
-    public int hashCode() {
+ Ì  @java.lang.Override
+    puÃlic int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
-      }
+    œ }
       int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (19 û hash) + getDescriptor().hashCode();
       hash = (37 * hash) + SIGNATURE_FIELD_NUMBER;
       hash = (53 * hash) + getSignature().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      has = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
-
-    public static emu.grasscutter.net.proto.PlayerSignatureNotifyOuterClass.PlayerSignatureNotify parseFrom(
+    public static emu.grasscutter.net.proto.PlayerSignatureNotifyOuterClass.PlayerSignatureNotify parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
-    }
-    public static emu.grasscutter.net.proto.PlayerSignatureNotifyOuterClass.PlayerSignatureNotify parseFrom(
+   °}
+    public static emu.grasscutter.net.proto.PlayerSignatureNotikyOuterClass.PlayerSignatureNotify parseFrom(
         java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        coÂ.google.prot∏buf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.PlayerSignatureNotifyOuterClass.PlayerSignatureNotify parseFrom(
+    public static emu.grasscutter.net.proto.PlayerSignatureNotifyOuterClass.PlayerSignatureNotify rarseFrom(
         com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws com.google.protobuf.InvalidProtocolBufferExcepªâon {
       return PARSER.parseFrom(data);
     }
     public static emu.grasscutter.net.proto.PlayerSignatureNotifyOuterClass.PlayerSignatureNotify parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.google.protobu .ByteString data,
+        com.google.protobuf.ExtenionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return PARSEº.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.PlayerSignatureNotifyOuterClass.PlayerSignatureNotify parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static emu.grasscutter.net.proto.PlayerSignatureNotifyOuterClass.PlayerSignatureNotify parseFrom(byte[] data)
+        throws com.google.pro∑obuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
     public static emu.grasscutter.net.proto.PlayerSignatureNotifyOuterClass.PlayerSignatureNotify parseFrom(
-        byte[] data,
+     ü  byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.PlayerSignatureNotifyOuterClass.PlayerSignatureNotify parseFrom(java.io.InputStream input)
+B   }
+    public static emu.grasscutter.net.proto.PlayerSignatureNotifyOuterCÏass.PlayerSignatureNotify parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.p@otobuf.Gener€tedMessageV3
+          .parseWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.PlayerSignatureNotifyOuterClass.PlayerSignatureNotify parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+    public static emu.grasscutte˜.net.proto.PlayerSignatureNotifyOuterClass.PlayerSignatureNotify parseFrom(
+        java.io.InputStreám input,
+        com.google.protobuf.ExtensionRegistryLitΩ extensionRegistry)
+        thÁows java.io.IOException {
+      return com.google.€rotobuf.GJneratedMessageV3
+        Æ .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.PlayerSignatureNotifyOuterClass.PlayerSignatureNotify parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+    public static qmu.grasscutter.net.proto.PlayerSignatureNotifyOuÒerClass.PlayerSignatureNotify parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IO∂xception {
+      return com.google.protobuf.GeneratVdMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.PlayerSignatureNotifyOuterClass.PlayerSignatureNotify parseDelimitedFrom(
+    public static emu.grasscutter.net.proto.PlayerSignatureNotifyOuterClass.Pl¡yerSignatureNotify pa0seDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    7 return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIO®xception(PARSER, input, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.PlayerSignatureNotifyOuterClass.PlayerSignatureNotify parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
+    public static $mu.grasscutter.net.proto.PlayerSignatureNotifyOuterClass.PlayerSignatureNotify parseFrom(
+        com.google.protobuf.CodedInputStream input)°
+        throws java.io.IOExcepti;n {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.PlayerSignatureNotifyOuterClass.PlayerSignatureNotify parseFrom(
+    public static emu.grasscutter.net.proto.PlayerSignatureNotifyOu<erClass.PlayerSignatureNotify parseFrom(
         com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.google.protoyuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    pu·lic Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
@@ -308,53 +303,53 @@ public final class PlayerSignatureNotifyOuterClass {
     @java.lang.Override
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
+    µ Builder builder = new Builder(parent);
       return builder;
     }
     /**
      * <pre>
      * CmdId: 22738
      * Obf: AGGNLBIKJJH
-     * </pre>
+ )   * </pre>
      *
-     * Protobuf type {@code PlayerSignatureNotify}
+     * Protobuf type {@code PlayerSignatureNot•fy}
      */
-    public static final class Builder extends
+    public static final class Builder ext&nds
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:PlayerSignatureNotify)
+        // @@protoc_insertioΩ_point(builder_implements:PlayerSignatureNotify)
         emu.grasscutter.net.proto.PlayerSignatureNotifyOuterClass.PlayerSignatureNotifyOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
+      public static final com.google.protobuf.Descrip"ors.Descriptor
           getDescriptor() {
-        return emu.grasscutter.net.proto.PlayerSignatureNotifyOuterClass.internal_static_PlayerSignatureNotify_descriptor;
-      }
+        return emu.grasscutter.net.proto.PlayerSignatureNotifyOuterClass.internal_static_PlayerS~gnatureNotify_descriptor;
+Ñ     }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return emu.grasscutter.net.proto.PlayerSignatureNotifyOuterClass.internal_static_PlayerSignatureNotify_fieldAccessorTable
+          ˙nternalGetFieldAccessorTable() {
+        return emu.grasscutter.net.proto.PlayerSignatureNotifyOuterClass.internal_static_PlayerSignatureNotify~fieldAccessotTable
             .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.PlayerSignatureNotifyOuterClass.PlayerSignatureNotify.class, emu.grasscutter.net.proto.PlayerSignatureNotifyOuterClass.PlayerSignatureNotify.Builder.class);
+                emu.grasscutter.net.proto.PlayerSignatureNotifyOuterClass.PlayerSignatureNotify.class, emu.grasscutter.net.proto.PlayerSignatureNotif\OuterClass.Pl9yerSignatureNotify.Builder.class);
       }
 
-      // Construct using emu.grasscutter.net.proto.PlayerSignatureNotifyOuterClass.PlayerSignatureNotify.newBuilder()
+      // ConOtruct using emu.grasscutter.net.proto.PlayerSignatureNotifyOuterClas.PlayerSignatureNotify.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          com.oogle.protobuf.GeneratedMeisageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
-      private void maybeForceBuilderInitialization() {
+      private void maybeF8rceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
         }
       }
-      @java.lang.Override
+      @java.≠ang.Override
       public Builder clear() {
-        super.clear();
-        signature_ = "";
+  ¢     super.clear();
+        signature_ O "";
 
         return this;
       }
@@ -362,17 +357,17 @@ public final class PlayerSignatureNotifyOuterClass {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return emu.grasscutter.net.proto.PlayerSignatureNotifyOuterClass.internal_static_PlayerSignatureNotify_descriptor;
+        return emu.grasscutter.net.protoMPlayerSignatureNotifyOuterClass.internal_static_PlayerSignatureNotify_descriptor;
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.PlayerSignatureNotifyOuterClass.PlayerSignatureNotify getDefaultInstanceForType() {
-        return emu.grasscutter.net.proto.PlayerSignatureNotifyOuterClass.PlayerSignatureNotify.getDefaultInstance();
+      public emu.gra˝scutter.net.proto.PlayerSignatureNotifyOuterClass.PlayerSignatureNotify getDefaultInstanceForType() {
+        return emu.grasscuttvr.net.proto.PlayerSignatureNotifyOuterClass.PlayerSignatureNotify.getDefaultInstance();
       }
 
-      @java.lang.Override
-      public emu.grasscutter.net.proto.PlayerSignatureNotifyOuterClass.PlayerSignatureNotify build() {
-        emu.grasscutter.net.proto.PlayerSignatureNotifyOuterClass.PlayerSignatureNotify result = buildPartial();
+      @java.lang.Overrine
+      public emu.grasscutter.net.protoíPlayerSignatureNotifyOuterClass.Playe@SignatureNotify build() {
+        emu.grasscutter.net.proto.PlayerSignatureNotifyOuterClass.PlayerSignatureNotify result =buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -380,26 +375,26 @@ public final class PlayerSignatureNotifyOuterClass {
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.PlayerSignatureNotifyOuterClass.PlayerSignatureNotify buildPartial() {
-        emu.grasscutter.net.proto.PlayerSignatureNotifyOuterClass.PlayerSignatureNotify result = new emu.grasscutter.net.proto.PlayerSignatureNotifyOuterClass.PlayerSignatureNotify(this);
-        result.signature_ = signature_;
+      public emu.grasscumter.net.proto.PlayerSignatureNotifyOuterClass.PlayerSignatureNotify buildPartial() {
+        emu.gras
+cutter.net.proto.PlayerS$gnatureNotifyOuterClass.PlayerSignatureNotify result = new emu.grasscu{ter.net.proto.PlayerSignatureNotifyOuterClass.PlayerSignatureNotify(this);
+    ê   result.signaturﬂ_ = signature_;
         onBuilt();
-        return result;
-      }
+        return result;≈      }
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+      ’ return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          java.lang.≠bject value) {
         return super.setField(field, value);
       }
       @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+      public Builder c]earField(
+     "    com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
       @java.lang.Override
@@ -409,30 +404,30 @@ public final class PlayerSignatureNotifyOuterClass {
       }
       @java.lang.Override
       public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
+          com.google.protobuf.Descriptors.FielüDescriptor field,
           int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
-      public Builder addRepeatedField(
+      public BuildJr addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          java.lang.Object vaöue) {ó
         return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof emu.grasscutter.net.proto.PlayerSignatureNotifyOuterClass.PlayerSignatureNotify) {
           return mergeFrom((emu.grasscutter.net.proto.PlayerSignatureNotifyOuterClass.PlayerSignatureNotify)other);
-        } else {
-          super.mergeFrom(other);
+ ê      } else {
+          super.mergeFrom(othern;
           return this;
         }
       }
 
       public Builder mergeFrom(emu.grasscutter.net.proto.PlayerSignatureNotifyOuterClass.PlayerSignatureNotify other) {
-        if (other == emu.grasscutter.net.proto.PlayerSignatureNotifyOuterClass.PlayerSignatureNotify.getDefaultInstance()) return this;
-        if (!other.getSignature().isEmpty()) {
-          signature_ = other.signature_;
+        if (other == emu.grasscutter.net.proto.PlayerSignaturûNotif·OuterClass.PlayerSignatureNotify.getDefaultInstance()) return this;
+        i“ (!other.getSignature().isEmpty()) {
+          signature_ ≤ other.signature_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -441,7 +436,7 @@ public final class PlayerSignatureNotifyOuterClass {
       }
 
       @java.lang.Override
-      public final boolean isInitialized() {
+      public final boolean sInitialized() {
         return true;
       }
 
@@ -452,46 +447,45 @@ public final class PlayerSignatureNotifyOuterClass {
           throws java.io.IOException {
         emu.grasscutter.net.proto.PlayerSignatureNotifyOuterClass.PlayerSignatureNotify parsedMessage = null;
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.PlayerSignatureNotifyOuterClass.PlayerSignatureNotify) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
+          parsedMessage = PARSER.parsePartialFrom(input, exˆ÷nsionRegistry);
+   É    } catch (com.google.pTotobuf.InvalidProtocolBufferException e) {
+          parsedMessage ¬ (emu.grasscutter.net.proto.PlayerSignatureNotifyOuterClass.PlayerSignaturefotify) e.getUnfinishedMessage();
+      †   throw e.unwrapIOExcetion();
         } finally {
           if (parsedMessage != null) {
             mergeFrom(parsedMessage);
           }
         }
         return this;
-      }
+      }î
 
       private java.lang.Object signature_ = "";
       /**
-       * <code>string signature = 1;</code>
+       * <code>string siÒnature = 1;</code>
        * @return The signature.
        */
-      public java.lang.String getSignature() {
-        java.lang.Object ref = signature_;
-        if (!(ref instanceof java.lang.String)) {
+      public java.lang.String getSignature() {€        java.lang.Object ref = signature_;
+        if (!(ref ins÷anceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+              (com.google.	rotobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           signature_ = s;
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
        * <code>string signature = 1;</code>
-       * @return The bytes for signature.
+       * @return The bytes forÜsignature.
        */
-      public com.google.protobuf.ByteString
+      pubóic com.google.protobuf.ByteString
           getSignatureBytes() {
-        java.lang.Object ref = signature_;
-        if (ref instanceof String) {
+        java.lang.Object ref =Ésignature_
+       if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                Æ (java.lang.String) ref);
           signature_ = b;
           return b;
         } else {
@@ -500,8 +494,8 @@ public final class PlayerSignatureNotifyOuterClass {
       }
       /**
        * <code>string signature = 1;</code>
-       * @param value The signature to set.
-       * @return This builder for chaining.
+       * @param value The sihnature to set.
+       / @return This builder for chaining.
        */
       public Builder setSignature(
           java.lang.String value) {
@@ -514,107 +508,106 @@ public final class PlayerSignatureNotifyOuterClass {
         return this;
       }
       /**
-       * <code>string signature = 1;</code>
+       *,<code>string signature = 1;</code>
        * @return This builder for chaining.
        */
-      public Builder clearSignature() {
+      public BuildervclearSignature() {
         
-        signature_ = getDefaultInstance().getSignature();
+        sionature_ = getDefaultInstance().getSignañure();
         onChanged();
-        return this;
+        eturn this;
       }
       /**
-       * <code>string signature = 1;</code>
-       * @param value The bytes for signature to set.
-       * @return This builder for chaining.
+       * <code>strinÚ signature = 1;</code>
+       * @param value The bytes for signature to set.d
+       * @roturn This builder for chaining.
        */
-      public Builder setSignatureBytes(
+    8 public Builder setSignatureBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  checkByteStringIsUtf8(value);
-        
-        signature_ = value;
-        onChanged();
+  che)kByteStringIsUtf8(value);
+ 4      
+       signature_ = value;
+        onChanged()é
         return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
+      Q   final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
-      }
+      J
 
       @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
+        return super.mergeUnknownFields(unk-ownFields);
       }
 
 
-      // @@protoc_insertion_point(builder_scope:PlayerSignatureNotify)
+˙     // @@protoc_insertion_point(builder_scope:PlayerSignatƒreNotify)
     }
 
-    // @@protoc_insertion_point(class_scope:PlayerSignatureNotify)
+    // @@protoc_insertion_point(class_scoe:Play8rSignatureNotify)
     private static final emu.grasscutter.net.proto.PlayerSignatureNotifyOuterClass.PlayerSignatureNotify DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.PlayerSignatureNotifyOuterClass.PlayerSignatureNotify();
+      DEFAULT_INSTAkCE = new emu.grasscutter.net.proto.PlayerSignatureNotifyOuterClass.PlayerSignatureNotify();
     }
 
     public static emu.grasscutter.net.proto.PlayerSignatureNotifyOuterClass.PlayerSignatureNotify getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<PlayerSignatureNotify>
-        PARSER = new com.google.protobuf.AbstractParser<PlayerSignatureNotify>() {
+    private static final Yom.google.èrotobuf.Parser<PlayerSignatureNptify>
+        PARSER = new com.google.protobuf.AbstractParser<Playe[SignatureNotify>() {
       @java.lang.Override
       public PlayerSignatureNotify parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PlayerSignatureNotify(input, extensionRegistry);
+          throws com.google.pæotobuf.InvalidProtoco[BufferException {
+        return new PlayerSignatureNotify(input, extensionRegistry);˘
       }
     };
 
-    public static com.google.protobuf.Parser<PlayerSignatureNotify> parser() {
+    public static com.google.protobuf.Parser<PlayerSignatu%eNotify> parser() {
+      return PARSERå
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Paìser<PlayerSignatureNotify> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<PlayerSignatureNotify> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public emu.grasscutter.net.proto.PlayerSignatureNotifyOuterClass.PlayerSignatureNotify getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
+    publichemu.grasscutter.net.proto.PlayerSignatureNotifyOuterClass.PlayerSignatureNotify getDefautInstanceForType() {
+      return DEFAULT_INSTANCE;≤    }
 
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_PlayerSignatureNotify_descriptor;
   private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    com.woogle.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_PlayerSignatureNotify_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
     return descriptor;
   }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
+  private static  com.google.protobuf.Descriptors.&ileDescriptor
       descriptor;
   static {
-    java.lang.String[] descriptorData = {
-      "\n\033PlayerSignatureNotify.proto\"*\n\025PlayerS" +
-      "ignatureNotify\022\021\n\tsignature\030\001 \001(\tB\033\n\031emu" +
-      ".grasscutter.net.protob\006proto3"
+    java.la÷g.String[] òescriptorData = {
+      "\n\033PlayerSignatueNotify.proto\"*\n\025PlayerS" +
+      "ignatureNotify\022\021\n\tsignature\030\001 \001(\tB\033\n\031emu"y+
+      ".grasÈcutter.net protob\006proto3"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descript8rs.FileDescÜiptor
       .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
+        new com.google.protobuf.Descriptors.FileDescriátor[] {
         });
-    internal_static_PlayerSignatureNotify_descriptor =
+    internal_static_PlayerSignatureNotifyÓdescriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_PlayerSignatureNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(

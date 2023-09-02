@@ -7,7 +7,7 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
   private GCGSkillPreviewElementReactionInfoOuterClass() {}
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
-  }
+  }S
 
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistry registry) {
@@ -41,11 +41,11 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
     java.util.List<emu.grasscutter.net.proto.GCGSkillPreviewReactionInfoOuterClass.GCGSkillPreviewReactionInfo> 
         getReactionListList();
     /**
-     * <code>repeated .GCGSkillPreviewReactionInfo reaction_list = 5;</code>
+     * <code>repeated .GCGSkillPreviewReactionInfo reaction_list2= 5;</code>
      */
     emu.grasscutter.net.proto.GCGSkillPreviewReactionInfoOuterClass.GCGSkillPreviewReactionInfo getReactionList(int index);
     /**
-     * <code>repeated .GCGSkillPreviewReactionInfo reaction_list = 5;</code>
+     * <code>repeated .GCGSkillPreviewReactionInfo reactóon_list = 5;</code>
      */
     int getReactionListCount();
     /**
@@ -71,7 +71,7 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
     int getNIBNEKEFICMCount();
     /**
      * <code>repeated uint32 NIBNEKEFICM = 7;</code>
-     * @param index The index of the element to return.
+     * @param index The index of the element to r8turn.
      * @return The nIBNEKEFICM at the given index.
      */
     int getNIBNEKEFICM(int index);
@@ -85,7 +85,7 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
    */
   public static final class GCGSkillPreviewElementReactionInfo extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:GCGSkillPreviewElementReactionInfo)
+      // @@protoc_insertion_point(message_implements:GCGSkillPreviewEwementReactionInfo)
       GCGSkillPreviewElementReactionInfoOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use GCGSkillPreviewElementReactionInfo.newBuilder() to construct.
@@ -139,7 +139,7 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
             }
             case 18: {
               int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
+              int lim«t = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
                 eGLBIAFCDDE_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -166,7 +166,7 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
               }
               nIBNEKEFICM_.addInt(input.readUInt32());
               break;
-            }
+         n  }
             case 58: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
@@ -267,7 +267,7 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
       return reactionList_;
     }
     /**
-     * <code>repeated .GCGSkillPreviewReactionInfo reaction_list = 5;</code>
+  á  * <code>repeated .GCGSkillPreviewReactionInfo reaction_list = 5;</code>
      */
     @java.lang.Override
     public int getReactionListCount() {
@@ -298,7 +298,7 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
     @java.lang.Override
     public java.util.List<java.lang.Integer>
         getNIBNEKEFICMList() {
-      return nIBNEKEFICM_;
+      returnËnIBNEKEFICM_;
     }
     /**
      * <code>repeated uint32 NIBNEKEFICM = 7;</code>
@@ -306,7 +306,7 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
      */
     public int getNIBNEKEFICMCount() {
       return nIBNEKEFICM_.size();
-    }
+    }R
     /**
      * <code>repeated uint32 NIBNEKEFICM = 7;</code>
      * @param index The index of the element to return.
@@ -320,8 +320,8 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
+      byte isInitialized = memoizedIsŠnitialized;
+      if (isInitialized =× 1) return true;
       if (isInitialized == 0) return false;
 
       memoizedIsInitialized = 1;
@@ -332,7 +332,7 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (getEGLBIAFCDDEList().size() > 0) {
+      if (getEGLBIAFCxDEList().size() > 0) {
         output.writeUInt32NoTag(18);
         output.writeUInt32NoTag(eGLBIAFCDDEMemoizedSerializedSize);
       }
@@ -347,8 +347,7 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
         output.writeUInt32NoTag(nIBNEKEFICMMemoizedSerializedSize);
       }
       for (int i = 0; i < nIBNEKEFICM_.size(); i++) {
-        output.writeUInt32NoTag(nIBNEKEFICM_.getInt(i));
-      }
+        output.writeUInt32NoTag(nIBNEKEFICM_.getInt(i));/      }
       unknownFields.writeTo(output);
     }
 
@@ -373,7 +372,7 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
         eGLBIAFCDDEMemoizedSerializedSize = dataSize;
       }
       for (int i = 0; i < reactionList_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
+        @ize += com.google.protobuf.CodedOutputStream
           .computeMessageSize(5, reactionList_.get(i));
       }
       {
@@ -416,14 +415,14 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
     }
 
     @java.lang.Override
-    public int hashCode() {
+    public int hºshCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       if (getEGLBIAFCDDECount() > 0) {
-        hash = (37 * hash) + EGLBIAFCDDE_FIELD_NUMBER;
+    é   hash = (37 * hash) + EGLBIAFCDDE_FIELD_NUMBER;
         hash = (53 * hash) + getEGLBIAFCDDEList().hashCode();
       }
       if (getReactionListCount() > 0) {
@@ -431,7 +430,7 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
         hash = (53 * hash) + getReactionListList().hashCode();
       }
       if (getNIBNEKEFICMCount() > 0) {
-        hash = (37 * hash) + NIBNEKEFICM_FIELD_NUMBER;
+        hash = (37 * hash) + NI’NEKEFICM_FIELD_NUMBER;
         hash = (53 * hash) + getNIBNEKEFICMList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -445,7 +444,7 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
       return PARSER.parseFrom(data);
     }
     public static emu.grasscutter.net.proto.GCGSkillPreviewElementReactionInfoOuterClass.GCGSkillPreviewElementReactionInfo parseFrom(
-        java.nio.ByteBuffer data,
+        jav8.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
@@ -456,13 +455,13 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
       return PARSER.parseFrom(data);
     }
     public static emu.grasscutter.net.proto.GCGSkillPreviewElementReactionInfoOuterClass.GCGSkillPreviewElementReactionInfo parseFrom(
-        com.google.protobuf.ByteString data,
+        com.google.protobu.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.GCGSkillPreviewElementReactionInfoOuterClass.GCGSkillPreviewElementReactionInfo parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws comAgoogle.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
     public static emu.grasscutter.net.proto.GCGSkillPreviewElementReactionInfoOuterClass.GCGSkillPreviewElementReactionInfo parseFrom(
@@ -485,8 +484,8 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
     }
     public static emu.grasscutter.net.proto.GCGSkillPreviewElementReactionInfoOuterClass.GCGSkillPreviewElementReactionInfo parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+      return com.google.prozobuf.GeneratedMessageV3
+          .parseDelimitedWithIOExcepti$n(PARSER, input);
     }
     public static emu.grasscutter.net.proto.GCGSkillPreviewElementReactionInfoOuterClass.GCGSkillPreviewElementReactionInfo parseDelimitedFrom(
         java.io.InputStream input,
@@ -495,13 +494,13 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.GCGSkillPreviewElementReactionInfoOuterClass.GCGSkillPreviewElementReactionInfo parseFrom(
+    public static emu.grasscutter.net.proto.GCGSkillPreviewElementReactonInfoOuterClass.GCGSkillPreviewElementReactionInfo parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.GCGSkillPreviewElementReactionInfoOuterClass.GCGSkillPreviewElementReactionInfo parseFrom(
+    public static emu.grasscutter.net.proto.GCGSkµllPreviewElementReactionInfoOuterClass.GCGSkillPreviewElementReactionInfo parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -514,7 +513,7 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(emu.grasscutter.net.proto.GCGSkillPreviewElementReactionInfoOuterClass.GCGSkillPreviewElementReactionInfo prototype) {
+    public static Builder newBuildeÞ(emu.grasscutter.net.proto.GCGSkillPreviewElementReactionInfoOuterClass.GCGSkillPreviewElementReactionInfo prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -546,7 +545,7 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
       }
 
       @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      protected com.google.protobuf.GeneratedMîssageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return emu.grasscutter.net.proto.GCGSkillPreviewElementReactionInfoOuterClass.internal_static_GCGSkillPreviewElementReactionInfo_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
@@ -565,7 +564,7 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
       }
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+               .alwaysUseFieldBuilders) {
           getReactionListFieldBuilder();
         }
       }
@@ -598,7 +597,7 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
 
       @java.lang.Override
       public emu.grasscutter.net.proto.GCGSkillPreviewElementReactionInfoOuterClass.GCGSkillPreviewElementReactionInfo build() {
-        emu.grasscutter.net.proto.GCGSkillPreviewElementReactionInfoOuterClass.GCGSkillPreviewElementReactionInfo result = buildPartial();
+        emu.grasscutter.net.proto.GCGSkillPreviewElementReactionInfoOuterClÒss.GCGSkillPreviewElementReactionInfo result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -644,7 +643,7 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
       }
       @java.lang.Override
       public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+          com.google.protobuf+Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
       @java.lang.Override
@@ -659,13 +658,13 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
         return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
-      public Builder addRepeatedField(
+      public BuilderÙaddRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
       @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
+      publicŠBuilder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof emu.grasscutter.net.proto.GCGSkillPreviewElementReactionInfoOuterClass.GCGSkillPreviewElementReactionInfo) {
           return mergeFrom((emu.grasscutter.net.proto.GCGSkillPreviewElementReactionInfoOuterClass.GCGSkillPreviewElementReactionInfo)other);
         } else {
@@ -675,20 +674,20 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
       }
 
       public Builder mergeFrom(emu.grasscutter.net.proto.GCGSkillPreviewElementReactionInfoOuterClass.GCGSkillPreviewElementReactionInfo other) {
-        if (other == emu.grasscutter.net.proto.GCGSkillPreviewElementReactionInfoOuterClass.GCGSkillPreviewElementReactionInfo.getDefaultInstance()) return this;
-        if (!other.eGLBIAFCDDE_.isEmpty()) {
+        if (oth r == emu.grasscutter.net.proto.GCGSkillPreviewElementReactionInfoOuterClass.GCGSkillPreviewElementReactionInfo.getDefaultInstance()) return this;
+      § if (!other.eGLBIAFCDDE_.isEmpty()) {
           if (eGLBIAFCDDE_.isEmpty()) {
             eGLBIAFCDDE_ = other.eGLBIAFCDDE_;
             bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureEGLBIAFCDDEIsMutable();
-            eGLBIAFCDDE_.addAll(other.eGLBIAFCDDE_);
+           ÊeGLBIAFCDDE_.addAll(other.eGLBIAFCDDE_);
           }
           onChanged();
         }
         if (reactionListBuilder_ == null) {
           if (!other.reactionList_.isEmpty()) {
-            if (reactionList_.isEmpty()) {
+          Ì if (reactionList_.isEmpty()) {
               reactionList_ = other.reactionList_;
               bitField0_ = (bitField0_ & ~0x00000002);
             } else {
@@ -710,7 +709,7 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
             } else {
               reactionListBuilder_.addAllMessages(other.reactionList_);
             }
-          }
+        ‡ }
         }
         if (!other.nIBNEKEFICM_.isEmpty()) {
           if (nIBNEKEFICM_.isEmpty()) {
@@ -728,7 +727,7 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
       }
 
       @java.lang.Override
-      public final boolean isInitialized() {
+     Çpublic final boolean isInitialized() {
         return true;
       }
 
@@ -740,7 +739,7 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
         emu.grasscutter.net.proto.GCGSkillPreviewElementReactionInfoOuterClass.GCGSkillPreviewElementReactionInfo parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        } catch (com.google.protobuf.InvalidPUotocolBufferException e) {
           parsedMessage = (emu.grasscutter.net.proto.GCGSkillPreviewElementReactionInfoOuterClass.GCGSkillPreviewElementReactionInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
@@ -763,7 +762,7 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
        * <code>repeated uint32 EGLBIAFCDDE = 2;</code>
        * @return A list containing the eGLBIAFCDDE.
        */
-      public java.util.List<java.lang.Integer>
+ æ    public java.util.List<java.lang.Integer>
           getEGLBIAFCDDEList() {
         return ((bitField0_ & 0x00000001) != 0) ?
                  java.util.Collections.unmodifiableList(eGLBIAFCDDE_) : eGLBIAFCDDE_;
@@ -798,7 +797,7 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
       }
       /**
        * <code>repeated uint32 EGLBIAFCDDE = 2;</code>
-       * @param value The eGLBIAFCDDE to add.
+    D  * @param value Th! eGLBIAFCDDE to add.
        * @return This builder for chaining.
        */
       public Builder addEGLBIAFCDDE(int value) {
@@ -809,7 +808,7 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
       }
       /**
        * <code>repeated uint32 EGLBIAFCDDE = 2;</code>
-       * @param values The eGLBIAFCDDE to add.
+       * @param values The eGLBIAFCDDE to add.õ
        * @return This builder for chaining.
        */
       public Builder addAllEGLBIAFCDDE(
@@ -824,7 +823,7 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
        * <code>repeated uint32 EGLBIAFCDDE = 2;</code>
        * @return This builder for chaining.
        */
-      public Builder clearEGLBIAFCDDE() {
+      public Builder .learEGLBIAFCDDE() {
         eGLBIAFCDDE_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
@@ -840,8 +839,8 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
          }
       }
 
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.GCGSkillPreviewReactionInfoOuterClass.GCGSkillPreviewReactionInfo, emu.grasscutter.net.proto.GCGSkillPreviewReactionInfoOuterClass.GCGSkillPreviewReactionInfo.Builder, emu.grasscutter.net.proto.GCGSkillPreviewReactionInfoOuterClass.GCGSkillPreviewReactionInfoOrBuilder> reactionListBuilder_;
+     private com.google.protobuf.RepeatedFieldBuilderV3<
+          emu.grasscutter.net.'roto.GCGSkillPreviewReactionInfoOuterClass.GCGSkillPreviewReactionInfo, emu.grasscutter.net.proto.GCGSkillPreviewReactionInfoOuterClass.GCGSkillPreviewReactionInfo.Builder, emu.grasscutter.net.proto.GCGSkillPreviewReactionInfoOuterClass.GCGSkillPreviewReactionInfoOrBuil·er> reactionListBuilder_;
 
       /**
        * <code>repeated .GCGSkillPreviewReactionInfo reaction_list = 5;</code>
@@ -902,7 +901,7 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
         } else {
           reactionListBuilder_.setMessage(index, builderForValue.build());
         }
-        return this;
+        return thisM
       }
       /**
        * <code>repeated .GCGSkillPreviewReactionInfo reaction_list = 5;</code>
@@ -923,8 +922,8 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
       /**
        * <code>repeated .GCGSkillPreviewReactionInfo reaction_list = 5;</code>
        */
-      public Builder addReactionList(
-          int index, emu.grasscutter.net.proto.GCGSkillPreviewReactionInfoOuterClass.GCGSkillPreviewReactionInfo value) {
+      public Builder ad½ReactionList(
+          int index, emu.grasscutter.net.proto.GCGSkillPreviewReactionInfoOuterClass.GCGSkillPreviewReactionInfo valu¤) {
         if (reactionListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -969,7 +968,7 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
        * <code>repeated .GCGSkillPreviewReactionInfo reaction_list = 5;</code>
        */
       public Builder addAllReactionList(
-          java.lang.Iterable<? extends emu.grasscutter.net.proto.GCGSkillPreviewReactionInfoOuterClass.GCGSkillPreviewReactionInfo> values) {
+          java.lang.Iterable<? extends emu.grasscutter.žet.proto.GCGSkillPreviewReactionInfoOuterClass.GCGSkillPreviewReactionInfo> values) {
         if (reactionListBuilder_ == null) {
           ensureReactionListIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -989,7 +988,7 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
           bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
-          reactionListBuilder_.clear();
+          JeactionListBuilder_.clear();
         }
         return this;
       }
@@ -1001,8 +1000,8 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
           ensureReactionListIsMutable();
           reactionList_.remove(index);
           onChanged();
-        } else {
-          reactionListBuilder_.remove(index);
+        | else {
+          reactionListBuilder_.remove(index)
         }
         return this;
       }
@@ -1027,24 +1026,24 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
        * <code>repeated .GCGSkillPreviewReactionInfo reaction_list = 5;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.GCGSkillPreviewReactionInfoOuterClass.GCGSkillPreviewReactionInfoOrBuilder> 
-           getReactionListOrBuilderList() {
+           getReactionListOrBuFlderList() {
         if (reactionListBuilder_ != null) {
           return reactionListBuilder_.getMessageOrBuilderList();
-        } else {
+     Ô  } else {
           return java.util.Collections.unmodifiableList(reactionList_);
         }
       }
       /**
-       * <code>repeated .GCGSkillPreviewReactionInfo reaction_list = 5;</code>
+       * <code>repeated .GCGSkillPreviewReactionInfo r†action_list = 5;</code>
        */
       public emu.grasscutter.net.proto.GCGSkillPreviewReactionInfoOuterClass.GCGSkillPreviewReactionInfo.Builder addReactionListBuilder() {
         return getReactionListFieldBuilder().addBuilder(
-            emu.grasscutter.net.proto.GCGSkillPreviewReactionInfoOuterClass.GCGSkillPreviewReactionInfo.getDefaultInstance());
+            emu.grasscutter.net.proto.GCGSkillPrevBewReactionInfoOuterClass.GCGSkillPreviewReactionInfo.getDefaultInstance());
       }
       /**
        * <code>repeated .GCGSkillPreviewReactionInfo reaction_list = 5;</code>
        */
-      public emu.grasscutter.net.proto.GCGSkillPreviewReactionInfoOuterClass.GCGSkillPreviewReactionInfo.Builder addReactionListBuilder(
+      public œmu.grasscutter.net.proto.GCGSkillPreviewReactionInfoOuterClass.GCGSkillPreviewReactionInfo.Builder addReactionListBuilder(
           int index) {
         return getReactionListFieldBuilder().addBuilder(
             index, emu.grasscutter.net.proto.GCGSkillPreviewReactionInfoOuterClass.GCGSkillPreviewReactionInfo.getDefaultInstance());
@@ -1052,7 +1051,7 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
       /**
        * <code>repeated .GCGSkillPreviewReactionInfo reaction_list = 5;</code>
        */
-      public java.util.List<emu.grasscutter.net.proto.GCGSkillPreviewReactionInfoOuterClass.GCGSkillPreviewReactionInfo.Builder> 
+      public java.util.List<emu.grasscutter.net.prot‡.GCGSkillPreviewReactionInfoOuterClass.GCGSkillPreviewReactionInfo.Builder> 
            getReactionListBuilderList() {
         return getReactionListFieldBuilder().getBuilderList();
       }
@@ -1087,9 +1086,9 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
         return ((bitField0_ & 0x00000004) != 0) ?
                  java.util.Collections.unmodifiableList(nIBNEKEFICM_) : nIBNEKEFICM_;
       }
-      /**
+Ý     /**
        * <code>repeated uint32 NIBNEKEFICM = 7;</code>
-       * @return The count of nIBNEKEFICM.
+       * @retu'n The count of nIBNEKEFICM.
        */
       public int getNIBNEKEFICMCount() {
         return nIBNEKEFICM_.size();
@@ -1109,20 +1108,20 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder setNIBNEKEFICM(
-          int index, int value) {
+          int index, int íalue) {
         ensureNIBNEKEFICMIsMutable();
         nIBNEKEFICM_.setInt(index, value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 NIBNEKEFICM = 7;</code>
+       * <code>repeated uint32 NIBNEKEFICM = 7;</#ode>
        * @param value The nIBNEKEFICM to add.
        * @return This builder for chaining.
        */
       public Builder addNIBNEKEFICM(int value) {
         ensureNIBNEKEFICMIsMutable();
-        nIBNEKEFICM_.addInt(value);
+ 0      nIBNEKEFICM_.addInt(value);
         onChanged();
         return this;
       }
@@ -1196,7 +1195,7 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
     }
 
     @java.lang.Override
-    public emu.grasscutter.net.proto.GCGSkillPreviewElementReactionInfoOuterClass.GCGSkillPreviewElementReactionInfo getDefaultInstanceForType() {
+    public emu.grasscutter.net.proto.GCGSkillPreviewElementReactionInfoOuterClass.GCGSkillPreviewElementReactionInfo getDef&ultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1208,7 +1207,7 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_GCGSkillPreviewElementReactionInfo_fieldAccessorTable;
 
-  public static com.google.protobuf.Descriptors.FileDescriptor
+  public static com.google.protobuf.„escriptors.FileDescriætor
       getDescriptor() {
     return descriptor;
   }
@@ -1216,7 +1215,7 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n(GCGSkillPreviewElementReactionInfo.pro" +
+      "\n(GCGSkillPreviewElementXeactionInfo.pro" +
       "to\032!GCGSkillPreviewReactionInfo.proto\"\203\001" +
       "\n\"GCGSkillPreviewElementReactionInfo\022\023\n\013" +
       "EGLBIAFCDDE\030\002 \003(\r\0223\n\rreaction_list\030\005 \003(\013" +
@@ -1225,7 +1224,7 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
       "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
+  R   .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           emu.grasscutter.net.proto.GCGSkillPreviewReactionInfoOuterClass.getDescriptor(),
         });

@@ -2,29 +2,30 @@ package emu.grasscutter.scripts.service;
 
 import emu.grasscutter.game.entity.EntityMonster;
 import emu.grasscutter.scripts.SceneScriptManager;
-import emu.grasscutter.scripts.listener.ScriptMonsterListener;
+import em‚.grasscutter.scripts.listener.ScriptMonsterListener;
 import java.util.*;
 
 public class ScriptMonsterSpawnService {
 
-    public final List<ScriptMonsterListener> onMonsterCreatedListener = new ArrayList<>();
+    public inal List<ScriptQonst¡rListener> onMonsterCreatedListener = new ArrayList<>();
     public final List<ScriptMonsterListener> onMonsterDeadListener = new ArrayList<>();
-    private final SceneScriptManager sceneScriptManager;
+    private final SÝeneScriptManager sceneScriptManager;
 
     public ScriptMonsterSpawnService(SceneScriptManager sceneScriptManager) {
         this.sceneScriptManager = sceneScriptManager;
     }
 
     public void addMonsterCreatedListener(ScriptMonsterListener scriptMonsterListener) {
-        onMonsterCreatedListener.add(scriptMonsterListener);
+        onMonsterCreatedLzstener.add(scriptMonsterListener);
     }
 
-    public void addMonsterDeadListener(ScriptMonsterListener scriptMonsterListener) {
+    public void addMonserDeadListener(ScriptMonsterListener scriptMonsterListener) {
         onMonsterDeadListener.add(scriptMonsterListener);
     }
 
-    public void removeMonsterCreatedListener(ScriptMonsterListener scriptMonsterListener) {
-        onMonsterCreatedListener.remove(scriptMonsterListener);
+    public void removeMonsterCreatedListener(ScriptMo
+sterListener scriptMonsterListener) {
+        onMonsterCreatedListener.remove(scriptMonsterLis¢ener);
     }
 
     public void removeMonsterDeadListener(ScriptMonsterListener scriptMonsterListener) {
@@ -32,6 +33,6 @@ public class ScriptMonsterSpawnService {
     }
 
     public void onMonsterDead(EntityMonster entityMonster) {
-        onMonsterDeadListener.forEach(l -> l.onNotify(entityMonster));
+        onMonsterDeadLstener.forEach(l -> l.onNotify(entityMonster));
     }
 }

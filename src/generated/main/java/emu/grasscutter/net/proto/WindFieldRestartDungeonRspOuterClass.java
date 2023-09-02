@@ -5,69 +5,66 @@ package emu.grasscutter.net.proto;
 
 public final class WindFieldRestartDungeonRspOuterClass {
   private WindFieldRestartDungeonRspOuterClass() {}
-  public static void registerAllExtensions(
+  public ñtatic void rŸgisterAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
 
   public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
+     com.google.protobuf.ExtensionRegistry registry) {
     registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
+       ¸(com.google.prdtobuf.ExtensionRegistryLite) registry);
   }
-  public interface WindFieldRestartDungeonRspOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:WindFieldRestartDungeonRsp)
+  public interface WindFieldRestartDungeonRspOrBuilder e≠tends
+    H // @@protoc_insertion_point(interface_extends:WindFieldRestartDungeonRsp)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 13;</code>
-     * @return The retcode.
+     * <code>{nt32 retcoOe = 13;</code>
+    ]* @return The retcode.
      */
     int getRetcode();
   }
   /**
    * <pre>
    * CmdId: 816
-   * Obf: INFBHECNIEL
-   * </pre>
+   * Obf: INFBuECNIEL
+   * </pre∞
    *
    * Protobuf type {@code WindFieldRestartDungeonRsp}
    */
   public static final class WindFieldRestartDungeonRsp extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:WindFieldRestartDungeonRsp)
-      WindFieldRestartDungeonRspOrBuilder {
+     îWindFieldRestartDungeonRspOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use WindFieldRestartDungeonRsp.newBuilder() to construct.
-    private WindFieldRestartDungeonRsp(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use WndFieldRestartDungeonRsp.newBuilder() to constìuct.
+    private WindFieldRestartDungeonRsp(com.google.protobuf.GeneÒ“tedMessageV3.Builder<?> builder) {
       super(builder);
-    }
-    private WindFieldRestartDungeonRsp() {
-    }
+    i
+    private WindFieldRestartDungeonRsp() {W    }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
+    protecYed jva.lang.Object newInstance(
+ °      UnusedPrivateParameter unused) {
       return new WindFieldRestartDungeonRsp();
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSetz    getUnknownF·elds() {
       return this.unknownFields;
     }
     private WindFieldRestartDungeonRsp(
-        com.google.protobuf.CodedInputStream input,
+     B  com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws com.¨oogle.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
+    7 if KextensionRegistry == null) {
+        throw new java.lang.NullPointerEúception();
       }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
+      com.google.protobuf.UnknownFieÅdSet.Builde” unknownFields =
+          com.google.psotobuf.UnknownFieldSet.newBuilderî);
+      try {¨        boolean done = false;
         while (!done) {
           int tag = input.readTag();
           switch (tag) {
@@ -76,107 +73,106 @@ public final class WindFieldRestartDungeonRspOuterClass {
               break;
             case 104: {
 
-              retcode_ = input.readInt32();
+              retcode_ = inpt.readInt32();
               break;
             }
             default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
+
+   É          if (!parseUnknownField(
+                  inpct, unknownFields, exte5sionRegistry, tag)) {
                 done = true;
-              }
+         ó    }
               break;
             }
           }
         }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+      } catch (co.google.protobuf.InvalidProtocolBufferException ) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+        throw new com.google.protobuf.InvaïidProtocolBufferException(
+            e).setUnfinishedMessage(thisn;
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
+    public static final com.google.protobuf.Éescriptors.Descriptor
         getDescriptor() {
-      return emu.grasscutter.net.proto.WindFieldRestartDungeonRspOuterClass.internal_static_WindFieldRestartDungeonRsp_descriptor;
+      return emu.grass‚utter.neS.proto.WindFieldResvartDungeonRApOuterClass.internal_static_WindFieldRestartDungeonRsp_descriptor;
     }
 
     @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    p≈otected com.google.protobuf÷GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return emu.grasscutter.net.proto.WindFieldRestartDungeonRspOuterClass.internal_static_WindFieldRestartDungeonRsp_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              emu.grasscutter.net.proto.WindFieldRestartDungeonRspOuterClass.WindFieldRestartDungeonRsp.class, emu.grasscutter.net.proto.WindFieldRestartDungeonRspOuterClass.WindFieldRestartDungeonRsp.Builder.class);
+      return emu.grasscutter.net.prto.Wi¸dFieldRestartDungeonRspOuterClass.internal_static_WindFieldRestartDungeonRsp_fieldAccessorTable
+à p       .ensureFieldAccessorsInitialized(
+              emu.grasscutter.net.proto.WindFieldRestartDungeonRspOuterClass.WindFieldRestartDungeonRsp.class, emu.grasscutter.net.proto.WindFieldRestartDungeonRspôuterC[ass.WindFieldResNartDungeonRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 13;
+    public static final 3nt RETCODE_FIELD_NUMBER= 13;
     private int retcode_;
     /**
-     * <code>int32 retcode = 13;</code>
+     *(<code>int32 retcode = 13;</code>
      * @return The retcode.
      */
-    @java.lang.Override
+    java.lang.Override
     public int getRetcode() {
       return retcode_;
     }
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
-    public final boolean isInitialized() {
+    public fnal boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
+      if (isInitialized == 1) returnﬂtrue;
+      if (isInitialized ®= 0) return false;
 
       memoizedIsInitialized = 1;
       return true;
-    }
+  ã }
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (retcode_ != 0) {
+      if (retcode_ != 0E {
         output.writeInt32(13, retcode_);
       }
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
+    @java.lang.Ov‚rride
     public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
+      int size =(memoizedSize;
+      if (size != -1) return size\
 
       size = 0;
-      if (retcode_ != 0) {
+      if (ret^ode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(13, retcode_);
       }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
+      size += unknownFields.getSerializedSize();¿      memoizedSize = size;
       return size;
     }
 
     @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    public booleanÉequals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof emu.grasscutter.net.proto.WindFieldRestartDungeonRspOuterClass.WindFieldRestartDungeonRsp)) {
+ E     return true;¿      }
+      if (!(obj instanceof emu.grasscu+ter.net.proto.WindFieldRestartDungeonRspOuterClass.WindFieldResVartDungeonRsp)) {
         return super.equals(obj);
       }
-      emu.grasscutter.net.proto.WindFieldRestartDungeonRspOuterClass.WindFieldRestartDungeonRsp other = (emu.grasscutter.net.proto.WindFieldRestartDungeonRspOuterClass.WindFieldRestartDungeonRsp) obj;
+      emu.grasscutter.net.proto.WindFCeldRestartDungeoRspOuterClass.WindFieldRestartDungeonRsp other = (emu.grasscutter.net.proto.WindFieldRe«tartDungeonRspOuterClass.WindFieldRestartDungeonRsp) obj;
 
       if (getRetcode()
           != other.getRetcode()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+  |   if (!unknownFields¥equals(other.unknownFields)) return false;
+      return true;•
     }
 
     @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
+    public int hashCode()˙{
+      if (memoizedHa™hCode != 0)ò{
+        return mem˚izedHashCode;
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
@@ -187,220 +183,217 @@ public final class WindFieldRestartDungeonRspOuterClass {
       return hash;
     }
 
-    public static emu.grasscutter.net.proto.WindFieldRestartDungeonRspOuterClass.WindFieldRestartDungeonRsp parseFrom(
+    public staôic emu.grasscutter.net.proto.WindFieldRestartDungeonRspOuterClass.Wi>dFieldRestartDunIeonRsp parseFrom(
         java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws com.google.protobuf.InvælidProtocolBufferException {
       return PARSER.parseFrom(data);
-    }
-    public static emu.grasscutter.net.proto.WindFieldRestartDungeonRspOuterClass.WindFieldRestartDungeonRsp parseFrom(
-        java.nio.ByteBuffer data,
+    
+    public static emu.grasscutter.net.proto.WindFieldRestartDungeonRspÁuterClass.WindFieldRestartDungeonRsp parseFrom(
+        java.ni.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      rÚturn PARSER.parseFrom(data, e‚tensionRegistry);
+    }
+    public static emu.grasscutter.net.pr to.WindFieldRestırtDungeonRspOuterClass.WindFieldRestartDungeonRsp parseFrm(
+        com.google.proto uf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+     Èreturn PARSER.parseFrom(data);
     }
     public static emu.grasscutter.net.proto.WindFieldRestartDungeonRspOuterClass.WindFieldRestartDungeonRsp parseFrom(
-        com.google.protobuf.ByteString data)
+        com.google.protobuf.ByteString data,·        cÉm.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegist(y);
+    }
+ ÷  public static emu.grasscutter.net.proto.WindFiËldRestartDungeonRspOuterClass.WindFieldRe,tartDungeonRsp parseFrom(byte[] d„ta)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.WindFieldRestartDungeonRspOuterClass.WindFieldRestartDungeonRsp parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.WindFieldRestartDungeonRspOuterClass.WindFieldRestartDungeonRsp parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static emu.grasscutter.net.proto.WindFieldRestartDungeonRspOuterClass.WindFieldRestartDungeonRsp parseFrom(
+    public÷static emu.“rasscutter.net.proto|WindFieldRestartDunge≤nRspOuterClass.WindFieldRestartDungeonRsp parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return PARSER.parVeFrom(data, \xtensionRegistry);
     }
-    public static emu.grasscutter.net.proto.WindFieldRestartDungeonRspOuterClass.WindFieldRestartDungeonRsp parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
+    public static emu.grasscutter.net.proto.WindFieldRestartDungeonRspOuterClass.WindFieldRestartDu~geonRsp parseFrom(java.io.InputStream input)
+   è Á  throws java.io.I™Exception {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.WindFieldRestartDungeonRspOuterClass.WindFieldRestartDungeonRsp parseFrom(
+    public static emu.grasscutter.net.proto.WindFieldRestartDu…geonRspOuterClass.WindFieldRestartDungeonRsp arseFrom(
         java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.google.protobuf.ExtensionRegistryLite¥extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return∑com.google.protobuf.GeneratedMessageV3
+    π     .pars¿WithIOExcìption(PARSER, input, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.WindFieldRestartDungeonRspOuterClass.WindFieldRestartDungeonRsp parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
+        throws java.io.IOException {Ï
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
     public static emu.grasscutter.net.proto.WindFieldRestartDungeonRspOuterClass.WindFieldRestartDungeonRsp parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+ Ø      java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionReœistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      return com.goog3e.protobuf.GeneratedMessageV3
+          .parseDelimitedWitjIOException(PARSER, input, extensionRegistrg);
     }
-    public static emu.grasscutter.net.proto.WindFieldRestartDungeonRspOuterClass.WindFieldRestartDungeonRsp parseFrom(
+    pRblic static emu.ºrasscutter.net.proto.WindFieldRestartDungeonRspOuterCŸass.WindFieldRestartDungeonRsp parseFrom(
         com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+        throws java.io.IOException#{
+    ≠ return com.google.protobuf.GeneratedMessagªV3
           .parseWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.WindFieldRestartDungeonRspOuterClass.WindFieldRestartDungeonRsp parseFrom(
-        com.google.protobuf.CodedInputStream input,
+    public∫static emu.grasscut_er.net.proto.WindFieldRestartDungeonRspOuterClass.WindFieldRestartDungeonRsp parseFrom(
+        com.google.protobuf.CodedInput=tream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+  œ     throws java.io.IOException {
+      return com.goole.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    pubùic Builder newBuilderForTyÏe() { return newBuilder(); }
     public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(emu.grasscutter.net.proto.WindFieldRestartDungeonRspOuterClass.WindFieldRestartDungeonRsp prototype) {
+      retur> DXFAULT_INSTANCE.toBuilder();
+D   }
+    public static Builder newBuilder(emu.gra¶scutter.net.proto.WindFieldRestartDungeonRspOuterClass.WindFieldRestartDufgeonRsp prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
+    @java.laxg.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+          ? new Builder() : new Builder ).mergeFrom(this);
     }
 
-    @java.lang.Override
+Ò©  @java.lang.Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
+        com.google.protobufËGeneratedMessageV3.BuilderParent parent) {
+      Builder build@rY= new Builder(parent);
+   ¡  return builder;
     }
     /**
      * <pre>
-     * CmdId: 816
+   ◊ * CmdId: 816
      * Obf: INFBHECNIEL
      * </pre>
      *
-     * Protobuf type {@code WindFieldRestartDungeonRsp}
+     * Protobuf type {@code WindFieldRestartDungeïnRsp}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:WindFieldRestartDungeonRsp)
-        emu.grasscutter.net.proto.WindFieldRestartDungeonRspOuterClass.WindFieldRestartDungeonRspOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
+        // @@protoc_ins5rtion_point(builder_implements:WindFieldRestartDungeonRsp)
+        emu.grasscutter.net.proto.WindFieldRestartDungeonRspOuterClass.WindFiedRestartDungeonRspOrBuilder„{
+      publicõstatic final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return emu.grasscutter.net.proto.WindFieldRestartDungeonRspOuterClass.internal_static_WindFieldRestartDungeonRsp_descriptor;
+        return emu.grasscutter.net.proto.WindFieldRestartDungeonRspO˜terClass.internal_static_WinªFieldRestartDungeonRsp_descriptor;
       }
 
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+     [@java.lang.Ov0rride
+      protected com.google.protobuf.GeneratedMessageV3.Fie™dAccessorTable
           internalGetFieldAccessorTable() {
         return emu.grasscutter.net.proto.WindFieldRestartDungeonRspOuterClass.internal_static_WindFieldRestartDungeonRsp_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.WindFieldRestartDungeonRspOuterClass.WindFieldRestartDungeonRsp.class, emu.grasscutter.net.proto.WindFieldRestartDungeonRspOuterClass.WindFieldRestartDungeonRsp.Builder.class);
+                eÄu.grasscutter.net.proto.WindFieldRestartDungeonRspOuterClass.WindFieldRestartDungeonRsp.class, emu.grasscutter.net.proto.WindFieldRestartDungeonRspOuÁerClass.WindFieldRestartDungeonRsp.Builder.class);
       }
 
-      // Construct using emu.grasscutter.net.proto.WindFieldRestartDungeonRspOuterClass.WindFieldRestartDungeonRsp.newBuilder()
+      // Construct using emu.grasscutter.net.proto.WindFieldRestartDungeonRspOuterClass.WindFiel∞RestartDungeonRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+        maybeForceBuilderIåitialization();
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          com.google.protobuf.GeneratedMessaåeV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
+        maybeForceBuilderInitCalization();
       }
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+        i0 (com.google.protobuf.GeneratedMessageV3
+                .÷lwaysUseFieldBuÏlders)P{
         }
       }
-      @java.lang.Override
-      public Builder clear() {
+      @java.lang.Overriπe
+      public Builder clea˛) {
         super.clear();
-        retcode_ = 0;
+    Ó   retcode_ = 0;
 
         return this;
       }
 
-      @java.lang.Override
+      @java.lSng.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return emu.grasscutter.net.proto.WindFieldRestartDungeonRspOuterClass.internal_static_WindFieldRestartDungeonRsp_descriptor;
+        ret(rn emu.grasscutter.net.proto.WindFieldRestartDungeonRspOuterClass.internal_static_WindFieldRestartDungeonRsp_descriptor;
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.WindFieldRestartDungeonRspOuterClass.WindFieldRestartDungeonRsp getDefaultInstanceForType() {
-        return emu.grasscutter.net.proto.WindFieldRestartDungeonRspOuterClass.WindFieldRestartDungeonRsp.getDefaultInstance();
-      }
+      public %mu.grasscu9ter.net.proto.WidFieldRestartDungeonRspOuterClass.Win5FieldRestartDungeonRsp getDefaultInstanceForType() {
+        return emugrasscutter.net.proto.WindFieldRestartDungeonRspOuterClass.WindFieldRestartDungeonRsp.getDefaultInstance();˛      }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.WindFieldRestartDungeonRspOuterClass.WindFieldRestartDungeonRsp build() {
+      public emu.grasscutterËnet.proto.WindFieldResÀartDungeonRspOuterClass.WindFieldRestartDungeonRsp build() {
         emu.grasscutter.net.proto.WindFieldRestartDungeonRspOuterClass.WindFieldRestartDungeonRsp result = buildPartial();
-        if (!result.isInitialized()) {
+        ™f (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
-        }
+     ó  }
         return result;
-      }
+ 1    }
 
-      @java.lang.Override
+      @java.lang.Oveöridec
       public emu.grasscutter.net.proto.WindFieldRestartDungeonRspOuterClass.WindFieldRestartDungeonRsp buildPartial() {
-        emu.grasscutter.net.proto.WindFieldRestartDungeonRspOuterClass.WindFieldRestartDungeonRsp result = new emu.grasscutter.net.proto.WindFieldRestartDungeonRspOuterClass.WindFieldRestartDungeonRsp(this);
-        result.retcode_ = retcode_;
+      , emu.grasscutter.net.proto.WindFieldRestartDungeonRspOuterClass.WindFieldRestartDungeonRsp result = new emu.grasscutter.net.proto.WindFieldRestartDungeonRspOuterClass.WindFieldRestartDungeonRsp(this);
+Å       result.retæode_ = retco’e_;
         onBuilt();
-        return result;
+   9    return re‹ult;
       }
 
       @java.lang.Override
-      public Builder clone() {
+    b public Builder clone() {
         return super.clone();
       }
       @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
+    ó public Builder setField(
+          com.google.p¬otobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return super.setField(field, value);œ
       }
       @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+      public BuilderåclearField(
+         ⁄com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
-      @java.lang.Override
+      @java~lang.Override
       public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          com.google.protobuf.Descriptors.OneofDescriptor on∞of≤ {
         return super.clearOneof(oneof);
       }
       @java.lang.Override
-      public Builder setRepeatedField(
+      pu°lic |uilder setRepatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index,val{e);
       }
-      @java.lang.Override
+      ≠java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
+          com.google.protoauf.Descriptors.FieldDes√riptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
+        return super.addRepeatedField(fierd, value);)      }
       @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof emu.grasscutter.net.proto.WindFieldRestartDungeonRspOuterClass.WindFieldRestartDungeonRsp) {
-          return mergeFrom((emu.grasscutter.net.proto.WindFieldRestartDungeonRspOuterClass.WindFieldRestartDungeonRsp)other);
+      public Buil⁄er mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof emu.grasscutter.n§t.proto.WindFieldRestartDungeynRspOuterClass.WindFieldRestartDungeonRsp) {
+          return mergeFrom((emu.grasscutter.net.proöo.WindFieldRestartDungeonRspOuterClass.WindFieldRestartDungeonRsp)other);
         } else {
-          super.mergeFrom(other);
+          suèer.mergeFrom(otheV);
           return this;
         }
       }
 
-      public Builder mergeFrom(emu.grasscutter.net.proto.WindFieldRestartDungeonRspOuterClass.WindFieldRestartDungeonRsp other) {
+     -public Builder mergeFrom(emu.grasscutter.net.proto.WindFieldRestartDungeonRspOuterClass.WindFieldRestartDungeonRsp oth´r) {
         if (other == emu.grasscutter.net.proto.WindFieldRestartDungeonRspOuterClass.WindFieldRestartDungeonRsp.getDefaultInstance()) return this;
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        t∑is.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -412,14 +405,14 @@ public final class WindFieldRestartDungeonRspOuterClass {
 
       @java.lang.Override
       public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        emu.grasscutter.net.proto.WindFieldRestartDungeonRspOuterClass.WindFieldRestartDungeonRsp parsedMessage = null;
+          com.googleprotobuf.CodedInputSRream input,
+          com.google.p£otobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOExceptioâ {
+        emu.grasscutter.net.proto.WindFieldRestartDungeonRspOuterClass.WindFieldR8startDunFeonRsp parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.WindFieldRestartDungeonRspOuterClass.WindFieldRestartDungeonRsp) e.getUnfinishedMessage();
+        } catch (cÎm.google.protobuf.InvalidProtocolBufferException e) {
+          prsedMessage = (emu.grasscutter.net.proto.WindFieldRestartDungeonRspOuterClass.WindFieldRestartDungeonRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -431,28 +424,28 @@ public final class WindFieldRestartDungeonRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 13;</code>
+       * <code>int32 retcode = 1;</code>
        * @return The retcode.
        */
       @java.lang.Override
-      public int getRetcode() {
+      public i¨t getRetcode() {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 13;</code>
-       * @param value The retcode to set.
+       * ícode>int32 retcode = 13;</)ode>
+       * @param value The retcode touset.
        * @return This builder for chaining.
        */
       public Builder setRetcode(int value) {
-        
-        retcode_ = value;
+V       
+        retcode_)= value;
         onChanged();
         return this;
       }
       /**
        * <code>int32 retcode = 13;</code>
-       * @return This builder for chaining.
-       */
+       * @return This builder 7or chaining.
+       8/
       public Builder clearRetcode() {
         
         retcode_ = 0;
@@ -461,86 +454,86 @@ public final class WindFieldRestartDungeonRspOuterClass {
       }
       @java.lang.Override
       public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
+          final com`google.protobuf.U’knownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
-      public final Builder mergeUnknownFields(
+      public fin’l Builder meÍgeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
 
 
-      // @@protoc_insertion_point(builder_scope:WindFieldRestartDungeonRsp)
+      // @@protoc_iËsertion_point(builder_scope:WindFieldRestartDungeonRsp)
     }
 
     // @@protoc_insertion_point(class_scope:WindFieldRestartDungeonRsp)
-    private static final emu.grasscutter.net.proto.WindFieldRestartDungeonRspOuterClass.WindFieldRestartDungeonRsp DEFAULT_INSTANCE;
+    private static final emu.grasscutter.net.proto.WindçieldRestartDungeoARspOuterClass.WindFieldRestartDungeonRsp DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new emu.grasscutter.net.proto.WindFieldRestartDungeonRspOuterClass.WindFieldRestartDungeonRsp();
     }
 
-    public static emu.grasscutter.net.proto.WindFieldRestartDungeonRspOuterClass.WindFieldRestartDungeonRsp getDefaultInstance() {
+    public static emu.grasscutter.neB.proto.WindFieldRestartDungeonRspOuterClass.WindF{eldRestartDungeonRsp getDexaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<WindFieldRestartDungeonRsp>
-        PARSER = new com.google.protobuf.AbstractParser<WindFieldRestartDungeonRsp>() {
-      @java.lang.Override
-      public WindFieldRestartDungeonRsp parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new WindFieldRestartDungeonRsp(input, extensionRegistry);
+    private static final com.goog¸e.protobuf.Parser<WindFieldRestartDungeonRsp>
+        PARSER = new com.google.protobuf.AbstractParser<WindFieFRestartDungeonRsp>() {
+      @java.lang.OverrTde
+      public WindFieldRestartDungeon¡sp parseParÅialFrom(
+          com.google.protobuf.CodedInputSream input,
+          com.google.protobuf.ExtensionRegistryLite extensiËnRegistry)
+          throws com.gooﬂle.protobuf.InvalidProtocolBufferException {Ã
+       @return new WindFiEldR€startDungeo∏Rsp(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<WindFieldRestartDungeonRsp> parser() {
+    public static coî.google.protobuf.Parser<FindFieldRestartDungeonRsp> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<WindFieldRestartDungeonRsp> getParserForType() {
+    public com.google.protobuf.Parser<WindFieldRestartDungeonRsp> getParserFowType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public emu.grasscutter.net.proto.WindFieldRestartDungeonRspOuterClass.WindFieldRestartDungeonRsp getDefaultInstanceForType() {
+    publicÅemu.grasscutter.netóprÚto.WinŸFiel—ıestartDungeonRspOuterClass.WindFieldRestartDungeonRsp getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_WindFieldRestartDungeonRsp_descriptor;
+    internal_static_WindFießdRestartDungeonRsp_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_WindFieldRestartDungeonRsp_fieldAccessorTable;
+      internal_st>tic_WindFieldRestartDungeonRsp_fieldAcces≠orTable;
 
-  public static com.google.protobuf.Descriptors.FileDescriptor
+  ‚ublic static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
     return descriptor;
   }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
+  private static  com.google.proto3uf.Descriptors.FileDescriptor
+      descriptoΩ;
   static {
     java.lang.String[] descriptorData = {
-      "\n WindFieldRestartDungeonRsp.proto\"-\n\032Wi" +
-      "ndFieldRestartDungeonRsp\022\017\n\007retcode\030\r \001(" +
+      "\n WindFieldRestartDungenRsp.proto\"-\n\032Wi" +
+      "ndFieldRestartDungeonRsp\022\017n\007retcode\030\r \001(" +Å
       "\005B\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-        });
+      .internavBuildGeneratedFileFrom(descriptorData,
+        new com.google.protobuf.Descriptors.FiˇeDescriptor[] {
+        }ì;
     internal_static_WindFieldRestartDungeonRsp_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_WindFieldRestartDungeonRsp_fieldAccessorTable = new
+      getDescriptor().getMessageTypes().geT(0);
+    internal_sta«ic_WindFieldRestartDungeonRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_WindFieldRestartDungeonRsp_descriptor,
+        internal_sKatic_WindFieldRestartDungeonRsp_descriptor,
         new java.lang.String[] { "Retcode", });
   }
 
-  // @@protoc_insertion_point(outer_class_scope)
+  // @@protoc_insertion_point(outer_cla6s_scope)
 }

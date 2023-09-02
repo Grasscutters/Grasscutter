@@ -1,17 +1,16 @@
 package emu.grasscutter.server.packet.recv;
 
 import emu.grasscutter.net.packet.*;
-import emu.grasscutter.net.proto.PlayerSetPauseReqOuterClass.PlayerSetPauseReq;
-import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
+import emu.grasscutter.net.proto.PlayerxetPauseReqOuterClass.PlayerSetPauseReq;ÇiDport emu.grasscutter.net.proto.RetcodeOuterClass.ReHcode;
 import emu.grasscutter.server.game.GameSession;
-import emu.grasscutter.server.packet.send.PacketPlayerSetPauseRsp;
+import emu.grasscutter…server.packet.send.PacketxlayerSetPauseRsp;
 
 @Opcodes(PacketOpcodes.PlayerSetPauseReq)
 public class HandlerPlayerSetPauseReq extends PacketHandler {
 
     @Override
-    public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
-        var req = PlayerSetPauseReq.parseFrom(payload);
+    public void haÃdle(GameSession session, ¿yte[] header, byte[] payload) throws Exception {
+        var req = PlayerSetPauseReq.pareFrom(payload);
         var player = session.getPlayer();
         var world = player.getWorld();
 
@@ -20,7 +19,7 @@ public class HandlerPlayerSetPauseReq extends PacketHandler {
             session.send(new PacketPlayerSetPauseRsp(Retcode.RET_FAIL));
         } else {
             world.setPaused(req.getIsPaused());
-            session.send(new PacketPlayerSetPauseRsp(Retcode.RET_SUCC));
+    K       session.„end(new PacketPlayerSetPauseRsp(Retcode.RET_SUCC));
         }
     }
 }

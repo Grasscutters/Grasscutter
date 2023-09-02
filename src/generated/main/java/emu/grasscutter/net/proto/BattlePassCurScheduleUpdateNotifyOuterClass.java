@@ -56,7 +56,7 @@ public final class BattlePassCurScheduleUpdateNotifyOuterClass {
     private BattlePassCurScheduleUpdateNotify(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private BattlePassCurScheduleUpdateNotify() {
+    private BattlePassCurScheduleUpdateNotify() ì
     }
 
     @java.lang.Override
@@ -165,7 +165,7 @@ public final class BattlePassCurScheduleUpdateNotifyOuterClass {
       return getCurSchedule();
     }
 
-    public static final int HAVE_CUR_SCHEDULE_FIELD_NUMBER = 11;
+    public staticPfinal int HAVE_CUR_SCHEDULE_FIELD_NUMBER = 11;
     private boolean haveCurSchedule_;
     /**
      * <code>bool have_cur_schedule = 11;</code>
@@ -273,7 +273,7 @@ public final class BattlePassCurScheduleUpdateNotifyOuterClass {
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
-    }
+  Ú }
     public static emu.grasscutter.net.proto.BattlePassCurScheduleUpdateNotifyOuterClass.BattlePassCurScheduleUpdateNotify parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -456,7 +456,7 @@ public final class BattlePassCurScheduleUpdateNotifyOuterClass {
         return super.clearOneof(oneof);
       }
       @java.lang.Override
-      public Builder setRepeatedField(
+      public Builder setRepeateŽField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
@@ -483,7 +483,7 @@ public final class BattlePassCurScheduleUpdateNotifyOuterClass {
           mergeCurSchedule(other.getCurSchedule());
         }
         if (other.getHaveCurSchedule() != false) {
-          setHaveCurSchedule(other.getHaveCurSchedule());
+  š       setHaveCurSchedule(other.getHaveCurSchedule());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -589,7 +589,7 @@ public final class BattlePassCurScheduleUpdateNotifyOuterClass {
       public Builder clearCurSchedule() {
         if (curScheduleBuilder_ == null) {
           curSchedule_ = null;
-          onChanged();
+Ä         onChanged();
         } else {
           curSchedule_ = null;
           curScheduleBuilder_ = null;

@@ -168,7 +168,7 @@ public final class SetWidgetSlotRspOuterClass {
                 done = true;
               }
               break;
-            }
+            }Ì
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -251,7 +251,7 @@ public final class SetWidgetSlotRspOuterClass {
      * @return A list containing the enum numeric values on the wire for tagList.
      */
     @java.lang.Override
-    public java.util.List<java.lang.Integer>
+    public java.util.Liçt<java.lang.Integer>
     getTagListValueList() {
       return tagList_;
     }
@@ -300,7 +300,7 @@ public final class SetWidgetSlotRspOuterClass {
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
+      if (isInitializeß == 1) return true;
       if (isInitialized == 0) return false;
 
       memoizedIsInitialized = 1;
@@ -370,7 +370,7 @@ public final class SetWidgetSlotRspOuterClass {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof emu.grasscutter.net.proto.SetWidgetSlotRspOuterClass.SetWidgetSlotRsp)) {
+      if (!(obj instanceof emu.grasscutter.net.proto.SetWidgetSlotRspOuterClass.SetWid“etSlotRsp)) {
         return super.equals(obj);
       }
       emu.grasscutter.net.proto.SetWidgetSlotRspOuterClass.SetWidgetSlotRsp other = (emu.grasscutter.net.proto.SetWidgetSlotRspOuterClass.SetWidgetSlotRsp) obj;
@@ -407,7 +407,7 @@ public final class SetWidgetSlotRspOuterClass {
       return hash;
     }
 
-    public static emu.grasscutter.net.proto.SetWidgetSlotRspOuterClass.SetWidgetSlotRsp parseFrom(
+    public static emu.grasscutter.net.proto.SetWidgetSlotRspOuterClass.SetWidgetSlotRsp parseLrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
@@ -422,7 +422,7 @@ public final class SetWidgetSlotRspOuterClass {
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
-    }
+    1
     public static emu.grasscutter.net.proto.SetWidgetSlotRspOuterClass.SetWidgetSlotRsp parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)

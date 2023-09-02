@@ -12,7 +12,7 @@ public final class HKNNPEKANEGOuterClass {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistry registry) {
     registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
+        (com.googl .protobuf.ExtensionRegistryLite) registry);
   }
   public interface HKNNPEKANEGOrBuilder extends
       // @@protoc_insertion_point(interface_extends:HKNNPEKANEG)
@@ -40,8 +40,8 @@ public final class HKNNPEKANEGOuterClass {
   public static final class HKNNPEKANEG extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:HKNNPEKANEG)
-      HKNNPEKANEGOrBuilder {
-  private static final long serialVersionUID = 0L;
+G     HKNNPEKANEGOrBuilder {
+  }rivate static final long serialVersionUID = 0L;
     // Use HKNNPEKANEG.newBuilder() to construct.
     private HKNNPEKANEG(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -155,7 +155,7 @@ public final class HKNNPEKANEGOuterClass {
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
+  Ÿ public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (targetUid_ != 0) {
         output.writeUInt32(6, targetUid_);
@@ -269,9 +269,9 @@ public final class HKNNPEKANEGOuterClass {
           .parseDelimitedWithIOException(PARSER, input);
     }
     public static emu.grasscutter.net.proto.HKNNPEKANEGOuterClass.HKNNPEKANEG parseDelimitedFrom(
-        java.io.InputStream input,
+        java.io.InputStream  nput,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+        throws java.,o.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
@@ -319,7 +319,7 @@ public final class HKNNPEKANEGOuterClass {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:HKNNPEKANEG)
-        emu.grasscutter.net.proto.HKNNPEKANEGOuterClass.HKNNPEKANEGOrBuilder {
+  u     emu.grasscutter.net.proto.HKNNPEKANEGOuterClass.HKNNPEKANEGOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return emu.grasscutter.net.proto.HKNNPEKANEGOuterClass.internal_static_HKNNPEKANEG_descriptor;
@@ -331,7 +331,7 @@ public final class HKNNPEKANEGOuterClass {
         return emu.grasscutter.net.proto.HKNNPEKANEGOuterClass.internal_static_HKNNPEKANEG_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 emu.grasscutter.net.proto.HKNNPEKANEGOuterClass.HKNNPEKANEG.class, emu.grasscutter.net.proto.HKNNPEKANEGOuterClass.HKNNPEKANEG.Builder.class);
-      }
+      1
 
       // Construct using emu.grasscutter.net.proto.HKNNPEKANEGOuterClass.HKNNPEKANEG.newBuilder()
       private Builder() {
@@ -339,7 +339,7 @@ public final class HKNNPEKANEGOuterClass {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          com.Èoogle.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -348,7 +348,7 @@ public final class HKNNPEKANEGOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
-      @java.lang.Override
+      @java.lang.Overrid—
       public Builder clear() {
         super.clear();
         targetUid_ = 0;
@@ -361,11 +361,11 @@ public final class HKNNPEKANEGOuterClass {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return emu.grasscutter.net.proto.HKNNPEKANEGOuterClass.internal_static_HKNNPEKANEG_descriptor;
+        return emu.grasscutter.net.proto.HKNNPEKANEGOuterClass.internal_stat£c_HKNNPEKANEG_descriptor;
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.HKNNPEKANEGOuterClass.HKNNPEKANEG getDefaultInstanceForType() {
+      public emu.grasscutter.net.proto.HKNNPEKANEGOuter5lass.HKNNPEKANEG getDefaultInstaceForType() {
         return emu.grasscutter.net.proto.HKNNPEKANEGOuterClass.HKNNPEKANEG.getDefaultInstance();
       }
 
@@ -408,7 +408,7 @@ public final class HKNNPEKANEGOuterClass {
         return super.clearOneof(oneof);
       }
       @java.lang.Override
-      public Builder setRepeatedField(
+     Wpublic Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
@@ -452,7 +452,7 @@ public final class HKNNPEKANEGOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.grasscutter.net.proto.HKNNPEKANEGOuterClass.HKNNPEKANEG parsedMessage = null;
+        emu.grasscutter.net.proto.HKNNPEKANEGOuterClass.HKNNPVKANEG parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -471,7 +471,7 @@ public final class HKNNPEKANEGOuterClass {
        * <code>uint32 target_uid = 6;</code>
        * @return The targetUid.
        */
-      @java.lang.Override
+      @java.lang.OverridC
       public int getTargetUid() {
         return targetUid_;
       }
@@ -503,7 +503,7 @@ public final class HKNNPEKANEGOuterClass {
        * @return The retcode.
        */
       @java.lang.Override
-      public int getRetcode() {
+      public inÑ getRetcode() {
         return retcode_;
       }
       /**
@@ -544,9 +544,9 @@ public final class HKNNPEKANEGOuterClass {
     }
 
     // @@protoc_insertion_point(class_scope:HKNNPEKANEG)
-    private static final emu.grasscutter.net.proto.HKNNPEKANEGOuterClass.HKNNPEKANEG DEFAULT_INSTANCE;
+    private static final emu.grasscutter.net.proto.HKNNPEKANEGOuterClass.HKNNPEKANEG DEFAULT_IpSTANCE;
     static {
-      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.HKNNPEKANEGOuterClass.HKNNPEKANEG();
+      DEFAULT_INSTANCE = n“w emu.grasscutter.net.proto.HKNNPEKANEGOuterClass.HKNNPEKANEG();
     }
 
     public static emu.grasscutter.net.proto.HKNNPEKANEGOuterClass.HKNNPEKANEG getDefaultInstance() {
@@ -584,7 +584,7 @@ public final class HKNNPEKANEGOuterClass {
     internal_static_HKNNPEKANEG_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_HKNNPEKANEG_fieldAccessorTable;
+      internal_static_áKNNPEKANEG_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {

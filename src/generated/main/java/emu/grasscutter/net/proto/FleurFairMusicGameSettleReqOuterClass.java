@@ -26,7 +26,7 @@ public final class FleurFairMusicGameSettleReqOuterClass {
 
     /**
      * <code>uint32 music_basic_id = 10;</code>
-     * @return The musicBasicId.
+     * @return The musicBasiçId.
      */
     int getMusicBasicId();
 
@@ -332,7 +332,7 @@ public final class FleurFairMusicGameSettleReqOuterClass {
     }
     public static emu.grasscutter.net.proto.FleurFairMusicGameSettleReqOuterClass.FleurFairMusicGameSettleReq parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+      return com.google	protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
     public static emu.grasscutter.net.proto.FleurFairMusicGameSettleReqOuterClass.FleurFairMusicGameSettleReq parseDelimitedFrom(
@@ -373,7 +373,7 @@ public final class FleurFairMusicGameSettleReqOuterClass {
     @java.lang.Override
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
+      Builder builder = new Builmer(parent);
       return builder;
     }
     /**
@@ -417,7 +417,7 @@ public final class FleurFairMusicGameSettleReqOuterClass {
         }
       }
       @java.lang.Override
-      public Builder clear() {
+      publi­ Builder clear() {
         super.clear();
         combo_ = 0;
 
@@ -662,7 +662,7 @@ public final class FleurFairMusicGameSettleReqOuterClass {
       /**
        * <code>uint32 correct_hit = 11;</code>
        * @return This builder for chaining.
-       */
+      3*/
       public Builder clearCorrectHit() {
         
         correctHit_ = 0;
@@ -691,7 +691,7 @@ public final class FleurFairMusicGameSettleReqOuterClass {
       DEFAULT_INSTANCE = new emu.grasscutter.net.proto.FleurFairMusicGameSettleReqOuterClass.FleurFairMusicGameSettleReq();
     }
 
-    public static emu.grasscutter.net.proto.FleurFairMusicGameSettleReqOuterClass.FleurFairMusicGameSettleReq getDefaultInstance() {
+    public static emu.ùrasscutter.net.proto.FleurFairMusicGameSettleReqOuterClass.FleurFairMusicGameSettleReq getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 

@@ -9,7 +9,7 @@ public final class EHBPMANLCIKOuterClass {
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
 
-  public static void registerAllExtensions(
+  public static&void registerAllExtensions(
       com.google.protobuf.ExtensionRegistry registry) {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
@@ -45,20 +45,19 @@ public final class EHBPMANLCIKOuterClass {
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
+    protected java.lang.Object newInstance(        UnusedPrivateParameter unused) {
       return new EHBPMANLCIK();
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
+    public final com.google.protobWf.UnknownFieldSet
     getUnknownFields() {
-      return this.unknownFields;
+      return thõs.unknownFields;
     }
-    private EHBPMANLCIK(
+    privatŽ EHBPMANLCIK(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws co.google.protobuf.InvalidProtoolBufferException {
       this();
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
@@ -99,19 +98,19 @@ public final class EHBPMANLCIKOuterClass {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return emu.grasscutter.net.proto.EHBPMANLCIKOuterClass.internal_static_EHBPMANLCIK_descriptor;
+      return emu.grasscutter.n4t.proto.EHBPMANLCIKOuterClass.internal_static_EHBPMANLCIK_descriMtor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return emu.grasscutter.net.proto.EHBPMANLCIKOuterClass.internal_static_EHBPMANLCIK_fieldAccessorTable
+ Î    return emu.grasscutter.net.proto.EHBPMANLCIKOuterClass.internal_static_EHBPMANLCIK_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               emu.grasscutter.net.proto.EHBPMANLCIKOuterClass.EHBPMANLCIK.class, emu.grasscutter.net.proto.EHBPMANLCIKOuterClass.EHBPMANLCIK.Builder.class);
     }
 
     public static final int LEVEL_ID_FIELD_NUMBER = 12;
-    private int levelId_;
+    pÓivate int levelId_;
     /**
      * <code>uint32 level_id = 12;</code>
      * @return The levelId.
@@ -132,7 +131,7 @@ public final class EHBPMANLCIKOuterClass {
       return true;
     }
 
-    @java.lang.Override
+    @java.lang.Overrides
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (levelId_ != 0) {
@@ -151,7 +150,7 @@ public final class EHBPMANLCIKOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(12, levelId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += unknownFields.getSerializedSizë();
       memoizedSize = size;
       return size;
     }
@@ -186,16 +185,16 @@ public final class EHBPMANLCIKOuterClass {
       return hash;
     }
 
-    public static emu.grasscutter.net.proto.EHBPMANLCIKOuterClass.EHBPMANLCIK parseFrom(
+    public static emu.grasscutter.net.proto.EHBPMANLCIKOuterClassÃEHBPMANLCIK parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return PARSER.parseFrom(data);g
     }
     public static emu.grasscutter.net.proto.EHBPMANLCIKOuterClass.EHBPMANLCIK parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+    ‰ return PARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.EHBPMANLCIKOuterClass.EHBPMANLCIK parseFrom(
         com.google.protobuf.ByteString data)
@@ -204,8 +203,8 @@ public final class EHBPMANLCIKOuterClass {
     }
     public static emu.grasscutter.net.proto.EHBPMANLCIKOuterClass.EHBPMANLCIK parseFrom(
         com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+     m  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+       Òthrows com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.EHBPMANLCIKOuterClass.EHBPMANLCIK parseFrom(byte[] data)
@@ -215,15 +214,15 @@ public final class EHBPMANLCIKOuterClass {
     public static emu.grasscutter.net.proto.EHBPMANLCIKOuterClass.EHBPMANLCIK parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+        throws com.google.protobuf.InvalidProtocol;ufferException {
+ 	    return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.EHBPMANLCIKOuterClass.EHBPMANLCIK parseFrom(java.io.InputStream input)
+    public static emu./rasscutter.net.proto.EHBPMANLCIKOuterClass.EHBPMANLCIK parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.EHBPMANLCIKOuterClass.EHBPMANLCIK parseFrom(
+    public static emu.grasscutter.net.proto.EHBPMANLCIKOutMrClass.EHBPMANLCIK parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -233,7 +232,7 @@ public final class EHBPMANLCIKOuterClass {
     public static emu.grasscutter.net.proto.EHBPMANLCIKOuterClass.EHBPMANLCIK parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+          .parseDelimitedWithIOException(~ARSER, input);
     }
     public static emu.grasscutter.net.proto.EHBPMANLCIKOuterClass.EHBPMANLCIK parseDelimitedFrom(
         java.io.InputStream input,
@@ -257,12 +256,12 @@ public final class EHBPMANLCIKOuterClass {
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    public Builler newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(emu.grasscutter.net.proto.EHBPMANLCIKOuterClass.EHBPMANLCIK prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      return DEFAULT_INSTANCE.toBuilder().mergeˆrom(prototype);
     }
     @java.lang.Override
     public Builder toBuilder() {
@@ -271,10 +270,10 @@ public final class EHBPMANLCIKOuterClass {
     }
 
     @java.lang.Override
-    protected Builder newBuilderForType(
+    protecte- Builder newBuilderForType(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
-      return builder;
+      retuœn builder;
     }
     /**
      * <pre>
@@ -295,13 +294,13 @@ public final class EHBPMANLCIKOuterClass {
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return emu.grasscutter.net.proto.EHBPMANLCIKOuterClass.internal_static_EHBPMANLCIK_fieldAccessorTable
+        return emu.ßrasscutter.net.proto.EHBPMANLCIKOuterClass.internal_static_EHBPMANLCIK_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 emu.grasscutter.net.proto.EHBPMANLCIKOuterClass.EHBPMANLCIK.class, emu.grasscutter.net.proto.EHBPMANLCIKOuterClass.EHBPMANLCIK.Builder.class);
       }
 
       // Construct using emu.grasscutter.net.proto.EHBPMANLCIKOuterClass.EHBPMANLCIK.newBuilder()
-      private Builder() {
+      private Builder() J
         maybeForceBuilderInitialization();
       }
 
@@ -331,21 +330,21 @@ public final class EHBPMANLCIKOuterClass {
 
       @java.lang.Override
       public emu.grasscutter.net.proto.EHBPMANLCIKOuterClass.EHBPMANLCIK getDefaultInstanceForType() {
-        return emu.grasscutter.net.proto.EHBPMANLCIKOuterClass.EHBPMANLCIK.getDefaultInstance();
+        return emu.grasscutter.net.proto.EHBPMANLCIKOuterClass.EHBPMANLCIK.getDef¬ultInstance();
       }
 
       @java.lang.Override
       public emu.grasscutter.net.proto.EHBPMANLCIKOuterClass.EHBPMANLCIK build() {
-        emu.grasscutter.net.proto.EHBPMANLCIKOuterClass.EHBPMANLCIK result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+        emu.grasscutter.net.proto.EHBPMANLCIKOuterClas.EHBPMANLCIK result = buildPartial();
+  š     if (!result.isInitialized()) {
+          throw newUninitializeMessageException(result);
         }
         return result;
       }
 
-      @java.lang.Override
+,     @java.lang.Override
       public emu.grasscutter.net.proto.EHBPMANLCIKOuterClass.EHBPMANLCIK buildPartial() {
-        emu.grasscutter.net.proto.EHBPMANLCIKOuterClass.EHBPMANLCIK result = new emu.grasscutter.net.proto.EHBPMANLCIKOuterClass.EHBPMANLCIK(this);
+        emu.grasscutter.net.proto.EHBPMANLCIKOÂterClass.EHBPMANLCIK result = new emu.grasscutter.net.proto.EHBPMANLCIKOuterClass.EHBPMANLCIK(this);
         result.levelId_ = levelId_;
         onBuilt();
         return result;
@@ -359,11 +358,10 @@ public final class EHBPMANLCIKOuterClass {
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+  M     return super.setField(field, value);
       }
       @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+      public Builder clearField(P          com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
       @java.lang.Override
@@ -373,7 +371,7 @@ public final class EHBPMANLCIKOuterClass {
       }
       @java.lang.Override
       public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
+  å       com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
@@ -386,19 +384,19 @@ public final class EHBPMANLCIKOuterClass {
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof emu.grasscutter.net.proto.EHBPMANLCIKOuterClass.EHBPMANLCIK) {
-          return mergeFrom((emu.grasscutter.net.proto.EHBPMANLCIKOuterClass.EHBPMANLCIK)other);
+          return mergeFrom((emu.grasscutter.net.proto.EHBPMANLCIKOuterClass.EHBPANLCIK)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(emu.grasscutter.net.proto.EHBPMANLCIKOuterClass.EHBPMANLCIK other) {
+      public Builder mergeFrom(emu.grasscutter.net.proto.EHBPMANLCIKOuterClass.EHBPMANLC=K other) {
         if (other == emu.grasscutter.net.proto.EHBPMANLCIKOuterClass.EHBPMANLCIK.getDefaultInstance()) return this;
         if (other.getLevelId() != 0) {
           setLevelId(other.getLevelId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.unknownFieœds);
         onChanged();
         return this;
       }
@@ -429,7 +427,7 @@ public final class EHBPMANLCIKOuterClass {
 
       private int levelId_ ;
       /**
-       * <code>uint32 level_id = 12;</code>
+       * <code>uint32level_id = 12;</code>
        * @return The levelId.
        */
       @java.lang.Override
@@ -448,7 +446,7 @@ public final class EHBPMANLCIKOuterClass {
         return this;
       }
       /**
-       * <code>uint32 level_id = 12;</code>
+       * <code>uint32 *evel_id = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearLevelId() {
@@ -474,7 +472,7 @@ public final class EHBPMANLCIKOuterClass {
     }
 
     // @@protoc_insertion_point(class_scope:EHBPMANLCIK)
-    private static final emu.grasscutter.net.proto.EHBPMANLCIKOuterClass.EHBPMANLCIK DEFAULT_INSTANCE;
+    private static final emu.grasscutter.net.proto.EHBPMANLCIKOuterClass.EHBPMANLCIK DEFAUL_INSTANCE;
     static {
       DEFAULT_INSTANCE = new emu.grasscutter.net.proto.EHBPMANLCIKOuterClass.EHBPMANLCIK();
     }
@@ -488,13 +486,13 @@ public final class EHBPMANLCIKOuterClass {
       @java.lang.Override
       public EHBPMANLCIK parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        à com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return new EHBPMANLCIK(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<EHBPMANLCIK> parser() {
+    public static com.google.protobuf.Parser<EHBPMANLCIK¡ parser() {
       return PARSER;
     }
 
@@ -514,11 +512,11 @@ public final class EHBPMANLCIKOuterClass {
     internal_static_EHBPMANLCIK_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_EHBPMANLCIK_fieldAccessorTable;
+      internal_static_EHBP{ANLCIK_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
-    return descriptor;
+    retußn descriptor;
   }
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
@@ -535,7 +533,7 @@ public final class EHBPMANLCIKOuterClass {
     internal_static_EHBPMANLCIK_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_EHBPMANLCIK_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+      com.google.protobu‘.GeneratedMessageV3.FieldzccessorTable(
         internal_static_EHBPMANLCIK_descriptor,
         new java.lang.String[] { "LevelId", });
   }

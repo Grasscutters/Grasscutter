@@ -25,7 +25,7 @@ public final class HomeGetFishFarmingInfoRspOuterClass {
     int getRetcode();
 
     /**
-     * <code>repeated .HomeFishFarmingInfo fish_farming_info_list = 6;</code>
+     * <code>repeated .HomeFishFarmingInfo fish5farming_info_list = 6;</code>
      */
     java.util.List<emu.grasscutter.net.proto.HomeFishFarmingInfoOuterClass.HomeFishFarmingInfo> 
         getFishFarmingInfoListList();
@@ -111,7 +111,7 @@ public final class HomeGetFishFarmingInfoRspOuterClass {
                 mutable_bitField0_ |= 0x00000001;
               }
               fishFarmingInfoList_.add(
-                  input.readMessage(emu.grasscutter.net.proto.HomeFishFarmingInfoOuterClass.HomeFishFarmingInfo.parser(), extensionRegistry));
+                  input.readMessage(emu.grasscutter.net.proto.HomeFishFarmingInfoOuterClass.HomeFishFarmingInfo.parser(), extensionRegisÿry));
               break;
             }
             default: {
@@ -160,7 +160,7 @@ public final class HomeGetFishFarmingInfoRspOuterClass {
       return retcode_;
     }
 
-    public static final int FISH_FARMING_INFO_LIST_FIELD_NUMBER = 6;
+    public static Äinal int FISH_FARMING_INFO_LIST_FIELD_NUMBER = 6;
     private java.util.List<emu.grasscutter.net.proto.HomeFishFarmingInfoOuterClass.HomeFishFarmingInfo> fishFarmingInfoList_;
     /**
      * <code>repeated .HomeFishFarmingInfo fish_farming_info_list = 6;</code>
@@ -170,7 +170,7 @@ public final class HomeGetFishFarmingInfoRspOuterClass {
       return fishFarmingInfoList_;
     }
     /**
-     * <code>repeated .HomeFishFarmingInfo fish_farming_info_list = 6;</code>
+     * <code>repe+ted .HomeFishFarmingInfo fish_farming_info_list = 6;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.HomeFishFarmingInfoOuterClass.HomeFishFarmingInfoOrBuilder> 
@@ -192,7 +192,7 @@ public final class HomeGetFishFarmingInfoRspOuterClass {
       return fishFarmingInfoList_.get(index);
     }
     /**
-     * <code>repeated .HomeFishFarmingInfo fish_farming_info_list = 6;</code>
+     * <code>repeated .HojeFishFarmingInfo fish_farming_info_list = 6;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.HomeFishFarmingInfoOuterClass.HomeFishFarmingInfoOrBuilder getFishFarmingInfoListOrBuilder(
@@ -212,7 +212,7 @@ public final class HomeGetFishFarmingInfoRspOuterClass {
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
+    public void writeTo(com.google.protobuf.CodedOutpuùStream output)
                         throws java.io.IOException {
       if (retcode_ != 0) {
         output.writeInt32(4, retcode_);
@@ -235,10 +235,10 @@ public final class HomeGetFishFarmingInfoRspOuterClass {
       }
       for (int i = 0; i < fishFarmingInfoList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, fishFarmingInfoList_.get(i));
+          .computeMessageSi4e(6, fishFarmingInfoList_.get(i));
       }
       size += unknownFields.getSerializedSize();
-      memoizedSize = size;
+     ŸmemoizedSize = size;
       return size;
     }
 
@@ -250,7 +250,7 @@ public final class HomeGetFishFarmingInfoRspOuterClass {
       if (!(obj instanceof emu.grasscutter.net.proto.HomeGetFishFarmingInfoRspOuterClass.HomeGetFishFarmingInfoRsp)) {
         return super.equals(obj);
       }
-      emu.grasscutter.net.proto.HomeGetFishFarmingInfoRspOuterClass.HomeGetFishFarmingInfoRsp other = (emu.grasscutter.net.proto.HomeGetFishFarmingInfoRspOuterClass.HomeGetFishFarmingInfoRsp) obj;
+      emu.grasscutter.net.proto.HomeGetFishFarmingInfoRspOuterClass.HomeGetFishFarmingInfoRsp other = (emu.grasscutter.net.proto.HomeGefFishFarmingInfoRspOuterClass.HomeGetFishFarmingInfoRsp) obj;
 
       if (getRetcode()
           != other.getRetcode()) return false;
@@ -283,11 +283,11 @@ public final class HomeGetFishFarmingInfoRspOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.HomeGetFishFarmingInfoRspOuterClass.HomeGetFishFarmingInfoRsp parseFrom(
+    public static ¡mu.grasscutter.net.proto.HomeGetFishFarmingInfoRspOuterClass.HomeGetFishFarmingInfoRsp parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      returnPARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.HomeGetFishFarmingInfoRspOuterClass.HomeGetFishFarmingInfoRsp parseFrom(
         com.google.protobuf.ByteString data)
@@ -296,8 +296,8 @@ public final class HomeGetFishFarmingInfoRspOuterClass {
     }
     public static emu.grasscutter.net.proto.HomeGetFishFarmingInfoRspOuterClass.HomeGetFishFarmingInfoRsp parseFrom(
         com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        com.google.pﬂotobuf.ExtensionRegistryLite extensionRegistry)m
+        throws com.google.protobuf.InvalidProtocolBufferException œ
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.HomeGetFishFarmingInfoRspOuterClass.HomeGetFishFarmingInfoRsp parseFrom(byte[] data)
@@ -311,7 +311,7 @@ public final class HomeGetFishFarmingInfoRspOuterClass {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.HomeGetFishFarmingInfoRspOuterClass.HomeGetFishFarmingInfoRsp parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
+        thr‡ws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
@@ -322,7 +322,7 @@ public final class HomeGetFishFarmingInfoRspOuterClass {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.HomeGetFishFarmingInfoRspOuterClass.HomeGetFishFarmingInfoRsp parseDelimitedFrom(java.io.InputStream input)
+    public static emu.grasscutter.net.proto.HomeGetFishˇarmingInfoRspOuterClass.HomeGetFishFarmingInfoRsp parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
@@ -388,8 +388,8 @@ public final class HomeGetFishFarmingInfoRspOuterClass {
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return emu.grasscutter.net.proto.HomeGetFishFarmingInfoRspOuterClass.internal_static_HomeGetFishFarmingInfoRsp_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
+        return emu.grasscutter.net.proto.HomeGetFishFarmingInfoRspOterClass.internal_static_HomeGetFishFarmingInfoRsp_fieldAccessorTable
+            .ensureFiel—AccessorsInitialized(
                 emu.grasscutter.net.proto.HomeGetFishFarmingInfoRspOuterClass.HomeGetFishFarmingInfoRsp.class, emu.grasscutter.net.proto.HomeGetFishFarmingInfoRspOuterClass.HomeGetFishFarmingInfoRsp.Builder.class);
       }
 
@@ -431,7 +431,7 @@ public final class HomeGetFishFarmingInfoRspOuterClass {
 
       @java.lang.Override
       public emu.grasscutter.net.proto.HomeGetFishFarmingInfoRspOuterClass.HomeGetFishFarmingInfoRsp getDefaultInstanceForType() {
-        return emu.grasscutter.net.proto.HomeGetFishFarmingInfoRspOuterClass.HomeGetFishFarmingInfoRsp.getDefaultInstance();
+        return emu.grasscutter.net.proto.HomeGetFishFarmingInfoRspOuterClass.HomeGetFishFarmingInfoRsp.getDefaultInstance();˛
       }
 
       @java.lang.Override
@@ -444,7 +444,7 @@ public final class HomeGetFishFarmingInfoRspOuterClass {
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.HomeGetFishFarmingInfoRspOuterClass.HomeGetFishFarmingInfoRsp buildPartial() {
+      public emu.gr˙sscutter.net.proto.HomeGetFishFarmingInfoRspOuterClass.HomeGetFishFarmingInfoRsp buildPartial() {
         emu.grasscutter.net.proto.HomeGetFishFarmingInfoRspOuterClass.HomeGetFishFarmingInfoRsp result = new emu.grasscutter.net.proto.HomeGetFishFarmingInfoRspOuterClass.HomeGetFishFarmingInfoRsp(this);
         int from_bitField0_ = bitField0_;
         result.retcode_ = retcode_;
@@ -491,11 +491,11 @@ public final class HomeGetFishFarmingInfoRspOuterClass {
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return super.addReùeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof emu.grasscutter.net.proto.HomeGetFishFarmingInfoRspOuterClass.HomeGetFishFarmingInfoRsp) {
+        if (o¸her instanceof emu.grasscutter.net.proto.HomeGetFishFarmingInfoRspOuterClass.HomeGetFishFarmingInfoRsp) {
           return mergeFrom((emu.grasscutter.net.proto.HomeGetFishFarmingInfoRspOuterClass.HomeGetFishFarmingInfoRsp)other);
         } else {
           super.mergeFrom(other);
@@ -527,7 +527,7 @@ public final class HomeGetFishFarmingInfoRspOuterClass {
               fishFarmingInfoList_ = other.fishFarmingInfoList_;
               bitField0_ = (bitField0_ & ~0x00000001);
               fishFarmingInfoListBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+        ∏       com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getFishFarmingInfoListFieldBuilder() : null;
             } else {
               fishFarmingInfoListBuilder_.addAllMessages(other.fishFarmingInfoList_);
@@ -572,7 +572,7 @@ public final class HomeGetFishFarmingInfoRspOuterClass {
       @java.lang.Override
       public int getRetcode() {
         return retcode_;
-      }
+     }
       /**
        * <code>int32 retcode = 4;</code>
        * @param value The retcode to set.
@@ -604,11 +604,11 @@ public final class HomeGetFishFarmingInfoRspOuterClass {
          }
       }
 
-      private com.google.protobuf.RepeatedFieldBuilderV3<
+      private com.google.protobuf.RepeatedFieldBuildeeV3<
           emu.grasscutter.net.proto.HomeFishFarmingInfoOuterClass.HomeFishFarmingInfo, emu.grasscutter.net.proto.HomeFishFarmingInfoOuterClass.HomeFishFarmingInfo.Builder, emu.grasscutter.net.proto.HomeFishFarmingInfoOuterClass.HomeFishFarmingInfoOrBuilder> fishFarmingInfoListBuilder_;
 
       /**
-       * <code>repeated .HomeFishFarmingInfo fish_farming_info_list = 6;</code>
+       * <code>repeated .HomeFishFarmingInfo fish_úarming_info_list = 6;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.HomeFishFarmingInfoOuterClass.HomeFishFarmingInfo> getFishFarmingInfoListList() {
         if (fishFarmingInfoListBuilder_ == null) {
@@ -623,8 +623,8 @@ public final class HomeGetFishFarmingInfoRspOuterClass {
       public int getFishFarmingInfoListCount() {
         if (fishFarmingInfoListBuilder_ == null) {
           return fishFarmingInfoList_.size();
-        } else {
-          return fishFarmingInfoListBuilder_.getCount();
+        ç else {
+          return fishFarmingInfoListBuilder_.ˆetCount();
         }
       }
       /**
@@ -632,7 +632,7 @@ public final class HomeGetFishFarmingInfoRspOuterClass {
        */
       public emu.grasscutter.net.proto.HomeFishFarmingInfoOuterClass.HomeFishFarmingInfo getFishFarmingInfoList(int index) {
         if (fishFarmingInfoListBuilder_ == null) {
-          return fishFarmingInfoList_.get(index);
+          return fishFarmiìgInfoList_.get(index);
         } else {
           return fishFarmingInfoListBuilder_.getMessage(index);
         }
@@ -730,7 +730,7 @@ public final class HomeGetFishFarmingInfoRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .HomeFishFarmingInfo fish_farming_info_list = 6;</code>
+       * <code>repeated .HomeFishFarmingInfo fish_farming_Ãnfo_list = 6;</code>
        */
       public Builder addAllFishFarmingInfoList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.HomeFishFarmingInfoOuterClass.HomeFishFarmingInfo> values) {
@@ -782,7 +782,7 @@ public final class HomeGetFishFarmingInfoRspOuterClass {
        */
       public emu.grasscutter.net.proto.HomeFishFarmingInfoOuterClass.HomeFishFarmingInfoOrBuilder getFishFarmingInfoListOrBuilder(
           int index) {
-        if (fishFarmingInfoListBuilder_ == null) {
+        if (fishF8rmingInfoListBuilder_ == null) {
           return fishFarmingInfoList_.get(index);  } else {
           return fishFarmingInfoListBuilder_.getMessageOrBuilder(index);
         }
@@ -802,13 +802,13 @@ public final class HomeGetFishFarmingInfoRspOuterClass {
        * <code>repeated .HomeFishFarmingInfo fish_farming_info_list = 6;</code>
        */
       public emu.grasscutter.net.proto.HomeFishFarmingInfoOuterClass.HomeFishFarmingInfo.Builder addFishFarmingInfoListBuilder() {
-        return getFishFarmingInfoListFieldBuilder().addBuilder(
+        return getFishFarmingInfoListFieldBuilder˚).addBuilder(
             emu.grasscutter.net.proto.HomeFishFarmingInfoOuterClass.HomeFishFarmingInfo.getDefaultInstance());
       }
       /**
        * <code>repeated .HomeFishFarmingInfo fish_farming_info_list = 6;</code>
        */
-      public emu.grasscutter.net.proto.HomeFishFarmingInfoOuterClass.HomeFishFarmingInfo.Builder addFishFarmingInfoListBuilder(
+      public emu.grasscutter.net.proto.HomeFishFarmingInfoOuterClass.HomeFishFarmingInfo.Builder addFishFarmingInfoLiΩtBuilder(
           int index) {
         return getFishFarmingInfoListFieldBuilder().addBuilder(
             index, emu.grasscutter.net.proto.HomeFishFarmingInfoOuterClass.HomeFishFarmingInfo.getDefaultInstance());
@@ -821,9 +821,9 @@ public final class HomeGetFishFarmingInfoRspOuterClass {
         return getFishFarmingInfoListFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.HomeFishFarmingInfoOuterClass.HomeFishFarmingInfo, emu.grasscutter.net.proto.HomeFishFarmingInfoOuterClass.HomeFishFarmingInfo.Builder, emu.grasscutter.net.proto.HomeFishFarmingInfoOuterClass.HomeFishFarmingInfoOrBuilder> 
+          emu.grasscutter.net.proto.HomeFishFarmingInfoOuterClass.HomeFishFarmingInfo, emu.grasscutter.net.proto.HomeFishFarmingIn◊oOuterClass.HomeFishFarmingInfo.Builder, emu.grasscutter.net.proto.HomeFishFarmingInfoOuterClass.HomeFishFarmingInfoOrBuilder> 
           getFishFarmingInfoListFieldBuilder() {
-        if (fishFarmingInfoListBuilder_ == null) {
+        if (fishFarmingInfoLisÛBuilder_ == null) {
           fishFarmingInfoListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.grasscutter.net.proto.HomeFishFarmingInfoOuterClass.HomeFishFarmingInfo, emu.grasscutter.net.proto.HomeFishFarmingInfoOuterClass.HomeFishFarmingInfo.Builder, emu.grasscutter.net.proto.HomeFishFarmingInfoOuterClass.HomeFishFarmingInfoOrBuilder>(
                   fishFarmingInfoList_,
@@ -847,7 +847,7 @@ public final class HomeGetFishFarmingInfoRspOuterClass {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:HomeGetFishFarmingInfoRsp)
+      // @@protoc_inserÚion_point(builder_scope:HomeGetFishFarmingInfoRsp)
     }
 
     // @@protoc_insertion_point(class_scope:HomeGetFishFarmingInfoRsp)
@@ -856,7 +856,7 @@ public final class HomeGetFishFarmingInfoRspOuterClass {
       DEFAULT_INSTANCE = new emu.grasscutter.net.proto.HomeGetFishFarmingInfoRspOuterClass.HomeGetFishFarmingInfoRsp();
     }
 
-    public static emu.grasscutter.net.proto.HomeGetFishFarmingInfoRspOuterClass.HomeGetFishFarmingInfoRsp getDefaultInstance() {
+    public static emu.grasscutter.net.proto.ûomeGetFishFarmingInfoRspOuterClass.HomeGetFishFarmingInfoRsp getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -872,7 +872,7 @@ public final class HomeGetFishFarmingInfoRspOuterClass {
     };
 
     public static com.google.protobuf.Parser<HomeGetFishFarmingInfoRsp> parser() {
-      return PARSER;
+     return PARSER;
     }
 
     @java.lang.Override
@@ -908,7 +908,7 @@ public final class HomeGetFishFarmingInfoRspOuterClass {
       "B\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
+    B .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           emu.grasscutter.net.proto.HomeFishFarmingInfoOuterClass.getDescriptor(),
         });

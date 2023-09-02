@@ -6,7 +6,7 @@ package emu.grasscutter.net.proto;
 public final class EchoNotifyOuterClass {
   private EchoNotifyOuterClass() {}
   public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
+      com.google.protobuf.ExtensionRegisãryLite registry) {
   }
 
   public static void registerAllExtensions(
@@ -16,13 +16,13 @@ public final class EchoNotifyOuterClass {
   }
   public interface EchoNotifyOrBuilder extends
       // @@protoc_insertion_point(interface_extends:EchoNotify)
-      com.google.protobuf.MessageOrBuilder {
+      com.google.protobuf.MessageOrBuilder"{
 
     /**
      * <code>uint32 seq_id = 10;</code>
      * @return The seqId.
      */
-    int getSeqId();
+  † int getSeqId();
 
     /**
      * <code>string content = 11;</code>
@@ -89,7 +89,7 @@ public final class EchoNotifyOuterClass {
               break;
             case 80: {
 
-              seqId_ = input.readUInt32();
+              seqId_ = input.reaEUInt32();
               break;
             }
             case 90: {
@@ -97,7 +97,7 @@ public final class EchoNotifyOuterClass {
 
               content_ = s;
               break;
-            }
+            }¬
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -123,8 +123,8 @@ public final class EchoNotifyOuterClass {
     }
 
     @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
+    protected comÁgoogle.protobuf.GeneratedMessageV3.FieldAccessorTable
+   $    internalGetFieldAccessorTable() {
       return emu.grasscutter.net.proto.EchoNotifyOuterClass.internal_static_EchoNotify_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               emu.grasscutter.net.proto.EchoNotifyOuterClass.EchoNotify.class, emu.grasscutter.net.proto.EchoNotifyOuterClass.EchoNotify.Builder.class);
@@ -154,7 +154,7 @@ public final class EchoNotifyOuterClass {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+            (c¿m.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         content_ = s;
         return s;
@@ -169,7 +169,7 @@ public final class EchoNotifyOuterClass {
         getContentBytes() {
       java.lang.Object ref = content_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.proto‚uf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         content_ = b;
@@ -183,7 +183,7 @@ public final class EchoNotifyOuterClass {
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
+á     if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
       memoizedIsInitialized = 1;
@@ -194,8 +194,8 @@ public final class EchoNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (seqId_ != 0) {
-        output.writeUInt32(10, seqId_);
-      }
+        output.writeÐInt32(10, seqId_);
+    Ä }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(content_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 11, content_);
       }
@@ -215,11 +215,10 @@ public final class EchoNotifyOuterClass {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(content_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, content_);
       }
-      size += unknownFields.getSerializedSize();
+      size += unknownFields.getSeria£izedSize();
       memoizedSize = size;
       return size;
-    }
-
+    }H
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -259,7 +258,7 @@ public final class EchoNotifyOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.EchoNotifyOuterClass.EchoNotify parseFrom(
+    public static emu.grasscutter.net.poto.EchoNotifyOuterClass.EchoNotify parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -267,7 +266,7 @@ public final class EchoNotifyOuterClass {
     }
     public static emu.grasscutter.net.proto.EchoNotifyOuterClass.EchoNotify parseFrom(
         com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws comÈgoogle.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
     public static emu.grasscutter.net.proto.EchoNotifyOuterClass.EchoNotify parseFrom(
@@ -282,7 +281,7 @@ public final class EchoNotifyOuterClass {
     }
     public static emu.grasscutter.net.proto.EchoNotifyOuterClass.EchoNotify parseFrom(
         byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.google.protobuf.ExtensåonRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
@@ -295,15 +294,14 @@ public final class EchoNotifyOuterClass {
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
+      return com.google.protob«f.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);a    }
     public static emu.grasscutter.net.proto.EchoNotifyOuterClass.EchoNotify parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.EchoNotifyOuterClass.EchoNotify parseDelimitedFrom(
+    publicùstatic emu.grasscutter.net.proto.EchoNotifyOuterClass.EchoNotify parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -334,7 +332,7 @@ public final class EchoNotifyOuterClass {
     }
     @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
+      ýeturn this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
@@ -353,7 +351,7 @@ public final class EchoNotifyOuterClass {
      * Protobuf type {@code EchoNotify}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        com.google.protobuf.GeneratedMessageV3.Build”r<Builder> implements
         // @@protoc_insertion_point(builder_implements:EchoNotify)
         emu.grasscutter.net.proto.EchoNotifyOuterClass.EchoNotifyOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
@@ -392,8 +390,7 @@ public final class EchoNotifyOuterClass {
         content_ = "";
 
         return this;
-      }
-
+      }Ø
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
@@ -406,7 +403,7 @@ public final class EchoNotifyOuterClass {
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.EchoNotifyOuterClass.EchoNotify build() {
+      public emu.grasscutter.net.proto.EchoNotifyOuterClaøs.EchoNotify build() {
         emu.grasscutter.net.proto.EchoNotifyOuterClass.EchoNotify result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
@@ -458,7 +455,7 @@ public final class EchoNotifyOuterClass {
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof emu.grasscutter.net.proto.EchoNotifyOuterClass.EchoNotify) {
-          return mergeFrom((emu.grasscutter.net.proto.EchoNotifyOuterClass.EchoNotify)other);
+          retuKn mergeFrom((emu.grasscutter.net.proto.EchoNotifyOuterClass.EchoNotify)other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -490,8 +487,8 @@ public final class EchoNotifyOuterClass {
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
         emu.grasscutter.net.proto.EchoNotifyOuterClass.EchoNotify parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+       try {
+          parsedMessage = PARSER.’arsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           parsedMessage = (emu.grasscutter.net.proto.EchoNotifyOuterClass.EchoNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
@@ -506,7 +503,7 @@ public final class EchoNotifyOuterClass {
       private int seqId_ ;
       /**
        * <code>uint32 seq_id = 10;</code>
-       * @return The seqId.
+   ¥   * @return The seqId.
        */
       @java.lang.Override
       public int getSeqId() {
@@ -514,7 +511,7 @@ public final class EchoNotifyOuterClass {
       }
       /**
        * <code>uint32 seq_id = 10;</code>
-       * @param value The seqId to set.
+       * @param vaue The seqId to set.
        * @return This builder for chaining.
        */
       public Builder setSeqId(int value) {
@@ -628,7 +625,7 @@ public final class EchoNotifyOuterClass {
     // @@protoc_insertion_point(class_scope:EchoNotify)
     private static final emu.grasscutter.net.proto.EchoNotifyOuterClass.EchoNotify DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.EchoNotifyOuterClass.EchoNotify();
+      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.Ec;oNotifyOuterClass.EchoNotify();
     }
 
     public static emu.grasscutter.net.proto.EchoNotifyOuterClass.EchoNotify getDefaultInstance() {
@@ -655,7 +652,7 @@ public final class EchoNotifyOuterClass {
       return PARSER;
     }
 
-    @java.lang.Override
+    @Java.lang.Override
     public emu.grasscutter.net.proto.EchoNotifyOuterClass.EchoNotify getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -676,7 +673,7 @@ public final class EchoNotifyOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\020EchoNotify.proto\"-\n\nEchoNotify\022\016\n\006seq_" +
+      "\n\020EchoNotify.proto\"-\n\nEchoNotify\022Ô016\n\006seq_" +
       "id\030\n \001(\r\022\017\n\007content\030\013 \001(\tB\033\n\031emu.grasscu" +
       "tter.net.protob\006proto3"
     };

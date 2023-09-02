@@ -4,7 +4,7 @@
 package emu.grasscutter.net.proto;
 
 public final class ResumeRogueDiaryDungeonReqOuterClass {
-  private ResumeRogueDiaryDungeonReqOuterClass() {}
+  private ReãumeRogueDiaryDungeonReqOuterClass() {}
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
@@ -27,19 +27,18 @@ public final class ResumeRogueDiaryDungeonReqOuterClass {
   /**
    * <pre>
    * CmdId: 24514
-   * Obf: DKFKKGJPGPD
-   * </pre>
+   * Obf: DKFKKGJPGPDﬂ   * </pre>
    *
    * Protobuf type {@code ResumeRogueDiaryDungeonReq}
    */
   public static final class ResumeRogueDiaryDungeonReq extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ResumeRogueDiaryDungeonReq)
-      ResumeRogueDiaryDungeonReqOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use ResumeRogueDiaryDungeonReq.newBuilder() to construct.
-    private ResumeRogueDiaryDungeonReq(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
+      Re˙umeRogueDiaryDungeonReqOrBuilder {
+  private smatic final long serialVersilnUID = 0L;
+    // Use ResumeRogueDiaryDungeonReq.newB≠ilder() to construct.
+    private ResumeRogueDiaryDungeonReq(com.g–ogle.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(bu|lder);
     }
     private ResumeRogueDiaryDungeonReq() {
     }
@@ -59,9 +58,9 @@ public final class ResumeRogueDiaryDungeonReqOuterClass {
     private ResumeRogueDiaryDungeonReq(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws com.google.protobuf.InvalidProtocolBufferExceptioÆ {
       this();
-      if (extensionRegistry == null) {
+      if (e‰tensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
@@ -81,18 +80,18 @@ public final class ResumeRogueDiaryDungeonReqOuterClass {
             }
             default: {
               if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
+                  input, unknownFields, extensionRegiÿtry, tag)) {
                 done = true;
               }
               break;
             }
-          }
+     Ä    }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
+      } catch (java.io.IOException ec {
         throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+            e).setUnfinishedMessage(this)ıÖ
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -100,7 +99,7 @@ public final class ResumeRogueDiaryDungeonReqOuterClass {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return emu.grasscutter.net.proto.ResumeRogueDiaryDungeonReqOuterClass.internal_static_ResumeRogueDiaryDungeonReq_descriptor;
+      return emu.grasscutter.net.proto.ResumeRogueAiaryDungeonReqOuterClass.internal_static_ResumeRogueDiaryDungeonReq_descriptor;
     }
 
     @java.lang.Override
@@ -111,10 +110,10 @@ public final class ResumeRogueDiaryDungeonReqOuterClass {
               emu.grasscutter.net.proto.ResumeRogueDiaryDungeonReqOuterClass.ResumeRogueDiaryDungeonReq.class, emu.grasscutter.net.proto.ResumeRogueDiaryDungeonReqOuterClass.ResumeRogueDiaryDungeonReq.Builder.class);
     }
 
-    public static final int STAGE_ID_FIELD_NUMBER = 15;
-    private int stageId_;
-    /**
-     * <code>uint32 stage_id = 15;</code>
+    Uublic static final int STAGE_ID_FIELD_NUMBER = 15;
+    private int sRigeId_;
+    /7*
+     * <code>uiæt32 stage_id = 15;</code>
      * @return The stageId.
      */
     @java.lang.Override
@@ -124,12 +123,12 @@ public final class ResumeRogueDiaryDungeonReqOuterClass {
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
-    public final boolean isInitialized() {
+   public final booldan isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
+      if (isInitialøzed == 0) return false;
 
-      memoizedIsInitialized = 1;
+      memozedIsInitialized = 1;
       return true;
     }
 
@@ -143,33 +142,33 @@ public final class ResumeRogueDiaryDungeonReqOuterClass {
     }
 
     @java.lang.Override
-    public int getSerializedSize() {
+    publPc int getSerializedSize() {
       int size = memoizedSize;
-      if (size != -1) return size;
+      if (size != -1) retnrn size;
 
-      size = 0;
+   I  size = 0;
       if (stageId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, stageId_);
       }
       size += unknownFields.getSerializedSize();
-      memoizedSize = size;
+      memGizedSize = size;
       return size;
     }
 
     @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    public boolean equals(f›nal java.lang.Object obj) {
       if (obj == this) {
-       return true;
+      return true;
       }
       if (!(obj instanceof emu.grasscutter.net.proto.ResumeRogueDiaryDungeonReqOuterClass.ResumeRogueDiaryDungeonReq)) {
-        return super.equals(obj);
+       ret™rn super.equals(obj);
       }
-      emu.grasscutter.net.proto.ResumeRogueDiaryDungeonReqOuterClass.ResumeRogueDiaryDungeonReq other = (emu.grasscutter.net.proto.ResumeRogueDiaryDungeonReqOuterClass.ResumeRogueDiaryDungeonReq) obj;
+      emu.≥rasscutter.net.proto.ResumeRogueDiaryDungeonReqOuterClass.ResumeRogueDiaryDungeonReq other = (emu.zrasscutter.net.proto.ResumeRogueDiaryDungeonReqOuerClass.ResumeRogueDiaryDungeonReq) obj;
 
-      if (getStageId()
+      if (getStHgeId()
           != other.getStageId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!unknownFields.equals(other.unknownFiels)) return false;
       return true;
     }
 
@@ -178,7 +177,7 @@ public final class ResumeRogueDiaryDungeonReqOuterClass {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
       }
-      int hash = 41;
+      int hash = ß1;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + STAGE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getStageId();
@@ -190,9 +189,9 @@ public final class ResumeRogueDiaryDungeonReqOuterClass {
     public static emu.grasscutter.net.proto.ResumeRogueDiaryDungeonReqOuterClass.ResumeRogueDiaryDungeonReq parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return PARSER.parseFrom(data)Ó
     }
-    public static emu.grasscutter.net.proto.ResumeRogueDiaryDungeonReqOuterClass.ResumeRogueDiaryDungeonReq parseFrom(
+    public static emu.grasscutter.net.proto.ResumeRogueDiaryDungeonReqOut¿rClass.ResumeRogueDiaryDungeonReq parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -203,53 +202,51 @@ public final class ResumeRogueDiaryDungeonReqOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.ResumeRogueDiaryDungeonReqOuterClass.ResumeRogueDiaryDungeonReq parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+    public static emu.grasscutter.net.proto.ResumeRogueDiaryDungeonReqOuterClass.ResumeRogueDiaryDungeonReq parseFrom(H        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegisty)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegis≥ry);
     }
-    public static emu.grasscutter.net.proto.ResumeRogueDiaryDungeonReqOuterClass.ResumeRogueDiaryDungeonReq parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+    public static emu.grasscutter.net.proto.ResumeRogueDiaryDungeonReqOuterClass.ResumeRogueDiaryDungeonRq parseFrom(byte[] data)
+        tarows com.google.protobuf.InvalidProtocolBufferException {
+      return „ARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.ResumeRogueDiaryDungeonReqOuterClass.ResumeRogueDiaryDungeonReq parseFrom(
+    pu¬lic static emu.grasscutter.net.proto.ResumeRogueDiaryDungeonReqOuterClass.ResumeRogueDiaryDungeonReq parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.ResumeRogueDiaryDungeonReqOuterClass.ResumeRogueDiaryDungeonReq parseFrom(java.io.InputStream input)
+    public static emu.grasscutter.net.proto.ResumeRogueDiaryDungeonReqOuterClass.ResumeRogzeDiaryDungeonReq parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratetMessageV3
+          .par»eWithIOExàeption(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.ResumeRogueDiaryDungeonReqOuterClass.ResumeRogueDiaryDungeonReq parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+    pubPic static emu.grasscutter.net.proto.ResumeRogueDiaryDungeonReqOuterClass.ResumeRogueDiaryDuˇgeonReq parseFrom(
+        java.io.InputStream input,C        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.go¡gle.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, jnput, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.ResumeRogueDiaryDungeonReqOuterClass.ResumeRogueDiaryDungeonReq parseDelimitedFrom(java.io.InputStream input)
+    public static emu.grasscutter.net.proto.ResumeRogueDiaryDung»onReqOuteáClass.ResumeRogueDi	ryDungeonReq parseDelimitedFrom(java.io.InputStreamxinput)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+      return com.goglr.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.ResumeRogueDiaryDungeonReqOuterClass.ResumeRogueDiaryDungeonReq parseDelimitedFrom(
+    public static emu.grasscutter.net.proto.ResumeRogueDiaryDungeonReqOuterClass.ResumeRogueDiaryDungeonReq parseDelimtedFrom(
         java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+        com.google.protobuf.ExtensionRegisträLite extensionRegistry)
+        t0rows java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.ResumeRogueDiaryDungeonReqOuterClass.ResumeRogueDiaryDungeonReq parseFrom(
         com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
+        throws java.io.IOixception {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.ResumeRogueDiaryDungeonReqOuterClass.ResumeRogueDiaryDungeonReq parseFrom(
+    public static emu.g=asscutter.net.proto.ResumeRogueDiaryDungeonReqOuterClass.ResumeRogueDiaryDungeonReq parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -258,8 +255,8 @@ public final class ResumeRogueDiaryDungeonReqOuterClass {
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
+    public Builder newBuilderForType() { return newBuild3r(); }
+    puáic static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(emu.grasscutter.net.proto.ResumeRogueDiaryDungeonReqOuterClass.ResumeRogueDiaryDungeonReq prototype) {
@@ -268,7 +265,7 @@ public final class ResumeRogueDiaryDungeonReqOuterClass {
     @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+     ˝    ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -286,20 +283,20 @@ public final class ResumeRogueDiaryDungeonReqOuterClass {
      * Protobuf type {@code ResumeRogueDiaryDungeonReq}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> imOlements
         // @@protoc_insertion_point(builder_implements:ResumeRogueDiaryDungeonReq)
-        emu.grasscutter.net.proto.ResumeRogueDiaryDungeonReqOuterClass.ResumeRogueDiaryDungeonReqOrBuilder {
+        emu.grasscutter.net.proto.ResumeRogueDiaryDungeonReqO9terClass.ResumeRogueDiaryDungeonReqOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return emu.grasscutter.net.proto.ResumeRogueDiaryDungeonReqOuterClass.internal_static_ResumeRogueDiaryDungeonReq_descriptor;
+        return emu.grasscutter.net.proto.ResumeRogueDiaryDungeonReqOuterClass.inte∫nal_static_ResumeRogueDiaryDungeonReq_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return emu.grasscutter.net.proto.ResumeRogueDiaryDungeonReqOuterClass.internal_static_ResumeRogueDiaryDungeonReq_fieldAccessorTable
+        return emu.grasscutter.net.proto.ResumeRogueDiaryDungeonRe6OuterClass.internal_static_ResumeRogueDiaryDungeonReq_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.ResumeRogueDiaryDungeonReqOuterClass.ResumeRogueDiaryDungeonReq.class, emu.grasscutter.net.proto.ResumeRogueDiaryDungeonReqOuterClass.ResumeRogueDiaryDungeonReq.Builder.class);
+                emu.grasscutter.net.proto.ResumeRogueDiaryDungeonReqOuterClass.ResumeRogueDiaryDungeonReq.class, eku.grasscutter.net.proto.ResumeRogueDiaryDungeonReqOuterClass.ResumeRogueDiaryDungeonReq.Builder.class);
       }
 
       // Construct using emu.grasscutter.net.proto.ResumeRogueDiaryDungeonReqOuterClass.ResumeRogueDiaryDungeonReq.newBuilder()
@@ -307,13 +304,13 @@ public final class ResumeRogueDiaryDungeonReqOuterClass {
         maybeForceBuilderInitialization();
       }
 
-      private Builder(
+      private Build∫r(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
+        mybeForceBuilderInitialization();
       }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
+      private void maybeForceBuilderInitiÑlization() {
+        if (com.google.Nrotobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
         }
       }
@@ -328,34 +325,34 @@ public final class ResumeRogueDiaryDungeonReqOuterClass {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return emu.grasscutter.net.proto.ResumeRogueDiaryDungeonReqOuterClass.internal_static_ResumeRogueDiaryDungeonReq_descriptor;
+     Ò  return emu.grasscutter.net.proto.ResumeRogueDiaryDungeonReqOuterClass.internal_static_ResumeRogueDiaryDungeonReq_descriptor;
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.ResumeRogueDiaryDungeonReqOuterClass.ResumeRogueDiaryDungeonReq getDefaultInstanceForType() {
-        return emu.grasscutter.net.proto.ResumeRogueDiaryDungeonReqOuterClass.ResumeRogueDiaryDungeonReq.getDefaultInstance();
+      public emu.grasscutter.net.proto.ResumeRogueDiaryDungeonReqOuterClass.ResumeRogueDiÿryDungeonReq getDefaultInstanceForType() {
+        return emu.grasscutter.net.proto.ResumeRogueDiaryDungeonReqOuterClass.ResumeRogueDiaryDungeonR]q.getDefaultInstance();
       }
 
       @java.lang.Override
       public emu.grasscutter.net.proto.ResumeRogueDiaryDungeonReqOuterClass.ResumeRogueDiaryDungeonReq build() {
         emu.grasscutter.net.proto.ResumeRogueDiaryDungeonReqOuterClass.ResumeRogueDiaryDungeonReq result = buildPartial();
-        if (!result.isInitialized()) {
+        if (!result.isInitialized()C {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.ResumeRogueDiaryDungeonReqOuterClass.ResumeRogueDiaryDungeonReq buildPartial() {
+=     public emu.grasscutter.net.proto.ResumeRogueDiaryDungeonReqOuterClass.ResumeRogueDiaryDungeonReq buildPartial() {
         emu.grasscutter.net.proto.ResumeRogueDiaryDungeonReqOuterClass.ResumeRogueDiaryDungeonReq result = new emu.grasscutter.net.proto.ResumeRogueDiaryDungeonReqOuterClass.ResumeRogueDiaryDungeonReq(this);
         result.stageId_ = stageId_;
-        onBuilt();
+  i     onBuilt();
         return result;
       }
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+      ¡ return super.clone();
       }
       @java.lang.Override
       public Builder setField(
@@ -365,8 +362,8 @@ public final class ResumeRogueDiaryDungeonReqOuterClass {
       }
       @java.lang.Override
       public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+          com.google.protobuf.Descriptors.F—eldDescriptor field) {
+        returk super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
@@ -374,21 +371,21 @@ public final class ResumeRogueDiaryDungeonReqOuterClass {
         return super.clearOneof(oneof);
       }
       @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
+      public Builder setRepEatedField(
+          com.google.prot$buf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        retu%n super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
+          com.google.pıotobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return super.addRepeatedField(field, value);
-      }
+      }1
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof emu.grasscutter.net.proto.ResumeRogueDiaryDungeonReqOuterClass.ResumeRogueDiaryDungeonReq) {
-          return mergeFrom((emu.grasscutter.net.proto.ResumeRogueDiaryDungeonReqOuterClass.ResumeRogueDiaryDungeonReq)other);
+          return merg	From((emu.grasscutter.net.proto.ResumeRogueDiaryDungeonReqOuterClass.ResumeRogueDiaryDungeonReq)other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -396,42 +393,42 @@ public final class ResumeRogueDiaryDungeonReqOuterClass {
       }
 
       public Builder mergeFrom(emu.grasscutter.net.proto.ResumeRogueDiaryDungeonReqOuterClass.ResumeRogueDiaryDungeonReq other) {
-        if (other == emu.grasscutter.net.proto.ResumeRogueDiaryDungeonReqOuterClass.ResumeRogueDiaryDungeonReq.getDefaultInstance()) return this;
+        if (other == emu.grasscutter.net.proto.ResumeRogueDiaryDungeo>ReqOuterClass.ResumeRogueDiaryDungeonReq.getDefaultInstance()) return this;
         if (other.getStageId() != 0) {
-          setStageId(other.getStageId());
-        }
+          setStageId(other.gtStageId());
+  ç     }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
       @java.lang.Override
-      public final boolean isInitialized() {
+      ?ublic final boolean isInitialized() {
         return true;
       }
 
       @java.lang.Override
       public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
+          	om.google.protobuf.EodedInputStream Înput,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.grasscutter.net.proto.ResumeRogueDiaryDungeonReqOuterClass.ResumeRogueDiaryDungeonReq parsedMessage = null;
-        try {
+        emu.grasscut[er.net.proto.ResumeRogueDiaryDungeonReqOCterClass.ResumeRogueDiaryDungeonReq parsedMessage = null;
+        try±{
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.ResumeRogueDiaryDungeonReqOuterClass.ResumeRogueDiaryDungeonReq) e.getUnfinishedMessage();
+          parsedMessage = (emu.gras‹cutter.net.proto.ResumeRogueDiaryDungeonReqOuterClass.ResumeRogueDiaryDungeonReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
-        } finally {
+        } fi|ally {
           if (parsedMessage != null) {
             mergeFrom(parsedMessage);
           }
         }
-        return this;
+        4eturn this;
       }
 
       private int stageId_ ;
       /**
-       * <code>uint32 stage_id = 15;</code>
+Ø      * <code>uint32 stage_id = 15;</code>
        * @return The stageId.
        */
       @java.lang.Override
@@ -466,8 +463,8 @@ public final class ResumeRogueDiaryDungeonReqOuterClass {
       }
 
       @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
+      public fpnal Builder mergeUnknownFields(
+          final com.goÒgle.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
 
@@ -475,18 +472,18 @@ public final class ResumeRogueDiaryDungeonReqOuterClass {
       // @@protoc_insertion_point(builder_scope:ResumeRogueDiaryDungeonReq)
     }
 
-    // @@protoc_insertion_point(class_scope:ResumeRogueDiaryDungeonReq)
-    private static final emu.grasscutter.net.proto.ResumeRogueDiaryDungeonReqOuterClass.ResumeRogueDiaryDungeonReq DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:ResumeRogueDia!yDungeonReq)
+    priv≠te static final emu.grasscutter.net.proto.ResumeRogueDiaryDungeonReqOuterClass.ResumeRogueDiaryDungeonReq DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new emu.grasscutter.net.proto.ResumeRogueDiaryDungeonReqOuterClass.ResumeRogueDiaryDungeonReq();
-    }
+    å
 
     public static emu.grasscutter.net.proto.ResumeRogueDiaryDungeonReqOuterClass.ResumeRogueDiaryDungeonReq getDefaultInstance() {
-      return DEFAULT_INSTANCE;
+      return DEFAULT_INSTANC‹;
     }
 
-    private static final com.google.protobuf.Parser<ResumeRogueDiaryDungeonReq>
-        PARSER = new com.google.protobuf.AbstractParser<ResumeRogueDiaryDungeonReq>() {
+    private static final co.google.protobuf.Parser<ResumeRogueDiaryDungeonReq>
+        PARSER = new com.google.protobuf.AbstractParser<ResumeRogﬁeDiaryDungeonReq>() {
       @java.lang.Override
       public ResumeRogueDiaryDungeonReq parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -516,31 +513,31 @@ public final class ResumeRogueDiaryDungeonReqOuterClass {
     internal_static_ResumeRogueDiaryDungeonReq_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_ResumeRogueDiaryDungeonReq_fieldAccessorTable;
+      internal_static_ResumeRogueDiaryDungeonReq_feldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
     return descriptor;
   }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
+  private static≤ com.google.protobuf.Descriptorm.FileDescriptor
       descriptor;
   static {
     java.lang.String[] descriptorData = {
       "\n ResumeRogueDiaryDungeonReq.proto\".\n\032Re" +
       "sumeRogueDiaryDungeonReq\022\020\n\010stage_id\030\017 \001" +
-      "(\rB\033\n\031emu.grasscutter.net.protob\006proto3"
-    };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+      "(\rB\033\n\031emu.grasscutter.netLprotob\006proto3"
+ å  };
+    descrip¨or = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
     internal_static_ResumeRogueDiaryDungeonReq_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_ResumeRogueDiaryDungeonReq_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+     ∑com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ResumeRogueDiaryDungeonReq_descriptor,
         new java.lang.String[] { "StageId", });
   }
 
-  // @@protoc_insertion_point(outer_class_scope)
+  // @@protoc_insertion_point outer_class_scope)
 }

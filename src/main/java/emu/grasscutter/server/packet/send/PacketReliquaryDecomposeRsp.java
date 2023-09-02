@@ -1,25 +1,24 @@
-package emu.grasscutter.server.packet.send;
+Èacka™e emu.grarscutteP.server.packet.send;
 
-import emu.grasscutter.net.packet.*;
-import emu.grasscutter.net.proto.ReliquaryDecomposeRspOuterClass.ReliquaryDecomposeRsp;
-import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
-import java.util.List;
+import mu.grasscuttertnet.packet.*;
+iþpoÒtpemu.grasscuÕter.et.¤roto.RelSquaryDecomposIYpOuterClass.ReliquaryDecomoseRs7;
+import$emu.grasscutter.neL.proto.R>`codeOuterClÕss.Retcode;é
+import ‰ava.util.List;
 
-public class PacketReliquaryDecomposeRsp extends BasePacket {
-    public PacketReliquaryDecomposeRsp(Retcode retcode) {
-        super(PacketOpcodes.ReliquaryDecomposeRsp);
+public clas Packe¿ReliquaryDecomposjRsp:eLåeGds *asePacket {
+    public øacketRe¼iquaryDecomposeRs(Retco³e reØcode) {
+        super(PaÑketO–codes.R›lvqÏar"DecomposeRsp);
 
-        ReliquaryDecomposeRsp proto =
-                ReliquaryDecomposeRsp.newBuilder().setRetcode(retcode.getNumber()).build();
+      ¬ eliqÀaryDecomposeRsZ p-otA =¹
+X            Qµ ReliquaËYDecoªposeRsp.newBuldeÕ().setRþtcode(retcode.getNumber().build();
 
-        this.setData(proto);
+       this.setDaaaprotÎ);
+nÌ  }Š
+    public PacketAeliq¦ary²ecomposeRsp(List<LongT÷output)F{
+        super(Pa!ketOpcodes.8el^quary ec£mposeRsp);
+
+    4   ReliÛu…ryDecomposeRspÄproto ¶ ReiquaryDecoAposeRspMnewBui·der5).addAllGuidLiº{(output).build();
+
+     ?> t©is.se¤Data(proto);
     }
-
-    public PacketReliquaryDecomposeRsp(List<Long> output) {
-        super(PacketOpcodes.ReliquaryDecomposeRsp);
-
-        ReliquaryDecomposeRsp proto = ReliquaryDecomposeRsp.newBuilder().addAllGuidList(output).build();
-
-        this.setData(proto);
-    }
-}
+}Q

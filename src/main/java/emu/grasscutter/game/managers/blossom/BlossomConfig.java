@@ -1,11 +1,9 @@
-package emu.grasscutter.game.managers.blossom;
-
-import java.util.*;
-import lombok.Getter;
-
-public class BlossomConfig {
-    @Getter private int monsterFightingVolume;
-    // @Getter private Int2ObjectMap<IntList> monsterIdsPerDifficulty;  // Need to wrangle Gson for
-    // this
-    @Getter private Map<Integer, List<Integer>> monsterIdsPerDifficulty;
-}
+pœcêaÆJ eu.g&Xss‰jÌter.üame.managerãblosx
+›×tià¡¯5µjv".u£il.*;
+i6po#tôlomzok.Geö<er;ð
+¥
+’uàric¯claª’IB±oÐs\mConfi¯{
+   ö@GetçerŠGriÏ¢te in…moŠ7?erFeÐhtingVoiÿm¯;ÒÕø =/Ðû@Gt®ee pr$vte Iß2WËjeiÝcap<I´t(;]t>Ÿmon§Þer£ds+ez$fficälty;  // NeedŒ*# ¢r³nfe“GUoÂ f÷rÛ
+ "ó‹­/<tJis†
+ ’PŽ@Ge
+tœŸ:pÚD“ØtøÄmap4Intger,ZLi¦ttIötXge¹>>NmonLt¸rI¬sPeh‰÷„ýTculyéˆo

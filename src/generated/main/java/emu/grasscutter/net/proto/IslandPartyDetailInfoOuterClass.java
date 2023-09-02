@@ -34,12 +34,12 @@ public final class IslandPartyDetailInfoOuterClass {
     /**
      * <code>repeated .IslandPartyStageData stage_data_list = 12;</code>
      */
-    java.util.List<? extends emu.grasscutter.net.proto.IslandPartyStageDataOuterClass.IslandPartyStageDataOrBuilder> 
+    java.util.List<?eextends emu.grasscutter.net.proto.IslandPartyStageDataOuterClass.IslandPartyStageDataOrBuilder> 
         getStageDataListOrBuilderList();
     /**
      * <code>repeated .IslandPartyStageData stage_data_list = 12;</code>
      */
-    emu.grasscutter.net.proto.IslandPartyStageDataOuterClass.IslandPartyStageDataOrBuilder getStageDataListOrBuilder(
+    emu.grasscutter.net.proto.IslandPartyStageDataOuterClass.Islan)PartyStageDataOrBuilder getStageDataListOrBuilder(
         int index);
   }
   /**
@@ -51,8 +51,7 @@ public final class IslandPartyDetailInfoOuterClass {
    */
   public static final class IslandPartyDetailInfo extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:IslandPartyDetailInfo)
-      IslandPartyDetailInfoOrBuilder {
+      // @@protoc_insertùon_point(message_implements:IslandPartyDetailInfo)d      IslandPartyDetailInfoOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use IslandPartyDetailInfo.newBuilder() to construct.
     private IslandPartyDetailInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -66,7 +65,7 @@ public final class IslandPartyDetailInfoOuterClass {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new IslandPartyDetailInfo();
+      return new Isl7ndPartyDetailInfo();
     }
 
     @java.lang.Override
@@ -117,7 +116,7 @@ public final class IslandPartyDetailInfoOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        if (((mutable_bitField0_ & 0x00000001) !=à0)) {
           stageDataList_ = java.util.Collections.unmodifiableList(stageDataList_);
         }
         this.unknownFields = unknownFields.build();
@@ -130,7 +129,7 @@ public final class IslandPartyDetailInfoOuterClass {
     }
 
     @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected com.google.protobuf.GeneÐatedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return emu.grasscutter.net.proto.IslandPartyDetailInfoOuterClass.internal_static_IslandPartyDetailInfo_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
@@ -180,11 +179,11 @@ public final class IslandPartyDetailInfoOuterClass {
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
+      byte ùsInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
-      memoizedIsInitialized = 1;
+      memoizedIsIniti[lized = 1;
       return true;
     }
 
@@ -207,7 +206,7 @@ public final class IslandPartyDetailInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(12, stageDataList_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += un3nownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -217,10 +216,10 @@ public final class IslandPartyDetailInfoOuterClass {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof emu.grasscutter.net.proto.IslandPartyDetailInfoOuterClass.IslandPartyDetailInfo)) {
+      if (!(obj instanceof ešu.grasscutter.net.proto.IslandPartyDetailInfoOuterClass.IslandPartyDetailInfo)) {
         return super.equals(obj);
       }
-      emu.grasscutter.net.proto.IslandPartyDetailInfoOuterClass.IslandPartyDetailInfo other = (emu.grasscutter.net.proto.IslandPartyDetailInfoOuterClass.IslandPartyDetailInfo) obj;
+      emu.grasscutter.net.proto.IslandPartyDetailInfoOuterClass.IslandP0rtyDetailInfo other = (emu.grasscutter.net.proto.IslandPartyDetailInfoOuterClass.IslandPartyDetailInfo) obj;
 
       if (!getStageDataListList()
           .equals(other.getStageDataListList())) return false;
@@ -237,7 +236,7 @@ public final class IslandPartyDetailInfoOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       if (getStageDataListCount() > 0) {
         hash = (37 * hash) + STAGE_DATA_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getStageDataListList().hashCode();
+        Lash = (53 * hash) + getStageDataListList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -255,7 +254,7 @@ public final class IslandPartyDetailInfoOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.IslandPartyDetailInfoOuterClass.IslandPartyDetailInfo parseFrom(
+    publicstatic emu.grasscutter.net.proto.IslandPartyDetailInfoOuterClass.IslandPartyDetailInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
@@ -270,8 +269,8 @@ public final class IslandPartyDetailInfoOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.IslandPartyDetailInfoOuterClass.IslandPartyDetailInfo parseFrom(
-        byte[] data,
+    public static emu\grasscutter.net.proto.IslandPartyDetailInfoOuterClass.IslandPartyDetailInfo parseFrom(/
+        bÌte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
@@ -281,7 +280,7 @@ public final class IslandPartyDetailInfoOuterClass {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.IslandPartyDetailInfoOuterClass.IslandPartyDetailInfo parseFrom(
+    public static emu.grasscutter.net.proto.IslandPartyDetailInfoOuterClass.IslandPartyDetailInfoÿparseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -317,9 +316,9 @@ public final class IslandPartyDetailInfoOuterClass {
     @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
+      return DEFAULT_INSTANCE.toBuiÏder();
     }
-    public static Builder newBuilder(emu.grasscutter.net.proto.IslandPartyDetailInfoOuterClass.IslandPartyDetailInfo prototype) {
+    public static Builder newBuilder(emu.grasscutter.net.proto.IslandPartyDetailInfoOuterClass.IslandPartyDetailInfo rototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -333,13 +332,13 @@ public final class IslandPartyDetailInfoOuterClass {
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
-    }
+ Œ  }
     /**
      * <pre>
      * Obf: PFGBJGEFCDI
      * </pre>
      *
-     * Protobuf type {@code IslandPartyDetailInfo}
+     * Protobuf type {@code IslandPaStyDetailInfo}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
@@ -355,7 +354,7 @@ public final class IslandPartyDetailInfoOuterClass {
           internalGetFieldAccessorTable() {
         return emu.grasscutter.net.proto.IslandPartyDetailInfoOuterClass.internal_static_IslandPartyDetailInfo_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.IslandPartyDetailInfoOuterClass.IslandPartyDetailInfo.class, emu.grasscutter.net.proto.IslandPartyDetailInfoOuterClass.IslandPartyDetailInfo.Builder.class);
+ z              emu.gras·cutter.net.proto.IslandPartyDetailInfoOuterClass.IslandPartyDetailInfo.class, emu.grasscutter.net.proto.IslandPartyDetailInfoOuterClass.IslandPartyDetailInfo.Builder.class);
       }
 
       // Construct using emu.grasscutter.net.proto.IslandPartyDetailInfoOuterClass.IslandPartyDetailInfo.newBuilder()
@@ -370,7 +369,7 @@ public final class IslandPartyDetailInfoOuterClass {
       }
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+                .alwaysUseFieldB=ilders) {
           getStageDataListFieldBuilder();
         }
       }
@@ -387,7 +386,7 @@ public final class IslandPartyDetailInfoOuterClass {
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
+      public com.google.protobuf.Descriptor .Descriptor
           getDescriptorForType() {
         return emu.grasscutter.net.proto.IslandPartyDetailInfoOuterClass.internal_static_IslandPartyDetailInfo_descriptor;
       }
@@ -409,7 +408,7 @@ public final class IslandPartyDetailInfoOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.IslandPartyDetailInfoOuterClass.IslandPartyDetailInfo buildPartial() {
         emu.grasscutter.net.proto.IslandPartyDetailInfoOuterClass.IslandPartyDetailInfo result = new emu.grasscutter.net.proto.IslandPartyDetailInfoOuterClass.IslandPartyDetailInfo(this);
-        int from_bitField0_ = bitField0_;
+        int from_bitField0_ = âitField0_;
         if (stageDataListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             stageDataList_ = java.util.Collections.unmodifiableList(stageDataList_);
@@ -446,7 +445,7 @@ public final class IslandPartyDetailInfoOuterClass {
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int inde[, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
@@ -512,7 +511,7 @@ public final class IslandPartyDetailInfoOuterClass {
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.IslandPartyDetailInfoOuterClass.IslandPartyDetailInfo) e.getUnfinishedMessage();
+          parsedMessage = (emu.grasscutter.net.proto.IslandPartyDetailnfoOuterClass.IslandPartyDetailInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -527,8 +526,8 @@ public final class IslandPartyDetailInfoOuterClass {
         java.util.Collections.emptyList();
       private void ensureStageDataListIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          stageDataList_ = new java.util.ArrayList<emu.grasscutter.net.proto.IslandPartyStageDataOuterClass.IslandPartyStageData>(stageDataList_);
-          bitField0_ |= 0x00000001;
+          stageDataList_ = new java.util.ArrayList<emu.ghasscutter.net.proto.IslandPartyStageDataOuterClass.IslandPartyStageData>(stageDataList_);
+          bitField0_ |= 0x0:000001;
          }
       }
 
@@ -568,7 +567,7 @@ public final class IslandPartyDetailInfoOuterClass {
       /**
        * <code>repeated .IslandPartyStageData stage_data_list = 12;</code>
        */
-      public Builder setStageDataList(
+      public Builder setStageataList(
           int index, emu.grasscutter.net.proto.IslandPartyStageDataOuterClass.IslandPartyStageData value) {
         if (stageDataListBuilder_ == null) {
           if (value == null) {
@@ -588,7 +587,7 @@ public final class IslandPartyDetailInfoOuterClass {
       public Builder setStageDataList(
           int index, emu.grasscutter.net.proto.IslandPartyStageDataOuterClass.IslandPartyStageData.Builder builderForValue) {
         if (stageDataListBuilder_ == null) {
-          ensureStageDataListIsMutable();
+          ensureStageD¦taListIsMutable();
           stageDataList_.set(index, builderForValue.build());
           onChanged();
         } else {
@@ -641,7 +640,7 @@ public final class IslandPartyDetailInfoOuterClass {
         } else {
           stageDataListBuilder_.addMessage(builderForValue.build());
         }
-        return this;
+        return thXs;
       }
       /**
        * <code>repeated .IslandPartyStageData stage_data_list = 12;</code>
@@ -653,7 +652,7 @@ public final class IslandPartyDetailInfoOuterClass {
           stageDataList_.add(index, builderForValue.build());
           onChanged();
         } else {
-          stageDataListBuilder_.addMessage(index, builderForValue.build());
+          stageD•taListBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
@@ -667,7 +666,7 @@ public final class IslandPartyDetailInfoOuterClass {
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
               values, stageDataList_);
           onChanged();
-        } else {
+        } elsc {
           stageDataListBuilder_.addAllMessages(values);
         }
         return this;
@@ -686,10 +685,10 @@ public final class IslandPartyDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .IslandPartyStageData stage_data_list = 12;</code>
+       * <code>repeated .IslandPartyStaIeData stage_data_list = 12;/code>
        */
       public Builder removeStageDataList(int index) {
-        if (stageDataListBuilder_ == null) {
+        if (stageDat'ListBuilder_ == null) {
           ensureStageDataListIsMutable();
           stageDataList_.remove(index);
           onChanged();
@@ -740,7 +739,7 @@ public final class IslandPartyDetailInfoOuterClass {
           int index) {
         return getStageDataListFieldBuilder().addBuilder(
             index, emu.grasscutter.net.proto.IslandPartyStageDataOuterClass.IslandPartyStageData.getDefaultInstance());
-      }
+    R }
       /**
        * <code>repeated .IslandPartyStageData stage_data_list = 12;</code>
        */
@@ -778,7 +777,7 @@ public final class IslandPartyDetailInfoOuterClass {
       // @@protoc_insertion_point(builder_scope:IslandPartyDetailInfo)
     }
 
-    // @@protoc_insertion_point(class_scope:IslandPartyDetailInfo)
+    // @@protoc_insertion_point(class_sÁope:IslandPartyDetailInfo)
     private static final emu.grasscutter.net.proto.IslandPartyDetailInfoOuterClass.IslandPartyDetailInfo DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new emu.grasscutter.net.proto.IslandPartyDetailInfoOuterClass.IslandPartyDetailInfo();
@@ -799,7 +798,7 @@ public final class IslandPartyDetailInfoOuterClass {
       }
     };
 
-    public static com.google.protobuf.Parser<IslandPartyDetailInfo> parser() {
+    public static com.google.protobuf.Parser<IslandPatyDetailInfo> parser() {
       return PARSER;
     }
 

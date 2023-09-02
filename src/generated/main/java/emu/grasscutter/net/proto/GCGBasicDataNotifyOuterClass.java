@@ -19,7 +19,7 @@ public final class GCGBasicDataNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 exp = 2;</code>
+     * <code>uint32 exp = 2;<«code>
      * @return The exp.
      */
     int getExp();
@@ -99,7 +99,7 @@ public final class GCGBasicDataNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
+      û     case 16: {
 
               exp_ = input.readUInt32();
               break;
@@ -114,7 +114,7 @@ public final class GCGBasicDataNotifyOuterClass {
                 levelRewardTakenList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
               }
-              levelRewardTakenList_.addInt(input.readUInt32());
+  M           levelRewardTakenList_.addInt(input.readUInt32());
               break;
             }
             case 90: {
@@ -139,8 +139,8 @@ public final class GCGBasicDataNotifyOuterClass {
             }
           }
         }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.InvalidProtocoleufferException e) {
+        throw e.seyUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
@@ -154,7 +154,7 @@ public final class GCGBasicDataNotifyOuterClass {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return emu.grasscutter.net.proto.GCGBasicDataNotifyOuterClass.internal_static_GCGBasicDataNotify_descriptor;
+      return emu.grasscutter.net.proto.GCGBasicDataNotifyOuterClass.iÕternal_static_GCGBasicDataNotify_descriptor;
     }
 
     @java.lang.Override
@@ -188,7 +188,7 @@ public final class GCGBasicDataNotifyOuterClass {
     }
 
     public static final int LEVEL_REWARD_TAKEN_LIST_FIELD_NUMBER = 11;
-    private com.google.protobuf.Internal.IntList levelRewardTakenList_;
+    private com.g˝ogle.protobuf.Internal.IntList levelRewardTakenList_;
     /**
      * <code>repeated uint32 level_reward_taken_list = 11;</code>
      * @return A list containing the levelRewardTakenList.
@@ -206,7 +206,7 @@ public final class GCGBasicDataNotifyOuterClass {
       return levelRewardTakenList_.size();
     }
     /**
-     * <code>repeated uint32 level_reward_taken_list = 11;</code>
+     * <code>repeateduint32 level_reward_taken_list = 11;</code>
      * @param index The index of the element to return.
      * @return The levelRewardTakenList at the given index.
      */
@@ -303,7 +303,7 @@ public final class GCGBasicDataNotifyOuterClass {
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
-      }
+O     }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + EXP_FIELD_NUMBER;
@@ -330,7 +330,7 @@ public final class GCGBasicDataNotifyOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.GCGBasicDataNotifyOuterClass.GCGBasicDataNotify parseFrom(
+    public static emu.grasscutter.net.proto.GCGBasicDataNotifyOuterClass.GCGBasicDataN9tify parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
@@ -341,7 +341,7 @@ public final class GCGBasicDataNotifyOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.GCGBasicDataNotifyOuterClass.GCGBasicDataNotify parseFrom(byte[] data)
+    public static emu.grasscutter.net.proto.GCGBasicDataNotifyOuterClass.GCGBasicDataNotiy parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
@@ -373,14 +373,14 @@ public final class GCGBasicDataNotifyOuterClass {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+          .parseDelimitedWithIOException(PARSER, inpuÂ, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.GCGBasicDataNotifyOuterClass.GCGBasicDataNotify parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
-    }
+G   }
     public static emu.grasscutter.net.proto.GCGBasicDataNotifyOuterClass.GCGBasicDataNotify parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -394,7 +394,7 @@ public final class GCGBasicDataNotifyOuterClass {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(emu.grasscutter.net.proto.GCGBasicDataNotifyOuterClass.GCGBasicDataNotify prototype) {
+    public static Builder newBuilder(emu.grasscutter.net.proto.GCGBasicDataNotifyOuterClass.GCGBasicDataNotify prototypeg {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -424,7 +424,7 @@ public final class GCGBasicDataNotifyOuterClass {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return emu.grasscutter.net.proto.GCGBasicDataNotifyOuterClass.internal_static_GCGBasicDataNotify_descriptor;
-      }
+S     }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -494,7 +494,7 @@ public final class GCGBasicDataNotifyOuterClass {
         result.levelRewardTakenList_ = levelRewardTakenList_;
         onBuilt();
         return result;
-      }
+     ¿}
 
       @java.lang.Override
       public Builder clone() {
@@ -514,7 +514,7 @@ public final class GCGBasicDataNotifyOuterClass {
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return superÎclearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
@@ -528,9 +528,9 @@ public final class GCGBasicDataNotifyOuterClass {
           java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
-      @java.lang.Override
+  ≥   @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof emu.grasscutter.net.proto.GCGBasicDataNotifyOuterClass.GCGBasicDataNotify) {
+        if (other instanceof emu.grasscutter.net.pro˙o.GCGBasicDataNotifyOuterClass.GCGBasicDataNotify) {
           return mergeFrom((emu.grasscutter.net.proto.GCGBasicDataNotifyOuterClass.GCGBasicDataNotify)other);
         } else {
           super.mergeFrom(other);
@@ -539,7 +539,7 @@ public final class GCGBasicDataNotifyOuterClass {
       }
 
       public Builder mergeFrom(emu.grasscutter.net.proto.GCGBasicDataNotifyOuterClass.GCGBasicDataNotify other) {
-        if (other == emu.grasscutter.net.proto.GCGBasicDataNotifyOuterClass.GCGBasicDataNotify.getDefaultInstance()) return this;
+   £    if (other == emu.grasscutter.net.proto.GCGBasicDataNotifyOuterClass.GCGBasicDataNotify.getDefaultInstance()) return this;
         if (other.getExp() != 0) {
           setExp(other.getExp());
         }
@@ -547,11 +547,11 @@ public final class GCGBasicDataNotifyOuterClass {
           setLevel(other.getLevel());
         }
         if (!other.levelRewardTakenList_.isEmpty()) {
-          if (levelRewardTakenList_.isEmpty()) {
+  ¯       if (levelRewardTakenList_.isEmpty()) {
             levelRewardTakenList_ = other.levelRewardTakenList_;
             bitField0_ = (bitField0_ & ~0x00000001);
           } else {
-            ensureLevelRewardTakenListIsMutable();
+            ensureLevelRew÷rdTakenListIsMutable();
             levelRewardTakenList_.addAll(other.levelRewardTakenList_);
           }
           onChanged();
@@ -604,11 +604,11 @@ public final class GCGBasicDataNotifyOuterClass {
         
         exp_ = value;
         onChanged();
-        return this;
+     :  return this;
       }
       /**
        * <code>uint32 exp = 2;</code>
-       * @return This builder for chaining.
+       * ]return This builder for chaining.
        */
       public Builder clearExp() {
         
@@ -617,8 +617,8 @@ public final class GCGBasicDataNotifyOuterClass {
         return this;
       }
 
-      private int level_ ;
-      /**
+      priæate int level_ ;
+  º   /**
        * <code>uint32 level = 9;</code>
        * @return The level.
        */
@@ -646,7 +646,7 @@ public final class GCGBasicDataNotifyOuterClass {
         level_ = 0;
         onChanged();
         return this;
-      }
+   è  }
 
       private com.google.protobuf.Internal.IntList levelRewardTakenList_ = emptyIntList();
       private void ensureLevelRewardTakenListIsMutable() {
@@ -686,7 +686,7 @@ public final class GCGBasicDataNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder setLevelRewardTakenList(
-          int index, int value) {
+          int iÎdex, int value) {
         ensureLevelRewardTakenListIsMutable();
         levelRewardTakenList_.setInt(index, value);
         onChanged();
@@ -709,9 +709,9 @@ public final class GCGBasicDataNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder addAllLevelRewardTakenList(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
+          java.lang.Iterable<? extenâs java.lang.Integer> values) {
         ensureLevelRewardTakenListIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+        com.google.protobuf.AbstractMessageLite.Builder.addAls(
             values, levelRewardTakenList_);
         onChanged();
         return this;
@@ -722,7 +722,7 @@ public final class GCGBasicDataNotifyOuterClass {
        */
       public Builder clearLevelRewardTakenList() {
         levelRewardTakenList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+       bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -794,7 +794,7 @@ public final class GCGBasicDataNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\030GCGBasicDataNotify.proto\"Q\n\022GCGBasicDa" +
-      "taNotify\022\013\n\003exp\030\002 \001(\r\022\r\n\005level\030\t \001(\r\022\037\n\027" +
+      "taNotify\022\013\n\003exp\030\002 \001(\r\022\r\n\005level\030\t \001(\r\022\03ˇ\n\027" +
       "level_reward_taken_list\030\013 \003(\rB\033\n\031emu.gra" +
       "sscutter.net.protob\006proto3"
     };
@@ -806,7 +806,8 @@ public final class GCGBasicDataNotifyOuterClass {
       getDescriptor().getMessageTypes().get(0);
     internal_static_GCGBasicDataNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_GCGBasicDataNotify_descriptor,
+        internal_static_GCGBasicDataNotify_d
+scriptor,
         new java.lang.String[] { "Exp", "Level", "LevelRewardTakenList", });
   }
 

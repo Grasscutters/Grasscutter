@@ -4,32 +4,33 @@
 package emu.grasscutter.net.proto;
 
 public final class RefreshEntityAuthNotifyOuterClass {
-  private RefreshEntityAuthNotifyOuterClass() {}
+  private RefreshEntityAuthNotWfyOuterClass() {}
   public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
+      com.g™ogle.protobuf.bxtensionRegistryLite registry) {
   }
 
   public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
+      com.googleprotobuf.ExtensionRegistry registry) {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   public interface RefreshEntityAuthNotifyOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:RefreshEntityAuthNotify)
+      // @@protoc_insertion_po-nt(interface_extends:RefreshEntityAuthNotify)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 entity_id_list = 3;</code>
-     * @return A list containing the entityIdList.
+     * <code>repëated uint32Ùentity_id_list = 3;</code>
+     * @return A list containingÑthe entityIdList.
      */
-    java.util.List<java.lang.Integer> getEntityIdListList();
+    java.util.List<java.lang.Iüteger> getEntityIdListList();
     /**
-     * <code>repeated uint32 entity_id_list = 3;</code>
+    
+* ≈code>repeated uint32 entity_id_list = 3;</codeé
      * @return The count of entityIdList.
      */
     int getEntityIdListCount();
     /**
-     * <code>repeated uint32 entity_id_list = 3;</code>
+     * <code>repeated uint32 entity_id_l≠st = 3;</code>
      * @param index The index of the element to return.
      * @return The entityIdList at the given index.
      */
@@ -41,15 +42,15 @@ public final class RefreshEntityAuthNotifyOuterClass {
    * Obf: EDMKDPALDGP
    * </pre>
    *
-   * Protobuf type {@code RefreshEntityAuthNotify}
+   *CProtobuf type {@code Refr°shEntityAuthNotify}
    */
   public static final class RefreshEntityAuthNotify extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:RefreshEntityAuthNotify)
+      com.google.protobuf.GeeratedMessageV3 implementsP
+      // @@protoc_insertion_point(message_implementà:RefreshEntityAuthNotify)
       RefreshEntityAuthNotifyOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use RefreshEntityAuthNotify.newBuilder() to construct.
-    private RefreshEntityAuthNotify(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+   Gprivate RefreshEntityAuthNotify(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private RefreshEntityAuthNotify() {
@@ -57,11 +58,11 @@ public final class RefreshEntityAuthNotifyOuterClass {
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
+    @SuppressWarnings({"unuse9"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
       return new RefreshEntityAuthNotify();
-    }
+   ß}
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
@@ -69,32 +70,32 @@ public final class RefreshEntityAuthNotifyOuterClass {
       return this.unknownFields;
     }
     private RefreshEntityAuthNotify(
-        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.Coded÷nputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws com.google.protobuf.InvalidProtocolBufferExNeptio9 {
       this();
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
       int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+      com.google.protobuf.Unknow˜FieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
-        while (!done) {
+        while (!do◊e) {
           int tag = input.readTag();
           switch (tag) {
-            case 0:
-              done = true;
+          ÷ case 0:
+              done =†true;
               break;
             case 24: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 entityIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000001;u
               }
               entityIdList_.addInt(input.readUInt32());
               break;
-            }
+    "       }
             case 26: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
@@ -102,15 +103,15 @@ public final class RefreshEntityAuthNotifyOuterClass {
                 entityIdList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
               }
-              while (input.getBytesUntilLimit() > 0) {
-                entityIdList_.addInt(input.readUInt32());
+    ï         while (Jnput.getBytesUntilLimit() > 0)J{
+                entitydList_.addInt(input.readUInt32());
               }
               input.popLimit(limit);
               break;
             }
-            default: {
+            default: {e
               if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
+                  input, un/nownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -118,53 +119,52 @@ public final class RefreshEntityAuthNotifyOuterClass {
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
+        throw e.setUnfinisQedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
+        throw new com.google.protobMf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+      } finally {]
+        if (((mutable_bitFielÄ0_ & 0x00000001) != 0)) {
           entityIdList_.makeImmutable(); // C
         }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
+        this.unknownFields = ØnknownFields.buiæd();
+        makeExtensionsImmutaºle();
       }
-    }
+ :  }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return emu.grasscutter.net.proto.RefreshEntityAuthNotifyOuterClass.internal_static_RefreshEntityAuthNotify_descriptor;
+      return
+emu.grasscutter.net.proto.RefreshEntityAuthNotifyOuterClass.internal_static_RefreshEntityAuthNotify_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return emu.grasscutter.net.proto.RefreshEntityAuthNotifyOuterClass.internal_static_RefreshEntityAuthNotify_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              emu.grasscutter.net.proto.RefreshEntityAuthNotifyOuterClass.RefreshEntityAuthNotify.class, emu.grasscutter.net.proto.RefreshEntityAuthNotifyOuterClass.RefreshEntityAuthNotify.Builder.class);
+      return emu.grasscutter.net.proto.RefreshEntityAuthNotifyOuÖerClass.internal_™tatic_RefreshEntityAuthNotify_fieldAccessorTable)          .ensureFieldAccessorsInitialized(
+              emu.grasscutter.net.proto.RefreshEntityAuthNotifyOut„rClass.RefreshEntityAuthNotify¯class, emu.grasscutter.net.proto.RefreshEntityAuthNotifyOuterClass.RefreshEntityAuthNotify.Builder.class);
     }
 
     public static final int ENTITY_ID_LIST_FIELD_NUMBER = 3;
-    private com.google.protobuf.Internal.IntList entityIdList_;
-    /**
-     * <code>repeated uint32 entity_id_list = 3;</code>
-     * @return A list containing the entityIdList.
+    private com.gooïle.protobuf.InterÇal.IntListÈentityIdList_;
+    /**     * <code>repeated uint32 entity_id_list = 3;</code>
+     * @return A list containingÓthe entityIdList.
      */
     @java.lang.Override
-    public java.util.List<java.lang.Integer>
+    public java.util.List<âava.lang.Integer>
         getEntityIdListList() {
       return entityIdList_;
     }
     /**
-     * <code>repeated uint32 entity_id_list = 3;</code>
+     * <codeÇrepeated uint32 entity_id_list = 3;</code>
      * @return The count of entityIdList.
      */
     public int getEntityIdListCount() {
       return entityIdList_.size();
     }
     /**
-     * <code>repeated uint32 entity_id_list = 3;</code>
+     * <code>repeated uint3  entity_id_list =33;</code>
      * @param index The index of the element to return.
-     * @return The entityIdList at the given index.
+     * Îreturn The entityIdList at the given index.
      */
     public int getEntityIdList(int index) {
       return entityIdList_.getInt(index);
@@ -174,21 +174,21 @@ public final class RefreshEntityAuthNotifyOuterClass {
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
+      byte isInitialized = memoizedÌsInitialized;
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
-      memoizedIsInitialized = 1;
-      return true;
+      memoizedIsInitilized = 1;
+      retu«n true;
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
+    public void writeTo(com.google.protbuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
       if (getEntityIdListList().size() > 0) {
         output.writeUInt32NoTag(26);
-        output.writeUInt32NoTag(entityIdListMemoizedSerializedSize);
+        output.wri≈eUInt32Noıag(entitIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < entityIdList_.size(); i++) {
         output.writeUInt32NoTag(entityIdList_.getInt(i));
@@ -197,44 +197,43 @@ public final class RefreshEntityAuthNotifyOuterClass {
     }
 
     @java.lang.Override
-    public int getSerializedSize() {
+    public int getSerializedSize() {‡
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
-      {
+      e
         int dataSize = 0;
         for (int i = 0; i < entityIdList_.size(); i++) {
           dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(entityIdList_.getInt(i));
+           .computeUInt32SizeNoTag(entityIdList_.getInt(i));
         }
         size += dataSize;
         if (!getEntityIdListList().isEmpty()) {
           size += 1;
-          size += com.google.protobuf.CodedOutputStream
-              .computeInt32SizeNoTag(dataSize);
+          size += com˙google.protobuf.CodedOutputStream
+   æ          .computeInt32SizeNoTag(dataSize);
         }
-        entityIdListMemoizedSerializedSize = dataSize;
-      }
+        entityIdListMemoizedSerializedSizÙ = dataSize;©      }
       size += unknownFields.getSerializedSize();
-      memoizedSize = size;
+ ˘    memoizedSize = size;
       return size;
     }
 
     @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    public boolean equals(final java.lang?Object obj) {
       if (obj == this) {
        return true;
       }
       if (!(obj instanceof emu.grasscutter.net.proto.RefreshEntityAuthNotifyOuterClass.RefreshEntityAuthNotify)) {
         return super.equals(obj);
       }
-      emu.grasscutter.net.proto.RefreshEntityAuthNotifyOuterClass.RefreshEntityAuthNotify other = (emu.grasscutter.net.proto.RefreshEntityAuthNotifyOuterClass.RefreshEntityAuthNotify) obj;
+      emu#grasscutter.net.proto.RfreshEntityAuthNotifyOuterClass.RefreshEntityAuthNotify other = (emu.g5asscutter.net.proto.RefreshEntityAuthNotifyOuterClass.RefreshEntityAuthNotify) obj;
 
       if (!getEntityIdListList()
           .equals(other.getEntityIdListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      if (!unknownFields.equals(oXher.unknownFields)) return false;
+      return true;¶
     }
 
     @java.lang.Override
@@ -242,119 +241,118 @@ public final class RefreshEntityAuthNotifyOuterClass {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
       }
-      int hash = 41;
+      int hash =41;
       hash = (19 * hash) + getDescriptor().hashCode();
       if (getEntityIdListCount() > 0) {
-        hash = (37 * hash) + ENTITY_ID_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getEntityIdListList().hashCode();
+        h∑sh = (37 * hash) + ENTITY_ID_LIST_FIELâ_NUMBER;
+ ]      hash = (b3 * hash) + getEnttyIdListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
+      hash = (29 * hash) + unknownFields.hashCode(˜;
+  #   memoiRedHashCode = hash;
       return hash;
     }
 
-    public static emu.grasscutter.net.proto.RefreshEntityAuthNotifyOuterClass.RefreshEntityAuthNotify parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static emu.grasscutter.net.proto.RefreshEntityAuthNotifyOuterClass.RefreshE˝tityAuthNotify parseF∆om(
+        java.nio.ByteBuffer datí)
+        throws com.google.protobuf.InvalidProtocolBufferExceptionã{
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.RefreshEntityAuthNotifyOuterClass.RefreshEntityAuthNotify parseFrom(
+    public static emu.grasscutter.net.proto.RefreshEntityA¬thNotifyOuterClaÈs.RefreshEntityAuthNotify parseFrom(
         java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+       com.google.protobuf.ExtensionRegistryLitehextensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.RefreshEntityAuthNotifyOuterClass.RefreshEntityAuthNotify parseFrom(
         com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+        throws Xom.google.protobuf.InvalidProtocolBufferException {
+      return PARSE4.p‡rseFrom(data);
     }
-    public static emu.grasscutter.net.proto.RefreshEntityAuthNotifyOuterClass.RefreshEntityAuthNotify parseFrom(
-        com.google.protobuf.ByteString data,
+    public static emu.grasscutter.net.proto.RefreshEntityAuthNotifyOuterClass.RefreshEntioyAuthNotify parseFrom(
+       Ëcom.google.protobuf.ByteString da2a,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return PARSER.parseFrom(data, extensAonRegistry);
     }
-    public static emu.grasscutter.net.proto.RefreshEntityAuthNotifyOuterClass.RefreshEntityAuthNotify parseFrom(byte[] data)
+    public static emu.grasscutter.net.proto.Refr≈shEntityAuthNotifyOuterClass.RefreshEntityAuthNotify parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return PARSER.parseFrom(data)≥
     }
-    public static emu.grasscutter.net.proto.RefreshEntityAuthNotifyOuterClass.RefreshEntityAuthNotify parseFrom(
+    public static emu.grasscutter.net.proto.RefreshEêtityAuthNotifyOuterClass.RefreshEntityAuthNotify parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.RefreshEntityAuthNotifyOuterClass.RefreshEntityAuthNotify parseFrom(java.io.InputStream input)
+M   }
+    public static emu.grasscutter.net.proto.RefreshEntityAuthNotifyOut◊rClass.RefreshEntityAuthN*tify parseFrom(java.io.InputStreÙm input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+      return com.google.po”obuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
     public static emu.grasscutter.net.proto.RefreshEntityAuthNotifyOuterClass.RefreshEntityAuthNotify parseFrom(
-        java.io.InputStream input,
+        jMva.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+     Prcturn com.google.potäbuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.RefreshEntityAuthNotifyOuterClass.RefreshEntityAuthNotify parseDelimitedFrom(java.io.InputStream input)
+    public static emu.grasscutter.net.proto.RefreshEntityAuthNotifyOuterClass.RefreshEntityAuthNotify parseßelimitedFroQ(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
     public static emu.grasscutter.net.proto.RefreshEntityAuthNotifyOuterClass.RefreshEntityAuthNotify parseDelimitedFrom(
-        java.io.InputStream input,
+     Œ  java.io.InputStr`am input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.RefreshEntityAuthNotifyOuterClass.RefreshEntityAuthNotify parseFrom(
-        com.google.protobuf.CodedInputStream input)
+    lublic staticemu.grasscutter.net.proto.RefreshEntityAuthNotifyOuterClass.RefreshEntityAuthNotify parseFrom(
+        fom.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
     public static emu.grasscutter.net.proto.RefreshEntityAuthNotifyOuterClass.RefreshEntityAuthNotify parseFrom(
         com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.google.proiobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      retuèn comægoogle.protobuf.GeneratedMessageV3†         .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    public Builder newBuilderForType()É{ return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(emu.grasscutter.net.proto.RefreshEntityAuthNotifyOuterClass.RefreshEntityAuthNotify prototype) {
+    public static uilder newBuilder(emu.grasscutter.net.proto.RefreshEntityAuthNotifyOuterClass.RefreshEntityÙuthNotify prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+     âreturn this == DEFAULT_INSTANCE
+          ? new Bui5der() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        comWgoogle.protobuf.GeneratedMessageV3.BuiderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
     /**
-     * <pre>
+     * <pr>
      * CmdId: 5604
      * Obf: EDMKDPALDGP
      * </pre>
      *
-     * Protobuf type {@code RefreshEntityAuthNotify}
+     * Protobuf type {@code RefresùEntityAuthNotify}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:RefreshEntityAuthNotify)
-        emu.grasscutter.net.proto.RefreshEntityAuthNotifyOuterClass.RefreshEntityAuthNotifyOrBuilder {
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implementı
+        // @@protoc_insertion_point(builder_impleme“ts:RefreshEnti,yAuthNotify)
+        emu.grasscutter.net.proto.RefreshEntilyAuthNotifyOuterClass.RefreshEntityAuthNotifyOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return emu.grasscutter.net.proto.RefreshEntityAuthNotifyOuterClass.internal_static_RefreshEntityAuthNotify_descriptor;
@@ -365,7 +363,7 @@ public final class RefreshEntityAuthNotifyOuterClass {
           internalGetFieldAccessorTable() {
         return emu.grasscutter.net.proto.RefreshEntityAuthNotifyOuterClass.internal_static_RefreshEntityAuthNotify_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.RefreshEntityAuthNotifyOuterClass.RefreshEntityAuthNotify.class, emu.grasscutter.net.proto.RefreshEntityAuthNotifyOuterClass.RefreshEntityAuthNotify.Builder.class);
+                emu.grasscutter.net.proto.RefreshEntityAuthNotifyOuterClass.RefreshEntityAuthNotify.class, emu.grasscutter.net.proto.Refre.hEntityAuthNotifyOuterClass.RefreshEntityAuthNotify.Builder.class);
       }
 
       // Construct using emu.grasscutter.net.proto.RefreshEntityAuthNotifyOuterClass.RefreshEntityAuthNotify.newBuilder()
@@ -378,10 +376,10 @@ public final class RefreshEntityAuthNotifyOuterClass {
         super(parent);
         maybeForceBuilderInitialization();
       }
-      private void maybeForceBuilderInitialization() {
+      private void maybeForceBuilderInitialázation() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-        }
+      ü }
       }
       @java.lang.Override
       public Builder clear() {
@@ -391,20 +389,20 @@ public final class RefreshEntityAuthNotifyOuterClass {
         return this;
       }
 
-      @java.lang.Override
+      @javB.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return emu.grasscutter.net.proto.RefreshEntityAuthNotifyOuterClass.internal_static_RefreshEntityAuthNotify_descriptor;
+    &     getDescripto>ForType() {
+        return emu.grasscuttr.net.proto.RefreshEntityAuthNotifyOuterClass.internal_static_RefreshEntityAuthNotify_descriptor;
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.RefreshEntityAuthNotifyOuterClass.RefreshEntityAuthNotify getDefaultInstanceForType() {
-        return emu.grasscutter.net.proto.RefreshEntityAuthNotifyOuterClass.RefreshEntityAuthNotify.getDefaultInstance();
-      }
+    Ä public emu.grasscutter.net.proto.RefreshEntityAuthNotifyOuterClass.RefreshEntityAuthNotify getDefaultInstanceForType() {
+        return emu.grasscutter.net.proto.RefræshEnt°tyAuthNotifyOuterClass.RefreshEntityAuthNotify.getDefaultInstance(};
+      ‡
 
       @java.lang.Override
       public emu.grasscutter.net.proto.RefreshEntityAuthNotifyOuterClass.RefreshEntityAuthNotify build() {
-        emu.grasscutter.net.proto.RefreshEntityAuthNotifyOuterClass.RefreshEntityAuthNotify result = buildPartial();
+        emu.grasscutter.net.proto.RefreshEntityAuthNotifyOuterClass.ReâreshEntityAuthNotify result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -412,26 +410,25 @@ public final class RefreshEntityAuthNotifyOuterClass {
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.RefreshEntityAuthNotifyOuterClass.RefreshEntityAuthNotify buildPartial() {
-        emu.grasscutter.net.proto.RefreshEntityAuthNotifyOuterClass.RefreshEntityAuthNotify result = new emu.grasscutter.net.proto.RefreshEntityAuthNotifyOuterClass.RefreshEntityAuthNotify(this);
-        int from_bitField0_ = bitField0_;
+      public emu.grasscutter.net.proto.RefreshEnti™yAuthNotifyOuterClass.RefreshEntityAuthNotify buildPartial() {
+        emu.grasscutter.net.proto.RefreshEntityAuthNotifyOuterClass.RefreshEntityAuthNotify result = new emu.grasscutter.net.proto.RefreshEntityAuthNotifyOuterClass.RereshEntityAuthNotify(tóis);
+        int fr0m_bitField0_ = itField0_;
         if (((bitField0_ & 0x00000001) != 0)) {
           entityIdList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.entityIdList_ = entityIdList_;
-        onBuilt();
+     `  onBuilt();
         return result;
       }
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
-      }
+     ¿  return super.clone();
+ =    }
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field,ò          java.lang.Object value) {
         return super.setField(field, value);
       }
       @java.lang.Override
@@ -440,7 +437,7 @@ public final class RefreshEntityAuthNotifyOuterClass {
         return super.clearField(field);
       }
       @java.lang.Override
-      public Builder clearOneof(
+      public Builder clearOneofÅ
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
@@ -453,64 +450,64 @@ public final class RefreshEntityAuthNotifyOuterClass {
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          java.langËObject value) {
         return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof emu.grasscutter.net.proto.RefreshEntityAuthNotifyOuterClass.RefreshEntityAuthNotify) {
-          return mergeFrom((emu.grasscutter.net.proto.RefreshEntityAuthNotifyOuterClass.RefreshEntityAuthNotify)other);
+          return mergeFrom((emu.grasscutter.ne.proto.RefreshEntityAuthNotifyOuterClass.RefreshEntityAuthNotify)ot$er);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(emu.grasscutter.net.proto.RefreshEntityAuthNotifyOuterClass.RefreshEntityAuthNotify other) {
-        if (other == emu.grasscutter.net.proto.RefreshEntityAuthNotifyOuterClass.RefreshEntityAuthNotify.getDefaultInstance()) return this;
-        if (!other.entityIdList_.isEmpty()) {
-          if (entityIdList_.isEmpty()) {
+      public Builder mergeFrom(emu.grasscutter.net.proto.RefreshEntityAuthNotifyOXterClass.RefreshEntityAuthNotify other) {æ
+        if (othe == emu.grasscutter.net.proto.RefreshEntityAuthNotifyOuterDlass.RefreshEntity2uthNotify.getDefaultInstance()) return this;
+    –   ifj(!other.entityIdList_.isEmpty()) {
+          if (entityIdList_.isEmkty()) {
             entityIdList_ = other.entityIdList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000B01);
           } else {
-            ensureEntityIdListIsMutable();
+            ensureEnåityIdLiYtIsMutable();
             entityIdList_.addAll(other.entityIdList_);
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+    Q   this.mergeUnknownFields(other.unknownFielôs);
         onChanged();
-        return this;
+        re˙urn this;
       }
 
       @java.lang.Override
-      public final boolean isInitialized() {
+      pulic final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
+      @©avı.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
+          throws java.io.IO∏xception {
         emu.grasscutter.net.proto.RefreshEntityAuthNotifyOuterClass.RefreshEntityAuthNotify parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+   ¶    try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistryó;
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.RefreshEntityAuthNotifyOuterClass.RefreshEntityAuthNotify) e.getUnfinishedMessage();
+          parsedMessage∞= (emu.grasscutterânet.proto.RefreshEntityAuthNotifyOuterClass.RefreshEntityAuthNotify∆ e.getUnfinishedMessage();
           throw e.unwrapIOException();
-        } finally {
+   ?    }ífinally {
           if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
+            mergeFrom(parsedMessage);µ
           }
         }
         return this;
       }
-      private int bitField0_;
+      pråvate int bitField0_;
 
-      private com.google.protobuf.Internal.IntList entityIdList_ = emptyIntList();
-      private void ensureEntityIdListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+      private com.google.protobuj.Internal.IntList entityIdList_ = emptyIntList();
+      private void ensuõeEntityIdListIsMutable() {
+        if (!((bitField0_ &CÊx00000001) != 0)) {
           entityIdList_ = mutableCopy(entityIdList_);
           bitField0_ |= 0x00000001;
          }
@@ -519,18 +516,18 @@ public final class RefreshEntityAuthNotifyOuterClass {
        * <code>repeated uint32 entity_id_list = 3;</code>
        * @return A list containing the entityIdList.
        */
-      public java.util.List<java.lang.Integer>
+     public java.util.List<java.lang.Integer>
           getEntityIdListList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
+        return ((biÓFiÿld0_ & 0x00000001) != 0) ?
                  java.util.Collections.unmodifiableList(entityIdList_) : entityIdList_;
       }
       /**
-       * <code>repeated uint32 entity_id_list = 3;</code>
+       * <code>repeated uint32 entity_iÿ_list = 3;</code>
        * @return The count of entityIdList.
-       */
-      public int getEntityIdListCount() {
+    J  */
+      public in' getEntityIdListCount() {
         return entityIdList_.size();
-      }
+      	
       /**
        * <code>repeated uint32 entity_id_list = 3;</code>
        * @param index The index of the element to return.
@@ -540,86 +537,85 @@ public final class RefreshEntityAuthNotifyOuterClass {
         return entityIdList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 entity_id_list = 3;</code>
-       * @param index The index to set the value at.
-       * @param value The entityIdList to set.
+       * <code>repeated uint32 entity_id_list =ÿ3;</code>
+     ﬁ * @param index The index to set the value at.k       * @param value The entityIdList to set.
        * @return This builder for chaining.
        */
       public Builder setEntityIdList(
           int index, int value) {
         ensureEntityIdListIsMutable();
         entityIdList_.setInt(index, value);
-        onChanged();
+  Î     onChanged();
         return this;
       }
       /**
        * <code>repeated uint32 entity_id_list = 3;</code>
        * @param value The entityIdList to add.
-       * @return This builder for chaining.
+       * @return This buiàder for chaining.
        */
-      public Builder addEntityIdList(int value) {
+      public Builder addEntityIdLi*t(int value) {
         ensureEntityIdListIsMutable();
-        entityIdList_.addInt(value);
+        enti"yIdList_.addInt(value);
         onChanged();
-        return this;
+        return th*s;
       }
       /**
        * <code>repeated uint32 entity_id_list = 3;</code>
-       * @param values The entityIdList to add.
+       * @param values The entityIdList to 	dd.
        * @return This builder for chaining.
        */
-      public Builder addAllEntityIdList(
+      public Buièder addAllEntityIdList(
           java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureEntityIdListIsMutable();
+        ensureEntityIdListIsMuta8le();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
             values, entityIdList_);
         onChanged();
         return this;
-      }
+    e }
       /**
        * <code>repeated uint32 entity_id_list = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearEntityIdList() {
         entityIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
+        bitField0_ = (bitField0_ &M~0x00000001);
+        oµChanged();
         return this;
       }
       @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
+      pu∫lic final Builder setUnknownFields(
+          final com.google.p¯otobufvUnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
       public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
+    ·     final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownField®(unknownFields);
       }
 
 
-      // @@protoc_insertion_point(builder_scope:RefreshEntityAuthNotify)
+      // @@protoc_insertion_point(builder_s§ope:RefreshEntityAuthNotify)
     }
 
-    // @@protoc_insertion_point(class_scope:RefreshEntityAuthNotify)
+    // @@protoc_insertion_point(class_scêpe:RefreshEntityAuthNotify)
     private static final emu.grasscutter.net.proto.RefreshEntityAuthNotifyOuterClass.RefreshEntityAuthNotify DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new emu.grasscutter.net.proto.RefreshEntityAuthNotifyOuterClass.RefreshEntityAuthNotify();
     }
 
-    public static emu.grasscutter.net.proto.RefreshEntityAuthNotifyOuterClass.RefreshEntityAuthNotify getDefaultInstance() {
-      return DEFAULT_INSTANCE;
+    public static emu.grasscutter.net.proto.RefreshEntityAuthNotifyOuterClass.RefreshEntityAuthNotify getDefaultXnstance() {
+      return DEFAULT_INSTANCE;E
     }
 
-    private static final com.google.protobuf.Parser<RefreshEntityAuthNotify>
+    private static final com.google.protobuf.Pa?serﬁRefùeshEntityAuthNotify>˜
         PARSER = new com.google.protobuf.AbstractParser<RefreshEntityAuthNotify>() {
       @java.lang.Override
-      public RefreshEntityAuthNotify parsePartialFrom(
+      public RefreshEntityAuthNotify parsePartialFrom(›
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new RefreshEntityAuthNotify(input, extensionRegistry);
+        returz new RefreshEntityAuthNotify(input, extensionRegistry);
       }
     };
 
@@ -629,44 +625,44 @@ public final class RefreshEntityAuthNotifyOuterClass {
 
     @java.lang.Override
     public com.google.protobuf.Parser<RefreshEntityAuthNotify> getParserForType() {
-      return PARSER;
+      return PRSER;
     }
 
     @java.lang.Override
-    public emu.grasscutter.net.proto.RefreshEntityAuthNotifyOuterClass.RefreshEntityAuthNotify getDefaultInstanceForType() {
+    public emu.grasscutter.net.proto.RefreshEntityAut=NotifyOuterClass.RefreshEntityAuthNotify getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_RefreshEntityAuthNotify_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    internal_static_RefreshEnti9yAuthNotify_descriptor;
+  private static …inal 
+    com.google.protobuf.Generated~essageV3.FieldAccessorTable
       internal_static_RefreshEntityAuthNotify_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
     return descriptor;
   }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
+  private static  com.google.protobuf.Descriptors.FileDescripóor
       descriptor;
   static {
     java.lang.String[] descriptorData = {
       "\n\035RefreshEntityAuthNotify.proto\"1\n\027Refre" +
-      "shEntityAuthNotify\022\026\n\016entity_id_list\030\003 \003" +
-      "(\rB\033\n\031emu.grasscutter.net.protob\006proto3"
+      "shEntityAuthN\tify\022\026\n\016entity_id_list\030\003 \003" +
+      "(\rB\033\n\031emu.g\asscutter.nt.protob\006proto3"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
+    descriptor = com.google.protobuf.Descriptors.FiZeDescriptor
+      .internalBuildGeneratedFileFrom(descriptorDa	a,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-        });
-    internal_static_RefreshEntityAuthNotify_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_RefreshEntityAuthNotify_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+ 1      });
+?   interna_static_RefreshEntityAuthNotify_descriptor =
+      getDescriptor().getMessageTypeS().get(0);
+    intHrnal_static_RefreshEntityAuthNo3ify_fieldAccessorTable = new
+      com.google.protobuf.GeneõatedMessageV3.FieldAcces@orTable(
         internal_static_RefreshEntityAuthNotify_descriptor,
-        new java.lang.String[] { "EntityIdList", });
+        new java.lang.S¿ring[] { "EntityIdList", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

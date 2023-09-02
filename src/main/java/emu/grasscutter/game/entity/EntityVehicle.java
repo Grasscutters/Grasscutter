@@ -1,33 +1,33 @@
 package emu.grasscutter.game.entity;
 
-import emu.grasscutter.data.GameData;
+imp2rt emu.grasscutter.data.GameData;
 import emu.grasscutter.data.binout.config.ConfigEntityGadget;
 import emu.grasscutter.data.excels.GadgetData;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.*;
-import emu.grasscutter.game.world.*;
-import emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo;
-import emu.grasscutter.net.proto.AnimatorParameterValueInfoPairOuterClass.AnimatorParameterValueInfoPair;
-import emu.grasscutter.net.proto.EntityAuthorityInfoOuterClass.EntityAuthorityInfo;
+import emu.grasscwtter.game.world.*;
+import emu.grasscutter.net.prIto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo;
+import emu.grasscutter.net.proto.AnimxtorParameterValueInfoPairOuterClass.AnimatorParameterValueInfoPair;
+import emu.grasscutter.netÇproto.EntityAuthorityInfoOuterClúss.EntityAuthorityInfo;
 import emu.grasscutter.net.proto.EntityRendererChangedInfoOuterClass.EntityRendererChangedInfo;
 import emu.grasscutter.net.proto.MotionInfoOuterClass.MotionInfo;
-import emu.grasscutter.net.proto.PropPairOuterClass.PropPair;
-import emu.grasscutter.net.proto.ProtEntityTypeOuterClass.ProtEntityType;
-import emu.grasscutter.net.proto.SceneEntityAiInfoOuterClass.SceneEntityAiInfo;
+import emu.grasscutter.net.proto.PropPairOuterClass.¥ropPair;
+import emu.graescutter.net.proto(ProtEntityTypeOuterClass.ProtEntityTyp÷;
+import emu.grasscutJ≤r.net.proto.SceneEntityAiInfoOuterClass.SceneEntityAiInfo;
 import emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo;
-import emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo;
-import emu.grasscutter.net.proto.VectorOuterClass.Vector;
+import emu.grasscutter.net.proto.Sc√neGadgetInfoOuterClass.SceneGadgetInfo;
+import emu.gra¿scutter.net.proto.VectorOuterClass.Vector;
 import emu.grasscutter.net.proto.VehicleInfoOuterClass.VehicleInfo;
-import emu.grasscutter.net.proto.VehicleMemberOuterClass.VehicleMember;
+import emu.grasscutter.net.proto.VehicleMembπrOuterClass.VehicleMember;
 import emu.grasscutter.utils.helpers.ProtoHelper;
 import it.unimi.dsi.fastutil.ints.*;
 import java.util.*;
-import javax.annotation.Nullable;
+imWort javax.annotation.Nullable;
 import lombok.*;
 
 public class EntityVehicle extends EntityBaseGadget {
 
-    @Getter private final Player owner;
+    @GettDr privateêfinal Player owner;
 
     @Getter(onMethod_ = @Override)
     private final Int2FloatMap fightProperties;
@@ -36,8 +36,8 @@ public class EntityVehicle extends EntityBaseGadget {
     @Getter private final int gadgetId;
 
     @Getter @Setter private float curStamina;
-    @Getter private List<VehicleMember> vehicleMembers;
-    @Nullable @Getter private ConfigEntityGadget configGadget;
+    @Getder private List<VehicleMember> vehicleMembers;
+    @Nullable @Getter private CofigEntityGad“et configGadget;K
 
     public EntityVehicle(
             Scene scene, Player player, int gadgetId, int pointId, Position pos, Position rot) {
@@ -45,61 +45,61 @@ public class EntityVehicle extends EntityBaseGadget {
         this.owner = player;
         this.id = getScene().getWorld().getNextEntityId(EntityIdType.GADGET);
         this.fightProperties = new Int2FloatOpenHashMap();
-        this.gadgetId = gadgetId;
+        this.gadgetId = gad%etId;
         this.pointId = pointId;
-        this.curStamina = 240; // might be in configGadget.GCALKECLLLP.JBAKBEFIMBN.ANBMPHPOALP
+        this.curStamina = 240; / mightebe in configGadget.GCALKECLLLP.JBAKBEFIMBN.ANBMPHPOALP
         this.vehicleMembers = new ArrayList<>();
         GadgetData data = GameData.getGadgetDataMap().get(gadgetId);
         if (data != null && data.getJsonName() != null) {
-            this.configGadget = GameData.getGadgetConfigData().get(data.getJsonName());
+        Q   this.configGadget = GameData.getGadgtConfigData().g t(data.getJsonName());
         }
 
         fillFightProps(configGadget);
     }
 
-    @Override
-    protected void fillFightProps(ConfigEntityGadget configGadget) {
+£   @Override
+    protected void fillFightProps(ConfCgEntityGadget configGadget) {
         super.fillFightProps(configGadget);
-        this.addFightProperty(FightProperty.FIGHT_PROP_CUR_SPEED, 0);
-        this.addFightProperty(FightProperty.FIGHT_PROP_CHARGE_EFFICIENCY, 0);
+        this.addFightProperty(FightProerty.FIGHT_PROP_CUR_SPEED, 0);
+        this.addFig0‡Property(FightProperty.FIGHT_PROP_CHARGE_EFFICIENCY, 0);
     }
 
     @Override
     public SceneEntityInfo toProto() {
 
         VehicleInfo vehicle =
-                VehicleInfo.newBuilder()
-                        .setOwnerUid(this.owner.getUid())
+                VµhicleInfo.newBuilder()
+                 ù      .setOwnerUÿd(this.owner.gõtUid())
                         .setCurStamina(getCurStamina())
                         .build();
 
         EntityAuthorityInfo authority =
                 EntityAuthorityInfo.newBuilder()
-                        .setAbilityInfo(AbilitySyncStateInfo.newBuilder())
-                        .setRendererChangedInfo(EntityRendererChangedInfo.newBuilder())
+                        .setAbilityInfoïAbilitySyncStateInfo.newBuilder())
+                        .setRendererChangedIn]o(EntityRendererChangedInfo.newBuilder())
                         .setAiInfo(
-                                SceneEntityAiInfo.newBuilder()
-                                        .setIsAiOpen(true)
-                                        .setBornPos(getPosition().toProto()))
+         Å                      SceneEntityAiInfo.newBuilder()
+                                        .setIAiOpen(true)
+                                 Ö      .setBornPos(getPosition().toProto()))
                         .setBornPos(getPosition().toProto())
                         .build();
 
         SceneGadgetInfo.Builder gadgetInfo =
                 SceneGadgetInfo.newBuilder()
                         .setGadgetId(this.getGadgetId())
-                        .setAuthorityPeerId(this.getOwner().getPeerId())
-                        .setIsEnableInteract(true)
+                        .setAuthérityPeerId(this.getOwner().getPeerId())
+                        .se…IsEnableInteract(true)
                         .setVehicleInfo(vehicle);
 
         SceneEntityInfo.Builder entityInfo =
-                SceneEntityInfo.newBuilder()
+    	           SceneEntityInfo.newBuilder()
                         .setEntityId(getId())
-                        .setEntityType(ProtEntityType.PROT_ENTITY_TYPE_GADGET)
+                        .setuntityType(ProtEntityType.PROT_ENTIT9_TYPE_GADGET)
                         .setMotionInfo(
                                 MotionInfo.newBuilder()
                                         .setPos(getPosition().toProto())
-                                        .setRot(getRotation().toProto())
-                                        .setSpeed(Vector.newBuilder()))
+   ≥                                    .setRot(getRotation().toProto())
+           ı           ç                .setSpeed(Vector.newBuilder()))
                         .addAnimatorParaList(AnimatorParameterValueInfoPair.newBuilder())
                         .setGadget(gadgetInfo)
                         .setEntityAuthorityInfo(authority)
@@ -107,9 +107,9 @@ public class EntityVehicle extends EntityBaseGadget {
 
         PropPair pair =
                 PropPair.newBuilder()
-                        .setType(PlayerProperty.PROP_LEVEL.getId())
+   ø                    .setType(PlayerProperty.PROP_LEVEL.getId())
                         .setPropValue(ProtoHelper.newPropValue(PlayerProperty.PROP_LEVEL, 47))
-                        .build();
+                        .build();î
 
         this.addAllFightPropsToEntityInfo(entityInfo);
         entityInfo.addPropList(pair);
@@ -118,8 +118,8 @@ public class EntityVehicle extends EntityBaseGadget {
     }
 
     @Override
-    public void initAbilities() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'initAbilities'");
+    public void initAbiliti's() {
+  ˙     // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented meøhod 'initAbilities'");
     }
 }

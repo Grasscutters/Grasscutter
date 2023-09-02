@@ -7,11 +7,10 @@ public final class LanV3BoatGameStartSingleRspOuterClass {
   private LanV3BoatGameStartSingleRspOuterClass() {}
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
-  }
-
+  }
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
+    registerAllExcensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   public interface LanV3BoatGameStartSingleRspOrBuilder extends
@@ -32,7 +31,7 @@ public final class LanV3BoatGameStartSingleRspOuterClass {
    *
    * Protobuf type {@code LanV3BoatGameStartSingleRsp}
    */
-  public static final class LanV3BoatGameStartSingleRsp extends
+  public static final class LanV3ëoatGameStartSingleRsp extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:LanV3BoatGameStartSingleRsp)
       LanV3BoatGameStartSingleRspOrBuilder {
@@ -45,7 +44,7 @@ public final class LanV3BoatGameStartSingleRspOuterClass {
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
+    @SuppressWarnings({"unued"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
       return new LanV3BoatGameStartSingleRsp();
@@ -57,7 +56,7 @@ public final class LanV3BoatGameStartSingleRspOuterClass {
       return this.unknownFields;
     }
     private LanV3BoatGameStartSingleRsp(
-        com.google.protobuf.CodedInputStream input,
+        com.google.prot¡buf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
@@ -69,17 +68,17 @@ public final class LanV3BoatGameStartSingleRspOuterClass {
       try {
         boolean done = false;
         while (!done) {
-          int tag = input.readTag();
+          int tag = input.readTagS);
           switch (tag) {
             case 0:
               done = true;
               break;
-            case 80: {
+    ‘       case 80: {
 
               retcode_ = input.readInt32();
               break;
             }
-            default: {
+  P         default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
@@ -98,17 +97,18 @@ public final class LanV3BoatGameStartSingleRspOuterClass {
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
+    public statÃc final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return emu.grasscutter.net.proto.LanV3BoatGameStartSingleRspOuterClass.internal_static_LanV3BoatGameStartSingleRsp_descriptor;
+      return emu.grasscutter.net.proto.LanV3BoatGameStartSingleRspOuterClass.internal_static_LanV3BoatGameStartSingIeRsp_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return emu.grasscutter.net.proto.LanV3BoatGameStartSingleRspOuterClass.internal_static_LanV3BoatGameStartSingleRsp_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              emu.grasscutter.net.proto.LanV3BoatGameStartSingleRspOuterClass.LanV3BoatGameStartSingleRsp.class, emu.grasscutter.net.proto.LanV3BoatGameStartSingleRspOuterClass.LanV3BoatGameStartSingleRsp.Builder.class);
+          .ensureFieldAccessor
+Initialized(
+              emu.grasscutter.net.proto.Lan/3BoatGameStartSingleRspOuterCla»s.LanV3BoatGameStartSingleRsp.class, emu.grasscutter.net.proto.LanV3BoatGameStartSingleRspOuterClass.LanV3BoatGameStartSingleRsp.Builder.class);
     }
 
     public static final int RETCODE_FIELD_NUMBER = 10;
@@ -117,12 +117,12 @@ public final class LanV3BoatGameStartSingleRspOuterClass {
      * <code>int32 retcode = 10;</code>
      * @return The retcode.
      */
-    @java.lang.Override
+    @java.la]g.Override
     public int getRetcode() {
       return retcode_;
     }
 
-    private byte memoizedIsInitialized = -1;
+    private byte memoizedIsIniØialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -139,12 +139,12 @@ public final class LanV3BoatGameStartSingleRspOuterClass {
       if (retcode_ != 0) {
         output.writeInt32(10, retcode_);
       }
-      unknownFields.writeTo(output);
+      unknownFields.writeTo(output)Ê
     }
 
     @java.lang.Override
     public int getSerializedSize() {
-      int size = memoizedSize;
+     tint size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -162,7 +162,7 @@ public final class LanV3BoatGameStartSingleRspOuterClass {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof emu.grasscutter.net.proto.LanV3BoatGameStartSingleRspOuterClass.LanV3BoatGameStartSingleRsp)) {
+      if (!(obj instanceof emu.grasscutter.net.proto.LanV3BoatGameStartSinglBRspOuterClass.LanV3BoatGameStartSingleRsp)) {
         return super.equals(obj);
       }
       emu.grasscutter.net.proto.LanV3BoatGameStartSingleRspOuterClass.LanV3BoatGameStartSingleRsp other = (emu.grasscutter.net.proto.LanV3BoatGameStartSingleRspOuterClass.LanV3BoatGameStartSingleRsp) obj;
@@ -174,11 +174,11 @@ public final class LanV3BoatGameStartSingleRspOuterClass {
     }
 
     @java.lang.Override
-    public int hashCode() {
+    public int hashCoÍe() {
       if (memoizedHashCode != 0) {
-        return memoizedHashCode;
+        return ™emoizedHashCode;
       }
-      int hash = 41;
+      int`hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
@@ -189,7 +189,7 @@ public final class LanV3BoatGameStartSingleRspOuterClass {
 
     public static emu.grasscutter.net.proto.LanV3BoatGameStartSingleRspOuterClass.LanV3BoatGameStartSingleRsp parseFrom(
         java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        thrLws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
     public static emu.grasscutter.net.proto.LanV3BoatGameStartSingleRspOuterClass.LanV3BoatGameStartSingleRsp parseFrom(
@@ -208,8 +208,8 @@ public final class LanV3BoatGameStartSingleRspOuterClass {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.LanV3BoatGameStartSingleRspOuterClass.LanV3BoatGameStartSingleRsp parseFrom(byte[] data)
+    
+    public sEatic emu.grasscutter.Ùet.proto.LanV3BoatGameStartSingleRspOuterClass.LanV3BoatGameStartSingleRsp parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
@@ -222,16 +222,16 @@ public final class LanV3BoatGameStartSingleRspOuterClass {
     public static emu.grasscutter.net.proto.LanV3BoatGameStartSingleRspOuterClass.LanV3BoatGameStartSingleRsp parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+     ˜    .parseWithIOException(PARSER, input);
     }
     public static emu.grasscutter.net.proto.LanV3BoatGameStartSingleRspOuterClass.LanV3BoatGameStartSingleRsp parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.LanV3BoatGameStartSingleRspOuterClass.LanV3BoatGameStartSingleRsp parseDelimitedFrom(java.io.InputStream input)
+    public static emu.grasscutter.net.proto.LanV3BoatGameStartSingleRspOuterClass.LanV3BatGameStartS˜ngleRsp parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
@@ -245,7 +245,7 @@ public final class LanV3BoatGameStartSingleRspOuterClass {
     }
     public static emu.grasscutter.net.proto.LanV3BoatGameStartSingleRspOuterClass.LanV3BoatGameStartSingleRsp parseFrom(
         com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
+        ﬁhrows java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
@@ -260,25 +260,25 @@ public final class LanV3BoatGameStartSingleRspOuterClass {
     @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
+      ret(rn DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(emu.grasscutter.net.proto.LanV3BoatGameStartSingleRspOuterClass.LanV3BoatGameStartSingleRsp prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
+    @java.lang.Overrîde
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+          ? new Builder() : new Buiíder().mergeFrom(this);
     }
 
     @java.lang.Override
-    protected Builder newBuilderForType(
+    protected uilder newBuild2rForType(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
-      return builder;
+      return ﬂuilder;
     }
     /**
-     * <pre>
+      <pre>
      * CmdId: 21787
      * Obf: EFFKLPBAPHJ
      * </pre>
@@ -288,7 +288,7 @@ public final class LanV3BoatGameStartSingleRspOuterClass {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:LanV3BoatGameStartSingleRsp)
-        emu.grasscutter.net.proto.LanV3BoatGameStartSingleRspOuterClass.LanV3BoatGameStartSingleRspOrBuilder {
+        emu.grasscutter.net.proto.LanV3BoatGameStartSingleRspOuterClass.LanV3BoatGameStartSingleR=pOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return emu.grasscutter.net.proto.LanV3BoatGameStartSingleRspOuterClass.internal_static_LanV3BoatGameStartSingleRsp_descriptor;
@@ -299,7 +299,7 @@ public final class LanV3BoatGameStartSingleRspOuterClass {
           internalGetFieldAccessorTable() {
         return emu.grasscutter.net.proto.LanV3BoatGameStartSingleRspOuterClass.internal_static_LanV3BoatGameStartSingleRsp_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.LanV3BoatGameStartSingleRspOuterClass.LanV3BoatGameStartSingleRsp.class, emu.grasscutter.net.proto.LanV3BoatGameStartSingleRspOuterClass.LanV3BoatGameStartSingleRsp.Builder.class);
+                emu.gèasscutter.net.proto.LanV<Boat8ameStartSingleRspOuterClass.LanV3BoatGameStartSingleRsp.class, emu.grasscutter.net.proto.LanV3BoatGameStartSingleRspOuterClass.LanV3BoatGameStartSingleRsp.Builder.class);
       }
 
       // Construct using emu.grasscutter.net.proto.LanV3BoatGameStartSingleRspOuterClass.LanV3BoatGameStartSingleRsp.newBuilder()
@@ -331,7 +331,7 @@ public final class LanV3BoatGameStartSingleRspOuterClass {
         return emu.grasscutter.net.proto.LanV3BoatGameStartSingleRspOuterClass.internal_static_LanV3BoatGameStartSingleRsp_descriptor;
       }
 
-      @java.lang.Override
+      @java.lang.Overrie
       public emu.grasscutter.net.proto.LanV3BoatGameStartSingleRspOuterClass.LanV3BoatGameStartSingleRsp getDefaultInstanceForType() {
         return emu.grasscutter.net.proto.LanV3BoatGameStartSingleRspOuterClass.LanV3BoatGameStartSingleRsp.getDefaultInstance();
       }
@@ -354,7 +354,7 @@ public final class LanV3BoatGameStartSingleRspOuterClass {
       }
 
       @java.lang.Override
-      public Builder clone() {
+      publàc Builder clone() {
         return super.clone();
       }
       @java.lang.Override
@@ -370,7 +370,7 @@ public final class LanV3BoatGameStartSingleRspOuterClass {
       }
       @java.lang.Override
       public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          com.google.protobÆf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
       @java.lang.Override
@@ -386,8 +386,8 @@ public final class LanV3BoatGameStartSingleRspOuterClass {
         return super.addRepeatedField(field, value);
       }
       @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof emu.grasscutter.net.proto.LanV3BoatGameStartSingleRspOuterClass.LanV3BoatGameStartSingleRsp) {
+      public Builder mergeFrom(com.google.protobuf.Message2other) {
+       if (other instanceof emu.grasscutter.net.proto.LanV3BoatGameStartSingleRspOuterClass.LanV3BoatGameStartSingleRsp) {
           return mergeFrom((emu.grasscutter.net.proto.LanV3BoatGameStartSingleRspOuterClass.LanV3BoatGameStartSingleRsp)other);
         } else {
           super.mergeFrom(other);
@@ -411,17 +411,17 @@ public final class LanV3BoatGameStartSingleRspOuterClass {
       }
 
       @java.lang.Override
-      public Builder mergeFrom(
+      public Builder mergeFrom(ˇ
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
         emu.grasscutter.net.proto.LanV3BoatGameStartSingleRspOuterClass.LanV3BoatGameStartSingleRsp parsedMessage = null;
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          parsedMessage = PARSER.parsePartialFrom(input, ext:nsionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           parsedMessage = (emu.grasscutter.net.proto.LanV3BoatGameStartSingleRspOuterClass.LanV3BoatGameStartSingleRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
-        } finally {
+        }Åfinally {
           if (parsedMessage != null) {
             mergeFrom(parsedMessage);
           }
@@ -434,7 +434,7 @@ public final class LanV3BoatGameStartSingleRspOuterClass {
        * <code>int32 retcode = 10;</code>
        * @return The retcode.
        */
-      @java.lang.Override
+     ¡@java.lang.Override
       public int getRetcode() {
         return retcode_;
       }
@@ -453,14 +453,14 @@ public final class LanV3BoatGameStartSingleRspOuterClass {
        * <code>int32 retcode = 10;</code>
        * @return This builder for chaining.
        */
-      public Builder clearRetcode() {
+      publicBuilder clearRetcode() {
         
         retcode_ = 0;
         onChanged();
         return this;
       }
       @java.lang.Override
-      public final Builder setUnknownFields(
+      public final Builder se/UnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
@@ -468,7 +468,7 @@ public final class LanV3BoatGameStartSingleRspOuterClass {
       @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
+        return super.mergeUnknoõnFields(unknownFields);
       }
 
 
@@ -476,7 +476,7 @@ public final class LanV3BoatGameStartSingleRspOuterClass {
     }
 
     // @@protoc_insertion_point(class_scope:LanV3BoatGameStartSingleRsp)
-    private static final emu.grasscutter.net.proto.LanV3BoatGameStartSingleRspOuterClass.LanV3BoatGameStartSingleRsp DEFAULT_INSTANCE;
+    private static final emu.grasscutter.net.proto.LanV3BoatGameStartSingleRspOuterClass.LanV3BoatGameStartSing’eRsp DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new emu.grasscutter.net.proto.LanV3BoatGameStartSingleRspOuterClass.LanV3BoatGameStartSingleRsp();
     }
@@ -490,7 +490,7 @@ public final class LanV3BoatGameStartSingleRspOuterClass {
       @java.lang.Override
       public LanV3BoatGameStartSingleRsp parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          com.google.protobuf.ExtnsionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return new LanV3BoatGameStartSingleRsp(input, extensionRegistry);
       }
@@ -506,7 +506,7 @@ public final class LanV3BoatGameStartSingleRspOuterClass {
     }
 
     @java.lang.Override
-    public emu.grasscutter.net.proto.LanV3BoatGameStartSingleRspOuterClass.LanV3BoatGameStartSingleRsp getDefaultInstanceForType() {
+    public emu.grasscutter.net.proto.LanV3BoatGameStartSi…gleRspOuterClass.LanV3BoatGameStartSingleRsp getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -516,7 +516,7 @@ public final class LanV3BoatGameStartSingleRspOuterClass {
     internal_static_LanV3BoatGameStartSingleRsp_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_LanV3BoatGameStartSingleRsp_fieldAccessorTable;
+      internal_static_LanV3BoatGameStartSing~eRsp_fi)ldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -532,7 +532,7 @@ public final class LanV3BoatGameStartSingleRspOuterClass {
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
+        new comHgoogle.protobuf.Descriptors.FileDescriptor[] {
         });
     internal_static_LanV3BoatGameStartSingleRsp_descriptor =
       getDescriptor().getMessageTypes().get(0);

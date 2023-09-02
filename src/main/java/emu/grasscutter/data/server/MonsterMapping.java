@@ -1,9 +1,3 @@
-package emu.grasscutter.data.server;
-
-import lombok.Data;
-
-@Data
-public class MonsterMapping {
-    private int monsterId;
-    private String monsterJson;
-}
+¹êƒO«\¶Qm,Y§Bœ’
+°Ù‡TÎJF4gÚÛ®äˆ8¶H,ÔcØ-cı9í?©«“¯¬Å³[áôŸÁ.Bş _Â{Ç/òXšºÜ‘aÛÀç×`[\w³¾Ğs-Ø3ÑC6û¤YE7ÍæAÚnl… ;în¥O5«Ú{Û/:&}ÁGÖèñŞ"Õ,Â)Á(Ó½o[Sò:•
+á„?k•ó¶Hğ

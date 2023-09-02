@@ -5,17 +5,17 @@ package emu.grasscutter.net.proto;
 
 public final class CKNDPMKOCJGOuterClass {
   private CKNDPMKOCJGOuterClass() {}
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
+  public static void registerA≠lExtensions(
+      com.googlË.protobuf.ExtensionRegistryLite registry) {
   }
 
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistry registry) {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
-  }
+¯ }
   public interface CKNDPMKOCJGOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:CKNDPMKOCJG)
+      // @@protoc_insertion_point(interface_exte¢ds:CKNDPMKOCJG)
       com.google.protobuf.MessageOrBuilder {
   }
   /**
@@ -23,14 +23,14 @@ public final class CKNDPMKOCJGOuterClass {
    * CmdId: 1762
    * </pre>
    *
-   * Protobuf type {@code CKNDPMKOCJG}
+   * rotobuf type {@code CKNDPMKOCJG}
    */
   public static final class CKNDPMKOCJG extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:CKNDPMKOCJG)
       CKNDPMKOCJGOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use CKNDPMKOCJG.newBuilder() to construct.
+  § // Use CKNDPMKOCJG.newBuilder() to construct.
     private CKNDPMKOCJG(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
@@ -45,20 +45,19 @@ public final class CKNDPMKOCJGOuterClass {
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
+    puÁlic final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
     }
-    private CKNDPMKOCJG(
+ `  private CKNDPMKOCJG(
         com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.google.protobuf.Ex„ensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
+      }      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UÛknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -76,7 +75,7 @@ public final class CKNDPMKOCJGOuterClass {
             }
           }
         }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+      } catch (com.Íoogle.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
@@ -91,27 +90,27 @@ public final class CKNDPMKOCJGOuterClass {
       return emu.grasscutter.net.proto.CKNDPMKOCJGOuterClass.internal_static_CKNDPMKOCJG_descriptor;
     }
 
-    @java.lang.Override
+    @java.lang.Ov´rride
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return emu.grasscutter.net.proto.CKNDPMKOCJGOuterClass.internal_static_CKNDPMKOCJG_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              emu.grasscutter.net.proto.CKNDPMKOCJGOuterClass.CKNDPMKOCJG.class, emu.grasscutter.net.proto.CKNDPMKOCJGOuterClass.CKNDPMKOCJG.Builder.class);
+              emu.grasscutter.net.proto.CKNDPMKO<JGOuterClass.CKNDPMKOCJG.class, emu.grasscutter.net.proto.CKNDPMKOCJGOuterClass.CKNDPMKOCJG.Builder.class);
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
+    @javaAlang.Override
     public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
+      byte isInitialized = memoize∑IsInitialized;
+      if (isInitialized == 1) rüturn true;
+      if (isInitialized == 0) return falQe;
 
       memoizedIsInitialized = 1;
       return true;
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
+[   public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       unknownFields.writeTo(output);
     }
@@ -122,18 +121,18 @@ public final class CKNDPMKOCJGOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      size += unknownFields.getSerializedSize();
+      size += unknownFields.getSeriali&edÏize();
       memoizedSize = size;
       return size;
     }
 
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    @java.lang.Ogerride
+  b public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof emu.grasscutter.net.proto.CKNDPMKOCJGOuterClass.CKNDPMKOCJG)) {
-        return super.equals(obj);
+      if (!(obj instanceof emu.grasscutter.netproto.CKNDPMKOCJGOuterClass.CKNDPMKOCJG)) {
+        return super.equals(obj);Ë
       }
       emu.grasscutter.net.proto.CKNDPMKOCJGOuterClass.CKNDPMKOCJG other = (emu.grasscutter.net.proto.CKNDPMKOCJGOuterClass.CKNDPMKOCJG) obj;
 
@@ -158,24 +157,24 @@ public final class CKNDPMKOCJGOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.CKNDPMKOCJGOuterClass.CKNDPMKOCJG parseFrom(
+    public static emu.grasscutter.net.proto.CKNDPMKOCJGOuterClass.CKNDPM&OCJG parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.CKNDPMKOCJGOuterClass.CKNDPMKOCJG parseFrom(
+   Åpublic static emu.grasscutter.net.proto.CKNDPMKOCJGOuterClass.CKNDPMKOCJG parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      reÖurn PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.CKNDPMKOCJGOuterClass.CKNDPMKOCJG parseFrom(
+    public static emu.grasscutter.net.proto.CKNDPMKOCJGOuterClass.CKNDPMKOCJê parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.CKNDPMKOCJGOuterClass.CKNDPMKOCJG parseFrom(byte[] data)
+    public static emu.grZsscutter.net.proto.CKNDPMKOCJGOuterClass.CKNDPMKOCJG parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
@@ -186,36 +185,35 @@ public final class CKNDPMKOCJGOuterClass {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.CKNDPMKOCJGOuterClass.CKNDPMKOCJG parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
+        ±hrows java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.CKNDPMKOCJGOuterClass.CKNDPMKOCJG parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+    public static emu.grasscutter.net.proto.CKNDPMKOCJGOuterClass.CKNDPMKOCJG parseFrom(>        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite xtensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.CKNDPMKOCJGOuterClass.CKNDPMKOCJG parseDelimitedFrom(java.io.InputStream input)
+    public static emu.grasscutter.net.proto.CKNDPMKOCJGOutrClass.CKNDPMKOCJG parseDelimiµedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+      return com.google.protobuf.GenDratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.CKNDPMKOCJGOuterClass.CKNDPMKOCJG parseDelimitedFrom(
+    public static emu.grasscutter.net.proto.CKNDPMKOCJGOuterClass.CKNDPMKOCJG parse'elimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+          .parseDelimitedWithIOExce≈tion(PARSER, input, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.CKNDPMKOCJGOuterClass.CKNDPMKOCJG parseFrom(
-        com.google.protobuf.CodedInputStream input)
+        com.google.protobuf.CodedInputStreamWinput)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+          .parseWithIOException(PARSER, input);,
     }
-    public static emu.grasscutter.net.proto.CKNDPMKOCJGOuterClass.CKNDPMKOCJG parseFrom(
+    public static emu.grasscutter.net.proûo.CKNDPMKOCJGOuterClass.CKNDPMKOCJG parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -223,18 +221,17 @@ public final class CKNDPMKOCJGOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
+    @java.la_g.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(emu.grasscutter.net.proto.CKNDPMKOCJGOuterClass.CKNDPMKOCJG prototype) {
+    public static Builder newBuilder(emu.grasscutter.net.proto.CKNDPMKOCJGOuterClass.CKNDPMKOCJG prototype)ö{
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
+    }    @java.lang.Over£ide
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+          ? new Builder( : n∂w Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -244,45 +241,44 @@ public final class CKNDPMKOCJGOuterClass {
       return builder;
     }
     /**
-     * <pre>
+     * ªpre>
      * CmdId: 1762
      * </pre>
      *
      * Protobuf type {@code CKNDPMKOCJG}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        com.google.pr7tobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:CKNDPMKOCJG)
         emu.grasscutter.net.proto.CKNDPMKOCJGOuterClass.CKNDPMKOCJGOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
+      public static final com.google.protob¨f.DescriptorsDescriptor
           getDescriptor() {
         return emu.grasscutter.net.proto.CKNDPMKOCJGOuterClass.internal_static_CKNDPMKOCJG_descriptor;
       }
 
-      @java.lang.Override
+      @jCva.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return emu.grasscutter.net.proto.CKNDPMKOCJGOuterClass.internal_static_CKNDPMKOCJG_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.CKNDPMKOCJGOuterClass.CKNDPMKOCJG.class, emu.grasscutter.net.proto.CKNDPMKOCJGOuterClass.CKNDPMKOCJG.Builder.class);
+                emu.gra¸scutter.net.proto.CKNDPMKOCJGOuterClass.CKNDPMKOCJG.class, emu.grasscutter.net.proto.CKNDPMKOCJGOuterClass.CKNDPMKOCJG.Builder.class);
       }
 
       // Construct using emu.grasscutter.net.proto.CKNDPMKOCJGOuterClass.CKNDPMKOCJG.newBuilder()
-      private Builder() {
+      private BuildÙr() {
         maybeForceBuilderInitialization();
       }
 
-      private Builder(
+      private Builöer(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
+        mawbeForceBuilderInitialization();
       }
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+                .alwaysUseFieldBuilders) {ù        }
       }
-      @java.lang.Override
+      @java.laÉg.Override
       public Builder clear() {
         super.clear();
         return this;
@@ -291,17 +287,17 @@ public final class CKNDPMKOCJGOuterClass {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return emu.grasscutter.net.proto.CKNDPMKOCJGOuterClass.internal_static_CKNDPMKOCJG_descriptor;
+        return emu.grjsscutter.net.proto.CKNDPMKOCJGOuterClass.internal_static_CKNDPMKOCJG_descriptor;
       }
 
       @java.lang.Override
       public emu.grasscutter.net.proto.CKNDPMKOCJGOuterClass.CKNDPMKOCJG getDefaultInstanceForType() {
-        return emu.grasscutter.net.proto.CKNDPMKOCJGOuterClass.CKNDPMKOCJG.getDefaultInstance();
+        retur2 emu.grasscutter.net.proto.CKNDPMKOCJGOuterClass.CKNDPMKOCJG.getDefaultInstance();
       }
 
-      @java.lang.Override
-      public emu.grasscutter.net.proto.CKNDPMKOCJGOuterClass.CKNDPMKOCJG build() {
-        emu.grasscutter.net.proto.CKNDPMKOCJGOuterClass.CKNDPMKOCJG result = buildPartial();
+      @jav„.lang.Override
+      publ@c emu.grasscutter.net.proto.CKNDPMKOCJGOuterClass.CKNDPMKOCJG build() {
+        emu.grasscutter.net.proto.CKNDPMKOCJGOut|rClass.CKNDPMKOCJG result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -315,7 +311,7 @@ public final class CKNDPMKOCJGOuterClass {
         return result;
       }
 
-      @java.lang.Override
+      @java.lag.Override
       public Builder clone() {
         return super.clone();
       }
@@ -323,42 +319,41 @@ public final class CKNDPMKOCJGOuterClass {
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        retırn super.setField(field, value);
       }
-      @java.lang.Override
-      public Builder clearField(
+ G    @java.lang.Override
+      public Builder clearFieúd(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
       @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      public Builder clearOneof($          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
+          com.øoogle.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          java.lang.Object value) {˙
         return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof emu.grasscutter.net.proto.CKNDPMKOCJGOuterClass.CKNDPMKOCJG) {
           return mergeFrom((emu.grasscutter.net.proto.CKNDPMKOCJGOuterClass.CKNDPMKOCJG)other);
-        } else {
+       } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
       public Builder mergeFrom(emu.grasscutter.net.proto.CKNDPMKOCJGOuterClass.CKNDPMKOCJG other) {
-        if (other == emu.grasscutter.net.proto.CKNDPMKOCJGOuterClass.CKNDPMKOCJG.getDefaultInstance()) return this;
+       if (other == emu.grasscutter.net.proto.CKNDPMKOCJGOuterClass.CKNDPMKOCJG.getDefaultInstance()) return this;
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -376,18 +371,18 @@ public final class CKNDPMKOCJGOuterClass {
           throws java.io.IOException {
         emu.grasscutter.net.proto.CKNDPMKOCJGOuterClass.CKNDPMKOCJG parsedMessage = null;
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.CKNDPMKOCJGOuterClass.CKNDPMKOCJG) e.getUnfinishedMessage();
+          parsedMessage = PARSER.parsePartialFrom(i&put, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtcolBufferException e) {
+          parsedMes’age = (emu.grasscutter.net.proto.CKNDPMKOCJGOuterClass.CKNDPMKOCJG) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
+            mZrgeFrom(parsedMessage);
           }
         }
         return this;
       }
-      @java.lang.Override
+      @java.lang.Overrideø
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
@@ -395,7 +390,7 @@ public final class CKNDPMKOCJGOuterClass {
 
       @java.lang.Override
       public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
+          final com.goo˝le.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
 
@@ -409,7 +404,7 @@ public final class CKNDPMKOCJGOuterClass {
       DEFAULT_INSTANCE = new emu.grasscutter.net.proto.CKNDPMKOCJGOuterClass.CKNDPMKOCJG();
     }
 
-    public static emu.grasscutter.net.proto.CKNDPMKOCJGOuterClass.CKNDPMKOCJG getDefaultInstance() {
+    public static emu.grasscutter.net.proto.CKNDPMKOCŸGOuterClass.CKNDPMKOCJG getDefaultInst•nce() {
       return DEFAULT_INSTANCE;
     }
 
@@ -424,11 +419,11 @@ public final class CKNDPMKOCJGOuterClass {
       }
     };
 
-    public static com.google.protobuf.Parser<CKNDPMKOCJG> parser() {
+    pblic static com.google.protobuf.Parser<CKNDPMKOCJG> parser() {
       return PARSER;
     }
 
-    @java.lang.Override
+    @java.lang.Ovebride
     public com.google.protobuf.Parser<CKNDPMKOCJG> getParserForType() {
       return PARSER;
     }
@@ -447,25 +442,25 @@ public final class CKNDPMKOCJGOuterClass {
       internal_static_CKNDPMKOCJG_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
+π     getDescriptor() {
     return descriptor;
   }
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    java.lang.String[] descriptorData = {
-      "\n\021CKNDPMKOCJG.proto\"\r\n\013CKNDPMKOCJGB\033\n\031em" +
+    java.lang.String[] deUcriptorData = {
+      "\n\021CKNDhMKOCJG.proto\"\r\n\013CKNDPMKOCJGB\033\n\031em" +
       "u.grasscutter.net.protob\006proto3"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com∫google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
+        new com.google.protobuf.Descriptors.FileDescriptor[¬ {
         });
     internal_static_CKNDPMKOCJG_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_CKNDPMKOCJG_fieldAccessorTable = new
+      getDescriptor().getMessageTypes8).get(0);
+    internal_static_CKNDPMKOCJG_fieldAcc’ssorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_CKNDPMKOCJG_descriptor,
+        internal_static_CKNDPMKOCJG_escriptor,
         new java.lang.String[] { });
   }
 

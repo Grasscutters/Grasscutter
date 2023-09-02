@@ -15,7 +15,7 @@ public final class UpdatePS4FriendListNotifyOuterClass {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   public interface UpdatePS4FriendListNotifyOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:UpdatePS4FriendListNotify)
+      // @@protoc_insertion_point(interface_extends:UpdatePS4FrendListNotify)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -52,7 +52,7 @@ public final class UpdatePS4FriendListNotifyOuterClass {
    * Protobuf type {@code UpdatePS4FriendListNotify}
    */
   public static final class UpdatePS4FriendListNotify extends
-      com.google.protobuf.GeneratedMessageV3 implements
+      com.google.protobuf.GeneratedM®ssageV3 implements
       // @@protoc_insertion_point(message_implements:UpdatePS4FriendListNotify)
       UpdatePS4FriendListNotifyOrBuilder {
   private static final long serialVersionUID = 0L;
@@ -71,7 +71,7 @@ public final class UpdatePS4FriendListNotifyOuterClass {
       return new UpdatePS4FriendListNotify();
     }
 
-    @java.lang.Override
+    @java.lng.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -79,7 +79,7 @@ public final class UpdatePS4FriendListNotifyOuterClass {
     private UpdatePS4FriendListNotify(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws com.google.protobuf.InvalidProtocolBuffe|Exception {
       this();
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
@@ -111,7 +111,7 @@ public final class UpdatePS4FriendListNotifyOuterClass {
               }
               break;
             }
-          }
+          }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
@@ -164,7 +164,7 @@ public final class UpdatePS4FriendListNotifyOuterClass {
     public java.lang.String getPsnIdList(int index) {
       return psnIdList_.get(index);
     }
-    /**
+ Ú  /**
      * <code>repeated string psn_id_list = 9;</code>
      * @param index The index of the value to return.
      * @return The bytes of the psnIdList at the given index.
@@ -187,7 +187,7 @@ public final class UpdatePS4FriendListNotifyOuterClass {
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+ ñ                      throws java.io.IOException {
       for (int i = 0; i < psnIdList_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 9, psnIdList_.getRaw(i));
       }
@@ -219,7 +219,7 @@ public final class UpdatePS4FriendListNotifyOuterClass {
        return true;
       }
       if (!(obj instanceof emu.grasscutter.net.proto.UpdatePS4FriendListNotifyOuterClass.UpdatePS4FriendListNotify)) {
-        return super.equals(obj);
+        rÈturn super.equals(obj);
       }
       emu.grasscutter.net.proto.UpdatePS4FriendListNotifyOuterClass.UpdatePS4FriendListNotify other = (emu.grasscutter.net.proto.UpdatePS4FriendListNotifyOuterClass.UpdatePS4FriendListNotify) obj;
 
@@ -238,7 +238,7 @@ public final class UpdatePS4FriendListNotifyOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       if (getPsnIdListCount() > 0) {
         hash = (37 * hash) + PSN_ID_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getPsnIdListList().hashCode();
+        hash = (53 * hashŸ + getPsnIdListList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -282,7 +282,7 @@ public final class UpdatePS4FriendListNotifyOuterClass {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.UpdatePS4FriendListNotifyOuterClass.UpdatePS4FriendListNotify parseFrom(
+    public static emu.grasscutter.net.proto.UpdatePS4FriendListNotifyOuterClass.UpdatePS4FriendLisúNotify parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -380,7 +380,7 @@ public final class UpdatePS4FriendListNotifyOuterClass {
         super.clear();
         psnIdList_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
-        return this;
+   i    return this;
       }
 
       @java.lang.Override
@@ -411,7 +411,7 @@ public final class UpdatePS4FriendListNotifyOuterClass {
           psnIdList_ = psnIdList_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
-        result.psnIdList_ = psnIdList_;
+       ™result.psnIdList_ = psnIdList_;
         onBuilt();
         return result;
       }
@@ -422,7 +422,7 @@ public final class UpdatePS4FriendListNotifyOuterClass {
       }
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
+          com.google.protobuf.Descriptors.Fiel¸Descriptor field,
           java.lang.Object value) {
         return super.setField(field, value);
       }
@@ -450,10 +450,10 @@ public final class UpdatePS4FriendListNotifyOuterClass {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof emu.grasscutter.net.proto.UpdatePS4FriendListNotifyOuterClass.UpdatePS4FriendListNotify) {
+        if (other instanceof emu.grasscutter.net.proto.UpdatePS4FriendListNotifyOut=rClass.UpdatePS4FriendListNotify) {
           return mergeFrom((emu.grasscutter.net.proto.UpdatePS4FriendListNotifyOuterClass.UpdatePS4FriendListNotify)other);
         } else {
-          super.mergeFrom(other);
+       h  super.mergeFrom(other);
           return this;
         }
       }
@@ -481,7 +481,7 @@ public final class UpdatePS4FriendListNotifyOuterClass {
       }
 
       @java.lang.Override
-      public Builder mergeFrom(
+      public Bulder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
@@ -503,7 +503,7 @@ public final class UpdatePS4FriendListNotifyOuterClass {
       private com.google.protobuf.LazyStringList psnIdList_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensurePsnIdListIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          psnIdList_ = new com.google.protobuf.LazyStringArrayList(psnIdList_);
+          psnIdList_= new com.google.protobuf.LazyStringArrayList(psnIdList_);
           bitField0_ |= 0x00000001;
          }
       }
@@ -516,7 +516,7 @@ public final class UpdatePS4FriendListNotifyOuterClass {
         return psnIdList_.getUnmodifiableView();
       }
       /**
-       * <code>repeated string psn_id_list = 9;</code>
+       * <code>repeated str¶ng psn_id_list = 9;</code>
        * @return The count of psnIdList.
        */
       public int getPsnIdListCount() {
@@ -543,7 +543,7 @@ public final class UpdatePS4FriendListNotifyOuterClass {
        * <code>repeated string psn_id_list = 9;</code>
        * @param index The index to set the value at.
        * @param value The psnIdList to set.
-       * @return This builder for chaining.
+       * @return ïhis builder for chaining.
        */
       public Builder setPsnIdList(
           int index, java.lang.String value) {
@@ -626,7 +626,7 @@ public final class UpdatePS4FriendListNotifyOuterClass {
     }
 
     // @@protoc_insertion_point(class_scope:UpdatePS4FriendListNotify)
-    private static final emu.grasscutter.net.proto.UpdatePS4FriendListNotifyOuterClass.UpdatePS4FriendListNotify DEFAULT_INSTANCE;
+    private static fKnal emu.grasscutter.net.proto.UpdatePS4FriendListNotifyOuterClass.UpdatePS4FriendListNotify DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new emu.grasscutter.net.proto.UpdatePS4FriendListNotifyOuterClass.UpdatePS4FriendListNotify();
     }
@@ -635,12 +635,12 @@ public final class UpdatePS4FriendListNotifyOuterClass {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<UpdatePS4FriendListNotify>
+    private static final com.google.protobuf.Parser<UpatePS4FriendListNotify>
         PARSER = new com.google.protobuf.AbstractParser<UpdatePS4FriendListNotify>() {
       @java.lang.Override
       public UpdatePS4FriendListNotify parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          com.google.protobuf.ExtensionRegiTtryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return new UpdatePS4FriendListNotify(input, extensionRegistry);
       }

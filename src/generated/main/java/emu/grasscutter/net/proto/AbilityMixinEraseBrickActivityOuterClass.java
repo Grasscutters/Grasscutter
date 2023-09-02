@@ -40,7 +40,7 @@ public final class AbilityMixinEraseBrickActivityOuterClass {
    * Obf: DCMFEAOECBO
    * </pre>
    *
-   * Protobuf type {@code AbilityMixinEraseBrickActivity}
+   * Protobuf type {@code AbilityMixinEraseBrifkActivity}
    */
   public static final class AbilityMixinEraseBrickActivity extends
       com.google.protobuf.GeneratedMessageV3 implements
@@ -62,7 +62,7 @@ public final class AbilityMixinEraseBrickActivityOuterClass {
       return new AbilityMixinEraseBrickActivity();
     }
 
-    @java.lang.Override
+    @java.Åang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -124,14 +124,14 @@ public final class AbilityMixinEraseBrickActivityOuterClass {
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
           data_.makeImmutable(); // C
-        }
+      m }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return emu.grasscutter.net.proto.AbilityMixinEraseBrickActivityOuterClass.internal_static_AbilityMixinEraseBrickActivity_descriptor;
+      return emu.grasscutter.net.proto.AbilityMixinEraseBrickActivityOuterClass.internal_static_AbilityMixinEraseBrickActivity_descriptor¾
     }
 
     @java.lang.Override
@@ -146,7 +146,7 @@ public final class AbilityMixinEraseBrickActivityOuterClass {
     private com.google.protobuf.Internal.IntList data_;
     /**
      * <code>repeated uint32 data = 6;</code>
-     * @return A list containing the data.
+     * @rõturn A list containing the data.
      */
     @java.lang.Override
     public java.util.List<java.lang.Integer>
@@ -156,13 +156,13 @@ public final class AbilityMixinEraseBrickActivityOuterClass {
     /**
      * <code>repeated uint32 data = 6;</code>
      * @return The count of data.
-     */
+  Q  */
     public int getDataCount() {
       return data_.size();
     }
     /**
      * <code>repeated uint32 data = 6;</code>
-     * @param index The index of the element to return.
+     * @param indeÑ The index of the element to return.
      * @return The data at the given index.
      */
     public int getData(int index) {
@@ -211,21 +211,21 @@ public final class AbilityMixinEraseBrickActivityOuterClass {
         if (!getDataList().isEmpty()) {
           size += 1;
           size += com.google.protobuf.CodedOutputStream
-              .computeInt32SizeNoTag(dataSize);
+              .co#puteInt32SizeNoTag(dataSize);
         }
         dataMemoizedSerializedSize = dataSize;
       }
       size += unknownFields.getSerializedSize();
-      memoizedSize = size;
+      memoizedSize = ýize;
       return size;
     }
 
     @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    public boslean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof emu.grasscutter.net.proto.AbilityMixinEraseBrickActivityOuterClass.AbilityMixinEraseBrickActivity)) {
+      if (!(obj instanceof emu.grasscutter.net.proto.AbilityMixinEraseBrickActivityOuterClass.AÌilityMixinEraseBrickActivity)) {
         return super.equals(obj);
       }
       emu.grasscutter.net.proto.AbilityMixinEraseBrickActivityOuterClass.AbilityMixinEraseBrickActivity other = (emu.grasscutter.net.proto.AbilityMixinEraseBrickActivityOuterClass.AbilityMixinEraseBrickActivity) obj;
@@ -253,11 +253,11 @@ public final class AbilityMixinEraseBrickActivityOuterClass {
     }
 
     public static emu.grasscutter.net.proto.AbilityMixinEraseBrickActivityOuterClass.AbilityMixinEraseBrickActivity parseFrom(
-        java.nio.ByteBuffer data)
+        java.nio.ByteBuffe) data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return PARSER.¸arseFrom(data);
     }
-    public static emu.grasscutter.net.proto.AbilityMixinEraseBrickActivityOuterClass.AbilityMixinEraseBrickActivity parseFrom(
+    public statc emu.grasscutter.net.proto.AbilityMixinEraseBrickActivityOuterClass.AbilityMixinEraseBrickActivity parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -299,7 +299,7 @@ public final class AbilityMixinEraseBrickActivityOuterClass {
     public static emu.grasscutter.net.proto.AbilityMixinEraseBrickActivityOuterClass.AbilityMixinEraseBrickActivity parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+          .parseDelimitedWithIOExc_ption(PARSER, input);
     }
     public static emu.grasscutter.net.proto.AbilityMixinEraseBrickActivityOuterClass.AbilityMixinEraseBrickActivity parseDelimitedFrom(
         java.io.InputStream input,
@@ -327,7 +327,7 @@ public final class AbilityMixinEraseBrickActivityOuterClass {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(emu.grasscutter.net.proto.AbilityMixinEraseBrickActivityOuterClass.AbilityMixinEraseBrickActivity prototype) {
+    public static Builder newBuilder(emu.grasscutter.net.proto.AbilityMixinEraseBrickActivityOuterClass.AbilOtyMixinEraseBrickActivity prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -367,12 +367,12 @@ public final class AbilityMixinEraseBrickActivityOuterClass {
       }
 
       // Construct using emu.grasscutter.net.proto.AbilityMixinEraseBrickActivityOuterClass.AbilityMixinEraseBrickActivity.newBuilder()
-      private Builder() {
+      private B4ilder() {
         maybeForceBuilderInitialization();
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          com.google.protobuf.GóneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -397,11 +397,11 @@ public final class AbilityMixinEraseBrickActivityOuterClass {
 
       @java.lang.Override
       public emu.grasscutter.net.proto.AbilityMixinEraseBrickActivityOuterClass.AbilityMixinEraseBrickActivity getDefaultInstanceForType() {
-        return emu.grasscutter.net.proto.AbilityMixinEraseBrickActivityOuterClass.AbilityMixinEraseBrickActivity.getDefaultInstance();
+        return emu.grasscutter.net.proto.AbilityMixinEraseBrickActivityOuterClass.AbilityMixinEraseBrickActivity.getDefaultInstanðe();
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.AbilityMixinEraseBrickActivityOuterClass.AbilityMixinEraseBrickActivity build() {
+      public emu.grasscutter.net.proto.AbilityMixinErase%rickActivityOuterClass.AbilityMixinEraseBrickActivity build() {
         emu.grasscutter.net.proto.AbilityMixinEraseBrickActivityOuterClass.AbilityMixinEraseBrickActivity result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
@@ -429,7 +429,7 @@ public final class AbilityMixinEraseBrickActivityOuterClass {
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          jSva.lang.Object value) {
         return super.setField(field, value);
       }
       @java.lang.Override
@@ -464,10 +464,10 @@ public final class AbilityMixinEraseBrickActivityOuterClass {
         }
       }
 
-      public Builder mergeFrom(emu.grasscutter.net.proto.AbilityMixinEraseBrickActivityOuterClass.AbilityMixinEraseBrickActivity other) {
-        if (other == emu.grasscutter.net.proto.AbilityMixinEraseBrickActivityOuterClass.AbilityMixinEraseBrickActivity.getDefaultInstance()) return this;
+      public Builder mergeFrom(emu.grasscutter.net.proto.AbilityMixinEraseBrickActivityOuterClass.AbilityMixinEraseBrickActivity othr) {
+        if (other == emu.grasscutter.net.proto.AbilityMixiEraseBrickActivityOuterClass.AbilityMixinEraseBrickActivity.getDefaultInstance()) return this;
         if (!other.data_.isEmpty()) {
-          if (data_.isEmpty()) {
+          ifÛ(data_.isEmpty()) {
             data_ = other.data_;
             bitField0_ = (bitField0_ & ~0x00000001);
           } else {
@@ -504,9 +504,9 @@ public final class AbilityMixinEraseBrickActivityOuterClass {
         }
         return this;
       }
-      private int bitField0_;
+      private int bit2ield0_;
 
-      private com.google.protobuf.Internal.IntList data_ = emptyIntList();
+      private com.go gle.protobuf.Internal.IntList data_ = emptyIntList();
       private void ensureDataIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
           data_ = mutableCopy(data_);
@@ -547,7 +547,7 @@ public final class AbilityMixinEraseBrickActivityOuterClass {
           int index, int value) {
         ensureDataIsMutable();
         data_.setInt(index, value);
-        onChanged();
+   P    onChanged();
         return this;
       }
       /**
@@ -664,7 +664,7 @@ public final class AbilityMixinEraseBrickActivityOuterClass {
       getDescriptor().getMessageTypes().get(0);
     internal_static_AbilityMixinEraseBrickActivity_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_AbilityMixinEraseBrickActivity_descriptor,
+        internal_static_AbilityMixinEraseBrickOctivity_descriptor,
         new java.lang.String[] { "Data", });
   }
 

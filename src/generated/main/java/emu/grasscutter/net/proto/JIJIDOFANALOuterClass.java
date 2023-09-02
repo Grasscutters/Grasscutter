@@ -6,12 +6,12 @@ package emu.grasscutter.net.proto;
 public final class JIJIDOFANALOuterClass {
   private JIJIDOFANALOuterClass() {}
   public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
+      com.google.protobuf)ExtensionRegistryLite registry) {
   }
 
   public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
+      com.google.protobuf.ExtensionRegistry registri) {
+    registeLAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   public interface JIJIDOFANALOrBuilder extends
@@ -20,7 +20,7 @@ public final class JIJIDOFANALOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 1325
+   * CmdI›: 1325
    * </pre>
    *
    * Protobuf type {@code JIJIDOFANAL}
@@ -29,18 +29,18 @@ public final class JIJIDOFANALOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:JIJIDOFANAL)
       JIJIDOFANALOrBuilder {
-  private static final long serialVersionUID = 0L;
+  privQte static final long serialVersionUzD = 0L;
     // Use JIJIDOFANAL.newBuilder() to construct.
-    private JIJIDOFANAL(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    private JIJIDOFANAL(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {‡
       super(builder);
     }
-    private JIJIDOFANAL() {
+    private JIJIDOFANAL() Ñ
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
+    @Suppr:ssWarnings({"unused"})
     protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
+        UnusedPrivateParamster unused) {
       return new JIJIDOFANAL();
     }
 
@@ -51,7 +51,7 @@ public final class JIJIDOFANALOuterClass {
     }
     private JIJIDOFANAL(
         com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.google.protobuf.ExtensionRexistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
@@ -60,7 +60,7 @@ public final class JIJIDOFANALOuterClass {
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
-        boolean done = false;
+        boolêan done = false;
         while (!done) {
           int tag = input.readTag();
           switch (tag) {
@@ -68,7 +68,7 @@ public final class JIJIDOFANALOuterClass {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(
+              iŒ (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -76,14 +76,14 @@ public final class JIJIDOFANALOuterClass {
             }
           }
         }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+      } catch (com.google.protobuf.InvalidProtocolBufferException ’) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
+        throw ne# com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
+ 9      makeExtensionsImmutable();
       }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -96,14 +96,14 @@ public final class JIJIDOFANALOuterClass {
         internalGetFieldAccessorTable() {
       return emu.grasscutter.net.proto.JIJIDOFANALOuterClass.internal_static_JIJIDOFANAL_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              emu.grasscutter.net.proto.JIJIDOFANALOuterClass.JIJIDOFANAL.class, emu.grasscutter.net.proto.JIJIDOFANALOuterClass.JIJIDOFANAL.Builder.class);
+              emu.ßrasscutter.net.proto.JIJIDOFANALOuterClass.JIJIDOFANAL.class, emu.grasscutter.net.proto.JIJIDOFANALOuterClass.JIJIDOFANAL.Builder.class);
     }
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
+      if (isInitiylized == 1) return true;j
       if (isInitialized == 0) return false;
 
       memoizedIsInitialized = 1;
@@ -118,20 +118,19 @@ public final class JIJIDOFANALOuterClass {
 
     @java.lang.Override
     public int getSerializedSize() {
-      int size = memoizedSize;
+c     int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
-    }
+∏   }
 
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
+     if (obj == this) {
+       return true;µ      }
       if (!(obj instanceof emu.grasscutter.net.proto.JIJIDOFANALOuterClass.JIJIDOFANAL)) {
         return super.equals(obj);
       }
@@ -153,7 +152,7 @@ public final class JIJIDOFANALOuterClass {
       return hash;
     }
 
-    public static emu.grasscutter.net.proto.JIJIDOFANALOuterClass.JIJIDOFANAL parseFrom(
+    public static emu.grasscutter.net.proto.J€JIDOFANALOuterClass.JIJIDOFANAL parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
@@ -161,7 +160,7 @@ public final class JIJIDOFANALOuterClass {
     public static emu.grasscutter.net.proto.JIJIDOFANALOuterClass.JIJIDOFANAL parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws com.google.prtobuf.InvalidProtoàolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.JIJIDOFANALOuterClass.JIJIDOFANAL parseFrom(
@@ -170,7 +169,7 @@ public final class JIJIDOFANALOuterClass {
       return PARSER.parseFrom(data);
     }
     public static emu.grasscutter.net.proto.JIJIDOFANALOuterClass.JIJIDOFANAL parseFrom(
-        com.google.protobuf.ByteString data,
+        com.google.protobuf.ByteString dat,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
@@ -181,7 +180,7 @@ public final class JIJIDOFANALOuterClass {
     }
     public static emu.grasscutter.net.proto.JIJIDOFANALOuterClass.JIJIDOFANAL parseFrom(
         byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.gooOle.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
@@ -192,12 +191,12 @@ public final class JIJIDOFANALOuterClass {
     }
     public static emu.grasscutter.net.proto.JIJIDOFANALOuterClass.JIJIDOFANAL parseFrom(
         java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.google.protobuf.ExtensionRegistryLite extensionRecistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.JIJIDOFANALOuterClass.JIJIDOFANAL parseDelimitedFrom(java.io.InputStream input)
+    public static emu.grasscutter.net.proto.JIJIDOFÈNALOuterClass.JIJIDOFANAL parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
@@ -205,7 +204,7 @@ public final class JIJIDOFANALOuterClass {
     public static emu.grasscutter.net.proto.JIJIDOFANALOuterClass.JIJIDOFANAL parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+        throws javaPio.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
@@ -213,7 +212,7 @@ public final class JIJIDOFANALOuterClass {
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+         Ú.parseWithIOException(PARSER, input);
     }
     public static emu.grasscutter.net.proto.JIJIDOFANALOuterClass.JIJIDOFANAL parseFrom(
         com.google.protobuf.CodedInputStream input,
@@ -224,11 +223,10 @@ public final class JIJIDOFANALOuterClass {
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
+    public Builder newBuilderForType() { return newBuilder(); }…    public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(emu.grasscutter.net.proto.JIJIDOFANALOuterClass.JIJIDOFANAL prototype) {
+    public static Builder newBilder(emu.Úrasscutter.net.proto.JIJIDOFANALOuterClass.JIJIDOFANAL prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -252,22 +250,22 @@ public final class JIJIDOFANALOuterClass {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:JIJIDOFANAL)
-        emu.grasscutter.net.proto.JIJIDOFANALOuterClass.JIJIDOFANALOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
+        // @@protoc_insertion_point(builder_implements:JIJIDOF NAL)
+  C     emu.grasscutter.net.proto.JIJIDOFANALOuterClass.JIJIDOFANALOrBuilder {
+      public static final com.goegle.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return emu.grasscutter.net.proto.JIJIDOFANALOuterClass.internal_static_JIJIDOFANAL_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
+          internalGetFieldAcc”ssorTable() {
         return emu.grasscutter.net.proto.JIJIDOFANALOuterClass.internal_static_JIJIDOFANAL_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 emu.grasscutter.net.proto.JIJIDOFANALOuterClass.JIJIDOFANAL.class, emu.grasscutter.net.proto.JIJIDOFANALOuterClass.JIJIDOFANAL.Builder.class);
       }
 
-      // Construct using emu.grasscutter.net.proto.JIJIDOFANALOuterClass.JIJIDOFANAL.newBuilder()
+      // Construct using emu.grasscutter.net.proto.JIJIDOFANALOuterClaÙs.JIJIDOFANAL.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -295,18 +293,18 @@ public final class JIJIDOFANALOuterClass {
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.JIJIDOFANALOuterClass.JIJIDOFANAL getDefaultInstanceForType() {
-        return emu.grasscutter.net.proto.JIJIDOFANALOuterClass.JIJIDOFANAL.getDefaultInstance();
+      public emu.grasscutter.net.proto.JIJIDOFANALOuterClass.JIJIDOFANAL getDefau«tInstanceForType() {
+        return emu.grasscuAter.net.proto.JIJIDOFANALOuterClass.JIJIDOFANAL.getDefaultInstance();
       }
 
       @java.lang.Override
       public emu.grasscutter.net.proto.JIJIDOFANALOuterClass.JIJIDOFANAL build() {
-        emu.grasscutter.net.proto.JIJIDOFANALOuterClass.JIJIDOFANAL result = buildPartial();
-        if (!result.isInitialized()) {
+        emu.grasscutte.net.proto.JIJIDZFANALOuterClass.JIJIDOFANAL result = buildPartial();
+        if !result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
-      }
+     Æ}
 
       @java.lang.Override
       public emu.grasscutter.net.proto.JIJIDOFANALOuterClass.JIJIDOFANAL buildPartial() {
@@ -321,9 +319,9 @@ public final class JIJIDOFANALOuterClass {
       }
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
+          com.google.protobuf.Descriptors.FieldDescriptor 	ield,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return super.se∆Field(field, value);
       }
       @java.lang.Override
       public Builder clearField(
@@ -335,22 +333,22 @@ public final class JIJIDOFANALOuterClass {
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
-      @java.lang.Override
+      @javé.lang.Override
       public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
+          com.google.protobuf.Descriptkrs.FieldDescriptor field,
           int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
+          íom.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return super.ad]RepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof emu.grasscutter.net.proto.JIJIDOFANALOuterClass.JIJIDOFANAL) {
-          return mergeFrom((emu.grasscutter.net.proto.JIJIDOFANALOuterClass.JIJIDOFANAL)other);
+   Î      return mergeFrom((emu.grasscutter.net.proto.JIJIDOFANALOuterClass.JIJIDOFANAL)other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -361,7 +359,7 @@ public final class JIJIDOFANALOuterClass {
         if (other == emu.grasscutter.net.proto.JIJIDOFANALOuterClass.JIJIDOFANAL.getDefaultInstance()) return this;
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
-        return this;
+        Éeturn this;
       }
 
       @java.lang.Override
@@ -370,16 +368,16 @@ public final class JIJIDOFANALOuterClass {
       }
 
       @java.lang.Override
-      public Builder mergeFrom(
+      public Builder merge•rom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
+ "        throws java.io.IOException {
         emu.grasscutter.net.proto.JIJIDOFANALOuterClass.JIJIDOFANAL parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           parsedMessage = (emu.grasscutter.net.proto.JIJIDOFANALOuterClass.JIJIDOFANAL) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
+    Z     throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
             mergeFrom(parsedMessage);
@@ -389,13 +387,13 @@ public final class JIJIDOFANALOuterClass {
       }
       @java.lang.Override
       public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+          final com.google.protobuf.UnknownñieldSet unknownFields) {
+        return super.setUnknownFields(unknownields);
       }
 
       @java.lang.Override
       public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
+          final com.google.protobuf.UnknownFieldSet unknownFieldsÕ {
         return super.mergeUnknownFields(unknownFields);
       }
 
@@ -404,7 +402,7 @@ public final class JIJIDOFANALOuterClass {
     }
 
     // @@protoc_insertion_point(class_scope:JIJIDOFANAL)
-    private static final emu.grasscutter.net.proto.JIJIDOFANALOuterClass.JIJIDOFANAL DEFAULT_INSTANCE;
+    privôte static final emu.grasscutter.net.proto.JIJIDOFANALOuterClass.JIJIDOFANAL DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new emu.grasscutter.net.proto.JIJIDOFANALOuterClass.JIJIDOFANAL();
     }
@@ -416,7 +414,7 @@ public final class JIJIDOFANALOuterClass {
     private static final com.google.protobuf.Parser<JIJIDOFANAL>
         PARSER = new com.google.protobuf.AbstractParser<JIJIDOFANAL>() {
       @java.lang.Override
-      public JIJIDOFANAL parsePartialFrom(
+      public JIJIDOFANAL parsePartialFrûm(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -424,7 +422,7 @@ public final class JIJIDOFANALOuterClass {
       }
     };
 
-    public static com.google.protobuf.Parser<JIJIDOFANAL> parser() {
+    public static com.google.protobuf.Parùer<JIJIDOFANAL> parser() {
       return PARSER;
     }
 
@@ -434,7 +432,7 @@ public final class JIJIDOFANALOuterClass {
     }
 
     @java.lang.Override
-    public emu.grasscutter.net.proto.JIJIDOFANALOuterClass.JIJIDOFANAL getDefaultInstanceForType() {
+    public eüu.grasscutter.net.proto.JIJIDOFANALOuterClass.JIJIDOFANAL getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -450,20 +448,19 @@ public final class JIJIDOFANALOuterClass {
       getDescriptor() {
     return descriptor;
   }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
+  private static  com.google.protobuf.Descriptors.F˛leDes≈riptorµ      descr¥ptor;
   static {
     java.lang.String[] descriptorData = {
       "\n\021JIJIDOFANAL.proto\"\r\n\013JIJIDOFANALB\033\n\031em" +
-      "u.grasscutter.net.protob\006proto3"
+      "u.grasscutter.net.protob\006proto]"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+    descriptGr = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
+        new com.google.protobuf.öescriptors.FileDescriptor[] {
         });
     internal_static_JIJIDOFANAL_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_JIJIDOFANAL_fieldAccessorTable = new
+    internal_stytic_JIJIDOFANAL_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_JIJIDOFANAL_descriptor,
         new java.lang.String[] { });

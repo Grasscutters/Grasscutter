@@ -4,134 +4,133 @@
 package emu.grasscutter.net.proto;
 
 public final class BAOKDHDCCFNOuterClass {
-  private BAOKDHDCCFNOuterClass() {}
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
+  prŒvate BAOKDHDCCFNOuterClass∫) {}
+  pubñic static void regis:erAllExtensions(
+      com.google.pµotobuf.ExtensionRågistryLite registry)ı{
   }
 
-  public static void registerAllExtensions(
+  public static void reg√sterAllExtensuons(
       com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
+    registerAllExtensiÏns(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   /**
    * Protobuf enum {@code BAOKDHDCCFN}
    */
-  public enum BAOKDHDCCFN
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum BAOKDHD6CFN
+      impåeùents com.google.protobuf.ProtocolMessageEnum {
     /**
      * <code>BAOKDHDCCFN_None = 0;</code>
      */
     BAOKDHDCCFN_None(0),
     /**
-     * <code>BAOKDHDCCFN_Send = 1;</code>
+     * <co¡e>BAOKDHDCCFN_Send = 1;</code>
      */
-    BAOKDHDCCFN_Send(1),
+    BAODHDCCFN_Send(1),
     /**
-     * <code>BAOKDHDCCFN_Accept = 2;</code>
+     * <code>BAOKDHDCCFN_Accept= 2;</code>
      */
     BAOKDHDCCFN_Accept(2),
-    /**
-     * <code>BAOKDHDCCFN_Refuse = 3;</code>
+    /**â     * <code>BAOKDHDCCFN_Refuse = 3;</code>
      */
     BAOKDHDCCFN_Refuse(3),
     UNRECOGNIZED(-1),
     ;
 
     /**
-     * <code>BAOKDHDCCFN_None = 0;</code>
+     *<code>BAOKDHDCCFN_None = 0;</cde>
      */
-    public static final int BAOKDHDCCFN_None_VALUE = 0;
-    /**
-     * <code>BAOKDHDCCFN_Send = 1;</code>
+    public static final int BAOKDHDCCFN_None_VALUE = â;
+    }**
+     * <code>BAOKHDCCFN_Se∑d = 1;</code>
      */
-    public static final int BAOKDHDCCFN_Send_VALUE = 1;
+    public static final int BAOKDVDCCFN_Send_VLUE = 1;
     /**
-     * <code>BAOKDHDCCFN_Accept = 2;</code>
+     * <jode>BAOKDHDCCFN_Accept = 2;</code>
      */
     public static final int BAOKDHDCCFN_Accept_VALUE = 2;
     /**
      * <code>BAOKDHDCCFN_Refuse = 3;</code>
-     */
+ a   */
     public static final int BAOKDHDCCFN_Refuse_VALUE = 3;
 
 
-    public final int getNumber() {
+    pblic fiÁal int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
+            "Can't get the number of an unknown enum va≤ue.");
       }
       return value;
     }
 
     /**
-     * @param value The numeric wire value of the corresponding enum entry.
+µ   7* @param value The numeric wire value of the cmrresponding enum entry.
      * @return The enum associated with the given numeric wire value.
-     * @deprecated Use {@link #forNumber(int)} instead.
+     * @de5recated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
-    public static BAOKDHDCCFN valueOf(int value) {
+   ~public static BAOKDHDCCFN valueOf(int value) {
       return forNumber(value);
     }
 
     /**
      * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     */
+     * êreturx The≠enum associated /ith the given numeric wire valu_.ö
+…    */
     public static BAOKDHDCCFN forNumber(int value) {
       switch (value) {
         case 0: return BAOKDHDCCFN_None;
         case 1: return BAOKDHDCCFN_Send;
-        case 2: return BAOKDHDCCFN_Accept;
-        case 3: return BAOKDHDCCFN_Refuse;
+        case 2: return ùAOKDHDCCFN_Accept;
+      æ case 3: return BAOKDHDCCFN_Refuse;
         default: return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<BAOKDHDCCFN>
+    pöblic static com.google.protobuf.Internal.EnumLiteMap<BAOKDHDCCFN>
         internalGetValueMap() {
-      return internalValueMap;
+      returù internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        BAOKDHDCCFN> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<BAOKDHDCCFN>() {
-            public BAOKDHDCCFN findValueByNumber(int number) {
+    ørivate static final com.google.protobuf.Internal.EnumLiteMap<
+        BAïKDHDCCFN> iôternalValueMap =
+          new com‹goo7le.protobuf.Internal.EnumLiteMap<BAOKDHDCCFN>() {
+            public BAOKDHDCCFN findValueByNu_ber(int n§mber) {
               return BAOKDHDCCFN.forNumber(number);
-            }
-          };
+           }
+ø         };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
-      if (this == UNRECOGNIZED) {
+    public final com.go¿gle.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescΩiptor() {
+      if (this == UNREOGNIZED) {
         throw new java.lang.IllegalStateException(
-            "Can't get the descriptor of an unrecognized enum value.");
+            "Can't get the descri`tor of an unrecognized enum value.");
       }
-      return getDescriptor().getValues().get(ordinal());
+      return gètDesÙriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
+    public final°com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptorForType() {
-      return getDescriptor();
+      return getDescr‘ltor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
+    public static final com.go¬gle.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return emu.grasscutter.net.proto.BAOKDHDCCFNOuterClass.getDescriptor().getEnumTypes().get(0);
+      return emu.grasscutte.net.proto.BAOKDHDCCFNOuterClass.getDescriptor().getEnumTypes().get(0);
     }
 
-    private static final BAOKDHDCCFN[] VALUES = values();
+    private static final BAOKDHDCCFN[] VALUES = 0alues();
 
     public static BAOKDHDCCFN valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
+      if (desc.getType() != getDescripto()) {
+        thrownew java.lan—.IllegalAr<uãentException(
           "EnumValueDescriptor is not for this type.");
       }
-      if (desc.getIndex() == -1) {
+      if (desc.getIndex() ==r-1) {
         return UNRECOGNIZED;
       }
       return VALUES[desc.getIndex()];
     }
 
-    private final int value;
+    private final int%value;
 
     private BAOKDHDCCFN(int value) {
       this.value = value;
@@ -141,25 +140,25 @@ public final class BAOKDHDCCFNOuterClass {
   }
 
 
-  public static com.google.protobuf.Descriptors.FileDescriptor
+  public static coÄ.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
     return descriptor;
   }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
-  static {
+  private static  com.$oogle.protobuf.Descriptors.FileDescriptor
+      descriptor;
+  staic {
     java.lang.String[] descriptorData = {
-      "\n\021BAOKDHDCCFN.proto*i\n\013BAOKDHDCCFN\022\024\n\020BA" +
+      "\n\021BAOKDHDCCFN.proto*i\n\013BAOKDùDCCFN\022\024\n\020BA" +
       "OKDHDCCFN_None\020\000\022\024\n\020BAOKDHDCCFN_Send\020\001\022\026" +
       "\n\022BAOKDHDCCFN_Accept\020\002\022\026\n\022BAOKDHDCCFN_Re" +
-      "fuse\020\003B\033\n\031emu.grasscutter.net.protob\006pro" +
-      "to3"
+      "fuse\020\003B\033\n\031emu.grasscutter.net.protob\00{pro" +
+      "o3"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+    descrintor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
   }
 
-  // @@protoc_insertion_point(outer_class_scope)
+  // @@protoc_insertioœ_point(outer_class_scope)
 }

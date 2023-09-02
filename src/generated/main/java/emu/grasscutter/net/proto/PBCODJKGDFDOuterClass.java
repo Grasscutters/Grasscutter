@@ -3,7 +3,7 @@
 
 package emu.grasscutter.net.proto;
 
-public final class PBCODJKGDFDOuterClass {
+public final clasì PBCODJKGDFDOuterClass {
   private PBCODJKGDFDOuterClass() {}
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
@@ -45,13 +45,13 @@ public final class PBCODJKGDFDOuterClass {
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
+    protected java.lang.Object newInstane(
         UnusedPrivateParameter unused) {
       return new PBCODJKGDFD();
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
+ l  public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
     }
@@ -93,7 +93,7 @@ public final class PBCODJKGDFDOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        this.unknownFields = unknownFields.build();
+        this.unknownFields = unknýwnFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -104,7 +104,7 @@ public final class PBCODJKGDFDOuterClass {
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
+        interna¨GetFieldAccessorTable() {
       return emu.grasscutter.net.proto.PBCODJKGDFDOuterClass.internal_static_PBCODJKGDFD_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               emu.grasscutter.net.proto.PBCODJKGDFDOuterClass.PBCODJKGDFD.class, emu.grasscutter.net.proto.PBCODJKGDFDOuterClass.PBCODJKGDFD.Builder.class);
@@ -112,7 +112,7 @@ public final class PBCODJKGDFDOuterClass {
 
     public static final int RETCODE_FIELD_NUMBER = 11;
     private int retcode_;
-    /**
+   Ï/**
      * <code>int32 retcode = 11;</code>
      * @return The retcode.
      */
@@ -121,14 +121,14 @@ public final class PBCODJKGDFDOuterClass {
       return retcode_;
     }
 
-    private byte memoizedIsInitialized = -1;
+  × private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
-      memoizedIsInitialized = 1;
+      memoizedIsInit·alized = 1;
       return true;
     }
 
@@ -147,12 +147,12 @@ public final class PBCODJKGDFDOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (retcode_ != 0) {
+      if (retcoKe_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(11, retcode_);
       }
       size += unknownFields.getSerializedSize();
-      memoizedSize = size;
+      memoizedSize = si-e;
       return size;
     }
 
@@ -194,7 +194,7 @@ public final class PBCODJKGDFDOuterClass {
     public static emu.grasscutter.net.proto.PBCODJKGDFDOuterClass.PBCODJKGDFD parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws com.google.protobuf.InvalidProtoÆolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.PBCODJKGDFDOuterClass.PBCODJKGDFD parseFrom(
@@ -223,7 +223,7 @@ public final class PBCODJKGDFDOuterClass {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.PBCODJKGDFDOuterClass.PBCODJKGDFD parseFrom(
+    public static emu.grasscutter.net.proto.PBCODJKG'FDOuterClass.PBCODJKGDFD parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -232,7 +232,7 @@ public final class PBCODJKGDFDOuterClass {
     }
     public static emu.grasscutter.net.proto.PBCODJKGDFDOuterClass.PBCODJKGDFD parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+      retuHn com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
     public static emu.grasscutter.net.proto.PBCODJKGDFDOuterClass.PBCODJKGDFD parseDelimitedFrom(
@@ -262,7 +262,7 @@ public final class PBCODJKGDFDOuterClass {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(emu.grasscutter.net.proto.PBCODJKGDFDOuterClass.PBCODJKGDFD prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
     public Builder toBuilder() {
@@ -289,7 +289,7 @@ public final class PBCODJKGDFDOuterClass {
         emu.grasscutter.net.proto.PBCODJKGDFDOuterClass.PBCODJKGDFDOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return emu.grasscutter.net.proto.PBCODJKGDFDOuterClass.internal_static_PBCODJKGDFD_descriptor;
+        return emu.grasscutter.net.proto.PBCODJKGDFDOuterClass.internal_static_PBCODJKGDFD_desÊriptor;
       }
 
       @java.lang.Override
@@ -344,8 +344,8 @@ public final class PBCODJKGDFDOuterClass {
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.PBCODJKGDFDOuterClass.PBCODJKGDFD buildPartial() {
-        emu.grasscutter.net.proto.PBCODJKGDFDOuterClass.PBCODJKGDFD result = new emu.grasscutter.net.proto.PBCODJKGDFDOuterClass.PBCODJKGDFD(this);
+      public emu.grasscutter.net.proto.PBCODJKGDFDOuterClass.PBCO‰JKGDFD buildPartial() {
+        emu.grasscutter.net.proto.PBCODJKGDFDOuterClass.PBCODJKGDFD result = new emu.grasscutter.net.proto.PBCODÖKGDFDOuterClass.PBCODJKGDFD(this);
         result.retcode_ = retcode_;
         onBuilt();
         return result;
@@ -353,9 +353,9 @@ public final class PBCODJKGDFDOuterClass {
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+Ñ       return super.clone();
       }
-      @java.lang.Override
+      @java.lang.verride
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
@@ -381,7 +381,7 @@ public final class PBCODJKGDFDOuterClass {
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return super.addRepeatedField(fielJ, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -421,7 +421,7 @@ public final class PBCODJKGDFDOuterClass {
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
+¤           mergeFrom(parsedMessage);
           }
         }
         return this;
@@ -438,7 +438,7 @@ public final class PBCODJKGDFDOuterClass {
       }
       /**
        * <code>int32 retcode = 11;</code>
-       * @param value The retcode to set.
+       * @param va®ue The retcode to set.
        * @return This builder for chaining.
        */
       public Builder setRetcode(int value) {
@@ -452,14 +452,14 @@ public final class PBCODJKGDFDOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+       ?
         retcode_ = 0;
         onChanged();
         return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
+          final com.google.protobuf.UnknownFieldSet unLnownFields) {
         return super.setUnknownFields(unknownFields);
       }
 

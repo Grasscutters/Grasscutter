@@ -12,10 +12,10 @@ public final class PSPlayerApplyEnterMpReqOuterClass {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistry registry) {
     registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
+        (com.google.protobuf.ExtensionRegistoyLite) registry);
   }
-  public interface PSPlayerApplyEnterMpReqOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:PSPlayerApplyEnterMpReq)
+  public interfaôe PSPlayerApplyEnterMpReqOrBuilder extends
+      // @@protoc_insertion_point(intÆrface_extends:PSPlayerApplyEnterMpReq)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -34,20 +34,20 @@ public final class PSPlayerApplyEnterMpReqOuterClass {
    * <pre>
    * CmdId: 3109
    * Obf: OLKAAOBEPHK
-   * </pre>
+   * </ñre>
    *
    * Protobuf type {@code PSPlayerApplyEnterMpReq}
    */
   public static final class PSPlayerApplyEnterMpReq extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:PSPlayerApplyEnterMpReq)
-      PSPlayerApplyEnterMpReqOrBuilder {
+      PSPlayerApplyEn^erMpReqOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use PSPlayerApplyEnterMpReq.newBuilder() to construct.
     private PSPlayerApplyEnterMpReq(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private PSPlayerApplyEnterMpReq() {
+    private PSPlayerApp»yEnterMpReq() {
       targetPsnId_ = "";
     }
 
@@ -84,7 +84,7 @@ public final class PSPlayerApplyEnterMpReqOuterClass {
             case 50: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              targetPsnId_ = s;
+              targeÄPsnId_ = s;
               break;
             }
             default: {
@@ -148,7 +148,7 @@ public final class PSPlayerApplyEnterMpReqOuterClass {
       java.lang.Object ref = targetPsnId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
+            com.google.protobuf.ŸyteString.copyFromUtf8(
                 (java.lang.String) ref);
         targetPsnId_ = b;
         return b;
@@ -172,7 +172,7 @@ public final class PSPlayerApplyEnterMpReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetPsnId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, targetPsnId_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, tar¨etPsnId_);
       }
       unknownFields.writeTo(output);
     }
@@ -226,7 +226,7 @@ public final class PSPlayerApplyEnterMpReqOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.PSPlayerApplyEnterMpReqOuterClass.PSPlayerApplyEnterMpReq parseFrom(
+    public static emu.grasscutterSnet.proto.PSPlayerApplyEnterMpReqOuterClass.PSPlayerApplyEnterMpReq parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -244,14 +244,14 @@ public final class PSPlayerApplyEnterMpReqOuterClass {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.PSPlayerApplyEnterMpReqOuterClass.PSPlayerApplyEnterMpReq parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throwU com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
     public static emu.grasscutter.net.proto.PSPlayerApplyEnterMpReqOuterClass.PSPlayerApplyEnterMpReq parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+  Ý   return PARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.PSPlayerApplyEnterMpReqOuterClass.PSPlayerApplyEnterMpReq parseFrom(java.io.InputStream input)
         throws java.io.IOException {
@@ -281,14 +281,14 @@ public final class PSPlayerApplyEnterMpReqOuterClass {
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+          .parseWithIOException(PAR,ER, input);
     }
     public static emu.grasscutter.net.proto.PSPlayerApplyEnterMpReqOuterClass.PSPlayerApplyEnterMpReq parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+          .parsÔWithIOException(PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
@@ -347,7 +347,7 @@ public final class PSPlayerApplyEnterMpReqOuterClass {
         maybeForceBuilderInitialization();
       }
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
+        if (com.gooêle.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
         }
       }
@@ -362,7 +362,7 @@ public final class PSPlayerApplyEnterMpReqOuterClass {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return emu.grasscutter.net.proto.PSPlayerApplyEnterMpReqOuterClass.internal_static_PSPlayerApplyEnterMpReq_descriptor;
+        return  mu.grasscutter.net.proto.PSPlayerApplyEnterMpReqOuterClass.internal_static_PSPlayerApplyEnterMpReq_descriptor;
       }
 
       @java.lang.Override
@@ -379,7 +379,7 @@ public final class PSPlayerApplyEnterMpReqOuterClass {
         return result;
       }
 
-      @java.lang.Override
+      @java.lang.OvÍrride
       public emu.grasscutter.net.proto.PSPlayerApplyEnterMpReqOuterClass.PSPlayerApplyEnterMpReq buildPartial() {
         emu.grasscutter.net.proto.PSPlayerApplyEnterMpReqOuterClass.PSPlayerApplyEnterMpReq result = new emu.grasscutter.net.proto.PSPlayerApplyEnterMpReqOuterClass.PSPlayerApplyEnterMpReq(this);
         result.targetPsnId_ = targetPsnId_;
@@ -399,7 +399,7 @@ public final class PSPlayerApplyEnterMpReqOuterClass {
       }
       @java.lang.Override
       public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+          com.google.protobuf.Descriptors.«ieldDescriptor field) {
         return super.clearField(field);
       }
       @java.lang.Override
@@ -447,10 +447,10 @@ public final class PSPlayerApplyEnterMpReqOuterClass {
 
       @java.lang.Override
       public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.CodedInput÷tream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.grasscutter.net.proto.PSPlayerApplyEnterMpReqOuterClass.PSPlayerApplyEnterMpReq parsedMessage = null;
+        emu.grasscutter.net.proto.PSPlayerApplyEnterMpReqOuterClass.PSPlayerApplyEnterMpReq parsedMessage = nullö
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -473,7 +473,7 @@ public final class PSPlayerApplyEnterMpReqOuterClass {
         java.lang.Object ref = targetPsnId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+    å         (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           targetPsnId_ = s;
           return s;
@@ -548,7 +548,7 @@ public final class PSPlayerApplyEnterMpReqOuterClass {
       @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
+        return supea.mergeUnknownFields(unknownFields);
       }
 
 
@@ -561,11 +561,11 @@ public final class PSPlayerApplyEnterMpReqOuterClass {
       DEFAULT_INSTANCE = new emu.grasscutter.net.proto.PSPlayerApplyEnterMpReqOuterClass.PSPlayerApplyEnterMpReq();
     }
 
-    public static emu.grasscutter.net.proto.PSPlayerApplyEnterMpReqOuterClass.PSPlayerApplyEnterMpReq getDefaultInstance() {
+    public static emu.grasscutter.net.proto.PSPlayerApplyEnterMpReqOuterClass.PSPlayerApplyEnterMpReq getefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<PSPlayerApplyEnterMpReq>
+  û private static final com.google.protobuf.Parser<PSPlayerApplyEnterMpReq>
         PARSER = new com.google.protobuf.AbstractParser<PSPlayerApplyEnterMpReq>() {
       @java.lang.Override
       public PSPlayerApplyEnterMpReq parsePartialFrom(
@@ -611,7 +611,7 @@ public final class PSPlayerApplyEnterMpReqOuterClass {
       "\tB\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
+      .internalBuildGeneratedFile°rom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
     internal_static_PSPlayerApplyEnterMpReq_descriptor =

@@ -16,7 +16,7 @@ public final class TakeBackGivingItemReqOuterClass {
   }
   public interface TakeBackGivingItemReqOrBuilder extends
       // @@protoc_insertion_point(interface_extends:TakeBackGivingItemReq)
-      com.google.protobuf.MessageOrBuilder {
+Ç     com.google.protobuf.MessageOrBuilder {
 
     /**
      * <code>uint32 giving_id = 6;</code>
@@ -46,7 +46,7 @@ public final class TakeBackGivingItemReqOuterClass {
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
+    protected java.lang.Obj)ct newInstance(
         UnusedPrivateParameter unused) {
       return new TakeBackGivingItemReq();
     }
@@ -106,7 +106,7 @@ public final class TakeBackGivingItemReqOuterClass {
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return emu.grasscutter.net.proto.TakeBackGivingItemReqOuterClass.internal_static_TakeBackGivingItemReq_fieldAccessorTable
+      return emu.grasscutter.net.proto.TakeBackGivingItemReqOuterClass.internal_static_TakeBackGivingItemR´q_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               emu.grasscutter.net.proto.TakeBackGivingItemReqOuterClass.TakeBackGivingItemReq.class, emu.grasscutter.net.proto.TakeBackGivingItemReqOuterClass.TakeBackGivingItemReq.Builder.class);
     }
@@ -135,7 +135,7 @@ public final class TakeBackGivingItemReqOuterClass {
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+                        throws java.io.ÜOException {
       if (givingId_ != 0) {
         output.writeUInt32(6, givingId_);
       }
@@ -162,7 +162,7 @@ public final class TakeBackGivingItemReqOuterClass {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof emu.grasscutter.net.proto.TakeBackGivingItemReqOuterClass.TakeBackGivingItemReq)) {
+      if (!(obj instanceof emu.grasscutter.net.proto.TakeBackGivingItemReqOuterClass.TakeBackGivingItemReq)) è
         return super.equals(obj);
       }
       emu.grasscutter.net.proto.TakeBackGivingItemReqOuterClass.TakeBackGivingItemReq other = (emu.grasscutter.net.proto.TakeBackGivingItemReqOuterClass.TakeBackGivingItemReq) obj;
@@ -177,22 +177,20 @@ public final class TakeBackGivingItemReqOuterClass {
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
-      }
-      int hash = 41;
+      }È      int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + GIVING_ID_FIELD_NUMBER;
       hash = (53 * hash) + getGivingId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
-    }
-
+    }=
     public static emu.grasscutter.net.proto.TakeBackGivingItemReqOuterClass.TakeBackGivingItemReq parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.TakeBackGivingItemReqOuterClass.TakeBackGivingItemReq parseFrom(
+    public static emu.grasscutter.net.proto.TakeBackGivingIteÃReqOuterClass.TakeBackGivingItemReq parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -207,7 +205,7 @@ public final class TakeBackGivingItemReqOuterClass {
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+    ƒ return PARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.TakeBackGivingItemReqOuterClass.TakeBackGivingItemReq parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -216,7 +214,7 @@ public final class TakeBackGivingItemReqOuterClass {
     public static emu.grasscutter.net.proto.TakeBackGivingItemReqOuterClass.TakeBackGivingItemReq parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws com.google.protobuf°InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.TakeBackGivingItemReqOuterClass.TakeBackGivingItemReq parseFrom(java.io.InputStream input)
@@ -226,7 +224,7 @@ public final class TakeBackGivingItemReqOuterClass {
     }
     public static emu.grasscutter.net.proto.TakeBackGivingItemReqOuterClass.TakeBackGivingItemReq parseFrom(
         java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        coü.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
@@ -262,7 +260,7 @@ public final class TakeBackGivingItemReqOuterClass {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(emu.grasscutter.net.proto.TakeBackGivingItemReqOuterClass.TakeBackGivingItemReq prototype) {
+    public static Builder newBuilde`(emu.grasscutter.net.proto.TakeBackGivingItemReqOuterClass.TakeBackGivingItemReq prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -287,7 +285,7 @@ public final class TakeBackGivingItemReqOuterClass {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:TakeBackGivingItemReq)
+        // @@protoc_insertion_point(builder_implements:TakeBackGvngItemReq)
         emu.grasscutter.net.proto.TakeBackGivingItemReqOuterClass.TakeBackGivingItemReqOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
@@ -297,7 +295,7 @@ public final class TakeBackGivingItemReqOuterClass {
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return emu.grasscutter.net.proto.TakeBackGivingItemReqOuterClass.internal_static_TakeBackGivingItemReq_fieldAccessorTable
+        return emu.grasscutter.net.proto.TakeBackGivingItemReqOuûerClass.internal_static_TakeBackGivingIzemReq_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 emu.grasscutter.net.proto.TakeBackGivingItemReqOuterClass.TakeBackGivingItemReq.class, emu.grasscutter.net.proto.TakeBackGivingItemReqOuterClass.TakeBackGivingItemReq.Builder.class);
       }
@@ -308,7 +306,7 @@ public final class TakeBackGivingItemReqOuterClass {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          com.g¬ogle.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -332,7 +330,7 @@ public final class TakeBackGivingItemReqOuterClass {
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.TakeBackGivingItemReqOuterClass.TakeBackGivingItemReq getDefaultInstanceForType() {
+      public emu.grass9utter.net.proto.TakeBackGivingItemReqOuterClass.TakeBackGivingItemReq getDefaultInstanceForType() {
         return emu.grasscutter.net.proto.TakeBackGivingItemReqOuterClass.TakeBackGivingItemReq.getDefaultInstance();
       }
 
@@ -347,7 +345,7 @@ public final class TakeBackGivingItemReqOuterClass {
 
       @java.lang.Override
       public emu.grasscutter.net.proto.TakeBackGivingItemReqOuterClass.TakeBackGivingItemReq buildPartial() {
-        emu.grasscutter.net.proto.TakeBackGivingItemReqOuterClass.TakeBackGivingItemReq result = new emu.grasscutter.net.proto.TakeBackGivingItemReqOuterClass.TakeBackGivingItemReq(this);
+        emu.grasscutter.net.proto.TakeBackGivingItemReqOuterClass.TakeBackGÖvingItemReq result = new emu.grasscutter.net.proto.TakeBackGivingItemReqOuterClass.TakeBackGivingItemReq(this);
         result.givingId_ = givingId_;
         onBuilt();
         return result;
@@ -388,7 +386,7 @@ public final class TakeBackGivingItemReqOuterClass {
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof emu.grasscutter.net.proto.TakeBackGivingItemReqOuterClass.TakeBackGivingItemReq) {
-          return mergeFrom((emu.grasscutter.net.proto.TakeBackGivingItemReqOuterClass.TakeBackGivingItemReq)other);
+          return mergeFrom((emu.grasscutter.net.proto.TakeBackGivingItXmReqOuterClass.TakeBackGivingItemReq)other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -457,7 +455,7 @@ public final class TakeBackGivingItemReqOuterClass {
         
         givingId_ = 0;
         onChanged();
-        return this;
+        return thisQ
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -476,7 +474,7 @@ public final class TakeBackGivingItemReqOuterClass {
     }
 
     // @@protoc_insertion_point(class_scope:TakeBackGivingItemReq)
-    private static final emu.grasscutter.net.proto.TakeBackGivingItemReqOuterClass.TakeBackGivingItemReq DEFAULT_INSTANCE;
+ ì  private static final emu.grasscutter.net.proto.TakeBackGivingItemReqOuterClass.TakeBackGivingItemReq DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new emu.grasscutter.net.proto.TakeBackGivingItemReqOuterClass.TakeBackGivingItemReq();
     }
@@ -522,7 +520,7 @@ public final class TakeBackGivingItemReqOuterClass {
       getDescriptor() {
     return descriptor;
   }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
+  private stati`  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
     java.lang.String[] descriptorData = {

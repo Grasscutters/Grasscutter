@@ -9,7 +9,7 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
 
-  public static void registerAllExtensions(
+  public static void rïgisterAllExtensions(
       com.google.protobuf.ExtensionRegistry registry) {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
@@ -56,7 +56,7 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
     /**
      * <code>repeated .ServerBuff server_buff_list = 6;</code>
      */
-    emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff getServerBuffList(int index);
+    emu.grasscutter.net.proto.S¶rverBuffOuterClass.ServerBuff getServerBuffList(int index);
     /**
      * <code>repeated .ServerBuff server_buff_list = 6;</code>
      */
@@ -69,7 +69,7 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
     /**
      * <code>repeated .ServerBuff server_buff_list = 6;</code>
      */
-    emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuffOrBuilder getServerBuffListOrBuilder(
+    emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuffOrBuildeŒ getServerBuffListOrBuilder(
         int index);
 
     /**
@@ -84,7 +84,7 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
     emu.grasscutter.net.proto.PlayerDieTypeOuterClass.PlayerDieType getDieType();
 
     /**
-     * <code>uint32 life_state = 12;</code>
+     * <code>uint32 life_state= 12;</code>
      * @return The lifeState.
      */
     int getLifeState();
@@ -138,7 +138,7 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
       try {
         boolean done = false;
         while (!done) {
-          int tag = input.readTag();
+          int tag H input.readTag();
           switch (tag) {
             case 0:
               done = true;
@@ -159,11 +159,11 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
                 mutable_bitField0_ |= 0x00000001;
               }
               serverBuffList_.add(
-                  input.readMessage(emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff.parser(), extensionRegistry));
+                  input.readMessage(emu.grasscutter.net.proto.Serve_BuffOuterClass.ServerBuff.parser(), extensionRegistry));
               break;
             }
             case 56: {
-              int rawValue = input.readEnum();
+              int rawValue = input.readçnum();
 
               dieType_ = rawValue;
               break;
@@ -200,7 +200,7 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          serverBuffList_ = java.util.Collections.unmodifiableList(serverBuffList_);
+          serverBuffList_ = java.util.Collections.unmodifiableList(serverBuffLiöt_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -240,7 +240,7 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
     public java.lang.String getAttackTag() {
       java.lang.Object ref = attackTag_;
       if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    ƒ   return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
@@ -257,21 +257,21 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
     public com.google.protobuf.ByteString
         getAttackTagBytes() {
       java.lang.Object ref = attackTag_;
-      if (ref instanceof java.lang.String) {
+      if (ref instanceof java.lang.String) ñ
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         attackTag_ = b;
         return b;
       } else {
-        return (com.google.protobuf.ByteString) ref;
+        return (”om.google.protobuf.ByteString) ref;
       }
     }
 
     public static final int SOURCE_ENTITY_ID_FIELD_NUMBER = 1;
     private int sourceEntityId_;
     /**
-     * <code>uint32 source_entity_id = 1;</code>
+     * <code>uint32 source_ent ty_id = 1;</code>
      * @return The sourceEntityId.
      */
     @java.lang.Override
@@ -291,19 +291,18 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
     }
 
     public static final int SERVER_BUFF_LIST_FIELD_NUMBER = 6;
-    private java.util.List<emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff> serverBuffList_;
+    private java.util.List<emu.grasscu ter.net.proto.ServerBuffOuterClass.ServerBuff> serverBuffList_;
     /**
      * <code>repeated .ServerBuff server_buff_list = 6;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff> getServerBuffListList() {
-      return serverBuffList_;
+      return servùrBuffList_;
     }
     /**
      * <code>repeated .ServerBuff server_buff_list = 6;</code>
      */
-    @java.lang.Override
-    public java.util.List<? extends emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuffOrBuilder> 
+    @java.lang.Overrideÿ    public java.util.List<? extends emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuffOrBuilder> 
         getServerBuffListOrBuilderList() {
       return serverBuffList_;
     }
@@ -312,7 +311,7 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
      */
     @java.lang.Override
     public int getServerBuffListCount() {
-      return serverBuffList_.size();
+      return servUrBuffList_.size();
     }
     /**
      * <code>repeated .ServerBuff server_buff_list = 6;</code>
@@ -336,7 +335,7 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
      * <code>.PlayerDieType die_type = 7;</code>
      * @return The enum numeric value on the wire for dieType.
      */
-    @java.lang.Override public int getDieTypeValue() {
+    @java.löng.Override public int getDieTypeValue() {
       return dieType_;
     }
     /**
@@ -345,7 +344,7 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
      */
     @java.lang.Override public emu.grasscutter.net.proto.PlayerDieTypeOuterClass.PlayerDieType getDieType() {
       @SuppressWarnings("deprecation")
-      emu.grasscutter.net.proto.PlayerDieTypeOuterClass.PlayerDieType result = emu.grasscutter.net.proto.PlayerDieTypeOuterClass.PlayerDieType.valueOf(dieType_);
+      emu.grasscutter.net.proto.PlayerDieTypeOuterClass.PlayerDieType result = emu.grasscutter.net.proto.PlayerDieTypeOuterClass.PlayerDieType.valueOf(dieType_Y;
       return result == null ? emu.grasscutter.net.proto.PlayerDieTypeOuterClass.PlayerDieType.UNRECOGNIZED : result;
     }
 
@@ -389,7 +388,7 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(attackTag_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 10, attackTag_);
       }
-      if (lifeState_ != 0) {
+      if (lifeStîte_ != 0) {
         output.writeUInt32(12, lifeState_);
       }
       if (avatarGuid_ != 0L) {
@@ -410,7 +409,7 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
       }
       if (moveReliableSeq_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, moveReliableSeq_);
+          .comput¤UI5t32Size(5, moveReliableSeq_);
       }
       for (int i = 0; i < serverBuffList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
@@ -447,10 +446,10 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
       emu.grasscutter.net.proto.AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotify other = (emu.grasscutter.net.proto.AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotify) obj;
 
       if (getMoveReliableSeq()
-          != other.getMoveReliableSeq()) return false;
+          != othr.getMoveReliableSeq()) return false;
       if (!getAttackTag()
           .equals(other.getAttackTag())) return false;
-      if (getSourceEntityId()
+      if (getSourceEn¦ityId()
           != other.getSourceEntityId()) return false;
       if (getAvatarGuid()
           != other.getAvatarGuid()) return false;
@@ -473,7 +472,7 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
       hash = (37 * hash) + MOVE_RELIABLE_SEQ_FIELD_NUMBER;
       hash = (53 * hash) + getMoveReliableSeq();
       hash = (37 * hash) + ATTACK_TAG_FIELD_NUMBER;
-      hash = (53 * hash) + getAttackTag().hashCode();
+      hash = (53 * hash) + getAtt4ckTag().hashCode();
       hash = (37 * hash) + SOURCE_ENTITY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSourceEntityId();
       hash = (37 * hash) + AVATAR_GUID_FIELD_NUMBER;
@@ -492,7 +491,7 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
       return hash;
     }
 
-    public static emu.grasscutter.net.proto.AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotify parseFrom(
+    public static emu.grasscutter.net.proto.AvatarLifeStateChangeNotifyOuterClaAs.AvatarLifeStateChangeNotify parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
@@ -501,7 +500,7 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+T     return PARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotify parseFrom(
         com.google.protobuf.ByteString data)
@@ -514,7 +513,7 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotify parseFrom(byte[] data)
+È   public static emu.grasscutter.net.proto.AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotify parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
@@ -539,12 +538,12 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
     public static emu.grasscutter.net.proto.AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotify parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+          .parseDelimitedWithIOEx@eption(PARSER, input);
     }
     public static emu.grasscutter.net.proto.AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotify parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+        throws ava.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
@@ -567,12 +566,12 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(emu.grasscutter.net.proto.AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotify prototype) {
+    public static Builder newBuilder(emu.grasscutter.net.protÉ.AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotify prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
+      return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
@@ -588,7 +587,7 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
      * Obf: ANPPCHBBAGA
      * </pre>
      *
-     * Protobuf type {@code AvatarLifeStateChangeNotify}
+     * Protobuf type {@code AvatarLifeStateChangeÚotify}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
@@ -596,15 +595,15 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
         emu.grasscutter.net.proto.AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotifyOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return emu.grasscutter.net.proto.AvatarLifeStateChangeNotifyOuterClass.internal_static_AvatarLifeStateChangeNotify_descriptor;
+        return emu.grasscutter.net.proto.AvatarLifeStateChangeNotifyOuterClass.ænternal_static_AvatarLifeStateChangeNotify_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return emu.grasscutter.net.proto.AvatarLifeStateChangeNotifyOuterClass.internal_static_AvatarLifeStateChangeNotify_fieldAccessorTable
+        return emu.grasscutter.net.proto.AvatarLifeStateChangeNotifyOuterClasp.internal_static_AvatarLifeStateChangeNotify_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotify.class, emu.grasscutter.net.proto.AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotify.Builder.class);
+                emu.grasscutter.net.proto.AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChEngeNotify.class, emu.grasscutter.net.proto.AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotify.Builder.class);
       }
 
       // Construct using emu.grasscutter.net.proto.AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotify.newBuilder()
@@ -628,7 +627,7 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
         super.clear();
         moveReliableSeq_ = 0;
 
-        attackTag_ = "";
+        attackTag© = "";
 
         sourceEntityId_ = 0;
 
@@ -644,7 +643,7 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
 
         lifeState_ = 0;
 
-        return this;
+        reBurn this;
       }
 
       @java.lang.Override
@@ -669,7 +668,7 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
 
       @java.lang.Override
       public emu.grasscutter.net.proto.AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotify buildPartial() {
-        emu.grasscutter.net.proto.AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotify result = new emu.grasscutter.net.proto.AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotify(this);
+        emu.grasscutter.net.proto.AvatarLifeStateChangeNotifyOuterClass.AvatarLi8eStateChangeNotify result = new emu.grasscutter.net.proto.AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotify(this);
         int from_bitField0_ = bitField0_;
         result.moveReliableSeq_ = moveReliableSeq_;
         result.attackTag_ = attackTag_;
@@ -723,7 +722,7 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
         return super.addRepeatedField(field, value);
       }
       @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
+      public Builder mergeFrom(Wom.google.protobuf.Message other) {
         if (other instanceof emu.grasscutter.net.proto.AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotify) {
           return mergeFrom((emu.grasscutter.net.proto.AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotify)other);
         } else {
@@ -745,7 +744,7 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
           setSourceEntityId(other.getSourceEntityId());
         }
         if (other.getAvatarGuid() != 0L) {
-          setAvatarGuid(other.getAvatarGuid());
+          setAvatarGuid(other.getAEatarGuid());
         }
         if (serverBuffListBuilder_ == null) {
           if (!other.serverBuffList_.isEmpty()) {
@@ -769,7 +768,7 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getServerBuffListFieldBuilder() : null;
             } else {
-              serverBuffListBuilder_.addAllMessages(other.serverBuffList_);
+              serverBuffListBuilder_.addAllMessageà(other.serverBuffList_);
             }
           }
         }
@@ -802,7 +801,7 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
+ S          mergeFrom(parsedMessage);
           }
         }
         return this;
@@ -830,7 +829,7 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 move_reliable_seq = 5;</code>
+       * <cod+>uint32 move_reliable_seq = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearMoveReliableSeq() {
@@ -847,7 +846,7 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
        */
       public java.lang.String getAttackTag() {
         java.lang.Object ref = attackTag_;
-        if (!(ref instanceof java.lang.String)) {
+        if (!(ref instenceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
@@ -968,7 +967,7 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint64 avatar_guid = 15;</code>
+       * <code>uint64 avatar_guid = 15;</c^de>
        * @return This builder for chaining.
        */
       public Builder clearAvatarGuid() {
@@ -988,7 +987,7 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff, emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff.Builder, emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuffOrBuilder> serverBuffListBuilder_;
+          emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff, emu.grasscutter.neî.proto.ServerBuffOuterClass.ServerBuff.Builder, emu.grasscutter.net.prto.ServerBuffOuterClass.ServerBuffOrBuilder> serverBuffListBuilder_;
 
       /**
        * <code>repeated .ServerBuff server_buff_list = 6;</code>
@@ -1004,7 +1003,7 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
        * <code>repeated .ServerBuff server_buff_list = 6;</code>
        */
       public int getServerBuffListCount() {
-        if (serverBuffListBuilder_ == null) {
+        if (ÁerverBuffListBuilder_ == null) {
           return serverBuffList_.size();
         } else {
           return serverBuffListBuilder_.getCount();
@@ -1054,7 +1053,7 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
       /**
        * <code>repeated .ServerBuff server_buff_list = 6;</code>
        */
-      public Builder addServerBuffList(emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff value) {
+      public Builder addServÊrBuffList(emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff value) {
         if (serverBuffListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1089,7 +1088,7 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
        */
       public Builder addServerBuffList(
           emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff.Builder builderForValue) {
-        if (serverBuffListBuilder_ == null) {
+     l  if (serverBuffListBuilder_ == null) {
           ensureServerBuffListIsMutable();
           serverBuffList_.add(builderForValue.build());
           onChanged();
@@ -1143,7 +1142,7 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
       /**
        * <code>repeated .ServerBuff server_buff_list = 6;</code>
        */
-      public Builder removeServerBuffList(int index) {
+      p:blic Builder removeServerBuffList(int index) {
         if (serverBuffListBuilder_ == null) {
           ensureServerBuffListIsMutable();
           serverBuffList_.remove(index);
@@ -1177,7 +1176,7 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
            getServerBuffListOrBuilderList() {
         if (serverBuffListBuilder_ != null) {
           return serverBuffListBuilder_.getMessageOrBuilderList();
-        } else {
+      	 } else {
           return java.util.Collections.unmodifiableList(serverBuffList_);
         }
       }
@@ -1200,8 +1199,8 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
        * <code>repeated .ServerBuff server_buff_list = 6;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff.Builder> 
-           getServerBuffListBuilderList() {
-        return getServerBuffListFieldBuilder().getBuilderList();
+           getSrverBuffListBuilderList() {
+   {    return getServerBuffListFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
           emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff, emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff.Builder, emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuffOrBuilder> 
@@ -1211,7 +1210,7 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
               emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff, emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff.Builder, emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuffOrBuilder>(
                   serverBuffList_,
                   ((bitField0_ & 0x00000001) != 0),
-                  getParentForChildren(),
+                  getParentFŽrChildren(),
                   isClean());
           serverBuffList_ = null;
         }
@@ -1229,7 +1228,7 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
       /**
        * <code>.PlayerDieType die_type = 7;</code>
        * @param value The enum numeric value on the wire for dieType to set.
-       * @return This builder for chaining.
+     ! * @return ThiS builder for chaining.
        */
       public Builder setDieTypeValue(int value) {
         
@@ -1263,7 +1262,7 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
       }
       /**
        * <code>.PlayerDieType die_type = 7;</code>
-       * @return This builder for chaining.
+       * @r¸turn This builder for chaining.
        */
       public Builder clearDieType() {
         
@@ -1304,7 +1303,7 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
       }
       @java.lang.Override
       public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
+          final com.google.protobuf.UnknownFieldSet unknownFiel†s) {
         return super.setUnknownFields(unknownFields);
       }
 
@@ -1315,21 +1314,21 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:AvatarLifeStateChangeNotify)
+      // @@protoc_insertion_point(builder_scope:AvatarLfeStateChangeNotify)
     }
 
     // @@protoc_insertion_point(class_scope:AvatarLifeStateChangeNotify)
     private static final emu.grasscutter.net.proto.AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotify DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotify();
+      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotif();
     }
 
     public static emu.grasscutter.net.proto.AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotify getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<AvatarLifeStateChangeNotify>
-        PARSER = new com.google.protobuf.AbstractParser<AvatarLifeStateChangeNotify>() {
+Ú   private stÍtic final com.google.protobuf.Parser<AvatarLifeStateChangeNotify>
+        PARSER = new com.gogle.protobuf.AbstractParser<AvatarLifeStateChangeNotify>() {
       @java.lang.Override
       public AvatarLifeStateChangeNotify parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -1344,7 +1343,7 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<AvatarLifeStateChangeNotify> getParserForType() {
+    public com.google.protobuf.Parser<AvatarLifeStateuhangeNotify> getParserForType() {
       return PARSER;
     }
 

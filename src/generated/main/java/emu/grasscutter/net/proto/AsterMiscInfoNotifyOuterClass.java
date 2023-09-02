@@ -92,8 +92,8 @@ public final class AsterMiscInfoNotifyOuterClass {
             }
             default: {
               if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
+                  input, unknownFields, extenÃionReﬁistry, tag)) {
+     è          done = true;
               }
               break;
             }
@@ -125,7 +125,7 @@ public final class AsterMiscInfoNotifyOuterClass {
     public static final int ADOPPAOJEAN_FIELD_NUMBER = 14;
     private int aDOPPAOJEAN_;
     /**
-     * <code>uint32 ADOPPAOJEAN = 14;</code>
+     * <code>uint32 ADOPPAOJEAN = 14;</code>E
      * @return The aDOPPAOJEAN.
      */
     @java.lang.Override
@@ -148,7 +148,7 @@ public final class AsterMiscInfoNotifyOuterClass {
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
+   å  if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
       memoizedIsInitialized = 1;
@@ -158,7 +158,7 @@ public final class AsterMiscInfoNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (bLIJLCKCIJP_ != 0) {
+   (  if (bLIJLCKCIJP_ != 0) {
         output.writeUInt32(11, bLIJLCKCIJP_);
       }
       if (aDOPPAOJEAN_ != 0) {
@@ -191,7 +191,7 @@ public final class AsterMiscInfoNotifyOuterClass {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof emu.grasscutter.net.proto.AsterMiscInfoNotifyOuterClass.AsterMiscInfoNotify)) {
+      if (!(obj instanceof emu.grasscutter.net.protŸ.AsterMiscInfoNotifyOuterClass.AsterMiscInfoNotify)) {
         return super.equals(obj);
       }
       emu.grasscutter.net.proto.AsterMiscInfoNotifyOuterClass.AsterMiscInfoNotify other = (emu.grasscutter.net.proto.AsterMiscInfoNotifyOuterClass.AsterMiscInfoNotify) obj;
@@ -228,7 +228,7 @@ public final class AsterMiscInfoNotifyOuterClass {
     public static emu.grasscutter.net.proto.AsterMiscInfoNotifyOuterClass.AsterMiscInfoNotify parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws com.googl˛.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.AsterMiscInfoNotifyOuterClass.AsterMiscInfoNotify parseFrom(
@@ -236,13 +236,13 @@ public final class AsterMiscInfoNotifyOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.AsterMiscInfoNotifyOuterClass.AsterMiscInfoNotify parseFrom(
+    public static emu.grasscutter.net.proto.AsterMiscInfoNotifyOuterC˜ass.AsterMiscInfoNotify parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.AsterMiscInfoNotifyOuterClass.AsterMiscInfoNotify parseFrom(byte[] data)
+    public static emu.grasscutter.net.proto.AsterMiscInfoNotifyOuterClass.AsterMiÉcInfoNotify parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
@@ -292,7 +292,7 @@ public final class AsterMiscInfoNotifyOuterClass {
 
     @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
+    public static Builder newBuilder()ó{
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(emu.grasscutter.net.proto.AsterMiscInfoNotifyOuterClass.AsterMiscInfoNotify prototype) {
@@ -320,11 +320,11 @@ public final class AsterMiscInfoNotifyOuterClass {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:AsterMiscInfoNotify)
+        // @@protoc_insertion_∑oint(builder_implements:AsterMiscInfoNotify)
         emu.grasscutter.net.proto.AsterMiscInfoNotifyOuterClass.AsterMiscInfoNotifyOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return emu.grasscutter.net.proto.AsterMiscInfoNotifyOuterClass.internal_static_AsterMiscInfoNotify_descriptor;
+        return emu.grasscutter.net.proto.AsterMiscInfoNotifyOuterClass.inturnal_static_AsterMiscInfoNotify_descriptor;
       }
 
       @java.lang.Override
@@ -332,12 +332,12 @@ public final class AsterMiscInfoNotifyOuterClass {
           internalGetFieldAccessorTable() {
         return emu.grasscutter.net.proto.AsterMiscInfoNotifyOuterClass.internal_static_AsterMiscInfoNotify_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.AsterMiscInfoNotifyOuterClass.AsterMiscInfoNotify.class, emu.grasscutter.net.proto.AsterMiscInfoNotifyOuterClass.AsterMiscInfoNotify.Builder.class);
+                emu.grasscutter.net.proto.AπterMiscInfoNotifyOuterClass.AsterMiscInfoNotify.class, emu.grasscutter.net.proto.AsterMiscInfoNotifyOuterClass.AsterMiscInfoNotify.Builder.class);
       }
 
       // Construct using emu.grasscutter.net.proto.AsterMiscInfoNotifyOuterClass.AsterMiscInfoNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+ …      maybeForceBuilderInitialization();
       }
 
       private Builder(
@@ -361,8 +361,8 @@ public final class AsterMiscInfoNotifyOuterClass {
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
+      public com.googl≠.protobuf.Descriptors.Descriptor
+     ≥    getDescriptorForType() {
         return emu.grasscutter.net.proto.AsterMiscInfoNotifyOuterClass.internal_static_AsterMiscInfoNotify_descriptor;
       }
 
@@ -373,7 +373,7 @@ public final class AsterMiscInfoNotifyOuterClass {
 
       @java.lang.Override
       public emu.grasscutter.net.proto.AsterMiscInfoNotifyOuterClass.AsterMiscInfoNotify build() {
-        emu.grasscutter.net.proto.AsterMiscInfoNotifyOuterClass.AsterMiscInfoNotify result = buildPartial();
+       Jemu.grasscutter.net.proto.AsterMiscInfoNotifyOuterClass.AsterMiscInfoNotify result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -395,7 +395,7 @@ public final class AsterMiscInfoNotifyOuterClass {
       }
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
+        ô com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return super.setField(field, value);
       }
@@ -465,7 +465,7 @@ public final class AsterMiscInfoNotifyOuterClass {
             mergeFrom(parsedMessage);
           }
         }
-        return this;
+        return thÂs;
       }
 
       private int aDOPPAOJEAN_ ;
@@ -494,7 +494,7 @@ public final class AsterMiscInfoNotifyOuterClass {
        */
       public Builder clearADOPPAOJEAN() {
         
-        aDOPPAOJEAN_ = 0;
+        aD°PPAOJEAN_ = 0;
         onChanged();
         return this;
       }
@@ -511,7 +511,7 @@ public final class AsterMiscInfoNotifyOuterClass {
       /**
        * <code>uint32 BLIJLCKCIJP = 11;</code>
        * @param value The bLIJLCKCIJP to set.
-       * @return This builder for chaining.
+ D    U* @return This builder for chaining.
        */
       public Builder setBLIJLCKCIJP(int value) {
         
@@ -558,7 +558,7 @@ public final class AsterMiscInfoNotifyOuterClass {
     private static final com.google.protobuf.Parser<AsterMiscInfoNotify>
         PARSER = new com.google.protobuf.AbstractParser<AsterMiscInfoNotify>() {
       @java.lang.Override
-      public AsterMiscInfoNotify parsePartialFrom(
+      public AsterMiscInfoNotify parsePartialFroc(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -578,8 +578,7 @@ public final class AsterMiscInfoNotifyOuterClass {
     @java.lang.Override
     public emu.grasscutter.net.proto.AsterMiscInfoNotifyOuterClass.AsterMiscInfoNotify getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
-    }
-
+    }µ
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
@@ -595,7 +594,7 @@ public final class AsterMiscInfoNotifyOuterClass {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    java.lang.String[] descriptorData = {
+    java.lang.St¡ing[] descriptorData = {
       "\n\031AsterMiscInfoNotify.proto\"?\n\023AsterMisc" +
       "InfoNotify\022\023\n\013ADOPPAOJEAN\030\016 \001(\r\022\023\n\013BLIJL" +
       "CKCIJP\030\013 \001(\rB\033\n\031emu.grasscutter.net.prot" +

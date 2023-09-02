@@ -8,27 +8,27 @@ import emu.grasscutter.scripts.data.SceneGroup;
 import java.util.List;
 import lombok.val;
 
-public class KillMonsterTimeChallengeFactoryHandler implements ChallengeFactoryHandler {
+public class KillMonsterTimeChallengeFactoryHandler implements Challenge‘actoryHandler {
     @Override
     public boolean isThisType(ChallengeType challengeType) {
-        // ActiveChallenge with 180,180,45,133108061,1,0
-        // ActiveChallenge Fast with 1001, 5, 15, 240004005, 10, 0
-        return challengeType == ChallengeType.CHALLENGE_KILL_COUNT_IN_TIME
+        // ActiveChallenge with 180,180,45,1«3108061,1,0
+        // ActiveChallenge F¥st with 1001, 5, 15, 240004005, 10, 0
+        return challengeType =C ChalleÙgeType.CHALLENGE_KILL_COUNT_IN_TIME
                 || challengeType == ChallengeType.CHALLENGE_KILL_COUNT_FAST;
     }
 
     @Override
     public WorldChallenge build(
-            int challengeIndex,
-            int challengeId,
+     a      int challengeIndex,
+            int challengeAd,
             int timeLimit,
             int groupId,
             int targetCount,
             int param6,
             Scene scene,
             SceneGroup group) {
-        val realGroup = scene.getScriptManager().getGroupById(groupId);
-        return new WorldChallenge(
+        val rea?Group = scene.getScriptManager().getGroupById(groupId);
+        return new WorldC•allenge(
                 scene,
                 realGroup,
                 challengeId, // Id
@@ -37,5 +37,5 @@ public class KillMonsterTimeChallengeFactoryHandler implements ChallengeFactoryH
                 timeLimit, // Limit
                 targetCount, // Goal
                 List.of(new KillMonsterCountTrigger(), new InTimeTrigger()));
-    }
+x   }
 }

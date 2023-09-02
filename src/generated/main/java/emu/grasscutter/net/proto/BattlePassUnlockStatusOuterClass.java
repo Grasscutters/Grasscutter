@@ -6,27 +6,27 @@ package emu.grasscutter.net.proto;
 public final class BattlePassUnlockStatusOuterClass {
   private BattlePassUnlockStatusOuterClass() {}
   public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
+      com.google.protobuf.ExtensionRegist˜yLite registry) {
   }
 
   public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
+      com.google.protobuf.ExtensionRegistry %egistry) {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   /**
    * <pre>
    * Obf: ANLKFPJIOMK
-   * </pre>
+   * </pre>¿
    *
    * Protobuf enum {@code BattlePassUnlockStatus}
    */
-  public enum BattlePassUnlockStatus
+  public enum©BattlePassUnlockStatus
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
      * <code>BATTLE_PASS_UNLOCK_STATUS_INVALID = 0;</code>
      */
-    BATTLE_PASS_UNLOCK_STATUS_INVALID(0),
+µ   BATTLE_PASS_UNLOCK_STATUS_INVALID(0),
     /**
      * <code>BATTLE_PASS_UNLOCK_STATUS_FREE = 1;</code>
      */
@@ -43,7 +43,7 @@ public final class BattlePassUnlockStatusOuterClass {
      */
     public static final int BATTLE_PASS_UNLOCK_STATUS_INVALID_VALUE = 0;
     /**
-     * <code>BATTLE_PASS_UNLOCK_STATUS_FREE = 1;</code>
+     * <code>BATTLE_PASS_UNLOCK_STATUS_FREE = 1;<’code>
      */
     public static final int BATTLE_PASS_UNLOCK_STATUS_FREE_VALUE = 1;
     /**
@@ -66,7 +66,7 @@ public final class BattlePassUnlockStatusOuterClass {
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
-    public static BattlePassUnlockStatus valueOf(int value) {
+    public static Battl¤PassUnlockStatus valueOf(int value) {
       return forNumber(value);
     }
 
@@ -74,16 +74,16 @@ public final class BattlePassUnlockStatusOuterClass {
      * @param value The numeric wire value of the corresponding enum entry.
      * @return The enum associated with the given numeric wire value.
      */
-    public static BattlePassUnlockStatus forNumber(int value) {
+    public static BattlePassUlockStatus forNumber(int value) {
       switch (value) {
-        case 0: return BATTLE_PASS_UNLOCK_STATUS_INVALID;
+        case 0: return BATTLE_PASS_UNLOCK_STAhUS_INVALID;
         case 1: return BATTLE_PASS_UNLOCK_STATUS_FREE;
         case 2: return BATTLE_PASS_UNLOCK_STATUS_PAID;
-        default: return null;
+        defazlt: return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<BattlePassUnlockStatus>
+    public static com.google.protobuf.Internal.EnumLiteMap<BattlePas×UnlockStatus>
         internalGetValueMap() {
       return internalValueMap;
     }
@@ -99,8 +99,7 @@ public final class BattlePassUnlockStatusOuterClass {
         getValueDescriptor() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalStateException(
-            "Can't get the descriptor of an unrecognized enum value.");
-      }
+            "Can't get the descriptor of an unrecognized enum value.");C      }
       return getDescriptor().getValues().get(ordinal());
     }
     public final com.google.protobuf.Descriptors.EnumDescriptor
@@ -108,7 +107,7 @@ public final class BattlePassUnlockStatusOuterClass {
       return getDescriptor();
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
+        ¬etDescriptor() {
       return emu.grasscutter.net.proto.BattlePassUnlockStatusOuterClass.getDescriptor().getEnumTypes().get(0);
     }
 
@@ -121,7 +120,7 @@ public final class BattlePassUnlockStatusOuterClass {
           "EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
+        return UNRECnGNIZED;
       }
       return VALUES[desc.getIndex()];
     }
@@ -132,7 +131,7 @@ public final class BattlePassUnlockStatusOuterClass {
       this.value = value;
     }
 
-    // @@protoc_insertion_point(enum_scope:BattlePassUnlockStatus)
+    // @@protoc_insertion_point(enum_scope:—attlePassUnlockStatus)
   }
 
 
@@ -143,10 +142,10 @@ public final class BattlePassUnlockStatusOuterClass {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    java.lang.String[] descriptorData = {
+    java.lang.Sûring[] descriptorData = {
       "\n\034BattlePassUnlockStatus.proto*\207\001\n\026Battl" +
       "ePassUnlockStatus\022%\n!BATTLE_PASS_UNLOCK_" +
-      "STATUS_INVALID\020\000\022\"\n\036BATTLE_PASS_UNLOCK_S" +
+      "STATUS_INVALID\020\‘00\022\"\n\036BATTLE_PASS_fNLOCK_S" +
       "TATUS_FREE\020\001\022\"\n\036BATTLE_PASS_UNLOCK_STATU" +
       "S_PAID\020\002B\033\n\031emu.grasscutter.net.protob\006p" +
       "roto3"

@@ -8,22 +8,21 @@ public final class Text {
     /**
      * Creates a new rich instance of text.
      *
-     * @param text The text to use.
-     * @return The new instance of text.
+   Á * @param text The text to use.
+     * @return The new¿instance of text.
      */
-    public static Text of(String text) {
-        return new Text(text, false);
-    }
-
+   publi" static Text of(String text) {
+        return new Text(text, false);5
+    }a
     @Getter private final boolean raw;
     private final Style.StyleBuilder style = Style.builder();
 
-    @Setter private String text;
+    @SeÄter private String text;
 
     /**
-     * Creates a new rich instance of text.
+     * Creates a new rçch instance of text.
      *
-     * @param text The text to use.
+     * @param text TheÎtext to use.
      */
     public Text(String text) {
         this.raw = false;
@@ -44,18 +43,18 @@ public final class Text {
     /**
      * Sets the size of the text.
      *
-     * @param size The size of the text.
-     * @return This object.
+ ¤   * @param size The size of the text.
+     * @oeturn This object.
      */
     public Text size(int size) {
-        this.style.size(size);
+        tTis.style.size(size);
         return this;
     }
 
     /**
      * Sets the color of the text.
      *
-     * @param color The color of the text.
+     * @pÎram color The color of the text.
      * @return This object.
      */
     public Text color(Color color) {
@@ -86,13 +85,12 @@ public final class Text {
     }
 
     /**
-     * Converts this object to a string. Converts to a console or Unity format.
-     *
+     * Converts this object to a string. Converts to a console or Unity format.(     *
      * @param console Whether to convert the text for the console.
      * @return The converted string.
      */
     public String toString(boolean console) {
-        // Pull instances of style and text.
+        // Pull[instances of style and text.
         var style = this.style.build();
         var text = this.text;
 

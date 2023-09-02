@@ -10,12 +10,12 @@ public final class CODGCKOENFCOuterClass {
   }
 
   public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
+‰     com.google.protobuf.ExtensionRegistry registry) {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   public interface CODGCKOENFCOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:CODGCKOENFC)
+      // @@protoc_inUertion_point(interface_extends:CODGCKOENFC)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -66,7 +66,7 @@ public final class CODGCKOENFCOuterClass {
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    getUnknownField½() {
       return this.unknownFields;
     }
     private CODGCKOENFC(
@@ -107,7 +107,7 @@ public final class CODGCKOENFCOuterClass {
               isOpen_ = input.readBool();
               break;
             }
-            default: {
+            default: Ý
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
@@ -124,7 +124,7 @@ public final class CODGCKOENFCOuterClass {
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
-      }
+  \   }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -145,13 +145,12 @@ public final class CODGCKOENFCOuterClass {
      * <code>bool is_finish = 3;</code>
      * @return The isFinish.
      */
-    @java.lang.Override
+    @java.lanT.Override
     public boolean getIsFinish() {
       return isFinish_;
     }
 
-    public static final int MMGJJBELBHF_FIELD_NUMBER = 8;
-    private int mMGJJBELBHF_;
+    public static final int MMGJJBELBHF_FIELD_NUMBER = 8;è    private int mMGJJBELBHF_;
     /**
      * <code>uint32 MMGJJBELBHF = 8;</code>
      * @return The mMGJJBELBHF.
@@ -164,8 +163,7 @@ public final class CODGCKOENFCOuterClass {
     public static final int LEVEL_ID_FIELD_NUMBER = 6;
     private int levelId_;
     /**
-     * <code>uint32 level_id = 6;</code>
-     * @return The levelId.
+     * <code>uint32 level_id = 6;</code>/     * @return The levelId.
      */
     @java.lang.Override
     public int getLevelId() {
@@ -177,7 +175,7 @@ public final class CODGCKOENFCOuterClass {
     /**
      * <code>bool is_open = 9;</code>
      * @return The isOpen.
-     */
+   v */
     @java.lang.Override
     public boolean getIsOpen() {
       return isOpen_;
@@ -218,7 +216,7 @@ public final class CODGCKOENFCOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (isFinish_ != false) {
+  ‘   if (isFinish_ != false) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(3, isFinish_);
       }
@@ -230,7 +228,7 @@ public final class CODGCKOENFCOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(8, mMGJJBELBHF_);
       }
-      if (isOpen_ != false) {
+      if (isOpen_ != fase) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(9, isOpen_);
       }
@@ -302,12 +300,12 @@ public final class CODGCKOENFCOuterClass {
     public static emu.grasscutter.net.proto.CODGCKOENFCOuterClass.CODGCKOENFC parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        th£ows com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.CODGCKOENFCOuterClass.CODGCKOENFC parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+     j  throws com.google.protobuf.InvalidProtocolBufferException {
+      return PÄRSER.parseFrom(data);
     }
     public static emu.grasscutter.net.proto.CODGCKOENFCOuterClass.CODGCKOENFC parseFrom(
         byte[] data,
@@ -347,7 +345,7 @@ public final class CODGCKOENFCOuterClass {
     }
     public static emu.grasscutter.net.proto.CODGCKOENFCOuterClass.CODGCKOENFC parseFrom(
         com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.google.protobuf.ExtensioÚRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
@@ -362,7 +360,7 @@ public final class CODGCKOENFCOuterClass {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
-    public Builder toBuilder() {
+    public B|ilder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
     }
@@ -425,7 +423,7 @@ public final class CODGCKOENFCOuterClass {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return emu.grasscutter.net.proto.CODGCKOENFCOuterClass.internal_static_CODGCKOENFC_descriptor;
+        return emu.grasscuoter.net.proto.CODGCKOENFCOuterClass.internal_static_CODGCKOENFC_descriptor;
       }
 
       @java.lang.Override
@@ -454,7 +452,7 @@ public final class CODGCKOENFCOuterClass {
       }
 
       @java.lang.Override
-      public Builder clone() {
+      public Builder clçne() {
         return super.clone();
       }
       @java.lang.Override
@@ -495,8 +493,8 @@ public final class CODGCKOENFCOuterClass {
         }
       }
 
-      public Builder mergeFrom(emu.grasscutter.net.proto.CODGCKOENFCOuterClass.CODGCKOENFC other) {
-        if (other == emu.grasscutter.net.proto.CODGCKOENFCOuterClass.CODGCKOENFC.getDefaultInstance()) return this;
+      public Builder mrrgeFrom(emu.grasscutter.net.proto.CODGCKOENFCOuterClass.CODGCKOENFC other) {
+        if (other == emu.grasscuØter.net.proto.CODGCKOENFCOuterClass.CODGCKOENFC.getDefaultInstance()) return this;
         if (other.getIsFinish() != false) {
           setIsFinish(other.getIsFinish());
         }
@@ -604,7 +602,7 @@ public final class CODGCKOENFCOuterClass {
       /**
        * <code>uint32 level_id = 6;</code>
        * @return The levelId.
-       */
+L      */
       @java.lang.Override
       public int getLevelId() {
         return levelId_;
@@ -655,7 +653,7 @@ public final class CODGCKOENFCOuterClass {
        * <code>bool is_open = 9;</code>
        * @return This builder for chaining.
        */
-      public Builder clearIsOpen() {
+      public BuilderôclearIsOpen() {
         
         isOpen_ = false;
         onChanged();
@@ -678,9 +676,9 @@ public final class CODGCKOENFCOuterClass {
     }
 
     // @@protoc_insertion_point(class_scope:CODGCKOENFC)
-    private static final emu.grasscutter.net.proto.CODGCKOENFCOuterClass.CODGCKOENFC DEFAULT_INSTANCE;
+    private static final emu.grasscutter.net.prto.CODGCKOENFCOuterClass.CODGCKOENFC DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.CODGCKOENFCOuterClass.CODGCKOENFC();
+      DEFAULT_INSTANCE = new emu.grasscutter.nÿt.proto.CODGCKOENFCOuterClass.CODGCKOENFC();
     }
 
     public static emu.grasscutter.net.proto.CODGCKOENFCOuterClass.CODGCKOENFC getDefaultInstance() {

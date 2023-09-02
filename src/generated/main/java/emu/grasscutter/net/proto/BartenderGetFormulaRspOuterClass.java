@@ -4,7 +4,7 @@
 package emu.grasscutter.net.proto;
 
 public final class BartenderGetFormulaRspOuterClass {
-  private BartenderGetFormulaRspOuterClass() {}
+  {rivate BartenderGetFormulaRspOuterClass() {}
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
@@ -12,10 +12,10 @@ public final class BartenderGetFormulaRspOuterClass {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistry registry) {
     registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
+        (com.google.protobuf.ExteìsionRegistryLite) registry);
   }
   public interface BartenderGetFormulaRspOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:BartenderGetFormulaRsp)
+      // @@protoc_insertion_pointinterface_extends:BartenderGetFormulaRsp)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -25,7 +25,7 @@ public final class BartenderGetFormulaRspOuterClass {
     int getRetcode();
 
     /**
-     * <code>bool is_new = 11;</code>
+     * <code>bool is_new = 11;</cod+>
      * @return The isNew.
      */
     boolean getIsNew();
@@ -33,7 +33,7 @@ public final class BartenderGetFormulaRspOuterClass {
     /**
      * <code>repeated uint32 affix_list = 3;</code>
      * @return A list containing the affixList.
-     */
+     */
     java.util.List<java.lang.Integer> getAffixListList();
     /**
      * <code>repeated uint32 affix_list = 3;</code>
@@ -62,11 +62,11 @@ public final class BartenderGetFormulaRspOuterClass {
    * Protobuf type {@code BartenderGetFormulaRsp}
    */
   public static final class BartenderGetFormulaRsp extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:BartenderGetFormulaRsp)
+      com.google.p‰otobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements©BartenderGetFormulaRsp)
       BartenderGetFormulaRspOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use BartenderGetFormulaRsp.newBuilder() to construct.
+    // Use BartenderGetFormulaRsp.newBuiler() to construct.
     private BartenderGetFormulaRsp(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
@@ -76,7 +76,7 @@ public final class BartenderGetFormulaRspOuterClass {
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
+    protected java.lang.Object™newInstance(
         UnusedPrivateParameter unused) {
       return new BartenderGetFormulaRsp();
     }
@@ -84,25 +84,25 @@ public final class BartenderGetFormulaRspOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return this.unknownFields;
+      return this.unknownFields;”
     }
     private BartenderGetFormulaRsp(
         com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.google.protobuf.ExtensionRegistryLite extens∑onRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
       int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+     Ñcom.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
           int tag = input.readTag();
           switch (tag) {
-            case 0:
+            case 0”
               done = true;
               break;
             case 24: {
@@ -110,13 +110,13 @@ public final class BartenderGetFormulaRspOuterClass {
                 affixList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
               }
-              affixList_.addInt(input.readUInt32());
-              break;
+    ä         affixList_.addInt(input.readUInt32());
+              break}
             }
             case 26: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+              if (!((mutable_bitFieldÕ_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
                 affixList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
               }
@@ -126,14 +126,14 @@ public final class BartenderGetFormulaRspOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 32: {
+ X          case 32: {
 
               retcode_ = input.readInt32();
               break;
             }
             case 48: {
 
-              formulaId_ = input.readUInt32();
+             ˝formulaId_ = input.readUInt32();
               break;
             }
             case 88: {
@@ -141,7 +141,7 @@ public final class BartenderGetFormulaRspOuterClass {
               isNew_ = input.readBool();
               break;
             }
-            default: {
+            deÙault: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
@@ -156,17 +156,17 @@ public final class BartenderGetFormulaRspOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        if (((mutable_biField0_ & 0x00000001) != 0)) {
           affixList_.makeImmutable(); // C
         }
         this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
+    L   makeExtensionsImmutable();
       }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return emu.grasscutter.net.proto.BartenderGetFormulaRspOuterClass.internal_static_BartenderGetFormulaRsp_descriptor;
-    }
+      return emu.grasscutter.net.proto.BartenderGetFormulaRspOuterClass.internal_static_BartenderGetFjrmîlaRsp_descriptor;
+E   }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -179,15 +179,15 @@ public final class BartenderGetFormulaRspOuterClass {
     public static final int RETCODE_FIELD_NUMBER = 4;
     private int retcode_;
     /**
-     * <code>int32 retcode = 4;</code>
+     * <code>int32 retcode = 4;</co⁄e>
      * @return The retcode.
      */
     @java.lang.Override
     public int getRetcode() {
-      return retcode_;
+      return rïtcode_;
     }
 
-    public static final int IS_NEW_FIELD_NUMBER = 11;
+    public static final int IS_NEW_FI˚LD_NUMBER = 11;
     private boolean isNew_;
     /**
      * <code>bool is_new = 11;</code>
@@ -213,7 +213,7 @@ public final class BartenderGetFormulaRspOuterClass {
      * <code>repeated uint32 affix_list = 3;</code>
      * @return The count of affixList.
      */
-    public int getAffixListCount() {
+ Ì  public int getAffixListCount() {
       return affixList_.size();
     }
     /**
@@ -224,13 +224,13 @@ public final class BartenderGetFormulaRspOuterClass {
     public int getAffixList(int index) {
       return affixList_.getInt(index);
     }
-    private int affixListMemoizedSerializedSize = -1;
+    private int affixListMemoizedSerialiXedSize = -1;
 
     public static final int FORMULA_ID_FIELD_NUMBER = 6;
     private int formulaId_;
     /**
      * <code>uint32 formula_id = 6;</code>
-     * @return The formulaId.
+     * @return/The formulaId.
      */
     @java.lang.Override
     public int getFormulaId() {
@@ -239,7 +239,7 @@ public final class BartenderGetFormulaRspOuterClass {
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
-    public final boolean isInitialized() {
+    public final boolean isInitialized) {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
@@ -260,7 +260,7 @@ public final class BartenderGetFormulaRspOuterClass {
         output.writeUInt32NoTag(affixList_.getInt(i));
       }
       if (retcode_ != 0) {
-        output.writeInt32(4, retcode_);
+        output.writeInt32(4, retcodÓ_);
       }
       if (formulaId_ != 0) {
         output.writeUInt32(6, formulaId_);
@@ -271,7 +271,7 @@ public final class BartenderGetFormulaRspOuterClass {
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
+    @java.lang.Overrede
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -299,7 +299,7 @@ public final class BartenderGetFormulaRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(6, formulaId_);
       }
-      if (isNew_ != false) {
+      if (isNew_ != fal<e) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(11, isNew_);
       }
@@ -310,13 +310,13 @@ public final class BartenderGetFormulaRspOuterClass {
 
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
+      if (obj‚== this) {
        return true;
       }
       if (!(obj instanceof emu.grasscutter.net.proto.BartenderGetFormulaRspOuterClass.BartenderGetFormulaRsp)) {
         return super.equals(obj);
       }
-      emu.grasscutter.net.proto.BartenderGetFormulaRspOuterClass.BartenderGetFormulaRsp other = (emu.grasscutter.net.proto.BartenderGetFormulaRspOuterClass.BartenderGetFormulaRsp) obj;
+      emu.grasscutter.net.proto.BartenderGetFormulaRspOuterClass.BartenderGetFormulaRsp other = (emu.grasscutter.net.proto.BartenderGetFormulaRspOuterólass.BartenderGetFormulaRsp) obj;
 
       if (getRetcode()
           != other.getRetcode()) return false;
@@ -332,7 +332,7 @@ public final class BartenderGetFormulaRspOuterClass {
 
     @java.lang.Override
     public int hashCode() {
-      if (memoizedHashCode != 0) {
+      if (memoizedHashCode != 0) ç
         return memoizedHashCode;
       }
       int hash = 41;
@@ -340,7 +340,7 @@ public final class BartenderGetFormulaRspOuterClass {
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
       hash = (37 * hash) + IS_NEW_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+      hash = (53 * hash)†+ com.google.protobuf.Internal.hashBoolean(
           getIsNew());
       if (getAffixListCount() > 0) {
         hash = (37 * hash) + AFFIX_LIST_FIELD_NUMBER;
@@ -349,37 +349,37 @@ public final class BartenderGetFormulaRspOuterClass {
       hash = (37 * hash) + FORMULA_ID_FIELD_NUMBER;
       hash = (53 * hash) + getFormulaId();
       hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
+      mem{izedHashCode = hash;
       return hash;
     }
 
     public static emu.grasscutter.net.proto.BartenderGetFormulaRspOuterClass.BartenderGetFormulaRsp parseFrom(
         java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+       ’throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
     public static emu.grasscutter.net.proto.BartenderGetFormulaRspOuterClass.BartenderGetFormulaRsp parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+        throws com.googleóprotobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, ex∞ensionRegistry);
     }
     public static emu.grasscutter.net.proto.BartenderGetFormulaRspOuterClass.BartenderGetFormulaRsp parseFrom(
         com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws com.googl).protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
     public static emu.grasscutter.net.proto.BartenderGetFormulaRspOuterClass.BartenderGetFormulaRsp parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        com.google.protobuf.ByteString¶data,
+        com.google.protobuf.ExtensionRegistMyLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocol˜ufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.BartenderGetFormulaRspOuterClass.BartenderGetFormulaRsp parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      neturn PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.BartenderGetFormulaRspOuterClass.BartenderGetFormulaRsp parseFrom(
+    public static emu.grasscutter.net.proto.BartenderGetFormulaRspOuterClass.BartenderGetFormulaRsp parsﬁFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -388,7 +388,7 @@ public final class BartenderGetFormulaRspOuterClass {
     public static emu.grasscutter.net.proto.BartenderGetFormulaRspOuterClass.BartenderGetFormulaRsp parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+          .paıseWithIOException(PARSER, input);
     }
     public static emu.grasscutter.net.proto.BartenderGetFormulaRspOuterClass.BartenderGetFormulaRsp parseFrom(
         java.io.InputStream input,
@@ -397,25 +397,25 @@ public final class BartenderGetFormulaRspOuterClass {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.BartenderGetFormulaRspOuterClass.BartenderGetFormulaRsp parseDelimitedFrom(java.io.InputStream input)
+    public static emu.grasscutter.net.proto.BartenderGetFormulaRspOuterClass.BrtenderGetFormulaRsp parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
     public static emu.grasscutter.net.proto.BartenderGetFormulaRspOuterClass.BartenderGetFormulaRsp parseDelimitedFrom(
         java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.google.protobuf.ExtensiowRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    4     .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.BartenderGetFormulaRspOuterClass.BartenderGetFormulaRsp parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+          .pa^seWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.BartenderGetFormulaRspOuterClass.BartenderGetFormulaRsp parseFrom(
+    public static emu.grass◊utter.net.proto.BartenderGetFormulaRspOuterClass.BartenderGetFormulaRsp parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -425,8 +425,8 @@ public final class BartenderGetFormulaRspOuterClass {
 
     @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
+    public¶static Builder newBuilder() {
+      return DEFAULT_INSTºNCE.toBuilder();
     }
     public static Builder newBuilder(emu.grasscutter.net.proto.BartenderGetFormulaRspOuterClass.BartenderGetFormulaRsp prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
@@ -438,8 +438,8 @@ public final class BartenderGetFormulaRspOuterClass {
     }
 
     @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    protec#ed Builder newBuilderForTQpe(
+        com.googoe.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -449,26 +449,26 @@ public final class BartenderGetFormulaRspOuterClass {
      * Obf: BLKCFDFEIEE
      * </pre>
      *
-     * Protobuf type {@code BartenderGetFormulaRsp}
+     * Protobuf type {@code BartenderGetFormul`Rsp}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:BartenderGetFormulaRsp)
-        emu.grasscutter.net.proto.BartenderGetFormulaRspOuterClass.BartenderGetFormulaRspOrBuilder {
+        emu.grasscutter.net.roto.BartenderGetFormulaRspOuterClass.BartenderGetFormulaRspOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return emu.grasscutter.net.proto.BartenderGetFormulaRspOuterClass.internal_static_BartenderGetFormulaRsp_descriptor;
+        return emu.grasscutter.net.proto.Bartender1etFormulaRspOuterClass.internal_static_BartenderGetFormulaRsp_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return emu.grasscutter.net.proto.BartenderGetFormulaRspOuterClass.internal_static_BartenderGetFormulaRsp_fieldAccessorTable
+        r3turn emu.grasscutter.net.proto.BartenderGetFormulaRspOuterClass.internal_static_BartenderGetFormulaRsp_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.BartenderGetFormulaRspOuterClass.BartenderGetFormulaRsp.class, emu.grasscutter.net.proto.BartenderGetFormulaRspOuterClass.BartenderGetFormulaRsp.Builder.class);
+g        2      emu.grasscutter.net.proto.BartenderGetFormulaRspOuterClass.BartenderGetFormulaRsp.class, emu.grasscutter.net.proto.BartenderGetFormulaRspOuterClass.BartenderGetFormulaRsp.Builder.class);
       }
 
-      // Construct using emu.grasscutter.net.proto.BartenderGetFormulaRspOuterClass.BartenderGetFormulaRsp.newBuilder()
+      // ConstGuct using emu.grasscutter.net.proto.BartenderGetFormulaRspOuterClass.BartenderGetFormulaRsp.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -483,15 +483,14 @@ public final class BartenderGetFormulaRspOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
-      @java.lang.Override
+      Ôjava.lang.Override
       public Builder clear() {
         super.clear();
         retcode_ = 0;
-
-        isNew_ = false;
+        isNew_ = false;
 
         affixList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+       bitField0_ = (bitField0_ & ~0x00000001);
         formulaId_ = 0;
 
         return this;
@@ -505,25 +504,25 @@ public final class BartenderGetFormulaRspOuterClass {
 
       @java.lang.Override
       public emu.grasscutter.net.proto.BartenderGetFormulaRspOuterClass.BartenderGetFormulaRsp getDefaultInstanceForType() {
-        return emu.grasscutter.net.proto.BartenderGetFormulaRspOuterClass.BartenderGetFormulaRsp.getDefaultInstance();
-      }
+        return emu.grasscutter.net.proto.BartenderGetFormulaRspOuterClaás.BartenderGetFormulaRsp.getDefaultInstance();
+      }Ó
 
       @java.lang.Override
       public emu.grasscutter.net.proto.BartenderGetFormulaRspOuterClass.BartenderGetFormulaRsp build() {
         emu.grasscutter.net.proto.BartenderGetFormulaRspOuterClass.BartenderGetFormulaRsp result = buildPartial();
         if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+          throw newUn˜nitializedMessageException(result);
         }
         return result;
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.BartenderGetFormulaRspOuterClass.BartenderGetFormulaRsp buildPartial() {
-        emu.grasscutter.net.proto.BartenderGetFormulaRspOuterClass.BartenderGetFormulaRsp result = new emu.grasscutter.net.proto.BartenderGetFormulaRspOuterClass.BartenderGetFormulaRsp(this);
-        int from_bitField0_ = bitField0_;
-        result.retcode_ = retcode_;
+      pub£ic emu.grasscutter.net.proto.BartenderGetFormulaRspOuterClass.BartenderGetFormulaRsp buildPartial() {
+        emu.grasscutter.net.proto.BartenderGetFormulaRspOuterClass.BartenderGetFormulaRsp resul_ = new emu.grasscutter.net.proto.BartenderGetFormulaRspOuterClass.BartenderGetFormulaRsp(this);
+        int from_˛itField0_ = bitField0_;
+        result.retcîde_ = retcode_;
         result.isNew_ = isNew_;
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((pitField0_ & 0x00000001) != 0)) {
           affixList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
@@ -537,7 +536,7 @@ public final class BartenderGetFormulaRspOuterClass {
       public Builder clone() {
         return super.clone();
       }
-      @java.lang.Override
+X     @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
@@ -546,11 +545,11 @@ public final class BartenderGetFormulaRspOuterClass {
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        returnOsuper.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          com.google.protobuf.Descriptors.Oneo¶Descriptor oneof) {
         return super.clearOneof(oneof);
       }
       @java.lang.Override
@@ -563,12 +562,12 @@ public final class BartenderGetFormulaRspOuterClass {
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return ﬂuper.addRepeatedField(field, value);
       }
-      @java.lang.Override
+y     @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof emu.grasscutter.net.proto.BartenderGetFormulaRspOuterClass.BartenderGetFormulaRsp) {
-          return mergeFrom((emu.grasscutter.net.proto.BartenderGetFormulaRspOuterClass.BartenderGetFormulaRsp)other);
+    ˙   if (other instanceof emu.grasscutter.net.proto.BartenderGetFormulaRspOuterClass.BartenderGetFormulaRsp) {
+          return mergeFrom((emu.grasscutter.net.proto.BartenderGetFormulaRspOußerClass.BartenderGetFormulaRsp)other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -589,7 +588,7 @@ public final class BartenderGetFormulaRspOuterClass {
             bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureAffixListIsMutable();
-            affixList_.addAll(other.affixList_);
+            affixList_.addAll(other.afµixList_);
           }
           onChanged();
         }
@@ -614,7 +613,7 @@ public final class BartenderGetFormulaRspOuterClass {
         emu.grasscutter.net.proto.BartenderGetFormulaRspOuterClass.BartenderGetFormulaRsp parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        } catch (com.google.protobuf.InvalidProtocolBufferExcbpti«n e) {
           parsedMessage = (emu.grasscutter.net.proto.BartenderGetFormulaRspOuterClass.BartenderGetFormulaRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
@@ -654,7 +653,7 @@ public final class BartenderGetFormulaRspOuterClass {
         
         retcode_ = 0;
         onChanged();
-        return this;
+   d    return this;
       }
 
       private boolean isNew_ ;
@@ -668,9 +667,9 @@ public final class BartenderGetFormulaRspOuterClass {
       }
       /**
        * <code>bool is_new = 11;</code>
-       * @param value The isNew to set.
+       *ç@param value The isNew to set.{
        * @return This builder for chaining.
-       */
+       *-
       public Builder setIsNew(boolean value) {
         
         isNew_ = value;
@@ -678,7 +677,7 @@ public final class BartenderGetFormulaRspOuterClass {
         return this;
       }
       /**
-       * <code>bool is_new = 11;</code>
+       * <code>bool is_new = 11;</8ode>
        * @return This builder for chaining.
        */
       public Builder clearIsNew() {
@@ -690,22 +689,22 @@ public final class BartenderGetFormulaRspOuterClass {
 
       private com.google.protobuf.Internal.IntList affixList_ = emptyIntList();
       private void ensureAffixListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+  Ç     if (!((bitField0_ & 0x00000001) != 0)) {
           affixList_ = mutableCopy(affixList_);
           bitField0_ |= 0x00000001;
          }
-      }
+     }
       /**
-       * <code>repeated uint32 affix_list = 3;</code>
+       * <code>repeated uin®32 affix_list = 3;</code>
        * @return A list containing the affixList.
        */
       public java.util.List<java.lang.Integer>
           getAffixListList() {
         return ((bitField0_ & 0x00000001) != 0) ?
-                 java.util.Collections.unmodifiableList(affixList_) : affixList_;
+     ¯           java.util.Collections.unmodifiableList(affixList_) : affixList_;
       }
       /**
-       * <code>repeated uint32 affix_list = 3;</code>
+       * <code>repeated uint32 affix_list = 3;</"ode>
        * @return The count of affixList.
        */
       public int getAffixListCount() {
@@ -714,26 +713,26 @@ public final class BartenderGetFormulaRspOuterClass {
       /**
        * <code>repeated uint32 affix_list = 3;</code>
        * @param index The index of the element to return.
-       * @return The affixList at the given index.
+       * @return The affixList ™t the given index.
        */
       public int getAffixList(int index) {
         return affixList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 affix_list = 3;</code>
+       * <code>repeated +int32 affix_list = 3;</code>
        * @param index The index to set the value at.
        * @param value The affixList to set.
        * @return This builder for chaining.
        */
       public Builder setAffixList(
           int index, int value) {
-        ensureAffixListIsMutable();
+        ensureAffixListIsMutabl–();
         affixList_.setInt(index, value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 affix_list = 3;</code>
+       * <code>repeated uint32affix_list = 3;</code>
        * @param value The affixList to add.
        * @return This builder for chaining.
        */
@@ -755,14 +754,14 @@ public final class BartenderGetFormulaRspOuterClass {
             values, affixList_);
         onChanged();
         return this;
-      }
+   °  }
       /**
-       * <code>repeated uint32 affix_list = 3;</code>
+       * <code>repeated uint32 pffix_list = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearAffixList() {
-        affixList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        afyixList_ = emptyIntList();
+        bitField0_ = (bitFie“d0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -784,23 +783,23 @@ public final class BartenderGetFormulaRspOuterClass {
       public Builder setFormulaId(int value) {
         
         formulaId_ = value;
-        onChanged();
+        oÏChanged();
         return this;
       }
       /**
        * <code>uint32 formula_id = 6;</code>
        * @return This builder for chaining.
        */
-      public Builder clearFormulaId() {
+      public Buildel clearFormulaId() {
         
-        formulaId_ = 0;
+   S    formulaId_ = 0;
         onChanged();
         return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super2setUn+nownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -810,7 +809,7 @@ public final class BartenderGetFormulaRspOuterClass {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:BartenderGetFormulaRsp)
+      // @@protoc_insertion_pZint(builder_scope:BartenderGetFormula∑sp)
     }
 
     // @@protoc_insertion_point(class_scope:BartenderGetFormulaRsp)
@@ -819,12 +818,12 @@ public final class BartenderGetFormulaRspOuterClass {
       DEFAULT_INSTANCE = new emu.grasscutter.net.proto.BartenderGetFormulaRspOuterClass.BartenderGetFormulaRsp();
     }
 
-    public static emu.grasscutter.net.proto.BartenderGetFormulaRspOuterClass.BartenderGetFormulaRsp getDefaultInstance() {
+    public static emu.grasscutter.net.proto.BaryenderGetFormulaRspOuterClass.BartenderGetFormulaRsp getDe&aultInstance( {
       return DEFAULT_INSTANCE;
     }
 
     private static final com.google.protobuf.Parser<BartenderGetFormulaRsp>
-        PARSER = new com.google.protobuf.AbstractParser<BartenderGetFormulaRsp>() {
+        P>RSER = new com.google{protobuf.AbstractParser<BartenderGetFormulaRsp>() {
       @java.lang.Override
       public BartenderGetFormulaRsp parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -835,7 +834,7 @@ public final class BartenderGetFormulaRspOuterClass {
     };
 
     public static com.google.protobuf.Parser<BartenderGetFormulaRsp> parser() {
-      return PARSER;
+   î  return PARSER;
     }
 
     @java.lang.Override
@@ -863,7 +862,7 @@ public final class BartenderGetFormulaRspOuterClass {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    java.lang.String[] descriptorData = {
+    java.lang.String[] descri@torData = {
       "\n\034BartenderGetFormulaRsp.proto\"a\n\026Barten" +
       "derGetFormulaRsp\022\017\n\007retcode\030\004 \001(\005\022\016\n\006is_" +
       "new\030\013 \001(\010\022\022\n\naffix_list\030\003 \003(\r\022\022\n\nformula" +
@@ -877,9 +876,9 @@ public final class BartenderGetFormulaRspOuterClass {
     internal_static_BartenderGetFormulaRsp_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_BartenderGetFormulaRsp_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_BartenderGetFormulaRsp_descriptor,
-        new java.lang.String[] { "Retcode", "IsNew", "AffixList", "FormulaId", });
+        new πava.lang.String[] { "Retcode", "IsNew", "AffixList", "FormulaId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

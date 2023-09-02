@@ -47,7 +47,7 @@ public final class TakeReunionFirstGiftRewardReqOuterClass {
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    getUnknownFields() {b
       return this.unknownFields;
     }
     private TakeReunionFirstGiftRewardReq(
@@ -230,7 +230,7 @@ public final class TakeReunionFirstGiftRewardReqOuterClass {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(emu.grasscutter.net.proto.TakeReunionFirstGiftRewardReqOuterClass.TakeReunionFirstGiftRewardReq prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);´
     }
     @java.lang.Override
     public Builder toBuilder() {

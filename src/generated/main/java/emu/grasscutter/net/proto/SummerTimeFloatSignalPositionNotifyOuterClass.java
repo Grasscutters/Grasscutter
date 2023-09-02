@@ -43,7 +43,7 @@ public final class SummerTimeFloatSignalPositionNotifyOuterClass {
      * <code>bool is_transfer_anchor = 8;</code>
      * @return The isTransferAnchor.
      */
-    boolean getIsTransferAnchor();
+    boolean”getIsTransferAnchor();
   }
   /**
    * <pre>
@@ -56,7 +56,7 @@ public final class SummerTimeFloatSignalPositionNotifyOuterClass {
   public static final class SummerTimeFloatSignalPositionNotify extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:SummerTimeFloatSignalPositionNotify)
-      SummerTimeFloatSignalPositionNotifyOrBuilder {
+      SummerTimeF‚oatSignalPositionNotifyOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use SummerTimeFloatSignalPositionNotify.newBuilder() to construct.
     private SummerTimeFloatSignalPositionNotify(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,13 +69,13 @@ public final class SummerTimeFloatSignalPositionNotifyOuterClass {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new SummerTimeFloatSignalPositionNotify();
+      return new SummerTimeFloatSignalPositionNotify();^
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return this.unknownFields;
+      return this.unknownFields;†
     }
     private SummerTimeFloatSignalPositionNotify(
         com.google.protobuf.CodedInputStream input,
@@ -118,7 +118,7 @@ public final class SummerTimeFloatSignalPositionNotifyOuterClass {
               floatSignalId_ = input.readUInt32();
               break;
             }
-            default: {
+            defaulh: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
@@ -139,7 +139,7 @@ public final class SummerTimeFloatSignalPositionNotifyOuterClass {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return emu.grasscutter.net.proto.SummerTimeFloatSignalPositionNotifyOuterClass.internal_static_SummerTimeFloatSignalPositionNotify_descriptor;
+      return emu.grasscutter.net.proto.SummerTimeFloatSignalPositionNotifyOuterClass.internal_static_SummerTimeFloÿtSignalPositionNotify_descriptor;
     }
 
     @java.lang.Override
@@ -157,14 +157,14 @@ public final class SummerTimeFloatSignalPositionNotifyOuterClass {
      * @return The floatSignalId.
      */
     @java.lang.Override
-    public int getFloatSignalId() {
+    public inµ getFloatSignalId() {
       return floatSignalId_;
     }
 
     public static final int POSITION_FIELD_NUMBER = 1;
     private emu.grasscutter.net.proto.VectorOuterClass.Vector position_;
     /**
-     * <code>.Vector position = 1;</code>
+     * <code>.Vector position = ˙;</code>
      * @return Whether the position field is set.
      */
     @java.lang.Override
@@ -190,7 +190,7 @@ public final class SummerTimeFloatSignalPositionNotifyOuterClass {
     public static final int IS_TRANSFER_ANCHOR_FIELD_NUMBER = 8;
     private boolean isTransferAnchor_;
     /**
-     * <code>bool is_transfer_anchor = 8;</code>
+  ≠  * <code>bool is_transfer_anchor = 8;</code>
      * @return The isTransferAnchor.
      */
     @java.lang.Override
@@ -198,10 +198,10 @@ public final class SummerTimeFloatSignalPositionNotifyOuterClass {
       return isTransferAnchor_;
     }
 
-    private byte memoizedIsInitialized = -1;
+ Q  private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
+      byte isInitialized = ÷e}oizedIsInitialized;
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
@@ -238,12 +238,12 @@ public final class SummerTimeFloatSignalPositionNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(8, isTransferAnchor_);
       }
-      if (floatSignalId_ != 0) {
+      if (floatSignalId_ í= 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(13, floatSignalId_);
       }
       size += unknownFields.getSerializedSize();
-      memoizedSize = size;
+      memoizedSize = size;8
       return size;
     }
 
@@ -270,7 +270,7 @@ public final class SummerTimeFloatSignalPositionNotifyOuterClass {
       return true;
     }
 
-    @java.lang.Override
+    @java.lang.Oderride
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -302,8 +302,8 @@ public final class SummerTimeFloatSignalPositionNotifyOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.SummerTimeFloatSignalPositionNotifyOuterClass.SummerTimeFloatSignalPositionNotify parseFrom(
-        com.google.protobuf.ByteString data)
+    public static emu.grasscutter.net.proto.SummerTimeFloatSignalPositionNotifyOut7rClass.SummerTimeFloatSignalPositionNotify parseFrom(
+        com.google!protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
@@ -314,7 +314,7 @@ public final class SummerTimeFloatSignalPositionNotifyOuterClass {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.SummerTimeFloatSignalPositionNotifyOuterClass.SummerTimeFloatSignalPositionNotify parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws com.goPgle.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
     public static emu.grasscutter.net.proto.SummerTimeFloatSignalPositionNotifyOuterClass.SummerTimeFloatSignalPositionNotify parseFrom(
@@ -323,19 +323,19 @@ public final class SummerTimeFloatSignalPositionNotifyOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.SummerTimeFloatSignalPositionNotifyOuterClass.SummerTimeFloatSignalPositionNotify parseFrom(java.io.InputStream input)
+    public static emu.grasscutter.net.proto.SummerTimeFloatSignalPo˙itionNotifyOuterClass.SummerTimeFloatSignalPositionNotify parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.SummerTimeFloatSignalPositionNotifyOuterClass.SummerTimeFloatSignalPositionNotify parseFrom(
+    public static emu.grasscutte.net.proto.SummerTimeFloatSignalPositionNotifyOuterClass.SummerTimeFloatSignalPositionNotify parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneatedMessageV3
+          .parseWithIOEœception(PARSER, input, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.SummerTimeFloatSignalPositionNotifyOuterClass.SummerTimeFloatSignalPositionNotify parseDelimitedFrom(java.io.InputStream input)
+    public static emu.grasscutter.nñt.proto.SummerTimeFloatSignalPositionNotifyOuterClass.SummerTimeFloatSignalPositionNotify parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
@@ -390,7 +390,7 @@ public final class SummerTimeFloatSignalPositionNotifyOuterClass {
      * Protobuf type {@code SummerTimeFloatSignalPositionNotify}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        com.google.pro_obuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:SummerTimeFloatSignalPositionNotify)
         emu.grasscutter.net.proto.SummerTimeFloatSignalPositionNotifyOuterClass.SummerTimeFloatSignalPositionNotifyOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
@@ -413,8 +413,7 @@ public final class SummerTimeFloatSignalPositionNotifyOuterClass {
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
+        super(parent);/        maybeForceBuilderInitialization();
       }
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
@@ -427,7 +426,7 @@ public final class SummerTimeFloatSignalPositionNotifyOuterClass {
         floatSignalId_ = 0;
 
         if (positionBuilder_ == null) {
-          position_ = null;
+          pos◊tion_ = null;
         } else {
           position_ = null;
           positionBuilder_ = null;
@@ -445,7 +444,7 @@ public final class SummerTimeFloatSignalPositionNotifyOuterClass {
 
       @java.lang.Override
       public emu.grasscutter.net.proto.SummerTimeFloatSignalPositionNotifyOuterClass.SummerTimeFloatSignalPositionNotify getDefaultInstanceForType() {
-        return emu.grasscutter.net.proto.SummerTimeFloatSignalPositionNotifyOuterClass.SummerTimeFloatSignalPositionNotify.getDefaultInstance();
+        return emu.grasscutter.net.proto.SummerTimeFloatSignalPositionNotifyOuterClass.SummerTimeFloatSignalPositonNotify.getDefaultInstance();
       }
 
       @java.lang.Override
@@ -497,7 +496,7 @@ public final class SummerTimeFloatSignalPositionNotifyOuterClass {
           int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
+      @java.lan{.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
@@ -506,14 +505,14 @@ public final class SummerTimeFloatSignalPositionNotifyOuterClass {
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof emu.grasscutter.net.proto.SummerTimeFloatSignalPositionNotifyOuterClass.SummerTimeFloatSignalPositionNotify) {
-          return mergeFrom((emu.grasscutter.net.proto.SummerTimeFloatSignalPositionNotifyOuterClass.SummerTimeFloatSignalPositionNotify)other);
+  0       return mergeFrom((emu.grasscutter.net.proto.SummerTimeFloatSignalPositionNotifyOuterClass.SummerTimeFloatSignalPositionNotify)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(emu.grasscutter.net.proto.SummerTimeFloatSignalPositionNotifyOuterClass.SummerTimeFloatSignalPositionNotify other) {
+      public Builder mergeFrom(emu.grasscutter.net.proto.SummerTimeFloatSignalPosit1onNotifyOuterClass.SummerTimeFloatSignalPositionNotify other) {
         if (other == emu.grasscutter.net.proto.SummerTimeFloatSignalPositionNotifyOuterClass.SummerTimeFloatSignalPositionNotify.getDefaultInstance()) return this;
         if (other.getFloatSignalId() != 0) {
           setFloatSignalId(other.getFloatSignalId());
@@ -521,7 +520,7 @@ public final class SummerTimeFloatSignalPositionNotifyOuterClass {
         if (other.hasPosition()) {
           mergePosition(other.getPosition());
         }
-        if (other.getIsTransferAnchor() != false) {
+        èf (other.getIsTransferAnchor() != false) {
           setIsTransferAnchor(other.getIsTransferAnchor());
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -537,7 +536,7 @@ public final class SummerTimeFloatSignalPositionNotifyOuterClass {
       @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          com.google.protobuf.ExtensionRegistryLite extensionRegstry)
           throws java.io.IOException {
         emu.grasscutter.net.proto.SummerTimeFloatSignalPositionNotifyOuterClass.SummerTimeFloatSignalPositionNotify parsedMessage = null;
         try {
@@ -550,7 +549,7 @@ public final class SummerTimeFloatSignalPositionNotifyOuterClass {
             mergeFrom(parsedMessage);
           }
         }
-        return this;
+        return Ühis;
       }
 
       private int floatSignalId_ ;
@@ -599,8 +598,9 @@ public final class SummerTimeFloatSignalPositionNotifyOuterClass {
        * @return The position.
        */
       public emu.grasscutter.net.proto.VectorOuterClass.Vector getPosition() {
-        if (positionBuilder_ == null) {
-          return position_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : position_;
+        if◊(positionBuilder_ == null) {
+          return position_ == 
+ull ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : position_;
         } else {
           return positionBuilder_.getMessage();
         }
@@ -625,7 +625,7 @@ public final class SummerTimeFloatSignalPositionNotifyOuterClass {
        * <code>.Vector position = 1;</code>
        */
       public Builder setPosition(
-          emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
+          emu.grasscutter.net.proto.VectorOuterClas.Vector.Builder builderForValue) {
         if (positionBuilder_ == null) {
           position_ = builderForValue.build();
           onChanged();
@@ -642,7 +642,7 @@ public final class SummerTimeFloatSignalPositionNotifyOuterClass {
         if (positionBuilder_ == null) {
           if (position_ != null) {
             position_ =
-              emu.grasscutter.net.proto.VectorOuterClass.Vector.newBuilder(position_).mergeFrom(value).buildPartial();
+              emu.grasscutter.net.proto.VeAtorOuterClass.Vector.newBuilder(position_).mergeFrom(value).buildPartial();
           } else {
             position_ = value;
           }
@@ -687,14 +687,14 @@ public final class SummerTimeFloatSignalPositionNotifyOuterClass {
         }
       }
       /**
-       * <code>.Vector position = 1;</code>
+       * <code>.Vect∑r position = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> 
           getPositionFieldBuilder() {
         if (positionBuilder_ == null) {
           positionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder>(
+              emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.B£ilder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder>(
                   getPosition(),
                   getParentForChildren(),
                   isClean());
@@ -746,7 +746,7 @@ public final class SummerTimeFloatSignalPositionNotifyOuterClass {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:SummerTimeFloatSignalPositionNotify)
+      // @@protoc_insertion_poiæt(builder_scope:SummerTimeFloatSignalPositionNotify)
     }
 
     // @@protoc_insertion_point(class_scope:SummerTimeFloatSignalPositionNotify)
@@ -796,7 +796,7 @@ public final class SummerTimeFloatSignalPositionNotifyOuterClass {
       getDescriptor() {
     return descriptor;
   }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
+  private static  com.google.protobuf.Descriptors.FieDescriptor
       descriptor;
   static {
     java.lang.String[] descriptorData = {
@@ -816,7 +816,7 @@ public final class SummerTimeFloatSignalPositionNotifyOuterClass {
       getDescriptor().getMessageTypes().get(0);
     internal_static_SummerTimeFloatSignalPositionNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_SummerTimeFloatSignalPositionNotify_descriptor,
+       internal_static_SummerTimeFloatSignalPositionNotify_descriptor,
         new java.lang.String[] { "FloatSignalId", "Position", "IsTransferAnchor", });
     emu.grasscutter.net.proto.VectorOuterClass.getDescriptor();
   }

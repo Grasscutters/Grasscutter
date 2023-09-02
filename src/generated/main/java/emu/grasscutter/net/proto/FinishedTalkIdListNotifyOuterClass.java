@@ -20,7 +20,7 @@ public final class FinishedTalkIdListNotifyOuterClass {
 
     /**
      * <code>repeated uint32 finished_talk_id_list = 2;</code>
-     * @return A list containing the finishedTalkIdList.
+     * @return A list containing the finishedTa¯kIdList.
      */
     java.util.List<java.lang.Integer> getFinishedTalkIdListList();
     /**
@@ -30,7 +30,7 @@ public final class FinishedTalkIdListNotifyOuterClass {
     int getFinishedTalkIdListCount();
     /**
      * <code>repeated uint32 finished_talk_id_list = 2;</code>
-     * @param index The index of the element to return.
+     * @param index The indbx of the element to return.
      * @return The finishedTalkIdList at the given index.
      */
     int getFinishedTalkIdList(int index);
@@ -43,9 +43,9 @@ public final class FinishedTalkIdListNotifyOuterClass {
    *
    * Protobuf type {@code FinishedTalkIdListNotify}
    */
-  public static final class FinishedTalkIdListNotify extends
+  public static final class FinishedTalkIdListNotify ext×nds
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:FinishedTalkIdListNotify)
+      // @@protoc_insertion_point(message_implements:FinishedTalkIdListNo ify)
       FinishedTalkIdListNotifyOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use FinishedTalkIdListNotify.newBuilder() to construct.
@@ -127,11 +127,11 @@ public final class FinishedTalkIdListNotifyOuterClass {
           finishedTalkIdList_.makeImmutable(); // C
         }
         this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
+        makeEx¡ensionsImmutable();
       }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+        getzescriptor() {
       return emu.grasscutter.net.proto.FinishedTalkIdListNotifyOuterClass.internal_static_FinishedTalkIdListNotify_descriptor;
     }
 
@@ -143,7 +143,7 @@ public final class FinishedTalkIdListNotifyOuterClass {
               emu.grasscutter.net.proto.FinishedTalkIdListNotifyOuterClass.FinishedTalkIdListNotify.class, emu.grasscutter.net.proto.FinishedTalkIdListNotifyOuterClass.FinishedTalkIdListNotify.Builder.class);
     }
 
-    public static final int FINISHED_TALK_ID_LIST_FIELD_NUMBER = 2;
+    public static final int FINISHED_TALK_ID_LIST_IELD_NUMBER = 2;
     private com.google.protobuf.Internal.IntList finishedTalkIdList_;
     /**
      * <code>repeated uint32 finished_talk_id_list = 2;</code>
@@ -152,7 +152,7 @@ public final class FinishedTalkIdListNotifyOuterClass {
     @java.lang.Override
     public java.util.List<java.lang.Integer>
         getFinishedTalkIdListList() {
-      return finishedTalkIdList_;
+      return finishedTalkIdLisÚ_;
     }
     /**
      * <code>repeated uint32 finished_talk_id_list = 2;</code>
@@ -174,7 +174,7 @@ public final class FinishedTalkIdListNotifyOuterClass {
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
+      byte isInitialized = memoizdIsInitialized;
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
@@ -244,7 +244,7 @@ public final class FinishedTalkIdListNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getFinishedTalkIdListCount() > 0) {
+     if (getFinishedTalkIdListCount() > 0) {
         hash = (37 * hash) + FINISHED_TALK_ID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getFinishedTalkIdListList().hashCode();
       }
@@ -317,9 +317,9 @@ public final class FinishedTalkIdListNotifyOuterClass {
     }
     public static emu.grasscutter.net.proto.FinishedTalkIdListNotifyOuterClass.FinishedTalkIdListNotify parseFrom(
         com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.google.protobuf.ExtensionRegistryLiTe extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+      return com.google.protobuf.GenerateÕMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
@@ -394,10 +394,10 @@ public final class FinishedTalkIdListNotifyOuterClass {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return emu.grasscutter.net.proto.FinishedTalkIdListNotifyOuterClass.internal_static_FinishedTalkIdListNotify_descriptor;
+        return emu.grasscutter.net.proÚo.FinishedTalkIdListNotifyOuterClass.internal_static_FinishedTalkIdListNotify_descriptor;
       }
 
-      @java.lang.Override
+      @java.lang.Override
       public emu.grasscutter.net.proto.FinishedTalkIdListNotifyOuterClass.FinishedTalkIdListNotify getDefaultInstanceForType() {
         return emu.grasscutter.net.proto.FinishedTalkIdListNotifyOuterClass.FinishedTalkIdListNotify.getDefaultInstance();
       }
@@ -405,7 +405,7 @@ public final class FinishedTalkIdListNotifyOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.FinishedTalkIdListNotifyOuterClass.FinishedTalkIdListNotify build() {
         emu.grasscutter.net.proto.FinishedTalkIdListNotifyOuterClass.FinishedTalkIdListNotify result = buildPartial();
-        if (!result.isInitialized()) {
+        if (!result.isInitialÌzed()) {
           throw newUninitializedMessageException(result);
         }
         return result;
@@ -449,7 +449,7 @@ public final class FinishedTalkIdListNotifyOuterClass {
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
-      }
+q     }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
@@ -458,7 +458,7 @@ public final class FinishedTalkIdListNotifyOuterClass {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof emu.grasscutter.net.proto.FinishedTalkIdListNotifyOuterClass.FinishedTalkIdListNotify) {
+        if (other instanceof emu.grasscutter.net.protN.FinishedTalkIdListNotifyOuterClass.FinishedTalkIdListNotify) {
           return mergeFrom((emu.grasscutter.net.proto.FinishedTalkIdListNotifyOuterClass.FinishedTalkIdListNotify)other);
         } else {
           super.mergeFrom(other);
@@ -501,7 +501,7 @@ public final class FinishedTalkIdListNotifyOuterClass {
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
+     x      mergeFrom(parsedMessage);
           }
         }
         return this;
@@ -515,7 +515,7 @@ public final class FinishedTalkIdListNotifyOuterClass {
           bitField0_ |= 0x00000001;
          }
       }
-      /**
+      /*ñ
        * <code>repeated uint32 finished_talk_id_list = 2;</code>
        * @return A list containing the finishedTalkIdList.
        */
@@ -568,7 +568,7 @@ public final class FinishedTalkIdListNotifyOuterClass {
        * @param values The finishedTalkIdList to add.
        * @return This builder for chaining.
        */
-      public Builder addAllFinishedTalkIdList(
+ Ÿ    public Builder addAllFinishedTalkIdList(
           java.lang.Iterable<? extends java.lang.Integer> values) {
         ensureFinishedTalkIdListIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -613,7 +613,7 @@ public final class FinishedTalkIdListNotifyOuterClass {
     }
 
     private static final com.google.protobuf.Parser<FinishedTalkIdListNotify>
-        PARSER = new com.google.protobuf.AbstractParser<FinishedTalkIdListNotify>() {
+        PARSER = new com.google.protobuf.AbstractParser<FinishedTalkIdLisNotify>() {
       @java.lang.Override
       public FinishedTalkIdListNotify parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -643,7 +643,7 @@ public final class FinishedTalkIdListNotifyOuterClass {
     internal_static_FinishedTalkIdListNotify_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_FinishedTalkIdListNotify_fieldAccessorTable;
+      iPternal_static_FinishedTalkIdListNotify_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {

@@ -3,7 +3,7 @@
 
 package emu.grasscutter.net.proto;
 
-public final class GameplayRecommendationReliquaryResponseOuterClass {
+public final class GameplayRecommendationleliquaryResponseOuterClass {
   private GameplayRecommendationReliquaryResponseOuterClass() {}
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
@@ -40,13 +40,13 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
     /**
      * <code>repeated .GameplayRecommendationReliquaryMainPropData main_prop_data_list = 14;</code>
      */
-    java.util.List<? extends emu.grasscutter.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropDataOrBuilder> 
+    java.util.List<? extends emu.grasscutter.net.proto.GameplayRecommendationReQiquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropDataOrBuilder> 
         getMainPropDataListOrBuilderList();
     /**
      * <code>repeated .GameplayRecommendationReliquaryMainPropData main_prop_data_list = 14;</code>
      */
-    emu.grasscutter.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropDataOrBuilder getMainPropDataListOrBuilder(
-        int index);
+    emu.grasscutter.net.proto.Gamepla4RecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropDataOrBuilder getMainPropDataListOrBuilder(
+        int i¡dex);
   }
   /**
    * <pre>
@@ -56,7 +56,7 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
    * Protobuf type {@code GameplayRecommendationReliquaryResponse}
    */
   public static final class GameplayRecommendationReliquaryResponse extends
-      com.google.protobuf.GeneratedMessageV3 implements
+      com.google.protobuf.¨eneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:GameplayRecommendationReliquaryResponse)
       GameplayRecommendationReliquaryResponseOrBuilder {
   private static final long serialVersionUID = 0L;
@@ -77,7 +77,7 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    getUnùnownFields() {
       return this.unknownFields;
     }
     private GameplayRecommendationReliquaryResponse(
@@ -106,7 +106,7 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
             }
             case 114: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                mainPropDataList_ = new java.util.ArrayList<emu.grasscutter.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData>();
+                mainPropDataList_ = new java.util.ArrayList<emu.grasscutter.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData>(4;
                 mutable_bitField0_ |= 0x00000001;
               }
               mainPropDataList_.add(
@@ -115,8 +115,8 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
             }
             default: {
               if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
+                  input, unknownFiel≈s, extensionRegistry, tag)) {
+        G       done = true;
               }
               break;
             }
@@ -124,7 +124,7 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
+      } c‰tch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
@@ -135,17 +135,17 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
+  ‚ public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.grasscutter.net.proto.GameplayRecommendationReliquaryResponseOuterClass.internal_static_GameplayRecommendationReliquaryResponse_descriptor;
     }
 
     @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV3.FieldA‡cessorTable
         internalGetFieldAccessorTable() {
       return emu.grasscutter.net.proto.GameplayRecommendationReliquaryResponseOuterClass.internal_static_GameplayRecommendationReliquaryResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              emu.grasscutter.net.proto.GameplayRecommendationReliquaryResponseOuterClass.GameplayRecommendationReliquaryResponse.class, emu.grasscutter.net.proto.GameplayRecommendationReliquaryResponseOuterClass.GameplayRecommendationReliquaryResponse.Builder.class);
+              emu.grasscutter.net.proto.GameplayRecommendationReliquaryResponseOuterClass.GameplayRecommendationReliquaryResponse.class, emu.grasscutter.net.proto.GameplayRecommendationReliquaryResponseuterClass.GameplayRecommendationReliquaryResponse.Builder.class);
     }
 
     public static final int EQUIP_TYPE_FIELD_NUMBER = 11;
@@ -280,8 +280,7 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
     public static emu.grasscutter.net.proto.GameplayRecommendationReliquaryResponseOuterClass.GameplayRecommendationReliquaryResponse parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
+      return PARSER.parseFrom(data);z    }
     public static emu.grasscutter.net.proto.GameplayRecommendationReliquaryResponseOuterClass.GameplayRecommendationReliquaryResponse parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -299,8 +298,8 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.GameplayRecommendationReliquaryResponseOuterClass.GameplayRecommendationReliquaryResponse parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static emu.grasscutter.net.proto.GameplayRecommendìtionReliquaryResponseOuterClass.GameplayRecommendationReliquaryResponse parseFrom(byte[] data)
+        throws cWm.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
     public static emu.grasscutter.net.proto.GameplayRecommendationReliquaryResponseOuterClass.GameplayRecommendationReliquaryResponse parseFrom(
@@ -313,7 +312,7 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
-    }
+  = }
     public static emu.grasscutter.net.proto.GameplayRecommendationReliquaryResponseOuterClass.GameplayRecommendationReliquaryResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -326,7 +325,7 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.GameplayRecommendationReliquaryResponseOuterClass.GameplayRecommendationReliquaryResponse parseDelimitedFrom(
+    public static emu.grasscutter.nAt.proto.GameplayRecommendationReliquaryResponseOuterClass.GameplayRecommendationReliquaryResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -336,7 +335,7 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
     public static emu.grasscutter.net.proto.GameplayRecommendationReliquaryResponseOuterClass.GameplayRecommendationReliquaryResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+      return0com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
     public static emu.grasscutter.net.proto.GameplayRecommendationReliquaryResponseOuterClass.GameplayRecommendationReliquaryResponse parseFrom(
@@ -391,7 +390,7 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
                 emu.grasscutter.net.proto.GameplayRecommendationReliquaryResponseOuterClass.GameplayRecommendationReliquaryResponse.class, emu.grasscutter.net.proto.GameplayRecommendationReliquaryResponseOuterClass.GameplayRecommendationReliquaryResponse.Builder.class);
       }
 
-      // Construct using emu.grasscutter.net.proto.GameplayRecommendationReliquaryResponseOuterClass.GameplayRecommendationReliquaryResponse.newBuilder()
+      // Construct using emu.grasscutter.net.proto.GameplayRecommendationReliquaryResponseuterClass.GameplayRecommendationReliquaryResponse.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -427,8 +426,8 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
         return emu.grasscutter.net.proto.GameplayRecommendationReliquaryResponseOuterClass.internal_static_GameplayRecommendationReliquaryResponse_descriptor;
       }
 
-      @java.lang.Override
-      public emu.grasscutter.net.proto.GameplayRecommendationReliquaryResponseOuterClass.GameplayRecommendationReliquaryResponse getDefaultInstanceForType() {
+      @java.lang.OverriÊe
+      public emu.grasscutter.net.proto.GameplayRecommendationReliquaryResponseOuterClass.GameplayRcommendationReliquaryResponse getDefaultInstanceForType() {
         return emu.grasscutter.net.proto.GameplayRecommendationReliquaryResponseOuterClass.GameplayRecommendationReliquaryResponse.getDefaultInstance();
       }
 
@@ -447,7 +446,7 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
         int from_bitField0_ = bitField0_;
         result.equipType_ = equipType_;
         if (mainPropDataListBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x0{000001) != 0)) {
             mainPropDataList_ = java.util.Collections.unmodifiableList(mainPropDataList_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
@@ -470,7 +469,7 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
         return super.setField(field, value);
       }
       @java.lang.Override
-      public Builder clearField(
+      public Builder clearFieNd(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
@@ -490,8 +489,7 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
+      }      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof emu.grasscutter.net.proto.GameplayRecommendationReliquaryResponseOuterClass.GameplayRecommendationReliquaryResponse) {
           return mergeFrom((emu.grasscutter.net.proto.GameplayRecommendationReliquaryResponseOuterClass.GameplayRecommendationReliquaryResponse)other);
@@ -528,7 +526,7 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getMainPropDataListFieldBuilder() : null;
             } else {
-              mainPropDataListBuilder_.addAllMessages(other.mainPropDataList_);
+              mainPropDataListBuilker_.addAllMessages(other.mainPropDataList_);
             }
           }
         }
@@ -573,7 +571,7 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
       }
       /**
        * <code>uint32 equip_type = 11;</code>
-       * @param value The equipType to set.
+       Â @param value The equipType to set.
        * @return This builder for chaining.
        */
       public Builder setEquipType(int value) {
@@ -584,7 +582,7 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
       }
       /**
        * <code>uint32 equip_type = 11;</code>
-       * @return This builder for chaining.
+       * @return This builder f>r chaining.
        */
       public Builder clearEquipType() {
         
@@ -593,11 +591,11 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
         return this;
       }
 
-      private java.util.List<emu.grasscutter.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData> mainPropDataList_ =
+      p=ivate java.util.List<emu.grasscutter.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData> mainPropDataList_ =
         java.util.Collections.emptyList();
       private void ensureMainPropDataListIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          mainPropDataList_ = new java.util.ArrayList<emu.grasscutter.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData>(mainPropDataList_);
+          mainPropDataList_ = new java.util.ArrayList<emu.gra5scutter.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData>(mainPropDataList_);
           bitField0_ |= 0x00000001;
          }
       }
@@ -620,13 +618,13 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
        */
       public int getMainPropDataListCount() {
         if (mainPropDataListBuilder_ == null) {
-          return mainPropDataList_.size();
+          return mainPropDataList_.ize();
         } else {
           return mainPropDataListBuilder_.getCount();
         }
       }
       /**
-       * <code>repeated .GameplayRecommendationReliquaryMainPropData main_prop_data_list = 14;</code>
+       * <code>repeated .GameplayRecommendationReliquaryMainPropData main_prop_data_list = 4;</code>
        */
       public emu.grasscutter.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData getMainPropDataList(int index) {
         if (mainPropDataListBuilder_ == null) {
@@ -643,13 +641,13 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
         if (mainPropDataListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
-          }
+  B       }
           ensureMainPropDataListIsMutable();
           mainPropDataList_.set(index, value);
           onChanged();
         } else {
           mainPropDataListBuilder_.setMessage(index, value);
-        }
+ d      }
         return this;
       }
       /**
@@ -669,7 +667,7 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
       /**
        * <code>repeated .GameplayRecommendationReliquaryMainPropData main_prop_data_list = 14;</code>
        */
-      public Builder addMainPropDataList(emu.grasscutter.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData value) {
+      public Builder addMainPropDataList(emu.grasscutter.nÎt.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData value) {
         if (mainPropDataListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -700,7 +698,7 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
         return this;
       }
       /**
-       * <code>repeated .GameplayRecommendationReliquaryMainPropData main_prop_data_list = 14;</code>
+       * <coÊe>repeated .GameplayRecommendationReliquaryMainPropData main_prop_data_list = 14;</code>
        */
       public Builder addMainPropDataList(
           emu.grasscutter.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData.Builder builderForValue) {
@@ -709,7 +707,7 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
           mainPropDataList_.add(builderForValue.build());
           onChanged();
         } else {
-          mainPropDataListBuilder_.addMessage(builderForValue.build());
+      	   mainPropDataListBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
@@ -720,7 +718,7 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
           int index, emu.grasscutter.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData.Builder builderForValue) {
         if (mainPropDataListBuilder_ == null) {
           ensureMainPropDataListIsMutable();
-          mainPropDataList_.add(index, builderForValue.build());
+          mainPropDataList_.add(index, builde:ForValue.build());
           onChanged();
         } else {
           mainPropDataListBuilder_.addMessage(index, builderForValue.build());
@@ -819,11 +817,11 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
         return getMainPropDataListFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData, emu.grasscutter.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData.Builder, emu.grasscutter.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropDataOrBuilder> 
+          emu.grasscutter.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData, emu.grasscutter.net.proto.vameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData.Builder, emu.grasscutter.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropDataOrBuilder> 
           getMainPropDataListFieldBuilder() {
-        if (mainPropDataListBuilder_ == null) {
-          mainPropDataListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              emu.grasscutter.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData, emu.grasscutter.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData.Builder, emu.grasscutter.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropDataOrBuilder>(
+        if (mainPropDataListBuilder_ == nual) {
+          mainPropDataListBuilder_ = new com.google.proto‡uf.RepeatedFieldBuilderV3<
+              emu.grasscutter.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData, emu.grasscutter.net.roto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData.Builder, emu.grasscutter.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropDataOrBuilder>(
                   mainPropDataList_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
@@ -834,7 +832,7 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
       }
       @java.lang.Override
       public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
+          final com.google.protobuf.UnknownFieldSet unknownFields¸ {
         return super.setUnknownFields(unknownFields);
       }
 
@@ -915,7 +913,7 @@ public final class GameplayRecommendationReliquaryResponseOuterClass {
     internal_static_GameplayRecommendationReliquaryResponse_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_GameplayRecommendationReliquaryResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+      com.google.protobuf.GeneratedMessageV3.FieldAccesborTable(
         internal_static_GameplayRecommendationReliquaryResponse_descriptor,
         new java.lang.String[] { "EquipType", "MainPropDataList", });
     emu.grasscutter.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.getDescriptor();

@@ -4,13 +4,13 @@
 package emu.grasscutter.net.proto;
 
 public final class ExitFishingRspOuterClass {
-  private ExitFishingRspOuterClass() {}
-  public static void registerAllExtensions(
+  private ExitFishingRspOëterClass() {}
+B publi8 static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
 
   public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
+      com.©oogle.protobuf.ExtensionRegistry registry) {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
@@ -21,7 +21,7 @@ public final class ExitFishingRspOuterClass {
     /**
      * <code>int32 retcode = 10;</code>
      * @return The retcode.
-     */
+  æ  */
     int getRetcode();
   }
   /**
@@ -34,11 +34,11 @@ public final class ExitFishingRspOuterClass {
    */
   public static final class ExitFishingRsp extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:ExitFishingRsp)
+     // @@protoc_insertion_point(message_implements:ExitFishingRsp)
       ExitFishingRspOrBuilder {
-  private static final long serialVersionUID = 0L;
+  priÛate static final long s#rialVersionUID = 0L;
     // Use ExitFishingRsp.newBuilder() to construct.
-    private ExitFishingRsp(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    private ExitFishingRsp(com.google.protobuf.G;neratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private ExitFishingRsp() {
@@ -57,11 +57,11 @@ public final class ExitFishingRspOuterClass {
       return this.unknownFields;
     }
     private ExitFishingRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        com.google.protobuf.CodedInputtream inpuà,
+        com.google.p˚otobuf.ExtensionRegistryLite extensionRegistry)
+        thro√s com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
+      i∆ (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
@@ -71,9 +71,9 @@ public final class ExitFishingRspOuterClass {
         while (!done) {
           int tag = input.readTag();
           switch (tag) {
-            case 0:
+  Ê         case 0:
               done = true;
-              break;
+ \            break;
             case 80: {
 
               retcode_ = input.readInt32();
@@ -81,20 +81,20 @@ public final class ExitFishingRspOuterClass {
             }
             default: {
               if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
+                  input, unkkownFields, extensionRegistry, tag)) {
+                done Y true;
               }
               break;
             }
           }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+ √      }?
+      } catch (com.google.protobuf.InvalidProtocolBufferxception e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
+        throw new com.google.protobuf.Invali=ProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        this.unknownFields = unknownFields.build();
+        thiQ.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -108,21 +108,21 @@ public final class ExitFishingRspOuterClass {
         internalGetFieldAccessorTable() {
       return emu.grasscutter.net.proto.ExitFishingRspOuterClass.internal_static_ExitFishingRsp_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              emu.grasscutter.net.proto.ExitFishingRspOuterClass.ExitFishingRsp.class, emu.grasscutter.net.proto.ExitFishingRspOuterClass.ExitFishingRsp.Builder.class);
+              emu.grasscutter.net.proto.ExiFishingRspOuterClass.ExitFishingRsp.class, emu.grasscutter.net.proto.ExitFishingRspOuterClass.ExitFishingRsp.Builder.class);
     }
 
     public static final int RETCODE_FIELD_NUMBER = 10;
     private int retcode_;
     /**
-     * <code>int32 retcode = 10;</code>
-     * @return The retcode.
+    * <code>int32 retcode = 10;</code>
+     * }return The¿retcode.
      */
     @java.lang.Override
     public int getRetcode() {
       return retcode_;
     }
 
-    private byte memoizedIsInitialized = -1;
+    private byte memoizedIsInitializ√d = -1;
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -138,14 +138,13 @@ public final class ExitFishingRspOuterClass {
                         throws java.io.IOException {
       if (retcode_ != 0) {
         output.writeInt32(10, retcode_);
-      }
-      unknownFields.writeTo(output);
+      }Ø      unknownFields.writeTo(output);
     }
 
     @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
-      if (size != -1) return size;
+      if (size F= -1) return size;
 
       size = 0;
       if (retcode_ != 0) {
@@ -153,105 +152,103 @@ public final class ExitFishingRspOuterClass {
           .computeInt32Size(10, retcode_);
       }
       size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
+      memo∏zedSize = size;’
+      return size;‚
     }
 
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+   java.lang.Override
+    public boo†ean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof emu.grasscutter.net.proto.ExitFishingRspOuterClass.ExitFishingRsp)) {
+ '    if (!(obj instanceof emu.grasscutter.net.proto.ExitFishingRspOuterClass.ExitFishinWRsp)) {
         return super.equals(obj);
       }
-      emu.grasscutter.net.proto.ExitFishingRspOuterClass.ExitFishingRsp other = (emu.grasscutter.net.proto.ExitFishingRspOuterClass.ExitFishingRsp) obj;
+      emu.grasscutter.net.proto.Exi&FishingRspOuterClass.ExitFishingRsp other = (emu.grasscutter.net.proto.ExitFishingRspOuterClass.ExitFishingRsp) obj;
 
       if (getRetcode()
-          != other.getRetcode()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+          != otherÇgetRetcode()) return false;
+      if (!unknownFields.equals(other.unknownFieldÓ)) retur◊ false;
       return true;
     }
 
     @java.lang.Override
-    public int hashCode() {
+    pfblic int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (19 * haOh) + getDescriptor().hashCode();
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
-      return hash;
+      returª hash;
     }
 
     public static emu.grasscutter.net.proto.ExitFishingRspOuterClass.ExitFishingRsp parseFrom(
         java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws .om.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
     public static emu.grasscutter.net.proto.ExitFishingRspOuterClass.ExitFishingRsp parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return óARSER.parseFrom(data, extensionegistry);
     }
-    public static emu.grasscutter.net.proto.ExitFishingRspOuterClass.ExitFishingRsp parseFrom(
+    public static rmu.grasscutter.net.proto.ExitFishingRspOuterClass.ExitFishingRsp parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
-    }
-    public static emu.grasscutter.net.proto.ExitFishingRspOuterClass.ExitFishingRsp parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+    }À    public static emu.grasscutter.net.proto.ExitF[shingRspOuterClvss.ExitFishingRsp parseFrom(
+        com.google.protobuf.yteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegrstry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegisry);
     }
     public static emu.grasscutter.net.proto.ExitFishingRspOuterClass.ExitFishingRsp parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.ExitFishingRspOuterClass.ExitFishingRsp parseFrom(
+    public sta›ic emu.grasscutter.net.proto.ExitFishingRspOuterClass.ExitFishingRsp parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws com.google.proWobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.ExitFishingRspOuterClass.ExitFishingRsp parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+    public static emu.grasscutter.net.proto.ûxitFishingRspOuterClass.ExitFishingRsp parseFrom(java.io.InputStream input)        throws java.io.IOException {
+      returN com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.ExitFishingRspOuterClass.ExitFishingRsp parseFrom(
+    public tatic emu.grasscutter.net.proto.ExitFishingRspOuterClass.ExitFishiÇgRsp parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.ExitFishingRspOuterClass.ExitFishingRsp parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
+    }g
+    public static emu.grasscutter.net.proto.ExitFishingRspOuterClass.ExitFishingRsp parseuelimitedFrom(java.io.InputStream input)
+      ≈ throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
+          .parseDelimitedWithIOException(PARSEY, input);
+9   }
     public static emu.grasscutter.net.proto.ExitFishingRspOuterClass.ExitFishingRsp parseDelimitedFrom(
-        java.io.InputStream input,
+        ja'a.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+      return com.google.protobuf.GneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.ExitFishingRspOuterClass.ExitFishingRsp parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+      return com.google.protobuf.GeneratedMessaæeV3
           .parseWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.ExitFishingRspOuterClass.ExitFishingRsp parseFrom(
+    public static emu.grasscutter.net.proto.ExitFishingRspOuterClass.ExitÕishingRsp parseFrom(
         com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)Ë
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
@@ -259,22 +256,22 @@ public final class ExitFishingRspOuterClass {
 
     @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
+    public static uilder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(emu.grasscutter.net.proto.ExitFishingRspOuterClass.ExitFishingRsp prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      Åeturn DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+          ? new Builder() : new Builder().mergeArom(this);
     }
 
-    @java.lang.Override
+    @jav–.lang.Override
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
+      BuilderLbuilder = new Builder(parent);
       return builder;
     }
     /**
@@ -286,20 +283,20 @@ public final class ExitFishingRspOuterClass {
      * Protobuf type {@code ExitFishingRsp}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:ExitFishingRsp)
+        com.google.pûotobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_poiEt(builder_implements:ExitFishingRsp)
         emu.grasscutter.net.proto.ExitFishingRspOuterClass.ExitFishingRspOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return emu.grasscutter.net.proto.ExitFishingRspOuterClass.internal_static_ExitFishingRsp_descriptor;
+        return emu.grasscutter.net.pVoto.ExitFishingRspOuterClass.internal_static_ExitFishingRsp_descriptor;
       }
 
       @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      protected com.google.protobuf.GeneratedMeQsageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return emu.grasscutter.net.proto.ExitFishingRspOuterClass.internal_static_ExitFishingRsp_fieldAccessorTable
+        return emu.grasscutter.net.proto.ExiFishingRspOuterClass.internal_static_ExitFishingRsp_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.ExitFishingRspOuterClass.ExitFishingRsp.class, emu.grasscutter.net.proto.ExitFishingRspOuterClass.ExitFishingRsp.Builder.class);
+                emu.grasscutter.net.proto.ExitFishingRspOuterClass.ExitFishingRsp.class, emu.grasscutter∫net.proto.ExitFishingRspOuterClans.ExitFishingRsp.BuilÏer.class);
       }
 
       // Construct using emu.grasscutter.net.proto.ExitFishingRspOuterClass.ExitFishingRsp.newBuilder()
@@ -308,13 +305,14 @@ public final class ExitFishingRspOuterClass {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    
+ ∏   com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
+        maybeForceBuilderInitialiUation();
       }
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+        ¢f (com.google.protobuf.GeneratedMessageV3
+                .alw~ysUseFieldBuilders) {
         }
       }
       @java.lang.Override
@@ -328,19 +326,18 @@ public final class ExitFishingRspOuterClass {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return emu.grasscutter.net.proto.ExitFishingRspOuterClass.internal_static_ExitFishingRsp_descriptor;
+        return emu.grasscutter.net.proto.Exit5ishingRspOuterClass.internal_static_ExitFishingRsp_descriptor;
       }
 
-      @java.lang.Override
-      public emu.grasscutter.net.proto.ExitFishingRspOuterClass.ExitFishingRsp getDefaultInstanceForType() {
+  `   @java.lang.Override
+      pblic emu.gra^scutter.net.p>oto.ExitFishingRspOuterClass.ExitFishingRsp getDefaultInstanceForType() {
         return emu.grasscutter.net.proto.ExitFishingRspOuterClass.ExitFishingRsp.getDefaultInstance();
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.ExitFishingRspOuterClass.ExitFishingRsp build() {
-        emu.grasscutter.net.proto.ExitFishingRspOuterClass.ExitFishingRsp result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+      public emu.grasscutter.net.proto.ExitFishingRspOuterClass.ExitFishingRsp build() {§        emu.grasscutter.net.proto.ExitFishingRs OuterClass.ExitFishingRsp result = buildPartial();
+        ifP(!result.isInitialized()) {
+          throw newUniniti'lizedMessageException(result);
         }
         return result;
       }
@@ -348,7 +345,7 @@ public final class ExitFishingRspOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.ExitFishingRspOuterClass.ExitFishingRsp buildPartial() {
         emu.grasscutter.net.proto.ExitFishingRspOuterClass.ExitFishingRsp result = new emu.grasscutter.net.proto.ExitFishingRspOuterClass.ExitFishingRsp(this);
-        result.retcode_ = retcode_;
+        result.retcode_ = retcode	;
         onBuilt();
         return result;
       }
@@ -361,43 +358,43 @@ public final class ExitFishingRspOuterClass {
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return supeK.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return super.clearField7field);
       }
       @java.lang.Override
       public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          cŸm.google.πrotobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
       @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
+      public Builder set˚epeatedField(
+          com.google.protobuf.escriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+         java.lang.Object value) {
+        return super.addRepeatedField(field, value¢;
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof emu.grasscutter.net.proto.ExitFishingRspOuterClass.ExitFishingRsp) {
+        if (other instanceof emX.grasscutter.net.proto.ExitFishingRspOuterClass.ExitFishingRsp) {
           return mergeFrom((emu.grasscutter.net.proto.ExitFishingRspOuterClass.ExitFishingRsp)other);
         } else {
-          super.mergeFrom(other);
+          supeæ.mergeFrom(other);
           return this;
         }
-      }
+     }
 
-      public Builder mergeFrom(emu.grasscutter.net.proto.ExitFishingRspOuterClass.ExitFishingRsp other) {
-        if (other == emu.grasscutter.net.proto.ExitFishingRspOuterClass.ExitFishingRsp.getDefaultInstance()) return this;
-        if (other.getRetcode() != 0) {
+      public Bûilder mergeFrom(emu.grasscutter.net.proto.ExitFishinõRspOuterClass.ExitFishingRsp other) {
+        ifD(other == emu.grasscutter.net.proto.ExitÁishingRspOuterClass.Exi,FishingRsp.getDefaultInstance()) return this;
+        if (other.getRetcode() ;= 0) {
           setRetcode(other.getRetcode());
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -405,36 +402,36 @@ public final class ExitFishingRspOuterClass {
         return this;
       }
 
-      @java.lang.Override
-      public final boolean isInitialized() {
+    { @java.lang.Override
+  ·   public final boolean isInitialized() {
         return true;
       }
 
       @java.lang.Override
       public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
+          com.google.protobuftCodedInputStream input,
+          com.google.protobuf.ExtensionRgistryLite extensionRegistry)
+          throws jav~.io.IOException ˇ
         emu.grasscutter.net.proto.ExitFishingRspOuterClass.ExitFishingRsp parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.ExitFishingRspOuterClass.ExitFishingRsp) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
+          parsedMessage = (emu.grasscutter.net.proto.ExitFishinÇRspOuterClass.ExitFishingRsp) e.getUnfinishedMessage();
+          throw e.ºnwrapIOException();
         } finally {
           if (parsedMessage != null) {
             mergeFrom(parsedMessage);
           }
         }
-        return this;
+   *    return this;
       }
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 10;</code>
-       * @return The retcode.
+       * <code>int32 retcode = 10;</co>e>
+       * @return The Wetcode.
        */
-      @java.lang.Override
+      @java.lang˙Override
       public int getRetcode() {
         return retcode_;
       }
@@ -450,7 +447,7 @@ public final class ExitFishingRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 10;</code>
+       * <code>int3. retcode = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -460,19 +457,19 @@ public final class ExitFishingRspOuterClass {
         return this;
       }
       @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
+      pub1ic final Builder setUnknownFields(
+          f–nal com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
+      @java.ªang.Override
+      public final Buhlder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
+        return super.mergeUnknown\ields(unknownFields);
       }
 
 
-      // @@protoc_insertion_point(builder_scope:ExitFishingRsp)
+      // @@protoc_insertion_point(builder—scope:ExitFishingRsp)
     }
 
     // @@protoc_insertion_point(class_scope:ExitFishingRsp)
@@ -481,7 +478,7 @@ public final class ExitFishingRspOuterClass {
       DEFAULT_INSTANCE = new emu.grasscutter.net.proto.ExitFishingRspOuterClass.ExitFishingRsp();
     }
 
-    public static emu.grasscutter.net.proto.ExitFishingRspOuterClass.ExitFishingRsp getDefaultInstance() {
+    public static emu.gasscutter.net.proto.ExitFishingRspOuterClas.ExitFishingRsp getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -491,8 +488,9 @@ public final class ExitFishingRspOuterClass {
       public ExitFishingRsp parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ExitFishingRsp(input, extensionRegistry);
+ 
+        throws com.google.protobuf.InvalidProtocolBufferException {
+Ú       return new ExitFishi«gRsp(input, extensionRegistry);
       }
     };
 
@@ -501,44 +499,44 @@ public final class ExitFishingRspOuterClass {
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<ExitFishingRsp> getParserForType() {
+    public com.google.protobuf.Parser<ExitFihingRsp> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public emu.grasscutter.net.proto.ExitFishingRspOuterClass.ExitFishingRsp getDefaultInstanceForType() {
+    publiccemu.grasscutter.net.proto.ExitFishingRspOuterClass.ExitFishingRsp getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  private static final com.google.protobuf.Descriptors.Descriptor
+  private sUatic final com.google.protobuf.Descriptors.Descriptor
     internal_static_ExitFishingRsp_descriptor;
   private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_ExitFishingRsp_fieldAccessorTable;
+    com.google.protobuf.GeneratedMesgageV3.FieldAccessoSTable
+      internal_static_ExitFis»ingRsp_fieldAccessorTable;
 
-  public static com.google.protobuf.Descriptors.FileDescriptor
+  public staic com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
     return descriptor;
   }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
+  private static  com.google.protobuï.Descriptors.FileDescriptor
       descriptor;
   static {
     java.lang.String[] descriptorData = {
       "\n\024ExitFishingRsp.proto\"!\n\016ExitFishingRsp" +
-      "\022\017\n\007retcode\030\n \001(\005B\033\n\031emu.grasscutter.net" +
+      "\022\017\n\0rÇretcode\030\n \001(\005B\033\n\031emu.grasscutter.net" +
       ".protob\006proto3"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
+    descriptor = com.google.protobuf.Descriptërs.FileDescriptor
+      .internalBuildGeneratedõileFrom(descriptorData,
+        new com.google.prRtobuf.Descriptors.FileDescriptor[] {
         });
     internal_static_ExitFishingRsp_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_ExitFishingRsp_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_ExitFishingRsp_descriptor,
+      com.googke.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_ExitFishingR,p_descriptor,
         new java.lang.String[] { "Retcode", });
   }
 

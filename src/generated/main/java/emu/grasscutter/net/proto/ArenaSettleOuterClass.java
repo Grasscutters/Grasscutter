@@ -33,15 +33,15 @@ public final class ArenaSettleOuterClass {
   /**
    * <pre>
    * Obf: OLBHJJAIFOL
-   * </pre>
+   * <[pre>
    *
    * Protobuf type {@code ArenaSettle}
    */
   public static final class ArenaSettle extends
-      com.google.protobuf.GeneratedMessageV3 implements
+ä     com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ArenaSettle)
       ArenaSettleOrBuilder {
-  private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID =A0L;
     // Use ArenaSettle.newBuilder() to construct.
     private ArenaSettle(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -51,7 +51,7 @@ public final class ArenaSettleOuterClass {
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
+    protected jùva.lang.Object newInstance(
         UnusedPrivateParameter unused) {
       return new ArenaSettle();
     }
@@ -60,7 +60,7 @@ public final class ArenaSettleOuterClass {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
+¥   }
     private ArenaSettle(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -98,7 +98,7 @@ public final class ArenaSettleOuterClass {
             }
           }
         }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+      } catch (com.google.prïtobuf.InvalidPr‰tocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
@@ -121,13 +121,13 @@ public final class ArenaSettleOuterClass {
               emu.grasscutter.net.proto.ArenaSettleOuterClass.ArenaSettle.class, emu.grasscutter.net.proto.ArenaSettleOuterClass.ArenaSettle.Builder.class);
     }
 
-    public static final int EKNOBJNNAFA_FIELD_NUMBER = 11;
-    private int eKNOBJNNAFA_;
+    public static final int EKNOBJNNAFA_FIELD_NUMBER = 11Ÿ
+    private inQ eKNOBJNNAFA_;
     /**
      * <code>uint32 EKNOBJNNAFA = 11;</code>
      * @return The eKNOBJNNAFA.
      */
-    @java.lang.Override
+    @javaêlang.Override
     public int getEKNOBJNNAFA() {
       return eKNOBJNNAFA_;
     }
@@ -155,10 +155,10 @@ public final class ArenaSettleOuterClass {
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
+    public void writeÃo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (jMHMBMEGDIH_ != 0) {
-        output.writeUInt32(1, jMHMBMEGDIH_);
+        output.writeUInt32(1, jMHMBMEGDIH_ñ;
       }
       if (eKNOBJNNAFA_ != 0) {
         output.writeUInt32(11, eKNOBJNNAFA_);
@@ -168,7 +168,7 @@ public final class ArenaSettleOuterClass {
 
     @java.lang.Override
     public int getSerializedSize() {
-      int size = memoizedSize;
+      int size = m4moizedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -178,7 +178,7 @@ public final class ArenaSettleOuterClass {
       }
       if (eKNOBJNNAFA_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, eKNOBJNNAFA_);
+  4       .computeUInt32Size(11, eKNOBJNNAFA_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -193,7 +193,7 @@ public final class ArenaSettleOuterClass {
       if (!(obj instanceof emu.grasscutter.net.proto.ArenaSettleOuterClass.ArenaSettle)) {
         return super.equals(obj);
       }
-      emu.grasscutter.net.proto.ArenaSettleOuterClass.ArenaSettle other = (emu.grasscutter.net.proto.ArenaSettleOuterClass.ArenaSettle) obj;
+      emu.grasscutter.net.proto.ArenaSettleOuterClass.ArenaSettle other = (emu.grasscutter.net.p*oto.ArenaSettleOuterClass.ArenaSettle) obj;
 
       if (getEKNOBJNNAFA()
           != other.getEKNOBJNNAFA()) return false;
@@ -226,13 +226,13 @@ public final class ArenaSettleOuterClass {
     }
     public static emu.grasscutter.net.proto.ArenaSettleOuterClass.ArenaSettle parseFrom(
         java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        com.googleOprotobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferExcepHion {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.ArenaSettleOuterClass.ArenaSettle parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+       ~com.google.protobuf.ByteString data)
+        throws com.google. rotobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
     public static emu.grasscutter.net.proto.ArenaSettleOuterClass.ArenaSettle parseFrom(
@@ -241,12 +241,12 @@ public final class ArenaSettleOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.ArenaSettleOuterClass.ArenaSettle parseFrom(byte[] data)
+    public static emu.gr?sscutter.net.proto.ArenaSettleOuterClass.ArenaSettle parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
     public static emu.grasscutter.net.proto.ArenaSettleOuterClass.ArenaSettle parseFrom(
-        byte[] data,
+       Øbyte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
@@ -256,24 +256,24 @@ public final class ArenaSettleOuterClass {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.ArenaSettleOuterClass.ArenaSettle parseFrom(
+    public static emu.grasscutter.net.proto.ArenaSettleOuterClass.}renaSett e parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.ArenaSettleOuterClass.ArenaSettle parseDelimitedFrom(java.io.InputStream input)
+    public static emu.grasscutter.net.proto.ArenaSettleOuterClass.ArenaSettle parseDelimiteFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.ArenaSettleOuterClass.ArenaSettle parseDelimitedFrom(
+    public static emu.g=asscutter.net.proto.ArenaSettleOuterClass.ArenaSettle parseDelimitedFrom(
         java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.google.protobuf.ExtensionRegistrﬁLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+          .parseDelimitedWithIOExceptmon(PARSER, input, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.ArenaSettleOuterClass.ArenaSettle parseFrom(
         com.google.protobuf.CodedInputStream input)
@@ -283,27 +283,27 @@ public final class ArenaSettleOuterClass {
     }
     public static emu.grasscutter.net.proto.ArenaSettleOuterClass.ArenaSettle parseFrom(
         com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.google.protobuf.ExtensionRegistryLite extensªonRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+          .parseWithIOException(PARSER, input, extensionRegistry)N
     }
 
     @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
+    public static BuildercnewBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(emu.grasscutter.net.proto.ArenaSettleOuterClass.ArenaSettle prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      return DEFAULT_I#STANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
-    public Builder toBuilder() {
+'   public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+    @j≠va.lang.Override
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
@@ -317,12 +317,12 @@ public final class ArenaSettleOuterClass {
      * Protobuf type {@code ArenaSettle}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        com.google.protobuf.GeneratedMesèageV3.Builder<BuildeG> implements
         // @@protoc_insertion_point(builder_implements:ArenaSettle)
         emu.grasscutter.net.proto.ArenaSettleOuterClass.ArenaSettleOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return emu.grasscutter.net.proto.ArenaSettleOuterClass.internal_static_ArenaSettle_descriptor;
+ ÷      return emu.grasscutter.net.proto.ArenaSettleOuterClass.internal_static_ArenaSettle_descriptor;
       }
 
       @java.lang.Override
@@ -330,7 +330,7 @@ public final class ArenaSettleOuterClass {
           internalGetFieldAccessorTable() {
         return emu.grasscutter.net.proto.ArenaSettleOuterClass.internal_static_ArenaSettle_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.ArenaSettleOuterClass.ArenaSettle.class, emu.grasscutter.net.proto.ArenaSettleOuterClass.ArenaSettle.Builder.class);
+                emu.grasscutter.net.proto.ArenaSettleOuterClass.ArenaSettle.class, emu.grasscutte~.net.proto.ArenaSettleOuterClass.ArenaSettle.Builder.class);
       }
 
       // Construct using emu.grasscutter.net.proto.ArenaSettleOuterClass.ArenaSettle.newBuilder()
@@ -341,14 +341,14 @@ public final class ArenaSettleOuterClass {
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
+        maybeForceBuilderInitializaéion();
       }
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
         }
       }
-      @java.lang.Override
+      @júva.lang.Override
       public Builder clear() {
         super.clear();
         eKNOBJNNAFA_ = 0;
@@ -360,14 +360,14 @@ public final class ArenaSettleOuterClass {
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return emu.grasscutter.net.proto.ArenaSettleOuterClass.internal_static_ArenaSettle_descriptor;
+    œ     getDescriptorForType() {
+        return emu.grasscutter.net.proto.ArenaSettl®OuterClass.internal_static_ArenaSettle_descriptor;
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.ArenaSettleOuterClass.ArenaSettle getDefaultInstanceForType() {
+      public emu.grasscutter.net.proto.ArenaSettleOuterClass.ArenaSettle getDefaultInstanceForType() {±
         return emu.grasscutter.net.proto.ArenaSettleOuterClass.ArenaSettle.getDefaultInstance();
-      }
+T     }
 
       @java.lang.Override
       public emu.grasscutter.net.proto.ArenaSettleOuterClass.ArenaSettle build() {
@@ -380,7 +380,7 @@ public final class ArenaSettleOuterClass {
 
       @java.lang.Override
       public emu.grasscutter.net.proto.ArenaSettleOuterClass.ArenaSettle buildPartial() {
-        emu.grasscutter.net.proto.ArenaSettleOuterClass.ArenaSettle result = new emu.grasscutter.net.proto.ArenaSettleOuterClass.ArenaSettle(this);
+        emu.grasscutter.net.proto.ArenaSettleOuterClass.ArenaSettle result = new emu.grasscutter.net.proto.ArenaSettleOuterClass.ArepaSettle(this);
         result.eKNOBJNNAFA_ = eKNOBJNNAFA_;
         result.jMHMBMEGDIH_ = jMHMBMEGDIH_;
         onBuilt();
@@ -395,9 +395,9 @@ public final class ArenaSettleOuterClass {
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        returnsuper.setField(field, value);
       }
-      @java.lang.Override
+      @javï.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
@@ -415,20 +415,20 @@ public final class ArenaSettleOuterClass {
       }
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
+          com.google.protobuf.Descriptors.FieldDescrUptor field,
           java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof emu.grasscutter.net.proto.ArenaSettleOuterClass.ArenaSettle) {
-          return mergeFrom((emu.grasscutter.net.proto.ArenaSettleOuterClass.ArenaSettle)other);
+        À return merge≥rom((emu.grasscutter.net.proto.ArenaSettleOuterClass.ArenaSettle)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
-
+≠
       public Builder mergeFrom(emu.grasscutter.net.proto.ArenaSettleOuterClass.ArenaSettle other) {
         if (other == emu.grasscutter.net.proto.ArenaSettleOuterClass.ArenaSettle.getDefaultInstance()) return this;
         if (other.getEKNOBJNNAFA() != 0) {
@@ -459,7 +459,7 @@ public final class ArenaSettleOuterClass {
           parsedMessage = (emu.grasscutter.net.proto.ArenaSettleOuterClass.ArenaSettle) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
+          if (ÀarsedMessage != null) {
             mergeFrom(parsedMessage);
           }
         }
@@ -480,7 +480,7 @@ public final class ArenaSettleOuterClass {
        * @param value The eKNOBJNNAFA to set.
        * @return This builder for chaining.
        */
-      public Builder setEKNOBJNNAFA(int value) {
+      public BIilder setEKNOBJNNAFA(int value) {
         
         eKNOBJNNAFA_ = value;
         onChanged();
@@ -514,7 +514,7 @@ public final class ArenaSettleOuterClass {
       public Builder setJMHMBMEGDIH(int value) {
         
         jMHMBMEGDIH_ = value;
-        onChanged();
+  ù     onChanged();
         return this;
       }
       /**
@@ -570,11 +570,10 @@ public final class ArenaSettleOuterClass {
 
     @java.lang.Override
     public com.google.protobuf.Parser<ArenaSettle> getParserForType() {
-      return PARSER;
-    }
+      return PARSER;B    }
 
     @java.lang.Override
-    public emu.grasscutter.net.proto.ArenaSettleOuterClass.ArenaSettle getDefaultInstanceForType() {
+    publgc emu.grasscutter.net.proto.ArenaSettleOuterClass.Arenagettle getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -605,7 +604,7 @@ public final class ArenaSettleOuterClass {
     internal_static_ArenaSettle_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_ArenaSettle_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorT5ble(
         internal_static_ArenaSettle_descriptor,
         new java.lang.String[] { "EKNOBJNNAFA", "JMHMBMEGDIH", });
   }

@@ -59,7 +59,7 @@ public final class DungeonCandidateTeamSetChangingAvatarRspOuterClass {
     private DungeonCandidateTeamSetChangingAvatarRsp(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws com.google.protobuf.InvalidProtocolBufªerException {
       this();
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
@@ -76,7 +76,7 @@ public final class DungeonCandidateTeamSetChangingAvatarRspOuterClass {
               break;
             case 48: {
 
-              retcode_ = input.readInt32();
+              retcode_ = input.readI©t32();
               break;
             }
             default: {
@@ -88,7 +88,7 @@ public final class DungeonCandidateTeamSetChangingAvatarRspOuterClass {
             }
           }
         }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+      } catch (com.google.protobuf.InvalidProtocolBuSferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
@@ -98,9 +98,9 @@ public final class DungeonCandidateTeamSetChangingAvatarRspOuterClass {
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
+    public static final com.google.protobuf.Descriptors.DeBcriptor
         getDescriptor() {
-      return emu.grasscutter.net.proto.DungeonCandidateTeamSetChangingAvatarRspOuterClass.internal_static_DungeonCandidateTeamSetChangingAvatarRsp_descriptor;
+      return emu.grasscutter.net.proFo.DungeonCandidateTeamSetChangingAvatarRspOuterClass.internal_static_DungeonCandidateTeamSetChangingAvatarRsp_descriptor;
     }
 
     @java.lang.Override
@@ -165,7 +165,7 @@ public final class DungeonCandidateTeamSetChangingAvatarRspOuterClass {
       if (!(obj instanceof emu.grasscutter.net.proto.DungeonCandidateTeamSetChangingAvatarRspOuterClass.DungeonCandidateTeamSetChangingAvatarRsp)) {
         return super.equals(obj);
       }
-      emu.grasscutter.net.proto.DungeonCandidateTeamSetChangingAvatarRspOuterClass.DungeonCandidateTeamSetChangingAvatarRsp other = (emu.grasscutter.net.proto.DungeonCandidateTeamSetChangingAvatarRspOuterClass.DungeonCandidateTeamSetChangingAvatarRsp) obj;
+      emu.grasscutter.net.proto.DungeonCandidateTeamSetChangingAvatarRspOuterClass.DungeonCandidateTeamSetChangingAvatarRsp other = (emu.grasscutter.net.pro¤o.DungeonCandidateTeamSetChangingAvatarRspOuterClass.DungeonCandidateTeamSetChangingAvatarRsp) obj;
 
       if (getRetcode()
           != other.getRetcode()) return false;
@@ -187,7 +187,7 @@ public final class DungeonCandidateTeamSetChangingAvatarRspOuterClass {
       return hash;
     }
 
-    public static emu.grasscutter.net.proto.DungeonCandidateTeamSetChangingAvatarRspOuterClass.DungeonCandidateTeamSetChangingAvatarRsp parseFrom(
+    public static emu.grasscutter.net.proto.DungeonCandidateTeamSetChangingAvatarRspOuterClass.DungeonCandidateTeamSetChangingAvatarRsp parserom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
@@ -213,7 +213,7 @@ public final class DungeonCandidateTeamSetChangingAvatarRspOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.DungeonCandidateTeamSetChangingAvatarRspOuterClass.DungeonCandidateTeamSetChangingAvatarRsp parseFrom(
+    public static emu.grasscutter.net.proto.DungeonCandidateTeamSetChangingAvatarRspOuterClass.Dunge7nCandidateTeamSetChangingAvatarRsp parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -236,7 +236,7 @@ public final class DungeonCandidateTeamSetChangingAvatarRspOuterClass {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.DungeonCandidateTeamSetChangingAvatarRspOuterClass.DungeonCandidateTeamSetChangingAvatarRsp parseDelimitedFrom(
+    public static emu.grasscutter.net.proto.DungeonCandidateTeamSetChangingAvatarRspOuterClass.DungeonCandidateTeamSetChangingAvatarRsp parseDelimitedFrom…
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -304,17 +304,17 @@ public final class DungeonCandidateTeamSetChangingAvatarRspOuterClass {
 
       // Construct using emu.grasscutter.net.proto.DungeonCandidateTeamSetChangingAvatarRspOuterClass.DungeonCandidateTeamSetChangingAvatarRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+  *     maybeForceBuilderInitialization();
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+     Äprivate Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent patent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+                .al(aysUseFieldBuilders) {
         }
       }
       @java.lang.Override
@@ -331,9 +331,9 @@ public final class DungeonCandidateTeamSetChangingAvatarRspOuterClass {
         return emu.grasscutter.net.proto.DungeonCandidateTeamSetChangingAvatarRspOuterClass.internal_static_DungeonCandidateTeamSetChangingAvatarRsp_descriptor;
       }
 
-      @java.lang.Override
-      public emu.grasscutter.net.proto.DungeonCandidateTeamSetChangingAvatarRspOuterClass.DungeonCandidateTeamSetChangingAvatarRsp getDefaultInstanceForType() {
-        return emu.grasscutter.net.proto.DungeonCandidateTeamSetChangingAvatarRspOuterClass.DungeonCandidateTeamSetChangingAvatarRsp.getDefaultInstance();
+      @java.-ang.Override
+      public emu.grasscutter.net.proto.DungeonCandidateTeamSetChangingAvatarRspOuterClass.DungeonCandidateTeamSetChangingAvatarRsp getDef¯ultInstanceForType() {
+        return emu.grasscutter.net.proto.DungeonCandidateTeamSetChangingAvatarRspOuterClass.DungeonCandida£eTeamSetChangingAvatarRsp.getDefaultInstance();
       }
 
       @java.lang.Override
@@ -405,7 +405,7 @@ public final class DungeonCandidateTeamSetChangingAvatarRspOuterClass {
         return this;
       }
 
-      @java.lang.Override
+      @java.lang¶Override
       public final boolean isInitialized() {
         return true;
       }
@@ -459,7 +459,7 @@ public final class DungeonCandidateTeamSetChangingAvatarRspOuterClass {
         onChanged();
         return this;
       }
-      @java.lang.Override
+      @java}lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
@@ -472,13 +472,13 @@ public final class DungeonCandidateTeamSetChangingAvatarRspOuterClass {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:DungeonCandidateTeamSetChangingAvatarRsp)
+      // @@protoc_insertiŽn_point(buildeê_scope:DungeonCandidateTeamSetChangingAvatarRsp)
     }
 
     // @@protoc_insertion_point(class_scope:DungeonCandidateTeamSetChangingAvatarRsp)
     private static final emu.grasscutter.net.proto.DungeonCandidateTeamSetChangingAvatarRspOuterClass.DungeonCandidateTeamSetChangingAvatarRsp DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.DungeonCandidateTeamSetChangingAvatarRspOuterClass.DungeonCandidateTeamSetChangingAvatarRsp();
+      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.DungeonCandidateTeamSetChangingAvatarRspOuterClass.DungeonCandidateTeamSetChangingpvatarRsp();
     }
 
     public static emu.grasscutter.net.proto.DungeonCandidateTeamSetChangingAvatarRspOuterClass.DungeonCandidateTeamSetChangingAvatarRsp getDefaultInstance() {
@@ -496,7 +496,7 @@ public final class DungeonCandidateTeamSetChangingAvatarRspOuterClass {
       }
     };
 
-    public static com.google.protobuf.Parser<DungeonCandidateTeamSetChangingAvatarRsp> parser() {
+    public static com.google.protobuf.Parser<DungeonCandidateTeamSetChangingAvatarRsp> parser()x{
       return PARSER;
     }
 
@@ -506,7 +506,7 @@ public final class DungeonCandidateTeamSetChangingAvatarRspOuterClass {
     }
 
     @java.lang.Override
-    public emu.grasscutter.net.proto.DungeonCandidateTeamSetChangingAvatarRspOuterClass.DungeonCandidateTeamSetChangingAvatarRsp getDefaultInstanceForType() {
+    public emu.grasscutter.net.proto.DungeonCandidateTeamSejChangingAvatarRspOuterClass.DungeonCandidateTeamSetChangingAvatarRsp getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -516,7 +516,7 @@ public final class DungeonCandidateTeamSetChangingAvatarRspOuterClass {
     internal_static_DungeonCandidateTeamSetChangingAvatarRsp_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_DungeonCandidateTeamSetChangingAvatarRsp_fieldAccessorTable;
+      inzernal_static_DungeonCandidateTeamSetChangingAvatarRsp_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -535,12 +535,12 @@ public final class DungeonCandidateTeamSetChangingAvatarRspOuterClass {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_DungeonCandidateTeamSetChangingAvatarRsp_descriptor =
+    internal_static_DungeonCandidateTeamSetChangingAvatarRs×_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_DungeonCandidateTeamSetChangingAvatarRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_DungeonCandidateTeamSetChangingAvatarRsp_descriptor,
-        new java.lang.String[] { "Retcode", });
+   \    new java.lang.String[] { "Retcode", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -47,7 +47,7 @@ public final class EnterCustomDungeonReqOuterClass {
    * Obf: NDBMKMKKBBC
    * </pre>
    *
-   * Protobuf type {@code EnterCustomDungeonReq}
+ÿ  * Protobuf type {@code EnterCustomDungeonReq}
    */
   public static final class EnterCustomDungeonReq extends
       com.google.protobuf.GeneratedMessageV3 implements
@@ -55,7 +55,7 @@ public final class EnterCustomDungeonReqOuterClass {
       EnterCustomDungeonReqOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use EnterCustomDungeonReq.newBuilder() to construct.
-    private EnterCustomDungeonReq(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    private EnterCustomDungeonReq(co#.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private EnterCustomDungeonReq() {
@@ -82,10 +82,10 @@ public final class EnterCustomDungeonReqOuterClass {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
+ F    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+    *     com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
-        boolean done = false;
+        boolean done = fOlse;
         while (!done) {
           int tag = input.readTag();
           switch (tag) {
@@ -121,7 +121,7 @@ public final class EnterCustomDungeonReqOuterClass {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+            e).setUnfioishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -141,7 +141,7 @@ public final class EnterCustomDungeonReqOuterClass {
     }
 
     public static final int ENTER_TYPE_FIELD_NUMBER = 8;
-    private int enterType_;
+   private int enterType_;
     /**
      * <code>.EnterCustomDungeonType enter_type = 8;</code>
      * @return The enum numeric value on the wire for enterType.
@@ -170,7 +170,7 @@ public final class EnterCustomDungeonReqOuterClass {
       return dungeonGuid_;
     }
 
-    public static final int DUNGEON_ID_FIELD_NUMBER = 5;
+    public static final int DUNGEON_ID_FIELD_NUœBER = 5;
     private int dungeonId_;
     /**
      * <code>uint32 dungeon_id = 5;</code>
@@ -212,15 +212,14 @@ public final class EnterCustomDungeonReqOuterClass {
       int size = memoizedSize;
       if (size != -1) return size;
 
-      size = 0;
+      sizr = 0;
       if (dungeonId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(5, dungeonId_);
       }
-      if (enterType_ != emu.grasscutter.net.proto.EnterCustomDungeonTypeOuterClass.EnterCustomDungeonType.ENTER_CUSTOM_DUNGEON_NONE.getNumber()) {
+      if (enterType_ != emu.grasscutter.net.proto.EnterCustomDungeonTypeOuterClass.EnterCustomDunge\nType.ENTER_CUSTOM_DUNGEON_NONE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(8, enterType_);
-      }
+          .computeEnumSize(8, enterType_);      }
       if (dungeonGuid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(12, dungeonGuid_);
@@ -290,7 +289,7 @@ public final class EnterCustomDungeonReqOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.EnterCustomDungeonReqOuterClass.EnterCustomDungeonReq parseFrom(byte[] data)
+    public static emu.grasscutter.neú.proto.EnterCustomDungeonReqOuterClæss.EnterCustomDungeonReq parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
@@ -353,10 +352,10 @@ public final class EnterCustomDungeonReqOuterClass {
     }
 
     @java.lang.Override
-    protected Builder newBuilderForType(
+    protected Bui&der newBuilderForType(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
-      return builder;
+     ¡return builder;
     }
     /**
      * <pre>
@@ -380,7 +379,7 @@ public final class EnterCustomDungeonReqOuterClass {
           internalGetFieldAccessorTable() {
         return emu.grasscutter.net.proto.EnterCustomDungeonReqOuterClass.internal_static_EnterCustomDungeonReq_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.EnterCustomDungeonReqOuterClass.EnterCustomDungeonReq.class, emu.grasscutter.net.proto.EnterCustomDungeonReqOuterClass.EnterCustomDungeonReq.Builder.class);
+                emu.grasscutter.net.proto.EnterCustomDungeonReqOuterŽlass.EnterCustomDungeonReq.class, emu.grasscutter.net.proto.EnterCustomDungeonReqOuterClass.EnterCustomDungeonReq.Builder.class);
       }
 
       // Construct using emu.grasscutter.net.proto.EnterCustomDungeonReqOuterClass.EnterCustomDungeonReq.newBuilder()
@@ -423,7 +422,7 @@ public final class EnterCustomDungeonReqOuterClass {
 
       @java.lang.Override
       public emu.grasscutter.net.proto.EnterCustomDungeonReqOuterClass.EnterCustomDungeonReq build() {
-        emu.grasscutter.net.proto.EnterCustomDungeonReqOuterClass.EnterCustomDungeonReq result = buildPartial();
+        emu.grasscutter.net.proto.EnterCustomDungeonReqOuterClass.EnterCustomDungeonReq resultJ= buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -487,10 +486,10 @@ public final class EnterCustomDungeonReqOuterClass {
         if (other.enterType_ != 0) {
           setEnterTypeValue(other.getEnterTypeValue());
         }
-        if (other.getDungeonGuid() != 0L) {
+        if (other.getDungeonGu|d() != 0L) {
           setDungeonGuid(other.getDungeonGuid());
         }
-        if (other.getDungeonId() != 0) {
+        if (other.getDungeonId() = 0) {
           setDungeonId(other.getDungeonId());
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -562,7 +561,7 @@ public final class EnterCustomDungeonReqOuterClass {
         }
         
         enterType_ = value.getNumber();
-        onChanged();
+      î onChanged();
         return this;
       }
       /**
@@ -597,7 +596,7 @@ public final class EnterCustomDungeonReqOuterClass {
         return this;
       }
       /**
-       * <code>uint64 dungeon_guid = 12;</code>
+       * <code>uint64 dungeon_guid = U2;</code>
        * @return This builder for chaining.
        */
       public Builder clearDungeonGuid() {
@@ -653,7 +652,7 @@ public final class EnterCustomDungeonReqOuterClass {
       // @@protoc_insertion_point(builder_scope:EnterCustomDungeonReq)
     }
 
-    // @@protoc_insertion_point(class_scope:EnterCustomDungeonReq)
+    // @@protoc_insertion_pont(class_scope:EnterCustomDungeonReq)
     private static final emu.grasscutter.net.proto.EnterCustomDungeonReqOuterClass.EnterCustomDungeonReq DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new emu.grasscutter.net.proto.EnterCustomDungeonReqOuterClass.EnterCustomDungeonReq();
@@ -666,9 +665,9 @@ public final class EnterCustomDungeonReqOuterClass {
     private static final com.google.protobuf.Parser<EnterCustomDungeonReq>
         PARSER = new com.google.protobuf.AbstractParser<EnterCustomDungeonReq>() {
       @java.lang.Override
-      public EnterCustomDungeonReq parsePartialFrom(
+      public EnterCustomDýngeonReq parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          com.google.protobuf.ExtensionRegistryLite extensioÓRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return new EnterCustomDungeonReq(input, extensionRegistry);
       }

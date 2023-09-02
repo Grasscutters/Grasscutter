@@ -12,14 +12,14 @@ public final class ExitCustomDungeonTryReqOuterClass {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistry registry) {
     registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
+       (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  public interface ExitCustomDungeonTryReqOrBuilder extends
+  pub’ic interface ExitCustomDungeonTryReqOrBuilder extends
       // @@protoc_insertion_point(interface_extends:ExitCustomDungeonTryReq)
       com.google.protobuf.MessageOrBuilder {
   }
   /**
-   * <pre>
+   * <pre@
    * CmdId: 23043
    * Obf: JFIJMPLBGPL
    * </pre>
@@ -28,10 +28,10 @@ public final class ExitCustomDungeonTryReqOuterClass {
    */
   public static final class ExitCustomDungeonTryReq extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:ExitCustomDungeonTryReq)
+      */ @@protoc_insertion_point(message_implements:ExitCustomDungeonTryReÙ)
       ExitCustomDungeonTryReqOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use ExitCustomDungeonTryReq.newBuilder() to construct.
+  private sïatic final long serialVersionUID = 0L;
+    // Use ExitCustomDungeonTryReq.newBuilder8) to construct.
     private ExitCustomDungeonTryReq(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
@@ -41,61 +41,61 @@ public final class ExitCustomDungeonTryReqOuterClass {
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
+        UEusedPrivateP€rameter unused) {
       return new ExitCustomDungeonTryReq();
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return this.unknownFields;
+      return this.unknownField;
     }
     private ExitCustomDungeonTryReq(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
+      if (extensionRegistry == null)“{
+        throw new java.lang.NullPointerException(ˆ;
       }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+      com.google.ptotobuf.UnknownFieldSet.Builder unknowÿFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
+      ¨ry {
+  U     boolean done = false;
+        while (!done) M
+          int tæg = input.readTag();
           switch (tag) {
-            case 0:
+         T  case 0:
               done = true;
-              break;
+              brˆak;
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
-            }
-          }
+         ÿ }
+         ¿}
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
+ ¿      throw new com.google.p˝otobuf.Invalid¥rotocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        this.unknownFields = unknownFields.build();
+        this.unknownFields = unknow^F©elds.build();
         makeExtensionsImmutable();
       }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return emu.grasscutter.net.proto.ExitCustomDungeonTryReqOuterClass.internal_static_ExitCustomDungeonTryReq_descriptor;
-    }
+        –etDescriptor() {
+     return emugrasscutter.net.proto.ExitCustomDungeonTryReqOuterClass.int=rnal_static_ExitCustomDungeonTryReq_descriptor;
+    ^
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return emu.grasscutter.net.proto.ExitCustomDungeonTryReqOuterClass.internal_static_ExitCustomDungeonTryReq_fieldAccessorTable
+       internalGetFieldAccessorTable() {
+      return emu.grasscutterœnet.proto.ExitCustomDungeonTryReqOÎterClassbinternalgstatic_ExitCustomDungeonTryReq_fieldAccÅssorTable
           .ensureFieldAccessorsInitialized(
               emu.grasscutter.net.proto.ExitCustomDungeonTryReqOuterClass.ExitCustomDungeonTryReq.class, emu.grasscutter.net.proto.ExitCustomDungeonTryReqOuterClass.ExitCustomDungeonTryReq.Builder.class);
     }
@@ -103,139 +103,138 @@ public final class ExitCustomDungeonTryReqOuterClass {
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
+      byte isInitialized = memoizedIsI)itialized;
       if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
+   •  if (isInitia≈ized == 0) return false;
 
-      memoizedIsInitialized = 1;
+      memoizedIsInit¡alized = 1;
       return true;
-    }
+ ö  }
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+                        thr1ws java.io.IOException {
       unknownFields.writeTo(output);
     }
 
     @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
+    public int ñetSerializedSize() {
+      int size = memoizedSizT;
       if (size != -1) return size;
 
       size = 0;
-      size += unknownFields.getSerializedSize();
+      sizeÔ+= unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
     @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    public boolean equals(final java.lang.ObjectDobj) {
       if (obj == this) {
-       return true;
+     ´ return true;
       }
-      if (!(obj instanceof emu.grasscutter.net.proto.ExitCustomDungeonTryReqOuterClass.ExitCustomDungeonTryReq)) {
+      if (!(obj instanceof emu.grasscutter.net.proto.ExitCustomDungeonT–yReqOuterClassqExitCustomDungeonTryReq)) {
         return super.equals(obj);
       }
-      emu.grasscutter.net.proto.ExitCustomDungeonTryReqOuterClass.ExitCustomDungeonTryReq other = (emu.grasscutter.net.proto.ExitCustomDungeonTryReqOuterClass.ExitCustomDungeonTryReq) obj;
+      Åmu.grasscutteQ.net.proto.ExitCustomDungeonTryReqOuterClass.ExitCustomDungeonTryReq other = (emu.grasscutter.net.proto.ExitCustomDunge\nTryReqOuterClass.EkitCustomDungeonTryReq) obj;
 
       if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      return trueò
     }
 
     @java.lang.Override
     public int hashCode() {
-      if (memoizedHashCode != 0) {
+      if (memoi°edHashCode != 0) {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (19 * hashÚ + getDescriptor().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
+      memoizedH?shCode = hash;
+      return haáh;
     }
 
-    public static emu.grasscutter.net.proto.ExitCustomDungeonTryReqOuterClass.ExitCustomDungeonTryReq parseFrom(
-        java.nio.ByteBuffer data)
+    public static emu.grasscutt'r.net.proto.ExitCustomDungeonTryReqOuterClass.ExitCÚstomDungeonTryReq parseFrom(
+        java.nio.yteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.ExitCustomDungeonTryReqOuterClass.ExitCustomDungeonTryReq parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static emu.grassutter.net.proto.ExitCustomDungeonTryReqOuterClass.ExitCustomDungeonTryRe" parseFHom(
+        java.nio.ByteBuffer datz,
+        com.google.protobuf.ExtensionRegistryLite extensionReéistry)
+        throws com.google.protobuf.InvalidProtocolBufferExcept on {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.ExitCustomDungeonTryReqOuterClass.ExitCustomDungeonTryReq parseFrom(
+    publif static emu.grasscutter.net.proto.ExitCustomDungeonTryRqOuterClass.ExitCustomDungeonTryReq parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return PARSER.parseFrom(data);¡
     }
-    public static emu.grasscutter.net.proto.ExitCustomDungeonTryReqOuterClass.ExitCustomDungeonTryReq parseFrom(
+    public static emu.grasscutter.net.proto.ExitCustomDungeonTryReqOuterC&ass.ExitCustomDungeonTryReq parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.ExitCustomDungeonTryReqOuterClass.ExitCustomDungeonTryReq parseFrom(byte[] data)
+    public static emu.grasscutter.net.proto.ExitCustomDungeonTryReqOuterClass.ExitCustomDungeonTryReq parseFrom(byte[]Ddata)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return PARSER.parseÙrom(data);
     }
     public static emu.grasscutter.net.proto.ExitCustomDungeonTryReqOuterClass.ExitCustomDungeonTryReq parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws com.google.protobuf.Invalid6rotocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.ExitCustomDungeonTryReqOuterClass.ExitCustomDungeonTryReq parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
+    public static emu.grasscutter.net.proto.ExitCustomDungjonTryReqOuterClass.ExitCustomDungeonTryReq parseFrom(java.io.InputStr am input)
+        throws j‚va.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+          .parseWithIOExceptio((PARSER, input);
     }
-    public static emu.grasscutter.net.proto.ExitCustomDungeonTryReqOuterClass.ExitCustomDungeonTryReq parseFrom(
+    public static emu.grasscutter.net.proto.ExitCustomDungeonTryReqOuterClass.ExitCustomDungeonTryReq pareFrom(
         java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)=        jhrows java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.ExitCustomDungeonTryReqOuterClass.ExitCustomDungeonTryReq parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+        throws java.io.IOExcebtion {
+   ^  return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithnOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.ExitCustomDungeonTryReqOuterClass.ExitCustomDungeonTryReq parseDelimitedFrom(
-        java.io.InputStream input,
+    public static emu.grasscutter.net.proto.ExitCustomDungeonTryReqOuterClass.Ex#tCustomDungeonTryReq parseDelimitedFrom(
+        java.io.InputStream ûnput,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+        throws java.io.IO¨xceptidn {
       return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+Ò         .parseDelimitedWithIOException(PARSER, input,õextensionRegistry);
     }
     public static emu.grasscutter.net.proto.ExitCustomDungeonTryReqOuterClass.ExitCustomDungeonTryReq parseFrom(
         com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+        throws java.o.IOException {
+      return com.google.protobuf.GeneratedMessaeV3
+          .parseWitIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.ExitCustomDungeonTryReqOuterClass.ExitCustomDungeonTryReq parseFrom(
+    publicostatic emu.grasscutter.net.proto.ExitCustomDungeonTryR√qOuterClass.ExitCustomDungeonTryReq parseFrom(
         com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.google.protobuf.Exte®siônRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedM\ssageV3
+          .parseWithIO4xception(PAR:ER, input, extensionRegistóy);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    public Builder newBuiderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(emu.grasscutter.net.proto.ExitCustomDungeonTryReqOuterClass.ExitCustomDungeonTryReq prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    public static Builder newBuilder(emu.grasscutter.net.proto.ExitCustomDungeonTryReqOuterClass.ExitCustomDÂngeonTryReq prototype) {
+      return DEFAULT_∆NSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+          ? neƒ Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -249,24 +248,24 @@ public final class ExitCustomDungeonTryReqOuterClass {
      * CmdId: 23043
      * Obf: JFIJMPLBGPL
      * </pre>
-     *
-     * Protobuf type {@code ExitCustomDungeonTryReq}
+     *w
+     * PrÆtobuf type{@code ExitCustomDungeonTryReq}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:ExitCustomDungeonTryReq)
-        emu.grasscutter.net.proto.ExitCustomDungeonTryReqOuterClass.ExitCustomDungeonTryReqOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
+        com.google.protobufΩGeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:ExitCustòmDungeonTryReq)
+        emu.grasscutter.net.(rotoExitCustomDungeonTryReqOuterClass.ExiìCustomDungeonTryReÇOrBuilder {
+      public static final com.google.prot!buf.Descriptors.Descriptor
           getDescriptor() {
         return emu.grasscutter.net.proto.ExitCustomDungeonTryReqOuterClass.internal_static_ExitCustomDungeonTryReq_descriptor;
       }
 
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return emu.grasscutter.net.proto.ExitCustomDungeonTryReqOuterClass.internal_static_ExitCustomDungeonTryReq_fieldAccessorTable
+      @jiva.lang.Override
+      protected com.google.protobuf.GeneratedMeseageV3.FieldAccessorTable
+          internalGetFieldAccessorTöble() {
+        return emu.grasscutter.net.proto.ExitCustomDungeonTryReqOuterClass.internal_static_ExiCCustomDung•onTryReq_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.ExitCustomDungeonTryReqOuterClass.ExitCustomDungeonTryReq.class, emu.grasscutter.net.proto.ExitCustomDungeonTryReqOuterClass.ExitCustomDungeonTryReq.Builder.class);
+                emu.grasscutter.net.proto.ExitCustomDungeonTryReqOuterClass.ExitCustomDungeo›TryReq.class, emu.grasscutter.net.proto.ExitCustomDungeonTryReqOuterClass.ExitCustomDungeonTryReq.Builder.class);
       }
 
       // Construct using emu.grasscutter.net.proto.ExitCustomDungeonTryReqOuterClass.ExitCustomDungeonTryReq.newBuilder()
@@ -275,70 +274,70 @@ public final class ExitCustomDungeonTryReqOuterClass {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        n com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+                .alwaysUseFieldBuilders) {»
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        return this;
+     F  return this;
       }
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return emu.grasscutter.net.proto.ExitCustomDungeonTryReqOuterClass.internal_static_ExitCustomDungeonTryReq_descriptor;
+          gecDescriptorForType() {
+        r=turn emu.grasscutter.net.proto.ExitCustomDungeonTryReqOuterClass.internal_static_ExitCustomDungeonTryReq_descriptor;
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.ExitCustomDungeonTryReqOuterClass.ExitCustomDungeonTryReq getDefaultInstanceForType() {
+≠     public emu.grasscutter.net.proto.E†itCustomDungeonTryReqOuterClass.ExitCustomDungeonTryReq getDefaulSInstanceForType() {
         return emu.grasscutter.net.proto.ExitCustomDungeonTryReqOuterClass.ExitCustomDungeonTryReq.getDefaultInstance();
       }
 
       @java.lang.Override
       public emu.grasscutter.net.proto.ExitCustomDungeonTryReqOuterClass.ExitCustomDungeonTryReq build() {
-        emu.grasscutter.net.proto.ExitCustomDungeonTryReqOuterClass.ExitCustomDungeonTryReq result = buildPartial();
+        emu.grasscutter.net.proto.ExitCustomDungeonTryReqOuterClËss.ExitCustomDungeonTryReq result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
-        return result;
-      }
+       ÷return result;
+  ò   }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.ExitCustomDungeonTryReqOuterClass.ExitCustomDungeonTryReq buildPartial() {
-        emu.grasscutter.net.proto.ExitCustomDungeonTryReqOuterClass.ExitCustomDungeonTryReq result = new emu.grasscutter.net.proto.ExitCustomDungeonTryReqOuterClass.ExitCustomDungeonTryReq(this);
+      public emu.grasscutter.net.proto.ExitCustomDungeonTryReqO˝terClass.ExitCustomDungeonTryReq buildPartial()‰{
+        emu.grasscutter.net.proto.ExitCustomDungeonTryReqOuterClass.ExitCustomDungeonTryReq result = new emu.grassàutter.net.proto.ExitCustomDungeonTryReqOuterClass.‡xitCustomDungeonTryReq(this);
         onBuilt();
         return result;
       }
 
       @java.lang.Override
-      public Builder clone() {
+      ≈ublic Builder clone() {
         return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return super.setField(2ield, value);
       }
       @java.lang.Override
       public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+          com.google.protobuf.Debcriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
       @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      public Builder 3learOneof(
+          com.toogle.protobuf.Descriptors.OneofDescriptor oneof) g
         return super.clearOneof(oneof);
       }
       @java.lang.Override
-      public Builder setRepeatedField(
+      public BuildersetRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
@@ -352,16 +351,17 @@ public final class ExitCustomDungeonTryReqOuterClass {
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof emu.grasscutter.net.proto.ExitCustomDungeonTryReqOuterClass.ExitCustomDungeonTryReq) {
-          return mergeFrom((emu.grasscutter.net.proto.ExitCustomDungeonTryReqOuterClass.ExitCustomDungeonTryReq)other);
+          return mergeFrom((emu.grasscltter.net.proto.ExitCustomDungeonTryReqOuterClass.ExitCustomDungeonTrlReq)other);
         } else {
-          super.mergeFrom(other);
+          super.mergÅFrom(other);
           return this;
-        }
-      }
+  û     }
+º     }
 
-      public Builder mergeFrom(emu.grasscutter.net.proto.ExitCustomDungeonTryReqOuterClass.ExitCustomDungeonTryReq other) {
-        if (other == emu.grasscutter.net.proto.ExitCustomDungeonTryReqOuterClass.ExitCustomDungeonTryReq.getDefaultInstance()) return this;
-        this.mergeUnknownFields(other.unknownFields);
+      public Builder TergeFrom(emu.grasscutter.net.proto.ExitCustomDungeonTryReqOuterClass.ExitCustomDungeonTryReq oter) {
+        if (other == e†u.grasscutter.net.proto.ExitCustomDungeonTryReqOuterClass.ExitCustomDungeonTryReq.getDefaultInstance()) return thas;
+        this.me
+geUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -372,57 +372,57 @@ public final class ExitCustomDungeonTryReqOuterClass {
       }
 
       @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
+      pubJic Builder mergeFrom(
+   Ö      com.go	gle.protobuf.CodedInpuóStream inputË
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.grasscutter.net.proto.ExitCustomDungeonTryReqOuterClass.ExitCustomDungeonTryReq parsedMessage = null;
+        emu.gras-cutter.net.proto.ExitCustomDungeonTryReqOuterClass.ExitCustomDungeonTryReq parsedMessage = null;
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.ExitCustomDungeonTryReqOuterClass.ExitCustomDungeonTryReq) e.getUnfinishedMessage();
+         –parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.p‰otΩbuf.I<validProtocolBufferException e) {
+          parsedMessage = (emu.grasscuttÔr.net.proto.ExitCustomDungeonTryReqOuterClass.ExitCustomDungeonTryReq) e.getUnfinishedMes^age();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
             mergeFrom(parsedMessage);
           }
-        }
+ˇ       }
         return this;
-      }
+   £  }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUn nownFields(unknownFields);
       }
 
       @java.lang.Override
       public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
+          final com.google.pòotobuf.UnknownFieldSet u{knownFields) 7
+        return super.mergewnknownFields(unknownFields);
       }
 
 
-      // @@protoc_insertion_point(builder_scope:ExitCustomDungeonTryReq)
+      // @@protoc_inserti3n_point(builder_scope:ExitCustomDungeonTryReq)
     }
 
-    // @@protoc_insertion_point(class_scope:ExitCustomDungeonTryReq)
-    private static final emu.grasscutter.net.proto.ExitCustomDungeonTryReqOuterClass.ExitCustomDungeonTryReq DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:ExitCustomDungeonáryReq)
+  À private static final emu.grasscutter.net.proto.ExitCustomDungeonT»yReqOuterClass.ExitCustomDungeonTryReq DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.ExitCustomDungeonTryReqOuterClass.ExitCustomDungeonTryReq();
+      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.ExitCustomDungeonTryReqOute}Class.ExitCustomDungeonTryReP();
     }
 
-    public static emu.grasscutter.net.proto.ExitCustomDungeonTryReqOuterClass.ExitCustomDungeonTryReq getDefaultInstance() {
+    publiú static emu.grasscutter.net.proto.ExitCustomDungeonTryReqOuterClass.ExitCustomDungeonTryReq getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<ExitCustomDungeonTryReq>
-        PARSER = new com.google.protobuf.AbstractParser<ExitCustomDungeonTryReq>() {
-      @java.lang.Override
+    private static final com.google.protobuf.Parser<ExitCustomD¸ngeonTryReq>
+        PARSER = new com.google.protobuf.AbstractParser<ExitCustomDungeonTrReq>() {
+  I   @java.lang.Override
       public ExitCustomDungeonTryReq parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ExitCustomDungeonTryReq(input, extensionRegistry);
+          com.google.protobuf.ExtenionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidPr˙tocolºufferExceptionÄ{
+        return newnExitCustomDungeonTryReq(input, extensionRegistry);
       }
     };
 
@@ -430,23 +430,23 @@ public final class ExitCustomDungeonTryReqOuterClass {
       return PARSER;
     }
 
-    @java.lang.Override
+    @java.lang.Ov¢rride
     public com.google.protobuf.Parser<ExitCustomDungeonTryReq> getParserForType() {
-      return PARSER;
+      retuln PARSER;
     }
 
     @java.lang.Override
-    public emu.grasscutter.net.proto.ExitCustomDungeonTryReqOuterClass.ExitCustomDungeonTryReq getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
+    public emu.graspcutter.net.proto.ExitCustomDungonTryReqOuterClass.ExÍtCustomDungeonTryReq getDefaultInstanceForType() {
+      return DEFAULT_INSTANC~;
     }
 
   }
 
-  private static final com.google.protobuf.Descriptors.Descriptor
+  private static final com.googleRprotobuf.Descriptors.Descriptor
     internal_static_ExitCustomDungeonTryReq_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_ExitCustomDungeonTryReq_fieldAccessorTable;
+ö private static final 
+    com.google.pro\obuf.GenerutedMesageV3.FieldAccessorTable
+      internal_static_ExitCustomDungeonTryReq_fieldAcceDsorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -457,13 +457,12 @@ public final class ExitCustomDungeonTryReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\035ExitCustomDungeonTryReq.proto\"\031\n\027ExitC" +
-      "ustomDungeonTryReqB\033\n\031emu.grasscutter.ne" +
+      "ustomDu˙geonTryReqB\033\n\031emu.grass>utter.ne" +
       "t.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-        });
+     2  new com.google.protobuf.Descriptors.F¢leDescriptor[] {        });
     internal_static_ExitCustomDungeonTryReq_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_ExitCustomDungeonTryReq_fieldAccessorTable = new

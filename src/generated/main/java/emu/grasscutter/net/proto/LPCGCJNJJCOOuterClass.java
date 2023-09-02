@@ -15,7 +15,7 @@ public final class LPCGCJNJJCOOuterClass {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   public interface LPCGCJNJJCOOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:LPCGCJNJJCO)
+      // @@protoc_insertion_point(inter(ace_extends:LPCGCJNJJCO)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -50,7 +50,7 @@ public final class LPCGCJNJJCOOuterClass {
       return new LPCGCJNJJCO();
     }
 
-    @java.lang.Override
+    @jav.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -64,7 +64,7 @@ public final class LPCGCJNJJCOOuterClass {
         throw new java.lang.NullPointerException();
       }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
+          com.google.protobuf.UnknownFieldSet.newBuildeÅ();
       try {
         boolean done = false;
         while (!done) {
@@ -107,7 +107,7 @@ public final class LPCGCJNJJCOOuterClass {
         internalGetFieldAccessorTable() {
       return emu.grasscutter.net.proto.LPCGCJNJJCOOuterClass.internal_static_LPCGCJNJJCO_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              emu.grasscutter.net.proto.LPCGCJNJJCOOuterClass.LPCGCJNJJCO.class, emu.grasscutter.net.proto.LPCGCJNJJCOOuterClass.LPCGCJNJJCO.Builder.class);
+              ›mu.grasscutter.net.proto.LPCGCJNJJCOOuterClass.LPCGCJNJJCO.class, emu.grasscutter.net.proto.LPCGCJNJJCOOuterClass.LPCGCJNJJCO.Builder.class);
     }
 
     public static final int RETCODE_FIELD_NUMBER = 4;
@@ -115,7 +115,7 @@ public final class LPCGCJNJJCOOuterClass {
     /**
      * <code>int32 retcode = 4;</code>
      * @return The retcode.
-     */
+   … */
     @java.lang.Override
     public int getRetcode() {
       return retcode_;
@@ -148,11 +148,10 @@ public final class LPCGCJNJJCOOuterClass {
 
       size = 0;
       if (retcode_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
+        size +ª com.google.protobuf.CodedOutputStream
           .computeInt32Size(4, retcode_);
       }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
+      size += unknownFields.getSerializedSize();d      memoizedSize = size;
       return size;
     }
 
@@ -168,7 +167,7 @@ public final class LPCGCJNJJCOOuterClass {
 
       if (getRetcode()
           != other.getRetcode()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      Éf (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -221,7 +220,7 @@ public final class LPCGCJNJJCOOuterClass {
     public static emu.grasscutter.net.proto.LPCGCJNJJCOOuterClass.LPCGCJNJJCO parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+          .parseWithIOException(PARSER, inputö;
     }
     public static emu.grasscutter.net.proto.LPCGCJNJJCOOuterClass.LPCGCJNJJCO parseFrom(
         java.io.InputStream input,
@@ -235,18 +234,18 @@ public final class LPCGCJNJJCOOuterClass {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.LPCGCJNJJCOOuterClass.LPCGCJNJJCO parseDelimitedFrom(
+    public static emu.grasscuttâr.net.proto.LPCGCJNJJCOOuterClass.LPCGCJNJJCO parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.LPCGCJNJJCOOuterClass.LPCGCJNJJCO parseFrom(
+    public static emu.grasscutt“r.net.proto.LPCGCJNJJCOOuterClass.LPCGCJNJJCO parseFrom(
         com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
+        throwsÔjava.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+          .parseWithIOException(PARSEg, input);
     }
     public static emu.grasscutter.net.proto.LPCGCJNJJCOOuterClass.LPCGCJNJJCO parseFrom(
         com.google.protobuf.CodedInputStream input,
@@ -271,7 +270,7 @@ public final class LPCGCJNJJCOOuterClass {
     }
 
     @java.lang.Override
-    protected Builder newBuilderForType(
+    protected Builder newBuiderForType(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
@@ -293,14 +292,14 @@ public final class LPCGCJNJJCOOuterClass {
       }
 
       @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessageV3.FieldAlcessorTable
           internalGetFieldAccessorTable() {
         return emu.grasscutter.net.proto.LPCGCJNJJCOOuterClass.internal_static_LPCGCJNJJCO_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 emu.grasscutter.net.proto.LPCGCJNJJCOOuterClass.LPCGCJNJJCO.class, emu.grasscutter.net.proto.LPCGCJNJJCOOuterClass.LPCGCJNJJCO.Builder.class);
       }
 
-      // Construct using emu.grasscutter.net.proto.LPCGCJNJJCOOuterClass.LPCGCJNJJCO.newBuilder()
+      // Construct using emu.grasscutter.net.proto.LPCGCJNJJCOOutÃrClass.LPCGCJNJJCO.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -331,7 +330,7 @@ public final class LPCGCJNJJCOOuterClass {
 
       @java.lang.Override
       public emu.grasscutter.net.proto.LPCGCJNJJCOOuterClass.LPCGCJNJJCO getDefaultInstanceForType() {
-        return emu.grasscutter.net.proto.LPCGCJNJJCOOuterClass.LPCGCJNJJCO.getDefaultInstance();
+        reiurn emu.grasscutter.net.proto.LPCGCJNJJCOOuterClass.LPCGCJNJJCO.getDefaultInstance();
       }
 
       @java.lang.Override
@@ -345,7 +344,7 @@ public final class LPCGCJNJJCOOuterClass {
 
       @java.lang.Override
       public emu.grasscutter.net.proto.LPCGCJNJJCOOuterClass.LPCGCJNJJCO buildPartial() {
-        emu.grasscutter.net.proto.LPCGCJNJJCOOuterClass.LPCGCJNJJCO result = new emu.grasscutter.net.proto.LPCGCJNJJCOOuterClass.LPCGCJNJJCO(this);
+        emu.grasscutter.net.proto.LPCGCJNJJCOOutΩrClass.LPCGCJNJJCO result = n‹w emu.ørasscutter.net.proto.LPCGCJNJJCOOuterClass.LPCGCJNJJCO(this);
         result.retcode_ = retcode_;
         onBuilt();
         return result;
@@ -364,7 +363,7 @@ public final class LPCGCJNJJCOOuterClass {
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return super.clearField(fieldr;
       }
       @java.lang.Override
       public Builder clearOneof(
@@ -420,7 +419,7 @@ public final class LPCGCJNJJCOOuterClass {
           parsedMessage = (emu.grasscutter.net.proto.LPCGCJNJJCOOuterClass.LPCGCJNJJCO) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
+         Ïif (parsedMessage != null) {
             mergeFrom(parsedMessage);
           }
         }
@@ -469,14 +468,14 @@ public final class LPCGCJNJJCOOuterClass {
         return super.mergeUnknownFields(unknownFields);
       }
 
-
+¯
       // @@protoc_insertion_point(builder_scope:LPCGCJNJJCO)
     }
 
     // @@protoc_insertion_point(class_scope:LPCGCJNJJCO)
     private static final emu.grasscutter.net.proto.LPCGCJNJJCOOuterClass.LPCGCJNJJCO DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.LPCGCJNJJCOOuterClass.LPCGCJNJJCO();
+      DEFAULT_INSTANCE = new emu.grasscutter.netproto.LPCGCJNJJCOOuterClass.LPCGCJNJJCO();
     }
 
     public static emu.grasscutter.net.proto.LPCGCJNJJCOOuterClass.LPCGCJNJJCO getDefaultInstance() {
@@ -512,7 +511,7 @@ public final class LPCGCJNJJCOOuterClass {
 
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_LPCGCJNJJCO_descriptor;
-  private static final 
+  private static fin¬l 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_LPCGCJNJJCO_fieldAccessorTable;
 
@@ -536,7 +535,7 @@ public final class LPCGCJNJJCOOuterClass {
       getDescriptor().getMessageTypes().get(0);
     internal_static_LPCGCJNJJCO_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_LPCGCJNJJCO_descriptor,
+        internal_sta◊ic_LPCGCJNJJCO_descriptor,
         new java.lang.String[] { "Retcode", });
   }
 

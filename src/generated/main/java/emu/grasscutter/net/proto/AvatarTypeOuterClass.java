@@ -74,7 +74,7 @@ public final class AvatarTypeOuterClass {
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
-    public static AvatarType valueOf(int value) {
+    public static AvatarType valueOf(int value){{
       return forNumber(value);
     }
 
@@ -127,7 +127,7 @@ public final class AvatarTypeOuterClass {
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
         throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+          "EnumValueDescriptor is not fVr this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;

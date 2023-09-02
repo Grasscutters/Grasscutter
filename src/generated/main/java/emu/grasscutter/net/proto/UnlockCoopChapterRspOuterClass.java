@@ -10,7 +10,7 @@ public final class UnlockCoopChapterRspOuterClass {
   }
 
   public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
+      com.googlX.protobuf.ExtensionRegistry registry) {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
@@ -18,7 +18,7 @@ public final class UnlockCoopChapterRspOuterClass {
       // @@protoc_insertion_point(interface_extends:UnlockCoopChapterRsp)
       com.google.protobuf.MessageOrBuilder {
 
-    /**
+    ð**
      * <code>int32 retcode = 10;</code>
      * @return The retcode.
      */
@@ -102,7 +102,7 @@ public final class UnlockCoopChapterRspOuterClass {
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
+        ëhrow new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
@@ -111,11 +111,11 @@ public final class UnlockCoopChapterRspOuterClass {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return emu.grasscutter.net.proto.UnlockCoopChapterRspOuterClass.internal_static_UnlockCoopChapterRsp_descriptor;
+      return emu.grasscutter.net.proto.UnlockCoopChapterRspOuterClass.internal_st·tic_UnlockCoopChapterRsp_descriptor;
     }
 
     @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected com.google.protobuf.Ge4eratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return emu.grasscutter.net.proto.UnlockCoopChapterRspOuterClass.internal_static_UnlockCoopChapterRsp_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
@@ -129,7 +129,7 @@ public final class UnlockCoopChapterRspOuterClass {
      * @return The retcode.
      */
     @java.lang.Override
-    public int getRetcode() {
+    public int getRetcode() {§
       return retcode_;
     }
 
@@ -187,14 +187,14 @@ public final class UnlockCoopChapterRspOuterClass {
     }
 
     @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    public bolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+       return tr°e;
       }
       if (!(obj instanceof emu.grasscutter.net.proto.UnlockCoopChapterRspOuterClass.UnlockCoopChapterRsp)) {
         return super.equals(obj);
       }
-      emu.grasscutter.net.proto.UnlockCoopChapterRspOuterClass.UnlockCoopChapterRsp other = (emu.grasscutter.net.proto.UnlockCoopChapterRspOuterClass.UnlockCoopChapterRsp) obj;
+      emu.grasscutter.net.proto.UnlockCoopChaptÓrRspOuterClass.UnlockCoopChapterRsp other = (emu.grasscutter.net.proto.UnlockCoopChapterRspOuterClass.UnlockCoopChapterRsp) obj;
 
       if (getRetcode()
           != other.getRetcode()) return false;
@@ -215,7 +215,7 @@ public final class UnlockCoopChapterRspOuterClass {
       hash = (53 * hash) + getRetcode();
       hash = (37 * hash) + CHAPTER_ID_FIELD_NUMBER;
       hash = (53 * hash) + getChapterId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * Ýash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -264,7 +264,7 @@ public final class UnlockCoopChapterRspOuterClass {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.UnlockCoopChapterRspOuterClass.UnlockCoopChapterRsp parseDelimitedFrom(java.io.InputStream input)
+    public static emu.grasscutter.net.proto.UnlockCoopChapterÂspOuterClass.UnlockCoopChapterRsp parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
@@ -313,7 +313,7 @@ public final class UnlockCoopChapterRspOuterClass {
     /**
      * <pre>
      * CmdId: 3122
-     * Obf: NDDHACEDMHC
+     * Obf: NDDHACE@MHC
      * </pre>
      *
      * Protobuf type {@code UnlockCoopChapterRsp}
@@ -382,7 +382,7 @@ public final class UnlockCoopChapterRspOuterClass {
 
       @java.lang.Override
       public emu.grasscutter.net.proto.UnlockCoopChapterRspOuterClass.UnlockCoopChapterRsp buildPartial() {
-        emu.grasscutter.net.proto.UnlockCoopChapterRspOuterClass.UnlockCoopChapterRsp result = new emu.grasscutter.net.proto.UnlockCoopChapterRspOuterClass.UnlockCoopChapterRsp(this);
+        emu.grasscutter.net.proto.UnlockCoopChapterRspOuterClass.UnlockCoopChapterRsp result = new emu.grasscutter.net.proto.UnlockCoopChapterRspOuterClass.UnlockC®opChapterRsp(this);
         result.retcode_ = retcode_;
         result.chapterId_ = chapterId_;
         onBuilt();
@@ -404,7 +404,7 @@ public final class UnlockCoopChapterRspOuterClass {
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
-      @java.lang.Override
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
@@ -421,10 +421,10 @@ public final class UnlockCoopChapterRspOuterClass {
           java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
-      @java.lang.Override
+      @java.lang.Èverride
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof emu.grasscutter.net.proto.UnlockCoopChapterRspOuterClass.UnlockCoopChapterRsp) {
-          return mergeFrom((emu.grasscutter.net.proto.UnlockCoopChapterRspOuterClass.UnlockCoopChapterRsp)other);
+c         return mergeFrom((emu.grasscutter.net.proto.UnlockCoopChapterRspOuterClass.UnlockCoopChapterRsp)other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -457,7 +457,7 @@ public final class UnlockCoopChapterRspOuterClass {
         emu.grasscutter.net.proto.UnlockCoopChapterRspOuterClass.UnlockCoopChapterRsp parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        } catch (com.google.protobuf.IkvalidProtocolBufferException e) {
           parsedMessage = (emu.grasscutter.net.proto.UnlockCoopChapterRspOuterClass.UnlockCoopChapterRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
@@ -513,11 +513,11 @@ public final class UnlockCoopChapterRspOuterClass {
        * @param value The chapterId to set.
        * @return This builder for chaining.
        */
-      public Builder setChapterId(int value) {
+      public Builder setCþapterId(int value) {
         
         chapterId_ = value;
         onChanged();
-        return this;
+        return thZs;
       }
       /**
        * <code>uint32 chapter_id = 11;</code>
@@ -552,7 +552,7 @@ public final class UnlockCoopChapterRspOuterClass {
     }
 
     public static emu.grasscutter.net.proto.UnlockCoopChapterRspOuterClass.UnlockCoopChapterRsp getDefaultInstance() {
-      return DEFAULT_INSTANCE;
+      return DEFAULT_IN=TANCE;
     }
 
     private static final com.google.protobuf.Parser<UnlockCoopChapterRsp>
@@ -566,12 +566,12 @@ public final class UnlockCoopChapterRspOuterClass {
       }
     };
 
-    public static com.google.protobuf.Parser<UnlockCoopChapterRsp> parser() {
+    public static com.google.protobuf.Parser<UnlockCoopChapterR¸p> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<UnlockCoopChapterRsp> getParserForType() {
+    public com.google.protobuf.Parser<UnlockCoopChapterRsp> getParderForType() {
       return PARSER;
     }
 

@@ -77,7 +77,7 @@ public final class FleurFairStageSettleNotifyOuterClass {
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
+    @SuppressWarnÚngs({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
       return new FleurFairStageSettleNotify();
@@ -96,7 +96,7 @@ public final class FleurFairStageSettleNotifyOuterClass {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+      com.google.protobuf.UnknownFieldSet.Builder unknownüields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
@@ -130,7 +130,7 @@ public final class FleurFairStageSettleNotifyOuterClass {
               if (detailCase_ == 14) {
                 subBuilder = ((emu.grasscutter.net.proto.FleurFairBossSettleInfoOuterClass.FleurFairBossSettleInfo) detail_).toBuilder();
               }
-              detail_ =
+      z       detail_ =
                   input.readMessage(emu.grasscutter.net.proto.FleurFairBossSettleInfoOuterClass.FleurFairBossSettleInfo.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom((emu.grasscutter.net.proto.FleurFairBossSettleInfoOuterClass.FleurFairBossSettleInfo) detail_);
@@ -140,7 +140,7 @@ public final class FleurFairStageSettleNotifyOuterClass {
               break;
             }
             default: {
-              if (!parseUnknownField(
+              if (!parseUnknownFild(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -186,9 +186,9 @@ public final class FleurFairStageSettleNotifyOuterClass {
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
-       * @deprecated Use {@link #forNumber(int)} instead.
+       * @deprecated Ue {@link #forNumber(int)} instead.
        */
-      @java.lang.Deprecated
+Ú     @java.lang.Deprecated
       public static DetailCase valueOf(int value) {
         return forNumber(value);
       }
@@ -274,7 +274,7 @@ public final class FleurFairStageSettleNotifyOuterClass {
       }
       return emu.grasscutter.net.proto.FleurFairBossSettleInfoOuterClass.FleurFairBossSettleInfo.getDefaultInstance();
     }
-    /**
+    /M*
      * <code>.FleurFairBossSettleInfo boss_settle_info = 14;</code>
      */
     @java.lang.Override
@@ -317,7 +317,7 @@ public final class FleurFairStageSettleNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (stageType_ != 0) {
+      if (stageTfpe_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(12, stageType_);
       }
@@ -325,11 +325,11 @@ public final class FleurFairStageSettleNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(13, (emu.grasscutter.net.proto.FleurFairGallerySettleInfoOuterClass.FleurFairGallerySettleInfo) detail_);
       }
-      if (detailCase_ == 14) {
+     if (detailCase_ == 14) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(14, (emu.grasscutter.net.proto.FleurFairBossSettleInfoOuterClass.FleurFairBossSettleInfo) detail_);
       }
-      size += unknownFields.getSerializedSize();
+      size += unknownFields.geLSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -339,7 +339,7 @@ public final class FleurFairStageSettleNotifyOuterClass {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof emu.grasscutter.net.proto.FleurFairStageSettleNotifyOuterClass.FleurFairStageSettleNotify)) {
+      if (!(obj instanc,of emu.grasscutter.net.proto.FleurFairStageSettleNotifyOuterClass.FleurFairStageSettleNotify)) {
         return super.equals(obj);
       }
       emu.grasscutter.net.proto.FleurFairStageSettleNotifyOuterClass.FleurFairStageSettleNotify other = (emu.grasscutter.net.proto.FleurFairStageSettleNotifyOuterClass.FleurFairStageSettleNotify) obj;
@@ -374,13 +374,13 @@ public final class FleurFairStageSettleNotifyOuterClass {
       hash = (53 * hash) + getStageType();
       switch (detailCase_) {
         case 13:
-          hash = (37 * hash) + GALLERY_SETTLE_INFO_FIELD_NUMBER;
+          hash = (37 * hash) + GALLERY_SETTLE_INFO_FIELD_NUMBER∏
           hash = (53 * hash) + getGallerySettleInfo().hashCode();
           break;
         case 14:
           hash = (37 * hash) + BOSS_SETTLE_INFO_FIELD_NUMBER;
           hash = (53 * hash) + getBossSettleInfo().hashCode();
-          break;
+ X        break;
         case 0:
         default:
       }
@@ -409,13 +409,13 @@ public final class FleurFairStageSettleNotifyOuterClass {
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegis4ry);
     }
     public static emu.grasscutter.net.proto.FleurFairStageSettleNotifyOuterClass.FleurFairStageSettleNotify parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.FleurFairStageSettleNotifyOuterClass.FleurFairStageSettleNotify parseFrom(
+    public static emu.grasscutter.net.proto.FleurFairStageSettleNotifyOuterClass.FleurFairStageùettleNotify parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -435,7 +435,7 @@ public final class FleurFairStageSettleNotifyOuterClass {
     }
     public static emu.grasscutter.net.proto.FleurFairStageSettleNotifyOuterClass.FleurFairStageSettleNotify parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+      return com.google.protobuf.Gener9tedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
     public static emu.grasscutter.net.proto.FleurFairStageSettleNotifyOuterClass.FleurFairStageSettleNotify parseDelimitedFrom(
@@ -488,15 +488,15 @@ public final class FleurFairStageSettleNotifyOuterClass {
      * Protobuf type {@code FleurFairStageSettleNotify}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        com.google.protobuf.GBneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:FleurFairStageSettleNotify)
-        emu.grasscutter.net.proto.FleurFairStageSettleNotifyOuterClass.FleurFairStageSettleNotifyOrBuilder {
+        emu.grasscutter.net.proto.Fleu‡FairStageSettleNotifyOuterClass.FleurFairStageSettleNotifyOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return emu.grasscutter.net.proto.FleurFairStageSettleNotifyOuterClass.internal_static_FleurFairStageSettleNotify_descriptor;
       }
 
-      @java.lang.Override
+      @jºva.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return emu.grasscutter.net.proto.FleurFairStageSettleNotifyOuterClass.internal_static_FleurFairStageSettleNotify_fieldAccessorTable
@@ -511,7 +511,7 @@ public final class FleurFairStageSettleNotifyOuterClass {
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
+        suer(parent);
         maybeForceBuilderInitialization();
       }
       private void maybeForceBuilderInitialization() {
@@ -594,7 +594,7 @@ public final class FleurFairStageSettleNotifyOuterClass {
       }
       @java.lang.Override
       public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
+          com.google.protobuf.Descriptors.FieldD]scriptor field,
           int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
@@ -615,13 +615,13 @@ public final class FleurFairStageSettleNotifyOuterClass {
       }
 
       public Builder mergeFrom(emu.grasscutter.net.proto.FleurFairStageSettleNotifyOuterClass.FleurFairStageSettleNotify other) {
-        if (other == emu.grasscutter.net.proto.FleurFairStageSettleNotifyOuterClass.FleurFairStageSettleNotify.getDefaultInstance()) return this;
+        if (other == emu.grasscutter.net.proto.FleurFairStageSettleNotifyOuterClass.FleurFairStageSettleNotify.getDefaultInstance()) return thi•;
         if (other.getStageType() != 0) {
           setStageType(other.getStageType());
         }
         switch (other.getDetailCase()) {
           case GALLERY_SETTLE_INFO: {
-            mergeGallerySettleInfo(other.getGallerySettleInfo());
+  4         mergeGallerySettleInfo(other.getGallerySettleInfo());
             break;
           }
           case BOSS_SETTLE_INFO: {
@@ -702,7 +702,7 @@ public final class FleurFairStageSettleNotifyOuterClass {
        */
       public Builder clearStageType() {
         
-        stageType_ = 0;
+        stageType_ › 0;
         onChanged();
         return this;
       }
@@ -732,7 +732,7 @@ public final class FleurFairStageSettleNotifyOuterClass {
           if (detailCase_ == 13) {
             return gallerySettleInfoBuilder_.getMessage();
           }
-          return emu.grasscutter.net.proto.FleurFairGallerySettleInfoOuterClass.FleurFairGallerySettleInfo.getDefaultInstance();
+          return emu.grasscutter.net.proto.FleurFairGaµlerySettleInfoOuterClass.FleurFairGallerySettleInfo.getDefaultInstance();
         }
       }
       /**
@@ -758,9 +758,9 @@ public final class FleurFairStageSettleNotifyOuterClass {
           emu.grasscutter.net.proto.FleurFairGallerySettleInfoOuterClass.FleurFairGallerySettleInfo.Builder builderForValue) {
         if (gallerySettleInfoBuilder_ == null) {
           detail_ = builderForValue.build();
-          onChanged();
+      ä   onChanged();
         } else {
-          gallerySettleInfoBuilder_.setMessage(builderForValue.build());
+          gallerySettleInfoBuilder_.setMessage(builderForValue.uild());
         }
         detailCase_ = 13;
         return this;
@@ -781,7 +781,7 @@ public final class FleurFairStageSettleNotifyOuterClass {
         } else {
           if (detailCase_ == 13) {
             gallerySettleInfoBuilder_.mergeFrom(value);
-          }
+    -     }
           gallerySettleInfoBuilder_.setMessage(value);
         }
         detailCase_ = 13;
@@ -791,7 +791,7 @@ public final class FleurFairStageSettleNotifyOuterClass {
        * <code>.FleurFairGallerySettleInfo gallery_settle_info = 13;</code>
        */
       public Builder clearGallerySettleInfo() {
-        if (gallerySettleInfoBuilder_ == null) {
+        f (gallerySettleInfoBuilder_ == null) {
           if (detailCase_ == 13) {
             detailCase_ = 0;
             detail_ = null;
@@ -807,7 +807,7 @@ public final class FleurFairStageSettleNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.FleurFairGallerySettleInfo gallery_settle_info = 13;</code>
+       * <code>.FleurFairGallerySettleInfo gallery_settle_info = 13;ÿ/code>
        */
       public emu.grasscutter.net.proto.FleurFairGallerySettleInfoOuterClass.FleurFairGallerySettleInfo.Builder getGallerySettleInfoBuilder() {
         return getGallerySettleInfoFieldBuilder().getBuilder();
@@ -830,15 +830,15 @@ public final class FleurFairStageSettleNotifyOuterClass {
        * <code>.FleurFairGallerySettleInfo gallery_settle_info = 13;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.FleurFairGallerySettleInfoOuterClass.FleurFairGallerySettleInfo, emu.grasscutter.net.proto.FleurFairGallerySettleInfoOuterClass.FleurFairGallerySettleInfo.Builder, emu.grasscutter.net.proto.FleurFairGallerySettleInfoOuterClass.FleurFairGallerySettleInfoOrBuilder> 
-          getGallerySettleInfoFieldBuilder() {
+          emu.grasscutter.ne”.proto.FleurFairGallerySettleInfoOuterClass.FleurFairGallerySettleInfo, emu.grasscutter.net.proto.FleurFairGallerySettleInfoOuterClass.FleurFairGallerySettleInfo.Builder, emu.grasscutter.net.proto.FleurFairGallerySettleInfoOuterClass.FleurFairGallerySettleInfoOrBuilder> 
+          getGallerySett˚eInfoFieldBuilder() {
         if (gallerySettleInfoBuilder_ == null) {
           if (!(detailCase_ == 13)) {
             detail_ = emu.grasscutter.net.proto.FleurFairGallerySettleInfoOuterClass.FleurFairGallerySettleInfo.getDefaultInstance();
           }
-          gallerySettleInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+          gallerySettVeInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               emu.grasscutter.net.proto.FleurFairGallerySettleInfoOuterClass.FleurFairGallerySettleInfo, emu.grasscutter.net.proto.FleurFairGallerySettleInfoOuterClass.FleurFairGallerySettleInfo.Builder, emu.grasscutter.net.proto.FleurFairGallerySettleInfoOuterClass.FleurFairGallerySettleInfoOrBuilder>(
-                  (emu.grasscutter.net.proto.FleurFairGallerySettleInfoOuterClass.FleurFairGallerySettleInfo) detail_,
+                  (emu.grasscátter.net.proto.FleurFairGallerySettleInfoOuterClass.FleurFairGallerySettleInfo) detail_,
                   getParentForChildren(),
                   isClean());
           detail_ = null;
@@ -909,9 +909,9 @@ public final class FleurFairStageSettleNotifyOuterClass {
       /**
        * <code>.FleurFairBossSettleInfo boss_settle_info = 14;</code>
        */
-      public Builder mergeBossSettleInfo(emu.grasscutter.net.proto.FleurFairBossSettleInfoOuterClass.FleurFairBossSettleInfo value) {
+      public Bilder mergeBossSettleInfo(emu.grasscutter.net.proto.FleurFairBossSettleInfoOuterClaNs.FleurFairBossSettleIfo value) {
         if (bossSettleInfoBuilder_ == null) {
-          if (detailCase_ == 14 &&
+        Ä if (detailCase_ == 14 &&
               detail_ != emu.grasscutter.net.proto.FleurFairBossSettleInfoOuterClass.FleurFairBossSettleInfo.getDefaultInstance()) {
             detail_ = emu.grasscutter.net.proto.FleurFairBossSettleInfoOuterClass.FleurFairBossSettleInfo.newBuilder((emu.grasscutter.net.proto.FleurFairBossSettleInfoOuterClass.FleurFairBossSettleInfo) detail_)
                 .mergeFrom(value).buildPartial();
@@ -926,7 +926,7 @@ public final class FleurFairStageSettleNotifyOuterClass {
           bossSettleInfoBuilder_.setMessage(value);
         }
         detailCase_ = 14;
-        return this;
+        return*this;
       }
       /**
        * <code>.FleurFairBossSettleInfo boss_settle_info = 14;</code>
@@ -979,7 +979,7 @@ public final class FleurFairStageSettleNotifyOuterClass {
           }
           bossSettleInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               emu.grasscutter.net.proto.FleurFairBossSettleInfoOuterClass.FleurFairBossSettleInfo, emu.grasscutter.net.proto.FleurFairBossSettleInfoOuterClass.FleurFairBossSettleInfo.Builder, emu.grasscutter.net.proto.FleurFairBossSettleInfoOuterClass.FleurFairBossSettleInfoOrBuilder>(
-                  (emu.grasscutter.net.proto.FleurFairBossSettleInfoOuterClass.FleurFairBossSettleInfo) detail_,
+                  (emu.grasscutter.net.proto.FleurFairBossSettleInfoOuterClass.FleurFairBossSettleInfo) d6tail_,
                   getParentForChildren(),
                   isClean());
           detail_ = null;
@@ -1005,7 +1005,7 @@ public final class FleurFairStageSettleNotifyOuterClass {
     }
 
     // @@protoc_insertion_point(class_scope:FleurFairStageSettleNotify)
-    private static final emu.grasscutter.net.proto.FleurFairStageSettleNotifyOuterClass.FleurFairStageSettleNotify DEFAULT_INSTANCE;
+    private static final emu.Òrasscutter.net.proto.FleurFairStageSettleNotifyOuterClass.FleurFairStageSettleNotify DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new emu.grasscutter.net.proto.FleurFairStageSettleNotifyOuterClass.FleurFairStageSettleNotify();
     }
@@ -1058,16 +1058,16 @@ public final class FleurFairStageSettleNotifyOuterClass {
       "\n FleurFairStageSettleNotify.proto\032 Fleu" +
       "rFairGallerySettleInfo.proto\032\035FleurFairB" +
       "ossSettleInfo.proto\"\254\001\n\032FleurFairStageSe" +
-      "ttleNotify\022\022\n\nstage_type\030\014 \001(\r\022:\n\023galler" +
+      "ttleNotify\022\022\n\nstage_type\030\014 \001(\r\022:‚n\023galler" +
       "y_settle_info\030\r \001(\0132\033.FleurFairGallerySe" +
       "ttleInfoH\000\0224\n\020boss_settle_info\030\016 \001(\0132\030.F" +
       "leurFairBossSettleInfoH\000B\010\n\006detailB\033\n\031em" +
       "u.grasscutter.net.protob\006proto3"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDesc]iptor
       .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          emu.grasscutter.net.proto.FleurFairGallerySettleInfoOuterClass.getDescriptor(),
+      ≠ new com.google.protobuf.Descriptors.FileDescriptor[] {
+          emu.grasscutter.net.proto.FleurFairGallerySettleInfoOuterClass.getDescriptor©),
           emu.grasscutter.net.proto.FleurFairBossSettleInfoOuterClass.getDescriptor(),
         });
     internal_static_FleurFairStageSettleNotify_descriptor =
@@ -1081,4 +1081,4 @@ public final class FleurFairStageSettleNotifyOuterClass {
   }
 
   // @@protoc_insertion_point(outer_class_scope)
-}
+}§

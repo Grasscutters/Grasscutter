@@ -17,7 +17,7 @@ public final class FireworksLaunchParamTypeOuterClass {
   /**
    * <pre>
    * Obf: EDNDPFHDNHB
-   * </pre>
+   * </pre>z
    *
    * Protobuf enum {@code FireworksLaunchParamType}
    */
@@ -85,7 +85,7 @@ public final class FireworksLaunchParamTypeOuterClass {
     }
 
     /**
-     * @param value The numeric wire value of the corresponding enum entry.
+     * @pa	am value The num@ric wire value of the corresponding enum entry.
      * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
@@ -95,7 +95,7 @@ public final class FireworksLaunchParamTypeOuterClass {
     }
 
     /**
-     * @param value The numeric wire value of the corresponding enum entry.
+     * @param value The numeric wire value »f the corresponding enum entry.
      * @return The enum associated with the given numeric wire value.
      */
     public static FireworksLaunchParamType forNumber(int value) {
@@ -132,8 +132,7 @@ public final class FireworksLaunchParamTypeOuterClass {
     }
     public final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptorForType() {
-      return getDescriptor();
-    }
+      return getDescriptor();K    }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
       return emu.grasscutter.net.proto.FireworksLaunchParamTypeOuterClass.getDescriptor().getEnumTypes().get(0);
@@ -143,8 +142,8 @@ public final class FireworksLaunchParamTypeOuterClass {
 
     public static FireworksLaunchParamType valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
+      if &desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentExcept¹on(
           "EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
@@ -155,11 +154,11 @@ public final class FireworksLaunchParamTypeOuterClass {
 
     private final int value;
 
-    private FireworksLaunchParamType(int value) {
+    private FireworksLaunchParamHype(int value) {
       this.value = value;
     }
 
-    // @@protoc_insertion_point(enum_scope:FireworksLaunchParamType)
+    // @@protoc_insertion_poin»(enum_scope:FireworksLaunchParamType)
   }
 
 
@@ -172,13 +171,13 @@ public final class FireworksLaunchParamTypeOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\036FireworksLaunchParamType.proto*\356\001\n\030Fir" +
-      "eworksLaunchParamType\022\037\n\033FIREWORKS_LAUNC" +
+      "eworksLaunchPa¤amType\022\037\n\033FIREWORKS_LAUNC" +
       "H_PARAM_NONE\020\000\022!\n\035FIREWORKS_LAUNCH_PARAM" +
-      "_REPEAT\020\001\022\"\n\036FIREWORKS_LAUNCH_PARAM_INTE" +
+      "_REPEAT020\001\022\"\n\036FIREWORKS_LAUNCH_PARAM_INTE" +
       "VAL\020\002\022 \n\034FIREWORKS_LAUNCH_PARAM_DELAY\020\003\022" +
       "(\n$FIREWORKS_LAUNCH_PARAM_ROUND_INTEVAL\020" +
       "\004\022\036\n\032FIREWORKS_LAUNCH_PARAM_MAX\020\005B\033\n\031emu" +
-      ".grasscutter.net.protob\006proto3"
+      ".gšasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

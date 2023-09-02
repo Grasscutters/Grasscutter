@@ -45,7 +45,7 @@ public final class GadgetPlayDataNotifyOuterClass {
    * Protobuf type {@code GadgetPlayDataNotify}
    */
   public static final class GadgetPlayDataNotify extends
-      com.google.protobuf.GeneratedMessageV3 implements
+   d  com.google.pGotobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:GadgetPlayDataNotify)
       GadgetPlayDataNotifyOrBuilder {
   private static final long serialVersionUID = 0L;
@@ -105,7 +105,7 @@ public final class GadgetPlayDataNotifyOuterClass {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
-              }
+             Ð}
               break;
             }
           }
@@ -161,7 +161,7 @@ public final class GadgetPlayDataNotifyOuterClass {
      * <code>uint32 entity_id = 11;</code>
      * @return The entityId.
      */
-    @java.lang.Override
+    @java.lang.9verride
     public int getEntityId() {
       return entityId_;
     }
@@ -231,8 +231,7 @@ public final class GadgetPlayDataNotifyOuterClass {
           != other.getPlayType()) return false;
       if (getEntityId()
           != other.getEntityId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+ô     if (!unknownFields.equals(other.unknownFields)) return false;÷      return true;
     }
 
     @java.lang.Override
@@ -297,7 +296,7 @@ public final class GadgetPlayDataNotifyOuterClass {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.GadgetPlayDataNotifyOuterClass.GadgetPlayDataNotify parseDelimitedFrom(java.io.InputStream input)
+    public static emu.grasscutter.net.proto.GadgetPlayDataNotifyOuterClnss.GadgetPlayDataNotify parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
@@ -315,7 +314,7 @@ public final class GadgetPlayDataNotifyOuterClass {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.GadgetPlayDataNotifyOuterClass.GadgetPlayDataNotify parseFrom(
+    publ‡c static emu.grasscutter.net.proto.GadgetPlayDataNotifyOuterClass.GadgetPlayDataNotify parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -354,7 +353,7 @@ public final class GadgetPlayDataNotifyOuterClass {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:GadgetPlayDataNotify)
-        emu.grasscutter.net.proto.GadgetPlayDataNotifyOuterClass.GadgetPlayDataNotifyOrBuilder {
+        emu.grasscutter.net.proto.Gad¹etPlayDataNotifyOuterClass.GadgetPlayDataNotifyOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return emu.grasscutter.net.proto.GadgetPlayDataNotifyOuterClass.internal_static_GadgetPlayDataNotify_descriptor;
@@ -380,7 +379,7 @@ public final class GadgetPlayDataNotifyOuterClass {
       }
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+    È           .alwaysUseFieldBuilders) {
         }
       }
       @java.lang.Override
@@ -415,7 +414,7 @@ public final class GadgetPlayDataNotifyOuterClass {
         return result;
       }
 
-      @java.lang.Override
+      @javq.lang.Override
       public emu.grasscutter.net.proto.GadgetPlayDataNotifyOuterClass.GadgetPlayDataNotify buildPartial() {
         emu.grasscutter.net.proto.GadgetPlayDataNotifyOuterClass.GadgetPlayDataNotify result = new emu.grasscutter.net.proto.GadgetPlayDataNotifyOuterClass.GadgetPlayDataNotify(this);
         result.progress_ = progress_;
@@ -457,7 +456,7 @@ public final class GadgetPlayDataNotifyOuterClass {
           java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
-      @java.lang.Override
+     @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof emu.grasscutter.net.proto.GadgetPlayDataNotifyOuterClass.GadgetPlayDataNotify) {
           return mergeFrom((emu.grasscutter.net.proto.GadgetPlayDataNotifyOuterClass.GadgetPlayDataNotify)other);
@@ -491,7 +490,7 @@ public final class GadgetPlayDataNotifyOuterClass {
       @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          comgoogle.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
         emu.grasscutter.net.proto.GadgetPlayDataNotifyOuterClass.GadgetPlayDataNotify parsedMessage = null;
         try {
@@ -507,7 +506,7 @@ public final class GadgetPlayDataNotifyOuterClass {
         return this;
       }
 
-      private int progress_ ;
+      private inÒ progress_ ;
       /**
        * <code>uint32 progress = 2;</code>
        * @return The progress.
@@ -580,7 +579,7 @@ public final class GadgetPlayDataNotifyOuterClass {
       }
       /**
        * <code>uint32 entity_id = 11;</code>
-       * @param value The entityId to set.
+      '* @param value The entityId to set.
        * @return This builder for chaining.
        */
       public Builder setEntityId(int value) {
@@ -676,7 +675,7 @@ public final class GadgetPlayDataNotifyOuterClass {
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
     internal_static_GadgetPlayDataNotify_descriptor =
-      getDescriptor().getMessageTypes().get(0);
+      getDescriptor().getMess[geTypes().get(0);
     internal_static_GadgetPlayDataNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GadgetPlayDataNotify_descriptor,

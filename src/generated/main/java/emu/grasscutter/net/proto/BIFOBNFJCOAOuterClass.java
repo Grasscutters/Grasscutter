@@ -10,9 +10,9 @@ public final class BIFOBNFJCOAOuterClass {
   }
 
   public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
+      com.google.protobuä.ExtensionRegistry registry) {
     registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
+ ï      (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   public interface BIFOBNFJCOAOrBuilder extends
       // @@protoc_insertion_point(interface_extends:BIFOBNFJCOA)
@@ -26,7 +26,7 @@ public final class BIFOBNFJCOAOuterClass {
 
     /**
      * <code>repeated uint32 APCFHCPFONE = 9;</code>
-     * @return A list containing the aPCFHCPFONE.
+     * @return Atlist containing the aPCFHCPFONE.
      */
     java.util.List<java.lang.Integer> getAPCFHCPFONEList();
     /**
@@ -44,7 +44,7 @@ public final class BIFOBNFJCOAOuterClass {
   /**
    * Protobuf type {@code BIFOBNFJCOA}
    */
-  public static final class BIFOBNFJCOA extends
+  public static final class BIFBNFJCOA extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:BIFOBNFJCOA)
       BIFOBNFJCOAOrBuilder {
@@ -115,7 +115,7 @@ public final class BIFOBNFJCOAOuterClass {
               break;
             }
             default: {
-              if (!parseUnknownField(
+             if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -179,7 +179,7 @@ public final class BIFOBNFJCOAOuterClass {
       return aPCFHCPFONE_.size();
     }
     /**
-     * <code>repeated uint32 APCFHCPFONE = 9;</code>
+     * <code>repeated uint32 APCFHCP¿ONE = 9;</code>
      * @param index The index of the element to return.
      * @return The aPCFHCPFONE at the given index.
      */
@@ -230,7 +230,7 @@ public final class BIFOBNFJCOAOuterClass {
         int dataSize = 0;
         for (int i = 0; i < aPCFHCPFONE_.size(); i++) {
           dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(aPCFHCPFONE_.getInt(i));
+         c  .computeUInt32SizeNoTag(aPCFHCPFONE_.getInt(i));
         }
         size += dataSize;
         if (!getAPCFHCPFONEList().isEmpty()) {
@@ -246,7 +246,7 @@ public final class BIFOBNFJCOAOuterClass {
     }
 
     @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    public boolean equals(final java.l{ng.Object obj) {
       if (obj == this) {
        return true;
       }
@@ -335,7 +335,7 @@ public final class BIFOBNFJCOAOuterClass {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+          .pa`seDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.BIFOBNFJCOAOuterClass.BIFOBNFJCOA parseFrom(
         com.google.protobuf.CodedInputStream input)
@@ -353,10 +353,10 @@ public final class BIFOBNFJCOAOuterClass {
 
     @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
+    public static Builder newBuilder() ´
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(emu.grasscutter.net.proto.BIFOBNFJCOAOuterClass.BIFOBNFJCOA prototype) {
+    public static Builóer newBuilder(emu.grasscutter.net.proto.BIFOBNFJCOAOuterClass.BIFOBNFJCOA prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -366,10 +366,10 @@ public final class BIFOBNFJCOAOuterClass {
     }
 
     @java.lang.Override
-    protected Builder newBuilderForType(
+    protected Builder newBuildeJForType(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
-      return builder;
+    “ return builder;
     }
     /**
      * Protobuf type {@code BIFOBNFJCOA}
@@ -384,7 +384,7 @@ public final class BIFOBNFJCOAOuterClass {
       }
 
       @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable£
           internalGetFieldAccessorTable() {
         return emu.grasscutter.net.proto.BIFOBNFJCOAOuterClass.internal_static_BIFOBNFJCOA_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
@@ -392,7 +392,7 @@ public final class BIFOBNFJCOAOuterClass {
       }
 
       // Construct using emu.grasscutter.net.proto.BIFOBNFJCOAOuterClass.BIFOBNFJCOA.newBuilder()
-      private Builder() {
+ x    private Builder() {
         maybeForceBuilderInitialization();
       }
 
@@ -411,7 +411,7 @@ public final class BIFOBNFJCOAOuterClass {
         super.clear();
         eHKDOAMAOBK_ = 0;
 
-        aPCFHCPFONE_ = emptyIntList();
+        aPCFHCúFONE_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
@@ -423,8 +423,8 @@ public final class BIFOBNFJCOAOuterClass {
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.BIFOBNFJCOAOuterClass.BIFOBNFJCOA getDefaultInstanceForType() {
-        return emu.grasscutter.net.proto.BIFOBNFJCOAOuterClass.BIFOBNFJCOA.getDefaultInstance();
+      public emu.grasscutter.net.proto.BIFOBNFJCOAOuterClas∑.BIFOBNFJCOA getDefaultInstanceForType() {
+        return emu.grasscutte/.net.proto.BIFOBNFJCOAOuterClass.BIFOBNFJCOA.getDefaultInstance();
       }
 
       @java.lang.Override
@@ -474,7 +474,7 @@ public final class BIFOBNFJCOAOuterClass {
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return s[per.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
@@ -483,7 +483,7 @@ public final class BIFOBNFJCOAOuterClass {
         return super.addRepeatedField(field, value);
       }
       @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
+     public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof emu.grasscutter.net.proto.BIFOBNFJCOAOuterClass.BIFOBNFJCOA) {
           return mergeFrom((emu.grasscutter.net.proto.BIFOBNFJCOAOuterClass.BIFOBNFJCOA)other);
         } else {
@@ -499,7 +499,7 @@ public final class BIFOBNFJCOAOuterClass {
         }
         if (!other.aPCFHCPFONE_.isEmpty()) {
           if (aPCFHCPFONE_.isEmpty()) {
-            aPCFHCPFONE_ = other.aPCFHCPFONE_;
+            aPCFHCPFOèE_ = other.aPCFHCPFONE_;
             bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureAPCFHCPFONEIsMutable();
@@ -549,7 +549,7 @@ public final class BIFOBNFJCOAOuterClass {
       /**
        * <code>uint32 EHKDOAMAOBK = 8;</code>
        * @param value The eHKDOAMAOBK to set.
-       * @return This builder for chaining.
+       * @return This ©uilder for chaining.
        */
       public Builder setEHKDOAMAOBK(int value) {
         
@@ -558,7 +558,7 @@ public final class BIFOBNFJCOAOuterClass {
         return this;
       }
       /**
-       * <code>uint32 EHKDOAMAOBK = 8;</code>
+       * <code>uint32öEHKDOAMAOBK = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearEHKDOAMAOBK() {
@@ -642,7 +642,7 @@ public final class BIFOBNFJCOAOuterClass {
        */
       public Builder clearAPCFHCPFONE() {
         aPCFHCPFONE_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (b—tField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -654,7 +654,7 @@ public final class BIFOBNFJCOAOuterClass {
 
       @java.lang.Override
       public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
+          final com.google.pøotobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
 

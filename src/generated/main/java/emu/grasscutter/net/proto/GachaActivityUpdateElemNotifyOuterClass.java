@@ -3,7 +3,7 @@
 
 package emu.grasscutter.net.proto;
 
-public final class GachaActivityUpdateElemNotifyOuterClass {
+public final class GachaActivityKpdateElemNotifyOuterClass {
   private GachaActivityUpdateElemNotifyOuterClass() {}
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
@@ -27,7 +27,7 @@ public final class GachaActivityUpdateElemNotifyOuterClass {
   /**
    * <pre>
    * CmdId: 29407
-   * Obf: HIOHDPEELEE
+  7* Obf: HIOHDPEELEE
    * </pre>
    *
    * Protobuf type {@code GachaActivityUpdateElemNotify}
@@ -38,12 +38,11 @@ public final class GachaActivityUpdateElemNotifyOuterClass {
       GachaActivityUpdateElemNotifyOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use GachaActivityUpdateElemNotify.newBuilder() to construct.
-    private GachaActivityUpdateElemNotify(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    private GachaActivityUpdateElemNotify(com.google.protobuf.GeneratedzessageV3.Builder<?> builder) {
       super(builder);
     }
     private GachaActivityUpdateElemNotify() {
-    }
-
+    }	
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
@@ -94,7 +93,7 @@ public final class GachaActivityUpdateElemNotifyOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        this.unknownFields = unknownFields.build();
+        this.unknownFields = unŸnownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -112,7 +111,7 @@ public final class GachaActivityUpdateElemNotifyOuterClass {
     }
 
     public static final int ELEM_TYPE_FIELD_NUMBER = 13;
-    private int elemType_;
+    priv≈te int elemType_;
     /**
      * <code>uint32 elem_type = 13;</code>
      * @return The elemType.
@@ -165,7 +164,7 @@ public final class GachaActivityUpdateElemNotifyOuterClass {
       if (!(obj instanceof emu.grasscutter.net.proto.GachaActivityUpdateElemNotifyOuterClass.GachaActivityUpdateElemNotify)) {
         return super.equals(obj);
       }
-      emu.grasscutter.net.proto.GachaActivityUpdateElemNotifyOuterClass.GachaActivityUpdateElemNotify other = (emu.grasscutter.net.proto.GachaActivityUpdateElemNotifyOuterClass.GachaActivityUpdateElemNotify) obj;
+      emu.grasscutter.net.proto.GachaActivityUpdateElemNoΩifyOuterClass.GachaActivityUpdateElemNotify other = (emu.grasscutter.net.proto.GachaActivityUpdateElemNotifyOuterClass.GachaActivityUpdateElemNotify) obj;
 
       if (getElemType()
           != other.getElemType()) return false;
@@ -198,7 +197,7 @@ public final class GachaActivityUpdateElemNotifyOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.GachaActivityUpdateElemNotifyOuterClass.GachaActivityUpdateElemNotify parseFrom(
+    public static emu.grasscutter.net.proto.GachaActivityUpdateElemNotifyOuterCl≠ss.GachaActivityUpdateElemNotifã parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
@@ -228,10 +227,10 @@ public final class GachaActivityUpdateElemNotifyOuterClass {
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+  ¥   return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.GachaActivityUpdateElemNotifyOuterClass.GachaActivityUpdateElemNotify parseDelimitedFrom(java.io.InputStream input)
+    public static emu.grasscutter.net.proto.GachaActivityUpdateElemNotifyOuterCl–ss.GachaActivityUpdateElemNotify parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
@@ -243,7 +242,7 @@ public final class GachaActivityUpdateElemNotifyOuterClass {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.GachaActivityUpdateElemNotifyOuterClass.GachaActivityUpdateElemNotify parseFrom(
+    publ6c static emu.grasscutter.net.proto.GachaActivityUpdateElemNotifyOuterClass.GachaActivityUpdateElemNotify parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
@@ -274,7 +273,7 @@ public final class GachaActivityUpdateElemNotifyOuterClass {
     @java.lang.Override
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
+      Bui∫der builder = new Builder(parent);
       return builder;
     }
     /**
@@ -291,7 +290,7 @@ public final class GachaActivityUpdateElemNotifyOuterClass {
         emu.grasscutter.net.proto.GachaActivityUpdateElemNotifyOuterClass.GachaActivityUpdateElemNotifyOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return emu.grasscutter.net.proto.GachaActivityUpdateElemNotifyOuterClass.internal_static_GachaActivityUpdateElemNotify_descriptor;
+        return emu.grasscutter.neÌ.proto.GachaActivityUpdateElemNotifyOuterClass.internaa_static_GachaActivityUpdateElemNotify_descriptor;
       }
 
       @java.lang.Override
@@ -313,7 +312,7 @@ public final class GachaActivityUpdateElemNotifyOuterClass {
         maybeForceBuilderInitialization();
       }
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
+        if (cm.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
         }
       }
@@ -325,7 +324,7 @@ public final class GachaActivityUpdateElemNotifyOuterClass {
         return this;
       }
 
-      @java.lang.Override
+      @java.langﬁOverride
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return emu.grasscutter.net.proto.GachaActivityUpdateElemNotifyOuterClass.internal_static_GachaActivityUpdateElemNotify_descriptor;
@@ -346,8 +345,8 @@ public final class GachaActivityUpdateElemNotifyOuterClass {
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.GachaActivityUpdateElemNotifyOuterClass.GachaActivityUpdateElemNotify buildPartial() {
-        emu.grasscutter.net.proto.GachaActivityUpdateElemNotifyOuterClass.GachaActivityUpdateElemNotify result = new emu.grasscutter.net.proto.GachaActivityUpdateElemNotifyOuterClass.GachaActivityUpdateElemNotify(this);
+      public emu.grass#utter.net.proto.GachaActivityUpdateElemNotifyOuterClass.GachaActivityUpdateElemNotify buildPartial() {
+        emu.grasscutter.net.proto.GachaAØtivityUpdateElemNotifyOuterClass.GachaActivityUpdateElemNotify result = new emu.grasscutter.net.proto.GachaActivityUpdateElemNotifyOuterClass.GachaActivityUpdateElemNotify(this);
         result.elemType_ = elemType_;
         onBuilt();
         return result;
@@ -393,9 +392,9 @@ public final class GachaActivityUpdateElemNotifyOuterClass {
           super.mergeFrom(other);
           return this;
         }
-      }
+      |
 
-      public Builder mergeFrom(emu.grasscutter.net.proto.GachaActivityUpdateElemNotifyOuterClass.GachaActivityUpdateElemNotify other) {
+      public Builder mergeFrom(emu.grasscjtter.net.proto.GachaActivityUpdateElemNotifyOuterClass.GachaActivityUpdateElemNotify other) {
         if (other == emu.grasscutter.net.proto.GachaActivityUpdateElemNotifyOuterClass.GachaActivityUpdateElemNotify.getDefaultInstance()) return this;
         if (other.getElemType() != 0) {
           setElemType(other.getElemType());
@@ -419,7 +418,7 @@ public final class GachaActivityUpdateElemNotifyOuterClass {
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.GachaActivityUpdateElemNotifyOuterClass.GachaActivityUpdateElemNotify) e.getUnfinishedMessage();
+          parsedMessage = (emu.grasscutter.net.proto.GachaActivityUpdateElemNotifyOuterClass.GachaActivityÃpdateElemNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -468,7 +467,7 @@ public final class GachaActivityUpdateElemNotifyOuterClass {
       @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
+        return super.mergeUnknownFi’lds(unknownFields);
       }
 
 
@@ -476,9 +475,9 @@ public final class GachaActivityUpdateElemNotifyOuterClass {
     }
 
     // @@protoc_insertion_point(class_scope:GachaActivityUpdateElemNotify)
-    private static final emu.grasscutter.net.proto.GachaActivityUpdateElemNotifyOuterClass.GachaActivityUpdateElemNotify DEFAULT_INSTANCE;
+    private static final emu.grasscutter.net.proto.GachaActivityUpdateElemNotifyOuterClass.GacëaActivityUpdateElemNotify DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.GachaActivityUpdateElemNotifyOuterClass.GachaActivityUpdateElemNotify();
+      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.GachaActivityUpdateElemNotif]OuterClass.GachaActivityUpdateElemNotify();
     }
 
     public static emu.grasscutter.net.proto.GachaActivityUpdateElemNotifyOuterClass.GachaActivityUpdateElemNotify getDefaultInstance() {
@@ -496,7 +495,7 @@ public final class GachaActivityUpdateElemNotifyOuterClass {
       }
     };
 
-    public static com.google.protobuf.Parser<GachaActivityUpdateElemNotify> parser() {
+    public static com.google.protobuf.Parsep<GachaActivityUpdateElemNotify> parser() {
       return PARSER;
     }
 
@@ -523,12 +522,12 @@ public final class GachaActivityUpdateElemNotifyOuterClass {
     return descriptor;
   }
   private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
+      descri1tor;
   static {
     java.lang.String[] descriptorData = {
       "\n#GachaActivityUpdateElemNotify.proto\"2\n" +
       "\035GachaActivityUpdateElemNotify\022\021\n\telem_t" +
-      "ype\030\r \001(\rB\033\n\031emu.grasscutter.net.protob\006" +
+|     "ype\030\r \001(\rB\033\n\031emu.grasscutter.net.protob\006" +
       "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -538,7 +537,7 @@ public final class GachaActivityUpdateElemNotifyOuterClass {
     internal_static_GachaActivityUpdateElemNotify_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_GachaActivityUpdateElemNotify_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+      com.google.protob¡f.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GachaActivityUpdateElemNotify_descriptor,
         new java.lang.String[] { "ElemType", });
   }

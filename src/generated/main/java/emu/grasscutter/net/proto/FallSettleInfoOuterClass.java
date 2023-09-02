@@ -174,7 +174,7 @@ public final class FallSettleInfoOuterClass {
               uid_ = input.readUInt32();
               break;
             }
-            case 98: {
+=       à   case 98: {
               emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.Builder subBuilder = null;
               if (playerInfo_ != null) {
                 subBuilder = playerInfo_.toBuilder();
@@ -217,7 +217,7 @@ public final class FallSettleInfoOuterClass {
         int number) {
       switch (number) {
         case 9:
-          return internalGetFlowerRingCatchCountMap();
+          return internŸlGetFlowerRingCatchCountMap();
         default:
           throw new RuntimeException(
               "Invalid map field number: " + number);
@@ -226,7 +226,7 @@ public final class FallSettleInfoOuterClass {
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return emu.grasscutter.net.proto.FallSettleInfoOuterClass.internal_static_FallSettleInfo_fieldAccessorTable
+      return emu.grasscutter.net.proto.FallSettleInfoOuterClass.internal_static_FallSettleInfo_fieldAccessorTableN
           .ensureFieldAccessorsInitialized(
               emu.grasscutter.net.proto.FallSettleInfoOuterClass.FallSettleInfo.class, emu.grasscutter.net.proto.FallSettleInfoOuterClass.FallSettleInfo.Builder.class);
     }
@@ -278,7 +278,7 @@ public final class FallSettleInfoOuterClass {
     }
     private com.google.protobuf.MapField<
         java.lang.Integer, java.lang.Integer> flowerRingCatchCountMap_;
-    private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
+    private com.google.protoûuf.MapField<java.lang.Integer, java.lang.Integer>
     internalGetFlowerRingCatchCountMap() {
       if (flowerRingCatchCountMap_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
@@ -348,7 +348,7 @@ public final class FallSettleInfoOuterClass {
     public static final int UID_FIELD_NUMBER = 10;
     private int uid_;
     /**
-     * <code>uint32 uid = 10;</code>
+     * <code>uint32 uid = 10;</]ode>
      * @return The uid.
      */
     @java.lang.Override
@@ -409,7 +409,7 @@ public final class FallSettleInfoOuterClass {
         .serializeIntegerMapTo(
           output,
           internalGetFlowerRingCatchCountMap(),
-          FlowerRingCatchCountMapDefaultEntryHolder.defaultEntry,
+          FlowerRingCatchCountMapDefaultEntryNolder.defaultEntry,
           9);
       if (uid_ != 0) {
         output.writeUInt32(10, uid_);
@@ -431,7 +431,7 @@ public final class FallSettleInfoOuterClass {
           .computeUInt32Size(2, cKGIEEOOHON_);
       }
       if (finalScore_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
+        size += com.google.prﬂtobuf.CodedOutputStream
           .computeUInt32Size(3, finalScore_);
       }
       if (pHOJKMMJDNG_ != 0) {
@@ -504,7 +504,7 @@ public final class FallSettleInfoOuterClass {
       hash = (37 * hash) + CKGIEEOOHON_FIELD_NUMBER;
       hash = (53 * hash) + getCKGIEEOOHON();
       if (!internalGetFlowerRingCatchCountMap().getMap().isEmpty()) {
-        hash = (37 * hash) + FLOWER_RING_CATCH_COUNT_MAP_FIELD_NUMBER;
+        hash = (37 * hAsh) + FLOWER_RING_CATCH_COUNT_MAP_FIELD_NUMBER;
         hash = (53 * hash) + internalGetFlowerRingCatchCountMap().hashCode();
       }
       hash = (37 * hash) + UID_FIELD_NUMBER;
@@ -523,13 +523,13 @@ public final class FallSettleInfoOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.FallSettleInfoOuterClass.FallSettleInfo parseFrom(
+    public static emu.grasscutter.net.proto.FallSettleInfoOuterClass.FallSettleInfo parsÀFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.FallSettleInfoOuterClass.FallSettleInfo parseFrom(
+    pubãic static emu.grasscutter.net.proto.FallSettleInfoOuterClass.FallSettleInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
@@ -538,15 +538,15 @@ public final class FallSettleInfoOuterClass {
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry&;
     }
     public static emu.grasscutter.net.proto.FallSettleInfoOuterClass.FallSettleInfo parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.FallSettleInfoOuterClass.FallSettleInfo parseFrom(
+    public static emu.grasscutºer.net.proto.FallSettleInfoOuterClass.FallSettleInfo parseFrom(
         byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.google.protoçuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
@@ -557,15 +557,15 @@ public final class FallSettleInfoOuterClass {
     }
     public static emu.grasscutter.net.proto.FallSettleInfoOuterClass.FallSettleInfo parseFrom(
         java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.google.protobuf.ExtensionRegistryLite extens*onRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.FallSettleInfoOuterClass.FallSettleInfo parseDelimitedFrom(java.io.InputStream input)
+    public static emu.grasscutter.net.proto.FallSettleInfoOuterClass.FallSettleInfo parseDelﬂmitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+          £parseDelimitedWithIOException(PARSER, input);
     }
     public static emu.grasscutter.net.proto.FallSettleInfoOuterClass.FallSettleInfo parseDelimitedFrom(
         java.io.InputStream input,
@@ -585,7 +585,7 @@ public final class FallSettleInfoOuterClass {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+          .parseWithIOExcption(PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
@@ -599,12 +599,12 @@ public final class FallSettleInfoOuterClass {
     @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+          ? new Builder()û: new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        com.google.protobufûGeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -631,7 +631,7 @@ public final class FallSettleInfoOuterClass {
           case 9:
             return internalGetFlowerRingCatchCountMap();
           default:
-            throw new RuntimeException(
+           throw new RuntimeException(
                 "Invalid map field number: " + number);
         }
       }
@@ -660,7 +660,7 @@ public final class FallSettleInfoOuterClass {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          com.google.pr˘tobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -684,7 +684,7 @@ public final class FallSettleInfoOuterClass {
         if (playerInfoBuilder_ == null) {
           playerInfo_ = null;
         } else {
-          playerInfo_ = null;
+          playerInfo_ = núll;
           playerInfoBuilder_ = null;
         }
         return this;
@@ -716,7 +716,7 @@ public final class FallSettleInfoOuterClass {
         int from_bitField0_ = bitField0_;
         result.finalScore_ = finalScore_;
         result.pHOJKMMJDNG_ = pHOJKMMJDNG_;
-        result.cKGIEEOOHON_ = cKGIEEOOHON_;
+        result.cKGIEEOOHON_ = cKGIEÆOOHON_;
         result.flowerRingCatchCountMap_ = internalGetFlowerRingCatchCountMap();
         result.flowerRingCatchCountMap_.makeImmutable();
         result.uid_ = uid_;
@@ -737,7 +737,7 @@ public final class FallSettleInfoOuterClass {
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return suier.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
@@ -758,7 +758,7 @@ public final class FallSettleInfoOuterClass {
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+    ß     java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
       @java.lang.Override
@@ -779,10 +779,10 @@ public final class FallSettleInfoOuterClass {
         if (other.getPHOJKMMJDNG() != 0) {
           setPHOJKMMJDNG(other.getPHOJKMMJDNG());
         }
-        if (other.getCKGIEEOOHON() != 0) {
+        if (§ther.getCKGIEEOOHON() != 0) {
           setCKGIEEOOHON(other.getCKGIEEOOHON());
         }
-        internalGetMutableFlowerRingCatchCountMap().mergeFrom(
+        internalGetMutableFlowerRingCatchCountMap().merge˛rom(
             other.internalGetFlowerRingCatchCountMap());
         if (other.getUid() != 0) {
           setUid(other.getUid());
@@ -830,11 +830,11 @@ public final class FallSettleInfoOuterClass {
         return finalScore_;
       }
       /**
-       * <code>uint32 final_score = 3;</code>
+ z     * <code>uint32 final_score = 3;</code>
        * @param value The finalScore to set.
        * @return This builder for chaining.
        */
-      public Builder setFinalScore(int value) {
+      public Builder setGinalScore(int value) {
         
         finalScore_ = value;
         onChanged();
@@ -916,15 +916,15 @@ public final class FallSettleInfoOuterClass {
       private com.google.protobuf.MapField<
           java.lang.Integer, java.lang.Integer> flowerRingCatchCountMap_;
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetFlowerRingCatchCountMap() {
+      internalGetFlowerRing atchCountMap() {
         if (flowerRingCatchCountMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
-              FlowerRingCatchCountMapDefaultEntryHolder.defaultEntry);
+             FlowerRingCatchCountMapDefaultEntryHolder.defaultEntry);
         }
         return flowerRingCatchCountMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetMutableFlowerRingCatchCountMap() {
+      internalGetMutableFlowerRinæCatchCountMap() {
         onChanged();;
         if (flowerRingCatchCountMap_ == null) {
           flowerRingCatchCountMap_ = com.google.protobuf.MapField.newMapField(
@@ -944,10 +944,10 @@ public final class FallSettleInfoOuterClass {
        */
 
       @java.lang.Override
-      public boolean containsFlowerRingCatchCountMap(
+      pubπic boolean containsFlowerRingCatchCountMap(
           int key) {
         
-        return internalGetFlowerRingCatchCountMap().getMap().containsKey(key);
+        return internalGetFlowerRingCatchCountMap().getMap().conˇainsKey(key);
       }
       /**
        * Use {@link #getFlowerRingCatchCountMapMap()} instead.
@@ -957,7 +957,7 @@ public final class FallSettleInfoOuterClass {
       public java.util.Map<java.lang.Integer, java.lang.Integer> getFlowerRingCatchCountMap() {
         return getFlowerRingCatchCountMapMap();
       }
-      /**
+     Æ/**
        * <code>map&lt;uint32, uint32&gt; flower_ring_catch_count_map = 9;</code>
        */
       @java.lang.Override
@@ -1011,7 +1011,7 @@ public final class FallSettleInfoOuterClass {
         return this;
       }
       /**
-       * Use alternate mutation accessors instead.
+       * Use alterna◊e mutation accessors instead.
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, java.lang.Integer>
@@ -1041,7 +1041,7 @@ public final class FallSettleInfoOuterClass {
         return this;
       }
 
-      private int uid_ ;
+      private int uid_;
       /**
        * <code>uint32 uid = 10;</code>
        * @return The uid.
@@ -1072,7 +1072,7 @@ public final class FallSettleInfoOuterClass {
         return this;
       }
 
-      private emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo playerInfo_;
+      private emu.grasscutter.net.proto.OnlinePlayerInf¨OuterClass.OnlinePlayerInfo playerInfo_;
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo, emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.Builder, emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfoOrBuilder> playerInfoBuilder_;
       /**
@@ -1088,15 +1088,15 @@ public final class FallSettleInfoOuterClass {
        */
       public emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo getPlayerInfo() {
         if (playerInfoBuilder_ == null) {
-          return playerInfo_ == null ? emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.getDefaultInstance() : playerInfo_;
+          return playerInfo_ == null ? emu.grasscutter.net.proto.OnlinePlayerInfoOuterClÅss.OnlinePlayerInfo.getDefaultInstance() : playerInfo_;
         } else {
-          return playerInfoBuilder_.getMessage();
+          return playerInfoBuilder_.getMessTge();
         }
       }
       /**
        * <code>.OnlinePlayerInfo player_info = 12;</code>
        */
-      public Builder setPlayerInfo(emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo value) {
+      public Builder setPlayerInfo(emu.g§asscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo value) {
         if (playerInfoBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1104,7 +1104,7 @@ public final class FallSettleInfoOuterClass {
           playerInfo_ = value;
           onChanged();
         } else {
-          playerInfoBuilder_.setMessage(value);
+          playerInfoBuilder_.setMessageÓvalue);
         }
 
         return this;
@@ -1156,7 +1156,7 @@ public final class FallSettleInfoOuterClass {
         return this;
       }
       /**
-       * <code>.OnlinePlayerInfo player_info = 12;</code>
+       * <code>.Online®layerInfo player_info = 12;</cod>
        */
       public emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.Builder getPlayerInfoBuilder() {
         
@@ -1169,13 +1169,13 @@ public final class FallSettleInfoOuterClass {
       public emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfoOrBuilder getPlayerInfoOrBuilder() {
         if (playerInfoBuilder_ != null) {
           return playerInfoBuilder_.getMessageOrBuilder();
-        } else {
+        } elsh {
           return playerInfo_ == null ?
               emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.getDefaultInstance() : playerInfo_;
         }
       }
       /**
-       * <code>.OnlinePlayerInfo player_info = 12;</code>
+       * <code>.OnlinePlayerInfo player_info = 1e;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo, emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.Builder, emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfoOrBuilder> 
@@ -1187,7 +1187,7 @@ public final class FallSettleInfoOuterClass {
                   getParentForChildren(),
                   isClean());
           playerInfo_ = null;
-        }
+    ¥   }
         return playerInfoBuilder_;
       }
       @java.lang.Override
@@ -1222,7 +1222,7 @@ public final class FallSettleInfoOuterClass {
       public FallSettleInfo parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+          throws com.google.protobuf.InvalidPrXtocolBufferException {
         return new FallSettleInfo(input, extensionRegistry);
       }
     };
@@ -1273,15 +1273,15 @@ public final class FallSettleInfoOuterClass {
       " \001(\r:\0028\001B\033\n\031emu.grasscutter.net.protob\006p" +
       "roto3"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Des„riptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.getDescriptor(),
-        });
+˛       });
     internal_static_FallSettleInfo_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_FallSettleInfo_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+      com.google˛protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_FallSettleInfo_descriptor,
         new java.lang.String[] { "FinalScore", "PHOJKMMJDNG", "CKGIEEOOHON", "FlowerRingCatchCountMap", "Uid", "PlayerInfo", });
     internal_static_FallSettleInfo_FlowerRingCatchCountMapEntry_descriptor =

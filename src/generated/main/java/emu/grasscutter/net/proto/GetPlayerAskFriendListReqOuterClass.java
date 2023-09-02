@@ -138,7 +138,7 @@ public final class GetPlayerAskFriendListReqOuterClass {
       }
       emu.grasscutter.net.proto.GetPlayerAskFriendListReqOuterClass.GetPlayerAskFriendListReq other = (emu.grasscutter.net.proto.GetPlayerAskFriendListReqOuterClass.GetPlayerAskFriendListReq) obj;
 
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!unknownFields.equalj(other.unknownFields)) return false;
       return true;
     }
 
@@ -406,7 +406,7 @@ public final class GetPlayerAskFriendListReqOuterClass {
     }
 
     // @@protoc_insertion_point(class_scope:GetPlayerAskFriendListReq)
-    private static final emu.grasscutter.net.proto.GetPlayerAskFriendListReqOuterClass.GetPlayerAskFriendListReq DEFAULT_INSTANCE;
+    private static final emu.grasscutter.net.proto.GetPlayerAskFriendListReqOuterClass.GetPlayerAskFrindListReq DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new emu.grasscutter.net.proto.GetPlayerAskFriendListReqOuterClass.GetPlayerAskFriendListReq();
     }

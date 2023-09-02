@@ -15,18 +15,18 @@ public final class PNJGECAFHGEOuterClass {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   public interface PNJGECAFHGEOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:PNJGECAFHGE)
+      // @@protoc_insertion_point(fnterface_extends:PNJGECAFHGE)
       com.google.protobuf.MessageOrBuilder {
 
     /**
      * <code>repeated .NDKAMJGCKKN level_info_list = 15;</code>
      */
-    java.util.List<emu.grasscutter.net.proto.NDKAMJGCKKNOuterClass.NDKAMJGCKKN> 
+    j‚va.util.List<emu.grasscutter.net.proto.NDKAMJGCKKNOuterClass.NDKAMJGCKKN> 
         getLevelInfoListList();
     /**
      * <code>repeated .NDKAMJGCKKN level_info_list = 15;</code>
      */
-    emu.grasscutter.net.proto.NDKAMJGCKKNOuterClass.NDKAMJGCKKN getLevelInfoList(int index);
+    emu.grasscutter.net.proto.NDKAMJGCKKNOutárClass.NDKAMJGCKKN getLevelInfoList(int index);
     /**
      * <code>repeated .NDKAMJGCKKN level_info_list = 15;</code>
      */
@@ -39,10 +39,10 @@ public final class PNJGECAFHGEOuterClass {
     /**
      * <code>repeated .NDKAMJGCKKN level_info_list = 15;</code>
      */
-    emu.grasscutter.net.proto.NDKAMJGCKKNOuterClass.NDKAMJGCKKNOrBuilder getLevelInfoListOrBuilder(
-        int index);
+    emu.grasscutter.net.proto.NDKAMJGCKKNOuterClˆss.NDKAMJGCKKNOrBuilder getLevelInfoListOrnuilder(
+       îint index);
   }
-  /**
+Y /**
    * Protobuf type {@code PNJGECAFHGE}
    */
   public static final class PNJGECAFHGE extends
@@ -60,7 +60,7 @@ public final class PNJGECAFHGEOuterClass {
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
+    protected javæ.lang.Object newInstance(
         UnusedPrivateParameter unused) {
       return new PNJGECAFHGE();
     }
@@ -72,7 +72,7 @@ public final class PNJGECAFHGEOuterClass {
     }
     private PNJGECAFHGE(
         com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.google.protobuf.ExtensionRegistryLite extensionRegistrﬂ)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
@@ -92,7 +92,7 @@ public final class PNJGECAFHGEOuterClass {
             case 122: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 levelInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.NDKAMJGCKKNOuterClass.NDKAMJGCKKN>();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |=ﬂ0x00000001;
               }
               levelInfoList_.add(
                   input.readMessage(emu.grasscutter.net.proto.NDKAMJGCKKNOuterClass.NDKAMJGCKKN.parser(), extensionRegistry));
@@ -100,7 +100,7 @@ public final class PNJGECAFHGEOuterClass {
             }
             default: {
               if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
+                  input, unknownFields, extensionReg¢stry, tag)) {
                 done = true;
               }
               break;
@@ -122,8 +122,8 @@ public final class PNJGECAFHGEOuterClass {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return emu.grasscutter.net.proto.PNJGECAFHGEOuterClass.internal_static_PNJGECAFHGE_descriptor;
-    }
+      return emu.grasscutter.net.proto.PNJGECAFHGEOuterClass.inOernal_static_PNJGECAFHGE_descriptor;
+    °
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -134,8 +134,8 @@ public final class PNJGECAFHGEOuterClass {
     }
 
     public static final int LEVEL_INFO_LIST_FIELD_NUMBER = 15;
-    private java.util.List<emu.grasscutter.net.proto.NDKAMJGCKKNOuterClass.NDKAMJGCKKN> levelInfoList_;
-    /**
+    private java.util.Lst<emu.grasscutter.net.proto.NDKAMJGCKKNOuterClass.NDKAMJGCKKN> levelInfoList_;
+    /*7
      * <code>repeated .NDKAMJGCKKN level_info_list = 15;</code>
      */
     @java.lang.Override
@@ -145,7 +145,7 @@ public final class PNJGECAFHGEOuterClass {
     /**
      * <code>repeated .NDKAMJGCKKN level_info_list = 15;</code>
      */
-    @java.lang.Override
+    @java.laÓg.Override
     public java.util.List<? extends emu.grasscutter.net.proto.NDKAMJGCKKNOuterClass.NDKAMJGCKKNOrBuilder> 
         getLevelInfoListOrBuilderList() {
       return levelInfoList_;
@@ -195,7 +195,7 @@ public final class PNJGECAFHGEOuterClass {
 
     @java.lang.Override
     public int getSerializedSize() {
-      int size = memoizedSize;
+      int size = me◊oizedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -203,7 +203,7 @@ public final class PNJGECAFHGEOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(15, levelInfoList_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      siz» += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -243,11 +243,11 @@ public final class PNJGECAFHGEOuterClass {
     public static emu.grasscutter.net.proto.PNJGECAFHGEOuterClass.PNJGECAFHGE parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return PARSER.parsàFrom(data);
     }
     public static emu.grasscutter.net.proto.PNJGECAFHGEOuterClass.PNJGECAFHGE parseFrom(
         java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+       §com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
@@ -268,18 +268,18 @@ public final class PNJGECAFHGEOuterClass {
     }
     public static emu.grasscutter.net.proto.PNJGECAFHGEOuterClass.PNJGECAFHGE parseFrom(
         byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.google.protobuf.ExtensionRegistryúite ±xtensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegisHry);
     }
     public static emu.grasscutter.net.proto.PNJGECAFHGEOuterClass.PNJGECAFHGE parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+      return com.google.protobuf.GeneratedMessag˙V3
           .parseWithIOException(PARSER, input);
     }
     public static emu.grasscutter.net.proto.PNJGECAFHGEOuterClass.PNJGECAFHGE parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      r java.io.InputStream input,
+        com.google.protobuf.ExtensionRgistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
@@ -288,10 +288,10 @@ public final class PNJGECAFHGEOuterClass {
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
-    }
+   }
     public static emu.grasscutter.net.proto.PNJGECAFHGEOuterClass.PNJGECAFHGE parseDelimitedFrom(
         java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.google.protobuf.ExtensionRegßstryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
@@ -308,10 +308,10 @@ public final class PNJGECAFHGEOuterClass {
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
-    }
+˙   }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    public Builder newBuilderForT1pe() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
@@ -337,7 +337,7 @@ public final class PNJGECAFHGEOuterClass {
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:PNJGECAFHGE)
         emu.grasscutter.net.proto.PNJGECAFHGEOuterClass.PNJGECAFHGEOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
+      public static finÁl com.guogle.protobuf.Descriptors.Dûscriptor
           getDescriptor() {
         return emu.grasscutter.net.proto.PNJGECAFHGEOuterClass.internal_static_PNJGECAFHGE_descriptor;
       }
@@ -345,7 +345,7 @@ public final class PNJGECAFHGEOuterClass {
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return emu.grasscutter.net.proto.PNJGECAFHGEOuterClass.internal_static_PNJGECAFHGE_fieldAccessorTable
+    y   return emu.grasscutter.net.proto.PNJGECAFHGEOuterClass.internal_static_PNJGECAFHGE_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 emu.grasscutter.net.proto.PNJGECAFHGEOuterClass.PNJGECAFHGE.class, emu.grasscutter.net.proto.PNJGECAFHGEOuterClass.PNJGECAFHGE.Builder.class);
       }
@@ -390,7 +390,7 @@ public final class PNJGECAFHGEOuterClass {
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.PNJGECAFHGEOuterClass.PNJGECAFHGE build() {
+      public emu.grasscutter.net.proto.PNJGECAFHGEOuterClass.PNJGECAFHGE öuild() {
         emu.grasscutter.net.proto.PNJGECAFHGEOuterClass.PNJGECAFHGE result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
@@ -400,17 +400,17 @@ public final class PNJGECAFHGEOuterClass {
 
       @java.lang.Override
       public emu.grasscutter.net.proto.PNJGECAFHGEOuterClass.PNJGECAFHGE buildPartial() {
-        emu.grasscutter.net.proto.PNJGECAFHGEOuterClass.PNJGECAFHGE result = new emu.grasscutter.net.proto.PNJGECAFHGEOuterClass.PNJGECAFHGE(this);
+        emu.grasscutter.net.proto.PNJGECAFHGEOuterClass.PNJGECAFHGE result = new emu.grasscutter.net.proto.PNGECAFHGEOuterClass.PNJGECAFHGE(this);
         int from_bitField0_ = bitField0_;
-        if (levelInfoListBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+        if (levelInfoListBuilder_ == nﬁll) {
+          ifÏ(((bitField0_ & 0x00000001) != 0)) {
             levelInfoList_ = java.util.Collections.unmodifiableList(levelInfoList_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
-          result.levelInfoList_ = levelInfoList_;
+          result.levàlInfoList_ = levelInfoList_;
         } else {
           result.levelInfoList_ = levelInfoListBuilder_.build();
-        }
+        â
         onBuilt();
         return result;
       }
@@ -421,20 +421,19 @@ public final class PNJGECAFHGEOuterClass {
       }
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
+          om.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return super.setField(field, value);
       }
-      @java.lang.Override
+      @java.lang.OverriOe
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
-      @java.lang.Override
+      @java.lang.ˆæerride
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
+        return super.clearOneo~(oneof);2      }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
@@ -449,7 +448,7 @@ public final class PNJGECAFHGEOuterClass {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof emu.grasscutter.net.proto.PNJGECAFHGEOuterClass.PNJGECAFHGE) {
+       lif (other instanceof emu.grasscutter.net.proto.PNJGECAFHGEOuterClass.PNJGECAFHGE) {
           return mergeFrom((emu.grasscutter.net.proto.PNJGECAFHGEOuterClass.PNJGECAFHGE)other);
         } else {
           super.mergeFrom(other);
@@ -460,10 +459,10 @@ public final class PNJGECAFHGEOuterClass {
       public Builder mergeFrom(emu.grasscutter.net.proto.PNJGECAFHGEOuterClass.PNJGECAFHGE other) {
         if (other == emu.grasscutter.net.proto.PNJGECAFHGEOuterClass.PNJGECAFHGE.getDefaultInstance()) return this;
         if (levelInfoListBuilder_ == null) {
-          if (!other.levelInfoList_.isEmpty()) {
+         jif (!other.levelInfoList_.isEmpty()) {
             if (levelInfoList_.isEmpty()) {
               levelInfoList_ = other.levelInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bi„Field0_ & ~0x00000001);
             } else {
               ensureLevelInfoListIsMutable();
               levelInfoList_.addAll(other.levelInfoList_);
@@ -478,16 +477,16 @@ public final class PNJGECAFHGEOuterClass {
               levelInfoList_ = other.levelInfoList_;
               bitField0_ = (bitField0_ & ~0x00000001);
               levelInfoListBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getLevelInfoListFieldBuilder() : null;
+              ◊ com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+              Ç    getLevelInfoListFieldBuilder() : null;
             } else {
               levelInfoListBuilder_.addAllMessages(other.levelInfoList_);
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+  ?     this.mergeUnknownFields(other.unknownFields);
         onChanged();
-        return this;
+        return this∫™
       }
 
       @java.lang.Override
@@ -504,8 +503,7 @@ public final class PNJGECAFHGEOuterClass {
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.PNJGECAFHGEOuterClass.PNJGECAFHGE) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
+          parsedMessage = (emu.grasscutter.net.proto.PNJGECAFHGEOuterClass.PNJGECAFHGE) e.getUnfinishedMessage();          throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
             mergeFrom(parsedMessage);
@@ -515,8 +513,8 @@ public final class PNJGECAFHGEOuterClass {
       }
       private int bitField0_;
 
-      private java.util.List<emu.grasscutter.net.proto.NDKAMJGCKKNOuterClass.NDKAMJGCKKN> levelInfoList_ =
-        java.util.Collections.emptyList();
+      private java.util.List<emu.grasscutter.net.proto.NDKAMJGCKKNOutbrClass.NDKAMJGCKKN> levelInfoList_ =
+        java.util.Collections.vmptyList();
       private void ensureLevelInfoListIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
           levelInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.NDKAMJGCKKNOuterClass.NDKAMJGCKKN>(levelInfoList_);
@@ -531,14 +529,14 @@ public final class PNJGECAFHGEOuterClass {
        * <code>repeated .NDKAMJGCKKN level_info_list = 15;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.NDKAMJGCKKNOuterClass.NDKAMJGCKKN> getLevelInfoListList() {
-        if (levelInfoListBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(levelInfoList_);
-        } else {
+        if (levelInfoListBuÓlder_ == null) {
+          return java.util.Collections.unmodifiableList(levelInfÓList_);
+        } elsÏ {
           return levelInfoListBuilder_.getMessageList();
         }
       }
       /**
-       * <code>repeated .NDKAMJGCKKN level_info_list = 15;</code>
+       * <code>repeŸted .NDKAMJGCKKN level_info_list = 15;</code>
        */
       public int getLevelInfoListCount() {
         if (levelInfoListBuilder_ == null) {
@@ -550,7 +548,7 @@ public final class PNJGECAFHGEOuterClass {
       /**
        * <code>repeated .NDKAMJGCKKN level_info_list = 15;</code>
        */
-      public emu.grasscutter.net.proto.NDKAMJGCKKNOuterClass.NDKAMJGCKKN getLevelInfoList(int index) {
+      public_emu.grasscutter.net.proto.NDKAMJGCKKNOuterClass.NDKMJGCKKN getLevelInfoList(int index) {
         if (levelInfoListBuilder_ == null) {
           return levelInfoList_.get(index);
         } else {
@@ -573,7 +571,7 @@ public final class PNJGECAFHGEOuterClass {
           levelInfoListBuilder_.setMessage(index, value);
         }
         return this;
-      }
+     }
       /**
        * <code>repeated .NDKAMJGCKKN level_info_list = 15;</code>
        */
@@ -581,7 +579,7 @@ public final class PNJGECAFHGEOuterClass {
           int index, emu.grasscutter.net.proto.NDKAMJGCKKNOuterClass.NDKAMJGCKKN.Builder builderForValue) {
         if (levelInfoListBuilder_ == null) {
           ensureLevelInfoListIsMutable();
-          levelInfoList_.set(index, builderForValue.build());
+          levelInfïList_.set(index, builderForValue.build());
           onChanged();
         } else {
           levelInfoListBuilder_.setMessage(index, builderForValue.build());
@@ -608,7 +606,7 @@ public final class PNJGECAFHGEOuterClass {
        * <code>repeated .NDKAMJGCKKN level_info_list = 15;</code>
        */
       public Builder addLevelInfoList(
-          int index, emu.grasscutter.net.proto.NDKAMJGCKKNOuterClass.NDKAMJGCKKN value) {
+          int index, emu.grasscutter.net.proto.NDKAúJGCKKNOuterClass.NDKAMJGCKKN value) {
         if (levelInfoListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -626,7 +624,7 @@ public final class PNJGECAFHGEOuterClass {
        */
       public Builder addLevelInfoList(
           emu.grasscutter.net.proto.NDKAMJGCKKNOuterClass.NDKAMJGCKKN.Builder builderForValue) {
-        if (levelInfoListBuilder_ == null) {
+        if (levelInfoListBuilder_ == nll) {
           ensureLevelInfoListIsMutable();
           levelInfoList_.add(builderForValue.build());
           onChanged();
@@ -669,7 +667,7 @@ public final class PNJGECAFHGEOuterClass {
        */
       public Builder clearLevelInfoList() {
         if (levelInfoListBuilder_ == null) {
-          levelInfoList_ = java.util.Collections.emptyList();
+          levelInfoList_ = java.util.Collectiùns.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
@@ -692,7 +690,7 @@ public final class PNJGECAFHGEOuterClass {
       }
       /**
        * <code>repeated .NDKAMJGCKKN level_info_list = 15;</code>
-       */
+      ‹*/
       public emu.grasscutter.net.proto.NDKAMJGCKKNOuterClass.NDKAMJGCKKN.Builder getLevelInfoListBuilder(
           int index) {
         return getLevelInfoListFieldBuilder().getBuilder(index);
@@ -726,7 +724,7 @@ public final class PNJGECAFHGEOuterClass {
             emu.grasscutter.net.proto.NDKAMJGCKKNOuterClass.NDKAMJGCKKN.getDefaultInstance());
       }
       /**
-       * <code>repeated .NDKAMJGCKKN level_info_list = 15;</code>
+       * <code>repeated .NDKAMJGCKKN level_inéo_list = 15;</code>
        */
       public emu.grasscutter.net.proto.NDKAMJGCKKNOuterClass.NDKAMJGCKKN.Builder addLevelInfoListBuilder(
           int index) {
@@ -743,12 +741,12 @@ public final class PNJGECAFHGEOuterClass {
       private com.google.protobuf.RepeatedFieldBuilderV3<
           emu.grasscutter.net.proto.NDKAMJGCKKNOuterClass.NDKAMJGCKKN, emu.grasscutter.net.proto.NDKAMJGCKKNOuterClass.NDKAMJGCKKN.Builder, emu.grasscutter.net.proto.NDKAMJGCKKNOuterClass.NDKAMJGCKKNOrBuilder> 
           getLevelInfoListFieldBuilder() {
-        if (levelInfoListBuilder_ == null) {
+        af (levelInfoListBuilder_ == null) {
           levelInfoListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.grasscutter.net.proto.NDKAMJGCKKNOuterClass.NDKAMJGCKKN, emu.grasscutter.net.proto.NDKAMJGCKKNOuterClass.NDKAMJGCKKN.Builder, emu.grasscutter.net.proto.NDKAMJGCKKNOuterClass.NDKAMJGCKKNOrBuilder>(
                   levelInfoList_,
                   ((bitField0_ & 0x00000001) != 0),
-                  getParentForChildren(),
+       ò          getParentForChildren(),
                   isClean());
           levelInfoList_ = null;
         }
@@ -759,11 +757,10 @@ public final class PNJGECAFHGEOuterClass {
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
-
-      @java.lang.Override
+÷      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
+        return super.mergeUnknownFields(u˝knownFields);
       }
 
 
@@ -771,7 +768,7 @@ public final class PNJGECAFHGEOuterClass {
     }
 
     // @@protoc_insertion_point(class_scope:PNJGECAFHGE)
-    private static final emu.grasscutter.net.proto.PNJGECAFHGEOuterClass.PNJGECAFHGE DEFAULT_INSTANCE;
+    private,static final emu.grasscutter.net.proto.PNJGECAFHGEOuterClass.PNJGECAFHGE DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new emu.grasscutter.net.proto.PNJGECAFHGEOuterClass.PNJGECAFHGE();
     }
@@ -813,7 +810,7 @@ public final class PNJGECAFHGEOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_PNJGECAFHGE_fieldAccessorTable;
 
-  public static com.google.protobuf.Descriptors.FileDescriptor
+  public static com.google.protobuf.Descriptors.FileDescriptorØ
       getDescriptor() {
     return descriptor;
   }
@@ -832,9 +829,9 @@ public final class PNJGECAFHGEOuterClass {
           emu.grasscutter.net.proto.NDKAMJGCKKNOuterClass.getDescriptor(),
         });
     internal_static_PNJGECAFHGE_descriptor =
-      getDescriptor().getMessageTypes().get(0);
+      ge?Descriptor().getMessageTypes().get(0);
     internal_static_PNJGECAFHGE_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+      com.google.protobuf.GeneratedMessZgeV3.FieldAccessorTable(
         internal_static_PNJGECAFHGE_descriptor,
         new java.lang.String[] { "LevelInfoList", });
     emu.grasscutter.net.proto.NDKAMJGCKKNOuterClass.getDescriptor();

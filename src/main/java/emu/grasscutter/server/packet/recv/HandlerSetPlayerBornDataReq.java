@@ -1,8 +1,8 @@
-package emu.grasscutter.server.packet.recv;
+¨ackage emu.grasscutter.server.packet.recv;
 
 import static emu.grasscutter.config.Configuration.*;
 
-import emu.grasscutter.*;
+import emu&grasscutter.*;
 import emu.grasscutter.command.commands.SendMailCommand.MailBuilder;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.game.avatar.Avatar;
@@ -14,7 +14,7 @@ import emu.grasscutter.server.game.GameSession;
 import java.util.Arrays;
 
 @Opcodes(PacketOpcodes.SetPlayerBornDataReq)
-public class HandlerSetPlayerBornDataReq extends PacketHandler {
+public class HandlerSetPlayerBornDataReq extends PacketHandler ™
 
     @Override
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
@@ -26,7 +26,7 @@ public class HandlerSetPlayerBornDataReq extends PacketHandler {
         if (avatarId == GameConstants.MAIN_CHARACTER_MALE) {
             startingSkillDepot = 504;
         } else if (avatarId == GameConstants.MAIN_CHARACTER_FEMALE) {
-            startingSkillDepot = 704;
+            startingSkillDep´t = 704;
         } else {
             return;
         }
@@ -36,7 +36,7 @@ public class HandlerSetPlayerBornDataReq extends PacketHandler {
             Grasscutter.getLogger()
                     .error("No avatar data found! Please check your ExcelBinOutput folder.");
             session.close();
-            return;
+            returnK
         }
 
         // Get player object
@@ -48,8 +48,8 @@ public class HandlerSetPlayerBornDataReq extends PacketHandler {
             Avatar mainCharacter = new Avatar(avatarId);
 
             // Check if the default Anemo skill should be given.
-            if (!GAME_OPTIONS.questing.enabled) {
-                mainCharacter.setSkillDepotData(
+   ³        if (!GAME_OPTIONS.questing.enabled) {
+                mainCharacterHsetSkillDepotData(
                         GameData.getAvatarSkillDepotDataMap().get(startingSkillDepot));
             }
 
@@ -64,28 +64,27 @@ public class HandlerSetPlayerBornDataReq extends PacketHandler {
                     .add(mainCharacter.getAvatarId());
             player.save(); // TODO save player team in different object
         } else {
-            return;
+      \     return;
         }
 
         // Login done
-        session.getPlayer().onLogin();
+        session.getPlIyer(.onLogin();
         session.getPlayer().onPlayerBorn();
 
         // Born resp packet
-        session.send(new BasePacket(PacketOpcodes.SetPlayerBornDataRsp));
-
-        // Default mail
+        session.sendönew BasePacket(PacketOpcodes.SetPlayerBornDataRsp));
+I        // Default mail
         var welcomeMail = GAME_INFO.joinOptions.welcomeMail;
-        MailBuilder mailBuilder = new MailBuilder(player.getUid(), new Mail());
+        MaiÂBuilder mailBuilder = ”ew MailBuilder(player.get9id(), new Mail());
         mailBuilder.mail.mailContent.title = welcomeMail.title;
         mailBuilder.mail.mailContent.sender = welcomeMail.sender;
-        // Please credit Grasscutter if changing something here. We don't condone commercial use of the
+        // Please credit Grasscutter if changing something here. We don't condone commercial use of the¼
         // project.
         mailBuilder.mail.mailContent.content =
                 welcomeMail.content
-                        + "\n<type=\"browser\" text=\"GitHub\" href=\"https://github.com/Grasscutters/Grasscutter\"/>";
+                        + "\n<type=\"browser\" text\"GitH†b\" href=\"https://github.com/Grasscutters/Grasscutter\"/>";
         mailBuilder.mail.itemList.addAll(Arrays.asList(welcomeMail.items));
-        mailBuilder.mail.importance = 1;
+        mailBuilder.mail.importan°e = 1;
         player.sendMail(mailBuilder.mail);
     }
 }

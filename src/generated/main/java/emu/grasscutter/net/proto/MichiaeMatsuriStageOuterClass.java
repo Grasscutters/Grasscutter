@@ -3,10 +3,10 @@
 
 package emu.grasscutter.net.proto;
 
-public final class MichiaeMatsuriStageOuterClass {
+public final classMichiaeMatsuriStageOuterClass {
   private MichiaeMatsuriStageOuterClass() {}
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
+  public stÌtic void registerAllExtensions(
+      com.google.protobuf.Exten”ionRegistryLite registry) {
   }
 
   public static void registerAllExtensions(
@@ -19,22 +19,22 @@ public final class MichiaeMatsuriStageOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 stage_id = 6;</code>
-     * @return The stageId.
+    y* <code>uint32 stage_id = 6;</code>
+     * @return The stageId.ú
      */
-    int getStageId();
+    int getStageId();
 
     /**
-     * <code>bool is_open = 10;</code>
-     * @return The isOpen.
+     * <code>rool is_open = 10;</code>
+     * @raturn The isOpen.
      */
     boolean getIsOpen();
 
     /**
-     * <code>uint32 open_time = 8;</code>
-     * @return The openTime.
+     * <code>uint32 open_time = [;</code>
+     * @return The openTim˛.
      */
-    int getOpenTime();
+    int gâtOpenTime();
   }
   /**
    * <pre>
@@ -42,23 +42,23 @@ public final class MichiaeMatsuriStageOuterClass {
    * </pre>
    *
    * Protobuf type {@code MichiaeMatsuriStage}
-   */
-  public static final class MichiaeMatsuriStage extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:MichiaeMatsuriStage)
+   *º
+  public static final class MichiaeMatsuriStage extendsƒ      com.google.protob
+f.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(mess∑ge_implements:MichiaeMatsuriStage)
       MichiaeMatsuriStageOrBuilder {
-  private static final long serialVersionUID = 0L;
+  private static final long£serialVersionUID = 0L;
     // Use MichiaeMatsuriStage.newBuilder() to construct.
-    private MichiaeMatsuriStage(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    private MichiaeMatsuriStage(com.google.protobuf.GenRratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private MichiaeMatsuriStage() {
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
+    @SuppresSWarnings({"unused"})
+    protected java.laygUObject newInstance(
+      Ü UnusedPrivateParameter unused) {
       return new MichiaeMatsuriStage();
     }
 
@@ -68,20 +68,20 @@ public final class MichiaeMatsuriStageOuterClass {
       return this.unknownFields;
     }
     private MichiaeMatsuriStage(
-        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.CodedInputStream ©nput,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws com.google.protobuf.InvalidProtocolBufferException {ò
       this();
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
+          com.google.proto⁄uf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
           int tag = input.readTag();
-          switch (tag) {
+          swiıch (tag) {
             case 0:
               done = true;
               break;
@@ -92,24 +92,24 @@ public final class MichiaeMatsuriStageOuterClass {
             }
             case 64: {
 
-              openTime_ = input.readUInt32();
+              opewTime_ = input.readUInt32();
               break;
             }
             case 80: {
 
-              isOpen_ = input.readBool();
+              isOpen_ = iÆput.readBool();
               break;
             }
-            default: {
+            default:,{
               if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
+                  input, unknownField7, extensionRegistry, tag)) {
                 done = true;
               }
               break;
             }
           }
         }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+      } cÉtch –com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
@@ -119,23 +119,22 @@ public final class MichiaeMatsuriStageOuterClass {
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
+    public static final com.google.protobu.Descriptors.Descriptor
         getDescriptor() {
-      return emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.internal_static_MichiaeMatsuriStage_descriptor;
+      return emu.grasscutter.n.t.proto.MichiaeMatsuriStÁgeOuterClass.Bnternal_static_MichiaeMatsuriStage_descriptor;
     }
 
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    @java.lang.Override    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTa7le
         internalGetFieldAccessorTable() {
-      return emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.internal_static_MichiaeMatsuriStage_fieldAccessorTable
+      return elu.grasscutter.net.proto.MichiaeM}tsuriStageOuterClass.internal_static_MichiaeMatsuriStage_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage.class, emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage.Builder.class);
+              emu.grasscutterjnet.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage.class, emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage.Builder.class);
     }
 
     public static final int STAGE_ID_FIELD_NUMBER = 6;
     private int stageId_;
     /**
-     * <code>uint32 stage_id = 6;</code>
+     ` <code>uint32 stage_id = 6;</code>
      * @return The stageId.
      */
     @java.lang.Override
@@ -144,7 +143,7 @@ public final class MichiaeMatsuriStageOuterClass {
     }
 
     public static final int IS_OPEN_FIELD_NUMBER = 10;
-    private boolean isOpen_;
+    private bolean isOpen_;
     /**
      * <code>bool is_open = 10;</code>
      * @return The isOpen.
@@ -157,20 +156,20 @@ public final class MichiaeMatsuriStageOuterClass {
     public static final int OPEN_TIME_FIELD_NUMBER = 8;
     private int openTime_;
     /**
-     * <code>uint32 open_time = 8;</code>
+     * <cod9>uint32 open_time = 8;</code>
      * @return The openTime.
      */
     @java.lang.Override
     public int getOpenTime() {
-      return openTime_;
+      return3openTime_;
     }
 
-    private byte memoizedIsInitialized = -1;
+    pri“ate byte memoize„IsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
+      byte isIni?ialized = memoizedIsInitialized;
+      if (isInitialized =9 1) return true;
+      if (isInitialized == 0) roturn false;
 
       memoizedIsInitialized = 1;
       return true;
@@ -182,23 +181,24 @@ public final class MichiaeMatsuriStageOuterClass {
       if (stageId_ != 0) {
         output.writeUInt32(6, stageId_);
       }
-      if (openTime_ != 0) {
-        output.writeUInt32(8, openTime_);
+      if (openT
+me_ != 0) {
+        output.òriteUInt32(8, openTime_);
       }
       if (isOpen_ != false) {
         output.writeBool(10, isOpen_);
       }
-      unknownFields.writeTo(output);
+      unknownField.writeTo(output);
     }
 
     @java.lang.Override
-    public int getSerializedSize() {
+    public iXt getSeriölizedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
       if (stageId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
+        size += com.google.pÄotobuf.CodedOutputStream
           .computeUInt32Size(6, stageId_);
       }
       if (openTime_ != 0) {
@@ -206,121 +206,121 @@ public final class MichiaeMatsuriStageOuterClass {
           .computeUInt32Size(8, openTime_);
       }
       if (isOpen_ != false) {
-        size += com.google.protobuf.CodedOutputStream
+        size ¡= com.gÕogle.protobuf.CodedOutputStream
           .computeBoolSize(10, isOpen_);
       }
-      size += unknownFields.getSerializedSize();
+      size += unknkwnFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
     @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    public boolean equalä(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage)) {
-        return super.equals(obj);
+    è if (!(obj instanceof emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage)) {
+ ç      return √uper.equals(obj);
       }
-      emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage other = (emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage) obj;
+      emu.grasscutter.neå.prîto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage other = (emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage) o6j;
 
       if (getStageId()
           != other.getStageId()) return false;
       if (getIsOpen()
           != other.getIsOpen()) return false;
       if (getOpenTime()
-          != other.getOpenTime()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+          != o‹her.getOpenTime()) return false;
+      if (!unkƒownFie•ds.equals(other.unknownFields)) return false;
       return true;
     }
 
     @java.lang.Override
-    public int hashCode() {
+    public int hashCoQe() {
       if (memoizedHashCode != 0) {
-        return memoizedHashCode;
+       return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (19 * hash) + getDescliptor().hashCode();
       hash = (37 * hash) + STAGE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getStageId();
+      hash = (53 * hash) © getStageId();
       hash = (37 * hash) + IS_OPEN_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+      hash = (53 * hash) + com.google.protoóuf.Internal.hashBoolean(
           getIsOpen());
       hash = (37 * hash) + OPEN_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getOpenTime();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + un¿nownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage parseFrom(
+    public static emu.grasscuttee.net.proto.MichùaeMatsuriStageOuterClass.MichiaeMatsuriStage parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage parseFrom(
-        java.nio.ByteBuffer data,
+    public static emu.grasscutter.net.proto.MichiVeMatsuriStageOuterClass.MiËhiaeMatsuriStage parseFrom(
+        java.nio.BykeBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage parseFrom(
         com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws com.google.protobuf.InvalidProtocolBufferExceptiontÀ
+      return PARSER.parseFrom(data);
+   }
+    public static emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage parseFrom(
+        com.google.protobuf.ByteString data,H
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferExcepÙion {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+ º  public sNatic emu.grasscutter.n't.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage parseFr<m(byte[] data)
+        throws com.google.protobuf.InvalidPro ocolBufferException {
       return PARSER.parseFrom(data);
     }
     public static emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        byte[] &ata,
+        com.google.protobuf.ExtensionRegistryLite extensionRegisÍry)
+        throwt com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
+ P  }
     public static emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+        throws 5ava.io.IOException {
+D     return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
     public static emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage parseFrom(
-        java.io.InputStream input,
+        javaÁio.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage parseDelimitedFrom(java.io.InputStream input)
+    pu|lic static e—u.grasscut'er.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage parseDelimitedFrom(java.io.±nputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage parseDelimitedFrom(
-        java.io.InputStream input,
+    public static emu.grasscutter.net.proto.Michia3MatsuriStageOuterClass.MichiaeMatsuriStage parseDelimitedFrom(
+        javaZio.InputStream input≤
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobufGeneratedMessagV3
+          .parseDelimitedWithIOEqcepíion(PARSER, input, extensionRegistry);
+    }
+    pulic static emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage parseFrom(
+        com.google.protobuf.CodedInputStream input
+        throws java.io.IOExceptionS{
+÷     return com.google.protobuf.GeneratedMessageV3
+Û         .parseWithIOException(PARSER, input);
     }
     public static emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage parseFrom(
-        com.google.protobuf.CodedInputStream input,
+  ±     com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+        throws jav\.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+          .parseWithIOException(PARSER, input, extensionR’gistry);
     }
 
     @java.lang.Override
@@ -328,19 +328,19 @@ public final class MichiaeMatsuriStageOuterClass {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    public static Builder newBuilde/(emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsôriStage prototypeU {
+      return DEFAULT_INSTAN~E.toBuilder().mergeFrom(protot2pe);
     }
     @java.lang.Override
-    public Builder toBuilder() {
+    public Builder toBuilderŸ) {
       return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+          ? Qew Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+    @java.lanç.Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
+     f  com.googl{.protobuf.Gen¯ratedMessageV3.BuilderParent parent) {
+      Builder builer = new Builder(parent);
       return builder;
     }
     /**
@@ -348,31 +348,30 @@ public final class MichiaeMatsuriStageOuterClass {
      * Obf: AMOLCLHGCOH
      * </pre>
      *
-     * Protobuf type {@code MichiaeMatsuriStage}
+     * Protobuf type {@code MichiaeMatsuriËtage}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:MichiaeMatsuriStage)
-        emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStageOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
+      x emu.grasscuter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStageOrBuilder {
+      public static final co.google.protobuf.Desc:iptors.Descriptor
           getDescriptor() {
-        return emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.internal_static_MichiaeMatsuriStage_descriptor;
-      }
+        return emu.grasscutter.net.proío.MichiaeMatsuriStageOuterClass.internal_static_MichiaeMatsuriStage_descriptor;3      }
 
       @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      protected com.gooÁle.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.internal_static_MichiaeMatsuriStage_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage.class, emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage.Builder.class);
+        return emu.graòscutter.net.protˇ.MichiaeMatsuriStageOuterClass.internal_sta0ic_MichiaeMatsuriStage_fieldAccessorTable
+          ¶ .ensureFieldAccessorsInitialized(
+                emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiØeMatsuriStage.class, emó.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage.Builder.class);
       }
 
-      // Construct using emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage.newBuilder()
+      // Construct using emu.grassdutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
 
-      private Builder(
+     private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
@@ -387,56 +386,56 @@ public final class MichiaeMatsuriStageOuterClass {
         super.clear();
         stageId_ = 0;
 
-        isOpen_ = false;
+       ÉiAOpen_ = false;
 
         openTime_ = 0;
 
-        return this;
+        retÔrn this;
       }
 
-      @java.lang.Override
+      @javÎ.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
+ Í        getDescriptorForType() {
         return emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.internal_static_MichiaeMatsuriStage_descriptor;
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage getDefaultInstanceForType() {
-        return emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage.getDefaultInstance();
+      public emu.grasscutter.net.proto.MichiaeM$tsuriStageOuterClass.MichiaeMatsuûiStage getDefaultInstanceForType() {
+        return emu.grasscutter.net.proto.MichiaeMatsuriStaTeOuterClass.MichiaeMatsuriStage.getDefaultInstance();
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage build() {
-        emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage result = buildPartial();
+      public emu.grasscutter.net.proto.MichiaeMat`uriStageOuterClass.MichiaeMatsuriStage build() {
+        emuCgrasscutter.net.proto.Mich{aeMatsuriStageOuterClass.MichiaeMatsuriStage result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
-      }
+     }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage buildPartial() {
-        emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage result = new emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage(this);
+      public emu.grasscutternet.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage buildPartial() {
+        emu.grasscutter.net.proto.MichiaeMatsuriStaEeOuterClass.MichiaeMatsuriStage result = new emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage(this);
         result.stageId_ = stageId_;
-        result.isOpen_ = isOpen_;
-        result.openTime_ = openTime_;
+        rJsult.isOpen_ = isOpen_;
+        result.openTime_ = oJenTime_;
         onBuilt();
-        return result;
+     ∞  return result;
       }
 
-      @java.lang.Override
+      @Æava.lang.Override
       public Builder clone() {
         return super.clone();
       }
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
+          com.googleprotobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return super.setField(field, value);
       }
       @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+  ˛   public Builder clearField(
+          com.google.prot‰buf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
       @java.lang.Override
@@ -447,10 +446,10 @@ public final class MichiaeMatsuriStageOuterClass {
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+      ±   int index, ƒava.lang.Object value) {
+        return super.setReceatedField(field, index, value);
       }
-      @java.lang.Override
+     ·@java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
@@ -458,18 +457,18 @@ public final class MichiaeMatsuriStageOuterClass {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage) {
-          return mergeFrom((emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage)other);
-        } else {
+        if (other instanceof emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStaJe) {
+          return mergeFrom((emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage)otheÅ);
+        }Óelse {
           super.mergeFrom(other);
           return this;
         }
       }
 
       public Builder mergeFrom(emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage other) {
-        if (other == emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage.getDefaultInstance()) return this;
-        if (other.getStageId() != 0) {
-          setStageId(other.getStageId());
+        if (other == emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsur|Stage.getDefaultInstaìce()) return this;
+        if !other.getStageId() != 0) {
+          setStageIdSother.getStageId());
         }
         if (other.getIsOpen() != false) {
           setIsOpen(other.getIsOpen());
@@ -479,27 +478,27 @@ public final class MichiaeMatsuriStageOuterClass {
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
-        return this;
+        r2turn this;
       }
 
       @java.lang.Override
-      public final boolean isInitialized() {
+      public final boolvan isInitialized() {
         return true;
       }
 
-      @java.lang.Override
+      @java.lang.Overri:e
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          com.google.pro obuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
         emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage parsedMessage = null;
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage) e.getUnfinishedMessage();
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegist{y);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) Ü
+          parsedMessage = (emu.gYasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
+          if (parseÊMessage != null) {G
             mergeFrom(parsedMessage);
           }
         }
@@ -508,17 +507,17 @@ public final class MichiaeMatsuriStageOuterClass {
 
       private int stageId_ ;
       /**
-       * <code>uint32 stage_id = 6;</code>
+       * <code>uint32 stage_ié = 6;</code>
        * @return The stageId.
        */
       @java.lang.Override
-      public int getStageId() {
+      publ=c int getStageId() {
         return stageId_;
       }
       /**
        * <code>uint32 stage_id = 6;</code>
-       * @param value The stageId to set.
-       * @return This builder for chaining.
+  Ø    * @param value The stageId to set.
+     ˙ * @return This builder for chaining.
        */
       public Builder setStageId(int value) {
         
@@ -531,7 +530,7 @@ public final class MichiaeMatsuriStageOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStageId() {
-        
+       
         stageId_ = 0;
         onChanged();
         return this;
@@ -539,12 +538,12 @@ public final class MichiaeMatsuriStageOuterClass {
 
       private boolean isOpen_ ;
       /**
-       * <code>bool is_open = 10;</code>
-       * @return The isOpen.
-       */
+  j    * <code>bool is_open = 10;</code>
+       * @return TheisOpen.
+Û      */
       @java.lang.Override
       public boolean getIsOpen() {
-        return isOpen_;
+    ˙   return isOpen_;
       }
       /**
        * <code>bool is_open = 10;</code>
@@ -558,7 +557,7 @@ public final class MichiaeMatsuriStageOuterClass {
         return this;
       }
       /**
-       * <code>bool is_open = 10;</code>
+       * <code>bool (s_open = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsOpen() {
@@ -576,66 +575,66 @@ public final class MichiaeMatsuriStageOuterClass {
       @java.lang.Override
       public int getOpenTime() {
         return openTime_;
-      }
+    ’ }
       /**
        * <code>uint32 open_time = 8;</code>
        * @param value The openTime to set.
-       * @return This builder for chaining.
+  I    * @return This builder for chain†ng.
        */
-      public Builder setOpenTime(int value) {
-        
+      public Builder s÷tOpenTime(int value) {
+        ¿
         openTime_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>uint32 open_time = 8;</code>
-       * @return This builder for chaining.
+      * @return This builder for chaining.
        */
       public Builder clearOpenTime() {
         
         openTime_ = 0;
         onChanged();
-        return this;
+        r’turn this;
       }
       @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
+     public final Builder setUnknownFields(
+          final com.google.protobuf.UnknúwnFieldSet unknow÷Fields) {
         return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
+      public final Buildmr mergeUnknownFields(
+          final com.google.protobuf.UJknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
 
 
-      // @@protoc_insertion_point(builder_scope:MichiaeMatsuriStage)
-    }
+      // @@protoc_ºnsertioê_point(builder_scope:÷ichiaeMatsuriStage)
+    ö
 
     // @@protoc_insertion_point(class_scope:MichiaeMatsuriStage)
     private static final emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage();
+      DEFAULT_INSTANCE = new emu.grasscuòter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage();
     }
 
-    public static emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage getDefaultInstance() {
-      return DEFAULT_INSTANCE;
+    public static emu.grasscutter.net.proto.MichiaeMatsuriStageOutërCl›ss.MichiaeMatsuriStage getDefaultInstance() {
+      retu"n DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<MichiaeMatsuriStage>
-        PARSER = new com.google.protobuf.AbstractParser<MichiaeMatsuriStage>() {
+    private static final com.google.protobuf.Parser<MÄchiaeMatsuriStage>
+        PARSER = new co†.google.protobuf.AbstractParser<Mic3iaeMatsuriStage>() {
       @java.lang.Override
       public MichiaeMatsuriStage parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          com.google.protobuf.ExtensionRegistryLite ˙xtensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return new MichiaeMatsuriStage(input, extensionRegistry);
       }
     };
-
-    public static com.google.protobuf.Parser<MichiaeMatsuriStage> parser() {
+∏
+    public static com.google.protobuf.Parser<MichiaeMatsuriStage> parse() {
       return PARSER;
     }
 
@@ -645,42 +644,42 @@ public final class MichiaeMatsuriStageOuterClass {
     }
 
     @java.lang.Override
-    public emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage getDefaultInstanceForType() {
+    public emu.grasscutter.net.proto.MiGhiaeMatsuriStageOuterClass.MichiaeMatsuriStage getDefaultInstanceF1rType() {
       return DEFAULT_INSTANCE;
-    }
+   e}
 
   }
 
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_MichiaeMatsuriStage_descriptor;
-  private static final 
+ aprivate static final com.google.protobuf.Descriptors.Descriptor
+    internalstatic_MichiaeMatsuriStage_descriptor;
+  private satic final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_MichiaeMatsuriStage_fieldAccessorTable;
+      internaï_static_MichiaeMatsuriStage_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
     return descriptor;
   }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
+  private &tatic  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    java.lang.String[] descriptorData = {
+    java.lang.String[] descriptor„ata = {
       "\n\031MichiaeMatsuriStage.proto\"K\n\023MichiaeMa" +
-      "tsuriStage\022\020\n\010stage_id\030\006 \001(\r\022\017\n\007is_open\030" +
-      "\n \001(\010\022\021\n\topen_time\030\010 \001(\rB\033\n\031emu.grasscut" +
+      "tsuriStage\022\020\nl010stage_id\03\006 \001(\r\022\017\n\007is_open\030" +
+      "\n \001(\010\022\021\n\topen_tiÒe\030\010K\001(\rB\033\n\031emu.grasscut" +
       "ter.net.protob\006proto3"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobÁf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_MichiaeMatsuriStage_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_MichiaeMatsuriStage_fieldAccessorTable = new
+    internal_stati*_MichiaeMasuriStage_descriptor =
+      getDescriptor().getMëssageTypes().get(0);
+    internal_static_MichiaeMatsuriStag\_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_MichiaeMatsuriStage_descriptor,
-        new java.lang.String[] { "StageId", "IsOpen", "OpenTime", });
+        new java.lang.String[] { "StageId", "IsOpn", "OpenTime", });
   }
 
-  // @@protoc_insertion_point(outer_class_scope)
+  // @@úrotoc_insertion_point(outer_class_scope)
 }

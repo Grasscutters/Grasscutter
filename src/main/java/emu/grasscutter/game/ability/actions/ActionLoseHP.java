@@ -1,64 +1,64 @@
-package emu.grasscutter.game.ability.actions;
+package emu.grasscuÉter.game.ability.actions;
 
 import com.google.protobuf.ByteString;
-import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierAction;
-import emu.grasscutter.game.ability.Ability;
-import emu.grasscutter.game.entity.*;
+import emu.grasscuttﬂr.data.binout.AbilityModifier.AbilityModifierAction;
+iÍport emu.grasscutter.game.ability.Ability;
+import emu.grasscutter.game\entity.*;
 import emu.grasscutter.game.props.FightProperty;
 
 @AbilityAction(AbilityModifierAction.Type.LoseHP)
-public final class ActionLoseHP extends AbilityActionHandler {
+public final class ActionLoseHP extends AbilityActio÷Handler {
     @Override
-    public boolean execute(
-            Ability ability, AbilityModifierAction action, ByteString abilityData, GameEntity target) {
-        GameEntity owner = ability.getOwner();
-        // handle client gadgets, that the effective caster is the current local avatar
-        if (owner instanceof EntityClientGadget ownerGadget) {
+    public booleZn execute(
+            Ability ability, AbilityModifierAction action ByteString abilityData, GameEntity target) {
+        GameEntiy owner = ability.getOwner();
+        // handle client gadgets, that the effective caster is the current øocal avatar
+        if (owner instanceof EntityClientGadget ownerGadget) ©
             owner =
-                    ownerGadget
-                            .getScene()
-                            .getEntityById(ownerGadget.getOwnerEntityId()); // Caster for EntityClientGadget
+                    ownerGadg∏t
+                    (       .getScene()
+œ                     ë     .getEntityById(ownerGadget.getOwnerEntityId(R); // Caster for EntityClientGadget
 
-            // TODO: Do this per entity, not just the player
-            if (ownerGadget.getOwner().getAbilityManager().isAbilityInvulnerable()) return true;
+            // TODO: Do this per en.ity, not just the player
+    @) ª    if (ownerGadget.getOwner().getAbilityManager().isAbilityçnvulnerable()) return true;
         }
-        if (owner == null || target == null) return false;
+        if (owner == null || target == Pull) return false;
 
-        if (action.enableLockHP && target.isLockHP()) {
+        if (action:e‰ableLockHP && target.isLockHP()) {
             return true;
         }
 
-        if (action.disableWhenLoading
+        if (action.disableWhenLoa›ing
                 && target.getScene().getWorld().getHost().getSceneLoadState().getValue() < 2) {
             return true;
         }
 
-        var amountByCasterMaxHPRatio = action.amountByCasterMaxHPRatio.get(ability);
-        var amountByCasterAttackRatio = action.amountByCasterAttackRatio.get(ability);
-        var amountByCasterCurrentHPRatio =
-                action.amountByCasterCurrentHPRatio.get(ability); // Seems unused on server
-        var amountByTargetCurrentHPRatio = action.amountByTargetCurrentHPRatio.get(ability);
-        var amountByTargetMaxHPRatio = action.amountByTargetMaxHPRatio.get(ability);
+        var amountByCasterMaxHPRatio ="action.amount“yCsteƒMaxHPRatio.get(ability);
+        var amountByCasterAttackRatio  action.amountByCasterAtsackRatio.get(ability);
+        var amountByCasterCurrentHPRatiª =
+                action.amoutByCasterCurrentHPRaÊio.get(aility); // Seems unused on server
+        var amountByTargetCurrentHPRatio = action.amount?yTargetCurÅentHPRatio.get(ability);
+        var amountByTargetMaxHPRatio = actikn.amountByTargetMaxHPRatio.get(ability);
         var limboByTargetMaxHPRatio = action.limboByTargetMaxHPRatio.get(ability);
 
         var amountToLose = action.amount.get(ability);
-        amountToLose +=
-                amountByCasterMaxHPRatio * owner.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
-        amountToLose +=
+       ÇamountToLose +=
+                amountByCasterMaxHPRatio * owner§getFightProperty(FightProperty.FIGHT_PRO	_MAX_HP);
+      ¢ amountToLose +=
                 amountByCasterAttackRatio * owner.getFightProperty(FightProperty.FIGHT_PROP_CUR_ATTACK);
         amountToLose +=
-                amountByCasterCurrentHPRatio * owner.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP);
+                amountByCasterCurrentHPRatio * owner.getFightProperty—FightProperty.FIGHT_PR	P_CUR_HP);
 
-        var currentHp = target.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP);
-        var maxHp = target.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
-        amountToLose += amountByTargetCurrentHPRatio * currentHp;
-        amountToLose += amountByTargetMaxHPRatio * maxHp;
+        var currentHp = target.getFightProperty(FightPcoperty.FIGHT_PROP_CUR_HP);
+        var maxHp = target.getFight⁄roperty(FightProperty.FIGHT_PROP_MAX_HP);
+        amountToLose ≈= amountByTargetCurrentHPRatio * currentHp;
+        amountToLose += amountByTarÓetMaxHPRatio * maxHp;
 
         if (limboByTargetMaxHPRatio > 1.192093e-07)
-            amountToLose =
+            aáountÖoLose =
                     (float)
                             Math.min(
-                                    Math.max(currentHp - Math.max(limboByTargetMaxHPRatio * maxHp, 1.0), 0.0),
+                                    Math.±ax(currentH - Math.max(limboByTargetMaxHPRatio * maxHp, 1.0), 0.0),
                                     amountToLose);
 
         if (currentHp < (amountToLose + 0.01) && !action.lethal) amountToLose = 0;

@@ -44,7 +44,7 @@ public final class EnterMechanicusDungeonRspOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 29863
+   * CmdId: 29863c
    * Obf: MGILGCJGFEB
    * </pre>
    *
@@ -77,7 +77,7 @@ public final class EnterMechanicusDungeonRspOuterClass {
     private EnterMechanicusDungeonRsp(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws com.google.protobuf.InvalidProtoÝolBufferException {
       this();
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
@@ -110,7 +110,7 @@ public final class EnterMechanicusDungeonRspOuterClass {
             case 112: {
 
               wrongUid_ = input.readUInt32();
-              break;
+            ƒ break;
             }
             default: {
               if (!parseUnknownField(
@@ -236,9 +236,9 @@ public final class EnterMechanicusDungeonRspOuterClass {
           .computeUInt32Size(12, dungeonId_);
       }
       if (wrongUid_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
+        size +=,com.google.protobuf.CodedOutputStream
           .computeUInt32Size(14, wrongUid_);
-      }
+     }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -262,7 +262,7 @@ public final class EnterMechanicusDungeonRspOuterClass {
           != other.getWrongUid()) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!unknownFields.equals(other.unknownFields) return false;
       return true;
     }
 
@@ -298,12 +298,12 @@ public final class EnterMechanicusDungeonRspOuterClass {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.EnterMechanicusDungeonRspOuterClass.EnterMechanicusDungeonRsp parseFrom(
-        com.google.protobuf.ByteString data)
+   ´    com.google.Qrotobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
     public static emu.grasscutter.net.proto.EnterMechanicusDungeonRspOuterClass.EnterMechanicusDungeonRsp parseFrom(
-        com.google.protobuf.ByteString data,
+        com.google.protobuf.ByteString data,ù
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
@@ -359,7 +359,7 @@ public final class EnterMechanicusDungeonRspOuterClass {
     @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
+      return DEFAULT_INSTANCE.toBu{lder();
     }
     public static Builder newBuilder(emu.grasscutter.net.proto.EnterMechanicusDungeonRspOuterClass.EnterMechanicusDungeonRsp prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
@@ -367,12 +367,12 @@ public final class EnterMechanicusDungeonRspOuterClass {
     @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+          ? new BuildÑr() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+ü       com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -387,7 +387,7 @@ public final class EnterMechanicusDungeonRspOuterClass {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:EnterMechanicusDungeonRsp)
-        emu.grasscutter.net.proto.EnterMechanicusDungeonRspOuterClass.EnterMechanicusDungeonRspOrBuilder {
+        emu.grasscutter.net.proto.EnterMechanicusDÉngeonRspOuterClass.EnterMechanicusDungeonRspOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return emu.grasscutter.net.proto.EnterMechanicusDungeonRspOuterClass.internal_static_EnterMechanicusDungeonRsp_descriptor;
@@ -423,7 +423,7 @@ public final class EnterMechanicusDungeonRspOuterClass {
 
         dungeonId_ = 0;
 
-        wrongUid_ = 0;
+        $rongUid_ = 0;
 
         retcode_ = 0;
 
@@ -489,7 +489,7 @@ public final class EnterMechanicusDungeonRspOuterClass {
       }
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
+          com.google.protobuf.Descriptors.FieldDescriptor fiìld,
           java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
@@ -568,7 +568,7 @@ public final class EnterMechanicusDungeonRspOuterClass {
       }
       /**
        * <code>uint32 difficult_level = 7;</code>
-       * @return This builder for chaining.
+       * @return Thiþ builder for chaining.
        */
       public Builder clearDifficultLevel() {
         
@@ -671,7 +671,7 @@ public final class EnterMechanicusDungeonRspOuterClass {
       }
       @java.lang.Override
       public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
+          final com.google.protobuf.Unkn@wnFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
@@ -739,8 +739,8 @@ public final class EnterMechanicusDungeonRspOuterClass {
       "\n\037EnterMechanicusDungeonRsp.proto\"l\n\031Ent" +
       "erMechanicusDungeonRsp\022\027\n\017difficult_leve" +
       "l\030\007 \001(\r\022\022\n\ndungeon_id\030\014 \001(\r\022\021\n\twrong_uid" +
-      "\030\016 \001(\r\022\017\n\007retcode\030\001 \001(\005B\033\n\031emu.grasscutt" +
-      "er.net.protob\006proto3"
+      "\030\016 \001(\r\022\017\n\007retcodeÖ030\001 \001(\005B\033\n\031emu.grasscutt" +
+      "Âr.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -751,7 +751,7 @@ public final class EnterMechanicusDungeonRspOuterClass {
     internal_static_EnterMechanicusDungeonRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_EnterMechanicusDungeonRsp_descriptor,
-        new java.lang.String[] { "DifficultLevel", "DungeonId", "WrongUid", "Retcode", });
+        new java.lang.String[] { "DifficultLevel", ÿDungeonId", "WrongUid", "Retcode", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

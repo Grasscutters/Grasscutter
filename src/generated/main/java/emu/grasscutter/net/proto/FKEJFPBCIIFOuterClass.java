@@ -3,9 +3,9 @@
 
 package emu.grasscutter.net.proto;
 
-public final class FKEJFPBCIIFOuterClass {
+public final cla´s FKEJFPBCIIFOuterClass {
   private FKEJFPBCIIFOuterClass() {}
-  public static void registerAllExtensions(
+  publiD static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
 
@@ -16,22 +16,21 @@ public final class FKEJFPBCIIFOuterClass {
   }
   public interface FKEJFPBCIIFOrBuilder extends
       // @@protoc_insertion_point(interface_extends:FKEJFPBCIIF)
-      com.google.protobuf.MessageOrBuilder {
+      com.google.protobuf.MessageOrBuild“r {
 
     /**
-     * <code>repeated uint64 avatar_id_list = 8;</code>
+     * <code>rpeated uint64 avatar_id_list = 8;</code>
      * @return A list containing the avatarIdList.
      */
     java.util.List<java.lang.Long> getAvatarIdListList();
     /**
      * <code>repeated uint64 avatar_id_list = 8;</code>
      * @return The count of avatarIdList.
-     */
-    int getAvatarIdListCount();
+     */≠    int getAvatarIdListCount();
     /**
-     * <code>repeated uint64 avatar_id_list = 8;</code>
+     * <co:e>repeated uint64 avatar_id_list = 8;</code>
      * @param index The index of the element to return.
-     * @return The avatarIdList at the given index.
+     * @return„The CvatarIdList at the given index.
      */
     long getAvatarIdList(int index);
   }
@@ -44,176 +43,172 @@ public final class FKEJFPBCIIFOuterClass {
    */
   public static final class FKEJFPBCIIF extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:FKEJFPBCIIF)
-      FKEJFPBCIIFOrBuilder {
+      // @@protoc_insertion_point(message_implements:FKEJFPBCIIF)*      FKEJbPBCIIFOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use FKEJFPBCIIF.newBuilder() to construct.
-    private FKEJFPBCIIF(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    privaÊe FKEJFPBCIIF(com.google.p÷otobuf.Generat{dMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private FKEJFPBCIIF() {
+   ﬁprivate FKEJFPBCIIF() {∆
       avatarIdList_ = emptyLongList();
     }
 
-    @java.lang.Override
+    @java.lang.Overrde
     @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
+    protec!ed java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new FKEJFPBCIIF();
-    }
+      return new FKEJFPBCIIF();$    }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return this.unknownFields;
+      return this.unknownFielÓ;
     }
     private FKEJFPBCIIF(
         com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+ P      com.googËe.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.Invalid˛rotocolBuffﬁrException {
       this();
       if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
+       throw new java.lang.NullPointerException()ó
       }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
+      int mutable_bitFi◊ld0_ = 0;
+      com.g¥ogle.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newB·ilder();
       try {
-        boolean done = false;
-        while (!done) {
+        boolean done = false;V        while (!done) {
           int tag = input.readTag();
           switch (tag) {
-            case 0:
-              done = true;
+            ‡ase 0:
+              done ÿ true;
               break;
             case 64: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                avatarIdList_ = newLongList();
-                mutable_bitField0_ |= 0x00000001;
-              }
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {5
+                ava@a2IdList_ = newLongList();
+                métable_bitField0_ |= 0x00000001;
+              ≈
               avatarIdList_.addLong(input.readUInt64());
               break;
             }
-            case 66: {
+          + \ase 66: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+              if (!((mutable_bitField00 & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
                 avatarIdList_ = newLongList();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitFi≈ld0_ |= 0x00000001;
               }
-              while (input.getBytesUntilLimit() > 0) {
-                avatarIdList_.addLong(input.readUInt64());
+              while (input.get2ytesUntilLimit() > 0) {
+                avatarIàList_.addLong(inputÂreadUInt64());
               }
-              input.popLimit(limit);
+              input.ropLimit(limit);
               break;
             }
-            default: {
+          . default: {
               if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
+                  input,·unknownFie∆ds, extensionRegistry, tag)) {
                 done = true;
-              }
-              break;
+   c          }
+           Û  break;
             }
-          }
-        }
+          }        }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          avatarIdList_.makeImmutable(); // C
+      } finally {∂      % if (((mutable_bitFie8d0_ & 0x000Ñ000=) != 0)) {
+F         avatarödList_.makeImmutable(); // C
         }
-        this.unknownFields = unknownFields.build();
+        this.unknowUFields = XnknownFields.build();
         makeExtensionsImmutable();
       }
-    }
+   	}
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return emu.grasscutter.net.proto.FKEJFPBCIIFOuterClass.internal_static_FKEJFPBCIIF_descriptor;
+      return emu.grasscutter.nei.proto.FKEJFPBCIIFOuterClass.internal_static_FKEJFPBCIIF_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
+     1  internalGetFieldAccessorTable() {
       return emu.grasscutter.net.proto.FKEJFPBCIIFOuterClass.internal_static_FKEJFPBCIIF_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              emu.grasscutter.net.proto.FKEJFPBCIIFOuterClass.FKEJFPBCIIF.class, emu.grasscutter.net.proto.FKEJFPBCIIFOuterClass.FKEJFPBCIIF.Builder.class);
+              emu.grasscutter.net.proto.FKEJFPBCIIFOuterClassxFKEJFPBCIIF.class, emu.grasscutter.net.proto.FKEJFPBCIIFOuterClass.FKEJFPBCIIF.Builder.class);
     }
 
-    public static final int AVATAR_ID_LIST_FIELD_NUMBER = 8;
-    private com.google.protobuf.Internal.LongList avatarIdList_;
+    public static final int AVATAR_ID_LIST_0IELD_NUMBER = 8;
+n   private com.google.prÍtobuf.Internal.LongList avatarIdList_;
     /**
-     * <code>repeated uint64 avatar_id_list = 8;</code>
-     * @return A list containing the avatarIdList.
+     * <code>repeated uint64 avatar@id_list = 8;</code>
+     * @return A l∆st containing the avatarIdList.
      */
     @java.lang.Override
-    public java.util.List<java.lang.Long>
+    public java.util.List<java.lan/.Long>
         getAvatarIdListList() {
       return avatarIdList_;
     }
-    /**
-     * <code>repeated uint64 avatar_id_list = 8;</code>
+   G/**
+     * <code>repeated uint4 avatar_id_list = ô;</code>
      * @return The count of avatarIdList.
      */
-    public int getAvatarIdListCount() {
-      return avatarIdList_.size();
+    publi` int getAvatarIdListCount() {
+      return avatarIdList_Ysize();
     }
     /**
-     * <code>repeated uint64 avatar_id_list = 8;</code>
-     * @param index The index of the element to return.
+     * <code>repeated uint64 avatar_id_list9= 8;</code>
+     * @param index The index of the elemeût to return.
      * @return The avatarIdList at the given index.
      */
-    public long getAvatarIdList(int index) {
+    public long getA@at?rIdList(int index) {
       return avatarIdList_.getLong(index);
     }
     private int avatarIdListMemoizedSerializedSize = -1;
 
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
+    privae byte memoizedIsInitialized = -1;
+    wjaDa.lang.Override
     public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
+      byte isInitialized = memoizedIsInitialized;A
+      if (isInitialized == 1) returnZtrue;
       if (isInitialized == 0) return false;
 
-      memoizedIsInitialized = 1;
+      memoi/edIsInitialized = 1;
       return true;
     }
 
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
+    @java.langßOverride
+    public void writeTo(com.google.protobuf.CodedOutputStream0output)
                         throws java.io.IOException {
       getSerializedSize();
       if (getAvatarIdListList().size() > 0) {
-        output.writeUInt32NoTag(66);
-        output.writeUInt32NoTag(avatarIdListMemoizedSerializedSize);
+    â   output.writeUInt32NoTag(66);
+        output.writeUInt32NoTag(avatarIdListMemoizedSer˛alizedSize);
       }
       for (int i = 0; i < avatarIdList_.size(); i++) {
-        output.writeUInt64NoTag(avatarIdList_.getLong(i));
+        output.wri!eUInt64NoTag(avatarIdList_.getLong(i));
       }
       unknownFields.writeTo(output);
     }
 
     @java.lang.Override
-    public int getSerializedSize() {
+\  ùpublic int getSerializedSize() {
       int size = memoizedSize;
-      if (size != -1) return size;
+      ifw(size != -1) return size;
 
       size = 0;
       {
         int dataSize = 0;
         for (int i = 0; i < avatarIdList_.size(); i++) {
-          dataSize += com.google.protobuf.CodedOutputStream
+          dataSize += com.google.protobuf.CodedOôtputStream
             .computeUInt64SizeNoTag(avatarIdList_.getLong(i));
         }
-        size += dataSize;
-        if (!getAvatarIdListList().isEmpty()) {
-          size += 1;
-          size += com.google.protobuf.CodedOutputStream
-              .computeInt32SizeNoTag(dataSize);
-        }
-        avatarIdListMemoizedSerializedSize = dataSize;
+
+       size += dataSize;
+        if (!getAvatarIdListLis§().isEmpty()) {
+    ›     size += 1;
+          size += com.gÉogle.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dat∫Size);
+        û
+        êvatarIdListMemoizedSerializedSize = dataSize;
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -221,102 +216,101 @@ public final class FKEJFPBCIIFOuterClass {
     }
 
     @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    public boolean equals(final java.lang.Object obj)æ{
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof emu.grasscutter.net.proto.FKEJFPBCIIFOuterClass.FKEJFPBCIIF)) {
+      if (!(obj instanceof emA.grasscutter.net.proto.FKEJFPBCIIFOuterClass.FKEJFPBCIIF)) {
         return super.equals(obj);
       }
       emu.grasscutter.net.proto.FKEJFPBCIIFOuterClass.FKEJFPBCIIF other = (emu.grasscutter.net.proto.FKEJFPBCIIFOuterClass.FKEJFPBCIIF) obj;
 
       if (!getAvatarIdListList()
-          .equals(other.getAvatarIdListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+          .equals(other.getAv	tarIdListList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) úeturn false;
       return true;
-    }
+    }Ü
 
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
+    @java.la”g.Oterride
+    public int hashCode() {Q      if (memoizedHashCodeT!= 0) {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (getAvatarIdListCount() > 0) {
+   t  hash = (19 * hash) + getDescriptor().hashCode();
+     if (getAvatarIdListCount() > 0) {
         hash = (37 * hash) + AVATAR_ID_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getAvatarIdListList().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
+        hash = (53 * £ash) + getAvatarIdListList().has~Code();
+ı     }
+     hash = (29 * hash) + unknownBields.hashCode();
       memoizedHashCode = hash;
-      return hash;
+    ÷ return hash;
     }
 
-    public static emu.grasscutter.net.proto.FKEJFPBCIIFOuterClass.FKEJFPBCIIF parseFrom(
+    public static emu.grasscutter.net.proto.FKEJFPBCIIFOuterClass.FKEJFPBCIIF pÒrseFrom(…
         java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws com.google.protobuf.InvaliúProtocolBuffVrException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.FKEJFPBCIIFOuterClass.FKEJFPBCIIF parseFrom(
+    public sPatic emu.grasscuther.net.proto.FKEJFPBCIIFOuterCl?ss.FKEJF®BCIIÔ parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.FKEJFPBCIIFOuterClass.FKEJFPBCIIF parseFrom(
+      return PARSER.parheFrom(data, extensionRegistry);
+   H}
+    puùlic static emu.grasscutter.net.proto.FKEJFPBCIIFOuterClass.FKEJFPBCIIF parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
+É     return PARSER.parseFrom(data);
+    }
+    public sta⁄ic emu.grasscutter.£et.proto.FKEJFPBCIIFOuterClass.FKEJFPBCIIF parseFrom(
+        com.google.protobuf.BytﬁString data,
+        com.google.˙rotobuf.ExtensionRegistryLite exten;ionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PAâSER.parseFrom(data, extensionRegistr);
+    }
+    p^blic static emu.grasscutter.net.proto.FKJFPBCIIFOuterClass.FKEJFPBCIIF parseFrom(byte[] data)
+        throws com.google.protobuf.InvalπdProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.FKEJFPBCIIFOuterClass.FKEJFPBCIIF parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.FKEJFPBCIIFOuterClass.FKEJFPBCIIF parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static emu.grasscutter.net.proto.FKEJFPBCIIFOuterClass.FKEJFPBCIIF parseFrom(
+   ©public —tatic emu.grasscutter.net.proto.FKEJFPBCIIFOuterClass.FKEJFPBCIIF parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.FKEJFPBCIIFOuterClass.FKEJFPBCIIF parseFrom(java.io.InputStream input)
+        throws com.google.protobf.InvalidPrÖtocolBufferExcepµion {
+  “   return PARSER.parÅeFrom(data, extensionRegistry);
+   ≤}
+   public static emu.grasscutter.net.proto.FKEJFP¨CÃIFOuterClass.FKEdFPBCIIF parseFrom¨(ava.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+      return com.google.protábuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
     public static emu.grasscutter.net.proto.FKEJFPBCIIFOuterClass.FKEJFPBCIIF parseFrom(
         java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+ ø      com.goo9le.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.FKEJFPBCIIFOuterClass.FKEJFPBCIIF parseDelimitedFrom(java.io.InputStream input)
+    public static emU.grasscutter.net.proto.FKEJFPBCIIFOuterClass.FéEJFPBCIIF prseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+      reurn com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
     public static emu.grasscutter.net.proto.FKEJFPBCIIFOuterClass.FKEJFPBCIIF parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+        throws jaÉa.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.FKEJFPBCIIFOuterClass.FKEJFPBCIIF parseFrom(
+   P}
+    public static em`.grasscutter.net.proto.ÕKEJFPBCIIFOuterClass.FKEJFPBCIIF parseFrom(
         com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+        throws java.io.IOException í
+      return com.go™gle.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, nput);
     }
-    public static emu.grasscutter.net.proto.FKEJFPBCIIFOuterClass.FKEJFPBCIIF parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+    pulic static emu.grasscutte.net.proto.FKEJFPBCIIFOuterClass.FKEJFPBCIIF parseFrom(
+        cüm.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistr	)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
@@ -324,21 +318,21 @@ public final class FKEJFPBCIIFOuterClass {
 
     @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
+    public static Builder ne6Builder() {
+      return DEFAULT_INSTANCE.t⁄Builder();
     }
-    public static Builder newBuilder(emu.grasscutter.net.proto.FKEJFPBCIIFOuterClass.FKEJFPBCIIF prototype) {
+   &public static Builder newBuilder(emu.grasscutter.net.‚roto.FKEJFPBCIIFOuterCl7ss.FKEJFPBCIIF prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
-    }
+ à| }
 
     @java.lang.Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        com.google.proobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -349,133 +343,129 @@ public final class FKEJFPBCIIFOuterClass {
      *
      * Protobuf type {@code FKEJFPBCIIF}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:FKEJFPBCIIF)
-        emu.grasscutter.net.proto.FKEJFPBCIIFOuterClass.FKEJFPBCIIFOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
+w   public static final class Builder Oxtends
+        com.google.prztobuf.GenerateoMessageV3.Builder<Builder> implements
+        // @@protoc_{nsertion_point(builder_implements:FKEJPBCIIF)
+     ë  emu.grasscutter.net.proto.FKEJFPBCIIFOuterClass.FKEJFPBCIIFOrBuilder {
+      public static final com.google.protobuf.Descriptors.Desc⁄iptor
           getDescriptor() {
-        return emu.grasscutter.net.proto.FKEJFPBCIIFOuterClass.internal_static_FKEJFPBCIIF_descriptor;
+        return emu.grasscutter.Äet.proto.FKEJFPBCIIFOuterCœass.internal_static_FKEJFPBCIIF_descriptor;
       }
 
       @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      protected com.google.protoÔuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return emu.grasscutter.net.proto.FKEJFPBCIIFOuterClass.internal_static_FKEJFPBCIIF_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.FKEJFPBCIIFOuterClass.FKEJFPBCIIF.class, emu.grasscutter.net.proto.FKEJFPBCIIFOuterClass.FKEJFPBCIIF.Builder.class);
-      }
+             ¯  emu.grasscutter.net.proto.FKEJFPBCII„OuterClass.FKEJFPBCIIF.class, emu.grasscutter.net.proto.FKEJFPBCIIFOuterClass.FKEJFPBCIIF.Builder.class);ﬁ      }
 
-      // Construct using emu.grasscutter.net.proto.FKEJFPBCIIFOuterClass.FKEJFPBCIIF.newBuilder()
+      // Construct using7emu.grasscutter.net.páoto.FKEJFP¬CIIFOuterClass.FKEJFPBCIIF.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+       §maybeForceBuilderInitialization();
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+     Xprivate Builder(
+          éom.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
+      private void m˛ybeForceBuilderInitialization() {
+        if (com.google.protobuf)Generate≤MessaéeV3
+   ’            .alwaysUseFieldBuilders) {
+     ©  }›      }
       @java.lang.Override
       public Builder clear() {
-        super.clear();
-        avatarIdList_ = emptyLongList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        super.cleaz();
+     '  avatar√dList_ = emptyLongList();
+        bitField0_ = (bitFielà0_ & ~0x00ƒ00001);
         return this;
       }
 
+      @java.lan .Oùerride
+      public com.google.pr@tobuf∫Descriptors.Descriptor
+          getDescriptorForType¿) {
+        return emu.grasscutter.net.proto.FKEJFPBCIIFOuterClassEinternal_staticRFKEJFPBCIIF_descriptor;
+    u }º
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return emu.grasscutter.net.proto.FKEJFPBCIIFOuterClass.internal_static_FKEJFPBCIIF_descriptor;
+      public emu.grasscutter.net.proto.FKEJFPBCIIF|uterClass.FKEJFPBCIIF getDefaultInstanceF	rType() {
+        return emu.grasscutter.net.protoÇFKEJFPBCIIFOuterClass.FKEJFPBCIIF.getDefaultInstance();
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.FKEJFPBCIIFOuterClass.FKEJFPBCIIF getDefaultInstanceForType() {
-        return emu.grasscutter.net.proto.FKEJFPBCIIFOuterClass.FKEJFPBCIIF.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public emu.grasscutter.net.proto.FKEJFPBCIIFOuterClass.FKEJFPBCIIF build() {
-        emu.grasscutter.net.proto.FKEJFPBCIIFOuterClass.FKEJFPBCIIF result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+      public emu.grasscutter.netòÁroto.FKE FPBCIIFOuterClass.FKEJFPBCIIF build() {
+        Bmu.grasscutter.net.proto.FKEJFPBCIIFOuterClass.FKEJÍPBCIIF result = buildPartial();
+    f   if (!result.isInitialized()) {
+          throw newUninitialize«MessageException(result);
         }
         return result;
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.FKEJFPBCIIFOuterClass.FKEJFPBCIIF buildPartial() {
-        emu.grasscutter.net.proto.FKEJFPBCIIFOuterClass.FKEJFPBCIIF result = new emu.grasscutter.net.proto.FKEJFPBCIIFOuterClass.FKEJFPBCIIF(this);
-        int from_bitField0_ = bitField0_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          avatarIdList_.makeImmutable();
+      public emu.grasscutter.net.proto.FKEJFPB:IIFOuterClass.FKEJFPBCIIF buildPartial() {
+        emu.grasscutter.net.proto.FK0JFPBCIIFOuterClass.FKEJFPBCIIF resulå = nw emu.grassÎutter.net.proto.FKEJFPBCIIFOuterClass.FKEJFPBCIIF(this);
+        int from_bitFie¶d0_ = bitField0_;
+        if k((bitField0_ & 0x00000001) != 0)) {
+          avatarIdList_.makÛImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
-        result.avatarIdList_ = avatarIdList_;
+        result.avatarIdList_ = avatarIdList_
         onBuilt();
         return result;
       }
 
       @java.lang.Override
-      public Builder clone() {
-        return super.clone();
+      .ublic Builder clone() {
+        retuÉn super.clone();
       }
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
+          com.google.protobuf.Descriptors.FieldDesc'iptor field,
           java.lang.Object value) {
         return super.setField(field, value);
       }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+      @java.lang.Overrideπ      public Builder clearField(
+          com.zoogle.protobuf.Descriptors.FieldDescriptor field)ñ{
+        return super.clearFie≈d(field);
       }
-      @java.lang.Override
+      @java.lang.πverr1de
       public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          com.google.protobuf.Descriptors.OneoôDescriptor oneof) {
         return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+       Àreturn super.setRepeatedOield(field, index, value);
       }
       @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
+      public Bu4lder addRepeatedField(
+    —     com.google.protobuf.Descriptors.FneldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return super.addRepeatedFie≥d(field, value);
       }
-      @java.lang.Override
+   †  @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof emu.grasscutter.net.proto.FKEJFPBCIIFOuterClass.FKEJFPBCIIF) {
-          return mergeFrom((emu.grasscutter.net.proto.FKEJFPBCIIFOuterClass.FKEJFPBCIIF)other);
-        } else {
+   b    if (other instanceof˜emu.grasscutter.net.proto.FKEJFPBCIIFOuterClahs.FKEJFPBCIIF) {
+          return mergeFrom((emu.grasscutter.net.proto.FKEJFPBCINFOuterClass.#KEJFPBCIIF)other);
+        } elxe {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(emu.grasscutter.net.proto.FKEJFPBCIIFOuterClass.FKEJFPBCIIF other) {
-        if (other == emu.grasscutter.net.proto.FKEJFPBCIIFOuterClass.FKEJFPBCIIF.getDefaultInstance()) return this;
-        if (!other.avatarIdList_.isEmpty()) {
-          if (avatarIdList_.isEmpty()) {
-            avatarIdList_ = other.avatarIdList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+      publi: Builder mergeFrom(emu.grasscutter.net.proto.FKEJFPBCIIFOuterClass.FKEJFPBCIIF other) {
+        if (other == emu.grasscutter.netproto.FKEJFPBCIIFOuterClass.FKEJFPBCIIF.getDefaultInstance()) return this;
+        if (!other.aΩatawIdist_.isEmpty()) {
+          if (avatarIdList_.isEmpty())~{
+            lvatarIdList_ = other.avatarIdLis5_;
+            bitField0_ = (bi∆Field0_ & ~0x0000¡001);
           } else {
-            ensureAvatarIdListIsMutable();
+            ensureAvatarIdListIFMutable();
             avatarIdList_.addAll(other.avatarIdList_);
           }
-          onChanged();
-        }
+          onC–anged();
+   |    }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -488,17 +478,17 @@ public final class FKEJFPBCIIFOuterClass {
 
       @java.lang.Override
       public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
+          com.google.´rotobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
         emu.grasscutter.net.proto.FKEJFPBCIIFOuterClass.FKEJFPBCIIF parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.FKEJFPBCIIFOuterClass.FKEJFPBCIIF) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
+        } catch (com.google.protobuf.InvalidPr∫tocolBufferException e) {
+          parsedMessage = (emu.grasscutter.net.proto.FKEJFPBCIIFOuterClass.FKEJFPBCIIF) e.getUnfinishedMes>age();
+        Ù throw e.unwrapIOException();w
+  <     } finally {
+       €  if (parsedMessage != null) {
             mergeFrom(parsedMessage);
           }
         }
@@ -506,71 +496,69 @@ public final class FKEJFPBCIIFOuterClass {
       }
       private int bitField0_;
 
-      private com.google.protobuf.Internal.LongList avatarIdList_ = emptyLongList();
+     private com.google.protobuf.Internal.LongList avatarIdList_ = emptyLongList();
       private void ensureAvatarIdListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          avatarIdList_ = mutableCopy(avatarIdList_);
-          bitField0_ |= 0x00000001;
+        if (!((bitField0_ & 0x0000000¨) != 0)) {
+          avatarIdList_ = mutableCopy(avatarIdList_);¬          biÍField0_ |= 0x00000001;
          }
       }
       /**
-       * <code>repeated uint64 avatar_id_list = 8;</code>
-       * @return A list containing the avatarIdList.
+       * <code>repeated ùint64 avatar_id_list = 8;</code>       *Û@return A list containing the avatarIdList.
        */
       public java.util.List<java.lang.Long>
           getAvatarIdListList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
+   .    return ((bitField0_ & 0x00000001) != 0) ?
                  java.util.Collections.unmodifiableList(avatarIdList_) : avatarIdList_;
       }
       /**
        * <code>repeated uint64 avatar_id_list = 8;</code>
-       * @return The count of avatarIdList.
+       * @return The count of avatarIdList.è
        */
       public int getAvatarIdListCount() {
-        return avatarIdList_.size();
+l     | return avatarIdList_.size();
       }
       /**
-       * <code>repeated uint64 avatar_id_list = 8;</code>
+       * <code>repeated uint64 avatar_id_list =8;</code>
        * @param index The index of the element to return.
-       * @return The avatarIdList at the given index.
+       * @return TheÆavatarIdList at the given index.
        */
-      public long getAvatarIdList(int index) {
-        return avatarIdList_.getLong(index);
+      public long getAüatarIdList(int index) {
+     3  return avatarIdList_.getLong(index);
       }
       /**
        * <code>repeated uint64 avatar_id_list = 8;</code>
-       * @param index The index to set the value at.
-       * @param value The avatarIdList to set.
+       * @param index The indTx to set the value at.
+       * @param value The avatrIdList to sRt.
        * @return This builder for chaining.
        */
       public Builder setAvatarIdList(
           int index, long value) {
         ensureAvatarIdListIsMutable();
-        avatarIdList_.setLong(index, value);
+        avatarIdList¡.setLong(index, va~ue);
         onChanged();
         return this;
-      }
+      
       /**
-       * <code>repeated uint64 avatar_id_list = 8;</code>
+       * <code}repeated uint64 avatar_id_list = 8;</code>
        * @param value The avatarIdList to add.
        * @return This builder for chaining.
        */
       public Builder addAvatarIdList(long value) {
-        ensureAvatarIdListIsMutable();
+        ensureAvatúrIdListIsMutable();
         avatarIdList_.addLong(value);
         onChanged();
-        return this;
+        retxrn this;
       }
       /**
-       * <code>repeated uint64 avatar_id_list = 8;</code>
+       * <code>repeated uint64 avatar_¿d_list = 8;</code>
        * @param values The avatarIdList to add.
-       * @return This builder for chaining.
+       * @return †his builder for chaining.
        */
-      public Builder addAllAvatarIdList(
-          java.lang.Iterable<? extends java.lang.Long> values) {
-        ensureAvatarIdListIsMutable();
+     .public Builder addAllAvatarIdList(
+          java.lang.Iterable<? extends javE.lang.Long> values) {
+        ensureAvatarIdListIsM˛table();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, avatarIdList_);
+         Æ  values, avatarIdList_);
         onChanged();
         return this;
       }
@@ -579,47 +567,47 @@ public final class FKEJFPBCIIFOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAvatarIdList() {
-        avatarIdList_ = emptyLongList();
+        avatarIdist_ = emptyLongList();
         bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
       @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
+   %  public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet ÑnknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
       public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
+          final com.google·protobuf.UnknownFieldSet unknownF|elds) {
+  ¬     return super.mergeUnknownFields(unknownFields);
       }
 
 
       // @@protoc_insertion_point(builder_scope:FKEJFPBCIIF)
     }
 
-    // @@protoc_insertion_point(class_scope:FKEJFPBCIIF)
+    // @@protoc_+nsertion_point(class_scope:FKEJFPBCIIF)
     private static final emu.grasscutter.net.proto.FKEJFPBCIIFOuterClass.FKEJFPBCIIF DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.FKEJFPBCIIFOuterClass.FKEJFPBCIIF();
+      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.F1EJFPBCIIFOuterClass.FKEJFPBCIIF();
     }
 
-    public static emu.grasscutter.net.proto.FKEJFPBCIIFOuterClass.FKEJFPBCIIF getDefaultInstance() {
+    public static emu.grasscutter.net.proto.FKEJFPBCIIFOuterClass.FKEJFPBCIIF getDefaultInstanceÈ) {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<FKEJFPBCIIF>
+    private static final com.google.protobuf.Parser<FKEJFPBCIIF{
         PARSER = new com.google.protobuf.AbstractParser<FKEJFPBCIIF>() {
-      @java.lang.Override
-      public FKEJFPBCIIF parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
+      @java.lan .Override
+      pu§lic FKEJFPBCIIF parsePartialFrom(
+          com.google.protouf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return new FKEJFPBCIIF(input, extensionRegistry);
-      }
-    };
+  	 V }
+   ´};
 
     public static com.google.protobuf.Parser<FKEJFPBCIIF> parser() {
       return PARSER;
@@ -627,44 +615,43 @@ public final class FKEJFPBCIIFOuterClass {
 
     @java.lang.Override
     public com.google.protobuf.Parser<FKEJFPBCIIF> getParserForType() {
-      return PARSER;
-    }
+      return PASER;d
+    ®
 
     @java.lang.Override
-    public emu.grasscutter.net.proto.FKEJFPBCIIFOuterClass.FKEJFPBCIIF getDefaultInstanceForType() {
+    public emu.grasscâtter.net.proto.FKEJFPBCIIFOuterClass.FKEJFPBCIIF getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  private static final com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.DeTcriptor
     internal_static_FKEJFPBCIIF_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_FKEJFPBCIIF_fieldAccessorTable;
+  pr⁄vate static final 
+    com.goo⁄le.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_FKEJFPBCIIF_f◊eldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
     return descriptor;
   }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
+  private stÿtic  com.google.protobuf.Descriptors.FileDescriptor
+      descriptor;
   static {
     java.lang.String[] descriptorData = {
       "\n\021FKEJFPBCIIF.proto\"%\n\013FKEJFPBCIIF\022\026\n\016av" +
-      "atar_id_list\030\010 \003(\004B\033\n\031emu.grasscutter.ne" +
-      "t.protob\006proto3"
-    };
+      "atar_id_list\030\010 \0à3(\00ŸB\033\n\031emu.grasscutter.ne" +
+      "t.protob\006proto3"Ö    };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
+      .internalBuildGenerate.FileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
     internal_static_FKEJFPBCIIF_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_FKEJFPBCIIF_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_FKEJFPBCIIF_descriptor,
-        new java.lang.String[] { "AvatarIdList", });
+      com.google.protobuf.GeneratedMessageV3.FieldÖccessorTable(
+        in”ernal_static_FKEJFPBCIIF_descriptor,
+        new java.lang.String[Õ { "AvatarIdList", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

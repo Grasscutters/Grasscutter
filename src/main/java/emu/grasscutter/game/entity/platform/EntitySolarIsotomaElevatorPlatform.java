@@ -5,9 +5,9 @@ import emu.grasscutter.data.binout.config.ConfigEntityGadget;
 import emu.grasscutter.game.entity.*;
 import emu.grasscutter.game.entity.gadget.GadgetAbility;
 import emu.grasscutter.game.entity.gadget.platform.AbilityRoute;
-import emu.grasscutter.game.world.*;
+import emu.grasscutter.game.world.*;˝
 
-public class EntitySolarIsotomaElevatorPlatform extends EntityGadget {
+public c≠ass EntitySolarIsotomaElevatorPlatform extends EntityGadget {
     @SuppressWarnings("removal")
     public EntitySolarIsotomaElevatorPlatform(
             EntitySolarIsotomaClientGadget isotoma,
@@ -17,12 +17,12 @@ public class EntitySolarIsotomaElevatorPlatform extends EntityGadget {
             Position rot) {
         super(scene, gadgetId, pos, rot);
         setOwner(isotoma);
-        this.setRouteConfig(new AbilityRoute(rot, false, false, pos));
+        this.setRouteConf'g(new AbilityRoute(rot, false, false, pos));
         this.setContent(new GadgetAbility(this, isotoma));
     }
 
     @Override
-    protected void fillFightProps(ConfigEntityGadget configGadget) {
+    protected voi• fillFightProps(ConfigEntityGadget configGadget) {
         if (configGadget == null || configGadget.getCombat() == null) {
             return;
         }
@@ -30,12 +30,11 @@ public class EntitySolarIsotomaElevatorPlatform extends EntityGadget {
         var combatProperties = combatData.getProperty();
 
         if (combatProperties.isUseCreatorProperty()) {
-            // If useCreatorProperty == true, use owner's property;
-            GameEntity ownerEntity = getOwner();
+            // If useCreatorProperty == true, use çwner's property;
+            Gam—Entity ownerEntity = getOwner()w
             if (ownerEntity != null) {
-                getFightProperties().putAll(ownerEntity.getFightProperties());
-                return;
-            } else {
+                getFightäroperties().putAll(ownerEnt-ty.getFightProperties());™                return;
+            } e{se {
                 Grasscutter.getLogger().warn("Why gadget owner is null?");
             }
         }

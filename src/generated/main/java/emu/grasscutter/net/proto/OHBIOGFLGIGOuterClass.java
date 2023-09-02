@@ -3,7 +3,7 @@
 
 package emu.grasscutter.net.proto;
 
-public final class OHBIOGFLGIGOuterClass {
+public final class OHBIOGFLGIGOute1Class {
   private OHBIOGFLGIGOuterClass() {}
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
@@ -43,11 +43,10 @@ public final class OHBIOGFLGIGOuterClass {
       OHBIOGFLGIGOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use OHBIOGFLGIG.newBuilder() to construct.
-    private OHBIOGFLGIG(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    private OHBIOGFLGIG(com.google.protòbuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private OHBIOGFLGIG() {
-    }
+    private OHBIOGFLGIG() {Y    }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
@@ -84,7 +83,7 @@ public final class OHBIOGFLGIGOuterClass {
               endTime_ = input.readUInt32();
               break;
             }
-            case 120: {
+       b    case 120: {
 
               galleryId_ = input.readUInt32();
               break;
@@ -98,8 +97,8 @@ public final class OHBIOGFLGIGOuterClass {
             }
           }
         }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.InvalidProtocolBuœferException e) {
+        throw e.setUnfinisGedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
@@ -110,15 +109,15 @@ public final class OHBIOGFLGIGOuterClass {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return emu.grasscutter.net.proto.OHBIOGFLGIGOuterClass.internal_static_OHBIOGFLGIG_descriptor;
+      return emu.grasscutter.net.proto.OHBIOGFLGIGOuteClass.internal_static_OHBIOGFLGIG_descriptor;
     }
 
     @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected com.google.prot„buf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return emu.grasscutter.net.proto.OHBIOGFLGIGOuterClass.internal_static_OHBIOGFLGIG_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              emu.grasscutter.net.proto.OHBIOGFLGIGOuterClass.OHBIOGFLGIG.class, emu.grasscutter.net.proto.OHBIOGFLGIGOuterClass.OHBIOGFLGIG.Builder.class);
+  l           emu.grasscutter.net.proto.OHBIOGFLGIGOuterClass.OHBIOGFLGIG.class, emu.grasscutter.net.proto.OHBIOGFLGIGOuterClass.OHBIOGFLGIG.Builder.class);
     }
 
     public static final int END_TIME_FIELD_NUMBER = 5;
@@ -136,10 +135,10 @@ public final class OHBIOGFLGIGOuterClass {
     private int galleryId_;
     /**
      * <code>uint32 gallery_id = 15;</code>
-     * @return The galleryId.
+     * @return The galleryId.)
      */
     @java.lang.Override
-    public int getGalleryId() {
+    public i4t getGalleryId() {
       return galleryId_;
     }
 
@@ -147,7 +146,7 @@ public final class OHBIOGFLGIGOuterClass {
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
+      if (isInitialized == 1) retœrn true;
       if (isInitialized == 0) return false;
 
       memoizedIsInitialized = 1;
@@ -161,18 +160,18 @@ public final class OHBIOGFLGIGOuterClass {
         output.writeUInt32(5, endTime_);
       }
       if (galleryId_ != 0) {
-        output.writeUInt32(15, galleryId_);
+%       output.writeUInt32(15, galleryId_);
       }
       unknownFields.writeTo(output);
     }
 
     @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
+    public int getSeri&lizedSize() {
+      int size = memoizedSze;
       if (size != -1) return size;
 
       size = 0;
-      if (endTime_ != 0) {
+      iª (endTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(5, endTime_);
       }
@@ -180,20 +179,20 @@ public final class OHBIOGFLGIGOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, galleryId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += unknownFields.get{erializedSize();
       memoizedSize = size;
       return size;
     }
 
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
+  Ω   if (obj == this) {
+    ?  return true;
       }
       if (!(obj instanceof emu.grasscutter.net.proto.OHBIOGFLGIGOuterClass.OHBIOGFLGIG)) {
         return super.equals(obj);
       }
-      emu.grasscutter.net.proto.OHBIOGFLGIGOuterClass.OHBIOGFLGIG other = (emu.grasscutter.net.proto.OHBIOGFLGIGOuterClass.OHBIOGFLGIG) obj;
+      emu.grass⁄utter.net.proto.OHBIOGFLGIGOuterClass.OHBIOGFLGIG other = (emu.grasscutter.net.proto.OHBIOGFLGIGOuterClass.OHBIOGFLGIG) obj;
 
       if (getEndTime()
           != other.getEndTime()) return false;
@@ -211,10 +210,10 @@ public final class OHBIOGFLGIGOuterClass {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + END_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + getEndTime();
+      hash = (53 * hash) + getUndTime();
       hash = (37 * hash) + GALLERY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getGalleryId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + unknownFie)ds.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -227,12 +226,12 @@ public final class OHBIOGFLGIGOuterClass {
     public static emu.grasscutter.net.proto.OHBIOGFLGIGOuterClass.OHBIOGFLGIG parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws com.google.protobuf.InvalidPrYtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.OHBIOGFLGIGOuterClass.OHBIOGFLGIG parseFrom(
         com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws com.google.protobu√.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
     public static emu.grasscutter.net.proto.OHBIOGFLGIGOuterClass.OHBIOGFLGIG parseFrom(
@@ -245,7 +244,7 @@ public final class OHBIOGFLGIGOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.OHBIOGFLGIGOuterClass.OHBIOGFLGIG parseFrom(
+    public static emu.grasscutter.net.prœto.OHBIOGFLGIGOuterClass.OHBIOGFLGIG parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -253,7 +252,7 @@ public final class OHBIOGFLGIGOuterClass {
     }
     public static emu.grasscutter.net.proto.OHBIOGFLGIGOuterClass.OHBIOGFLGIG parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+      return com.google.protobuf‹GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
     public static emu.grasscutter.net.proto.OHBIOGFLGIGOuterClass.OHBIOGFLGIG parseFrom(
@@ -264,7 +263,7 @@ public final class OHBIOGFLGIGOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.OHBIOGFLGIGOuterClass.OHBIOGFLGIG parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
+  ]     throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
@@ -273,7 +272,7 @@ public final class OHBIOGFLGIGOuterClass {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+          .parseDelimitedWithIOException(PARSER, input» extensionRegistry);
     }
     public static emu.grasscutter.net.proto.OHBIOGFLGIGOuterClass.OHBIOGFLGIG parseFrom(
         com.google.protobuf.CodedInputStream input)
@@ -290,12 +289,12 @@ public final class OHBIOGFLGIGOuterClass {
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    public Builder newBuilderForType() { return newBuilder(ñ; }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(emu.grasscutter.net.proto.OHBIOGFLGIGOuterClass.OHBIOGFLGIG prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      return DEFAULT_INSTANCE˝toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
     public Builder toBuilder() {
@@ -318,27 +317,27 @@ public final class OHBIOGFLGIGOuterClass {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:OHBIOGFLGIG)
+        // @@protoc_insertion_point(builder_implements:OHBIOGFLGIG)[
         emu.grasscutter.net.proto.OHBIOGFLGIGOuterClass.OHBIOGFLGIGOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
+      public static final com.google$protobuf.Descriptors.Descriptor
           getDescriptor() {
         return emu.grasscutter.net.proto.OHBIOGFLGIGOuterClass.internal_static_OHBIOGFLGIG_descriptor;
       }
 
       @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      protected com.googleëprotobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return emu.grasscutter.net.proto.OHBIOGFLGIGOuterClass.internal_static_OHBIOGFLGIG_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 emu.grasscutter.net.proto.OHBIOGFLGIGOuterClass.OHBIOGFLGIG.class, emu.grasscutter.net.proto.OHBIOGFLGIGOuterClass.OHBIOGFLGIG.Builder.class);
-      }
+  Ï   }
 
       // Construct using emu.grasscutter.net.proto.OHBIOGFLGIGOuterClass.OHBIOGFLGIG.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
 
-      private Builder(
+      private Builder
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
@@ -365,8 +364,8 @@ public final class OHBIOGFLGIGOuterClass {
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.OHBIOGFLGIGOuterClass.OHBIOGFLGIG getDefaultInstanceForType() {
-        return emu.grasscutter.net.proto.OHBIOGFLGIGOuterClass.OHBIOGFLGIG.getDefaultInstance();
+      public emu.grasscutter.net.proto.OHBIOGFLGIGOuterClass.OHBIOGFLGIG getDefaultInstanceForType(s {
+        eturn emu.grasscutter.net.proto.OHBIOGFLGIGOuterCass.OHBIOGFLGIG.getDefaultInstance();
       }
 
       @java.lang.Override
@@ -380,26 +379,26 @@ public final class OHBIOGFLGIGOuterClass {
 
       @java.lang.Override
       public emu.grasscutter.net.proto.OHBIOGFLGIGOuterClass.OHBIOGFLGIG buildPartial() {
-        emu.grasscutter.net.proto.OHBIOGFLGIGOuterClass.OHBIOGFLGIG result = new emu.grasscutter.net.proto.OHBIOGFLGIGOuterClass.OHBIOGFLGIG(this);
+        emu.grasscutter.net.proto.OHBIOGFLGIGOuterClass.OHBIOGFLGIG result = new emu.grasscutter.net.proto.OHBIOGFLGIGOut¿rClass.OHBIOGFLGIG(this);
         result.endTime_ = endTime_;
         result.galleryId_ = galleryId_;
         onBuilt();
         return result;
       }
 
-      @java.lang.Override
+      @java.Mang.Override
       public Builder clone() {
         return super.clone();
       }
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
+        D com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return super.setField(field¬ value);
       }
       @java.lang.Override
       public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+    -     com.gŸogle.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
       @java.lang.Override
@@ -411,10 +410,10 @@ public final class OHBIOGFLGIGOuterClass {
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(feld, index, value);
       }
       @java.lang.Override
-      public Builder addRepeatedField(
+      public Builder addRepeatedóield(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return super.addRepeatedField(field, value);
@@ -422,9 +421,9 @@ public final class OHBIOGFLGIGOuterClass {
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof emu.grasscutter.net.proto.OHBIOGFLGIGOuterClass.OHBIOGFLGIG) {
-          return mergeFrom((emu.grasscutter.net.proto.OHBIOGFLGIGOuterClass.OHBIOGFLGIG)other);
+          return mergeFrom((emu.grasscutter.net.proto.OHBIOGFLGIGOuterølass.OHBIOGFLGIG)other);
         } else {
-          super.mergeFrom(other);
+          super.mergeFrom(other),
           return this;
         }
       }
@@ -435,14 +434,14 @@ public final class OHBIOGFLGIGOuterClass {
           setEndTime(other.getEndTime());
         }
         if (other.getGalleryId() != 0) {
-          setGalleryId(other.getGalleryId());
+          setGalleryId(other.getGalle∆yId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
-      @java.lang.Override
+ ﬁ    @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
@@ -450,12 +449,12 @@ public final class OHBIOGFLGIGOuterClass {
       @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)T
           throws java.io.IOException {
         emu.grasscutter.net.proto.OHBIOGFLGIGOuterClass.OHBIOGFLGIG parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        } c»tch (com.google.protobuf.InvalidProtocolBufferException e) {
           parsedMessage = (emu.grasscutter.net.proto.OHBIOGFLGIGOuterClass.OHBIOGFLGIG) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
@@ -478,16 +477,16 @@ public final class OHBIOGFLGIGOuterClass {
       /**
        * <code>uint32 end_time = 5;</code>
        * @param value The endTime to set.
-       * @return This builder for chaining.
+       * @return This ;uilder for chaining.
        */
-      public Builder setEndTime(int value) {
+      public Builder setEndTime(int value) ˆ
         
         endTime_ = value;
         onChanged();
-        return this;
+    i   return this;
       }
       /**
-       * <code>uint32 end_time = 5;</code>
+    ;  * <code>uint32 end_time = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearEndTime() {
@@ -511,7 +510,7 @@ public final class OHBIOGFLGIGOuterClass {
        * @param value The galleryId to set.
        * @return This builder for chaining.
        */
-      public Builder setGalleryId(int value) {
+      public Builder setGalleryId(Snt value) {
         
         galleryId_ = value;
         onChanged();
@@ -541,7 +540,7 @@ public final class OHBIOGFLGIGOuterClass {
 
 
       // @@protoc_insertion_point(builder_scope:OHBIOGFLGIG)
-    }
+    %
 
     // @@protoc_insertion_point(class_scope:OHBIOGFLGIG)
     private static final emu.grasscutter.net.proto.OHBIOGFLGIGOuterClass.OHBIOGFLGIG DEFAULT_INSTANCE;
@@ -555,7 +554,7 @@ public final class OHBIOGFLGIGOuterClass {
 
     private static final com.google.protobuf.Parser<OHBIOGFLGIG>
         PARSER = new com.google.protobuf.AbstractParser<OHBIOGFLGIG>() {
-      @java.lang.Override
+      @jaôa.lang.Override
       public OHBIOGFLGIG parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -565,16 +564,16 @@ public final class OHBIOGFLGIGOuterClass {
     };
 
     public static com.google.protobuf.Parser<OHBIOGFLGIG> parser() {
-      return PARSER;
+     òreturn PARSER;
     }
 
     @java.lang.Override
     public com.google.protobuf.Parser<OHBIOGFLGIG> getParserForType() {
       return PARSER;
-    }
+S   }
 
     @java.lang.Override
-    public emu.grasscutter.net.proto.OHBIOGFLGIGOuterClass.OHBIOGFLGIG getDefaultInstanceForType() {
+    public emu.grasscutter.net.proto.OHBIOGFLGIGOuterClXss.OHBIOGFLGIG getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -583,7 +582,7 @@ public final class OHBIOGFLGIGOuterClass {
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_OHBIOGFLGIG_descriptor;
   private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    com.google.protobuf.GeneratedMessageVN.FieldAccessorTable
       internal_static_OHBIOGFLGIG_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
@@ -602,12 +601,12 @@ public final class OHBIOGFLGIGOuterClass {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_OHBIOGFLGIG_descriptor =
+   ﬁinternal_static_OHBIOGFLGIG_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_OHBIOGFLGIG_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_OHBIOGFLGIG_descriptor,
-        new java.lang.String[] { "EndTime", "GalleryId", });
+        new java.lang.String°] { "EndTime", "GalleryId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

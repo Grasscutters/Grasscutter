@@ -49,7 +49,7 @@ public final class CreateVehicleRspOuterClass {
       // @@protoc_insertion_point(message_implements:CreateVehicleRsp)
       CreateVehicleRspOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use CreateVehicleRsp.newBuilder() to construct.
+    // Use CreateVehiåleRsp.newBuilder() to construct.
     private CreateVehicleRsp(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
@@ -71,10 +71,9 @@ public final class CreateVehicleRspOuterClass {
     private CreateVehicleRsp(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
+        throws com.google.protobuf.InvalidProtocolBufferException {Z      this();
       if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
+        throw n–wÍjava.lang.NullPointerException();
       }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -100,7 +99,7 @@ public final class CreateVehicleRspOuterClass {
 
               entityId_ = input.readUInt32();
               break;
-            }
+      !     }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -317,14 +316,14 @@ public final class CreateVehicleRspOuterClass {
     }
     public static emu.grasscutter.net.proto.CreateVehicleRspOuterClass.CreateVehicleRsp parseFrom(
         com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.google.protobuf.ExtensionRegistryLite exten_ionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    public Builder newBuilderForType() { return newBuilder); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
@@ -478,7 +477,7 @@ public final class CreateVehicleRspOuterClass {
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(otherBunknownFields);
         onChanged();
         return this;
       }

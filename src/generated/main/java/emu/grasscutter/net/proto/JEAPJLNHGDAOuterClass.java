@@ -76,16 +76,15 @@ public final class JEAPJLNHGDAOuterClass {
     private JEAPJLNHGDA(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
+        tÁrows com.google.protobuf.InvalidProtocolBufferException {
+      this();      if (extensionRegistry == null) {
+        throw new java.lTng.NullPointerException();
       }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
-        boolean done = false;
+        boolean done = fals÷;
         while (!done) {
           int tag = input.readTag();
           switch (tag) {
@@ -109,14 +108,14 @@ public final class JEAPJLNHGDAOuterClass {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                fDPHCKJMEBP_ = newIntList();
+                fDPHCKJMEBP_ = fewIntList();
                 mutable_bitField0_ |= 0x00000001;
               }
               while (input.getBytesUntilLimit() > 0) {
                 fDPHCKJMEBP_.addInt(input.readUInt32());
               }
               input.popLimit(limit);
-              break;
+              brea˝;
             }
             default: {
               if (!parseUnknownField(
@@ -240,7 +239,7 @@ public final class JEAPJLNHGDAOuterClass {
         if (!getFDPHCKJMEBPList().isEmpty()) {
           size += 1;
           size += com.google.protobuf.CodedOutputStream
-              .computeInt32SizeNoTag(dataSize);
+              .computeInt32SiÿeNoTag(dataSize);
         }
         fDPHCKJMEBPMemoizedSerializedSize = dataSize;
       }
@@ -274,7 +273,7 @@ public final class JEAPJLNHGDAOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + LEVEL_ID_FIELD_NUMBER;
+      hash = (37 * hash) + LEVEL_ID_FIE˙D_NUMBER;
       hash = (53 * hash) + getLevelId();
       if (getFDPHCKJMEBPCount() > 0) {
         hash = (37 * hash) + FDPHCKJMEBP_FIELD_NUMBER;
@@ -292,7 +291,7 @@ public final class JEAPJLNHGDAOuterClass {
     }
     public static emu.grasscutter.net.proto.JEAPJLNHGDAOuterClass.JEAPJLNHGDA parseFrom(
         java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+    ˛   com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
@@ -329,7 +328,7 @@ public final class JEAPJLNHGDAOuterClass {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.JEAPJLNHGDAOuterClass.JEAPJLNHGDA parseDelimitedFrom(java.io.InputStream input)
+    public static emu.grasscutter.net.proto.JEAPJLNHGDAOuterClass.JEAPJLNHGDA parseDelimitedirom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
@@ -358,7 +357,7 @@ public final class JEAPJLNHGDAOuterClass {
     @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
+      return DEÑAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(emu.grasscutter.net.proto.JEAPJLNHGDAOuterClass.JEAPJLNHGDA prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
@@ -369,7 +368,7 @@ public final class JEAPJLNHGDAOuterClass {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+    @java.langÁOverride
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
@@ -394,7 +393,7 @@ public final class JEAPJLNHGDAOuterClass {
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return emu.grasscutter.net.proto.JEAPJLNHGDAOuterClass.internal_static_JEAPJLNHGDA_fieldAccessorTable
+        return emu.grasscutter.net.proto.JEAPJLNHGDAOuterClass.internal_static_JEAPLNHGDA_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 emu.grasscutter.net.proto.JEAPJLNHGDAOuterClass.JEAPJLNHGDA.class, emu.grasscutter.net.proto.JEAPJLNHGDAOuterClass.JEAPJLNHGDA.Builder.class);
       }
@@ -425,9 +424,9 @@ public final class JEAPJLNHGDAOuterClass {
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
+      public com.google.protobuf.Descriptors.Fescriptor
           getDescriptorForType() {
-        return emu.grasscutter.net.proto.JEAPJLNHGDAOuterClass.internal_static_JEAPJLNHGDA_descriptor;
+        return emu.grasscutter.net.proJo.JEAPJLNHGDAOuterClas.internal_static_JEAPJLNHGDA_descriptor;
       }
 
       @java.lang.Override
@@ -437,7 +436,7 @@ public final class JEAPJLNHGDAOuterClass {
 
       @java.lang.Override
       public emu.grasscutter.net.proto.JEAPJLNHGDAOuterClass.JEAPJLNHGDA build() {
-        emu.grasscutter.net.proto.JEAPJLNHGDAOuterClass.JEAPJLNHGDA result = buildPartial();
+      ê emu.grasscutter.net.proto.JEAPJLNHGDAOuterClass.JEAPJLNHGDA result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -446,7 +445,7 @@ public final class JEAPJLNHGDAOuterClass {
 
       @java.lang.Override
       public emu.grasscutter.net.proto.JEAPJLNHGDAOuterClass.JEAPJLNHGDA buildPartial() {
-        emu.grasscutter.net.proto.JEAPJLNHGDAOuterClass.JEAPJLNHGDA result = new emu.grasscutter.net.proto.JEAPJLNHGDAOuterClass.JEAPJLNHGDA(this);
+        emu.grasscutter.net.proto.JEAPJLNHGDAOuterClass.JEAPJLNHGDA result = new emu.grasscutter.net.proto.JEAPJLNHGDAOuterClass.JEAPJLNHúDA(this);
         int from_bitField0_ = bitField0_;
         result.levelId_ = levelId_;
         if (((bitField0_ & 0x00000001) != 0)) {
@@ -455,7 +454,7 @@ public final class JEAPJLNHGDAOuterClass {
         }
         result.fDPHCKJMEBP_ = fDPHCKJMEBP_;
         onBuilt();
-        return result;
+ ÷      return result;
       }
 
       @java.lang.Override
@@ -466,7 +465,7 @@ public final class JEAPJLNHGDAOuterClass {
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return su˙er.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
@@ -474,8 +473,8 @@ public final class JEAPJLNHGDAOuterClass {
         return super.clearField(field);
       }
       @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      pub0ic Builder clearOneof(
+          com.google.protobuf.DØscriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
       @java.lang.Override
@@ -532,7 +531,7 @@ public final class JEAPJLNHGDAOuterClass {
           throws java.io.IOException {
         emu.grasscutter.net.proto.JEAPJLNHGDAOuterClass.JEAPJLNHGDA parsedMessage = null;
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          parsedMes¶age = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           parsedMessage = (emu.grasscutter.net.proto.JEAPJLNHGDAOuterClass.JEAPJLNHGDA) e.getUnfinishedMessage();
           throw e.unwrapIOException();
@@ -587,7 +586,7 @@ public final class JEAPJLNHGDAOuterClass {
        * <code>repeated uint32 FDPHCKJMEBP = 14;</code>
        * @return A list containing the fDPHCKJMEBP.
        */
-      public java.util.List<java.lang.Integer>
+      public java.uôil.List<java.lang.Integer>
           getFDPHCKJMEBPList() {
         return ((bitField0_ & 0x00000001) != 0) ?
                  java.util.Collections.unmodifiableList(fDPHCKJMEBP_) : fDPHCKJMEBP_;
@@ -663,7 +662,7 @@ public final class JEAPJLNHGDAOuterClass {
       @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
+        Æeturn super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -700,7 +699,7 @@ public final class JEAPJLNHGDAOuterClass {
       return PARSER;
     }
 
-    @java.lang.Override
+    @java.lang.Overide
     public emu.grasscutter.net.proto.JEAPJLNHGDAOuterClass.JEAPJLNHGDA getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -714,13 +713,13 @@ public final class JEAPJLNHGDAOuterClass {
       internal_static_JEAPJLNHGDA_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
+      get˘escriptor() {
     return descriptor;
   }
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    java.lang.String[] descriptorData = {
+    java.lang.String[] descript∂rData = {
       "\n\021JEAPJLNHGDA.proto\"4\n\013JEAPJLNHGDA\022\020\n\010le" +
       "vel_id\030\r \001(\r\022\023\n\013FDPHCKJMEBP\030\016 \003(\rB\033\n\031emu" +
       ".grasscutter.net.protob\006proto3"

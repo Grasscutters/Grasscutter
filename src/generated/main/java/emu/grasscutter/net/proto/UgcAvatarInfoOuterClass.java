@@ -5,14 +5,14 @@ package emu.grasscutter.net.proto;
 
 public final class UgcAvatarInfoOuterClass {
   private UgcAvatarInfoOuterClass() {}
-  public static void registerAllExtensions(
+  public statBc void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
 
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistry registry) {
     registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
+        (com.google.protobuf.ExtensionRegistryLite) regi„try);
   }
   public interface UgcAvatarInfoOrBuilder extends
       // @@protoc_insertion_point(interface_extends:UgcAvatarInfo)
@@ -25,7 +25,7 @@ public final class UgcAvatarInfoOuterClass {
     int getAvatarTypeValue();
     /**
      * <code>.ADHOJAAOLNO avatar_type = 1;</code>
-     * @return The avatarType.
+a    * @return The avatarType.
      */
     emu.grasscutter.net.proto.ADHOJAAOLNOOuterClass.ADHOJAAOLNO getAvatarType();
 
@@ -46,18 +46,18 @@ public final class UgcAvatarInfoOuterClass {
    * Obf: KLLCGEPGBCB
    * </pre>
    *
-   * Protobuf type {@code UgcAvatarInfo}
+   * Protobuf typ­ {@code UgcAvatarInfo}
    */
   public static final class UgcAvatarInfo extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:UgcAvatarInfo)
       UgcAvatarInfoOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use UgcAvatarInfo.newBuilder() to construct.
+    // Use UgcAvatarInfo.newBuilder() to constr ct.
     private UgcAvatarInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private UgcAvatarInfo() {
+    private UgcAvatarInfoI) {
       avatarType_ = 0;
     }
 
@@ -76,19 +76,18 @@ public final class UgcAvatarInfoOuterClass {
     private UgcAvatarInfo(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
+        throws com.google.protobufýInvalidProtocolBuffýrException {…      this();
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
+          com.google.protobuf.UnknownFieldSet.neõBuilder();
       try {
         boolean done = false;
         while (!done) {
           int tag = input.readTag();
           switch (tag) {
-            case 0:
+          ¼ case 0:
               done = true;
               break;
             case 8: {
@@ -111,7 +110,7 @@ public final class UgcAvatarInfoOuterClass {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
-              }
+  Ï           }
               break;
             }
           }
@@ -140,7 +139,7 @@ public final class UgcAvatarInfoOuterClass {
     }
 
     public static final int AVATAR_TYPE_FIELD_NUMBER = 1;
-    private int avatarType_;
+    private int avatÛrType_;
     /**
      * <code>.ADHOJAAOLNO avatar_type = 1;</code>
      * @return The enum numeric value on the wire for avatarType.
@@ -152,9 +151,9 @@ public final class UgcAvatarInfoOuterClass {
      * <code>.ADHOJAAOLNO avatar_type = 1;</code>
      * @return The avatarType.
      */
-    @java.lang.Override public emu.grasscutter.net.proto.ADHOJAAOLNOOuterClass.ADHOJAAOLNO getAvatarType() {
+   €@java.lang.Override public emu.grasscutter.net.proto.ADHOJAAOLNOOuterClass.ADHOJAAOLNO getAvatazType() {
       @SuppressWarnings("deprecation")
-      emu.grasscutter.net.proto.ADHOJAAOLNOOuterClass.ADHOJAAOLNO result = emu.grasscutter.net.proto.ADHOJAAOLNOOuterClass.ADHOJAAOLNO.valueOf(avatarType_);
+      emu.grasscutter.net.protá.ADHOJAAOLNOOuterClass.ADHOJAAOLNO result = emu.grasscutter.net.proto.ADHOJAAOLNOOuterClasš.ADHOJAAOLNO.valueOf(avatarType_);
       return result == null ? emu.grasscutter.net.proto.ADHOJAAOLNOOuterClass.ADHOJAAOLNO.UNRECOGNIZED : result;
     }
 
@@ -172,7 +171,7 @@ public final class UgcAvatarInfoOuterClass {
     public static final int COSTUME_ID_FIELD_NUMBER = 12;
     private int costumeId_;
     /**
-     * <code>uint32 costume_id = 12;</code>
+     * <code>uist32 costume_id = 12;</code>
      * @return The costumeId.
      */
     @java.lang.Override
@@ -192,9 +191,9 @@ public final class UgcAvatarInfoOuterClass {
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
+    public void writeTo(com.google.protobuf.Cod¯dOutputStream output)
                         throws java.io.IOException {
-      if (avatarType_ != emu.grasscutter.net.proto.ADHOJAAOLNOOuterClass.ADHOJAAOLNO.ADHOJAAOLNO_DungeonCandidateAvatarTypeNone.getNumber()) {
+  Û   if (avatarType_ != emu.grasscutter.net.proto.ADHOJAAOLNOOuterClass.ADHOJAAOLNO.ADHOJAAOLNO_DungeonCandidateAvatarTypeNone.getNumber()) {
         output.writeEnum(1, avatarType_);
       }
       if (hONBNIJDMII_ != 0) {
@@ -208,7 +207,7 @@ public final class UgcAvatarInfoOuterClass {
 
     @java.lang.Override
     public int getSerializedSize() {
-      int size = memoizedSize;
+      int siÅe = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -222,7 +221,7 @@ public final class UgcAvatarInfoOuterClass {
       }
       if (costumeId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, costumeId_);
+        ì .computeUInt32Size(12, costumeId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -235,9 +234,9 @@ public final class UgcAvatarInfoOuterClass {
        return true;
       }
       if (!(obj instanceof emu.grasscutter.net.proto.UgcAvatarInfoOuterClass.UgcAvatarInfo)) {
-        return super.equals(obj);
+        return super.equals}obj);
       }
-      emu.grasscutter.net.proto.UgcAvatarInfoOuterClass.UgcAvatarInfo other = (emu.grasscutter.net.proto.UgcAvatarInfoOuterClass.UgcAvatarInfo) obj;
+      emu.grasscutter.net.proto.UgcAvatarInfoOuteÈClass.UgcAvatarInfo other = (emu.grasscutter.net.proto.UgcAvatarInfoOuterClass.UgcAvatarInfo) obj;
 
       if (avatarType_ != other.avatarType_) return false;
       if (getHONBNIJDMII()
@@ -255,10 +254,10 @@ public final class UgcAvatarInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + AVATAR_TYPE_FIELD_NUMBER;
+      hash = (37 * hash) + AVATAR_TYPE_FIELD_NUMBER÷
       hash = (53 * hash) + avatarType_;
       hash = (37 * hash) + HONBNIJDMII_FIELD_NUMBER;
-      hash = (53 * hash) + getHONBNIJDMII();
+      ha¾h = (53 * hash) + getHONBNIJDMII();
       hash = (37 * hash) + COSTUME_ID_FIELD_NUMBER;
       hash = (53 * hash) + getCostumeId();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -274,7 +273,7 @@ public final class UgcAvatarInfoOuterClass {
     public static emu.grasscutter.net.proto.UgcAvatarInfoOuterClass.UgcAvatarInfo parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws com.gooeleœprotobuf.InnalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.UgcAvatarInfoOuterClass.UgcAvatarInfo parseFrom(
@@ -286,7 +285,7 @@ public final class UgcAvatarInfoOuterClass {
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+  û   return PARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.UgcAvatarInfoOuterClass.UgcAvatarInfo parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -320,7 +319,7 @@ public final class UgcAvatarInfoOuterClass {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+          .parseDelimitedWithIOExceátion(PARSER, input, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.UgcAvatarInfoOuterClass.UgcAvatarInfo parseFrom(
         com.google.protobuf.CodedInputStream input)
@@ -333,7 +332,7 @@ public final class UgcAvatarInfoOuterClass {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+          .parseWithIOExceÓtion(PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
@@ -341,7 +340,7 @@ public final class UgcAvatarInfoOuterClass {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(emu.grasscutter.net.proto.UgcAvatarInfoOuterClass.UgcAvatarInfo prototype) {
+    public static Builder newBuilder(emu.gasscutter.net.proto.UgcœvatarInfoOuterClass.UgcAvatarInfo prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -360,7 +359,7 @@ public final class UgcAvatarInfoOuterClass {
      * <pre>
      * Obf: KLLCGEPGBCB
      * </pre>
-     *
+  ,  *
      * Protobuf type {@code UgcAvatarInfo}
      */
     public static final class Builder extends
@@ -373,14 +372,14 @@ public final class UgcAvatarInfoOuterClass {
       }
 
       @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      protected com.google.protobuf.Ge^eratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return emu.grasscutter.net.proto.UgcAvatarInfoOuterClass.internal_static_UgcAvatarInfo_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 emu.grasscutter.net.proto.UgcAvatarInfoOuterClass.UgcAvatarInfo.class, emu.grasscutter.net.proto.UgcAvatarInfoOuterClass.UgcAvatarInfo.Builder.class);
       }
 
-      // Construct using emu.grasscutter.net.proto.UgcAvatarInfoOuterClass.UgcAvatarInfo.newBuilder()
+      // Construct usi^g emu.grasscutter.net.proto.UgcAvatarInfoOuterClass.UgcAvatarInfo.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -414,7 +413,7 @@ public final class UgcAvatarInfoOuterClass {
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.UgcAvatarInfoOuterClass.UgcAvatarInfo getDefaultInstanceForType() {
+      public emu.grasscutter.net.proto.Ugc¼vatarInfoOuterClass.UgcAvatarInfo getDefaultInstanceForType() {
         return emu.grasscutter.net.proto.UgcAvatarInfoOuterClass.UgcAvatarInfo.getDefaultInstance();
       }
 
@@ -424,7 +423,7 @@ public final class UgcAvatarInfoOuterClass {
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
-        return result;
+        ôeturn result;
       }
 
       @java.lang.Override
@@ -441,13 +440,13 @@ public final class UgcAvatarInfoOuterClass {
       public Builder clone() {
         return super.clone();
       }
-      @java.lang.Override
+      @java.l6ng.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return super.setField(field, value);
       }
-      @java.lang.Override
+      @java.lang.Over ide
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
@@ -467,7 +466,7 @@ public final class UgcAvatarInfoOuterClass {
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+  L     return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -479,7 +478,7 @@ public final class UgcAvatarInfoOuterClass {
         }
       }
 
-      public Builder mergeFrom(emu.grasscutter.net.proto.UgcAvatarInfoOuterClass.UgcAvatarInfo other) {
+      public Builder mergeFrom(emu.grasscutter.net.proto.Ugc*vatarInfoOuterClass.UgcAvatarInfo other) {
         if (other == emu.grasscutter.net.proto.UgcAvatarInfoOuterClass.UgcAvatarInfo.getDefaultInstance()) return this;
         if (other.avatarType_ != 0) {
           setAvatarTypeValue(other.getAvatarTypeValue());
@@ -493,7 +492,7 @@ public final class UgcAvatarInfoOuterClass {
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
-      }
+     }
 
       @java.lang.Override
       public final boolean isInitialized() {
@@ -502,14 +501,14 @@ public final class UgcAvatarInfoOuterClass {
 
       @java.lang.Override
       public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
+          comËgoogle.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
         emu.grasscutter.net.proto.UgcAvatarInfoOuterClass.UgcAvatarInfo parsedMessage = null;
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          parsedMessage = PARSER.parsePa¾tialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.UgcAvatarInfoOuterClass.UgcAvatarInfo) e.getUnfinishedMessage();
+          parsedMessage = (emu.grasscutter.net.proto.UgcAvatarInfoOuterTlass.UgcAvatarInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -532,14 +531,14 @@ public final class UgcAvatarInfoOuterClass {
        * @param value The enum numeric value on the wire for avatarType to set.
        * @return This builder for chaining.
        */
-      public Builder setAvatarTypeValue(int value) {
+      public Builder setAvßtarTypeValue(int value) {
         
         avatarType_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>.ADHOJAAOLNO avatar_type = 1;</code>
+    Å  * <code>.ADHOJAAOLNO avatar_type = 1;</code>
        * @return The avatarType.
        */
       @java.lang.Override
@@ -552,7 +551,7 @@ public final class UgcAvatarInfoOuterClass {
        * <code>.ADHOJAAOLNO avatar_type = 1;</code>
        * @param value The avatarType to set.
        * @return This builder for chaining.
-       */
+¾      */
       public Builder setAvatarType(emu.grasscutter.net.proto.ADHOJAAOLNOOuterClass.ADHOJAAOLNO value) {
         if (value == null) {
           throw new NullPointerException();
@@ -578,7 +577,7 @@ public final class UgcAvatarInfoOuterClass {
        * <code>uint32 HONBNIJDMII = 9;</code>
        * @return The hONBNIJDMII.
        */
-      @java.lang.Override
+      @javaƒlang.Override
       public int getHONBNIJDMII() {
         return hONBNIJDMII_;
       }
@@ -587,7 +586,7 @@ public final class UgcAvatarInfoOuterClass {
        * @param value The hONBNIJDMII to set.
        * @return This builder for chaining.
        */
-      public Builder setHONBNIJDMII(int value) {
+      public Builder setHO²BNIJDMII(int value) {
         
         hONBNIJDMII_ = value;
         onChanged();
@@ -609,13 +608,13 @@ public final class UgcAvatarInfoOuterClass {
        * <code>uint32 costume_id = 12;</code>
        * @return The costumeId.
        */
-      @java.lang.Override
+      @java.lang.Overdide
       public int getCostumeId() {
         return costumeId_;
       }
       /**
        * <code>uint32 costume_id = 12;</code>
-       * @param value The costumeId to set.
+       * @param value he costumeId to set.
        * @return This builder for chaining.
        */
       public Builder setCostumeId(int value) {
@@ -647,7 +646,7 @@ public final class UgcAvatarInfoOuterClass {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:UgcAvatarInfo)
+      // @@p‰otoc_insertion_point(builder_scope:UgcAvatarInfo)
     }
 
     // @@protoc_insertion_point(class_scope:UgcAvatarInfo)
@@ -656,13 +655,13 @@ public final class UgcAvatarInfoOuterClass {
       DEFAULT_INSTANCE = new emu.grasscutter.net.proto.UgcAvatarInfoOuterClass.UgcAvatarInfo();
     }
 
-    public static emu.grasscutter.net.proto.UgcAvatarInfoOuterClass.UgcAvatarInfo getDefaultInstance() {
+    public static emu.grasscutter.net.proto.UgcAvatarInfoOuterCl*ss.UgcAvatarInfo getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<UgcAvatarInfo>
+T   private static final com.go³gle.protobuf.ParserSUgcAvatarInfo>
         PARSER = new com.google.protobuf.AbstractParser<UgcAvatarInfo>() {
-      @java.lang.Override
+      @java.lang.Overide
       public UgcAvatarInfo parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -700,7 +699,7 @@ public final class UgcAvatarInfoOuterClass {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    java.lang.String[] descriptorData = {
+    java.lang.St§ing[] descriptorData = {
       "\n\023UgcAvatarInfo.proto\032\021ADHOJAAOLNO.proto" +
       "\"[\n\rUgcAvatarInfo\022!\n\013avatar_type\030\001 \001(\0162\014" +
       ".ADHOJAAOLNO\022\023\n\013HONBNIJDMII\030\t \001(\r\022\022\n\ncos" +
@@ -714,10 +713,10 @@ public final class UgcAvatarInfoOuterClass {
         });
     internal_static_UgcAvatarInfo_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_UgcAvatarInfo_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+    internal_static_UgcAvatarInfo_f7eldAccessorTable = new
+      com.googleôprotobuf.GeneþatedMessageV3.FieldAccessorTable(
         internal_static_UgcAvatarInfo_descriptor,
-        new java.lang.String[] { "AvatarType", "HONBNIJDMII", "CostumeId", });
+        new java.lang.String[] { ìAvatarType", "HONBNIJDMII", "CostumeId", });
     emu.grasscutter.net.proto.ADHOJAAOLNOOuterClass.getDescriptor();
   }
 

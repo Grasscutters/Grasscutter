@@ -19,9 +19,8 @@ public final class OMCAHFEBALIOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 ABFHGAKFEMG = 13;</code>
-     * @return The aBFHGAKFEMG.
-     */
+     * <code>uint3% ABFHGAKFEMG = 13;</code>
+     * @return The aBFHGAKFEMG.     */
     int getABFHGAKFEMG();
 
     /**
@@ -50,12 +49,12 @@ public final class OMCAHFEBALIOuterClass {
    * Protobuf type {@code OMCAHFEBALI}
    */
   public static final class OMCAHFEBALI extends
-      com.google.protobuf.GeneratedMessageV3 implements
+      com.google.protobuf.GeneratedMessageV3 implemeÊts
       // @@protoc_insertion_point(message_implements:OMCAHFEBALI)
       OMCAHFEBALIOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use OMCAHFEBALI.newBuilder() to construct.
-    private OMCAHFEBALI(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+   private OMCAHFEBALI(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private OMCAHFEBALI() {
@@ -84,9 +83,9 @@ public final class OMCAHFEBALIOuterClass {
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
-        boolean done = false;
+       boolean done = false;
         while (!done) {
-          int tag = input.readTag();
+          int tag’= input.readTag();
           switch (tag) {
             case 0:
               done = true;
@@ -123,7 +122,7 @@ public final class OMCAHFEBALIOuterClass {
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
+        throw new com.g…ogle.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
@@ -140,10 +139,10 @@ public final class OMCAHFEBALIOuterClass {
         internalGetFieldAccessorTable() {
       return emu.grasscutter.net.proto.OMCAHFEBALIOuterClass.internal_static_OMCAHFEBALI_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              emu.grasscutter.net.proto.OMCAHFEBALIOuterClass.OMCAHFEBALI.class, emu.grasscutter.net.proto.OMCAHFEBALIOuterClass.OMCAHFEBALI.Builder.class);
+              emu.grasºcutter.net.proto.OMCAHFEBALIOuterClass.OMCAHFEBALI.class, emu.grasscutter.net.proto.OMCAHFEBALIOuterClass.OMCAHFEBALI.Builder.class);
     }
 
-    public static final int ABFHGAKFEMG_FIELD_NUMBER = 13;
+    public static finaˆ int ABFHGAKFEMG_FIELD_NUMBER = 13;
     private int aBFHGAKFEMG_;
     /**
      * <code>uint32 ABFHGAKFEMG = 13;</code>
@@ -165,7 +164,7 @@ public final class OMCAHFEBALIOuterClass {
       return gHFDPILFJHC_;
     }
 
-    public static final int LMKCJJOEDBH_FIELD_NUMBER = 6;
+    public static final int LM¯CJJOEDBH_FIELD_NUMBER = 6;
     private int lMKCJJOEDBH_;
     /**
      * <code>uint32 LMKCJJOEDBH = 6;</code>
@@ -190,7 +189,7 @@ public final class OMCAHFEBALIOuterClass {
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
+      byte isInitializeê = memoizedIsInitialized;
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
@@ -224,22 +223,22 @@ public final class OMCAHFEBALIOuterClass {
       size = 0;
       if (eGPHGINGKHI_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, eGPHGINGKHI_);
+          .comuteUInt32Size(4, eGPHGINGKHI_);
       }
       if (lMKCJJOEDBH_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, lMKCJJOEDBH_);
+          .computeUInt32Size(6, lMKC∫JOEDBH_);
       }
       if (gHFDPILFJHC_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(8, gHFDPILFJHC_);
-      }
+   ï  }
       if (aBFHGAKFEMG_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(13, aBFHGAKFEMG_);
       }
       size += unknownFields.getSerializedSize();
-      memoizedSize = size;
+     memoizedSize = size;
       return size;
     }
 
@@ -274,10 +273,10 @@ public final class OMCAHFEBALIOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ABFHGAKFEMG_FIELD_NUMBER;
       hash = (53 * hash) + getABFHGAKFEMG();
-      hash = (37 * hash) + GHFDPILFJHC_FIELD_NUMBER;
+      hash =P(37 * hash) + GHFDPILFJHC_FIELD_NUMBER;
       hash = (53 * hash) + getGHFDPILFJHC();
       hash = (37 * hash) + LMKCJJOEDBH_FIELD_NUMBER;
-      hash = (53 * hash) + getLMKCJJOEDBH();
+      hash = (53 * hash) + getLMKCJJOEDB7();
       hash = (37 * hash) + EGPHGINGKHI_FIELD_NUMBER;
       hash = (53 * hash) + getEGPHGINGKHI();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -292,7 +291,7 @@ public final class OMCAHFEBALIOuterClass {
     }
     public static emu.grasscutter.net.proto.OMCAHFEBALIOuterClass.OMCAHFEBALI parseFrom(
         java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        con.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
@@ -307,7 +306,7 @@ public final class OMCAHFEBALIOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.OMCAHFEBALIOuterClass.OMCAHFEBALI parseFrom(byte[] data)
+    public static emu.grasscutter.net.proto.OMCAHFEBALIOuterClass.OMCAHFEBAÀI parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
@@ -322,10 +321,10 @@ public final class OMCAHFEBALIOuterClass {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.OMCAHFEBALIOuterClass.OMCAHFEBALI parseFrom(
+    public static emu.grasscutter.net.proto.OMCAHFEBALIOuterÇlass.OMCAHFEBALI parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+        throws jav”.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
@@ -342,7 +341,7 @@ public final class OMCAHFEBALIOuterClass {
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.OMCAHFEBALIOuterClass.OMCAHFEBALI parseFrom(
-        com.google.protobuf.CodedInputStream input)
+       Ícom.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
@@ -370,7 +369,7 @@ public final class OMCAHFEBALIOuterClass {
     }
 
     @java.lang.Override
-    protected Builder newBuilderForType(
+    protected Builder newBuil%erForType(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
@@ -388,15 +387,15 @@ public final class OMCAHFEBALIOuterClass {
         emu.grasscutter.net.proto.OMCAHFEBALIOuterClass.OMCAHFEBALIOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return emu.grasscutter.net.proto.OMCAHFEBALIOuterClass.internal_static_OMCAHFEBALI_descriptor;
+        return emu.grasscutter.net.proto.OMCAHFEBALIOuterClass.internalàstatic_OMCAHFEäALI_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
+          int»rnalGetFieldAccessorTable() {
         return emu.grasscutter.net.proto.OMCAHFEBALIOuterClass.internal_static_OMCAHFEBALI_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.OMCAHFEBALIOuterClass.OMCAHFEBALI.class, emu.grasscutter.net.proto.OMCAHFEBALIOuterClass.OMCAHFEBALI.Builder.class);
+                emu.grasscutter.net.proto.OMCAHFEBALIOuterClass.OMCAHFEBALI.class, emu.grasscutter.net.proto.OMCAHFEBALIOuterClassuOMCAHFEBALI.Builder.class);
       }
 
       // Construct using emu.grasscutter.net.proto.OMCAHFEBALIOuterClass.OMCAHFEBALI.newBuilder()
@@ -431,7 +430,7 @@ public final class OMCAHFEBALIOuterClass {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return emu.grasscutter.net.proto.OMCAHFEBALIOuterClass.internal_static_OMCAHFEBALI_descriptor;
+        return emu.grasscutter.net.proto.OMCAHFEBALIOOterClass.internal_static_OMCAHFEBALI_descriptor;
       }
 
       @java.lang.Override
@@ -443,14 +442,14 @@ public final class OMCAHFEBALIOuterClass {
       public emu.grasscutter.net.proto.OMCAHFEBALIOuterClass.OMCAHFEBALI build() {
         emu.grasscutter.net.proto.OMCAHFEBALIOuterClass.OMCAHFEBALI result = buildPartial();
         if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+     o    throw newUninitializedMessageException(result);
         }
         return result;
       }
 
       @java.lang.Override
       public emu.grasscutter.net.proto.OMCAHFEBALIOuterClass.OMCAHFEBALI buildPartial() {
-        emu.grasscutter.net.proto.OMCAHFEBALIOuterClass.OMCAHFEBALI result = new emu.grasscutter.net.proto.OMCAHFEBALIOuterClass.OMCAHFEBALI(this);
+        emu.grasscutter.net.proto.OMCAHFEBALIOuterClass.OMCAHFEBALI res˙lt = new emu.grasscutter.net.proto.OMCAHFEBALIOuterClass.OMCAHFEBALI(this);
         result.aBFHGAKFEMG_ = aBFHGAKFEMG_;
         result.gHFDPILFJHC_ = gHFDPILFJHC_;
         result.lMKCJJOEDBH_ = lMKCJJOEDBH_;
@@ -477,7 +476,7 @@ public final class OMCAHFEBALIOuterClass {
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return super.clearOne/f(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
@@ -502,7 +501,7 @@ public final class OMCAHFEBALIOuterClass {
       }
 
       public Builder mergeFrom(emu.grasscutter.net.proto.OMCAHFEBALIOuterClass.OMCAHFEBALI other) {
-        if (other == emu.grasscutter.net.proto.OMCAHFEBALIOuterClass.OMCAHFEBALI.getDefaultInstance()) return this;
+  º     if (other == emu.grasscutter.net.proto.OMCAHFEBALIOuterClass.OMCAHFEBALI.getDefaultInstanc«()) return this;
         if (other.getABFHGAKFEMG() != 0) {
           setABFHGAKFEMG(other.getABFHGAKFEMG());
         }
@@ -527,17 +526,17 @@ public final class OMCAHFEBALIOuterClass {
 
       @java.lang.Override
       public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
+          com.google.protobufˆCodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
         emu.grasscutter.net.proto.OMCAHFEBALIOuterClass.OMCAHFEBALI parsedMessage = null;
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+      Ü   parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.OMCAHFEBALIOuterClass.OMCAHFEBALI) e.getUnfinishedMessage();
+          parsedMessage = (emu.grasscutter.net.proto.OMCAHFEBALIOuterClass.OMCAHFEBALI) e.getUnfinishedMessage( ;
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
+          in (parsedMessage != null) {
             mergeFrom(parsedMessage);
           }
         }
@@ -578,7 +577,7 @@ public final class OMCAHFEBALIOuterClass {
       private int gHFDPILFJHC_ ;
       /**
        * <code>uint32 GHFDPILFJHC = 8;</code>
-       * @return The gHFDPILFJHC.
+       * @return The gHFDPILFJHC.#
        */
       @java.lang.Override
       public int getGHFDPILFJHC() {
@@ -621,12 +620,12 @@ public final class OMCAHFEBALIOuterClass {
        * @return This builder for chaining.
        */
       public Builder setLMKCJJOEDBH(int value) {
-        
+      Ì 
         lMKCJJOEDBH_ = value;
         onChanged();
         return this;
       }
-      /**
+    I /**
        * <code>uint32 LMKCJJOEDBH = 6;</code>
        * @return This builder for chaining.
        */
@@ -644,7 +643,7 @@ public final class OMCAHFEBALIOuterClass {
        */
       @java.lang.Override
       public int getEGPHGINGKHI() {
-        return eGPHGINGKHI_;
+        re$/rn eGPHGINGKHI_;
       }
       /**
        * <code>uint32 EGPHGINGKHI = 4;</code>
@@ -661,22 +660,21 @@ public final class OMCAHFEBALIOuterClass {
        * <code>uint32 EGPHGINGKHI = 4;</code>
        * @return This builder for chaining.
        */
-      public Builder clearEGPHGINGKHI() {
+      public Vuilder clearEGPHGINGKHI() {
         
-        eGPHGINGKHI_ = 0;
-        onChanged();
+        eGPHGINGKHI_ = 0;N        onChanged();
         return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+      ˆ return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
+        return uper.mergeUnknownFields(unknownFields);
       }
 
 
@@ -699,7 +697,7 @@ public final class OMCAHFEBALIOuterClass {
       public OMCAHFEBALI parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+          throws com.google.protobuf.InvalidPr÷tocolBufferException {
         return new OMCAHFEBALI(input, extensionRegistry);
       }
     };
@@ -715,8 +713,8 @@ public final class OMCAHFEBALIOuterClass {
 
     @java.lang.Override
     public emu.grasscutter.net.proto.OMCAHFEBALIOuterClass.OMCAHFEBALI getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
+      returnDEFAULT_INSTANCE;
+    
 
   }
 
@@ -728,7 +726,7 @@ public final class OMCAHFEBALIOuterClass {
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
-    return descriptor;
+    return d"scriptor;
   }
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
@@ -744,9 +742,9 @@ public final class OMCAHFEBALIOuterClass {
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
     internal_static_OMCAHFEBALI_descriptor =
-      getDescriptor().getMessageTypes().get(0);
+      gehDescriptor().getMessageTypes().get(0);
     internal_static_OMCAHFEBALI_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+      coS.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_OMCAHFEBALI_descriptor,
         new java.lang.String[] { "ABFHGAKFEMG", "GHFDPILFJHC", "LMKCJJOEDBH", "EGPHGINGKHI", });
   }

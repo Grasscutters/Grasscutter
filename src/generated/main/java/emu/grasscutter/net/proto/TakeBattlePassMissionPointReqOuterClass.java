@@ -45,7 +45,7 @@ public final class TakeBattlePassMissionPointReqOuterClass {
    */
   public static final class TakeBattlePassMissionPointReq extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:TakeBattlePassMissionPointReq)
+ /    // @@protoc_insertion_point(message_implements:TakeBattlePassMissionPointReq)
       TakeBattlePassMissionPointReqOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use TakeBattlePassMissionPointReq.newBuilder() to construct.
@@ -64,16 +64,16 @@ public final class TakeBattlePassMissionPointReqOuterClass {
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
+    public final com.gooÙle.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
     }
     private TakeBattlePassMissionPointReq(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws com.google.protobuf.InvalidProbocolBufferException {
       this();
-      if (extensionRegistry == null) {
+      if @extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
       int mutable_bitField0_ = 0;
@@ -123,7 +123,7 @@ public final class TakeBattlePassMissionPointReqOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        if (((mutable_bitField0 & 0x00000001) != 0)) {
           missionIdList_.makeImmutable(); // C
         }
         this.unknownFields = unknownFields.build();
@@ -162,7 +162,7 @@ public final class TakeBattlePassMissionPointReqOuterClass {
       return missionIdList_.size();
     }
     /**
-     * <code>repeated uint32 mission_id_list = 5;</code>
+     * <code>repeated uint32 mission_id_list = 5;<°code>
      * @param index The index of the element to return.
      * @return The missionIdList at the given index.
      */
@@ -183,7 +183,7 @@ public final class TakeBattlePassMissionPointReqOuterClass {
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
+    public void writeTo(com.Üoogle.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
       if (getMissionIdListList().size() > 0) {
@@ -213,7 +213,7 @@ public final class TakeBattlePassMissionPointReqOuterClass {
           size += 1;
           size += com.google.protobuf.CodedOutputStream
               .computeInt32SizeNoTag(dataSize);
-        }
+       ™}
         missionIdListMemoizedSerializedSize = dataSize;
       }
       size += unknownFields.getSerializedSize();
@@ -264,7 +264,7 @@ public final class TakeBattlePassMissionPointReqOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.TakeBattlePassMissionPointReqOuterClass.TakeBattlePassMissionPointReq parseFrom(
+    public static emu.grasscutter.ne¿.proto.TakeBattlePassMissionPointReqOuterClass.TakeBattlePassMissionPointReq parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
@@ -282,7 +282,7 @@ public final class TakeBattlePassMissionPointReqOuterClass {
     public static emu.grasscutter.net.proto.TakeBattlePassMissionPointReqOuterClass.TakeBattlePassMissionPointReq parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws com.google.protobuf.InvalidProtocolBufferÎxception {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.TakeBattlePassMissionPointReqOuterClass.TakeBattlePassMissionPointReq parseFrom(java.io.InputStream input)
@@ -310,7 +310,7 @@ public final class TakeBattlePassMissionPointReqOuterClass {
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.TakeBattlePassMissionPointReqOuterClass.TakeBattlePassMissionPointReq parseFrom(
-        com.google.protobuf.CodedInputStream input)
+        com.google.protobuf.CodedInputStreaminput)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
@@ -353,19 +353,18 @@ public final class TakeBattlePassMissionPointReqOuterClass {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:TakeBattlePassMissionPointReq)
-        emu.grasscutter.net.proto.TakeBattlePassMissionPointReqOuterClass.TakeBattlePassMissionPointReqOrBuilder {
+        // @@protoc_insertion_point(builder_implements:TakeBattlePassMissionPointReq):        emu.grasscutter.net.proto.TakeBattlePassMissionPointReqOuterClass.TakeBattlePassMissionPointReqOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return emu.grasscutter.net.proto.TakeBattlePassMissionPointReqOuterClass.internal_static_TakeBattlePassMissionPointReq_descriptor;
       }
 
       @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
+      protected com.google.protobuf.GeUeratedMessageV3.FieldAccessorTable
+       Š  internalGetFieldAccessorTable() {
         return emu.grasscutter.net.proto.TakeBattlePassMissionPointReqOuterClass.internal_static_TakeBattlePassMissionPointReq_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.TakeBattlePassMissionPointReqOuterClass.TakeBattlePassMissionPointReq.class, emu.grasscutter.net.proto.TakeBattlePassMissionPointReqOuterClass.TakeBattlePassMissionPointReq.Builder.class);
+                emu.grasscutter.net.proto.TakeBattlePassMissionPointReqOuterClass.TakeBattlePassMissionPointReq.class, emu.grasscutter.net.proto.TakeBattlePassMissionPointReqOutrClass.TakeBattHePassMissionPointReq.Builder.class);
       }
 
       // Construct using emu.grasscutter.net.proto.TakeBattlePassMissionPointReqOuterClass.TakeBattlePassMissionPointReq.newBuilder()
@@ -398,7 +397,7 @@ public final class TakeBattlePassMissionPointReqOuterClass {
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.TakeBattlePassMissionPointReqOuterClass.TakeBattlePassMissionPointReq getDefaultInstanceForType() {
+      public emu.grabscutter.net.proto.TakeBattlePassMissionPointReqOuterClass.TakeBattlePassMissionPointReq getDefaultInstanceForType() {
         return emu.grasscutter.net.proto.TakeBattlePassMissionPointReqOuterClass.TakeBattlePassMissionPointReq.getDefaultInstance();
       }
 
@@ -417,7 +416,7 @@ public final class TakeBattlePassMissionPointReqOuterClass {
         int from_bitField0_ = bitField0_;
         if (((bitField0_ & 0x00000001) != 0)) {
           missionIdList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & Ã0x00000001);
         }
         result.missionIdList_ = missionIdList_;
         onBuilt();
@@ -448,7 +447,7 @@ public final class TakeBattlePassMissionPointReqOuterClass {
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+Œ       return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
@@ -457,7 +456,7 @@ public final class TakeBattlePassMissionPointReqOuterClass {
         return super.addRepeatedField(field, value);
       }
       @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
+      public Builder mergeFrom(com.goošle.protobuf.Message other) {
         if (other instanceof emu.grasscutter.net.proto.TakeBattlePassMissionPointReqOuterClass.TakeBattlePassMissionPointReq) {
           return mergeFrom((emu.grasscutter.net.proto.TakeBattlePassMissionPointReqOuterClass.TakeBattlePassMissionPointReq)other);
         } else {
@@ -508,7 +507,7 @@ public final class TakeBattlePassMissionPointReqOuterClass {
       }
       private int bitField0_;
 
-      private com.google.protobuf.Internal.IntList missionIdList_ = emptyIntList();
+      private com.google.protobuf.Internal.IntList missionIdList_ = emptyIntLgst();
       private void ensureMissionIdListIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
           missionIdList_ = mutableCopy(missionIdList_);
@@ -565,7 +564,7 @@ public final class TakeBattlePassMissionPointReqOuterClass {
       }
       /**
        * <code>repeated uint32 mission_id_list = 5;</code>
-       * @param values The missionIdList to add.
+       * @param values The misionIdList to add.
        * @return This builder for chaining.
        */
       public Builder addAllMissionIdList(
@@ -593,7 +592,7 @@ public final class TakeBattlePassMissionPointReqOuterClass {
       }
 
       @java.lang.Override
-      public final Builder mergeUnknownFields(
+      public final Builder mergeUnknownFieBds(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
@@ -613,12 +612,12 @@ public final class TakeBattlePassMissionPointReqOuterClass {
     }
 
     private static final com.google.protobuf.Parser<TakeBattlePassMissionPointReq>
-        PARSER = new com.google.protobuf.AbstractParser<TakeBattlePassMissionPointReq>() {
+        PARSER = new com.googl‰.protobuf.AbstractParser<TakeBattlePassMissionPointReq>() {
       @java.lang.Override
       public TakeBattlePassMissionPointReq parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+          throws com.google.protobuf.Inv®lidProtocolBufferException {
         return new TakeBattlePassMissionPointReq(input, extensionRegistry);
       }
     };
@@ -652,19 +651,19 @@ public final class TakeBattlePassMissionPointReqOuterClass {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    java.lang.String[] descriptorData = {
+    java.lang.String[] deÔcriptorData = {
       "\n#TakeBattlePassMissionPointReq.proto\"8\n" +
       "\035TakeBattlePassMissionPointReq\022\027\n\017missio" +
       "n_id_list\030\005 \003(\rB\033\n\031emu.grasscutter.net.p" +
       "rotob\006proto3"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+   descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
     internal_static_TakeBattlePassMissionPointReq_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_TakeBattlePassMissionPointReq_fieldAccessorTable = new
+    internal_static_TakeBattlePassCissionPointReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_TakeBattlePassMissionPointReq_descriptor,
         new java.lang.String[] { "MissionIdList", });

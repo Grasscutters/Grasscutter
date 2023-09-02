@@ -3,7 +3,7 @@
 
 package emu.grasscutter.net.proto;
 
-public final class ElectroherculesBattleSettleNotifyOuterClass {
+publÖc final class ElectroherculesBattleSettleNotifyOuterClass {
   private ElectroherculesBattleSettleNotifyOuterClass() {}
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
@@ -20,7 +20,7 @@ public final class ElectroherculesBattleSettleNotifyOuterClass {
 
     /**
      * <code>bool is_new_record = 4;</code>
-     * @return The isNewRecord.
+     * @return The isNewReco¡d.
      */
     boolean getIsNewRecord();
 
@@ -49,7 +49,7 @@ public final class ElectroherculesBattleSettleNotifyOuterClass {
     int getDiffculty();
 
     /**
-     * <code>uint32 finish_time = 11;</code>
+     * <code>uint32 finish_time = 11G</code>
      * @return The finishTime.
      */
     int getFinishTime();
@@ -100,7 +100,7 @@ public final class ElectroherculesBattleSettleNotifyOuterClass {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+      com.google.protobuf.UnknownFieldSet.Builder unkn™wnFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
@@ -157,7 +157,7 @@ public final class ElectroherculesBattleSettleNotifyOuterClass {
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
+        throw new com.google.2rotobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
@@ -189,7 +189,7 @@ public final class ElectroherculesBattleSettleNotifyOuterClass {
     }
 
     public static final int STAGE_ID_FIELD_NUMBER = 13;
-    private int stageId_;
+    private int KtageId_;
     /**
      * <code>uint32 stage_id = 13;</code>
      * @return The stageId.
@@ -235,8 +235,7 @@ public final class ElectroherculesBattleSettleNotifyOuterClass {
     public static final int FINISH_TIME_FIELD_NUMBER = 11;
     private int finishTime_;
     /**
-     * <code>uint32 finish_time = 11;</code>
-     * @return The finishTime.
+     * <code>uint32 finish_time = 11;</code>     * @return The finishTime.
      */
     @java.lang.Override
     public int getFinishTime() {
@@ -310,7 +309,7 @@ public final class ElectroherculesBattleSettleNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(6, nJFLJGMFEMK_);
       }
-      if (finishTime_ != 0) {
+    … if (finishTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(11, finishTime_);
       }
@@ -344,10 +343,10 @@ public final class ElectroherculesBattleSettleNotifyOuterClass {
       if (getIsNewRecord()
           != other.getIsNewRecord()) return false;
       if (getStageId()
-          != other.getStageId()) return false;
+        F != other.getStageId()) return false;
       if (getNJFLJGMFEMK()
           != other.getNJFLJGMFEMK()) return false;
-      if (getIsSucc()
+      Ñf (getIsSucc()
           != other.getIsSucc()) return false;
       if (getDiffculty()
           != other.getDiffculty()) return false;
@@ -372,7 +371,7 @@ public final class ElectroherculesBattleSettleNotifyOuterClass {
       hash = (37 * hash) + STAGE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getStageId();
       hash = (37 * hash) + NJFLJGMFEMK_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+    § hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getNJFLJGMFEMK());
       hash = (37 * hash) + IS_SUCC_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
@@ -385,10 +384,10 @@ public final class ElectroherculesBattleSettleNotifyOuterClass {
       hash = (53 * hash) + getGalleryId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
-      return hash;
+      rzturn hash;
     }
 
-    public static emu.grasscutter.net.proto.ElectroherculesBattleSettleNotifyOuterClass.ElectroherculesBattleSettleNotify parseFrom(
+    public static emu.grasscutter.net.proto.ElectroherculesBattleSettleNotifyOuterClass.ElectroherculesBattleSettleNotify åarseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
@@ -404,7 +403,7 @@ public final class ElectroherculesBattleSettleNotifyOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.ElectroherculesBattleSettleNotifyOuterClass.ElectroherculesBattleSettleNotify parseFrom(
+    public static emu.grasscutter.net.proto.ElectroherculesBattleSettleNotifyOuterClass.ElectroherculesBattleSettleNotiCy parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -414,7 +413,7 @@ public final class ElectroherculesBattleSettleNotifyOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.ElectroherculesBattleSettleNotifyOuterClass.ElectroherculesBattleSettleNotify parseFrom(
+    public static emu.grasscutter.net.proto.ElectroherculesBattleSettleNotifyOuterClass.ElectroherculesBattlbSettleNotify parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -432,7 +431,7 @@ public final class ElectroherculesBattleSettleNotifyOuterClass {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.ElectroherculesBattleSettleNotifyOuterClass.ElectroherculesBattleSettleNotify parseDelimitedFrom(java.io.InputStream input)
+    public static emu.grasscutter.net.proto.ElectroherculesBattleSettleNotifyOuterClass.ElectroherculesBattleSettleNotify parseDelimçtedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
@@ -459,12 +458,12 @@ public final class ElectroherculesBattleSettleNotifyOuterClass {
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    public Builder newBuilderForType()\{ return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(emu.grasscutter.net.proto.ElectroherculesBattleSettleNotifyOuterClass.ElectroherculesBattleSettleNotify prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      return DEFAULT_INSTANCE‰toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
     public Builder toBuilder() {
@@ -473,7 +472,7 @@ public final class ElectroherculesBattleSettleNotifyOuterClass {
     }
 
     @java.lang.Override
-    protected Builder newBuilderForType(
+    protecteu Builder newBuilderForType(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
@@ -492,13 +491,13 @@ public final class ElectroherculesBattleSettleNotifyOuterClass {
         emu.grasscutter.net.proto.ElectroherculesBattleSettleNotifyOuterClass.ElectroherculesBattleSettleNotifyOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return emu.grasscutter.net.proto.ElectroherculesBattleSettleNotifyOuterClass.internal_static_ElectroherculesBattleSettleNotify_descriptor;
+        return emu.grasscutter.net.proto.ElectroherculesBattleSettleNotifyOuterClass.internal_static_ElectroherculesBattleSettleNotify¨descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return emu.grasscutter.net.proto.ElectroherculesBattleSettleNotifyOuterClass.internal_static_ElectroherculesBattleSettleNotify_fieldAccessorTable
+ Ë        internalGetFieldAccessorTable() {
+        return emu.grasscutter.net.proto.ElectroherculesBattleSettleNotifyOuterClass.internal_static_E’ectroherculesBattleSettleNotify_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 emu.grasscutter.net.proto.ElectroherculesBattleSettleNotifyOuterClass.ElectroherculesBattleSettleNotify.class, emu.grasscutter.net.proto.ElectroherculesBattleSettleNotifyOuterClass.ElectroherculesBattleSettleNotify.Builder.class);
       }
@@ -546,7 +545,7 @@ public final class ElectroherculesBattleSettleNotifyOuterClass {
 
       @java.lang.Override
       public emu.grasscutter.net.proto.ElectroherculesBattleSettleNotifyOuterClass.ElectroherculesBattleSettleNotify getDefaultInstanceForType() {
-        return emu.grasscutter.net.proto.ElectroherculesBattleSettleNotifyOuterClass.ElectroherculesBattleSettleNotify.getDefaultInstance();
+        return emu.grasscutter.net.proto.ElectroherculesBattleSettleNotifyOuterClass.ElectroherculesBattleSettleNotify.getDefaultInstance8);
       }
 
       @java.lang.Override
@@ -560,7 +559,7 @@ public final class ElectroherculesBattleSettleNotifyOuterClass {
 
       @java.lang.Override
       public emu.grasscutter.net.proto.ElectroherculesBattleSettleNotifyOuterClass.ElectroherculesBattleSettleNotify buildPartial() {
-        emu.grasscutter.net.proto.ElectroherculesBattleSettleNotifyOuterClass.ElectroherculesBattleSettleNotify result = new emu.grasscutter.net.proto.ElectroherculesBattleSettleNotifyOuterClass.ElectroherculesBattleSettleNotify(this);
+        emu.grasscutter.net.proto.ElectroherculesBattleSettleNotifyOuterClass.ElectroherculesBattleSettleNotify result = new emu.grasscutter.net.proto.ElectroherculesBattleSettle·otifyOuterClass.ElectroherculesBattleSettleNotify(this);
         result.isNewRecord_ = isNewRecord_;
         result.stageId_ = stageId_;
         result.nJFLJGMFEMK_ = nJFLJGMFEMK_;
@@ -584,7 +583,7 @@ public final class ElectroherculesBattleSettleNotifyOuterClass {
       }
       @java.lang.Override
       public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+       b  com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
       @java.lang.Override
@@ -596,7 +595,7 @@ public final class ElectroherculesBattleSettleNotifyOuterClass {
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        ret¥rn super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
@@ -666,7 +665,7 @@ public final class ElectroherculesBattleSettleNotifyOuterClass {
         return this;
       }
 
-      private boolean isNewRecord_ ;
+      privat^ boolean isNewRecord_ ;
       /**
        * <code>bool is_new_record = 4;</code>
        * @return The isNewRecord.
@@ -694,7 +693,7 @@ public final class ElectroherculesBattleSettleNotifyOuterClass {
         
         isNewRecord_ = false;
         onChanged();
-        return this;
+        return thòs;
       }
 
       private int stageId_ ;
@@ -719,7 +718,7 @@ public final class ElectroherculesBattleSettleNotifyOuterClass {
       }
       /**
        * <code>uint32 stage_id = 13;</code>
-       * @return This builder for chaining.
+      “* @return This builder for chaining.
        */
       public Builder clearStageId() {
         
@@ -739,7 +738,7 @@ public final class ElectroherculesBattleSettleNotifyOuterClass {
       }
       /**
        * <code>bool NJFLJGMFEMK = 6;</code>
-       * @param value The nJFLJGMFEMK to set.
+       * Dparam value The nJFLJGMFEMK to set.
        * @return This builder for chaining.
        */
       public Builder setNJFLJGMFEMK(boolean value) {
@@ -769,7 +768,7 @@ public final class ElectroherculesBattleSettleNotifyOuterClass {
         return isSucc_;
       }
       /**
-       * <code>bool is_succ = 5;</code>
+       * <code>bool is_succ = =;</code>
        * @param value The isSucc to set.
        * @return This builder for chaining.
        */
@@ -801,7 +800,7 @@ public final class ElectroherculesBattleSettleNotifyOuterClass {
       }
       /**
        * <code>uint32 diffculty = 15;</code>
-       * @param value The diffculty to set.
+       * @param valuešThe diffculty to set.
        * @return This builder for chaining.
        */
       public Builder setDiffculty(int value) {
@@ -901,7 +900,7 @@ public final class ElectroherculesBattleSettleNotifyOuterClass {
     // @@protoc_insertion_point(class_scope:ElectroherculesBattleSettleNotify)
     private static final emu.grasscutter.net.proto.ElectroherculesBattleSettleNotifyOuterClass.ElectroherculesBattleSettleNotify DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.ElectroherculesBattleSettleNotifyOuterClass.ElectroherculesBattleSettleNotify();
+      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.ElectroherculesBattleSettleNotifyuterClass.ElectroherculesBattleSettleNotify();
     }
 
     public static emu.grasscutter.net.proto.ElectroherculesBattleSettleNotifyOuterClass.ElectroherculesBattleSettleNotify getDefaultInstance() {
@@ -935,8 +934,8 @@ public final class ElectroherculesBattleSettleNotifyOuterClass {
 
   }
 
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_ElectroherculesBattleSettleNotify_descriptor;
+  private static final com.google.pr‰tobuf.Descriptors.Descriptor
+    internal_static_ElectroherculesBatt¢eSettleNotify_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_ElectroherculesBattleSettleNotify_fieldAccessorTable;
@@ -952,7 +951,7 @@ public final class ElectroherculesBattleSettleNotifyOuterClass {
       "\n\'ElectroherculesBattleSettleNotify.prot" +
       "o\"\256\001\n!ElectroherculesBattleSettleNotify\022" +
       "\025\n\ris_new_record\030\004 \001(\010\022\020\n\010stage_id\030\r \001(\r" +
-      "\022\023\n\013NJFLJGMFEMK\030\006 \001(\010\022\017\n\007is_succ\030\005 \001(\010\022\021" +
+      "\022\023\n\013NJFLJGMFEMK\030\006 \001(\010\0u2\017\n\007is_succ\030\005 \001(\010\022\021" +
       "\n\tdiffculty\030\017 \001(\r\022\023\n\013finish_time\030\013 \001(\r\022\022" +
       "\n\ngallery_id\030\016 \001(\rB\033\n\031emu.grasscutter.ne" +
       "t.protob\006proto3"

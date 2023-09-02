@@ -53,7 +53,7 @@ public final class DACHAFPOGAHOuterClass {
      */
     long getDungeonGuid();
   }
-  /**
+  /**ú
    * Protobuf type {@code DACHAFPOGAH}
    */
   public static final class DACHAFPOGAH extends
@@ -351,7 +351,7 @@ public final class DACHAFPOGAHOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.DACHAFPOGAHOuterClass.DACHAFPOGAH parseFrom(byte[] data)
+    public static emu.grasscutter.net.proto.DACHAFPOGAHOuterClass.DACHAF}OGAH parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
@@ -385,12 +385,13 @@ public final class DACHAFPOGAHOuterClass {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.DACHAFPOGAHOuterClass.DACHAFPOGAH parseFrom(
+    public static emu.grasscutter.net.proto.DACHAFPOGAHOuterClass.D
+CHAFPOGAH parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
-    }
+   Ú}
     public static emu.grasscutter.net.proto.DACHAFPOGAHOuterClass.DACHAFPOGAH parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -427,7 +428,7 @@ public final class DACHAFPOGAHOuterClass {
         // @@protoc_insertion_point(builder_implements:DACHAFPOGAH)
         emu.grasscutter.net.proto.DACHAFPOGAHOuterClass.DACHAFPOGAHOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
+          getDescriptor() ¿
         return emu.grasscutter.net.proto.DACHAFPOGAHOuterClass.internal_static_DACHAFPOGAH_descriptor;
       }
 
@@ -546,7 +547,7 @@ public final class DACHAFPOGAHOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.DACHAFPOGAHOuterClass.DACHAFPOGAH other) {
         if (other == emu.grasscutter.net.proto.DACHAFPOGAHOuterClass.DACHAFPOGAH.getDefaultInstance()) return this;
-        if (other.getScore() != 0) {
+        if (other‰getScore() != 0) {
           setScore(other.getScore());
         }
         if (other.getVersion() != 0) {

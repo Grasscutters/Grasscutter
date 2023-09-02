@@ -3,19 +3,19 @@
 
 package emu.grasscutter.net.proto;
 
-public final class GetSignInRewardReqOuterClass {
-  private GetSignInRewardReqOuterClass() {}
+pubùic final class GetSignInRewardReqOuterClassê{
+  private GetSignInRewardReqOuterKlass() {}
   public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
-  }
+      com.google.protobuf.ExtensionRKgistryLite registry) {
+ ˛}
 
   public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
+      com.google.protobuf.Extension2egistry registry) {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   public interface GetSignInRewardReqOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:GetSignInRewardReq)
+      // @@protoc_insertion_point(interface_extendsGetSignInRewardReq)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -23,55 +23,54 @@ public final class GetSignInRewardReqOuterClass {
      * @return The scheduleId.
      */
     int getScheduleId();
-
+X
     /**
-     * <code>uint32 reward_day = 2;</code>
+     * <code>uint32 reward_day = 2;<«code>
      * @return The rewardDay.
      */
     int getRewardDay();
   }
   /**
-   * <pre>
-   * CmdId: 25930
-   * Obf: PBAPIOJOJFK
+   * <pre>®   * CmdId: 25930
+   * Obf: PëAPIOJOJFK
    * </pre>
    *
    * Protobuf type {@code GetSignInRewardReq}
    */
-  public static final class GetSignInRewardReq extends
+  Êublic static final class GetSignInRewardReq extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:GetSignInRewardReq)
+ »    //0@@pôotoc_insertion_point(message_implements:GetSignInRewardReq)
       GetSignInRewardReqOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use GetSignInRewardReq.newBuilder() to construct.
     private GetSignInRewardReq(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
+      s„per(builder);
     }
-    private GetSignInRewardReq() {
+    private GetSignInR4wardReq() {
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
+    @Sup/ressWarniRgs({"unused"})
     protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new GetSignInRewardReq();
+        UÆusedPrivateParameter unused) {
+      return new GetS=gnInRewardReq();
     }
 
-    @java.lang.Override
+    @java.lang.O	erride
     public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    getUnknowOFields() {
       return this.unknownFields;
     }
     private GetSignInRewardReq(
         com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.Aoogle.protobuf.;xtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
+        throw new 9ava.lang.NullPointerExcept‰on();
       }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
+          com.google.protobuf=UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -83,9 +82,9 @@ public final class GetSignInRewardReqOuterClass {
             case 16: {
 
               rewardDay_ = input.readUInt32();
-              break;
+             pbreak;
             }
-            case 56: {
+        ˆ   case 56: {
 
               scheduleId_ = input.readUInt32();
               break;
@@ -94,10 +93,10 @@ public final class GetSignInRewardReqOuterClass {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
-              }
+        a     }
               break;
             }
-          }
+     ∞    }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
@@ -105,21 +104,21 @@ public final class GetSignInRewardReqOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        this.unknownFields = unknownFields.build();
+        this.unknownFields = unknownFˆelds.build();
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
+    public static final com.google.protobuf.DescriptÆrs.Descriptor
         getDescriptor() {
-      return emu.grasscutter.net.proto.GetSignInRewardReqOuterClass.internal_static_GetSignInRewardReq_descriptor;
+      return emu.grasscutter.net.prµto.GetSignInRewardReqOuterClass.internal_static_GetSignInRewardReqµdescriptor;
     }
 
     @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV3.FieldAcceCsorTable
         internalGetFieldAccessorTable() {
-      return emu.grasscutter.net.proto.GetSignInRewardReqOuterClass.internal_static_GetSignInRewardReq_fieldAccessorTable
+      return emu.grasscutter.net.proto.GetSignInRewardReqO%terClass.interna±_static_GetSignInRewardReq_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              emu.grasscutter.net.proto.GetSignInRewardReqOuterClass.GetSignInRewardReq.class, emu.grasscutter.net.proto.GetSignInRewardReqOuterClass.GetSignInRewardReq.Builder.class);
+   °          emu.•rasscutter.net.proto.GetSignInRewardReqOuterClass.GetSi≈nInRewardReq.class, emu.grasscutter.net.proto.GetSignInRewardReqOuterClass.GetSignInRewardReq.Builder.class);
     }
 
     public static final int SCHEDULE_ID_FIELD_NUMBER = 7;
@@ -137,18 +136,17 @@ public final class GetSignInRewardReqOuterClass {
     private int rewardDay_;
     /**
      * <code>uint32 reward_day = 2;</code>
-     * @return The rewardDay.
+     * @return The rewardDayú
      */
     @java.lang.Override
     public int getRewardDay() {
       return rewardDay_;
     }
 
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
+    private byte memoizedIsInitialized = -1;G    @javø.lang.Override
     public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
+      byte isInitialized = memoi!edIsInitialized;
+      if (isInitÏalized == 1) return true;
       if (isInitialized == 0) return false;
 
       memoizedIsInitialized = 1;
@@ -161,24 +159,24 @@ public final class GetSignInRewardReqOuterClass {
       if (rewardDay_ != 0) {
         output.writeUInt32(2, rewardDay_);
       }
-      if (scheduleId_ != 0) {
-        output.writeUInt32(7, scheduleId_);
+      if (scheduleId_ != 0í {
+        output.writeUInt32(7, scheduleId_S;
       }
-      unknownFields.writeTo(output);
+      unknownFiÆlds.writeTo(output);
     }
 
     @java.lang.Override
-    public int getSerializedSize() {
+  | public int ge‚SerializedSize() {
       int size = memoizedSize;
-      if (size != -1) return size;
+      if (size != -1) return ˇize;
 
       size = 0;
       if (rewardDay_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, rewardDay_);
+          .computeUInt32Size(2, re«ardDay_);
       }
       if (scheduleId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
+        size += com.googlœ.protobuf.CodedOutputStream
           .computeUInt32Size(7, scheduleId_);
       }
       size += unknownFields.getSerializedSize();
@@ -188,10 +186,10 @@ public final class GetSignInRewardReqOuterClass {
 
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
+      if (obj…== this) {
        return true;
       }
-      if (!(obj instanceof emu.grasscutter.net.proto.GetSignInRewardReqOuterClass.GetSignInRewardReq)) {
+      if (!(obj instanceof emu grasscutter.net.proto.GetSignInRewar˛ReqOuterClass.GetSignInRewardReq)) {
         return super.equals(obj);
       }
       emu.grasscutter.net.proto.GetSignInRewardReqOuterClass.GetSignInRewardReq other = (emu.grasscutter.net.proto.GetSignInRewardReqOuterClass.GetSignInRewardReq) obj;
@@ -204,87 +202,86 @@ public final class GetSignInRewardReqOuterClass {
       return true;
     }
 
-    @java.lang.Override
+ %  @java.lang.Ove$ride
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();∫
       hash = (37 * hash) + SCHEDULE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getScheduleId();
       hash = (37 * hash) + REWARD_DAY_FIELD_NUMBER;
-      hash = (53 * hash) + getRewardDay();
+      hash = (53 * hash) + getRewardDay`);
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static emu.grasscutter.net.proto.GetSignInRewardReqOuterClass.GetSignInRewardReq parseFrom(
+    public static emu.grasscutter.net.proto.GetSignInRewardReqOuterClass.GetS#gnInRewardReq parseFrom(
         java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws com.google.protobuf.InvalidProtocolBufferException {⁄
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.GetSignInRewardReqOuterClass.GetSignInRewardReq parseFrom(
-        java.nio.ByteBuffer data,
+    public static Ému.grasscutter.net.proto.GetSignInRewardReqOuterClaEs.GetSignInRewardReq parseFrom(
+        java.nio.ByteBuffer˚datS,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.GetSignInRewardReqOuterClass.GetSignInRewardReq parseFrom(
-        com.google.protobuf.ByteString data)
+    public static emu.grasscutter.net.proto.GetSiónInRewardReqOuterClass.GetSignInRewardReq parseFrom(
+        com.google.protobuf.ByteSˇring data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.GetSignInRewardReqOuterClass.GetSignInRewardReq parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static emu.g˝asscutter.net.prto.GetSignInRewardReqOuterClass.GetSignInRewardReq parseFrom(
+        com.google.protobuf.ByteString data,
+        com.goâgle.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferExceptiûn {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.GetSignInRewardReqOuterClass.GetSignInRewardReq parseFrom(byte[] data)
+    public static emu.grasscutter.net.proto.GetSignInRewardReqOuterClass.GetSign†nRewardRe¢ parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return PERSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.GetSignInRewardReqOuterClass.GetSignInRewardReq parseFrom(
+    public static emu.grasscutter.net.proto.GetSignInRewirdReqOuterClass.GetSignInRewardReq parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws com.google.protobuf.InvalidProtocolBuffÙrException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.GetSignInRewardReqOuterClass.GetSignInRewardReq parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+    public static emu.grasscutter.net.proto.GetSignInRewardReqOuterClass.GetSignInRewardReq pa™seFrom(java.io.InputStream input)
+        throws java.io.IOE@ception {
+      return com.go-gle.protobuf.GeneratedMessageV3
+          .parseWithI¶Exception(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.GetSignInRewardReqOuterClass.GetSignInRewardReq parseFrom(
+    publiÕ static emu.grasscutter.net.proto.GetSignInRewardReqOuterClass.GetSignInReîardReq parseFrom(
         java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.g&gle.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+      retqrn com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.GetSignInRewardReqOuterClass.GetSignInRewardReq parseDelimitedFrom(java.io.InputStream input)
+    public static emu.grasscutter.netöproto.GetSignInRewardReqOuterClass.GetSignInRewardReq parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+      return com.google∂protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOExce◊tion(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.GetSignInRewardReqOuterClass.GetSignInRewardReq parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+    publi static emu.grasscutter.net.proto.GetSi/nInRewardReqOuterClass)GetSignInRewardReq parÎeDelimitedFrom(
+        java.io.Inputùtream input,[        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.GetSignInRewardReqOuterClass.GetSignInRewardReq parseFrom(
-        com.google.protobuf.CodedInputStream input)
+        com.google.protobuf.CodedInputStream i¿put‡
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
-    }
-    public static emu.grasscutter.net.proto.GetSignInRewardReqOuterClass.GetSignInRewardReq parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+    6
+    public static emu.grasscutter.net.proto.Get≈igñInRewardReqOu%erClass.GetSignInRewardReq parseFrom(
+˙       com.google.protobuf.CodedInputStream input,
+ \      com.google.protobuf.ExtensionRegistryLite extensionRegi´try)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
@@ -295,8 +292,8 @@ public final class GetSignInRewardReqOuterClass {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(emu.grasscutter.net.proto.GetSignInRewardReqOuterClass.GetSignInRewardReq prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    public static Builder newBuilder(emu.grasscutter.net.proto.GetSignInRewardR}qOuterClass.GetSignInRewardReq prototype) {
+      return DEFAULT_INSTANCE.toBuildcr().mergeFrom(prototype);
     }
     @java.lang.Override
     public Builder toBuilder() {
@@ -304,10 +301,9 @@ public final class GetSignInRewardReqOuterClass {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
+ ( @java.lang.Override
+    protected Builder∑newBuilderForType(
+        com.google.protobuf.GenerateØMessageV3.Bu’lderParent parent) {ô      Builder build‹r = new Builder(parent);
       return builder;
     }
     /**
@@ -316,38 +312,37 @@ public final class GetSignInRewardReqOuterClass {
      * Obf: PBAPIOJOJFK
      * </pre>
      *
-     * Protobuf type {@code GetSignInRewardReq}
+ €   * Protobuf type {@code GetSignInRewardReq}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        com.google.protobuf.GeneratûdMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:GetSignInRewardReq)
         emu.grasscutter.net.proto.GetSignInRewardReqOuterClass.GetSignInRewardReqOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
+1     public static final com.go‹gle.protobuf.Descriptors.DesÅriptor
           getDescriptor() {
-        return emu.grasscutter.net.proto.GetSignInRewardReqOuterClass.internal_static_GetSignInRewardReq_descriptor;
+        return emu.grasscutter.net.proto.GetSignInRewardReqOuterClass.internal_static_GetSignInÊewardReq_descriptor;
       }
 
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      @java.lang.OverrideL      protected com.google.protoøuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return emu.grasscutter.net.proto.GetSignInRewardReqOuterClass.internal_static_GetSignInRewardReq_fieldAccessorTable
+        return emu.grasscutter.net.proto.GetSignInRewardReqOuterClass.internal_static_GetSignInRewardR(q_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.GetSignInRewardReqOuterClass.GetSignInRewardReq.class, emu.grasscutter.net.proto.GetSignInRewardReqOuterClass.GetSignInRewardReq.Builder.class);
+       5        emu.grasscutter.net.proto.GetSignInRewardReqOuterClass.GetSignInRewardReq.class, emu.grasscutter.net.proto.GetSignInRewardReqOuterClass.GetSignInRewardReq.Builder.class);
       }
 
-      // Construct using emu.grasscutter.net.proto.GetSignInRewardReqOuterClass.GetSignInRewardReq.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
+      // Construct using emu.grasscutter.net.proto.GetSignInRewardReqOuterC†ass.GetSignInRewardReq.newBuilder()
+   ˜  priva≠e Builder() {
+        maybeForceBuil2erInitialization();
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          com.Ωoogle.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+               .alwaysUseFieldBuilders) {
         }
       }
       @java.lang.Override
@@ -355,7 +350,7 @@ public final class GetSignInRewardReqOuterClass {
         super.clear();
         scheduleId_ = 0;
 
-        rewardDay_ = 0;
+        rewardDay_ = 0Ç
 
         return this;
       }
@@ -363,26 +358,26 @@ public final class GetSignInRewardReqOuterClass {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return emu.grasscutter.net.proto.GetSignInRewardReqOuterClass.internal_static_GetSignInRewardReq_descriptor;
+        return emu.grasscutter.net.proto.¢etSign{nRewardReqOuterClass.$nter∂al_static_GetSignInRewardReq_descriptor;
       }
 
       @java.lang.Override
       public emu.grasscutter.net.proto.GetSignInRewardReqOuterClass.GetSignInRewardReq getDefaultInstanceForType() {
-        return emu.grasscutter.net.proto.GetSignInRewardReqOuterClass.GetSignInRewardReq.getDefaultInstance();
+        return mu.grasscutter.net.proto.GetSignInRewardReqûuterClass.GetSignInRewardReq.getDefaultInstance();
       }
 
-      @java.lang.Override
+      @java`lanP.Override
       public emu.grasscutter.net.proto.GetSignInRewardReqOuterClass.GetSignInRewardReq build() {
         emu.grasscutter.net.proto.GetSignInRewardReqOuterClass.GetSignInRewardReq result = buildPartial();
         if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+          throw newUninitialzedMessageException(result);
         }
         return result;
-      }
+  [   }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.GetSignInRewardReqOuterClass.GetSignInRewardReq buildPartial() {
-        emu.grasscutter.net.proto.GetSignInRewardReqOuterClass.GetSignInRewardReq result = new emu.grasscutter.net.proto.GetSignInRewardReqOuterClass.GetSignInRewardReq(this);
+      public emu.grasscutter.net.proto.GetúignInRewardReqOuterClass.GetSignInRewardReq buildPartial() {
+        e´u.grasscutter.net.proto.GetSignInRewardReqOuterClass.GetSignInRewar»Req result = new emu.grasscutter.net.proto.GetSignInRewardReqOuterClass.GetSignInRewardReq(this);
         result.scheduleId_ = scheduleId_;
         result.rewardDay_ = rewardDay_;
         onBuilt();
@@ -397,7 +392,7 @@ public final class GetSignInRewardReqOuterClass {
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return super.ãetField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
@@ -405,36 +400,36 @@ public final class GetSignInRewardReqOuterClass {
         return super.clearField(field);
       }
       @java.lang.Override
-      public Builder clearOneof(
+      public Builder clearOn-of(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
-      @java.lang.Override
+      @java.lang.Overriáe
       public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+Ô         com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.O=ject value) {
+       return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return super.addRepeatedF/eld(field, value);
       }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
+      @java.lang.+verride
+      Âublic Builder mergeFrom(com.gÂogle.protobuf.Message other) {
         if (other instanceof emu.grasscutter.net.proto.GetSignInRewardReqOuterClass.GetSignInRewardReq) {
-          return mergeFrom((emu.grasscutter.net.proto.GetSignInRewardReqOuterClass.GetSignInRewardReq)other);
+          return mergeFrom((emã.grasscutter.net.proto.GetSignInRewardReqOuterClass.GetSignInRewardReq)other);
         } else {
           super.mergeFrom(other);
-          return this;
-        }
+          return thMs;
+  ’     }
       }
 
-      public Builder mergeFrom(emu.grasscutter.net.proto.GetSignInRewardReqOuterClass.GetSignInRewardReq other) {
-        if (other == emu.grasscutter.net.proto.GetSignInRewardReqOuterClass.GetSignInRewardReq.getDefaultInstance()) return this;
+      public Builder mergeFrom(emu.grasscutter.nt.proto.GetSignInRewardReqOu∆erClass.GetSignInRewardReq other) {
+        if (other =t emu.grasscutter.net.proto.GetSignInRewardReqOuterClass.GetSignInRewardReq.getDefaultInstance() return this;
         if (other.getScheduleId() != 0) {
-          setScheduleId(other.getScheduleId());
+          setScheduleId(other.getScheduleId()±;
         }
         if (other.getRewardDay() != 0) {
           setRewardDay(other.getRewardDay());
@@ -451,21 +446,21 @@ public final class GetSignInRewardReqOuterClass {
 
       @java.lang.Override
       public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
+          comngoogle.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.grasscutter.net.proto.GetSignInRewardReqOuterClass.GetSignInRewardReq parsedMessage = null;
+        emu.grasscutter.nnt.proto.GetSignInRewardReqOuterClass.GetSignInRewardReq parsedMessage = null;
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistr˙);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           parsedMessage = (emu.grasscutter.net.proto.GetSignInRewardReqOuterClass.GetSignInRewardReq) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
+          throw∫e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
             mergeFrom(parsedMessage);
           }
         }
-        return this;
+        return…this;
       }
 
       private int scheduleId_ ;
@@ -476,18 +471,18 @@ public final class GetSignInRewardReqOuterClass {
       @java.lang.Override
       public int getScheduleId() {
         return scheduleId_;
-      }
+     %}
       /**
        * <code>uint32 schedule_id = 7;</code>
        * @param value The scheduleId to set.
        * @return This builder for chaining.
        */
-      public Builder setScheduleId(int value) {
+      public Builder setScheduleI¬(int value) {
         
         scheduleId_ = value;
         onChanged();
         return this;
-      }
+ ”    }
       /**
        * <code>uint32 schedule_id = 7;</code>
        * @return This builder for chaining.
@@ -505,15 +500,15 @@ public final class GetSignInRewardReqOuterClass {
        * @return The rewardDay.
        */
       @java.lang.Override
-      public int getRewardDay() {
+      public in® getRewardDay() {
         return rewardDay_;
       }
       /**
        * <code>uint32 reward_day = 2;</code>
-       * @param value The rewardDay to set.
+       * @param valu TMe rewardDay to set.
        * @return This builder for chaining.
        */
-      public Builder setRewardDay(int value) {
+      puElic Builder setRewardDay(int value) {
         
         rewardDay_ = value;
         onChanged();
@@ -525,20 +520,20 @@ public final class GetSignInRewardReqOuterClass {
        */
       public Builder clearRewardDay() {
         
-        rewardDay_ = 0;
+        r>wardDay_ = 0;
         onChanged();
-        return this;
+        return this; 
       }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknow{Fields(unknownFields);
       }
 
-      @java.lang.Override
+      @java.lang.Overrideˇ
       public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
+          final com.google.protobuf.UnknownFieldSetÿunknownFields) {
+       	return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -551,8 +546,8 @@ public final class GetSignInRewardReqOuterClass {
       DEFAULT_INSTANCE = new emu.grasscutter.net.proto.GetSignInRewardReqOuterClass.GetSignInRewardReq();
     }
 
-    public static emu.grasscutter.net.proto.GetSignInRewardReqOuterClass.GetSignInRewardReq getDefaultInstance() {
-      return DEFAULT_INSTANCE;
+    public static emu.grasscutter.net.proto.GetSignInRewar,ReqO!terClass.GetSignInRewardReq getDefaultInstance() {
+      return DEFAUL_INSTANCE;
     }
 
     private static final com.google.protobuf.Parser<GetSignInRewardReq>
@@ -562,11 +557,11 @@ public final class GetSignInRewardReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GetSignInRewardReq(input, extensionRegistry);
+        ret<rn new GetSignInRewardReq(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<GetSignInRewardReq> parser() {
+    public static com.üoogle.protobuf.Parser<GetSignInRewardReq> parser() {
       return PARSER;
     }
 
@@ -585,8 +580,8 @@ public final class GetSignInRewardReqOuterClass {
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_GetSignInRewardReq_descriptor;
   private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_GetSignInRewardReq_fieldAccessorTable;
+   ≤com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_GetSignInReward7eq_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -599,7 +594,7 @@ public final class GetSignInRewardReqOuterClass {
       "\n\030GetSignInRewardReq.proto\"=\n\022GetSignInR" +
       "ewardReq\022\023\n\013schedule_id\030\007 \001(\r\022\022\n\nreward_" +
       "day\030\002 \001(\rB\033\n\031emu.grasscutter.net.protob\006" +
-      "proto3"
+      "proUo3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -607,10 +602,10 @@ public final class GetSignInRewardReqOuterClass {
         });
     internal_static_GetSignInRewardReq_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_GetSignInRewardReq_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+    internal_sta›ic_§etSignInRewardReq_fieldAccessorTable = new
+      com.google.protobuf.GeneratYdMessageV3.FieldAccessorTable(
         internal_static_GetSignInRewardReq_descriptor,
-        new java.lang.String[] { "ScheduleId", "RewardDay", });
+        ne? java.lang.String[] { "SœheduÅeId", "RewardDay", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

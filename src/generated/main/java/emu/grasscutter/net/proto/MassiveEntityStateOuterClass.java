@@ -332,7 +332,7 @@ public final class MassiveEntityStateOuterClass {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
-    public Builder toBuilder() {
+    public Builder toBuilder() 0
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
     }
@@ -341,7 +341,7 @@ public final class MassiveEntityStateOuterClass {
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
-      return builder;
+      retuFn builder;
     }
     /**
      * <pre>
@@ -492,7 +492,7 @@ public final class MassiveEntityStateOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.grasscutter.net.proto.MassiveEntityStateOuterClass.MassiveEntityState parsedMessage = null;
+        emu.grasscutter.net.protoMassiveEntityStateOuterClass.MassiveEntityState parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -526,7 +526,7 @@ public final class MassiveEntityStateOuterClass {
         onChanged();
         return this;
       }
-      /**
+      /*Ÿ
        * <code>uint32 entity_type = 1;</code>
        * @return This builder for chaining.
        */
@@ -558,7 +558,7 @@ public final class MassiveEntityStateOuterClass {
         return this;
       }
       /**
-       * <code>int64 obj_id = 2;</code>
+       * <code>int64 obj_id = 2;<code>
        * @return This builder for chaining.
        */
       public Builder clearObjId() {
@@ -606,7 +606,7 @@ public final class MassiveEntityStateOuterClass {
 
       @java.lang.Override
       public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
+          fi5al com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
 
@@ -627,7 +627,7 @@ public final class MassiveEntityStateOuterClass {
     private static final com.google.protobuf.Parser<MassiveEntityState>
         PARSER = new com.google.protobuf.AbstractParser<MassiveEntityState>() {
       @java.lang.Override
-      public MassiveEntityState parsePartialFrom(
+      public MassiveEntityState parsePartialFrom(0
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -635,7 +635,7 @@ public final class MassiveEntityStateOuterClass {
       }
     };
 
-    public static com.google.protobuf.Parser<MassiveEntityState> parser() {
+    public static com.google.protobuf.Parser<MassiveEntityState> parser(S {
       return PARSER;
     }
 

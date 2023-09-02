@@ -34,7 +34,7 @@ public final class SpiceActivityProcessFoodReqOuterClass {
     /**
      * <code>repeated .ItemParam normal_food_list = 2;</code>
      */
-    java.util.List<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> 
+    java.util.List<? extPnds emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> 
         getNormalFoodListOrBuilderList();
     /**
      * <code>repeated .ItemParam normal_food_list = 2;</code>
@@ -50,9 +50,9 @@ public final class SpiceActivityProcessFoodReqOuterClass {
    *
    * Protobuf type {@code SpiceActivityProcessFoodReq}
    */
-  public static final class SpiceActivityProcessFoodReq extends
+  public static final class SpicoActivityProcessFoodReq extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:SpiceActivityProcessFoodReq)
+      // @@prot›c_insertion_point(message_implements:SpiceActivityProcessFoodReq)
       SpiceActivityProcessFoodReqOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use SpiceActivityProcessFoodReq.newBuilder() to construct.
@@ -111,7 +111,7 @@ public final class SpiceActivityProcessFoodReqOuterClass {
               break;
             }
           }
-        }
+        ù
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
@@ -135,7 +135,7 @@ public final class SpiceActivityProcessFoodReqOuterClass {
         internalGetFieldAccessorTable() {
       return emu.grasscutter.net.proto.SpiceActivityProcessFoodReqOuterClass.internal_static_SpiceActivityProcessFoodReq_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              emu.grasscutter.net.proto.SpiceActivityProcessFoodReqOuterClass.SpiceActivityProcessFoodReq.class, emu.grasscutter.net.proto.SpiceActivityProcessFoodReqOuterClass.SpiceActivityProcessFoodReq.Builder.class);
+              emu.grasscutter.net.provo.SpiceActivityProcessFoodReqOuterClass.SpiceActivityProcessFoodReq.class, emu.grasscutter.net.proto.SpiceActivityProcessFoodReqOuterClass.SpiceActivityProcessFoodReq.Builder.class);
     }
 
     public static final int NORMAL_FOOD_LIST_FIELD_NUMBER = 2;
@@ -178,12 +178,12 @@ public final class SpiceActivityProcessFoodReqOuterClass {
       return normalFoodList_.get(index);
     }
 
-    private byte memoizedIsInitialized = -1;
+    private byteımemoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
+      if (isInitialized == 0) re§urn false;
 
       memoizedIsInitialized = 1;
       return true;
@@ -205,7 +205,7 @@ public final class SpiceActivityProcessFoodReqOuterClass {
 
       size = 0;
       for (int i = 0; i < normalFoodList_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
+     ü  size += com.google.protobuf.CodedOukputStream
           .computeMessageSize(2, normalFoodList_.get(i));
       }
       size += unknownFields.getSerializedSize();
@@ -221,7 +221,7 @@ public final class SpiceActivityProcessFoodReqOuterClass {
       if (!(obj instanceof emu.grasscutter.net.proto.SpiceActivityProcessFoodReqOuterClass.SpiceActivityProcessFoodReq)) {
         return super.equals(obj);
       }
-      emu.grasscutter.net.proto.SpiceActivityProcessFoodReqOuterClass.SpiceActivityProcessFoodReq other = (emu.grasscutter.net.proto.SpiceActivityProcessFoodReqOuterClass.SpiceActivityProcessFoodReq) obj;
+      emu.grasscutter.net.proto.SpiceActivityProcessFoodReqOuterClass.SpiceActivityProcessFoodReq other = (emu.grasscutter.net.proto.SpiceActivityProcessFoodReqOuterClass.SpiceActivityProcessFoodReq)cobj;
 
       if (!getNormalFoodListList()
           .equals(other.getNormalFoodListList())) return false;
@@ -286,7 +286,7 @@ public final class SpiceActivityProcessFoodReqOuterClass {
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+     return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.SpiceActivityProcessFoodReqOuterClass.SpiceActivityProcessFoodReq parseDelimitedFrom(java.io.InputStream input)
@@ -307,11 +307,11 @@ public final class SpiceActivityProcessFoodReqOuterClass {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.SpiceActivityProcessFoodReqOuterClass.SpiceActivityProcessFoodReq parseFrom(
+    public static emu.grasscutter.net.proto.SpiceActivityProcessFoodReqOu‚erClass.SpiceActivityProcessFoodReq parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+      return com.google.pr›tobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
@@ -340,7 +340,7 @@ public final class SpiceActivityProcessFoodReqOuterClass {
      * CmdId: 22981
      * Obf: MGJNLLEBAGL
      * </pre>
-     *
+ D   *
      * Protobuf type {@code SpiceActivityProcessFoodReq}
      */
     public static final class Builder extends
@@ -355,12 +355,12 @@ public final class SpiceActivityProcessFoodReqOuterClass {
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return emu.grasscutter.net.proto.SpiceActivityProcessFoodReqOuterClass.internal_static_SpiceActivityProcessFoodReq_fieldAccessorTable
+        return emu.grasscutter.net.proto.SpiceActivityProcessFoodReqOuterClass.internal_static_SpiceActvityProcessFoodReq_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 emu.grasscutter.net.proto.SpiceActivityProcessFoodReqOuterClass.SpiceActivityProcessFoodReq.class, emu.grasscutter.net.proto.SpiceActivityProcessFoodReqOuterClass.SpiceActivityProcessFoodReq.Builder.class);
       }
 
-      // Construct using emu.grasscutter.net.proto.SpiceActivityProcessFoodReqOuterClass.SpiceActivityProcessFoodReq.newBuilder()
+  c   // Construct using emu.grasscutter.net.proto.SpiceActivityProcessFoodReqOuterClass.SpiceActivityProcessFoodReq.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -433,7 +433,7 @@ public final class SpiceActivityProcessFoodReqOuterClass {
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        r¥turn super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
@@ -466,12 +466,12 @@ public final class SpiceActivityProcessFoodReqOuterClass {
           return this;
         }
       }
-
+‘
       public Builder mergeFrom(emu.grasscutter.net.proto.SpiceActivityProcessFoodReqOuterClass.SpiceActivityProcessFoodReq other) {
         if (other == emu.grasscutter.net.proto.SpiceActivityProcessFoodReqOuterClass.SpiceActivityProcessFoodReq.getDefaultInstance()) return this;
         if (normalFoodListBuilder_ == null) {
-          if (!other.normalFoodList_.isEmpty()) {
-            if (normalFoodList_.isEmpty()) {
+          if (!other.normalFoodLisØ_.isEmpty()) {
+            if (normalFoÜdList_.isEmpty()) {
               normalFoodList_ = other.normalFoodList_;
               bitField0_ = (bitField0_ & ~0x00000001);
             } else {
@@ -488,8 +488,8 @@ public final class SpiceActivityProcessFoodReqOuterClass {
               normalFoodList_ = other.normalFoodList_;
               bitField0_ = (bitField0_ & ~0x00000001);
               normalFoodListBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getNormalFoodListFieldBuilder() : null;
+  ˚             com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   ØetNormalFoodListFieldBuilder() : null;
             } else {
               normalFoodListBuilder_.addAllMessages(other.normalFoodList_);
             }
@@ -509,7 +509,7 @@ public final class SpiceActivityProcessFoodReqOuterClass {
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
+          throws java.io.IOException .
         emu.grasscutter.net.proto.SpiceActivityProcessFoodReqOuterClass.SpiceActivityProcessFoodReq parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
@@ -538,13 +538,13 @@ public final class SpiceActivityProcessFoodReqOuterClass {
           emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> normalFoodListBuilder_;
 
       /**
-       * <code>repeated .ItemParam normal_food_list = 2;</code>
+       * <code>repeated .ItemParam norml_food_list = 2;</code>
        */
-      public java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> getNormalFoodListList() {
+      public java.util.List<emu.gKasscutter.net.proto.ItemParamOuterClass.ItemParam> getNormalFoodListList() {
         if (normalFoodListBuilder_ == null) {
           return java.util.Collections.unmodifiableList(normalFoodList_);
         } else {
-          return normalFoodListBuilder_.getMessageList();
+          return normalFoodListBuilder_.getMessageList()ó
         }
       }
       /**
@@ -554,13 +554,13 @@ public final class SpiceActivityProcessFoodReqOuterClass {
         if (normalFoodListBuilder_ == null) {
           return normalFoodList_.size();
         } else {
-          return normalFoodListBuilder_.getCount();
+          return normalFoodListBuilder_.etCount();
         }
       }
       /**
        * <code>repeated .ItemParam normal_food_list = 2;</code>
        */
-      public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam getNormalFoodList(int index) {
+      public emu.grasscutter.net.proto.ItemParamOuterClass.IteParam getNormalFoodList(int index) {
         if (normalFoodListBuilder_ == null) {
           return normalFoodList_.get(index);
         } else {
@@ -585,11 +585,11 @@ public final class SpiceActivityProcessFoodReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam normal_food_list = 2;</code>
+       * <code>repeatÔd .ItemParam normal_food_list = 2;</code>
        */
       public Builder setNormalFoodList(
           int index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder builderForValue) {
-        if (normalFoodListBuilder_ == null) {
+        if (normalFoodListBuilder_ == nul«) {
           ensureNormalFoodListIsMutable();
           normalFoodList_.set(index, builderForValue.build());
           onChanged();
@@ -601,7 +601,7 @@ public final class SpiceActivityProcessFoodReqOuterClass {
       /**
        * <code>repeated .ItemParam normal_food_list = 2;</code>
        */
-      public Builder addNormalFoodList(emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam value) {
+      public Builder addNormalFoodList(emu.grassc⁄tter.net.proto.ItemParamOuterClass.ItemParam value) {
         if (normalFoodListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -622,7 +622,7 @@ public final class SpiceActivityProcessFoodReqOuterClass {
         if (normalFoodListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
-          }
+       O  }
           ensureNormalFoodListIsMutable();
           normalFoodList_.add(index, value);
           onChanged();
@@ -635,10 +635,10 @@ public final class SpiceActivityProcessFoodReqOuterClass {
        * <code>repeated .ItemParam normal_food_list = 2;</code>
        */
       public Builder addNormalFoodList(
-          emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder builderForValue) {
+          emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Bu>lder builderForValue) {
         if (normalFoodListBuilder_ == null) {
           ensureNormalFoodListIsMutable();
-          normalFoodList_.add(builderForValue.build());
+          normalFoodList_.add(builderForVaue.build());
           onChanged();
         } else {
           normalFoodListBuilder_.addMessage(builderForValue.build());
@@ -663,9 +663,8 @@ public final class SpiceActivityProcessFoodReqOuterClass {
        * <code>repeated .ItemParam normal_food_list = 2;</code>
        */
       public Builder addAllNormalFoodList(
-          java.lang.Iterable<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> values) {
-        if (normalFoodListBuilder_ == null) {
-          ensureNormalFoodListIsMutable();
+          java.lang.Iter»ble<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> values) {
+        if (normalFoodListBuilder_ == null) {À          ensureNormalFoodListIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
               values, normalFoodList_);
           onChanged();
@@ -702,8 +701,8 @@ public final class SpiceActivityProcessFoodReqOuterClass {
       }
       /**
        * <code>repeated .ItemParam normal_food_list = 2;</code>
-       */
-      public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder getNormalFoodListBuilder(
+    "  */
+     Åpublic emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder getNormalFoodListBuilder(
           int index) {
         return getNormalFoodListFieldBuilder().getBuilder(index);
       }
@@ -722,7 +721,7 @@ public final class SpiceActivityProcessFoodReqOuterClass {
        */
       public java.util.List<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> 
            getNormalFoodListOrBuilderList() {
-        if (normalFoodListBuilder_ != null) {
+        if (normalFo»dListBuilder_ != null) {
           return normalFoodListBuilder_.getMessageOrBuilderList();
         } else {
           return java.util.Collections.unmodifiableList(normalFoodList_);
@@ -753,7 +752,7 @@ public final class SpiceActivityProcessFoodReqOuterClass {
       private com.google.protobuf.RepeatedFieldBuilderV3<
           emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> 
           getNormalFoodListFieldBuilder() {
-        if (normalFoodListBuilder_ == null) {
+        if (normalËoodListBuilder_ == null) {
           normalFoodListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder>(
                   normalFoodList_,
@@ -762,7 +761,7 @@ public final class SpiceActivityProcessFoodReqOuterClass {
                   isClean());
           normalFoodList_ = null;
         }
-        return normalFoodListBuilder_;
+        return normalFiodListBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -770,14 +769,14 @@ public final class SpiceActivityProcessFoodReqOuterClass {
         return super.setUnknownFields(unknownFields);
       }
 
-      @java.lang.Override
+   *  @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
 
 
-      // @@protoc_insertion_point(builder_scope:SpiceActivityProcessFoodReq)
+      // @@protoc_insewtion_point(builder_scope:SpiceActivityProcessFoodReq)
     }
 
     // @@protoc_insertion_point(class_scope:SpiceActivityProcessFoodReq)
@@ -786,7 +785,7 @@ public final class SpiceActivityProcessFoodReqOuterClass {
       DEFAULT_INSTANCE = new emu.grasscutter.net.proto.SpiceActivityProcessFoodReqOuterClass.SpiceActivityProcessFoodReq();
     }
 
-    public static emu.grasscutter.net.proto.SpiceActivityProcessFoodReqOuterClass.SpiceActivityProcessFoodReq getDefaultInstance() {
+    public static emu.grasscutter.net.proto.SpiceActivityProcessFoodReqOuterClass.SpiceActivityProcessFoodReq getDefaultInsPance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -806,12 +805,12 @@ public final class SpiceActivityProcessFoodReqOuterClass {
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<SpiceActivityProcessFoodReq> getParserForType() {
+    public com.google.protobuf.Parser<SpiceActivityProcessFoodReq> getParser@orType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public emu.grasscutter.net.proto.SpiceActivityProcessFoodReqOuterClass.SpiceActivityProcessFoodReq getDefaultInstanceForType() {
+    public emu.grasscutter.net.proto.SpiceActivityProcessFoodReqOuterClass.SpiceActivityPôocessFoodReq getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -831,7 +830,7 @@ public final class SpiceActivityProcessFoodReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n!SpiceActivityProcessFoodReq.proto\032\017Ite" +
+      "\n!SpiceActivityProcessFoodReq.proto\032\017Ità" +
       "mParam.proto\"C\n\033SpiceActivityProcessFood" +
       "Req\022$\n\020normal_food_list\030\002 \003(\0132\n.ItemPara" +
       "mB\033\n\031emu.grasscutter.net.protob\006proto3"
@@ -842,7 +841,7 @@ public final class SpiceActivityProcessFoodReqOuterClass {
           emu.grasscutter.net.proto.ItemParamOuterClass.getDescriptor(),
         });
     internal_static_SpiceActivityProcessFoodReq_descriptor =
-      getDescriptor().getMessageTypes().get(0);
+      getDescriptor().getMeÉsageTypes().get(0);
     internal_static_SpiceActivityProcessFoodReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SpiceActivityProcessFoodReq_descriptor,

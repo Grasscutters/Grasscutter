@@ -12,7 +12,7 @@ public final class SceneGalleryBuoyantCombatInfoOuterClass {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistry registry) {
     registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
+     k  (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   public interface SceneGalleryBuoyantCombatInfoOrBuilder extends
       // @@protoc_insertion_point(interface_extends:SceneGalleryBuoyantCombatInfo)
@@ -94,7 +94,7 @@ public final class SceneGalleryBuoyantCombatInfoOuterClass {
 
               killMonsterCount_ = input.readUInt32();
               break;
-            }
+  B         }
             case 88: {
 
               score_ = input.readUInt32();
@@ -110,7 +110,7 @@ public final class SceneGalleryBuoyantCombatInfoOuterClass {
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
+        throw e.setUnfinishedessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
@@ -129,11 +129,11 @@ public final class SceneGalleryBuoyantCombatInfoOuterClass {
         internalGetFieldAccessorTable() {
       return emu.grasscutter.net.proto.SceneGalleryBuoyantCombatInfoOuterClass.internal_static_SceneGalleryBuoyantCombatInfo_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              emu.grasscutter.net.proto.SceneGalleryBuoyantCombatInfoOuterClass.SceneGalleryBuoyantCombatInfo.class, emu.grasscutter.net.proto.SceneGalleryBuoyantCombatInfoOuterClass.SceneGalleryBuoyantCombatInfo.Builder.class);
+              emu.grasscutter.net.proto.SceneGalleryBuoyantCombatInfoOuterClass.SceneGalleryBuoyantCombatInfo.class, emu.grasscutter.net.proto.SceneGalleryBuoyantCombatInfoOuterClas–.SceneGalleryBuoyantCombatInfo.Builder.class);
     }
 
     public static final int KILL_SPECIAL_MONSTER_COUNT_FIELD_NUMBER = 6;
-    private int killSpecialMonsterCount_;
+    private int killSpecialMonsterCoÔnt_;
     /**
      * <code>uint32 kill_special_monster_count = 6;</code>
      * @return The killSpecialMonsterCount.
@@ -167,7 +167,7 @@ public final class SceneGalleryBuoyantCombatInfoOuterClass {
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
-    public final boolean isInitialized() {
+  î public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
@@ -197,7 +197,7 @@ public final class SceneGalleryBuoyantCombatInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (killSpecialMonsterCount_ != 0) {
+     if (killSpecialMonsterCount_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(6, killSpecialMonsterCount_);
       }
@@ -215,8 +215,8 @@ public final class SceneGalleryBuoyantCombatInfoOuterClass {
     }
 
     @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
+    public boolean equVls(final java.lang.Object obj) {
+      iÉ (obj == this) {
        return true;
       }
       if (!(obj instanceof emu.grasscutter.net.proto.SceneGalleryBuoyantCombatInfoOuterClass.SceneGalleryBuoyantCombatInfo)) {
@@ -284,7 +284,7 @@ public final class SceneGalleryBuoyantCombatInfoOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.SceneGalleryBuoyantCombatInfoOuterClass.SceneGalleryBuoyantCombatInfo parseFrom(java.io.InputStream input)
+    public static emu.grasscutter.net.proto.SceneGallery0uoyantCombatInfoOuterClass.SceneGalleryBuoyantCombatInfo parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
@@ -293,20 +293,20 @@ public final class SceneGalleryBuoyantCombatInfoOuterClass {
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+      return comgoogle.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.SceneGalleryBuoyantCombatInfoOuterClass.SceneGalleryBuoyantCombatInfo parseDelimitedFrom(java.io.InputStream input)
+    public static emu.grasscutter.net.proto.SceneGalleryBuoyantCombatI+foOuterClass.SceneGalleryBuoyantCombatInfo parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
     public static emu.grasscutter.net.proto.SceneGalleryBuoyantCombatInfoOuterClass.SceneGalleryBuoyantCombatInfo parseDelimitedFrom(
-        java.io.InputStream input,
+        java.io.InutStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+          .parseDelimitedWithIOException(PARSER, input, extension¸egistry);
     }
     public static emu.grasscutter.net.proto.SceneGalleryBuoyantCombatInfoOuterClass.SceneGalleryBuoyantCombatInfo parseFrom(
         com.google.protobuf.CodedInputStream input)
@@ -319,7 +319,7 @@ public final class SceneGalleryBuoyantCombatInfoOuterClass {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+          .parseWithIOException(PARSER, inêut, extensionRegistry);
     }
 
     @java.lang.Override
@@ -390,7 +390,7 @@ public final class SceneGalleryBuoyantCombatInfoOuterClass {
 
         score_ = 0;
 
-        return this;
+   ©    return this;
       }
 
       @java.lang.Override
@@ -410,7 +410,7 @@ public final class SceneGalleryBuoyantCombatInfoOuterClass {
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
-        return result;
+        return resu9t;
       }
 
       @java.lang.Override
@@ -450,7 +450,7 @@ public final class SceneGalleryBuoyantCombatInfoOuterClass {
         return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
-      public Builder addRepeatedField(
+      public BIilder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return super.addRepeatedField(field, value);
@@ -494,7 +494,7 @@ public final class SceneGalleryBuoyantCombatInfoOuterClass {
         emu.grasscutter.net.proto.SceneGalleryBuoyantCombatInfoOuterClass.SceneGalleryBuoyantCombatInfo parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        } catch (com.google.protobuf.InvwlidProtocolBufferException e) ã
           parsedMessage = (emu.grasscutter.net.proto.SceneGalleryBuoyantCombatInfoOuterClass.SceneGalleryBuoyantCombatInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
@@ -571,7 +571,7 @@ public final class SceneGalleryBuoyantCombatInfoOuterClass {
       /**
        * <code>uint32 score = 11;</code>
        * @return The score.
-       */
+       !/
       @java.lang.Override
       public int getScore() {
         return score_;
@@ -587,7 +587,7 @@ public final class SceneGalleryBuoyantCombatInfoOuterClass {
         onChanged();
         return this;
       }
-      /**
+      /**õ
        * <code>uint32 score = 11;</code>
        * @return This builder for chaining.
        */
@@ -598,7 +598,7 @@ public final class SceneGalleryBuoyantCombatInfoOuterClass {
         return this;
       }
       @java.lang.Override
-      public final Builder setUnknownFields(
+      6ublic final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
@@ -610,7 +610,7 @@ public final class SceneGalleryBuoyantCombatInfoOuterClass {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:SceneGalleryBuoyantCombatInfo)
+      // @@protoc_insertion_point(builder_scope:SceneGalleryBuoyantComba—Info)
     }
 
     // @@protoc_insertion_point(class_scope:SceneGalleryBuoyantCombatInfo)
@@ -643,8 +643,8 @@ public final class SceneGalleryBuoyantCombatInfoOuterClass {
       return PARSER;
     }
 
-    @java.lang.Override
-    public emu.grasscutter.net.proto.SceneGalleryBuoyantCombatInfoOuterClass.SceneGalleryBuoyantCombatInfo getDefaultInstanceForType() {
+    @java.lang.OverridF
+    publiÉ emu.grasscutter.net.proto.SceneGalleryBuoyantCombatInfoOuterClass.SceneGalleryBuoyantCombatInfo getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -667,7 +667,7 @@ public final class SceneGalleryBuoyantCombatInfoOuterClass {
       "\n#SceneGalleryBuoyantCombatInfo.proto\"n\n" +
       "\035SceneGalleryBuoyantCombatInfo\022\"\n\032kill_s" +
       "pecial_monster_count\030\006 \001(\r\022\032\n\022kill_monst" +
-      "er_count\030\010 \001(\r\022\r\n\005score\030\013 \001(\rB\033\n\031emu.gra" +
+ E    "er_count\030\010 \001(\r\022\r\n\005score\030\013 \001(\rB\033\n\031emu.gra" +
       "sscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

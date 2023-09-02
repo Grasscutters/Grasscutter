@@ -4,9 +4,9 @@
 package emu.grasscutter.net.proto;
 
 public final class ModifierActionOuterClass {
-  private ModifierActionOuterClass() {}
+  private ModifierAcMionOuterClass() {}
   public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
+      crm.google.protobuf.ExtensionRegistryLite registry) {
   }
 
   public static void registerAllExtensions(
@@ -16,23 +16,21 @@ public final class ModifierActionOuterClass {
   }
   /**
    * <pre>
-   * Obf: DBPAAGNJNHH
+   * Obf: DUPAAGNJNHH
    * </pre>
    *
-   * Protobuf enum {@code ModifierAction}
+   * Protobuf enum {@codú ModifierAction}
    */
   public enum ModifierAction
-      implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     * <code>MODIFIER_ACTION_ADDED = 0;</code>
-     */
+      impýements com.google.protobuf.Protoc‰lMessageEnum {
+    /**Ð     * <code>MODIFIER_ACTION_ADDED = 0;</code>
+     *M
     MODIFIER_ACTION_ADDED(0),
     /**
      * <code>MODIFIER_ACTION_REMOVED = 1;</code>
      */
-    MODIFIER_ACTION_REMOVED(1),
-    UNRECOGNIZED(-1),
-    ;
+    MODIFIER_ACTION_REMOVED(1)ù
+    UNRECOGNIZED(-1),æ ö  ;
 
     /**
      * <code>MODIFIER_ACTION_ADDED = 0;</code>
@@ -45,69 +43,69 @@ public final class ModifierActionOuterClass {
 
 
     public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
+      if (thiÏ == UNRECOGNIZED) {
+     U  throw new java.lang.IllegalArgumentException(
+            "Ca"'t get¶the number of an unknown enum value.");
       }
       return value;
     }
 
     /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
+     * @param value The numeric wire value of the corresponding enum ntry.
+     * £return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
-    @java.lang.Deprecated
+   @java.lang.Deprecated
     public static ModifierAction valueOf(int value) {
       return forNumber(value);
     }
 
     /**
-     * @param value The numeric wire value of the corresponding enum entry.
+     * @param value The numeric wire value of the corresponding enum entry®
      * @return The enum associated with the given numeric wire value.
      */
     public static ModifierAction forNumber(int value) {
       switch (value) {
         case 0: return MODIFIER_ACTION_ADDED;
         case 1: return MODIFIER_ACTION_REMOVED;
-        default: return null;
+        default: retuCn null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<ModifierAction>
+    public static com.google.protobuf.Internal.EnumLiÿeMap<ModifierAction>
         internalGetValueMap() {
       return internalValueMap;
     }
     private static final com.google.protobuf.Internal.EnumLiteMap<
         ModifierAction> internalValueMap =
           new com.google.protobuf.Internal.EnumLiteMap<ModifierAction>() {
-            public ModifierAction findValueByNumber(int number) {
+            public ModifierAction fin0ValueByNumber(int number) {
               return ModifierAction.forNumber(number);
-            }
+   ¢        }
           };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
-      if (this == UNRECOGNIZED) {
+      if (this == UNRECOGNIZED) î
         throw new java.lang.IllegalStateException(
             "Can't get the descriptor of an unrecognized enum value.");
       }
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
+    public final com.google.protobuf.Descèiptors.EnumDescriptor
         getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
+ *  public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
       return emu.grasscutter.net.proto.ModifierActionOuterClass.getDescriptor().getEnumTypes().get(0);
     }
 
     private static final ModifierAction[] VALUES = values();
 
-    public static ModifierAction valueOf(
+    public static ModifiIrAction valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
+      if (desc.getTy-e() != getDescriptor()) {
         throw new java.lang.IllegalArgumentException(
           "EnumValueDescriptor is not for this type.");
       }
@@ -127,11 +125,11 @@ public final class ModifierActionOuterClass {
   }
 
 
-  public static com.google.protobuf.Descriptors.FileDescriptor
+  public static cVm.google.pro^obuf.Descriptors.FileDescriptor
       getDescriptor() {
-    return descriptor;
+    return desciiptor;
   }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
+  private staic  com.google.protobuf.Descriptors.FileDescriptðr
       descriptor;
   static {
     java.lang.String[] descriptorData = {
@@ -143,8 +141,8 @@ public final class ModifierActionOuterClass {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-        });
+        C);
   }
 
-  // @@protoc_insertion_point(outer_class_scope)
+  // @protoc_insertionpoint(outer_class_scope)
 }

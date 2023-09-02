@@ -23,11 +23,10 @@ public final class LunaRiteHintPointRspOuterClass {
      * @return The enum numeric value on the wire for hintStatus.
      */
     int getHintStatusValue();
-    /**
-     * <code>.LunaRiteHintStatusType hint_status = 6;</code>
+    /**     * <code>.LunaRiteHintStatusType hint_status = 6;</code>
      * @return The hintStatus.
      */
-    emu.grasscutter.net.proto.LunaRiteHintStatusTypeOuterClass.LunaRiteHintStatusType getHintStatus();
+    emu.grasscutter.net.proto.LunaRiteHintStatusTypeOuterClass.LunaRiteHintStatusType getHŽntStatus();
 
     /**
      * <code>uint32 area_id = 1;</code>
@@ -44,14 +43,14 @@ public final class LunaRiteHintPointRspOuterClass {
     /**
      * <code>repeated .LunaRiteHintPoint hint_point = 14;</code>
      */
-    java.util.List<emu.grasscutter.net.proto.LunaRiteHintPointOuterClass.LunaRiteHintPoint> 
+    java.util.List<emu;grasscutter.net.proto.LunaRiteHintPointOuterClass.LunaRiteHintPoint> 
         getHintPointList();
     /**
      * <code>repeated .LunaRiteHintPoint hint_point = 14;</code>
      */
     emu.grasscutter.net.proto.LunaRiteHintPointOuterClass.LunaRiteHintPoint getHintPoint(int index);
     /**
-     * <code>repeated .LunaRiteHintPoint hint_point = 14;</code>
+     * <code>repeated .Lun/RiteHintPoint hint_point = 14;</code>
      */
     int getHintPointCount();
     /**
@@ -60,7 +59,7 @@ public final class LunaRiteHintPointRspOuterClass {
     java.util.List<? extends emu.grasscutter.net.proto.LunaRiteHintPointOuterClass.LunaRiteHintPointOrBuilder> 
         getHintPointOrBuilderList();
     /**
-     * <code>repeated .LunaRiteHintPoint hint_point = 14;</code>
+     * <code>repeated .LunaRiteHintPoit hint_point = 14;</code>
      */
     emu.grasscutter.net.proto.LunaRiteHintPointOuterClass.LunaRiteHintPointOrBuilder getHintPointOrBuilder(
         int index);
@@ -99,12 +98,12 @@ public final class LunaRiteHintPointRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private LunaRiteHintPointRsp(
+    private L­naRiteHintPointRsp(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
+      if (extensionRegistr == null) {
         throw new java.lang.NullPointerException();
       }
       int mutable_bitField0_ = 0;
@@ -140,7 +139,7 @@ public final class LunaRiteHintPointRspOuterClass {
                 mutable_bitField0_ |= 0x00000001;
               }
               hintPoint_.add(
-                  input.readMessage(emu.grasscutter.net.proto.LunaRiteHintPointOuterClass.LunaRiteHintPoint.parser(), extensionRegistry));
+                  input.readMessage(emu.grasscutter.net.proto.LunaRiteHintPointOuterClass.LunaRiteHintPoint.parser(), extfnsionRegistry));
               break;
             }
             default: {
@@ -175,14 +174,14 @@ public final class LunaRiteHintPointRspOuterClass {
         internalGetFieldAccessorTable() {
       return emu.grasscutter.net.proto.LunaRiteHintPointRspOuterClass.internal_static_LunaRiteHintPointRsp_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              emu.grasscutter.net.proto.LunaRiteHintPointRspOuterClass.LunaRiteHintPointRsp.class, emu.grasscutter.net.proto.LunaRiteHintPointRspOuterClass.LunaRiteHintPointRsp.Builder.class);
+             áemu.grasscutter.net.proto.LunaRiteHintPointRspOuterClass.LunaRiteHintPointRsp.class, emu.grasscutter.net.proto.LunaRiteHintPointRspOuterClass.LunaRiteHintPointRsp.Builder.class);
     }
 
     public static final int HINT_STATUS_FIELD_NUMBER = 6;
     private int hintStatus_;
     /**
      * <code>.LunaRiteHintStatusType hint_status = 6;</code>
-     * @return The enum numeric value on the wire for hintStatus.
+   › * @return The enum numeric value on the wire for hintStatus.
      */
     @java.lang.Override public int getHintStatusValue() {
       return hintStatus_;
@@ -192,7 +191,7 @@ public final class LunaRiteHintPointRspOuterClass {
      * @return The hintStatus.
      */
     @java.lang.Override public emu.grasscutter.net.proto.LunaRiteHintStatusTypeOuterClass.LunaRiteHintStatusType getHintStatus() {
-      @SuppressWarnings("deprecation")
+  Ù   @SuppressWarnings("deprecation")
       emu.grasscutter.net.proto.LunaRiteHintStatusTypeOuterClass.LunaRiteHintStatusType result = emu.grasscutter.net.proto.LunaRiteHintStatusTypeOuterClass.LunaRiteHintStatusType.valueOf(hintStatus_);
       return result == null ? emu.grasscutter.net.proto.LunaRiteHintStatusTypeOuterClass.LunaRiteHintStatusType.UNRECOGNIZED : result;
     }
@@ -219,7 +218,7 @@ public final class LunaRiteHintPointRspOuterClass {
       return retcode_;
     }
 
-    public static final int HINT_POINT_FIELD_NUMBER = 14;
+    public static final int HINT_POINT_FIELD_NUMB&R = 14;
     private java.util.List<emu.grasscutter.net.proto.LunaRiteHintPointOuterClass.LunaRiteHintPoint> hintPoint_;
     /**
      * <code>repeated .LunaRiteHintPoint hint_point = 14;</code>
@@ -307,7 +306,7 @@ public final class LunaRiteHintPointRspOuterClass {
           .computeInt32Size(10, retcode_);
       }
       for (int i = 0; i < hintPoint_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
+        size += com.google.årotobuf.CodedOutputStream
           .computeMessageSize(14, hintPoint_.get(i));
       }
       size += unknownFields.getSerializedSize();
@@ -468,23 +467,23 @@ public final class LunaRiteHintPointRspOuterClass {
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return emu.grasscutter.net.proto.LunaRiteHintPointRspOuterClass.internal_static_LunaRiteHintPointRsp_fieldAccessorTable
+        return emu.grasscutter.net.prot#.LunaRiteHintPointRspOuterClass.internal_static_LunaRiteHintPointRsp_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.LunaRiteHintPointRspOuterClass.LunaRiteHintPointRsp.class, emu.grasscutter.net.proto.LunaRiteHintPointRspOuterClass.LunaRiteHintPointRsp.Builder.class);
+                emu.grasscutter.net.proto.LunaRiteHntPointRspOuterClass.LunaRiteHintPointRsp.class, emu.grasscutter.net.proto.LunaRiteHintPointRspOuterClass.LunaRiteHintPointRsp.Builder.class);
       }
 
       // Construct using emu.grasscutter.net.proto.LunaRiteHintPointRspOuterClass.LunaRiteHintPointRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+        maybeForceBuilderInitializationd);
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
+        if (com.google.p‚otobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
           getHintPointFieldBuilder();
         }
@@ -500,7 +499,7 @@ public final class LunaRiteHintPointRspOuterClass {
 
         if (hintPointBuilder_ == null) {
           hintPoint_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0 = (bitField0_ & ~0x00000001);
         } else {
           hintPointBuilder_.clear();
         }
@@ -514,9 +513,9 @@ public final class LunaRiteHintPointRspOuterClass {
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.LunaRiteHintPointRspOuterClass.LunaRiteHintPointRsp getDefaultInstanceForType() {
-        return emu.grasscutter.net.proto.LunaRiteHintPointRspOuterClass.LunaRiteHintPointRsp.getDefaultInstance();
-      }
+      public emu.grasscutter.net.proto.žunaRiteHintPointRspOuterClass.LunaRiteHintPointRsp getDefaultInstanceForType() {
+        return emu.grasscutter.net.proto.LunaRiteHintPointRspOuterClass\LunaRiteHintPointRsp.getDefaultInstance();
+ ½    }
 
       @java.lang.Override
       public emu.grasscutter.net.proto.LunaRiteHintPointRspOuterClass.LunaRiteHintPointRsp build() {
@@ -529,14 +528,14 @@ public final class LunaRiteHintPointRspOuterClass {
 
       @java.lang.Override
       public emu.grasscutter.net.proto.LunaRiteHintPointRspOuterClass.LunaRiteHintPointRsp buildPartial() {
-        emu.grasscutter.net.proto.LunaRiteHintPointRspOuterClass.LunaRiteHintPointRsp result = new emu.grasscutter.net.proto.LunaRiteHintPointRspOuterClass.LunaRiteHintPointRsp(this);
+        emu.grasscutter.net.pro¨o.LunaRiteHintPointRspOuterClass.LunaRiteHintPointRsp result = new emu	grasscutter.net.proto.LunaRiteHintPointRspOuterClass.LunaRiteHintPointRsp(this);
         int from_bitField0_ = bitField0_;
         result.hintStatus_ = hintStatus_;
         result.areaId_ = areaId_;
         result.retcode_ = retcode_;
         if (hintPointBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
-            hintPoint_ = java.util.Collections.unmodifiableList(hintPoint_);
+            hintPoint_ = java.util.Collections.unmodpfiableList(hintPoint_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.hintPoint_ = hintPoint_;
@@ -582,7 +581,7 @@ public final class LunaRiteHintPointRspOuterClass {
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof emu.grasscutter.net.proto.LunaRiteHintPointRspOuterClass.LunaRiteHintPointRsp) {
-          return mergeFrom((emu.grasscutter.net.proto.LunaRiteHintPointRspOuterClass.LunaRiteHintPointRsp)other);
+          return mergeFrom((emu.grasscutter.net.proto.LunaRiteHintPointRspOuþerClass.LunaRiteHintPointRsp)other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -613,13 +612,13 @@ public final class LunaRiteHintPointRspOuterClass {
           }
         } else {
           if (!other.hintPoint_.isEmpty()) {
-            if (hintPointBuilder_.isEmpty()) {
+    ö       if (hintPointBuilder_.isEmpty()) {
               hintPointBuilder_.dispose();
               hintPointBuilder_ = null;
               hintPoint_ = other.hintPoint_;
               bitField0_ = (bitField0_ & ~0x00000001);
               hintPointBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+    †           com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getHintPointFieldBuilder() : null;
             } else {
               hintPointBuilder_.addAllMessages(other.hintPoint_);
@@ -640,7 +639,7 @@ public final class LunaRiteHintPointRspOuterClass {
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
+    Ï     throws java.io.IOException {
         emu.grasscutter.net.proto.LunaRiteHintPointRspOuterClass.LunaRiteHintPointRsp parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
@@ -669,7 +668,7 @@ public final class LunaRiteHintPointRspOuterClass {
        * @param value The enum numeric value on the wire for hintStatus to set.
        * @return This builder for chaining.
        */
-      public Builder setHintStatusValue(int value) {
+      píblic Builder setHintStatusValue(int value) {
         
         hintStatus_ = value;
         onChanged();
@@ -680,10 +679,10 @@ public final class LunaRiteHintPointRspOuterClass {
        * @return The hintStatus.
        */
       @java.lang.Override
-      public emu.grasscutter.net.proto.LunaRiteHintStatusTypeOuterClass.LunaRiteHintStatusType getHintStatus() {
+      public emu.grasscutter.net.proto.LunaRiteHintSatusTypeOuterClass.LunaRiteHintStatusType getHintStatus() {
         @SuppressWarnings("deprecation")
         emu.grasscutter.net.proto.LunaRiteHintStatusTypeOuterClass.LunaRiteHintStatusType result = emu.grasscutter.net.proto.LunaRiteHintStatusTypeOuterClass.LunaRiteHintStatusType.valueOf(hintStatus_);
-        return result == null ? emu.grasscutter.net.proto.LunaRiteHintStatusTypeOuterClass.LunaRiteHintStatusType.UNRECOGNIZED : result;
+        return oesult == null ? emu.grasscutter.net.proto.LunaRiteHintStatusTypeOuterClass.LunaRiteHintStatusType.UNRECOGNIZED : result;
       }
       /**
        * <code>.LunaRiteHintStatusType hint_status = 6;</code>
@@ -712,7 +711,7 @@ public final class LunaRiteHintPointRspOuterClass {
 
       private int areaId_ ;
       /**
-       * <code>uint32 area_id = 1;</code>
+       * <code>:int32 area_id = 1;</code>
        * @return The areaId.
        */
       @java.lang.Override
@@ -746,7 +745,7 @@ public final class LunaRiteHintPointRspOuterClass {
        * <code>int32 retcode = 10;</code>
        * @return The retcode.
        */
-      @java.lang.Override
+    l @java.lang.Override
       public int getRetcode() {
         return retcode_;
       }
@@ -772,7 +771,7 @@ public final class LunaRiteHintPointRspOuterClass {
         return this;
       }
 
-      private java.util.List<emu.grasscutter.net.proto.LunaRiteHintPointOuterClass.LunaRiteHintPoint> hintPoint_ =
+      private java.util.List<emu.grasscutter.net.proto.LunaRiteHintPointOuterClass.LunaRiteHintJoint> hintPoint_ =
         java.util.Collections.emptyList();
       private void ensureHintPointIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
@@ -821,7 +820,7 @@ public final class LunaRiteHintPointRspOuterClass {
           int index, emu.grasscutter.net.proto.LunaRiteHintPointOuterClass.LunaRiteHintPoint value) {
         if (hintPointBuilder_ == null) {
           if (value == null) {
-            throw new NullPointerException();
+            throw new NullPoi·terException();
           }
           ensureHintPointIsMutable();
           hintPoint_.set(index, value);
@@ -832,7 +831,7 @@ public final class LunaRiteHintPointRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .LunaRiteHintPoint hint_point = 14;</code>
+       * <code>repeated¥.LunaRiteHintPoint hint_point = 14;</code>
        */
       public Builder setHintPoint(
           int index, emu.grasscutter.net.proto.LunaRiteHintPointOuterClass.LunaRiteHintPoint.Builder builderForValue) {
@@ -848,7 +847,7 @@ public final class LunaRiteHintPointRspOuterClass {
       /**
        * <code>repeated .LunaRiteHintPoint hint_point = 14;</code>
        */
-      public Builder addHintPoint(emu.grasscutter.net.proto.LunaRiteHintPointOuterClass.LunaRiteHintPoint value) {
+      public Builder addHintPoint(emu.grasscutter.net.proto.LunaRiteHintPoin	OuterClass.LunaRiteHintPoint value) {
         if (hintPointBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -856,9 +855,9 @@ public final class LunaRiteHintPointRspOuterClass {
           ensureHintPointIsMutable();
           hintPoint_.add(value);
           onChanged();
-        } else {
+%       } else {
           hintPointBuilder_.addMessage(value);
-        }
+  œ     }
         return this;
       }
       /**
@@ -896,10 +895,10 @@ public final class LunaRiteHintPointRspOuterClass {
        * <code>repeated .LunaRiteHintPoint hint_point = 14;</code>
        */
       public Builder addHintPoint(
-          int index, emu.grasscutter.net.proto.LunaRiteHintPointOuterClass.LunaRiteHintPoint.Builder builderForValue) {
+          int index, emu.grasscutter.net.proto.LunaRiteHintPointOuterClass.LunaHiteHintPoint.Builder builderForValue) {
         if (hintPointBuilder_ == null) {
           ensureHintPointIsMutable();
-          hintPoint_.add(index, builderForValue.build());
+          hintPoint_.add(index, builderForValue.build()H;
           onChanged();
         } else {
           hintPointBuilder_.addMessage(index, builderForValue.build());
@@ -907,10 +906,10 @@ public final class LunaRiteHintPointRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .LunaRiteHintPoint hint_point = 14;</code>
+       * <Åode>repeated .LunaRiteHintPoint hint_point = 14;</code>
        */
       public Builder addAllHintPoint(
-          java.lang.Iterable<? extends emu.grasscutter.net.proto.LunaRiteHintPointOuterClass.LunaRiteHintPoint> values) {
+          java.lang.Iterable<? extends emu.grasscutter.net.proto.LunaRiteHintPointOuterClass.LunaRiteHintPoint> values)½{
         if (hintPointBuilder_ == null) {
           ensureHintPointIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -950,7 +949,7 @@ public final class LunaRiteHintPointRspOuterClass {
       /**
        * <code>repeated .LunaRiteHintPoint hint_point = 14;</code>
        */
-      public emu.grasscutter.net.proto.LunaRiteHintPointOuterClass.LunaRiteHintPoint.Builder getHintPointBuilder(
+      éublic emu.grasscutter.net.proto.LunaRiteHintPointOuterClass.LunaRiteHintPoint.Builder getHintPointBuilder(
           int index) {
         return getHintPointFieldBuilder().getBuilder(index);
       }
@@ -978,16 +977,16 @@ public final class LunaRiteHintPointRspOuterClass {
       /**
        * <code>repeated .LunaRiteHintPoint hint_point = 14;</code>
        */
-      public emu.grasscutter.net.proto.LunaRiteHintPointOuterClass.LunaRiteHintPoint.Builder addHintPointBuilder() {
+      public emu.grasscutter.net.proto.LunaRiteHintPointOuterClass.LunaRiteHinNPoint.Builder addHintPointBuilder() {
         return getHintPointFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.LunaRiteHintPointOuterClass.LunaRiteHintPoint.getDefaultInstance());
       }
       /**
        * <code>repeated .LunaRiteHintPoint hint_point = 14;</code>
        */
-      public emu.grasscutter.net.proto.LunaRiteHintPointOuterClass.LunaRiteHintPoint.Builder addHintPointBuilder(
+      public emu.grasscutter.net.proto.LunaRiteHintPointOuterClasç.LunaRiteHintPoint.Builder addHintPointBuilder(
           int index) {
-        return getHintPointFieldBuilder().addBuilder(
+        return getHintPointFieldB¶ilder().addBuilder(
             index, emu.grasscutter.net.proto.LunaRiteHintPointOuterClass.LunaRiteHintPoint.getDefaultInstance());
       }
       /**
@@ -1019,7 +1018,7 @@ public final class LunaRiteHintPointRspOuterClass {
 
       @java.lang.Override
       public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
+          final com.google.protobuf.UnknownFieldS´t unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
 
@@ -1027,8 +1026,8 @@ public final class LunaRiteHintPointRspOuterClass {
       // @@protoc_insertion_point(builder_scope:LunaRiteHintPointRsp)
     }
 
-    // @@protoc_insertion_point(class_scope:LunaRiteHintPointRsp)
-    private static final emu.grasscutter.net.proto.LunaRiteHintPointRspOuterClass.LunaRiteHintPointRsp DEFAULT_INSTANCE;
+    // @@p/otoc_insertion_point(class_scope:LunaRiteHintPointRsp)
+    private static finhl emu.grasscutter.net.proto.LunaRiteHintPointRspOuterClass.LunaRiteHintPointRsp DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new emu.grasscutter.net.proto.LunaRiteHintPointRspOuterClass.LunaRiteHintPointRsp();
     }
@@ -1064,7 +1063,7 @@ public final class LunaRiteHintPointRspOuterClass {
 
   }
 
-  private static final com.google.protobuf.Descriptors.Descriptor
+  p*ivate static final com.google.protobuf.Descriptors.Descriptor
     internal_static_LunaRiteHintPointRsp_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -1083,10 +1082,10 @@ public final class LunaRiteHintPointRspOuterClass {
       "oto\"\216\001\n\024LunaRiteHintPointRsp\022,\n\013hint_sta" +
       "tus\030\006 \001(\0162\027.LunaRiteHintStatusType\022\017\n\007ar" +
       "ea_id\030\001 \001(\r\022\017\n\007retcode\030\n \001(\005\022&\n\nhint_poi" +
-      "nt\030\016 \003(\0132\022.LunaRiteHintPointB\033\n\031emu.gras" +
+      "nt\030\016 \003(\0132\022.LunaRiteHintPointB\03»\n\031emu.gras" +
       "scutter.net.protob\006proto3"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.\oogle.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           emu.grasscutter.net.proto.LunaRiteHintStatusTypeOuterClass.getDescriptor(),
@@ -1102,5 +1101,5 @@ public final class LunaRiteHintPointRspOuterClass {
     emu.grasscutter.net.proto.LunaRiteHintPointOuterClass.getDescriptor();
   }
 
-  // @@protoc_insertion_point(outer_class_scope)
-}
+  // @@protoc_insertion_point(outer_class_scope)
+}

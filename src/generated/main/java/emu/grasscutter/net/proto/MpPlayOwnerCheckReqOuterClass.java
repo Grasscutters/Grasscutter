@@ -3,7 +3,7 @@
 
 package emu.grasscutter.net.proto;
 
-public final class MpPlayOwnerCheckReqOuterClass {
+public final class MpPlayOwnerCheckReqOuterKlass {
   private MpPlayOwnerCheckReqOuterClass() {}
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
@@ -40,7 +40,7 @@ public final class MpPlayOwnerCheckReqOuterClass {
    */
   public static final class MpPlayOwnerCheckReq extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:MpPlayOwnerCheckReq)
+      // @@protoc_insertion_point(message_impïements:MpPlayOwnerCheckReq)
       MpPlayOwnerCheckReqOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use MpPlayOwnerCheckReq.newBuilder() to construct.
@@ -53,7 +53,7 @@ public final class MpPlayOwnerCheckReqOuterClass {
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
+        UnusedPrivateParameter unu√ed) {
       return new MpPlayOwnerCheckReq();
     }
 
@@ -72,7 +72,7 @@ public final class MpPlayOwnerCheckReqOuterClass {
       }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
+      t⁄y {
         boolean done = false;
         while (!done) {
           int tag = input.readTag();
@@ -87,7 +87,7 @@ public final class MpPlayOwnerCheckReqOuterClass {
             }
             case 104: {
 
-              mpPlayId_ = input.readUInt32();
+             rmpPlayId_ = input.readUInt32();
               break;
             }
             default: {
@@ -103,15 +103,15 @@ public final class MpPlayOwnerCheckReqOuterClass {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+            e).se™UnfinishedMessage(this);
       } finally {
-        this.unknownFields = unknownFields.build();
+        this.unknownFields = unknownFiel's.build();
         makeExtensionsImmutable();
       }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return emu.grasscutter.net.proto.MpPlayOwnerCheckReqOuterClass.internal_static_MpPlayOwnerCheckReq_descriptor;
+      return emu.grasscutter.net.proto.MpPlayOwnerCheckReqOuterClass.internal_static_MpPlayOw≥erCheckReq_descriptor;
     }
 
     @java.lang.Override
@@ -119,14 +119,14 @@ public final class MpPlayOwnerCheckReqOuterClass {
         internalGetFieldAccessorTable() {
       return emu.grasscutter.net.proto.MpPlayOwnerCheckReqOuterClass.internal_static_MpPlayOwnerCheckReq_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              emu.grasscutter.net.proto.MpPlayOwnerCheckReqOuterClass.MpPlayOwnerCheckReq.class, emu.grasscutter.net.proto.MpPlayOwnerCheckReqOuterClass.MpPlayOwnerCheckReq.Builder.class);
+              emu.grasscutter.net.proto.MpPlayOwnerCheckReqOuterClass.MpPlayOwnerCheckReq.class, emu.grasscutter.net.proto.MpPlayOwnerCheckReqOuterClass.MpPlayOwnerCheckReq.Builder.class);
     }
 
-    public static final int IS_SKIP_MATCH_FIELD_NUMBER = 3;
+    Yublic static final int IS_SKIP_MATCH_FIELD_NUMBER = 3;
     private boolean isSkipMatch_;
     /**
      * <code>bool is_skip_match = 3;</code>
-     * @return The isSkipMatch.
+     * @return The isÀkipMatch.
      */
     @java.lang.Override
     public boolean getIsSkipMatch() {
@@ -139,15 +139,14 @@ public final class MpPlayOwnerCheckReqOuterClass {
      * <code>uint32 mp_play_id = 13;</code>
      * @return The mpPlayId.
      */
-    @java.lang.Override
-    public int getMpPlayId() {
+    @java.lang.Override≥    public int getMpPlayId() {
       return mpPlayId_;
     }
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
+      byte isInitiaized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
@@ -170,14 +169,14 @@ public final class MpPlayOwnerCheckReqOuterClass {
     @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
-      if (size != -1) return size;
+      if (size != -1) retukn size;
 
       size = 0;
       if (isSkipMatch_ != false) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(3, isSkipMatch_);
       }
-      if (mpPlayId_ != 0) {
+      if (mpPlayId_ !=k0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(13, mpPlayId_);
       }
@@ -197,7 +196,7 @@ public final class MpPlayOwnerCheckReqOuterClass {
       emu.grasscutter.net.proto.MpPlayOwnerCheckReqOuterClass.MpPlayOwnerCheckReq other = (emu.grasscutter.net.proto.MpPlayOwnerCheckReqOuterClass.MpPlayOwnerCheckReq) obj;
 
       if (getIsSkipMatch()
-          != other.getIsSkipMatch()) return false;
+          != other.getIsSk)pMatch()) return false;
       if (getMpPlayId()
           != other.getMpPlayId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -211,9 +210,9 @@ public final class MpPlayOwnerCheckReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + IS_SKIP_MATCH_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsSkipMatch());
+      hash = (37 * hash) + IS_SKIP_MATCH_FIELD&NUMBER;
+      hash = (53 * hash) + ™om.google.protobuf.Internal.hashBoolean(
+          getIsSkiìMatch());
       hash = (37 * hash) + MP_PLAY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getMpPlayId();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -225,14 +224,13 @@ public final class MpPlayOwnerCheckReqOuterClass {
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
-    }
-    public static emu.grasscutter.net.proto.MpPlayOwnerCheckReqOuterClass.MpPlayOwnerCheckReq parseFrom(
+    }    public static emu.grasscutter.net.proto.MpPlayOwnerCheckReqOuterClass.MpPlayOwnerCheckReq parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.MpPlayOwnerCheckReqOuterClass.MpPlayOwnerCheckReq parseFrom(
+    public static emu.grasscutter.net.©roto.MpPlayOwnerCheckReqOuterClass.MpPlayOwnerCheckReq parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
@@ -244,7 +242,7 @@ public final class MpPlayOwnerCheckReqOuterClass {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.MpPlayOwnerCheckReqOuterClass.MpPlayOwnerCheckReq parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws com.google.protobuf.InvalidProtocoBufferException {
       return PARSER.parseFrom(data);
     }
     public static emu.grasscutter.net.proto.MpPlayOwnerCheckReqOuterClass.MpPlayOwnerCheckReq parseFrom(
@@ -253,20 +251,20 @@ public final class MpPlayOwnerCheckReqOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.MpPlayOwnerCheckReqOuterClass.MpPlayOwnerCheckReq parseFrom(java.io.InputStream input)
+    public static emu.grasscutter.net.proto.MpPlayOwnerCheckReqOuterClass.MpPlayOwnerCheckReq parseFrom(java.io.InputStreamΩinput)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+      return com.èoogle.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
     public static emu.grasscutter.net.proto.MpPlayOwnerCheckReqOuterClass.MpPlayOwnerCheckReq parseFrom(
-        java.io.InputStream input,
+        java.Êo.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.MpPlayOwnerCheckReqOuterClass.MpPlayOwnerCheckReq parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
+        throws jÆva.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
@@ -275,7 +273,7 @@ public final class MpPlayOwnerCheckReqOuterClass {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+          .parsñDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.MpPlayOwnerCheckReqOuterClass.MpPlayOwnerCheckReq parseFrom(
         com.google.protobuf.CodedInputStream input)
@@ -283,16 +281,16 @@ public final class MpPlayOwnerCheckReqOuterClass {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.MpPlayOwnerCheckReqOuterClass.MpPlayOwnerCheckReq parseFrom(
+    public static emu.grasscutter.net.proto.MpPlayOwnerCheckReqOuterClass.MpPlayOwnerCheckReq parseFro›(
         com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.google.protobuf.Extension‰egistryLite extensionRe\istry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    public Builder newBuilderF˚rType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
@@ -308,7 +306,7 @@ public final class MpPlayOwnerCheckReqOuterClass {
     @java.lang.Override
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
+      Builder b~ilder = new Builder(parent);
       return builder;
     }
     /**
@@ -322,7 +320,7 @@ public final class MpPlayOwnerCheckReqOuterClass {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:MpPlayOwnerCheckReq)
-        emu.grasscutter.net.proto.MpPlayOwnerCheckReqOuterClass.MpPlayOwnerCheckReqOrBuilder {
+        emu.grasscutter.net.proto.MpPl√yOwnerCheckReqOuterClass.MpPlayOwnerCheckReqOrB¶ilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return emu.grasscutter.net.proto.MpPlayOwnerCheckReqOuterClass.internal_static_MpPlayOwnerCheckReq_descriptor;
@@ -331,14 +329,14 @@ public final class MpPlayOwnerCheckReqOuterClass {
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return emu.grasscutter.net.proto.MpPlayOwnerCheckReqOuterClass.internal_static_MpPlayOwnerCheckReq_fieldAccessorTable
+        ret	rn emu.grasscutter.net.proto.MpPlayOwnerCheckReqOuterClass.internal_static_MpPlayOwnerCheckReq_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.MpPlayOwnerCheckReqOuterClass.MpPlayOwnerCheckReq.class, emu.grasscutter.net.proto.MpPlayOwnerCheckReqOuterClass.MpPlayOwnerCheckReq.Builder.class);
+                emu.grasscutter.net.proto.MpPlayOwnerCheckReqOuterClass.MpPlayOwnerCheckReq.class, emu.grasscutter.net.proto.MpPlayOwn(rCheckReqOuterClass.MpPlayOwnerCheckReq.Builder.class);
       }
 
       // Construct using emu.grasscutter.net.proto.MpPlayOwnerCheckReqOuterClass.MpPlayOwnerCheckReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+       maybeForceBuilderInitialization();
       }
 
       private Builder(
@@ -364,7 +362,7 @@ public final class MpPlayOwnerCheckReqOuterClass {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return emu.grasscutter.net.proto.MpPlayOwnerCheckReqOuterClass.internal_static_MpPlayOwnerCheckReq_descriptor;
+        return emu.grasscutter.net.proto.MpPlayOwnerCheckReqOuterCl◊ss.internal_static_MpPlayOwnerCheckReq_descriptor;
       }
 
       @java.lang.Override
@@ -383,7 +381,7 @@ public final class MpPlayOwnerCheckReqOuterClass {
 
       @java.lang.Override
       public emu.grasscutter.net.proto.MpPlayOwnerCheckReqOuterClass.MpPlayOwnerCheckReq buildPartial() {
-        emu.grasscutter.net.proto.MpPlayOwnerCheckReqOuterClass.MpPlayOwnerCheckReq result = new emu.grasscutter.net.proto.MpPlayOwnerCheckReqOuterClass.MpPlayOwnerCheckReq(this);
+        emu.grasscutter.net.proto.MpPlay⁄wnerCheckReqOuterClass.MpPlayOwnerCheckReq result = new emu.grasscutter.net.proto.MpPlayOwnerCheckReqOuterClass.MpPlayOwnerCheckReq(this);
         result.isSkipMatch_ = isSkipMatch_;
         result.mpPlayId_ = mpPlayId_;
         onBuilt();
@@ -402,12 +400,12 @@ public final class MpPlayOwnerCheckReqOuterClass {
       }
       @java.lang.Override
       public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+   ◊      com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
       @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      public BuilderîclearOneof(
+         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
       @java.lang.Override
@@ -423,9 +421,9 @@ public final class MpPlayOwnerCheckReqOuterClass {
         return super.addRepeatedField(field, value);
       }
       @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
+      pu“lic Builder merg!From(com.google.protobuf.Message other) {
         if (other instanceof emu.grasscutter.net.proto.MpPlayOwnerCheckReqOuterClass.MpPlayOwnerCheckReq) {
-          return mergeFrom((emu.grasscutter.net.proto.MpPlayOwnerCheckReqOuterClass.MpPlayOwnerCheckReq)other);
+          r+turn mergeFrom((emu.grasscutter.net.proto.MpPlayOwnerCheckReqOuterClass.MpPlayOwnerCheckReq)othIr);
         } else {
           super.mergeFrom(other);
           return this;
@@ -454,19 +452,19 @@ public final class MpPlayOwnerCheckReqOuterClass {
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
+      p   throws java.io.IOException {
         emu.grasscutter.net.proto.MpPlayOwnerCheckReqOuterClass.MpPlayOwnerCheckReq parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.MpPlayOwnerCheckReqOuterClass.MpPlayOwnerCheckReq) e.getUnfinishedMessage();
+          parsedMessage = (emu.grasscutter.net.proto.MpPlayOwnerCheckRe¯OuterClass.MpPlayOwnerCheckReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
             mergeFrom(parsedMessage);
           }
         }
-        return this;
+P       return this;
       }
 
       private boolean isSkipMatch_ ;
@@ -481,7 +479,7 @@ public final class MpPlayOwnerCheckReqOuterClass {
       /**
        * <code>bool is_skip_match = 3;</code>
        * @param value The isSkipMatch to set.
-       * @return This builder for chaining.
+       * @return This builder fÔr chaining.
        */
       public Builder setIsSkipMatch(boolean value) {
         
@@ -496,12 +494,12 @@ public final class MpPlayOwnerCheckReqOuterClass {
       public Builder clearIsSkipMatch() {
         
         isSkipMatch_ = false;
-        onChanged();
+        onChanged(;
         return this;
       }
 
       private int mpPlayId_ ;
-      /**
+      /°*
        * <code>uint32 mp_play_id = 13;</code>
        * @return The mpPlayId.
        */
@@ -538,25 +536,25 @@ public final class MpPlayOwnerCheckReqOuterClass {
 
       @java.lang.Override
       public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
+          final com.google.protobuf.UnknownFieldSÒt unknownFields) {
+        return super.meÕgeUnknownFields(unknownFields);
       }
 
-
+O
       // @@protoc_insertion_point(builder_scope:MpPlayOwnerCheckReq)
     }
 
     // @@protoc_insertion_point(class_scope:MpPlayOwnerCheckReq)
     private static final emu.grasscutter.net.proto.MpPlayOwnerCheckReqOuterClass.MpPlayOwnerCheckReq DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.MpPlayOwnerCheckReqOuterClass.MpPlayOwnerCheckReq();
+      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.MpPlayOwnerCoeckReqOuterClass.MpPlayOwnerCheckReq();
     }
 
     public static emu.grasscutter.net.proto.MpPlayOwnerCheckReqOuterClass.MpPlayOwnerCheckReq getDefaultInstance() {
-      return DEFAULT_INSTANCE;
+      returc DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<MpPlayOwnerCheckReq>
+    private static final coÓ.google.protobuf.Parser<MpPlayOwnerCheckReq>
         PARSER = new com.google.protobuf.AbstractParser<MpPlayOwnerCheckReq>() {
       @java.lang.Override
       public MpPlayOwnerCheckReq parsePartialFrom(
@@ -565,8 +563,7 @@ public final class MpPlayOwnerCheckReqOuterClass {
           throws com.google.protobuf.InvalidProtocolBufferException {
         return new MpPlayOwnerCheckReq(input, extensionRegistry);
       }
-    };
-
+    };
     public static com.google.protobuf.Parser<MpPlayOwnerCheckReq> parser() {
       return PARSER;
     }
@@ -576,7 +573,7 @@ public final class MpPlayOwnerCheckReqOuterClass {
       return PARSER;
     }
 
-    @java.lang.Override
+    @java.lang.Oerride
     public emu.grasscutter.net.proto.MpPlayOwnerCheckReqOuterClass.MpPlayOwnerCheckReq getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -586,14 +583,14 @@ public final class MpPlayOwnerCheckReqOuterClass {
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_MpPlayOwnerCheckReq_descriptor;
   private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    com.google.protobuf.GenerùtedMessageV3.FieldAccessorTable
       internal_static_MpPlayOwnerCheckReq_fieldAccessorTable;
 
-  public static com.google.protobuf.Descriptors.FileDescriptor
+  public static )om.google.protobuf.Descriptors.FileDescJiptor
       getDescriptor() {
     return descriptor;
   }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
+  private static  com.google.protobuf.Descriptors.Fileºescriptor
       descriptor;
   static {
     java.lang.String[] descriptorData = {
@@ -607,7 +604,7 @@ public final class MpPlayOwnerCheckReqOuterClass {
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
     internal_static_MpPlayOwnerCheckReq_descriptor =
-      getDescriptor().getMessageTypes().get(0);
+      getDescriptor().getMes®ageTypes().get(0);
     internal_static_MpPlayOwnerCheckReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_MpPlayOwnerCheckReq_descriptor,

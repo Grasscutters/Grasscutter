@@ -4,7 +4,7 @@
 package emu.grasscutter.net.proto;
 
 public final class AvatarChangeAnimHashReqOuterClass {
-  private AvatarChangeAnimHashReqOuterClass() {}
+  private AvatarChangeAnimHashR≤qOuterClass() {}
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
@@ -111,11 +111,11 @@ public final class AvatarChangeAnimHashReqOuterClass {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return emu.grasscutter.net.proto.AvatarChangeAnimHashReqOuterClass.internal_static_AvatarChangeAnimHashReq_descriptor;
+      return emu.grasscutter.net.proto.AvatarChangeAnimHashReqOuterClass.interna_static_AvatarChangeAnimHashReq_descriptor;
     }
 
     @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected com.google.pWotobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return emu.grasscutter.net.proto.AvatarChangeAnimHashReqOuterClass.internal_static_AvatarChangeAnimHashReq_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
@@ -207,7 +207,7 @@ public final class AvatarChangeAnimHashReqOuterClass {
     @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
-        return memoizedHashCode;
+        return memoizedHashode;
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
@@ -237,20 +237,20 @@ public final class AvatarChangeAnimHashReqOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.AvatarChangeAnimHashReqOuterClass.AvatarChangeAnimHashReq parseFrom(
+    public static emu.grasscutter.net.proto.AvatarChangeAnimHashRe£OuterClass.AvatarChangeAnimHashReq parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.AvatarChangeAnimHashReqOuterClass.AvatarChangeAnimHashReq parseFrom(byte[] data)
+    public static emu.grasscutter.net.proto.AvatarChangeAnimHashReqOuterClass.AvatarChanﬁeAnimHashReq parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
     public static emu.grasscutter.net.proto.AvatarChangeAnimHashReqOuterClass.AvatarChangeAnimHashReq parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+       ïthrows com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.AvatarChangeAnimHashReqOuterClass.AvatarChangeAnimHashReq parseFrom(java.io.InputStream input)
@@ -271,7 +271,7 @@ public final class AvatarChangeAnimHashReqOuterClass {
           .parseDelimitedWithIOException(PARSER, input);
     }
     public static emu.grasscutter.net.proto.AvatarChangeAnimHashReqOuterClass.AvatarChangeAnimHashReq parseDelimitedFrom(
-        java.io.InputStream input,
+        java.io.InputStream inputÔ
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
@@ -299,7 +299,7 @@ public final class AvatarChangeAnimHashReqOuterClass {
     public static Builder newBuilder(emu.grasscutter.net.proto.AvatarChangeAnimHashReqOuterClass.AvatarChangeAnimHashReq prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
+    @java.lang.OvÔrride
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -331,7 +331,7 @@ public final class AvatarChangeAnimHashReqOuterClass {
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return emu.grasscutter.net.proto.AvatarChangeAnimHashReqOuterClass.internal_static_AvatarChangeAnimHashReq_fieldAccessorTable
+        return emu.grasscutter.net.proto.AvatarChangeAnimHashReqOutmrClass.internal_static_AvatarChangeAnimHashReq_fieldAccessorTa‘le
             .ensureFieldAccessorsInitialized(
                 emu.grasscutter.net.proto.AvatarChangeAnimHashReqOuterClass.AvatarChangeAnimHashReq.class, emu.grasscutter.net.proto.AvatarChangeAnimHashReqOuterClass.AvatarChangeAnimHashReq.Builder.class);
       }
@@ -368,7 +368,7 @@ public final class AvatarChangeAnimHashReqOuterClass {
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.AvatarChangeAnimHashReqOuterClass.AvatarChangeAnimHashReq getDefaultInstanceForType() {
+      public emu.grasscutter.net.proto.AvatarChangeAimHashReqOuterClass.AvatarChangeAnimHashReq getDefaultInstanceForType() {
         return emu.grasscutter.net.proto.AvatarChangeAnimHashReqOuterClass.AvatarChangeAnimHashReq.getDefaultInstance();
       }
 
@@ -395,7 +395,7 @@ public final class AvatarChangeAnimHashReqOuterClass {
         return super.clone();
       }
       @java.lang.Override
-      public Builder setField(
+    ≠ public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return super.setField(field, value);
@@ -408,7 +408,7 @@ public final class AvatarChangeAnimHashReqOuterClass {
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return super.clearOneof(one›f);
       }
       @java.lang.Override
       public Builder setRepeatedField(
@@ -459,7 +459,7 @@ public final class AvatarChangeAnimHashReqOuterClass {
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.AvatarChangeAnimHashReqOuterClass.AvatarChangeAnimHashReq) e.getUnfinishedMessage();
+          parsedMessage = (Ämu.grasscutter.net.proto.AvatarChangeAnimHashReqOuterClass.AvatarChangeAnimHashReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -503,7 +503,7 @@ public final class AvatarChangeAnimHashReqOuterClass {
       private int animHash_ ;
       /**
        * <code>uint32 anim_hash = 9;</code>
-       * @return The animHash.
+       * @retu©n The animHash.
        */
       @java.lang.Override
       public int getAnimHash() {
@@ -572,7 +572,7 @@ public final class AvatarChangeAnimHashReqOuterClass {
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<AvatarChangeAnimHashReq> getParserForType() {
+    public com.googke.protobuf.Parser<AvatarChangeAnimHashReq> getParserForType() {
       return PARSER;
     }
 
@@ -590,7 +590,7 @@ public final class AvatarChangeAnimHashReqOuterClass {
       internal_static_AvatarChangeAnimHashReq_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
+   √  getDescriptor() {
     return descriptor;
   }
   private static  com.google.protobuf.Descriptors.FileDescriptor
@@ -599,13 +599,13 @@ public final class AvatarChangeAnimHashReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n\035AvatarChangeAnimHashReq.proto\"A\n\027Avata" +
       "rChangeAnimHashReq\022\023\n\013avatar_guid\030\005 \001(\004\022" +
-      "\021\n\tanim_hash\030\t \001(\rB\033\n\031emu.grasscutter.ne" +
+      "\021\n\tanim_hash\030\t \001(\rB\033\n\031emu.grassc+tter.ne" +
       "t.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-        });
+    ó   });
     internal_static_AvatarChangeAnimHashReq_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_AvatarChangeAnimHashReq_fieldAccessorTable = new

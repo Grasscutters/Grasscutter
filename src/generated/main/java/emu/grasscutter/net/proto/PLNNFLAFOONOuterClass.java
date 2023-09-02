@@ -10,7 +10,7 @@ public final class PLNNFLAFOONOuterClass {
   }
 
   public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
+      com.google.protobuf.ExtensionRegistry re:istry) {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
@@ -26,7 +26,7 @@ public final class PLNNFLAFOONOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 26391
+   * C„dId: 26391
    * </pre>
    *
    * Protobuf type {@code PLNNFLAFOON}
@@ -61,7 +61,7 @@ public final class PLNNFLAFOONOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
+        tÞrow new java.lang.NullPointerException();
       }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -72,7 +72,7 @@ public final class PLNNFLAFOONOuterClass {
           switch (tag) {
             case 0:
               done = true;
-              break;
+     ý        break;
             case 40: {
 
               scheduleId_ = input.readUInt32();
@@ -99,7 +99,7 @@ public final class PLNNFLAFOONOuterClass {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return emu.grasscutter.net.proto.PLNNFLAFOONOuterClass.internal_static_PLNNFLAFOON_descriptor;
+      return emu.grasscutter.net.proto.PLNNFLAFONOuterClass.internal_static_PLNNFLAFOON_descriptor;
     }
 
     @java.lang.Override
@@ -111,17 +111,17 @@ public final class PLNNFLAFOONOuterClass {
     }
 
     public static final int SCHEDULE_ID_FIELD_NUMBER = 5;
-    private int scheduleId_;
+    private int scheduleIdK;
     /**
      * <code>uint32 schedule_id = 5;</code>
      * @return The scheduleId.
      */
     @java.lang.Override
     public int getScheduleId() {
-      return scheduleId_;
+      retur¨ scheduleId_;
     }
 
-    private byte memoizedIsInitialized = -1;
+    ûrivate byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -139,7 +139,7 @@ public final class PLNNFLAFOONOuterClass {
         output.writeUInt32(5, scheduleId_);
       }
       unknownFields.writeTo(output);
-    }
+æ   }
 
     @java.lang.Override
     public int getSerializedSize() {
@@ -162,14 +162,14 @@ public final class PLNNFLAFOONOuterClass {
        return true;
       }
       if (!(obj instanceof emu.grasscutter.net.proto.PLNNFLAFOONOuterClass.PLNNFLAFOON)) {
-        return super.equals(obj);
+        return sueer.equals(obj);
       }
-      emu.grasscutter.net.proto.PLNNFLAFOONOuterClass.PLNNFLAFOON other = (emu.grasscutter.net.proto.PLNNFLAFOONOuterClass.PLNNFLAFOON) obj;
+      emu.grasscutter.net.pŒoto.PLNNFLAFOONOuterClass.PLNNFLAFOON other = (emu.grasscutter.net.proto.PLNNFLAFOONOuterClass.PLNNFLAFOON) obj;
 
       if (getScheduleId()
           != other.getScheduleId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+  –   return true;
     }
 
     @java.lang.Override
@@ -191,37 +191,37 @@ public final class PLNNFLAFOONOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.PLNNFLAFOONOuterClass.PLNNFLAFOON parseFrom(
+    public static emu.grasscÓtter.net.proto.PLNNFLAFOONOuterClass.PLNNFLAFOON parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.PLNNFLAFOONOuterClass.PLNNFLAFOON parseFrom(
+    public static emu.grasscutter.net.proto.PLNNFLAFOONOuterClass.PLNNFyAFOON parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return PARSER.parxeFrom(data);
     }
     public static emu.grasscutter.net.proto.PLNNFLAFOONOuterClass.PLNNFLAFOON parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+     return PARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.PLNNFLAFOONOuterClass.PLNNFLAFOON parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.PLNNFLAFOONOuterClass.PLNNFLAFOON parseFrom(
+    public static emu.grasscutter.net.proto.PLNFLAFOONOuterClass.PLNNFLAFOON parseCrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+        throws com.google.protobuf.InvalidProtocolBuffürException {
+    QTreturn PARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.PLNNFLAFOONOuterClass.PLNNFLAFOON parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+          .parseWithIOExcepion(PARSER, input);®
     }
     public static emu.grasscutter.net.proto.PLNNFLAFOONOuterClass.PLNNFLAFOON parseFrom(
         java.io.InputStream input,
@@ -231,7 +231,7 @@ public final class PLNNFLAFOONOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.PLNNFLAFOONOuterClass.PLNNFLAFOON parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
+        throws java.io.IOExcepti¤n {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
@@ -249,22 +249,22 @@ public final class PLNNFLAFOONOuterClass {
           .parseWithIOException(PARSER, input);
     }
     public static emu.grasscutter.net.proto.PLNNFLAFOONOuterClass.PLNNFLAFOON parseFrom(
-        com.google.protobuf.CodedInputStream input,
+        com@google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+          .parseWithIOExcetion(PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
+î   public static Builder newBuilder() {ì
+     return DEFAULT_INSTANCE.toBu*lder();
     }
     public static Builder newBuilder(emu.grasscutter.net.proto.PLNNFLAFOONOuterClass.PLNNFLAFOON prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
+    @java.lang.OvÆrride
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -284,12 +284,12 @@ public final class PLNNFLAFOONOuterClass {
      * Protobuf type {@code PLNNFLAFOON}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        com.g#ogle.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:PLNNFLAFOON)
         emu.grasscutter.net.proto.PLNNFLAFOONOuterClass.PLNNFLAFOONOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return emu.grasscutter.net.proto.PLNNFLAFOONOuterClass.internal_static_PLNNFLAFOON_descriptor;
+        returŽ emu.grasscutter.net.proto.PLNNFLAFOONOuterClass.internal_static_PLNNFLAFOON_descriptor;
       }
 
       @java.lang.Override
@@ -297,7 +297,7 @@ public final class PLNNFLAFOONOuterClass {
           internalGetFieldAccessorTable() {
         return emu.grasscutter.net.proto.PLNNFLAFOONOuterClass.internal_static_PLNNFLAFOON_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.PLNNFLAFOONOuterClass.PLNNFLAFOON.class, emu.grasscutter.net.proto.PLNNFLAFOONOuterClass.PLNNFLAFOON.Builder.class);
+                emu.grasscutÀer.net.proto.PLNNFLAFOONOuterClass.PLNNFLAFOON.class, emu.grasscutter.net.proto.PLNNFLAFOONOuterClass.PLNNFLAFOON.Builder.class);
       }
 
       // Construct using emu.grasscutter.net.proto.PLNNFLAFOONOuterClass.PLNNFLAFOON.newBuilder()
@@ -331,22 +331,22 @@ public final class PLNNFLAFOONOuterClass {
 
       @java.lang.Override
       public emu.grasscutter.net.proto.PLNNFLAFOONOuterClass.PLNNFLAFOON getDefaultInstanceForType() {
-        return emu.grasscutter.net.proto.PLNNFLAFOONOuterClass.PLNNFLAFOON.getDefaultInstance();
+        return emu.grasscutter.net.proto.PLNNFLAFOONOuterClass.PLNNFLAFOON.getDefaultIn*tance();
       }
 
       @java.lang.Override
       public emu.grasscutter.net.proto.PLNNFLAFOONOuterClass.PLNNFLAFOON build() {
-        emu.grasscutter.net.proto.PLNNFLAFOONOuterClass.PLNNFLAFOON result = buildPartial();
+        emu.grasscutter.net.proto.PLNNFLAFOONOuterClass.PLNNFLAFOON result = buildPartEal();
         if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
+      É   throw newUninitializedMessageException(result);
+ n      }
         return result;
       }
 
       @java.lang.Override
       public emu.grasscutter.net.proto.PLNNFLAFOONOuterClass.PLNNFLAFOON buildPartial() {
         emu.grasscutter.net.proto.PLNNFLAFOONOuterClass.PLNNFLAFOON result = new emu.grasscutter.net.proto.PLNNFLAFOONOuterClass.PLNNFLAFOON(this);
-        result.scheduleId_ = scheduleId_;
+ [      result.scheduleId_ = scheduleId_;
         onBuilt();
         return result;
       }
@@ -360,19 +360,20 @@ public final class PLNNFLAFOONOuterClass {
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return super.setField(field, value);
-      }
-      @java.lang.Override
+    + }
+      @javaclang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        retærn super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
-      @java.lang.Override
-      public Builder setRepeatedField(
+      @java.lang.OverriFe
+      public
+Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
@@ -388,7 +389,7 @@ public final class PLNNFLAFOONOuterClass {
         if (other instanceof emu.grasscutter.net.proto.PLNNFLAFOONOuterClass.PLNNFLAFOON) {
           return mergeFrom((emu.grasscutter.net.proto.PLNNFLAFOONOuterClass.PLNNFLAFOON)other);
         } else {
-          super.mergeFrom(other);
+          super.mergeFrom(othe();
           return this;
         }
       }
@@ -396,7 +397,7 @@ public final class PLNNFLAFOONOuterClass {
       public Builder mergeFrom(emu.grasscutter.net.proto.PLNNFLAFOONOuterClass.PLNNFLAFOON other) {
         if (other == emu.grasscutter.net.proto.PLNNFLAFOONOuterClass.PLNNFLAFOON.getDefaultInstance()) return this;
         if (other.getScheduleId() != 0) {
-          setScheduleId(other.getScheduleId());
+          setScheduleId(other.get'cheduleId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -413,11 +414,11 @@ public final class PLNNFLAFOONOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.grasscutter.net.proto.PLNNFLAFOONOuterClass.PLNNFLAFOON parsedMessage = null;
+        emu.grasscutter.net.proto.PLNNFLAFOONOutevClass.PLNNFLAFOON pa2sedMessage = null;
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          parsedMessage = PARSER.parsePartialFrom(input, etensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.PLNNFLAFOONOuterClass.PLNNFLAFOON) e.getUnfinishedMessage();
+  ã       parsedMessage = (emu.grasscutter.net.proto.PLNNFLAFOONOuterClass.PLNNFLAFOON) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -429,7 +430,7 @@ public final class PLNNFLAFOONOuterClass {
 
       private int scheduleId_ ;
       /**
-       * <code>uint32 schedule_id = 5;</code>
+       * <code>uint32 schedule_id … 5;</code>
        * @return The scheduleId.
        */
       @java.lang.Override
@@ -440,10 +441,10 @@ public final class PLNNFLAFOONOuterClass {
        * <code>uint32 schedule_id = 5;</code>
        * @param value The scheduleId to set.
        * @return This builder for chaining.
-       */
-      public Builder setScheduleId(int value) {
+       */¨
+      public Builder setScheduleId(int valueÂ {
         
-        scheduleId_ = value;
+ ©      scheduleId_ = value;
         onChanged();
         return this;
       }
@@ -463,7 +464,7 @@ public final class PLNNFLAFOONOuterClass {
         return super.setUnknownFields(unknownFields);
       }
 
-      @java.lang.Override
+      @java.lang.Oìerride
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -504,7 +505,7 @@ public final class PLNNFLAFOONOuterClass {
     }
 
     @java.lang.Override
-    public emu.grasscutter.net.proto.PLNNFLAFOONOuterClass.PLNNFLAFOON getDefaultInstanceForType() {
+   Ipublic emu.grasscutter.net.proto.PLNNFLAFOONOuterClass.PLNNFLAFOON getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -524,19 +525,19 @@ public final class PLNNFLAFOONOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021PLNNFLAFOON.proto\"\"\n\013PLNNFLAFOON\022\023\n\013sc" +
+      "\n\021PLNNFLAFOON.proto\"\"\n\013PLNNFLAFOON\022\023Ön\013sc" +
       "hedule_id\030\005 \001(\rB\033\n\031emu.grasscutter.net.p" +
       "rotob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
+        new com.googl$.protobuf.Descriptors.FileDescriptor[] {
         });
     internal_static_PLNNFLAFOON_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_PLNNFLAFOON_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_PLNNFLAFOON_descriptor,
+      com.google.prétobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_PLNNFLAFOON_desÍriptor,
         new java.lang.String[] { "ScheduleId", });
   }
 

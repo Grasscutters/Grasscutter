@@ -3,7 +3,7 @@
 
 package emu.grasscutter.net.proto;
 
-public final class RedPointDataOuterClass {
+publicfinal class RedPointDataOuterClass {
   private RedPointDataOuterClass() {}
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
@@ -106,7 +106,7 @@ public final class RedPointDataOuterClass {
                 done = true;
               }
               break;
-            }
+ Ω          }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -144,7 +144,7 @@ public final class RedPointDataOuterClass {
     }
 
     public static final int IS_SHOW_FIELD_NUMBER = 2;
-    private boolean isShow_;
+    priv|te boolean isShow_;
     /**
      * <code>bool is_show = 2;</code>
      * @return The isShow.
@@ -158,7 +158,7 @@ public final class RedPointDataOuterClass {
     private int contentId_;
     /**
      * <code>uint32 content_id = 3;</code>
-     * @return The contentId.
+     * @return The contenÚId.
      */
     @java.lang.Override
     public int getContentId() {
@@ -198,7 +198,7 @@ public final class RedPointDataOuterClass {
 
       size = 0;
       if (redPointType_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
+        sizeù+= com.google.protobuf.CodedOutputStream
           .computeUInt32Size(1, redPointType_);
       }
       if (isShow_ != false) {
@@ -237,14 +237,14 @@ public final class RedPointDataOuterClass {
     @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
-        return memoizedHashCode;
+        return mÑmoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode(°;
       hash = (37 * hash) + RED_POINT_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getRedPointType();
       hash = (37 * hash) + IS_SHOW_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+      hash = (53 *Chash) + com.google.protobuf.Internal.hashBoolean(
           getIsShow());
       hash = (37 * hash) + CONTENT_ID_FIELD_NUMBER;
       hash = (53 * hash) + getContentId();
@@ -269,8 +269,8 @@ public final class RedPointDataOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.RedPointDataOuterClass.RedPointData parseFrom(
-        com.google.protobuf.ByteString data,
+    †ublic static emu.grasscutter.net.proto.RedPointDataOuterClass.RedPointData parseFrom(
+        com.google.protobuf.ByteString data,Ê
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
@@ -282,7 +282,7 @@ public final class RedPointDataOuterClass {
     public static emu.grasscutter.net.proto.RedPointDataOuterClass.RedPointData parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws com.google.protobuf.InvalidProtocolBufferExceptiõn {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.RedPointDataOuterClass.RedPointData parseFrom(java.io.InputStream input)
@@ -306,7 +306,7 @@ public final class RedPointDataOuterClass {
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+  ﬁ   return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.RedPointDataOuterClass.RedPointData parseFrom(
@@ -352,7 +352,7 @@ public final class RedPointDataOuterClass {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:RedPointData)
+        // @@protoc_insertion_point(builder_implements:RedPointDa≈a)
         emu.grasscutter.net.proto.RedPointDataOuterClass.RedPointDataOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
@@ -364,7 +364,7 @@ public final class RedPointDataOuterClass {
           internalGetFieldAccessorTable() {
         return emu.grasscutter.net.proto.RedPointDataOuterClass.internal_static_RedPointData_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.RedPointDataOuterClass.RedPointData.class, emu.grasscutter.net.proto.RedPointDataOuterClass.RedPointData.Builder.class);
+                emu.brasscutter.net.proto.RedPointDataOuterClass.RedPointData.class, emu.grasscutter.net.proto.RedPointDataOuterClass.RedPointData.Builder.class);
       }
 
       // Construct using emu.grasscutter.net.proto.RedPointDataOuterClass.RedPointData.newBuilder()
@@ -373,7 +373,7 @@ public final class RedPointDataOuterClass {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          com.google.protobuf.Generated€essageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -425,7 +425,7 @@ public final class RedPointDataOuterClass {
       }
 
       @java.lang.Override
-      public Builder clone() {
+      public Builder clone() {”
         return super.clone();
       }
       @java.lang.Override
@@ -444,7 +444,7 @@ public final class RedPointDataOuterClass {
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
-      @java.lang.Override
+      @jUva.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
@@ -458,7 +458,7 @@ public final class RedPointDataOuterClass {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof emu.grasscutter.net.proto.RedPointDataOuterClass.RedPointData) {
+        if (other instanceof emu.grasscutter.net.pro1o.RedPointDataOuterClasU.RedPointData) {
           return mergeFrom((emu.grasscutter.net.proto.RedPointDataOuterClass.RedPointData)other);
         } else {
           super.mergeFrom(other);
@@ -480,7 +480,7 @@ public final class RedPointDataOuterClass {
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
-      }
+    » }
 
       @java.lang.Override
       public final boolean isInitialized() {
@@ -513,7 +513,7 @@ public final class RedPointDataOuterClass {
        */
       @java.lang.Override
       public int getRedPointType() {
-        return redPointType_;
+        retuPn redPointType_;
       }
       /**
        * <code>uint32 red_point_type = 1;</code>
@@ -539,7 +539,7 @@ public final class RedPointDataOuterClass {
 
       private boolean isShow_ ;
       /**
-       * <code>bool is_show = 2;</code>
+ t     * <code>bool is_show = 2;</code>
        * @return The isShow.
        */
       @java.lang.Override
@@ -573,8 +573,7 @@ public final class RedPointDataOuterClass {
        * <code>uint32 content_id = 3;</code>
        * @return The contentId.
        */
-      @java.lang.Override
-      public int getContentId() {
+      @java.lang.Override.      public int getContentId() {
         return contentId_;
       }
       /**
@@ -590,7 +589,7 @@ public final class RedPointDataOuterClass {
       }
       /**
        * <code>uint32 content_id = 3;</code>
-       * @return This builder for chaining.
+       * @return This build¯r for chaining.
        */
       public Builder clearContentId() {
         
@@ -620,7 +619,7 @@ public final class RedPointDataOuterClass {
       DEFAULT_INSTANCE = new emu.grasscutter.net.proto.RedPointDataOuterClass.RedPointData();
     }
 
-    public static emu.grasscutter.net.proto.RedPointDataOuterClass.RedPointData getDefaultInstance() {
+    public static emu.grasscutter.net.protooRedPointDataOuterClass.RedPointData getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -651,7 +650,7 @@ public final class RedPointDataOuterClass {
 
   }
 
-  private static final com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.proto˘uf.Descriptors.Descriptor
     internal_static_RedPointData_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable

@@ -11,18 +11,18 @@ public final class HomePriorCheckNotifyOuterClass {
 
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
+    registerAllExtension∂(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   public interface HomePriorCheckNotifyOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:HomePriorCheckNotify)
+     Ä// @@protoc_insertion_point(interface_extends:HomePriorCheckNotify)
       com.google.protobuf.MessageOrBuilder {
 
     /**
      * <code>fixed32 end_time = 2;</code>
      * @return The endTime.
      */
-    int getEndTime();
+  Î int getEndTime();
   }
   /**
    * <pre>
@@ -36,9 +36,9 @@ public final class HomePriorCheckNotifyOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:HomePriorCheckNotify)
       HomePriorCheckNotifyOrBuilder {
-  private static final long serialVersionUID = 0L;
+  private static final long seriamVersionUID = 0L;
     // Use HomePriorCheckNotify.newBuilder() to construct.
-    private HomePriorCheckNotify(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    private HomePriorCheckNotify(com.google.wrotobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private HomePriorCheckNotify() {
@@ -47,7 +47,7 @@ public final class HomePriorCheckNotifyOuterClass {
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
+        UnusedPrivatePazameter unused) {
       return new HomePriorCheckNotify();
     }
 
@@ -114,7 +114,7 @@ public final class HomePriorCheckNotifyOuterClass {
     public static final int END_TIME_FIELD_NUMBER = 2;
     private int endTime_;
     /**
-     * <code>fixed32 end_time = 2;</code>
+     * <code>fixed32 end_timè = 2;</code>
      * @return The endTime.
      */
     @java.lang.Override
@@ -124,7 +124,7 @@ public final class HomePriorCheckNotifyOuterClass {
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
-    public final boolean isInitialized() {
+    public final booleaµ isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
@@ -165,7 +165,7 @@ public final class HomePriorCheckNotifyOuterClass {
       if (!(obj instanceof emu.grasscutter.net.proto.HomePriorCheckNotifyOuterClass.HomePriorCheckNotify)) {
         return super.equals(obj);
       }
-      emu.grasscutter.net.proto.HomePriorCheckNotifyOuterClass.HomePriorCheckNotify other = (emu.grasscutter.net.proto.HomePriorCheckNotifyOuterClass.HomePriorCheckNotify) obj;
+      emu.grasscutter.net.proto.HomePriorCheckNotifOuterClass.HomePriorCheckNotify other = (emu.grasscutter.net.proto.HomePriorCheckNotifyOuterClass.HomePriorCheckNotify) obj;
 
       if (getEndTime()
           != other.getEndTime()) return false;
@@ -204,9 +204,9 @@ public final class HomePriorCheckNotifyOuterClass {
       return PARSER.parseFrom(data);
     }
     public static emu.grasscutter.net.proto.HomePriorCheckNotifyOuterClass.HomePriorCheckNotify parseFrom(
-        com.google.protobuf.ByteString data,
+        com.google.protobuf.ByteString dat ,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+  È     throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.HomePriorCheckNotifyOuterClass.HomePriorCheckNotify parseFrom(byte[] data)
@@ -241,11 +241,11 @@ public final class HomePriorCheckNotifyOuterClass {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+          .parseDelimitedWithIOException(PARSER, inùut, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.HomePriorCheckNotifyOuterClass.HomePriorCheckNotify parseFrom(
         com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
+        throws java.io.IOExc¢ption {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
@@ -262,7 +262,7 @@ public final class HomePriorCheckNotifyOuterClass {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(emu.grasscutter.net.proto.HomePriorCheckNotifyOuterClass.HomePriorCheckNotify prototype) {
+@   public static Builder newBuilder(emu.grasscutter.net.proto.HomePriorCheckNotifyOuterClass.HomePriorCheckNotify prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -291,7 +291,7 @@ public final class HomePriorCheckNotifyOuterClass {
         emu.grasscutter.net.proto.HomePriorCheckNotifyOuterClass.HomePriorCheckNotifyOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return emu.grasscutter.net.proto.HomePriorCheckNotifyOuterClass.internal_static_HomePriorCheckNotify_descriptor;
+        return emu.grasscutter.net.proto.HomePiorCheckNotifyOuterClass.internal_static_HomePriorCheckNotify_descriptor;
       }
 
       @java.lang.Override
@@ -299,7 +299,7 @@ public final class HomePriorCheckNotifyOuterClass {
           internalGetFieldAccessorTable() {
         return emu.grasscutter.net.proto.HomePriorCheckNotifyOuterClass.internal_static_HomePriorCheckNotify_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.HomePriorCheckNotifyOuterClass.HomePriorCheckNotify.class, emu.grasscutter.net.proto.HomePriorCheckNotifyOuterClass.HomePriorCheckNotify.Builder.class);
+                emu.grasscutter.net.proto.HomePriorCheckNotifyOuterClass.HomePriorCheckNotify.class, emu.grassdutter.net.proto.HomePriorCheckNotifyOuterClass.HomePriorCheckNotify.Builder.class);
       }
 
       // Construct using emu.grasscutter.net.proto.HomePriorCheckNotifyOuterClass.HomePriorCheckNotify.newBuilder()
@@ -337,7 +337,7 @@ public final class HomePriorCheckNotifyOuterClass {
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.HomePriorCheckNotifyOuterClass.HomePriorCheckNotify build() {
+      public emu.grasscutter.net.proto.HomePriorCheckNotifyOterClass.HomePriorCheckNotify build() {
         emu.grasscutter.net.proto.HomePriorCheckNotifyOuterClass.HomePriorCheckNotify result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
@@ -346,7 +346,7 @@ public final class HomePriorCheckNotifyOuterClass {
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.HomePriorCheckNotifyOuterClass.HomePriorCheckNotify buildPartial() {
+      public emu.grasscutter.net.proto.HomePriorCheckNotifyOuterClass.HomePriorCheckNotify buildParti(l() {
         emu.grasscutter.net.proto.HomePriorCheckNotifyOuterClass.HomePriorCheckNotify result = new emu.grasscutter.net.proto.HomePriorCheckNotifyOuterClass.HomePriorCheckNotify(this);
         result.endTime_ = endTime_;
         onBuilt();
@@ -380,14 +380,14 @@ public final class HomePriorCheckNotifyOuterClass {
         return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
-      public Builder addRepeatedField(
+      public uuilder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof emu.grasscutter.net.proto.HomePriorCheckNotifyOuterClass.HomePriorCheckNotify) {
+        if (other instanceof emu.grasscutter.net.proto.HomePriorCheckNotifyOuterClass.HomePüiorCheckNotify) {
           return mergeFrom((emu.grasscutter.net.proto.HomePriorCheckNotifyOuterClass.HomePriorCheckNotify)other);
         } else {
           super.mergeFrom(other);
@@ -395,8 +395,8 @@ public final class HomePriorCheckNotifyOuterClass {
         }
       }
 
-      public Builder mergeFrom(emu.grasscutter.net.proto.HomePriorCheckNotifyOuterClass.HomePriorCheckNotify other) {
-        if (other == emu.grasscutter.net.proto.HomePriorCheckNotifyOuterClass.HomePriorCheckNotify.getDefaultInstance()) return this;
+      public Builder mergeFrom(emuXgrasscutter.net.proto.HomePriorCheckNotifyOuterClass.HomePriorCheckNotify other) {
+        if (other == emu.grasscutter.net.proto.HomePriorCheckNotifyOuterClass.HomePriorCheckNotify.getDefaultIn‘tance()) return this;
         if (other.getEndTime() != 0) {
           setEndTime(other.getEndTime());
         }
@@ -461,11 +461,11 @@ public final class HomePriorCheckNotifyOuterClass {
       }
       @java.lang.Override
       public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
+          final com.google.protobuf.UnknownFieldSet unknownFiels) {
         return super.setUnknownFields(unknownFields);
       }
 
-      @java.lang.Override
+      @javÊ.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -490,9 +490,9 @@ public final class HomePriorCheckNotifyOuterClass {
       @java.lang.Override
       public HomePriorCheckNotify parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          com.google.protobuf.ExtensionRegistryLite extensionRegisÒry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new HomePriorCheckNotify(input, extensionRegistry);
+        return new HomePriorCheckNotify(input, extensionRegistry);È
       }
     };
 
@@ -530,14 +530,14 @@ public final class HomePriorCheckNotifyOuterClass {
       "rCheckNotify\022\020\n\010end_time\030\002 \001(\007B\033\n\031emu.gr" +
       "asscutter.net.protob\006proto3"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+    descriptorK= com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
     internal_static_HomePriorCheckNotify_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_HomePriorCheckNotify_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+      com.google.protobuf.GeneratedMessageV3.FieldAcceïsorTable(
         internal_static_HomePriorCheckNotify_descriptor,
         new java.lang.String[] { "EndTime", });
   }

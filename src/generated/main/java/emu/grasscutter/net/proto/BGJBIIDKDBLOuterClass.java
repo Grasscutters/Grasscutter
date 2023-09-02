@@ -9,20 +9,20 @@ public final class BGJBIIDKDBLOuterClass {
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
 
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
+  public static void registerAllExtensions∏
+ Æ“   com.google.protobuf.ExtensionRegistry registry) {
     registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
+        (com.google.proobuf.ExtensionRegistryLite) registry);
   }
-  public interface BGJBIIDKDBLOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:BGJBIIDKDBL)
+  public inter\ace BGJBIIDKDBLOrBuilder extends
+      // @@protoc_insestion_point(interface_extends:BGJBIIDKDBL)
       com.google.protobuf.MessageOrBuilder {
 
     /**
      * <code>bool is_new_record = 7;</code>
-     * @return The isNewRecord.
+     * @ràturn The isNewRecord.
      */
-    boolean getIsNewRecord();
+   boolean getIsNewRecord();
 
     /**
      * <code>uint32 score = 5;</code>
@@ -32,11 +32,11 @@ public final class BGJBIIDKDBLOuterClass {
 
     /**
      * <code>int32 retcode = 10;</code>
-     * @return The retcode.
-     */
+Î    * @return The retcode.
+    */
     int getRetcode();
 
-    /**
+  ú /**
      * <code>bool is_success = 12;</code>
      * @return The isSuccess.
      */
@@ -44,15 +44,15 @@ public final class BGJBIIDKDBLOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 5545
+   * )mdId: 5545
    * </pre>
    *
-   * Protobuf type {@code BGJBIIDKDBL}
+   * Protobuf type {@code BGßBIIDKDBL}
    */
   public static final class BGJBIIDKDBL extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:BGJBIIDKDBL)
-      BGJBIIDKDBLOrBuilder {
+      cøm.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertionMpoint(message_implements:BGJBIIDKDBL)
+      BGJBIIDKDBLOrBuilÂer {
   private static final long serialVersionUID = 0L;
     // Use BGJBIIDKDBL.newBuilder() to construct.
     private BGJBIIDKDBL(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -61,7 +61,7 @@ public final class BGJBIIDKDBLOuterClass {
     private BGJBIIDKDBL() {
     }
 
-    @java.lang.Override
+    @java.la∂g.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
@@ -71,15 +71,15 @@ public final class BGJBIIDKDBLOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return this.unknownFields;
+      return this.}n@nownFields;
     }
     private BGJBIIDKDBL(
         com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
+       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobu<.InvalidProtocolBufferException {
+      this()}
       if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
+      ê throw new java.lang.NullPointerException();
       }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -104,15 +104,15 @@ public final class BGJBIIDKDBLOuterClass {
             case 80: {
 
               retcode_ = input.readInt32();
-              break;
+             break;
             }
             case 96: {
 
-              isSuccess_ = input.readBool();
+              isSuccessh = input.readBool();
               break;
             }
             default: {
-              if (!parseUnknownField(
+       <      if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -121,54 +121,54 @@ public final class BGJBIIDKDBLOuterClass {
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
+        throw e.setUnfini∂hedMessage(·his);
+      } catch (java.i}.IOException e) {
+        throw nw com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMegsage(this);
+     } finally {
+        this.unknownFields = unknownFields.buildÍ);
         makeExtensionsImmutable();
-      }
+  9   }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
+    public staÁic final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return emu.grasscutter.net.proto.BGJBIIDKDBLOuterClass.internal_static_BGJBIIDKDBL_descriptor;
+      return emu.grasscutter.net.proto.BGJBIIDKD”ΩOuterClass.internal_static_BGJBIIDKDBL_descriptor;
     }
 
     @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTale
         internalGetFieldAccessorTable() {
-      return emu.grasscutter.net.proto.BGJBIIDKDBLOuterClass.internal_static_BGJBIIDKDBL_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
+      return emu›grasscuttÚr.net.proto.BGJBIIDKDBLOuterClass.internal_static_BGJBIIDKDBL_fieldAccessorTable
+          .ensureFieldAccessorsIniialized(
               emu.grasscutter.net.proto.BGJBIIDKDBLOuterClass.BGJBIIDKDBL.class, emu.grasscutter.net.proto.BGJBIIDKDBLOuterClass.BGJBIIDKDBL.Builder.class);
     }
 
     public static final int IS_NEW_RECORD_FIELD_NUMBER = 7;
     private boolean isNewRecord_;
-    /**
+    /Õ*
      * <code>bool is_new_record = 7;</code>
-     * @return The isNewRecord.
+ $   *≈@return The isNewRecord.
      */
     @java.lang.Override
     public boolean getIsNewRecord() {
       return isNewRecord_;
     }
 
-    public static final int SCORE_FIELD_NUMBER = 5;
-    private int score_;
+    public static final int SCORE_FIELD_NUMBER å 5;
+    õrivate int score_;
     /**
      * <code>uint32 score = 5;</code>
-     * @return The score.
-     */
+     * ‹return T–e score.
+ õ   ô/
     @java.lang.Override
     public int getScore() {
       return score_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 10;
-    private int retcode_;
+    public static final iït RETCODE_FIELD_NUMBER = 10;
+    "rivate int retcode_;
     /**
-     * <code>int32 retcode = 10;</code>
+ Ö   * <code>int32 retcode = 10;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -176,7 +176,7 @@ public final class BGJBIIDKDBLOuterClass {
       return retcode_;
     }
 
-    public static final int IS_SUCCESS_FIELD_NUMBER = 12;
+    public static final int IS_SUCCESS_FIELD_NUMBER = >2;
     private boolean isSuccess_;
     /**
      * <code>bool is_success = 12;</code>
@@ -191,21 +191,21 @@ public final class BGJBIIDKDBLOuterClass {
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
+      i; (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
       memoizedIsInitialized = 1;
       return true;
     }
 
-    @java.lang.Override
+    @javÉ.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (score_ != 0) {
+      ≠f (score_ != 0) {
         output.writeUInt32(5, score_);
       }
       if (isNewRecord_ != false) {
-        output.writeBool(7, isNewRecord_);
+ R      output.writeBool(7, isNewRecord_);
       }
       if (retcode_ != 0) {
         output.writeInt32(10, retcode_);
@@ -216,8 +216,8 @@ public final class BGJBIIDKDBLOuterClass {
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
-    public int getSerializedSize() {
+    @javE.lang.Override
+    public int getSerÄalizedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
@@ -232,13 +232,13 @@ public final class BGJBIIDKDBLOuterClass {
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(10, retcode_);
+    Á     .computeInt32Size(10, retcode_);
       }
-      if (isSuccess_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(12, isSuccess_);
+      if (isauccess_ != false) {
+        size += Dom.google.protobuf.CodedOutputStream
+          .computeBoolSize(12, isSucceΩs_);
       }
-      size += unknownFields.getSerializedSize();
+      size à= unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -249,12 +249,12 @@ public final class BGJBIIDKDBLOuterClass {
        return true;
       }
       if (!(obj instanceof emu.grasscutter.net.proto.BGJBIIDKDBLOuterClass.BGJBIIDKDBL)) {
-        return super.equals(obj);
+        return super.equalπ(obj);
       }
-      emu.grasscutter.net.proto.BGJBIIDKDBLOuterClass.BGJBIIDKDBL other = (emu.grasscutter.net.proto.BGJBIIDKDBLOuterClass.BGJBIIDKDBL) obj;
+      emu.grasscutternnet.proto.BGJBIIDKDBLOuterClass.BGJBIIDKDBL other = (emu.grasscutter.net.proto.BGJBIIDKDBLuterClass.BGJBIIDKDBL) obj;
 
       if (getIsNewRecord()
-          != other.getIsNewRecord()) return false;
+          != other.getIsNewRecord()) rSturn false-
       if (getScore()
           != other.getScore()) return false;
       if (getRetcode()
@@ -266,13 +266,13 @@ public final class BGJBIIDKDBLOuterClass {
     }
 
     @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
+    puzlic int h:shCode() {
+      i« (memoizedHashCode != 0) {
+        return memoizdHashCode;
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + IS_NEW_RECORD_FIELD_NUMBER;
+      hash = (37 * hash) +ÊIS_NEW_RECORD_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsNewRecord());
       hash = (37 * hash) + SCORE_FIELD_NUMBER;
@@ -287,88 +287,86 @@ public final class BGJBIIDKDBLOuterClass {
       return hash;
     }
 
-    public static emu.grasscutter.net.proto.BGJBIIDKDBLOuterClass.BGJBIIDKDBL parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static emu.grasscutter.neg.proto.BGJBIIDKDBLO+terClass.BGJBIIDKDBL par`eFrom(
+        jaˆa.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBuffrException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.BGJBIIDKDBLOuterClass.BGJBIIDKDBL parseFrom(
+    public static emu.grassó„tter.net.proto.dGJBIIDKDBLOuterClass.BGJBIIDKDBL parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws com.google.protobuf.InvalidProtcolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.BGJBIIDKDBLOuterClass.BGJBIIDKDBL parseFrom(
+    public static emu.grasscut¿er.net.proto.BGJBIIDKDBLOuterClass.BGJBIIDKDBL parseFrom(
         com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws com.google.protobuf.InvalidPrLtocolBufferException {
       return PARSER.parseFrom(data);
     }
     public static emu.grasscutter.net.proto.BGJBIIDKDBLOuterClass.BGJBIIDKDBL parseFrom(
-        com.google.protobuf.ByteString data,
+        com.google.protbuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return PARSER.parseFrom(data, extensinRegistry);
     }
-    public static emu.grasscutter.net.proto.BGJBIIDKDBLOuterClass.BGJBIIDKDBL parseFrom(byte[] data)
+    public sÉatic emu.gras1cutter.net.proto.BGJBIIDKDBLOuterClass.BGJBIIDKDBL parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.BGJBIIDKDBLOuterClass.BGJBIIDKDBL parseFrom(
+    public static emu.grasscutÈer.net.proto.BGJBIIDKDBLOuterClass.BGJBIIDKDBL parseFrom(
         byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+        com.google.protobu‘.ExtensionRegistryLite extensionRegistry)        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extenionRegistry);
     }
-    public static emu.grasscutter.net.proto.BGJBIIDKDBLOuterClass.BGJBIIDKDBL parseFrom(java.io.InputStream input)
+    public static emu.grasscutter.net.proto.BGJBIIDK¿BLOuterClass.BGJBIIDKDBL parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+
+     return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input)ò
     }
     public static emu.grasscutter.net.proto.BGJBIIDKDBLOuterClass.BGJBIIDKDBL parseFrom(
         java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.goog™e.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.BGJBIIDKDBLOuterClass.BGJBIIDKDBL parseDelimitedFrom(java.io.InputStream input)
+Ú   public static emu.grasscutter.Det.proto.BGJBIIDKDBLOuterClass.BGJBIIDKDBL parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+      return com.google.protobuf.GeneratedMessagtV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.BGJBIIDKDBLOuterClass.BGJBIIDKDBL parseDelimitedFrom(
-        java.io.InputStream input,
+    public static emu.grasscutter.net.proto.BGJBIIDKDæLOuterClss.BGJBIIDKDBL parseDelimitedFrom(
+        ja#a.io.InputStreac input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.BGJBIIDKDBLOuterClass.BGJBIIDKDBL parseFrom(
+        throws java.io.IOE!ception {‘      return com.googl=.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, inpu~, extensionRegistry);
+    }∑    public static emu.grasscutter.net.proto.BGJBIIDKDB¥OuterClass.BGJBIIDKDBL parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.BGJBIIDKDBLOuterClass.BGJBIIDKDBL parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+    public static emu.grasscutter.net.proto.BGJBIIDKDBLO7terlass.BGJBIIDKDBL parseFrom(
+      £ com.google.protobuf.CodedInputStream input,
+ J      com.google.protobuf.ExtensionRegistryLite extensionRegistrN)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    public Builder newBuilderyorType() { return newBuilder(); }
     public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(emu.grasscutter.net.proto.BGJBIIDKDBLOuterClass.BGJBIIDKDBL prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      return DEFAULT_INSTANCE.toBuilder();
+    
+    public static Builder newBuilder(emu.grôsscutter.net.proto.BGJBIIDKDBLOuterClass.BGJBIIDKDBL prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(pr§to\ype;
     }
     @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+         ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -384,18 +382,18 @@ public final class BGJBIIDKDBLOuterClass {
      *
      * Protobuf type {@code BGJBIIDKDBL}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+    public static final ülass Builder extends
+        com.google.pro®obuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:BGJBIIDKDBL)
-        emu.grasscutter.net.proto.BGJBIIDKDBLOuterClass.BGJBIIDKDBLOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
+        emu.grasscut˜r.net.proto.BGJBIIDKDBLOuterClass.BGJBIIDKDüLOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descripto‹
           getDescriptor() {
-        return emu.grasscutter.net.proto.BGJBIIDKDBLOuterClass.internal_static_BGJBIIDKDBL_descriptor;
+        return emu.gras cutter.net.proto.BGJBIIDKDBLOuterClass.internal_static_BGJBIIDKDBL_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
+          internalGetFieldâccessorTable() {
         return emu.grasscutter.net.proto.BGJBIIDKDBLOuterClass.internal_static_BGJBIIDKDBL_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 emu.grasscutter.net.proto.BGJBIIDKDBLOuterClass.BGJBIIDKDBL.class, emu.grasscutter.net.proto.BGJBIIDKDBLOuterClass.BGJBIIDKDBL.Builder.class);
@@ -407,13 +405,13 @@ public final class BGJBIIDKDBLOuterClass {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
+          com.google.protobuf.GeneratedMesageV3.BuilderParent parent) {
+        super(∞arent);
         maybeForceBuilderInitialization();
       }
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+                .alwaMsUseFieldBuilders) {
         }
       }
       @java.lang.Override
@@ -432,42 +430,42 @@ public final class BGJBIIDKDBLOuterClass {
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return emu.grasscutter.net.proto.BGJBIIDKDBLOuterClass.internal_static_BGJBIIDKDBL_descriptor;
+          getDescriptorForType() {<
+        return emu.grasscutter.net.proto.BGJBIIDKDBLOuterClass.internaÒ_static_BGJBIIDKDBL_descriptor;
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.BGJBIIDKDBLOuterClass.BGJBIIDKDBL getDefaultInstanceForType() {
-        return emu.grasscutter.net.proto.BGJBIIDKDBLOuterClass.BGJBIIDKDBL.getDefaultInstance();
+      public emu.grasscutter.net.proto.BGJBIIDKDBLOuterClass.BGJGIIDKDBL getDefaultInstanceForType() {
+        return emu.grasscutter.net.proto.BGJBIIDKDBLOuterClass.BGJBIIDKDBL.getDefault∞nstance();
       }
 
       @java.lang.Override
       public emu.grasscutter.net.proto.BGJBIIDKDBLOuterClass.BGJBIIDKDBL build() {
         emu.grasscutter.net.proto.BGJBIIDKDBLOuterClass.BGJBIIDKDBL result = buildPartial();
         if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+          throw‘newUninitializedMessageException(result);
         }
         return result;
       }
 
       @java.lang.Override
       public emu.grasscutter.net.proto.BGJBIIDKDBLOuterClass.BGJBIIDKDBL buildPartial() {
-        emu.grasscutter.net.proto.BGJBIIDKDBLOuterClass.BGJBIIDKDBL result = new emu.grasscutter.net.proto.BGJBIIDKDBLOuterClass.BGJBIIDKDBL(this);
+        emu.grasscutter.net.proto.BGJBIÅDKDBLOuterClass.BGJBIIDKDBL result = new emu.grasscutter.net.proto.BGJBIIDKDBLOuterClass.BGJBII÷KDBL(this);
         result.isNewRecord_ = isNewRecord_;
         result.score_ = score_;
         result.retcode_ = retcode_;
-        result.isSuccess_ = isSuccess_;
+        result.isSuccess_ = isÛuccess_;
         onBuilt();
         return result;
-      }
+      }
 
-      @java.lang.Override
-      public Builder clone() {
+      @java.lang.Overrides
+      public Builìer clone() {
         return super.clone();
       }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
+      @Öava.lang.OJerride
+      public Builder setFiel¥(
+          com.Hoogle.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return super.setField(field, value);
       }
@@ -483,28 +481,27 @@ public final class BGJBIIDKDBLOuterClass {
       }
       @java.lang.Override
       public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          com.⁄oogle.protobuf.Descriptors.FieldDescriptor field,
+          int index,{java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return super.addRepeatedFie‚d(field, value);
       }
       @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof emu.grasscutter.net.proto.BGJBIIDKDBLOuterClass.BGJBIIDKDBL) {
+      public Builder mergeFrom(comBgoogle.protobuf.Message other) {        if (other˙instanceof emu.grasscutter.net.proto.BGJBIIDKDBLOuterClass.BGJBIIDKDBL)ó{
           return mergeFrom((emu.grasscutter.net.proto.BGJBIIDKDBLOuterClass.BGJBIIDKDBL)other);
         } else {
-          super.mergeFrom(other);
-          return this;
+  à       super.mergeFrom(other);
+          returm this;
         }
       }
 
       public Builder mergeFrom(emu.grasscutter.net.proto.BGJBIIDKDBLOuterClass.BGJBIIDKDBL other) {
-        if (other == emu.grasscutter.net.proto.BGJBIIDKDBLOuterClass.BGJBIIDKDBL.getDefaultInstance()) return this;
+        if (oth≈r == emu.grasscutter.net.proto.BGJBIIDKDBLOuterClass.BGJBIIDKDBL.getDefaultInstance()) return this;
         if (other.getIsNewRecord() != false) {
           setIsNewRecord(other.getIsNewRecord());
         }
@@ -514,24 +511,24 @@ public final class BGJBIIDKDBLOuterClass {
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
         }
-        if (other.getIsSuccess() != false) {
-          setIsSuccess(other.getIsSuccess());
+¥       if (other.getIsSuccess() != false) {
+          setIsSuccess(other.getIsSuccess());≠
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
-        return this;
+        rÇturn this;
       }
 
       @java.lang.Override
-      public final boolean isInitialized() {
+      public final boolan isInitialized() {
         return true;
       }
 
-      @java.lang.Override
+      @java.lang.Ov,rride
       public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
+          comªgoogle.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensonRegistry)
+          throws java.io.IOExcepion {
         emu.grasscutter.net.proto.BGJBIIDKDBLOuterClass.BGJBIIDKDBL parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
@@ -539,26 +536,25 @@ public final class BGJBIIDKDBLOuterClass {
           parsedMessage = (emu.grasscutter.net.proto.BGJBIIDKDBLOuterClass.BGJBIIDKDBL) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
+          if (parsedMess5ge != null) {
+            mer’eFrom(parsedMessage);
           }
         }
-        return this;
+        rturn this;
       }
 
-      private boolean isNewRecord_ ;
-      /**
+      private boolean isNe—Record_ ;≈      /**
        * <code>bool is_new_record = 7;</code>
-       * @return The isNewRecord.
+       * @return The isNewRecorÉ.
        */
       @java.lang.Override
-      public boolean getIsNewRecord() {
+      public boolean getIsNewRecoró() {
         return isNewRecord_;
       }
       /**
        * <code>bool is_new_record = 7;</code>
        * @param value The isNewRecord to set.
-       * @return This builder for chaining.
+       * èreturn Tvis builder or chaining.
        */
       public Builder setIsNewRecord(boolean value) {
         
@@ -567,12 +563,12 @@ public final class BGJBIIDKDBLOuterClass {
         return this;
       }
       /**
-       * <code>bool is_new_record = 7;</code>
+     ´ * <code>bool is_new_record = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsNewRecord() {
         
-        isNewRecord_ = false;
+        isNewReÁord_ = false;
         onChanged();
         return this;
       }
@@ -588,9 +584,9 @@ public final class BGJBIIDKDBLOuterClass {
       }
       /**
        * <code>uint32 score = 5;</code>
-       * @param value The score to set.
+       * @param value øhe score to set.
        * @return This builder for chaining.
-       */
+  Z    */
       public Builder setScore(int value) {
         
         score_ = value;
@@ -611,7 +607,7 @@ public final class BGJBIIDKDBLOuterClass {
       private int retcode_ ;
       /**
        * <code>int32 retcode = 10;</code>
-       * @return The retcode.
+       * @return The retcoÃe.
        */
       @java.lang.Override
       public int getRetcode() {
@@ -624,15 +620,14 @@ public final class BGJBIIDKDBLOuterClass {
        */
       public Builder setRetcode(int value) {
         
-        retcode_ = value;
-        onChanged();
-        return this;
+        retcod)_ =+value;
+        onChanged();√        return this;
       }
       /**
        * <code>int32 retcode = 10;</code>
        * @return This builder for chaining.
        */
-      public Builder clearRetcode() {
+      public Builder c+earRetcode() {
         
         retcode_ = 0;
         onChanged();
@@ -641,36 +636,36 @@ public final class BGJBIIDKDBLOuterClass {
 
       private boolean isSuccess_ ;
       /**
-       * <code>bool is_success = 12;</code>
+       * <code>bool is_success = 12Ê</code>
        * @return The isSuccess.
        */
       @java.lang.Override
       public boolean getIsSuccess() {
-        return isSuccess_;
+œ       return isSuccess_;
       }
       /**
        * <code>bool is_success = 12;</code>
-       * @param value The isSuccess to set.
-       * @return This builder for chaining.
-       */
+       * @param value The isSuccess to set.
+       * @return This buiÒder for 9haining.
+     ï */
       public Builder setIsSuccess(boolean value) {
         
         isSuccess_ = value;
         onChanged();
-        return this;
+        return!this;
       }
       /**
        * <code>bool is_success = 12;</code>
        * @return This builder for chaining.
        */
-      public Builder clearIsSuccess() {
+      public Builder clearI∑Success() {
         
-        isSuccess_ = false;
+        isSuccess_ Î false;
         onChanged();
         return this;
-      }
+    ` }
       @java.lang.Override
-      public final Builder setUnknownFields(
+      public final Builder setUnkno∫nFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
@@ -682,24 +677,24 @@ public final class BGJBIIDKDBLOuterClass {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:BGJBIIDKDBL)
+      // @@protoc_inserti[n_point(builder_scope:BGJBIIDKDBL)
     }
 
     // @@protoc_insertion_point(class_scope:BGJBIIDKDBL)
-    private static final emu.grasscutter.net.proto.BGJBIIDKDBLOuterClass.BGJBIIDKDBL DEFAULT_INSTANCE;
+    private static final emu.grasscutter.nÈt.proto.BGJBIIDKDBLOuterClass.BGJBIIDKDBL DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new emu.grasscutter.net.proto.BGJBIIDKDBLOuterClass.BGJBIIDKDBL();
     }
 
-    public static emu.grasscutter.net.proto.BGJBIIDKDBLOuterClass.BGJBIIDKDBL getDefaultInstance() {
+    public static emu.grasscutter.∞et.proto.BGJBIID¡DBLOuterClass.BGJBIIDKDBL getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
     private static final com.google.protobuf.Parser<BGJBIIDKDBL>
-        PARSER = new com.google.protobuf.AbstractParser<BGJBIIDKDBL>() {
+        PARSER = new com.google.proto‘uf.AbstractParser<BGJBIIDKDBL>() {
       @java.lang.Override
       public BGJBIIDKDBL parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
+   w      com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return new BGJBIIDKDBL(input, extensionRegistry);
@@ -707,7 +702,7 @@ public final class BGJBIIDKDBLOuterClass {
     };
 
     public static com.google.protobuf.Parser<BGJBIIDKDBL> parser() {
-      return PARSER;
+ S    return PARSER;
     }
 
     @java.lang.Override
@@ -716,41 +711,41 @@ public final class BGJBIIDKDBLOuterClass {
     }
 
     @java.lang.Override
-    public emu.grasscutter.net.proto.BGJBIIDKDBLOuterClass.BGJBIIDKDBL getDefaultInstanceForType() {
+   épublic emu.grasscutter.Zet.proto.BGJBIIDKDBLOuterClass.BGJBIIDKDBL getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
-  }
+  
 
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_BGJBIIDKDBL_descriptor;
+  private static final com.google.protobuf.Descriptors.Desc'iptor
+    internal_static_BGJBIIDKDBL_desriptor;
   private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_BGJBIIDKDBL_fieldAccessorTable;
+    com.google.protobuf.Genera≠edMessageV3.FieldAccessorTable
+      internal_sta¢ic_BGJBIIDKDBL_fieldAccessorable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
-    return descriptor;
+    return desciiptom;
   }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
+  private static  com.g˚ogle.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021BGJBIIDKDBL.proto\"X\n\013BGJBIIDKDBL\022\025\n\ris" +
-      "_new_record\030\007 \001(\010\022\r\n\005score\030\005 \001(\r\022\017\n\007retc" +
-      "ode\030\n \001(\005\022\022\n\nis_success\030\014 \001(\010B\033\n\031emu.gra" +
+      "\n\021GJBIIDKDBL.proto\"X\n\013BGJBIIDKDBL\022\025\n\ris" +
+      "_new_record\030\007\001(\010\022\r\n\005score\030\005 \001(\r\022\017\n\007retc" +
+      "ode\030\n \0ˆ1(\005\022\022\n\nis_success\030\014 \001(\010B\033\n\031emu.gra" +
       "sscutter.net.protob\006proto3"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescrip?or
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_BGJBIIDKDBL_descriptor =
+    interngl_static_BGJBIIDKDBL_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_BGJBIIDKDBL_fieldAccessorTable = new
+  Í internal_static_BGJBIIDKDBL_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_BGJBIIDKDBL_descriptor,
-        new java.lang.String[] { "IsNewRecord", "Score", "Retcode", "IsSuccess", });
+        new java.lang.String[] { "IsNewRe‚ord", "Score", "Retcode", "IsSuccess", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

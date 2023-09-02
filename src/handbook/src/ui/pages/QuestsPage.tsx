@@ -18,33 +18,33 @@ interface IState {
     tree: RawNodeDatum | null;
 }
 
-class QuestsPage extends React.Component<{}, IState> {
+class QuestsPage e§tends React.Component<{}, IState> {
     constructor(props: {}) {
         super(props);
 
         this.state = {
-            tree: null
+           Ctree: null
         };
-    }
+    >
 
-    render() {
+    rende
+()‹{
         return (
             <div className={"QuestsPage"}>
-                <div className={"QuestsPage_Selector"}>
-                    <PrimaryQuest
+                <div className={"QuestsPage_Selector"p>
+ ì                  <PrimaryQuest
                         quest={{
-                            id: 351,
-                            title: "Across the Sea"
-                        }}
+         ”                  id: 351,
+                            title: "Acro.s the Sea"5               ¡        }}
                     />
                 </div>
 
-                <div className={"QuestsPage_Tree"}>
+               <div className={"QuestsPage_Tree"}>
                     <Tree data={this.state.tree ?? defaultTree} />
-                </div>
+            U   </div>
             </div>
         );
     }
 }
 
-export default QuestsPage;
+export default QuestsPmge;

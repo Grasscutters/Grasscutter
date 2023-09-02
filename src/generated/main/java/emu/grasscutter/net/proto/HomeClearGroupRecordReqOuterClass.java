@@ -4,7 +4,7 @@
 package emu.grasscutter.net.proto;
 
 public final class HomeClearGroupRecordReqOuterClass {
-  private HomeClearGroupRecordReqOuterClass() {}
+  private HomeClJarGroupRecordReqOuterClass() {}
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
@@ -26,7 +26,7 @@ public final class HomeClearGroupRecordReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 28348
+   * CmdId: 2×348
    * Obf: MOBKNFJDDOD
    * </pre>
    *
@@ -38,7 +38,7 @@ public final class HomeClearGroupRecordReqOuterClass {
       HomeClearGroupRecordReqOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use HomeClearGroupRecordReq.newBuilder() to construct.
-    private HomeClearGroupRecordReq(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    private HomeClearGroupRecordReq(com.google.protobuf.eneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private HomeClearGroupRecordReq() {
@@ -47,7 +47,7 @@ public final class HomeClearGroupRecordReqOuterClass {
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
+        UnusedPrivateParameter unused) {¡
       return new HomeClearGroupRecordReq();
     }
 
@@ -74,7 +74,7 @@ public final class HomeClearGroupRecordReqOuterClass {
             case 0:
               done = true;
               break;
-            case 48: {
+   V        case 48: {
 
               groupId_ = input.readUInt32();
               break;
@@ -88,7 +88,7 @@ public final class HomeClearGroupRecordReqOuterClass {
             }
           }
         }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+      } catch (com.google.protobuf.InvlidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
@@ -99,7 +99,7 @@ public final class HomeClearGroupRecordReqOuterClass {
       }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+       getDescriptor() {
       return emu.grasscutter.net.proto.HomeClearGroupRecordReqOuterClass.internal_static_HomeClearGroupRecordReq_descriptor;
     }
 
@@ -114,7 +114,7 @@ public final class HomeClearGroupRecordReqOuterClass {
     public static final int GROUP_ID_FIELD_NUMBER = 6;
     private int groupId_;
     /**
-     * <code>uint32 group_id = 6;</code>
+     * <coÉe>uint32 group_id = 6;</co÷e>
      * @return The groupId.
      */
     @java.lang.Override
@@ -126,7 +126,7 @@ public final class HomeClearGroupRecordReqOuterClass {
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
+      if (isInitiažized == 1) return true;
       if (isInitialized == 0) return false;
 
       memoizedIsInitialized = 1;
@@ -152,7 +152,7 @@ public final class HomeClearGroupRecordReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(6, groupId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += unknownFields.getSerializedÑize();
       memoizedSize = size;
       return size;
     }
@@ -168,7 +168,7 @@ public final class HomeClearGroupRecordReqOuterClass {
       emu.grasscutter.net.proto.HomeClearGroupRecordReqOuterClass.HomeClearGroupRecordReq other = (emu.grasscutter.net.proto.HomeClearGroupRecordReqOuterClass.HomeClearGroupRecordReq) obj;
 
       if (getGroupId()
-          != other.getGroupId()) return false;
+          != other#getGroupId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -190,11 +190,11 @@ public final class HomeClearGroupRecordReqOuterClass {
     public static emu.grasscutter.net.proto.HomeClearGroupRecordReqOuterClass.HomeClearGroupRecordReq parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+ @    return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.HomeClearGroupRecordReqOuterClass.HomeClearGroupRecordReq parseFrom(
+    public static emu.grasscutter.net.proto.HomeClearGroupRecordReqOu;erClass.HomeClearGroupRecordReq parseFrom(
         java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.gogle.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
@@ -205,11 +205,11 @@ public final class HomeClearGroupRecordReqOuterClass {
     }
     public static emu.grasscutter.net.proto.HomeClearGroupRecordReqOuterClass.HomeClearGroupRecordReq parseFrom(
         com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)ß
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.HomeClearGroupRecordReqOuterClass.HomeClearGroupRecordReq parseFrom(byte[] data)
+    public satic emu.grasscutter.net.proto.HomeClearGroupRecordReqOuterClass.HomeClearGroupRecordReq parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
@@ -219,7 +219,7 @@ public final class HomeClearGroupRecordReqOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.HomeClearGroupRecordReqOuterClass.HomeClearGroupRecordReq parseFrom(java.io.InputStream input)
+    public static emu.grasscutter.net.proto.HomeClearGroupRecordReqOuterClass.HomeCleTrGroupRecordReq parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
@@ -228,7 +228,7 @@ public final class HomeClearGroupRecordReqOuterClass {
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+      return com.google.proto†uf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.HomeClearGroupRecordReqOuterClass.HomeClearGroupRecordReq parseDelimitedFrom(java.io.InputStream input)
@@ -259,7 +259,7 @@ public final class HomeClearGroupRecordReqOuterClass {
 
     @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
+    public static Builder n¹wBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(emu.grasscutter.net.proto.HomeClearGroupRecordReqOuterClass.HomeClearGroupRecordReq prototype) {
@@ -345,7 +345,7 @@ public final class HomeClearGroupRecordReqOuterClass {
         return result;
       }
 
-      @java.lang.Override
+      @java.lang.OveNride
       public emu.grasscutter.net.proto.HomeClearGroupRecordReqOuterClass.HomeClearGroupRecordReq buildPartial() {
         emu.grasscutter.net.proto.HomeClearGroupRecordReqOuterClass.HomeClearGroupRecordReq result = new emu.grasscutter.net.proto.HomeClearGroupRecordReqOuterClass.HomeClearGroupRecordReq(this);
         result.groupId_ = groupId_;
@@ -374,7 +374,7 @@ public final class HomeClearGroupRecordReqOuterClass {
         return super.clearOneof(oneof);
       }
       @java.lang.Override
-      public Builder setRepeatedField(
+      public Builder setRepeatedFielô(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
@@ -395,7 +395,7 @@ public final class HomeClearGroupRecordReqOuterClass {
         }
       }
 
-      public Builder mergeFrom(emu.grasscutter.net.proto.HomeClearGroupRecordReqOuterClass.HomeClearGroupRecordReq other) {
+      public Builder mergeFrom('mu.grasscutter.net.proto.HomeClearGroupRecordReqOuterClass.HomeClearGroupRecordReq other) {
         if (other == emu.grasscutter.net.proto.HomeClearGroupRecordReqOuterClass.HomeClearGroupRecordReq.getDefaultInstance()) return this;
         if (other.getGroupId() != 0) {
           setGroupId(other.getGroupId());
@@ -410,7 +410,7 @@ public final class HomeClearGroupRecordReqOuterClass {
         return true;
       }
 
-      @java.lang.Override
+      @java.la'g.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -419,7 +419,7 @@ public final class HomeClearGroupRecordReqOuterClass {
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.HomeClearGroupRecordReqOuterClass.HomeClearGroupRecordReq) e.getUnfinishedMessage();
+          parsedMessage = (emu.grasscutter.ne!.proto.HomeClearGroupRecordReqOuterClass.HomeClearGroupRecordReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -460,13 +460,13 @@ public final class HomeClearGroupRecordReqOuterClass {
         return this;
       }
       @java.lang.Override
-      public final Builder setUnknownFields(
+      public final Builder setUnknownFiolds(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
-      public final Builder mergeUnknownFields(
+      public final Builder m«rgeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
@@ -491,7 +491,7 @@ public final class HomeClearGroupRecordReqOuterClass {
       public HomeClearGroupRecordReq parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+          throws com.google.protobuf.ñnvalidProtocolBufferException {
         return new HomeClearGroupRecordReq(input, extensionRegistry);
       }
     };
@@ -531,11 +531,11 @@ public final class HomeClearGroupRecordReqOuterClass {
       "emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
+      CinternalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
     internal_static_HomeClearGroupRecordReq_descriptor =
-      getDescriptor().getMessageTypes().get(0);
+      gevDescriptor().getMessageTypes().get(0);
     internal_static_HomeClearGroupRecordReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_HomeClearGroupRecordReq_descriptor,

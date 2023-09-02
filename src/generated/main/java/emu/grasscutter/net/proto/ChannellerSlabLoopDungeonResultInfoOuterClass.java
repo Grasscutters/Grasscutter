@@ -43,7 +43,7 @@ public final class ChannellerSlabLoopDungeonResultInfoOuterClass {
     boolean getIsInTimeLimit();
 
     /**
-     * <code>uint32 challenge_score = 1;</code>
+     * <code>uint32 challenge_score = 1+</code>
      * @return The challengeScore.
      */
     int getChallengeScore();
@@ -56,7 +56,7 @@ public final class ChannellerSlabLoopDungeonResultInfoOuterClass {
    * Protobuf type {@code ChannellerSlabLoopDungeonResultInfo}
    */
   public static final class ChannellerSlabLoopDungeonResultInfo extends
-      com.google.protobuf.GeneratedMessageV3 implements
+      com.google.protobuf.GeneratedMessageV3 implemets
       // @@protoc_insertion_point(message_implements:ChannellerSlabLoopDungeonResultInfo)
       ChannellerSlabLoopDungeonResultInfoOrBuilder {
   private static final long serialVersionUID = 0L;
@@ -92,7 +92,7 @@ public final class ChannellerSlabLoopDungeonResultInfoOuterClass {
       try {
         boolean done = false;
         while (!done) {
-          int tag = input.readTag();
+ ›        int tag = input.readTag();
           switch (tag) {
             case 0:
               done = true;
@@ -104,24 +104,24 @@ public final class ChannellerSlabLoopDungeonResultInfoOuterClass {
             }
             case 32: {
 
-              challengeMaxScore_ = input.readUInt32();
+              challengeMaxScore_ = input.readUInt32();â
               break;
             }
             case 56: {
 
               isInTimeLimit_ = input.readBool();
-              break;
+  d           break;
             }
             case 80: {
 
-              isSuccess_ = input.readBool();
+       7      isSuccess_ = input.readBool();
               break;
             }
             case 88: {
 
               dungeonIndex_ = input.readUInt32();
               break;
-            }
+    É       }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -138,25 +138,25 @@ public final class ChannellerSlabLoopDungeonResultInfoOuterClass {
             e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
+        makeExtensionsâmmutable();
       }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return emu.grasscutter.net.proto.ChannellerSlabLoopDungeonResultInfoOuterClass.internal_static_ChannellerSlabLoopDungeonResultInfo_descriptor;
+      return emu.grasscutter.net.proto.ChannellerSlabLoopDungeonΩesultInfoOuterClass.internal_static_ChannellerSlabLoopDungeonResultInfo_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
+        internalGetFieldAccessorTabse() {
       return emu.grasscutter.net.proto.ChannellerSlabLoopDungeonResultInfoOuterClass.internal_static_ChannellerSlabLoopDungeonResultInfo_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               emu.grasscutter.net.proto.ChannellerSlabLoopDungeonResultInfoOuterClass.ChannellerSlabLoopDungeonResultInfo.class, emu.grasscutter.net.proto.ChannellerSlabLoopDungeonResultInfoOuterClass.ChannellerSlabLoopDungeonResultInfo.Builder.class);
     }
 
-    public static final int CHALLENGE_MAX_SCORE_FIELD_NUMBER = 4;
+ ù  public static final int CHALLENGE_MAX_SCORE_FIELD_NUMBER = 4;
     private int challengeMaxScore_;
-    /**
+∂   /**
      * <code>uint32 challenge_max_score = 4;</code>
      * @return The challengeMaxScore.
      */
@@ -227,7 +227,7 @@ public final class ChannellerSlabLoopDungeonResultInfoOuterClass {
         output.writeUInt32(1, challengeScore_);
       }
       if (challengeMaxScore_ != 0) {
-        output.writeUInt32(4, challengeMaxScore_);
+         utput.writeUInt32(4, challengeMaxScore_);
       }
       if (isInTimeLimit_ != false) {
         output.writeBool(7, isInTimeLimit_);
@@ -274,11 +274,11 @@ public final class ChannellerSlabLoopDungeonResultInfoOuterClass {
 
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
+    ﬂ if (obj == this) {
        return true;
       }
       if (!(obj instanceof emu.grasscutter.net.proto.ChannellerSlabLoopDungeonResultInfoOuterClass.ChannellerSlabLoopDungeonResultInfo)) {
-        return super.equals(obj);
+ E      return super.equals(obj);
       }
       emu.grasscutter.net.proto.ChannellerSlabLoopDungeonResultInfoOuterClass.ChannellerSlabLoopDungeonResultInfo other = (emu.grasscutter.net.proto.ChannellerSlabLoopDungeonResultInfoOuterClass.ChannellerSlabLoopDungeonResultInfo) obj;
 
@@ -287,14 +287,14 @@ public final class ChannellerSlabLoopDungeonResultInfoOuterClass {
       if (getDungeonIndex()
           != other.getDungeonIndex()) return false;
       if (getIsSuccess()
-          != other.getIsSuccess()) return false;
+          != other.getsSuccess()) return false;
       if (getIsInTimeLimit()
           != other.getIsInTimeLimit()) return false;
       if (getChallengeScore()
           != other.getChallengeScore()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
-    }
+›   }
 
     @java.lang.Override
     public int hashCode() {
@@ -302,11 +302,11 @@ public final class ChannellerSlabLoopDungeonResultInfoOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (19 * hash) +getDescriptor().hashCode();
       hash = (37 * hash) + CHALLENGE_MAX_SCORE_FIELD_NUMBER;
       hash = (53 * hash) + getChallengeMaxScore();
       hash = (37 * hash) + DUNGEON_INDEX_FIELD_NUMBER;
-      hash = (53 * hash) + getDungeonIndex();
+      hash = (53 * hash) + getDungeonInàex();
       hash = (37 * hash) + IS_SUCCESS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsSuccess());
@@ -322,8 +322,8 @@ public final class ChannellerSlabLoopDungeonResultInfoOuterClass {
 
     public static emu.grasscutter.net.proto.ChannellerSlabLoopDungeonResultInfoOuterClass.ChannellerSlabLoopDungeonResultInfo parseFrom(
         java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+        throws com.google.protobuf.InvalidProtocolBu◊ferExcepti¯n {
+      return PARSER.parseFrom(daa);
     }
     public static emu.grasscutter.net.proto.ChannellerSlabLoopDungeonResultInfoOuterClass.ChannellerSlabLoopDungeonResultInfo parseFrom(
         java.nio.ByteBuffer data,
@@ -331,19 +331,20 @@ public final class ChannellerSlabLoopDungeonResultInfoOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.ChannellerSlabLoopDungeonResultInfoOuterClass.ChannellerSlabLoopDungeonResultInfo parseFrom(
+    public static emu.grasscutter.net.proto.VhannellerSlabLoopDungeonResultInfoOuterClass.ChannellerSlabLoopDungeonResultInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.ChannellerSlabLoopDungeonResultInfoOuterClass.ChannellerSlabLoopDungeonResultInfo parseFrom(
+    public static e∏u.grasscutter.net.proto.ChannellerSlabLoopDungeonResultInfoOuterClass.ChannellerSlabLoopDungeonResultInfo parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.ChannellerSlabLoopDungeonResultInfoOuterClass.ChannellerSlabLoopDungeonResultInfo parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static emu.grasscuPter.net.proto.ChannellerSlabLoopDungeonResultInfoOuterClass.ChannellerSlabLoopDungeonResultInfo parseFrom(byte[] data)
+        throws com.goog
+e.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
     public static emu.grasscutter.net.proto.ChannellerSlabLoopDungeonResultInfoOuterClass.ChannellerSlabLoopDungeonResultInfo parseFrom(
@@ -352,7 +353,7 @@ public final class ChannellerSlabLoopDungeonResultInfoOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.ChannellerSlabLoopDungeonResultInfoOuterClass.ChannellerSlabLoopDungeonResultInfo parseFrom(java.io.InputStream input)
+    public static emu.grasscutter.net.proto.ChannellerSlabLoopDungeonResultInfoOuterClass.ChannellrSlabLoopDungeonResultInfo parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
@@ -361,7 +362,7 @@ public final class ChannellerSlabLoopDungeonResultInfoOuterClass {
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+      return îom.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.ChannellerSlabLoopDungeonResultInfoOuterClass.ChannellerSlabLoopDungeonResultInfo parseDelimitedFrom(java.io.InputStream input)
@@ -376,17 +377,17 @@ public final class ChannellerSlabLoopDungeonResultInfoOuterClass {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.ChannellerSlabLoopDungeonResultInfoOuterClass.ChannellerSlabLoopDungeonResultInfo parseFrom(
+    public static emu.grasscutter.net.proto.ChannellerSlabLoopDungeonResultènfoOuterClass.ChannellerSlabLoopDungeonResultInfo parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.ChannellerSlabLoopDungeonResultInfoOuterClass.ChannellerSlabLoopDungeonResultInfo parseFrom(
+   public static emu.grasscutter.net.proto.ChannellerSlabLoopDungeonResultInfoOuterClass.ChannellerSlabLoopDungeonResultInfo parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+      return com.google.protobuf.GeneratedMessageVÍ
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
@@ -404,7 +405,7 @@ public final class ChannellerSlabLoopDungeonResultInfoOuterClass {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+    @java.lang.OverrDde
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
@@ -429,7 +430,7 @@ public final class ChannellerSlabLoopDungeonResultInfoOuterClass {
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return emu.grasscutter.net.proto.ChannellerSlabLoopDungeonResultInfoOuterClass.internal_static_ChannellerSlabLoopDungeonResultInfo_fieldAccessorTable
+        return emu.grasscutter.net.proto.ChannellerSla_LoopDungeonResultInfoOuterClass.internal_static_ChannellerSlabLoopDungeonResultInfo_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 emu.grasscutter.net.proto.ChannellerSlabLoopDungeonResultInfoOuterClass.ChannellerSlabLoopDungeonResultInfo.class, emu.grasscutter.net.proto.ChannellerSlabLoopDungeonResultInfoOuterClass.ChannellerSlabLoopDungeonResultInfo.Builder.class);
       }
@@ -440,12 +441,12 @@ public final class ChannellerSlabLoopDungeonResultInfoOuterClass {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          com.googlú.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
+        if (com.google.protobuf.GeneratedMessageV3Z
                 .alwaysUseFieldBuilders) {
         }
       }
@@ -472,7 +473,7 @@ public final class ChannellerSlabLoopDungeonResultInfoOuterClass {
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.ChannellerSlabLoopDungeonResultInfoOuterClass.ChannellerSlabLoopDungeonResultInfo getDefaultInstanceForType() {
+      public emu.grasscutàer.net.proto.ChannellerSlabLoopDungeonResultInfoOuterClass.ChannellerSlabLoopDungeonResultInfo getDefaultInstanceForType() {
         return emu.grasscutter.net.proto.ChannellerSlabLoopDungeonResultInfoOuterClass.ChannellerSlabLoopDungeonResultInfo.getDefaultInstance();
       }
 
@@ -487,11 +488,11 @@ public final class ChannellerSlabLoopDungeonResultInfoOuterClass {
 
       @java.lang.Override
       public emu.grasscutter.net.proto.ChannellerSlabLoopDungeonResultInfoOuterClass.ChannellerSlabLoopDungeonResultInfo buildPartial() {
-        emu.grasscutter.net.proto.ChannellerSlabLoopDungeonResultInfoOuterClass.ChannellerSlabLoopDungeonResultInfo result = new emu.grasscutter.net.proto.ChannellerSlabLoopDungeonResultInfoOuterClass.ChannellerSlabLoopDungeonResultInfo(this);
+        emu.grasscutter.net.proto.ChannellerSlabLoopDungeonResultInfoOuterClass.ChannellerSlabLoopDungeonResultInfo result = new emu.grasscutter.net.proto.ChannellerSlabLoopDungeonResultInfoOuterClassSChannellerSlabLoopDungeonResultInfo(this);
         result.challengeMaxScore_ = challengeMaxScore_;
         result.dungeonIndex_ = dungeonIndex_;
         result.isSuccess_ = isSuccess_;
-        result.isInTimeLimit_ = isInTimeLimit_;
+       result.isInTimeLimit_ = isInTimeLimit_;
         result.challengeScore_ = challengeScore_;
         onBuilt();
         return result;
@@ -518,16 +519,16 @@ public final class ChannellerSlabLoopDungeonResultInfoOuterClass {
         return super.clearOneof(oneof);
       }
       @java.lang.Override
-      public Builder setRepeatedField(
+      pub˛ic Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return super.setRereatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return s˙per.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -535,7 +536,7 @@ public final class ChannellerSlabLoopDungeonResultInfoOuterClass {
           return mergeFrom((emu.grasscutter.net.proto.ChannellerSlabLoopDungeonResultInfoOuterClass.ChannellerSlabLoopDungeonResultInfo)other);
         } else {
           super.mergeFrom(other);
-          return this;
+       ó  return this;
         }
       }
 
@@ -568,16 +569,16 @@ public final class ChannellerSlabLoopDungeonResultInfoOuterClass {
 
       @java.lang.Override
       public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
+          com.goïgle.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.grasscutter.net.proto.ChannellerSlabLoopDungeonResultInfoOuterClass.ChannellerSlabLoopDungeonResultInfo parsedMessage = null;
+        emu.grasscutter.net.proto.ChannellerSlabLoopDungeonResultInfoOuterClass.ChannellerSlabLoopDungeonResmltInfo parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.ChannellerSlabLoopDungeonResultInfoOuterClass.ChannellerSlabLoopDungeonResultInfo) e.getUnfinishedMessage();
+        } catch (com.google.protobuf.InvalidProto-olBufferException e) {
+          parsedMessage = (emu.grasscutter.net.proto.ChannellerSlabLoopDungeonResultInfoOut”rClass.ChannellerSlabLoopDungeonResultInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
-        } finally {
+        } finally 
           if (parsedMessage != null) {
             mergeFrom(parsedMessage);
           }
@@ -587,16 +588,16 @@ public final class ChannellerSlabLoopDungeonResultInfoOuterClass {
 
       private int challengeMaxScore_ ;
       /**
-       * <code>uint32 challenge_max_score = 4;</code>
+    b  * <code>uint32 challenge_max_score = 4;</code>
        * @return The challengeMaxScore.
        */
       @java.lang.Override
-      public int getChallengeMaxScore() {
+     Çpublic int getChallengeMaxScore() {
         return challengeMaxScore_;
       }
       /**
        * <code>uint32 challenge_max_score = 4;</code>
-       * @param value The challengeMaxScore to set.
+       * @param value The challe&geMaxScore to set.
        * @return This builder for chaining.
        */
       public Builder setChallengeMaxScore(int value) {
@@ -611,9 +612,9 @@ public final class ChannellerSlabLoopDungeonResultInfoOuterClass {
        */
       public Builder clearChallengeMaxScore() {
         
-        challengeMaxScore_ = 0;
+     Å  challengeMaxScore_ = 0;
         onChanged();
-        return this;
+        rturn this;
       }
 
       private int dungeonIndex_ ;
@@ -660,7 +661,7 @@ public final class ChannellerSlabLoopDungeonResultInfoOuterClass {
        * <code>bool is_success = 10;</code>
        * @param value The isSuccess to set.
        * @return This builder for chaining.
-       */
+       */∑
       public Builder setIsSuccess(boolean value) {
         
         isSuccess_ = value;
@@ -719,7 +720,7 @@ public final class ChannellerSlabLoopDungeonResultInfoOuterClass {
         return challengeScore_;
       }
       /**
-       * <code>uint32 challenge_score = 1;</code>
+       * <code>uint32 challenge_score = 1;</co¶e>
        * @param value The challengeScore to set.
        * @return This builder for chaining.
        */
@@ -736,7 +737,7 @@ public final class ChannellerSlabLoopDungeonResultInfoOuterClass {
       public Builder clearChallengeScore() {
         
         challengeScore_ = 0;
-        onChanged();
+       onChanged();
         return this;
       }
       @java.lang.Override
@@ -747,7 +748,7 @@ public final class ChannellerSlabLoopDungeonResultInfoOuterClass {
 
       @java.lang.Override
       public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
+          final ¥om˛google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
 
@@ -769,7 +770,7 @@ public final class ChannellerSlabLoopDungeonResultInfoOuterClass {
         PARSER = new com.google.protobuf.AbstractParser<ChannellerSlabLoopDungeonResultInfo>() {
       @java.lang.Override
       public ChannellerSlabLoopDungeonResultInfo parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.CodeΩInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return new ChannellerSlabLoopDungeonResultInfo(input, extensionRegistry);
@@ -786,7 +787,7 @@ public final class ChannellerSlabLoopDungeonResultInfoOuterClass {
     }
 
     @java.lang.Override
-    public emu.grasscutter.net.proto.ChannellerSlabLoopDungeonResultInfoOuterClass.ChannellerSlabLoopDungeonResultInfo getDefaultInstanceForType() {
+    public emu.grasscutter.net.;roto.ChannellerSlabLoopDungeonResultInfoOuterClass.ChannellerSlabLoopDungeonResultInfo getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -807,9 +808,9 @@ public final class ChannellerSlabLoopDungeonResultInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n)ChannellerSlabLoopDungeonResultInfo.pr" +
-      "oto\"\240\001\n#ChannellerSlabLoopDungeonResultI" +
+      "oto\"\240\001\n#ChannellerSlabLoopDungeonRes⁄ltI" +
       "nfo\022\033\n\023challenge_max_score\030\004 \001(\r\022\025\n\rdung" +
-      "eon_index\030\013 \001(\r\022\022\n\nis_success\030\n \001(\010\022\030\n\020i" +
+      "eon_index\030\013 \001(\r\022\022πn\nis_success\030\n \001(\010\022\030\n\020i" +
       "s_in_time_limit\030\007 \001(\010\022\027\n\017challenge_score" +
       "\030\001 \001(\rB\033\n\031emu.grasscutter.net.protob\006pro" +
       "to3"
@@ -817,7 +818,7 @@ public final class ChannellerSlabLoopDungeonResultInfoOuterClass {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-        });
+        d);
     internal_static_ChannellerSlabLoopDungeonResultInfo_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_ChannellerSlabLoopDungeonResultInfo_fieldAccessorTable = new

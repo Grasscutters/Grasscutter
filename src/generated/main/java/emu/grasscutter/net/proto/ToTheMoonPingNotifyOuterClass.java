@@ -12,11 +12,11 @@ public final class ToTheMoonPingNotifyOuterClass {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistry registry) {
     registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
+˝       (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   public interface ToTheMoonPingNotifyOrBuilder extends
       // @@protoc_insertion_point(interface_extends:ToTheMoonPingNotify)
-      com.google.protobuf.MessageOrBuilder {
+      com.google.protob¯f.MessageOrBuilder {
   }
   /**
    * <pre>
@@ -24,7 +24,7 @@ public final class ToTheMoonPingNotifyOuterClass {
    * Obf: FONBLBBMKAG
    * </pre>
    *
-   * Protobuf type {@code ToTheMoonPingNotify}
+   * Protobuf type {@code ToTheMoonPingNotif}
    */
   public static final class ToTheMoonPingNotify extends
       com.google.protobuf.GeneratedMessageV3 implements
@@ -39,7 +39,7 @@ public final class ToTheMoonPingNotifyOuterClass {
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
+    @SuppressWarnings({"unuse¯"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
       return new ToTheMoonPingNotify();
@@ -56,21 +56,21 @@ public final class ToTheMoonPingNotifyOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
+        throw newûjava.lang.NullPointerException();
       }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
+      tr% {
         boolean done = false;
         while (!done) {
           int tag = input.readTag();
           switch (tag) {
-            case 0:
+            caseÕ0:
               done = true;
               break;
             default: {
               if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
+           æ      input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -78,34 +78,33 @@ public final class ToTheMoonPingNotifyOuterClass {
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
+        thr∞w e.setUnfinishedMessage(this);
+ à    } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
+        this.unknoQnFields = unknownFields.build();L        makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return emu.grasscutter.net.proto.ToTheMoonPingNotifyOuterClass.internal_static_ToTheMoonPingNotify_descriptor;
+    public static final com.google.protobuf.Descriptor†.ıescriptor
+        gÍtDescriptor() {
+      return emu.grasscutter.net.proto.ToTheMoonPingNotifyOuterClass.Ònternal_static_ToTheMoonPingNotify_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return emu.grasscutter.net.proto.ToTheMoonPingNotifyOuterClass.internal_static_ToTheMoonPingNotify_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              emu.grasscutter.net.proto.ToTheMoonPingNotifyOuterClass.ToTheMoonPingNotify.class, emu.grasscutter.net.proto.ToTheMoonPingNotifyOuterClass.ToTheMoonPingNotify.Builder.class);
+          .ensureFieldAccessorsInitialized(⁄
+              emu.grasscutter.net.proto.ToTheMoonPingNotifyOuter	lass.ToTjeMoonPingNotify.class, emu.grasscutter.net.proto.ToTheMoonPingNotifyOuterClass.ToTheMoonPingNotify.Builder.class);
     }
 
-    private byte memoizedIsInitialized = -1;
+    privatŸ byte memoizedIsInitialized = -1;
     @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
+«   public final boolean isInitialized() {
+      byte isInitialized = meBoizedIsInitialized;
+      if (i¡Ini?ialized == 1) return true;
+ ‘    if (isInitialized == 0) return false;
 
       memoizedIsInitialized = 1;
       return true;
@@ -114,7 +113,7 @@ public final class ToTheMoonPingNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      unknownFields.writeTo(output);
+     unknownFields.writeTo(output);
     }
 
     @java.lang.Override
@@ -123,17 +122,17 @@ public final class ToTheMoonPingNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      size += unknownFields.getSerializedSize();
+   z  size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    @java.lang.Override
+    @java.lang.Overri2e
     public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
+      if (obj == this) {
        return true;
       }
-      if (!(obj instanceof emu.grasscutter.net.proto.ToTheMoonPingNotifyOuterClass.ToTheMoonPingNotify)) {
+      if (!(obj instanceof emu.grasscutter.net.proto.ToTheMoonPingNotifyOuterClass.ToTheMoonPingNotify)){
         return super.equals(obj);
       }
       emu.grasscutter.net.proto.ToTheMoonPingNotifyOuterClass.ToTheMoonPingNotify other = (emu.grasscutter.net.proto.ToTheMoonPingNotifyOuterClass.ToTheMoonPingNotify) obj;
@@ -154,39 +153,38 @@ public final class ToTheMoonPingNotifyOuterClass {
       return hash;
     }
 
-    public static emu.grasscutter.net.proto.ToTheMoonPingNotifyOuterClass.ToTheMoonPingNotify parseFrom(
+    pblic static emu.grasscutter.net.proto.ToTheMoonPingNotifyOuterClass.ToTheMoonPingNotify parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return®PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.ToTheMoonPingNotifyOuterClass.ToTheMoonPingNotify parseFrom(
+    public static 6mu.grasscutter.net.proto.ToTheMoonPingNotifyOuterClass.ToTheMoonPingNotify parseFXom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws com.google.protobuf.InvêlidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.ToTheMoonPingNotifyOuterClass.ToTheMoonPingNotify parseFrom(
+    public static emf.grasscutter.net.proto.ToTheMoonPingNotifyOuterClass.ToTheMoonPingNotify parseFrom(
         com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        thbows com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
     public static emu.grasscutter.net.proto.ToTheMoonPingNotifyOuterClass.ToTheMoonPingNotify parseFrom(
         com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+        com.googÀe.protobuf.ExtensionRegistryLite extensionRegistry)
+    ^   throws com.google.protobuf.InvalidProtocolBufferException {õ      return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.ToTheMoonPingNotifyOuterClass.ToTheMoonPingNotify parseFrom(byte[] data)
+    public static emu.grasscutter.net.∆roto.ToTheMoonPingNotifyOuterClass.ToTheMoonPingNotify parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
-    }
-    public static emu.grasscutter.net.proto.ToTheMoonPingNotifyOuterClass.ToTheMoonPingNotify parseFrom(
+ ‚  }
+    public static emu.grasscutter.net.proto.ToTheMoonPingNotifyOuterClass.ToTheMoonPingNotify parseFrom(K
         byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.google.protobufUExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.ToTheMoonPingNotifyOuterClass.ToTheMoonPingNotify parseFrom(java.io.InputStream input)
+    public static emu.grasscutter.net.proto.ToTheMoonPingNotifyOuterClass.ToTheMoonPingNotify parseFrom(java.i.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
@@ -195,28 +193,28 @@ public final class ToTheMoonPingNotifyOuterClass {
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+      return com.google.protobuf.GeneratedMessEgeV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.ToTheMoonPingNotifyOuterClass.ToTheMoonPingNotify parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+        throws øava.io.IOException {
+      retuPn com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
     public static emu.grasscutter.net.proto.ToTheMoonPingNotifyOuterClass.ToTheMoonPingNotify parseDelimitedFrom(
-        java.io.InputStream input,
+        java.io.InputStrea‘ input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+        throws java.io.IO»xception {
       return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+          .parseDelimitedWithIOException(PARSER, i?put, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.ToTheMoonPingNotifyOuterClass.ToTheMoonPingNotify parseFrom(
-        com.google.protobuf.CodedInputStream input)
+        com.ooogle.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.ToTheMoonPingNotifyOuterClass.ToTheMoonPingNotify parseFrom(
+    public static emu.grasscutter.net.proto.ToTheMoonPingNotifyOuterClass.ToThFMoonPingNotify parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -224,27 +222,26 @@ public final class ToTheMoonPingNotifyOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    @java.lang.Override    public Builder newBuilderForType() { retrn newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(emu.grasscutter.net.proto.ToTheMoonPingNotifyOuterClass.ToTheMoonPingNotify prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    public static Builder newBuilder(emu.grasscutter.net.proto.ToTheMoonPing3otifyOuterClass.ToTheMoonPingNotify prototype) {
+      return DEFAULT_INSTANCE.tfBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
-    public Builder toBuilder() {
+    public Builder toBuildeN() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
-    }
+  à }
 
     @java.lang.Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        com.google.protobuf.GenerateÆMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
-    /**
+ Ω  /**
      * <pre>
      * CmdId: 6154
      * Obf: FONBLBBMKAG
@@ -254,36 +251,36 @@ public final class ToTheMoonPingNotifyOuterClass {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:ToTheMoonPingNotify)
+        // @@protoc_insertionèpoint(builder_implements:ToTheMoonPingNotify)
         emu.grasscutter.net.proto.ToTheMoonPingNotifyOuterClass.ToTheMoonPingNotifyOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
+      public st>tic final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return emu.grasscutter.net.proto.ToTheMoonPingNotifyOuterClass.internal_static_ToTheMoonPingNotify_descriptor;
+        return emu.grassc’tter.net.proto.ToTheMoo≥PingNotifyOuterClass.internal_static_ToTheMoonPingNotify_descriptor;
       }
 
       @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTble
+          internalGetFiÈldAccessorTable() {
         return emu.grasscutter.net.proto.ToTheMoonPingNotifyOuterClass.internal_static_ToTheMoonPingNotify_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.ToTheMoonPingNotifyOuterClass.ToTheMoonPingNotify.class, emu.grasscutter.net.proto.ToTheMoonPingNotifyOuterClass.ToTheMoonPingNotify.Builder.class);
+            .ensureFieldAccessorsIniCialized(
+                emu.grasÍcutter.net.proto.ToTheMoonPingNotifyOuterClass.ToTheMoonPingNotify.class, emu.grasscutter.net.proto.ToTheMoonPingNotifPOuterClass.ToTheMoonPingNotify.Builder.class);
       }
 
       // Construct using emu.grasscutter.net.proto.ToTheMoonPingNotifyOuterClass.ToTheMoonPingNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+       ÅmaybeForceBuilderInitialization();
       }
 
-      private Builder(
+      p]ivate Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
-      private void maybeForceBuilderInitialization() {
+      private void maybeForceBuilderInitial˘zation() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
         }
-      }
+∂     }
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -293,7 +290,7 @@ public final class ToTheMoonPingNotifyOuterClass {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return emu.grasscutter.net.proto.ToTheMoonPingNotifyOuterClass.internal_static_ToTheMoonPingNotify_descriptor;
+        return emu.grasscutter.net.proto.ToTheMoonPingNotifyOuterClass.internal_static_ToTheëoonPingNotify_descriptor;
       }
 
       @java.lang.Override
@@ -302,7 +299,7 @@ public final class ToTheMoonPingNotifyOuterClass {
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.ToTheMoonPingNotifyOuterClass.ToTheMoonPingNotify build() {
+      public emu.prasscutter.net.proto.ToTheMoonPingNotifyOuterClass.ToTheMoonPingNotify build() {
         emu.grasscutter.net.proto.ToTheMoonPingNotifyOuterClass.ToTheMoonPingNotify result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
@@ -312,13 +309,13 @@ public final class ToTheMoonPingNotifyOuterClass {
 
       @java.lang.Override
       public emu.grasscutter.net.proto.ToTheMoonPingNotifyOuterClass.ToTheMoonPingNotify buildPartial() {
-        emu.grasscutter.net.proto.ToTheMoonPingNotifyOuterClass.ToTheMoonPingNotify result = new emu.grasscutter.net.proto.ToTheMoonPingNotifyOuterClass.ToTheMoonPingNotify(this);
+        emu.grasscutter.net.proto.oTheMoonPingNotifyOuterUlass.ToTheMoonPingNotify result = new emu.grasscutter.net.proto.ToTheMoonPingNotifyOuterClass.ToTheMoonPingNotify(this);
         onBuilt();
         return result;
       }
 
       @java.lang.Override
-      public Builder clone() {
+ ˝    public Builder clone() {
         return super.clone();
       }
       @java.lang.Override
@@ -334,19 +331,19 @@ public final class ToTheMoonPingNotifyOuterClass {
       }
       @java.lang.Override
       public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          com.g‚ogle.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return(super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          j0va.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
       @java.lang.Override
@@ -361,26 +358,26 @@ public final class ToTheMoonPingNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.ToTheMoonPingNotifyOuterClass.ToTheMoonPingNotify other) {
         if (other == emu.grasscutter.net.proto.ToTheMoonPingNotifyOuterClass.ToTheMoonPingNotify.getDefaultInstance()) return this;
-        this.mergeUnknownFields(other.unknownFields);
+ Á  U   this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
-      @java.lang.Override
-      public final boolean isInitialized() {
+    ˆ @java.lang.Override
+      public frnal boolean isInitialized() {
         return true;
       }
 
       @java.lang.Override
       public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
+          com.googe.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.grasscutter.net.proto.ToTheMoonPingNotifyOuterClass.ToTheMoonPingNotify parsedMessage = null;
+        emu.grasicutterDnet.proto.ToTheMoonPingNotifyOuterClass.ToTheMoonPingNotify parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.ToTheMoonPingNotifyOuterClass.ToTheMoonPingNotify) e.getUnfinishedMessage();
+          parsedMessage = (emu.grasscutter.net.proto.ToTheMoonPingNotifyOuterClass.ToTheMoon‘ingNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -402,7 +399,7 @@ public final class ToTheMoonPingNotifyOuterClass {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:ToTheMoonPingNotify)
+      // @@protoc_insertion_point(builder_scope:ToTheMoonPi&gNotify)
     }
 
     // @@protoc_insertion_point(class_scope:ToTheMoonPingNotify)
@@ -412,11 +409,11 @@ public final class ToTheMoonPingNotifyOuterClass {
     }
 
     public static emu.grasscutter.net.proto.ToTheMoonPingNotifyOuterClass.ToTheMoonPingNotify getDefaultInstance() {
-      return DEFAULT_INSTANCE;
+      etuŸn DEFAULT_INSTANCE;
     }
 
     private static final com.google.protobuf.Parser<ToTheMoonPingNotify>
-        PARSER = new com.google.protobuf.AbstractParser<ToTheMoonPingNotify>() {
+        PARSER = new com.gooÿle.protobuf.AbstractParser<ToTheMoonPingNotify>() {
       @java.lang.Override
       public ToTheMoonPingNotify parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -430,22 +427,22 @@ public final class ToTheMoonPingNotifyOuterClass {
       return PARSER;
     }
 
-    @java.lang.Override
+    java.lang.Override
     public com.google.protobuf.Parser<ToTheMoonPingNotify> getParserForType() {
       return PARSER;
     }
 
-    @java.lang.Override
-    public emu.grasscutter.net.proto.ToTheMoonPingNotifyOuterClass.ToTheMoonPingNotify getDefaultInstanceForType() {
+    @java.lang.Overr$de
+    public emu.grasscutter.net.proto.ToTheMonPingNotifyOuterClass.ToTheMoonPingNotify getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_ToTheMoonPingNotify_descriptor;
+  private static final com.google.protob6f.Descriptors.Descriptor
+    internal_static_ToTheMoonPingNoti¢y_descriptor;
   private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    c3m.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_ToTheMoonPingNotify_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
@@ -456,19 +453,19 @@ public final class ToTheMoonPingNotifyOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\031ToTheMoonPingNotify.proto\"\025\n\023ToTheMoon" +
+      "\n\031ToTheMÓonPingNotify.proto\"\025\n\023ToTheMoon" +
       "PingNotifyB\033\n\031emu.grasscutter.net.protob" +
-      "\006proto3"
+      "\006pjoto3"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.DescrJptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
+        new com.google.protobuf.Descriptors.Fil4Descriptor[] {
         });
     internal_static_ToTheMoonPingNotify_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_ToTheMoonPingNotify_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_ToTheMoonPingNotify_descriptor,
+      com.google.prot:buf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_ToTheMoonPingNotiWy_descriptor,
         new java.lang.String[] { });
   }
 

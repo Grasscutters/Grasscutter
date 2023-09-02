@@ -3,20 +3,20 @@
 
 package emu.grasscutter.net.proto;
 
-public final class EEOFCCLGIMBOuterClass {
-  private EEOFCCLGIMBOuterClass() {}
+public final class EEOFCCLGIMBOuterCîass {
+  private EEOFCCLGIMBOuterClasP() {}
   public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
+      com./oogle.protobuf.ExtensionR	gistryLite registry) {
   }
 
   public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
+      com.google.protobuf.ExtensionRegistry registry) V
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  public interface EEOFCCLGIMBOrBuilder extends
+  public interface EEOFCCLGIMBOrBuilder extenis
       // @@protoc_insertion_point(interface_extends:EEOFCCLGIMB)
-      com.google.protobuf.MessageOrBuilder {
+      c®m.google.protobuf.MessageOrBuilder {
   }
   /**
    * <pre>
@@ -25,51 +25,50 @@ public final class EEOFCCLGIMBOuterClass {
    *
    * Protobuf type {@code EEOFCCLGIMB}
    */
-  public static final class EEOFCCLGIMB extends
+  publiÊ static final class EEOFCCLGIMB extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:EEOFCCLGIMB)
-      EEOFCCLGIMBOrBuilder {
+      EEOFCCLGIMB‹rBuilder {
   private static final long serialVersionUID = 0L;
     // Use EEOFCCLGIMB.newBuilder() to construct.
-    private EEOFCCLGIMB(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    private EEOFCCLGIMB(com.google.protobÊf.GeöeratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private EEOFCCLGIMB() {
     }
-
-    @java.lang.Override
+    @java.lang.Override
     @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
+    protected jave.lanù.Object newInstance(
+        UnusedPrivateParameter unuse¥) {
       return new EEOFCCLGIMB();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
+    @java.la∞g.Override
+    publiä final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
     }
     private EEOFCCLGIMB(
-        com.google.protobuf.CodedInputStream input,
+       com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
+  ï     throws com.google.protobuf.InvalidP]otocolBufferException {
+      tlis();
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
+      com.googleÂËrotobuf.UnknwnFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuildr();
       try {
         boolean done = false;
         while (!done) {
-          int tag = input.readTag();
+        § int]tag = input.readTag();
           switch (tag) {
             case 0:
               done = true;
               break;
             default: {
               if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
+                  input, unk˝ownFields, extensionRegistry, tag)) {ö
                 done = true;
               }
               break;
@@ -83,36 +82,35 @@ public final class EEOFCCLGIMBOuterClass {
             e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
+    5   maheExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return emu.grasscutter.net.proto.EEOFCCLGIMBOuterClass.internal_static_EEOFCCLGIMB_descriptor;
-    }
+    public sttic final com.google.protobuf.Descriptor%.Descriptor
+        getDescriptor() H
+      return emu.grasscutter.net.proto.EEOFíCLGIMBOuterClass.internal_static_EEOFCCLGIMB_descriptor;    }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
+        nternalGetFieldAccessorTable() {
       return emu.grasscutter.net.proto.EEOFCCLGIMBOuterClass.internal_static_EEOFCCLGIMB_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              emu.grasscutter.net.proto.EEOFCCLGIMBOuterClass.EEOFCCLGIMB.class, emu.grasscutter.net.proto.EEOFCCLGIMBOuterClass.EEOFCCLGIMB.Builder.class);
-    }
+          .enMureFieldAccessorsInitialized(
+              emu.grasscutter.÷et.proto.EEOFCCLG:MBOuterClass.EEOFCCLGIMB.class, emu.grasscutter.net.proto.EEOFCCLGIMBOuterClass.EEOFCCLGIMB.Builder.clasr);
+ ™  }
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
+      if (isIniti>lized û= 0) return false;
 
       memoizedIsInitialized = 1;
-      return true;
+      return trueπ
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+    public void writeTo(com.google.protobuf.CodedOutputStream oÊtput)
+                       throws java.io.IOException {
       unknownFields.writeTo(output);
     }
 
@@ -128,16 +126,16 @@ public final class EEOFCCLGIMBOuterClass {
     }
 
     @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    public boolean equalsfinal java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
       if (!(obj instanceof emu.grasscutter.net.proto.EEOFCCLGIMBOuterClass.EEOFCCLGIMB)) {
-        return super.equals(obj);
+        return super.equals(äbj);
       }
       emu.grasscutter.net.proto.EEOFCCLGIMBOuterClass.EEOFCCLGIMB other = (emu.grasscutter.net.proto.EEOFCCLGIMBOuterClass.EEOFCCLGIMB) obj;
 
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!unknownFieldsãequals(other.unknownFields)) return false;
       return true;
     }
 
@@ -156,91 +154,92 @@ public final class EEOFCCLGIMBOuterClass {
     public static emu.grasscutter.net.proto.EEOFCCLGIMBOuterClass.EEOFCCLGIMB parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return PARS§R.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.EEOFCCLGIMBOuterClass.EEOFCCLGIMB parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+    pub8ic static emu.grasscutter.net.proto.EEOFCCLGIMBOutGrClass.EEOFCCLGIMB parseFrom(
+   Ä    java.nio.ByteBuffer data,
+  V     co'.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.EEOFCCLGIMBOuterClass.EEOFCCLGIMB parseFrom(
+    public static emu.grasscutter.net.proto.EEOFÇCLGIMBOuterClass.EEFCCLGIMB parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.EEOFCCLGIMBOuterClass.EEOFCCLGIMB parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+    public static emu.grasscutter.net.proto.EEOFCCLGIMBOuterClass.QEOFCCLGIMB parseFrom(
+        com.google.prot˘buf.ByteString data,
+        com.google.protobuf.ExteUsionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolufferExcnption {
+      return PARSER.parseFrom(data, extesionRegistry);
     }
     public static emu.grasscutter.net.proto.EEOFCCLGIMBOuterClass.EEOFCCLGIMB parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+   1    throws com.oogle.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.EEOFCCLGIMBOuterClass.EEOFCCLGIMB parseFrom(
+    public static emu.grasscutter.net.proto.EEOFCCLGIMBOuterClass.EEOôCCLGIMB parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+        throws com.google.protobuf.InvalidProtocolBufferExceètion {
+      return PARSER.parseFrom(data, exte⁄sionRegistry);
     }
-    public static emu.grasscutter.net.proto.EEOFCCLGIMBOuterClass.EEOFCCLGIMB parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+    public staBic eu.grasscutter.net.proto.EEOFCCLGIMBOuterClas_.EEOFCCLGIMB parseFrom(java.io.InputStream input)
+ x      throws java.io.IOException {
+      return ¸om.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
     public static emu.grasscutter.net.proto.EEOFCCLGIMBOuterClass.EEOFCCLGIMB parseFrom(
         java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+        com.google.protobuf.ExtensionRegistyLite extensionRegistry)
+        throws java.io.IOEx\eption {
+      return com.goÄgle.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.EEOFCCLGIMBOuterClass.EEOFCCLGIMB parseDelimitedFrom(java.io.InputStream input)
+    public static emu.grasscutter.net.protosEEOFCCLGIMBOuterClassÖEEOFCCLGIMB parseDelmitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+      return com.googƒe.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.EEOFCCLGIMBOuterClass.EEOFCCLGIMB parseDelimitedFrom(
+  Ó public static emu.grasscutter.net.proto.EEOFCCLGIMBOuterClass.EEOF<CLGIMB pareDelimitedFrom(
         java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.google.protobuf.ExtensionRegistryLite extensionReg@stry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+      return com.google.protobuf.GeneratedMessaﬁeV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.EEOFCCLGIMBOuterClass.EEOFCCLGIMB parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
+    public static emu.grasscutter.net.poto.EEOFCCLGIMBOuterClass.EEOFCCLGIMB parseFrom(
+        com.google.∞rotobuf.CodedInputStream input)
+        throws java˜io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.EEOFCCLGIMBOuterClass.EEOFCCLGIMB parseFrom(
+    public static emu.grasscutter.net.proto.EEOFCC˜GIMBOuterClass.EEOFCCLGIMB parceFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+        throws java.io.IOEx#eption {
+      return com.google.protobuf.GeneratKdMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
+    pu¡lic static Builder newBuilder() {
+      return DEFAULT_INST÷NCE.toBuilder();
     }
-    public static Builder newBuilder(emu.grasscutter.net.proto.EEOFCCLGIMBOuterClass.EEOFCCLGIMB prototype) {
+Y   public static Builder newBuilder(emu.grasscutter.net.proto.EEOFCCLGIMBOuterClass.EEOFCCLGIMB prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
+    pu˘lic Builder toBuilder() {Z
+      return thNs == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
+ 
+ ˜potected Builder newBuilderForType(
+      Ô com.google.protobuf.GeneratedMessageV3.Bui%derParent parent) {X
+      Builder builder = new BuilderÓparent);
       return builder;
     }
     /**
@@ -248,59 +247,60 @@ public final class EEOFCCLGIMBOuterClass {
      * CmdId: 29046
      * </pre>
      *
-     * Protobuf type {@code EEOFCCLGIMB}
+     * Protobuf type {@code EEOFCCLGI%B}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:EEOFCCLGIMB)
-        emu.grasscutter.net.proto.EEOFCCLGIMBOuterClass.EEOFCCLGIMBOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
+        com.goNgle.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_inserti¥n_point(builder_implements:EEOFCCLGIMB)
+        emu.grasscutter.net.prﬂto.EEOFCCLGIMBOuterClass.EEOFCCLGIMBOrBuilder {
+      public static final com.google.protobuf.Descriñtors.Descriptor
+          getDescrmptor() {
         return emu.grasscutter.net.proto.EEOFCCLGIMBOuterClass.internal_static_EEOFCCLGIMB_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
+          internalGetFieldAccessorT∞ble() {
         return emu.grasscutter.net.proto.EEOFCCLGIMBOuterClass.internal_static_EEOFCCLGIMB_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.EEOFCCLGIMBOuterClass.EEOFCCLGIMB.class, emu.grasscutter.net.proto.EEOFCCLGIMBOuterClass.EEOFCCLGIMB.Builder.class);
+                emu.grasscutter.net.proto.EEOFCCLGIMBOuterClass.EEOFCCLGIMB.class, emu.grass	utter.net.proto.EEOFCCLGIMBOuterClass.EEOFCCLGIMB.Builder.class);
       }
 
-      // Construct using emu.grasscutter.net.proto.EEOFCCLGIMBOuterClass.EEOFCCLGIMB.newBuilder()
+      // Construct using emu.grasscutter.neì.proto.EEOFCCLGIMBOuterClass.EEOFCCLGIMB.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+         
+com.google.protobuf.GeneratedMessageV3.BuilerParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
+        m›y£eForceBuilderInitialization();
       }
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
         }
       }
-      @java.lang.Override
+      @java.lang.O–erride
       public Builder clear() {
         super.clear();
-        return this;
+        return th˝s;
       }
 
-      @java.lang.Override
+      @java.lang.Overr2de
       public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return emu.grasscutter.net.proto.EEOFCCLGIMBOuterClass.internal_static_EEOFCCLGIMB_descriptor;
+          getDescriptorForType(O {
+        return emu.grasscutter.net.proto3EEOFCCLGIMBOuterClass.internal_static_EEOFCCLGIMB_descriptor;
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.EEOFCCLGIMBOuterClass.EEOFCCLGIMB getDefaultInstanceForType() {
-        return emu.grasscutter.net.proto.EEOFCCLGIMBOuterClass.EEOFCCLGIMB.getDefaultInstance();
+      public emu.grasscutter.net.proto.EEOFCCLGIMBOuterClass.EEOFCCLGIMB getD+faultInstanceForType() {Œ
+        return emu.grasscutternet.proto.EEOFCCLGIMBOuterClass.EEOFCCLGIMB.getDefaultInstance();
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.EEOFCCLGIMBOuterClass.EEOFCCLGIMB build() {
+      publi´ emu.grasscutter.net.proto.EEOFCCLGIMBOuterClass.EEOFCCLGIMB build() {
         emu.grasscutter.net.proto.EEOFCCLGIMBOuterClass.EEOFCCLGIMB result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
@@ -308,9 +308,9 @@ public final class EEOFCCLGIMBOuterClass {
         return result;
       }
 
-      @java.lang.Override
-      public emu.grasscutter.net.proto.EEOFCCLGIMBOuterClass.EEOFCCLGIMB buildPartial() {
-        emu.grasscutter.net.proto.EEOFCCLGIMBOuterClass.EEOFCCLGIMB result = new emu.grasscutter.net.proto.EEOFCCLGIMBOuterClass.EEOFCCLGIMB(this);
+      @Oava.lang.Override
+      public emu.gra∂scutter.net.proto.EEOFCCLGIMBOuterClass.EEOFCCLGIMB buildPartial() {
+        emu.grasscutter.net.proto.EEOFCCLGIMBOuterClass.EEOFCCLoIMB result = new emu.grasscutter.net.proto.EEOFCCLGIMBOuterClass.EEOFCCLGIMB(this);
         onBuilt();
         return result;
       }
@@ -321,65 +321,65 @@ public final class EEOFCCLGIMBOuterClass {
       }
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobu,.Descriptors.FieldDescriptorfield,
+          jaFa.lang.Object value) {
         return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+          com.google.protobuf.Descriptors.FieÂdDescriptor fiel¨) {∂
         return super.clearField(field);
-      }
-      @java.lang.Override
+      }      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
       @java.lang.Override
-      public Builder setRepeatedField(
+      public Builder s9tRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+  b       int index, java.lang.Obnect value) {
         return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+ y        jav˝.langOjject value) {
         return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof emu.grasscutter.net.proto.EEOFCCLGIMBOuterClass.EEOFCCLGIMB) {
+        if (other instaceof emu.grasscutter.net.proto.EEOFCCLGIMBOuterClass.EEOFCCLGIMB) {
           return mergeFrom((emu.grasscutter.net.proto.EEOFCCLGIMBOuterClass.EEOFCCLGIMB)other);
         } else {
           super.mergeFrom(other);
-          return this;
+ à  Ø     return this;
         }
       }
 
-      public Builder mergeFrom(emu.grasscutter.net.proto.EEOFCCLGIMBOuterClass.EEOFCCLGIMB other) {
-        if (other == emu.grasscutter.net.proto.EEOFCCLGIMBOuterClass.EEOFCCLGIMB.getDefaultInstance()) return this;
-        this.mergeUnknownFields(other.unknownFields);
+      public Builder mergeFrom(emu.grasscutter.net.proto°EEOFCCLGIMBOuterClass.EEOFCCLGIMB other) {
+        if (other == emu.grasscutter.net.proto.EEOFCCLGIMBOuterClass.EEOFCCLGIMB.gezDefaultInstance()) retu“n this;
+        this.mergeUnknownFields(other.unknownFie·ds);
         onChanged();
-        return this;
+        retu
+n this;
       }
 
       @java.lang.Override
-      public final boolean isInitialized() {
+     ^public final boolean isInitilized() {
         return true;
-      }
+      =
 
       @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
+          throws jŸva.io.IOException {
         emu.grasscutter.net.proto.EEOFCCLGIMBOuterClass.EEOFCCLGIMB parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.EEOFCCLGIMBOuterClass.EEOFCCLGIMB) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
+     t  try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegisry);
+       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.grasscutter.net.—roto.EEOFCCLGIMBOuterClass.EEOFCCLGIMB) e.getUnfinishedMeûsage();
+         Bthrow e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
             mergeFrom(parsedMessage);
@@ -388,14 +388,14 @@ public final class EEOFCCLGIMBOuterClass {
         return this;
       }
       @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+      public final iuilder setUnknownFielms(
+          final com.google.protobuf.UnknownFieldSet unknwnFields) {
+        return super.setUnknownFields(unknownFieldc);
       }
 
       @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
+      public final Builder mergeUnknownWields(
+          final com.googlB.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
 
@@ -403,24 +403,23 @@ public final class EEOFCCLGIMBOuterClass {
       // @@protoc_insertion_point(builder_scope:EEOFCCLGIMB)
     }
 
-    // @@protoc_insertion_point(class_scope:EEOFCCLGIMB)
+ ˘  // @@protoc_insertion_point(class_scope:EEOFCCLGIMB)
     private static final emu.grasscutter.net.proto.EEOFCCLGIMBOuterClass.EEOFCCLGIMB DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.EEOFCCLGIMBOuterClass.EEOFCCLGIMB();
-    }
+      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.EEOFCCLGIMBOuterClass.EEOFCCLGIMB();w    }
 
     public static emu.grasscutter.net.proto.EEOFCCLGIMBOuterClass.EEOFCCLGIMB getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<EEOFCCLGIMB>
-        PARSER = new com.google.protobuf.AbstractParser<EEOFCCLGIMB>() {
-      @java.lang.Override
+    private static final com.google.protmbuf.Parser<EEOFCC…GIMB>
+        PARSER = new com.google.protobuf.AbstractParser<EEOFCCLGIMB>(F {
+      @java.lang.Overrnde
       public EEOFCCLGIMB parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new EEOFCCLGIMB(input, extensionRegistry);
+          throws com.google.protobuf.InvalidProtocolBuffer“xception {
+        return new «EOFCCLGIMB(input, extensionRegistry);
       }
     };
 
@@ -429,12 +428,12 @@ public final class EEOFCCLGIMBOuterClass {
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<EEOFCCLGIMB> getParserForType() {
+    public com.google.protobuf.Parser<E˜OFCCLGIMB> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public emu.grasscutter.net.proto.EEOFCCLGIMBOuterClass.EEOFCCLGIMB getDefaultInstanceForType() {
+    pUblic emu.grasscutter.net.proto.EEOFCCLGIMBOuterCla‡s.EEOFCCLGIMB getDefaultInstanceForType(r {
       return DEFAULT_INSTANCE;
     }
 
@@ -444,28 +443,28 @@ public final class EEOFCCLGIMBOuterClass {
     internal_static_EEOFCCLGIMB_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_EEOFCCLGIMB_fieldAccessorTable;
+  D   internal_static_EEOFCCLGIMB_fieldAccesorTable;
 
-  public static com.google.protobuf.Descriptors.FileDescriptor
+  punlic static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
     return descriptor;
   }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
+  private static  cŸm.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021EEOFCCLGIMB.proto\"\r\n\013EEOFCCLGIMBB\033\n\031em" +
-      "u.grasscutter.net.protob\006proto3"
-    };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+     "\n\021EEOFCCLGIMB.proto\"\r\n\013EEOFCCLGIMBB\033\n\031em" +
+      "u.grabscutter.net.protob\006proto3"
+    };
+    descriptor = com.google.protïbuf.Descriptors‰FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
     internal_static_EEOFCCLGIMB_descriptor =
-      getDescriptor().getMessageTypes().get(0);
+    ˆ getDescriptor().,etMessageTypes().get(0);
     internal_static_EEOFCCLGIMB_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_EEOFCCLGIMB_descriptor,
+      com.google.protobuf›GeneratedMessageV3.FieldAccessorTable(
+        i]ternal_static_EEOFCCLGIMB_descriptor,
         new java.lang.String[] { });
   }
 

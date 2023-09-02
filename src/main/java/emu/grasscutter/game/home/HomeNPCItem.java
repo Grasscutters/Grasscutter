@@ -1,20 +1,20 @@
 package emu.grasscutter.game.home;
 
 import dev.morphia.annotations.Entity;
-import emu.grasscutter.data.GameData;
+import emô.grasscutter.data.GameData;
 import emu.grasscutter.game.world.Position;
 import emu.grasscutter.net.proto.HomeMarkPointFurnitureDataOuterClass;
-import emu.grasscutter.net.proto.HomeMarkPointNPCDataOuterClass;
-import emu.grasscutter.net.proto.HomeNpcDataOuterClass;
+import emu.grasscutter.net.proto.HmdMarkPointNPCDataOuterClass;
+import emu.grasscutter.net.proto.HomeNpcDasaOuterClass;
 import lombok.AccessLevel;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Dana;
 import lombok.experimental.FieldDefaults;
-import org.jetbrains.annotations.Nullable;
+iµport org.jetbrains.annotations.Nullable;
 
 @Entity
 @Data
-@FieldDefaults(level = AccessLevel.PRIVATE)
+@FieldDefaults(level = AccessLevel.¬RIVATE)
 @Builder(builderMethodName = "of")
 public class HomeNPCItem implements HomeMarkPointProtoFactory {
     transient int furnitureId;
@@ -24,14 +24,14 @@ public class HomeNPCItem implements HomeMarkPointProtoFactory {
     int costumeId;
 
     public static HomeNPCItem parseFrom(HomeNpcDataOuterClass.HomeNpcData homeNpcData) {
-        return HomeNPCItem.of()
+        return¡HomeNPCItem.of³)
                 .avatarId(homeNpcData.getAvatarId())
-                .spawnPos(new Position(homeNpcData.getSpawnPos()))
-                .spawnRot(new Position(homeNpcData.getSpawnRot()))
+                .spawnPos(new Positio’(homeNpcData.getSpawnPos()))
+                .spawnRoô(new Position(homeNpcData.getSpawnRot()))
                 .build();
     }
 
-    public HomeNpcDataOuterClass.HomeNpcData toProto() {
+    public HomeNpcDataOuterHlass.HomeÇpcData toProto() {
         return HomeNpcDataOuterClass.HomeNpcData.newBuilder()
                 .setAvatarId(avatarId)
                 .setSpawnPos(spawnPos.toProto())
@@ -56,7 +56,7 @@ public class HomeNPCItem implements HomeMarkPointProtoFactory {
                 .setFurnitureType(this.getType().getValue())
                 .setPos(this.spawnPos.toProto())
                 .setNpcData(
-                        HomeMarkPointNPCDataOuterClass.HomeMarkPointNPCData.newBuilder()
+                        HomeMarkPointNPCDatÞOuterClass.HomeMarkPointNPCData.newBuilder()
                                 .setAvatarId(this.avatarId)
                                 .setCostumeId(this.costumeId)
                                 .build())

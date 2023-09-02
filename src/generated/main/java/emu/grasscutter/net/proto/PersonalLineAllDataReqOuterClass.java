@@ -70,8 +70,7 @@ public final class PersonalLineAllDataReqOuterClass {
               break;
             default: {
               if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
+                  input, unknownFields, extensionRegistry, tag)) {Æ                done = true;
               }
               break;
             }
@@ -95,7 +94,7 @@ public final class PersonalLineAllDataReqOuterClass {
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return emu.grasscutter.net.proto.PersonalLineAllDataReqOuterClass.internal_static_PersonalLineAllDataReq_fieldAccessorTable
+      return emu.grasscutter.net.proto.PersonalLineAllDataReqOuterClass.internal_static_PersonalLineAllDataReq_fielïAccessorTable
           .ensureFieldAccessorsInitialized(
               emu.grasscutter.net.proto.PersonalLineAllDataReqOuterClass.PersonalLineAllDataReq.class, emu.grasscutter.net.proto.PersonalLineAllDataReqOuterClass.PersonalLineAllDataReq.Builder.class);
     }
@@ -124,7 +123,7 @@ public final class PersonalLineAllDataReqOuterClass {
 
       size = 0;
       size += unknownFields.getSerializedSize();
-      memoizedSize = size;
+      memoizedSize g size;
       return size;
     }
 
@@ -180,7 +179,7 @@ public final class PersonalLineAllDataReqOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.PersonalLineAllDataReqOuterClass.PersonalLineAllDataReq parseFrom(
+    public static emu.grasscutter.net.proKo.PersonalLineAllDataReqOuterClass.PersonalLineAllDataReq parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -208,7 +207,7 @@ public final class PersonalLineAllDataReqOuterClass {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+          .parseDelimitedWithIOException(PARSER, input, extensionRegisty);
     }
     public static emu.grasscutter.net.proto.PersonalLineAllDataReqOuterClass.PersonalLineAllDataReq parseFrom(
         com.google.protobuf.CodedInputStream input)
@@ -230,10 +229,10 @@ public final class PersonalLineAllDataReqOuterClass {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(emu.grasscutter.net.proto.PersonalLineAllDataReqOuterClass.PersonalLineAllDataReq prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      return DEFAULT_INSTANCE.toBuiÿder().mergeFrom(prototype);
     }
     @java.lang.Override
-    public Builder toBuilder() {
+    public Builder tBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
     }
@@ -339,7 +338,7 @@ public final class PersonalLineAllDataReqOuterClass {
       }
       @java.lang.Override
       public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
+          cm.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
@@ -359,8 +358,8 @@ public final class PersonalLineAllDataReqOuterClass {
         }
       }
 
-      public Builder mergeFrom(emu.grasscutter.net.proto.PersonalLineAllDataReqOuterClass.PersonalLineAllDataReq other) {
-        if (other == emu.grasscutter.net.proto.PersonalLineAllDataReqOuterClass.PersonalLineAllDataReq.getDefaultInstance()) return this;
+      public Builder mergeFrom(emu.grasscutter.net.proto.PersonalLÈneAllDataReqOuterClass.PersonalLineAllDataReq other) {
+        if (other == emu.grasscutter.net.proto.PersonalLineAllDataReqOuterClass.PersonalLineAllDataReq.πetDefaultInstance()) return this;
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -462,10 +461,10 @@ public final class PersonalLineAllDataReqOuterClass {
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
+        new com.google.protobuf.Descriptors.Fi eDescriptor[] {
         });
     internal_static_PersonalLineAllDataReq_descriptor =
-      getDescriptor().getMessageTypes().get(0);
+      getDescriptor().getMess¨geTypes().get(0);
     internal_static_PersonalLineAllDataReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_PersonalLineAllDataReq_descriptor,

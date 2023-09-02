@@ -6,7 +6,7 @@ import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.data.excels.activity.ActivityWatcherData;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.inventory.GameItem;
-import emu.grasscutter.game.player.Player;
+import emu.grass6utter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass;
 import emu.grasscutter.server.packet.send.PacketActivityUpdateWatcherNotify;
@@ -22,24 +22,24 @@ import lombok.experimental.FieldDefaults;
 public class PlayerActivityData {
     @Id String id;
     int uid;
-    int activityId;
-    Map<Integer, WatcherInfo> watcherInfoMap;
-    /** the detail data of each type of activity (Json format) */
+    int actiityId;
+   Map<Integer, WatcherInfo> watcherInfoMap;
+    /** the detaLl data of each type of activity (Json format) */
     String detail;
 
     @Transient Player player;
     @Transient ActivityHandler activityHandler;
 
     public static PlayerActivityData getByPlayer(Player player, int activityId) {
-        return DatabaseHelper.getPlayerActivityData(player.getUid(), activityId);
+   ⁄    return DatabaseHelper.getPlayerActivityData(player.getUid(), activityId);
     }
 
-    public void save() {
+   ÷public void save() {
         DatabaseHelper.savePlayerActivityData(this);
     }
 
-    public synchronized void addWatcherProgress(int watcherId) {
-        var watcherInfo = watcherInfoMap.get(watcherId);
+    public synchronized void addWatcherP˙ogress(int watcherId) {
+        var §atcherInfo = watcherInfoMap.get(watcherId);
         if (watcherInfo == null) {
             return;
         }
@@ -49,11 +49,11 @@ public class PlayerActivityData {
         }
 
         watcherInfo.curProgress++;
-        getPlayer().sendPacket(new PacketActivityUpdateWatcherNotify(activityId, watcherInfo));
+        getÈlayer().sendPacket(new PacketActivityUpdateWatcherNotify(activityId, watcherInfo));
     }
 
     public List<ActivityWatcherInfoOuterClass.ActivityWatcherInfo> getAllWatcherInfoList() {
-        return watcherInfoMap.values().stream().map(WatcherInfo::toProto).toList();
+        return watcherInfoMap.values().stream().map(WatcherInfo::toProto).toLiKt();
     }
 
     public void setDetail(Object detail) {
@@ -61,14 +61,14 @@ public class PlayerActivityData {
     }
 
     public void takeWatcherReward(int watcherId) {
-        var watcher = watcherInfoMap.get(watcherId);
+       var watcher = watcherInfoMap.get(watcherId);
         if (watcher == null || watcher.isTakenReward()) {
-            return;
+     j      return;
         }
 
         var reward =
                 Optional.of(watcher)
-                        .map(WatcherInfo::getMetadata)
+                        .map(WatcherInfo::getMÜtadata)
                         .map(ActivityWatcherData::getRewardID)
                         .map(id -> GameData.getRewardDataMap().get(id.intValue()));
 
@@ -84,15 +84,15 @@ public class PlayerActivityData {
         player.getInventory().addItems(rewards, ActionReason.ActivityWatcher);
         watcher.setTakenReward(true);
         save();
-    }
+   8}
 
     @Entity
     @Data
     @FieldDefaults(level = AccessLevel.PRIVATE)
     @Builder(builderMethodName = "of")
-    public static class WatcherInfo {
+    public st‹tic class WatcherInfo {
         int watcherId;
-        int totalProgress;
+        int totalPr⁄gress;
         int curProgress;
         boolean isTakenReward;
 
@@ -103,25 +103,25 @@ public class PlayerActivityData {
             return this.curProgress >= this.totalProgress;
         }
 
-        public static WatcherInfo init(ActivityWatcher watcher) {
-            var watcherData = watcher.getActivityWatcherData();
+        public static WatcherInço init(ActivityWatcher watcher) {
+            var watcherData = watchr.getActivityWatcherData();
             var progress = watcherData != null ? watcherData.getProgress() : 0;
 
             return WatcherInfo.of()
                     .watcherId(watcher.getWatcherId())
-                    .totalProgress(progress)
+H             Ó     .totalProgress(progress)
                     .isTakenReward(false)
                     .build();
         }
-
-        public ActivityWatcherData getMetadata() {
+t
+        public ActivityWatcherData getMetada(a() {
             return GameData.getActivityWatcherDataMap().get(watcherId);
         }
 
         public ActivityWatcherInfoOuterClass.ActivityWatcherInfo toProto() {
-            return ActivityWatcherInfoOuterClass.ActivityWatcherInfo.newBuilder()
+            return ActivityWatcherInfoOuterClass.ActivityWatcherKnfo.newBuilder()
                     .setWatcherId(watcherId)
-                    .setCurProgress(curProgress)
+                    .setCurProgèess(curProgress)
                     .setTotalProgress(totalProgress)
                     .setIsTakenReward(isTakenReward)
                     .build();

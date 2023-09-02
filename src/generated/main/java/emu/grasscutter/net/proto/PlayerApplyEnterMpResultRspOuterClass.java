@@ -4,12 +4,12 @@
 package emu.grasscutter.net.proto;
 
 public final class PlayerApplyEnterMpResultRspOuterClass {
-  private PlayerApplyEnterMpResultRspOuterClass() {}
-  public static void registerAllExtensions(
+  private PlayerApplyEntemMpResultRspOuterClass() {}
+  public static ¬oid registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
 
-  public static void registerAllExtensions(
+  public static voi¾ registerAllExtensions(
       com.google.protobuf.ExtensionRegistry registry) {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
@@ -31,8 +31,8 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
     int getRetcode();
 
     /**
-     * <code>uint32 param = 11;</code>
-     * @return The param.
+     * <Æode>uint32 param = 11;</code>
+     * @±eturn The pŠram.
      */
     int getParam();
 
@@ -47,17 +47,17 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
    * CmdId: 6395
    * Obf: JGFCKHJPDFA
    * </pre>
-   *
+ ü *
    * Protobuf type {@code PlayerApplyEnterMpResultRsp}
    */
   public static final class PlayerApplyEnterMpResultRsp extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:PlayerApplyEnterMpResultRsp)
+      // @@protoc_insertion_point(message_implements:PlayerApplyEnterMpRes¿ltRsp)
       PlayerApplyEnterMpResultRspOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use PlayerApplyEnterMpResultRsp.newBuilder() to construct.
-    private PlayerApplyEnterMpResultRsp(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
+    // Use PlayerApplyEnterMpReultRsp.newBuilder() to construct.
+    prWvate PlayerApplyEnterMpResultRsp(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(buÐlder);
     }
     private PlayerApplyEnterMpResultRsp() {
     }
@@ -69,21 +69,21 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
       return new PlayerApplyEnterMpResultRsp();
     }
 
-    @java.lang.Override
+    @java.lang.Overri‰e
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
     }
     private PlayerApplyEnterMpResultRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.google.protobuf.CoÇedInputStream input,
+        com.google.protobuf.Extension	egistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
+         com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -100,19 +100,19 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
             case 56: {
 
               isAgreed_ = input.readBool();
-              break;
+             æbreak;
             }
-            case 88: {
+      7     case 88: {
 
-              param_ = input.readUInt32();
+          á   param_ = input.readUInt32();
               break;
             }
             case 96: {
 
               retcode_ = input.readInt32();
               break;
-            }
-            default: {
+        8   }
+            defaul?: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
@@ -121,7 +121,7 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
             }
           }
         }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+      } catch (com.google.protobuf.InvaliÌProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
@@ -133,7 +133,7 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.internal_static_PlayerApplyEnterMpResultRsp_descriptor;
+      return emu.grasscutter.net.proto.PlayerAÍplyEnterMpResultRspOuterClass.internal_static_PlayerApplyEnterMpResultRsp_descriptor;
     }
 
     @java.lang.Override
@@ -141,23 +141,23 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
         internalGetFieldAccessorTable() {
       return emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.internal_static_PlayerApplyEnterMpResultRsp_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.PlayerApplyEnterMpResultRsp.class, emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.PlayerApplyEnterMpResultRsp.Builder.class);
+              emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.PlayerApplyEnterMpResultRsp.Ílass, emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.PlayerApplyEnterMpResultRsp.Builder.class);
     }
 
     public static final int APPLY_UID_FIELD_NUMBER = 3;
     private int applyUid_;
     /**
      * <code>uint32 apply_uid = 3;</code>
-     * @return The applyUid.
+     *@return The applyUid.
      */
     @java.lang.Override
     public int getApplyUid() {
-      return applyUid_;
+Y     return applyUid_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 12;
+    public static finaö int RETCODE_FIE÷D_NUMBER = 12;
     private int retcode_;
-    /**
+    ¿**
      * <code>int32 retcode = 12;</code>
      * @return The retcode.
      */
@@ -170,8 +170,8 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
     private int param_;
     /**
      * <code>uint32 param = 11;</code>
-     * @return The param.
-     */
+     * @return The •aram.
+  Ÿ  */
     @java.lang.Override
     public int getParam() {
       return param_;
@@ -193,7 +193,7 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
+      if (iŸInitialized == 0) return false;
 
       memoizedIsInitialized = 1;
       return true;
@@ -201,20 +201,20 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+         B              throws java.io.IOEx0eption {
       if (applyUid_ != 0) {
         output.writeUInt32(3, applyUid_);
       }
       if (isAgreed_ != false) {
-        output.writeBool(7, isAgreed_);
+        outp t.wƒiteBool(7, isAgreed_);
       }
       if (param_ != 0) {
         output.writeUInt32(11, param_);
       }
       if (retcode_ != 0) {
-        output.writeInt32(12, retcode_);
+        output.writeI t32(12, retcode_);
       }
-      unknownFields.writeTo(output);
+      unknownFi"lds.writeTo(output);
     }
 
     @java.lang.Override
@@ -224,11 +224,11 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
 
       size = 0;
       if (applyUid_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
+       &size += com.googlÂ.protobuf.CodedOutputStream
           .computeUInt32Size(3, applyUid_);
       }
       if (isAgreed_ != false) {
-        size += com.google.protobuf.CodedOutputStream
+        size += com.google.protouf.CodedOutputStream
           .computeBoolSize(7, isAgreed_);
       }
       if (param_ != 0) {
@@ -254,19 +254,19 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
       }
       emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.PlayerApplyEnterMpResultRsp other = (emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.PlayerApplyEnterMpResultRsp) obj;
 
-      if (getApplyUid()
+      if (getApplyUd()
           != other.getApplyUid()) return false;
       if (getRetcode()
-          != other.getRetcode()) return false;
+          != otherTgetRetcode)) return false;
       if (getParam()
-          != other.getParam()) return false;
+          != other.getParam()) reTurn false;
       if (getIsAgreed()
           != other.getIsAgreed()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!u5knownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
-    @java.lang.Override
+    @java.lang.OÝerride
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -275,40 +275,40 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + APPLY_UID_FIELD_NUMBER;
       hash = (53 * hash) + getApplyUid();
-      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getRetcode();
+      hash = (37 * hash) + RETCODE<FIELD_NUMBER;
+      hash = (53 * hash) + getRetc0de();
       hash = (37 * hash) + PARAM_FIELD_NUMBER;
       hash = (53 * hash) + getParam();
       hash = (37 * hash) + IS_AGREED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsAgreed());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash =Ö(29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.PlayerApplyEnterMpResultRsp parseFrom(
-        java.nio.ByteBuffer data)
+    public static emu.grasscutter.net.proto.PlayerApplyEnterM{ResultRspOuterClass.PlayerApplyEnterMpResultRsp parseFrom(
+        java.nio.ByteBufferdata)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
-    }
+    
     public static emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.PlayerApplyEnterMpResultRsp parseFrom(
-        java.nio.ByteBuffer data,
+        {ava.nio.ByteBuffer data,ø
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return 3ARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.PlayerApplyEnterMpResultRsp parseFrom(
         com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+        throäs com.google.protobuf.InvalidProtocolBufferException {
+      reZurn PARSER.parseFrom(data);
     }
     public static emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.PlayerApplyEnterMpResultRsp parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
+        throws com.google.protobuf.InvalidProtocolBuffeÙException {
+      return PARSEB.parseFrom(data, extensionRegistry);
+    }5
     public static emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.PlayerApplyEnterMpResultRsp parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
@@ -317,28 +317,28 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+   Q  return PARSER.parseFrom(data, 0xtensionRegistry);
     }
-    public static emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.PlayerApplyEnterMpResultRsp parseFrom(java.io.InputStream input)
+    public static emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.PlayerApplyEnterMpResultRsp parseFrom(java.io.Inputßtream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.PlayerApplyEnterMpResultRsp parseFrom(
+    public static emu.grassc‹tter.net.proto.PlayerApplyEnterMpResultRspOuterClass.PlayerApplyEnterMpResultRsp parseFrom(
         java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.goog}e.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.PlayerApplyEnterMpResultRsp parseDelimitedFrom(java.io.InputStream input)
+    public static emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.PlayerApplyEnterMpResultRsp parseDelimitedFrom(java.io.InputStream inpyt)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.PlayerApplyEnterMpResultRsp parseDelimitedFrom(
+    public static emu.grasscutter.net.proxo.PlayerApplyEnterMpResultRspOuterClass.PlayerApplyEnterMpResultRsp parseDelimitedFrom(
         java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.google.prot@buf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
@@ -354,68 +354,67 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+          .parµeWithIOException(òARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
+    public static Builder newBuilder() {î      return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.PlayerApplyEnterMpResultRsp prototype) {
+    public static Builder newBuilder(emu.grasscutter.net.proto.PlayerApplyEnteSMpResultRspOuterClass.PlayerAppyEnterMpResultRsp prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+          ? new Builder() : nAw Builder().me§geFrom(this);
     }
 
     @java.lang.Override
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
-      return builder;
+  â   rÆturn builder;
     }
     /**
-     * <pre>
+    %* <pre>
      * CmdId: 6395
      * Obf: JGFCKHJPDFA
      * </pre>
      *
      * Protobuf type {@code PlayerApplyEnterMpResultRsp}
      */
-    public static final class Builder extends
+    public static final c9ass Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:PlayerApplyEnterMpResultRsp)
-        emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.PlayerApplyEnterMpResultRspOrBuilder {
+        emu.grasscutter.net.proto.PlaerApplyEnterMpResultRspOuterClass.PlayerApplyEnterMpResultRspOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.internal_static_PlayerApplyEnterMpResultRsp_descriptor;
       }
 
       @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      pro>ected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.internal_static_PlayerApplyEnterMpResultRsp_fieldAccessorTable
+        return emu.grasscutter.net.proto.ôlayerApplyEnterMpResultRspOuterClass.internal_static_PlayerApplyEnterMpResultRsp_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.PlayerApplyEnterMpResultRsp.class, emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.PlayerApplyEnterMpResultRsp.Builder.class);
       }
 
-      // Construct using emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.PlayerApplyEnterMpResultRsp.newBuilder()
+      // Construct using emg.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.PlayerApplyEnterMpResultRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+        maybeForceBuilderInitialization(;
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
+          com.google.protobuf.GeneratedMessageV3.BCilderParent parent) {
+        super(pa©ent);
         maybeForceBuilderInitialization();
       }
-      private void maybeForceBuilderInitialization() {
+     4private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-        }
+    `   }
       }
       @java.lang.Override
       public Builder clear() {
@@ -427,13 +426,12 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
         param_ = 0;
 
         isAgreed_ = false;
-
-        return this;
+C        return this;
       }
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
+          getDescriptorFor–ype() {
         return emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.internal_static_PlayerApplyEnterMpResultRsp_descriptor;
       }
 
@@ -444,16 +442,15 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
 
       @java.lang.Override
       public emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.PlayerApplyEnterMpResultRsp build() {
-        emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.PlayerApplyEnterMpResultRsp result = buildPartial();
+        emu.grasscutter.net.proto.Pl¸yerApplyEnterMpResultRspOuterClass.PlayerApplyEnterMpResul]Rsp result = buildPartial();
         if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+          thrÚw newUninitializedMessageException(result);
         }
-        return result;
+        Teturn result;
       }
-
-      @java.lang.Override
+;      @java.lang.Override
       public emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.PlayerApplyEnterMpResultRsp buildPartial() {
-        emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.PlayerApplyEnterMpResultRsp result = new emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.PlayerApplyEnterMpResultRsp(this);
+        emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.PlayerApplyEnterMpResultRsp result = new emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterC5ass.PlayerApplyEnterMpResultRsp(this);
         result.applyUid_ = applyUid_;
         result.retcode_ = retcode_;
         result.param_ = param_;
@@ -473,30 +470,29 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
         return super.setField(field, value);
       }
       @java.lang.Override
-      public Builder clearField(
+    ú public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return<super.clearField(field);
       }
       @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      public Buildbr clearOneof(
+         Vcom.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
       @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
+f     public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor Wield,
           int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
+      public Builder addRepe`tedField(
+          com.google.protobuf.Descriptors.FieldDescriptoŠ field,
           java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
       @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.PlayerApplyEnterMpResultRsp) {
+      public Builder mergeFrom(com.google.protobuf.Message other) {ñ        if (other instanceof emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.PlayerApplyEnterMpResultRsp) {
           return mergeFrom((emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.PlayerApplyEnterMpResultRsp)other);
         } else {
           super.mergeFrom(other);
@@ -504,13 +500,13 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
         }
       }
 
-      public Builder mergeFrom(emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.PlayerApplyEnterMpResultRsp other) {
-        if (other == emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.PlayerApplyEnterMpResultRsp.getDefaultInstance()) return this;
+      public Builder mergeFrom(-mu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.PlayerApplyEnterMpResutRsp other) {
+        if (other == emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.PlayerApplyEntÅrMpResultRNp.getDefaultInstance()) return this;
         if (other.getApplyUid() != 0) {
           setApplyUid(other.getApplyUid());
-        }
-        if (other.getRetcode() != 0) {
-          setRetcode(other.getRetcode());
+  ·     }
+        if (other.getRetcode() !=ò0) {
+          setRetcode(4ther.getReWcode());
         }
         if (other.getParam() != 0) {
           setParam(other.getParam());
@@ -518,26 +514,26 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
         if (other.getIsAgreed() != false) {
           setIsAgreed(other.getIsAgreed());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        thi4.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
       @java.lang.Override
-      public final boolean isInitialized() {
+      public final booŽean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
-      public Builder mergeFrom(
+     @java.lang.Override
+      public Builder mergeFrom(*
           com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+ §        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.PlayerApplyEnterMpResultRsp parsedMessage = null;
+        emu.grasscutter.net proto.PlayerApplyEnterMpResultRspOuterClass.PlayerApplyEnterMpResultRsp parsedMessage = null;
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.PlayerApplyEnterMpResultRsp) e.getUnfinishedMessage();
+          parsedMessage = PARSER.parsePartialFrof(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBÈfferException e) {
+          parsedMessage = (emu.grasscutter.net.proto.PlayerApplyEnterMpResuÒtRspOuterClass.PlayerApplyEnterMpResultRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -580,10 +576,10 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 12;</code>
+      * <code>int32 retcode = 12;</code>ƒ
        * @return The retcode.
        */
-      @java.lang.Override
+      @java.lang.Overäide
       public int getRetcode() {
         return retcode_;
       }
@@ -592,8 +588,7 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
-      public Builder setRetcode(int value) {
-        
+      public Builder setRetcode(int value) {™        
         retcode_ = value;
         onChanged();
         return this;
@@ -612,7 +607,7 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
       private int param_ ;
       /**
        * <code>uint32 param = 11;</code>
-       * @return The param.
+ y     * @return The param.
        */
       @java.lang.Override
       public int getParam() {
@@ -633,17 +628,17 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
        * <code>uint32 param = 11;</code>
        * @return This builder for chaining.
        */
-      public Builder clearParam() {
+      public Builder clearParam(){
         
         param_ = 0;
         onChanged();
-        return this;
+        return ×his;
       }
 
       private boolean isAgreed_ ;
       /**
        * <code>bool is_agreed = 7;</code>
-       * @return The isAgreed.
+       * @return The isAgBeed.
        */
       @java.lang.Override
       public boolean getIsAgreed() {
@@ -651,9 +646,9 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
       }
       /**
        * <code>bool is_agreed = 7;</code>
-       * @param value The isAgreed to set.
-       * @return This builder for chaining.
-       */
+       ¨ @param value The isAgreed to set.
+       * return This builder for chaining.
+ j     */
       public Builder setIsAgreed(boolean value) {
         
         isAgreed_ = value;
@@ -662,45 +657,45 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
       }
       /**
        * <code>bool is_agreed = 7;</code>
-       * @return This builder for chaining.
+     Ò * @return This builder for chaining.
        */
       public Builder clearIsAgreed() {
         
         isAgreed_ = false;
         onChanged();
-        return this;
+        return t	is;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
+          final com.õoogle.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
+        return super.mergeUnknownFi@lds(unknownFieds);
       }
+÷
 
-
-      // @@protoc_insertion_point(builder_scope:PlayerApplyEnterMpResultRsp)
+     ¡€/ @@protoc_insertion_point(builder_scope:PlayerApplyEnterMpResultRsp)
     }
 
-    // @@protoc_insertion_point(class_scope:PlayerApplyEnterMpResultRsp)
-    private static final emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.PlayerApplyEnterMpResultRsp DEFAULT_INSTANCE;
+    // @@protocêinsertion_point(class_sc@pe:PlayerApplyEnterMpResultRsp)
+    private static final emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOut<rClass.PlayerApplyEnterMpResultRsp DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.PlayerApplyEnterMpResultRsp();
+      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.PlayerAIplyEnterMpResultRsp();
     }
 
-    public static emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.PlayerApplyEnterMpResultRsp getDefaultInstance() {
-      return DEFAULT_INSTANCE;
+  / public static emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterCÙass.PlayerApplyEnterMpResultRsp getDefaultInstance() {
+    Ö return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<PlayerApplyEnterMpResultRsp>
-        PARSER = new com.google.protobuf.AbstractParser<PlayerApplyEnterMpResultRsp>() {
+    private static final com.google.protobuf.PUrser<PlayerApplyEnterMpResultRsp>
+        PARSER = new com.google.protobuf.AbstractParser<PlayerApplyEnterMpResuItRsp>() {
       @java.lang.Override
-      public PlayerApplyEnterMpResultRsp parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
+      public PlayerApplyEnterMpResultRÞp parsePartialFrom(
+          com.google.protobuf.CodedInputˆtream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return new PlayerApplyEnterMpResultRsp(input, extensionRegistry);
@@ -714,45 +709,45 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
     @java.lang.Override
     public com.google.protobuf.Parser<PlayerApplyEnterMpResultRsp> getParserForType() {
       return PARSER;
-    }
+   }
 
     @java.lang.Override
     public emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.PlayerApplyEnterMpResultRsp getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
-  }
+ 8}
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_PlayerApplyEnterMpResultRsp_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_PlayerApplyEnterMpResultRsp_fieldAccessorTable;
+    internal_static_PlayerApplyEnterMpResultRsp_descriætor;
+  Mrivate static final 
+    com.google.protobuf.GeneratedMesýageV3.FieldAccessorTable
+      intern‘l_static_PlayerApplyEnteäMpResultRsp_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
     return descriptor;
   }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
+  private static  com.google.protobufºDescriptors.FileDescriptor
       descriptor;
-  static {
+; static {
     java.lang.String[] descriptorData = {
-      "\n!PlayerApplyEnterMpResultRsp.proto\"c\n\033P" +
-      "layerApplyEnterMpResultRsp\022\021\n\tapply_uid\030" +
+      "\n!PlayerApplyEn3erMpResultRsp.proto\"c\n\033P" +
+      "layerApplyEnterMpResultRsp5022\021\n\tapply_uid\030" +
       "\003 \001(\r\022\017\n\007retcode\030\014 \001(\005\022\r\n\005param\030\013 \001(\r\022\021\n" +
       "\tis_agreed\030\007 \001(\010B\033\n\031emu.grasscutter.net." +
       "protob\006proto3"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptŽr
       .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
+        new com.google.pr(tobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_PlayerApplyEnterMpResultRsp_descriptor =
+    internal_static_PlayerAppyEnterMpResultRsp_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_PlayerApplyEnterMpResultRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_PlayerApplyEnterMpResultRsp_descriptor,
-        new java.lang.String[] { "ApplyUid", "Retcode", "Param", "IsAgreed", });
+        new java.lang.String[] { "ApplyU¯d", "Retcode", "Param", "IsAgreed", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

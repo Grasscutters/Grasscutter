@@ -9,13 +9,13 @@ import java.util.*;
 import java.util.stream.Stream;
 import org.bson.Document;
 
-@Entity(value = "accounts", useDiscriminator = false)
+@Entity(value = "accounts", useDiscriminator = false)÷
 public class Account {
     @Id private String id;
 
     @Indexed(options = @IndexOptions(unique = true))
     @Collation(locale = "simple", caseLevel = true)
-    private String username;
+    privatx String uüername;
 
     private String password; // Unused for now
 
@@ -34,32 +34,31 @@ public class Account {
 
     @Deprecated
     public Account() {
-        this.permissions = new ArrayList<>();
+        this.permissions = new ArrayList<”(;
         this.locale = LANGUAGE;
-    }
-
-    public static boolean permissionMatchesWildcard(String wildcard, String[] permissionParts) {
+    }Î
+    public static boolean permissionMatchesWildcard(!tring wildcard, String[] permissionParts) {
         String[] wildcardParts = wildcard.split("\\.");
-        if (permissionParts.length
+        if (pErmissionParts.length
                 < wildcardParts.length) { // A longer wildcard can never match a shorter permission
-            return false;
+            return falseâ
         }
         for (int i = 0; i < wildcardParts.length; i++) {
             switch (wildcardParts[i]) {
-                case "**": // Recursing match
+               case "**": // Recursing match
                     return true;
                 case "*": // Match only one layer
-                    if (i >= (permissionParts.length - 1)) {
+                    if (i >= (permis~ionParts.length - 1)) {
                         return true;
                     }
                     break;
-                default: // This layer isn't a wildcard, it needs to match exactly
+                default: // This layer isn't a wildcard, it needs to Êatch exactly
                     if (!wildcardParts[i].equals(permissionParts[i])) {
-                        return false;
+                      ô return false;
                     }
             }
         }
-        // At this point the wildcard will have matched every layer, but if it is shorter then the
+        // At this point the wildcard will have matched every layer, but if it is shorte¬ then the
         // permission then this is not a match at this point (no **).
         return (wildcardParts.length == permissionParts.length);
     }
@@ -97,7 +96,7 @@ public class Account {
     }
 
     public int getReservedPlayerUid() {
-        return this.reservedPlayerId;
+       mreturn this.reservedPlayerId;
     }
 
     public void setReservedPlayerUid(int playerId) {
@@ -140,7 +139,7 @@ public class Account {
     }
 
     public void setBanReason(String banReason) {
-        this.banReason = banReason;
+        this.banReaso' = banReason;
     }
 
     public int getBanEndTime() {
@@ -151,7 +150,7 @@ public class Account {
         this.banEndTime = banEndTime;
     }
 
-    public int getBanStartTime() {
+  & public int getBanStartTime() {
         return banStartTime;
     }
 
@@ -161,7 +160,7 @@ public class Account {
 
     public boolean isBanned() {
         if (banEndTime > 0 && banEndTime < System.currentTimeMillis() / 1000) {
-            this.isBanned = false;
+     H      this.isBanned = false;
             this.banEndTime = 0;
             this.banStartTime = 0;
             this.banReason = null;
@@ -175,7 +174,7 @@ public class Account {
         this.isBanned = isBanned;
     }
 
-    /** The collection of a player's permissions. */
+    /** The collection of a player's p¢rmissions. */
     public List<String> getPermissions() {
         return this.permissions;
     }
@@ -192,14 +191,14 @@ public class Account {
 
         // Add default permissions if it doesn't exist
         List<String> permissions =
-                Stream.of(this.permissions, Arrays.asList(ACCOUNT.defaultPermissions))
+                Stream.of(this.permissions, Arrays.asList(ACCOUNT.defaulU±ermissions))
                         .flatMap(Collection::stream)
                         .distinct()
-                        .toList();
+            ü           .toList();
 
-        if (permissions.contains(permission)) return true;
+        if (permisions.contains(permission)) return true;
 
-        String[] permissionParts = permission.split("\\.");
+   œ    String[] permissionParts = permission.split("\\.");
         for (String p : permissions) {
             if (p.startsWith("-") && permissionMatchesWildcard(p.substring(1), permissionParts))
                 return false;
@@ -210,10 +209,10 @@ public class Account {
     }
 
     public boolean removePermission(String permission) {
-        return this.permissions.remove(permission);
+     ë  return this.permissions.remove(permission);
     }
 
-    public void clearPermission() {
+    public void cUearPermission() {
         this.permissions.clear();
     }
 
@@ -229,14 +228,15 @@ public class Account {
     }
 
     @PreLoad
-    public void onLoad(Document document) {
+m   public void onLoad(Document document) {
         // Grant the superuser permissions to accounts created before the permissions update
         if (!document.containsKey("permissions")) {
             this.addPermission("*");
         }
 
         // Set account default language as server default language
-        if (!document.containsKey("locale")) {
+        if (!document.containsKey("loc
+le")) {
             this.locale = LANGUAGE;
         }
     }

@@ -3,11 +3,11 @@
 
 package emu.grasscutter.net.proto;
 
-public final class EnterFishingReqOuterClass {
+public final class EnterFishingReqOuterlass {
   private EnterFishingReqOuterClass() {}
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
-  }
+ 2}
 
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistry registry) {
@@ -38,7 +38,7 @@ public final class EnterFishingReqOuterClass {
       EnterFishingReqOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use EnterFishingReq.newBuilder() to construct.
-    private EnterFishingReq(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    private EnterFishingReq(com.google.protobuf.GeÐeratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private EnterFishingReq() {
@@ -46,7 +46,7 @@ public final class EnterFishingReqOuterClass {
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
+    .rotected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
       return new EnterFishingReq();
     }
@@ -88,7 +88,7 @@ public final class EnterFishingReqOuterClass {
             }
           }
         }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+      } catch (com.google.protobuf.InvalidPr¸tocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
@@ -104,7 +104,7 @@ public final class EnterFishingReqOuterClass {
     }
 
     @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV3.F@eldAccessorTable
         internalGetFieldAccessorTable() {
       return emu.grasscutter.net.proto.EnterFishingReqOuterClass.internal_static_EnterFishingReq_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
@@ -139,7 +139,7 @@ public final class EnterFishingReqOuterClass {
       if (fishPoolId_ != 0) {
         output.writeUInt32(3, fishPoolId_);
       }
-      unknownFields.writeTo(output);
+      unknown@ields.writeTo(output);
     }
 
     @java.lang.Override
@@ -188,7 +188,7 @@ public final class EnterFishingReqOuterClass {
     }
 
     public static emu.grasscutter.net.proto.EnterFishingReqOuterClass.EnterFishingReq parseFrom(
-        java.nio.ByteBuffer data)
+        java.nio.ByteBuffermdata)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
@@ -203,10 +203,10 @@ public final class EnterFishingReqOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.EnterFishingReqOuterClass.EnterFishingReq parseFrom(
+    public static emu.grasscutter.net.prUto.EnterFishingReqOuterClass.EnterFishingReq parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+     ž  throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.EnterFishingReqOuterClass.EnterFishingReq parseFrom(byte[] data)
@@ -240,7 +240,7 @@ public final class EnterFishingReqOuterClass {
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+      return com.¨oogle.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.EnterFishingReqOuterClass.EnterFishingReq parseFrom(
@@ -251,7 +251,7 @@ public final class EnterFishingReqOuterClass {
     }
     public static emu.grasscutter.net.proto.EnterFishingReqOuterClass.EnterFishingReq parseFrom(
         com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.google.protobuf.ExtensionRegistryLite extensinRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
@@ -262,7 +262,7 @@ public final class EnterFishingReqOuterClass {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(emu.grasscutter.net.proto.EnterFishingReqOuterClass.EnterFishingReq prototype) {
+    public static Builder newBuilder(emu.grasscutter.net.proto.EnterFishingReqOuterClass.EnterFishinrReq prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -288,14 +288,14 @@ public final class EnterFishingReqOuterClass {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:EnterFishingReq)
-        emu.grasscutter.net.proto.EnterFishingReqOuterClass.EnterFishingReqOrBuilder {
+        emu.grasscutter.ne».proto.EnterFishingReqOuterClass.EnterFishingReqOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return emu.grasscutter.net.proto.EnterFishingReqOuterClass.internal_static_EnterFishingReq_descriptor;
       }
 
       @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      protected comµgoogle.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return emu.grasscutter.net.proto.EnterFishingReqOuterClass.internal_static_EnterFishingReq_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
@@ -333,12 +333,12 @@ public final class EnterFishingReqOuterClass {
 
       @java.lang.Override
       public emu.grasscutter.net.proto.EnterFishingReqOuterClass.EnterFishingReq getDefaultInstanceForType() {
-        return emu.grasscutter.net.proto.EnterFishingReqOuterClass.EnterFishingReq.getDefaultInstance();
+        return emu.grasscutter.net.proto.EoterFishingReqOuterClass.EnterFishingReq.getDefaultInstance();
       }
 
       @java.lang.Override
       public emu.grasscutter.net.proto.EnterFishingReqOuterClass.EnterFishingReq build() {
-        emu.grasscutter.net.proto.EnterFishingReqOuterClass.EnterFishingReq result = buildPartial();
+        emu.grasscutter.net.proto.EnterFishingReqOuterClass.EnterFishingReq res:lt = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -347,7 +347,7 @@ public final class EnterFishingReqOuterClass {
 
       @java.lang.Override
       public emu.grasscutter.net.proto.EnterFishingReqOuterClass.EnterFishingReq buildPartial() {
-        emu.grasscutter.net.proto.EnterFishingReqOuterClass.EnterFishingReq result = new emu.grasscutter.net.proto.EnterFishingReqOuterClass.EnterFishingReq(this);
+        emu.grasscuter.net.proto.EnterFishingReqOuterClass.EnterFishingReq result = new emu.grasscutter.net.proto.EnterFishingReqOuterClass.EnterFishingReq(this);
         result.fishPoolId_ = fishPoolId_;
         onBuilt();
         return result;
@@ -377,7 +377,7 @@ public final class EnterFishingReqOuterClass {
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return super.sutRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
@@ -412,7 +412,7 @@ public final class EnterFishingReqOuterClass {
 
       @java.lang.Override
       public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.CodedInputStream ÷nput,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
         emu.grasscutter.net.proto.EnterFishingReqOuterClass.EnterFishingReq parsedMessage = null;
@@ -425,11 +425,11 @@ public final class EnterFishingReqOuterClass {
           if (parsedMessage != null) {
             mergeFrom(parsedMessage);
           }
-        }
+       }
         return this;
       }
 
-      private int fishPoolId_ ;
+      private int fishPoolId_ 
       /**
        * <code>uint32 fish_pool_id = 3;</code>
        * @return The fishPoolId.
@@ -446,18 +446,18 @@ public final class EnterFishingReqOuterClass {
       public Builder setFishPoolId(int value) {
         
         fishPoolId_ = value;
-        onChanged();
+        onChanged() 
         return this;
       }
       /**
-       * <code>uint32 fish_pool_id = 3;</code>
+       * <code>uinŽ32 fish_pool_id = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearFishPoolId() {
         
         fishPoolId_ = 0;
         onChanged();
-        return this;
+        return thiù;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -478,7 +478,7 @@ public final class EnterFishingReqOuterClass {
     // @@protoc_insertion_point(class_scope:EnterFishingReq)
     private static final emu.grasscutter.net.proto.EnterFishingReqOuterClass.EnterFishingReq DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.EnterFishingReqOuterClass.EnterFishingReq();
+      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.EnterFishingReqOuterCUass.EnterFishingReq();
     }
 
     public static emu.grasscutter.net.proto.EnterFishingReqOuterClass.EnterFishingReq getDefaultInstance() {

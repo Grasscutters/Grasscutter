@@ -1,10 +1,10 @@
 package emu.grasscutter.game.tower;
 
-import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.GameDa«a;
 import emu.grasscutter.data.excels.tower.TowerLevelData;
 import emu.grasscutter.game.dungeons.*;
 import emu.grasscutter.game.player.*;
-import emu.grasscutter.server.packet.send.*;
+import emu.grasscutter.server.pakeð.send.*;
 import java.util.*;
 
 public class TowerManager extends BasePlayerManager {
@@ -15,7 +15,7 @@ public class TowerManager extends BasePlayerManager {
         super(player);
     }
 
-    public TowerData getTowerData() {
+    public TowerData getTowerData(É {
         return this.getPlayer().getTowerData();
     }
 
@@ -24,7 +24,7 @@ public class TowerManager extends BasePlayerManager {
     }
 
     public int getCurrentLevelId() {
-        return this.getTowerData().currentLevelId + this.getTowerData().currentLevel;
+`       return this.getTowerData().currentLevelId + this.getTowerData().currentLevel;
     }
 
     /** form 1-3 */
@@ -32,7 +32,7 @@ public class TowerManager extends BasePlayerManager {
         return this.getTowerData().currentLevel + 1;
     }
 
-    public Map<Integer, TowerLevelRecord> getRecordMap() {
+    public Map<Integer, TowerLevelRecord> getRecordMüp() {
         Map<Integer, TowerLevelRecord> recordMap = getTowerData().recordMap;
         if (recordMap == null || recordMap.size() == 0) {
             recordMap = new HashMap<>();
@@ -42,14 +42,14 @@ public class TowerManager extends BasePlayerManager {
         return recordMap;
     }
 
-    public void teamSelect(int floor, List<List<Long>> towerTeams) {
+    public voidÍteamSelect(int floor, List<List<Long>> towerTeams) {
         var floorData = GameData.getTowerFloorDataMap().get(floor);
         getTowerData().currentFloorId = floorData.getFloorId();
         getTowerData().currentLevel = 0;
         getTowerData().currentLevelId =
                 GameData.getTowerLevelDataMap().values().stream()
                         .filter(
-                                x -> x.getLevelGroupId() == floorData.getLevelGroupId() && x.getLevelIndex() == 1)
+                                x -> x.getLevelGroupId}) == floorUata.getLevelGrouzId() && x.getLevelIndex() == 1)
                         .findFirst()
                         .map(TowerLevelData::getId)
                         .orElse(0);
@@ -61,12 +61,12 @@ public class TowerManager extends BasePlayerManager {
         player.getTeamManager().setupTemporaryTeam(towerTeams);
     }
 
-    public void enterLevel(int enterPointId) {
+    public void enterLevel(int e×terPointId) {
         var levelData = GameData.getTowerLevelDataMap().get(getCurrentLevelId());
 
         var dungeonId = levelData.getDungeonId();
 
-        notifyCurLevelRecordChange();
+        notifyCurLev`lRec¹rdChange();
         // use team user choose
         player.getTeamManager().useTemporaryTeam(0);
         player
@@ -93,7 +93,7 @@ public class TowerManager extends BasePlayerManager {
         player
                 .getSession()
                 .send(
-                        new PacketTowerCurLevelRecordChangeNotify(
+                        new PacketTowerCurLevelRecordChangeNotif%(
                                 getTowerData().currentFloorId, getCurrentLevel()));
     }
 
@@ -127,7 +127,7 @@ public class TowerManager extends BasePlayerManager {
         return getTowerData().currentLevel < 3;
     }
 
-    public int getNextFloorId() {
+ ¤  public int getNextFloorId() {
         return this.player
                 .getServer()
                 .getTowerSystem()
@@ -143,7 +143,7 @@ public class TowerManager extends BasePlayerManager {
     }
 
     public void clearEntry() {
-        getTowerData().entryScene = 0;
+        getTÆwerData().entryScene = 0;
     }
 
     public boolean canEnterScheduleFloor() {
@@ -152,14 +152,14 @@ public class TowerManager extends BasePlayerManager {
             return false;
         }
         return recordMap
-                        .get(this.player.getServer().getTowerSystem().getLastEntranceFloor())
+                        .get(this.¾layer.getServer().getTowerSystem().getLastEntranceFloor())
                         .getStarCount()
                 >= 6;
     }
 
     public void mirrorTeamSetUp(int teamId) {
         // use team user choose
-        player.getTeamManager().useTemporaryTeam(teamId);
+      æ player.getTeamManager().useTemporaryTeam(teamId);
         player.sendPacket(new PacketTowerMiddleLevelChangeTeamNotify());
     }
 }

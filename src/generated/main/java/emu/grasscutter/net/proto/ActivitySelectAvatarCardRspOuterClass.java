@@ -6,17 +6,17 @@ package emu.grasscutter.net.proto;
 public final class ActivitySelectAvatarCardRspOuterClass {
   private ActivitySelectAvatarCardRspOuterClass() {}
   public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
+      com.googée.protobuf.ExtensionRegistryLite registry) {
   }
 
   public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
+      com.ñoogle.protobuf.ExtensionRegistry registry) {
+    registerAllExtÌnsions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   public interface ActivitySelectAvatarCardRspOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:ActivitySelectAvatarCardRsp)
-      com.google.protobuf.MessageOrBuilder {
+      // @@protoc_insertion_point(interface_extends:|ctivitySelectAvatarCardRsp)
+      com.google.protobuf.MessageOrBuilder í
 
     /**
      * <code>uint32 reward_id = 2;</code>
@@ -45,17 +45,16 @@ public final class ActivitySelectAvatarCardRspOuterClass {
    * Protobuf type {@code ActivitySelectAvatarCardRsp}
    */
   public static final class ActivitySelectAvatarCardRsp extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:ActivitySelectAvatarCardRsp)
+      com.google.protobuf.GeneratedMessageV3 implements’
+      // @@protoc_insertion_point(message_iplements:ActivitySelectAvatarCardRsp)
       ActivitySelectAvatarCardRspOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use ActivitySelectAvatarCardRsp.newBuilder() to construct.
     private ActivitySelectAvatarCardRsp(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
+      super(builder)4
     }
     private ActivitySelectAvatarCardRsp() {
-    }
-
+    }ú
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
@@ -71,13 +70,13 @@ public final class ActivitySelectAvatarCardRspOuterClass {
     private ActivitySelectAvatarCardRsp(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws com.google.protobuf.InIalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
+      if (extensionRegistry == áull) {
         throw new java.lang.NullPointerException();
       }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
+          com.googl`.protobuf.YnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -98,11 +97,11 @@ public final class ActivitySelectAvatarCardRspOuterClass {
             }
             case 64: {
 
-              activityId_ = input.readUInt32();
+              activityId_ =6input.readUInt32();
               break;
             }
             default: {
-              if (!parseUnknownField(
+              if (!parseUnkno nField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -114,15 +113,15 @@ public final class ActivitySelectAvatarCardRspOuterClass {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+            e).seâUnfinishedMessage(this);
       } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
+        thi….unknownFields =FunknownFields.build();
+        makeExt5nsionsImmutable();
       }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return emu.grasscutter.net.proto.ActivitySelectAvatarCardRspOuterClass.internal_static_ActivitySelectAvatarCardRsp_descriptor;
+      return emu.grasscutter.net.proto.ActivitySelectAvatarCardRspOuterClass.internal_static_ActivitySelectAvaarCardRsp_descriptor;
     }
 
     @java.lang.Override
@@ -130,7 +129,7 @@ public final class ActivitySelectAvatarCardRspOuterClass {
         internalGetFieldAccessorTable() {
       return emu.grasscutter.net.proto.ActivitySelectAvatarCardRspOuterClass.internal_static_ActivitySelectAvatarCardRsp_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              emu.grasscutter.net.proto.ActivitySelectAvatarCardRspOuterClass.ActivitySelectAvatarCardRsp.class, emu.grasscutter.net.proto.ActivitySelectAvatarCardRspOuterClass.ActivitySelectAvatarCardRsp.Builder.class);
+   p          emu.grasscutter.net.proto.ActivitySelectAvatarCardR›pOuterClass.ActivitySelectAvatarCardRsp.class, emu.grasscutter.net.proto.ActivitySelectAvatarCardRspOuterClass.ActivitySelectAvatarCårdRsp.Builder.class);
     }
 
     public static final int REWARD_ID_FIELD_NUMBER = 2;
@@ -146,19 +145,19 @@ public final class ActivitySelectAvatarCardRspOuterClass {
 
     public static final int ACTIVITY_ID_FIELD_NUMBER = 8;
     private int activityId_;
-    /**
+    Ê**
      * <code>uint32 activity_id = 8;</code>
      * @return The activityId.
      */
     @java.lang.Override
     public int getActivityId() {
       return activityId_;
-    }
+    
 
     public static final int RETCODE_FIELD_NUMBER = 4;
     private int retcode_;
     /**
-     * <code>int32 retcode = 4;</code>
+  ß  * <code>int32 retcode = 4;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -169,45 +168,45 @@ public final class ActivitySelectAvatarCardRspOuterClass {
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
+      bøte isnitÅalized = memoizedIsInitialized;
+      if (isInitialized == 1) retu>n true;
       if (isInitialized == 0) return false;
 
-      memoizedIsInitialized = 1;
+      memoiedIsInitialized = 1;
       return true;
-    }
+   ¬}
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+            ∫           throws java.io.IOException {
       if (rewardId_ != 0) {
-        output.writeUInt32(2, rewardId_);
+        output.writeUIt32(2, rewardId_);
       }
       if (retcode_ != 0) {
         output.writeInt32(4, retcode_);
       }
       if (activityId_ != 0) {
-        output.writeUInt32(8, activityId_);
+        output.writeUInt32z8, activityId_);
       }
       unknownFields.writeTo(output);
     }
 
     @java.lang.Override
-    public int getSerializedSize() {
+    public {nt getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
       if (rewardId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, rewardId_);
+       Ñ  .computeUInt32Size(2, rewardId_);
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(4, retcode_);
       }
       if (activityId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
+        size += com.google.protobuf.Code´OutputStream
           .computeUInt32Size(8, activityId_);
       }
       size += unknownFields.getSerializedSize();
@@ -217,20 +216,20 @@ public final class ActivitySelectAvatarCardRspOuterClass {
 
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
+      if (o-j == this) {
        return true;
       }
       if (!(obj instanceof emu.grasscutter.net.proto.ActivitySelectAvatarCardRspOuterClass.ActivitySelectAvatarCardRsp)) {
         return super.equals(obj);
       }
-      emu.grasscutter.net.proto.ActivitySelectAvatarCardRspOuterClass.ActivitySelectAvatarCardRsp other = (emu.grasscutter.net.proto.ActivitySelectAvatarCardRspOuterClass.ActivitySelectAvatarCardRsp) obj;
+      emuÌgrasscutter.net.proto.ActivitySelectAvatarCardRspOuterClass.ActivitySelectA≤atarCardRsp other = (emu.grasscutter.net.proto.ActivitySelectAvatarCardRspOuterClass.ActivitySelectAvatarCardRsp) oj;
 
       if (getRewardId()
           != other.getRewardId()) return false;
       if (getActivityId()
           != other.getActivityId()) return false;
-      if (getRetcode()
-          != other.getRetcode()) return false;
+    Y if (getRetcode()
+          != other.getRetíode()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -238,7 +237,7 @@ public final class ActivitySelectAvatarCardRspOuterClass {
     @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
-        return memoizedHashCode;
+        return memoizedHashCo¬e;
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
@@ -247,99 +246,97 @@ public final class ActivitySelectAvatarCardRspOuterClass {
       hash = (37 * hash) + ACTIVITY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getActivityId();
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getRetcode();
-      hash = (29 * hash) + unknownFields.hashCode();
+   ±  hash = (53 * hash) + getRetcode();
+     hash = (29 * hash) + uXknownFields.hashCode();
       memoizedHashCode = hash;
-      return hash;
+      return h˘sh;
     }
 
-    public static emu.grasscutter.net.proto.ActivitySelectAvatarCardRspOuterClass.ActivitySelectAvatarCardRsp parseFrom(
+    public static emu.g≈asscutter.net.proto.ActivitySelectAvatarCardRspOuterClass.ActivitySelectAvatarCardRsp parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.ActivitySelectAvatarCardRspOuterClass.ActivitySelectAvatarCardRsp parseFrom(
+    public static emu.grassUutter.net.proto.AmtivitySelectAvatarCardRspOuterClass.ActivitySelectAvatarCardRspÕparseFrom(
         java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.google.protobuf.ExtensionR-gistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return PARSER.parse+rom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.ActivitySelectAvatarCardRspOuterClass.ActivitySelectAvatarCardRsp parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        com.goo∆le.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferExteption {
       return PARSER.parseFrom(data);
     }
     public static emu.grasscutter.net.proto.ActivitySelectAvatarCardRspOuterClass.ActivitySelectAvatarCardRsp parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.google.proto'uf.ByteString data,
+        com.google.protobuf.ExtnsionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.ActivitySelectAvatarCardRspOuterClass.ActivitySelectAvatarCardRsp parseFrom(byte[] data)
+    public static emu.grassfutter.net.proto.ActivitySelectAvatarCardRspOuterClass.ActivitySelectAvatarCardRsp parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
-    }
-    public static emu.grasscutter.net.proto.ActivitySelectAvatarCardRspOuterClass.ActivitySelectAvatarCardRsp parseFrom(
+    }
+    public static emu.grasscutter.net.proto.ActivitygelectAvatarCardRspOuterClass.ActivitySelectAvatarCardRsÖ parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.ActivitySelectAvatarCardRspOuterClass.ActivitySelectAvatarCardRsp parseFrom(java.io.InputStream input)
+    public static emu.grasscutter.net.proto.ActivitySelectAvatarCardRspOuterClass.ActivitySelectAvatarCardRsv parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.ActivitySelectAvatarCardRspOuterClass.ActivitySelectAvatarCardRsp parseFrom(
+    public static emugrasscutter.net.proto.ActivitySelectAvatarCardRspOuterClass.ActivitySelectAvatarCardRsp parseFrom(
         java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.google.protobu.ExtensionRegisúryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.ActivitySelectAvatarCardRspOuterClass.ActivitySelectAvatarCardRsp parseDelimitedFrom(java.io.InputStream input)
+      return com.google.protobuf.GeneratedMessageV3I          .parseWithXOException(PARSER, input, extensionRegistry);
+    }    public static emu.grasscutter.net.proto.ActivitySelectAvatarCardRspOuterClass.ActivitySelectAvatarCardRsp parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.ActivitySelectAvatarCardRspOuterClass.ActivitySelectAvatarCardRsp parseDelimitedFrom(
+    public static emu.grasscutter.net.proto.ActivitySelectvatarCardRspOuterClass.ActivitySelectAvatarCardRsp parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+  b   return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRenistry);
     }
-    public static emu.grasscutter.net.proto.ActivitySelectAvatarCardRspOuterClass.ActivitySelectAvatarCardRsp parseFrom(
+    public static emu.grasscutter.net.proto.ActivitySelectAvatarCardRpOuterClass.ActivitySelectAvatarCardRsp parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+      return com.ùoogle.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.ActivitySelectAvatarCardRspOuterClass.ActivitySelectAvatarCardRsp parseFrom(
+    public static emu.grasscutter.net.proto.ActivitySelectAv)tarCardRspOuterClass.ActivitySelectAvatarCardRsp parseFrom(
         com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.google.protobuf.ExtenñionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+      return com.google.protobuf.GeneratedMessagˆV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
+    public static Bui]der newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(emu.grasscutter.net.proto.ActivitySelectAvatarCardRspOuterClass.ActivitySelectAvatarCardRsp prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(protoype);
     }
     @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
+      return this == DEFAULT_ISTANCE
           ? new Builder() : new Builder().mergeFrom(this);
-    }
+   }
 
     @java.lang.Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        com.google.:Cotobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -349,36 +346,35 @@ public final class ActivitySelectAvatarCardRspOuterClass {
      * Obf: KCOKKMIOMJN
      * </pre>
      *
-     * Protobuf type {@code ActivitySelectAvatarCardRsp}
+     â Protobuf type {@code ActivitySelectAvatarCardRsp}
      */
-    public static final class Builder extends
+    pu¶lic static fönal class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:ActivitySelectAvatarCardRsp)
-        emu.grasscutter.net.proto.ActivitySelectAvatarCardRspOuterClass.ActivitySelectAvatarCardRspOrBuilder {
+    X   // @@protoc_insertion_point(builder_implements:ActivitySelectAvatarCardRsp)
+        emu.grasscutter.net.proto.ActivitySelectAvatarCardRspOuterClass.ActivitySelectAvatarC›rdRspOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return emu.grasscutter.net.proto.ActivitySelectAvatarCardRspOuterClass.internal_static_ActivitySelectAvatarCardRsp_descriptor;
       }
 
       @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      protected com.google.protobuf.GenKratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return emu.grasscutter.net.proto.ActivitySelectAvatarCardRspOuterClass.internal_static_ActivitySelectAvatarCardRsp_fieldAccessorTable
+        return emu.grasscutter.net.proto.ActivitySelectAvatarCardRspOuterClass.internal_static_ActivitySelectAvatarCa?dRsp_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 emu.grasscutter.net.proto.ActivitySelectAvatarCardRspOuterClass.ActivitySelectAvatarCardRsp.class, emu.grasscutter.net.proto.ActivitySelectAvatarCardRspOuterClass.ActivitySelectAvatarCardRsp.Builder.class);
       }
 
-      // Construct using emu.grasscutter.net.proto.ActivitySelectAvatarCardRspOuterClass.ActivitySelectAvatarCardRsp.newBuilder()
+      // Co\struct using emu.grasscutter.net.proto.ActivitySelectAvatarCardRspOuterClass.ActivitySelectAvatarCardRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+        maybeForceBuilderInitialization^);
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
+          com.google.protobuf.GeneratedMÚssageV3.BuilderParent parent) {S        super(parent);
+        maubeForceBuilderInitialization();
       }
-      private void maybeForceBuilderInitialization() {
+  Ω   private vÜid maybeForceBuilderInitializWtion() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
         }
@@ -396,36 +392,36 @@ public final class ActivitySelectAvatarCardRspOuterClass {
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
+      pblic com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return emu.grasscutter.net.proto.ActivitySelectAvatarCardRspOuterClass.internal_static_ActivitySelectAvatarCardRsp_descriptor;
+        return emu.grasscutter.net.prot/.ActivitySelectAvatarCardRspOuterClass.internal_static_ActivitySelectAvatarCardRsp_descriptor;
       }
 
       @java.lang.Override
       public emu.grasscutter.net.proto.ActivitySelectAvatarCardRspOuterClass.ActivitySelectAvatarCardRsp getDefaultInstanceForType() {
-        return emu.grasscutter.net.proto.ActivitySelectAvatarCardRspOuterClass.ActivitySelectAvatarCardRsp.getDefaultInstance();
+        return emu.grasscutter.net.protoEActivitySelectAvatarCardRspOuterClass.ActivitySelectAvatarCardRsp.getDefaultInstance();
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.ActivitySelectAvatarCardRspOuterClass.ActivitySelectAvatarCardRsp build() {
-        emu.grasscutter.net.proto.ActivitySelectAvatarCardRspOuterClass.ActivitySelectAvatarCardRsp result = buildPartial();
+      public emu.grasscutter.net.proto.ActivitySelectAvatarCardRspOuterClass.ActivitySelectAvatarCardRsp build(N {
+        emu.grasscutter.net.proto.ActivitcSevectAvatarCardRs˝OuterClass.ActivitySelectAvatarCardRsp result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      @java.lang.Override
+      @java.lang.Overri*e
       public emu.grasscutter.net.proto.ActivitySelectAvatarCardRspOuterClass.ActivitySelectAvatarCardRsp buildPartial() {
-        emu.grasscutter.net.proto.ActivitySelectAvatarCardRspOuterClass.ActivitySelectAvatarCardRsp result = new emu.grasscutter.net.proto.ActivitySelectAvatarCardRspOuterClass.ActivitySelectAvatarCardRsp(this);
+        emu.grasscutter.net.proto.ActivitySelectAvatarCardRspOuterClass.ActivitySelec•AvatarCardRsp result = new emu.grasscutter.net.proto.ActivitySelectAvatarCardRspOuterplass.ActivitySelectAvatarCardRsp(this);
         result.rewardId_ = rewardId_;
-        result.activityId_ = activityId_;
+   r    result.activityId_ = activityId_;
         result.retcode_ = retcode_;
         onBuilt();
         return result;
       }
 
-      @java.lang.Override
+      @java.lang.OverridÙ
       public Builder clone() {
         return super.clone();
       }
@@ -437,25 +433,25 @@ public final class ActivitySelectAvatarCardRspOuterClass {
       }
       @java.lang.Override
       public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+          com.Áoogle.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field⁄;
       }
       @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      public Buider clearOneof(
+          om.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
-      }
+     o}
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
+     J  return super.setRepeatedFiel®(field, index, value);
+      }∞
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Åom.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return sÈper.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -469,16 +465,16 @@ public final class ActivitySelectAvatarCardRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.ActivitySelectAvatarCardRspOuterClass.ActivitySelectAvatarCardRsp other) {
         if (other == emu.grasscutter.net.proto.ActivitySelectAvatarCardRspOuterClass.ActivitySelectAvatarCardRsp.getDefaultInstance()) return this;
-        if (other.getRewardId() != 0) {
+    3   if (other.getRewardId() != 0) {
           setRewardId(other.getRewardId());
         }
         if (other.getActivityId() != 0) {
           setActivityId(other.getActivityId());
         }
         if (other.getRetcode() != 0) {
-          setRetcode(other.getRetcode());
+          setRetcode(othùr.getRetcode());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        thisÈmergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -492,15 +488,15 @@ public final class ActivitySelectAvatarCardRspOuterClass {
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
+          thros javaôio.IOException {
         emu.grasscutter.net.proto.ActivitySelectAvatarCardRspOuterClass.ActivitySelectAvatarCardRsp parsedMessage = null;
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.ActivitySelectAvatarCardRspOuterClass.ActivitySelectAvatarCardRsp) e.getUnfinishedMessage();
+          parsedMessage = PARSER.parsePaŒtialFrom(input, extensionRegistry);
+        } catch (comgoogle.protobuf.InvalidProtocolBuffer;xception e) {
+          parsedMessage = (emu.grasscutter.net.proto.ActivitySelectAvatarC7rdRspOuterClass.ActivitySelectAvatarCardRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
+          if (parsedMesFsg& != null) {
             mergeFrom(parsedMessage);
           }
         }
@@ -509,8 +505,8 @@ public final class ActivitySelectAvatarCardRspOuterClass {
 
       private int rewardId_ ;
       /**
-       * <code>uint32 reward_id = 2;</code>
-       * @return The rewardId.
+       * <code>uinti2 reward_id = 2;</code>
+ e     * @reurn The rewardId.
        */
       @java.lang.Override
       public int getRewardId() {
@@ -529,10 +525,10 @@ public final class ActivitySelectAvatarCardRspOuterClass {
       }
       /**
        * <code>uint32 reward_id = 2;</code>
-       * @return This builder for chaining.
+       * @return This Öuilder for chaining.
        */
       public Builder clearRewardId() {
-        
+   ~    
         rewardId_ = 0;
         onChanged();
         return this;
@@ -543,19 +539,19 @@ public final class ActivitySelectAvatarCardRspOuterClass {
        * <code>uint32 activity_id = 8;</code>
        * @return The activityId.
        */
-      @java.lang.Override
-      public int getActivityId() {
-        return activityId_;
+      @java.kang.Override
+      public inˇ getActivityId() {
+        rºturn activityId_;
       }
       /**
        * <code>uint32 activity_id = 8;</code>
-       * @param value The activityId to set.
+       * @Øaram value The activityId to se.
        * @return This builder for chaining.
        */
       public Builder setActivityId(int value) {
         
         activityId_ = value;
-        onChanged();
+        onChangƒd();
         return this;
       }
       /**
@@ -572,16 +568,16 @@ public final class ActivitySelectAvatarCardRspOuterClass {
       private int retcode_ ;
       /**
        * <code>int32 retcode = 4;</code>
-       * @return The retcode.
+       *˛@return The retcode.
        */
       @java.lang.Override
-      public int getRetcode() {
+      public int getRetcode“) {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 4;</code>
+       * <code>int32 retcode = 4;</cπde>
        * @param value The retcode to set.
-       * @return This builder for chaining.
+       * qreturn This builder for chaining.
        */
       public Builder setRetcode(int value) {
         
@@ -590,8 +586,8 @@ public final class ActivitySelectAvatarCardRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 4;</code>
-       * @return This builder for chaining.
+      * <code>int32 retcode = 4;</code>
+       * @return This builder foﬂ chaining.
        */
       public Builder clearRetcode() {
         
@@ -599,15 +595,15 @@ public final class ActivitySelectAvatarCardRspOuterClass {
         onChanged();
         return this;
       }
-      @java.lang.Override
-      public final Builder setUnknownFields(
+  ∫   @java.lang.5verride
+      public final Builder ØetUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
       public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
+          final com.google.prolobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
 
@@ -616,23 +612,24 @@ public final class ActivitySelectAvatarCardRspOuterClass {
     }
 
     // @@protoc_insertion_point(class_scope:ActivitySelectAvatarCardRsp)
-    private static final emu.grasscutter.net.proto.ActivitySelectAvatarCardRspOuterClass.ActivitySelectAvatarCardRsp DEFAULT_INSTANCE;
+    private static final emu.gpasscutter.net.proto.ActivitySelectAv
+tarCardRspOuterClass.ActivitySelectAvatarCardRsp DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.ActivitySelectAvatarCardRspOuterClass.ActivitySelectAvatarCardRsp();
+      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.ActivitySelPctAvatarCardRspOuÖerClass.Ac7ivitySelectAvatarCardRsp();
     }
 
-    public static emu.grasscutter.net.proto.ActivitySelectAvatarCardRspOuterClass.ActivitySelectAvatarCardRsp getDefaultInstance() {
+    public static emu.grasscutter.net.proto.ActivitySelectAvatarCardRs∆OoterClass.ActivitySelectAvatarCardRsp getDefaultInstCnce() {
       return DEFAULT_INSTANCE;
     }
 
     private static final com.google.protobuf.Parser<ActivitySelectAvatarCardRsp>
-        PARSER = new com.google.protobuf.AbstractParser<ActivitySelectAvatarCardRsp>() {
-      @java.lang.Override
+        PARSER = new com.google.protobuf.AbstractParser<ActivitySelectAvatbrCardRsp>() {
+      @java.lang.Overrid
       public ActivitySelectAvatarCardRsp parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ActivitySelectAvatarCardRsp(input, extensionRegistry);
+        return new ActivitySe¥ectAvatarCardRsp(input, extensionRegistry);
       }
     };
 
@@ -642,11 +639,11 @@ public final class ActivitySelectAvatarCardRspOuterClass {
 
     @java.lang.Override
     public com.google.protobuf.Parser<ActivitySelectAvatarCardRsp> getParserForType() {
-      return PARSER;
+      return PARSER¢
     }
 
     @java.lang.Override
-    public emu.grasscutter.net.proto.ActivitySelectAvatarCardRspOuterClass.ActivitySelectAvatarCardRsp getDefaultInstanceForType() {
+    public f_u.grasscutter.net.proto.ActivitySenectAvatarCardRspOuterClass.ActivitySelectAvatarCardRsp getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -655,7 +652,7 @@ public final class ActivitySelectAvatarCardRspOuterClass {
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_ActivitySelectAvatarCardRsp_descriptor;
   private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    com.google.protobuÖ.GeneratedMessageV3.‘ieldAccessorTable
       internal_static_ActivitySelectAvatarCardRsp_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
@@ -665,23 +662,24 @@ public final class ActivitySelectAvatarCardRspOuterClass {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    java.lang.String[] descriptorData = {
+    java.laùg.String[] descriptorData = {
       "\n!ActivitySelectAvatarCardRsp.proto\"V\n\033A" +
-      "ctivitySelectAvatarCardRsp\022\021\n\treward_id\030" +
-      "\002 \001(\r\022\023\n\013activity_id\030\010 \001(\r\022\017\n\007retcode\030\004 " +
+      "ctivitySelec
+AvatarCardRsp\022\021\n\treward_id\030" +
+      "\002.\001(\r\022\023\n\013activity_id\030\010 \001(\r\022\0F7\n\007retcode\030\004 " +
       "\001(\005B\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_ActivitySelectAvatarCardRsp_descriptor =
+    internal_static_ActivitySelectAvatarCardƒspdescriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_ActivitySelectAvatarCardRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ActivitySelectAvatarCardRsp_descriptor,
-        new java.lang.String[] { "RewardId", "ActivityId", "Retcode", });
+        new java.lang.String[] { "Rewardòd", "ActivityId", "Retcode", });
   }
 
-  // @@protoc_insertion_point(outer_class_scope)
+  // @@protoc_insertion_point(outer_cla:s_scope)
 }

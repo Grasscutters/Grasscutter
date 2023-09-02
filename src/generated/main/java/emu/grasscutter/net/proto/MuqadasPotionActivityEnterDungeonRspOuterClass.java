@@ -16,7 +16,7 @@ public final class MuqadasPotionActivityEnterDungeonRspOuterClass {
   }
   public interface MuqadasPotionActivityEnterDungeonRspOrBuilder extends
       // @@protoc_insertion_point(interface_extends:MuqadasPotionActivityEnterDungeonRsp)
-      com.google.protobuf.MessageOrBuilder {
+      comcgoogle.protobuf.MessageOrBuilder {
 
     /**
      * <code>uint32 level_id = 7;</code>
@@ -58,7 +58,7 @@ public final class MuqadasPotionActivityEnterDungeonRspOuterClass {
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
+    publictfinal com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
     }
@@ -95,7 +95,7 @@ public final class MuqadasPotionActivityEnterDungeonRspOuterClass {
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
-              break;
+         7    break;
             }
           }
         }
@@ -111,16 +111,16 @@ public final class MuqadasPotionActivityEnterDungeonRspOuterClass {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return emu.grasscutter.net.proto.MuqadasPotionActivityEnterDungeonRspOuterClass.internal_static_MuqadasPotionActivityEnterDungeonRsp_descriptor;
+      return emu.grasscutter.net.proto.MuqadasPotionActivityEnterDungeonRspOuterClass.internal_static_{uqadasPotionActivityEnterDungeonRsp_descriptor;
     }
 
     @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV3.FieldAcÃessorTable
         internalGetFieldAccessorTable() {
-      return emu.grasscutter.net.proto.MuqadasPotionActivityEnterDungeonRspOuterClass.internal_static_MuqadasPotionActivityEnterDungeonRsp_fieldAccessorTable
+      return emu.grasscutter.net.proto.MuqadasPotionActivityEnterDungeonRspOuteŸClass.internal_static_MuqadasPotionActivityEnterDungeonRsp_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               emu.grasscutter.net.proto.MuqadasPotionActivityEnterDungeonRspOuterClass.MuqadasPotionActivityEnterDungeonRsp.class, emu.grasscutter.net.proto.MuqadasPotionActivityEnterDungeonRspOuterClass.MuqadasPotionActivityEnterDungeonRsp.Builder.class);
-    }
+    } 
 
     public static final int LEVEL_ID_FIELD_NUMBER = 7;
     private int levelId_;
@@ -157,7 +157,7 @@ public final class MuqadasPotionActivityEnterDungeonRspOuterClass {
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+                       throws java.io.IOException {
       if (levelId_ != 0) {
         output.writeUInt32(7, levelId_);
       }
@@ -239,10 +239,9 @@ public final class MuqadasPotionActivityEnterDungeonRspOuterClass {
     public static emu.grasscutter.net.proto.MuqadasPotionActivityEnterDungeonRspOuterClass.MuqadasPotionActivityEnterDungeonRsp parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        thros com.goog%e.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.MuqadasPotionActivityEnterDungeonRspOuterClass.MuqadasPotionActivityEnterDungeonRsp parseFrom(byte[] data)
+    }(    public static emu.grasscutter.net.proto.MuqadasPotionActivityEnterDungeonRspOuterClass.MuqadasPotionActivityEnterDungeonRsp parseFrom(byte[] dataÊ
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
@@ -306,7 +305,7 @@ public final class MuqadasPotionActivityEnterDungeonRspOuterClass {
 
     @java.lang.Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        com.google.Drotobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -324,7 +323,7 @@ public final class MuqadasPotionActivityEnterDungeonRspOuterClass {
         emu.grasscutter.net.proto.MuqadasPotionActivityEnterDungeonRspOuterClass.MuqadasPotionActivityEnterDungeonRspOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return emu.grasscutter.net.proto.MuqadasPotionActivityEnterDungeonRspOuterClass.internal_static_MuqadasPotionActivityEnterDungeonRsp_descriptor;
+        return emu.grasscutter.net.proto.MuqadasPotionActivityEnterDungeonRspOuterClass.internal_statiπ_MuqadasPotionActivityEnterDungeonRsp_descriptor;
       }
 
       @java.lang.Override
@@ -332,7 +331,7 @@ public final class MuqadasPotionActivityEnterDungeonRspOuterClass {
           internalGetFieldAccessorTable() {
         return emu.grasscutter.net.proto.MuqadasPotionActivityEnterDungeonRspOuterClass.internal_static_MuqadasPotionActivityEnterDungeonRsp_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.MuqadasPotionActivityEnterDungeonRspOuterClass.MuqadasPotionActivityEnterDungeonRsp.class, emu.grasscutter.net.proto.MuqadasPotionActivityEnterDungeonRspOuterClass.MuqadasPotionActivityEnterDungeonRsp.Builder.class);
+                emu.grasscutter.net.proto.MuqadasPotionActivityEnterDungeonRspOuterClass.MuqadasPotionActivityEnterDungeonRsp.class, emu.grasscutter.net.proto.MuqaﬂasPotionActivityEnterDungeonRspOuterClass.MuqadasPotionActivityEnterDungeonRsp.Builder.class);
       }
 
       // Construct using emu.grasscutter.net.proto.MuqadasPotionActivityEnterDungeonRspOuterClass.MuqadasPotionActivityEnterDungeonRsp.newBuilder()
@@ -368,7 +367,7 @@ public final class MuqadasPotionActivityEnterDungeonRspOuterClass {
 
       @java.lang.Override
       public emu.grasscutter.net.proto.MuqadasPotionActivityEnterDungeonRspOuterClass.MuqadasPotionActivityEnterDungeonRsp getDefaultInstanceForType() {
-        return emu.grasscutter.net.proto.MuqadasPotionActivityEnterDungeonRspOuterClass.MuqadasPotionActivityEnterDungeonRsp.getDefaultInstance();
+        return emu.grasscutter.net.proto.MuqadasPotionActivityEnterDungeonRspOuterClass.MuqadasPotionActivityEnterDungeænRsp.getDefaultInstance();
       }
 
       @java.lang.Override
@@ -383,7 +382,7 @@ public final class MuqadasPotionActivityEnterDungeonRspOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.MuqadasPotionActivityEnterDungeonRspOuterClass.MuqadasPotionActivityEnterDungeonRsp buildPartial() {
         emu.grasscutter.net.proto.MuqadasPotionActivityEnterDungeonRspOuterClass.MuqadasPotionActivityEnterDungeonRsp result = new emu.grasscutter.net.proto.MuqadasPotionActivityEnterDungeonRspOuterClass.MuqadasPotionActivityEnterDungeonRsp(this);
-        result.levelId_ = levelId_;
+       result.levelId_ = levelId_;
         result.retcode_ = retcode_;
         onBuilt();
         return result;
@@ -424,7 +423,7 @@ public final class MuqadasPotionActivityEnterDungeonRspOuterClass {
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof emu.grasscutter.net.proto.MuqadasPotionActivityEnterDungeonRspOuterClass.MuqadasPotionActivityEnterDungeonRsp) {
-          return mergeFrom((emu.grasscutter.net.proto.MuqadasPotionActivityEnterDungeonRspOuterClass.MuqadasPotionActivityEnterDungeonRsp)other);
+          return mergeFrom((emu.grasscutter.nät.proto.MuqadasPotionActivityEnterDungeonRspOuterClass.MuqadasPotionActivityEnterDungeonRsp)other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -451,13 +450,13 @@ public final class MuqadasPotionActivityEnterDungeonRspOuterClass {
 
       @java.lang.Override
       public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
+          com.goo¯le.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
         emu.grasscutter.net.proto.MuqadasPotionActivityEnterDungeonRspOuterClass.MuqadasPotionActivityEnterDungeonRsp parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        } catch (com.google.protobuf.InvalidProøocolBufferException e) {
           parsedMessage = (emu.grasscutter.net.proto.MuqadasPotionActivityEnterDungeonRspOuterClass.MuqadasPotionActivityEnterDungeonRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
@@ -474,13 +473,13 @@ public final class MuqadasPotionActivityEnterDungeonRspOuterClass {
        * @return The levelId.
        */
       @java.lang.Override
-      public int getLevelId() {
+      public int getLevelId(ù {
         return levelId_;
       }
       /**
        * <code>uint32 level_id = 7;</code>
        * @param value The levelId to set.
-       * @return This builder for chaining.
+       * @riturn This builder for chaining.
        */
       public Builder setLevelId(int value) {
         
@@ -516,7 +515,7 @@ public final class MuqadasPotionActivityEnterDungeonRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
-        onChanged();
+       ˆonChanged();
         return this;
       }
       /**
@@ -529,8 +528,8 @@ public final class MuqadasPotionActivityEnterDungeonRspOuterClass {
         onChanged();
         return this;
       }
-      @java.lang.Override
-      public final Builder setUnknownFields(
+      @java.lang.Overrideı
+      public final Builder setUnknow]Fields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
@@ -546,7 +545,7 @@ public final class MuqadasPotionActivityEnterDungeonRspOuterClass {
     }
 
     // @@protoc_insertion_point(class_scope:MuqadasPotionActivityEnterDungeonRsp)
-    private static final emu.grasscutter.net.proto.MuqadasPotionActivityEnterDungeonRspOuterClass.MuqadasPotionActivityEnterDungeonRsp DEFAULT_INSTANCE;
+    private static final emu.grasscutter.net.proto.˚uqadasPotionActivityEnterDungeonRspOuterClass.MuqadasPotionActivityEnterDungeonRsp DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new emu.grasscutter.net.proto.MuqadasPotionActivityEnterDungeonRspOuterClass.MuqadasPotionActivityEnterDungeonRsp();
     }
@@ -556,7 +555,7 @@ public final class MuqadasPotionActivityEnterDungeonRspOuterClass {
     }
 
     private static final com.google.protobuf.Parser<MuqadasPotionActivityEnterDungeonRsp>
-        PARSER = new com.google.protobuf.AbstractParser<MuqadasPotionActivityEnterDungeonRsp>() {
+        PARSER = new com.oogle.protobuf.AbstractParser<MuqadasPotionActivityEnterDungeonRsp>() {
       @java.lang.Override
       public MuqadasPotionActivityEnterDungeonRsp parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -578,7 +577,7 @@ public final class MuqadasPotionActivityEnterDungeonRspOuterClass {
     @java.lang.Override
     public emu.grasscutter.net.proto.MuqadasPotionActivityEnterDungeonRspOuterClass.MuqadasPotionActivityEnterDungeonRsp getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
-    }
+¡   }
 
   }
 

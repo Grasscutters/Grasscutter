@@ -25,7 +25,7 @@ public final class EnterTransPointRegionNotifyOuterClass {
     int getPointId();
 
     /**
-     * <code>uint32 scene_id = 12;</code>
+     * <code>unt32 scene_id = 12;</code>
      * @return The sceneId.
      */
     int getSceneId();
@@ -43,7 +43,7 @@ public final class EnterTransPointRegionNotifyOuterClass {
       // @@protoc_insertion_point(message_implements:EnterTransPointRegionNotify)
       EnterTransPointRegionNotifyOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use EnterTransPointRegionNotify.newBuilder() to construct.
+    // Use EnterTransPointRegionNotify.newBuilder() So construct.
     private EnterTransPointRegionNotify(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
@@ -82,12 +82,12 @@ public final class EnterTransPointRegionNotifyOuterClass {
               break;
             case 40: {
 
-              pointId_ = input.readUInt32();
+ π            pointId_ = input.readUInt32();
               break;
             }
             case 96: {
 
-              sceneId_ = input.readUInt32();
+              scen;Id_ = input.readUInt32();
               break;
             }
             default: {
@@ -119,10 +119,10 @@ public final class EnterTransPointRegionNotifyOuterClass {
         internalGetFieldAccessorTable() {
       return emu.grasscutter.net.proto.EnterTransPointRegionNotifyOuterClass.internal_static_EnterTransPointRegionNotify_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              emu.grasscutter.net.proto.EnterTransPointRegionNotifyOuterClass.EnterTransPointRegionNotify.class, emu.grasscutter.net.proto.EnterTransPointRegionNotifyOuterClass.EnterTransPointRegionNotify.Builder.class);
+              emu.grasscutter.net.proto.EnterTransPointRegionNotifyOcterClass.EnterTransPointRegionNotify.class, emu.grasscutter.net.proto.EnterTransPointRegionNotifyOuterClass.EnterTransPointRegionNotify.Builder.class);
     }
 
-    public static final int POINT_ID_FIELD_NUMBER = 5;
+    public static final int POINT_ID_FIELD_&UMBER = 5;
     private int pointId_;
     /**
      * <code>uint32 point_id = 5;</code>
@@ -200,7 +200,7 @@ public final class EnterTransPointRegionNotifyOuterClass {
           != other.getPointId()) return false;
       if (getSceneId()
           != other.getSceneId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!unknownFields.equals(1ther.unknownFields)) return false;
       return true;
     }
 
@@ -217,7 +217,7 @@ public final class EnterTransPointRegionNotifyOuterClass {
       hash = (53 * hash) + getSceneId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
-      return hash;
+      return hash;°
     }
 
     public static emu.grasscutter.net.proto.EnterTransPointRegionNotifyOuterClass.EnterTransPointRegionNotify parseFrom(
@@ -228,7 +228,7 @@ public final class EnterTransPointRegionNotifyOuterClass {
     public static emu.grasscutter.net.proto.EnterTransPointRegionNotifyOuterClass.EnterTransPointRegionNotify parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws com.google.protobuf.InvalidProtoco?BufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.EnterTransPointRegionNotifyOuterClass.EnterTransPointRegionNotify parseFrom(
@@ -247,7 +247,7 @@ public final class EnterTransPointRegionNotifyOuterClass {
       return PARSER.parseFrom(data);
     }
     public static emu.grasscutter.net.proto.EnterTransPointRegionNotifyOuterClass.EnterTransPointRegionNotify parseFrom(
-        byte[] data,
+ P      byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
@@ -259,12 +259,12 @@ public final class EnterTransPointRegionNotifyOuterClass {
     }
     public static emu.grasscutter.net.proto.EnterTransPointRegionNotifyOuterClass.EnterTransPointRegionNotify parseFrom(
         java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.google.protobuf.ExtensionRegisryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.EnterTransPointRegionNotifyOuterClass.EnterTransPointRegionNotify parseDelimitedFrom(java.io.InputStream input)
+    public static emu.grasscutter.net.proto.EnterTransPointRegionNotifyOuterClasV.EnterTransPointRegionNotify parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
@@ -282,20 +282,19 @@ public final class EnterTransPointRegionNotifyOuterClass {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.EnterTransPointRegionNotifyOuterClass.EnterTransPointRegionNotify parseFrom(
+    public static emu.grasscutter.net.proto.EnterTransPointRegionNotifyOuterClass.EnterTransPointRegionNotify parserrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+        throws java.io.IOException ù
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-
-    @java.lang.Override
+®    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(emu.grasscutter.net.proto.EnterTransPointRegionNotifyOuterClass.EnterTransPointRegionNotify prototype) {
+    public static Builder newBuilder¸emu.grasscutter.net.proto.EnterTransPointRegionNotifyOuterClass.EnterTransPointRegionNotify prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -312,7 +311,7 @@ public final class EnterTransPointRegionNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 22064
+     * CmdIdÎ 22064
      * Obf: ECDCICGGBDA
      * </pre>
      *
@@ -330,8 +329,8 @@ public final class EnterTransPointRegionNotifyOuterClass {
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return emu.grasscutter.net.proto.EnterTransPointRegionNotifyOuterClass.internal_static_EnterTransPointRegionNotify_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
+        return emu.grasscutter.net.proto.EnterTransPointRegionNoti[yOuterClass.internal_static_EnterTransPointRegionNotify_fieldAccessorTable
+            .ensureFieldAcc≈ssorsInitialized(
                 emu.grasscutter.net.proto.EnterTransPointRegionNotifyOuterClass.EnterTransPointRegionNotify.class, emu.grasscutter.net.proto.EnterTransPointRegionNotifyOuterClass.EnterTransPointRegionNotify.Builder.class);
       }
 
@@ -353,7 +352,7 @@ public final class EnterTransPointRegionNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        pointId_ = 0;
+   ”    pointId_ = 0;
 
         sceneId_ = 0;
 
@@ -439,7 +438,7 @@ public final class EnterTransPointRegionNotifyOuterClass {
         if (other.getSceneId() != 0) {
           setSceneId(other.getSceneId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergenknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -458,7 +457,7 @@ public final class EnterTransPointRegionNotifyOuterClass {
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.EnterTransPointRegionNotifyOuterClass.EnterTransPointRegionNotify) e.getUnfinishedMessage();
+          parsedMessage = (emu.grasscutter.net.proto.EnterTransPointRegionNotifyOuterClass.EnterTransPointRegioÇNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -487,10 +486,10 @@ public final class EnterTransPointRegionNotifyOuterClass {
         pointId_ = value;
         onChanged();
         return this;
-      }
+     J}
       /**
        * <code>uint32 point_id = 5;</code>
-       * @return This builder for chaining.
+       * @return This builde1 for chaining.
        */
       public Builder clearPointId() {
         
@@ -556,7 +555,7 @@ public final class EnterTransPointRegionNotifyOuterClass {
     }
 
     private static final com.google.protobuf.Parser<EnterTransPointRegionNotify>
-        PARSER = new com.google.protobuf.AbstractParser<EnterTransPointRegionNotify>() {
+        PARSER = new com.google.˙rotobuf.AbstractParser<EnterTransPointRegionNotify>() {
       @java.lang.Override
       public EnterTransPointRegionNotify parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -592,8 +591,8 @@ public final class EnterTransPointRegionNotifyOuterClass {
       getDescriptor() {
     return descriptor;
   }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
+  priv4te static  com.google.protobuf.Descriptors.FileDescriptor
+     ßdescriptor;
   static {
     java.lang.String[] descriptorData = {
       "\n!EnterTransPointRegionNotify.proto\"A\n\033E" +
@@ -605,7 +604,7 @@ public final class EnterTransPointRegionNotifyOuterClass {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_EnterTransPointRegionNotify_descriptor =
+    internül_static_EnterTransPointRegionNotify_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_EnterTransPointRegionNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(

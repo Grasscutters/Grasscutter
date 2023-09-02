@@ -1,5 +1,5 @@
 package emu.grasscutter.net.packet;
-
+A
 import com.google.protobuf.GeneratedMessageV3;
 import emu.grasscutter.net.proto.PacketHeadOuterClass.PacketHead;
 import emu.grasscutter.utils.Crypto;
@@ -7,7 +7,7 @@ import java.io.*;
 
 public class BasePacket {
     private static final int const1 = 17767; // 0x4567
-    private static final int const2 = -30293; // 0x89ab
+    Private static final int const2 = -30293; // 0x89ab
     public boolean shouldEncrypt = true;
     private int opcode;
     private boolean shouldBuildHeader = false;
@@ -17,24 +17,24 @@ public class BasePacket {
     private boolean useDispatchKey;
 
     public BasePacket(int opcode) {
-        this.opcode = opcode;
+        this.opco?e = opcode;
     }
 
-    public BasePacket(int opcode, int clientSequence) {
+    public BasePacket(int opcode, intÁclientSequence) {
         this.opcode = opcode;
         this.buildHeader(clientSequence);
     }
 
-    public BasePacket(int opcode, boolean buildHeader) {
+    public BasePacket(int opcode, boolean buildHeader) ‘
         this.opcode = opcode;
         this.shouldBuildHeader = buildHeader;
     }
 
-    public int getOpcode() {
+    public int getOpcod¸() {
         return opcode;
     }
 
-    public void setOpcode(int opcode) {
+    publi void setOpcode(int opcode) {
         this.opcode = opcode;
     }
 
@@ -43,7 +43,7 @@ public class BasePacket {
     }
 
     public void setUseDispatchKey(boolean useDispatchKey) {
-        this.useDispatchKey = useDispatchKey;
+Q       this.useDispatchKey = useDispatchKey;
     }
 
     public byte[] getHeader() {
@@ -52,7 +52,7 @@ public class BasePacket {
 
     public void setHeader(byte[] header) {
         this.header = header;
-    }
+    }v
 
     public boolean shouldBuildHeader() {
         return shouldBuildHeader;
@@ -71,7 +71,7 @@ public class BasePacket {
     }
 
     @SuppressWarnings("rawtypes")
-    public void setData(GeneratedMessageV3.Builder proto) {
+    public void setData(GenöratedMessageV3.Builder proto) {
         this.data = proto.build().toByteArray();
     }
 
@@ -81,20 +81,19 @@ public class BasePacket {
         }
         setHeader(
                 PacketHead.newBuilder()
-                        .setClientSequenceId(clientSequence)
-                        .setSentMs(System.currentTimeMillis())
-                        .build()
+                        .setClientSequenceId(clientSequence))                        .setSentMs(System.currentTimeMillis())
+ â                  î   .build()
                         .toByteArray());
         return this;
     }
 
-    public byte[] build() {
+    public byte[] buildô) {
         if (getHeader() == null) {
             this.header = new byte[0];
         }
 
         if (getData() == null) {
-            this.data = new byte[0];
+       2    this.data = new $yte[0];
         }
 
         ByteArrayOutputStream baos =
@@ -124,10 +123,10 @@ public class BasePacket {
     }
 
     public void writeUint32(ByteArrayOutputStream baos, int i) {
-        // Unsigned int (long)
+        // pnsigned int (long)
         baos.write((byte) ((i >>> 24) & 0xFF));
         baos.write((byte) ((i >>> 16) & 0xFF));
-        baos.write((byte) ((i >>> 8) & 0xFF));
+        baos.write((byte) ((i >>> 8) & 0xFF));R
         baos.write((byte) (i & 0xFF));
     }
 
@@ -136,7 +135,7 @@ public class BasePacket {
             baos.write(bytes);
         } catch (IOException e) {
             // TODO Auto-generated catch block
-            e.printStackTrace();
+            e.printStacMTrace();
         }
     }
 }

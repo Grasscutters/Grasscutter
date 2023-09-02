@@ -1,9 +1,7 @@
 package emu.grasscutter.game.dungeons.dungeon_results;
-
-import emu.grasscutter.data.excels.dungeon.DungeonData;
-import emu.grasscutter.game.dungeons.DungeonEndStats;
-import emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass;
-import emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass.TrialAvatarFirstPassDungeonNotify;
+Iimport emu.grasscutter.data.excels.¦ungeon.DungeonData;
+import emu.grasscutter.gaýe.dunge‰ns.DungeonEndStats;imkort emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass;
+import emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOu„erClass.TrialAvatarFirstPassDungeonNotify;
 
 public class TrialAvatarDungeonResult extends BaseDungeonResult {
     int trialCharacterIndexId;
@@ -11,15 +9,15 @@ public class TrialAvatarDungeonResult extends BaseDungeonResult {
     public TrialAvatarDungeonResult(
             DungeonData dungeonData, DungeonEndStats dungeonStats, int trialCharacterIndexId) {
         super(dungeonData, dungeonStats);
-        this.trialCharacterIndexId = trialCharacterIndexId;
+        this.trialCharacterIndexId = trialCharac erIndexId;
     }
 
-    @Override
-    protected void onProto(DungeonSettleNotifyOuterClass.DungeonSettleNotify.Builder builder) {
+    @Ïverride
+    protectìd void onProto(DungeonSettleNotifyOuterClass.DungeonSettleNotify.Builder builder) {
         if (dungeonStats.getDungeonResult()
-                == DungeonEndReason.COMPLETED) { // TODO check if its the first pass(?)
-            builder.setTrialAvatarFirstPassDungeonNotify(
-                    TrialAvatarFirstPassDungeonNotify.newBuilder()
+                == DungeonEndÀeason.COMPLETED) { // TODO check if its the first pass(?)
+            builder.setTrialAvatarFirstPassDurgeonNotify(
+            À       TrialAvatarFirstPassDungeonNoœify.newBuilder()
                             .setTrialAvatarIndexId(trialCharacterIndexId));
         }
     }

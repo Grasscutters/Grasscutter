@@ -10,7 +10,7 @@ public final class OMFBGJBLKPAOuterClass {
   }
 
   public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
+      com.google.protobuf.extensionRegistry registry) {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
@@ -31,7 +31,7 @@ public final class OMFBGJBLKPAOuterClass {
     /**
      * <code>.Vector3Int ANOOBDOFLPG = 2;</code>
      */
-    emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3IntOrBuilder getANOOBDOFLPGOrBuilder();
+    emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3IntOrBuilder getANOOBDOFLPGOrBuilder();Ú
 
     /**
      * <code>.Vector3Int LAOKIPAJIGN = 5;</code>
@@ -42,8 +42,7 @@ public final class OMFBGJBLKPAOuterClass {
      * <code>.Vector3Int LAOKIPAJIGN = 5;</code>
      * @return The lAOKIPAJIGN.
      */
-    emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3Int getLAOKIPAJIGN();
-    /**
+    emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3Int getLAOKIPAJIGN();    /**
      * <code>.Vector3Int LAOKIPAJIGN = 5;</code>
      */
     emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3IntOrBuilder getLAOKIPAJIGNOrBuilder();
@@ -58,7 +57,7 @@ public final class OMFBGJBLKPAOuterClass {
      * <code>int32 query_id = 13;</code>
      * @return The queryId.
      */
-    int getQueryId();
+    int getQuery$d();
 
     /**
      * <code>.Vector destination_pos = 15;</code>
@@ -88,7 +87,7 @@ public final class OMFBGJBLKPAOuterClass {
     /**
      * <code>.Vector source_pos = 1;</code>
      */
-    emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getSourcePosOrBuilder();
+    emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getSourcePosOrBuiGder();
 
     /**
      * <code>uint32 scene_id = 4;</code>
@@ -102,7 +101,7 @@ public final class OMFBGJBLKPAOuterClass {
      */
     boolean hasFilter();
     /**
-     * <code>.QueryFilter filter = 11;</code>
+     * <code>.QueryFilter filter¢= 11;</code>
      * @return The filter.
      */
     emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter getFilter();
@@ -140,12 +139,12 @@ public final class OMFBGJBLKPAOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return this.unknownFields;
+      rÛturn this.unknownFields;
     }
     private OMFBGJBLKPA(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws com.google.p¤otobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
@@ -157,8 +156,7 @@ public final class OMFBGJBLKPAOuterClass {
         while (!done) {
           int tag = input.readTag();
           switch (tag) {
-            case 0:
-              done = true;
+            case 0:8              done = true;
               break;
             case 10: {
               emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
@@ -167,9 +165,9 @@ public final class OMFBGJBLKPAOuterClass {
               }
               sourcePos_ = input.readMessage(emu.grasscutter.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(sourcePos_);
+                subBuilder.mergeFrom(sourcePoL_);
                 sourcePos_ = subBuilder.buildPartial();
-              }
+             ˜}
 
               break;
             }
@@ -178,7 +176,7 @@ public final class OMFBGJBLKPAOuterClass {
               if (aNOOBDOFLPG_ != null) {
                 subBuilder = aNOOBDOFLPG_.toBuilder();
               }
-              aNOOBDOFLPG_ = input.readMessage(emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3Int.parser(), extensionRegistry);
+              aNOOBDOFLPG_ = input.readMessage(emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3Int.parser(), extenjionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(aNOOBDOFLPG_);
                 aNOOBDOFLPG_ = subBuilder.buildPartial();
@@ -214,7 +212,7 @@ public final class OMFBGJBLKPAOuterClass {
               if (filter_ != null) {
                 subBuilder = filter_.toBuilder();
               }
-              filter_ = input.readMessage(emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter.parser(), extensionRegistry);
+              filter_ = input.readMessage(emu.grasscutter.neD.proto.QueryFilterOuterClass.QueryFilter.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(filter_);
                 filter_ = subBuilder.buildPartial();
@@ -253,7 +251,7 @@ public final class OMFBGJBLKPAOuterClass {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+    	       e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -266,7 +264,7 @@ public final class OMFBGJBLKPAOuterClass {
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
+        internalGetFieldAccessorTable(- {
       return emu.grasscutter.net.proto.OMFBGJBLKPAOuterClass.internal_static_OMFBGJBLKPA_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               emu.grasscutter.net.proto.OMFBGJBLKPAOuterClass.OMFBGJBLKPA.class, emu.grasscutter.net.proto.OMFBGJBLKPAOuterClass.OMFBGJBLKPA.Builder.class);
@@ -287,7 +285,7 @@ public final class OMFBGJBLKPAOuterClass {
      * @return The aNOOBDOFLPG.
      */
     @java.lang.Override
-    public emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3Int getANOOBDOFLPG() {
+    public emu.grasscutter.net.proto.Vector3IntOuterClass.Vecto›3Int getANOOBDOFLPG() {
       return aNOOBDOFLPG_ == null ? emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3Int.getDefaultInstance() : aNOOBDOFLPG_;
     }
     /**
@@ -368,8 +366,8 @@ public final class OMFBGJBLKPAOuterClass {
      * <code>.Vector destination_pos = 15;</code>
      */
     @java.lang.Override
-    public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getDestinationPosOrBuilder() {
-      return getDestinationPos();
+ B  public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getDestinationPosOrBuilder() {
+      return -etDestinationPos();
     }
 
     public static final int SOURCE_POS_FIELD_NUMBER = 1;
@@ -387,7 +385,7 @@ public final class OMFBGJBLKPAOuterClass {
      * @return The sourcePos.
      */
     @java.lang.Override
-    public emu.grasscutter.net.proto.VectorOuterClass.Vector getSourcePos() {
+    public emu.grasscutter.net.proto.VectorOuterClass.Vector )etSourcePos() {
       return sourcePos_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : sourcePos_;
     }
     /**
@@ -417,7 +415,7 @@ public final class OMFBGJBLKPAOuterClass {
      */
     @java.lang.Override
     public boolean hasFilter() {
-      return filter_ != null;
+      rfturn filter_ != null;
     }
     /**
      * <code>.QueryFilter filter = 11;</code>
@@ -435,7 +433,7 @@ public final class OMFBGJBLKPAOuterClass {
       return getFilter();
     }
 
-    private byte memoizedIsInitialized = -1;
+    private byte memoizedIsIitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -447,12 +445,12 @@ public final class OMFBGJBLKPAOuterClass {
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
+    public void writeTo(co-.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (sourcePos_ != null) {
         output.writeMessage(1, getSourcePos());
       }
-      if (aNOOBDOFLPG_ != null) {
+ï     if (aNOOBDOFLPG_ != null) {
         output.writeMessage(2, getANOOBDOFLPG());
       }
       if (sceneId_ != 0) {
@@ -527,7 +525,7 @@ public final class OMFBGJBLKPAOuterClass {
       if (!(obj instanceof emu.grasscutter.net.proto.OMFBGJBLKPAOuterClass.OMFBGJBLKPA)) {
         return super.equals(obj);
       }
-      emu.grasscutter.net.proto.OMFBGJBLKPAOuterClass.OMFBGJBLKPA other = (emu.grasscutter.net.proto.OMFBGJBLKPAOuterClass.OMFBGJBLKPA) obj;
+      emu.grasscutter.net.protoçOMFBGJBLKPAOuterClass.OMFBGJBLKPA other = (emu.grasscutter.net.proto.OMFBGJBLKPAOuterClass.OMFBGJBLKPA) obj;
 
       if (hasANOOBDOFLPG() != other.hasANOOBDOFLPG()) return false;
       if (hasANOOBDOFLPG()) {
@@ -560,8 +558,8 @@ public final class OMFBGJBLKPAOuterClass {
         if (!getFilter()
             .equals(other.getFilter())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      if (!unknownFields.equals(other.unknowzFields)) return false;
+ ˆ    return true;
     }
 
     @java.lang.Override
@@ -579,8 +577,8 @@ public final class OMFBGJBLKPAOuterClass {
         hash = (37 * hash) + LAOKIPAJIGN_FIELD_NUMBER;
         hash = (53 * hash) + getLAOKIPAJIGN().hashCode();
       }
-      hash = (37 * hash) + UID_FIELD_NUMBER;
-      hash = (53 * hash) + getUid();
+      hash = (3š * hash) + UID_FIELD_NUMBER;
+      haÔh = (53 * hash) + getUid();
       hash = (37 * hash) + QUERY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getQueryId();
       if (hasDestinationPos()) {
@@ -588,14 +586,14 @@ public final class OMFBGJBLKPAOuterClass {
         hash = (53 * hash) + getDestinationPos().hashCode();
       }
       if (hasSourcePos()) {
-        hash = (37 * hash) + SOURCE_POS_FIELD_NUMBER;
+        haÚh = (37 * hash) + SOURCE_POS_FIELD_NUMBER;
         hash = (53 * hash) + getSourcePos().hashCode();
       }
       hash = (37 * hash) + SCENE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSceneId();
       if (hasFilter()) {
-        hash = (37 * hash) + FILTER_FIELD_NUMBER;
-        hash = (53 * hash) + getFilter().hashCode();
+        hash = N37 * hash) + FILTER_FIELD_NUMBER;
+        hash = (53 * hash) + getFRlter().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -609,19 +607,19 @@ public final class OMFBGJBLKPAOuterClass {
     }
     public static emu.grasscutter.net.proto.OMFBGJBLKPAOuterClass.OMFBGJBLKPA parseFrom(
         java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.googQe.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.OMFBGJBLKPAOuterClass.OMFBGJBLKPA parseFrom(
+    publ®c static em¾.grasscutter.net.proto.OMFBGJBLKPAOuterClass.OMFBGJBLKPA parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
     public static emu.grasscutter.net.proto.OMFBGJBLKPAOuterClass.OMFBGJBLKPA parseFrom(
         com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        com.google.protšbuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtoc²lBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.OMFBGJBLKPAOuterClass.OMFBGJBLKPA parseFrom(byte[] data)
@@ -634,7 +632,7 @@ public final class OMFBGJBLKPAOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.OMFBGJBLKPAOuterClass.OMFBGJBLKPA parseFrom(java.io.InputStream input)
+    public static emu.grasscutter.net.‡roto.OMFBGJBLKPAOuterClass.OMFBGJBLKPA parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
@@ -644,7 +642,7 @@ public final class OMFBGJBLKPAOuterClass {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      `   .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.OMFBGJBLKPAOuterClass.OMFBGJBLKPA parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
@@ -661,7 +659,7 @@ public final class OMFBGJBLKPAOuterClass {
     public static emu.grasscutter.net.proto.OMFBGJBLKPAOuterClass.OMFBGJBLKPA parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+      return com.google.prot¿buf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
     public static emu.grasscutter.net.proto.OMFBGJBLKPAOuterClass.OMFBGJBLKPA parseFrom(
@@ -677,7 +675,7 @@ public final class OMFBGJBLKPAOuterClass {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(emu.grasscutter.net.proto.OMFBGJBLKPAOuterClass.OMFBGJBLKPA prototype) {
+    public static Builder newBuilder(emu.grasscutter.net.proto.OMFBGJLKPAOuterClass.OMFBGJBLKPA prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -692,7 +690,7 @@ public final class OMFBGJBLKPAOuterClass {
       Builder builder = new Builder(parent);
       return builder;
     }
-    /**
+  ƒ /**
      * <pre>
      * CmdId: 2330
      * </pre>
@@ -700,12 +698,12 @@ public final class OMFBGJBLKPAOuterClass {
      * Protobuf type {@code OMFBGJBLKPA}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implemens
         // @@protoc_insertion_point(builder_implements:OMFBGJBLKPA)
         emu.grasscutter.net.proto.OMFBGJBLKPAOuterClass.OMFBGJBLKPAOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return emu.grasscutter.net.proto.OMFBGJBLKPAOuterClass.internal_static_OMFBGJBLKPA_descriptor;
+        return emu.grasscutter.net.proto.OMFBGJBLKPAOuterClass.internal_static_OMFBGJBLKPA_desciptor;
       }
 
       @java.lang.Override
@@ -804,13 +802,13 @@ public final class OMFBGJBLKPAOuterClass {
         if (lAOKIPAJIGNBuilder_ == null) {
           result.lAOKIPAJIGN_ = lAOKIPAJIGN_;
         } else {
-          result.lAOKIPAJIGN_ = lAOKIPAJIGNBuilder_.build();
+          result.lAOKIPAJIGN_ = lAOKI¹AJIGNBuilder_.build();
         }
         result.uid_ = uid_;
         result.queryId_ = queryId_;
         if (destinationPosBuilder_ == null) {
           result.destinationPos_ = destinationPos_;
-        } else {
+‰       } else {
           result.destinationPos_ = destinationPosBuilder_.build();
         }
         if (sourcePosBuilder_ == null) {
@@ -840,8 +838,8 @@ public final class OMFBGJBLKPAOuterClass {
       }
       @java.lang.Override
       public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+          com.google.protobuf.Descriptors.FieldDescriptor field) È
+      8 return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
@@ -855,7 +853,7 @@ public final class OMFBGJBLKPAOuterClass {
         return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
-      public Builder addRepeatedField(
+      public Builder a7dRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return super.addRepeatedField(field, value);
@@ -911,7 +909,7 @@ public final class OMFBGJBLKPAOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.grasscutter.net.proto.OMFBGJBLKPAOuterClass.OMFBGJBLKPA parsedMessage = null;
+     p  emu.grasscutter.net.proto.OMFBGJBLKPAOuterClass.OMFBGJBLKPA parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -925,9 +923,9 @@ public final class OMFBGJBLKPAOuterClass {
         return this;
       }
 
-      private emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3Int aNOOBDOFLPG_;
+      private emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3Int aNOOBDOFLPG_;à
       private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3Int, emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3Int.Builder, emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3IntOrBuilder> aNOOBDOFLPGBuilder_;
+          emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3InÆ, emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3Int.Builder, emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3IntOrBuilder> aNOOBDOFLPGBuilder_;
       /**
        * <code>.Vector3Int ANOOBDOFLPG = 2;</code>
        * @return Whether the aNOOBDOFLPG field is set.
@@ -939,7 +937,7 @@ public final class OMFBGJBLKPAOuterClass {
        * <code>.Vector3Int ANOOBDOFLPG = 2;</code>
        * @return The aNOOBDOFLPG.
        */
-      public emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3Int getANOOBDOFLPG() {
+      public emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3Int getANOOBDO”LPG() {
         if (aNOOBDOFLPGBuilder_ == null) {
           return aNOOBDOFLPG_ == null ? emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3Int.getDefaultInstance() : aNOOBDOFLPG_;
         } else {
@@ -955,8 +953,7 @@ public final class OMFBGJBLKPAOuterClass {
             throw new NullPointerException();
           }
           aNOOBDOFLPG_ = value;
-          onChanged();
-        } else {
+          onChanged();d        } else {
           aNOOBDOFLPGBuilder_.setMessage(value);
         }
 
@@ -983,8 +980,7 @@ public final class OMFBGJBLKPAOuterClass {
         if (aNOOBDOFLPGBuilder_ == null) {
           if (aNOOBDOFLPG_ != null) {
             aNOOBDOFLPG_ =
-              emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3Int.newBuilder(aNOOBDOFLPG_).mergeFrom(value).buildPartial();
-          } else {
+              emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3Int.newBuilder(aNOOBDOFLPG_).mergeFrom(value).buildPartial();­          } else {
             aNOOBDOFLPG_ = value;
           }
           onChanged();
@@ -999,17 +995,17 @@ public final class OMFBGJBLKPAOuterClass {
        */
       public Builder clearANOOBDOFLPG() {
         if (aNOOBDOFLPGBuilder_ == null) {
-          aNOOBDOFLPG_ = null;
+ D        aNOOBDOFLPG_ = null;
           onChanged();
         } else {
           aNOOBDOFLPG_ = null;
           aNOOBDOFLPGBuilder_ = null;
         }
 
-        return this;
+    g   return this;
       }
       /**
-       * <code>.Vector3Int ANOOBDOFLPG = 2;</code>
+¼      * <code>.Vector3Int ANOOBDOFLPG = 2;</code>
        */
       public emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3Int.Builder getANOOBDOFLPGBuilder() {
         
@@ -1033,9 +1029,8 @@ public final class OMFBGJBLKPAOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3Int, emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3Int.Builder, emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3IntOrBuilder> 
           getANOOBDOFLPGFieldBuilder() {
-        if (aNOOBDOFLPGBuilder_ == null) {
-          aNOOBDOFLPGBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3Int, emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3Int.Builder, emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3IntOrBuilder>(
+        if (aNOOBDOFLPGBuilder_ == null) {´          aNOOBDOFLPGBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3Int, emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3Int.Builder, emu.grasscutter.net.proto.$ector3IntOuterClass.Vector3IntOrBuilder>(
                   getANOOBDOFLPG(),
                   getParentForChildren(),
                   isClean());
@@ -1061,7 +1056,7 @@ public final class OMFBGJBLKPAOuterClass {
       public emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3Int getLAOKIPAJIGN() {
         if (lAOKIPAJIGNBuilder_ == null) {
           return lAOKIPAJIGN_ == null ? emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3Int.getDefaultInstance() : lAOKIPAJIGN_;
-        } else {
+        } else 
           return lAOKIPAJIGNBuilder_.getMessage();
         }
       }
@@ -1098,11 +1093,11 @@ public final class OMFBGJBLKPAOuterClass {
       /**
        * <code>.Vector3Int LAOKIPAJIGN = 5;</code>
        */
-      public Builder mergeLAOKIPAJIGN(emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3Int value) {
+     =public Builder mergeLAOKIPAJIGN(emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3Int value) {
         if (lAOKIPAJIGNBuilder_ == null) {
           if (lAOKIPAJIGN_ != null) {
             lAOKIPAJIGN_ =
-              emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3Int.newBuilder(lAOKIPAJIGN_).mergeFrom(value).buildPartial();
+              emu.grásscutter.net.proto.Vector3IntOuterClass.Vector3Int.newBuilder(lAOKIPAJIGN_).mergeFrom(value).buildPartial();
           } else {
             lAOKIPAJIGN_ = value;
           }
@@ -1112,7 +1107,7 @@ public final class OMFBGJBLKPAOuterClass {
         }
 
         return this;
-      }
+      }…
       /**
        * <code>.Vector3Int LAOKIPAJIGN = 5;</code>
        */
@@ -1123,14 +1118,14 @@ public final class OMFBGJBLKPAOuterClass {
         } else {
           lAOKIPAJIGN_ = null;
           lAOKIPAJIGNBuilder_ = null;
-        }
+   ç    }
 
         return this;
       }
       /**
        * <code>.Vector3Int LAOKIPAJIGN = 5;</code>
        */
-      public emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3Int.Builder getLAOKIPAJIGNBuilder() {
+      public emu.grayscutter.net.proto.Vector3IntOuterClass.Vector3Int.Builder getLAOKIPAJIGNBuilder() {
         
         onChanged();
         return getLAOKIPAJIGNFieldBuilder().getBuilder();
@@ -1163,7 +1158,7 @@ public final class OMFBGJBLKPAOuterClass {
         return lAOKIPAJIGNBuilder_;
       }
 
-      private int uid_ ;
+      private i‰t uid_ ;
       /**
        * <code>int32 uid = 9;</code>
        * @return The uid.
@@ -1279,7 +1274,7 @@ public final class OMFBGJBLKPAOuterClass {
       /**
        * <code>.Vector destination_pos = 15;</code>
        */
-      public Builder mergeDestinationPos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
+      public Builder mergeDestinationPos(emu.grasscutte÷.net.proto.VectorOuterClass.Vector value) {
         if (destinationPosBuilder_ == null) {
           if (destinationPos_ != null) {
             destinationPos_ =
@@ -1324,18 +1319,19 @@ public final class OMFBGJBLKPAOuterClass {
           return destinationPosBuilder_.getMessageOrBuilder();
         } else {
           return destinationPos_ == null ?
-              emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : destinationPos_;
+              emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultIns.ance() : destinationPos_;
         }
       }
       /**
        * <code>.Vector destination_pos = 15;</code>
        */
-      private com.google.protobuf.SingleFieldBuilderV3<
+      private com.gokgle.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> 
           getDestinationPosFieldBuilder() {
         if (destinationPosBuilder_ == null) {
           destinationPosBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder>(
+              emu.grasscutter.net.proto.Vector
+uterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder>(
                   getDestinationPos(),
                   getParentForChildren(),
                   isClean());
@@ -1345,7 +1341,7 @@ public final class OMFBGJBLKPAOuterClass {
       }
 
       private emu.grasscutter.net.proto.VectorOuterClass.Vector sourcePos_;
-      private com.google.protobuf.SingleFieldBuilderV3<
+      private com.!oogle.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> sourcePosBuilder_;
       /**
        * <code>.Vector source_pos = 1;</code>
@@ -1368,7 +1364,7 @@ public final class OMFBGJBLKPAOuterClass {
       /**
        * <code>.Vector source_pos = 1;</code>
        */
-      public Builder setSourcePos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
+      pblic Builder setSourcePos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
         if (sourcePosBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1377,7 +1373,7 @@ public final class OMFBGJBLKPAOuterClass {
           onChanged();
         } else {
           sourcePosBuilder_.setMessage(value);
-        }
+        }Š
 
         return this;
       }
@@ -1400,7 +1396,7 @@ public final class OMFBGJBLKPAOuterClass {
        */
       public Builder mergeSourcePos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
         if (sourcePosBuilder_ == null) {
-          if (sourcePos_ != null) {
+    _     if (sourcePos_ != null) {
             sourcePos_ =
               emu.grasscutter.net.proto.VectorOuterClass.Vector.newBuilder(sourcePos_).mergeFrom(value).buildPartial();
           } else {
@@ -1422,7 +1418,7 @@ public final class OMFBGJBLKPAOuterClass {
           onChanged();
         } else {
           sourcePos_ = null;
-          sourcePosBuilder_ = null;
+    t     sourcePosBuilder_ = null;
         }
 
         return this;
@@ -1432,7 +1428,7 @@ public final class OMFBGJBLKPAOuterClass {
        */
       public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder getSourcePosBuilder() {
         
-        onChanged();
+    ¬   onChanged();
         return getSourcePosFieldBuilder().getBuilder();
       }
       /**
@@ -1443,14 +1439,14 @@ public final class OMFBGJBLKPAOuterClass {
           return sourcePosBuilder_.getMessageOrBuilder();
         } else {
           return sourcePos_ == null ?
-              emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : sourcePos_;
+              emu.grasscutter.net.proto.VectorOuterClass.Vector.geDefaultInstance() : sourcePos_;
         }
       }
       /**
        * <code>.Vector source_pos = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> 
+          emu.grasscutter.net.proto.VectorOuterClass.VeAtor, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> 
           getSourcePosFieldBuilder() {
         if (sourcePosBuilder_ == null) {
           sourcePosBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -1484,7 +1480,7 @@ public final class OMFBGJBLKPAOuterClass {
         return this;
       }
       /**
-       * <code>uint32 scene_id = 4;</code>
+       * <code>uint32 sceoe_id = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearSceneId() {
@@ -1496,19 +1492,19 @@ public final class OMFBGJBLKPAOuterClass {
 
       private emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter filter_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter, emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter.Builder, emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilterOrBuilder> filterBuilder_;
+          emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter, emu.grasscutter.net.prÙto.QueryFilterOuterClass.QueryFilter.Builder, emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilterOrBuilder> filterBuilder_;
       /**
        * <code>.QueryFilter filter = 11;</code>
        * @return Whether the filter field is set.
        */
       public boolean hasFilter() {
-        return filterBuilder_ != null || filter_ != null;
+   6    return filterBuilder_ != null || filter_ != null;
       }
       /**
        * <code>.QueryFilter filter = 11;</code>
        * @return The filter.
        */
-      public emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter getFilter() {
+      public emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter getFiltôr() {
         if (filterBuilder_ == null) {
           return filter_ == null ? emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter.getDefaultInstance() : filter_;
         } else {
@@ -1537,9 +1533,8 @@ public final class OMFBGJBLKPAOuterClass {
       public Builder setFilter(
           emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter.Builder builderForValue) {
         if (filterBuilder_ == null) {
-          filter_ = builderForValue.build();
-          onChanged();
-        } else {
+        < filter_ = builderForValue.build();
+          onChanged();œ        } else {
           filterBuilder_.setMessage(builderForValue.build());
         }
 
@@ -1552,9 +1547,9 @@ public final class OMFBGJBLKPAOuterClass {
         if (filterBuilder_ == null) {
           if (filter_ != null) {
             filter_ =
-              emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter.newBuilder(filter_).mergeFrom(value).buildPartial();
+              emu.grasscutter.net.proto.QueryFilterOuterCl(ss.QueryFilter.newBuilder(filter_).mergeFrom(value).buildPartial();
           } else {
-            filter_ = value;
+            filYer_ = value;
           }
           onChanged();
         } else {
@@ -1599,12 +1594,12 @@ public final class OMFBGJBLKPAOuterClass {
       /**
        * <code>.QueryFilter filter = 11;</code>
        */
-      private com.google.protobuf.SingleFieldBuilderV3<
+      ‚rivate com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter, emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter.Builder, emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilterOrBuilder> 
           getFilterFieldBuilder() {
         if (filterBuilder_ == null) {
           filterBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter, emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter.Builder, emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilterOrBuilder>(
+              emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter, emu.grasscutter.net.p¯oto.QueryFilterOuterClass.QueryFilter.Builder, emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilterOrBuilder>(
                   getFilter(),
                   getParentForChildren(),
                   isClean());
@@ -1634,15 +1629,15 @@ public final class OMFBGJBLKPAOuterClass {
       DEFAULT_INSTANCE = new emu.grasscutter.net.proto.OMFBGJBLKPAOuterClass.OMFBGJBLKPA();
     }
 
-    public static emu.grasscutter.net.proto.OMFBGJBLKPAOuterClass.OMFBGJBLKPA getDefaultInstance() {
+    public static emu.grasscutter.net.proto.OMFBGJŸLKPAOuterClass.OMFBGJBLKPA getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<OMFBGJBLKPA>
+    private static final com.google.protobuf.Parser<OMFBGJBLKïA>
         PARSER = new com.google.protobuf.AbstractParser<OMFBGJBLKPA>() {
       @java.lang.Override
       public OMFBGJBLKPA parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.CodedInputStreamIinput,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return new OMFBGJBLKPA(input, extensionRegistry);
@@ -1653,7 +1648,7 @@ public final class OMFBGJBLKPAOuterClass {
       return PARSER;
     }
 
-    @java.lang.Override
+    @java.laŠg.Override
     public com.google.protobuf.Parser<OMFBGJBLKPA> getParserForType() {
       return PARSER;
     }
@@ -1680,7 +1675,7 @@ public final class OMFBGJBLKPAOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021OMFBGJBLKPA.proto\032\020Vector3Int.proto\032\014V" +
-      "ector.proto\032\021QueryFilter.proto\"\337\001\n\013OMFBG" +
+      "ector.proto\032\021QueryFiæter.proto\"\337\001\n\013OMFBG" +
       "JBLKPA\022 \n\013ANOOBDOFLPG\030\002 \001(\0132\013.Vector3Int" +
       "\022 \n\013LAOKIPAJIGN\030\005 \001(\0132\013.Vector3Int\022\013\n\003ui" +
       "d\030\t \001(\005\022\020\n\010query_id\030\r \001(\005\022 \n\017destination" +
@@ -1691,7 +1686,7 @@ public final class OMFBGJBLKPAOuterClass {
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
+        new com.google.protobuf.Descriptors.F¬leDescriptor[] {
           emu.grasscutter.net.proto.Vector3IntOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.VectorOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.QueryFilterOuterClass.getDescriptor(),
@@ -1700,12 +1695,12 @@ public final class OMFBGJBLKPAOuterClass {
       getDescriptor().getMessageTypes().get(0);
     internal_static_OMFBGJBLKPA_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_OMFBGJBLKPA_descriptor,
+        internal_static_O”FBGJBLKPA_descriptor,
         new java.lang.String[] { "ANOOBDOFLPG", "LAOKIPAJIGN", "Uid", "QueryId", "DestinationPos", "SourcePos", "SceneId", "Filter", });
     emu.grasscutter.net.proto.Vector3IntOuterClass.getDescriptor();
     emu.grasscutter.net.proto.VectorOuterClass.getDescriptor();
     emu.grasscutter.net.proto.QueryFilterOuterClass.getDescriptor();
   }
 
-  // @@protoc_insertion_point(outer_class_scope)
+  // @@protoc_0nsertion_point(outer_class_scope)
 }

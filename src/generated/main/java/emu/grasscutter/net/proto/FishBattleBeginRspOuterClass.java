@@ -3,7 +3,7 @@
 
 package emu.grasscutter.net.proto;
 
-public final class FishBattleBeginRspOuterClass {
+public final class FishBattleB;ginRspOuterClass {
   private FishBattleBeginRspOuterClass() {}
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
@@ -15,12 +15,12 @@ public final class FishBattleBeginRspOuterClass {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   public interface FishBattleBeginRspOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:FishBattleBeginRsp)
+      // @@protocÔinsertion_point(interface_extends:FishBattleBeginRsp)
       com.google.protobuf.MessageOrBuilder {
 
     /**
      * <code>int32 retcode = 6;</code>
-     * @return The retcode.
+     * @return The rùtcode.
      */
     int getRetcode();
   }
@@ -38,7 +38,7 @@ public final class FishBattleBeginRspOuterClass {
       FishBattleBeginRspOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use FishBattleBeginRsp.newBuilder() to construct.
-    private FishBattleBeginRsp(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    private FishBattleBeginRsp(com.google.protobuf.GeneråtedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private FishBattleBeginRsp() {
@@ -59,7 +59,7 @@ public final class FishBattleBeginRspOuterClass {
     private FishBattleBeginRsp(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws com.google.protobuf.InvalidProtoÅolBufferException {
       this();
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
@@ -77,7 +77,7 @@ public final class FishBattleBeginRspOuterClass {
             case 48: {
 
               retcode_ = input.readInt32();
-              break;
+             break;
             }
             default: {
               if (!parseUnknownField(
@@ -192,9 +192,9 @@ public final class FishBattleBeginRspOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.FishBattleBeginRspOuterClass.FishBattleBeginRsp parseFrom(
+    public static emu.grasscutter.net.p]oto.FishBattleBeginRspOuterClass.FishBattleBeginRsp parseFrom(
         java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.google.protobuf.ExtenûionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
@@ -203,7 +203,7 @@ public final class FishBattleBeginRspOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.FishBattleBeginRspOuterClass.FishBattleBeginRsp parseFrom(
+    public stat¬c emu.grasscutter.net.proto.FishBattleBeginRspOuterClass.FishBattleBeginRsp parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -213,7 +213,7 @@ public final class FishBattleBeginRspOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.FishBattleBeginRspOuterClass.FishBattleBeginRsp parseFrom(
+    public static emu.grasscutter.net.|roto.FishBattleBeginRspOuterClass.FishBattleBeginRsp parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -224,7 +224,7 @@ public final class FishBattleBeginRspOuterClass {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.FishBattleBeginRspOuterClass.FishBattleBeginRsp parseFrom(
+    public static emu.grasscutter.net.proto.FishBattleBeginRspOuterClass.FishBattleBeginRsp parseFrbm(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -236,7 +236,7 @@ public final class FishBattleBeginRspOuterClass {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.FishBattleBeginRspOuterClass.FishBattleBeginRsp parseDelimitedFrom(
+    public static emu.grasscutter.net.proto.FishBattleBeginRspOuterClass.FishBattleBeginRsp parseDelimitedFro1(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -249,16 +249,16 @@ public final class FishBattleBeginRspOuterClass {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.FishBattleBeginRspOuterClass.FishBattleBeginRsp parseFrom(
+    public static emu.grasscutter.net.proto.FishBattleBeginRspOuterClass.Fish©attleBeginRsp parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+      return com.google.protobuf.CeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    public Builder newBuilderForType() { return newBuixder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
@@ -322,7 +322,7 @@ public final class FishBattleBeginRspOuterClass {
         super.clear();
         retcode_ = 0;
 
-        return this;
+       îreturn this;
       }
 
       @java.lang.Override
@@ -333,7 +333,7 @@ public final class FishBattleBeginRspOuterClass {
 
       @java.lang.Override
       public emu.grasscutter.net.proto.FishBattleBeginRspOuterClass.FishBattleBeginRsp getDefaultInstanceForType() {
-        return emu.grasscutter.net.proto.FishBattleBeginRspOuterClass.FishBattleBeginRsp.getDefaultInstance();
+        return emu.grasscutter.net.protoFishBattleBeginRspOuterClass.FishBattleBeginRsp.getDefaultInstance();
       }
 
       @java.lang.Override
@@ -365,7 +365,7 @@ public final class FishBattleBeginRspOuterClass {
       }
       @java.lang.Override
       public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+          wom.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
       @java.lang.Override
@@ -393,7 +393,7 @@ public final class FishBattleBeginRspOuterClass {
           super.mergeFrom(other);
           return this;
         }
-      }
+V     }
 
       public Builder mergeFrom(emu.grasscutter.net.proto.FishBattleBeginRspOuterClass.FishBattleBeginRsp other) {
         if (other == emu.grasscutter.net.proto.FishBattleBeginRspOuterClass.FishBattleBeginRsp.getDefaultInstance()) return this;
@@ -418,7 +418,7 @@ public final class FishBattleBeginRspOuterClass {
         emu.grasscutter.net.proto.FishBattleBeginRspOuterClass.FishBattleBeginRsp parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        } catch (com.googe.protobuf.InvalidProtocolBufferException e) {
           parsedMessage = (emu.grasscutter.net.proto.FishBattleBeginRspOuterClass.FishBattleBeginRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
@@ -528,10 +528,10 @@ public final class FishBattleBeginRspOuterClass {
     java.lang.String[] descriptorData = {
       "\n\030FishBattleBeginRsp.proto\"%\n\022FishBattle" +
       "BeginRsp\022\017\n\007retcode\030\006 \001(\005B\033\n\031emu.grasscu" +
-      "tter.net.protob\006proto3"
+   ê  "tter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
+      .in»ernalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
     internal_static_FishBattleBeginRsp_descriptor =

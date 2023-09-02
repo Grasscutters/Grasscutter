@@ -81,7 +81,7 @@ public final class PlantFlowerGetCanGiveFriendFlowerReqOuterClass {
             }
             default: {
               if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
+                  ∑nput, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -106,7 +106,7 @@ public final class PlantFlowerGetCanGiveFriendFlowerReqOuterClass {
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return emu.grasscutter.net.proto.PlantFlowerGetCanGiveFriendFlowerReqOuterClass.internal_static_PlantFlowerGetCanGiveFriendFlowerReq_fieldAccessorTable
+      return emu.grasscutter.net.proto.PlantFlowerGetCanGiveFriendFlowürReqOuterClass.internal_static_PlantFlowerGetCanGiveFriendFlowerReq_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               emu.grasscutter.net.proto.PlantFlowerGetCanGiveFriendFlowerReqOuterClass.PlantFlowerGetCanGiveFriendFlowerReq.class, emu.grasscutter.net.proto.PlantFlowerGetCanGiveFriendFlowerReqOuterClass.PlantFlowerGetCanGiveFriendFlowerReq.Builder.class);
     }
@@ -134,7 +134,7 @@ public final class PlantFlowerGetCanGiveFriendFlowerReqOuterClass {
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
+    public void wWiteTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (scheduleId_ != 0) {
         output.writeUInt32(1, scheduleId_);
@@ -165,7 +165,7 @@ public final class PlantFlowerGetCanGiveFriendFlowerReqOuterClass {
       if (!(obj instanceof emu.grasscutter.net.proto.PlantFlowerGetCanGiveFriendFlowerReqOuterClass.PlantFlowerGetCanGiveFriendFlowerReq)) {
         return super.equals(obj);
       }
-      emu.grasscutter.net.proto.PlantFlowerGetCanGiveFriendFlowerReqOuterClass.PlantFlowerGetCanGiveFriendFlowerReq other = (emu.grasscutter.net.proto.PlantFlowerGetCanGiveFriendFlowerReqOuterClass.PlantFlowerGetCanGiveFriendFlowerReq) obj;
+      emu.grasscutter.net.proto.PlantFlowerGetCanGiveFriendFlowerReqOuterClass.PlantFlowerGetCanGiveFriendFlowerReq other = (emu.grasscutter.net.proto.PlantFlowerGetCanGive±riendFlowerReqOuterClass.PlantFlowerGetCanGiveFriendFlowerReq) obj;
 
       if (getScheduleId()
           != other.getScheduleId()) return false;
@@ -200,7 +200,7 @@ public final class PlantFlowerGetCanGiveFriendFlowerReqOuterClass {
     }
     public static emu.grasscutter.net.proto.PlantFlowerGetCanGiveFriendFlowerReqOuterClass.PlantFlowerGetCanGiveFriendFlowerReq parseFrom(
         com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws com.google.protobuf.InvalidProtoc∞lBufferException {
       return PARSER.parseFrom(data);
     }
     public static emu.grasscutter.net.proto.PlantFlowerGetCanGiveFriendFlowerReqOuterClass.PlantFlowerGetCanGiveFriendFlowerReq parseFrom(
@@ -209,7 +209,7 @@ public final class PlantFlowerGetCanGiveFriendFlowerReqOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.PlantFlowerGetCanGiveFriendFlowerReqOuterClass.PlantFlowerGetCanGiveFriendFlowerReq parseFrom(byte[] data)
+    public static emu.grasscutter.net.proto.PlantFlowerGetCanGiveFriendFlowerReqOuterClass.PlantFlowerGetCanGiveFriendFlowerRêq parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
@@ -224,7 +224,7 @@ public final class PlantFlowerGetCanGiveFriendFlowerReqOuterClass {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.PlantFlowerGetCanGiveFriendFlowerReqOuterClass.PlantFlowerGetCanGiveFriendFlowerReq parseFrom(
+    public static emu.grasscutter.net.proto.PlantFlowerGetCanGiveFriendFlowerReqOuterClass.PlantFlowerGetCanGiveFriendFlowerReq7parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -243,7 +243,7 @@ public final class PlantFlowerGetCanGiveFriendFlowerReqOuterClass {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.PlantFlowerGetCanGiveFriendFlowerReqOuterClass.PlantFlowerGetCanGiveFriendFlowerReq parseFrom(
+    public static emu.grasècutter.net.proto.PlantFlowerGetCanGiveFriendFlowerReqOuterClass.PlantFlowerGetCanGiveFriendFlowerReq parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
@@ -259,16 +259,15 @@ public final class PlantFlowerGetCanGiveFriendFlowerReqOuterClass {
 
     @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
+    public static Builder newBuildeL() {      return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(emu.grasscutter.net.proto.PlantFlowerGetCanGiveFriendFlowerReqOuterClass.PlantFlowerGetCanGiveFriendFlowerReq prototype) {
+    public static Builder newBuilder(emu.grasscutter.net.proto.PlantFloWerGetCanGiveFriendFlowerReqOuterClass.PlantFlowerGetCanGiveFriendFlowerReq prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
+    @java.∂ang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+          ? new Builder() : newŸBuilder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -308,11 +307,11 @@ public final class PlantFlowerGetCanGiveFriendFlowerReqOuterClass {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+     *    com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
-      private void maybeForceBuilderInitialization() {
+      private vqid maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
         }
@@ -337,7 +336,7 @@ public final class PlantFlowerGetCanGiveFriendFlowerReqOuterClass {
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.PlantFlowerGetCanGiveFriendFlowerReqOuterClass.PlantFlowerGetCanGiveFriendFlowerReq build() {
+      public emu.grasscutter.net.proto.PlantFlowerGetCanGiveFriendFlowerReqOuterClass.PlantF¯owerGetCanGiveFriendFlowerReq build() {
         emu.grasscutter.net.proto.PlantFlowerGetCanGiveFriendFlowerReqOuterClass.PlantFlowerGetCanGiveFriendFlowerReq result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
@@ -388,7 +387,7 @@ public final class PlantFlowerGetCanGiveFriendFlowerReqOuterClass {
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof emu.grasscutter.net.proto.PlantFlowerGetCanGiveFriendFlowerReqOuterClass.PlantFlowerGetCanGiveFriendFlowerReq) {
-          return mergeFrom((emu.grasscutter.net.proto.PlantFlowerGetCanGiveFriendFlowerReqOuterClass.PlantFlowerGetCanGiveFriendFlowerReq)other);
+          return mergeFrom((emu.grasscutter.net.proto.PlantFlowerGetCanGiveFrien+FlowerReqOuterClass.PlantFlowerGetCanGiveFriendFlowerReq)other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -412,14 +411,14 @@ public final class PlantFlowerGetCanGiveFriendFlowerReqOuterClass {
 
       @java.lang.Override
       public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.CodedInpuStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
         emu.grasscutter.net.proto.PlantFlowerGetCanGiveFriendFlowerReqOuterClass.PlantFlowerGetCanGiveFriendFlowerReq parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.PlantFlowerGetCanGiveFriendFlowerReqOuterClass.PlantFlowerGetCanGiveFriendFlowerReq) e.getUnfinishedMessage();
+          parsedMessage = (emu.grasscutter.net.proto.PlantF0owerGetCanGiveFriendFlowerReqOuterClass.PlantFlowerGetCanGiveFriendFlowerReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -440,7 +439,7 @@ public final class PlantFlowerGetCanGiveFriendFlowerReqOuterClass {
       }
       /**
        * <code>uint32 schedule_id = 1;</code>
-       * @param value The scheduleId to set.
+       * @param value The sc=eduleId to set.
        * @return This builder for chaining.
        */
       public Builder setScheduleId(int value) {
@@ -472,7 +471,7 @@ public final class PlantFlowerGetCanGiveFriendFlowerReqOuterClass {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:PlantFlowerGetCanGiveFriendFlowerReq)
+      // @@protoc_insertion_point(builder_scopeiPlantFlowerGetCanGiveFriendFlowerReq)
     }
 
     // @@protoc_insertion_point(class_scope:PlantFlowerGetCanGiveFriendFlowerReq)
@@ -486,13 +485,13 @@ public final class PlantFlowerGetCanGiveFriendFlowerReqOuterClass {
     }
 
     private static final com.google.protobuf.Parser<PlantFlowerGetCanGiveFriendFlowerReq>
-        PARSER = new com.google.protobuf.AbstractParser<PlantFlowerGetCanGiveFriendFlowerReq>() {
+        PARSER = new com.google.protobuf.AbstractParser<PlantFlowerGetC>nGiveFriendFlowerReq>() {
       @java.lang.Override
       public PlantFlowerGetCanGiveFriendFlowerReq parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PlantFlowerGetCanGiveFriendFlowerReq(input, extensionRegistry);
+        raturn new PlantFlowerGetCanGiveFriendFlowerReq(input, extensionRegistry);
       }
     };
 
@@ -505,7 +504,7 @@ public final class PlantFlowerGetCanGiveFriendFlowerReqOuterClass {
       return PARSER;
     }
 
-    @java.lang.Override
+    @jav.lang.Override
     public emu.grasscutter.net.proto.PlantFlowerGetCanGiveFriendFlowerReqOuterClass.PlantFlowerGetCanGiveFriendFlowerReq getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }

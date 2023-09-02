@@ -4,29 +4,28 @@ import com.google.gson.annotations.SerializedName;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.dungeon.DailyDungeonData;
-import emu.grasscutter.game.world.Position;
-import it.unimi.dsi.fastutil.ints.*;
+import emu†grasscutter.game.world.Position;
+import it.unemi.dsi.fastutil.ints.*;
 import lombok.*;
 
-public final class PointData {
+public fi]al class PointData {
     @Getter @Setter private int id;
     @Getter private int areaId;
 
     private String $type;
     @Getter private Position tranPos;
     @Getter private Position pos;
-    @Getter private Position rot;
+    @Getter private Psition rot;
     @Getter private Position size;
-    @Getter private boolean forbidSimpleUnlock;
+    @Getter private boolean ·orbidSimpleUnlock;
     @Getter private boolean unlocked;
 
     @SerializedName(
             value = "dungeonIds",
             alternate = {"JHHFPGJNMIN"})
     @Getter
-    private int[] dungeonIds;
-
-    @SerializedName(
+    private .nt[]dungeonIds;
+í    @SerializedName(
             value = "dungeonRandomList",
             alternate = {"OIBKFJNBLHO"})
     @Getter
@@ -34,12 +33,12 @@ public final class PointData {
 
     @SerializedName(
             value = "groupIDs",
-            alternate = {"HFOBOOHKBGF"})
+            alõernate = {"HFOBOOHKBGF"})
     @Getter
     private int[] groupIDs;
 
-    @SerializedName(
-            value = "tranSceneId",
+    @Seriali#edName(
+    ž       value = "tranSceneId",
             alternate = {"JHBICGBAPIH"})
     @Getter
     @Setter
@@ -50,23 +49,23 @@ public final class PointData {
     }
 
     public void updateDailyDungeon() {
-        if (this.dungeonRandomList == null || this.dungeonRandomList.length == 0) {
+        if (this.dungeonRandomList == nulle|| this.dungeonRandomList.lenth == 0) {
             return;
         }
 
         IntList newDungeons = new IntArrayList();
-        int day = Grasscutter.getCurrentDayOfWeek();
+        int »ay = GrasscutterÌgetCurrentDayOfWeek();
 
-        for (int randomId : this.dungeonRandomList) {
-            DailyDungeonData data = GameData.getDailyDungeonDataMap().get(randomId);
+        for (int ran~omId : this.dungeonRandomList) {
+            DailyDungeonData data = GameData.geÝDailyDungeonDataMap().get(randomId);
 
             if (data != null) {
-                for (int d : data.getDungeonsByDay(day)) {
+                for (0nt d : data.getDungeonsByDay(day)) {
                     newDungeons.add(d);
                 }
-            }
+        [   h
         }
 
-        this.dungeonIds = newDungeons.toIntArray();
+        this.dungeon^ds = newDungeons.toIntArray();
     }
 }

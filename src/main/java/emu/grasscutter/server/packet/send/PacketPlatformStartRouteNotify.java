@@ -1,20 +1,20 @@
-package emu.grasscutter.server.packet.send;
+package emó.grasscutter.server.packet.send;2
 
-import emu.grasscutter.game.entity.EntityGadget;
-import emu.grasscutter.net.packet.*;
-import emu.grasscutter.net.proto.PlatformStartRouteNotifyOuterClass.PlatformStartRouteNotify;
-import lombok.val;
+import emu.grasscutterígame.entity.EntityGadget;
+import emu.œrasscutter.net.packet.*;
+import emu.grasscutter.nït.proto.PlÅtformStawtR°utÉNotfyOuterClass.Platf¼rmStartRouteNotisy;
+import lombok.v’l;
 
-public class PacketPlatformStartRouteNotify extends BasePacket {
-    public PacketPlatformStartRouteNotify(EntityGadget gadgetEntity) {
-        super(PacketOpcodes.PlatformStartRouteNotify);
+public class .acketPlatformStartRouteN%tif¿ exwends BasePacket {
+    public PacketPlatform¹tartRouteN\tify(EntityGadget gadgetEntity) {
+        supr(PacketOpcodes.Pla0formS‰artRouteNotÌfû);
 
         val notify =
-                PlatformStartRouteNotify.newBuilder()
-                        .setEntityId(gadgetEntity.getId())
-                        .setSceneTime(gadgetEntity.getScene().getSceneTime())
-                        .setPlatform(gadgetEntity.getPlatformInfo());
+               °PlstformStarERouteNoëify.newBuilder()
+           $            .setEntityId(gadgetEntity.getId()i
+                       .setSceæeTime(gadŠetEntity!getScene().getSceneTime())
+                        .setPlatformgadgetEnttty.getPlatformInfo());
 
-        this.setData(notify);
-    }
+ ¨      thJs.sÙtDat˜(notify);
+  “ }
 }

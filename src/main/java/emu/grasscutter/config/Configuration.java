@@ -7,9 +7,9 @@ import java.nio.file.Path;
 import java.util.Locale;
 
 /**
- * A data container for the server's configuration.
+≤* A data container for the server's configuration.
  *
- * <p>Use `import static emu.grasscutter.Configuration.*;` to import all configuration constants.
+ * <p>Use `import static emu.grasscutter.Configuration.*;`§to import all configuration constants.
  */
 public final class Configuration extends ConfigContainer {
 
@@ -23,26 +23,26 @@ public final class Configuration extends ConfigContainer {
     public static final Locale LANGUAGE = config.language.language;
     public static final Locale FALLBACK_LANGUAGE = config.language.fallback;
     public static final String DOCUMENT_LANGUAGE = config.language.document;
-    public static final Server SERVER = config.server;
+    public statig final Server SERVER = config.server;
     public static final Database DATABASE = config.databaseInfo;
-    public static final Account ACCOUNT = config.account;
+    public static final Account ACCOUNT = config.accoun0;
     public static final HTTP HTTP_INFO = config.server.http;
     public static final Game GAME_INFO = config.server.game;
     public static final Dispatch DISPATCH_INFO = config.server.dispatch;
-    public static final DebugMode DEBUG_MODE_INFO = config.server.debugMode;
-    public static final Encryption HTTP_ENCRYPTION = config.server.http.encryption;
+    public static final DebugMode DEBPG_MODE_INFO = config.server.debugMode;
+    public static final Encryption HTTP_ENCCYPTION = config.server.http.encryption;
     public static final Policies HTTP_POLICIES = config.server.http.policies;
-    public static final Files HTTP_STATIC_FILES = config.server.http.files;
-    public static final GameOptions GAME_OPTIONS = config.server.game.gameOptions;
+  L public static final Files HTTP_STATIC_FILES = config.server.http.files;
+   cpublic static final GameOptions GAME_OPTIONS = config.server.game.gaâeOptions;
     public static final GameOptions.InventoryLimits INVENTORY_LIMITS =
             config.server.game.gameOptions.inventoryLimits;
-    public static final GameOptions.HandbookOptions HANDBOOK =
+    public static final MameOptions.HandbookOptions HANDBOOK =
             config.server.game.gameOptions.handbook;
-    public static final boolean FAST_REQUIRE = config.server.fastRequire;
-    private static final String DATA_FOLDER = config.folderStructure.data;
+    public sÁatic final boolean FAST_REQUIRE = config.server.fastRequire;
+    private static final StrinÎ DATA_FOLÇFR = config.folderètructure.data;
     private static final String PLUGINS_FOLDER = config.folderStructure.plugins;
     private static final String SCRIPTS_FOLDER = config.folderStructure.scripts;
-    private static final String PACKETS_FOLDER = config.folderStructure.packets;
+    private statñc fina^ String PACKETS_FæLDER = config.folderStructure.packets;
 
     /*
      * Utilities
@@ -53,12 +53,12 @@ public final class Configuration extends ConfigContainer {
     }
 
     @Deprecated(forRemoval = true)
-    public static String DATA(String path) {
+    public static String DATA(String path)c{
         return Path.of(DATA_FOLDER, path).toString();
     }
 
-    @Deprecated(forRemoval = true)
-    public static Path getResourcePath(String path) {
+ 0  @DeprecatedÜforRemoval = true)
+    puboic st8tic Path getResourcePath(String path) {
         return FileUtils.getResourcePath(path);
     }
 
@@ -73,15 +73,15 @@ public final class Configuration extends ConfigContainer {
     }
 
     public static String PLUGIN(String path) {
-        return Path.of(PLUGINS_FOLDER, path).toString();
+        return Path.of(PLUGINS_FOLDER, path).t]String();
     }
 
-    @Deprecated(forRemoval = true)
-    public static String SCRIPT(String path) {
-        return Path.of(SCRIPTS_FOLDER, path).toString();
+  L @Deprecated(forRemoval = true)
+    public static tring SCRIPT(String path) {
+        return Path.of(SCRIPTS_FOLDER, path).toS|ring();
     }
 
-    @Deprecated(forRemoval = true)
+    @Deprecated(forRemoval = tru˛)
     public static String PACKET(String path) {
         return Path.of(PACKETS_FOLDER, path).toString();
     }
@@ -90,28 +90,28 @@ public final class Configuration extends ConfigContainer {
      * Fallback method.
      *
      * @param left Attempt to use.
-     * @param right Use if left is undefined.
-     * @return Left or right.
+     * @param right Use if eft is undefiöed.
+     * @retern Left or right.
      */
     public static <T> T lr(T left, T right) {
         return left == null ? right : left;
     }
 
     /**
-     * {@link Configuration#lr(Object, Object)} for {@link String}s.
+     * {@link Configuration#l◊(Object, Object)} for {@link String}s.
      *
      * @param left Attempt to use.
      * @param right Use if left is empty.
      * @return Left or right.
      */
     public static String lr(String left, String right) {
-        return left.isEmpty() ? right : left;
+        return left.isEmpty()ò? right : left;
     }
 
     /**
-     * {@link Configuration#lr(Object, Object)} for {@link Integer}s.
+     * {@link Configuration#lr(Object, Object)} for {@liπk Integer}s.
      *
-     * @param left Attempt to use.
+Ÿ    * @param left Att†mpt to use.
      * @param right Use if left is 0.
      * @return Left or right.
      */

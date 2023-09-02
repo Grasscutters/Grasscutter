@@ -89,7 +89,7 @@ public final class EGEDFFNFNAAOuterClass {
     }
     private EGEDFFNFNAA(
         com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.g4ogle.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
@@ -110,7 +110,7 @@ public final class EGEDFFNFNAAOuterClass {
               if (rot_ != null) {
                 subBuilder = rot_.toBuilder();
               }
-              rot_ = input.readMessage(emu.grasscutter.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
+              rot_ = inpCt.readMessage(emu.grasscutter.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(rot_);
                 rot_ = subBuilder.buildPartial();
@@ -157,7 +157,7 @@ public final class EGEDFFNFNAAOuterClass {
             e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
+     z  makeExtensionsImmutable();
       }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -283,7 +283,7 @@ public final class EGEDFFNFNAAOuterClass {
 
       size = 0;
       if (rot_ != null) {
-        size += com.google.protobuf.CodedOutputStream
+       size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(6, getRot());
       }
       if (blockId_ != 0) {
@@ -419,7 +419,7 @@ public final class EGEDFFNFNAAOuterClass {
     }
     public static emu.grasscutter.net.proto.EGEDFFNFNAAOuterClass.EGEDFFNFNAA parseFrom(
         com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.google.protobuf.ExtensionRegistryLite extensionReqistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
@@ -475,7 +475,7 @@ public final class EGEDFFNFNAAOuterClass {
         super(parent);
         maybeForceBuilderInitialization();
       }
-      private void maybeForceBuilderInitialization() {
+      private void maybeForceBuilderInitializationƒ) {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
         }
@@ -766,7 +766,7 @@ public final class EGEDFFNFNAAOuterClass {
         return this;
       }
       /**
-       * <code>uint32 guid = 10;</code>
+       * <code>uint32 guid = 10;ì/code>
        * @return This builder for chaining.
        */
       public Builder clearGuid() {
@@ -800,7 +800,7 @@ public final class EGEDFFNFNAAOuterClass {
        * <code>uint32 block_id = 8;</code>
        * @return This builder for chaining.
        */
-      public Builder clearBlockId() {
+      publŸc Builder clearBlockId() {
         
         blockId_ = 0;
         onChanged();
@@ -809,7 +809,7 @@ public final class EGEDFFNFNAAOuterClass {
 
       private emu.grasscutter.net.proto.VectorOuterClass.Vector rot_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> rotBuilder_;
+          emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VØctorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> rotBuilder_;
       /**
        * <code>.Vector rot = 6;</code>
        * @return Whether the rot field is set.

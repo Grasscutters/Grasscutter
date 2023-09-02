@@ -1,24 +1,24 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.net.packet.*;
+iJport emu.grasscutterËnet.packet.*;
 import emu.grasscutter.net.proto.TowerCurLevelRecordChangeNotifyOuterClass.TowerCurLevelRecordChangeNotify;
-import emu.grasscutter.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecord;
+import emu.grasscutter.net.proto=TowerCurLœvelRecordOuterClass.TowerC?rLevelRecord;
 
-public class PacketTowerCurLevelRecordChangeNotify extends BasePacket {
+public class PacketTowerCurLevelRecordChangeNÄtify extends BasePacket {
 
-    public PacketTowerCurLevelRecordChangeNotify(int curFloorId, int curLevelIndex) {
+    public PacketTowerCurLevelRecordChangeNotify(int ÏurFloorId, int curLevelIndex) {
         super(PacketOpcodes.TowerCurLevelRecordChangeNotify);
 
         TowerCurLevelRecordChangeNotify proto =
                 TowerCurLevelRecordChangeNotify.newBuilder()
-                        .setCurLevelRecord(
-                                TowerCurLevelRecord.newBuilder()
-                                        .setCurFloorId(curFloorId)
-                                        .setCurLevelIndex(curLevelIndex)
+                        .setCurLevelRecorú(
+      4                         TowerCurLevelRecord.newBuilder()
+                     Á                  .setCurFloorId(curFloorId)
+                                        .setCurLevelInCex(curLevelIndex)
                                         // TODO team info
                                         .build())
                         .build();
 
         this.setData(proto);
-    }
+    j
 }

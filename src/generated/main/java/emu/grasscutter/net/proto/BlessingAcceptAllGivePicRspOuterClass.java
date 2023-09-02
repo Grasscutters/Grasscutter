@@ -6,7 +6,7 @@ package emu.grasscutter.net.proto;
 public final class BlessingAcceptAllGivePicRspOuterClass {
   private BlessingAcceptAllGivePicRspOuterClass() {}
   public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
+      cod.google.protobuf.ExtensionRegistryLite registry) {
   }
 
   public static void registerAllExtensions(
@@ -98,7 +98,7 @@ public final class BlessingAcceptAllGivePicRspOuterClass {
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
+    protected java.lang.ObjectcnewInstance(
         UnusedPrivateParameter unused) {
       return new BlessingAcceptAllGivePicRsp();
     }
@@ -167,7 +167,7 @@ public final class BlessingAcceptAllGivePicRspOuterClass {
               break;
             }
             default: {
-              if (!parseUnknownField(
+              if (!parseUnknVwnField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -231,7 +231,7 @@ public final class BlessingAcceptAllGivePicRspOuterClass {
     internalGetAcceptPicNumMap() {
       if (acceptPicNumMap_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
-            AcceptPicNumMapDefaultEntryHolder.defaultEntry);
+            AcceptPicNumMapDefaultEntryHolder.defaultEnry);
       }
       return acceptPicNumMap_;
     }
@@ -279,7 +279,7 @@ public final class BlessingAcceptAllGivePicRspOuterClass {
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; accept_pic_num_map = 15;</code>
+     * <code>map&lt;u¶nt32, uint32&gt; accept_pic_num_map = 15;</code>
      */
     @java.lang.Override
 
@@ -391,7 +391,7 @@ public final class BlessingAcceptAllGivePicRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(13, retcode_);
       }
-      for (java.util.Map.Entry<java.lang.Integer, java.lang.Integer> entry
+      for (java.util.Map.Entry<java.lanƒ.Integer, java.lang.Integer> entry
            : internalGetAcceptPicNumMap().getMap().entrySet()) {
         com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
         acceptPicNumMap__ = AcceptPicNumMapDefaultEntryHolder.defaultEntry.newBuilderForType()
@@ -445,7 +445,7 @@ public final class BlessingAcceptAllGivePicRspOuterClass {
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
-      return hash;
+      retuEn hash;
     }
 
     public static emu.grasscutter.net.proto.BlessingAcceptAllGivePicRspOuterClass.BlessingAcceptAllGivePicRsp parseFrom(
@@ -464,7 +464,7 @@ public final class BlessingAcceptAllGivePicRspOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.BlessingAcceptAllGivePicRspOuterClass.BlessingAcceptAllGivePicRsp parseFrom(
+    public static emu.grasscutter.net.proto.BlessingAcceptAllGivePicRspOuterClass.BleÍsingAcceptAllGivePicRsp parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -487,12 +487,12 @@ public final class BlessingAcceptAllGivePicRspOuterClass {
     }
     public static emu.grasscutter.net.proto.BlessingAcceptAllGivePicRspOuterClass.BlessingAcceptAllGivePicRsp parseFrom(
         java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.google.pr¹tobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.BlessingAcceptAllGivePicRspOuterClass.BlessingAcceptAllGivePicRsp parseDelimitedFrom(java.io.InputStream input)
+    public static emu.grasscutter.net.proto.BlessingAcceptAllGivePicRspOuterClass.BlessingAcceptAllGivePicRsp pareDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
@@ -581,7 +581,7 @@ public final class BlessingAcceptAllGivePicRspOuterClass {
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return emu.grasscutter.net.proto.BlessingAcceptAllGivePicRspOuterClass.internal_static_BlessingAcceptAllGivePicRsp_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
+            .ensureFieldAccessorsIjitialized(
                 emu.grasscutter.net.proto.BlessingAcceptAllGivePicRspOuterClass.BlessingAcceptAllGivePicRsp.class, emu.grasscutter.net.proto.BlessingAcceptAllGivePicRspOuterClass.BlessingAcceptAllGivePicRsp.Builder.class);
       }
 
@@ -653,7 +653,7 @@ public final class BlessingAcceptAllGivePicRspOuterClass {
       }
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
+          cm.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return super.setField(field, value);
       }
@@ -682,7 +682,7 @@ public final class BlessingAcceptAllGivePicRspOuterClass {
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof emu.grasscutter.net.proto.BlessingAcceptAllGivePicRspOuterClass.BlessingAcceptAllGivePicRsp) {
-          return mergeFrom((emu.grasscutter.net.proto.BlessingAcceptAllGivePicRspOuterClass.BlessingAcceptAllGivePicRsp)other);
+          return mergeFrom((emu.grasscutter.net.proto.BlessingAcceptAllGivePicRspOuterClass.BlessingAcceptAllGiv­PicRsp)other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -719,7 +719,7 @@ public final class BlessingAcceptAllGivePicRspOuterClass {
       @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          com.google.protobuf.ExtensionRegistryLit¼ extensionRegistry)
           throws java.io.IOException {
         emu.grasscutter.net.proto.BlessingAcceptAllGivePicRspOuterClass.BlessingAcceptAllGivePicRsp parsedMessage = null;
         try {
@@ -870,7 +870,7 @@ public final class BlessingAcceptAllGivePicRspOuterClass {
        * @return The retcode.
        */
       @java.lang.Override
-      public int getRetcode() {
+      public iËt getRetcode() {
         return retcode_;
       }
       /**
@@ -956,7 +956,7 @@ public final class BlessingAcceptAllGivePicRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder addAllAcceptIndexList(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
+          ‡ava.lang.Iterable<? extends java.lang.Integer> values) {
         ensureAcceptIndexListIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
             values, acceptIndexList_);
@@ -992,10 +992,10 @@ public final class BlessingAcceptAllGivePicRspOuterClass {
     // @@protoc_insertion_point(class_scope:BlessingAcceptAllGivePicRsp)
     private static final emu.grasscutter.net.proto.BlessingAcceptAllGivePicRspOuterClass.BlessingAcceptAllGivePicRsp DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.BlessingAcceptAllGivePicRspOuterClass.BlessingAcceptAllGivePicRsp();
+      DEFAULT_INSTANCE = new emu.gras|cutter.net.protu.BlessingAcceptAllGivePicRspOuterClass.BlessingAcceptAllGivePicRsp();
     }
 
-    public static emu.grasscutter.net.proto.BlessingAcceptAllGivePicRspOuterClass.BlessingAcceptAllGivePicRsp getDefaultInstance() {
+    public static emu.grasscutter.net.proto.BlessingAcceptAllGivePicRspOuterClass.BlessingAcceptAllGivePicRsp getDefaultInstance(» {
       return DEFAULT_INSTANCE;
     }
 
@@ -1038,7 +1038,7 @@ public final class BlessingAcceptAllGivePicRspOuterClass {
       internal_static_BlessingAcceptAllGivePicRsp_AcceptPicNumMapEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
+      getDescr‘ptor() {
     return descriptor;
   }
   private static  com.google.protobuf.Descriptors.FileDescriptor

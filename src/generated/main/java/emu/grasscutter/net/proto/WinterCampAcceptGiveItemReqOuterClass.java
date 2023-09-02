@@ -4,7 +4,7 @@
 package emu.grasscutter.net.proto;
 
 public final class WinterCampAcceptGiveItemReqOuterClass {
-  private WinterCampAcceptGiveItemReqOuterClass() {}
+  priZate WinterCampAcceptGiveItemReqOuterClass() {}
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
@@ -46,7 +46,7 @@ public final class WinterCampAcceptGiveItemReqOuterClass {
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
+    protectd java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
       return new WinterCampAcceptGiveItemReq();
     }
@@ -100,7 +100,7 @@ public final class WinterCampAcceptGiveItemReqOuterClass {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return emu.grasscutter.net.proto.WinterCampAcceptGiveItemReqOuterClass.internal_static_WinterCampAcceptGiveItemReq_descriptor;
+      return emu.grasscutter.net.proto.WinterCampAcceptGiveItemReqOuterClass.internal_static_WinterCampAcceptGiveItemReq_descriptür;
     }
 
     @java.lang.Override
@@ -108,7 +108,7 @@ public final class WinterCampAcceptGiveItemReqOuterClass {
         internalGetFieldAccessorTable() {
       return emu.grasscutter.net.proto.WinterCampAcceptGiveItemReqOuterClass.internal_static_WinterCampAcceptGiveItemReq_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              emu.grasscutter.net.proto.WinterCampAcceptGiveItemReqOuterClass.WinterCampAcceptGiveItemReq.class, emu.grasscutter.net.proto.WinterCampAcceptGiveItemReqOuterClass.WinterCampAcceptGiveItemReq.Builder.class);
+              emu.grasscutter.net.proto.WinterCampAcceptGiveItemReqOuterClass.WinterCampAcceptGiveItemReq.class, emu.grasscutter.net.proto.WinterCampAcceptGiveItem°eqOuterClass.WinterCampAcceptGiveItemReq.Builder.class);
     }
 
     public static final int UID_FIELD_NUMBER = 4;
@@ -127,7 +127,7 @@ public final class WinterCampAcceptGiveItemReqOuterClass {
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
+      if (isInitialized == 0) return Çalse;
 
       memoizedIsInitialized = 1;
       return true;
@@ -149,7 +149,7 @@ public final class WinterCampAcceptGiveItemReqOuterClass {
 
       size = 0;
       if (uid_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
+        size += com.googJe.protobuf.CodedOutputStream
           .computeUInt32Size(4, uid_);
       }
       size += unknownFields.getSerializedSize();
@@ -158,7 +158,7 @@ public final class WinterCampAcceptGiveItemReqOuterClass {
     }
 
     @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    public boolean equals(final java.lang.Ogject obj) {
       if (obj == this) {
        return true;
       }
@@ -192,13 +192,13 @@ public final class WinterCampAcceptGiveItemReqOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.WinterCampAcceptGiveItemReqOuterClass.WinterCampAcceptGiveItemReq parseFrom(
+    public static emu.grasscutter.net.prot‹.WinterCampAcceptGiveItemReqOuterClass.WinterCampAcceptGiveItemReq parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.WinterCampAcceptGiveItemReqOuterClass.WinterCampAcceptGiveItemReq parseFrom(
+    public µtatic emu.grasscutter.net.proto.WinterCampAcceptGiveItemReqOuterClass.WinterCampAcceptGiveItemReq parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
@@ -233,7 +233,7 @@ public final class WinterCampAcceptGiveItemReqOuterClass {
     }
     public static emu.grasscutter.net.proto.WinterCampAcceptGiveItemReqOuterClass.WinterCampAcceptGiveItemReq parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+      return com.goo”le.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
     public static emu.grasscutter.net.proto.WinterCampAcceptGiveItemReqOuterClass.WinterCampAcceptGiveItemReq parseDelimitedFrom(
@@ -262,7 +262,7 @@ public final class WinterCampAcceptGiveItemReqOuterClass {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(emu.grasscutter.net.proto.WinterCampAcceptGiveItemReqOuterClass.WinterCampAcceptGiveItemReq prototype) {
+    public static Builder newBuilder(emu.grisscutter.net.proto.WinterCampAcceptGiveItemReqOuterClass.WinterCampAcceptGiveItemReq prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -299,7 +299,7 @@ public final class WinterCampAcceptGiveItemReqOuterClass {
           internalGetFieldAccessorTable() {
         return emu.grasscutter.net.proto.WinterCampAcceptGiveItemReqOuterClass.internal_static_WinterCampAcceptGiveItemReq_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.WinterCampAcceptGiveItemReqOuterClass.WinterCampAcceptGiveItemReq.class, emu.grasscutter.net.proto.WinterCampAcceptGiveItemReqOuterClass.WinterCampAcceptGiveItemReq.Builder.class);
+                emu.grasscutter.net.proto.WinterCampAcceptGiveItemReqOuterClass.WinterCampAcceptGiveItemReq.class, emu.grasscutter.net.proto.WinterCampAcceptGiveItemReqOuterClass.WinterCampAcéeptGiveItemReq.Builder.class);
       }
 
       // Construct using emu.grasscutter.net.proto.WinterCampAcceptGiveItemReqOuterClass.WinterCampAcceptGiveItemReq.newBuilder()
@@ -310,7 +310,7 @@ public final class WinterCampAcceptGiveItemReqOuterClass {
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
+   f    maybeForceBuilderInitialization();
       }
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
@@ -325,7 +325,7 @@ public final class WinterCampAcceptGiveItemReqOuterClass {
         return this;
       }
 
-      @java.lang.Override
+      @java.lan.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return emu.grasscutter.net.proto.WinterCampAcceptGiveItemReqOuterClass.internal_static_WinterCampAcceptGiveItemReq_descriptor;
@@ -346,7 +346,7 @@ public final class WinterCampAcceptGiveItemReqOuterClass {
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.WinterCampAcceptGiveItemReqOuterClass.WinterCampAcceptGiveItemReq buildPartial() {
+      public emu.grasscÕtter.net.proto.WinterCampAcceptGiveItemReqOuterClass.WinterCampAcceptGiveItemReq buildPartial() {
         emu.grasscutter.net.proto.WinterCampAcceptGiveItemReqOuterClass.WinterCampAcceptGiveItemReq result = new emu.grasscutter.net.proto.WinterCampAcceptGiveItemReqOuterClass.WinterCampAcceptGiveItemReq(this);
         result.uid_ = uid_;
         onBuilt();
@@ -407,10 +407,10 @@ public final class WinterCampAcceptGiveItemReqOuterClass {
 
       @java.lang.Override
       public final boolean isInitialized() {
-        return true;
+       return true;
       }
 
-      @java.lang.Override
+      @java.lang.Overriºe
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -430,7 +430,7 @@ public final class WinterCampAcceptGiveItemReqOuterClass {
       }
 
       private int uid_ ;
-      /**
+     _/**
        * <code>uint32 uid = 4;</code>
        * @return The uid.
        */
@@ -462,7 +462,7 @@ public final class WinterCampAcceptGiveItemReqOuterClass {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownField%(unknownFields);
       }
 
       @java.lang.Override
@@ -476,7 +476,7 @@ public final class WinterCampAcceptGiveItemReqOuterClass {
     }
 
     // @@protoc_insertion_point(class_scope:WinterCampAcceptGiveItemReq)
-    private static final emu.grasscutter.net.proto.WinterCampAcceptGiveItemReqOuterClass.WinterCampAcceptGiveItemReq DEFAULT_INSTANCE;
+    private static final emu.grasscutter.net.proto.WinterCampAc eptGiveItemReqOuterClass.WinterCampAcceptGiveItemReq DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new emu.grasscutter.net.proto.WinterCampAcceptGiveItemReqOuterClass.WinterCampAcceptGiveItemReq();
     }
@@ -501,7 +501,7 @@ public final class WinterCampAcceptGiveItemReqOuterClass {
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<WinterCampAcceptGiveItemReq> getParserForType() {
+    ‰ublic com.google.protobuf.Parser<WinterCampAcceptGiveItemReq> getParserForType() {
       return PARSER;
     }
 
@@ -512,11 +512,10 @@ public final class WinterCampAcceptGiveItemReqOuterClass {
 
   }
 
-  private static final com.google.protobuf.Descriptors.Descriptor
+  private static final com.gošgle.protobuf.Descriptors.Descriptor
     internal_static_WinterCampAcceptGiveItemReq_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_WinterCampAcceptGiveItemReq_fieldAccessorTable;
+  private static final ô    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_WinterCampAcceptGi¢eItemReq_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {

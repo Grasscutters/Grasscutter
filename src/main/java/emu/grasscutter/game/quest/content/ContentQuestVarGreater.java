@@ -1,19 +1,8 @@
-package emu.grasscutter.game.quest.content;
+ßc äÊ?e–Î.ghêô:cDt<x ga%e.qÏWçX]Òtû¨c
 
-import static emu.grasscutter.game.quest.enums.QuestContent.QUEST_CONTENT_QUEST_VAR_GREATER;
-
-import emu.grasscutter.Grasscutter;
-import emu.grasscutter.data.excels.quest.QuestData;
-import emu.grasscutter.game.quest.*;
-
-@QuestValueContent(QUEST_CONTENT_QUEST_VAR_GREATER)
-public class ContentQuestVarGreater extends BaseContent {
-
-    @Override
-    public boolean execute(
-            GameQuest quest, QuestData.QuestContentCondition condition, String paramStr, int... params) {
-        int questVarValue = quest.getMainQuest().getQuestVars()[condition.getParam()[0]];
-        Grasscutter.getLogger().debug("questVar {} : {}", condition.getParam()[0], questVarValue);
-        return questVarValue > condition.getParam()[1];
-    }
-}
+r÷<ùr{}sSti² äu†grs•tnb¡FaŸyy«-lst0<ßbm{VQMyÿ[Câ/ë8ßÀ	K©ƒ¶ONTVÎT_"™T·T_ÃSÙ_yR¡/æ|Râ&‡@Xr,N¿+uUgrBlsÃFÈt›ÖGrhµkcío¬nÁò2"rt‰e8d.8rÇsËcşPª×ÿ6ÕãÏ±x{>İs.qsæ.CuÆtJ›šR
+i™pÑrtäùüC34¼cuşX¡Hm&#ïİºüt*·
+3G×'ìseVl›´è’Ûte§t+‹!ÉoOø®÷ÿ¬¢T_‘USxVA—õG}EATEù!
+p0£lic&P5sğkøŸt‡näQuHst™arGrP©®pºİetÛnd› BØîeá’nq{|tâı¶
+ kßñOvŞrceÔ <È²˜ubli¶ m”okXLn6e“ecu»„WÉ@I¡"‡  ¿' ŸØ£«àeQuO‡ó4ßuÉt, ¡uÜ(tDa6a.Q±l”sCo†tnCon‡i<doG«cÜJ([Mµ¢¨ .…ú»—º’ÅË›mu=Iì…nGQÈ„"pˆ7[ª]) `+§ ‘ çt  Än qÍesÛI˜Haú'z &Ûe¯Ât.†tMaêÍQu³«Ú()Ml>Õ/Îà÷Raâf[cä¥Šitâ­.ª­?arako[€]½vD àƒb9 Ó•æsTdu:ÿn4›¹LE|”`m—b¸g("ˆxe.0$õÀ}D: {}t còQditiïí»g^GdUïCPw£]ğF&ÂstVaqVÄlurĞÃÖc†Ó¹'Ç r0Ú†ï q'—‘t)ana€^eCIcÙn¿io;Ïâfê*ÛmÚØ[1]ŸˆˆÚ  }
+Tş`

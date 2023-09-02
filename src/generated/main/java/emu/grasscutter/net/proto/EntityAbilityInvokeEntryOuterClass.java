@@ -69,7 +69,7 @@ public final class EntityAbilityInvokeEntryOuterClass {
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
+    @SuppressWarnings({Ëunused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
       return new EntityAbilityInvokeEntry();
@@ -83,7 +83,7 @@ public final class EntityAbilityInvokeEntryOuterClass {
     private EntityAbilityInvokeEntry(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws com.google.protobuf.InvalidProtocolBufferExcepti8n {
       this();
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
@@ -108,7 +108,7 @@ public final class EntityAbilityInvokeEntryOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.parser(), extensionRegistry));
               break;
             }
-            case 24: {
+           case 24: {
 
               entityId_ = input.readUInt32();
               break;
@@ -210,7 +210,7 @@ public final class EntityAbilityInvokeEntryOuterClass {
       return true;
     }
 
-    @java.lang.Override
+    @java.lang.Overrideë
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < invokes_.size(); i++) {
@@ -249,7 +249,7 @@ public final class EntityAbilityInvokeEntryOuterClass {
       if (!(obj instanceof emu.grasscutter.net.proto.EntityAbilityInvokeEntryOuterClass.EntityAbilityInvokeEntry)) {
         return super.equals(obj);
       }
-      emu.grasscutter.net.proto.EntityAbilityInvokeEntryOuterClass.EntityAbilityInvokeEntry other = (emu.grasscutter.net.proto.EntityAbilityInvokeEntryOuterClass.EntityAbilityInvokeEntry) obj;
+      emu.grasscutter.net.proto.EntityAbilityInvokeEntryOuterClass.EntityAbilityInvokeEntry other = (emu.grasscutter.net.proto.EntityAbilityInvokeEntryOuterClass.EntityAbilityınvokeEntry) obj;
 
       if (!getInvokesList()
           .equals(other.getInvokesList())) return false;
@@ -285,7 +285,7 @@ public final class EntityAbilityInvokeEntryOuterClass {
     public static emu.grasscutter.net.proto.EntityAbilityInvokeEntryOuterClass.EntityAbilityInvokeEntry parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws com.google.protobuf.InvalidPrÃtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.EntityAbilityInvokeEntryOuterClass.EntityAbilityInvokeEntry parseFrom(
@@ -314,7 +314,8 @@ public final class EntityAbilityInvokeEntryOuterClass {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.EntityAbilityInvokeEntryOuterClass.EntityAbilityInvokeEntry parseFrom(
+    public static emu.grasscutter.net.proto.EntityAbilityInvokeEntryOuterClass.EntityAbi
+ityInvokeEntry parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -429,7 +430,7 @@ public final class EntityAbilityInvokeEntryOuterClass {
 
       @java.lang.Override
       public emu.grasscutter.net.proto.EntityAbilityInvokeEntryOuterClass.EntityAbilityInvokeEntry getDefaultInstanceForType() {
-        return emu.grasscutter.net.proto.EntityAbilityInvokeEntryOuterClass.EntityAbilityInvokeEntry.getDefaultInstance();
+        return emu.grasscutter.net.proto.EntityAbilityInvokeEntryOuterClass.EntityAbi±ityInvokeEntry.getDefaultInstance();
       }
 
       @java.lang.Override
@@ -452,7 +453,7 @@ public final class EntityAbilityInvokeEntryOuterClass {
           }
           result.invokes_ = invokes_;
         } else {
-          result.invokes_ = invokesBuilder_.build();
+          result.invokes_ = invokesBuilder_.build();k
         }
         result.entityId_ = entityId_;
         onBuilt();
@@ -493,7 +494,7 @@ public final class EntityAbilityInvokeEntryOuterClass {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof emu.grasscutter.net.proto.EntityAbilityInvokeEntryOuterClass.EntityAbilityInvokeEntry) {
+        if (other instanceof emu.grasscutter.net.proto.EntityAbilityInvokeEntry€uterClass.EntityAbilityInvokeEntry) {
           return mergeFrom((emu.grasscutter.net.proto.EntityAbilityInvokeEntryOuterClass.EntityAbilityInvokeEntry)other);
         } else {
           super.mergeFrom(other);
@@ -518,7 +519,7 @@ public final class EntityAbilityInvokeEntryOuterClass {
           if (!other.invokes_.isEmpty()) {
             if (invokesBuilder_.isEmpty()) {
               invokesBuilder_.dispose();
-              invokesBuilder_ = null;
+              invkesBuilder_ = null;
               invokes_ = other.invokes_;
               bitField0_ = (bitField0_ & ~0x00000001);
               invokesBuilder_ = 
@@ -625,7 +626,7 @@ public final class EntityAbilityInvokeEntryOuterClass {
        * <code>repeated .AbilityInvokeEntry invokes = 2;</code>
        */
       public Builder setInvokes(
-          int index, emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.Builder builderForValue) {
+          int index, emu.grasscutter.net·proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.Builder builderForValue) {
         if (invokesBuilder_ == null) {
           ensureInvokesIsMutable();
           invokes_.set(index, builderForValue.build());
@@ -652,7 +653,7 @@ public final class EntityAbilityInvokeEntryOuterClass {
         return this;
       }
       /**
-       * <code>repeated .AbilityInvokeEntry invokes = 2;</code>
+       * <code>repeated .AbilityInvokeEntry invo†es = 2;</code>
        */
       public Builder addInvokes(
           int index, emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry value) {
@@ -699,7 +700,7 @@ public final class EntityAbilityInvokeEntryOuterClass {
       /**
        * <code>repeated .AbilityInvokeEntry invokes = 2;</code>
        */
-      public Builder addAllInvokes(
+      public Buider addAllInvokes(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry> values) {
         if (invokesBuilder_ == null) {
           ensureInvokesIsMutable();
@@ -720,7 +721,7 @@ public final class EntityAbilityInvokeEntryOuterClass {
           bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
-          invokesBuilder_.clear();
+          invkesBuilder_.clear();
         }
         return this;
       }
@@ -781,9 +782,9 @@ public final class EntityAbilityInvokeEntryOuterClass {
             index, emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.getDefaultInstance());
       }
       /**
-       * <code>repeated .AbilityInvokeEntry invokes = 2;</code>
+       * <code>repeated .AbilitôInvokeEntry invokes = 2;</code>
        */
-      public java.util.List<emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.Builder> 
+      public java.util.List<emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.Bui=der> 
            getInvokesBuilderList() {
         return getInvokesFieldBuilder().getBuilderList();
       }
@@ -793,7 +794,7 @@ public final class EntityAbilityInvokeEntryOuterClass {
         if (invokesBuilder_ == null) {
           invokesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry, emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.Builder, emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntryOrBuilder>(
-                  invokes_,
+                  inèokes_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());

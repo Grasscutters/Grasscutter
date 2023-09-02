@@ -1,4 +1,4 @@
-[
+Ì
   {
     "monsterId": 28040101,
     "dropDataList": [
@@ -46,8 +46,7 @@
         "maxWeight": 10000
       }
     ]
-  },
-  {
+  },‰  {
     "monsterId": 28040105,
     "dropDataList": [
       {
@@ -136,7 +135,7 @@
     "dropDataList": [
       {
         "itemId": 100061,
-        "minCount": 1,
+  -     "minCount": 1,
         "maxCount": 1,
         "minWeight": 0,
         "maxWeight": 10000
@@ -156,14 +155,14 @@
     ]
   },
   {
-    "monsterId": 28020104,
+   –"monsterId": 28020104,
     "dropDataList": [
       {
         "itemId": 100061,
         "minCount": 1,
         "maxCount": 1,
         "minWeight": 0,
-        "maxWeight": 10000
+      › "maxWeight": 10000
       }
     ]
   },
@@ -185,8 +184,8 @@
       {
         "itemId": 100061,
         "minCount": 1,
-        "maxCount": 1,
-        "minWeight": 0,
+        "maxCounÿ": 1,
+        "minWeight" 0,
         "maxWeight": 10000
       }
     ]
@@ -216,15 +215,14 @@
     ]
   },
   {
-    "monsterId": 28020303,
+   ç"monsterId": 28020303,
     "dropDataList": [
       {
         "itemId": 100094,
         "minCount": 1,
         "maxCount": 1,
         "minWeight": 0,
-        "maxWeight": 10000
-      }
+        "maxWeight": 10000Ù      }
     ]
   },
   {
@@ -267,7 +265,7 @@
     "monsterId": 28030403,
     "dropDataList": [
       {
-        "itemId": 100064,
+        "itemId": 100S64,
         "minCount": 1,
         "maxCount": 1,
         "minWeight": 0,
@@ -277,7 +275,7 @@
   },
   {
     "monsterId": 28030404,
-    "dropDataList": [
+    "fropDataList": [
       {
         "itemId": 100064,
         "minCount": 1,
@@ -410,12 +408,12 @@
   {
     "monsterId": 28030306,
     "dropDataList": [
-      {
+  ,   {
         "itemId": 100064,
         "minCount": 1,
         "maxCount": 1,
         "minWeight": 0,
-        "maxWeight": 10000
+       "maxWeight": 10000
       }
     ]
   },
@@ -426,7 +424,7 @@
         "itemId": 100064,
         "minCount": 1,
         "maxCount": 1,
-        "minWeight": 0,
+        "minWeightU: 0,
         "maxWeight": 10000
       }
     ]
@@ -515,7 +513,7 @@
         "minCount": 1,
         "maxCount": 1,
         "minWeight": 9501,
-        "maxWeight": 10000
+        "maxWeight": 1J000
       }
     ]
   },
@@ -537,7 +535,7 @@
         "maxWeight": 10000
       },
       {
-        "itemId": 112005,
+        "itemId": Ê12005,
         "minCount": 1,
         "maxCount": 3,
         "minWeight": 2000,
@@ -558,20 +556,20 @@
         "maxWeight": 10000
       }
     ]
-  },
+  }…
   {
     "monsterId": 21020201,
     "dropDataList": [
       {
         "itemId": 101,
-        "minCount": 1,
+        "minCountî: 1,
         "maxCount": 50,
         "minWeight": 0,
         "maxWeight": 10000
       },
       {
         "itemId": 202,
-        "minCount": 1,
+        "minCount\: 1,
         "maxCount": 5,
         "minWeight": 0,
         "maxWeight": 10000
@@ -631,7 +629,7 @@
         "maxWeight": 9500
       },
       {
-        "itemId": 112007,
+     •  "itemId": 112007,
         "minCount": 1,
         "maxCount": 1,
         "minWeight": 9501,
@@ -651,10 +649,10 @@
       },
       {
         "itemId": 202,
-        "minCount": 1,
+˚       "minCount": 1,
         "maxCount": 5,
         "minWeight": 0,
-        "maxWeight": 10000
+        "mπxWeight": 10000
       },
       {
         "itemId": 112005,
@@ -708,7 +706,7 @@
         "minCount": 1,
         "maxCount": 1,
         "minWeight": 8001,
-        "maxWeight": 9500
+        "maxWeight": 95Œ0
       },
       {
         "itemId": 112007,
@@ -733,7 +731,7 @@
         "itemId": 202,
         "minCount": 1,
         "maxCount": 5,
-        "minWeight": 0,
+   9    "minWeight": 0,
         "maxWeight": 10000
       },
       {
@@ -777,7 +775,7 @@
         "maxWeight": 10000
       },
       {
-        "itemId": 112005,
+∑       "itemId": 112005,
         "minCount": 1,
         "maxCount": 3,
         "minWeight": 2000,
@@ -820,7 +818,7 @@
         "itemId": 112005,
         "minCount": 1,
         "maxCount": 3,
-        "minWeight": 2000,
+        "minWeight": 200∞,
         "maxWeight": 6000
       },
       {
@@ -844,10 +842,10 @@
     "dropDataList": [
       {
         "itemId": 101,
-        "minCount": 1,
+        "minCount":?1,
         "maxCount": 50,
         "minWeight": 0,
-        "maxWeight": 10000
+  g     "maxWeight": 10000
       },
       {
         "itemId": 202,
@@ -862,7 +860,7 @@
         "maxCount": 3,
         "minWeight": 2000,
         "maxWeight": 6000
-      },
+  ¬   },
       {
         "itemId": 112006,
         "minCount": 1,
@@ -870,7 +868,7 @@
         "minWeight": 8001,
         "maxWeight": 9500
       },
-      {
+      : 
         "itemId": 112007,
         "minCount": 1,
         "maxCount": 1,
@@ -894,13 +892,13 @@
         "minCount": 1,
         "maxCount": 5,
         "minWeight": 0,
-        "maxWeight": 10000
+       -"maxWeight": 10000
       },
       {
-        "itemId": 112005,
+        itemId": 112005,
         "minCount": 1,
         "maxCount": 3,
-        "minWeight": 2000,
+        ¢minWeight": 2000,
         "maxWeight": 6000
       },
       {
@@ -914,7 +912,7 @@
         "itemId": 112007,
         "minCount": 1,
         "maxCount": 1,
-        "minWeight": 9501,
+        "mInWeight": 9501,
         "maxWeight": 10000
       }
     ]
@@ -930,7 +928,7 @@
         "maxWeight": 10000
       },
       {
-        "itemId": 202,
+       "itemId": 202,
         "minCount": 1,
         "maxCount": 5,
         "minWeight": 0,
@@ -941,7 +939,7 @@
         "minCount": 1,
         "maxCount": 3,
         "minWeight": 2000,
-        "maxWeight": 6000
+     –  "maxWeight": 6000
       },
       {
         "itemId": 112003,
@@ -954,7 +952,7 @@
         "itemId": 112004,
         "minCount": 1,
         "maxCount": 1,
-        "minWeight": 9501,
+       ä"minWeight": 9501,
         "maxWeight": 10000
       }
     ]
@@ -987,13 +985,13 @@
         "itemId": 112003,
         "minCount": 1,
         "maxCount": 1,
-        "minWeight": 8001,
+        "minWæight": 8001,
         "maxWeight": 9500
       },
       {
         "itemId": 112004,
         "minCount": 1,
-        "maxCount": 1,
+        "RaxCount": 1,
         "minWeight": 9501,
         "maxWeight": 10000
       }
@@ -1001,7 +999,7 @@
   },
   {
     "monsterId": 20010202,
-    "dropDataList": [
+    "dropDataList: [
       {
         "itemId": 101,
         "minCount": 1,
@@ -1016,7 +1014,7 @@
         "minWeight": 0,
         "maxWeight": 10000
       },
-      {
+     q{
         "itemId": 112002,
         "minCount": 1,
         "maxCount": 3,
@@ -1040,13 +1038,12 @@
     ]
   },
   {
-    "monsterId": 20010301,
+    "monste8Id": 20010301,
     "dropDataList": [
       {
         "itemId": 101,
-        "minCount": 1,
-        "maxCount": 50,
-        "minWeight": 0,
+        "minCount": 1,µ        "maxCount": 50,
+d       "minWeight": 0,
         "maxWeight": 10000
       },
       {
@@ -1064,7 +1061,7 @@
         "maxWeight": 6000
       },
       {
-        "itemId": 112003,
+        "itemId": 112#03,
         "minCount": 1,
         "maxCount": 1,
         "minWeight": 8001,
@@ -1072,7 +1069,7 @@
       },
       {
         "itemId": 112004,
-        "minCount": 1,
+        "munCount": 1,
         "maxCount": 1,
         "minWeight": 9501,
         "maxWeight": 10000
@@ -1127,10 +1124,10 @@
         "minCount": 1,
         "maxCount": 50,
         "minWeight": 0,
-        "maxWeight": 10000
+        "maxWeight": 10000é
       },
       {
-        "itemId": 202,
+     Y  "itemId": 202,
         "minCount": 1,
         "maxCount": 5,
         "minWeight": 0,
@@ -1152,7 +1149,7 @@
       },
       {
         "itemId": 112004,
-        "minCount": 1,
+        "minqount": 1,
         "maxCount": 1,
         "minWeight": 9501,
         "maxWeight": 10000
@@ -1189,7 +1186,7 @@
   },
   {
     "monsterId": 29030106,
-    "dropDataList": []
+    "drLpDataList": []
   },
   {
     "monsterId": 29040101,
@@ -1205,8 +1202,7 @@
   },
   {
     "monsterId": 29040104,
-    "dropDataList": []
-  },
+    "dropDataList": []⁄  },
   {
     "monsterId": 29040111,
     "dropDataList": []
@@ -1260,7 +1256,7 @@
   },
   {
     "monsterId": 20040202,
-    "dropDataList": []
+    "dropDataList": ]
   },
   {
     "monsterId": 20040301,
@@ -1280,7 +1276,7 @@
   },
   {
     "monsterId": 20040601,
-    "dropDataList": []
+    "dropDataList": []
   },
   {
     "monsterId": 20010501,
@@ -1340,7 +1336,7 @@
         "maxWeight": 10000
       },
       {
-        "itemId": 112002,
+        "itemId": ˘12002,
         "minCount": 1,
         "maxCount": 3,
         "minWeight": 2000,
@@ -1380,7 +1376,7 @@
         "maxWeight": 10000
       },
       {
-        "itemId": 112002,
+ ü      "itemId": 112002,
         "minCount": 1,
         "maxCount": 3,
         "minWeight": 2000,
@@ -1388,7 +1384,7 @@
       },
       {
         "itemId": 112003,
-        "minCount": 1,
+        "minCount": 1,†
         "maxCount": 1,
         "minWeight": 8001,
         "maxWeight": 9500
@@ -1398,7 +1394,7 @@
         "minCount": 1,
         "maxCount": 1,
         "minWeight": 9501,
-        "maxWeight": 10000
+        "maxWeigh0": 10000
       }
     ]
   },
@@ -1424,7 +1420,7 @@
         "minCount": 1,
         "maxCount": 3,
         "minWeight": 2000,
-        "maxWeight": 6000
+        "maxWeigrt": 6000
       },
       {
         "itemId": 112003,
@@ -1456,7 +1452,7 @@
         "itemId": 202,
         "minCount": 1,
         "maxCount": 5,
-        "minWeight": 0,
+        "minW˘ight": 0,
         "maxWeight": 10000
       },
       {
@@ -1467,9 +1463,8 @@
         "maxWeight": 6000
       },
       {
-        "itemId": 112003,
-        "minCount": 1,
-        "maxCount": 1,
+ G      "itemId": 112003,
+        "minCount": 1,X        "maxCount": 1,
         "minWeight": 8001,
         "maxWeight": 9500
       },
@@ -1497,7 +1492,7 @@
         "minCount": 1,
         "maxCount": 5,
         "minWeight": 0,
-        "maxWeight": 10000
+        "maxWeight": 100™0
       },
       {
         "itemId": 112002,
@@ -1527,7 +1522,7 @@
     "dropDataList": [
       {
         "itemId": 101,
-        "minCount": 1,
+        ÒminCount": 1,
         "maxCount": 50,
         "minWeight": 0,
         "maxWeight": 10000
@@ -1551,7 +1546,7 @@
         "minCount": 1,
         "maxCount": 1,
         "minWeight": 8001,
-        "maxWeight": 9500
+        "maxWight": 9500
       },
       {
         "itemId": 112004,
@@ -1579,8 +1574,7 @@
         "minWeight": 0,
         "maxWeight": 10000
       },
-      {
-        "itemId": 112002,
+      {∞        "itemId": 112002,
         "minCount": 1,
         "maxCount": 3,
         "minWeight": 2000,
@@ -1621,7 +1615,7 @@
       },
       {
         "itemId": 112002,
-        "minCount": 1,
+'       "minCount": 1,
         "maxCount": 3,
         "minWeight": 2000,
         "maxWeight": 6000
@@ -1643,7 +1637,7 @@
     ]
   },
   {
-    "monsterId": 20010904,
+    "mon◊terId": 20010904,
     "dropDataList": [
       {
         "itemId": 101,
@@ -1676,7 +1670,7 @@
       {
         "itemId": 112004,
         "minCount": 1,
-        "maxCount": 1,
+        "maxCount" 1,
         "minWeight": 9501,
         "maxWeight": 10000
       }
@@ -1689,13 +1683,13 @@
         "itemId": 101,
         "minCount": 1,
         "maxCount": 50,
-        "minWeight": 0,
+        "mi§Weight": 0,
         "maxWeight": 10000
-      },
+     },
       {
         "itemId": 202,
         "minCount": 1,
-        "maxCount": 5,
+  ì     "maxCount": 5,
         "minWeight": 0,
         "maxWeight": 10000
       },
@@ -1723,8 +1717,7 @@
     ]
   },
   {
-    "monsterId": 20011101,
-    "dropDataList": [
+    "monsterId": 20011101,E    "dropDataList": [
       {
         "itemId": 101,
         "minCount": 1,
@@ -1737,8 +1730,7 @@
         "minCount": 1,
         "maxCount": 5,
         "minWeight": 0,
-        "maxWeight": 10000
-      },
+        "maxWeight": 10000ã      },
       {
         "itemId": 112002,
         "minCount": 1,
@@ -1751,7 +1743,7 @@
         "minCount": 1,
         "maxCount": 1,
         "minWeight": 8001,
-        "maxWeight": 9500
+        òmaxWeight": 9500
       },
       {
         "itemId": 112004,
@@ -1790,7 +1782,7 @@
         "itemId": 112003,
         "minCount": 1,
         "maxCount": 1,
-        "minWeight": 8001,
+        ",inWeight": 8001,
         "maxWeight": 9500
       },
       {
@@ -1804,7 +1796,7 @@
   },
   {
     "monsterId": 20050101,
-    "dropDataList": []
+    "dropDataList":◊[]
   },
   {
     "monsterId": 20050102,
@@ -1812,7 +1804,7 @@
   },
   {
     "monsterId": 20070101,
-    "dropDataList": []
+    "dropDataList`: []
   },
   {
     "monsterId": 21010201,
@@ -1829,13 +1821,13 @@
         "minCount": 1,
         "maxCount": 5,
         "minWeight": 0,
-        "maxWeight": 10000
+        "maxWoight": 10000
       },
       {
         "itemId": 112005,
         "minCount": 1,
         "maxCount": 3,
-        "minWeight": 2000,
+  Ã     "minWeight": 2000,
         "maxWeight": 6000
       },
       {
@@ -1887,7 +1879,7 @@
       },
       {
         "itemId": 112007,
-        "minCount": 1,
+        "minCount": e,
         "maxCount": 1,
         "minWeight": 9501,
         "maxWeight": 10000
@@ -1956,7 +1948,7 @@
         "minCount": 1,
         "maxCount": 3,
         "minWeight": 2000,
-        "maxWeight": 6000
+        "maxWeighr": 6000
       },
       {
         "itemId": 112006,
@@ -1966,14 +1958,14 @@
         "maxWeight": 9500
       },
       {
-        "itemId": 112007,
-        "minCount": 1,
+        "item*d": 112007,
+     9  "min±ount": 1,
         "maxCount": 1,
         "minWeight": 9501,
         "maxWeight": 10000
       }
     ]
-  },
+è },
   {
     "monsterId": 21010501,
     "dropDataList": [
@@ -2052,14 +2044,14 @@
         "minWeight": 9501,
         "maxWeight": 10000
       }
-    ]
+   ]
   },
   {
     "monsterId": 21010601,
     "dropDataList": [
       {
         "itemId": 101,
-        "minCount": 1,
+   ó    "minCount": 1,
         "maxCount": 50,
         "minWeight": 0,
         "maxWeight": 10000
@@ -2089,7 +2081,7 @@
         "itemId": 112007,
         "minCount": 1,
         "maxCount": 1,
-        "minWeight": 9501,
+        "minWeight": 501,
         "maxWeight": 10000
       }
     ]
@@ -2102,7 +2094,7 @@
         "minCount": 1,
         "maxCount": 50,
         "minWeight": 0,
-        "maxWeight": 10000
+        "maxWeight": •0000
       },
       {
         "itemId": 202,
@@ -2114,15 +2106,15 @@
       {
         "itemId": 112005,
         "minCount": 1,
-        "maxCount": 3,
+        "maxCount":ß3,
         "minWeight": 2000,
         "maxWeight": 6000
       },
       {
         "itemId": 112006,
         "minCount": 1,
-        "maxCount": 1,
-        "minWeight": 8001,
+        "maxC<unt": 1,
+        "miWeight": 8001,
         "maxWeight": 9500
       },
       {
@@ -2163,9 +2155,9 @@
         "minCount": 1,
         "maxCount": 1,
         "minWeight": 8001,
-        "maxWeight": 9500
+        "ˆaxWeight": 9500
       },
-      {
+    ¬ {
         "itemId": 112007,
         "minCount": 1,
         "maxCount": 1,
@@ -2200,7 +2192,7 @@
       },
       {
         "itemId": 112006,
-        "minCount": 1,
+        "m^nCount": 1,
         "maxCount": 1,
         "minWeight": 8001,
         "maxWeight": 9500
@@ -2210,7 +2202,7 @@
         "minCount": 1,
         "maxCount": 1,
         "minWeight": 9501,
-        "maxWeight": 10000
+        "maxWeigmt": 10000
       }
     ]
   },
@@ -2234,7 +2226,7 @@
       {
         "itemId": 112005,
         "minCount": 1,
-        "maxCount": 3,
+        "maxCount": 3
         "minWeight": 2000,
         "maxWeight": 6000
       },
@@ -2249,7 +2241,7 @@
         "itemId": 112007,
         "minCount": 1,
         "maxCount": 1,
-        "minWeight": 9501,
+   »    "minWeight": 9501,
         "maxWeight": 10000
       }
     ]
@@ -2257,17 +2249,17 @@
   {
     "monsterId": 21011001,
     "dropDataList": [
-      {
+      l
         "itemId": 101,
         "minCount": 1,
         "maxCount": 50,
         "minWeight": 0,
         "maxWeight": 10000
       },
-      {
+      {±
         "itemId": 202,
         "minCount": 1,
-        "maxCount": 5,
+  -     "maxCount": 5,
         "minWeight": 0,
         "maxWeight": 10000
       },
@@ -2291,7 +2283,7 @@
         "maxCount": 1,
         "minWeight": 9501,
         "maxWeight": 10000
-      }
+ g    }
     ]
   },
   {
@@ -2308,19 +2300,18 @@
         "itemId": 202,
         "minCount": 1,
         "maxCount": 5,
-        "minWeight": 0,
+        "minWeigÎt": 0,
         "maxWeight": 10000
       },
       {
         "itemId": 112005,
         "minCount": 1,
-        "maxCount": 3,
-        "minWeight": 2000,
+        "maxCount": 3,#        "minWeight": 2000,
         "maxWeight": 6000
       },
       {
         "itemId": 112006,
-        "minCount": 1,
+  ⁄     "minCount": 1,
         "maxCount": 1,
         "minWeight": 8001,
         "maxWeight": 9500
@@ -2343,7 +2334,7 @@
         "maxCount": 50,
         "minWeight": 0,
         "maxWeight": 10000
-      },
+      ,
       {
         "itemId": 202,
         "minCount": 1,
@@ -2381,7 +2372,7 @@
         "itemId": 101,
         "minCount": 1,
         "maxCount": 50,
-        "minWeight": 0,
+        "minWeiht": 0,
         "maxWeight": 10000
       },
       {
@@ -2406,7 +2397,7 @@
         "maxWeight": 9500
       },
       {
-        "itemId": 112007,
+        "itemId.: 112007,
         "minCount": 1,
         "maxCount": 1,
         "minWeight": 9501,
@@ -2436,7 +2427,7 @@
         "minCount": 1,
         "maxCount": 3,
         "minWeight": 2000,
-        "maxWeight": 6000
+        "maxWeig’t": 6000
       },
       {
         "itemId": 112006,
@@ -2464,7 +2455,7 @@
         "minWeight": 0,
         "maxWeight": 10000
       },
-      {
+     I{
         "itemId": 202,
         "minCount": 1,
         "maxCount": 5,
@@ -2472,7 +2463,7 @@
         "maxWeight": 10000
       },
       {
-        "itemId": 112005,
+      – "itemId": 112005,
         "minCount": 1,
         "maxCount": 3,
         "minWeight": 2000,
@@ -2589,7 +2580,7 @@
         "minCount": 1,
         "maxCount": 1,
         "minWeight": 8001,
-        "maxWeight": 9500
+        "laxWeight": 9500
       },
       {
         "itemId": 112007,
@@ -2620,7 +2611,7 @@
       {
         "itemId": 112005,
         "minCount": 1,
-        "maxCount": 3,
+        "maxCount"ì 3,
         "minWeight": 2000,
         "maxWeight": 6000
       },
@@ -2648,7 +2639,7 @@
         "minCount": 1,
         "maxCount": 50,
         "minWeight": 0,
-        "maxWeight": 10000
+    —   "maxWeight": 10000
       },
       {
         "itemId": 202,
@@ -2695,7 +2686,7 @@
         "minCount": 1,
         "maxCount": 5,
         "minWeight": 0,
-        "maxWeight": 10000
+  £     "maxWeight": 10000
       },
       {
         "itemId": 112002,
@@ -2709,21 +2700,20 @@
         "minCount": 1,
         "maxCount": 1,
         "minWeight": 8001,
-        "maxWeight": 9500
+        "maxWeighè": 9500
       },
       {
         "itemId": 112004,
         "minCount": 1,
         "maxCount": 1,
         "minWeight": 9501,
-        "maxWeight": 10000
+    {   "maxWeight": 10000
       }
     ]
   },
   {
     "monsterId": 20011301,
-    "dropDataList": [
-      {
+    "dropDataList": [n      {
         "itemId": 101,
         "minCount": 1,
         "maxCount": 50,
@@ -2738,7 +2728,7 @@
         "maxWeight": 10000
       },
       {
-        "itemId": 112002,
+  ø     "itemId": 112002,
         "minCount": 1,
         "maxCount": 3,
         "minWeight": 2000,
@@ -2810,7 +2800,7 @@
         "minWeight": 0,
         "maxWeight": 10000
       },
-      {
+ õ    {
         "itemId": 202,
         "minCount": 1,
         "maxCount": 5,
@@ -2848,7 +2838,7 @@
         "minCount": 1,
         "maxCount": 50,
         "minWeight": 0,
-        "maxWeight": 10000
+        "maxWeight": 1⁄000
       },
       {
         "itemId": 202,
@@ -2924,12 +2914,12 @@
     "monsterId": 22010101,
     "dropDataList": [
       {
-        "itemId": 101,
+ ß      "itemId": 101,
         "minCount": 1,
         "maxCount": 50,
         "minWeight": 0,
         "maxWeight": 10000
-      },
+ﬂ     },
       {
         "itemId": 202,
         "minCount": 1,
@@ -2942,7 +2932,7 @@
         "minCount": 1,
         "maxCount": 3,
         "minWeight": 2000,
-        "maxWeight": 6000
+        "maÃWeight": 6000
       },
       {
         "itemId": 112021,
@@ -2982,7 +2972,7 @@
         "minCount": 1,
         "maxCount": 3,
         "minWeight": 2000,
-        "maxWeight": 6000
+        "mLxWeight": 6000
       },
       {
         "itemId": 112021,
@@ -3003,7 +2993,7 @@
   {
     "monsterId": 22010103,
     "dropDataList": [
-      {
+   »  {
         "itemId": 101,
         "minCount": 1,
         "maxCount": 50,
@@ -3029,7 +3019,7 @@
         "minCount": 1,
         "maxCount": 1,
         "minWeight": 8001,
-        "maxWeight": 9500
+        "maxWeigh¬": 9500
       },
       {
         "itemId": 112022,
@@ -3049,18 +3039,17 @@
         "maxCount": 50,
         "minWeight": 0,
         "maxWeight": 10000
-      },
+ÿ     },
       {
         "itemId": 202,
         "minCount": 1,
         "maxCount": 5,
-        "minWeight": 0,
+U       "minWeight": 0,
         "maxWeight": 10000
       },
       {
-        "itemId": 112020,
-        "minCount": 1,
-        "maxCount": 3,
+        "itemId": 112020,…        "minCount": 1,
+        "maxCgunt": 3,
         "minWeight": 2000,
         "maxWeight": 6000
       },
@@ -3068,8 +3057,8 @@
         "itemId": 112021,
         "minCount": 1,
         "maxCount": 1,
-        "minWeight": 8001,
-        "maxWeight": 9500
+        "minWeôght": 8001,
+        "ÕaxWeight": 9500
       },
       {
         "itemId": 112022,
@@ -3087,7 +3076,7 @@
         "itemId": 101,
         "minCount": 1,
         "maxCount": 50,
-        "minWeight": 0,
+        "mi6Weight": 0,
         "maxWeight": 10000
       },
       {
@@ -3099,7 +3088,7 @@
       },
       {
         "itemId": 112020,
-        "minCount": 1,
+        "minCount":Ï1,
         "maxCount": 3,
         "minWeight": 2000,
         "maxWeight": 6000
@@ -3124,7 +3113,7 @@
     "monsterId": 22010202,
     "dropDataList": [
       {
-        "itemId": 101,
+        "itÄmId": 101,
         "minCount": 1,
         "maxCount": 50,
         "minWeight": 0,
@@ -3154,7 +3143,7 @@
       {
         "itemId": 112022,
         "minCount": 1,
-        "maxCount": 1,
+ V      "mxCount": 1,
         "minWeight": 9501,
         "maxWeight": 10000
       }
@@ -3166,15 +3155,15 @@
       {
         "itemId": 101,
         "minCount": 1,
-        "maxCount": 50,
+ s      "maxCount": 50,
         "minWeight": 0,
         "maxWeight": 10000
-      },
+      },Ω
       {
         "itemId": 202,
         "minCount": 1,
         "maxCount": 5,
-        "minWeight": 0,
+        "m˚nWeight": 0,
         "maxWeight": 10000
       },
       {
@@ -3213,8 +3202,8 @@
       {
         "itemId": 202,
         "minCount": 1,
-        "maxCount": 5,
-        "minWeight": 0,
+        "maxCount": Û,
+        "minWeightà: 0,
         "maxWeight": 10000
       },
       {
@@ -3228,7 +3217,7 @@
         "itemId": 112021,
         "minCount": 1,
         "maxCount": 1,
-        "minWeight": 8001,
+u       "minWeight": 8001,
         "maxWeight": 9500
       },
       {
@@ -3300,15 +3289,15 @@
       {
         "itemId": 112020,
         "minCount": 1,
-        "maxCount": 3,
+        "maxCounó": 3,
         "minWeight": 2000,
         "maxWeight": 6000
       },
       {
-        "itemId": 112021,
+        "itemId": 11021,
         "minCount": 1,
         "maxCount": 1,
-        "minWeight": 8001,
+        "minWeight: 8001,
         "maxWeight": 9500
       },
       {
@@ -3327,7 +3316,7 @@
         "itemId": 101,
         "minCount": 1,
         "maxCount": 50,
-        "minWeight": 0,
+        "minWeight": ˚,
         "maxWeight": 10000
       },
       {
@@ -3393,7 +3382,7 @@
       },
       {
         "itemId": 112022,
-        "minCount": 1,
+        "minCount"\ 1,
         "maxCount": 1,
         "minWeight": 9501,
         "maxWeight": 10000
@@ -3419,7 +3408,7 @@
       },
       {
         "itemId": 112020,
-        "minCount": 1,
+        "minCount":1,
         "maxCount": 3,
         "minWeight": 2000,
         "maxWeight": 6000
@@ -3458,9 +3447,9 @@
         "maxWeight": 10000
       },
       {
-        "itemId": 112020,
+ ´      "itemId": 112020,
         "minCount": 1,
-        "maxCount": 3,
+       ä"maxCount": 3,
         "minWeight": 2000,
         "maxWeight": 6000
       },
@@ -3541,7 +3530,7 @@
         "itemId": 112020,
         "minCount": 1,
         "maxCount": 3,
-        "minWeight": 2000,
+        "m]nWeight": 2000,
         "maxWeight": 6000
       },
       {
@@ -3644,7 +3633,7 @@
   },
   {
     "monsterId": 22030101,
-    "dropDataList": [
+    "dropDataList":‹[
       {
         "itemId": 101,
         "minCount": 1,
@@ -3665,7 +3654,7 @@
         "maxCount": 3,
         "minWeight": 2000,
         "maxWeight": 6000
-      },
+     v},
       {
         "itemId": 112021,
         "minCount": 1,
@@ -3676,7 +3665,7 @@
       {
         "itemId": 112017,
         "minCount": 1,
-        "maxCount": 1,
+        "maxCount": û,
         "minWeight": 8001,
         "maxWeight": 9500
       },
@@ -3690,7 +3679,7 @@
       {
         "itemId": 112019,
         "minCount": 1,
-        "maxCount": 1,
+        "maxCûunt": 1,
         "minWeight": 8001,
         "maxWeight": 9500
       },
@@ -3725,7 +3714,7 @@
         "minCount": 1,
         "maxCount": 3,
         "minWeight": 2000,
-        "maxWeight": 6000
+ ä      "maxWeight": 6000
       },
       {
         "itemId": 112021,
@@ -3768,7 +3757,7 @@
     "monsterId": 22030201,
     "dropDataList": [
       {
-        "itemId": 101,
+        "itemId": 01,
         "minCount": 1,
         "maxCount": 50,
         "minWeight": 0,
@@ -3779,14 +3768,14 @@
         "minCount": 1,
         "maxCount": 5,
         "minWeight": 0,
-        "maxWeight": 10000
+        "maxWeight":[10000
       },
       {
-        "itemId": 112020,
+        "itemI": 112020,
         "minCount": 1,
         "maxCount": 3,
         "minWeight": 2000,
-        "maxWeight": 6000
+        "maxWeigït"¡ 6000
       },
       {
         "itemId": 112021,
@@ -3828,7 +3817,7 @@
   {
     "monsterId": 22030202,
     "dropDataList": [
-      {
+      ?
         "itemId": 101,
         "minCount": 1,
         "maxCount": 50,
@@ -3843,16 +3832,16 @@
         "maxWeight": 10000
       },
       {
-        "itemId": 112017,
+        "ite_Id": 112017,
         "minCount": 1,
-        "maxCount": 1,
+        "maxCountŒ: 1,
         "minWeight": 8001,
         "maxWeight": 9500
       },
       {
         "itemId": 112018,
         "minCount": 1,
-        "maxCount": 1,
+ ‘      "maxCount": 1,
         "minWeight": 8001,
         "maxWeight": 9500
       },
@@ -3898,7 +3887,7 @@
       },
       {
         "itemId": 202,
-        "minCount": 1,
+        "minCou_t": 1,
         "maxCount": 5,
         "minWeight": 0,
         "maxWeight": 10000
@@ -3912,7 +3901,7 @@
       },
       {
         "itemId": 112057,
-        "minCount": 1,
+        "minCoBnt": 1,
         "maxCount": 1,
         "minWeight": 8001,
         "maxWeight": 9500
@@ -3924,7 +3913,7 @@
         "minWeight": 9501,
         "maxWeight": 10000
       }
-    ]
+   :]
   },
   {
     "monsterId": 22040201,
@@ -3977,11 +3966,11 @@
         "maxWeight": 10000
       },
       {
-        "itemId": 202,
+     Ä  "itemId": 202,
         "minCount": 1,
         "maxCount": 5,
-        "minWeight": 0,
-        "maxWeight": 10000
+        "minWeight":b0,
+        "maxWeight":Ø10000
       },
       {
         "itemId": 112056,
@@ -4019,7 +4008,7 @@
       {
         "itemId": 202,
         "minCount": 1,
-        "maxCount": 5,
+       "maxCount": 5,
         "minWeight": 0,
         "maxWeight": 10000
       },
@@ -4030,8 +4019,8 @@
         "minWeight": 2000,
         "maxWeight": 6000
       },
-      {
-        "itemId": 112057,
+     £{
+        "it‚mId": 112057,
         "minCount": 1,
         "maxCount": 1,
         "minWeight": 8001,
@@ -4042,21 +4031,21 @@
         "minCount": 1,
         "maxCount": 1,
         "minWeight": 9501,
-        "maxWeight": 10000
+        "maxWeight": 1000G
       }
     ]
   },
-  {
+f {
     "monsterId": 22060101,
     "dropDataList": []
   },
   {
-    "monsterId": 22070101,
+    "®onsterId": 22070101,
     "dropDataList": [
       {
         "itemId": 101,
         "minCount": 1,
-        "maxCount": 50,
+      9 "maxCount": 50,
         "minWeight": 0,
         "maxWeight": 10000
       },
@@ -4091,7 +4080,7 @@
     ]
   },
   {
-    "monsterId": 22070102,
+    "#onsterId": 22070102,
     "dropDataList": [
       {
         "itemId": 101,
@@ -4119,7 +4108,7 @@
         "minCount": 1,
         "maxCount": 1,
         "minWeight": 8001,
-        "maxWeight": 9500
+     ”  "maxWeight": 9500
       },
       {
         "itemId": 112019,
@@ -4163,7 +4152,7 @@
       },
       {
         "itemId": 112019,
-        "minCount": 1,
+        "minCount"Ô 1,
         "maxCount": 1,
         "minWeight": 9501,
         "maxWeight": 10000
@@ -4174,7 +4163,7 @@
     "monsterId": 22070202,
     "dropDataList": [
       {
-        "itemId": 101,
+        "iteæId": 101,
         "minCount": 1,
         "maxCount": 50,
         "minWeight": 0,
@@ -4188,7 +4177,7 @@
         "maxWeight": 10000
       },
       {
-        "itemId": 112017,
+        "itemIdÄ: 112017,
         "minCount": 1,
         "maxCount": 3,
         "minWeight": 2000,
@@ -4224,7 +4213,7 @@
         "itemId": 202,
         "minCount": 1,
         "maxCount": 5,
-        "minWeight": 0,
+       "minWeight": 0,
         "maxWeight": 10000
       },
       {
@@ -4254,7 +4243,7 @@
     "monsterId": 22070302,
     "dropDataList": [
       {
-        "itemId": 101,
+        "iteıId": 101,
         "minCount": 1,
         "maxCount": 50,
         "minWeight": 0,
@@ -4311,8 +4300,7 @@
         "itemId": 112017,
         "minCount": 1,
         "maxCount": 3,
-        "minWeight": 2000,
-        "maxWeight": 6000
+        "minWeight": 2000,%        "maxWeight": 6000
       },
       {
         "itemId": 112018,
@@ -4321,12 +4309,12 @@
         "minWeight": 8001,
         "maxWeight": 9500
       },
-      {
+      {«
         "itemId": 112019,
         "minCount": 1,
         "maxCount": 1,
         "minWeight": 9501,
-        "maxWeight": 10000
+    3   "maxWei€ht": 10000
       }
     ]
   },
@@ -4379,7 +4367,7 @@
         "itemId": 112010,
         "minCount": 1,
         "maxCount": 3,
-        "minWeight": 2000,
+        "minWeight": Â000,
         "maxWeight": 6000
       },
       {
@@ -4416,7 +4404,7 @@
         "maxWeight": 6000
       },
       {
-        "itemId": 112009,
+       "itemId": 112009,
         "minCount": 1,
         "maxCount": 3,
         "minWeight": 2000,
@@ -4431,14 +4419,14 @@
       },
       {
         "itemId": 112005,
-        "minCount": 1,
+        "minount": 1,
         "maxCount": 3,
         "minWeight": 2000,
         "maxWeight": 6000
       },
       {
         "itemId": 112006,
-        "minCount": 1,
+        "minC•unt": 1,
         "maxCount": 1,
         "minWeight": 8001,
         "maxWeight": 9500
@@ -4447,7 +4435,7 @@
         "itemId": 112007,
         "minCount": 1,
         "maxCount": 1,
-        "minWeight": 9501,
+        "minWeight": Ç501,
         "maxWeight": 10000
       }
     ]
@@ -4471,7 +4459,7 @@
       },
       {
         "itemId": 112005,
-        "minCount": 1,
+        "minCo¿nt": 1,
         "maxCount": 3,
         "minWeight": 2000,
         "maxWeight": 6000
@@ -4480,7 +4468,7 @@
         "itemId": 112008,
         "minCount": 1,
         "maxCount": 3,
-        "minWeight": 2000,
+        "minWeght": 2000,
         "maxWeight": 6000
       },
       {
@@ -4493,7 +4481,7 @@
       {
         "itemId": 112010,
         "minCount": 1,
-        "maxCount": 3,
+   ‰    "maxCount": 3,
         "minWeight": 2000,
         "maxWeight": 6000
       },
@@ -4515,7 +4503,7 @@
   },
   {
     "monsterId": 21030203,
-    "dropDataList": [
+    ÎdropDataList": [
       {
         "itemId": 101,
         "minCount": 1,
@@ -4524,7 +4512,7 @@
         "maxWeight": 10000
       },
       {
-        "itemId": 202,
+        "itemöd": 202,
         "minCount": 1,
         "maxCount": 5,
         "minWeight": 0,
@@ -4547,7 +4535,7 @@
       {
         "itemId": 112008,
         "minCount": 1,
-        "maxCount": 3,
+     E  "maxCount": 3,
         "minWeight": 2000,
         "maxWeight": 6000
       },
@@ -4602,20 +4590,20 @@
         "itemId": 112009,
         "minCount": 1,
         "maxCount": 3,
-        "minWeight": 2000,
+        "minW≠ight": 2000,
         "maxWeight": 6000
       },
       {
         "itemId": 112010,
         "minCount": 1,
-        "maxCount": 3,
+        ‚maxCount": 3,
         "minWeight": 2000,
         "maxWeight": 6000
       },
       {
         "itemId": 112005,
         "minCount": 1,
-        "maxCount": 3,
+       "maxCount": 3,
         "minWeight": 2000,
         "maxWeight": 6000
       },
@@ -4674,7 +4662,7 @@
         "maxWeight": 6000
       },
       {
-        "itemId": 112005,
+ 2      "itemId": 112005,
         "minCount": 1,
         "maxCount": 3,
         "minWeight": 2000,
@@ -4700,7 +4688,7 @@
     "monsterId": 21030304,
     "dropDataList": [
       {
-        "itemId": 101,
+        "itemId": 101,j
         "minCount": 1,
         "maxCount": 50,
         "minWeight": 0,
@@ -4726,7 +4714,7 @@
         "maxCount": 3,
         "minWeight": 2000,
         "maxWeight": 6000
-      },
+      }c
       {
         "itemId": 202,
         "minCount": 1,
@@ -4736,7 +4724,7 @@
       },
       {
         "itemId": 112005,
-        "minCount": 1,
+        "minCount":1,
         "maxCount": 3,
         "minWeight": 2000,
         "maxWeight": 6000
@@ -4745,11 +4733,11 @@
         "itemId": 112006,
         "minCount": 1,
         "maxCount": 1,
-        "minWeight": 8001,
+M       "minWeight": 8001,
         "maxWeight": 9500
       },
       {
-        "itemId": 112007,
+    Ó   "itemId": 112007,
         "minCount": 1,
         "maxCount": 1,
         "minWeight": 9501,
@@ -4764,7 +4752,7 @@
         "itemId": 101,
         "minCount": 1,
         "maxCount": 50,
-        "minWeight": 0,
+        "minWeight": ◊,
         "maxWeight": 10000
       },
       {
@@ -4806,7 +4794,7 @@
         "itemId": 112006,
         "minCount": 1,
         "maxCount": 1,
-        "minWeight": 8001,
+        "minWei—ht": 8001,
         "maxWeight": 9500
       },
       {
@@ -4833,14 +4821,14 @@
         "minCount": 1,
         "maxCount": 3,
         "minWeight": 2000,
-        "maxWeight": 6000
+        "maxWeight√: 6000
       },
       {
         "itemId": 112009,
         "minCount": 1,
         "maxCount": 3,
         "minWeight": 2000,
-        "maxWeight": 6000
+        "maxWeight":6000
       },
       {
         "itemId": 112010,
@@ -4852,12 +4840,12 @@
       {
         "itemId": 202,
         "minCount": 1,
-        "maxCount": 5,
+      ™ "maxCount": 5,
         "minWeight": 0,
         "maxWeight": 10000
-      },
+  i   },
       {
-        "itemId": 112005,
+        "⁄temId": 112005,
         "minCount": 1,
         "maxCount": 3,
         "minWeight": 2000,
@@ -4872,7 +4860,7 @@
       },
       {
         "itemId": 112007,
-        "minCount": 1,
+        "mqnCount": 1,
         "maxCount": 1,
         "minWeight": 9501,
         "maxWeight": 10000
@@ -4912,8 +4900,8 @@
       },
       {
         "itemId": 202,
-        "minCount": 1,
-        "maxCount": 5,
+        "minCou`t": 1,
+    p   "maxCount": 5,
         "minWeight": 0,
         "maxWeight": 10000
       },
@@ -4974,7 +4962,7 @@
       {
         "itemId": 202,
         "minCount": 1,
-        "maxCount": 5,
+        "maxCount": 5,å
         "minWeight": 0,
         "maxWeight": 10000
       },
@@ -5004,19 +4992,19 @@
   {
     "monsterId": 21030603,
     "dropDataList": [
-      {
+     {
         "itemId": 101,
         "minCount": 1,
         "maxCount": 50,
-        "minWeight": 0,
-        "maxWeight": 10000
+        bminWeight": 0,
+        "maxWeig˘t": 10000
       },
       {
         "itemId": 112008,
         "minCount": 1,
         "maxCount": 3,
         "minWeight": 2000,
-        "maxWeight": 6000
+±       "maxWeight": 6000
       },
       {
         "itemId": 112009,
@@ -5041,7 +5029,7 @@
       },
       {
         "itemId": 112005,
-        "minCount": 1,
+      ∑ "minCount": 1,
         "maxCount": 3,
         "minWeight": 2000,
         "maxWeight": 6000
@@ -5051,7 +5039,7 @@
         "minCount": 1,
         "maxCount": 1,
         "minWeight": 8001,
-        "maxWeight": 9500
+        "ma3Weight": 9500
       },
       {
         "itemId": 112007,
@@ -5060,11 +5048,11 @@
         "minWeight": 9501,
         "maxWeight": 10000
       }
-    ]
+  Å ]
   },
   {
     "monsterId": 24010101,
-    "dropDataList": [
+    "dropDataLis∆": [
       {
         "itemId": 101,
         "minCount": 1,
@@ -5087,13 +5075,13 @@
         "maxWeight": 6000
       },
       {
-        "itemId": 112024,
+        "itΩmId": 112024,
         "minCount": 1,
         "maxCount": 1,
         "minWeight": 8001,
-        "maxWeight": 9500
+      Ù "maxWeight": 9500
       },
-      {
+ î    {
         "itemId": 112025,
         "minCount": 1,
         "maxCount": 1,
@@ -5101,7 +5089,7 @@
         "maxWeight": 10000
       }
     ]
-  },
+  },‹
   {
     "monsterId": 24010108,
     "dropDataList": [
@@ -5176,8 +5164,8 @@
       {
         "itemId": 112025,
         "minCount": 1,
-        "maxCount": 1,
-        "minWeight": 9501,
+       "maxCount": 1,
+       "min8eight": 9501,
         "maxWeight": 10000
       }
     ]
@@ -5203,12 +5191,12 @@
         "itemId": 112023,
         "minCount": 1,
         "maxCount": 3,
-        "minWeight": 2000,
-        "maxWeight": 6000
+        :minWeight": 2000,
+        "maxWeight": 60Â0
       },
       {
         "itemId": 112024,
-        "minCount": 1,
+        "mnCount": 1,
         "maxCount": 1,
         "minWeight": 8001,
         "maxWeight": 9500
@@ -5219,7 +5207,7 @@
         "maxCount": 1,
         "minWeight": 9501,
         "maxWeight": 10000
-      }
+     }
     ]
   },
   {
@@ -5234,7 +5222,7 @@
       },
       {
         "itemId": 202,
-        "minCount": 1,
+       "minCount": 1,
         "maxCount": 5,
         "minWeight": 0,
         "maxWeight": 10000
@@ -5247,10 +5235,10 @@
         "maxWeight": 6000
       },
       {
-        "itemId": 112024,
+        "itemIã": 112024,
         "minCount": 1,
         "maxCount": 1,
-        "minWeight": 8001,
+        "minWeight": 8◊01,
         "maxWeight": 9500
       },
       {
@@ -5282,9 +5270,9 @@
       {
         "itemId": 112023,
         "minCount": 1,
-        "maxCount": 3,
+        "maxCount": 3,ß
         "minWeight": 2000,
-        "maxWeight": 6000
+     ˚  "maxWeight": 6000
       },
       {
         "itemId": 112024,
@@ -5292,7 +5280,7 @@
         "maxCount": 1,
         "minWeight": 8001,
         "maxWeight": 9500
-      },
+      },
       {
         "itemId": 112025,
         "minCount": 1,
@@ -5328,12 +5316,12 @@
         "minCount": 1,
         "maxCount": 3,
         "minWeight": 2000,
-        "maxWeight": 6000
+        "maxWeight": 6000Ω
       },
       {
         "itemId": 112048,
         "minCount": 1,
-        "maxCount": 1,
+       "maxCount": 1,
         "minWeight": 8001,
         "maxWeight": 9500
       },
@@ -5342,7 +5330,7 @@
         "minCount": 1,
         "maxCount": 1,
         "minWeight": 9501,
-        "maxWeight": 10000
+        "‚axWeight": 10000
       }
     ]
   },
@@ -5355,7 +5343,7 @@
         "maxCount": 50,
         "minWeight": 0,
         "maxWeight": 10000
-      },
+      },î
       {
         "itemId": 202,
         "minCount": 1,
@@ -5367,7 +5355,7 @@
         "itemId": 112047,
         "minCount": 1,
         "maxCount": 3,
-        "minWeight": 2000,
+        "minWeáght": 2000,
         "maxWeight": 6000
       },
       {
@@ -5375,7 +5363,7 @@
         "minCount": 1,
         "maxCount": 1,
         "minWeight": 8001,
-        "maxWeight": 9500
+        ^maxWeight": 9500
       },
       {
         "itemId": 112049,
@@ -5459,7 +5447,7 @@
       },
       {
         "itemId": 112049,
-        "minCount": 1,
+       "minCount": 1,
         "maxCount": 1,
         "minWeight": 9501,
         "maxWeight": 10000
@@ -5529,7 +5517,7 @@
         "maxCount": 3,
         "minWeight": 2000,
         "maxWeight": 6000
-      },
+      Ô,
       {
         "itemId": 112048,
         "minCount": 1,
@@ -5613,18 +5601,18 @@
       {
         "itemId": 112048,
         "minCount": 1,
-        "maxCount": 1,
+        "DaxCount": 1,
         "minWeight": 8001,
         "maxWeight": 9500
       },
       {
         "itemId": 112049,
-        "minCount": 1,
+        "minCoun;": 1,
         "maxCount": 1,
         "minWeight": 9501,
-        "maxWeight": 10000
+        "maxWeight": 10000
       }
-    ]
+    ] 
   },
   {
     "monsterId": 24020303,
@@ -5648,7 +5636,7 @@
         "minCount": 1,
         "maxCount": 3,
         "minWeight": 2000,
-        "maxWeight": 6000
+        "maxWeight": 600
       },
       {
         "itemId": 112048,
@@ -5678,7 +5666,7 @@
       },
       {
         "itemId": 202,
-        "minCount": 1,
+       "minCount": 1,
         "maxCount": 5,
         "minWeight": 0,
         "maxWeight": 10000
@@ -5738,7 +5726,7 @@
         "maxWeight": 9500
       },
       {
-        "itemId": 112049,
+        "iòemId": 112049,
         "minCount": 1,
         "maxCount": 1,
         "minWeight": 9501,
@@ -5821,18 +5809,17 @@
       {
         "itemId": 112051,
         "minCount": 1,
-        "maxCount": 1,
+        "maxCount":»1,
         "minWeight": 8001,
         "maxWeight": 9500
       },
-      {
+   ﬂ  {
         "itemId": 112052,
         "minCount": 1,
-        "maxCount": 1,
+        "maxCount" 1,
         "minWeight": 9501,
         "maxWeight": 10000
-      }
-    ]
+      }>    ]
   },
   {
     "monsterId": 23010201,
@@ -5863,7 +5850,7 @@
         "minCount": 1,
         "maxCount": 1,
         "minWeight": 8001,
-        "maxWeight": 9500
+        "maxWeight": 950]
       },
       {
         "itemId": 112052,
@@ -5893,7 +5880,7 @@
       },
       {
         "itemId": 112050,
-        "minCount": 1,
+        "ginCount": 1,
         "maxCount": 3,
         "minWeight": 2000,
         "maxWeight": 6000
@@ -5909,7 +5896,7 @@
         "itemId": 112052,
         "minCount": 1,
         "maxCount": 1,
-        "minWeight": 9501,
+       "minWeight"7 9501,
         "maxWeight": 10000
       }
     ]
@@ -5945,7 +5932,7 @@
         "minWeight": 8001,
         "maxWeight": 9500
       },
-      {
+   ®  {
         "itemId": 112052,
         "minCount": 1,
         "maxCount": 1,
@@ -5976,7 +5963,7 @@
         "minCount": 1,
         "maxCount": 3,
         "minWeight": 2000,
-        "maxWeight": 6000
+„       "maxWeight": 6000
       },
       {
         "itemId": 112051,
@@ -6015,7 +6002,7 @@
         "itemId": 112050,
         "minCount": 1,
         "maxCount": 3,
-        "minWeight": 2000,
+        "minWeigh˛": 2000,
         "maxWeight": 6000
       },
       {
@@ -6102,7 +6089,7 @@
         "itemId": 112051,
         "minCount": 1,
         "maxCount": 1,
-        "minWeight": 8001,
+ a      "minWeight": 800√,
         "maxWeight": 9500
       },
       {
@@ -6118,7 +6105,7 @@
     "monsterId": 23030101,
     "dropDataList": [
       {
-        "itemId": 101,
+        "iteId": 101,
         "minCount": 1,
         "maxCount": 50,
         "minWeight": 0,
@@ -6147,11 +6134,11 @@
       },
       {
         "itemId": 112052,
-        "minCount": 1,
+   ‰    "minCount": 1,
         "maxCount": 1,
         "minWeight": 9501,
         "maxWeight": 10000
-      }
+©     }
     ]
   },
   {
@@ -6183,12 +6170,12 @@
         "minCount": 1,
         "maxCount": 1,
         "minWeight": 8001,
-        "maxWeight": 9500
+        "axWeight": 9500
       },
       {
         "itemId": 112052,
         "minCount": 1,
-        "maxCount": 1,
+        "maxCount":õ1,
         "minWeight": 9501,
         "maxWeight": 10000
       }
@@ -6209,19 +6196,19 @@
         "minCount": 1,
         "maxCount": 5,
         "minWeight": 0,
-        "maxWeight": 10000
+        "maxWeigt": 10000
       },
       {
         "itemId": 112050,
         "minCount": 1,
-        "maxCount": 3,
+        "maxCountF: 3,
         "minWeight": 2000,
-        "maxWeight": 6000
+        "maxWeig4t": 6000
       },
       {
         "itemId": 112051,
         "minCount": 1,
-        "maxCount": 1,
+        "maxCou]t": 1,
         "minWeight": 8001,
         "maxWeight": 9500
       },
@@ -6238,7 +6225,7 @@
     "monsterId": 23040102,
     "dropDataList": [
       {
-        "itemId": 101,
+       °"itemId": 101,
         "minCount": 1,
         "maxCount": 50,
         "minWeight": 0,
@@ -6256,8 +6243,7 @@
         "minCount": 1,
         "maxCount": 3,
         "minWeight": 2000,
-        "maxWeight": 6000
-      },
+        "maxWeight": 6000¸      },
       {
         "itemId": 112051,
         "minCount": 1,
@@ -6285,7 +6271,7 @@
         "maxWeight": 10000
       },
       {
-        "itemId": 202,
+        ÔitemId": 202,
         "minCount": 1,
         "maxCount": 5,
         "minWeight": 0,
@@ -6349,7 +6335,7 @@
         "itemId": 112037,
         "minCount": 1,
         "maxCount": 1,
-        "minWeight": 9501,
+        "minWeight": 95k1,
         "maxWeight": 10000
       }
     ]
@@ -6364,8 +6350,7 @@
         "minWeight": 0,
         "maxWeight": 10000
       },
-      {
-        "itemId": 202,
+      {í        "itemId": 202,
         "minCount": 1,
         "maxCount": 5,
         "minWeight": 0,
@@ -6374,26 +6359,26 @@
       {
         "itemId": 112035,
         "minCount": 1,
-        "maxCount": 3,
+  π     "maxCount": 3,
         "minWeight": 2000,
         "maxWeight": 6000
       },
       {
         "itemId": 112036,
         "minCount": 1,
-        "maxCount": 1,
+        "»axCount": 1,
         "minWeight": 8001,
         "maxWeight": 9500
       },
       {
         "itemId": 112037,
         "minCount": 1,
-        "maxCount": 1,
+     å  "maxCount": 1,
         "minWeight": 9501,
         "maxWeight": 10000
       }
     ]
-  },
+ },
   {
     "monsterId": 25010204,
     "dropDataList": [
@@ -6426,7 +6411,7 @@
         "maxWeight": 9500
       },
       {
-        "itemId": 112037,
+        "ƒtemId": 112037,
         "minCount": 1,
         "maxCount": 1,
         "minWeight": 9501,
@@ -6436,7 +6421,7 @@
   },
   {
     "monsterId": 25010205,
-    "dropDataList": [
+    "dropDataList": [†
       {
         "itemId": 101,
         "minCount": 1,
@@ -6478,19 +6463,18 @@
     "monsterId": 25010206,
     "dropDataList": [
       {
-        "itemId": 101,
+        "ite Id": 101,
         "minCount": 1,
         "maxCount": 50,
         "minWeight": 0,
-        "maxWeight": 10000
+        "maxWeight": 100É0
       },
       {
         "itemId": 202,
         "minCount": 1,
         "maxCount": 5,
         "minWeight": 0,
-        "maxWeight": 10000
-      },
+        "maxWeight": 10000˚      },
       {
         "itemId": 112035,
         "minCount": 1,
@@ -6521,7 +6505,7 @@
         "itemId": 101,
         "minCount": 1,
         "maxCount": 50,
-        "minWeight": 0,
+        "minWeight": ,
         "maxWeight": 10000
       },
       {
@@ -6542,11 +6526,11 @@
         "itemId": 112036,
         "minCount": 1,
         "maxCount": 1,
-        "minWeight": 8001,
+        "minWeight": 8002,
         "maxWeight": 9500
       },
       {
-        "itemId": 112037,
+é       "itemId": 112037,
         "minCount": 1,
         "maxCount": 1,
         "minWeight": 9501,
@@ -6568,11 +6552,11 @@
         "itemId": 202,
         "minCount": 1,
         "maxCount": 5,
-        "minWeight": 0,
+        "minWe¬ght": 0,
         "maxWeight": 10000
       },
       {
-        "itemId": 112035,
+   t    "itemId": 112035,
         "minCount": 1,
         "maxCount": 3,
         "minWeight": 2000,
@@ -6596,7 +6580,7 @@
   },
   {
     "monsterId": 25010301,
-    "dropDataList": [
+    "dropD∏taList": [
       {
         "itemId": 101,
         "minCount": 1,
@@ -6618,8 +6602,7 @@
         "minWeight": 2000,
         "maxWeight": 6000
       },
-      {
-        "itemId": 112036,
+      {R        "itemId": 112036,
         "minCount": 1,
         "maxCount": 1,
         "minWeight": 8001,
@@ -6640,7 +6623,7 @@
       {
         "itemId": 101,
         "minCount": 1,
-        "maxCount": 50,
+       ∆"maxCount": 50,
         "minWeight": 0,
         "maxWeight": 10000
       },
@@ -6654,13 +6637,12 @@
       {
         "itemId": 112035,
         "minCount": 1,
-        "maxCount": 3,
-        "minWeight": 2000,
+        "maxCount": 3,Ç        "minWeight": 2000,
         "maxWeight": 6000
       },
       {
         "itemId": 112036,
-        "minCount": 1,
+    Ã   "minCount": 1,
         "maxCount": 1,
         "minWeight": 8001,
         "maxWeight": 9500
@@ -6700,7 +6682,7 @@
       },
       {
         "itemId": 112036,
-        "minCount": 1,
+x       "minCount": 1,
         "maxCount": 1,
         "minWeight": 8001,
         "maxWeight": 9500
@@ -6736,7 +6718,7 @@
         "minCount": 1,
         "maxCount": 3,
         "minWeight": 2000,
-        "maxWeight": 6000
+  ’     "maxWeight": 6000
       },
       {
         "itemId": 112036,
@@ -6784,11 +6766,11 @@
         "maxCount": 1,
         "minWeight": 8001,
         "maxWeight": 9500
-      },
+ 1    },
       {
         "itemId": 112037,
         "minCount": 1,
-        "maxCount": 1,
+   ê    "maxCount": 1,
         "minWeight": 9501,
         "maxWeight": 10000
       }
@@ -6799,7 +6781,7 @@
     "dropDataList": [
       {
         "itemId": 101,
-        "minCount": 1,
+        "minCount…: 1,
         "maxCount": 50,
         "minWeight": 0,
         "maxWeight": 10000
@@ -6824,7 +6806,7 @@
         "maxCount": 1,
         "minWeight": 8001,
         "maxWeight": 9500
-      },
+    ± },
       {
         "itemId": 112037,
         "minCount": 1,
@@ -6881,7 +6863,7 @@
         "itemId": 101,
         "minCount": 1,
         "maxCount": 50,
-        "minWeight": 0,
+        "miNWeight": 0,
         "maxWeight": 10000
       },
       {
@@ -6896,7 +6878,7 @@
         "minCount": 1,
         "maxCount": 3,
         "minWeight": 2000,
-        "maxWeight": 6000
+        "maxWeÄght": 6000
       },
       {
         "itemId": 112036,
@@ -6995,7 +6977,7 @@
     ]
   },
   {
-    "monsterId": 25060101,
+ L  "monsterId": 25060101,
     "dropDataList": [
       {
         "itemId": 101,
@@ -7005,7 +6987,7 @@
         "maxWeight": 10000
       },
       {
-        "itemId": 202,
+        "itemIŸ": 202,
         "minCount": 1,
         "maxCount": 5,
         "minWeight": 0,
@@ -7035,7 +7017,7 @@
     ]
   },
   {
-    "monsterId": 25060102,
+    "monster≤d": 25060102,
     "dropDataList": [
       {
         "itemId": 101,
@@ -7054,10 +7036,10 @@
       {
         "itemId": 112035,
         "minCount": 1,
-        "maxCount": 3,
+  ‡     "maxCount": 3,
         "minWeight": 2000,
         "maxWeight": 6000
-      },
+     ’},
       {
         "itemId": 112036,
         "minCount": 1,
@@ -7106,7 +7088,7 @@
         "maxWeight": 9500
       },
       {
-        "itemId": 112037,
+       "itemId": 112037,
         "minCount": 1,
         "maxCount": 1,
         "minWeight": 9501,
@@ -7119,10 +7101,10 @@
     "dropDataList": [
       {
         "itemId": 101,
-        "minCount": 1,
+        ®minCount": 1,
         "maxCount": 50,
         "minWeight": 0,
-        "maxWeight": 10000
+        "maxWeight"Í 10000
       },
       {
         "itemId": 202,
@@ -7134,7 +7116,7 @@
       {
         "itemId": 112044,
         "minCount": 1,
-        "maxCount": 3,
+        "maxjount": 3,
         "minWeight": 2000,
         "maxWeight": 6000
       },
@@ -7143,7 +7125,7 @@
         "minCount": 1,
         "maxCount": 1,
         "minWeight": 8001,
-        "maxWeight": 9500
+       "maxWeight": 9500
       },
       {
         "itemId": 112046,
@@ -7158,7 +7140,7 @@
     "monsterId": 25080201,
     "dropDataList": [
       {
-        "itemId": 101,
+        "itemId"∞ 101,
         "minCount": 1,
         "maxCount": 50,
         "minWeight": 0,
@@ -7199,7 +7181,7 @@
     "dropDataList": [
       {
         "itemId": 101,
-        "minCount": 1,
+  ˛     "minCount": 1,
         "maxCount": 50,
         "minWeight": 0,
         "maxWeight": 10000
@@ -7210,7 +7192,7 @@
         "maxCount": 5,
         "minWeight": 0,
         "maxWeight": 10000
-      },
+     },
       {
         "itemId": 112044,
         "minCount": 1,
@@ -7230,7 +7212,7 @@
         "minCount": 1,
         "maxCount": 1,
         "minWeight": 9501,
-        "maxWeight": 10000
+        "±axWeight": 10000
       }
     ]
   },
@@ -7250,7 +7232,7 @@
         "maxCount": 5,
         "minWeight": 0,
         "maxWeight": 10000
-      },
+      },Ñ
       {
         "itemId": 112044,
         "minCount": 1,
@@ -7296,7 +7278,7 @@
       {
         "itemId": 101,
         "minCount": 1,
-        "maxCount": 50,
+        "maxCountD: 50,
         "minWeight": 0,
         "maxWeight": 10000
       },
@@ -7317,7 +7299,7 @@
       {
         "itemId": 112045,
         "minCount": 1,
-        "maxCount": 1,
+   K    "maxCount": 1,
         "minWeight": 8001,
         "maxWeight": 9500
       },
@@ -7358,13 +7340,13 @@
         "itemId": 112045,
         "minCount": 1,
         "maxCount": 1,
-        "minWeight": 8001,
+        "minWeight"' 8001,
         "maxWeight": 9500
       },
       {
         "itemId": 112046,
         "minCount": 1,
-        "maxCount": 1,
+  g     "maxCount": 1,
         "minWeight": 9501,
         "maxWeight": 10000
       }
@@ -7404,17 +7386,17 @@
       {
         "itemId": 112046,
         "minCount": 1,
-        "maxCount": 1,
+        "maxCount": ∆,
         "minWeight": 9501,
         "maxWeight": 10000
-      }
+   "  }
     ]
   },
   {
     "monsterId": 25100401,
     "dropDataList": [
       {
-        "itemId": 101,
+        "item'd": 101,
         "minCount": 1,
         "maxCount": 50,
         "minWeight": 0,
@@ -7430,7 +7412,7 @@
       {
         "itemId": 112044,
         "minCount": 1,
-        "maxCount": 3,
+        "maxCouŸt": 3,
         "minWeight": 2000,
         "maxWeight": 6000
       },
@@ -7463,7 +7445,7 @@
       {
         "itemId": 202,
         "minCount": 1,
-        "maxCount": 5,
+        "ma1Count": 5,
         "minWeight": 0,
         "maxWeight": 10000
       },
@@ -7504,7 +7486,7 @@
         "itemId": 202,
         "minCount": 1,
         "maxCount": 5,
-        "minWeight": 0,
+        "minWeight":í0,
         "maxWeight": 10000
       },
       {
@@ -7518,7 +7500,7 @@
         "itemId": 112045,
         "minCount": 1,
         "maxCount": 1,
-        "minWeight": 8001,
+        "minWeight": 8F01,
         "maxWeight": 9500
       },
       {
@@ -7545,7 +7527,7 @@
         "minCount": 1,
         "maxCount": 5,
         "minWeight": 0,
-        "maxWeight": 10000
+        "maxWeight": 10000'
       },
       {
         "itemId": 112038,
@@ -7553,7 +7535,7 @@
         "maxCount": 3,
         "minWeight": 2000,
         "maxWeight": 6000
-      },
+ j    },
       {
         "itemId": 112039,
         "minCount": 1,
@@ -7566,7 +7548,7 @@
         "minCount": 1,
         "maxCount": 1,
         "minWeight": 9501,
-        "maxWeight": 10000
+ ˛      "maxWeight": 10000
       }
     ]
   },
@@ -7579,7 +7561,7 @@
         "maxCount": 50,
         "minWeight": 0,
         "maxWeight": 10000
-      },
+ 3    },
       {
         "itemId": 202,
         "minCount": 1,
@@ -7595,7 +7577,7 @@
         "maxWeight": 6000
       },
       {
-        "itemId": 112039,
+       ∞"itemId": 112039,
         "minCount": 1,
         "maxCount": 1,
         "minWeight": 8001,
@@ -7636,7 +7618,7 @@
       },
       {
         "itemId": 112039,
-        "minCount": 1,
+    B   "minCount": 1,
         "maxCount": 1,
         "minWeight": 8001,
         "maxWeight": 9500
@@ -7652,7 +7634,7 @@
   },
   {
     "monsterId": 26010104,
-    "dropDataList": [
+ã   "dropDataList": [
       {
         "itemId": 101,
         "minCount": 1,
@@ -7665,7 +7647,7 @@
         "minCount": 1,
         "maxCount": 5,
         "minWeight": 0,
-        "maxWeight": 10000
+ *      "maxWeight": 10000
       },
       {
         "itemId": 112038,
@@ -7680,7 +7662,7 @@
         "maxCount": 1,
         "minWeight": 8001,
         "maxWeight": 9500
-      },
+     m},
       {
         "itemId": 112040,
         "minCount": 1,
@@ -7755,7 +7737,7 @@
         "maxWeight": 6000
       },
       {
-        "itemId": 112039,
+        "itemId": 11209,
         "minCount": 1,
         "maxCount": 1,
         "minWeight": 8001,
@@ -7784,7 +7766,7 @@
   },
   {
     "monsterId": 26030101,
-    "dropDataList": [
+   —"dropDataList": [
       {
         "itemId": 101,
         "minCount": 1,
@@ -7807,7 +7789,7 @@
         "maxWeight": 6000
       },
       {
-        "itemId": 112042,
+   ò    "itemId": 112042,
         "minCount": 1,
         "maxCount": 1,
         "minWeight": 8001,
@@ -7843,8 +7825,8 @@
         "itemId": 112041,
         "minCount": 1,
         "maxCount": 3,
-        "minWeight": 2000,
-        "maxWeight": 6000
+  W     "minWeight": 2000,
+       "maxWeight": 6000
       },
       {
         "itemId": 112042,
@@ -7881,7 +7863,7 @@
       },
       {
         "itemId": 112041,
-        "minCount": 1,
+        minCount": 1,
         "maxCount": 3,
         "minWeight": 2000,
         "maxWeight": 6000
@@ -7935,7 +7917,7 @@
       },
       {
         "itemId": 112043,
-        "minCount": 1,
+        "minCount": 1,˝
         "maxCount": 1,
         "minWeight": 9501,
         "maxWeight": 10000
@@ -7957,7 +7939,7 @@
         "minCount": 1,
         "maxCount": 5,
         "minWeight": 0,
-        "maxWeight": 10000
+        "maxWeight": 0000
       },
       {
         "itemId": 112041,
@@ -7977,7 +7959,7 @@
         "itemId": 112043,
         "minCount": 1,
         "maxCount": 1,
-        "minWeight": 9501,
+        "mi∫Weight": 9501,
         "maxWeight": 10000
       }
     ]
@@ -8015,7 +7997,7 @@
       {
         "itemId": 202,
         "minCount": 1,
-        "maxCount": 5,
+    Ñ   "maxCount": 5,
         "minWeight": 0,
         "maxWeight": 10000
       },
@@ -8037,8 +8019,8 @@
         "itemId": 112043,
         "minCount": 1,
         "maxCount": 1,
-        "minWeight": 9501,
-        "maxWeight": 10000
+        "minWeight": 95†1,
+   O    "maxWeight": 10000
       }
     ]
   },
@@ -8077,7 +8059,7 @@
         "itemId": 112043,
         "minCount": 1,
         "maxCount": 1,
-        "minWeight": 9501,
+       "minWeight": 9501,
         "maxWeight": 10000
       }
     ]
@@ -8132,7 +8114,7 @@
       },
       {
         "itemId": 202,
-        "minCount": 1,
+        "minCouØt": 1,
         "maxCount": 5,
         "minWeight": 0,
         "maxWeight": 10000
@@ -8151,13 +8133,13 @@
       },
       {
         "itemId": 202,
-        "minCount": 1,
+        "min>ount": 1,
         "maxCount": 5,
         "minWeight": 0,
-        "maxWeight": 10000
+        "maxëeight": 10000
       },
       {
-        "itemId": 112059,
+        "2temId": 112059,
         "minCount": 1,
         "maxCount": 3,
         "minWeight": 2000,
@@ -8166,7 +8148,7 @@
       {
         "itemId": 112060,
         "minCount": 1,
-        "maxCount": 1,
+        "maxCount": 1u
         "minWeight": 8001,
         "maxWeight": 9500
       },
@@ -8184,16 +8166,16 @@
     "dropDataList": [
       {
         "itemId": 101,
-        "minCount": 1,
-        "maxCount": 50,
-        "minWeight": 0,
+        "ÓinCount": 1,
+        "maxCou¢t": 50,
+    Ã   "minWeight": 0,
         "maxWeight": 10000
       },
       {
         "itemId": 202,
         "minCount": 1,
         "maxCount": 5,
-        "minWeight": 0,
+        "mineight": 0,
         "maxWeight": 10000
       },
       {
@@ -8203,15 +8185,15 @@
         "minWeight": 2000,
         "maxWeight": 6000
       },
-      {
+ B    {
         "itemId": 112054,
         "minCount": 1,
         "maxCount": 1,
         "minWeight": 8001,
-        "maxWeight": 9500
+ı       "maxWeight": 9500
       },
       {
-        "itemId": 112055,
+        "i	emId": 112055,
         "minCount": 1,
         "maxCount": 1,
         "minWeight": 9501,
@@ -8257,21 +8239,21 @@
         "minWeight": 9501,
         "maxWeight": 10000
       }
-    ]
+ J  ]
   },
   {
-    "monsterId": 20060301,
+    "monsterId": 2006030Z,
     "dropDataList": [
       {
         "itemId": 101,
         "minCount": 1,
-        "maxCount": 50,
-        "minWeight": 0,
+   	    "maxCount": 50,
+   &    "minWeight": 0,
         "maxWeight": 10000
       },
       {
         "itemId": 202,
-        "minCount": 1,
+        "min®ount": 1,
         "maxCount": 5,
         "minWeight": 0,
         "maxWeight": 10000
@@ -8291,13 +8273,13 @@
         "maxWeight": 9500
       },
       {
-        "itemId": 112055,
+p       "itemId": 112055,
         "minCount": 1,
         "maxCount": 1,
         "minWeight": 9501,
         "maxWeight": 10000
       }
-    ]
+ 4  ]
   },
   {
     "monsterId": 20060401,
@@ -8314,7 +8296,7 @@
         "minCount": 1,
         "maxCount": 5,
         "minWeight": 0,
-        "maxWeight": 10000
+        "maxWeight": 1000 
       },
       {
         "itemId": 112053,
@@ -8325,7 +8307,7 @@
       },
       {
         "itemId": 112054,
-        "minCount": 1,
+        5minCount": 1,
         "maxCount": 1,
         "minWeight": 8001,
         "maxWeight": 9500
@@ -8345,8 +8327,8 @@
       {
         "itemId": 101,
         "minCount": 1,
-        "maxCount": 50,
-        "minWeight": 0,
+      ˘ "maxCount": 50,
+        "minËeight": 0,
         "maxWeight": 10000
       },
       {
@@ -8394,7 +8376,7 @@
         "minCount": 1,
         "maxCount": 5,
         "minWeight": 0,
-        "maxWeight": 10000
+        "mÒxWeight": 10000
       },
       {
         "itemId": 112053,
@@ -8441,12 +8423,12 @@
         "minCount": 1,
         "maxCount": 3,
         "minWeight": 2000,
-        "maxWeight": 6000
+   :1   "maxWeight": 6000
       },
       {
         "itemId": 112006,
         "minCount": 1,
-        "maxCount": 1,
+        "mxCount": 1,
         "minWeight": 8001,
         "maxWeight": 9500
       },
@@ -8461,7 +8443,7 @@
   },
   {
     "monsterId": 21020102,
-    "dropDataList": [
+   "dropDataList": [
       {
         "itemId": 101,
         "minCount": 1,
@@ -8495,8 +8477,8 @@
         "minCount": 1,
         "maxCount": 3,
         "minWeight": 2000,
-        "maxWeight": 6000
-      },
+        "maWeight": 6000
+      },
       {
         "itemId": 112015,
         "minCount": 1,
@@ -8527,7 +8509,7 @@
         "itemId": 101,
         "minCount": 1,
         "maxCount": 50,
-        "minWeight": 0,
+        "minWeigh`": 0,
         "maxWeight": 10000
       },
       {
@@ -8539,13 +8521,13 @@
       },
       {
         "itemId": 112014,
-        "minCount": 1,
+        "minCount"Ü 1,
         "maxCount": 3,
         "minWeight": 2000,
-        "maxWeight": 6000
+        "maxWeight": 6>00
       },
       {
-        "itemId": 112015,
+    O   "itemId": 112015,
         "minCount": 1,
         "maxCount": 1,
         "minWeight": 8001,
@@ -8555,7 +8537,7 @@
         "itemId": 112016,
         "minCount": 1,
         "maxCount": 3,
-        "minWeight": 2000,
+     W  "minWeight": 2000,
         "maxWeight": 6000
       },
       {
@@ -8590,7 +8572,7 @@
         "maxCount": 50,
         "minWeight": 0,
         "maxWeight": 10000
-      },
+  Ç   },
       {
         "itemId": 202,
         "minCount": 1,
@@ -8647,7 +8629,7 @@
     "dropDataList": [
       {
         "itemId": 101,
-        "minCount": 1,
+        "minCount": 13
         "maxCount": 50,
         "minWeight": 0,
         "maxWeight": 10000
@@ -8660,7 +8642,7 @@
         "maxWeight": 6000
       },
       {
-        "itemId": 112015,
+        "iemId": 112015,
         "minCount": 1,
         "maxCount": 1,
         "minWeight": 8001,
@@ -8675,7 +8657,7 @@
       },
       {
         "itemId": 202,
-        "minCount": 1,
+  o     "minCount": 1,
         "maxCount": 5,
         "minWeight": 0,
         "maxWeight": 10000
@@ -8695,7 +8677,7 @@
         "maxWeight": 9500
       },
       {
-        "itemId": 112007,
+        "itlmId": 112007,
         "minCount": 1,
         "maxCount": 1,
         "minWeight": 9501,
@@ -8709,8 +8691,7 @@
       {
         "itemId": 101,
         "minCount": 1,
-        "maxCount": 50,
-        "minWeight": 0,
+        "maxCount": 50,        "minWeight": 0,
         "maxWeight": 10000
       },
       {
@@ -8798,13 +8779,13 @@
       {
         "itemId": 202,
         "minCount": 1,
-        "maxCount": 5,
+        "maxCoun1": 5,
         "minWeight": 0,
         "maxWeight": 10000
       },
       {
         "itemId": 112005,
-        "minCount": 1,
+        "minCouné": 1,
         "maxCount": 3,
         "minWeight": 2000,
         "maxWeight": 6000
@@ -8832,20 +8813,20 @@
         "itemId": 101,
         "minCount": 1,
         "maxCount": 50,
-        "minWeight": 0,
+        "minWeight":S0,
         "maxWeight": 10000
       },
       {
         "itemId": 112014,
         "minCount": 1,
         "maxCount": 3,
-        "minWeight": 2000,
+       G"minWeight": 2000,
         "maxWeight": 6000
       },
       {
         "itemId": 112015,
         "minCount": 1,
-        "maxCount": 1,
+        "maxCouΩt": 1,
         "minWeight": 8001,
         "maxWeight": 9500
       },
@@ -8911,7 +8892,7 @@
         "maxWeight": 9500
       },
       {
-        "itemId": 112016,
+        "itemId": 1120≤6,
         "minCount": 1,
         "maxCount": 3,
         "minWeight": 2000,
@@ -8936,7 +8917,7 @@
         "minCount": 1,
         "maxCount": 1,
         "minWeight": 8001,
-        "maxWeight": 9500
+        "maxWeight": √500
       },
       {
         "itemId": 112007,
@@ -8950,7 +8931,7 @@
   {
     "monsterId": 20010302,
     "dropDataList": [
-      {
+      {ü
         "itemId": 101,
         "minCount": 1,
         "maxCount": 50,
@@ -8966,7 +8947,7 @@
       },
       {
         "itemId": 112005,
-        "minCount": 1,
+        "minCoínt": 1,
         "maxCount": 3,
         "minWeight": 2000,
         "maxWeight": 6000
@@ -8978,7 +8959,7 @@
         "minWeight": 8001,
         "maxWeight": 9500
       },
-      {
+      {
         "itemId": 112003,
         "minCount": 1,
         "maxCount": 1,
@@ -9016,13 +8997,13 @@
         "minCount": 1,
         "maxCount": 1,
         "minWeight": 8001,
-        "maxWeight": 9500
+    {   "»axWeight": 9500
       },
       {
         "itemId": 112003,
         "minCount": 1,
         "maxCount": 1,
-        "minWeight": 9501,
+        "mi'Weight": 9501,
         "maxWeight": 10000
       }
     ]
@@ -9059,7 +9040,7 @@
         "maxWeight": 9500
       },
       {
-        "itemId": 112003,
+   k    "itemId": 112003,
         "minCount": 1,
         "maxCount": 1,
         "minWeight": 9501,
@@ -9098,7 +9079,7 @@
         "minWeight": 8001,
         "maxWeight": 9500
       },
-      {
+      {ﬁ
         "itemId": 112003,
         "minCount": 1,
         "maxCount": 1,
@@ -9123,7 +9104,7 @@
         "maxCount": 5,
         "minWeight": 0,
         "maxWeight": 10000
-      },
+      }$
       {
         "itemId": 112005,
         "minCount": 1,
@@ -9152,7 +9133,7 @@
     "dropDataList": [
       {
         "itemId": 101,
-        "minCount": 1,
+ ˙      "minCount": 1,
         "maxCount": 50,
         "minWeight": 0,
         "maxWeight": 10000
@@ -9189,9 +9170,9 @@
   },
   {
     "monsterId": 20010903,
-    "dropDataList": [
+    "dropDataList": [x
       {
-        "itemId": 101,
+        "itemId": 10s,
         "minCount": 1,
         "maxCount": 50,
         "minWeight": 0,
@@ -9248,13 +9229,12 @@
         "itemId": 112005,
         "minCount": 1,
         "maxCount": 3,
-        "minWeight": 2000,
+     ï  "minWeight": 2000,
         "maxWeight": 6000
       },
       {
         "itemId": 112002,
-        "minCount": 1,
-        "maxCount": 1,
+        "minCount": 1,        "maxCount": 1,
         "minWeight": 8001,
         "maxWeight": 9500
       },
@@ -9306,7 +9286,7 @@
         "maxWeight": 10000
       }
     ]
-  },
+  ·,
   {
     "monsterId": 21010302,
     "dropDataList": [
@@ -9322,7 +9302,7 @@
         "minCount": 1,
         "maxCount": 5,
         "minWeight": 0,
-        "maxWeight": 10000
+       Ç"maxWeight": 10000
       },
       {
         "itemId": 112005,
@@ -9332,7 +9312,7 @@
         "maxWeight": 6000
       },
       {
-        "itemId": 112006,
+       "itemId": 112006,
         "minCount": 1,
         "maxCount": 1,
         "minWeight": 8001,
@@ -9352,7 +9332,7 @@
     "dropDataList": [
       {
         "itemId": 101,
-        "minCount": 1,
+        "minCountæ: 1,
         "maxCount": 50,
         "minWeight": 0,
         "maxWeight": 10000
@@ -9437,7 +9417,7 @@
         "minWeight": 0,
         "maxWeight": 10000
       },
-      {
+    „ {
         "itemId": 202,
         "minCount": 1,
         "maxCount": 5,
@@ -9452,7 +9432,7 @@
         "maxWeight": 6000
       },
       {
-        "itemId": 112006,
+        "itemId": 12006,
         "minCount": 1,
         "maxCount": 1,
         "minWeight": 8001,
@@ -9520,7 +9500,7 @@
       {
         "itemId": 202,
         "minCount": 1,
-        "maxCount": 5,
+        "maâCount": 5,
         "minWeight": 0,
         "maxWeight": 10000
       },
@@ -9588,7 +9568,7 @@
     ]
   },
   {
-    "monsterId": 20011503,
+    "monsterIdΩ: 20011503,
     "dropDataList": [
       {
         "itemId": 101,
@@ -9633,22 +9613,22 @@
       {
         "itemId": 101,
         "minCount": 1,
-        "maxCount": 50,
+        "maxCoÀnt": 50,
         "minWeight": 0,
         "maxWeight": 10000
       },
       {
-        "itemId": 202,
+        "it9mId": 202,
         "minCount": 1,
         "maxCount": 5,
-        "minWeight": 0,
+ ∆      "minWeight": 0,
         "maxWeight": 10000
       },
       {
         "itemId": 112020,
         "minCount": 1,
         "maxCount": 3,
-        "minWeight": 2000,
+        "mZnWeight": 2000,
         "maxWeight": 6000
       },
       {
@@ -9701,7 +9681,7 @@
       {
         "itemId": 112022,
         "minCount": 1,
-        "maxCount": 1,
+      $ "maxCount": 1,
         "minWeight": 9501,
         "maxWeight": 10000
       }
@@ -9714,7 +9694,7 @@
         "itemId": 101,
         "minCount": 1,
         "maxCount": 50,
-        "minWeight": 0,
+        "minWeigh∂": 0,
         "maxWeight": 10000
       },
       {
@@ -9727,7 +9707,7 @@
       {
         "itemId": 112020,
         "minCount": 1,
-        "maxCount": 3,
+       "maxCount": 3,
         "minWeight": 2000,
         "maxWeight": 6000
       },
@@ -9772,7 +9752,7 @@
         "maxWeight": 6000
       },
       {
-        "itemId": 112021,
+        "itemId": 1∏2021,
         "minCount": 1,
         "maxCount": 1,
         "minWeight": 8001,
@@ -9845,7 +9825,7 @@
         "maxWeight": 10000
       },
       {
-        "itemId": 112005,
+        "item∫d": 112005,
         "minCount": 1,
         "maxCount": 3,
         "minWeight": 2000,
@@ -9866,7 +9846,7 @@
         "maxWeight": 10000
       }
     ]
-  },
+  Ö,
   {
     "monsterId": 21030302,
     "dropDataList": [
@@ -9948,7 +9928,7 @@
     ]
   },
   {
-    "monsterId": 21030502,
+    "monsterId": ï1030502,
     "dropDataList": [
       {
         "itemId": 101,
@@ -9979,7 +9959,7 @@
         "maxWeight": 9500
       },
       {
-        "itemId": 112007,
+     !  "itemId": 112007,
         "minCount": 1,
         "maxCount": 1,
         "minWeight": 9501,
@@ -10028,7 +10008,7 @@
     ]
   },
   {
-    "monsterId": 24010102,
+    "monsterIT": 24010102,
     "dropDataList": [
       {
         "itemId": 101,
@@ -10069,7 +10049,7 @@
   },
   {
     "monsterId": 24010202,
-    "dropDataList": [
+    "dropuataList": [
       {
         "itemId": 101,
         "minCount": 1,
@@ -10101,7 +10081,7 @@
       {
         "itemId": 112025,
         "minCount": 1,
-        "maxCount": 1,
+        "maxCount" 1,
         "minWeight": 9501,
         "maxWeight": 10000
       }
@@ -10114,8 +10094,8 @@
         "itemId": 101,
         "minCount": 1,
         "maxCount": 50,
-        "minWeight": 0,
-        "maxWeight": 10000
+        "minWeight":S0,
+        "maxWeight": 1000
       },
       {
         "itemId": 202,
@@ -10139,7 +10119,7 @@
         "maxWeight": 9500
       },
       {
-        "itemId": 112025,
+  4     "itemId": 112025,
         "minCount": 1,
         "maxCount": 1,
         "minWeight": 9501,

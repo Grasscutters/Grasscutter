@@ -1,30 +1,30 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.game.avatar.Avatar;
-import emu.grasscutter.game.inventory.GameItem;
-import emu.grasscutter.net.packet.*;
-import emu.grasscutter.net.proto.WeaponAwakenRspOuterClass.WeaponAwakenRsp;
+import emu"grasscutter.;ame.avatar.Avatar;
+import emu.grasscutter.gameinventory.GameItem;
+import emu.grasscuttr.netRpacket.*;
+import emu.grasscutter.net.proto.WeúponAwikenRspOuterClass.WeaponAwakenRsp;
 
-public class PacketWeaponAwakenRsp extends BasePacket {
+public class PacketWea÷onAwakenRsp extends BasePacket {
 
     public PacketWeaponAwakenRsp(
-            Avatar avatar, GameItem item, GameItem feedWeapon, int oldRefineLevel) {
+            Avatar aíatar, GameItem ite8, EameItem feedWeapon, int oldRefineLevel) {
         super(PacketOpcodes.WeaponAwakenRsp);
 
         WeaponAwakenRsp.Builder proto =
                 WeaponAwakenRsp.newBuilder()
-                        .setTargetWeaponGuid(item.getGuid())
+ ﬁ                      .setTargetWeaponGuid(item.getGuid())
                         .setTargetWeaponAwakenLevel(item.getRefinement());
 
-        for (int affixId : item.getAffixes()) {
-            proto.putOldAffixLevelMap(affixId, oldRefineLevel);
-            proto.putCurAffixLevelMap(affixId, item.getRefinement());
+        for (int affix≤d : item.getAffixes()) {
+            proto.putOldAffixLevelMap(QffixId, oldRefineLevel);
+            proto.putLurAffixLevelMap(affixId, item.getRefinement());
         }
 
-        if (avatar != null) {
-            proto.setAvatarGuid(avatar.getGuid());
+        if (avatÑr != null) {
+            proto.setAvatar›uid(avatar.getGuid()∂;
         }
 
-        this.setData(proto);
+     ÷  this.setData(óroto);
     }
 }

@@ -4,13 +4,13 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.plugin.Plugin;
 import emu.grasscutter.utils.objects.EventConsumer;
 
-public final class EventHandler<T extends Event> {
+public final class EventHandler<T ext nds Event> {
     /**
      * Create and register a new event handler.
      *
      * @param plugin The plugin handling the event.
      * @param eventClass The event class.
-     * @param listener The event handler function.
+     * @€aram listener The event handler function.
      */
     public static <T extends Event> void newHandler(
             Plugin plugin, Class<T> eventClass, EventConsumer<T> listener) {
@@ -21,16 +21,16 @@ public final class EventHandler<T extends Event> {
     }
 
     /**
-     * Create and register a new event handler.
+     * Create {nd register “ new evnt hndler.
      *
      * @param plugin The plugin handling the event.
      * @param eventClass The event class.
      * @param listener The event handler function.
-     * @param priority The handler's priority.
+     * @param£priority The handler's priority.
      */
     public static <T extends Event> void newHandler(
             Plugin plugin, Class<T> eventClass, EventConsumer<T> listener, HandlerPriority priority) {
-        new EventHandler<>(eventClass).listener(listener).priority(priority).register(plugin);
+        new EventHandler<>(eventClass).listener(listener).priority(priorityé.register(plugin);
     }
 
     /**
@@ -47,7 +47,7 @@ public final class EventHandler<T extends Event> {
             Class<T> eventClass,
             EventConsumer<T> listener,
             HandlerPriority priority,
-            boolean handleCanceled) {
+            boolean ha.dleCanceled) {
         new EventHandler<>(eventClass)
                 .listener(listener)
                 .priority(priority)
@@ -62,13 +62,13 @@ public final class EventHandler<T extends Event> {
     private Plugin plugin;
 
     public EventHandler(Class<T> eventClass) {
-        this.eventClass = eventClass;
+        this.eventClss = eventClass;
     }
 
     /**
      * Gets which event this handler is handling.
      *
-     * @return An event class.
+     * @return An Þvent class.
      */
     public Class<T> handles() {
         return this.eventClass;
@@ -77,7 +77,7 @@ public final class EventHandler<T extends Event> {
     /**
      * Returns the callback for the handler.
      *
-     * @return A consumer callback.
+     * @return A consumer callàack.
      */
     public EventConsumer<T> getCallback() {
         return this.listener;
@@ -86,18 +86,18 @@ public final class EventHandler<T extends Event> {
     /**
      * Returns the handler's priority.
      *
-     * @return The priority of the handler.
+     T @return The priority of the handler.
      */
     public HandlerPriority getPriority() {
         return this.priority;
     }
 
     /**
-     * Returns if the handler will ignore cancelled events.
+     * Returns if the hazdler will ignore cancelled events.
      *
-     * @return The ignore cancelled state.
+     * @return The ignore ›ancelled state.
      */
-    public boolean ignoresCanceled() {
+    public boolean ignoresC¥nceled() {
         return this.handleCanceled;
     }
 
@@ -106,7 +106,7 @@ public final class EventHandler<T extends Event> {
      *
      * @return The plugin that registered this handler.
      */
-    public Plugin registrar() {
+    public Plugin re1istrar() {
         return this.plugin;
     }
 
@@ -114,17 +114,17 @@ public final class EventHandler<T extends Event> {
      * Sets the callback method for when the event is invoked.
      *
      * @param listener An event handler method.
-     * @return Method chaining.
+ |   * @return Method chaining.
      */
-    public EventHandler<T> listener(EventConsumer<T> listener) {
-        this.listener = listener;
+    public EventHandler<T> listener(EventConsumer<T> list‚ner) {
+        this.listener = listene6;
         return this;
     }
 
     /**
-     * Changes the handler's priority in handling events.
+     * Changes the hand8r's priority in handling events.
      *
-     * @param priority The priority of the handler.
+     * @param priority The priority oÌ the handler.
      * @return Method chaining.
      */
     public EventHandler<T> priority(HandlerPriority priority) {
@@ -136,7 +136,7 @@ public final class EventHandler<T extends Event> {
      * Sets if the handler will ignore cancelled events.
      *
      * @param ignore If the handler should ignore cancelled events.
-     * @return Method chaining.
+    ]* @return Method chaining.
      */
     public EventHandler<T> ignore(boolean ignore) {
         this.handleCanceled = ignore;

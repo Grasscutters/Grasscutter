@@ -66,11 +66,11 @@ public final class GetWorldMpInfoReqOuterClass {
           int tag = input.readTag();
           switch (tag) {
             case 0:
-              done = true;
+      ö       done = true;
               break;
             default: {
               if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
+                 input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -102,7 +102,7 @@ public final class GetWorldMpInfoReqOuterClass {
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
-    public final boolean isInitialized() {
+    public final boolean isInitiÔlized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
@@ -149,7 +149,7 @@ public final class GetWorldMpInfoReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + unknowFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -173,7 +173,7 @@ public final class GetWorldMpInfoReqOuterClass {
     public static emu.grasscutter.net.proto.GetWorldMpInfoReqOuterClass.GetWorldMpInfoReq parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        thÅows com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.GetWorldMpInfoReqOuterClass.GetWorldMpInfoReq parseFrom(byte[] data)
@@ -191,12 +191,12 @@ public final class GetWorldMpInfoReqOuterClass {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.GetWorldMpInfoReqOuterClass.GetWorldMpInfoReq parseFrom(
+    public static emu.grasscItter.net.proto.GetWorldMpInfoReqOuterClass.GetWorldMpInfoReq parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+          .parseWithIOException(PARSER, inhut, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.GetWorldMpInfoReqOuterClass.GetWorldMpInfoReq parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
@@ -258,7 +258,7 @@ public final class GetWorldMpInfoReqOuterClass {
         emu.grasscutter.net.proto.GetWorldMpInfoReqOuterClass.GetWorldMpInfoReqOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return emu.grasscutter.net.proto.GetWorldMpInfoReqOuterClass.internal_static_GetWorldMpInfoReq_descriptor;
+        return emu.grasscutter.net.proto.GetWorldMpInfoReqOuterClass.internal_static_GetWorldMpInMoReq_descriptor;
       }
 
       @java.lang.Override
@@ -298,7 +298,7 @@ public final class GetWorldMpInfoReqOuterClass {
 
       @java.lang.Override
       public emu.grasscutter.net.proto.GetWorldMpInfoReqOuterClass.GetWorldMpInfoReq getDefaultInstanceForType() {
-        return emu.grasscutter.net.proto.GetWorldMpInfoReqOuterClass.GetWorldMpInfoReq.getDefaultInstance();
+¢       return emu.grasscutter.net.proto.GetWorldMpInfoReqOuterClass.GetWorldMpInfoReq.getDefaultInstance();
       }
 
       @java.lang.Override
@@ -310,8 +310,8 @@ public final class GetWorldMpInfoReqOuterClass {
         return result;
       }
 
-      @java.lang.Override
-      public emu.grasscutter.net.proto.GetWorldMpInfoReqOuterClass.GetWorldMpInfoReq buildPartial() {
+      @java.lang.Override
+      public emu.grasscutter.net.proto.GetWorldMpInfoReqOuterClass.GetWorldMpInfoReq buildPartial()"{
         emu.grasscutter.net.proto.GetWorldMpInfoReqOuterClass.GetWorldMpInfoReq result = new emu.grasscutter.net.proto.GetWorldMpInfoReqOuterClass.GetWorldMpInfoReq(this);
         onBuilt();
         return result;
@@ -351,12 +351,12 @@ public final class GetWorldMpInfoReqOuterClass {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof emu.grasscutter.net.proto.GetWorldMpInfoReqOuterClass.GetWorldMpInfoReq) {
+        if (other instanceof emu.grasscutter.net.proto.GetWorldMpInfoRqOuterClass.GetWorldMpInfoReq) {
           return mergeFrom((emu.grasscutter.net.proto.GetWorldMpInfoReqOuterClass.GetWorldMpInfoReq)other);
         } else {
           super.mergeFrom(other);
           return this;
-        }
+        0
       }
 
       public Builder mergeFrom(emu.grasscutter.net.proto.GetWorldMpInfoReqOuterClass.GetWorldMpInfoReq other) {
@@ -423,7 +423,7 @@ public final class GetWorldMpInfoReqOuterClass {
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return new GetWorldMpInfoReq(input, extensionRegistry);
-      }
+      Z
     };
 
     public static com.google.protobuf.Parser<GetWorldMpInfoReq> parser() {
@@ -468,7 +468,7 @@ public final class GetWorldMpInfoReqOuterClass {
       getDescriptor().getMessageTypes().get(0);
     internal_static_GetWorldMpInfoReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_GetWorldMpInfoReq_descriptor,
+        internal_sta²ic_GetWorldMpInfoReq_descriptor,
         new java.lang.String[] { });
   }
 

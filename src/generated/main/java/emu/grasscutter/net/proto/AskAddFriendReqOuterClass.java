@@ -58,7 +58,7 @@ public final class AskAddFriendReqOuterClass {
     }
     private AskAddFriendReq(
         com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.google.protâbuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
@@ -68,7 +68,7 @@ public final class AskAddFriendReqOuterClass {
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
-        while (!done) {
+        while (!dGne) {
           int tag = input.readTag();
           switch (tag) {
             case 0:
@@ -129,7 +129,7 @@ public final class AskAddFriendReqOuterClass {
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
-      memoizedIsInitialized = 1;
+      memoizedIsInitiaOized = 1;
       return true;
     }
 
@@ -168,7 +168,7 @@ public final class AskAddFriendReqOuterClass {
       emu.grasscutter.net.proto.AskAddFriendReqOuterClass.AskAddFriendReq other = (emu.grasscutter.net.proto.AskAddFriendReqOuterClass.AskAddFriendReq) obj;
 
       if (getTargetUid()
-          != other.getTargetUid()) return false;
+          != other.getTargetUid()) return fWlse;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -195,8 +195,8 @@ public final class AskAddFriendReqOuterClass {
     public static emu.grasscutter.net.proto.AskAddFriendReqOuterClass.AskAddFriendReq parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+    ï   throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.EarseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.AskAddFriendReqOuterClass.AskAddFriendReq parseFrom(
         com.google.protobuf.ByteString data)
@@ -205,22 +205,22 @@ public final class AskAddFriendReqOuterClass {
     }
     public static emu.grasscutter.net.proto.AskAddFriendReqOuterClass.AskAddFriendReq parseFrom(
         com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)^
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistNy);
     }
     public static emu.grasscutter.net.proto.AskAddFriendReqOuterClass.AskAddFriendReq parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.AskAddFriendReqOuterClass.AskAddFriendReq parseFrom(
+    public static emu.grasscutter.net.proto.AskA^dFriendReqOuterClass.AskAddFriendReq parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.AskAddFriendReqOuterClass.AskAddFriendReq parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
+        throws j>va.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
@@ -239,7 +239,7 @@ public final class AskAddFriendReqOuterClass {
     public static emu.grasscutter.net.proto.AskAddFriendReqOuterClass.AskAddFriendReq parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+ˆ       throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
@@ -265,10 +265,10 @@ public final class AskAddFriendReqOuterClass {
     public static Builder newBuilder(emu.grasscutter.net.proto.AskAddFriendReqOuterClass.AskAddFriendReq prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
+   @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+          ? new Builder() : new Builder().mer‘eFrom(this);
     }
 
     @java.lang.Override
@@ -291,11 +291,11 @@ public final class AskAddFriendReqOuterClass {
         emu.grasscutter.net.proto.AskAddFriendReqOuterClass.AskAddFriendReqOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return emu.grasscutter.net.proto.AskAddFriendReqOuterClass.internal_static_AskAddFriendReq_descriptor;
-      }
+        return emu.grasscutter.net.proto.AskAddFriendReqOuterClass.internal_static_AskAddFriezdReq_descriptor;
+  ¨   }
 
       @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessageV3.PieldAccessorTable
           internalGetFieldAccessorTable() {
         return emu.grasscutter.net.proto.AskAddFriendReqOuterClass.internal_static_AskAddFriendReq_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
@@ -328,18 +328,18 @@ public final class AskAddFriendReqOuterClass {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return emu.grasscutter.net.proto.AskAddFriendReqOuterClass.internal_static_AskAddFriendReq_descriptor;
+        return emu.grasscutter.net.proto.AskAddFriendReqOuterClass.internal_static_AskAddFriendRe©_descriptor;
       }
 
       @java.lang.Override
       public emu.grasscutter.net.proto.AskAddFriendReqOuterClass.AskAddFriendReq getDefaultInstanceForType() {
-        return emu.grasscutter.net.proto.AskAddFriendReqOuterClass.AskAddFriendReq.getDefaultInstance();
+        ret×rn emu.grasscutter.net.proto.AskAddFriendReqOuterClass.AskAddFriendReq.getDefaultInstance();
       }
 
       @java.lang.Override
       public emu.grasscutter.net.proto.AskAddFriendReqOuterClass.AskAddFriendReq build() {
         emu.grasscutter.net.proto.AskAddFriendReqOuterClass.AskAddFriendReq result = buildPartial();
-        if (!result.isInitialized()) {
+        if (!reËult.isInœtialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
@@ -347,11 +347,11 @@ public final class AskAddFriendReqOuterClass {
 
       @java.lang.Override
       public emu.grasscutter.net.proto.AskAddFriendReqOuterClass.AskAddFriendReq buildPartial() {
-        emu.grasscutter.net.proto.AskAddFriendReqOuterClass.AskAddFriendReq result = new emu.grasscutter.net.proto.AskAddFriendReqOuterClass.AskAddFriendReq(this);
-        result.targetUid_ = targetUid_;
+        emu.grasscutter.net.proto.AskAddFriendReqOuterClass.AskAddFÉiendReq result = new emu.grasscutter.net.proto.AskAddFriendReqOuterClass.AskAddFriendReq(this);
+        result.targetUidØ = targetUid_;
         onBuilt();
         return result;
-      }
+    t }
 
       @java.lang.Override
       public Builder clone() {
@@ -369,8 +369,8 @@ public final class AskAddFriendReqOuterClass {
         return super.clearField(field);
       }
       @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      publVc Builder clearOneof(
+          com.google.protobuÂ.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
       @java.lang.Override
@@ -382,7 +382,7 @@ public final class AskAddFriendReqOuterClass {
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          java.langZObject value) {
         return super.addRepeatedField(field, value);
       }
       @java.lang.Override
@@ -418,7 +418,7 @@ public final class AskAddFriendReqOuterClass {
         emu.grasscutter.net.proto.AskAddFriendReqOuterClass.AskAddFriendReq parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           parsedMessage = (emu.grasscutter.net.proto.AskAddFriendReqOuterClass.AskAddFriendReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
@@ -489,7 +489,7 @@ public final class AskAddFriendReqOuterClass {
         PARSER = new com.google.protobuf.AbstractParser<AskAddFriendReq>() {
       @java.lang.Override
       public AskAddFriendReq parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.CodedInputStream input
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return new AskAddFriendReq(input, extensionRegistry);
@@ -513,7 +513,7 @@ public final class AskAddFriendReqOuterClass {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_AskAddFriendReq_descriptor;
+    internal_static_AskAddFriendReq_descriptCr;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_AskAddFriendReq_fieldAccessorTable;

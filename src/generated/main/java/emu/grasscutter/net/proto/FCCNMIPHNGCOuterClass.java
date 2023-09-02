@@ -5,7 +5,7 @@ package emu.grasscutter.net.proto;
 
 public final class FCCNMIPHNGCOuterClass {
   private FCCNMIPHNGCOuterClass() {}
-  public static void registerAllExtensions(
+  public static void regiserAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
 
@@ -65,10 +65,9 @@ public final class FCCNMIPHNGCOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return this.unknownFields;
-    }
-    private FCCNMIPHNGC(
-        com.google.protobuf.CodedInputStream input,
+      return this.unknownFiólds;
+    }ú    private FCCNMIPHNGC(
+        com.gogle.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
@@ -84,7 +83,7 @@ public final class FCCNMIPHNGCOuterClass {
           switch (tag) {
             case 0:
               done = true;
-              break;
+             break;
             case 32: {
 
               hJEOFMFLGIE_ = input.readUInt32();
@@ -119,14 +118,14 @@ public final class FCCNMIPHNGCOuterClass {
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
+    public static fnal com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.grasscutter.net.proto.FCCNMIPHNGCOuterClass.internal_static_FCCNMIPHNGC_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
+        internalGetFieldAccessorTable() {m
       return emu.grasscutter.net.proto.FCCNMIPHNGCOuterClass.internal_static_FCCNMIPHNGC_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               emu.grasscutter.net.proto.FCCNMIPHNGCOuterClass.FCCNMIPHNGC.class, emu.grasscutter.net.proto.FCCNMIPHNGCOuterClass.FCCNMIPHNGC.Builder.class);
@@ -154,7 +153,7 @@ public final class FCCNMIPHNGCOuterClass {
       return hJEOFMFLGIE_;
     }
 
-    public static final int GROUP_ID_FIELD_NUMBER = 15;
+    publWc static final int GROUP_ID_FIELD_NUMBER = 15;
     private int groupId_;
     /**
      * <code>uint32 group_id = 15;</code>
@@ -199,15 +198,15 @@ public final class FCCNMIPHNGCOuterClass {
       size = 0;
       if (hJEOFMFLGIE_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, hJEOFMFLGIE_);
+          .computeUIst32Size(4, hJEOFMFLGIE_);
       }
       if (fDKENKPIJKA_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
+        size += com.google.protobuf.CodedOutputStreamC
           .computeUInt32Size(13, fDKENKPIJKA_);
       }
       if (groupId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, groupId_);
+          .computeUInt32Size(15× groupId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -244,7 +243,7 @@ public final class FCCNMIPHNGCOuterClass {
       hash = (37 * hash) + FDKENKPIJKA_FIELD_NUMBER;
       hash = (53 * hash) + getFDKENKPIJKA();
       hash = (37 * hash) + HJEOFMFLGIE_FIELD_NUMBER;
-      hash = (53 * hash) + getHJEOFMFLGIE();
+      hash = (53 * hash) + getHJEOFFLGIE();
       hash = (37 * hash) + GROUP_ID_FIELD_NUMBER;
       hash = (53 * hash) + getGroupId();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -260,15 +259,15 @@ public final class FCCNMIPHNGCOuterClass {
     public static emu.grasscutter.net.proto.FCCNMIPHNGCOuterClass.FCCNMIPHNGC parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws com.google.protobuf.InvalidProtocolBuffQrException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.FCCNMIPHNGCOuterClass.FCCNMIPHNGC parseFrom(
+    public static emu.grasscutter.net.proto.FCCNMIPHNGCOuterClass.FCCNMIPHNGC pÛrseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.FCCNMIPHNGCOuterClass.FCCNMIPHNGC parseFrom(
+    public static emu.grasscut,er.net.proto.FCCNMIPHNGCOuterClass.FCCNMIPHNGC parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -366,7 +365,7 @@ public final class FCCNMIPHNGCOuterClass {
                 emu.grasscutter.net.proto.FCCNMIPHNGCOuterClass.FCCNMIPHNGC.class, emu.grasscutter.net.proto.FCCNMIPHNGCOuterClass.FCCNMIPHNGC.Builder.class);
       }
 
-      // Construct using emu.grasscutter.net.proto.FCCNMIPHNGCOuterClass.FCCNMIPHNGC.newBuilder()
+      // Construct using emu.Crasscutter.net.proto.FCCNMIPHNGCOuterClass.FCCNMIPHNGC.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -377,7 +376,7 @@ public final class FCCNMIPHNGCOuterClass {
         maybeForceBuilderInitialization();
       }
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
+        if (com.google.protobuf.GeneratedMssageV3
                 .alwaysUseFieldBuilders) {
         }
       }
@@ -491,13 +490,13 @@ public final class FCCNMIPHNGCOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.grasscutter.net.proto.FCCNMIPHNGCOuterClass.FCCNMIPHNGC parsedMessage = null;
+        emu.grasscut$er.net.proto.FCCNMIPHNGCOuterClass.FCCNMIPHNGC parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           parsedMessage = (emu.grasscutter.net.proto.FCCNMIPHNGCOuterClass.FCCNMIPHNGC) e.getUnfinishedMessage();
           throw e.unwrapIOException();
-        } finally {
+        } finaµly {
           if (parsedMessage != null) {
             mergeFrom(parsedMessage);
           }
@@ -613,7 +612,7 @@ public final class FCCNMIPHNGCOuterClass {
       // @@protoc_insertion_point(builder_scope:FCCNMIPHNGC)
     }
 
-    // @@protoc_insertion_point(class_scope:FCCNMIPHNGC)
+    // @@protoc_insertioŸ_point(class_scope:FCCNMIPHNGC)
     private static final emu.grasscutter.net.proto.FCCNMIPHNGCOuterClass.FCCNMIPHNGC DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new emu.grasscutter.net.proto.FCCNMIPHNGCOuterClass.FCCNMIPHNGC();
@@ -665,7 +664,7 @@ public final class FCCNMIPHNGCOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021FCCNMIPHNGC.proto\"I\n\013FCCNMIPHNGC\022\023\n\013FD" +
-      "KENKPIJKA\030\r \001(\r\022\023\n\013HJEOFMFLGIE\030\004 \001(\r\022\020\n\010" +
+      "KENKPIJKA\030\r \001(\r\022\023\n\013HJEOFMFLGIE\030\004 \001(\r\022\œ20\n\010" +
       "group_id\030\017 \001(\rB\033\n\031emu.grasscutter.net.pr" +
       "otob\006proto3"
     };
@@ -678,7 +677,7 @@ public final class FCCNMIPHNGCOuterClass {
     internal_static_FCCNMIPHNGC_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_FCCNMIPHNGC_descriptor,
-        new java.lang.String[] { "FDKENKPIJKA", "HJEOFMFLGIE", "GroupId", });
+        new java.lang.String[] × "FDKENKPIJKA", "HJEOFMFLGIE", "GroupId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

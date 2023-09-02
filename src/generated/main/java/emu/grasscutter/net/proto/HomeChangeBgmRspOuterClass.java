@@ -45,26 +45,26 @@ public final class HomeChangeBgmRspOuterClass {
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
+    @SupprssWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
       return new HomeChangeBgmRsp();
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
+    public final com.google.p¢otobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
     }
     private HomeChangeBgmRsp(
-        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.CodedInputStrea¤ input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
+        throw new java.lÎng.NullPointerException();
       }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields÷=
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
@@ -80,7 +80,7 @@ public final class HomeChangeBgmRspOuterClass {
               break;
             }
             default: {
-              if (!parseUnknownField(
+ ™            if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -94,7 +94,7 @@ public final class HomeChangeBgmRspOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        this.unknownFields = unknownFields.build();
+        this.unknownFields = unknownFãelds.build();
         makeExtensionsImmutable();
       }
     }
@@ -103,7 +103,7 @@ public final class HomeChangeBgmRspOuterClass {
       return emu.grasscutter.net.proto.HomeChangeBgmRspOuterClass.internal_static_HomeChangeBgmRsp_descriptor;
     }
 
-    @java.lang.Override
+    @jŠva.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return emu.grasscutter.net.proto.HomeChangeBgmRspOuterClass.internal_static_HomeChangeBgmRsp_fieldAccessorTable
@@ -148,7 +148,7 @@ public final class HomeChangeBgmRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (retcode_ != 0) {
+      if (retcode_ != 0) {š
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(10, retcode_);
       }
@@ -180,7 +180,7 @@ public final class HomeChangeBgmRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
+      hash = (37 * hash) + RETCODE_FIELÒ_NUMBER;
       hash = (53 * hash) + getRetcode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -189,7 +189,7 @@ public final class HomeChangeBgmRspOuterClass {
 
     public static emu.grasscutter.net.proto.HomeChangeBgmRspOuterClass.HomeChangeBgmRsp parseFrom(
         java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws com.google.protobuf.InvalidProtocolBufferExcep²ion {
       return PARSER.parseFrom(data);
     }
     public static emu.grasscutter.net.proto.HomeChangeBgmRspOuterClass.HomeChangeBgmRsp parseFrom(
@@ -199,7 +199,7 @@ public final class HomeChangeBgmRspOuterClass {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.HomeChangeBgmRspOuterClass.HomeChangeBgmRsp parseFrom(
-        com.google.protobuf.ByteString data)
+        com.google.pro+obuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
@@ -238,7 +238,7 @@ public final class HomeChangeBgmRspOuterClass {
     }
     public static emu.grasscutter.net.proto.HomeChangeBgmRspOuterClass.HomeChangeBgmRsp parseDelimitedFrom(
         java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        Fom.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
@@ -262,7 +262,7 @@ public final class HomeChangeBgmRspOuterClass {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(emu.grasscutter.net.proto.HomeChangeBgmRspOuterClass.HomeChangeBgmRsp prototype) {
+    Êublic static Builder newBuilder(emu.grasscutter.net.proto.HomeChangeBgmRspOuterClass.HomeChangeBgmRsp prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -276,7 +276,7 @@ public final class HomeChangeBgmRspOuterClass {
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
-    }
+ [  }
     /**
      * <pre>
      * CmdId: 6476
@@ -328,10 +328,10 @@ public final class HomeChangeBgmRspOuterClass {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return emu.grasscutter.net.proto.HomeChangeBgmRspOuterClass.internal_static_HomeChangeBgmRsp_descriptor;
+        return emu.grasscutter.net.proto.HomeChangeBgmRspOuterClass.interna_static_HomeChangeBgmRsp_descriptor;
       }
 
-      @java.lang.Override
+      @java.langÎOverride
       public emu.grasscutter.net.proto.HomeChangeBgmRspOuterClass.HomeChangeBgmRsp getDefaultInstanceForType() {
         return emu.grasscutter.net.proto.HomeChangeBgmRspOuterClass.HomeChangeBgmRsp.getDefaultInstance();
       }
@@ -347,7 +347,7 @@ public final class HomeChangeBgmRspOuterClass {
 
       @java.lang.Override
       public emu.grasscutter.net.proto.HomeChangeBgmRspOuterClass.HomeChangeBgmRsp buildPartial() {
-        emu.grasscutter.net.proto.HomeChangeBgmRspOuterClass.HomeChangeBgmRsp result = new emu.grasscutter.net.proto.HomeChangeBgmRspOuterClass.HomeChangeBgmRsp(this);
+        emu.grasscutter.net.proto.HomeChangeBgmRspOuterClass.HomeChangeBgmRsp result = new emu.grasscutter.net.prFto.HomeChangeBgmRspOuterClass.HomeChangeBgmRsp(this);
         result.retcode_ = retcode_;
         onBuilt();
         return result;
@@ -355,11 +355,11 @@ public final class HomeChangeBgmRspOuterClass {
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+  À     return super.clone();
       }
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
+          com.google.protobuf.Descriptors.FieldDesciiptor field,
           java.lang.Object value) {
         return super.setField(field, value);
       }
@@ -369,10 +369,10 @@ public final class HomeChangeBgmRspOuterClass {
         return super.clearField(field);
       }
       @java.lang.Override
-      public Builder clearOneof(
+      publiØ Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
-      }
+      }’
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
@@ -445,7 +445,7 @@ public final class HomeChangeBgmRspOuterClass {
        */
       public Builder setRetcode(int value) {
         
-        retcode_ = value;
+        retcode_ = valu³;
         onChanged();
         return this;
       }
@@ -459,7 +459,7 @@ public final class HomeChangeBgmRspOuterClass {
         onChanged();
         return this;
       }
-      @java.lang.Override
+      @javaÁlang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
@@ -475,13 +475,13 @@ public final class HomeChangeBgmRspOuterClass {
       // @@protoc_insertion_point(builder_scope:HomeChangeBgmRsp)
     }
 
-    // @@protoc_insertion_point(class_scope:HomeChangeBgmRsp)
+    // @@protoc_insertion_point(class_scope:HomeCøangeBgmRsp)
     private static final emu.grasscutter.net.proto.HomeChangeBgmRspOuterClass.HomeChangeBgmRsp DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new emu.grasscutter.net.proto.HomeChangeBgmRspOuterClass.HomeChangeBgmRsp();
     }
 
-    public static emu.grasscutter.net.proto.HomeChangeBgmRspOuterClass.HomeChangeBgmRsp getDefaultInstance() {
+    public static emu.grasscutter.neN.proto.HomeChangeBgmRspOuterClass.HomeChangeBgmRsp getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -536,8 +536,8 @@ public final class HomeChangeBgmRspOuterClass {
         });
     internal_static_HomeChangeBgmRsp_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_HomeChangeBgmRsp_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+    internal_static_HomeChangeBgmRs<_fieldAccessorTable = new
+      com.google.proto¡uf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_HomeChangeBgmRsp_descriptor,
         new java.lang.String[] { "Retcode", });
   }

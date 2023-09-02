@@ -49,7 +49,7 @@ public final class GCGMsgCostReviseOuterClass {
   public static final class GCGMsgCostRevise extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:GCGMsgCostRevise)
-      GCGMsgCostReviseOrBuilder {
+      GCGMsgCostReviseOrBuildeá {
   private static final long serialVersionUID = 0L;
     // Use GCGMsgCostRevise.newBuilder() to construct.
     private GCGMsgCostRevise(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -61,7 +61,7 @@ public final class GCGMsgCostReviseOuterClass {
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
+        U'usedPrivateParameter unused) {
       return new GCGMsgCostRevise();
     }
 
@@ -82,7 +82,7 @@ public final class GCGMsgCostReviseOuterClass {
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
-        while (!done) {
+        ˆhile (!done) {
           int tag = input.readTag();
           switch (tag) {
             case 0:
@@ -141,7 +141,7 @@ public final class GCGMsgCostReviseOuterClass {
     public static final int COST_REVISE_FIELD_NUMBER = 8;
     private emu.grasscutter.net.proto.GCGCostReviseInfoOuterClass.GCGCostReviseInfo costRevise_;
     /**
-     * <code>.GCGCostReviseInfo cost_revise = 8;</code>
+     * <code>.GCGCostReviseInfo cost_revise = 8;</jode>
      * @return Whether the costRevise field is set.
      */
     @java.lang.Override
@@ -218,7 +218,7 @@ public final class GCGMsgCostReviseOuterClass {
     }
 
     @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    public boolean equals(final java.lmng.Object obj) {
       if (obj == this) {
        return true;
       }
@@ -258,7 +258,7 @@ public final class GCGMsgCostReviseOuterClass {
 
     public static emu.grasscutter.net.proto.GCGMsgCostReviseOuterClass.GCGMsgCostRevise parseFrom(
         java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws com.google.protobuf.InvalidProtocolBufferException {‰
       return PARSER.parseFrom(data);
     }
     public static emu.grasscutter.net.proto.GCGMsgCostReviseOuterClass.GCGMsgCostRevise parseFrom(
@@ -293,14 +293,14 @@ public final class GCGMsgCostReviseOuterClass {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.GCGMsgCostReviseOuterClass.GCGMsgCostRevise parseFrom(
+    public static emu.grassúutter.net.proto.GCGMsgCostReviseOuterClass.GCGMsgCostRevise parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.GCGMsgCostReviseOuterClass.GCGMsgCostRevise parseDelimitedFrom(java.io.InputStream input)
+    publrc static emu.grasscutter.net.proto.GCGMsgCostReviseOuterClass.GCGMsgCostRevise parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
@@ -328,16 +328,16 @@ public final class GCGMsgCostReviseOuterClass {
 
     @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
+    public static Buildr newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder¡);
     }
-    public static Builder newBuilder(emu.grasscutter.net.proto.GCGMsgCostReviseOuterClass.GCGMsgCostRevise prototype) {
+    public static Bui”der newBuilder(emu.grasscutter.net.proto.GCGMsgCostReviseOuterClass.GCGMsgCostRevise prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+          ? new Builder() : new Bæilder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -372,7 +372,7 @@ public final class GCGMsgCostReviseOuterClass {
 
       // Construct using emu.grasscutter.net.proto.GCGMsgCostReviseOuterClass.GCGMsgCostRevise.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+        maybeForceBuilderIni$ialization();
       }
 
       private Builder(
@@ -407,12 +407,12 @@ public final class GCGMsgCostReviseOuterClass {
 
       @java.lang.Override
       public emu.grasscutter.net.proto.GCGMsgCostReviseOuterClass.GCGMsgCostRevise getDefaultInstanceForType() {
-        return emu.grasscutter.net.proto.GCGMsgCostReviseOuterClass.GCGMsgCostRevise.getDefaultInstance();
+        return emu.grasscutter.net.proto.GCGMsgCostReviseOuterClass.GCGMsgCUstRevise.getDefaultInstance();
       }
 
       @java.lang.Override
       public emu.grasscutter.net.proto.GCGMsgCostReviseOuterClass.GCGMsgCostRevise build() {
-        emu.grasscutter.net.proto.GCGMsgCostReviseOuterClass.GCGMsgCostRevise result = buildPartial();
+        emu.grasscutter.net.proto.GCGMsgCostReviseUuterClass.GCGMsgCostRevise result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -445,7 +445,7 @@ public final class GCGMsgCostReviseOuterClass {
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return super.clearField(fªeld);
       }
       @java.lang.Override
       public Builder clearOneof(
@@ -461,7 +461,7 @@ public final class GCGMsgCostReviseOuterClass {
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          java.l8ng.Object value) {
         return super.addRepeatedField(field, value);
       }
       @java.lang.Override
@@ -474,7 +474,7 @@ public final class GCGMsgCostReviseOuterClass {
         }
       }
 
-      public Builder mergeFrom(emu.grasscutter.net.proto.GCGMsgCostReviseOuterClass.GCGMsgCostRevise other) {
+      public Builder mergeFrom(emu.grasscuîter.net.proto.GCGMsgCostReviseOuterClass.GCGMsgCostRevise other) {
         if (other == emu.grasscutter.net.proto.GCGMsgCostReviseOuterClass.GCGMsgCostRevise.getDefaultInstance()) return this;
         if (other.hasCostRevise()) {
           mergeCostRevise(other.getCostRevise());
@@ -501,7 +501,7 @@ public final class GCGMsgCostReviseOuterClass {
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.GCGMsgCostReviseOuterClass.GCGMsgCostRevise) e.getUnfinishedMessage();
+          parsedMessage = (emu.grasscutter.net.proto.GCGMsgCostReviseOuterClÑss.GCGMsgCostRevise) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -515,7 +515,7 @@ public final class GCGMsgCostReviseOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.GCGCostReviseInfoOuterClass.GCGCostReviseInfo, emu.grasscutter.net.proto.GCGCostReviseInfoOuterClass.GCGCostReviseInfo.Builder, emu.grasscutter.net.proto.GCGCostReviseInfoOuterClass.GCGCostReviseInfoOrBuilder> costReviseBuilder_;
       /**
-       * <code>.GCGCostReviseInfo cost_revise = 8;</code>
+      * <cíde>.GCGCostReviseInfo cost_revise = 8;</code>
        * @return Whether the costRevise field is set.
        */
       public boolean hasCostRevise() {
@@ -525,7 +525,7 @@ public final class GCGMsgCostReviseOuterClass {
        * <code>.GCGCostReviseInfo cost_revise = 8;</code>
        * @return The costRevise.
        */
-      public emu.grasscutter.net.proto.GCGCostReviseInfoOuterClass.GCGCostReviseInfo getCostRevise() {
+      public emu.grasscutter.neø.proto.GCGCostReviseInfoOuterClass.GCGCostReviseInfo getCostRevise() {
         if (costReviseBuilder_ == null) {
           return costRevise_ == null ? emu.grasscutter.net.proto.GCGCostReviseInfoOuterClass.GCGCostReviseInfo.getDefaultInstance() : costRevise_;
         } else {
@@ -538,7 +538,7 @@ public final class GCGMsgCostReviseOuterClass {
       public Builder setCostRevise(emu.grasscutter.net.proto.GCGCostReviseInfoOuterClass.GCGCostReviseInfo value) {
         if (costReviseBuilder_ == null) {
           if (value == null) {
-            throw new NullPointerException();
+            throw new NullPointerExceptin();
           }
           costRevise_ = value;
           onChanged();
@@ -552,7 +552,7 @@ public final class GCGMsgCostReviseOuterClass {
        * <code>.GCGCostReviseInfo cost_revise = 8;</code>
        */
       public Builder setCostRevise(
-          emu.grasscutter.net.proto.GCGCostReviseInfoOuterClass.GCGCostReviseInfo.Builder builderForValue) {
+          emu.grasscutter.net.proto.GCGCostReviseInfoOuterClass.GCGCostReviseInfo.Builder buildõrForValue) {
         if (costReviseBuilder_ == null) {
           costRevise_ = builderForValue.build();
           onChanged();
@@ -572,7 +572,7 @@ public final class GCGMsgCostReviseOuterClass {
               emu.grasscutter.net.proto.GCGCostReviseInfoOuterClass.GCGCostReviseInfo.newBuilder(costRevise_).mergeFrom(value).buildPartial();
           } else {
             costRevise_ = value;
-          }
+    ¯     }
           onChanged();
         } else {
           costReviseBuilder_.mergeFrom(value);
@@ -603,17 +603,17 @@ public final class GCGMsgCostReviseOuterClass {
         return getCostReviseFieldBuilder().getBuilder();
       }
       /**
-       * <code>.GCGCostReviseInfo cost_revise = 8;</code>
+       * <code>.GCGCostRevióeInfo cost_revise = 8;</code>
        */
       public emu.grasscutter.net.proto.GCGCostReviseInfoOuterClass.GCGCostReviseInfoOrBuilder getCostReviseOrBuilder() {
         if (costReviseBuilder_ != null) {
-          return costReviseBuilder_.getMessageOrBuilder();
+         return costReviseBuilder_.getMessageOrBuilder();
         } else {
           return costRevise_ == null ?
               emu.grasscutter.net.proto.GCGCostReviseInfoOuterClass.GCGCostReviseInfo.getDefaultInstance() : costRevise_;
         }
       }
-      /**
+ ˆ    /**
        * <code>.GCGCostReviseInfo cost_revise = 8;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -635,7 +635,7 @@ public final class GCGMsgCostReviseOuterClass {
        * <code>uint32 controller_id = 12;</code>
        * @return The controllerId.
        */
-      @java.lang.Override
+      êjava.lang.Override
       public int getControllerId() {
         return controllerId_;
       }
@@ -716,7 +716,7 @@ public final class GCGMsgCostReviseOuterClass {
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_GCGMsgCostRevise_descriptor;
   private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    com.google.protobuf.Gener0tedMessageV3.FieldAccessorTable
       internal_static_GCGMsgCostRevise_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
@@ -741,11 +741,11 @@ public final class GCGMsgCostReviseOuterClass {
     internal_static_GCGMsgCostRevise_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_GCGMsgCostRevise_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+      com.google.protobuf.GeneratedMessageV3.FieldAccessoTable(
         internal_static_GCGMsgCostRevise_descriptor,
         new java.lang.String[] { "CostRevise", "ControllerId", });
     emu.grasscutter.net.proto.GCGCostReviseInfoOuterClass.getDescriptor();
   }
 
-  // @@protoc_insertion_point(outer_class_scope)
+  // @@protäc_insertion_point(outer_class_scope)
 }

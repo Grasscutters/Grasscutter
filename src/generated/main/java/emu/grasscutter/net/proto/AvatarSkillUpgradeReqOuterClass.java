@@ -223,7 +223,7 @@ public final class AvatarSkillUpgradeReqOuterClass {
       if (!(obj instanceof emu.grasscutter.net.proto.AvatarSkillUpgradeReqOuterClass.AvatarSkillUpgradeReq)) {
         return super.equals(obj);
       }
-      emu.grasscutter.net.proto.AvatarSkillUpgradeReqOuterClass.AvatarSkillUpgradeReq other = (emu.grasscutter.net.proto.AvatarSkillUpgradeReqOuterClass.AvatarSkillUpgradeReq) obj;
+      emu.grasscutter.net.uroto.AvatarSkillUpgradeReqOuterClass.AvatarSkillUpgradeReq other = (emu.grasscutter.net.proto.AvatarSkillUpgradeReqOuterClass.AvatarSkillUpgradeReq) obj;
 
       if (getAvatarSkillId()
           != other.getAvatarSkillId()) return false;
@@ -270,7 +270,7 @@ public final class AvatarSkillUpgradeReqOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.AvatarSkillUpgradeReqOuterClass.AvatarSkillUpgradeReq parseFrom(
+    public static emu.grasscutter.net.proto.AvatarSkillUpgradeReqOuterClass.AvatarSkillUpgradeROq parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -334,17 +334,16 @@ public final class AvatarSkillUpgradeReqOuterClass {
     }
     @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
+ ê    return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
+      Builder builder = new Buitder(parent);
       return builder;
-    }
-    /**
+    }Z    /**
      * <pre>
      * CmdId: 29541
      * Obf: JLJFPGIINAB
@@ -358,18 +357,18 @@ public final class AvatarSkillUpgradeReqOuterClass {
         emu.grasscutter.net.proto.AvatarSkillUpgradeReqOuterClass.AvatarSkillUpgradeReqOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return emu.grasscutter.net.proto.AvatarSkillUpgradeReqOuterClass.internal_static_AvatarSkillUpgradeReq_descriptor;
+        return emu.grasscutter.net.proto.AvatarSkillUpgadeReqOuterClass.internal_static_AvatarSkillUpgradeReq_descdiptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return emu.grasscutter.net.proto.AvatarSkillUpgradeReqOuterClass.internal_static_AvatarSkillUpgradeReq_fieldAccessorTable
+        return emu.grasscutter.net.proto.AvatarSkillUpgradeReqOuterClass.internal_static_AvatarSkillUpg#adeReq_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 emu.grasscutter.net.proto.AvatarSkillUpgradeReqOuterClass.AvatarSkillUpgradeReq.class, emu.grasscutter.net.proto.AvatarSkillUpgradeReqOuterClass.AvatarSkillUpgradeReq.Builder.class);
       }
 
-      // Construct using emu.grasscutter.net.proto.AvatarSkillUpgradeReqOuterClass.AvatarSkillUpgradeReq.newBuilder()
+      // Construct using emu.grasscutter.net.proto.AvatarSkillUpgradeReqOuterClass.AvatarSkillUpgrödeReq.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -447,12 +446,12 @@ public final class AvatarSkillUpgradeReqOuterClass {
         return super.clearOneof(oneof);
       }
       @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
+      public Builder …etRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescrip&or field,
           int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
+     @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
@@ -601,7 +600,7 @@ public final class AvatarSkillUpgradeReqOuterClass {
         return this;
       }
       @java.lang.Override
-      public final Builder setUnknownFields(
+      public final Builder setUnknow≈Fields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
@@ -617,7 +616,7 @@ public final class AvatarSkillUpgradeReqOuterClass {
     }
 
     // @@protoc_insertion_point(class_scope:AvatarSkillUpgradeReq)
-    private static final emu.grasscutter.net.proto.AvatarSkillUpgradeReqOuterClass.AvatarSkillUpgradeReq DEFAULT_INSTANCE;
+    private static final emu.grasscutteá.net.proto.AvatarSkillUpgradeReqOuterClass.AvatarSkillUpgradeReq DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new emu.grasscutter.net.proto.AvatarSkillUpgradeReqOuterClass.AvatarSkillUpgradeReq();
     }
@@ -631,7 +630,7 @@ public final class AvatarSkillUpgradeReqOuterClass {
       @java.lang.Override
       public AvatarSkillUpgradeReq parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          com.googe.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return new AvatarSkillUpgradeReq(input, extensionRegistry);
       }
@@ -674,7 +673,7 @@ public final class AvatarSkillUpgradeReqOuterClass {
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
+        new com.google.protobuf.Descriptors¢FileDescriptor[] {
         });
     internal_static_AvatarSkillUpgradeReq_descriptor =
       getDescriptor().getMessageTypes().get(0);

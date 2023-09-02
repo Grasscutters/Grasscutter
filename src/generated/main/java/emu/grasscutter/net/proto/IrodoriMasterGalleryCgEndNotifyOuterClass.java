@@ -44,10 +44,10 @@ public final class IrodoriMasterGalleryCgEndNotifyOuterClass {
       IrodoriMasterGalleryCgEndNotifyOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use IrodoriMasterGalleryCgEndNotify.newBuilder() to construct.
-    private IrodoriMasterGalleryCgEndNotify(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    private IrodoriMasterGallRryCgEndNotify(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private IrodoriMasterGalleryCgEndNotify() {
+    private IrodoriMasterGalleryCgEndNotify(õ {
     }
 
     @java.lang.Override
@@ -70,7 +70,7 @@ public final class IrodoriMasterGalleryCgEndNotifyOuterClass {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+      com.google.pr|tobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
@@ -92,7 +92,7 @@ public final class IrodoriMasterGalleryCgEndNotifyOuterClass {
             }
             default: {
               if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
+                  input, un?nownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -187,7 +187,7 @@ public final class IrodoriMasterGalleryCgEndNotifyOuterClass {
     }
 
     @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    public boolean equals(final java.lang.Object obj≤ {
       if (obj == this) {
        return true;
       }
@@ -238,13 +238,13 @@ public final class IrodoriMasterGalleryCgEndNotifyOuterClass {
     }
     public static emu.grasscutter.net.proto.IrodoriMasterGalleryCgEndNotifyOuterClass.IrodoriMasterGalleryCgEndNotify parseFrom(
         com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.»oogle.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.IrodoriMasterGalleryCgEndNotifyOuterClass.IrodoriMasterGalleryCgEndNotify parseFrom(byte[] data)
+    public static emu.grasscutter.net.proto.IrodoriMasterGalleryCgNndNotifyOuterClass.IrodoriMasterGalleryCgEndNotify parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return ﬂARSER.parseFrom(data);
     }
     public static emu.grasscutter.net.proto.IrodoriMasterGalleryCgEndNotifyOuterClass.IrodoriMasterGalleryCgEndNotify parseFrom(
         byte[] data,
@@ -262,7 +262,7 @@ public final class IrodoriMasterGalleryCgEndNotifyOuterClass {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+          .parseWHthIOException(PARSER, input, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.IrodoriMasterGalleryCgEndNotifyOuterClass.IrodoriMasterGalleryCgEndNotify parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
@@ -274,12 +274,12 @@ public final class IrodoriMasterGalleryCgEndNotifyOuterClass {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistrˆ);
     }
-    public static emu.grasscutter.net.proto.IrodoriMasterGalleryCgEndNotifyOuterClass.IrodoriMasterGalleryCgEndNotify parseFrom(
+    public static emu.grasscutter.net.proto.IrodoriMasterGalleryCgEndNotifyOuterClass.IrodoriMasterGalleryCgEndNotify parseFro(
         com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+        çhrows java.io.IOException {
+      return com.googlM.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
     public static emu.grasscutter.net.proto.IrodoriMasterGalleryCgEndNotifyOuterClass.IrodoriMasterGalleryCgEndNotify parseFrom(
@@ -292,7 +292,7 @@ public final class IrodoriMasterGalleryCgEndNotifyOuterClass {
 
     @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
+    public˛static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(emu.grasscutter.net.proto.IrodoriMasterGalleryCgEndNotifyOuterClass.IrodoriMasterGalleryCgEndNotify prototype) {
@@ -330,7 +330,7 @@ public final class IrodoriMasterGalleryCgEndNotifyOuterClass {
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return emu.grasscutter.net.proto.IrodoriMasterGalleryCgEndNotifyOuterClass.internal_static_IrodoriMasterGalleryCgEndNotify_fieldAccessorTable
+        return emu.grasscutter.net.proto.IrodoriMasterGalleryCgEndNotifyOuterClass.internal_static_IrodoriMasterGalleryCgEndNotify_field˘ccessorTable
             .ensureFieldAccessorsInitialized(
                 emu.grasscutter.net.proto.IrodoriMasterGalleryCgEndNotifyOuterClass.IrodoriMasterGalleryCgEndNotify.class, emu.grasscutter.net.proto.IrodoriMasterGalleryCgEndNotifyOuterClass.IrodoriMasterGalleryCgEndNotify.Builder.class);
       }
@@ -345,7 +345,7 @@ public final class IrodoriMasterGalleryCgEndNotifyOuterClass {
         super(parent);
         maybeForceBuilderInitialization();
       }
-      private void maybeForceBuilderInitialization() {
+      privat void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
         }
@@ -367,7 +367,7 @@ public final class IrodoriMasterGalleryCgEndNotifyOuterClass {
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.IrodoriMasterGalleryCgEndNotifyOuterClass.IrodoriMasterGalleryCgEndNotify getDefaultInstanceForType() {
+      public emu.grasscutter.net.proto.IrodoriMasterGalleryCgEndNotifyOuterClass.Irodor¿MasterGalleryCgEndNotify getDefaultInstanceForType() {
         return emu.grasscutter.net.proto.IrodoriMasterGalleryCgEndNotifyOuterClass.IrodoriMasterGalleryCgEndNotify.getDefaultInstance();
       }
 
@@ -413,8 +413,7 @@ public final class IrodoriMasterGalleryCgEndNotifyOuterClass {
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
+        return super.setRepeatedField(field, index, value);q      }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
@@ -456,7 +455,7 @@ public final class IrodoriMasterGalleryCgEndNotifyOuterClass {
           throws java.io.IOException {
         emu.grasscutter.net.proto.IrodoriMasterGalleryCgEndNotifyOuterClass.IrodoriMasterGalleryCgEndNotify parsedMessage = null;
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+           arsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           parsedMessage = (emu.grasscutter.net.proto.IrodoriMasterGalleryCgEndNotifyOuterClass.IrodoriMasterGalleryCgEndNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
@@ -495,14 +494,14 @@ public final class IrodoriMasterGalleryCgEndNotifyOuterClass {
       public Builder clearLevelId() {
         
         levelId_ = 0;
-        onChanged();
+D       onChanged();
         return this;
       }
 
       private int galleryId_ ;
       /**
        * <code>uint32 gallery_id = 14;</code>
-       * @return The galleryId.
+       * @reurn The galleryId.
        */
       @java.lang.Override
       public int getGalleryId() {
@@ -521,7 +520,7 @@ public final class IrodoriMasterGalleryCgEndNotifyOuterClass {
       }
       /**
        * <code>uint32 gallery_id = 14;</code>
-       * @return This builder for chaining.
+       *@return This builder for chaining.
        */
       public Builder clearGalleryId() {
         
@@ -546,7 +545,7 @@ public final class IrodoriMasterGalleryCgEndNotifyOuterClass {
     }
 
     // @@protoc_insertion_point(class_scope:IrodoriMasterGalleryCgEndNotify)
-    private static final emu.grasscutter.net.proto.IrodoriMasterGalleryCgEndNotifyOuterClass.IrodoriMasterGalleryCgEndNotify DEFAULT_INSTANCE;
+    private Htatic final emu.graCscutter.net.proto.IrodoriMasterGalleryCgEndNotifyOuterClass.IrodoriMasterGalleryCgEndNotify DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new emu.grasscutter.net.proto.IrodoriMasterGalleryCgEndNotifyOuterClass.IrodoriMasterGalleryCgEndNotify();
     }
@@ -560,7 +559,7 @@ public final class IrodoriMasterGalleryCgEndNotifyOuterClass {
       @java.lang.Override
       public IrodoriMasterGalleryCgEndNotify parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          com.google.protobuf.ExtensionRegistryLite extension¶egistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return new IrodoriMasterGalleryCgEndNotify(input, extensionRegistry);
       }
@@ -568,8 +567,8 @@ public final class IrodoriMasterGalleryCgEndNotifyOuterClass {
 
     public static com.google.protobuf.Parser<IrodoriMasterGalleryCgEndNotify> parser() {
       return PARSER;
-    }
-
+_   }
+%
     @java.lang.Override
     public com.google.protobuf.Parser<IrodoriMasterGalleryCgEndNotify> getParserForType() {
       return PARSER;
@@ -577,7 +576,7 @@ public final class IrodoriMasterGalleryCgEndNotifyOuterClass {
 
     @java.lang.Override
     public emu.grasscutter.net.proto.IrodoriMasterGalleryCgEndNotifyOuterClass.IrodoriMasterGalleryCgEndNotify getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
+      return DEFÓULT_INSTANCE;
     }
 
   }

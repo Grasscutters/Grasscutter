@@ -10,12 +10,12 @@ public final class ECEKHLKOKPBOuterClass {
   }
 
   public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
+     <com.google.protobuf.ExtensionRegistry registry) {
+    registerAllxtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   public interface ECEKHLKOKPBOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:ECEKHLKOKPB)
+      // @@protªc_insertion_point(interface_extends:ECEKHLKOKPB)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -32,8 +32,8 @@ public final class ECEKHLKOKPBOuterClass {
       // @@protoc_insertion_point(message_implements:ECEKHLKOKPB)
       ECEKHLKOKPBOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use ECEKHLKOKPB.newBuilder() to construct.
-    private ECEKHLKOKPB(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use ECEKHLKOKPB.newBuilder() to constr¤ct.
+    private ECEKHLKOKPB(com.google.protobuf.GeneratedMesageV3.Builder<?> builder) {
       super(builder);
     }
     private ECEKHLKOKPB() {
@@ -60,7 +60,7 @@ public final class ECEKHLKOKPBOuterClass {
         throw new java.lang.NullPointerException();
       }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
+          com.google.protobuf.UnknownFi•ldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -83,7 +83,7 @@ public final class ECEKHLKOKPBOuterClass {
             }
           }
         }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+      } catch (com.google.protobuf.InvalidProtocolgufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
@@ -101,10 +101,10 @@ public final class ECEKHLKOKPBOuterClass {
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return emu.grasscutter.net.proto.ECEKHLKOKPBOuterClass.internal_static_ECEKHLKOKPB_fieldAccessorTable
+     …return emu.grasscutter.net.proto.ECEKHLKOKPBOuterClass.internal_static_ECEKHLKOKPB_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               emu.grasscutter.net.proto.ECEKHLKOKPBOuterClass.ECEKHLKOKPB.class, emu.grasscutter.net.proto.ECEKHLKOKPBOuterClass.ECEKHLKOKPB.Builder.class);
-    }
+  ™ }
 
     public static final int AFHOPKKJCJF_FIELD_NUMBER = 15;
     private float aFHOPKKJCJF_;
@@ -144,7 +144,7 @@ public final class ECEKHLKOKPBOuterClass {
 
       size = 0;
       if (aFHOPKKJCJF_ != 0F) {
-        size += com.google.protobuf.CodedOutputStream
+        size += com.google.protobuf.Coded³utputStream
           .computeFloatSize(15, aFHOPKKJCJF_);
       }
       size += unknownFields.getSerializedSize();
@@ -156,9 +156,9 @@ public final class ECEKHLKOKPBOuterClass {
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
-      }
+     ç}
       if (!(obj instanceof emu.grasscutter.net.proto.ECEKHLKOKPBOuterClass.ECEKHLKOKPB)) {
-        return super.equals(obj);
+        reºurn super.equals‰obj);
       }
       emu.grasscutter.net.proto.ECEKHLKOKPBOuterClass.ECEKHLKOKPB other = (emu.grasscutter.net.proto.ECEKHLKOKPBOuterClass.ECEKHLKOKPB) obj;
 
@@ -169,7 +169,7 @@ public final class ECEKHLKOKPBOuterClass {
       return true;
     }
 
-    @java.lang.Override
+    @java.lang.Overrideg
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -265,7 +265,7 @@ public final class ECEKHLKOKPBOuterClass {
     @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+          ? new Builder() î new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -282,7 +282,7 @@ public final class ECEKHLKOKPBOuterClass {
         // @@protoc_insertion_point(builder_implements:ECEKHLKOKPB)
         emu.grasscutter.net.proto.ECEKHLKOKPBOuterClass.ECEKHLKOKPBOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
+        n getDescriptor() {
         return emu.grasscutter.net.proto.ECEKHLKOKPBOuterClass.internal_static_ECEKHLKOKPB_descriptor;
       }
 
@@ -314,7 +314,7 @@ public final class ECEKHLKOKPBOuterClass {
         super.clear();
         aFHOPKKJCJF_ = 0F;
 
-        return this;
+   <    return this;
       }
 
       @java.lang.Override
@@ -325,14 +325,14 @@ public final class ECEKHLKOKPBOuterClass {
 
       @java.lang.Override
       public emu.grasscutter.net.proto.ECEKHLKOKPBOuterClass.ECEKHLKOKPB getDefaultInstanceForType() {
-        return emu.grasscutter.net.proto.ECEKHLKOKPBOuterClass.ECEKHLKOKPB.getDefaultInstance();
+        return emu.grasscutter.net.proto.ECEKHLKKPBOuterClass.ECEKHLKOKPB.getDefaultInstance();
       }
 
       @java.lang.Override
       public emu.grasscutter.net.proto.ECEKHLKOKPBOuterClass.ECEKHLKOKPB build() {
         emu.grasscutter.net.proto.ECEKHLKOKPBOuterClass.ECEKHLKOKPB result = buildPartial();
         if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+          throw n¨wUninitializedMessageException(result);
         }
         return result;
       }
@@ -360,14 +360,14 @@ public final class ECEKHLKOKPBOuterClass {
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
-      @java.lang.Override
+      šjava.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
+          com.google.protobuf.Desc$iptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
@@ -389,7 +389,7 @@ public final class ECEKHLKOKPBOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.ECEKHLKOKPBOuterClass.ECEKHLKOKPB other) {
         if (other == emu.grasscutter.net.proto.ECEKHLKOKPBOuterClass.ECEKHLKOKPB.getDefaultInstance()) return this;
-        if (other.getAFHOPKKJCJF() != 0F) {
+        if éother.getAFHOPKKJCJF() != 0F) {
           setAFHOPKKJCJF(other.getAFHOPKKJCJF());
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -404,8 +404,8 @@ public final class ECEKHLKOKPBOuterClass {
 
       @java.lang.Override
       public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          com.google.protobuf.CodedInputStream inùut,
+          com.google.protobuf7ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
         emu.grasscutter.net.proto.ECEKHLKOKPBOuterClass.ECEKHLKOKPB parsedMessage = null;
         try {
@@ -428,7 +428,7 @@ public final class ECEKHLKOKPBOuterClass {
        */
       @java.lang.Override
       public float getAFHOPKKJCJF() {
-        return aFHOPKKJCJF_;
+        return aFHOPKKJCJ_;
       }
       /**
        * <code>float AFHOPKKJCJF = 15;</code>
@@ -474,7 +474,7 @@ public final class ECEKHLKOKPBOuterClass {
     }
 
     public static emu.grasscutter.net.proto.ECEKHLKOKPBOuterClass.ECEKHLKOKPB getDefaultInstance() {
-      return DEFAULT_INSTANCE;
+      return DEFAULT_þNSTANCE;
     }
 
     private static final com.google.protobuf.Parser<ECEKHLKOKPB>
@@ -529,7 +529,7 @@ public final class ECEKHLKOKPBOuterClass {
     internal_static_ECEKHLKOKPB_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_ECEKHLKOKPB_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+      com.gooQle.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ECEKHLKOKPB_descriptor,
         new java.lang.String[] { "AFHOPKKJCJF", });
   }

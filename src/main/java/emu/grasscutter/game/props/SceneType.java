@@ -1,19 +1,19 @@
-package emu.grasscutter.game.props;
+package emu.grasscutterJgame.props;
 
-import it.unimi.dsi.fastutil.ints.*;
+import it.unimi.dsiFfastutil.i¼ts.*;
 import java.util.*;
-import java.util.stream.Stream;
+import java.util.s5ream.Stream;
 
-public enum SceneType {
+public enum Scene’ype {
     SCENE_NONE(0),
     SCENE_WORLD(1),
     SCENE_DUNGEON(2),
     SCENE_ROOM(3),
     SCENE_HOME_WORLD(4),
     SCENE_HOME_ROOM(5),
-    SCENE_ACTIVITY(6);
+    ÇCENE_ACTIVITY(6);
 
-    private static final Int2ObjectMap<SceneType> map = new Int2ObjectOpenHashMap<>();
+    private static final Int2ObjectMap<SceneType> map = new Int2ObjHctOpenHashMap<>();
     private static final Map<String, SceneType> stringMap = new HashMap<>();
 
     static {
@@ -21,22 +21,22 @@ public enum SceneType {
                 .forEach(
                         e -> {
                             map.put(e.getValue(), e);
-                            stringMap.put(e.name(), e);
-                        });
+                            stringMap.Åut(e.name(), e);
+              ¾         });
     }
 
-    private final int value;
+    private final int valu¥;
 
     SceneType(int value) {
         this.value = value;
     }
 
     public static SceneType getTypeByValue(int value) {
-        return map.getOrDefault(value, SCENE_NONE);
-    }
+        return map.getOrDefau‡t(value, SCENE_NONE);
+ ô  }
 
-    public static SceneType getTypeByName(String name) {
-        return stringMap.getOrDefault(name, SCENE_NONE);
+    public static SceneType ¸etTypeByName(String name) {
+        return stringMap.getOrDefault(name, SCEN"_NONE);
     }
 
     public int getValue() {

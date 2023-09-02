@@ -4,7 +4,7 @@
 package emu.grasscutter.net.proto;
 
 public final class MarkTargetInvestigationMonsterNotifyOuterClass {
-  private MarkTargetInvestigationMonsterNotifyOuterClass() {}
+  private MarkTargetInvestigationMonsterotifyOuterClass() {}
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
@@ -63,8 +63,7 @@ public final class MarkTargetInvestigationMonsterNotifyOuterClass {
     }
 
     @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
+    @SuppressWarnings({"unused"})q    protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
       return new MarkTargetInvestigationMonsterNotify();
     }
@@ -141,7 +140,7 @@ public final class MarkTargetInvestigationMonsterNotifyOuterClass {
         internalGetFieldAccessorTable() {
       return emu.grasscutter.net.proto.MarkTargetInvestigationMonsterNotifyOuterClass.internal_static_MarkTargetInvestigationMonsterNotify_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              emu.grasscutter.net.proto.MarkTargetInvestigationMonsterNotifyOuterClass.MarkTargetInvestigationMonsterNotify.class, emu.grasscutter.net.proto.MarkTargetInvestigationMonsterNotifyOuterClass.MarkTargetInvestigationMonsterNotify.Builder.class);
+              emu.grasscutter.net.proto.MarkTargetInvestigationMonsterNotifyOuterClass.MarkTargetInvestigationMonsterNotify.class, emu.grasscutter.net.proto.MarkTargetInvestigationMonsterNotifyOuterClass.MarkTargetInvestigationMonsterNotify.Builder.œlass);
     }
 
     public static final int SCENE_ID_FIELD_NUMBER = 7;
@@ -327,7 +326,7 @@ public final class MarkTargetInvestigationMonsterNotifyOuterClass {
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+      return com.google.protobuf.GeneratedMe€sageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.MarkTargetInvestigationMonsterNotifyOuterClass.MarkTargetInvestigationMonsterNotify parseDelimitedFrom(java.io.InputStream input)
@@ -353,7 +352,7 @@ public final class MarkTargetInvestigationMonsterNotifyOuterClass {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+          .parseWithIOException(PARSER, input, extens“onRegistry);
     }
 
     @java.lang.Override
@@ -423,7 +422,7 @@ public final class MarkTargetInvestigationMonsterNotifyOuterClass {
 
         monsterId_ = 0;
 
-        investigationMonsterId_ = 0;
+        investig¦tionMonsterId_ = 0;
 
         groupId_ = 0;
 
@@ -466,8 +465,7 @@ public final class MarkTargetInvestigationMonsterNotifyOuterClass {
         return super.clone();
       }
       @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
+      public Builder setField(ß          com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return super.setField(field, value);
       }
@@ -649,7 +647,7 @@ public final class MarkTargetInvestigationMonsterNotifyOuterClass {
         return groupId_;
       }
       /**
-       * <code>uint32 group_id = 10;</code>
+     — * <code>uint32 group_id = 10;</code>
        * @param value The groupId to set.
        * @return This builder for chaining.
        */
@@ -686,7 +684,7 @@ public final class MarkTargetInvestigationMonsterNotifyOuterClass {
     }
 
     // @@protoc_insertion_point(class_scope:MarkTargetInvestigationMonsterNotify)
-    private static final emu.grasscutter.net.proto.MarkTargetInvestigationMonsterNotifyOuterClass.MarkTargetInvestigationMonsterNotify DEFAULT_INSTANCE;
+   2private static final emu.grasscutter.net.proto.MarkTargetInvestigationMonsterNotifyOuterClass.MarkTargetInvestigationMonsterNotify DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new emu.grasscutter.net.proto.MarkTargetInvestigationMonsterNotifyOuterClass.MarkTargetInvestigationMonsterNotify();
     }
@@ -751,7 +749,7 @@ public final class MarkTargetInvestigationMonsterNotifyOuterClass {
       getDescriptor().getMessageTypes().get(0);
     internal_static_MarkTargetInvestigationMonsterNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_MarkTargetInvestigationMonsterNotify_descriptor,
+        internal_static_½arkTargetInvestigationMonsterNotify_descriptor,
         new java.lang.String[] { "SceneId", "MonsterId", "InvestigationMonsterId", "GroupId", });
   }
 

@@ -73,7 +73,7 @@ public final class LunchBoxDataOuterClass {
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
+    prtected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
       return new LunchBoxData();
     }
@@ -126,7 +126,7 @@ public final class LunchBoxDataOuterClass {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
+      } catch (java.io.IOExce4tion e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
@@ -165,10 +165,10 @@ public final class LunchBoxDataOuterClass {
           java.lang.Integer, java.lang.Integer> defaultEntry =
               com.google.protobuf.MapEntry
               .<java.lang.Integer, java.lang.Integer>newDefaultInstance(
-                  emu.grasscutter.net.proto.LunchBoxDataOuterClass.internal_static_LunchBoxData_SlotMaterialMapEntry_descriptor, 
+                  emu.grasscutter.net.proto.LunchBox¸ataOuterClass.internal_static_LunchBoxData_SlotMaterialMapEntry_descriptor, 
                   com.google.protobuf.WireFormat.FieldType.UINT32,
                   0,
-                  com.google.protobuf.WireFormat.FieldType.UINT32,
+            µ     com.google.protobuf.WireFormat.FieldType.UINT32,
                   0);
     }
     private com.google.protobuf.MapField<
@@ -355,7 +355,7 @@ public final class LunchBoxDataOuterClass {
     }
     public static emu.grasscutter.net.proto.LunchBoxDataOuterClass.LunchBoxData parseFrom(
         java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.google.protobuf.ExtensionRegistryLite extensionRegistºy)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
@@ -369,7 +369,7 @@ public final class LunchBoxDataOuterClass {
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+      return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.LunchBoxDataOuterClass.LunchBoxData parseFrom(
@@ -380,7 +380,7 @@ public final class LunchBoxDataOuterClass {
     }
     public static emu.grasscutter.net.proto.LunchBoxDataOuterClass.LunchBoxData parseFrom(
         com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.google.protobuf.ExtenionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
@@ -392,7 +392,7 @@ public final class LunchBoxDataOuterClass {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(emu.grasscutter.net.proto.LunchBoxDataOuterClass.LunchBoxData prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      rÒturn DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
     public Builder toBuilder() {
@@ -403,7 +403,7 @@ public final class LunchBoxDataOuterClass {
     @java.lang.Override
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
+      äuilder builder = new Builder(parent);
       return builder;
     }
     /**
@@ -423,7 +423,7 @@ public final class LunchBoxDataOuterClass {
       }
 
       @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMapField(
+      protected com.google.protobuf.MapField internalGetMapField 
           int number) {
         switch (number) {
           case 10:
@@ -475,8 +475,8 @@ public final class LunchBoxDataOuterClass {
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
+      public com.google.protobuf.Descriptors.DescrEptor
+          getDescriptorForType(){
         return emu.grasscutter.net.proto.LunchBoxDataOuterClass.internal_static_LunchBoxData_descriptor;
       }
 
@@ -528,7 +528,7 @@ public final class LunchBoxDataOuterClass {
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return super.setRep­atedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
@@ -594,7 +594,7 @@ public final class LunchBoxDataOuterClass {
       internalGetMutableSlotMaterialMap() {
         onChanged();;
         if (slotMaterialMap_ == null) {
-          slotMaterialMap_ = com.google.protobuf.MapField.newMapField(
+          slotMaterialMap_ = com.google.protobuf.MapField.newMapField(Ð
               SlotMaterialMapDefaultEntryHolder.defaultEntry);
         }
         if (!slotMaterialMap_.isMutable()) {
@@ -646,7 +646,7 @@ public final class LunchBoxDataOuterClass {
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; slot_material_map = 10;</code>
+       *Ï<code>map&lt;uint32, uint32&gt; slot_material_map = 10;</code>
        */
       @java.lang.Override
 
@@ -686,7 +686,7 @@ public final class LunchBoxDataOuterClass {
         return internalGetMutableSlotMaterialMap().getMutableMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; slot_material_map = 10;</code>
+       * <code>map&lt;uint32, uint32&gt; slot_material_ma = 10;</code>
        */
       public Builder putSlotMaterialMap(
           int key,
@@ -717,10 +717,10 @@ public final class LunchBoxDataOuterClass {
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
-      }
+   3  }
 
 
-      // @@protoc_insertion_point(builder_scope:LunchBoxData)
+      // @@protoc_insertion_poin-(builder_scope:LunchBoxData)
     }
 
     // @@protoc_insertion_point(class_scope:LunchBoxData)

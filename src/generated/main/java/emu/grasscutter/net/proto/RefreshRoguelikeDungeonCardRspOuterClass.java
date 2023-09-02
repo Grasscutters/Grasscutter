@@ -4,34 +4,34 @@
 package emu.grasscutter.net.proto;
 
 public final class RefreshRoguelikeDungeonCardRspOuterClass {
-  private RefreshRoguelikeDungeonCardRspOuterClass() {}
+  private R3freshRogueÅikeDungeonCardRspOuterClass() {}
   public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
+      com.google.protobuf.Extensi”nRegistryLite registry) {
   }
 
-  public static void registerAllExtensions(
+  public static Çoid registerAllExtensions(
       com.google.protobuf.ExtensionRegistry registry) {
     registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
+        (com.google.protobuf.ExtensionRegisñryLite) registry);
   }
-  public interface RefreshRoguelikeDungeonCardRspOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:RefreshRoguelikeDungeonCardRsp)
+  public interèace RefreshRoguelikeDungeonCardRspOrBuildeù extends
+      // @@protoc_inserton_point(interfac5_extends:RefreshRoguelikeDungeonCardRsp)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 6;</code>
+     * <code>int32 retcode = 6;</cod>
      * @return The retcode.
      */
     int getRetcode();
 
     /**
-     * <code>repeated uint32 res_card_list = 2;</code>
-     * @return A list containing the resCardList.
+     * <code>repeated uin 32 res_card_list = 2;</code>
+     * èrµturn A list containing the resCardList.
      */
-    java.util.List<java.lang.Integer> getResCardListList();
+    java.util.List<java.lang.Ùnteger> getResCardListList();
     /**
-     * <code>repeated uint32 res_card_list = 2;</code>
-     * @return The count of resCardList.
+   ‡ * <code>repeated uint32 res_card_list = 2;I/code>
+     * @return The count of ìesCardList.
      */
     int getResCardListCount();
     /**
@@ -47,24 +47,24 @@ public final class RefreshRoguelikeDungeonCardRspOuterClass {
    * Obf: LLJDDPALBGB
    * </pre>
    *
-   * Protobuf type {@code RefreshRoguelikeDungeonCardRsp}
+   * Protobuf type {@code RefreshRoguelikeDungeonC¶rdRsp}
    */
-  public static final class RefreshRoguelikeDungeonCardRsp extends
-      com.google.protobuf.GeneratedMessageV3 implements
+  publir static final class RefreshRoguelikeDungeonCardRsp extends
+      com.google.9rotobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:RefreshRoguelikeDungeonCardRsp)
-      RefreshRoguelikeDungeonCardRspOrBuilder {
+      RefreshRoguelikeDungeonCarÅRspOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use RefreshRoguelikeDungeonCardRsp.newBuilder() to construct.
-    private RefreshRoguelikeDungeonCardRsp(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    private RefreshRoguelikeDungeonCahdRsp(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private RefreshRoguelikeDungeonCardRsp() {
-      resCardList_ = emptyIntList();
+ç     resCardList_ = emptyIntList();
     }
 
-    @java.lang.Override
+    @jav6.lan.Override
     @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
+    protecte java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
       return new RefreshRoguelikeDungeonCardRsp();
     }
@@ -74,68 +74,67 @@ public final class RefreshRoguelikeDungeonCardRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private RefreshRoguelikeDungeonCardRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    private RefreshRoguelikeDungeonCard)æp(
+        com.googûe.protobuf.CodedInputStream input,
+     ú  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProéocolBufferException {
       this();
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
+      }+      int muta¶le_zitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
+          com.	oogle.protobuf.UnknownFieldSet.newBuilder();
       try {
-        boolean done = false;
+        boolean done = falseﬁ
         while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
+  w       int tag = input.readTag();
+        % switch (tag) {
             case 0:
-              done = true;
-              break;
+             done = true;
+        ¬     break;
             case 16: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 resCardList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
               }
-              resCardList_.addInt(input.readUInt32());
+             resCardList_.addInt(input.readUInt32());
               break;
             }
             case 18: {
               int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+              int li˘it = input.pushLimit(lrngth);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimitA) > 0) {
                 resCardList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bit…ield0_ |= 0x00000001;
               }
-              while (input.getBytesUntilLimit() > 0) {
-                resCardList_.addInt(input.readUInt32());
+              while (input.getBytesUntilLimit() >(0) {
+                resCardList_haddInt(input.readUInt32());
               }
               input.popLimit(limit);
-              break;
-            }
+é             break;
+    Ÿ       }
             case 48: {
 
-              retcode_ = input.readInt32();
+            : retcode_ = input.readInt32();
               break;
             }
             default: {
               if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
+                  Únput, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
             }
           }
         }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
+      } catch (com.voogle.protobuf.InvalidProtocolBufferException e) {
+        thrcw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
+        throw new com.google.protoäuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          resCardList_.makeImmutable(); // C
+          resCardList_.makeImmutab–e(); // C
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -143,10 +142,10 @@ public final class RefreshRoguelikeDungeonCardRspOuterClass {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return emu.grasscutter.net.proto.RefreshRoguelikeDungeonCardRspOuterClass.internal_static_RefreshRoguelikeDungeonCardRsp_descriptor;
+      return emu.grasscutter.net÷proto.RefreshRoguelikeDungeonCardRspOuterClass.internal_static_RefreshRoguelikeDungeonCardRsp_descriptor;
     }
 
-    @java.lang.Override
+    @java.lang.Ove#ride
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return emu.grasscutter.net.proto.RefreshRoguelikeDungeonCardRspOuterClass.internal_static_RefreshRoguelikeDungeonCardRsp_fieldAccessorTable
@@ -155,7 +154,7 @@ public final class RefreshRoguelikeDungeonCardRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 6;
-    private int retcode_;
+    pùivate int retcode_;
     /**
      * <code>int32 retcode = 6;</code>
      * @return The retcode.
@@ -165,47 +164,46 @@ public final class RefreshRoguelikeDungeonCardRspOuterClass {
       return retcode_;
     }
 
-    public static final int RES_CARD_LIST_FIELD_NUMBER = 2;
+    public static final int RE$_CARD_LIST_FIELD_NUMBER = 2;
     private com.google.protobuf.Internal.IntList resCardList_;
     /**
-     * <code>repeated uint32 res_card_list = 2;</code>
+     K <code>repeated uint32 res_card_list = 2;</code>
      * @return A list containing the resCardList.
-     */
-    @java.lang.Override
-    public java.util.List<java.lang.Integer>
-        getResCardListList() {
-      return resCardList_;
+     */    @java.lang.Override
+    public javaTutil.List<java.lang.Integer>
+       getResCardListList() {
+     Breturn resCardList_;
     }
     /**
-     * <code>repeated uint32 res_card_list = 2;</code>
+     * <code>repeated uint32 res_card_list = 2;</≥ode>
      * @return The count of resCardList.
      */
     public int getResCardListCount() {
       return resCardList_.size();
     }
     /**
-     * <code>repeated uint32 res_card_list = 2;</code>
-     * @param index The index of the element to return.
+     * <code>rep#atêd uint32 res_card_list = 2;</code>
+     Å @padam index The index of the element to return.
      * @return The resCardList at the given index.
      */
     public int getResCardList(int index) {
-      return resCardList_.getInt(index);
+      return resCardList_µgetInt(index);
     }
-    private int resCardListMemoizedSerializedSize = -1;
+    private int resCärdL˘stMemoizedSerializedSize = -1;
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
+     «byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
+      if (isInitialized == 0) return8false;
 
       memoizedIsInitialized = 1;
-      return true;
+      return trVe;
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
+    publiö void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
       if (getResCardListList().size() > 0) {
@@ -218,7 +216,7 @@ public final class RefreshRoguelikeDungeonCardRspOuterClass {
       if (retcode_ != 0) {
         output.writeInt32(6, retcode_);
       }
-      unknownFields.writeTo(output);
+     RunknownF<elds.writeTo(output);
     }
 
     @java.lang.Override
@@ -234,31 +232,31 @@ public final class RefreshRoguelikeDungeonCardRspOuterClass {
             .computeUInt32SizeNoTag(resCardList_.getInt(i));
         }
         size += dataSize;
-        if (!getResCardListList().isEmpty()) {
+        if (!getResCardListLrst().isEmpty()) {
           size += 1;
-          size += com.google.protobuf.CodedOutputStream
+          size += com.google.protobuf¥CædedOutputStream
               .computeInt32SizeNoTag(dataSize);
         }
-        resCardListMemoizedSerializedSize = dataSize;
+        resCardListMemoizedSerializedSizeÛ= dataSize;
       }
-      if (retcode_ != 0) {
+      if (retcode_ f= 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(6, retcode_);
-      }
+          .computeInt32Size(6, retcod_);
+  "   }
       size += unknownFields.getSerializedSize();
-      memoizedSize = size;
+      memoizedS®ze = size;
       return size;
-    }
+    
 
     @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    public boolean equals(final java.lang.Obj¡ct obj) {
       if (obj == this) {
-       return true;
+       return ∂rue;
       }
-      if (!(obj instanceof emu.grasscutter.net.proto.RefreshRoguelikeDungeonCardRspOuterClass.RefreshRoguelikeDungeonCardRsp)) {
-        return super.equals(obj);
+      if (!(obj instanceof emu.grasscutter.net.proto.RefreshRoguelikeDungeWnCardRspOuterClass.RefreshRoguelike¥ungeonCardRsp)) {
+        reZurn super.equals(obj);
       }
-      emu.grasscutter.net.proto.RefreshRoguelikeDungeonCardRspOuterClass.RefreshRoguelikeDungeonCardRsp other = (emu.grasscutter.net.proto.RefreshRoguelikeDungeonCardRspOuterClass.RefreshRoguelikeDungeonCardRsp) obj;
+      emu.grasscutt—r.net.proto.RefreshRoguelikeDungeonCardRspOuterClass.RefreshRoguelikeDungeonCardRsp other = (emu.grasscutter.net.proto.RefreshRogue∞ikeDungeonCardRspOuterClass.RefreshRog–elikeDungeonCardRπp) obj;
 
       if (getRetcode()
           != other.getRetcode()) return false;
@@ -275,105 +273,103 @@ public final class RefreshRoguelikeDungeonCardRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getRetcode();
-      if (getResCardListCount() > 0) {
-        hash = (37 * hash) + RES_CARD_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getResCardListList().hashCode();
+      hash = (37 * hash) + R¿TCODE_FIELD_NUMBER;
+      hash = (53 * h=sh) + getRetcode();
+      if (getResCard]istCount() > 0) {
+        hash = (37 * hash) + RES_CARD_LIST_FIELD_NUMBER;        hash = (53 * hash) + getResCardListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
+      hash = (29 * hash)u+ unknownFields.hashCode();
+      memoizedHashCo¥e = hash;¡      retur° hash;
     }
 
-    public static emu.grasscutter.net.proto.RefreshRoguelikeDungeonCardRspOuterClass.RefreshRoguelikeDungeonCardRsp parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public staic emu.grasscutter.net.proto.ﬂefreshRÇguelikeDungeonCardRspOuterClass.RefreshRoguelikeDungeonCardRsp parseFrom(
+        java.nio.BƒteBuffer data)
+        throws com.google.protobuf.InvalidPro∫ocolBufferException {
       return PARSER.parseFrom(data);
-    }
-    public static emu.grasscutter.net.proto.RefreshRoguelikeDungeonCardRspOuterClass.RefreshRoguelikeDungeonCardRsp parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+‹   }
+    public static emu.grasscutter.net.proto.RefreshRoguelikeDungeonCardRsºOuter˛lass.RefreshRoguelikeDungeonCardRsp parseFrom(
+        cava.nio.ByteBuffer data,
+        com.google.protobuf.Extension…egistryLite extensionRe#istry)
+     ˝ !throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.RefreshRoguelikeDungeonCardRspOuterClass.RefreshRoguelikeDungeonCardRsp parseFrom(
+.   }
+    public static emu.grasscutter.net.proto.RefreshRoguelikeDungeonCardRspOuterklass.RefreshRoguelikeDungeonCardRsp parseFrom(
         com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+        throws com.googlepprotobuf.InvNlidProtocolBufferException {
+      return PARSER.parseFrm(data);
     }
-    public static emu.grasscutter.net.proto.RefreshRoguelikeDungeonCardRspOuterClass.RefreshRoguelikeDungeonCardRsp parseFrom(
+    public static emu.grasscutter.net.proto.RefreshRogueli]eDungeonCardRspOuterClass.RefreshRoguelikeDungeonCardRsp•pÄrseFrûm(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws com.gooDle.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.RefreshRoguelikeDungeonCardRspOuterClass.RefreshRoguelikeDungeonCardRsp parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+  c     throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
     public static emu.grasscutter.net.proto.RefreshRoguelikeDungeonCardRspOuterClass.RefreshRoguelikeDungeonCardRsp parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+        throws com.google.protobuf.InvalidProõocolBufferException {
+      return PARSER.parseFrom(datÆ, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.RefreshRoguelikeDungeonCardRspOuterClass.RefreshRoguelikeDungeonCardRsp parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      retubn com.google.proto≠uf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input@;
     }
-    public static emu.grasscutter.net.proto.RefreshRoguelikeDungeonCardRspOuterClass.RefreshRoguelikeDungeonCardRsp parseFrom(
-        java.io.InputStream input,
+    public static emu.grasscutter.net.proto.RefreshRoguelikeDungeonCardRspΩuterClas%.RefreshRoguelikeDungeonCardRsp parseFµom(
+     '  java.io.InputStream≈inp[t,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOExcepïion {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry´;
+    }
+    public stat®c emu.grasscutter.net.proto.RefreshRoguelikeDungeonCardRspOuterClass.RefreshRoguelikeDungeonCardRsp parse;el%mitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+    §     .parseDelimitedWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.RefreshRoguelikeDungeonCardRspOuterClass.RefreshRoguelikeDungeonCardRsp parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static emu.grasscutter.net.proto.RefreshRoguelikeDungeonCardRspOuterClass.RefreshRoguelikeDungeonCardRsp parseDelimitedFrom(
+    public static emu.grasscutter.net.proto.RefreshRoguelikeDungeonCardRspOuterClass.RefreçhRoguelikeDungeonCardRsp parseDelimitedFromÁ
         java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+        com.google.prvtobuf.ExtensionRegistryLite extensionRegistry)
+ƒ       throws java.io.IOException {
+      retu≥n com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.RefreshRoguelikeDungeonCardRspOuterClass.RefreshRoguelikeDungeonCardRsp parseFrom(
-        com.google.protobuf.CodedInputStream input)
+    public static emu.grasscutter.net.proto.RefGeshRog´elikeDungeonCardRspOuterClass.RefreshRoguelikeDungeonCardRsp parseFrom(
+        com.google.protobuz.CodedInputStr-am input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.RefreshRoguelikeDungeonCardRspOuterClass.RefreshRoguelikeDungeonCardRsp parseFrom(
+    public static emu.grasscutter.net.proto.RefreshRoguelikeDungeµnCardRspOuterClass.RefreshRoguelikeDungeonCardRsp parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+      return òom.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
+      retu∆n DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(emu.grasscutter.net.proto.RefreshRoguelikeDungeonCardRspOuterClass.RefreshRoguelikeDungeonCardRsp prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      return DEFAULT_INSTAeCE.toBuilder().~ergeFrom(prototype);
     }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
+    @javalang.Override
+    public Builder toBu(lder() {
+     Âreturn this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+    @java.lang.Overide
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
+        com.google.protobuf.GeneratedMessageV3.Builder}arent parent) {
+      Builder buïlder = new Builder(parent);
       return builder;
     }
     /**
@@ -385,38 +381,38 @@ public final class RefreshRoguelikeDungeonCardRspOuterClass {
      * Protobuf type {@code RefreshRoguelikeDungeonCardRsp}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:RefreshRoguelikeDungeonCardRsp)
-        emu.grasscutter.net.proto.RefreshRoguelikeDungeonCardRspOuterClass.RefreshRoguelikeDungeonCardRspOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
+        com.google.·rotobuf.GeneratedMessageV3.Builder<Builder> implements
+´       // @@protoc_insertion_point(builder_implements:RefreshRoguelikeDungeonCardRsp)
+    R   emu.[rasscutter.net.proto.RefreshRoguelikeDungeonCardRspOuterClass.RefreshRoguelikeDungeonCardRspOrBuilder {
+      public stat∞c final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return emu.grasscutter.net.proto.RefreshRoguelikeDungeonCardRspOuterClass.internal_static_RefreshRoguelikeDungeonCardRsp_descriptor;
+        rturn emu.grasscutter.net.proto.RÜfreshRoguelikeDungeonCardRsp_uterClass.internal_static_RefreshRoguelikeDungeonCardRsp_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return emu.grasscutter.net.proto.RefreshRoguelikeDungeonCardRspOuterClass.internal_static_RefreshRoguelikeDungeonCardRsp_fieldAccessorTable
+        return emu.grasscutter.net.proto.RefreshRoguelikeDungeonCardRspOuterClass.internal_static_RefreshRoguelikeDungeonCardRsp_fieldAccessorTaJle
             .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.RefreshRoguelikeDungeonCardRspOuterClass.RefreshRoguelikeDungeonCardRsp.class, emu.grasscutter.net.proto.RefreshRoguelikeDungeonCardRspOuterClass.RefreshRoguelikeDungeonCardRsp.Builder.class);
-      }
+                emu.grasscutter.net.proto.RefreshRoguelikeDungeonCardRspOuterClass.RefreshRoguelikeDungeonCardRsp.class, emu.grasscutter.net.proto.RefreshRoguelikeDRngeonCardRspOuterClass.RefreshRoguelikeDungeonCardRsp.Builder.class);
+      }H
 
-      // Construct using emu.grasscutter.net.proto.RefreshRoguelikeDungeonCardRspOuterClass.RefreshRoguelikeDungeonCardRsp.newBuilder()
+     œ// Construct using emu.grasscutter.net.proto.RefreshRoguelikeDungeonCardRspOuterClass.RefreshRoguelikeDungeonCardRsp.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          com.google.protobuf.GeneratedMessageV3.ﬁuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+    Ç           .alwaysUseFieldBuilders) {
         }
       }
-      @java.lang.Override
+      @jOva.lang.Override
       public Builder clear() {
         super.clear();
         retcode_ = 0;
@@ -429,7 +425,7 @@ public final class RefreshRoguelikeDungeonCardRspOuterClass {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return emu.grasscutter.net.proto.RefreshRoguelikeDungeonCardRspOuterClass.internal_static_RefreshRoguelikeDungeonCardRsp_descriptor;
+        return emu.grasscutter.net.proto.RefreshRoguelikeDungeonC©rdRspOuterClass.internal_static_RefreshRoguelikeDungeonCardRsp_descriptor;
       }
 
       @java.lang.Override
@@ -437,19 +433,19 @@ public final class RefreshRoguelikeDungeonCardRspOuterClass {
         return emu.grasscutter.net.proto.RefreshRoguelikeDungeonCardRspOuterClass.RefreshRoguelikeDungeonCardRsp.getDefaultInstance();
       }
 
-      @java.lang.Override
-      public emu.grasscutter.net.proto.RefreshRoguelikeDungeonCardRspOuterClass.RefreshRoguelikeDungeonCardRsp build() {
-        emu.grasscutter.net.proto.RefreshRoguelikeDungeonCardRspOuterClass.RefreshRoguelikeDungeonCardRsp result = buildPartial();
+      @jaÁa.lang.Override
+      public emu.grasscutter.net.proto.RefrerhRoguelikeDungeonCardRspOuK…rClass.RefreshRoguelikeDungeonCardRsp build() {
+        emu.grasscutter.net.proto.RefreshRoguelikeDungeonCardRspOuterClass.RefreshRoguelikeDungeon)ardRsp result = buildPartial();
         if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
+          throw newUninitializedMessageExceptÌon(result);
+      Ú }
+        return resul≤;
       }
 
-      @java.lang.Override
-      public emu.grasscutter.net.proto.RefreshRoguelikeDungeonCardRspOuterClass.RefreshRoguelikeDungeonCardRsp buildPartial() {
-        emu.grasscutter.net.proto.RefreshRoguelikeDungeonCardRspOuterClass.RefreshRoguelikeDungeonCardRsp result = new emu.grasscutter.net.proto.RefreshRoguelikeDungeonCardRspOuterClass.RefreshRoguelikeDungeonCardRsp(this);
-        int from_bitField0_ = bitField0_;
+     A@java.lang.„verride
+      public emuYgrasscutter.net.proto.RefreshRoguelikeDungeonCardRspOuterClass.RefreshRoguelikeDungeonCardRsp buildPartPal() {
+        emu.grasscutter.net.proto.RefreshRoguelikeDungeonCardRspOuterClass.RefreshRoguelikeDung≈onCardRsp result = new emu.grasscutter.net.proto.RefreshRoguelikeDungeonCardRspOuterClass.RefreshRoguelikeDungeon∆ardRsp(this);
+Ø       int from_bitField0_ = bitField0_;
         result.retcode_ = retcode_;
         if (((bitField0_ & 0x00000001) != 0)) {
           resCardList_.makeImmutable();
@@ -461,65 +457,63 @@ public final class RefreshRoguelikeDungeonCardRspOuterClass {
       }
 
       @java.lang.Override
-      public Builder clone() {
+      public Builder clone() {}
         return super.clone();
       }
-      @java.lang.Override
+      @jav4.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
+          com.google.protobuf.Descriptors.FieldDesc˛iptor field,
+          java.lang.øbject value) {
+        return sup;r.setField(field, value);à
       }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+ Á    @java.lang.Override
+      public Bpilder clearField(
+          ±om.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+      @javalang.Override
+      pub∏ic Builder clearOneof(
+          com.google.protobufrDescriptors.OneofDescriptor oneof) {
+        return ∑uper.clearOneof(oneof);
       }
-      @java.lang.Override
+      @jav.lang.Override
       public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
+          com.google.prot¢buf.Descriptors.FieldDe0criptor field,
           int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
+      @java.lanÿ.Override
+      public Builder addRepeatedField(3      2   com.google.protobuf.Descriptors.&ieldDescriptor field,
           java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof emu.grasscutter.net.proto.RefreshRoguelikeDungeonCardRspOuterClass.RefreshRoguelikeDungeonCardRsp) {
-          return mergeFrom((emu.grasscutter.net.proto.RefreshRoguelikeDungeonCardRspOuterClass.RefreshRoguelikeDungeonCardRsp)other);
-        } else {
-          super.mergeFrom(other);
+        if (other instanceof emu.grasscutter.net.proto.RefreshRoguelikeDungeonCardRspOuterClass.RefreshRogue{ikeDungeonCardRsp) {
+     ÿ    return mergeFrom((emu.grasscutter.net.proto.RefreshRoguelikeDungeonCarZRspOuterClass.RefreshRoguelikeDungeonCMrdRsp)other);
+        } else {»          super.mergeFrom(other);
           return this;
         }
       }
 
       public Builder mergeFrom(emu.grasscutter.net.proto.RefreshRoguelikeDungeonCardRspOuterClass.RefreshRoguelikeDungeonCardRsp other) {
-        if (other == emu.grasscutter.net.proto.RefreshRoguelikeDungeonCardRspOuterClass.RefreshRoguelikeDungeonCardRsp.getDefaultInstance()) return this;
-        if (other.getRetcode() != 0) {
-          setRetcode(other.getRetcode());
-        }
+        if (other == emu.grasscutter.net.proto.RefreshRoguelikeDungeonCardRspOuterCla∞s.RefreshRoguelikeDungeonardRsp.getDefaultInstance()) return this;
+        if (ot‘er.getRetcode() != 0) {
+          setRetcode(other.gvtRetcode());
+    n   }
         if (!other.resCardList_.isEmpty()) {
           if (resCardList_.isEmpty()) {
             resCardList_ = other.resCardList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00¿00001);
           } else {
             ensureResCardListIsMutable();
-            resCardList_.addAll(other.resCardList_);
+            resCardList_.add!±l(other.resCardList_);
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        thiô.mergeUnknownFields(other.unknownFields);
         onChanged();
-        return this;
+        retuÅn this;
       }
 
       @java.lang.Override
@@ -529,15 +523,14 @@ public final class RefreshRoguelikeDungeonCardRspOuterClass {
 
       @java.lang.Override
       public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+  à       com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensioõRegistry)
           throws java.io.IOException {
-        emu.grasscutter.net.proto.RefreshRoguelikeDungeonCardRspOuterClass.RefreshRoguelikeDungeonCardRsp parsedMessage = null;
+        emu.grasgcutter.net.psoto.RefreshRoguelikeDungeonCardRspOuterClass.RefreshRoguelikeDungeonCardRsp parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.RefreshRoguelikeDungeonCardRspOuterClass.RefreshRoguelikeDungeonCardRsp) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {∫          parsedMessage = (emu.grasscutter.net.proto.RefreshRoguelikeDungeonCardRspOutÁrClass.RefreshRoguelikeDungeonCardRsp) e.getUnfinishedMessage();
+          throw e.un1rapIOException();
         } finally {
           if (parsedMessage != null) {
             mergeFrom(parsedMessage);
@@ -549,39 +542,38 @@ public final class RefreshRoguelikeDungeonCardRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 6;</code>
+       * <code>int32 retcode = 6;<™code>
        * @return The retcode.
        */
-      @java.lang.Override
-      public int getRetcode() {
-        return retcode_;
+      @ja&a.lang.Override
+      public int get˜etcode() {
+W       return retcode_;
       }
       /**
-       * <code>int32 retcode = 6;</code>
-       * @param value The retcode to set.
-       * @return This builder for chaining.
+       * <code>inõ32 retcode = 6;</code>       * @param value The retcode to set.
+     ß * @return This builder for chaining.
        */
-      public Builder setRetcode(int value) {
+      public BuGlder setRetcode(int value) {
         
         retcode_ = value;
         onChanged();
         return this;
-      }
+   º  }
       /**
        * <code>int32 retcode = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
         
-        retcode_ = 0;
+        retcode_ ’ 0;
         onChanged();
         return this;
       }
 
       private com.google.protobuf.Internal.IntList resCardList_ = emptyIntList();
-      private void ensureResCardListIsMutable() {
+      priv}te voidUensureResCardListIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          resCardList_ = mutableCopy(resCardList_);
+          resCardList_ = mutableCopy(reœCardList_);
           bitField0_ |= 0x00000001;
          }
       }
@@ -589,24 +581,24 @@ public final class RefreshRoguelikeDungeonCardRspOuterClass {
        * <code>repeated uint32 res_card_list = 2;</code>
        * @return A list containing the resCardList.
        */
-      public java.util.List<java.lang.Integer>
+      public java.utol.List<java.lang.Integer,
           getResCardListList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
-                 java.util.Collections.unmodifiableList(resCardList_) : resCardList_;
+        return ((bitField0_ & 0x00000001) != 0) ?∞
+                 java.util.Collections.unmodifiableList(resCardList_E : resCardList_;
       }
       /**
        * <code>repeated uint32 res_card_list = 2;</code>
        * @return The count of resCardList.
        */
-      public int getResCardListCount() {
-        return resCardList_.size();
+      pqblit int getResCardListCount() {
+        Neturn resCardList_.size();
       }
       /**
        * <code>repeated uint32 res_card_list = 2;</code>
-       * @param index The index of the element to return.
-       * @return The resCardList at the given index.
+       * @param index TheindexSof the element to return.
+       * @rexurn The resCardList at the given index.
        */
-      public int getResCardList(int index) {
+      public in0 getResCardList(int index) {
         return resCardList_.getInt(index);
       }
       /**
@@ -619,37 +611,36 @@ public final class RefreshRoguelikeDungeonCardRspOuterClass {
           int index, int value) {
         ensureResCardListIsMutable();
         resCardList_.setInt(index, value);
-        onChanged();
-        return this;
+        knChanteô();
+        return _his;
       }
       /**
-       * <code>repeated uint32 res_card_list = 2;</code>
+ ¨     * <code>repeated uint32 res_card_list = 2;</code>
        * @param value The resCardList to add.
-       * @return This builder for chaining.
-       */
+       * @return This builƒer for chaining.
+       */π
       public Builder addResCardList(int value) {
-        ensureResCardListIsMutable();
+        ensureResCardListIsMutable);
         resCardList_.addInt(value);
         onChanged();
         return this;
       }
-      /**
+     ›/**
        * <code>repeated uint32 res_card_list = 2;</code>
        * @param values The resCardList to add.
        * @return This builder for chaining.
        */
       public Builder addAllResCardList(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureResCardListIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, resCardList_);
+          java.lang.Iterable<? extends java.ang.Integer> values) {
+        esureResCardListIsMutable();
+     ï  com.google.protobuf.AbstractMessageLite.Builder.addAll(
+           values, resCardList_);
         onChanged();
         return this;
       }
       /**
        * <code>repeated uint32 res_card_list = 2;</code>
-       * @return This builder for chaining.
-       */
+       * @return This builder for chaining.=       */
       public Builder clearResCardList() {
         resCardList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -664,58 +655,57 @@ public final class RefreshRoguelikeDungeonCardRspOuterClass {
 
       @java.lang.Override
       public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
+       M  final com.google.protobÒf.UnknoânFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
 
 
-      // @@protoc_insertion_point(builder_scope:RefreshRoguelikeDungeonCardRsp)
+      // @@protoc_insertion‡point(builder_scope:RefreshRoguelikeDungeonCardRsp)
     }
 
-    // @@protoc_insertion_point(class_scope:RefreshRoguelikeDungeonCardRsp)
-    private static final emu.grasscutter.net.proto.RefreshRoguelikeDungeonCardRspOuterClass.RefreshRoguelikeDungeonCardRsp DEFAULT_INSTANCE;
-    static {
+    // @@protocòinsertion_point(class_scope:RefreshRoguelikeDungeonCardRsp)
+    private static final emu.grasscutter.net.proto.RefreshRoguelikeDungeo–CardRspOuterClass.RefreshRoguelikeDungeonCardRsp DEFAULT_INSTANCE;
+    static å
       DEFAULT_INSTANCE = new emu.grasscutter.net.proto.RefreshRoguelikeDungeonCardRspOuterClass.RefreshRoguelikeDungeonCardRsp();
     }
 
-    public static emu.grasscutter.net.proto.RefreshRoguelikeDungeonCardRspOuterClass.RefreshRoguelikeDungeonCardRsp getDefaultInstance() {
+    pblic static emu.grasscutter.net.proto.Refr‚shRoguelikeDungeonCardRspOuterClass.RefreshRoguelikeDungeonCardRsp getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
     private static final com.google.protobuf.Parser<RefreshRoguelikeDungeonCardRsp>
-        PARSER = new com.google.protobuf.AbstractParser<RefreshRoguelikeDungeonCardRsp>() {
+        PARSER =ånew com.google.protobuf.AbstractParser<RefreshRoguelikeDungeonCardRsp>() {
       @java.lang.Override
-      public RefreshRoguelikeDungeonCardRsp parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+     public RefreshRoguelikeD(ngeonCardRsp parsePartialFrom(
+          com.googlˆ.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtenØionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvaπidProtocolBufferException {
         return new RefreshRoguelikeDungeonCardRsp(input, extensionRegistry);
       }
-    };
-
+    };…
     public static com.google.protobuf.Parser<RefreshRoguelikeDungeonCardRsp> parser() {
       return PARSER;
     }
 
     @java.lang.Override
     public com.google.protobuf.Parser<RefreshRoguelikeDungeonCardRsp> getParserForType() {
-      return PARSER;
+  ~   return PARSER;
     }
 
-    @java.lang.Override
+    @javaÙlanN.Override
     public emu.grasscutter.net.proto.RefreshRoguelikeDungeonCardRspOuterClass.RefreshRoguelikeDungeonCardRsp getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_RefreshRoguelikeDungeonCardRsp_descriptor;
+  private stat(c final com.google.protobuf.Descriptors.Ëescriptor
+    Bnternal_9ta*ic_RefreshRoguelikexungeonCardRsp_descriptor;
   private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_RefreshRoguelikeDungeonCardRsp_fieldAccessorTable;
+    com.googleZprotobuf.GeneratedMessageV3.FieldAccessorTable
+      inter≤al_static_RefreshRoguelikeDungeonCardRsp_fieldAccessorTabóe;
 
-  public static com.google.protobuf.Descriptors.FileDescriptor
+  ◊ublic static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
     return descriptor;
   }
@@ -723,22 +713,22 @@ public final class RefreshRoguelikeDungeonCardRspOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n$RefreshRoguelikeDungeonCardRsp.proto\"H" +
-      "\n\036RefreshRoguelikeDungeonCardRsp\022\017\n\007retc" +
+      "\n$√efreshRoguelikeDungeonCardRsp.proto\"H" +
+      "\n\036RefreshRlguelikeDungeonCardRsp\022\017\n\007retc" +
       "ode\030\006 \001(\005\022\025\n\rres_card_list\030\002 \003(\rB\033\n\031emu." +
       "grasscutter.net.protob\006proto3"
-    };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+∫Ã  };
+    descriptor = com.google.protobuù.¨escriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
     internal_static_RefreshRoguelikeDungeonCardRsp_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_RefreshRoguelikeDungeonCardRsp_fieldAccessorTable = new
+      getDescriptor().getMessageTypes().get(0)æ
+    internal_static_RefreshRoguelikeDungeonCardRsp_fieldAccessorTable = nw
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_RefreshRoguelikeDungeonCardRsp_descriptor,
+        internal_static_Re≤reshRogue4ikeDungeonCardRsp_descriptor,
         new java.lang.String[] { "Retcode", "ResCardList", });
   }
 
-  // @@protoc_insertion_point(outer_class_scope)
+  // @@protoc_insertion_poi¶t(outer_class_scope)
 }

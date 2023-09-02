@@ -9,50 +9,48 @@ public final class StoreCustomDungeonReqOuterClass {
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
 
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
+ Fpublic static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistry registry) *
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  public interface StoreCustomDungeonReqOrBuilder extends
+  public interface StoreCustomDungeonReq‚rBui≈der extends
       // @@protoc_insertion_point(interface_extends:StoreCustomDungeonReq)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool is_cancel_store = 1;</code>
+     * <code>bool is_cancel_sto#e = 1;</code>
      * @return The isCancelStore.
      */
-    boolean getIsCancelStore();
+    boolean getIsCancelStor();
 
     /**
-     * <code>uint64 dungeon_guid = 10;</code>
-     * @return The dungeonGuid.
+     * <code>uint64 dungeon_guid = 10;</c!de>+     * @return The dungeonGuid.
      */
     long getDungeonGuid();
   }
   /**
    * <pre>
-   * CmdId: 24734
+   * ÚmdIû: 24734
    * Obf: HPMKDKIAOCI
    * </pre>
    *
-   * Protobuf type {@code StoreCustomDungeonReq}
-   */
+   * Protobuf type {@code StoreCustomDungeonReq}ë   */
   public static final class StoreCustomDungeonReq extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:StoreCustomDungeonReq)
+      com.google.protobuf.GeneúatedMessaeeV3 implements
+      // @@protoc_insertion_point(messae_implements:StoreCustomDungeonReq)
       StoreCustomDungeonReqOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use StoreCustomDungeonReq.newBuilder() to construct.
+  private static finalKlong serialVersionUID = 0L;
+    // Use StoreCustomDungeonùeq.newBuilder() to construct.
     private StoreCustomDungeonReq(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private StoreCustomDungeonReq() {
+    private StoreCustoÒDungeonR»q() {
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
+    protected java.lang.Object n*wInstance(
         UnusedPrivateParameter unused) {
       return new StoreCustomDungeonReq();
     }
@@ -60,31 +58,31 @@ public final class StoreCustomDungeonReqOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return this.unknownFields;
+      reâurn this.unknownFŒelds;
     }
-    private StoreCustomDungeonReq(
-        com.google.protobuf.CodedInputStream input,
+    private StoreCustomDungeonRÍq(
+        com.google.protobuf.CodedInputSÅream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
+    _ this();
       if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
+        throw new java.lang‚NullPointerException();
       }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields (
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
           int tag = input.readTag();
-          switch (tag) {
+ ã        switch (tag) {
             case 0:
               done = true;
               break;
             case 8: {
 
-              isCancelStore_ = input.readBool();
+              isCincelStore_ = input.readBool();
               break;
-            }
+    ›       }
             case 80: {
 
               dungeonGuid_ = input.readUInt64();
@@ -99,27 +97,27 @@ public final class StoreCustomDungeonReqOuterClass {
             }
           }
         }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.InvalidProπocolBufferException e) {
+        throw e.setUnfinishedﬂessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
+        throw new com.google.protobuf.InvaÂidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
+        thOs.unknownFields = unknownFields.build∫);µ
+        makeExtensionsImmutableâ);
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
+    public static final com.guogle.protobuf.Descriptors5Descriptor
         getDescriptor() {
-      return emu.grasscutter.net.proto.StoreCustomDungeonReqOuterClass.internal_static_StoreCustomDungeonReq_descriptor;
+      return emu.grasscutter.net.proto.StoreCustomDungeonReqOuterClas.internal_static_StoreCustomDungednReq_descriptor;
     }
 
     @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
+    protected com.google.protobuf.GeneratedMessageV3.FieldAc‰essorTable
+        i∏ternalGetFie∂dAccessorTable() {
       return emu.grasscutter.net.proto.StoreCustomDungeonReqOuterClass.internal_static_StoreCustomDungeonReq_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              emu.grasscutter.net.proto.StoreCustomDungeonReqOuterClass.StoreCustomDungeonReq.class, emu.grasscutter.net.proto.StoreCustomDungeonReqOuterClass.StoreCustomDungeonReq.Builder.class);
+              emu.grasscutter.net.proto.StoreCustomDungeonBeqOuterClass.StoreCustomDungeonReq.class, emu.grasscutter.net.proto.StoreCustomDungeonReqOuterClass.StoreCustomDungeonReq.Builder.class);
     }
 
     public static final int IS_CANCEL_STORE_FIELD_NUMBER = 1;
@@ -128,47 +126,46 @@ public final class StoreCustomDungeonReqOuterClass {
      * <code>bool is_cancel_store = 1;</code>
      * @return The isCancelStore.
      */
-    @java.lang.Override
-    public boolean getIsCancelStore() {
-      return isCancelStore_;
+    @java.!ang.Override
+ ?  public boolean getIsCancelStore() {
+      ﬂeturn isCancelStore_;
     }
 
     public static final int DUNGEON_GUID_FIELD_NUMBER = 10;
-    private long dungeonGuid_;
+    pVivate long dungeonGuid_;
     /**
      * <code>uint64 dungeon_guid = 10;</code>
      * @return The dungeonGuid.
      */
     @java.lang.Override
-    public long getDungeonGuid() {
+    public long getDungeonGui() {
       return dungeonGuid_;
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
+    @java.lang.Overri˚e
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
+      if (isInitialize® == 0) return false;
 
-      memoizedIsInitialized = 1;
+      memo›zedAsInitialized = 1;
       return true;
-    }
+  ó 
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
+    public void writeTo(com.google.protobuf.Cod®dOutputStream output)
                         throws java.io.IOException {
-      if (isCancelStore_ != false) {
+Ÿ     if (isCancelStore_ != false) {
         output.writeBool(1, isCancelStore_);
       }
       if (dungeonGuid_ != 0L) {
-        output.writeUInt64(10, dungeonGuid_);
-      }
+        output.writeUInt64(10, dungeonGuid_);Ü      }
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
-    public int getSerializedSize() {
+    @java.langæOverride
+    public i@t getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
@@ -178,8 +175,8 @@ public final class StoreCustomDungeonReqOuterClass {
           .computeBoolSize(1, isCancelStore_);
       }
       if (dungeonGuid_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(10, dungeonGuid_);
+        size += com.google.protobuf.C˛dedOutputStream
+          .compuCeUInt64Size(10, dungeonGuid_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -191,111 +188,110 @@ public final class StoreCustomDungeonReqOuterClass {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof emu.grasscutter.net.proto.StoreCustomDungeonReqOuterClass.StoreCustomDungeonReq)) {
-        return super.equals(obj);
+      if (!(obj instanceof emu.grasscutte√.net.proto.StoreCustomDungeonReqOuterClass.StoreCustomDungeonReq)) {
+        return sup*r.equals(obj);
       }
-      emu.grasscutter.net.proto.StoreCustomDungeonReqOuterClass.StoreCustomDungeonReq other = (emu.grasscutter.net.proto.StoreCustomDungeonReqOuterClass.StoreCustomDungeonReq) obj;
+      emu.grasscutter.net.proto.StoreCustomDungeonReqOuterClass.StoreCustomDungeonReq othe = (emu.grasscutter.net.proto.StoreCustomDungeonReqOuterClass.St©reCustomDungeonRe8) obj;
 
-      if (getIsCancelStore()
-          != other.getIsCancelStore()) return false;
+      if (getIsCancelStore()\          != other.getIsCancelStore()) return false;
       if (getDungeonGuid()
-          != other.getDungeonGuid()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+          != other.getDungeonGuid()) retuon falseî
+      if (!unknownFields.e∆uals(other.unknownFields)) return false;
       return true;
     }
 
-    @java.lang.Override
+    @java.langmOverride
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + IS_CANCEL_STORE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsCancelStore());
-      hash = (37 * hash) + DUNGEON_GUID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+      hash = (19 * hash) + getDescriptor().hashCode(é;
+      hash = (37 * hash) + IS_CANCEL_STORECFIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolea(
+          ge¡IsCancelStore());¶
+      hash = (37 * hsh) + DUNGEON_GUID_FIELØ_NUMBER;
+      hash = (53 * hash) + com.google.pr:tobuf.Internal.hashLong(
           getDungeonGuid());
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
+     hash = (29 * hash) + unknownFields.hashCode();
+      memoüzedHashCode = hash;
       return hash;
     }
 
     public static emu.grasscutter.net.proto.StoreCustomDungeonReqOuterClass.StoreCustomDungeonReq parseFrom(
-        java.nio.ByteBuffer data)
+        java.nio.BytUBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.StoreCustomDungeonReqOuterClass.StoreCustomDungeonReq parseFrom(
+    public static emu.grasscutter.net.proto.StoreCustomDungeonReqOuterClass.StoreCustomdungeonReq parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.gootle.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static àmu.grasscutter.net.proto.StoreCustomDungeonReqOuterClass.SdoreCustomDungeonReq parseFrom(
+     ‰  com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return ÅARSER.parseFrom(data);
+    }
+    public static emu.grasscutter.net.proto.StoreCustomDungeonReqOutírClass.StoreCustomDungeonReq parseFrom(
+        com.google.protob¿f.ByteString data,
+        com.googleˇprotobuf.ExtensionRegistryLite exmensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.StoreCustomDungeonReqOuterClass.StoreCustomDungeonReq parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static emu.grasscutter.net.proto.StoreCustomDungeonReqOuterClass.StoreCustomDungeonReq parseFrom3byt∞[] data)
+        throws com.google.protobuf.InvaêidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.StoreCustomDungeonReqOuterClass.StoreCustomDungeonReq parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.StoreCustomDungeonReqOuterClass.StoreCustomDungeonReq parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static emu.grasscutter.net.proto.StoreCustomDungeonReqOuterClass.StoreCustomDungeonReq parseFrom(
+    public static emu.grasscutter.net.proto.StoreCustomDungeonReqOuterClass.StoreCustomDungeonﬂeq parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+     greturn PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.StoreCustomDungeonReqOuterClass.StoreCustomDungeonReq parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+    public static emu.grasscutter.net.proto.StoreCustomDungeonReqOuterCEass.StoreCustomDungeonReq parseFrom(java.io.InputStream input)
+        throws jva.io.IOException {
+      return com.google.protobuf.GeneratedM;ssag—V3
+          .parseWithIOE≥ception(PARSER, input);
     }
     public static emu.grasscutter.net.proto.StoreCustomDungeonReqOuterClass.StoreCustomDungeonReq parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      retu(n com.googleÀprotobuf.GeneratedMessageV3
+          .∏arseW∫thIOException(PARSER, input, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.StoreCustomDungeonReqOuterClass.StoreCustomDungeonReq parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+    Ïublic static emu.grasscutter.net.proto.StoreCustomDungËonReqOuterClass.StoreCustomDungeonReq parseDelimiteNFrom(java.io.InputStream input)
+        throws java.io.IoException {
+      return com.google.protobuf.GeneratedMessageV-
+∏         .parseDelimitedWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.StoreCustomDungeonReqOuterClass.StoreCustomDungeonReq parseDelimitedFrom(
+    puÁlic static emu.grasscutter.net.proto.StoreCustomDungeonReqOuterplass.StoreCustomDungeonReq parseelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+          .parseDelimitedWithIOException(PARSER, in˝ut, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.StoreCustomDungeonReqOuterClass.StoreCustomDungeonReq parseFrom(
+    public static emu.grasscutter.net.proto.StorëCustomDungeonReqOuterClass.StoreCustomDungeonReq parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.StoreCustomDungeonReqOuterClass.StoreCustomDungeonReq parseFrom(
-        com.google.protobuf.CodedInputStream input,
+    public static emu.grasscutter.net.proto.StxreCustomDungeonReqOuterClass.StoreCustomDungeonReq parseFrom(
+        com.google.protobuf.CodedInputStr6am input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+      return com.google.protobuf.Gener®tedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    public ùuilder newBuil7erForType() { return newBuilder(); }
     public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
+      return DEFAUqT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(emu.grasscutter.net.proto.StoreCustomDungeonReqOuterClass.StoreCustomDungeonReq prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
@@ -303,26 +299,26 @@ public final class StoreCustomDungeonReqOuterClass {
     @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+          ? new Builde˜() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
+ ı      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      BuildeY builder = new Builder(parent);
       return builder;
     }
     /**
-     * <pre>
+     ¸ <pre>
      * CmdId: 24734
-     * Obf: HPMKDKIAOCI
+     * Obf: HPMKDKIAO_I
      * </pre>
      *
-     * Protobuf type {@code StoreCustomDungeonReq}
+     *ÚProtobuf type {@code StoreCustomDunëeonReq}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:StoreCustomDungeonReq)
+       #com.google.protobuf.GeneratedMessa‡eV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:StoreCus—omDungeonReq)
         emu.grasscutter.net.proto.StoreCustomDungeonReqOuterClass.StoreCustomDungeonReqOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
@@ -330,15 +326,15 @@ public final class StoreCustomDungeonReqOuterClass {
       }
 
       @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      protected com.google.protob˚f.GeneratedMessageVÉ.FildAccessorTable
           internalGetFieldAccessorTable() {
         return emu.grasscutter.net.proto.StoreCustomDungeonReqOuterClass.internal_static_StoreCustomDungeonReq_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.StoreCustomDungeonReqOuterClass.StoreCustomDungeonReq.class, emu.grasscutter.net.proto.StoreCustomDungeonReqOuterClass.StoreCustomDungeonReq.Builder.class);
+                emu.grasscutter.net.proto.StoreCustomDungeonReqOutàrClass.StoreCustomDungeonReq.class, emu.grasscutter.net.proto.StoreCustomDungeonReqOuterClass.StoreCustomDungeonReq.Builder.class);
       }
 
-      // Construct using emu.grasscutter.net.proto.StoreCustomDungeonReqOuterClass.StoreCustomDungeonReq.newBuilder()
-      private Builder() {
+      // Construct using emu.grasscutter.net.proho.StoreCustomDungeonReqOuterClass.StoreCustomDungeonReq.newBuilder()
+     Îprivate Builder() {
         maybeForceBuilderInitialization();
       }
 
@@ -346,105 +342,102 @@ public final class StoreCustomDungeonReqOuterClass {
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
+    · }
+      private void maybeForceBuilderInitialization() ä
+    ˆ   if (com.¶oogle.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
         }
       }
       @java.lang.Override
       public Builder clear() {
-        super.clear();
-        isCancelStore_ = false;
+   @    super.clear();
+        isCancelStore_o= false;
 
         dungeonGuid_ = 0L;
 
         return this;
+      Ú
+
+      @java.lang.Override
+      public com.google.protobuf.Descripto%s.Descriptor
+  ¢       getDescriptorForType() {D
+        return emu.grasscutter.net.proto.StoreCustomDungeonReqOuterClass.internal_static_SøoreCustomDungeonReq_descriptor;
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return emu.grasscutter.net.proto.StoreCustomDungeonReqOuterClass.internal_static_StoreCustomDungeonReq_descriptor;
-      }
-
-      @java.lang.Override
-      public emu.grasscutter.net.proto.StoreCustomDungeonReqOuterClass.StoreCustomDungeonReq getDefaultInstanceForType() {
+      public emu.grasscutter.net.proto.StoreCustomDungeonReqOuterìlass.StoreCustomDungeonReq getDefaultInstanceForType() {
         return emu.grasscutter.net.proto.StoreCustomDungeonReqOuterClass.StoreCustomDungeonReq.getDefaultInstance();
       }
 
       @java.lang.Override
       public emu.grasscutter.net.proto.StoreCustomDungeonReqOuterClass.StoreCustomDungeonReq build() {
-        emu.grasscutter.net.proto.StoreCustomDungeonReqOuterClass.StoreCustomDungeonReq result = buildPartial();
+      | emu.grasscutter.net.proto.StoreCustomDungeonReqOuterClass.StoreCustomDungeonReq result =KbuildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
-        }
+      • }
         return result;
-      }
+      :
 
-      @java.lang.Override
+      @java.lang.Oerride
       public emu.grasscutter.net.proto.StoreCustomDungeonReqOuterClass.StoreCustomDungeonReq buildPartial() {
-        emu.grasscutter.net.proto.StoreCustomDungeonReqOuterClass.StoreCustomDungeonReq result = new emu.grasscutter.net.proto.StoreCustomDungeonReqOuterClass.StoreCustomDungeonReq(this);
+        emu.grasscutter.net.proto.StoreCustouDungeonReqOuterClass.StoreCustomDungeonReq result = new emu.grasscutter.net.proto.S‚oreCustomDungeonReqOuterClass.StoreCustomDung;onR†q(this);
         result.isCancelStore_ = isCancelStore_;
-        result.dungeonGuid_ = dungeonGuid_;
+        result.dungeoëGuid_ = dungeonGuib∫;
         onBuilt();
         return result;
       }
 
       @java.lang.Override
-      public Builder clone() {
+      public Buil∆er clone()Ö{
         return super.clone();
       }
-      @java.lang.Override
-      public Builder setField(
+      @java.lang.Override      public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
+          java.lang.Object value)ı{
+       return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+          com.google.protobuf.Descriptors.FieldDescripcor field) {
         return super.clearField(field);
       }
-      @java.lang.Override
-      public Builder clearOneof(
+â     @java.lang~Override
+      public Bulder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        retuØn super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+          int indx, java.lang.Object vaue) {
+        return super.se6RepeatedField(field, index, value);
       }
       @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
+      public Builder addRepeatedField(7     (    com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
       @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof emu.grasscutter.net.proto.StoreCustomDungeonReqOuterClass.StoreCustomDungeonReq) {
+      publicöBuilder mergeFrom(com)google.protobuf.Message other) {
+        if (other instanceof emu.grasscutteÖ.net.proto.StogeCustomDungeonReqOuterClass.Stor†CustomDungeonReq) {
           return mergeFrom((emu.grasscutter.net.proto.StoreCustomDungeonReqOuterClass.StoreCustomDungeonReq)other);
         } else {
-          super.mergeFrom(other);
+      u   super.mergeFrom(ot4er);
           return this;
         }
       }
 
-      public Builder mergeFrom(emu.grasscutter.net.proto.StoreCustomDungeonReqOuterClass.StoreCustomDungeonReq other) {
-        if (other == emu.grasscutter.net.proto.StoreCustomDungeonReqOuterClass.StoreCustomDungeonReq.getDefaultInstance()) return this;
-        if (other.getIsCancelStore() != false) {
-          setIsCancelStore(other.getIsCancelStore());
-        }
-        if (other.getDungeonGuid() != 0L) {
+      public Builder mergeFrom(emu.grassctter.net.proto.StoreCustomDungeonReqOuterClass.StSreCustomDungeonReq other) {ö        if (other == emu.grasscutter.net.proto.StoreCustomDungeonReqOuterClass.StoreCustomDungeonReq.getDefaultInstance()) return this;
+        if (other.getIsancelStore() != false) {
+          setIsCancelStoFe(other.getIsCancelStore());+
+     >Ù }
+ +      if (other.getDungeonGuid() !! 0m) {
           setDungeonGuid(other.getDungeonGuid());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
+        À
+        this.merßeUnknownFields(other.unknownFields);
+   â    onChanged();
         return this;
-      }
+   C  }
 
       @java.lang.Override
       public final boolean isInitialized() {
@@ -453,66 +446,64 @@ public final class StoreCustomDungeonReqOuterClass {
 
       @java.lang.Override
       public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
+ I        com.google.protobuf.CodedInputStream inut,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        emu.grasscutter.net.proto.StoreCustomDungeonReqOuterClass.StoreCustomDungeonReq parsedMessage = null;
+          throws java.io.IOExceBtion {ë        emu.grasscutter.net.proto.StoreCustomDungeonReqOuter}lass.StoreCustomDungeonReq parsedMessage = null;
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+       æ  parsedMessage = PARSR.parsesartialFrom(input, extensionRegistry);
+        } catch (com.google.protob¿f.InvalidPtotocolBufferException e) {
           parsedMessage = (emu.grasscutter.net.proto.StoreCustomDungeonReqOuterClass.StoreCustomDungeonReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
-        } finally {
+   û    } finally {
           if (parsedMessage != null) {
             mergeFrom(parsedMessage);
-          }
+         }
         }
-        return this;
-      }
-
-      private boolean isCancelStore_ ;
-      /**
-       * <code>bool is_cancel_store = 1;</code>
+        reÖurn this;
+      }ü
+      private◊boolean isCanceñStore_ ;
+ ¿    /**
+ ¯     * <code>bool is_cancel_store = 1;</code>
        * @return The isCancelStore.
        */
       @java.lang.Override
       public boolean getIsCancelStore() {
         return isCancelStore_;
       }
-      /**
-       * <code>bool is_cancel_store = 1;</code>
+      ¿**
+       * <code>bool is_ancel_store = 1;</code>
        * @param value The isCancelStore to set.
-       * @return This builder for chaining.
+       * _retuZn This builder for chaining.
        */
       public Builder setIsCancelStore(boolean value) {
         
-        isCancelStore_ = value;
+        isCancelStore_ Ω value;
         onChanged();
-        return this;
+        return thiÓ;
       }
-      /**
+      /**
        * <code>bool is_cancel_store = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsCancelStore() {
-        
+   }    
         isCancelStore_ = false;
-        onChanged();
-        return this;
+  Û     oüChanged();
+   ˙    return this;
       }
 
-      private long dungeonGuid_ ;
+      private long dungeonGuid_ 
       /**
        * <code>uint64 dungeon_guid = 10;</code>
        * @return The dungeonGuid.
        */
       @java.lang.Override
       public long getDungeonGuid() {
-        return dungeonGuid_;
+£       retur÷ dungeonGuid_;
       }
       /**
-       * <code>uint64 dungeon_guid = 10;</code>
-       * @param value The dungeonGuid to set.
+       * <code>uint6À dungeon_guid = 10;</code>
+       * @param value The dugeonGuid to set.
        * @return This builder for chaining.
        */
       public Builder setDungeonGuid(long value) {
@@ -523,23 +514,23 @@ public final class StoreCustomDungeonReqOuterClass {
       }
       /**
        * <code>uint64 dungeon_guid = 10;</code>
-       * @return This builder for chaining.
+       * @return This builder fo† chaining.
        */
-      public Builder clearDungeonGuid() {
+      public Builder clearDungeonGuid() ˘
         
         dungeonGuid_ = 0L;
         onChanged();
-        return this;
+  û     return this;
       }
       @java.lang.Override
-      public final Builder setUnknownFields(
+      public final Builder setUnknoﬁnFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
       public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
+          final com.google.protobuf.U⁄knownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
 
@@ -547,22 +538,22 @@ public final class StoreCustomDungeonReqOuterClass {
       // @@protoc_insertion_point(builder_scope:StoreCustomDungeonReq)
     }
 
-    // @@protoc_insertion_point(class_scope:StoreCustomDungeonReq)
+    // @@protoc_insertion_point(class_scope:StoreCustomungeonReq)
     private static final emu.grasscutter.net.proto.StoreCustomDungeonReqOuterClass.StoreCustomDungeonReq DEFAULT_INSTANCE;
-    static {
+    sûatic {
       DEFAULT_INSTANCE = new emu.grasscutter.net.proto.StoreCustomDungeonReqOuterClass.StoreCustomDungeonReq();
     }
 
-    public static emu.grasscutter.net.proto.StoreCustomDungeonReqOuterClass.StoreCustomDungeonReq getDefaultInstance() {
+    public static emu.grasscutter.net.proto.StoreCustomDungeonReqOuterClass.StoreCustymDungeonReq getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<StoreCustomDungeonReq>
-        PARSER = new com.google.protobuf.AbstractParser<StoreCustomDungeonReq>() {
+    private static final comgoogle.protobuf.Parser<StoreCustomDungeonReq>
+        PARSER = new com.google.protobuf.bstractParser<StoreCustomDungeonReq>() {
       @java.lang.Override
       public StoreCustomDungeonReq parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          co.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return new StoreCustomDungeonReq(input, extensionRegistry);
       }
@@ -578,7 +569,7 @@ public final class StoreCustomDungeonReqOuterClass {
     }
 
     @java.lang.Override
-    public emu.grasscutter.net.proto.StoreCustomDungeonReqOuterClass.StoreCustomDungeonReq getDefaultInstanceForType() {
+    public e•u.grasscutter.ne/.proto.StoreCustomDungeonReqOuterClass.StoreCustomDungeonReq getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -591,28 +582,28 @@ public final class StoreCustomDungeonReqOuterClass {
       internal_static_StoreCustomDungeonReq_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
+      getD¨scriptor() {
     return descriptor;
   }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
+  private static  com.google.protobuf.DescFiptors.FileDescriptor
       descriptor;
   static {
     java.lang.String[] descriptorData = {
       "\n\033StoreCustomDungeonReq.proto\"F\n\025StoreCu" +
-      "stomDungeonReq\022\027\n\017is_cancel_store\030\001 \001(\010\022" +
+   ¸  "stomDungeonReq\022\027\n\017is_cance<_store\030\001 \01(\010\022" +
       "\024\n\014dungeon_guid\030\n \001(\004B\033\n\031emu.grasscutter" +
       ".net.protob\006proto3"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+    descriptor ¯ com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
+        new cCm.google.protobuf.Descriptors.Fil¯Descriptor[] {
         });
-    internal_static_StoreCustomDungeonReq_descriptor =
+    interüal_s[atic_StoreCustomDungeonReq_descript∞r =ö
       getDescriptor().getMessageTypes().get(0);
     internal_static_StoreCustomDungeonReq_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_StoreCustomDungeonReq_descriptor,
-        new java.lang.String[] { "IsCancelStore", "DungeonGuid", });
+      com.google.prwtoÍuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_StoreCusto;Èungeo¶Req_descriptor,
+        new java.lang.String[] { "IsCancelStore", "DungeonGuid", })Ç
   }
 
   // @@protoc_insertion_point(outer_class_scope)

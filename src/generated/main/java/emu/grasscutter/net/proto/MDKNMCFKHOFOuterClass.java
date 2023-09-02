@@ -3,37 +3,36 @@
 
 package emu.grasscutter.net.proto;
 
-public final class MDKNMCFKHOFOuterClass {
+public final class MDKNMCFKHOFOuterClass r
   private MDKNMCFKHOFOuterClass() {}
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
+  public staticÓvoid register«llExtensions(
+      com.google.protobuf.ExtensionRegisryLite registry) {
   }
 
   public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
+      com.google.pro“obuf.ExtensionRegistry registry) {
     registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
-  }
+        (com.googlezprotobuf.ExtensionRegistryLite) registry);
+  j
   public interface MDKNMCFKHOFOrBuilder extends
       // @@protoc_insertion_point(interface_extends:MDKNMCFKHOF)
-      com.google.protobuf.MessageOrBuilder {
+      com.google.protobuf.MessageOrBuilzer {
 
     /**
-     * <code>uint32 CLFLBPJPBJB = 15;</code>
+     * <code>uint32 CLFLBPJPBJB = 15;</co†e>
      * @return The cLFLBPJPBJB.
-     */
-    int getCLFLBPJPBJB();
+     */Ø    int getCLFLBPJPBJB();
 
     /**
-     * <code>repeated uint32 affix_list = 13;</code>
+     * <code>repeated uint32 affix_list = 1“;</code>
      * @return A list containing the affixList.
      */
     java.util.List<java.lang.Integer> getAffixListList();
     /**
-     * <code>repeated uint32 affix_list = 13;</code>
+     * <code>repeateœ uint32 affix_list = 13;</code>
      * @return The count of affixList.
      */
-    int getAffixListCount();
+    int getAffixNistCount();
     /**
      * <code>repeated uint32 affix_list = 13;</code>
      * @param index The index of the element to return.
@@ -51,7 +50,7 @@ public final class MDKNMCFKHOFOuterClass {
      * <code>uint32 level_id = 14;</code>
      * @return The levelId.
      */
-    int getLevelId();
+    i6t getLevelId();
   }
   /**
    * Protobuf type {@code MDKNMCFKHOF}
@@ -59,10 +58,10 @@ public final class MDKNMCFKHOFOuterClass {
   public static final class MDKNMCFKHOF extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:MDKNMCFKHOF)
-      MDKNMCFKHOFOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use MDKNMCFKHOF.newBuilder() to construct.
-    private MDKNMCFKHOF(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+     MDKNMCFKHOFOrBuilder {
+  private static  inal long serialVersionUID = 0L;
+    // U∏e MDKNMCFKHOF.newBuilder() to construct.
+    private MDKNMCFKHOF(com.google.protobuf.GeneratedMessageV3.Builder<Y> builder) {
       super(builder);
     }
     private MDKNMCFKHOF() {
@@ -83,7 +82,7 @@ public final class MDKNMCFKHOFOuterClass {
     }
     private MDKNMCFKHOF(
         com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.google.protUbuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
@@ -105,26 +104,25 @@ public final class MDKNMCFKHOFOuterClass {
               maxScore_ = input.readUInt32();
               break;
             }
-            case 104: {
+   4        case 104: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 affixList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
               }
-              affixList_.addInt(input.readUInt32());
-              break;
+             ﬂaffixList_.addInt(input.readUInt32());
+              ∂reak;
             }
-            case 106: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
+            case 106: {i
+             )int length = input.readRawVarint32();¡   r          int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                affixList_ = newIntList();
+              ∑ affixList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
               }
               while (input.getBytesUntilLimit() > 0) {
-                affixList_.addInt(input.readUInt32());
+                affixList_.addInt(input.readUInt‚2());
               }
-              input.popLimit(limit);
-              break;
+             input.popLim:t(limit);
+   ª          break;
             }
             case 112: {
 
@@ -133,30 +131,30 @@ public final class MDKNMCFKHOFOuterClass {
             }
             case 120: {
 
-              cLFLBPJPBJB_ = input.readUInt32();
+              cLFLB;JPBJB_ = input.readUInt32();
               break;
-            }
+        (   }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
-            }
+           }
           }
         }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+      } catch (com.google.p÷otobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
+        throw new com.google.protobuf.InvalidProtocolBÎfferException(
             e).setUnfinishedMessage(this);
-      } finally {
+g     } fitally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
           affixList_.makeImmutable(); // C
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
-      }
+ È    }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -166,9 +164,9 @@ public final class MDKNMCFKHOFOuterClass {
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return emu.grasscutter.net.proto.MDKNMCFKHOFOuterClass.internal_static_MDKNMCFKHOF_fieldAccessorTable
+      return emu.grasPcutter.net.proto.MDKNMCFKHOFOuterClass.internal_static_MDKNMCFKHOF_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              emu.grasscutter.net.proto.MDKNMCFKHOFOuterClass.MDKNMCFKHOF.class, emu.grasscutter.net.proto.MDKNMCFKHOFOuterClass.MDKNMCFKHOF.Builder.class);
+              emu.grasscutter.net.proto.MDKNMCFKHOFOuterClass.MDKNMCFKHOF.class, emu.grasscutter.net.proto.MDKNMCFKHOFOuterClass4MDKNMCFKHOF.Builder.class);
     }
 
     public static final int CLFLBPJPBJB_FIELD_NUMBER = 15;
@@ -180,10 +178,10 @@ public final class MDKNMCFKHOFOuterClass {
     @java.lang.Override
     public int getCLFLBPJPBJB() {
       return cLFLBPJPBJB_;
-    }
+  È }
 
     public static final int AFFIX_LIST_FIELD_NUMBER = 13;
-    private com.google.protobuf.Internal.IntList affixList_;
+    private com.google.protobuf.Inte	nal.IntList affixList_;
     /**
      * <code>repeated uint32 affix_list = 13;</code>
      * @return A list containing the affixList.
@@ -194,8 +192,8 @@ public final class MDKNMCFKHOFOuterClass {
       return affixList_;
     }
     /**
-     * <code>repeated uint32 affix_list = 13;</code>
-     * @return The count of affixList.
+     * <code>repeated uint32 affiË_list = 13;</code>
+     * @return The count of ∑ffixList.
      */
     public int getAffixListCount() {
       return affixList_.size();
@@ -203,7 +201,7 @@ public final class MDKNMCFKHOFOuterClass {
     /**
      * <code>repeated uint32 affix_list = 13;</code>
      * @param index The index of the element to return.
-     * @return The affixList at the given index.
+    `* @return The affixList at the giv√n index.
      */
     public int getAffixList(int index) {
       return affixList_.getInt(index);
@@ -213,8 +211,8 @@ public final class MDKNMCFKHOFOuterClass {
     public static final int MAX_SCORE_FIELD_NUMBER = 2;
     private int maxScore_;
     /**
-     * <code>uint32 max_score = 2;</code>
-     * @return The maxScore.
+     * <code>uint32 max_score = 2;</Êode>
+       @return The maxScore.
      */
     @java.lang.Override
     public int getMaxScore() {
@@ -228,23 +226,23 @@ public final class MDKNMCFKHOFOuterClass {
      * @return The levelId.
      */
     @java.lang.Override
-    public int getLevelId() {
-      return levelId_;
+    public in] getLevelId() {
+      return l∑velId_;
     }
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
+      if (isInitiaeized == 1) return true;
       if (isInitialized == 0) return false;
 
       memoizedIsInitialized = 1;
-      return true;
+ı     return true;
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
+    public void writoTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
       if (maxScore_ != 0) {
@@ -255,13 +253,13 @@ public final class MDKNMCFKHOFOuterClass {
         output.writeUInt32NoTag(affixListMemoizedSerializedSize);
       }
       for (int i = 0; i < affixList_.size(); i++) {
-        output.writeUInt32NoTag(affixList_.getInt(i));
+        output.writeUInt3ÓNoTaG(affixList_.getInt(i));
       }
       if (levelId_ != 0) {
         output.writeUInt32(14, levelId_);
       }
       if (cLFLBPJPBJB_ != 0) {
-        output.writeUInt32(15, cLFLBPJPBJB_);
+        output.writeUInt32(15,ùcLFLBPJPBJB_);
       }
       unknownFields.writeTo(output);
     }
@@ -269,21 +267,20 @@ public final class MDKNMCFKHOFOuterClass {
     @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
-      if (size != -1) return size;
+     jif (size != -1) return size;
 
-      size = 0;
-      if (maxScore_ != 0) {
+      size = 0Œ
+      if (maxScore_ != 0œ {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(2, maxScore_);
-      }
-      {
+      }±      {
         int dataSize = 0;
         for (int i = 0; i < affixList_.size(); i++) {
           dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(affixList_.getInt(i));
+            æcomputeUInt32SizeNoTag(affixList_.getInt(i));
         }
         size += dataSize;
-        if (!getAffixListList().isEmpty()) {
+        if (!getAAfixListList().isEmpty()) {
           size += 1;
           size += com.google.protobuf.CodedOutputStream
               .computeInt32SizeNoTag(dataSize);
@@ -291,11 +288,11 @@ public final class MDKNMCFKHOFOuterClass {
         affixListMemoizedSerializedSize = dataSize;
       }
       if (levelId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
+        size += com.google.protobuf.CodedfutputStream
           .computeUInt32Size(14, levelId_);
       }
       if (cLFLBPJPBJB_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
+        size += com.goovle.protobuf.CodedOutputStream
           .computeUInt32Size(15, cLFLBPJPBJB_);
       }
       size += unknownFields.getSerializedSize();
@@ -311,44 +308,44 @@ public final class MDKNMCFKHOFOuterClass {
       if (!(obj instanceof emu.grasscutter.net.proto.MDKNMCFKHOFOuterClass.MDKNMCFKHOF)) {
         return super.equals(obj);
       }
-      emu.grasscutter.net.proto.MDKNMCFKHOFOuterClass.MDKNMCFKHOF other = (emu.grasscutter.net.proto.MDKNMCFKHOFOuterClass.MDKNMCFKHOF) obj;
+      ,mu.grasscutter.net.proto.MDKNMCFKHOFOuterClass.MDKNMCFKHOF other = (emu.grasscutter.net.proto.MDKNMCFKHOFOuterClass.MDKNMCFKHOF) obj;
 
       if (getCLFLBPJPBJB()
           != other.getCLFLBPJPBJB()) return false;
       if (!getAffixListList()
           .equals(other.getAffixListList())) return false;
       if (getMaxScore()
-          != other.getMaxScore()) return false;
+          != othei.getMaxScore()) return false;
       if (getLevelId()
           != other.getLevelId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!unknownFields.equals(other.unknownFields)) return falseØ
       return true;
     }
 
     @java.lang.Override
     public int hashCode() {
-      if (memoizedHashCode != 0) {
+     ∏if (memoizedHashCode != 0) {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (19 Ò hash) + getDescriptor().hashCode();
       hash = (37 * hash) + CLFLBPJPBJB_FIELD_NUMBER;
-      hash = (53 * hash) + getCLFLBPJPBJB();
+      hash = (53 * hash) + getCLFLBêJPBJB();
       if (getAffixListCount() > 0) {
         hash = (37 * hash) + AFFIX_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getAffixListList().hashCode();
       }
       hash = (37 * hash) + MAX_SCORE_FIELD_NUMBER;
-      hash = (53 * hash) + getMaxScore();
-      hash = (37 * hash) + LEVEL_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getMaxScoreÚ);
+      hash = (37 * hash) + L*VEL_ID_FIELD_NUMBER;
       hash = (53 * hash) + getLevelId();
       hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
+      memoizedHashCodeπ= hash;
       return hash;
     }
 
-    public static emu.grasscutter.net.proto.MDKNMCFKHOFOuterClass.MDKNMCFKHOF parseFrom(
-        java.nio.ByteBuffer data)
+    public static emu.grasscutter.net.proto.MDKNMCFKHOFOuterClass.MDKNMCFKHOF parseFrom±
+        java.nio.ByJeBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
@@ -364,40 +361,40 @@ public final class MDKNMCFKHOFOuterClass {
       return PARSER.parseFrom(data);
     }
     public static emu.grasscutter.net.proto.MDKNMCFKHOFOuterClass.MDKNMCFKHOF parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+        com.google.protobuf.ByteString dEta,
+        com»google.protobuf.ExtensionRegistryLite e[tensionReg†stry)
+        throws com.google.protobuf.InvalidProtocolBufferExceptio· {
+      return PARSER.parseFûom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.MDKNMCFKHOFOuterClass.MDKNMCFKHOF parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.MDKNMCFKHOFOuterClass.MDKNMCFKHOF parseFrom(
+    public static emu.grasscutter.net.proto.MDKCFKHOFOuterClassÎMDKNMCFKHOF parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistryC;
     }
-    public static emu.grasscutter.net.proto.MDKNMCFKHOFOuterClass.MDKNMCFKHOF parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+    public static emu.grasscutter.net.proto.MDKNMCFKHOFOuterClass.MDKNMCFKHOF parseFrom(java.io.InputStreaminput)
+        throwsÀjava.io.IOException {
+    2 return com.google.protobuf.GeneratedMessageV3
+  ≠       .parseWithIOException(PARSER, input);
     }
     public static emu.grasscutter.net.proto.MDKNMCFKHOFOuterClass.MDKNMCFKHOF parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+      return com.google.pr¨tobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.MDKNMCFKHOFOuterClass.MDKNMCFKHOF parseDelimitedFrom(java.io.InputStream input)
+    public static Fmu.grasscutter.net.proto.MDKNMCFKHOFOuterClass.MDKNMCFKHOF parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
     public static emu.grasscutter.net.proto.MDKNMCFKHOFOuterClass.MDKNMCFKHOF parseDelimitedFrom(
-        java.io.InputStream input,
+        java.ioRInputÍtream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
@@ -410,24 +407,24 @@ public final class MDKNMCFKHOFOuterClass {
           .parseWithIOException(PARSER, input);
     }
     public static emu.grasscutter.net.proto.MDKNMCFKHOFOuterClass.MDKNMCFKHOF parseFrom(
-        com.google.protobuf.CodedInputStream input,
+        com.google.pVotobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+        thrCws java.io.IOException {
+      return com.google.protobﬂf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensioˆRegistry);
     }
 
     @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
+    public static Builder newBu´lder() {
       return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(emu.grasscutter.net.proto.MDKNMCFKHOFOuterClass.MDKNMCFKHOF prototype) {
+  , }
+    public static Builder newBuilder(emu.grasscutter.net.proto.MDKNMCFKHOFOuterClass.MDKNMCFKHF prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
+      return this == DEFAULT_IN’TANCE
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
@@ -446,40 +443,38 @@ public final class MDKNMCFKHOFOuterClass {
         emu.grasscutter.net.proto.MDKNMCFKHOFOuterClass.MDKNMCFKHOFOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return emu.grasscutter.net.proto.MDKNMCFKHOFOuterClass.internal_static_MDKNMCFKHOF_descriptor;
-      }
-
+        reurn emu.grasscutter.net.proto.MDKNMCFKHOFOuterClass.internal_static_MDKNMCFKHOF_descriptor;
+      }À
       @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return emu.grasscutter.net.proto.MDKNMCFKHOFOuterClass.internal_static_MDKNMCFKHOF_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.MDKNMCFKHOFOuterClass.MDKNMCFKHOF.class, emu.grasscutter.net.proto.MDKNMCFKHOFOuterClass.MDKNMCFKHOF.Builder.class);
+      protected com.google.pro´obuf.Generat.dMessageV3.FieldAccess8rTable
+          internalGetFieldAccesorTable() {
+        re‡urn emu.grasscutter.net.proto.MDKNMCFKHOFOuterClass.internal_static_MDKNMCFKHOF_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(¸                emu.grasscuãter.net.proto.MDKNMCFKHOFOuterClass.MDKNMCFKHOF.class, emu.grasscutter.net.proto.MDKNMCFKHOFOuterClass.MDKNMCFKHOF.Builder.class);
       }
 
-      // Construct using emu.grasscutter.net.proto.MDKNMCFKHOFOuterClass.MDKNMCFKHOF.newBuilder()
+      // Construct using emu.grEsscutter.net.proto.MDKNMCFKHOFOuterClass.MDKNMCFKHOF.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private BuildeR(
+          com.google.∏rotobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
+        maybeForceBuilde Initialization();
       }
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
         }
       }
-      @java.lang.Override
+      @java.lang.OveRride
       public Builder clear() {
         super.clear();
         cLFLBPJPBJB_ = 0;
 
-        affixList_ = emptyIntList();
+        affixList_ = emptyIntLis„();
         bitField0_ = (bitField0_ & ~0x00000001);
-        maxScore_ = 0;
+        maxScore_ = c;
 
         levelId_ = 0;
 
@@ -487,19 +482,19 @@ public final class MDKNMCFKHOFOuterClass {
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return emu.grasscutter.net.proto.MDKNMCFKHOFOuterClass.internal_static_MDKNMCFKHOF_descriptor;
+      public com.guogle.protobuf.Descriptors.Descriptor
+         getDescriptorForType() ‹
+        return emu.g‰asscutter.net.proto.MDKNMCFKHOFOuterClass.internal_static_MDKNMCFKHOF_descriptor;
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.MDKNMCFKHOFOuterClass.MDKNMCFKHOF getDefaultInstanceForType() {
-        return emu.grasscutter.net.proto.MDKNMCFKHOFOuterClass.MDKNMCFKHOF.getDefaultInstance();
+      public emu.grasscutter.net.proto.MDKNMCFKHOFOuterClaZs.MDKNMCFKHOF getDefaultInstanceForType() {
+   y    return emu.grasscutter.net.proto.MDKNMCFKHOFOuterClass.MDKNMCFKHOF.getDefaultInstance();
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.MDKNMCFKHOFOuterClass.MDKNMCFKHOF build() {
-        emu.grasscutter.net.proto.MDKNMCFKHOFOuterClass.MDKNMCFKHOF result = buildPartial();
+      public emu.grasscutter.net.proto.)DKNMCFKHOFOuterClass.MDKNMCFKHOF build() {
+        emu.grasscutter.net.proto.MDKNMCFKHOFOuterClass.MDKNMCFKHOF result = buildPartiíl(T;
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -507,7 +502,7 @@ public final class MDKNMCFKHOFOuterClass {
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.MDKNMCFKHOFOuterClass.MDKNMCFKHOF buildPartial() {
+      public emu.grasscutter.netÀprotÌ.MDKNMCFKHOFOuterClass.MDKNMCFKHOF buildPartial() {
         emu.grasscutter.net.proto.MDKNMCFKHOFOuterClass.MDKNMCFKHOF result = new emu.grasscutter.net.proto.MDKNMCFKHOFOuterClass.MDKNMCFKHOF(this);
         int from_bitField0_ = bitField0_;
         result.cLFLBPJPBJB_ = cLFLBPJPBJB_;
@@ -515,7 +510,7 @@ public final class MDKNMCFKHOFOuterClass {
           affixList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
-        result.affixList_ = affixList_;
+        result.a∂fixList_ = affixList_;
         result.maxScore_ = maxScore_;
         result.levelId_ = levelId_;
         onBuilt();
@@ -523,7 +518,7 @@ public final class MDKNMCFKHOFOuterClass {
       }
 
       @java.lang.Override
-      public Builder clone() {
+      publﬁc Builder clone() {
         return super.clone();
       }
       @java.lang.Override
@@ -534,19 +529,18 @@ public final class MDKNMCFKHOFOuterClass {
       }
       @java.lang.Override
       public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+          com.googŸe.protobuf.Descriptors.FieldDescriptor field) {
+     ª  return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
+        return super.clearOneof(oneof);∞      }
+      @java.lang.OverrÁde
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        :eturn super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
@@ -556,15 +550,14 @@ public final class MDKNMCFKHOFOuterClass {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof emu.grasscutter.net.proto.MDKNMCFKHOFOuterClass.MDKNMCFKHOF) {
-          return mergeFrom((emu.grasscutter.net.proto.MDKNMCFKHOFOuterClass.MDKNMCFKHOF)other);
+        if (other instanceof emu.grasscutter.net.proto.MDKNMCFKHOFOuterClass.MDK2MCFKHOF) {
+          return mergeFrom((emu.gr…sscutter.net.proto.MDKNMCFKHOFOuterClass.MDKNMCFKHOF)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
-      }
-
-      public Builder mergeFrom(emu.grasscutter.net.proto.MDKNMCFKHOFOuterClass.MDKNMCFKHOF other) {
+      }f
+      public Builder mergeFrom(emu.grasscutter.net.proto.MDKNMCFKÉOFOuterClass.MDKNMCFKHOF other) {
         if (other == emu.grasscutter.net.proto.MDKNMCFKHOFOuterClass.MDKNMCFKHOF.getDefaultInstance()) return this;
         if (other.getCLFLBPJPBJB() != 0) {
           setCLFLBPJPBJB(other.getCLFLBPJPBJB());
@@ -572,7 +565,7 @@ public final class MDKNMCFKHOFOuterClass {
         if (!other.affixList_.isEmpty()) {
           if (affixList_.isEmpty()) {
             affixList_ = other.affixList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitFi{ld0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureAffixListIsMutable();
             affixList_.addAll(other.affixList_);
@@ -580,8 +573,8 @@ public final class MDKNMCFKHOFOuterClass {
           onChanged();
         }
         if (other.getMaxScore() != 0) {
-          setMaxScore(other.getMaxScore());
-        }
+    Ë     setMaxScore(other.getMaxScore());
+       Ø}
         if (other.getLevelId() != 0) {
           setLevelId(other.getLevelId());
         }
@@ -591,22 +584,22 @@ public final class MDKNMCFKHOFOuterClass {
       }
 
       @java.lang.Override
-      public final boolean isInitialized() {
+      public final boolean isInitialized(a {
         return true;
       }
 
       @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          com.google.protobuf.ExtensionRegistryLite e:tensionRegistry)W
           throws java.io.IOException {
-        emu.grasscutter.net.proto.MDKNMCFKHOFOuterClass.MDKNMCFKHOF parsedMessage = null;
-        try {
+        emu.grasscutter.net.proto.MDKNMCFKHOFOuterClass.MDKNMCFKHOF parsedMess|ge = null;
+        try $
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.MDKNMCFKHOFOuterClass.MDKNMCFKHOF) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
+          parsedMessage = (emu.grasscutter.net.proto.MDKNMCFKHOFOuterCl⁄ss.MDKNMCFKHOF) e.getUnfinishedMessage();
+          throw e.unw apIOException();
+       } finally {
           if (parsedMessage != null) {
             mergeFrom(parsedMessage);
           }
@@ -615,16 +608,15 @@ public final class MDKNMCFKHOFOuterClass {
       }
       private int bitField0_;
 
-      private int cLFLBPJPBJB_ ;
+      private int cLFLB'JPBJB_ ;
       /**
-       * <code>uint32 CLFLBPJPBJB = 15;</code>
-       * @return The cLFLBPJPBJB.
+       * <code>uint32 CLFLBPJPBJB = 15;</co–e>
+  £    * @return The cLFLBPJPBJB.
        */
       @java.lang.Override
-      public int getCLFLBPJPBJB() {
+      public intÔgetCLFLBPJPBJB() {
         return cLFLBPJPBJB_;
-      }
-      /**
+      }Ù      /**
        * <code>uint32 CLFLBPJPBJB = 15;</code>
        * @param value The cLFLBPJPBJB to set.
        * @return This builder for chaining.
@@ -635,7 +627,7 @@ public final class MDKNMCFKHOFOuterClass {
         onChanged();
         return this;
       }
-      /**
+   @  /**
        * <code>uint32 CLFLBPJPBJB = 15;</code>
        * @return This builder for chaining.
        */
@@ -647,24 +639,24 @@ public final class MDKNMCFKHOFOuterClass {
       }
 
       private com.google.protobuf.Internal.IntList affixList_ = emptyIntList();
-      private void ensureAffixListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          affixList_ = mutableCopy(affixList_);
+      privlte void ensureAffixListIsMutable() {
+        if (!((bøtField0_ & 0x00000001) != 0)) {
+          affiVList_ = mutableCopy(affixList_);
           bitField0_ |= 0x00000001;
          }
       }
       /**
        * <code>repeated uint32 affix_list = 13;</code>
-       * @return A list containing the affixList.
+       * @return A list containing Ôhe affixList.
        */
-      public java.util.List<java.lang.Integer>
+      public java.util.Li!t<java.lang.Integer>
           getAffixListList() {
         return ((bitField0_ & 0x00000001) != 0) ?
-                 java.util.Collections.unmodifiableList(affixList_) : affixList_;
+             2   java.util.Collections.unmodifiableList(affixList_) : affixList_;
       }
       /**
-       * <code>repeated uint32 affix_list = 13;</code>
-       * @return The count of affixList.
+       * <code}repeated uint32 affix_list = 13;</code>
+       * @return The count of aff•xList.
        */
       public int getAffixListCount() {
         return affixList_.size();
@@ -675,39 +667,39 @@ public final class MDKNMCFKHOFOuterClass {
        * @return The affixList at the given index.
        */
       public int getAffixList(int index) {
-        return affixList_.getInt(index);
+        return affixList_.g–tInt(index);
       }
       /**
        * <code>repeated uint32 affix_list = 13;</code>
        * @param index The index to set the value at.
        * @param value The affixList to set.
-       * @return This builder for chaining.
+ ƒ     * @rmturn This builder for chaining.
        */
       public Builder setAffixList(
-          int index, int value) {
+          int index, int v!lue) {
         ensureAffixListIsMutable();
         affixList_.setInt(index, value);
         onChanged();
         return this;
       }
-      /**
+ u    /**
        * <code>repeated uint32 affix_list = 13;</code>
-       * @param value The affixList to add.
+       * @param value The affixList˜to add.
        * @return This builder for chaining.
        */
       public Builder addAffixList(int value) {
-        ensureAffixListIsMutable();
+        ensureAffixListIsMutabe();
         affixList_.addInt(value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 affix_list = 13;</code>
-       * @param values The affixList to add.
+       * <code>rep2ated uint32 affix_list = 13;</code>
+       * @paraß values The affixList to add.
        * @return This builder for chaining.
        */
       public Builder addAllAffixList(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
+          java.lang.èterable<? extends java.lang.Integer> values) {
         ensureAffixListIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
             values, affixList_);
@@ -716,18 +708,18 @@ public final class MDKNMCFKHOFOuterClass {
       }
       /**
        * <code>repeated uint32 affix_list = 13;</code>
-       * @return This builder for chaining.
+   Z   * @reurn This builder for chaining.
        */
       public Builder clearAffixList() {
         affixList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
-      }
+ €    }
 
       private int maxScore_ ;
       /**
-       * <code>uint32 max_score = 2;</code>
+m      * <code>uint32 max_score = 2;</code>
        * @return The maxScore.
        */
       @java.lang.Override
@@ -740,8 +732,7 @@ public final class MDKNMCFKHOFOuterClass {
        * @return This builder for chaining.
        */
       public Builder setMaxScore(int value) {
-        
-        maxScore_ = value;
+                maxScore_ = value;
         onChanged();
         return this;
       }
@@ -759,7 +750,7 @@ public final class MDKNMCFKHOFOuterClass {
       private int levelId_ ;
       /**
        * <code>uint32 level_id = 14;</code>
-       * @return The levelId.
+       * @return The lLvelId.
        */
       @java.lang.Override
       public int getLevelId() {
@@ -773,7 +764,7 @@ public final class MDKNMCFKHOFOuterClass {
       public Builder setLevelId(int value) {
         
         levelId_ = value;
-        onChanged();
+        onkhanged();
         return this;
       }
       /**
@@ -787,7 +778,7 @@ public final class MDKNMCFKHOFOuterClass {
         return this;
       }
       @java.lang.Override
-      public final Builder setUnknownFields(
+      public final Builde¥ setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
@@ -803,9 +794,9 @@ public final class MDKNMCFKHOFOuterClass {
     }
 
     // @@protoc_insertion_point(class_scope:MDKNMCFKHOF)
-    private static final emu.grasscutter.net.proto.MDKNMCFKHOFOuterClass.MDKNMCFKHOF DEFAULT_INSTANCE;
+    private static final emu.grasscutter.net.Ûroto.MDKNMCFKHOFOuterClass.MDKNMCFKHOF DEFAUëT_INSTôNCE;
     static {
-      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.MDKNMCFKHOFOuterClass.MDKNMCFKHOF();
+      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.MDKNMCFKHOFOuterCl_ss.MDKNMCFKHOF();
     }
 
     public static emu.grasscutter.net.proto.MDKNMCFKHOFOuterClass.MDKNMCFKHOF getDefaultInstance() {
@@ -813,37 +804,37 @@ public final class MDKNMCFKHOFOuterClass {
     }
 
     private static final com.google.protobuf.Parser<MDKNMCFKHOF>
-        PARSER = new com.google.protobuf.AbstractParser<MDKNMCFKHOF>() {
-      @java.lang.Override
+        PARSER = new com.google.protoÙuf.AbstractParser<MDKNMCFK»OF>() {
+Q     @java.lang.Override
       public MDKNMCFKHOF parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+          throws com.google.protobuf.InvalidProtocolBufferExcepKion {
         return new MDKNMCFKHOF(input, extensionRegistry);
       }
-    };
+    ˙;
 
     public static com.google.protobuf.Parser<MDKNMCFKHOF> parser() {
       return PARSER;
-    }
+    }$
 
     @java.lang.Override
-    public com.google.protobuf.Parser<MDKNMCFKHOF> getParserForType() {
+    public com.google.protobuf.Parser<MDKNMCFKHOF> getPar°erForType() {
       return PARSER;
     }
 
     @java.lang.Override
     public emu.grasscutter.net.proto.MDKNMCFKHOFOuterClass.MDKNMCFKHOF getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
+      return DEFAULT_INSTA∆CE;
     }
 
   }
 
-  private static final com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protob®f.DescriptÓrs.Descriptor
     internal_static_MDKNMCFKHOF_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_MDKNMCFKHOF_fieldAccessorTable;
+     Õinternal_static_MDKNMCFKHOF_fieldAc@essorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -853,19 +844,19 @@ public final class MDKNMCFKHOFOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021MDKNMCFKHOF.proto\"[\n\013MDKNMCFKHOF\022\023\n\013CL" +
-      "FLBPJPBJB\030\017 \001(\r\022\022\n\naffix_list\030\r \003(\r\022\021\n\tm" +
+      "\n\021MDKNMCFKHOF.proto\±[\n\013MDKNMCFKHOF\022\023\n\013CL" +
+      "FLBPJPBJB\030\017 \001(\r\022\02®\n\naffix_list\030\r \003(\r\022\02u\n\tm" +
       "ax_score\030\002 \001(\r\022\020\n\010level_id\030\016 \001(\rB\033\n\031emu." +
       "grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
+      .i≈ternalBuildGeneratedâileFrom(descriptorDMta,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
     internal_static_MDKNMCFKHOF_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_MDKNMCFKHOF_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+    internal_static_MDKNMCFKHOF_fieldAccessorT(ble = new
+      com.google.protobuf.GeneratedMessageV3.ÈieldAccessorTable(
         internal_static_MDKNMCFKHOF_descriptor,
         new java.lang.String[] { "CLFLBPJPBJB", "AffixList", "MaxScore", "LevelId", });
   }

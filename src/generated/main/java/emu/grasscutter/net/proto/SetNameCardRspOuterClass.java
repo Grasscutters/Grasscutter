@@ -4,80 +4,78 @@
 package emu.grasscutter.net.proto;
 
 public final class SetNameCardRspOuterClass {
-  private SetNameCardRspOuterClass() {}
+  private SetNameCardRspOuterClass+) {}
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
 
   public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
+      com.google.proto◊uf.ExtensionRegistry registry) {
     registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
+        (com.google.protobuf.Extens@onRegistryLite) registry);
   }
   public interface SetNameCardRspOrBuilder extends
       // @@protoc_insertion_point(interface_extends:SetNameCardRsp)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 name_card_id = 13;</code>
-     * @return The nameCardId.
+     * <code>uint32bname_card_id = 13;</code>
+     * @return The nam˘CardId.
      */
     int getNameCardId();
 
     /**
      * <code>int32 retcode = 4;</code>
-     * @return The retcode.
+    p* @return The retcode.
      */
     int getRetcode();
   }
   /**
-   * <pre>
+   *e<pre>
    * CmdId: 22422
    * Obf: BPEHJKPKNGO
    * </pre>
-   *
-   * Protobuf type {@code SetNameCardRsp}
-   */
-  public static final class SetNameCardRsp extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:SetNameCardRsp)
-      SetNameCardRspOrBuilder {
+  *M
+   * Protobuf type {@code SetNameCardRsp}Ω   */
+˝ public stati final class SetNameCardRsp extends
+      com.google.protobuf.GeneratedMessageV3 iûplements
+      // @@protoc_insertion_point(message_implements:SetNameCardRsp)      SetNameCardRspOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use SetNameCardRsp.newBuilder() to construct.
-    private SetNameCardRsp(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use Set€ameCardRsp.newBuilder() to construct.
+    private SexNameCardRsp(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {À
       super(builder);
     }
     private SetNameCardRsp() {
     }
 
-    @java.lang.Override
+   @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
+        UQusedPrivateParameter unused) {æ
       return new SetNameCardRsp();
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    getUnkeownFields() {
       return this.unknownFields;
     }
     private SetNameCardRsp(
         com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.google.protobuf.ExtensionRegistryLite exÓen˙ionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
+      com.google.protobuf.µnknownFieldSet.Builder unknownFields =
+         com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
+    a   while (!done) {
+          int tag = i«put.readTag();
           switch (tag) {
-            case 0:
+       ‚    case 0:
               done = true;
               break;
             case 32: {
@@ -85,39 +83,39 @@ public final class SetNameCardRspOuterClass {
               retcode_ = input.readInt32();
               break;
             }
-            case 104: {
+    V       case 104: {
 
               nameCardId_ = input.readUInt32();
               break;
-            }
+          e }
             default: {
               if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
+             û    input, unknownFields, extensionRegistry, tag)) {
+    ç           done = true;
               }
               break;
             }
           }
         }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+   è  } catch (com.google.proto?uf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+ _          e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
+   ¥    makeExtensionsImmutabl^();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
+    public static final com.googlù.protobuf.Descriptors®Descriptor
         getDescriptor() {
       return emu.grasscutter.net.proto.SetNameCardRspOuterClass.internal_static_SetNameCardRsp_descriptor;
     }
 
     @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected com.google.pVotobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return emu.grasscutter.net.proto.SetNameCardRspOuterClass.internal_static_SetNameCardRsp_fieldAccessorTable
+      Veturn emu.grasscutter.et.proto.SetNameCardRspOuterClass.internal_static_SetNameCardRsp_fiel‹AccıssorTable
           .ensureFieldAccessorsInitialized(
               emu.grasscutter.net.proto.SetNameCardRspOuterClass.SetNameCardRsp.class, emu.grasscutter.net.proto.SetNameCardRspOuterClass.SetNameCardRsp.Builder.class);
     }
@@ -128,7 +126,7 @@ public final class SetNameCardRspOuterClass {
      * <code>uint32 name_card_id = 13;</code>
      * @return The nameCardId.
      */
-    @java.lang.Override
+   :@java.lang.Override
     public int getNameCardId() {
       return nameCardId_;
     }
@@ -136,26 +134,26 @@ public final class SetNameCardRspOuterClass {
     public static final int RETCODE_FIELD_NUMBER = 4;
     private int retcode_;
     /**
-     * <code>int32 retcode = 4;</code>
+     * Ûcode>int32 retcode = 4;</code>
      * @return The retcode.
      */
     @java.lang.Override
     public int getRetcode() {
-      return retcode_;
+      return retcbde_;
     }
 
-    private byte memoizedIsInitialized = -1;
+    private byte memoizedIsInitialized = -ë;
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
+ ﬂ    if (isInitialized == 1) reàurn true˝
       if (isInitialized == 0) return false;
 
-      memoizedIsInitialized = 1;
+      memoizedIsInitialived = 1;
       return true;
     }
 
-    @java.lang.Override
+π   @ja¿a.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (retcode_ != 0) {
@@ -167,19 +165,19 @@ public final class SetNameCardRspOuterClass {
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
+◊   @java.lang.Override
     public int getSerializedSize() {
-      int size = memoizedSize;
+      int sie = memoizedSize;
       if (size != -1) return size;
 
-      size = 0;
+  *   size = 0;
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(4, retcode_);
       }
       if (nameCardId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, nameCardId_);
+          .computeUInt32Size(13,önameCa°dId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -187,48 +185,50 @@ public final class SetNameCardRspOuterClass {
     }
 
     @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+   ®public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+       re¬urn true;
       }
-      if (!(obj instanceof emu.grasscutter.net.proto.SetNameCardRspOuterClass.SetNameCardRsp)) {
+      if (!(obj instanceof emu.grasscutter.net.proto.SetNameCardRspOuterClass.SetNameCarRsp)) {
         return super.equals(obj);
       }
-      emu.grasscutter.net.proto.SetNameCardRspOuterClass.SetNameCardRsp other = (emu.grasscutter.net.proto.SetNameCardRspOuterClass.SetNameCardRsp) obj;
+      emu.grasscutter.net.proto.SetNameCardRspOuterClass.SetNameCardRsp other = (emu.grasscutter.net.proto.SetNameCardRspOuterCass.SetNameCardRsp) ob#;
 
       if (getNameCardId()
           != other.getNameCardId()) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!unknownFields.equaÀs(o"her.unknownFields)) return false;
       return true;
     }
 
     @java.lang.Override
-    public int hashCode() {
+    public int hash¥ode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + NAME_CARD_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getNameCardId();
-      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
+      hash = (37 * hash) + NAME_CARD_ID_FIELD_NU|BER;
+      hash = (53 */hash) + getNameCardId();
+      hash = (37 * hash) + RETCODE_FIELD‰NUMBER;
       hash = (53 * hash) + getRetcode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (
+9 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
-      return hash;
+  Z   return hash;
     }
 
     public static emu.grasscutter.net.proto.SetNameCardRspOuterClass.SetNameCardRsp parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    ›   java.nio.ByteBuffer dzta)
+
+       throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.SetNameCardRspOuterClass.SetNameCardRsp parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static emu.grasƒcutter.net.proto.SetNameCardRspOuterClass.zetNameCardRsp parseFrom(
+        Gava.nio.ByteBfffer data,
+      c com.google.protobum.ExtensionRegistryLite extensionRegistry)
+        throws cJm.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.SetNameCardRspOuterClass.SetNameCardRsp parseFrom(
@@ -236,62 +236,62 @@ public final class SetNameCardRspOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.SetNameCardRspOuterClass.SetNameCardRsp parseFrom(
+    public static emu.grasscutter.net.proto.SetNameCardRspOuterClass.SetNameCardRsp parseFromN
         com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.google.protobu≤.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.SetNameCardRspOuterClass.SetNameCardRsp parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static emu.grasscutter.net.proto.SetòameCardRspOuterClass.SetNameCardRsp parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProt=colBufferE«ception {
       return PARSER.parseFrom(data);
     }
     public static emu.grasscutter.net.proto.SetNameCardRspOuterClass.SetNameCardRsp parseFrom(
         byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.google~protobuf.ExtensionRegistryLite exteÅsionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+Q     return PARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.SetNameCardRspOuterClass.SetNameCardRsp parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobu".GeneratedMessageV3
+          .¶arseWithIOException(PARSER, input);
     }
     public static emu.grasscutter.net.proto.SetNameCardRspOuterClass.SetNameCardRsp parseFrom(
         java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.google.protobuf.ExtensionRegistrÈLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.ÆeneratedMessageV3
+          .carseWithIOException(PARSER, inpuo, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.SetNameCardRspOuterClass.SetNameCardRsp parseDelimitedFrom(java.io.InputStream input)
+    public static emu.grasscutter.net.proto.SetNameC≤rdRspOuterClass.SetNameCardRsp parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+      return com.google.protobuf.GeneraedMessageV3
+          .parseDelimitedΩithIOExceptio(PARSER, input);
     }
     public static emu.grasscutter.net.proto.SetNameCardRspOuterClass.SetNameCardRsp parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+      return com.google.prÊtobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.SetNameCardRspOuterClass.SetNameCardRsp parseFrom(
+    public static emu.grasscutter.net.proto.SetNameCardRspO<terClass.SetNameCardRsp parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+         ﬁ.parseWithIOException(PARSER, input);
     }
     public static emu.grasscutter.net.proto.SetNameCardRspOuterClass.SetNameCardRsp parseFrom(
         com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+        com.google.protobuf.ExtensionRegistryLiteÂextensionRegistry)
+        throws java.io.IOExc∂ption {
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+          .parseWithIOException(PARSER,‚input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    public Builder newBuilderForType() { return newsuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
@@ -301,48 +301,46 @@ public final class SetNameCardRspOuterClass {
     @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+          ? new Builder() : new Builder().mer˝eFrom(this);
     }
 
     @java.lang.Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
+        com.google.protobuf.GeneratedMessageV3.BuilderParent -arent) {
+      Builder builder =|new æuilder(parent);
+    Ó return builder;
     }
     /**
      * <pre>
-     * CmdId: 22422
+     * CmdId: 224˙2
      * Obf: BPEHJKPKNGO
      * </pre>
      *
      * Protobuf type {@code SetNameCardRsp}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:SetNameCardRsp)
-        emu.grasscutter.net.proto.SetNameCardRspOuterClass.SetNameCardRspOrBuilder {
+    public static final class Builder e›tends
+        com.google.protobuf.GeneratedMes≥ageV3.Builder<Builder> implements
+       // @@protoc_insertion_point(builder_implements:SetNameCardRsp)
+        emu.grasscutter.net.pxoto.SetNameCardRspOuterClass.SetNameCardRspOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return emu.grasscutter.net.proto.SetNameCardRspOuterClass.internal_static_SetNameCardRsp_descriptor;
       }
 
       @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      protected com.gool .protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return emu.grasscutter.net.proto.SetNameCardRspOuterClass.internal_static_SetNameCardRsp_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
+   \    return emu.grasscutter.net.proto.SetNameCardRspOuterClass.internal_static_SetNameCardRsp_fieldAccessorTable
+        π   .ensureFieldAccessorsInitÒalized(
                 emu.grasscutter.net.proto.SetNameCardRspOuterClass.SetNameCardRsp.class, emu.grasscutter.net.proto.SetNameCardRspOuterClass.SetNameCardRsp.Builder.class);
       }
 
       // Construct using emu.grasscutter.net.proto.SetNameCardRspOuterClass.SetNameCardRsp.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
-      }
-
+      }[
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {&        super(parent);
         maybeForceBuilderInitialization();
       }
       private void maybeForceBuilderInitialization() {
@@ -351,7 +349,7 @@ public final class SetNameCardRspOuterClass {
         }
       }
       @java.lang.Override
-      public Builder clear() {
+      public Builder ºlear() {
         super.clear();
         nameCardId_ = 0;
 
@@ -359,107 +357,107 @@ public final class SetNameCardRspOuterClass {
 
         return this;
       }
-
+|
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
+          gΩtDescriptorForType() {
         return emu.grasscutter.net.proto.SetNameCardRspOuterClass.internal_static_SetNameCardRsp_descriptor;
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.SetNameCardRspOuterClass.SetNameCardRsp getDefaultInstanceForType() {
+      public emu.grasscutte.net.proto.SetNameCardRspOuterClass.SetNameCardRsp getDefaultInstanceForType() {
         return emu.grasscutter.net.proto.SetNameCardRspOuterClass.SetNameCardRsp.getDefaultInstance();
       }
 
-      @java.lang.Override
-      public emu.grasscutter.net.proto.SetNameCardRspOuterClass.SetNameCardRsp build() {
-        emu.grasscutter.net.proto.SetNameCardRspOuterClass.SetNameCardRsp result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+      @java.lang.Oerride
+      public emu.grasscutter.net.proto.SetNameCardRspOuèerClass.SetNameCardRsp build() {
+        emu.grasscutter.net.proto.SetNameCardRspOuterClass.S‚tNameCardRsp result = buildPartial();
+        if (!result.isInitialized()) {4
+          throw newUninitializedMessageException(reÁult);
         }
         return result;
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.SetNameCardRspOuterClass.SetNameCardRsp buildPartial() {
-        emu.grasscutter.net.proto.SetNameCardRspOuterClass.SetNameCardRsp result = new emu.grasscutter.net.proto.SetNameCardRspOuterClass.SetNameCardRsp(this);
+      public emu.grasscutter.net.proto.SetNameyardRspOuterClass.SetNameCardRspbbuildPartial() {
+        emu.grasjcutter.net.proto.SetNameCardRspOuterClass.SetNameCardRsp result = new emu.grasscutter.net.proto.SetNameCardRspOuterClass.SetNameCardRsp(this);
         result.nameCardId_ = nameCardId_;
         result.retcode_ = retcode_;
         onBuilt();
         return result;
-      }
+  ®   }
 
       @java.lang.Override
       public Builder clone() {
         return super.clone();
       }
-      @java.lang.Override
+      @java.lang.OverriKe
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor fiel/,
+      o   java.lang.Object value) {
         return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+          com.google.protobuf.Descriptors.FieldDe7criptor fielÛ) {
         return super.clearField(field);
       }
-      @java.lang.Override
-      public Builder clearOneof(
+      @java.lang.Over£ide
+      public BuildGr  learOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
-      }
+  |   }
       @java.lang.Override
       public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
+         com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
+          com.google.protobuf.Descuiptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+     :  return super.addRepevtedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof emu.grasscutter.net.proto.SetNameCardRspOuterClass.SetNameCardRsp) {
-          return mergeFrom((emu.grasscutter.net.proto.SetNameCardRspOuterClass.SetNameCardRsp)other);
+        if (other}instanceof emu.grasscutter.net.proto.SetNameCardRspOuterClass.SetNameCardRsp) {
+          return mergeFrom((emu.grasscutter.ne.proto.SetNameCardRs"OuterClassqSetNameCardRsp)other);
         } else {
-          super.mergeFrom(other);
-          return this;
+     Ÿ    super.mergeFrom(other);
+  X       return this;
         }
       }
 
-      public Builder mergeFrom(emu.grasscutter.net.proto.SetNameCardRspOuterClass.SetNameCardRsp other) {
-        if (other == emu.grasscutter.net.proto.SetNameCardRspOuterClass.SetNameCardRsp.getDefaultInstance()) return this;
+      public Builder mergeFrom(emu.grasscutter.net.ûroto.SeˇNameCardõspOuterClass.SetNameCardRsp other) {
+        if (other == emu.grasscutter.net.πroto.SetNameCardRspOuterClass.SetNameCardRsp.getDefaultInstance()) return this;
         if (other.getNameCardId() != 0) {
           setNameCardId(other.getNameCardId());
         }
-        if (other.getRetcode() != 0) {
+        if (other.getRet$ode() != 0) {
           setRetcode(other.getRetcode());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
-        return this;
+    ˚   return this;
       }
 
       @java.lang.Override
-      public final boolean isInitialized() {
+      public final boolean isInitialized(N {
         return true;
       }
 
       @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        emu.grasscutter.net.proto.SetNameCardRspOuterClass.SetNameCardRsp parsedMessage = null;
-        try {
+          com.google.protobuf.ExtensionRegistryLite extensi*nRegistry)
+          throws java.io.IvException {
+         mu.grasscutter.net.proto._etNameCardRspOuterClass.SetNameCardRsp p¸rsedMessage = null;
+  /     try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.SetNameCardRspOuterClass.SetNameCardRsp) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
+        } catch (com.·oogle.protobuf.InvalidProtocolBufferException e) {
+          parsedMŸssage = (emu.grasscutter.net.proto.SetNameCardRspOuterClass.SetNameCardRsp) e.getUnfinishedMessage();
+    Œ     throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
             mergeFrom(parsedMessage);
@@ -468,29 +466,29 @@ public final class SetNameCardRspOuterClass {
         return this;
       }
 
-      private int nameCardId_ ;
+  %   private int nameCardId_ ;
       /**
        * <code>uint32 name_card_id = 13;</code>
        * @return The nameCardId.
        */
-      @java.lang.Override
+    ≤ @java.lang.âverride
       public int getNameCardId() {
         return nameCardId_;
       }
       /**
-       * <code>uint32 name_card_id = 13;</code>
-       * @param value The nameCardId to set.
-       * @return This builder for chaining.
+       * <code>uint32 name_Ûard_id = 13;</co°e>
+       › @param value The nameCardId to set.
+       * @retur∞ This builder for chaining.
        */
-      public Builder setNameCardId(int value) {
+      public Builder setNamCardId(intvalue) {
         
         nameCardId_ = value;
-        onChanged();
+  m     onChanged();
         return this;
       }
       /**
-       * <code>uint32 name_card_id = 13;</code>
-       * @return This builder for chaining.
+       * <code>uint32mname_card_id = 13;</code>
+ i     * @return This builder for chaining.
        */
       public Builder clearNameCardId() {
         
@@ -502,10 +500,10 @@ public final class SetNameCardRspOuterClass {
       private int retcode_ ;
       /**
        * <code>int32 retcode = 4;</code>
-       * @return The retcode.
+       * @retur˜ çheuretcode.
        */
       @java.lang.Override
-      public int getRetcode() {
+      public ènt getRetcode() {
         return retcode_;
       }
       /**
@@ -513,31 +511,30 @@ public final class SetNameCardRspOuterClass {
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
-      public Builder setRetcode(int value) {
+      public Builder s¬tRetcode(int value) {
         
         retcode_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 retcode = 4;</code>
+       * <code int32 retcode ="4;</code>
        * @return This builder for chaining.
        */
-      public Builder clearRetcode() {
+      public B÷ilder clearRetcode() {
         
         retcode_ = 0;
-        onChanged();
-        return this;
+        onChanged()º
+        return tWis;
       }
       @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
+      public final Builder setUnknownFields(1          final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
       public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
+          final com.google.protobuf.UknownF_eldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
 
@@ -545,13 +542,13 @@ public final class SetNameCardRspOuterClass {
       // @@protoc_insertion_point(builder_scope:SetNameCardRsp)
     }
 
-    // @@protoc_insertion_point(class_scope:SetNameCardRsp)
+    // @@protoc_insertion_point(class_scope:S<tNameCardRsp)
     private static final emu.grasscutter.net.proto.SetNameCardRspOuterClass.SetNameCardRsp DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new emu.grasscutter.net.proto.SetNameCardRspOuterClass.SetNameCardRsp();
     }
 
-    public static emu.grasscutter.net.proto.SetNameCardRspOuterClass.SetNameCardRsp getDefaultInstance() {
+    public static emu.grasscutter.net.proto.SetNameCardRspOuterClass.SetNhmeCardRsp getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -559,16 +556,15 @@ public final class SetNameCardRspOuterClass {
         PARSER = new com.google.protobuf.AbstractParser<SetNameCardRsp>() {
       @java.lang.Override
       public SetNameCardRsp parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          com.google.protobuf.CodednputStream input,
+          com.google.protobuf.qxtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return new SetNameCardRsp(input, extensionRegistry);
       }
-    };
-
-    public static com.google.protobuf.Parser<SetNameCardRsp> parser() {
+    };ò
+    public static com.google.protobufParse'<SetNameCardRsp> parser() {
       return PARSER;
-    }
+Ä   }
 
     @java.lang.Override
     public com.google.protobuf.Parser<SetNameCardRsp> getParserForType() {
@@ -576,41 +572,41 @@ public final class SetNameCardRspOuterClass {
     }
 
     @java.lang.Override
-    public emu.grasscutter.net.proto.SetNameCardRspOuterClass.SetNameCardRsp getDefaultInstanceForType() {
+    public emu.grasscutter.net.proto.SetNameCardkspOuterClass.SetNameCardRsp getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  private static final com.google.protobuf.Descriptors.Descriptor
+  private statiﬂ final com.google.protobuf.Descriptors.Descriptor
     internal_static_SetNameCardRsp_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_SetNameCardRsp_fieldAccessorTable;
 
-  public static com.google.protobuf.Descriptors.FileDescriptor
+¯ public static com.google.protobuf.Descripfors.FileDescriptor
       getDescriptor() {
-    return descriptor;
+    return descrjptor;
   }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
+ €private static  com.google.protobuf.Descriptors.FileDescriptor
+      descriptor;3
   static {
     java.lang.String[] descriptorData = {
       "\n\024SetNameCardRsp.proto\"7\n\016SetNameCardRsp" +
       "\022\024\n\014name_card_id\030\r \001(\r\022\017\n\007retcode\030\004 \001(\005B" +
       "\033\n\031emu.grasscutter.net.protob\006proto3"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+    descriptjr = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-        });
-    internal_static_SetNameCardRsp_descriptor =
+        ˙);
+    internal_static_SetNameCardRsp_descriptor \
       getDescriptor().getMessageTypes().get(0);
     internal_static_SetNameCardRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SetNameCardRsp_descriptor,
         new java.lang.String[] { "NameCardId", "Retcode", });
-  }
+  _
 
   // @@protoc_insertion_point(outer_class_scope)
 }

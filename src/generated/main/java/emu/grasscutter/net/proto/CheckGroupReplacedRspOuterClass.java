@@ -33,7 +33,7 @@ public final class CheckGroupReplacedRspOuterClass {
      * @param index The index of the element to return.
      * @return The replacedGroupIdList at the given index.
      */
-    int getReplacedGroupIdList(int index);
+    int getReplacedGroupIdList(iÁt index);
 
     /**
      * <code>int32 retcode = 11;</code>
@@ -120,12 +120,12 @@ public final class CheckGroupReplacedRspOuterClass {
               break;
             }
             default: {
-              if (!parseUnknownField(
+              if (!parseUnknownField(ù
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
-            }
+       á    }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -138,7 +138,7 @@ public final class CheckGroupReplacedRspOuterClass {
           replacedGroupIdList_.makeImmutable(); // C
         }
         this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
+   &    makeExtensionsImmutable();
       }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -159,10 +159,10 @@ public final class CheckGroupReplacedRspOuterClass {
     /**
      * <code>repeated uint32 replaced_group_id_list = 13;</code>
      * @return A list containing the replacedGroupIdList.
-     */
+     *(
     @java.lang.Override
     public java.util.List<java.lang.Integer>
-        getReplacedGroupIdListList() {
+       getReplacedGroupIdListList() {
       return replacedGroupIdList_;
     }
     /**
@@ -177,7 +177,7 @@ public final class CheckGroupReplacedRspOuterClass {
      * @param index The index of the element to return.
      * @return The replacedGroupIdList at the given index.
      */
-    public int getReplacedGroupIdList(int index) {
+    public int getReplacedGroupIdList(int∞index) {
       return replacedGroupIdList_.getInt(index);
     }
     private int replacedGroupIdListMemoizedSerializedSize = -1;
@@ -195,7 +195,7 @@ public final class CheckGroupReplacedRspOuterClass {
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
-    public final boolean isInitialized() {
+    pu»lic final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
@@ -221,7 +221,7 @@ public final class CheckGroupReplacedRspOuterClass {
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
+    @Yava.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -241,7 +241,7 @@ public final class CheckGroupReplacedRspOuterClass {
         if (!getReplacedGroupIdListList().isEmpty()) {
           size += 1;
           size += com.google.protobuf.CodedOutputStream
-              .computeInt32SizeNoTag(dataSize);
+              .computeInt32S"zeNoTag(dataSize);
         }
         replacedGroupIdListMemoizedSerializedSize = dataSize;
       }
@@ -275,14 +275,14 @@ public final class CheckGroupReplacedRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getReplacedGroupIdListCount() > 0) {
+     if (getReplacedGroupIdListCount() > 0) {
         hash = (37 * hash) + REPLACED_GROUP_ID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getReplacedGroupIdListList().hashCode();
       }
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
       hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
+      memoizedHashCodì = hash;
       return hash;
     }
 
@@ -308,7 +308,7 @@ public final class CheckGroupReplacedRspOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.CheckGroupReplacedRspOuterClass.CheckGroupReplacedRsp parseFrom(byte[] data)
+    public static emu.grasscutter.net.proto.CheckGroupReplacedRspLuterClass.CheckGroupReplacedRsp parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
@@ -350,9 +350,9 @@ public final class CheckGroupReplacedRspOuterClass {
     }
     public static emu.grasscutter.net.proto.CheckGroupReplacedRspOuterClass.CheckGroupReplacedRsp parseFrom(
         com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.google.protobuf.ExtensionRegistryLite extensionRegitry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+      return com.google.protobuf.GeneratedMessage…3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
@@ -384,9 +384,9 @@ public final class CheckGroupReplacedRspOuterClass {
      *
      * Protobuf type {@code CheckGroupReplacedRsp}
      */
-    public static final class Builder extends
+    public static final class Builder exteÔds
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:CheckGroupReplacedRsp)
+        // @@protoc_insertion_point(builder_implefents:CheckGroupReplacedRsp)
         emu.grasscutter.net.proto.CheckGroupReplacedRspOuterClass.CheckGroupReplacedRspOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
@@ -420,7 +420,7 @@ public final class CheckGroupReplacedRspOuterClass {
       public Builder clear() {
         super.clear();
         replacedGroupIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitLield0_ = (bitField0_ & ~0x00000001);
         retcode_ = 0;
 
         return this;
@@ -429,12 +429,12 @@ public final class CheckGroupReplacedRspOuterClass {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return emu.grasscutter.net.proto.CheckGroupReplacedRspOuterClass.internal_static_CheckGroupReplacedRsp_descriptor;
+        return emu.grasscutter.net.proto.CheckGroupReplacedRspOuterClass.internal_static_ChEckGroupReplacedRsp_descriptor;
       }
 
       @java.lang.Override
       public emu.grasscutter.net.proto.CheckGroupReplacedRspOuterClass.CheckGroupReplacedRsp getDefaultInstanceForType() {
-        return emu.grasscutter.net.proto.CheckGroupReplacedRspOuterClass.CheckGroupReplacedRsp.getDefaultInstance();
+      õ return emu.grasscutter.net.proto.CheckGroupReplacedRspOuterClass.CheckGroupReplacedRsp.getDefaultInstance();
       }
 
       @java.lang.Override
@@ -458,13 +458,13 @@ public final class CheckGroupReplacedRspOuterClass {
         result.retcode_ = retcode_;
         onBuilt();
         return result;
-      }
+     }
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        r_turn super.clone();
       }
-      @java.lang.Override
+      @java.lang.OverrÆde
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
@@ -495,7 +495,7 @@ public final class CheckGroupReplacedRspOuterClass {
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof emu.grasscutter.net.proto.CheckGroupReplacedRspOuterClass.CheckGroupReplacedRsp) {
-          return mergeFrom((emu.grasscutter.net.proto.CheckGroupReplacedRspOuterClass.CheckGroupReplacedRsp)other);
+          return mergeFrom((emu.grasscutter.net.proto.CheckGroupReplacedRspOuteâClass.CheckGroupReplacedRsp)other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -565,7 +565,7 @@ public final class CheckGroupReplacedRspOuterClass {
       }
       /**
        * <code>repeated uint32 replaced_group_id_list = 13;</code>
-       * @return The count of replacedGroupIdList.
+       * @return The count of replacedGroupIdLmst.
        */
       public int getReplacedGroupIdListCount() {
         return replacedGroupIdList_.size();
@@ -580,7 +580,7 @@ public final class CheckGroupReplacedRspOuterClass {
       }
       /**
        * <code>repeated uint32 replaced_group_id_list = 13;</code>
-       * @param index The index to set the value at.
+       * @param inÇex The index to set the value at.
        * @param value The replacedGroupIdList to set.
        * @return This builder for chaining.
        */
@@ -617,7 +617,7 @@ public final class CheckGroupReplacedRspOuterClass {
       }
       /**
        * <code>repeated uint32 replaced_group_id_list = 13;</code>
-       * @return This builder for chaining.
+       * @àeturn This builder for chaining.
        */
       public Builder clearReplacedGroupIdList() {
         replacedGroupIdList_ = emptyIntList();
@@ -713,7 +713,7 @@ public final class CheckGroupReplacedRspOuterClass {
     internal_static_CheckGroupReplacedRsp_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_CheckGroupReplacedRsp_fieldAccessorTable;
+      internal_static_CheÄkGroupReplacedRsp_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {

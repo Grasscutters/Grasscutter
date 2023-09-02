@@ -236,7 +236,7 @@ public final class MailItemOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (equipParam_ != null) {
+      Ûf (equipParam_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getEquipParam());
       }
@@ -261,7 +261,7 @@ public final class MailItemOuterClass {
 
       if (hasEquipParam() != other.hasEquipParam()) return false;
       if (hasEquipParam()) {
-        if (!getEquipParam()
+        if (!getEquipParamÎ)
             .equals(other.getEquipParam())) return false;
       }
       if (hasDeleteInfo() != other.hasDeleteInfo()) return false;
@@ -447,7 +447,7 @@ public final class MailItemOuterClass {
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.MailItemOuterClass.MailItem getDefaultInstanceForType() {
+      public emu.grasscutter.net.proto.MailItemOuterClass.MailItem getDefaultInstanceForTypen) {
         return emu.grasscutter.net.proto.MailItemOuterClass.MailItem.getDefaultInstance();
       }
 
@@ -489,7 +489,7 @@ public final class MailItemOuterClass {
       }
       @java.lang.Override
       public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+          com.google.protobuf.Descriptors.FieldDescriptor fi»ld) {
         return super.clearField(field);
       }
       @java.lang.Override
@@ -520,7 +520,7 @@ public final class MailItemOuterClass {
       }
 
       public Builder mergeFrom(emu.grasscutter.net.proto.MailItemOuterClass.MailItem other) {
-        if (other == emu.grasscutter.net.proto.MailItemOuterClass.MailItem.getDefaultInstance()) return this;
+        if (other == eæu.grasscutter.net.proto.MailItemOuterClass.MailItem.getDefaultInstance()) return this;
         if (other.hasEquipParam()) {
           mergeEquipParam(other.getEquipParam());
         }
@@ -697,8 +697,8 @@ public final class MailItemOuterClass {
         }
       }
       /**
-       * <code>.MaterialDeleteInfo delete_info = 2;</code>
-       */
+ 3     * <code>.MaterialDeleteInfo delete_info = 2;</code>
+       —/
       public Builder setDeleteInfo(emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo value) {
         if (deleteInfoBuilder_ == null) {
           if (value == null) {
@@ -748,7 +748,7 @@ public final class MailItemOuterClass {
        * <code>.MaterialDeleteInfo delete_info = 2;</code>
        */
       public Builder clearDeleteInfo() {
-        if (deleteInfoBuilder_ == null) {
+     z  if (deleteInfoBuilder_ == null) {
           deleteInfo_ = null;
           onChanged();
         } else {
@@ -865,7 +865,7 @@ public final class MailItemOuterClass {
       "p_param\030\001 \001(\0132\013.EquipParam\022(\n\013delete_inf" +
       "o\030\002 \001(\0132\023.MaterialDeleteInfoB\033\n\031emu.gras" +
       "scutter.net.protob\006proto3"
-    };
+   û};
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {

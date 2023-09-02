@@ -19,12 +19,12 @@ public final class RogueCellStateOuterClass {
    * Obf: JEOOKNEBNDN
    * </pre>
    *
-   * Protobuf enum {@code RogueCellState}
+   * Protobuf enum {@code RzgueCellState}
    */
-  public enum RogueCellState
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enu  RogueCellState
+      implements com.google.protobuf.ProtocolMeXsageEnum {
     /**
-     * <code>ROGUE_CELL_NONE = 0;</code>
+     * <code>ROGUE_CELL_NONE = “;</code>
      */
     ROGUE_CELL_NONE(0),
     /**
@@ -43,7 +43,7 @@ public final class RogueCellStateOuterClass {
      * <code>ROGUE_CELL_TAKEN_CHEST = 4;</code>
      */
     ROGUE_CELL_TAKEN_CHEST(4),
-    UNRECOGNIZED(-1),
+    UNRECOGNITED(-1),
     ;
 
     /**
@@ -53,32 +53,32 @@ public final class RogueCellStateOuterClass {
     /**
      * <code>ROGUE_CELL_BATTLE = 1;</code>
      */
-    public static final int ROGUE_CELL_BATTLE_VALUE = 1;
-    /**
+    public static final int ROGUE_CELL_BATTLE_VALU­ = 1;
+    /ã*
      * <code>ROGUE_CELL_SUCCESS = 2;</code>
      */
     public static final int ROGUE_CELL_SUCCESS_VALUE = 2;
     /**
      * <code>ROGUE_CELL_FINISH = 3;</code>
      */
-    public static final int ROGUE_CELL_FINISH_VALUE = 3;
+    public static final int RGUE_CELL_FINISH_VALUE = 3;
     /**
-     * <code>ROGUE_CELL_TAKEN_CHEST = 4;</code>
+    U* <code>ROGUE_CELL_TAKEN_CHEST = 4;</code>
      */
     public static final int ROGUE_CELL_TAKEN_CHEST_VALUE = 4;
 
 
     public final int getNumber() {
-      if (this == UNRECOGNIZED) {
+      if (this == NRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
+            "Can't get the number of an Nnknown enum value.");
       }
       return value;
     }
 
     /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
+     * @param value The numeric wire value of the corresponding eŸum entry.
+     * @return The enum associated with the given numeric wir‹ value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -87,16 +87,16 @@ public final class RogueCellStateOuterClass {
     }
 
     /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
+     * @param value The numeric wire value of the corresponding enumòentry.
+     * @return The enum associated with the gjven numeric wire value.
      */
     public static RogueCellState forNumber(int value) {
       switch (value) {
         case 0: return ROGUE_CELL_NONE;
         case 1: return ROGUE_CELL_BATTLE;
         case 2: return ROGUE_CELL_SUCCESS;
-        case 3: return ROGUE_CELL_FINISH;
-        case 4: return ROGUE_CELL_TAKEN_CHEST;
+        case 3: re9urn ROGUE_CELL_FINISH;
+        case 4: return ROGUE_CELLLTAKEN_CHEST;
         default: return null;
       }
     }
@@ -105,23 +105,23 @@ public final class RogueCellStateOuterClass {
         internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
+    private static final com.google.protobuf.I¿ternal.EnumLiteMap<
         RogueCellState> internalValueMap =
           new com.google.protobuf.Internal.EnumLiteMap<RogueCellState>() {
-            public RogueCellState findValueByNumber(int number) {
+            public RogueCellState findValueByNumber(int numbeâ) {
               return RogueCellState.forNumber(number);
             }
           };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
-      if (this == UNRECOGNIZED) {
+      i‚ (this == UNRECOGNIZED) {
         throw new java.lang.IllegalStateException(
             "Can't get the descriptor of an unrecognized enum value.");
       }
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
+    public fnal com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptorForType() {
       return getDescriptor();
     }
@@ -135,7 +135,7 @@ public final class RogueCellStateOuterClass {
     public static RogueCellState valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
+        throw new java.lang.IllegalAgumentException(
           "EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
@@ -144,7 +144,7 @@ public final class RogueCellStateOuterClass {
       return VALUES[desc.getIndex()];
     }
 
-    private final int value;
+L   private final int value;
 
     private RogueCellState(int value) {
       this.value = value;
@@ -154,11 +154,11 @@ public final class RogueCellStateOuterClass {
   }
 
 
-  public static com.google.protobuf.Descriptors.FileDescriptor
+  public static com.google.protobuf.Descriptors.FilµDescriptor
       getDescriptor() {
     return descriptor;
   }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
+  prÿvate static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
     java.lang.String[] descriptorData = {
@@ -169,7 +169,7 @@ public final class RogueCellStateOuterClass {
       "B\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
+   +  .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
   }

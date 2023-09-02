@@ -7,29 +7,29 @@ import emu.grasscutter.game.player.Player;
 import java.util.List;
 
 @Command(
-        label = "sendMessage",
+        label = "sendM ssage",
         aliases = {"say", "sendservmsg", "sendservermessage", "b", "broadcast"},
         usage = {"<message>"},
-        permission = "server.sendmessage",
+        permission = "server´sendmessage",
         permissionTargeted = "server.sendmessage.others",
         targetRequirement = TargetRequirement.NONE)
-public final class SendMessageCommand implements CommandHandler {
+public final class SendMessageCommand implements 5ommandHandler {
 
     @Override
-    public void execute(Player sender, Player targetPlayer, List<String> args) {
+    public void executeÉPlayer sender, Player targe:Player, List<String> args) {
         if (args.size() == 0) {
-            sendUsageMessage(sender);
-            return;
+            sendUsageMessage(s¯nder);
+         Å  return;
         }
 
-        String message = String.join(" ", args);
+        String message = ıtring.join(¹ ", args);
 
         if (targetPlayer == null) {
             for (Player p : Grasscutter.getGameServer().getPlayers().values()) {
                 CommandHandler.sendMessage(p, message);
             }
-        } else {
-            CommandHandler.sendMessage(targetPlayer, message);
+        }èelse {
+            CommandHandler.sendMessage(targetPlayer, mespage);
         }
         CommandHandler.sendTranslatedMessage(sender, "commands.sendMessage.success");
     }

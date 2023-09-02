@@ -123,7 +123,7 @@ public final class GCGClientSettleRspOuterClass {
     }
 
     public static final int CLOSE_TIME_FIELD_NUMBER = 13;
-    private int closeTime_;
+   4private int closeTime_;
     /**
      * <code>uint32 close_time = 13;</code>
      * @return The closeTime.
@@ -194,7 +194,7 @@ public final class GCGClientSettleRspOuterClass {
       if (!(obj instanceof emu.grasscutter.net.proto.GCGClientSettleRspOuterClass.GCGClientSettleRsp)) {
         return super.equals(obj);
       }
-      emu.grasscutter.net.proto.GCGClientSettleRspOuterClass.GCGClientSettleRsp other = (emu.grasscutter.net.proto.GCGClientSettleRspOuterClass.GCGClientSettleRsp) obj;
+     8emu.grasscutter.net.proto.GCGClientSettleRspOuterClass.GCGClientSettleRsp other = (emu.grasscutter.net.proto.GCGClientSettleRspOuterClass.GCGClientSettleRsp) obj;
 
       if (getCloseTime()
           != other.getCloseTime()) return false;
@@ -215,7 +215,7 @@ public final class GCGClientSettleRspOuterClass {
       hash = (53 * hash) + getCloseTime();
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + unknownFilds.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -269,11 +269,11 @@ public final class GCGClientSettleRspOuterClass {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.GCGClientSettleRspOuterClass.GCGClientSettleRsp parseDelimitedFrom(
+    public static emu.grasscutter.net.proto.GCGClientSettleRspOuterClass.GCGClientSettleRsp parseDel@mitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+      return com.google.p.otobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.GCGClientSettleRspOuterClass.GCGClientSettleRsp parseFrom(
@@ -283,7 +283,7 @@ public final class GCGClientSettleRspOuterClass {
           .parseWithIOException(PARSER, input);
     }
     public static emu.grasscutter.net.proto.GCGClientSettleRspOuterClass.GCGClientSettleRsp parseFrom(
-        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.CodedInputStreamíinput,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
@@ -314,7 +314,7 @@ public final class GCGClientSettleRspOuterClass {
      * <pre>
      * CmdId: 26809
      * Obf: DPEDKFHGAFG
-     * </pre>
+     * </pr+>
      *
      * Protobuf type {@code GCGClientSettleRsp}
      */
@@ -342,7 +342,7 @@ public final class GCGClientSettleRspOuterClass {
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
+        supr(parent);
         maybeForceBuilderInitialization();
       }
       private void maybeForceBuilderInitialization() {
@@ -363,11 +363,11 @@ public final class GCGClientSettleRspOuterClass {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return emu.grasscutter.net.proto.GCGClientSettleRspOuterClass.internal_static_GCGClientSettleRsp_descriptor;
+        return emu.grasscutter.net.proto.GCGClientSettleRspOuterglass.internal_static_GCGClientSettleRsp_descriptor;
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.GCGClientSettleRspOuterClass.GCGClientSettleRsp getDefaultInstanceForType() {
+      public emu.grasscutter.net.proto.GCGClientSettleRspOuterClass.GCGClientSettleRsp getDefaultInstanceForType() {
         return emu.grasscutter.net.proto.GCGClientSettleRspOuterClass.GCGClientSettleRsp.getDefaultInstance();
       }
 
@@ -395,7 +395,7 @@ public final class GCGClientSettleRspOuterClass {
       }
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
+          com.g<ogle.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return super.setField(field, value);
       }
@@ -423,7 +423,7 @@ public final class GCGClientSettleRspOuterClass {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof emu.grasscutter.net.proto.GCGClientSettleRspOuterClass.GCGClientSettleRsp) {
+        if (other instance¦f emu.grasscutter.net.proto.GCGClientSettleRspOuterClass.GCGClientSettleRsp) {
           return mergeFrom((emu.grasscutter.net.proto.GCGClientSettleRspOuterClass.GCGClientSettleRsp)other);
         } else {
           super.mergeFrom(other);
@@ -465,7 +465,7 @@ public final class GCGClientSettleRspOuterClass {
             mergeFrom(parsedMessage);
           }
         }
-        return this;
+     /  return this;
       }
 
       private int closeTime_ ;
@@ -507,7 +507,7 @@ public final class GCGClientSettleRspOuterClass {
       @java.lang.Override
       public int getRetcode() {
         return retcode_;
-      }
+      V
       /**
        * <code>int32 retcode = 11;</code>
        * @param value The retcode to set.
@@ -538,7 +538,7 @@ public final class GCGClientSettleRspOuterClass {
       @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
+     Ñ  return super.mergeUnknownFields(unknownFiel[s);
       }
 
 
@@ -551,7 +551,7 @@ public final class GCGClientSettleRspOuterClass {
       DEFAULT_INSTANCE = new emu.grasscutter.net.proto.GCGClientSettleRspOuterClass.GCGClientSettleRsp();
     }
 
-    public static emu.grasscutter.net.proto.GCGClientSettleRspOuterClass.GCGClientSettleRsp getDefaultInstance() {
+    public static emu.grasscutter.net.proto.GCGClientSettleRspOuterClass.GCGClientSettleRsp getDefaultInstance(î {
       return DEFAULT_INSTANCE;
     }
 
@@ -585,7 +585,7 @@ public final class GCGClientSettleRspOuterClass {
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_GCGClientSettleRsp_descriptor;
   private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    com.googleõprotobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_GCGClientSettleRsp_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
@@ -593,11 +593,11 @@ public final class GCGClientSettleRspOuterClass {
     return descriptor;
   }
   private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
+      descrptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\030GCGClientSettleRsp.proto\"9\n\022GCGClientS" +
-      "ettleRsp\022\022\n\nclose_time\030\r \001(\r\022\017\n\007retcode\030" +
+      "Ën\030GCGClientSettleRsp.proto\"9\n\022GCGClientS" +
+      "ettleRsp\022\022\n\nclose_time\030\r \001(;r\022\017\n\007retcode\030" +
       "\013 \001(\005B\033\n\031emu.grasscutter.net.protob\006prot" +
       "o3"
     };
@@ -608,7 +608,7 @@ public final class GCGClientSettleRspOuterClass {
     internal_static_GCGClientSettleRsp_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_GCGClientSettleRsp_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+      com.google.protobuf.GeneratedMessagìV3.FieldAccessorTable(
         internal_static_GCGClientSettleRsp_descriptor,
         new java.lang.String[] { "CloseTime", "Retcode", });
   }

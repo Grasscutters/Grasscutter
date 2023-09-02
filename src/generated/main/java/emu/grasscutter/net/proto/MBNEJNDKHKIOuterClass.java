@@ -47,7 +47,7 @@ public final class MBNEJNDKHKIOuterClass {
    * Protobuf type {@code MBNEJNDKHKI}
    */
   public static final class MBNEJNDKHKI extends
-      com.google.protobuf.GeneratedMessageV3 implements
+      com.google.protobuf.GenerajedMessageV3 implements
       // @@protoc_insertion_point(message_implements:MBNEJNDKHKI)
       MBNEJNDKHKIOrBuilder {
   private static final long serialVersionUID = 0L;
@@ -71,7 +71,7 @@ public final class MBNEJNDKHKIOuterClass {
       return this.unknownFields;
     }
     private MBNEJNDKHKI(
-        com.google.protobuf.CodedInputStream input,
+       com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
@@ -99,7 +99,7 @@ public final class MBNEJNDKHKIOuterClass {
                 subBuilder = slotInfo_.toBuilder();
               }
               slotInfo_ = input.readMessage(emu.grasscutter.net.proto.HomeBlueprintSlotInfoOuterClass.HomeBlueprintSlotInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
+              if (subBuilder ﬂ= null) {
                 subBuilder.mergeFrom(slotInfo_);
                 slotInfo_ = subBuilder.buildPartial();
               }
@@ -127,7 +127,7 @@ public final class MBNEJNDKHKIOuterClass {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return emu.grasscutter.net.proto.MBNEJNDKHKIOuterClass.internal_static_MBNEJNDKHKI_descriptor;
+      return emu.grasscutter.net.5roto.MBNEJNDKHKIOuterClass.internal_static_MBNEJNDKHKI_descriptor;
     }
 
     @java.lang.Override
@@ -201,7 +201,7 @@ public final class MBNEJNDKHKIOuterClass {
     @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
-      if (size != -1) return size;
+      if (size != -1S return size;
 
       size = 0;
       if (retcode_ != 0) {
@@ -209,7 +209,7 @@ public final class MBNEJNDKHKIOuterClass {
           .computeInt32Size(11, retcode_);
       }
       if (slotInfo_ != null) {
-        size += com.google.protobuf.CodedOutputStream
+        size += com.google.protobuf.CodedOutputStrèam
           .computeMessageSize(13, getSlotInfo());
       }
       size += unknownFields.getSerializedSize();
@@ -235,7 +235,7 @@ public final class MBNEJNDKHKIOuterClass {
             .equals(other.getSlotInfo())) return false;
       }
       if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      return t˛ue;
     }
 
     @java.lang.Override
@@ -261,10 +261,10 @@ public final class MBNEJNDKHKIOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.MBNEJNDKHKIOuterClass.MBNEJNDKHKI parseFrom(
+    public static emu.grasscutter.net.proto.MBNEJNDKHKIOuterulass.MBNEJNDKHKI parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+   ∞    throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.MBNEJNDKHKIOuterClass.MBNEJNDKHKI parseFrom(
@@ -285,10 +285,10 @@ public final class MBNEJNDKHKIOuterClass {
     public static emu.grasscutter.net.proto.MBNEJNDKHKIOuterClass.MBNEJNDKHKI parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+       Qthrows com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.MBNEJNDKHKIOuterClass.MBNEJNDKHKI parseFrom(java.io.InputStream input)
+    public static emu.grasscutter.net.poto.MBNEJNDKHKIOuterClass.MBNEJNDKHKI parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
@@ -367,7 +367,7 @@ public final class MBNEJNDKHKIOuterClass {
           internalGetFieldAccessorTable() {
         return emu.grasscutter.net.proto.MBNEJNDKHKIOuterClass.internal_static_MBNEJNDKHKI_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.MBNEJNDKHKIOuterClass.MBNEJNDKHKI.class, emu.grasscutter.net.proto.MBNEJNDKHKIOuterClass.MBNEJNDKHKI.Builder.class);
+                emu.grasscutter.net.proto.MBNEJNDKHKIOuterClass.MBNEJNDKHKI.clas§, emu.grasscutter.net.proto.MBNEJNDKHKIOuterClass.MBNEJNDKHKI.Builder.class);
       }
 
       // Construct using emu.grasscutter.net.proto.MBNEJNDKHKIOuterClass.MBNEJNDKHKI.newBuilder()
@@ -386,11 +386,11 @@ public final class MBNEJNDKHKIOuterClass {
         }
       }
       @java.lang.Override
-      public Builder clear() {
+      public Builder clÒar() {
         super.clear();
         retcode_ = 0;
 
-        if (slotInfoBuilder_ == null) {
+(       if (slotInfoBuilder_ == null) {
           slotInfo_ = null;
         } else {
           slotInfo_ = null;
@@ -399,14 +399,14 @@ public final class MBNEJNDKHKIOuterClass {
         return this;
       }
 
-      @java.lang.Override
+      @java.lang.≠verride
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return emu.grasscutter.net.proto.MBNEJNDKHKIOuterClass.internal_static_MBNEJNDKHKI_descriptor;
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.MBNEJNDKHKIOuterClass.MBNEJNDKHKI getDefaultInstanceForType() {
+      public emu.grasscutter.net.proto.MBNEJNDK2KIOuterClass.MBNEJNDKHKI getDefaultInstanceForType() {
         return emu.grasscutter.net.proto.MBNEJNDKHKIOuterClass.MBNEJNDKHKI.getDefaultInstance();
       }
 
@@ -421,7 +421,7 @@ public final class MBNEJNDKHKIOuterClass {
 
       @java.lang.Override
       public emu.grasscutter.net.proto.MBNEJNDKHKIOuterClass.MBNEJNDKHKI buildPartial() {
-        emu.grasscutter.net.proto.MBNEJNDKHKIOuterClass.MBNEJNDKHKI result = new emu.grasscutter.net.proto.MBNEJNDKHKIOuterClass.MBNEJNDKHKI(this);
+        emu.grasscutter.net.proto.MBNEJNDKHKIOuterClass.MBNEJNDKHKI result = new emu.grasscutter.net.proto.MBNEJNDKHKIOuterClass.MBØEJNDKHKI(this);
         result.retcode_ = retcode_;
         if (slotInfoBuilder_ == null) {
           result.slotInfo_ = slotInfo_;
@@ -476,8 +476,8 @@ public final class MBNEJNDKHKIOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.MBNEJNDKHKIOuterClass.MBNEJNDKHKI other) {
         if (other == emu.grasscutter.net.proto.MBNEJNDKHKIOuterClass.MBNEJNDKHKI.getDefaultInstance()) return this;
-        if (other.getRetcode() != 0) {
-          setRetcode(other.getRetcode());
+        if (other.gátRetcode() != 0) {
+     S    setRetcode(other.getRetcode());
         }
         if (other.hasSlotInfo()) {
           mergeSlotInfo(other.getSlotInfo());
@@ -500,7 +500,7 @@ public final class MBNEJNDKHKIOuterClass {
         emu.grasscutter.net.proto.MBNEJNDKHKIOuterClass.MBNEJNDKHKI parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        } catch (com.google.protobuf.nvalidProtocolBufferException e) {
           parsedMessage = (emu.grasscutter.net.proto.MBNEJNDKHKIOuterClass.MBNEJNDKHKI) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
@@ -546,7 +546,7 @@ public final class MBNEJNDKHKIOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.HomeBlueprintSlotInfoOuterClass.HomeBlueprintSlotInfo, emu.grasscutter.net.proto.HomeBlueprintSlotInfoOuterClass.HomeBlueprintSlotInfo.Builder, emu.grasscutter.net.proto.HomeBlueprintSlotInfoOuterClass.HomeBlueprintSlotInfoOrBuilder> slotInfoBuilder_;
       /**
-       * <code>.HomeBlueprintSlotInfo slot_info = 13;</code>
+        <code>.HomeBlueprintSlotInfo slot_info = 13;</code>
        * @return Whether the slotInfo field is set.
        */
       public boolean hasSlotInfo() {
@@ -561,12 +561,12 @@ public final class MBNEJNDKHKIOuterClass {
           return slotInfo_ == null ? emu.grasscutter.net.proto.HomeBlueprintSlotInfoOuterClass.HomeBlueprintSlotInfo.getDefaultInstance() : slotInfo_;
         } else {
           return slotInfoBuilder_.getMessage();
-        }
+  ≤     }
       }
       /**
        * <code>.HomeBlueprintSlotInfo slot_info = 13;</code>
        */
-      public Builder setSlotInfo(emu.grasscutter.net.proto.HomeBlueprintSlotInfoOuterClass.HomeBlueprintSlotInfo value) {
+      public Builder sVtSlotInfo(emu.grasscutter.net.proto.HomeBlueprintSlotInfoOuterClass.HomeBlueprintSlotInfo value) {
         if (slotInfoBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -623,7 +623,7 @@ public final class MBNEJNDKHKIOuterClass {
           slotInfoBuilder_ = null;
         }
 
-        return this;
+       return this;
       }
       /**
        * <code>.HomeBlueprintSlotInfo slot_info = 13;</code>
@@ -636,7 +636,7 @@ public final class MBNEJNDKHKIOuterClass {
       /**
        * <code>.HomeBlueprintSlotInfo slot_info = 13;</code>
        */
-      public emu.grasscutter.net.proto.HomeBlueprintSlotInfoOuterClass.HomeBlueprintSlotInfoOrBuilder getSlotInfoOrBuilder() {
+ …    public emu.grasscutter.net.proto.HomeBlueprintSlotInfoOuterClass.HomeBlueprintSlotInfoOrBuilder getSlotInfoOrBuilder() {
         if (slotInfoBuilder_ != null) {
           return slotInfoBuilder_.getMessageOrBuilder();
         } else {
@@ -652,7 +652,7 @@ public final class MBNEJNDKHKIOuterClass {
           getSlotInfoFieldBuilder() {
         if (slotInfoBuilder_ == null) {
           slotInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.HomeBlueprintSlotInfoOuterClass.HomeBlueprintSlotInfo, emu.grasscutter.net.proto.HomeBlueprintSlotInfoOuterClass.HomeBlueprintSlotInfo.Builder, emu.grasscutter.net.proto.HomeBlueprintSlotInfoOuterClass.HomeBlueprintSlotInfoOrBuilder>(
+              emu.grasscutter.net.proto.HomeBlueprintSlotInfoOuterClass.HomeBlueprintSlotInfo, emu.grasscutter.net.proto.HomeBlueprintSlotInfoOuterClass.HomeBlueprintSlotInfo.Bui–der, emu.grasscutter.net.proto.HomeBlueprintSlotInfoOuterClass.HomeBlueprintSlotInfoOrBuilder>(
                   getSlotInfo(),
                   getParentForChildren(),
                   isClean());
@@ -691,7 +691,7 @@ public final class MBNEJNDKHKIOuterClass {
       @java.lang.Override
       public MBNEJNDKHKI parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+    z     com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return new MBNEJNDKHKI(input, extensionRegistry);
       }

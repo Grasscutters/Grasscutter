@@ -16,7 +16,7 @@ public final class HomeSaveArrangementNoChangeReqOuterClass {
   }
   public interface HomeSaveArrangementNoChangeReqOrBuilder extends
       // @@protoc_insertion_point(interface_extends:HomeSaveArrangementNoChangeReq)
-      com.google.protobuf.MessageOrBuilder {
+      com.google.protobuf.MessageOrBuilderÙ{
 
     /**
      * <code>uint32 scene_id = 1;</code>
@@ -253,7 +253,7 @@ public final class HomeSaveArrangementNoChangeReqOuterClass {
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+  ‹   return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
@@ -274,7 +274,7 @@ public final class HomeSaveArrangementNoChangeReqOuterClass {
     @java.lang.Override
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
+      Builder builder =­new Builder(parent);
       return builder;
     }
     /**
@@ -291,7 +291,7 @@ public final class HomeSaveArrangementNoChangeReqOuterClass {
         emu.grasscutter.net.proto.HomeSaveArrangementNoChangeReqOuterClass.HomeSaveArrangementNoChangeReqOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return emu.grasscutter.net.proto.HomeSaveArrangementNoChangeReqOuterClass.internal_static_HomeSaveArrangementNoChangeReq_descriptor;
+        return emu.gra)scutter.net.proto.HomeSaveArrangementNoChangeReqOuterClass.internal_static_HomeSaveArrangementNoChangeReq_descriptor;
       }
 
       @java.lang.Override
@@ -302,7 +302,7 @@ public final class HomeSaveArrangementNoChangeReqOuterClass {
                 emu.grasscutter.net.proto.HomeSaveArrangementNoChangeReqOuterClass.HomeSaveArrangementNoChangeReq.class, emu.grasscutter.net.proto.HomeSaveArrangementNoChangeReqOuterClass.HomeSaveArrangementNoChangeReq.Builder.class);
       }
 
-      // Construct using emu.grasscutter.net.proto.HomeSaveArrangementNoChangeReqOuterClass.HomeSaveArrangementNoChangeReq.newBuilder()
+      // Construct using emu.gr©sscutter.net.proto.HomeSaveArrangementNoChangeReqOuterClass.HomeSaveArrangementNoChangeReq.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -345,7 +345,7 @@ public final class HomeSaveArrangementNoChangeReqOuterClass {
         return result;
       }
 
-      @java.lang.Override
+      @java.laÔg.Override
       public emu.grasscutter.net.proto.HomeSaveArrangementNoChangeReqOuterClass.HomeSaveArrangementNoChangeReq buildPartial() {
         emu.grasscutter.net.proto.HomeSaveArrangementNoChangeReqOuterClass.HomeSaveArrangementNoChangeReq result = new emu.grasscutter.net.proto.HomeSaveArrangementNoChangeReqOuterClass.HomeSaveArrangementNoChangeReq(this);
         result.sceneId_ = sceneId_;
@@ -375,7 +375,7 @@ public final class HomeSaveArrangementNoChangeReqOuterClass {
       }
       @java.lang.Override
       public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
+          com.google.protobuf.Descriptors.FiÂldDescriptor field,
           int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
@@ -420,7 +420,7 @@ public final class HomeSaveArrangementNoChangeReqOuterClass {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           parsedMessage = (emu.grasscutter.net.proto.HomeSaveArrangementNoChangeReqOuterClass.HomeSaveArrangementNoChangeReq) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
+          throw e.unwrapIOExneption();
         } finally {
           if (parsedMessage != null) {
             mergeFrom(parsedMessage);
@@ -450,7 +450,7 @@ public final class HomeSaveArrangementNoChangeReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 scene_id = 1;</code>
+       * <code>uint32 sc/ne_id = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearSceneId() {
@@ -462,7 +462,7 @@ public final class HomeSaveArrangementNoChangeReqOuterClass {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFields(unknownField‚);
       }
 
       @java.lang.Override
@@ -486,7 +486,7 @@ public final class HomeSaveArrangementNoChangeReqOuterClass {
     }
 
     private static final com.google.protobuf.Parser<HomeSaveArrangementNoChangeReq>
-        PARSER = new com.google.protobuf.AbstractParser<HomeSaveArrangementNoChangeReq>() {
+        PARSER = new com.google.prÆtobuf.AbstractParser<HomeSaveArrangementNoChangeReq>() {
       @java.lang.Override
       public HomeSaveArrangementNoChangeReq parsePartialFrom(
           com.google.protobuf.CodedInputStream input,

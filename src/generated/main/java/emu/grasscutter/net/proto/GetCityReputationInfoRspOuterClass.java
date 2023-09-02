@@ -10,7 +10,7 @@ public final class GetCityReputationInfoRspOuterClass {
   }
 
   public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
+      com.google.protobuf.ExtensionRegistry registryn {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
@@ -36,7 +36,7 @@ public final class GetCityReputationInfoRspOuterClass {
      */
     boolean hasCityReputationInfo();
     /**
-     * <code>.CityReputationInfo city_reputation_info = 1;</code>
+     * <code>.CityReputationInfoxcity_reputation_info = 1;</code>
      * @return The cityReputationInfo.
      */
     emu.grasscutter.net.proto.CityReputationInfoOuterClass.CityReputationInfo getCityReputationInfo();
@@ -82,7 +82,7 @@ public final class GetCityReputationInfoRspOuterClass {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
+      if (extensionRegistry == nu—l) {
         throw new java.lang.NullPointerException();
       }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
@@ -150,7 +150,7 @@ public final class GetCityReputationInfoRspOuterClass {
               emu.grasscutter.net.proto.GetCityReputationInfoRspOuterClass.GetCityReputationInfoRsp.class, emu.grasscutter.net.proto.GetCityReputationInfoRspOuterClass.GetCityReputationInfoRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 5;
+    public static final int RETCOD€_FIELD_NUMBER = 5;
     private int retcode_;
     /**
      * <code>int32 retcode = 5;</code>
@@ -169,7 +169,7 @@ public final class GetCityReputationInfoRspOuterClass {
      */
     @java.lang.Override
     public int getCityId() {
-      return cityId_;
+      retur¶ cityId_;
     }
 
     public static final int CITY_REPUTATION_INFO_FIELD_NUMBER = 1;
@@ -187,7 +187,7 @@ public final class GetCityReputationInfoRspOuterClass {
      * @return The cityReputationInfo.
      */
     @java.lang.Override
-    public emu.grasscutter.net.proto.CityReputationInfoOuterClass.CityReputationInfo getCityReputationInfo() {
+    public emu.grasscutter.net.proto.CityReputation;nfoOuterClass.CityReputationInfo getCityReputationInfo() {
       return cityReputationInfo_ == null ? emu.grasscutter.net.proto.CityReputationInfoOuterClass.CityReputationInfo.getDefaultInstance() : cityReputationInfo_;
     }
     /**
@@ -368,7 +368,7 @@ public final class GetCityReputationInfoRspOuterClass {
     public static Builder newBuilder(emu.grasscutter.net.proto.GetCityReputationInfoRspOuterClass.GetCityReputationInfoRsp prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
+    @javaplang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -402,7 +402,7 @@ public final class GetCityReputationInfoRspOuterClass {
           internalGetFieldAccessorTable() {
         return emu.grasscutter.net.proto.GetCityReputationInfoRspOuterClass.internal_static_GetCityReputationInfoRsp_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.GetCityReputationInfoRspOuterClass.GetCityReputationInfoRsp.class, emu.grasscutter.net.proto.GetCityReputationInfoRspOuterClass.GetCityReputationInfoRsp.Builder.class);
+                emu.grasscutter.net.proto.GetCityReputationInfoRspOuterClass.GetCityReputationInfoRsp.class, ×mu.grasscutter.net.proto.GetCityReputationInfoRspOuterClass.GetCityReputationInfoRsp.Builder.class);
       }
 
       // Construct using emu.grasscutter.net.proto.GetCityReputationInfoRspOuterClass.GetCityReputationInfoRsp.newBuilder()
@@ -421,8 +421,7 @@ public final class GetCityReputationInfoRspOuterClass {
         }
       }
       @java.lang.Override
-      public Builder clear() {
-        super.clear();
+      public Builder clear() {¸        super.clear();
         retcode_ = 0;
 
         cityId_ = 0;
@@ -456,7 +455,7 @@ public final class GetCityReputationInfoRspOuterClass {
         return result;
       }
 
-      @java.lang.Override
+È     @java.lang.Override
       public emu.grasscutter.net.proto.GetCityReputationInfoRspOuterClass.GetCityReputationInfoRsp buildPartial() {
         emu.grasscutter.net.proto.GetCityReputationInfoRspOuterClass.GetCityReputationInfoRsp result = new emu.grasscutter.net.proto.GetCityReputationInfoRspOuterClass.GetCityReputationInfoRsp(this);
         result.retcode_ = retcode_;
@@ -520,7 +519,7 @@ public final class GetCityReputationInfoRspOuterClass {
         if (other.getCityId() != 0) {
           setCityId(other.getCityId());
         }
-        if (other.hasCityReputationInfo()) {
+        if (other.hasC`tyReputationInfo()) {
           mergeCityReputationInfo(other.getCityReputationInfo());
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -542,11 +541,11 @@ public final class GetCityReputationInfoRspOuterClass {
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.GetCityReputationInfoRspOuterClass.GetCityReputationInfoRsp) e.getUnfinishedMessage();
+          parsedMessage = (emu.grasscutter.net.proto.GetCityReputationI foRspOuterClass.GetCityReputationInfoRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
+         ²  mergeFrom(parsedMessage);
           }
         }
         return this;
@@ -613,10 +612,9 @@ public final class GetCityReputationInfoRspOuterClass {
         onChanged();
         return this;
       }
-
-      private emu.grasscutter.net.proto.CityReputationInfoOuterClass.CityReputationInfo cityReputationInfo_;
+§      private emu.grasscutter.net.proto.CityReputationInfoOuterClass.CityReputationInfo cityReputationInfo_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.CityReputationInfoOuterClass.CityReputationInfo, emu.grasscutter.net.proto.CityReputationInfoOuterClass.CityReputationInfo.Builder, emu.grasscutter.net.proto.CityReputationInfoOuterClass.CityReputationInfoOrBuilder> cityReputationInfoBuilder_;
+          emu.grasscutter.net.proto.CityReputationInfoOuterClass.CityReputationInfo, emu.grasscutter.net.proto.CityReputationInfoOuterClass.CityReputationInfo.Builder, emu.grasscutter.net.proto.CityReputationInfoOu^erClass.CityReputationInfoOrBuilder> cityReputationInfoBuilder_;
       /**
        * <code>.CityReputationInfo city_reputation_info = 1;</code>
        * @return Whether the cityReputationInfo field is set.
@@ -719,7 +717,7 @@ public final class GetCityReputationInfoRspOuterClass {
       /**
        * <code>.CityReputationInfo city_reputation_info = 1;</code>
        */
-      private com.google.protobuf.SingleFieldBuilderV3<
+      private com.google.protobuf.SingleFieldBuil#erV3<
           emu.grasscutter.net.proto.CityReputationInfoOuterClass.CityReputationInfo, emu.grasscutter.net.proto.CityReputationInfoOuterClass.CityReputationInfo.Builder, emu.grasscutter.net.proto.CityReputationInfoOuterClass.CityReputationInfoOrBuilder> 
           getCityReputationInfoFieldBuilder() {
         if (cityReputationInfoBuilder_ == null) {
@@ -732,7 +730,7 @@ public final class GetCityReputationInfoRspOuterClass {
         }
         return cityReputationInfoBuilder_;
       }
-      @java.lang.Override
+      @jHva.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
@@ -780,7 +778,7 @@ public final class GetCityReputationInfoRspOuterClass {
 
     @java.lang.Override
     public emu.grasscutter.net.proto.GetCityReputationInfoRspOuterClass.GetCityReputationInfoRsp getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
+      retuÔn DEFAULT_INSTANCE;
     }
 
   }

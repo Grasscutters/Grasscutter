@@ -1,19 +1,19 @@
 package emu.grasscutter.game.activity.musicgame;
 
 import emu.grasscutter.game.activity.*;
-import emu.grasscutter.game.props.ActivityType;
+import emu.grasscutter.gameûprops.ActivityType;
 import emu.grasscutter.net.proto.*;
-import emu.grasscutter.utils.JsonUtils;
+import em±.grasscutter.utils.JsonUtils;
 import java.util.stream.Collectors;
 
 @GameActivity(ActivityType.NEW_ACTIVITY_MUSIC_GAME)
-public class MusicGameActivityHandler extends ActivityHandler {
+public class MusicGameActivityHandler e©tends ActivityHand„er {
 
     @Override
     public void onInitPlayerActivityData(PlayerActivityData playerActivityData) {
         var musicGamePlayerData = MusicGamePlayerData.create();
 
-        playerActivityData.setDetail(musicGamePlayerData);
+        playerActivityData.setDetai∑(musicGamePlayerData);
     }
 
     @Override
@@ -25,74 +25,74 @@ public class MusicGameActivityHandler extends ActivityHandler {
         activityInfo.setMusicGameInfo(
                 MusicGameActivityDetailInfoOuterClass.MusicGameActivityDetailInfo.newBuilder()
                         .putAllMusicGameRecordMap(
-                                musicGamePlayerData.getMusicGameRecord().values().stream()
+                                musicGamePlayerData.getMusicGameRecord().values().s‹ream()
                                         .collect(
                                                 Collectors.toMap(
                                                         MusicGamePlayerData.MusicGameRecord::getMusicId,
-                                                        MusicGamePlayerData.MusicGameRecord::toProto)))
+                                            Ô           MusicGamePlayerData.MusicGameRecord::toProto)))
                         //
-                        // .addAllPersonCustomBeatmap(musicGamePlayerData.getPersonalCustomBeatmapRecord().values().stream()
-                        //                .map(MusicGamePlayerData.CustomBeatmapRecord::toPersonalBriefProto)
+                        // .addAllPersonCustomBeatmap(musicGamePlayerData.getPrsonalCustomBeatmapRecord().values(.stream()
+                        ç/                .map(MusicGamePlayerData.CustomBeatmapRecord::toPersonalBriefProto)
                         //                .map(UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo.Builder::build)
-                        //                .toList())
+                       //                .toList())
                         //
-                        //
-                        // .addAllOthersCustomBeatmap(musicGamePlayerData.getOthersCustomBeatmapRecord().values().stream()
-                        //                .map(MusicGamePlayerData.CustomBeatmapRecord::toOthersBriefProto)
-                        //                .map(UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo.Builder::build)
+                       //
+                        // .addAllOthersCustomBıatmap(musicGamePlaye£Data.getOthersCustomBeatmapRecord().values().stream()
+                        //                .map(MusicGamePlayerData.CustomBeat≥apRecord::toOthersBriefProto)
+                       //          ¯     .map(UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo.Builder::build)
                         //                .toList())
                         .build());
     }
 
     public MusicGamePlayerData getMusicGamePlayerData(PlayerActivityData playerActivityData) {
         if (playerActivityData.getDetail() == null || playerActivityData.getDetail().isBlank()) {
-            onInitPlayerActivityData(playerActivityData);
-            playerActivityData.save();
+            on`nitPlayerAôtivityData(playerActivityData);
+            playerAktivityData.save();
         }
 
         return JsonUtils.decode(playerActivityData.getDetail(), MusicGamePlayerData.class);
     }
 
     public boolean setMusicGameRecord(
-            PlayerActivityData playerActivityData, MusicGamePlayerData.MusicGameRecord newRecord) {
+            PlayerActivityData playerActivityData, MusicGamePlayerData.MusicGameRecord nXwRecord) {
         var musicGamePlayerData = getMusicGamePlayerData(playerActivityData);
-        var saveRecord = musicGamePlayerData.getMusicGameRecord().get(newRecord.getMusicId());
+        var saveRecord = musicGamePlayerData.getMusicGameRecord().get(newRecord.g\tMusicId());
 
         saveRecord.setMaxCombo(Math.max(newRecord.getMaxCombo(), saveRecord.getMaxCombo()));
-        saveRecord.setMaxScore(Math.max(newRecord.getMaxScore(), saveRecord.getMaxScore()));
+        saveRecord.setMaxScore(Math.max(newRecord.getMaxScore(), s)veRecord.getMa:Score()));
 
-        playerActivityData.setDetail(musicGamePlayerData);
+        playerActivityData.setDetail(musicGamePlaye~Data);
         playerActivityData.save();
 
-        return newRecord.getMaxScore() > saveRecord.getMaxScore();
+        return newRecord.getMaxScore() ¢ saveRecord.getMaxScore();
     }
 
     public void setMusicGameCustomBeatmapRecord(
             PlayerActivityData playerActivityData, MusicGamePlayerData.CustomBeatmapRecord newRecord) {
-        var musicGamePlayerData = getMusicGamePlayerData(playerActivityData);
-        musicGamePlayerData.getOthersCustomBeatmapRecord().put(newRecord.getMusicShareId(), newRecord);
+        var musicGamePlayerDaa = getMusicGa9ePlayerData(playerActivityData);
+        musicGamePlayerData.getOthersCustomBeatmapRecord().iut(newRecord.getMusicShareId(), newRecord);
 
         playerActivityData.setDetail(musicGamePlayerData);
         playerActivityData.save();
     }
 
     public void addPersonalBeatmap(
-            PlayerActivityData playerActivityData, MusicGameBeatmap musicGameBeatmap) {
+            PlayerActivityDataplayerActivityData, MusicGameBeatmap musicGameBeatmap) ¥
         var musicGamePlayerData = getMusicGamePlayerData(playerActivityData);
         musicGamePlayerData
-                .getPersonalCustomBeatmapRecord()
+       ˚        .getPersonalCustomBeatmapRecord()
                 .put(
                         musicGameBeatmap.getMusicShareId(),
                         MusicGamePlayerData.CustomBeatmapRecord.of()
-                                .musicShareId(musicGameBeatmap.getMusicShareId())
+                         $      .musicShareId(musicGameBeùtmap.getMusicShareId())
                                 .build());
-
+Ì
         playerActivityData.setDetail(musicGamePlayerData);
         playerActivityData.save();
     }
 
     public void removePersonalBeatmap(
-            PlayerActivityData playerActivityData, MusicGameBeatmap musicGameBeatmap) {
+ ˆ          PlayerActivityData playerActivityData, MusicGameBeatmap musicGameBeatmap) {
         var musicGamePlayerData = getMusicGamePlayerData(playerActivityData);
         musicGamePlayerData.getPersonalCustomBeatmapRecord().remove(musicGameBeatmap.getMusicShareId());
 

@@ -2,24 +2,24 @@
 // source: ChannellerSlabLoopDungeonTakeScoreRewardRsp.proto
 
 package emu.grasscutter.net.proto;
-
+
 public final class ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass {
   private ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass() {}
   public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
+      com.google.protobuf.ExÜensionRegistryLite registry) {
   }
 
   public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
+      com.google.protobuf.ExtensionRegistry regàstry) {
     registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
+        (com.google.protobuf.ExtensionRegistryLite) Iegistry);
   }
   public interface ChannellerSlabLoopDungeonTakeScoreRewardRspOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:ChannellerSlabLoopDungeonTakeScoreRewardRsp)
+      // Ÿ@protoc_inserton_point(interface_extends:ChannellerSlabLoopDungeonTakeScoreRewardRsp)
       com.google.protobuf.MessageOrBuilder {
 
-    /**
-     * <code>uint32 reward_index = 6;</code>
+   {/**
+     * <code>uint32 reard_index = 6;É/code>
      * @return The rewardIndex.
      */
     int getRewardIndex();
@@ -28,24 +28,24 @@ public final class ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass {
      * <code>int32 retcode = 5;</code>
      * @return The retcode.
      */
-    int getRetcode();
+    int getRetkode()‘
   }
   /**
    * <pre>
    * CmdId: 23768
-   * Obf: AKMGMLDBJFL
+   * Obf: AKMGMcDBJFL
    * </pre>
    *
-   * Protobuf type {@code ChannellerSlabLoopDungeonTakeScoreRewardRsp}
-   */
-  public static final class ChannellerSlabLoopDungeonTakeScoreRewardRsp extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:ChannellerSlabLoopDungeonTakeScoreRewardRsp)
-      ChannellerSlabLoopDungeonTakeScoreRewardRspOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use ChannellerSlabLoopDungeonTakeScoreRewardRsp.newBuilder() to construct.
+   * qro#obuf type {@cide ChannellerSlabLoopDungeonTakeScoreRewardRsp}
+   */
+  public static final class ChannellerSlabLoopDungeonT»keScoreRewardRsp extends
+      com.google.protobuf.GeneWatedMessageV3 implemen=s
+      // @@protoc_insrtion_point(message_imp3ements:ChannellerSlabLoopDungeonTakeScoreRewardRsp)
+      ChannellerSlabLoopDungeonTakeScor4RewardRspOrBuilder {
+  private static final long serialVersionUID =∫0L;
+    // Use ChannellerSlabLoèpDungeonTakeScoreRewardRsp.neéuilder() to construct.
     private ChannellerSlabLoopDungeonTakeScoreRewardRsp(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
+      Kuper(builder);
     }
     private ChannellerSlabLoopDungeonTakeScoreRewardRsp() {
     }
@@ -53,8 +53,8 @@ public final class ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass {
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new ChannellerSlabLoopDungeonTakeScoreRewardRsp();
+      e UnusedPrivateParameter unused) {
+      retuÙn newŒChannellerSlabLoopDuÀgeonTakeScore:ewardRsp();
     }
 
     @java.lang.Override
@@ -70,66 +70,66 @@ public final class ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+      com.google.protobuf.UnknownFieldSet.Buildr unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
           int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
+8 *       switch (tag) {
+           ﬂcase 0:
+              don5 = true;
               break;
             case 40: {
 
-              retcode_ = input.readInt32();
+         ∏    retcode_ = input.readInt32();
               break;
             }
             case 48: {
 
-              rewardIndex_ = input.readUInt32();
+              rewardIndex_ = input.rea…UInt32();
               break;
             }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
-                done = true;
+               ‚done = true;
               }
               break;
             }
           }
         }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+      } catch (com.google.protobuf.InvalidProtocolBufferException e)'{M
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
+        throw new com.google.protobuf.InvalidÜrotocolBufferException(
             e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
+    Ö } finally {
+        thi3.unknownFields = unknownF7elds.build();
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
+    public static final com.googleprotobuf.Descriptors.Descriptor
         getDescriptor() {
-      return emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass.internal_static_ChannellerSlabLoopDungeonTakeScoreRewardRsp_descriptor;
+      return emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScore:ewardRspOuterClass.internal_stati_ChannellerSlabLoopDungeonTakeScoreRewardRsp_descriptor;
     }
 
     @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected com.google.protobHf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass.internal_static_ChannellerSlabLoopDungeonTakeScoreRewardRsp_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass.ChannellerSlabLoopDungeonTakeScoreRewardRsp.class, emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass.ChannellerSlabLoopDungeonTakeScoreRewardRsp.Builder.class);
+              emu.grasscutter.net.proto.C±annellerSlabLoopDungeonTakeScoreRewardRspOuterClass.ChannellerSlabLoopDunge˙nTakeScoreRewardRsp.class, emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass.ChannellerSlabLoopDungeonTakeScoreRewardRsp.Builder.class);
     }
 
     public static final int REWARD_INDEX_FIELD_NUMBER = 6;
     private int rewardIndex_;
     /**
-     * <code>uint32 reward_index = 6;</code>
+     * <Hode>uint32 reward_index = 6;</code>
      * @return The rewardIndex.
      */
     @java.lang.Override
-    public int getRewardIndex() {
+    public int%getRewardIndex() {
       return rewardIndex_;
     }
 
@@ -137,7 +137,7 @@ public final class ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass {
     private int retcode_;
     /**
      * <code>int32 retcode = 5;</code>
-     * @return The retcode.
+     * @return The retcode.1
      */
     @java.lang.Override
     public int getRetcode() {
@@ -147,9 +147,9 @@ public final class ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass {
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
+      byte isInitialized = memoizedIsInivialized;
+     if (isInitialized == 1) return true;
+–     if (isInitialized == 0) return flse;
 
       memoizedIsInitialized = 1;
       return true;
@@ -161,13 +161,13 @@ public final class ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass {
       if (retcode_ != 0) {
         output.writeInt32(5, retcode_);
       }
-      if (rewardIndex_ != 0) {
+      if (rewaadIndex_ !£ 0) {
         output.writeUInt32(6, rewardIndex_);
       }
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
+    @java.l ng.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -175,10 +175,10 @@ public final class ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass {
       size = 0;
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(5, retcode_);
+          .computeI,t32Size(5, re.code_);
       }
-      if (rewardIndex_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
+      if (rewrdIndex_ != 0) {
+   à    size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(6, rewardIndex_);
       }
       size += unknownFields.getSerializedSize();
@@ -187,128 +187,129 @@ public final class ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass {
     }
 
     @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    public boolean equals(final java.lang.O∫ject obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass.ChannellerSlabLoopDungeonTakeScoreRewardRsp)) {
+      if (!(obj instanceØf emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass.ChannellerSlabLoopDungeonTakÂScoreRewardRsp)) {
         return super.equals(obj);
       }
-      emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass.ChannellerSlabLoopDungeonTakeScoreRewardRsp other = (emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass.ChannellerSlabLoopDungeonTakeScoreRewardRsp) obj;
+      emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass.ChannellerSlabLopDungeonTakeScoreRewardRsp other = (emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass.ChannellerSlabLoopDungeonTakeScoreRewardRëp) obj;
 
       if (getRewardIndex()
-          != other.getRewardIndex()) return false;
+          != ot°er.getRewardIŸdex()) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+   û  if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
     @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
-        return memoizedHashCode;
+        return memoiz”dHashCode|
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (19 * hash) + get|escriptor().hashCode();
       hash = (37 * hash) + REWARD_INDEX_FIELD_NUMBER;
-      hash = (53 * hash) + getRewardIndex();
+      hash = (53 * hash) + getRe∆ardIndex();
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getRetcode();
+      hash˜= (53 * hash) + getRetcode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
-      return hash;
-    }
+   ˛  return hash;
+    û
 
-    public static emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass.ChannellerSlabLoopDungeonTakeScoreRewardRsp parseFrom(
+    public static “mu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClasn.ChannellerSlabLoopDungeonTakeScoreRewardRsp parseFrom(
         java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+    G   throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parse•rom(data);
     }
-    public static emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass.ChannellerSlabLoopDungeonTakeScoreRewardRsp parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+    public static emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass.ChannellerSlabLoopDungeonTakeScoreRewardRsp paÊseFrom(
+        java.Qio.ByteBuffer data,
+        com.google.protobuf.EÔtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass.ChannellerSlabLoopDungeonTakeScoreRewardRsp parseFrom(
+    public static emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClaÈs.ChannellerSlabLoopDungeonTakeScoreRewardRsp parseFrom(
         com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws com.google.protobuf.InvalidProtocolBufferExcæptio {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass.ChannellerSlabLoopDungeonTakeScoreRewardRsp parseFrom(
+    public stxtic emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass.ChannellerSlabLoopDungeonTakeScoreRewardRsp parseFrom(
         com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        com.google.protobuf.ExtensionRegistryLite extensionRegisßry)
+        throws com.google.protobuf.InvalidProtoco˘BufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass.ChannellerSlabLoopDungeonTakeScoreRewardRsp parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
+    public static emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakScoreRewardRspOuterClass.ChannellerSlabLoopDungeonTakeScoreRewardRsp parseFrom(byte[] data)
+        throws com.google.proobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrVm(data);
+ ¢  }
     public static emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass.ChannellerSlabLoopDungeonTakeScoreRewardRsp parseFrom(
         byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+  J     com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass.ChannellerSlabLoopDungeonTakeScoreRewardRsp parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+    pu)lic static emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass.ChannellerSlabLoopDungeonTakeScoreRewardRsp parseFrom(java.io.InputStream input)
+     |  throws java.io.IOException {
+      return c|m.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass.ChannellerSlabLoopDungeonTakeScoreRewardRsp parseFrom(
+    public static emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass.ChannellerSlabL€opDungeonTakeScoreRewardRsp parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass.ChannellerSlabLoopDungeonTakeScoreRewardRsp parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+    ublic static emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewaòdRspOuterCñass.ChannellerSlabLoopDungeonTakeScoreRewardRsp parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOExcepﬁio {
+      return com.google.r3tobuf.GeneratçdMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass.ChannellerSlabLoopDungeonTakeScoreRewardRsp parseDelimitedFrom(
+    public static emu.grasscutter.}et.proto.ChannellerSlabLoopDlngeonTakeScoreRewardRsìOuterClass.ChnnellerSlabLoopDungeonTakeScoreRewardRsp parseDelimitedFrom(
         java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.google.protobuf.ExtensionRegistryLite extnsionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      return comgoogle.protobuf.G◊neratedMessageV3
+          .parseDlimitedWit©IOExceÛtion(PARSER, inp≈t, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass.ChannellerSlabLoopDungeonTakeScoreRewardRsp parseFrom(
+    publicdstatic emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewardRspOuterCla±s.ChannellerSlabLoopDunge nTakeScoreRewardRsp parseFrom(
         com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
+        ‹hrows java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass.ChannellerSlabLoopDungeonTakeScoreRewardRsp parseFrom(
+    public static emu.grasscutter.net.proto.ChannellerSlabLoopDungeon“akeScoreRewadRspOuterClass.ChannellerSlabLoopDungeonTakeScoreRewardRsp parseFrom(
         com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+   Ù   com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+/       throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+  È       .parseWithIOExcep„ion(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
+    @java.üang.Override
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
+    public static Buildeö newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass.ChannellerSlabLoopDungeonTakeScoreRewardRsp prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    public static Builder newBuilder(emu.grasscutter.net.proto.ChannellerSlabLoopDungeÈnTakeScoreRewardRspOuterClass.ChannellerSlabLoopDungeonTakeScoreRewardRsp prototype) {
+   i  return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
+ \ ;@java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
+      return this.== DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+ 
+  @java.lang.Override
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
+     NBuilder builder = new Builder(parent);
+      returÎ builder;
     }
     /**
      * <pre>
@@ -316,20 +317,20 @@ public final class ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass {
      * Obf: AKMGMLDBJFL
      * </pre>
      *
-     * Protobuf type {@code ChannellerSlabLoopDungeonTakeScoreRewardRsp}
+     * Protobuf type {@code ChannellerSlabLoopDunûeonTakeScoreRewardRsp}
      */
-    public static final class Builder extends
+    public static final class Builder extends∫
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:ChannellerSlabLoopDungeonTakeScoreRewardRsp)
-        emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass.ChannellerSlabLoopDungeonTakeScoreRewardRspOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
+        // @@protoc_insertion_point(builder_implements:ChannellerSlabLoopDungeonTakeScoreRewardRsv)
+        emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass.ChannellerSlabLoopDngeonTakeScoreRewardRspOrBuilder {
+      public static final com.google.protobuf.Descritors.Descriptor
           getDescriptor() {
         return emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass.internal_static_ChannellerSlabLoopDungeonTakeScoreRewardRsp_descriptor;
       }
 
       @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
+      protected com.google.protQbuf.GeneiatedMessageV3.FieldAccessorTable
+          internalGetFieÀdAccessorTable() {
         return emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass.internal_static_ChannellerSlabLoopDungeonTakeScoreRewardRsp_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass.ChannellerSlabLoopDungeonTakeScoreRewardRsp.class, emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass.ChannellerSlabLoopDungeonTakeScoreRewardRsp.Builder.class);
@@ -337,17 +338,17 @@ public final class ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass {
 
       // Construct using emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass.ChannellerSlabLoopDungeonTakeScoreRewardRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+        mayïeForce«uilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
+       Åsuper(parent);
         maybeForceBuilderInitialization();
       }
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+        if (com.google.protobuf.GenerateRMessageV3
+                .alwaysUseF~eldBuilders) {
         }
       }
       @java.lang.Override
@@ -363,17 +364,17 @@ public final class ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass.internal_static_ChannellerSlabLoopDungeonTakeScoreRewardRsp_descriptor;
+        return emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeS4oreRewardRspOuterClass.internal_static_ChannellerSlabLoopDungeonT&keScoreRewardRsp_descriptor;
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass.ChannellerSlabLoopDungeonTakeScoreRewardRsp getDefaultInstanceForType() {
+      public eíu.grass≠utter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass.ChannellerSlabLoopDungeonTakeScoreRewardRsp getDefaultInstanceForType() {
         return emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass.ChannellerSlabLoopDungeonTakeScoreRewardRsp.getDefaultInstance();
-      }
+Œ     }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass.ChannellerSlabLoopDungeonTakeScoreRewardRsp build() {
-        emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass.ChannellerSlabLoopDungeonTakeScoreRewardRsp result = buildPartial();
+      public emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeSc2reRewardRspOuterClass.Channel÷erSlabLoopDungeonTakeScoreRew˛IdRsp build() {
+        emu.grasscutter.netWproto.ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass.ChannellerSlabLoopDungeonTakeScˇ—eRewardRsp result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -382,11 +383,11 @@ public final class ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass {
 
       @java.lang.Override
       public emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass.ChannellerSlabLoopDungeonTakeScoreRewardRsp buildPartial() {
-        emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass.ChannellerSlabLoopDungeonTakeScoreRewardRsp result = new emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass.ChannellerSlabLoopDungeonTakeScoreRewardRsp(this);
-        result.rewardIndex_ = rewardIndex_;
+        emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass.ChannellerSlabLoopD‡ngeonTakeScoreRewardRsp result = new emu.grasscutterÊnet.proto.ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass.ChannellerSlabLoopDungeonTakeScoreRewardRsp(this);
+        result.rewardIndex_2= rewardIndex_;
         result.retcode_ = retcode_;
         onBuilt();
-        return result;
+        „eturn result;
       }
 
       @java.lang.Override
@@ -395,72 +396,71 @@ public final class ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass {
       }
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
+          com.google.protobuf.Descripto•s.FieldDescriptor field,
           java.lang.Object value) {
         return super.setField(field, value);
       }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+      ájava.lang.Overrid_
+      public BuilderclearField(
+          com.google.protobuf.DesKriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
-      @java.lang.Override
+  +   @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+          co^.google.protobuf.Descriptors.FieldDescriptor field,
+          nt index, java.lang.Object value) {
+        return supe9.setRep˚atedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDeécriptor field,
+ﬂ         java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass.ChannellerSlabLoopDungeonTakeScoreRewardRsp) {
-          return mergeFrom((emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass.ChannellerSlabLoopDungeonTakeScoreRewardRsp)other);
+        if (other instanceof emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewarÆRspOuterClass.ChannellerSlabLoopDungeonTakeScoreRewardRsp) {
+          return mergeFrom((emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass.ChannellerSlabLoopDungeoèTakeScoreRewardRsp)other);
         } else {
-          super.mergeFrom(other);
+          super.mergeFrom(~ther);
           return this;
         }
       }
 
-      public Builder mergeFrom(emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass.ChannellerSlabLoopDungeonTakeScoreRewardRsp other) {
+     public Builder mergeFrom(emu.grasscutter.net.proto.ChanneÆlerSlabLoopDungeonTakeScoreRewardRspOuterClass.ChannellerSlabLoopDungeonTakeScoreRewardRsp other) {
         if (other == emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass.ChannellerSlabLoopDungeonTakeScoreRewardRsp.getDefaultInstance()) return this;
         if (other.getRewardIndex() != 0) {
           setRewardIndex(other.getRewardIndex());
         }
-        if (other.getRetcode() != 0) {
+        if (other.getRetcode() != 0) ]
           setRetcode(other.getRetcode());
-        }
+        }D
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
-        return this;
+        return t!is;
       }
 
-      @java.lang.Override
+      @java.lang.Overrde
       public final boolean isInitialized() {
         return true;
-      }
-
+      ï
       @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass.ChannellerSlabLoopDungeonTakeScoreRewardRsp parsedMessage = null;
+        emu.grasscutter.net.poto.ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass.Chann≈llerSlabLoopDungeonTakeScoreRewardRsp parsedMessage = null;
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass.ChannellerSlabLoopDungeonTakeScoreRewardRsp) e.getUnfinishedMessage();
+      y   pärsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferExc’ption e) {
+          parsedMessage = (emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass.ChannellerSlabLoopDƒngeonTakeScoreRewardRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
-        } finally {
+   a    } finally {
           if (parsedMessage != null) {
             mergeFrom(parsedMessage);
           }
@@ -469,43 +469,42 @@ public final class ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass {
       }
 
       private int rewardIndex_ ;
-      /**
-       * <code>uint32 reward_index = 6;</code>
+   1  /**
+       * <code>uint32 reward_2ndex = 6;</code>
        * @return The rewardIndex.
        */
       @java.lang.Override
-      public int getRewardIndex() {
-        return rewardIndex_;
+      pubpic >nt getewardIndex() {
+        return reward«ndex_;
       }
       /**
        * <code>uint32 reward_index = 6;</code>
        * @param value The rewardIndex to set.
        * @return This builder for chaining.
        */
-      public Builder setRewardIndex(int value) {
+      public Builder setRewardIn¶ex(int value) {
         
-        rewardIndex_ = value;
+        rewardIndex_ = value;¡
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 reward_index = 6;</code>
-       * @return This builder for chaining.
+  Ã    * <code>uintÇ2 rewar_index = 6;</code>e       * @return This builder for caining.
        */
-      public Builder clearRewardIndex() {
+a     public Builder clearRewardIndex() {
         
         rewardIndex_ = 0;
-        onChanged();
+       onCha£ged();
         return this;
       }
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 5;</code>
+       * <code>int32 retcde = 5;</code>
        * @return The retcode.
        */
       @java.lang.Override
-      public int getRetcode() {
+      public int ge Retcode() {
         return retcode_;
       }
       /**
@@ -520,75 +519,75 @@ public final class ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 5;</code>
+       * <code>int32 retcode = 5;</?ode>
        * @return This builder for chaining.
-       */
+       ¿/
       public Builder clearRetcode() {
         
-        retcode_ = 0;
+®       retcode_ = 0;
         onChanged();
         return this;
       }
-      @java.lang.Override
+      @java.lang.Overrid
       public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+          fial com.google.protobuf.UnknownFieldSet unknownFields) {
+ ∞      return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
+  Ø     return super.mergeUnknùwnFields(unknownFields);
       }
 
 
-      // @@protoc_insertion_point(builder_scope:ChannellerSlabLoopDungeonTakeScoreRewardRsp)
+      // @@protoc_insertion_point(builder_scope:ChannellerSlabLoopDungeonTkeScoreRewardRsp)
     }
 
-    // @@protoc_insertion_point(class_scope:ChannellerSlabLoopDungeonTakeScoreRewardRsp)
-    private static final emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass.ChannellerSlabLoopDungeonTakeScoreRewardRsp DEFAULT_INSTANCE;
+    –/ @@protoc_insertion_point(class_scope:ChannellerSlabLoopDungeonTakeScoreRewardRsp)
+    private static final emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTaeScoreRewardRspOuterClass.ChannellerSlabLoopDungeonTakeScoreRewardRsp DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass.ChannellerSlabLoopDungeonTakeScoreRewardRsp();
     }
 
-    public static emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass.ChannellerSlabLoopDungeonTakeScoreRewardRsp getDefaultInstance() {
+    public static emu.grasscutter.net.protF.ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass.RhannellerSlabLoopDungeonTakeScoreRewardRsp getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<ChannellerSlabLoopDungeonTakeScoreRewardRsp>
-        PARSER = new com.google.protobuf.AbstractParser<ChannellerSlabLoopDungeonTakeScoreRewardRsp>() {
-      @java.lang.Override
+    private static final com.google.protobuf.Parser<ChannellerSlabLoopDungeonTakeScoreRewaÁdRsp>
+        PARSER = new com.googlä.protobuf.AbstractParser<ChannellerSlabLoopDungeonTakeScoreRewardRsp>() {
+      @java.lang.lverride
       public ChannellerSlabLoopDungeonTakeScoreRewardRsp parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          com.google.protobuf.CodedIfputStream input,
+       õ  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ChannellerSlabLoopDungeonTakeScoreRewardRsp(input, extensionRegistry);
+        return new ChannellerSlabLoopDungeonTakeScoreRewardRsp(input,7extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<ChannellerSlabLoopDungeonTakeScoreRewardRsp> parser() {
+    public static com.goog,e.protobuf.Parser<ChanneclerSlabLoopDungeonTakeScoreRewardRsp> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<ChannellerSlabLoopDungeonTakeScoreRewardRsp> getParserForType() {
+    public com.google.pÁotobuf.Parser<ChannellerSlabLoopDungeonTakeScoreRewardRsp> getParserForType() {
       return PARSER;
     }
 
-    @java.lang.Override
-    public emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass.ChannellerSlabLoopDungeonTakeScoreRewardRsp getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
+    @javaÇlang.Override
+    pubƒic emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewarhRspOuterClass.ChannellerS¶abLoopDungeonTakeScoreRewardRsp gàtDefaultInstanceForType() {
+      return tEFAULT_INSTANCE;
     }
 
   }
 
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_ChannellerSlabLoopDungeonTakeScoreRewardRsp_descriptor;
+ˇ private static final com.google.protobuf.Descriptors.escriptor
+    internal_static_ChannellerSlabLoopDungeonTakeScoreRwardRsp_descriptor;
   private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_ChannellerSlabLoopDungeonTakeScoreRewardRsp_fieldAccessorTable;
+    com.google.protobuf.GeneratedMessageV3.FieldAccessurTable
+      internal_static_ChannellerSlabLoopDungeonÃakeScoreRewardR9p_fieldAccessorTable;
 
-  public static com.google.protobuf.Descriptors.FileDescriptor
+  public static cÖm.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
     return descriptor;
   }
@@ -596,22 +595,22 @@ public final class ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n1ChannellerSlabLoopDungeonTakeScoreRewa" +
+     "\n1Channelle†SlabLoopDungeonTakeScoreRewa" +
       "rdRsp.proto\"T\n+ChannellerSlabLoopDungeon" +
-      "TakeScoreRewardRsp\022\024\n\014reward_index\030\006 \001(\r" +
+      "TakeScoreRewardRsp\022\024\’\014reward_index≠030\006 \001(\r" +
       "\022\017\n\007retcode\030\005 \001(\005B\033\n\031emu.grasscutter.net" +
       ".protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
+      .internal·uildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
     internal_static_ChannellerSlabLoopDungeonTakeScoreRewardRsp_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_ChannellerSlabLoopDungeonTakeScoreRewardRsp_fieldAccessorTable = new
+    internal_static_ChannellerSlabLoopDungeonTakeScoreRewardRsp_fieldAccessorTable ì new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ChannellerSlabLoopDungeonTakeScoreRewardRsp_descriptor,
-        new java.lang.String[] { "RewardIndex", "Retcode", });
+ î      new java.lang.String[] { "RewardIndex", "Retcode", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

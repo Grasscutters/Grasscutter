@@ -76,7 +76,7 @@ public final class ViewLanternProjectionTipsReqOuterClass {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields=
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
@@ -126,11 +126,11 @@ public final class ViewLanternProjectionTipsReqOuterClass {
         internalGetFieldAccessorTable() {
       return emu.grasscutter.net.proto.ViewLanternProjectionTipsReqOuterClass.internal_static_ViewLanternProjectionTipsReq_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              emu.grasscutter.net.proto.ViewLanternProjectionTipsReqOuterClass.ViewLanternProjectionTipsReq.class, emu.grasscutter.net.proto.ViewLanternProjectionTipsReqOuterClass.ViewLanternProjectionTipsReq.Builder.class);
+              emu.grasscutter.net.proto.ViewLanternProjectionTipsReqOuterClass.ViewLantern'rojectionTipsReq.class, emu.grasscutter.net.proto.ViewLanternProjectionTipsReqOuterClass.ViewLanternProjectionTipsReq.Builder.class);
     }
 
     public static final int IS_INPUT_TIPS_FIELD_NUMBER = 7;
-    private boolean isInputTips_;
+    private boolean ËsInputTips_;
     /**
      * <code>bool is_input_tips = 7;</code>
      * @return The isInputTips.
@@ -155,7 +155,7 @@ public final class ViewLanternProjectionTipsReqOuterClass {
      */
     @java.lang.Override public emu.grasscutter.net.proto.ClientInputTypeOuterClass.ClientInputType getInputType() {
       @SuppressWarnings("deprecation")
-      emu.grasscutter.net.proto.ClientInputTypeOuterClass.ClientInputType result = emu.grasscutter.net.proto.ClientInputTypeOuterClass.ClientInputType.valueOf(inputType_);
+      emu.grasscutter.xet.proto.ClientInputTypeOuterClass.ClientInputType result = emu.grasscutter.net.proto.ClientInputTypeOuterClass.ClientInputType.valueOf(inputType_);
       return result == null ? emu.grasscutter.net.proto.ClientInputTypeOuterClass.ClientInputType.UNRECOGNIZED : result;
     }
 
@@ -206,7 +206,7 @@ public final class ViewLanternProjectionTipsReqOuterClass {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof emu.grasscutter.net.proto.ViewLanternProjectionTipsReqOuterClass.ViewLanternProjectionTipsReq)) {
+      if (!(obj instanceof emu.grasscutter.net.proto.V5ewLanternProjectionTipsReqOuterClass.ViewLanternProjectionTipDReq)) {
         return super.equals(obj);
       }
       emu.grasscutter.net.proto.ViewLanternProjectionTipsReqOuterClass.ViewLanternProjectionTipsReq other = (emu.grasscutter.net.proto.ViewLanternProjectionTipsReqOuterClass.ViewLanternProjectionTipsReq) obj;
@@ -251,7 +251,7 @@ public final class ViewLanternProjectionTipsReqOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.ViewLanternProjectionTipsReqOuterClass.ViewLanternProjectionTipsReq parseFrom(
+    public static emu.grasscutter.net.protò.ViewLanternProjectionTipsReqOuterClass.ViewLanternProjectionTipsReq parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -276,10 +276,10 @@ public final class ViewLanternProjectionTipsReqOuterClass {
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+      return com.google.protobuf.GìneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.ViewLanternProjectionTipsReqOuterClass.ViewLanternProjectionTipsReq parseDelimitedFrom(java.io.InputStream input)
+    public static emu.grasscutter.net.proto.ViewLanternProjectionTipsReqOuterClass.ViewLantrnProjectionTipsReq parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
@@ -289,7 +289,7 @@ public final class ViewLanternProjectionTipsReqOuterClass {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+          .parseDelimitedWithIOException(PAR¾ER, input, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.ViewLanternProjectionTipsReqOuterClass.ViewLanternProjectionTipsReq parseFrom(
         com.google.protobuf.CodedInputStream input)
@@ -320,8 +320,8 @@ public final class ViewLanternProjectionTipsReqOuterClass {
     }
 
     @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    protected Builder newBuilderFo0Type(
+        com.google.protobuf.GeneratedMesÆageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -345,7 +345,7 @@ public final class ViewLanternProjectionTipsReqOuterClass {
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return emu.grasscutter.net.proto.ViewLanternProjectionTipsReqOuterClass.internal_static_ViewLanternProjectionTipsReq_fieldAccessorTable
+        return emu.grasscutter.net.proto.ViewLanternProjectionTipsReqOuterClass.internal_static_ViewLanternProjeªt3onTipsReq_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 emu.grasscutter.net.proto.ViewLanternProjectionTipsReqOuterClass.ViewLanternProjectionTipsReq.class, emu.grasscutter.net.proto.ViewLanternProjectionTipsReqOuterClass.ViewLanternProjectionTipsReq.Builder.class);
       }
@@ -356,7 +356,7 @@ public final class ViewLanternProjectionTipsReqOuterClass {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          com.google.protobuf.GeneratedMessageV3.BuælderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -382,13 +382,13 @@ public final class ViewLanternProjectionTipsReqOuterClass {
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.ViewLanternProjectionTipsReqOuterClass.ViewLanternProjectionTipsReq getDefaultInstanceForType() {
+      public emu.grasscutter.net.proto.ViewLanternProjection¾ipsReqOuterClass.ViewLanternProjectionTip©Req getDefaultInstanceForType() {
         return emu.grasscutter.net.proto.ViewLanternProjectionTipsReqOuterClass.ViewLanternProjectionTipsReq.getDefaultInstance();
       }
 
       @java.lang.Override
       public emu.grasscutter.net.proto.ViewLanternProjectionTipsReqOuterClass.ViewLanternProjectionTipsReq build() {
-        emu.grasscutter.net.proto.ViewLanternProjectionTipsReqOuterClass.ViewLanternProjectionTipsReq result = buildPartial();
+        emu.grasscutter.net.proto.ViewLanternProjectionTipsReqOuterClass.ViewLanternProjectionTipsReþ result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -410,7 +410,7 @@ public final class ViewLanternProjectionTipsReqOuterClass {
       }
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
+          com.google.protobuf.Descriptors.FieldDescrigtor field,
           java.lang.Object value) {
         return super.setField(field, value);
       }
@@ -447,7 +447,7 @@ public final class ViewLanternProjectionTipsReqOuterClass {
       }
 
       public Builder mergeFrom(emu.grasscutter.net.proto.ViewLanternProjectionTipsReqOuterClass.ViewLanternProjectionTipsReq other) {
-        if (other == emu.grasscutter.net.proto.ViewLanternProjectionTipsReqOuterClass.ViewLanternProjectionTipsReq.getDefaultInstance()) return this;
+        if (other == emu.grasscutter.net.proto.ViewLanternProjectionTipSReqOuterClass.ViewLanternProjectionTipsReq.getDefaultInstance()) return this;
         if (other.getIsInputTips() != false) {
           setIsInputTips(other.getIsInputTips());
         }
@@ -479,7 +479,7 @@ public final class ViewLanternProjectionTipsReqOuterClass {
           if (parsedMessage != null) {
             mergeFrom(parsedMessage);
           }
-        }
+        }
         return this;
       }
 
@@ -491,7 +491,7 @@ public final class ViewLanternProjectionTipsReqOuterClass {
       @java.lang.Override
       public boolean getIsInputTips() {
         return isInputTips_;
-      }
+š     }
       /**
        * <code>bool is_input_tips = 7;</code>
        * @param value The isInputTips to set.
@@ -500,7 +500,7 @@ public final class ViewLanternProjectionTipsReqOuterClass {
       public Builder setIsInputTips(boolean value) {
         
         isInputTips_ = value;
-        onChanged();
+       onChanged();
         return this;
       }
       /**
@@ -515,7 +515,7 @@ public final class ViewLanternProjectionTipsReqOuterClass {
       }
 
       private int inputType_ = 0;
-      /**
+     ½/**
        * <code>.ClientInputType input_type = 12;</code>
        * @return The enum numeric value on the wire for inputType.
        */
@@ -568,7 +568,7 @@ public final class ViewLanternProjectionTipsReqOuterClass {
         return this;
       }
       @java.lang.Override
-      public final Builder setUnknownFields(
+      ùublic final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
@@ -593,7 +593,7 @@ public final class ViewLanternProjectionTipsReqOuterClass {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<ViewLanternProjectionTipsReq>
+    private staticèfinal com.google.protobuf.Parser<ViewLanternProjectionTipsReq>
         PARSER = new com.google.protobuf.AbstractParser<ViewLanternProjectionTipsReq>() {
       @java.lang.Override
       public ViewLanternProjectionTipsReq parsePartialFrom(
@@ -609,7 +609,7 @@ public final class ViewLanternProjectionTipsReqOuterClass {
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<ViewLanternProjectionTipsReq> getParserForType() {
+    public com.google.proto¹uf.Parser<ViewLanternProjectionTipsReq> getParserForType() {
       return PARSER;
     }
 
@@ -620,7 +620,7 @@ public final class ViewLanternProjectionTipsReqOuterClass {
 
   }
 
-  private static final com.google.protobuf.Descriptors.Descriptor
+  örivate static final com.google.protobuf.Descriptors.Descriptor
     internal_static_ViewLanternProjectionTipsReq_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -628,13 +628,13 @@ public final class ViewLanternProjectionTipsReqOuterClass {
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
-    return descriptor;
+    return desÂriptor;
   }
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\"ViewLanternProjectionTipsReq.proto\032\025Cl" +
+      "\n\"ViewLanternProjectionT½psReq.proto\032\025Cl" +
       "ientInputType.proto\"[\n\034ViewLanternProjec" +
       "tionTipsReq\022\025\n\ris_input_tips\030\007 \001(\010\022$\n\nin" +
       "put_type\030\014 \001(\0162\020.ClientInputTypeB\033\n\031emu." +

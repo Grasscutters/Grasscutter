@@ -10,7 +10,7 @@ public final class DFHDDGDOAKOOuterClass {
   }
 
   public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
+      com.google.protobuf.ExtensionRegistÎy registry) {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
@@ -139,7 +139,7 @@ public final class DFHDDGDOAKOOuterClass {
     }
     /**
      * <code>.DIAHIHIEHPO BHHMEJHIOED = 7;</code>
-     * @return The bHHMEJHIOED.
+     * @returnNThe bHHMEJHIOED.
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.DIAHIHIEHPOOuterClass.DIAHIHIEHPO getBHHMEJHIOED() {
@@ -180,7 +180,7 @@ public final class DFHDDGDOAKOOuterClass {
 
       size = 0;
       if (bHHMEJHIOED_ != null) {
-        size += com.google.protobuf.CodedOutputStream
+      ® size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, getBHHMEJHIOED());
       }
       size += unknownFields.getSerializedSize();
@@ -239,7 +239,7 @@ public final class DFHDDGDOAKOOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.DFHDDGDOAKOOuterClass.DFHDDGDOAKO parseFrom(
+    publùc static emu.grasscutter.net.proto.DFHDDGDOAKOOuterClass.DFHDDGDOAKO parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -298,7 +298,7 @@ public final class DFHDDGDOAKOOuterClass {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(emu.grasscutter.net.proto.DFHDDGDOAKOOuterClass.DFHDDGDOAKO prototype) {
+    public static Builder newBuilder(emu.grasscutter.net.proto.DFHDDGDOAKOOuterClass.DFHDGDOAKO prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -349,9 +349,9 @@ public final class DFHDDGDOAKOOuterClass {
       }
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+                .alzaysUseFieldBuilders) {
         }
-      }
+     }
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -376,7 +376,7 @@ public final class DFHDDGDOAKOOuterClass {
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.DFHDDGDOAKOOuterClass.DFHDDGDOAKO build() {
+      public emu.grasscuHter.net.proto.DFHDDGDOAKOOuterClass.DFHDDGDOAKO build() {
         emu.grasscutter.net.proto.DFHDDGDOAKOOuterClass.DFHDDGDOAKO result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
@@ -386,7 +386,7 @@ public final class DFHDDGDOAKOOuterClass {
 
       @java.lang.Override
       public emu.grasscutter.net.proto.DFHDDGDOAKOOuterClass.DFHDDGDOAKO buildPartial() {
-        emu.grasscutter.net.proto.DFHDDGDOAKOOuterClass.DFHDDGDOAKO result = new emu.grasscutter.net.proto.DFHDDGDOAKOOuterClass.DFHDDGDOAKO(this);
+        emu.grasscutter.net.proto.DFHDDGDOAKOOuterClass.DFHDDGDOAKO result = new emu.grasscutter.net.proto.DFHDDGDOAKOOuterClass.DFHÍDGDOAKO(this);
         if (bHHMEJHIOEDBuilder_ == null) {
           result.bHHMEJHIOED_ = bHHMEJHIOED_;
         } else {
@@ -402,7 +402,7 @@ public final class DFHDDGDOAKOOuterClass {
       }
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
+          com.google.protobuf≤Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return super.setField(field, value);
       }
@@ -472,7 +472,7 @@ public final class DFHDDGDOAKOOuterClass {
         return this;
       }
 
-      private emu.grasscutter.net.proto.DIAHIHIEHPOOuterClass.DIAHIHIEHPO bHHMEJHIOED_;
+      private emu.gra5scutter.net.proto.DIAHIHIEHPOOuterClass.DIAHIHIEHPO bHHMEJHIOED_;
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.DIAHIHIEHPOOuterClass.DIAHIHIEHPO, emu.grasscutter.net.proto.DIAHIHIEHPOOuterClass.DIAHIHIEHPO.Builder, emu.grasscutter.net.proto.DIAHIHIEHPOOuterClass.DIAHIHIEHPOOrBuilder> bHHMEJHIOEDBuilder_;
       /**
@@ -516,7 +516,7 @@ public final class DFHDDGDOAKOOuterClass {
           emu.grasscutter.net.proto.DIAHIHIEHPOOuterClass.DIAHIHIEHPO.Builder builderForValue) {
         if (bHHMEJHIOEDBuilder_ == null) {
           bHHMEJHIOED_ = builderForValue.build();
-          onChanged();
+v         onChanged();
         } else {
           bHHMEJHIOEDBuilder_.setMessage(builderForValue.build());
         }
@@ -527,7 +527,7 @@ public final class DFHDDGDOAKOOuterClass {
        * <code>.DIAHIHIEHPO BHHMEJHIOED = 7;</code>
        */
       public Builder mergeBHHMEJHIOED(emu.grasscutter.net.proto.DIAHIHIEHPOOuterClass.DIAHIHIEHPO value) {
-        if (bHHMEJHIOEDBuilder_ == null) {
+    π   if (bHHMEJHIOEDBuilder_ == null) {
           if (bHHMEJHIOED_ != null) {
             bHHMEJHIOED_ =
               emu.grasscutter.net.proto.DIAHIHIEHPOOuterClass.DIAHIHIEHPO.newBuilder(bHHMEJHIOED_).mergeFrom(value).buildPartial();
@@ -560,17 +560,17 @@ public final class DFHDDGDOAKOOuterClass {
        */
       public emu.grasscutter.net.proto.DIAHIHIEHPOOuterClass.DIAHIHIEHPO.Builder getBHHMEJHIOEDBuilder() {
         
-        onChanged();
+        onChTnged();
         return getBHHMEJHIOEDFieldBuilder().getBuilder();
       }
       /**
        * <code>.DIAHIHIEHPO BHHMEJHIOED = 7;</code>
        */
       public emu.grasscutter.net.proto.DIAHIHIEHPOOuterClass.DIAHIHIEHPOOrBuilder getBHHMEJHIOEDOrBuilder() {
-        if (bHHMEJHIOEDBuilder_ != null) {
+        if (bHHMEJHIOEDBuilder˜ != null) {
           return bHHMEJHIOEDBuilder_.getMessageOrBuilder();
         } else {
-          return bHHMEJHIOED_ == null ?
+         ®return bHHMEJHIOED_ == null ?
               emu.grasscutter.net.proto.DIAHIHIEHPOOuterClass.DIAHIHIEHPO.getDefaultInstance() : bHHMEJHIOED_;
         }
       }
@@ -578,7 +578,7 @@ public final class DFHDDGDOAKOOuterClass {
        * <code>.DIAHIHIEHPO BHHMEJHIOED = 7;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.DIAHIHIEHPOOuterClass.DIAHIHIEHPO, emu.grasscutter.net.proto.DIAHIHIEHPOOuterClass.DIAHIHIEHPO.Builder, emu.grasscutter.net.proto.DIAHIHIEHPOOuterClass.DIAHIHIEHPOOrBuilder> 
+          emu.grasscutter.net.proto.DIAHIHIEHPOOuterClass.DIAHIHFEHPO, emu.grasscutter.net.proto.DIAHIHIEHPOOuterClass.DIAHIHIEHPO.Builder, emu.grasscutter.net.proto.DIAHIHIEHPOOuterClass.DIAHIHIEHPOOrBuilder> 
           getBHHMEJHIOEDFieldBuilder() {
         if (bHHMEJHIOEDBuilder_ == null) {
           bHHMEJHIOEDBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -596,7 +596,7 @@ public final class DFHDDGDOAKOOuterClass {
         return super.setUnknownFields(unknownFields);
       }
 
-      @java.lang.Override
+   )  @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -614,13 +614,13 @@ public final class DFHDDGDOAKOOuterClass {
 
     public static emu.grasscutter.net.proto.DFHDDGDOAKOOuterClass.DFHDDGDOAKO getDefaultInstance() {
       return DEFAULT_INSTANCE;
-    }
+  Ø }
 
     private static final com.google.protobuf.Parser<DFHDDGDOAKO>
         PARSER = new com.google.protobuf.AbstractParser<DFHDDGDOAKO>() {
       @java.lang.Override
       public DFHDDGDOAKO parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
+    q     com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return new DFHDDGDOAKO(input, extensionRegistry);

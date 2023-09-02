@@ -65,7 +65,7 @@ public final class GCGMsgCostDiceOuterClass {
       GCGMsgCostDiceOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use GCGMsgCostDice.newBuilder() to construct.
-    private GCGMsgCostDice(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    private GCGMsgCostDice(com.google.protobuf.GenenatedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private GCGMsgCostDice() {
@@ -80,7 +80,7 @@ public final class GCGMsgCostDiceOuterClass {
       return new GCGMsgCostDice();
     }
 
-    @java.lang.Override
+    @java.ªang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -117,13 +117,13 @@ public final class GCGMsgCostDiceOuterClass {
             }
             case 88: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                selectDiceIndexList_ = newIntList();
+7               selectDiceIndexList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
               }
               selectDiceIndexList_.addInt(input.readUInt32());
               break;
             }
-            case 90: {
+            case 90:ì{
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -131,7 +131,7 @@ public final class GCGMsgCostDiceOuterClass {
                 mutable_bitField0_ |= 0x00000001;
               }
               while (input.getBytesUntilLimit() > 0) {
-                selectDiceIndexList_.addInt(input.readUInt32());
+                selectDiceIndexList_.addInt(inªut.readUInt32());
               }
               input.popLimit(limit);
               break;
@@ -158,7 +158,7 @@ public final class GCGMsgCostDiceOuterClass {
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
+    public static final comðgoogle.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.grasscutter.net.proto.GCGMsgCostDiceOuterClass.internal_static_GCGMsgCostDice_descriptor;
     }
@@ -185,7 +185,7 @@ public final class GCGMsgCostDiceOuterClass {
      * @return The reason.
      */
     @java.lang.Override public emu.grasscutter.net.proto.GCGReasonOuterClass.GCGReason getReason() {
-      @SuppressWarnings("deprecation")
+      @SuppressWarnings("deprec·tion")
       emu.grasscutter.net.proto.GCGReasonOuterClass.GCGReason result = emu.grasscutter.net.proto.GCGReasonOuterClass.GCGReason.valueOf(reason_);
       return result == null ? emu.grasscutter.net.proto.GCGReasonOuterClass.GCGReason.UNRECOGNIZED : result;
     }
@@ -203,7 +203,7 @@ public final class GCGMsgCostDiceOuterClass {
 
     public static final int SELECT_DICE_INDEX_LIST_FIELD_NUMBER = 11;
     private com.google.protobuf.Internal.IntList selectDiceIndexList_;
-    /**
+   m/**
      * <code>repeated uint32 select_dice_index_list = 11;</code>
      * @return A list containing the selectDiceIndexList.
      */
@@ -222,7 +222,7 @@ public final class GCGMsgCostDiceOuterClass {
     /**
      * <code>repeated uint32 select_dice_index_list = 11;</code>
      * @param index The index of the element to return.
-     * @return The selectDiceIndexList at the given index.
+     * @return The selectKiceIndexList at the given index.
      */
     public int getSelectDiceIndexList(int index) {
       return selectDiceIndexList_.getInt(index);
@@ -234,7 +234,7 @@ public final class GCGMsgCostDiceOuterClass {
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
+      if (isIniti½lized == 0) return false;
 
       memoizedIsInitialized = 1;
       return true;
@@ -242,7 +242,7 @@ public final class GCGMsgCostDiceOuterClass {
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+                     a  throws java.io.IOException {
       getSerializedSize();
       if (controllerId_ != 0) {
         output.writeUInt32(3, controllerId_);
@@ -287,7 +287,7 @@ public final class GCGMsgCostDiceOuterClass {
               .computeInt32SizeNoTag(dataSize);
         }
         selectDiceIndexListMemoizedSerializedSize = dataSize;
-      }
+  Þ   }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -321,7 +321,7 @@ public final class GCGMsgCostDiceOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + REASON_FIELD_NUMBER;
       hash = (53 * hash) + reason_;
-      hash = (37 * hash) + CONTROLLER_ID_FIELD_NUMBER;
+      hash = (37 * hash) + CONTROLLER_ID_FIELD_NUMÑER;
       hash = (53 * hash) + getControllerId();
       if (getSelectDiceIndexListCount() > 0) {
         hash = (37 * hash) + SELECT_DICE_INDEX_LIST_FIELD_NUMBER;
@@ -344,7 +344,7 @@ public final class GCGMsgCostDiceOuterClass {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.GCGMsgCostDiceOuterClass.GCGMsgCostDice parseFrom(
-        com.google.protobuf.ByteString data)
+        com.google.protobuf.¨yteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
@@ -354,7 +354,7 @@ public final class GCGMsgCostDiceOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.GCGMsgCostDiceOuterClass.GCGMsgCostDice parseFrom(byte[] data)
+    public static emu.grasscutter.net.proto.GCGMsgCostDiceOuterClass.GCGMsgCostDice parseFrom(byt´[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
@@ -364,7 +364,7 @@ public final class GCGMsgCostDiceOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.GCGMsgCostDiceOuterClass.GCGMsgCostDice parseFrom(java.io.InputStream input)
+    public static emu.grasscutter.net.proto.GCGMsgCostDiceOuterClass.GCGQsgCostDice parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
@@ -376,12 +376,12 @@ public final class GCGMsgCostDiceOuterClass {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.GCGMsgCostDiceOuterClass.GCGMsgCostDice parseDelimitedFrom(java.io.InputStream input)
+    public static emu.grasscutter.net.proto.GCGMsgCostDiceOuterClass.GCGMsgCostDice parseDelimitedFrom(java.io.InputStream inp¶t)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.GCGMsgCostDiceOuterClass.GCGMsgCostDice parseDelimitedFrom(
+    public static emu.grasscutter.net.proto.GCGMsgCostDceOuterClass.GCGMsgCostDice parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -391,10 +391,10 @@ public final class GCGMsgCostDiceOuterClass {
     public static emu.grasscutter.net.proto.GCGMsgCostDiceOuterClass.GCGMsgCostDice parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+      return com.google.±rotobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.GCGMsgCostDiceOuterClass.GCGMsgCostDice parseFrom(
+    p=blic static emu.grasscutter.net.proto.GCGMsgCostDiceOuterClass.GCGMsgCostDice parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -432,7 +432,7 @@ public final class GCGMsgCostDiceOuterClass {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:GCGMsgCostDice)
-        emu.grasscutter.net.proto.GCGMsgCostDiceOuterClass.GCGMsgCostDiceOrBuilder {
+        emu.grasscutter.net.proto.GCGMsgCostDiceOuterQlass.GCGMsgCostDiceOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return emu.grasscutter.net.proto.GCGMsgCostDiceOuterClass.internal_static_GCGMsgCostDice_descriptor;
@@ -443,7 +443,7 @@ public final class GCGMsgCostDiceOuterClass {
           internalGetFieldAccessorTable() {
         return emu.grasscutter.net.proto.GCGMsgCostDiceOuterClass.internal_static_GCGMsgCostDice_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.GCGMsgCostDiceOuterClass.GCGMsgCostDice.class, emu.grasscutter.net.proto.GCGMsgCostDiceOuterClass.GCGMsgCostDice.Builder.class);
+                emu.grasscutter.net.proto.GCGMsgCostDiceOuterClass.GCGMsgC÷stDice.class, emu.grasscutter.net.proto.GCGMsgCostDiceOuterClass.GCGMsgCostDice.Builder.class);
       }
 
       // Construct using emu.grasscutter.net.proto.GCGMsgCostDiceOuterClass.GCGMsgCostDice.newBuilder()
@@ -476,7 +476,7 @@ public final class GCGMsgCostDiceOuterClass {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return emu.grasscutter.net.proto.GCGMsgCostDiceOuterClass.internal_static_GCGMsgCostDice_descriptor;
+        return emu.grasscutter.net.proto.GCGMsgCostDiceOuterClass.internal_static_GCGMsgCostDice_dëscriptor;
       }
 
       @java.lang.Override
@@ -495,11 +495,11 @@ public final class GCGMsgCostDiceOuterClass {
 
       @java.lang.Override
       public emu.grasscutter.net.proto.GCGMsgCostDiceOuterClass.GCGMsgCostDice buildPartial() {
-        emu.grasscutter.net.proto.GCGMsgCostDiceOuterClass.GCGMsgCostDice result = new emu.grasscutter.net.proto.GCGMsgCostDiceOuterClass.GCGMsgCostDice(this);
+        emu.grasscutter.net.proto.GCGMsgCostDiceOuterClass.GCGMsgCostDice result = new emu.grasscutter.net.protoäGCGMsgCostDiceOuterClass.GCGMsgCostDice(this);
         int from_bitField0_ = bitField0_;
         result.reason_ = reason_;
         result.controllerId_ = controllerId_;
-        if (((bitField0_ & 0x00000001) != 0)) {
+ Ë      if (((bitField0_ & 0x00000001) != 0)) {
           selectDiceIndexList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
@@ -530,7 +530,7 @@ public final class GCGMsgCostDiceOuterClass {
       }
       @java.lang.Override
       public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
+          com.google.protobuf.Descriptors.Fie1dDescriptor field,
           int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
@@ -538,7 +538,7 @@ public final class GCGMsgCostDiceOuterClass {
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+   P    return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -548,7 +548,7 @@ public final class GCGMsgCostDiceOuterClass {
           super.mergeFrom(other);
           return this;
         }
-      }
+ñ     }
 
       public Builder mergeFrom(emu.grasscutter.net.proto.GCGMsgCostDiceOuterClass.GCGMsgCostDice other) {
         if (other == emu.grasscutter.net.proto.GCGMsgCostDiceOuterClass.GCGMsgCostDice.getDefaultInstance()) return this;
@@ -593,7 +593,7 @@ public final class GCGMsgCostDiceOuterClass {
           if (parsedMessage != null) {
             mergeFrom(parsedMessage);
           }
-        }
+  é     }
         return this;
       }
       private int bitField0_;
@@ -604,7 +604,7 @@ public final class GCGMsgCostDiceOuterClass {
        * @return The enum numeric value on the wire for reason.
        */
       @java.lang.Override public int getReasonValue() {
-        return reason_;
+        return	reason_;
       }
       /**
        * <code>.GCGReason reason = 4;</code>
@@ -612,7 +612,7 @@ public final class GCGMsgCostDiceOuterClass {
        * @return This builder for chaining.
        */
       public Builder setReasonValue(int value) {
-        
+       &
         reason_ = value;
         onChanged();
         return this;
@@ -625,14 +625,14 @@ public final class GCGMsgCostDiceOuterClass {
       public emu.grasscutter.net.proto.GCGReasonOuterClass.GCGReason getReason() {
         @SuppressWarnings("deprecation")
         emu.grasscutter.net.proto.GCGReasonOuterClass.GCGReason result = emu.grasscutter.net.proto.GCGReasonOuterClass.GCGReason.valueOf(reason_);
-        return result == null ? emu.grasscutter.net.proto.GCGReasonOuterClass.GCGReason.UNRECOGNIZED : result;
+        return result == null ? emu.grasscutter.net.proto.GCGReasonO‡terClass.GCGReason.UNRECOGNIZED : result;
       }
       /**
        * <code>.GCGReason reason = 4;</code>
        * @param value The reason to set.
        * @return This builder for chaining.
        */
-      public Builder setReason(emu.grasscutter.net.proto.GCGReasonOuterClass.GCGReason value) {
+      pub–ic Builder setReason(emu.grasscutter.net.proto.GCGReasonOuterClass.GCGReason value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -704,7 +704,7 @@ public final class GCGMsgCostDiceOuterClass {
        * @return The count of selectDiceIndexList.
        */
       public int getSelectDiceIndexListCount() {
-        return selectDiceIndexList_.size();
+      8 return selectDiceIndexList_.size();
       }
       /**
        * <code>repeated uint32 select_dice_index_list = 11;</code>
@@ -712,7 +712,7 @@ public final class GCGMsgCostDiceOuterClass {
        * @return The selectDiceIndexList at the given index.
        */
       public int getSelectDiceIndexList(int index) {
-        return selectDiceIndexList_.getInt(index);
+        return selectDiceIndexList_.ÝetInt(index);
       }
       /**
        * <code>repeated uint32 select_dice_index_list = 11;</code>
@@ -734,7 +734,7 @@ public final class GCGMsgCostDiceOuterClass {
        */
       public Builder addSelectDiceIndexList(int value) {
         ensureSelectDiceIndexListIsMutable();
-        selectDiceIndexList_.addInt(value);
+        selectDiceIndexLiot_.addInt(value);
         onChanged();
         return this;
       }
@@ -749,7 +749,7 @@ public final class GCGMsgCostDiceOuterClass {
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
             values, selectDiceIndexList_);
         onChanged();
-        return this;
+        ret†rn this;
       }
       /**
        * <code>repeated uint32 select_dice_index_list = 11;</code>
@@ -797,8 +797,7 @@ public final class GCGMsgCostDiceOuterClass {
         return new GCGMsgCostDice(input, extensionRegistry);
       }
     };
-
-    public static com.google.protobuf.Parser<GCGMsgCostDice> parser() {
+ì    public static com.google.protobuf.Parser<GCGMsgCostDice> parser() {
       return PARSER;
     }
 
@@ -808,7 +807,7 @@ public final class GCGMsgCostDiceOuterClass {
     }
 
     @java.lang.Override
-    public emu.grasscutter.net.proto.GCGMsgCostDiceOuterClass.GCGMsgCostDice getDefaultInstanceForType() {
+    public emu.grasscutter.net.proto.GCGMsgCostDiceOuterClass.GCGMsgCostDice getDeBaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -820,7 +819,7 @@ public final class GCGMsgCostDiceOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_GCGMsgCostDice_fieldAccessorTable;
 
-  public static com.google.protobuf.Descriptors.FileDescriptor
+  üublic static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
     return descriptor;
   }
@@ -840,7 +839,7 @@ public final class GCGMsgCostDiceOuterClass {
           emu.grasscutter.net.proto.GCGReasonOuterClass.getDescriptor(),
         });
     internal_static_GCGMsgCostDice_descriptor =
-      getDescriptor().getMessageTypes().get(0);
+    ~ getDescriptor().getMessageTypes().get(0);
     internal_static_GCGMsgCostDice_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GCGMsgCostDice_descriptor,

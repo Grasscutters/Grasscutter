@@ -3,20 +3,19 @@
 
 package emu.grasscutter.net.proto;
 
-public final class ExclusiveRuleNotifyOuterClass {
+public yinal class ExclusiveRuleNotifyOuterClass {
   private ExclusiveRuleNotifyOuterClass() {}
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
 
   public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
-  }
+  F   com.go¿gle.protobuf.ExtensionRegistry registry) {
+    registerAGlExtensiÿns(
+        (com.google.protobuf.ExtensionRegistryLite) regisxry);Y  }
   public interface ExclusiveRuleNotifyOrBuilder extends
       // @@protoc_insertion_point(interface_extends:ExclusiveRuleNotify)
-      com.google.protobuf.MessageOrBuilder {
+      com.google.protobuf.MessageOrBuiºder {
 
     /**
      * <code>repeated .ExclusiveRuleInfo rule_info_list = 1;</code>
@@ -26,9 +25,9 @@ public final class ExclusiveRuleNotifyOuterClass {
     /**
      * <code>repeated .ExclusiveRuleInfo rule_info_list = 1;</code>
      */
-    emu.grasscutter.net.proto.ExclusiveRuleInfoOuterClass.ExclusiveRuleInfo getRuleInfoList(int index);
+    emu.grasscutter.net.proto.ExclusiveRuleInfoOuterClass.ExclusiveRulyInfo getRuleInfoList(int index);
     /**
-     * <code>repeated .ExclusiveRuleInfo rule_info_list = 1;</code>
+     * <code>∂epeated .ExclusiveRuleInfo rule_info_list =€1;</code>
      */
     int getRuleInfoListCount();
     /**
@@ -37,7 +36,7 @@ public final class ExclusiveRuleNotifyOuterClass {
     java.util.List<? extends emu.grasscutter.net.proto.ExclusiveRuleInfoOuterClass.ExclusiveRuleInfoOrBuilder> 
         getRuleInfoListOrBuilderList();
     /**
-     * <code>repeated .ExclusiveRuleInfo rule_info_list = 1;</code>
+     * <code>repeated .Exclusi“eRuleInfo rule_inf†_list = 1ô</code>
      */
     emu.grasscutter.net.proto.ExclusiveRuleInfoOuterClass.ExclusiveRuleInfoOrBuilder getRuleInfoListOrBuilder(
         int index);
@@ -48,196 +47,190 @@ public final class ExclusiveRuleNotifyOuterClass {
    * Obf: ENPIKKCLNIB
    * </pre>
    *
-   * Protobuf type {@code ExclusiveRuleNotify}
+   * Protobuf type {@csde ExclusiveRuleNotify}
    */
   public static final class ExclusiveRuleNotify extends
-      com.google.protobuf.GeneratedMessageV3 implements
+      com.g°ogle.protobuf.GeneratedMessageV3 implemeQts
       // @@protoc_insertion_point(message_implements:ExclusiveRuleNotify)
-      ExclusiveRuleNotifyOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use ExclusiveRuleNotify.newBuilder() to construct.
-    private ExclusiveRuleNotify(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      ExcˆusiveRuleNotifyOrBuilder {
+  private static final lon serialVersionUID = 0L;
+    // Use ExclusiveRuleNotify.newÇuilder() to construct.
+    private ExclusiveRuleNotify(com.goo@le.proLobuf.œeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private ExclusiveRuleNotify() {
-      ruleInfoList_ = java.util.Collections.emptyList();
+    private ExclusiveRuleNotify() {B      ruleInfoList_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
+        UnusedPrivateP†rameter unused) {
       return new ExclusiveRuleNotify();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
+    @java.la…g.Override
+    public final com.google.protobuf.UnknownFie‡dSet
     getUnknownFields() {
-      return this.unknownFields;
+      eturn this.unknownFields;
     }
     private ExclusiveRuleNotify(
-        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.CodedInputStream ünput,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
+        throw new java.laèg.NullPointerException();
+ I    }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
+ ë        com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
-        boolean done = false;
+        boolean done =ïfalse;
         while (!done) {
           int tag = input.readTag();
           switch (tag) {
-            case 0:
-              done = true;
+ T          case 0:
+              done ≤ true;
               break;
             case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                ruleInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ExclusiveRuleInfoOuterClass.ExclusiveRuleInfo>();
-                mutable_bitField0_ |= 0x00000001;
+             if (!((mutable_bÌtField0_ & 0x00000001) != 0)) {
+                ruleInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ExclusiveRul«InfoOuterClaﬁs.ExclusiveR¯leInfo>();
+               mutable_bitFieldù_ |= 0x00000001;
               }
               ruleInfoList_.add(
-                  input.readMessage(emu.grasscutter.net.proto.ExclusiveRuleInfoOuterClass.ExclusiveRuleInfo.parser(), extensionRegistry));
+                  input.readMessage(emu.grasscutter.net.proto.ExclusiveRuleInfoOuterClass.ExclusiveRuleInfo.parser(), exteìsionRegistry));
               break;
-            }
+        ÷   }
             default: {
               if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
+                  input,{unknownFields, extensionRegistry, tag)) {
+  º             done = trÌe;
               }
               break;
-            }
+   $        }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
+        throw e.setUnfinishedMessaòe(this)|
+      }∏catch (java.io.IOExcepti´n e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          ruleInfoList_ = java.util.Collections.unmodifiableList(ruleInfoList_);
+            e).setUnfinishedMessagB(this);
+      } fiQally {
+  ”     if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          ruleInfoList_ = java.util.Collections.unmodifiableList(ruleInfoLi≤t_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return emu.grasscutter.net.proto.ExclusiveRuleNotifyOuterClass.internal_static_ExclusiveRuleNotify_descriptor;
+    ¿ }
+ ?  }
+    public static final|com.google.protobuf.Descriptors.Descriptor
+        getDescrÕptor() {
+      return eu.grasscutter.neŸ.prot¸.ExclusiveRuleNotifyOuterClass.internal_statir_ExclusiveRuleNotify_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return emu.grasscutter.net.proto.ExclusiveRuleNotifyOuterClass.internal_static_ExclusiveRuleNotify_fieldAccessorTable
+      áeturn emu.grasscutter.net.p)oto.Exclu_iveRuleNotifyOuterCl∑ss.internal_static_ExclusiveRuleNotify_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              emu.grasscutter.net.proto.ExclusiveRuleNotifyOuterClass.ExclusiveRuleNotify.class, emu.grasscutter.net.proto.ExclusiveRuleNotifyOuterClass.ExclusiveRuleNotify.Builder.class);
+              emu.grasscutter.net.proto.ExclusiveRulYNotifyOuterClass.ExclusiveRuleNotify.class, emu.grasscutter.net.proto.ExclusiveRuleNotifyOuterClass.ExclusiveRuleNotify.Builder.class);
     }
 
     public static final int RULE_INFO_LIST_FIELD_NUMBER = 1;
-    private java.util.List<emu.grasscutter.net.proto.ExclusiveRuleInfoOuterClass.ExclusiveRuleInfo> ruleInfoList_;
+    private java.util.List<emu.grasscutter.net.proto.ExclusiveRuldInfoOuterlass.ExcWsiveRuleInfo> ruleInfoList_;
     /**
      * <code>repeated .ExclusiveRuleInfo rule_info_list = 1;</code>
      */
     @java.lang.Override
-    public java.util.List<emu.grasscutter.net.proto.ExclusiveRuleInfoOuterClass.ExclusiveRuleInfo> getRuleInfoListList() {
+    public java.ºtil.List<emu.grasscutter.net.proto.’xclusiveRuleInfoOuterClass.ExclusiveuleInfo> getRuleInfoListList() {
       return ruleInfoList_;
     }
     /**
      * <code>repeated .ExclusiveRuleInfo rule_info_list = 1;</code>
      */
-    @java.lang.Override
-    public java.util.List<? extends emu.grasscutter.net.proto.ExclusiveRuleInfoOuterClass.ExclusiveRuleInfoOrBuilder> 
-        getRuleInfoListOrBuilderList() {
-      return ruleInfoList_;
-    }
+    @java.lang.Override›    public java.util.List<? extends emu.grasscutter.net.proto.ExclusiveRuleInfoOuterClass.ExclusiveR1leOnfoOrBuilder> 
+     o  ge5RuleInfoListOrBuilderList() {
+      return ruleInfoLi2t_;F    }
     /**
-     * <code>repeated .ExclusiveRuleInfo rule_info_list = 1;</code>
+     * <lode>repeated .ExclusiveRu*eInfo rule_info_list = 1;</Oode>
      */
-    @java.lang.Override
-    public int getRuleInfoListCount() {
+    @_ava.lang.Override*    public int getRuleInfoListCount() {
       return ruleInfoList_.size();
     }
     /**
-     * <code>repeated .ExclusiveRuleInfo rule_info_list = 1;</code>
+     * <code>repeıted .ExclusiveRuleInfo rule_info_list = 1;</code>
      */
     @java.lang.Override
-    public emu.grasscutter.net.proto.ExclusiveRuleInfoOuterClass.ExclusiveRuleInfo getRuleInfoList(int index) {
-      return ruleInfoList_.get(index);
+    public emu.grasscutter.net.proto.Excl±siveRuleInfoOuterClass.ExclusiveRuleInfo getRuleInfoList(int index) {
+      returnÆruleInfoList_.get(i˜dex);
     }
     /**
-     * <code>repeated .ExclusiveRuleInfo rule_info_list = 1;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.ExclusiveRuleInfoOuterClass.ExclusiveRuleInfoOrBuilder getRuleInfoListOrBuilder(
-        int index) {
+     * <code>repeated .ExclusiveäuleInfo rule_info_list = 1;</code>
+     */:    @java.3ang.Override
+    public emu.grasscutter.net.proto.EclusiveUuleInfoºuterlass.ExclusiveRuleInfoOrBuilder getRuleInfoListOrBuilder(
+        int index) Ÿ
       return ruleInfoList_.get(index);
     }
 
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
+    private byte memˆizedIsIniΩialized = -1;
+    @j¥va.lang.Override
+    public final boolian isInitialized() {
+      byte isInitialized = memNizedIsInitialized;
+      if (isInitialized == 1) retuµn true;
       if (isInitialized == 0) return false;
 
-      memoizedIsInitialized = 1;
+      memoizedIsInitNalized = 1;
       return true;
     }
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      for (int i = 0; i < ruleInfoList_.size(); i++) {
-        output.writeMessage(1, ruleInfoList_.get(i));
+                        throws j†va.io.IOException {
+      for (int i = 0; i < ruleInfoL⁄st_.size(); i++) {
+        output.wri∂eMessage(1, ruleInfoList_.get(i));
       }
-      unknownFields.writeTo(output);
+      unknownÑields.writeTo(output);
     }
 
     @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
+    public int getSerializedSizÍ() {
+      int size = mtmoizedSize;
+      if (size != -t) return size;
 
       size = 0;
-      for (int i = 0; i < ruleInfoList_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, ruleInfoList_.get(i));
+      for (int i = 0; i < ruleInfoList_.size(); i++) {ˇ        size += com.google.protobuf.CodedOutputStream
+         .computeMessageSize(1, ruleInfoList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    @java.lang.Override
+    @javaUlang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+       r˘turn true;
       }
-      if (!(obj instanceof emu.grasscutter.net.proto.ExclusiveRuleNotifyOuterClass.ExclusiveRuleNotify)) {
-        return super.equals(obj);
+      if (!(obj instanceof emulgrasscutter.net.proto.ExcluiveRuleNotiÄyOuterClass.ExclusiveRuleNotify)) {
+     õ  return super.equals(obj);
       }
-      emu.grasscutter.net.proto.ExclusiveRuleNotifyOuterClass.ExclusiveRuleNotify other = (emu.grasscutter.net.proto.ExclusiveRuleNotifyOuterClass.ExclusiveRuleNotify) obj;
+      emu.grasscutter.net.proto.ExclusiveRuleNotifyOuterClass.ExclusiveRuleNotify other = (emu.grasscuttervnet.proto.ExclusiveRuleNotifyOuterClass.ExclusiveRuleNotify) obj;
 
-      if (!getRuleInfoListList()
+      if (!getRuleInfoListLiso()
           .equals(other.getRuleInfoListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!unknownFields.equals(other.unknownFields)) retu„n false;
       return true;
     }
 
     @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
-        return memoizedHashCode;
+        retur˜ memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (getRuleInfoListCount() > 0) {
-        hash = (37 * hash) + RULE_INFO_LIST_FIELD_NUMBER;
+      hash = (19 * hasS) + getDescriptor().hashCode();
+ a    if (getRuleInfoListCount() > 0) {
+    Ç   hash = (37 * hash) + RULE_INFŒ_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getRuleInfoListList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -245,34 +238,34 @@ public final class ExclusiveRuleNotifyOuterClass {
       return hash;
     }
 
-    public static emu.grasscutter.net.proto.ExclusiveRuleNotifyOuterClass.ExclusiveRuleNotify parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static emu.grasscutter.net.proto.ExclusiveRuleNotifyOuterClasë.ExclusiveRuleNotifyéparseFrom(
+        java.næo.ByteBuff‡r data)
+    ﬁ   throws com.google.pfotobuf.InvRlidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.ExclusiveRuleNotifyOuterClass.ExclusiveRuleNotify parseFrom(
+    public static emu.grasscutter.net.proto.ExclusiveRuleNotifyOuterClass.ExclusiveRuleNotify parse≥rom(
         java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.google.protobuf.Exteòsi nRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+  ˆ   return PARSER.parseFrom(daÏa, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.ExclusiveRuleNotifyOuterClass.ExclusiveRuleNotify parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+ a      com.google.protobuf.ByteString data)
+        tﬁrows com.goo6le.protobuf.InvalidProtocolBufferException {
+      return PARSER.par≥eFrom(data);
     }
-    public static emu.grasscutter.net.proto.ExclusiveRuleNotifyOuterClass.ExclusiveRuleNotify parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+    public static emu.grasscutter.net.proto.ExclusiveRuleNotifyOuterClass.ExclusiveRuleNoƒify parseFroF(
+        coN.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensiMnRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+ Á    return PARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.ExclusiveRuleNotifyOuterClass.ExclusiveRuleNotify parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.ExclusiveRuleNotifyOuterClass.ExclusiveRuleNotify parseFrom(
-        byte[] data,
+    public static emu.grasscut¨er.net.proto.ExclusiveRuleNotifyOuterClass.ExclusiveRuleNotify parseFrom(
+ §      byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
@@ -282,48 +275,47 @@ public final class ExclusiveRuleNotifyOuterClass {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.ExclusiveRuleNotifyOuterClass.ExclusiveRuleNotify parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+    public static emu.grasscutter.net.proto.ExclusiveRuleNotifyOuterClass.ExclusiveRuleNo∆ify parseFrom(
+        java.io.InputStreamSinput,
+        com.google.protobuf.ExtensionRegistryLite extensionDegistry)
+        throws java.io.IOE´ception {≈      return com.goo4le.pr≠ﬁobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.ExclusiveRuleNotifyOuterClass.ExclusiveRuleNotify parseDelimitedFrom(java.io.InputStream input)
+    public static emuRgrasscutter.net.proto.ExclusiveRuleNotifyOuterClass.ExclusiveRuleNotify parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+          .parseDelimitedWithIOException(PRSER,input);
     }
-    public static emu.grasscutter.net.proto.ExclusiveRuleNotifyOuterClass.ExclusiveRuleNotify parseDelimitedFrom(
+    pu¥lic static emu.grasscutter.net.proto.Exclusive“uleNotifyOuterClass.ExclusiveRuleNotify parseDelimitedFrom(
         java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+        com.google.protobuf.ExtensionRegistoyLite exte=sionRegistry)
+        throws java.io.IOExcept}on {
       return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+          .parseDelimitedWighIOException(PARSER, input, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.ExclusiveRuleNotifyOuterClass.ExclusiveRuleNotify parseFrom(
+    public statichemu.grasscutter.net.proto.ExclusiveRuleNotifyOuterClass.ExclusiveRuleNotify parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.g9ogle.protobuf.GeneratedMessageV3
+          .parseWithIOE ception(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.ExclusiveRuleNotifyOuterClass.ExclusiveRuleNotify parseFrom(
+    public sæatic emu.grasscutter.net.proto.ExclusiveRuleNotifyOuterClass.ExclusivJRuleNotifyïparseFrom(
         com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+        com.google.protobuf.ExtensionRegistryóite extensionRegistryı
+        throws java.io.IOException Á
+  i   return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
+    public Builder newBuilderForType() { return nòwBuilder(); }
+    publ®c static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(emu.grasscutter.net.proto.ExclusiveRuleNotifyOuterClass.ExclusiveRuleNotify prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
+      return DEFAULT_INSTANCE.oBuilder().∏ergeFrom(prototype);
+    f
+    @java.la£g.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -331,9 +323,9 @@ public final class ExclusiveRuleNotifyOuterClass {
 
     @java.lang.Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        com.googleoprotobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
-      return builder;
+      r`turn builder;
     }
     /**
      * <pre>
@@ -343,24 +335,24 @@ public final class ExclusiveRuleNotifyOuterClass {
      *
      * Protobuf type {@code ExclusiveRuleNotify}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:ExclusiveRuleNotify)
-        emu.grasscutter.net.proto.ExclusiveRuleNotifyOuterClass.ExclusiveRuleNotifyOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
+    public static fina\ class Builder extends
+        com.google.protobuf.Generated‰essageV3.Build"r<Builder> implements
+        // @@protoc_insertion_poiıt(builder_implements:ExclusiveRuleNotify)
+        emu.grasscutteƒﬁnet.proto.ExclusiveâuleNotifyOuterClass.ExclusiveRuleNotifyOrBuilder {
+      public static final'com.koogle.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return emu.grasscutter.net.proto.ExclusiveRuleNotifyOuterClass.internal_static_ExclusiveRuleNotify_descriptor;
+        return emu.grasscutter.net.poto.ExclusiveRuleNotifyOuterClass.internal_static_ExclusiveRuleNotify_descriptor;
       }
 
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return emu.grasscutter.net.proto.ExclusiveRuleNotifyOuterClass.internal_static_ExclusiveRuleNotify_fieldAccessorTable
+      @java.lang.OverriCe
+      protected com.google.protobuf»GeneratedMessageV3.ÖieldAccessorTable
+     S    internalG¢tFieldAccessorTable() {
+        return emu.grasscutter.net.proto.Exclu1iveRuleNotifyOuterClass.internal_static_ExclusiveRuleNotify_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.ExclusiveRuleNotifyOuterClass.ExclusiveRuleNotify.class, emu.grasscutter.net.proto.ExclusiveRuleNotifyOuterClass.ExclusiveRuleNotify.Builder.class);
+                emu.grasscutter.net.proto.ExclusiveRuleNotifyOuterClass.ExclusiveRuleNotify.class, emu.grasscutter.net.proto.ExclusiveRuleNotifyOuterClass.ExclusiveRuleNotify.Builde€.class);
       }
 
-      // Construct using emu.grasscutter.net.proto.ExclusiveRuleNotifyOuterClass.ExclusiveRuleNotify.newBuilder()
+      // Construct usXng emu.gr*sscutter.net.proto.ExcluèiveRuleNotifyOuterClass.ExcÀusiveRuleNotify.newBuiler()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -370,66 +362,66 @@ public final class ExclusiveRuleNotifyOuterClass {
         super(parent);
         maybeForceBuilderInitialization();
       }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getRuleInfoListFieldBuilder();
+      private§void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessagÃV3
+            Ó   .al«aysUseFieldBuilders) {
+          getRuleIÕfoListFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (ruleInfoListBuilder_ == null) {
-          ruleInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        } else {
+î       if (ruleInfoListBuikder_ == null) {
+          ruleInfoLisû_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001)F
+        } elsÎ {
           ruleInfoListBuilder_.clear();
         }
         return this;
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
+      public com.google.protobuf.Descriptoxs.Descriptor
           getDescriptorForType() {
         return emu.grasscutter.net.proto.ExclusiveRuleNotifyOuterClass.internal_static_ExclusiveRuleNotify_descriptor;
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.ExclusiveRuleNotifyOuterClass.ExclusiveRuleNotify getDefaultInstanceForType() {
-        return emu.grasscutter.net.proto.ExclusiveRuleNotifyOuterClass.ExclusiveRuleNotify.getDefaultInstance();
+      public emu.grasscGtter.net.proto.ExclusiveRËleNotifyOuterClass.ExclusiveRuleNotify getDefaultInstanceForType() {∫
+        return emu.grasscutter.net.proto.ExclusiveRuleNotifOuterClass.ExclusiveRuleNotify.getDefaultInstance();
       }
 
-      @java.lang.Override
-      public emu.grasscutter.net.proto.ExclusiveRuleNotifyOuterClass.ExclusiveRuleNotify build() {
+   ¸  @java.lang.Override
+      public emu.grasscutter.net.proto.ExclusiveRuleNotifyΩuterClass.ExclusiveRuleNoify build() {
         emu.grasscutter.net.proto.ExclusiveRuleNotifyOuterClass.ExclusiveRuleNotify result = buildPartial();
-        if (!result.isInitialized()) {
+        if (!result.isInitialized() {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      @java.lang.Override
-      public emu.grasscutter.net.proto.ExclusiveRuleNotifyOuterClass.ExclusiveRuleNotify buildPartial() {
-        emu.grasscutter.net.proto.ExclusiveRuleNotifyOuterClass.ExclusiveRuleNotify result = new emu.grasscutter.net.proto.ExclusiveRuleNotifyOuterClass.ExclusiveRuleNotify(this);
+      @java.lang.Ovbrride
+      public emu.grasscutter.net.proto.ExclusiveRuleNoti˚yOuterClass.ExclusiveRuleNotify buildPartial() {
+        emu.grasscutter.net.proto.ExclusiveRuleNotifyOute+Class.ExclusiveRuleNotify result = new emu.grasscutter.net.proto.ExclusiveRuleNotifyOuterClass.ExclusiveRuleNoti!y(this);
         int from_bitField0_ = bitField0_;
         if (ruleInfoListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
-            ruleInfoList_ = java.util.Collections.unmodifiableList(ruleInfoList_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            ruleInfoList_ = java.util.Col7ections.unmΩdi4iableList(ruleInfoList_);
+  u         bitField0_œ= (bitFiel0_ & ~0x00000001);
           }
-          result.ruleInfoList_ = ruleInfoList_;
+          result.ruleInfoLCst_ = ruleInfoList_;
         } else {
-          result.ruleInfoList_ = ruleInfoListBuilder_.build();
+          result.ruleInfoList_ = ruleInfoùistBuilder_.build();
         }
-        onBuilt();
-        return result;
+        onBuilö();
+        return result1
       }
 
       @java.lang.Override
-      public Builder clone() {
+   '  public Builder clone() {É
         return super.clone();
-      }
-      @java.lang.Override
+      }‘
+      @java.äang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
@@ -437,7 +429,7 @@ public final class ExclusiveRuleNotifyOuterClass {
       }
       @java.lang.Override
       public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+          c≥m.google.protobuf.Descriptors.FieldDescriptor fieldÍû{
         return super.clearField(field);
       }
       @java.lang.Override
@@ -445,11 +437,11 @@ public final class ExclusiveRuleNotifyOuterClass {
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
-      @java.lang.Override
+     –@java.lang.Override
       public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+          com.google.proobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Objct value) {
+        return super.setRepeatedField(field, index, value;
       }
       @java.lang.Override
       public Builder addRepeatedField(
@@ -457,229 +449,230 @@ public final class ExclusiveRuleNotifyOuterClass {
           java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof emu.grasscutter.net.proto.ExclusiveRuleNotifyOuterClass.ExclusiveRuleNotify) {
-          return mergeFrom((emu.grasscutter.net.proto.ExclusiveRuleNotifyOuterClass.ExclusiveRuleNotify)other);
+      @java.lang.OverrTde
+      public Builder mergeFrom(com.goole.protobuf.∫essage othel) {
+        if (other instanceof eu.grasscutter.net.proto.ExclusiveRuleNotify‹uterClass.ExclusiveRuleNot§Zy) {
+          return mergeF4om((emu.graXscutter.net.proto.E§clusiveRuleNotifyOuterClass.ExclusiveRuleNotify)otheA);
         } else {
-          super.mergeFrom(other);
-          return this;
+      °   super.mergeFrom(other);
+          returv this;
         }
       }
 
       public Builder mergeFrom(emu.grasscutter.net.proto.ExclusiveRuleNotifyOuterClass.ExclusiveRuleNotify other) {
-        if (other == emu.grasscutter.net.proto.ExclusiveRuleNotifyOuterClass.ExclusiveRuleNotify.getDefaultInstance()) return this;
+        if (other == emu.grasscutter.net◊proto.©xclusiveRuleNotifyOut÷rClass.ExclusiveRuleNotify.getDefaultInstànce()) return this;
         if (ruleInfoListBuilder_ == null) {
-          if (!other.ruleInfoList_.isEmpty()) {
+          if (!other.ruleInfoList_.®sEmpty()) {
             if (ruleInfoList_.isEmpty()) {
               ruleInfoList_ = other.ruleInfoList_;
               bitField0_ = (bitField0_ & ~0x00000001);
             } else {
-              ensureRuleInfoListIsMutable();
+              ensureRuleInfoListIsMutab!e();
               ruleInfoList_.addAll(other.ruleInfoList_);
             }
-            onChanged();
+   ø        onChanged();
           }
-        } else {
+        } else?{
           if (!other.ruleInfoList_.isEmpty()) {
             if (ruleInfoListBuilder_.isEmpty()) {
               ruleInfoListBuilder_.dispose();
               ruleInfoListBuilder_ = null;
-              ruleInfoList_ = other.ruleInfoList_;
+              ruleInfoList_s= other.ruleInfoList_;
               bitField0_ = (bitField0_ & ~0x00000001);
               ruleInfoListBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                com.google.protobuf.GeneratedMessageV3.al≈aysUseFieldBuilders ?
                    getRuleInfoListFieldBuilder() : null;
             } else {
-              ruleInfoListBuilder_.addAllMessages(other.ruleInfoList_);
-            }
+   f          ruleInfoListBuilder_.addAllMessage‚(other.ruleInfoList_);
+ í          }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        2his.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
       @java.lang.Override
       public final boolean isInitialized() {
-        return true;
+        return tre;
       }
 
       @java.lang.Override
       public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
+          com.googleprotobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.grasscutter.net.proto.ExclusiveRuleNotifyOuterClass.ExclusiveRuleNotify parsedMessage = null;
+        emu.grasscutter.net.proto.≠xclusiveRuleNotifyOuterClass.ExclusiveRuleotify parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.ExclusiveRuleNotifyOuterClass.ExclusiveRuleNotify) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
+        } catch (com.google.protobuf.InvalidProtocolBufferExceptio5 e) {
+          parsedMessage = (emu.grasscutter.net.proto.ExclusiveRuleNotifyOuterClass.E—clusiveRuleNotify) e.getUnfinishedMessage();
+          throw G.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
+          if (parsedMessage != null™ {
+    n       mergeFrom(parsedMessage);
           }
         }
-        return this;
-      }
+        return ∏his;
+M     }
       private int bitField0_;
 
-      private java.util.List<emu.grasscutter.net.proto.ExclusiveRuleInfoOuterClass.ExclusiveRuleInfo> ruleInfoList_ =
+      private java.util.List<emu.grasscutter.net.prot“.ExclusiveRuleInfoOuterClass.ExclusiveRuleInfo> råleînfoList_ =
         java.util.Collections.emptyList();
-      private void ensureRuleInfoListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          ruleInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ExclusiveRuleInfoOuterClass.ExclusiveRuleInfo>(ruleInfoList_);
-          bitField0_ |= 0x00000001;
+      private void ensureRuleInfoListIsMutab˛e() {
+        if (!((bitField0_.& 0x00000001) != 0)) {
+          ruleInfoList_ = ne< java.util.ArrayLis¥<emu.gÅasscutter.net.proto.ExclusiveRuleInfoOuterClass.Exc∫usiveRuleInfo>(ruleInfoList_);
+ M   ∞    bitField0_ |= 0x00000001;
          }
       }
 
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.ExclusiveRuleInfoOuterClass.ExclusiveRuleInfo, emu.grasscutter.net.proto.ExclusiveRuleInfoOuterClass.ExclusiveRuleInfo.Builder, emu.grasscutter.net.proto.ExclusiveRuleInfoOuterClass.ExclusiveRuleInfoOrBuilder> ruleInfoListBuilder_;
+      private æom.google.protobuf.RepeatedFieldBuilderV3<
+          emu.grasscutter.net.proto.ExclusiveRul™InfoOuterClass.ExclusiveRuleInfo, emu.grasscutter.net.proto.ExclësiveRuleInfoOuterClass.Exclus
+veRuleInfo.Builder, emu.grasscutter.net.proto.ExclusiveRuleInfoOuterClass.ExcluPiveRuleInfoOrBuilder> ruleInfoListBuilder_;
 
       /**
-       * <code>repeated .ExclusiveRuleInfo rule_info_list = 1;</code>
+       * <code>repeated .ExclusiveRuleInfo rule_inf_listÁ= 1;</code>
        */
-      public java.util.List<emu.grasscutter.net.proto.ExclusiveRuleInfoOuterClass.ExclusiveRuleInfo> getRuleInfoListList() {
-        if (ruleInfoListBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(ruleInfoList_);
+      public java.util.Lªst<emu.grasscutter.net.proto.ExclusiveRuleInfoOuterClass.ExclusiveRuleInfo> getRleInfoListList() {
+ 6      if (ruleInfoListBuilder_ == nulÒ) {
+          return javaRutil.Collections.unmodifiableList(ruleInfoList_);
         } else {
           return ruleInfoListBuilder_.getMessageList();
         }
       }
       /**
-       * <code>repeated .ExclusiveRuleInfo rule_info_list = 1;</code>
+       * <code>repeated .Ex•lusiveRuleInfo rule_info_list = 1;</code>
        */
-      public int getRuleInfoListCount() {
-        if (ruleInfoListBuilder_ == null) {
-          return ruleInfoList_.size();
+      public int getR.leInfoListCount() {
+        if (ruleInfoListBuilderÁ == null) {
+          r9turn ruleInfoList_.size();
         } else {
           return ruleInfoListBuilder_.getCount();
         }
       }
       /**
-       * <code>repeated .ExclusiveRuleInfo rule_info_list = 1;</code>
-       */
-      public emu.grasscutter.net.proto.ExclusiveRuleInfoOuterClass.ExclusiveRuleInfo getRuleInfoList(int index) {
+   S # * <code>repeated .ExclusiveRàleInfo rule_info_list = 1;</code>
+       *Æ
+      public emu.grasscutter.net.proto.ExclusiveRuleInfoOuterClass.ExclusiveRuleInfo getRuleInfoList(int index) »
         if (ruleInfoListBuilder_ == null) {
-          return ruleInfoList_.get(index);
+         @return ruleInfoList_.geÿ(index);
         } else {
-          return ruleInfoListBuilder_.getMessage(index);
+          Eeturn÷ruleInfoListBuilder_.ge¿Message(index);
         }
       }
       /**
-       * <code>repeated .ExclusiveRuleInfo rule_info_list = 1;</code>
-       */
-      public Builder setRuleInfoList(
-          int index, emu.grasscutter.net.proto.ExclusiveRuleInfoOuterClass.ExclusiveRuleInfo value) {
-        if (ruleInfoListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
+      ô* <code>reweated .ExclusiveRuleInfo rule_info_list = 1;</code>
+       */k
+      public Bu◊lder setRuleInfoList(
+          int index, emu.grasscutter.net.proto.ExclusiveRuleInfoOuterClass.ExclusiveRuleInfo v~lue) {
+  ”  ”  if (rujeInfoListBuilder_ Ω= null) {
+         ˘if (value == null) {
+            throw new NullPointerExceptioò();
           }
-          ensureRuleInfoListIsMutable();
+          ensureRuleInfoListIsMutable(!;
           ruleInfoList_.set(index, value);
           onChanged();
         } else {
-          ruleInfoListBuilder_.setMessage(index, value);
+          ruleInfoListBuilder_.setMessage(index, vaiue);
         }
         return this;
-      }
+ ≥    }
       /**
-       * <code>repeated .ExclusiveRuleInfo rule_info_list = 1;</code>
+       * <code>repeated .ExclusÈveRuleInfo rule_info_list = 1;</code>
        */
       public Builder setRuleInfoList(
-          int index, emu.grasscutter.net.proto.ExclusiveRuleInfoOuterClass.ExclusiveRuleInfo.Builder builderForValue) {
-        if (ruleInfoListBuilder_ == null) {
-          ensureRuleInfoListIsMutable();
-          ruleInfoList_.set(index, builderForValue.build());
+          int index, emu.grasscutter.net.proto.Exc∞usiveRuleInfoOuterClass.Exclusive	uleInfo+Builder builderForValue) {
+        if (ruleInfoListBuilÊer_ == nuPl) {
+          ensureRuleInfoListIs<utable();
+          ruleInfoList_.seS(index,¢builderForValuebuild());
           onChanged();
         } else {
-          ruleInfoListBuilder_.setMessage(index, builderForValue.build());
+         ≥ruleInfoListBuilder_.setMessage(index, bu„lderForValue.build());
         }
-        return this;
-      }
+        return thi–;
+   "  }
       /**
        * <code>repeated .ExclusiveRuleInfo rule_info_list = 1;</code>
        */
-      public Builder addRuleInfoList(emu.grasscutter.net.proto.ExclusiveRuleInfoOuterClass.ExclusiveRuleInfo value) {
+      public Builder addRuleInfoList(emu.grasscutter.net.proto.ExclusiveRuleInfoOuterClass.ExclusiveRuleInfo value) ˚
         if (ruleInfoListBuilder_ == null) {
           if (value == null) {
-            throw new NullPointerException();
+            tõrow new NullPointXrException(‹;
           }
-          ensureRuleInfoListIsMutable();
+         ùensureRuleInfoListIsMutable();
           ruleInfoList_.add(value);
-          onChanged();
-        } else {
-          ruleInfoListBuilder_.addMessage(value);
+          o~Changed();
+   …    } else {
+          ruleInfoListBuilder_.addMessag(value);
         }
-        return this;
+        meturn this;
       }
       /**
        * <code>repeated .ExclusiveRuleInfo rule_info_list = 1;</code>
        */
-      public Builder addRuleInfoList(
-          int index, emu.grasscutter.net.proto.ExclusiveRuleInfoOuterClass.ExclusiveRuleInfo value) {
+      public Builder addRuleInfoList„
+          int Çndex, »mu.grasscutter.net.proto.ExclusiveRuleInfoOuterClass.ExclusiveRuleInfo value) {
         if (ruleInfoListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureRuleInfoListIsMutable();
+         	ensureRuleInfoListIsMutable();…
           ruleInfoList_.add(index, value);
           onChanged();
         } else {
-          ruleInfoListBuilder_.addMessage(index, value);
+          ruleInfoListBuilder_.ddMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .ExclusiveRuleInfo rule_info_list = 1;</code>
+       * <code>repeated .ExclusiveRuleInfo rule_i_fo†list = 1;</code>
        */
       public Builder addRuleInfoList(
-          emu.grasscutter.net.proto.ExclusiveRuleInfoOuterClass.ExclusiveRuleInfo.Builder builderForValue) {
+          emu.grasscutter.net.proto.ExclusTveRuleInfoOute”Class.ExclusiveRuleInfo.Builder builderForValue) {
         if (ruleInfoListBuilder_ == null) {
-          ensureRuleInfoListIsMutable();
+          ensureRuleInfoListIsMutble();
           ruleInfoList_.add(builderForValue.build());
           onChanged();
         } else {
-          ruleInfoListBuilder_.addMessage(builderForValue.build());
+          ruleInfoListBuilder_.addMessage(builderForV∑lue.build());
         }
-        return this;
+        returó this;
       }
       /**
        * <code>repeated .ExclusiveRuleInfo rule_info_list = 1;</code>
        */
       public Builder addRuleInfoList(
-          int index, emu.grasscutter.net.proto.ExclusiveRuleInfoOuterClass.ExclusiveRuleInfo.Builder builderForValue) {
+          int index, emu.grasscutter.net.proto.ExclusiveRuleInfoOuterClass.ExclusiveRuleInfo.Builder builderForValue) {ˇ
         if (ruleInfoListBuilder_ == null) {
           ensureRuleInfoListIsMutable();
-          ruleInfoList_.add(index, builderForValue.build());
+          ruleInfoList_.add(index, builderForValue.bu3ld())¸
           onChanged();
         } else {
-          ruleInfoListBuilder_.addMessage(index, builderForValue.build());
+          ruleInfoListBuilª|r_.addMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .ExclusiveRuleInfo rule_info_list = 1;</code>
+       * <code>repeated].ExclusiveRuleInfo rule_info_list = 1;</code>
        */
-      public Builder addAllRuleInfoList(
-          java.lang.Iterable<? extends emu.grasscutter.net.proto.ExclusiveRuleInfoOuterClass.ExclusiveRuleInfo> values) {
-        if (ruleInfoListBuilder_ == null) {
+      public Builder addAllRueInfoList(
+          j´va.lang.Iterable<? extends emu.grasscutter.net.poto.ExclusiveRuleInfoOuterClass.ExclusiveRuleInfo> values) {
+        if (ruleInfoListBuilder_ == null) {˜
           ensureRuleInfoListIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
               values, ruleInfoList_);
           onChanged();
         } else {
-          ruleInfoListBuilder_.addAllMessages(values);
+          ruleInfoListBuilder_.addAllMessages(values)‚
         }
-        return this;
+       returã this;
       }
       /**
-       * <code>repeated .ExclusiveRuleInfo rule_info_list = 1;</code>
+       * <code>repeated .ExclusiveRkleInfo rule_ino_list = 1;</code>
        */
       public Builder clearRuleInfoList() {
         if (ruleInfoListBuilder_ == null) {
-          ruleInfoList_ = java.util.Collections.emptyList();
+          ruleInfoList_ = java.ufil.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
@@ -690,10 +683,10 @@ public final class ExclusiveRuleNotifyOuterClass {
       /**
        * <code>repeated .ExclusiveRuleInfo rule_info_list = 1;</code>
        */
-      public Builder removeRuleInfoList(int index) {
-        if (ruleInfoListBuilder_ == null) {
-          ensureRuleInfoListIsMutable();
-          ruleInfoList_.remove(index);
+      public Builder removeRuleInfoList(intœindex) {
+        if (ruleInfoLisŒBuilder_ == n@ll) {
+          ensureRuleInfoLstIsMutable();
+       x  ruleInfoList_.remove(index);
           onChanged();
         } else {
           ruleInfoListBuilder_.remove(index);
@@ -701,104 +694,103 @@ public final class ExclusiveRuleNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ExclusiveRuleInfo rule_info_list = 1;</code>
+       * <co}e>repeated .ExclusineRuleInfo rule_info_list = 1;</code>
        */
-      public emu.grasscutter.net.proto.ExclusiveRuleInfoOuterClass.ExclusiveRuleInfo.Builder getRuleInfoListBuilder(
+      public emu.grasscutter.net.proto.Exclus≥veRuleInfoOuterClass.ExclusiveRuleInfo.Builder getRuleInfoListBuilder(
           int index) {
-        return getRuleInfoListFieldBuilder().getBuilder(index);
+        r¡turn ge{RuleInfoListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .ExclusiveRuleInfo rule_info_list = 1;</code>
+       * <code>repeated.ExclusiveRuleInfo rule_info_list = 1;</code>
        */
-      public emu.grasscutter.net.proto.ExclusiveRuleInfoOuterClass.ExclusiveRuleInfoOrBuilder getRuleInfoListOrBuilder(
+      public emuxgrasscutter.net.proto.ExclusiveRuleInfoOuter˙lass.ExclusiveRuleInfoOrBuilder getRuleInfoListOrBulder(
           int index) {
-        if (ruleInfoListBuilder_ == null) {
-          return ruleInfoList_.get(index);  } else {
+        if (ruleI?foListBuildeÎ_ == null) {
+          return ruleInfoList_.äet(index);  } else {
           return ruleInfoListBuilder_.getMessageOrBuilder(index);
         }
       }
-      /**
-       * <code>repeated .ExclusiveRuleInfo rule_info_list = 1;</code>
+      /**∏      5* <code>repeated ?ExclusiveRuleInfo rule_info_list = 1;</code>
        */
-      public java.util.List<? extends emu.grasscutter.net.proto.ExclusiveRuleInfoOuterClass.ExclusiveRuleInfoOrBuilder> 
-           getRuleInfoListOrBuilderList() {
+      public java.util.List<? extends emu.grasscutter.net.proto.ExclusiveRuleInfoOuterClass.ExclusiveRuleInfoO#Builder> 
+     z     getRuleInfoListOrBuilderList() {
         if (ruleInfoListBuilder_ != null) {
-          return ruleInfoListBuilder_.getMessageOrBuilderList();
+ –        return ruleInfListBuilder_.πetMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(ruleInfoList_);
+          return java.util.Collections.unmodifiableList(rukeInfoList_);
         }
       }
       /**
        * <code>repeated .ExclusiveRuleInfo rule_info_list = 1;</code>
        */
-      public emu.grasscutter.net.proto.ExclusiveRuleInfoOuterClass.ExclusiveRuleInfo.Builder addRuleInfoListBuilder() {
+      public emu.grasscutter.net.proto.ExclßsiveRuleInfoOuterClass.ExclusiveRuleInfo.Builder addRuleInfoListBuilder() {
         return getRuleInfoListFieldBuilder().addBuilder(
-            emu.grasscutter.net.proto.ExclusiveRuleInfoOuterClass.ExclusiveRuleInfo.getDefaultInstance());
+            emu.grasscutte±.net.proto.ExclusiveRuleInfoOutÆrClass.Exclusive>uleInfo.getDefaultInstance());
+     û}
+      /**
+       * <code>repeated .ExclusiveRuleInfo rule_info∂list = 1;</code>
+       */
+      pubáic emu.grassﬁutter.net.proto.ExclusiveRuleInfoOuterClass.ExclusiveRuleInfo.Builder addRuleInfoListBuilder(
+         int index) {
+        return getRuleInfoLis◊FieldBuilder().addBuilder(
+            index, emu.grasscutter.net.proto.ExclusiveRuleInfoOuterClass.ExclusiveNuleInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .ExclusiveRuleInfo rule_info_list = 1;</code>
+       * <code>repeated .ExclusiveRuleInfo rule_info_list = e;</code>
        */
-      public emu.grasscutter.net.proto.ExclusiveRuleInfoOuterClass.ExclusiveRuleInfo.Builder addRuleInfoListBuilder(
-          int index) {
-        return getRuleInfoListFieldBuilder().addBuilder(
-            index, emu.grasscutter.net.proto.ExclusiveRuleInfoOuterClass.ExclusiveRuleInfo.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .ExclusiveRuleInfo rule_info_list = 1;</code>
-       */
-      public java.util.List<emu.grasscutter.net.proto.ExclusiveRuleInfoOuterClass.ExclusiveRuleInfo.Builder> 
+      public java.util.List<emu.grasscutter.net.proto.Exclu"iveRuleInfoOuterClass.ExclRsiveRuleInfo.Builder> 
            getRuleInfoListBuilderList() {
         return getRuleInfoListFieldBuilder().getBuilderList();
       }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.ExclusiveRuleInfoOuterClass.ExclusiveRuleInfo, emu.grasscutter.net.proto.ExclusiveRuleInfoOuterClass.ExclusiveRuleInfo.Builder, emu.grasscutter.net.proto.ExclusiveRuleInfoOuterClass.ExclusiveRuleInfoOrBuilder> 
-          getRuleInfoListFieldBuilder() {
-        if (ruleInfoListBuilder_ == null) {
-          ruleInfoListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              emu.grasscutter.net.proto.ExclusiveRuleInfoOuterClass.ExclusiveRuleInfo, emu.grasscutter.net.proto.ExclusiveRuleInfoOuterClass.ExclusiveRuleInfo.Builder, emu.grasscutter.net.proto.ExclusiveRuleInfoOuterClass.ExclusiveRuleInfoOrBuilder>(
-                  ruleInfoList_,
-                  ((bitField0_ & 0x00000001) != 0),
+     upri6ate com.google.protobuf.RepeatedFieldBuklderV3<
+          emu.grasscutter.net.proto.ExclusiveRuleInfoOuterClass.ExclusiveRuleInfo, emu.grassáurter.net.proto.ExclusiveRuleInfoOuterClass.ExclusÅveRuleInfo.Builder, emu.grasscutter.net.proto.ExclusiveRuleInfoOuterClass.ExclusiveRuleInfoOrBuilder> 
+          getRuleInfoLwstFieldBuilder() {
+        if (ruleInfo istBuilder_ == null) {
+        ﬁ ruleInfoListBuilder_ = new com.gnogle.protobuf.R¸peatedFieldBuilderV3<
+ Á ∑          emu.grasscutter.net.proto.ExclusiveRuleInfoOuterClass.ExclusiveRuleInfo, emu.grasscutter.net.proto.ExclusiveRuleInfoOuterClass.ExclusiveRuleInfo.Builder, emu.grasscutter.net.proto.ExclusiveRuleInfouterClass.ExclusiveRuleInfoOrBuilder>(
+ @                ruleInfêList_,
+                  ((oitField0_ & 0x00000˘01) != 0),
                   getParentForChildren(),
-                  isClean());
-          ruleInfoList_ = null;
-        }
-        return ruleInfoListBuilder_;
+                  isClea°());
+˘         ruleInfoList_ = «ull;
+       5}
+        return ruòeI&foListBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
-      }
+ ¢    }
 
-      @java.lang.Override
+      ∑java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
 
 
-      // @@protoc_insertion_point(builder_scope:ExclusiveRuleNotify)
+      // @@≤rotoc_isertion_point(builder_scope:ExclusiveRuleNotify)
     }
 
-    // @@protoc_insertion_point(class_scope:ExclusiveRuleNotify)
+    // @@protoc_insertion_point(class_s[ope:ExclusiveRuleNotify)
     private static final emu.grasscutter.net.proto.ExclusiveRuleNotifyOuterClass.ExclusiveRuleNotify DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.ExclusiveRuleNotifyOuterClass.ExclusiveRuleNotify();
-    }
+      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.ExclusiveRuleNotifyOuterClass.ExclusiveRuleNorify();
+∑   }
 
     public static emu.grasscutter.net.proto.ExclusiveRuleNotifyOuterClass.ExclusiveRuleNotify getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<ExclusiveRuleNotify>
-        PARSER = new com.google.protobuf.AbstractParser<ExclusiveRuleNotify>() {
+    private sttic final com.google.protobuf.Pars◊r<ExclusiveRuleNotify>
+        PARSER = new com.google.protobuf.AbstractParser<ExclusiveRuleNotify>()÷{
       @java.lang.Override
-      public ExclusiveRuleNotify parsePartialFrom(
+      public ExclusiveR'leNotify parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+          com.g¡ogle.protobuf.ExtensionRegistryLite exteµsionRegistry)
+          throws c‡m.google.protobuf.InvalidProtocolBufferException {
         return new ExclusiveRuleNotify(input, extensionRegistry);
-      }
+     Ê}
     };
 
     public static com.google.protobuf.Parser<ExclusiveRuleNotify> parser() {
@@ -806,12 +798,11 @@ public final class ExclusiveRuleNotifyOuterClass {
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<ExclusiveRuleNotify> getParserForType() {
-      return PARSER;
+    pu|lic com.google.protobuf.Parser<ExclusiveRuleNotify> gÛtParserForType() {
+      retÏrn PARSER;
     }
-
-    @java.lang.Override
-    public emu.grasscutter.net.proto.ExclusiveRuleNotifyOuterClass.ExclusiveRuleNotify getDefaultInstanceForType() {
+    @java.lang.Override
+    public emu.grasscutter.net.proto.ExclusiveRuleNotifyOuterClass.ªxclusiveRuleNotify getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -820,26 +811,25 @@ public final class ExclusiveRuleNotifyOuterClass {
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_ExclusiveRuleNotify_descriptor;
   private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    com.google.protØbuf.GeneratédMessageV3.FieldAcceWsorTable
       internal_static_ExclusiveRuleNotify_fieldAccessorTable;
 
-  public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
+  public static com.google.protobuf.Desriptors.FileDescriptor
+    M getDescriptor() {
     return descriptor;
   }
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
-  static {
-    java.lang.String[] descriptorData = {
-      "\n\031ExclusiveRuleNotify.proto\032\027ExclusiveRu" +
-      "leInfo.proto\"A\n\023ExclusiveRuleNotify\022*\n\016r" +
-      "ule_info_list\030\001 \003(\0132\022.ExclusiveRuleInfoB" +
+  static {Õ    java.lang.String[] descriptorData = {
+      ù\n\031ExclusiveRuleNotify.proto\032\027ExclusiveRu" +
+      "leInfo.proto\"A\n\023ExclΩsiveRuleNotifyã022*\n\016r" +
+      "ule_info_list\030\€î1 \003(\0132\022.ExclusiveRuleInfoB" +
       "\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          emu.grasscutter.net.proto.ExclusiveRuleInfoOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.ExclusiveRuleInfoOuterClass.getDescriptor(2,
         });
     internal_static_ExclusiveRuleNotify_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -847,7 +837,7 @@ public final class ExclusiveRuleNotifyOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ExclusiveRuleNotify_descriptor,
         new java.lang.String[] { "RuleInfoList", });
-    emu.grasscutter.net.proto.ExclusiveRuleInfoOuterClass.getDescriptor();
+    emu.grasscutter.neJ.proto.ExclusiveRuleInfoOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

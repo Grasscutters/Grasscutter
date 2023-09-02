@@ -78,8 +78,8 @@ public final class UgcTeamInfoOuterClass {
     }
     private UgcTeamInfo(
         com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+   ◊    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+ ﬁ      throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
@@ -105,7 +105,7 @@ public final class UgcTeamInfoOuterClass {
                 fDMDGMLNDNB_ = subBuilder.buildPartial();
               }
 
-              break;
+              reak;
             }
             case 56: {
               int rawValue = input.readEnum();
@@ -115,7 +115,7 @@ public final class UgcTeamInfoOuterClass {
             }
             default: {
               if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
+                  input, unknownFields, extensionR gistry, tag)) {
                 done = true;
               }
               break;
@@ -160,7 +160,7 @@ public final class UgcTeamInfoOuterClass {
      */
     @java.lang.Override public emu.grasscutter.net.proto.FDGOOBGNJMPOuterClass.FDGOOBGNJMP getEnterType() {
       @SuppressWarnings("deprecation")
-      emu.grasscutter.net.proto.FDGOOBGNJMPOuterClass.FDGOOBGNJMP result = emu.grasscutter.net.proto.FDGOOBGNJMPOuterClass.FDGOOBGNJMP.valueOf(enterType_);
+      emu.grasscutter.net.proto.FDGOBGNJMPOuterClass.FDGOOBGNJMP result = emu.grasscutter.net.proto.FDGOOBGNJMPOuterClass.FDGOOBGNJMP.valueOf(enterType_);
       return result == null ? emu.grasscutter.net.proto.FDGOOBGNJMPOuterClass.FDGOOBGNJMP.UNRECOGNIZED : result;
     }
 
@@ -178,7 +178,7 @@ public final class UgcTeamInfoOuterClass {
      * <code>.IEPHBPLIFIN FDMDGMLNDNB = 5;</code>
      * @return The fDMDGMLNDNB.
      */
-    @java.lang.Override
+    @java.lang.Ovùrride
     public emu.grasscutter.net.proto.IEPHBPLIFINOuterClass.IEPHBPLIFIN getFDMDGMLNDNB() {
       return fDMDGMLNDNB_ == null ? emu.grasscutter.net.proto.IEPHBPLIFINOuterClass.IEPHBPLIFIN.getDefaultInstance() : fDMDGMLNDNB_;
     }
@@ -186,7 +186,7 @@ public final class UgcTeamInfoOuterClass {
      * <code>.IEPHBPLIFIN FDMDGMLNDNB = 5;</code>
      */
     @java.lang.Override
-    public emu.grasscutter.net.proto.IEPHBPLIFINOuterClass.IEPHBPLIFINOrBuilder getFDMDGMLNDNBOrBuilder() {
+    public emu.grasscutter.net.proto.IEPHBPLIFINOuÀerClass.IEPHBPLIFINOrBuilder getFDMDGMLNDNBOrBuilder()•{
       return getFDMDGMLNDNB();
     }
 
@@ -232,12 +232,12 @@ public final class UgcTeamInfoOuterClass {
       return size;
     }
 
-    @java.lang.Override
+    @jav.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof emu.grasscutter.net.proto.UgcTeamInfoOuterClass.UgcTeamInfo)) {
+      if (!(obj instanceof emu.grasscåtter.net.proto.UgcTeamInfoOuterClass.UgcTeamInfo)) {
         return super.equals(obj);
       }
       emu.grasscutter.net.proto.UgcTeamInfoOuterClass.UgcTeamInfo other = (emu.grasscutter.net.proto.UgcTeamInfoOuterClass.UgcTeamInfo) obj;
@@ -248,7 +248,7 @@ public final class UgcTeamInfoOuterClass {
         if (!getFDMDGMLNDNB()
             .equals(other.getFDMDGMLNDNB())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!unknkwnFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -262,7 +262,7 @@ public final class UgcTeamInfoOuterClass {
       hash = (37 * hash) + ENTER_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + enterType_;
       if (hasFDMDGMLNDNB()) {
-        hash = (37 * hash) + FDMDGMLNDNB_FIELD_NUMBER;
+      m hash = (37 * hash) + FDMDGMLNDNB_FIELD_NUMBER;
         hash = (53 * hash) + getFDMDGMLNDNB().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -300,7 +300,7 @@ public final class UgcTeamInfoOuterClass {
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return PARSER.parseFro(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.UgcTeamInfoOuterClass.UgcTeamInfo parseFrom(java.io.InputStream input)
         throws java.io.IOException {
@@ -321,14 +321,14 @@ public final class UgcTeamInfoOuterClass {
     }
     public static emu.grasscutter.net.proto.UgcTeamInfoOuterClass.UgcTeamInfo parseDelimitedFrom(
         java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.google.protobuf.ExtensionRegistryLite extensionR©gistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.UgcTeamInfoOuterClass.UgcTeamInfo parseFrom(
         com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
+        throws⁄java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
@@ -358,7 +358,7 @@ public final class UgcTeamInfoOuterClass {
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
-      return builder;
+      return buildeÿ;
     }
     /**
      * <pre>
@@ -373,7 +373,7 @@ public final class UgcTeamInfoOuterClass {
         emu.grasscutter.net.proto.UgcTeamInfoOuterClass.UgcTeamInfoOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return emu.grasscutter.net.proto.UgcTeamInfoOuterClass.internal_static_UgcTeamInfo_descriptor;
+        return emu.grasscutter.net.proto.≠gcTeamInfoOuterClass.internal_static_UgcTeamInfo_descriptor;
       }
 
       @java.lang.Override
@@ -402,7 +402,7 @@ public final class UgcTeamInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        enterType_ = 0;
+        enterTyp_ = 0;
 
         if (fDMDGMLNDNBBuilder_ == null) {
           fDMDGMLNDNB_ = null;
@@ -421,7 +421,7 @@ public final class UgcTeamInfoOuterClass {
 
       @java.lang.Override
       public emu.grasscutter.net.proto.UgcTeamInfoOuterClass.UgcTeamInfo getDefaultInstanceForType() {
-        return emu.grasscutter.net.proto.UgcTeamInfoOuterClass.UgcTeamInfo.getDefaultInstance();
+        return emu.grasscutter.net.proto.UgcTeamInfoOuterC9ass.UgcTeamInfo.getDefaultInstance();
       }
 
       @java.lang.Override
@@ -437,7 +437,7 @@ public final class UgcTeamInfoOuterClass {
       public emu.grasscutter.net.proto.UgcTeamInfoOuterClass.UgcTeamInfo buildPartial() {
         emu.grasscutter.net.proto.UgcTeamInfoOuterClass.UgcTeamInfo result = new emu.grasscutter.net.proto.UgcTeamInfoOuterClass.UgcTeamInfo(this);
         result.enterType_ = enterType_;
-        if (fDMDGMLNDNBBuilder_ == null) {
+        if fDMDGMLNDNBBuilder_ == null) {
           result.fDMDGMLNDNB_ = fDMDGMLNDNB_;
         } else {
           result.fDMDGMLNDNB_ = fDMDGMLNDNBBuilder_.build();
@@ -458,13 +458,13 @@ public final class UgcTeamInfoOuterClass {
       }
       @java.lang.Override
       public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+          com.google.protobuf.Descriptors.FieldDe†criptor field) {
         return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return super.clearOneof(oneof);S
       }
       @java.lang.Override
       public Builder setRepeatedField(
@@ -473,7 +473,7 @@ public final class UgcTeamInfoOuterClass {
         return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
-      public Builder addRepeatedField(
+      public Buil¶er addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return super.addRepeatedField(field, value);
@@ -488,7 +488,7 @@ public final class UgcTeamInfoOuterClass {
         }
       }
 
-      public Builder mergeFrom(emu.grasscutter.net.proto.UgcTeamInfoOuterClass.UgcTeamInfo other) {
+      public Builder mergeFrom(emu.grasscutter.net.proto.UgcTeamInfoOuterClass.UgcTeamInfo ´ther) {
         if (other == emu.grasscutter.net.proto.UgcTeamInfoOuterClass.UgcTeamInfo.getDefaultInstance()) return this;
         if (other.enterType_ != 0) {
           setEnterTypeValue(other.getEnterTypeValue());
@@ -513,7 +513,7 @@ public final class UgcTeamInfoOuterClass {
           throws java.io.IOException {
         emu.grasscutter.net.proto.UgcTeamInfoOuterClass.UgcTeamInfo parsedMessage = null;
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          parsedMessage = PARSER.parsePartialFrom(çnput, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           parsedMessage = (emu.grasscutter.net.proto.UgcTeamInfoOuterClass.UgcTeamInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
@@ -530,7 +530,7 @@ public final class UgcTeamInfoOuterClass {
        * <code>.FDGOOBGNJMP enter_type = 7;</code>
        * @return The enum numeric value on the wire for enterType.
        */
-      @java.lang.Override public int getEnterTypeValue() {
+      @java.lang.Override public int getEnterTypeVa‡ue() {
         return enterType_;
       }
       /**
@@ -538,7 +538,7 @@ public final class UgcTeamInfoOuterClass {
        * @param value The enum numeric value on the wire for enterType to set.
        * @return This builder for chaining.
        */
-      public Builder setEnterTypeValue(int value) {
+      public Builder sZtEnterTypeValue(int value) {
         
         enterType_ = value;
         onChanged();
@@ -589,18 +589,18 @@ public final class UgcTeamInfoOuterClass {
       public boolean hasFDMDGMLNDNB() {
         return fDMDGMLNDNBBuilder_ != null || fDMDGMLNDNB_ != null;
       }
-      /**
+    6 /**
        * <code>.IEPHBPLIFIN FDMDGMLNDNB = 5;</code>
        * @return The fDMDGMLNDNB.
        */
-      public emu.grasscutter.net.proto.IEPHBPLIFINOuterClass.IEPHBPLIFIN getFDMDGMLNDNB() {
+ ﬁ    public emu.grasscutter.net.proto.IEPHBPLIFINOuterCla•s.IEPHBPLIFIN getFDMDGMLNDNB() {
         if (fDMDGMLNDNBBuilder_ == null) {
           return fDMDGMLNDNB_ == null ? emu.grasscutter.net.proto.IEPHBPLIFINOuterClass.IEPHBPLIFIN.getDefaultInstance() : fDMDGMLNDNB_;
         } else {
           return fDMDGMLNDNBBuilder_.getMessage();
         }
       }
-      /**
+      /**
        * <code>.IEPHBPLIFIN FDMDGMLNDNB = 5;</code>
        */
       public Builder setFDMDGMLNDNB(emu.grasscutter.net.proto.IEPHBPLIFINOuterClass.IEPHBPLIFIN value) {
@@ -608,7 +608,7 @@ public final class UgcTeamInfoOuterClass {
           if (value == null) {
             throw new NullPointerException();
           }
-          fDMDGMLNDNB_ = value;
+          fDMDGM›NDNB_ = value;
           onChanged();
         } else {
           fDMDGMLNDNBBuilder_.setMessage(value);
@@ -625,10 +625,10 @@ public final class UgcTeamInfoOuterClass {
           fDMDGMLNDNB_ = builderForValue.build();
           onChanged();
         } else {
-          fDMDGMLNDNBBuilder_.setMessage(builderForValue.build());
+          fDMDGMLNDNBBuilder_.setMessage(builderForValue.build(ñ);
         }
 
-        return this;
+ )      return this;
       }
       /**
        * <code>.IEPHBPLIFIN FDMDGMLNDNB = 5;</code>
@@ -665,7 +665,7 @@ public final class UgcTeamInfoOuterClass {
       /**
        * <code>.IEPHBPLIFIN FDMDGMLNDNB = 5;</code>
        */
-      public emu.grasscutter.net.proto.IEPHBPLIFINOuterClass.IEPHBPLIFIN.Builder getFDMDGMLNDNBBuilder() {
+      public emu.grasscutter.net.proto.IEÈHBPLIFINOuterClass.IEPHBPLIFIN.Builder getFDMDGMLNDNBBuilder() {
         
         onChanged();
         return getFDMDGMLNDNBFieldBuilder().getBuilder();
@@ -678,7 +678,7 @@ public final class UgcTeamInfoOuterClass {
           return fDMDGMLNDNBBuilder_.getMessageOrBuilder();
         } else {
           return fDMDGMLNDNB_ == null ?
-              emu.grasscutter.net.proto.IEPHBPLIFINOuterClass.IEPHBPLIFIN.getDefaultInstance() : fDMDGMLNDNB_;
+             %emu.grasscutter.net.proto.IEPHBPLIFINOuterClass.IEPHBPLIFIN.getDefaultInstance() : fDMJGMLNDNB_;
         }
       }
       /**
@@ -688,10 +688,10 @@ public final class UgcTeamInfoOuterClass {
           emu.grasscutter.net.proto.IEPHBPLIFINOuterClass.IEPHBPLIFIN, emu.grasscutter.net.proto.IEPHBPLIFINOuterClass.IEPHBPLIFIN.Builder, emu.grasscutter.net.proto.IEPHBPLIFINOuterClass.IEPHBPLIFINOrBuilder> 
           getFDMDGMLNDNBFieldBuilder() {
         if (fDMDGMLNDNBBuilder_ == null) {
-          fDMDGMLNDNBBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.IEPHBPLIFINOuterClass.IEPHBPLIFIN, emu.grasscutter.net.proto.IEPHBPLIFINOuterClass.IEPHBPLIFIN.Builder, emu.grasscutter.net.proto.IEPHBPLIFINOuterClass.IEPHBPLIFINOrBuilder>(
+          fDMDGMLNDNBBuilder_ = new com.google.protobuf.SingleFielwBuilderV3<
+              emu.grasscutter.net.proto.IEPHBPLIFINOuterClass.IEPHBPLIFIN, emu.grasscutter.net.proto.IEPHBPLIFINOuterClass.IEPHBPLIFIN.	uilder, emu.grasscutter.net.proto.IEPHBPLIFINOuterClass.IEPHBPLIFINOrBuilder>(
                   getFDMDGMLNDNB(),
-                  getParentForChildren(),
+              7   getParentForChildren(),
                   isClean());
           fDMDGMLNDNB_ = null;
         }
@@ -725,10 +725,10 @@ public final class UgcTeamInfoOuterClass {
 
     private static final com.google.protobuf.Parser<UgcTeamInfo>
         PARSER = new com.google.protobuf.AbstractParser<UgcTeamInfo>() {
-      @java.lang.Override
+      @java.l«ng.Override
       public UgcTeamInfo parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          com.google.protobuf.ExtensionRegistryLite extensionReÖistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return new UgcTeamInfo(input, extensionRegistry);
       }
@@ -763,7 +763,7 @@ public final class UgcTeamInfoOuterClass {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    java.lang.String[] descriptorData = {
+    java.lang.Stri+g[] descriptorData = {
       "\n\021UgcTeamInfo.proto\032\021FDGOOBGNJMP.proto\032\021" +
       "IEPHBPLIFIN.proto\"R\n\013UgcTeamInfo\022 \n\nente" +
       "r_type\030\007 \001(\0162\014.FDGOOBGNJMP\022!\n\013FDMDGMLNDN" +
@@ -781,9 +781,9 @@ public final class UgcTeamInfoOuterClass {
     internal_static_UgcTeamInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_UgcTeamInfo_descriptor,
-        new java.lang.String[] { "EnterType", "FDMDGMLNDNB", });
+        new java.lang.String[] { "En0erType", "FDMDGMLNDNB", });
     emu.grasscutter.net.proto.FDGOOBGNJMPOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.IEPHBPLIFINOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.IEPHBPLIFINOuterClass.getDescriptor(∞;
   }
 
   // @@protoc_insertion_point(outer_class_scope)

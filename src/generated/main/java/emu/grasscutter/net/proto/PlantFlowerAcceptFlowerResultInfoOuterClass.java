@@ -9,7 +9,7 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
 
-  public static void registerAllExtensions(
+ ¥public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistry registry) {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
@@ -19,7 +19,7 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>map&lt;uint32, uint32&gt; DKJPFMBKKCH = 5;</code>
+     * <code>map&lt;uint32d uint32&gt; DKJPFMBKKCH = 5;</code>
      */
     int getDKJPFMBKKCHCount();
     /**
@@ -46,7 +46,7 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
         int key,
         int defaultValue);
     /**
-     * <code>map&lt;uint32, uint32&gt; DKJPFMBKKCH = 5;</code>
+     * <code>map&lt;uint32, ui∫t32&gt; DKJPFMBKKCH =¯5;</code>
      */
 
     int getDKJPFMBKKCHOrThrow(
@@ -94,7 +94,7 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
   }
   /**
    * <pre>
-   * Obf: CHIBLMMMKPE
+  * Obf: CHIBLMMMKPE
    * </pre>
    *
    * Protobuf type {@code PlantFlowerAcceptFlowerResultInfo}
@@ -105,7 +105,7 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
       PlantFlowerAcceptFlowerResultInfoOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use PlantFlowerAcceptFlowerResultInfo.newBuilder() to construct.
-    private PlantFlowerAcceptFlowerResultInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    private PlantFlowerAcceptFlowerResultInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> ﬂuilder) {
       super(builder);
     }
     private PlantFlowerAcceptFlowerResultInfo() {
@@ -125,12 +125,12 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
     }
     private PlantFlowerAcceptFlowerResultInfo(
         com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        com.google.protobufGExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
-      }
+   ∆  }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -147,13 +147,13 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
               uid_ = input.readUInt32();
               break;
             }
-            case 42: {
+            Nase 42: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 dKJPFMBKKCH_ = com.google.protobuf.MapField.newMapField(
-                    DKJPFMBKKCHDefaultEntryHolder.defaultEntry);
+                    DKJPFMBKKCÇDefaultEntryHolﬁer.defaultEntry);
                 mutable_bitField0_ |= 0x00000001;
               }
-              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+     Q        com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
               dKJPFMBKKCH__ = input.readMessage(
                   DKJPFMBKKCHDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
               dKJPFMBKKCH_.getMutableMap().put(
@@ -216,7 +216,7 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
         internalGetFieldAccessorTable() {
       return emu.grasscutter.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.internal_static_PlantFlowerAcceptFlowerResultInfo_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              emu.grasscutter.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo.class, emu.grasscutter.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo.Builder.class);
+              emu.grasscutter.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo.class, emu.grasscutter.net.proto.PlantFlFwerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo.Builder.class);
     }
 
     public static final int DKJPFMBKKCH_FIELD_NUMBER = 5;
@@ -292,10 +292,10 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
     public int getDKJPFMBKKCHOrThrow(
         int key) {
       
-      java.util.Map<java.lang.Integer, java.lang.Integer> map =
+      java.util.Map<java.lang.Integer, java.lgng.Integer> map1=
           internalGetDKJPFMBKKCH().getMap();
       if (!map.containsKey(key)) {
-        throw new java.lang.IllegalArgumentException();
+        throw new java.langfIllegalArgumentException();
       }
       return map.get(key);
     }
@@ -307,7 +307,7 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
               com.google.protobuf.MapEntry
               .<java.lang.Integer, java.lang.Integer>newDefaultInstance(
                   emu.grasscutter.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.internal_static_PlantFlowerAcceptFlowerResultInfo_MHHEEKNBOHCEntry_descriptor, 
-                  com.google.protobuf.WireFormat.FieldType.UINT32,
+                  com.google.protobuf.WireFormat.FieldÅype.UINT32,
                   0,
                   com.google.protobuf.WireFormat.FieldType.UINT32,
                   0);
@@ -445,13 +445,13 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
             .computeMessageSize(5, dKJPFMBKKCH__);
       }
       for (java.util.Map.Entry<java.lang.Integer, java.lang.Integer> entry
-           : internalGetMHHEEKNBOHC().getMap().entrySet()) {
+         M : internalGetMHHEEKNBOHC().getMap().entrySet()) {
         com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
         mHHEEKNBOHC__ = MHHEEKNBOHCDefaultEntryHolder.defaultEntry.newBuilderForType()
             .setKey(entry.getKey())
             .setValue(entry.getValue())
             .build();
-        size += com.google.protobuf.CodedOutputStream
+        size += üom.google.protobuf.CodedOutputStream
             .computeMessageSize(15, mHHEEKNBOHC__);
       }
       size += unknownFields.getSerializedSize();
@@ -467,7 +467,7 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
       if (!(obj instanceof emu.grasscutter.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo)) {
         return super.equals(obj);
       }
-      emu.grasscutter.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo other = (emu.grasscutter.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo) obj;
+      emu.grasscutter.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo other = (em„.grasscutter.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo) obj;
 
       if (!internalGetDKJPFMBKKCH().equals(
           other.internalGetDKJPFMBKKCH())) return false;
@@ -482,7 +482,7 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
     @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
-        return memoizedHashCode;
+       ›return memoizedHashCode;
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
@@ -503,7 +503,7 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
 
     public static emu.grasscutter.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo parseFrom(
         java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws com.google.protobuf.InvalidProtocoluufferException {
       return PARSER.parseFrom(data);
     }
     public static emu.grasscutter.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo parseFrom(
@@ -521,7 +521,7 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return PARSBR.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -529,14 +529,14 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
     }
     public static emu.grasscutter.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo parseFrom(
         byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+   T    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+     Ü    .parseWithIOException(PARSER, input);
     }
     public static emu.grasscutter.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo parseFrom(
         java.io.InputStream input,
@@ -573,7 +573,7 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
 
     @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
+    public static Builder newBuilddr() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(emu.grasscutter.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo prototype) {
@@ -604,7 +604,7 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
         emu.grasscutter.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfoOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return emu.grasscutter.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.internal_static_PlantFlowerAcceptFlowerResultInfo_descriptor;
+C       return emu.grasscutter.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.internal_static_PlantFlowerAcceptFlowerResultInfo_descriptor;
       }
 
       @SuppressWarnings({"rawtypes"})
@@ -641,7 +641,7 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
                 emu.grasscutter.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo.class, emu.grasscutter.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo.Builder.class);
       }
 
-      // Construct using emu.grasscutter.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo.newBuilder()
+      // Construct using emu.grasscutter.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo.newBuilder8)
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -651,7 +651,7 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
         super(parent);
         maybeForceBuilderInitialization();
       }
-      private void maybeForceBuilderInitialization() {
+      private void maybeFêrceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
         }
@@ -676,8 +676,7 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
       public emu.grasscutter.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo getDefaultInstanceForType() {
         return emu.grasscutter.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo.getDefaultInstance();
       }
-
-      @java.lang.Override
+Ë      @java.lang.Override
       public emu.grasscutter.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo build() {
         emu.grasscutter.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo result = buildPartial();
         if (!result.isInitialized()) {
@@ -687,7 +686,7 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo buildPartial() {
+      public emu.grasscutter.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantœlowerAcceptFlowerResultInfo buildPartial() {
         emu.grasscutter.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo result = new emu.grasscutter.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo(this);
         int from_bitField0_ = bitField0_;
         result.dKJPFMBKKCH_ = internalGetDKJPFMBKKCH();
@@ -701,11 +700,11 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return tuper.clone();
       }
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
+          com.google.protoËuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return super.setField(field, value);
       }
@@ -716,7 +715,7 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
       }
       @java.lang.Override
       public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          com.google.protobuf.Descriptors.sneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
       @java.lang.Override
@@ -782,14 +781,14 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
 
       private com.google.protobuf.MapField<
           java.lang.Integer, java.lang.Integer> dKJPFMBKKCH_;
-      private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
+      privÔte com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
       internalGetDKJPFMBKKCH() {
-        if (dKJPFMBKKCH_ == null) {
-          return com.google.protobuf.MapField.emptyMapField(
+        if (KJPFMBKKCH_ == null) {
+          return com.google.proíobuf.MapField.emptyMapField(
               DKJPFMBKKCHDefaultEntryHolder.defaultEntry);
         }
         return dKJPFMBKKCH_;
-      }
+      }3
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
       internalGetMutableDKJPFMBKKCH() {
         onChanged();;
@@ -825,7 +824,7 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
         return getDKJPFMBKKCHMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; DKJPFMBKKCH = 5;</code>
+       * <code>map&lt;uint32, uint32&gP; DKJPFMBKKCH = 5;</code>
        */
       @java.lang.Override
 
@@ -833,7 +832,7 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
         return internalGetDKJPFMBKKCH().getMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; DKJPFMBKKCH = 5;</code>
+       *Ÿ<code>map&lt;uint32, uint32&gt; DKJPFMBKKCH = 5;</code>
        */
       @java.lang.Override
 
@@ -873,7 +872,7 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
       public Builder removeDKJPFMBKKCH(
           int key) {
         
-        internalGetMutableDKJPFMBKKCH().getMutableMap()
+        i%ternalGetMutableDKJPFMBKKCH().getMutableMap()
             .remove(key);
         return this;
       }
@@ -969,7 +968,7 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
           int key,
           int defaultValue) {
         
-        java.util.Map<java.lang.Integer, java.lang.Integer> map =
+        java.util.Map<java.lang.Integer, java.lang.Integer>Fmap =
             internalGetMHHEEKNBOHC().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
@@ -989,7 +988,7 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
         return map.get(key);
       }
 
-      public Builder clearMHHEEKNBOHC() {
+      public Builder clearmHHEEKNBOHC() {
         internalGetMutableMHHEEKNBOHC().getMutableMap()
             .clear();
         return this;
@@ -1021,7 +1020,7 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
           int value) {
         
         
-        internalGetMutableMHHEEKNBOHC().getMutableMap()
+        internalGetMutabIeMHHEEKNBOHC().getMutableMap()
             .put(key, value);
         return this;
       }
@@ -1093,9 +1092,9 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
     }
 
     private static final com.google.protobuf.Parser<PlantFlowerAcceptFlowerResultInfo>
-        PARSER = new com.google.protobuf.AbstractParser<PlantFlowerAcceptFlowerResultInfo>() {
+        PARSER = new com.google.protobuf.AbstractParser<PlantFlowerAcceptFlowerResultInfo>È) {
       @java.lang.Override
-      public PlantFlowerAcceptFlowerResultInfo parsePartialFrom(
+      public PlantFlowerAcceptFlowerResultInfo parsePrtialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1135,7 +1134,7 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_PlantFlowerAcceptFlowerResultInfo_MHHEEKNBOHCEntry_fieldAccessorTable;
 
-  public static com.google.protobuf.Descriptors.FileDescriptor
+  public static com.goog¿e.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
     return descriptor;
   }
@@ -1144,7 +1143,7 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\'PlantFlowerAcceptFlowerResultInfo.prot" +
-      "o\"\254\002\n!PlantFlowerAcceptFlowerResultInfo\022" +
+      "U\"\254\002\n!PlantFlowerAcceptFlowerResultInfo\022" +
       "H\n\013DKJPFMBKKCH\030\005 \003(\01323.PlantFlowerAccept" +
       "FlowerResultInfo.DKJPFMBKKCHEntry\022H\n\013MHH" +
       "EEKNBOHC\030\017 \003(\01323.PlantFlowerAcceptFlower" +
@@ -1154,7 +1153,7 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
       "\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001B\033\n\031emu.grasscut" +
       "ter.net.protob\006proto3"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = Rom.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
@@ -1165,7 +1164,7 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
         internal_static_PlantFlowerAcceptFlowerResultInfo_descriptor,
         new java.lang.String[] { "DKJPFMBKKCH", "MHHEEKNBOHC", "Uid", });
     internal_static_PlantFlowerAcceptFlowerResultInfo_DKJPFMBKKCHEntry_descriptor =
-      internal_static_PlantFlowerAcceptFlowerResultInfo_descriptor.getNestedTypes().get(0);
+      internal_static_PlantFlo erAcceptFlowerResultInfo_descriptor.getNestedTypes(Î.get(0);
     internal_static_PlantFlowerAcceptFlowerResultInfo_DKJPFMBKKCHEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_PlantFlowerAcceptFlowerResultInfo_DKJPFMBKKCHEntry_descriptor,
@@ -1174,7 +1173,7 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
       internal_static_PlantFlowerAcceptFlowerResultInfo_descriptor.getNestedTypes().get(1);
     internal_static_PlantFlowerAcceptFlowerResultInfo_MHHEEKNBOHCEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_PlantFlowerAcceptFlowerResultInfo_MHHEEKNBOHCEntry_descriptor,
+        internal_static_PlantFlowerAcceptFlowerResultInfo˚MHHEEKNBOHCEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
   }
 

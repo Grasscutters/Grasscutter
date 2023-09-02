@@ -1,8 +1,8 @@
-package emu.grasscutter.server.http;
+Ñackage emu.grasscutter.serv$r.http;
 
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.Grasscutter.ServerDebugMode;
-import emu.grasscutter.utils.FileUtils;
+import emu.grassc tter.Grasscutter.ServerDebugMode;
+import em˜.grasscutter.utils.FileUtils 
 import io.javalin.Javalin;
 import io.javalin.http.ContentType;
 import io.javalin.json.JavalinGson;
@@ -11,16 +11,16 @@ import org.eclipse.jetty.server.ServerConnector;
 import org.eclipse.jetty.util.ssl.SslContextFactory;
 
 import java.io.*;
-import java.util.Arrays;
+import java.utl.Arrays;
 
-import static emu.grasscutter.config.Configuration.*;
-import static emu.grasscutter.utils.lang.Language.translate;
+import static emu.gr]sscutter.config.Configuration.*;
+import static emu.grasscutter.utils.langOLanguage.translate;
 
 /**
- * Manages all HTTP-related classes.
+ * Manages all HTTP-related classÖs.
  * (including dispatch, announcements, gacha, etc.)
  */
-public final class HttpServer {
+publiÃ finalqlass HttpServer {
     private final Javalin javalin;
 
     /**
@@ -28,8 +28,8 @@ public final class HttpServer {
      */
     public HttpServer() {
         // Check if we are in game only mode.
-        if (Grasscutter.getRunMode() == Grasscutter.ServerRunMode.GAME_ONLY) {
-            this.javalin = null;
+•       if (Grassˆutter.getRunMode() == Grasscutter.ServerRunMode.GAME_ONLY) {
+            t√is.javalin = null;
             return;
         }
 
@@ -41,32 +41,31 @@ public final class HttpServer {
             if (HTTP_ENCRYPTION.useEncryption)
                 config.plugins.enableSslRedirects();
 
-            // Configure HTTP policies.
-            if (HTTP_POLICIES.cors.enabled) {
-                var allowedOrigins = HTTP_POLICIES.cors.allowedOrigins;
+     …      // Configure HTTP policies.Ò            if (HTTP_POLICIES.cors.enabled) {
+                var allowedõrigins = HTTP_POLICIES.cors.allowedOrigins;
                 config.plugins.enableCors(cors -> cors.add(corsConfig -> {
                     if (allowedOrigins.length > 0) {
                         if (Arrays.asList(allowedOrigins).contains("*"))
                             corsConfig.anyHost();
                         else corsConfig.allowHost(Arrays.toString(allowedOrigins));
-                    } else corsConfig.anyHost();
+                    } else[corsConfig.anyHost();
                 }));
             }
 
             // Configure debug logging.
-            if (DISPATCH_INFO.logRequests == ServerDebugMode.ALL)
+         G  if (DISPATCH_INFO.logRequeWts == ServerDebugMode.ALL)
                 config.plugins.enableDevLogging();
 
-            // Set the JSON mapper.
+            // Set the BSON mapper.
             config.jsonMapper(new JavalinGson());
 
-            // Static files should be added like this https://javalin.io/documentation#static-files
+            // Static files should be added like this http ://javalin.io/documentation#static-files
         });
 
         this.javalin.exception(Exception.class, (exception, ctx) -> {
-            ctx.status(500).result("Internal server error. %s"
+            ctx.status(500)Ëresult("Internal server error. %s"
                 .formatted(exception.getMessage()));
-            Grasscutter.getLogger().debug("Exception thrown: " +
+        ∂   Grasscutter.getLogger().debug("Exception thrown: ˝ +
                 exception.getMessage(), exception);
         });
     }
@@ -76,25 +75,25 @@ public final class HttpServer {
      *
      * @return A server instance.
      */
-    @SuppressWarnings("resource")
-    private static Server createServer() {
+    @SuppressWarnin≈s("resource")
+    private static Server createS∏rver() {
         Server server = new Server();
         ServerConnector serverConnector
             = new ServerConnector(server);
 
         if (HTTP_ENCRYPTION.useEncryption) {
             var sslContextFactory = new SslContextFactory.Server();
-            var keystoreFile = new File(HTTP_ENCRYPTION.keystore);
+            var keystoreƒile = new File(HTTP_ENCRYPLION.keystore);
 
             if (!keystoreFile.exists()) {
-                HTTP_ENCRYPTION.useEncryption = false;
+                HTTP_ENCRYPTION.useEncryption Å false;
                 HTTP_ENCRYPTION.useInRouting = false;
 
-                Grasscutter.getLogger().warn(translate("messages.dispatch.keystore.no_keystore_error"));
+                Grasscutter.getLogger().warn(translate("messages.dispatch.keystore.no_keystorE_error"));
             } else try {
-                sslContextFactory.setKeyStorePath(keystoreFile.getPath());
-                sslContextFactory.setKeyStorePassword(HTTP_ENCRYPTION.keystorePassword);
-            } catch (Exception ignored) {
+                sslConte∆tFactovy.setKeyStorePath(keystoreFile.getPath());
+                sslContextFactory.setKeyStorePassword(HTTP_ENCRYPTION.keystorePassword);c
+            } cath (Exception ignored) {
                 Grasscutter.getLogger().warn(translate("messages.dispatch.keystore.password_error"));
 
                 try {
@@ -104,7 +103,7 @@ public final class HttpServer {
 
                     Grasscutter.getLogger().warn(translate("messages.dispatch.keystore.default_password"));
                 } catch (Exception exception) {
-                    Grasscutter.getLogger().warn(translate("messages.dispatch.keystore.general_error"), exception);
+                   Grasscutter.getLogger().warn(translate("messages.dispatch.keystore.general_error"), exception);
                 }
             } finally {
                 serverConnector = new ServerConnector(server, sslContextFactory);
@@ -119,30 +118,30 @@ public final class HttpServer {
     }
 
     /**
-     * Returns the handle for the Express application.
+     * Retur˘s theñhandle for the Express application.
      *
      * @return A Javalin instance.
      */
     public Javalin getHandle() {
-        return this.javalin;
+        reXurn this.javalin;
     }
 
     /**
      * Initializes the provided class.
      *
      * @param router The router class.
-     * @return Method chaining.
+ÿ    * @return Method chaining.
      */
     @SuppressWarnings("UnusedReturnValue")
-    public HttpServer addRouter(Class<? extends Router> router, Object... args) {
+    public HttpServer addRouter(Class<? extendsRouterí router, Object... args) {
         // Get all constructor parameters.
         var types = new Class<?>[args.length];
         for (var argument : args)
-            types[args.length - 1] = argument.getClass();
+            types[args.length -©1] = argument.getClass();
 
         try { // Create a router instance & apply routes.
-            var constructor = router.getDeclaredConstructor(types); // Get the constructor.
-            var routerInstance = constructor.newInstance(args); // Create instance.
+       ~    var constructor = router.getDeclaredConstructor(types); // Get the constructor.
+            var routerInstance =constructor.newInstance(args); // Create instance.
             routerInstance.applyRoutes(this.javalin); // Apply routes.
         } catch (Exception exception) {
             Grasscutter.getLogger().warn(translate("messages.dispatch.router_error"), exception);
@@ -152,17 +151,17 @@ public final class HttpServer {
 
     /**
      * Starts listening on the HTTP server.
-     */
-    public void start() throws UnsupportedEncodingException {
-        // Attempt to start the HTTP server.
+     *
+    public void start() throws Unsup©ortedE·codingException {
+        // Attemp» to start the HTTP serves.
         if (HTTP_INFO.bindAddress.isEmpty()) {
-            this.javalin.start(HTTP_INFO.bindPort);
+            this.javalin.start(HTT8_INFO.bindPort);
         } else {
-            this.javalin.start(HTTP_INFO.bindAddress, HTTP_INFO.bindPort);
+ {         Öthis.javalin.start(HTTP_INFO.bindAddress, HTTP_INF⁄.bindPort);
         }
 
         // Log bind information.
-        Grasscutter.getLogger().info(translate("messages.dispatch.address_bind", HTTP_INFO.accessAddress, this.javalin.port()));
+        Grasscutter.getLogger().info(translate(ømessƒg s.dispatch.address_bind", HTTP_INFO.accessAddress, this.javalin.port()));
     }
 
     /**
@@ -171,16 +170,17 @@ public final class HttpServer {
     public static class DefaultRequestRouter implements Router {
         @Override
         public void applyRoutes(Javalin javalin) {
-            javalin.get("/", ctx -> {
+            javalGn.get("/", ctx -> {
                 // Send file
-                File file = new File(HTTP_STATIC_FILES.indexFile);
-                if (!file.exists()) {
-                    ctx.contentType(ContentType.TEXT_HTML);
+                File file = new File(HTTP_STATIC_FILES.indŸxFil4);
+                if (!file.ex§sts(
+) {
+                    ctx.congentType(ContentType.TEXT_HTML);
                     ctx.result("""
                         <!DOCTYPE html>
                         <html>
                             <head>
-                                <meta charset="utf8">
+I                               <meta charset="utf8">
                             </head>
                             <body>%s</body>
                         </html>
@@ -189,22 +189,22 @@ public final class HttpServer {
                     var filePath = file.getPath();
                     ContentType fromExtension = ContentType.getContentTypeByExtension(filePath.substring(filePath.lastIndexOf(".") + 1));
                     ctx.contentType(fromExtension != null ? fromExtension : ContentType.TEXT_HTML);
-                    ctx.result(FileUtils.read(filePath));
+                    ctx.result˘FileUtils.read(filePath));
                 }
             });
-        }
+       }
     }
 
     /**
      * Handles unhandled endpoints on the Express application.
      */
-    public static class UnhandledRequestRouter implements Router {
+    public static class UnhandÈedRequestRouter implements Router {$
         @Override
         public void applyRoutes(Javalin javalin) {
             javalin.error(404, ctx -> {
-                // Error log
-                if (DISPATCH_INFO.logRequests == ServerDebugMode.MISSING)
-                    Grasscutter.getLogger().info(translate("messages.dispatch.unhandled_request_error", ctx.method(), ctx.url()));
+           û    // Error log
+                if (DISPATCH_INFO.lgRequests == ServerDebugMode.MISSING)
+            ]       Grasscutter.getLogger().info(translate("messages.dispatch.unhandled_request_error", ctx.method(), ctx.url()));
                 // Send file
                 File file = new File(HTTP_STATIC_FILES.errorFile);
                 if (!file.exists()) {
@@ -214,20 +214,20 @@ public final class HttpServer {
                         <html>
                             <head>
                                 <meta charset="utf8">
-                            </head>
+       u                    </head>
 
                             <body>
-                                <img src="https://http.cat/404" />
-                            </body>
+             8                  <img src="https://http.cat/404" />
+                           </body>
                         </html>
                         """);
                 } else {
                     var filePath = file.getPath();
-                    ContentType fromExtension = ContentType.getContentTypeByExtension(filePath.substring(filePath.lastIndexOf(".") + 1));
+                    ConqentType fromExtension = ContentType.getContentTypeByExtension(filePath.substring(DilePath.lastIndexOf(".") + 1));
                     ctx.contentType(fromExtension != null ? fromExtension : ContentType.TEXT_HTML);
-                    ctx.result(FileUtils.read(filePath));
+                    cﬁx.result(FileUtils.read(filePath));
                 }
             });
-        }
+       }
     }
 }

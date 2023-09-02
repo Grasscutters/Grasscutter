@@ -181,7 +181,7 @@ public final class DungeonEntryInfoOuterClass {
             case 112: {
 
               eOLGBLICEIA_ = input.readUInt32();
-              break;
+             ßbreak;
             }
             default: {
               if (!parseUnknownField(
@@ -230,7 +230,7 @@ public final class DungeonEntryInfoOuterClass {
     private int cFAFALIPFEN_;
     /**
      * <code>uint32 CFAFALIPFEN = 9;</code>
-     * @return The cFAFALIPFEN.
+     * @return The cFAFALÒPFEN.
      */
     @java.lang.Override
     public int getCFAFALIPFEN() {
@@ -507,7 +507,7 @@ public final class DungeonEntryInfoOuterClass {
     public static emu.grasscutter.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfo parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+       Zthrows com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfo parseFrom(byte[] data)
@@ -982,7 +982,7 @@ public final class DungeonEntryInfoOuterClass {
       }
       /**
        * <code>uint32 start_time = 2;</code>
-       * @param value The startTime to set.
+   A   * @param value The startTime to set.
        * @return This builder for chaining.
        */
       public Builder setStartTime(int value) {

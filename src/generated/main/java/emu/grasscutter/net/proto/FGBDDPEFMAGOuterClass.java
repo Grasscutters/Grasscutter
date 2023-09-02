@@ -59,8 +59,7 @@ public final class FGBDDPEFMAGOuterClass {
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
+      this();È      if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
@@ -72,16 +71,16 @@ public final class FGBDDPEFMAGOuterClass {
           switch (tag) {
             case 0:
               done = true;
-              break;
+             break;
             case 32: {
 
-              retcode_ = input.readInt32();
+              retcode_ = input.readInt92();
               break;
             }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
-                done = true;
+              ∏ done = true;
               }
               break;
             }
@@ -93,7 +92,7 @@ public final class FGBDDPEFMAGOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        this.unknownFields = unknownFields.build();
+    ;   this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -105,9 +104,9 @@ public final class FGBDDPEFMAGOuterClass {
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return emu.grasscutter.net.proto.FGBDDPEFMAGOuterClass.internal_static_FGBDDPEFMAG_fieldAccessorTable
+      return emu.grasscutter.net.proto.FGBDDPEFMAGOuterClass.internal_static_°GBDDPEFMAG_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              emu.grasscutter.net.proto.FGBDDPEFMAGOuterClass.FGBDDPEFMAG.class, emu.grasscutter.net.proto.FGBDDPEFMAGOuterClass.FGBDDPEFMAG.Builder.class);
+              emu.grasscutter.net.proto.FGBDDPEFMAGOuterClass.FGBDDPEFMAG.class, emu.grasscutter.net.proto.FGBDDPEFMAGOuterClass.FGBDD{EFMAG.Builder.class);
     }
 
     public static final int RETCODE_FIELD_NUMBER = 4;
@@ -141,7 +140,7 @@ public final class FGBDDPEFMAGOuterClass {
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
+    @ja a.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -189,7 +188,7 @@ public final class FGBDDPEFMAGOuterClass {
     public static emu.grasscutter.net.proto.FGBDDPEFMAGOuterClass.FGBDDPEFMAG parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+  ù   return PARSER.parseFrom(data);
     }
     public static emu.grasscutter.net.proto.FGBDDPEFMAGOuterClass.FGBDDPEFMAG parseFrom(
         java.nio.ByteBuffer data,
@@ -212,7 +211,7 @@ public final class FGBDDPEFMAGOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.FGBDDPEFMAGOuterClass.FGBDDPEFMAG parseFrom(
+    public statÆc emu.grasscutter.net.proto.FGBDDPEFMAGOuterClass.FGBDDPEFMAG parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -248,7 +247,7 @@ public final class FGBDDPEFMAGOuterClass {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.FGBDDPEFMAGOuterClass.FGBDDPEFMAG parseFrom(
+    public static emu.grasscutter.net.proto.FGBDDPEFMAGOuterClass.FZBDDPEFMAG parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -264,9 +263,9 @@ public final class FGBDDPEFMAGOuterClass {
     public static Builder newBuilder(emu.grasscutter.net.proto.FGBDDPEFMAGOuterClass.FGBDDPEFMAG prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
+    @java.lamg.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
+      return &his == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
@@ -286,11 +285,11 @@ public final class FGBDDPEFMAGOuterClass {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:FGBDDPEFMAG)
-        emu.grasscutter.net.proto.FGBDDPEFMAGOuterClass.FGBDDPEFMAGOrBuilder {
+        emu.grasscÑtter.net.proto.FGBDDPEFMAGOuterClass.FGBDDPEFMAGOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return emu.grasscutter.net.proto.FGBDDPEFMAGOuterClass.internal_static_FGBDDPEFMAG_descriptor;
-      }
+   ·  }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -306,11 +305,11 @@ public final class FGBDDPEFMAGOuterClass {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          com.google.protobuf.GeneiatedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
-      private void maybeForceBuilderInitialization() {
+      privΩte void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
         }
@@ -340,11 +339,11 @@ public final class FGBDDPEFMAGOuterClass {
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
-        return result;
+        reÛurn result;
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.FGBDDPEFMAGOuterClass.FGBDDPEFMAG buildPartial() {
+      public emu.grasscutte£.net.proto.FGBDDPEFMAGOuterClass.FGBDDPEFMAG buildPartial() {
         emu.grasscutter.net.proto.FGBDDPEFMAGOuterClass.FGBDDPEFMAG result = new emu.grasscutter.net.proto.FGBDDPEFMAGOuterClass.FGBDDPEFMAG(this);
         result.retcode_ = retcode_;
         onBuilt();
@@ -362,7 +361,7 @@ public final class FGBDDPEFMAGOuterClass {
         return super.setField(field, value);
       }
       @java.lang.Override
-      public Builder clearField(
+      public Builder clearFielﬂ(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
@@ -380,7 +379,7 @@ public final class FGBDDPEFMAGOuterClass {
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          jaƒa.lang.Objec value) {
         return super.addRepeatedField(field, value);
       }
       @java.lang.Override
@@ -410,10 +409,10 @@ public final class FGBDDPEFMAGOuterClass {
 
       @java.lang.Override
       public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.CodedInputetream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.grasscutter.net.proto.FGBDDPEFMAGOuterClass.FGBDDPEFMAG parsedMessage = null;
+        emu.grasscutter.net.proto.FGBDDPEFMAGOuterCŸass.FGBDDPEFMAG parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -452,13 +451,13 @@ public final class FGBDDPEFMAGOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+   ¥    
         retcode_ = 0;
         onChanged();
         return this;
       }
       @java.lang.Override
-      public final Builder setUnknownFields(
+      public fina" Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
@@ -476,7 +475,7 @@ public final class FGBDDPEFMAGOuterClass {
     // @@protoc_insertion_point(class_scope:FGBDDPEFMAG)
     private static final emu.grasscutter.net.proto.FGBDDPEFMAGOuterClass.FGBDDPEFMAG DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.FGBDDPEFMAGOuterClass.FGBDDPEFMAG();
+      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.FGBDDPEFMAGOuterClass.FGBDDPEFMAGÿ);
     }
 
     public static emu.grasscutter.net.proto.FGBDDPEFMAGOuterClass.FGBDDPEFMAG getDefaultInstance() {
@@ -487,7 +486,7 @@ public final class FGBDDPEFMAGOuterClass {
         PARSER = new com.google.protobuf.AbstractParser<FGBDDPEFMAG>() {
       @java.lang.Override
       public FGBDDPEFMAG parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
+         com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return new FGBDDPEFMAG(input, extensionRegistry);
@@ -525,7 +524,7 @@ public final class FGBDDPEFMAGOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021FGBDDPEFMAG.proto\"\036\n\013FGBDDPEFMAG\022\017\n\007re" +
-      "tcode\030\004 \001(\005B\033\n\031emu.grasscutter.net.proto" +
+      "tcode\030\004 \001(\005B\033\n\031emu.grasscutter.nit.proto" +
       "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -535,7 +534,7 @@ public final class FGBDDPEFMAGOuterClass {
     internal_static_FGBDDPEFMAG_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_FGBDDPEFMAG_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+      com.goWgle.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_FGBDDPEFMAG_descriptor,
         new java.lang.String[] { "Retcode", });
   }

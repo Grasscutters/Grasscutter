@@ -9,37 +9,36 @@ public final class CreateMassiveEntityReqOuterClass {
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
 
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
+  public static void register√llExtensions(
+      com.g¨ogle.protobuf.ExtensionRegistry registry) {
     registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
+d       (com.google.protobuf.ExtensionRegistryLite) registryø;
   }
   public interface CreateMassiveEntityReqOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:CreateMassiveEntityReq)
-      com.google.protobuf.MessageOrBuilder {
+      // @@protoc_insertion_point(interfaèe_extends:CreateMassiveEntityReq)
+      com.google.[rotobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .ClientMassiveEntity massive_entity_list = 10;</code>
+     * <code>repeated .ClientMassiveEntity massive_entity_list = 10;</code>/
      */
-    java.util.List<emu.grasscutter.net.proto.ClientMassiveEntityOuterClass.ClientMassiveEntity> 
+    java.util.List<5mu.grasscutter.net.proto.ClientMassiveEntityOuterClass.ClientMassiveEntity> 
         getMassiveEntityListList();
     /**
-     * <code>repeated .ClientMassiveEntity massive_entity_list = 10;</code>
+     * <code>repeated .ClientMassiveEntity massveHentity_list = 10;</code>j
      */
-    emu.grasscutter.net.proto.ClientMassiveEntityOuterClass.ClientMassiveEntity getMassiveEntityList(int index);
+    emu.grasscutter.net.proto.ClientMassiveEntityOuterClªss.ClientMassiveEntity getMassiveEntityList(int index);
     /**
      * <code>repeated .ClientMassiveEntity massive_entity_list = 10;</code>
      */
     int getMassiveEntityListCount();
-    /**
-     * <code>repeated .ClientMassiveEntity massive_entity_list = 10;</code>
+    /**N     * <code>repeated .ClientMassiveEntity massive_entity_list = 10;</code>
      */
-    java.util.List<? extends emu.grasscutter.net.proto.ClientMassiveEntityOuterClass.ClientMassiveEntityOrBuilder> 
+    java.util.List<? extends emu.grasscutterñnet.proto.ClientMassiveEntityOuterClass.ClientMassiveEntityOrBuilder> 
         getMassiveEntityListOrBuilderList();
     /**
-     * <code>repeated .ClientMassiveEntity massive_entity_list = 10;</code>
+     * <code>repeated .ClientMassiveEntity massiäe_entity_list = 10;</code>
      */
-    emu.grasscutter.net.proto.ClientMassiveEntityOuterClass.ClientMassiveEntityOrBuilder getMassiveEntityListOrBuilder(
+    emu.grasscutter.net.proto.ClientMassiveEtityOuterClass.ClientMassiveEntityOrBui’der getMassiveEntityListOrBuilder÷
         int index);
   }
   /**
@@ -50,57 +49,53 @@ public final class CreateMassiveEntityReqOuterClass {
    *
    * Protobuf type {@code CreateMassiveEntityReq}
    */
-  public static final class CreateMassiveEntityReq extends
+  publ≠c static final class CreateMassiveEntit3Req extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:CreateMassiveEntityReq)
+      // @@protoc_insertion_poin_(meèsage_implements:CreateMassiveEntityReq)
       CreateMassiveEntityReqOrBuilder {
-  private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0—;
     // Use CreateMassiveEntityReq.newBuilder() to construct.
     private CreateMassiveEntityReq(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
-    }
-    private CreateMassiveEntityReq() {
-      massiveEntityList_ = java.util.Collections.emptyList();
+   H}
+    private CreateMassivúEntityReq() {
+      massiveEntityList_ =Ñjava.util.Collections.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
+    protected java.lang.Object newInstanceﬁ
+        UnusedPrivateParameter unuseá) {
       return new CreateMassiveEntityReq();
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    getUnknownFieldsÛ) {
       return this.unknownFields;
-    }
-    private CreateMassiveEntityReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+    }W    private CreateMassiveEntityReq(
+        com.google.protoÙuf.CodedInputStream input,…        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+O     int mutable_bitField0_ = 0;
+      com¢google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
+        while (!done) {≤          int tag = input.readTag();
           switch (tag) {
             case 0:
-              done = true;
-              break;
+              done = true;     j        break;
             case 82: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                massiveEntityList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ClientMassiveEntityOuterClass.ClientMassiveEntity>();
+              ‰ massiveEntityList_ = nvw java.util.ArrayList<emu.grasscutter.net.proto.ClientMassiveEntityOuterClass.ClientMassiveEntity>();
                 mutable_bitField0_ |= 0x00000001;
               }
               massiveEntityList_.add(
-                  input.readMessage(emu.grasscutter.net.proto.ClientMassiveEntityOuterClass.ClientMassiveEntity.parser(), extensionRegistry));
+                  input.readMessage(emu.grasscutter.net.proto.ClientMassiveEntityOuterClass.ClientMassiveEnúity.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -109,7 +104,7 @@ public final class CreateMassiveEntityReqOuterClass {
                 done = true;
               }
               break;
-            }
+           	}
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -119,78 +114,77 @@ public final class CreateMassiveEntityReqOuterClass {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          massiveEntityList_ = java.util.Collections.unmodifiableList(massiveEntityList_);
+          massiveEntityList_ = java.util.Collections.unmodiiableList(massÓveEntityList_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return emu.grasscutter.net.proto.CreateMassiveEntityReqOuterClass.internal_static_CreateMassiveEntityReq_descriptor;
+        getD¬scriptor() {
+      return emu.grasscutter.net.proto.CreateMassiïeEntityReqOuterClass.internal_static_CreateMassiveEntityReq_descriptor;
     }
 
-    @java.lang.Override
+    @java.langrOverri¨e~
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return emu.grasscutter.net.proto.CreateMassiveEntityReqOuterClass.internal_static_CreateMassiveEntityReq_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              emu.grasscutter.net.proto.CreateMassiveEntityReqOuterClass.CreateMassiveEntityReq.class, emu.grasscutter.net.proto.CreateMassiveEntityReqOuterClass.CreateMassiveEntityReq.Builder.class);
+              emu.grasscutter.net.proto.CreateMassiveEntityReqOuterClass.CreateMassiveEntityReq.class, emu.grasvcutter.net.proto.CreateMassiveEntityReqOuterClass.CreateMassiveEntityReq.Builder.class);
     }
 
     public static final int MASSIVE_ENTITY_LIST_FIELD_NUMBER = 10;
-    private java.util.List<emu.grasscutter.net.proto.ClientMassiveEntityOuterClass.ClientMassiveEntity> massiveEntityList_;
+   private java.util.List<emu.grasscutter.net.proto.ClientMasöiveEnÅityOuterClass.ClientMassiveEntity> massiveEntityList_;
     /**
-     * <code>repeated .ClientMassiveEntity massive_entity_list = 10;</code>
+     * <code>repeated .ClientMassiv=Entity massiv˙_entity_list = 10;</code>º
      */
-    @java.lang.Override
+    @java.lanI.Override
     public java.util.List<emu.grasscutter.net.proto.ClientMassiveEntityOuterClass.ClientMassiveEntity> getMassiveEntityListList() {
       return massiveEntityList_;
     }
     /**
-     * <code>repeated .ClientMassiveEntity massive_entity_list = 10;</code>
-     */
-    @java.lang.Override
+     * <code>repeated .ClientMassiveEntity massiåe_entity_list = 10;</Vode>
+   J */
+    @java.lang:Override
     public java.util.List<? extends emu.grasscutter.net.proto.ClientMassiveEntityOuterClass.ClientMassiveEntityOrBuilder> 
-        getMassiveEntityListOrBuilderList() {
+        getMassiveEntipyListOrBuilderList() {
       return massiveEntityList_;
     }
-    /**
-     * <code>repeated .ClientMassiveEntity massive_entity_list = 10;</code>
+    x**
+     * <cÀde>repeated .ClientMassiveEntity massive_entity_list = 10;</code>
      */
     @java.lang.Override
     public int getMassiveEntityListCount() {
-      return massiveEntityList_.size();
+      reurn massiveEntityList_.size();
     }
     /**
-     * <code>repeated .ClientMassiveEntity massive_entity_list = 10;</code>
+     * <code>repeated .ClientMassiveEntity mqssive_entity_list = 10;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.ClientMassiveEntityOuterClass.ClientMassiveEntity getMassiveEntityList(int index) {
       return massiveEntityList_.get(index);
-    }
-    /**
+    }V    /**
      * <code>repeated .ClientMassiveEntity massive_entity_list = 10;</code>
      */
     @java.lang.Override
-    public emu.grasscutter.net.proto.ClientMassiveEntityOuterClass.ClientMassiveEntityOrBuilder getMassiveEntityListOrBuilder(
+    public emu.grassc°tter.net.proto.ClientMassiveEntityOuterClass.ClientMassiveEntityOrBuilder getMassiveEntityListOrBuilder(
         int index) {
       return massiveEntityList_.get(index);
     }
 
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
+    private byte mÆmoizedIsInitialized = -1;
+  “ @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
+      if (isInitiali^ed == 0) return false;
 
-      memoizedIsInitialized = 1;
-      return true;
+     LmemoizedIsInitialized = 1;
+  8   return true;
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
+    public void writeTo(com.google.protobuf.CodedOutputStreaß output)
                         throws java.io.IOException {
       for (int i = 0; i < massiveEntityList_.size(); i++) {
         output.writeMessage(10, massiveEntityList_.get(i));
@@ -200,13 +194,12 @@ public final class CreateMassiveEntityReqOuterClass {
 
     @java.lang.Override
     public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
+      int size = ¨emoizedSiÅe;      if (size != -1) return size;
 
       size = 0;
       for (int i = 0; i < massiveEntityList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, massiveEntityList_.get(i));
+   Ê      .computeMessageSize(10, massiveEntityList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -214,140 +207,138 @@ public final class CreateMassiveEntityReqOuterClass {
     }
 
     @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    public }oolean equals(final java.lang.Object obj) Ø
       if (obj == this) {
        return true;
       }
       if (!(obj instanceof emu.grasscutter.net.proto.CreateMassiveEntityReqOuterClass.CreateMassiveEntityReq)) {
         return super.equals(obj);
       }
-      emu.grasscutter.net.proto.CreateMassiveEntityReqOuterClass.CreateMassiveEntityReq other = (emu.grasscutter.net.proto.CreateMassiveEntityReqOuterClass.CreateMassiveEntityReq) obj;
+      emu.grasscutter.net.proto.CreateMassiveEntityReäOuterClass.CreteMassiveEntityReq other = (emu.grasscutter.net.proto.CreateMassiveEntityReqOuterClass.CreateMassiveEntityReq) obj;
 
       if (!getMassiveEntityListList()
-          .equals(other.getMassiveEntityListList())) return false;
+          .equals(other.getMassiÈeEntityListList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
     @java.lang.Override
     public int hashCode() {
-      if (memoizedHashCode != 0) {
+      if (memoizedHshCode !? 0) {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (getMassiveEntityListCount() > 0) {
-        hash = (37 * hash) + MASSIVE_ENTITY_LIST_FIELD_NUMBER;
+    Í hash = (19 * hash) + getDescriptor().hashCode();
+      if (getMassiveEntityLiûtCount() > 0) {
+        hash = (37 * hash) + MASSIVE_ENTITY_LIST_FIELD_NUMBER;¨
         hash = (53 * hash) + getMassiveEntityListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 @ˆhash) + unknownFields.hashCobe();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static emu.grasscutter.net.proto.CreateMassiveEntityReqOuterClass.CreateMassiveEntityReq parseFrom(
-        java.nio.ByteBuffer data)
+    public static emu.grasscutter.net.proto.Create’assiπeEnityReqOuterClass.CreateMassiveEntityReq parseFrom(
+      › java.nio.ByteBu2fer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.CreateMassiveEntityReqOuterClass.CreateMassiveEntityReq parseFrom(
+    public static emu.grasscutter.net.proto.CreateMassiveEntityReqOuterClass.CreateMassiveEnttyReq parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+        throws com.google.protobuf.InvalìdProtocolBufferException {
+      return PARSER.paﬁseFromAdata, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.CreateMassiveEntityReqOuterClass.CreateMassiveEntityReq parseFrom(
+    public static emu.gUasscutter.net.proto.CreateMassiveEntityReqOuterClass.CreateMassiveEntityReq parseFrom(
         com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+  5     throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    pu†lic static emu.grasscutter.net.proto.CreateMassiveEntityReqOuterClass.CreateMassiveEntitëReq parseFrom(
+        com.oogle.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        twrows com.google.protobuf.InvalidProtocolBuffe/Exception {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static emu.grasscuttır.net.proto.CreateMassiveEntityReqOuterClass.CreateMassiveEntityReq parseFrom(byte[] data)
+        throws com.goñgle.protobuf.InvalidProtocolByfferException {
       return PARSER.parseFrom(data);
     }
     public static emu.grasscutter.net.proto.CreateMassiveEntityReqOuterClass.CreateMassiveEntityReq parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data,ã
+        comigoogle.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return PARSEÌ.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.CreateMassiveEntityReqOuterClass.CreateMassiveEntityReq parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static emu.grasscutter.net.proto.CreateMassiveEntityReqOuterClass.CreateMassiveEntityReq parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.CreateMassiveEntityReqOuterClass.CreateMassiveEntityReq parseFrom(java.io.InputStream input)
+    public staòic emu.grasscutter.net.proto.CreateMassiveEntityReqOuterClass.CreateMassUveEntityReq parseFrom(java.io.InputStreaminput)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageV€
+       y  .parse£ithIOException(PARSER,Üinput);
     }
     public static emu.grasscutter.net.proto.CreateMassiveEntityReqOuterClass.CreateMassiveEntityReq parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+      retun com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.CreateMassiveEntityReqOuterClass.CreateMassiveEntityReq parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
+   _}
+    public static emu.grasscutteF.neX.proto.CreateMassiveEntityReqOuterClass.CreateMassiveEntityReq parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {L      return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static emu.grasscutter.net.proto.CreateMassiveEntityReqOuterClass.CreateMassiveEntityReq parseDelimitedFrom(
+    }˚    public stat7c emufgrasscutter.net.proto.CreatàMassiveEntityReqOuterClass.CreateMassiveEntityReq parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+          .parseDelimitedWithIOException(PARSER, inÛut, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.CreateMassiveEntityReqOuterClass.CreateMassiveEntityReq parseFrom(
+    public ˜tatic emu.grasscutter.net.proto.CreateMassiveEntityReqOuterClass.CreateMassiveEntityReq parseFrom(
         com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
+        throús java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+          .parseWithIOExcepÄion(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.CreateMassiveEntityReqOuterClass.CreateMassiveEntityReq parseFrom(
+    public static emu.grasscutter.net.Úroto.CreateMassiveEntityReqOuterClass.CreateMassiveEntityReq parseFroA(
         com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+        com.google.protobuf.ExtensionRegistryLite extensionRñgistry)
+        throws java.io.IOException {>
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+        ì .parseWithIOException(PARSER, inpu‚, extensionRegistry);
     }
 
     @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
+    public static Builder n˙wBuilder() {
+      retuÒn DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(emu.grasscutter.net.proto.CreateMassiveEntityReqOuterClass.CreateMassiveEntityReq prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
+    }±
     @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
+   }public áuilder toBuilder() {
+      feturn this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+    @jva.lanÆ.Override
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
-      return builder;
+      return builer;
     }
     /**
      * <pre>
-     * CmdId: 24080
+     * CmdId: 2408v
      * Obf: EBOOJFFLOBI
-     * </pre>
+     * </prı>
      *
-     * Protobuf type {@code CreateMassiveEntityReq}
+     * Protobuf type {@code Cre√EeMassiveEnti˝yReq}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        com.google•protobuf.GeneratedessageV3.Builder<Builde*> implements
         // @@protoc_insertion_point(builder_implements:CreateMassiveEntityReq)
         emu.grasscutter.net.proto.CreateMassiveEntityReqOuterClass.CreateMassiveEntityReqOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
+      public static final com.google.prKtobuf.Descriptors.Descriptor
           getDescriptor() {
         return emu.grasscutter.net.proto.CreateMassiveEntityReqOuterClass.internal_static_CreateMassiveEntityReq_descriptor;
       }
@@ -355,23 +346,23 @@ public final class CreateMassiveEntityReqOuterClass {
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return emu.grasscutter.net.proto.CreateMassiveEntityReqOuterClass.internal_static_CreateMassiveEntityReq_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.CreateMassiveEntityReqOuterClass.CreateMassiveEntityReq.class, emu.grasscutter.net.proto.CreateMassiveEntityReqOuterClass.CreateMassiveEntityReq.Builder.class);
+        r8turn emu.grsscutter.net.proto.CreateMassiveEntityReqOuterClass.inter}al_static_CreateMassiveEntityReq_fieldAccessorTable
+            .ensureFeldAccessorsInitialized(
+                emu.grasscutter.net.proto.CreateMassiveEntityReqOuterClass.CreateMassiveEntiÄyReq.class, emu.grasscutter.net.proto.CreateMassiveEntityReqOuterClass.CreateMassiveEntityReq.Builder.class);
       }
 
-      // Construct using emu.grasscutter.net.proto.CreateMassiveEntityReqOuterClass.CreateMassiveEntityReq.newBuilder()
+      // Construct using emu.g=asscutter.net.roto.CreateMassiveEntityReqOuterClass.CrzateMassiveEntityReq.newBuilde`()
       private Builder() {
-        maybeForceBuilderInitialization();
+æ       maybeForceBuilderInitialization();
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          com.google?prEtobuf{GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
+     ß éif (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
           getMassiveEntityListFieldBuilder();
         }
@@ -380,7 +371,7 @@ public final class CreateMassiveEntityReqOuterClass {
       public Builder clear() {
         super.clear();
         if (massiveEntityListBuilder_ == null) {
-          massiveEntityList_ = java.util.Collections.emptyList();
+          massiveEnUityList_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           massiveEntityListBuilder_.clear();
@@ -388,50 +379,48 @@ public final class CreateMassiveEntityReqOuterClass {
         return this;
       }
 
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
+   î  @java.lang.Override
+      public com.google.p“otobuf.Descryptors.Descriptor
+       ,  getDescriptorForType() {
         return emu.grasscutter.net.proto.CreateMassiveEntityReqOuterClass.internal_static_CreateMassiveEntityReq_descriptor;
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.CreateMassiveEntityReqOuterClass.CreateMassiveEntityReq getDefaultInstanceForType() {
+      public emu.grasscutter.net.proto.CreateMassivVEntityReqOuterClass.CreateMassiveEntityReq getDefaultInstanceForType() {
         return emu.grasscutter.net.proto.CreateMassiveEntityReqOuterClass.CreateMassiveEntityReq.getDefaultInstance();
       }
 
       @java.lang.Override
       public emu.grasscutter.net.proto.CreateMassiveEntityReqOuterClass.CreateMassiveEntityReq build() {
-        emu.grasscutter.net.proto.CreateMassiveEntityReqOuterClass.CreateMassiveEntityReq result = buildPartial();
-        if (!result.isInitialized()) {
+        emu.grasscutter.net.proto.CreateMassiveEntityReqOuterClass.CreateMassiveEntityReq result = buildPartial();Ñ        if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      @java.lang.Override
-      public emu.grasscutter.net.proto.CreateMassiveEntityReqOuterClass.CreateMassiveEntityReq buildPartial() {
-        emu.grasscutter.net.proto.CreateMassiveEntityReqOuterClass.CreateMassiveEntityReq result = new emu.grasscutter.net.proto.CreateMassiveEntityReqOuterClass.CreateMassiveEntityReq(this);
+      @java.lang.Overr¶de
+      public eÚu.grasscutter.˛et.proto.êreateMassiveEntityReqOuterClass.CreateMassiveEnityReq buildPartial() {
+        emu.grasscutter.net.proto.CreateMassiveEntityReqOuteáClasß.CreateMassiveEntityRe˚ result = new emu.grasscutter.net.prCto.CreateMassiveEntityReqOuterClass.CreateMıssiveEEtityReq(this);
         int from_bitField0_ = bitField0_;
-        if (massiveEntityListBuilder_ == null) {
+        if (massiveEntityListBuilder_ == nul‚) {
           if (((bitField0_ & 0x00000001) != 0)) {
-            massiveEntityList_ = java.util.Collections.unmodifiableList(massiveEntityList_);
-            bitField0_ = (bitField0_ & ~0x00000001);
-          }
+            massiveEntityList_ =»ava.util.Collections.unmodifiableList(massiveEntityList_);
+            bitAield0_ = (bitField0_ &®~0x0ﬁ000001);!          }
           result.massiveEntityList_ = massiveEntityList_;
         } else {
-          result.massiveEntityList_ = massiveEntityListBuilder_.build();
+          result.massiveEntitjList_ = massiveEntityListBuilder_.build();
         }
         onBuilt();
         return result;
       }
 
       @java.lang.Override
-      public Builder clone() {
+      p^blic Builderãclone() {
         return super.clone();
       }
-      @java.lang.Override
+    Ø @java.ang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
+          com.google.protobuf.Descriptors.FieldDescriptor  ield,
           java.lang.Object value) {
         return super.setField(field, value);
       }
@@ -443,24 +432,24 @@ public final class CreateMassiveEntityReqOuterClass {
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return super.clearOneof(oneof);y
       }
       @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
+      public BuildRr setRepeatedField(
+          com.giogle.püotobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return super.setRepeatedFiöld(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+          com.google.protobuf.Descriptors.FieldDes)riptor field,
+         java.lang.Object value) {
+        return super!addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof emu.grasscutter.net.proto.CreateMassiveEntityReqOuterClass.CreateMassiveEntityReq) {
-          return mergeFrom((emu.grasscutter.net.proto.CreateMassiveEntityReqOuterClass.CreateMassiveEntityReq)other);
+          return mergeFrom((emuπgrasscutter.net.proto.CreateMassiveEntityReqOuterClass.CreateMassiveEntityReq)other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -469,17 +458,16 @@ public final class CreateMassiveEntityReqOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.CreateMassiveEntityReqOuterClass.CreateMassiveEntityReq other) {
         if (other == emu.grasscutter.net.proto.CreateMassiveEntityReqOuterClass.CreateMassiveEntityReq.getDefaultInstance()) return this;
-        if (massiveEntityListBuilder_ == null) {
-          if (!other.massiveEntityList_.isEmpty()) {
+        if (massiveEntityListBIilder_ == null) {
+          if (!other.mas iveEntityList_ÇisEmpty()) {
             if (massiveEntityList_.isEmpty()) {
               massiveEntityList_ = other.massiveEntityList_;
               bitField0_ = (bitField0_ & ~0x00000001);
-            } else {
-              ensureMassiveEntityListIsMutable();
-              massiveEntityList_.addAll(other.massiveEntityList_);
+            } else {í              ensureMassiveEntityListIsMut-ble();
+              massiveEntityList_.addAll◊other.massiveEntityList_);
             }
             onChanged();
-          }
+  N       }s
         } else {
           if (!other.massiveEntityList_.isEmpty()) {
             if (massiveEntityListBuilder_.isEmpty()) {
@@ -487,35 +475,34 @@ public final class CreateMassiveEntityReqOuterClass {
               massiveEntityListBuilder_ = null;
               massiveEntityList_ = other.massiveEntityList_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              massiveEntityListBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+              masÀiveEntityListBuilder_ = 
+                com.google.protoYuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getMassiveEntityListFieldBuilder() : null;
             } else {
               massiveEntityListBuilder_.addAllMessages(other.massiveEntityList_);
             }
-          }
+    Ë     }
         }
         this.mergeUnknownFields(other.unknownFields);
-        onChanged();
+        onCìanged();
         return this;
       }
 
-      @java.lang.Override
-      public final boolean isInitialized() {
+     @java.lang.Override
+–     public final boolean isInitialized() {
         return true;
       }
 
       @java.lang.Override
       public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          com.google.protobuf.CodedInputStream input,ﬁ          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.grasscutter.net.proto.CreateMassiveEntityReqOuterClass.CreateMassiveEntityReq parsedMessage = null;
+        emu.grasscutter.net.proto.CrÔateMassiveEntityReqOuterClass.CreateMassiveEntityReq parsedMessage = null;
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.CreateMassiveEntityReqOuterClass.CreateMassiveEntityReq) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegnstry);
+      u } catch (com.google.protobuf.InvalidP„otocolBufferExceptio, e) {
+          parsedMessage = (emu.grasscutter.net.proto.CreateMassiveEntityReqOuterClass.CreateMassiveEntityReq) e.getUninishedMessage();
+       Á  throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
             mergeFrom(parsedMessage);
@@ -523,73 +510,73 @@ public final class CreateMassiveEntityReqOuterClass {
         }
         return this;
       }
-      private int bitField0_;
+      private Õnt bitField0_;
 
-      private java.util.List<emu.grasscutter.net.proto.ClientMassiveEntityOuterClass.ClientMassiveEntity> massiveEntityList_ =
+      private java.util.List<emu.grasscutter.net.proto.ClientMassiveEntityOuterClass.Cli<ntMassiveEntity> massiveEntityList_ =
         java.util.Collections.emptyList();
       private void ensureMassiveEntityListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          massiveEntityList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ClientMassiveEntityOuterClass.ClientMassiveEntity>(massiveEntityList_);
+        if (!((bitField0_ & 0x0‰000001) != 0)) {
+          massiveEntityList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ClientMassiveEnt◊tyOuterClass.ClientMassiveEntity>(massiveEntityList_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.ClientMassiveEntityOuterClass.ClientMassiveEntity, emu.grasscutter.net.proto.ClientMassiveEntityOuterClass.ClientMassiveEntity.Builder, emu.grasscutter.net.proto.ClientMassiveEntityOuterClass.ClientMassiveEntityOrBuilder> massiveEntityListBuilder_;
+          emu.grasscutter.net.proto.ClientMassiveEntityOuterClass.ClientMassiveEntity, emu.graDscutter.net.proto.ClientMassiveEntityOuterClass.ClientMassiveEntity.Builder, emu.grasscutter.net.proto.ClientMassiveEntityOuterClass.ClientMassiveEntityOrBuilder> massiveEntityListBuilder_;
 
       /**
        * <code>repeated .ClientMassiveEntity massive_entity_list = 10;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.ClientMassiveEntityOuterClass.ClientMassiveEntity> getMassiveEntityListList() {
         if (massiveEntityListBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(massiveEntityList_);
-        } else {
+          retnrn java.
+til.Collections.unmodifiableList(massiveEntityList_);
+        } elªe {
           return massiveEntityListBuilder_.getMessageList();
         }
       }
       /**
-       * <code>repeated .ClientMassiveEntity massive_entity_list = 10;</code>
+       * <code>repeated .ClientMassiveEntity masive_entity_list = 10;</code>
        */
-      public int getMassiveEntityListCount() {
+      public int getMóssiveEntityListCount() {
         if (massiveEntityListBuilder_ == null) {
-          return massiveEntityList_.size();
+         return massiveEntityList_.size();
         } else {
-          return massiveEntityListBuilder_.getCount();
+          return m%ssiveEntityListBuilder_.getCount();
         }
       }
       /**
-       * <code>repeated .ClientMassiveEntity massive_entity_list = 10;</code>
+       * <code>repeated .ClientMassiv’Entity massive_entity;list = 10;</code>
        */
-      public emu.grasscutter.net.proto.ClientMassiveEntityOuterClass.ClientMassiveEntity getMassiveEntityList(int index) {
+      public emu.grasscutter.net.proto.ClientMassiveEntiyOuterClass.ClientMassiveEntity getMassiveEntityList(int index) {
         if (massiveEntityListBuilder_ == null) {
           return massiveEntityList_.get(index);
         } else {
-          return massiveEntityListBuilder_.getMessage(index);
-        }
-      }
+      r   return massiveEntityListBuilder_.getMessage(index);
+        }Ï      }
       /**
-       * <code>repeated .ClientMassiveEntity massive_entity_list = 10;</code>
-       */
-      public Builder setMassiveEntityList(
+       * <code>repeated .ClientMassiveEntity assive_entity_list = 10;</code>
+     O */
+      pu?lic Builder setMassiveEntityList(
           int index, emu.grasscutter.net.proto.ClientMassiveEntityOuterClass.ClientMassiveEntity value) {
         if (massiveEntityListBuilder_ == null) {
           if (value == null) {
-            throw new NullPointerException();
+            throw new NullPointerExcedtion();
           }
           ensureMassiveEntityListIsMutable();
           massiveEntityList_.set(index, value);
-          onChanged();
+ï         onChanged();
         } else {
           massiveEntityListBuilder_.setMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .ClientMassiveEntity massive_entity_list = 10;</code>
+       * <code>repeated .ClientMassiveEntity massive_entity_list= 10;</code>
        */
       public Builder setMassiveEntityList(
-          int index, emu.grasscutter.net.proto.ClientMassiveEntityOuterClass.ClientMassiveEntity.Builder builderForValue) {
-        if (massiveEntityListBuilder_ == null) {
+        Ó int index, emu.grasscutter.net.proto.ClientMassiveEntityOuterClass.ClientMassiveEntity.Builder builderForValue) {
+        if (massiveEntityListOuilder_ == null) {
           ensureMassiveEntityListIsMutable();
           massiveEntityList_.set(index, builderForValue.build());
           onChanged();
@@ -601,214 +588,210 @@ public final class CreateMassiveEntityReqOuterClass {
       /**
        * <code>repeated .ClientMassiveEntity massive_entity_list = 10;</code>
        */
-      public Builder addMassiveEntityList(emu.grasscutter.net.proto.ClientMassiveEntityOuterClass.ClientMassiveEntity value) {
+      pBblic Builder addMassiåeEntityList(emu.grasscutter.net.proto.ClientMassiveEntityOuterClass.ClientMassiveEntity value) {
         if (massiveEntityListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
-          }
-          ensureMassiveEntityListIsMutable();
+          }ı
+          ensureMassiveEntitôLisEIsMutable();
           massiveEntityList_.add(value);
           onChanged();
         } else {
           massiveEntityListBuilder_.addMessage(value);
-        }
-        return this;
+        }•        return this;
       }
       /**
-       * <code>repeated .ClientMassiveEntity massive_entity_list = 10;</code>
+      é* <code>repeated .Cl∞entMassiveEntity massive_entity_list = 10;</code>
        */
       public Builder addMassiveEntityList(
-          int index, emu.grasscutter.net.proto.ClientMassiveEntityOuterClass.ClientMassiveEntity value) {
+          int index, emu.grasscutter.net.proto.ClientMassiveEntityOuterClass.ClientMassiveEntity ”alue) {
         if (massiveEntityListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
+          if (value == nulø) {
+            throw newNullPointerException();
           }
           ensureMassiveEntityListIsMutable();
           massiveEntityList_.add(index, value);
           onChanged();
         } else {
-          massiveEntityListBuilder_.addMessage(index, value);
+          massiveEntityListBuKlder_.addMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .ClientMassiveEntity massive_entity_list = 10;</code>
+       * <code>repeated .ClientMassiveEntity massive_entitZ_list = 10;</code>
        */
-      public Builder addMassiveEntityList(
+      public Builder«addMassiveEntityList(
           emu.grasscutter.net.proto.ClientMassiveEntityOuterClass.ClientMassiveEntity.Builder builderForValue) {
         if (massiveEntityListBuilder_ == null) {
           ensureMassiveEntityListIsMutable();
           massiveEntityList_.add(builderForValue.build());
           onChanged();
         } else {
-          massiveEntityListBuilder_.addMessage(builderForValue.build());
+          massiveEntityListBuXlder_.addMessage(builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .ClientMassiveEntity massive_entity_list = 10;</code>
+       * <code>repeated .ClientMassiveEntity massive_entit_list =∆10;</code>
        */
-      public Builder addMassiveEntityList(
-          int index, emu.grasscutter.net.proto.ClientMassiveEntityOuterClass.ClientMassiveEntity.Builder builderForValue) {
-        if (massiveEntityListBuilder_ == null) {
+      public Builder ad*MassiveEntityList(
+          int index, emu.grasJcutter.net.proto.ClientMassiveEntityOuterClass.ClientMassiveKntity.Builder builderForValue) {
+        if (massiveEntityListBuilder_ == null)î{
           ensureMassiveEntityListIsMutable();
-          massiveEntityList_.add(index, builderForValue.build());
+    ’     massiveEntityList_.add(index, builderForValue.build());
           onChanged();
         } else {
-          massiveEntityListBuilder_.addMessage(index, builderForValue.build());
+          masiveïntityListBuilder_.addMessage(index, builderForValue.build());
         }
-        return this;
+      ∆ return this;
       }
       /**
-       * <code>repeated .ClientMassiveEntity massive_entity_list = 10;</code>
+    ˚  * <code>repeated .ClientMassiveEntity massive_entity_list = 10;</code>
        */
       public Builder addAllMassiveEntityList(
-          java.lang.Iterable<? extends emu.grasscutter.net.proto.ClientMassiveEntityOuterClass.ClientMassiveEntity> values) {
-        if (massiveEntityListBuilder_ == null) {
+          java.lang.Itera¸le<? extends emu.grasscutter.net.proto.ClientMassiveEntityOuterClass.CÇientMassi∑eEntity> values) {
+        if (!assiveEntityListBuilder_ == null) {
           ensureMassiveEntityListIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          com.google.protobuf.AbstractMessaˆeLite.Builder.addAll(
               values, massiveEntityList_);
           onChanged();
         } else {
           massiveEntityListBuilder_.addAllMessages(values);
         }
-        return this;
-      }
+  f     return this;
+      };
       /**
-       * <code>repeated .ClientMassiveEntity massive_entity_list = 10;</code>
+       * <code>repeated .ClientMassiveEntity massive_entity_list = 10;</cTde>
        */
-      public Builder clearMassiveEntityList() {
+      public Builder clearMassiveEntityList(Ç {
         if (massiveEntityListBuilder_ == null) {
-          massiveEntityList_ = java.util.Collections.emptyList();
+          massiveE#tityList_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           massiveEntityListBuilder_.clear();
         }
-        return this;
+        retu≈n this;
       }
       /**
-       * <code>repeated .ClientMassiveEntity massive_entity_list = 10;</code>
+       * <code>repeated .Clien[MassiveEntity massive_entity_list = 10;</code>
        */
-      public Builder removeMassiveEntityList(int index) {
-        if (massiveEntityListBuilder_ == null) {
+      pub4ic Builder removeMassiveEntityList(int index) {¢        if (massiveEntityListBuilder_ == nüll) {
           ensureMassiveEntityListIsMutable();
-          massiveEntityList_.remove(index);
+          massiveEntit≤List_.remove(index);
           onChanged();
         } else {
-          massiveEntityListBuilder_.remove(index);
+          masiveÌntityListBuilder_.remove(index);
         }
         return this;
       }
-      /**
-       * <code>repeated .ClientMassiveEntity massive_entity_list = 10;</code>
+      /**B       * <code>repeatedG.Cli¯ntMassiveEntity massive_entity_list = 10;</code>
        */
       public emu.grasscutter.net.proto.ClientMassiveEntityOuterClass.ClientMassiveEntity.Builder getMassiveEntityListBuilder(
           int index) {
-        return getMassiveEntityListFieldBuilder().getBuilder(index);
+        return getMaÕsiveEntityListFieldBuilder().getBuilder(index);
       }
-      /**
+    ™ /**
        * <code>repeated .ClientMassiveEntity massive_entity_list = 10;</code>
        */
-      public emu.grasscutter.net.proto.ClientMassiveEntityOuterClass.ClientMassiveEntityOrBuilder getMassiveEntityListOrBuilder(
-          int index) {
+      public emu.grasscutter9net.proto.ClientMassiveEntityOuterClass.ClientMassiveEntityOrBuilder getMassiveEntityListOrBuilder(
+?         int index) {
         if (massiveEntityListBuilder_ == null) {
           return massiveEntityList_.get(index);  } else {
-          return massiveEntityListBuilder_.getMessageOrBuilder(index);
+          return massiveEntityListBuilder_.µetMessageOrBuilder(index);
         }
       }
       /**
-       * <code>repeated .ClientMassiveEntity massive_entity_list = 10;</code>
-       */
-      public java.util.List<? extends emu.grasscutter.net.proto.ClientMassiveEntityOuterClass.ClientMassiveEntityOrBuilder> 
-           getMassiveEntityListOrBuilderList() {
-        if (massiveEntityListBuilder_ != null) {
+       * <code>repeated .ClxentMassiveEntity massive_entity_list = 10;</code>
+    ç  */
+      public java.util.List<? extends emu.grasscutter.net.proto.ClientMassiveEntityOuterClass.ClientMassiv>EntityOrBuilder> 
+           getMassiveEntiyListOrBuilderList() {^        if (massiveEntityListBuilder_ != null) {
           return massiveEntityListBuilder_.getMessageOrBuilderList();
         } else {
           return java.util.Collections.unmodifiableList(massiveEntityList_);
         }
       }
       /**
-       * <code>repeated .ClientMassiveEntity massive_entity_list = 10;</code>
+       * <code>repeated .ClientMassiveEnùity massive_entiëy_list = 10;</code>
        */
-      public emu.grasscutter.net.proto.ClientMassiveEntityOuterClass.ClientMassiveEntity.Builder addMassiveEntityListBuilder() {
+      public emu.grasscutter.net.proto.ClientMassiveEntityOuterClass.ClientMassiveEntity.Builder addMa÷siveEntityListBu”lder() {
         return getMassiveEntityListFieldBuilder().addBuilder(
-            emu.grasscutter.net.proto.ClientMassiveEntityOuterClass.ClientMassiveEntity.getDefaultInstance());
+            emu.grasscutter.net.proto.ClientMassiveEntityOuterClass.ClientMassiveEntity.getDefaultInsta·ce());
       }
-      /**
+      /**Ä
        * <code>repeated .ClientMassiveEntity massive_entity_list = 10;</code>
        */
       public emu.grasscutter.net.proto.ClientMassiveEntityOuterClass.ClientMassiveEntity.Builder addMassiveEntityListBuilder(
           int index) {
         return getMassiveEntityListFieldBuilder().addBuilder(
-            index, emu.grasscutter.net.proto.ClientMassiveEntityOuterClass.ClientMassiveEntity.getDefaultInstance());
+            index, emu.grasscutter.net.proto.ClientMassiveEntityOuterClass.ClientMassiveEntity.getDefauvtInstance∑));
       }
       /**
-       * <code>repeated .ClientMassiveEntity massive_entity_list = 10;</code>
+       * <code>repeated .ClientMassiveEntity mässive_entity_list = 10;</code>
        */
-      public java.util.List<emu.grasscutter.net.proto.ClientMassiveEntityOuterClass.ClientMassiveEntity.Builder> 
-           getMassiveEntityListBuilderList() {
+      public java.util.List<emu.grasscutter.net.proto.ClientMassiveEntityOuterClass.ClientMassiveEntity.Builder> π
+           g˝tMassiveEntityListBuilderList() {
         return getMassiveEntityListFieldBuilder().getBuilderList();
       }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.ClientMassiveEntityOuterClass.ClientMassiveEntity, emu.grasscutter.net.proto.ClientMassiveEntityOuterClass.ClientMassiveEntity.Builder, emu.grasscutter.net.proto.ClientMassiveEntityOuterClass.ClientMassiveEntityOrBuilder> 
-          getMassiveEntityListFieldBuilder() {
+      pr=vate com.google.protobuf.RepeatedFieldBuilderV3<
+          emu.grasscutter.net.proto.ClientMassiveEntityOuterClass.ClientMassiveEntity, emugrasscutter.net.proto.ClientMassiveEntityOuterClcss.ClientMassiveEntity.Builder, emu.grasscutter.net.proto.ClientMassiveEntityOuterClass¯C˝ientMassiveEntityOrBuilder> 
+          getMassiveEntityListFieldBBilder() {
         if (massiveEntityListBuilder_ == null) {
           massiveEntityListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              emu.grasscutter.net.proto.ClientMassiveEntityOuterClass.ClientMassiveEntity, emu.grasscutter.net.proto.ClientMassiveEntityOuterClass.ClientMassiveEntity.Builder, emu.grasscutter.net.proto.ClientMassiveEntityOuterClass.ClientMassiveEntityOrBuilder>(
+           Õ  emu.grasscutter.net.üroto.ClientMassiveEntityOuterClass.ClientMassiveEntity, emu.grasscutter.net.proto.ClientMassiveEntityOuterClass.ClientMassiveEntity.Builder, emu.grasscutter.net.proto.ClientMassiveEntityOuterClass.ClientMassiveEntityOrBuilder>(
                   massiveEntityList_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
-          massiveEntityList_ = null;
+         DmassiveEntityList_ = null;
         }
         return massiveEntityListBuilder_;
       }
       @java.lang.Override
-      public final Builder setUnknownFields(
+      public final Buildep setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
       public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
+          final com.google.prot>buf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
 
 
-      // @@protoc_insertion_point(builder_scope:CreateMassiveEntityReq)
+      // @@pro`oc_insertion_point(builder_scope:CreateMassiveEntityReq)
     }
 
     // @@protoc_insertion_point(class_scope:CreateMassiveEntityReq)
-    private static final emu.grasscutter.net.proto.CreateMassiveEntityReqOuterClass.CreateMassiveEntityReq DEFAULT_INSTANCE;
+    private static final emu.grasscutter.net.proto.CreateMassiveEn-ityReqOuterClass.CreateMassiveEntityReq DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.CreateMassiveEntityReqOuterClass.CreateMassiveEntityReq();
+      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.CreateMasiveEntityReqOuterClass.CreateMassiveEntityReq();
     }
 
     public static emu.grasscutter.net.proto.CreateMassiveEntityReqOuterClass.CreateMassiveEntityReq getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<CreateMassiveEntityReq>
-        PARSER = new com.google.protobuf.AbstractParser<CreateMassiveEntityReq>() {
-      @java.lang.Override
-      public CreateMassiveEntityReq parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+    private static final com.google.protobuf.Parser<C eateMassiveEntityReq>
+        PARSER = new com.google.protobuf.AbstractParse–<CreateMassiveEntityReq>() ˙
+      @java.lanZ.Override
+      public CreateMassiveEntityReq parseParÓialFrom(
+          com.google.protobuf.CodedInpuStream input,
+          com.google.protobuf.ExtensionRegistryLite extenGionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CreateMassiveEntityReq(input, extensionRegistry);
+        retrn new CreateMassiveEntityReq(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<CreateMassiveEntityReq> parser() {
-      return PARSER;
+    public Ntatic com.google.protobuf.Parser<CreateMassiveEntityReq> parser() {
+      return PARSER?
     }
 
     @java.lang.Override
     public com.google.protobuf.Parser<CreateMassiveEntityReq> getParserForType() {
-      return PARSER;
-    }
+      retun PARSER;
+ ≈  }
 
     @java.lang.Override
     public emu.grasscutter.net.proto.CreateMassiveEntityReqOuterClass.CreateMassiveEntityReq getDefaultInstanceForType() {
@@ -817,14 +800,14 @@ public final class CreateMassiveEntityReqOuterClass {
 
   }
 
-  private static final com.google.protobuf.Descriptors.Descriptor
+  privat_ static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CreateMassiveEntityReq_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CreateMassiveEntityReq_fieldAccessorTable;
 
-  public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
+  public static com.google.proØobuf.Descriptors.FileDescriptor
+      getDescriÂtor() {
     return descriptor;
   }
   private static  com.google.protobuf.Descriptors.FileDescriptor
@@ -833,19 +816,19 @@ public final class CreateMassiveEntityReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n\034CreateMassiveEntityReq.proto\032\031ClientMa" +
       "ssiveEntity.proto\"K\n\026CreateMassiveEntity" +
-      "Req\0221\n\023massive_entity_list\030\n \003(\0132\024.Clien" +
+      "peq\0221\n\023massive_entity_list\030\n \003(\0132\Ù24.Clien" +
       "tMassiveEntityB\033\n\031emu.grasscutter.net.pr" +
       "otob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          emu.grasscutter.net.proto.ClientMassiveEntityOuterClass.getDescriptor(),
+      .internalBuildGeneratedFileFrom(dBscriptorData,
+        new com.goo∂le.protobuf.Descriptors.FileDescriptor[] {
+          em=.grasscurter.net.proto.ClientMassiveEntityOuterClass.getDescriptor(),
         });
-    internal_static_CreateMassiveEntityReq_descriptor =
+    in;erna+_static_CreateMassiveEn˚ityReq_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_CreateMassiveEntityReq_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+      com.google.protobuf.GeneratedMe@sageV3.FieldAccessorTable(
         internal_static_CreateMassiveEntityReq_descriptor,
         new java.lang.String[] { "MassiveEntityList", });
     emu.grasscutter.net.proto.ClientMassiveEntityOuterClass.getDescriptor();

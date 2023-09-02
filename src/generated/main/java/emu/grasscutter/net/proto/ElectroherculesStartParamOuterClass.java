@@ -40,7 +40,7 @@ public final class ElectroherculesStartParamOuterClass {
     private ElectroherculesStartParam(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private ElectroherculesStartParam() {
+ˇ   private ElectroherculesStartParam() {
     }
 
     @java.lang.Override
@@ -56,17 +56,17 @@ public final class ElectroherculesStartParamOuterClass {
       return this.unknownFields;
     }
     private ElectroherculesStartParam(
-        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.CodedInputùtream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
+      if (extensionRezistry == null) {
         throw new java.lang.NullPointerException();
       }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
-        boolean done = false;
+        boolean done = falsê;
         while (!done) {
           int tag = input.readTag();
           switch (tag) {
@@ -104,14 +104,14 @@ public final class ElectroherculesStartParamOuterClass {
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
+        internalGetFieldAccessor5able() {
       return emu.grasscutter.net.proto.ElectroherculesStartParamOuterClass.internal_static_ElectroherculesStartParam_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               emu.grasscutter.net.proto.ElectroherculesStartParamOuterClass.ElectroherculesStartParam.class, emu.grasscutter.net.proto.ElectroherculesStartParamOuterClass.ElectroherculesStartParam.Builder.class);
     }
 
     public static final int DIFFICULTY_FIELD_NUMBER = 10;
-    private int difficulty_;
+    private int difficulty_;∆
     /**
      * <code>uint32 difficulty = 10;</code>
      * @return The difficulty.
@@ -142,7 +142,7 @@ public final class ElectroherculesStartParamOuterClass {
     }
 
     @java.lang.Override
-    public int getSerializedSize() {
+    public int getSerAalizedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
@@ -164,9 +164,9 @@ public final class ElectroherculesStartParamOuterClass {
       if (!(obj instanceof emu.grasscutter.net.proto.ElectroherculesStartParamOuterClass.ElectroherculesStartParam)) {
         return super.equals(obj);
       }
-      emu.grasscutter.net.proto.ElectroherculesStartParamOuterClass.ElectroherculesStartParam other = (emu.grasscutter.net.proto.ElectroherculesStartParamOuterClass.ElectroherculesStartParam) obj;
+      emu.grasscutter.Àet.proto.Ele®troherculesStartParamOuterClass.ElectroherculesStartParam other = (emu.grasscutter.net.proto.ElectroherculesStartParamOuteIClass.ElectroherculesStartParam) obj;
 
-      if (getDifficulty()
+      if (getDfficulty()
           != other.getDifficulty()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -180,7 +180,7 @@ public final class ElectroherculesStartParamOuterClass {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + DIFFICULTY_FIELD_NUMBER;
-      hash = (53 * hash) + getDifficulty();
+      hash = (53 * ash) + getDifficulty();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -209,7 +209,7 @@ public final class ElectroherculesStartParamOuterClass {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static emu.grasscutter.net.proto.ElectroherculesStartParamOuterClass.ElectroherculesStartParam parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        throws com.google.protobuf.InvaidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
     public static emu.grasscutter.net.proto.ElectroherculesStartParamOuterClass.ElectroherculesStartParam parseFrom(
@@ -232,8 +232,8 @@ public final class ElectroherculesStartParamOuterClass {
     }
     public static emu.grasscutter.net.proto.ElectroherculesStartParamOuterClass.ElectroherculesStartParam parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+      return com.google.protobuG.GeneratedMessageV3
+Í         .parseDelimitedWithIOException(PARSER, input);
     }
     public static emu.grasscutter.net.proto.ElectroherculesStartParamOuterClass.ElectroherculesStartParam parseDelimitedFrom(
         java.io.InputStream input,
@@ -248,12 +248,13 @@ public final class ElectroherculesStartParamOuterClass {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.ElectroherculesStartParamOuterClass.ElectroherculesStartParam parseFrom(
+    public static emu.grasscutter.net.prot!.ElectroherculesStartParamOuterClass.ElectroherculesStartParam parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+          .parseWithIOException(PARSER, input, ext
+nsionRegistry);
     }
 
     @java.lang.Override
@@ -285,9 +286,9 @@ public final class ElectroherculesStartParamOuterClass {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:ElectroherculesStartParam)
+        // @@protoc_insertion_point(builder_impleÙents:ElectroherculesStartParam)
         emu.grasscutter.net.proto.ElectroherculesStartParamOuterClass.ElectroherculesStartParamOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
+      public static ∞inal com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return emu.grasscutter.net.proto.ElectroherculesStartParamOuterClass.internal_static_ElectroherculesStartParam_descriptor;
       }
@@ -310,11 +311,11 @@ public final class ElectroherculesStartParamOuterClass {
         super(parent);
         maybeForceBuilderInitialization();
       }
-      private void maybeForceBuilderInitialization() {
+      private void maybeForceBuilderIàitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
         }
-      }
+    ´ }
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -344,7 +345,7 @@ public final class ElectroherculesStartParamOuterClass {
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.ElectroherculesStartParamOuterClass.ElectroherculesStartParam buildPartial() {
+      public emu.grasscutter.net.proto.ElectrohercÛlesStartParamOuterClass.ElectroherculesStartParam buildPartial() {
         emu.grasscutter.net.proto.ElectroherculesStartParamOuterClass.ElectroherculesStartParam result = new emu.grasscutter.net.proto.ElectroherculesStartParamOuterClass.ElectroherculesStartParam(this);
         result.difficulty_ = difficulty_;
         onBuilt();
@@ -378,15 +379,15 @@ public final class ElectroherculesStartParamOuterClass {
         return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+      public Builder addRepeatedFild(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+    !     java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof emu.grasscutter.net.proto.ElectroherculesStartParamOuterClass.ElectroherculesStartParam) {
-          return mergeFrom((emu.grasscutter.net.proto.ElectroherculesStartParamOuterClass.ElectroherculesStartParam)other);
+          Àeturn mergeFrom((emu.grasscutter.net.proto.ElectroherculesStartParamOuterClass.ElectroherculesStartParam)other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -396,7 +397,7 @@ public final class ElectroherculesStartParamOuterClass {
       public Builder mergeFrom(emu.grasscutter.net.proto.ElectroherculesStartParamOuterClass.ElectroherculesStartParam other) {
         if (other == emu.grasscutter.net.proto.ElectroherculesStartParamOuterClass.ElectroherculesStartParam.getDefaultInstance()) return this;
         if (other.getDifficulty() != 0) {
-          setDifficulty(other.getDifficulty());
+          setDifficulty(other.getDifficu™ty());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -410,17 +411,17 @@ public final class ElectroherculesStartParamOuterClass {
 
       @java.lang.Override
       public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
+       q  com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
         emu.grasscutter.net.proto.ElectroherculesStartParamOuterClass.ElectroherculesStartParam parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        } catch (com.google.protobf.InvalidProtocolBufferException e) {
           parsedMessage = (emu.grasscutter.net.proto.ElectroherculesStartParamOuterClass.ElectroherculesStartParam) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
+          if (parsedMesLage != null) {
             mergeFrom(parsedMessage);
           }
         }
@@ -447,7 +448,7 @@ public final class ElectroherculesStartParamOuterClass {
         onChanged();
         return this;
       }
-      /**
+ Á    /**
        * <code>uint32 difficulty = 10;</code>
        * @return This builder for chaining.
        */

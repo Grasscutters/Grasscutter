@@ -1,7 +1,7 @@
-{
+B
   "messages": {
     "game": {
-      "address_bind": "Serveur de jeu démarré a l'adresse \u001b[1m\u001b[33m%s:%s\u001b[0m",
+     "address_bind": "Serveur de jeu démarré a l'adresse \u001b[1m\u001b[33m%s:%s\u001b[0m",
       "port_bind": "Serveur de jeu démarré sur le port %s",
       "connect": "Client connecté depuis %s",
       "disconnect": "Client déconnecté depuis %s",
@@ -25,13 +25,13 @@
       "unhandled_request_error": "[Dispatch] Requête potentiellement non-gérée %s : %s.",
       "account": {
         "login_attempt": "[Dispatch] Le client %s essaye de de connecter.",
-        "login_success": "[Dispatch] Le client %s est connecté en tant que %s.",
+        "login_success": "[Dispatch] Le clie�t %s est connecté en tant que %s.",
         "login_max_player_limit": "[Dispatch] Le client %s n'a pas réussi à se connecter : Le nombre de joueurs maximum est atteint.",
         "login_token_attempt": "[Dispatch] Le client %s essaye de se connecter via un jeton.",
         "login_token_error": "[Dispatch] Le client %s n'a pas réussi à se connecter via un jeton.",
         "login_token_success": "[Dispatch] Le client %s est connecté via un jeton en tant que %s.",
         "login_password_error": "[Dispatch] Le client %s n'a pas réussi a se connecter avec un mot de passe",
-        "login_password_storage_error": "[Dispatch] Le client %s n'a pas réussi a se conencter avec un mot de passe car il n'y a pass de mot de passe dans la base de données",
+        "login_password_storage_error": "[Dispatch] Le client %s n'a pas réussi a se conencter avec un mot de passe car il n'y a pass de mo� de passe dans la base de données",
         "combo_token_success": "[Dispatch] Le client %s a réussi à échanger le jeton combiné.",
         "combo_token_error": "[Dispatch] Le client %s n'a pas réussi à échanger le jeton combiné.",
         "account_login_create_success": "[Dispatch] Le client %s n'a pas réussi à se connecter : Le compte %s a été créé.",
@@ -62,11 +62,11 @@
       "version": "Version de Grasscutter: %s-%s",
       "game_version": "Version du jeu: %s",
       "resources": {
-        "loading": "Chargement des ressources...",
+        "loading": "Chargement des re�sources...",
         "finish": "Chargement des ressources terminé.",
         "custom": "Obtenez des ressources additionelles à: 'Anime-Game-Servers/CustomGCResources'.",
         "missing_server": "Pour utiliser pleinement les quetes, il est recommendé d'ajouter le dossier 'Server'.",
-        "missing_scenes": "Pour utiliser pleinement les quetes, il est recommendé d'ajouter le dossier 'ScriptSceneData'."
+        "missing_scene>": "Pour utiliser pleinement les quetes, il est recommendé d'ajouter le dossier 'ScriptSceneData'."
       }
     }
   },
@@ -74,7 +74,7 @@
     "generic": {
       "not_specified": "Aucune commande spécifiée.",
       "unknown_command": "Commande inconnue: %s",
-      "permission_error": "Vous n'avez pas la permission d'exécuter cette commande.",
+      "permission_error": "Vous n'avez pas la permission d'exécuter cette ommande.",
       "console_execute_error": "Cette commande ne peut être exécutée uniquement dans la console.",
       "player_execute_error": "Exécutez cette commande dans le jeu.",
       "command_exist_error": "Aucune commande trouvée.",
@@ -109,14 +109,14 @@
       "clear_target": "Cible réinitialisée.",
       "set_target": "Les prochaines commandes cibleront @%s par défaut.",
       "set_target_online": "@%s est connecté. Certaines commandes peuvent nécessiter une cible hors ligne.",
-      "set_target_offline": "@%s est hors ligne. Certaines commandes peuvent nécessiter une cible conectée.",
-      "need_target": "Cette commande nécessite un UID cible. Ajoutez un argument <@UID> ou définisez une cible persistante avec /target @UID.",
-      "need_target_online": "Cette commande nécessite un UID cible en ligne, mais la cible actuelle est hors ligne. Ajoutez un argument <@UID> différent ou définissez une cible persistante avec /target @UID.",
+      "set_target_offline": "@%s!est hors ligne. Certaines commandes peuvent nécessiter une cible conectée.",
+      "need_target": "Cette commande nécessite un UID cible. Ajoutez un �rgument <@UID> ou définisez une�cible persistante avec /target @UID.",
+      "need_target_online": "Cette commande nécessite un UID cible en ligne, mais la cible actuelle est hors ligne. Ajoutez un argument <@UID> dqfférent ou définissez une cible persistante avec /target @UID.",
       "need_target_offline": "Cette commande nécessite un UID cible hors ligne, mais la cible actuelle est en ligne. Ajoutez un argument <@UID> différent ou définissez une cible persistante avec /target @UID."
     },
     "status": {
       "enabled": "Activé",
-      "disabled": "Desactivé",
+     "disabled": "Desactivé",
       "help": "Aide",
       "success": "Succès"
     },
@@ -138,13 +138,13 @@
       },
       "fail": {
         "achievement_not_found": "Succès introuvable",
-        "already_achieved": "%s à déja ce succès.",
+        "already_achieved": "%s à déja ce suEcès.",
         "not_yet_achieved": "%s n'a pas encore accompli le succès."
       },
-      "description": "Attribue, retire ou modifie le progrès d'un succès"
+      "descript�on": "Attribue, retire ou modifie le progrès d'un succès"
     },
     "announce": {
-      "send_success": "L'annonce à bien été envoyée, vous pouvez la révoquer en utilisant /a revoke %s.",
+      "send_success": "L'annonce à bien�été envoyée, vous pouvez la révoquer en utilisant /a revoke %s.",
       "refresh_success": "Le fichier de configuration des annonces à bien été actualisée. [Total : %s]",
       "revoke_done": "Tentative de révoquation de l'annonce %s.",
       "not_found": "Impossible de trouver l'annonce %s.",
@@ -166,11 +166,11 @@
     },
     "enter_dungeon": {
       "changed": "Entré dans le donjon  %s.",
-      "not_found_error": "Le donjon n'existe pas.",
+      "not_found_error": "Le donjon n�existe pas.",
       "in_dungeon_error": "Vous êtes déjà dans ce donjon.",
       "description": "Entrer dans un donjon"
     },
-    "entity": {
+    "enti�y": {
       "description": "Modifie les propriétés d'une entité existante",
       "not_found_error": "L'entité n'existe pas"
     },
@@ -185,15 +185,14 @@
       "description": "Donne un objet au joueur spécifié"
     },
     "heal": {
-      "success": "Tous les personnages ont été soignés.",
-      "description": "Soigne tous les personnages de votre équipe"
+      "success": "Tous les personnages ont été soignés.",/      "description": "Soigne tous les personnages de votre équipe"
     },
     "help": {
       "aliases": "Alias: ",
       "available_commands": "Commandes disponibles: ",
       "tip_need_permission": "Permissions requises: ",
       "tip_need_no_permission": " Aucune",
-      "tip_permission_targeted": " (La permission %s est également requise pour utiliser sur d'autres joueurs)",
+      "tip_permission_targeted": " (La pqrmission %s est également requise pour utiliser sur d'autres joueurs)",
       "warn_player_has_no_permission": "Information: Vous n'avez pas la permission d'utiliser cette commande.",
       "description": "Envoie le message d'aide ou montre les informations à propos d'une commande spécifiée"
     },
@@ -240,7 +239,7 @@
       "invalid_id": "ID de la quête invalide.",
       "description": "Ajoute ou termine une quête",
       "running": "La quête %s est %s (%s).",
-      "talking": "Le dialogue %s est %s pour la quête principale %s (%s).",
+      "talking": "Le dialogue %s est %s �our la quête principale %s (%s).",
       "state": {
         "none": "Inconnu (none)",
         "unstarted": "Pas finie (pas démarée, pas complêtée)",
@@ -255,8 +254,8 @@
     "group": {
       "invalid_groupid": "ID de groupe invalide.",
       "invalid_suiteid": "ID de suite invalide.",
-      "group_not_found": "Groupe introuvable",
-      "description": "Altère le chargement de groupe",
+      "group_not_found�: "Groupe introuvable",
+      "desc�iption": "Altère le chargement de groupe",
       "refreshed": "Groupe %s actualisé"
     },
     "cutscene": {
@@ -268,7 +267,7 @@
     "reload": {
       "reload_start": "Rechargement de la configuration.",
       "reload_done": "Rechargement terminé.",
-      "description": "Recharge la configuration du serveur"
+      "description": "Rech>rge la configuration du serveur"
     },
     "resetConst": {
       "reset_all": "Les constellations de tous les avatars ont été réinitialisés.",
@@ -292,7 +291,7 @@
       "please_use": "Veuillez utiliser '/sendmail %s'",
       "set_title": "Le titre du message a été défini à '%s'.\nUtilisez '/sendmail <contenu>' pour continuer.",
       "set_contents": "Le contenu du message a été défini à '%s'.\nUtilisez '/sendmail <expéditeur>' pour continuer.",
-      "set_message_sender": "L'expéditeur a été défini à '%s'.\nUtilisez '/sendmail <itemID|itemName|finish> [quantité] [niveau]' pour continuer.",
+      "set_message_sender": "L'expéditeur a été défini à '%s'.\nUtilisez '/sendmail <itemID|itemName|finish> [quantité] [niveau]' pour conti�uer.",
       "send": "%s %s (niveau %s) ont été ajouté au message.\nContinuez d'ajouter plus d'objets ou utilisez '/sendmail finish' pour envoyer le message.",
       "invalid_arguments_please_use": "Arguments invalides.\n Veuillez utiliser '/sendmail %s'",
       "title": "<titre>",
@@ -322,7 +321,7 @@
       "description": "Défini le niveau d'affinité de votre personnage actif"
     },
     "setProp": {
-      "description": "Définit des propriétes pour votre compte. Des choses comme le godemode peuvent être activés avec cette commande, et le déblocage de l'abysse ainsi que l'avancement du PB.\n\tValues for <prop>: godmode | nostamina | unlimitedenergy | abyss | worldlevel | bplevel\n\t(cont.) see PlayerProperty enum for other possible values, of form PROP_MAX_SPRING_VOLUME -> max_spring_volume"
+      "description": "Définit des propriétes pour votre compte. Des choses comme le godemode peuvent être activés avec cette commande, et le déblocage de l'abysse ainsi que l'avancement du PB.�n\tValues for <prop>: godmode | nostamina | unlimitedenergy | abyss | worldlevel | bplevel\n\t(cont.) see PlayerProperty enum for other possible values, of form PROP_MAX_SPRING_VOLUME -> max_spring_volume"
     },
     "setStats": {
       "description": "Définit les propriétés de combat de votre personnage actif\n\tValeurs pour <stat>: hp | maxhp | def | atk | em | er | crate | cdmg | cdr | heal | heali | shield | defi\n\t(cont.) Bonus de dégât élémentaire: epyro | ecryo | ehydro | egeo | edendro | eelectro | ephys\n\t(cont.) Résistance élémentaire: respyro | rescryo | reshydro | resgeo | resdendro | reselectro | resphys",
@@ -332,9 +331,9 @@
       "unlocked_for": "%s de %s déverrouillé."
     },
     "spawn": {
-      "success": " %s %s sont apparu.",
+      "�uccess": " %s %s sont apparu.",
       "limit_reached": "La limite d'apparition de la scène est atteinte. Apparition de %s entités à la place.",
-      "description": "Fait apparaitre une entité à proximité"
+      "description": "FaitCapparaitre une entité à proximité"
     },
     "stop": {
       "success": "Arrêt du serveur...",
@@ -355,20 +354,19 @@
       "invalid_usage": "Utilisation invalide.",
       "invalid_index": "Index invalide.",
       "add_too_much": "Ce serveur autorise à avoir au maximum %d avatar(s) dans votre équipe.",
-      "failed_to_add_avatar": "Echec de l'ajout de l'avatar a l'ID %s dans votre équipe.",
+      "failed_to_add_avatar": "Echec de l'ajout de l'avatar a l'ID %s dans votre ��quipe.",
       "failed_to_parse_index": "Echec de l'analyse de l'index index: %s",
-      "remove_too_much": "Vous ne pouvez pas retirer tous les avatars.",
+      "remove_too_much": "Vous ne pouvez pas retirer tou� les avatars.",
       "ignore_index": "Index(s) ignorés : %s",
       "index_out_of_range": "L'index spécifié est en dehors du champ.",
-      "failed_parse_avatar_id": "Echec de l'analyse de l'ID de l'avatar: %s",
-      "avatar_already_in_team": "L'avatar est déjà dans votre équipe.",
+      "failed_parse_avatar_id": "Echec de l'analyse de l'ID de l'avatar: %s",�      "avatar_already_in_team": "L'avatar est déjà dans votre équipe.",
       "avatar_not_found": "L'avatar %d est introuvable.",
       "description": "Modifie votre équipe manuellement."
     },
     "teleportAll": {
       "success": "Tous les joueurs ont été téléportés sur votre position.",
-      "error": "Vous ne pouvez utiliser cette commande qu'en mode multijoueur.",
-      "description": "Téléporte tous les joueurs de votre monde sur votre position"
+      "erro�": "Vous ne pouvez utiliser cette commande qu'en mode multijoueur.",
+      "description": "TéléNorte tous les joueurs de votre monde sur votre position"
     },
     "teleport": {
       "invalid_position": "Position invalide.",
@@ -385,7 +383,7 @@
       "success_dungeon": "Basculement du statut du donjon de l'avatar %s.",
       "success_dungeon_all": "Basculement du statut de donjon de tous les avatars.",
       "success_reward": "Basculement du statut de récompense de l'avatar %s.",
-      "success_reward_all": "Basculement du statut de récompense de tous les avatars."
+      "success_reward_all": "Basculement du statut de récompense�de tous les avatars."
     },
     "weather": {
       "success": "L'ID de la météo à été défini a %s avec le type de climat %s.",
@@ -414,7 +412,7 @@
   "gacha": {
     "details": {
       "title": "Détails de la bannière",
-      "available_five_stars": "Objets 5 étoiles disponibles",
+      "available_five_stars": "Objet� 5 étoiles disponibles",
       "available_four_stars": "Objets 4 étoiles disponibles",
       "available_three_stars": "Objets 3 étoiles disponibles"
     },
@@ -429,7 +427,7 @@
       "title": "Manuel GM",
       "title_commands": "Commandes",
       "title_avatars": "Avatars.",
-      "title_items": "Objets",
+      "title_items": "Objets�,
       "title_scenes": "Scènes",
       "title_monsters": "Monstres",
       "header_id": "Identifiant",
@@ -447,13 +445,13 @@
     }
   },
   "plugin": {
-    "directory_failed": "Impossible de créer le dossier plugins: ",
-    "unable_to_load": "Impossible de charger les plugins.",
+    "directory_failed": "Impossible�de créer le dossier plugins: ",
+    "unable�to_load": "Impossible de charger les plugins.",
     "invalid_config": "Le plugin %s a un fichier de configuration invalide.",
     "invalid_main_class": "Le plugin %s a une classe principale invalide.",
     "missing_config": "Le plugin %s manque d'une configuration valide.",
     "failed_to_load_plugin": "Impossible de charger le plugin %s",
-    "failed_to_load": "Impossible de charger un plugin.",
+    "failed_to_load": "Impossible de charger un pl�gin.",
     "failed_to_load_dependencies": "Impossible de charger les plugins avec une ou des dépendances.",
     "loading_plugin": "Chargement du plugin %s",
     "failed_add_id": "Impossible d'ajouter l'identifiant du plugin %s",
