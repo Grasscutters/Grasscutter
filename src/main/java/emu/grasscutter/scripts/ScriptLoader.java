@@ -217,6 +217,7 @@ public class ScriptLoader {
                 // Compile the script from the file.
                 var source = Files.newBufferedReader(scriptPath);
                 script = ScriptLoader.getEngine().compile(source);
+                source.close();
             } else {
                 // Load the script sources.
                 var sources = ScriptLoader.readScript(path);

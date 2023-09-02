@@ -21,8 +21,6 @@ public class PacketPlayerLoginRsp extends BasePacket {
     public PacketPlayerLoginRsp(GameSession session) {
         super(PacketOpcodes.PlayerLoginRsp, 1);
 
-        this.setUseDispatchKey(true);
-
         RegionInfo info;
 
         if (Grasscutter.getRunMode() == ServerRunMode.GAME_ONLY) {
