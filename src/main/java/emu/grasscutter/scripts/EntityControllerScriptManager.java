@@ -1,15 +1,14 @@
 package emu.grasscutter.scripts;
 
+import static emu.grasscutter.utils.FileUtils.getScriptPath;
+
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.scripts.data.controller.EntityController;
-import lombok.val;
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-
-import static emu.grasscutter.utils.FileUtils.getScriptPath;
+import lombok.val;
 
 public class EntityControllerScriptManager {
     private static final Map<String, EntityController> gadgetController = new ConcurrentHashMap<>();

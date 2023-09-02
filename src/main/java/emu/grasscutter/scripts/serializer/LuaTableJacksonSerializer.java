@@ -7,10 +7,9 @@ import com.fasterxml.jackson.databind.json.JsonMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.fasterxml.jackson.databind.type.*;
 import emu.grasscutter.Grasscutter;
-import org.luaj.vm2.*;
-
 import java.io.IOException;
 import java.util.*;
+import org.luaj.vm2.*;
 
 public class LuaTableJacksonSerializer extends JsonSerializer<LuaTable> implements Serializer {
 

@@ -5,7 +5,6 @@ import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.player.*;
 import emu.grasscutter.server.event.player.PlayerReceiveMailEvent;
 import emu.grasscutter.server.packet.send.*;
-
 import java.util.*;
 
 public class MailHandler extends BasePlayerManager {

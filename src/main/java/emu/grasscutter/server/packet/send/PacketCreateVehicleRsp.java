@@ -7,7 +7,6 @@ import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.CreateVehicleRspOuterClass.CreateVehicleRsp;
 import emu.grasscutter.net.proto.VehicleInteractTypeOuterClass;
 import emu.grasscutter.net.proto.VehicleMemberOuterClass.VehicleMember;
-
 import java.util.List;
 
 public class PacketCreateVehicleRsp extends BasePacket {

@@ -1,7 +1,6 @@
 package emu.grasscutter.data.binout;
 
 import emu.grasscutter.data.ResourceLoader.OpenConfigData;
-
 import java.util.*;
 
 public class OpenConfigEntry {

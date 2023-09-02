@@ -8,7 +8,6 @@ import emu.grasscutter.net.proto.MailChangeNotifyOuterClass.MailChangeNotify;
 import emu.grasscutter.net.proto.MailDataOuterClass.MailData;
 import emu.grasscutter.net.proto.MailItemOuterClass.MailItem;
 import emu.grasscutter.net.proto.MailTextContentOuterClass.MailTextContent;
-
 import java.util.*;
 
 public class PacketMailChangeNotify extends BasePacket {

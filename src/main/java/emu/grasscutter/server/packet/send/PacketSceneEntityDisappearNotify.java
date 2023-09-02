@@ -4,7 +4,6 @@ import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.SceneEntityDisappearNotifyOuterClass.SceneEntityDisappearNotify;
 import emu.grasscutter.net.proto.VisionTypeOuterClass.VisionType;
-
 import java.util.Collection;
 
 public class PacketSceneEntityDisappearNotify extends BasePacket {

@@ -3,7 +3,6 @@ package emu.grasscutter.server.packet.send;
 import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.*;
 import emu.grasscutter.utils.Utils;
-
 import java.util.List;
 
 public class PacketServerAnnounceNotify extends BasePacket {

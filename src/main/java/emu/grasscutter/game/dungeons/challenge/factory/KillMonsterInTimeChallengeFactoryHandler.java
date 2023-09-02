@@ -5,9 +5,8 @@ import emu.grasscutter.game.dungeons.challenge.enums.ChallengeType;
 import emu.grasscutter.game.dungeons.challenge.trigger.*;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.scripts.data.SceneGroup;
-import lombok.val;
-
 import java.util.List;
+import lombok.val;
 
 public class KillMonsterInTimeChallengeFactoryHandler implements ChallengeFactoryHandler {
     @Override

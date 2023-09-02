@@ -15,9 +15,8 @@ import emu.grasscutter.scripts.data.controller.EntityController;
 import emu.grasscutter.server.event.entity.*;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
 import it.unimi.dsi.fastutil.ints.*;
-import lombok.*;
-
 import java.util.*;
+import lombok.*;
 
 public abstract class GameEntity {
     @Getter private final Scene scene;

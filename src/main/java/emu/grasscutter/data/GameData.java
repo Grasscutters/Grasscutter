@@ -48,13 +48,11 @@ import emu.grasscutter.game.quest.enums.QuestCond;
 import emu.grasscutter.game.world.GroupReplacementData;
 import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.*;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.val;
 
-import javax.annotation.Nullable;
 import java.lang.reflect.Field;
 import java.util.*;
+import javax.annotation.Nullable;
+import lombok.*;
 
 @SuppressWarnings({"unused", "MismatchedQueryAndUpdateOfCollection"})
 public final class GameData {

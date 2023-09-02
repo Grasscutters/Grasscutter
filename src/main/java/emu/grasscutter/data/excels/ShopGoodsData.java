@@ -4,7 +4,6 @@ import com.google.gson.annotations.SerializedName;
 import emu.grasscutter.data.*;
 import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.game.shop.ShopInfo;
-
 import java.util.List;
 
 @ResourceType(name = "ShopGoodsExcelConfigData.json")

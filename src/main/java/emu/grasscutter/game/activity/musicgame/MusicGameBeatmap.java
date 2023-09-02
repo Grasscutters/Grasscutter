@@ -3,10 +3,9 @@ package emu.grasscutter.game.activity.musicgame;
 import dev.morphia.annotations.*;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.net.proto.*;
+import java.util.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
-
-import java.util.*;
 
 @Entity("music_game_beatmaps")
 @Data

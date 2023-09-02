@@ -4,7 +4,6 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.GetAllMailResultNotifyOuterClass.GetAllMailResultNotify;
 import emu.grasscutter.utils.Utils;
-
 import java.time.Instant;
 import java.util.List;
 

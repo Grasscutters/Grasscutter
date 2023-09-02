@@ -2,10 +2,9 @@ package emu.grasscutter.data.excels.scene;
 
 import com.google.gson.annotations.SerializedName;
 import emu.grasscutter.data.*;
+import java.util.List;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
-
-import java.util.List;
 
 @ResourceType(name = "MapLayerFloorExcelConfigData.json")
 @Getter

@@ -4,7 +4,6 @@ import emu.grasscutter.game.home.HomeBlockItem;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.*;
-
 import java.util.*;
 
 public class PacketHomeComfortInfoNotify extends BasePacket {

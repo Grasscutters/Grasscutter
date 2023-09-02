@@ -19,7 +19,8 @@ public class HandlerHomeChangeEditModeReq extends PacketHandler {
         var req = HomeChangeEditModeReqOuterClass.HomeChangeEditModeReq.parseFrom(payload);
 
         if (req.getIsEnterEditMode() && !session.getPlayer().getCurHomeWorld().getGuests().isEmpty()) {
-            session.send(new PacketHomeChangeEditModeRsp(RetcodeOuterClass.Retcode.RET_HOME_HAS_GUEST_VALUE));
+            session.send(
+                    new PacketHomeChangeEditModeRsp(RetcodeOuterClass.Retcode.RET_HOME_HAS_GUEST_VALUE));
             return;
         }
 

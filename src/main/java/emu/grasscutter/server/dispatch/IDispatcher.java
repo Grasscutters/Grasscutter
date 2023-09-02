@@ -1,18 +1,17 @@
 package emu.grasscutter.server.dispatch;
 
+import static emu.grasscutter.config.Configuration.DISPATCH_INFO;
+
 import com.google.gson.*;
 import emu.grasscutter.utils.Crypto;
 import emu.grasscutter.utils.JsonAdapters.ByteArrayAdapter;
 import emu.grasscutter.utils.objects.JObject;
-import org.java_websocket.WebSocket;
-import org.slf4j.Logger;
-
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.concurrent.*;
 import java.util.function.*;
-
-import static emu.grasscutter.config.Configuration.DISPATCH_INFO;
+import org.java_websocket.WebSocket;
+import org.slf4j.Logger;
 
 public interface IDispatcher {
     Gson JSON =

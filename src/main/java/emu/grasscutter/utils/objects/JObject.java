@@ -4,7 +4,6 @@ import com.google.gson.*;
 import com.google.gson.internal.LinkedTreeMap;
 import com.google.gson.stream.*;
 import emu.grasscutter.utils.JsonUtils;
-
 import java.io.IOException;
 
 /* Replica of JsonObject. Includes chaining. */

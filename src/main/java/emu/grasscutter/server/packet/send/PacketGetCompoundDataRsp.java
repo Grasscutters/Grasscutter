@@ -4,7 +4,6 @@ import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.CompoundQueueDataOuterClass.CompoundQueueData;
 import emu.grasscutter.net.proto.GetCompoundDataRspOuterClass.GetCompoundDataRsp;
 import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
-
 import java.util.*;
 
 public class PacketGetCompoundDataRsp extends BasePacket {

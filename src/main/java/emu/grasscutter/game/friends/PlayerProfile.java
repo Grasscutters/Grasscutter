@@ -27,9 +27,7 @@ public class PlayerProfile {
     private boolean isInDuel = false; // TODO: Implement duels. (TCG)
     private boolean isDuelObservable = false; // TODO: Implement duels. (TCG)
 
-    @Getter
-    private int enterHomeOption;
-
+    @Getter private int enterHomeOption;
 
     @Deprecated // Morphia only
     public PlayerProfile() {}
@@ -39,8 +37,7 @@ public class PlayerProfile {
         this.syncWithCharacter(player);
     }
 
-    @Nullable
-    public Player getPlayer() {
+    @Nullable public Player getPlayer() {
         var player = Grasscutter.getGameServer().getPlayerByUid(this.getUid(), true);
         this.syncWithCharacter(player);
         return player;
@@ -66,7 +63,13 @@ public class PlayerProfile {
         this.nameCard = player.getNameCardId();
         this.playerLevel = player.getLevel();
         this.worldLevel = player.getWorldLevel();
-        this.enterHomeOption = player.tryGetHome().map(GameHome::getEnterHomeOption).orElse(FriendEnterHomeOptionOuterClass.FriendEnterHomeOption.FRIEND_ENTER_HOME_OPTION_REFUSE_VALUE);
+        this.enterHomeOption =
+                player
+                        .tryGetHome()
+                        .map(GameHome::getEnterHomeOption)
+                        .orElse(
+                                FriendEnterHomeOptionOuterClass.FriendEnterHomeOption
+                                        .FRIEND_ENTER_HOME_OPTION_REFUSE_VALUE);
         this.updateLastActiveTime();
     }
 }

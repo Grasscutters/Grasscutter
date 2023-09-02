@@ -1,14 +1,13 @@
 package emu.grasscutter.game;
 
+import static emu.grasscutter.config.Configuration.*;
+
 import dev.morphia.annotations.*;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.utils.*;
-import org.bson.Document;
-
 import java.util.*;
 import java.util.stream.Stream;
-
-import static emu.grasscutter.config.Configuration.*;
+import org.bson.Document;
 
 @Entity(value = "accounts", useDiscriminator = false)
 public class Account {

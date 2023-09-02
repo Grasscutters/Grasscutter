@@ -12,13 +12,12 @@ import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.net.proto.AchievementOuterClass.Achievement.Status;
 import emu.grasscutter.server.event.player.PlayerCompleteAchievementEvent;
 import emu.grasscutter.server.packet.send.*;
-import lombok.*;
-import org.bson.types.ObjectId;
-
-import javax.annotation.Nullable;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.IntSupplier;
+import javax.annotation.Nullable;
+import lombok.*;
+import org.bson.types.ObjectId;
 
 @Entity("achievements")
 @Data

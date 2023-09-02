@@ -17,13 +17,25 @@ public class HomeWorldMPSystem extends BaseGameSystem {
     public void sendEnterHomeRequest(Player requester, int ownerUid) {
         var owner = getServer().getPlayerByUid(ownerUid);
         if (owner == null) {
-            requester.sendPacket(new PacketPlayerApplyEnterHomeResultNotify(ownerUid, "", false, PlayerApplyEnterHomeResultNotifyOuterClass.PlayerApplyEnterHomeResultNotify.Reason.OPEN_STATE_NOT_OPEN));
+            requester.sendPacket(
+                    new PacketPlayerApplyEnterHomeResultNotify(
+                            ownerUid,
+                            "",
+                            false,
+                            PlayerApplyEnterHomeResultNotifyOuterClass.PlayerApplyEnterHomeResultNotify.Reason
+                                    .OPEN_STATE_NOT_OPEN));
             requester.sendPacket(new PacketTryEnterHomeRsp());
             return;
         }
 
         if (owner.getRealmList() == null) {
-            requester.sendPacket(new PacketPlayerApplyEnterHomeResultNotify(ownerUid, "", false, PlayerApplyEnterHomeResultNotifyOuterClass.PlayerApplyEnterHomeResultNotify.Reason.OPEN_STATE_NOT_OPEN));
+            requester.sendPacket(
+                    new PacketPlayerApplyEnterHomeResultNotify(
+                            ownerUid,
+                            "",
+                            false,
+                            PlayerApplyEnterHomeResultNotifyOuterClass.PlayerApplyEnterHomeResultNotify.Reason
+                                    .OPEN_STATE_NOT_OPEN));
             requester.sendPacket(new PacketTryEnterHomeRsp());
             return;
         }
@@ -35,7 +47,13 @@ public class HomeWorldMPSystem extends BaseGameSystem {
         }
 
         if (owner.isInEditMode()) {
-            requester.sendPacket(new PacketPlayerApplyEnterHomeResultNotify(ownerUid, owner.getNickname(), false, PlayerApplyEnterHomeResultNotifyOuterClass.PlayerApplyEnterHomeResultNotify.Reason.HOST_IN_EDIT_MODE));
+            requester.sendPacket(
+                    new PacketPlayerApplyEnterHomeResultNotify(
+                            ownerUid,
+                            owner.getNickname(),
+                            false,
+                            PlayerApplyEnterHomeResultNotifyOuterClass.PlayerApplyEnterHomeResultNotify.Reason
+                                    .HOST_IN_EDIT_MODE));
             requester.sendPacket(new PacketTryEnterHomeRsp());
             return;
         }
@@ -56,12 +74,24 @@ public class HomeWorldMPSystem extends BaseGameSystem {
         owner.getEnterHomeRequests().remove(requesterUid);
 
         if (requester.getWorld().isMultiplayer()) {
-            requester.sendPacket(new PacketPlayerApplyEnterHomeResultNotify(owner.getUid(), owner.getNickname(), false, PlayerApplyEnterHomeResultNotifyOuterClass.PlayerApplyEnterHomeResultNotify.Reason.SYSTEM_JUDGE));
+            requester.sendPacket(
+                    new PacketPlayerApplyEnterHomeResultNotify(
+                            owner.getUid(),
+                            owner.getNickname(),
+                            false,
+                            PlayerApplyEnterHomeResultNotifyOuterClass.PlayerApplyEnterHomeResultNotify.Reason
+                                    .SYSTEM_JUDGE));
             requester.sendPacket(new PacketTryEnterHomeRsp());
             return;
         }
 
-        requester.sendPacket(new PacketPlayerApplyEnterHomeResultNotify(owner.getUid(), owner.getNickname(), isAgreed, PlayerApplyEnterHomeResultNotifyOuterClass.PlayerApplyEnterHomeResultNotify.Reason.PLAYER_JUDGE));
+        requester.sendPacket(
+                new PacketPlayerApplyEnterHomeResultNotify(
+                        owner.getUid(),
+                        owner.getNickname(),
+                        isAgreed,
+                        PlayerApplyEnterHomeResultNotifyOuterClass.PlayerApplyEnterHomeResultNotify.Reason
+                                .PLAYER_JUDGE));
 
         if (!isAgreed) {
             requester.sendPacket(new PacketTryEnterHomeRsp());
@@ -78,7 +108,9 @@ public class HomeWorldMPSystem extends BaseGameSystem {
 
         if (owner.getRealmList() == null) {
             // should never happen
-            requester.sendPacket(new PacketTryEnterHomeRsp(RetcodeOuterClass.Retcode.RET_HOME_NOT_FOUND_IN_MEM_VALUE, owner.getUid()));
+            requester.sendPacket(
+                    new PacketTryEnterHomeRsp(
+                            RetcodeOuterClass.Retcode.RET_HOME_NOT_FOUND_IN_MEM_VALUE, owner.getUid()));
             return;
         }
 
@@ -88,12 +120,16 @@ public class HomeWorldMPSystem extends BaseGameSystem {
         var event = new PlayerEnterHomeEvent(requester, owner, targetHome);
         event.call();
         if (event.isCanceled()) {
-            requester.sendPacket(new PacketTryEnterHomeRsp(RetcodeOuterClass.Retcode.RET_HOME_OWNER_REFUSE_TO_ENTER_HOME_VALUE, owner.getUid()));
+            requester.sendPacket(
+                    new PacketTryEnterHomeRsp(
+                            RetcodeOuterClass.Retcode.RET_HOME_OWNER_REFUSE_TO_ENTER_HOME_VALUE, owner.getUid()));
             return;
         }
 
         if (owner.isInEditMode()) {
-            requester.sendPacket(new PacketTryEnterHomeRsp(RetcodeOuterClass.Retcode.RET_HOME_CANT_ENTER_BY_IN_EDIT_MODE_VALUE, owner.getUid()));
+            requester.sendPacket(
+                    new PacketTryEnterHomeRsp(
+                            RetcodeOuterClass.Retcode.RET_HOME_CANT_ENTER_BY_IN_EDIT_MODE_VALUE, owner.getUid()));
             return;
         }
 
@@ -109,13 +145,23 @@ public class HomeWorldMPSystem extends BaseGameSystem {
         requester.setSceneId(realmId);
         requester.getPosition().set(pos);
 
-        requester.sendPacket(new PacketPlayerEnterSceneNotify(requester, owner.getUid(), TeleportProperties.builder().sceneId(realmId).enterReason(EnterReason.EnterHome).teleportTo(pos).teleportType(PlayerTeleportEvent.TeleportType.INTERNAL).build(), !requester.equals(owner)));
+        requester.sendPacket(
+                new PacketPlayerEnterSceneNotify(
+                        requester,
+                        owner.getUid(),
+                        TeleportProperties.builder()
+                                .sceneId(realmId)
+                                .enterReason(EnterReason.EnterHome)
+                                .teleportTo(pos)
+                                .teleportType(PlayerTeleportEvent.TeleportType.INTERNAL)
+                                .build(),
+                        !requester.equals(owner)));
         requester.sendPacket(new PacketTryEnterHomeRsp(owner.getUid()));
 
         requester.setHasSentInitPacketInHome(false);
         world.getPlayers().stream()
-            .filter(player -> !player.equals(requester))
-            .forEach(player -> player.sendPacket(new PacketPlayerPreEnterMpNotify(requester)));
+                .filter(player -> !player.equals(requester))
+                .forEach(player -> player.sendPacket(new PacketPlayerPreEnterMpNotify(requester)));
     }
 
     public boolean leaveCoop(Player player, int prevScene) {
@@ -131,17 +177,32 @@ public class HomeWorldMPSystem extends BaseGameSystem {
         }
 
         // Event
-        var event = new PlayerLeaveHomeEvent(player, player.getCurHomeWorld().getHost(), player.getCurHomeWorld().getHome(), PlayerLeaveHomeEvent.Reason.PLAYER_LEAVE);
+        var event =
+                new PlayerLeaveHomeEvent(
+                        player,
+                        player.getCurHomeWorld().getHost(),
+                        player.getCurHomeWorld().getHome(),
+                        PlayerLeaveHomeEvent.Reason.PLAYER_LEAVE);
         event.call();
 
         player.getPosition().set(pos);
         var world = new World(player);
         world.addPlayer(player, prevScene);
-        player.getCurHomeWorld().sendPacketToHostIfOnline(new PacketOtherPlayerEnterOrLeaveHomeNotify(player, OtherPlayerEnterHomeNotifyOuterClass.OtherPlayerEnterHomeNotify.Reason.LEAVE));
+        player
+                .getCurHomeWorld()
+                .sendPacketToHostIfOnline(
+                        new PacketOtherPlayerEnterOrLeaveHomeNotify(
+                                player,
+                                OtherPlayerEnterHomeNotifyOuterClass.OtherPlayerEnterHomeNotify.Reason.LEAVE));
         player.setCurHomeWorld(this.server.getHomeWorldOrCreate(player));
 
-        player.sendPacket(new PacketPlayerEnterSceneNotify(player, EnterTypeOuterClass.EnterType.ENTER_TYPE_BACK, EnterReason.TeamBack, prevScene, pos));
-
+        player.sendPacket(
+                new PacketPlayerEnterSceneNotify(
+                        player,
+                        EnterTypeOuterClass.EnterType.ENTER_TYPE_BACK,
+                        EnterReason.TeamBack,
+                        prevScene,
+                        pos));
 
         return true;
     }
@@ -164,17 +225,30 @@ public class HomeWorldMPSystem extends BaseGameSystem {
         }
 
         // Event
-        var event = new PlayerLeaveHomeEvent(victim, owner, victim.getCurHomeWorld().getHome(), PlayerLeaveHomeEvent.Reason.KICKED);
+        var event =
+                new PlayerLeaveHomeEvent(
+                        victim, owner, victim.getCurHomeWorld().getHome(), PlayerLeaveHomeEvent.Reason.KICKED);
         event.call();
 
         // Kick
         victim.getPosition().set(victim.getPrevPosForHome());
         var world = new World(victim);
         world.addPlayer(victim, 3);
-        victim.getCurHomeWorld().sendPacketToHostIfOnline(new PacketOtherPlayerEnterOrLeaveHomeNotify(victim, OtherPlayerEnterHomeNotifyOuterClass.OtherPlayerEnterHomeNotify.Reason.LEAVE));
+        victim
+                .getCurHomeWorld()
+                .sendPacketToHostIfOnline(
+                        new PacketOtherPlayerEnterOrLeaveHomeNotify(
+                                victim,
+                                OtherPlayerEnterHomeNotifyOuterClass.OtherPlayerEnterHomeNotify.Reason.LEAVE));
         victim.setCurHomeWorld(this.server.getHomeWorldOrCreate(victim));
 
-        victim.sendPacket(new PacketPlayerEnterSceneNotify(victim, EnterTypeOuterClass.EnterType.ENTER_TYPE_BACK, EnterReason.TeamKick, victim.getScene().getId(), victim.getPrevPosForHome()));
+        victim.sendPacket(
+                new PacketPlayerEnterSceneNotify(
+                        victim,
+                        EnterTypeOuterClass.EnterType.ENTER_TYPE_BACK,
+                        EnterReason.TeamKick,
+                        victim.getScene().getId(),
+                        victim.getPrevPosForHome()));
         return true;
     }
 }

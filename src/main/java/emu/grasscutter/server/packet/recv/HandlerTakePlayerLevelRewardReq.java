@@ -8,7 +8,6 @@ import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.TakePlayerLevelRewardReqOuterClass.TakePlayerLevelRewardReq;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketTakePlayerLevelRewardRsp;
-
 import java.util.*;
 
 @Opcodes(PacketOpcodes.TakePlayerLevelRewardReq)

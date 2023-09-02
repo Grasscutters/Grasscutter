@@ -3,7 +3,6 @@ package emu.grasscutter.server.packet.send;
 import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.ForgeQueueDataNotifyOuterClass.ForgeQueueDataNotify;
 import emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData;
-
 import java.util.*;
 
 public class PacketForgeQueueDataNotify extends BasePacket {

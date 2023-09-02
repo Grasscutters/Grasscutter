@@ -2,7 +2,6 @@ package emu.grasscutter.data.excels.avatar;
 
 import emu.grasscutter.data.*;
 import emu.grasscutter.data.common.*;
-
 import java.util.ArrayList;
 
 @ResourceType(name = "AvatarPromoteExcelConfigData.json")

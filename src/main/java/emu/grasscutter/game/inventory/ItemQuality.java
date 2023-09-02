@@ -1,10 +1,9 @@
 package emu.grasscutter.game.inventory;
 
 import it.unimi.dsi.fastutil.ints.*;
-import lombok.Getter;
-
 import java.util.*;
 import java.util.stream.Stream;
+import lombok.Getter;
 
 public enum ItemQuality {
     QUALITY_NONE(0),

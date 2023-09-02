@@ -12,7 +12,6 @@ import emu.grasscutter.net.proto.PlayerCookReqOuterClass.PlayerCookReq;
 import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
 import emu.grasscutter.server.packet.send.*;
 import io.netty.util.internal.ThreadLocalRandom;
-
 import java.util.*;
 
 public class CookingManager extends BasePlayerManager {

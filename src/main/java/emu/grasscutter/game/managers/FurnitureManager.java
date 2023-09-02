@@ -8,7 +8,6 @@ import emu.grasscutter.net.proto.ItemParamOuterClass;
 import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
 import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.Utils;
-
 import java.util.*;
 
 public class FurnitureManager extends BasePlayerManager {

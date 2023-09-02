@@ -6,9 +6,8 @@ import emu.grasscutter.data.ResourceType.LoadPriority;
 import emu.grasscutter.data.common.PropGrowCurve;
 import emu.grasscutter.data.excels.GadgetData;
 import emu.grasscutter.game.props.*;
-import lombok.Getter;
-
 import java.util.*;
+import lombok.Getter;
 
 @ResourceType(name = "MonsterExcelConfigData.json", loadPriority = LoadPriority.LOW)
 @Getter

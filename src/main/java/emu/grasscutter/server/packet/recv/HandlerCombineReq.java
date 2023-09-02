@@ -5,7 +5,6 @@ import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.*;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketCombineRsp;
-
 import java.util.List;
 import java.util.stream.Collectors;
 

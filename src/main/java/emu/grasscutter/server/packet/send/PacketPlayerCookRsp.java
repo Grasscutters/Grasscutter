@@ -6,7 +6,6 @@ import emu.grasscutter.net.proto.CookRecipeDataOuterClass.CookRecipeData;
 import emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam;
 import emu.grasscutter.net.proto.PlayerCookRspOuterClass.PlayerCookRsp;
 import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
-
 import java.util.List;
 
 public class PacketPlayerCookRsp extends BasePacket {

@@ -1,5 +1,7 @@
 package emu.grasscutter.command.commands;
 
+import static emu.grasscutter.utils.lang.Language.translate;
+
 import at.favre.lib.crypto.bcrypt.BCrypt;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.*;
@@ -7,11 +9,8 @@ import emu.grasscutter.config.Configuration;
 import emu.grasscutter.database.*;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.game.player.Player;
-
 import java.util.List;
 import java.util.stream.Collectors;
-
-import static emu.grasscutter.utils.lang.Language.translate;
 
 @Command(
         label = "account",

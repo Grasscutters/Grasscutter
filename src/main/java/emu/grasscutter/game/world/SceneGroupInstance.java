@@ -4,11 +4,10 @@ import dev.morphia.annotations.*;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.scripts.data.*;
-import lombok.*;
-import org.bson.types.ObjectId;
-
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
+import lombok.*;
+import org.bson.types.ObjectId;
 
 @Entity(value = "group_instances", useDiscriminator = false)
 public final class SceneGroupInstance {

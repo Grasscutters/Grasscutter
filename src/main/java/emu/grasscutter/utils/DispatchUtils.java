@@ -1,5 +1,7 @@
 package emu.grasscutter.utils;
 
+import static emu.grasscutter.config.Configuration.DISPATCH_INFO;
+
 import com.google.gson.JsonObject;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.auth.AuthenticationSystem.AuthenticationRequest;
@@ -10,11 +12,8 @@ import emu.grasscutter.server.http.handlers.GachaHandler;
 import emu.grasscutter.server.http.objects.LoginTokenRequestJson;
 import emu.grasscutter.utils.objects.*;
 import emu.grasscutter.utils.objects.HandbookBody.*;
-
-import javax.annotation.Nullable;
 import java.util.concurrent.*;
-
-import static emu.grasscutter.config.Configuration.DISPATCH_INFO;
+import javax.annotation.Nullable;
 
 public interface DispatchUtils {
     /**

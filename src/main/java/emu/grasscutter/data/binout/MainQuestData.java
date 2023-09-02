@@ -3,9 +3,8 @@ package emu.grasscutter.data.binout;
 import dev.morphia.annotations.Entity;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.game.quest.enums.QuestType;
-import lombok.Data;
-
 import java.util.*;
+import lombok.Data;
 
 public class MainQuestData {
     private int id;

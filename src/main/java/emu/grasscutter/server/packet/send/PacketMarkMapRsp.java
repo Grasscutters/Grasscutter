@@ -4,7 +4,6 @@ import emu.grasscutter.game.managers.mapmark.MapMark;
 import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPoint;
 import emu.grasscutter.net.proto.MarkMapRspOuterClass.MarkMapRsp;
-
 import java.util.Map;
 
 public class PacketMarkMapRsp extends BasePacket {

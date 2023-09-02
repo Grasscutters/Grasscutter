@@ -1,5 +1,7 @@
 package emu.grasscutter.scripts;
 
+import static emu.grasscutter.scripts.constants.EventType.EVENT_TIMER_EVENT;
+
 import com.github.davidmoten.rtreemulti.RTree;
 import com.github.davidmoten.rtreemulti.geometry.Geometry;
 import emu.grasscutter.Grasscutter;
@@ -19,20 +21,17 @@ import emu.grasscutter.server.packet.send.PacketGroupSuiteNotify;
 import emu.grasscutter.utils.*;
 import io.netty.util.concurrent.FastThreadLocalThread;
 import it.unimi.dsi.fastutil.ints.*;
-import kotlin.Pair;
-import lombok.val;
-import org.luaj.vm2.*;
-import org.luaj.vm2.lib.jse.CoerceJavaToLua;
-
-import javax.annotation.*;
 import java.io.*;
 import java.nio.file.Files;
 import java.util.*;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
-
-import static emu.grasscutter.scripts.constants.EventType.EVENT_TIMER_EVENT;
+import javax.annotation.*;
+import kotlin.Pair;
+import lombok.val;
+import org.luaj.vm2.*;
+import org.luaj.vm2.lib.jse.CoerceJavaToLua;
 
 public class SceneScriptManager {
     private final Scene scene;

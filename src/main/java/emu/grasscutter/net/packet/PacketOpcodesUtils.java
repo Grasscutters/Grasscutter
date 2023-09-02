@@ -3,7 +3,6 @@ package emu.grasscutter.net.packet;
 import emu.grasscutter.*;
 import emu.grasscutter.utils.JsonUtils;
 import it.unimi.dsi.fastutil.ints.*;
-
 import java.io.*;
 import java.util.*;
 import java.util.stream.Collectors;

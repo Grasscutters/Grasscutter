@@ -5,7 +5,6 @@ import emu.grasscutter.data.excels.tower.TowerLevelData;
 import emu.grasscutter.game.dungeons.*;
 import emu.grasscutter.game.player.*;
 import emu.grasscutter.server.packet.send.*;
-
 import java.util.*;
 
 public class TowerManager extends BasePlayerManager {

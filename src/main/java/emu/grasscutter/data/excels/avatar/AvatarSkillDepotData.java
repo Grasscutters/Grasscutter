@@ -7,10 +7,9 @@ import emu.grasscutter.data.binout.AbilityEmbryoEntry;
 import emu.grasscutter.game.props.ElementType;
 import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.*;
-import lombok.Getter;
-
 import java.util.*;
 import java.util.stream.IntStream;
+import lombok.Getter;
 
 @ResourceType(name = "AvatarSkillDepotExcelConfigData.json", loadPriority = LoadPriority.HIGH)
 @Getter
