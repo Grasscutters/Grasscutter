@@ -6,7 +6,6 @@ import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.ActivityShopSheetInfoOuterClass.ActivityShopSheetInfo;
 import emu.grasscutter.net.proto.GetActivityShopSheetInfoRspOuterClass.GetActivityShopSheetInfoRsp;
 import emu.grasscutter.net.proto.RetcodeOuterClass;
-
 import java.util.*;
 
 public class PacketGetActivityShopSheetInfoRsp extends BasePacket {

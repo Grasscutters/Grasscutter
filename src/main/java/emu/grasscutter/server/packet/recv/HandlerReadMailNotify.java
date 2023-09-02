@@ -5,7 +5,6 @@ import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.ReadMailNotifyOuterClass;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketMailChangeNotify;
-
 import java.util.*;
 
 @Opcodes(PacketOpcodes.ReadMailNotify)

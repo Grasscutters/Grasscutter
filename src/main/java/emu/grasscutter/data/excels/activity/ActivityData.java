@@ -1,10 +1,9 @@
 package emu.grasscutter.data.excels.activity;
 
 import emu.grasscutter.data.*;
+import java.util.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
-
-import java.util.*;
 
 @ResourceType(
         name = "NewActivityExcelConfigData.json",

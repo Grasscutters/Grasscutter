@@ -1,12 +1,11 @@
 package emu.grasscutter.server.http.objects;
 
+import static emu.grasscutter.config.Configuration.DISPATCH_INFO;
+
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.utils.FileUtils;
 import io.javalin.http.*;
-
 import java.io.*;
-
-import static emu.grasscutter.config.Configuration.DISPATCH_INFO;
 
 public class WebStaticVersionResponse implements Handler {
 

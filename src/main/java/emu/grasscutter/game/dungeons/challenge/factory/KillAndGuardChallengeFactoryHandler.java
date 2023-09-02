@@ -1,15 +1,14 @@
 package emu.grasscutter.game.dungeons.challenge.factory;
 
+import static emu.grasscutter.game.dungeons.challenge.enums.ChallengeType.CHALLENGE_KILL_COUNT_GUARD_HP;
+
 import emu.grasscutter.game.dungeons.challenge.WorldChallenge;
 import emu.grasscutter.game.dungeons.challenge.enums.ChallengeType;
 import emu.grasscutter.game.dungeons.challenge.trigger.*;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.scripts.data.SceneGroup;
-import lombok.val;
-
 import java.util.List;
-
-import static emu.grasscutter.game.dungeons.challenge.enums.ChallengeType.CHALLENGE_KILL_COUNT_GUARD_HP;
+import lombok.val;
 
 public class KillAndGuardChallengeFactoryHandler implements ChallengeFactoryHandler {
     @Override

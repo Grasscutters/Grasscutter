@@ -1,10 +1,10 @@
 package emu.grasscutter.game.quest.content;
 
+import static emu.grasscutter.game.quest.enums.QuestContent.QUEST_CONTENT_ITEM_LESS_THAN;
+
 import emu.grasscutter.data.excels.quest.QuestData;
 import emu.grasscutter.game.quest.*;
 import lombok.val;
-
-import static emu.grasscutter.game.quest.enums.QuestContent.QUEST_CONTENT_ITEM_LESS_THAN;
 
 @QuestValueContent(QUEST_CONTENT_ITEM_LESS_THAN)
 public class ContentItemLessThan extends BaseContent {

@@ -8,10 +8,9 @@ import emu.grasscutter.net.proto.AnnounceDataOuterClass;
 import emu.grasscutter.server.game.*;
 import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.Utils;
+import java.util.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
-
-import java.util.*;
 
 @Getter
 public class AnnouncementSystem extends BaseGameSystem {

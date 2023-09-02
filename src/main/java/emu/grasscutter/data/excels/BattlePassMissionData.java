@@ -3,10 +3,9 @@ package emu.grasscutter.data.excels;
 import emu.grasscutter.data.*;
 import emu.grasscutter.game.props.*;
 import emu.grasscutter.net.proto.BattlePassMissionOuterClass.BattlePassMission.MissionStatus;
-import lombok.Getter;
-
 import java.util.*;
 import java.util.stream.Collectors;
+import lombok.Getter;
 
 @ResourceType(name = {"BattlePassMissionExcelConfigData.json"})
 @Getter

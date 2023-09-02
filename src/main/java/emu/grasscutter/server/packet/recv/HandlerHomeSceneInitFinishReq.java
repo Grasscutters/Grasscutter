@@ -15,8 +15,14 @@ public class HandlerHomeSceneInitFinishReq extends PacketHandler {
         if (!session.getPlayer().isHasSentInitPacketInHome()) {
             session.getPlayer().setHasSentInitPacketInHome(true);
 
-            if (curHomeWorld.getHost().isOnline() && !curHomeWorld.getHost().equals(session.getPlayer())) {
-                curHomeWorld.getHost().sendPacket(new PacketOtherPlayerEnterOrLeaveHomeNotify(session.getPlayer(), OtherPlayerEnterHomeNotifyOuterClass.OtherPlayerEnterHomeNotify.Reason.ENTER));
+            if (curHomeWorld.getHost().isOnline()
+                    && !curHomeWorld.getHost().equals(session.getPlayer())) {
+                curHomeWorld
+                        .getHost()
+                        .sendPacket(
+                                new PacketOtherPlayerEnterOrLeaveHomeNotify(
+                                        session.getPlayer(),
+                                        OtherPlayerEnterHomeNotifyOuterClass.OtherPlayerEnterHomeNotify.Reason.ENTER));
             }
         }
 

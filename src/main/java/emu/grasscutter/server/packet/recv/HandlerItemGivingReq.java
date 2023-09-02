@@ -8,7 +8,6 @@ import emu.grasscutter.net.proto.ItemGivingReqOuterClass.ItemGivingReq;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketItemGivingRsp;
 import emu.grasscutter.server.packet.send.PacketItemGivingRsp.Mode;
-
 import java.util.*;
 
 @Opcodes(PacketOpcodes.ItemGivingReq)

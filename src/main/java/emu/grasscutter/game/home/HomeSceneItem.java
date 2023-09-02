@@ -1,15 +1,20 @@
 package emu.grasscutter.game.home;
 
-import dev.morphia.annotations.*;
+import dev.morphia.annotations.Entity;
+import dev.morphia.annotations.Id;
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.binout.HomeworldDefaultSaveData;
+import emu.grasscutter.game.entity.EntityHomeAnimal;
 import emu.grasscutter.game.world.Position;
+import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.net.proto.HomeSceneArrangementInfoOuterClass.HomeSceneArrangementInfo;
-import lombok.*;
-import lombok.experimental.FieldDefaults;
-
+import java.util.Collection;
+import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
 
 @Entity
 @Data
@@ -57,7 +62,11 @@ public class HomeSceneItem {
         this.bornRot = new Position(arrangementInfo.getBornRot());
         this.djinnPos = new Position(arrangementInfo.getDjinnPos());
         this.homeBgmId = arrangementInfo.getBgmId();
-        this.mainHouse = HomeFurnitureItem.parseFrom(arrangementInfo.getMainHouse());
+
+        if (!this.isRoom() && arrangementInfo.hasMainHouse()) {
+            this.mainHouse = HomeFurnitureItem.parseFrom(arrangementInfo.getMainHouse());
+        }
+
         this.tmpVersion = arrangementInfo.getTmpVersion();
     }
 
@@ -70,6 +79,23 @@ public class HomeSceneItem {
 
     public boolean isRoom() {
         return mainHouse == null || mainHouse.getAsItem() == null;
+    }
+
+    public List<EntityHomeAnimal> getAnimals(Scene scene) {
+        return this.blockItems.values().stream()
+                .map(HomeBlockItem::getDeployAnimalList)
+                .flatMap(Collection::stream)
+                .filter(
+                        homeAnimalItem ->
+                                GameData.getHomeWorldAnimalDataMap().containsKey(homeAnimalItem.getFurnitureId()))
+                .map(
+                        homeAnimalItem -> {
+                            return new EntityHomeAnimal(
+                                    scene,
+                                    GameData.getHomeWorldAnimalDataMap().get(homeAnimalItem.getFurnitureId()),
+                                    homeAnimalItem.getSpawnPos());
+                        })
+                .toList();
     }
 
     public int calComfort() {

@@ -4,7 +4,6 @@ import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.ItemAddHintNotifyOuterClass.ItemAddHintNotify;
-
 import java.util.Collection;
 
 public class PacketItemAddHintNotify extends BasePacket {

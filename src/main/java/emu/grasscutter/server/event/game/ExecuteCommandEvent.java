@@ -2,9 +2,8 @@ package emu.grasscutter.server.event.game;
 
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.event.*;
-import lombok.*;
-
 import javax.annotation.Nullable;
+import lombok.*;
 
 @Getter
 @AllArgsConstructor

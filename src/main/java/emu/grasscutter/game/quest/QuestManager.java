@@ -1,5 +1,8 @@
 package emu.grasscutter.game.quest;
 
+import static emu.grasscutter.GameConstants.DEBUG;
+import static emu.grasscutter.config.Configuration.*;
+
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.binout.*;
@@ -12,16 +15,12 @@ import emu.grasscutter.net.proto.GivingRecordOuterClass.GivingRecord;
 import emu.grasscutter.server.packet.send.*;
 import io.netty.util.concurrent.FastThreadLocalThread;
 import it.unimi.dsi.fastutil.ints.*;
-import lombok.*;
-
-import javax.annotation.Nonnull;
 import java.util.*;
 import java.util.concurrent.*;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
-
-import static emu.grasscutter.GameConstants.DEBUG;
-import static emu.grasscutter.config.Configuration.*;
+import javax.annotation.Nonnull;
+import lombok.*;
 
 public final class QuestManager extends BasePlayerManager {
     @Getter private final Player player;

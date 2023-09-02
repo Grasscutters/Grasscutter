@@ -3,10 +3,9 @@ package emu.grasscutter.data.excels.activity;
 import emu.grasscutter.data.*;
 import emu.grasscutter.game.activity.condition.ActivityConditions;
 import emu.grasscutter.game.quest.enums.LogicType;
+import java.util.List;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
-
-import java.util.List;
 
 @ResourceType(name = "NewActivityCondExcelConfigData.json")
 @Getter

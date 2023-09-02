@@ -5,7 +5,6 @@ import emu.grasscutter.game.player.PlayerBuffManager.PlayerBuff;
 import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.ServerBuffChangeNotifyOuterClass.ServerBuffChangeNotify;
 import emu.grasscutter.net.proto.ServerBuffChangeNotifyOuterClass.ServerBuffChangeNotify.ServerBuffChangeType;
-
 import java.util.Collection;
 import java.util.stream.Stream;
 

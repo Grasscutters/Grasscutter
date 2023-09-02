@@ -21,10 +21,9 @@ import emu.grasscutter.net.proto.VehicleInfoOuterClass.VehicleInfo;
 import emu.grasscutter.net.proto.VehicleMemberOuterClass.VehicleMember;
 import emu.grasscutter.utils.helpers.ProtoHelper;
 import it.unimi.dsi.fastutil.ints.*;
-import lombok.*;
-
-import javax.annotation.Nullable;
 import java.util.*;
+import javax.annotation.Nullable;
+import lombok.*;
 
 public class EntityVehicle extends EntityBaseGadget {
 

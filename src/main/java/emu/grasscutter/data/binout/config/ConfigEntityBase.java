@@ -1,10 +1,9 @@
 package emu.grasscutter.data.binout.config;
 
 import emu.grasscutter.data.binout.config.fields.*;
-import lombok.Data;
-
-import javax.annotation.Nullable;
 import java.util.Collection;
+import javax.annotation.Nullable;
+import lombok.Data;
 
 @Data
 public class ConfigEntityBase {

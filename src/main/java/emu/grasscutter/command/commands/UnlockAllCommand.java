@@ -1,13 +1,12 @@
 package emu.grasscutter.command.commands;
 
+import static emu.grasscutter.utils.lang.Language.translate;
+
 import emu.grasscutter.command.*;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.game.player.*;
 import emu.grasscutter.server.packet.send.PacketOpenStateChangeNotify;
-
 import java.util.*;
-
-import static emu.grasscutter.utils.lang.Language.translate;
 
 @Command(
         label = "unlockall",

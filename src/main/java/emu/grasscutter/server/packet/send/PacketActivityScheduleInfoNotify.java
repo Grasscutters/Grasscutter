@@ -4,7 +4,6 @@ import emu.grasscutter.game.activity.ActivityConfigItem;
 import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.*;
 import emu.grasscutter.utils.helpers.DateHelper;
-
 import java.util.Collection;
 
 public class PacketActivityScheduleInfoNotify extends BasePacket {

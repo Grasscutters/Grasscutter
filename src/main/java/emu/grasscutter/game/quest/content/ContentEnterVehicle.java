@@ -1,9 +1,9 @@
 package emu.grasscutter.game.quest.content;
 
+import static emu.grasscutter.game.quest.enums.QuestContent.QUEST_CONTENT_ENTER_VEHICLE;
+
 import emu.grasscutter.data.excels.quest.QuestData;
 import emu.grasscutter.game.quest.*;
-
-import static emu.grasscutter.game.quest.enums.QuestContent.QUEST_CONTENT_ENTER_VEHICLE;
 
 @QuestValueContent(QUEST_CONTENT_ENTER_VEHICLE)
 public class ContentEnterVehicle extends BaseContent {

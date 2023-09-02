@@ -3,11 +3,10 @@ package emu.grasscutter.data.excels.achievement;
 import com.github.davidmoten.guavamini.Lists;
 import emu.grasscutter.data.*;
 import emu.grasscutter.data.excels.BattlePassMissionData;
-import lombok.Getter;
-
 import java.util.*;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.stream.Collectors;
+import lombok.Getter;
 
 @Getter
 @ResourceType(name = "AchievementExcelConfigData.json")

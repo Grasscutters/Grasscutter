@@ -3,16 +3,12 @@ package emu.grasscutter.game.props;
 import emu.grasscutter.scripts.constants.IntValueEnum;
 import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.*;
-import lombok.Getter;
-
 import java.util.*;
 import java.util.stream.Stream;
+import lombok.Getter;
 
 public enum ElementType implements IntValueEnum {
-    None(
-            0,
-            FightProperty.FIGHT_PROP_CUR_WIND_ENERGY,
-            FightProperty.FIGHT_PROP_MAX_WIND_ENERGY),
+    None(0, FightProperty.FIGHT_PROP_CUR_WIND_ENERGY, FightProperty.FIGHT_PROP_MAX_WIND_ENERGY),
     Fire(
             1,
             FightProperty.FIGHT_PROP_CUR_FIRE_ENERGY,

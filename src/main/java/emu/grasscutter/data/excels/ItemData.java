@@ -8,9 +8,8 @@ import emu.grasscutter.game.inventory.*;
 import emu.grasscutter.game.props.*;
 import emu.grasscutter.game.props.ItemUseAction.ItemUseAction;
 import it.unimi.dsi.fastutil.ints.*;
-import lombok.Getter;
-
 import java.util.*;
+import lombok.Getter;
 
 @ResourceType(
         name = {

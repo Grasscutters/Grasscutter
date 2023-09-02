@@ -2,7 +2,6 @@ package emu.grasscutter.data.binout;
 
 import com.google.gson.annotations.SerializedName;
 import emu.grasscutter.data.common.DynamicFloat;
-
 import java.io.Serializable;
 
 public class TalentData implements Serializable {

@@ -4,9 +4,8 @@ import dev.morphia.annotations.Transient;
 import emu.grasscutter.data.*;
 import emu.grasscutter.data.common.*;
 import it.unimi.dsi.fastutil.objects.*;
-import lombok.Getter;
-
 import java.util.*;
+import lombok.Getter;
 
 @ResourceType(name = "ProudSkillExcelConfigData.json")
 public class ProudSkillData extends GameResource {

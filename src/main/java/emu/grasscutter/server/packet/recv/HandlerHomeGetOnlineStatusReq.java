@@ -8,6 +8,7 @@ import emu.grasscutter.server.packet.send.PacketHomeGetOnlineStatusRsp;
 public class HandlerHomeGetOnlineStatusReq extends PacketHandler {
     @Override
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
-        session.send(new PacketHomeGetOnlineStatusRsp(session.getPlayer().getCurHomeWorld().getGuests()));
+        session.send(
+                new PacketHomeGetOnlineStatusRsp(session.getPlayer().getCurHomeWorld().getGuests()));
     }
 }

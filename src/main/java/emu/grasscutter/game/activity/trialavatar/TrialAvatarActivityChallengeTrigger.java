@@ -2,9 +2,8 @@ package emu.grasscutter.game.activity.trialavatar;
 
 import emu.grasscutter.game.activity.*;
 import emu.grasscutter.game.props.WatcherTriggerType;
-import lombok.val;
-
 import java.util.stream.Stream;
+import lombok.val;
 
 @ActivityWatcherType(WatcherTriggerType.TRIGGER_FINISH_CHALLENGE)
 public class TrialAvatarActivityChallengeTrigger extends ActivityWatcher {

@@ -1,8 +1,7 @@
 package emu.grasscutter.game.managers.blossom;
 
-import lombok.Getter;
-
 import java.util.*;
+import lombok.Getter;
 
 public class BlossomConfig {
     @Getter private int monsterFightingVolume;

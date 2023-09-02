@@ -4,7 +4,6 @@ import emu.grasscutter.game.activity.*;
 import emu.grasscutter.game.props.ActivityType;
 import emu.grasscutter.net.proto.*;
 import emu.grasscutter.utils.JsonUtils;
-
 import java.util.stream.Collectors;
 
 @GameActivity(ActivityType.NEW_ACTIVITY_MUSIC_GAME)

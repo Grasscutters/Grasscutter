@@ -4,7 +4,6 @@ import emu.grasscutter.game.entity.gadget.GadgetChest;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.world.ChestReward;
 import emu.grasscutter.server.event.player.PlayerOpenChestEvent;
-
 import java.util.Random;
 
 public class NormalChestInteractHandler implements ChestInteractHandler {

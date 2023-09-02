@@ -1,10 +1,9 @@
 package emu.grasscutter.data.excels;
 
 import emu.grasscutter.data.*;
+import java.util.List;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
-
-import java.util.List;
 
 @ResourceType(
         name = "InvestigationMonsterConfigData.json",

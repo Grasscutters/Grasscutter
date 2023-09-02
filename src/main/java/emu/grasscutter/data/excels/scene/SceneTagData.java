@@ -2,9 +2,8 @@ package emu.grasscutter.data.excels.scene;
 
 import com.google.gson.annotations.SerializedName;
 import emu.grasscutter.data.*;
-import lombok.Getter;
-
 import java.util.List;
+import lombok.Getter;
 
 @ResourceType(name = "SceneTagConfigData.json")
 @Getter

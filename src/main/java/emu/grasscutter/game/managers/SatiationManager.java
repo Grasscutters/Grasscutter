@@ -4,7 +4,6 @@ import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.player.*;
 import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.server.packet.send.*;
-
 import java.util.*;
 
 public class SatiationManager extends BasePlayerManager {

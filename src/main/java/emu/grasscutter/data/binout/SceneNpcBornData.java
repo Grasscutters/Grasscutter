@@ -3,11 +3,10 @@ package emu.grasscutter.data.binout;
 import com.github.davidmoten.rtreemulti.RTree;
 import com.github.davidmoten.rtreemulti.geometry.Geometry;
 import emu.grasscutter.scripts.data.SceneGroup;
-import lombok.*;
-import lombok.experimental.FieldDefaults;
-
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
 
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
