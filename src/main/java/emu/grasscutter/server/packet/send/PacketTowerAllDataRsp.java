@@ -7,7 +7,6 @@ import emu.grasscutter.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelReco
 import emu.grasscutter.net.proto.TowerFloorRecordOuterClass.TowerFloorRecord;
 import emu.grasscutter.net.proto.TowerLevelRecordOuterClass;
 import emu.grasscutter.utils.helpers.DateHelper;
-
 import java.util.*;
 import java.util.stream.*;
 

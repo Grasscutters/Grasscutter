@@ -3,9 +3,8 @@ package emu.grasscutter.data.excels;
 import com.google.gson.annotations.SerializedName;
 import emu.grasscutter.data.*;
 import emu.grasscutter.data.common.ItemParamData;
-import lombok.Getter;
-
 import java.util.List;
+import lombok.Getter;
 
 @ResourceType(
         name = {"CompoundExcelConfigData.json"},

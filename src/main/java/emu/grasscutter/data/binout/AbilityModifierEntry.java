@@ -1,7 +1,6 @@
 package emu.grasscutter.data.binout;
 
 import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierAction;
-
 import java.util.*;
 
 public class AbilityModifierEntry {

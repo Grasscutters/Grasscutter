@@ -1,13 +1,13 @@
 package emu.grasscutter.server.packet.send;
 
+import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
+
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.ItemOuterClass.Item;
 import emu.grasscutter.net.proto.PlayerStoreNotifyOuterClass.PlayerStoreNotify;
 import emu.grasscutter.net.proto.StoreTypeOuterClass.StoreType;
-
-import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
 
 public class PacketPlayerStoreNotify extends BasePacket {
 

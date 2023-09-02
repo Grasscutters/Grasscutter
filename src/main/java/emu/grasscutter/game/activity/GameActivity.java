@@ -1,7 +1,6 @@
 package emu.grasscutter.game.activity;
 
 import emu.grasscutter.game.props.ActivityType;
-
 import java.lang.annotation.*;
 
 @Retention(RetentionPolicy.RUNTIME)

@@ -1,10 +1,9 @@
 package emu.grasscutter.game.talk;
 
 import it.unimi.dsi.fastutil.ints.*;
-import lombok.*;
-
 import java.util.*;
 import java.util.stream.Stream;
+import lombok.*;
 
 @AllArgsConstructor
 public enum TalkExec {

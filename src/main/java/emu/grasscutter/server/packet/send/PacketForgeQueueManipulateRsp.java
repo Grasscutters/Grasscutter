@@ -6,7 +6,6 @@ import emu.grasscutter.net.proto.ForgeQueueManipulateRspOuterClass.ForgeQueueMan
 import emu.grasscutter.net.proto.ForgeQueueManipulateTypeOuterClass.ForgeQueueManipulateType;
 import emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam;
 import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
-
 import java.util.List;
 
 public class PacketForgeQueueManipulateRsp extends BasePacket {

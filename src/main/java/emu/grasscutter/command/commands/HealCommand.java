@@ -1,13 +1,12 @@
 package emu.grasscutter.command.commands;
 
+import static emu.grasscutter.utils.lang.Language.translate;
+
 import emu.grasscutter.command.*;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.server.packet.send.*;
-
 import java.util.List;
-
-import static emu.grasscutter.utils.lang.Language.translate;
 
 @Command(
         label = "heal",

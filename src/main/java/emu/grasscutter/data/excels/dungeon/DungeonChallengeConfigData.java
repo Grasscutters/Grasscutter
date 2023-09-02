@@ -3,9 +3,8 @@ package emu.grasscutter.data.excels.dungeon;
 import com.google.gson.annotations.SerializedName;
 import emu.grasscutter.data.*;
 import emu.grasscutter.game.dungeons.challenge.enums.ChallengeType;
-import lombok.Getter;
-
 import java.util.HashSet;
+import lombok.Getter;
 
 @Getter
 @ResourceType(name = "DungeonChallengeConfigData.json")

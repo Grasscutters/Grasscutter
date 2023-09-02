@@ -10,9 +10,8 @@ import emu.grasscutter.game.world.*;
 import emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo;
 import emu.grasscutter.scripts.EntityControllerScriptManager;
 import it.unimi.dsi.fastutil.ints.*;
-import lombok.*;
-
 import javax.annotation.Nullable;
+import lombok.*;
 
 @ToString(callSuper = true)
 public class EntityWeapon extends EntityBaseGadget {

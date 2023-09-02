@@ -8,7 +8,6 @@ import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.world.*;
 import emu.grasscutter.scripts.data.*;
 import emu.grasscutter.utils.Utils;
-
 import java.util.*;
 
 public final class BlossomActivity {

@@ -1,5 +1,7 @@
 package emu.grasscutter.game.gacha;
 
+import static emu.grasscutter.config.Configuration.*;
+
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.game.player.Player;
@@ -7,8 +9,6 @@ import emu.grasscutter.net.proto.GachaInfoOuterClass.GachaInfo;
 import emu.grasscutter.net.proto.GachaUpInfoOuterClass.GachaUpInfo;
 import emu.grasscutter.utils.Utils;
 import lombok.Getter;
-
-import static emu.grasscutter.config.Configuration.*;
 
 public class GachaBanner {
     // Constants used by the BannerType enum

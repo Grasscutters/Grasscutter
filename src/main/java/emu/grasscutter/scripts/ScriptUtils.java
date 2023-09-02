@@ -2,9 +2,8 @@ package emu.grasscutter.scripts;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.world.Position;
-import org.luaj.vm2.*;
-
 import java.util.HashMap;
+import org.luaj.vm2.*;
 
 public interface ScriptUtils {
     static HashMap<Object, Object> toMap(LuaTable table) {

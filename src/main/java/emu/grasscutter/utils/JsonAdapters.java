@@ -7,11 +7,10 @@ import emu.grasscutter.data.common.DynamicFloat;
 import emu.grasscutter.game.world.*;
 import it.unimi.dsi.fastutil.floats.FloatArrayList;
 import it.unimi.dsi.fastutil.ints.*;
-import lombok.val;
-
 import java.io.IOException;
 import java.lang.reflect.Field;
 import java.util.*;
+import lombok.val;
 
 public interface JsonAdapters {
     class DynamicFloatAdapter extends TypeAdapter<DynamicFloat> {

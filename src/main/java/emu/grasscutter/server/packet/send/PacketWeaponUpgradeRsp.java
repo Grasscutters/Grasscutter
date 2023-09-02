@@ -4,7 +4,6 @@ import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam;
 import emu.grasscutter.net.proto.WeaponUpgradeRspOuterClass.WeaponUpgradeRsp;
-
 import java.util.List;
 
 public class PacketWeaponUpgradeRsp extends BasePacket {

@@ -4,9 +4,8 @@ import emu.grasscutter.game.dungeons.DungeonManager;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.server.event.Event;
-import lombok.*;
-
 import java.util.List;
+import lombok.*;
 
 @Getter
 @RequiredArgsConstructor

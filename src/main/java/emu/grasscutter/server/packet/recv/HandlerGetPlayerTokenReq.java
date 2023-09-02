@@ -1,5 +1,7 @@
 package emu.grasscutter.server.packet.recv;
 
+import static emu.grasscutter.config.Configuration.ACCOUNT;
+
 import emu.grasscutter.*;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.player.Player;
@@ -11,12 +13,9 @@ import emu.grasscutter.server.game.GameSession.SessionState;
 import emu.grasscutter.server.packet.send.PacketGetPlayerTokenRsp;
 import emu.grasscutter.utils.*;
 import emu.grasscutter.utils.helpers.ByteHelper;
-
-import javax.crypto.Cipher;
 import java.nio.ByteBuffer;
 import java.security.Signature;
-
-import static emu.grasscutter.config.Configuration.ACCOUNT;
+import javax.crypto.Cipher;
 
 @Opcodes(PacketOpcodes.GetPlayerTokenReq)
 public class HandlerGetPlayerTokenReq extends PacketHandler {

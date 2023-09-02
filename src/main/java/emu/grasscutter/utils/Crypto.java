@@ -2,14 +2,13 @@ package emu.grasscutter.utils;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.server.http.objects.QueryCurRegionRspJson;
-
-import javax.crypto.Cipher;
 import java.io.ByteArrayOutputStream;
 import java.nio.file.Path;
 import java.security.*;
 import java.security.spec.*;
 import java.util.*;
 import java.util.regex.Pattern;
+import javax.crypto.Cipher;
 
 public final class Crypto {
 

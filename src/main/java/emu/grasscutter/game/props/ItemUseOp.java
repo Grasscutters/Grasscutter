@@ -1,7 +1,6 @@
 package emu.grasscutter.game.props;
 
 import it.unimi.dsi.fastutil.ints.*;
-
 import java.util.stream.Stream;
 
 public enum ItemUseOp {

@@ -2,7 +2,6 @@ package emu.grasscutter.server.packet.send;
 
 import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.QuestUpdateQuestVarNotifyOuterClass.QuestUpdateQuestVarNotify;
-
 import java.util.stream.IntStream;
 
 public class PacketQuestUpdateQuestVarNotify extends BasePacket {

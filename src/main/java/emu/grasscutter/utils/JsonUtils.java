@@ -7,7 +7,6 @@ import emu.grasscutter.game.world.*;
 import emu.grasscutter.utils.JsonAdapters.*;
 import emu.grasscutter.utils.objects.JObject;
 import it.unimi.dsi.fastutil.ints.IntList;
-
 import java.io.*;
 import java.lang.reflect.Type;
 import java.nio.charset.StandardCharsets;

@@ -7,7 +7,6 @@ import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.AvatarExpeditionGetRewardReqOuterClass.AvatarExpeditionGetRewardReq;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.*;
-
 import java.util.*;
 
 @Opcodes(PacketOpcodes.AvatarExpeditionGetRewardReq)

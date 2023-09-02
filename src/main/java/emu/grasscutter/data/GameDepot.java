@@ -7,9 +7,8 @@ import emu.grasscutter.game.managers.blossom.BlossomConfig;
 import emu.grasscutter.game.world.SpawnDataEntry;
 import emu.grasscutter.utils.objects.WeightedList;
 import it.unimi.dsi.fastutil.ints.*;
-import lombok.*;
-
 import java.util.*;
+import lombok.*;
 
 public class GameDepot {
     public static final int[] BLOCK_SIZE = new int[] {50, 500}; // Scales

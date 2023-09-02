@@ -12,10 +12,9 @@ import emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo;
 import emu.grasscutter.net.proto.TrialAvatarGrantRecordOuterClass.TrialAvatarGrantRecord.GrantReason;
 import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.JsonUtils;
-import lombok.*;
-
 import java.util.*;
 import java.util.stream.Stream;
+import lombok.*;
 
 @GameActivity(ActivityType.NEW_ACTIVITY_TRIAL_AVATAR)
 public class TrialAvatarActivityHandler extends ActivityHandler {

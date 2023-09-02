@@ -4,11 +4,10 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.server.http.handlers.GachaHandler;
 import emu.grasscutter.tools.Tools;
 import emu.grasscutter.utils.*;
-import lombok.val;
-
 import java.io.*;
 import java.nio.file.*;
 import java.util.*;
+import lombok.val;
 
 public class DataLoader {
 

@@ -1,5 +1,8 @@
 package emu.grasscutter.utils.lang;
 
+import static emu.grasscutter.config.Configuration.FALLBACK_LANGUAGE;
+import static emu.grasscutter.utils.FileUtils.*;
+
 import com.google.gson.*;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.*;
@@ -8,8 +11,6 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.utils.*;
 import it.unimi.dsi.fastutil.ints.*;
 import it.unimi.dsi.fastutil.objects.*;
-import lombok.EqualsAndHashCode;
-
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.*;
@@ -17,9 +18,7 @@ import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.regex.*;
 import java.util.stream.*;
-
-import static emu.grasscutter.config.Configuration.FALLBACK_LANGUAGE;
-import static emu.grasscutter.utils.FileUtils.*;
+import lombok.EqualsAndHashCode;
 
 public final class Language {
     private static final Map<String, Language> cachedLanguages = new ConcurrentHashMap<>();

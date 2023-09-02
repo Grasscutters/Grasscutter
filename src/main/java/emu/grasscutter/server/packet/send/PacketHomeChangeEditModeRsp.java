@@ -18,7 +18,7 @@ public class PacketHomeChangeEditModeRsp extends BasePacket {
     public PacketHomeChangeEditModeRsp(int retcode) {
         super(PacketOpcodes.HomeChangeEditModeRsp);
 
-        this.setData(HomeChangeEditModeRspOuterClass.HomeChangeEditModeRsp.newBuilder()
-            .setRetcode(retcode));
+        this.setData(
+                HomeChangeEditModeRspOuterClass.HomeChangeEditModeRsp.newBuilder().setRetcode(retcode));
     }
 }

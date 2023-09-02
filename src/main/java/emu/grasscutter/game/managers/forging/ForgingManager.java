@@ -14,7 +14,6 @@ import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
 import emu.grasscutter.server.event.player.PlayerForgeItemEvent;
 import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.Utils;
-
 import java.util.*;
 
 public final class ForgingManager extends BasePlayerManager {

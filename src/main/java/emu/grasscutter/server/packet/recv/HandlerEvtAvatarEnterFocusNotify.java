@@ -9,6 +9,12 @@ import emu.grasscutter.server.packet.send.PacketEvtAvatarEnterFocusNotify;
 public class HandlerEvtAvatarEnterFocusNotify extends PacketHandler {
     @Override
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
-        session.getPlayer().getScene().broadcastPacketToOthers(session.getPlayer(), new PacketEvtAvatarEnterFocusNotify(EvtAvatarEnterFocusNotifyOuterClass.EvtAvatarEnterFocusNotify.parseFrom(payload)));
+        session
+                .getPlayer()
+                .getScene()
+                .broadcastPacketToOthers(
+                        session.getPlayer(),
+                        new PacketEvtAvatarEnterFocusNotify(
+                                EvtAvatarEnterFocusNotifyOuterClass.EvtAvatarEnterFocusNotify.parseFrom(payload)));
     }
 }

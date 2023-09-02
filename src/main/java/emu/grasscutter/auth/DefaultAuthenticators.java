@@ -1,5 +1,8 @@
 package emu.grasscutter.auth;
 
+import static emu.grasscutter.config.Configuration.ACCOUNT;
+import static emu.grasscutter.utils.lang.Language.translate;
+
 import at.favre.lib.crypto.bcrypt.BCrypt;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.Grasscutter.ServerRunMode;
@@ -10,16 +13,12 @@ import emu.grasscutter.server.dispatch.*;
 import emu.grasscutter.server.http.objects.*;
 import emu.grasscutter.utils.*;
 import io.javalin.http.ContentType;
-
-import javax.crypto.Cipher;
 import java.nio.charset.StandardCharsets;
 import java.security.KeyFactory;
 import java.security.interfaces.RSAPrivateKey;
 import java.security.spec.PKCS8EncodedKeySpec;
 import java.util.concurrent.*;
-
-import static emu.grasscutter.config.Configuration.ACCOUNT;
-import static emu.grasscutter.utils.lang.Language.translate;
+import javax.crypto.Cipher;
 
 /** A class containing default authenticators. */
 public final class DefaultAuthenticators {

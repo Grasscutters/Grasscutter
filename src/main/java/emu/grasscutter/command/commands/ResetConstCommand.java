@@ -1,13 +1,12 @@
 package emu.grasscutter.command.commands;
 
+import static emu.grasscutter.utils.lang.Language.translate;
+
 import emu.grasscutter.command.*;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.player.Player;
-
 import java.util.List;
-
-import static emu.grasscutter.utils.lang.Language.translate;
 
 @Command(
         label = "resetConst",

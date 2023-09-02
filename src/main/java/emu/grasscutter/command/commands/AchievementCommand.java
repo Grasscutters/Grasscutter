@@ -5,7 +5,6 @@ import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.achievement.AchievementData;
 import emu.grasscutter.game.achievement.*;
 import emu.grasscutter.game.player.Player;
-
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 

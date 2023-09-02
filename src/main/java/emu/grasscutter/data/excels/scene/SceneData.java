@@ -3,9 +3,8 @@ package emu.grasscutter.data.excels.scene;
 import com.google.gson.annotations.SerializedName;
 import emu.grasscutter.data.*;
 import emu.grasscutter.game.props.SceneType;
-import lombok.Getter;
-
 import java.util.List;
+import lombok.Getter;
 
 @ResourceType(name = "SceneExcelConfigData.json")
 @Getter

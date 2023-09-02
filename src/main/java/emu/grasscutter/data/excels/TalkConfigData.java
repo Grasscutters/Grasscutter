@@ -3,9 +3,8 @@ package emu.grasscutter.data.excels;
 import com.google.gson.annotations.SerializedName;
 import emu.grasscutter.data.*;
 import emu.grasscutter.game.talk.TalkExec;
-import lombok.*;
-
 import java.util.List;
+import lombok.*;
 
 @ResourceType(name = "TalkExcelConfigData.json")
 @EqualsAndHashCode(callSuper = false)

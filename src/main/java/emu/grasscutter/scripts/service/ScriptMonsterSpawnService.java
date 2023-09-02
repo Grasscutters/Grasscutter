@@ -3,7 +3,6 @@ package emu.grasscutter.scripts.service;
 import emu.grasscutter.game.entity.EntityMonster;
 import emu.grasscutter.scripts.SceneScriptManager;
 import emu.grasscutter.scripts.listener.ScriptMonsterListener;
-
 import java.util.*;
 
 public class ScriptMonsterSpawnService {

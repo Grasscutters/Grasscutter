@@ -9,6 +9,10 @@ import emu.grasscutter.server.packet.send.PacketHomeSaveArrangementNoChangeRsp;
 public class HandlerHomeSaveArrangementNoChangeReq extends PacketHandler {
     @Override
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
-        session.send(new PacketHomeSaveArrangementNoChangeRsp(HomeSaveArrangementNoChangeReqOuterClass.HomeSaveArrangementNoChangeReq.parseFrom(payload).getSceneId()));
+        session.send(
+                new PacketHomeSaveArrangementNoChangeRsp(
+                        HomeSaveArrangementNoChangeReqOuterClass.HomeSaveArrangementNoChangeReq.parseFrom(
+                                        payload)
+                                .getSceneId()));
     }
 }
