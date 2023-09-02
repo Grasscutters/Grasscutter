@@ -143,7 +143,10 @@ public class HomeWorldMPSystem extends BaseGameSystem {
         int realmId = 2000 + owner.getCurrentRealmId();
         var item = targetHome.getHomeSceneItem(realmId);
         targetHome.save();
-        var pos = toSafe ? world.getSceneById(realmId).getScriptManager().getConfig().born_pos : item.getBornPos();
+        var pos =
+                toSafe
+                        ? world.getSceneById(realmId).getScriptManager().getConfig().born_pos
+                        : item.getBornPos();
 
         if (teleportPoint != 0) {
             var target = item.getTeleportPointPos(teleportPoint);
@@ -202,12 +205,23 @@ public class HomeWorldMPSystem extends BaseGameSystem {
         player.getPosition().set(pos);
         var world = new World(player);
         world.addPlayer(player, prevScene);
-        player.getCurHomeWorld().sendPacketToHostIfOnline(new PacketOtherPlayerEnterOrLeaveHomeNotify(player, OtherPlayerEnterHomeNotifyOuterClass.OtherPlayerEnterHomeNotify.Reason.LEAVE));
+        player
+                .getCurHomeWorld()
+                .sendPacketToHostIfOnline(
+                        new PacketOtherPlayerEnterOrLeaveHomeNotify(
+                                player,
+                                OtherPlayerEnterHomeNotifyOuterClass.OtherPlayerEnterHomeNotify.Reason.LEAVE));
         var myHome = this.server.getHomeWorldOrCreate(player);
         player.setCurHomeWorld(myHome);
         myHome.getHome().onOwnerLogin(player);
 
-        player.sendPacket(new PacketPlayerEnterSceneNotify(player, EnterTypeOuterClass.EnterType.ENTER_TYPE_BACK, EnterReason.TeamBack, prevScene, pos));
+        player.sendPacket(
+                new PacketPlayerEnterSceneNotify(
+                        player,
+                        EnterTypeOuterClass.EnterType.ENTER_TYPE_BACK,
+                        EnterReason.TeamBack,
+                        prevScene,
+                        pos));
 
         return true;
     }
@@ -239,7 +253,12 @@ public class HomeWorldMPSystem extends BaseGameSystem {
         victim.getPosition().set(victim.getPrevPosForHome());
         var world = new World(victim);
         world.addPlayer(victim, 3);
-        victim.getCurHomeWorld().sendPacketToHostIfOnline(new PacketOtherPlayerEnterOrLeaveHomeNotify(victim, OtherPlayerEnterHomeNotifyOuterClass.OtherPlayerEnterHomeNotify.Reason.LEAVE));
+        victim
+                .getCurHomeWorld()
+                .sendPacketToHostIfOnline(
+                        new PacketOtherPlayerEnterOrLeaveHomeNotify(
+                                victim,
+                                OtherPlayerEnterHomeNotifyOuterClass.OtherPlayerEnterHomeNotify.Reason.LEAVE));
         var myHome = this.server.getHomeWorldOrCreate(victim);
         victim.setCurHomeWorld(myHome);
         myHome.getHome().onOwnerLogin(victim);
