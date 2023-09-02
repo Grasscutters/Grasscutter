@@ -1,8 +1,10 @@
 package emu.grasscutter.game.home;
 
+import emu.grasscutter.data.GameData;
 import emu.grasscutter.game.entity.EntityTeam;
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.game.world.*;
+import emu.grasscutter.game.world.Scene;
+import emu.grasscutter.game.world.World;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.proto.ChatInfoOuterClass;
 import emu.grasscutter.server.game.GameServer;
@@ -18,6 +20,21 @@ public class HomeWorld extends World {
 
         this.home = owner.isOnline() ? owner.getHome() : GameHome.getByUid(owner.getUid());
         server.registerHomeWorld(this);
+    }
+
+    @Override
+    public void registerScene(Scene scene) {
+        this.addAnimalsToScene((HomeScene) scene);
+        super.registerScene(scene);
+    }
+
+    @Override
+    public void deregisterScene(Scene scene) {
+        super.deregisterScene(scene);
+    }
+
+    private void addAnimalsToScene(HomeScene scene) {
+        scene.getSceneItem().getAnimals(scene).forEach(scene::addEntity);
     }
 
     @Override
@@ -115,6 +132,23 @@ public class HomeWorld extends World {
                                         ChatInfoOuterClass.ChatInfo.SystemHintType.SYSTEM_HINT_TYPE_CHAT_LEAVE_WORLD
                                                 .getNumber())
                                 .build()));
+    }
+
+    @Override
+    public HomeScene getSceneById(int sceneId) {
+        var scene = this.getScenes().get(sceneId);
+        if (scene instanceof HomeScene homeScene) {
+            return homeScene;
+        }
+
+        var sceneData = GameData.getSceneDataMap().get(sceneId);
+        if (sceneData != null) {
+            scene = new HomeScene(this, sceneData);
+            this.registerScene(scene);
+            return (HomeScene) scene;
+        }
+
+        return null;
     }
 
     @Override

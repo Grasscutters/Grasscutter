@@ -1,9 +1,13 @@
 package emu.grasscutter.server.packet.recv;
 
-import emu.grasscutter.net.packet.*;
+import emu.grasscutter.net.packet.Opcodes;
+import emu.grasscutter.net.packet.PacketHandler;
+import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.HomeUpdateArrangementInfoReqOuterClass;
 import emu.grasscutter.server.game.GameSession;
-import emu.grasscutter.server.packet.send.*;
+import emu.grasscutter.server.packet.send.PacketHomeAvatarTalkFinishInfoNotify;
+import emu.grasscutter.server.packet.send.PacketHomeMarkPointNotify;
+import emu.grasscutter.server.packet.send.PacketHomeUpdateArrangementInfoRsp;
 
 @Opcodes(PacketOpcodes.HomeUpdateArrangementInfoReq)
 public class HandlerHomeUpdateArrangementInfoReq extends PacketHandler {
@@ -18,6 +22,7 @@ public class HandlerHomeUpdateArrangementInfoReq extends PacketHandler {
 
         homeScene.update(req.getSceneArrangementInfo());
 
+        session.send(new PacketHomeAvatarTalkFinishInfoNotify(session.getPlayer()));
         session.send(new PacketHomeMarkPointNotify(session.getPlayer()));
 
         session.getPlayer().getHome().save();

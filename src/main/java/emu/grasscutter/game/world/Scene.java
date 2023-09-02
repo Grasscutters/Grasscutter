@@ -1,7 +1,8 @@
 package emu.grasscutter.game.world;
 
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.data.*;
+import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.GameDepot;
 import emu.grasscutter.data.binout.SceneNpcBornEntry;
 import emu.grasscutter.data.binout.routes.Route;
 import emu.grasscutter.data.excels.ItemData;
@@ -11,14 +12,16 @@ import emu.grasscutter.data.excels.scene.SceneData;
 import emu.grasscutter.data.excels.world.WorldLevelData;
 import emu.grasscutter.data.server.Grid;
 import emu.grasscutter.game.avatar.Avatar;
-import emu.grasscutter.game.dungeons.*;
+import emu.grasscutter.game.dungeons.DungeonManager;
+import emu.grasscutter.game.dungeons.DungeonSettleListener;
 import emu.grasscutter.game.dungeons.challenge.WorldChallenge;
 import emu.grasscutter.game.dungeons.enums.DungeonPassConditionType;
 import emu.grasscutter.game.entity.*;
 import emu.grasscutter.game.entity.gadget.GadgetWorktop;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.managers.blossom.BlossomManager;
-import emu.grasscutter.game.player.*;
+import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.player.TeamInfo;
 import emu.grasscutter.game.props.*;
 import emu.grasscutter.game.quest.QuestGroupSuite;
 import emu.grasscutter.game.world.data.TeleportProperties;
@@ -26,9 +29,12 @@ import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.proto.*;
 import emu.grasscutter.net.proto.AttackResultOuterClass.AttackResult;
 import emu.grasscutter.net.proto.VisionTypeOuterClass.VisionType;
-import emu.grasscutter.scripts.*;
+import emu.grasscutter.scripts.SceneIndexManager;
+import emu.grasscutter.scripts.SceneScriptManager;
 import emu.grasscutter.scripts.constants.EventType;
-import emu.grasscutter.scripts.data.*;
+import emu.grasscutter.scripts.data.SceneBlock;
+import emu.grasscutter.scripts.data.SceneGroup;
+import emu.grasscutter.scripts.data.ScriptArgs;
 import emu.grasscutter.server.event.entity.EntityCreationEvent;
 import emu.grasscutter.server.event.player.PlayerTeleportEvent;
 import emu.grasscutter.server.packet.send.*;
@@ -36,12 +42,13 @@ import emu.grasscutter.server.scheduler.ServerTaskScheduler;
 import emu.grasscutter.utils.objects.KahnsSort;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import java.util.*;
-import java.util.concurrent.*;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.stream.Collectors;
 import javax.annotation.Nullable;
 import lombok.*;
 
-public final class Scene {
+public class Scene {
     @Getter private final World world;
     @Getter private final SceneData sceneData;
     @Getter private final List<Player> players;
@@ -66,7 +73,7 @@ public final class Scene {
     @Getter @Setter private int killedMonsterCount;
     private Set<SceneNpcBornEntry> npcBornEntrySet;
     @Getter private boolean finishedLoading = false;
-    @Getter private int tickCount = 0;
+    @Getter protected int tickCount = 0;
     @Getter private boolean isPaused = false;
 
     private final List<Runnable> afterLoadedCallbacks = new ArrayList<>();
@@ -456,7 +463,12 @@ public final class Scene {
     public void showOtherEntities(Player player) {
         GameEntity currentEntity = player.getTeamManager().getCurrentAvatarEntity();
         List<GameEntity> entities =
-                this.getEntities().values().stream().filter(entity -> entity != currentEntity).toList();
+                this.getEntities().values().stream()
+                        .filter(entity -> entity != currentEntity)
+                        .filter(
+                                gameEntity ->
+                                        !(gameEntity instanceof Rebornable rebornable) || !rebornable.isInCD())
+                        .toList();
 
         player.sendPacket(new PacketSceneEntityAppearNotify(entities, VisionType.VISION_TYPE_MEET));
     }
@@ -583,7 +595,7 @@ public final class Scene {
     }
 
     /** Validates a player's current position. Teleports the player if the player is out of bounds. */
-    private void checkPlayerRespawn() {
+    protected void checkPlayerRespawn() {
         if (this.getScriptManager().getConfig() == null) return;
         var diePos = this.getScriptManager().getConfig().die_y;
 
