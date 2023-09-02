@@ -409,6 +409,9 @@
     },
     "info": {
       "description": "Генерирует отладочную информацию для решения проблем."
+    },
+    "debug": {
+      "description": "🇺🇸Useful debugging commands for developers."
     }
   },
   "gacha": {

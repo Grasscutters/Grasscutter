@@ -409,6 +409,9 @@
     },
     "info": {
       "description": "🇺🇸Provides the sender information about the server."
+    },
+    "debug": {
+      "description": "🇺🇸Useful debugging commands for developers."
     }
   },
   "gacha": {
