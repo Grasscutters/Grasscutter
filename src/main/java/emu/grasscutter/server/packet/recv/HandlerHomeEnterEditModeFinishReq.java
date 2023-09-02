@@ -18,7 +18,11 @@ public class HandlerHomeEnterEditModeFinishReq extends PacketHandler {
          */
 
         var scene = session.getPlayer().getScene();
-        scene.removeEntities(scene.getEntities().values().stream().filter(gameEntity -> gameEntity instanceof EntityHomeAnimal).toList(), VisionTypeOuterClass.VisionType.VISION_TYPE_REMOVE);
+        scene.removeEntities(
+                scene.getEntities().values().stream()
+                        .filter(gameEntity -> gameEntity instanceof EntityHomeAnimal)
+                        .toList(),
+                VisionTypeOuterClass.VisionType.VISION_TYPE_REMOVE);
 
         session.send(new PacketHomeEnterEditModeFinishRsp());
     }

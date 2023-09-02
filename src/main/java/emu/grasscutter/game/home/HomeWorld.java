@@ -8,7 +8,6 @@ import emu.grasscutter.game.world.World;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.proto.ChatInfoOuterClass;
 import emu.grasscutter.server.game.GameServer;
-
 import emu.grasscutter.server.packet.send.*;
 import java.util.List;
 import lombok.Getter;

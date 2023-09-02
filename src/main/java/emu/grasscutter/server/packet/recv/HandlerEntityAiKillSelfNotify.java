@@ -11,7 +11,8 @@ import emu.grasscutter.server.game.GameSession;
 public class HandlerEntityAiKillSelfNotify extends PacketHandler {
     @Override
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
-        var entityId = EntityAiKillSelfNotifyOuterClass.EntityAiKillSelfNotify.parseFrom(payload).getEntityId();
+        var entityId =
+                EntityAiKillSelfNotifyOuterClass.EntityAiKillSelfNotify.parseFrom(payload).getEntityId();
         if (session.getPlayer().getScene().getEntityById(entityId) instanceof Rebornable rebornable) {
             rebornable.onAiKillSelf();
         }

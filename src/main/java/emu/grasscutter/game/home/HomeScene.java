@@ -31,12 +31,13 @@ public class HomeScene extends Scene {
     }
 
     @Override
-    public void setPaused(boolean paused) {
-    }
+    public void setPaused(boolean paused) {}
 
     @Override
     public void onTick() {
-        this.getEntities().values().forEach(gameEntity -> gameEntity.onTick(this.getSceneTimeSeconds()));
+        this.getEntities()
+                .values()
+                .forEach(gameEntity -> gameEntity.onTick(this.getSceneTimeSeconds()));
 
         this.finishLoading();
         this.checkPlayerRespawn();
@@ -44,18 +45,14 @@ public class HomeScene extends Scene {
     }
 
     @Override
-    public void checkNpcGroup() {
-    }
+    public void checkNpcGroup() {}
 
     @Override
-    public void checkSpawns() {
-    }
+    public void checkSpawns() {}
 
     @Override
-    public void addItemEntity(int itemId, int amount, GameEntity bornForm) {
-    }
+    public void addItemEntity(int itemId, int amount, GameEntity bornForm) {}
 
     @Override
-    public void loadNpcForPlayerEnter(Player player) {
-    }
+    public void loadNpcForPlayerEnter(Player player) {}
 }

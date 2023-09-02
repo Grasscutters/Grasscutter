@@ -48,7 +48,6 @@ import emu.grasscutter.game.quest.enums.QuestCond;
 import emu.grasscutter.game.world.GroupReplacementData;
 import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.*;
-
 import java.lang.reflect.Field;
 import java.util.*;
 import javax.annotation.Nullable;
@@ -281,7 +280,7 @@ public final class GameData {
 
     @Getter
     private static final Int2ObjectMap<HomeWorldAnimalData> homeWorldAnimalDataMap =
-        new Int2ObjectOpenHashMap<>();
+            new Int2ObjectOpenHashMap<>();
 
     @Getter
     private static final Int2ObjectMap<HomeWorldBgmData> homeWorldBgmDataMap =

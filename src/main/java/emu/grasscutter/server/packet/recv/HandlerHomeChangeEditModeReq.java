@@ -32,7 +32,13 @@ public class HandlerHomeChangeEditModeReq extends PacketHandler {
 
         if (!req.getIsEnterEditMode()) {
             var scene = session.getPlayer().getScene();
-            scene.addEntities(session.getPlayer().getCurHomeWorld().getHome().getHomeSceneItem(scene.getId()).getAnimals(scene));
+            scene.addEntities(
+                    session
+                            .getPlayer()
+                            .getCurHomeWorld()
+                            .getHome()
+                            .getHomeSceneItem(scene.getId())
+                            .getAnimals(scene));
         }
 
         session.send(new PacketHomeChangeEditModeRsp(req.getIsEnterEditMode()));

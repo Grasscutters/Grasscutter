@@ -13,10 +13,8 @@ import lombok.Getter;
 public class EntityHomeAnimal extends EntityMonster implements Rebornable {
     private int rebornCDTickCount;
     private final Position rebornPos;
-    @Getter
-    private final int rebirth;
-    @Getter
-    private final int rebirthCD;
+    @Getter private final int rebirth;
+    @Getter private final int rebirthCD;
     private boolean disappeared;
 
     public EntityHomeAnimal(Scene scene, HomeWorldAnimalData data, Position pos) {
@@ -28,8 +26,7 @@ public class EntityHomeAnimal extends EntityMonster implements Rebornable {
     }
 
     @Override
-    public void damage(float amount, int killerId, ElementType attackType) {
-    }
+    public void damage(float amount, int killerId, ElementType attackType) {}
 
     @Override
     public void onTick(int sceneTime) {
@@ -44,8 +41,7 @@ public class EntityHomeAnimal extends EntityMonster implements Rebornable {
     }
 
     @Override
-    public void onCreate() {
-    }
+    public void onCreate() {}
 
     @Override
     public Position getRebornPos() {
@@ -59,7 +55,10 @@ public class EntityHomeAnimal extends EntityMonster implements Rebornable {
 
     @Override
     public void onAiKillSelf() {
-        this.getScene().broadcastPacket(new PacketSceneEntityDisappearNotify(this, VisionTypeOuterClass.VisionType.VISION_TYPE_REMOVE));
+        this.getScene()
+                .broadcastPacket(
+                        new PacketSceneEntityDisappearNotify(
+                                this, VisionTypeOuterClass.VisionType.VISION_TYPE_REMOVE));
         this.rebornCDTickCount = this.getRebornCD();
         this.disappeared = true;
     }

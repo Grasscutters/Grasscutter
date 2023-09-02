@@ -41,7 +41,6 @@ import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.server.scheduler.ServerTaskScheduler;
 import emu.grasscutter.utils.objects.KahnsSort;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -465,9 +464,11 @@ public class Scene {
         GameEntity currentEntity = player.getTeamManager().getCurrentAvatarEntity();
         List<GameEntity> entities =
                 this.getEntities().values().stream()
-                    .filter(entity -> entity != currentEntity)
-                    .filter(gameEntity -> !(gameEntity instanceof Rebornable rebornable) || !rebornable.isInCD())
-                    .toList();
+                        .filter(entity -> entity != currentEntity)
+                        .filter(
+                                gameEntity ->
+                                        !(gameEntity instanceof Rebornable rebornable) || !rebornable.isInCD())
+                        .toList();
 
         player.sendPacket(new PacketSceneEntityAppearNotify(entities, VisionType.VISION_TYPE_MEET));
     }
