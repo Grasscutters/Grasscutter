@@ -1,17 +1,23 @@
 package emu.grasscutter.game.avatar;
 
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.excels.avatar.*;
+import emu.grasscutter.data.excels.avatar.AvatarData;
+import emu.grasscutter.data.excels.avatar.AvatarSkillDepotData;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.inventory.GameItem;
-import emu.grasscutter.game.player.*;
+import emu.grasscutter.game.player.BasePlayerManager;
+import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.event.entity.EntityCreationEvent;
-import emu.grasscutter.server.packet.send.*;
-import it.unimi.dsi.fastutil.ints.*;
-import it.unimi.dsi.fastutil.longs.*;
+import emu.grasscutter.server.packet.send.PacketAvatarChangeCostumeNotify;
+import emu.grasscutter.server.packet.send.PacketAvatarFlycloakChangeNotify;
+import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+import it.unimi.dsi.fastutil.longs.Long2ObjectMap;
+import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
 
-import java.util.*;
+import java.util.Iterator;
+import java.util.List;
 
 public class AvatarStorage extends BasePlayerManager implements Iterable<Avatar> {
     private final Int2ObjectMap<Avatar> avatars;
@@ -114,10 +120,13 @@ public class AvatarStorage extends BasePlayerManager implements Iterable<Avatar>
             entity =
                     EntityCreationEvent.call(
                             EntityAvatar.class, new Class<?>[] {Avatar.class}, new Object[] {avatar});
-            getPlayer().sendPacket(new PacketAvatarChangeCostumeNotify(entity));
+            getPlayer().getWorld().broadcastPacket(new PacketAvatarChangeCostumeNotify(entity));
         } else {
-            getPlayer().getScene().broadcastPacket(new PacketAvatarChangeCostumeNotify(entity));
+            getPlayer().getWorld().broadcastPacket(new PacketAvatarChangeCostumeNotify(entity));
         }
+
+        // Notify costume change to HomeWorld
+        this.getPlayer().getHome().onPlayerChangedAvatarCostume(avatar);
 
         // Done
         return true;

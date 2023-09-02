@@ -3,8 +3,12 @@ package emu.grasscutter.game.home;
 import dev.morphia.annotations.Entity;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.game.world.Position;
-import emu.grasscutter.net.proto.*;
-import lombok.*;
+import emu.grasscutter.net.proto.HomeMarkPointFurnitureDataOuterClass;
+import emu.grasscutter.net.proto.HomeMarkPointNPCDataOuterClass;
+import emu.grasscutter.net.proto.HomeNpcDataOuterClass;
+import lombok.AccessLevel;
+import lombok.Builder;
+import lombok.Data;
 import lombok.experimental.FieldDefaults;
 import org.jetbrains.annotations.Nullable;
 
@@ -24,7 +28,6 @@ public class HomeNPCItem implements HomeMarkPointProtoFactory {
             .avatarId(homeNpcData.getAvatarId())
             .spawnPos(new Position(homeNpcData.getSpawnPos()))
             .spawnRot(new Position(homeNpcData.getSpawnRot()))
-            .costumeId(homeNpcData.getCostumeId())
             .build();
     }
 

@@ -6,11 +6,14 @@ import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.HomeWorldLevelData;
 import emu.grasscutter.data.excels.scene.SceneData;
 import emu.grasscutter.database.DatabaseHelper;
+import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.SceneType;
 import emu.grasscutter.server.packet.send.*;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import lombok.*;
+import lombok.AccessLevel;
+import lombok.Builder;
+import lombok.Data;
 import lombok.experimental.FieldDefaults;
 
 import java.time.ZonedDateTime;
@@ -100,6 +103,24 @@ public class GameHome {
         player.getSession().send(new PacketHomeAllUnlockedBgmIdListNotify(player));
         checkAccumulatedResources(player);
         player.getSession().send(new PacketHomeResourceNotify(player));
+    }
+
+    public void onPlayerChangedAvatarCostume(Avatar avatar) {
+        var world = this.player.getServer().getHomeWorldOrCreate(this.player);
+        world.broadcastPacket(new PacketHomeAvatarCostumeChangeNotify(avatar.getAvatarId(), avatar.getCostume()));
+
+        this.sceneMap.values().stream()
+            .map(HomeSceneItem::getBlockItems)
+            .map(Map::values)
+            .flatMap(Collection::stream)
+            .map(HomeBlockItem::getDeployNPCList)
+            .flatMap(Collection::stream)
+            .filter(homeNPCItem -> homeNPCItem.getAvatarId() == avatar.getAvatarId())
+            .forEach(homeNPCItem -> homeNPCItem.setCostumeId(avatar.getCostume()));
+
+        this.save();
+
+        world.getPlayers().forEach(player -> player.sendPacket(new PacketHomeMarkPointNotify(player)));
     }
 
     // Tell the client the reward is claimed or realm unlocked
