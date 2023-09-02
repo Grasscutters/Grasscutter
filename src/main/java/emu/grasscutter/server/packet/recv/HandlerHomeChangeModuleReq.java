@@ -8,6 +8,8 @@ import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.HomeChangeModuleReqOuterClass;
 import emu.grasscutter.server.event.player.PlayerTeleportEvent.TeleportType;
 import emu.grasscutter.server.game.GameSession;
+
+import emu.grasscutter.server.packet.send.PacketHomeAvatarTalkFinishInfoNotify;
 import emu.grasscutter.server.packet.send.PacketHomeChangeModuleRsp;
 import emu.grasscutter.server.packet.send.PacketHomeComfortInfoNotify;
 import emu.grasscutter.server.packet.send.PacketPlayerHomeCompInfoNotify;
@@ -26,6 +28,7 @@ public class HandlerHomeChangeModuleReq extends PacketHandler {
         }
 
         session.getPlayer().setCurrentRealmId(req.getTargetModuleId());
+        session.send(new PacketHomeAvatarTalkFinishInfoNotify(session.getPlayer()));
         session.send(new PacketHomeChangeModuleRsp(req.getTargetModuleId()));
         session.send(new PacketPlayerHomeCompInfoNotify(session.getPlayer()));
         session.send(new PacketHomeComfortInfoNotify(session.getPlayer()));

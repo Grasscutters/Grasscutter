@@ -3,10 +3,15 @@ package emu.grasscutter.game.home;
 import dev.morphia.annotations.Entity;
 import dev.morphia.annotations.Id;
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.binout.HomeworldDefaultSaveData;
+import emu.grasscutter.game.entity.EntityHomeAnimal;
 import emu.grasscutter.game.world.Position;
+import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.net.proto.HomeSceneArrangementInfoOuterClass.HomeSceneArrangementInfo;
 
+import java.util.Collection;
+import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 import lombok.*;
@@ -75,6 +80,23 @@ public class HomeSceneItem {
 
     public boolean isRoom() {
         return mainHouse == null || mainHouse.getAsItem() == null;
+    }
+
+    public List<EntityHomeAnimal> getAnimals(Scene scene) {
+        return this.blockItems.values().stream()
+                .map(HomeBlockItem::getDeployAnimalList)
+                .flatMap(Collection::stream)
+                .filter(
+                        homeAnimalItem ->
+                                GameData.getHomeWorldAnimalDataMap().containsKey(homeAnimalItem.getFurnitureId()))
+                .map(
+                        homeAnimalItem -> {
+                            return new EntityHomeAnimal(
+                                    scene,
+                                    GameData.getHomeWorldAnimalDataMap().get(homeAnimalItem.getFurnitureId()),
+                                    homeAnimalItem.getSpawnPos());
+                        })
+                .toList();
     }
 
     public int calComfort() {

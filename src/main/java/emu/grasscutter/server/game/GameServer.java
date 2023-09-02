@@ -8,28 +8,36 @@ import emu.grasscutter.Grasscutter.ServerRunMode;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.game.battlepass.BattlePassSystem;
-import emu.grasscutter.game.chat.*;
+import emu.grasscutter.game.chat.ChatSystem;
+import emu.grasscutter.game.chat.ChatSystemHandler;
 import emu.grasscutter.game.combine.CombineManger;
-import emu.grasscutter.game.drop.*;
+import emu.grasscutter.game.drop.DropSystem;
+import emu.grasscutter.game.drop.DropSystemLegacy;
 import emu.grasscutter.game.dungeons.DungeonSystem;
 import emu.grasscutter.game.expedition.ExpeditionSystem;
 import emu.grasscutter.game.gacha.GachaSystem;
-import emu.grasscutter.game.home.*;
-import emu.grasscutter.game.managers.cooking.*;
+import emu.grasscutter.game.home.HomeWorld;
+import emu.grasscutter.game.home.HomeWorldMPSystem;
+import emu.grasscutter.game.managers.cooking.CookingCompoundManager;
+import emu.grasscutter.game.managers.cooking.CookingManager;
 import emu.grasscutter.game.managers.energy.EnergyManager;
 import emu.grasscutter.game.managers.stamina.StaminaManager;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.quest.QuestSystem;
 import emu.grasscutter.game.shop.ShopSystem;
-import emu.grasscutter.game.systems.*;
+import emu.grasscutter.game.systems.AnnouncementSystem;
+import emu.grasscutter.game.systems.InventorySystem;
+import emu.grasscutter.game.systems.MultiplayerSystem;
 import emu.grasscutter.game.talk.TalkSystem;
 import emu.grasscutter.game.tower.TowerSystem;
-import emu.grasscutter.game.world.*;
+import emu.grasscutter.game.world.World;
+import emu.grasscutter.game.world.WorldDataSystem;
 import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail;
 import emu.grasscutter.server.dispatch.DispatchClient;
 import emu.grasscutter.server.event.game.ServerTickEvent;
-import emu.grasscutter.server.event.internal.*;
+import emu.grasscutter.server.event.internal.ServerStartEvent;
+import emu.grasscutter.server.event.internal.ServerStopEvent;
 import emu.grasscutter.server.event.types.ServerEvent;
 import emu.grasscutter.server.scheduler.ServerTaskScheduler;
 import emu.grasscutter.task.TaskMap;
@@ -282,6 +290,9 @@ public final class GameServer extends KcpServer implements Iterable<Player> {
 
         // Tick worlds.
         this.worlds.removeIf(World::onTick);
+
+        // Tick Home Worlds (Not remove, HomeWorld is constant).
+        this.homeWorlds.values().forEach(HomeWorld::onTick);
 
         // Tick players.
         this.players.values().forEach(Player::onTick);
