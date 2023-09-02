@@ -68,7 +68,7 @@ public class ConfigContainer {
             }
         }); updated.version = version();
 
-        try { // Save configuration & reload.
+        try { // Save configuration and reload.
             Grasscutter.saveConfig(updated);
             Grasscutter.loadConfig();
         } catch (Exception exception) {

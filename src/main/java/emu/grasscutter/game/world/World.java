@@ -1,7 +1,5 @@
 package emu.grasscutter.game.world;
 
-import static emu.grasscutter.server.event.player.PlayerTeleportEvent.TeleportType.SCRIPT;
-
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.dungeon.DungeonData;
 import emu.grasscutter.game.entity.*;
@@ -20,9 +18,12 @@ import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.ConversionUtils;
 import it.unimi.dsi.fastutil.ints.*;
-import java.util.*;
 import lombok.*;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.*;
+
+import static emu.grasscutter.server.event.player.PlayerTeleportEvent.TeleportType.SCRIPT;
 
 public class World implements Iterable<Player> {
     @Getter private final GameServer server;
@@ -386,7 +387,7 @@ public class World implements Iterable<Player> {
         // Call player teleport event.
         PlayerTeleportEvent event =
                 new PlayerTeleportEvent(player, teleportProperties, player.getPosition());
-        // Call event & check if it was canceled.
+        // Call event and check if it was canceled.
         event.call();
         if (event.isCanceled()) {
             return false; // Teleport was canceled.

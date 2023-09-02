@@ -1,8 +1,5 @@
 package emu.grasscutter.game.quest;
 
-import static emu.grasscutter.GameConstants.DEBUG;
-import static emu.grasscutter.config.Configuration.*;
-
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.binout.*;
@@ -15,12 +12,16 @@ import emu.grasscutter.net.proto.GivingRecordOuterClass.GivingRecord;
 import emu.grasscutter.server.packet.send.*;
 import io.netty.util.concurrent.FastThreadLocalThread;
 import it.unimi.dsi.fastutil.ints.*;
+import lombok.*;
+
+import javax.annotation.Nonnull;
 import java.util.*;
 import java.util.concurrent.*;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
-import javax.annotation.Nonnull;
-import lombok.*;
+
+import static emu.grasscutter.GameConstants.DEBUG;
+import static emu.grasscutter.config.Configuration.*;
 
 public final class QuestManager extends BasePlayerManager {
     @Getter private final Player player;
@@ -57,7 +58,7 @@ public final class QuestManager extends BasePlayerManager {
             this.loggedQuests.addAll(
                     List.of(
                             31101, // Quest which holds talks 30902 and 30904.
-                            35001, // Quest which unlocks world border & starts act 2.
+                            35001, // Quest which unlocks world border and starts act 2.
                             30901, // Quest which is completed upon finishing all 3 initial dungeons.
                             30903, // Quest which is finished when re-entering scene 3. (home world)
                             30904, // Quest which unlocks the Adventurers' Guild

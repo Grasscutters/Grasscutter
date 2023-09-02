@@ -8,9 +8,10 @@ import emu.grasscutter.game.player.*;
 import emu.grasscutter.game.props.*;
 import emu.grasscutter.net.proto.ActivityInfoOuterClass;
 import emu.grasscutter.server.packet.send.PacketActivityScheduleInfoNotify;
+import lombok.Getter;
+
 import java.util.*;
 import java.util.concurrent.*;
-import lombok.Getter;
 
 @SuppressWarnings("unchecked")
 @Getter
@@ -26,7 +27,7 @@ public class ActivityManager extends BasePlayerManager {
     }
 
     public static void loadActivityConfigData() {
-        // scan activity type handler & watcher type
+        // scan activity type handler and watcher type
         var activityHandlerTypeMap = new HashMap<ActivityType, ConstructorAccess<?>>();
         var activityWatcherTypeMap = new HashMap<WatcherTriggerType, ConstructorAccess<?>>();
         Grasscutter.reflector

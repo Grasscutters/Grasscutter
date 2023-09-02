@@ -11,7 +11,7 @@ public final class ActionSetGlobalValue extends AbilityActionHandler {
     @Override
     public boolean execute(
             Ability ability, AbilityModifierAction action, ByteString abilityData, GameEntity target) {
-        // Get the key & value.
+        // Get the key and value.
         var valueKey = action.key;
         var value = action.ratio;
 
