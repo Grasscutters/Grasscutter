@@ -30,6 +30,8 @@ function move(p1, p2, p3) {
     console.info('路径', '=>', p1)
 	let x = fs.readdirSync(p1).map(x => x.replace('.java', ''))
     console.info('数量', '=>', x.length)
+    console.info('-----------------------------')
+    console.info('分析中...')
     let f = (m, o) => {
         for (let v of m) {
             search(path.join(p1, v + '.java'), x, o)
@@ -43,18 +45,22 @@ function move(p1, p2, p3) {
     o.push(...f(o, []))
 //    fs.writeFileSync('o.txt', o.join('\n'), 'utf8')
 //    fs.writeFileSync('x.txt', x.join('\n'), 'utf8')
+    console.info('-----------------------------')
     console.info('有效', '=>', o.length)
     console.info('无效', '=>', x.length)
-    console.info('移动', '=>', p1, '=>', p3)
     console.info('-----------------------------')
-    for (let v of x) {
-        v += '.java'
-        fs.renameSync(path.join(p1, v), path.join(p3, v))
+    if (x.length) {
+        console.info('移动', '=>', p1, '=>', p3)
+        for (let v of x) {
+            v += '.java'
+            fs.renameSync(path.join(p1, v), path.join(p3, v))
+        }
+        console.info('-----------------------------')
     }
 }
 
 function main(p1, p2) {
-	let p3 = 'proto_out'
+	let p3 = '../src/proto_oth'
 	if (!fs.existsSync(p3)) {
 	    fs.mkdirSync(p3)
 	}
