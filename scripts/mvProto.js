@@ -30,18 +30,18 @@ function move(p1, p2, p3) {
     console.info('路径', '=>', p1)
 	let n = fs.readdirSync(p1).map(x => x.replace('.java', ''))
     console.info('数量', '=>', n.length)
-    let f = (p, m, o) => {
+    let f = (m, o) => {
         for (let v of m) {
-            search(path.join(p, v + '.java'), n, o)
+            search(path.join(p1, v + '.java'), n, o)
         }
         if (o.length) {
-            o.push(...f(p1, o, []))
+            o.push(...f(o, []))
         }
         return o
     }
     let p = match(p2, n, [])
-    p.push(...f(p1, p, []))
-    console.info('有效', '=>', p.length)
+    let l = p.length + f(p, []).length
+    console.info('有效', '=>', l)
     console.info('无效', '=>', n.length)
     console.info('移动', '=>', p1, '=>', p3)
     console.info('-----------------------------')
