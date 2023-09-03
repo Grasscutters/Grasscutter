@@ -57,7 +57,7 @@ public final class QuestManager extends BasePlayerManager {
             this.loggedQuests.addAll(
                     List.of(
                             31101, // Quest which holds talks 30902 and 30904.
-                            35001, // Quest which unlocks world border & starts act 2.
+                            35001, // Quest which unlocks world border and starts act 2.
                             30901, // Quest which is completed upon finishing all 3 initial dungeons.
                             30903, // Quest which is finished when re-entering scene 3. (home world)
                             30904, // Quest which unlocks the Adventurers' Guild

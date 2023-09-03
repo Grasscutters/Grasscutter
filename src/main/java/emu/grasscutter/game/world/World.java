@@ -386,7 +386,7 @@ public class World implements Iterable<Player> {
         // Call player teleport event.
         PlayerTeleportEvent event =
                 new PlayerTeleportEvent(player, teleportProperties, player.getPosition());
-        // Call event & check if it was canceled.
+        // Call event and check if it was canceled.
         event.call();
         if (event.isCanceled()) {
             return false; // Teleport was canceled.

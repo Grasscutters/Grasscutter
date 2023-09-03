@@ -58,7 +58,7 @@ sourceCompatibility = JavaVersion.VERSION_17
 targetCompatibility = JavaVersion.VERSION_17
 
 group = 'io.grasscutter'
-version = '1.7.0'
+version = '1.7.1'
 
 java {
     withJavadocJar()
@@ -311,6 +311,8 @@ javadoc {
     // Add this to avoid warning caused by lack of comments in proto generated java files
     options.addStringOption('Xdoclint:none', '-quiet')
     exclude '**/*.md'
+    exclude 'src/handbook/**/*.*'
+    exclude 'src/generated/**/*.*'
 }
 
 tasks.register('injectGitHash') {

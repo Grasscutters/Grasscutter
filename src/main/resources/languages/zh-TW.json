@@ -409,6 +409,9 @@
     },
     "info": {
       "description": "產生疑難排解用的除錯資訊。"
+    },
+    "debug": {
+      "description": "🇺🇸Useful debugging commands for developers."
     }
   },
   "gacha": {

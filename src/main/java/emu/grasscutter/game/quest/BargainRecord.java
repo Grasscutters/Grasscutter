@@ -71,7 +71,7 @@ public final class BargainRecord {
             return this.result = BargainResultType.BARGAIN_COMPLETE_SUCC;
         }
 
-        // Compare the offer against the mood & expected price.
+        // Compare the offer against the mood and expected price.
         // The mood is out of 100; 1 mood should decrease the price by 100.
         var moodAdjustment = (int) Math.floor(this.getCurrentMood() / 100.0);
         var expectedPrice = this.getExpectedPrice() - moodAdjustment;

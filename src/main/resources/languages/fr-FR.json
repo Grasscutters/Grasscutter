@@ -409,6 +409,9 @@
     },
     "info": {
       "description": "Génère des informations de déboguage pour le dépannage."
+    },
+    "debug": {
+      "description": "🇺🇸Useful debugging commands for developers."
     }
   },
   "gacha": {

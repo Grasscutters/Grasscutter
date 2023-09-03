@@ -1,8 +1,12 @@
 package emu.grasscutter.server.packet.recv;
 
 import emu.grasscutter.game.home.GameHome;
-import emu.grasscutter.net.packet.*;
-import emu.grasscutter.net.proto.*;
+import emu.grasscutter.net.packet.Opcodes;
+import emu.grasscutter.net.packet.PacketHandler;
+import emu.grasscutter.net.packet.PacketOpcodes;
+import emu.grasscutter.net.proto.FriendEnterHomeOptionOuterClass;
+import emu.grasscutter.net.proto.RetcodeOuterClass;
+import emu.grasscutter.net.proto.TryEnterHomeReqOuterClass;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketTryEnterHomeRsp;
 
@@ -45,15 +49,30 @@ public class HandlerTryEnterHomeReq extends PacketHandler {
                                     RetcodeOuterClass.Retcode.RET_HOME_HOME_REFUSE_GUEST_ENTER_VALUE,
                                     req.getTargetUid()));
                 }
+
                 case FriendEnterHomeOptionOuterClass.FriendEnterHomeOption
                         .FRIEND_ENTER_HOME_OPTION_DIRECT_VALUE -> {
-                    session.getServer().getHomeWorldMPSystem().enterHome(session.getPlayer(), targetPlayer);
+                    session
+                            .getServer()
+                            .getHomeWorldMPSystem()
+                            .enterHome(
+                                    session.getPlayer(),
+                                    targetPlayer,
+                                    req.getTargetPoint(),
+                                    req.getIsTransferToSafePoint());
                 }
             }
 
             return;
         }
 
-        session.getServer().getHomeWorldMPSystem().enterHome(session.getPlayer(), targetPlayer);
+        session
+                .getServer()
+                .getHomeWorldMPSystem()
+                .enterHome(
+                        session.getPlayer(),
+                        targetPlayer,
+                        req.getTargetPoint(),
+                        req.getIsTransferToSafePoint());
     }
 }

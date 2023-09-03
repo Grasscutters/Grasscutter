@@ -328,11 +328,12 @@ public class GameMainQuest {
     }
 
     /**
-     * Checks if the quest has a teleport position. Returns true if it does & adds the target position
-     * & rotation to the list.
+     * Checks if the quest has a teleport position. Returns true if it does and adds the target
+     * position and rotation to the list.
      *
      * @param subId The sub-quest ID.
-     * @param posAndRot A list which will contain the position & rotation if the quest has a teleport.
+     * @param posAndRot A list which will contain the position and rotation if the quest has a
+     *     teleport.
      * @return True if the quest has a teleport position. False otherwise.
      */
     public boolean hasTeleportPosition(int subId, List<Position> posAndRot) {
@@ -340,7 +341,7 @@ public class GameMainQuest {
         if (questTransmit == null) return false;
 
         TeleportData.TransmitPoint transmitPoint =
-                questTransmit.getTransmit_points().size() > 0
+                !questTransmit.getTransmit_points().isEmpty()
                         ? questTransmit.getTransmit_points().get(0)
                         : null;
         if (transmitPoint == null) return false;

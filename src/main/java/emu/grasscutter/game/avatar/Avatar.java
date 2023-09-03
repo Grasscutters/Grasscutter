@@ -1299,7 +1299,7 @@ public class Avatar {
 
         // Check if the avatar is a trial avatar.
         if (this.getTrialAvatarId() > 0) {
-            // Add the artifacts & weapons for the avatar.
+            // Add the artifacts and weapons for the avatar.
             trialAvatar.addAllTrialEquipList(
                     this.getEquips().values().stream().map(GameItem::toProto).toList());
         }

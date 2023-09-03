@@ -26,7 +26,7 @@ public class ActivityManager extends BasePlayerManager {
     }
 
     public static void loadActivityConfigData() {
-        // scan activity type handler & watcher type
+        // scan activity type handler and watcher type
         var activityHandlerTypeMap = new HashMap<ActivityType, ConstructorAccess<?>>();
         var activityWatcherTypeMap = new HashMap<WatcherTriggerType, ConstructorAccess<?>>();
         Grasscutter.reflector

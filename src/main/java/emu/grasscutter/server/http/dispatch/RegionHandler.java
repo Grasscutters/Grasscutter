@@ -31,7 +31,7 @@ public final class RegionHandler implements Router {
     private static String regionListResponseCN;
 
     public RegionHandler() {
-        try { // Read & initialize region data.
+        try { // Read and initialize region data.
             this.initialize();
         } catch (Exception exception) {
             Grasscutter.getLogger().error("Failed to initialize region data.", exception);
