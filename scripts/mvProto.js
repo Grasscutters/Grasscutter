@@ -27,7 +27,7 @@ function match(p, n, o) {
 
 function move(p1, p2, p3) {
     console.info('-----------------------------')
-    console.info('路径', '=>', p1, '=>', p2)
+    console.info('路径', '=>', p1)
 	let n = fs.readdirSync(p1).map(x => x.replace('.java', ''))
     console.info('数量', '=>', n.length)
     let f = (p, m, o) => {
@@ -59,5 +59,8 @@ function main(p1, p2) {
 	move(p1, p2, p3)
 }
 
+console.time('耗时')
 //by 2y8e9h22
-main('../src/generated/main/java/emu/grasscutter/net/proto', '../src/main/java')
+main('../src/generated/main/java/emu/grasscutter/net/proto', '../src/main/java/emu/grasscutter')
+console.timeEnd('耗时')
+console.info('-----------------------------')
