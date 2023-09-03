@@ -26,6 +26,10 @@ jobs:
         with:
           distribution: temurin
           java-version: '17'
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
       - name: Cache gradle files
         uses: actions/cache@v2
         with:
@@ -41,6 +45,8 @@ jobs:
         with:
           url: https://api.grasscutter.io/static/handbook.html
           target: src/main/resources/html/
+      - name: Run mvProto
+        run: cd scripts && node mvProto.js && cd ..
       - name: Run Gradle
         run: ./gradlew -PskipHandbook=1 && ./gradlew jar -PskipHandbook=1
       - name: Upload build
