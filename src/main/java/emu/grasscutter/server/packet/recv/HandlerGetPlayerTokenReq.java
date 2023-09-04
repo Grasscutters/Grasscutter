@@ -1,6 +1,7 @@
 package emu.grasscutter.server.packet.recv;
 
 import static emu.grasscutter.config.Configuration.ACCOUNT;
+import static emu.grasscutter.config.Configuration.GAME_INFO;
 
 import emu.grasscutter.*;
 import emu.grasscutter.database.DatabaseHelper;
@@ -119,7 +120,7 @@ public class HandlerGetPlayerTokenReq extends PacketHandler {
                 var client_seed = ByteBuffer.wrap(cipher.doFinal(client_seed_encrypted)).getLong();
 
                 var seed_bytes =
-                        ByteBuffer.wrap(new byte[8]).putLong(Crypto.ENCRYPT_SEED ^ client_seed).array();
+                        ByteBuffer.wrap(new byte[8]).putLong((GAME_INFO.enableRandomEncryptSeed ? session.getEncryptSeed() : Crypto.ENCRYPT_SEED) ^ client_seed).array();
 
                 cipher.init(Cipher.ENCRYPT_MODE, Crypto.EncryptionKeys.get(req.getKeyId()));
                 var seed_encrypted = cipher.doFinal(seed_bytes);
@@ -136,7 +137,7 @@ public class HandlerGetPlayerTokenReq extends PacketHandler {
             } catch (Exception ignored) {
                 // Only UA Patch users will have exception
                 var clientBytes = Utils.base64Decode(req.getClientRandKey());
-                var seed = ByteHelper.longToBytes(Crypto.ENCRYPT_SEED);
+                var seed = ByteHelper.longToBytes(GAME_INFO.enableRandomEncryptSeed ? session.getEncryptSeed() : Crypto.ENCRYPT_SEED);
                 Crypto.xor(clientBytes, seed);
 
                 var base64str = Utils.base64Encode(clientBytes);

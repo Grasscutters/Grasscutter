@@ -169,6 +169,8 @@ public class ConfigContainer {
         /* This is the port used in the default region. */
         public int accessPort = 0;
 
+        public boolean enableRandomEncryptSeed = true;
+
         /* Entities within a certain range will be loaded for the player */
         public int loadEntitiesForPlayerRange = 300;
         /* Start in 'unstable-quests', Lua scripts will be enabled by default. */

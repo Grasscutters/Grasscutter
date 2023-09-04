@@ -23,6 +23,9 @@ public class GameSession implements GameSessionManager.KcpChannel {
     @Getter @Setter private Account account;
     @Getter private Player player;
 
+    @Getter private long encryptSeed;
+    private final byte[] encryptKey = new byte[4096];
+
     @Setter private boolean useSecretKey;
     @Getter @Setter private SessionState state;
 
@@ -34,6 +37,10 @@ public class GameSession implements GameSessionManager.KcpChannel {
         this.server = server;
         this.state = SessionState.WAITING_FOR_TOKEN;
         this.lastPingTime = System.currentTimeMillis();
+
+        if (GAME_INFO.enableRandomEncryptSeed) {
+            encryptSeed = Crypto.generateEncryptKeyAndSeed(encryptKey);
+        }
     }
 
     public GameServer getServer() {
@@ -133,7 +140,12 @@ public class GameSession implements GameSessionManager.KcpChannel {
         event.call();
         if (!event.isCanceled()) { // If event is not cancelled, continue.
             try {
-                tunnel.writeData(event.getPacket().build());
+                packet = event.getPacket();
+                var bytes = packet.build();
+                if (packet.shouldEncrypt) {
+                    Crypto.xor(bytes, packet.useDispatchKey() ? Crypto.DISPATCH_KEY : GAME_INFO.enableRandomEncryptSeed ? encryptKey : Crypto.ENCRYPT_KEY);
+                }
+                tunnel.writeData(bytes);
             } catch (Exception ignored) {
                 Grasscutter.getLogger().debug("Unable to send packet to client.");
             }
@@ -149,7 +161,7 @@ public class GameSession implements GameSessionManager.KcpChannel {
     @Override
     public void handleReceive(byte[] bytes) {
         // Decrypt and turn back into a packet
-        Crypto.xor(bytes, useSecretKey() ? Crypto.ENCRYPT_KEY : Crypto.DISPATCH_KEY);
+        Crypto.xor(bytes, useSecretKey() ? GAME_INFO.enableRandomEncryptSeed ? encryptKey : Crypto.ENCRYPT_KEY : Crypto.DISPATCH_KEY);
         ByteBuf packet = Unpooled.wrappedBuffer(bytes);
 
         // Log
