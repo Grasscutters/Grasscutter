@@ -42,7 +42,7 @@ function move(p1, p2, p3) {
         return o
     }
     let o = match(p2, x, [])
-    if (x.length) {
+    if (o.length && x.length) {
         o.push(...f(o, []))
     }
 //    fs.writeFileSync('o.txt', o.join('\n'), 'utf8')
