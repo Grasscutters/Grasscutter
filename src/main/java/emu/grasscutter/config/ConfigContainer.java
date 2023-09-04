@@ -33,9 +33,11 @@ public class ConfigContainer {
      *              Lua script require system if performance is a concern.
      * Version 12 - 'http.startImmediately' was added to control whether the
      *              HTTP server should start immediately.
+     * Version 13 - 'game.enableRandomEncryptSeed' was added to control whether the
+     *              encryption use random seed and key.
      */
     private static int version() {
-        return 12;
+        return 13;
     }
 
     /**
