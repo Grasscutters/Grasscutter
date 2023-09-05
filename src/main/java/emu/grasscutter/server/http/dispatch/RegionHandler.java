@@ -27,6 +27,7 @@ import org.slf4j.Logger;
 /** Handles requests related to region queries. */
 public final class RegionHandler implements Router {
     private static final Map<String, RegionData> regions = new ConcurrentHashMap<>();
+    private static final Map<String, String> playerRegions = new ConcurrentHashMap<>();
     private static String regionListResponse;
     private static String regionListResponseCN;
 
@@ -237,6 +238,11 @@ public final class RegionHandler implements Router {
             if (region != null) regionData = region.getBase64();
         }
 
+        String aid = ctx.queryParam("aid");
+        if (aid != null) {
+            playerRegions.put(aid, regionName);
+        }
+
         var clientVersion = versionName.replaceAll(Pattern.compile("[a-zA-Z]").pattern(), "");
         var versionCode = clientVersion.split("\\.");
         var versionMajor = Integer.parseInt(versionCode[0]);
@@ -344,9 +350,9 @@ public final class RegionHandler implements Router {
      *
      * @return A {@link QueryCurrRegionHttpRsp} object.
      */
-    public static QueryCurrRegionHttpRsp getCurrentRegion() {
+    public static QueryCurrRegionHttpRsp getCurrentRegion(String aid) {
         return Grasscutter.getRunMode() == ServerRunMode.HYBRID
-                ? regions.get("os_usa").getRegionQuery()
-                : null;
+            ? regions.get(playerRegions.getOrDefault(aid, "os_usa")).getRegionQuery()
+            : null;
     }
 }

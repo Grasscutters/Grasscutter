@@ -21,7 +21,7 @@ public class PacketPlayerLoginRsp extends BasePacket {
     public PacketPlayerLoginRsp(GameSession session) {
         super(PacketOpcodes.PlayerLoginRsp, 1);
 
-        this.setUseDispatchKey(true);
+//        this.setUseDispatchKey(true);
 
         RegionInfo info;
 
@@ -47,7 +47,7 @@ public class PacketPlayerLoginRsp extends BasePacket {
 
             info = regionCache.getRegionInfo();
         } else {
-            info = Objects.requireNonNull(RegionHandler.getCurrentRegion()).getRegionInfo();
+            info = Objects.requireNonNull(RegionHandler.getCurrentRegion(session.getAccount().getId())).getRegionInfo();
         }
 
         PlayerLoginRsp p =
