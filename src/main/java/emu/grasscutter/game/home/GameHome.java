@@ -65,6 +65,7 @@ public class GameHome {
             home = GameHome.create(uid);
         }
 
+        home.reassignIfNull();
         home.fixMainHouseIfOld();
         home.syncHomeAvatarCostume();
 
@@ -85,6 +86,15 @@ public class GameHome {
                 .finishedTalkIdMap(new HashMap<>())
                 .finishedRewardEventIdSet(new HashSet<>())
                 .build();
+    }
+
+    // avoid NPE caused by database remover.
+    private void reassignIfNull() {
+        this.getSceneMap().values().stream()
+            .map(HomeSceneItem::getBlockItems)
+            .map(Map::values)
+            .flatMap(Collection::stream)
+            .forEach(HomeBlockItem::reassignIfNull);
     }
 
     // Data fixer.

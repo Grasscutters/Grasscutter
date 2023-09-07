@@ -54,6 +54,7 @@ public class HomeModuleManager {
 
     public void onUpdateArrangement() {
         this.fireAllAvatarRewardEvent();
+        this.cancelSummonEventIfAvatarLeave();
     }
 
     private void fireAllAvatarRewardEvent() {
@@ -66,7 +67,6 @@ public class HomeModuleManager {
 
         var suites = allBlockItems.stream()
             .map(HomeBlockItem::getSuiteList)
-            .filter(Objects::nonNull)
             .flatMap(Collection::stream)
             .distinct()
             .toList();
@@ -86,8 +86,22 @@ public class HomeModuleManager {
             });
 
         if (this.summonEvents != null) {
-            this.summonEvents.removeIf(event -> this.rewardEvents.stream().anyMatch(e -> e.getAvatarId() == event.getAvatarId()));
+            var suiteIdList = this.rewardEvents.stream().map(HomeAvatarRewardEvent::getSuiteId).toList();
+            this.summonEvents.removeIf(event -> suiteIdList.contains(event.getSuiteId()));
         }
+    }
+
+    private void cancelSummonEventIfAvatarLeave() {
+        var avatars = Stream.of(this.getOutdoorSceneItem(), this.getIndoorSceneItem())
+            .map(HomeSceneItem::getBlockItems)
+            .map(Map::values)
+            .flatMap(Collection::stream)
+            .map(HomeBlockItem::getDeployNPCList)
+            .flatMap(Collection::stream)
+            .map(HomeNPCItem::getAvatarId)
+            .toList();
+
+        this.summonEvents.removeIf(event -> !avatars.contains(event.getAvatarId()));
     }
 
     public Either<List<GameItem>, Integer> claimAvatarRewards(int eventId) {
@@ -111,7 +125,6 @@ public class HomeModuleManager {
     public Either<HomeAvatarSummonEvent, Integer> fireAvatarSummonEvent(Player owner, int avatarId, int guid, int suiteId) {
         var targetSuite = ((HomeScene) owner.getScene()).getSceneItem().getBlockItems().values().stream()
             .map(HomeBlockItem::getSuiteList)
-            .filter(Objects::nonNull)
             .flatMap(Collection::stream)
             .filter(suite -> suite.getGuid() == guid)
             .findFirst()
@@ -169,10 +182,6 @@ public class HomeModuleManager {
 
     public boolean isInRewardEvent(int avatarId) {
         return this.rewardEvents.stream().anyMatch(e -> e.getAvatarId() == avatarId);
-    }
-
-    public boolean isInSummonEvent(int avatarId) {
-        return this.summonEvents.stream().anyMatch(e -> e.getAvatarId() == avatarId);
     }
 
     public HomeSceneItem getOutdoorSceneItem() {
