@@ -39,7 +39,7 @@ public class World implements Iterable<Player> {
     @Getter private boolean timeLocked;
 
     private long lastUpdateTime;
-    @Getter private int tickCount = 0;
+    @Getter protected int tickCount = 0;
     @Getter private boolean isPaused = false;
     @Getter private long currentWorldTime;
 

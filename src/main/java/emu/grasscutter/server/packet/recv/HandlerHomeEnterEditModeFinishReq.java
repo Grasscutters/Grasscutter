@@ -1,10 +1,9 @@
 package emu.grasscutter.server.packet.recv;
 
-import emu.grasscutter.game.entity.EntityHomeAnimal;
+import emu.grasscutter.game.home.HomeScene;
 import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.packet.PacketOpcodes;
-import emu.grasscutter.net.proto.VisionTypeOuterClass;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketHomeEnterEditModeFinishRsp;
 
@@ -17,12 +16,8 @@ public class HandlerHomeEnterEditModeFinishReq extends PacketHandler {
          * This packet is about the edit mode
          */
 
-        var scene = session.getPlayer().getScene();
-        scene.removeEntities(
-                scene.getEntities().values().stream()
-                        .filter(gameEntity -> gameEntity instanceof EntityHomeAnimal)
-                        .toList(),
-                VisionTypeOuterClass.VisionType.VISION_TYPE_REMOVE);
+        var scene = (HomeScene) session.getPlayer().getScene();
+        scene.onEnterEditModeFinish();
 
         session.send(new PacketHomeEnterEditModeFinishRsp());
     }
