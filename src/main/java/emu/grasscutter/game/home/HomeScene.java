@@ -43,7 +43,6 @@ public class HomeScene extends Scene {
                 .forEach(gameEntity -> gameEntity.onTick(this.getSceneTimeSeconds()));
 
         this.finishLoading();
-        this.checkPlayerRespawn();
         if (this.tickCount++ % 10 == 0) this.broadcastPacket(new PacketSceneTimeNotify(this));
     }
 

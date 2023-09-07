@@ -213,7 +213,9 @@ public class HomeWorld extends World {
     }
 
     public void ifHost(Player hostOrGuest, Consumer<Player> ifHost) {
-        ifHost.accept(hostOrGuest);
+        if (this.getHost().equals(hostOrGuest)) {
+            ifHost.accept(hostOrGuest);
+        }
     }
 
     public void sendPacketToHostIfOnline(BasePacket basePacket) {

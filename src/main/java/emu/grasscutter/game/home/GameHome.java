@@ -252,7 +252,9 @@ public class GameHome {
             this.finishedRewardEventIdSet = new HashSet<>();
         }
 
-        return this.finishedRewardEventIdSet.add(eventId);
+        var success = this.finishedRewardEventIdSet.add(eventId);
+        this.save();
+        return success;
     }
 
     public boolean isRewardEventFinished(int eventId) {
