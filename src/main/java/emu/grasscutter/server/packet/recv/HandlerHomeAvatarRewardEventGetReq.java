@@ -20,6 +20,11 @@ public class HandlerHomeAvatarRewardEventGetReq extends PacketHandler {
         session.send(new PacketHomeAvatarRewardEventNotify(player));
         session.send(new PacketHomeAvatarAllFinishRewardNotify(player));
 
-        session.send(rewardsOrError.map(PacketHomeAvatarRewardEventGetRsp::new, PacketHomeAvatarRewardEventGetRsp::new));
+        session.send(
+            rewardsOrError.map(
+                gameItems -> new PacketHomeAvatarRewardEventGetRsp(req.getEventId(), gameItems),
+                integer -> new PacketHomeAvatarRewardEventGetRsp(req.getEventId(), integer)
+            )
+        );
     }
 }

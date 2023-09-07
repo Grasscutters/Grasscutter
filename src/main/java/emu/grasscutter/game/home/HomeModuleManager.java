@@ -106,19 +106,18 @@ public class HomeModuleManager {
 
     public Either<List<GameItem>, Integer> claimAvatarRewards(int eventId) {
         if (this.rewardEvents.isEmpty()) {
-            return Either.right(RetcodeOuterClass.Retcode.RET_HOME_CLIENT_PARAM_INVALID_VALUE);
+            return Either.right(RetcodeOuterClass.Retcode.RET_FAIL_VALUE);
         }
 
         var event = this.rewardEvents.remove(0);
         if (event.getEventId() != eventId) {
-            return Either.right(RetcodeOuterClass.Retcode.RET_HOME_CLIENT_PARAM_INVALID_VALUE);
+            return Either.right(RetcodeOuterClass.Retcode.RET_FAIL_VALUE);
         }
 
         if (!this.homeOwner.getHome().onClaimAvatarRewards(eventId)) {
-            return Either.right(RetcodeOuterClass.Retcode.RET_REWARD_HAS_TAKEN_VALUE);
+            return Either.right(RetcodeOuterClass.Retcode.RET_FAIL_VALUE);
         }
 
-        Grasscutter.getLogger().info(this.rewardEvents.toString());
         return Either.left(event.giveRewards());
     }
 

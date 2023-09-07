@@ -8,17 +8,19 @@ import emu.grasscutter.net.proto.HomeAvatarRewardEventGetRspOuterClass;
 import java.util.List;
 
 public class PacketHomeAvatarRewardEventGetRsp extends BasePacket {
-    public PacketHomeAvatarRewardEventGetRsp(List<GameItem> rewards) {
+    public PacketHomeAvatarRewardEventGetRsp(int eventId, List<GameItem> rewards) {
         super(PacketOpcodes.HomeAvatarRewardEventGetRsp);
 
         this.setData(HomeAvatarRewardEventGetRspOuterClass.HomeAvatarRewardEventGetRsp.newBuilder()
+            .setEventId(eventId)
             .addAllItemList(rewards.stream().map(GameItem::toItemParam).toList()));
     }
 
-    public PacketHomeAvatarRewardEventGetRsp(int retcode) {
+    public PacketHomeAvatarRewardEventGetRsp(int eventId, int retcode) {
         super(PacketOpcodes.HomeAvatarRewardEventGetRsp);
 
         this.setData(HomeAvatarRewardEventGetRspOuterClass.HomeAvatarRewardEventGetRsp.newBuilder()
+            .setEventId(eventId)
             .setRetcode(retcode));
     }
 }
