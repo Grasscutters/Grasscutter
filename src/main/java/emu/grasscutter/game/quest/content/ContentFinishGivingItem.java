@@ -9,6 +9,7 @@ public final class ContentFinishGivingItem extends BaseContent {
     @Override
     public boolean execute(
             GameQuest quest, QuestData.QuestContentCondition condition, String paramStr, int... params) {
+        if(condition.getParam().length == 1) return condition.getParam()[0] == params[0];
         return condition.getParam()[0] == params[0] && condition.getParam()[1] == params[1];
     }
 }
