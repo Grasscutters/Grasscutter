@@ -13,7 +13,10 @@ public class HandlerHomeAvatarSummonEventReq extends PacketHandler {
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
         var req = HomeAvatarSummonEventReqOuterClass.HomeAvatarSummonEventReq.parseFrom(payload);
         var moduleManager = session.getPlayer().getCurHomeWorld().getModuleManager();
-        var eventOrError = moduleManager.fireAvatarSummonEvent(session.getPlayer(), req.getAvatarId(), req.getGuid(), req.getSuitId());
-        session.send(eventOrError.map(PacketHomeAvatarSummonEventRsp::new, PacketHomeAvatarSummonEventRsp::new));
+        var eventOrError =
+                moduleManager.fireAvatarSummonEvent(
+                        session.getPlayer(), req.getAvatarId(), req.getGuid(), req.getSuitId());
+        session.send(
+                eventOrError.map(PacketHomeAvatarSummonEventRsp::new, PacketHomeAvatarSummonEventRsp::new));
     }
 }

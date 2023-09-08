@@ -8,7 +8,8 @@ public class PacketHomeAvatarSummonFinishRsp extends BasePacket {
     public PacketHomeAvatarSummonFinishRsp(int eventId) {
         super(PacketOpcodes.HomeAvatarSummonFinishRsp);
 
-        this.setData(HomeAvatarSummonFinishRspOuterClass.HomeAvatarSummonFinishRsp.newBuilder()
-            .setEventId(eventId));
+        this.setData(
+                HomeAvatarSummonFinishRspOuterClass.HomeAvatarSummonFinishRsp.newBuilder()
+                        .setEventId(eventId));
     }
 }

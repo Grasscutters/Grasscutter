@@ -8,9 +8,8 @@ import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.net.proto.VisionTypeOuterClass;
 import emu.grasscutter.server.packet.send.PacketSceneEntityAppearNotify;
 import emu.grasscutter.server.packet.send.PacketSceneEntityDisappearNotify;
-import lombok.Getter;
-
 import java.util.concurrent.atomic.AtomicBoolean;
+import lombok.Getter;
 
 public class EntityHomeAnimal extends EntityMonster implements Rebornable {
     private int rebornCDTickCount;

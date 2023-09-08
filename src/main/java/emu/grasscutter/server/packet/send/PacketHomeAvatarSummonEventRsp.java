@@ -9,14 +9,16 @@ public class PacketHomeAvatarSummonEventRsp extends BasePacket {
     public PacketHomeAvatarSummonEventRsp(HomeAvatarSummonEvent event) {
         super(PacketOpcodes.HomeAvatarSummonEventRsp);
 
-        this.setData(HomeAvatarSummonEventRspOuterClass.HomeAvatarSummonEventRsp.newBuilder()
-            .setEventId(event.getEventId()));
+        this.setData(
+                HomeAvatarSummonEventRspOuterClass.HomeAvatarSummonEventRsp.newBuilder()
+                        .setEventId(event.getEventId()));
     }
 
     public PacketHomeAvatarSummonEventRsp(int retcode) {
         super(PacketOpcodes.HomeAvatarSummonEventRsp);
 
-        this.setData(HomeAvatarSummonEventRspOuterClass.HomeAvatarSummonEventRsp.newBuilder()
-            .setRetcode(retcode));
+        this.setData(
+                HomeAvatarSummonEventRspOuterClass.HomeAvatarSummonEventRsp.newBuilder()
+                        .setRetcode(retcode));
     }
 }

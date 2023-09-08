@@ -17,7 +17,7 @@ public class HandlerHomeChangeModuleReq extends PacketHandler {
     @Override
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
         HomeChangeModuleReqOuterClass.HomeChangeModuleReq req =
-            HomeChangeModuleReqOuterClass.HomeChangeModuleReq.parseFrom(payload);
+                HomeChangeModuleReqOuterClass.HomeChangeModuleReq.parseFrom(payload);
 
         var homeWorld = session.getPlayer().getCurHomeWorld();
         if (!homeWorld.getGuests().isEmpty()) {

@@ -67,9 +67,10 @@ public class HomeBlockItem {
                         .map(homeNpcData -> HomeNPCItem.parseFrom(homeNpcData, owner))
                         .toList();
 
-        this.suiteList = homeBlockArrangementInfo.getFurnitureSuiteListList().stream()
-            .map(HomeSuiteItem::parseFrom)
-            .toList();
+        this.suiteList =
+                homeBlockArrangementInfo.getFurnitureSuiteListList().stream()
+                        .map(HomeSuiteItem::parseFrom)
+                        .toList();
     }
 
     public int calComfort() {
@@ -98,7 +99,11 @@ public class HomeBlockItem {
     public List<? extends HomeMarkPointProtoFactory> getMarkPointProtoFactories() {
         this.reassignIfNull();
 
-        return Stream.of(this.deployFurnitureList, this.persistentFurnitureList, this.deployNPCList, this.suiteList)
+        return Stream.of(
+                        this.deployFurnitureList,
+                        this.persistentFurnitureList,
+                        this.deployNPCList,
+                        this.suiteList)
                 .flatMap(Collection::stream)
                 .toList();
     }

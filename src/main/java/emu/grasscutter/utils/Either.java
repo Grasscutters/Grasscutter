@@ -14,7 +14,8 @@ public abstract class Either<L, R> {
         }
 
         @Override
-        public <U, V> Either<U, V> mapBoth(Function<? super L, ? extends U> f1, Function<? super R, ? extends V> f2) {
+        public <U, V> Either<U, V> mapBoth(
+                Function<? super L, ? extends U> f1, Function<? super R, ? extends V> f2) {
             return new Left<>(f1.apply(this.value));
         }
 
@@ -71,7 +72,8 @@ public abstract class Either<L, R> {
         }
 
         @Override
-        public <U, V> Either<U, V> mapBoth(Function<? super L, ? extends U> f1, Function<? super R, ? extends V> f2) {
+        public <U, V> Either<U, V> mapBoth(
+                Function<? super L, ? extends U> f1, Function<? super R, ? extends V> f2) {
             return new Right<>(f2.apply(this.value));
         }
 
@@ -120,10 +122,10 @@ public abstract class Either<L, R> {
         }
     }
 
-    private Either() {
-    }
+    private Either() {}
 
-    public abstract <U, V> Either<U, V> mapBoth(Function<? super L, ? extends U> f1, Function<? super R, ? extends V> f2);
+    public abstract <U, V> Either<U, V> mapBoth(
+            Function<? super L, ? extends U> f1, Function<? super R, ? extends V> f2);
 
     public abstract <T> T map(Function<? super L, ? extends T> l, Function<? super R, ? extends T> r);
 

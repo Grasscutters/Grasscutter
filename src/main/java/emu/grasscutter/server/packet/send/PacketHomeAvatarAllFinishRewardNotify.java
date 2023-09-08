@@ -11,8 +11,9 @@ public class PacketHomeAvatarAllFinishRewardNotify extends BasePacket {
 
         var list = player.getHome().getFinishedRewardEventIdSet();
         if (list != null) {
-            this.setData(HomeAvatarAllFinishRewardNotifyOuterClass.HomeAvatarAllFinishRewardNotify.newBuilder()
-                .addAllEventIdList(player.getHome().getFinishedRewardEventIdSet()));
+            this.setData(
+                    HomeAvatarAllFinishRewardNotifyOuterClass.HomeAvatarAllFinishRewardNotify.newBuilder()
+                            .addAllEventIdList(player.getHome().getFinishedRewardEventIdSet()));
         }
     }
 }

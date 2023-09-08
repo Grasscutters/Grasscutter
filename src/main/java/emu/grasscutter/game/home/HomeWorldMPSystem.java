@@ -212,7 +212,10 @@ public class HomeWorldMPSystem extends BaseGameSystem {
         player.setCurHomeWorld(myHome);
         myHome.getHome().onOwnerLogin(player);
 
-        player.sendPacket(new PacketPlayerQuitFromHomeNotify(PlayerQuitFromHomeNotifyOuterClass.PlayerQuitFromHomeNotify.QuitReason.BACK_TO_MY_WORLD));
+        player.sendPacket(
+                new PacketPlayerQuitFromHomeNotify(
+                        PlayerQuitFromHomeNotifyOuterClass.PlayerQuitFromHomeNotify.QuitReason
+                                .BACK_TO_MY_WORLD));
         player.sendPacket(
                 new PacketPlayerEnterSceneNotify(
                         player,
@@ -261,7 +264,9 @@ public class HomeWorldMPSystem extends BaseGameSystem {
         victim.setCurHomeWorld(myHome);
         myHome.getHome().onOwnerLogin(victim);
 
-        victim.sendPacket(new PacketPlayerQuitFromHomeNotify(PlayerQuitFromHomeNotifyOuterClass.PlayerQuitFromHomeNotify.QuitReason.KICK_BY_HOST));
+        victim.sendPacket(
+                new PacketPlayerQuitFromHomeNotify(
+                        PlayerQuitFromHomeNotifyOuterClass.PlayerQuitFromHomeNotify.QuitReason.KICK_BY_HOST));
         victim.sendPacket(
                 new PacketPlayerEnterSceneNotify(
                         victim,

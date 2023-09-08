@@ -12,17 +12,16 @@ import emu.grasscutter.game.props.SceneType;
 import emu.grasscutter.net.proto.HomeAvatarTalkFinishInfoOuterClass;
 import emu.grasscutter.server.packet.send.*;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import lombok.AccessLevel;
-import lombok.Builder;
-import lombok.Data;
-import lombok.experimental.FieldDefaults;
-
 import java.time.ZonedDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+import lombok.AccessLevel;
+import lombok.Builder;
+import lombok.Data;
+import lombok.experimental.FieldDefaults;
 
 @Entity(value = "homes", useDiscriminator = false)
 @Data
@@ -91,10 +90,10 @@ public class GameHome {
     // avoid NPE caused by database remover.
     private void reassignIfNull() {
         this.getSceneMap().values().stream()
-            .map(HomeSceneItem::getBlockItems)
-            .map(Map::values)
-            .flatMap(Collection::stream)
-            .forEach(HomeBlockItem::reassignIfNull);
+                .map(HomeSceneItem::getBlockItems)
+                .map(Map::values)
+                .flatMap(Collection::stream)
+                .forEach(HomeBlockItem::reassignIfNull);
     }
 
     // Data fixer.
@@ -114,14 +113,14 @@ public class GameHome {
 
     private void syncHomeAvatarCostume() {
         Stream.of(this.sceneMap, this.mainHouseMap)
-            .map(ConcurrentHashMap::values)
-            .flatMap(Collection::stream)
-            .map(HomeSceneItem::getBlockItems)
-            .map(Map::values)
-            .flatMap(Collection::stream)
-            .map(HomeBlockItem::getDeployNPCList)
-            .flatMap(Collection::stream)
-            .forEach(npc -> npc.setCostumeId(this.getPlayer().getCostumeFrom(npc.getAvatarId())));
+                .map(ConcurrentHashMap::values)
+                .flatMap(Collection::stream)
+                .map(HomeSceneItem::getBlockItems)
+                .map(Map::values)
+                .flatMap(Collection::stream)
+                .map(HomeBlockItem::getDeployNPCList)
+                .flatMap(Collection::stream)
+                .forEach(npc -> npc.setCostumeId(this.getPlayer().getCostumeFrom(npc.getAvatarId())));
     }
 
     public void save() {

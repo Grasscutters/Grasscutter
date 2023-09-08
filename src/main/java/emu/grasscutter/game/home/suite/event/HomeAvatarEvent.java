@@ -3,12 +3,11 @@ package emu.grasscutter.game.home.suite.event;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.utils.Utils;
+import java.util.List;
+import java.util.Objects;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.experimental.FieldDefaults;
-
-import java.util.List;
-import java.util.Objects;
 
 @Getter
 @FieldDefaults(level = AccessLevel.PRIVATE)
@@ -21,7 +20,8 @@ public abstract class HomeAvatarEvent {
     final int guid;
     final int randomPos;
 
-    public HomeAvatarEvent(Player homeOwner, int eventId, int rewardId, int avatarId, int suiteId, int guid) {
+    public HomeAvatarEvent(
+            Player homeOwner, int eventId, int rewardId, int avatarId, int suiteId, int guid) {
         this.homeOwner = homeOwner;
         this.eventId = eventId;
         this.rewardId = rewardId;

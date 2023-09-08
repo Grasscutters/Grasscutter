@@ -5,10 +5,11 @@ import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.PlayerQuitFromHomeNotifyOuterClass;
 
 public class PacketPlayerQuitFromHomeNotify extends BasePacket {
-    public PacketPlayerQuitFromHomeNotify(PlayerQuitFromHomeNotifyOuterClass.PlayerQuitFromHomeNotify.QuitReason reason) {
+    public PacketPlayerQuitFromHomeNotify(
+            PlayerQuitFromHomeNotifyOuterClass.PlayerQuitFromHomeNotify.QuitReason reason) {
         super(PacketOpcodes.PlayerQuitFromHomeNotify);
 
-        this.setData(PlayerQuitFromHomeNotifyOuterClass.PlayerQuitFromHomeNotify.newBuilder()
-            .setReason(reason));
+        this.setData(
+                PlayerQuitFromHomeNotifyOuterClass.PlayerQuitFromHomeNotify.newBuilder().setReason(reason));
     }
 }

@@ -16,15 +16,14 @@ public class HandlerHomeAvatarRewardEventGetReq extends PacketHandler {
         var req = HomeAvatarRewardEventGetReqOuterClass.HomeAvatarRewardEventGetReq.parseFrom(payload);
 
         var player = session.getPlayer();
-        var rewardsOrError = player.getCurHomeWorld().getModuleManager().claimAvatarRewards(req.getEventId());
+        var rewardsOrError =
+                player.getCurHomeWorld().getModuleManager().claimAvatarRewards(req.getEventId());
         session.send(new PacketHomeAvatarRewardEventNotify(player));
         session.send(new PacketHomeAvatarAllFinishRewardNotify(player));
 
         session.send(
-            rewardsOrError.map(
-                gameItems -> new PacketHomeAvatarRewardEventGetRsp(req.getEventId(), gameItems),
-                integer -> new PacketHomeAvatarRewardEventGetRsp(req.getEventId(), integer)
-            )
-        );
+                rewardsOrError.map(
+                        gameItems -> new PacketHomeAvatarRewardEventGetRsp(req.getEventId(), gameItems),
+                        integer -> new PacketHomeAvatarRewardEventGetRsp(req.getEventId(), integer)));
     }
 }

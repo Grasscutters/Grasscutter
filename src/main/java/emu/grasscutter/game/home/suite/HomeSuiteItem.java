@@ -7,14 +7,13 @@ import emu.grasscutter.game.world.Position;
 import emu.grasscutter.net.proto.HomeFurnitureSuiteDataOuterClass;
 import emu.grasscutter.net.proto.HomeMarkPointFurnitureDataOuterClass;
 import emu.grasscutter.net.proto.HomeMarkPointSuiteDataOuterClass;
+import java.util.List;
+import java.util.Objects;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.experimental.FieldDefaults;
 import org.jetbrains.annotations.Nullable;
-
-import java.util.List;
-import java.util.Objects;
 
 @Entity
 @Builder(builderMethodName = "of")
@@ -28,38 +27,39 @@ public class HomeSuiteItem implements HomeMarkPointProtoFactory {
     List<Integer> includedFurnitureIndexList;
     boolean isAllowSummon;
 
-    public static HomeSuiteItem parseFrom(HomeFurnitureSuiteDataOuterClass.HomeFurnitureSuiteData data) {
+    public static HomeSuiteItem parseFrom(
+            HomeFurnitureSuiteDataOuterClass.HomeFurnitureSuiteData data) {
         return HomeSuiteItem.of()
-            .guid(data.getGuid())
-            .suiteId(data.getSuiteId())
-            .pos(new Position(data.getSpawnPos()))
-            .includedFurnitureIndexList(data.getIncludedFurnitureIndexListList())
-            .isAllowSummon(data.getIsAllowSummon())
-            .build();
+                .guid(data.getGuid())
+                .suiteId(data.getSuiteId())
+                .pos(new Position(data.getSpawnPos()))
+                .includedFurnitureIndexList(data.getIncludedFurnitureIndexListList())
+                .isAllowSummon(data.getIsAllowSummon())
+                .build();
     }
 
     public HomeFurnitureSuiteDataOuterClass.HomeFurnitureSuiteData toProto() {
         return HomeFurnitureSuiteDataOuterClass.HomeFurnitureSuiteData.newBuilder()
-            .setSuiteId(this.suiteId)
-            .setGuid(this.guid)
-            .setIsAllowSummon(this.isAllowSummon)
-            .addAllIncludedFurnitureIndexList(this.includedFurnitureIndexList)
-            .setSpawnPos(this.pos.toProto())
-            .build();
+                .setSuiteId(this.suiteId)
+                .setGuid(this.guid)
+                .setIsAllowSummon(this.isAllowSummon)
+                .addAllIncludedFurnitureIndexList(this.includedFurnitureIndexList)
+                .setSpawnPos(this.pos.toProto())
+                .build();
     }
 
-    @Nullable
-    @Override
+    @Nullable @Override
     public HomeMarkPointFurnitureDataOuterClass.HomeMarkPointFurnitureData toMarkPointProto() {
         return HomeMarkPointFurnitureDataOuterClass.HomeMarkPointFurnitureData.newBuilder()
-            .setFurnitureId(SUITE_FURNITURE_ID)
-            .setPos(this.pos.toProto())
-            .setFurnitureType(this.getType().getValue())
-            .setGuid(this.guid)
-            .setSuiteData(HomeMarkPointSuiteDataOuterClass.HomeMarkPointSuiteData.newBuilder()
-                .setSuiteId(this.suiteId)
-                .build())
-            .build();
+                .setFurnitureId(SUITE_FURNITURE_ID)
+                .setPos(this.pos.toProto())
+                .setFurnitureType(this.getType().getValue())
+                .setGuid(this.guid)
+                .setSuiteData(
+                        HomeMarkPointSuiteDataOuterClass.HomeMarkPointSuiteData.newBuilder()
+                                .setSuiteId(this.suiteId)
+                                .build())
+                .build();
     }
 
     @Override

@@ -12,14 +12,27 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Getter
 public class HomeWorldEventData extends GameResource {
-    @SerializedName(value = "id", alternate = {"BBEIIPEFDPE"})
+    @SerializedName(
+            value = "id",
+            alternate = {"BBEIIPEFDPE"})
     int id;
-    @SerializedName(value = "eventType", alternate = {"JOCKIMECHDP"})
+
+    @SerializedName(
+            value = "eventType",
+            alternate = {"JOCKIMECHDP"})
     SuiteEventType eventType;
+
     int avatarID;
-    @SerializedName(value = "talkId", alternate = {"IGNJAICDFPD"})
+
+    @SerializedName(
+            value = "talkId",
+            alternate = {"IGNJAICDFPD"})
     int talkId;
+
     int rewardID;
-    @SerializedName(value = "suiteId", alternate = {"FEHOKMJPOED"})
+
+    @SerializedName(
+            value = "suiteId",
+            alternate = {"FEHOKMJPOED"})
     int suiteId;
 }

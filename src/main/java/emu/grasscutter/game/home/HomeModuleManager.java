@@ -1,7 +1,6 @@
 package emu.grasscutter.game.home;
 
 import com.github.davidmoten.guavamini.Lists;
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.home.suite.event.HomeAvatarRewardEvent;
 import emu.grasscutter.game.home.suite.event.HomeAvatarSummonEvent;
 import emu.grasscutter.game.home.suite.event.SuiteEventType;
@@ -12,12 +11,11 @@ import emu.grasscutter.net.proto.HomeAvatarSummonAllEventNotifyOuterClass;
 import emu.grasscutter.net.proto.RetcodeOuterClass;
 import emu.grasscutter.server.packet.send.PacketHomeAvatarSummonAllEventNotify;
 import emu.grasscutter.utils.Either;
+import java.util.*;
+import java.util.stream.Stream;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.experimental.FieldDefaults;
-
-import java.util.*;
-import java.util.stream.Stream;
 
 @Getter
 @FieldDefaults(level = AccessLevel.PRIVATE)
@@ -59,31 +57,44 @@ public class HomeModuleManager {
 
     private void fireAllAvatarRewardEvent() {
         this.rewardEvents.clear();
-        var allBlockItems = Stream.of(this.getOutdoorSceneItem(), this.getIndoorSceneItem())
-            .map(HomeSceneItem::getBlockItems)
-            .map(Map::values)
-            .flatMap(Collection::stream)
-            .toList();
+        var allBlockItems =
+                Stream.of(this.getOutdoorSceneItem(), this.getIndoorSceneItem())
+                        .map(HomeSceneItem::getBlockItems)
+                        .map(Map::values)
+                        .flatMap(Collection::stream)
+                        .toList();
 
-        var suites = allBlockItems.stream()
-            .map(HomeBlockItem::getSuiteList)
-            .flatMap(Collection::stream)
-            .distinct()
-            .toList();
+        var suites =
+                allBlockItems.stream()
+                        .map(HomeBlockItem::getSuiteList)
+                        .flatMap(Collection::stream)
+                        .distinct()
+                        .toList();
 
         allBlockItems.stream()
-            .map(HomeBlockItem::getDeployNPCList)
-            .flatMap(Collection::stream)
-            .forEach(avatar -> {
-                suites.forEach(suite -> {
-                    var data = SuiteEventType.HOME_AVATAR_REWARD_EVENT.getEventDataFrom(avatar.getAvatarId(), suite.getSuiteId());
-                    if (data == null || this.home.isRewardEventFinished(data.getId())) {
-                        return;
-                    }
+                .map(HomeBlockItem::getDeployNPCList)
+                .flatMap(Collection::stream)
+                .forEach(
+                        avatar -> {
+                            suites.forEach(
+                                    suite -> {
+                                        var data =
+                                                SuiteEventType.HOME_AVATAR_REWARD_EVENT.getEventDataFrom(
+                                                        avatar.getAvatarId(), suite.getSuiteId());
+                                        if (data == null || this.home.isRewardEventFinished(data.getId())) {
+                                            return;
+                                        }
 
-                    this.rewardEvents.add(new HomeAvatarRewardEvent(homeOwner, data.getId(), data.getRewardID(), data.getAvatarID(), data.getSuiteId(), suite.getGuid()));
-                });
-            });
+                                        this.rewardEvents.add(
+                                                new HomeAvatarRewardEvent(
+                                                        homeOwner,
+                                                        data.getId(),
+                                                        data.getRewardID(),
+                                                        data.getAvatarID(),
+                                                        data.getSuiteId(),
+                                                        suite.getGuid()));
+                                    });
+                        });
 
         if (this.summonEvents != null) {
             var suiteIdList = this.rewardEvents.stream().map(HomeAvatarRewardEvent::getSuiteId).toList();
@@ -92,14 +103,15 @@ public class HomeModuleManager {
     }
 
     private void cancelSummonEventIfAvatarLeave() {
-        var avatars = Stream.of(this.getOutdoorSceneItem(), this.getIndoorSceneItem())
-            .map(HomeSceneItem::getBlockItems)
-            .map(Map::values)
-            .flatMap(Collection::stream)
-            .map(HomeBlockItem::getDeployNPCList)
-            .flatMap(Collection::stream)
-            .map(HomeNPCItem::getAvatarId)
-            .toList();
+        var avatars =
+                Stream.of(this.getOutdoorSceneItem(), this.getIndoorSceneItem())
+                        .map(HomeSceneItem::getBlockItems)
+                        .map(Map::values)
+                        .flatMap(Collection::stream)
+                        .map(HomeBlockItem::getDeployNPCList)
+                        .flatMap(Collection::stream)
+                        .map(HomeNPCItem::getAvatarId)
+                        .toList();
 
         this.summonEvents.removeIf(event -> !avatars.contains(event.getAvatarId()));
     }
@@ -121,13 +133,16 @@ public class HomeModuleManager {
         return Either.left(event.giveRewards());
     }
 
-    public Either<HomeAvatarSummonEvent, Integer> fireAvatarSummonEvent(Player owner, int avatarId, int guid, int suiteId) {
-        var targetSuite = ((HomeScene) owner.getScene()).getSceneItem().getBlockItems().values().stream()
-            .map(HomeBlockItem::getSuiteList)
-            .flatMap(Collection::stream)
-            .filter(suite -> suite.getGuid() == guid)
-            .findFirst()
-            .orElse(null);
+    public Either<HomeAvatarSummonEvent, Integer> fireAvatarSummonEvent(
+            Player owner, int avatarId, int guid, int suiteId) {
+        var targetSuite =
+                ((HomeScene) owner.getScene())
+                        .getSceneItem().getBlockItems().values().stream()
+                                .map(HomeBlockItem::getSuiteList)
+                                .flatMap(Collection::stream)
+                                .filter(suite -> suite.getGuid() == guid)
+                                .findFirst()
+                                .orElse(null);
 
         if (this.isInRewardEvent(avatarId)) {
             return Either.right(RetcodeOuterClass.Retcode.RET_DUPLICATE_AVATAR_VALUE);
@@ -148,7 +163,9 @@ public class HomeModuleManager {
             return Either.right(RetcodeOuterClass.Retcode.RET_HOME_CLIENT_PARAM_INVALID_VALUE);
         }
 
-        var event = new HomeAvatarSummonEvent(owner, eventData.getId(), eventData.getRewardID(), avatarId, suiteId, guid);
+        var event =
+                new HomeAvatarSummonEvent(
+                        owner, eventData.getId(), eventData.getRewardID(), avatarId, suiteId, guid);
         this.summonEvents.add(event);
         owner.sendPacket(new PacketHomeAvatarSummonAllEventNotify(owner));
         return Either.left(event);
@@ -163,20 +180,21 @@ public class HomeModuleManager {
         if (!this.rewardEvents.isEmpty()) {
             notify.setRewardEvent(this.rewardEvents.get(0).toProto()).setIsEventTrigger(true);
 
-            notify.addAllPendingList(this.rewardEvents.subList(1, this.rewardEvents.size()).stream()
-                .map(HomeAvatarRewardEvent::toProto)
-                .toList());
+            notify.addAllPendingList(
+                    this.rewardEvents.subList(1, this.rewardEvents.size()).stream()
+                            .map(HomeAvatarRewardEvent::toProto)
+                            .toList());
         }
 
         return notify.build();
     }
 
-    public HomeAvatarSummonAllEventNotifyOuterClass.HomeAvatarSummonAllEventNotify toSummonEventProto() {
+    public HomeAvatarSummonAllEventNotifyOuterClass.HomeAvatarSummonAllEventNotify
+            toSummonEventProto() {
         return HomeAvatarSummonAllEventNotifyOuterClass.HomeAvatarSummonAllEventNotify.newBuilder()
-            .addAllSummonEventList(this.summonEvents.stream()
-                .map(HomeAvatarSummonEvent::toProto)
-                .toList())
-            .build();
+                .addAllSummonEventList(
+                        this.summonEvents.stream().map(HomeAvatarSummonEvent::toProto).toList())
+                .build();
     }
 
     public boolean isInRewardEvent(int avatarId) {
