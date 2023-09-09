@@ -1669,9 +1669,11 @@ public class ScriptLib {
     }
 
     public int SetGadgetEnableInteract(int groupId, int configId, boolean enable) {
-        EntityGadget gadget = getCurrentEntityGadget();
-        if(gadget.getGroupId() != groupId || gadget.getConfigId() != configId) return -1;
-
+        logger.debug("[LUA] Call SetGadgetEnableInteract with {} {} {}", groupId, configId, enable);
+        var entity = getSceneScriptManager().getScene().getEntityByConfigId(configId, groupId);
+        if (!(entity instanceof EntityGadget gadget)) {
+            return -1;
+        }
         gadget.setInteractEnabled(enable);
 
         return 0;
