@@ -437,7 +437,7 @@ public class ScriptLib {
      * Set the actions and triggers to designated group
      */
     public int RefreshGroup(LuaTable table) {
-        logger.info("[LUA] Call RefreshGroup with {}",
+        logger.debug("[LUA] Call RefreshGroup with {}",
             printTable(table));
         // Kill and Respawn?
         int groupId = table.get("group_id").toint();
