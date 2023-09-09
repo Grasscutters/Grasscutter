@@ -38,8 +38,8 @@ public class SceneRegion {
                 return x * x + y * y + z * z <= radius * radius;
             }
             case ScriptRegionShape.CUBIC -> {
-                return (Math.abs(pos.getX() - position.getX()) <= size.getX() / 2f) 
-                        && (Math.abs(pos.getY() - position.getY()) <= size.getY() / 2f) 
+                return (Math.abs(pos.getX() - position.getX()) <= size.getX() / 2f)
+                        && (Math.abs(pos.getY() - position.getY()) <= size.getY() / 2f)
                         && (Math.abs(pos.getZ() - position.getZ()) <= size.getZ() / 2f);
             }
             case ScriptRegionShape.POLYGON -> {
@@ -57,8 +57,7 @@ public class SceneRegion {
                     val x1 = point_array.get(i).getX();
                     val x2 = point_array.get(j).getX();
 
-                    if ((yp < y1) != (yp < y2) 
-                            && xp < x1 + ((yp - y1) / (y2 - y1)) * (x2 - x1)) {
+                    if ((yp < y1) != (yp < y2) && xp < x1 + ((yp - y1) / (y2 - y1)) * (x2 - x1)) {
                         ++count;
                     }
                 }
