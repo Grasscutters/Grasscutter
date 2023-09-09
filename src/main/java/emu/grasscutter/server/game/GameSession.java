@@ -1,24 +1,26 @@
 package emu.grasscutter.server.game;
 
-import static emu.grasscutter.config.Configuration.*;
-import static emu.grasscutter.utils.lang.Language.translate;
-
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.Grasscutter.ServerDebugMode;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.net.*;
 import emu.grasscutter.net.packet.*;
 import emu.grasscutter.server.event.game.SendPacketEvent;
 import emu.grasscutter.utils.*;
 import io.netty.buffer.*;
+import lombok.*;
+
 import java.io.File;
 import java.net.InetSocketAddress;
 import java.nio.file.Path;
-import lombok.*;
 
-public class GameSession implements GameSessionManager.KcpChannel {
+import static emu.grasscutter.config.Configuration.*;
+import static emu.grasscutter.utils.lang.Language.translate;
+
+public class GameSession implements KcpChannel {
     private final GameServer server;
-    private GameSessionManager.KcpTunnel tunnel;
+    private KcpTunnel tunnel;
 
     @Getter @Setter private Account account;
     @Getter private Player player;
@@ -141,13 +143,13 @@ public class GameSession implements GameSessionManager.KcpChannel {
     }
 
     @Override
-    public void onConnected(GameSessionManager.KcpTunnel tunnel) {
+    public void onConnected(KcpTunnel tunnel) {
         this.tunnel = tunnel;
         Grasscutter.getLogger().info(translate("messages.game.connect", this.getAddress().toString()));
     }
 
     @Override
-    public void handleReceive(byte[] bytes) {
+    public void onMessage(byte[] bytes) {
         // Decrypt and turn back into a packet
         Crypto.xor(bytes, useSecretKey() ? Crypto.ENCRYPT_KEY : Crypto.DISPATCH_KEY);
         ByteBuf packet = Unpooled.wrappedBuffer(bytes);
@@ -222,8 +224,9 @@ public class GameSession implements GameSessionManager.KcpChannel {
     }
 
     @Override
-    public void handleClose() {
+    public void onDisconnected() {
         setState(SessionState.INACTIVE);
+
         // send disconnection pack in case of reconnection
         Grasscutter.getLogger()
                 .info(translate("messages.game.disconnect", this.getAddress().toString()));
