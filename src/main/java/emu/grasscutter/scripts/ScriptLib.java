@@ -437,7 +437,7 @@ public class ScriptLib {
      * Set the actions and triggers to designated group
      */
     public int RefreshGroup(LuaTable table) {
-        logger.debug("[LUA] Call RefreshGroup with {}",
+        logger.info("[LUA] Call RefreshGroup with {}",
             printTable(table));
         // Kill and Respawn?
         int groupId = table.get("group_id").toint();
@@ -1105,6 +1105,12 @@ public class ScriptLib {
         return 0;
     }
 
+    public int MoveAvatarByPointArrayWithTemplate(int uid, int pointarray_id, int[] routelist, int var4, LuaTable var5){
+        logger.warn("[LUA] Call unimplemented MoveAvatarByPointArrayWithTemplate with {} {} {} {} {}", uid, pointarray_id, routelist, var4, printTable(var5));
+        //TODO implement var5 contains int speed
+        return 0;
+    }
+
     public int MovePlayerToPos(LuaTable var1){
         logger.warn("[LUA] Call unchecked MovePlayerToPos with {}", printTable(var1));
         //TODO implement var1 contains int[] uid_list, Position pos, int radius, Position rot
@@ -1262,6 +1268,7 @@ public class ScriptLib {
     }
 
     public int SetWeatherAreaState(int var1, int var2) {
+        logger.debug("[LUA] Call SetWeatherAreaState with {} {}", var1, var2);
         this.getSceneScriptManager().getScene().getPlayers()
             .forEach(p -> p.setWeather(var1, ClimateType.getTypeByValue(var2)));
         return 0;
@@ -1402,6 +1409,11 @@ public class ScriptLib {
     public int RevokePlayerShowTemplateReminder(int var1, LuaValue var2){
         logger.warn("[LUA] Call unimplemented AssignPlayerShowTemplateReminder {} {}", var1, var2);
         //TODO implement
+        return 0;
+    }
+
+    public int SetPlayerInteractOption(String var1){
+        logger.warn("[LUA] Call unimplemented SetPlayerInteractOption {}", var1);
         return 0;
     }
 
@@ -1552,7 +1564,7 @@ public class ScriptLib {
     }
 
     public int GetRegionConfigId(LuaTable var1){
-        logger.warn("[LUA] Call untested GetRegionConfigId with {}", printTable(var1));
+        logger.debug("[LUA] Call GetRegionConfigId with {}", printTable(var1));
         var EntityId = var1.get("region_eid").toint();
         var entity = getSceneScriptManager().getScene().getScriptManager().getRegionById(EntityId);
         if (entity == null){
