@@ -8,7 +8,7 @@ import emu.grasscutter.data.excels.world.WeatherData;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.*;
 import emu.grasscutter.game.ability.AbilityManager;
-import emu.grasscutter.game.achievement.Achievements;
+import emu.grasscutter.game.achievement.*;
 import emu.grasscutter.game.activity.ActivityManager;
 import emu.grasscutter.game.avatar.*;
 import emu.grasscutter.game.battlepass.BattlePassManager;
@@ -259,6 +259,7 @@ public class Player implements PlayerHook, FieldFetch {
         this.clientAbilityInitFinishHandler = new InvokeHandler(PacketClientAbilityInitFinishNotify.class);
 
         this.birthday = new PlayerBirthday();
+        this.achievements = Achievements.blank();
         this.rewardedLevels = new HashSet<>();
         this.homeRewardedLevels = new HashSet<>();
         this.seenRealmList = new HashSet<>();
@@ -273,8 +274,10 @@ public class Player implements PlayerHook, FieldFetch {
         this.energyManager = new EnergyManager(this);
         this.resinManager = new ResinManager(this);
         this.forgingManager = new ForgingManager(this);
+        this.deforestationManager = new DeforestationManager(this);
         this.progressManager = new PlayerProgressManager(this);
         this.furnitureManager = new FurnitureManager(this);
+        this.battlePassManager = new BattlePassManager(this);
         this.cookingManager = new CookingManager(this);
         this.cookingCompoundManager = new CookingCompoundManager(this);
         this.satiationManager = new SatiationManager(this);
@@ -297,19 +300,6 @@ public class Player implements PlayerHook, FieldFetch {
         this.applyProperties();
         this.getFlyCloakList().add(140001);
         this.getNameCardList().add(210001);
-
-        this.mapMarksManager = new MapMarksManager(this);
-        this.staminaManager = new StaminaManager(this);
-        this.sotsManager = new SotSManager(this);
-        this.energyManager = new EnergyManager(this);
-        this.resinManager = new ResinManager(this);
-        this.deforestationManager = new DeforestationManager(this);
-        this.forgingManager = new ForgingManager(this);
-        this.progressManager = new PlayerProgressManager(this);
-        this.furnitureManager = new FurnitureManager(this);
-        this.cookingManager = new CookingManager(this);
-        this.cookingCompoundManager = new CookingCompoundManager(this);
-        this.satiationManager = new SatiationManager(this);
     }
 
     @Override

@@ -14,11 +14,12 @@ import emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePass
 import emu.grasscutter.net.proto.BattlePassScheduleOuterClass.BattlePassSchedule;
 import emu.grasscutter.net.proto.BattlePassUnlockStatusOuterClass.BattlePassUnlockStatus;
 import emu.grasscutter.server.packet.send.*;
+import lombok.Getter;
+import org.bson.types.ObjectId;
+
 import java.time.*;
 import java.time.temporal.TemporalAdjusters;
 import java.util.*;
-import lombok.Getter;
-import org.bson.types.ObjectId;
 
 @Entity(value = "battlepass", useDiscriminator = false)
 public class BattlePassManager extends BasePlayerDataManager {
@@ -40,7 +41,10 @@ public class BattlePassManager extends BasePlayerDataManager {
 
     public BattlePassManager(Player player) {
         super(player);
+
         this.ownerUid = player.getUid();
+        this.missions = new HashMap<>();
+        this.takenRewards = new HashMap<>();
     }
 
     public void setPlayer(Player player) {

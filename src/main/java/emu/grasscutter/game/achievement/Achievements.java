@@ -12,12 +12,13 @@ import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.net.proto.AchievementOuterClass.Achievement.Status;
 import emu.grasscutter.server.event.player.PlayerCompleteAchievementEvent;
 import emu.grasscutter.server.packet.send.*;
+import lombok.*;
+import org.bson.types.ObjectId;
+
+import javax.annotation.Nullable;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.IntSupplier;
-import javax.annotation.Nullable;
-import lombok.*;
-import org.bson.types.ObjectId;
 
 @Entity("achievements")
 @Data
@@ -44,15 +45,30 @@ public class Achievements {
         return achievements;
     }
 
+    /**
+     * Creates a blank achievements object.
+     *
+     * @return The achievements object.
+     */
+    public static Achievements blank() {
+        return Achievements.of()
+                .achievementList(init())
+                .finishedAchievementNum(0)
+                .takenGoalRewardIdList(Lists.newArrayList())
+                .build();
+    }
+
+    /**
+     * Creates and saves a blank achievements object.
+     *
+     * @param uid The UID of the player.
+     * @return The achievements object.
+     */
     public static Achievements create(int uid) {
-        var newAchievement =
-                Achievements.of()
-                        .uid(uid)
-                        .achievementList(init())
-                        .finishedAchievementNum(0)
-                        .takenGoalRewardIdList(Lists.newArrayList())
-                        .build();
+        var newAchievement = blank();
+        newAchievement.setUid(uid);
         newAchievement.save();
+
         return newAchievement;
     }
 
