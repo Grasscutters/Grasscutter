@@ -159,7 +159,10 @@ public class GameQuest {
         // TODO improve
         var oldState = state;
         if (questData.getAcceptCond() != null && questData.getAcceptCond().size() != 0) {
-            this.getMainQuest().getQuestManager().getAcceptProgressLists().put(this.getSubQuestId(), new int[questData.getAcceptCond().size()]);
+            this.getMainQuest()
+                    .getQuestManager()
+                    .getAcceptProgressLists()
+                    .put(this.getSubQuestId(), new int[questData.getAcceptCond().size()]);
         }
 
         if (questData.getFinishCond() != null && questData.getFinishCond().size() != 0) {

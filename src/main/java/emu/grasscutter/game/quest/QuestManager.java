@@ -512,7 +512,9 @@ public final class QuestManager extends BasePlayerManager {
                         }
                     }
 
-                    boolean shouldAccept = LogicType.calculate(questData.getAcceptCondComb(), acceptProgressLists.get(questData.getId()));
+                    boolean shouldAccept =
+                            LogicType.calculate(
+                                    questData.getAcceptCondComb(), acceptProgressLists.get(questData.getId()));
                     if (this.loggedQuests.contains(questData.getId())) {
                         Grasscutter.getLogger()
                                 .debug(
@@ -540,8 +542,7 @@ public final class QuestManager extends BasePlayerManager {
 
                     if (shouldAccept) {
                         GameQuest quest = owner.getQuestManager().addQuest(questData);
-                        Grasscutter.getLogger()
-                                .debug("Added quest {}", questData.getSubId());
+                        Grasscutter.getLogger().debug("Added quest {}", questData.getSubId());
                     }
                 });
     }

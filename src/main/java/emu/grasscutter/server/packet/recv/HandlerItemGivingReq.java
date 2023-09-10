@@ -99,8 +99,10 @@ public final class HandlerItemGivingReq extends PacketHandler {
                             // Mark the giving action as completed.
                             questManager.markCompleted(giveId);
                             // Queue the content and condition actions.
-                            questManager.queueEvent(QuestContent.QUEST_CONTENT_FINISH_ITEM_GIVING, giveId, matchedGroups.get(0));
-                            questManager.queueEvent(QuestCond.QUEST_COND_ITEM_GIVING_FINISHED, giveId, matchedGroups.get(0));
+                            questManager.queueEvent(
+                                    QuestContent.QUEST_CONTENT_FINISH_ITEM_GIVING, giveId, matchedGroups.get(0));
+                            questManager.queueEvent(
+                                    QuestCond.QUEST_COND_ITEM_GIVING_FINISHED, giveId, matchedGroups.get(0));
                         }
                     }
                 }

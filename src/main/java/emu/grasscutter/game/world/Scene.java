@@ -541,7 +541,11 @@ public class Scene {
 
         if (target instanceof EntityGadget gadget) {
             if (gadget.getMetaGadget() != null) {
-                world.getServer().getDropSystem().handleChestDrop(gadget.getMetaGadget().drop_id, gadget.getMetaGadget().drop_count, gadget);
+                world
+                        .getServer()
+                        .getDropSystem()
+                        .handleChestDrop(
+                                gadget.getMetaGadget().drop_id, gadget.getMetaGadget().drop_count, gadget);
             }
         }
 

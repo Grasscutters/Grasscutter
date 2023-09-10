@@ -15,6 +15,7 @@ public class ConditionItemGivingFinished extends BaseCondition {
             QuestData.QuestAcceptCondition condition,
             String paramStr,
             int... params) {
-        return condition.getParam()[0] == params[0] && (condition.getParam()[1] == 0 || condition.getParam()[1] == params[1]);
+        return condition.getParam()[0] == params[0]
+                && (condition.getParam()[1] == 0 || condition.getParam()[1] == params[1]);
     }
 }
