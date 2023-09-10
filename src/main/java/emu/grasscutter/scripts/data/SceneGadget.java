@@ -7,6 +7,7 @@ import lombok.*;
 public class SceneGadget extends SceneObject {
     public int gadget_id;
     public int chest_drop_id;
+    public int drop_id;
     public int drop_count;
     public String drop_tag;
     boolean showcutscene;
