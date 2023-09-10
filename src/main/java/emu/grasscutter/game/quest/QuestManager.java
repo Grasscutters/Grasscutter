@@ -53,7 +53,7 @@ public final class QuestManager extends BasePlayerManager {
         this.player = player;
         this.mainQuests = new Int2ObjectOpenHashMap<>();
         this.loggedQuests = new ArrayList<>();
-        acceptProgressLists = new Int2ObjectOpenHashMap<>();
+        this.acceptProgressLists = new Int2ObjectOpenHashMap<>();
 
         if (DEBUG) {
             this.loggedQuests.addAll(
