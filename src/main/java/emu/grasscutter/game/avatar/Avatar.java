@@ -1,7 +1,5 @@
 package emu.grasscutter.game.avatar;
 
-import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
-
 import dev.morphia.annotations.*;
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.data.GameData;
@@ -15,7 +13,6 @@ import emu.grasscutter.data.excels.avatar.AvatarSkillDepotData.InherentProudSkil
 import emu.grasscutter.data.excels.reliquary.*;
 import emu.grasscutter.data.excels.trial.TrialAvatarTemplateData;
 import emu.grasscutter.data.excels.weapon.*;
-import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.entity.*;
 import emu.grasscutter.game.inventory.*;
 import emu.grasscutter.game.player.Player;
@@ -31,15 +28,19 @@ import emu.grasscutter.net.proto.TrialAvatarGrantRecordOuterClass.TrialAvatarGra
 import emu.grasscutter.net.proto.TrialAvatarInfoOuterClass.TrialAvatarInfo;
 import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.helpers.ProtoHelper;
+import emu.grasscutter.utils.objects.DatabaseObject;
 import it.unimi.dsi.fastutil.ints.*;
-import java.util.*;
-import java.util.stream.Stream;
-import javax.annotation.*;
 import lombok.*;
 import org.bson.types.ObjectId;
 
+import javax.annotation.*;
+import java.util.*;
+import java.util.stream.Stream;
+
+import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
+
 @Entity(value = "avatars", useDiscriminator = false)
-public class Avatar {
+public class Avatar implements DatabaseObject<Avatar> {
     @Transient @Getter private final Int2ObjectMap<GameItem> equips;
     @Transient @Getter private final Int2FloatOpenHashMap fightProperties;
     @Transient @Getter private final Int2FloatOpenHashMap fightPropOverrides;
@@ -989,8 +990,25 @@ public class Avatar {
         return entity != null ? entity.getId() : 0;
     }
 
+    /**
+     * Saves this object to the database.
+     * As of Grasscutter 1.7.1, this is by default a {@link DatabaseObject#deferSave()} call.
+     */
     public void save() {
-        DatabaseHelper.saveAvatar(this);
+        this.deferSave();
+    }
+
+    /**
+     * Saves this object to the database.
+     *
+     * @param immediate If true, this will be a {@link DatabaseObject#save()} call instead of a {@link DatabaseObject#deferSave()} call.
+     */
+    public void save(boolean immediate) {
+        if (immediate) {
+            DatabaseObject.super.save();
+        } else {
+            this.save();
+        }
     }
 
     public AvatarInfo toProto() {
