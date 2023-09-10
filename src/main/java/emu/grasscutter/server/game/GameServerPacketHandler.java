@@ -1,13 +1,13 @@
 package emu.grasscutter.server.game;
 
-import static emu.grasscutter.config.Configuration.GAME_INFO;
-
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.Grasscutter.ServerDebugMode;
 import emu.grasscutter.net.packet.*;
 import emu.grasscutter.server.event.game.ReceivePacketEvent;
 import emu.grasscutter.server.game.GameSession.SessionState;
 import it.unimi.dsi.fastutil.ints.*;
+
+import static emu.grasscutter.config.Configuration.GAME_INFO;
 
 public final class GameServerPacketHandler {
     private final Int2ObjectMap<PacketHandler> handlers;
@@ -76,13 +76,11 @@ public final class GameServerPacketHandler {
                 }
 
                 // Invoke event.
-                ReceivePacketEvent event = new ReceivePacketEvent(session, opcode, payload);
-                event.call();
-                if (!event.isCanceled()) // If event is not canceled, continue.
-                handler.handle(session, header, event.getPacketData());
+                var event = new ReceivePacketEvent(session, opcode, payload);
+                if (!event.call()) // If event is not canceled, continue.
+                    handler.handle(session, header, event.getPacketData());
             } catch (Exception ex) {
-                // TODO Remove this when no more needed
-                ex.printStackTrace();
+                Grasscutter.getLogger().warn("Unable to handle packet.", ex);
             }
             return; // Packet successfully handled
         }

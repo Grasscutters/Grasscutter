@@ -14,7 +14,7 @@ public final class GameSessionManager implements KcpListener {
     @Getter private static final GameSessionManager instance
         = new GameSessionManager();
     @Getter private static final ExecutorService executor
-        = Executors.newFixedThreadPool(4);
+        = Executors.newWorkStealingPool();
     @Getter private static final Map<Ukcp, GameSession> sessions
         = new ConcurrentHashMap<>();
 
