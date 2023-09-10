@@ -3,10 +3,9 @@ package emu.grasscutter.game.quest.conditions;
 import emu.grasscutter.data.excels.quest.QuestData;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.quest.QuestValueCond;
-import lombok.val;
-import static emu.grasscutter.game.quest.enums.QuestCond.QUEST_COND_ITEM_GIVING_FINISHED;
+import emu.grasscutter.game.quest.enums.QuestCond;
 
-@QuestValueCond(QUEST_COND_ITEM_GIVING_FINISHED)
+@QuestValueCond(QuestCond.QUEST_COND_ITEM_GIVING_FINISHED)
 public class ConditionItemGivingFinished extends BaseCondition {
 
     @Override
