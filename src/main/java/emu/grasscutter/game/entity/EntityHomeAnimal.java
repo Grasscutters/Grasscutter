@@ -8,6 +8,7 @@ import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.net.proto.VisionTypeOuterClass;
 import emu.grasscutter.server.packet.send.PacketSceneEntityAppearNotify;
 import emu.grasscutter.server.packet.send.PacketSceneEntityDisappearNotify;
+import java.util.concurrent.atomic.AtomicBoolean;
 import lombok.Getter;
 
 public class EntityHomeAnimal extends EntityMonster implements Rebornable {
@@ -15,7 +16,7 @@ public class EntityHomeAnimal extends EntityMonster implements Rebornable {
     private final Position rebornPos;
     @Getter private final int rebirth;
     @Getter private final int rebirthCD;
-    private boolean disappeared;
+    private final AtomicBoolean disappeared = new AtomicBoolean();
 
     public EntityHomeAnimal(Scene scene, HomeWorldAnimalData data, Position pos) {
         super(scene, GameData.getMonsterDataMap().get(data.getMonsterID()), pos, 1);
@@ -60,13 +61,13 @@ public class EntityHomeAnimal extends EntityMonster implements Rebornable {
                         new PacketSceneEntityDisappearNotify(
                                 this, VisionTypeOuterClass.VisionType.VISION_TYPE_REMOVE));
         this.rebornCDTickCount = this.getRebornCD();
-        this.disappeared = true;
+        this.disappeared.set(true);
     }
 
     @Override
     public void reborn() {
-        if (this.disappeared) {
-            this.disappeared = false;
+        if (this.disappeared.get()) {
+            this.disappeared.set(false);
             this.getPosition().set(this.getRebornPos());
             this.getScene().broadcastPacket(new PacketSceneEntityAppearNotify(this));
         }
@@ -74,6 +75,6 @@ public class EntityHomeAnimal extends EntityMonster implements Rebornable {
 
     @Override
     public boolean isInCD() {
-        return this.disappeared;
+        return this.disappeared.get();
     }
 }

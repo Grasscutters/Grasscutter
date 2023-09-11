@@ -8,33 +8,56 @@ import emu.grasscutter.game.world.World;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.proto.ChatInfoOuterClass;
 import emu.grasscutter.server.game.GameServer;
-import emu.grasscutter.server.packet.send.*;
+import emu.grasscutter.server.packet.send.PacketDelTeamEntityNotify;
+import emu.grasscutter.server.packet.send.PacketPlayerChatNotify;
+import emu.grasscutter.server.packet.send.PacketPlayerGameTimeNotify;
 import java.util.List;
+import java.util.function.Consumer;
 import lombok.Getter;
 
 public class HomeWorld extends World {
     @Getter private final GameHome home;
+    @Getter private HomeModuleManager moduleManager;
 
     public HomeWorld(GameServer server, Player owner) {
         super(server, owner);
 
         this.home = owner.isOnline() ? owner.getHome() : GameHome.getByUid(owner.getUid());
         server.registerHomeWorld(this);
+        this.refreshModuleManager();
     }
 
     @Override
-    public void registerScene(Scene scene) {
-        this.addAnimalsToScene((HomeScene) scene);
-        super.registerScene(scene);
+    public boolean onTick() {
+        this.moduleManager.tick();
+
+        if (this.getTickCount() % 10 == 0) {
+            this.getPlayers().forEach(p -> p.sendPacket(new PacketPlayerGameTimeNotify(p)));
+        }
+
+        if (this.isInHome(this.getHost()) && this.getTickCount() % 60 == 0) {
+            this.getHost().updatePlayerGameTime(this.getCurrentWorldTime());
+        }
+
+        this.tickCount++;
+        return false;
     }
 
-    @Override
-    public void deregisterScene(Scene scene) {
-        super.deregisterScene(scene);
+    public void refreshModuleManager() {
+        if (this.moduleManager != null) {
+            this.moduleManager.onRemovedModule();
+        }
+
+        this.moduleManager = new HomeModuleManager(this);
+        this.moduleManager.onSetModule();
     }
 
-    private void addAnimalsToScene(HomeScene scene) {
-        scene.getSceneItem().getAnimals(scene).forEach(scene::addEntity);
+    public int getActiveOutdoorSceneId() {
+        return this.getHost().getCurrentRealmId() + 2000;
+    }
+
+    public int getActiveIndoorSceneId() {
+        return this.getSceneById(this.getActiveOutdoorSceneId()).getSceneItem().getRoomSceneId();
     }
 
     @Override
@@ -186,6 +209,12 @@ public class HomeWorld extends World {
 
     public boolean isInHome(Player player) {
         return this.getPlayers().contains(player);
+    }
+
+    public void ifHost(Player hostOrGuest, Consumer<Player> ifHost) {
+        if (this.getHost().equals(hostOrGuest)) {
+            ifHost.accept(hostOrGuest);
+        }
     }
 
     public void sendPacketToHostIfOnline(BasePacket basePacket) {

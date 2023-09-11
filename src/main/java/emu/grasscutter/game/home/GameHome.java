@@ -17,6 +17,7 @@ import java.time.temporal.ChronoUnit;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Data;
@@ -55,6 +56,7 @@ public class GameHome {
     Set<Integer> unlockedHomeBgmList;
     int enterHomeOption;
     Map<Integer, Set<Integer>> finishedTalkIdMap;
+    Set<Integer> finishedRewardEventIdSet;
 
     public static GameHome getByUid(Integer uid) {
         var home = DatabaseHelper.getHomeByUid(uid);
@@ -62,7 +64,9 @@ public class GameHome {
             home = GameHome.create(uid);
         }
 
+        home.reassignIfNull();
         home.fixMainHouseIfOld();
+        home.syncHomeAvatarCostume();
 
         return home;
     }
@@ -79,7 +83,17 @@ public class GameHome {
                 .mainHouseMap(new ConcurrentHashMap<>())
                 .unlockedHomeBgmList(new HashSet<>())
                 .finishedTalkIdMap(new HashMap<>())
+                .finishedRewardEventIdSet(new HashSet<>())
                 .build();
+    }
+
+    // avoid NPE caused by database remover.
+    private void reassignIfNull() {
+        this.getSceneMap().values().stream()
+                .map(HomeSceneItem::getBlockItems)
+                .map(Map::values)
+                .flatMap(Collection::stream)
+                .forEach(HomeBlockItem::reassignIfNull);
     }
 
     // Data fixer.
@@ -95,6 +109,18 @@ public class GameHome {
         this.getSceneMap().values().removeIf(homeSceneItem -> homeSceneItem.getSceneId() > 2200);
 
         this.save();
+    }
+
+    private void syncHomeAvatarCostume() {
+        Stream.of(this.sceneMap, this.mainHouseMap)
+                .map(ConcurrentHashMap::values)
+                .flatMap(Collection::stream)
+                .map(HomeSceneItem::getBlockItems)
+                .map(Map::values)
+                .flatMap(Collection::stream)
+                .map(HomeBlockItem::getDeployNPCList)
+                .flatMap(Collection::stream)
+                .forEach(npc -> npc.setCostumeId(this.getPlayer().getCostumeFrom(npc.getAvatarId())));
     }
 
     public void save() {
@@ -113,12 +139,12 @@ public class GameHome {
                     if (defaultItem != null) {
                         Grasscutter.getLogger()
                                 .info("Set player {} home {} to initial setting", ownerUid, sceneId);
-                        return HomeSceneItem.parseFrom(defaultItem, sceneId);
                     } else {
                         // Realm res missing bricks account, use default realm data to allow main house
                         defaultItem = GameData.getHomeworldDefaultSaveData().get(2001);
-                        return HomeSceneItem.parseFrom(defaultItem, sceneId);
                     }
+
+                    return HomeSceneItem.parseFrom(defaultItem, sceneId);
                 });
     }
 
@@ -149,6 +175,8 @@ public class GameHome {
         this.getMainHouseMap().remove(outdoor); // delete main house in current scene.
         this.getMainHouseItem(outdoor); // put new main house with default arrangement.
         this.save();
+
+        this.getPlayer().getCurHomeWorld().getModuleManager().refreshMainHouse();
     }
 
     public void onOwnerLogin(Player player) {
@@ -160,6 +188,8 @@ public class GameHome {
         player.getSession().send(new PacketHomeMarkPointNotify(player));
         player.getSession().send(new PacketHomeAvatarTalkFinishInfoNotify(player));
         player.getSession().send(new PacketHomeAllUnlockedBgmIdListNotify(player));
+        player.getSession().send(new PacketHomeAvatarRewardEventNotify(player));
+        player.getSession().send(new PacketHomeAvatarAllFinishRewardNotify(player));
         checkAccumulatedResources(player);
         player.getSession().send(new PacketHomeResourceNotify(player));
     }
@@ -224,6 +254,20 @@ public class GameHome {
                                     .build();
                         })
                 .toList();
+    }
+
+    public boolean onClaimAvatarRewards(int eventId) {
+        if (this.finishedRewardEventIdSet == null) {
+            this.finishedRewardEventIdSet = new HashSet<>();
+        }
+
+        var success = this.finishedRewardEventIdSet.add(eventId);
+        this.save();
+        return success;
+    }
+
+    public boolean isRewardEventFinished(int eventId) {
+        return this.finishedRewardEventIdSet != null && this.finishedRewardEventIdSet.contains(eventId);
     }
 
     public boolean addUnlockedHomeBgm(int homeBgmId) {
@@ -404,7 +448,7 @@ public class GameHome {
                 newCoin = storedCoin + owedCoin;
             }
             // Ensure max is not exceeded
-            storedCoin = (maxCoin >= newCoin) ? newCoin : maxCoin;
+            storedCoin = Math.min(maxCoin, newCoin);
         }
 
         // Update fetter exp
@@ -416,7 +460,7 @@ public class GameHome {
                 newFetter = storedFetterExp + owedFetter;
             }
             // Ensure max is not exceeded
-            storedFetterExp = (maxFetter >= newFetter) ? newFetter : maxFetter;
+            storedFetterExp = Math.min(maxFetter, newFetter);
         }
 
         save();

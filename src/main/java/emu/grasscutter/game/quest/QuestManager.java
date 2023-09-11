@@ -26,6 +26,7 @@ public final class QuestManager extends BasePlayerManager {
     @Getter private final Player player;
 
     @Getter private final Int2ObjectMap<GameMainQuest> mainQuests;
+    @Getter private Int2ObjectMap<int[]> acceptProgressLists;
     @Getter private final List<Integer> loggedQuests;
 
     private long lastHourCheck = 0;
@@ -52,6 +53,7 @@ public final class QuestManager extends BasePlayerManager {
         this.player = player;
         this.mainQuests = new Int2ObjectOpenHashMap<>();
         this.loggedQuests = new ArrayList<>();
+        this.acceptProgressLists = new Int2ObjectOpenHashMap<>();
 
         if (DEBUG) {
             this.loggedQuests.addAll(
@@ -484,8 +486,6 @@ public final class QuestManager extends BasePlayerManager {
         eventExecutor.submit(() -> triggerEvent(condType, paramStr, params));
     }
 
-    // QUEST_EXEC are handled directly by each subQuest
-
     public void triggerEvent(QuestCond condType, String paramStr, int... params) {
         Grasscutter.getLogger().trace("Trigger Event {}, {}, {}", condType, paramStr, params);
         var potentialQuests = GameData.getQuestDataByConditions(condType, params[0], paramStr);
@@ -502,15 +502,19 @@ public final class QuestManager extends BasePlayerManager {
                         return;
                     }
                     val acceptCond = questData.getAcceptCond();
-                    int[] accept = new int[acceptCond.size()];
+                    acceptProgressLists.putIfAbsent(questData.getId(), new int[acceptCond.size()]);
                     for (int i = 0; i < acceptCond.size(); i++) {
                         val condition = acceptCond.get(i);
-                        boolean result =
-                                questSystem.triggerCondition(owner, questData, condition, paramStr, params);
-                        accept[i] = result ? 1 : 0;
+                        if (condition.getType() == condType) {
+                            boolean result =
+                                    questSystem.triggerCondition(owner, questData, condition, paramStr, params);
+                            acceptProgressLists.get(questData.getId())[i] = result ? 1 : 0;
+                        }
                     }
 
-                    boolean shouldAccept = LogicType.calculate(questData.getAcceptCondComb(), accept);
+                    boolean shouldAccept =
+                            LogicType.calculate(
+                                    questData.getAcceptCondComb(), acceptProgressLists.get(questData.getId()));
                     if (this.loggedQuests.contains(questData.getId())) {
                         Grasscutter.getLogger()
                                 .debug(
@@ -522,7 +526,7 @@ public final class QuestManager extends BasePlayerManager {
                                         Arrays.stream(params)
                                                 .mapToObj(String::valueOf)
                                                 .collect(Collectors.joining(", ")));
-                        for (var i = 0; i < accept.length; i++) {
+                        for (var i = 0; i < acceptCond.size(); i++) {
                             var condition = acceptCond.get(i);
                             Grasscutter.getLogger()
                                     .debug(
@@ -532,14 +536,13 @@ public final class QuestManager extends BasePlayerManager {
                                                     .filter(value -> value > 0)
                                                     .mapToObj(String::valueOf)
                                                     .collect(Collectors.joining(", ")),
-                                            accept[i] == 1 ? "success" : "failure");
+                                            acceptProgressLists.get(questData.getId())[i] == 1 ? "success" : "failure");
                         }
                     }
 
                     if (shouldAccept) {
                         GameQuest quest = owner.getQuestManager().addQuest(questData);
-                        Grasscutter.getLogger()
-                                .debug("Added quest {} result {}", questData.getSubId(), quest != null);
+                        Grasscutter.getLogger().debug("Added quest {}", questData.getSubId());
                     }
                 });
     }

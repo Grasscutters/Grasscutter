@@ -5,10 +5,7 @@ import emu.grasscutter.game.props.EnterReason;
 import emu.grasscutter.game.world.Position;
 import emu.grasscutter.game.world.World;
 import emu.grasscutter.game.world.data.TeleportProperties;
-import emu.grasscutter.net.proto.EnterTypeOuterClass;
-import emu.grasscutter.net.proto.OtherPlayerEnterHomeNotifyOuterClass;
-import emu.grasscutter.net.proto.PlayerApplyEnterHomeResultNotifyOuterClass;
-import emu.grasscutter.net.proto.RetcodeOuterClass;
+import emu.grasscutter.net.proto.*;
 import emu.grasscutter.server.event.player.PlayerEnterHomeEvent;
 import emu.grasscutter.server.event.player.PlayerLeaveHomeEvent;
 import emu.grasscutter.server.event.player.PlayerTeleportEvent;
@@ -216,6 +213,10 @@ public class HomeWorldMPSystem extends BaseGameSystem {
         myHome.getHome().onOwnerLogin(player);
 
         player.sendPacket(
+                new PacketPlayerQuitFromHomeNotify(
+                        PlayerQuitFromHomeNotifyOuterClass.PlayerQuitFromHomeNotify.QuitReason
+                                .BACK_TO_MY_WORLD));
+        player.sendPacket(
                 new PacketPlayerEnterSceneNotify(
                         player,
                         EnterTypeOuterClass.EnterType.ENTER_TYPE_BACK,
@@ -263,6 +264,9 @@ public class HomeWorldMPSystem extends BaseGameSystem {
         victim.setCurHomeWorld(myHome);
         myHome.getHome().onOwnerLogin(victim);
 
+        victim.sendPacket(
+                new PacketPlayerQuitFromHomeNotify(
+                        PlayerQuitFromHomeNotifyOuterClass.PlayerQuitFromHomeNotify.QuitReason.KICK_BY_HOST));
         victim.sendPacket(
                 new PacketPlayerEnterSceneNotify(
                         victim,

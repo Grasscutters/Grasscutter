@@ -2,6 +2,7 @@ package emu.grasscutter.server.packet.recv;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
+import emu.grasscutter.game.quest.enums.QuestCond;
 import emu.grasscutter.game.quest.enums.QuestContent;
 import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.ItemGivingReqOuterClass.ItemGivingReq;
@@ -50,8 +51,9 @@ public final class HandlerItemGivingReq extends PacketHandler {
                         player.sendPacket(new PacketItemGivingRsp(giveId, Mode.EXACT_SUCCESS));
                         // Remove the action from the active givings.
                         questManager.removeGivingItemAction(giveId);
-                        // Queue the content action.
+                        // Queue the content and condition actions.
                         questManager.queueEvent(QuestContent.QUEST_CONTENT_FINISH_ITEM_GIVING, giveId, 0);
+                        questManager.queueEvent(QuestCond.QUEST_COND_ITEM_GIVING_FINISHED, giveId, 0);
                     }
                     case GIVING_METHOD_VAGUE_GROUP -> {
                         var matchedGroups = new ArrayList<Integer>();
@@ -96,8 +98,11 @@ public final class HandlerItemGivingReq extends PacketHandler {
                             player.sendPacket(new PacketItemGivingRsp(matchedGroups.get(0), Mode.GROUP_SUCCESS));
                             // Mark the giving action as completed.
                             questManager.markCompleted(giveId);
-                            // Queue the content action.
-                            questManager.queueEvent(QuestContent.QUEST_CONTENT_FINISH_ITEM_GIVING, giveId, 0);
+                            // Queue the content and condition actions.
+                            questManager.queueEvent(
+                                    QuestContent.QUEST_CONTENT_FINISH_ITEM_GIVING, giveId, matchedGroups.get(0));
+                            questManager.queueEvent(
+                                    QuestCond.QUEST_COND_ITEM_GIVING_FINISHED, giveId, matchedGroups.get(0));
                         }
                     }
                 }
