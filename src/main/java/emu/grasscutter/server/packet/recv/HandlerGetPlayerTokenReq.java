@@ -1,7 +1,6 @@
 package emu.grasscutter.server.packet.recv;
 
 import static emu.grasscutter.config.Configuration.ACCOUNT;
-import static emu.grasscutter.config.Configuration.GAME_INFO;
 
 import emu.grasscutter.*;
 import emu.grasscutter.database.DatabaseHelper;
@@ -112,6 +111,7 @@ public class HandlerGetPlayerTokenReq extends PacketHandler {
 
         // Only >= 2.7.50 has this
         if (req.getKeyId() > 0) {
+            var encrypt_seed = session.getEncryptSeed();
             try {
                 var cipher = Cipher.getInstance("RSA/ECB/PKCS1Padding");
                 cipher.init(Cipher.DECRYPT_MODE, Crypto.CUR_SIGNING_KEY);
@@ -120,7 +120,7 @@ public class HandlerGetPlayerTokenReq extends PacketHandler {
                 var client_seed = ByteBuffer.wrap(cipher.doFinal(client_seed_encrypted)).getLong();
 
                 var seed_bytes =
-                        ByteBuffer.wrap(new byte[8]).putLong((GAME_INFO.enableRandomEncryptSeed ? session.getEncryptSeed() : Crypto.ENCRYPT_SEED) ^ client_seed).array();
+                        ByteBuffer.wrap(new byte[8]).putLong(encrypt_seed ^ client_seed).array();
 
                 cipher.init(Cipher.ENCRYPT_MODE, Crypto.EncryptionKeys.get(req.getKeyId()));
                 var seed_encrypted = cipher.doFinal(seed_bytes);
@@ -137,7 +137,7 @@ public class HandlerGetPlayerTokenReq extends PacketHandler {
             } catch (Exception ignored) {
                 // Only UA Patch users will have exception
                 var clientBytes = Utils.base64Decode(req.getClientRandKey());
-                var seed = ByteHelper.longToBytes(GAME_INFO.enableRandomEncryptSeed ? session.getEncryptSeed() : Crypto.ENCRYPT_SEED);
+                var seed = ByteHelper.longToBytes(encrypt_seed);
                 Crypto.xor(clientBytes, seed);
 
                 var base64str = Utils.base64Encode(clientBytes);

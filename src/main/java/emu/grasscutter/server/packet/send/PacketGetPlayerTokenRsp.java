@@ -6,8 +6,6 @@ import emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRsp;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.utils.Crypto;
 
-import static emu.grasscutter.config.Configuration.GAME_INFO;
-
 public class PacketGetPlayerTokenRsp extends BasePacket {
 
     public PacketGetPlayerTokenRsp(GameSession session) {
@@ -22,7 +20,7 @@ public class PacketGetPlayerTokenRsp extends BasePacket {
                         .setAccountType(1)
                         .setIsProficientPlayer(
                                 session.getPlayer().getAvatars().getAvatarCount() > 0) // Not sure where this goes
-                        .setSecretKeySeed(GAME_INFO.enableRandomEncryptSeed ? session.getEncryptSeed() : Crypto.ENCRYPT_SEED)
+                        .setSecretKeySeed(session.getEncryptSeed())
                         .setSecurityCmdBuffer(ByteString.copyFrom(Crypto.ENCRYPT_SEED_BUFFER))
                         .setPlatformType(3)
                         .setChannelId(1)
@@ -68,7 +66,7 @@ public class PacketGetPlayerTokenRsp extends BasePacket {
                         .setAccountType(1)
                         .setIsProficientPlayer(
                                 session.getPlayer().getAvatars().getAvatarCount() > 0) // Not sure where this goes
-                        .setSecretKeySeed(GAME_INFO.enableRandomEncryptSeed ? session.getEncryptSeed() : Crypto.ENCRYPT_SEED)
+                        .setSecretKeySeed(session.getEncryptSeed())
                         .setSecurityCmdBuffer(ByteString.copyFrom(Crypto.ENCRYPT_SEED_BUFFER))
                         .setPlatformType(3)
                         .setChannelId(1)

@@ -23,8 +23,8 @@ public class GameSession implements GameSessionManager.KcpChannel {
     @Getter @Setter private Account account;
     @Getter private Player player;
 
-    @Getter private long encryptSeed;
-    private final byte[] encryptKey = new byte[4096];
+    @Getter private long encryptSeed = Crypto.ENCRYPT_SEED;
+    private byte[] encryptKey = Crypto.ENCRYPT_KEY;
 
     @Setter private boolean useSecretKey;
     @Getter @Setter private SessionState state;
@@ -38,8 +38,9 @@ public class GameSession implements GameSessionManager.KcpChannel {
         this.state = SessionState.WAITING_FOR_TOKEN;
         this.lastPingTime = System.currentTimeMillis();
 
-        if (GAME_INFO.enableRandomEncryptSeed) {
-            encryptSeed = Crypto.generateEncryptKeyAndSeed(encryptKey);
+        if (GAME_INFO.useUniquePacketKey) {
+            this.encryptKey = new byte[4096];
+            this.encryptSeed = Crypto.generateEncryptKeyAndSeed(this.encryptKey);
         }
     }
 
@@ -143,7 +144,7 @@ public class GameSession implements GameSessionManager.KcpChannel {
                 packet = event.getPacket();
                 var bytes = packet.build();
                 if (packet.shouldEncrypt) {
-                    Crypto.xor(bytes, packet.useDispatchKey() ? Crypto.DISPATCH_KEY : GAME_INFO.enableRandomEncryptSeed ? encryptKey : Crypto.ENCRYPT_KEY);
+                    Crypto.xor(bytes, packet.useDispatchKey() ? Crypto.DISPATCH_KEY : this.encryptKey);
                 }
                 tunnel.writeData(bytes);
             } catch (Exception ignored) {
@@ -161,7 +162,7 @@ public class GameSession implements GameSessionManager.KcpChannel {
     @Override
     public void handleReceive(byte[] bytes) {
         // Decrypt and turn back into a packet
-        Crypto.xor(bytes, useSecretKey() ? GAME_INFO.enableRandomEncryptSeed ? encryptKey : Crypto.ENCRYPT_KEY : Crypto.DISPATCH_KEY);
+        Crypto.xor(bytes, useSecretKey() ? this.encryptKey : Crypto.DISPATCH_KEY);
         ByteBuf packet = Unpooled.wrappedBuffer(bytes);
 
         // Log
