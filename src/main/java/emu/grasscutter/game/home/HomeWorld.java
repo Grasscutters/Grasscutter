@@ -29,6 +29,9 @@ public class HomeWorld extends World {
 
     @Override
     public boolean onTick() {
+        if (this.moduleManager == null) {
+            return false;
+        }
         this.moduleManager.tick();
 
         if (this.getTickCount() % 10 == 0) {
