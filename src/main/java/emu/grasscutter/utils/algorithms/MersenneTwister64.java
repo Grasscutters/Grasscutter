@@ -1,4 +1,4 @@
-package emu.grasscutter.utils.algorithm;
+package emu.grasscutter.utils.algorithms;
 
 public final class MersenneTwister64 {
     // Period parameters

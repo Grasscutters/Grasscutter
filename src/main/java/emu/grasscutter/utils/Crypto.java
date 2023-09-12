@@ -2,7 +2,7 @@ package emu.grasscutter.utils;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.server.http.objects.QueryCurRegionRspJson;
-import emu.grasscutter.utils.algorithm.MersenneTwister64;
+import emu.grasscutter.utils.algorithms.MersenneTwister64;
 
 import java.io.ByteArrayOutputStream;
 import java.nio.file.Path;
