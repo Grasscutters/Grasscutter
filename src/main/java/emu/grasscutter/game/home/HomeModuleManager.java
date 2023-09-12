@@ -41,12 +41,20 @@ public class HomeModuleManager {
     }
 
     public void tick() {
+        if (this.moduleId == 0) {
+            return;
+        }
+
         this.outdoor.onTick();
         this.indoor.onTick();
         this.summonEvents.removeIf(HomeAvatarSummonEvent::isTimeOver);
     }
 
     public void refreshMainHouse() {
+        if (this.moduleId == 0) {
+            return;
+        }
+
         this.indoor = this.homeWorld.getSceneById(this.homeWorld.getActiveIndoorSceneId());
     }
 
@@ -67,6 +75,7 @@ public class HomeModuleManager {
         var suites =
                 allBlockItems.stream()
                         .map(HomeBlockItem::getSuiteList)
+                        .filter(Objects::nonNull)
                         .flatMap(Collection::stream)
                         .distinct()
                         .toList();
@@ -210,6 +219,10 @@ public class HomeModuleManager {
     }
 
     public void onSetModule() {
+        if (this.moduleId == 0) {
+            return;
+        }
+
         this.outdoor.addEntities(this.getOutdoorSceneItem().getAnimals(this.outdoor));
         this.indoor.addEntities(this.getIndoorSceneItem().getAnimals(this.indoor));
         this.fireAllAvatarRewardEvent();
