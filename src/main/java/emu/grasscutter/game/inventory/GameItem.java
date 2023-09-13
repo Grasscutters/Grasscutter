@@ -20,13 +20,14 @@ import emu.grasscutter.net.proto.ReliquaryOuterClass.Reliquary;
 import emu.grasscutter.net.proto.SceneReliquaryInfoOuterClass.SceneReliquaryInfo;
 import emu.grasscutter.net.proto.SceneWeaponInfoOuterClass.SceneWeaponInfo;
 import emu.grasscutter.net.proto.WeaponOuterClass.Weapon;
-import emu.grasscutter.utils.objects.WeightedList;
-import java.util.*;
+import emu.grasscutter.utils.objects.*;
 import lombok.*;
 import org.bson.types.ObjectId;
 
+import java.util.*;
+
 @Entity(value = "items", useDiscriminator = false)
-public class GameItem {
+public class GameItem implements DatabaseObject<GameItem> {
     @Id private ObjectId id;
     @Indexed private int ownerId;
     @Getter @Setter private int itemId;
@@ -261,11 +262,33 @@ public class GameItem {
         }
     }
 
+    /**
+     * Saves this object to the database.
+     * As of Grasscutter 1.7.1, this is by default a {@link DatabaseObject#deferSave()} call.
+     */
     public void save() {
         if (this.count > 0 && this.ownerId > 0) {
-            DatabaseHelper.saveItem(this);
-        } else if (this.getObjectId() != null) {
+            this.deferSave();
+        } else {
             DatabaseHelper.deleteItem(this);
+        }
+    }
+
+    /**
+     * Saves this object to the database.
+     *
+     * @param immediate If true, this will be a {@link DatabaseObject#save()} call instead of a {@link DatabaseObject#deferSave()} call.
+     */
+    public void save(boolean immediate) {
+        if (this.count < 0 || this.ownerId <= 0) {
+            DatabaseHelper.deleteItem(this);
+            return;
+        }
+
+        if (immediate) {
+            DatabaseObject.super.save();
+        } else {
+            this.save();
         }
     }
 
