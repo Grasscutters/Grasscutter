@@ -68,4 +68,18 @@ public interface Database {
             });
         }
     }
+
+    /**
+     * Starts the auto-save thread.
+     * Runs every 5 minutes.
+     */
+    static void startSaveThread() {
+        var timer = new Timer();
+        timer.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                Database.saveAll();
+            }
+        }, 0, 1000 * 60 * 5);
+    }
 }
