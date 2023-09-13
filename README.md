@@ -46,14 +46,26 @@ Grasscutter uses Gradle to handle dependencies & building.
 
 **Requirements:**
 
-- [Java SE Development Kits - 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html) or higher
+- [Java Development Kit 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html) or higher
 - [Git](https://git-scm.com/downloads)
+- [NodeJS](https://nodejs.org/en/download) (Optional, for building the handbook)
 
-##### Windows
+##### Clone
 
 ```shell
 git clone --recurse-submodules https://github.com/Grasscutters/Grasscutter.git
 cd Grasscutter
+```
+
+##### If not building the handbook
+
+Add the following line to `gradle.properties`:
+
+`skipHandbook`
+
+##### Windows
+
+```shell
 .\gradlew.bat # Setting up environments
 .\gradlew jar # Compile
 ```
@@ -61,10 +73,16 @@ cd Grasscutter
 ##### Linux (GNU)
 
 ```bash
-git clone --recurse-submodules https://github.com/Grasscutters/Grasscutter.git
-cd Grasscutter
 chmod +x gradlew
 ./gradlew jar # Compile
+```
+
+##### Building the handbook
+
+```shell
+cd src/handbook
+npm install
+npm run build
 ```
 
 You can find the output jar in the root of the project folder.
