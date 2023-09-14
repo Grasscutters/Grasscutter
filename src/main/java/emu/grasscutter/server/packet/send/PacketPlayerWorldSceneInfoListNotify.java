@@ -20,25 +20,27 @@ public class PacketPlayerWorldSceneInfoListNotify extends BasePacket {
                 PlayerWorldSceneInfoListNotify.newBuilder()
                         .addInfoList(PlayerWorldSceneInfo.newBuilder().setSceneId(1).setIsLocked(false).build());
 
-                        // Iterate over all scenes the user has tags for
-                        for (int scene : sceneTags.keySet()) {
-                                var worldInfoBuilder = PlayerWorldSceneInfo.newBuilder();
-                                
-                                // Add all scene tags for the given scene
-                                proto.addInfoList(
-                                        worldInfoBuilder
+                        // Iterate over all scenes
+                        for (int scene : GameData.getSceneDataMap().keySet()) {
+                                var worldInfoBuilder = PlayerWorldSceneInfo.newBuilder()
                                         .setSceneId(scene)
-                                        .setIsLocked(false)
+                                        .setIsLocked(false);
+
+                                /** Add scene-specific data */
+
+                                // Scenetags
+                                if (sceneTags.keySet().contains(scene)) {
+                                        worldInfoBuilder
                                         .addAllSceneTagIdList(
                                                 sceneTags.entrySet().stream()
                                                 .filter(e -> e.getKey().equals(scene))
                                                 .map(Map.Entry::getValue)
                                                 .toList()
                                                 .get(0)
-                                        )
-                                );
+                                        );
+                                }
 
-                                // Add map layer information for big world
+                                // Map layer information (Big world)
                                 if (scene == 3) {
                                         worldInfoBuilder.setMapLayerInfo(
                                                 MapLayerInfoOuterClass.MapLayerInfo.newBuilder()
@@ -52,7 +54,7 @@ public class PacketPlayerWorldSceneInfoListNotify extends BasePacket {
                                                         .build()); // map layer test
                                 }
 
-                                worldInfoBuilder.build();
+                                proto.addInfoList(worldInfoBuilder.build());
                         }
 
         this.setData(proto);
