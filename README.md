@@ -46,25 +46,49 @@ Grasscutter uses Gradle to handle dependencies & building.
 
 **Requirements:**
 
-- [Java SE Development Kits - 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html) or higher
+- [Java Development Kit 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html) or higher
 - [Git](https://git-scm.com/downloads)
+- [NodeJS](https://nodejs.org/en/download) (Optional, for building the handbook)
 
-##### Windows
+##### Clone
 
 ```shell
 git clone --recurse-submodules https://github.com/Grasscutters/Grasscutter.git
 cd Grasscutter
-.\gradlew.bat # Setting up environments
-.\gradlew jar # Compile
 ```
 
-##### Linux (GNU)
+##### Compile
+
+**Note**: Handbook generation may fail on some systems. To disable the handbook generation, append `-PskipHandbook=1` to the `gradlew jar` command.
+
+Windows:
+
+```shell
+.\gradlew.bat # Setting up environments
+.\gradlew jar
+```
+
+Linux (GNU):
 
 ```bash
-git clone --recurse-submodules https://github.com/Grasscutters/Grasscutter.git
-cd Grasscutter
 chmod +x gradlew
-./gradlew jar # Compile
+./gradlew jar
+```
+
+##### Compiling the Handbook (Manually)
+
+With Gradle:
+
+```shell
+./gradlew generateHandbook
+```
+
+With NPM:
+
+```shell
+cd src/handbook
+npm install
+npm run build
 ```
 
 You can find the output jar in the root of the project folder.
