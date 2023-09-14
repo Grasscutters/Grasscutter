@@ -1,6 +1,30 @@
 # Handbook Data
 Use Grasscutter's dumpers to generate the data to put here.
 
+# Generating Data
+
+When you have Grasscutter set up, you can use the following commands to generate the data:
+- Commands - `grasscutter.jar -dump=commands,en-us`
+- Items - `grasscutter.jar -dump=items,EN`
+- Avatars - `grasscutter.jar -dump=avatars,EN`
+- Quests - `grasscutter.jar -dump=quests,EN`
+- Entities - `grasscutter.jar -dump=entities,en-us`
+- Areas - `grasscutter.jar -dump=areas,EN`
+- Scenes - `grasscutter.jar -dump=scenes,en-us`
+
+Grasscutter being "set up" means:
+- A Java runtime is installed
+- Resources are provided in the working directory
+
+## Language Locales
+
+You can replace `en-us` or `EN` using the language locale which matches the format.
+
+| Grasscutter Language Locale | Handbook Language Locale |
+|-----------------------------|--------------------------|
+| en-us                       | EN                       |
+
+
 ## Files Required
 - `mainquests.csv'
 - `commands.json`

@@ -23,12 +23,15 @@ public class HomeWorld extends World {
         super(server, owner);
 
         this.home = owner.isOnline() ? owner.getHome() : GameHome.getByUid(owner.getUid());
-        server.registerHomeWorld(this);
         this.refreshModuleManager();
+        server.registerHomeWorld(this);
     }
 
     @Override
     public boolean onTick() {
+        if (this.moduleManager == null) {
+            return false;
+        }
         this.moduleManager.tick();
 
         if (this.getTickCount() % 10 == 0) {
