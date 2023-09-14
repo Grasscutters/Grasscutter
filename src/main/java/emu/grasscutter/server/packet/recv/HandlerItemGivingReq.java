@@ -55,7 +55,7 @@ public final class HandlerItemGivingReq extends PacketHandler {
                         questManager.queueEvent(QuestContent.QUEST_CONTENT_FINISH_ITEM_GIVING, giveId, 0);
                         questManager.queueEvent(QuestCond.QUEST_COND_ITEM_GIVING_FINISHED, giveId, 0);
                     }
-                    case GIVING_METHOD_VAGUE_GROUP -> {
+                    case GIVING_METHOD_VAGUE_GROUP, GIVING_METHOD_GROUP -> {
                         var matchedGroups = new ArrayList<Integer>();
                         var givenItems = new HashMap<Integer, Integer>();
 
