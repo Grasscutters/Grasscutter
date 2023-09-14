@@ -1013,7 +1013,7 @@ public class ScriptLib {
     }
 
     public int AddSceneTag(int sceneId, int sceneTagId){
-        logger.warn("[LUA] Call AddSceneTag with {}, {}", sceneId, sceneTagId);
+        logger.debug("[LUA] Call AddSceneTag with {}, {}", sceneId, sceneTagId);
         // Ensure key exists for given scene
         if (sceneScriptManager.get().getScene().getHost().getSceneTags().get(sceneId) == null) {
             sceneScriptManager.get().getScene().getHost().getSceneTags().put(sceneId, new HashSet<>());
@@ -1023,7 +1023,7 @@ public class ScriptLib {
     }
 
     public int DelSceneTag(int sceneId, int sceneTagId){
-        logger.warn("[LUA] Call DelSceneTag with {}, {}", sceneId, sceneTagId);
+        logger.debug("[LUA] Call DelSceneTag with {}, {}", sceneId, sceneTagId);
         var sceneTags = sceneScriptManager.get().getScene().getHost().getSceneTags();
         // Ensure key exists for given scene
         if (sceneTags.get(sceneId) == null) {
@@ -1035,7 +1035,7 @@ public class ScriptLib {
     }
 
     public boolean CheckSceneTag(int sceneId, int sceneTagId){
-        logger.warn("[LUA] Call CheckSceneTag with {}, {}", sceneId, sceneTagId);
+        logger.debug("[LUA] Call CheckSceneTag with {}, {}", sceneId, sceneTagId);
         var sceneTags = sceneScriptManager.get().getScene().getHost().getSceneTags();
         // Ensure key exists for given scene
         if (sceneTags.get(sceneId) == null) {
