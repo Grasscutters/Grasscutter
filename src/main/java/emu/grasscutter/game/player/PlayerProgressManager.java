@@ -322,11 +322,7 @@ public final class PlayerProgressManager extends BasePlayerDataManager {
      ******************************************************************************************************************
      *****************************************************************************************************************/
     public void addSceneTag(int sceneId, int sceneTagId) {
-        // Sanity check
-        if (player.getSceneTags().get(sceneId) == null) {
-            player.getSceneTags().put(sceneId, new HashSet<>());
-        }
-        player.getSceneTags().get(sceneId).add(sceneTagId);
+        player.getSceneTags().computeIfAbsent(sceneId, k -> new HashSet<>()).add(sceneTagId);
         player.sendPacket(new PacketPlayerWorldSceneInfoListNotify(player));
     }
 
