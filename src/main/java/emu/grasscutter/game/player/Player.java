@@ -116,6 +116,7 @@ public class Player implements PlayerHook, FieldFetch {
     @Getter private Map<Integer, ActiveCookCompoundData> activeCookCompounds;
     @Getter private Map<Integer, Integer> questGlobalVariables;
     @Getter private Map<Integer, Integer> openStates;
+    @Getter private Map<Integer, Set<Integer>> sceneTags;
     @Getter @Setter private Map<Integer, Set<Integer>> unlockedSceneAreas;
     @Getter @Setter private Map<Integer, Set<Integer>> unlockedScenePoints;
     @Getter @Setter private List<Integer> chatEmojiIdList;
@@ -244,6 +245,7 @@ public class Player implements PlayerHook, FieldFetch {
         this.unlockedRecipies = new HashMap<>();
         this.questGlobalVariables = new HashMap<>();
         this.openStates = new HashMap<>();
+        this.sceneTags = new HashMap<>();
         this.unlockedSceneAreas = new HashMap<>();
         this.unlockedScenePoints = new HashMap<>();
         this.chatEmojiIdList = new ArrayList<>();
@@ -295,6 +297,7 @@ public class Player implements PlayerHook, FieldFetch {
         this.codex = new PlayerCodex(this);
 
         this.applyProperties();
+        this.applyStartingSceneTags();
         this.getFlyCloakList().add(140001);
         this.getNameCardList().add(210001);
 
@@ -585,6 +588,20 @@ public class Player implements PlayerHook, FieldFetch {
             this.getProperty(PlayerProperty.PROP_MAX_STAMINA));
         this.setProperty(PlayerProperty.PROP_DIVE_CUR_STAMINA,
                 this.getProperty(PlayerProperty.PROP_DIVE_MAX_STAMINA));
+    }
+
+    /**
+     * Applies all default scenetags to the player.
+     */
+    private void applyStartingSceneTags() {
+        GameData.getSceneTagDataMap().values().stream()
+                .filter(sceneTag -> sceneTag.isDefaultValid())
+                .forEach(sceneTag -> {
+                    if (this.getSceneTags().get(sceneTag.getSceneId()) == null) {
+                        this.getSceneTags().put(sceneTag.getSceneId(), new HashSet<>());
+                    }
+                    this.getSceneTags().get(sceneTag.getSceneId()).add(sceneTag.getId());
+                });
     }
 
     /**
@@ -1384,6 +1401,10 @@ public class Player implements PlayerHook, FieldFetch {
         }
         */
 
+        // Ensure the player has valid scenetags, allows old accounts to work
+        if (this.getSceneTags().isEmpty() || this.getSceneTags() == null) {
+            this.applyStartingSceneTags();
+        }
 
         if (GameHome.HOME_SCENE_IDS.contains(this.getSceneId())) {
             this.setSceneId(this.prevScene <= 0 ? 3 : this.prevScene); // if the player in home, make the player go back.

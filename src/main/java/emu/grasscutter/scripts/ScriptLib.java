@@ -1013,22 +1013,38 @@ public class ScriptLib {
     }
 
     public int AddSceneTag(int sceneId, int sceneTagId){
-        logger.warn("[LUA] Call unimplemented AddSceneTag with {}, {}", sceneId, sceneTagId);
-        //TODO implement
+        logger.warn("[LUA] Call AddSceneTag with {}, {}", sceneId, sceneTagId);
+        // Ensure key exists for given scene
+        if (sceneScriptManager.get().getScene().getHost().getSceneTags().get(sceneId) == null) {
+            sceneScriptManager.get().getScene().getHost().getSceneTags().put(sceneId, new HashSet<>());
+        }
+        sceneScriptManager.get().getScene().getHost().getSceneTags().get(sceneId).add(sceneTagId);
         return 0;
     }
 
     public int DelSceneTag(int sceneId, int sceneTagId){
-        logger.warn("[LUA] Call unimplemented DelSceneTag with {}, {}", sceneId, sceneTagId);
-        //TODO implement
+        logger.warn("[LUA] Call DelSceneTag with {}, {}", sceneId, sceneTagId);
+        var sceneTags = sceneScriptManager.get().getScene().getHost().getSceneTags();
+        // Ensure key exists for given scene
+        if (sceneTags.get(sceneId) == null) {
+            // Can't delete something that doesn't exist
+            return 0;
+        }
+        sceneScriptManager.get().getScene().getHost().getSceneTags().get(sceneId).remove(sceneTagId);
         return 0;
     }
 
     public boolean CheckSceneTag(int sceneId, int sceneTagId){
-        logger.warn("[LUA] Call unimplemented CheckSceneTag with {}, {}", sceneId, sceneTagId);
-        //TODO implement
-        return false;
+        logger.warn("[LUA] Call CheckSceneTag with {}, {}", sceneId, sceneTagId);
+        var sceneTags = sceneScriptManager.get().getScene().getHost().getSceneTags();
+        // Ensure key exists for given scene
+        if (sceneTags.get(sceneId) == null) {
+            // No point checking if it is null
+            return false;
+        }
+        return sceneScriptManager.get().getScene().getHost().getSceneTags().get(sceneId).contains(sceneTagId);
     }
+
     public int StartHomeGallery(int galleryId, int uid){
         logger.warn("[LUA] Call unimplemented StartHomeGallery with {} {}", galleryId, uid);
         //TODO implement
