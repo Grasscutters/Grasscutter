@@ -1330,9 +1330,8 @@ public class ScriptLib {
         return -1;
     }
 
-    //TODO check
     public int SetPlatformRouteId(int entityConfigId, int routeId){
-        logger.info("[LUA] Call SetPlatformRouteId {} {}", entityConfigId, routeId);
+        logger.debug("[LUA] Call SetPlatformRouteId {} {}", entityConfigId, routeId);
 
         val entity = getSceneScriptManager().getScene().getEntityByConfigId(entityConfigId);
         if(entity == null){
@@ -1365,12 +1364,9 @@ public class ScriptLib {
         return 0;
     }
 
-    //TODO check
     public int StartPlatform(int configId){
         logger.debug("[LUA] Call StartPlatform {} ", configId);
-
         val entity = sceneScriptManager.get().getScene().getEntityByConfigId(configId);
-
         if(!(entity instanceof EntityGadget entityGadget)) {
             return 1;
         }
@@ -1378,9 +1374,8 @@ public class ScriptLib {
         return entityGadget.startPlatform() ? 0 : 2;
     }
 
-    //TODO check
     public int StopPlatform(int configId){
-        logger.info("[LUA] Call StopPlatform {} ", configId);
+        logger.debug("[LUA] Call StopPlatform {} ", configId);
         val entity = sceneScriptManager.get().getScene().getEntityByConfigId(configId);
         if(!(entity instanceof EntityGadget entityGadget)) {
             return 1;
