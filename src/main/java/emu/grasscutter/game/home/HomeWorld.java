@@ -23,8 +23,8 @@ public class HomeWorld extends World {
         super(server, owner);
 
         this.home = owner.isOnline() ? owner.getHome() : GameHome.getByUid(owner.getUid());
-        server.registerHomeWorld(this);
         this.refreshModuleManager();
+        server.registerHomeWorld(this);
     }
 
     @Override

@@ -288,11 +288,8 @@ public final class GameServer extends KcpServer implements Iterable<Player> {
     public synchronized void onTick() {
         var tickStart = Instant.now();
 
-        // Tick worlds.
+        // Tick worlds and home worlds.
         this.worlds.removeIf(World::onTick);
-
-        // Tick Home Worlds (Not remove, HomeWorld is constant).
-        this.homeWorlds.values().forEach(HomeWorld::onTick);
 
         // Tick players.
         this.players.values().forEach(Player::onTick);
