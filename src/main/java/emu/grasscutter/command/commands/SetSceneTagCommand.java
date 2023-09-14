@@ -59,17 +59,11 @@ public final class SetSceneTagCommand implements CommandHandler {
     }
 
     private void addSceneTag(Player targetPlayer, int scene, int value) {
-        // Ensure key exists
-        if (targetPlayer.getSceneTags().get(scene) == null) {
-            targetPlayer.getSceneTags().put(scene, new HashSet<>());
-        }
-        targetPlayer.getSceneTags().get(scene).add(value);
-        setSceneTags(targetPlayer);
+        targetPlayer.getProgressManager().addSceneTag(scene, value);
     }
 
     private void removeSceneTag(Player targetPlayer, int scene, int value) {
-        targetPlayer.getSceneTags().get(scene).remove(value);
-        setSceneTags(targetPlayer);
+        targetPlayer.getProgressManager().delSceneTag(scene, value);
     }
 
     private void unlockAllSceneTags(Player targetPlayer) {
