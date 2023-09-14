@@ -57,27 +57,33 @@ git clone --recurse-submodules https://github.com/Grasscutters/Grasscutter.git
 cd Grasscutter
 ```
 
-##### If not building the handbook
+##### Compile
 
-Add the following line to `gradle.properties`:
+**Note**: Handbook generation may fail on some systems. To disable the handbook generation, append `-PskipHandbook=1` to the `gradlew jar` command.
 
-`skipHandbook`
-
-##### Windows
+Windows:
 
 ```shell
 .\gradlew.bat # Setting up environments
-.\gradlew jar # Compile
+.\gradlew jar
 ```
 
-##### Linux (GNU)
+Linux (GNU):
 
 ```bash
 chmod +x gradlew
-./gradlew jar # Compile
+./gradlew jar
 ```
 
-##### Building the handbook
+##### Compiling the Handbook (Manually)
+
+With Gradle:
+
+```shell
+./gradlew generateHandbook
+```
+
+With NPM:
 
 ```shell
 cd src/handbook
