@@ -535,7 +535,17 @@ public class Scene {
                                 "Can not solve monster drop: drop_id = {}, drop_tag = {}. Falling back to legacy drop system.",
                                 monster.getMetaMonster().drop_id,
                                 monster.getMetaMonster().drop_tag);
-                getWorld().getServer().getDropSystemLegacy().callDrop(monster);
+                world.getServer().getDropSystemLegacy().callDrop(monster);
+            }
+        }
+
+        if (target instanceof EntityGadget gadget) {
+            if (gadget.getMetaGadget() != null) {
+                world
+                        .getServer()
+                        .getDropSystem()
+                        .handleChestDrop(
+                                gadget.getMetaGadget().drop_id, gadget.getMetaGadget().drop_count, gadget);
             }
         }
 

@@ -1,5 +1,6 @@
 package emu.grasscutter.server.packet.recv;
 
+import emu.grasscutter.game.home.HomeScene;
 import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.packet.PacketOpcodes;
@@ -31,14 +32,8 @@ public class HandlerHomeChangeEditModeReq extends PacketHandler {
         session.send(new PacketHomeComfortInfoNotify(session.getPlayer()));
 
         if (!req.getIsEnterEditMode()) {
-            var scene = session.getPlayer().getScene();
-            scene.addEntities(
-                    session
-                            .getPlayer()
-                            .getCurHomeWorld()
-                            .getHome()
-                            .getHomeSceneItem(scene.getId())
-                            .getAnimals(scene));
+            var scene = (HomeScene) session.getPlayer().getScene();
+            scene.onLeaveEditMode();
         }
 
         session.send(new PacketHomeChangeEditModeRsp(req.getIsEnterEditMode()));

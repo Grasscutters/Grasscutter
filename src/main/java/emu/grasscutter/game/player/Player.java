@@ -950,6 +950,13 @@ public class Player implements PlayerHook, FieldFetch {
         this.sendPacket(new PacketAvatarGainCostumeNotify(costumeId));
     }
 
+    public int getCostumeFrom(int avatarId) {
+        var avatars = this.getAvatars();
+        avatars.loadFromDatabase();
+        var avatar = avatars.getAvatarById(avatarId);
+        return avatar == null ? 0 : avatar.getCostume();
+    }
+
     public void addPersonalLine(int personalLineId) {
         this.getPersonalLineList().add(personalLineId);
         session.getPlayer().getQuestManager().queueEvent(QuestCond.QUEST_COND_PERSONAL_LINE_UNLOCK, personalLineId);

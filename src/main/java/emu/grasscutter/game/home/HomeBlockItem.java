@@ -2,6 +2,8 @@ package emu.grasscutter.game.home;
 
 import dev.morphia.annotations.*;
 import emu.grasscutter.data.binout.HomeworldDefaultSaveData;
+import emu.grasscutter.game.home.suite.HomeSuiteItem;
+import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.proto.HomeBlockArrangementInfoOuterClass.HomeBlockArrangementInfo;
 import java.util.*;
 import java.util.stream.Stream;
@@ -19,6 +21,7 @@ public class HomeBlockItem {
     List<HomeFurnitureItem> persistentFurnitureList;
     List<HomeAnimalItem> deployAnimalList;
     List<HomeNPCItem> deployNPCList;
+    List<HomeSuiteItem> suiteList;
 
     public static HomeBlockItem parseFrom(HomeworldDefaultSaveData.HomeBlock homeBlock) {
         // create from default setting
@@ -37,10 +40,11 @@ public class HomeBlockItem {
                                         .toList())
                 .deployAnimalList(List.of())
                 .deployNPCList(List.of())
+                .suiteList(List.of())
                 .build();
     }
 
-    public void update(HomeBlockArrangementInfo homeBlockArrangementInfo) {
+    public void update(HomeBlockArrangementInfo homeBlockArrangementInfo, Player owner) {
         this.blockId = homeBlockArrangementInfo.getBlockId();
 
         this.deployFurnitureList =
@@ -60,7 +64,12 @@ public class HomeBlockItem {
 
         this.deployNPCList =
                 homeBlockArrangementInfo.getDeployNpcListList().stream()
-                        .map(HomeNPCItem::parseFrom)
+                        .map(homeNpcData -> HomeNPCItem.parseFrom(homeNpcData, owner))
+                        .toList();
+
+        this.suiteList =
+                homeBlockArrangementInfo.getFurnitureSuiteListList().stream()
+                        .map(HomeSuiteItem::parseFrom)
                         .toList();
     }
 
@@ -81,15 +90,20 @@ public class HomeBlockItem {
         this.persistentFurnitureList.forEach(f -> proto.addPersistentFurnitureList(f.toProto()));
         this.deployAnimalList.forEach(f -> proto.addDeployAnimalList(f.toProto()));
         this.deployNPCList.forEach(f -> proto.addDeployNpcList(f.toProto()));
+        this.suiteList.forEach(f -> proto.addFurnitureSuiteList(f.toProto()));
 
         return proto.build();
     }
 
-    // TODO add more types (farm field and suite)
+    // TODO implement farm field.
     public List<? extends HomeMarkPointProtoFactory> getMarkPointProtoFactories() {
         this.reassignIfNull();
 
-        return Stream.of(this.deployFurnitureList, this.persistentFurnitureList, this.deployNPCList)
+        return Stream.of(
+                        this.deployFurnitureList,
+                        this.persistentFurnitureList,
+                        this.deployNPCList,
+                        this.suiteList)
                 .flatMap(Collection::stream)
                 .toList();
     }
@@ -106,6 +120,9 @@ public class HomeBlockItem {
         }
         if (this.deployNPCList == null) {
             this.deployNPCList = List.of();
+        }
+        if (this.suiteList == null) {
+            this.suiteList = List.of();
         }
     }
 }
