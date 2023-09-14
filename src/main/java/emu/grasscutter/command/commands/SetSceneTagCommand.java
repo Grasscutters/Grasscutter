@@ -56,6 +56,8 @@ public final class SetSceneTagCommand implements CommandHandler {
             default -> CommandHandler.sendTranslatedMessage(sender, "commands.execution.argument_error");
         }
 
+        CommandHandler.sendTranslatedMessage(sender, "commands.generic.set_to", value, actionStr);
+
     }
 
     private void addSceneTag(Player targetPlayer, int scene, int value) {
@@ -64,6 +66,7 @@ public final class SetSceneTagCommand implements CommandHandler {
 
     private void removeSceneTag(Player targetPlayer, int scene, int value) {
         targetPlayer.getProgressManager().delSceneTag(scene, value);
+        
     }
 
     private void unlockAllSceneTags(Player targetPlayer) {
