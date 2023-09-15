@@ -439,7 +439,7 @@ public class World implements Iterable<Player> {
         }
 
         if (oldScene != null && newScene != oldScene) {
-            newScene.setPrevScene(oldScene.getId());
+            newScene.setPrevScenePoint(oldScene.getPrevScenePoint());
             oldScene.setDontDestroyWhenEmpty(false);
         }
 

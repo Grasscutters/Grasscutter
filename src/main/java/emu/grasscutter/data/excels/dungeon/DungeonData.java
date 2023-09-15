@@ -22,6 +22,7 @@ public class DungeonData extends GameResource {
     private DungeonInvolveType involveType;
     @Getter private int limitLevel;
     @Getter private int passCond;
+    @Getter private int passJumpDungeon;
     @Getter private int reviveMaxCount;
     @Getter private int settleCountdownTime;
     @Getter private int failSettleCountdownTime;
