@@ -1014,19 +1014,19 @@ public class ScriptLib {
 
     public int AddSceneTag(int sceneId, int sceneTagId){
         logger.debug("[LUA] Call AddSceneTag with {}, {}", sceneId, sceneTagId);
-        sceneScriptManager.get().getScene().getHost().getProgressManager().addSceneTag(sceneId, sceneTagId);
+        getSceneScriptManager.getScene().getHost().getProgressManager().addSceneTag(sceneId, sceneTagId);
         return 0;
     }
 
     public int DelSceneTag(int sceneId, int sceneTagId){
         logger.debug("[LUA] Call DelSceneTag with {}, {}", sceneId, sceneTagId);
-        sceneScriptManager.get().getScene().getHost().getProgressManager().delSceneTag(sceneId, sceneTagId);
+        getSceneScriptManager.getScene().getHost().getProgressManager().delSceneTag(sceneId, sceneTagId);
         return 0;
     }
 
     public boolean CheckSceneTag(int sceneId, int sceneTagId){
         logger.debug("[LUA] Call CheckSceneTag with {}, {}", sceneId, sceneTagId);
-        return sceneScriptManager.get().getScene().getHost().getProgressManager().checkSceneTag(sceneId, sceneTagId);
+        return getSceneScriptManager.getScene().getHost().getProgressManager().checkSceneTag(sceneId, sceneTagId);
     }
 
     public int StartHomeGallery(int galleryId, int uid){
