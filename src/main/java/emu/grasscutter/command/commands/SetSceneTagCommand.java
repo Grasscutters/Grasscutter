@@ -66,7 +66,6 @@ public final class SetSceneTagCommand implements CommandHandler {
 
     private void removeSceneTag(Player targetPlayer, int scene, int value) {
         targetPlayer.getProgressManager().delSceneTag(scene, value);
-        
     }
 
     private void unlockAllSceneTags(Player targetPlayer) {
