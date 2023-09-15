@@ -59,11 +59,11 @@ public class HomeModuleManager {
     }
 
     public void onUpdateArrangement() {
-        this.fireAllAvatarRewardEvent();
-        this.cancelSummonEventIfAvatarLeave();
+        this.fireAllAvatarRewardEvents();
+        this.cancelSummonEventsIfAvatarLeave();
     }
 
-    private void fireAllAvatarRewardEvent() {
+    private void fireAllAvatarRewardEvents() {
         this.rewardEvents.clear();
         var allBlockItems =
                 Stream.of(this.getOutdoorSceneItem(), this.getIndoorSceneItem())
@@ -111,7 +111,7 @@ public class HomeModuleManager {
         }
     }
 
-    private void cancelSummonEventIfAvatarLeave() {
+    private void cancelSummonEventsIfAvatarLeave() {
         var avatars =
                 Stream.of(this.getOutdoorSceneItem(), this.getIndoorSceneItem())
                         .map(HomeSceneItem::getBlockItems)
@@ -225,10 +225,14 @@ public class HomeModuleManager {
 
         this.outdoor.addEntities(this.getOutdoorSceneItem().getAnimals(this.outdoor));
         this.indoor.addEntities(this.getIndoorSceneItem().getAnimals(this.indoor));
-        this.fireAllAvatarRewardEvent();
+        this.fireAllAvatarRewardEvents();
     }
 
     public void onRemovedModule() {
+        if (this.moduleId == 0) {
+            return;
+        }
+
         this.outdoor.getEntities().clear();
         this.indoor.getEntities().clear();
     }

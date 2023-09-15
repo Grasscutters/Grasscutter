@@ -14,6 +14,7 @@ public class HandlerHomeChooseModuleReq extends PacketHandler {
                 HomeChooseModuleReqOuterClass.HomeChooseModuleReq.parseFrom(payload);
         session.getPlayer().addRealmList(req.getModuleId());
         session.getPlayer().setCurrentRealmId(req.getModuleId());
+        session.getPlayer().getCurHomeWorld().refreshModuleManager();
         session.send(new PacketHomeChooseModuleRsp(req.getModuleId()));
         session.send(new PacketPlayerHomeCompInfoNotify(session.getPlayer()));
         session.send(new PacketHomeComfortInfoNotify(session.getPlayer()));
