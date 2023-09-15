@@ -101,21 +101,16 @@ public final class QuestManager extends BasePlayerManager {
      * Attempts to add the giving action.
      *
      * @param givingId The giving action ID.
-     * @throws IllegalStateException If the giving action is already active.
      */
     public void addGiveItemAction(int givingId) throws IllegalStateException {
         var progress = this.player.getPlayerProgress();
         var givings = progress.getItemGivings();
 
-        // Check if the action is already present.
-        if (givings.containsKey(givingId)) {
-            throw new IllegalStateException("Giving action " + givingId + " is already active.");
+        // Check if the action is not present.
+        if (!givings.containsKey(givingId)) {
+            givings.put(givingId, ItemGiveRecord.resolve(givingId));
+            player.save();
         }
-
-        // Add the action.
-        givings.put(givingId, ItemGiveRecord.resolve(givingId));
-        // Save the givings.
-        player.save();
 
         this.sendGivingRecords();
     }
