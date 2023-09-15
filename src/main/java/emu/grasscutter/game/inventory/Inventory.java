@@ -216,14 +216,14 @@ public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
     }
 
     /**
-     * Checks to see if the player has the item in their inventory. This is exact.
+     * Checks to see if the player has the item in their inventory. This is not exact.
      *
      * @param items A map of item game IDs to their count.
      * @return True if the player has the items, false otherwise.
      */
     public boolean hasAllItems(Collection<ItemParam> items) {
         for (var item : items) {
-            if (!this.hasItem(item.getItemId(), item.getCount(), true)) return false;
+            if (!this.hasItem(item.getItemId(), item.getCount(), false)) return false;
         }
 
         return true;
