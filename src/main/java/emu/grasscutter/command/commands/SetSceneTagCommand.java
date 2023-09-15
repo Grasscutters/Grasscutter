@@ -88,7 +88,7 @@ public final class SetSceneTagCommand implements CommandHandler {
                     targetPlayer.getSceneTags().get(sceneTag.getSceneId()).remove(sceneTag.getId());
                 });
 
-        setSceneTags(targetPlayer);
+        this.setSceneTags(targetPlayer);
     }
 
     private void setSceneTags(Player targetPlayer) {
