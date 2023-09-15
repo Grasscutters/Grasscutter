@@ -304,7 +304,7 @@ public class EntityGadget extends EntityBaseGadget {
                                                         }
                                                         configRoute.setStartIndex(I);
                                                         this.position.set(points[I].getPos());
-                                                        if(I == points.length - 1) {
+                                                        if (I == points.length - 1) {
                                                             configRoute.setStarted(false);
                                                         }
                                                     },

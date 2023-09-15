@@ -17,9 +17,10 @@ public class HandlerClientScriptEventNotify extends PacketHandler {
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
         val data = ClientScriptEventNotify.parseFrom(payload);
         val scriptManager = session.getPlayer().getScene().getScriptManager();
-        val args = new ScriptArgs(0, data.getEventType())
-                .setSourceEntityId(data.getSourceEntityId())
-                .setTargetEntityId(data.getTargetEntityId());
+        val args =
+                new ScriptArgs(0, data.getEventType())
+                        .setSourceEntityId(data.getSourceEntityId())
+                        .setTargetEntityId(data.getTargetEntityId());
 
         for (int i = 0; i < data.getParamListCount(); i++) {
             switch (i) {
@@ -29,11 +30,13 @@ public class HandlerClientScriptEventNotify extends PacketHandler {
             }
         }
 
-        if(data.getEventType() == EventType.EVENT_AVATAR_NEAR_PLATFORM){
-            if(data.getParamList(0) == 0) {
-                Grasscutter.getLogger().debug("Found a zero Param1 for an EVENT_AVATAR_NEAR_PLATFORM. Doing the configID workaround.");
+        if (data.getEventType() == EventType.EVENT_AVATAR_NEAR_PLATFORM) {
+            if (data.getParamList(0) == 0) {
+                Grasscutter.getLogger()
+                        .debug(
+                                "Found a zero Param1 for an EVENT_AVATAR_NEAR_PLATFORM. Doing the configID workaround.");
                 val entity = session.getPlayer().getScene().getEntityById(data.getSourceEntityId());
-                if(entity == null) {
+                if (entity == null) {
                     Grasscutter.getLogger().debug("But it failed.");
                 } else {
                     args.setParam1(entity.getConfigId());
@@ -43,5 +46,4 @@ public class HandlerClientScriptEventNotify extends PacketHandler {
 
         scriptManager.callEvent(args);
     }
-
 }
