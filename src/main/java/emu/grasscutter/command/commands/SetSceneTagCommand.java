@@ -6,6 +6,7 @@ import emu.grasscutter.data.excels.scene.SceneTagData;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.packet.send.*;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import lombok.val;
 
 import java.util.*;
 
@@ -21,8 +22,8 @@ public final class SetSceneTagCommand implements CommandHandler {
             return;
         }
 
-        String actionStr = args.get(0).toLowerCase();
-        int value = -1;
+        val actionStr = args.get(0).toLowerCase();
+        var value = -1;
 
         if (args.size() > 1) {
             try {
@@ -41,7 +42,7 @@ public final class SetSceneTagCommand implements CommandHandler {
             }
         }
 
-        final int userVal = value;
+        val userVal = value;
 
         var sceneData = sceneTagData.values().stream().filter(sceneTag -> sceneTag.getId() == userVal).findFirst();
         if (sceneData == null) {
