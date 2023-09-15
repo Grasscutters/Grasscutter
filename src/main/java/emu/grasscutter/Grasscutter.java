@@ -158,6 +158,8 @@ public final class Grasscutter {
 
             // Generate handbooks.
             Tools.createGmHandbooks(false);
+
+            Tools.generateGachaMappings();
         }
 
         // Start servers.
