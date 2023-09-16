@@ -3,9 +3,8 @@ package emu.grasscutter.data.binout;
 import com.google.gson.annotations.SerializedName;
 import emu.grasscutter.data.common.DynamicFloat;
 import emu.grasscutter.game.props.ElementType;
-import lombok.ToString;
-
 import java.io.Serializable;
+import lombok.ToString;
 
 public class AbilityModifier implements Serializable {
     private static final long serialVersionUID = -2001232313615923575L;
@@ -278,8 +277,8 @@ public class AbilityModifier implements Serializable {
         public DynamicFloat amount = DynamicFloat.ZERO;
 
         @SerializedName(
-            value = "amountByTargetCurrentHPRatio",
-            alternate = {"GMFELAKANEF"})
+                value = "amountByTargetCurrentHPRatio",
+                alternate = {"GMFELAKANEF"})
         public DynamicFloat amountByCasterAttackRatio = DynamicFloat.ZERO;
 
         @SerializedName(value = "unknown2")
