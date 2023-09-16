@@ -15,9 +15,8 @@ import emu.grasscutter.scripts.data.controller.EntityController;
 import emu.grasscutter.server.event.entity.*;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
 import it.unimi.dsi.fastutil.ints.*;
-import lombok.*;
-
 import java.util.*;
+import lombok.*;
 
 public abstract class GameEntity {
     @Getter private final Scene scene;
@@ -35,7 +34,8 @@ public abstract class GameEntity {
     @Getter @Setter private boolean lockHP;
 
     @Setter(AccessLevel.PROTECTED)
-    @Getter private boolean isDead = false;
+    @Getter
+    private boolean isDead = false;
 
     // Lua controller for specific actions
     @Getter @Setter private EntityController entityController;
