@@ -70,10 +70,8 @@ public final class GameSessionManager implements KcpListener {
         }
 
         // Handle the message in a separate thread.
-        executor.submit(() -> {
-            var bytes = Utils.byteBufToArray(byteBuf);
-            session.onMessage(bytes);
-        });
+        var bytes = Utils.byteBufToArray(byteBuf);
+        executor.submit(() -> session.onMessage(bytes));
     }
 
     @Override

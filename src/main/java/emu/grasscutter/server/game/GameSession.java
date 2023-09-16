@@ -148,7 +148,7 @@ public class GameSession implements KcpChannel {
                 if (packet.shouldEncrypt) {
                     Crypto.xor(bytes, packet.useDispatchKey() ? Crypto.DISPATCH_KEY : this.encryptKey);
                 }
-                tunnel.writeData(bytes);
+                this.tunnel.writeData(bytes);
             } catch (Exception ignored) {
                 Grasscutter.getLogger().debug("Unable to send packet to client.");
             }
@@ -228,8 +228,8 @@ public class GameSession implements KcpChannel {
                 // Handle
                 getServer().getPacketHandler().handle(this, opcode, header, payload);
             }
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (Exception exception) {
+            Grasscutter.getLogger().warn("Unable to handle packet.", exception);
         } finally {
             // byteBuf.release(); //Needn't
             packet.release();

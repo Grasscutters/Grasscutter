@@ -77,7 +77,7 @@ public final class GameServerPacketHandler {
 
                 // Invoke event.
                 var event = new ReceivePacketEvent(session, opcode, payload);
-                if (!event.call()) // If event is not canceled, continue.
+                if (event.call()) // If event is not canceled, continue.
                     handler.handle(session, header, event.getPacketData());
             } catch (Exception ex) {
                 Grasscutter.getLogger().warn("Unable to handle packet.", ex);
