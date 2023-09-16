@@ -20,7 +20,7 @@ public class PacketGetPlayerTokenRsp extends BasePacket {
                         .setAccountType(1)
                         .setIsProficientPlayer(
                                 session.getPlayer().getAvatars().getAvatarCount() > 0) // Not sure where this goes
-                        .setSecretKeySeed(Crypto.ENCRYPT_SEED)
+                        .setSecretKeySeed(session.getEncryptSeed())
                         .setSecurityCmdBuffer(ByteString.copyFrom(Crypto.ENCRYPT_SEED_BUFFER))
                         .setPlatformType(3)
                         .setChannelId(1)
@@ -66,7 +66,7 @@ public class PacketGetPlayerTokenRsp extends BasePacket {
                         .setAccountType(1)
                         .setIsProficientPlayer(
                                 session.getPlayer().getAvatars().getAvatarCount() > 0) // Not sure where this goes
-                        .setSecretKeySeed(Crypto.ENCRYPT_SEED)
+                        .setSecretKeySeed(session.getEncryptSeed())
                         .setSecurityCmdBuffer(ByteString.copyFrom(Crypto.ENCRYPT_SEED_BUFFER))
                         .setPlatformType(3)
                         .setChannelId(1)
