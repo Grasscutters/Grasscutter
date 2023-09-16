@@ -1013,22 +1013,22 @@ public class ScriptLib {
     }
 
     public int AddSceneTag(int sceneId, int sceneTagId){
-        logger.warn("[LUA] Call unimplemented AddSceneTag with {}, {}", sceneId, sceneTagId);
-        //TODO implement
+        logger.debug("[LUA] Call AddSceneTag with {}, {}", sceneId, sceneTagId);
+        getSceneScriptManager().getScene().getHost().getProgressManager().addSceneTag(sceneId, sceneTagId);
         return 0;
     }
 
     public int DelSceneTag(int sceneId, int sceneTagId){
-        logger.warn("[LUA] Call unimplemented DelSceneTag with {}, {}", sceneId, sceneTagId);
-        //TODO implement
+        logger.debug("[LUA] Call DelSceneTag with {}, {}", sceneId, sceneTagId);
+        getSceneScriptManager().getScene().getHost().getProgressManager().delSceneTag(sceneId, sceneTagId);
         return 0;
     }
 
     public boolean CheckSceneTag(int sceneId, int sceneTagId){
-        logger.warn("[LUA] Call unimplemented CheckSceneTag with {}, {}", sceneId, sceneTagId);
-        //TODO implement
-        return false;
+        logger.debug("[LUA] Call CheckSceneTag with {}, {}", sceneId, sceneTagId);
+        return getSceneScriptManager().getScene().getHost().getProgressManager().checkSceneTag(sceneId, sceneTagId);
     }
+
     public int StartHomeGallery(int galleryId, int uid){
         logger.warn("[LUA] Call unimplemented StartHomeGallery with {} {}", galleryId, uid);
         //TODO implement
