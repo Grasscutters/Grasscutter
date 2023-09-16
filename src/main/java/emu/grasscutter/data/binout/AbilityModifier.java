@@ -3,8 +3,9 @@ package emu.grasscutter.data.binout;
 import com.google.gson.annotations.SerializedName;
 import emu.grasscutter.data.common.DynamicFloat;
 import emu.grasscutter.game.props.ElementType;
-import java.io.Serializable;
 import lombok.ToString;
+
+import java.io.Serializable;
 
 public class AbilityModifier implements Serializable {
     private static final long serialVersionUID = -2001232313615923575L;
@@ -273,18 +274,20 @@ public class AbilityModifier implements Serializable {
 
         @SerializedName(
                 value = "amount",
-                alternate = {"PDLLIFICICJ", "cdRatio"})
+                alternate = {"LNFMOCKIAGK", "PDLLIFICICJ", "cdRatio"})
         public DynamicFloat amount = DynamicFloat.ZERO;
 
-        @SerializedName(value = "amountByTargetCurrentHPRatio")
+        @SerializedName(
+            value = "amountByTargetCurrentHPRatio",
+            alternate = {"GMFELAKANEF"})
         public DynamicFloat amountByCasterAttackRatio = DynamicFloat.ZERO;
 
-        @SerializedName(value = "unused")
+        @SerializedName(value = "unknown2")
         public DynamicFloat amountByCasterCurrentHPRatio = DynamicFloat.ZERO;
 
         @SerializedName(
-                value = "unknown",
-                alternate = {"HFNJHOGGFKB", "GEJGGCIOLKN"})
+                value = "amountByCasterMaxHPRatio",
+                alternate = {"PKPBLCNMPIG", "HFNJHOGGFKB", "GEJGGCIOLKN"})
         public DynamicFloat amountByCasterMaxHPRatio = DynamicFloat.ZERO;
 
         public DynamicFloat amountByGetDamage = DynamicFloat.ZERO;
@@ -292,7 +295,7 @@ public class AbilityModifier implements Serializable {
         @SerializedName(value = "amountByTargetMaxHPRatio")
         public DynamicFloat amountByTargetCurrentHPRatio = DynamicFloat.ZERO;
 
-        @SerializedName(value = "amountByCasterMaxHPRatio")
+        @SerializedName(value = "unknown1", alternate = "GGLMMJHNGMO")
         public DynamicFloat amountByTargetMaxHPRatio = DynamicFloat.ZERO;
 
         public DynamicFloat limboByTargetMaxHPRatio = DynamicFloat.ZERO;
