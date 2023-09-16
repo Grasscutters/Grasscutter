@@ -324,7 +324,7 @@
     "setProp": {
       "description": "设置账号的状态。比如可以通过此命令启用 GodMode，也可以解锁深渊或更改纪行等级\n\t可更改的状态列表(不区分大小写)：GodMode(上帝模式)|UnlimitedStamina(无限体力)|UnlimitedEnergy(无限能量)|TowerLevel(深渊)|WorldLevel(世界等级)|BPLevel(纪行等级)|SetOpenState(设置开放状态)|UnsetOpenState(取消开放状态)|UnlockMap(解锁地图)\n\t查看 PlayerProperty enum 以获得其他数值，格式为 PROP_MAX_SPRING_VOLUME -> max_spring_volume"
     },
-    "setSceneTag":{
+    "setSceneTag": {
       "description": "设置特定于账户的场景标签。这可以控制诸如石头挡住门、建筑物可见以及其他（通常与任务相关）影响世界可见度的事物。"
     },
     "setStats": {

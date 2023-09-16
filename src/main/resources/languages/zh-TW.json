@@ -324,7 +324,7 @@
     "setProp": {
       "description": "設定帳號屬性。比如可以通過此命令啟用無敵，也可以解鎖深淵或更改紀行等級。\n\t可更改的屬性列表： godmode(無敵)|nostamina(無限體力)|unlimitedenergy(無限元素能量)|abyss(深淵螺旋)|worldlevel(世界等級)|bplevel(紀行等級)\n\t(cont.) `有關其他可能的數值，請參閱 PlayerProperty 列舉。 (範例 PROP_MAX_SPRING_VOLUME -> max_spring_volume)`"
     },
-    "setSceneTag":{
+    "setSceneTag": {
       "description": "設置帳戶特定的場景標籤。 這可以控制諸如擋住門的岩石、可見的建築物以及影響世界中可見內容的其他（通常與任務相關）的事物。"
     },
     "setStats": {

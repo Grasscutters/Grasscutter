@@ -324,7 +324,7 @@
     "setProp": {
       "description": "Stabilește proprietățile la nivel de cont. Lucruri precum godmode pot fi activate în acest fel, precum și schimbarea unor lucuri precum etajul abisului deblocat și progresul battle pass.\n\tValori pentru <prop>: godmode | nostamina | unlimitedenergy | abyss | worldlevel | bplevel\n\t(cont.) see PlayerProperty enum for other possible values, of form PROP_MAX_SPRING_VOLUME -> max_spring_volume"
     },
-    "setSceneTag":{
+    "setSceneTag": {
       "description": "Stabilește etichetele de scenă specifice contului. Aceasta controlează lucruri precum rocile care blochează ușile, clădirile care sunt vizibile și alte lucruri (de obicei legate de misiuni) care afectează ceea ce este vizibil în lumea ta."
     },
     "setStats": {
