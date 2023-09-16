@@ -26,7 +26,7 @@ You can replace `en-us` or `EN` using the language locale which matches the form
 
 
 ## Files Required
-- `mainquests.csv'
+- `mainquests.csv`
 - `commands.json`
 - `entities.csv`
 - `avatars.csv`
