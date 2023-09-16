@@ -4,7 +4,8 @@ public final class MersenneTwister64 {
     // Period parameters
     private static final int N = 312;
     private static final int M = 156;
-    private static final long MATRIX_A = 0xB5026F5AA96619E9L;   // private static final * constant vector a
+    private static final long MATRIX_A =
+            0xB5026F5AA96619E9L; // private static final * constant vector a
     private static final long UPPER_MASK = 0xFFFFFFFF80000000L; // most significant w-r bits
     private static final int LOWER_MASK = 0x7FFFFFFF; // least significant r bits
 
@@ -23,7 +24,7 @@ public final class MersenneTwister64 {
         long x;
         final long[] mag01 = {0x0L, MATRIX_A};
 
-        if (mti >= N) {   // generate N words at one time
+        if (mti >= N) { // generate N words at one time
             if (mti == N + 1) {
                 setSeed(5489L);
             }

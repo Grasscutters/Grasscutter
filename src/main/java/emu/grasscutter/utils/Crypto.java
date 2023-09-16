@@ -3,7 +3,6 @@ package emu.grasscutter.utils;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.server.http.objects.QueryCurRegionRspJson;
 import emu.grasscutter.utils.algorithms.MersenneTwister64;
-
 import java.io.ByteArrayOutputStream;
 import java.nio.file.Path;
 import java.security.*;
@@ -36,9 +35,9 @@ public final class Crypto {
 
         try {
             CUR_SIGNING_KEY =
-                KeyFactory.getInstance("RSA")
-                    .generatePrivate(
-                        new PKCS8EncodedKeySpec(FileUtils.readResource("/keys/SigningKey.der")));
+                    KeyFactory.getInstance("RSA")
+                            .generatePrivate(
+                                    new PKCS8EncodedKeySpec(FileUtils.readResource("/keys/SigningKey.der")));
 
             Pattern pattern = Pattern.compile("([0-9]*)_Pub\\.der");
             for (Path path : FileUtils.getPathsFromResource("/keys/game_keys")) {
@@ -48,8 +47,8 @@ public final class Crypto {
 
                     if (m.matches()) {
                         var key =
-                            KeyFactory.getInstance("RSA")
-                                .generatePublic(new X509EncodedKeySpec(FileUtils.read(path)));
+                                KeyFactory.getInstance("RSA")
+                                        .generatePublic(new X509EncodedKeySpec(FileUtils.read(path)));
 
                         EncryptionKeys.put(Integer.valueOf(m.group(1)), key);
                     }
@@ -97,7 +96,7 @@ public final class Crypto {
     }
 
     public static QueryCurRegionRspJson encryptAndSignRegionData(byte[] regionInfo, String key_id)
-        throws Exception {
+            throws Exception {
         if (key_id == null) {
             throw new Exception("Key ID was not set");
         }
@@ -115,8 +114,8 @@ public final class Crypto {
 
         for (int i = 0; i < numChunks; i++) {
             byte[] chunk =
-                Arrays.copyOfRange(
-                    regionInfo, i * chunkSize, Math.min((i + 1) * chunkSize, regionInfoLength));
+                    Arrays.copyOfRange(
+                            regionInfo, i * chunkSize, Math.min((i + 1) * chunkSize, regionInfoLength));
             byte[] encryptedChunk = cipher.doFinal(chunk);
             encryptedRegionInfoStream.write(encryptedChunk);
         }

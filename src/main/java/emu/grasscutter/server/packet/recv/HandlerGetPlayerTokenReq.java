@@ -119,8 +119,7 @@ public class HandlerGetPlayerTokenReq extends PacketHandler {
                 var clientSeedEncrypted = Utils.base64Decode(req.getClientRandKey());
                 var clientSeed = ByteBuffer.wrap(cipher.doFinal(clientSeedEncrypted)).getLong();
 
-                var seedBytes =
-                        ByteBuffer.wrap(new byte[8]).putLong(encryptSeed ^ clientSeed).array();
+                var seedBytes = ByteBuffer.wrap(new byte[8]).putLong(encryptSeed ^ clientSeed).array();
 
                 cipher.init(Cipher.ENCRYPT_MODE, Crypto.EncryptionKeys.get(req.getKeyId()));
                 var seedEncrypted = cipher.doFinal(seedBytes);
