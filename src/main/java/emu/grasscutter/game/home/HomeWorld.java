@@ -11,10 +11,9 @@ import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.packet.send.PacketDelTeamEntityNotify;
 import emu.grasscutter.server.packet.send.PacketPlayerChatNotify;
 import emu.grasscutter.server.packet.send.PacketPlayerGameTimeNotify;
-import lombok.Getter;
-
 import java.util.List;
 import java.util.function.Consumer;
+import lombok.Getter;
 
 @Getter
 public class HomeWorld extends World {
@@ -62,7 +61,9 @@ public class HomeWorld extends World {
     }
 
     public int getActiveIndoorSceneId() {
-        return this.isRealmIdValid() ? this.getSceneById(this.getActiveOutdoorSceneId()).getSceneItem().getRoomSceneId() : -1;
+        return this.isRealmIdValid()
+                ? this.getSceneById(this.getActiveOutdoorSceneId()).getSceneItem().getRoomSceneId()
+                : -1;
     }
 
     public boolean isRealmIdValid() {
