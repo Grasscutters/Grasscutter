@@ -286,7 +286,10 @@ public final class DungeonManager {
         // jump players to next dungeon if available
         if (this.dungeonData.getPassJumpDungeon() != 0) {
             for (var player : this.getScene().getPlayers()) {
-                player.getServer().getDungeonSystem().enterDungeon(player, 0, this.dungeonData.getPassJumpDungeon(), false);
+                player
+                        .getServer()
+                        .getDungeonSystem()
+                        .enterDungeon(player, 0, this.dungeonData.getPassJumpDungeon(), false);
             }
         }
     }
