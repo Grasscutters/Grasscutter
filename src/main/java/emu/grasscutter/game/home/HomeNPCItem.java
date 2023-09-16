@@ -2,6 +2,7 @@ package emu.grasscutter.game.home;
 
 import dev.morphia.annotations.Entity;
 import emu.grasscutter.data.GameData;
+import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.world.Position;
 import emu.grasscutter.net.proto.HomeMarkPointFurnitureDataOuterClass;
 import emu.grasscutter.net.proto.HomeMarkPointNPCDataOuterClass;
@@ -23,11 +24,12 @@ public class HomeNPCItem implements HomeMarkPointProtoFactory {
     Position spawnRot;
     int costumeId;
 
-    public static HomeNPCItem parseFrom(HomeNpcDataOuterClass.HomeNpcData homeNpcData) {
+    public static HomeNPCItem parseFrom(HomeNpcDataOuterClass.HomeNpcData homeNpcData, Player owner) {
         return HomeNPCItem.of()
                 .avatarId(homeNpcData.getAvatarId())
                 .spawnPos(new Position(homeNpcData.getSpawnPos()))
                 .spawnRot(new Position(homeNpcData.getSpawnRot()))
+                .costumeId(owner.getCostumeFrom(homeNpcData.getAvatarId()))
                 .build();
     }
 

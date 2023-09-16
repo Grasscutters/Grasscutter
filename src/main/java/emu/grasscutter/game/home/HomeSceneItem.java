@@ -6,16 +6,18 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.binout.HomeworldDefaultSaveData;
 import emu.grasscutter.game.entity.EntityHomeAnimal;
+import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.world.Position;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.net.proto.HomeSceneArrangementInfoOuterClass.HomeSceneArrangementInfo;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.Collectors;
 import javax.annotation.Nullable;
-import lombok.*;
+import lombok.AccessLevel;
+import lombok.Builder;
+import lombok.Data;
 import lombok.experimental.FieldDefaults;
 
 @Entity
@@ -49,14 +51,14 @@ public class HomeSceneItem {
                 .build();
     }
 
-    public void update(HomeSceneArrangementInfo arrangementInfo) {
+    public void update(HomeSceneArrangementInfo arrangementInfo, Player owner) {
         for (var blockItem : arrangementInfo.getBlockArrangementInfoListList()) {
             var block = this.blockItems.get(blockItem.getBlockId());
             if (block == null) {
                 Grasscutter.getLogger().warn("Could not found the Home Block {}", blockItem.getBlockId());
                 continue;
             }
-            block.update(blockItem);
+            block.update(blockItem, owner);
             this.blockItems.put(blockItem.getBlockId(), block);
         }
 
@@ -84,17 +86,13 @@ public class HomeSceneItem {
     }
 
     @Nullable public Position getTeleportPointPos(int guid) {
-        var pos = new AtomicReference<Position>();
-
-        this.getBlockItems().values().stream()
+        return this.getBlockItems().values().stream()
                 .map(HomeBlockItem::getDeployFurnitureList)
                 .flatMap(Collection::stream)
                 .filter(homeFurnitureItem -> homeFurnitureItem.getGuid() == guid)
                 .map(HomeFurnitureItem::getSpawnPos)
                 .findFirst()
-                .ifPresent(pos::set);
-
-        return pos.get();
+                .orElse(null);
     }
 
     public List<EntityHomeAnimal> getAnimals(Scene scene) {

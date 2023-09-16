@@ -324,6 +324,9 @@
     "setProp": {
       "description": "Imposta le proprietà dell'intero account. Cose come godmode possono essere abilitate in questo modo, oltre a cambiare cose come il pavimento dell'abisso sbloccato e il progresso del pass battaglia.\n\tValori per <prop> (senza distinzione tra maiuscole e minuscole): GodMode | UnlimitedStamina | UnlimitedEnergy | TowerLevel | WorldLevel | BPLevel | SetOpenState | UnsetOpenState | UnlockMap\n\t(cont.) vedi PlayerProperty enum per altri possibili valori, nella forma PROP_MAX_SPRING_VOLUME -> max_spring_volume"
     },
+    "setSceneTag": {
+      "description": "Imposta i tag di scena specifici dell'account. Questo controlla cose come le rocce che bloccano le porte, gli edifici visibili e altre cose (di solito legate alle missioni) che influenzano ciò che è visibile nel mondo."
+    },
     "setStats": {
       "description": "Imposta la proprietà di combattimento per il tuo personaggio attivo corrente\n\tValori per <stat>: hp | maxhp | def | atk | em | er | crate | cdmg | cdr | heal | heali | shield | defi\n\t(cont.) Elemental DMG Bonus: epyro | ecryo | ehydro | egeo | edendro | eelectro | ephys\n\t(cont.) Elemental RES: respyro | rescryo | reshydro | resgeo | resdendro | reselectro | resphys",
       "locked_to": "%s bloccato a %s.",

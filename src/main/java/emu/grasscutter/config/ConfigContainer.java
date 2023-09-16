@@ -33,9 +33,11 @@ public class ConfigContainer {
      *              Lua script require system if performance is a concern.
      * Version 12 - 'http.startImmediately' was added to control whether the
      *              HTTP server should start immediately.
+     * Version 13 - 'game.useUniquePacketKey' was added to control whether the
+     *              encryption key used for packets is a constant or randomly generated.
      */
     private static int version() {
-        return 12;
+        return 13;
     }
 
     /**
@@ -168,6 +170,9 @@ public class ConfigContainer {
         public String accessAddress = "127.0.0.1";
         /* This is the port used in the default region. */
         public int accessPort = 0;
+
+        /* Enabling this will generate a unique packet encryption key for each player. */
+        public boolean useUniquePacketKey = true;
 
         /* Entities within a certain range will be loaded for the player */
         public int loadEntitiesForPlayerRange = 300;

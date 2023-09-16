@@ -15,8 +15,9 @@ import emu.grasscutter.scripts.data.controller.EntityController;
 import emu.grasscutter.server.event.entity.*;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
 import it.unimi.dsi.fastutil.ints.*;
-import java.util.*;
 import lombok.*;
+
+import java.util.*;
 
 public abstract class GameEntity {
     @Getter private final Scene scene;
@@ -32,6 +33,9 @@ public abstract class GameEntity {
     @Getter @Setter private int lastMoveReliableSeq;
 
     @Getter @Setter private boolean lockHP;
+
+    @Setter(AccessLevel.PROTECTED)
+    @Getter private boolean isDead = false;
 
     // Lua controller for specific actions
     @Getter @Setter private EntityController entityController;
@@ -63,7 +67,7 @@ public abstract class GameEntity {
     }
 
     public boolean isAlive() {
-        return true;
+        return !this.isDead;
     }
 
     public LifeState getLifeState() {
@@ -172,10 +176,9 @@ public abstract class GameEntity {
         this.lastAttackType = attackType;
 
         // Check if dead
-        boolean isDead = false;
         if (this.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP) <= 0f) {
             this.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, 0f);
-            isDead = true;
+            this.isDead = true;
         }
 
         this.runLuaCallbacks(event);
@@ -186,7 +189,7 @@ public abstract class GameEntity {
                         new PacketEntityFightPropUpdateNotify(this, FightProperty.FIGHT_PROP_CUR_HP));
 
         // Check if dead.
-        if (isDead) {
+        if (this.isDead) {
             this.getScene().killEntity(this, killerId);
         }
     }

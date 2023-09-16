@@ -256,6 +256,9 @@ public class EntityGadget extends EntityBaseGadget {
             var route = this.getScene().getSceneRouteById(configRoute.getRouteId());
             if (route != null) {
                 var points = route.getPoints();
+                if (configRoute.getStartIndex() == points.length - 1) {
+                    configRoute.setStartIndex(0);
+                }
                 val currIndex = configRoute.getStartIndex();
 
                 Position prevpos;
@@ -301,6 +304,9 @@ public class EntityGadget extends EntityBaseGadget {
                                                         }
                                                         configRoute.setStartIndex(I);
                                                         this.position.set(points[I].getPos());
+                                                        if (I == points.length - 1) {
+                                                            configRoute.setStarted(false);
+                                                        }
                                                     },
                                                     (int) time));
                 }

@@ -282,6 +282,16 @@ public final class DungeonManager {
 
         // Call PlayerFinishDungeonEvent.
         new PlayerFinishDungeonEvent(this.getScene().getPlayers(), this.getScene(), this).call();
+
+        // jump players to next dungeon if available
+        if (this.dungeonData.getPassJumpDungeon() != 0) {
+            for (var player : this.getScene().getPlayers()) {
+                player
+                        .getServer()
+                        .getDungeonSystem()
+                        .enterDungeon(player, 0, this.dungeonData.getPassJumpDungeon(), false);
+            }
+        }
     }
 
     public void quitDungeon() {

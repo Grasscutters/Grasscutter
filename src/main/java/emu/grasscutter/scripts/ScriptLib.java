@@ -1013,22 +1013,22 @@ public class ScriptLib {
     }
 
     public int AddSceneTag(int sceneId, int sceneTagId){
-        logger.warn("[LUA] Call unimplemented AddSceneTag with {}, {}", sceneId, sceneTagId);
-        //TODO implement
+        logger.debug("[LUA] Call AddSceneTag with {}, {}", sceneId, sceneTagId);
+        getSceneScriptManager().getScene().getHost().getProgressManager().addSceneTag(sceneId, sceneTagId);
         return 0;
     }
 
     public int DelSceneTag(int sceneId, int sceneTagId){
-        logger.warn("[LUA] Call unimplemented DelSceneTag with {}, {}", sceneId, sceneTagId);
-        //TODO implement
+        logger.debug("[LUA] Call DelSceneTag with {}, {}", sceneId, sceneTagId);
+        getSceneScriptManager().getScene().getHost().getProgressManager().delSceneTag(sceneId, sceneTagId);
         return 0;
     }
 
     public boolean CheckSceneTag(int sceneId, int sceneTagId){
-        logger.warn("[LUA] Call unimplemented CheckSceneTag with {}, {}", sceneId, sceneTagId);
-        //TODO implement
-        return false;
+        logger.debug("[LUA] Call CheckSceneTag with {}, {}", sceneId, sceneTagId);
+        return getSceneScriptManager().getScene().getHost().getProgressManager().checkSceneTag(sceneId, sceneTagId);
     }
+
     public int StartHomeGallery(int galleryId, int uid){
         logger.warn("[LUA] Call unimplemented StartHomeGallery with {} {}", galleryId, uid);
         //TODO implement
@@ -1102,6 +1102,12 @@ public class ScriptLib {
     public int MoveAvatarByPointArray(int uid, int targetId, LuaTable var3, String var4){
         logger.warn("[LUA] Call unimplemented MoveAvatarByPointArray with {} {} {} {}", uid, targetId, printTable(var3), var4);
         //TODO implement var3 contains int speed, var4 is a json string
+        return 0;
+    }
+
+    public int MoveAvatarByPointArrayWithTemplate(int uid, int pointarray_id, int[] routelist, int var4, LuaTable var5){
+        logger.warn("[LUA] Call unimplemented MoveAvatarByPointArrayWithTemplate with {} {} {} {} {}", uid, pointarray_id, routelist, var4, printTable(var5));
+        //TODO implement var5 contains int speed
         return 0;
     }
 
@@ -1262,6 +1268,7 @@ public class ScriptLib {
     }
 
     public int SetWeatherAreaState(int var1, int var2) {
+        logger.debug("[LUA] Call SetWeatherAreaState with {} {}", var1, var2);
         this.getSceneScriptManager().getScene().getPlayers()
             .forEach(p -> p.setWeather(var1, ClimateType.getTypeByValue(var2)));
         return 0;
@@ -1323,9 +1330,8 @@ public class ScriptLib {
         return -1;
     }
 
-    //TODO check
     public int SetPlatformRouteId(int entityConfigId, int routeId){
-        logger.info("[LUA] Call SetPlatformRouteId {} {}", entityConfigId, routeId);
+        logger.debug("[LUA] Call SetPlatformRouteId {} {}", entityConfigId, routeId);
 
         val entity = getSceneScriptManager().getScene().getEntityByConfigId(entityConfigId);
         if(entity == null){
@@ -1358,12 +1364,9 @@ public class ScriptLib {
         return 0;
     }
 
-    //TODO check
     public int StartPlatform(int configId){
         logger.debug("[LUA] Call StartPlatform {} ", configId);
-
         val entity = sceneScriptManager.get().getScene().getEntityByConfigId(configId);
-
         if(!(entity instanceof EntityGadget entityGadget)) {
             return 1;
         }
@@ -1371,9 +1374,8 @@ public class ScriptLib {
         return entityGadget.startPlatform() ? 0 : 2;
     }
 
-    //TODO check
     public int StopPlatform(int configId){
-        logger.info("[LUA] Call StopPlatform {} ", configId);
+        logger.debug("[LUA] Call StopPlatform {} ", configId);
         val entity = sceneScriptManager.get().getScene().getEntityByConfigId(configId);
         if(!(entity instanceof EntityGadget entityGadget)) {
             return 1;
@@ -1402,6 +1404,11 @@ public class ScriptLib {
     public int RevokePlayerShowTemplateReminder(int var1, LuaValue var2){
         logger.warn("[LUA] Call unimplemented AssignPlayerShowTemplateReminder {} {}", var1, var2);
         //TODO implement
+        return 0;
+    }
+
+    public int SetPlayerInteractOption(String var1){
+        logger.warn("[LUA] Call unimplemented SetPlayerInteractOption {}", var1);
         return 0;
     }
 
@@ -1552,7 +1559,7 @@ public class ScriptLib {
     }
 
     public int GetRegionConfigId(LuaTable var1){
-        logger.warn("[LUA] Call untested GetRegionConfigId with {}", printTable(var1));
+        logger.debug("[LUA] Call GetRegionConfigId with {}", printTable(var1));
         var EntityId = var1.get("region_eid").toint();
         var entity = getSceneScriptManager().getScene().getScriptManager().getRegionById(EntityId);
         if (entity == null){
@@ -1657,9 +1664,11 @@ public class ScriptLib {
     }
 
     public int SetGadgetEnableInteract(int groupId, int configId, boolean enable) {
-        EntityGadget gadget = getCurrentEntityGadget();
-        if(gadget.getGroupId() != groupId || gadget.getConfigId() != configId) return -1;
-
+        logger.debug("[LUA] Call SetGadgetEnableInteract with {} {} {}", groupId, configId, enable);
+        var entity = getSceneScriptManager().getScene().getEntityByConfigId(configId, groupId);
+        if (!(entity instanceof EntityGadget gadget)) {
+            return -1;
+        }
         gadget.setInteractEnabled(enable);
 
         return 0;

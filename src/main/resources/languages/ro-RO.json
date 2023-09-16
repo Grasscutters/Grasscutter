@@ -324,6 +324,9 @@
     "setProp": {
       "description": "Stabilește proprietățile la nivel de cont. Lucruri precum godmode pot fi activate în acest fel, precum și schimbarea unor lucuri precum etajul abisului deblocat și progresul battle pass.\n\tValori pentru <prop>: godmode | nostamina | unlimitedenergy | abyss | worldlevel | bplevel\n\t(cont.) see PlayerProperty enum for other possible values, of form PROP_MAX_SPRING_VOLUME -> max_spring_volume"
     },
+    "setSceneTag": {
+      "description": "Stabilește etichetele de scenă specifice contului. Aceasta controlează lucruri precum rocile care blochează ușile, clădirile care sunt vizibile și alte lucruri (de obicei legate de misiuni) care afectează ceea ce este vizibil în lumea ta."
+    },
     "setStats": {
       "description": "Stabilește proprietatea de luptă pentru caracterul activ curent.\n\tValori pentru <stat>: hp | maxhp | def | atk | em | er | crate | cdmg | cdr | heal | heali | shield | defi\n\t(cont.) Elemental DMG Bonus: epyro | ecryo | ehydro | egeo | edendro | eelectro | ephys\n\t(cont.) Elemental RES: respyro | rescryo | reshydro | resgeo | resdendro | reselectro | resphys",
       "locked_to": "🇺🇸%s locked to %s.",

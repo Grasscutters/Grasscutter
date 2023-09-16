@@ -111,32 +111,32 @@ public class HandlerGetPlayerTokenReq extends PacketHandler {
 
         // Only >= 2.7.50 has this
         if (req.getKeyId() > 0) {
+            var encryptSeed = session.getEncryptSeed();
             try {
                 var cipher = Cipher.getInstance("RSA/ECB/PKCS1Padding");
                 cipher.init(Cipher.DECRYPT_MODE, Crypto.CUR_SIGNING_KEY);
 
-                var client_seed_encrypted = Utils.base64Decode(req.getClientRandKey());
-                var client_seed = ByteBuffer.wrap(cipher.doFinal(client_seed_encrypted)).getLong();
+                var clientSeedEncrypted = Utils.base64Decode(req.getClientRandKey());
+                var clientSeed = ByteBuffer.wrap(cipher.doFinal(clientSeedEncrypted)).getLong();
 
-                var seed_bytes =
-                        ByteBuffer.wrap(new byte[8]).putLong(Crypto.ENCRYPT_SEED ^ client_seed).array();
+                var seedBytes = ByteBuffer.wrap(new byte[8]).putLong(encryptSeed ^ clientSeed).array();
 
                 cipher.init(Cipher.ENCRYPT_MODE, Crypto.EncryptionKeys.get(req.getKeyId()));
-                var seed_encrypted = cipher.doFinal(seed_bytes);
+                var seedEncrypted = cipher.doFinal(seedBytes);
 
                 var privateSignature = Signature.getInstance("SHA256withRSA");
                 privateSignature.initSign(Crypto.CUR_SIGNING_KEY);
-                privateSignature.update(seed_bytes);
+                privateSignature.update(seedBytes);
 
                 session.send(
                         new PacketGetPlayerTokenRsp(
                                 session,
-                                Utils.base64Encode(seed_encrypted),
+                                Utils.base64Encode(seedEncrypted),
                                 Utils.base64Encode(privateSignature.sign())));
             } catch (Exception ignored) {
                 // Only UA Patch users will have exception
                 var clientBytes = Utils.base64Decode(req.getClientRandKey());
-                var seed = ByteHelper.longToBytes(Crypto.ENCRYPT_SEED);
+                var seed = ByteHelper.longToBytes(encryptSeed);
                 Crypto.xor(clientBytes, seed);
 
                 var base64str = Utils.base64Encode(clientBytes);

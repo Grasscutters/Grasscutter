@@ -324,6 +324,9 @@
     "setProp": {
       "description": "アカウント全体のプロパティを設定します。 godmodeのようなものはこの方法で有効にすることができ、アンロックされた深淵の床やバトル パスの進行状況などを変更することもできます。\n\t<prop> の値: godmode | nostamina | unlimitedenergy | abyss | worldlevel | bplevel\n\tmax_spring_volume の形式の他の設定可能な値についてはPlayerPropertyを参照してください｡"
     },
+    "setSceneTag": {
+      "description": "アカウント固有のシーンタグを設定します。これは岩がドアを塞いだり、建物が見えたり、その他（大抵はクエストに関連した）あなたのワールドで見えるものに影響を与えるものをコントロールします。"
+    },
     "setStats": {
       "description": "現在アクティブ状態のステータスを設定します｡\n\t <stat>の値: hp | maxhp | def | atk | em | er | crate | cdmg | cdr | heal | heali | shield | defi\n\t(cont.) Elemental DMG Bonus: epyro | ecryo | ehydro | egeo | edendro | eelectro | ephys\n\t(cont.) Elemental RES: respyro | rescryo | reshydro | resgeo | resdendro | reselectro | resphys",
       "locked_to": "%s は %s にロックされています。",

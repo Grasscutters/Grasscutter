@@ -177,7 +177,8 @@ public enum ActionReason {
     ChannellerSlabLoopDungeonFirstPassReward(1090),
     ChannellerSlabLoopDungeonScoreReward(1091),
     HomeLimitedShopBuy(1092),
-    HomeCoinCollect(1093);
+    HomeCoinCollect(1093),
+    HomeAvatarEventReward(1100);
 
     private static final Int2ObjectMap<ActionReason> map = new Int2ObjectOpenHashMap<>();
     private static final Map<String, ActionReason> stringMap = new HashMap<>();

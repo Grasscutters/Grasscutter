@@ -324,6 +324,9 @@
     "setProp": {
       "description": "设置账号的状态。比如可以通过此命令启用 GodMode，也可以解锁深渊或更改纪行等级\n\t可更改的状态列表(不区分大小写)：GodMode(上帝模式)|UnlimitedStamina(无限体力)|UnlimitedEnergy(无限能量)|TowerLevel(深渊)|WorldLevel(世界等级)|BPLevel(纪行等级)|SetOpenState(设置开放状态)|UnsetOpenState(取消开放状态)|UnlockMap(解锁地图)\n\t查看 PlayerProperty enum 以获得其他数值，格式为 PROP_MAX_SPRING_VOLUME -> max_spring_volume"
     },
+    "setSceneTag": {
+      "description": "设置特定于账户的场景标签。这可以控制诸如石头挡住门、建筑物可见以及其他（通常与任务相关）影响世界可见度的事物。"
+    },
     "setStats": {
       "description": "设置当前角色的属性\n\t可更改的属性列表：hp(生命值)|maxhp(最大生命值)|def(防御力)|atk(攻击力)|em(元素精通)|er(元素充能效率)|crate(暴击率)|cdmg(暴击伤害)|cdr(冷却缩减)|heal(治疗加成)|heali(受治疗加成)|shield(护盾强效)|defi(无视防御)\n\t元素增伤：epyro(火)|ecryo(冰)|ehydro(水)|egeo(岩)|edendro(草)|eelectro(雷)|ephys(物理)\n\t元素抗性：respyro(火)|rescryo(冰)|reshydro(水)|resgeo(岩)|resdendro(草)|reselectro(雷)|resphys(物理)",
       "locked_to": "%s 已锁定为 %s。",

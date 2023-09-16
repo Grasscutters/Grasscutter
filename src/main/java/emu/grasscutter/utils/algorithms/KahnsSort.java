@@ -1,4 +1,4 @@
-package emu.grasscutter.utils.objects;
+package emu.grasscutter.utils.algorithms;
 
 import java.util.*;
 

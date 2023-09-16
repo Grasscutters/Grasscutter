@@ -2,6 +2,7 @@ package emu.grasscutter.utils;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.server.http.objects.QueryCurRegionRspJson;
+import emu.grasscutter.utils.algorithms.MersenneTwister64;
 import java.io.ByteArrayOutputStream;
 import java.nio.file.Path;
 import java.security.*;
@@ -72,6 +73,26 @@ public final class Crypto {
         byte[] bytes = new byte[length];
         secureRandom.nextBytes(bytes);
         return bytes;
+    }
+
+    public static long generateEncryptKeyAndSeed(byte[] encryptKey) {
+        var encryptSeed = secureRandom.nextLong();
+        var mt = new MersenneTwister64();
+        mt.setSeed(encryptSeed);
+        mt.setSeed(mt.nextLong());
+        mt.nextLong();
+        for (int i = 0; i < 4096 >> 3; i++) {
+            var rand = mt.nextLong();
+            encryptKey[i << 3] = (byte) (rand >> 56);
+            encryptKey[(i << 3) + 1] = (byte) (rand >> 48);
+            encryptKey[(i << 3) + 2] = (byte) (rand >> 40);
+            encryptKey[(i << 3) + 3] = (byte) (rand >> 32);
+            encryptKey[(i << 3) + 4] = (byte) (rand >> 24);
+            encryptKey[(i << 3) + 5] = (byte) (rand >> 16);
+            encryptKey[(i << 3) + 6] = (byte) (rand >> 8);
+            encryptKey[(i << 3) + 7] = (byte) rand;
+        }
+        return encryptSeed;
     }
 
     public static QueryCurRegionRspJson encryptAndSignRegionData(byte[] regionInfo, String key_id)

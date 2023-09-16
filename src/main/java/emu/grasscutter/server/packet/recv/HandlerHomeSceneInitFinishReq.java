@@ -1,6 +1,8 @@
 package emu.grasscutter.server.packet.recv;
 
-import emu.grasscutter.net.packet.*;
+import emu.grasscutter.net.packet.Opcodes;
+import emu.grasscutter.net.packet.PacketHandler;
+import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.OtherPlayerEnterHomeNotifyOuterClass;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.*;
@@ -26,6 +28,12 @@ public class HandlerHomeSceneInitFinishReq extends PacketHandler {
             }
         }
 
+        curHomeWorld.ifHost(
+                session.getPlayer(),
+                player -> {
+                    player.sendPacket(new PacketHomeAvatarRewardEventNotify(player));
+                    player.sendPacket(new PacketHomeAvatarSummonAllEventNotify(player));
+                });
         session.send(new PacketHomeMarkPointNotify(session.getPlayer()));
 
         session.send(new PacketHomeSceneInitFinishRsp());
