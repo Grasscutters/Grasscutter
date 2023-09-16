@@ -12,7 +12,6 @@ import emu.grasscutter.game.quest.enums.*;
 import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
 import emu.grasscutter.scripts.data.ScriptArgs;
 import emu.grasscutter.server.packet.send.*;
-
 import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Collectors;

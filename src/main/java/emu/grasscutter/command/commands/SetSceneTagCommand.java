@@ -6,12 +6,15 @@ import emu.grasscutter.data.excels.scene.SceneTagData;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.packet.send.*;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import java.util.*;
 import lombok.val;
 
-import java.util.*;
-
-@Command(label = "setSceneTag", aliases = { "tag" }, usage = {
-        "<add|remove|unlockall> <sceneTagId>" }, permission = "player.setscenetag", permissionTargeted = "player.setscenetag.others")
+@Command(
+        label = "setSceneTag",
+        aliases = {"tag"},
+        usage = {"<add|remove|unlockall> <sceneTagId>"},
+        permission = "player.setscenetag",
+        permissionTargeted = "player.setscenetag.others")
 public final class SetSceneTagCommand implements CommandHandler {
     private final Int2ObjectMap<SceneTagData> sceneTagData = GameData.getSceneTagDataMap();
 
@@ -44,7 +47,8 @@ public final class SetSceneTagCommand implements CommandHandler {
 
         val userVal = value;
 
-        var sceneData = sceneTagData.values().stream().filter(sceneTag -> sceneTag.getId() == userVal).findFirst();
+        var sceneData =
+                sceneTagData.values().stream().filter(sceneTag -> sceneTag.getId() == userVal).findFirst();
         if (sceneData == null) {
             CommandHandler.sendTranslatedMessage(sender, "commands.generic.invalid.id");
             return;
@@ -58,7 +62,6 @@ public final class SetSceneTagCommand implements CommandHandler {
         }
 
         CommandHandler.sendTranslatedMessage(sender, "commands.generic.set_to", value, actionStr);
-
     }
 
     private void addSceneTag(Player targetPlayer, int scene, int value) {
@@ -73,20 +76,25 @@ public final class SetSceneTagCommand implements CommandHandler {
         var allData = sceneTagData.values();
 
         // Add all SceneTags
-        allData.stream().toList().forEach(sceneTag -> {
-            if (targetPlayer.getSceneTags().get(sceneTag.getSceneId()) == null) {
-                targetPlayer.getSceneTags().put(sceneTag.getSceneId(), new HashSet<>());
-            }
-            targetPlayer.getSceneTags().get(sceneTag.getSceneId()).add(sceneTag.getId());
-        });
+        allData.stream()
+                .toList()
+                .forEach(
+                        sceneTag -> {
+                            if (targetPlayer.getSceneTags().get(sceneTag.getSceneId()) == null) {
+                                targetPlayer.getSceneTags().put(sceneTag.getSceneId(), new HashSet<>());
+                            }
+                            targetPlayer.getSceneTags().get(sceneTag.getSceneId()).add(sceneTag.getId());
+                        });
 
         // Remove default SceneTags, as most are "before" or "locked" states
-        allData.stream().filter(sceneTag -> sceneTag.isDefaultValid())
+        allData.stream()
+                .filter(sceneTag -> sceneTag.isDefaultValid())
                 // Only remove for big world as some other scenes only have defaults
                 .filter(sceneTag -> sceneTag.getSceneId() == 3)
-                .forEach(sceneTag -> {
-                    targetPlayer.getSceneTags().get(sceneTag.getSceneId()).remove(sceneTag.getId());
-                });
+                .forEach(
+                        sceneTag -> {
+                            targetPlayer.getSceneTags().get(sceneTag.getSceneId()).remove(sceneTag.getId());
+                        });
 
         this.setSceneTags(targetPlayer);
     }
@@ -94,5 +102,4 @@ public final class SetSceneTagCommand implements CommandHandler {
     private void setSceneTags(Player targetPlayer) {
         targetPlayer.sendPacket(new PacketPlayerWorldSceneInfoListNotify(targetPlayer));
     }
-
 }
