@@ -65,7 +65,7 @@ public final class SpawnCommand implements CommandHandler {
                     rot.setZ(CommandHelpers.parseRelative(args.get(6), rot.getZ()));
                 } catch (NumberFormatException ignored) {
                     CommandHandler.sendMessage(
-                        sender, translate(sender, "commands.execution.argument_error"));
+                            sender, translate(sender, "commands.execution.argument_error"));
                 } // Fallthrough
             case 4:
                 try {

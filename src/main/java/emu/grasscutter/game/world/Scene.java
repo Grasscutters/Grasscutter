@@ -816,7 +816,8 @@ public class Scene {
 
                     int level = this.getEntityLevel(entry.getLevel(), worldLevelOverride);
 
-                    EntityMonster monster = new EntityMonster(this, data, entry.getPos(), entry.getRot(), level);
+                    EntityMonster monster =
+                            new EntityMonster(this, data, entry.getPos(), entry.getRot(), level);
                     monster.setGroupId(entry.getGroup().getGroupId());
                     monster.setPoseId(entry.getPoseId());
                     monster.setConfigId(entry.getConfigId());
