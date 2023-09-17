@@ -325,7 +325,6 @@ public final class Tools {
     }
 
     public static void createGachaMappings(Path location) throws IOException {
-        // ResourceLoader.loadResources();
         List<String> jsons = createGachaMappingJsons();
         var usedLocales = new HashSet<String>();
         StringBuilder sb = new StringBuilder("mappings = {\n");
