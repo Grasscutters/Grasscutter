@@ -107,7 +107,8 @@ public class HomeSceneItem {
                             return new EntityHomeAnimal(
                                     scene,
                                     GameData.getHomeWorldAnimalDataMap().get(homeAnimalItem.getFurnitureId()),
-                                    homeAnimalItem.getSpawnPos());
+                                    homeAnimalItem.getSpawnPos(),
+                                    homeAnimalItem.getSpawnRot());
                         })
                 .toList();
     }

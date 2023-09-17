@@ -21,9 +21,9 @@ import lombok.Setter;
         label = "spawn",
         aliases = {"drop", "s"},
         usage = {
-            "<itemId> [x<amount>] [blk<blockId>] [grp<groupId>] [cfg<configId>] <x> <y> <z>",
-            "<gadgetId> [x<amount>] [state<state>] [maxhp<maxhp>] [hp<hp>(0 for infinite)] [atk<atk>] [def<def>] [blk<blockId>] [grp<groupId>] [cfg<configId>] <x> <y> <z>",
-            "<monsterId> [x<amount>] [lv<level>] [ai<aiId>] [maxhp<maxhp>] [hp<hp>(0 for infinite)] [atk<atk>] [def<def>] [blk<blockId>] [grp<groupId>] [cfg<configId>] <x> <y> <z>"
+            "<itemId> [x<amount>] [blk<blockId>] [grp<groupId>] [cfg<configId>] [<x> <y> <z>] [<rotX> <rotY> <rotZ>]",
+            "<gadgetId> [x<amount>] [state<state>] [maxhp<maxhp>] [hp<hp>(0 for infinite)] [atk<atk>] [def<def>] [blk<blockId>] [grp<groupId>] [cfg<configId>] [<x> <y> <z>] [<rotX> <rotY> <rotZ>]",
+            "<monsterId> [x<amount>] [lv<level>] [ai<aiId>] [maxhp<maxhp>] [hp<hp>(0 for infinite)] [atk<atk>] [def<def>] [blk<blockId>] [grp<groupId>] [cfg<configId>] [<x> <y> <z>] [<rotX> <rotY> <rotZ>]"
         },
         permission = "server.spawn",
         permissionTargeted = "server.spawn.others")
@@ -53,14 +53,25 @@ public final class SpawnCommand implements CommandHandler {
             sendUsageMessage(sender); // Reachable if someone does `/give lv90` or similar
             throw new IllegalArgumentException();
         }
+
+        Position pos = targetPlayer.getPosition();
+        Position rot = targetPlayer.getRotation();
+
         switch (args.size()) {
+            case 7:
+                try {
+                    rot.setX(CommandHelpers.parseRelative(args.get(4), rot.getX()));
+                    rot.setY(CommandHelpers.parseRelative(args.get(5), rot.getY()));
+                    rot.setZ(CommandHelpers.parseRelative(args.get(6), rot.getZ()));
+                } catch (NumberFormatException ignored) {
+                    CommandHandler.sendMessage(
+                        sender, translate(sender, "commands.execution.argument_error"));
+                } // Fallthrough
             case 4:
                 try {
-                    float x, y, z;
-                    x = Float.parseFloat(args.get(1));
-                    y = Float.parseFloat(args.get(2));
-                    z = Float.parseFloat(args.get(3));
-                    param.pos = new Position(x, y, z);
+                    pos.setX(CommandHelpers.parseRelative(args.get(1), pos.getX()));
+                    pos.setY(CommandHelpers.parseRelative(args.get(2), pos.getY()));
+                    pos.setZ(CommandHelpers.parseRelative(args.get(3), pos.getZ()));
                 } catch (NumberFormatException ignored) {
                     CommandHandler.sendMessage(
                             sender, translate(sender, "commands.execution.argument_error"));
@@ -77,6 +88,8 @@ public final class SpawnCommand implements CommandHandler {
                 sendUsageMessage(sender);
                 return;
         }
+        param.pos = pos;
+        param.rot = rot;
 
         MonsterData monsterData = GameData.getMonsterDataMap().get(param.id);
         GadgetData gadgetData = GameData.getGadgetDataMap().get(param.id);
@@ -102,12 +115,8 @@ public final class SpawnCommand implements CommandHandler {
         }
 
         double maxRadius = Math.sqrt(param.amount * 0.2 / Math.PI);
-        if (param.pos == null) {
-            param.pos = targetPlayer.getPosition();
-        }
-
         for (int i = 0; i < param.amount; i++) {
-            Position pos = GetRandomPositionInCircle(param.pos, maxRadius).addY(3);
+            pos = GetRandomPositionInCircle(param.pos, maxRadius).addY(3);
             GameEntity entity = null;
             if (itemData != null) {
                 entity = createItem(itemData, param, pos);
@@ -128,12 +137,12 @@ public final class SpawnCommand implements CommandHandler {
     }
 
     private EntityItem createItem(ItemData itemData, SpawnParameters param, Position pos) {
-        return new EntityItem(param.scene, null, itemData, pos, 1, true);
+        return new EntityItem(param.scene, null, itemData, pos, param.rot, 1, true);
     }
 
     private EntityMonster createMonster(
             MonsterData monsterData, SpawnParameters param, Position pos) {
-        var entity = new EntityMonster(param.scene, monsterData, pos, param.lvl);
+        var entity = new EntityMonster(param.scene, monsterData, pos, param.rot, param.lvl);
         if (param.ai != -1) {
             entity.setAiId(param.ai);
         }
@@ -144,16 +153,13 @@ public final class SpawnCommand implements CommandHandler {
             GadgetData gadgetData, SpawnParameters param, Position pos, Player targetPlayer) {
         EntityBaseGadget entity;
         if (gadgetData.getType() == EntityType.Vehicle) {
-            entity =
-                    new EntityVehicle(
-                            param.scene, targetPlayer, param.id, 0, pos, targetPlayer.getRotation());
+            entity = new EntityVehicle(param.scene, targetPlayer, param.id, 0, pos, param.rot);
         } else {
-            entity = new EntityGadget(param.scene, param.id, pos, targetPlayer.getRotation());
+            entity = new EntityGadget(param.scene, param.id, pos, param.rot);
             if (param.state != -1) {
                 ((EntityGadget) entity).setState(param.state);
             }
         }
-
         return entity;
     }
 
@@ -207,6 +213,7 @@ public final class SpawnCommand implements CommandHandler {
         @Setter public int def = -1;
         @Setter public int ai = -1;
         @Setter public Position pos = null;
+        @Setter public Position rot = null;
         public Scene scene = null;
     }
 }
