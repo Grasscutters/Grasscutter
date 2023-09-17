@@ -10,6 +10,7 @@ import emu.grasscutter.data.common.ItemUseData;
 import emu.grasscutter.data.excels.*;
 import emu.grasscutter.data.excels.achievement.AchievementData;
 import emu.grasscutter.data.excels.avatar.AvatarData;
+import emu.grasscutter.server.http.handlers.GachaHandler;
 import emu.grasscutter.utils.*;
 import emu.grasscutter.utils.lang.Language;
 import emu.grasscutter.utils.lang.Language.TextStrings;
@@ -311,8 +312,19 @@ public final class Tools {
         return sbs.stream().map(StringBuilder::toString).toList();
     }
 
+    public static void generateGachaMappings() {
+        var path = GachaHandler.getGachaMappingsPath();
+        if (!Files.exists(path)) {
+            try {
+                Grasscutter.getLogger().debug("Creating default '" + path + "' data");
+                Tools.createGachaMappings(path);
+            } catch (Exception exception) {
+                Grasscutter.getLogger().warn("Failed to create gacha mappings. \n" + exception);
+            }
+        }
+    }
+
     public static void createGachaMappings(Path location) throws IOException {
-        ResourceLoader.loadResources();
         List<String> jsons = createGachaMappingJsons();
         var usedLocales = new HashSet<String>();
         StringBuilder sb = new StringBuilder("mappings = {\n");
