@@ -18,8 +18,8 @@ public class EntityHomeAnimal extends EntityMonster implements Rebornable {
     @Getter private final int rebirthCD;
     private final AtomicBoolean disappeared = new AtomicBoolean();
 
-    public EntityHomeAnimal(Scene scene, HomeWorldAnimalData data, Position pos) {
-        super(scene, GameData.getMonsterDataMap().get(data.getMonsterID()), pos, 1);
+    public EntityHomeAnimal(Scene scene, HomeWorldAnimalData data, Position pos, Position rot) {
+        super(scene, GameData.getMonsterDataMap().get(data.getMonsterID()), pos, rot, 1);
 
         this.rebornPos = pos.clone();
         this.rebirth = data.getIsRebirth();

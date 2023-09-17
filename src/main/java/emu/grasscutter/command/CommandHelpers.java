@@ -54,4 +54,15 @@ public class CommandHelpers {
                 });
         return args;
     }
+
+    public static float parseRelative(String input, Float current) {
+        if (input.contains("~")) { // Relative
+            if (!input.equals("~")) { // Relative with offset
+                current += Float.parseFloat(input.replace("~", ""));
+            } // Else no offset, no modification
+        } else { // Absolute
+            current = Float.parseFloat(input);
+        }
+        return current;
+    }
 }

@@ -1037,8 +1037,7 @@ public class SceneScriptManager {
         }
 
         // Spawn mob
-        EntityMonster entity = new EntityMonster(getScene(), data, monster.pos, level);
-        entity.getRotation().set(monster.rot);
+        EntityMonster entity = new EntityMonster(getScene(), data, monster.pos, monster.rot, level);
         entity.setGroupId(groupId);
         entity.setBlockId(blockId);
         entity.setConfigId(monster.config_id);

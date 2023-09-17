@@ -61,7 +61,7 @@ public class HandlerQuestCreateEntityReq extends PacketHandler {
                 val monsterId = entity.getMonsterId();
                 val level = entity.getLevel();
                 MonsterData monsterData = GameData.getMonsterDataMap().get(monsterId);
-                gameEntity = new EntityMonster(scene, monsterData, pos, level);
+                gameEntity = new EntityMonster(scene, monsterData, pos, rot, level);
             }
             case NPC_ID -> {}
         }

@@ -16,18 +16,6 @@ import java.util.List;
         permissionTargeted = "player.teleport.others")
 public final class TeleportCommand implements CommandHandler {
 
-    private float parseRelative(
-            String input, Float current) { // TODO: Maybe this will be useful elsewhere later
-        if (input.contains("~")) { // Relative
-            if (!input.equals("~")) { // Relative with offset
-                current += Float.parseFloat(input.replace("~", ""));
-            } // Else no offset, no modification
-        } else { // Absolute
-            current = Float.parseFloat(input);
-        }
-        return current;
-    }
-
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
         Position pos = targetPlayer.getPosition();
@@ -46,9 +34,9 @@ public final class TeleportCommand implements CommandHandler {
                 } // Fallthrough
             case 3:
                 try {
-                    x = this.parseRelative(args.get(0), x);
-                    y = this.parseRelative(args.get(1), y);
-                    z = this.parseRelative(args.get(2), z);
+                    x = CommandHelpers.parseRelative(args.get(0), x);
+                    y = CommandHelpers.parseRelative(args.get(1), y);
+                    z = CommandHelpers.parseRelative(args.get(2), z);
                 } catch (NumberFormatException ignored) {
                     CommandHandler.sendMessage(
                             sender, translate(sender, "commands.teleport.invalid_position"));
