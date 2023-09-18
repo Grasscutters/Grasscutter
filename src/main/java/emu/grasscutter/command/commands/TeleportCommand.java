@@ -6,8 +6,6 @@ import emu.grasscutter.command.*;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.world.Position;
 import emu.grasscutter.server.event.player.PlayerTeleportEvent.TeleportType;
-import emu.grasscutter.server.packet.send.PacketSceneEntityAppearNotify;
-
 import java.util.List;
 
 @Command(
@@ -54,11 +52,15 @@ public final class TeleportCommand implements CommandHandler {
             CommandHandler.sendMessage(sender, translate(sender, "commands.teleport.exists_error"));
         } else {
             CommandHandler.sendMessage(
-                sender,
-                translate(
                     sender,
-                    "commands.teleport.success",
-                    targetPlayer.getNickname(), pos.getX(), pos.getY(), pos.getZ(), sceneId));
+                    translate(
+                            sender,
+                            "commands.teleport.success",
+                            targetPlayer.getNickname(),
+                            pos.getX(),
+                            pos.getY(),
+                            pos.getZ(),
+                            sceneId));
         }
     }
 }

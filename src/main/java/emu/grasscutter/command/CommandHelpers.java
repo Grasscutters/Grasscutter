@@ -1,7 +1,6 @@
 package emu.grasscutter.command;
 
 import emu.grasscutter.game.world.Position;
-
 import java.util.*;
 import java.util.function.BiConsumer;
 import java.util.regex.*;
@@ -68,7 +67,8 @@ public class CommandHelpers {
         return current;
     }
 
-    public static Position parsePosition(String inputX, String inputY, String inputZ, Position curPos, Position curRot) {
+    public static Position parsePosition(
+            String inputX, String inputY, String inputZ, Position curPos, Position curRot) {
         Position offset = new Position();
         Position target = new Position(curPos);
         if (inputX.contains("~")) { // Relative
@@ -121,8 +121,12 @@ public class CommandHelpers {
 
         // Calculate offset based on current position and rotation
         return new Position(
-            pos.getX() + offset.getZ() * (float)Math.sin(angleZ) + offset.getX() * (float)Math.sin(angleX),
-            pos.getY() + offset.getY(),
-            pos.getZ() + offset.getZ() * (float)Math.cos(angleZ) + offset.getX() * (float)Math.cos(angleX));
+                pos.getX()
+                        + offset.getZ() * (float) Math.sin(angleZ)
+                        + offset.getX() * (float) Math.sin(angleX),
+                pos.getY() + offset.getY(),
+                pos.getZ()
+                        + offset.getZ() * (float) Math.cos(angleZ)
+                        + offset.getX() * (float) Math.cos(angleX));
     }
 }
