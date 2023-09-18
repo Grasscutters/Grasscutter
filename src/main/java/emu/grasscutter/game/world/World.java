@@ -385,7 +385,7 @@ public class World implements Iterable<Player> {
 
         // Call player teleport event.
         PlayerTeleportEvent event =
-            new PlayerTeleportEvent(player, teleportProperties, player.getPosition());
+                new PlayerTeleportEvent(player, teleportProperties, player.getPosition());
         // Call event and check if it was canceled.
         event.call();
         if (event.isCanceled()) {
@@ -443,7 +443,6 @@ public class World implements Iterable<Player> {
             }
         }
 
-
         // Set player position and rotation
         if (teleportProperties.getTeleportTo() != null) {
             player.getPosition().set(teleportProperties.getTeleportTo());
@@ -461,7 +460,7 @@ public class World implements Iterable<Player> {
         player.sendPacket(new PacketPlayerEnterSceneNotify(player, teleportProperties));
 
         if (teleportProperties.getTeleportType() != TeleportType.INTERNAL
-            && teleportProperties.getTeleportType() != SCRIPT) {
+                && teleportProperties.getTeleportType() != SCRIPT) {
             player.getQuestManager().queueEvent(QuestContent.QUEST_CONTENT_ANY_MANUAL_TRANSPORT);
         }
 
