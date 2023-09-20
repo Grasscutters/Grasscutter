@@ -1,10 +1,15 @@
 package emu.grasscutter.server.game;
 
+import static com.mojang.brigadier.exceptions.CommandSyntaxException.CONTEXT_AMOUNT;
 import static emu.grasscutter.config.Configuration.*;
 import static emu.grasscutter.utils.lang.Language.translate;
 
+import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import emu.grasscutter.*;
 import emu.grasscutter.Grasscutter.ServerRunMode;
+import emu.grasscutter.command.CommandManager;
+import emu.grasscutter.command.source.CommandOutput;
+import emu.grasscutter.command.source.CommandSource;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.game.battlepass.BattlePassSystem;
@@ -42,6 +47,8 @@ import emu.grasscutter.server.event.types.ServerEvent;
 import emu.grasscutter.server.scheduler.ServerTaskScheduler;
 import emu.grasscutter.task.TaskMap;
 import emu.grasscutter.utils.Utils;
+import emu.grasscutter.utils.text.Text;
+import emu.grasscutter.utils.text.UnityTextFormatting;
 import it.unimi.dsi.fastutil.ints.*;
 import java.net.*;
 import java.time.*;
@@ -52,7 +59,7 @@ import lombok.*;
 import org.jetbrains.annotations.*;
 
 @Getter
-public final class GameServer extends KcpServer implements Iterable<Player> {
+public final class GameServer extends KcpServer implements Iterable<Player>, CommandOutput {
     // Game server base
     private final InetSocketAddress address;
     private final GameServerPacketHandler packetHandler;
@@ -86,6 +93,9 @@ public final class GameServer extends KcpServer implements Iterable<Player> {
 
     private ChatSystemHandler chatManager;
 
+    // Commands
+    private final CommandManager commandManager;
+
     /**
      * @return The URI for the dispatch server.
      */
@@ -99,6 +109,9 @@ public final class GameServer extends KcpServer implements Iterable<Player> {
     }
 
     public GameServer(InetSocketAddress address) {
+        // Commands
+        this.commandManager = new CommandManager();
+
         // Check if we are in dispatch only mode.
         if (Grasscutter.getRunMode() == ServerRunMode.DISPATCH_ONLY) {
             // Set all the systems to null.
@@ -376,5 +389,50 @@ public final class GameServer extends KcpServer implements Iterable<Player> {
     @NotNull @Override
     public Iterator<Player> iterator() {
         return this.getPlayers().values().iterator();
+    }
+
+    public void executeCommand(String command, CommandSource source) {
+        CompletableFuture.runAsync(() -> {
+            try {
+                if (!source.hasPermission()) { // check if command source has base permission.
+                    throw CommandSource.PERMISSION_ERROR.create();
+                }
+
+                this.commandManager.getDispatcher().execute(command, source);
+            } catch (CommandSyntaxException e) {
+                source.sendFailure(e.getRawMessage());
+                if (e.getInput() != null && e.getCursor() >= 0) {
+                    int j = Math.min(e.getInput().length(), e.getCursor());
+                    var problemInfo = Text.empty().withFormatting(UnityTextFormatting.GRAY);
+                    if (j > CONTEXT_AMOUNT) {
+                        problemInfo.append("...");
+                    }
+
+                    problemInfo.append(e.getInput().substring(Math.max(0, j - CONTEXT_AMOUNT), j));
+                    if (j < e.getInput().length()) {
+                        problemInfo.append(Text.literal(e.getInput().substring(j)).withFormatting(UnityTextFormatting.RED));
+                    }
+
+                    problemInfo.append(Text.translatable("commands.problem_here").translate(source).withFormatting(UnityTextFormatting.RED, UnityTextFormatting.ITALIC));
+                    source.sendFailure(problemInfo);
+
+                    source.handler().sendUsageMessage(source.player());
+                }
+            } catch (Exception e) {
+                source.sendFailure(Text.translatable("commands.failed"));
+                if (Grasscutter.getLogger().isDebugEnabled()) {
+                    Grasscutter.getLogger().error("Command exception: /{}", command, e);
+                }
+            }
+        }, Grasscutter.getThreadPool()).whenComplete((unused, throwable) -> {
+            if (throwable != null) {
+                Grasscutter.getLogger().warn("Error occurred while executing command", throwable);
+            }
+        });
+    }
+
+    @Override
+    public void sendMessage(Text text) {
+        Grasscutter.getLogger().info(text.getString());
     }
 }

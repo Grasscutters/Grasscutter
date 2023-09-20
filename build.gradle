@@ -67,6 +67,11 @@ java {
 
 repositories {
     mavenCentral()
+
+    // for brigadier
+    maven {
+        url "https://libraries.minecraft.net"
+    }
 }
 
 dependencies {
@@ -140,6 +145,9 @@ dependencies {
     annotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.26'
     testCompileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.26'
     testAnnotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.26'
+
+    // Brigadier (Command parser and dispatcher).
+    implementation 'com.mojang:brigadier:1.0.18'
 }
 
 configurations.configureEach {

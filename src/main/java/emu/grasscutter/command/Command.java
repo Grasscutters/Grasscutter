@@ -18,6 +18,8 @@ public @interface Command {
 
     boolean threading() default false;
 
+    boolean brigadier() default false;
+
     enum TargetRequirement {
         NONE, // targetPlayer is not required
         OFFLINE, // targetPlayer must be offline

@@ -2,6 +2,7 @@ package emu.grasscutter.game.player;
 
 import dev.morphia.annotations.*;
 import emu.grasscutter.*;
+import emu.grasscutter.command.source.CommandOutput;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.PlayerLevelData;
 import emu.grasscutter.data.excels.world.WeatherData;
@@ -56,6 +57,7 @@ import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.*;
 import emu.grasscutter.utils.helpers.DateHelper;
 import emu.grasscutter.utils.objects.FieldFetch;
+import emu.grasscutter.utils.text.Text;
 import it.unimi.dsi.fastutil.ints.*;
 import lombok.*;
 
@@ -66,7 +68,7 @@ import java.util.concurrent.*;
 import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
 
 @Entity(value = "players", useDiscriminator = false)
-public class Player implements PlayerHook, FieldFetch {
+public class Player implements PlayerHook, FieldFetch, CommandOutput {
     @Id private int id;
     @Indexed(options = @IndexOptions(unique = true))
     @Getter private String accountId;
@@ -1616,6 +1618,11 @@ public class Player implements PlayerHook, FieldFetch {
         } else {
             return false;
         }
+    }
+
+    @Override
+    public void sendMessage(Text text) {
+        this.getServer().getChatSystem().sendPrivateMessageFromServer(this.getUid(), text.getFormattedString());
     }
 
     @Override
