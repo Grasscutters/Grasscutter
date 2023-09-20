@@ -54,8 +54,8 @@ public final class SpawnCommand implements CommandHandler {
             throw new IllegalArgumentException();
         }
 
-        Position pos = targetPlayer.getPosition();
-        Position rot = targetPlayer.getRotation();
+        Position pos = new Position(targetPlayer.getPosition());
+        Position rot = new Position(targetPlayer.getRotation());
 
         switch (args.size()) {
             case 7:
@@ -69,9 +69,7 @@ public final class SpawnCommand implements CommandHandler {
                 } // Fallthrough
             case 4:
                 try {
-                    pos.setX(CommandHelpers.parseRelative(args.get(1), pos.getX()));
-                    pos.setY(CommandHelpers.parseRelative(args.get(2), pos.getY()));
-                    pos.setZ(CommandHelpers.parseRelative(args.get(3), pos.getZ()));
+                    pos = CommandHelpers.parsePosition(args.get(1), args.get(2), args.get(3), pos, rot);
                 } catch (NumberFormatException ignored) {
                     CommandHandler.sendMessage(
                             sender, translate(sender, "commands.execution.argument_error"));
