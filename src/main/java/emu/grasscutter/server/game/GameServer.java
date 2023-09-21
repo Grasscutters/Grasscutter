@@ -311,11 +311,6 @@ public final class GameServer extends KcpServer implements Iterable<Player> {
         world.save(); // Save the player's world
     }
 
-    public void registerHomeWorld(HomeWorld homeWorld) {
-        this.getHomeWorlds().put(homeWorld.getOwnerUid(), homeWorld);
-        this.registerWorld(homeWorld);
-    }
-
     public HomeWorld getHomeWorldOrCreate(Player owner) {
         return this.getHomeWorlds()
                 .computeIfAbsent(owner.getUid(), (uid) -> new HomeWorld(this, owner));

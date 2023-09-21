@@ -72,6 +72,8 @@ public class World implements Iterable<Player> {
         this.scenes = Int2ObjectMaps.synchronize(new Int2ObjectOpenHashMap<>());
         this.entity = new EntityWorld(this);
         this.lastUpdateTime = System.currentTimeMillis();
+
+        server.registerWorld(this);
     }
 
     public int getLevelEntityId() {
