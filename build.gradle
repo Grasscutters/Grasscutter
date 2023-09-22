@@ -183,6 +183,11 @@ jar {
         include '*.xml'
     }
 
+    // Brigadier LICENSE
+    from('.') {
+        include 'LICENSE-Brigadier'
+    }
+
     destinationDirectory = file('.')
 }
 
