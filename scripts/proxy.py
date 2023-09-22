@@ -68,7 +68,7 @@ class MlgmXyysd_Animation_Company_Proxy:
     ]
 
     def request(self, flow: http.HTTPFlow) -> None:
-        if flow.request.host in self.LIST_DOMAINS:
+        if flow.request.pretty_host in self.LIST_DOMAINS:
             if USE_SSL:
                 flow.request.scheme = "https"
             else:
