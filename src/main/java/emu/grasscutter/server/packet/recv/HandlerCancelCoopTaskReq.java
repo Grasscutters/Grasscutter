@@ -11,7 +11,8 @@ public class HandlerCancelCoopTaskReq extends PacketHandler {
 
     @Override
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
-        CancelCoopTaskReqOuterClass.CancelCoopTaskReq req = CancelCoopTaskReqOuterClass.CancelCoopTaskReq.parseFrom(payload);
+        CancelCoopTaskReqOuterClass.CancelCoopTaskReq req =
+                CancelCoopTaskReqOuterClass.CancelCoopTaskReq.parseFrom(payload);
         var chapterId = req.getChapterId();
         Grasscutter.getLogger().warn("Call to unimplemented packet CancelCoopTaskReq");
         // TODO: Actually cancel the quests.

@@ -11,13 +11,14 @@ import lombok.experimental.FieldDefaults;
 public class CoopPointData extends GameResource {
     @Getter(onMethod_ = @Override)
     int id;
+
     int chapterId;
     String type;
     int acceptQuest;
-    int [] postPointList;
-//    int pointNameTextMapHash;
-//    int pointDecTextMapHash;
+    int[] postPointList;
+    //    int pointNameTextMapHash;
+    //    int pointDecTextMapHash;
     int pointPosId;
-//    long photoMaleHash;
-//    long photoFemaleHash;
+    //    long photoMaleHash;
+    //    long photoFemaleHash;
 }
