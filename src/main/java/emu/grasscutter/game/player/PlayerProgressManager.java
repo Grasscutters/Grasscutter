@@ -33,12 +33,9 @@ public final class PlayerProgressManager extends BasePlayerDataManager {
 
     public static final Set<Integer> IGNORED_OPEN_STATES =
             Set.of(
-                    1404, // OPEN_STATE_MENGDE_INFUSEDCRYSTAL, causes quest 'Mine Craft' to be given to the
+                    1404 // OPEN_STATE_MENGDE_INFUSEDCRYSTAL, causes quest 'Mine Craft' to be given to the
                     // player at the start of the game.
                     // This should be removed when city reputation is implemented.
-                    57 // OPEN_STATE_PERSONAL_LINE, causes the prompt for showing character hangout quests to
-                    // be permanently shown.
-                    // This should be removed when character story quests are implemented.
                     );
     // Set of open states that are set per default for all accounts. Can be overwritten by an entry in
     // `map`.
