@@ -1,7 +1,5 @@
 package emu.grasscutter.game.managers.energy;
 
-import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
-
 import com.google.protobuf.InvalidProtocolBufferException;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.*;
@@ -23,9 +21,12 @@ import emu.grasscutter.net.proto.PropChangeReasonOuterClass.PropChangeReason;
 import emu.grasscutter.server.game.GameSession;
 import it.unimi.dsi.fastutil.ints.*;
 import it.unimi.dsi.fastutil.objects.*;
+import lombok.Getter;
+
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
-import lombok.Getter;
+
+import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
 
 public class EnergyManager extends BasePlayerManager {
     private static final Int2ObjectMap<List<EnergyDropInfo>> energyDropData =
@@ -394,10 +395,12 @@ public class EnergyManager extends BasePlayerManager {
     public void refillTeamEnergy(PropChangeReason changeReason, boolean isFlat) {
         for (var entityAvatar : this.player.getTeamManager().getActiveTeam()) {
             // giving the exact amount read off the AvatarSkillData.json
-            entityAvatar.addEnergy(
-                    entityAvatar.getAvatar().getSkillDepot().getEnergySkillData().getCostElemVal(),
-                    changeReason,
-                    isFlat);
+            var skillDepot = entityAvatar.getAvatar().getSkillDepot();
+            if (skillDepot != null) {
+                entityAvatar.addEnergy(
+                    skillDepot.getEnergySkillData().getCostElemVal(),
+                    changeReason, isFlat);
+            }
         }
     }
 
