@@ -104,7 +104,8 @@ public final class BlossomActivity {
 
                     var monsterData = GameData.getMonsterDataMap().get((int) entry);
                     var level = scene.getEntityLevel(1, worldLevelOverride);
-                    var entity = new EntityMonster(scene, monsterData, pos.nearby2d(4f), level);
+                    var entity =
+                            new EntityMonster(scene, monsterData, pos.nearby2d(4f), Position.ZERO, level);
                     scene.addEntity(entity);
                     newMonsters.add(entity);
                 }

@@ -54,14 +54,14 @@ public class EntityMonster extends GameEntity {
     @Getter private List<Player> playerOnBattle;
     @Nullable @Getter @Setter private SceneMonster metaMonster;
 
-    public EntityMonster(Scene scene, MonsterData monsterData, Position pos, int level) {
+    public EntityMonster(Scene scene, MonsterData monsterData, Position pos, Position rot, int level) {
         super(scene);
 
         this.id = this.getWorld().getNextEntityId(EntityIdType.MONSTER);
         this.monsterData = monsterData;
         this.fightProperties = new Int2FloatOpenHashMap();
         this.position = new Position(pos);
-        this.rotation = new Position();
+        this.rotation = new Position(rot);
         this.bornPos = this.getPosition().clone();
         this.level = level;
         this.playerOnBattle = new ArrayList<>();

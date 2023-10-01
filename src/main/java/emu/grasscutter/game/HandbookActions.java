@@ -241,7 +241,8 @@ public interface HandbookActions {
 
             // Create the entity.
             for (var i = 1; i <= request.getAmount(); i++) {
-                var entity = new EntityMonster(scene, entityData, player.getPosition(), level);
+                var entity =
+                        new EntityMonster(scene, entityData, player.getPosition(), player.getRotation(), level);
                 scene.addEntity(entity);
             }
 

@@ -72,6 +72,8 @@ public class World implements Iterable<Player> {
         this.scenes = Int2ObjectMaps.synchronize(new Int2ObjectOpenHashMap<>());
         this.entity = new EntityWorld(this);
         this.lastUpdateTime = System.currentTimeMillis();
+
+        server.registerWorld(this);
     }
 
     public int getLevelEntityId() {
@@ -396,37 +398,50 @@ public class World implements Iterable<Player> {
             return false;
         }
 
-        Scene oldScene = null;
-        if (player.getScene() != null) {
-            oldScene = player.getScene();
+        Scene oldScene = player.getScene();
+        var newScene = this.getSceneById(teleportProperties.getSceneId());
 
+        // Move directly in the same scene.
+        if (newScene == oldScene && teleportProperties.getTeleportType() == TeleportType.COMMAND) {
+            // Set player position and rotation
+            if (teleportProperties.getTeleportTo() != null) {
+                player.getPosition().set(teleportProperties.getTeleportTo());
+            }
+            if (teleportProperties.getTeleportRot() != null) {
+                player.getRotation().set(teleportProperties.getTeleportRot());
+            }
+            player.sendPacket(new PacketSceneEntityAppearNotify(player));
+            return true;
+        }
+
+        if (oldScene != null) {
             // Don't deregister scenes if the player is going to tp back into them
-            if (oldScene.getId() == teleportProperties.getSceneId()) {
+            if (oldScene == newScene) {
                 oldScene.setDontDestroyWhenEmpty(true);
             }
-
             oldScene.removePlayer(player);
         }
 
-        var newScene = this.getSceneById(teleportProperties.getSceneId());
-        newScene.addPlayer(player);
+        if (newScene != null) {
+            newScene.addPlayer(player);
 
-        player.getTeamManager().applyAbilities(newScene);
+            player.getTeamManager().applyAbilities(newScene);
 
-        // Dungeon
-        // Dungeon system is handling this already
-        // if(dungeonData!=null){
-        //     var dungeonManager = new DungeonManager(newScene, dungeonData);
-        //     dungeonManager.startDungeon();
-        // }
+            // Dungeon
+            // Dungeon system is handling this already
+            // if(dungeonData!=null){
+            //     var dungeonManager = new DungeonManager(newScene, dungeonData);
+            //     dungeonManager.startDungeon();
+            // }
 
-        SceneConfig config = newScene.getScriptManager().getConfig();
-        if (teleportProperties.getTeleportTo() == null && config != null) {
-            if (config.born_pos != null) {
-                teleportProperties.setTeleportTo(config.born_pos);
-            }
-            if (config.born_rot != null) {
-                teleportProperties.setTeleportRot(config.born_rot);
+            SceneConfig config = newScene.getScriptManager().getConfig();
+            if (teleportProperties.getTeleportTo() == null && config != null) {
+                if (config.born_pos != null) {
+                    teleportProperties.setTeleportTo(config.born_pos);
+                }
+                if (config.born_rot != null) {
+                    teleportProperties.setTeleportRot(config.born_rot);
+                }
             }
         }
 
@@ -438,7 +453,7 @@ public class World implements Iterable<Player> {
             player.getRotation().set(teleportProperties.getTeleportRot());
         }
 
-        if (oldScene != null && newScene != oldScene) {
+        if (oldScene != null && newScene != null && newScene != oldScene) {
             newScene.setPrevScenePoint(oldScene.getPrevScenePoint());
             oldScene.setDontDestroyWhenEmpty(false);
         }
