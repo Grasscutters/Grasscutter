@@ -295,6 +295,12 @@ public final class QuestManager extends BasePlayerManager {
     }
 
     public void enableQuests() {
+        GameData.getBeginCondQuestMap().keySet().forEach(x -> {
+            if (x.contains("QUEST_COND_STATE_NOT_EQUAL"))
+                this.triggerEvent(QuestCond.QUEST_COND_STATE_NOT_EQUAL, null, Integer.parseInt(x.substring(26)));
+            if (x.contains("QUEST_COND_STATE_EQUAL"))
+                this.triggerEvent(QuestCond.QUEST_COND_STATE_EQUAL, null, Integer.parseInt(x.substring(22)));
+        });
         this.triggerEvent(QuestCond.QUEST_COND_NONE, null, 0);
         this.triggerEvent(QuestCond.QUEST_COND_PLAYER_LEVEL_EQUAL_GREATER, null, 1);
     }
