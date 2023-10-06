@@ -15,10 +15,11 @@ public class HandlerPersonalSceneJumpReq extends PacketHandler {
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
         PersonalSceneJumpReq req = PersonalSceneJumpReq.parseFrom(payload);
         var player = session.getPlayer();
+        var prevSceneId = player.getSceneId();
 
         // get the scene point
         ScenePointEntry scenePointEntry =
-                GameData.getScenePointEntryById(player.getSceneId(), req.getPointId());
+                GameData.getScenePointEntryById(prevSceneId, req.getPointId());
 
         if (scenePointEntry != null) {
             Position pos =
@@ -26,6 +27,7 @@ public class HandlerPersonalSceneJumpReq extends PacketHandler {
             int sceneId = scenePointEntry.getPointData().getTranSceneId();
 
             player.getWorld().transferPlayerToScene(player, sceneId, pos);
+            player.getScene().setPrevScene(prevSceneId);
             session.send(new PacketPersonalSceneJumpRsp(sceneId, pos));
         }
     }
