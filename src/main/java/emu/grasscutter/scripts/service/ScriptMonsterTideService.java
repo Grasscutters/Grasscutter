@@ -1,6 +1,5 @@
 package emu.grasscutter.scripts.service;
 
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.entity.EntityMonster;
 import emu.grasscutter.scripts.SceneScriptManager;
 import emu.grasscutter.scripts.constants.EventType;

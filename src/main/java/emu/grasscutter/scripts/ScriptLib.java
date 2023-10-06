@@ -31,7 +31,7 @@ import static emu.grasscutter.scripts.constants.GroupKillPolicy.*;
 
 @SuppressWarnings("unused")
 public class ScriptLib {
-    public static final Logger logger = Grasscutter.getLogger();
+    public static final Logger logger = LoggerFactory.getLogger(ScriptLib.class);
     private final FastThreadLocal<SceneScriptManager> sceneScriptManager;
     private final FastThreadLocal<SceneGroup> currentGroup;
     private final FastThreadLocal<ScriptArgs> callParams;
