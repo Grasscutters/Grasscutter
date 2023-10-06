@@ -31,7 +31,7 @@ import static emu.grasscutter.scripts.constants.GroupKillPolicy.*;
 
 @SuppressWarnings("unused")
 public class ScriptLib {
-    public static final Logger logger = LoggerFactory.getLogger(ScriptLib.class);
+    public static final Logger logger = Grasscutter.getLogger();
     private final FastThreadLocal<SceneScriptManager> sceneScriptManager;
     private final FastThreadLocal<SceneGroup> currentGroup;
     private final FastThreadLocal<ScriptArgs> callParams;
@@ -215,9 +215,9 @@ public class ScriptLib {
     }
 
     // Some fields are guessed
-    public int AutoMonsterTide(int challengeIndex, int groupId, Integer[] ordersConfigId, int tideCount, int sceneLimit, int param6) {
+    public int AutoMonsterTide(int sourceId, int groupId, Integer[] ordersConfigId, int tideCount, int sceneLimit, int param6) {
         logger.debug("[LUA] Call AutoMonsterTide with {},{},{},{},{},{}",
-            challengeIndex,groupId,ordersConfigId,tideCount,sceneLimit,param6);
+            sourceId,groupId,ordersConfigId,tideCount,sceneLimit,param6);
 
         SceneGroup group = getSceneScriptManager().getGroupById(groupId);
 
@@ -225,7 +225,7 @@ public class ScriptLib {
             return 1;
         }
 
-        this.getSceneScriptManager().startMonsterTideInGroup(group, ordersConfigId, tideCount, sceneLimit);
+        this.getSceneScriptManager().startMonsterTideInGroup(Integer.toString(sourceId), group, ordersConfigId, tideCount, sceneLimit);
 
         return 0;
     }

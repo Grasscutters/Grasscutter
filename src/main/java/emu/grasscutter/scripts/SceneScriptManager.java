@@ -774,9 +774,9 @@ public class SceneScriptManager {
     }
 
     public void startMonsterTideInGroup(
-            SceneGroup group, Integer[] ordersConfigId, int tideCount, int sceneLimit) {
+            String source, SceneGroup group, Integer[] ordersConfigId, int tideCount, int sceneLimit) {
         this.scriptMonsterTideService =
-                new ScriptMonsterTideService(this, group, tideCount, sceneLimit, ordersConfigId);
+                new ScriptMonsterTideService(this, source, group, tideCount, sceneLimit, ordersConfigId);
     }
 
     public void unloadCurrentMonsterTide() {
