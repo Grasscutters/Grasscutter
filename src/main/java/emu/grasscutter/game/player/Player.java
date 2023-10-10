@@ -1530,6 +1530,31 @@ public class Player implements PlayerHook, FieldFetch {
         getServer().getPlayers().values().removeIf(player1 -> player1 == this);
     }
 
+    public void unfreezeUnlockedScenePoints(int sceneId) {
+        // Unfreeze previously unlocked scene points. For example,
+        // the first weapon mats domain needs some script interaction
+        // to unlock. It needs to be unfrozen when GetScenePointReq
+        // comes in to be interactable again.
+        GameData.getScenePointEntryMap().values().stream()
+                .filter(scenePointEntry ->
+                        // Note: Only DungeonEntry scene points need to be unfrozen
+                        scenePointEntry.getPointData().getType().equals("DungeonEntry")
+                        // groupLimit says this scene point needs to be unfrozen
+                        && scenePointEntry.getPointData().isGroupLimit())
+                .forEach(scenePointEntry -> {
+                        // If this is a previously unlocked scene point,
+                        // send unfreeze packet.
+                        val pointId = scenePointEntry.getPointData().getId();
+                        if (unlockedScenePoints.get(sceneId).contains(pointId)) {
+                            this.sendPacket(new PacketUnfreezeGroupLimitNotify(pointId, sceneId));
+                        }
+                });
+    }
+
+    public void unfreezeUnlockedScenePoints() {
+        unlockedScenePoints.keySet().forEach(sceneId -> unfreezeUnlockedScenePoints(sceneId));
+    }
+
     public int getLegendaryKey() {
         return this.getProperty(PlayerProperty.PROP_PLAYER_LEGENDARY_KEY);
     }

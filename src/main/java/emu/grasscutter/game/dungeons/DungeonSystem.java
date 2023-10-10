@@ -7,10 +7,14 @@ import emu.grasscutter.data.excels.dungeon.*;
 import emu.grasscutter.game.dungeons.handlers.DungeonBaseHandler;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.SceneType;
+import emu.grasscutter.game.props.EnterReason;
 import emu.grasscutter.game.world.*;
 import emu.grasscutter.net.packet.*;
 import emu.grasscutter.server.game.*;
 import emu.grasscutter.server.packet.send.PacketDungeonEntryInfoRsp;
+import emu.grasscutter.game.world.data.TeleportProperties;
+import emu.grasscutter.server.event.player.PlayerTeleportEvent.TeleportType;
+import emu.grasscutter.net.proto.EnterTypeOuterClass.EnterType;
 import it.unimi.dsi.fastutil.ints.*;
 import java.util.List;
 import lombok.val;
@@ -170,5 +174,26 @@ public final class DungeonSystem extends BaseGameSystem {
         // Transfer player back to world
         player.getWorld().transferPlayerToScene(player, prevScene, prevPos);
         player.sendPacket(new BasePacket(PacketOpcodes.PlayerQuitDungeonRsp));
+    }
+
+    public void restartDungeon(Player player) {
+        var scene = player.getScene();
+        var dungeonManager = scene.getDungeonManager();
+        var dungeonData = dungeonManager.getDungeonData();
+        var sceneId = dungeonData.getSceneId();
+
+        // Forward over previous scene and scene point
+        var prevScene = scene.getPrevScene();
+        var pointId = scene.getPrevScenePoint();
+
+        // Destroy then create scene again to reinitialize script state
+        scene.getPlayers().forEach(scene::removePlayer);
+        if (player.getWorld().transferPlayerToScene(player, sceneId, dungeonData)) {
+            scene = player.getScene();
+            scene.setPrevScene(prevScene);
+            scene.setPrevScenePoint(pointId);
+            scene.setDungeonManager(new DungeonManager(scene, dungeonData));
+            scene.addDungeonSettleObserver(basicDungeonSettleObserver);
+        }
     }
 }

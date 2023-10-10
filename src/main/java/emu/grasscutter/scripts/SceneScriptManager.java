@@ -265,6 +265,10 @@ public class SceneScriptManager {
 
         groupInstance.setActiveSuiteId(suiteIndex);
         groupInstance.setLastTimeRefreshed(getScene().getWorld().getGameTime());
+
+        // Call EVENT_GROUP_REFRESH for any action trigger waiting for it
+        callEvent(new ScriptArgs(groupInstance.getGroupId(), EventType.EVENT_GROUP_REFRESH));
+
         return suiteIndex;
     }
 
@@ -323,7 +327,7 @@ public class SceneScriptManager {
                 group.monsters.values().stream()
                         .filter(
                                 m -> {
-                                    var entity = scene.getEntityByConfigId(m.config_id);
+                                    var entity = scene.getEntityByConfigId(m.config_id, groupId);
                                     return (entity == null
                                             || entity.getGroupId()
                                                     != group
@@ -694,7 +698,7 @@ public class SceneScriptManager {
         return suite.sceneGadgets.stream()
                 .filter(
                         m -> {
-                            var entity = scene.getEntityByConfigId(m.config_id);
+                            var entity = scene.getEntityByConfigId(m.config_id, group.id);
                             return (entity == null || entity.getGroupId() != group.id)
                                     && (!m.isOneoff
                                             || !m.persistent
@@ -712,7 +716,7 @@ public class SceneScriptManager {
         return suite.sceneMonsters.stream()
                 .filter(
                         m -> {
-                            var entity = scene.getEntityByConfigId(m.config_id);
+                            var entity = scene.getEntityByConfigId(m.config_id, group.id);
                             return (entity == null
                                     || entity.getGroupId()
                                             != group
@@ -788,7 +792,7 @@ public class SceneScriptManager {
 
     public void spawnMonstersByConfigId(SceneGroup group, int configId, int delayTime) {
         // TODO delay
-        var entity = scene.getEntityByConfigId(configId);
+        var entity = scene.getEntityByConfigId(configId, group.id);
         if (entity != null && entity.getGroupId() == group.id) {
             Grasscutter.getLogger()
                     .debug("entity already exists failed in group {} with config {}", group.id, configId);
@@ -884,9 +888,11 @@ public class SceneScriptManager {
     private boolean evaluateTriggerCondition(SceneTrigger trigger, ScriptArgs params) {
         Grasscutter.getLogger()
                 .trace(
-                        "Call Condition Trigger {}, [{},{},{}]",
+                        "Call Condition Trigger {}, [{},{},{}], source_eid {}, target_eid {}",
                         trigger.getCondition(),
                         params.param1,
+                        params.param2,
+                        params.param3,
                         params.source_eid,
                         params.target_eid);
         LuaValue ret = this.callScriptFunc(trigger.getCondition(), trigger.currentGroup, params);
@@ -1194,7 +1200,7 @@ public class SceneScriptManager {
         return monsters.values().stream()
                 .noneMatch(
                         m -> {
-                            val entity = scene.getEntityByConfigId(m.config_id);
+                            val entity = scene.getEntityByConfigId(m.config_id, groupId);
                             return entity != null && entity.getGroupId() == groupId;
                         });
     }

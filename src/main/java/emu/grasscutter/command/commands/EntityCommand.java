@@ -51,7 +51,10 @@ public final class EntityCommand implements CommandHandler {
         }
 
         param.scene = targetPlayer.getScene();
-        var entity = param.scene.getEntityByConfigId(param.configId);
+        // TODO Might want to allow groupId specification,
+        // because there can be more than one entity with
+        // the given config ID.
+        var entity = param.scene.getFirstEntityByConfigId(param.configId);
 
         if (entity == null) {
             CommandHandler.sendMessage(sender, translate(sender, "commands.entity.not_found_error"));
