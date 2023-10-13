@@ -8,6 +8,7 @@ const dev = mode === "development";
 
 export default {
     plugins: (() => {
+        // Create an empty array to store the plugins
         let plugins = [
             // Some plugins, like TailwindCSS/Nesting, need to run before Tailwind.
             tailwind(tailwindConfig),
@@ -16,9 +17,12 @@ export default {
             autoprefixer()
         ];
 
-        !dev && cssnanoPlugin({
-            preset: "default"
-        });
+        // Add the cssnano plugin if it's not in development mode
+        !dev && plugins.push(
+            cssnanoPlugin({
+                preset: "default"
+            })
+        );
 
         return plugins;
     })()

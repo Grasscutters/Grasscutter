@@ -9,106 +9,109 @@ import java.util.concurrent.ConcurrentHashMap;
 import kcp.highway.*;
 import lombok.Getter;
 
+/**
+* This class manages game sessions for the game server.
+*/
 public class GameSessionManager {
-    @Getter private static final DefaultEventLoop logicThread = new DefaultEventLoop();
-    private static final ConcurrentHashMap<Ukcp, GameSession> sessions = new ConcurrentHashMap<>();
-    private static final KcpListener listener =
-            new KcpListener() {
-                @Override
-                public void onConnected(Ukcp ukcp) {
-                    int times = 0;
-                    GameServer server = Grasscutter.getGameServer();
-                    while (server == null) { // Waiting server to establish
-                        try {
-                            Thread.sleep(1000);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                            ukcp.close();
-                            return;
-                        }
-                        if (times++ > 5) {
-                            Grasscutter.getLogger().error("Service is not available!");
-                            ukcp.close();
-                            return;
-                        }
-                        server = Grasscutter.getGameServer();
-                    }
-                    GameSession conversation = new GameSession(server);
-                    conversation.onConnected(
-                            new KcpTunnel() {
-                                @Override
-                                public InetSocketAddress getAddress() {
-                                    return ukcp.user().getRemoteAddress();
-                                }
+   @Getter private static final DefaultEventLoop logicThread = new DefaultEventLoop();
+   private static final ConcurrentHashMap<Ukcp, GameSession> sessions = new ConcurrentHashMap<>();
+   private static final KcpListener listener =
+           new KcpListener() {
+               @Override
+               public void onConnected(Ukcp ukcp) {
+                   int times = 0;
+                   GameServer server = Grasscutter.getGameServer();
+                   while (server == null) { // Waiting server to establish
+                       try {
+                           Thread.sleep(1000);
+                       } catch (InterruptedException e) {
+                           e.printStackTrace();
+                           ukcp.close();
+                           return;
+                       }
+                       if (times++ > 5) {
+                           Grasscutter.getLogger().error("Service is not available!");
+                           ukcp.close();
+                           return;
+                       }
+                       server = Grasscutter.getGameServer();
+                   }
+                   GameSession conversation = new GameSession(server);
+                   conversation.onConnected(
+                           new KcpTunnel() {
+                               @Override
+                               public InetSocketAddress getAddress() {
+                                   return ukcp.user().getRemoteAddress();
+                               }
 
-                                @Override
-                                public void writeData(byte[] bytes) {
-                                    ByteBuf buf = Unpooled.wrappedBuffer(bytes);
-                                    ukcp.write(buf);
-                                    buf.release();
-                                }
+                               @Override
+                               public void writeData(byte[] bytes) {
+                                   ByteBuf buf = Unpooled.wrappedBuffer(bytes);
+                                   ukcp.write(buf);
+                                   buf.release();
+                               }
 
-                                @Override
-                                public void close() {
-                                    ukcp.close();
-                                }
+                               @Override
+                               public void close() {
+                                   ukcp.close();
+                               }
 
-                                @Override
-                                public int getSrtt() {
-                                    return ukcp.srtt();
-                                }
-                            });
-                    sessions.put(ukcp, conversation);
-                }
+                               @Override
+                               public int getSrtt() {
+                                   return ukcp.srtt();
+                               }
+                           });
+                   sessions.put(ukcp, conversation);
+               }
 
-                @Override
-                public void handleReceive(ByteBuf buf, Ukcp kcp) {
-                    var byteData = Utils.byteBufToArray(buf);
-                    logicThread.execute(
-                            () -> {
-                                try {
-                                    var conversation = sessions.get(kcp);
-                                    if (conversation != null) {
-                                        conversation.handleReceive(byteData);
-                                    }
-                                } catch (Exception e) {
-                                    e.printStackTrace();
-                                }
-                            });
-                }
+               @Override
+               public void handleReceive(ByteBuf buf, Ukcp kcp) {
+                   var byteData = Utils.byteBufToArray(buf);
+                   logicThread.execute(
+                           () -> {
+                               try {
+                                   var conversation = sessions.get(kcp);
+                                   if (conversation != null) {
+                                       conversation.handleReceive(byteData);
+                                   }
+                               } catch (Exception e) {
+                                   e.printStackTrace();
+                               }
+                           });
+               }
 
-                @Override
-                public void handleException(Throwable ex, Ukcp ukcp) {}
+               @Override
+               public void handleException(Throwable ex, Ukcp ukcp) {}
 
-                @Override
-                public void handleClose(Ukcp ukcp) {
-                    GameSession conversation = sessions.get(ukcp);
-                    if (conversation != null) {
-                        conversation.handleClose();
-                        sessions.remove(ukcp);
-                    }
-                }
-            };
+               @Override
+               public void handleClose(Ukcp ukcp) {
+                   GameSession conversation = sessions.get(ukcp);
+                   if (conversation != null) {
+                       conversation.handleClose();
+                       sessions.remove(ukcp);
+                   }
+               }
+           };
 
-    public static KcpListener getListener() {
-        return listener;
-    }
+   public static KcpListener getListener() {
+       return listener;
+   }
 
-    public interface KcpTunnel {
-        InetSocketAddress getAddress();
+   public interface KcpTunnel {
+       InetSocketAddress getAddress();
 
-        void writeData(byte[] bytes);
+       void writeData(byte[] bytes);
 
-        void close();
+       void close();
 
-        int getSrtt();
-    }
+       int getSrtt();
+   }
 
-    interface KcpChannel {
-        void onConnected(KcpTunnel tunnel);
+   interface KcpChannel {
+       void onConnected(KcpTunnel tunnel);
 
-        void handleClose();
+       void handleClose();
 
-        void handleReceive(byte[] bytes);
-    }
+       void handleReceive(byte[] bytes);
+   }
 }
