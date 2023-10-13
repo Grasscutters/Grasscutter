@@ -39,8 +39,9 @@ public final class SetSceneTagCommand implements CommandHandler {
             if (actionStr.equals("unlockall")) {
                 unlockAllSceneTags(targetPlayer);
                 return;
-            } else if (actionStr.equals("reset")) {
+            } else if (actionStr.equals("reset") || actionStr.equals("restore")) {
                 resetAllSceneTags(targetPlayer);
+                return;
             } else {
                 CommandHandler.sendTranslatedMessage(sender, "commands.execution.argument_error");
                 return;
