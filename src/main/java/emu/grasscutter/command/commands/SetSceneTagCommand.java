@@ -12,7 +12,7 @@ import lombok.val;
 @Command(
         label = "setSceneTag",
         aliases = {"tag"},
-        usage = {"<add|remove|unlockall> <sceneTagId>"},
+        usage = {"<add|remove|unlockall|reset> <sceneTagId>"},
         permission = "player.setscenetag",
         permissionTargeted = "player.setscenetag.others")
 public final class SetSceneTagCommand implements CommandHandler {
@@ -20,7 +20,7 @@ public final class SetSceneTagCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
-        if (args.size() == 0) {
+        if (args.isEmpty()) {
             sendUsageMessage(sender);
             return;
         }
@@ -39,6 +39,8 @@ public final class SetSceneTagCommand implements CommandHandler {
             if (actionStr.equals("unlockall")) {
                 unlockAllSceneTags(targetPlayer);
                 return;
+            } else if (actionStr.equals("reset")) {
+                resetAllSceneTags(targetPlayer);
             } else {
                 CommandHandler.sendTranslatedMessage(sender, "commands.execution.argument_error");
                 return;
@@ -49,7 +51,7 @@ public final class SetSceneTagCommand implements CommandHandler {
 
         var sceneData =
                 sceneTagData.values().stream().filter(sceneTag -> sceneTag.getId() == userVal).findFirst();
-        if (sceneData == null) {
+        if (sceneData.isEmpty()) {
             CommandHandler.sendTranslatedMessage(sender, "commands.generic.invalid.id");
             return;
         }
@@ -80,15 +82,13 @@ public final class SetSceneTagCommand implements CommandHandler {
                 .toList()
                 .forEach(
                         sceneTag -> {
-                            if (targetPlayer.getSceneTags().get(sceneTag.getSceneId()) == null) {
-                                targetPlayer.getSceneTags().put(sceneTag.getSceneId(), new HashSet<>());
-                            }
+                            targetPlayer.getSceneTags().computeIfAbsent(sceneTag.getSceneId(), k -> new HashSet<>());
                             targetPlayer.getSceneTags().get(sceneTag.getSceneId()).add(sceneTag.getId());
                         });
 
         // Remove default SceneTags, as most are "before" or "locked" states
         allData.stream()
-                .filter(sceneTag -> sceneTag.isDefaultValid())
+                .filter(SceneTagData::isDefaultValid)
                 // Only remove for big world as some other scenes only have defaults
                 .filter(sceneTag -> sceneTag.getSceneId() == 3)
                 .forEach(
@@ -97,6 +97,17 @@ public final class SetSceneTagCommand implements CommandHandler {
                         });
 
         this.setSceneTags(targetPlayer);
+    }
+
+    private void resetAllSceneTags(Player targetPlayer) {
+        targetPlayer.getSceneTags().clear();
+        // targetPlayer.applyStartingSceneTags(); // private
+        GameData.getSceneTagDataMap().values().stream()
+            .filter(SceneTagData::isDefaultValid)
+            .forEach(sceneTag -> {
+                targetPlayer.getSceneTags().computeIfAbsent(sceneTag.getSceneId(), k -> new HashSet<>());
+                targetPlayer.getSceneTags().get(sceneTag.getSceneId()).add(sceneTag.getId());
+            });
     }
 
     private void setSceneTags(Player targetPlayer) {
