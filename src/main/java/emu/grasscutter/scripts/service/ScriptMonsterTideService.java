@@ -87,7 +87,8 @@ public final class ScriptMonsterTideService {
                                 currentGroup.id, currentGroup.block_id, getNextMonster()));
             }
             // call registered events that may spawn in more monsters
-            var scriptArgs = new ScriptArgs(currentGroup.id, EventType.EVENT_MONSTER_TIDE_DIE, monsterKillCount.get());
+            var scriptArgs =
+                    new ScriptArgs(currentGroup.id, EventType.EVENT_MONSTER_TIDE_DIE, monsterKillCount.get());
             scriptArgs.setEventSource(source);
             sceneScriptManager.callEvent(scriptArgs);
         }
