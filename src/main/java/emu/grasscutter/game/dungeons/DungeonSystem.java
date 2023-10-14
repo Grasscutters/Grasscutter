@@ -131,7 +131,9 @@ public final class DungeonSystem extends BaseGameSystem {
                         dungeonId);
 
         if (player.getWorld().transferPlayerToScene(player, data.getSceneId(), data)) {
-            dungeonSettleListeners.forEach(player.getScene()::addDungeonSettleObserver);
+            var scene = player.getScene();
+            scene.setDungeonManager(new DungeonManager(scene, data));
+            dungeonSettleListeners.forEach(scene::addDungeonSettleObserver);
         }
         return true;
     }

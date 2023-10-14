@@ -20,9 +20,11 @@ public final class ScriptMonsterTideService {
     private final List<Integer> monsterConfigIds;
     private final OnMonsterCreated onMonsterCreated = new OnMonsterCreated();
     private final OnMonsterDead onMonsterDead = new OnMonsterDead();
+    private final String source;
 
     public ScriptMonsterTideService(
             SceneScriptManager sceneScriptManager,
+            String source,
             SceneGroup group,
             int tideCount,
             int monsterSceneLimit,
@@ -35,6 +37,7 @@ public final class ScriptMonsterTideService {
         this.monsterAlive = new AtomicInteger(0);
         this.monsterConfigOrders = new ConcurrentLinkedQueue<>(List.of(ordersConfigId));
         this.monsterConfigIds = List.of(ordersConfigId);
+        this.source = source;
 
         this.sceneScriptManager
                 .getScriptMonsterSpawnService()
@@ -83,11 +86,10 @@ public final class ScriptMonsterTideService {
                         sceneScriptManager.createMonster(
                                 currentGroup.id, currentGroup.block_id, getNextMonster()));
             }
-            // spawn the last turn of monsters
-            // fix the 5-2
-            sceneScriptManager.callEvent(
-                    new ScriptArgs(
-                            currentGroup.id, EventType.EVENT_MONSTER_TIDE_DIE, monsterKillCount.get()));
+            // call registered events that may spawn in more monsters
+            var scriptArgs = new ScriptArgs(currentGroup.id, EventType.EVENT_MONSTER_TIDE_DIE, monsterKillCount.get());
+            scriptArgs.setEventSource(source);
+            sceneScriptManager.callEvent(scriptArgs);
         }
     }
 

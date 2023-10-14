@@ -310,14 +310,14 @@ public class ScriptLib {
     // TODO: AttachGalleryAbilityGroup
     // TODO: AttachGalleryTeamAbilityGroup
 
-    public int AutoMonsterTide(int challengeIndex, int groupId, Integer[] ordersConfigId, int tideCount, int sceneLimit, int param6) {
-        logger.debug("[LUA] Call AutoMonsterTide with {},{},{},{},{},{}", challengeIndex, groupId, ordersConfigId, tideCount, sceneLimit, param6);
+    public int AutoMonsterTide(int sourceId, int groupId, Integer[] ordersConfigId, int tideCount, int sceneLimit, int param6) {
+        logger.debug("[LUA] Call AutoMonsterTide with {},{},{},{},{},{}", sourceId, groupId, ordersConfigId, tideCount, sceneLimit, param6);
         // Some fields are guessed
         SceneGroup group = getSceneScriptManager().getGroupById(groupId);
         if (group == null || group.monsters == null) {
             return 1;
         }
-        this.getSceneScriptManager().startMonsterTideInGroup(group, ordersConfigId, tideCount, sceneLimit);
+        this.getSceneScriptManager().startMonsterTideInGroup(Integer.toString(sourceId), group, ordersConfigId, tideCount, sceneLimit);
         return 0;
     }
 
