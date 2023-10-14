@@ -83,7 +83,9 @@ public final class SetSceneTagCommand implements CommandHandler {
                 .toList()
                 .forEach(
                         sceneTag -> {
-                            targetPlayer.getSceneTags().computeIfAbsent(sceneTag.getSceneId(), k -> new HashSet<>());
+                            targetPlayer
+                                    .getSceneTags()
+                                    .computeIfAbsent(sceneTag.getSceneId(), k -> new HashSet<>());
                             targetPlayer.getSceneTags().get(sceneTag.getSceneId()).add(sceneTag.getId());
                         });
 
@@ -104,11 +106,14 @@ public final class SetSceneTagCommand implements CommandHandler {
         targetPlayer.getSceneTags().clear();
         // targetPlayer.applyStartingSceneTags(); // private
         GameData.getSceneTagDataMap().values().stream()
-            .filter(SceneTagData::isDefaultValid)
-            .forEach(sceneTag -> {
-                targetPlayer.getSceneTags().computeIfAbsent(sceneTag.getSceneId(), k -> new HashSet<>());
-                targetPlayer.getSceneTags().get(sceneTag.getSceneId()).add(sceneTag.getId());
-            });
+                .filter(SceneTagData::isDefaultValid)
+                .forEach(
+                        sceneTag -> {
+                            targetPlayer
+                                    .getSceneTags()
+                                    .computeIfAbsent(sceneTag.getSceneId(), k -> new HashSet<>());
+                            targetPlayer.getSceneTags().get(sceneTag.getSceneId()).add(sceneTag.getId());
+                        });
     }
 
     private void setSceneTags(Player targetPlayer) {
