@@ -13,17 +13,20 @@ public class TowerResult extends BaseDungeonResult {
     boolean canJump;
     boolean hasNextLevel;
     int nextFloorId;
+    int currentStars;
 
     public TowerResult(
             DungeonData dungeonData,
             DungeonEndStats dungeonStats,
             TowerManager towerManager,
-            WorldChallenge challenge) {
+            WorldChallenge challenge,
+            int currentStars) {
         super(dungeonData, dungeonStats);
         this.challenge = challenge;
         this.canJump = towerManager.hasNextFloor();
         this.hasNextLevel = towerManager.hasNextLevel();
         this.nextFloorId = hasNextLevel ? 0 : towerManager.getNextFloorId();
+        this.currentStars = currentStars;
     }
 
     @Override
@@ -40,14 +43,16 @@ public class TowerResult extends BaseDungeonResult {
                 TowerLevelEndNotify.newBuilder()
                         .setIsSuccess(challenge.isSuccess())
                         .setContinueState(continueStatus)
-                        .addFinishedStarCondList(1)
-                        .addFinishedStarCondList(2)
-                        .addFinishedStarCondList(3)
                         .addRewardItemList(
-                                ItemParamOuterClass.ItemParam.newBuilder().setItemId(201).setCount(1000).build());
+                                ItemParamOuterClass.ItemParam.newBuilder().setItemId(201).setCount(1000));
+
+        for (int i = 1; i <= currentStars; i++) {
+            towerLevelEndNotify.addFinishedStarCondList(i);
+        }
+
         if (nextFloorId > 0 && canJump) {
             towerLevelEndNotify.setNextFloorId(nextFloorId);
         }
-        builder.setTowerLevelEndNotify(towerLevelEndNotify);
+        builder.setTowerLevelEndNotify(towerLevelEndNotify.build());
     }
 }

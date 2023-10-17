@@ -190,8 +190,27 @@ public class ScriptLib {
     // TODO: ActivateGroupLinkBundle
     // TODO: ActivateGroupLinkBundleByBundleId
 
-    public int ActiveChallenge(int challengeId, int challengeIndex, int timeLimitOrGroupId, int groupId, int objectiveKills, int param5) {
+    public synchronized int ActiveChallenge(int challengeId, int challengeIndex, int timeLimitOrGroupId, int groupId, int objectiveKills, int param5) {
         logger.debug("[LUA] Call ActiveChallenge with {},{},{},{},{},{}", challengeId, challengeIndex, timeLimitOrGroupId, groupId, objectiveKills, param5);
+
+        var scene = getSceneScriptManager().getScene();
+        var existingChallenge = scene.getChallenge();
+        if (existingChallenge != null && existingChallenge.inProgress()) {
+            logger.warn("ActiveChallenge: tried to create challenge while one is already in progress");
+            return 0;
+        }
+
+        var towerManager = scene.getPlayers().get(0).getTowerManager();
+        if (towerManager.isInProgress()) {
+            // Tower scripts call ActiveChallenge twice in mirror stages.
+            // The second call provides the time _taken_ in the first stage,
+            // not the actual time limit for the challenge.
+            timeLimitOrGroupId = towerManager.getCurrentTimeLimit() - timeLimitOrGroupId;
+            if (timeLimitOrGroupId < 0) {
+                timeLimitOrGroupId = 0;
+            }
+        }
+
         var challenge = ChallengeFactory.getChallenge(
                 challengeId,
                 challengeIndex,
@@ -199,7 +218,7 @@ public class ScriptLib {
                 groupId,
                 objectiveKills,
                 param5,
-                getSceneScriptManager().getScene(),
+                scene,
                 getCurrentGroup().get()
         );
 
@@ -212,7 +231,7 @@ public class ScriptLib {
             dungeonChallenge.setStage(getSceneScriptManager().getVariables(groupId).getOrDefault("stage", -1) == 0);
         }
 
-        getSceneScriptManager().getScene().setChallenge(challenge);
+        scene.setChallenge(challenge);
         challenge.start();
         return 0;
     }

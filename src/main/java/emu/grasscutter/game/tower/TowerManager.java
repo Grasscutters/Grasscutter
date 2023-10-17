@@ -1,15 +1,21 @@
 package emu.grasscutter.game.tower;
 
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.tower.TowerLevelData;
 import emu.grasscutter.game.dungeons.*;
 import emu.grasscutter.game.player.*;
 import emu.grasscutter.server.packet.send.*;
 import java.util.*;
+import lombok.*;
 
 public class TowerManager extends BasePlayerManager {
     private static final List<DungeonSettleListener> towerDungeonSettleListener =
             List.of(new TowerDungeonSettleListener());
+
+    private int currentPossibleStars = 0;
+    @Getter private boolean inProgress;
+    @Getter private int currentTimeLimit;
 
     public TowerManager(Player player) {
         super(player);
@@ -30,6 +36,30 @@ public class TowerManager extends BasePlayerManager {
     /** form 1-3 */
     public int getCurrentLevel() {
         return this.getTowerData().currentLevel + 1;
+    }
+
+    public void onTick() {
+        var challenge = player.getScene().getChallenge();
+        if (challenge == null || !challenge.inProgress()) return;
+
+        // Check star conditions and notify client if any failed.
+        int stars = getCurLevelStars();
+        while (stars < currentPossibleStars) {
+            player
+                    .getSession()
+                    .send(new PacketTowerLevelStarCondNotify(getTowerData().currentFloorId, getCurrentLevel(), currentPossibleStars));
+            currentPossibleStars--;
+        }
+    }
+
+    public void onBegin() {
+        var challenge = player.getScene().getChallenge();
+        inProgress = true;
+        currentTimeLimit = challenge.getTimeLimit();
+    }
+
+    public void onEnd() {
+        inProgress = false;
     }
 
     public Map<Integer, TowerLevelRecord> getRecordMap() {
@@ -84,9 +114,10 @@ public class TowerManager extends BasePlayerManager {
         // stop using skill
         player.getSession().send(new PacketCanUseSkillNotify(false));
         // notify the cond of stars
+        currentPossibleStars = 3;
         player
                 .getSession()
-                .send(new PacketTowerLevelStarCondNotify(getTowerData().currentFloorId, getCurrentLevel()));
+                .send(new PacketTowerLevelStarCondNotify(getTowerData().currentFloorId, getCurrentLevel(), currentPossibleStars + 1));
     }
 
     public void notifyCurLevelRecordChange() {
@@ -97,6 +128,36 @@ public class TowerManager extends BasePlayerManager {
                                 getTowerData().currentFloorId, getCurrentLevel()));
     }
 
+    public int getCurLevelStars() {
+        var scene = player.getScene();
+        var challenge = scene.getChallenge();
+        if (challenge == null) {
+            Grasscutter.getLogger().error("getCurLevelStars: no challenge registered!");
+            return 0;
+        }
+
+        var levelData = GameData.getTowerLevelDataMap().get(getCurrentLevelId());
+        // 0-based indexing. "star" = 0 means checking for 1-star conditions.
+        int star;
+        for (star = 2; star >= 0; star--) {
+            var cond = levelData.getCondType(star);
+            if (cond == TowerLevelData.TowerCondType.TOWER_COND_CHALLENGE_LEFT_TIME_MORE_THAN) {
+                var params = levelData.getTimeCond(star);
+                var timeRemaining = challenge.getTimeLimit() - (scene.getSceneTimeSeconds() - challenge.getStartedAt());
+                if (timeRemaining >= params.getMinimumTimeInSeconds()) {
+                    break;
+                }
+            } else if (cond == TowerLevelData.TowerCondType.TOWER_COND_LEFT_HP_GREATER_THAN) {
+                // TODO: Check monolith health
+                break;
+            } else {
+                Grasscutter.getLogger().error("getCurLevelStars: Tower level {} has no or unknown condition defined for {} stars", getCurrentLevelId(), star + 1);
+                continue;
+            }
+        }
+        return star + 1;
+    }
+
     public void notifyCurLevelRecordChangeWhenDone(int stars) {
         Map<Integer, TowerLevelRecord> recordMap = this.getRecordMap();
         int currentFloorId = getTowerData().currentFloorId;
@@ -105,8 +166,17 @@ public class TowerManager extends BasePlayerManager {
                     currentFloorId,
                     new TowerLevelRecord(currentFloorId).setLevelStars(getCurrentLevelId(), stars));
         } else {
-            recordMap.put(
-                    currentFloorId, recordMap.get(currentFloorId).setLevelStars(getCurrentLevelId(), stars));
+            // Only update record if better than previous
+            var prevRecord = recordMap.get(currentFloorId);
+            var passedLevelMap = prevRecord.getPassedLevelMap();
+            int prevStars = 0;
+            if (passedLevelMap.containsKey(getCurrentLevelId())) {
+                prevStars = prevRecord.getLevelStars(getCurrentLevelId());
+            }
+            if (stars > prevStars) {
+                recordMap.put(
+                        currentFloorId, prevRecord.setLevelStars(getCurrentLevelId(), stars));
+            }
         }
 
         this.getTowerData().currentLevel++;
