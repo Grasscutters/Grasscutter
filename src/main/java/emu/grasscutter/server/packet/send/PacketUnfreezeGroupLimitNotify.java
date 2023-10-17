@@ -6,9 +6,6 @@ import emu.grasscutter.net.proto.UnfreezeGroupLimitNotifyOuterClass.UnfreezeGrou
 public class PacketUnfreezeGroupLimitNotify extends BasePacket {
     public PacketUnfreezeGroupLimitNotify(int pointId, int sceneId) {
         super(PacketOpcodes.UnfreezeGroupLimitNotify);
-        this.setData(UnfreezeGroupLimitNotify.newBuilder()
-                .setPointId(pointId)
-                .setSceneId(sceneId)
-        );
+        this.setData(UnfreezeGroupLimitNotify.newBuilder().setPointId(pointId).setSceneId(sceneId));
     }
 }

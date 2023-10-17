@@ -1,7 +1,7 @@
 package emu.grasscutter.data.excels.dungeon;
 
-import emu.grasscutter.game.dungeons.enums.*;
 import emu.grasscutter.data.*;
+import emu.grasscutter.game.dungeons.enums.*;
 import java.util.List;
 import lombok.*;
 
@@ -39,7 +39,8 @@ public class DungeonEntryData extends GameResource {
 
     public int getLevelCondition() {
         for (var cond : satisfiedCond) {
-            if (cond.type != null && cond.type.equals(DungeonEntrySatisfiedConditionType.DUNGEON_ENTRY_CONDITION_LEVEL)) {
+            if (cond.type != null
+                    && cond.type.equals(DungeonEntrySatisfiedConditionType.DUNGEON_ENTRY_CONDITION_LEVEL)) {
                 return cond.param1;
             }
         }
@@ -48,7 +49,8 @@ public class DungeonEntryData extends GameResource {
 
     public int getQuestCondition() {
         for (var cond : satisfiedCond) {
-            if (cond.type != null && cond.type.equals(DungeonEntrySatisfiedConditionType.DUNGEON_ENTRY_CONDITION_QUEST)) {
+            if (cond.type != null
+                    && cond.type.equals(DungeonEntrySatisfiedConditionType.DUNGEON_ENTRY_CONDITION_QUEST)) {
                 return cond.param1;
             }
         }
