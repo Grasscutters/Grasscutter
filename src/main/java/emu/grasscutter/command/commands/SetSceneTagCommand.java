@@ -114,6 +114,8 @@ public final class SetSceneTagCommand implements CommandHandler {
                                     .computeIfAbsent(sceneTag.getSceneId(), k -> new HashSet<>());
                             targetPlayer.getSceneTags().get(sceneTag.getSceneId()).add(sceneTag.getId());
                         });
+
+        this.setSceneTags(targetPlayer);
     }
 
     private void setSceneTags(Player targetPlayer) {
