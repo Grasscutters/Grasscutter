@@ -19,6 +19,7 @@ public final class PointData {
     @Getter private Position size;
     @Getter private boolean forbidSimpleUnlock;
     @Getter private boolean unlocked;
+    @Getter private boolean groupLimit;
 
     @SerializedName(
             value = "dungeonIds",
@@ -28,7 +29,7 @@ public final class PointData {
 
     @SerializedName(
             value = "dungeonRandomList",
-            alternate = {"OIBKFJNBLHO"})
+            alternate = {"GLEKJMEEOMH"})
     @Getter
     private int[] dungeonRandomList;
 

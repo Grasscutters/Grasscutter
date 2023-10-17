@@ -158,7 +158,7 @@ public class Scene {
         return entity;
     }
 
-    public GameEntity getEntityByConfigId(int configId) {
+    public GameEntity getFirstEntityByConfigId(int configId) {
         return this.entities.values().stream()
                 .filter(x -> x.getConfigId() == configId)
                 .findFirst()

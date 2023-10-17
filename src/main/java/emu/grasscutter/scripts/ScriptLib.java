@@ -31,7 +31,7 @@ import static emu.grasscutter.scripts.constants.GroupKillPolicy.*;
 
 @SuppressWarnings("unused")
 public class ScriptLib {
-    public static final Logger logger = LoggerFactory.getLogger(ScriptLib.class);
+    public static final Logger logger = Grasscutter.getLogger();
     private final FastThreadLocal<SceneScriptManager> sceneScriptManager;
     private final FastThreadLocal<SceneGroup> currentGroup;
     private final FastThreadLocal<ScriptArgs> callParams;
@@ -128,7 +128,7 @@ public class ScriptLib {
 
         // kill targets if exists
         targets.forEach(o -> {
-            var entity = getSceneScriptManager().getScene().getEntityByConfigId(o.config_id);
+            var entity = getSceneScriptManager().getScene().getEntityByConfigId(o.config_id, getCurrentGroup().get().id);
             if (entity == null) {
                 return;
             }
@@ -153,7 +153,7 @@ public class ScriptLib {
 
         // kill targets if exists
         for (int cfgId : targets) {
-            var entity = getSceneScriptManager().getScene().getEntityByConfigId(cfgId);
+            var entity = getSceneScriptManager().getScene().getEntityByConfigId(cfgId, getCurrentGroup().get().id);
             if (entity == null || cfgId == 0) {
                 continue;
             }
@@ -402,11 +402,11 @@ public class ScriptLib {
     // TODO: ChangeDeathZone
 
     public int ChangeGroupGadget(LuaTable table) {
-        logger.debug("[LUA] Call ChangeGroupGadget with {}", printTable(table));
+        logger.debug("[LUA] Call ChangeGroupGadget with {}, current group {}", printTable(table), getCurrentGroup().get().id);
         var configId = table.get("config_id").toint();
         var state = table.get("state").toint();
 
-        var entity = getSceneScriptManager().getScene().getEntityByConfigId(configId);
+        var entity = getSceneScriptManager().getScene().getEntityByConfigId(configId, getCurrentGroup().get().id);
         if (entity == null) {
             return 1;
         }
@@ -601,7 +601,7 @@ public class ScriptLib {
             return 1;
         }
         var configId = callParams.param1;
-        var entity = getSceneScriptManager().getScene().getEntityByConfigId(configId);
+        var entity = getSceneScriptManager().getScene().getEntityByConfigId(configId, getCurrentGroup().get().id);
         if (!(entity instanceof EntityGadget gadget)) {
             return 1;
         }
@@ -785,7 +785,7 @@ public class ScriptLib {
     public int GetEntityIdByConfigId(int configId) {
         logger.warn("[LUA] Call GetEntityIdByConfigId with {}", configId);
         // TODO check
-        var entity = getSceneScriptManager().getScene().getEntityByConfigId(configId);
+        var entity = getSceneScriptManager().getScene().getEntityByConfigId(configId, getCurrentGroup().get().id);
         return entity != null ? entity.getId() : 0;
     }
 
@@ -811,7 +811,7 @@ public class ScriptLib {
     public int GetGadgetStateByConfigId(int groupId, int configId) {
         logger.debug("[LUA] Call GetGadgetStateByConfigId with {},{}", groupId, configId);
         val scene = getSceneScriptManager().getScene();
-        val gadget = groupId == 0 ? scene.getEntityByConfigId(configId) : scene.getEntityByConfigId(configId, groupId);
+        val gadget = groupId == 0 ? scene.getEntityByConfigId(configId, getCurrentGroup().get().id) : scene.getEntityByConfigId(configId, groupId);
         if (!(gadget instanceof EntityGadget)) {
             return -1;
         }
@@ -833,17 +833,19 @@ public class ScriptLib {
     // TODO: GetGroupLogicStateValue
 
     public int GetGroupMonsterCount() {
-        logger.debug("[LUA] Call GetGroupMonsterCount ");
-        return (int) getSceneScriptManager().getScene().getEntities().values().stream()
+        int returnValue = (int) getSceneScriptManager().getScene().getEntities().values().stream()
                 .filter(e -> e instanceof EntityMonster && e.getGroupId() == currentGroup.get().id)
                 .count();
+        logger.debug("[LUA] Call GetGroupMonsterCount = {}", returnValue);
+        return returnValue;
     }
 
     public int GetGroupMonsterCountByGroupId(int groupId) {
-        logger.debug("[LUA] Call GetGroupMonsterCountByGroupId with {}", groupId);
-        return (int) getSceneScriptManager().getScene().getEntities().values().stream()
+        int returnValue = (int) getSceneScriptManager().getScene().getEntities().values().stream()
                 .filter(e -> e instanceof EntityMonster && e.getGroupId() == groupId)
                 .count();
+        logger.debug("[LUA] Call GetGroupMonsterCountByGroupId with {} = {}", groupId, returnValue);
+        return returnValue;
     }
 
     public int GetGroupSuite(int groupId) {
@@ -860,13 +862,15 @@ public class ScriptLib {
     }
 
     public int GetGroupVariableValue(String var) {
-        logger.debug("[LUA] Call GetGroupVariableValue with {}", var);
-        return getSceneScriptManager().getVariables(currentGroup.get().id).getOrDefault(var, 0);
+        int returnValue = getSceneScriptManager().getVariables(currentGroup.get().id).getOrDefault(var, 0);
+        logger.debug("[LUA] Call GetGroupVariableValue with {} = {}", var, returnValue);
+        return returnValue;
     }
 
     public int GetGroupVariableValueByGroup(String var, int groupId) {
-        logger.debug("[LUA] Call GetGroupVariableValueByGroup with {},{}", var, groupId);
-        return getSceneScriptManager().getVariables(groupId).getOrDefault(var, 0);
+        int returnValue = getSceneScriptManager().getVariables(groupId).getOrDefault(var, 0);
+        logger.debug("[LUA] Call GetGroupVariableValueByGroup with {},{} = {}", var, groupId, returnValue);
+        return returnValue;
     }
 
     // TODO: GetHideAndSeekHunter
@@ -1105,7 +1109,7 @@ public class ScriptLib {
         if (configId == LuaValue.NIL) {
             return 1;
         }
-        var entity = getSceneScriptManager().getScene().getEntityByConfigId(configId.toint());
+        var entity = getSceneScriptManager().getScene().getEntityByConfigId(configId.toint(), getCurrentGroup().get().id);
         if (entity == null) {
             return 0;
         }
@@ -1342,7 +1346,7 @@ public class ScriptLib {
         var scriptManager = this.getSceneScriptManager();
         if (scriptManager == null) return 1;
         var scene = scriptManager.getScene();
-        var entity = scene.getEntityByConfigId(cfgId);
+        var entity = scene.getEntityByConfigId(cfgId, getCurrentGroup().get().id);
         if (entity == null) return 2;
         scene.runWhenHostInitialized(() -> scene.broadcastPacket(
                 new PacketServerGlobalValueChangeNotify(entity, sgvName, value)));
@@ -1380,8 +1384,8 @@ public class ScriptLib {
     // TODO: SetGadgetHp
 
     public int SetGadgetStateByConfigId(int configId, int gadgetState) {
-        logger.debug("[LUA] Call SetGadgetStateByConfigId with {},{}", configId, gadgetState);
-        GameEntity entity = getSceneScriptManager().getScene().getEntityByConfigId(configId);
+        logger.debug("[LUA] Call SetGadgetStateByConfigId with {},{}, current group {}", configId, gadgetState, getCurrentGroup().get().id);
+        GameEntity entity = getSceneScriptManager().getScene().getEntityByConfigId(configId, getCurrentGroup().get().id);
         if (!(entity instanceof EntityGadget gadget)) {
             return 1;
         }
@@ -1477,7 +1481,7 @@ public class ScriptLib {
         // var3 might contain the next point, sometimes is a single int, sometimes multiple ints as array
         // var4 has RouteType route_type, bool turn_mode
 
-        val entity = getSceneScriptManager().getScene().getEntityByConfigId(entityConfigId);
+        val entity = getSceneScriptManager().getScene().getEntityByConfigId(entityConfigId, getCurrentGroup().get().id);
         if (entity == null) {
             return 1;
         }
@@ -1507,7 +1511,7 @@ public class ScriptLib {
     public int SetPlatformRouteId(int entityConfigId, int routeId) {
         logger.debug("[LUA] Call SetPlatformRouteId {} {}", entityConfigId, routeId);
 
-        val entity = getSceneScriptManager().getScene().getEntityByConfigId(entityConfigId);
+        val entity = getSceneScriptManager().getScene().getEntityByConfigId(entityConfigId, getCurrentGroup().get().id);
         if (entity == null) {
             return 1;
         }
@@ -1584,7 +1588,7 @@ public class ScriptLib {
             return 1;
         }
         var configId = callParams.param1;
-        var entity = getSceneScriptManager().getScene().getEntityByConfigId(configId);
+        var entity = getSceneScriptManager().getScene().getEntityByConfigId(configId, getCurrentGroup().get().id);
 
         var worktopOptions = new int[table.length()];
         for (int i = 1; i <= table.length(); i++) {
@@ -1679,7 +1683,7 @@ public class ScriptLib {
 
     public int StartPlatform(int configId) {
         logger.debug("[LUA] Call StartPlatform {} ", configId);
-        val entity = sceneScriptManager.get().getScene().getEntityByConfigId(configId);
+        val entity = sceneScriptManager.get().getScene().getEntityByConfigId(configId, getCurrentGroup().get().id);
         if (!(entity instanceof EntityGadget entityGadget)) {
             return 1;
         }
@@ -1714,7 +1718,7 @@ public class ScriptLib {
 
     public int StopPlatform(int configId) {
         logger.debug("[LUA] Call StopPlatform {} ", configId);
-        val entity = sceneScriptManager.get().getScene().getEntityByConfigId(configId);
+        val entity = sceneScriptManager.get().getScene().getEntityByConfigId(configId, getCurrentGroup().get().id);
         if (!(entity instanceof EntityGadget entityGadget)) {
             return 1;
         }
@@ -1787,7 +1791,19 @@ public class ScriptLib {
 
     // TODO: TryRecordActivityPushTips
     // TODO: TrySetPlayerEyePoint
-    // TODO: UnfreezeGroupLimit
+
+    public int UnfreezeGroupLimit(int dungeonEntryId) {
+        // Note: dungeonEntryId is also named pointId elsewhere in GC.
+        logger.debug("[LUA] Call UnfreezeGroupLimit with {}", dungeonEntryId);
+
+        var scene = sceneScriptManager.get().getScene();
+        scene.getPlayers().get(0).sendPacket(new PacketUnfreezeGroupLimitNotify(
+                dungeonEntryId,
+                scene.getId()));
+
+        return 0;
+    }
+
     // TODO: UnhideScenePoint
 
     public int UnlockFloatSignal(int groupId, int gadgetSignalId) {

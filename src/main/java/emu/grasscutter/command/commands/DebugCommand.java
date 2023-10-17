@@ -32,9 +32,12 @@ public final class DebugCommand implements CommandHandler {
 
                 var scene = sender.getScene();
                 var entityId = Integer.parseInt(args.get(0));
+                // TODO Might want to allow groupId specification,
+                // because there can be more than one entity with
+                // the given config ID.
                 var entity =
                         args.size() > 1 && args.get(1).equals("config")
-                                ? scene.getEntityByConfigId(entityId)
+                                ? scene.getFirstEntityByConfigId(entityId)
                                 : scene.getEntityById(entityId);
                 if (entity == null) {
                     sender.dropMessage("Entity not found.");

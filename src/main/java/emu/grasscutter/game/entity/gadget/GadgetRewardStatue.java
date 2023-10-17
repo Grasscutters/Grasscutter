@@ -1,6 +1,6 @@
 package emu.grasscutter.game.entity.gadget;
 
-import emu.grasscutter.game.dungeons.challenge.DungeonChallenge;
+import emu.grasscutter.game.dungeons.challenge.WorldChallenge;
 import emu.grasscutter.game.entity.EntityGadget;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.proto.GadgetInteractReqOuterClass.GadgetInteractReq;
@@ -18,7 +18,7 @@ public final class GadgetRewardStatue extends GadgetContent {
     public boolean onInteract(Player player, GadgetInteractReq req) {
         var dungeonManager = player.getScene().getDungeonManager();
 
-        if (player.getScene().getChallenge() instanceof DungeonChallenge) {
+        if (player.getScene().getChallenge() instanceof WorldChallenge) {
             var useCondensed =
                     req.getResinCostType() == ResinCostTypeOuterClass.ResinCostType.RESIN_COST_TYPE_CONDENSE;
             dungeonManager.getStatueDrops(player, useCondensed, getGadget().getGroupId());
