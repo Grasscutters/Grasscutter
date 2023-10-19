@@ -324,9 +324,10 @@ public final class DungeonManager {
                                 p.getBattlePassManager().triggerMission(WatcherTriggerType.TRIGGER_FINISH_DUNGEON);
                             }
                         });
-        var future = scene
-                            .getScriptManager()
-                            .callEvent(new ScriptArgs(0, EventType.EVENT_DUNGEON_SETTLE, successfully ? 1 : 0));
+        var future =
+                scene
+                        .getScriptManager()
+                        .callEvent(new ScriptArgs(0, EventType.EVENT_DUNGEON_SETTLE, successfully ? 1 : 0));
         // Note: There is a possible race condition with calling
         //       EVENT_DUNGEON_SETTLE here asynchronously:
         // 1. EVENT_DUNGEON_SETTLE triggers some Lua-side logic,

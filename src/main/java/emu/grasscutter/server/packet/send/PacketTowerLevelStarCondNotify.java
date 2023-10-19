@@ -9,9 +9,7 @@ public class PacketTowerLevelStarCondNotify extends BasePacket {
     public PacketTowerLevelStarCondNotify(int floorId, int levelIndex, int lostStar) {
         super(PacketOpcodes.TowerLevelStarCondNotify);
 
-        var proto = TowerLevelStarCondNotify.newBuilder()
-                            .setFloorId(floorId)
-                            .setLevelIndex(levelIndex);
+        var proto = TowerLevelStarCondNotify.newBuilder().setFloorId(floorId).setLevelIndex(levelIndex);
 
         if (1 <= lostStar && lostStar <= 3) {
             proto.addCondDataList(
@@ -26,15 +24,9 @@ public class PacketTowerLevelStarCondNotify extends BasePacket {
                             .build());
         } else {
             proto
-                    .addCondDataList(
-                            TowerLevelStarCondData.newBuilder()
-                                    .build())
-                    .addCondDataList(
-                            TowerLevelStarCondData.newBuilder()
-                                    .build())
-                    .addCondDataList(
-                            TowerLevelStarCondData.newBuilder()
-                                    .build());
+                    .addCondDataList(TowerLevelStarCondData.newBuilder().build())
+                    .addCondDataList(TowerLevelStarCondData.newBuilder().build())
+                    .addCondDataList(TowerLevelStarCondData.newBuilder().build());
         }
 
         this.setData(proto.build());

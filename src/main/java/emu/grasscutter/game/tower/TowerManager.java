@@ -47,7 +47,9 @@ public class TowerManager extends BasePlayerManager {
         while (stars < currentPossibleStars) {
             player
                     .getSession()
-                    .send(new PacketTowerLevelStarCondNotify(getTowerData().currentFloorId, getCurrentLevel(), currentPossibleStars));
+                    .send(
+                            new PacketTowerLevelStarCondNotify(
+                                    getTowerData().currentFloorId, getCurrentLevel(), currentPossibleStars));
             currentPossibleStars--;
         }
     }
@@ -117,7 +119,9 @@ public class TowerManager extends BasePlayerManager {
         currentPossibleStars = 3;
         player
                 .getSession()
-                .send(new PacketTowerLevelStarCondNotify(getTowerData().currentFloorId, getCurrentLevel(), currentPossibleStars + 1));
+                .send(
+                        new PacketTowerLevelStarCondNotify(
+                                getTowerData().currentFloorId, getCurrentLevel(), currentPossibleStars + 1));
     }
 
     public void notifyCurLevelRecordChange() {
@@ -143,7 +147,8 @@ public class TowerManager extends BasePlayerManager {
             var cond = levelData.getCondType(star);
             if (cond == TowerLevelData.TowerCondType.TOWER_COND_CHALLENGE_LEFT_TIME_MORE_THAN) {
                 var params = levelData.getTimeCond(star);
-                var timeRemaining = challenge.getTimeLimit() - (scene.getSceneTimeSeconds() - challenge.getStartedAt());
+                var timeRemaining =
+                        challenge.getTimeLimit() - (scene.getSceneTimeSeconds() - challenge.getStartedAt());
                 if (timeRemaining >= params.getMinimumTimeInSeconds()) {
                     break;
                 }
@@ -151,7 +156,11 @@ public class TowerManager extends BasePlayerManager {
                 // TODO: Check monolith health
                 break;
             } else {
-                Grasscutter.getLogger().error("getCurLevelStars: Tower level {} has no or unknown condition defined for {} stars", getCurrentLevelId(), star + 1);
+                Grasscutter.getLogger()
+                        .error(
+                                "getCurLevelStars: Tower level {} has no or unknown condition defined for {} stars",
+                                getCurrentLevelId(),
+                                star + 1);
                 continue;
             }
         }
@@ -174,8 +183,7 @@ public class TowerManager extends BasePlayerManager {
                 prevStars = prevRecord.getLevelStars(getCurrentLevelId());
             }
             if (stars > prevStars) {
-                recordMap.put(
-                        currentFloorId, prevRecord.setLevelStars(getCurrentLevelId(), stars));
+                recordMap.put(currentFloorId, prevRecord.setLevelStars(getCurrentLevelId(), stars));
             }
         }
 
