@@ -80,9 +80,16 @@ public class WorldChallenge {
             return;
         }
         this.progress = true;
-        this.startedAt = System.currentTimeMillis();
+        this.startedAt = getScene().getSceneTimeSeconds();
         getScene().broadcastPacket(new PacketDungeonChallengeBeginNotify(this));
         challengeTriggers.forEach(t -> t.onBegin(this));
+
+        var player = scene.getPlayers().get(0);
+        var dungeonManager = scene.getDungeonManager();
+        var towerManager = player.getTowerManager();
+        if (dungeonManager != null && dungeonManager.isTowerDungeon() && towerManager != null) {
+            towerManager.onBegin();
+        }
     }
 
     public void done() {

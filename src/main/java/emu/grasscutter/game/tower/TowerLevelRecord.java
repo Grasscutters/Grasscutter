@@ -25,6 +25,10 @@ public class TowerLevelRecord {
         return this;
     }
 
+    public int getLevelStars(int levelId) {
+        return passedLevelMap.get(levelId);
+    }
+
     public int getStarCount() {
         return passedLevelMap.values().stream().mapToInt(Integer::intValue).sum();
     }

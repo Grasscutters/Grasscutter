@@ -9,6 +9,7 @@ public class TowerDungeonSettleListener implements DungeonSettleListener {
     @Override
     public void onDungeonSettle(DungeonManager dungeonManager, DungeonEndReason endReason) {
         var scene = dungeonManager.getScene();
+
         var dungeonData = dungeonManager.getDungeonData();
         if (scene.getLoadedGroups().stream()
                 .anyMatch(
@@ -22,17 +23,18 @@ public class TowerDungeonSettleListener implements DungeonSettleListener {
         }
 
         var towerManager = scene.getPlayers().get(0).getTowerManager();
+        var stars = towerManager.getCurLevelStars();
 
-        towerManager.notifyCurLevelRecordChangeWhenDone(3);
+        towerManager.notifyCurLevelRecordChangeWhenDone(stars);
         scene.broadcastPacket(
                 new PacketTowerFloorRecordChangeNotify(
-                        towerManager.getCurrentFloorId(), 3, towerManager.canEnterScheduleFloor()));
+                        towerManager.getCurrentFloorId(), stars, towerManager.canEnterScheduleFloor()));
 
         var challenge = scene.getChallenge();
         var dungeonStats =
                 new DungeonEndStats(
                         scene.getKilledMonsterCount(), challenge.getFinishedTime(), 0, endReason);
-        var result = new TowerResult(dungeonData, dungeonStats, towerManager, challenge);
+        var result = new TowerResult(dungeonData, dungeonStats, towerManager, challenge, stars);
 
         scene.broadcastPacket(new PacketDungeonSettleNotify(result));
     }

@@ -132,7 +132,9 @@ public final class DungeonSystem extends BaseGameSystem {
 
         if (player.getWorld().transferPlayerToScene(player, data.getSceneId(), data)) {
             var scene = player.getScene();
-            scene.setDungeonManager(new DungeonManager(scene, data));
+            var dungeonManager = new DungeonManager(scene, data);
+            dungeonManager.setTowerDungeon(true);
+            scene.setDungeonManager(dungeonManager);
             dungeonSettleListeners.forEach(scene::addDungeonSettleObserver);
         }
         return true;
@@ -168,6 +170,7 @@ public final class DungeonSystem extends BaseGameSystem {
         // clean temp team if it has
         player.getTeamManager().cleanTemporaryTeam();
         player.getTowerManager().clearEntry();
+        dungeonManager.setTowerDungeon(false);
 
         // Transfer player back to world
         player.getWorld().transferPlayerToScene(player, prevScene, prevPos);

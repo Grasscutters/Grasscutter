@@ -597,6 +597,13 @@ public class Scene {
 
         blossomManager.onTick();
 
+        // Should be OK to check only player 0,
+        // as no other players could enter Tower
+        var towerManager = getPlayers().get(0).getTowerManager();
+        if (towerManager != null) {
+            towerManager.onTick();
+        }
+
         this.checkNpcGroup();
 
         this.finishLoading();

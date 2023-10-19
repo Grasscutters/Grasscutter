@@ -807,11 +807,11 @@ public class SceneScriptManager {
         }
     }
     // Events
-    public void callEvent(int groupId, int eventType) {
-        callEvent(new ScriptArgs(groupId, eventType));
+    public Future<?> callEvent(int groupId, int eventType) {
+        return callEvent(new ScriptArgs(groupId, eventType));
     }
 
-    public void callEvent(@Nonnull ScriptArgs params) {
+    public Future<?> callEvent(@Nonnull ScriptArgs params) {
         /**
          * We use ThreadLocal to trans SceneScriptManager context to ScriptLib, to avoid eval script for
          * every groups' trigger in every scene instances. But when callEvent is called in a ScriptLib
@@ -819,7 +819,7 @@ public class SceneScriptManager {
          * not get it. e.g. CallEvent -> set -> ScriptLib.xxx -> CallEvent -> set -> remove -> NPE ->
          * (remove) So we use thread pool to clean the stack to avoid this new issue.
          */
-        eventExecutor.submit(() -> this.realCallEvent(params));
+        return eventExecutor.submit(() -> this.realCallEvent(params));
     }
 
     private void realCallEvent(@Nonnull ScriptArgs params) {
