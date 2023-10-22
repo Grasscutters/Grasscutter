@@ -176,6 +176,7 @@ public class Player implements PlayerHook, FieldFetch {
     @Getter @Setter private Set<Date> moonCardGetTimes;
 
     @Transient @Getter private boolean paused;
+    @Transient @Getter @Setter private Future<?> queuedTeleport;
     @Transient @Getter @Setter private int enterSceneToken;
     @Transient @Getter @Setter private SceneLoadState sceneLoadState = SceneLoadState.NONE;
     @Transient private boolean hasSentLoginPackets;

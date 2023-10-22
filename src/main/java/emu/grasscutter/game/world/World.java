@@ -2,6 +2,7 @@ package emu.grasscutter.game.world;
 
 import static emu.grasscutter.server.event.player.PlayerTeleportEvent.TeleportType.SCRIPT;
 
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.dungeon.DungeonData;
 import emu.grasscutter.game.entity.*;
@@ -19,8 +20,10 @@ import emu.grasscutter.server.event.player.PlayerTeleportEvent.TeleportType;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.ConversionUtils;
+import io.netty.util.concurrent.FastThreadLocalThread;
 import it.unimi.dsi.fastutil.ints.*;
 import java.util.*;
+import java.util.concurrent.*;
 import lombok.*;
 import org.jetbrains.annotations.NotNull;
 
@@ -42,6 +45,16 @@ public class World implements Iterable<Player> {
     @Getter protected int tickCount = 0;
     @Getter private boolean isPaused = false;
     @Getter private long currentWorldTime;
+
+    private static final ExecutorService eventExecutor =
+            new ThreadPoolExecutor(
+                    4,
+                    4,
+                    60,
+                    TimeUnit.SECONDS,
+                    new LinkedBlockingDeque<>(1000),
+                    FastThreadLocalThread::new,
+                    new ThreadPoolExecutor.AbortPolicy());
 
     public World(Player player) {
         this(player, false);
@@ -311,6 +324,17 @@ public class World implements Iterable<Player> {
         this.getScenes().values().forEach(Scene::saveGroups);
     }
 
+    public void queueTransferPlayerToScene(Player player, int sceneId, Position pos, int delayMs) {
+        player.setQueuedTeleport(eventExecutor.submit(() -> {
+            try {
+                Thread.sleep(delayMs);
+                transferPlayerToScene(player, sceneId, pos);
+            } catch (InterruptedException e) {
+                Grasscutter.getLogger().trace("queueTransferPlayerToScene: teleport to scene {} is interrupted", sceneId);
+            }
+        }));
+    }
+
     public boolean transferPlayerToScene(Player player, int sceneId, Position pos) {
         return this.transferPlayerToScene(player, sceneId, TeleportType.INTERNAL, null, pos);
     }
@@ -381,6 +405,16 @@ public class World implements Iterable<Player> {
     }
 
     public boolean transferPlayerToScene(Player player, TeleportProperties teleportProperties) {
+        // If a queued teleport already exists, cancel it. This prevents the player from
+        // becoming stranded in a dungeon due to quitting it by teleporting to a map waypoint.
+        synchronized (player) {
+            var queuedTeleport = player.getQueuedTeleport();
+            if (queuedTeleport != null) {
+                player.setQueuedTeleport(null);
+                queuedTeleport.cancel(true);
+            }
+        }
+
         // Check if the teleport properties are valid.
         if (teleportProperties.getTeleportTo() == null)
             teleportProperties.setTeleportTo(player.getPosition());

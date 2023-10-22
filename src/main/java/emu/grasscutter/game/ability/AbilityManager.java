@@ -7,6 +7,7 @@ import emu.grasscutter.data.binout.*;
 import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierAction;
 import emu.grasscutter.game.ability.actions.*;
 import emu.grasscutter.game.ability.mixins.*;
+import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.player.*;
 import emu.grasscutter.game.props.FightProperty;
@@ -562,6 +563,14 @@ public final class AbilityManager extends BasePlayerManager {
         if (killState.getKilled()) {
             scene.killEntity(entity);
         } else if (!entity.isAlive()) {
+            if (entity instanceof EntityAvatar) {
+                // TODO Should EntityAvatar act on this invocation?
+                // It bugs revival due to resetting HP to max when
+                // the avatar should just stay dead.
+                Grasscutter.getLogger()
+                        .trace("Entity of ID {} is EntityAvatar. Ignoring", invoke.getEntityId());
+                return;
+            }
             entity.setFightProperty(
                     FightProperty.FIGHT_PROP_CUR_HP,
                     entity.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP));

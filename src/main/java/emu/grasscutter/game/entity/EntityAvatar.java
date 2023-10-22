@@ -67,6 +67,11 @@ public class EntityAvatar extends GameEntity {
         }
 
         this.initAbilities();
+
+        // New EntityAvatar instances are created on every scene transition.
+        // Ensure that isDead is properly carried over between scenes.
+        // Otherwise avatars could have 0 HP but not considered dead.
+        this.checkIfDead();
     }
 
     @Override
