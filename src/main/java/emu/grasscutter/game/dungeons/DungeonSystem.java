@@ -168,8 +168,7 @@ public final class DungeonSystem extends BaseGameSystem {
             dungeonManager.unsetTrialTeam(player);
         }
         // clean temp team if it has
-        if (!player.getTeamManager().cleanTemporaryTeam())
-        {
+        if (!player.getTeamManager().cleanTemporaryTeam()) {
             // no temp team. Will use real current team, but check
             // for any dead avatar to prevent switching into them.
             player.getTeamManager().checkCurrentAvatarIsAlive(null);

@@ -325,14 +325,18 @@ public class World implements Iterable<Player> {
     }
 
     public void queueTransferPlayerToScene(Player player, int sceneId, Position pos, int delayMs) {
-        player.setQueuedTeleport(eventExecutor.submit(() -> {
-            try {
-                Thread.sleep(delayMs);
-                transferPlayerToScene(player, sceneId, pos);
-            } catch (InterruptedException e) {
-                Grasscutter.getLogger().trace("queueTransferPlayerToScene: teleport to scene {} is interrupted", sceneId);
-            }
-        }));
+        player.setQueuedTeleport(
+                eventExecutor.submit(
+                        () -> {
+                            try {
+                                Thread.sleep(delayMs);
+                                transferPlayerToScene(player, sceneId, pos);
+                            } catch (InterruptedException e) {
+                                Grasscutter.getLogger()
+                                        .trace(
+                                                "queueTransferPlayerToScene: teleport to scene {} is interrupted", sceneId);
+                            }
+                        }));
     }
 
     public boolean transferPlayerToScene(Player player, int sceneId, Position pos) {
