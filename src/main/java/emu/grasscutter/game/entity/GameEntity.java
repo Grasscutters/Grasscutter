@@ -174,13 +174,7 @@ public abstract class GameEntity {
         }
 
         this.lastAttackType = attackType;
-
-        // Check if dead
-        if (this.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP) <= 0f) {
-            this.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, 0f);
-            this.isDead = true;
-        }
-
+        this.checkIfDead();
         this.runLuaCallbacks(event);
 
         // Packets
@@ -191,6 +185,17 @@ public abstract class GameEntity {
         // Check if dead.
         if (this.isDead) {
             this.getScene().killEntity(this, killerId);
+        }
+    }
+
+    public void checkIfDead() {
+        if (this.getFightProperties() == null || !hasFightProperty(FightProperty.FIGHT_PROP_CUR_HP)) {
+            return;
+        }
+
+        if (this.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP) <= 0f) {
+            this.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, 0f);
+            this.isDead = true;
         }
     }
 
@@ -333,6 +338,8 @@ public abstract class GameEntity {
         if (entityController != null) {
             entityController.onDie(this, getLastAttackType());
         }
+
+        this.isDead = true;
     }
 
     /** Invoked when a global ability value is updated. */

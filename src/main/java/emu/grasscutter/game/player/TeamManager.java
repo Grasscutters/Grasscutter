@@ -425,6 +425,30 @@ public final class TeamManager extends BasePlayerDataManager {
             this.getPlayer().sendPacket(responsePacket);
         }
 
+        // Ensure new selected character index is alive.
+        // If not, change to another alive one or revive.
+        checkCurrentAvatarIsAlive(currentEntity);
+    }
+
+    public void checkCurrentAvatarIsAlive(EntityAvatar currentEntity) {
+        if (currentEntity == null) {
+            currentEntity = this.getCurrentAvatarEntity();
+        }
+
+        // Ensure currently selected character is still alive
+        if (!this.getActiveTeam().get(this.currentCharacterIndex).isAlive()) {
+            // Character died in a dungeon challenge...
+            int replaceIndex = getDeadAvatarReplacement();
+            if (0 <= replaceIndex && replaceIndex < this.getActiveTeam().size()) {
+                this.currentCharacterIndex = replaceIndex;
+            } else {
+                // Team wiped in dungeon...
+                // Revive and change to first avatar.
+                this.currentCharacterIndex = 0;
+                this.reviveAvatar(this.getCurrentAvatarEntity().getAvatar());
+            }
+        }
+
         // Check if character changed
         var newAvatarEntity = this.getCurrentAvatarEntity();
         if (currentEntity != null && newAvatarEntity != null && currentEntity != newAvatarEntity) {
@@ -700,15 +724,16 @@ public final class TeamManager extends BasePlayerDataManager {
         this.updateTeamEntities(null);
     }
 
-    public void cleanTemporaryTeam() {
+    public boolean cleanTemporaryTeam() {
         // check if using temporary team
         if (useTemporarilyTeamIndex < 0) {
-            return;
+            return false;
         }
 
         this.useTemporarilyTeamIndex = -1;
         this.temporaryTeam = null;
         this.updateTeamEntities(null);
+        return true;
     }
 
     public synchronized void setCurrentTeam(int teamId) {
@@ -810,20 +835,13 @@ public final class TeamManager extends BasePlayerDataManager {
             // TODO: Perhaps find a way to get vanilla experience?
             this.getPlayer().sendPacket(new PacketWorldPlayerDieNotify(dieType, killedBy));
         } else {
-            // Replacement avatar
-            EntityAvatar replacement = null;
-            int replaceIndex = -1;
-
-            for (int i = 0; i < this.getActiveTeam().size(); i++) {
-                EntityAvatar entity = this.getActiveTeam().get(i);
-                if (entity.isAlive()) {
-                    replaceIndex = i;
-                    replacement = entity;
-                    break;
-                }
-            }
-
-            if (replacement == null) {
+            // Find replacement avatar
+            int replaceIndex = getDeadAvatarReplacement();
+            if (0 <= replaceIndex && replaceIndex < this.getActiveTeam().size()) {
+                // Set index and spawn replacement member
+                this.setCurrentCharacterIndex(replaceIndex);
+                this.getPlayer().getScene().addEntity(this.getActiveTeam().get(replaceIndex));
+            } else {
                 // No more living team members...
                 this.getPlayer().sendPacket(new PacketWorldPlayerDieNotify(dieType, killedBy));
                 // Invoke player team death event.
@@ -831,15 +849,25 @@ public final class TeamManager extends BasePlayerDataManager {
                         new PlayerTeamDeathEvent(
                                 this.getPlayer(), this.getActiveTeam().get(this.getCurrentCharacterIndex()));
                 event.call();
-            } else {
-                // Set index and spawn replacement member
-                this.setCurrentCharacterIndex(replaceIndex);
-                this.getPlayer().getScene().addEntity(replacement);
             }
         }
 
         // Response packet
         this.getPlayer().sendPacket(new PacketAvatarDieAnimationEndRsp(deadAvatar.getId(), 0));
+    }
+
+    public int getDeadAvatarReplacement() {
+        int replaceIndex = -1;
+
+        for (int i = 0; i < this.getActiveTeam().size(); i++) {
+            EntityAvatar entity = this.getActiveTeam().get(i);
+            if (entity.isAlive()) {
+                replaceIndex = i;
+                break;
+            }
+        }
+
+        return replaceIndex;
     }
 
     public boolean reviveAvatar(Avatar avatar) {
