@@ -11,7 +11,7 @@ import emu.grasscutter.scripts.serializer.*;
 import emu.grasscutter.utils.FileUtils;
 import java.io.IOException;
 import java.lang.ref.SoftReference;
-import java.nio.file.Files;
+import java.nio.file.*;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicReference;
@@ -172,6 +172,17 @@ public class ScriptLoader {
      * @return The sources of the script.
      */
     public static String readScript(String path) {
+        return readScript(path, false);
+    }
+
+    /**
+     * Loads the sources of a script.
+     *
+     * @param path The path of the script.
+     * @param useAbsPath Use path as-is; don't look under Scripts resources.
+     * @return The sources of the script.
+     */
+    public static String readScript(String path, boolean useAbsPath) {
         // Check if the path is cached.
         var cached = ScriptLoader.tryGet(ScriptLoader.scriptSources.get(path));
         if (cached.isPresent()) {
@@ -179,8 +190,11 @@ public class ScriptLoader {
         }
 
         // Attempt to load the script.
-        var scriptPath = FileUtils.getScriptPath(path);
-        if (!Files.exists(scriptPath)) return null;
+        var scriptPath = useAbsPath ? Paths.get(path) : FileUtils.getScriptPath(path);
+        if (!Files.exists(scriptPath)) {
+            Grasscutter.getLogger().error("Could not find script at path {}", path);
+            return null;
+        }
 
         try {
             var source = Files.readString(scriptPath);
@@ -201,6 +215,17 @@ public class ScriptLoader {
      * @return The compiled script.
      */
     public static CompiledScript getScript(String path) {
+        return getScript(path, false);
+    }
+
+    /**
+     * Fetches a script and compiles it, or uses the cached varient.
+     *
+     * @param path The path of the script.
+     * @param useAbsPath Use path as-is; don't look under Scripts resources.
+     * @return The compiled script.
+     */
+    public static CompiledScript getScript(String path, boolean useAbsPath) {
         // Check if the script is cached.
         var sc = ScriptLoader.tryGet(ScriptLoader.scriptsCache.get(path));
         if (sc.isPresent()) {
@@ -211,15 +236,18 @@ public class ScriptLoader {
             CompiledScript script;
             if (Configuration.FAST_REQUIRE) {
                 // Attempt to load the script.
-                var scriptPath = FileUtils.getScriptPath(path);
-                if (!Files.exists(scriptPath)) return null;
+                var scriptPath = useAbsPath ? Paths.get(path) : FileUtils.getScriptPath(path);
+                if (!Files.exists(scriptPath)) {
+                    Grasscutter.getLogger().error("Could not find script at path {}", path);
+                    return null;
+                }
 
                 // Compile the script from the file.
                 var source = Files.newBufferedReader(scriptPath);
                 script = ScriptLoader.getEngine().compile(source);
             } else {
                 // Load the script sources.
-                var sources = ScriptLoader.readScript(path);
+                var sources = ScriptLoader.readScript(path, useAbsPath);
                 if (sources == null) return null;
 
                 // Check to see if the script references other scripts.
@@ -237,7 +265,7 @@ public class ScriptLoader {
                         var scriptName = line.substring(9, line.length() - 1);
                         // Resolve the script path.
                         var scriptPath = "Common/" + scriptName + ".lua";
-                        var scriptSource = ScriptLoader.readScript(scriptPath);
+                        var scriptSource = ScriptLoader.readScript(scriptPath, useAbsPath);
                         if (scriptSource == null) continue;
 
                         // Append the script source.

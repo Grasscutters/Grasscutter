@@ -252,12 +252,16 @@ public class EntityMonster extends GameEntity {
         if (scriptManager.isInit() && this.getGroupId() > 0) {
             Optional.ofNullable(scriptManager.getScriptMonsterSpawnService()).ifPresent(s -> s.onMonsterDead(this));
 
-            // prevent spawn monster after success
-            /*if (challenge.map(c -> c.inProgress()).orElse(true)) {
-                scriptManager.callEvent(new ScriptArgs(EventType.EVENT_ANY_MONSTER_DIE, this.getConfigId()).setGroupId(this.getGroupId()));
-            } else if (getScene().getChallenge() == null) {
-            }*/
-            scriptManager.callEvent(new ScriptArgs(this.getGroupId(), EventType.EVENT_ANY_MONSTER_DIE, this.getConfigId()));
+            // Ensure each EVENT_ANY_MONSTER_DIE runs to completion.
+            // Multiple such events firing at the same time may cause
+            // the same lua trigger to fire multiple times, when it
+            // should happen only once.
+            var future = scriptManager.callEvent(new ScriptArgs(this.getGroupId(), EventType.EVENT_ANY_MONSTER_DIE, this.getConfigId()));
+            try {
+                future.get();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
         // Battle Pass trigger
         scene.getPlayers().forEach(p -> p.getBattlePassManager().triggerMission(WatcherTriggerType.TRIGGER_MONSTER_DIE, this.getMonsterId(), 1));

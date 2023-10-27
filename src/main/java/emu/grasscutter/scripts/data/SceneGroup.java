@@ -3,6 +3,7 @@ package emu.grasscutter.scripts.data;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.world.Position;
 import emu.grasscutter.scripts.ScriptLoader;
+import java.io.*;
 import java.util.*;
 import java.util.stream.Collectors;
 import javax.script.*;
@@ -39,6 +40,7 @@ public final class SceneGroup {
     private transient boolean loaded;
     private transient CompiledScript script;
     private transient Bindings bindings;
+    public String overrideScriptPath;
 
     public static SceneGroup of(int groupId) {
         var group = new SceneGroup();
@@ -86,8 +88,12 @@ public final class SceneGroup {
         // Create the bindings.
         this.bindings = ScriptLoader.getEngine().createBindings();
 
-        var cs =
-                ScriptLoader.getScript("Scene/%s/scene%s_group%s.lua".formatted(sceneId, sceneId, this.id));
+        CompiledScript cs;
+        if (overrideScriptPath != null && !overrideScriptPath.equals("")) {
+            cs = ScriptLoader.getScript(overrideScriptPath, true);
+        } else {
+            cs = ScriptLoader.getScript("Scene/%s/scene%s_group%s.lua".formatted(sceneId, sceneId, this.id));
+        }
 
         if (cs == null) {
             return this;
