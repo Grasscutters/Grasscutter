@@ -443,9 +443,9 @@ public class SceneScriptManager {
         var event = new SceneMetaLoadEvent(getScene());
         event.call();
 
-        if (event.hasOverride) {
-            // Group grids should not be cached when a scene group
-            // override is in effect. Otherwise, when the server
+        if (event.isOverride()) {
+            // Group grids should not be cached to disk when a scene
+            // group override is in effect. Otherwise, when the server
             // next runs without that override, the cached content
             // will not make sense.
             noCacheGroupGridsToDisk = true;
