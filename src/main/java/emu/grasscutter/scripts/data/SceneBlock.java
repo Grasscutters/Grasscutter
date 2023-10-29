@@ -69,7 +69,6 @@ public class SceneBlock {
             var event = new SceneBlockLoadedEvent(this);
             event.call();
 
-            var gids = this.groups.values().stream().map(g -> g.id).collect(Collectors.toList());
             this.sceneGroupIndex =
                     SceneIndexManager.buildIndex(3, this.groups.values(), g -> g.pos.toPoint());
         } catch (ScriptException exception) {
