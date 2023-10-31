@@ -29,7 +29,7 @@ if exist "%CUR_PATH%%CONFIG%.cmd" (
 
 if not "%JAVA_PATH%" == "DO_NOT_CHECK_PATH" (
 	if "%JAVA_PATH%" == "\bin\" (
-		call :LOG [ERROR] JAVA_HOME not found, please setup your windows enviroment for installed java.
+		call :LOG [ERROR] JAVA_HOME not found, please setup your windows environment for installed java.
 		goto :EXIT
 	)
 	if not exist "%JAVA_PATH%java.exe" (
