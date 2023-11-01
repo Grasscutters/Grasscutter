@@ -5,6 +5,7 @@ import com.github.davidmoten.rtreemulti.geometry.*;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.world.Position;
 import emu.grasscutter.scripts.*;
+import emu.grasscutter.server.event.game.SceneBlockLoadedEvent;
 import java.util.Map;
 import java.util.stream.Collectors;
 import javax.script.*;
@@ -64,6 +65,10 @@ public class SceneBlock {
                             .collect(Collectors.toMap(x -> x.id, y -> y, (a, b) -> a));
 
             this.groups.values().forEach(g -> g.block_id = this.id);
+
+            var event = new SceneBlockLoadedEvent(this);
+            event.call();
+
             this.sceneGroupIndex =
                     SceneIndexManager.buildIndex(3, this.groups.values(), g -> g.pos.toPoint());
         } catch (ScriptException exception) {

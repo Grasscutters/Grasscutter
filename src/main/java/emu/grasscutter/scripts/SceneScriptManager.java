@@ -17,6 +17,7 @@ import emu.grasscutter.net.proto.VisionTypeOuterClass;
 import emu.grasscutter.scripts.constants.EventType;
 import emu.grasscutter.scripts.data.*;
 import emu.grasscutter.scripts.service.*;
+import emu.grasscutter.server.event.game.SceneMetaLoadEvent;
 import emu.grasscutter.server.packet.send.PacketGroupSuiteNotify;
 import emu.grasscutter.utils.*;
 import io.netty.util.concurrent.FastThreadLocalThread;
@@ -38,6 +39,7 @@ public class SceneScriptManager {
     private final Map<String, Integer> variables;
     private SceneMeta meta;
     private boolean isInit;
+    private boolean noCacheGroupGridsToDisk;
 
     private final Map<String, SceneTimeAxis> timeAxis = new ConcurrentHashMap<>();
 
@@ -134,7 +136,7 @@ public class SceneScriptManager {
     public void registerTrigger(SceneTrigger trigger) {
         this.triggerInvocations.put(trigger.getName(), new AtomicInteger(0));
         this.getTriggersByEvent(trigger.getEvent()).add(trigger);
-        Grasscutter.getLogger().trace("Registered trigger {}", trigger.getName());
+        Grasscutter.getLogger().trace("Registered trigger {} from group {}", trigger.getName(), trigger.getCurrentGroup().id);
     }
 
     public void deregisterTrigger(List<SceneTrigger> triggers) {
@@ -143,7 +145,7 @@ public class SceneScriptManager {
 
     public void deregisterTrigger(SceneTrigger trigger) {
         this.getTriggersByEvent(trigger.getEvent()).remove(trigger);
-        Grasscutter.getLogger().trace("deregistered trigger {}", trigger.getName());
+        Grasscutter.getLogger().trace("deregistered trigger {} from group {}", trigger.getName(), trigger.getCurrentGroup().id);
     }
 
     public void resetTriggers(int eventId) {
@@ -438,6 +440,17 @@ public class SceneScriptManager {
     }
 
     private void init() {
+        var event = new SceneMetaLoadEvent(getScene());
+        event.call();
+
+        if (event.isOverride()) {
+            // Group grids should not be cached to disk when a scene
+            // group override is in effect. Otherwise, when the server
+            // next runs without that override, the cached content
+            // will not make sense.
+            noCacheGroupGridsToDisk = true;
+        }
+
         var meta = ScriptLoader.getSceneMeta(getScene().getId());
         if (meta == null) {
             return;
@@ -455,7 +468,7 @@ public class SceneScriptManager {
             return groupGridsCache.get(sceneId);
         } else {
             var path = FileUtils.getCachePath("scene" + sceneId + "_grid.json");
-            if (path.toFile().isFile() && !Grasscutter.config.server.game.cacheSceneEntitiesEveryRun) {
+            if (path.toFile().isFile() && !Grasscutter.config.server.game.cacheSceneEntitiesEveryRun && !noCacheGroupGridsToDisk) {
                 try {
                     var groupGrids = JsonUtils.loadToList(path, Grid.class);
                     groupGridsCache.put(sceneId, groupGrids);
@@ -585,15 +598,17 @@ public class SceneScriptManager {
             }
             groupGridsCache.put(scene.getId(), groupGrids);
 
-            try {
-                Files.createDirectories(path.getParent());
-            } catch (IOException ignored) {
-            }
-            try (var file = new FileWriter(path.toFile())) {
-                file.write(JsonUtils.encode(groupGrids));
-                Grasscutter.getLogger().info("Scene {} saved grid file.", getScene().getId());
-            } catch (Exception e) {
-                Grasscutter.getLogger().error("Scene {} unable to save grid file.", getScene().getId(), e);
+            if (!noCacheGroupGridsToDisk) {
+                try {
+                    Files.createDirectories(path.getParent());
+                } catch (IOException ignored) {
+                }
+                try (var file = new FileWriter(path.toFile())) {
+                    file.write(JsonUtils.encode(groupGrids));
+                    Grasscutter.getLogger().info("Scene {} saved grid file.", getScene().getId());
+                } catch (Exception e) {
+                    Grasscutter.getLogger().error("Scene {} unable to save grid file.", getScene().getId(), e);
+                }
             }
             return groupGrids;
         }

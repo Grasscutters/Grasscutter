@@ -1110,6 +1110,9 @@ public class Scene {
         if (group.regions != null) {
             group.regions.values().forEach(getScriptManager()::deregisterRegion);
         }
+        if (challenge != null && group.id == challenge.getGroup().id) {
+            challenge.fail();
+        }
 
         scriptManager.getLoadedGroupSetPerBlock().get(block.id).remove(group);
         this.loadedGroups.remove(group);
