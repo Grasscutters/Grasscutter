@@ -1,7 +1,7 @@
 package emu.grasscutter.server.event.game;
 
-import emu.grasscutter.server.event.types.ServerEvent;
 import emu.grasscutter.scripts.data.SceneBlock;
+import emu.grasscutter.server.event.types.ServerEvent;
 import lombok.*;
 
 @Getter

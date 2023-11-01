@@ -92,7 +92,9 @@ public final class SceneGroup {
         if (overrideScriptPath != null && !overrideScriptPath.equals("")) {
             cs = ScriptLoader.getScript(overrideScriptPath, true);
         } else {
-            cs = ScriptLoader.getScript("Scene/%s/scene%s_group%s.lua".formatted(sceneId, sceneId, this.id));
+            cs =
+                    ScriptLoader.getScript(
+                            "Scene/%s/scene%s_group%s.lua".formatted(sceneId, sceneId, this.id));
         }
 
         if (cs == null) {
