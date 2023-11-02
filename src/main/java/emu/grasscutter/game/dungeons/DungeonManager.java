@@ -68,6 +68,10 @@ public final class DungeonManager {
         }
 
         if (isFinishedSuccessfully()) {
+            // Set ended now because calling EVENT_DUNGEON_SETTLE
+            // during finishDungeon() may cause reentrance into
+            // this function, leading to double settles.
+            ended = true;
             finishDungeon();
         }
     }

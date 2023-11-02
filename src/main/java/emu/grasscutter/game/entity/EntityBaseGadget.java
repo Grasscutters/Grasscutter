@@ -70,6 +70,11 @@ public abstract class EntityBaseGadget extends GameEntity {
                                 .setSourceEntityId(getId())
                                 .setParam3((int) this.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP))
                                 .setEventSource(getConfigId()));
+
+        var challenge = getScene().getChallenge();
+        if (challenge != null && this instanceof EntityGadget gadget) {
+            challenge.onGadgetDamage(gadget);
+        }
     }
 
     protected void fillFightProps(ConfigEntityGadget configGadget) {

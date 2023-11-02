@@ -100,7 +100,7 @@ public final class PlayerProgressManager extends BasePlayerDataManager {
     }
 
     private void setOpenState(int openState, int value, boolean sendNotify) {
-        int previousValue = this.player.getOpenStates().getOrDefault(openState, 0);
+        int previousValue = this.player.getOpenStates().getOrDefault(openState, -1 /* non-existent */);
 
         if (value != previousValue) {
             this.player.getOpenStates().put(openState, value);

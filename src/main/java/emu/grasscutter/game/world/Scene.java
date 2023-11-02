@@ -600,7 +600,7 @@ public class Scene {
         // Should be OK to check only player 0,
         // as no other players could enter Tower
         var towerManager = getPlayers().get(0).getTowerManager();
-        if (towerManager != null) {
+        if (towerManager != null && towerManager.isInProgress()) {
             towerManager.onTick();
         }
 

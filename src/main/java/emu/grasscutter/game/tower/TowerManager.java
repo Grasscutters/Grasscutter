@@ -40,7 +40,7 @@ public class TowerManager extends BasePlayerManager {
 
     public void onTick() {
         var challenge = player.getScene().getChallenge();
-        if (challenge == null || !challenge.inProgress()) return;
+        if (!inProgress || challenge == null || !challenge.inProgress()) return;
 
         // Check star conditions and notify client if any failed.
         int stars = getCurLevelStars();
@@ -153,8 +153,11 @@ public class TowerManager extends BasePlayerManager {
                     break;
                 }
             } else if (cond == TowerLevelData.TowerCondType.TOWER_COND_LEFT_HP_GREATER_THAN) {
-                // TODO: Check monolith health
-                break;
+                var params = levelData.getHpCond(star);
+                var hpPercent = challenge.getGuardEntityHpPercent();
+                if (hpPercent >= params.getMinimumHpPercentage()) {
+                    break;
+                }
             } else {
                 Grasscutter.getLogger()
                         .error(

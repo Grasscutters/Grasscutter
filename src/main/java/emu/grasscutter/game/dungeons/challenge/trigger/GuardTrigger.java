@@ -14,7 +14,9 @@ public class GuardTrigger extends ChallengeTrigger {
     }
 
     public void onBegin(WorldChallenge challenge) {
-        challenge.getScene().broadcastPacket(new PacketChallengeDataNotify(challenge, 2, 100));
+        challenge.setGuardEntity(challenge.getScene().getEntityByConfigId(entityToProtectCFGId, challenge.getGroup().id));
+        lastSendPercent = challenge.getGuardEntityHpPercent();
+        challenge.getScene().broadcastPacket(new PacketChallengeDataNotify(challenge, 2, lastSendPercent));
     }
 
     @Override
@@ -22,9 +24,7 @@ public class GuardTrigger extends ChallengeTrigger {
         if (gadget.getConfigId() != entityToProtectCFGId) {
             return;
         }
-        var curHp = gadget.getFightProperties().get(FightProperty.FIGHT_PROP_CUR_HP.getId());
-        var maxHp = gadget.getFightProperties().get(FightProperty.FIGHT_PROP_BASE_HP.getId());
-        int percent = (int) (curHp / maxHp);
+        var percent = challenge.getGuardEntityHpPercent();
 
         if (percent != lastSendPercent) {
             challenge.getScene().broadcastPacket(new PacketChallengeDataNotify(challenge, 2, percent));

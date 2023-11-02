@@ -32,11 +32,12 @@ public class TowerResult extends BaseDungeonResult {
     @Override
     protected void onProto(DungeonSettleNotifyOuterClass.DungeonSettleNotify.Builder builder) {
         var continueStatus = ContinueStateType.CONTINUE_STATE_TYPE_CAN_NOT_CONTINUE_VALUE;
-        if (challenge.isSuccess() && canJump) {
-            continueStatus =
-                    hasNextLevel
-                            ? ContinueStateType.CONTINUE_STATE_TYPE_CAN_ENTER_NEXT_LEVEL_VALUE
-                            : ContinueStateType.CONTINUE_STATE_TYPE_CAN_ENTER_NEXT_FLOOR_VALUE;
+        if (challenge.isSuccess()) {
+            if (hasNextLevel) {
+                continueStatus = ContinueStateType.CONTINUE_STATE_TYPE_CAN_ENTER_NEXT_LEVEL_VALUE;
+            } else if (canJump) {
+                continueStatus = ContinueStateType.CONTINUE_STATE_TYPE_CAN_ENTER_NEXT_FLOOR_VALUE;
+            }
         }
 
         var towerLevelEndNotify =

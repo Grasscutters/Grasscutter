@@ -46,6 +46,7 @@ public class SceneScriptManager {
     /** current triggers controlled by RefreshGroup */
     private final Map<Integer, Set<SceneTrigger>> currentTriggers;
 
+    private final Set<SceneTrigger> ongoingTriggers;
     private final Map<String, Set<SceneTrigger>> triggersByGroupScene;
     private final Map<Integer, Set<Pair<String, Integer>>> activeGroupTimers;
     private final Map<String, AtomicInteger> triggerInvocations;
@@ -76,6 +77,7 @@ public class SceneScriptManager {
     public SceneScriptManager(Scene scene) {
         this.scene = scene;
         this.currentTriggers = new ConcurrentHashMap<>();
+        this.ongoingTriggers = ConcurrentHashMap.newKeySet();
         this.triggersByGroupScene = new ConcurrentHashMap<>();
         this.activeGroupTimers = new ConcurrentHashMap<>();
         this.triggerInvocations = new ConcurrentHashMap<>();
@@ -263,6 +265,15 @@ public class SceneScriptManager {
         } // Remove old group suite
 
         this.addGroupSuite(groupInstance, suiteData, entitiesAdded);
+
+        // refreshGroup may be called by a trigger.
+        // If that trigger has been refreshed, ensure it does not get
+        // deregistered anyway when the trigger completes its invocation.
+        for (var triggerSet : currentTriggers.values()) {
+            var toSave = new HashSet<SceneTrigger>(triggerSet);
+            toSave.retainAll(ongoingTriggers);
+            toSave.forEach(t -> t.setPreserved(true));
+        }
 
         // Refesh variables here
         group.variables.forEach(
@@ -925,6 +936,7 @@ public class SceneScriptManager {
 
     private void callTrigger(SceneTrigger trigger, ScriptArgs params) {
         // the SetGroupVariableValueByGroup in tower need the param to record the first stage time
+        ongoingTriggers.add(trigger);
         var ret = this.callScriptFunc(trigger.getAction(), trigger.currentGroup, params);
         var invocationsCounter = triggerInvocations.get(trigger.getName());
         var invocations = invocationsCounter.incrementAndGet();
@@ -956,11 +968,16 @@ public class SceneScriptManager {
         }
 
         // always deregister on error, otherwise only if the count is reached
-        if (ret.isboolean() && !ret.checkboolean()
+        // or the trigger should be preserved after a RefreshGroup call
+        if (trigger.isPreserved()) {
+            trigger.setPreserved(false);
+        }
+        else if (ret.isboolean() && !ret.checkboolean()
                 || ret.isint() && ret.checkint() != 0
                 || trigger.getTrigger_count() > 0 && invocations >= trigger.getTrigger_count()) {
             deregisterTrigger(trigger);
         }
+        ongoingTriggers.remove(trigger);
     }
 
     private LuaValue callScriptFunc(String funcName, SceneGroup group, ScriptArgs params) {
@@ -1102,6 +1119,18 @@ public class SceneScriptManager {
 
     public RTree<SceneBlock, Geometry> getBlocksIndex() {
         return meta.sceneBlockIndex;
+    }
+
+    public void removeMonstersInGroup(SceneGroup group) {
+        var configSet = group.monsters.values().stream().map(m -> m.config_id).collect(Collectors.toSet());
+        var toRemove =
+                getScene().getEntities().values().stream()
+                        .filter(e -> e instanceof EntityMonster)
+                        .filter(e -> e.getGroupId() == group.id)
+                        .filter(e -> configSet.contains(e.getConfigId()))
+                        .toList();
+
+        getScene().removeEntities(toRemove, VisionTypeOuterClass.VisionType.VISION_TYPE_MISS);
     }
 
     public void removeMonstersInGroup(SceneGroup group, SceneSuite suite) {

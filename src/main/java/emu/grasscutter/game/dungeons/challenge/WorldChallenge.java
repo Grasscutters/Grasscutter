@@ -4,6 +4,7 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.dungeons.challenge.trigger.ChallengeTrigger;
 import emu.grasscutter.game.dungeons.enums.DungeonPassConditionType;
 import emu.grasscutter.game.entity.*;
+import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.props.WatcherTriggerType;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.scripts.constants.EventType;
@@ -22,6 +23,7 @@ public class WorldChallenge {
     private final int challengeIndex;
     private final List<Integer> paramList;
     private int timeLimit;
+    private GameEntity guardEntity;
     private final List<ChallengeTrigger> challengeTriggers;
     private final int goal;
     private final AtomicInteger score;
@@ -58,6 +60,7 @@ public class WorldChallenge {
         this.challengeTriggers = challengeTriggers;
         this.goal = goal;
         this.score = new AtomicInteger(0);
+        this.guardEntity = null;
     }
 
     public boolean inProgress() {
@@ -143,11 +146,27 @@ public class WorldChallenge {
         this.progress = false;
         this.success = success;
         this.finishedTime = (int) ((this.scene.getSceneTimeSeconds() - this.startedAt));
+
+        // Despawn all leftover mobs in this challenge's SceneGroup
+        getScene().getScriptManager().removeMonstersInGroup(group);
+
         getScene().broadcastPacket(new PacketDungeonChallengeFinishNotify(this));
     }
 
     public int increaseScore() {
         return score.incrementAndGet();
+    }
+
+    public int getGuardEntityHpPercent() {
+        if (guardEntity == null) {
+            Grasscutter.getLogger().warn("getGuardEntityHpPercent: Could not find guardEntity for this challenge = {}", this);
+            return 100;
+        }
+
+        var curHp = guardEntity.getFightProperties().get(FightProperty.FIGHT_PROP_CUR_HP.getId());
+        var maxHp = guardEntity.getFightProperties().get(FightProperty.FIGHT_PROP_BASE_HP.getId());
+        int percent = (int) (curHp * 100 / maxHp);
+        return percent;
     }
 
     public void onMonsterDeath(EntityMonster monster) {

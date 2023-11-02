@@ -201,7 +201,7 @@ public class ScriptLib {
         }
 
         var towerManager = scene.getPlayers().get(0).getTowerManager();
-        if (towerManager.isInProgress()) {
+        if (towerManager.isInProgress() && towerManager.getCurrentTimeLimit() > 0) {
             // Tower scripts call ActiveChallenge twice in mirror stages.
             // The second call provides the time _taken_ in the first stage,
             // not the actual time limit for the challenge.

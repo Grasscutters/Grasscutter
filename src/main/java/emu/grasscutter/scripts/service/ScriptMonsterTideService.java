@@ -62,7 +62,11 @@ public final class ScriptMonsterTideService {
 
     public SceneMonster getNextMonster() {
         var nextId = this.monsterConfigOrders.poll();
-        if (currentGroup.monsters.containsKey(nextId)) {
+        if (nextId == null) {
+            // AutoMonsterTide has been called with fewer monster config IDs than the total tide count.
+            // Get last config ID from the list, then.
+            return currentGroup.monsters.get(monsterConfigIds.get(monsterConfigIds.size() - 1));
+        } else if (currentGroup.monsters.containsKey(nextId)) {
             return currentGroup.monsters.get(nextId);
         }
         // TODO some monster config_id do not exist in groups, so temporarily set it to the first
