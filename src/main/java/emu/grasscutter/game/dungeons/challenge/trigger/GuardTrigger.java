@@ -2,7 +2,6 @@ package emu.grasscutter.game.dungeons.challenge.trigger;
 
 import emu.grasscutter.game.dungeons.challenge.WorldChallenge;
 import emu.grasscutter.game.entity.EntityGadget;
-import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.server.packet.send.PacketChallengeDataNotify;
 
 public class GuardTrigger extends ChallengeTrigger {
@@ -14,9 +13,12 @@ public class GuardTrigger extends ChallengeTrigger {
     }
 
     public void onBegin(WorldChallenge challenge) {
-        challenge.setGuardEntity(challenge.getScene().getEntityByConfigId(entityToProtectCFGId, challenge.getGroup().id));
+        challenge.setGuardEntity(
+                challenge.getScene().getEntityByConfigId(entityToProtectCFGId, challenge.getGroup().id));
         lastSendPercent = challenge.getGuardEntityHpPercent();
-        challenge.getScene().broadcastPacket(new PacketChallengeDataNotify(challenge, 2, lastSendPercent));
+        challenge
+                .getScene()
+                .broadcastPacket(new PacketChallengeDataNotify(challenge, 2, lastSendPercent));
     }
 
     @Override

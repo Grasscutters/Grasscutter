@@ -159,7 +159,9 @@ public class WorldChallenge {
 
     public int getGuardEntityHpPercent() {
         if (guardEntity == null) {
-            Grasscutter.getLogger().warn("getGuardEntityHpPercent: Could not find guardEntity for this challenge = {}", this);
+            Grasscutter.getLogger()
+                    .warn(
+                            "getGuardEntityHpPercent: Could not find guardEntity for this challenge = {}", this);
             return 100;
         }
 

@@ -971,8 +971,7 @@ public class SceneScriptManager {
         // or the trigger should be preserved after a RefreshGroup call
         if (trigger.isPreserved()) {
             trigger.setPreserved(false);
-        }
-        else if (ret.isboolean() && !ret.checkboolean()
+        } else if (ret.isboolean() && !ret.checkboolean()
                 || ret.isint() && ret.checkint() != 0
                 || trigger.getTrigger_count() > 0 && invocations >= trigger.getTrigger_count()) {
             deregisterTrigger(trigger);
@@ -1122,7 +1121,8 @@ public class SceneScriptManager {
     }
 
     public void removeMonstersInGroup(SceneGroup group) {
-        var configSet = group.monsters.values().stream().map(m -> m.config_id).collect(Collectors.toSet());
+        var configSet =
+                group.monsters.values().stream().map(m -> m.config_id).collect(Collectors.toSet());
         var toRemove =
                 getScene().getEntities().values().stream()
                         .filter(e -> e instanceof EntityMonster)

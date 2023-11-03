@@ -4,7 +4,6 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.binout.config.ConfigEntityGadget;
 import emu.grasscutter.data.binout.config.fields.ConfigAbilityData;
-import emu.grasscutter.data.common.PropGrowCurve;
 import emu.grasscutter.data.excels.GadgetData;
 import emu.grasscutter.data.excels.monster.MonsterCurveData;
 import emu.grasscutter.game.entity.gadget.*;
@@ -113,9 +112,14 @@ public class EntityGadget extends EntityBaseGadget {
         if (gadgetData.getJsonName().equals("SceneObj_Gear_Operator_Mamolu_Entity")) {
             MonsterCurveData curve = GameData.getMonsterCurveDataMap().get(11);
             if (curve != null) {
-                FightProperty[] hpProps = {FightProperty.FIGHT_PROP_MAX_HP, FightProperty.FIGHT_PROP_BASE_HP, FightProperty.FIGHT_PROP_CUR_HP};
+                FightProperty[] hpProps = {
+                    FightProperty.FIGHT_PROP_MAX_HP,
+                    FightProperty.FIGHT_PROP_BASE_HP,
+                    FightProperty.FIGHT_PROP_CUR_HP
+                };
                 for (var prop : hpProps) {
-                    setFightProperty(prop, this.getFightProperty(prop) * curve.getMultByProp("GROW_CURVE_HP_ENVIRONMENT"));
+                    setFightProperty(
+                            prop, this.getFightProperty(prop) * curve.getMultByProp("GROW_CURVE_HP_ENVIRONMENT"));
                 }
             }
         }
