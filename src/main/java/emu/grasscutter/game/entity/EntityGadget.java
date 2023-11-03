@@ -4,7 +4,9 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.binout.config.ConfigEntityGadget;
 import emu.grasscutter.data.binout.config.fields.ConfigAbilityData;
+import emu.grasscutter.data.common.PropGrowCurve;
 import emu.grasscutter.data.excels.GadgetData;
+import emu.grasscutter.data.excels.monster.MonsterCurveData;
 import emu.grasscutter.game.entity.gadget.*;
 import emu.grasscutter.game.entity.gadget.platform.*;
 import emu.grasscutter.game.player.Player;
@@ -103,6 +105,20 @@ public class EntityGadget extends EntityBaseGadget {
         this.bornPos = this.getPosition().clone();
         this.bornRot = this.getRotation().clone();
         this.fillFightProps(configGadget);
+
+        // Check if this gadget is the abyss defense objective's gadget.
+        // That doesn't have a level and defaults to having 5000 hp, so it dies in like 2 hits on 11-1.
+        // I'll forgive player skill issues and scale its hp up here.
+        // TODO: find out how its fight props are actually scaled
+        if (gadgetData.getJsonName().equals("SceneObj_Gear_Operator_Mamolu_Entity")) {
+            MonsterCurveData curve = GameData.getMonsterCurveDataMap().get(11);
+            if (curve != null) {
+                FightProperty[] hpProps = {FightProperty.FIGHT_PROP_MAX_HP, FightProperty.FIGHT_PROP_BASE_HP, FightProperty.FIGHT_PROP_CUR_HP};
+                for (var prop : hpProps) {
+                    setFightProperty(prop, this.getFightProperty(prop) * curve.getMultByProp("GROW_CURVE_HP_ENVIRONMENT"));
+                }
+            }
+        }
 
         if (GameData.getGadgetMappingMap().containsKey(gadgetId)) {
             var controllerName = GameData.getGadgetMappingMap().get(gadgetId).getServerController();

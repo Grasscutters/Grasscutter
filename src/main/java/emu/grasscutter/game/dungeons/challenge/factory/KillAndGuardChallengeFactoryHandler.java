@@ -33,7 +33,7 @@ public class KillAndGuardChallengeFactoryHandler implements ChallengeFactoryHand
                 realGroup,
                 challengeId, // Id
                 challengeIndex, // Index
-                List.of(monstersToKill, 0),
+                List.of(monstersToKill, gadgetCFGId),
                 0, // Limit
                 monstersToKill, // Goal
                 List.of(new KillMonsterCountTrigger(), new GuardTrigger(gadgetCFGId)));

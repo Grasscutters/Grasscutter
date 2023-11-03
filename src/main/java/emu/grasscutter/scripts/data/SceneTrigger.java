@@ -17,6 +17,7 @@ public final class SceneTrigger {
     private String tag;
 
     public transient SceneGroup currentGroup;
+    private boolean preserved;
 
     @Override
     public boolean equals(Object obj) {
