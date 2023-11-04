@@ -259,8 +259,14 @@ public class EnergyManager extends BasePlayerManager {
             return;
         }
 
+        // Also reference AvatarSkillData in case the burst gets a different skill ID
+        // when the avatar is in a different state. For example, Wanderer's burst is
+        // 10755 usually but when he floats, it becomes 10753.
+        var skillData = GameData.getAvatarSkillDataMap().get(skillId);
+
         // If the cast skill was a burst, consume energy.
-        if (avatar.getSkillDepot() != null && skillId == avatar.getSkillDepot().getEnergySkill()) {
+        if ((avatar.getSkillDepot() != null && skillId == avatar.getSkillDepot().getEnergySkill()) ||
+                    (skillData != null && skillData.getCostElemVal() > 0)) {
             avatar.getAsEntity().clearEnergy(ChangeEnergyReason.CHANGE_ENERGY_REASON_SKILL_START);
         }
     }
