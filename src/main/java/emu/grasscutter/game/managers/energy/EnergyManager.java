@@ -265,8 +265,8 @@ public class EnergyManager extends BasePlayerManager {
         var skillData = GameData.getAvatarSkillDataMap().get(skillId);
 
         // If the cast skill was a burst, consume energy.
-        if ((avatar.getSkillDepot() != null && skillId == avatar.getSkillDepot().getEnergySkill()) ||
-                    (skillData != null && skillData.getCostElemVal() > 0)) {
+        if ((avatar.getSkillDepot() != null && skillId == avatar.getSkillDepot().getEnergySkill())
+                || (skillData != null && skillData.getCostElemVal() > 0)) {
             avatar.getAsEntity().clearEnergy(ChangeEnergyReason.CHANGE_ENERGY_REASON_SKILL_START);
         }
     }

@@ -85,16 +85,24 @@ public final class AbilityManager extends BasePlayerManager {
 
         boolean skillInvincibility = modifier.state == AbilityModifier.State.Invincible;
         if (modifier.onAdded != null) {
-            skillInvincibility |= Arrays.stream(modifier.onAdded)
-                                            .filter(action ->
-                                                    action.type == AbilityModifierAction.Type.AttachAbilityStateResistance &&
-                                                    action.resistanceListID == 11002)
-                                            .toList().size() > 0;
+            skillInvincibility |=
+                    Arrays.stream(modifier.onAdded)
+                                    .filter(
+                                            action ->
+                                                    action.type == AbilityModifierAction.Type.AttachAbilityStateResistance
+                                                            && action.resistanceListID == 11002)
+                                    .toList()
+                                    .size()
+                            > 0;
         }
 
-        if (this.clearBurstEnergy != null && this.burstCasterId == entityId &&
-                    (ability.getAvatarSkillStartIds().contains(this.burstSkillId) || skillInvincibility)) {
-            Grasscutter.getLogger().trace("Caster ID's {} burst successful, clearing energy and setting invulnerability", entityId);
+        if (this.clearBurstEnergy != null
+                && this.burstCasterId == entityId
+                && (ability.getAvatarSkillStartIds().contains(this.burstSkillId) || skillInvincibility)) {
+            Grasscutter.getLogger()
+                    .trace(
+                            "Caster ID's {} burst successful, clearing energy and setting invulnerability",
+                            entityId);
             this.abilityInvulnerable = true;
             this.clearBurstEnergy.accept(entityId);
             this.removePendingEnergyClear();
@@ -329,9 +337,11 @@ public final class AbilityManager extends BasePlayerManager {
         }
 
         // Track this elemental burst to possibly clear avatar energy later.
-        this.clearBurstEnergy = (ignored) ->
-                player.getEnergyManager().handleEvtDoSkillSuccNotify(
-                        player.getSession(), skillId, casterId);
+        this.clearBurstEnergy =
+                (ignored) ->
+                        player
+                                .getEnergyManager()
+                                .handleEvtDoSkillSuccNotify(player.getSession(), skillId, casterId);
         this.burstCasterId = casterId;
         this.burstSkillId = skillId;
     }

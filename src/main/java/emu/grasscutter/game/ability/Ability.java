@@ -55,21 +55,22 @@ public class Ability {
         //
         avatarSkillStartIds = new HashSet<>();
         if (data.onAbilityStart != null) {
-            avatarSkillStartIds.addAll(Arrays.stream(data.onAbilityStart)
-                                        .filter(action ->
-                                                action.type == AbilityModifierAction.Type.AvatarSkillStart)
-                                        .map(action -> action.skillID)
-                                        .toList());
+            avatarSkillStartIds.addAll(
+                    Arrays.stream(data.onAbilityStart)
+                            .filter(action -> action.type == AbilityModifierAction.Type.AvatarSkillStart)
+                            .map(action -> action.skillID)
+                            .toList());
         }
-        avatarSkillStartIds.addAll(data.modifiers.values()
-                                        .stream()
-                                        .map(m -> (List<AbilityModifierAction>)(m.onAdded == null ?
-                                                                                Collections.emptyList() :
-                                                                                Arrays.asList(m.onAdded)))
-                                        .flatMap(List::stream)
-                                        .filter(action -> action.type == AbilityModifierAction.Type.AvatarSkillStart)
-                                        .map(action -> action.skillID)
-                                        .toList());
+        avatarSkillStartIds.addAll(
+                data.modifiers.values().stream()
+                        .map(
+                                m ->
+                                        (List<AbilityModifierAction>)
+                                                (m.onAdded == null ? Collections.emptyList() : Arrays.asList(m.onAdded)))
+                        .flatMap(List::stream)
+                        .filter(action -> action.type == AbilityModifierAction.Type.AvatarSkillStart)
+                        .map(action -> action.skillID)
+                        .toList());
     }
 
     public static String getAbilityName(AbilityString abString) {
