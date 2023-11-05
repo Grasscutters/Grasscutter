@@ -2,6 +2,7 @@ package emu.grasscutter.game.ability;
 
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.binout.AbilityData;
+import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierAction;
 import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.proto.AbilityStringOuterClass.AbilityString;
@@ -24,6 +25,7 @@ public class Ability {
     private static Map<String, Object2FloatMap<String>> abilitySpecialsModified = new HashMap<>();
 
     @Getter private int hash;
+    @Getter private Set<Integer> avatarSkillStartIds;
 
     public Ability(AbilityData data, GameEntity owner, Player playerOwner) {
         this.data = data;
@@ -44,6 +46,30 @@ public class Ability {
         hash = Utils.abilityHash(data.abilityName);
 
         data.initialize();
+
+        //
+        // Collect skill IDs referenced by AvatarSkillStart modifier actions
+        // in onAbilityStart and in every modifier's onAdded action set.
+        // These skill IDs will be used by AbilityManager to determine whether
+        // an elemental burst has fired correctly.
+        //
+        avatarSkillStartIds = new HashSet<>();
+        if (data.onAbilityStart != null) {
+            avatarSkillStartIds.addAll(Arrays.stream(data.onAbilityStart)
+                                        .filter(action ->
+                                                action.type == AbilityModifierAction.Type.AvatarSkillStart)
+                                        .map(action -> action.skillID)
+                                        .toList());
+        }
+        avatarSkillStartIds.addAll(data.modifiers.values()
+                                        .stream()
+                                        .map(m -> (List<AbilityModifierAction>)(m.onAdded == null ?
+                                                                                Collections.emptyList() :
+                                                                                Arrays.asList(m.onAdded)))
+                                        .flatMap(List::stream)
+                                        .filter(action -> action.type == AbilityModifierAction.Type.AvatarSkillStart)
+                                        .map(action -> action.skillID)
+                                        .toList());
     }
 
     public static String getAbilityName(AbilityString abString) {

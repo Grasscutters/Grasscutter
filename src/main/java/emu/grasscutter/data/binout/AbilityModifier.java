@@ -327,6 +327,7 @@ public class AbilityModifier implements Serializable {
         public String srcKey, dstKey;
 
         public int skillID;
+        public int resistanceListID;
 
         public AbilityModifierAction[] actions;
         public AbilityModifierAction[] successActions;
