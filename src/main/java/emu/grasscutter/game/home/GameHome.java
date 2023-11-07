@@ -12,16 +12,17 @@ import emu.grasscutter.game.props.SceneType;
 import emu.grasscutter.net.proto.HomeAvatarTalkFinishInfoOuterClass;
 import emu.grasscutter.server.packet.send.*;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import lombok.AccessLevel;
+import lombok.Builder;
+import lombok.Data;
+import lombok.experimental.FieldDefaults;
+
 import java.time.ZonedDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-import lombok.AccessLevel;
-import lombok.Builder;
-import lombok.Data;
-import lombok.experimental.FieldDefaults;
 
 @Entity(value = "homes", useDiscriminator = false)
 @Data
@@ -181,6 +182,7 @@ public class GameHome {
 
     public void onOwnerLogin(Player player) {
         this.player = player; // update player pointer. (prevent offline player from sending packet)
+        this.fixModuleIdIfInvalid();
         player.getSession().send(new PacketHomeBasicInfoNotify(player, false));
         player.getSession().send(new PacketPlayerHomeCompInfoNotify(player));
         player.getSession().send(new PacketHomeComfortInfoNotify(player));
@@ -192,6 +194,25 @@ public class GameHome {
         player.getSession().send(new PacketHomeAvatarAllFinishRewardNotify(player));
         checkAccumulatedResources(player);
         player.getSession().send(new PacketHomeResourceNotify(player));
+    }
+
+    private void fixModuleIdIfInvalid() {
+        if (this.player.hasSentLoginPackets() || this.player.getRealmList() == null) {
+            return;
+        }
+
+        if (this.player.getRealmList().isEmpty()) {
+            this.player.setRealmList(null);
+            return;
+        }
+
+        if (this.player.getCurrentRealmId() <= 0 || !this.player.getCurHomeWorld().isRealmIdValid()) {
+            int firstRId = this.player.getRealmList().iterator().next();
+            this.player.setCurrentRealmId(firstRId);
+            Grasscutter.getLogger().info("Set player {}'s current realm id to {} cuz the id is invalid.", this.player.getUid(), firstRId);
+        }
+
+        this.player.getCurHomeWorld().refreshModuleManager(); // Apply module id fix.
     }
 
     public void onPlayerChangedAvatarCostume(Avatar avatar) {

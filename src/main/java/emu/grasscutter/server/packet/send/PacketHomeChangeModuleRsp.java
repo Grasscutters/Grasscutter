@@ -11,19 +11,19 @@ public class PacketHomeChangeModuleRsp extends BasePacket {
         super(PacketOpcodes.HomeChangeModuleRsp);
 
         HomeChangeModuleRspOuterClass.HomeChangeModuleRsp proto =
-                HomeChangeModuleRspOuterClass.HomeChangeModuleRsp.newBuilder()
-                        .setRetcode(0)
-                        .setTargetModuleId(targetModuleId)
-                        .build();
+            HomeChangeModuleRspOuterClass.HomeChangeModuleRsp.newBuilder()
+                .setRetcode(0)
+                .setTargetModuleId(targetModuleId)
+                .build();
 
         this.setData(proto);
     }
 
-    public PacketHomeChangeModuleRsp() {
+    public PacketHomeChangeModuleRsp(RetcodeOuterClass.Retcode retcode) {
         super(PacketOpcodes.HomeChangeModuleRsp);
 
         this.setData(
-                HomeChangeModuleRspOuterClass.HomeChangeModuleRsp.newBuilder()
-                        .setRetcode(RetcodeOuterClass.Retcode.RET_HOME_HAS_GUEST_VALUE));
+            HomeChangeModuleRspOuterClass.HomeChangeModuleRsp.newBuilder()
+                .setRetcode(retcode.getNumber()));
     }
 }

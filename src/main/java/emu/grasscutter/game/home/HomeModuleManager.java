@@ -11,11 +11,13 @@ import emu.grasscutter.net.proto.HomeAvatarSummonAllEventNotifyOuterClass;
 import emu.grasscutter.net.proto.RetcodeOuterClass;
 import emu.grasscutter.server.packet.send.PacketHomeAvatarSummonAllEventNotify;
 import emu.grasscutter.utils.Either;
-import java.util.*;
-import java.util.stream.Stream;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.experimental.FieldDefaults;
+
+import javax.annotation.Nullable;
+import java.util.*;
+import java.util.stream.Stream;
 
 @Getter
 @FieldDefaults(level = AccessLevel.PRIVATE)
@@ -24,7 +26,9 @@ public class HomeModuleManager {
     final HomeWorld homeWorld;
     final GameHome home;
     final int moduleId;
+    @Nullable
     final HomeScene outdoor;
+    @Nullable
     HomeScene indoor;
     final List<HomeAvatarRewardEvent> rewardEvents;
     final List<HomeAvatarSummonEvent> summonEvents;
@@ -45,8 +49,14 @@ public class HomeModuleManager {
             return;
         }
 
-        this.outdoor.onTick();
-        this.indoor.onTick();
+        if (this.outdoor != null) {
+            this.outdoor.onTick();
+        }
+
+        if (this.indoor != null) {
+            this.indoor.onTick();
+        }
+
         this.summonEvents.removeIf(HomeAvatarSummonEvent::isTimeOver);
     }
 
@@ -66,44 +76,45 @@ public class HomeModuleManager {
     private void fireAllAvatarRewardEvents() {
         this.rewardEvents.clear();
         var allBlockItems =
-                Stream.of(this.getOutdoorSceneItem(), this.getIndoorSceneItem())
-                        .map(HomeSceneItem::getBlockItems)
-                        .map(Map::values)
-                        .flatMap(Collection::stream)
-                        .toList();
+            Stream.of(this.getOutdoorSceneItem(), this.getIndoorSceneItem())
+                .filter(Objects::nonNull)
+                .map(HomeSceneItem::getBlockItems)
+                .map(Map::values)
+                .flatMap(Collection::stream)
+                .toList();
 
         var suites =
-                allBlockItems.stream()
-                        .map(HomeBlockItem::getSuiteList)
-                        .filter(Objects::nonNull)
-                        .flatMap(Collection::stream)
-                        .distinct()
-                        .toList();
+            allBlockItems.stream()
+                .map(HomeBlockItem::getSuiteList)
+                .filter(Objects::nonNull)
+                .flatMap(Collection::stream)
+                .distinct()
+                .toList();
 
         allBlockItems.stream()
-                .map(HomeBlockItem::getDeployNPCList)
-                .flatMap(Collection::stream)
-                .forEach(
-                        avatar -> {
-                            suites.forEach(
-                                    suite -> {
-                                        var data =
-                                                SuiteEventType.HOME_AVATAR_REWARD_EVENT.getEventDataFrom(
-                                                        avatar.getAvatarId(), suite.getSuiteId());
-                                        if (data == null || this.home.isRewardEventFinished(data.getId())) {
-                                            return;
-                                        }
+            .map(HomeBlockItem::getDeployNPCList)
+            .flatMap(Collection::stream)
+            .forEach(
+                avatar -> {
+                    suites.forEach(
+                        suite -> {
+                            var data =
+                                SuiteEventType.HOME_AVATAR_REWARD_EVENT.getEventDataFrom(
+                                    avatar.getAvatarId(), suite.getSuiteId());
+                            if (data == null || this.home.isRewardEventFinished(data.getId())) {
+                                return;
+                            }
 
-                                        this.rewardEvents.add(
-                                                new HomeAvatarRewardEvent(
-                                                        homeOwner,
-                                                        data.getId(),
-                                                        data.getRewardID(),
-                                                        data.getAvatarID(),
-                                                        data.getSuiteId(),
-                                                        suite.getGuid()));
-                                    });
+                            this.rewardEvents.add(
+                                new HomeAvatarRewardEvent(
+                                    homeOwner,
+                                    data.getId(),
+                                    data.getRewardID(),
+                                    data.getAvatarID(),
+                                    data.getSuiteId(),
+                                    suite.getGuid()));
                         });
+                });
 
         if (this.summonEvents != null) {
             var suiteIdList = this.rewardEvents.stream().map(HomeAvatarRewardEvent::getSuiteId).toList();
@@ -113,14 +124,15 @@ public class HomeModuleManager {
 
     private void cancelSummonEventsIfAvatarLeave() {
         var avatars =
-                Stream.of(this.getOutdoorSceneItem(), this.getIndoorSceneItem())
-                        .map(HomeSceneItem::getBlockItems)
-                        .map(Map::values)
-                        .flatMap(Collection::stream)
-                        .map(HomeBlockItem::getDeployNPCList)
-                        .flatMap(Collection::stream)
-                        .map(HomeNPCItem::getAvatarId)
-                        .toList();
+            Stream.of(this.getOutdoorSceneItem(), this.getIndoorSceneItem())
+                .filter(Objects::nonNull)
+                .map(HomeSceneItem::getBlockItems)
+                .map(Map::values)
+                .flatMap(Collection::stream)
+                .map(HomeBlockItem::getDeployNPCList)
+                .flatMap(Collection::stream)
+                .map(HomeNPCItem::getAvatarId)
+                .toList();
 
         this.summonEvents.removeIf(event -> !avatars.contains(event.getAvatarId()));
     }
@@ -143,15 +155,15 @@ public class HomeModuleManager {
     }
 
     public Either<HomeAvatarSummonEvent, Integer> fireAvatarSummonEvent(
-            Player owner, int avatarId, int guid, int suiteId) {
+        Player owner, int avatarId, int guid, int suiteId) {
         var targetSuite =
-                ((HomeScene) owner.getScene())
-                        .getSceneItem().getBlockItems().values().stream()
-                                .map(HomeBlockItem::getSuiteList)
-                                .flatMap(Collection::stream)
-                                .filter(suite -> suite.getGuid() == guid)
-                                .findFirst()
-                                .orElse(null);
+            ((HomeScene) owner.getScene())
+                .getSceneItem().getBlockItems().values().stream()
+                .map(HomeBlockItem::getSuiteList)
+                .flatMap(Collection::stream)
+                .filter(suite -> suite.getGuid() == guid)
+                .findFirst()
+                .orElse(null);
 
         if (this.isInRewardEvent(avatarId)) {
             return Either.right(RetcodeOuterClass.Retcode.RET_DUPLICATE_AVATAR_VALUE);
@@ -173,8 +185,8 @@ public class HomeModuleManager {
         }
 
         var event =
-                new HomeAvatarSummonEvent(
-                        owner, eventData.getId(), eventData.getRewardID(), avatarId, suiteId, guid);
+            new HomeAvatarSummonEvent(
+                owner, eventData.getId(), eventData.getRewardID(), avatarId, suiteId, guid);
         this.summonEvents.add(event);
         owner.sendPacket(new PacketHomeAvatarSummonAllEventNotify(owner));
         return Either.left(event);
@@ -190,32 +202,34 @@ public class HomeModuleManager {
             notify.setRewardEvent(this.rewardEvents.get(0).toProto()).setIsEventTrigger(true);
 
             notify.addAllPendingList(
-                    this.rewardEvents.subList(1, this.rewardEvents.size()).stream()
-                            .map(HomeAvatarRewardEvent::toProto)
-                            .toList());
+                this.rewardEvents.subList(1, this.rewardEvents.size()).stream()
+                    .map(HomeAvatarRewardEvent::toProto)
+                    .toList());
         }
 
         return notify.build();
     }
 
     public HomeAvatarSummonAllEventNotifyOuterClass.HomeAvatarSummonAllEventNotify
-            toSummonEventProto() {
+    toSummonEventProto() {
         return HomeAvatarSummonAllEventNotifyOuterClass.HomeAvatarSummonAllEventNotify.newBuilder()
-                .addAllSummonEventList(
-                        this.summonEvents.stream().map(HomeAvatarSummonEvent::toProto).toList())
-                .build();
+            .addAllSummonEventList(
+                this.summonEvents.stream().map(HomeAvatarSummonEvent::toProto).toList())
+            .build();
     }
 
     public boolean isInRewardEvent(int avatarId) {
         return this.rewardEvents.stream().anyMatch(e -> e.getAvatarId() == avatarId);
     }
 
+    @Nullable
     public HomeSceneItem getOutdoorSceneItem() {
-        return this.outdoor.getSceneItem();
+        return this.outdoor == null ? null : this.outdoor.getSceneItem();
     }
 
+    @Nullable
     public HomeSceneItem getIndoorSceneItem() {
-        return this.indoor.getSceneItem();
+        return this.indoor == null ? null : this.indoor.getSceneItem();
     }
 
     public void onSetModule() {
@@ -223,8 +237,14 @@ public class HomeModuleManager {
             return;
         }
 
-        this.outdoor.addEntities(this.getOutdoorSceneItem().getAnimals(this.outdoor));
-        this.indoor.addEntities(this.getIndoorSceneItem().getAnimals(this.indoor));
+        if (this.outdoor != null) {
+            this.outdoor.addEntities(this.getOutdoorSceneItem().getAnimals(this.outdoor));
+        }
+
+        if (this.indoor != null) {
+            this.indoor.addEntities(this.getIndoorSceneItem().getAnimals(this.indoor));
+        }
+
         this.fireAllAvatarRewardEvents();
     }
 
@@ -233,7 +253,12 @@ public class HomeModuleManager {
             return;
         }
 
-        this.outdoor.getEntities().clear();
-        this.indoor.getEntities().clear();
+        if (this.outdoor != null) {
+            this.outdoor.getEntities().clear();
+        }
+
+        if (this.indoor != null) {
+            this.indoor.getEntities().clear();
+        }
     }
 }
