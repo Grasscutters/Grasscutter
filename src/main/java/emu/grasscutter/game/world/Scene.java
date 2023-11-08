@@ -767,6 +767,20 @@ public class Scene {
         return level;
     }
 
+    public int getLevelForMonster(int configId, int defaultLevel) {
+        if (getDungeonManager() != null) {
+            return getDungeonManager().getLevelForMonster(configId);
+        } else if (getWorld().getWorldLevel() > 0) {
+            var worldLevelData =
+                    GameData.getWorldLevelDataMap().get(getWorld().getWorldLevel());
+
+            if (worldLevelData != null) {
+                return worldLevelData.getMonsterLevel();
+            }
+        }
+        return defaultLevel;
+    }
+
     public void checkNpcGroup() {
         Set<SceneNpcBornEntry> npcBornEntries = ConcurrentHashMap.newKeySet();
         for (Player player : this.getPlayers()) {

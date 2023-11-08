@@ -29,6 +29,11 @@ public class TowerManager extends BasePlayerManager {
         return this.getTowerData().currentFloorId;
     }
 
+    /** floor number: 1 - 12 **/
+    public int getCurrentFloorNumber() {
+        return GameData.getTowerFloorDataMap().get(getCurrentFloorId()).getFloorIndex();
+    }
+
     public int getCurrentLevelId() {
         return this.getTowerData().currentLevelId + this.getTowerData().currentLevel;
     }
@@ -93,8 +98,17 @@ public class TowerManager extends BasePlayerManager {
         player.getTeamManager().setupTemporaryTeam(towerTeams);
     }
 
+    public TowerLevelData getCurrentTowerLevelDataMap() {
+        return GameData.getTowerLevelDataMap().get(getCurrentLevelId());
+    }
+
+    public int getCurrentMonsterLevel() {
+        // monsterLevel given in TowerLevelExcelConfigData.json is off by one.
+        return getCurrentTowerLevelDataMap().getMonsterLevel() + 1;
+    }
+
     public void enterLevel(int enterPointId) {
-        var levelData = GameData.getTowerLevelDataMap().get(getCurrentLevelId());
+        var levelData = getCurrentTowerLevelDataMap();
 
         var dungeonId = levelData.getDungeonId();
 
@@ -140,7 +154,7 @@ public class TowerManager extends BasePlayerManager {
             return 0;
         }
 
-        var levelData = GameData.getTowerLevelDataMap().get(getCurrentLevelId());
+        var levelData = getCurrentTowerLevelDataMap();
         // 0-based indexing. "star" = 0 means checking for 1-star conditions.
         int star;
         for (star = 2; star >= 0; star--) {
