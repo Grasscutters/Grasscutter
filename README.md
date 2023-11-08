@@ -29,7 +29,7 @@
 - Get game version REL4.0.x (4.0.x client can be found here if you don't have it): https://github.com/MAnggiarMustofa/GI-Download-Library/blob/main/GenshinImpact/Client/4.0.0.md
 
 - Download the [latest Cultivation version](https://github.com/Grasscutters/Cultivation/releases/latest). Use the `.msi` installer.
-- After opening Culivation (as admin), press the download button in the upper right corner. 
+- After opening Cultivation (as admin), press the download button in the upper right corner. 
 - Click `Download All-in-One`
 - Click the gear in the upper right corner
 - Set the game Install path to where your game is located.
