@@ -29,7 +29,7 @@
 - 获取游戏4.0正式版 (如果你没有4.0的客户端，可以在这里找到）：https://github.com/MAnggiarMustofa/GI-Download-Library/blob/main/GenshinImpact/Client/4.0.0.md)
 
 - 下载[最新的Cultivation版本](https://github.com/Grasscutters/Cultivation/releases/latest)（使用以“.msi”为后缀的安装包）。
-- 以管理员身份打开Culivation，按右上角的下载按钮。
+- 以管理员身份打开Cultivation，按右上角的下载按钮。
 - 点击“下载 Grasscutter 一体化”
 - 点击右上角的齿轮
 - 将游戏安装路径设置为你游戏所在的位置。
