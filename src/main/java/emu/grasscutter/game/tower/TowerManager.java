@@ -29,7 +29,7 @@ public class TowerManager extends BasePlayerManager {
         return this.getTowerData().currentFloorId;
     }
 
-    /** floor number: 1 - 12 **/
+    /** floor number: 1 - 12 * */
     public int getCurrentFloorNumber() {
         return GameData.getTowerFloorDataMap().get(getCurrentFloorId()).getFloorIndex();
     }

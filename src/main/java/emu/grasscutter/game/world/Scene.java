@@ -771,8 +771,7 @@ public class Scene {
         if (getDungeonManager() != null) {
             return getDungeonManager().getLevelForMonster(configId);
         } else if (getWorld().getWorldLevel() > 0) {
-            var worldLevelData =
-                    GameData.getWorldLevelDataMap().get(getWorld().getWorldLevel());
+            var worldLevelData = GameData.getWorldLevelDataMap().get(getWorld().getWorldLevel());
 
             if (worldLevelData != null) {
                 return worldLevelData.getMonsterLevel();

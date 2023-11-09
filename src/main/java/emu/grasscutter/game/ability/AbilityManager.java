@@ -23,7 +23,6 @@ import emu.grasscutter.server.event.player.PlayerUseSkillEvent;
 import io.netty.util.concurrent.FastThreadLocalThread;
 import java.util.*;
 import java.util.concurrent.*;
-import java.util.function.Consumer;
 import lombok.Getter;
 
 public final class AbilityManager extends BasePlayerManager {
@@ -103,7 +102,8 @@ public final class AbilityManager extends BasePlayerManager {
             this.abilityInvulnerable = true;
             this.player
                     .getEnergyManager()
-                    .handleEvtDoSkillSuccNotify(this.player.getSession(), this.burstSkillId, this.burstCasterId);
+                    .handleEvtDoSkillSuccNotify(
+                            this.player.getSession(), this.burstSkillId, this.burstCasterId);
             this.removePendingEnergyClear();
         }
     }
