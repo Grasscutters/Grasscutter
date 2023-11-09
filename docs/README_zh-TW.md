@@ -29,7 +29,7 @@
 - 下載遊戲版本 REL3.7（如果你沒有的話，可以在[這裡](https://github.com/MAnggiarMustofa/GI-Download-Library/blob/main/GenshinImpact/Client/3.7.0.md)找到 3.7 客戶端）
 
 - 下載 [最新的 Cultivation 版本](https://github.com/Grasscutters/Cultivation/releases/latest)。使用 `.msi` 安裝程式。
-- 以管理員身分打開 Culivation，按右上角的下載按鈕。
+- 以管理員身分打開 Cultivation，按右上角的下載按鈕。
 - 點擊 `Download All-in-One`
 - 點擊右上角的齒輪
 - 將遊戲安裝路徑設置為你的遊戲所在的位置。
