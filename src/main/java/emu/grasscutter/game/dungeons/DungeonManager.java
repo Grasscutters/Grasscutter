@@ -82,8 +82,13 @@ public final class DungeonManager {
     }
 
     public int getLevelForMonster(int id) {
-        // TODO should use levelConfigMap? and how?
-        return dungeonData.getShowLevel();
+        if (isTowerDungeon()) {
+            // Tower dungeons have their own level setting in TowerLevelData
+            return scene.getPlayers().get(0).getTowerManager().getCurrentMonsterLevel();
+        } else {
+            // TODO should use levelConfigMap? and how?
+            return dungeonData.getShowLevel();
+        }
     }
 
     public boolean activateRespawnPoint(int pointId) {

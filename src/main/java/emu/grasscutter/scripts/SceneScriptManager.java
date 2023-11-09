@@ -1069,18 +1069,7 @@ public class SceneScriptManager {
         }
 
         // Calculate level
-        int level = monster.level;
-
-        if (getScene().getDungeonManager() != null) {
-            level = getScene().getDungeonManager().getLevelForMonster(monster.config_id);
-        } else if (getScene().getWorld().getWorldLevel() > 0) {
-            var worldLevelData =
-                    GameData.getWorldLevelDataMap().get(getScene().getWorld().getWorldLevel());
-
-            if (worldLevelData != null) {
-                level = worldLevelData.getMonsterLevel();
-            }
-        }
+        int level = getScene().getLevelForMonster(monster.config_id, monster.level);
 
         // Spawn mob
         EntityMonster entity = new EntityMonster(getScene(), data, monster.pos, monster.rot, level);

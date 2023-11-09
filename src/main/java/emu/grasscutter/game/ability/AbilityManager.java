@@ -49,7 +49,6 @@ public final class AbilityManager extends BasePlayerManager {
     }
 
     @Getter private boolean abilityInvulnerable = false;
-    @Getter private Consumer<Integer> clearBurstEnergy;
     private int burstCasterId;
     private int burstSkillId;
 
@@ -59,7 +58,6 @@ public final class AbilityManager extends BasePlayerManager {
     }
 
     public void removePendingEnergyClear() {
-        this.clearBurstEnergy = null;
         this.burstCasterId = 0;
         this.burstSkillId = 0;
     }
@@ -96,15 +94,16 @@ public final class AbilityManager extends BasePlayerManager {
                             > 0;
         }
 
-        if (this.clearBurstEnergy != null
-                && this.burstCasterId == entityId
+        if (this.burstCasterId == entityId
                 && (ability.getAvatarSkillStartIds().contains(this.burstSkillId) || skillInvincibility)) {
             Grasscutter.getLogger()
                     .trace(
                             "Caster ID's {} burst successful, clearing energy and setting invulnerability",
                             entityId);
             this.abilityInvulnerable = true;
-            this.clearBurstEnergy.accept(entityId);
+            this.player
+                    .getEnergyManager()
+                    .handleEvtDoSkillSuccNotify(this.player.getSession(), this.burstSkillId, this.burstCasterId);
             this.removePendingEnergyClear();
         }
     }
@@ -337,13 +336,8 @@ public final class AbilityManager extends BasePlayerManager {
         }
 
         // Track this elemental burst to possibly clear avatar energy later.
-        this.clearBurstEnergy =
-                (ignored) ->
-                        player
-                                .getEnergyManager()
-                                .handleEvtDoSkillSuccNotify(player.getSession(), skillId, casterId);
-        this.burstCasterId = casterId;
         this.burstSkillId = skillId;
+        this.burstCasterId = casterId;
     }
 
     /**
