@@ -9,19 +9,21 @@ import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.SceneType;
-import emu.grasscutter.net.proto.HomeAvatarTalkFinishInfoOuterClass;
+import emu.grasscutter.net.proto.HomeAvatarTalkFinishInfoOuterClass.HomeAvatarTalkFinishInfo;
 import emu.grasscutter.server.packet.send.*;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import it.unimi.dsi.fastutil.ints.IntSets;
+import lombok.AccessLevel;
+import lombok.Builder;
+import lombok.Data;
+import lombok.experimental.FieldDefaults;
+
 import java.time.ZonedDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-import lombok.AccessLevel;
-import lombok.Builder;
-import lombok.Data;
-import lombok.experimental.FieldDefaults;
 
 @Entity(value = "homes", useDiscriminator = false)
 @Data
@@ -36,6 +38,9 @@ public class GameHome {
                                             || sceneData.getSceneType() == SceneType.SCENE_HOME_ROOM)
                     .map(SceneData::getId)
                     .collect(Collectors.toUnmodifiableSet());
+    public static final Set<Integer> HOME_MODULE_IDS =
+            GameData.getHomeWorldModuleDataMap().isEmpty() ?
+                    IntSets.fromTo(1, 6) : GameData.getHomeWorldModuleDataMap().keySet();
 
     @Id String id;
 
@@ -181,6 +186,7 @@ public class GameHome {
 
     public void onOwnerLogin(Player player) {
         this.player = player; // update player pointer. (prevent offline player from sending packet)
+        this.fixModuleIdIfInvalid();
         player.getSession().send(new PacketHomeBasicInfoNotify(player, false));
         player.getSession().send(new PacketPlayerHomeCompInfoNotify(player));
         player.getSession().send(new PacketHomeComfortInfoNotify(player));
@@ -192,6 +198,29 @@ public class GameHome {
         player.getSession().send(new PacketHomeAvatarAllFinishRewardNotify(player));
         checkAccumulatedResources(player);
         player.getSession().send(new PacketHomeResourceNotify(player));
+    }
+
+    private void fixModuleIdIfInvalid() {
+        if (this.player.hasSentLoginPackets() || this.player.getRealmList() == null) {
+            return;
+        }
+
+        this.player.getRealmList().removeIf(integer -> !HOME_MODULE_IDS.contains(integer)); // Delete invalid module ids.
+
+        if (this.player.getRealmList().isEmpty()) {
+            this.player.setRealmList(null);
+            this.player.save();
+            return;
+        }
+
+        if (this.player.getCurrentRealmId() <= 0 || !this.player.getCurHomeWorld().isRealmIdValid()) {
+            int firstRId = this.player.getRealmList().iterator().next();
+            this.player.setCurrentRealmId(firstRId);
+            this.player.save();
+            Grasscutter.getLogger().info("Set player {}'s current realm id to {} cuz the id is invalid.", this.player.getUid(), firstRId);
+        }
+
+        this.player.getCurHomeWorld().refreshModuleManager(); // Apply module id fix.
     }
 
     public void onPlayerChangedAvatarCostume(Avatar avatar) {
@@ -239,7 +268,7 @@ public class GameHome {
         return this.finishedTalkIdMap.get(avatarId);
     }
 
-    public List<HomeAvatarTalkFinishInfoOuterClass.HomeAvatarTalkFinishInfo>
+    public List<HomeAvatarTalkFinishInfo>
             toAvatarTalkFinishInfoProto() {
         if (this.finishedTalkIdMap == null) {
             this.finishedTalkIdMap = new HashMap<>();
@@ -248,7 +277,7 @@ public class GameHome {
         return this.finishedTalkIdMap.entrySet().stream()
                 .map(
                         e -> {
-                            return HomeAvatarTalkFinishInfoOuterClass.HomeAvatarTalkFinishInfo.newBuilder()
+                            return HomeAvatarTalkFinishInfo.newBuilder()
                                     .setAvatarId(e.getKey())
                                     .addAllFinishTalkIdList(e.getValue())
                                     .build();
