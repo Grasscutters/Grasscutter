@@ -1,14 +1,15 @@
 package emu.grasscutter.game.home;
 
 import com.github.davidmoten.guavamini.Lists;
+import emu.grasscutter.game.home.suite.HomeSuiteItem;
 import emu.grasscutter.game.home.suite.event.HomeAvatarRewardEvent;
 import emu.grasscutter.game.home.suite.event.HomeAvatarSummonEvent;
 import emu.grasscutter.game.home.suite.event.SuiteEventType;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.net.proto.HomeAvatarRewardEventNotifyOuterClass;
-import emu.grasscutter.net.proto.HomeAvatarSummonAllEventNotifyOuterClass;
-import emu.grasscutter.net.proto.RetcodeOuterClass;
+import emu.grasscutter.net.proto.HomeAvatarRewardEventNotifyOuterClass.HomeAvatarRewardEventNotify;
+import emu.grasscutter.net.proto.HomeAvatarSummonAllEventNotifyOuterClass.HomeAvatarSummonAllEventNotify;
+import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
 import emu.grasscutter.server.packet.send.PacketHomeAvatarSummonAllEventNotify;
 import emu.grasscutter.utils.Either;
 import lombok.AccessLevel;
@@ -139,16 +140,16 @@ public class HomeModuleManager {
 
     public Either<List<GameItem>, Integer> claimAvatarRewards(int eventId) {
         if (this.rewardEvents.isEmpty()) {
-            return Either.right(RetcodeOuterClass.Retcode.RET_FAIL_VALUE);
+            return Either.right(Retcode.RET_FAIL_VALUE);
         }
 
         var event = this.rewardEvents.remove(0);
         if (event.getEventId() != eventId) {
-            return Either.right(RetcodeOuterClass.Retcode.RET_FAIL_VALUE);
+            return Either.right(Retcode.RET_FAIL_VALUE);
         }
 
         if (!this.homeOwner.getHome().onClaimAvatarRewards(eventId)) {
-            return Either.right(RetcodeOuterClass.Retcode.RET_FAIL_VALUE);
+            return Either.right(Retcode.RET_FAIL_VALUE);
         }
 
         return Either.left(event.giveRewards());
@@ -156,32 +157,34 @@ public class HomeModuleManager {
 
     public Either<HomeAvatarSummonEvent, Integer> fireAvatarSummonEvent(
         Player owner, int avatarId, int guid, int suiteId) {
-        var targetSuite =
-            ((HomeScene) owner.getScene())
+        HomeSuiteItem targetSuite = null;
+        if (owner.getScene() instanceof HomeScene homeScene) {
+            targetSuite = homeScene
                 .getSceneItem().getBlockItems().values().stream()
                 .map(HomeBlockItem::getSuiteList)
                 .flatMap(Collection::stream)
                 .filter(suite -> suite.getGuid() == guid)
                 .findFirst()
                 .orElse(null);
+        }
 
         if (this.isInRewardEvent(avatarId)) {
-            return Either.right(RetcodeOuterClass.Retcode.RET_DUPLICATE_AVATAR_VALUE);
+            return Either.right(Retcode.RET_DUPLICATE_AVATAR_VALUE);
         }
 
         if (this.rewardEvents.stream().anyMatch(event -> event.getGuid() == guid)) {
-            return Either.right(RetcodeOuterClass.Retcode.RET_HOME_FURNITURE_GUID_ERROR_VALUE);
+            return Either.right(Retcode.RET_HOME_FURNITURE_GUID_ERROR_VALUE);
         }
 
         this.summonEvents.removeIf(event -> event.getGuid() == guid || event.getAvatarId() == avatarId);
 
         if (targetSuite == null) {
-            return Either.right(RetcodeOuterClass.Retcode.RET_HOME_CLIENT_PARAM_INVALID_VALUE);
+            return Either.right(Retcode.RET_HOME_CLIENT_PARAM_INVALID_VALUE);
         }
 
         var eventData = SuiteEventType.HOME_AVATAR_SUMMON_EVENT.getEventDataFrom(avatarId, suiteId);
         if (eventData == null) {
-            return Either.right(RetcodeOuterClass.Retcode.RET_HOME_CLIENT_PARAM_INVALID_VALUE);
+            return Either.right(Retcode.RET_HOME_CLIENT_PARAM_INVALID_VALUE);
         }
 
         var event =
@@ -196,8 +199,8 @@ public class HomeModuleManager {
         this.summonEvents.removeIf(event -> event.getEventId() == eventId);
     }
 
-    public HomeAvatarRewardEventNotifyOuterClass.HomeAvatarRewardEventNotify toRewardEventProto() {
-        var notify = HomeAvatarRewardEventNotifyOuterClass.HomeAvatarRewardEventNotify.newBuilder();
+    public HomeAvatarRewardEventNotify toRewardEventProto() {
+        var notify = HomeAvatarRewardEventNotify.newBuilder();
         if (!this.rewardEvents.isEmpty()) {
             notify.setRewardEvent(this.rewardEvents.get(0).toProto()).setIsEventTrigger(true);
 
@@ -210,9 +213,8 @@ public class HomeModuleManager {
         return notify.build();
     }
 
-    public HomeAvatarSummonAllEventNotifyOuterClass.HomeAvatarSummonAllEventNotify
-    toSummonEventProto() {
-        return HomeAvatarSummonAllEventNotifyOuterClass.HomeAvatarSummonAllEventNotify.newBuilder()
+    public HomeAvatarSummonAllEventNotify toSummonEventProto() {
+        return HomeAvatarSummonAllEventNotify.newBuilder()
             .addAllSummonEventList(
                 this.summonEvents.stream().map(HomeAvatarSummonEvent::toProto).toList())
             .build();

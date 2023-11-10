@@ -303,6 +303,10 @@ public final class GameData {
             new Int2ObjectOpenHashMap<>();
 
     @Getter
+    private static final Int2ObjectMap<HomeWorldModuleData> homeWorldModuleDataMap =
+            new Int2ObjectOpenHashMap<>();
+
+    @Getter
     private static final Int2ObjectMap<HomeWorldNPCData> homeWorldNPCDataMap =
             new Int2ObjectOpenHashMap<>();
 

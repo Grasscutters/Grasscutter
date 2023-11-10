@@ -4,8 +4,8 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.packet.PacketOpcodes;
-import emu.grasscutter.net.proto.HomeChangeModuleReqOuterClass;
-import emu.grasscutter.net.proto.RetcodeOuterClass;
+import emu.grasscutter.net.proto.HomeChangeModuleReqOuterClass.HomeChangeModuleReq;
+import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
 import emu.grasscutter.server.event.player.PlayerTeleportEvent.TeleportType;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketHomeAvatarTalkFinishInfoNotify;
@@ -18,12 +18,11 @@ public class HandlerHomeChangeModuleReq extends PacketHandler {
 
     @Override
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
-        HomeChangeModuleReqOuterClass.HomeChangeModuleReq req =
-                HomeChangeModuleReqOuterClass.HomeChangeModuleReq.parseFrom(payload);
+        var req = HomeChangeModuleReq.parseFrom(payload);
 
         var homeWorld = session.getPlayer().getCurHomeWorld();
         if (!homeWorld.getGuests().isEmpty()) {
-            session.send(new PacketHomeChangeModuleRsp(RetcodeOuterClass.Retcode.RET_HOME_HAS_GUEST));
+            session.send(new PacketHomeChangeModuleRsp(Retcode.RET_HOME_HAS_GUEST));
             return;
         }
 
@@ -32,7 +31,7 @@ public class HandlerHomeChangeModuleReq extends PacketHandler {
 
         if (scene == null) {
             Grasscutter.getLogger().warn("scene == null! Changing module will fail.");
-            session.send(new PacketHomeChangeModuleRsp(RetcodeOuterClass.Retcode.RET_INVALID_SCENE_ID));
+            session.send(new PacketHomeChangeModuleRsp(Retcode.RET_INVALID_SCENE_ID));
             return;
         }
 

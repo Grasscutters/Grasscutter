@@ -12,6 +12,7 @@ import emu.grasscutter.game.props.SceneType;
 import emu.grasscutter.net.proto.HomeAvatarTalkFinishInfoOuterClass;
 import emu.grasscutter.server.packet.send.*;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import it.unimi.dsi.fastutil.ints.IntSets;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Data;
@@ -37,6 +38,9 @@ public class GameHome {
                                             || sceneData.getSceneType() == SceneType.SCENE_HOME_ROOM)
                     .map(SceneData::getId)
                     .collect(Collectors.toUnmodifiableSet());
+    public static final Set<Integer> HOME_MODULE_IDS =
+            GameData.getHomeWorldModuleDataMap().isEmpty() ?
+                    IntSets.fromTo(1, 6) : GameData.getHomeWorldModuleDataMap().keySet();
 
     @Id String id;
 
@@ -200,6 +204,8 @@ public class GameHome {
         if (this.player.hasSentLoginPackets() || this.player.getRealmList() == null) {
             return;
         }
+
+        this.player.getRealmList().removeIf(integer -> !HOME_MODULE_IDS.contains(integer)); // Delete invalid module ids.
 
         if (this.player.getRealmList().isEmpty()) {
             this.player.setRealmList(null);
