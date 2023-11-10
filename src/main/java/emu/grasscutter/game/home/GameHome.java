@@ -9,7 +9,7 @@ import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.SceneType;
-import emu.grasscutter.net.proto.HomeAvatarTalkFinishInfoOuterClass;
+import emu.grasscutter.net.proto.HomeAvatarTalkFinishInfoOuterClass.HomeAvatarTalkFinishInfo;
 import emu.grasscutter.server.packet.send.*;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.IntSets;
@@ -209,12 +209,14 @@ public class GameHome {
 
         if (this.player.getRealmList().isEmpty()) {
             this.player.setRealmList(null);
+            this.player.save();
             return;
         }
 
         if (this.player.getCurrentRealmId() <= 0 || !this.player.getCurHomeWorld().isRealmIdValid()) {
             int firstRId = this.player.getRealmList().iterator().next();
             this.player.setCurrentRealmId(firstRId);
+            this.player.save();
             Grasscutter.getLogger().info("Set player {}'s current realm id to {} cuz the id is invalid.", this.player.getUid(), firstRId);
         }
 
@@ -266,7 +268,7 @@ public class GameHome {
         return this.finishedTalkIdMap.get(avatarId);
     }
 
-    public List<HomeAvatarTalkFinishInfoOuterClass.HomeAvatarTalkFinishInfo>
+    public List<HomeAvatarTalkFinishInfo>
             toAvatarTalkFinishInfoProto() {
         if (this.finishedTalkIdMap == null) {
             this.finishedTalkIdMap = new HashMap<>();
@@ -275,7 +277,7 @@ public class GameHome {
         return this.finishedTalkIdMap.entrySet().stream()
                 .map(
                         e -> {
-                            return HomeAvatarTalkFinishInfoOuterClass.HomeAvatarTalkFinishInfo.newBuilder()
+                            return HomeAvatarTalkFinishInfo.newBuilder()
                                     .setAvatarId(e.getKey())
                                     .addAllFinishTalkIdList(e.getValue())
                                     .build();

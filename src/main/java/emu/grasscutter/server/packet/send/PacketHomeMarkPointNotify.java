@@ -6,8 +6,8 @@ import emu.grasscutter.game.home.HomeMarkPointProtoFactory;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
-import emu.grasscutter.net.proto.HomeMarkPointNotifyOuterClass;
-import emu.grasscutter.net.proto.HomeMarkPointSceneDataOuterClass;
+import emu.grasscutter.net.proto.HomeMarkPointNotifyOuterClass.HomeMarkPointNotify;
+import emu.grasscutter.net.proto.HomeMarkPointSceneDataOuterClass.HomeMarkPointSceneData;
 
 import java.util.Collection;
 import java.util.Set;
@@ -17,7 +17,7 @@ public class PacketHomeMarkPointNotify extends BasePacket {
     public PacketHomeMarkPointNotify(Player player) {
         super(PacketOpcodes.HomeMarkPointNotify);
 
-        var proto = HomeMarkPointNotifyOuterClass.HomeMarkPointNotify.newBuilder();
+        var proto = HomeMarkPointNotify.newBuilder();
         var world = player.getCurHomeWorld();
         var owner = world.getHost();
         var home = world.getHome();
@@ -40,7 +40,7 @@ public class PacketHomeMarkPointNotify extends BasePacket {
             .forEach(
                 homeSceneItem -> {
                     var markPointData =
-                        HomeMarkPointSceneDataOuterClass.HomeMarkPointSceneData.newBuilder()
+                        HomeMarkPointSceneData.newBuilder()
                             .setModuleId(moduleId)
                             .setSceneId(homeSceneItem.getSceneId());
 
