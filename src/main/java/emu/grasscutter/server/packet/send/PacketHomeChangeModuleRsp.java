@@ -10,10 +10,8 @@ public class PacketHomeChangeModuleRsp extends BasePacket {
     public PacketHomeChangeModuleRsp(int targetModuleId) {
         super(PacketOpcodes.HomeChangeModuleRsp);
 
-        var proto = HomeChangeModuleRsp.newBuilder()
-                .setRetcode(0)
-                .setTargetModuleId(targetModuleId)
-                .build();
+        var proto =
+                HomeChangeModuleRsp.newBuilder().setRetcode(0).setTargetModuleId(targetModuleId).build();
 
         this.setData(proto);
     }
@@ -21,7 +19,6 @@ public class PacketHomeChangeModuleRsp extends BasePacket {
     public PacketHomeChangeModuleRsp(Retcode retcode) {
         super(PacketOpcodes.HomeChangeModuleRsp);
 
-        this.setData(HomeChangeModuleRsp.newBuilder()
-            .setRetcode(retcode.getNumber()));
+        this.setData(HomeChangeModuleRsp.newBuilder().setRetcode(retcode.getNumber()));
     }
 }

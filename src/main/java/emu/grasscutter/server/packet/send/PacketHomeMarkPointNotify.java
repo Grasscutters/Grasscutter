@@ -8,7 +8,6 @@ import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.HomeMarkPointNotifyOuterClass.HomeMarkPointNotify;
 import emu.grasscutter.net.proto.HomeMarkPointSceneDataOuterClass.HomeMarkPointSceneData;
-
 import java.util.Collection;
 import java.util.Set;
 
@@ -30,41 +29,43 @@ public class PacketHomeMarkPointNotify extends BasePacket {
         var moduleId = owner.getCurrentRealmId();
         var scene = world.getSceneById(moduleId + 2000);
         if (scene == null) {
-            Grasscutter.getLogger().warn("Current Realm id is invalid! SceneExcelConfigData.json, game resource not loaded correctly or the realm id maybe wrong?!");
+            Grasscutter.getLogger()
+                    .warn(
+                            "Current Realm id is invalid! SceneExcelConfigData.json, game resource not loaded correctly or the realm id maybe wrong?!");
             return;
         }
         var homeScene = home.getHomeSceneItem(moduleId + 2000);
         var mainHouse = home.getMainHouseItem(moduleId + 2000);
 
         Set.of(homeScene, mainHouse)
-            .forEach(
-                homeSceneItem -> {
-                    var markPointData =
-                        HomeMarkPointSceneData.newBuilder()
-                            .setModuleId(moduleId)
-                            .setSceneId(homeSceneItem.getSceneId());
+                .forEach(
+                        homeSceneItem -> {
+                            var markPointData =
+                                    HomeMarkPointSceneData.newBuilder()
+                                            .setModuleId(moduleId)
+                                            .setSceneId(homeSceneItem.getSceneId());
 
-                    if (!homeSceneItem.isRoom()) {
-                        var config = scene.getScriptManager().getConfig();
-                        markPointData
-                            .setSafePointPos(
-                                config == null
-                                    ? homeSceneItem.getBornPos().toProto()
-                                    : config.born_pos.toProto())
-                            .setTeapotSpiritPos(homeSceneItem.getDjinnPos().toProto());
-                    }
+                            if (!homeSceneItem.isRoom()) {
+                                var config = scene.getScriptManager().getConfig();
+                                markPointData
+                                        .setSafePointPos(
+                                                config == null
+                                                        ? homeSceneItem.getBornPos().toProto()
+                                                        : config.born_pos.toProto())
+                                        .setTeapotSpiritPos(homeSceneItem.getDjinnPos().toProto());
+                            }
 
-                    var marks =
-                        homeSceneItem.getBlockItems().values().stream()
-                            .map(HomeBlockItem::getMarkPointProtoFactories)
-                            .flatMap(Collection::stream)
-                            .filter(HomeMarkPointProtoFactory::isProtoConvertible)
-                            .map(HomeMarkPointProtoFactory::toMarkPointProto)
-                            .toList();
+                            var marks =
+                                    homeSceneItem.getBlockItems().values().stream()
+                                            .map(HomeBlockItem::getMarkPointProtoFactories)
+                                            .flatMap(Collection::stream)
+                                            .filter(HomeMarkPointProtoFactory::isProtoConvertible)
+                                            .map(HomeMarkPointProtoFactory::toMarkPointProto)
+                                            .toList();
 
-                    markPointData.addAllFurnitureList(marks);
-                    proto.addMarkPointDataList(markPointData);
-                });
+                            markPointData.addAllFurnitureList(marks);
+                            proto.addMarkPointDataList(markPointData);
+                        });
 
         this.setData(proto);
     }

@@ -13,17 +13,16 @@ import emu.grasscutter.net.proto.HomeAvatarTalkFinishInfoOuterClass.HomeAvatarTa
 import emu.grasscutter.server.packet.send.*;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.IntSets;
-import lombok.AccessLevel;
-import lombok.Builder;
-import lombok.Data;
-import lombok.experimental.FieldDefaults;
-
 import java.time.ZonedDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+import lombok.AccessLevel;
+import lombok.Builder;
+import lombok.Data;
+import lombok.experimental.FieldDefaults;
 
 @Entity(value = "homes", useDiscriminator = false)
 @Data
@@ -39,8 +38,9 @@ public class GameHome {
                     .map(SceneData::getId)
                     .collect(Collectors.toUnmodifiableSet());
     public static final Set<Integer> HOME_MODULE_IDS =
-            GameData.getHomeWorldModuleDataMap().isEmpty() ?
-                    IntSets.fromTo(1, 6) : GameData.getHomeWorldModuleDataMap().keySet();
+            GameData.getHomeWorldModuleDataMap().isEmpty()
+                    ? IntSets.fromTo(1, 6)
+                    : GameData.getHomeWorldModuleDataMap().keySet();
 
     @Id String id;
 
@@ -205,7 +205,9 @@ public class GameHome {
             return;
         }
 
-        this.player.getRealmList().removeIf(integer -> !HOME_MODULE_IDS.contains(integer)); // Delete invalid module ids.
+        this.player
+                .getRealmList()
+                .removeIf(integer -> !HOME_MODULE_IDS.contains(integer)); // Delete invalid module ids.
 
         if (this.player.getRealmList().isEmpty()) {
             this.player.setRealmList(null);
@@ -217,7 +219,11 @@ public class GameHome {
             int firstRId = this.player.getRealmList().iterator().next();
             this.player.setCurrentRealmId(firstRId);
             this.player.save();
-            Grasscutter.getLogger().info("Set player {}'s current realm id to {} cuz the id is invalid.", this.player.getUid(), firstRId);
+            Grasscutter.getLogger()
+                    .info(
+                            "Set player {}'s current realm id to {} cuz the id is invalid.",
+                            this.player.getUid(),
+                            firstRId);
         }
 
         this.player.getCurHomeWorld().refreshModuleManager(); // Apply module id fix.
@@ -268,8 +274,7 @@ public class GameHome {
         return this.finishedTalkIdMap.get(avatarId);
     }
 
-    public List<HomeAvatarTalkFinishInfo>
-            toAvatarTalkFinishInfoProto() {
+    public List<HomeAvatarTalkFinishInfo> toAvatarTalkFinishInfoProto() {
         if (this.finishedTalkIdMap == null) {
             this.finishedTalkIdMap = new HashMap<>();
         }

@@ -10,11 +10,10 @@ import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.packet.send.PacketDelTeamEntityNotify;
 import emu.grasscutter.server.packet.send.PacketPlayerChatNotify;
 import emu.grasscutter.server.packet.send.PacketPlayerGameTimeNotify;
-import lombok.Getter;
-
-import javax.annotation.Nullable;
 import java.util.List;
 import java.util.function.Consumer;
+import javax.annotation.Nullable;
+import lombok.Getter;
 
 @Getter
 public class HomeWorld extends World {
@@ -170,8 +169,7 @@ public class HomeWorld extends World {
     }
 
     @Override
-    @Nullable
-    public HomeScene getSceneById(int sceneId) {
+    @Nullable public HomeScene getSceneById(int sceneId) {
         var scene = this.getScenes().get(sceneId);
         if (scene instanceof HomeScene homeScene) {
             return homeScene;

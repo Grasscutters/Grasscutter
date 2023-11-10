@@ -1,5 +1,7 @@
 package emu.grasscutter.game.world;
 
+import static emu.grasscutter.server.event.player.PlayerTeleportEvent.TeleportType.SCRIPT;
+
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.dungeon.DungeonData;
@@ -27,11 +29,6 @@ import io.netty.util.concurrent.FastThreadLocalThread;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMaps;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
-import lombok.Getter;
-import lombok.val;
-import org.jetbrains.annotations.NotNull;
-
-import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
@@ -40,8 +37,10 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
-
-import static emu.grasscutter.server.event.player.PlayerTeleportEvent.TeleportType.SCRIPT;
+import javax.annotation.Nullable;
+import lombok.Getter;
+import lombok.val;
+import org.jetbrains.annotations.NotNull;
 
 public class World implements Iterable<Player> {
     @Getter private final GameServer server;
@@ -140,8 +139,7 @@ public class World implements Iterable<Player> {
      * @param sceneId The scene ID.
      * @return The scene.
      */
-    @Nullable
-    public Scene getSceneById(int sceneId) {
+    @Nullable public Scene getSceneById(int sceneId) {
         // Get scene normally
         var scene = this.getScenes().get(sceneId);
         if (scene != null) {

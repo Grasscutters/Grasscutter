@@ -144,10 +144,7 @@ public class HomeWorldMPSystem extends BaseGameSystem {
 
         Position pos;
         if (scene != null) {
-            pos =
-                toSafe
-                    ? scene.getScriptManager().getConfig().born_pos
-                    : item.getBornPos();
+            pos = toSafe ? scene.getScriptManager().getConfig().born_pos : item.getBornPos();
         } else {
             pos = item.getBornPos();
         }
