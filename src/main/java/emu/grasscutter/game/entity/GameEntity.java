@@ -1,6 +1,8 @@
 package emu.grasscutter.game.entity;
 
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.binout.*;
 import emu.grasscutter.game.ability.*;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.*;
@@ -32,6 +34,8 @@ public abstract class GameEntity {
     @Getter @Setter private int lastMoveReliableSeq;
 
     @Getter @Setter private boolean lockHP;
+    private boolean limbo;
+    private float limboHpThreshold;
 
     @Setter(AccessLevel.PROTECTED)
     @Getter
@@ -110,6 +114,20 @@ public abstract class GameEntity {
                         });
     }
 
+    protected void setLimbo(float hpThreshold) {
+        limbo = true;
+        limboHpThreshold = hpThreshold;
+    }
+
+    public void onAddAbilityModifier(AbilityModifier data) {
+        // Set limbo state (invulnerability at a certain HP threshold)
+        // if ability modifier calls for it
+        if (data.state == AbilityModifier.State.Limbo &&
+                    data.properties != null && data.properties.Actor_HpThresholdRatio > .0f) {
+            this.setLimbo(data.properties.Actor_HpThresholdRatio);
+        }
+    }
+
     protected MotionInfo getMotionInfo() {
         return MotionInfo.newBuilder()
                 .setPos(this.getPosition().toProto())
@@ -167,11 +185,26 @@ public abstract class GameEntity {
             return; // If the event is canceled, do not damage the entity.
         }
 
+        float effectiveDamage = 0;
         float curHp = getFightProperty(FightProperty.FIGHT_PROP_CUR_HP);
-        if (curHp != Float.POSITIVE_INFINITY && !lockHP || lockHP && curHp <= event.getDamage()) {
-            // Add negative HP to the current HP property.
-            this.addFightProperty(FightProperty.FIGHT_PROP_CUR_HP, -(event.getDamage()));
+        if (limbo) {
+            float maxHp = getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
+            float curRatio = curHp / maxHp;
+            if (curRatio > limboHpThreshold) {
+                // OK if this hit takes HP below threshold.
+                effectiveDamage = event.getDamage();
+            }
+            if (effectiveDamage >= curHp && limboHpThreshold > .0f) {
+                // Don't let entity die while in limbo.
+                effectiveDamage = curHp - 1;
+            }
         }
+        else if (curHp != Float.POSITIVE_INFINITY && !lockHP || lockHP && curHp <= event.getDamage()) {
+            effectiveDamage = event.getDamage();
+        }
+
+        // Add negative HP to the current HP property.
+        this.addFightProperty(FightProperty.FIGHT_PROP_CUR_HP, -effectiveDamage);
 
         this.lastAttackType = attackType;
         this.checkIfDead();

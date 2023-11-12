@@ -167,7 +167,7 @@ public class World implements Iterable<Player> {
      * @param idType The entity type.
      * @return The next entity ID.
      */
-    public int getNextEntityId(EntityIdType idType) {
+    public synchronized int getNextEntityId(EntityIdType idType) {
         return (idType.getId() << 24) + ++this.nextEntityId;
     }
 

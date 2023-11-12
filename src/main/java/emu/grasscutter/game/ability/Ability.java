@@ -71,6 +71,24 @@ public class Ability {
                         .filter(action -> action.type == AbilityModifierAction.Type.AvatarSkillStart)
                         .map(action -> action.skillID)
                         .toList());
+
+        if (data.onAdded != null) {
+            processOnAddedAbilityModifiers();
+        }
+    }
+
+    public void processOnAddedAbilityModifiers() {
+        for (AbilityModifierAction modifierAction : data.onAdded) {
+            if (modifierAction.type == null) continue;
+
+            if (modifierAction.type == AbilityModifierAction.Type.ApplyModifier) {
+                if (modifierAction.modifierName == null) continue;
+                else if (!data.modifiers.containsKey(modifierAction.modifierName)) continue;
+
+                var modifierData = data.modifiers.get(modifierAction.modifierName);
+                owner.onAddAbilityModifier(modifierData);
+            }
+        }
     }
 
     public static String getAbilityName(AbilityString abString) {
