@@ -1,6 +1,5 @@
 package emu.grasscutter.game.entity;
 
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.binout.*;
 import emu.grasscutter.game.ability.*;
@@ -122,8 +121,9 @@ public abstract class GameEntity {
     public void onAddAbilityModifier(AbilityModifier data) {
         // Set limbo state (invulnerability at a certain HP threshold)
         // if ability modifier calls for it
-        if (data.state == AbilityModifier.State.Limbo &&
-                    data.properties != null && data.properties.Actor_HpThresholdRatio > .0f) {
+        if (data.state == AbilityModifier.State.Limbo
+                && data.properties != null
+                && data.properties.Actor_HpThresholdRatio > .0f) {
             this.setLimbo(data.properties.Actor_HpThresholdRatio);
         }
     }
@@ -198,8 +198,8 @@ public abstract class GameEntity {
                 // Don't let entity die while in limbo.
                 effectiveDamage = curHp - 1;
             }
-        }
-        else if (curHp != Float.POSITIVE_INFINITY && !lockHP || lockHP && curHp <= event.getDamage()) {
+        } else if (curHp != Float.POSITIVE_INFINITY && !lockHP
+                || lockHP && curHp <= event.getDamage()) {
             effectiveDamage = event.getDamage();
         }
 

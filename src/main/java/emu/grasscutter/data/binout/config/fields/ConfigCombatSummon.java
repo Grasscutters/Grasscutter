@@ -1,8 +1,7 @@
 package emu.grasscutter.data.binout.config.fields;
 
-import lombok.*;
-import lombok.experimental.FieldDefaults;
 import java.util.List;
+import lombok.*;
 
 @Data
 public class ConfigCombatSummon {

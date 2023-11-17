@@ -8,8 +8,8 @@ import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierAction;
 import emu.grasscutter.game.ability.Ability;
 import emu.grasscutter.game.entity.*;
 import emu.grasscutter.game.world.*;
-import emu.grasscutter.server.packet.send.PacketMonsterSummonTagNotify;
 import emu.grasscutter.net.proto.EPKDEHOJFLIOuterClass.EPKDEHOJFLI;
+import emu.grasscutter.server.packet.send.PacketMonsterSummonTagNotify;
 import emu.grasscutter.utils.*;
 
 @AbilityAction(AbilityModifierAction.Type.Summon)
@@ -26,7 +26,8 @@ public class ActionSummon extends AbilityActionHandler {
             //  13: Vector rot
             summonPosRot = EPKDEHOJFLI.parseFrom(abilityData);
         } catch (InvalidProtocolBufferException e) {
-            Grasscutter.getLogger().error("Failed to parse abilityData: {}", Utils.bytesToHex(abilityData.toByteArray()));
+            Grasscutter.getLogger()
+                    .error("Failed to parse abilityData: {}", Utils.bytesToHex(abilityData.toByteArray()));
             return false;
         }
 
@@ -51,8 +52,15 @@ public class ActionSummon extends AbilityActionHandler {
             scene.addEntity(entity);
             scene.getPlayers().get(0).sendPacket(new PacketMonsterSummonTagNotify(ownerEntity));
 
-            Grasscutter.getLogger().trace("Spawned entityId {} monsterId {} pos {} rot {}, target { {} }, action { {} }",
-                    entity.getId(), monsterId, pos, rot, target, action);
+            Grasscutter.getLogger()
+                    .trace(
+                            "Spawned entityId {} monsterId {} pos {} rot {}, target { {} }, action { {} }",
+                            entity.getId(),
+                            monsterId,
+                            pos,
+                            rot,
+                            target,
+                            action);
 
             return true;
         } else {

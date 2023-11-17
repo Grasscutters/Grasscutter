@@ -83,12 +83,15 @@ public class EntityMonster extends GameEntity {
             this.configEntityMonster = null;
         }
 
-        if (this.configEntityMonster != null &&
-                    this.configEntityMonster.getCombat() != null &&
-                    this.configEntityMonster.getCombat().getSummon() != null &&
-                    this.configEntityMonster.getCombat().getSummon().getSummonTags() != null) {
-            this.configEntityMonster.getCombat().getSummon().getSummonTags().forEach(
-                    t -> this.summonTagMap.put(t.getSummonTag(), null));
+        if (this.configEntityMonster != null
+                && this.configEntityMonster.getCombat() != null
+                && this.configEntityMonster.getCombat().getSummon() != null
+                && this.configEntityMonster.getCombat().getSummon().getSummonTags() != null) {
+            this.configEntityMonster
+                    .getCombat()
+                    .getSummon()
+                    .getSummonTags()
+                    .forEach(t -> this.summonTagMap.put(t.getSummonTag(), null));
         }
 
         // Monster weapon
@@ -408,13 +411,9 @@ public class EntityMonster extends GameEntity {
         var data = this.getMonsterData();
 
         var aiInfo =
-                SceneEntityAiInfo.newBuilder()
-                        .setIsAiOpen(true)
-                        .setBornPos(this.getBornPos().toProto());
+                SceneEntityAiInfo.newBuilder().setIsAiOpen(true).setBornPos(this.getBornPos().toProto());
         if (ownerEntityId != 0) {
-            aiInfo.setServantInfo(
-                    ServantInfo.newBuilder()
-                            .setMasterEntityId(ownerEntityId));
+            aiInfo.setServantInfo(ServantInfo.newBuilder().setMasterEntityId(ownerEntityId));
         }
 
         var authority =

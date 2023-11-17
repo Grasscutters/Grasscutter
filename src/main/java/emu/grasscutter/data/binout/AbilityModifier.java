@@ -332,7 +332,6 @@ public class AbilityModifier implements Serializable {
         public int monsterID;
         public int summonTag;
 
-
         public AbilityModifierAction[] actions;
         public AbilityModifierAction[] successActions;
         public AbilityModifierAction[] failActions;
