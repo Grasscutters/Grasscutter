@@ -25,6 +25,7 @@ import emu.grasscutter.net.proto.SceneEntityAiInfoOuterClass.SceneEntityAiInfo;
 import emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo;
 import emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.SceneMonsterInfo;
 import emu.grasscutter.net.proto.SceneWeaponInfoOuterClass.SceneWeaponInfo;
+import emu.grasscutter.net.proto.ServantInfoOuterClass.ServantInfo;
 import emu.grasscutter.scripts.constants.EventType;
 import emu.grasscutter.scripts.data.*;
 import emu.grasscutter.server.event.entity.EntityDamageEvent;
@@ -49,6 +50,9 @@ public class EntityMonster extends GameEntity {
     @Getter private final Position bornPos;
     @Getter private final int level;
     @Getter private EntityWeapon weaponEntity;
+    @Getter private Map<Integer, EntityMonster> summonTagMap;
+    @Getter @Setter private int summonedTag;
+    @Getter @Setter private int ownerEntityId;
     @Getter @Setter private int poseId;
     @Getter @Setter private int aiId = -1;
 
@@ -67,6 +71,9 @@ public class EntityMonster extends GameEntity {
         this.bornPos = this.getPosition().clone();
         this.level = level;
         this.playerOnBattle = new ArrayList<>();
+        this.summonTagMap = new HashMap<>();
+        this.summonedTag = 0;
+        this.ownerEntityId = 0;
 
         if (GameData.getMonsterMappingMap().containsKey(this.getMonsterId())) {
             this.configEntityMonster =
@@ -74,6 +81,14 @@ public class EntityMonster extends GameEntity {
                             .get(GameData.getMonsterMappingMap().get(this.getMonsterId()).getMonsterJson());
         } else {
             this.configEntityMonster = null;
+        }
+
+        if (this.configEntityMonster != null &&
+                    this.configEntityMonster.getCombat() != null &&
+                    this.configEntityMonster.getCombat().getSummon() != null &&
+                    this.configEntityMonster.getCombat().getSummon().getSummonTags() != null) {
+            this.configEntityMonster.getCombat().getSummon().getSummonTags().forEach(
+                    t -> this.summonTagMap.put(t.getSummonTag(), null));
         }
 
         // Monster weapon
@@ -316,6 +331,11 @@ public class EntityMonster extends GameEntity {
                 this.getMonsterData().getType().getValue());
         scene.triggerDungeonEvent(
                 DungeonPassConditionType.DUNGEON_COND_KILL_MONSTER, this.getMonsterId());
+
+        // If this entity spawned servants, kill those too.
+        summonTagMap.values().stream()
+                .filter(Objects::nonNull)
+                .forEach(entity -> scene.killEntity(entity, killerId));
     }
 
     public void recalcStats() {
@@ -387,14 +407,21 @@ public class EntityMonster extends GameEntity {
     public SceneEntityInfo toProto() {
         var data = this.getMonsterData();
 
+        var aiInfo =
+                SceneEntityAiInfo.newBuilder()
+                        .setIsAiOpen(true)
+                        .setBornPos(this.getBornPos().toProto());
+        if (ownerEntityId != 0) {
+            aiInfo.setServantInfo(
+                    ServantInfo.newBuilder()
+                            .setMasterEntityId(ownerEntityId));
+        }
+
         var authority =
                 EntityAuthorityInfo.newBuilder()
                         .setAbilityInfo(AbilitySyncStateInfo.newBuilder())
                         .setRendererChangedInfo(EntityRendererChangedInfo.newBuilder())
-                        .setAiInfo(
-                                SceneEntityAiInfo.newBuilder()
-                                        .setIsAiOpen(true)
-                                        .setBornPos(this.getBornPos().toProto()))
+                        .setAiInfo(aiInfo)
                         .setBornPos(this.getBornPos().toProto())
                         .build();
 
@@ -425,7 +452,10 @@ public class EntityMonster extends GameEntity {
                         .setAuthorityPeerId(this.getWorld().getHostPeerId())
                         .setPoseId(this.getPoseId())
                         .setBlockId(this.getScene().getId())
+                        .setSummonedTag(this.summonedTag)
+                        .setOwnerEntityId(this.ownerEntityId)
                         .setBornType(MonsterBornType.MONSTER_BORN_TYPE_DEFAULT);
+        summonTagMap.forEach((k, v) -> monsterInfo.putSummonTagMap(k, v == null ? 0 : 1));
 
         if (this.metaMonster != null) {
             if (this.metaMonster.special_name_id != 0) {
