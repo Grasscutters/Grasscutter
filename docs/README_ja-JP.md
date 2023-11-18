@@ -6,9 +6,9 @@
 [EN](README.md) | [简中](docs/README_zh-CN.md) | [繁中](docs/README_zh-TW.md) | [FR](docs/README_fr-FR.md) | [ES](docs/README_es-ES.md) | [HE](docs/README_HE.md) | [RU](docs/README_ru-RU.md) | [PL](docs/README_pl-PL.md) | [ID](docs/README_id-ID.md) | [KR](docs/README_ko-KR.md) | [FIL/PH](docs/README_fil-PH.md) | [NL](docs/README_NL.md) | [JP](docs/README_ja-JP.md) | [IT](docs/README_it-IT.md) | [VI](docs/README_vi-VN.md)
 
 
-**Attention:** 私たちはプロジェクトへの貢献者をいつでも歓迎します。貢献を追加する前に、我々の [行動規範](https://github.com/Grasscutters/Grasscutter/blob/stable/CONTRIBUTING.md)をよくお読みください。
+**Attention:** 私たちはプロジェクトへのコントリビュータをいつでも歓迎します。コントリビュートする前に、私たちの [行動規範](https://github.com/Grasscutters/Grasscutter/blob/stable/CONTRIBUTING.md)をよくお読みください。
 
-## 現在機能している物
+## 現在実装されている機能
 
 * ログイン
 * 戦闘
@@ -81,6 +81,6 @@ chmod +x gradlew
 
 生成されたjarファイルはプロジェクトフォルダのルートにあります。
 
-# トラブルシューティング
+### トラブルシューティング
 
 よく散見されるトラブルとそれに対する解決策のまとめリストや、質問し誰かの助けを得たい場合は、Grasscutterの[Discordサーバー](https://discord.gg/T5vZU6UyeG)に参加し、サポートチャンネルを参照してください。
