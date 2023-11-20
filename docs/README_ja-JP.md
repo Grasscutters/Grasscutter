@@ -3,81 +3,65 @@
 
 <div align="center"><a href="https://discord.gg/T5vZU6UyeG"><img alt="Discord - Grasscutter" src="https://img.shields.io/discord/965284035985305680?label=Discord&logo=discord&style=for-the-badge"></a></div>
 
-[EN](../README.md) | [简中](README_zh-CN.md) | [繁中](README_zh-TW.md) | [FR](README_fr-FR.md) | [ES](README_es-ES.md) | [HE](README_HE.md) | [RU](README_ru-RU.md) | [PL](README_pl-PL.md) | [ID](README_id-ID.md) | [KR](README_ko-KR.md) | [FIL/PH](README_fil-PH.md) | [NL](README_NL.md) | [JP](README_ja-JP.md) | [IT](README_it-IT.md) | [VI](README_vi-VN.md) | [हिंदी](README_hn-IN.md)
+[EN](README.md) | [简中](docs/README_zh-CN.md) | [繁中](docs/README_zh-TW.md) | [FR](docs/README_fr-FR.md) | [ES](docs/README_es-ES.md) | [HE](docs/README_HE.md) | [RU](docs/README_ru-RU.md) | [PL](docs/README_pl-PL.md) | [ID](docs/README_id-ID.md) | [KR](docs/README_ko-KR.md) | [FIL/PH](docs/README_fil-PH.md) | [NL](docs/README_NL.md) | [JP](docs/README_ja-JP.md) | [IT](docs/README_it-IT.md) | [VI](docs/README_vi-VN.md)
 
 
-**＊:** 私たちはプロジェクトへの貢献者をいつでも歓迎します。貢献を追加する前に、我々の [行動規範](https://github.com/Grasscutters/Grasscutter/blob/stable/CONTRIBUTING.md)をよくお読みください。
+**Attention:** 私たちはプロジェクトへのコントリビュータをいつでも歓迎します。コントリビュートする前に、私たちの [行動規範](https://github.com/Grasscutters/Grasscutter/blob/stable/CONTRIBUTING.md)をよくお読みください。
 
-## 現在機能している物
+## 現在実装されている機能
 
 * ログイン
 * 戦闘
 * フレンドリスト
 * テレポート
-* 祈願(ガチャ)
-* マルチプレイは一部機能しています
-* コンソールを使用してモンスターをスポーンさせる
+* 祈願 (ガチャ)
+* マルチプレイ (一部)
+* コンソールを通したモンスターのスポーン 
 * インベントリ機能 (アイテム/キャラクターの受け取り､アイテム/キャラクターのアップグレードなど)
 
-## クイックセットアップガイド
+## かんたんセットアップガイド
 
-**＊:** サポートが必要な場合はGrasscutterの[Discord](https://discord.gg/T5vZU6UyeG)に参加してください。
+**Note:** サポートが必要な場合はGrasscutterの[Discordサーバー](https://discord.gg/T5vZU6UyeG)に参加してください。
 
-### 動作環境
+### パパっとスタートアップ
 
-* [JAVAのバージョン17以降](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
+- [Java (バージョン17以降)](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html) を用意する
+- [MongoDB Community Server](https://www.mongodb.com/try/download/community) を用意する
+- ゲームバージョンがREL4.0.Xのものを用意する (4.0.Xのクライアントを持っていない場合は右のリンクからダウンロード): https://github.com/MAnggiarMustofa/GI-Download-Library/blob/main/GenshinImpact/Client/4.0.0.md
+- [最新の Cultivation](https://github.com/Grasscutters/Cultivation/releases/latest)をダウンロードする。`.msi`インストーラを使ってください。
+- 管理者権限を付与して Cultivation を実行した後、右上端にあるダウンロードアイコンのボタンを押す。 
+- `Download All-in-One` をクリックする
+- 右上端にある歯車アイコンのボタンをクリックする。
+- `Game Install Path` にゲームファイルのパスを指定する。
+- `Custom Java Path` に、自分が用意したJavaのパスを指定する。 (例: `C:\Program Files\Java\jdk-17\bin\java.exe`)
+- その他の設定には手を付けず次の段階に進む。
 
-  **＊:** サーバーを動作させるだけならjreのみで十分です｡ 開発をしたい場合JDKが必要になるかもしれません。
+- Launch の隣にある小さいボタンを押す。
+- Launchボタンを押す
+- 好きなユーザ名でログインする。パスワードは特段気にすることはない。
 
-* [MongoDB](https://www.mongodb.com/try/download/community) (バージョン4.0以降を推奨)
-
-* プロキシツール: [mitmproxy](https://mitmproxy.org/) (mitmdump, 推奨)、[Fiddler Classic](https://telerik-fiddler.s3.amazonaws.com/fiddler/FiddlerSetup.exe)、その他｡
-
-### 起動方法
-
-**＊:** もしサーバーをアップデートしたい場合は`config.json`を削除してから再生成してください。
-
-1. `grasscutter.jar`を入手する
-   - [releases](https://github.com/Grasscutters/Grasscutter/releases/latest) か [action](https://github.com/Grasscutters/Grasscutter/actions) からダウンロードするか、[自分でビルド](#ビルド)してください｡
-2. `grasscutter.jar` があるディレクトリに `resources` フォルダーを作成し、そこに `BinOutput, ExcelBinOutput, Readables, Scripts, Subtitle, TextMap` を移動してください *(`resources` フォルダの中身の入手方法については [wiki](https://github.com/Grasscutters/Grasscutter/wiki) を参照してください.)*
-3. コマンドプロンプトに`java -jar grasscutter.jar`を入力しGrasscutterを起動してください。**このときMongoDBも実行する必要があります。**
-
-### クライアントとの接続
-
-½. [このコマンド](https://github.com/Grasscutters/Grasscutter/wiki/Commands#commands-for-server-admins)をサーバーコンソールから使用してアカウントを作成してください｡
-
-1. 通信内容をリダイレクトする: (どちらか一つを選択してください)
-    - mitmdump: `mitmdump -s proxy.py -k`
-
-      - CA証明書を信頼する:
-
-        - **＊:** CA証明書は`%USERPROFILE%\.mitmproxy`に保存されています。ダブルクリックして[インストール](https://docs.microsoft.com/en-us/skype-sdk/sdn/articles/installing-the-trusted-root-certificate#installing-a-trusted-root-certificate)するか...
-
-        - コマンドライン経由でインストールします
-
-        ```shell
-        certutil -addstore root %USERPROFILE%\.mitmproxy\mitmproxy-ca-cert.cer
-        ```
-
-    - Fiddler Classic: Fiddler Classicを起動し(Tools -> Options -> HTTPS)から`Decrypt https traffic`をオンにしてください｡ (Tools -> Options -> Connections) に有るポート番号の設定を`8888`以外に設定してください。その後この[スクリプト](https://github.com/Grasscutters/Grasscutter/wiki/Resources#fiddler-classic-jscript)をFiddlerScriptタブにコピペしてロードします。
-
-    - [ホストファイル](https://github.com/Grasscutters/Grasscutter/wiki/Resources#hosts-file)
-
-2. ネットワークプロキシを `127.0.0.1:(自分で設定したポート番号)` に設定してください｡
-- mitmproxyを使用した場合：プロキシの設定と証明書のインストールが終わった後、http://mitm.it/ でトラフィックがmitmproxyを通過しているか確認しましょう。
-
-**`start.cmd`でmitmdumpとサーバーをまとめて起動することが出来ます。ただ、事前に`start_config.cmd`でJAVAのパスを指定している必要があります。**
 
 ### ビルド
 
-GrasscutterはGradleを使用して依存関係とビルドを処理しています。
+Grasscutterは依存関係とビルドの処理にGradleを使用しています。
 
-**要件:**
+**必要要件:**
 
-- [Java SE Development Kits - 17以降](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
+- [Java SE Development Kit 17以降](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
 - [Git](https://git-scm.com/downloads)
+- [NodeJS](https://nodejs.org/en/download) (任意、ハンドブックの生成に必要)
 
-##### Windows
+##### Clone
+```shell
+git clone --recurse-submodules https://github.com/Grasscutters/Grasscutter.git
+cd Grasscutter
+```
+
+##### Compile
+
+**Note:** 環境によってはハンドブックの生成が失敗する場合があります。ハンドブックの生成をさせない場合は `gradlew jar` コマンドに `-PskipHandbook=1` を付け加えてください。
+
+Windows:
 
 ```shell
 git clone https://github.com/Grasscutters/Grasscutter.git
@@ -86,7 +70,7 @@ cd Grasscutter
 .\gradlew jar # コンパイル
 ```
 
-##### Linux
+Linux:
 
 ```bash
 git clone https://github.com/Grasscutters/Grasscutter.git
@@ -95,13 +79,8 @@ chmod +x gradlew
 ./gradlew jar # コンパイル
 ```
 
-生成されたjarファイルはプロジェクトフォルダのルートに有ります。
+生成されたjarファイルはプロジェクトフォルダのルートにあります。
 
-### コマンドリストは[wiki](https://github.com/Grasscutters/Grasscutter/wiki/Commands)へ移動しました｡
+### トラブルシューティング
 
-# トラブルシューティング
-
-* コンパイルが失敗した場合JDKがインストールされているか確認してください。(JDKのバージョンが17以降であることと、環境変数でJDKのパスが設定されている必要があります)
-* クライアントが接続できない・ログインできない・エラーコード4206・またその他場合、ほとんどは、プロキシデーモンの設定が問題です。Fiddlerを使っている場合はデフォルトポートを8888以外の別のポートに変更してみてください。
-  Fiddlerを使用している場合はポートが8888以外に設定されていることを確認してください。
-* 起動シーケンス(順番): MongoDB > Grasscutter > プロキシツール (mitmdumpかfiddler、その他) > ゲーム
+よく散見されるトラブルとそれに対する解決策のまとめリストや、質問し誰かの助けを得たい場合は、Grasscutterの[Discordサーバー](https://discord.gg/T5vZU6UyeG)に参加し、サポートチャンネルを参照してください。
