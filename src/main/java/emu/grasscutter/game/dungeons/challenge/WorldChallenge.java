@@ -29,7 +29,7 @@ public class WorldChallenge {
     private final AtomicInteger score;
     private boolean progress;
     private boolean success;
-    private long startedAt;
+    private int startedAt;
     private int finishedTime;
 
     /**
