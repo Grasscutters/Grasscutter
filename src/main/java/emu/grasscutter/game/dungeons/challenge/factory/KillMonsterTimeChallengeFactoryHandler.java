@@ -35,7 +35,8 @@ public class KillMonsterTimeChallengeFactoryHandler implements ChallengeFactoryH
         val challengeData = GameData.getDungeonChallengeConfigDataMap().get(challengeId);
         val challengeType = challengeData.getChallengeType();
         if (challengeType == ChallengeType.CHALLENGE_KILL_COUNT_FAST) {
-            challengeTriggers.add(new KillMonsterTimeIncTrigger(timeLimit, 0 /* refresh to original limit on kill */));
+            challengeTriggers.add(
+                    new KillMonsterTimeIncTrigger(timeLimit, 0 /* refresh to original limit on kill */));
         }
 
         return new WorldChallenge(

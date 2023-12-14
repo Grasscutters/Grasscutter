@@ -15,7 +15,7 @@ public class KillMonsterTimeIncTrigger extends ChallengeTrigger {
     }
 
     @Override
-    public void onBegin(WorldChallenge challenge) { }
+    public void onBegin(WorldChallenge challenge) {}
 
     @Override
     public void onMonsterDeath(WorldChallenge challenge, EntityMonster monster) {
@@ -31,6 +31,8 @@ public class KillMonsterTimeIncTrigger extends ChallengeTrigger {
             increment -= timeLeft + increment - maxTime;
         }
         challenge.setTimeLimit(challenge.getTimeLimit() + increment);
-        scene.broadcastPacket(new PacketChallengeDataNotify(challenge, 2, timeLeft + increment + scene.getSceneTimeSeconds()));
+        scene.broadcastPacket(
+                new PacketChallengeDataNotify(
+                        challenge, 2, timeLeft + increment + scene.getSceneTimeSeconds()));
     }
 }
