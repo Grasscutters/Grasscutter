@@ -1,11 +1,12 @@
 package emu.grasscutter.game.dungeons.challenge.factory;
 
+import emu.grasscutter.data.GameData;
 import emu.grasscutter.game.dungeons.challenge.WorldChallenge;
 import emu.grasscutter.game.dungeons.challenge.enums.ChallengeType;
 import emu.grasscutter.game.dungeons.challenge.trigger.*;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.scripts.data.SceneGroup;
-import java.util.List;
+import java.util.*;
 import lombok.val;
 
 public class KillMonsterTimeChallengeFactoryHandler implements ChallengeFactoryHandler {
@@ -28,6 +29,15 @@ public class KillMonsterTimeChallengeFactoryHandler implements ChallengeFactoryH
             Scene scene,
             SceneGroup group) {
         val realGroup = scene.getScriptManager().getGroupById(groupId);
+        val challengeTriggers = new ArrayList<ChallengeTrigger>();
+        challengeTriggers.addAll(List.of(new KillMonsterCountTrigger(), new InTimeTrigger()));
+
+        val challengeData = GameData.getDungeonChallengeConfigDataMap().get(challengeId);
+        val challengeType = challengeData.getChallengeType();
+        if (challengeType == ChallengeType.CHALLENGE_KILL_COUNT_FAST) {
+            challengeTriggers.add(new KillMonsterTimeIncTrigger(timeLimit, 0 /* refresh to original limit on kill */));
+        }
+
         return new WorldChallenge(
                 scene,
                 realGroup,
@@ -36,6 +46,6 @@ public class KillMonsterTimeChallengeFactoryHandler implements ChallengeFactoryH
                 List.of(targetCount, timeLimit),
                 timeLimit, // Limit
                 targetCount, // Goal
-                List.of(new KillMonsterCountTrigger(), new InTimeTrigger()));
+                challengeTriggers);
     }
 }

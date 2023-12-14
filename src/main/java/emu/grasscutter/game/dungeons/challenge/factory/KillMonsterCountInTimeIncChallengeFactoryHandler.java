@@ -36,6 +36,6 @@ public class KillMonsterCountInTimeIncChallengeFactoryHandler implements Challen
                 List.of(
                         new KillMonsterCountTrigger(),
                         new InTimeTrigger(),
-                        new KillMonsterTimeIncTrigger(timeInc)));
+                        new KillMonsterTimeIncTrigger(timeLimit, timeInc)));
     }
 }

@@ -222,7 +222,9 @@ public class EntityMonster extends GameEntity {
     }
 
     @Override
-    public void onCreate() {
+    public void onTick(int sceneTime) {
+        super.onTick(sceneTime);
+
         // Lua event
         getScene()
                 .getScriptManager()
