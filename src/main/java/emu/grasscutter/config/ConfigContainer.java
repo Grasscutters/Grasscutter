@@ -263,12 +263,17 @@ public class ConfigContainer {
     /* Option containers. */
 
     public static class Database {
-        public DataStore server = new DataStore();
-        public DataStore game = new DataStore();
+        public DataStore server = new DataStore("SERVER");
+        public DataStore game = new DataStore("GAME");
 
         public static class DataStore {
-            public String connectionUri = "mongodb://localhost:27017";
-            public String collection = "grasscutter";
+            public String connectionUri;
+            public String collection;
+
+            public DataStore(String key) {
+                this.connectionUri = getStringFromEnv("DATABASE_INFO_" + key + "_CONNECTION_URI", "mongodb://localhost:27017");
+                this.collection = getStringFromEnv("DABASE_INFO_" + key + "_COLLECTION", "grasscutter");
+            }
         }
     }
 
