@@ -20,9 +20,6 @@ RUN apt-get update && apt-get install unzip
 
 WORKDIR /app
 
-# Install bun for generating the configuration file
-RUN curl -fsSL https://bun.sh/install | bash -s "bun-v1.0.0"
-
 # Copy built assets
 COPY --from=builder /app/grasscutter-1.7.4.jar /app/grasscutter.jar
 COPY --from=builder /app/keystore.p12 /app/keystore.p12
@@ -31,7 +28,7 @@ COPY --from=builder /app/keystore.p12 /app/keystore.p12
 COPY --from=data /app/GC-Resources/Resources /app/resources/
 
 # Copy startup files
-COPY ./entrypoint.sh ./generate-config.ts /app/
+COPY ./entrypoint.sh /app/
 
 CMD [ "sh", "/app/entrypoint.sh" ]
 
