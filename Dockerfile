@@ -15,7 +15,7 @@ WORKDIR /app
 
 RUN git clone --branch ${DATA_BRANCH} --depth 1 ${DATA_REPOSITORY}
 
-FROM bitnami/java:21.0.1-12
+FROM bitnami/java:17.0.9-11
 
 RUN apt-get update && apt-get install unzip
 
