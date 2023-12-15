@@ -272,7 +272,7 @@ public class ConfigContainer {
 
             public DataStore(String key) {
                 this.connectionUri = getStringFromEnv("DATABASE_INFO_" + key + "_CONNECTION_URI", "mongodb://localhost:27017");
-                this.collection = getStringFromEnv("DABASE_INFO_" + key + "_COLLECTION", "grasscutter");
+                this.collection = getStringFromEnv("DATABASE_INFO_" + key + "_COLLECTION", "grasscutter");
             }
         }
     }
