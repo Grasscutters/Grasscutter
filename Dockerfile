@@ -8,11 +8,12 @@ RUN gradle jar --no-daemon
 
 FROM bitnami/git:2.43.0-debian-11-r1 as data
 
+ARG DATA_REPOSITORY=https://gitlab.com/YuukiPS/GC-Resources.git
 ARG DATA_BRANCH=4.0
 
 WORKDIR /app
 
-RUN git clone --branch ${DATA_BRANCH} --depth 1 https://gitlab.com/YuukiPS/GC-Resources.git
+RUN git clone --branch ${DATA_BRANCH} --depth 1 ${DATA_REPOSITORY}
 
 FROM bitnami/java:21.0.1-12
 
