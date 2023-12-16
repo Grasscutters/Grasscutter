@@ -191,6 +191,24 @@ public class ConfigContainer {
         return currentValue.split(separator);
     }
 
+    /**
+     * Retrieves the given key from the environment variables and tries to parse it as an int array.
+     * <p>
+     * If the environment variable is not present or the parsing fails then the default value will be returned.
+     * <p>
+     * It expects the following structure:
+     * <p>
+     * 1,2
+     * <p>
+     * | |- second entry
+     * <p>
+     * |- first entry
+     *
+     * @param key          The name of the environment variable to parse
+     * @param defaultValue The default value when the environment variable does not exist
+     * @param separator    The separator which will be used for splitting up the string
+     * @return The parsed int array or the default value
+     */
     static int[] getIntArrayFromEnv(String key, int[] defaultValue, String separator) {
         var currentValue = System.getenv(key);
 
@@ -201,6 +219,27 @@ public class ConfigContainer {
         return Arrays.stream(currentValue.split(separator)).mapToInt(Integer::parseInt).toArray();
     }
 
+    /**
+     * Retrieves the given key from the environment variables and tries to parse it as a MailItem array.
+     * <p>
+     * If the environment variable is not present or the parsing fails then the default value will be returned.
+     * <p>
+     * It expects the following structure:
+     * <p>
+     * 1,1,1|2,1,1
+     * <p>
+     * | | |- Item level
+     * <p>
+     * | |- Item count
+     * <p>
+     * |- Item ID
+     *
+     * @param key             The name of the environment variable to parse
+     * @param defaultValue    The default value when the environment variable does not exist
+     * @param partsSeparator  The separator which will be used for splitting up the string into parts
+     * @param valuesSeparator The separator which will be used for splitting up the parts into values
+     * @return The parsed MailItem array or the default value
+     */
     static emu.grasscutter.game.mail.Mail.MailItem[] getMailItemsFromEnv(String key, emu.grasscutter.game.mail.Mail.MailItem[] defaultValue, String partsSeparator, String valuesSeparator) {
         var currentValue = System.getenv(key);
 
@@ -219,6 +258,26 @@ public class ConfigContainer {
         }).toArray();
     }
 
+    /**
+     * Retrieves the given key from the environment variables and tries to parse it as a MailItem array.
+     * <p>
+     * If the environment variable is not present or the parsing fails then the default value will be returned.
+     * <p>
+     * It expects the following structure:
+     * VISION_LEVEL_NORMAL,80,20|VISION_LEVEL_LITTLE_REMOTE,16,40
+     * <p>
+     * |                   |  |- Grid width
+     * <p>
+     * |                   |- Vision range
+     * <p>
+     * |- Name
+     *
+     * @param key             The name of the environment variable to parse
+     * @param defaultValue    The default value when the environment variable does not exist
+     * @param partsSeparator  The separator which will be used for splitting up the string into parts
+     * @param valuesSeparator The separator which will be used for splitting up the parts into values
+     * @return The parsed VisionOptions or the default value
+     */
     static VisionOptions[] getVisionOptionsFromEnv(String key, VisionOptions[] defaultValue, String partsSeparator, String valuesSeparator) {
         var currentValue = System.getenv(key);
 
@@ -236,6 +295,29 @@ public class ConfigContainer {
         }).toArray();
     }
 
+    /**
+     * Retrieves the given key from the environment variables and tries to parse it as a Region array.
+     * <p>
+     * If the environment variable is not present or the parsing fails then the default value will be returned.
+     * <p>
+     * It expects the following structure:
+     * <p>
+     * my region,my title,127.0.0.1,1337|my second region, my second title,127.0.0.1,42
+     * <p>
+     * |         |        |         |- port
+     * <p>
+     * |         |        |- address
+     * <p>
+     * |         |- title
+     * <p>
+     * |- name
+     *
+     * @param key             The name of the environment variable to parse
+     * @param defaultValue    The default value when the environment variable does not exist
+     * @param partsSeparator  The separator which will be used for splitting up the string into parts
+     * @param valuesSeparator The separator which will be used for splitting up the parts into values
+     * @return The parsed Region list or the default value
+     */
     static List<Region> getRegionsFromEnv(String key, List<Region> defaultValue, String partsSeparator, String valuesSeparator) {
         var currentValue = System.getenv(key);
 
