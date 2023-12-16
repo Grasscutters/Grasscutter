@@ -111,6 +111,14 @@ public class ConfigContainer {
      * Retrieves the given from the environment variables and tries to parse it as a Set<String>.
      * <p>
      * If the environment variable is not present or the parsing fails then the default value will be returned.
+     * <p>
+     * It expects the following structure:
+     * <p>
+     * hello,world
+     * <p>
+     * |     |- second entry
+     * <p>
+     * |- first entry
      *
      * @param key          The name of the environment variable to parse
      * @param defaultValue The default value when the environment variable does not exist or is not a valid set
@@ -130,9 +138,17 @@ public class ConfigContainer {
     }
 
     /**
-     * Retrieves the given key from the environment variables and tries to parse it as a string array.
+     * Retrieves the given key from the environment variables and tries to parse it as a Set<int>.
      * <p>
      * If the environment variable is not present or the parsing fails then the default value will be returned.
+     * <p>
+     * It expects the following structure:
+     * <p>
+     * 42,1337
+     * <p>
+     * |  |- second entry
+     * <p>
+     * |- first entry
      *
      * @param key          The name of the environment variable
      * @param defaultValue The default value when the environment variable does not exist
@@ -175,6 +191,14 @@ public class ConfigContainer {
      * Retrieves the given key from the environment variables and tries to parse it as string array.
      * <p>
      * If the environment variable is not present or the parsing fails then the default value will be returned.
+     * <p>
+     * It expects the following structure:
+     * <p>
+     * hello,world
+     * <p>
+     * |     |- second entry
+     * <p>
+     * |- first entry
      *
      * @param key          The name of the environment variable to parse
      * @param defaultValue The default value when the environment variable does not exist
