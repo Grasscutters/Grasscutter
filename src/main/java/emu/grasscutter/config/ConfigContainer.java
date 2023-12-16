@@ -403,7 +403,7 @@ public class ConfigContainer {
         public boolean logCommands = getBoolFromEnv("SERVER_LOG_COMMANDS", false);
 
         /**
-         * If enabled, the 'require' Lua function will load the script's compiled varient into the context. (faster; doesn't work as well)
+         * If enabled, the 'require' Lua function will load the script's compiled variant into the context. (faster; doesn't work as well)
          * If disabled, all 'require' calls will be replaced with the referenced script's source. (slower; works better)
          */
         public boolean fastRequire = getBoolFromEnv("SERVER_FAST_REQUIRE", true);
