@@ -26,7 +26,7 @@
 
 - Get Java 17: https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html
 - Get [MongoDB Community Server](https://www.mongodb.com/try/download/community)
-- Get game version REL4.0.x (4.0.x client can be found here if you don't have it): https://github.com/MAnggiarMustofa/GI-Download-Library/blob/main/GenshinImpact/Client/4.0.0.md
+- Get game version REL4.0.x (4.0.x client can be found here if you don't have it): https://github.com/JRSKelvin/GenshinRepository/blob/main/Version%204.0.0.md
 
 - Download the [latest Cultivation version](https://github.com/Grasscutters/Cultivation/releases/latest). Use the `.msi` installer.
 - After opening Cultivation (as admin), press the download button in the upper right corner. 
@@ -38,7 +38,7 @@
 
 - Click the small button next to launch.
 - Click the launch button.
-- Log in with whatever username you want. Password doesn't matter.
+- Log in with whatever username you want. Password can be anything.
 
 ### Building
 
