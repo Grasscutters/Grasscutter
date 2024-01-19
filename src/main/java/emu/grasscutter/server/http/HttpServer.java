@@ -218,6 +218,8 @@ public final class HttpServer {
 
                             <body>
                                 <img src="https://http.cat/404" />
+                                <h1>Grasscutter cannot find the route you're trying to access.</h1>
+                                <p>Your proxy is active, so if you're trying to download something close the game/stop the proxy.</p>
                             </body>
                         </html>
                         """);
