@@ -24,9 +24,11 @@
 
 ### Quick Start (automatic)
 
-- Get Java 17: https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html
+- Get [Java 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
 - Get [MongoDB Community Server](https://www.mongodb.com/try/download/community)
-- Get game version REL4.0.x (4.0.x client can be found here if you don't have it): https://github.com/JRSKelvin/GenshinRepository/blob/main/Version%204.0.0.md
+- Get game version REL4.0.x (If you don't have a 4.0.x client, you can find it here and open any of the links to download it):
+[4.0.x Client-github](https://github.com/JRSKelvin/GenshinRepository/blob/main/Version%204.0.0.md)
+[4.0.x Client-cloud drive](https://www.123pan.com/s/HoqUVv-U7SBA.html)
 
 - Download the [latest Cultivation version](https://github.com/Grasscutters/Cultivation/releases/latest). Use the `.msi` installer.
 - After opening Cultivation (as admin), press the download button in the upper right corner. 

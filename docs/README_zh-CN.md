@@ -26,7 +26,9 @@
 
 - 获取Java 17：https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html
 - 获取[MongoDB社区版](https://www.mongodb.com/try/download/community)
-- 获取游戏4.0正式版 (如果你没有4.0的客户端，可以在这里找到）：https://github.com/MAnggiarMustofa/GI-Download-Library/blob/main/GenshinImpact/Client/4.0.0.md)
+- 获取游戏4.0正式版 (如果你没有4.0的客户端，可以在这里找到）：
+[123pan share](https://www.123pan.com/s/HoqUVv-U7SBA.html)
+[github](https://github.com/JRSKelvin/GenshinRepository/blob/main/Version%204.0.0.md)
 
 - 下载[最新的Cultivation版本](https://github.com/Grasscutters/Cultivation/releases/latest)（使用以“.msi”为后缀的安装包）。
 - 以管理员身份打开Cultivation，按右上角的下载按钮。
