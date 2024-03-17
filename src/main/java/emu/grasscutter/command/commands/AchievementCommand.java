@@ -1,12 +1,23 @@
 package emu.grasscutter.command.commands;
 
-import emu.grasscutter.command.*;
+import com.mojang.brigadier.CommandDispatcher;
+import com.mojang.brigadier.arguments.IntegerArgumentType;
+import emu.grasscutter.command.BrigadierCommand;
+import emu.grasscutter.command.Command;
+import emu.grasscutter.command.arguments.player.PlayerArgument;
+import emu.grasscutter.command.source.CommandSource;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.achievement.AchievementData;
-import emu.grasscutter.game.achievement.*;
+import emu.grasscutter.game.achievement.AchievementControlReturns;
+import emu.grasscutter.game.achievement.Achievements;
 import emu.grasscutter.game.player.Player;
-import java.util.*;
+import emu.grasscutter.utils.text.Text;
+
 import java.util.concurrent.atomic.AtomicInteger;
+
+import static emu.grasscutter.command.CommandManager.argument;
+import static emu.grasscutter.command.CommandManager.literal;
+import static emu.grasscutter.game.achievement.AchievementControlReturns.Return.SUCCESS;
 
 @Command(
         label = "achievement",
@@ -20,136 +31,103 @@ import java.util.concurrent.atomic.AtomicInteger;
         permission = "player.achievement",
         permissionTargeted = "player.achievement.others",
         targetRequirement = Command.TargetRequirement.PLAYER,
-        threading = true)
-public final class AchievementCommand implements CommandHandler {
-    private static void sendSuccessMessage(Player sender, String cmd, Object... args) {
-        CommandHandler.sendTranslatedMessage(
-                sender, AchievementControlReturns.Return.SUCCESS.getKey() + cmd, args);
+        brigadier = true)
+public final class AchievementCommand implements BrigadierCommand {
+    public static void register(CommandDispatcher<CommandSource> dispatcher) {
+        var achievement =
+            dispatcher.register(
+                literal("achievement")
+                    .then(argument("target", PlayerArgument.player())
+                        .then(literal("grant")
+                            .then(argument("id", IntegerArgumentType.integer())
+                                .executes(context -> {
+                                    return grant(context.getSource(), PlayerArgument.getPlayer(context, "target"), IntegerArgumentType.getInteger(context, "id"));
+                                })))
+
+                        .then(literal("revoke")
+                            .then(argument("id", IntegerArgumentType.integer())
+                                .executes(context -> {
+                                    return revoke(context.getSource(), PlayerArgument.getPlayer(context, "target"), IntegerArgumentType.getInteger(context, "id"));
+                                })))
+
+                        .then(literal("progress")
+                            .then(argument("id", IntegerArgumentType.integer())
+                                .then(argument("progress", IntegerArgumentType.integer())
+                                    .executes(context -> {
+                                        return progress(context.getSource(), PlayerArgument.getPlayer(context, "target"), IntegerArgumentType.getInteger(context, "id"), IntegerArgumentType.getInteger(context, "progress"));
+                                    }))))
+
+                        .then(literal("grantall").executes(context -> {
+                            return grantAll(context.getSource(), PlayerArgument.getPlayer(context, "target"));
+                        }))
+
+                        .then(literal("revokeall").executes(context -> {
+                            return revokeAll(context.getSource(), PlayerArgument.getPlayer(context, "target"));
+                        }))));
+
+        dispatcher.register(literal("am").redirect(achievement)); // alias: /am
     }
 
-    private static Optional<Integer> parseInt(String s) {
-        try {
-            return Optional.of(Integer.parseInt(s));
-        } catch (NumberFormatException e) {
-            return Optional.empty();
-        }
+    private static int grant(CommandSource source, Player target, int id) {
+        var achievements = Achievements.getByPlayer(target);
+        sendResult(source, achievements.grant(id).getRet(), "grant", target, target.getNickname());
+        return id;
     }
 
-    private static void grantAll(Player sender, Player targetPlayer, Achievements achievements) {
+    private static int revoke(CommandSource source, Player target, int id) {
+        var achievement = Achievements.getByPlayer(target);
+        sendResult(source, achievement.revoke(id).getRet(), "revoke", target, target.getNickname());
+        return id;
+    }
+
+    private static int progress(CommandSource source, Player target, int id, int progress) {
+        var achievements = Achievements.getByPlayer(target);
+        sendResult(source, achievements.progress(id, progress).getRet(), "progress", target, target.getNickname(), id, progress);
+        return id;
+    }
+
+    private static int grantAll(CommandSource source, Player target) {
+        var achievements = Achievements.getByPlayer(target);
         var counter = new AtomicInteger();
         GameData.getAchievementDataMap().values().stream()
-                .filter(AchievementData::isUsed)
-                .filter(AchievementData::isParent)
-                .forEach(
-                        data -> {
-                            var success = achievements.grant(data.getId());
-                            if (success.getRet() == AchievementControlReturns.Return.SUCCESS) {
-                                counter.addAndGet(success.getChangedAchievementStatusNum());
-                            }
-                        });
+            .filter(AchievementData::isUsed)
+            .filter(AchievementData::isParent)
+            .forEach(
+                data -> {
+                    var success = achievements.grant(data.getId());
+                    if (success.getRet() == AchievementControlReturns.Return.SUCCESS) {
+                        counter.addAndGet(success.getChangedAchievementStatusNum());
+                    }
+                });
 
-        sendSuccessMessage(sender, "grantall", counter.intValue(), targetPlayer.getNickname());
+        sendResult(source, SUCCESS, "grantall", target, counter.intValue(), target.getNickname());
+        return counter.intValue();
     }
 
-    private static void revokeAll(Player sender, Player targetPlayer, Achievements achievements) {
+    private static int revokeAll(CommandSource source, Player target) {
+        var achievements = Achievements.getByPlayer(target);
         var counter = new AtomicInteger();
         GameData.getAchievementDataMap().values().stream()
-                .filter(AchievementData::isUsed)
-                .filter(AchievementData::isParent)
-                .forEach(
-                        data -> {
-                            var success = achievements.revoke(data.getId());
-                            if (success.getRet() == AchievementControlReturns.Return.SUCCESS) {
-                                counter.addAndGet(success.getChangedAchievementStatusNum());
-                            }
-                        });
+            .filter(AchievementData::isUsed)
+            .filter(AchievementData::isParent)
+            .forEach(
+                data -> {
+                    var success = achievements.revoke(data.getId());
+                    if (success.getRet() == AchievementControlReturns.Return.SUCCESS) {
+                        counter.addAndGet(success.getChangedAchievementStatusNum());
+                    }
+                });
 
-        sendSuccessMessage(sender, "revokeall", counter.intValue(), targetPlayer.getNickname());
+        sendResult(source, SUCCESS, "revokeall", target, counter.intValue(), target.getNickname());
+        return counter.intValue();
     }
 
-    @Override
-    public void execute(Player sender, Player targetPlayer, List<String> args) {
-        if (args.size() < 1) {
-            this.sendUsageMessage(sender);
-            return;
+    private static void sendResult(CommandSource source, AchievementControlReturns.Return ret, String cmdArg, Player target, Object... successArgs) {
+        switch (ret) {
+            case SUCCESS -> source.sendMessage(Text.translatable(SUCCESS.getKey() + cmdArg, successArgs));
+            case ACHIEVEMENT_NOT_FOUND -> source.sendFailure(Text.translatable(ret.getKey()));
+            case ALREADY_ACHIEVED,
+                NOT_YET_ACHIEVED -> source.sendFailure(Text.translatable(ret.getKey(), target.getNickname()));
         }
-
-        var command = args.remove(0).toLowerCase();
-        var achievements = Achievements.getByPlayer(targetPlayer);
-        switch (command) {
-            case "grant" -> this.grant(sender, targetPlayer, achievements, args);
-            case "revoke" -> this.revoke(sender, targetPlayer, achievements, args);
-            case "progress" -> this.progress(sender, targetPlayer, achievements, args);
-            case "grantall" -> grantAll(sender, targetPlayer, achievements);
-            case "revokeall" -> revokeAll(sender, targetPlayer, achievements);
-            default -> this.sendUsageMessage(sender);
-        }
-    }
-
-    private void grant(
-            Player sender, Player targetPlayer, Achievements achievements, List<String> args) {
-        if (args.size() < 1) {
-            this.sendUsageMessage(sender);
-        }
-
-        parseInt(args.remove(0))
-                .ifPresentOrElse(
-                        integer -> {
-                            var ret = achievements.grant(integer);
-                            switch (ret.getRet()) {
-                                case SUCCESS -> sendSuccessMessage(sender, "grant", targetPlayer.getNickname());
-                                case ACHIEVEMENT_NOT_FOUND -> CommandHandler.sendTranslatedMessage(
-                                        sender, ret.getRet().getKey());
-                                case ALREADY_ACHIEVED -> CommandHandler.sendTranslatedMessage(
-                                        sender, ret.getRet().getKey(), targetPlayer.getNickname());
-                            }
-                        },
-                        () -> this.sendUsageMessage(sender));
-    }
-
-    private void revoke(
-            Player sender, Player targetPlayer, Achievements achievements, List<String> args) {
-        if (args.size() < 1) {
-            this.sendUsageMessage(sender);
-        }
-
-        parseInt(args.remove(0))
-                .ifPresentOrElse(
-                        integer -> {
-                            var ret = achievements.revoke(integer);
-                            switch (ret.getRet()) {
-                                case SUCCESS -> sendSuccessMessage(sender, "revoke", targetPlayer.getNickname());
-                                case ACHIEVEMENT_NOT_FOUND -> CommandHandler.sendTranslatedMessage(
-                                        sender, ret.getRet().getKey());
-                                case NOT_YET_ACHIEVED -> CommandHandler.sendTranslatedMessage(
-                                        sender, ret.getRet().getKey(), targetPlayer.getNickname());
-                            }
-                        },
-                        () -> this.sendUsageMessage(sender));
-    }
-
-    private void progress(
-            Player sender, Player targetPlayer, Achievements achievements, List<String> args) {
-        if (args.size() < 2) {
-            this.sendUsageMessage(sender);
-        }
-
-        parseInt(args.remove(0))
-                .ifPresentOrElse(
-                        integer -> {
-                            parseInt(args.remove(0))
-                                    .ifPresentOrElse(
-                                            progress -> {
-                                                var ret = achievements.progress(integer, progress);
-                                                switch (ret.getRet()) {
-                                                    case SUCCESS -> sendSuccessMessage(
-                                                            sender, "progress", targetPlayer.getNickname(), integer, progress);
-                                                    case ACHIEVEMENT_NOT_FOUND -> CommandHandler.sendTranslatedMessage(
-                                                            sender, ret.getRet().getKey());
-                                                }
-                                            },
-                                            () -> this.sendUsageMessage(sender));
-                        },
-                        () -> this.sendUsageMessage(sender));
     }
 }

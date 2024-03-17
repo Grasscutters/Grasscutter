@@ -71,6 +71,73 @@
     }
   },
   "commands": {
+    "argument": {
+      "double": {
+        "big": "Double must not be more than %s, found %s",
+        "low": "Double must not be less than %s, found %s"
+      },
+      "float": {
+        "big": "Float must not be more than %s, found %s",
+        "low": "Float must not be less than %s, found %s"
+      },
+      "integer": {
+        "big": "Integer must not be more than %s, found %s",
+        "low": "Integer must not be less than %s, found %s"
+      },
+      "long": {
+        "big": "Long must not be more than %s, found %s",
+        "low": "Long must not be less than %s, found %s"
+      },
+      "literal": {
+        "incorrect": "Expected literal %s"
+      },
+      "player": {
+        "selector": {
+          "missing": "Missing selector type",
+          "unknown": "Unknown selector type '%s'"
+        }
+      }
+    },
+    "parsing": {
+      "bool": {
+        "expected": "Expected boolean",
+        "invalid": "Invalid boolean, expected 'true' or 'false' but found '%s'"
+      },
+      "double": {
+        "expected": "Expected double",
+        "invalid": "Invalid double '%s'"
+      },
+      "float": {
+        "expected": "Expected float",
+        "invalid": "Invalid float '%s'"
+      },
+      "int": {
+        "expected": "Expected integer",
+        "invalid": "Invalid integer '%s'"
+      },
+      "long": {
+        "expected": "Expected long",
+        "invalid": "Invalid long '%s'"
+      },
+      "quote": {
+        "escape": "Invalid escape sequence '\\%s' in quoted string",
+        "expected": {
+          "end": "Unclosed quoted string",
+          "start": "Expected quote to start a string"
+        }
+      },
+      "expected": "Expected '%s'"
+    },
+    "problem_here": "<--[HERE]",
+    "failed": "An unexpected error occurred trying to execute that command",
+    "exception": "Could not parse command: %s",
+    "expected": {
+      "separator": "Expected whitespace to end one argument, but found trailing data"
+    },
+    "unknown": {
+      "argument": "Incorrect argument for command",
+      "command": "Unknown or incomplete command, see below for error"
+    },
     "generic": {
       "not_specified": "No command specified.",
       "unknown_command": "Unknown command: %s",
@@ -196,6 +263,17 @@
       "tip_permission_targeted": "(Permission %s is also required to use on other players)",
       "warn_player_has_no_permission": "Notice: You do not have permission to run this command.",
       "description": "Sends the help message or shows information about a specified command"
+    },
+    "home": {
+      "unlock": {
+        "module": "Unlocked module(id: %s).",
+        "allbgm": "Unlocked all BGMs.",
+        "allmodule": "Unlocked all modules.",
+        "bgm": "Unlocked bgm(id: %s).",
+        "bgm_not_exist": "bgm(id: %s) not found."
+      },
+      "setlevel": "Set %s's home level to %s.",
+      "description": "Useful command about player home."
     },
     "kick": {
       "player_kick_player": "Player [%s:%s] has kicked player [%s:%s]",

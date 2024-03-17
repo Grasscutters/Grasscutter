@@ -3,6 +3,7 @@ package emu.grasscutter.command;
 import static emu.grasscutter.config.Configuration.SERVER;
 
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.command.source.CommandSource;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.event.game.ExecuteCommandEvent;
@@ -254,6 +255,21 @@ public final class CommandMap {
         List<String> args = new ArrayList<>(Arrays.asList(split).subList(1, split.length));
         String playerId = (player == null) ? consoleId : player.getAccount().getId();
 
+        // Get command handler.
+        CommandHandler handler = this.getHandler(label);
+
+        // Get the command's annotation.
+        Command annotation = this.annotations.get(label);
+
+        // Check if invoked command uses Brigadier, new command engine.
+        var server = Grasscutter.getGameServer();
+        if (annotation != null && handler != null && annotation.brigadier() && server != null) {
+            var output = player == null ? server : player;
+            var source = new CommandSource(output, server, player, targetPlayer, playerId, annotation, handler, Object2IntMaps.unmodifiable(this.targetPlayerIds));
+            Grasscutter.getGameServer().executeCommand(rawMessage, source);
+            return;
+        }
+
         // Check for special cases - currently only target command.
         if (label.startsWith("@")) { // @[UID]
             this.setPlayerTarget(playerId, player, label.substring(1));
@@ -271,17 +287,11 @@ public final class CommandMap {
             return;
         }
 
-        // Get command handler.
-        CommandHandler handler = this.getHandler(label);
-
         // Check if the handler is null.
         if (handler == null) {
             CommandHandler.sendTranslatedMessage(player, "commands.generic.unknown_command", label);
             return;
         }
-
-        // Get the command's annotation.
-        Command annotation = this.annotations.get(label);
 
         // Resolve 'targetPlayer'.
         try {
@@ -296,7 +306,7 @@ public final class CommandMap {
                         player,
                         targetPlayer,
                         annotation.permission(),
-                        this.annotations.get(label).permissionTargeted())) {
+                        annotation.permissionTargeted())) {
             return;
         }
 

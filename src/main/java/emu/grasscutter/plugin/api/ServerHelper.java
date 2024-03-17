@@ -1,13 +1,16 @@
 package emu.grasscutter.plugin.api;
 
+import com.mojang.brigadier.CommandDispatcher;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.auth.AuthenticationSystem;
 import emu.grasscutter.command.*;
+import emu.grasscutter.command.source.CommandSource;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.http.*;
 import emu.grasscutter.server.scheduler.ServerTaskScheduler;
 import java.util.*;
+import java.util.function.Consumer;
 import java.util.stream.Stream;
 
 /** Hooks into the {@link GameServer} class, adding convenient ways to do certain things. */
@@ -88,6 +91,26 @@ public final class ServerHelper {
             throw new IllegalArgumentException("Command handler must be annotated with @Command.");
         Command commandData = clazz.getAnnotation(Command.class);
         CommandMap.getInstance().registerCommand(commandData.label(), handler);
+    }
+
+    /**
+     * Registers a command using Brigadier.
+     *
+     * @param registerer The consumer to register.
+     * @param handler The brigadier command.
+     */
+    public void registerBrigadierCommand(Consumer<CommandDispatcher<CommandSource>> registerer, BrigadierCommand handler) {
+        registerer.accept(this.getDispatcher());
+        this.registerCommand(handler);
+    }
+
+    /**
+     * Returns the {@link com.mojang.brigadier.CommandDispatcher}.
+     *
+     * @return the dispatcher.
+     */
+    public CommandDispatcher<CommandSource> getDispatcher() {
+        return this.gameServer.getCommandManager().getDispatcher();
     }
 
     /**

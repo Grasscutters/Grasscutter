@@ -4,6 +4,7 @@ import static emu.grasscutter.config.Configuration.SERVER;
 import static emu.grasscutter.utils.lang.Language.translate;
 
 import ch.qos.logback.classic.*;
+import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import emu.grasscutter.auth.*;
 import emu.grasscutter.command.*;
 import emu.grasscutter.config.ConfigContainer;
@@ -68,6 +69,9 @@ public final class Grasscutter {
                     new ThreadPoolExecutor.AbortPolicy());
 
     static {
+        // Set default BuiltInExceptions.
+        CommandSyntaxException.BUILT_IN_EXCEPTIONS = new TranslatableBuiltInExceptions();
+
         // Declare logback configuration.
         System.setProperty("logback.configurationFile", "src/main/resources/logback.xml");
 
