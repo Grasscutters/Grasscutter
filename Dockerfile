@@ -1,6 +1,8 @@
 # Builder
 FROM gradle:jdk17-alpine as builder
 
+RUN apk add --update nodejs
+
 WORKDIR /app
 COPY ./ /app/
 
@@ -20,8 +22,6 @@ RUN git clone --branch ${DATA_BRANCH} --depth 1 ${DATA_REPOSITORY}
 FROM amazoncorretto:17-alpine
 
 WORKDIR /app
-
-RUN apk add --update nodejs
 
 # Copy built assets
 COPY --from=builder /app/grasscutter-1.7.4.jar /app/grasscutter.jar
