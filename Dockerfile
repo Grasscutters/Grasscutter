@@ -19,8 +19,6 @@ RUN git clone --branch ${DATA_BRANCH} --depth 1 ${DATA_REPOSITORY}
 # Result Container
 FROM amazoncorretto:17-alpine
 
-RUN apt-get update && apt-get install unzip
-
 WORKDIR /app
 
 # Copy built assets
