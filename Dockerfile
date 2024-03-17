@@ -1,5 +1,5 @@
 # Builder
-FROM gradle:8.6-jdk17-alpine as builder
+FROM gradle:jdk17-alpine as builder
 
 WORKDIR /app
 COPY ./ /app/
