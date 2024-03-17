@@ -1,0 +1,30 @@
+version: "3.8"
+services:
+    grasscutter:
+        image: grasscutter:latest
+        build: .
+        ports:
+            - "80:80"
+            - "443:443"
+            - "8080:8080"
+            - "8888:8888"
+            - "22102:22102"
+        environment:
+            DATABASE_INFO_SERVER_CONNECTION_URI: "mongodb://lawnmower:grasscutter@database:27017"
+            DATABASE_INFO_SERVER_COLLECTION: grasscutter
+            DATABASE_INFO_GAME_CONNECTION_URI: "mongodb://lawnmower:grasscutter@database:27017"
+            DATABASE_INFO_GAME_COLLECTION: grasscutter
+
+        stdin_open: true
+
+    database:
+        image: mongo:7.0.4
+        environment:
+            MONGO_INITDB_ROOT_USERNAME: lawnmower
+            MONGO_INITDB_ROOT_PASSWORD: grasscutter
+            MONGO_INITDB_DATABASE: grasscutter
+        volumes:
+            - mongodata:/data/db
+
+volumes:
+    mongodata:

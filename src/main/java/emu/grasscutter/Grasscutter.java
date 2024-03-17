@@ -77,8 +77,6 @@ public final class Grasscutter {
 
         // Load server configuration.
         Grasscutter.loadConfig();
-        // Attempt to update configuration.
-        ConfigContainer.updateConfig();
 
         Grasscutter.getLogger().info("Loading Grasscutter...");
 
@@ -238,22 +236,7 @@ public final class Grasscutter {
     /** Attempts to load the configuration from a file. */
     public static void loadConfig() {
         // Check if config.json exists. If not, we generate a new config.
-        if (!configFile.exists()) {
-            getLogger().info("config.json could not be found. Generating a default configuration ...");
-            config = new ConfigContainer();
-            Grasscutter.saveConfig(config);
-            return;
-        }
-
-        // If the file already exists, we attempt to load it.
-        try {
-            config = JsonUtils.loadToClass(configFile.toPath(), ConfigContainer.class);
-        } catch (Exception exception) {
-            getLogger()
-                    .error(
-                            "There was an error while trying to load the configuration from config.json. Please make sure that there are no syntax errors. If you want to start with a default configuration, delete your existing config.json.");
-            System.exit(1);
-        }
+        config = new ConfigContainer();
     }
 
     /**
