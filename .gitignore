@@ -64,6 +64,7 @@ tmp/
 
 /*.jar
 /*.sh
+!entrypoint.sh
 
 GM Handbook*.txt
 handbook.html
