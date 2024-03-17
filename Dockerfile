@@ -24,7 +24,7 @@ FROM amazoncorretto:17-alpine
 WORKDIR /app
 
 # Copy built assets
-COPY --from=builder /app/grasscutter-1.7.4.jar /app/grasscutter.jar
+COPY --from=builder /app/grasscutter-*.jar /app/grasscutter.jar
 COPY --from=builder /app/keystore.p12 /app/keystore.p12
 
 # Copy the resources
