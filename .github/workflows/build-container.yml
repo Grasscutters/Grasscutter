@@ -20,7 +20,7 @@ jobs:
         uses: docker/metadata-action@v5
         id: meta
         with:
-          images: ghcr.io/kashalls/grasscutter
+          images: ghcr.io/${{ github.repository_owner }}
           tags: |
             type=ref,event=branch
             type=semver,pattern={{version}}
