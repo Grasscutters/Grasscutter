@@ -1,9 +1,9 @@
----
 name: Build Docker Container
 on:
   push:
   release:
     types: [published]
+  workflow_dispatch: ~
 
 jobs:
   publish:
@@ -20,7 +20,7 @@ jobs:
         uses: docker/metadata-action@v5
         id: meta
         with:
-          images: ghcr.io/${{ github.repository_owner }}
+          images: ghcr.io/${{ github.repository }}
           tags: |
             type=ref,event=branch
             type=semver,pattern={{version}}
