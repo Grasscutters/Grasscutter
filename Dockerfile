@@ -1,7 +1,7 @@
 # Builder
 FROM gradle:jdk17-alpine as builder
 
-RUN apk add --update nodejs
+RUN apk add --update nodejs npm
 
 WORKDIR /app
 COPY ./ /app/
