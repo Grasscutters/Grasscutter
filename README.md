@@ -22,7 +22,7 @@
 
 ### **Grasscutter beyond the latest release will have no handholding in terms of instructions.**
 
-Grasscutter (with its releases) is not being actively maintained and as of January 12th 2025 only goes up to version 4.0 (OG Fontaine). If you have a beta version / unofficial version of Grasscutter, this guide should theoretically still work, however we will not provide official support for said versions. You can still try your luck in the Discord if you are stuck, please don't be entitled though.
+Grasscutter has not been actively maintained and currently (as of January 12th, 2025) only works up to version REL4.0.1 (introduction to Fontaine). If you have a beta version/unofficial version of Grasscutter, this guide should theoretically still work, however, we will not provide official support these versions. You can still try your luck in the Discord if you are stuck, but please don't act entitled.
 
 ## Quick setup guide
 
