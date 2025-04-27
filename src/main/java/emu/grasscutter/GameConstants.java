@@ -3,8 +3,7 @@ package emu.grasscutter;
 import emu.grasscutter.game.world.Position;
 import emu.grasscutter.utils.Utils;
 import emu.grasscutter.utils.objects.SparseSet;
-
-import java.util.Arrays;
+import java.util.*;
 
 public final class GameConstants {
     public static String VERSION = "4.0.0";
@@ -60,4 +59,23 @@ public final class GameConstants {
     public static final int[] DEFAULT_ABILITY_HASHES =
             Arrays.stream(DEFAULT_ABILITY_STRINGS).mapToInt(Utils::abilityHash).toArray();
     public static final int DEFAULT_ABILITY_NAME = Utils.abilityHash("Default");
+    public static final Map<Integer, Integer> YAE_MIKO_ITEM_TO_REGION_COMBINE_BONUS = new HashMap<>() {{
+        put(104304, 1);
+        put(104307, 1);
+        put(104310, 2);
+        put(104313, 2);
+        put(104316, 2);
+        put(104320, 3);
+        put(104323, 3);
+        put(104326, 3);
+        put(104329, 4);
+        put(104332, 4);
+        put(104335, 4);
+    }};
+    public static final Map<Integer, List<Integer>> YAE_MIKO_REGION_TO_ITEM_COMBINE_BONUS = new HashMap<>() {{
+        put(1, List.of(104304, 104307));
+        put(2, List.of(104310, 104313, 104316));
+        put(3, List.of(104320, 104323, 104326));
+        put(4, List.of(104329, 104332, 104335));
+    }};
 }
