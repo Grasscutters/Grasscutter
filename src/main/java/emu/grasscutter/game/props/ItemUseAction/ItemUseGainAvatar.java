@@ -1,5 +1,6 @@
 package emu.grasscutter.game.props.ItemUseAction;
 
+import emu.grasscutter.data.excels.avatar.AvatarSkillDepotData;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.props.ItemUseOp;
 import emu.grasscutter.game.systems.InventorySystem;
@@ -43,7 +44,7 @@ public class ItemUseGainAvatar extends ItemUseInt {
             int itemId =
                     Optional.ofNullable(params.player.getAvatars().getAvatarById(this.i))
                             .map(Avatar::getSkillDepot)
-                            .map(depot -> depot.getTalentCostItemId())
+                            .map(AvatarSkillDepotData::getTalentCostItemId)
                             .orElse((this.i % 1000) + 100);
             return params.player.getInventory().addItem(itemId);
         }

@@ -178,7 +178,7 @@ public final class PlayerBuffManager extends BasePlayerManager {
                             return true;
                         });
 
-        if (this.pendingBuffs.size() > 0) {
+        if (!this.pendingBuffs.isEmpty()) {
             // Send packet
             getPlayer()
                     .sendPacket(

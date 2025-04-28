@@ -7,8 +7,9 @@ import emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo;
 import it.unimi.dsi.fastutil.ints.*;
 import lombok.Getter;
 
+@Getter
 public class EntityWorld extends GameEntity {
-    @Getter private World world;
+    private final World world;
 
     public EntityWorld(World world) {
         super(null);

@@ -550,7 +550,7 @@ public final class DatabaseHelper {
                     .first();
         } catch (IllegalArgumentException e) {
             Grasscutter.getLogger()
-                    .debug("Error occurred while getting uid " + uid + "'s achievement data", e);
+                    .debug("Error occurred while getting uid {}'s achievement data", uid, e);
             DatabaseManager.getGameDatabase().getCollection("achievements").deleteMany(eq("uid", uid));
             return null;
         }

@@ -19,14 +19,14 @@ public final class ListCommand implements CommandHandler {
         Map<Integer, Player> playersMap = Grasscutter.getGameServer().getPlayers();
         boolean needUID = false;
 
-        if (args.size() > 0) {
+        if (!args.isEmpty()) {
             needUID = args.get(0).equals("uid");
         }
 
         CommandHandler.sendMessage(
                 sender, translate(sender, "commands.list.success", playersMap.size()));
 
-        if (playersMap.size() != 0) {
+        if (!playersMap.isEmpty()) {
             StringBuilder playerSet = new StringBuilder();
             boolean finalNeedUID = needUID;
 

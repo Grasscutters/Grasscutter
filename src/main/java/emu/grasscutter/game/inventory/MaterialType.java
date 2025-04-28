@@ -5,6 +5,7 @@ import java.util.*;
 import java.util.stream.Stream;
 import lombok.Getter;
 
+@Getter
 public enum MaterialType {
     MATERIAL_NONE(0),
     MATERIAL_FOOD(1),
@@ -60,7 +61,7 @@ public enum MaterialType {
                         });
     }
 
-    @Getter private final int value;
+    private final int value;
 
     MaterialType(int value) {
         this.value = value;

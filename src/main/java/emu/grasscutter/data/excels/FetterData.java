@@ -4,6 +4,7 @@ import emu.grasscutter.data.*;
 import emu.grasscutter.data.ResourceType.LoadPriority;
 import emu.grasscutter.data.common.OpenCondData;
 import java.util.List;
+import lombok.Getter;
 
 @ResourceType(
         name = {
@@ -15,17 +16,13 @@ import java.util.List;
         },
         loadPriority = LoadPriority.HIGHEST)
 public class FetterData extends GameResource {
-    private int avatarId;
+    @Getter private int avatarId;
     private int fetterId;
     private List<OpenCondData> openCond;
 
     @Override
     public int getId() {
         return fetterId;
-    }
-
-    public int getAvatarId() {
-        return avatarId;
     }
 
     public List<OpenCondData> getOpenConds() {

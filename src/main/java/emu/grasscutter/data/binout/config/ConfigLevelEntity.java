@@ -4,13 +4,14 @@ import emu.grasscutter.data.binout.config.fields.ConfigAbilityData;
 import java.util.List;
 import lombok.Getter;
 
+@Getter
 public class ConfigLevelEntity {
 
-    @Getter private List<ConfigAbilityData> abilities;
-    @Getter private List<ConfigAbilityData> monsterAbilities;
-    @Getter private List<ConfigAbilityData> avatarAbilities;
-    @Getter private List<ConfigAbilityData> teamAbilities;
-    @Getter private List<Integer> preloadMonsterEntityIDs;
+    private List<ConfigAbilityData> abilities;
+    private List<ConfigAbilityData> monsterAbilities;
+    private List<ConfigAbilityData> avatarAbilities;
+    private List<ConfigAbilityData> teamAbilities;
+    private List<Integer> preloadMonsterEntityIDs;
 
-    @Getter private String dropElemControlType;
+    private String dropElemControlType;
 }

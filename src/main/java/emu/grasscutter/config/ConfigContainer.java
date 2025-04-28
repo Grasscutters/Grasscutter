@@ -78,11 +78,11 @@ public class ConfigContainer {
         }
     }
 
-    public Structure folderStructure = new Structure();
-    public Database databaseInfo = new Database();
-    public Language language = new Language();
-    public Account account = new Account();
-    public Server server = new Server();
+    public final Structure folderStructure = new Structure();
+    public final Database databaseInfo = new Database();
+    public final Language language = new Language();
+    public final Account account = new Account();
+    public final Server server = new Server();
 
     // DO NOT. TOUCH. THE VERSION NUMBER.
     public int version = version();
@@ -90,99 +90,99 @@ public class ConfigContainer {
     /* Option containers. */
 
     public static class Database {
-        public DataStore server = new DataStore();
-        public DataStore game = new DataStore();
+        public final DataStore server = new DataStore();
+        public final DataStore game = new DataStore();
 
         public static class DataStore {
-            public String connectionUri = "mongodb://localhost:27017";
-            public String collection = "grasscutter";
+            public final String connectionUri = "mongodb://localhost:27017";
+            public final String collection = "grasscutter";
         }
     }
 
     public static class Structure {
-        public String resources = "./resources/";
-        public String data = "./data/";
-        public String packets = "./packets/";
-        public String scripts = "resources:Scripts/";
-        public String plugins = "./plugins/";
-        public String cache = "./cache/";
+        public final String resources = "./resources/";
+        public final String data = "./data/";
+        public final String packets = "./packets/";
+        public final String scripts = "resources:Scripts/";
+        public final String plugins = "./plugins/";
+        public final String cache = "./cache/";
 
         // UNUSED (potentially added later?)
         // public String dumps = "./dumps/";
     }
 
     public static class Server {
-        public Set<Integer> debugWhitelist = Set.of();
-        public Set<Integer> debugBlacklist = Set.of();
-        public ServerRunMode runMode = ServerRunMode.HYBRID;
-        public boolean logCommands = false;
+        public final Set<Integer> debugWhitelist = Set.of();
+        public final Set<Integer> debugBlacklist = Set.of();
+        public final ServerRunMode runMode = ServerRunMode.HYBRID;
+        public final boolean logCommands = false;
 
         /**
          * If enabled, the 'require' Lua function will load the script's compiled varient into the context. (faster; doesn't work as well)
          * If disabled, all 'require' calls will be replaced with the referenced script's source. (slower; works better)
          */
-        public boolean fastRequire = true;
+        public final boolean fastRequire = true;
 
-        public HTTP http = new HTTP();
-        public Game game = new Game();
+        public final HTTP http = new HTTP();
+        public final Game game = new Game();
 
-        public Dispatch dispatch = new Dispatch();
-        public DebugMode debugMode = new DebugMode();
+        public final Dispatch dispatch = new Dispatch();
+        public final DebugMode debugMode = new DebugMode();
     }
 
     public static class Language {
         public Locale language = Locale.getDefault();
-        public Locale fallback = Locale.US;
-        public String document = "EN";
+        public final Locale fallback = Locale.US;
+        public final String document = "EN";
     }
 
     public static class Account {
-        public boolean autoCreate = false;
-        public boolean EXPERIMENTAL_RealPassword = false;
-        public String[] defaultPermissions = {};
-        public String playerEmail = "grasscutter.io";
-        public int maxPlayer = -1;
+        public final boolean autoCreate = false;
+        public final boolean EXPERIMENTAL_RealPassword = false;
+        public final String[] defaultPermissions = {};
+        public final String playerEmail = "grasscutter.io";
+        public final int maxPlayer = -1;
     }
 
     /* Server options. */
 
     public static class HTTP {
         /* This starts the HTTP server before the game server. */
-        public boolean startImmediately = false;
+        public final boolean startImmediately = false;
 
-        public String bindAddress = "0.0.0.0";
-        public int bindPort = 443;
+        public final String bindAddress = "0.0.0.0";
+        public final int bindPort = 443;
 
         /* This is the address used in URLs. */
-        public String accessAddress = "127.0.0.1";
+        public final String accessAddress = "127.0.0.1";
         /* This is the port used in URLs. */
-        public int accessPort = 0;
+        public final int accessPort = 0;
 
-        public Encryption encryption = new Encryption();
-        public Policies policies = new Policies();
-        public Files files = new Files();
+        public final Encryption encryption = new Encryption();
+        public final Policies policies = new Policies();
+        public final Files files = new Files();
     }
 
     public static class Game {
-        public String bindAddress = "0.0.0.0";
-        public int bindPort = 22102;
+        public final String bindAddress = "0.0.0.0";
+        public final int bindPort = 22102;
 
         /* This is the address used in the default region. */
-        public String accessAddress = "127.0.0.1";
+        public final String accessAddress = "127.0.0.1";
         /* This is the port used in the default region. */
-        public int accessPort = 0;
+        public final int accessPort = 0;
 
         /* Enabling this will generate a unique packet encryption key for each player. */
-        public boolean useUniquePacketKey = true;
+        public final boolean useUniquePacketKey = true;
 
         /* Entities within a certain range will be loaded for the player */
-        public int loadEntitiesForPlayerRange = 300;
+        public final int loadEntitiesForPlayerRange = 300;
         /* Start in 'unstable-quests', Lua scripts will be enabled by default. */
-        public boolean enableScriptInBigWorld = true;
+        public final boolean enableScriptInBigWorld = true;
         public boolean enableConsole = true;
 
         /* Kcp internal work interval (milliseconds) */
-        public int kcpInterval = 20;
+        public final int kcpInterval = 20;
         /* Controls whether packets should be logged in console or not */
         public ServerDebugMode logPackets = ServerDebugMode.NONE;
         /* Show packet payload in console or no (in any case the payload is shown in encrypted view) */
@@ -190,13 +190,13 @@ public class ConfigContainer {
         /* Show annoying loop packets or no */
         public boolean isShowLoopPackets = false;
 
-        public boolean cacheSceneEntitiesEveryRun = false;
+        public final boolean cacheSceneEntitiesEveryRun = false;
 
-        public GameOptions gameOptions = new GameOptions();
-        public JoinOptions joinOptions = new JoinOptions();
-        public ConsoleAccount serverAccount = new ConsoleAccount();
+        public final GameOptions gameOptions = new GameOptions();
+        public final JoinOptions joinOptions = new JoinOptions();
+        public final ConsoleAccount serverAccount = new ConsoleAccount();
 
-        public VisionOptions[] visionOptions = new VisionOptions[] {
+        public final VisionOptions[] visionOptions = new VisionOptions[] {
             new VisionOptions("VISION_LEVEL_NORMAL"         , 80    , 20),
             new VisionOptions("VISION_LEVEL_LITTLE_REMOTE"  , 16    , 40),
             new VisionOptions("VISION_LEVEL_REMOTE"         , 1000  , 250),
@@ -210,17 +210,17 @@ public class ConfigContainer {
 
     public static class Dispatch {
         /* An array of servers. */
-        public List<Region> regions = List.of();
+        public final List<Region> regions = List.of();
 
         /* The URL used to make HTTP requests to the dispatch server. */
-        public String dispatchUrl = "ws://127.0.0.1:1111";
+        public final String dispatchUrl = "ws://127.0.0.1:1111";
         /* A unique key used for encryption. */
-        public byte[] encryptionKey = Crypto.createSessionKey(32);
+        public final byte[] encryptionKey = Crypto.createSessionKey(32);
         /* A unique key used for authentication. */
-        public String dispatchKey = Utils.base64Encode(
+        public final String dispatchKey = Utils.base64Encode(
             Crypto.createSessionKey(32));
 
-        public String defaultName = "Grasscutter";
+        public final String defaultName = "Grasscutter";
 
         /* Controls whether http requests should be logged in console or not */
         public ServerDebugMode logRequests = ServerDebugMode.NONE;
@@ -230,127 +230,127 @@ public class ConfigContainer {
      *  (see StartupArguments.enableDebug) */
     public static class DebugMode {
         /* Log level of the main server code (works only with -debug arg) */
-        public Level serverLoggerLevel = Level.DEBUG;
+        public final Level serverLoggerLevel = Level.DEBUG;
 
         /* Log level of the third-party services (works only with -debug arg):
            javalin, quartz, reflections, jetty, mongodb.driver */
-        public Level servicesLoggersLevel = Level.INFO;
+        public final Level servicesLoggersLevel = Level.INFO;
 
         /* Controls whether packets should be logged in console or not */
-        public ServerDebugMode logPackets = ServerDebugMode.ALL;
+        public final ServerDebugMode logPackets = ServerDebugMode.ALL;
 
         /* Show packet payload in console or no (in any case the payload is shown in encrypted view) */
-        public boolean isShowPacketPayload = false;
+        public final boolean isShowPacketPayload = false;
 
         /* Show annoying loop packets or no */
-        public boolean isShowLoopPackets = false;
+        public final boolean isShowLoopPackets = false;
 
         /* Controls whether http requests should be logged in console or not */
-        public ServerDebugMode logRequests = ServerDebugMode.ALL;
+        public final ServerDebugMode logRequests = ServerDebugMode.ALL;
     }
 
     public static class Encryption {
         public boolean useEncryption = true;
         /* Should 'https' be appended to URLs? */
         public boolean useInRouting = true;
-        public String keystore = "./keystore.p12";
-        public String keystorePassword = "123456";
+        public final String keystore = "./keystore.p12";
+        public final String keystorePassword = "123456";
     }
 
     public static class Policies {
-        public Policies.CORS cors = new Policies.CORS();
+        public final Policies.CORS cors = new Policies.CORS();
 
         public static class CORS {
-            public boolean enabled = true;
-            public String[] allowedOrigins = new String[]{"*"};
+            public final boolean enabled = true;
+            public final String[] allowedOrigins = new String[]{"*"};
         }
     }
 
     public static class GameOptions {
-        public InventoryLimits inventoryLimits = new InventoryLimits();
-        public AvatarLimits avatarLimits = new AvatarLimits();
-        public int sceneEntityLimit = 1000; // Unenforced. TODO: Implement.
+        public final InventoryLimits inventoryLimits = new InventoryLimits();
+        public final AvatarLimits avatarLimits = new AvatarLimits();
+        public final int sceneEntityLimit = 1000; // Unenforced. TODO: Implement.
 
-        public boolean watchGachaConfig = false;
-        public boolean enableShopItems = true;
-        public boolean staminaUsage = true;
-        public boolean energyUsage = true;
-        public boolean fishhookTeleport = true;
-        public boolean trialCostumes = false;
+        public final boolean watchGachaConfig = false;
+        public final boolean enableShopItems = true;
+        public final boolean staminaUsage = true;
+        public final boolean energyUsage = true;
+        public final boolean fishhookTeleport = true;
+        public final boolean trialCostumes = false;
 
         @SerializedName(value = "questing", alternate = "questOptions")
-        public Questing questing = new Questing();
-        public ResinOptions resinOptions = new ResinOptions();
-        public Rates rates = new Rates();
+        public final Questing questing = new Questing();
+        public final ResinOptions resinOptions = new ResinOptions();
+        public final Rates rates = new Rates();
 
-        public HandbookOptions handbook = new HandbookOptions();
+        public final HandbookOptions handbook = new HandbookOptions();
 
         public static class InventoryLimits {
-            public int weapons = 2000;
-            public int relics = 2000;
-            public int materials = 2000;
-            public int furniture = 2000;
-            public int all = 30000;
+            public final int weapons = 2000;
+            public final int relics = 2000;
+            public final int materials = 2000;
+            public final int furniture = 2000;
+            public final int all = 30000;
         }
 
         public static class AvatarLimits {
-            public int singlePlayerTeam = 4;
-            public int multiplayerTeam = 4;
+            public final int singlePlayerTeam = 4;
+            public final int multiplayerTeam = 4;
         }
 
         public static class Rates {
-            public float adventureExp = 1.0f;
+            public final float adventureExp = 1.0f;
             public float mora = 1.0f;
             public float leyLines = 1.0f;
         }
 
         public static class ResinOptions {
-            public boolean resinUsage = false;
-            public int cap = 160;
-            public int rechargeTime = 480;
+            public final boolean resinUsage = false;
+            public final int cap = 160;
+            public final int rechargeTime = 480;
         }
 
         public static class Questing {
             /* Should questing behavior be used? */
-            public boolean enabled = true;
+            public final boolean enabled = true;
         }
 
         public static class HandbookOptions {
-            public boolean enable = false;
-            public boolean allowCommands = true;
+            public final boolean enable = false;
+            public final boolean allowCommands = true;
 
-            public Limits limits = new Limits();
-            public Server server = new Server();
+            public final Limits limits = new Limits();
+            public final Server server = new Server();
 
             public static class Limits {
                 /* Are rate limits checked? */
-                public boolean enabled = false;
+                public final boolean enabled = false;
                 /* The time for limits to expire. */
-                public int interval = 3;
+                public final int interval = 3;
 
                 /* The maximum amount of normal requests. */
-                public int maxRequests = 10;
+                public final int maxRequests = 10;
                 /* The maximum amount of entities to be spawned in one request. */
-                public int maxEntities = 25;
+                public final int maxEntities = 25;
             }
 
             public static class Server {
                 /* Are the server settings sent to the handbook? */
-                public boolean enforced = false;
+                public final boolean enforced = false;
                 /* The default server address for the handbook's authentication. */
-                public String address = "127.0.0.1";
+                public final String address = "127.0.0.1";
                 /* The default server port for the handbook's authentication. */
-                public int port = 443;
+                public final int port = 443;
                 /* Should the defaults be enforced? */
-                public boolean canChange = true;
+                public final boolean canChange = true;
             }
         }
     }
 
     public static class VisionOptions {
-        public String name;
-        public int visionRange;
-        public int gridWidth;
+        public final String name;
+        public final int visionRange;
+        public final int gridWidth;
 
         public VisionOptions(String name, int visionRange, int gridWidth) {
             this.name = name;
@@ -360,21 +360,21 @@ public class ConfigContainer {
     }
 
     public static class JoinOptions {
-        public int[] welcomeEmotes = {2007, 1002, 4010};
-        public String welcomeMessage = "Welcome to a Grasscutter server.";
-        public JoinOptions.Mail welcomeMail = new JoinOptions.Mail();
+        public final int[] welcomeEmotes = {2007, 1002, 4010};
+        public final String welcomeMessage = "Welcome to a Grasscutter server.";
+        public final JoinOptions.Mail welcomeMail = new JoinOptions.Mail();
 
         public static class Mail {
-            public String title = "Welcome to Grasscutter!";
-            public String content = """
+            public final String title = "Welcome to Grasscutter!";
+            public final String content = """
                     Hi there!\r
                     First of all, welcome to Grasscutter. If you have any issues, please let us know so that Lawnmower can help you! \r
                     \r
                     Check out our:\r
                     <type="browser" text="Discord" href="https://discord.gg/T5vZU6UyeG"/>
                     """;
-            public String sender = "Lawnmower";
-            public emu.grasscutter.game.mail.Mail.MailItem[] items = {
+            public final String sender = "Lawnmower";
+            public final emu.grasscutter.game.mail.Mail.MailItem[] items = {
                 new emu.grasscutter.game.mail.Mail.MailItem(13509, 1, 1),
                 new emu.grasscutter.game.mail.Mail.MailItem(201, 99999, 1)
             };
@@ -382,18 +382,18 @@ public class ConfigContainer {
     }
 
     public static class ConsoleAccount {
-        public int avatarId = 10000007;
-        public int nameCardId = 210001;
-        public int adventureRank = 1;
-        public int worldLevel = 0;
+        public final int avatarId = 10000007;
+        public final int nameCardId = 210001;
+        public final int adventureRank = 1;
+        public final int worldLevel = 0;
 
-        public String nickName = "Server";
-        public String signature = "Welcome to Grasscutter!";
+        public final String nickName = "Server";
+        public final String signature = "Welcome to Grasscutter!";
     }
 
     public static class Files {
-        public String indexFile = "./index.html";
-        public String errorFile = "./404.html";
+        public final String indexFile = "./index.html";
+        public final String errorFile = "./404.html";
     }
 
     /* Objects. */

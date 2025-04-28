@@ -2,6 +2,7 @@ package emu.grasscutter.game.dungeons.enums;
 
 import lombok.Getter;
 
+@Getter
 public enum DungeonType {
     DUNGEON_NONE(false),
     DUNGEON_PLOT(true),
@@ -41,7 +42,7 @@ public enum DungeonType {
     DUNGEON_EFFIGY_CHALLENGE_V2(false),
     DUNGEON_CHAR_AMUSEMENT(false);
 
-    @Getter private final boolean countsToBattlepass;
+    private final boolean countsToBattlepass;
 
     DungeonType(boolean countsToBattlepass) {
         this.countsToBattlepass = countsToBattlepass;

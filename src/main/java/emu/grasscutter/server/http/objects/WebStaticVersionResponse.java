@@ -17,7 +17,7 @@ public class WebStaticVersionResponse implements Handler {
             ctx.result(filestream.readAllBytes());
         } catch (Exception e) {
             if (DISPATCH_INFO.logRequests == Grasscutter.ServerDebugMode.MISSING) {
-                Grasscutter.getLogger().warn("Webstatic File Missing: " + path);
+                Grasscutter.getLogger().warn("Webstatic File Missing: {}", path);
             }
             ctx.status(404);
         }

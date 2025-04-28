@@ -10,11 +10,12 @@ import emu.grasscutter.server.game.*;
 import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.*;
 import java.util.*;
+import lombok.Getter;
 
 public class ShopSystem extends BaseGameSystem {
     private static final int REFRESH_HOUR = 4; // In GMT+8 server
     private static final String TIME_ZONE = "Asia/Shanghai"; // GMT+8 Timezone
-    private final Int2ObjectMap<List<ShopInfo>> shopData;
+    @Getter private final Int2ObjectMap<List<ShopInfo>> shopData;
     private final Int2ObjectMap<List<ItemParamData>> shopChestData;
 
     public ShopSystem(GameServer server) {
@@ -36,10 +37,6 @@ public class ShopSystem extends BaseGameSystem {
         };
     }
 
-    public Int2ObjectMap<List<ShopInfo>> getShopData() {
-        return shopData;
-    }
-
     public List<ItemParamData> getShopChestData(int chestId) {
         return this.shopChestData.get(chestId);
     }
@@ -48,7 +45,7 @@ public class ShopSystem extends BaseGameSystem {
         getShopData().clear();
         try {
             List<ShopTable> banners = DataLoader.loadList("Shop.json", ShopTable.class);
-            if (banners.size() > 0) {
+            if (!banners.isEmpty()) {
                 for (ShopTable shopTable : banners) {
                     shopTable.getItems().forEach(ShopInfo::removeVirtualCosts);
                     getShopData().put(shopTable.getShopId(), shopTable.getItems());
@@ -93,7 +90,7 @@ public class ShopSystem extends BaseGameSystem {
                         }
                         this.shopChestData.put((int) chestId, list);
                     });
-            Grasscutter.getLogger().debug("Loaded " + chestMap.size() + " ShopChest entries.");
+            Grasscutter.getLogger().debug("Loaded {} ShopChest entries.", chestMap.size());
         } catch (Exception e) {
             Grasscutter.getLogger().error("Unable to load ShopChest data.", e);
         }

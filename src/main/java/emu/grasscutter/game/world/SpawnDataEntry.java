@@ -4,17 +4,18 @@ import emu.grasscutter.data.GameDepot;
 import java.util.*;
 import lombok.*;
 
+@Getter
 public class SpawnDataEntry {
-    @Getter @Setter private transient SpawnGroupEntry group;
-    @Getter private int monsterId;
-    @Getter private int gadgetId;
-    @Getter private int configId;
-    @Getter private int level;
-    @Getter private int poseId;
-    @Getter private int gatherItemId;
-    @Getter private int gadgetState;
-    @Getter private Position pos;
-    @Getter private Position rot;
+    @Setter private transient SpawnGroupEntry group;
+    private int monsterId;
+    private int gadgetId;
+    private int configId;
+    private int level;
+    private int poseId;
+    private int gatherItemId;
+    private int gadgetState;
+    private Position pos;
+    private Position rot;
 
     public GridBlockId getBlockId() {
         int scale = GridBlockId.getScale(gadgetId);
@@ -25,18 +26,20 @@ public class SpawnDataEntry {
                 (int) (pos.getZ() / GameDepot.BLOCK_SIZE[scale]));
     }
 
+    @Getter
     public static class SpawnGroupEntry {
-        @Getter private int sceneId;
-        @Getter private int groupId;
-        @Getter private int blockId;
-        @Getter @Setter private List<SpawnDataEntry> spawns;
+        private int sceneId;
+        private int groupId;
+        private int blockId;
+        @Setter private List<SpawnDataEntry> spawns;
     }
 
+    @Getter
     public static class GridBlockId {
-        @Getter private int sceneId;
-        @Getter private int scale;
-        @Getter private int x;
-        @Getter private int z;
+        private final int sceneId;
+        private final int scale;
+        private final int x;
+        private final int z;
 
         public GridBlockId(int sceneId, int scale, int x, int z) {
             this.sceneId = sceneId;

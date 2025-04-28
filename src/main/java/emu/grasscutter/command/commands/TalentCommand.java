@@ -27,7 +27,7 @@ public final class TalentCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
-        if (args.size() < 1) {
+        if (args.isEmpty()) {
             sendUsageMessage(sender);
             return;
         }
@@ -45,9 +45,7 @@ public final class TalentCommand implements CommandHandler {
 
         String cmdSwitch = args.get(0).toLowerCase();
         switch (cmdSwitch) {
-            default -> {
-                sendUsageMessage(sender);
-            }
+            default -> sendUsageMessage(sender);
             case "set" -> {
                 if (args.size() < 3) {
                     sendUsageMessage(sender);

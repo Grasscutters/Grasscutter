@@ -26,10 +26,11 @@ import emu.grasscutter.utils.helpers.ProtoHelper;
 import it.unimi.dsi.fastutil.ints.Int2FloatMap;
 import lombok.Getter;
 
+@Getter
 public class EntityItem extends EntityBaseGadget {
-    @Getter private final GameItem item;
-    @Getter private final long guid;
-    @Getter private final boolean share;
+    private final GameItem item;
+    private final long guid;
+    private final boolean share;
 
     public EntityItem(Scene scene, Player player, ItemData itemData, Position pos, int count) {
         this(scene, player, itemData, pos, count, true);

@@ -6,10 +6,11 @@ import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.net.proto.EvtCreateGadgetNotifyOuterClass;
 import lombok.Getter;
 
+@Getter
 public class EntitySolarIsotomaClientGadget extends EntityClientGadget {
     public static final int GADGET_ID = 41038001;
     public static final int ELEVATOR_GADGET_ID = 41038002;
-    @Getter private EntityGadget platformGadget;
+    private EntityGadget platformGadget;
 
     public EntitySolarIsotomaClientGadget(
             Scene scene, Player player, EvtCreateGadgetNotifyOuterClass.EvtCreateGadgetNotify notify) {

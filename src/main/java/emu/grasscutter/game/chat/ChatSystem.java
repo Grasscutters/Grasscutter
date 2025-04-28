@@ -12,6 +12,7 @@ import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.Utils;
 import java.util.*;
 import java.util.regex.Pattern;
+import lombok.Getter;
 
 public class ChatSystem implements ChatSystemHandler {
     static final String PREFIXES = "[/!]";
@@ -22,14 +23,10 @@ public class ChatSystem implements ChatSystemHandler {
     //    user id -> chat partner id -> [messages]
     private final Map<Integer, Map<Integer, List<ChatInfo>>> history = new HashMap<>();
 
-    private final GameServer server;
+    @Getter private final GameServer server;
 
     public ChatSystem(GameServer server) {
         this.server = server;
-    }
-
-    public GameServer getServer() {
-        return server;
     }
 
     private boolean tryInvokeCommand(Player sender, Player target, String rawMessage) {
@@ -88,7 +85,7 @@ public class ChatSystem implements ChatSystemHandler {
      ********************/
     public void sendPrivateMessageFromServer(int targetUid, String message) {
         // Sanity checks.
-        if (message == null || message.length() == 0) {
+        if (message == null || message.isEmpty()) {
             return;
         }
 
@@ -123,7 +120,7 @@ public class ChatSystem implements ChatSystemHandler {
 
     public void sendPrivateMessage(Player player, int targetUid, String message) {
         // Sanity checks.
-        if (message == null || message.length() == 0) {
+        if (message == null || message.isEmpty()) {
             return;
         }
 
@@ -146,7 +143,7 @@ public class ChatSystem implements ChatSystemHandler {
 
         // Fetch the new message.
         message = event.getMessage();
-        if (message == null || message.length() == 0) return;
+        if (message == null || message.isEmpty()) return;
 
         // Create chat packet.
         var packet = new PacketPrivateChatNotify(player.getUid(), targetUid, message);
@@ -200,7 +197,7 @@ public class ChatSystem implements ChatSystemHandler {
 
     public void sendTeamMessage(Player player, int channel, String message) {
         // Sanity checks
-        if (message == null || message.length() == 0) {
+        if (message == null || message.isEmpty()) {
             return;
         }
 
@@ -216,7 +213,7 @@ public class ChatSystem implements ChatSystemHandler {
 
         // Fetch the new message.
         message = event.getMessage();
-        if (message == null || message.length() == 0) return;
+        if (message == null || message.isEmpty()) return;
         // Fetch the new channel.
         channel = event.getChannel();
         if (channel == -1) return;
@@ -254,7 +251,7 @@ public class ChatSystem implements ChatSystemHandler {
                     joinOptions.welcomeEmotes[Utils.randomRange(0, joinOptions.welcomeEmotes.length - 1)]);
         }
 
-        if (joinOptions.welcomeMessage != null && joinOptions.welcomeMessage.length() > 0) {
+        if (joinOptions.welcomeMessage != null && !joinOptions.welcomeMessage.isEmpty()) {
             this.sendPrivateMessageFromServer(player.getUid(), joinOptions.welcomeMessage);
         }
     }

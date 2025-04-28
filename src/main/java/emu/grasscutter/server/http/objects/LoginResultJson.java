@@ -3,10 +3,10 @@ package emu.grasscutter.server.http.objects;
 public class LoginResultJson {
     public String message;
     public int retcode;
-    public VerifyData data = new VerifyData();
+    public final VerifyData data = new VerifyData();
 
     public static class VerifyData {
-        public VerifyAccountData account = new VerifyAccountData();
+        public final VerifyAccountData account = new VerifyAccountData();
         public boolean device_grant_required = false;
         public String realname_operation = "NONE";
         public boolean realperson_required = false;

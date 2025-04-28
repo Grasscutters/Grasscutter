@@ -51,7 +51,7 @@ public final class ClearCommand implements CommandHandler {
         // Extract any tagged int arguments (e.g. "lv90", "x100", "r5")
         parseIntParameters(args, param, intCommandHandlers);
 
-        if (args.size() < 1) {
+        if (args.isEmpty()) {
             sendUsageMessage(sender);
             return;
         }
@@ -93,9 +93,10 @@ public final class ClearCommand implements CommandHandler {
         }
     }
 
+    @Setter
     private static class ClearItemParameters {
-        @Setter public int lvl = 1;
-        @Setter public int refinement = 1;
-        @Setter public int rank = 4;
+        public int lvl = 1;
+        public int refinement = 1;
+        public int rank = 4;
     }
 }

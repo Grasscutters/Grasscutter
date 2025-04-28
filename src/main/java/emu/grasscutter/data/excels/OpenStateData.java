@@ -39,12 +39,10 @@ public class OpenStateData extends GameResource {
         OPEN_STATE_COND_PARENT_QUEST
     }
 
+    @Getter
     public static class OpenStateCond {
-        @Getter
         private OpenStateCondType condType;
-        @Getter
         private int param;
-        @Getter
         private int param2;
     }
 }

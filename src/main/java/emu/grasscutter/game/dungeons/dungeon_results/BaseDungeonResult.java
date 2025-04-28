@@ -7,9 +7,10 @@ import emu.grasscutter.net.proto.ParamListOuterClass;
 import emu.grasscutter.utils.Utils;
 import lombok.Getter;
 
+@Getter
 public class BaseDungeonResult {
-    @Getter DungeonData dungeonData;
-    @Getter DungeonEndStats dungeonStats;
+    DungeonData dungeonData;
+    DungeonEndStats dungeonStats;
 
     public BaseDungeonResult(DungeonData dungeonData, DungeonEndStats dungeonStats) {
         this.dungeonData = dungeonData;

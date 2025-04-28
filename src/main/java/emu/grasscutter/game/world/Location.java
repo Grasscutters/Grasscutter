@@ -3,9 +3,11 @@ package emu.grasscutter.game.world;
 import dev.morphia.annotations.*;
 import lombok.*;
 
+@Setter
+@Getter
 @Entity
 public class Location extends Position {
-    @Transient @Getter @Setter private Scene scene;
+    @Transient private Scene scene;
 
     public Location(Scene scene, Position position) {
         this.set(position);

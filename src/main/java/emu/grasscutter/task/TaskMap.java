@@ -154,13 +154,12 @@ public final class TaskMap {
                                 this.afterReset.put(taskData.taskName(), (TaskHandler) object);
                             }
                         } else {
-                            Grasscutter.getLogger()
-                                    .error("Class " + annotated.getName() + " is not a TaskHandler!");
+                            Grasscutter.getLogger().error("Class {} is not a TaskHandler!", annotated.getName());
                         }
                     } catch (Exception exception) {
                         Grasscutter.getLogger()
                                 .error(
-                                        "Failed to register task handler for " + annotated.getSimpleName(), exception);
+                                        "Failed to register task handler for {}", annotated.getSimpleName(), exception);
                     }
                 });
         try {

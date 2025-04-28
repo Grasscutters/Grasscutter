@@ -25,7 +25,7 @@ import lombok.val;
 public class InventorySystem extends BaseGameSystem {
     private static final Int2IntMap weaponRefundMaterials = new Int2IntArrayMap();
 
-    {
+    static {
         // Use a sorted map, use exp as key to sort by exp
         // We want to have weaponRefundMaterials as (id, exp) in descending exp order
         var temp = new Int2IntRBTreeMap(Collections.reverseOrder());
@@ -58,7 +58,7 @@ public class InventorySystem extends BaseGameSystem {
         } else {
             avatarId =
                     Optional.ofNullable(GameData.getItemDataMap().get(id))
-                            .map(itemData -> itemData.getItemUseActions())
+                            .map(ItemData::getItemUseActions)
                             .flatMap(
                                     actions ->
                                             actions.stream()
@@ -83,11 +83,9 @@ public class InventorySystem extends BaseGameSystem {
         if (avatarData == null) {
             Grasscutter.getLogger()
                     .error(
-                            "Attempted to check constellation level for UID"
-                                    + player.getUid()
-                                    + "'s avatar "
-                                    + avatarId
-                                    + " but avatar has no skillDepot!");
+                            "Attempted to check constellation level for UID{}'s avatar {} but avatar has no skillDepot!",
+                            player.getUid(),
+                            avatarId);
             return 0;
         }
         int constItemId = avatarData.getTalentCostItemId();
@@ -122,7 +120,7 @@ public class InventorySystem extends BaseGameSystem {
         int moraCost = 0;
         int expGain = 0;
 
-        List<GameItem> foodRelics = new ArrayList<GameItem>();
+        List<GameItem> foodRelics = new ArrayList<>();
         for (long guid : foodRelicList) {
             // Add to delete queue
             GameItem food = player.getInventory().getItemByGuid(guid);
@@ -139,7 +137,7 @@ public class InventorySystem extends BaseGameSystem {
             }
             foodRelics.add(food);
         }
-        List<ItemParamData> payList = new ArrayList<ItemParamData>();
+        List<ItemParamData> payList = new ArrayList<>();
         for (ItemParam itemParam : list) {
             int amount =
                     itemParam
@@ -347,7 +345,7 @@ public class InventorySystem extends BaseGameSystem {
 
         // Get exp gain
         int expGain = 0, expGainFree = 0;
-        List<GameItem> foodWeapons = new ArrayList<GameItem>();
+        List<GameItem> foodWeapons = new ArrayList<>();
         for (long guid : foodWeaponGuidList) {
             GameItem food = player.getInventory().getItemByGuid(guid);
             if (food == null || !food.isDestroyable()) {
@@ -359,7 +357,7 @@ public class InventorySystem extends BaseGameSystem {
             }
             foodWeapons.add(food);
         }
-        List<ItemParamData> payList = new ArrayList<ItemParamData>();
+        List<ItemParamData> payList = new ArrayList<>();
         for (ItemParam param : itemParamList) {
             int amount =
                     param.getCount(); // Previously this capped to inventory amount, but rejecting the payment
@@ -482,7 +480,7 @@ public class InventorySystem extends BaseGameSystem {
 
         if (weapon.getRefinement() >= 4
                 || weapon.getAffixes() == null
-                || weapon.getAffixes().size() == 0) {
+                || weapon.getAffixes().isEmpty()) {
             return;
         }
 
@@ -818,7 +816,7 @@ public class InventorySystem extends BaseGameSystem {
         }
 
         // Give back items
-        if (returnMaterialMap.size() > 0) {
+        if (!returnMaterialMap.isEmpty()) {
             returnMaterialMap.forEach((id, count) -> inventory.addItem(new GameItem(id, count)));
         }
 

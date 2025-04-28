@@ -13,7 +13,7 @@ public abstract class ActivityConditionBaseHandler {
      * Execute activity condition handler and return result of it's calculation
      *
      * @param activityData {@link PlayerActivityData} object containing info about activity
-     * @param activityConfig
+     * @param activityConfig {@link ActivityConfigItem} object containing info about activity
      * @param params params for handler
      * @return result of condition calculation
      */

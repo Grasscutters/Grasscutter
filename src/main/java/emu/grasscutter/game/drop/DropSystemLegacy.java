@@ -12,7 +12,9 @@ import emu.grasscutter.server.game.*;
 import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.*;
 import java.util.List;
+import lombok.Getter;
 
+@Getter
 @SuppressWarnings("deprecation")
 public class DropSystemLegacy extends BaseGameSystem {
     private final Int2ObjectMap<List<DropData>> dropData;
@@ -23,15 +25,11 @@ public class DropSystemLegacy extends BaseGameSystem {
         this.load();
     }
 
-    public Int2ObjectMap<List<DropData>> getDropData() {
-        return dropData;
-    }
-
     public synchronized void load() {
         getDropData().clear();
         try {
             List<DropInfo> banners = DataLoader.loadList("Drop.json", DropInfo.class);
-            if (banners.size() > 0) {
+            if (!banners.isEmpty()) {
                 for (DropInfo di : banners) {
                     getDropData().put(di.getMonsterId(), di.getDropDataList());
                 }

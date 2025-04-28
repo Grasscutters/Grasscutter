@@ -8,7 +8,7 @@ import emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo;
 import lombok.val;
 
 public class GadgetAbility extends GadgetContent {
-    private EntityBaseGadget parent;
+    private final EntityBaseGadget parent;
 
     public GadgetAbility(EntityGadget gadget, EntityBaseGadget parent) {
         super(gadget);

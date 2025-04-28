@@ -312,7 +312,7 @@ public final class Grasscutter {
     public static void updateDayOfWeek() {
         Calendar calendar = Calendar.getInstance();
         Grasscutter.currentDayOfWeek = calendar.get(Calendar.DAY_OF_WEEK);
-        logger.debug("Set day of week to " + currentDayOfWeek);
+        logger.debug("Set day of week to {}", currentDayOfWeek);
     }
 
     public static void startConsole() {

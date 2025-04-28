@@ -12,20 +12,21 @@ import java.util.*;
 import lombok.Getter;
 
 public class Ability {
-    @Getter private AbilityData data;
-    @Getter private GameEntity owner;
-    @Getter private Player playerOwner;
+    @Getter private final AbilityData data;
+    @Getter private final GameEntity owner;
+    @Getter private final Player playerOwner;
 
-    @Getter private AbilityManager manager;
+    @Getter private final AbilityManager manager;
 
-    @Getter private Map<String, AbilityModifierController> modifiers = new HashMap<>();
-    @Getter private Object2FloatMap<String> abilitySpecials = new Object2FloatOpenHashMap<>();
+    @Getter private final Map<String, AbilityModifierController> modifiers = new HashMap<>();
+    @Getter private final Object2FloatMap<String> abilitySpecials = new Object2FloatOpenHashMap<>();
 
     @Getter
-    private static Map<String, Object2FloatMap<String>> abilitySpecialsModified = new HashMap<>();
+    private static final Map<String, Object2FloatMap<String>> abilitySpecialsModified =
+            new HashMap<>();
 
-    @Getter private int hash;
-    @Getter private Set<Integer> avatarSkillStartIds;
+    @Getter private final int hash;
+    @Getter private final Set<Integer> avatarSkillStartIds;
 
     public Ability(AbilityData data, GameEntity owner, Player playerOwner) {
         this.data = data;

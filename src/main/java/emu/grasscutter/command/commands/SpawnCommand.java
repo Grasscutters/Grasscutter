@@ -49,7 +49,7 @@ public final class SpawnCommand implements CommandHandler {
         parseIntParameters(args, param, intCommandHandlers);
 
         // At this point, first remaining argument MUST be the id and the rest the pos
-        if (args.size() < 1) {
+        if (args.isEmpty()) {
             sendUsageMessage(sender); // Reachable if someone does `/give lv90` or similar
             throw new IllegalArgumentException();
         }

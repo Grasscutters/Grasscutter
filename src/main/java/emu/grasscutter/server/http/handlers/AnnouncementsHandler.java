@@ -22,7 +22,7 @@ public final class AnnouncementsHandler implements Router {
                 data = FileUtils.readToString(DataLoader.load("GameAnnouncement.json"));
             } catch (Exception e) {
                 if (e.getClass() == IOException.class) {
-                    Grasscutter.getLogger().info("Unable to read file 'GameAnnouncementList.json'. \n" + e);
+                    Grasscutter.getLogger().info("Unable to read file 'GameAnnouncementList.json'. \n{}", e);
                 }
             }
         } else if (Objects.equals(
@@ -31,7 +31,7 @@ public final class AnnouncementsHandler implements Router {
                 data = FileUtils.readToString(DataLoader.load("GameAnnouncementList.json"));
             } catch (Exception e) {
                 if (e.getClass() == IOException.class) {
-                    Grasscutter.getLogger().info("Unable to read file 'GameAnnouncementList.json'. \n" + e);
+                    Grasscutter.getLogger().info("Unable to read file 'GameAnnouncementList.json'. \n{}", e);
                 }
             }
         } else {
@@ -77,7 +77,7 @@ public final class AnnouncementsHandler implements Router {
             ctx.contentType(fromExtension != null ? fromExtension : ContentType.APPLICATION_OCTET_STREAM);
             ctx.result(filestream.readAllBytes());
         } catch (Exception e) {
-            Grasscutter.getLogger().warn("File does not exist: " + ctx.path());
+            Grasscutter.getLogger().warn("File does not exist: {}", ctx.path());
             ctx.status(404);
         }
     }

@@ -29,7 +29,7 @@ public class SceneMeta {
         CompiledScript cs = ScriptLoader.getScript("Scene/" + sceneId + "/scene" + sceneId + ".lua");
 
         if (cs == null) {
-            Grasscutter.getLogger().warn("No script found for scene " + sceneId);
+            Grasscutter.getLogger().warn("No script found for scene {}", sceneId);
             return null;
         }
 

@@ -169,7 +169,7 @@ public interface Dumpers {
                                                 Language.getTextMapKey(item.getNameTextMapHash()).get(locale),
                                                 Quality.from(item.getRankLevel()),
                                                 item.getItemType(),
-                                                item.getIcon().length() > 0 ? item.getIcon().substring(3) : "")));
+                                                !item.getIcon().isEmpty() ? item.getIcon().substring(3) : "")));
 
         // Create a new dump with filtered duplicates.
         var names = new ArrayList<String>();

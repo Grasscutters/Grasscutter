@@ -17,7 +17,7 @@ public final class SendMessageCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
-        if (args.size() == 0) {
+        if (args.isEmpty()) {
             sendUsageMessage(sender);
             return;
         }

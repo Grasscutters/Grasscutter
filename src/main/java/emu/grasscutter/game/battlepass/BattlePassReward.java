@@ -4,12 +4,13 @@ import dev.morphia.annotations.*;
 import emu.grasscutter.data.excels.BattlePassMissionData;
 import emu.grasscutter.net.proto.BattlePassRewardTagOuterClass.BattlePassRewardTag;
 import emu.grasscutter.net.proto.BattlePassUnlockStatusOuterClass.BattlePassUnlockStatus;
+import lombok.Getter;
 
 @Entity
 public class BattlePassReward {
-    private int level;
-    private int rewardId;
-    private boolean paid;
+    @Getter private int level;
+    @Getter private int rewardId;
+    @Getter private boolean paid;
 
     @Transient private BattlePassMissionData data;
 
@@ -20,18 +21,6 @@ public class BattlePassReward {
         this.level = level;
         this.rewardId = rewardId;
         this.paid = paid;
-    }
-
-    public int getLevel() {
-        return level;
-    }
-
-    public int getRewardId() {
-        return rewardId;
-    }
-
-    public boolean isPaid() {
-        return paid;
     }
 
     public BattlePassRewardTag toProto() {

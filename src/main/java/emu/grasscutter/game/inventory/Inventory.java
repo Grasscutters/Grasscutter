@@ -7,24 +7,35 @@ import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.database.DatabaseHelper;
-import emu.grasscutter.game.avatar.*;
-import emu.grasscutter.game.player.*;
-import emu.grasscutter.game.props.*;
+import emu.grasscutter.game.avatar.Avatar;
+import emu.grasscutter.game.avatar.AvatarStorage;
+import emu.grasscutter.game.entity.EntityAvatar;
+import emu.grasscutter.game.player.BasePlayerManager;
+import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.props.ItemUseAction.UseItemParams;
+import emu.grasscutter.game.props.PlayerProperty;
+import emu.grasscutter.game.props.WatcherTriggerType;
 import emu.grasscutter.game.quest.enums.QuestContent;
 import emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam;
 import emu.grasscutter.server.event.player.PlayerObtainItemEvent;
 import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.Utils;
-import it.unimi.dsi.fastutil.ints.*;
-import it.unimi.dsi.fastutil.longs.*;
-import java.util.*;
+import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+import it.unimi.dsi.fastutil.longs.Long2ObjectMap;
+import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
 import javax.annotation.Nullable;
+import lombok.Getter;
 import lombok.val;
 
 public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
     private final Long2ObjectMap<GameItem> store;
-    private final Int2ObjectMap<InventoryTab> inventoryTypes;
+    @Getter private final Int2ObjectMap<InventoryTab> inventoryTypes;
 
     public Inventory(Player player) {
         super(player);
@@ -47,10 +58,6 @@ public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
 
     public Long2ObjectMap<GameItem> getItems() {
         return store;
-    }
-
-    public Int2ObjectMap<InventoryTab> getInventoryTypes() {
-        return inventoryTypes;
     }
 
     public InventoryTab getInventoryTab(ItemType type) {
@@ -178,7 +185,7 @@ public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
                 changedItems.add(result);
             }
         }
-        if (changedItems.size() == 0) {
+        if (changedItems.isEmpty()) {
             return;
         }
         if (reason != null) {
@@ -322,9 +329,8 @@ public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
                     case MATERIAL_NAMECARD:
                         Grasscutter.getLogger()
                                 .warn(
-                                        "Attempted to add a "
-                                                + item.getItemData().getMaterialType().name()
-                                                + " to inventory, but item definition lacks isUseOnGain. This indicates a Resources error.");
+                                        "Attempted to add a {} to inventory, but item definition lacks isUseOnGain. This indicates a Resources error.",
+                                        item.getItemData().getMaterialType().name());
                         return null;
                     default:
                         if (tab == null) {
@@ -370,7 +376,7 @@ public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
         switch (itemId) {
             case 101 -> // Character exp
             this.player.getTeamManager().getActiveTeam().stream()
-                    .map(e -> e.getAvatar())
+                    .map(EntityAvatar::getAvatar)
                     .forEach(
                             avatar ->
                                     this.player
@@ -381,7 +387,7 @@ public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
             this.player.addExpDirectly(count);
             case 105 -> // Companionship exp
             this.player.getTeamManager().getActiveTeam().stream()
-                    .map(e -> e.getAvatar())
+                    .map(EntityAvatar::getAvatar)
                     .forEach(
                             avatar ->
                                     this.player
@@ -430,26 +436,29 @@ public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
     }
 
     private int getVirtualItemCount(int itemId) {
-        switch (itemId) {
-            case 201: // Primogem
-                return this.player.getPrimogems();
-            case 202: // Mora
-                return this.player.getMora();
-            case 203: // Genesis Crystals
-                return this.player.getCrystals();
-            case 106: // Resin
-                return this.player.getProperty(PlayerProperty.PROP_PLAYER_RESIN);
-            case 107: // Legendary Key
-                return this.player.getProperty(PlayerProperty.PROP_PLAYER_LEGENDARY_KEY);
-            case 204: // Home Coin
-                return this.player.getHomeCoin();
-            default:
+        return switch (itemId) {
+            case 201 -> // Primogem
+            this.player.getPrimogems();
+            case 202 -> // Mora
+            this.player.getMora();
+            case 203 -> // Genesis Crystals
+            this.player.getCrystals();
+            case 106 -> // Resin
+            this.player.getProperty(PlayerProperty.PROP_PLAYER_RESIN);
+            case 107 -> // Legendary Key
+            this.player.getProperty(PlayerProperty.PROP_PLAYER_LEGENDARY_KEY);
+            case 204 -> // Home Coin
+            this.player.getHomeCoin();
+            default -> {
                 GameItem item =
                         getInventoryTab(ItemType.ITEM_MATERIAL)
                                 .getItemById(
-                                        itemId); // What if we ever want to operate on weapons/relics/furniture? :S
-                return (item == null) ? 0 : item.getCount();
-        }
+                                        itemId); // What if we ever want to operate on weapons/relics/furniture? :Syield
+                // (item == null) ? 0 : item.getCount(); // What if we ever want to
+                // operate on weapons/relics/furniture? :S
+                yield (item == null) ? 0 : item.getCount();
+            }
+        };
     }
 
     public synchronized boolean payItem(int id, int count) {

@@ -13,7 +13,7 @@ public class HandlerSetPlayerSignatureReq extends PacketHandler {
         // Auto template
         SetPlayerSignatureReq req = SetPlayerSignatureReq.parseFrom(payload);
 
-        if (req.getSignature() != null && req.getSignature().length() > 0) {
+        if (req.getSignature() != null && !req.getSignature().isEmpty()) {
             session.getPlayer().setSignature(req.getSignature());
             session.send(new PacketSetPlayerSignatureRsp(session.getPlayer()));
         }

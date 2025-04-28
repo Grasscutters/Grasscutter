@@ -6,7 +6,7 @@ import lombok.*;
 
 @Getter
 public final class SceneBlockLoadedEvent extends ServerEvent {
-    private SceneBlock block;
+    private final SceneBlock block;
 
     public SceneBlockLoadedEvent(SceneBlock block) {
         super(Type.GAME);

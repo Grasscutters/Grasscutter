@@ -25,7 +25,8 @@ public class ProudSkillData extends GameResource {
     @Getter private long nameTextMapHash;
     @Transient private Iterable<ItemParamData> totalCostItems;
 
-    @Transient @Getter private Object2FloatMap<String> paramListMap = new Object2FloatOpenHashMap<>();
+    @Transient @Getter
+    private final Object2FloatMap<String> paramListMap = new Object2FloatOpenHashMap<>();
 
     @Override
     public int getId() {

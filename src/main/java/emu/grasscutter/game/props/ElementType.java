@@ -7,6 +7,7 @@ import java.util.*;
 import java.util.stream.Stream;
 import lombok.Getter;
 
+@Getter
 public enum ElementType implements IntValueEnum {
     None(0, FightProperty.FIGHT_PROP_CUR_WIND_ENERGY, FightProperty.FIGHT_PROP_MAX_WIND_ENERGY),
     Fire(
@@ -80,12 +81,12 @@ public enum ElementType implements IntValueEnum {
                         });
     }
 
-    @Getter private final int value;
-    @Getter private final int teamResonanceId;
-    @Getter private final FightProperty curEnergyProp;
-    @Getter private final FightProperty maxEnergyProp;
-    @Getter private final int depotIndex;
-    @Getter private final int configHash;
+    private final int value;
+    private final int teamResonanceId;
+    private final FightProperty curEnergyProp;
+    private final FightProperty maxEnergyProp;
+    private final int depotIndex;
+    private final int configHash;
 
     ElementType(int value, FightProperty curEnergyProp, FightProperty maxEnergyProp) {
         this(value, curEnergyProp, maxEnergyProp, 0, null, 0);

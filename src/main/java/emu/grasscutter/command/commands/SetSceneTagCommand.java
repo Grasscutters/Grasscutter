@@ -95,9 +95,8 @@ public final class SetSceneTagCommand implements CommandHandler {
                 // Only remove for big world as some other scenes only have defaults
                 .filter(sceneTag -> sceneTag.getSceneId() == 3)
                 .forEach(
-                        sceneTag -> {
-                            targetPlayer.getSceneTags().get(sceneTag.getSceneId()).remove(sceneTag.getId());
-                        });
+                        sceneTag ->
+                                targetPlayer.getSceneTags().get(sceneTag.getSceneId()).remove(sceneTag.getId()));
 
         this.setSceneTags(targetPlayer);
     }

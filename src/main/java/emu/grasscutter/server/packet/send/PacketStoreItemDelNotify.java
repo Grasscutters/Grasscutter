@@ -29,7 +29,7 @@ public class PacketStoreItemDelNotify extends BasePacket {
         StoreItemDelNotify.Builder proto =
                 StoreItemDelNotify.newBuilder().setStoreType(StoreType.STORE_TYPE_PACK);
 
-        items.stream().forEach(item -> proto.addGuidList(item.getGuid()));
+        items.forEach(item -> proto.addGuidList(item.getGuid()));
 
         this.setData(proto);
     }

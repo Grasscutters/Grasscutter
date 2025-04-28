@@ -2,8 +2,9 @@ package emu.grasscutter.game.props.ItemUseAction;
 
 import lombok.Getter;
 
+@Getter
 public abstract class ItemUseInt extends ItemUseAction {
-    @Getter protected int i = 0;
+    protected int i = 0;
 
     public ItemUseInt(String[] useParam) {
         try {

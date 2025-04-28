@@ -26,12 +26,13 @@ import it.unimi.dsi.fastutil.ints.*;
 import java.nio.file.*;
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
+import lombok.Getter;
 import org.greenrobot.eventbus.Subscribe;
 
 public class GachaSystem extends BaseGameSystem {
     private static final int starglitterId = 221;
     private static final int stardustId = 222;
-    private final Int2ObjectMap<GachaBanner> gachaBanners;
+    @Getter private final Int2ObjectMap<GachaBanner> gachaBanners;
     private WatchService watchService;
 
     public GachaSystem(GameServer server) {
@@ -39,10 +40,6 @@ public class GachaSystem extends BaseGameSystem {
         this.gachaBanners = new Int2ObjectOpenHashMap<>();
         this.load();
         this.startWatcher(server);
-    }
-
-    public Int2ObjectMap<GachaBanner> getGachaBanners() {
-        return gachaBanners;
     }
 
     public int randomRange(int min, int max) { // Both are inclusive
@@ -105,7 +102,7 @@ public class GachaSystem extends BaseGameSystem {
             }
             total += weight;
         }
-        int roll = ThreadLocalRandom.current().nextInt((total < cutoff) ? total : cutoff);
+        int roll = ThreadLocalRandom.current().nextInt(Math.min(total, cutoff));
         int subTotal = 0;
         for (int i = 0; i < weights.length; i++) {
             subTotal += weights[i];

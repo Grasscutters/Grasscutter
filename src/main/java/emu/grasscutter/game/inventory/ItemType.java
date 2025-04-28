@@ -5,6 +5,7 @@ import java.util.*;
 import java.util.stream.Stream;
 import lombok.Getter;
 
+@Getter
 public enum ItemType {
     ITEM_NONE(0),
     ITEM_VIRTUAL(1),
@@ -26,7 +27,7 @@ public enum ItemType {
                         });
     }
 
-    @Getter private final int value;
+    private final int value;
 
     ItemType(int value) {
         this.value = value;

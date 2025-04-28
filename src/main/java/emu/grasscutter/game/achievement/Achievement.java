@@ -9,8 +9,8 @@ import lombok.*;
 @Getter
 public class Achievement {
     @Setter private Status status;
-    private int id;
-    private int totalProgress;
+    private final int id;
+    private final int totalProgress;
     @Setter private int curProgress;
     @Setter private int finishTimestampSec;
 

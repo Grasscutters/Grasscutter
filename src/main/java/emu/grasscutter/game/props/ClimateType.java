@@ -3,7 +3,9 @@ package emu.grasscutter.game.props;
 import it.unimi.dsi.fastutil.ints.*;
 import java.util.*;
 import java.util.stream.Stream;
+import lombok.Getter;
 
+@Getter
 public enum ClimateType {
     CLIMATE_NONE(0),
     CLIMATE_SUNNY(1),
@@ -43,10 +45,6 @@ public enum ClimateType {
     public static ClimateType getTypeByShortName(String shortName) {
         String name = "CLIMATE_" + shortName.toUpperCase();
         return stringMap.getOrDefault(name, CLIMATE_NONE);
-    }
-
-    public int getValue() {
-        return this.value;
     }
 
     public String getShortName() {

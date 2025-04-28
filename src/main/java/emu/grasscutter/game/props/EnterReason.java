@@ -3,7 +3,9 @@ package emu.grasscutter.game.props;
 import it.unimi.dsi.fastutil.ints.*;
 import java.util.*;
 import java.util.stream.Stream;
+import lombok.Getter;
 
+@Getter
 public enum EnterReason {
     None(0),
     Login(1),
@@ -62,9 +64,5 @@ public enum EnterReason {
 
     public static EnterReason getTypeByName(String name) {
         return stringMap.getOrDefault(name, None);
-    }
-
-    public int getValue() {
-        return value;
     }
 }

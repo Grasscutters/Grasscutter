@@ -12,7 +12,7 @@ public class ExecDecQuestGlobalVar extends QuestExecHandler {
         quest
                 .getOwner()
                 .getQuestManager()
-                .decQuestGlobalVarValue(Integer.valueOf(paramStr[0]), Integer.valueOf(paramStr[1]));
+                .decQuestGlobalVarValue(Integer.parseInt(paramStr[0]), Integer.parseInt(paramStr[1]));
         return true;
     }
 }

@@ -101,7 +101,7 @@ public class BlossomManager {
                             }
                         }
 
-                        Grasscutter.getLogger().info("Blossom Monsters:" + monsters);
+                        Grasscutter.getLogger().info("Blossom Monsters:{}", monsters);
 
                         activity = new BlossomActivity(entityGadget, monsters, -1, worldLevel);
                         blossomActivities.add(activity);
@@ -118,7 +118,7 @@ public class BlossomManager {
 
     public void notifyIcon() {
         final int wl = getWorldLevel();
-        final int worldLevel = (wl < 0) ? 0 : ((wl > 8) ? 8 : wl);
+        final int worldLevel = (wl < 0) ? 0 : (Math.min(wl, 8));
         final var worldLevelData = GameData.getWorldLevelDataMap().get(worldLevel);
         final int monsterLevel = (worldLevelData != null) ? worldLevelData.getMonsterLevel() : 1;
         List<BlossomBriefInfoOuterClass.BlossomBriefInfo> blossoms = new ArrayList<>();
@@ -203,7 +203,7 @@ public class BlossomManager {
                         RewardPreviewData blossomRewards = getRewardList(type, worldLevel);
                         if (blossomRewards == null) {
                             Grasscutter.getLogger()
-                                    .error("Blossom could not support world level : " + worldLevel);
+                                    .error("Blossom could not support world level : {}", worldLevel);
                             return null;
                         }
                         var rewards = blossomRewards.getPreviewItems();

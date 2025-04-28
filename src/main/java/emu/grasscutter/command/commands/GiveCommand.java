@@ -3,16 +3,23 @@ package emu.grasscutter.command.commands;
 import static emu.grasscutter.GameConstants.*;
 import static emu.grasscutter.command.CommandHelpers.*;
 
-import emu.grasscutter.command.*;
-import emu.grasscutter.data.*;
+import emu.grasscutter.command.Command;
+import emu.grasscutter.command.CommandHandler;
+import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.GameDepot;
 import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.data.excels.avatar.AvatarData;
-import emu.grasscutter.data.excels.reliquary.*;
+import emu.grasscutter.data.excels.reliquary.ReliquaryAffixData;
+import emu.grasscutter.data.excels.reliquary.ReliquaryMainPropData;
 import emu.grasscutter.game.avatar.Avatar;
-import emu.grasscutter.game.inventory.*;
+import emu.grasscutter.game.inventory.GameItem;
+import emu.grasscutter.game.inventory.ItemType;
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.game.props.*;
-import java.util.*;
+import emu.grasscutter.game.props.ActionReason;
+import emu.grasscutter.game.props.FightProperty;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 import java.util.function.BiConsumer;
 import java.util.regex.Pattern;
 import lombok.Setter;
@@ -279,7 +286,7 @@ public final class GiveCommand implements CommandHandler {
         parseIntParameters(args, param, intCommandHandlers);
 
         // At this point, first remaining argument MUST be itemId/avatarId
-        if (args.size() < 1) {
+        if (args.isEmpty()) {
             sendUsageMessage(sender); // Reachable if someone does `/give lv90` or similar
             throw new IllegalArgumentException();
         }
@@ -362,7 +369,7 @@ public final class GiveCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
-        if (args.size() < 1) { // *No args*
+        if (args.isEmpty()) { // *No args*
             sendUsageMessage(sender);
             return;
         }

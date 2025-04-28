@@ -7,10 +7,11 @@ import emu.grasscutter.server.event.types.EntityEvent;
 import javax.annotation.Nullable;
 import lombok.*;
 
+@Getter
 public final class EntityDamageEvent extends EntityEvent implements Cancellable {
-    @Getter @Setter private float damage;
-    @Getter @Setter private ElementType attackElementType;
-    @Getter @Nullable private final GameEntity damager;
+    @Setter private float damage;
+    @Setter private ElementType attackElementType;
+    @Nullable private final GameEntity damager;
 
     public EntityDamageEvent(
             GameEntity entity,

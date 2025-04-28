@@ -20,9 +20,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Setup Java
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: '17'
@@ -44,7 +44,7 @@ jobs:
       - name: Run Gradle
         run: ./gradlew -PskipHandbook=1 && ./gradlew jar -PskipHandbook=1
       - name: Upload build
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: Grasscutter
           path: grasscutter-*.jar

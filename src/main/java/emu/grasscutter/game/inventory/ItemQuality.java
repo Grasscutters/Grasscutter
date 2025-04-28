@@ -5,6 +5,7 @@ import java.util.*;
 import java.util.stream.Stream;
 import lombok.Getter;
 
+@Getter
 public enum ItemQuality {
     QUALITY_NONE(0),
     QUALITY_WHITE(1),
@@ -26,7 +27,7 @@ public enum ItemQuality {
                         });
     }
 
-    @Getter private final int value;
+    private final int value;
 
     ItemQuality(int value) {
         this.value = value;

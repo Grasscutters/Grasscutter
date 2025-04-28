@@ -5,7 +5,9 @@ import emu.grasscutter.data.*;
 import emu.grasscutter.data.excels.tower.TowerScheduleData;
 import emu.grasscutter.server.game.*;
 import java.util.*;
+import lombok.Getter;
 
+@Getter
 public class TowerSystem extends BaseGameSystem {
 
     private TowerScheduleConfig towerScheduleConfig;
@@ -21,10 +23,6 @@ public class TowerSystem extends BaseGameSystem {
         } catch (Exception e) {
             Grasscutter.getLogger().error("Unable to load tower schedule config.", e);
         }
-    }
-
-    public TowerScheduleConfig getTowerScheduleConfig() {
-        return towerScheduleConfig;
     }
 
     public TowerScheduleData getCurrentTowerScheduleData() {

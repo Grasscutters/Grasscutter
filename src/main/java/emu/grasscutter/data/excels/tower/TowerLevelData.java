@@ -30,8 +30,8 @@ public class TowerLevelData extends GameResource {
     // Just packaging condition parameters for convenience.
     @Getter
     public class TowerCondTimeParams {
-        private int param1;
-        private int minimumTimeInSeconds;
+        private final int param1;
+        private final int minimumTimeInSeconds;
 
         public TowerCondTimeParams(int param1, int minimumTimeInSeconds) {
             this.param1 = param1;
@@ -41,9 +41,9 @@ public class TowerLevelData extends GameResource {
 
     @Getter
     public class TowerCondHpParams {
-        private int sceneId;
-        private int configId;
-        private int minimumHpPercentage;
+        private final int sceneId;
+        private final int configId;
+        private final int minimumHpPercentage;
 
         public TowerCondHpParams(int sceneId, int configId, int minimumHpPercentage) {
             this.sceneId = sceneId;

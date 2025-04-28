@@ -3,17 +3,18 @@ package emu.grasscutter.data.binout;
 import com.google.gson.*;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.reflect.TypeToken;
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.*;
 
 public class AbilityMixinData implements Serializable {
-    private static final long serialVersionUID = -2001232313615923575L;
+    @Serial private static final long serialVersionUID = -2001232313615923575L;
 
     public enum Type {
         AttachToGadgetStateMixin,
         AttachToStateIDMixin,
         ShieldBarMixin,
-        TileAttackManagerMixin;
+        TileAttackManagerMixin
     }
 
     @SerializedName("$type")
@@ -27,7 +28,7 @@ public class AbilityMixinData implements Serializable {
             List<String> list = (new Gson()).fromJson(modifierName, listType);
             return list;
         } else {
-            return Arrays.asList(modifierName.getAsString());
+            return Collections.singletonList(modifierName.getAsString());
         }
     }
 }

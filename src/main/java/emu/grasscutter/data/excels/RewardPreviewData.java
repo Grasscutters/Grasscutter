@@ -8,7 +8,7 @@ import lombok.Getter;
 
 @ResourceType(name = "RewardPreviewExcelConfigData.json", loadPriority = LoadPriority.HIGH)
 public class RewardPreviewData extends GameResource {
-    @Getter(onMethod_ = @Override)
+    @Getter(onMethod = @__(@Override))
     private int id;
 
     private ItemParamStringData[] previewItems;
@@ -25,7 +25,7 @@ public class RewardPreviewData extends GameResource {
                     Arrays.stream(this.previewItems)
                             .filter(d -> d.getId() > 0 && d.getCount() != null && !d.getCount().isEmpty())
                             .map(ItemParamStringData::toItemParamData)
-                            .toArray(size -> new ItemParamData[size]);
+                            .toArray(ItemParamData[]::new);
         } else {
             this.previewItemsArray = new ItemParamData[0];
         }

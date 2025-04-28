@@ -39,24 +39,24 @@ public class GachaBanner {
     @Getter private String previewPrefabPath;
     @Getter private String titlePath;
     private int costItemId = 0;
-    private int costItemAmount = 1;
+    private final int costItemAmount = 1;
     private int costItemId10 = 0;
-    private int costItemAmount10 = 10;
-    @Getter private int beginTime = 0;
-    @Getter private int endTime = 1924992000;
-    @Getter private int gachaTimesLimit = Integer.MAX_VALUE;
-    @Getter private int[] rateUpItems4 = {};
-    @Getter private int[] rateUpItems5 = {};
+    private final int costItemAmount10 = 10;
+    @Getter private final int beginTime = 0;
+    @Getter private final int endTime = 1924992000;
+    @Getter private final int gachaTimesLimit = Integer.MAX_VALUE;
+    @Getter private final int[] rateUpItems4 = {};
+    @Getter private final int[] rateUpItems5 = {};
     // This now handles default values for the fields below
-    @Getter private BannerType bannerType = BannerType.STANDARD;
+    @Getter private final BannerType bannerType = BannerType.STANDARD;
     // These don't change between banner types (apart from Standard having three extra 4star avatars)
     @Getter
-    private int[] fallbackItems3 = {
+    private final int[] fallbackItems3 = {
         11301, 11302, 11306, 12301, 12302, 12305, 13303, 14301, 14302, 14304, 15301, 15302, 15304
     };
 
-    @Getter private int[] fallbackItems4Pool1 = DEFAULT_FALLBACK_ITEMS_4_POOL_1;
-    @Getter private int[] fallbackItems4Pool2 = DEFAULT_FALLBACK_ITEMS_4_POOL_2;
+    @Getter private final int[] fallbackItems4Pool1 = DEFAULT_FALLBACK_ITEMS_4_POOL_1;
+    @Getter private final int[] fallbackItems4Pool2 = DEFAULT_FALLBACK_ITEMS_4_POOL_2;
     // Different banner types have different defaults, see above for default values and the enum for
     // which are used where.
     @Getter private int[] fallbackItems5Pool1;
@@ -66,42 +66,40 @@ public class GachaBanner {
     private int eventChance4 = -1; // Chance to win a featured event item
     private int eventChance5 = -1; // Chance to win a featured event item
     //
-    @Getter private boolean removeC6FromPool = false;
+    @Getter private final boolean removeC6FromPool = false;
 
     @Getter
-    private boolean autoStripRateUpFromFallback =
+    private final boolean autoStripRateUpFromFallback =
             true; // Ensures that featured items won't "double dip" into the losing pool
 
-    private int[][] poolBalanceWeights4 = {
+    private final int[][] poolBalanceWeights4 = {
         {1, 255}, {17, 255}, {21, 10455}
     }; // Used to ensure that players won't go too many rolls without getting something from pool 1
     // (avatar) or pool 2 (weapon)
-    private int[][] poolBalanceWeights5 = {{1, 30}, {147, 150}, {181, 10230}};
-    @Getter private int wishMaxProgress = 2;
+    private final int[][] poolBalanceWeights5 = {{1, 30}, {147, 150}, {181, 10230}};
+    @Getter private final int wishMaxProgress = 2;
 
     // Deprecated fields that were tolerated in early May 2022 but have apparently still being
     // circulating in new custom configs
     // For now, throw up big scary errors on load telling people that they will be banned outright in
     // a future version
-    @Deprecated private int[] rateUpItems1 = {};
-    @Deprecated private int[] rateUpItems2 = {};
-    @Deprecated private int eventChance = -1;
-    @Deprecated private int costItem = 0;
-    @Deprecated private int softPity = -1;
-    @Deprecated private int hardPity = -1;
-    @Deprecated private int minItemType = -1;
-    @Deprecated private int maxItemType = -1;
+    @Deprecated private final int[] rateUpItems1 = {};
+    @Deprecated private final int[] rateUpItems2 = {};
+    @Deprecated private final int eventChance = -1;
+    @Deprecated private final int costItem = 0;
+    @Deprecated private final int softPity = -1;
+    @Deprecated private final int hardPity = -1;
+    @Deprecated private final int minItemType = -1;
+    @Deprecated private final int maxItemType = -1;
     @Getter private boolean deprecated = false;
-    @Getter private boolean disabled = false;
+    @Getter private final boolean disabled = false;
 
     private void warnDeprecated(String name, String replacement) {
         Grasscutter.getLogger()
                 .error(
-                        "Deprecated field found in Banners config: "
-                                + name
-                                + " was replaced back in early May 2022, use "
-                                + replacement
-                                + " instead. You MUST remove this field from your config.");
+                        "Deprecated field found in Banners config: {} was replaced back in early May 2022, use {} instead. You MUST remove this field from your config.",
+                        name,
+                        replacement);
         this.deprecated = true;
     }
 

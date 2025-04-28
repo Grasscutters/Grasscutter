@@ -1,5 +1,8 @@
 package emu.grasscutter.game.quest.enums;
 
+import lombok.Getter;
+
+@Getter
 public enum QuestType {
     AQ(0),
     FQ(1),
@@ -14,9 +17,5 @@ public enum QuestType {
 
     QuestType(int id) {
         this.value = id;
-    }
-
-    public int getValue() {
-        return value;
     }
 }

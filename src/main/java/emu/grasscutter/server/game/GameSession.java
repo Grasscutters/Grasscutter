@@ -17,7 +17,7 @@ import java.nio.file.Path;
 import lombok.*;
 
 public class GameSession implements GameSessionManager.KcpChannel {
-    private final GameServer server;
+    @Getter private final GameServer server;
     private GameSessionManager.KcpTunnel tunnel;
 
     @Getter @Setter private Account account;
@@ -42,10 +42,6 @@ public class GameSession implements GameSessionManager.KcpChannel {
             this.encryptKey = new byte[4096];
             this.encryptSeed = Crypto.generateEncryptKeyAndSeed(this.encryptKey);
         }
-    }
-
-    public GameServer getServer() {
-        return server;
     }
 
     public InetSocketAddress getAddress() {
@@ -99,7 +95,7 @@ public class GameSession implements GameSessionManager.KcpChannel {
 
     public void logPacket(String sendOrRecv, int opcode, byte[] payload) {
         Grasscutter.getLogger()
-                .info(sendOrRecv + ": " + PacketOpcodesUtils.getOpcodeName(opcode) + " (" + opcode + ")");
+                .info("{}: {} ({})", sendOrRecv, PacketOpcodesUtils.getOpcodeName(opcode), opcode);
         if (GAME_INFO.isShowPacketPayload) System.out.println(Utils.bytesToHex(payload));
     }
 

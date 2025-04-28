@@ -8,7 +8,7 @@ import lombok.Getter;
 @ResourceType(name = "SceneTagConfigData.json")
 @Getter
 public final class SceneTagData extends GameResource {
-    @Getter(onMethod_ = @Override)
+    @Getter(onMethod = @__(@Override))
     private int id;
 
     @SerializedName("DJCOAOBDIHP")

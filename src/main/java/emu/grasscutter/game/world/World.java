@@ -39,6 +39,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Nullable;
 import lombok.Getter;
+import lombok.Setter;
 import lombok.val;
 import org.jetbrains.annotations.NotNull;
 
@@ -48,10 +49,10 @@ public class World implements Iterable<Player> {
     @Getter private final List<Player> players;
     @Getter private final Int2ObjectMap<Scene> scenes;
 
-    @Getter private EntityWorld entity;
+    @Getter private final EntityWorld entity;
     private int nextEntityId = 0;
     private int nextPeerId = 0;
-    private int worldLevel;
+    @Setter @Getter private int worldLevel;
 
     @Getter private boolean isMultiplayer = false;
     @Getter private boolean timeLocked;
@@ -119,14 +120,6 @@ public class World implements Iterable<Player> {
 
     public int getNextPeerId() {
         return ++this.nextPeerId;
-    }
-
-    public int getWorldLevel() {
-        return worldLevel;
-    }
-
-    public void setWorldLevel(int worldLevel) {
-        this.worldLevel = worldLevel;
     }
 
     protected synchronized void setHost(Player host) {
@@ -296,7 +289,7 @@ public class World implements Iterable<Player> {
         scene.removePlayer(player);
 
         // Info packet for other players
-        if (this.getPlayers().size() > 0) {
+        if (!this.getPlayers().isEmpty()) {
             this.updatePlayerInfos(player);
         }
 

@@ -8,6 +8,7 @@ import java.util.function.Consumer;
 import java.util.stream.Stream;
 import lombok.Getter;
 
+@Getter
 public enum FightProperty {
     FIGHT_PROP_NONE(0),
     FIGHT_PROP_BASE_HP(1),
@@ -238,10 +239,6 @@ public enum FightProperty {
 
     public static boolean isPercentage(FightProperty prop) {
         return !flatProps.contains(prop);
-    }
-
-    public int getId() {
-        return id;
     }
 
     @Getter

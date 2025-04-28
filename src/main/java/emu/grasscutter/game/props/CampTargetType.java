@@ -4,7 +4,9 @@ import emu.grasscutter.scripts.constants.IntValueEnum;
 import it.unimi.dsi.fastutil.ints.*;
 import java.util.*;
 import java.util.stream.Stream;
+import lombok.Getter;
 
+@Getter
 public enum CampTargetType implements IntValueEnum {
     None(0),
     Alliance(1),
@@ -30,10 +32,6 @@ public enum CampTargetType implements IntValueEnum {
 
     private CampTargetType(int value) {
         this.value = value;
-    }
-
-    public int getValue() {
-        return value;
     }
 
     public static CampTargetType getTypeByValue(int value) {

@@ -3,6 +3,7 @@ package emu.grasscutter.server.event;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.plugin.Plugin;
 import emu.grasscutter.utils.objects.EventConsumer;
+import lombok.Getter;
 
 public final class EventHandler<T extends Event> {
     /**
@@ -57,7 +58,13 @@ public final class EventHandler<T extends Event> {
 
     private final Class<T> eventClass;
     private EventConsumer<T> listener;
-    private HandlerPriority priority;
+    /**
+     * -- GETTER -- Returns the handler's priority.
+     *
+     * @return The priority of the handler.
+     */
+    @Getter private HandlerPriority priority;
+
     private boolean handleCanceled;
     private Plugin plugin;
 
@@ -81,15 +88,6 @@ public final class EventHandler<T extends Event> {
      */
     public EventConsumer<T> getCallback() {
         return this.listener;
-    }
-
-    /**
-     * Returns the handler's priority.
-     *
-     * @return The priority of the handler.
-     */
-    public HandlerPriority getPriority() {
-        return this.priority;
     }
 
     /**

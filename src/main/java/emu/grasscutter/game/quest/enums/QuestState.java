@@ -1,7 +1,9 @@
 package emu.grasscutter.game.quest.enums;
 
 import emu.grasscutter.scripts.constants.IntValueEnum;
+import lombok.Getter;
 
+@Getter
 public enum QuestState implements IntValueEnum {
     QUEST_STATE_NONE(0),
     QUEST_STATE_UNSTARTED(1),
@@ -20,9 +22,5 @@ public enum QuestState implements IntValueEnum {
 
     QuestState(int id) {
         this.value = id;
-    }
-
-    public int getValue() {
-        return value;
     }
 }

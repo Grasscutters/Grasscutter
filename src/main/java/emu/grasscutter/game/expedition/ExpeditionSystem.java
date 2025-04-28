@@ -24,7 +24,7 @@ public class ExpeditionSystem extends BaseGameSystem {
         try {
             List<ExpeditionRewardInfo> banners =
                     DataLoader.loadList("ExpeditionReward.json", ExpeditionRewardInfo.class);
-            if (banners.size() > 0) {
+            if (!banners.isEmpty()) {
                 for (ExpeditionRewardInfo di : banners) {
                     getExpeditionRewardDataList().put(di.getExpId(), di.getExpeditionRewardDataList());
                 }

@@ -30,12 +30,13 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 import javax.annotation.*;
 import kotlin.Pair;
+import lombok.Getter;
 import lombok.val;
 import org.luaj.vm2.*;
 import org.luaj.vm2.lib.jse.CoerceJavaToLua;
 
 public class SceneScriptManager {
-    private final Scene scene;
+    @Getter private final Scene scene;
     private final Map<String, Integer> variables;
     private SceneMeta meta;
     private boolean isInit;
@@ -54,10 +55,10 @@ public class SceneScriptManager {
     private final Map<Integer, SceneGroup> sceneGroups;
     private final Map<Integer, SceneGroupInstance> sceneGroupsInstances;
     private final Map<Integer, SceneGroupInstance> cachedSceneGroupsInstances;
-    private ScriptMonsterTideService scriptMonsterTideService;
-    private ScriptMonsterSpawnService scriptMonsterSpawnService;
+    @Getter private ScriptMonsterTideService scriptMonsterTideService;
+    @Getter private final ScriptMonsterSpawnService scriptMonsterSpawnService;
     /** blockid - loaded groupSet */
-    private final Map<Integer, Set<SceneGroup>> loadedGroupSetPerBlock;
+    @Getter private final Map<Integer, Set<SceneGroup>> loadedGroupSetPerBlock;
 
     private static final Int2ObjectMap<List<Grid>> groupGridsCache = new Int2ObjectOpenHashMap<>();
     public static final ExecutorService eventExecutor;
@@ -98,10 +99,6 @@ public class SceneScriptManager {
 
         // Create
         new Thread(this::init).start();
-    }
-
-    public Scene getScene() {
-        return scene;
     }
 
     public SceneConfig getConfig() {
@@ -270,7 +267,7 @@ public class SceneScriptManager {
         // If that trigger has been refreshed, ensure it does not get
         // deregistered anyway when the trigger completes its invocation.
         for (var triggerSet : currentTriggers.values()) {
-            var toSave = new HashSet<SceneTrigger>(triggerSet);
+            var toSave = new HashSet<>(triggerSet);
             toSave.retainAll(ongoingTriggers);
             toSave.forEach(t -> t.setPreserved(true));
         }
@@ -383,10 +380,6 @@ public class SceneScriptManager {
                 .filter(r -> r.getMetaRegion().equals(region))
                 .findFirst()
                 .ifPresent(entityRegion -> this.regions.remove(entityRegion.getId()));
-    }
-
-    public Map<Integer, Set<SceneGroup>> getLoadedGroupSetPerBlock() {
-        return loadedGroupSetPerBlock;
     }
 
     // TODO optimize
@@ -678,7 +671,7 @@ public class SceneScriptManager {
     }
 
     public void checkRegions() {
-        if (this.regions.size() == 0) {
+        if (this.regions.isEmpty()) {
             return;
         }
 
@@ -847,13 +840,13 @@ public class SceneScriptManager {
     }
 
     public Future<?> callEvent(@Nonnull ScriptArgs params) {
-        /**
-         * We use ThreadLocal to trans SceneScriptManager context to ScriptLib, to avoid eval script for
-         * every groups' trigger in every scene instances. But when callEvent is called in a ScriptLib
-         * func, it may cause NPE because the inner call cleans the ThreadLocal so that outer call could
-         * not get it. e.g. CallEvent -> set -> ScriptLib.xxx -> CallEvent -> set -> remove -> NPE ->
-         * (remove) So we use thread pool to clean the stack to avoid this new issue.
-         */
+        /*
+        We use ThreadLocal to trans SceneScriptManager context to ScriptLib, to avoid eval script for
+        every groups' trigger in every scene instances. But when callEvent is called in a ScriptLib
+        func, it may cause NPE because the inner call cleans the ThreadLocal so that outer call could
+        not get it. e.g. CallEvent -> set -> ScriptLib.xxx -> CallEvent -> set -> remove -> NPE ->
+        (remove) So we use thread pool to clean the stack to avoid this new issue.
+        */
         return eventExecutor.submit(() -> this.realCallEvent(params));
     }
 
@@ -887,7 +880,7 @@ public class SceneScriptManager {
             }
         } catch (Throwable throwable) {
             Grasscutter.getLogger()
-                    .error("Condition Trigger " + params.type + " triggered exception", throwable);
+                    .error("Condition Trigger {} triggered exception", params.type, throwable);
         } finally {
             // make sure it is removed
             ScriptLoader.getScriptLib().removeSceneScriptManager();
@@ -913,7 +906,7 @@ public class SceneScriptManager {
             return false;
         } catch (Throwable ex) {
             Grasscutter.getLogger()
-                    .error("Condition Trigger " + trigger.getName() + " triggered exception", ex);
+                    .error("Condition Trigger {} triggered exception", trigger.getName(), ex);
             return false;
         } finally {
             ScriptLoader.getScriptLib().removeCurrentGroup();
@@ -1007,14 +1000,6 @@ public class SceneScriptManager {
                     "[LUA] call trigger failed in group {} with {},{}", group.id, name, args, error);
             return LuaValue.valueOf(-1);
         }
-    }
-
-    public ScriptMonsterTideService getScriptMonsterTideService() {
-        return scriptMonsterTideService;
-    }
-
-    public ScriptMonsterSpawnService getScriptMonsterSpawnService() {
-        return scriptMonsterSpawnService;
     }
 
     public EntityGadget createGadget(int groupId, int blockId, SceneGadget g) {

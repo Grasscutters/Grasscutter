@@ -22,6 +22,7 @@ import java.time.Instant;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.regex.Pattern;
+import lombok.Getter;
 import org.slf4j.Logger;
 
 /** Handles requests related to region queries. */
@@ -53,12 +54,12 @@ public final class RegionHandler implements Router {
         var usedNames = new ArrayList<String>(); // List to check for potential naming conflicts.
 
         var configuredRegions = new ArrayList<>(DISPATCH_INFO.regions);
-        if (Grasscutter.getRunMode() != ServerRunMode.HYBRID && configuredRegions.size() == 0) {
+        if (Grasscutter.getRunMode() != ServerRunMode.HYBRID && configuredRegions.isEmpty()) {
             Grasscutter.getLogger()
                     .error(
                             "[Dispatch] There are no game servers available. Exiting due to unplayable state.");
             System.exit(1);
-        } else if (configuredRegions.size() == 0)
+        } else if (configuredRegions.isEmpty())
             configuredRegions.add(
                     new Region(
                             "os_usa",
@@ -321,6 +322,7 @@ public final class RegionHandler implements Router {
     }
 
     /** Region data container. */
+    @Getter
     public static class RegionData {
         private final QueryCurrRegionHttpRsp regionQuery;
         private final String base64;
@@ -328,14 +330,6 @@ public final class RegionHandler implements Router {
         public RegionData(QueryCurrRegionHttpRsp prq, String b64) {
             this.regionQuery = prq;
             this.base64 = b64;
-        }
-
-        public QueryCurrRegionHttpRsp getRegionQuery() {
-            return this.regionQuery;
-        }
-
-        public String getBase64() {
-            return this.base64;
         }
     }
 

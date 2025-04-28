@@ -1,10 +1,17 @@
 package emu.grasscutter.data;
 
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.utils.*;
-import java.io.*;
-import java.nio.file.*;
-import java.util.*;
+import emu.grasscutter.utils.FileUtils;
+import emu.grasscutter.utils.JsonUtils;
+import emu.grasscutter.utils.TsvUtils;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.List;
+import java.util.Map;
 import lombok.val;
 
 public class DataLoader {
@@ -15,7 +22,7 @@ public class DataLoader {
      *
      * @param resourcePath The path to the data file to be loaded.
      * @return InputStream of the data file.
-     * @throws FileNotFoundException
+     * @throws FileNotFoundException If the file is not found.
      * @see #load(String, boolean)
      */
     public static InputStream load(String resourcePath) throws FileNotFoundException {
@@ -24,22 +31,18 @@ public class DataLoader {
 
     /**
      * Creates an input stream reader for a data file. If the file isn't found within the /data
-     * directory then it will fallback to the default within the jar resources
+     * directory then it will fall back to the default within the jar resources
      *
      * @param resourcePath The path to the data file to be loaded.
      * @return InputStreamReader of the data file.
-     * @throws IOException
-     * @throws FileNotFoundException
+     * @throws IOException If the file is not found.
+     * @throws FileNotFoundException If the file is not found.
      * @see #load(String, boolean)
      */
-    public static InputStreamReader loadReader(String resourcePath)
-            throws IOException, FileNotFoundException {
-        try {
-            InputStream is = load(resourcePath, true);
-            return new InputStreamReader(is);
-        } catch (FileNotFoundException exception) {
-            throw exception;
-        }
+    public static InputStreamReader loadReader(String resourcePath) throws IOException {
+        InputStream is = load(resourcePath, true);
+        if (is == null) throw new FileNotFoundException("File not found: " + resourcePath);
+        return new InputStreamReader(is);
     }
 
     /**
@@ -49,7 +52,7 @@ public class DataLoader {
      * @param useFallback If the file does not exist in the /data directory, should it use the default
      *     file in the jar?
      * @return InputStream of the data file.
-     * @throws FileNotFoundException
+     * @throws FileNotFoundException If the file is not found.
      */
     public static InputStream load(String resourcePath, boolean useFallback)
             throws FileNotFoundException {
@@ -89,7 +92,7 @@ public class DataLoader {
     public static <T> List<T> loadTableToList(String resourcePath, Class<T> classType)
             throws IOException {
         val path = FileUtils.getDataPathTsjJsonTsv(resourcePath);
-        Grasscutter.getLogger().trace("Loading data table from: " + path);
+        Grasscutter.getLogger().trace("Loading data table from: {}", path);
         return switch (FileUtils.getFileExtension(path)) {
             case "json" -> JsonUtils.loadToList(path, classType);
             case "tsj" -> TsvUtils.loadTsjToListSetField(path, classType);
@@ -120,10 +123,9 @@ public class DataLoader {
 
         if (!Files.exists(filePath)) {
             var root = filePath.getParent();
-            if (root.toFile().mkdirs())
-                Grasscutter.getLogger().info("Created data folder '" + root + "'");
+            if (root.toFile().mkdirs()) Grasscutter.getLogger().info("Created data folder '{}'", root);
 
-            Grasscutter.getLogger().debug("Creating default '" + name + "' data");
+            Grasscutter.getLogger().debug("Creating default '{}' data", name);
             FileUtils.copyResource("/defaults/data/" + name, filePath.toString());
         }
     }

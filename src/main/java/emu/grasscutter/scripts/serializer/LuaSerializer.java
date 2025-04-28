@@ -239,7 +239,7 @@ public class LuaSerializer implements Serializer {
     }
 
     public String getSetterName(String fieldName) {
-        if (fieldName == null || fieldName.length() == 0) {
+        if (fieldName == null || fieldName.isEmpty()) {
             return null;
         }
         if (fieldName.length() == 1) {

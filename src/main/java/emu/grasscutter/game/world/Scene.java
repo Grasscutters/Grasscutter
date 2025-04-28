@@ -79,7 +79,7 @@ public class Scene {
     private final List<Runnable> afterLoadedCallbacks = new ArrayList<>();
     private final List<Runnable> afterHostInitCallbacks = new ArrayList<>();
 
-    @Getter private GameEntity sceneEntity;
+    @Getter private final GameEntity sceneEntity;
     @Getter private final ServerTaskScheduler scheduler;
 
     public Scene(World world, SceneData sceneData) {
@@ -392,14 +392,15 @@ public class Scene {
     }
 
     public void updateEntity(GameEntity entity, VisionType type) {
-        this.broadcastPacket(new PacketSceneEntityUpdateNotify(Arrays.asList(entity), type));
+        this.broadcastPacket(
+                new PacketSceneEntityUpdateNotify(Collections.singletonList(entity), type));
     }
 
     private static <T> List<List<T>> chopped(List<T> list, final int L) {
-        List<List<T>> parts = new ArrayList<List<T>>();
+        List<List<T>> parts = new ArrayList<>();
         final int N = list.size();
         for (int i = 0; i < N; i += L) {
-            parts.add(new ArrayList<T>(list.subList(i, Math.min(N, i + L))));
+            parts.add(new ArrayList<>(list.subList(i, Math.min(N, i + L))));
         }
         return parts;
     }
@@ -882,12 +883,12 @@ public class Scene {
             }
         }
 
-        if (toAdd.size() > 0) {
+        if (!toAdd.isEmpty()) {
             toAdd.forEach(this::addEntityDirectly);
             this.broadcastPacket(new PacketSceneEntityAppearNotify(toAdd, VisionType.VISION_TYPE_BORN));
         }
 
-        if (toRemove.size() > 0) {
+        if (!toRemove.isEmpty()) {
             toRemove.forEach(this::removeEntityDirectly);
             this.broadcastPacket(
                     new PacketSceneEntityDisappearNotify(toRemove, VisionType.VISION_TYPE_REMOVE));
@@ -1110,7 +1111,7 @@ public class Scene {
                         .filter(e -> e != null && (e.getBlockId() == block.id && e.getGroupId() == group_id))
                         .toList();
 
-        if (toRemove.size() > 0) {
+        if (!toRemove.isEmpty()) {
             toRemove.forEach(this::removeEntityDirectly);
             this.broadcastPacket(
                     new PacketSceneEntityDisappearNotify(toRemove, VisionType.VISION_TYPE_REMOVE));
@@ -1253,7 +1254,7 @@ public class Scene {
                     sceneNpcBornEntries.add(i);
                 });
 
-        if (sceneNpcBornEntries.size() > 0) {
+        if (!sceneNpcBornEntries.isEmpty()) {
             this.broadcastPacket(new PacketGroupSuiteNotify(sceneNpcBornEntries));
             Grasscutter.getLogger().trace("Loaded Npc Group Suite {}", sceneNpcBornEntries);
         }

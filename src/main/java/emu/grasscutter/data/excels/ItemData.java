@@ -24,7 +24,7 @@ public class ItemData extends GameResource {
     @Getter(onMethod_ = @Override)
     private int id;
 
-    private int stackLimit = 1;
+    private final int stackLimit = 1;
     private int maxUseCount;
     private int rankLevel;
     private String effectName;
@@ -37,7 +37,7 @@ public class ItemData extends GameResource {
     private int[] destroyReturnMaterialCount;
 
     // Enums
-    private ItemType itemType = ItemType.ITEM_NONE;
+    private final ItemType itemType = ItemType.ITEM_NONE;
     private MaterialType materialType = MaterialType.MATERIAL_NONE;
     private EquipType equipType = EquipType.EQUIP_NONE;
     private String effectType;
@@ -48,10 +48,10 @@ public class ItemData extends GameResource {
     private int[] satiationParams;
 
     // Usable item
-    private ItemUseTarget useTarget = ItemUseTarget.ITEM_USE_TARGET_NONE;
+    private final ItemUseTarget useTarget = ItemUseTarget.ITEM_USE_TARGET_NONE;
     private List<ItemUseData> itemUse;
     private List<ItemUseAction> itemUseActions;
-    private boolean useOnGain = false;
+    private final boolean useOnGain = false;
 
     // Relic
     private int mainPropDepotId;
@@ -79,7 +79,7 @@ public class ItemData extends GameResource {
     private int comfort;
     private List<Integer> furnType;
     private List<Integer> furnitureGadgetID;
-    private SpecialFurnitureType specialFurnitureType = SpecialFurnitureType.NOT_SPECIAL;
+    private final SpecialFurnitureType specialFurnitureType = SpecialFurnitureType.NOT_SPECIAL;
 
     @SerializedName(
             value = "roomSceneId",

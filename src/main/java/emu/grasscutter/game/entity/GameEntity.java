@@ -44,13 +44,13 @@ public abstract class GameEntity {
     @Getter @Setter private EntityController entityController;
     @Getter private ElementType lastAttackType = ElementType.None;
 
-    @Getter private List<Ability> instancedAbilities = new ArrayList<>();
+    @Getter private final List<Ability> instancedAbilities = new ArrayList<>();
 
     @Getter
-    private Int2ObjectMap<AbilityModifierController> instancedModifiers =
+    private final Int2ObjectMap<AbilityModifierController> instancedModifiers =
             new Int2ObjectOpenHashMap<>();
 
-    @Getter private Map<String, Float> globalAbilityValues = new HashMap<>();
+    @Getter private final Map<String, Float> globalAbilityValues = new HashMap<>();
 
     public GameEntity(Scene scene) {
         this.scene = scene;

@@ -9,11 +9,11 @@ import emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNoti
 import emu.grasscutter.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify.ContinueStateType;
 
 public class TowerResult extends BaseDungeonResult {
-    WorldChallenge challenge;
-    boolean canJump;
-    boolean hasNextLevel;
-    int nextFloorId;
-    int currentStars;
+    final WorldChallenge challenge;
+    final boolean canJump;
+    final boolean hasNextLevel;
+    final int nextFloorId;
+    final int currentStars;
 
     public TowerResult(
             DungeonData dungeonData,

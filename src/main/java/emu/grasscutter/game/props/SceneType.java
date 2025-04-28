@@ -3,7 +3,9 @@ package emu.grasscutter.game.props;
 import it.unimi.dsi.fastutil.ints.*;
 import java.util.*;
 import java.util.stream.Stream;
+import lombok.Getter;
 
+@Getter
 public enum SceneType {
     SCENE_NONE(0),
     SCENE_WORLD(1),
@@ -37,9 +39,5 @@ public enum SceneType {
 
     public static SceneType getTypeByName(String name) {
         return stringMap.getOrDefault(name, SCENE_NONE);
-    }
-
-    public int getValue() {
-        return value;
     }
 }

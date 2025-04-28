@@ -4,10 +4,11 @@ import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.utils.Utils;
 import lombok.Getter;
 
+@Getter
 public class ExpeditionRewardData {
-    @Getter private int itemId;
-    @Getter private int minCount;
-    @Getter private int maxCount;
+    private int itemId;
+    private int minCount;
+    private int maxCount;
 
     public GameItem getReward() {
         return new GameItem(itemId, Utils.randomRange(minCount, maxCount));

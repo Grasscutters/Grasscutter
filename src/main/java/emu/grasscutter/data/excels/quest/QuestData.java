@@ -11,32 +11,32 @@ import javax.annotation.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
-@ResourceType(name = "QuestExcelConfigData.json")
 @Getter
+@ResourceType(name = "QuestExcelConfigData.json")
 @ToString
 public class QuestData extends GameResource {
-    @Getter private int subId;
-    @Getter private int mainId;
-    @Getter private int order;
-    @Getter private long descTextMapHash;
+    private int subId;
+    private int mainId;
+    private int order;
+    private long descTextMapHash;
 
-    @Getter private boolean finishParent;
-    @Getter private boolean isRewind;
+    private boolean finishParent;
+    private boolean isRewind;
 
-    @Getter private LogicType acceptCondComb;
-    @Getter private LogicType finishCondComb;
-    @Getter private LogicType failCondComb;
+    private LogicType acceptCondComb;
+    private LogicType finishCondComb;
+    private LogicType failCondComb;
 
-    @Getter private List<QuestAcceptCondition> acceptCond;
-    @Getter private List<QuestContentCondition> finishCond;
-    @Getter private List<QuestContentCondition> failCond;
-    @Getter private List<QuestExecParam> beginExec;
-    @Getter private List<QuestExecParam> finishExec;
-    @Getter private List<QuestExecParam> failExec;
-    @Getter private Guide guide;
+    private List<QuestAcceptCondition> acceptCond;
+    private List<QuestContentCondition> finishCond;
+    private List<QuestContentCondition> failCond;
+    private List<QuestExecParam> beginExec;
+    private List<QuestExecParam> finishExec;
+    private List<QuestExecParam> failExec;
+    private Guide guide;
 
-    @Getter private List<Integer> trialAvatarList;
-    @Getter private List<ItemParamData> gainItems;
+    private List<Integer> trialAvatarList;
+    private List<ItemParamData> gainItems;
 
     public static String questConditionKey(
             @Nonnull Enum<?> type, int firstParam, @Nullable String paramsStr) {

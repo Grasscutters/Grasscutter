@@ -6,9 +6,10 @@ import emu.grasscutter.server.event.types.EntityEvent;
 import javax.annotation.Nullable;
 import lombok.Getter;
 
+@Getter
 public final class EntityDeathEvent extends EntityEvent {
-    @Getter private final Location deathLocation;
-    @Getter @Nullable private final GameEntity killer;
+    private final Location deathLocation;
+    @Nullable private final GameEntity killer;
 
     public EntityDeathEvent(GameEntity entity, int killerId) {
         super(entity);

@@ -15,8 +15,8 @@ public class FriendsList extends BasePlayerManager {
 
     public FriendsList(Player player) {
         super(player);
-        this.friends = new Int2ObjectOpenHashMap<Friendship>();
-        this.pendingFriends = new Int2ObjectOpenHashMap<Friendship>();
+        this.friends = new Int2ObjectOpenHashMap<>();
+        this.pendingFriends = new Int2ObjectOpenHashMap<>();
     }
 
     public boolean hasLoaded() {
@@ -93,8 +93,8 @@ public class FriendsList extends BasePlayerManager {
 
         // Handle
         if (result == DealAddFriendResultType.DEAL_ADD_FRIEND_RESULT_TYPE_ACCEPT) { // Request accepted
-            myFriendship.setIsFriend(true);
-            theirFriendship.setIsFriend(true);
+            myFriendship.setFriend(true);
+            theirFriendship.setFriend(true);
 
             this.getPendingFriends().remove(myFriendship.getOwnerId());
             this.addFriend(myFriendship);

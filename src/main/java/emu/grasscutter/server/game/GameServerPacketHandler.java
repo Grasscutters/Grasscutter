@@ -4,10 +4,14 @@ import static emu.grasscutter.config.Configuration.GAME_INFO;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.Grasscutter.ServerDebugMode;
-import emu.grasscutter.net.packet.*;
+import emu.grasscutter.net.packet.Opcodes;
+import emu.grasscutter.net.packet.PacketHandler;
+import emu.grasscutter.net.packet.PacketOpcodes;
+import emu.grasscutter.net.packet.PacketOpcodesUtils;
 import emu.grasscutter.server.event.game.ReceivePacketEvent;
 import emu.grasscutter.server.game.GameSession.SessionState;
-import it.unimi.dsi.fastutil.ints.*;
+import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
 public final class GameServerPacketHandler {
     private final Int2ObjectMap<PacketHandler> handlers;
@@ -41,7 +45,7 @@ public final class GameServerPacketHandler {
 
         // Debug
         Grasscutter.getLogger()
-                .debug("Registered " + this.handlers.size() + " " + handlerClass.getSimpleName() + "s");
+                .debug("Registered {} {}s", this.handlers.size(), handlerClass.getSimpleName());
     }
 
     public void handle(GameSession session, int opcode, byte[] header, byte[] payload) {
@@ -91,11 +95,7 @@ public final class GameServerPacketHandler {
         if (GAME_INFO.logPackets == ServerDebugMode.MISSING
                 || GAME_INFO.logPackets == ServerDebugMode.ALL) {
             Grasscutter.getLogger()
-                    .info(
-                            "Unhandled packet ("
-                                    + opcode
-                                    + "): "
-                                    + emu.grasscutter.net.packet.PacketOpcodesUtils.getOpcodeName(opcode));
+                    .info("Unhandled packet ({}): {}", opcode, PacketOpcodesUtils.getOpcodeName(opcode));
         }
     }
 }

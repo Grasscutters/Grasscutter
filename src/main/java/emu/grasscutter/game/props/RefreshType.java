@@ -3,7 +3,9 @@ package emu.grasscutter.game.props;
 import it.unimi.dsi.fastutil.ints.*;
 import java.util.*;
 import java.util.stream.Stream;
+import lombok.Getter;
 
+@Getter
 public enum RefreshType {
     REFRESH_NONE(0),
     REFRESH_INTERVAL(1),
@@ -26,10 +28,6 @@ public enum RefreshType {
 
     private RefreshType(int value) {
         this.value = value;
-    }
-
-    public int getValue() {
-        return value;
     }
 
     public static RefreshType getTypeByValue(int value) {

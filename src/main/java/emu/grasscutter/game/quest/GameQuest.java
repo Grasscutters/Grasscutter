@@ -67,7 +67,7 @@ public class GameQuest {
                 questData.getFinishCond().stream()
                         .filter(p -> p.getType() == QuestContent.QUEST_CONTENT_TRIGGER_FIRE)
                         .toList();
-        if (triggerCond.size() > 0) {
+        if (!triggerCond.isEmpty()) {
             for (val cond : triggerCond) {
                 var newTrigger = GameData.getTriggerExcelConfigDataMap().get(cond.getParam()[0]);
                 if (newTrigger != null) {
@@ -158,14 +158,14 @@ public class GameQuest {
     public boolean clearProgress(boolean notifyDelete) {
         // TODO improve
         var oldState = state;
-        if (questData.getAcceptCond() != null && questData.getAcceptCond().size() != 0) {
+        if (questData.getAcceptCond() != null && !questData.getAcceptCond().isEmpty()) {
             this.getMainQuest()
                     .getQuestManager()
                     .getAcceptProgressLists()
                     .put(this.getSubQuestId(), new int[questData.getAcceptCond().size()]);
         }
 
-        if (questData.getFinishCond() != null && questData.getFinishCond().size() != 0) {
+        if (questData.getFinishCond() != null && !questData.getFinishCond().isEmpty()) {
             for (var condition : questData.getFinishCond()) {
                 if (condition.getType() == QuestContent.QUEST_CONTENT_LUA_NOTIFY) {
                     this.getOwner().getPlayerProgress().resetCurrentProgress(condition.getParamStr());
@@ -174,7 +174,7 @@ public class GameQuest {
             this.finishProgressList = new int[questData.getFinishCond().size()];
         }
 
-        if (questData.getFailCond() != null && questData.getFailCond().size() != 0) {
+        if (questData.getFailCond() != null && !questData.getFailCond().isEmpty()) {
             for (var condition : questData.getFailCond()) {
                 if (condition.getType() == QuestContent.QUEST_CONTENT_LUA_NOTIFY) {
                     this.getOwner().getPlayerProgress().resetCurrentProgress(condition.getParamStr());
@@ -294,10 +294,7 @@ public class GameQuest {
     public boolean rewind(boolean notifyDelete) {
         getMainQuest().getChildQuests().values().stream()
                 .filter(p -> p.getQuestData().getOrder() > this.getQuestData().getOrder())
-                .forEach(
-                        q -> {
-                            q.clearProgress(notifyDelete);
-                        });
+                .forEach(q -> q.clearProgress(notifyDelete));
         clearProgress(notifyDelete);
         this.start();
         return true;

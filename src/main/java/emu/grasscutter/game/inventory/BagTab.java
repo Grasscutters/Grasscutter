@@ -5,6 +5,7 @@ import java.util.*;
 import java.util.stream.Stream;
 import lombok.*;
 
+@Getter
 @RequiredArgsConstructor
 public enum BagTab {
     TAB_NONE(0),
@@ -30,7 +31,7 @@ public enum BagTab {
                         });
     }
 
-    @Getter private final int value;
+    private final int value;
 
     /**
      * Fetches the bag tab by its value.

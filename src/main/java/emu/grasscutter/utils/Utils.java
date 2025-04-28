@@ -69,7 +69,7 @@ public final class Utils {
 
     public static void logByteArray(byte[] array) {
         ByteBuf b = Unpooled.wrappedBuffer(array);
-        Grasscutter.getLogger().info("\n" + ByteBufUtil.prettyHexDump(b));
+        Grasscutter.getLogger().info("\n{}", ByteBufUtil.prettyHexDump(b));
         b.release();
     }
 
@@ -143,7 +143,7 @@ public final class Utils {
     public static boolean copyFromResources(String resource, String destination) {
         try (InputStream stream = Grasscutter.class.getResourceAsStream(resource)) {
             if (stream == null) {
-                Grasscutter.getLogger().warn("Could not find resource: " + resource);
+                Grasscutter.getLogger().warn("Could not find resource: {}", resource);
                 return false;
             }
 
@@ -151,7 +151,7 @@ public final class Utils {
             return true;
         } catch (Exception exception) {
             Grasscutter.getLogger()
-                    .warn("Unable to copy resource " + resource + " to " + destination, exception);
+                    .warn("Unable to copy resource {} to {}", resource, destination, exception);
             return false;
         }
     }

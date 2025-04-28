@@ -7,8 +7,8 @@ import emu.grasscutter.utils.objects.SparseSet;
 import java.util.Arrays;
 
 public final class GameConstants {
-    public static String VERSION = "4.0.0";
-    public static int[] VERSION_PARTS = {4, 0, 0};
+    public static final String VERSION = "4.0.0";
+    public static final int[] VERSION_PARTS = {4, 0, 0};
     public static boolean DEBUG = false;
 
     public static final int DEFAULT_TEAMS = 4;

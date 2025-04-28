@@ -10,7 +10,7 @@ public class TalentData implements Serializable {
         ModifySkillCD,
         UnlockTalentParam,
         AddTalentExtraLevel,
-        ModifyAbility;
+        ModifyAbility
     }
 
     @SerializedName("$type")

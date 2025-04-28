@@ -19,12 +19,12 @@ public final class Crypto {
     public static byte[] DISPATCH_SEED;
 
     public static byte[] ENCRYPT_KEY;
-    public static long ENCRYPT_SEED = Long.parseUnsignedLong("11468049314633205968");
+    public static final long ENCRYPT_SEED = Long.parseUnsignedLong("11468049314633205968");
     public static byte[] ENCRYPT_SEED_BUFFER = new byte[0];
 
     public static PrivateKey CUR_SIGNING_KEY;
 
-    public static Map<Integer, PublicKey> EncryptionKeys = new HashMap<>();
+    public static final Map<Integer, PublicKey> EncryptionKeys = new HashMap<>();
 
     public static void loadKeys() {
         DISPATCH_KEY = FileUtils.readResource("/keys/dispatchKey.bin");
@@ -100,8 +100,8 @@ public final class Crypto {
         if (key_id == null) {
             throw new Exception("Key ID was not set");
         }
+        Cipher cipher = Cipher.getInstance("RSA/ECB/OAEPWithSHA-256AndMGF1Padding");
 
-        Cipher cipher = Cipher.getInstance("RSA/ECB/PKCS1Padding");
         cipher.init(Cipher.ENCRYPT_MODE, EncryptionKeys.get(Integer.valueOf(key_id)));
 
         // Encrypt regionInfo in chunks

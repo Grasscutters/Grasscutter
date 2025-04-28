@@ -21,10 +21,7 @@ public class PacketBattlePassMissionUpdateNotify extends BasePacket {
 
         var proto = BattlePassMissionUpdateNotify.newBuilder();
 
-        missions.forEach(
-                mission -> {
-                    proto.addMissionList(mission.toProto());
-                });
+        missions.forEach(mission -> proto.addMissionList(mission.toProto()));
 
         this.setData(proto.build());
     }

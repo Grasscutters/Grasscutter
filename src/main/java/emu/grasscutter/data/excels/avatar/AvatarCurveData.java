@@ -4,10 +4,11 @@ import emu.grasscutter.data.*;
 import emu.grasscutter.data.common.CurveInfo;
 import java.util.*;
 import java.util.stream.Stream;
+import lombok.Getter;
 
 @ResourceType(name = "AvatarCurveExcelConfigData.json")
 public class AvatarCurveData extends GameResource {
-    private int level;
+    @Getter private int level;
     private CurveInfo[] curveInfos;
 
     private Map<String, Float> curveInfoMap;
@@ -15,10 +16,6 @@ public class AvatarCurveData extends GameResource {
     @Override
     public int getId() {
         return this.level;
-    }
-
-    public int getLevel() {
-        return level;
     }
 
     public Map<String, Float> getCurveInfos() {

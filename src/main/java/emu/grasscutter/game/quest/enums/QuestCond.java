@@ -3,7 +3,9 @@ package emu.grasscutter.game.quest.enums;
 import it.unimi.dsi.fastutil.ints.*;
 import java.util.*;
 import java.util.stream.Stream;
+import lombok.Getter;
 
+@Getter
 public enum QuestCond implements QuestTrigger {
     QUEST_COND_NONE(0),
     QUEST_COND_STATE_EQUAL(1),
@@ -90,10 +92,6 @@ public enum QuestCond implements QuestTrigger {
 
     QuestCond(int id) {
         this.value = id;
-    }
-
-    public int getValue() {
-        return value;
     }
 
     private static final Int2ObjectMap<QuestCond> contentMap = new Int2ObjectOpenHashMap<>();

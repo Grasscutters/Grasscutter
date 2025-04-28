@@ -71,7 +71,7 @@ public class ShopInfo {
     }
 
     public void removeVirtualCosts() {
-        if (this.costItemList != null) this.costItemList.removeIf(item -> evaluateVirtualCost(item));
+        if (this.costItemList != null) this.costItemList.removeIf(this::evaluateVirtualCost);
     }
 
     public enum ShopRefreshType {

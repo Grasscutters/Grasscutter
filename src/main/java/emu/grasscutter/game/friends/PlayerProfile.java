@@ -24,8 +24,8 @@ public class PlayerProfile {
     private int worldLevel;
     private int lastActiveTime;
 
-    private boolean isInDuel = false; // TODO: Implement duels. (TCG)
-    private boolean isDuelObservable = false; // TODO: Implement duels. (TCG)
+    private final boolean isInDuel = false; // TODO: Implement duels. (TCG)
+    private final boolean isDuelObservable = false; // TODO: Implement duels. (TCG)
 
     @Getter private int enterHomeOption;
 

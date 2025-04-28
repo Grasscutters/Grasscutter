@@ -3,7 +3,9 @@ package emu.grasscutter.game.quest.enums;
 import it.unimi.dsi.fastutil.ints.*;
 import java.util.*;
 import java.util.stream.Stream;
+import lombok.Getter;
 
+@Getter
 public enum QuestContent implements QuestTrigger {
     QUEST_CONTENT_NONE(0),
     QUEST_CONTENT_KILL_MONSTER(1), // currently unused
@@ -86,10 +88,6 @@ public enum QuestContent implements QuestTrigger {
 
     QuestContent(int id) {
         this.value = id;
-    }
-
-    public int getValue() {
-        return value;
     }
 
     private static final Int2ObjectMap<QuestContent> contentMap = new Int2ObjectOpenHashMap<>();

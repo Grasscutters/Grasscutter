@@ -7,7 +7,7 @@ public interface BeforeUpdateStaminaListener {
      *
      * @param reason Why updating stamina.
      * @param newStamina New ABSOLUTE stamina value.
-     * @return true if you want to cancel this update, otherwise false.
+     * @return current stamina value. If you want to cancel this update, return the newStamina value.
      */
     int onBeforeUpdateStamina(String reason, int newStamina, boolean isCharacterStamina);
 
@@ -17,7 +17,7 @@ public interface BeforeUpdateStaminaListener {
      *
      * @param reason Why updating stamina.
      * @param consumption ConsumptionType and RELATIVE stamina change amount.
-     * @return true if you want to cancel this update, otherwise false.
+     * @return current stamina value. If you want to cancel this update, return the newStamina value.
      */
     Consumption onBeforeUpdateStamina(
             String reason, Consumption consumption, boolean isCharacterStamina);

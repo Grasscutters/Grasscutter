@@ -8,9 +8,10 @@ public class RewindData {
     AvatarData avatar;
     List<Npc> npcs;
 
+    @Getter
     @Data
     public static class AvatarData {
-        @Getter private String pos;
+        private String pos;
     }
 
     @Data

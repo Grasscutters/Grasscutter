@@ -29,12 +29,13 @@ public class ScriptLoader {
     @Getter private static ScriptLib scriptLib;
     @Getter private static LuaValue scriptLibLua;
     /** suggest GC to remove it if the memory is less */
-    private static Map<String, SoftReference<String>> scriptSources = new ConcurrentHashMap<>();
+    private static final Map<String, SoftReference<String>> scriptSources = new ConcurrentHashMap<>();
 
-    private static Map<String, SoftReference<CompiledScript>> scriptsCache =
+    private static final Map<String, SoftReference<CompiledScript>> scriptsCache =
             new ConcurrentHashMap<>();
     /** sceneId - SceneMeta */
-    private static Map<Integer, SoftReference<SceneMeta>> sceneMetaCache = new ConcurrentHashMap<>();
+    private static final Map<Integer, SoftReference<SceneMeta>> sceneMetaCache =
+            new ConcurrentHashMap<>();
 
     private static final AtomicReference<Bindings> currentBindings = new AtomicReference<>(null);
     private static final AtomicReference<ScriptContext> currentContext = new AtomicReference<>(null);

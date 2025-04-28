@@ -9,7 +9,7 @@ import lombok.Getter;
 @ResourceType(name = "SceneExcelConfigData.json")
 @Getter
 public final class SceneData extends GameResource {
-    @Getter(onMethod_ = @Override)
+    @Getter(onMethod = @__(@Override))
     private int id;
 
     @SerializedName("type")

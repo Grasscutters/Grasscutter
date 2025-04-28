@@ -14,21 +14,21 @@ import lombok.*;
 @Entity
 public class PlayerProgress {
     @Setter @Transient private Player player;
-    private Map<Integer, ItemEntry> itemHistory;
+    private final Map<Integer, ItemEntry> itemHistory;
 
     /*
      * A list of dungeon IDs which have been completed.
      * This only applies to one-time dungeons.
      */
-    private IntArrayList completedDungeons;
+    private final IntArrayList completedDungeons;
 
     // keep track of EXEC_ADD_QUEST_PROGRESS count, will be used in CONTENT_ADD_QUEST_PROGRESS
     // not sure where to put this, this should be saved to DB but not to individual quest, since
     // it will be hard to loop and compare
-    private Map<String, Integer> questProgressCountMap;
+    private final Map<String, Integer> questProgressCountMap;
 
-    private Map<Integer, ItemGiveRecord> itemGivings;
-    private Map<Integer, BargainRecord> bargains;
+    private final Map<Integer, ItemGiveRecord> itemGivings;
+    private final Map<Integer, BargainRecord> bargains;
 
     public PlayerProgress() {
         this.questProgressCountMap = new ConcurrentHashMap<>();
@@ -83,11 +83,12 @@ public class PlayerProgress {
         return questProgressCountMap.merge(progressId, 0, Integer::min);
     }
 
+    @Getter
     @Entity
     @NoArgsConstructor
     public static class ItemEntry {
-        @Getter private int itemId;
-        @Getter @Setter private int obtainedCount;
+        private int itemId;
+        @Setter private int obtainedCount;
 
         ItemEntry(int itemId) {
             this.itemId = itemId;

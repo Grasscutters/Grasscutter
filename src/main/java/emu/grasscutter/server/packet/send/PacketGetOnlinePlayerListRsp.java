@@ -15,7 +15,7 @@ public class PacketGetOnlinePlayerListRsp extends BasePacket {
 
         GetOnlinePlayerListRsp.Builder proto = GetOnlinePlayerListRsp.newBuilder();
 
-        if (players.size() != 0) {
+        if (!players.isEmpty()) {
             for (Player player : players) {
                 if (player.getUid() == session.getUid()) continue;
 

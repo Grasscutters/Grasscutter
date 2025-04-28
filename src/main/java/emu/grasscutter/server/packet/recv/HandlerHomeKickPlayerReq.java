@@ -17,13 +17,12 @@ public class HandlerHomeKickPlayerReq extends PacketHandler {
                 .filter(player -> player.getUid() == req.getTargetUid())
                 .findFirst()
                 .ifPresent(
-                        player -> {
-                            success.set(
-                                    session
-                                            .getServer()
-                                            .getHomeWorldMPSystem()
-                                            .kickPlayerFromHome(session.getPlayer(), player.getUid()));
-                        });
+                        player ->
+                                success.set(
+                                        session
+                                                .getServer()
+                                                .getHomeWorldMPSystem()
+                                                .kickPlayerFromHome(session.getPlayer(), player.getUid())));
 
         session.send(
                 new PacketHomeKickPlayerRsp(

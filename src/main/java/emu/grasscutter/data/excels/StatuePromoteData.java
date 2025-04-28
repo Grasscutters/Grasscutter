@@ -4,13 +4,15 @@ import emu.grasscutter.data.*;
 import emu.grasscutter.data.common.ItemParamData;
 import lombok.*;
 
+@Setter
+@Getter
 @ResourceType(name = "StatuePromoteExcelConfigData.json")
 public class StatuePromoteData extends GameResource {
-    @Getter @Setter private int level;
-    @Getter @Setter private int cityId;
-    @Getter @Setter private ItemParamData[] costItems;
-    @Getter @Setter private int[] rewardIdList;
-    @Getter @Setter private int stamina;
+    private int level;
+    private int cityId;
+    private ItemParamData[] costItems;
+    private int[] rewardIdList;
+    private int stamina;
 
     @Override
     public int getId() {

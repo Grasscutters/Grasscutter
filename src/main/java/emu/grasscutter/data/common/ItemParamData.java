@@ -1,8 +1,10 @@
 package emu.grasscutter.data.common;
 
 import com.google.gson.annotations.SerializedName;
+import lombok.Getter;
 
 // Used in excels
+@Getter
 public class ItemParamData {
     @SerializedName(
             value = "id",
@@ -21,16 +23,8 @@ public class ItemParamData {
         this.count = count;
     }
 
-    public int getId() {
-        return id;
-    }
-
     public int getItemId() {
         return id;
-    }
-
-    public int getCount() {
-        return count;
     }
 
     public int getItemCount() {

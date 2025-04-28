@@ -281,12 +281,11 @@ public class GameHome {
 
         return this.finishedTalkIdMap.entrySet().stream()
                 .map(
-                        e -> {
-                            return HomeAvatarTalkFinishInfo.newBuilder()
-                                    .setAvatarId(e.getKey())
-                                    .addAllFinishTalkIdList(e.getValue())
-                                    .build();
-                        })
+                        e ->
+                                HomeAvatarTalkFinishInfo.newBuilder()
+                                        .setAvatarId(e.getKey())
+                                        .addAllFinishTalkIdList(e.getValue())
+                                        .build())
                 .toList();
     }
 
@@ -395,13 +394,7 @@ public class GameHome {
                 .get(player.getCurrentRealmId() + 2000)
                 .getBlockItems()
                 .forEach(
-                        (i, e) -> {
-                            e.getDeployNPCList()
-                                    .forEach(
-                                            id -> {
-                                                invitedAvatars.add(id.getAvatarId());
-                                            });
-                        });
+                        (i, e) -> e.getDeployNPCList().forEach(id -> invitedAvatars.add(id.getAvatarId())));
 
         // Check as realm 5 inside is not in defaults and will be null
         if (Objects.nonNull(mainHouseMap.get(player.getCurrentRealmId() + 2000))) {
@@ -410,13 +403,7 @@ public class GameHome {
                     .get(player.getCurrentRealmId() + 2000)
                     .getBlockItems()
                     .forEach(
-                            (i, e) -> {
-                                e.getDeployNPCList()
-                                        .forEach(
-                                                id -> {
-                                                    invitedAvatars.add(id.getAvatarId());
-                                                });
-                            });
+                            (i, e) -> e.getDeployNPCList().forEach(id -> invitedAvatars.add(id.getAvatarId())));
         }
 
         // Add exp to all avatars

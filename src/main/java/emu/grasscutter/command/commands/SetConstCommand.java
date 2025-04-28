@@ -17,7 +17,7 @@ import java.util.List;
 public final class SetConstCommand implements CommandHandler {
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
-        if (args.size() < 1) {
+        if (args.isEmpty()) {
             sendUsageMessage(sender);
             return;
         }

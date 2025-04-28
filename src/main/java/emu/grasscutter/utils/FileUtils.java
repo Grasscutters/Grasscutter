@@ -41,7 +41,7 @@ public final class FileUtils {
                     break;
                 default:
                     Grasscutter.getLogger()
-                            .error("Invalid URI scheme for class resources: " + uri.getScheme());
+                            .error("Invalid URI scheme for class resources: {}", uri.getScheme());
                     break;
             }
         } catch (URISyntaxException | IOException e) {
@@ -49,7 +49,7 @@ public final class FileUtils {
             Grasscutter.getLogger().error("Failed to load jar?!");
         } finally {
             DATA_DEFAULT_PATH = path;
-            Grasscutter.getLogger().debug("Setting path for default data: " + path.toAbsolutePath());
+            Grasscutter.getLogger().debug("Setting path for default data: {}", path.toAbsolutePath());
         }
 
         // Setup Resources path
@@ -82,7 +82,7 @@ public final class FileUtils {
                     path = excelBinOutput.get().getParent();
                     if (path == null) path = root;
                     Grasscutter.getLogger()
-                            .debug("Resources will be loaded from \"" + resources + "/" + path + "\"");
+                            .debug("Resources will be loaded from \"" + resources + "/{}\"", path);
                 } else {
                     Grasscutter.getLogger()
                             .error("Failed to find ExcelBinOutput in resources zip \"" + resources + "\"");
@@ -176,7 +176,7 @@ public final class FileUtils {
         try {
             Files.write(path, bytes);
         } catch (IOException e) {
-            Grasscutter.getLogger().warn("Failed to write file: " + dest);
+            Grasscutter.getLogger().warn("Failed to write file: {}", dest);
         }
     }
 
@@ -188,7 +188,7 @@ public final class FileUtils {
         try {
             return Files.readAllBytes(path);
         } catch (IOException e) {
-            Grasscutter.getLogger().warn("Failed to read file: " + path);
+            Grasscutter.getLogger().warn("Failed to read file: {}", path);
         }
 
         return new byte[0];
@@ -202,8 +202,8 @@ public final class FileUtils {
         try (InputStream is = Grasscutter.class.getResourceAsStream(resourcePath)) {
             return is.readAllBytes();
         } catch (Exception exception) {
-            Grasscutter.getLogger().warn("Failed to read resource: " + resourcePath);
-            Grasscutter.getLogger().debug("Failed to load resource: " + resourcePath, exception);
+            Grasscutter.getLogger().warn("Failed to read resource: {}", resourcePath);
+            Grasscutter.getLogger().debug("Failed to load resource: {}", resourcePath, exception);
         }
 
         return new byte[0];
@@ -218,7 +218,7 @@ public final class FileUtils {
             byte[] resource = FileUtils.readResource(resourcePath);
             FileUtils.write(destination, resource);
         } catch (Exception exception) {
-            Grasscutter.getLogger().warn("Failed to copy resource: " + resourcePath + "\n" + exception);
+            Grasscutter.getLogger().warn("Failed to copy resource: {}\n{}", resourcePath, exception);
         }
     }
 

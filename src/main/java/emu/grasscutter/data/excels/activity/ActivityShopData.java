@@ -5,11 +5,12 @@ import emu.grasscutter.game.shop.ShopType;
 import java.util.List;
 import lombok.Getter;
 
+@Getter
 @ResourceType(name = "ActivityShopOverallExcelConfigData.json")
 public class ActivityShopData extends GameResource {
-    @Getter private int scheduleId;
-    @Getter private ShopType shopType;
-    @Getter private List<Integer> sheetList;
+    private int scheduleId;
+    private ShopType shopType;
+    private List<Integer> sheetList;
 
     @Override
     public int getId() {

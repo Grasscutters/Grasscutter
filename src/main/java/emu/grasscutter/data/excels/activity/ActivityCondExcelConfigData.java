@@ -15,9 +15,10 @@ public class ActivityCondExcelConfigData extends GameResource {
     LogicType condComb;
     List<ActivityConfigCondition> cond;
 
+    @Getter
     public static class ActivityConfigCondition {
-        @Getter private ActivityConditions type;
-        @Getter private List<Integer> param;
+        private ActivityConditions type;
+        private List<Integer> param;
 
         public int[] paramArray() {
             return param.stream().mapToInt(Integer::intValue).toArray();

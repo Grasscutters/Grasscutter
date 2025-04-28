@@ -184,7 +184,7 @@ public final class GameServer extends KcpServer implements Iterable<Player> {
 
     private static InetSocketAddress getAdapterInetSocketAddress() {
         InetSocketAddress inetSocketAddress;
-        if (GAME_INFO.bindAddress.equals("")) {
+        if (GAME_INFO.bindAddress.isEmpty()) {
             inetSocketAddress = new InetSocketAddress(GAME_INFO.bindPort);
         } else {
             inetSocketAddress = new InetSocketAddress(GAME_INFO.bindAddress, GAME_INFO.bindPort);

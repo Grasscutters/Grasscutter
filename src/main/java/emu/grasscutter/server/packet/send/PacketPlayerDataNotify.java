@@ -20,10 +20,9 @@ public class PacketPlayerDataNotify extends BasePacket {
         player
                 .getProperties()
                 .forEach(
-                        (key, value) -> {
-                            p.putPropMap(
-                                    key, PropValue.newBuilder().setType(key).setIval(value).setVal(value).build());
-                        });
+                        (key, value) ->
+                                p.putPropMap(
+                                        key, PropValue.newBuilder().setType(key).setIval(value).setVal(value).build()));
 
         this.setData(p.build());
     }

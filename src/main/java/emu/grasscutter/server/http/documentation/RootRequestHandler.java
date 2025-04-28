@@ -18,7 +18,7 @@ final class RootRequestHandler implements DocumentationHandler {
         try {
             t = Files.readString(templatePath);
         } catch (IOException ignored) {
-            Grasscutter.getLogger().warn("File does not exist: " + templatePath);
+            Grasscutter.getLogger().warn("File does not exist: {}", templatePath);
         }
         this.template = t;
     }

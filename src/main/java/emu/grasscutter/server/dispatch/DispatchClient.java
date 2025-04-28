@@ -21,11 +21,12 @@ import org.java_websocket.client.WebSocketClient;
 import org.java_websocket.handshake.ServerHandshake;
 import org.slf4j.Logger;
 
+@Getter
 public final class DispatchClient extends WebSocketClient implements IDispatcher {
-    @Getter private final Logger logger = Grasscutter.getLogger();
-    @Getter private final Map<Integer, BiConsumer<WebSocket, JsonElement>> handlers = new HashMap<>();
+    private final Logger logger = Grasscutter.getLogger();
+    private final Map<Integer, BiConsumer<WebSocket, JsonElement>> handlers = new HashMap<>();
 
-    @Getter private final Map<Integer, List<Consumer<JsonElement>>> callbacks = new HashMap<>();
+    private final Map<Integer, List<Consumer<JsonElement>>> callbacks = new HashMap<>();
 
     public DispatchClient(URI serverUri) {
         super(serverUri);

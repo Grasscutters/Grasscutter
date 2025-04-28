@@ -17,8 +17,8 @@ public interface Router {
      * Applies this handler to all endpoint types
      *
      * @param javalin A Javalin instance.
-     * @param path
-     * @param ctx
+     * @param path The path to apply the handler to.
+     * @param ctx The handler to apply.
      * @return The Javalin instance.
      */
     default Javalin allRoutes(Javalin javalin, String path, Handler ctx) {

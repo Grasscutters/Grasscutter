@@ -3,8 +3,10 @@ package emu.grasscutter.game.quest.enums;
 import emu.grasscutter.Grasscutter;
 import java.util.*;
 import java.util.function.BooleanSupplier;
+import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
 
+@Getter
 public enum LogicType {
     LOGIC_NONE(0),
     LOGIC_AND(1),
@@ -87,9 +89,5 @@ public enum LogicType {
                 return false;
             }
         }
-    }
-
-    public int getValue() {
-        return value;
     }
 }

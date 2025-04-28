@@ -24,8 +24,7 @@ public final class SendMailCommand implements CommandHandler {
     //  the command system (again). For now this will do
 
     // Key = User that is constructing the mail.
-    private static final HashMap<Integer, MailBuilder> mailBeingConstructed =
-            new HashMap<Integer, MailBuilder>();
+    private static final HashMap<Integer, MailBuilder> mailBeingConstructed = new HashMap<>();
 
     // Yes this is awful and I hate it.
     @Override
@@ -69,7 +68,7 @@ public final class SendMailCommand implements CommandHandler {
         } else {
             MailBuilder mailBuilder = mailBeingConstructed.get(senderId);
 
-            if (args.size() >= 1) {
+            if (!args.isEmpty()) {
                 switch (args.get(0).toLowerCase()) {
                     case "stop" -> {
                         mailBeingConstructed.remove(senderId);
@@ -106,14 +105,12 @@ public final class SendMailCommand implements CommandHandler {
                                             getConstructionArgs(mailBuilder.constructionStage, sender)));
                         }
                     }
-                    case "help" -> {
-                        CommandHandler.sendMessage(
-                                sender,
-                                translate(
-                                        sender,
-                                        "commands.sendMail.please_use",
-                                        getConstructionArgs(mailBuilder.constructionStage, sender)));
-                    }
+                    case "help" -> CommandHandler.sendMessage(
+                            sender,
+                            translate(
+                                    sender,
+                                    "commands.sendMail.please_use",
+                                    getConstructionArgs(mailBuilder.constructionStage, sender)));
                     default -> {
                         switch (mailBuilder.constructionStage) {
                             case 0 -> {

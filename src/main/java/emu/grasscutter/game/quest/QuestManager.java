@@ -26,7 +26,7 @@ public final class QuestManager extends BasePlayerManager {
     @Getter private final Player player;
 
     @Getter private final Int2ObjectMap<GameMainQuest> mainQuests;
-    @Getter private Int2ObjectMap<int[]> acceptProgressLists;
+    @Getter private final Int2ObjectMap<int[]> acceptProgressLists;
     @Getter private final List<Integer> loggedQuests;
 
     private long lastHourCheck = 0;

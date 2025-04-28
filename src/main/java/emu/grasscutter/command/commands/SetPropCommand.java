@@ -291,9 +291,9 @@ public final class SetPropCommand implements CommandHandler {
     }
 
     static class Prop {
-        String name;
-        PlayerProperty prop;
-        PseudoProp pseudoProp;
+        final String name;
+        final PlayerProperty prop;
+        final PseudoProp pseudoProp;
 
         public Prop(PlayerProperty prop) {
             this(prop.toString(), prop, PseudoProp.NONE);

@@ -4,6 +4,7 @@ import it.unimi.dsi.fastutil.ints.*;
 import java.util.stream.Stream;
 import lombok.Getter;
 
+@Getter
 public enum PlayerProperty {
     PROP_NONE(0),
     PROP_EXP(1001, 0),
@@ -73,8 +74,8 @@ public enum PlayerProperty {
         Stream.of(values()).forEach(e -> map.put(e.getId(), e));
     }
 
-    @Getter private final int id, min, max;
-    @Getter private final boolean dynamicRange;
+    private final int id, min, max;
+    private final boolean dynamicRange;
 
     PlayerProperty(int id, int min, int max, boolean dynamicRange) {
         this.id = id;

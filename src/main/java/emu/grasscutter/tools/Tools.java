@@ -54,7 +54,8 @@ public final class Tools {
                         GameData.getMainQuestDataMap().int2ObjectEntrySet().stream()
                                 .collect(
                                         Collectors.toMap(
-                                                e -> e.getIntKey(), e -> (int) e.getValue().getTitleTextMapHash())));
+                                                Int2ObjectMap.Entry::getIntKey,
+                                                e -> (int) e.getValue().getTitleTextMapHash())));
         // val questDescs = new
         // Int2IntRBTreeMap(GameData.getQuestDataMap().int2ObjectEntrySet().stream().collect(Collectors.toMap(e -> (int) e.getIntKey(), e -> (int) e.getValue().getDescTextMapHash())));
 
@@ -73,7 +74,7 @@ public final class Tools {
         var h =
                 new Object() {
                     void newLine(String line) {
-                        handbookBuilders.forEach(b -> b.append(line + "\n"));
+                        handbookBuilders.forEach(b -> b.append(line).append("\n"));
                     }
 
                     void newSection(String title) {
@@ -91,7 +92,7 @@ public final class Tools {
                                     j--; // Retry the action.
                                     Language.loadTextMaps(true);
                                 }
-                            handbookBuilders.get(i).append(s + "\n");
+                            handbookBuilders.get(i).append(s).append("\n");
                         }
                     }
 
@@ -99,7 +100,7 @@ public final class Tools {
                         newTranslatedLine(
                                 template,
                                 LongStream.of(hashes)
-                                        .mapToObj(hash -> getTextMapKey(hash))
+                                        .mapToObj(Language::getTextMapKey)
                                         .toArray(TextStrings[]::new));
                     }
                 };
@@ -127,7 +128,7 @@ public final class Tools {
             for (int i = 0; i < TextStrings.NUM_LANGUAGES; i++) {
                 String desc =
                         languages.get(i).get(descKey).replace("\n", "\n\t\t\t\t").replace("\t", "    ");
-                handbookBuilders.get(i).append(label + desc + "\n");
+                handbookBuilders.get(i).append(label).append(desc).append("\n");
             }
         }
         // Avatars
@@ -189,12 +190,11 @@ public final class Tools {
         achievementDataMap.values().stream()
                 .filter(AchievementData::isUsed)
                 .forEach(
-                        data -> {
-                            h.newTranslatedLine(
-                                    padAchievementId.formatted(data.getId()) + "{0} - {1}",
-                                    data.getTitleTextMapHash(),
-                                    data.getDescTextMapHash());
-                        });
+                        data ->
+                                h.newTranslatedLine(
+                                        padAchievementId.formatted(data.getId()) + "{0} - {1}",
+                                        data.getTitleTextMapHash(),
+                                        data.getDescTextMapHash()));
 
         // Write txt files
         for (int i = 0; i < TextStrings.NUM_LANGUAGES; i++) {
@@ -316,10 +316,10 @@ public final class Tools {
         var path = GachaHandler.getGachaMappingsPath();
         if (!Files.exists(path)) {
             try {
-                Grasscutter.getLogger().debug("Creating default '" + path + "' data");
+                Grasscutter.getLogger().debug("Creating default '{}' data", path);
                 Tools.createGachaMappings(path);
             } catch (Exception exception) {
-                Grasscutter.getLogger().warn("Failed to create gacha mappings. \n" + exception);
+                Grasscutter.getLogger().warn("Failed to create gacha mappings. \n{}", exception);
             }
         }
     }
@@ -336,7 +336,7 @@ public final class Tools {
                     locale)) { // Some locales fallback to en-us, we don't want to redefine en-us with
                 // vietnamese strings
                 sb.append("\t\"%s\": ".formatted(locale));
-                sb.append(jsons.get(i).replace("\n", "\n\t") + ",\n");
+                sb.append(jsons.get(i).replace("\n", "\n\t")).append(",\n");
             }
         }
         sb.setLength(sb.length() - 2); // Delete trailing ",\n"
@@ -344,7 +344,7 @@ public final class Tools {
 
         Files.createDirectories(location.getParent());
         Files.writeString(location, sb);
-        Grasscutter.getLogger().debug("Mappings generated to " + location);
+        Grasscutter.getLogger().debug("Mappings generated to {}", location);
     }
 
     public static List<String> getAvailableLanguage() {
@@ -352,14 +352,13 @@ public final class Tools {
         try {
             Files.newDirectoryStream(getResourcePath("TextMap"), "TextMap*.json")
                     .forEach(
-                            path -> {
-                                availableLangList.add(
-                                        path.getFileName()
-                                                .toString()
-                                                .replace("TextMap", "")
-                                                .replace(".json", "")
-                                                .toLowerCase());
-                            });
+                            path ->
+                                    availableLangList.add(
+                                            path.getFileName()
+                                                    .toString()
+                                                    .replace("TextMap", "")
+                                                    .replace(".json", "")
+                                                    .toLowerCase()));
         } catch (IOException e) {
             Grasscutter.getLogger().error("Failed to get available languages:", e);
         }

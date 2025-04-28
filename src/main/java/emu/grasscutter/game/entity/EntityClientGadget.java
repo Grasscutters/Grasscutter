@@ -29,13 +29,13 @@ public class EntityClientGadget extends EntityBaseGadget {
     @Getter private final Player owner;
 
     @Getter(onMethod_ = @Override)
-    private int gadgetId;
+    private final int gadgetId;
 
-    @Getter private int ownerEntityId;
-    @Getter private int targetEntityId;
-    @Getter private boolean asyncLoad;
+    @Getter private final int ownerEntityId;
+    @Getter private final int targetEntityId;
+    @Getter private final boolean asyncLoad;
 
-    @Getter private int originalOwnerEntityId;
+    @Getter private final int originalOwnerEntityId;
 
     @Getter private final GadgetData gadgetData;
     private ConfigEntityGadget configGadget;

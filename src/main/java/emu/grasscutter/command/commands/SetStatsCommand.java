@@ -171,8 +171,8 @@ public final class SetStatsCommand implements CommandHandler {
     }
 
     private static class Stat {
-        String name;
-        FightProperty prop;
+        final String name;
+        final FightProperty prop;
 
         public Stat(FightProperty prop) {
             this.name = prop.toString();

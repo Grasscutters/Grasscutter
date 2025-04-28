@@ -82,7 +82,7 @@ public class EntityRegion extends GameEntity {
 
     @Override
     public SceneEntityInfoOuterClass.SceneEntityInfo toProto() {
-        /** The Region Entity would not be sent to client. */
+        /* The Region Entity would not be sent to client. */
         return null;
     }
 

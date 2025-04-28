@@ -20,7 +20,7 @@ public final class PluginManager {
      * A 'breaking change' is something which changes the existing logic of the API.
      */
     @SuppressWarnings("FieldCanBeLocal")
-    public static int API_VERSION = 2;
+    public static final int API_VERSION = 2;
 
     /* All loaded plugins. */
     private final Map<String, Plugin> plugins = new LinkedHashMap<>();

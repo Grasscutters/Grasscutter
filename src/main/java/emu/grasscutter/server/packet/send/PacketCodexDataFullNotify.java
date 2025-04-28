@@ -93,11 +93,10 @@ public class PacketCodexDataFullNotify extends BasePacket {
                 .getCodex()
                 .getUnlockedReliquarySuitCodex()
                 .forEach(
-                        reliquarySuit -> {
-                            reliquaryData
-                                    .addCodexIdList(reliquarySuit)
-                                    .addAllHaveViewedList(Collections.singleton(true));
-                        });
+                        reliquarySuit ->
+                                reliquaryData
+                                        .addCodexIdList(reliquarySuit)
+                                        .addAllHaveViewedList(Collections.singleton(true)));
 
         CodexDataFullNotify.Builder proto =
                 CodexDataFullNotify.newBuilder()

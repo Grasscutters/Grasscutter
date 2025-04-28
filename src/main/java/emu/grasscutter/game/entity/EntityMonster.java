@@ -50,13 +50,13 @@ public class EntityMonster extends GameEntity {
     @Getter private final Position bornPos;
     @Getter private final int level;
     @Getter private EntityWeapon weaponEntity;
-    @Getter private Map<Integer, EntityMonster> summonTagMap;
+    @Getter private final Map<Integer, EntityMonster> summonTagMap;
     @Getter @Setter private int summonedTag;
     @Getter @Setter private int ownerEntityId;
     @Getter @Setter private int poseId;
     @Getter @Setter private int aiId = -1;
 
-    @Getter private List<Player> playerOnBattle;
+    @Getter private final List<Player> playerOnBattle;
     @Nullable @Getter @Setter private SceneMonster metaMonster;
 
     public EntityMonster(

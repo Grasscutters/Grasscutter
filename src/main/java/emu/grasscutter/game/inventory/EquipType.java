@@ -5,6 +5,7 @@ import java.util.*;
 import java.util.stream.Stream;
 import lombok.Getter;
 
+@Getter
 public enum EquipType {
     EQUIP_NONE(0),
     EQUIP_BRACER(1),
@@ -26,7 +27,7 @@ public enum EquipType {
                         });
     }
 
-    @Getter private final int value;
+    private final int value;
 
     EquipType(int value) {
         this.value = value;

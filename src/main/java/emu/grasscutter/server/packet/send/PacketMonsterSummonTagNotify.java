@@ -3,7 +3,6 @@ package emu.grasscutter.server.packet.send;
 import emu.grasscutter.game.entity.EntityMonster;
 import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.MonsterSummonTagNotifyOuterClass.MonsterSummonTagNotify;
-import java.util.*;
 
 public class PacketMonsterSummonTagNotify extends BasePacket {
 

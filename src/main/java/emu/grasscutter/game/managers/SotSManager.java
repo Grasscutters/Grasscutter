@@ -104,7 +104,7 @@ public class SotSManager extends BasePlayerManager {
                             if (isAlive) {
                                 return;
                             }
-                            logger.trace("Reviving avatar " + entity.getAvatar().getAvatarData().getName());
+                            logger.trace("Reviving avatar {}", entity.getAvatar().getAvatarData().getName());
                             player.getTeamManager().reviveAvatar(entity.getAvatar());
                             player.getTeamManager().healAvatar(entity.getAvatar(), 30, 0);
                         });
@@ -130,8 +130,7 @@ public class SotSManager extends BasePlayerManager {
                 setCurrentVolume(0);
             }
             if (needHP > 0) {
-                logger.trace(
-                        "Healing avatar " + entity.getAvatar().getAvatarData().getName() + " +" + needHP);
+                logger.trace("Healing avatar {} +{}", entity.getAvatar().getAvatarData().getName(), needHP);
                 player.getTeamManager().healAvatar(entity.getAvatar(), 0, needHP);
                 player
                         .getSession()
@@ -168,9 +167,9 @@ public class SotSManager extends BasePlayerManager {
             int secondsSinceLastUsed = (int) (now - getLastUsed());
             // 15s = 1% max volume
             int volumeRefilled = secondsSinceLastUsed * maxVolume / 15 / 100;
-            logger.trace("Statue has refilled HP volume: " + volumeRefilled);
+            logger.trace("Statue has refilled HP volume: {}", volumeRefilled);
             currentVolume = Math.min(currentVolume + volumeRefilled, maxVolume);
-            logger.trace("Statue remaining HP volume: " + currentVolume);
+            logger.trace("Statue remaining HP volume: {}", currentVolume);
             setCurrentVolume(currentVolume);
         }
     }
@@ -182,10 +181,9 @@ public class SotSManager extends BasePlayerManager {
             refillSpringVolume();
 
             logger.trace(
-                    "isAutoRecoveryEnabled: "
-                            + getIsAutoRecoveryEnabled()
-                            + "\tautoRecoverPercentage: "
-                            + getAutoRecoveryPercentage());
+                    "isAutoRecoveryEnabled: {}\tautoRecoverPercentage: {}",
+                    getIsAutoRecoveryEnabled(),
+                    getAutoRecoveryPercentage());
 
             if (getIsAutoRecoveryEnabled()) {
                 List<EntityAvatar> activeTeam = player.getTeamManager().getActiveTeam();
@@ -218,11 +216,7 @@ public class SotSManager extends BasePlayerManager {
 
     public CityInfoData getCityInfo(int cityId) {
         if (player.getCityInfoData() == null) player.setCityInfoData(new HashMap<>());
-        var cityInfo = player.getCityInfoData().get(cityId);
-        if (cityInfo == null) {
-            cityInfo = new CityInfoData(cityId);
-            player.getCityInfoData().put(cityId, cityInfo);
-        }
+        var cityInfo = player.getCityInfoData().computeIfAbsent(cityId, CityInfoData::new);
         return cityInfo;
     }
 

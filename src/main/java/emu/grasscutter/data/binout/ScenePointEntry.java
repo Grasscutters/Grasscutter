@@ -3,9 +3,10 @@ package emu.grasscutter.data.binout;
 import emu.grasscutter.data.common.PointData;
 import lombok.Getter;
 
+@Getter
 public class ScenePointEntry {
-    @Getter private final int sceneId;
-    @Getter private final PointData pointData;
+    private final int sceneId;
+    private final PointData pointData;
 
     @Deprecated(forRemoval = true)
     public ScenePointEntry(String name, PointData pointData) {

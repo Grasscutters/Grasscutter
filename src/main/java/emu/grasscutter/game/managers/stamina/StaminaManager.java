@@ -229,8 +229,7 @@ public class StaminaManager extends BasePlayerManager {
         float diffX = currentCoordinates.getX() - previousCoordinates.getX();
         float diffY = currentCoordinates.getY() - previousCoordinates.getY();
         float diffZ = currentCoordinates.getZ() - previousCoordinates.getZ();
-        logger.trace("isPlayerMoving: " + previousCoordinates + ", " + currentCoordinates +
-            ", " + diffX + ", " + diffY + ", " + diffZ);
+        logger.trace("isPlayerMoving: {}, {}, {}, {}, {}", previousCoordinates, currentCoordinates, diffX, diffY, diffZ);
         return Math.abs(diffX) > 0.3 || Math.abs(diffY) > 0.2 || Math.abs(diffZ) > 0.3;
     }
 
@@ -244,17 +243,13 @@ public class StaminaManager extends BasePlayerManager {
         for (Map.Entry<String, BeforeUpdateStaminaListener> listener : beforeUpdateStaminaListeners.entrySet()) {
             Consumption overriddenConsumption = listener.getValue().onBeforeUpdateStamina(consumption.type.toString(), consumption, isCharacterStamina);
             if ((overriddenConsumption.type != consumption.type) && (overriddenConsumption.amount != consumption.amount)) {
-                logger.debug("Stamina update relative(" +
-                    consumption.type.toString() + ", " + consumption.amount + ") overridden to relative(" +
-                    consumption.type.toString() + ", " + consumption.amount + ") by: " + listener.getKey());
+                logger.debug("Stamina update relative({}, {}) overridden to relative({}, {}) by: {}", consumption.type.toString(), consumption.amount, consumption.type.toString(), consumption.amount, listener.getKey());
                 return currentStamina;
             }
         }
 
         int maxStamina = isCharacterStamina ? getMaxCharacterStamina() : getMaxVehicleStamina();
-        logger.trace((isCharacterStamina ? "C " : "V ") + currentStamina + "/" + maxStamina + "\t" + currentState + "\t" +
-            (isPlayerMoving() ? "moving" : "      ") + "\t(" + consumption.type + "," +
-            consumption.amount + ")");
+        logger.trace("{}{}/{}\t{}\t{}\t({},{})", isCharacterStamina ? "C " : "V ", currentStamina, maxStamina, currentState, isPlayerMoving() ? "moving" : "      ", consumption.type, consumption.amount);
 
         int newStamina = currentStamina + consumption.amount;
         if (newStamina < 0) {
@@ -272,9 +267,7 @@ public class StaminaManager extends BasePlayerManager {
         for (Map.Entry<String, BeforeUpdateStaminaListener> listener : beforeUpdateStaminaListeners.entrySet()) {
             int overriddenNewStamina = listener.getValue().onBeforeUpdateStamina(reason, newStamina, isCharacterStamina);
             if (overriddenNewStamina != newStamina) {
-                logger.debug("Stamina update absolute(" +
-                    reason + ", " + newStamina + ") overridden to absolute(" +
-                    reason + ", " + newStamina + ") by: " + listener.getKey());
+                logger.debug("Stamina update absolute({}, {}) overridden to absolute({}, {}) by: {}", reason, newStamina, reason, newStamina, listener.getKey());
                 return currentStamina;
             }
         }
@@ -450,8 +443,7 @@ public class StaminaManager extends BasePlayerManager {
             int currentVehicleStamina = getCurrentVehicleStamina();
             int maxVehicleStamina = getMaxVehicleStamina();
             if (moving || (currentCharacterStamina < maxCharacterStamina) || (currentVehicleStamina < maxVehicleStamina)) {
-                logger.trace("Player moving: " + moving + ", stamina full: " +
-                        (currentCharacterStamina >= maxCharacterStamina) + ", recalculate stamina");
+                logger.trace("Player moving: {}, stamina full: {}, recalculate stamina", moving, currentCharacterStamina >= maxCharacterStamina);
                 boolean isCharacterStamina = true;
                 Consumption consumption;
 
@@ -483,7 +475,7 @@ public class StaminaManager extends BasePlayerManager {
                 if (consumption.amount < 0 && isCharacterStamina) {
                     // Do not apply reduction factor when recovering stamina
                     if (player.getTeamManager().getTeamResonances().contains(10301)) {
-                        consumption.amount *= 0.85f;
+                        consumption.amount *= (int) 0.85f;
                     }
                 }
                 // Delay 1 seconds before starts recovering stamina
@@ -499,7 +491,7 @@ public class StaminaManager extends BasePlayerManager {
                             // For others recover after 1 seconds (5 ticks) - as official server does.
                             staminaRecoverDelay++;
                             consumption.amount = 0;
-                            logger.trace("Delaying recovery: " + staminaRecoverDelay);
+                            logger.trace("Delaying recovery: {}", staminaRecoverDelay);
                         }
                     }
                     updateStaminaRelative(cachedSession, consumption, isCharacterStamina);
@@ -514,8 +506,7 @@ public class StaminaManager extends BasePlayerManager {
         // TODO: fix drowning waverider entity
         int stamina = getCurrentCharacterStamina();
         if (stamina < 10) {
-            logger.trace(getCurrentCharacterStamina() + "/" +
-                getMaxCharacterStamina() + "\t" + currentState);
+            logger.trace("{}/{}\t{}", getCurrentCharacterStamina(), getMaxCharacterStamina(), currentState);
             if (currentState != MotionState.MOTION_STATE_SWIM_IDLE) {
                 killAvatar(cachedSession, cachedEntity, PlayerDieType.PLAYER_DIE_TYPE_DRAWN);
             }
@@ -552,8 +543,8 @@ public class StaminaManager extends BasePlayerManager {
             consumption.amount = ConsumptionType.CLIMBING.amount;
         }
         // Climbing specific reductions
-        consumption.amount *= getFoodCostReductionFactor(ClimbFoodReductionMap);
-        consumption.amount *= getTalentCostReductionFactor(ClimbTalentReductionMap);
+        consumption.amount *= (int) getFoodCostReductionFactor(ClimbFoodReductionMap);
+        consumption.amount *= (int) getTalentCostReductionFactor(ClimbTalentReductionMap);
         return consumption;
     }
 
@@ -569,8 +560,8 @@ public class StaminaManager extends BasePlayerManager {
             consumption.amount = ConsumptionType.SWIM_DASH.amount;
         }
         // Swimming specific reductions
-        consumption.amount *= getFoodCostReductionFactor(SwimFoodReductionMap);
-        consumption.amount *= getTalentCostReductionFactor(SwimTalentReductionMap);
+        consumption.amount *= (int) getFoodCostReductionFactor(SwimFoodReductionMap);
+        consumption.amount *= (int) getTalentCostReductionFactor(SwimTalentReductionMap);
         return consumption;
     }
 
@@ -580,7 +571,7 @@ public class StaminaManager extends BasePlayerManager {
             consumption.type = ConsumptionType.DASH;
             consumption.amount = ConsumptionType.DASH.amount;
             // Dashing specific reductions
-            consumption.amount *= getFoodCostReductionFactor(DashFoodReductionMap);
+            consumption.amount *= (int) getFoodCostReductionFactor(DashFoodReductionMap);
         }
         return consumption;
     }
@@ -592,8 +583,8 @@ public class StaminaManager extends BasePlayerManager {
         }
         Consumption consumption = new Consumption(ConsumptionType.FLY);
         // Flying specific reductions
-        consumption.amount *= getFoodCostReductionFactor(FlyFoodReductionMap);
-        consumption.amount *= getTalentCostReductionFactor(FlyTalentReductionMap);
+        consumption.amount *= (int) getFoodCostReductionFactor(FlyFoodReductionMap);
+        consumption.amount *= (int) getTalentCostReductionFactor(FlyTalentReductionMap);
         return consumption;
     }
 

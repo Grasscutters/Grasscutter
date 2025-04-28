@@ -29,8 +29,8 @@ public class KillMonsterTimeChallengeFactoryHandler implements ChallengeFactoryH
             Scene scene,
             SceneGroup group) {
         val realGroup = scene.getScriptManager().getGroupById(groupId);
-        val challengeTriggers = new ArrayList<ChallengeTrigger>();
-        challengeTriggers.addAll(List.of(new KillMonsterCountTrigger(), new InTimeTrigger()));
+        val challengeTriggers =
+                new ArrayList<>(List.of(new KillMonsterCountTrigger(), new InTimeTrigger()));
 
         val challengeData = GameData.getDungeonChallengeConfigDataMap().get(challengeId);
         val challengeType = challengeData.getChallengeType();

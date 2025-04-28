@@ -6,7 +6,9 @@ import emu.grasscutter.game.player.*;
 import emu.grasscutter.server.event.player.PlayerReceiveMailEvent;
 import emu.grasscutter.server.packet.send.*;
 import java.util.*;
+import lombok.Getter;
 
+@Getter
 public class MailHandler extends BasePlayerManager {
     private final List<Mail> mail;
 
@@ -14,10 +16,6 @@ public class MailHandler extends BasePlayerManager {
         super(player);
 
         this.mail = new ArrayList<>();
-    }
-
-    public List<Mail> getMail() {
-        return mail;
     }
 
     // ---------------------MAIL------------------------
@@ -36,11 +34,9 @@ public class MailHandler extends BasePlayerManager {
 
         Grasscutter.getLogger()
                 .debug(
-                        "Mail sent to user ["
-                                + this.getPlayer().getUid()
-                                + ":"
-                                + this.getPlayer().getNickname()
-                                + "]!");
+                        "Mail sent to user [{}:{}]!",
+                        this.getPlayer().getUid(),
+                        this.getPlayer().getNickname());
 
         if (this.getPlayer().isOnline()) {
             this.getPlayer().sendPacket(new PacketMailChangeNotify(this.getPlayer(), message));
@@ -63,9 +59,8 @@ public class MailHandler extends BasePlayerManager {
     }
 
     public void deleteMail(List<Integer> mailList) {
-        List<Integer> sortedMailList = new ArrayList<>();
-        sortedMailList.addAll(mailList);
-        Collections.sort(sortedMailList, Collections.reverseOrder());
+        List<Integer> sortedMailList = new ArrayList<>(mailList);
+        sortedMailList.sort(Collections.reverseOrder());
 
         List<Integer> deleted = new ArrayList<>();
 

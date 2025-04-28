@@ -2,7 +2,9 @@ package emu.grasscutter.server.event.internal;
 
 import emu.grasscutter.server.event.types.ServerEvent;
 import java.time.OffsetDateTime;
+import lombok.Getter;
 
+@Getter
 public final class ServerStartEvent extends ServerEvent {
     private final OffsetDateTime startTime;
 
@@ -10,9 +12,5 @@ public final class ServerStartEvent extends ServerEvent {
         super(type);
 
         this.startTime = startTime;
-    }
-
-    public OffsetDateTime getStartTime() {
-        return this.startTime;
     }
 }

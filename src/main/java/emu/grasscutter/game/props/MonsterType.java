@@ -3,7 +3,9 @@ package emu.grasscutter.game.props;
 import it.unimi.dsi.fastutil.ints.*;
 import java.util.*;
 import java.util.stream.Stream;
+import lombok.Getter;
 
+@Getter
 public enum MonsterType {
     MONSTER_NONE(0),
     MONSTER_ORDINARY(1),
@@ -36,9 +38,5 @@ public enum MonsterType {
 
     public static MonsterType getTypeByName(String name) {
         return stringMap.getOrDefault(name, MONSTER_NONE);
-    }
-
-    public int getValue() {
-        return value;
     }
 }

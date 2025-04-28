@@ -12,7 +12,7 @@ public class PacketClientAbilityInitFinishNotify extends BasePacket {
 
         int entityId = 0;
 
-        if (entries.size() > 0) {
+        if (!entries.isEmpty()) {
             AbilityInvokeEntry entry = entries.get(0);
             entityId = entry.getEntityId();
         }

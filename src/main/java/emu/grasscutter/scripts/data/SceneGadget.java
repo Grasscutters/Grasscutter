@@ -24,7 +24,7 @@ public class SceneGadget extends SceneObject {
      * isOneOff=false, like investigation points, it will disappear temporarily, and appear again in
      * next big world resource refresh routine.
      */
-    public boolean isOneoff;
+    @Setter public boolean isOneoff;
 
     public int draft_id;
     public int route_id;
@@ -34,8 +34,4 @@ public class SceneGadget extends SceneObject {
     public int mark_flag;
     public Explore explore;
     public int trigger_count;
-
-    public void setIsOneoff(boolean isOneoff) {
-        this.isOneoff = isOneoff;
-    }
 }

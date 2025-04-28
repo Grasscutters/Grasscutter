@@ -2,7 +2,9 @@ package emu.grasscutter.game.props;
 
 import it.unimi.dsi.fastutil.ints.*;
 import java.util.stream.Stream;
+import lombok.Getter;
 
+@Getter
 public enum ItemUseOp {
     ITEM_USE_NONE(0),
     ITEM_USE_ACCEPT_QUEST(1),
@@ -50,11 +52,7 @@ public enum ItemUseOp {
     private static final Int2ObjectMap<ItemUseOp> map = new Int2ObjectOpenHashMap<>();
 
     static {
-        Stream.of(values())
-                .forEach(
-                        e -> {
-                            map.put(e.getValue(), e);
-                        });
+        Stream.of(values()).forEach(e -> map.put(e.getValue(), e));
     }
 
     private final int value;
@@ -65,9 +63,5 @@ public enum ItemUseOp {
 
     public static ItemUseOp getTypeByValue(int value) {
         return map.getOrDefault(value, ITEM_USE_NONE);
-    }
-
-    public int getValue() {
-        return value;
     }
 }

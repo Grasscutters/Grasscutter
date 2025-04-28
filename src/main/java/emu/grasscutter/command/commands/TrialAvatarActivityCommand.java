@@ -131,7 +131,7 @@ public final class TrialAvatarActivityCommand implements CommandHandler {
                             translate(
                                     sender, "commands.trialAvatarActivity.success_reward", Integer.parseInt(param)));
                 } else {
-                    if (!param.toLowerCase().equals("all")) {
+                    if (!param.equalsIgnoreCase("all")) {
                         CommandHandler.sendMessage(
                                 sender, translate(sender, "commands.trialAvatarActivity.invalid_param"));
                         return;

@@ -27,10 +27,7 @@ public class CombineManger extends BaseGameSystem {
         // Read the data we need for strongbox.
         try {
             DataLoader.loadList("ReliquaryDecompose.json", ReliquaryDecomposeEntry.class)
-                    .forEach(
-                            entry -> {
-                                reliquaryDecomposeData.put(entry.getConfigId(), entry.getItems());
-                            });
+                    .forEach(entry -> reliquaryDecomposeData.put(entry.getConfigId(), entry.getItems()));
             Grasscutter.getLogger()
                     .debug("Loaded {} reliquary decompose entries.", reliquaryDecomposeData.size());
         } catch (Exception ex) {

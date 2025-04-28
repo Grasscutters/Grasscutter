@@ -1,7 +1,9 @@
 package emu.grasscutter.game.props;
 
 import java.util.*;
+import lombok.Getter;
 
+@Getter
 public enum EntityIdType {
     AVATAR(0x01),
     MONSTER(0x02),
@@ -33,9 +35,5 @@ public enum EntityIdType {
 
     public static EntityType toEntityType(int entityId) {
         return map.getOrDefault(entityId, EntityType.None);
-    }
-
-    public int getId() {
-        return id;
     }
 }

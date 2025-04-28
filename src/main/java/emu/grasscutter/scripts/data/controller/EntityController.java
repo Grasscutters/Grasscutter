@@ -11,8 +11,8 @@ import org.luaj.vm2.*;
 public class EntityController {
     private static final Set<String> SERVER_CALLED = Set.of("OnBeHurt", "OnDie", "OnTimer");
 
-    private transient CompiledScript entityController;
-    private transient Bindings entityControllerBindings;
+    private final transient CompiledScript entityController;
+    private final transient Bindings entityControllerBindings;
 
     public EntityController(CompiledScript entityController, Bindings entityControllerBindings) {
         this.entityController = entityController;

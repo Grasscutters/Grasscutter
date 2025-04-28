@@ -52,7 +52,7 @@ public class AvatarSkillDepotData extends GameResource {
             this.elementType = ElementType.None;
         }
         // Set embryo abilities (if player skill depot)
-        if (getSkillDepotAbilityGroup() != null && getSkillDepotAbilityGroup().length() > 0) {
+        if (getSkillDepotAbilityGroup() != null && !getSkillDepotAbilityGroup().isEmpty()) {
             AvatarConfig config = GameDepot.getPlayerAbilities().get(getSkillDepotAbilityGroup());
 
             if (config != null) {
@@ -67,7 +67,7 @@ public class AvatarSkillDepotData extends GameResource {
         Optional.ofNullable(this.talents)
                 .map(talents -> talents.get(0))
                 .map(i -> GameData.getAvatarTalentDataMap().get((int) i))
-                .map(talentData -> talentData.getMainCostItemId())
+                .map(AvatarTalentData::getMainCostItemId)
                 .ifPresent(itemId -> this.talentCostItemId = itemId);
     }
 

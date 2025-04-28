@@ -26,27 +26,24 @@ public class PacketCreateVehicleRsp extends BasePacket {
                                                 && ((EntityVehicle) entity).getOwner().equals(player))
                         .toList();
 
-        previousVehicles.stream()
-                .forEach(
-                        entity -> {
-                            List<VehicleMember> vehicleMembers =
-                                    ((EntityVehicle) entity).getVehicleMembers().stream().toList();
+        previousVehicles.forEach(
+                entity -> {
+                    List<VehicleMember> vehicleMembers =
+                            ((EntityVehicle) entity).getVehicleMembers().stream().toList();
 
-                            vehicleMembers.stream()
-                                    .forEach(
-                                            vehicleMember -> {
-                                                player
-                                                        .getScene()
-                                                        .broadcastPacket(
-                                                                new PacketVehicleInteractRsp(
-                                                                        ((EntityVehicle) entity),
-                                                                        vehicleMember,
-                                                                        VehicleInteractTypeOuterClass.VehicleInteractType
-                                                                                .VEHICLE_INTERACT_TYPE_OUT));
-                                            });
+                    vehicleMembers.forEach(
+                            vehicleMember ->
+                                    player
+                                            .getScene()
+                                            .broadcastPacket(
+                                                    new PacketVehicleInteractRsp(
+                                                            ((EntityVehicle) entity),
+                                                            vehicleMember,
+                                                            VehicleInteractTypeOuterClass.VehicleInteractType
+                                                                    .VEHICLE_INTERACT_TYPE_OUT)));
 
-                            player.getScene().killEntity(entity, 0);
-                        });
+                    player.getScene().killEntity(entity, 0);
+                });
 
         EntityVehicle vehicle =
                 new EntityVehicle(player.getScene(), player, vehicleId, pointId, pos, rot);

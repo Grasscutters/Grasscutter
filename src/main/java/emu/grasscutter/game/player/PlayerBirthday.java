@@ -2,7 +2,9 @@ package emu.grasscutter.game.player;
 
 import dev.morphia.annotations.Entity;
 import emu.grasscutter.net.proto.BirthdayOuterClass.Birthday;
+import lombok.Getter;
 
+@Getter
 @Entity
 public class PlayerBirthday {
     private int day;
@@ -32,17 +34,9 @@ public class PlayerBirthday {
         return this;
     }
 
-    public int getDay() {
-        return this.day;
-    }
-
     public PlayerBirthday setDay(int value) {
         this.day = value;
         return this;
-    }
-
-    public int getMonth() {
-        return this.month;
     }
 
     public PlayerBirthday setMonth(int value) {

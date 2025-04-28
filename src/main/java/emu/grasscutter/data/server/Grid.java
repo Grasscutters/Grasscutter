@@ -6,12 +6,18 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.world.*;
 import emu.grasscutter.scripts.SceneIndexManager;
 import java.util.*;
+import lombok.Getter;
 
 public class Grid {
     public transient RTree<Map.Entry<GridPosition, Set<Integer>>, Geometry> gridOptimized = null;
-    private transient Set<Integer> nearbyGroups = new HashSet<>(100);
+    private final transient Set<Integer> nearbyGroups = new HashSet<>(100);
 
-    public Map<GridPosition, Set<Integer>> grid = new LinkedHashMap<>();
+    /**
+     * -- GETTER --
+     *
+     * @return The correctly loaded grid map.
+     */
+    @Getter public Map<GridPosition, Set<Integer>> grid = new LinkedHashMap<>();
 
     /** Creates an optimized cache of the grid. */
     private void optimize() {
@@ -21,13 +27,6 @@ public class Grid {
             this.gridOptimized =
                     SceneIndexManager.buildIndex(2, gridValues, entry -> entry.getKey().toPoint());
         }
-    }
-
-    /**
-     * @return The correctly loaded grid map.
-     */
-    public Map<GridPosition, Set<Integer>> getGrid() {
-        return this.grid;
     }
 
     public Set<Integer> getNearbyGroups(int vision_level, Position position) {

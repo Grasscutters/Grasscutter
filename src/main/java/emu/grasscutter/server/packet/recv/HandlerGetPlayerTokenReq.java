@@ -113,7 +113,7 @@ public class HandlerGetPlayerTokenReq extends PacketHandler {
         if (req.getKeyId() > 0) {
             var encryptSeed = session.getEncryptSeed();
             try {
-                var cipher = Cipher.getInstance("RSA/ECB/PKCS1Padding");
+                var cipher = Cipher.getInstance("RSA/ECB/OAEPWithSHA-256AndMGF1Padding");
                 cipher.init(Cipher.DECRYPT_MODE, Crypto.CUR_SIGNING_KEY);
 
                 var clientSeedEncrypted = Utils.base64Decode(req.getClientRandKey());

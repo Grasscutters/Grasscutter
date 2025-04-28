@@ -9,8 +9,9 @@ import lombok.Getter;
  * This event is invoked when the ENTIRE TEAM dies. To listen for one player death, use {@link
  * emu.grasscutter.server.event.entity.EntityDeathEvent}.
  */
+@Getter
 public final class PlayerTeamDeathEvent extends PlayerEvent {
-    @Getter private final EntityAvatar selectedAvatar;
+    private final EntityAvatar selectedAvatar;
 
     public PlayerTeamDeathEvent(Player player, EntityAvatar selectedAvatar) {
         super(player);

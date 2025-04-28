@@ -103,7 +103,7 @@ public final class DefaultAuthenticators {
                 KeyFactory keyFactory = KeyFactory.getInstance("RSA");
                 RSAPrivateKey private_key = (RSAPrivateKey) keyFactory.generatePrivate(keySpec);
 
-                Cipher cipher = Cipher.getInstance("RSA/ECB/PKCS1Padding");
+                Cipher cipher = Cipher.getInstance("RSA/ECB/OAEPWithSHA-256AndMGF1Padding");
 
                 cipher.init(Cipher.DECRYPT_MODE, private_key);
 

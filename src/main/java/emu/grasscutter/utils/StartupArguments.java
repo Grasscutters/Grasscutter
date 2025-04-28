@@ -61,13 +61,12 @@ public interface StartupArguments {
                                     // Aliases.
                                     "-v",
                                     StartupArguments::printVersion));
-                    putAll(
-                            Map.of(
-                                    "-debugall",
-                                    parameter -> {
-                                        StartupArguments.enableDebug("all");
-                                        return false;
-                                    }));
+                    put(
+                            "-debugall",
+                            parameter -> {
+                                StartupArguments.enableDebug("all");
+                                return false;
+                            });
                 }
             };
 

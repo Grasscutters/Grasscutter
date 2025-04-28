@@ -23,7 +23,7 @@ public class HandlerClientAbilityInitFinishNotify extends PacketHandler {
             player.getClientAbilityInitFinishHandler().addEntry(entry.getForwardType(), entry);
         }
 
-        if (notif.getInvokesList().size() > 0) {
+        if (!notif.getInvokesList().isEmpty()) {
             session.getPlayer().getClientAbilityInitFinishHandler().update(session.getPlayer());
         }
     }

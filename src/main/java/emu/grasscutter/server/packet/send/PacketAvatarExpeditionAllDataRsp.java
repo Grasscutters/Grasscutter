@@ -22,7 +22,7 @@ public class PacketAvatarExpeditionAllDataRsp extends BasePacket {
                         .setExpeditionCountLimit(expeditionCountLimit)
                         .putAllExpeditionInfoMap(
                                 expeditionInfo.entrySet().stream()
-                                        .collect(Collectors.toMap(e -> e.getKey(), e -> e.getValue().toProto())))
+                                        .collect(Collectors.toMap(Map.Entry::getKey, e -> e.getValue().toProto())))
                         .build());
     }
 }

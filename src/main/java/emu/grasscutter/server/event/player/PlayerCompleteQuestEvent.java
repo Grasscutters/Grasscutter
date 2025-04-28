@@ -6,8 +6,9 @@ import emu.grasscutter.server.event.Cancellable;
 import emu.grasscutter.server.event.types.PlayerEvent;
 import lombok.Getter;
 
+@Getter
 public final class PlayerCompleteQuestEvent extends PlayerEvent implements Cancellable {
-    @Getter private final GameQuest quest;
+    private final GameQuest quest;
 
     public PlayerCompleteQuestEvent(Player player, GameQuest quest) {
         super(player);

@@ -40,24 +40,11 @@ public class HandlerSetPlayerBirthdayReq extends PacketHandler {
 
     private boolean isValidBirthday(int month, int day) {
 
-        switch (month) {
-            case 1:
-            case 3:
-            case 5:
-            case 7:
-            case 8:
-            case 10:
-            case 12:
-                return day > 0 & day <= 31;
-            case 4:
-            case 6:
-            case 9:
-            case 11:
-                return day > 0 && day <= 30;
-            case 2:
-                return day > 0 & day <= 29;
-        }
-
-        return false;
+        return switch (month) {
+            case 1, 3, 5, 7, 8, 10, 12 -> day > 0 & day <= 31;
+            case 4, 6, 9, 11 -> day > 0 && day <= 30;
+            case 2 -> day > 0 & day <= 29;
+            default -> false;
+        };
     }
 }

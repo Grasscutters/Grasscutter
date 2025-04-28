@@ -130,12 +130,10 @@ public class HandlerCombatInvocationsNotify extends PacketHandler {
         long actualDelay = System.currentTimeMillis() - cachedLandingTimeMillisecond;
         Grasscutter.getLogger()
                 .trace(
-                        "MOTION_FALL_ON_GROUND received after "
-                                + actualDelay
-                                + "/"
-                                + maxDelay
-                                + "ms."
-                                + (actualDelay > maxDelay ? " Discard" : ""));
+                        "MOTION_FALL_ON_GROUND received after {}/{}ms.{}",
+                        actualDelay,
+                        maxDelay,
+                        actualDelay > maxDelay ? " Discard" : "");
         if (actualDelay > maxDelay) {
             return;
         }
@@ -162,19 +160,15 @@ public class HandlerCombatInvocationsNotify extends PacketHandler {
         if (damageFactor > 0) {
             Grasscutter.getLogger()
                     .debug(
-                            currentHP
-                                    + "/"
-                                    + maxHP
-                                    + "\tLandingSpeed: "
-                                    + cachedLandingSpeed
-                                    + "\tDamageFactor: "
-                                    + damageFactor
-                                    + "\tDamage: "
-                                    + damage
-                                    + "\tNewHP: "
-                                    + newHP);
+                            "{}/{}\tLandingSpeed: {}\tDamageFactor: {}\tDamage: {}\tNewHP: {}",
+                            currentHP,
+                            maxHP,
+                            cachedLandingSpeed,
+                            damageFactor,
+                            damage,
+                            newHP);
         } else {
-            Grasscutter.getLogger().trace(currentHP + "/" + maxHP + "\tLandingSpeed: 0\tNo damage");
+            Grasscutter.getLogger().trace("{}/{}\tLandingSpeed: 0\tNo damage", currentHP, maxHP);
         }
         entity.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, newHP);
         entity

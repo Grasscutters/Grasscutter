@@ -32,13 +32,14 @@ public class AchievementControlReturns {
         return new AchievementControlReturns(Return.NOT_YET_ACHIEVED);
     }
 
+    @Getter
     public enum Return {
         SUCCESS("commands.achievement.success."),
         ACHIEVEMENT_NOT_FOUND("commands.achievement.fail.achievement_not_found"),
         ALREADY_ACHIEVED("commands.achievement.fail.already_achieved"),
         NOT_YET_ACHIEVED("commands.achievement.fail.not_yet_achieved");
 
-        @Getter private final String key;
+        private final String key;
 
         Return(String key) {
             this.key = key;

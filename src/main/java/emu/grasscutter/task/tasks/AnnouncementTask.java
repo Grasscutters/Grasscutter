@@ -14,7 +14,7 @@ import org.quartz.*;
         triggerName = "AnnouncementTrigger")
 public final class AnnouncementTask extends TaskHandler {
 
-    static Map<Integer, Integer> intervalMap = new ConcurrentHashMap<>();
+    static final Map<Integer, Integer> intervalMap = new ConcurrentHashMap<>();
 
     @Override
     public void onEnable() {

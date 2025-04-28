@@ -16,7 +16,7 @@ public class HandlerSceneEntityDrownReq extends PacketHandler {
 
         GameEntity entity = session.getPlayer().getScene().getEntityById(req.getEntityId());
 
-        if (entity == null || !(entity instanceof EntityMonster || entity instanceof EntityAvatar)) {
+        if (!(entity instanceof EntityMonster || entity instanceof EntityAvatar)) {
             return;
         }
 

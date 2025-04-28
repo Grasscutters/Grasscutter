@@ -26,6 +26,7 @@ public class AllActivityConditionBuilder {
         Reflections reflector = Grasscutter.reflector;
         return reflector.getTypesAnnotatedWith(ActivityCondition.class).stream()
                 .map(this::newInstance)
+                .filter(Objects::nonNull)
                 .map(h -> new AbstractMap.SimpleEntry<>(extractActionType(h), h))
                 .collect(
                         Collectors.toMap(AbstractMap.SimpleEntry::getKey, AbstractMap.SimpleEntry::getValue));

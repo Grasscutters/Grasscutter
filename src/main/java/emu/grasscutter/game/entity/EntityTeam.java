@@ -10,7 +10,7 @@ import it.unimi.dsi.fastutil.ints.*;
 
 public class EntityTeam extends GameEntity {
 
-    private Player player;
+    private final Player player;
 
     public EntityTeam(Player player) {
         super(player.getScene());

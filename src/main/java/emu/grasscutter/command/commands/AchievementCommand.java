@@ -69,7 +69,7 @@ public final class AchievementCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
-        if (args.size() < 1) {
+        if (args.isEmpty()) {
             this.sendUsageMessage(sender);
             return;
         }
@@ -88,7 +88,7 @@ public final class AchievementCommand implements CommandHandler {
 
     private void grant(
             Player sender, Player targetPlayer, Achievements achievements, List<String> args) {
-        if (args.size() < 1) {
+        if (args.isEmpty()) {
             this.sendUsageMessage(sender);
         }
 
@@ -109,7 +109,7 @@ public final class AchievementCommand implements CommandHandler {
 
     private void revoke(
             Player sender, Player targetPlayer, Achievements achievements, List<String> args) {
-        if (args.size() < 1) {
+        if (args.isEmpty()) {
             this.sendUsageMessage(sender);
         }
 
@@ -136,20 +136,19 @@ public final class AchievementCommand implements CommandHandler {
 
         parseInt(args.remove(0))
                 .ifPresentOrElse(
-                        integer -> {
-                            parseInt(args.remove(0))
-                                    .ifPresentOrElse(
-                                            progress -> {
-                                                var ret = achievements.progress(integer, progress);
-                                                switch (ret.getRet()) {
-                                                    case SUCCESS -> sendSuccessMessage(
-                                                            sender, "progress", targetPlayer.getNickname(), integer, progress);
-                                                    case ACHIEVEMENT_NOT_FOUND -> CommandHandler.sendTranslatedMessage(
-                                                            sender, ret.getRet().getKey());
-                                                }
-                                            },
-                                            () -> this.sendUsageMessage(sender));
-                        },
+                        integer ->
+                                parseInt(args.remove(0))
+                                        .ifPresentOrElse(
+                                                progress -> {
+                                                    var ret = achievements.progress(integer, progress);
+                                                    switch (ret.getRet()) {
+                                                        case SUCCESS -> sendSuccessMessage(
+                                                                sender, "progress", targetPlayer.getNickname(), integer, progress);
+                                                        case ACHIEVEMENT_NOT_FOUND -> CommandHandler.sendTranslatedMessage(
+                                                                sender, ret.getRet().getKey());
+                                                    }
+                                                },
+                                                () -> this.sendUsageMessage(sender)),
                         () -> this.sendUsageMessage(sender));
     }
 }

@@ -45,10 +45,7 @@ public class EnergyManager extends BasePlayerManager {
         // Read the data we need for monster energy drops.
         try {
             DataLoader.loadList("EnergyDrop.json", EnergyDropEntry.class)
-                    .forEach(
-                            entry -> {
-                                energyDropData.put(entry.getDropId(), entry.getDropList());
-                            });
+                    .forEach(entry -> energyDropData.put(entry.getDropId(), entry.getDropList()));
 
             Grasscutter.getLogger().debug("Energy drop data successfully loaded.");
         } catch (Exception ex) {
@@ -59,9 +56,7 @@ public class EnergyManager extends BasePlayerManager {
         try {
             DataLoader.loadList("SkillParticleGeneration.json", SkillParticleGenerationEntry.class)
                     .forEach(
-                            entry -> {
-                                skillParticleGenerationData.put(entry.getAvatarId(), entry.getAmountList());
-                            });
+                            entry -> skillParticleGenerationData.put(entry.getAvatarId(), entry.getAmountList()));
 
             Grasscutter.getLogger().debug("Skill particle generation data successfully loaded.");
         } catch (Exception ex) {

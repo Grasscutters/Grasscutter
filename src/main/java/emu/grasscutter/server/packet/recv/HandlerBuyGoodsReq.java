@@ -48,8 +48,7 @@ public class HandlerBuyGoodsReq extends PacketHandler {
                 return;
             }
 
-            List<ItemParamData> costs =
-                    new ArrayList<ItemParamData>(sg.getCostItemList()); // Can this even be null?
+            List<ItemParamData> costs = new ArrayList<>(sg.getCostItemList()); // Can this even be null?
             costs.add(new ItemParamData(202, sg.getScoin()));
             costs.add(new ItemParamData(201, sg.getHcoin()));
             costs.add(new ItemParamData(203, sg.getMcoin()));

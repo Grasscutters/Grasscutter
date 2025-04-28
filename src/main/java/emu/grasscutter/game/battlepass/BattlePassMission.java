@@ -4,12 +4,14 @@ import dev.morphia.annotations.*;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.BattlePassMissionData;
 import emu.grasscutter.game.props.BattlePassMissionStatus;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 public class BattlePassMission {
-    private int id;
-    private int progress;
-    private BattlePassMissionStatus status;
+    @Getter private int id;
+    @Setter @Getter private int progress;
+    @Setter private BattlePassMissionStatus status;
 
     @Transient private BattlePassMissionData data;
 
@@ -20,23 +22,11 @@ public class BattlePassMission {
         this.id = id;
     }
 
-    public int getId() {
-        return id;
-    }
-
     public BattlePassMissionData getData() {
         if (this.data == null) {
             this.data = GameData.getBattlePassMissionDataMap().get(getId());
         }
         return this.data;
-    }
-
-    public int getProgress() {
-        return progress;
-    }
-
-    public void setProgress(int value) {
-        this.progress = value;
     }
 
     public void addProgress(int addProgress, int maxProgress) {
@@ -46,10 +36,6 @@ public class BattlePassMission {
     public BattlePassMissionStatus getStatus() {
         if (status == null) status = BattlePassMissionStatus.MISSION_STATUS_UNFINISHED;
         return status;
-    }
-
-    public void setStatus(BattlePassMissionStatus status) {
-        this.status = status;
     }
 
     public boolean isFinshed() {

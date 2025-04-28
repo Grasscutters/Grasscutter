@@ -13,7 +13,7 @@ public class HandlerSetPlayerNameReq extends PacketHandler {
         // Auto template
         SetPlayerNameReq req = SetPlayerNameReq.parseFrom(payload);
 
-        if (req.getNickName() != null && req.getNickName().length() > 0) {
+        if (req.getNickName() != null && !req.getNickName().isEmpty()) {
             session.getPlayer().setNickname(req.getNickName());
             session.send(new PacketSetPlayerNameRsp(session.getPlayer()));
         }

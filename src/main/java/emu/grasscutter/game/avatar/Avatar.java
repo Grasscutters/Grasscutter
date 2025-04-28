@@ -8,18 +8,32 @@ import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.binout.OpenConfigEntry;
 import emu.grasscutter.data.binout.OpenConfigEntry.SkillPointModifier;
 import emu.grasscutter.data.common.FightPropData;
-import emu.grasscutter.data.excels.*;
+import emu.grasscutter.data.excels.EquipAffixData;
 import emu.grasscutter.data.excels.ItemData.WeaponProperty;
-import emu.grasscutter.data.excels.avatar.*;
+import emu.grasscutter.data.excels.ProudSkillData;
+import emu.grasscutter.data.excels.avatar.AvatarData;
+import emu.grasscutter.data.excels.avatar.AvatarSkillData;
+import emu.grasscutter.data.excels.avatar.AvatarSkillDepotData;
 import emu.grasscutter.data.excels.avatar.AvatarSkillDepotData.InherentProudSkillOpens;
-import emu.grasscutter.data.excels.reliquary.*;
+import emu.grasscutter.data.excels.avatar.AvatarTalentData;
+import emu.grasscutter.data.excels.reliquary.ReliquaryAffixData;
+import emu.grasscutter.data.excels.reliquary.ReliquaryLevelData;
+import emu.grasscutter.data.excels.reliquary.ReliquaryMainPropData;
+import emu.grasscutter.data.excels.reliquary.ReliquarySetData;
 import emu.grasscutter.data.excels.trial.TrialAvatarTemplateData;
-import emu.grasscutter.data.excels.weapon.*;
+import emu.grasscutter.data.excels.weapon.WeaponCurveData;
+import emu.grasscutter.data.excels.weapon.WeaponPromoteData;
 import emu.grasscutter.database.DatabaseHelper;
-import emu.grasscutter.game.entity.*;
-import emu.grasscutter.game.inventory.*;
+import emu.grasscutter.game.entity.EntityAvatar;
+import emu.grasscutter.game.entity.EntityWeapon;
+import emu.grasscutter.game.inventory.EquipType;
+import emu.grasscutter.game.inventory.GameItem;
+import emu.grasscutter.game.inventory.ItemType;
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.game.props.*;
+import emu.grasscutter.game.props.ElementType;
+import emu.grasscutter.game.props.FetterState;
+import emu.grasscutter.game.props.FightProperty;
+import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.net.proto.AvatarFetterInfoOuterClass.AvatarFetterInfo;
 import emu.grasscutter.net.proto.AvatarInfoOuterClass.AvatarInfo;
 import emu.grasscutter.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo;
@@ -34,8 +48,12 @@ import emu.grasscutter.utils.helpers.ProtoHelper;
 import it.unimi.dsi.fastutil.ints.*;
 import java.util.*;
 import java.util.stream.Stream;
-import javax.annotation.*;
-import lombok.*;
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.val;
 import org.bson.types.ObjectId;
 
 @Entity(value = "avatars", useDiscriminator = false)
@@ -61,13 +79,13 @@ public class Avatar {
 
     private List<Integer> fetters;
 
-    private Map<Integer, Integer> skillLevelMap = new Int2IntArrayMap(7); // Talent levels
+    private final Map<Integer, Integer> skillLevelMap = new Int2IntArrayMap(7); // Talent levels
 
     @Transient @Getter
-    private Map<Integer, Integer> skillExtraChargeMap = new Int2IntArrayMap(2); // Charges
+    private final Map<Integer, Integer> skillExtraChargeMap = new Int2IntArrayMap(2); // Charges
 
     @Transient
-    private Map<Integer, Integer> proudSkillBonusMap =
+    private final Map<Integer, Integer> proudSkillBonusMap =
             new Int2IntArrayMap(2); // Talent bonus levels (from const)
 
     @Getter private int skillDepotId;
@@ -380,6 +398,7 @@ public class Avatar {
     public Map<Integer, Integer>
             getSkillLevelMap() { // Returns a copy of the skill levels for the current skillDepot.
         var map = new Int2IntOpenHashMap();
+        if (this.skillDepot == null) return map;
         this.skillDepot
                 .getSkillsAndEnergySkill()
                 .forEach(
@@ -391,6 +410,7 @@ public class Avatar {
     // levels.
     public Map<Integer, Integer> getProudSkillBonusMap() {
         var map = new Int2IntArrayMap();
+        if (this.skillDepot == null) return map;
         this.skillDepot
                 .getSkillsAndEnergySkill()
                 .forEach(
@@ -636,7 +656,7 @@ public class Avatar {
                 }
             }
             // Add weapon skill from affixes
-            if (weapon.getAffixes() != null && weapon.getAffixes().size() > 0) {
+            if (weapon.getAffixes() != null && !weapon.getAffixes().isEmpty()) {
                 // Weapons usually dont have more than one affix but just in case...
                 for (int af : weapon.getAffixes()) {
                     if (af == 0) {
@@ -740,7 +760,7 @@ public class Avatar {
     }
 
     public void addToExtraAbilityEmbryos(String openConfig, boolean forceAdd) {
-        if (openConfig == null || openConfig.length() == 0) {
+        if (openConfig == null || openConfig.isEmpty()) {
             return;
         }
 
@@ -776,12 +796,13 @@ public class Avatar {
             Stream.of(entry.getSkillPointModifiers())
                     .mapToInt(SkillPointModifier::getSkillId)
                     .forEach(
-                            skillId -> {
-                                this.getPlayer()
-                                        .sendPacket(
-                                                new PacketAvatarSkillMaxChargeCountNotify(
-                                                        this, skillId, this.getSkillExtraChargeMap().getOrDefault(skillId, 0)));
-                            });
+                            skillId ->
+                                    this.getPlayer()
+                                            .sendPacket(
+                                                    new PacketAvatarSkillMaxChargeCountNotify(
+                                                            this,
+                                                            skillId,
+                                                            this.getSkillExtraChargeMap().getOrDefault(skillId, 0))));
         }
     }
 
@@ -801,7 +822,7 @@ public class Avatar {
                 .filter(Objects::nonNull)
                 .map(AvatarTalentData::getOpenConfig)
                 .filter(Objects::nonNull)
-                .filter(openConfig -> openConfig.length() > 0)
+                .filter(openConfig -> !openConfig.isEmpty())
                 .map(GameData.getOpenConfigEntries()::get)
                 .filter(Objects::nonNull)
                 .forEach(e -> this.calcConstellation(e, false));
@@ -824,13 +845,14 @@ public class Avatar {
     }
 
     private boolean calcConstellationExtraLevels(OpenConfigEntry entry) {
+        if (this.skillDepot == null) return false;
         int skillId =
                 switch (entry.getExtraTalentIndex()) {
                     case 9 -> this.skillDepot.getEnergySkill(); // Ult skill
                     case 2 -> (this.skillDepot.getSkills().size() >= 2)
                             ? this.skillDepot.getSkills().get(1)
                             : 0; // E skill
-                    case 1 -> (this.skillDepot.getSkills().size() >= 1)
+                    case 1 -> (!this.skillDepot.getSkills().isEmpty())
                             ? this.skillDepot.getSkills().get(0)
                             : 0; // Normal Attack (Liney)
                     default -> 0;
@@ -906,7 +928,7 @@ public class Avatar {
 
     public boolean unlockConstellation(boolean skipPayment) {
         int currentTalentLevel = this.getCoreProudSkillLevel();
-        if (currentTalentLevel < 0) return false;
+        if (currentTalentLevel < 0 || this.skillDepot == null) return false;
         int talentId = this.skillDepot.getTalents().get(currentTalentLevel);
         return this.unlockConstellation(talentId, skipPayment);
     }

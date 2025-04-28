@@ -44,7 +44,7 @@ public class AnnouncementSystem extends BaseGameSystem {
     }
 
     public void broadcast(List<AnnounceConfigItem> tpl) {
-        if (tpl == null || tpl.size() == 0) {
+        if (tpl == null || tpl.isEmpty()) {
             return;
         }
 

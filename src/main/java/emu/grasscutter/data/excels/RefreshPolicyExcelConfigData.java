@@ -6,11 +6,12 @@ import emu.grasscutter.game.world.World;
 import java.util.*;
 import lombok.Getter;
 
+@Getter
 @ResourceType(name = "RefreshPolicyExcelConfigData.json")
 public class RefreshPolicyExcelConfigData extends GameResource {
-    @Getter private int id;
-    @Getter private RefreshType type;
-    @Getter private String time;
+    private int id;
+    private RefreshType type;
+    private String time;
 
     private static int upperBound(List<Integer> list, int low, int high, int value) {
         while (low < high) {
@@ -48,9 +49,9 @@ public class RefreshPolicyExcelConfigData extends GameResource {
                                 upperBound(
                                         params, (int) params.get(0), (int) params.get(params.size() - 1), (int) temp);
                         var upper_bound = params.get(upper_bound_idx);
-                        if (params.get(params.size() - 1) == upper_bound) {
+                        if (params.get(params.size() - 1).equals(upper_bound)) {
                             return (params.get(params.size() - 1) - params.get(0)) + 60 * 60 * 24 * 7;
-                        } else if (params.get(0) == upper_bound) {
+                        } else if (params.get(0).equals(upper_bound)) {
                             return (params.get(params.size() - 1) - params.get(0)) + 60 * 60 * 24 * 7;
                         }
                         return (params.get(upper_bound_idx - 1) - params.get(0));
@@ -64,15 +65,15 @@ public class RefreshPolicyExcelConfigData extends GameResource {
                                 upperBound(
                                         params, (int) params.get(0), (int) params.get(params.size() - 1), (int) temp);
                         var upper_bound = params.get(upper_bound_idx);
-                        if (params.get(params.size() - 1) == upper_bound) {
+                        if (params.get(params.size() - 1).equals(upper_bound)) {
                             return (params.get(params.size() - 1) - params.get(0)) + 60 * 60 * 24 * 7;
-                        } else if (params.get(0) == upper_bound) {
+                        } else if (params.get(0).equals(upper_bound)) {
                             return (params.get(params.size() - 1) - params.get(0)) + 60 * 60 * 24 * 7;
                         }
                         return (params.get(upper_bound_idx - 1) - params.get(0));
                     }
                 case REFRESH_DAYBEGIN_INTERVAL:
-                    if (params.size() == 0) return -1;
+                    if (params.isEmpty()) return -1;
                     return params.get(0) * 60 * 60 * 24;
             }
         } catch (Exception e) {

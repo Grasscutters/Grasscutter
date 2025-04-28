@@ -19,6 +19,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.regex.*;
 import java.util.stream.*;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
 
 public final class Language {
     private static final Map<String, Language> cachedLanguages = new ConcurrentHashMap<>();
@@ -28,7 +29,9 @@ public final class Language {
     private static boolean scannedTextmaps =
             false; // Ensure that we don't infinitely rescan on cache misses that don't exist
     private static Int2ObjectMap<TextStrings> textMapStrings;
-    private final String languageCode;
+    /** -- GETTER -- get language code */
+    @Getter private final String languageCode;
+
     private final Map<String, String> translations = new ConcurrentHashMap<>();
 
     /** Reads a file and creates a language instance. */
@@ -44,7 +47,7 @@ public final class Language {
                     .forEach(entry -> putFlattenedKey(translations, entry.getKey(), entry.getValue()));
         } catch (Exception exception) {
             Grasscutter.getLogger()
-                    .warn("Failed to load language file: " + description.getLanguageCode(), exception);
+                    .warn("Failed to load language file: {}", description.getLanguageCode(), exception);
         }
     }
 
@@ -99,7 +102,7 @@ public final class Language {
         try {
             return translated.formatted(args);
         } catch (Exception exception) {
-            Grasscutter.getLogger().error("Failed to format string: " + key, exception);
+            Grasscutter.getLogger().error("Failed to format string: {}", key, exception);
             return translated;
         }
     }
@@ -134,7 +137,7 @@ public final class Language {
         try {
             return translated.formatted(args);
         } catch (Exception exception) {
-            Grasscutter.getLogger().error("Failed to format string: " + key, exception);
+            Grasscutter.getLogger().error("Failed to format string: {}", key, exception);
             return translated;
         }
     }
@@ -194,7 +197,7 @@ public final class Language {
 
         if (file == null) { // Provided fallback language.
             Grasscutter.getLogger()
-                    .warn("Failed to load language file: " + fileName + ", falling back to: " + fallback);
+                    .warn("Failed to load language file: {}, falling back to: {}", fileName, fallback);
             actualLanguageCode = fallbackLanguageCode;
             if (cachedLanguages.containsKey(actualLanguageCode)) {
                 return new LanguageStreamDescription(actualLanguageCode, null);
@@ -205,7 +208,7 @@ public final class Language {
 
         if (file == null) { // Fallback the fallback language.
             Grasscutter.getLogger()
-                    .warn("Failed to load language file: " + fallback + ", falling back to: en-US.json");
+                    .warn("Failed to load language file: {}, falling back to: en-US.json", fallback);
             actualLanguageCode = "en-US";
             if (cachedLanguages.containsKey(actualLanguageCode)) {
                 return new LanguageStreamDescription(actualLanguageCode, null);
@@ -241,7 +244,7 @@ public final class Language {
                                             m -> (int) Long.parseLong(m.group(1)),
                                             m -> m.group(2).replace("\\\"", "\""))));
         } catch (Exception e) {
-            Grasscutter.getLogger().error("Error loading textmap: " + language);
+            Grasscutter.getLogger().error("Error loading textmap: {}", language);
             Grasscutter.getLogger().error(e.toString());
         }
         return output;
@@ -253,15 +256,12 @@ public final class Language {
                 TextStrings.LIST_LANGUAGES.parallelStream()
                                 .collect(
                                         Collectors.toConcurrentMap(
-                                                s -> TextStrings.MAP_LANGUAGES.getInt(s),
-                                                s -> loadTextMapFile(s, nameHashes)));
+                                                TextStrings.MAP_LANGUAGES::getInt, s -> loadTextMapFile(s, nameHashes)));
         List<Int2ObjectMap<String>> languageMaps =
-                IntStream.range(0, TextStrings.NUM_LANGUAGES)
-                        .mapToObj(i -> mapLanguageMaps.get(i))
-                        .collect(Collectors.toList());
+                IntStream.range(0, TextStrings.NUM_LANGUAGES).mapToObj(mapLanguageMaps::get).toList();
 
         Map<TextStrings, TextStrings> canonicalTextStrings = new HashMap<>();
-        return new Int2ObjectOpenHashMap<TextStrings>(
+        return new Int2ObjectOpenHashMap<>(
                 nameHashes
                         .intStream()
                         .boxed()
@@ -341,7 +341,7 @@ public final class Language {
                                                 return Files.getLastModifiedTime(path).toMillis();
                                             } catch (Exception ignored) {
                                                 Grasscutter.getLogger()
-                                                        .debug("Exception while checking modified time: ", path);
+                                                        .debug("Exception while checking modified time: {}", path);
                                                 return Long.MAX_VALUE; // Don't use cache, something has gone wrong
                                             }
                                         })
@@ -361,7 +361,7 @@ public final class Language {
             } catch (NoSuchFileException ignored) {
                 // Cache doesn't exist, generate it.
             } catch (Exception exception) {
-                Grasscutter.getLogger().error("Error loading textmaps cache: " + exception.toString());
+                Grasscutter.getLogger().error("Error loading textmaps cache: {}", exception);
             }
 
         // Regenerate cache
@@ -404,11 +404,6 @@ public final class Language {
         } catch (IOException e) {
             Grasscutter.getLogger().error("Failed to save TextMap cache: ", e);
         }
-    }
-
-    /** get language code */
-    public String getLanguageCode() {
-        return languageCode;
     }
 
     /**

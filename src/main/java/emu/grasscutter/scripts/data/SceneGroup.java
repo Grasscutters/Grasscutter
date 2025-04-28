@@ -3,7 +3,6 @@ package emu.grasscutter.scripts.data;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.world.Position;
 import emu.grasscutter.scripts.ScriptLoader;
-import java.io.*;
 import java.util.*;
 import java.util.stream.Collectors;
 import javax.script.*;
@@ -37,23 +36,15 @@ public final class SceneGroup {
     public SceneReplaceable is_replaceable;
 
     /* These are not script variables. */
-    private transient boolean loaded;
-    private transient CompiledScript script;
-    private transient Bindings bindings;
+    @Setter @Getter private transient boolean loaded;
+    @Getter private transient CompiledScript script;
+    @Getter private transient Bindings bindings;
     public String overrideScriptPath;
 
     public static SceneGroup of(int groupId) {
         var group = new SceneGroup();
         group.id = groupId;
         return group;
-    }
-
-    public boolean isLoaded() {
-        return this.loaded;
-    }
-
-    public void setLoaded(boolean loaded) {
-        this.loaded = loaded;
     }
 
     public int getBusinessType() {
@@ -64,19 +55,11 @@ public final class SceneGroup {
         return this.garbages == null ? null : this.garbages.gadgets;
     }
 
-    public CompiledScript getScript() {
-        return this.script;
-    }
-
     public SceneSuite getSuiteByIndex(int index) {
         if (index < 1 || index > suites.size()) {
             return null;
         }
         return this.suites.get(index - 1);
-    }
-
-    public Bindings getBindings() {
-        return this.bindings;
     }
 
     public synchronized SceneGroup load(int sceneId) {
@@ -89,7 +72,7 @@ public final class SceneGroup {
         this.bindings = ScriptLoader.getEngine().createBindings();
 
         CompiledScript cs;
-        if (overrideScriptPath != null && !overrideScriptPath.equals("")) {
+        if (overrideScriptPath != null && !overrideScriptPath.isEmpty()) {
             cs = ScriptLoader.getScript(overrideScriptPath, true);
         } else {
             cs =
@@ -168,8 +151,7 @@ public final class SceneGroup {
             this.suites.forEach(i -> i.init(this));
         } catch (ScriptException e) {
             Grasscutter.getLogger()
-                    .error(
-                            "An error occurred while loading group " + this.id + " in scene " + sceneId + ".", e);
+                    .error("An error occurred while loading group {} in scene {}.", this.id, sceneId, e);
         } catch (LuaError luaError) {
             Grasscutter.getLogger()
                     .error(

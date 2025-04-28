@@ -13,17 +13,17 @@ import lombok.*;
 public class GameDepot {
     public static final int[] BLOCK_SIZE = new int[] {50, 500}; // Scales
 
-    private static Int2ObjectMap<WeightedList<ReliquaryMainPropData>> relicRandomMainPropDepot =
+    private static final Int2ObjectMap<WeightedList<ReliquaryMainPropData>> relicRandomMainPropDepot =
             new Int2ObjectOpenHashMap<>();
-    private static Int2ObjectMap<List<ReliquaryMainPropData>> relicMainPropDepot =
+    private static final Int2ObjectMap<List<ReliquaryMainPropData>> relicMainPropDepot =
             new Int2ObjectOpenHashMap<>();
-    private static Int2ObjectMap<List<ReliquaryAffixData>> relicAffixDepot =
+    private static final Int2ObjectMap<List<ReliquaryAffixData>> relicAffixDepot =
             new Int2ObjectOpenHashMap<>();
 
     @Getter @Setter private static Map<String, AvatarConfig> playerAbilities = new HashMap<>();
 
     @Getter
-    private static HashMap<SpawnDataEntry.GridBlockId, ArrayList<SpawnDataEntry>> spawnLists =
+    private static final HashMap<SpawnDataEntry.GridBlockId, ArrayList<SpawnDataEntry>> spawnLists =
             new HashMap<>();
 
     @Getter @Setter private static BlossomConfig blossomConfig;
@@ -50,7 +50,7 @@ public class GameDepot {
             list.add(data);
         }
         // Let the server owner know if theyre missing weights
-        if (relicMainPropDepot.size() == 0 || relicAffixDepot.size() == 0) {
+        if (relicMainPropDepot.isEmpty() || relicAffixDepot.isEmpty()) {
             Grasscutter.getLogger()
                     .error(
                             "Relic properties are missing weights! Please check your ReliquaryMainPropExcelConfigData or ReliquaryAffixExcelConfigData files in your ExcelBinOutput folder.");

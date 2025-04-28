@@ -7,18 +7,20 @@ import emu.grasscutter.net.proto.FriendBriefOuterClass.FriendBrief;
 import emu.grasscutter.net.proto.FriendOnlineStateOuterClass.FriendOnlineState;
 import emu.grasscutter.net.proto.PlatformTypeOuterClass;
 import emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture;
+import lombok.Getter;
+import lombok.Setter;
 import org.bson.types.ObjectId;
 
 @Entity(value = "friendships", useDiscriminator = false)
 public class Friendship {
     @Id private ObjectId id;
 
-    @Transient private Player owner;
+    @Setter @Getter @Transient private Player owner;
 
-    @Indexed private int ownerId;
-    @Indexed private int friendId;
-    private boolean isFriend;
-    private int askerId;
+    @Getter @Indexed private int ownerId;
+    @Getter @Indexed private int friendId;
+    @Setter private boolean isFriend;
+    @Setter @Getter private int askerId;
 
     private PlayerProfile profile;
 
@@ -33,36 +35,8 @@ public class Friendship {
         this.askerId = asker.getUid();
     }
 
-    public Player getOwner() {
-        return owner;
-    }
-
-    public void setOwner(Player owner) {
-        this.owner = owner;
-    }
-
     public boolean isFriend() {
         return isFriend;
-    }
-
-    public void setIsFriend(boolean b) {
-        this.isFriend = b;
-    }
-
-    public int getOwnerId() {
-        return ownerId;
-    }
-
-    public int getFriendId() {
-        return friendId;
-    }
-
-    public int getAskerId() {
-        return askerId;
-    }
-
-    public void setAskerId(int askerId) {
-        this.askerId = askerId;
     }
 
     public PlayerProfile getFriendProfile() {

@@ -1,7 +1,9 @@
 package emu.grasscutter.game.player;
 
+import lombok.Getter;
 import lombok.NonNull;
 
+@Getter
 public abstract class BasePlayerDataManager {
     protected transient Player player;
 
@@ -9,10 +11,6 @@ public abstract class BasePlayerDataManager {
 
     public BasePlayerDataManager(@NonNull Player player) {
         this.player = player;
-    }
-
-    public Player getPlayer() {
-        return this.player;
     }
 
     public void setPlayer(Player player) {

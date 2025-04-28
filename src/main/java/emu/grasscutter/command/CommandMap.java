@@ -53,7 +53,7 @@ public final class CommandMap {
      * @return Instance chaining.
      */
     public CommandMap registerCommand(String label, CommandHandler command) {
-        Grasscutter.getLogger().trace("Registered command: " + label);
+        Grasscutter.getLogger().trace("Registered command: {}", label);
         label = label.toLowerCase();
 
         // Get command data.
@@ -76,7 +76,7 @@ public final class CommandMap {
      * @return Instance chaining.
      */
     public CommandMap unregisterCommand(String label) {
-        Grasscutter.getLogger().trace("Un-registered command: " + label);
+        Grasscutter.getLogger().trace("Un-registered command: {}", label);
 
         CommandHandler handler = this.commands.get(label);
         if (handler == null) return this;
@@ -231,14 +231,12 @@ public final class CommandMap {
             if (player != null) {
                 Grasscutter.getLogger()
                         .info(
-                                "Command used by ["
-                                        + player.getAccount().getUsername()
-                                        + " (Player UID: "
-                                        + player.getUid()
-                                        + ")]: "
-                                        + rawMessage);
+                                "Command used by [{} (Player UID: {})]: {}",
+                                player.getAccount().getUsername(),
+                                player.getUid(),
+                                rawMessage);
             } else {
-                Grasscutter.getLogger().info("Command used by server console: " + rawMessage);
+                Grasscutter.getLogger().info("Command used by server console: {}", rawMessage);
             }
         }
 
@@ -350,11 +348,12 @@ public final class CommandMap {
                             this.registerCommand(cmdData.label(), (CommandHandler) object);
                         else
                             Grasscutter.getLogger()
-                                    .error("Class " + annotated.getName() + " is not a CommandHandler!");
+                                    .error("Class {} is not a CommandHandler!", annotated.getName());
                     } catch (Exception exception) {
                         Grasscutter.getLogger()
                                 .error(
-                                        "Failed to register command handler for " + annotated.getSimpleName(),
+                                        "Failed to register command handler for {}",
+                                        annotated.getSimpleName(),
                                         exception);
                     }
                 });

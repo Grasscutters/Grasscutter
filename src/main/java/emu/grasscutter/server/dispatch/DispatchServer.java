@@ -19,11 +19,12 @@ import org.java_websocket.server.WebSocketServer;
 import org.slf4j.Logger;
 
 /* Internal communications server. */
+@Getter
 public final class DispatchServer extends WebSocketServer implements IDispatcher {
-    @Getter private final Logger logger = Grasscutter.getLogger();
-    @Getter private final Map<Integer, BiConsumer<WebSocket, JsonElement>> handlers = new HashMap<>();
+    private final Logger logger = Grasscutter.getLogger();
+    private final Map<Integer, BiConsumer<WebSocket, JsonElement>> handlers = new HashMap<>();
 
-    @Getter private final Map<Integer, List<Consumer<JsonElement>>> callbacks = new HashMap<>();
+    private final Map<Integer, List<Consumer<JsonElement>>> callbacks = new HashMap<>();
 
     /**
      * Constructs a new {@code DispatchServer} instance.

@@ -43,24 +43,20 @@ public class HandlerTryEnterHomeReq extends PacketHandler {
                     }
                 }
                 case FriendEnterHomeOptionOuterClass.FriendEnterHomeOption
-                        .FRIEND_ENTER_HOME_OPTION_REFUSE_VALUE -> {
-                    session.send(
-                            new PacketTryEnterHomeRsp(
-                                    RetcodeOuterClass.Retcode.RET_HOME_HOME_REFUSE_GUEST_ENTER_VALUE,
-                                    req.getTargetUid()));
-                }
+                        .FRIEND_ENTER_HOME_OPTION_REFUSE_VALUE -> session.send(
+                        new PacketTryEnterHomeRsp(
+                                RetcodeOuterClass.Retcode.RET_HOME_HOME_REFUSE_GUEST_ENTER_VALUE,
+                                req.getTargetUid()));
 
                 case FriendEnterHomeOptionOuterClass.FriendEnterHomeOption
-                        .FRIEND_ENTER_HOME_OPTION_DIRECT_VALUE -> {
-                    session
-                            .getServer()
-                            .getHomeWorldMPSystem()
-                            .enterHome(
-                                    session.getPlayer(),
-                                    targetPlayer,
-                                    req.getTargetPoint(),
-                                    req.getIsTransferToSafePoint());
-                }
+                        .FRIEND_ENTER_HOME_OPTION_DIRECT_VALUE -> session
+                        .getServer()
+                        .getHomeWorldMPSystem()
+                        .enterHome(
+                                session.getPlayer(),
+                                targetPlayer,
+                                req.getTargetPoint(),
+                                req.getIsTransferToSafePoint());
             }
 
             return;

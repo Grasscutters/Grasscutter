@@ -18,7 +18,7 @@ public final class ResetConstCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
-        if (args.size() > 0 && args.get(0).equalsIgnoreCase("all")) {
+        if (!args.isEmpty() && args.get(0).equalsIgnoreCase("all")) {
             targetPlayer.getAvatars().forEach(this::resetConstellation);
             CommandHandler.sendMessage(sender, translate(sender, "commands.resetConst.reset_all"));
         } else {

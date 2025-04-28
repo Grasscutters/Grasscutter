@@ -3,17 +3,19 @@ package emu.grasscutter.net.packet;
 import com.google.protobuf.GeneratedMessageV3;
 import emu.grasscutter.net.proto.PacketHeadOuterClass.PacketHead;
 import java.io.*;
+import lombok.Getter;
+import lombok.Setter;
 
 public class BasePacket {
     private static final int const1 = 17767; // 0x4567
     private static final int const2 = -30293; // 0x89ab
-    public boolean shouldEncrypt = true;
-    private int opcode;
+    public final boolean shouldEncrypt = true;
+    @Setter @Getter private int opcode;
     private boolean shouldBuildHeader = false;
-    private byte[] header;
-    private byte[] data;
+    @Setter @Getter private byte[] header;
+    @Getter private byte[] data;
     // Encryption
-    private boolean useDispatchKey;
+    @Setter private boolean useDispatchKey;
 
     public BasePacket(int opcode) {
         this.opcode = opcode;
@@ -29,40 +31,12 @@ public class BasePacket {
         this.shouldBuildHeader = buildHeader;
     }
 
-    public int getOpcode() {
-        return opcode;
-    }
-
-    public void setOpcode(int opcode) {
-        this.opcode = opcode;
-    }
-
     public boolean useDispatchKey() {
         return useDispatchKey;
     }
 
-    public void setUseDispatchKey(boolean useDispatchKey) {
-        this.useDispatchKey = useDispatchKey;
-    }
-
-    public byte[] getHeader() {
-        return header;
-    }
-
-    public void setHeader(byte[] header) {
-        this.header = header;
-    }
-
     public boolean shouldBuildHeader() {
         return shouldBuildHeader;
-    }
-
-    public byte[] getData() {
-        return data;
-    }
-
-    public void setData(byte[] data) {
-        this.data = data;
     }
 
     public void setData(GeneratedMessageV3 proto) {
@@ -72,6 +46,10 @@ public class BasePacket {
     @SuppressWarnings("rawtypes")
     public void setData(GeneratedMessageV3.Builder proto) {
         this.data = proto.build().toByteArray();
+    }
+
+    public void setData(byte[] packet) {
+        this.data = packet;
     }
 
     public BasePacket buildHeader(int clientSequence) {

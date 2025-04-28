@@ -63,9 +63,7 @@ public final class GroupCommand implements CommandHandler {
 
                 CommandHandler.sendMessage(sender, translate(sender, "commands.group.refreshed", groupId));
             }
-            default -> {
-                sendUsageMessage(sender);
-            }
+            default -> sendUsageMessage(sender);
         }
     }
 }

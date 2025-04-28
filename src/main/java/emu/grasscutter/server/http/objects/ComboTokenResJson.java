@@ -3,7 +3,7 @@ package emu.grasscutter.server.http.objects;
 public class ComboTokenResJson {
     public String message;
     public int retcode;
-    public LoginData data = new LoginData();
+    public final LoginData data = new LoginData();
 
     public static class LoginData {
         public int account_type = 1;

@@ -5,52 +5,21 @@ import emu.grasscutter.data.GameData;
 import emu.grasscutter.game.quest.enums.QuestType;
 import java.util.*;
 import lombok.Data;
+import lombok.Getter;
 
 public class MainQuestData {
-    private int id;
+    @Getter private int id;
     private int ICLLDPJFIMA;
-    private int series;
-    private QuestType type;
+    @Getter private int series;
+    @Getter private QuestType type;
 
-    private long titleTextMapHash;
-    private int[] suggestTrackMainQuestList;
-    private int[] rewardIdList;
+    @Getter private long titleTextMapHash;
+    @Getter private int[] suggestTrackMainQuestList;
+    @Getter private int[] rewardIdList;
 
-    private SubQuestData[] subQuests;
-    private List<TalkData> talks;
+    @Getter private SubQuestData[] subQuests;
+    @Getter private List<TalkData> talks;
     private long[] preloadLuaList;
-
-    public int getId() {
-        return id;
-    }
-
-    public int getSeries() {
-        return series;
-    }
-
-    public QuestType getType() {
-        return type;
-    }
-
-    public long getTitleTextMapHash() {
-        return titleTextMapHash;
-    }
-
-    public int[] getSuggestTrackMainQuestList() {
-        return suggestTrackMainQuestList;
-    }
-
-    public int[] getRewardIdList() {
-        return rewardIdList;
-    }
-
-    public SubQuestData[] getSubQuests() {
-        return subQuests;
-    }
-
-    public List<TalkData> getTalks() {
-        return talks;
-    }
 
     public void onLoad() {
         if (this.talks == null) this.talks = new ArrayList<>();

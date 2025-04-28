@@ -2,7 +2,9 @@ package emu.grasscutter.data.binout;
 
 import emu.grasscutter.data.ResourceLoader.OpenConfigData;
 import java.util.*;
+import lombok.Getter;
 
+@Getter
 public class OpenConfigEntry {
     private final String name;
     private String[] addAbilities;
@@ -25,46 +27,23 @@ public class OpenConfigEntry {
             }
         }
 
-        if (abilityList.size() > 0) {
+        if (!abilityList.isEmpty()) {
             this.addAbilities = abilityList.toArray(new String[0]);
         }
 
-        if (modList.size() > 0) {
+        if (!modList.isEmpty()) {
             this.skillPointModifiers = modList.toArray(new SkillPointModifier[0]);
         }
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public String[] getAddAbilities() {
-        return addAbilities;
-    }
-
-    public int getExtraTalentIndex() {
-        return extraTalentIndex;
-    }
-
-    public SkillPointModifier[] getSkillPointModifiers() {
-        return skillPointModifiers;
-    }
-
+    @Getter
     public static class SkillPointModifier {
-        private int skillId;
-        private int delta;
+        private final int skillId;
+        private final int delta;
 
         public SkillPointModifier(int skillId, int delta) {
             this.skillId = skillId;
             this.delta = delta;
-        }
-
-        public int getSkillId() {
-            return skillId;
-        }
-
-        public int getDelta() {
-            return delta;
         }
     }
 }

@@ -26,7 +26,7 @@ public final class HandbookHandler implements Router {
      */
     public HandbookHandler() {
         this.handbook = new String(FileUtils.readResource("/html/handbook.html"));
-        this.serve = HANDBOOK.enable && this.handbook.length() > 0;
+        this.serve = HANDBOOK.enable && !this.handbook.isEmpty();
 
         var server = HANDBOOK.server;
         if (this.serve && server.enforced) {

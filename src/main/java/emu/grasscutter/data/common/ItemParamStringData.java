@@ -1,18 +1,13 @@
 package emu.grasscutter.data.common;
 
+import lombok.Getter;
+
+@Getter
 public class ItemParamStringData {
     private int id;
     private String count;
 
     public ItemParamStringData() {}
-
-    public int getId() {
-        return id;
-    }
-
-    public String getCount() {
-        return count;
-    }
 
     public ItemParamData toItemParamData() {
         if (count.contains(";")) {

@@ -6,11 +6,13 @@ import emu.grasscutter.scripts.data.SceneGadget;
 import java.util.*;
 import lombok.*;
 
+@Setter
+@Getter
 public class ConfigRoute extends BaseRoute {
 
-    @Getter @Setter private int routeId;
-    @Getter @Setter private int startIndex;
-    @Getter @Setter private List<Integer> scheduledIndexes;
+    private int routeId;
+    private int startIndex;
+    private List<Integer> scheduledIndexes;
 
     public ConfigRoute(SceneGadget gadget) {
         super(gadget);

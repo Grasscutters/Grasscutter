@@ -5,6 +5,7 @@ import java.util.*;
 import java.util.stream.Stream;
 import lombok.*;
 
+@Getter
 @AllArgsConstructor
 public enum TalkExec {
     TALK_EXEC_NONE(0),
@@ -56,5 +57,5 @@ public enum TalkExec {
         return execStringMap.getOrDefault(name, TALK_EXEC_NONE);
     }
 
-    @Getter private final int value;
+    private final int value;
 }

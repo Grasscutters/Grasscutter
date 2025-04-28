@@ -3,7 +3,9 @@ package emu.grasscutter.game.props;
 import it.unimi.dsi.fastutil.ints.*;
 import java.util.*;
 import java.util.stream.Stream;
+import lombok.Getter;
 
+@Getter
 public enum GrowCurve {
     GROW_CURVE_NONE(0),
     GROW_CURVE_HP(1),
@@ -95,9 +97,5 @@ public enum GrowCurve {
 
     public static GrowCurve getPropByName(String name) {
         return stringMap.getOrDefault(name, GROW_CURVE_NONE);
-    }
-
-    public int getId() {
-        return id;
     }
 }

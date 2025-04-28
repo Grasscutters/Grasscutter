@@ -14,8 +14,13 @@ public final class AsyncServerTask implements Runnable {
 
     /* Has the task already been started? */
     private boolean started = false;
+    /**
+     * -- GETTER -- Returns the state of the task.
+     *
+     * @return True if the task has finished execution, false otherwise.
+     */
     /* Has the task finished execution? */
-    private boolean finished = false;
+    @Getter private boolean finished = false;
     /* The result produced in the async task. */
     @Nullable private Object result = null;
 
@@ -47,15 +52,6 @@ public final class AsyncServerTask implements Runnable {
      */
     public boolean hasStarted() {
         return this.started;
-    }
-
-    /**
-     * Returns the state of the task.
-     *
-     * @return True if the task has finished execution, false otherwise.
-     */
-    public boolean isFinished() {
-        return this.finished;
     }
 
     /** Runs the task. */

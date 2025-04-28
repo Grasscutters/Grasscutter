@@ -33,11 +33,12 @@ import emu.grasscutter.utils.helpers.ProtoHelper;
 import it.unimi.dsi.fastutil.ints.Int2FloatMap;
 import lombok.*;
 
+@Getter
 public class EntityAvatar extends GameEntity {
-    @Getter private final Avatar avatar;
+    private final Avatar avatar;
 
-    @Getter private PlayerDieType killedType;
-    @Getter private int killedBy;
+    private PlayerDieType killedType;
+    private int killedBy;
 
     public EntityAvatar(Avatar avatar) {
         this(null, avatar);
@@ -363,7 +364,7 @@ public class EntityAvatar extends GameEntity {
             }
         }
         // Add equip abilities
-        if (this.getAvatar().getExtraAbilityEmbryos().size() > 0) {
+        if (!this.getAvatar().getExtraAbilityEmbryos().isEmpty()) {
             for (String skill : this.getAvatar().getExtraAbilityEmbryos()) {
                 AbilityEmbryo emb =
                         AbilityEmbryo.newBuilder()

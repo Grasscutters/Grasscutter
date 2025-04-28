@@ -8,9 +8,10 @@ import emu.grasscutter.server.event.types.PlayerEvent;
 import lombok.*;
 
 /** This event is invoked when the player uses food on an avatar. */
+@Getter
 public final class PlayerUseFoodEvent extends PlayerEvent implements Cancellable {
-    @Getter private final EntityAvatar selectedAvatar;
-    @Getter @Setter private ItemData foodUsed;
+    private final EntityAvatar selectedAvatar;
+    @Setter private ItemData foodUsed;
 
     public PlayerUseFoodEvent(Player player, ItemData foodUsed, EntityAvatar selectedAvatar) {
         super(player);

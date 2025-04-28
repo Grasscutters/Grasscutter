@@ -7,7 +7,7 @@ public class EquipInventoryTab implements InventoryTab {
     private final int maxCapacity;
 
     public EquipInventoryTab(int maxCapacity) {
-        this.items = new HashSet<GameItem>();
+        this.items = new HashSet<>();
         this.maxCapacity = maxCapacity;
     }
 

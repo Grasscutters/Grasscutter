@@ -26,7 +26,7 @@ public class HandlerClientAbilitiesInitFinishCombineNotify extends PacketHandler
                 player.getClientAbilityInitFinishHandler().addEntry(ability.getForwardType(), ability);
             }
 
-            if (entry.getInvokesList().size() > 0) {
+            if (!entry.getInvokesList().isEmpty()) {
                 session.getPlayer().getClientAbilityInitFinishHandler().update(session.getPlayer());
             }
         }

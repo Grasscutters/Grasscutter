@@ -11,10 +11,13 @@ import emu.grasscutter.scripts.data.*;
 import emu.grasscutter.server.game.*;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
+import lombok.Getter;
 import org.luaj.vm2.LuaError;
 
 public class WorldDataSystem extends BaseGameSystem {
+    @Getter
     private final Map<String, ChestInteractHandler> chestInteractHandlerMap; // chestType-Handler
+
     private final Map<String, SceneGroup> sceneInvestigationGroupMap; // <sceneId_groupId, Group>
 
     public WorldDataSystem(GameServer server) {
@@ -42,10 +45,6 @@ public class WorldDataSystem extends BaseGameSystem {
         } catch (Exception e) {
             Grasscutter.getLogger().error("Unable to load chest reward config.", e);
         }
-    }
-
-    public Map<String, ChestInteractHandler> getChestInteractHandlerMap() {
-        return chestInteractHandlerMap;
     }
 
     public RewardPreviewData getRewardByBossId(int monsterId) {

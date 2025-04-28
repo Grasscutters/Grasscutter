@@ -11,14 +11,11 @@ import dev.morphia.query.experimental.filters.Filters;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.Grasscutter.ServerRunMode;
 import emu.grasscutter.game.Account;
+import lombok.Getter;
 
 public final class DatabaseManager {
-    private static Datastore gameDatastore;
+    @Getter private static Datastore gameDatastore;
     private static Datastore dispatchDatastore;
-
-    public static Datastore getGameDatastore() {
-        return gameDatastore;
-    }
 
     public static Datastore getAccountDatastore() {
         if (Grasscutter.getRunMode() == ServerRunMode.HYBRID) return gameDatastore;

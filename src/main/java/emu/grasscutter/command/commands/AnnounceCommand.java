@@ -19,7 +19,7 @@ public final class AnnounceCommand implements CommandHandler {
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
         var manager = Grasscutter.getGameServer().getAnnouncementSystem();
-        if (args.size() < 1) {
+        if (args.isEmpty()) {
             sendUsageMessage(sender);
             return;
         }

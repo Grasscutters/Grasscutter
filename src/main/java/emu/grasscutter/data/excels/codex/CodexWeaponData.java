@@ -1,28 +1,17 @@
 package emu.grasscutter.data.excels.codex;
 
 import emu.grasscutter.data.*;
+import lombok.Getter;
 
 @ResourceType(name = {"WeaponCodexExcelConfigData.json"})
 public class CodexWeaponData extends GameResource {
-    private int Id;
-    private int weaponId;
+    @Getter private int Id;
+    @Getter private int weaponId;
     private int gadgetId;
-    private int sortOrder;
-
-    public int getSortOrder() {
-        return sortOrder;
-    }
-
-    public int getWeaponId() {
-        return weaponId;
-    }
+    @Getter private int sortOrder;
 
     public int getGadgetId() {
         return weaponId;
-    }
-
-    public int getId() {
-        return Id;
     }
 
     @Override

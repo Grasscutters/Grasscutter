@@ -12,7 +12,7 @@ public class ExecIncQuestGlobalVar extends QuestExecHandler {
         quest
                 .getOwner()
                 .getQuestManager()
-                .incQuestGlobalVarValue(Integer.valueOf(paramStr[0]), Integer.valueOf(paramStr[1]));
+                .incQuestGlobalVarValue(Integer.parseInt(paramStr[0]), Integer.parseInt(paramStr[1]));
         return true;
     }
 }

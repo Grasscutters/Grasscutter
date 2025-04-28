@@ -3,6 +3,7 @@ package emu.grasscutter.game.dungeons.enums;
 import emu.grasscutter.scripts.constants.IntValueEnum;
 import lombok.Getter;
 
+@Getter
 public enum DungeonPassConditionType implements IntValueEnum {
     DUNGEON_COND_NONE(0),
     DUNGEON_COND_KILL_MONSTER(3),
@@ -15,7 +16,7 @@ public enum DungeonPassConditionType implements IntValueEnum {
     DUNGEON_COND_END_MULTISTAGE_PLAY(15) // Missing
 ;
 
-    @Getter private final int id;
+    private final int id;
 
     DungeonPassConditionType(int id) {
         this.id = id;

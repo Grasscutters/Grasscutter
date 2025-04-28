@@ -55,7 +55,7 @@ public class AvatarData extends GameResource {
     @Getter
     private IntList abilities;
     @Getter
-    private List<String> abilitieNames = new ArrayList<>();
+    private final List<String> abilitieNames = new ArrayList<>();
 
     @Getter
     private List<Integer> fetters;

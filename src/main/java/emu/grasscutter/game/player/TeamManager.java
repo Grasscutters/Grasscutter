@@ -83,7 +83,7 @@ public final class TeamManager extends BasePlayerDataManager {
         int embryoId = 0;
 
         // add from default
-        if (Arrays.stream(GameConstants.DEFAULT_TEAM_ABILITY_STRINGS).count() > 0) {
+        if (Arrays.stream(GameConstants.DEFAULT_TEAM_ABILITY_STRINGS).findAny().isPresent()) {
             List<String> teamAbilties =
                     Arrays.stream(GameConstants.DEFAULT_TEAM_ABILITY_STRINGS).toList();
             for (String skill : teamAbilties) {
@@ -98,7 +98,7 @@ public final class TeamManager extends BasePlayerDataManager {
         }
 
         // same as avatar ability hash (add frm levelEntityConfig data)
-        if (this.getTeamAbilityEmbryos().size() > 0) {
+        if (!this.getTeamAbilityEmbryos().isEmpty()) {
             for (String skill : this.getTeamAbilityEmbryos()) {
                 AbilityEmbryoOuterClass.AbilityEmbryo emb =
                         AbilityEmbryoOuterClass.AbilityEmbryo.newBuilder()
@@ -257,7 +257,7 @@ public final class TeamManager extends BasePlayerDataManager {
         }
 
         // Convert avatars into a collection of avatar IDs, then add
-        team.getAvatars().addAll(avatars.stream().map(a -> a.getAvatarId()).toList());
+        team.getAvatars().addAll(avatars.stream().map(Avatar::getAvatarId).toList());
 
         // Update team
         if (this.getPlayer().isInMultiplayer()) {
@@ -332,7 +332,7 @@ public final class TeamManager extends BasePlayerDataManager {
         // Dual element resonances
         elementCounts.object2IntEntrySet().stream()
                 .filter(e -> e.getIntValue() >= 2)
-                .map(e -> e.getKey())
+                .map(Map.Entry::getKey)
                 .filter(elementType -> elementType.getTeamResonanceId() != 0)
                 .forEach(
                         elementType -> {
@@ -363,7 +363,7 @@ public final class TeamManager extends BasePlayerDataManager {
 
     public void updateTeamEntities(BasePacket responsePacket) {
         // Sanity check - Should never happen
-        if (this.getCurrentTeamInfo().getAvatars().size() <= 0) {
+        if (this.getCurrentTeamInfo().getAvatars().size() == 0) {
             return;
         }
 
@@ -495,7 +495,7 @@ public final class TeamManager extends BasePlayerDataManager {
 
     public void setupMpTeam(List<Long> list) {
         // Sanity checks
-        if (list.size() == 0
+        if (list.isEmpty()
                 || list.size() > this.getMaxTeamSize()
                 || !this.getPlayer().isInMultiplayer()) {
             return;
@@ -696,7 +696,7 @@ public final class TeamManager extends BasePlayerDataManager {
                         .map(
                                 list -> {
                                     // Sanity checks
-                                    if (list.size() == 0 || list.size() > this.getMaxTeamSize()) {
+                                    if (list.isEmpty() || list.size() > this.getMaxTeamSize()) {
                                         return null;
                                     }
 
@@ -744,7 +744,7 @@ public final class TeamManager extends BasePlayerDataManager {
 
         // Get team
         TeamInfo teamInfo = this.getTeams().get(teamId);
-        if (teamInfo == null || teamInfo.getAvatars().size() == 0) {
+        if (teamInfo == null || teamInfo.getAvatars().isEmpty()) {
             return;
         }
 
@@ -1054,7 +1054,7 @@ public final class TeamManager extends BasePlayerDataManager {
             var avatarIds = scene.getSceneData().getSpecifiedAvatarList();
             var specifiedAvatarList = this.getActiveTeam();
 
-            if (avatarIds != null && avatarIds.size() > 0) {
+            if (avatarIds != null && !avatarIds.isEmpty()) {
                 // certain scene could limit specific avatars' entry
                 specifiedAvatarList.clear();
                 for (int id : avatarIds) {

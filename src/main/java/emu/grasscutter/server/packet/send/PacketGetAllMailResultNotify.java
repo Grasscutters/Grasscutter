@@ -23,7 +23,7 @@ public final class PacketGetAllMailResultNotify extends BasePacket {
                         .setPacketNum(1);
 
         var inbox = player.getAllMail();
-        if (!gifts && inbox.size() > 0) {
+        if (!gifts && !inbox.isEmpty()) {
             packet.addAllMailList(
                     inbox.stream()
                             .filter(mail -> mail.stateValue == 1)

@@ -92,7 +92,7 @@ public class DynamicFloat {
     }
 
     public static class StackOp {
-        public Op op;
+        public final Op op;
 
         public float fValue;
         public String sValue;

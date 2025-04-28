@@ -11,26 +11,28 @@ import emu.grasscutter.net.proto.MailCollectStateOuterClass.MailCollectState;
 import emu.grasscutter.net.proto.MailTextContentOuterClass.MailTextContent;
 import java.time.Instant;
 import java.util.*;
+import lombok.Getter;
+import lombok.Setter;
 import org.bson.types.ObjectId;
 
 @Entity(value = "mail", useDiscriminator = false)
 public final class Mail {
-    @Id private ObjectId id;
-    @Indexed private int ownerUid;
-    public MailContent mailContent;
-    public List<MailItem> itemList;
-    public long sendTime;
+    @Getter @Id private ObjectId id;
+    @Setter @Getter @Indexed private int ownerUid;
+    public final MailContent mailContent;
+    public final List<MailItem> itemList;
+    public final long sendTime;
     public long expireTime;
     public int importance;
     public boolean isRead;
     public boolean isAttachmentGot;
-    public int stateValue;
+    public final int stateValue;
     @Transient private boolean shouldDelete;
 
     public Mail() {
         this(
                 new MailContent(),
-                new ArrayList<MailItem>(),
+                new ArrayList<>(),
                 (int) Instant.now().getEpochSecond()
                         + 604800); // TODO: add expire time to send mail command
     }
@@ -57,18 +59,6 @@ public final class Mail {
         this.isRead = false;
         this.isAttachmentGot = false;
         this.stateValue = state; // Different mailboxes, 1 = Default, 3 = Gift-box.
-    }
-
-    public ObjectId getId() {
-        return id;
-    }
-
-    public int getOwnerUid() {
-        return ownerUid;
-    }
-
-    public void setOwnerUid(int ownerUid) {
-        this.ownerUid = ownerUid;
     }
 
     public MailDataOuterClass.MailData toProto(Player player) {
@@ -122,9 +112,9 @@ public final class Mail {
 
     @Entity
     public static class MailItem {
-        public int itemId;
-        public int itemCount;
-        public int itemLevel;
+        public final int itemId;
+        public final int itemCount;
+        public final int itemLevel;
 
         public MailItem() {
             this.itemId = 11101;

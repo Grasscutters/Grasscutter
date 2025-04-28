@@ -93,26 +93,25 @@ public class HomeModuleManager {
                 .map(HomeBlockItem::getDeployNPCList)
                 .flatMap(Collection::stream)
                 .forEach(
-                        avatar -> {
-                            suites.forEach(
-                                    suite -> {
-                                        var data =
-                                                SuiteEventType.HOME_AVATAR_REWARD_EVENT.getEventDataFrom(
-                                                        avatar.getAvatarId(), suite.getSuiteId());
-                                        if (data == null || this.home.isRewardEventFinished(data.getId())) {
-                                            return;
-                                        }
+                        avatar ->
+                                suites.forEach(
+                                        suite -> {
+                                            var data =
+                                                    SuiteEventType.HOME_AVATAR_REWARD_EVENT.getEventDataFrom(
+                                                            avatar.getAvatarId(), suite.getSuiteId());
+                                            if (data == null || this.home.isRewardEventFinished(data.getId())) {
+                                                return;
+                                            }
 
-                                        this.rewardEvents.add(
-                                                new HomeAvatarRewardEvent(
-                                                        homeOwner,
-                                                        data.getId(),
-                                                        data.getRewardID(),
-                                                        data.getAvatarID(),
-                                                        data.getSuiteId(),
-                                                        suite.getGuid()));
-                                    });
-                        });
+                                            this.rewardEvents.add(
+                                                    new HomeAvatarRewardEvent(
+                                                            homeOwner,
+                                                            data.getId(),
+                                                            data.getRewardID(),
+                                                            data.getAvatarID(),
+                                                            data.getSuiteId(),
+                                                            suite.getGuid()));
+                                        }));
 
         if (this.summonEvents != null) {
             var suiteIdList = this.rewardEvents.stream().map(HomeAvatarRewardEvent::getSuiteId).toList();

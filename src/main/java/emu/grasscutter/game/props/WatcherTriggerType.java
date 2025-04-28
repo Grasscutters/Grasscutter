@@ -3,7 +3,9 @@ package emu.grasscutter.game.props;
 import it.unimi.dsi.fastutil.ints.*;
 import java.util.*;
 import java.util.stream.Stream;
+import lombok.Getter;
 
+@Getter
 public enum WatcherTriggerType {
     TRIGGER_NONE(0),
     TRIGGER_COMBAT_CONFIG_COMMON(1),
@@ -329,9 +331,5 @@ public enum WatcherTriggerType {
 
     public static WatcherTriggerType getTypeByName(String name) {
         return stringMap.getOrDefault(name, TRIGGER_NONE);
-    }
-
-    public int getValue() {
-        return value;
     }
 }

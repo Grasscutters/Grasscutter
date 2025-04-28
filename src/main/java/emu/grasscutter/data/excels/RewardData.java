@@ -3,19 +3,16 @@ package emu.grasscutter.data.excels;
 import emu.grasscutter.data.*;
 import emu.grasscutter.data.common.ItemParamData;
 import java.util.List;
+import lombok.Getter;
 
 @ResourceType(name = "RewardExcelConfigData.json")
 public class RewardData extends GameResource {
     public int rewardId;
-    public List<ItemParamData> rewardItemList;
+    @Getter public List<ItemParamData> rewardItemList;
 
     @Override
     public int getId() {
         return rewardId;
-    }
-
-    public List<ItemParamData> getRewardItemList() {
-        return rewardItemList;
     }
 
     @Override

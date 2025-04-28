@@ -6,11 +6,14 @@ import dev.morphia.annotations.Entity;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.net.proto.AvatarTeamOuterClass.AvatarTeam;
 import java.util.*;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
 @Entity
 public final class TeamInfo {
-    private String name;
-    private List<Integer> avatars;
+    @Setter private String name;
+    private final List<Integer> avatars;
 
     public TeamInfo() {
         this.name = "";
@@ -20,18 +23,6 @@ public final class TeamInfo {
     public TeamInfo(List<Integer> avatars) {
         this.name = "";
         this.avatars = avatars;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public List<Integer> getAvatars() {
-        return avatars;
     }
 
     public int size() {

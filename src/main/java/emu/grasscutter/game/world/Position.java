@@ -5,15 +5,18 @@ import com.google.gson.annotations.SerializedName;
 import dev.morphia.annotations.Entity;
 import emu.grasscutter.net.proto.VectorOuterClass.Vector;
 import emu.grasscutter.utils.Utils;
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.List;
 import lombok.*;
 import lombok.experimental.Accessors;
 
+@Setter
+@Getter
 @Entity
 @Accessors(chain = true)
 public class Position implements Serializable {
-    private static final long serialVersionUID = -2001232313615923575L;
+    @Serial private static final long serialVersionUID = -2001232313615923575L;
 
     public static final Position ZERO = new Position(0, 0, 0);
     public static final Position IDENTITY = new Position(0, 0);
@@ -21,22 +24,16 @@ public class Position implements Serializable {
     @SerializedName(
             value = "x",
             alternate = {"_x", "X"})
-    @Getter
-    @Setter
     private float x;
 
     @SerializedName(
             value = "y",
             alternate = {"_y", "Y"})
-    @Getter
-    @Setter
     private float y;
 
     @SerializedName(
             value = "z",
             alternate = {"_z", "Z"})
-    @Getter
-    @Setter
     private float z;
 
     public Position() {}
@@ -143,8 +140,8 @@ public class Position implements Serializable {
 
     /** In radians */
     public Position translate(float dist, float angle) {
-        this.x += dist * Math.sin(angle);
-        this.y += dist * Math.cos(angle);
+        this.x += (float) (dist * Math.sin(angle));
+        this.y += (float) (dist * Math.cos(angle));
         return this;
     }
 
@@ -173,8 +170,8 @@ public class Position implements Serializable {
 
     public Position translateWithDegrees(float dist, float angle) {
         angle = (float) Math.toRadians(angle);
-        this.x += dist * Math.sin(angle);
-        this.y += -dist * Math.cos(angle);
+        this.x += (float) (dist * Math.sin(angle));
+        this.y += (float) (-dist * Math.cos(angle));
         return this;
     }
 

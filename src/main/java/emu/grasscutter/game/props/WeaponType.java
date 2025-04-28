@@ -3,7 +3,9 @@ package emu.grasscutter.game.props;
 import it.unimi.dsi.fastutil.ints.*;
 import java.util.*;
 import java.util.stream.Stream;
+import lombok.Getter;
 
+@Getter
 public enum WeaponType {
     WEAPON_NONE(0),
     WEAPON_SWORD_ONE_HAND(1, 10, 5),
@@ -52,17 +54,5 @@ public enum WeaponType {
 
     public static WeaponType getTypeByName(String name) {
         return stringMap.getOrDefault(name, WEAPON_NONE);
-    }
-
-    public int getValue() {
-        return value;
-    }
-
-    public int getEnergyGainInitialProbability() {
-        return energyGainInitialProbability;
-    }
-
-    public int getEnergyGainIncreaseProbability() {
-        return energyGainIncreaseProbability;
     }
 }

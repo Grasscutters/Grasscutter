@@ -30,7 +30,7 @@ public abstract class Plugin {
     @SuppressWarnings("unused")
     private void initializePlugin(PluginIdentifier identifier, URLClassLoader classLoader) {
         if (this.identifier != null) {
-            Grasscutter.getLogger().warn(this.identifier.name + " had a reinitialization attempt.");
+            Grasscutter.getLogger().warn("{} had a reinitialization attempt.", this.identifier.name);
             return;
         }
 
@@ -45,7 +45,7 @@ public abstract class Plugin {
 
         if (!this.dataFolder.exists() && !this.dataFolder.mkdirs()) {
             Grasscutter.getLogger()
-                    .warn("Failed to create plugin data folder for " + this.identifier.name);
+                    .warn("Failed to create plugin data folder for {}", this.identifier.name);
         }
     }
 

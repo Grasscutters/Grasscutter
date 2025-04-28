@@ -6,7 +6,7 @@ import lombok.*;
 
 @Getter
 public final class SceneMetaLoadEvent extends ServerEvent {
-    private Scene scene;
+    private final Scene scene;
     @Setter private boolean override;
 
     public SceneMetaLoadEvent(Scene scene) {

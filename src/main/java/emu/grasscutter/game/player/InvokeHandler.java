@@ -36,13 +36,13 @@ public class InvokeHandler<T> {
         }
 
         try {
-            if (entryListForwardAll.size() > 0) {
+            if (!entryListForwardAll.isEmpty()) {
                 BasePacket packet =
                         packetClass.getDeclaredConstructor(List.class).newInstance(this.entryListForwardAll);
                 player.getScene().broadcastPacket(packet);
                 this.entryListForwardAll.clear();
             }
-            if (entryListForwardAllExceptCur.size() > 0) {
+            if (!entryListForwardAllExceptCur.isEmpty()) {
                 BasePacket packet =
                         packetClass
                                 .getDeclaredConstructor(List.class)
@@ -50,7 +50,7 @@ public class InvokeHandler<T> {
                 player.getScene().broadcastPacketToOthers(player, packet);
                 this.entryListForwardAllExceptCur.clear();
             }
-            if (entryListForwardHost.size() > 0) {
+            if (!entryListForwardHost.isEmpty()) {
                 BasePacket packet =
                         packetClass.getDeclaredConstructor(List.class).newInstance(this.entryListForwardHost);
                 player.getWorld().getHost().sendPacket(packet);

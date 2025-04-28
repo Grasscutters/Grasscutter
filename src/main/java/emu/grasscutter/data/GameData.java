@@ -569,8 +569,8 @@ public final class GameData {
     private static final Int2IntMap trialAvatarIndexIdTrialActivityDataDataMap =
             new Int2IntOpenHashMap();
 
-    private static Map<Integer, List<Integer>> fetters = new HashMap<>();
-    private static Map<Integer, List<ShopGoodsData>> shopGoods = new HashMap<>();
+    private static final Map<Integer, List<Integer>> fetters = new HashMap<>();
+    private static final Map<Integer, List<ShopGoodsData>> shopGoods = new HashMap<>();
 
     // Getters with different names that stay for now
     public static Int2ObjectMap<MainQuestData> getMainQuestDataMap() {
@@ -630,15 +630,21 @@ public final class GameData {
 
     // Non-nullable value getters
     public static int getAvatarLevelExpRequired(int level) {
-        return Optional.ofNullable(avatarLevelDataMap.get(level)).map(d -> d.getExp()).orElse(0);
+        return Optional.ofNullable(avatarLevelDataMap.get(level))
+                .map(AvatarLevelData::getExp)
+                .orElse(0);
     }
 
     public static int getAvatarFetterLevelExpRequired(int level) {
-        return Optional.ofNullable(avatarFetterLevelDataMap.get(level)).map(d -> d.getExp()).orElse(0);
+        return Optional.ofNullable(avatarFetterLevelDataMap.get(level))
+                .map(AvatarFetterLevelData::getExp)
+                .orElse(0);
     }
 
     public static int getRelicExpRequired(int rankLevel, int level) {
-        return Optional.ofNullable(getRelicLevelData(rankLevel, level)).map(d -> d.getExp()).orElse(0);
+        return Optional.ofNullable(getRelicLevelData(rankLevel, level))
+                .map(ReliquaryLevelData::getExp)
+                .orElse(0);
     }
 
     // Generic getter
@@ -655,7 +661,7 @@ public final class GameData {
             field.setAccessible(false);
         } catch (Exception e) {
             Grasscutter.getLogger()
-                    .error("Error fetching resource map for " + resourceDefinition.getSimpleName(), e);
+                    .error("Error fetching resource map for {}", resourceDefinition.getSimpleName(), e);
         }
 
         return map;
@@ -713,8 +719,8 @@ public final class GameData {
     /**
      * Fetches the trial data
      *
-     * @param trialAvatarIndexId
-     * @return
+     * @param trialAvatarIndexId The ID of the trial avatar
+     * @return The trial data for the trial avatar
      */
     @Nullable public static TrialAvatarActivityDataData getTrialAvatarActivityDataByAvatarIndex(
             int trialAvatarIndexId) {

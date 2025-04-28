@@ -14,16 +14,15 @@ public class PacketActivityScheduleInfoNotify extends BasePacket {
         var proto = ActivityScheduleInfoNotifyOuterClass.ActivityScheduleInfoNotify.newBuilder();
 
         activityConfigItemList.forEach(
-                item -> {
-                    proto.addActivityScheduleList(
-                            ActivityScheduleInfoOuterClass.ActivityScheduleInfo.newBuilder()
-                                    .setActivityId(item.getActivityId())
-                                    .setScheduleId(item.getScheduleId())
-                                    .setIsOpen(true)
-                                    .setBeginTime(DateHelper.getUnixTime(item.getBeginTime()))
-                                    .setEndTime(DateHelper.getUnixTime(item.getEndTime()))
-                                    .build());
-                });
+                item ->
+                        proto.addActivityScheduleList(
+                                ActivityScheduleInfoOuterClass.ActivityScheduleInfo.newBuilder()
+                                        .setActivityId(item.getActivityId())
+                                        .setScheduleId(item.getScheduleId())
+                                        .setIsOpen(true)
+                                        .setBeginTime(DateHelper.getUnixTime(item.getBeginTime()))
+                                        .setEndTime(DateHelper.getUnixTime(item.getEndTime()))
+                                        .build()));
 
         this.setData(proto);
     }
