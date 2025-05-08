@@ -11,6 +11,7 @@ import emu.grasscutter.game.ability.AbilityManager;
 import emu.grasscutter.game.achievement.Achievements;
 import emu.grasscutter.game.activity.ActivityManager;
 import emu.grasscutter.game.avatar.*;
+import emu.grasscutter.game.mail.BirthdayMailSystem;
 import emu.grasscutter.game.battlepass.BattlePassManager;
 import emu.grasscutter.game.city.CityInfoData;
 import emu.grasscutter.game.entity.GameEntity;
@@ -1469,6 +1470,9 @@ public class Player implements PlayerHook, FieldFetch {
 
         // First notify packets sent
         this.hasSentLoginPackets = true;
+        
+        // Check if today is player's birthday and send gift if needed
+        BirthdayMailSystem.checkBirthdayAndSendGift(this);
 
         // Set session state
         session.setState(SessionState.ACTIVE);
