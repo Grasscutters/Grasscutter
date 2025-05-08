@@ -93,3 +93,6 @@ patches/*.patch
 
 # Artifact Signatures
 *.asc
+
+# Feature proposals
+feature_proposals.md
