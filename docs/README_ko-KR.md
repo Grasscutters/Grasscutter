@@ -28,6 +28,7 @@
 - [MongoDB Community Server](https://www.mongodb.com/try/download/community) 설치
 - 게임 버전 REL4.0.x 다운로드 (만약 4.0.x 클라이언트를 가지고 있지 않다면, 여기서 찾을 수 있습니다.):
 [4.0.x 클라이언트 - GitHub](https://github.com/JRSKelvin/GenshinRepository/blob/main/Version%204.0.0.md)
+[4.0.x 클라이언트 - GitHub (매일 업데이트)](https://github.com/tiennm99/genshin-repository/blob/main/docs/versions/4.x.md#401)
 [4.0.x 클라이언트 - 구글 드라이브브](https://www.123pan.com/s/HoqUVv-U7SBA.html)
 
 - [최신 Cultivation](https://github.com/Grasscutters/Cultivation/releases/latest) 다운로드하세요. `.msi` 설치파일을 사용하면 됩니다.

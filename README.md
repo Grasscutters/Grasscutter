@@ -34,6 +34,7 @@ Grasscutter has not been actively maintained and currently (as of January 12th, 
 - Get [MongoDB Community Server](https://www.mongodb.com/try/download/community)
 - Get game version REL4.0.x (If you don't have a 4.0.x client, you can find it here and open any of the links to download it):
 [4.0.x Client-github](https://github.com/JRSKelvin/GenshinRepository/blob/main/Version%204.0.0.md)
+[4.0.x Client-github (official server links, updated daily)](https://github.com/tiennm99/genshin-repository/blob/main/docs/versions/4.x.md#401)
 [4.0.x Client-cloud drive](https://www.123pan.com/s/HoqUVv-U7SBA.html)
 - ***UPDATE JAN 12, 2025: YOU CANNOT MIX AND MATCH GAME VERSIONS AND SERVER VERSIONS, PLEASE DOWNLOAD THE CORRECT VERSION OF GRASSCUTTER FOR YOUR VERSION OF THE GAME.***
 

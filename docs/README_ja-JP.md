@@ -27,7 +27,7 @@
 
 - [Java (バージョン17以降)](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html) を用意する
 - [MongoDB Community Server](https://www.mongodb.com/try/download/community) を用意する
-- ゲームバージョンがREL4.0.Xのクライアントを用意する (4.0.Xのクライアントを持っていない場合は右のリンクからダウンロード): [Github](https://github.com/JRSKelvin/GenshinRepository/blob/main/Version%204.0.0.md), [クラウド(123云盘)](https://www.123pan.com/s/HoqUVv-U7SBA.html)
+- ゲームバージョンがREL4.0.Xのクライアントを用意する (4.0.Xのクライアントを持っていない場合は右のリンクからダウンロード): [Github](https://github.com/JRSKelvin/GenshinRepository/blob/main/Version%204.0.0.md), [Github(毎日更新)](https://github.com/tiennm99/genshin-repository/blob/main/docs/versions/4.x.md#401), [クラウド(123云盘)](https://www.123pan.com/s/HoqUVv-U7SBA.html)
 - [最新の Cultivation](https://github.com/Grasscutters/Cultivation/releases/latest)をダウンロードする。`.msi`インストーラを使ってください。
 - 管理者権限を付与して Cultivation を実行した後、右上端にあるダウンロードアイコンのボタンを押す。 
 - `Download All-in-One` をクリックする
